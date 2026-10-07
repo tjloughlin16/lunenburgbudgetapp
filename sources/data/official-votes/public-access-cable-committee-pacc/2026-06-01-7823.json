@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2026-06-01",
  "docid": "7823",
@@ -12,22 +12,196 @@
  },
  "votes": [
   {
-   "motion": "Accept the 5/14/2026 minutes as amended",
+   "motion": "to accept 5/14/2026 minutes as amended",
    "moved_by": "S.Archambault",
    "seconded_by": "F.Beall",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to accept 5/14/2026 minutes as amended • (s.archambault, 2nd f.beall), passe",
-   "quote_taken_from_text": true
+   "quote": "motion to accept 5/14/2026 minutes as amended • (s.archambault, 2nd f.beall), passed."
   },
   {
-   "motion": "Ask S.Walker to renew his term",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "to adjourn",
+   "moved_by": "S.Archambault",
+   "seconded_by": "F.Beall",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "adjournment: • meeting adjourned at 6: 34pm • (s.archambault, 2nd f.beall) - passed)"
+  }
+ ],
+ "dropped_unquoted": 2,
+ "note": "\"\"",
+ "cost_usd": 0.2429326,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall"
+  },
+  {
+   "name": "Brian Vienneau",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "manager: jo toale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Volunteer form communication from M. Richard regarding Richard Taylor was tabled with no action taken",
+   "quote": "s.walker received a message from m.richard @ volunteer form from richard taylor. no action taken - tabled"
+  },
+  {
+   "decision": "S. Walker was unanimously asked to renew his committee term",
    "quote": "s.waker's term is up and was unanimously asked to renew"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes are readable; three votes recorded. Note: S.Walker's term renewal lists no explicit moved_by or seconded_by despite \"unanimously\" language, suggesting the outcome was captured but not the formal motion attribution in standard format.",
- "cost_usd": 0.0841864
+ "budget_items": [
+  {
+   "topic": "Committee account balance",
+   "what_was_recorded": "The committee's account balance as of the meeting date",
+   "figures_as_printed": [
+    "$1,063,010.16"
+   ],
+   "quote": "balance $1,063,010.16"
+  },
+  {
+   "topic": "Equipment purchases",
+   "what_was_recorded": "Two pieces of equipment purchased to replace failed equipment: new 8 input ATEM (old one burnt out) and new Swit transmitter and receiver (one had failed)",
+   "figures_as_printed": [],
+   "quote": "purchased new 8 input atem. the old one burnt out. o purchased a new swit transmitter and receiver. one had failed."
+  },
+  {
+   "topic": "Investment and interest income",
+   "what_was_recorded": "Investment and interest posted to account for January through March period",
+   "figures_as_printed": [],
+   "quote": "january thru march investment and interest posted to account"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Meeting called to order",
+   "resolution": "Meeting called to order at 6:00 pm",
+   "tags": [
+    "procedural",
+    "opening"
+   ],
+   "quote": "meeting was called to order at 6:00 pm."
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "Approved as amended",
+   "tags": [
+    "minutes",
+    "procedural"
+   ],
+   "quote": "motion to accept 5/14/2026 minutes as amended • (s.archambault, 2nd f.beall), passed."
+  },
+  {
+   "topic": "Manager's report",
+   "resolution": "Report given",
+   "tags": [
+    "management",
+    "operations",
+    "equipment",
+    "facilities"
+   ],
+   "quote": "covering water district meeting 6/3/26 • covering lhs graduation 6/6/26 • livestreamed monty tech graduation 5/27/26"
+  },
+  {
+   "topic": "FY27 budget",
+   "resolution": "No report given",
+   "tags": [
+    "budget"
+   ],
+   "quote": "fy27 budget: no report"
+  },
+  {
+   "topic": "PACC policy update",
+   "resolution": "All policies accounted for; need to finalize formats",
+   "tags": [
+    "policy",
+    "administration"
+   ],
+   "quote": "all are now accounted for. need to finalize formats."
+  },
+  {
+   "topic": "Master plan",
+   "resolution": "No report given",
+   "tags": [
+    "planning"
+   ],
+   "quote": "master plan: no report"
+  },
+  {
+   "topic": "Studio space",
+   "resolution": "Deferred to manager's report for update",
+   "tags": [
+    "facilities",
+    "operations"
+   ],
+   "quote": "see manager's report for update."
+  },
+  {
+   "topic": "Old business: S. Walker renewal",
+   "resolution": "S. Walker unanimously asked to renew his term",
+   "tags": [
+    "personnel",
+    "administration"
+   ],
+   "quote": "s.waker's term is up and was unanimously asked to renew"
+  },
+  {
+   "topic": "Next meeting scheduled",
+   "resolution": "Scheduled for Monday, July 6, 2026 at 6:00 pm",
+   "tags": [
+    "procedural",
+    "scheduling"
+   ],
+   "quote": "next meeting: monday, july 6, 2026 at 6:00 pm. wallace room"
+  },
+  {
+   "topic": "Meeting adjourned",
+   "resolution": "Meeting adjourned at 6:34 pm",
+   "tags": [
+    "procedural",
+    "closing"
+   ],
+   "quote": "meeting adjourned at 6: 34pm"
+  }
+ ],
+ "tags": [
+  "public access television",
+  "PACC",
+  "cable committee",
+  "equipment",
+  "budget",
+  "policy",
+  "facilities",
+  "management"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-12-09",
  "docid": "7554",
@@ -12,40 +12,415 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session to discuss litigation strategy regarding Burden, George et al. v. Courtemanche, Stacy et al., and related cases pursuant to MGL Chapter 30, Section 21(a)(3)",
+   "motion": "Enter Executive Session under MGL Chapter 30, Section 21(a)(3) to discuss litigation strategy (Burden matters), then re-enter Open Session.",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Amanda Moore",
    "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "chair nuzzolo moved to enter into executive session and re-enter open session after exiting executive session pursuant to mgl chapter 30, section 21(a)(3), to discuss strategy with respect to litigation if an open meeting may have a detrimental effect on the litigating position of the public body, concerning burden, george et al. vs. courtemanche, stacy et al., 2572cm00296, and town of lunenburg, acting by and through its select board and its chief of police et al. vs. burden, george b. et al., 2585cv01256. seconded by vice-chair amanda moore. roll call vote: member glenn mcleod - aye; member brian lehtinen - aye; clerk renee emkey - aye; vice-chair moore - aye; chair nuzzolo - aye. motion passed unanimously (5-0-0)."
+   "quote": "chair nuzzolo moved to enter into executive session and re-enter open session after exiting executive session pursuant to mgl chapter 30, section 21(a)(3),"
   },
   {
-   "motion": "Approve all annual license renewals as printed on the agenda",
+   "motion": "Approve all annual license renewals as printed on the agenda (Pouring, Package Store, Weekday Entertainment, Automatic Amusement, Jukebox, Common Victualler).",
    "moved_by": "Vice-Chair Moore",
    "seconded_by": "Member Lehtinen",
    "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "vice-chair moore moved to approve all annual license renewals as printed on the agenda. seconded by member lehtinen . call for vote: five - aye (unanimous). motion passed unanimously (5-0-0)",
-   "quote_taken_from_text": true
+   "quote": "vice-chair moore moved to approve all annual license renewals as printed on the agenda. seconded by member lehtinen"
   },
   {
-   "motion": "Approve the letter with three agreed-upon modifications and authorize the Board's liaisons to read the letter and the Town Manager to transmit it to Tri-Board members",
+   "motion": "Approve the Tri-Board letter to the Finance Committee and School Committee as presented with three agreed modifications, authorize the liaisons to read it, and authorize the Town Manager to transmit it.",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Clerk Emkey",
-   "outcome": "passed 4-1-0",
+   "outcome": "passed 4-1-0 (McLeod opposed)",
    "procedural": false,
-   "quote": "chair nuzzolo moved to approve the letter as presented with the three agreed-upon modifications and to authorize the board's liaisons to the finance committee and school committee to read the letter on behalf of the full select board at their respective upcoming meetings, and to authorize the town manager to transmit the letter to all tri-board members on behalf of the select board. seconded by clerk emkey. call for vote: four - aye (4), one - no (1) (member mcleod). motion passed (4-1-0)."
+   "quote": "chair nuzzolo moved to approve the letter as presented with the three agreed-upon modifications"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:48 PM.",
    "moved_by": "Vice-Chair Moore",
    "seconded_by": "Clerk Emkey",
    "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "motion by vice-chair moore to adjourn at 10:48 pm. seconded by clerk emkey. call for vote: five-aye. the motion passed (5-0-0)."
+   "quote": "motion by vice-chair moore to adjourn at 10:48 pm. seconded by clerk emkey. call for vote: five-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1327104
+ "note": "Text is clean extracted text, not a scan; all pages present (1 to 12). Footer says the minutes were reviewed and approved on Tuesday, September 1, 2026. The executive session is labelled XIII but appears before section I, so the printed numbering is out of sequence. The Accounts Payable warrant was presented with no motion or vote recorded. The Letter to Governor was discussed and continued, not voted. Several items are recorded as Board consensus or agreement rather than motions and are listed as decisions. No dollar figures appear in the Town Manager's Fitchburg water billing discussion.",
+ "cost_usd": 0.02078117,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "public commenter, 181 Reservoir Road",
+   "status": "remote",
+   "quote": "rhonda lisio, 181 reservoir road, offered public comment via telephone regarding the appointment policy discussion."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Special Event Policy: Lunenburg Business Association to compile feedback from business owners; Town Counsel to review legal defensibility of private-property provisions; Board to seek examples from other communities.",
+   "quote": "the select board agreed on the following next steps: the lunenburg business association (via president joeci gilchrest) will compile feedback"
+  },
+  {
+   "decision": "Special Event Policy: consensus that the ban on alcohol service on town property for special events should be reconsidered.",
+   "quote": "the select board expressed consensus that this restriction should be reconsidered"
+  },
+  {
+   "decision": "Letter to Governor Healey: Chair Nuzzolo to revise the letter and bring the revised draft to the December 16 meeting for final approval.",
+   "quote": "the select board agreed that chair nuzzolo would revise the letter to incorporate the points raised"
+  },
+  {
+   "decision": "Appointment Policy: agreed to explore a Microsoft Forms digital volunteer application option.",
+   "quote": "the board agreed to explore the digital option."
+  },
+  {
+   "decision": "Appointment Policy: vacancies to be posted on the Town website and local cable television, with a social media post for each update, replacing newspaper and bulletin-board notices.",
+   "quote": "going forward, vacancies should be posted on the town website"
+  },
+  {
+   "decision": "Appointment Policy: appointments to be made during the month of June rather than at the first and second regular meetings in June.",
+   "quote": "the board agreed to change the requirement that appointments be made at the"
+  },
+  {
+   "decision": "Appointment Policy: interviews beyond the automatic trigger (more applicants than vacancies) require a vote of the Select Board as a body, with an articulated reason.",
+   "quote": "should require a vote of the select board as a body, with an articulated reason."
+  },
+  {
+   "decision": "Appointment Policy: incumbent feedback to be submitted by individual members to the Town Manager's office and not discussed at a meeting of the applicable body.",
+   "quote": "the board agreed that feedback should be submitted by individual members to the town manager's office"
+  },
+  {
+   "decision": "Appointment Policy: Chair to compile the noted revisions and bring a draft updated policy back for Board review.",
+   "quote": "the chair indicated he would compile all noted revisions and bring a draft updated policy back for board review."
+  },
+  {
+   "decision": "Select Board Bylaw: referred to Town Counsel for an opinion on whether it is necessary and why other communities keep similar bylaws.",
+   "quote": "the select board agreed to refer the bylaw to town counsel for an opinion on whether it is necessary"
+  },
+  {
+   "decision": "Tri-Board letter: the second paragraph reframed as working collaboratively to improve communication; redundant sentence removed; closing sentence by Member Moore substituted.",
+   "quote": "after discussion, the select board agreed on three modifications"
+  },
+  {
+   "decision": "Licenses: approve fully compliant applications outright on December 16, issue contingent approvals for the rest, and address non-responsive applicants individually.",
+   "quote": "the best course of action is to approve fully compliant applications outright at the december 16 meeting"
+  },
+  {
+   "decision": "Kids Kingdom: conceptual plans to be developed first, then a collaborative discussion with the School Committee; Facilities Director to prepare a low-cost conceptual sketch.",
+   "quote": "facilities director ruth will prepare a low-cost conceptual sketch of a potential relocation scenario"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Jail and Arrest Diversion grant",
+   "what_was_recorded": "Town, with Lancaster, was awarded a grant to fund a master's-level clinician contract with Open Sky Community Services.",
+   "quote": "has been awarded $109,000 in grant funding through the department of mental health jail and arrest diversion program",
+   "figures_as_printed": [
+    "$109,000"
+   ]
+  },
+  {
+   "topic": "FY26 tax rate",
+   "what_was_recorded": "The state Division of Local Services set the FY26 tax rate.",
+   "quote": "the division of local services has officially set the fy26 tax rate at $14.39.",
+   "figures_as_printed": [
+    "$14.39"
+   ]
+  },
+  {
+   "topic": "Access control project change order and shortfall",
+   "what_was_recorded": "A change order is required to connect three buildings to the unified system; the project appropriation and resulting shortfall were stated.",
+   "quote": "a small change order of $5,750 is required to connect the library, teen center, and adult activity center",
+   "figures_as_printed": [
+    "$5,750",
+    "$185,000",
+    "$1,766"
+   ]
+  },
+  {
+   "topic": "Kids Kingdom design funding",
+   "what_was_recorded": "The $25,000 design funding authorized at Town Meeting cannot be deployed until project scope is clarified with the School Committee.",
+   "quote": "the $25,000 in design funding previously authorized at town meeting cannot be responsibly deployed",
+   "figures_as_printed": [
+    "$25,000"
+   ]
+  },
+  {
+   "topic": "100 Hobbit Street sale and possible rollback taxes",
+   "what_was_recorded": "Assessors reported a 44-acre property sold in October and is subject to potential rollback taxes if land use changed.",
+   "quote": "the property at 100 hobbit street (44 acres, sold in october for $700,000) is subject to potential rollback taxes",
+   "figures_as_printed": [
+    "$700,000"
+   ]
+  },
+  {
+   "topic": "State local aid and Chapter 90 funding",
+   "what_was_recorded": "The draft letter to the Governor cites Chapter 90 funding that has been flat for years.",
+   "quote": "stagnant chapter 90 funding at $200 million since 2012",
+   "figures_as_printed": [
+    "$200 million"
+   ]
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "An Accounts Payable warrant was presented; no vote on it is recorded.",
+   "quote": "an accounts payable warrant in the amount of $951,678.49 was presented.",
+   "figures_as_printed": [
+    "$951,678.49"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Wallis Park resurfacing project funds to cover the Access Control Project shortfall",
+   "amount_as_printed": "$1,766",
+   "outcome": "stated as the planned source of the shortfall; no vote recorded",
+   "quote": "the resulting $1,766 shortfall will be drawn from the wallis park resurfacing project, which was completed under budget"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "address printed as 181 Reservoir Road; no role stated",
+   "topic": "appointment policy; Conservation Commission reappointment",
+   "quote": "ms. lisio stated that she found it objectionable that the select board publicly accused a member of the conservation commission of being unwilling to follow regulations"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announced",
+   "quote": "a pancake breakfast would be held the following morning at the lunenburg adult activity center from 8:00 am to 10:00 am",
+   "tags": [
+    "community"
+   ]
+  },
+  {
+   "topic": "Executive Session (litigation)",
+   "resolution": "entered executive session, returned to open session",
+   "quote": "prior to proceeding with the regular agenda, the select board entered executive session.",
+   "tags": [
+    "litigation",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no public comment",
+   "quote": "no members of the public were present in the room or on zoom at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Resignations acknowledged",
+   "resolution": "acknowledged",
+   "quote": "acknowledge the resignation of pauline roy, outreach coordinator for the council on aging",
+   "tags": [
+    "staffing",
+    "council on aging",
+    "library"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "town manager warren-dyment provided the following updates:",
+   "tags": [
+    "finance",
+    "grants",
+    "dispatch",
+    "tax rate",
+    "projects",
+    "recruitment"
+   ]
+  },
+  {
+   "topic": "Annual license renewals",
+   "resolution": "approved",
+   "quote": "vice-chair moore moved to approve all annual license renewals as printed on the agenda.",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Other license renewal applications",
+   "resolution": "decided approach; deferred to December 16",
+   "quote": "the best course of action is to approve fully compliant applications outright at the december 16 meeting",
+   "tags": [
+    "licensing",
+    "landlord delinquency"
+   ]
+  },
+  {
+   "topic": "Letter to Governor on local aid and FY27 budget",
+   "resolution": "continued to December 16 for revision and final approval",
+   "quote": "chair nuzzolo read the full draft letter to governor healey and the state delegation into the record.",
+   "tags": [
+    "state aid",
+    "fy27 budget",
+    "letter"
+   ]
+  },
+  {
+   "topic": "Special Event Policy",
+   "resolution": "review begun; next steps agreed",
+   "quote": "chair nuzzolo initiated a review of the existing special event policy, describing it as cumbersome and overly restrictive",
+   "tags": [
+    "special events",
+    "legal review",
+    "alcohol"
+   ]
+  },
+  {
+   "topic": "Appointment Policy",
+   "resolution": "section-by-section revisions agreed; draft to come back",
+   "quote": "the chair led the board through a section-by-section review of the existing appointment policy",
+   "tags": [
+    "appointments",
+    "volunteers",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Select Board Bylaw",
+   "resolution": "referred to Town Counsel",
+   "quote": "chair nuzzolo reviewed the existing select board bylaw, which contains four brief provisions",
+   "tags": [
+    "bylaw",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Communications with boards (Tri-Board letter)",
+   "resolution": "approved as modified, 4-1-0",
+   "quote": "clerk emkey presented a draft letter, incorporating edits from member lehtinen and vice-chair moore",
+   "tags": [
+    "tri-board",
+    "finance committee",
+    "school committee",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting recap",
+   "resolution": "no action; updates and direction",
+   "quote": "water billing: town manager warren-dyment reported that finance director mckenna has completed estimated revenue calculations",
+   "tags": [
+    "water billing",
+    "kids kingdom",
+    "town meeting mailer"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "no minutes approved; warrant presented; no action items",
+   "quote": "no minutes were available for approval.",
+   "tags": [
+    "minutes",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "economic development committee (edc): member mcleod reported that the edc met immediately prior",
+   "tags": [
+    "economic development",
+    "assessors",
+    "school committee",
+    "stormwater",
+    "bylaw review",
+    "capital planning",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "noted",
+   "quote": "the select board noted that their next meeting is scheduled for december 16.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "one speaker, by telephone",
+   "quote": "rhonda lisio, 181 reservoir road, offered public comment via telephone regarding the appointment policy discussion.",
+   "tags": [
+    "public comment",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:48 PM, 5-0-0",
+   "quote": "motion by vice-chair moore to adjourn at 10:48 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "licensing",
+  "special event policy",
+  "appointment policy",
+  "tri-board communications",
+  "letter to governor",
+  "local aid",
+  "water billing",
+  "kids kingdom",
+  "access control project",
+  "executive session litigation",
+  "public comment",
+  "town manager report",
+  "committee reports"
+ ],
+ "dropped_unquoted_by_field": {}
 }

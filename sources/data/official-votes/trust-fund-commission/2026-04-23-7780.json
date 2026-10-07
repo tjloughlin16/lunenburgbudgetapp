@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2026-04-23",
  "docid": "7780",
@@ -12,23 +12,172 @@
  },
  "votes": [
   {
-   "motion": "Approve the Board of Commissioners of Trust Funds Comprehensive Motion and Statement of Findings as written",
+   "motion": "Approve the Comprehensive Motion and Statement of Findings language as written",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a motion to approve the language as written was put forth by mr howard, the motion was seconded by chairman bowen. the motion was passed with mr howard voting = aye, chairman bowen voting =aye."
+   "quote": "a motion to approve the language as written was put forth by mr howard, the motion was seconded by chairman bowen. the motion was passed with mr howard voting = aye, chairman bowen voting =aye. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "a motion to adjourn was put forth by mr howard at 6:36pm. the motion was seconded by chairman bowen. the vote to adjourn was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0839984
+ "note": "Text is from a scanned source with OCR processing; formatting irregularities (extra spaces, line breaks) present but content is readable. Meeting held at Lunenburg Town Hall. No zoom attendees present.\"",
+ "cost_usd": 0.14501560000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present were mr howard and chairman bowen."
+  },
+  {
+   "name": "Howard",
+   "role": "Member",
+   "status": "present",
+   "quote": "present were mr howard and chairman bowen."
+  },
+  {
+   "name": "Member of the public",
+   "role": "not stated",
+   "status": "present",
+   "quote": "there was a member of the public present at the meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board acknowledged receipt and review by Attorney General's office of breach documentation and referred matters",
+   "quote": "chairman bowen did receive an email from the attorney general's office who did acknowledge receipt of the documentation and is being reviewed for further action."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accumulated undistributed charitable trust income as of December 31, 2025",
+   "what_was_recorded": "Board finds accumulated undistributed charitable trust income exceeding $62,518.43 as of December 31, 2025",
+   "figures_as_printed": [
+    "$62,518.43"
+   ],
+   "quote": "unlawfully undistributed charitable trust income exceeding $62,518.43 as of december 31, 2025"
+  },
+  {
+   "topic": "Accumulated undistributed trust income over fifty years",
+   "what_was_recorded": "Approximately $62,000 of money has been amassed in interest over the past 50 years that has not been dispersed to veterans, the poor, and other town purposes",
+   "figures_as_printed": [
+    "$62,000"
+   ],
+   "quote": "over the past 50 years, $62,000 of money has been amassed in interest that has not been dispersed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "A constituent",
+   "stated_role": "constituent",
+   "topic": "2½ override vote and tiers proposed",
+   "quote": "mr howard read some comments from a constituent regarding the upcoming vote at town meeting on a 2 ½ override and the tiers proposed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Trust Fund Commission role and responsibilities under MA GL 203e",
+   "resolution": "discussed",
+   "tags": [
+    "fiduciary-duties",
+    "trust-funds",
+    "legal-obligations"
+   ],
+   "quote": "chairman bowen discussed the role and responsibilities of the trust fund commission. per ma gl 203e there are specifically defined duties and responsibilities"
+  },
+  {
+   "topic": "Accumulated undistributed trust income over fifty years",
+   "resolution": "documented findings",
+   "tags": [
+    "trust-funds",
+    "accumulated-income",
+    "compliance",
+    "fiduciary-breach"
+   ],
+   "quote": "over the past 50 years, $62,000 of money has been amassed in interest that has not been dispersed to veterans, to the poor"
+  },
+  {
+   "topic": "School scholarships and educational gifts compliance",
+   "resolution": "discussed",
+   "tags": [
+    "scholarships",
+    "educational-gifts",
+    "compliance",
+    "school",
+    "legal"
+   ],
+   "quote": "when it comes to scholarships in the school, the school for any gifts, okay, or or um uh or trusts that are given to them t",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Breach notices sent in March and Attorney General response",
+   "resolution": "updated",
+   "tags": [
+    "breach-notices",
+    "attorney-general",
+    "legal",
+    "enforcement"
+   ],
+   "quote": "chairman bowen did receive an email from the attorney general's office who did acknowledge receipt of the documentation and is being reviewed for further action."
+  },
+  {
+   "topic": "Comprehensive Motion and Statement of Findings - preservation of continuity",
+   "resolution": "approved",
+   "tags": [
+    "fiduciary",
+    "trust-administration",
+    "continuity",
+    "quorum",
+    "legal-framework"
+   ],
+   "quote": "a motion to approve the language as written was put forth by mr howard, the motion was seconded by chairman bowen. the motion was passed with mr ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Missing Susan Howard Poor Fund trust",
+   "resolution": "concerns noted",
+   "tags": [
+    "trust-funds",
+    "missing-documentation",
+    "concerns"
+   ],
+   "quote": "chairman bowen mentioned his concern about the missing susan howard poor fund trust."
+  },
+  {
+   "topic": "Annual Town Meeting and FY27 Budget Presentation and Override",
+   "resolution": "discussed",
+   "tags": [
+    "town-meeting",
+    "budget",
+    "override",
+    "public-engagement"
+   ],
+   "quote": "chairman bowen discussed the upcoming annual townmeeting, and mentioned the upcoming fy27 budget presentation and override discussion."
+  }
+ ],
+ "tags": [
+  "trust-funds",
+  "fiduciary-duties",
+  "municipal-compliance",
+  "charitable-trusts",
+  "attorney-general",
+  "town-meeting",
+  "override-vote",
+  "budget",
+  "breach-notices",
+  "accumulated-income"
+ ],
+ "dropped_unquoted_by_field": {}
 }

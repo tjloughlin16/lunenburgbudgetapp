@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2026-06-18",
  "docid": "7852",
@@ -15,7 +15,7 @@
    "motion": "Approve the minutes of May 21, 2026, as amended",
    "moved_by": "Robin",
    "seconded_by": "Stephanie",
-   "outcome": "passed",
+   "outcome": "passed 7-0",
    "procedural": true,
    "quote": "robin made a motion to approve the minutes of may 21, 2026, as amended. stephanie seconded. the motion passed by roll call vote."
   },
@@ -29,6 +29,224 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09439139999999999
+ "note": "Public comment period listed as \"None\". Meeting minutes include detailed Director's Report with separate budget table showing FY2026 budget of $636,131 with $532,701 expended (84%) as of meeting date.\"",
+ "cost_usd": 0.15732799999999997,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Muir Haman",
+   "role": "Director",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, jana-lee balish, david niose, stephanie trudel"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:50 p.m. by chair harry kubetz."
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, jana-lee balish, david niose, stephanie trudel"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, jana-lee balish, david niose, stephanie trudel"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, jana-lee balish, david niose, stephanie trudel"
+  },
+  {
+   "name": "David Niose",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, jana-lee balish, david niose, stephanie trudel"
+  },
+  {
+   "name": "Stephanie Trudel",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, jana-lee balish, david niose, stephanie trudel"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Trustee",
+   "status": "remote",
+   "quote": "members remote: maia wentrup"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director's contract will be updated to include standardized town vacation accrual language",
+   "quote": "harry let us know that muir's contract would be updated to include the standardized language about vacation accruals that the town now uses. nothing else will change. we all agreed this was an appropriate change."
+  },
+  {
+   "decision": "Further discussion of Room Use Policy deferred to September meeting",
+   "quote": "we deferred further discussion until september."
+  },
+  {
+   "decision": "Director to investigate how library's Summer Reading Program attendance compares to other libraries and research attendance comparisons with other libraries in the area",
+   "quote": "harry asked if there is a way to compare our attendance with other libraries in the area. muir will look into this."
+  },
+  {
+   "decision": "Director to send letter of thanks to North End Subaru expressing appreciation for music series support",
+   "quote": "harry also suggested that muir send a letter of thanks to north end subaru, expressing our appreciation for their support of the monthly concert series. muir said he will do that."
+  },
+  {
+   "decision": "Director to rework Statement on Library Filtering Software and bring revised draft back to board in fall",
+   "quote": "the statement needs some reworking, which muir will do and bring back to us in the fall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2026 year-end invoices and equipment purchases",
+   "what_was_recorded": "Director submitted batch of invoices and planned poster printer purchase to utilize remaining FY2026 budget before fiscal year end",
+   "figures_as_printed": [
+    "$12k",
+    "$4k"
+   ],
+   "quote": "muir submitted a $12k batch of invoices on tuesday. a poster printer will be purchased for $4k before the end of the fiscal year."
+  },
+  {
+   "topic": "North End Subaru sponsorship funding for Monthly Music Series",
+   "what_was_recorded": "North End Subaru increased annual funding commitment for monthly music series concerts",
+   "figures_as_printed": [
+    "$400 per event",
+    "$300"
+   ],
+   "quote": "north end subaru committed to another year of support for the monthly music series and increased their funding to $400 per event, up from $300 in previous years."
+  },
+  {
+   "topic": "Friends group book and bake sale fundraising results",
+   "what_was_recorded": "Book and bake sale fundraising event revenue collected by Friends of the Library",
+   "figures_as_printed": [
+    "$2,674.66",
+    "$1,155.62"
+   ],
+   "quote": "the book sale brought in $2,674.66 and the bake sale brought in $1,155.62."
+  },
+  {
+   "topic": "FY2026 budget status and year-end spending",
+   "what_was_recorded": "Library FY2026 budget tracking with overall expenditure rate and planned end-of-year spending across line items",
+   "figures_as_printed": [
+    "636,131$",
+    "532,701$"
+   ],
+   "quote": "muir will be making sure he spends as close to budgeted amounts as possible, with receipt of goods to be before the end of the fiscal year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes of May 21, 2026",
+   "resolution": "approved",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "robin made a motion to approve the minutes of may 21, 2026, as amended. stephanie seconded. the motion passed by roll call vote."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "discussed",
+   "tags": [
+    "budget",
+    "operations",
+    "staffing",
+    "programs",
+    "technology",
+    "facilities"
+   ],
+   "quote": "director's report ○ fy2027 budget update fy2027 will soon be open for purchase requisitions."
+  },
+  {
+   "topic": "Discussion about amending Director's contract reflecting new Town vacation system",
+   "resolution": "agreed",
+   "tags": [
+    "personnel"
+   ],
+   "quote": "we all agreed this was an appropriate change."
+  },
+  {
+   "topic": "Trustee Handbook Discussion - Chapter 7 - Budgeting & Financial Management",
+   "resolution": "discussed",
+   "tags": [
+    "governance",
+    "budget"
+   ],
+   "quote": "due to the size of lunenburg and the organization of our town government, the trustees are not responsible for developing a budget."
+  },
+  {
+   "topic": "Conroy Memorial Garden Update",
+   "resolution": "discussed",
+   "tags": [
+    "memorials",
+    "facilities"
+   ],
+   "quote": "the rock has been delivered to leominster monument for engraving. muir is waiting for the mock-up to give final approval."
+  },
+  {
+   "topic": "Strategic Plan FY22-27 review and new five-year plan process",
+   "resolution": "discussed",
+   "tags": [
+    "planning",
+    "grants"
+   ],
+   "quote": "muir reviewed the goals and action plan of our current plan. some goals were accomplished and some are ongoing and can be included in our new plan."
+  },
+  {
+   "topic": "Policy Discussion - Collection Development, Room Use, and Filtering Software",
+   "resolution": "deferred and pending",
+   "tags": [
+    "policy"
+   ],
+   "quote": "collection development policy muir has not received the answers to our questions from town counsel. ○ room use policy laura asked if the patio shou",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Brooks House Update - potential makerspace development",
+   "resolution": "discussed",
+   "tags": [
+    "facilities",
+    "planning"
+   ],
+   "quote": "muir mentioned that he has spoken to several town employees and town officials who have expressed an interest in seeing a makerspace at the brooks house."
+  },
+  {
+   "topic": "Friends Update",
+   "resolution": "reported",
+   "tags": [
+    "community",
+    "fundraising"
+   ],
+   "quote": "the book sale brought in $2,674.66 and the bake sale brought in $1,155.62."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "a motion to adjourn was made by stephanie, seconded by robin. the motion passed unanimously by roll call vote and the meeting was adjourned at 9:39 p.m."
+  }
+ ],
+ "tags": [
+  "library operations",
+  "budget",
+  "programs",
+  "community partnerships",
+  "strategic planning",
+  "facilities",
+  "personnel",
+  "policy"
+ ],
+ "dropped_unquoted_by_field": {}
 }

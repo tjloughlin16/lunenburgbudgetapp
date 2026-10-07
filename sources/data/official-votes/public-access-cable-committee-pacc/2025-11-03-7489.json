@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2025-11-03",
  "docid": "7489",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the October 6, 2025 minutes as amended",
+   "motion": "Accept the 10/6/2025 minutes as amended.",
    "moved_by": "B.Vienneau",
    "seconded_by": "S.Archambault",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion to accept 10/6/2025 minutes as amended • (b.vienneau, 2nd s.archambault), passed."
   },
   {
-   "motion": "Approve having J.Toale present the PAC FY27 budget proposal as amended to the Tri-Board committee",
+   "motion": "Approve having J.Toale present the PAC FY27 budget proposal, as amended, to the Tri-Board committee.",
    "moved_by": "F.Beall",
    "seconded_by": "B.Vienneau",
    "outcome": "passed",
@@ -28,15 +28,222 @@
    "quote": "motion (f.beall, 2nd b.vienneau), to approve having j.toale present the pac fy27 budget proposal as amended to the tri-board committee - passed"
   },
   {
-   "motion": "Send the amended PACC By-Laws to the Town By-Law Rerview Committee",
+   "motion": "Send the amended PACC By-Laws to the Town By-Law Review Committee.",
    "moved_by": "S.Archambault",
    "seconded_by": "F.Beall",
    "outcome": "not stated",
    "procedural": false,
    "quote": "motion (s.archambault, 2nd f.beall), to send the amended pacc by-laws to the town by-law rerview committee"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "B. Vienneau",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "meeting adjourned at 7:00 pm • (s.archambault, 2nd b. vienneau) - passed)"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes are clear and legible. One vote (the by-laws motion) has no recorded outcome.",
- "cost_usd": 0.0673224
+ "dropped_unquoted": 0,
+ "note": "Text is a flat extraction with tabs and line breaks collapsed; quotes were checked against that flattening. No tallies are printed for any vote, so counts are not given. The vote-format assumption: the parenthetical \"(X, 2nd Y)\" is read as (mover, seconder); the minutes do not say so. The by-law motion has no printed result, so its outcome is \"not stated\". The next-meeting line says \"Tuesday, December 2025\", but the schedule at the end lists Mon. December 2nd, 6pm, Wallace Community Room; this is not reconciled in the text. The enterprise fund date is printed as \"9/30.25\", as written. The \"passed)\" in the adjournment line has a stray parenthesis, as printed. Public Comments are recorded as \"None\", so there are no speakers.",
+ "cost_usd": 0.01517707,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall (zoom)"
+  },
+  {
+   "name": "Brian Vienneau",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall (zoom)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall (zoom)"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "remote",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall (zoom)"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "3. manager: jo toale public comments: - none"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "S.Walker will double check that the Master Plan committee received PACC's information.",
+   "quote": "s.walker will double check that the information was received."
+  },
+  {
+   "decision": "S.Archambault will contact Town Hall and ask for an update on Cable Advisory dates and timeline.",
+   "quote": "s.archambault will contact town hall and ask for an update on dates and timeline."
+  },
+  {
+   "decision": "S.Archambault will bring hard copies of all relevant PAC policies to the next meeting for review.",
+   "quote": "s.archambault will bring hard copies, to the next meeting, of all relevant policies for review"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Current account balance",
+   "what_was_recorded": "The Manager's report gives the current balance.",
+   "figures_as_printed": [
+    "$1,066,845.77"
+   ],
+   "quote": "current balance $1,066,845.77"
+  },
+  {
+   "topic": "Enterprise Fund balance",
+   "what_was_recorded": "The Enterprise Fund balance as of 9/30 is reported.",
+   "figures_as_printed": [
+    "$796,305.37"
+   ],
+   "quote": "as of 9/30.25 there is $796,305.37 in the account"
+  },
+  {
+   "topic": "FY27 PAC budget",
+   "what_was_recorded": "The Manager prepared the FY27 PAC budget, and the committee reviewed income sources, franchise fees, Comcast fee income, investment income, the budget request and issues affecting the FY27 budget. No dollar figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "reviewed financial information o income sources o franchise fees"
+  },
+  {
+   "topic": "Community media funding legislation",
+   "what_was_recorded": "The committee held a discussion of a state act on funding for community media. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "discussion concerning \"an act to modernize funding for community media\""
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order at 6:01pm",
+   "quote": "meeting was called to order at 6:01pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/6/2025",
+   "resolution": "approved as amended",
+   "quote": "motion to accept 10/6/2025 minutes as amended • (b.vienneau, 2nd s.archambault), passed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's report",
+   "resolution": "received; no action recorded",
+   "quote": "comcast issue end of oct. fixed.",
+   "tags": [
+    "cable",
+    "manager",
+    "public channel"
+   ]
+  },
+  {
+   "topic": "FY27 budget",
+   "resolution": "Manager approved to present FY27 PAC budget proposal, as amended, to the Tri-Board committee",
+   "quote": "to approve having j.toale present the pac fy27 budget proposal as amended to the tri-board committee",
+   "tags": [
+    "budget",
+    "FY27"
+   ]
+  },
+  {
+   "topic": "PACC by-law review",
+   "resolution": "amended by-laws sent to Town By-Law Review Committee",
+   "quote": "to send the amended pacc by-laws to the town by-law rerview committee",
+   "tags": [
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Master Plan",
+   "resolution": "S.Walker to confirm receipt of PACC information",
+   "quote": "it was reported at the latest master plan meeting that pacc's info was not received.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Studio space",
+   "resolution": "no action; storage issues noted",
+   "quote": "as reported in manager's report - storage issues",
+   "tags": [
+    "studio",
+    "storage"
+   ]
+  },
+  {
+   "topic": "Cable advisory",
+   "resolution": "S.Archambault to contact Town Hall for an update",
+   "quote": "no update - s.archambault will contact town hall and ask for an update on dates and timeline.",
+   "tags": [
+    "cable advisory"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund",
+   "resolution": "balance reported",
+   "quote": "as of 9/30.25 there is $796,305.37 in the account",
+   "tags": [
+    "enterprise fund"
+   ]
+  },
+  {
+   "topic": "PAC policies",
+   "resolution": "S.Archambault to bring hard copies of policies to next meeting",
+   "quote": "s.archambault will bring hard copies, to the next meeting, of all relevant policies for review",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled",
+   "quote": "next meeting: tuesday, december 2025, 6:00 pm.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:00 pm",
+   "quote": "meeting adjourned at 7:00 pm • (s.archambault, 2nd b. vienneau) - passed)",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "public access cable",
+  "PACC",
+  "FY27 budget",
+  "Tri-Board",
+  "by-laws",
+  "Master Plan",
+  "enterprise fund",
+  "studio space",
+  "cable advisory",
+  "Comcast",
+  "public channel 9",
+  "PAC policy",
+  "minutes approval",
+  "special meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2025-11-10",
  "docid": "7500",
@@ -12,23 +12,198 @@
  },
  "votes": [
   {
-   "motion": "Approve Stormwater permit PBSW-25-4 at 255 Sunny Hill Rd with standard conditions and additional inspections at pre-tree removal, erosion and sedimentation control installation phase, and bottom inspections for all stormwater facilities including cut sheets for rain garden and final inspection",
+   "motion": "Close the public hearing on Stormwater PBSW-25-4 at 255 Sunny Hill Rd.",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "a. burney moved to approve stormwater pbsw-25-4 including all standard conditions and the additional condition that inspections be conducted at the pre-tree removal, the erosion and sedimentation control in installation phase, and the bottom inspections for all the stormwater facilities. including cut sheets of media. to be submitted for the rain garden and final inspection. a. reid, second roll call vote: a burney, aye; a reid, aye; m brenner, aye (3/0)"
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "a. burney moved to close hearing. a. reid, second."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "T Willsmer",
-   "seconded_by": "A Reid",
-   "outcome": "passed 4-0",
+   "motion": "Approve Stormwater PBSW-25-4 at 255 Sunny Hill Rd with all standard conditions and an added condition requiring specified inspections.",
+   "moved_by": "A. Burney",
+   "seconded_by": "A. Reid",
+   "outcome": "passed 3/0",
+   "procedural": false,
+   "quote": "a. burney moved to approve stormwater pbsw-25-4 including all standard conditions and the additional condition that inspections be conducted"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
+   "outcome": "passed 4/0",
    "procedural": true,
-   "quote": "t willsmer moved to adjourn, a reid second roll call vote: a burney, aye; a reid, aye, t willsmer, aye; m brenner aye (4/0)"
+   "quote": "t willsmer moved to adjourn, a reid second"
   }
  ],
  "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0785454
+ "note": "Typed minutes, not a scan; all text read directly. Votes are recorded with roll calls for three motions. The motion to close the Stormwater hearing has no recorded result, so it is marked 'not stated'. No dollar figures or money items appear in the text, so budget_items and transfers are empty. No public comment section is printed; applicants and the Open Space Committee chair spoke as presenters, not as public comment. The minutes print the applicant's name as 'Brain Marchetti', which is kept as printed. Richard Harris appears only in the letterhead and is not recorded as taking part, so he is omitted.",
+ "cost_usd": 0.01496917,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Brenner",
+   "role": "Chair (Matthew Brenner)",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "T. Willsmer",
+   "role": "Vice Chair (Timothy Willsmer)",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "A. Reid",
+   "role": "Clerk (Amanda Reid)",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "A. Burney",
+   "role": "Member (Adam Burney)",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Brain Marchetti",
+   "role": "representing the applicant (McCarty Engineering)",
+   "status": "present",
+   "quote": "brain marchetti (mccarty engineering) represented the applicant."
+  },
+  {
+   "name": "Evan St. Thomas Dutill",
+   "role": "representing the applicant (Team Sunshine)",
+   "status": "present",
+   "quote": "evan st. thomas dutill (team sunshine) represented applicant."
+  },
+  {
+   "name": "Mike Toohill",
+   "role": "Chair, Community Member on behalf of the commission (Open Space Committee)",
+   "status": "present",
+   "quote": "mike toohill, chair, community member on behalf of the commission, they have an empty community member seat"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to change one Open Space Committee seat from community member to an Agricultural Commission representative.",
+   "quote": "m brenner commented that it makes sense, and the board agreed."
+  },
+  {
+   "decision": "M. Toohill is to write the new Open Space by-law and send it to the board for review; the board will endorse that language before it goes to the By-law Review Committee.",
+   "quote": "determined best course of action is m toohill is to write the new by-law and send it to the board for review"
+  },
+  {
+   "decision": "The Open Space Committee change is to be presented at the spring meeting.",
+   "quote": "it should be presented at spring meeting."
+  },
+  {
+   "decision": "The Chair reminded T. Willsmer that he could not vote on the Stormwater hearing because he was not present when it opened.",
+   "quote": "m. brenner reminded t. willsmer he cannot vote as he was not present when hearing opened."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Chair / Director's report",
+   "resolution": "no action",
+   "quote": "m. brenner stated that the slides for the two warrant articles are ready and submitted for the special town meeting.",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "municipal building"
+   ]
+  },
+  {
+   "topic": "Public hearing: 255 Sunny Hill Rd, PBSW-25-4 Stormwater (continued)",
+   "resolution": "approved 3/0 with added inspection conditions",
+   "quote": "255 sunny hill rd, pbsw-25-4 stormwater (continued from 10/27/25)",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "inspections",
+    "riverfront"
+   ]
+  },
+  {
+   "topic": "Public hearing: 560 Mulpus Rd, PBSP-25-7 ground-mounted solar special permit",
+   "resolution": "approved 4/0",
+   "quote": "560 mulpus rd, pbsp-25-7 special permit - ground mounted solar",
+   "tags": [
+    "special permit",
+    "solar",
+    "zoning",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Open Space Committee: seat change and independent committee",
+   "resolution": "board agreed to seat change; by-law to be drafted for spring",
+   "quote": "change one seat from community member to agricultural commission",
+   "tags": [
+    "open space committee",
+    "agricultural commission",
+    "by-law",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "m brenner, discussions continue. took a tour of ritter and town hall",
+   "tags": [
+    "master plan",
+    "municipal building",
+    "capital planning",
+    "economic development",
+    "stormwater task force",
+    "regional planning"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "6. meeting schedule 11/24, 12/15",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "quote": "a burney, attended southern new england american planners association conference",
+   "tags": [
+    "training",
+    "housing",
+    "MBTA Communities"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:28pm, 4-0",
+   "quote": "t willsmer moved to adjourn, a reid second",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "stormwater",
+  "special permit",
+  "solar",
+  "open space committee",
+  "agricultural commission",
+  "municipal building",
+  "capital planning",
+  "housing",
+  "zoning",
+  "special town meeting"
+ ],
+ "dropped_unquoted_by_field": {
+  "votes": 1
+ }
 }

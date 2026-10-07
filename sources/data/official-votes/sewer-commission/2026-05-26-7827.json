@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2026-05-26",
  "docid": "7827",
@@ -62,6 +62,199 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All six votes extracted. One vote (48 West Street) has Dan Proctor abstaining; one vote (990 Mass Ave) has Scott Dall abstaining; four votes are unanimous 4-0 passage.",
- "cost_usd": 0.10243340000000001
+ "note": "\"\"",
+ "cost_usd": 0.2967276,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees:, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees:, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees:, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Chip Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees:, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees:, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees:, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees:, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: chair- brett ramsden"
+  },
+  {
+   "name": "Michael Branchflower",
+   "role": "applicant",
+   "status": "remote",
+   "quote": "the applicant, michael branchflower, was online for the meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "DPW Director to obtain two additional bids for 100 Laurel Lane sewer connection work",
+   "quote": "bill agreed and will get 2 more quotes."
+  },
+  {
+   "decision": "DPW Director to research fee structure for two-family properties for next meeting",
+   "quote": "bill will get answers for the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "37 Wallis Park final read balance",
+   "what_was_recorded": "Final read balance $393.19; closing attorney received wrong spreadsheet showing minimum charge of $133",
+   "figures_as_printed": [
+    "$393.19",
+    "$133"
+   ],
+   "quote": "the seller's current balance is $ 393.19, but at closing, the attorney got the wrong spreadsheet showing the minimum charge of $133."
+  },
+  {
+   "topic": "99 Leominster Road irrigation bill and waiver",
+   "what_was_recorded": "Customer bill of $750 versus average usage $500-600; one-time waiver of $173.20 based on difference from average usage approved",
+   "figures_as_printed": [
+    "$500",
+    "$600",
+    "$750",
+    "$173.20"
+   ],
+   "quote": "her bill is usually around $500 -600 but the current bill was $750 which she was upset about. the owner has not found a leak but will need to investigate further. andrew suggested she could ask the commission for a one-time waiver of $173.20, which is based on the difference from her average usage."
+  },
+  {
+   "topic": "100 Laurel Lane sewer connection cost estimate",
+   "what_was_recorded": "Lateral pipe location uncertain; connection plan with pipe insulation and manhole will cost $9,700 versus original estimate of $4,500",
+   "figures_as_printed": [
+    "$4,500",
+    "$9,700"
+   ],
+   "quote": "dan pointed out that the price was $4,500 a couple weeks ago and bill responded that the guy just gave a quick estimate but it was higher after he looked at the actual job."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dan",
+   "stated_role": "",
+   "topic": "Congratulations to board members elected",
+   "quote": "dan congratulated all the board members who ran on the ballot and won new terms."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of 5/12/26",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "motion: scott d. second: chip w. to accept the minutes of 5/12/26. roll call vote: chip-aye, arthur-aye, scott-aye, and dan-aye."
+  },
+  {
+   "topic": "Manhole Repair IFB",
+   "resolution": "update",
+   "tags": [
+    "manhole",
+    "infrastructure"
+   ],
+   "quote": "andrew got an email from zach who said they have one job to do and then they will focus on lunenburg. he anticipates hearing back after 6/3."
+  },
+  {
+   "topic": "48 West Street Change of Use",
+   "resolution": "approved",
+   "tags": [
+    "change of use",
+    "property"
+   ],
+   "quote": "motion: dan p. second: chip w. to accept the change of use at 48 west street. roll call vote: chip-aye, arthur-aye, and scott-aye."
+  },
+  {
+   "topic": "37 Wallis Park final read and balance write-off",
+   "resolution": "write-off approved",
+   "tags": [
+    "billing",
+    "write-off"
+   ],
+   "quote": "motion: scott d. second: arthur k. to write off the balance of $393.19 on 37 wallis park. roll call vote: scott-aye, arthur-aye, chip-aye and dan-aye."
+  },
+  {
+   "topic": "99 Leominster Road waiver request",
+   "resolution": "waiver approved",
+   "tags": [
+    "waiver",
+    "billing"
+   ],
+   "quote": "motion: chip w. second: scott d. to grant the one-time waiver of $173.20 for 99 leominster road. roll call vote: scott-aye, chip-aye, arthur-aye, and dan-aye."
+  },
+  {
+   "topic": "100 Laurel Lane connection plan and cost",
+   "resolution": "continued, additional quotes pending",
+   "tags": [
+    "connection",
+    "infrastructure"
+   ],
+   "quote": "bill reported that the drain layer came up with a plan to connect but it will cost $9,700."
+  },
+  {
+   "topic": "990 Mass Ave Expansion of Use",
+   "resolution": "approved",
+   "tags": [
+    "change of use",
+    "property",
+    "fees"
+   ],
+   "quote": "motion: dan p. second: arthur k. to allow the expansion of use at 990 mass ave. discussion: dan suggested letting mr. cole know th",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Wright-Pierce private sewer ways documentation",
+   "resolution": "update",
+   "tags": [
+    "planning",
+    "documentation"
+   ],
+   "quote": "andrew stated this relates to finding the private sewer plans for the dep and he does not have an update right now. they will be locating the plans to comply by 8/31."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "infrastructure",
+  "billing",
+  "property connections",
+  "waivers",
+  "change of use"
+ ],
+ "dropped_unquoted_by_field": {}
 }

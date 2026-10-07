@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-10-28",
  "docid": "7474",
@@ -12,47 +12,232 @@
  },
  "votes": [
   {
-   "motion": "Request additional information from Haley Ward for the next meeting",
+   "motion": "Have Haley Ward get additional information for the next meeting so the Commission can discuss the 763 Mass. Ave. easement request.",
    "moved_by": "Dan P.",
    "seconded_by": "Scott D.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: dan p. second: scott d. to have haley ward get additional information for the next meeting so they can discuss it. roll call vote: dan-aye, scott-aye, arthur-aye and brett-aye."
+   "quote": "to have haley ward get additional information for the next meeting so they can discuss it."
   },
   {
-   "motion": "Extend permitting to the next meeting",
+   "motion": "Extend the permitting for the 763 Mass. Ave. easement request to the next meeting.",
    "moved_by": "Scott D.",
    "seconded_by": "Dan P.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: scott d. second: dan p. to extend their permitting to the next meeting. roll call vote: arthur-aye, scott-aye, dan-aye, and brett-aye."
+   "quote": "to extend their permitting to the next meeting."
   },
   {
    "motion": "Accept the waiver request for an easement at 830/832 Mass. Ave.",
    "moved_by": "Scott D.",
    "seconded_by": "Arthur K.",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3-0 (Dan recused himself from the hearing and voting)",
    "procedural": false,
-   "quote": "motion: scott d. second: arthur k. to accept the waiver request for an easement at 830/832 mass. ave. roll call vote: scott-aye, arthur-aye and brett-aye."
+   "quote": "to accept the waiver request for an easement at 830/832 mass. ave."
   },
   {
-   "motion": "Approve the minutes of 10/14/25",
+   "motion": "Approve the minutes of 10/14/25.",
    "moved_by": "Dan P.",
    "seconded_by": "Arthur K.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: dan p. second: arthur k. to approve the minutes of 10/14/25. roll call vote: dan-aye, scott-aye, arthur-aye and brett-aye."
+   "quote": "to approve the minutes of 10/14/25."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:50 pm.",
    "moved_by": "Dan P.",
    "seconded_by": "Scott D.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: dan p. second: scott d. to adjourn at 7:50 pm. roll call vote: arthur-aye, scott-aye, dan-aye, and brett-aye."
+   "quote": "to adjourn at 7:50 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Dan P. (Dan Proctor) recused himself from voting on the 830/832 Mass. Ave. easement waiver (vote 3), so that vote passed 3-0 rather than 4-0.",
- "cost_usd": 0.07876340000000001
+ "note": "Text extraction is clean and complete (two pages, opens and closes). No dollar figures appear anywhere in the minutes, so budget_items holds only the cost-comparison discussion with no figures. Attendance is listed under 'Attendees' but the minutes do not say who joined remotely versus in person, so members are marked present. Votes are recorded as roll calls; the 830/832 Mass. Ave. vote lists three ayes with Dan recused. Quotes were checked against the extracted text, with line breaks collapsed.",
+ "cost_usd": 0.01626437,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brett opened the meeting at 6:08 pm. and did a roll call of attendees."
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "scott questioned if the lots could be hooked up to sewer on chestnut street."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "dan noted that when they pull the building permit, the address is updated."
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "arthur suggested in the interest of the town, getting a consensus from residents on chestnut about adding sewer."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill added that they cannot deny him access to mass ave."
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "andrew, scott, brett and bill met with town counsel regarding the waiver"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "Guest, Dillis & Roy, representing the applicant for the 830/832 Mass. Ave. waiver",
+   "status": "present",
+   "quote": "ryan stated they meet the 3 requirements for a waiver."
+  },
+  {
+   "name": "Steve Ballard",
+   "role": "Guest, Haley Ward, representing the applicant for the 763 Mass. Ave. easement",
+   "status": "present",
+   "quote": "steve stated there will be 6 units but he did know how many bedrooms."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Continue the 763 Mass. Ave. easement hearing so the applicant can return with the location and size of the sewer stub and the number of bedrooms.",
+   "quote": "brett suggested continuing the hearing until they get the location of the stub, what the size pipe will be and scott asked for the number of bedrooms."
+  },
+  {
+   "decision": "Put the waiver wording vote on the next agenda.",
+   "quote": "bill suggested putting the wording vote on the next agenda."
+  },
+  {
+   "decision": "Future agenda to include the continuance of the 763 Mass. Ave. hearing and the waiver wording.",
+   "quote": "future agenda items- continuance of 763 mass. ave. hearing, waiver wording"
+  },
+  {
+   "decision": "The Commission's next meeting is November 25th, in person.",
+   "quote": "the commission will meet next on november 25th in person."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "763 Mass. Ave. sewer connection cost comparison",
+   "what_was_recorded": "Scott asked for a comparison of the cost of tying in on Mass. Ave. against a spur on Chestnut St.; no figures were printed and no decision on cost was recorded.",
+   "quote": "scott asked to compare the costs for tying in on mass. ave. vs a spur on chestnut st.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action (none)",
+   "quote": "public comment/announcements - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Public hearing: easement request, FWP Realty Partners, 763 Mass. Ave.",
+   "resolution": "continued to next meeting; applicant to return with stub location, pipe size and bedroom count",
+   "quote": "(this hearing was continued from 10/14/25 and opened at 6:13pm.)",
+   "tags": [
+    "public hearing",
+    "easement",
+    "sewer extension",
+    "Chestnut Street",
+    "763 Mass. Ave."
+   ]
+  },
+  {
+   "topic": "Public hearing: easement waiver, 830/832 Mass. Ave.",
+   "resolution": "waiver accepted 3-0; Dan recused",
+   "quote": "to accept the waiver request for an easement at 830/832 mass. ave.",
+   "tags": [
+    "public hearing",
+    "waiver",
+    "easement",
+    "830/832 Mass. Ave."
+   ]
+  },
+  {
+   "topic": "Minutes of 10/14/25",
+   "resolution": "approved 4-0",
+   "quote": "to approve the minutes of 10/14/25.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Counsel on ADU bylaw and waiver wording",
+   "resolution": "discussed; wording vote placed on next agenda",
+   "quote": "bill suggested putting the wording vote on the next agenda.",
+   "tags": [
+    "ADU bylaw",
+    "waiver",
+    "town counsel",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Manhole repair invitation for bids",
+   "resolution": "no action; project delayed again",
+   "quote": "bill reported that the frames came in, but when they opened the first manhole, they realized the frames were too small",
+   "tags": [
+    "manhole repair",
+    "invitation for bids",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "noted for next agenda",
+   "quote": "future agenda items- continuance of 763 mass. ave. hearing, waiver wording",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action (none)",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:50 pm",
+   "quote": "to adjourn at 7:50 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer easement",
+  "waiver",
+  "public hearing",
+  "sewer extension",
+  "Chestnut Street",
+  "Mass. Ave.",
+  "ADU bylaw",
+  "manhole repair",
+  "minutes approval",
+  "hybrid meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

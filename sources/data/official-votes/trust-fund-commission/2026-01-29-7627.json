@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2026-01-29",
  "docid": "7627",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve warrant article for legal expenses related to trust fund cy pres proceedings, with removal of the word 'municipal' from the first paragraph",
+   "motion": "Approve warrant article for appropriation of $14,252.39 from General Fund for legal expenses related to cy pres proceedings for certain trust funds, with removal of the word 'municipal' from the first paragraph",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
    "outcome": "passed 2-0",
@@ -20,7 +20,7 @@
    "quote": "mr howard made a motion to approve the warrant article for appropriation for legal expenses related to trust fund cy pres proceedings with the aforementioned removal of the word municipal from the first paragraph. the motion was seconded by chairman bowen. vote on the motion was mr howard = aye, chairman bowen = aye."
   },
   {
-   "motion": "Approve warrant article for distribution of trust funds in the absence of a quorum",
+   "motion": "Approve warrant article for Distribution of Trust Funds in the Absence of a Quorum bylaw amendment",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
    "outcome": "passed 2-0",
@@ -37,6 +37,88 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1057374
+ "note": "Minutes are clearly printed with good text quality. No pages missing or scanning artifacts noted. Meeting held January 29, 2026 at 5:30pm (rescheduled from January 22 due to scheduling conflict). No public attendance.",
+ "cost_usd": 0.1593736,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman bowen proceeded to read the posted open meeting notice from the agenda."
+  },
+  {
+   "name": "Mr Howard",
+   "role": "Member",
+   "status": "present",
+   "quote": "mr howard made a motion to approve the warrant article for appropriation for legal expenses related to trust fund cy pres proceedings"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Appropriation for Legal Expenses Related to Trust Fund Cy Pres Proceedings",
+   "what_was_recorded": "Appropriation from General Fund for legal expenses necessary for research, analysis, legal drafting and filing of cy pres petitions in Massachusetts Probate and Family Court",
+   "figures_as_printed": [
+    "$14,252.39",
+    "Fourteen Thousand Two Hundred Fifty-Two Dollars and Thirty-Nine Cents"
+   ],
+   "quote": "to see if the town will vote to appropriate the sum of fourteen thousand two hundred fifty ‑ two dollars and thirty ‑ nine cents ($14,252.39) from the general fund for the payment of legal expenses, as advised by town counsel, necessary for the research, analysis, legal drafting, and filing of cy pres petit",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appropriation for Legal Expenses Related to Trust Fund Cy Pres Proceedings",
+   "resolution": "approved with amendment",
+   "tags": [
+    "appropriation",
+    "warrant article",
+    "legal expenses",
+    "cy pres",
+    "trust funds",
+    "American Legion",
+    "Worthy Poor Fund"
+   ],
+   "quote": "to see if the town will vote to appropriate the sum of fourteen thousand two hundred fifty ‑ two dollars and thirty ‑ nine cents ($14,252.39) from the general fund for the payment of legal expenses, as advised by town cou",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Distribution of Trust Funds in the Absence of a Quorum bylaw amendment",
+   "resolution": "approved for warrant",
+   "tags": [
+    "bylaw amendment",
+    "warrant article",
+    "governance",
+    "emergency procedures",
+    "quorum"
+   ],
+   "quote": "to see if the town will vote to amend the general bylaws of the town of lunenburg by adding a new section to chapter 12, boards, commissions and committees, designated as § 12-9, entitled 'distribution of trust funds in the absence of a quorum,",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Real Estate Investigations status",
+   "resolution": "status report - on hold",
+   "tags": [
+    "status",
+    "real estate"
+   ],
+   "quote": "chairman bowen advised that real estate investigations are on \"hold\"",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "trust funds",
+  "warrant articles",
+  "bylaws",
+  "appropriation",
+  "cy pres",
+  "governance",
+  "municipal government",
+  "emergency procedures"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2026-03-26",
  "docid": "7726",
@@ -12,6 +12,168 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. These are minutes of a Lunenburg High School School Advisory Council meeting. The document records discussion items (budget update, handbook review, course registration, senior schedule, etc.) and procedural information, but contains no recorded motions or votes. The meeting was called to order at 3:02 p.m. and adjourned at 3:23 p.m., but the adjournment is not recorded as a formal motion voted upon.",
- "cost_usd": 0.0619024
+ "note": "No votes recorded. Meeting lasted 21 minutes (3:02 PM to 3:23 PM).\"",
+ "cost_usd": 0.1407996,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Tim Santry",
+   "status": "present",
+   "quote": "members present: mr. tim santry; ms. karma tousignant; ms. yanina burns; ms. jessica frank; ms. mariah comesana; ms. meghan arnold"
+  },
+  {
+   "name": "Ms. Karma Tousignant",
+   "role": "Assistant Principal",
+   "status": "present",
+   "quote": "members present: mr. tim santry; ms. karma tousignant; ms. yanina burns; ms. jessica frank; ms. mariah comesana; ms. meghan arnold"
+  },
+  {
+   "name": "Ms. Yanina Burns",
+   "role": "Assistant Principal/Athletic Director",
+   "status": "present",
+   "quote": "members present: mr. tim santry; ms. karma tousignant; ms. yanina burns; ms. jessica frank; ms. mariah comesana; ms. meghan arnold"
+  },
+  {
+   "name": "Ms. Jessica Frank",
+   "status": "present",
+   "quote": "members present: mr. tim santry; ms. karma tousignant; ms. yanina burns; ms. jessica frank; ms. mariah comesana; ms. meghan arnold"
+  },
+  {
+   "name": "Ms. Mariah Comesana",
+   "status": "present",
+   "quote": "members present: mr. tim santry; ms. karma tousignant; ms. yanina burns; ms. jessica frank; ms. mariah comesana; ms. meghan arnold"
+  },
+  {
+   "name": "Ms. Meghan Arnold",
+   "status": "present",
+   "quote": "members present: mr. tim santry; ms. karma tousignant; ms. yanina burns; ms. jessica frank; ms. mariah comesana; ms. meghan arnold"
+  },
+  {
+   "name": "Mr. Warren Stevenson",
+   "status": "absent",
+   "quote": "members absent: mr. warren stevenson; mr. anthony sculimbrene"
+  },
+  {
+   "name": "Mr. Anthony Sculimbrene",
+   "status": "absent",
+   "quote": "members absent: mr. warren stevenson; mr. anthony sculimbrene"
+  },
+  {
+   "name": "Ms. Lynn Radford",
+   "status": "present",
+   "quote": "additional persons present: ms. lynn radford"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Balanced Budget",
+   "what_was_recorded": "School Committee approved a balanced budget with $989,000 under",
+   "figures_as_printed": [
+    "$989,000"
+   ],
+   "quote": "school comm has approved a balanced budget ($989,000 under)"
+  },
+  {
+   "topic": "Core Budget",
+   "what_was_recorded": "Core budget approved restoring WL teacher, Bridge program, and paraprofessional with $1.6 million increase over balanced budget",
+   "figures_as_printed": [
+    "$1.6 mil"
+   ],
+   "quote": "core budget also approved (at tri board): restores wl teacher, bridge program and para; lose interventionist at middle school and high school. ($1.6 mil increase over balanced budget)"
+  },
+  {
+   "topic": "Restoration Budget",
+   "what_was_recorded": "Restoration budget approved returning all positions with $1.9 million increase over balanced budget",
+   "figures_as_printed": [
+    "$1.9 mil"
+   ],
+   "quote": "restoration budget - returns all positions. no reductions ($1.9 mil increase over balanced budget)"
+  },
+  {
+   "topic": "Tiered Budget Options",
+   "what_was_recorded": "Select Board considering tiered budget options at $2.5 million and $3.3 million including town portion",
+   "figures_as_printed": [
+    "$2.5 mil",
+    "$3.3 mil"
+   ],
+   "quote": "$2.5 mil / $3.3 mil including town"
+  },
+  {
+   "topic": "Athletic Fees",
+   "what_was_recorded": "Athletic fees increased to $400 per student",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "increase of athletic fees to $400 per student"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Budget Update",
+   "resolution": "discussed; multiple budget scenarios presented",
+   "tags": [
+    "budget",
+    "school finance"
+   ],
+   "quote": "budget update - a. school comm has approved a balanced budget ($989,000 under)"
+  },
+  {
+   "topic": "LHS Handbook",
+   "resolution": "members directed to review and submit suggestions",
+   "tags": [
+    "school policies",
+    "handbook review"
+   ],
+   "quote": "lhs handbook - in the shared drive. please look and submit change suggestions to tim."
+  },
+  {
+   "topic": "Course Registration Update",
+   "resolution": "registrations nearly complete; process proceeding",
+   "tags": [
+    "course registration",
+    "academic planning"
+   ],
+   "quote": "course registration update a. program of studies was approved by sc; course registration options were sent out for students."
+  },
+  {
+   "topic": "Work-Based Learning Program",
+   "resolution": "enrollment discussed; guidelines to be revised next year",
+   "tags": [
+    "career readiness",
+    "DESE program"
+   ],
+   "quote": "work based learning dese program w/masshire a. originally planned for at-risk students or for credit recovery"
+  },
+  {
+   "topic": "Senior Schedule Update",
+   "resolution": "graduation events and dates confirmed",
+   "tags": [
+    "graduation",
+    "senior class"
+   ],
+   "quote": "senior schedule update a. adjustment to the senior week schedule in order to remain in compliance with the count of days between seniors' last day and graduation"
+  },
+  {
+   "topic": "Feedback for Spring Parent/Teacher Conference",
+   "resolution": "feedback collected; suggestions recorded for consideration",
+   "tags": [
+    "parent engagement",
+    "school operations"
+   ],
+   "quote": "feedback for spring parent/teacher conference a. scheduled day ended up being online appointments due to the snow"
+  }
+ ],
+ "tags": [
+  "school advisory council",
+  "budget",
+  "administrative update",
+  "graduation",
+  "course registration",
+  "parent engagement"
+ ],
+ "dropped_unquoted_by_field": {}
 }

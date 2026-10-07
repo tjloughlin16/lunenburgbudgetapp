@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2025-11-03",
  "docid": "7482",
@@ -12,23 +12,249 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from October 20, 2025",
+   "motion": "Approve the minutes of October 20, 2025.",
    "moved_by": "Tony Sculimbrene",
    "seconded_by": "Greg Roy",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimously; no tally printed)",
    "procedural": true,
    "quote": "motion to approve: tony sculimbrene seconded by: greg roy. minutes approved unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Laura Brzozoski",
    "seconded_by": "Anthony Sculimbrene",
-   "outcome": "Unanimous",
+   "outcome": "passed (Unanimous)",
    "procedural": true,
    "quote": "motion to adjourn: laura brzozoski, seconded by anthony sculimbrene. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clean text with readable votes recorded.",
- "cost_usd": 0.0603864
+ "note": "Text is complete across three pages, with no scan or missing pages. Two procedural motions were recorded with results (minutes approval and adjournment); no substantive votes were taken. The minutes print no dollar figures, so budget_items carry only qualitative money references. The Chair is never named in the minutes, so the Chair role is not attributed to anyone. The minutes call Anthony Sculimbrene \"Tony\" in the motion and action items. Chris Ruth's status is inferred from his listing under Town Employees. \"Jennifer\" is named in an action item without an attendance line and is not listed as an attendee. Page 2 contains an empty numbered item \"4.\" in the concept list.",
+ "cost_usd": 0.01482117,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculimbrene, matthew brenner, laura brzozoski"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculimbrene, matthew brenner, laura brzozoski"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member; called the meeting to order",
+   "status": "present",
+   "quote": "the meeting was called to order at 5:33 pm by david blatt."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculimbrene, matthew brenner, laura brzozoski"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Member (also referred to as Tony)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculimbrene, matthew brenner, laura brzozoski"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculimbrene, matthew brenner, laura brzozoski"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculimbrene, matthew brenner, laura brzozoski"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: kristina masaitis"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Town Employee",
+   "status": "present",
+   "quote": "town employees: chris ruth"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members agreed they are not prepared to present substantive material at the November 18 Town Meeting and prefer to wait for the May Town Meeting.",
+   "quote": "members agreed they are not prepared to present substantive material in november and prefer to wait until the may town meeting"
+  },
+  {
+   "decision": "Committee generally agrees Brooks House is outside the primary scope of the committee's current work; formation of a separate committee to study reuse/disposition with 925 Mass Ave to be considered.",
+   "quote": "committee generally agrees brooks house is outside the primary scope of lmbdc's current work."
+  },
+  {
+   "decision": "Strong consensus that chairlifts are not acceptable; a full multi-stop elevator is required.",
+   "quote": "strong consensus that chairlifts are not acceptable. a full multi-stop elevator is required."
+  },
+  {
+   "decision": "Committee reaffirmed its preference for a full multi-stop elevator.",
+   "quote": "committee reaffirmed its preference for a full multi-stop elevator."
+  },
+  {
+   "decision": "Chris and Tony to measure Town Hall ceiling heights and stair geometry.",
+   "quote": "chris and tony to measure ceiling heights and stair geometry."
+  },
+  {
+   "decision": "Chris to verify load-bearing walls, inspect the floor deck, and confirm whether floors are concrete or wood deck at the Ritter Building.",
+   "quote": "chris to verify load-bearing walls, inspect floor deck (carpet test patch), and confirm whether"
+  },
+  {
+   "decision": "Seek conceptual options from the architect/engineer for elevator placement and circulation.",
+   "quote": "seek conceptual options from architect/engineer for elevator placement and circulation."
+  },
+  {
+   "decision": "Greg to share elevation survey data.",
+   "quote": "greg to share elevation survey data."
+  },
+  {
+   "decision": "Chair to re-circulate the Taylor & Burns report; members to request dimensioned plans.",
+   "quote": "chair to re-circulate report; members to request dimensioned plans."
+  },
+  {
+   "decision": "Committee requested a clear program-of-space and adjacency (bubble diagram) to determine essential vs. desired square footage.",
+   "quote": "committee requested a clear program-of-space and adjacency (\"bubble diagram\") to"
+  },
+  {
+   "decision": "Jennifer and Chris to coordinate the bubble diagram and program summary before the next meeting.",
+   "quote": "jennifer and chris to coordinate bubble diagram and program summary before the next"
+  },
+  {
+   "decision": "Consider recommending formation of a separate committee to study reuse/disposition of Brooks House along with 925 Mass Ave (former gas station).",
+   "quote": "consider recommending formation of a separate committee to study reuse/disposition along"
+  },
+  {
+   "decision": "Next meeting proposed for Monday, November 17, 2025 at 5:30 PM; a shorter meeting on the 17th is acceptable; the Chair will confirm and distribute the agenda.",
+   "quote": "next meeting proposed date: monday, november 17, 2025 at 5:30 pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Off-site new build",
+   "what_was_recorded": "Exploring an off-site new build is not off the table but is considered politically and financially unlikely; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "exploring an off-site new build is not off the table but considered politically and financially unlikely."
+  },
+  {
+   "topic": "Cost estimation and drawings",
+   "what_was_recorded": "Drawings lacked square footage and full dimensions, which are necessary for space programming and future cost estimation; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "drawings lacked square footage and full dimensions. these are necessary for space programming and future cost estimation."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of October 20, 2025 minutes",
+   "resolution": "approved unanimously",
+   "quote": "minutes from october 20, 2025, were reviewed. motion to approve: tony sculimbrene",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment offered",
+   "quote": "no public comments were offered.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "November 18 Town Meeting warrant article",
+   "resolution": "no substantive presentation; defer to May Town Meeting",
+   "quote": "the committee discussed the warrant article for the upcoming november 18 town meeting, which lists a potential presentation.",
+   "tags": [
+    "town meeting",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Site visit summaries: Town Hall and Ritter Building",
+   "resolution": "summaries given; measurements and verification assigned",
+   "quote": "committee members provided summaries of site visits to town hall, the ritter building.",
+   "tags": [
+    "site visit",
+    "Town Hall",
+    "Ritter Building",
+    "ADA"
+   ]
+  },
+  {
+   "topic": "Brooks House scope and disposition",
+   "resolution": "generally outside primary scope; possible separate committee",
+   "quote": "committee generally agrees brooks house is outside the primary scope of lmbdc's current work.",
+   "tags": [
+    "Brooks House",
+    "disposition",
+    "925 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Taylor & Burns report and concept plans",
+   "resolution": "report to be re-circulated; dimensioned plans requested",
+   "quote": "chair shared the taylor & burns report and existing floor plans for town hall and ritter.",
+   "tags": [
+    "Taylor & Burns",
+    "concept plans",
+    "space program"
+   ]
+  },
+  {
+   "topic": "Elevator placement and conceptual approaches",
+   "resolution": "multi-stop elevator preference reaffirmed; conceptual options sought",
+   "quote": "committee reaffirmed its preference for a full multi-stop elevator.",
+   "tags": [
+    "elevator",
+    "ADA",
+    "circulation"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "proposed for November 17, 2025; shorter meeting acceptable",
+   "quote": "next meeting proposed date: monday, november 17, 2025 at 5:30 pm",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously at 7:11 PM",
+   "quote": "meeting adjourned at 7:11 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "design committee",
+  "Town Hall",
+  "Ritter Building",
+  "Brooks House",
+  "elevator",
+  "ADA",
+  "site visits",
+  "Taylor & Burns",
+  "Town Meeting",
+  "no dollar figures"
+ ],
+ "dropped_unquoted_by_field": {}
 }

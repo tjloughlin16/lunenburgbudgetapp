@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2026-04-07",
  "docid": "7753",
@@ -12,6 +12,107 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. These minutes contain reports from the building inspector and DPW, discussion of survey items, recognition of repairs, and a list of historic sites to mark, but no motions were voted on. The meeting simply adjourned with no motion or vote recorded for adjournment.",
- "cost_usd": 0.0576514
+ "note": "No votes recorded. Meeting duration: 7:02 PM to 7:22 PM (20 minutes). No budget items or financial matters discussed.\"",
+ "cost_usd": 0.0962306,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "members mcgrath, lakso and boussom were in attendance."
+  },
+  {
+   "name": "Lakso",
+   "role": "Member",
+   "status": "present",
+   "quote": "members mcgrath, lakso and boussom were in attendance."
+  },
+  {
+   "name": "Boussom",
+   "role": "Member",
+   "status": "present",
+   "quote": "members mcgrath, lakso and boussom were in attendance."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "DPW",
+   "status": "present",
+   "quote": "todd holman of the dpw reported that no response has been received from the owner of the arnold litch property."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Proceeding with digging for the wall at Goodrich cemetery starting the following week",
+   "quote": "they do have plans to begin digging for the wall at the goodrich cemetery starting next week."
+  },
+  {
+   "decision": "Finalized list of historic sites to be marked: Dickinson House, Houston House, Buttonwood tree, and the site of the mill at the end of Holman street on the Mulpus river",
+   "quote": "a final list of important historic sites to be marked includes the dickinson house, the houston house, the buttonwood tree, and the site of the mill at the end of holman street on the mulpus river."
+  },
+  {
+   "decision": "Repair of the Leominster Road stone directional marker with lettering repainted, brush cleared, and crushed gravel laid",
+   "quote": "chairman mcgrath donated time and materials towards the repair of the leominster road stone directional marker. the lettering was repainted, brush was cleared, and new crushed gravel was laid around the marker."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "763 MA Ave construction project",
+   "resolution": "Reported as under construction for duplex conversion with townhouses planned",
+   "quote": "an update from the building inspector regarding 763 ma ave reports that the building is under construction to be converted to a duplex. this will be followed by two additional townhouses being built on the front lot.",
+   "tags": [
+    "property development",
+    "update"
+   ]
+  },
+  {
+   "topic": "Arnold Litch property and Goodrich cemetery wall",
+   "resolution": "No response from owner; plans to begin digging for wall",
+   "quote": "todd holman of the dpw reported that no response has been received from the owner of the arnold litch property. they do have plans to begin digging for the wall at the goodrich cemetery starting next week.",
+   "tags": [
+    "cemetery",
+    "ongoing"
+   ]
+  },
+  {
+   "topic": "Town Survey discrepancies",
+   "resolution": "Two items noted requiring correction",
+   "quote": "two items of question on the town survey included 389 sunnyhill road, which was highlighted as 370. the town bandstand was also reported as being built in 1905, however the current bandstand is not the original, and was most likely built much later on.",
+   "tags": [
+    "survey",
+    "corrections"
+   ]
+  },
+  {
+   "topic": "Leominster Road stone directional marker repair",
+   "resolution": "Completed by Chairman McGrath",
+   "quote": "chairman mcgrath donated time and materials towards the repair of the leominster road stone directional marker. the lettering was repainted, brush was cleared, and new crushed gravel was laid around the marker.",
+   "tags": [
+    "marker",
+    "restoration",
+    "completed"
+   ]
+  },
+  {
+   "topic": "Historic sites to be marked",
+   "resolution": "Final list approved for marking",
+   "quote": "a final list of important historic sites to be marked includes the dickinson house, the houston house, the buttonwood tree, and the site of the mill at the end of holman street on the mulpus river.",
+   "tags": [
+    "historic preservation",
+    "sites"
+   ]
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "property development",
+  "cemetery",
+  "survey corrections",
+  "marker restoration"
+ ],
+ "dropped_unquoted_by_field": {}
 }

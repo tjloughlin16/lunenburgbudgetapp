@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2026-04-09",
  "docid": "7761",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes from March 12, 2026",
+   "motion": "Approve meeting minutes from March 12, 2026",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
    "outcome": "passed unanimously",
@@ -20,15 +20,15 @@
    "quote": "chairman bowen made a motion to approve the meeting minutes from march 12, 2026. the motion was seconded by mr howard, the motion was passed unanimously."
   },
   {
-   "motion": "Submit all information as written as an addendum to the formal breach notice and submission packet",
+   "motion": "Submit information as addendum to formal breach notice and submission packet from March 26, 2026",
    "moved_by": "Chairman Bowen",
-   "seconded_by": "",
+   "seconded_by": "not stated",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "chairman bowen put forth a motion to submit all information as written as an addendum to the formal breach notice and submission packet we send march 26 to 26th 2026. the vote on the motion was mr howard 'aye' and chairman bowen 'aye'. the motion passed unanimously."
   },
   {
-   "motion": "Accept the letter to the Attorney General Public Charities division regarding the addendum to the formal breach notice",
+   "motion": "Accept letter to Attorney General Public Charities division regarding breach notice addendum and school department obstruction",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
    "outcome": "passed unanimously",
@@ -36,15 +36,15 @@
    "quote": "chairman bowen put forth a motion to be able to accept the letter to the office of the attorney general public charities division with regard to our submission or transmittal of the addendum to formal breach notice affirmative municipal refusal to cure and further obstruction by the school department. mr howard seconded the motion. the vote was mr howard 'aye', chairman bowen 'aye'. the motion passes unanimously"
   },
   {
-   "motion": "Accept and send the letter to the Town Manager, Select Board, Superintendent Fortuna and members of the Lunenburg School Committee in its entirety as written",
+   "motion": "Accept and send letter to Town Manager, Select Board, Superintendent Fortuna, and School Committee regarding scholarships and trust fund oversight",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "chairman bowen put forth a motion to accept and send the letter, as summarized above, to the town manager, select board, supt, fortuna and members of the lunenburg school committee in its entirety as written. mr howard seconded the motion with the correction of october 2024 referenced on page 1 of the document being changed to october 2025.. the motion passed unanimously with mr howard voting 'aye' and chairman bowen voting 'aye'."
+   "quote": "chairman bowen put forth a motion to accept and send the letter, as summarized above, to the town manager, select board, supt, fortuna and members of the lunenburg school committee in its entirety as written. mr howard seconded the motion with the correction of october 2024 referenced on page 1 of the document being changed to october 2025.. the motion passed unanimously"
   },
   {
-   "motion": "Send the letter to Senator Cronin",
+   "motion": "Send letter to Senator Cronin requesting support in addressing breach filing via legislative inquiry and coordination with Attorney General",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
    "outcome": "passed unanimously",
@@ -52,7 +52,7 @@
    "quote": "chairman bowen put forth a motion to send the letter to senator cronin, the motion was seconded by mr howard. the motion passed unanimously with mr howard voting 'aye' and chairman bowen voting 'aye'."
   },
   {
-   "motion": "Allow the Chairman of the Board of Trust Fund Commissioners to write a report and submit to the Town Moderator or other party that would be privy to that information",
+   "motion": "Authorize Chairman of Board of Trust Fund Commissioners to write report and submit to Town Moderator or other authorized party",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
    "outcome": "passed unanimously",
@@ -61,7 +61,7 @@
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn at 6:30 pm",
+   "motion": "Adjourn meeting at 6:30 pm",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
    "outcome": "passed unanimously",
@@ -70,6 +70,135 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1502424
+ "note": "\"\"",
+ "cost_usd": 0.1560676,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Bowen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present were mr howard and chairman bowen"
+  },
+  {
+   "name": "Mr Howard",
+   "role": "Member",
+   "status": "present",
+   "quote": "present were mr howard and chairman bowen"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Warrant article for cy pres investigations and fund modernization",
+   "what_was_recorded": "Seeking approximately $14,000 for investigations necessary to prepare cy pres filings to modernize existing trust fund declarations",
+   "figures_as_printed": [
+    "$14,000"
+   ],
+   "quote": "seeking approximately $14,000 for investigations necessary to prepare cy pres filings to modernize some of the existing fund declarations"
+  },
+  {
+   "topic": "FY2025 Trust Fund Financial Summary",
+   "what_was_recorded": "Trust Fund Commission reported FY2025 financial data from quarterly report as of March 31, 2025, including ending market values and interest/investment income totals",
+   "figures_as_printed": [
+    "$1,454,369.67",
+    "$77,003.93",
+    "$427.93",
+    "$12,489.53",
+    "$22,211.58",
+    "$22,887.22",
+    "$10,725.46",
+    "$8,690.14"
+   ],
+   "quote": "category ending market values (3/31/2025) • miscellaneous funds: $77,003.93 • grand total: $1,454,369.67"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior meeting minutes from March 12, 2026",
+   "resolution": "approved",
+   "quote": "chairman bowen made a motion to approve the meeting minutes from march 12, 2026. the motion was seconded by mr howard, the motion was passed unanimously.",
+   "tags": [
+    "procedural",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Breach notice delivery and addendum to formal breach notice",
+   "resolution": "addendum approved, letters approved for submission",
+   "quote": "chairman bowen provided an update on the breach notice delivered to the town manager, select board and attorney general's office which was discussed at length during the march 26,2026 meeting.",
+   "tags": [
+    "breach-notice",
+    "fiduciary-oversight",
+    "compliance",
+    "attorney-general"
+   ]
+  },
+  {
+   "topic": "Warrant articles for May 2nd Annual Town Meeting",
+   "resolution": "discussed, seeking support",
+   "quote": "chairman bowen updated the public on our efforts to have two warrant articles up for vote during the may 2nd annual town meeting. the first article was to add a bylaw that would allow the trust fund commission to function in the absence of a quorum and the second was seeking approximately $14,000 for investigations necessary to prepare cy pres filings to modernize some of the existing fund declarations.",
+   "tags": [
+    "warrant-articles",
+    "governance",
+    "funding",
+    "procedures"
+   ]
+  },
+  {
+   "topic": "School scholarships and trust fund oversight issues",
+   "resolution": "formal demand letter approved and authorized for sending",
+   "quote": "chairman bowen then discussed the issue of scholarships under control of the school department and their lack of responsiveness to request for information.",
+   "tags": [
+    "school-scholarships",
+    "trust-funds",
+    "fiduciary-oversight",
+    "compliance",
+    "school-department"
+   ]
+  },
+  {
+   "topic": "FY2025 Annual Report review",
+   "resolution": "reviewed",
+   "quote": "the trust fund commission reviewed the annual report. town of lunenburg, massachusetts trust fund commission - annual report for fiscal year 2025",
+   "tags": [
+    "annual-report",
+    "financial-reporting",
+    "trust-funds"
+   ]
+  },
+  {
+   "topic": "Authorization for Chairman to write detailed activity report",
+   "resolution": "approved",
+   "quote": "chairman bowen put forth a motion to allow the chairman of the board of trust fund commissioners to write a report and submit to the town moderator or other party that ===page 6=== would be privy to that",
+   "tags": [
+    "governance",
+    "reporting"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved",
+   "quote": "chairman bowen made a motion to adjourn at 6:30pm. the motion was seconded by mr howard, motion passed unanimously.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "trust-funds",
+  "breach-notice",
+  "fiduciary-oversight",
+  "school-scholarships",
+  "warrant-articles",
+  "governance",
+  "compliance",
+  "attorney-general",
+  "cy-pres"
+ ],
+ "dropped_unquoted_by_field": {}
 }

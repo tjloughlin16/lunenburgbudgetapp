@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-01-12",
  "docid": "7597",
@@ -12,24 +12,483 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the Select Board meeting",
-   "moved_by": "Member Lehtinen",
-   "seconded_by": "Clerk Emkey",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion by member lehtinen to adjourn the select board meeting at 9:53 p.m. seconded by clerk emkey. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
-  },
-  {
-   "motion": "Adjourn the Finance Committee meeting",
+   "motion": "to adjourn the Finance Committee meeting",
    "moved_by": "Member Simeone",
    "seconded_by": "Member Rupp",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously (4-0-0)",
    "procedural": true,
    "quote": "motion by member simeone to adjourn the finance committee meeting at 9:30 p.m. seconded by member rupp. call for the vote: four-aye. the motion passed unanimously (4- 0-0)",
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09824039999999999
+ "dropped_unquoted": 1,
+ "note": "\"\"",
+ "cost_usd": 0.23814839999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee Chair",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, member tanya dall, member jay simeone and member mike rupp"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Finance Committee Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, member tanya dall, member jay simeone and member mike rupp"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, member tanya dall, member jay simeone and member mike rupp"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Finance Committee Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, member tanya dall, member jay simeone and member mike rupp"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Finance Committee Member",
+   "status": "absent",
+   "quote": "(absent: jean russell, tom gray, and ana lockwood)"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Finance Committee Member",
+   "status": "absent",
+   "quote": "(absent: jean russell, tom gray, and ana lockwood)"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Finance Committee Member",
+   "status": "absent",
+   "quote": "(absent: jean russell, tom gray, and ana lockwood)"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Kara McCarthy",
+   "role": "Communications and IT Manager",
+   "status": "present",
+   "quote": "she introduced kara mccarthy, the communications and it manager to field questions if needed."
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Select Board Chair",
+   "status": "present",
+   "quote": "select board members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Select Board Vice-Chair",
+   "status": "present",
+   "quote": "select board members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Select Board Clerk",
+   "status": "present",
+   "quote": "select board members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "select board members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "select board members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, member glenn mcleod"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "School Committee Chair",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, and secretary mandy gilman"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "School Committee Vice-Chair",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, and secretary mandy gilman"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "School Committee Secretary",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, and secretary mandy gilman"
+  },
+  {
+   "name": "Emily Young",
+   "role": "School Committee Member",
+   "status": "absent",
+   "quote": "(absent: emily young and george yapp)"
+  },
+  {
+   "name": "George Yapp",
+   "role": "School Committee Member",
+   "status": "absent",
+   "quote": "(absent: emily young and george yapp)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Finance Committee and other boards agreed to hold next joint meeting on Monday, February 9, 2026 at 7:00 PM at the school",
+   "quote": "the tri-board agreed to hold its next joint meeting on monday, february 9, 2026 at 7:00 pm, to be held at the school (middle/high school)"
+  },
+  {
+   "decision": "Town Manager indicated she would terminate the ClearGov contract in the current fiscal year pending conversation with incoming Finance Director",
+   "quote": "she indicated she would likely terminate the contract in the current fiscal year, pending a conversation with the incoming finance director. she noted hearing no real opposition from those present to cutting cleargov."
+  },
+  {
+   "decision": "Town Manager confirmed she had already requested all departments prepare 5% budget cuts",
+   "quote": "town manager warren-dyment confirmed she had already issued a similar request to lunenburg departments"
+  },
+  {
+   "decision": "Formalize four-day on-site IT vendor schedule in FY27 with aspiration to reduce to three days",
+   "quote": "she had already reduced on-site presence to four days per week as of january and stated she intended to formalize a four-day schedule in fy27, with an aspiration to reduce to three days."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Select Board budget",
+   "what_was_recorded": "Select Board budget presented at approximately $180,000 with $160,000 driven by staff costs",
+   "figures_as_printed": [
+    "$180,000",
+    "$160,000"
+   ],
+   "quote": "the select board budget at approximately $180,000, noting that $160,000 of that figure was driven by staff costs"
+  },
+  {
+   "topic": "Town Manager budget",
+   "what_was_recorded": "Town Manager budget presented at approximately $305,000, nearly fifty-fifty split between salaries and expenses",
+   "figures_as_printed": [
+    "$305,000"
+   ],
+   "quote": "the town manager's budget was presented at approximately ===page 2=== tri board meeting minutes january 12, 2026 page 2 of 11 $305,000, ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Assistant Town Manager position",
+   "what_was_recorded": "New Assistant Town Manager position would be half-year expense at $60,000, full annual salary estimated at $120,000",
+   "figures_as_printed": [
+    "$60,000",
+    "$120,000"
+   ],
+   "quote": "the position would not be funded until january 1, making it a half-year expense of approximately $60,000, with the full salary estimated at $120,000."
+  },
+  {
+   "topic": "Select Board contracted services",
+   "what_was_recorded": "Select Board contracted services line increased from $6,000 to $13,500 to provide room for unforeseen contracted needs",
+   "figures_as_printed": [
+    "$6,000",
+    "$13,500"
+   ],
+   "quote": "the primary driver was an increase in the contracted services line, from $6,000 to $13,500, to provide room for unforeseen contracted needs."
+  },
+  {
+   "topic": "Finance Department budget FY26",
+   "what_was_recorded": "Finance Department budgeted at $323,000 for FY26 and required $160,000 supplemental appropriation at Special Town Meeting",
+   "figures_as_printed": [
+    "$323,000",
+    "$160,000"
+   ],
+   "quote": "the department, which had been budgeted at $323,000 for fy26, had required a $160,000 supplemental appropriation at a special town meeting"
+  },
+  {
+   "topic": "Audit cost",
+   "what_was_recorded": "Audit cost historically under-budgeted at $40,000; actual FY27 audit cost expected to be $65,000",
+   "figures_as_printed": [
+    "$40,000",
+    "$65,000"
+   ],
+   "quote": "the audit cost had been historically under-budgeted at $40,000, with the actual fy27 audit cost expected to be $65,000"
+  },
+  {
+   "topic": "Treasurer/Collector salary increases",
+   "what_was_recorded": "Request to increase two staff positions from 36 to 40 hours per week, resulting in $15,000 increase in Treasurer budget and $10,000 in Collector budget",
+   "figures_as_printed": [
+    "$15,000",
+    "$10,000"
+   ],
+   "quote": "a request to increase two staff positions from 36 hours to 40 hours per week, a level that had previously been supported by arpa funds. she stated that this change was being requested t",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Information Technology budget",
+   "what_was_recorded": "IT budget in FY26 approximately $500,000; preliminary FY27 budget represented increase of approximately $90,000",
+   "figures_as_printed": [
+    "$500,000",
+    "$90,000"
+   ],
+   "quote": "the it budget in fy26 had been approximately $500,000, and that the preliminary fy27 budget represented an increase of approximately $90,000"
+  },
+  {
+   "topic": "Munis software upgrade",
+   "what_was_recorded": "Town upgraded Munis in December at total cost of $108,000, with $61,000 from operations and remainder offset by ARPA funds",
+   "figures_as_printed": [
+    "$108,000",
+    "$61,000"
+   ],
+   "quote": "the town had upgraded munis in december of the prior year at a total cost of $108,000, offset by arpa funds, with $61,000 coming from operations."
+  },
+  {
+   "topic": "Town Clerk budget",
+   "what_was_recorded": "Town Clerk budget of $143,000 with $15,000 increase primarily for election costs in FY27 election year",
+   "figures_as_printed": [
+    "$143,000",
+    "$15,000"
+   ],
+   "quote": "the budget of $143,000 was described as largely salary-driven. she noted the town clerk is an elected position overseeing an assistant town ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Finance Committee budget",
+   "what_was_recorded": "Finance Committee budget reduced by $475 reflecting realignment of training and event funds; reserve maintained at $185,000",
+   "figures_as_printed": [
+    "$475",
+    "$185,000"
+   ],
+   "quote": "the finance committee budget was reduced by $475, reflecting a realignment of training and event funds to actual usage. the finance committee reserve was maintained at $185,000"
+  },
+  {
+   "topic": "Salary Reserve",
+   "what_was_recorded": "Salary Reserve presented at $210,000 as placeholder pending union contract negotiations",
+   "figures_as_printed": [
+    "$210,000"
+   ],
+   "quote": "the salary reserve was presented at $210,000, which she characterized as a placeholder at this stage."
+  },
+  {
+   "topic": "Town Report line",
+   "what_was_recorded": "Town Report line increased from $7,000 to $16,000 to cover annual report, town meeting booklet, and special meeting materials",
+   "figures_as_printed": [
+    "$7,000",
+    "$16,000"
+   ],
+   "quote": "the town report line was increased from $7,000 to $16,000, with town manager warren-dyment clarifying that this figure covered not only the annual town report but also the printing costs for the annual town meeting booklet"
+  },
+  {
+   "topic": "Central Purchasing",
+   "what_was_recorded": "Central Purchasing saw minor increase of approximately $1,500",
+   "figures_as_printed": [
+    "$1,500"
+   ],
+   "quote": "central purchasing saw a minor increase of approximately $1,500."
+  },
+  {
+   "topic": "Land Use Department permit fees FY26",
+   "what_was_recorded": "Building permit fees tracking at $325,000; electrical $420,000; plumbing $140,000; gas $120,000",
+   "figures_as_printed": [
+    "$325,000",
+    "$420,000",
+    "$140,000",
+    "$120,000"
+   ],
+   "quote": "permit fee activity for fy26 was tracking at approximately the historical average: roughly $325,000 in building permit fees, $420,000 in electrical, $140,000 in plumbing, and $120,000 in gas."
+  },
+  {
+   "topic": "Planning Director salary increase",
+   "what_was_recorded": "Director of Planning and Economic Development salary increased from $106,000 to $112,000",
+   "figures_as_printed": [
+    "$106,000",
+    "$112,000"
+   ],
+   "quote": "the director of planning and economic development, a retitled version of the former land use director, would see a salary increase from $106,000 to $112,000."
+  },
+  {
+   "topic": "Total preliminary FY27 revenues",
+   "what_was_recorded": "Total preliminary revenues for FY27 projected at $51,331,000 with 71% driven by property taxes",
+   "figures_as_printed": [
+    "$51,331,000"
+   ],
+   "quote": "total preliminary revenues for fy27 were projected at $51,331,000, with 71% driven by property taxes"
+  },
+  {
+   "topic": "New revenue available FY27",
+   "what_was_recorded": "Approximately $1,306,059 in new revenue available for FY27 after subtracting non-appropriated expenses and capital contribution",
+   "figures_as_printed": [
+    "$1,306,059"
+   ],
+   "quote": "subtracting the total fy26 appropriations from the omnibus budget left $1,306,059 in new revenue available for fy27 for all purposes"
+  },
+  {
+   "topic": "Revenue apportionment",
+   "what_was_recorded": "School approximately $696,521 above FY26; town approximately $573,000; Monty Tech approximately $36,000",
+   "figures_as_printed": [
+    "$696,521",
+    "$573,000",
+    "$36,000"
+   ],
+   "quote": "the school department would receive approximately $696,521 of that amount above fy26 levels, the town would receive approximately $573,000, and monty tech would receive approximately $36,000."
+  },
+  {
+   "topic": "Health insurance increases",
+   "what_was_recorded": "School department health insurance increase FY27 approximately $740,000; town health insurance increase approximately $480,000",
+   "figures_as_printed": [
+    "$740,000",
+    "$480,000"
+   ],
+   "quote": "the school department's projected health insurance increase for fy27 was approximately $740,000, and the town's projected health ===page 8=== tri board meeting minutes january",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Fire Department fourth shift request",
+   "what_was_recorded": "Fire Department requested fourth shift estimated at approximately $500,000",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "a request from the fire department for a fourth shift, estimated at approximately $500,000"
+  },
+  {
+   "topic": "New growth estimate",
+   "what_was_recorded": "New growth for FY27 estimated by Board of Assessors at $400,000; FY25 actual came in at $518,000",
+   "figures_as_printed": [
+    "$400,000",
+    "$518,000"
+   ],
+   "quote": "new growth for fy27 had been estimated by the board of assessors at $400,000, following a process that included consultation with building commissioner gingras. she noted that fy25 actual new growth had come in at $518,000"
+  },
+  {
+   "topic": "State aid",
+   "what_was_recorded": "FY26 state aid actuals $11,244,422 including Chapter 70 education aid, unrestricted government aid, school choice, library aid, and veterans benefits",
+   "figures_as_printed": [
+    "$11,244,422"
+   ],
+   "quote": "current fy26 state aid actuals of $11,244,422, which included chapter 70 education aid, unrestricted government aid, school choice, library aid, and veterans' benefits."
+  },
+  {
+   "topic": "Investment income",
+   "what_was_recorded": "FY25 investment income projection $100,000 against actuals approximately $414,000",
+   "figures_as_printed": [
+    "$100,000",
+    "$414,000"
+   ],
+   "quote": "investment income had significantly outperformed projections in recent years, with an fy25 projection of $100,000 against actuals of approximately $414,000."
+  },
+  {
+   "topic": "Non-appropriated expenses",
+   "what_was_recorded": "Approximately $1,400,000 in non-appropriated expenses including state assessments, school choice pass-through, overlay, and tax title line",
+   "figures_as_printed": [
+    "$1,400,000"
+   ],
+   "quote": "approximately $1,400,000 in non-appropriated expenses (including state assessments taken off the top, school choice and library state aid pass-throughs, overlay, and the newly repositioned tax title line)"
+  },
+  {
+   "topic": "Pay-as-you-go capital contribution",
+   "what_was_recorded": "Pay-as-you-go capital contribution referenced at $244,000 from prior year",
+   "figures_as_printed": [
+    "$244,000"
+   ],
+   "quote": "as well as a pay-as-you-go capital contribution (referenced at $244,000 in the prior year)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Preliminary Budget Presentation - General Government and Town Administration",
+   "resolution": "Discussed and presented",
+   "tags": [
+    "Budget",
+    "FY27",
+    "General Government",
+    "Town Clerk",
+    "IT",
+    "Legal"
+   ],
+   "quote": "preliminary budget presentation under the following categories: general government, unclassified, debt service, intergovernmental"
+  },
+  {
+   "topic": "Property Tax and Levy Calculation",
+   "resolution": "Discussed",
+   "tags": [
+    "Revenue",
+    "Levy",
+    "Property Tax",
+    "Debt Service"
+   ],
+   "quote": "a discussion arose regarding the distinction between excluded debt and non-excluded (inside-the-levy) debt."
+  },
+  {
+   "topic": "New Growth Projections",
+   "resolution": "Estimated at $400,000 for FY27",
+   "tags": [
+    "Revenue",
+    "Growth",
+    "Assessment"
+   ],
+   "quote": "new growth for fy27 had been estimated by the board of assessors at $400,000, following a process that included consultation with building commissioner gingras."
+  },
+  {
+   "topic": "State Aid",
+   "resolution": "Held level pending Governor's budget release",
+   "tags": [
+    "Revenue",
+    "State Aid",
+    "Chapter 70"
+   ],
+   "quote": "she stated her intention to hold this figure level until the governor's budget recommendation was released, anticipated around the time of the massachusetts municipal association conference."
+  },
+  {
+   "topic": "Local Receipts",
+   "resolution": "Held level pending closure of FY25 books",
+   "tags": [
+    "Revenue",
+    "Local Receipts",
+    "Investment Income"
+   ],
+   "quote": "local receipts, which comprise motor vehicle excise, meals tax, fees, fines, licensing and permits, and investment income, were being held level pending closure of fy25 books."
+  },
+  {
+   "topic": "Preliminary FY27 Budget Gap Analysis and Fiscal Crisis",
+   "resolution": "Identified significant gap requiring significant cuts, override, or combination thereof",
+   "tags": [
+    "Budget",
+    "Fiscal Crisis",
+    "Override",
+    "Health Insurance",
+    "Revenue Gap"
+   ],
+   "quote": "if we do not have either significant cuts or an override or a combination thereof… we don't have enough funds to meet our obligations."
+  },
+  {
+   "topic": "Scheduling Next Meeting",
+   "resolution": "Scheduled for February 9, 2026 at 7:00 PM",
+   "tags": [
+    "Administrative",
+    "Scheduling"
+   ],
+   "quote": "the tri-board agreed to hold its next joint meeting on monday, february 9, 2026 at 7:00 pm, to be held at the school (middle/high school)"
+  }
+ ],
+ "tags": [
+  "Budget",
+  "FY27",
+  "Finance Committee",
+  "Tri-Board",
+  "State Aid",
+  "Health Insurance",
+  "Revenue Projections",
+  "Fiscal Crisis",
+  "Override",
+  "Levy",
+  "New Growth",
+  "General Government",
+  "IT"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

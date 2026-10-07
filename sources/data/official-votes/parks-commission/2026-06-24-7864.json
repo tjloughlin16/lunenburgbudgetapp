@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2026-06-24",
  "docid": "7864",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Endorse the draft mission statement of the Recreation Department",
+   "motion": "Endorse the Recreation Department mission statement",
    "moved_by": "M. Mascari",
    "seconded_by": "D. Burns",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "m. mascari moved to endorse the draft mission statement of the recreation department. seconded by d. burns. call for the vote: c. sullivan-aye, d. burns-aye, t. dall-aye, m. mascari."
+   "quote": "m. mascari moved to endorse the draft mission statement of the recreation department. seconded by d. burns. call for the vote: c. sullivan-aye, d. burns-aye, t. dall-aye, m. mascari. the motion passed unanimously (4-0-0)."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting",
    "moved_by": "K. Menard",
    "seconded_by": "T. Dall",
    "outcome": "passed 5-0-0",
@@ -30,6 +30,190 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.14262799999999998
+ "note": "Minutes are clear and complete. Karin Menard arrived at 7:30; the mission statement vote (4-0-0) was taken before her arrival, with 4 members voting aye. Adjournment vote (5-0-0) occurred after her arrival with all 5 members present.",
+ "cost_usd": 0.1127536,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Sullivan",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair chris sullivan, vice-chair dan burns, member tanya dall, member marianne mascari, member karin menard (arrived at 7:30)"
+  },
+  {
+   "name": "Dan Burns",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: chair chris sullivan, vice-chair dan burns, member tanya dall, member marianne mascari, member karin menard (arrived at 7:30)"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair chris sullivan, vice-chair dan burns, member tanya dall, member marianne mascari, member karin menard (arrived at 7:30)"
+  },
+  {
+   "name": "Marianne Mascari",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair chris sullivan, vice-chair dan burns, member tanya dall, member marianne mascari, member karin menard (arrived at 7:30)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair chris sullivan, vice-chair dan burns, member tanya dall, member marianne mascari, member karin menard (arrived at 7:30)"
+  },
+  {
+   "name": "K. Deveau",
+   "role": "Recreation Director",
+   "status": "present",
+   "quote": "k. deveau stated that a few participants have registered for the best soccer program."
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "representing Lunenburg Skate Park",
+   "status": "present",
+   "quote": "anthony caiozzo and greg roy were in attendance as representatives of the lunenburg skate park."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing Lunenburg Skate Park",
+   "status": "present",
+   "quote": "anthony caiozzo and greg roy were in attendance as representatives of the lunenburg skate park."
+  },
+  {
+   "name": "C. Ruth",
+   "role": "Facilities Director",
+   "status": "absent",
+   "quote": "c. sullivan stated that he did not receive a report from c. ruth."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes from May 27, 2026 approval tabled to next meeting",
+   "quote": "c. sullivan stated that the approval of the minutes of may 27, 2026, has been tabled until the next meeting."
+  },
+  {
+   "decision": "C. Sullivan to check if agenda must be posted for volunteer orientation",
+   "quote": "c. sullivan stated that he will check to make sure if an agenda must be posted for the volunteer orientation."
+  },
+  {
+   "decision": "Mission statement does not require Park Commission approval",
+   "quote": "c. sullivan stated that since this is a mission statement for the recreation department, it does not need to be approved by the park commission."
+  },
+  {
+   "decision": "M. Mascari to message C. Ruth and Town Manager for beach house renaming guidance",
+   "quote": "k. menard stated that m. mascari should message c. ruth and the town manager asking for their guidance on how they would like to proceed."
+  },
+  {
+   "decision": "M. Mascari to coordinate with Town Beach Director on ceremony logistics",
+   "quote": "k. menard stated that m. mascari should reach out to the town beach director to coordinate logistics and timing."
+  },
+  {
+   "decision": "C. Sullivan to ask Town Manager about scholarship fund process",
+   "quote": "c. sullivan stated that he will ask the town manager regarding the process to set up a swim lesson/programming scholarship fund."
+  },
+  {
+   "decision": "At next meeting, decide on Open Space Committee representative",
+   "quote": "k. menard stated that at the next park commission meeting, the commission should decide who will be the appointed representative of the open space committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Beach House Renaming Sign",
+   "what_was_recorded": "Sign for beach house renaming ceremony; cost with donation coverage",
+   "figures_as_printed": [
+    "$1,065"
+   ],
+   "quote": "m. mascari stated that the sign would still cost $1,065, and most of the cost would be donated by dillis & roy civil design group, inc., and the rest of the cost of the sign would be funded by the revolving account."
+  },
+  {
+   "topic": "Beach House Renaming Ceremony",
+   "what_was_recorded": "Ceremony budget for memorial renaming, including materials and flowers",
+   "figures_as_printed": [
+    "$1,500"
+   ],
+   "quote": "m. mascari stated that the budget for this is potentially around $1,500."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities Director Update",
+   "resolution": "No report received",
+   "quote": "c. sullivan stated that he did not receive a report from c. ruth.",
+   "tags": [
+    "facilities",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Recreation Director Update",
+   "resolution": "Summer programming update provided; volunteer onboarding date to be scheduled",
+   "quote": "k. deveau stated that a few participants have registered for the best soccer program. k. deveau stated that most of the summer programming will begin in early august due to k. deveau's onboarding.",
+   "tags": [
+    "recreation",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Recreation Department Mission Statement",
+   "resolution": "Endorsed by vote with 4-0-0",
+   "quote": "m. mascari moved to endorse the draft mission statement of the recreation department. seconded by d. burns. call for the vote: c. sullivan-aye, d. burns-aye, t. dall-aye, m. mascari. the motion passed unanimously (4-0-0).",
+   "tags": [
+    "mission statement",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Skate Park Update",
+   "resolution": "Right of entry agreement under review; escrow account funding discussed",
+   "quote": "g. roy stated that the skate park general counsel, town counsel, and the donor of the escrow need to review the finalized right of entry agreement before it is signed and executed by the park commission.",
+   "tags": [
+    "skate park",
+    "permits",
+    "agreements"
+   ]
+  },
+  {
+   "topic": "Beach House Renaming",
+   "resolution": "In progress; ceremony planning underway, sign and materials budgeted",
+   "quote": "m. mascari stated that she is determining the surviving family members of genevieve nass. m. mascari stated that she has outlined the budget for the ceremony and the sign.",
+   "tags": [
+    "beach house",
+    "memorial",
+    "ceremony"
+   ]
+  },
+  {
+   "topic": "Approval of Meeting Minutes",
+   "resolution": "Tabled to next meeting",
+   "quote": "c. sullivan stated that the approval of the minutes of may 27, 2026, has been tabled until the next meeting.",
+   "tags": [
+    "procedural",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Upcoming Meeting Dates",
+   "resolution": "Meetings scheduled for July 22 and August 26, 2026",
+   "quote": "wednesday, july 22, 2026, at 7:00 p.m. wednesday, august 26, 2026, at 7:00 p.m.",
+   "tags": [
+    "meetings",
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "Parks Commission",
+  "Recreation",
+  "Skate Park",
+  "Beach House",
+  "Mission Statement",
+  "Facilities"
+ ],
+ "dropped_unquoted_by_field": {}
 }

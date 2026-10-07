@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2026-05-13",
  "docid": "7802",
@@ -36,7 +36,7 @@
    "quote": "there was a motion to recommend non-purchase of 350 and 356 hollis road by sarah cammer, seconded by brian laffond. all in favor."
   },
   {
-   "motion": "Adjourn the open meeting and enter executive session, not to return to open session after exiting the executive session",
+   "motion": "Adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed",
@@ -44,7 +44,199 @@
    "quote": "there was a motion to adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session by sarah cammer, seconded by brian marple. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Document is OCR-scanned (macOS Vision); OCR quality is good and does not limit reading of the votes recorded.",
- "cost_usd": 0.0725894
+ "dropped_unquoted": 1,
+ "note": "OCR'd minutes (macOS Vision); generally clean. Chronological inconsistency: executive session noted as starting at 8:25 p.m. but open meeting closed at 8:09 p.m., with motion to adjourn and enter executive session coming after. Supplemental bill amounts vary slightly ($11,963 vs $11,964.63). No public comment was recorded.\"",
+ "cost_usd": 0.1247056,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  },
+  {
+   "name": "Karen Barrett",
+   "role": "Finance Director/Town Accountant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  },
+  {
+   "name": "Brian Marple",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Consultant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 17E real estate exemption application was approved by the Board of Assessors",
+   "quote": "the one 17e exemption application was approved by the board of assessors."
+  },
+  {
+   "decision": "The board reviewed, modified and approved the draft job posting and description for Principal Assessor position",
+   "quote": "brian laffond drafted a job posting and description. the board reviewed, modified and approved the draft."
+  },
+  {
+   "decision": "The Board confirms intent to complete cyclicals in-house as much as possible to minimize or eliminate contracted services for that activity",
+   "quote": "the board confirms that they intend to complete cyclicals in-house as much as possible to minimize/eliminate contracted services for that activity."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Motor vehicle commitment processing",
+   "what_was_recorded": "831 motor vehicles processed for commitment 2 of 2026",
+   "figures_as_printed": [
+    "$245,021.38"
+   ],
+   "quote": "the administrative assessing assistant processed motor vehicle commitment 2 of 2026 consisting of 831 motor vehicles totaling $245,021.38."
+  },
+  {
+   "topic": "Prior commitment bill",
+   "what_was_recorded": "Previously signed bill from commitment number 8 of 2025 processed",
+   "figures_as_printed": [
+    "$5.02"
+   ],
+   "quote": "there was 1 bill for commitment number 8 of 2025 totaling $5.02 (previously signed)."
+  },
+  {
+   "topic": "FY26 real estate abatement applications",
+   "what_was_recorded": "27 real estate abatement applications processed, 15 granted and 12 denied",
+   "figures_as_printed": [
+    "$31,197.53"
+   ],
+   "quote": "all fy26 real estate abatement applications have been processed. there was a total of 27 received and 15 of those were granted totaling $31, 197.53",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "FY26 supplemental real estate tax bills",
+   "what_was_recorded": "Supplemental real estate bills prepared for 3 properties",
+   "figures_as_printed": [
+    "$11,963",
+    "$11,964.63"
+   ],
+   "quote": "lynda cajka prepared the fy26 supplemental real estate bills totaling $11,963 consisting of 3 properties."
+  },
+  {
+   "topic": "Motor vehicle excise tax abatements",
+   "what_was_recorded": "64 motor vehicle excise tax abatements received and processed",
+   "figures_as_printed": [],
+   "quote": "in the past month, 64 motor vehicle excise tax abatements were received. all abatements have been processed in munis and are awaiting payment by the tax collector."
+  },
+  {
+   "topic": "FY27 property growth estimates",
+   "what_was_recorded": "FY27 growth estimates for residential, commercial, industrial and personal property",
+   "figures_as_printed": [
+    "$400,000",
+    "$243,542",
+    "$16,924,400",
+    "$124,684"
+   ],
+   "quote": "the fy27 growth was estimated at $400,000. the current growth for commercial and industrial is $243,542 which equates to an assessed value of $16,924,400. the personal property growth is $124,684."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approval of prior executive session minutes",
+   "resolution": "approved",
+   "quote": "there was a motion to approve the executive session minutes of april 8, 2026, by sarah cammer, seconded by brian marple. all in favor.",
+   "tags": [
+    "minutes",
+    "procedural",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Principal Assessor status report on assessments, abatements, and property records",
+   "resolution": "discussed and acted upon",
+   "quote": "there was a motion to approve the notice of commitment totaling $11,964.63 by sarah cammer, seconded by brian marple. all in favor.",
+   "tags": [
+    "assessments",
+    "abatements",
+    "motor vehicle",
+    "property records",
+    "FY2026",
+    "FY2027"
+   ]
+  },
+  {
+   "topic": "Real estate exemption application review",
+   "resolution": "approved",
+   "quote": "the one 17e exemption application was approved by the board of assessors.",
+   "tags": [
+    "exemption",
+    "real estate",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Property purchase decision for 350 and 356 Hollis Road",
+   "resolution": "non-purchase recommended",
+   "quote": "there was a motion to recommend non-purchase of 350 and 356 hollis road by sarah cammer, seconded by brian laffond. all in favor.",
+   "tags": [
+    "property",
+    "purchase decision"
+   ]
+  },
+  {
+   "topic": "Neighborhood review project update",
+   "resolution": "in progress, cyclicals to be completed in-house",
+   "quote": "rena swezey confirms the test-town from vision was enabled. this will allow us to experiment with adjustments without impacting the live data.",
+   "tags": [
+    "neighborhood review",
+    "property assessment",
+    "Vision system"
+   ]
+  },
+  {
+   "topic": "Principal Assessor job posting",
+   "resolution": "approved",
+   "quote": "brian laffond drafted a job posting and description. the board reviewed, modified and approved the draft.",
+   "tags": [
+    "staffing",
+    "personnel",
+    "principal assessor"
+   ]
+  }
+ ],
+ "tags": [
+  "Board of Assessors",
+  "assessments",
+  "abatements",
+  "motor vehicle",
+  "real estate",
+  "personal property",
+  "property records",
+  "tax bills",
+  "exemptions",
+  "FY2026",
+  "FY2027",
+  "neighborhood review",
+  "property growth",
+  "staffing"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

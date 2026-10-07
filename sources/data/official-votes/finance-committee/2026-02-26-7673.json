@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-02-26",
  "docid": "7673",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "To adjourn the meeting",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tanya Dall",
    "outcome": "passed 6-0",
@@ -20,7 +20,434 @@
    "quote": "there was a motion to adjourn by jay simeone, seconded by tanya dall. roll call vote. tom gray aye, mike rupp aye, ana lockwood aye, tanya dall aye, jay simeone aye, chris menard aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "The minutes record presentations on the IT budget and School Department budget, but no votes on those items. The only recorded vote is the motion to adjourn at the end of the meeting.",
- "cost_usd": 0.0654124
+ "dropped_unquoted": 2,
+ "note": "Minutes are complete. One procedural vote recorded (motion to adjourn). Multiple budget line items presented for IT and School departments with FY26 and FY27 figures. No votes on budget approval recorded.\"",
+ "cost_usd": 0.13098959999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk tom gray"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member ana lockwood"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member mike rupp"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent member: vice chair jean russell"
+  },
+  {
+   "name": "Kara McCarthy",
+   "role": "Communications and IT Manager",
+   "status": "present",
+   "quote": "the it budget was presented by the communications and it manager, kara mccarthy"
+  },
+  {
+   "name": "Casey Chisholm",
+   "role": "IT Director",
+   "status": "present",
+   "quote": "and it director, casey chisholm"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "the school department budget was presented by superintendent, dr. jodi fortuna"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair of the School Committee",
+   "status": "present",
+   "quote": "chair of the school committee, anthony sculimbrene"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Manager for Lunenburg Schools",
+   "status": "present",
+   "quote": "business manager for lunenburg schools, christopher mcnamara"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "resident",
+   "status": "present",
+   "quote": "dave rogers, 82 highland street, requests more than a 1-year projected budget."
+  },
+  {
+   "name": "John Bowen",
+   "role": "resident",
+   "status": "present",
+   "quote": "john bowen, 162 highland street, suggests the town look into an increase in the levy limit."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "IT department will not renew ClearGov license",
+   "quote": "the it department will not be renewing the cleargov license which is a savings of $21,000."
+  },
+  {
+   "decision": "Reduction in Suzor support physical in-house days",
+   "quote": "there has been a reduction and savings of $18,000 by reducing the number of days suzor support is physically in-house."
+  },
+  {
+   "decision": "Town Manager to provide Code Red subscriber numbers",
+   "quote": "town manager will provide the committee with the number of subscribers."
+  },
+  {
+   "decision": "Schools to work on transportation contract renewal scheduled for 2028",
+   "quote": "chris menard suggests the schools work on the contract as it is scheduled to be renewed in 2028."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY27 IT Budget Total Request",
+   "what_was_recorded": "Total IT budget request for fiscal year 2027 with breakdown by category",
+   "figures_as_printed": [
+    "$535,459.33",
+    "$59,459.33",
+    "$38,500",
+    "$56,500",
+    "$141,000",
+    "$240,000"
+   ],
+   "quote": "total request for fy27: $535,459.33 - salaries: $59,459.33 - hardware maintenance: $38,500 - telephone charges: $56,500 - contracted services: $141,000 ===page 2=== - purchase of servi",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "ClearGov License Savings",
+   "what_was_recorded": "Savings from not renewing ClearGov software license",
+   "figures_as_printed": [
+    "$21,000"
+   ],
+   "quote": "the it department will not be renewing the cleargov license which is a savings of $21,000."
+  },
+  {
+   "topic": "Suzor Support Reduction Savings",
+   "what_was_recorded": "Savings from reducing the number of days Suzor support is on-site",
+   "figures_as_printed": [
+    "$18,000"
+   ],
+   "quote": "there has been a reduction and savings of $18,000 by reducing the number of days suzor support is physically in-house."
+  },
+  {
+   "topic": "FY27 School Department Budget Total",
+   "what_was_recorded": "Total school department budget request for FY27 with salaries and expenses breakdown",
+   "figures_as_printed": [
+    "$28,454,840",
+    "$18,869,757",
+    "$9,585,084"
+   ],
+   "quote": "total fy27 budget: $28,454,840 salaries: $18,869,757 expenses: $9,585,084"
+  },
+  {
+   "topic": "Title I Federal Entitlement Grant",
+   "what_was_recorded": "Title I grant funding for FY26 actual and FY27 anticipated",
+   "figures_as_printed": [
+    "$209,522",
+    "$145,565"
+   ],
+   "quote": "title i: fy26 $209,522 anticipated: fy27 $145,565"
+  },
+  {
+   "topic": "Title II Federal Entitlement Grant",
+   "what_was_recorded": "Title II grant funding for FY26 actual and FY27 anticipated",
+   "figures_as_printed": [
+    "$35,276",
+    "$24,693"
+   ],
+   "quote": "title ii: fy26 $35,276 anticipated: fy27 $24,693"
+  },
+  {
+   "topic": "Title IV Federal Entitlement Grant",
+   "what_was_recorded": "Title IV grant funding for FY26 actual and FY27 anticipated",
+   "figures_as_printed": [
+    "$14,616",
+    "$10,231"
+   ],
+   "quote": "title iv: fy26 $14,616 anticipated: fy27 $10,231"
+  },
+  {
+   "topic": "240/260 Grant",
+   "what_was_recorded": "240/260 grant funding for FY26 and FY27",
+   "figures_as_printed": [
+    "$437,278",
+    "$437,000"
+   ],
+   "quote": "240/260 grant: fy26 $437,278 anticipated: fy27 $437,000"
+  },
+  {
+   "topic": "Student Opportunity Act Grant",
+   "what_was_recorded": "Student Opportunity Act funding: FY26 received $100,000, FY27 anticipated to be zero",
+   "figures_as_printed": [
+    "$100,000",
+    "$0"
+   ],
+   "quote": "student opportunity act: fy26 $100,000 fy27: $0"
+  },
+  {
+   "topic": "Special Earmarks",
+   "what_was_recorded": "Special earmark funding for FY26 and unknown amount for FY27",
+   "figures_as_printed": [
+    "$370,000"
+   ],
+   "quote": "special earmarks fy26: $370,000 fy27: unknown"
+  },
+  {
+   "topic": "Health Insurance Costs",
+   "what_was_recorded": "Health insurance budget with estimated 9% increase from FY26 to FY27",
+   "figures_as_printed": [
+    "$3,701,195",
+    "$4,341,561"
+   ],
+   "quote": "there is an estimated 9% increase from fy26. the fy26 budgeted amount was $3,701,195 and the fy27 budget is $4,341,561."
+  },
+  {
+   "topic": "Electricity Costs",
+   "what_was_recorded": "Electricity utility budget for FY26 and FY27",
+   "figures_as_printed": [
+    "$265,000",
+    "$316,250"
+   ],
+   "quote": "the fy26 budget for electricity totaled $265,000 and the heating budget totaled $145,000. the fy27 budget for electricity is $316, 250"
+  },
+  {
+   "topic": "Heating Costs",
+   "what_was_recorded": "Heating utility budget for FY26 and FY27",
+   "figures_as_printed": [
+    "$145,000",
+    "$148,320"
+   ],
+   "quote": "the fy26 budget for electricity totaled $265,000 and the heating budget totaled $145,000. the fy27 budget for electricity is $316, 250 and the heating budget is $148,320."
+  },
+  {
+   "topic": "Special Education Transportation",
+   "what_was_recorded": "Special education transportation costs for FY25, FY26 budget, and FY27 budget",
+   "figures_as_printed": [
+    "$434,922",
+    "$565,734",
+    "$649,953"
+   ],
+   "quote": "special education transportation: $434,922 fy26 budget for general education cost: $965,500 budget for special education transportation: $565,734 fy27 budgeted fo",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Staffing Requests - Primary School Interventionist",
+   "what_was_recorded": "Cost for one full-time interventionist to address early literacy and math gaps",
+   "figures_as_printed": [
+    "$72,441"
+   ],
+   "quote": "1 interventionist to address the early literacy and math gaps: $72,441"
+  },
+  {
+   "topic": "Staffing Requests - Kindergarten Paraprofessional",
+   "what_was_recorded": "Cost for one kindergarten paraprofessional position",
+   "figures_as_printed": [
+    "$22,205"
+   ],
+   "quote": "1 kindergarten paraprofessional: $22,205"
+  },
+  {
+   "topic": "Staffing Requests - Turkey Hill Interventionist",
+   "what_was_recorded": "Cost for one interventionist to support at-risk students in math and reading",
+   "figures_as_printed": [
+    "$72,441"
+   ],
+   "quote": "1 interventionist targeted to support students identiﬁed at risk in math and reading: $72,441 ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Staffing Requests - Middle School Interventionist",
+   "what_was_recorded": "Cost for one middle school interventionist for at-risk students",
+   "figures_as_printed": [
+    "$72,441"
+   ],
+   "quote": "1 interventionist targeted to support students identiﬁed at risk in math and reading: $72,441 ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Staffing Requests - High School World Language Teacher",
+   "what_was_recorded": "Cost for one full-time world language teacher",
+   "figures_as_printed": [
+    "$72,441"
+   ],
+   "quote": "1 world language teacher: $72,441"
+  },
+  {
+   "topic": "Staffing Requests - Additional Music Teacher Hours",
+   "what_was_recorded": "Cost for additional hours for the music teacher",
+   "figures_as_printed": [
+    "$28,976"
+   ],
+   "quote": "additional hours for the music teacher: $28,976"
+  },
+  {
+   "topic": "Staffing Requests - High School English Teacher",
+   "what_was_recorded": "Cost for one full-time English teacher",
+   "figures_as_printed": [
+    "$72,441"
+   ],
+   "quote": "1 english teacher: $72,441"
+  },
+  {
+   "topic": "Staffing Requests - Bridge Process Teacher",
+   "what_was_recorded": "Cost for one bridge process teacher",
+   "figures_as_printed": [
+    "$72,441"
+   ],
+   "quote": "1 bridge process teacher: $72,441"
+  },
+  {
+   "topic": "Staffing Requests - Bridge Process Paraprofessional",
+   "what_was_recorded": "Cost for one bridge process paraprofessional",
+   "figures_as_printed": [
+    "$22,205"
+   ],
+   "quote": "1 bridge process paraprofessional: $22,205"
+  },
+  {
+   "topic": "Staffing Requests - Full-time Principal",
+   "what_was_recorded": "Cost to restore one full-time principal position at high school",
+   "figures_as_printed": [
+    "$95,000"
+   ],
+   "quote": "the high school is looking to restore 1 full-time principal budgeted for $95,000."
+  },
+  {
+   "topic": "Staffing Requests - Data Manager and Assistant Business Manager",
+   "what_was_recorded": "Estimated cost for data reporting manager and assistant business manager positions",
+   "figures_as_printed": [
+    "$39,000"
+   ],
+   "quote": "the schools are looking to add a data reporting manager and assistant business manager position estimated to cost $39,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland Street",
+   "topic": "Multi-year budget projection and personnel numbers",
+   "quote": "requests more than a 1-year projected budget. he inquired into the number of new personnel included in the budget."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street",
+   "topic": "Levy limit increase and town investments",
+   "quote": "suggests the town look into an increase in the levy limit. additionally, he states the town should look into investing."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order and Opening",
+   "resolution": "meeting called to order at 7:00 PM",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "the meeting opened at 7:00 pm."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announcements made",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "there is an upcoming town caucus scheduled for march 9th. the next tri-board meeting is scheduled for march 11th."
+  },
+  {
+   "topic": "IT Budget Presentation",
+   "resolution": "presented and discussed",
+   "tags": [
+    "IT",
+    "budget",
+    "FY27"
+   ],
+   "quote": "the it budget was presented by the communications and it manager, kara mccarthy, and it director, casey chisholm"
+  },
+  {
+   "topic": "School Department Budget Presentation",
+   "resolution": "presented and discussed",
+   "tags": [
+    "school",
+    "budget",
+    "FY27",
+    "personnel"
+   ],
+   "quote": "the school department budget was presented by superintendent, dr. jodi fortuna, ===page 3=== chair of the school committee, anthony sculimbrene, and business manager for lunenburg schools, christop",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "School Committee School Choice Enrollment",
+   "resolution": "discussed",
+   "tags": [
+    "school",
+    "enrollment"
+   ],
+   "quote": "dr. jodi fortuna stated that the school committee did open 24 seats this year for school choice. she further states that only 5 students applied."
+  },
+  {
+   "topic": "FY27 Proposition 2½ Override",
+   "resolution": "continued to future meeting",
+   "tags": [
+    "old business",
+    "budget",
+    "override"
+   ],
+   "quote": "a. potential fy27 prop 2 ½ override"
+  },
+  {
+   "topic": "Committee Assignments",
+   "resolution": "to be reviewed in near future",
+   "tags": [
+    "committee operations"
+   ],
+   "quote": "chris menard suggests reviewing and assigning committees in the near future."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "budget",
+  "IT",
+  "school",
+  "FY27",
+  "FY26",
+  "personnel",
+  "capital planning",
+  "closeout",
+  "grants"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1,
+  "topics": 1
+ }
 }

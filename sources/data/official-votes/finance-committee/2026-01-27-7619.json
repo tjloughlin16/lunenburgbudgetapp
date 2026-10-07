@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-01-27",
  "docid": "7619",
@@ -15,12 +15,376 @@
    "motion": "Adjourn the Finance Committee meeting",
    "moved_by": "Member Lockwood",
    "seconded_by": "Member Gray",
-   "outcome": "passed 6-0-0",
+   "outcome": "passed 6-0",
    "procedural": true,
-   "quote": "motion by member lockwood to adjourn the finance committee meeting at 9:30 p.m. seconded by member gray. call for the vote: six-aye."
+   "quote": "motion by member lockwood to adjourn the finance committee meeting at 9:30 p.m. seconded by member gray. call for the vote: six-aye. the motion passed unanimously (6-0- 0)",
+   "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "This Tri-Board meeting (Finance Committee, School Committee, and Select Board) contained extensive discussion of FY27 budget challenges and override options, but no votes on substantive matters were recorded. The only Finance Committee vote recorded is the adjournment motion at the end of the meeting.",
- "cost_usd": 0.07784740000000001
+ "note": "This is a tri-board joint meeting (Finance Committee, School Committee, and Select Board meeting together). The minutes record discussions and decisions of all three boards simultaneously. Most budget discussion and decision-making was done jointly by all three boards rather than by Finance Committee alone.\"",
+ "cost_usd": 0.18862679999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Member",
+   "status": "absent",
+   "quote": "(absent- member mike rupp)"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "School Business Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Town Moderator",
+   "status": "present",
+   "quote": "tri-board moderator: tim murphy, town moderator"
+  },
+  {
+   "name": "Lieutenant Christos Lekaditis",
+   "role": "President of Lunenburg Firefighters Local 5369",
+   "status": "present",
+   "quote": "lieutenant christos lekaditis, president of lunenburg firefighters local 5369, spoke about the critical need for an override"
+  },
+  {
+   "name": "Amy Sabbio",
+   "role": "teacher at Turkey Hill",
+   "status": "present",
+   "quote": "amy sabbio, a teacher at turkey hill, described how her position had been changed from full-time fourth grade special education teacher"
+  },
+  {
+   "name": "Lynn Marabello",
+   "role": "teacher",
+   "status": "present",
+   "quote": "lynn marabello, also a teacher described the impact of reduced mtss staffing on classroom teachers"
+  },
+  {
+   "name": "Jennifer Miller",
+   "role": "17-year employee of the district",
+   "status": "present",
+   "quote": "jennifer miller, a 17-year employee of the district, spoke to the impact of staffing and program cuts at the high school."
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "24-year employee of Lunenburg schools",
+   "status": "present",
+   "quote": "mary foyle, a 24-year employee of lunenburg schools, provided historical context, noting that during the 2008-2009 recession"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next Tri-Board meeting scheduled for Monday, February 9, 2026 at 7:00 PM at the school (Middle/High School)",
+   "quote": "the tri-board agreed to hold its next joint meeting on monday, february 9, 2026 at 7:00 pm, to be held at the school (middle/high school)"
+  },
+  {
+   "decision": "Updated data including FY26 actuals should be shared with all board members",
+   "quote": "the exchange concluded with general agreement that updated data including fy26 actuals should be shared with all board members"
+  },
+  {
+   "decision": "Finance Committee to conduct detailed budget review and validation of departmental requests",
+   "quote": "finance committee member dall noted that the finance committee's role would be to ask detailed questions of each department to validate the numbers"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY27 Total revenues and available appropriation",
+   "what_was_recorded": "Town Manager presented FY27 revenue projections showing total revenues and available funds for appropriation.",
+   "figures_as_printed": [
+    "$51,004,918.00",
+    "$49,805,800"
+   ],
+   "quote": "total revenues were projected at $51,004,918.00. after subtracting non-appropriated expenses and state assessments, and holding the same levy amount appropriated to the capital plan as in the prior year, available funds for appropriation were estimated at $49,805,800."
+  },
+  {
+   "topic": "New FY27 revenue compared to prior year",
+   "what_was_recorded": "Approximately $1,429,364 in new FY27 revenue was identified, an increase of roughly $100,000 from figures presented two weeks prior.",
+   "figures_as_printed": [
+    "$1,429,364",
+    "$100,000"
+   ],
+   "quote": "this yielded approximately $1,429,364 in new fy27 revenue - an increase of roughly $100,000 from figures presented two weeks prior."
+  },
+  {
+   "topic": "Proportional revenue distribution by recipient",
+   "what_was_recorded": "Town Manager presented proportional distribution scenario showing schools would receive 53.3% of new revenue, town 43.9%, and Montachusett Regional Vocational Technical School 2.76%.",
+   "figures_as_printed": [
+    "$762,280",
+    "$627,634",
+    "$39,450"
+   ],
+   "quote": "schools (53.3%) would receive approximately $762,280; the town (43.9%) approximately $627,634; and montachusett regional vocational technical school (2.76%) approximately $39,450."
+  },
+  {
+   "topic": "Monty Tech assessment increase",
+   "what_was_recorded": "Montachusett Regional Vocational Technical School assessment was noted to have increased 8.8%, substantially exceeding its proportional share.",
+   "figures_as_printed": [
+    "$117,438",
+    "8.8%"
+   ],
+   "quote": "last year it represented an 8.8% increase, or approximately $117,438, which would substantially exceed its proportional share."
+  },
+  {
+   "topic": "Health insurance budget driver",
+   "what_was_recorded": "Health insurance costs previously projected at 20% revised to average of 8.3% with high of 14.4% due to removal of GLP-one drugs from coverage.",
+   "figures_as_printed": [
+    "20%",
+    "8.3%",
+    "14.4%"
+   ],
+   "quote": "health insurance: previously projected at 20%, now revised to an average of 8.3% (trust average) with a high of 14.4%, due to the removal of glp-one drugs from coverage"
+  },
+  {
+   "topic": "Retirement benefit increase",
+   "what_was_recorded": "Retirement costs identified as a non-negotiable 10% increase.",
+   "figures_as_printed": [
+    "10%",
+    "$240,000"
+   ],
+   "quote": "retirement: a non-negotiable 10% increase of $240,000"
+  },
+  {
+   "topic": "School transportation increase",
+   "what_was_recorded": "School transportation budget increase identified.",
+   "figures_as_printed": [
+    "$230,000"
+   ],
+   "quote": "school transportation: $230,000 increase"
+  },
+  {
+   "topic": "Fourth shift fire department",
+   "what_was_recorded": "Fourth shift fire department costs identified as major budget driver.",
+   "figures_as_printed": [
+    "$350,000"
+   ],
+   "quote": "fourth shift fire department: $350,000"
+  },
+  {
+   "topic": "Deficit after four major drivers",
+   "what_was_recorded": "After subtracting four major budget drivers from new revenue, Town Manager projected a deficit.",
+   "figures_as_printed": [
+    "$615,000"
+   ],
+   "quote": "after subtracting these four items from the $1,429,364 in new revenue, the town manager projected a deficit of approximately negative $615,000."
+  },
+  {
+   "topic": "Total FY27 deficit from all budget requests",
+   "what_was_recorded": "Full FY27 deficit based on all budget requests received to date, not accounting for utilities, vendor contracts, TCP costs, pavement management, Monty Tech actual assessment, or other increases.",
+   "figures_as_printed": [
+    "$3,000,000"
+   ],
+   "quote": "the full fy27 deficit, based on all budget requests received to date, is slightly north of $3,000,000."
+  },
+  {
+   "topic": "Recycling program cost growth",
+   "what_was_recorded": "Finance Committee Member Lockwood cited recycling program growth from approximately $150,000 at start of COVID to over $500,000 as area for internal efficiency review.",
+   "figures_as_printed": [
+    "$150,000",
+    "$500,000"
+   ],
+   "quote": "the town's recycling program, which she noted had grown from approximately $150,000 at the start of covid to over $500,000"
+  },
+  {
+   "topic": "School choice enrollment revenue decline",
+   "what_was_recorded": "School choice enrollment revenue declined from approximately $500,000 to $112,000 on cherry sheet, identified as area to review.",
+   "figures_as_printed": [
+    "$500,000",
+    "$112,000"
+   ],
+   "quote": "school choice enrollment revenue, which has declined from approximately $500,000 to $112,000 on the cherry sheet."
+  },
+  {
+   "topic": "Mosquito control program assessment",
+   "what_was_recorded": "Town Manager raised possibility of eliminating mosquito control program assessment.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "the possibility of eliminating the mosquito control program assessment (approximately $100,000)"
+  },
+  {
+   "topic": "Tax impact of proposed override",
+   "what_was_recorded": "Finance Committee Member Lockwood noted that a $3,000,000 override would translate to approximately $600 per year in additional taxes on average homeowner.",
+   "figures_as_printed": [
+    "$3,000,000",
+    "$600"
+   ],
+   "quote": "a $3,000,000 override would translate to approximately $600 per year in additional taxes"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Lieutenant Christos Lekaditis",
+   "stated_role": "President of Lunenburg Firefighters Local 5369",
+   "topic": "Fourth shift fire department staffing and override funding",
+   "quote": "lieutenant christos lekaditis, president of lunenburg firefighters local 5369, spoke about the critical need for an override to fund the addition of a fourth shift for the fire department."
+  },
+  {
+   "speaker": "Amy Sabbio",
+   "stated_role": "teacher at Turkey Hill",
+   "topic": "Special education and MTSS position changes and impact on students",
+   "quote": "amy sabbio, a teacher at turkey hill, described how her position had been changed from full-time fourth grade special education teacher to split between special education and an mtss interventionist."
+  },
+  {
+   "speaker": "Lynn Marabello",
+   "stated_role": "teacher",
+   "topic": "MTSS staffing reductions impact on classroom teachers",
+   "quote": "lynn marabello, also a teacher described the impact of reduced mtss staffing on classroom teachers, who are now expected to create intervention materials and run groups"
+  },
+  {
+   "speaker": "Jennifer Miller",
+   "stated_role": "17-year employee of the district",
+   "topic": "High school program and staffing cuts, educator burnout and attrition",
+   "quote": "jennifer miller, a 17-year employee of the district, spoke to the impact of staffing and program cuts at the high school."
+  },
+  {
+   "speaker": "Mary Foyle",
+   "stated_role": "24-year employee of Lunenburg schools",
+   "topic": "Historical budget context, employee impact, and burden on district staff",
+   "quote": "mary foyle, a 24-year employee of lunenburg schools, provided historical context, noting that during the 2008-2009 recession, the district consolidated from four buildings to three"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "Meeting called to order by Tim Murphy, Town Moderator; Finance Committee Chair Chris Menard called Finance Committee to order at 7:11 PM",
+   "tags": [
+    "procedural",
+    "call-to-order"
+   ],
+   "quote": "the meeting was called to order by tim murphy, who served as moderator. he asked everyone to stand and address the flag for the pledge of allegiance",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Preliminary FY27 Budget Plan and revenue projections",
+   "resolution": "Reviewed and discussed; full deficit identified as slightly north of $3,000,000; further refinement and validation planned",
+   "tags": [
+    "FY27-budget",
+    "revenue",
+    "deficit",
+    "finance"
+   ],
+   "quote": "the town manager presented updated revenue projections and budget drivers for fy27. the governor's cherry sheet numbers had been released, showing a small increase in state aid."
+  },
+  {
+   "topic": "Budget drivers and deficit impacts",
+   "resolution": "Discussed; four major drivers identified (health insurance, retirement, school transportation, fourth shift fire); Finance Committee to validate with departments",
+   "tags": [
+    "budget-drivers",
+    "deficit",
+    "analysis"
+   ],
+   "quote": "the town manager identified four major budget drivers exceeding the new revenue:  health insurance: previously projected at 20%, now revised to an average of 8.3% (trust ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Override structure and approaches",
+   "resolution": "Discussed various options; Town Manager outlined single purpose, omnibus, a la carte, tiered, and multi-year structures; no decision made",
+   "tags": [
+    "override",
+    "finance-structure"
+   ],
+   "quote": "the moderator asked the town manager to outline the different override structures available. she explained various types from single purpose, omnibus, a la carte, tiered, and multi-year."
+  },
+  {
+   "topic": "Internal cost reductions and efficiency review",
+   "resolution": "Discussed; areas identified include recycling program, school choice revenue recovery, and mosquito control program elimination",
+   "tags": [
+    "cost-reduction",
+    "efficiency",
+    "finance"
+   ],
+   "quote": "finance committee member lockwood emphasized that before going to voters, the boards must demonstrate they have done the \"hard work\" of identifying internal efficiencies and cost reduction",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Staffing data and trends discussion",
+   "resolution": "Discussed; agreement that updated data including FY26 actuals should be shared with all board members for precision in language and public trust",
+   "tags": [
+    "staffing",
+    "data",
+    "education"
+   ],
+   "quote": "finance committee member chris raised concerns about the presentation of staffing numbers for the school district, showing data that overall staff counts had increased"
+  },
+  {
+   "topic": "Next meeting and important dates",
+   "resolution": "Scheduled; next Tri-Board meeting set for Monday, February 9, 2026 at 7:00 PM at Middle/High School; Finance Committee public hearing and vote tentatively scheduled for March 12th and 19th",
+   "tags": [
+    "scheduling",
+    "procedural"
+   ],
+   "quote": "after discussion of room availability and scheduling conflicts, the tri-board agreed to hold its next joint meeting on monday, february 9, 2026 at 7:00 pm"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Approved; Finance Committee adjourned at 9:30 PM",
+   "tags": [
+    "procedural",
+    "adjournment"
+   ],
+   "quote": "motion by member lockwood to adjourn the finance committee meeting at 9:30 p.m. seconded by member gray. call for the vote: six-aye."
+  }
+ ],
+ "tags": [
+  "FY27-budget",
+  "revenue-projection",
+  "deficit",
+  "override",
+  "health-insurance",
+  "retirement",
+  "fire-department",
+  "education",
+  "staffing",
+  "finance-committee",
+  "tri-board",
+  "budget-planning"
+ ],
+ "dropped_unquoted_by_field": {}
 }

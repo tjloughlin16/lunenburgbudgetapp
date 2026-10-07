@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2025-12-22",
  "docid": "7566",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of November 20, 2025, as presented",
+   "motion": "to accept the minutes of November 20, 2025, as presented",
    "moved_by": "Maia",
    "seconded_by": "Stephanie",
-   "outcome": "passed 5-0-1",
+   "outcome": "passed with five votes, with Robin abstaining",
    "procedural": true,
    "quote": "maia made a motion to accept the minutes of november 20, 2025, as presented, seconded by stephanie. the motion passed with five votes, with robin abstaining."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "to adjourn",
    "moved_by": "Robin",
    "seconded_by": "Stephanie",
    "outcome": "passed unanimously",
@@ -28,7 +28,216 @@
    "quote": "a motion to adjourn was made by robin, seconded by stephanie. the motion passed unanimously and the meeting was adjourned at 8:44 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08995539999999999
+ "dropped_unquoted": 5,
+ "note": "Minutes are clear and complete. All votes are recorded with outcomes. One note: Glenn McLeod's role is not specified in the minutes.",
+ "cost_usd": 0.1073016,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, robin venezia, david niose, stephanie trudel, lydia paolilli (acting director), glenn mcleod"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, robin venezia, david niose, stephanie trudel, lydia paolilli (acting director), glenn mcleod"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, robin venezia, david niose, stephanie trudel, lydia paolilli (acting director), glenn mcleod"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, robin venezia, david niose, stephanie trudel, lydia paolilli (acting director), glenn mcleod"
+  },
+  {
+   "name": "David Niose",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, robin venezia, david niose, stephanie trudel, lydia paolilli (acting director), glenn mcleod"
+  },
+  {
+   "name": "Stephanie Trudel",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, robin venezia, david niose, stephanie trudel, lydia paolilli (acting director), glenn mcleod"
+  },
+  {
+   "name": "Lydia Paolilli",
+   "role": "Acting Director",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, robin venezia, david niose, stephanie trudel, lydia paolilli (acting director), glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, robin venezia, david niose, stephanie trudel, lydia paolilli (acting director), glenn mcleod"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trustee Handbook Discussion deferred to the next meeting",
+   "quote": "defer to the next meeting."
+  },
+  {
+   "decision": "Lydia Paolilli is the Acting Director during Muir's parental leave",
+   "quote": "in his absence, lydia paolilli is the acting director."
+  },
+  {
+   "decision": "The Teen Librarian search has been put on hold during Muir's absence",
+   "quote": "the teen librarian search has been put on hold during muir's absence, since lydia does not have authority to fill in for the hiring decision process."
+  },
+  {
+   "decision": "Minna Scholten hired to fill the Library Assistant position in the Children's Room, with negotiations underway for start date",
+   "quote": "minna scholten has been hired to fill the library assistant position in the children's room. a starting date is being negotiated."
+  },
+  {
+   "decision": "Debbie Lafond rehired as a Staff Librarian to provide coverage during current staffing shortage",
+   "quote": "debbie lafond, recently retired children's librarian, will be rehired as a staff librarian to help provide coverage during the current staffing shortage."
+  },
+  {
+   "decision": "Maia offered to help with the Teen Room and the teen book clubs",
+   "quote": "maia offered to help with the teen room and the teen book clubs."
+  },
+  {
+   "decision": "Harry will present the compiled performance review of Muir to him at a future date",
+   "quote": "harry will be presenting the review to muir at a future date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Friends donations from Winter Artisan Showcase",
+   "what_was_recorded": "The Friends received donations from the 2nd Annual Winter Artisan Showcase bake sale and organizer Kate Ravellette",
+   "figures_as_printed": [
+    "$1,061.50"
+   ],
+   "quote": "thanks to kate, the friends received $1,061.50 in donations."
+  },
+  {
+   "topic": "Rivard family donation to Friends for Children's Room",
+   "what_was_recorded": "The Rivard family donated money to the Friends for the Children's Room, with employer match increasing the total",
+   "figures_as_printed": [
+    "$2,500",
+    "$5,000"
+   ],
+   "quote": "the rivard family donated $2,500 to the friends to be used in the children's room. an employer match increased the donation to $5,000 total."
+  },
+  {
+   "topic": "Anonymous donor gift to Friends for informational resources and STEM",
+   "what_was_recorded": "An anonymous donor gave funds to the Friends for informational resources and STEM enhancement",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "an anonymous donor gave $35,000 to the friends to be used for informational resources and to enhance stem information and activities."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Missing Trustee minutes and agendas from town website",
+   "speaker": "Laura",
+   "stated_role": "not stated",
+   "quote": "laura reported that some trustee minutes and agendas from previous years are missing from the town website. this was brought to her attention by robin, who was doing research and could not find some of the minutes she needed. laura is working to find the missing documents and have them reposted."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of Minutes of November 20, 2025",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "maia made a motion to accept the minutes of november 20, 2025, as presented, seconded by stephanie. the motion passed with five votes, with robin abstaining."
+  },
+  {
+   "topic": "Director's Report: Staff Updates",
+   "resolution": "continued",
+   "tags": [
+    "staffing",
+    "parental leave",
+    "hiring"
+   ],
+   "quote": "muir is on parental leave for six to eight weeks. in his absence, lydia paolilli is the acting director. the teen librarian search has been put on hold during muir's absence, since lydia does not have authority to fill in for the hiring decision process. minna scholten has been hired to fill the library assistant position in the children's room."
+  },
+  {
+   "topic": "Director's Report: Programs",
+   "resolution": "continued",
+   "tags": [
+    "programming",
+    "community events",
+    "artisan showcase"
+   ],
+   "quote": "the 2nd annual winter artisan showcase was held on sunday, december 7, with over 40 vendors attending. the vendors were pleased with the success of the event. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Director's Report: Outreach",
+   "resolution": "planned",
+   "tags": [
+    "outreach",
+    "community partnerships"
+   ],
+   "quote": "melanie will be having another petting zoo for the library of things to be held at smokestack roasters in january. melanie is also planning a follow-up event at tritown in february."
+  },
+  {
+   "topic": "Director's Report: Technology",
+   "resolution": "completed",
+   "tags": [
+    "technology",
+    "fiber",
+    "CIPA compliance"
+   ],
+   "quote": "we have switched over to a fiber line, as cwmars has suggested for libraries."
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "deferred",
+   "tags": [
+    "governance"
+   ],
+   "quote": "defer to the next meeting."
+  },
+  {
+   "topic": "Friends Update",
+   "resolution": "reported",
+   "tags": [
+    "Friends of Library",
+    "donations",
+    "funding"
+   ],
+   "quote": "the rivard family donated $2,500 to the friends to be used in the children's room. an employer match increased the donation to $5,000 total. ○ an anonymous donor gave $35,000 to the friends to be used for informational resources and to enhance stem information and activitie",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Discussion and Finalization of Director's Review",
+   "resolution": "continued",
+   "tags": [
+    "performance review",
+    "personnel"
+   ],
+   "quote": "harry compiled our individual performance reviews of muir into one. we discussed it and made some minor changes. harry will be presenting the review to muir at a future date."
+  }
+ ],
+ "tags": [
+  "library governance",
+  "board meeting",
+  "staffing",
+  "programming",
+  "donations",
+  "technology",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 5
+ }
 }

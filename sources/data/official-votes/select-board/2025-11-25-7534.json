@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-11-25",
  "docid": "7534",
@@ -12,31 +12,266 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Close the public hearing on the tax classification.",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Moore",
+   "outcome": "passed unanimously 5-0-0",
+   "procedural": true,
    "quote": "motion by chair nuzzolo to close the public hearing. seconded by vice-chair moore. call for vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "Adopt a single tax rate for all classes of property in the Town of Lunenburg, and not adopt a residential exemption, an open space discount, or a small commercial exemption",
-   "outcome": "passed 5-0",
-   "procedural": false,
+   "motion": "Adopt a single tax rate for all classes of property in Lunenburg, and not adopt a residential exemption, an open space discount, or a small commercial exemption.",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Moore",
-   "quote": "motion by chair nuzzolo to adopt a single tax rate for all classes of property in the town of lunenburg, and to not adopt a residential exemption, an open space discount, or a small commercial exemption. seconded by vice-chair moore. call for vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed unanimously 5-0-0",
+   "procedural": false,
+   "quote": "motion by chair nuzzolo to adopt a single tax rate for all classes of property in the town of lunenburg, and to not adopt a residential exemption, an open space discount"
   },
   {
-   "motion": "Adjourn",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Adjourn the meeting at 7:33 PM.",
    "moved_by": "Member Lehtinen",
    "seconded_by": "Vice-Chair Moore",
+   "outcome": "passed 5-0-0",
+   "procedural": true,
    "quote": "motion by member lehtinen to adjourn at 7:33 pm. seconded by vice-chair moore. call for vote: five-aye. the motion passed (5-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0932444
+ "note": "Text is clean extracted text from a 4-page minutes document, not a scan. Votes were recorded as \"Five-Aye\" and unanimous counts without individual names, so no per-member votes are attributed. Tax figures (assessed value, levy, rates, split-rate impacts) are as presented by the Principal Assessor and were recorded, not checked against the Department of Revenue. The approval line reads \"Tuesday, September 1, 2026\", later than the meeting date. Speaker status for in-person versus remote attendees was taken from the minutes' \"via Zoom\" and \"in attendance\" wording; no roll call of attendance was printed for the public.",
+ "cost_usd": 0.01607557,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "public commenter, 181 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, addressed the select board regarding the finance committee's public hearing"
+  },
+  {
+   "name": "David W. Rogers",
+   "role": "public commenter, 82 Highland Street",
+   "status": "remote",
+   "quote": "david w. rogers, 82 highland street, participated via zoom and referenced the prior evening's tri-board meeting."
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "principal assessor lynda cajka presented the fiscal year 2026 tax classification hearing on behalf of the board of assessors."
+  },
+  {
+   "name": "John Bowen",
+   "role": "public commenter, 162 Highland Street",
+   "status": "remote",
+   "quote": "john bowen, 162 highland street, participating via zoom, spoke in favor of a split tax rate"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Select Board members expressed consensus in support of the assessors' recommendation (a single tax rate, no split rate), without a separate vote.",
+   "quote": "select board members expressed consensus in support of the assessors' recommendation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2026 total assessed value",
+   "what_was_recorded": "The total assessed value of real and personal property was reported as up 3.3% over the prior year.",
+   "quote": "the total assessed value of real and personal property in lunenburg was $2,437,942,740, representing a 3.3% increase over the fiscal year 2025 total of $2,360,796,780",
+   "figures_as_printed": [
+    "$2,437,942,740",
+    "3.3%",
+    "$2,360,796,780"
+   ]
+  },
+  {
+   "topic": "FY2026 tax levy calculation",
+   "what_was_recorded": "The levy limit build-up was presented, ending in a set FY2026 tax levy that was 3.5% above the prior year.",
+   "quote": "beginning with the prior year's levy limit of $31,602,108, the calculation added the statutory 2.5% increase of $790,053, new growth of $518,650, and debt exclusions of $2,213,678",
+   "figures_as_printed": [
+    "$31,602,108",
+    "$790,053",
+    "$518,650",
+    "$2,213,678",
+    "$35,124,489",
+    "$42,493",
+    "$35,081,996",
+    "$1,182,247",
+    "3.5%",
+    "$33,899,749"
+   ]
+  },
+  {
+   "topic": "Estimated FY2026 tax rate and average bill",
+   "what_was_recorded": "The estimated single tax rate and the average single-family tax bill were reported as increases over the prior year.",
+   "quote": "the estimated average single-family tax bill, based on the average assessed value of $517,296, would be $7,443.89, an increase of $192.99 over the prior year's average bill of $7,250.89.",
+   "figures_as_printed": [
+    "$14.39",
+    "$14.36",
+    "$517,296",
+    "$7,443.89",
+    "$192.99",
+    "$7,250.89"
+   ]
+  },
+  {
+   "topic": "Split tax rate impact at maximum CIP shift",
+   "what_was_recorded": "At maximum shift, the residential rate would fall and the commercial rate would rise; a $350,000 residential property would save $224.25 while a comparable commercial property would pay about $2,336.75 more.",
+   "quote": "at the maximum allowable cip shift of 1.50, the residential tax rate would decrease to $13.70 per thousand while the commercial tax rate would rise to $21.58 per thousand.",
+   "figures_as_printed": [
+    "1.50",
+    "$13.70",
+    "$21.58",
+    "$224.25",
+    "$350,000",
+    "$2,336.75"
+   ]
+  },
+  {
+   "topic": "Split tax rate trade-off as stated by the assessor",
+   "what_was_recorded": "The assessor stated the residential savings at maximum shift would come at a cost to commercial taxpayers.",
+   "quote": "the $224 savings to residential taxpayers would come at a cost of approximately $2,300 to commercial taxpayers at maximum shift",
+   "figures_as_printed": [
+    "$224",
+    "$2,300"
+   ]
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "An accounts payable warrant was announced and circulated for signature.",
+   "quote": "chair nuzzolo announced an accounts payable warrant in the amount of $479,658.86, which was circulated for signature.",
+   "figures_as_printed": [
+    "$479,658.86"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "Finance Committee hearing on Special Town Meeting warrant articles",
+   "quote": "ms. lisio stated that she was the only member of the public in attendance and described a series of organizational failures"
+  },
+  {
+   "speaker": "David W. Rogers",
+   "stated_role": "82 Highland Street, via Zoom",
+   "topic": "City of Fitchburg charges and town auditors",
+   "quote": "mr. rogers requested that the select board contact the town's auditors to inquire how charges owed by the city of fitchburg went undetected over a period of seven to nine years."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street, via Zoom",
+   "topic": "Split tax rate in favor",
+   "quote": "mr. bowen argued that a split tax rate could help offset costs for services such as the senior center"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: Tree Lighting Event",
+   "resolution": "no action",
+   "quote": "chair nuzzolo announced that the annual tree lighting event would be held on thursday, december 4, 2025 at 6:00 pm at the town gazebo",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; Select Board members made no public comment",
+   "quote": "rhonda lisio, 181 reservoir road, addressed the select board regarding the finance committee's public hearing",
+   "tags": [
+    "public comment",
+    "Special Town Meeting",
+    "auditors"
+   ]
+  },
+  {
+   "topic": "Public hearing: FY2026 tax classification",
+   "resolution": "hearing closed; single tax rate adopted with no residential exemption, open space discount, or small commercial exemption",
+   "quote": "chair nuzzolo opened the public hearing and asked clerk renee emkey to read the public hearing notice.",
+   "tags": [
+    "tax classification",
+    "property tax",
+    "split tax rate",
+    "assessors",
+    "levy"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "no minutes approved; AP warrant circulated for signature; no action items",
+   "quote": "chair nuzzolo announced an accounts payable warrant in the amount of $479,658.86, which was circulated for signature.",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:33 PM",
+   "quote": "motion by member lehtinen to adjourn at 7:33 pm. seconded by vice-chair moore.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "tax classification",
+  "property tax",
+  "split tax rate",
+  "levy",
+  "assessed value",
+  "public hearing",
+  "public comment",
+  "accounts payable warrant",
+  "Special Town Meeting",
+  "auditors",
+  "Fitchburg charges"
+ ],
+ "dropped_unquoted_by_field": {}
 }

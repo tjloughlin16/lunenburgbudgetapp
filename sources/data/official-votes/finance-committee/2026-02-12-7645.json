@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-02-12",
  "docid": "7645",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of January 8, 2026",
+   "motion": "approve the minutes of January 8, 2026",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Chris Menard",
    "outcome": "passed 6-0",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to approve the minutes of january 8, 2026, by ana lockwood, seconded by chris menard. roll call vote. jean russell aye, mike rupp aye, ana lockwood aye, tanya dall aye, jay simeone aye, chris menard aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "adjourn",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tanya Dall",
    "outcome": "passed 6-0",
@@ -28,7 +28,142 @@
    "quote": "there was a motion to adjourn by ana lockwood, seconded by tanya dall. roll call vote. jean russell aye, mike rupp aye, ana lockwood aye, tanya dall aye, jay simeone aye, chris menard aye."
   }
  ],
- "dropped_unquoted": 0,
+ "dropped_unquoted": 1,
  "note": "",
- "cost_usd": 0.0623714
+ "cost_usd": 0.1459156,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent member: clerk tom gray"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "status": "present",
+   "quote": "jennifer warren-dyment stated there are 3 active bargaining's ongoing including fire, dpw and the clerical union."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Preliminary budget presentations must be provided to the Committee in advance",
+   "quote": "ana lockwood requested the preliminary budget presentations be provided to the committee in advance."
+  },
+  {
+   "decision": "Above level service and restorative service budgets must be prepared",
+   "quote": "chris menard requested an above level service and a restorative service budget."
+  },
+  {
+   "decision": "A QR code will be provided to direct residents to a concise summary of the report if the full finance committee report cannot fit with mailed warrants",
+   "quote": "chris menard has indicated that he may not be able to include the full ﬁnance committee report with the mailed warrants. in such circumstances, a qr code will be provided to direct residents to a concise summary of the report. ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Health insurance rate",
+   "what_was_recorded": "Town received health insurance rate of 8.85%, with reduction attributed to elimination of GLP-1 drug",
+   "figures_as_printed": [
+    "8.85%"
+   ],
+   "quote": "the town received the actual health insurance number totaling 8.85%. a cause for the unexpected reduction was the elimination of glp-1 drug."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "Committee Member",
+   "topic": "overall school budget data",
+   "quote": "ana lockwood shared the data she collected regarding the overall school budget."
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "Committee Member",
+   "topic": "turf field replacement discussion at Capital Planning Committee",
+   "quote": "ana lockwood shared that she watched the capital planning committee meeting and stated there was discussion about replacing the turf ﬁeld. ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Preliminary Budget",
+   "resolution": "discussed",
+   "tags": [
+    "budget",
+    "health insurance",
+    "bargaining",
+    "compensation"
+   ],
+   "quote": "jennifer warren-dyment stated there are 3 active bargaining's ongoing including fire, dpw and the clerical union. the town received the actual health insurance number totaling 8.85%. a cause for the unexpected reduction was the elimination of glp-1 drug."
+  },
+  {
+   "topic": "Potential FY27 Prop 2½ Override",
+   "resolution": "discussed",
+   "tags": [
+    "prop 2.5",
+    "override",
+    "budget"
+   ],
+   "quote": "the committee questioned if separate overrides would be needed depending on the departments. ===page 2=== chris menard indicates that even if a level service budget override is implemented this year, an additional level service override may be required the fo",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "TriBoard discussions",
+   "resolution": "no action",
+   "tags": [
+    "tri-board"
+   ],
+   "quote": "there were no comments, questions or concerns raised."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "budget",
+  "health insurance",
+  "Prop 2.5 override",
+  "union bargaining",
+  "FY27 planning"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

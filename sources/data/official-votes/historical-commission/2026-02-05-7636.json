@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2026-02-05",
  "docid": "7636",
@@ -12,6 +12,91 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes explicitly recorded. Minutes reference that prior minutes were \"reviewed and accepted\" and that the meeting adjourned, but neither action is recorded with explicit motion, seconder, or vote language required by the standard.",
- "cost_usd": 0.05915840000000001
+ "note": "Minutes are clear and readable. No votes formally recorded. Meeting lasted 7 minutes (7:03 PM to 7:10 PM).",
+ "cost_usd": 0.0904356,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "McGrath",
+   "role": "member",
+   "status": "present",
+   "quote": "members mcgrath, lakso, and boussom in attendance"
+  },
+  {
+   "name": "Lakso",
+   "role": "member",
+   "status": "present",
+   "quote": "members mcgrath, lakso, and boussom in attendance"
+  },
+  {
+   "name": "Boussom",
+   "role": "member",
+   "status": "present",
+   "quote": "members mcgrath, lakso, and boussom in attendance"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "January meeting minutes were reviewed and accepted",
+   "quote": "minutes from the january meeting were reviewed and accepted."
+  },
+  {
+   "decision": "Plan to review Marshall park in spring with Brian Knight regarding inclusion of caves in town survey",
+   "quote": "the plan for that is to review the park in the spring with brian knight."
+  },
+  {
+   "decision": "Town survey will be reviewed to check for discrepancies in information",
+   "quote": "it was noted that some information was found to be incorrect, so it is important that we review it to check for any discrepancies."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "January meeting minutes",
+   "resolution": "reviewed and accepted",
+   "quote": "minutes from the january meeting were reviewed and accepted.",
+   "tags": [
+    "procedural"
+   ]
+  },
+  {
+   "topic": "922 Flat Hill Road demolition permit",
+   "resolution": "no permit filed yet; correspondence noted",
+   "quote": "correspondence from the building inspector confirmed that there has not yet been a demolition permit filed for 922 flat hill road.",
+   "tags": [
+    "property",
+    "demolition"
+   ]
+  },
+  {
+   "topic": "Marshall Park caves survey inclusion",
+   "resolution": "scheduled for spring review with Brian Knight",
+   "quote": "other correspondence from bill tyler asked about whether or not the caves at marshall park will be included in the town survey. the plan for that is to review the park in the spring with brian knight.",
+   "tags": [
+    "survey",
+    "Marshall Park",
+    "preservation"
+   ]
+  },
+  {
+   "topic": "Town survey discrepancies",
+   "resolution": "to be reviewed and corrected",
+   "quote": "regarding the town survey, it was noted that some information was found to be incorrect, so it is important that we review it to check for any discrepancies.",
+   "tags": [
+    "survey",
+    "historical"
+   ]
+  }
+ ],
+ "tags": [
+  "survey",
+  "historical",
+  "property",
+  "preservation",
+  "Marshall Park"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2026-01-13",
  "docid": "7598",
@@ -13,30 +13,271 @@
  "votes": [
   {
    "motion": "accept the November minutes as presented",
-   "outcome": "approved unanimously",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "motion was made and seconded to accept the november minutes as presented, approved unanimously."
   },
   {
    "motion": "accept the December minutes as presented",
-   "outcome": "approved unanimously",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "motion was made and seconded to accept the december minutes as presented, approved unanimously."
   },
   {
-   "motion": "adjourn the meeting",
-   "outcome": "passed",
+   "motion": "meeting be adjourned",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "not stated",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "a motion was made and seconded and meeting was adjourned at 10:36 am"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR'd by macOS Vision (marked ===OCR===). Three votes recorded, all procedural: approval of prior minutes and adjournment. No moved_by or seconded_by names provided in any motion.",
- "cost_usd": 0.0629324
+ "note": "Minutes extracted via OCR (macOS Vision). No budget figures stated in the minutes; financial report noted as deferred.\"",
+ "cost_usd": 0.1146546,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson deb lincoln called the meeting to order at 9:32 am."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, susan o'sullivan, jack rabbitt"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, susan o'sullivan, jack rabbitt"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, susan o'sullivan, jack rabbitt"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, susan o'sullivan, jack rabbitt"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, susan o'sullivan, jack rabbitt"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, susan o'sullivan, jack rabbitt"
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, susan o'sullivan, jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, susan o'sullivan, jack rabbitt"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "Member",
+   "status": "absent",
+   "quote": "excused: helen balcom and ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "absent",
+   "quote": "excused: helen balcom and ana lockwood"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guests: pete lincoln, debra goodsell, director; barbara coulombe, eagle house supporters; caesar nuzzolo, selectboard chair"
+  },
+  {
+   "name": "Debra Goodsell",
+   "role": "Director",
+   "status": "present",
+   "quote": "guests: pete lincoln, debra goodsell, director; barbara coulombe, eagle house supporters; caesar nuzzolo, selectboard chair"
+  },
+  {
+   "name": "Barbara Coulombe",
+   "role": "Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: pete lincoln, debra goodsell, director; barbara coulombe, eagle house supporters; caesar nuzzolo, selectboard chair"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Selectboard Chair",
+   "status": "present",
+   "quote": "guests: pete lincoln, debra goodsell, director; barbara coulombe, eagle house supporters; caesar nuzzolo, selectboard chair"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board is in favor of exploring ways for seniors to assist students in the school who may need support in reading.",
+   "quote": "the board discussed and are in favor of exploring ways that the senlors could benefit the students.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Pete Lincoln",
+   "stated_role": "Guest",
+   "topic": "Tribute to Elsa Watson and the importance of relationships",
+   "quote": "he spoke of a personal relationship with his own grandmother and proceeded to pay tribute to elsa watson, who worked at the lunenburg adult activity centerfor many years in the kitchen and the positive effect she had on all those who knew her. ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Welcome Senator Cronin & Representative Scarsdale",
+   "resolution": "rescheduled to February meeting",
+   "tags": [
+    "legislative",
+    "government relations"
+   ],
+   "quote": "due to other obligations senator cronin and rep. scarsdale were unable to attend but will be rescheduled."
+  },
+  {
+   "topic": "Personnel Update",
+   "resolution": "noted",
+   "tags": [
+    "staffing",
+    "human resources"
+   ],
+   "quote": "welcome to brandie o'toole, the new meal site manager. there is an open position for an outreach coordinator and a per diem van driver."
+  },
+  {
+   "topic": "Financial Report",
+   "resolution": "deferred",
+   "tags": [
+    "finance"
+   ],
+   "quote": "financial report: none at this time."
+  },
+  {
+   "topic": "Caregiver Resource Connection programs",
+   "resolution": "informational",
+   "tags": [
+    "programs",
+    "outreach"
+   ],
+   "quote": "two upcoming programs include: be a better listener on feb. 10 at 11:30 lunch included and we care 365 on february 25 at 9:00 am breakfast included."
+  },
+  {
+   "topic": "Special Town Meeting",
+   "resolution": "discussion pending",
+   "tags": [
+    "town affairs"
+   ],
+   "quote": "lou franco will be meeting with selectboard chair, caesar nuzzolo, to discuss."
+  },
+  {
+   "topic": "Updates on local hospital services",
+   "resolution": "informational",
+   "tags": [
+    "healthcare",
+    "community services"
+   ],
+   "quote": "last report has the completion date for the umass groton er facility as late 2026"
+  },
+  {
+   "topic": "Lobby Furnishings",
+   "resolution": "pending funding confirmation",
+   "tags": [
+    "facilities",
+    "capital"
+   ],
+   "quote": "furnishings have been chosen. the hold-up is waiting to make sure funding is in place."
+  },
+  {
+   "topic": "41A tax breaks for seniors",
+   "resolution": "informational",
+   "tags": [
+    "tax relief",
+    "outreach"
+   ],
+   "quote": "there will be a bulletin board at the center with information regarding 41a and other potential tax breaks for seniors."
+  },
+  {
+   "topic": "COA Board Facebook page",
+   "resolution": "ongoing action item",
+   "tags": [
+    "communications",
+    "social media"
+   ],
+   "quote": "chairperson deb lincoln asked board members to submit content for the page if they come across any information, etc. of interest."
+  },
+  {
+   "topic": "Feedback on By-laws",
+   "resolution": "under review",
+   "tags": [
+    "governance",
+    "bylaws"
+   ],
+   "quote": "selectboard chair, caesar nuzzolo informed the board that the current by- laws are outdated going back to when council on aging's were first introduced. the by-law committee will be meeting. it may be easier to start from scratch",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational",
+   "tags": [
+    "programs",
+    "events"
+   ],
+   "quote": "director debra goodsell presented her report of upcoming programs and events including be a better listener, eat well, feel well: a vegan wellness workshop, new additional balance class has been added to the schedule, and an additional stronger senlors exercise program on wednesdays, february heart health month, np lauren parilla will present and educational program on taking care of your heart as we age.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Eagle House Supporters Report",
+   "resolution": "informational",
+   "tags": [
+    "community partners",
+    "trips",
+    "fundraising"
+   ],
+   "quote": "vice president of the eagle house supporters, barbara coulombe presented a list of all the upcoming trips that the group is sponsoring and also noted that there are two upcoming fundraisers belng promoted, a gift card frenzy bingo and a pickleball tournament."
+  },
+  {
+   "topic": "Board minutes and AI options",
+   "resolution": "deferred to next meeting",
+   "tags": [
+    "governance",
+    "technology"
+   ],
+   "quote": "chairperson deb lincoln suggested that the coa board take its own minutes. it was suggested that board members take turns monthly. it was also suggested that the board look into al options. the board will reconvene with more information at the next meeting."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "seniors",
+  "programs and events",
+  "community service",
+  "governance",
+  "volunteers"
+ ],
+ "dropped_unquoted_by_field": {}
 }

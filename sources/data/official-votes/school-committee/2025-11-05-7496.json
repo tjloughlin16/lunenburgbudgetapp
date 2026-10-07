@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-11-05",
  "docid": "7496",
@@ -12,63 +12,374 @@
  },
  "votes": [
   {
-   "motion": "Enter into executive session to discuss deployment of security personnel or devices",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Enter into executive session to discuss the deployment of security personnel or devices or strategies.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "ms. brzozoski makes a motion to enter into executive session, ms. gilman seconds the motion all agree"
   },
   {
-   "motion": "Accept the minutes from regular sessions of 9/17/25 and 10/1/25",
+   "motion": "Accept the regular session minutes of 9/17/25 and 10/1/25.",
+   "moved_by": "Ms Brzozoski",
+   "seconded_by": "Ms. Gilman",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
    "quote": "ms brzozoski makes a motion to accept the minutes, ms. gilman seconds the motions, all approve"
   },
   {
-   "motion": "Approve transfers of $13,500 from admin tech contracts to school committee dues and $2,000 from Primary School science supply to Primary School reading supply",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Approve the line item transfers ($13,500 from admin tech contracts to school committee dues; $2000 from Primary School science supply to reading supply).",
    "moved_by": "Ms. Gilman",
    "seconded_by": "Ms. Young",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "ms. gilman makes a motion to approve transfers, ms. young seconds the motion all approve"
   },
   {
-   "motion": "Accept all donations: $100 from Laura Barooshian for high school field trips and $1,500 from Music Gators for various programs",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Accept all donations with the Committee's gratitude.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "ms. brzozoski makes a motion to accept all donations with our gratitude, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "Accept the James J. Larkin Scholarship Proposal at $500 this Spring and $250 annually thereafter",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Accept the James J. Larkin scholarship as a gift ($500 this Spring, then $250 every year after).",
    "moved_by": "Ms. Gilman",
    "seconded_by": "Ms. Brzozoski",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "ms. gilman makes a motion to accept this scholarship, ms. brzozoski seconds the motion all approve."
   },
   {
-   "motion": "Approve the Superintendent Draft Goals",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Approve the Superintendent draft goals.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Gilman",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "mr. sculimbrene makes a motion to approve, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "Adjourn the meeting at 9:19 p.m.",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Adjourn the meeting at 9:19.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "ms. brzozoski makes a motion to adjourn at 9:19, ms gilman seconds the motion all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All seven votes recorded passed unanimously. No vote counts were specified in the minutes; \"all approve\" and \"all agree\" indicate unanimous passage.",
- "cost_usd": 0.0714004
+ "note": "Plain-text extraction of the minutes, with some lines run together. Votes are recorded only as \"all approve\" or \"all agree\" with no tally, so each is recorded as \"passed\" on that wording and no count is invented. The warrant total of $709,457.44 is listed under the line-items heading, but the only motion there covers transfers, so no vote on warrants is recorded. Mr. Santry and several people named as donors or subcommittee members appear only as references to other meetings and are not listed as attendees. Courtney Fuller's attendance status is not stated.",
+ "cost_usd": 0.01913,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski, vice chair - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "emily young secretary - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Member",
+   "status": "present",
+   "quote": "mandy gilman, member - present"
+  },
+  {
+   "name": "George Yapp",
+   "role": "Member",
+   "status": "present",
+   "quote": "george yapp, member - present"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. fortuna shares district highlights and celebrations, teaching and learning, professional development update."
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "present",
+   "quote": "guests: christopher mcnamara - business administrator"
+  },
+  {
+   "name": "John Bowen",
+   "role": "Chairman of the Trust Fund Commission",
+   "status": "present",
+   "quote": "john bowen, 162 highland street, chairman of the trust fund commission, mr. bowen takes this time to explain the responsibilities"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee listed its goals for the year as the future of Turkey Hill, the Primary School playground and parking lot, and the budget process (listed, no motion recorded).",
+   "quote": "committee lists their goals as: the future of turkey hill, primary school playground and parking lot, and budget process."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Superintendent search invoice transfer",
+   "what_was_recorded": "A $13,500 line item transfer from admin tech contracts to school committee dues to cover the superintendent search invoice.",
+   "quote": "we want to transfer $13,500 from admin tech contracts to school committee dues, to cover superintendent search invoice.",
+   "figures_as_printed": [
+    "$13,500"
+   ]
+  },
+  {
+   "topic": "Primary School supply line transfer",
+   "what_was_recorded": "A $2000 transfer from school science supply to reading supply at the Primary School.",
+   "quote": "transfer $2000 from school science supply line item at primary school to the reading supply line item at the primary school to cover cost.",
+   "figures_as_printed": [
+    "$2000"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrants for 10/15/25 to 11/3/25 were listed with a total; no motion on the warrants is recorded.",
+   "quote": "warrants 10/15/25 to 11/3/25 $709,457.44",
+   "figures_as_printed": [
+    "$709,457.44"
+   ]
+  },
+  {
+   "topic": "Individual donation",
+   "what_was_recorded": "Laura Barooshian donated $100 for high school field trips; donations were accepted.",
+   "quote": "laura barooshian is donating $100 for the high school field trips.",
+   "figures_as_printed": [
+    "$100"
+   ]
+  },
+  {
+   "topic": "Music Gators donations",
+   "what_was_recorded": "Music Gators donated $500 each to the High School, Middle High School and Turkey Hill music programs; donations were accepted.",
+   "quote": "music gators has donated $500 to high school music program, $500 for the middle high school program and $500 for the turkey hill music program.",
+   "figures_as_printed": [
+    "$500"
+   ]
+  },
+  {
+   "topic": "James J. Larkin Scholarship",
+   "what_was_recorded": "The scholarship is classified as a gift of $500 this Spring and $250 every year after.",
+   "quote": "this will be classified as a gift and is the amount of $500 this spring and then $250 every year after.",
+   "figures_as_printed": [
+    "$500",
+    "$250"
+   ]
+  },
+  {
+   "topic": "PTO night at Great Wolf Lodge",
+   "what_was_recorded": "The PTO reported a March night at Great Wolf Lodge at a rate of $125 per night with water park tickets included.",
+   "quote": "it is a day in march the rate is $125 per night and you get tickets to the water park as well",
+   "figures_as_printed": [
+    "$125"
+   ]
+  },
+  {
+   "topic": "8th grade trip cost",
+   "what_was_recorded": "The Middle School 8th grade trip is going ahead at a cost of about $1400.",
+   "quote": "the cost is going to be about $1400.",
+   "figures_as_printed": [
+    "$1400"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfer from admin tech contracts to school committee dues, to cover superintendent search invoice.",
+   "amount_as_printed": "$13,500",
+   "outcome": "approved (passed, all approve)",
+   "quote": "we want to transfer $13,500 from admin tech contracts to school committee dues, to cover superintendent search invoice."
+  },
+  {
+   "description": "Line item transfer from school science supply to reading supply at the Primary School.",
+   "amount_as_printed": "$2000",
+   "outcome": "approved (passed, all approve)",
+   "quote": "transfer $2000 from school science supply line item at primary school to the reading supply line item at the primary school to cover cost."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "Chairman of the Trust Fund Commission",
+   "topic": "Trust Fund Commission inquiry into gift declarations",
+   "quote": "john bowen, 162 highland street, chairman of the trust fund commission, mr. bowen takes this time to explain the responsibilities of the trust fund commission and the basis of the inquiry."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and executive session",
+   "resolution": "entered executive session on security",
+   "quote": "ms. brzozoski makes a motion to enter into executive session, ms. gilman seconds the motion all agree",
+   "tags": [
+    "executive session",
+    "security"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "reported",
+   "quote": "chairs report - homecoming was a unique, corny, and really fun day.",
+   "tags": [
+    "homecoming"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "ms brzozoski makes a motion to accept the minutes, ms. gilman seconds the motions, all approve",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Line item transfers and warrants",
+   "resolution": "transfers approved; warrants listed with no recorded motion",
+   "quote": "we want to transfer $13,500 from admin tech contracts to school committee dues, to cover superintendent search invoice.",
+   "tags": [
+    "budget",
+    "transfers",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Donations",
+   "resolution": "accepted",
+   "quote": "laura barooshian is donating $100 for the high school field trips.",
+   "tags": [
+    "donations",
+    "music",
+    "field trips"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "received",
+   "quote": "dr. fortuna shares district highlights and celebrations, teaching and learning, professional development update.",
+   "tags": [
+    "superintendent",
+    "staff survey"
+   ]
+  },
+  {
+   "topic": "James J. Larkin Scholarship",
+   "resolution": "approved",
+   "quote": "james j. larkin scholarship approval committee has been supplied with the larkin scholarship proposal",
+   "tags": [
+    "scholarship",
+    "gift"
+   ]
+  },
+  {
+   "topic": "First read of policies",
+   "resolution": "first read; no vote recorded",
+   "quote": "first read policies 1303.1 advertising in the schools, 3303.01 cash handling, 5201.03 middle school pathways, 5204.01 competency determination",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Trust commission discussion",
+   "resolution": "discussed; no action",
+   "quote": "mr. sculimbrene met with the trust commissioner of lunenburg this past sunday.",
+   "tags": [
+    "trusts",
+    "attorney general"
+   ]
+  },
+  {
+   "topic": "Superintendent draft goals",
+   "resolution": "approved",
+   "quote": "superintendent draft goals mr. sculimbrene makes a motion to approve, ms. gilman seconds the motion all approve",
+   "tags": [
+    "goals"
+   ]
+  },
+  {
+   "topic": "School Committee goals",
+   "resolution": "goals listed",
+   "quote": "committee lists their goals as: the future of turkey hill, primary school playground and parking lot, and budget process.",
+   "tags": [
+    "goals",
+    "turkey hill",
+    "budget process"
+   ]
+  },
+  {
+   "topic": "Public comment on trust fund inquiry",
+   "resolution": "heard; no action",
+   "quote": "john bowen, 162 highland street, chairman of the trust fund commission, mr. bowen takes this time to explain the responsibilities",
+   "tags": [
+    "trusts",
+    "gifts",
+    "declarations"
+   ]
+  },
+  {
+   "topic": "Subcommittee reports",
+   "resolution": "reported",
+   "quote": "ms. young reports the pacsal committee met on october 2nd",
+   "tags": [
+    "PACSAL",
+    "PTO",
+    "middle school advisory",
+    "master planning",
+    "municipal building",
+    "policy subcommittee",
+    "high school advisory council"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed",
+   "quote": "future of turkey hill, budget process, turf field, status of all non personnel facility items and projected/expected costs",
+   "tags": [
+    "turf field",
+    "facilities",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:19",
+   "quote": "ms. brzozoski makes a motion to adjourn at 9:19, ms gilman seconds the motion all approve",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "executive session",
+  "security",
+  "line item transfers",
+  "warrants",
+  "donations",
+  "scholarship",
+  "policy first read",
+  "trust fund commission",
+  "superintendent goals",
+  "budget",
+  "subcommittee reports",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

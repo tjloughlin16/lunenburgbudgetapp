@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-03-10",
  "docid": "7698",
@@ -13,30 +13,204 @@
  "votes": [
   {
    "motion": "to adjourn the Finance Committee meeting",
-   "moved_by": "Lockwood",
-   "seconded_by": "Dall",
-   "outcome": "passed 6-0-0",
+   "outcome": "passed 6-0",
+   "moved_by": "Member Lockwood",
+   "seconded_by": "Member Dall",
    "procedural": true,
    "quote": "motion by member lockwood to adjourn the finance committee meeting. seconded by member dall. call for the vote: six -aye. the motion passed unanimously ( 6 -0-0)."
   },
   {
    "motion": "to adjourn the School Committee meeting",
-   "moved_by": "Gilman",
-   "seconded_by": "Young",
-   "outcome": "passed 3-0-0",
+   "outcome": "passed 3-0",
+   "moved_by": "Member Gilman",
+   "seconded_by": "Member Young",
    "procedural": true,
    "quote": "motion by member gilman to adjourn the school committee meeting. seconded by member young. call for the vote: three -aye. the motion passed unanimously ( 3 -0-0)."
   },
   {
    "motion": "to adjourn the Select Board meeting",
-   "moved_by": "Lehtinen",
-   "seconded_by": "Moore",
-   "outcome": "passed 4-0-0",
+   "outcome": "passed 4-0",
+   "moved_by": "Member Lehtinen",
+   "seconded_by": "Vice-Chair Moore",
    "procedural": true,
    "quote": "motion by memb er lehtinen to adjourn the select board meeting at 9: 53 p.m. seconded by vice-chair moore . call for the vote: f our -aye. the motion passed unanimously ( 4 -0-0)."
   }
  ],
- "dropped_unquoted": 0,
- "note": "The meeting included two straw polls (on placing an override on the ballot and on override structure) that were explicitly noted as non-binding and did not constitute formal motions with seconds. Only the three adjournment votes at the conclusion represent formal motions with recorded votes.",
- "cost_usd": 0.1118324
+ "dropped_unquoted": 9,
+ "note": "This is a tri-board meeting (Select Board, School Committee, Finance Committee meeting jointly). The straw polls on override questions were explicitly noted as non-binding and are not recorded as formal votes. All formal votes in these minutes are procedural (adjournment motions).\"",
+ "cost_usd": 0.1417656,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent- chair caesar nuzzolo"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, secretary mandy gilman , member emily young"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, secretary mandy gilman , member emily young"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, secretary mandy gilman , member emily young"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Member",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, secretary mandy gilman , member emily young"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent- member mike rupp"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Town Moderator",
+   "status": "present",
+   "quote": "tri-board moderator: tim murphy, town moderator"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Jodi Fortuna",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment , school superintendent dr. jodi fortuna, and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "School Business Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment , school superintendent dr. jodi fortuna, and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "remote",
+   "quote": "after some technical difficulty establishing audio, town counsel adam j. costa joined the meeting via telephone from his vehicle"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All board members present supported placing a Proposition 2½ override on the ballot",
+   "quote": "the moderator called for a straw poll on whether all members present supported placing an override on the ballot. all members present indicated their support. the moderator confirmed that this was unanimous among those in attendance"
+  },
+  {
+   "decision": "The Chairs agreed to meet to discuss messaging around the override",
+   "quote": "moderator murphy suggested that a group get together to work on messaging. a distinction was made between campaigning a nd messaging. chair menard offered that the chairs will meet to discuss the messaging",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Budget must be finalized by end of March or early April, with April 11, 2026 as the deadline for ballot language submission to the Town Clerk",
+   "quote": "the moderator noted that the april 11th ballot language deadline effectively means the tri-board must arrive at a final number by the end of march or very early april, and encouraged the chairs to keep that constraint front of mind."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Revenue adjustments",
+   "what_was_recorded": "Revenues adjusted upward in investment income and motor vehicle excise tax, narrowing the balanced budget gap",
+   "figures_as_printed": [
+    "$100,000",
+    "$75,000"
+   ],
+   "quote": "revenues had been revised that same day, with investment income adjusted upward by $100,000 and motor vehicle excise tax by $75,000, meaning the balanced budget gap had narrowed somewhat"
+  },
+  {
+   "topic": "Inflation rate over time",
+   "what_was_recorded": "Inflation has exceeded the 2.5% levy cap in virtually every month since approximately 2018",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "inflation has exceeded 2.5 % in virtually every month since approximately 2018"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY27 Budget and Proposition 2½ Override",
+   "resolution": "Continued to future meetings; straw polls conducted on placing override on ballot (unanimous support) and structure (7 for single override, 5 for tiered); no final decision made",
+   "tags": [
+    "budget",
+    "override",
+    "Prop 2.5",
+    "FY27",
+    "municipal services",
+    "school funding",
+    "revenue"
+   ],
+   "quote": "the moderator opened the discussion by framing the central question before the tri-board: what form a proposition 2½ override should take, and how it should be structured."
+  }
+ ],
+ "tags": [
+  "budget",
+  "override",
+  "Prop 2.5",
+  "FY27",
+  "tax",
+  "school funding",
+  "municipal services",
+  "revenue",
+  "fiscal crisis"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 5,
+  "budget_items": 2,
+  "public_comment": 2
+ }
 }

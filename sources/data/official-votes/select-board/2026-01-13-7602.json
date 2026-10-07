@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-01-13",
  "docid": "7602",
@@ -12,40 +12,362 @@
  },
  "votes": [
   {
-   "motion": "enter into Executive Session and re-enter Open Session to discuss collective bargaining strategy regarding the Lunenburg Professional Firefighters PFFM Local 5369",
-   "moved_by": "Chair Nuzzolo",
+   "motion": "Enter into Executive Session to discuss strategy with respect to collective bargaining regarding Lunenburg Professional Firefighters PFFM Local 5369",
+   "moved_by": "Chair Caesar Nuzzolo",
    "seconded_by": "Vice-Chair Amanda Moore",
    "outcome": "passed unanimously (5-0-0)",
    "procedural": true,
-   "quote": "motion by chair nuzzolo to enter into executive session and to re-enter open session thereafter, pursuant to mgl chapter 30a, section 21(a)(3), to discuss strategy with respect to collective bargaining where an open meeting may have a detrimental effect on the bargaining position of the public body, the chair so declaring, regarding the lunenburg professional firefighters pffm local 5369. seconded by vice-chair amanda moore. roll call vote: member mcleod-aye, mem",
-   "quote_taken_from_text": true
+   "quote": "motion by chair nuzzolo to enter into executive session and to re-enter open session thereafter, pursuant to mgl chapter 30a, section 21(a)(3), to discuss strategy with respect to collective bargaining where an open meeting may have a detrimental effect on the bargaining position of the public body, the chair so declaring, regarding the lunenburg professional firefighters pffm local 5369. seconded by vice-chair amanda moore. roll call vote: member mcleod-aye, member brian lehtinen-aye, clerk renee emkey-aye, vice-chair moore-aye, chair nuzzolo-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "approve a rate increase of 30% for water rates under the Intermunicipal Agreement with the City of Fitchburg, effective February 1, 2026",
-   "moved_by": "Vice-Chair Moore",
-   "seconded_by": "Clerk Emkey",
+   "motion": "Approve a rate increase for all rates covered under the Intermunicipal Agreement for the supply of water between the City of Fitchburg and the Town of Lunenburg by 30% over the rates established by Fitchburg City Council on April 18, 2023, with the July 1, 2025 rates effective February 1, 2026",
+   "moved_by": "Vice-Chair Amanda Moore",
+   "seconded_by": "Clerk Renee Emkey",
    "outcome": "passed unanimously (5-0-0)",
    "procedural": false,
    "quote": "motion by vice-chair moore to approve a rate increase for all rates covered under the intermunicipal agreement for the supply of water between the city of fitchburg and the town of lunenburg by an increase of 30% over the rates established by the fitchburg city council on april 18, 2023, with the july 1, 2025 rates to be effective on february 1, 2026, and future increases to take effect in accordance with the april 18, 2023 vote of the fitchburg city council. seconded by clerk emkey. call for vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "approve the minutes of May 8, 2024 and May 14, 2024",
-   "moved_by": "Clerk Emkey",
-   "seconded_by": "Vice-Chair Moore",
+   "motion": "Approve the minutes of May 8, 2024 and May 14, 2024",
+   "moved_by": "Clerk Renee Emkey",
+   "seconded_by": "Vice-Chair Amanda Moore",
    "outcome": "passed unanimously (5-0-0)",
    "procedural": true,
    "quote": "motion by clerk emkey to approve the minutes of may 8, 2024 and may 14, 2024. seconded by vice-chair moore. call for vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Vice-Chair Moore",
-   "seconded_by": "Clerk Emkey",
+   "motion": "Adjourn at 9:43 PM",
+   "moved_by": "Vice-Chair Amanda Moore",
+   "seconded_by": "Clerk Renee Emkey",
    "outcome": "passed (5-0-0)",
    "procedural": true,
    "quote": "motion by vice-chair moore to adjourn at 9:43 pm. seconded by clerk emkey. call for vote: five-aye. the motion passed (5-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in the minutes have been extracted. No scanned or illegible votes.",
- "cost_usd": 0.1275614
+ "note": "Minutes are as approved on August 18, 2026, for a meeting held January 13, 2026. Executive Session section was numbered XIII but taken out of order at the beginning of the meeting agenda, as noted in the minutes.",
+ "cost_usd": 0.1550736,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chair Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Vice-Chair Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Clerk Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Member Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Member Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Chair of the Parks Commission",
+   "status": "present",
+   "quote": "karin menard, chair of the parks commission, addressed the select board with several updates and requests."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Thomas Alsup's appointment as Payroll and Benefits Coordinator passed over; will be brought forward at a future meeting",
+   "quote": "chair nuzzolo reported that, while the agenda had been amended to include this appointment, the select board was not yet prepared to act on it. the item was passed over and will be brought forward at a future meeting."
+  },
+  {
+   "decision": "Appointment Policy revisions agreed upon: removed requirements for Town Manager to ensure local newspapers are advised of vacancies and posting on town bulletin boards and cable television, retaining only reference to town website",
+   "quote": "section 2 (volunteer applications): the requirement that \"the town manager will ensure that local newspapers are advised of the vacancies\" was struck. the additional text ===page 5=== select board meeting minutes january 13, 2026 page 5 of 7 referencing posting on town bulletin boards and advertising on local cable televisi",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Vice-Chair Moore volunteered to draft revised language for Sections 7 and 8 of the Appointment Policy to simplify and clarify existing text",
+   "quote": "vice-chair moore volunteered to draft revised language for sections 7 (committee commitment and summary) and 8 (guidance for appointed officials) to simplify and clarify the existing text, and to present that draft at the next meeting."
+  },
+  {
+   "decision": "Special Event Policy: Select Board agreed to use Town Counsel's draft as starting point; Vice-Chair Moore to draft version for future discussion",
+   "quote": "the select board agreed to use town counsel's draft as a starting point and discuss feedback and/or revisions at a future meeting. vice-chair moore offered to draft a version to be discussed at a future select board meeting."
+  },
+  {
+   "decision": "Vice-Chair Amanda Moore designated as Select Board's representative on 925 Massachusetts Avenue RFP Working Group",
+   "quote": "the select board designated vice-chair moore as its representative on the working group, given her professional background in procurement. town manager warren-dyment confirmed she would formally establish the working group."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "300th Anniversary Committee Funding",
+   "what_was_recorded": "Original FY24 seed funding of $5,000 was never expended and authorization expired; Select Board discussed securing new multi-year funding",
+   "figures_as_printed": [
+    "$5,000",
+    "$15,000"
+   ],
+   "quote": "chair nuzzolo explained that the $5,000 in seed funding originally allocated for the 300th anniversary committee in fy24 was never expended, causing the authorization to expire and the funds to revert. the select board discussed the need to secure new, multi-year funding. the plan is to request a $15,000 multi-year appropriation and to establish a gift fund to receive sponsorships, donations, and proceeds from merchandise sales."
+  },
+  {
+   "topic": "Board of Assessors Proposed Budget",
+   "what_was_recorded": "Principal Assessor presented proposed budget reflecting approximately 6-7% overall increase",
+   "figures_as_printed": [
+    "6–7%"
+   ],
+   "quote": "the principal assessor presented a proposed budget reflecting an approximately 6-7% overall increase."
+  },
+  {
+   "topic": "Water Rate Increase",
+   "what_was_recorded": "Rate increase of 30% over Fitchburg rates established April 18, 2023; July 1, 2025 rates effective February 1, 2026",
+   "figures_as_printed": [
+    "30%"
+   ],
+   "quote": "a rate increase for all rates covered under the intermunicipal agreement for the supply of water between the city of fitchburg and the town of lunenburg by an increase of 30% over the rates established by the fitchburg city council on april 18, 2023, with the july 1, 2025 rates to be effective on february 1, 2026"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Karin Menard",
+   "stated_role": "Chair of the Parks Commission",
+   "topic": "Parks Commission vacancy and resignation of Anita Scheipers",
+   "quote": "ms. menard announced the resignation of anita scheipers from the parks commission, extending gratitude for her contributions since 2023, particularly her leadership on the marshall park project. she noted that the resulting vacancy, occurring within six months of the next election, would be filled by joint appointment of the select board and parks commission for a term ending in may."
+  },
+  {
+   "speaker": "Karin Menard",
+   "stated_role": "Chair of the Parks Commission",
+   "topic": "Recreation Director vacancy",
+   "quote": "ms. menard reported that recreation director angela clement departed in august 2025, leaving a 19-hour-per-week position open. she encouraged interested applicants to apply and noted that scheduling could be flexible, stressing that the smooth opening of the summer beach program is a near-term priority for this role."
+  },
+  {
+   "speaker": "Karin Menard",
+   "stated_role": "Chair of the Parks Commission",
+   "topic": "Marshall Park project status",
+   "quote": "ms. menard advised that the marshall park project is currently on hiatus and will not be brought forward at the annual town meeting in may. she acknowledged that the decision was not made lightly and expressed confidence that future park commissions would be able to build upon the work already completed to bring the project to fruition."
+  },
+  {
+   "speaker": "Karin Menard",
+   "stated_role": "Chair of the Parks Commission",
+   "topic": "Skate Park project advancement",
+   "quote": "ms. menard reported that the parks commission, town manager, legal counsel, and the skate park group's representatives are scheduled to meet in the coming weeks to work toward executing agreements that would allow the project to advance to its next phase."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order and Pledge of Allegiance",
+   "resolution": "called to order at 7:00 PM",
+   "tags": [
+    "procedural",
+    "meeting"
+   ],
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announced",
+   "tags": [
+    "procedural",
+    "administrative"
+   ],
+   "quote": "chair nuzzolo reminded residents to return census forms and dog license applications to the town clerk."
+  },
+  {
+   "topic": "Public Comment - Parks Commission updates",
+   "resolution": "received",
+   "tags": [
+    "parks commission",
+    "appointments",
+    "capital projects",
+    "public comment"
+   ],
+   "quote": "karin menard, chair of the parks commission, addressed the select board with several updates and requests."
+  },
+  {
+   "topic": "Executive Session - Lunenburg Professional Firefighters PFFM Local 5369",
+   "resolution": "entered and exited",
+   "tags": [
+    "executive session",
+    "labor relations",
+    "procedural"
+   ],
+   "quote": "motion by chair nuzzolo to enter into executive session and to re-enter open session thereafter, pursuant to mgl chapter 30a, section 21(a)(3), to discuss strategy with respect to collective bargaining"
+  },
+  {
+   "topic": "Public Hearings and Scheduled Meetings",
+   "resolution": "none held",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "no public hearings or scheduled meetings were held."
+  },
+  {
+   "topic": "Appointments - Thomas Alsup, Payroll and Benefits Coordinator",
+   "resolution": "deferred",
+   "tags": [
+    "appointments",
+    "town manager"
+   ],
+   "quote": "chair nuzzolo reported that, while the agenda had been amended to include this appointment, the select board was not yet prepared to act on it. the item was passed over and will be brought forward at a future meeting."
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "reported",
+   "tags": [
+    "town manager",
+    "budget",
+    "litigation"
+   ],
+   "quote": "town manager jennifer warren-dyment provided two items. first, she highlighted that the tri- board met the previous evening and encouraged residents interested in the town's finances to view the recording",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Warrant Articles - Council on Aging Notice of Town Meeting",
+   "resolution": "continued",
+   "tags": [
+    "warrant articles",
+    "council on aging"
+   ],
+   "quote": "chair nuzzolo reported that he has been in contact with lou franco, the council on aging's designated representative, and that a meeting is planned within approximately two weeks to develop a revised draft of this article."
+  },
+  {
+   "topic": "Warrant Articles - Kids Kingdom",
+   "resolution": "proceeding",
+   "tags": [
+    "warrant articles",
+    "school",
+    "capital projects"
+   ],
+   "quote": "chair nuzzolo reported that the school committee formally voted to support returning the kids kingdom article to town meeting, expressing willingness to transfer care, custody, and control to the select board and to collaborate in good faith."
+  },
+  {
+   "topic": "Warrant Articles - 300th Anniversary Committee Funding",
+   "resolution": "continued",
+   "tags": [
+    "warrant articles",
+    "300th anniversary",
+    "town events"
+   ],
+   "quote": "chair nuzzolo explained that the $5,000 in seed funding originally allocated for the 300th anniversary committee in fy24 was never expended, causing the authorization to expire and the funds to revert. the select board discussed the need to secure new, multi-year funding."
+  },
+  {
+   "topic": "Water Rate Increase - Intermunicipal Agreement with Fitchburg",
+   "resolution": "approved",
+   "tags": [
+    "water rates",
+    "utilities",
+    "municipal agreement"
+   ],
+   "quote": "motion by vice-chair moore to approve a rate increase for all rates covered under the intermunicipal agreement for the supply of water between the city of fitchburg and the town of lunenburg by an increase of 30% over the rates established by the fitchburg city council on april 18, 2023"
+  },
+  {
+   "topic": "925 Massachusetts Avenue RFP Working Group",
+   "resolution": "working group established",
+   "tags": [
+    "economic development",
+    "RFP",
+    "properties"
+   ],
+   "quote": "chair nuzzolo introduced this item, noting that the town manager had identified a consultant report recommending the establishment of a working group to guide the rfp process for 925 mass ave."
+  },
+  {
+   "topic": "Appointment Policy review and revision",
+   "resolution": "continued",
+   "tags": [
+    "policy",
+    "appointments",
+    "town management"
+   ],
+   "quote": "the select board conducted a read-through of the draft appointment policy. the following revisions were identified and agreed upon"
+  },
+  {
+   "topic": "Special Event Policy workshop",
+   "resolution": "continued",
+   "tags": [
+    "policy",
+    "events",
+    "town management"
+   ],
+   "quote": "chair nuzzolo read a draft policy provided by town counsel adam costa. the select board agreed to use town counsel's draft as a starting point and discuss feedback and/or revisions at a future meeting."
+  },
+  {
+   "topic": "Minutes Approval - May 8 and May 14, 2024",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "motion by clerk emkey to approve the minutes of may 8, 2024 and may 14, 2024. seconded by vice-chair moore."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "received",
+   "tags": [
+    "committee reports",
+    "economic development",
+    "schools",
+    "assessors",
+    "stormwater",
+    "capital planning"
+   ],
+   "quote": "economic development committee (edc): member mcleod reported that the edc met prior to the select board meeting and continues to work on proposed bylaw changes related to byob establishments"
+  },
+  {
+   "topic": "Upcoming Meetings - Tri-Board Meeting",
+   "resolution": "scheduled",
+   "tags": [
+    "meetings",
+    "budget"
+   ],
+   "quote": "january 27 (tri-board meeting)"
+  },
+  {
+   "topic": "Public Comment - second period",
+   "resolution": "none received",
+   "tags": [
+    "procedural",
+    "public comment"
+   ],
+   "quote": "no public comment was received."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "motion by vice-chair moore to adjourn at 9:43 pm. seconded by clerk emkey. call for vote: five-aye."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "warrant articles",
+  "water rates",
+  "appointments",
+  "parks commission",
+  "town management",
+  "policies",
+  "economic development",
+  "budget",
+  "capital projects",
+  "RFP process"
+ ],
+ "dropped_unquoted_by_field": {}
 }

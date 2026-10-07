@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2025-11-13",
  "docid": "7509",
@@ -12,15 +12,135 @@
  },
  "votes": [
   {
-   "motion": "Approve the 11 September 2025 meeting minutes",
-   "moved_by": "Lloyd",
-   "seconded_by": "McGrath",
+   "motion": "Approve the minutes of 11 September (2025) as written.",
+   "moved_by": "Member Lloyd",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve 11 september minutes by member lloyd, seconded by mcgrath, approved by all."
+   "quote": "motion to approve 11 september minutes by member lloyd, seconded by mcgrath, approved by all.",
+   "seconded_by": "McGrath"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one vote recorded. The remaining agenda items (APDC Merger, 50 Main Street, 763 Mass Ave, Historical Commission, Warrant article) were discussed but no formal motions or votes were recorded.",
- "cost_usd": 0.0576124
+ "note": "Text extraction of a single-page-set typed minutes document; readable, no scan issues. Only one motion is recorded (approval of minutes), with 'approved by all' and no numeric count. No dollar figures appear, so no budget items. The 'Public Comment' section records no speakers; the citizen comment in item 4c sits inside Current Business, so it is not logged as public comment. Items 'no urge in pursuing' and 'will take resources to move forward' are recorded as decisions without a vote, based on minutes wording, not an explicit motion. The 'Old Business' section is blank. The minutes mention McGrath's stated resignation as a statement of intent, not a board action.",
+ "cost_usd": 0.01246237,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "APDC merger: the commission stated it has no further urge to pursue the matter, given no support from the Select Board or citizens (recorded without a vote).",
+   "quote": "no urge in pursuing the matter any longer."
+  },
+  {
+   "decision": "50 Main Street: the commission will take steps to move forward with a formal letter and an invitation to the next APDC meeting (recorded without a vote).",
+   "quote": "will take resources to move forward to include a formal letter and invitation to the next apdc meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no speakers recorded",
+   "quote": "public comment: 1) none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes approval (11 September)",
+   "resolution": "approved",
+   "quote": "motion to approve 11 september minutes by member lloyd, seconded by mcgrath, approved by all.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "APDC merger",
+   "resolution": "no further pursuit stated",
+   "quote": "no support from select board, or citizens of the town.",
+   "tags": [
+    "APDC merger",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "50 Main Street",
+   "resolution": "formal letter and invitation to next meeting; Select Board support for demolition by neglect raised",
+   "quote": "will take resources to move forward to include a formal letter and invitation to the next apdc meeting.",
+   "tags": [
+    "50 Main Street",
+    "demolition by neglect",
+    "historic property"
+   ]
+  },
+  {
+   "topic": "763 Mass Ave",
+   "resolution": "noted; certified letter returned to sender",
+   "quote": "town sent a certified letter to current owner, but was returned to sender as owner has moved with",
+   "tags": [
+    "763 Mass Ave",
+    "property owner",
+    "development"
+   ]
+  },
+  {
+   "topic": "Historical Commission membership and misinformation",
+   "resolution": "noted; McGrath stated he will resign from the APDC",
+   "quote": "member mcgrath has stated that he will resign from his position on the apdc and submit this official letter to the select board.",
+   "tags": [
+    "historical commission",
+    "membership",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Warrant article",
+   "resolution": "discussed; no action recorded",
+   "quote": "prior select board member had made a comment about the fact a legally checked and drafted",
+   "tags": [
+    "warrant article",
+    "Select Board"
+   ]
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "historical commission",
+  "50 Main Street",
+  "763 Mass Ave",
+  "APDC merger",
+  "demolition by neglect",
+  "membership vacancy",
+  "minutes approval",
+  "warrant article"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-04-14",
  "docid": "7766",
@@ -12,56 +12,473 @@
  },
  "votes": [
   {
-   "motion": "approve the application for business name change on the Class II License for 360 Auto Group, Incorporated",
+   "motion": "Approve application for business name change on Class II License for 360 Auto Group, Inc., previously issued to Unique Motors Group located at 40 Summer Street",
+   "moved_by": "Vice-Chair Amanda Moore",
+   "seconded_by": "Member Brian Lehtinen",
    "outcome": "passed 5-0",
    "procedural": false,
-   "moved_by": "Vice-Chair Moore",
-   "seconded_by": "Member Lehtinen",
    "quote": "motion by vice-chair moore to approve the application for a business name change on the class ii license for 360 auto group, incorporated, previously issued to unique motors group located at 40 summer street. seconded by member lehtinen. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "approve the special event application for the Lions Cruise Night and Car Show on May 20, 2026, with a rain date of May 27, 2026",
+   "motion": "Approve special event application for Lions Cruise Night and Car Show on May 20, 2026, with rain date May 27, 2026",
+   "moved_by": "Vice-Chair Amanda Moore",
+   "seconded_by": "Member Brian Lehtinen",
    "outcome": "passed 5-0",
    "procedural": false,
-   "moved_by": "Vice-Chair Moore",
-   "seconded_by": "Member Lehtinen",
    "quote": "motion by vice-chair moore to approve the special event application for the lions cruise night and car show on may 20, 2026, with a rain date of may 27, 2026. seconded by member lehtinen. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "approve the application for change of managers on the liquor license (All Kinds of Alcoholic Beverages) for Victory Distributors, LLC d/b/a Hannaford Supermarket & Pharmacy #8388, 333 Massachusetts Avenue",
+   "motion": "Approve application for change of managers listed on liquor license (All Kinds of Alcoholic Beverages) for Victory Distributors, LLC d/b/a Hannaford Supermarket & Pharmacy #8388, 333 Massachusetts Avenue",
+   "moved_by": "Vice-Chair Amanda Moore",
+   "seconded_by": "Member Brian Lehtinen",
    "outcome": "passed 5-0",
    "procedural": false,
-   "moved_by": "Vice-Chair Moore",
-   "seconded_by": "Member Lehtinen",
    "quote": "motion by vice-chair moore to approve the application for a change of managers listed on the liquor license (all kinds of alcoholic beverages) for victory distributors, llc d/b/a hannaford supermarket & pharmacy #8388, 333 massachusetts avenue. seconded by member lehtinen. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "place the photograph of Town Hall on the front cover and the aerial photograph of the Middle-High School campus on the back cover of the Annual Town Report",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "moved_by": "Clerk Emkey",
-   "seconded_by": "Chair Nuzzolo",
-   "quote": "motion by clerk emkey to place the photograph of town hall on the front cover and the aerial photograph of the middle-high school campus on the back cover of the annual town report. seconded by chair nuzzolo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
-  },
-  {
-   "motion": "approve the minutes of the March 31, 2026 Select Board meeting",
+   "motion": "Approve minutes of March 31, 2026 Select Board meeting",
+   "moved_by": "Vice-Chair Amanda Moore",
+   "seconded_by": "Member Brian Lehtinen",
    "outcome": "passed 5-0",
    "procedural": true,
-   "moved_by": "Vice-Chair Moore",
-   "seconded_by": "Member Lehtinen",
    "quote": "motion by vice-chair moore to approve the minutes of the march 31, 2026 select board meeting. seconded by member lehtinen. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "enter into Executive Session and not re-enter Open Session to discuss strategy with respect to litigation regarding Opioid Litigation Remnant Settlement",
+   "motion": "Place photograph of Town Hall on front cover and aerial photograph of Middle-High School campus on back cover of Annual Town Report",
+   "moved_by": "Clerk Renee Emkey",
+   "seconded_by": "Chair Caesar Nuzzolo",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "motion by clerk emkey to place the photograph of town hall on the front cover and the aerial photograph of the middle-high school campus on the back cover of the annual town report. seconded by chair nuzzolo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+  },
+  {
+   "motion": "Enter Executive Session pursuant to MGL c. 30 §21 (a)(3) to discuss strategy with respect to litigation regarding Opioid Litigation Remnant Settlement Participation, and not re-enter Open Session",
+   "moved_by": "Chair Caesar Nuzzolo",
    "outcome": "passed 5-0",
    "procedural": true,
-   "moved_by": "Chair Nuzzolo",
-   "seconded_by": "",
    "quote": "chair nuzzolo moved to enter into executive session and not re-enter open session after exiting executive session pursuant to mgl c. 30 §21 (a)(3) to discuss strategy with respect to litigation, where an open meeting may have a detrimental effect on the litigating position of the town and the chair of the board so declares. (opioid litigation remnant settlement ===page 11=== select board meeting minutes april 14, 2026 page 11 of 11 participation). roll call vote: vice-chair moore-aye; clerk emkey-aye; member lehtinen-aye; memb",
    "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "All six votes passed unanimously 5-0. The vote to Sell or Hold 250 and 356 Hollis Road (page 7-8) was discussed but deferred for one week; no vote was taken.",
- "cost_usd": 0.11536840000000001
+ "note": "Minutes were reviewed and approved by the Board on August 4, 2026. All votes were unanimous (5-0). The meeting was recorded and broadcast live. No absences reported among Board members.\"",
+ "cost_usd": 0.1421476,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "John Rabbit",
+   "role": "former Board of Assessors member, public commenter",
+   "status": "present",
+   "quote": "john rabbit, 314 townsend harbor road, a former member of the board of assessors"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "patrick sullivan, 197 reservoir road, a resident and lunenburg's fire chief"
+  },
+  {
+   "name": "Brad McNamara",
+   "role": "President of Lunenburg Police Union, NEPBA Local 353",
+   "status": "present",
+   "quote": "brad mcnamara, 197 reservoir road, president of the lunenburg police union, nepba local 353"
+  },
+  {
+   "name": "Christos Lekaditis",
+   "role": "President of Lunenburg Professional Firefighters Local 5369",
+   "status": "present",
+   "quote": "christos lekaditis, 49 maple parkway, president of lunenburg professional firefighters local 5369"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "researcher",
+   "status": "remote",
+   "quote": "michael-ray jeffreys, 1170 massachusetts avenue, participating remotely via zoom"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "School Committee member, public commenter",
+   "status": "remote",
+   "quote": "laura brzozoski, 21 francis avenue, participating remotely via zoom and speaking as an individual voter and parent"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "community member",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster avenue, appeared to acknowledge the passing of community member mary anne sodalnik"
+  },
+  {
+   "name": "Sibyl Kaufman",
+   "role": "Lunenburg Education Accelerator Foundation (LEAF)",
+   "status": "present",
+   "quote": "chair nuzzolo invited sybil kaufman to the podium to share an update on lunenburg's first education foundation"
+  },
+  {
+   "name": "Mary Jo Garcia",
+   "role": "applicant, 360 Auto Group, Inc",
+   "status": "present",
+   "quote": "the applicant, mary jo garcia of 706 lancaster street, leominster, appeared before the board"
+  },
+  {
+   "name": "Lisa Normandin",
+   "role": "President of the Turkey Hill Family Lions Club",
+   "status": "present",
+   "quote": "lisa normandin, 33 cliffview terrace, president of the turkey hill family lions club, appeared before the select board"
+  },
+  {
+   "name": "Neil Mooney",
+   "role": "Attorney for Victory Distributors LLC",
+   "status": "remote",
+   "quote": "attorney neil mooney appeared remotely via zoom on behalf of victory distributors llc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Postpone vote on 250 and 356 Hollis Road for one week to allow Board members to view properties in person before deciding to sell or hold",
+   "quote": "given that the notification deadline is approximately one month away, the members agreed to hold the item for one week to allow time to view the properties."
+  },
+  {
+   "decision": "Annual Town Report will display Town Hall photograph on front cover with School campus photograph on back cover, provided printer costs allow for both images",
+   "quote": "town manager warren-dyment suggested a solution whereby the winning color photograph would appear on the front cover and the other photograph, would appear on the back cover, provided the printer's costs allow for it. the select board found this approach agreeable."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "LEAF donations and matching funds",
+   "what_was_recorded": "Education Accelerator Foundation has raised contributions and local philanthropist offered to match donations up to $5,000",
+   "figures_as_printed": [
+    "$8,366",
+    "$5,000"
+   ],
+   "quote": "ms. kaufman reported that since her last appearance before the select board, leaf has raised $8,366 in contributions from community members and local businesses. she acknowledged the following business sponsors: shapiro educational and behavioral consultants, pi",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Town Stabilization Fund balance",
+   "what_was_recorded": "Stabilization Fund balance cited in budget debate discussion",
+   "figures_as_printed": [
+    "$3.2 million"
+   ],
+   "quote": "he argued that the town sitting on a $3.2 million stabilization fund balance while making cuts that \"overwhelmingly target parents and their children\" requires explanation"
+  },
+  {
+   "topic": "Fire Department fourth shift",
+   "what_was_recorded": "Cost of proposed Fire Department fourth shift identified in budget discussions",
+   "figures_as_printed": [
+    "$464,000"
+   ],
+   "quote": "the fourth shift addition for the fire department at $464,000"
+  },
+  {
+   "topic": "Assistant Town Manager position",
+   "what_was_recorded": "Proposed new Assistant Town Manager position with benefits cost identified",
+   "figures_as_printed": [
+    "$145,000"
+   ],
+   "quote": "the addition of a new assistant town manager position at approximately $145,000 including benefits"
+  },
+  {
+   "topic": "Health insurance fixed cost increase",
+   "what_was_recorded": "Health insurance increase cited as component of town deficit",
+   "figures_as_printed": [
+    "$682,718"
+   ],
+   "quote": "fixed cost increases such as $682,718 in health insurance and $238,170 in the worcester county retirement assessment"
+  },
+  {
+   "topic": "Worcester County retirement assessment",
+   "what_was_recorded": "Fixed cost increase for Worcester County retirement assessment",
+   "figures_as_printed": [
+    "$238,170"
+   ],
+   "quote": "fixed cost increases such as $682,718 in health insurance and $238,170 in the worcester county retirement assessment"
+  },
+  {
+   "topic": "Town non-attrition related cuts",
+   "what_was_recorded": "Non-attrition related cuts to town budget identified",
+   "figures_as_printed": [
+    "$220,000"
+   ],
+   "quote": "the failure to mention $220,000 in non-attrition related cuts to the town and $163,835 in cuts to the school department that are not restored in any version of the budget"
+  },
+  {
+   "topic": "School Department cuts",
+   "what_was_recorded": "Cuts to School Department not restored in balanced or override budgets",
+   "figures_as_printed": [
+    "$163,835"
+   ],
+   "quote": "the failure to mention $220,000 in non-attrition related cuts to the town and $163,835 in cuts to the school department that are not restored in any version of the budget"
+  },
+  {
+   "topic": "State exemption reimbursements",
+   "what_was_recorded": "Board of Assessors reported estimated state exemption reimbursements for FY26",
+   "figures_as_printed": [
+    "$113,000"
+   ],
+   "quote": "state exemption reimbursements are estimated at approximately $113,000."
+  },
+  {
+   "topic": "Assessor overlay release",
+   "what_was_recorded": "Board of Assessors approved overlay release for continued work in FY27",
+   "figures_as_printed": [
+    "$27,500"
+   ],
+   "quote": "the boa approved a $27,500 overlay release to fund continued work in fy27."
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "Accounts Payable warrant for payment authorization",
+   "figures_as_printed": [
+    "$700,088,255.82"
+   ],
+   "quote": "accounts payable warrant in the amount of ($700,088,255.82)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Rabbit",
+   "stated_role": "former member of the Board of Assessors",
+   "topic": "Chapter 41A tax deferral program for seniors",
+   "quote": "john rabbit, 314 townsend harbor road, a former member of the board of assessors, raised awareness of the town's chapter 41a tax deferral program for seniors. mr. rabbit noted that the program, which allows qualifying seniors to defer property tax payments at a 4% interest rate for as long as they own their home, is currently not prominently listed on the town's website."
+  },
+  {
+   "speaker": "Patrick Sullivan",
+   "stated_role": "Lunenburg's Fire Chief",
+   "topic": "Fire Department staffing and proposed fourth shift",
+   "quote": "patrick sullivan, 197 reservoir road, a resident and lunenburg's fire chief responded to public statements made at the previous select board meeting regarding fire department staffing and the proposed fourth shift. mr. sullivan emphasized that the staffing plan and the proposed reallocation of per diem hours have not changed since their original presentation in july 2025"
+  },
+  {
+   "speaker": "Brad McNamara",
+   "stated_role": "President of the Lunenburg Police Union, NEPBA Local 353",
+   "topic": "Police Department staffing and cybercrime caseload",
+   "quote": "brad mcnamara, 197 reservoir road, president of the lunenburg police union, nepba local 353, addressed the select board on behalf of the lunenburg police union to correct what he described as factually inaccurate statements made publicly by a member of the finance committee regarding police department staffing."
+  },
+  {
+   "speaker": "Christos Lekaditis",
+   "stated_role": "President of Lunenburg Professional Firefighters Local 5369",
+   "topic": "Fire Department budget and staffing comparison to Groton",
+   "quote": "christos lekaditis, 49 maple parkway, president of lunenburg professional firefighters local 5369, stated that he was \"absolutely disgusted\" to be addressing the select board on this matter at the eleventh hour, after nearly a year of collaborative budget work."
+  },
+  {
+   "speaker": "Michael-Ray Jeffreys",
+   "stated_role": "researcher working with Lunenburg Ledger on budget coverage",
+   "topic": "Budget concerns regarding Stabilization Funds, Assistant Town Manager position, and school cuts",
+   "quote": "michael-ray jeffreys, 1170 massachusetts avenue, participating remotely via zoom, identified himself as a researcher who has been working with the lunenburg ledger on budget-related coverage. he stated his support for both the school department's funding needs and the fire department's fourth shift"
+  },
+  {
+   "speaker": "Laura Brzozoski",
+   "stated_role": "individual voter and parent; School Committee member",
+   "topic": "Impact of balanced budget on children as constituency",
+   "quote": "laura brzozoski, 21 francis avenue, participating remotely via zoom and speaking as an individual voter and parent rather than in her capacity as a school committee member, focused her remarks on the theme of children as a constituency."
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "community member",
+   "topic": "Community condolences and budget discourse",
+   "quote": "tom alonzo, 284 lancaster avenue, appeared to acknowledge the passing of community member mary anne sodalnik, a retired eighth-grade science teacher who was deeply involved in the town's major capital facilities planning efforts in the early 2000s"
+  },
+  {
+   "speaker": "Jennifer Warren-Dyment",
+   "stated_role": "Town Manager",
+   "topic": "Response to Lunenburg Ledger article and budget factual corrections",
+   "quote": "town manager jennifer warren-dyment was recognized by chair nuzzolo and allowed to provide public comment. she acknowledged the difficulty of the decisions before the community"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge of allegiance",
+   "resolution": "meeting called to order at 7:00 PM",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance."
+  },
+  {
+   "topic": "Community announcements",
+   "resolution": "announced",
+   "tags": [
+    "announcements",
+    "town events"
+   ],
+   "quote": "chair nuzzolo made the following community announcements: ● the lunenburg club's 12th annual are you smarter than our 6th graders? event will be held friday, april 17 at 6:30 pm in the lunenburg middle/high school auditoriu",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "received",
+   "tags": [
+    "public comment",
+    "budget",
+    "staffing",
+    "services"
+   ],
+   "quote": "public comment john rabbit, 314 townsend harbor road, a former member of the board of assessors, raised awareness of the town's chapter 41a tax deferral program for seniors."
+  },
+  {
+   "topic": "Public hearing: 360 Auto Group business name change on Class II License",
+   "resolution": "approved",
+   "tags": [
+    "business license",
+    "motor vehicles"
+   ],
+   "quote": "motion by vice-chair moore to approve the application for a business name change on the class ii license for 360 auto group, incorporated, previously issued to unique motors group located at 40 summer street."
+  },
+  {
+   "topic": "Public hearing: Lions Cruise Night and Car Show special event",
+   "resolution": "approved",
+   "tags": [
+    "special event",
+    "community event"
+   ],
+   "quote": "motion by vice-chair moore to approve the special event application for the lions cruise night and car show on may 20, 2026, with a rain date of may 27, 2026."
+  },
+  {
+   "topic": "Application for change of managers on liquor license for Hannaford",
+   "resolution": "approved",
+   "tags": [
+    "liquor license",
+    "business"
+   ],
+   "quote": "motion by vice-chair moore to approve the application for a change of managers listed on the liquor license (all kinds of alcoholic beverages) for victory distributors, llc d/b/a hannaford supermarket & pharmacy #8388, 333 massachusetts avenue."
+  },
+  {
+   "topic": "LEAF education foundation update and matching funds",
+   "resolution": "update received",
+   "tags": [
+    "education",
+    "fundraising",
+    "grants"
+   ],
+   "quote": "chair nuzzolo invited sybil kaufman to the podium to share an update on lunenburg's first education foundation, the lunenburg education accelerator foundation (leaf). ms. kaufman reported that since her last appearance before the select board, leaf has raised $8,366 in contributions"
+  },
+  {
+   "topic": "Town Manager report: 925 Mass Ave, projects, and recruitment",
+   "resolution": "report received",
+   "tags": [
+    "town manager report",
+    "capital projects",
+    "staffing"
+   ],
+   "quote": "town manager warren-dyment provided the following updates: 925 mass ave: the environmental cleanup strategy report commissioned from beta group has been completed and delivered to the town."
+  },
+  {
+   "topic": "Vote to sell or hold tax title properties at 250 and 356 Hollis Road",
+   "resolution": "tabled one week",
+   "tags": [
+    "tax title property",
+    "real estate"
+   ],
+   "quote": "given that the notification deadline is approximately one month away, the members agreed to hold the item for one week to allow time to view the properties."
+  },
+  {
+   "topic": "Annual Town Report cover photo contest",
+   "resolution": "approved",
+   "tags": [
+    "annual report"
+   ],
+   "quote": "motion by clerk emkey to place the photograph of town hall on the front cover and the aerial photograph of the middle-high school campus on the back cover of the annual town report."
+  },
+  {
+   "topic": "Discussion on FY2026, FY2027 budgets and Proposition 2½ override process",
+   "resolution": "discussed",
+   "tags": [
+    "budget",
+    "override",
+    "municipal funding"
+   ],
+   "quote": "member mcleod raised a broader structural point about the root cause of the community's budget difficulties, noting that insufficient state investment in municipalities has been a driving factor in the divisiveness surrounding the override process."
+  },
+  {
+   "topic": "Town Manager review process and timeline",
+   "resolution": "scheduled",
+   "tags": [
+    "town manager",
+    "evaluation"
+   ],
+   "quote": "chair nuzzolo noted that the town manager's self-evaluation is forthcoming and requested that all board members complete their individual reviews and meet with the town manager by april 30, 2026"
+  },
+  {
+   "topic": "Approval of prior meeting minutes",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "motion by vice-chair moore to approve the minutes of the march 31, 2026 select board meeting. seconded by member lehtinen. call for the vote: five-aye."
+  },
+  {
+   "topic": "Committee reports: Planning Board, Economic Development, Board of Assessors, School Committee",
+   "resolution": "reported",
+   "tags": [
+    "committee reports",
+    "planning",
+    "economic development",
+    "assessors",
+    "schools"
+   ],
+   "quote": "member glenn mcleod reported on the following: planning board (april 13, 2026): public hearings were continued for 260 new west townsend road and 222 west townsend road"
+  },
+  {
+   "topic": "Executive session on opioid litigation remnant settlement participation",
+   "resolution": "entered",
+   "tags": [
+    "procedural",
+    "executive session",
+    "litigation"
+   ],
+   "quote": "chair nuzzolo moved to enter into executive session and not re-enter open session after exiting executive session pursuant to mgl c. 30 §21 (a)(3) to discuss strategy with respect to litigation"
+  }
+ ],
+ "tags": [
+  "select board",
+  "budget",
+  "override",
+  "fire department",
+  "police department",
+  "town meeting",
+  "tax deferral",
+  "business licenses",
+  "special events",
+  "capital projects",
+  "staffing"
+ ],
+ "dropped_unquoted_by_field": {}
 }

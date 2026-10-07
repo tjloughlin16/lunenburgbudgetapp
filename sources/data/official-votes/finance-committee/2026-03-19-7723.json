@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-03-19",
  "docid": "7723",
@@ -13,7 +13,7 @@
  "votes": [
   {
    "motion": "Open the Finance Committee public hearing and continue it until March 26 at 7:00 PM",
-   "moved_by": "Tom gray",
+   "moved_by": "Tom Gray",
    "seconded_by": "Tanya Dall",
    "outcome": "passed 7-0",
    "procedural": true,
@@ -30,5 +30,122 @@
  ],
  "dropped_unquoted": 0,
  "note": "",
- "cost_usd": 0.061444399999999996
+ "cost_usd": 0.1101214,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair Menard will request the School Committee to present an updated presentation",
+   "quote": "chris menard was unaware of any anticipated changes and will request the school committee to present an updated presentation."
+  },
+  {
+   "decision": "Chair Menard will request the Town Manager to present to the Committee any changes",
+   "quote": "chris menard will also request town manager present to the committee any changes."
+  },
+  {
+   "decision": "School and town should present a budget that includes an override and one without an override",
+   "quote": "tom gray suggests the school and the town present a budget that includes an override and one without an override."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "Committee Member",
+   "topic": "School budget must be balanced per bylaws",
+   "quote": "ana lockwood expressed concern about the budget that the school committee presented. according to bylaws a balanced budget is supposed to be presented and that budget needs to be voted on prior to their presentation at town meeting."
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "Committee Member",
+   "topic": "Workshop information changes not shared with committee",
+   "quote": "additionally, ana lockwood is aware of multiple workshops that have occurred where information has changed but haven't been shared with the committee."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open Finance Committee Public Hearing",
+   "resolution": "opened and continued to March 26 at 7:00 PM",
+   "tags": [
+    "public hearing",
+    "budget",
+    "procedural"
+   ],
+   "quote": "there was a motion to open the finance committee public hearing and to continue it until march 26 at 7pm by tom gray, seconded by tanya dall."
+  },
+  {
+   "topic": "School Budget Concerns",
+   "resolution": "discussed; updated presentation requested",
+   "tags": [
+    "school budget",
+    "balanced budget",
+    "oversight"
+   ],
+   "quote": "ana lockwood expressed concern about the budget that the school committee presented. according to bylaws a balanced budget is supposed to be presented and that budget needs to be voted on prior to their presentation at town meeting."
+  },
+  {
+   "topic": "Budget Workshop Information Transparency",
+   "resolution": "discussed; presentation changes to be reported",
+   "tags": [
+    "school budget",
+    "transparency",
+    "oversight"
+   ],
+   "quote": "additionally, ana lockwood is aware of multiple workshops that have occurred where information has changed but haven't been shared with the committee."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "budget",
+  "school budget",
+  "public hearing",
+  "override",
+  "balanced budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

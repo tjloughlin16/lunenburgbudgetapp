@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2026-04-22",
  "docid": "7773",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session",
+   "motion": "Adjourn the open meeting and enter executive session, not to return to the open session after exiting executive session",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
@@ -21,6 +21,147 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes were OCR'd from scanned pages. Several items (motor vehicle warrants, 61A application) are described as \"signed\" or \"approved\" in passive voice but without explicit motion/vote language, so they were not counted as formal votes. The minutes do not record approval of prior minutes or votes on other motions.",
- "cost_usd": 0.0615094
+ "note": "Minutes were OCR-processed using macOS Vision. Minutes were approved on August 5, 2026, after the meeting date of April 22, 2026.",
+ "cost_usd": 0.1005736,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "absent",
+   "quote": "lynda cajka was not present to provide her report."
+  },
+  {
+   "name": "Karen Barrett",
+   "role": "Finance Director/Town Accountant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  },
+  {
+   "name": "Brian Marple",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Consultant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple, consultant rena swezey"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Public Access Cable",
+   "status": "present",
+   "quote": "jo toale from public access cable asked brian laffond if he would appear on an episode of committee confidential"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A new 61A application was approved by the board and will be notarized",
+   "quote": "a new 61a application was approved. it includes the check for the registry and the lien. it was approved by the board and will need to be notarized tomorrow."
+  },
+  {
+   "decision": "Signed motor vehicle and trailer excise warrants from various commitments",
+   "quote": "signed motor vehicle and trailer excise warrants from various commitments totaling $245,021."
+  },
+  {
+   "decision": "Motor vehicle excise tax warrant for commitment number 8 of FY25 was signed",
+   "quote": "the motor vehicle excise tax warrant for commitment number 8 of fy25 totaling $5.02 was signed by the board."
+  },
+  {
+   "decision": "Karen Barrett will follow up and provide information on supplemental bills",
+   "quote": "there was a brief discussion about supplemental bills. karen barrett will follow up and provide information to the board."
+  },
+  {
+   "decision": "Karen Barrett to get price list of CAI features and fee schedules and obtain previous CAI contracts",
+   "quote": "karen barrett is going to get a price list of features and the fee schedules. karen barrett will also try to obtain copies of previous cal contracts."
+  },
+  {
+   "decision": "Rena Swezey will meet with CAI representatives on May 12, 2026",
+   "quote": "rena swezey will be meeting with cal representatives on may 12, 2026."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Motor vehicle and trailer excise warrants",
+   "what_was_recorded": "Signed motor vehicle and trailer excise warrants from various commitments",
+   "figures_as_printed": [
+    "$245,021"
+   ],
+   "quote": "signed motor vehicle and trailer excise warrants from various commitments totaling $245,021."
+  },
+  {
+   "topic": "Motor vehicle excise tax warrant FY25 commitment 8",
+   "what_was_recorded": "Motor vehicle excise tax warrant for commitment number 8 of FY25 was signed",
+   "figures_as_printed": [
+    "$5.02"
+   ],
+   "quote": "the motor vehicle excise tax warrant for commitment number 8 of fy25 totaling $5.02 was signed by the board."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jo Toale",
+   "stated_role": "Public Access Cable",
+   "topic": "Appearance on Committee Confidential",
+   "quote": "jo toale from public access cable asked brian laffond if he would appear on an episode of committee confidential to talk about the board."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Status Report from Principal Assessor",
+   "resolution": "No report; discussion of Meet and Greet, excise tax warrants, and 61A application",
+   "tags": [
+    "assessor report",
+    "community outreach",
+    "excise tax",
+    "applications"
+   ],
+   "quote": "lynda cajka was not present to provide her report. brian laffond stated there is a meet and greet at the adult activity center on april 28th at 7 pm."
+  },
+  {
+   "topic": "Current Business: Questions for CAI regarding Neighborhood Review Project",
+   "resolution": "Consultant Rena Swezey hired; meeting with CAI scheduled for May 12, 2026",
+   "tags": [
+    "neighborhood review",
+    "CAI",
+    "property assessment",
+    "data collection"
+   ],
+   "quote": "brian laffond shared that rena swezey has been hired as a consultant to execute the neighborhood review project. sarah cammer learned that the assessor's office has a login with the ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Upcoming Meeting/Events Schedule",
+   "resolution": "Tentative meeting scheduled",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming tentative meetings: may 13, 2026"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "excise tax",
+  "property assessment",
+  "neighborhood review",
+  "CAI",
+  "61A application"
+ ],
+ "dropped_unquoted_by_field": {}
 }

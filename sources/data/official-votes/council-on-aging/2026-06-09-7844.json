@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2026-06-09",
  "docid": "7844",
@@ -13,46 +13,325 @@
  "votes": [
   {
    "motion": "Submit a letter to the Selectboard outlining a proposal for mail-in ballots to housebound seniors for special elections",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "moved_by": "Lou Franco",
+   "seconded_by": "not stated",
+   "outcome": "unanimously approved",
    "procedural": false,
-   "quote": "following discussion, a motion was made, seconded, and unanimously approved to submit a letter to the selectboard outlining the proposal."
+   "quote": "a motion was made, seconded, and unanimously approved to submit a letter to the selectboard outlining the proposal."
   },
   {
    "motion": "Place the Council on Aging Orientation Packet on the Town website",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "unanimously approved",
    "procedural": false,
    "quote": "a motion was made, seconded, and unanimously approved to place the council on aging orientation packet on the town website."
   },
   {
    "motion": "Elect Deborah Lincoln as Chair and Lou Franco as Vice Chair",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "a motion was made, seconded, and unanimously approved to elect: • deborah lincoln - chair • lou franco - vice chair"
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "unanimously approved",
+   "procedural": false,
+   "quote": "a motion was made, seconded, and unanimously approved to submit a letter to the selectboard outlining the propos",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Amend the Council on Aging honorary members policy to include non-board members",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Amend the policy to include non-Council on Aging Board members as eligible for honorary membership",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "approved",
    "procedural": false,
-   "quote": "following discussion, a motion was made and approved to amend the policy to include non-council on aging board members."
+   "quote": "a motion was made and approved to amend the policy to include non-council on aging board members."
   },
   {
    "motion": "Designate Susan Doherty as an honorary member",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "approved",
    "procedural": false,
    "quote": "a subsequent motion was made and approved to designate susan doherty as an honorary member."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Five votes found. No readability issues with the document.",
- "cost_usd": 0.08753240000000001
+ "dropped_unquoted": 3,
+ "note": "Previous meeting minutes were not reviewed or approved at this meeting. Director Deb Goodsell was attending mandatory town-wide training, so updates were provided to the Board prior to the meeting by others.",
+ "cost_usd": 0.10382,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jane Rabbitt",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "jane rabbitt"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "lou franco"
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "susan o'sullivan"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "elena christopher"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "diane nowd"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "jim mcguigan"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "jack rabbitt"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "ana lockwood"
+  },
+  {
+   "name": "Helen Balcolm",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "helen balcolm"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Selectboard Liaison",
+   "status": "present",
+   "quote": "glenn mcleod, selectboard liaison"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Elena Christopher was appointed as the new Sunshine Person",
+   "quote": "elena christopher was appointed as the new sunshine person."
+  },
+  {
+   "decision": "Michele Beauvais will be responsible for taking meeting minutes moving forward",
+   "quote": "michele beauvais will be responsible for taking meeting minutes moving forward."
+  },
+  {
+   "decision": "The Chair suggested reviewing all policies to ensure legal compliance and accuracy",
+   "quote": "the chair suggested reviewing all policies to ensure legal compliance and accuracy."
+  },
+  {
+   "decision": "The Honorary Members Luncheon will be moved from August to September",
+   "quote": "the chair also suggested moving the honorary members luncheon from august to september due to peter lincoln's unavailability."
+  },
+  {
+   "decision": "Discussion regarding COA Gift Fund will continue at the next meeting",
+   "quote": "discussion will continue at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Council on Aging Gift Fund",
+   "what_was_recorded": "Current balance of the Gift Fund was reported",
+   "figures_as_printed": [
+    "$1,300"
+   ],
+   "quote": "jane rabbitt informed the board that the gift fund currently contains approximately $1,300."
+  },
+  {
+   "topic": "Veterans Breakfast",
+   "what_was_recorded": "Pricing for Veterans Breakfast and sponsorship details were reviewed",
+   "figures_as_printed": [
+    "$4"
+   ],
+   "quote": "veterans attend free of charge and guests pay $4. the veterans breakfast is sponsored in part by the highlands of fitchburg."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome to New Selectboard Liaison",
+   "resolution": "Glenn McLeod welcomed",
+   "tags": [
+    "selectboard-liaison",
+    "appointments"
+   ],
+   "quote": "the board welcomed glenn mcleod as the new selectboard liaison."
+  },
+  {
+   "topic": "Ballots for Housebound Seniors",
+   "resolution": "Motion approved to submit letter to Selectboard",
+   "tags": [
+    "housebound-seniors",
+    "elections",
+    "mail-in-ballots"
+   ],
+   "quote": "a motion was made, seconded, and unanimously approved to submit a letter to the selectboard outlining the proposal."
+  },
+  {
+   "topic": "Friendly Visitor/Friendly Call Program",
+   "resolution": "Discussed; exploring alternative marketing strategies",
+   "tags": [
+    "friendly-visitor-program",
+    "seniors"
+   ],
+   "quote": "the chair suggested exploring alternative ways to market the program."
+  },
+  {
+   "topic": "Council on Aging Gift Fund",
+   "resolution": "Discussed; policy regarding notifications to be implemented; discussion to continue",
+   "tags": [
+    "gift-fund",
+    "donations",
+    "policy"
+   ],
+   "quote": "discussion will continue at the next meeting."
+  },
+  {
+   "topic": "Veterans Breakfast Policy",
+   "resolution": "Policy reviewed; no action",
+   "tags": [
+    "veterans",
+    "breakfast",
+    "pricing"
+   ],
+   "quote": "the board reviewed the veterans breakfast policy."
+  },
+  {
+   "topic": "Policies and Procedures",
+   "resolution": "Motion approved to place Orientation Packet on Town website; all policies to be reviewed",
+   "tags": [
+    "policies",
+    "procedures",
+    "website"
+   ],
+   "quote": "a motion was made, seconded, and unanimously approved to place the council on aging orientation packet on the town website."
+  },
+  {
+   "topic": "Election of Officers",
+   "resolution": "Deborah Lincoln elected Chair; Lou Franco elected Vice Chair",
+   "tags": [
+    "election-of-officers",
+    "leadership"
+   ],
+   "quote": "a motion was made, seconded, and unanimously approved to submit a letter to the selectboard outlining the propos",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Sunshine Person",
+   "resolution": "Elena Christopher appointed as new Sunshine Person",
+   "tags": [
+    "sunshine-person",
+    "appointments"
+   ],
+   "quote": "elena christopher was appointed as the new sunshine person."
+  },
+  {
+   "topic": "Minutes Procedures",
+   "resolution": "Michele Beauvais appointed as Recording Secretary",
+   "tags": [
+    "minutes",
+    "recording-secretary",
+    "appointments"
+   ],
+   "quote": "michele beauvais will be responsible for taking meeting minutes moving forward."
+  },
+  {
+   "topic": "Financial Report",
+   "resolution": "Report provided to Board members",
+   "tags": [
+    "financial-report"
+   ],
+   "quote": "the financial report was provided in each board member's packet."
+  },
+  {
+   "topic": "Bylaws",
+   "resolution": "No update; Liaison McLeod to gather additional information on status",
+   "tags": [
+    "bylaws"
+   ],
+   "quote": "she requested that liaison glenn mcleod gather additional information regarding their status."
+  },
+  {
+   "topic": "Personnel Update",
+   "resolution": "No action; interviews pending",
+   "tags": [
+    "personnel",
+    "hiring"
+   ],
+   "quote": "the board was informed that there are currently four candidates under consideration and interviews will begin soon."
+  },
+  {
+   "topic": "Lobby Furnishings",
+   "resolution": "New furnishings installed",
+   "tags": [
+    "facility",
+    "furnishings"
+   ],
+   "quote": "the new lobby furnishings have been installed and now provide seating for approximately 20 people."
+  },
+  {
+   "topic": "Honorary Members",
+   "resolution": "Policy amended to include non-Board members; Susan Doherty designated as honorary member",
+   "tags": [
+    "honorary-members",
+    "policy"
+   ],
+   "quote": "a subsequent motion was made and approved to designate susan doherty as an honorary member."
+  },
+  {
+   "topic": "300th Anniversary Committee",
+   "resolution": "Discussed; individuals suggested for calendar",
+   "tags": [
+    "300th-anniversary",
+    "committee"
+   ],
+   "quote": "the chair suggested several individuals for inclusion in the 300th anniversary committee calendar."
+  },
+  {
+   "topic": "Eagle House Supporters Report",
+   "resolution": "Report provided; thanks given",
+   "tags": [
+    "eagle-house-supporters"
+   ],
+   "quote": "barbara coulombe, representing the eagle house supporters, thanked all individuals who made donations to the organization."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "Discussed returning Dull Men's Club to monthly meetings; Caregiver Resource Connection summer recess noted",
+   "tags": [
+    "board-comments",
+    "dull-mens-club"
+   ],
+   "quote": "jack rabbitt and lou franco discussed returning the dull men's club meetings to a once-per-month schedule."
+  }
+ ],
+ "tags": [
+  "council-on-aging",
+  "election-of-officers",
+  "honorary-members",
+  "housebound-seniors",
+  "gift-fund",
+  "policies-procedures",
+  "appointments",
+  "veterans",
+  "friendly-visitor-program"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 3
+ }
 }

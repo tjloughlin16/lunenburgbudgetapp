@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2026-03-19",
  "docid": "7714",
@@ -13,29 +13,365 @@
  "votes": [
   {
    "motion": "Accept the minutes of February 19, 2026, as amended",
+   "moved_by": "Robin",
+   "seconded_by": "not stated",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "robin made a motion to accept the minutes of february 19, 2026, as amended. the motion passed unanimously by roll call vote.",
-   "moved_by": "Robin Venezia"
+   "quote": "robin made a motion to accept the minutes of february 19, 2026, as amended. the motion passed unanimously by roll call vote."
   },
   {
    "motion": "Approve the Investment Policy as amended",
+   "moved_by": "Robin",
+   "seconded_by": "Stephanie",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "robin made a motion to approve the investment policy as amended, seconded by stephanie. the motion passed unanimously by roll call vote.",
-   "moved_by": "Robin Venezia",
-   "seconded_by": "Stephanie Trudel"
+   "quote": "robin made a motion to approve the investment policy as amended, seconded by stephanie. the motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn",
+   "moved_by": "Stephanie",
+   "seconded_by": "Robin",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "a motion to adjourn was made by stephanie, seconded by robin. the motion passed unanimously by roll call vote and the meeting was adjourned at 9:10 p.m.",
-   "moved_by": "Stephanie Trudel",
-   "seconded_by": "Robin Venezia"
+   "quote": "a motion to adjourn was made by stephanie, seconded by robin. the motion passed unanimously by roll call vote and the meeting was adjourned at 9:10 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1061244
+ "dropped_unquoted": 6,
+ "note": "\"\"",
+ "cost_usd": 0.1613773,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Muir Haman",
+   "role": "Director",
+   "status": "present",
+   "quote": "members present: muir haman (director)"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board Representative",
+   "status": "present",
+   "quote": "glenn mcleod (select board representative)"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "Trustee",
+   "status": "remote",
+   "quote": "members present remotely: jana-lee balish"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "members absent: maia wentrup"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Muir will prepare a balanced budget with a 5% cut from FY26 budget coming from staff salaries",
+   "quote": "this will be a 5% cut from our fy26 budget, putting us just above the library funding requirements stipulated by the massachusetts board of library commissioners. the cut in the budget of 43k will come from staff salaries."
+  },
+  {
+   "decision": "Muir decided to put hiring a Young Adult Librarian on hold to avoid cutting hours of current staff",
+   "quote": "muir has decided to put hiring a young adult librarian on hold so that he does not need to cut the hours of our current staff."
+  },
+  {
+   "decision": "Muir presented a level services budget to the Finance Committee on March 5 and is preparing a detailed handout to answer questions about outside funding sources",
+   "quote": "muir presented a level services budget to the finance committee on march 5. he received questions about sources and uses of the outside funding the library receives. he is preparing a detailed handout to answer these questions."
+  },
+  {
+   "decision": "Jean Proctor gave approval for a bench in memory of Regina McGee to be installed in the Proctor Memorial Garden",
+   "quote": "jean proctor gave approval for a bench in memory of regina mcgee to be installed in the proctor memorial garden on the library grounds."
+  },
+  {
+   "decision": "Muir chose engraved stone as the medium for the Conroy Memorial Garden plaque, with Leominster Monument doing the work",
+   "quote": "muir has chosen engraved stone as the medium for the memorial plaque. leominster monument will be doing the work."
+  },
+  {
+   "decision": "Discussion on Gift Policy will continue at a future meeting",
+   "quote": "discussion will continue at a future meeting."
+  },
+  {
+   "decision": "Book and Bake Sale is scheduled for June 5 and 6",
+   "quote": "the book and bake sale is scheduled for june 5 and 6."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2027 Budget - Proposed Cut",
+   "what_was_recorded": "5% reduction from FY26 budget, with $43,000 cut coming from staff salaries",
+   "figures_as_printed": [
+    "5%",
+    "43K"
+   ],
+   "quote": "this will be a 5% cut from our fy26 budget, putting us just above the library funding requirements stipulated by the massachusetts board of library commissioners. the cut in the budget of 43k will come from staff salaries."
+  },
+  {
+   "topic": "State Aid to Libraries",
+   "what_was_recorded": "State Aid to Libraries received for FY26",
+   "figures_as_printed": [
+    "$34,000"
+   ],
+   "quote": "state aid to libraries - received about $34,000 for fy26"
+  },
+  {
+   "topic": "Gifts Received",
+   "what_was_recorded": "Monetary gifts received for FY26",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "gifts received - was about $200 for fy26"
+  },
+  {
+   "topic": "Friends of the Library Endowment",
+   "what_was_recorded": "Funds from Friends of the Library Endowment received for FY26",
+   "figures_as_printed": [
+    "$66,000"
+   ],
+   "quote": "friends of the library from their endowment - received about $66,000 for fy26"
+  },
+  {
+   "topic": "Cisco Umbrella Software",
+   "what_was_recorded": "Annual cost for Cisco Umbrella website filtering software",
+   "figures_as_printed": [
+    "$2,100/year"
+   ],
+   "quote": "the umbrella software costs $2,100/year."
+  },
+  {
+   "topic": "FY26 Budget Expenditures",
+   "what_was_recorded": "Budget and actual expenditures through reporting date for various library operations",
+   "figures_as_printed": [
+    "$97,076",
+    "$64,718",
+    "$69,627",
+    "$47,887",
+    "$272,757",
+    "$167,768",
+    "$850",
+    "$1,300",
+    "$793",
+    "$22,500",
+    "$15,443",
+    "$18,500",
+    "$8,330",
+    "$1,150",
+    "$574",
+    "$500",
+    "$140",
+    "$4,500",
+    "$4,476",
+    "$16,000",
+    "$8,244",
+    "$2,500",
+    "$20,571",
+    "$8,000",
+    "$4,007",
+    "$300",
+    "$233",
+    "$96,000",
+    "$48,317",
+    "$4,000",
+    "$278",
+    "$636,131",
+    "$392,627"
+   ],
+   "quote": "fy26 budget budget expended % expended calendar completion library director salary 97,076$ 64,718$ 67% 71% asst library director salary 69,627$ 47,887$ 69% library staff salaries 272,757$ 167,768$ 62% longevity 850$ 850$ 100% bld",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Adult Programs Budget",
+   "what_was_recorded": "Programming budget allocation and expenditure status for adult programs",
+   "figures_as_printed": [
+    "$4,500",
+    "$3,000",
+    "$1,000",
+    "$6,600",
+    "$14,600"
+   ],
+   "quote": "adult programs as of 3/1/2026 budget line total % spent % encumbered % remaining town $4,500 68% 30% 2% friends - program $3,000 84% 16% 0% friends - supplies $1,000 23% 19% 58% music series $6,600 59% 22% 19% grand total $14,600 58% 22% 20%"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Bridge replacement project funding",
+   "speaker": "Robin",
+   "stated_role": "not stated",
+   "quote": "representative margaret scarsdale secured $75,000 for lunenburg to help with the cost to complete the bridge replacement project on flat hill road."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved unanimously",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "approval of minutes of february 19, 2026 ○ robin made a motion to accept the minutes of february 19, 2026, as amended. the motion passed unanimously by roll call vote.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "FY2027 Budget Update",
+   "resolution": "discussed; balanced budget with 5% cut proposed",
+   "tags": [
+    "budget",
+    "staffing"
+   ],
+   "quote": "at the town manager's request, muir will be preparing a balanced budget. this will be a 5% cut from our fy26 budget, putting us just above the library funding requirements stipulated by the massachusetts board of library commissioners."
+  },
+  {
+   "topic": "FY2026 Budget Update",
+   "resolution": "reported; numbers incomplete due to Finance Department schedule changes",
+   "tags": [
+    "budget"
+   ],
+   "quote": "the numbers in the fy26 report do not include the latest batch of bills and one period of payroll. the finance department has changed the schedule of when paperwork needs to be submitted for payment."
+  },
+  {
+   "topic": "Staff Update",
+   "resolution": "programs and partnerships discussed",
+   "tags": [
+    "staffing",
+    "programs",
+    "partnerships"
+   ],
+   "quote": "joslyn and muir each visited a school classroom to read to a class as part of read across america. muir met with herlin jaime, lunenburg conservation agent, to discuss earth day partnerships."
+  },
+  {
+   "topic": "Programs Update",
+   "resolution": "reported; strong attendance across children's and adult programs",
+   "tags": [
+    "programs",
+    "attendance"
+   ],
+   "quote": "children's programs during school vacation week were very well attended. we held another puzzle race and a music clinic, both for adults, and they were well-attended. book groups also continue to have steady attendance."
+  },
+  {
+   "topic": "Outreach Update",
+   "resolution": "discussed; multiple community events planned",
+   "tags": [
+    "outreach",
+    "community"
+   ],
+   "quote": "upcoming events include an earth day information fair, fitchburg state university farmer and food security fair, seven hills info fair in devens, cruise night, lunenburg business association vendor fair, and the artisan markets this spring and summer."
+  },
+  {
+   "topic": "Technology Update",
+   "resolution": "approved; workstation replacements and equipment upgrades planned",
+   "tags": [
+    "technology",
+    "equipment"
+   ],
+   "quote": "sherri's workstation will be replaced with lydia's all-in-one, and lydia will get a new laptop. the it department will do a scheduled replacement of the two older literacy stations."
+  },
+  {
+   "topic": "Cisco Umbrella Filtering Discussion",
+   "resolution": "continued; awaiting demo and further information",
+   "tags": [
+    "technology",
+    "policy"
+   ],
+   "quote": "muir will be meeting with a representative from cisco for a demo of their umbrella software. he has received answers to most of our questions from last month. umbrella labels websites according to the type of content they contain."
+  },
+  {
+   "topic": "Building & Maintenance Update",
+   "resolution": "ongoing; card entry system work resumed, Children's Room repairs completed",
+   "tags": [
+    "facilities"
+   ],
+   "quote": "work on the card entry system has started again. passes will need to be distributed to employees. the walls in the children's room near the chapter books have been repaired and painted."
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "reviewed; policy review rotation frequency to be determined",
+   "tags": [
+    "governance"
+   ],
+   "quote": "we reviewed chapter four, policy making. we are considering reviewing policies on a continually rotating basis, but need to come to agreement on how frequently this should be done."
+  },
+  {
+   "topic": "Conroy Memorial Garden Update",
+   "resolution": "approved; memorial plaque medium selected",
+   "tags": [
+    "facilities",
+    "memorial"
+   ],
+   "quote": "muir has chosen engraved stone as the medium for the memorial plaque. leominster monument will be doing the work."
+  },
+  {
+   "topic": "Gift Policy Discussion",
+   "resolution": "continued at future meeting; questions raised about donor communication and fund handling",
+   "tags": [
+    "policy"
+   ],
+   "quote": "we do not currently have a gift policy. after reviewing the proposed policy, we questioned whether every gift would need a written communication from the donor, especially for small gifts."
+  },
+  {
+   "topic": "Investment Policy",
+   "resolution": "approved unanimously",
+   "tags": [
+    "policy",
+    "finance"
+   ],
+   "quote": "robin made a motion to approve the investment policy as amended, seconded by stephanie. the motion passed unanimously by roll call vote."
+  },
+  {
+   "topic": "Friends Update",
+   "resolution": "donor box application active; Book and Bake Sale scheduled June 5-6",
+   "tags": [
+    "fundraising"
+   ],
+   "quote": "the donor box application is working to accept membership payments. the friends discussed how they will get the word out ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Lunenburg Town Caucus Update",
+   "resolution": "election nominees announced",
+   "tags": [
+    "governance",
+    "elections"
+   ],
+   "quote": "harry and jana-lee are the caucus nominees for the two open trustee positions and will be on the ballot for the may election."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "Jana-Lee to miss next meeting for writing conference",
+   "tags": [
+    "administration"
+   ],
+   "quote": "jana-lee will be at a writing conference next month and will not be able to attend our meeting."
+  },
+  {
+   "topic": "Other - Water Fountain Issue",
+   "resolution": "reported to Director",
+   "tags": [
+    "facilities"
+   ],
+   "quote": "harry let muir know the water fountains outside the sudolnik conference room are still not working."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "a motion to adjourn was made by stephanie, seconded by robin. the motion passed unanimously by roll call vote and the meeting was adjourned at 9:10 p.m."
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "staffing",
+  "policies",
+  "programs",
+  "technology",
+  "facilities",
+  "governance"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 5,
+  "topics": 1
+ }
 }

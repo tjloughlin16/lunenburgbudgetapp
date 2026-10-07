@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2009-01-05",
  "docid": "818",
@@ -12,15 +12,109 @@
  },
  "votes": [
   {
-   "motion": "to reject the adoption of a floor drain regulation",
-   "moved_by": "Shea",
-   "seconded_by": "Jewell",
+   "motion": "To reject the adoption of a floor drain regulation",
+   "moved_by": "David Shea",
+   "seconded_by": "Perry Jewell",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "on motion by shea and second by jewell the board voted unanimously to reject the adoption of a floor drain regulation"
+   "quote": "on motion by shea and second by jewell the board voted unanimously to reject the adoption of a floor drain regulation."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision; one vote recorded. The meeting discussion items (inspection reports, permits, hydronic heater regulations, water service, waste water management) are noted but no motions or votes are recorded for them.",
- "cost_usd": 0.08370649999999999
+ "dropped_unquoted": 4,
+ "note": "Text extracted via OCR (macOS Vision). Cleaned readable. Member name spelling varies: \"Jewel\" and \"Jewell\" appear to refer to the same person, Perry Jewell.\"",
+ "cost_usd": 0.0940286,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jim Garreffi",
+   "role": "Health Agent",
+   "status": "present",
+   "quote": "health agent jim garreffi was able to secure water and implement a plan to continue to provide water to the residents of the park"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chairman Emond will contact DEP to discuss new outdoor hydronic heater regulations and the Board of Health's role in enforcing them, and report back to the Board",
+   "quote": "chairman emond will contact dep to discuss these new regulations, the role of the local board of health in enforcing these regulations and report back to the board."
+  },
+  {
+   "decision": "The Board will attend the next Sewer Commission meeting or workshop to discuss major issues they disagree with regarding the Final Waste Water Management Plan",
+   "quote": "after discussion it was decided that the board does not believe that the final waste water management plan should be at the sole discretion of the sewer commission and will be attending the next meeting and/or workshop to discuss the major issues that the board of health disagrees with."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 Inspection Reports",
+   "resolution": "Three properties reviewed; one failed, one not accepted",
+   "tags": [
+    "inspections",
+    "title-5"
+   ],
+   "quote": "title 5 inspection reports reviewed: 259 cross road - failure 71 longwood drive 20 fire road 19 - not accepted. u",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Septic Permits Signed",
+   "resolution": "Two permits signed",
+   "tags": [
+    "septic",
+    "permits"
+   ],
+   "quote": "septic permits signed: 391 chase road, lot 2p 57 pratt street ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Outdoor Hydronic Heaters (Wood Fired Outdoor Furnaces)",
+   "resolution": "Reviewed new DEP regulations; directed Chairman to contact DEP",
+   "tags": [
+    "regulations",
+    "dep",
+    "heating"
+   ],
+   "quote": "the dep has issued its regulations for outdoor hydronic heaters. the members reviewed the regulations and had the following comments"
+  },
+  {
+   "topic": "Meadowoods Mobile Home Park Water Supply",
+   "resolution": "Temporary water provisions secured; public water hydrant connection planned",
+   "tags": [
+    "water-supply",
+    "public-health"
+   ],
+   "quote": "subsequent to the recent ice storm portions of the meadowoods mobile home park were again without water, primarily in the \"lettered\" portion of the park."
+  },
+  {
+   "topic": "Waste Water Management Plan",
+   "resolution": "Board decided to attend Sewer Commission meeting to discuss disagreements",
+   "tags": [
+    "waste-water",
+    "planning"
+   ],
+   "quote": "the members of the board again discussed the role that they believe they should play in the final waste water management plan to be submitted for town meeting."
+  },
+  {
+   "topic": "Floor Drain Regulation",
+   "resolution": "Rejected via motion",
+   "tags": [
+    "regulations",
+    "water"
+   ],
+   "quote": "the board received a letter from the lunenburg water district requesting that the board consider the adoption of a floor drain regulation."
+  }
+ ],
+ "tags": [
+  "board-of-health",
+  "water-supply",
+  "septic",
+  "permits",
+  "regulations",
+  "waste-water",
+  "public-health"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 4
+ }
 }

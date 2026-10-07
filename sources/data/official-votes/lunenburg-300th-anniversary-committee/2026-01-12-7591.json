@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-300th-anniversary-committee",
  "meeting_date": "2026-01-12",
  "docid": "7591",
@@ -12,23 +12,179 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes with amendment of Michelle Belleza's absence",
-   "outcome": "passed",
+   "motion": "Approval of prior minutes with amendment of Michelle Belleza's absence",
+   "outcome": "approved",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "minutes were approved with amendment of michelle belleza's absence."
   },
   {
-   "motion": "Adjourn",
-   "outcome": "passed unanimously",
+   "motion": "To adjourn",
+   "outcome": "unanimously",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "members voted unanimously to adjourn at 7:55."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. No mover or seconder named for either. Both are procedural votes (minutes approval and adjournment).",
- "cost_usd": 0.061506399999999996
+ "note": "Guest Maura Lizak's role or reason for attendance is not specified in the minutes. Members list shows 'Maura Lizek' (present) and guest list shows 'Maura Lizak'—possibly the same person with spelling variation, but treated as listed.\"",
+ "cost_usd": 0.1454856,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paulette Beardmore",
+   "status": "present",
+   "role": "member",
+   "quote": "members present: paulette beardmore, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, maura lizek, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Lois Filiau",
+   "status": "present",
+   "role": "member",
+   "quote": "members present: paulette beardmore, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, maura lizek, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Dawn Johnson",
+   "status": "present",
+   "role": "member",
+   "quote": "members present: paulette beardmore, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, maura lizek, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "status": "present",
+   "role": "member",
+   "quote": "members present: paulette beardmore, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, maura lizek, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Chris Sullivan",
+   "status": "present",
+   "role": "member",
+   "quote": "members present: paulette beardmore, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, maura lizek, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Bill Tyler",
+   "status": "present",
+   "role": "member",
+   "quote": "members present: paulette beardmore, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, maura lizek, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Maura Lizek",
+   "status": "present",
+   "role": "member",
+   "quote": "members present: paulette beardmore, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, maura lizek, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "status": "present",
+   "role": "Liaison",
+   "quote": "members present: paulette beardmore, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, maura lizek, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Michelle Belleza",
+   "status": "absent",
+   "role": "member",
+   "quote": "members absent: michelle belleza, laura brzozoski, cathy clark jeanne dupre, tony sculimbrene"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "status": "absent",
+   "role": "member",
+   "quote": "members absent: michelle belleza, laura brzozoski, cathy clark jeanne dupre, tony sculimbrene"
+  },
+  {
+   "name": "Cathy Clark",
+   "status": "absent",
+   "role": "member",
+   "quote": "members absent: michelle belleza, laura brzozoski, cathy clark jeanne dupre, tony sculimbrene"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "status": "absent",
+   "role": "member",
+   "quote": "members absent: michelle belleza, laura brzozoski, cathy clark jeanne dupre, tony sculimbrene"
+  },
+  {
+   "name": "Tony Sculimbrene",
+   "status": "absent",
+   "role": "member",
+   "quote": "members absent: michelle belleza, laura brzozoski, cathy clark jeanne dupre, tony sculimbrene"
+  },
+  {
+   "name": "Maura Lizak",
+   "status": "present",
+   "role": "guest",
+   "quote": "guest: maura lizak"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Logo design requirements established as simple; Chris to obtain parameters from Camera by 5/30 deadline; Maura to email Superintendent and Principal",
+   "quote": "the logo should be simple. chris will ask camera for parameters. the deadline will be 5/30. maura will email the superintendent and the principal."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved",
+   "quote": "minutes were approved with amendment of michelle belleza's absence.",
+   "tags": [
+    "procedural",
+    "administrative"
+   ]
+  },
+  {
+   "topic": "Committee finances and funding options",
+   "resolution": "discussed",
+   "quote": "selectman nuzzolo addressed the ﬁnancial situation. the money allocated in 2023 is gone, as it had to be spent in that fiscal year' and went to free cash.",
+   "tags": [
+    "finance",
+    "funding",
+    "revolving fund"
+   ]
+  },
+  {
+   "topic": "Fireworks and laser show",
+   "resolution": "plan discussed",
+   "quote": "chris ruth has a blaster's license and is familiar with ﬁreworks. we would only need 10-15 minutes for new year's eve. we could use pinnacle laser for the birthday party.",
+   "tags": [
+    "fireworks",
+    "entertainment",
+    "laser show",
+    "event planning"
+   ]
+  },
+  {
+   "topic": "Logo design",
+   "resolution": "requirements and assignments established",
+   "quote": "the logo should be simple. chris will ask camera for parameters. the deadline will be 5/30. maura will email the superintendent and the principal.",
+   "tags": [
+    "logo",
+    "design",
+    "branding",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Birthday cake status",
+   "resolution": "status update",
+   "quote": "the birthday cake doesn't belong to any community, but makes the rounds. it is now in lowell.",
+   "tags": [
+    "celebration",
+    "birthday"
+   ]
+  }
+ ],
+ "tags": [
+  "300th Anniversary Committee",
+  "anniversary planning",
+  "finances",
+  "event planning",
+  "fireworks",
+  "laser show",
+  "logo design",
+  "celebration"
+ ],
+ "dropped_unquoted_by_field": {}
 }

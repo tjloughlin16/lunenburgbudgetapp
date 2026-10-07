@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2025-10-30",
  "docid": "7483",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from September 25, 2025",
+   "motion": "Approve the minutes of the September 25, 2025 meeting, with a spelling correction to the name of Bill Bernard.",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
@@ -20,8 +20,7 @@
    "quote": "vice-chair david dorren motioned we approve the prior minutes, clerk donna landry seconded, aif"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Dave Dorren",
+   "motion": "Adjourn the meeting at 7:40pm.",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
    "procedural": true,
@@ -29,6 +28,283 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Meeting appears to have been held as a discussion and information-sharing session. Only two formal votes were recorded: approval of prior minutes and adjournment. All other agenda items (financial accounts, cemetery updates, future planning, etc.) were reviewed and discussed but no motions or votes were taken on them.",
- "cost_usd": 0.07749539999999999
+ "note": "Text is extracted from a PDF with ligatures (ﬁ, ﬂ) and curly quotes, copied as printed. The minutes give no count for \"AIF\" (read here as all in favor); both votes are recorded as passed on that basis. The chair is printed as Mike Clark in the attendance block but as \"Chair Dave Dorren\" in item 14, and the vice-chair appears as both \"David Dorren\" and \"Dave Dorren\"; names are recorded as printed. The attendance block lists members but does not say per person whether they joined by Zoom or in person, though the minutes say the meeting was held remote by Zoom. No public comment section is recorded. The minutes print the two payments (7500.00 and 8125.00) and a final balance of $7,857.74 without saying what that balance is a balance of. Page 1 ends mid-sentence on the Perpetual Care correction and continues on page 2; that correction is not quoted across the page break.",
+ "cost_usd": 0.01740877,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Clark",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair: chair mike clark vice-chair: dave dorren clerk: clerk donna landry"
+  },
+  {
+   "name": "Dave Dorren",
+   "role": "Vice-Chair (minutes also print \"David Dorren\")",
+   "status": "present",
+   "quote": "chair: chair mike clark vice-chair: dave dorren clerk: clerk donna landry"
+  },
+  {
+   "name": "Donna Landry",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair: chair mike clark vice-chair: dave dorren clerk: clerk donna landry"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Department Director",
+   "status": "present",
+   "quote": "dpw department director: bill bernard cemetery superintendent: todd holman"
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "present",
+   "quote": "dpw department director: bill bernard cemetery superintendent: todd holman"
+  },
+  {
+   "name": "Lunenburg’s Finance Director",
+   "role": "Town Finance Director (unnamed in minutes)",
+   "status": "not stated",
+   "quote": "lunenburg's finance director provided an update on the value of our funds"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Headstones at Fish Street are to be removed, refurbished and reset.",
+   "quote": "headstones will be removed to be refurbished and reset."
+  },
+  {
+   "decision": "Staff to bring back an update from Dillis and Roy in two weeks with a draft plan for the North Cemetery backlot expansion.",
+   "quote": "we should get an update from dillis and roy in 2 weeks for a draft plan of what needs to be done"
+  },
+  {
+   "decision": "Agreed that there is no immediate need for the Holman Street lot offered by a realtor, given the current acreage of the North Cemetery.",
+   "quote": "agreed that at this point, we did not have an immediate need due to the current acreage of the north cemetery."
+  },
+  {
+   "decision": "Onsite meetings scheduled: Fish Street on Thursday, November 6; South Cemetery at 8:00 am on Thursday, November 13.",
+   "quote": "scheduled onsite meetings at fish street for thursday, november 6th."
+  },
+  {
+   "decision": "Mike Clark to send a letter to the Select Board requesting an additional full-time person for the DPW Cemetery Department.",
+   "quote": "mike clark added that he would send a letter to the select board requesting an additional full-time person"
+  },
+  {
+   "decision": "Donna Landry to investigate other grant areas, including the Historical Society.",
+   "quote": "donna landry to investigate other areas, including the historical society, to determine how we can access them"
+  },
+  {
+   "decision": "Green burial was determined by DPW to be something the town cannot do.",
+   "quote": "determined by dpw that is something we cannot do."
+  },
+  {
+   "decision": "The question of a better way to keep track of minutes and agendas is tabled to a later meeting.",
+   "quote": "to be tabled for now and discussed later."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sale of Lots balance",
+   "what_was_recorded": "The Finance Director's update put the Sale of Lots figure at a printed amount, recorded as increased.",
+   "figures_as_printed": [
+    "S105971.13"
+   ],
+   "quote": "sale of lots increased to s105971.13"
+  },
+  {
+   "topic": "Capital Article Fund and Capital Plan",
+   "what_was_recorded": "The Capital Article Fund balance and the Capital Plan amount were reported; the DPW Director will check an initial survey invoice and controls spending on this article.",
+   "figures_as_printed": [
+    "$4283.61",
+    "$50,000.00"
+   ],
+   "quote": "capital article fund $4283.61, capital plan at $50,000.00"
+  },
+  {
+   "topic": "Perpetual Care Trust Fund",
+   "what_was_recorded": "The updated balance of the Perpetual Care Trust Fund was reported.",
+   "figures_as_printed": [
+    "$237802.91"
+   ],
+   "quote": "perpetual care trust fund $237802.91 is the updated balance."
+  },
+  {
+   "topic": "Expendable (interest) balance",
+   "what_was_recorded": "The expendable interest balance was reported; the DPW Director corrected that the prior figure did not capture two payments.",
+   "figures_as_printed": [
+    "$23482.74"
+   ],
+   "quote": "expendable (interest) is $23482.74."
+  },
+  {
+   "topic": "Hedge trimming and cedar tree payments from Perpetual Care",
+   "what_was_recorded": "Two payments, to Beaulac Brothers for hedge trimming and to Lakeview Nurseries for a cedar tree replacement, were paid from Perpetual Care; the minutes print a final balance.",
+   "figures_as_printed": [
+    "7500.00",
+    "8125.00",
+    "$7,857.74"
+   ],
+   "quote": "beaulac brothers (hedge trimming) and 8125.00 to lakeview nurseries"
+  },
+  {
+   "topic": "Perpetual Care final balance after payments",
+   "what_was_recorded": "The minutes state both payments were paid from Perpetual Care for a final balance printed as $7,857.74.",
+   "figures_as_printed": [
+    "$7,857.74"
+   ],
+   "quote": "both have been paid from perpetual care for a ﬁnal balance of $7,857.74."
+  },
+  {
+   "topic": "South Cemetery stonewall straightening",
+   "what_was_recorded": "DPW straightened 150 feet of South Cemetery stonewall as an initial investment to gauge pricing and speed of the remaining work.",
+   "figures_as_printed": [
+    "$3K"
+   ],
+   "quote": "also,150 feet of stonewall of south cemetery was straightened for initial investment of $3k"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "6:00 pm - call to order",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of September 25, 2025 minutes",
+   "resolution": "approved with spelling correction",
+   "quote": "reviewed and approved minutes from meeting on thursday, september 25, 2025.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Cemetery financial accounts",
+   "resolution": "reviewed, balances reported",
+   "quote": "review of cemetery financial accounts - lunenburg's finance director provided an update on the value of our funds",
+   "tags": [
+    "finance",
+    "perpetual care",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Fish Street graves update",
+   "resolution": "discussed; headstones to be refurbished and reset",
+   "quote": "todd discussed fish street update surrounding the 7 graves found in front of the wall",
+   "tags": [
+    "fish street",
+    "graves",
+    "headstones"
+   ]
+  },
+  {
+   "topic": "Flagpole lighting",
+   "resolution": "discussed; future planning",
+   "quote": "also discussed by todd was the future planning of the 32 ft ﬂagpole",
+   "tags": [
+    "flagpole",
+    "lighting"
+   ]
+  },
+  {
+   "topic": "Fertilizer and stonewall work",
+   "resolution": "reported",
+   "quote": "dpw also mentioned that fertilizer came in for the south and north cemetery.",
+   "tags": [
+    "dpw",
+    "stonewall",
+    "fertilizer"
+   ]
+  },
+  {
+   "topic": "North Cemetery backlot expansion and Holman Street lot",
+   "resolution": "update requested in two weeks; no immediate need for the lot",
+   "quote": "north cemetery backlot expansion - we should get an update from dillis and roy in 2 weeks",
+   "tags": [
+    "north cemetery",
+    "expansion",
+    "land"
+   ]
+  },
+  {
+   "topic": "Onsite meetings",
+   "resolution": "scheduled",
+   "quote": "scheduled onsite meetings at fish street for thursday, november 6th.",
+   "tags": [
+    "site visits"
+   ]
+  },
+  {
+   "topic": "CIM software review",
+   "resolution": "training reviewed; accuracy need noted",
+   "quote": "cim software review - commission did an online training with brandon finley on october 27th",
+   "tags": [
+    "mapping",
+    "software"
+   ]
+  },
+  {
+   "topic": "Cemetery workload and staffing",
+   "resolution": "Chair to write to Select Board",
+   "quote": "todd discussed current workload and how he has a need for a 2nd full time person",
+   "tags": [
+    "staffing",
+    "dpw"
+   ]
+  },
+  {
+   "topic": "Grant needs",
+   "resolution": "Clerk to investigate sources",
+   "quote": "reviewed grant needs and donna landry to investigate other areas",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Green burial request",
+   "resolution": "determined not possible under DPW",
+   "quote": "discussed what a \"green\" burial is, as we had a prior request",
+   "tags": [
+    "green burial"
+   ]
+  },
+  {
+   "topic": "Tracking minutes and agendas",
+   "resolution": "tabled",
+   "quote": "discussed the need for a better way for us to keep track of our minutes, agenda",
+   "tags": [
+    "records"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:40pm",
+   "quote": "chair dave dorren requested a motion to adjourn at 7:40pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "dpw",
+  "perpetual care trust",
+  "cemetery finances",
+  "fish street graves",
+  "north cemetery expansion",
+  "staffing",
+  "grants",
+  "green burial",
+  "cim mapping software",
+  "minutes",
+  "remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-06-16",
  "docid": "7858",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve employment agreements for Facilities Director, Human Resources Director, Council on Aging Director, DPW Director, and Executive Assistant to the Town Manager and Select Board",
+   "motion": "Approve the employment agreements as presented for the Facilities Director, Human Resources Director, Council on Aging Director, DPW Director, and Executive Assistant to the Town Manager and Select Board",
    "moved_by": "Renee Emkey",
    "seconded_by": "Glenn McLeod",
    "outcome": "passed 3-0-0",
@@ -20,7 +20,7 @@
    "quote": "chair renee emkey moved to approve the employment agreements as presented for the facilities director, human resources director, council on aging director, dpw director, and executive assistant to the town manager and select board. seconded by clerk glenn mcleod. roll call vote: member lehtinen-aye. member mcleod-aye. chair emkey-aye. the vote passed (3-0-0)."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn",
    "moved_by": "Brian Lehtinen",
    "seconded_by": "Glenn McLeod",
    "outcome": "passed 3-0-0",
@@ -28,15 +28,126 @@
    "quote": "member brian lehtinen motioned to adjourn at 8:24 pm. seconded by clerk glenn mcleod. roll call vote: member lehtinen-aye. member mcleod-aye. chair emkey-aye. the vote passed (3-0-0)."
   },
   {
-   "motion": "Approve the minutes from May 19, 2026",
-   "moved_by": "Lehtinen",
-   "seconded_by": "McLeod",
-   "outcome": "passed unanimously 3-0-0",
+   "motion": "Approve the minutes of May 19, 2026",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Glenn McLeod",
+   "outcome": "passed 3-0-0",
    "procedural": true,
    "quote": "vice-chair lehtinen made the motion to approve the minutes of may 19, 2026. seconded by clerk mcleod. call for the vote: three-aye. motion passed unanimously (3-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes released in entirety by Select Board vote on 7/7/26. The entry into executive session is mentioned but no roll call vote is recorded for that motion, so it is not included.",
- "cost_usd": 0.0901834
+ "note": "Entire meeting was held in Executive Session and released in entirety by Select Board vote on 7/7/2026. Minutes were reviewed and approved for release on Tuesday July 7, 2026.",
+ "cost_usd": 0.097169,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Renee Emkey",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen (virtual), and clerk glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen (virtual), and clerk glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen (virtual), and clerk glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager and melissa richard, executive assistant to the select board and town manager"
+  },
+  {
+   "name": "Melissa Richard",
+   "role": "Executive Assistant to the Select Board and Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager and melissa richard, executive assistant to the select board and town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Employment agreement for Facilities Director Christopher Ruth approved, providing a $7,500 vehicle stipend and four weeks of vacation",
+   "quote": "an employment agreement for facilities director christopher ruth providing for a $7,500 vehicle stipend for using his personal vehicle as opposed to a town vehicle as well as increasing ===page 2=== his vacation time to four weeks o",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Employment agreements for Human Resources Director Julie Bellliveau and Council on Aging Director Debra Goodsell approved, increasing vacation time to four weeks",
+   "quote": "employment agreements for human resources director, julie bellliveau and council on aging director, debra goodsell to increase their vacation time to four weeks was discussed."
+  },
+  {
+   "decision": "Employment agreement for DPW Director William Bernard approved, adjusting to Step 8 on wage scale (Grade 17) with 2.5% increases in FY28 and FY29, four weeks vacation, $1,000 Tree Warden stipend, $500 clothing allowance, and right to drive municipal vehicle to/from work",
+   "quote": "an employment agreement for dpw director, william bernard, was discussed. the town manager stated that competitive and comparable salaries for the position were reviewed. the agreement would adjust him to a step 8 on the wage scale (grade 17) with 2.5% increases in fy28 and fy29. the agreement provides for four weeks of vacation, a $1,000 stipend for tree warden and a $500 clothing allowance. additionally, the agreement codifies the practice of allow mr. bernard to drive his municipal vehicle to and from work."
+  },
+  {
+   "decision": "Amendment to employment agreement for Executive Assistant Melissa Richard approved, increasing step from four to six (Grade 10) due to elimination of IT and Communications Manager position",
+   "quote": "an amendment to the employment agreement for executive assistant to the town manager and select board, melissa richard was also discussed to increase her step from a four to a six (grade 10) due to the added administrative functions that will be assumed due to the elimination of the it and communications manager position."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Facilities Director vehicle stipend",
+   "what_was_recorded": "Christopher Ruth vehicle stipend for using personal vehicle instead of town vehicle",
+   "figures_as_printed": [
+    "$7,500"
+   ],
+   "quote": "an employment agreement for facilities director christopher ruth providing for a $7,500 vehicle stipend for using his personal vehicle as opposed to a town vehicle"
+  },
+  {
+   "topic": "DPW Director Tree Warden stipend",
+   "what_was_recorded": "William Bernard Tree Warden stipend in employment agreement",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "a $1,000 stipend for tree warden and a $500 clothing allowance"
+  },
+  {
+   "topic": "DPW Director clothing allowance",
+   "what_was_recorded": "William Bernard clothing allowance in employment agreement",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "a $1,000 stipend for tree warden and a $500 clothing allowance"
+  },
+  {
+   "topic": "DPW Director salary increases",
+   "what_was_recorded": "William Bernard wage adjustment and percentage increases FY28 and FY29",
+   "figures_as_printed": [
+    "2.5%",
+    "2.5%"
+   ],
+   "quote": "the agreement would adjust him to a step 8 on the wage scale (grade 17) with 2.5% increases in fy28 and fy29."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Employment agreements for town personnel",
+   "resolution": "approved",
+   "tags": [
+    "personnel",
+    "employment",
+    "executive session"
+   ],
+   "quote": "employment agreements for the facilities director, human resources director, director of public works, lunenburg council on aging director, and executive assistant to the select board/town manager as authorized under the salary administration plan were discussed."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "employment agreements",
+  "executive session",
+  "Select Board",
+  "salaries",
+  "benefits"
+ ],
+ "dropped_unquoted_by_field": {}
 }

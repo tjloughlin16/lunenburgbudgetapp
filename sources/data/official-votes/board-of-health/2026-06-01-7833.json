@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2026-06-01",
  "docid": "7833",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of May 18, 2026",
+   "motion": "approve the minutes of May 18, 2026",
    "moved_by": "Rudd",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -20,14 +20,83 @@
    "quote": "on motion by rudd and second by fortin the minutes were approved. all in favor."
   },
   {
-   "motion": "Approve variance for Geomat (innovative system) at 174 Island Road",
+   "motion": "approve the variance for the Geomat system at 174 Island Road",
    "moved_by": "Fortin",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by fortin and roll call vote as follows: fortin - yes rudd - yes jewell - yes proctor - recuse. the variance was approved."
+   "quote": "motion made by fortin and roll call vote as follows: fortin - yes rudd - yes jewell - yes proctor - recuse."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0750469
+ "note": "\"\"",
+ "cost_usd": 0.11327800000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd and paul fortin"
+  },
+  {
+   "name": "Matt Proctor",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd and paul fortin"
+  },
+  {
+   "name": "Lorraine Rudd",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd and paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd and paul fortin"
+  },
+  {
+   "name": "Matt Proctor Sr.",
+   "status": "present",
+   "role": "owner",
+   "quote": "matt proctor sr., owner, met with the board."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of May 18, 2026 minutes",
+   "resolution": "approved",
+   "quote": "on motion by rudd and second by fortin the minutes were approved. all in favor.",
+   "tags": [
+    "procedural",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "174 Island Road variance - Geomat wastewater system",
+   "resolution": "approved",
+   "quote": "a geomat system is proposed. lunenburg has a local regulation that requires that all innovative systems (ia systems) be approved by the board.",
+   "tags": [
+    "septic systems",
+    "innovative wastewater systems",
+    "variance",
+    "new construction"
+   ]
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "septic systems",
+  "variances",
+  "new construction",
+  "innovative systems"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-11-04",
  "docid": "7494",
@@ -13,62 +13,428 @@
  "votes": [
   {
    "motion": "Ratify the Town Manager's appointment of Jacqueline Thibodeau as Assistant Town Accountant.",
-   "moved_by": "Chair Caesar Nuzzolo",
+   "moved_by": "Chair Nuzzolo",
    "seconded_by": "Clerk Renee Emkey",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of jacqueline thibodeau as assistant town accountant. seconded by clerk renee emkey. call for vote: five- aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of jacqueline thibodeau as assistant town accountant."
   },
   {
    "motion": "Ratify the Town Manager's appointment of Deborah Crowley as Administrative Assistant of the Building Department.",
-   "moved_by": "Chair Caesar Nuzzolo",
-   "seconded_by": "Clerk Renee Emkey",
-   "outcome": "passed 5-0",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Clerk Emkey",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of deborah crowley as administrative assistant of the building department. seconded by clerk emkey. call for vote: five - aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of deborah crowley as administrative assistant of the building department."
   },
   {
    "motion": "Ratify the Town Manager's appointment of Leigh Bain as Administrative Assistant of Planning.",
-   "moved_by": "Chair Caesar Nuzzolo",
-   "seconded_by": "Clerk Renee Emkey",
-   "outcome": "passed 5-0",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Clerk Emkey",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of leigh bain as administrative assistant of planning. seconded by clerk emkey. call for vote: five - aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of leigh bain as administrative assistant of planning."
   },
   {
    "motion": "Authorize the Select Board to sign on to the letter to the Governor and legislative delegation regarding FY27 school funding as presented.",
-   "moved_by": "Chair Caesar Nuzzolo",
-   "seconded_by": "Vice-Chair Amanda Moore",
-   "outcome": "passed 5-0",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Vice-Chair Moore",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to authorize the select board to sign on to the letter to the governor and legislative delegation regarding fy27 school funding as presented. seconded by vice-chair moore. call for vote: five - aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by chair nuzzolo to authorize the select board to sign on to the letter to the governor and legislative delegation regarding fy27 school funding as presented."
   },
   {
-   "motion": "Recommend approval of Article 13, MBTA Zoning Act Compliance.",
-   "moved_by": "Chair Caesar Nuzzolo",
-   "seconded_by": "Clerk Renee Emkey",
-   "outcome": "passed 4-1",
+   "motion": "Recommend approval of Article 13, MBTA Zoning Act Compliance (Planning Board article, Special Town Meeting).",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Clerk Emkey",
+   "outcome": "passed 4-1-0",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to recommend approval of article 13, mbta zoning act compliance. seconded by clerk emkey. call for vote: four - aye. one - nay (member glenn mcleod). the motion passed (4-1-0)."
+   "quote": "motion by chair nuzzolo to recommend approval of article 13, mbta zoning act compliance."
   },
   {
-   "motion": "Recommend approval of Article 14, Bituminous Concrete Common Driveways.",
-   "moved_by": "Chair Caesar Nuzzolo",
-   "seconded_by": "Clerk Renee Emkey",
-   "outcome": "passed 5-0",
+   "motion": "Recommend approval of Article 14, Bituminous Concrete Common Driveways (Planning Board article, Special Town Meeting).",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Clerk Emkey",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to recommend approval of article 14, bituminous concrete common driveways. seconded by clerk emkey. call for vote: five - aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by chair nuzzolo to recommend approval of article 14, bituminous concrete common driveways."
   },
   {
-   "motion": "Enter into Executive Session and not re-enter open session pursuant to MGL Chapter 30A, Section 21(a)(2), to conduct strategy sessions in preparation for negotiations with non-union personnel, specifically for the Director of Municipal Finance/Town Accountant.",
-   "moved_by": "Chair Caesar Nuzzolo",
-   "seconded_by": "Vice-Chair Amanda Moore",
-   "outcome": "passed 5-0",
+   "motion": "Enter Executive Session and not re-enter open session under MGL Chapter 30A, Section 21(a)(2), for strategy sessions on negotiations with non-union personnel (Director of Municipal Finance/Town Accountant).",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Vice-Chair Moore",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "motion by chair nuzzolo to enter into executive session and not re-enter open session pursuant to mgl chapter 30a, section 21(a)(2), to conduct strategy sessions in preparation for negotiations with non-union personnel, specifically for the director of municipal finance/town accountant. seconded by vice-chair moore. roll call vote: member mcleod - aye; member lehtinen - aye; clerk emkey - aye; vice-chair moore - aye; chair nuzzolo - aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by chair nuzzolo to enter into executive session and not re-enter open session pursuant to mgl chapter 30a, section 21(a)(2)"
+  },
+  {
+   "motion": "Stormwater Task Force vote to approve a proposal from Weston & Sampson (reported by Clerk Emkey; a Task Force vote, not a Select Board vote).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "the task force voted 4-0 to approve a proposal from weston & sampson."
+  },
+  {
+   "motion": "Board of Assessors vote to approve the LA-4 and LA-13 documents (reported by Member Lehtinen; a Board of Assessors vote, not a Select Board vote).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "the board voted to approve the la-4 and la-13 documents."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes were reviewed and approved by the Select Board on September 1, 2026. No vote on approval of prior meeting minutes or formal adjournment vote was recorded in these minutes.",
- "cost_usd": 0.0756394
+ "note": "Digital text, not a scan; no unreadable pages. Each vote quote is taken from the motion sentence and the outcome is printed in the sentence after it. The minutes spell the appointee \"Thibeau\" in the heading and \"Thibodeau\" in the motion; both are kept as printed. The minutes carry an approval date of Tuesday, September 1, 2026 and record no motion to approve prior minutes at this meeting. Two votes (Stormwater Task Force, Board of Assessors) were taken by other bodies and are reported here in committee reports; they are not Select Board votes and have no mover. The Board of Assessors vote has no count printed. New growth is printed as both $180,000 and $118,000, the latter as a correction. Planning Board adoptions reported in committee reports are not recorded as votes because the minutes give no vote count. The Pre-Town Meeting schedule and the Finance Committee reserve fund are recorded as reported, not as Board votes.",
+ "cost_usd": 0.02087277,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "public comment; address 5 Valley Road",
+   "status": "present",
+   "quote": "anthony sculimbrene, 5 valley road, addressed the select board regarding the consequences of the recent vote"
+  },
+  {
+   "name": "Mel Bertram",
+   "role": "President of the Lunenburg Snow Riders (presenter)",
+   "status": "present",
+   "quote": "mel bertram, president of the lunenburg snow riders (312 townsend harbor road), presented a portable chainsaw to the lunenburg police and fire departments."
+  },
+  {
+   "name": "Sullivan",
+   "role": "Fire Chief (accepted the gift)",
+   "status": "present",
+   "quote": "fire chief sullivan accepted the gift on behalf of the police and fire departments."
+  },
+  {
+   "name": "Mike Clark",
+   "role": "Chair of the Lunenburg Republican Town Committee (as identified in comment)",
+   "status": "remote",
+   "quote": "mike clark, 275 cross road (via zoom), commented on the select board's vote to sign the letter"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed to tentatively schedule a remote meeting for the Monday prior to Town Meeting (November 17) at 6:00 PM, with an option to cancel and convene a 6:30 PM meeting on the night of Town Meeting.",
+   "quote": "the board agreed to tentatively schedule a remote meeting for the monday prior to town meeting (november 17) at 6:00 pm"
+  },
+  {
+   "decision": "Tri-Board meeting (Select Board, Finance Committee, School Committee) scheduled for Monday, November 24 at 7:00 PM.",
+   "quote": "the select board agreed to schedule the meeting for monday, november 24 at 7:00 pm."
+  },
+  {
+   "decision": "Minutes backlog: minutes to be placed in a shared drive, and Select Board members to volunteer to claim and review individual sets.",
+   "quote": "it was agreed that minutes would be made available in a shared drive and select board members would volunteer to claim and review individual sets."
+  },
+  {
+   "decision": "Articles 2 and 3 (Budget Adjustments and Payment of Prior Year Bills) deferred pending finalization of figures.",
+   "quote": "articles 2 and 3 (budget adjustments and payment of prior year bills) were deferred pending finalization of figures."
+  },
+  {
+   "decision": "PEG transfer warrant article removed from the Special Town Meeting; the vote is deferred to the May Annual Town Meeting.",
+   "quote": "the warrant article for the peg transfer was removed, as that vote will be deferred to the may annual town meeting."
+  },
+  {
+   "decision": "Consent calendar: Articles 6 and 14 remain designated for the consent calendar; the Board concluded the two-thirds-threshold risk was manageable.",
+   "quote": "concluded the risk was manageable given the low likelihood of controversy on those items"
+  },
+  {
+   "decision": "A spelling correction to Vice-Chair Moore's name on the letter's signature block to be made before signing.",
+   "quote": "was identified and noted for correction before signing."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town new growth (Board of Assessors / Town Manager report)",
+   "what_was_recorded": "Actual new growth over the estimated amount was reported, first as one figure and then corrected later in the meeting to a lower figure.",
+   "quote": "actual new growth over the estimated $400,000 is approximately $118,000 (corrected later in the meeting from an initially stated figure of $180,000).",
+   "figures_as_printed": [
+    "$400,000",
+    "$118,000",
+    "$180,000"
+   ]
+  },
+  {
+   "topic": "Flat Hill Bridge small bridge grant",
+   "what_was_recorded": "MassDOT agreed to extend a Small Bridge Grant through December 31, 2027.",
+   "quote": "massdot has agreed to extend the $600,000 small bridge grant through december 31, 2027.",
+   "figures_as_printed": [
+    "$600,000"
+   ]
+  },
+  {
+   "topic": "FY26 budget adjustments (Article 2) for the Finance Department transition",
+   "what_was_recorded": "The Town Manager outlined an anticipated approximately $150,000 FY26 adjustment to cover Finance Department transition costs (consulting fees and vacation buyouts).",
+   "quote": "she outlined anticipated fy26 budget adjustments, including approximately $150,000 to cover the costs of the finance department transition",
+   "figures_as_printed": [
+    "$150,000"
+   ]
+  },
+  {
+   "topic": "Retiree health insurance overrun and funding options",
+   "what_was_recorded": "Retiree health insurance came in above budget; the Town Manager expects it can be absorbed through contingency funds or the Health Insurance Stabilization Fund, which retains a stated balance.",
+   "quote": "retiree health insurance came in approximately $100,000 higher than budgeted but expects that can be absorbed through existing contingency funds",
+   "figures_as_printed": [
+    "$100,000",
+    "$140,000"
+   ]
+  },
+  {
+   "topic": "Finance Committee reserve fund",
+   "what_was_recorded": "The Town Manager recommended against using the Finance Committee reserve fund at this time, preserving it for spring needs. No amount printed.",
+   "quote": "the town manager recommended against using the finance committee reserve fund at this time",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Police contract first-year salary reserve transfer",
+   "what_was_recorded": "A salary reserve transfer to fund the first year of the police contract will be brought to Town Meeting. No amount printed.",
+   "quote": "a salary reserve transfer to fund the first year of the police contract will also be brought to town meeting.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Snow Riders gift and RTP grants",
+   "what_was_recorded": "The club said it has brought RTP grants to the community over fifteen years; the gift itself was not given a value in the minutes.",
+   "quote": "has brought over $200,000 in recreational trails program (rtp) grants to the community over the past 15 years",
+   "figures_as_printed": [
+    "$200,000"
+   ]
+  },
+  {
+   "topic": "Gift acceptance policy threshold",
+   "what_was_recorded": "No vote was required for the chainsaw gift because its value is under the policy threshold.",
+   "quote": "per the select board's gift acceptance policy, no vote was required as the gift value is under $500.",
+   "figures_as_printed": [
+    "$500"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Salary reserve transfer to fund the first year of the police contract (to be brought to Town Meeting).",
+   "outcome": "to be brought to Town Meeting; no amount printed",
+   "amount_as_printed": "none printed",
+   "quote": "a salary reserve transfer to fund the first year of the police contract will also be brought to town meeting."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Consequences of withholding Historic Commission/APDC merger warrant; volunteer reimbursement for records requests",
+   "speaker": "Anthony Sculimbrene",
+   "stated_role": "5 Valley Road",
+   "quote": "anthony sculimbrene, 5 valley road, addressed the select board regarding the consequences of the recent vote to withhold the historic commission/apdc merger warrant"
+  },
+  {
+   "topic": "Select Board's vote to sign letter coordinated with the MTA",
+   "speaker": "Mike Clark",
+   "stated_role": "Chair of the Lunenburg Republican Town Committee",
+   "quote": "mike clark, 275 cross road (via zoom), commented on the select board's vote to sign the letter coordinated with the massachusetts teachers association (mta)."
+  },
+  {
+   "topic": "SNAP clients and food assistance",
+   "speaker": "Jennifer Warren-Dyment",
+   "stated_role": "Town Manager",
+   "quote": "town of lunenburg has 995 snap clients, representing approximately 8% of the municipality's population."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "chair nuzzolo offered the following announcements:",
+   "tags": [
+    "announcements",
+    "food assistance"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "no action; comments received",
+   "quote": "anthony sculimbrene, 5 valley road, addressed the select board regarding the consequences of the recent vote",
+   "tags": [
+    "public comment",
+    "volunteers",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Presentation of gift of trail maintenance equipment to Public Safety by the Lunenburg Snow Riders",
+   "resolution": "accepted; no vote required (under $500)",
+   "quote": "presentation of gift to lunenburg public safety of trail maintenance equipment by the lunenburg snow riders",
+   "tags": [
+    "gift",
+    "public safety",
+    "trails"
+   ]
+  },
+  {
+   "topic": "Appointments, ratifications and resignations",
+   "resolution": "three appointments ratified 5-0-0; resignation acknowledged",
+   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of jacqueline thibodeau as assistant town accountant.",
+   "tags": [
+    "appointments",
+    "staffing",
+    "Council on Aging"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received",
+   "quote": "town manager warren-dyment delivered the following updates:",
+   "tags": [
+    "finance department",
+    "tax classification",
+    "staffing",
+    "DPW",
+    "bridge",
+    "open positions"
+   ]
+  },
+  {
+   "topic": "Letter to Governor and Legislature on FY27 school funding",
+   "resolution": "authorized 5-0-0",
+   "quote": "motion by chair nuzzolo to authorize the select board to sign on to the letter to the governor and legislative delegation",
+   "tags": [
+    "school funding",
+    "state aid",
+    "letters"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles (Old Business)",
+   "resolution": "Articles 13 and 14 recommended; Articles 2 and 3 deferred; PEG transfer article removed",
+   "quote": "chair nuzzolo provided an update on the status of warrant article motions.",
+   "tags": [
+    "warrant",
+    "town meeting",
+    "budget adjustments",
+    "MBTA Communities",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Tri-Board meeting and pre-Town Meeting schedule",
+   "resolution": "scheduled",
+   "quote": "the select board agreed to schedule the meeting for monday, november 24 at 7:00 pm.",
+   "tags": [
+    "schedule",
+    "tri-board",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "minutes backlog discussed; no warrants or action items",
+   "quote": "the select board discussed a backlog of approximately ten sets of meeting minutes prepared by third-party contractors",
+   "tags": [
+    "minutes",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "stormwater task force (reported by clerk emkey): the task force voted 4-0 to approve a proposal from weston & sampson.",
+   "tags": [
+    "stormwater",
+    "planning board",
+    "school committee",
+    "assessors",
+    "design committee",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "no action",
+   "quote": "november 24, 2025 - tri-board meeting (select board, finance committee, school committee), 7:00 pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action; comments received",
+   "quote": "mike clark, 275 cross road (via zoom), commented on the select board's vote to sign the letter",
+   "tags": [
+    "public comment",
+    "MTA",
+    "partisanship"
+   ]
+  },
+  {
+   "topic": "Adjournment into Executive Session",
+   "resolution": "entered executive session at about 8:00 PM; not re-entering open session",
+   "quote": "motion by chair nuzzolo to enter into executive session and not re-enter open session pursuant to mgl chapter 30a, section 21(a)(2)",
+   "tags": [
+    "executive session",
+    "personnel",
+    "negotiations"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "town meeting",
+  "special town meeting",
+  "warrant articles",
+  "finance department transition",
+  "FY26 budget",
+  "FY27 school funding",
+  "appointments",
+  "public comment",
+  "gift",
+  "tri-board",
+  "executive session",
+  "SNAP",
+  "minutes backlog",
+  "stormwater",
+  "zoning"
+ ],
+ "dropped_unquoted_by_field": {}
 }

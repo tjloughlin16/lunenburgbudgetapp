@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2026-03-10",
  "docid": "7688",
@@ -12,6 +12,127 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document actions taken (demo permit approved, plans announced) but do not record any motions, seconders, or votes on those actions. The meeting adjournment is mentioned but with no motion or vote recorded.",
- "cost_usd": 0.0572494
+ "note": "No votes recorded in these minutes.",
+ "cost_usd": 0.08961960000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "members richard mcgrath, bill lakso, and kevin boussom were in attendance."
+  },
+  {
+   "name": "Bill Lakso",
+   "role": "Member",
+   "status": "present",
+   "quote": "members richard mcgrath, bill lakso, and kevin boussom were in attendance."
+  },
+  {
+   "name": "Kevin Boussom",
+   "role": "Member",
+   "status": "present",
+   "quote": "members richard mcgrath, bill lakso, and kevin boussom were in attendance."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "DPW",
+   "status": "not stated",
+   "quote": "todd holman of the dpw plans to contact the landowner of which the arnold litch cemetery resides"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Demo permit approved for 922 Flat Hill Rd after it was found to have no historical significance.",
+   "quote": "a demo permit has been approved for 922 flat hill rd after it was found to have no historical significance."
+  },
+  {
+   "decision": "DPW to contact landowner of Arnold Litch cemetery in hopes of coming to an agreement to preserve the site.",
+   "quote": "todd holman of the dpw plans to contact the landowner of which the arnold litch cemetery resides, in hopes that we can come to an agreement to preserve the site."
+  },
+  {
+   "decision": "Begin work restoring headstones and walls at Goodrich Cemetery and address table stones and hanging tree limbs at South Cemetery.",
+   "quote": "there are also plans to soon begin work restoring the headstones and walls at the goodrich cemetery, as well as addressing the table stones and hanging tree limbs at the south cemetery."
+  },
+  {
+   "decision": "Contact DPW, APDC, and parks commission to address deteriorating walls of the town pound.",
+   "quote": "dpw, apdc, and parks commission need to be contacted to address the deteriorating walls of the town pound."
+  },
+  {
+   "decision": "Begin work on historic site markers this spring and finalize a list of the most important sites.",
+   "quote": "the commission also plans to begin work on the historic site markers this spring, so we will work on finalizing a list of the most important sites."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Demo permit for 922 Flat Hill Rd",
+   "resolution": "approved",
+   "quote": "a demo permit has been approved for 922 flat hill rd after it was found to have no historical significance.",
+   "tags": [
+    "permitting",
+    "historical significance"
+   ]
+  },
+  {
+   "topic": "Arnold Litch cemetery preservation",
+   "resolution": "action item - contact landowner",
+   "quote": "todd holman of the dpw plans to contact the landowner of which the arnold litch cemetery resides, in hopes that we can come to an agreement to preserve the site.",
+   "tags": [
+    "cemetery",
+    "preservation",
+    "DPW coordination"
+   ]
+  },
+  {
+   "topic": "Goodrich Cemetery and South Cemetery restoration",
+   "resolution": "work to begin soon",
+   "quote": "there are also plans to soon begin work restoring the headstones and walls at the goodrich cemetery, as well as addressing the table stones and hanging tree limbs at the south cemetery.",
+   "tags": [
+    "cemetery",
+    "restoration",
+    "headstones"
+   ]
+  },
+  {
+   "topic": "Town pound walls deterioration",
+   "resolution": "action item - contact departments",
+   "quote": "dpw, apdc, and parks commission need to be contacted to address the deteriorating walls of the town pound.",
+   "tags": [
+    "town infrastructure",
+    "interagency coordination"
+   ]
+  },
+  {
+   "topic": "Historic site markers",
+   "resolution": "work to begin spring",
+   "quote": "the commission also plans to begin work on the historic site markers this spring, so we will work on finalizing a list of the most important sites.",
+   "tags": [
+    "historic sites",
+    "markers",
+    "preservation"
+   ]
+  },
+  {
+   "topic": "Mass Preservation Project Fund",
+   "resolution": "informational",
+   "quote": "in other news, the ma historic commission just announced the 32nd annual mass preservation project fund.",
+   "tags": [
+    "state program",
+    "preservation funding"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery preservation",
+  "historical commission",
+  "town infrastructure",
+  "historic site markers",
+  "restoration",
+  "Lunenburg Historical Commission"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2026-02-04",
  "docid": "7628",
@@ -12,37 +12,37 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of September 3, 2025 with modifications",
+   "motion": "Approve the minutes of September 3, 2025, with modifications",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion to approve the minutes of september 3, 2025, with ===page 4=== modifications by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian",
+   "quote": "there was a motion to approve the minutes of september 3, 2025, with ===page 4=== modifications by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Approve minutes of October 1, 2025 and October 16, 2025",
+   "motion": "Approve the minutes of October 1, 2025 & October 16, 2025",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion to approve the minutes of october 1, 2025 & october 16, 2025, by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian laffond aye."
+   "quote": "there was a motion to approve the minutes of october 1, 2025 & october 16, 2025, by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian laffond aye."
   },
   {
-   "motion": "Approve executive session minutes of November 19, 2025",
+   "motion": "Approve the executive session minutes of November 19, 2025",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion to approve the executive session minutes of november 19, 2025, by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian laftond aye."
+   "quote": "there was motion to approve the executive session minutes of november 19, 2025, by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian laftond aye."
   },
   {
-   "motion": "Approve executive session minutes of December 3, 2025 and January 7, 2026 with modifications",
+   "motion": "Approve the executive session minutes of December 3, 2025 & January 7, 2026, with modifications",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion to approve the executive session minutes of december 3, 2025 & january 7, 2026, with modifications by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian laffond aye."
+   "quote": "there was a motion to approve the executive session minutes of december 3, 2025 & january 7, 2026, with modifications by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian laffond aye."
   },
   {
    "motion": "Approve the first Wednesday in September as the annual due date to submit applications for the Senior Means Tested Exemption",
@@ -50,7 +50,7 @@
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion to approve the first wednesday in september as the annual due date to submit applications for the senior means tested exemption by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian laffond aye."
+   "quote": "there was a motion to approve the first wednesday in september as the annual due date to submit applications for the senior means tested exemption by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian laffond aye."
   },
   {
    "motion": "Approve and implement the Code of Conduct/Policies document with modifications",
@@ -58,7 +58,7 @@
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion to approve and implement the code of conduct/policies document with modifications by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian laffond aye."
+   "quote": "there was a motion to approve and implement the code of conduct/policies document with modifications by sarah cammer, seconded by brian marple. sarah cammer aye, brian marple aye, brian laffond aye."
   },
   {
    "motion": "Adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session",
@@ -66,10 +66,189 @@
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion to adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session by sarah cammer, seconded by brian marple. all in favor. sarah cammer aye, brian marple aye, brian laffond aye."
+   "quote": "there was a motion to adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session by sarah cammer, seconded by brian marple. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Text is OCR'd from a scan. One typo in original: \"Brian Laftond\" (Nov 19 exec session minutes) is spelled with an 'a' instead of 'o' in the source document.",
- "cost_usd": 0.0738394
+ "dropped_unquoted": 2,
+ "note": "Document indicates OCR extraction via macOS Vision. Text is readable. Minutes note at top states approval date of August 5, 2026, which is after the February 4, 2026 meeting date. All votes are recorded with outcomes.\"",
+ "cost_usd": 0.1180976,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple"
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple"
+  },
+  {
+   "name": "Karen Barrett",
+   "role": "Finance Director/Town Accountant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple"
+  },
+  {
+   "name": "Brian Marple",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, finance director/town accountant karen barrett, member brian marple"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed not to reduce the overlay",
+   "quote": "brian laffond expressed that he doesn't suggest changing the growth estimates at this time. the board also agreed not to reduce the overlay."
+  },
+  {
+   "decision": "Board signed excise tax commitments",
+   "quote": "the board signed the excise tax for commitment number 7 of 2025 and commitment number 1 of 2026."
+  },
+  {
+   "decision": "Board signed release to remove properties from chapter land",
+   "quote": "the board signed the release to remove 1083 northfield road and 356 mass ave. from chapter land."
+  },
+  {
+   "decision": "Annual report deferred to next meeting for further discussion",
+   "quote": "the annual report was briefly discussed, and members will have further discussion at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Excise tax commitment",
+   "what_was_recorded": "Commitment number 7 of 2025 excise tax bills totaled $13,200.28",
+   "figures_as_printed": [
+    "$13,200.28"
+   ],
+   "quote": "commitment number 7 of 2025 included 288 bills totaling $13,200.28."
+  },
+  {
+   "topic": "Excise tax commitment",
+   "what_was_recorded": "Commitment 1 for 2026 excise tax bills totaled $1,819,740.97",
+   "figures_as_printed": [
+    "$1,819,740.97"
+   ],
+   "quote": "commitment 1 for 2026 included 12,622 bills totaling $1,819,740.97."
+  },
+  {
+   "topic": "Overlay account balance",
+   "what_was_recorded": "Four-year average of overlay account balance from prior years was $151,000",
+   "figures_as_printed": [
+    "$151,000"
+   ],
+   "quote": "after reviewing the 4 previous years, the average was $151,000."
+  },
+  {
+   "topic": "Senior work off program",
+   "what_was_recorded": "FY25 senior work off program approved 9 applications totaling $9,674.50",
+   "figures_as_printed": [
+    "$9,674.50"
+   ],
+   "quote": "in fy25, 9 applications were approved and totaled $9,674.50."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY2027 Overlay, Budget and Growth Estimates",
+   "resolution": "No changes to growth estimates; overlay not reduced; further review of funding for Senior Means Tested Exemption",
+   "tags": [
+    "budget",
+    "overlay",
+    "exemptions"
+   ],
+   "quote": "fy2027 overlay, budget and growth estimates brian laffond expressed that he doesn't suggest changing the growth estimates at this time. the board also agreed not to reduce the overlay. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Prior minutes approval",
+   "resolution": "Minutes of September 3, October 1, October 16, 2025 and executive session minutes of November 19, December 3, and January 7, 2026 approved with modifications",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "review and approve minutes of september 3, 2025, & october 1, 2025, october 16, 2025, october 22, 2025, november 3, 2025, november 19, 2025, december 3, 2025, and january 7, 2026 & executive session minutes for november 19, 2025 & december 3, 2025, & january 7, 2026."
+  },
+  {
+   "topic": "Excise tax commitments and chapter land release",
+   "resolution": "Signed excise tax commitment 7 of 2025 and commitment 1 of 2026; signed release to remove properties from chapter land",
+   "tags": [
+    "excise tax",
+    "real estate"
+   ],
+   "quote": "the board signed the excise tax for commitment number 7 of 2025 and commitment number 1 of 2026. commitment number 7 of 2025 included 288 bills totaling $13,200.28. commitment 1 for 2026 includ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Senior Means Tested Exemption deadline",
+   "resolution": "Approved first Wednesday in September as annual due date; September 2, 2026 set for this year",
+   "tags": [
+    "exemptions",
+    "senior"
+   ],
+   "quote": "there was a motion to approve the first wednesday in september as the annual due date to submit applications for the senior means tested exemption by sarah cammer, seconded by brian marple."
+  },
+  {
+   "topic": "Neighborhood Review Project",
+   "resolution": "To proceed; job description drafted for temporary Special Assistant position; funding to be determined",
+   "tags": [
+    "neighborhood review",
+    "staffing"
+   ],
+   "quote": "lynda cajka states she plans to start working on the neighborhood review next month. lynda cajka has drafted a job description for the temporary position of special assistant to work on the neighborhood review."
+  },
+  {
+   "topic": "Land Condition Factors",
+   "resolution": "358 adjustments made: 289 residential, 69 commercial, 113 residential waterfront",
+   "tags": [
+    "assessments",
+    "real estate"
+   ],
+   "quote": "there have been 358 land conditions adjustments. 289 were residential, 69 are commercial property, with 113 of the residential being on the water."
+  },
+  {
+   "topic": "Board of Assessors Code of Conduct and Policies",
+   "resolution": "Approved and implemented based on Town of Littleton document with modifications",
+   "tags": [
+    "policies",
+    "conduct"
+   ],
+   "quote": "there was a motion to approve and implement the code of conduct/policies document with modifications by sarah cammer, seconded by brian marple."
+  },
+  {
+   "topic": "Mapping software upgrade",
+   "resolution": "Postponed; upgrade will not proceed due to budget constraints",
+   "tags": [
+    "technology",
+    "budget"
+   ],
+   "quote": "lynda cajka states the upgrade for the mapping software will not be going forward due to the budget."
+  }
+ ],
+ "tags": [
+  "Board of Assessors",
+  "real estate",
+  "assessments",
+  "exemptions",
+  "abatements",
+  "excise tax",
+  "overlay",
+  "budget",
+  "code of conduct"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1,
+  "topics": 1
+ }
 }

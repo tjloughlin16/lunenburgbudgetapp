@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-02-03",
  "docid": "7630",
@@ -12,47 +12,303 @@
  },
  "votes": [
   {
-   "motion": "Approve the Hawkers/Peddler License Application for Wayne Bowles with Power Home Remodeling Group",
+   "motion": "Approve Hawkers/Peddler License Application for Wayne Bowles with Power Home Remodeling Group, with hours of operation from 10:00 AM to 7:00 PM, Monday through Friday",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Member Brian Lehtinen",
-   "outcome": "passed 3-0-0",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "motion by chair nuzzolo to approve the hawkers/peddler license application for wayne bowles with power home remodeling group, with hours of operation from 10:00 am to 7:00 pm, monday through friday. seconded by member brian lehtinen. call for vote: three-aye. the motion passed (3-0-0)."
   },
   {
-   "motion": "Approve the License Application for Joyce Higgins with Weathervane Home Services for door-to-door solicitation",
+   "motion": "Approve License Application for Joyce Higgins with Weathervane Home Services for door-to-door solicitation",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Member Lehtinen",
-   "outcome": "passed 3-0-0",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "motion by chair nuzzolo to approve the license application for joyce higgins with weathervane home services for door-to-door solicitation. seconded by member lehtinen. call for vote: three-aye. the motion passed (3-0-0)."
   },
   {
-   "motion": "Continue representation by Labor Counsel Marc L. Terry at Stoneman, Chandler & Miller, LLP",
+   "motion": "Continue representation by Labor Counsel Marc L. Terry at his new firm, Stoneman, Chandler & Miller, LLP",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Member Lehtinen",
-   "outcome": "passed 3-0-0",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "a motion by chair nuzzolo for the town of lunenburg to continue representation by labor counsel marc l. terry at his new firm, stoneman, chandler & miller, llp. seconded by member lehtinen. call for vote: three-aye. the motion passed (3-0-0)."
   },
   {
-   "motion": "Approve the minutes from January 22, 2026; the January 13, 2026 Executive Session (not for release); and the January 22, 2026 Executive Session",
+   "motion": "Approve minutes from January 22, 2026; January 13, 2026 Executive Session (not for release); and January 22, 2026 Executive Session",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Member Lehtinen",
-   "outcome": "passed 3-0-0",
+   "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion by chair nuzzolo to approve the minutes from january 22, 2026; the january 13, 2026 executive session (not for release); and the january 22, 2026 executive session. seconded by member lehtinen. call for vote: three-aye. the motion passed (3-0-0)."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn at 8:00 PM",
    "moved_by": "Member Lehtinen",
    "seconded_by": "Member McLeod",
-   "outcome": "passed 3-0-0",
+   "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion by member lehtinen to adjourn at 8:00 pm. seconded by member mcleod. call for vote: three-aye. the motion passed (3-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1117754
+ "note": "Complete minutes, no pages missing or illegible. Meeting was held in person at Town Hall and via Zoom. All votes clearly recorded with outcomes stated as vote counts.",
+ "cost_usd": 0.1339296,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "members absent: vice-chair amanda moore and clerk renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "members absent: vice-chair amanda moore and clerk renee emkey"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Jeffrey Thibodeau",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief jeffrey thibodeau presented a commendation to school resource officer bradley mcnamara"
+  },
+  {
+   "name": "Bradley McNamara",
+   "role": "School Resource Officer",
+   "status": "present",
+   "quote": "presented a commendation to school resource officer bradley mcnamara for his work on an ongoing cryptocurrency fraud investigation"
+  },
+  {
+   "name": "Jonathan Broc",
+   "role": "Police Officer",
+   "status": "present",
+   "quote": "the select board acknowledged the retirement of police officer jonathan broc from his full-time position"
+  },
+  {
+   "name": "Wayne Bowles",
+   "role": "representing Power Home Remodeling Group",
+   "status": "remote",
+   "quote": "wayne bowles, appearing remotely via zoom on behalf of power home remodeling group, presented an application"
+  },
+  {
+   "name": "Joyce Higgins",
+   "role": "representing Weathervane Home Services",
+   "status": "remote",
+   "quote": "joyce higgins appeared remotely via zoom to request a renewal of her door-to-door solicitation license"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Acknowledged retirement of Police Officer Jonathan Broc from full-time position effective February 2, 2026, and his concurrent appointment as Reserve Officer",
+   "quote": "the select board acknowledged the retirement of police officer jonathan broc from his full-time position with the lunenburg police department, effective february 2, 2026, and his concurrent appointment as a reserve officer."
+  },
+  {
+   "decision": "Deferred approval of minutes from June 4, 2024; July 9, 2024; July 16, 2024; and July 23, 2024 to a future meeting",
+   "quote": "the minutes from june 4, 2024; july 9, 2024; july 16, 2024; and july 23, 2024 were deferred to the following meeting, as member mcleod indicated he would abstain because he was not serving at the time"
+  },
+  {
+   "decision": "Deferred approval of Appointment Policy to a future meeting when full Select Board present",
+   "quote": "chair nuzzolo deferred approval of the appointment policy to a future meeting when the full select board would be present."
+  },
+  {
+   "decision": "Continued discussion of Request for Legislative Earmarks in FY27 State Budget to subsequent meeting with full Select Board",
+   "quote": "chair nuzzolo indicated that he preferred to continue this discussion with the full select board present at a subsequent meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Snow and Ice Deficit",
+   "what_was_recorded": "As of January 30, 2026, the Town had experienced 18 snow events and expended the snow and ice budget at 147.2 percent",
+   "figures_as_printed": [
+    "$355,571.39",
+    "$523,418.07"
+   ],
+   "quote": "as of january 30, 2026, the town had experienced 18 snow events. the snow and ice budget of $355,571.39 had been expended at 147.2 percent, totaling $523,418.07."
+  },
+  {
+   "topic": "TCP Building Operating Costs",
+   "what_was_recorded": "Annual operating and maintenance costs for the TCP Building following school department vacation in summer 2025",
+   "figures_as_printed": [
+    "$120,000"
+   ],
+   "quote": "annual operating and maintenance costs for the building are approximately $120,000. the expected 50 percent reduction in energy costs following partial decommissioning of the building has not been realized"
+  },
+  {
+   "topic": "MassDOT Community Culvert Grant Application",
+   "what_was_recorded": "DPW Director submitted grant application for design phase of Goodrich Street culvert over Easter Brook",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "dpw director bill bernard submitted a grant application in the amount of $150,000 to fund the design phase of the goodrich street culvert over easter brook."
+  },
+  {
+   "topic": "Town 300th Anniversary Articles",
+   "what_was_recorded": "Two Warrant Articles related to the Town's 300th Anniversary including multi-year allocation and Gift Fund Article",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "two warrant articles related to the town's 300th anniversary were noted: a multi-year allocation of $15,000 and a gift fund article for donations and sale of merchandise"
+  },
+  {
+   "topic": "FY27 Budget Challenges",
+   "what_was_recorded": "Town Manager advised that FY27 budget cycle will be challenging due to major cost drivers projected to exceed revenue growth, likely requiring an override",
+   "figures_as_printed": [],
+   "quote": "major cost drivers including health insurance, retirement assessment, and school transportation are projected to exceed revenue growth. she stated that absent service reductions, an override is likely required."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "administrative"
+   ],
+   "quote": "chair nuzzolo made the following announcements: • the citizens party caucus will be held on monday, march 9 at 7:00 pm at the lunenburg middle/high school auditorium."
+  },
+  {
+   "topic": "Commendation to School Resource Officer Bradley McNamara for cryptocurrency fraud investigation and recovery",
+   "resolution": "commendation presented",
+   "tags": [
+    "public safety",
+    "law enforcement"
+   ],
+   "quote": "police chief jeffrey thibodeau presented a commendation to school resource officer bradley mcnamara for his work on an ongoing cryptocurrency fraud investigation that resulted in the recovery of more than $100,000 in stolen funds."
+  },
+  {
+   "topic": "Hawkers/Peddler License Application for Wayne Bowles with Power Home Remodeling Group",
+   "resolution": "approved",
+   "tags": [
+    "licensing"
+   ],
+   "quote": "motion by chair nuzzolo to approve the hawkers/peddler license application for wayne bowles with power home remodeling group, with hours of operation from 10:00 am to 7:00 pm, monday through friday. seconded by member brian lehtinen. call for vote: three-aye."
+  },
+  {
+   "topic": "License Application for Joyce Higgins with Weathervane Home Services for door-to-door solicitation",
+   "resolution": "approved (renewal)",
+   "tags": [
+    "licensing"
+   ],
+   "quote": "motion by chair nuzzolo to approve the license application for joyce higgins with weathervane home services for door-to-door solicitation. seconded by member lehtinen. call for vote: three-aye."
+  },
+  {
+   "topic": "Acknowledgment of retirement of Police Officer Jonathan Broc and appointment as Reserve Officer",
+   "resolution": "acknowledged",
+   "tags": [
+    "personnel",
+    "appointments"
+   ],
+   "quote": "the select board acknowledged the retirement of police officer jonathan broc from his full-time position with the lunenburg police department, effective february 2, 2026, and his concurrent appointment as a reserve officer."
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "presented for information",
+   "tags": [
+    "administration",
+    "budget",
+    "finance"
+   ],
+   "quote": "town manager jennifer warren-dyment delivered a comprehensive report covering the following ===page 4=== select board meeting minutes february 3, 2026 page 4 of 8 matters: fy27 budget prepar",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Vote on Continued Representation by Attorney Marc L. Terry at new firm Stoneman, Chandler & Miller, LLP",
+   "resolution": "approved",
+   "tags": [
+    "legal counsel"
+   ],
+   "quote": "a motion by chair nuzzolo for the town of lunenburg to continue representation by labor counsel marc l. terry at his new firm, stoneman, chandler & miller, llp. seconded by member lehtinen. call for vote: three-aye."
+  },
+  {
+   "topic": "Request for Legislative Earmarks in FY27 State Budget",
+   "resolution": "continued to future meeting",
+   "tags": [
+    "budget",
+    "legislative"
+   ],
+   "quote": "chair nuzzolo indicated that he preferred to continue this discussion with the full select board present at a subsequent meeting."
+  },
+  {
+   "topic": "Discussion of Warrant Articles to be Sponsored by Select Board",
+   "resolution": "continued",
+   "tags": [
+    "warrant articles"
+   ],
+   "quote": "chair nuzzolo reviewed the status of warrant articles being considered for select board sponsorship. he noted that kids kingdom may be addressed as a joint article with the school committee"
+  },
+  {
+   "topic": "Discussion and Approval of Appointment Policy",
+   "resolution": "deferred",
+   "tags": [
+    "appointments",
+    "administration"
+   ],
+   "quote": "chair nuzzolo deferred approval of the appointment policy to a future meeting when the full select board would be present."
+  },
+  {
+   "topic": "Approval of Select Board Minutes",
+   "resolution": "approved (partial), deferred (partial)",
+   "tags": [
+    "administrative"
+   ],
+   "quote": "motion by chair nuzzolo to approve the minutes from january 22, 2026; the january 13, 2026 executive session (not for release); and the january 22, 2026 executive session. seconded by member lehtinen. call for vote: three-aye."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "received for information",
+   "tags": [
+    "committees"
+   ],
+   "quote": "member lehtinen reported on two committees: lunenburg municipal building design committee: the committee met on the preceding monday and discussed a revised design approach for the ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved",
+   "tags": [
+    "administrative"
+   ],
+   "quote": "motion by member lehtinen to adjourn at 8:00 pm. seconded by member mcleod. call for vote: three-aye. the motion passed (3-0-0)."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "budget",
+  "appointments",
+  "licensing",
+  "public safety",
+  "town manager",
+  "personnel",
+  "warrant articles"
+ ],
+ "dropped_unquoted_by_field": {}
 }

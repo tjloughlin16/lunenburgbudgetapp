@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2026-02-09",
  "docid": "7644",
@@ -12,95 +12,272 @@
  },
  "votes": [
   {
-   "motion": "Endorse ANR-26-1 plan at 1083 Northfield Rd",
-   "moved_by": "T. Willsmer",
-   "seconded_by": "A. Reid",
+   "motion": "Endorse ANR plan for 1083 Northfield Rd (ANR-26-1)",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "t. willsmer made motion to endorse. a. reid, second. roll call vote: t willsmer, aye; a reid, aye; m brenner, aye (3/0)"
   },
   {
-   "motion": "Close the public hearing for PBSR-25-2 at 1083 Northfield Rd",
-   "moved_by": "A. Reid",
-   "seconded_by": "T Willsmer",
+   "motion": "Close hearing on 1083 Northfield Rd PBSR-25-2 tree removal and stonewall work",
+   "moved_by": "Amanda Reid",
+   "seconded_by": "Timothy Willsmer",
    "outcome": "passed 3-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "a. reid moved to close the hearing. t willsmer, second. roll call vote: t willsmer, aye; a reid, aye; m brenner aye (3/0)"
   },
   {
-   "motion": "Approve PBSR-25-2 with stated conditions at 1083 Northfield Rd",
-   "moved_by": "T Willsmer",
-   "seconded_by": "A Reid",
+   "motion": "Approve 1083 Northfield Rd PBSR-25-2 with stated conditions for tree and stonewall work",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "t willsmer moved to approve with the above stated conditions. a reid, second. roll call vote: t willsmer, aye; a reid, aye; m brenner, aye (3/0)"
   },
   {
-   "motion": "Agree that driveway alignment and property line changes are de minimis at 1083 Northfield Rd",
-   "moved_by": "T Willsmer",
-   "seconded_by": "A Reid",
+   "motion": "Agree that changes are De Minimis for 1083 Northfield Rd Special Permit and Stormwater Permit",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "t willsmer moved to agree with the applicant that the changes are de minimis. a reid, second roll call vote: t. willsmer, aye; a reid, aye; m. brenner, aye (3/0)"
   },
   {
-   "motion": "Close the public hearing for PBSA-25-9 at 301 Mass Ave",
-   "moved_by": "T. Willsmer",
-   "seconded_by": "A. Reid",
+   "motion": "Close hearing on 301 Mass Ave (PBSA-25-9) Walmart site plan",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
    "outcome": "passed 3-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "t. willsmer made motion to close hearing. a. reid, second. roll call vote: t willsmer, aye; a reid, aye, m brenner, aye (3/0)"
   },
   {
-   "motion": "Approve site plan as presented with standard conditions for Walmart pickup relocation at 301 Mass Ave",
-   "moved_by": "T Willsmer",
-   "seconded_by": "A Reid",
+   "motion": "Approve 301 Mass Ave (PBSA-25-9) Walmart site plan with standard conditions",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "t willsmer moved to approve site plan as presented with standard conditions. a reid, second. roll call vote: t. willsmer, aye; a. reid, aye; m. brenner, aye (3/0)"
   },
   {
-   "motion": "Continue PBSW-25-6, PBSA-25-8, and PBSP-25-9 at 30 Summer St to 2/23/26",
-   "moved_by": "T Willsmer",
-   "seconded_by": "A. Reid",
+   "motion": "Continue 30 Summer St (PBSW-25-6, PBSA-25-8, PBSP-25-9) to 2/23/26",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "t willsmer motioned to continue to 2/23/26 meeting. a. reid, second. roll call vote: a burney, aye; t willsmer, aye; a reid, aye; m brenner, aye (4/0)"
   },
   {
-   "motion": "Continue PBSW-25-5 and PBSP-25-10 at 0 Reservoir Rd to 2/23/26",
-   "moved_by": "A. Burney",
-   "seconded_by": "T. Willsmer",
+   "motion": "Continue 0 Reservoir Rd (PBSW-25-5 and PBSP-25-10) to 2/23/26",
+   "moved_by": "Adam Burney",
+   "seconded_by": "Timothy Willsmer",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "a. burney moved to continue both permits to 2/23/26 meeting. t. willsmer, second. roll call vote: a. burney, aye; t willsmer, aye; a reid, aye; m brenner, aye (4/0)"
   },
   {
-   "motion": "Appoint M. Brenner as group member for 925 Mass Ave RFP with A. Reid as alternative",
-   "moved_by": "T. Willmer",
-   "seconded_by": "A Reid",
+   "motion": "Appoint Matthew Brenner as group member for 925 Mass Ave RFP with Amanda Reid as alternative",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "to appoint m brenner as group member with a reid as an alternative if needed. t. willmer moved, a reid, second. roll call vote: a burney, aye; t willsmer, aye; a reid, aye, m brenner, aye (4/0)"
+   "procedural": false,
+   "quote": "m brenner asked for motion to appoint m brenner as group member with a reid as an alternative if needed. t. willmer moved, a reid, second. roll call vote: a burney, aye; t willsmer, aye; a reid, aye, m brenner, aye (4/0)"
   },
   {
-   "motion": "Approve prior minutes from 6/9/25, 7/14/25, 7/28/25, 8/25/25, and 9/22/25 as is and 9/8/25 with removal of '8:23' on the ANR",
-   "moved_by": "A. Burney",
-   "seconded_by": "A Reid",
+   "motion": "Approve minutes from 6/9/25, 7/14/25, 7/28/25, 8/25/25, 9/22/25 as is and 9/8/25 with removal of 8:23 on ANR",
+   "moved_by": "Adam Burney",
+   "seconded_by": "Amanda Reid",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "to approve 6/9/25, 7/14/25, 7/28/25, 8/25/25,& 9/22/25 as is and 9/8/25 with the removal of \"8:23\" on the anr. a. burney moved, a reid, second roll call vote: a burney, aye; t willsmer, aye; a reid, aye; m brenner, aye (4/0)"
+   "quote": "m brenner asked for motion to approve 6/9/25, 7/14/25, 7/28/25, 8/25/25,& 9/22/25 as is and 9/8/25 with the removal of \"8:23\" on the anr. a. burney moved, a reid, second roll call vote: a burney, aye; t willsmer, aye; a reid, aye; m brenner, aye (4/0)"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "T. Willsmer",
-   "seconded_by": "A Burney",
+   "motion": "Adjourn meeting",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Adam Burney",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "t. willsmer motioned to adjourn, a burney, second roll call vote: a burney, aye; t. willsmer, aye; a reid, aye, m. brenner, aye (4/0)"
   }
  ],
- "dropped_unquoted": 0,
- "note": "All 11 votes recorded; all passed unanimously or by stated margins. Document is clear and legible.",
- "cost_usd": 0.1026904
+ "dropped_unquoted": 1,
+ "note": "No public comment was recorded; minutes note \"No public objections\" and \"No Public comment\" for the hearings conducted.\"",
+ "cost_usd": 0.1287726,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer (remote), a. reid (remote), a. burney (remote/late)"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "roll call: m. brenner, t. willsmer (remote), a. reid (remote), a. burney (remote/late)"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "roll call: m. brenner, t. willsmer (remote), a. reid (remote), a. burney (remote/late)"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Member",
+   "status": "remote",
+   "quote": "roll call: m. brenner, t. willsmer (remote), a. reid (remote), a. burney (remote/late)"
+  },
+  {
+   "name": "Stephen Wallace",
+   "role": "Director of Planning and Economic Development",
+   "status": "present",
+   "quote": "m brenner welcomed stephen wallace the new director of planning and economic development."
+  },
+  {
+   "name": "B Marsden",
+   "role": "Tree Warden",
+   "status": "present",
+   "quote": "b marsden, tree warden stated he did not receive any objections prior to the hearing."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing applicants (Dillis & Roy)",
+   "status": "present",
+   "quote": "greg roy (dillis & roy) on behalf of tanner cole. 5 lots, lot lines are changing for the common driveway."
+  },
+  {
+   "name": "Greg DiBona",
+   "role": "representing Walmart (Bohler)",
+   "status": "present",
+   "quote": "greg dibona (bohler) on behalf of walmart, move existing customer pickup spots from the front of the building to the side"
+  },
+  {
+   "name": "Justin LeClair",
+   "role": "representing applicant (McCarty Companies)",
+   "status": "present",
+   "quote": "justin leclair (mccarty companies) on behalf of applicant. has received peer review back and has submitted a response to graves."
+  },
+  {
+   "name": "Tony Sculimbrene",
+   "role": "Master Plan Steering Committee",
+   "status": "present",
+   "quote": "tony sculimbrene states committee would like to stay intact until planning board as officially approved the master plan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members directed to sign decisions for 485 Leominster-Shirley Rd work extension and 1083 Northfield Rd PBSP-25-8 and PBSW-25-3",
+   "quote": "board members will go into office to sign decisions for 485 leominster-shirley rd, work extension & 1083 northfield rd, pbsp-25-8 and pbsw-25-3"
+  },
+  {
+   "decision": "Three conditions imposed on 1083 Northfield Rd project: red maple trees certified by Tree Warden before occupancy; stone wall restoration work certified by Director before occupancy; restoration to proceed from areas adjacent to driveway equally along wall",
+   "quote": "a. burney requested the following conditions, 1) the proposed red maple trees will be installed and certified by the tree warden before occupancy permit is issued for first house. 2) the work proposed as mitigation on the stone wall be completed and certified by the director of planning and economic development before the issuance of the first occupancy permit. 3) the stone wall restoration will begin with the areas most closely adjacent to the proposed driveway and ===page 2=== move, as much as practicable, equally along the wall on both sides until all the stones removed from the driveway entrance have been placed back. applicant indicated agreeing with th",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Written feedback on Master Plan draft due to Stephen Wallace prior to 2/23/26 meeting",
+   "quote": "written feedback should be submitted to s wallace prior to the 2/23/26 meeting"
+  },
+  {
+   "decision": "Master Plan Steering Committee to remain intact until Planning Board officially approves Master Plan",
+   "quote": "tony sculimbrene states committee would like to stay intact until planning board as officially approved the master plan"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "1083 Northfield Rd ANR Plan (ANR-26-1)",
+   "resolution": "endorsed",
+   "quote": "1083 northfield rd. (anr-26-1): greg roy (dillis & roy) on behalf of tanner cole. 5 lots, lot lines are changing for the common driveway. all agreed to minor changes.",
+   "tags": [
+    "ANR plan",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "1083 Northfield Rd Tree Removal and Stonewall Work (PBSR-25-2)",
+   "resolution": "approved with conditions",
+   "quote": "1083 northfield rd. (pbsr -25-2): greg roy (dillis & roy) on behalf of tanner cole, remove 40 ft of stonewall and remove 2 white pine trees.",
+   "tags": [
+    "site plan review",
+    "tree removal",
+    "stonewall mitigation"
+   ]
+  },
+  {
+   "topic": "301 Mass Ave Walmart Customer Pickup Site Plan (PBSA-25-9)",
+   "resolution": "approved with standard conditions",
+   "quote": "301 mass ave. (pbsa-25-9): greg dibona (bohler) on behalf of walmart, move existing customer pickup spots from the front of the building to the side where the outside garden center is.",
+   "tags": [
+    "site plan approval",
+    "retail",
+    "parking"
+   ]
+  },
+  {
+   "topic": "30 Summer St Stormwater and Site Plan Review (PBSW-25-6, PBSA-25-8, PBSP-25-9)",
+   "resolution": "continued to 2/23/26",
+   "quote": "continued from 11/24/25: 30 summer st. stormwater permit, (pbsw-25-6), site plan approval, (pbsa-25-8) (peer review results) ; special permit (pbsp-25-9)",
+   "tags": [
+    "continued hearing",
+    "stormwater",
+    "site plan"
+   ]
+  },
+  {
+   "topic": "0 Reservoir Rd Stormwater and Special Permit (PBSW-25-5, PBSP-25-10)",
+   "resolution": "continued to 2/23/26",
+   "quote": "continued from 12/15/25: 0 reservoir rd stormwater permit, (pbsw-25-5) (sent for peer review) & open special permit pbsp-25-10",
+   "tags": [
+    "continued hearing",
+    "stormwater",
+    "driveway review"
+   ]
+  },
+  {
+   "topic": "925 Mass Ave RFP Group Member Appointment",
+   "resolution": "appointed",
+   "quote": "925 mass ave - rfp, group member: board discussed and with requirement of daytime meetings, m brenner asked for motion to appoint m brenner as group member with a reid as an alternative if needed.",
+   "tags": [
+    "group member",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Master Plan Feedback and Review",
+   "resolution": "feedback requested",
+   "quote": "master plan: the draft has been sent via email. overunder is looking for feedback. s. wallace states should be in writing. a. burney is concerned there are no maps or charts.",
+   "tags": [
+    "master plan",
+    "steering committee"
+   ]
+  },
+  {
+   "topic": "Director of Planning and Economic Development Report",
+   "resolution": "no report at this time",
+   "quote": "s. wallace did not have any reports as of now.",
+   "tags": [
+    "staff report"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan approval",
+  "special permit",
+  "stormwater permit",
+  "tree removal",
+  "subdivision",
+  "development",
+  "master plan",
+  "committee reports"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

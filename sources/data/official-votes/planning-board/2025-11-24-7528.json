@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2025-11-24",
  "docid": "7528",
@@ -12,14 +12,31 @@
  },
  "votes": [
   {
-   "motion": "To continue the Special Permit hearing for 30 Summer Street until 12/15/2025",
-   "outcome": "passed 3-0",
+   "motion": "Approve Judy Dragoslis, candidate for the Economic Development Committee (EDC), by roll call.",
+   "moved_by": "A. Burney",
+   "seconded_by": "T. Willsmer",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "gregory roy (dillis&roy) requested continuance until 12/15/25 for a full 4-member quorum., a. burney requested letter to be filed ▪ rollcall vote: passed ▪ m. brenner; aye ▪ t. willsmer; aye ▪ a. bur",
-   "quote_taken_from_text": true
+   "quote": "m. brenner requested motion; a. burney moved, t. willsmer second"
   },
   {
-   "motion": "To hire Graves Engineering for peer review of the Stormwater permit for 30 Summer Street",
+   "motion": "Roll-call vote on the 30 Summer Street special permit (PBSP-25-9): applicant requested continuance until 12/15/25 for a full 4-member quorum, and a letter to be filed.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "requested continuance until 12/15/25 for a full 4-member quorum., a. burney requested letter to be filed"
+  },
+  {
+   "motion": "Continue the 30 Summer Street special permit hearing until 12/15/25.",
+   "moved_by": "A. Burney",
+   "seconded_by": "T. Willsmer",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion by a. burney to continue until 12/15/25; t. willsmer second"
+  },
+  {
+   "motion": "Peer review of the 30 Summer Street stormwater and site plan to Graves Engineering.",
    "moved_by": "A. Burney",
    "seconded_by": "T. Willsmer",
    "outcome": "not stated",
@@ -27,25 +44,238 @@
    "quote": "a. burney made motion for peer review to graves engineering; t. willsmer second"
   },
   {
-   "motion": "To continue the Stormwater and Site Plan hearings for 30 Summer Street until 12/15/2025",
-   "moved_by": "A. Burney",
-   "seconded_by": "T. Willsmer",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "motion by a. burney to continue until 12/15/25; t. willsmer second ▪ rollcall vote: passed ▪ m brenner; aye ▪ t. willsmer; aye ▪ a. bur",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Burney",
    "seconded_by": "T. Willsmer",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion moved by a. burney; t. willsmer second o closed 7:20",
-   "quote_taken_from_text": true
+   "quote": "motion moved by a. burney; t. willsmer second"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1157594
+ "dropped_unquoted": 0,
+ "note": "Text is clean and complete (pages 1 and 2 of 2). Several motions show a second and a roll call but the minutes print no mover for the 30 Summer Street roll call, and the peer review and adjournment motions have no printed result, so those are recorded as 'not stated'. The motion text for the Judy Dragoslis appointment is inferred from 'candidate for EDC' and 'requested motion'; the minutes do not print the wording. No public comment section appears in the minutes. Leigh Bain and Richard Harris appear only in the letterhead or a welcome line and are not recorded as taking part, so they are omitted from attendees. Gregory Roy's attendance is not stated; the minutes record only that he requested a continuance. Dollar figures: none are printed; the bond and consultant items discuss money with no amount.",
+ "cost_usd": 0.015385870000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Brenner",
+   "role": "Chair (Matthew Brenner Chair)",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. burney absent: a. reid"
+  },
+  {
+   "name": "T. Willsmer",
+   "role": "Vice Chair (Timothy Willsmer Vice Chair)",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. burney absent: a. reid"
+  },
+  {
+   "name": "A. Burney",
+   "role": "Member (Adam Burney Member)",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. burney absent: a. reid"
+  },
+  {
+   "name": "A. Reid",
+   "role": "Clerk (Amanda Reid Clerk)",
+   "status": "absent",
+   "quote": "roll call: m. brenner, t. willsmer, a. burney absent: a. reid"
+  },
+  {
+   "name": "Judy Dragoslis",
+   "role": "candidate for EDC",
+   "status": "not stated",
+   "quote": "judy dragoslis - candidate for edc"
+  },
+  {
+   "name": "Gregory Roy",
+   "role": "Dillis&Roy",
+   "status": "not stated",
+   "quote": "special permit - gregory roy (dillis&roy) requested continuance until 12/15/25 for a full 4-member quorum., a. burney requested letter to be filed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No decision on the bond for 116 Townsend Harbor Rd (100 Townsend Harbor Rd stormwater permit PBSW-25-2) because no estimate has been received.",
+   "quote": "no decision - have not received an estimate"
+  },
+  {
+   "decision": "December meeting condensed to one meeting due to the holidays; upcoming schedule set as 12/15, 1/5/26, 1/19/26.",
+   "quote": "december condensed to 1 meeting due to holidays"
+  },
+  {
+   "decision": "No minutes were approved at this meeting because of a backlog caused by staffing.",
+   "quote": "no minutes to approve as still a backlog due to staffing"
+  },
+  {
+   "decision": "A. Burney will not attend the 1/5/26 meeting (noted for the schedule).",
+   "quote": "a. burney will not be attending 1/5/26 meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bond for 116 Townsend Harbor Rd (stormwater permit PBSW-25-2)",
+   "what_was_recorded": "A bond for 116 Townsend Harbor Rd was on the agenda; no decision was made because no estimate had been received.",
+   "figures_as_printed": [],
+   "quote": "no decision - have not received an estimate"
+  },
+  {
+   "topic": "Peer review by Graves Engineering for 30 Summer Street stormwater and site plan",
+   "what_was_recorded": "A motion for peer review to Graves Engineering was made; the minutes print no cost or fee.",
+   "figures_as_printed": [],
+   "quote": "a. burney made motion for peer review to graves engineering; t. willsmer second"
+  },
+  {
+   "topic": "Storm Water Task Force consultant",
+   "what_was_recorded": "The Storm Water Task Force reported a consultant was approved; the minutes print no cost.",
+   "figures_as_printed": [],
+   "quote": "nov meeting postponed due to special town meeting- consultant approved"
+  },
+  {
+   "topic": "Capital Planning Committee past deadline",
+   "what_was_recorded": "The Capital Planning Committee will go past the end-of-year deadline with the Town Manager's approval; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "will be going past end of year deadline with the town manager's approval"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting opened 6:01pm",
+   "quote": "roll call: m. brenner, t. willsmer, a. burney absent: a. reid",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Chair / Director's report",
+   "resolution": "no action; informational",
+   "quote": "stop by ritter building, renovations look nice",
+   "tags": [
+    "Ritter Building",
+    "Special Town Meeting",
+    "MBTA"
+   ]
+  },
+  {
+   "topic": "Appointments: Judy Dragoslis, candidate for EDC",
+   "resolution": "approved by roll call, 3 AYE",
+   "quote": "m. brenner requested motion; a. burney moved, t. willsmer second",
+   "tags": [
+    "appointments",
+    "Economic Development Committee"
+   ]
+  },
+  {
+   "topic": "Approval not required (ANR) plans",
+   "resolution": "no action; none listed",
+   "quote": "5. approval not required (anr) plans",
+   "tags": [
+    "ANR"
+   ]
+  },
+  {
+   "topic": "Public hearing: 30 Summer Street special permit, stormwater permit, site plan approval",
+   "resolution": "continued to 12/15/25; peer review motion made",
+   "quote": "special permit - gregory roy (dillis&roy) requested continuance until 12/15/25 for a full 4-member quorum., a. burney requested letter to be filed",
+   "tags": [
+    "special permit",
+    "stormwater",
+    "site plan",
+    "continued",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "Decisions and business: 100 Townsend Harbor Rd stormwater permit bond",
+   "resolution": "no decision; estimate not received",
+   "quote": "no decision - have not received an estimate",
+   "tags": [
+    "stormwater",
+    "bond",
+    "Townsend Harbor Rd"
+   ]
+  },
+  {
+   "topic": "Board discussion: Master Plan",
+   "resolution": "no action recorded",
+   "quote": "board discussions • master plan",
+   "tags": [
+    "Master Plan"
+   ]
+  },
+  {
+   "topic": "Abutting community notices: Fitchburg Planning Board Zoning Act",
+   "resolution": "no action required by board",
+   "quote": "fitchburg planning board - zoning act",
+   "tags": [
+    "abutting communities",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "continues to meet 2 mondays a month, ritter renovations progressing fast",
+   "tags": [
+    "Master Plan Steering Committee",
+    "Open Space Committee",
+    "Municipal Bldg. Design Committee",
+    "Capital Planning Committee",
+    "Economic Development Committee",
+    "Storm Water Task Force"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "no minutes approved; backlog due to staffing",
+   "quote": "no minutes to approve as still a backlog due to staffing",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "schedule set; December condensed to one meeting",
+   "quote": "december condensed to 1 meeting due to holidays",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Board comment: new Planning Department admin",
+   "resolution": "welcomed; no action",
+   "quote": "a. burney welcomed leigh bain as the new admin for the planning dept.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "closed 7:20pm; motion recorded without printed result",
+   "quote": "motion moved by a. burney; t. willsmer second",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "special permit",
+  "stormwater",
+  "site plan",
+  "peer review",
+  "appointments",
+  "Economic Development Committee",
+  "continuance",
+  "Ritter Building",
+  "Master Plan",
+  "meeting schedule",
+  "minutes backlog",
+  "bonds"
+ ],
+ "dropped_unquoted_by_field": {}
 }

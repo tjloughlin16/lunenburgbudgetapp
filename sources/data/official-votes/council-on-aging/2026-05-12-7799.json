@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2026-05-12",
  "docid": "7799",
@@ -12,25 +12,239 @@
  },
  "votes": [
   {
-   "motion": "Report to Master Plan Committee that COA supports funding for parking lot, meals and programs, and ADA walkable spaces in town, in addition to assisted living and tax relief for seniors",
-   "moved_by": "Ms. Beale",
-   "seconded_by": "Ms. O'Sullivan",
+   "motion": "Report to Master Plan requesting support for Assisted Living, tax relief for seniors, parking lot funding, meal and program funding, and ADA walkable spaces in town",
+   "moved_by": "Cathy Beale",
+   "seconded_by": "Susan O'Sullivan",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "ms. beale moved to have ms. lincoln report back to the master plan that the as well as the assisted living and tax relief for seniors , the coa would like to include funding for a parking lot, funding for meals and programs , and ada walkable spaces in tow n . s econded by ms. o 'sullivan. vote was unanimous in ",
-   "quote_taken_from_text": true
+   "quote": "ms. beale moved to have ms. lincoln report back to the master plan that the as well as the assisted living and tax relief for seniors , the coa would like to include funding for a parking lot, funding for meals and programs , and ada walkable spaces in tow n . s econded by ms. o 'sullivan. vote was unanimous in favor."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Ms. Lockwood",
-   "seconded_by": "Mr. Franco",
+   "motion": "Adjourn at 11:10 am",
+   "moved_by": "Ana Lockwood",
+   "seconded_by": "Lou Franco",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "a motion to adjourn at 11:10 am was made by ms. lockwood and seconded by mr. franco . it passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "a motion to adjourn at 11:10 am was made by ms. lockwood and seconded by mr. franco . it passed unanimously."
   }
  ],
  "dropped_unquoted": 1,
- "note": "Minutes dated November 18, 2025. Three votes recorded: approval of prior minutes, a substantive motion on Master Plan recommendations, and adjournment. All passed unanimously.",
- "cost_usd": 0.1041364
+ "note": "Meeting date discrepancy: document header states 2026-05-12, but minutes clearly show November 18, 2025. Used the date from the minutes text. Public comment section explicitly states none.",
+ "cost_usd": 0.1057666,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), jane rabbitt (vice-chair ), diane nowd, jim mcguigan , cathy beale, lou franco, elena christopher , ana lockwood , susan o 'sullivan ,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), jane rabbitt (vice-chair ), diane nowd, jim mcguigan , cathy beale, lou franco, elena christopher , ana lockwood , susan o 'sullivan ,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), jane rabbitt (vice-chair ), diane nowd, jim mcguigan , cathy beale, lou franco, elena christopher , ana lockwood , susan o 'sullivan ,"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), jane rabbitt (vice-chair ), diane nowd, jim mcguigan , cathy beale, lou franco, elena christopher , ana lockwood , susan o 'sullivan ,"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), jane rabbitt (vice-chair ), diane nowd, jim mcguigan , cathy beale, lou franco, elena christopher , ana lockwood , susan o 'sullivan ,"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), jane rabbitt (vice-chair ), diane nowd, jim mcguigan , cathy beale, lou franco, elena christopher , ana lockwood , susan o 'sullivan ,"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), jane rabbitt (vice-chair ), diane nowd, jim mcguigan , cathy beale, lou franco, elena christopher , ana lockwood , susan o 'sullivan ,"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), jane rabbitt (vice-chair ), diane nowd, jim mcguigan , cathy beale, lou franco, elena christopher , ana lockwood , susan o 'sullivan ,"
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), jane rabbitt (vice-chair ), diane nowd, jim mcguigan , cathy beale, lou franco, elena christopher , ana lockwood , susan o 'sullivan ,"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: helen balcom , jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: helen balcom , jack rabbitt"
+  },
+  {
+   "name": "Deb Goodsell",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "guests: deb goodsell (coa director)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board indicated desire to keep wording about COA involvement in hiring from Charter in Bylaws and flag the discrepancy for change",
+   "quote": "the board indicated a desire to keep it. ms. lincoln noted she is unaware if the two must match and would like to request additional information from the select board or t own manager before deciding on final commentary. board has reviewed it and is flagging that change ."
+  },
+  {
+   "decision": "Mr. Franco and Ms. Lincoln will work together to create a Facebook page for COA Board",
+   "quote": "mr. franco and ms. lincoln wi ll work together to create this. board members all noted they were in favor."
+  },
+  {
+   "decision": "Board will hold a holiday party at next meeting and donate to Lunenburg Food Pantry instead of doing ornament swap",
+   "quote": "ms. rabbitt suggested that instead of doing an ornament swap they would make a donation to the lunenburg food pantry as a board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Furnishings for lobby areas",
+   "what_was_recorded": "Quotes received for four tables, sixteen chairs, five lounge chairs and side tables with pricing at approximately $22,000. COA gift fund has most of the funding, with difference to come from formula grant.",
+   "figures_as_printed": [
+    "$22k"
+   ],
+   "quote": "they received qu otes for four tables at 32 \" square, sixteen chairs, five lounge chairs and side tables. pricing for those is approximately $22k. ms. beale noted that the coa has a gift fund that has most of the funding for t he furniture, and the difference could come out of the formula grant."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Feedback on By-laws",
+   "resolution": "Flagged discrepancy between Charter and Bylaws regarding COA involvement in director hiring for further review",
+   "quote": "ms. beale noted a discrepancy between the charter and bylaws on wording of appointing and having the coa be involved in the hiring of a coa director.",
+   "tags": [
+    "governance",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "COA Board Facebook Page",
+   "resolution": "Approved; Franco and Lincoln to create",
+   "quote": "mr. franco and ms. lincoln wi ll work together to create this. board members all noted they were in favor.",
+   "tags": [
+    "communications",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Staffing Update",
+   "resolution": "Reported; van driver resigned, per diem driver position posted, meal site manager position now union role",
+   "quote": "ms. goodsell, director , noted that mr. mcguigan has resigned as a van driver and was thanked for his many years of service. the t own is hiring for a per diem driver to work on an on-call basis.",
+   "tags": [
+    "staffing",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Center Hours",
+   "resolution": "Changed for fall/winter months with shifts from Monday nights to Friday afternoons",
+   "quote": "ms. goodsell noted that hours have changed for the fall/winter months. two hours have been shifted from monday nights to friday afternoons.",
+   "tags": [
+    "operations",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Holiday Party",
+   "resolution": "Approved; board to donate to Lunenburg Food Pantry",
+   "quote": "the board noted that they would like to have a holiday party at their next meeting. ms. rabbitt suggested that instead of doing an ornament swap they would make a donation to the lunenburg food pantry as a board.",
+   "tags": [
+    "events",
+    "community"
+   ]
+  },
+  {
+   "topic": "Caregiver Resource Connection",
+   "resolution": "Third session scheduled for tomorrow at 11:30 am with Keith Aubin from Integrity Medicare",
+   "quote": "third session is tomorrow at 11:30 am . keith aubin from integrity medicare will present and bring lunch from il forno.",
+   "tags": [
+    "programs",
+    "education"
+   ]
+  },
+  {
+   "topic": "Master Plan Review",
+   "resolution": "Motion passed to report back requesting funding for parking lot, meals, programs, and ADA walkable spaces in addition to Assisted Living and tax relief",
+   "quote": "ms. beale moved to have ms. lincoln report back to the master plan that the as well as the assisted living and tax relief for seniors , the coa would like to include funding for a parking lot, funding for meals and programs , and ada walkable spaces in tow n .",
+   "tags": [
+    "planning",
+    "community development"
+   ]
+  },
+  {
+   "topic": "Furnishings for lobby areas",
+   "resolution": "Quotes approved; gift fund and formula grant to fund",
+   "quote": "they received qu otes for four tables at 32 \" square, sixteen chairs, five lounge chairs and side tables. pricing for those is approximately $22k. ms. beale noted that the coa has a gift fund that has most of the funding for t he furniture, and the difference could come out of the formula grant.",
+   "tags": [
+    "capital",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "TRI Board Report follow-up",
+   "resolution": "Deferred; director to meet with Lockwood offline before Finance Committee presentation",
+   "quote": "ms. lockwood suggested that maybe she could meet with director offline prior to the budget meeting presentation for finance committee r egarding the questions she had previously shared with the board .",
+   "tags": [
+    "budget",
+    "reports"
+   ]
+  },
+  {
+   "topic": "41A Update",
+   "resolution": "Deferred to later meeting when Jack Rabbitt can be present",
+   "quote": "mr. rabbitt was not present to give an update. ms. lockwood had some questions regarding the financial impact . questions will be deferred to a later meeting when mr. rabbitt can be present.",
+   "tags": [
+    "finance",
+    "property"
+   ]
+  },
+  {
+   "topic": "Upcoming Programs and Events",
+   "resolution": "Reported on mental health, wellness, and recreational offerings",
+   "quote": "ms. goodsell reported on upcoming planned programs such as mental health concerns as we age and h ealthy t onics. ms. goodsell gave an update on recent classes and detailed the upcoming events for the remainder of november and into dec em ber .",
+   "tags": [
+    "programs",
+    "health"
+   ]
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "governance",
+  "aging services",
+  "community planning",
+  "staffing",
+  "capital planning",
+  "program planning",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {
+  "votes": 1
+ }
 }

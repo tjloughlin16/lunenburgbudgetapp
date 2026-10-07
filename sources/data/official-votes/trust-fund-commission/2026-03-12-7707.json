@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2026-03-12",
  "docid": "7707",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the Lunenburg Board of Trust Fund Commissioners policy and verification of US citizenship and municipal residency",
+   "motion": "to approve the Lunenburg Board of Trust Fund Commissioners policy and verification of US citizenship and municipal residency",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
    "outcome": "passed unanimously",
@@ -21,7 +21,7 @@
    "quote_taken_from_text": true
   },
   {
-   "motion": "Express no confidence that the trust fund commission or select board has the ability to make trust fund determinations without proper professional investigation",
+   "motion": "to express no confidence that the trust fund commission or the select board has any ability to make a determination of any matters with regard to the trust funds without proper professional investigation",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
    "outcome": "passed unanimously",
@@ -29,7 +29,7 @@
    "quote": "mr howard made a motion of no confidence that the trust fund commission or the select board has any ability to make a determination of any matters with regard to the trust funds without proper professional investigation. the motion was seconded by chairman bowen. the vote on the motion was mr howard = 'aye', chairman bowen = 'aye'."
   },
   {
-   "motion": "Adjourn",
+   "motion": "to adjourn",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
    "outcome": "passed unanimously",
@@ -38,6 +38,141 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0870684
+ "note": "\"\"",
+ "cost_usd": 0.1424376,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present were mr howard and chairman bowen"
+  },
+  {
+   "name": "Mr Howard",
+   "role": "Member",
+   "status": "present",
+   "quote": "present were mr howard and chairman bowen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chairman Bowen scheduled to make presentation to Finance Committee regarding warrant article funding need for cy pres investigation",
+   "quote": "chairman bowen is scheduled to make a presentation to the finance committee at 7pm to advise them of the need to make this expenditure."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Trust fund investment performance",
+   "what_was_recorded": "Fund value increase reported from Private Trust Company report for December 2025",
+   "figures_as_printed": [
+    "$3,000",
+    "$87,000"
+   ],
+   "quote": "increase of approx $3,000 in value on approx $87,000 of invested funds."
+  },
+  {
+   "topic": "Professional legal investigation for cy pres matter",
+   "what_was_recorded": "Request for 40 hours of professional legal investigation, with most costs under retainer except investigation piece, for warrant article",
+   "figures_as_printed": [],
+   "quote": "he is requesting 40 hours of professional legal investigation. most handled under the retainer except the investigation piece."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Trust fund investment performance report",
+   "resolution": "reported",
+   "quote": "the last report on fund performance was in december 2025 from our private trust company. increase of approx $3,000 in value on approx $87,000 of invested funds.",
+   "tags": [
+    "fund performance",
+    "investments",
+    "reporting"
+   ]
+  },
+  {
+   "topic": "Cy pres investigation and warrant article",
+   "resolution": "approved for warrant article",
+   "quote": "issue raised for cy pres investigation. unless the donor gave provision on the management of the fund, the responsibility lies with the town.",
+   "tags": [
+    "cy pres",
+    "legal investigation",
+    "governance",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Unresolved scholarship fund inquiries",
+   "resolution": "pending",
+   "quote": "chairman bowen expressed concern over a lack of response from the school on scholarship funds, questions raised in october 2025 have still not been addressed.",
+   "tags": [
+    "scholarship funds",
+    "school oversight",
+    "oversight"
+   ]
+  },
+  {
+   "topic": "Missing Susan Howard Poor Fund",
+   "resolution": "identified for investigation",
+   "quote": "chairman bowen stated his concern regarding the susan howard poor fund which appears to be missing, last noted in 1977.",
+   "tags": [
+    "trust funds",
+    "missing funds",
+    "historical records"
+   ]
+  },
+  {
+   "topic": "Trust Fund Commission policy and citizenship verification",
+   "resolution": "approved",
+   "quote": "mr howard made a motion that we approve the lunenburg board of trust fund commissioners policy and veriﬁcation of us citizenship and municipal residency. ",
+   "tags": [
+    "policy",
+    "governance",
+    "eligibility"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "American Legion constitution review",
+   "resolution": "reviewed",
+   "quote": "reviewed amlegion constitution for eligibility and discussed the complexities and cumbersome nature of enforcement.",
+   "tags": [
+    "eligibility",
+    "charitable organizations"
+   ]
+  },
+  {
+   "topic": "Professional expertise and fiduciary concerns",
+   "resolution": "no confidence voted",
+   "quote": "mr howard made a motion of no confidence that the trust fund commission or the select board has any ability to make a determination of any matters with regard to the trust funds without proper professional investigation.",
+   "tags": [
+    "governance",
+    "fiduciary duties",
+    "professional standards"
+   ]
+  },
+  {
+   "topic": "Select Board participation bylaw",
+   "resolution": "presented for Town Meeting support",
+   "quote": "bylaw presented on the select board participating in the trust fund commission on a temporary/as needed basis. the policy defined as the administration of trust funds in the absence of a quorum.",
+   "tags": [
+    "governance",
+    "bylaw",
+    "quorum"
+   ]
+  }
+ ],
+ "tags": [
+  "trust funds",
+  "governance",
+  "cy pres",
+  "fiduciary duties",
+  "professional investigation",
+  "fund performance",
+  "scholarship funds",
+  "missing funds"
+ ],
+ "dropped_unquoted_by_field": {}
 }

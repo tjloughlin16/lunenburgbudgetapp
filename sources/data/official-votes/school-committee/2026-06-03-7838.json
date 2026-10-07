@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2026-06-03",
  "docid": "7838",
@@ -12,55 +12,389 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the regular session of April 1, 2026",
-   "moved_by": "Ms. Young",
-   "seconded_by": "Ms. Russell",
+   "motion": "approve the minutes from regular session 4/1/26",
+   "moved_by": "Emily Young",
+   "seconded_by": "Jean Russell",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. young makes a motion to approve the minutes, ms. russell seconds the motion all approve."
   },
   {
    "motion": "accept the Turkey Hill book fair donation of $255.38",
-   "moved_by": "Ms Young",
-   "seconded_by": "Ms. Russell",
+   "moved_by": "Emily Young",
+   "seconded_by": "Jean Russell",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms young makes a motion to accept the donation, ms. russell seconds the motion all approve"
   },
   {
-   "motion": "accept the FY 27 school handbooks",
-   "moved_by": "Ms. Young",
-   "seconded_by": "Ms. Russell",
+   "motion": "accept the FY 27 School Handbooks",
+   "moved_by": "Emily Young",
+   "seconded_by": "Jean Russell",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. young makes a motion to accept the fy 27 handbooks, ms. russell seconds the motion all approve"
   },
   {
-   "motion": "approve the 5th Grade Band Proposal to meet before school on Tuesdays and Thursdays and charge $100 per student with a goal of 20 students",
-   "moved_by": "Ms. Young",
-   "seconded_by": "Ms. Russell",
+   "motion": "approve the 5th Grade Band Proposal",
+   "moved_by": "Emily Young",
+   "seconded_by": "Jean Russell",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. young makes a motion to approve the proposal, ms. russell seconds the motion all approve."
   },
   {
-   "motion": "accept the facilities and grounds report",
-   "moved_by": "Ms. Young",
-   "seconded_by": "Ms. Russell",
+   "motion": "accept the Facilities and Grounds Report",
+   "moved_by": "Emily Young",
+   "seconded_by": "Jean Russell",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. young makes a motion to accept the facilities and grounds report, ms. russell seconds the motion all approve"
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Ms. Young",
-   "seconded_by": "Ms. Russell",
+   "motion": "adjourn at 8:52",
+   "moved_by": "Emily Young",
+   "seconded_by": "Jean Russell",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. young makes a motion to adjourn at 8:52, ms. russell seconds the motion all approve."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0799004
+ "dropped_unquoted": 1,
+ "note": "\"\"",
+ "cost_usd": 0.3106146,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Laura Brzozoski",
+   "role": "Chair",
+   "status": "present",
+   "quote": "laura brzozoski, chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "anthony sculimbrene, vice chair, absent"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "mandy gilman, secretary - absent"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Member",
+   "status": "present",
+   "quote": "emily young, member - present"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Member",
+   "status": "present",
+   "quote": "jean russell, member, - present"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "not stated",
+   "quote": "christopher mcnamara - business administrator"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Primary School Principal",
+   "status": "present",
+   "quote": "carla squier - primary school principal"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMHS Principal",
+   "status": "present",
+   "quote": "tim santry, lmhs principal"
+  },
+  {
+   "name": "Norman Yvon",
+   "role": "THES Principal",
+   "status": "present",
+   "quote": "norman yvon - thes principal"
+  },
+  {
+   "name": "Eden Perrine",
+   "role": "LHS Student",
+   "status": "present",
+   "quote": "eden perrine - lhs student"
+  },
+  {
+   "name": "Kara Harunkiewicz",
+   "role": "Student Council",
+   "status": "present",
+   "quote": "kara harunkiewicz student council has a fundraiser"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Physical Education Credits discussion tabled until the full committee is present",
+   "quote": "topic is waived until the full committee is present to discuss"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants approved",
+   "what_was_recorded": "school warrants for period 5/19/26 to 5/28/26 approved",
+   "figures_as_printed": [
+    "$170,395.88"
+   ],
+   "quote": "warrants 5/19/26 to 5/28/26 $170,395.88"
+  },
+  {
+   "topic": "Turkey Hill book fair donation",
+   "what_was_recorded": "donation from Turkey Hill book fair accepted",
+   "figures_as_printed": [
+    "$255.38"
+   ],
+   "quote": "donations - turkey hill book fair donation of $255.38"
+  },
+  {
+   "topic": "5th Grade Band proposal fee",
+   "what_was_recorded": "5th Grade Band Proposal approved with per-student charge and enrollment goal",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "mr. ballister has developed a proposal to have the fifth grade band meet before school on tuesdays and thursdays and charge $100 per student, with a goal of 20 students."
+  },
+  {
+   "topic": "Music program restoration funding request",
+   "what_was_recorded": "funding requested to restore music program cuts",
+   "figures_as_printed": [
+    "$10 grand"
+   ],
+   "quote": "i made a comment that we are trying to find $10 grand to put the music program back in the program"
+  },
+  {
+   "topic": "Potential state aid to Lunenburg",
+   "what_was_recorded": "estimated available state aid dependent on passage of Senate budget",
+   "figures_as_printed": [
+    "$350 and $450,000"
+   ],
+   "quote": "there is a senate budget when you look at all of the sources and local aid, there is somewhere between $350 and $450,000 depending on how you calculate it."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chris Sullivan",
+   "stated_role": "chair of the parks commission",
+   "topic": "disappointed about music program not on agenda",
+   "quote": "there was a comment made at last meeting about adding it to the agenda and there being a discussion, i am very disappointed that it is not on this agenda tonight."
+  },
+  {
+   "speaker": "Laura Barooshian",
+   "stated_role": "president of the Musicators",
+   "topic": "accounting of music program cuts",
+   "quote": "i would like to get an accounting of the music, specific chorus, across the district of the programs, the things that were cut."
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "topic": "override defeat and future budget strategy",
+   "quote": "i want to talk about money, i recognize that the defeat of the override was a lot of things, demoralizing is probably very high on that list."
+  },
+  {
+   "speaker": "Chris Sullivan",
+   "stated_role": "chair of the parks commission",
+   "topic": "PE credit waiver for athletes and field scheduling",
+   "quote": "i am now the chair of the parks commission, and i want to start in some capacity a better ===page 5=== 1025 massachusetts avenue, lunenburg, massachusetts 01462 978 582-4100 ~ fax 978 582-4103 relationship wit",
+   "quote_taken_from_text": true
+  },
+  {
+   "speaker": "Jared Perrine",
+   "stated_role": "middle school council member",
+   "topic": "summer programming scheduling and PE credit policy",
+   "quote": "regarding the waiver for pe credits, there are many communities in the state that offer this, they don't call them waivers they call them credits."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "call to order at 7:00 by ms. brzozoski"
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "conducted",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "pledge of allegiance"
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "received",
+   "tags": [
+    "public participation"
+   ],
+   "quote": "public comment chris sullivan, 108 highland street, there was a comment made at last meeting"
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "presented",
+   "tags": [
+    "governance",
+    "community relations"
+   ],
+   "quote": "chairs report - our community lost someone special this week, haddie"
+  },
+  {
+   "topic": "Student Representative Report",
+   "resolution": "presented",
+   "tags": [
+    "students",
+    "graduation"
+   ],
+   "quote": "student representative report - graduation is june 6th, there is a book and bake sale at the library."
+  },
+  {
+   "topic": "Review and Approve Minutes from 4/1/26",
+   "resolution": "approved",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "review and approve minutes"
+  },
+  {
+   "topic": "Review and Approve Line Items, Transfers, Warrants",
+   "resolution": "approved",
+   "tags": [
+    "budget",
+    "finance"
+   ],
+   "quote": "review and approve line items, transfers, warrants"
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "presented",
+   "tags": [
+    "personnel",
+    "curriculum"
+   ],
+   "quote": "superintendent's report dr. fortuna reports our community has had a mix of emotions"
+  },
+  {
+   "topic": "Physical Education Credits - High School",
+   "resolution": "tabled",
+   "tags": [
+    "athletics",
+    "curriculum"
+   ],
+   "quote": "physical education credits high school student eden perrine brings attention to the discussion regarding a waiver for pe credits"
+  },
+  {
+   "topic": "Elementary School Report Cards",
+   "resolution": "presented",
+   "tags": [
+    "curriculum",
+    "elementary"
+   ],
+   "quote": "elementary school report cards ms. squier has provided the committee a new proposed report card"
+  },
+  {
+   "topic": "FY 27 School Handbooks",
+   "resolution": "approved",
+   "tags": [
+    "policy",
+    "handbooks"
+   ],
+   "quote": "fy 27 school handbooks the principals discuss all sustenance changes in each handbook"
+  },
+  {
+   "topic": "5th Grade Band Proposal",
+   "resolution": "approved",
+   "tags": [
+    "music",
+    "curriculum",
+    "budget"
+   ],
+   "quote": "5th grade band proposal mr. ballister has developed a proposal to have the fifth grade band"
+  },
+  {
+   "topic": "2025-2026 School Improvement Plan",
+   "resolution": "presented",
+   "tags": [
+    "curriculum",
+    "improvement"
+   ],
+   "quote": "2025-2026 school improvement plan ms. squier has provided the committee with a comprehensive four page update"
+  },
+  {
+   "topic": "Facilities and Grounds Report",
+   "resolution": "approved",
+   "tags": [
+    "facilities",
+    "maintenance"
+   ],
+   "quote": "facilities and grounds report chris stevens updates the status of projects and plans"
+  },
+  {
+   "topic": "Public Comments for issues discussed tonight",
+   "resolution": "received",
+   "tags": [
+    "public participation",
+    "athletics",
+    "music"
+   ],
+   "quote": "public comments for issues discussed tonight mr. sullivan softball won tonight"
+  },
+  {
+   "topic": "Reports from Sub-Committees",
+   "resolution": "presented",
+   "tags": [
+    "facilities",
+    "student activities"
+   ],
+   "quote": "reports from sub-committees ms. brzozoski reports the municipal building design committee met on monday"
+  },
+  {
+   "topic": "Topics for Future Discussion",
+   "resolution": "noted",
+   "tags": [
+    "planning"
+   ],
+   "quote": "topics for future discussion override request, athletics,"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "adjournment ms. young makes a motion to adjourn at 8:52"
+  }
+ ],
+ "tags": [
+  "school committee",
+  "budget",
+  "override",
+  "music program",
+  "athletics",
+  "PE credits",
+  "graduation",
+  "state aid",
+  "facilities",
+  "curriculum",
+  "harassment"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

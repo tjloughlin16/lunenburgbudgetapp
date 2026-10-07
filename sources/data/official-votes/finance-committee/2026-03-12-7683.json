@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-03-12",
  "docid": "7683",
@@ -12,15 +12,432 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "to adjourn",
    "moved_by": "Jean Russell",
    "seconded_by": "Tanya Dall",
-   "outcome": "not stated",
+   "outcome": "passed",
    "procedural": true,
    "quote": "there was a motion to adjourn by jean russell, seconded by tanya dall."
   }
  ],
- "dropped_unquoted": 0,
- "note": "One vote recorded. Section 7 notes board agreement on a Prop 2½ override but this was not a formal motion voted upon—it was a discussion conclusion. No other motions or votes were recorded in the minutes.",
- "cost_usd": 0.0758094
+ "dropped_unquoted": 1,
+ "note": "\"\"",
+ "cost_usd": 0.1221276,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "absent",
+   "quote": "absent member: committee member ana lockwood"
+  },
+  {
+   "name": "Karen Barrett",
+   "role": "Finance Director/Town Accountant",
+   "status": "present",
+   "quote": "the finance director/town accountant, karen barrett, states that free cash has been certiﬁed. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "the dpw director, bill bernard, provided both presentations."
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "the sewer budget was presented by bill bernard with the assistance of sewer business manager, andrew valliere."
+  },
+  {
+   "name": "Brian Gingras",
+   "role": "Building Commissioner",
+   "status": "present",
+   "quote": "the land use department budget was presented by the building commissioner, brian gingras, and the conservation commission administrator, jaime herlin, and director of planning and economic development, stephen wallace."
+  },
+  {
+   "name": "Jaime Herlin",
+   "role": "Conservation Commission Administrator",
+   "status": "present",
+   "quote": "the land use department budget was presented by the building commissioner, brian gingras, and the conservation commission administrator, jaime herlin, and director of planning and economic development, stephen wallace."
+  },
+  {
+   "name": "Stephen Wallace",
+   "role": "Director of Planning and Economic Development",
+   "status": "present",
+   "quote": "the land use department budget was presented by the building commissioner, brian gingras, and the conservation commission administrator, jaime herlin, and director of planning and economic development, stephen wallace."
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the general government presentation was provided by the town manager, jennifer warren-dyment."
+  },
+  {
+   "name": "John Bowen",
+   "role": "requesting warrant article",
+   "status": "present",
+   "quote": "john bowen is requesting a warrant article to appropriate $14,252.39 for legal investigation of several long neglected municipal trust funds."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed that there should be an override on the ballot for the potential FY27 Prop 2½ Override.",
+   "quote": "the board was in agreement that there should be an override on the ballot."
+  },
+  {
+   "decision": "The Finance Committee will review minutes from this meeting at the next meeting.",
+   "quote": "the board will review minutes at the next meeting."
+  },
+  {
+   "decision": "The Public Hearing will be pushed until March 26, 2026, and a Tri board meeting will be held on March 19, 2026.",
+   "quote": "town manager suggested pushing the public hearing until march 26, 2026, and having a tri board meeting on march 19, 2026."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Free Cash Certification",
+   "what_was_recorded": "General Fund free cash was certified.",
+   "figures_as_printed": [
+    "$3,354,370"
+   ],
+   "quote": "karen barrett, states that free cash has been certiﬁed. the general fund total is $3,354,370."
+  },
+  {
+   "topic": "School Budget Restoration",
+   "what_was_recorded": "Full Budget Restoration Budget for Schools and current total deficit reported.",
+   "figures_as_printed": [
+    "$28,456,277",
+    "$3,123,989.01",
+    "1.24 million",
+    "1 million"
+   ],
+   "quote": "full budget restoration budget for schools: $28,456,277 current total deﬁcit: $3,123,989.01 the deﬁcit would be divided between the town and schools. the town would receive 1.24 million and the schools would receive 1 million."
+  },
+  {
+   "topic": "DPW FY27 Budget Request",
+   "what_was_recorded": "DPW presented FY27 budget request with 9% increase and itemized line items.",
+   "figures_as_printed": [
+    "$3,178,177.51",
+    "$39,500",
+    "$1,375,750",
+    "$1,100",
+    "$17,500",
+    "$681,496.61",
+    "$16,800",
+    "$67,750",
+    "$117,000",
+    "$123,466.22",
+    "$363,354",
+    "$364,460.67",
+    "$800,000"
+   ],
+   "quote": "fy27 budget request: $3,178,177.51 (9% increase from prior year) tree removal: $39,500 general highway: $1,375,750 garage: $1,100 highway overtime: $17,500 highway labor: $681,496.61 ===page 2=== traưic signs: $16,800 dpw vehicle maintenance: $67,750 police/fire vehicle maintenance: $117,000 cemetery: $123,466.22 recycling program: $363,354 snow and ice budget: $364,460.67 bill bernard states the budget is currently",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "DPW Funding Sources",
+   "what_was_recorded": "Chapter 90 funding and grants for bridge and stormwater improvements identified.",
+   "figures_as_printed": [
+    "$718,000",
+    "$600,000",
+    "$60,000"
+   ],
+   "quote": "chapter 90 funding: $718,000 grants: small bridge grant to repair flat hill road bridge: $600,000 asset management grant from mass clean water trust for stormwater: $ 60,000"
+  },
+  {
+   "topic": "Trash Budget",
+   "what_was_recorded": "Trash budget is fully funded by bag and bin revenue.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "the trash budget is fully funded with bag/bin revenue totaling $500,000."
+  },
+  {
+   "topic": "MS4 Stormwater Compliance",
+   "what_was_recorded": "Line item added for stormwater compliance including street sweeping and catch basin cleaning.",
+   "figures_as_printed": [
+    "$340,000",
+    "30%",
+    "22%"
+   ],
+   "quote": "a line item totaling $340,000 has been added to reach the ms4 stormwater compliance. this includes bi-yearly street sweeping and catch basin cleaning. upon reviewing the last several years, it was determined that on average 30% of catch basins have been cleaned and 22% of the required street sweeping occurred on a yearly basis."
+  },
+  {
+   "topic": "Sewer FY27 Budget Request",
+   "what_was_recorded": "Sewer budget request with revenues and funding sources presented.",
+   "figures_as_printed": [
+    "$1,981,993.06",
+    "$2,008,047",
+    "$26,053.94",
+    "71%",
+    "18%",
+    "5%",
+    "4%"
+   ],
+   "quote": "fy27 sewer budget request: $1,981,993.06 revenues: $2,008,047 budget surplus: $26,053.94 funding sources: user charges: 71% betterment 18% interest: 5% fees 4%"
+  },
+  {
+   "topic": "Sewer Rate Increases",
+   "what_was_recorded": "Rate increase information reported for Leominster and Fitchburg compared to town's rates.",
+   "figures_as_printed": [
+    "16%",
+    "3%",
+    "7%"
+   ],
+   "quote": "leominster increased their rate by 16% in fy25. the town did not increase their fee despite the increase. the fy26 rate increase is 3%. fitchburg has increased their rate to 7% on a yearly basis for the past several years."
+  },
+  {
+   "topic": "Sewer System Coverage",
+   "what_was_recorded": "Estimate of number of residents in sewer system provided.",
+   "figures_as_printed": [
+    "1,000"
+   ],
+   "quote": "jean russell inquiries into the number of residents that are in the sewer system. bill bernard estimates slightly over 1,000."
+  },
+  {
+   "topic": "Land Use Department FY27 Budget Request",
+   "what_was_recorded": "Land Use Department budget request with 1.77% increase and funding sources.",
+   "figures_as_printed": [
+    "$447,963.33",
+    "1.77%",
+    "75%",
+    "16%",
+    "4%",
+    "3%",
+    "2%"
+   ],
+   "quote": "fy27 budget request: $447,963.33 (1.77% increase) funding sources: building permits: 75% general fund: 16% special permits: 4% planning fee: 3% sheet metal: 2%"
+  },
+  {
+   "topic": "General Government FY27 Budget",
+   "what_was_recorded": "General Government preliminary budget, current budget, and multiple departmental budgets presented.",
+   "figures_as_printed": [
+    "$3,205,051.24",
+    "$3,225,721.25",
+    "$1,575",
+    "$201,895.33",
+    "11.99%",
+    "$442,353.00",
+    "$60,000",
+    "$354,504.68",
+    "$123,886.74",
+    "$4,500",
+    "$120,662.10",
+    "$8,300",
+    "$297,440.69",
+    "$476,000",
+    "$147,956.05",
+    "$21,575",
+    "$21,450",
+    "$500",
+    "$6,000",
+    "$3,100",
+    "$16,000",
+    "$185,000",
+    "$210,000",
+    "$91,500",
+    "$90,750",
+    "$1,000"
+   ],
+   "quote": "fy27 preliminary budget: $3,205,051.24 current budget: $3,225,721.25 finance committee budget: $1,575 covers advertising requirements and membership, attendance at any annual conference or associations. select board proposed operating budget: $201,895.33 (11.99% increase) this covers minute clerks for other boards and committees across town, john guilfoil public relations contract, software, legal ads, oưice supplies, community event supplies, dues and memberships. town manager budget: $442,353.00 includes funding for assistant town manager position, contracted service line, and legal expenses. assistant town manager (request): $60,000 town accountants: $354,504.68 treasurer: $123,886.74 $4,500 reduction from preliminary budget. ===page 5=== collector: $120,662.10 $8,300 reduction from preliminary budget. chris menard inquired if there is an option to",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Intergovernmental Assessments and Insurance",
+   "what_was_recorded": "Intergovernmental assessments and insurance budgets detailed.",
+   "figures_as_printed": [
+    "$2,635,339.93",
+    "$111.05",
+    "$230,000",
+    "$135,000",
+    "$3,695,424.59",
+    "5.69%",
+    "$20,000",
+    "$10,000",
+    "$410,000"
+   ],
+   "quote": "intergovernmental assessments: $2,635,339.93 all except for $111.05 is for the worcester county retirement. general government (unclassiﬁed): $4,500,424.59 insurances liability insurance: $230,000 workers' compensation: $135,000 group health insurance: $3,695,424.59 (5.69% increase) life ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Legal Investigation of Trust Funds Warrant Article",
+   "what_was_recorded": "Warrant article requested to fund legal investigation of municipal trust funds.",
+   "figures_as_printed": [
+    "$14,252.39",
+    "40 hours"
+   ],
+   "quote": "john bowen is requesting a warrant article to appropriate $14,252.39 for legal investigation of several long neglected municipal trust funds. the purpose is to fund approximately 40 hours of professional legal investigation to determine donor intent, verify legal compliance, and establish whether certain trust funds can be administered under their existing terms."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "public comment period",
+   "quote": "there were no comments from the public."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Free Cash Certification",
+   "resolution": "reported",
+   "tags": [
+    "finance",
+    "cash",
+    "certification"
+   ],
+   "quote": "the finance director/town accountant, karen barrett, states that free cash has been certiﬁed. the general fund total is $3,354,370."
+  },
+  {
+   "topic": "School Budget Restoration and Deficit",
+   "resolution": "reported",
+   "tags": [
+    "school",
+    "budget",
+    "deficit"
+   ],
+   "quote": "full budget restoration budget for schools: $28,456,277 current total deﬁcit: $3,123,989.01"
+  },
+  {
+   "topic": "DPW and Sewer Department Budgets",
+   "resolution": "presented and discussed",
+   "tags": [
+    "DPW",
+    "sewer",
+    "budget",
+    "operations"
+   ],
+   "quote": "the dpw director, bill bernard, provided both presentations. fy27 budget request: $3,178,177.51 (9% increase from prior year)"
+  },
+  {
+   "topic": "MS4 Stormwater Compliance",
+   "resolution": "discussed",
+   "tags": [
+    "stormwater",
+    "compliance",
+    "infrastructure"
+   ],
+   "quote": "a line item totaling $340,000 has been added to reach the ms4 stormwater compliance. this includes bi-yearly street sweeping and catch basin cleaning."
+  },
+  {
+   "topic": "Land Use Department Budget",
+   "resolution": "presented and discussed",
+   "tags": [
+    "land-use",
+    "building",
+    "permits"
+   ],
+   "quote": "the land use department budget was presented by the building commissioner, brian gingras, and the conservation commission administrator, jaime herlin, and director of planning and economic development, stephen wallace."
+  },
+  {
+   "topic": "General Government Departments and Operations",
+   "resolution": "presented",
+   "tags": [
+    "administration",
+    "government",
+    "operations"
+   ],
+   "quote": "the general government presentation was provided by the town manager, jennifer warren-dyment."
+  },
+  {
+   "topic": "Insurance Budgets",
+   "resolution": "presented",
+   "tags": [
+    "insurance",
+    "health",
+    "workers-comp"
+   ],
+   "quote": "group health insurance: $3,695,424.59 (5.69% increase)"
+  },
+  {
+   "topic": "Legal Investigation of Municipal Trust Funds",
+   "resolution": "discussed",
+   "tags": [
+    "warrant-article",
+    "trust-funds",
+    "legal"
+   ],
+   "quote": "john bowen is requesting a warrant article to appropriate $14,252.39 for legal investigation of several long neglected municipal trust funds."
+  },
+  {
+   "topic": "FY27 Prop 2½ Override",
+   "resolution": "approved for ballot",
+   "tags": [
+    "override",
+    "levy",
+    "proposition-2.5"
+   ],
+   "quote": "the board was in agreement that there should be an override on the ballot."
+  },
+  {
+   "topic": "Warrant Article Submission Deadline",
+   "resolution": "announced",
+   "tags": [
+    "warrant",
+    "deadline"
+   ],
+   "quote": "the last day to submit a petition article is march 16, 2026."
+  },
+  {
+   "topic": "Upcoming Meeting Schedule",
+   "resolution": "adjusted",
+   "tags": [
+    "meetings",
+    "schedule"
+   ],
+   "quote": "town manager suggested pushing the public hearing until march 26, 2026, and having a tri board meeting on march 19, 2026."
+  }
+ ],
+ "tags": [
+  "finance-committee",
+  "budget",
+  "DPW",
+  "sewer",
+  "general-government",
+  "override",
+  "FY27",
+  "stormwater",
+  "insurance"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2026-01-07",
  "docid": "7586",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from November 5, December 3, and December 17, 2025",
+   "motion": "Approve regular session minutes from 11/5/25, 12/3/25, and 12/17/25",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
@@ -23,9 +23,9 @@
    "motion": "Remit care and custody of Kids Kingdom to the Town of Lunenburg",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Brzozoski",
-   "outcome": "passed 3-1",
+   "outcome": "passed 3-0-1",
    "procedural": false,
-   "quote": "mr. sculimbrene makes a motion to remit care and custody of kids kingdom to the town of lunenburg, ms. brzozoski seconds the motion, the motion passes with 3 approvals and 1 abstention"
+   "quote": "mr. sculimbrene makes a motion to remit care and custody of kids kingdom to the town of lunenburg, ms. brzozoski seconds the motion, the motion passes with 3 approvals and 1 abstention."
   },
   {
    "motion": "Accept the Mid-Year Curriculum Report",
@@ -44,7 +44,239 @@
    "quote": "ms. brzozoski makes a motion to adjourn at 9:40, ms. gilman seconds the motion all approve"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Text is clear. Four votes recorded: approval of prior minutes (procedural), Kids Kingdom relocation (3-1 with 1 abstention), curriculum report acceptance, and adjournment (procedural).",
- "cost_usd": 0.0676904
+ "dropped_unquoted": 2,
+ "note": "Minutes appear to be from an official document with no apparent scanning issues or missing pages. All votes and decisions are clearly recorded. Meeting was held hybrid on January 7, 2026.\"",
+ "cost_usd": 0.1463886,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski, vice chair - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mandy gilman, secretary - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Member",
+   "status": "present",
+   "quote": "emily young, member - present"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "present",
+   "quote": "christopher mcnamara - business administrator"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Nick Valorie",
+   "role": "President East Coast Renewable Energy",
+   "status": "present",
+   "quote": "nick valorie -president east coast renewable energy"
+  },
+  {
+   "name": "Matt Paraliticci",
+   "role": "ECR Representative",
+   "status": "present",
+   "quote": "matt paraliticci - ecr representative"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "CPC Member",
+   "status": "present",
+   "quote": "peter beardmore, cpc member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee will work together to have a representative to FinCom",
+   "quote": "the committee will work together to have a representative to fincom."
+  },
+  {
+   "decision": "The 2026-2027 school calendar will be brought forth again for a future vote",
+   "quote": "calendar will be brought forth again in the future for a vote to approve"
+  },
+  {
+   "decision": "The Literacy Coach position will not be filled going forward; grant funds will be redirected to more direct services for children",
+   "quote": "we will not be filling that position going forward. this is a grant funded position and we will be directing those funds to more direct services for the children."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants approved",
+   "what_was_recorded": "Warrants from 12/13/25 to 1/5/26 were approved",
+   "figures_as_printed": [
+    "$516,336.86"
+   ],
+   "quote": "warrants 12/13/25 to 1/5/26 $516,336.86"
+  },
+  {
+   "topic": "Track/Turf Field Design proposal cost",
+   "what_was_recorded": "The track/turf field design proposal came in at just under $200,000",
+   "figures_as_printed": [
+    "just under $200,000"
+   ],
+   "quote": "in terms of the track/turf design, the proposal came in the week of december 16th, it was then forwarded to mr. beardmore by the facilities director and superintendence, cam in just under $200,000."
+  },
+  {
+   "topic": "Total capital planning requests",
+   "what_was_recorded": "Total capital requests from all departments and priorities came to 3.267 million dollars",
+   "figures_as_printed": [
+    "3.267 million dollars"
+   ],
+   "quote": "in total the requests were 3.267 million dollars."
+  },
+  {
+   "topic": "Turkey Hill accessibility issues estimated cost",
+   "what_was_recorded": "Turkey Hill School has 10 accessibility issues with an estimated total cost of $1,250,000",
+   "figures_as_printed": [
+    "$1,250,000"
+   ],
+   "quote": "there are 10 accessibility issues identified to be worked on over a number of years and the cost was estimated at $1,250,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Chair's Report",
+   "resolution": "seeking fifth committee member",
+   "tags": [
+    "committee-governance"
+   ],
+   "quote": "we are still looking for a fifth member, this term would be until may. you would not have to run, you would be appointed."
+  },
+  {
+   "topic": "Student Representative Report",
+   "resolution": "none presented",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "student representative report - none"
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "Literacy Coach position not being filled; grant funds redirected to direct services",
+   "tags": [
+    "staffing",
+    "budget"
+   ],
+   "quote": "our literacy coach abruptly resigned on monday and we will not be filling that position going forward. this is a grant funded position and we will be directing those funds to more direct services for the children."
+  },
+  {
+   "topic": "East Coast Renewable Energy solar proposal",
+   "resolution": "discussion continued; proposal for electric vehicle charging stations",
+   "tags": [
+    "facilities",
+    "sustainability"
+   ],
+   "quote": "the owner of east coast renewable energy presents to the committee options available to the school, to add chargers for electric vehicles."
+  },
+  {
+   "topic": "Track/Turf Field Design Plan",
+   "resolution": "direction given to develop plan; engineering and bid work required before proceeding",
+   "tags": [
+    "facilities",
+    "capital-planning"
+   ],
+   "quote": "we need to come up with a plan for this as soon as possible, we cannot move forward until we have the engineering and bid work. we need a new surface, drainage, and new construction/walls."
+  },
+  {
+   "topic": "Kids Kingdom Relocation",
+   "resolution": "approved - care and custody remitted to Town of Lunenburg",
+   "tags": [
+    "facilities",
+    "property"
+   ],
+   "quote": "mr. sculimbrene makes a motion to remit care and custody of kids kingdom to the town of lunenburg, ms. brzozoski seconds the motion, the motion passes with 3 approvals and 1 abstention."
+  },
+  {
+   "topic": "Mid-Year Curriculum Report",
+   "resolution": "accepted",
+   "tags": [
+    "curriculum",
+    "reporting"
+   ],
+   "quote": "dr. sarfdie sent a comprehensive report to the committee, she explains to the committee a summary discussion on what and how lunenburg is doing at this p",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "2026-2027 School Calendar",
+   "resolution": "continued to future meeting for vote",
+   "tags": [
+    "calendar",
+    "operations"
+   ],
+   "quote": "calendar will be brought forth again in the future for a vote to approve"
+  },
+  {
+   "topic": "FY25 and FY26 Budget Update",
+   "resolution": "on track for FY26 spending; in good financial position",
+   "tags": [
+    "budget",
+    "finance"
+   ],
+   "quote": "chris mcnamara gives an update, we are on track for fy 26 for spending. we are in a good position"
+  },
+  {
+   "topic": "Future of THES",
+   "resolution": "ADA compliance planning initiated; draft proposal to be developed",
+   "tags": [
+    "facilities",
+    "capital-planning",
+    "ADA-compliance"
+   ],
+   "quote": "we do need to look at next year's capital planning and make some changes for requests. we can come up with some suggestions that we can ask for that will work toward ada compliance. discussion of a rebuild vs a new building and also with msba assistance. dr. fortuna states the first phase needs",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Sub-Committee Reports",
+   "resolution": "various reports provided on PACSAL, PTO activities, and fundraising",
+   "tags": [
+    "committees",
+    "activities"
+   ],
+   "quote": "ms. young reports tomorrow is the pacsal meeting at 6 in the lunenburg middle school, in person and zoom. ms. gilman reports the pto met on monday night, we have the special someone dance, tickets go on sale tomorrow"
+  },
+  {
+   "topic": "Topics for Future Discussion",
+   "resolution": "identified for future agenda",
+   "tags": [
+    "planning"
+   ],
+   "quote": "topics for future discussion turkey hill, override"
+  }
+ ],
+ "tags": [
+  "school-committee",
+  "budget",
+  "facilities",
+  "capital-planning",
+  "curriculum",
+  "renewable-energy",
+  "accessibility",
+  "ADA-compliance"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1,
+  "decisions": 1
+ }
 }

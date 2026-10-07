@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2026-01-12",
  "docid": "7603",
@@ -12,47 +12,209 @@
  },
  "votes": [
   {
-   "motion": "Deny Endorsement of ANR Plan for 10 Parmenter Rd based on Fire Road 15 inadequacy.",
-   "moved_by": "A. Burney",
-   "seconded_by": "T. Willsmer",
+   "motion": "Deny endorsement of ANR Plan for 10 Parmenter Rd based on Fire Road 15 being insufficient for vehicular traffic needs, with waiver of ANR fees if resubmitted within 6 months",
+   "moved_by": "Adam Burney",
+   "seconded_by": "Timothy Willsmer",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "a. burney made motion: to adopt the findings stated herein and to deny endorsement of the proposed anr plan based on the determination that fire road 15 is not, in its current state, of sufficient width, suitable grades and adequate construction to provide for the needs of vehicular traffic"
-  },
-  {
-   "motion": "Continue 30 Summer St public hearing to 1/26/26.",
-   "moved_by": "T Willsmer",
-   "seconded_by": "A Burney",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "t willsmer motioned to continue to 1/26/26 meeting. a burney, second. roll call vote: a burney, aye; t willsmer, aye; a reid, aye; m brenner, aye (4/0)"
-  },
-  {
-   "motion": "Continue 0 Reservoir Rd Stormwater Permit application to 1/26/26.",
-   "moved_by": "A Burney",
-   "seconded_by": "T Willsmer",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "a burney made motion to continue to1/26/26. t willsmer. second. roll call vote: a burney, aye; t willsmer, aye; a reid, aye; m brenner, aye (4/0)"
-  },
-  {
-   "motion": "Grant extension of time to commence construction for 485 Leominster Shirley Rd.",
-   "moved_by": "T Willsmer",
-   "seconded_by": "A Burney",
-   "outcome": "passed 4-0",
-   "procedural": false,
-   "quote": "t willsmer moved good cause for extension. a burney, second roll call vote: a burney, aye; t willsmer, aye; a reid, aye; m brenner, aye (4/0)"
-  },
-  {
-   "motion": "Adjourn the meeting.",
-   "moved_by": "T Willsmer",
-   "seconded_by": "A Burney",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "t willsmer motioned to adjourn. a burney, second. roll call vote: a burney, aye; t willsmer, aye; a reid, aye; m brenner, aye"
+   "quote": "a. burney made motion: to adopt the findings stated herein and to deny endorsement of the proposed anr plan based on the determination that fire road 15 is not, in its current state, of sufficient width, suitable grades and adequate construction to provide for the needs of vehicular traffic which would utilize said \"roadway\" as proposed by the subject anr plan. and if the land included in the aforementioned plan is reconfigured and resubmitted to the planning board within 6 months the planning board will waive any required anr fees. t. wilsmer., second. roll call vote: a burney, aye; t willsmer, aye; a reid, aye; and m brenner, aye (4/0)"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.10809840000000001
+ "dropped_unquoted": 6,
+ "note": "No significant issues with text readability. All votes clearly recorded with outcomes.",
+ "cost_usd": 0.1057206,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid (remote), a. burney"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid (remote), a. burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid (remote), a. burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid (remote), a. burney"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "richard harris - land use director"
+  },
+  {
+   "name": "Leigh Bain",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "leigh bain - administrative assistant"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing applicant, Dillis & Roy",
+   "status": "present",
+   "quote": "greg roy(dillis & roy)presented on behalf of applicant mitchell lorden"
+  },
+  {
+   "name": "Mitchell Lorden",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "greg roy(dillis & roy)presented on behalf of applicant mitchell lorden"
+  },
+  {
+   "name": "Ali Lorden",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ali lorden asked for a contingent approval"
+  },
+  {
+   "name": "Rich Pearson",
+   "role": "abutter",
+   "status": "present",
+   "quote": "abutter rich pearson made concerns known about cul-de-sac"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "owner",
+   "status": "not stated",
+   "quote": "greg roy(dillis&roy)presented on behalf of the owner tanner cole"
+  },
+  {
+   "name": "Ryan McGlothlin",
+   "role": "Silo Electric, representing applicant",
+   "status": "present",
+   "quote": "ryan mcglothlin (silo electric) representing applicant explained tariffs have caused the delay"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair announced that new Planner/Director of Planning and Economic Development Stephen Wallace will start Monday February 2, 2026",
+   "quote": "new planner/ director of planning and economic development, stephen wallace will be starting monday feb. 2, 2026"
+  },
+  {
+   "decision": "Board will require joint hearing with Tree Warden for 1083 Northfield Rd application",
+   "quote": "r harris stated there will need to be a joint hearing with the tree warden"
+  },
+  {
+   "decision": "Richard Harris and Matthew Brenner will meet with Stephen Wallace on February 2, 2026 for onboarding handoff",
+   "quote": "richard and matt will be meeting with stephen on 2/2/26 for onboarding handoff"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rich Pearson",
+   "stated_role": "abutter",
+   "topic": "cul-de-sac concerns",
+   "quote": "abutter rich pearson made concerns known about cul-de-sac"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Chair/Director's Report",
+   "resolution": "reported",
+   "quote": "new planner/ director of planning and economic development, stephen wallace will be starting monday feb. 2, 2026",
+   "tags": [
+    "staffing",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "ANR Plan - 10 Parmenter Rd",
+   "resolution": "denied",
+   "quote": "based on road adequacy, the anr will be denied. a. burney suggested fix road and reapply.",
+   "tags": [
+    "subdivision",
+    "approval not required",
+    "road adequacy"
+   ]
+  },
+  {
+   "topic": "30 Summer St Stormwater Permit and Site Plan Approval",
+   "resolution": "continued to 1/26/26",
+   "quote": "does not see need to open special permit pbsp-25-9 as of yet and requested a continuance",
+   "tags": [
+    "stormwater",
+    "site plan",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "0 Reservoir Rd Stormwater Permit",
+   "resolution": "continued to 1/26/26",
+   "quote": "at start of meeting m brenner announced applicant requested a continuance and will not be on agenda",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "1083 Northfield Rd Scenic Roads",
+   "resolution": "continued to 1/26/26",
+   "quote": "discovered there is the need to remove 2 white pine trees 30\" diameter as they are growing in the wall",
+   "tags": [
+    "scenic roads",
+    "tree removal",
+    "wall repair"
+   ]
+  },
+  {
+   "topic": "485 Leominster Shirley Rd Extension of Time",
+   "resolution": "approved",
+   "quote": "they plan to break ground in august and completed by end of october",
+   "tags": [
+    "extension of time",
+    "construction timeline"
+   ]
+  },
+  {
+   "topic": "Master Plan",
+   "resolution": "in review",
+   "quote": "a first draft has been sent to over-under for review",
+   "tags": [
+    "master plan",
+    "board discussion"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported",
+   "quote": "montachusett regional planning commission met last thursday, had kurt gartner, assistant secretary for policy at the mass executive office of energy and environmental affairs",
+   "tags": [
+    "committees",
+    "state planning",
+    "regional coordination"
+   ]
+  }
+ ],
+ "tags": [
+  "Planning Board",
+  "ANR plans",
+  "stormwater permits",
+  "site plan review",
+  "scenic roads",
+  "tree removal",
+  "extension of time",
+  "continuances",
+  "public hearings"
+ ],
+ "dropped_unquoted_by_field": {
+  "votes": 5,
+  "topics": 1
+ }
 }

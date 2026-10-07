@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-03-16",
  "docid": "7716",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn at 8:58 PM",
+   "motion": "adjourn at 8:58 PM",
    "moved_by": "Brian Lehtinen",
    "seconded_by": "Amanda Moore",
    "outcome": "passed 5-0",
@@ -20,7 +20,279 @@
    "quote": "motion by member lehtinen to adjourn at 8:58 pm. seconded by vice-chair moore. call for vote: five-aye. the motion passed (5-0-0)."
   }
  ],
- "dropped_unquoted": 0,
- "note": "The meeting was primarily a budget workshop. While the minutes record many decisions and agreements (e.g., \"The Select Board agreed\" or \"The Select Board unanimously agreed\" to include various items in restoration budgets), these are consensus items during the workshop discussion, not formal motions voted on. Only the adjournment was recorded as a formal motion with a vote count.",
- "cost_usd": 0.0715974
+ "dropped_unquoted": 1,
+ "note": "Minutes reviewed and approved by the Select Board on August 18, 2026, five months after the March 16, 2026 meeting. Public comment section noted in header but no individual comments recorded in the text provided.\"",
+ "cost_usd": 0.23837360000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager; karen barrett, finance director/town accountant"
+  },
+  {
+   "name": "Karen Barrett",
+   "role": "Finance Director/Town Accountant",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager; karen barrett, finance director/town accountant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Police part-time clerk position (19 hours per week, $21,800) to be restored in restoration-level override budget",
+   "quote": "the select board unanimously agreed this position should be restored in a restoration-level override budget."
+  },
+  {
+   "decision": "Director of Communications and IT position to be restored in restoration-level override budget as first identified restoration item",
+   "quote": "clerk emkey and vice-chair amanda moore agreed this position should be restored in any restoration-level override budget, representing the first identified restoration item."
+  },
+  {
+   "decision": "Police SRO restored to two positions and Sergeant-level staffing restored to pre-reduction levels in restoration budget",
+   "quote": "the select board agreed the restoration budget should restore the sro to two positions and restore sergeant-level staffing to get the department back to its pre-reduction staffing level."
+  },
+  {
+   "decision": "Include $430,000 in restoration budget for pavement management, representing $151,000 increase above core override level",
+   "quote": "the select board agreed to include $430,000 in the restoration budget for pavement management, representing an increase of approximately $151,000 above the core override level."
+  },
+  {
+   "decision": "Police station public window coverage (3 PM to 7 PM) to be retained in core override budget",
+   "quote": "the select board agreed this service level was not acceptable even in the balanced scenario, and vice-chair moore stated the window coverage should be retained in the core (override) budget."
+  },
+  {
+   "decision": "No additional restoration items needed for Fire Department beyond what is already in core override budget",
+   "quote": "the select board agreed that no additional restoration items were needed for fire beyond what was already included in the unbalanced/core override budget."
+  },
+  {
+   "decision": "Continue pursuing transition of recycling program to Enterprise Fund",
+   "quote": "the select board consensus was to continue pursuing this option, while acknowledging that no change could be implemented by july 1, 2026."
+  },
+  {
+   "decision": "Town Manager Warren-Dyment to develop Town restoration budget figure and communicate tiered override approach to School Committee",
+   "quote": "the select board directed town manager warren-dyment to develop the town restoration budget figure and to communicate to the school committee the select board's expectation that the school committee similarly produce its own core/balanced budget and restoration budget in parallel"
+  },
+  {
+   "decision": "Preferred tiered override structure is A+C scenario: Town restoration paired with School restoration",
+   "quote": "the work done at this evening's workshop, however, pointed toward an a+c scenario, town restoration paired with school restoration-as the select board's preferred tiered override structure."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Guilfoyle PR contract termination - Select Board",
+   "what_was_recorded": "Reduction in Select Board budget for termination of public relations contract",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "reduction in the balanced budget scenario reflecting the termination of the contract with guilfoyle pr, worth approximately $10,000"
+  },
+  {
+   "topic": "Legal services - Town Manager",
+   "what_was_recorded": "Legal services line with Meade, Tallerman, & Costa budget",
+   "figures_as_printed": [
+    "$135,000"
+   ],
+   "quote": "the legal services line with meade, tallerman, & costa remained at $135,000, though she acknowledged it had been a very active legal year and that amount may prove tight"
+  },
+  {
+   "topic": "Finance Committee Reserve Fund - consideration for increase",
+   "what_was_recorded": "Suggested increase to Reserve Fund in balanced budget to provide flexibility for departments",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "she indicated she had room within the health insurance line to absorb an increase to approximately $25,000 without throwing the budget out of balance"
+  },
+  {
+   "topic": "TCP building operation moved to one-time funding",
+   "what_was_recorded": "TCP building operation removed from operating budget and moved to one-time funding sources",
+   "figures_as_printed": [
+    "$120,000",
+    "$150,000"
+   ],
+   "quote": "the tcp building operation was removed from the ===page 4=== select board meeting minutes march 16, 2026 page 4 of 11 operating budget in both scenarios and moved to one-time fu",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Free cash available for one-time expenses",
+   "what_was_recorded": "Certified free cash available to cover large one-time expenses such as asbestos abatement",
+   "figures_as_printed": [
+    "$3.24 million"
+   ],
+   "quote": "he confirmed there was sufficient certified free cash (approximately $3.24 million) to cover this one-time expense"
+  },
+  {
+   "topic": "Fire Department budget reduction - balanced vs. core",
+   "what_was_recorded": "Significant difference between balanced and core override Fire Department budgets due to per diem and training reductions",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "the select board noted that the difference between the balanced and unbalanced fire department budgets was approximately $100,000"
+  },
+  {
+   "topic": "Animal Control operation - current and adequate funding",
+   "what_was_recorded": "Town's animal control operation and costs of proper funding",
+   "figures_as_printed": [
+    "$45,500",
+    "$35,000",
+    "$100,000"
+   ],
+   "quote": "the town's entire animal control operation totals $45,500 and is operationally viable only because of the unique circumstances of the current animal control officer who operates a priva",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "School budget restoration request",
+   "what_was_recorded": "School Committee's most recent restoration-level budget request",
+   "figures_as_printed": [
+    "$28,529,908"
+   ],
+   "quote": "the school budget currently included in the document reflected the schools' most recent restoration-level request of $28,529,908"
+  },
+  {
+   "topic": "DPW drainage and stormwater - MS4 compliance",
+   "what_was_recorded": "Proposed increases and full compliance costs for stormwater management and MS4 permit",
+   "figures_as_printed": [
+    "$75,000",
+    "$100,000",
+    "$110,000",
+    "$450,000",
+    "$500,000",
+    "$600,000"
+   ],
+   "quote": "a $25,000 increase to the drainage line (from $75,000 to $100,000), and a significant increase to stormwater management of $340,000 (from $110,000 to $450,000), reflecting partial compliance with the ms4 stormwater permi",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Pavement management funding - multiple scenarios",
+   "what_was_recorded": "Pavement management budget by scenario: balanced, core override, and restoration level",
+   "figures_as_printed": [
+    "$50,000",
+    "$279,000",
+    "$430,000",
+    "$151,000",
+    "$400,000",
+    "$770,000"
+   ],
+   "quote": "in the balanced budget, pavement management is reduced to $50,000. in the core override budget, it remains at the fy26 level of $279,000. town manager warren-dyment noted the 2027 pavement management plan expires this year and that an updated plan is needed. she acknowledged that without a current updated plan, ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Chapter 90 allocations history",
+   "what_was_recorded": "Chapter 90 state road funds have increased significantly since 2016 road debt exclusion",
+   "figures_as_printed": [
+    "$400,000",
+    "$770,000"
+   ],
+   "quote": "at the time of the borrowing, chapter 90 allocations ===page 7=== select board meeting minutes march 16, 2026 page 7 of 11 were approximately $400,000; they ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Recycling program budget reduction",
+   "what_was_recorded": "Significant budget reduction in recycling program based on DPW Director review of actual expenditures",
+   "figures_as_printed": [
+    "$456,000",
+    "$350,000"
+   ],
+   "quote": "a significant reduction in the recycling budget from $456,000 to $350,000 in both scenarios, based on the dpw director's review of actuals"
+  },
+  {
+   "topic": "Health insurance - active employee and retiree",
+   "what_was_recorded": "Health insurance budget increases including 9% overall increase and corrections to retiree health estimates",
+   "figures_as_printed": [
+    "$500,000",
+    "$570,000",
+    "$1.521 million",
+    "$1.655 million",
+    "$245,000",
+    "$225,000",
+    "$200,000"
+   ],
+   "quote": "town retiree health insurance increased from $500,000 to $570,000, and school retiree health insurance from $1.521 million to $1.655 million, both based on actual costs. liability insurance was reduced from $245,000 to $225,000 based on actuals and consultation with the town's represe",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "FY27 unbalanced budget deficit",
+   "what_was_recorded": "Town-side deficit in unbalanced budget representing core services override scenario",
+   "figures_as_printed": [
+    "$1,028,735.89"
+   ],
+   "quote": "the unbalanced budget, as presented, carried a deficit of $1,028,735.89"
+  },
+  {
+   "topic": "Total override number",
+   "what_was_recorded": "Current total override number for town core services with school restoration request",
+   "figures_as_printed": [
+    "$3,000,000"
+   ],
+   "quote": "the current total override number representing core/level services for the town combined with the school's restoration request was just under $3,000,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY27 Budget Workshop - departmental review and override scenarios",
+   "resolution": "Board directed development of tiered override budgets with Town restoration paired with School restoration; identified specific positions and funding levels for restoration budget tier",
+   "tags": [
+    "budget",
+    "FY27",
+    "override",
+    "restoration",
+    "municipal operations",
+    "public safety",
+    "public works",
+    "stormwater",
+    "pavement management"
+   ],
+   "quote": "the select board proceeded through the budget on a department-by-department basis. select board town manager warren-dyment noted the only change in the select board budget since the preliminary was a reduction in the balanced budget scenario reflecting the termination of th",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "budget",
+  "FY27",
+  "override",
+  "restoration-level",
+  "municipal operations",
+  "public safety",
+  "public works",
+  "stormwater",
+  "pavement management",
+  "health insurance",
+  "animal control",
+  "recycling",
+  "library"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

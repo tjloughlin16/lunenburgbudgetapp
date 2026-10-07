@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2026-03-09",
  "docid": "7684",
@@ -12,23 +12,142 @@
  },
  "votes": [
   {
-   "motion": "approve the February 2, 2026 meeting minutes",
+   "motion": "Approve meeting minutes from February 2, 2026",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed 5-0-3",
    "procedural": true,
-   "quote": "meeting minutes from february 2, 2026 were review and approved 5-0-3 with greg roy, laura brzozoski, and kristina masaitis abstaining.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "meeting minutes from february 2, 2026 were review and approved 5-0-3 with greg roy, laura brzozoski, and kristina masaitis abstaining."
   },
   {
-   "motion": "adjourn",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion to adjourn:. tom gray, seconded by greg roy. unanimously approved.",
+   "motion": "Adjourn",
    "moved_by": "Tom Gray",
-   "seconded_by": "Greg Roy"
+   "seconded_by": "Greg Roy",
+   "outcome": "unanimously approved",
+   "procedural": true,
+   "quote": "motion to adjourn:. tom gray, seconded by greg roy. unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
  "note": "",
- "cost_usd": 0.0599684
+ "cost_usd": 0.1196641,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculumbrine, laura brzozoski, matthew brenner, kristina masaitis,"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculumbrine, laura brzozoski, matthew brenner, kristina masaitis,"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculumbrine, laura brzozoski, matthew brenner, kristina masaitis,"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculumbrine, laura brzozoski, matthew brenner, kristina masaitis,"
+  },
+  {
+   "name": "Anthony Sculumbrine",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculumbrine, laura brzozoski, matthew brenner, kristina masaitis,"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculumbrine, laura brzozoski, matthew brenner, kristina masaitis,"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculumbrine, laura brzozoski, matthew brenner, kristina masaitis,"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, greg roy, anthony sculumbrine, laura brzozoski, matthew brenner, kristina masaitis,"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Town Employee",
+   "status": "present",
+   "quote": "town employees: chris ruth"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed that questionnaire should rely primarily on short, objective responses using checkboxes, numeric fields, and limited comment sections",
+   "quote": "committee agreed questionnaire should rely primarily on short, objective responses using checkboxes, numeric fields, and limited comment sections."
+  },
+  {
+   "decision": "Dave to revise the questionnaire based on committee feedback and circulate an updated draft",
+   "quote": "dave will revise the questionnaire based on committee feedback and circulate an updated draft."
+  },
+  {
+   "decision": "Committee members to send feedback directly to Dave (not on an open forum) to avoid Open Meeting Law concerns",
+   "quote": "committee members asked to send feedback directly to dave (not on an open forum) to avoid open meeting law concerns."
+  },
+  {
+   "decision": "Committee anticipated presenting a final questionnaire-ready draft for approval at next meeting on March 30, 2026",
+   "quote": "committee anticipated presenting a final questionnaire-ready draft for approval at next meeting (march 30, 2026)."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior meeting minutes",
+   "resolution": "approved",
+   "quote": "meeting minutes from february 2, 2026 were review and approved 5-0-3 with greg roy, laura brzozoski, and kristina masaitis abstaining.",
+   "tags": [
+    "procedural",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Briefing on due diligence priorities from Town Manager and Select Board Chair",
+   "resolution": "briefed",
+   "quote": "committee briefed on town manager and select board chair's guidance: perform thorough due diligence with the following priorities 1. first preference: evaluate reusing existing buildings (reuse analysis). 2. if reuse is impractical, evaluate modifications to existing buildings. 3. if modification is infeasible, develop concepts for a new building",
+   "tags": [
+    "due diligence",
+    "building reuse",
+    "priorities"
+   ]
+  },
+  {
+   "topic": "Questionnaire development for department heads",
+   "resolution": "in progress",
+   "quote": "questionnaire development general objectives agreed: • develop a concise, prioritized questionnaire for department heads covering staffing, space needs, accessibility, storage, technology, public interaction, and future growth.",
+   "tags": [
+    "questionnaire",
+    "department needs",
+    "space planning",
+    "accessibility"
+   ]
+  }
+ ],
+ "tags": [
+  "municipal building design",
+  "questionnaire",
+  "space planning",
+  "due diligence",
+  "building reuse"
+ ],
+ "dropped_unquoted_by_field": {}
 }

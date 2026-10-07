@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-03-23",
  "docid": "3540",
@@ -12,15 +12,219 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve the minutes signed 3-9-09.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Halloran",
    "outcome": "passed",
    "procedural": true,
+   "quote": "signed 3-9-09, motion, ms. bilotta, second, mr. ha lloran, motion passed",
+   "quote_taken_from_text": true
+  },
+  {
+   "motion": "Adjourn the meeting (adjournment at 9:35 PM).",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
-   "quote": "motion to adjourn, ms. bilotta, second, mr. saiia, motion passed"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion to adjourn, ms. bilotta, second, mr. saiia, motion passed."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Text has Unicode escape sequences at the beginning (rendered as garbage), but the readable minutes are clear. Two votes recorded: approval of prior minutes and adjournment, both procedural. The remainder of the minutes records committee reports, discussions, and development status updates with no votes taken.",
- "cost_usd": 0.08941650000000001
+ "dropped_unquoted": 0,
+ "note": "Text is OCR with stray spaces inside words and names (e.g. 'Ro bert', 'Bil otta', 'Proc tor'); quotes copy that spacing as printed. Robert J. Saiia's first name is rendered from the page header, where the roll call shows it split. Only two motions are recorded (minutes approval and adjournment), both procedural; no substantive votes. The ANR acceptance, the Chair's request, and the Planning Board's sewer position are recorded without a motion, so they are decisions rather than votes. Paula Bertram spoke on MEPA input but the minutes do not place her under public comment, so public_comment is empty. The budget figure ($230,000.00) is an anticipated Capital Plan total, not a vote.",
+ "cost_usd": 0.015265770000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran, ro bert j. saiia, thomas w. bodkin, jr., joanne l. bil otta"
+  },
+  {
+   "name": "James A. Halloran",
+   "role": "Board member",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran, ro bert j. saiia, thomas w. bodkin, jr., joanne l. bil otta"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Board member",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran, ro bert j. saiia, thomas w. bodkin, jr., joanne l. bil otta"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Board member",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran, ro bert j. saiia, thomas w. bodkin, jr., joanne l. bil otta"
+  },
+  {
+   "name": "Joanne L. Bilotta",
+   "role": "Board member",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran, ro bert j. saiia, thomas w. bodkin, jr., joanne l. bil otta"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "m. benson, planning director"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Sewer Commission member",
+   "status": "present",
+   "quote": "sewer commission member paula bertram spoke on the mepa i nput."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Plan for ANR at 541 Leominster-Shirley Road (Keating Trust) accepted for review, with no motion recorded.",
+   "quote": "anr- 541 leominster-shirley road, keating trust - plan presented by s.j. mullaney engineering, inc."
+  },
+  {
+   "decision": "Chair requested an answer to the question whether Zoning Bylaw Section 5.6, as written, has enough merit on its own to deny the Aro submission.",
+   "quote": "chair requested answer to question"
+  },
+  {
+   "decision": "Planning Board stated it would like a transfer of the parcel into the Industrial Sewer District if and when it discontinues being commercial; commercial areas will not be part of the district. No vote recorded.",
+   "quote": "the planning board would like a transf er into the district when, and if, the parcel discontinues being commercial.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Planning Committee FY10 plan",
+   "what_was_recorded": "The Director noted the FY10 Capital Plan was anticipated to be finalized on March 24, 2009 at about $230,000.00, covering Fire, Police, School Departments and Town Clerk items.",
+   "figures_as_printed": [
+    "$230,000.00"
+   ],
+   "quote": "$230,000.00, which includes items for fire, police and school departments and town clerk."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (signed 3-9-09)",
+   "quote": "signed 3-9-09, motion, ms. bilotta, second, mr. ha lloran, motion passed",
+   "tags": [
+    "minutes"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Appointments: ANR, 541 Leominster-Shirley Road (Keating Trust)",
+   "resolution": "accepted for review",
+   "quote": "anr- 541 leominster-shirley road, keating trust - plan presented by s.j. mullaney engineering, inc.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "plan review"
+   ]
+  },
+  {
+   "topic": "Notices and communications: Zoning Board of Appeals",
+   "resolution": "noted",
+   "quote": "special permit granted to daniel & jean proc tor for",
+   "tags": [
+    "zoning",
+    "special permit"
+   ]
+  },
+  {
+   "topic": "Committee reports (Capital Planning, CWMP, MJTC, MRPC, School Regionalization)",
+   "resolution": "reported",
+   "quote": "mr. halloran will provide number breakdown for each",
+   "tags": [
+    "capital planning",
+    "regionalization",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Aro Estates",
+   "resolution": "discussed; Chair requested an answer to a zoning question",
+   "quote": "director reported on tech meeting, reviewing engine",
+   "tags": [
+    "Aro Estates",
+    "zoning",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Chapter 43D (Summer Street property jointly owned with Fitchburg)",
+   "resolution": "discussed",
+   "quote": "discussion regarding article to accept provisions o f chapter 43d",
+   "tags": [
+    "43D",
+    "expedited permitting",
+    "Summer Street"
+   ]
+  },
+  {
+   "topic": "Draft zoning warrant articles",
+   "resolution": "discussed; no action recorded",
+   "quote": "draft zoning articles for town warrant- 1) remove",
+   "tags": [
+    "warrant articles",
+    "zoning bylaw",
+    "wind energy"
+   ]
+  },
+  {
+   "topic": "Sewer and Industrial Sewer District",
+   "resolution": "discussed; Planning Board stated its position",
+   "quote": "the commercial areas will not be a part of the sewe r district.",
+   "tags": [
+    "sewer",
+    "Wright Pierce",
+    "MEPA",
+    "industrial sewer district"
+   ]
+  },
+  {
+   "topic": "Master planning",
+   "resolution": "noted as in progress",
+   "quote": "master planning- in progress.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "reported",
+   "quote": "building official issued occupancy and right to use",
+   "tags": [
+    "CVS",
+    "Lena Lane",
+    "Sean Patricks",
+    "Lunenburg East",
+    "Verizon",
+    "development status"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:35 PM",
+   "quote": "motion to adjourn, ms. bilotta, second, mr. saiia, motion passed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "sewer",
+  "warrant articles",
+  "development status",
+  "capital planning",
+  "Chapter 43D",
+  "ANR",
+  "regionalization"
+ ],
+ "dropped_unquoted_by_field": {}
 }

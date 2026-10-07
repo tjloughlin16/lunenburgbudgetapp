@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2026-02-04",
  "docid": "7633",
@@ -12,33 +12,235 @@
  },
  "votes": [
   {
-   "motion": "Continue 58 Spring St (NOI-25-27) to February 18",
+   "motion": "To approve the minutes of the January 28 meeting",
    "moved_by": "T. Doucette",
    "seconded_by": "M. Larouche",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: t. doucette, to continue to february 18 second m. larouche vote: t. doucette - aye a. burnap - aye m. larouche - aye j. pewtherer - aye"
-  },
-  {
-   "motion": "Continue 27 Fire Road 15A (NOI-25-25) to the February 18 meeting where expressed concerns can be addressed",
-   "moved_by": "T. Doucette",
-   "seconded_by": "M. Larouche",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: | t. doucette, to continue to the february 18 meeting where expressed concerns can be second addressed m. larouche ===page 3=== vote: t. doucette - aye a. burnap - aye m. larouche - aye [j. pe",
+   "quote": "t. doucette, to approve the minutes of the january 28 meeting m. larouche t. doucette - aye a. burnap - aye m. larouche - aye | j. pewtherer - a",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Approve removal of brush and trees as described with the following condition: Add native plants to replace trees that are taken down",
+   "motion": "To continue to February 18",
+   "moved_by": "T. Doucette",
+   "seconded_by": "M. Larouche",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "t. doucette, to continue to february 18 second m. larouche vote: t. doucette - aye a. burnap - aye m. larouche - aye j. pe",
+   "quote_taken_from_text": true
+  },
+  {
+   "motion": "To continue to the February 18 meeting",
+   "moved_by": "T. Doucette",
+   "seconded_by": "M. Larouche",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "t. doucette, to continue to the february 18 meeting m. larouche t. doucette - aye a. burnap - aye m. larouche - aye j. pewtherer - aye"
+  },
+  {
+   "motion": "To continue to the February 18 meeting",
+   "moved_by": "T. Doucette",
+   "seconded_by": "M. Larouche",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "t. doucette, to continue to the february 18 meeting m. larouche t. doucette - aye a. burnap - aye m. larouche - aye j. pewtherer - aye"
+  },
+  {
+   "motion": "To continue to the February 18 meeting where expressed concerns can be addressed",
+   "moved_by": "T. Doucette",
+   "seconded_by": "M. Larouche",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "t. doucette, to continue to the february 18 meeting m. larouche t. doucette - aye a. burnap - aye m. larouche - aye j. pewtherer - aye c. 763 northfield rd: noi-25-19 (continue",
+   "quote_taken_from_text": true
+  },
+  {
+   "motion": "To approve removal of brush and trees as described with the condition to add native plants to replace trees that are taken down",
    "moved_by": "T. Doucette",
    "seconded_by": "A. Burnap",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: t. doucette, to approve removal of brush and trees as described with the following second vote: condition: a. burnap t. doucette - aye 1. add native plants to replace trees that are taken down a. burnap - aye m. larouche - aye j. pewtherer - aye",
+   "quote": "t. doucette, to approve removal of brush and trees as described with the following second vote: condition: a. burnap t. doucette - aye 1. add native plants to replace trees that are taken down a. burnap - aye m. larouche - aye j.",
+   "quote_taken_from_text": true
+  },
+  {
+   "motion": "To adjourn at 9:27pm",
+   "moved_by": "M. Larouche",
+   "seconded_by": "T. Doucette",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "m. larouche, to adjourn at 9:27pm t. doucette m. larouche - aye t. doucette - aye respectfully submitted, michael ga",
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 4,
- "note": "OCR scan of meeting minutes. Some formatting artifacts present (\"|\" and \"[\" symbols appear to be OCR errors or scanning artifacts).",
- "cost_usd": 0.11312540000000001
+ "dropped_unquoted": 2,
+ "note": "OCR via macOS Vision. Name variation in source: \"Andrea Burnan\" (roster) vs \"A. Burnap\" (roll call) appears as documented discrepancy in the original minutes. No dollar figures or budget amounts in these minutes.\"",
+ "cost_usd": 0.1419096,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "present: t. doucette, a. burnap, m. larouche. j. pewtherer"
+  },
+  {
+   "name": "Teddy Doucette",
+   "role": "Member",
+   "status": "remote",
+   "quote": "present: t. doucette, a. burnap, m. larouche. j. pewtherer"
+  },
+  {
+   "name": "Andrea Burnan",
+   "role": "Member",
+   "status": "remote",
+   "quote": "present: t. doucette, a. burnap, m. larouche. j. pewtherer"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "present: t. doucette, a. burnap, m. larouche. j. pewtherer"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent r. bursch, m. wilson, c. st germain."
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent r. bursch, m. wilson, c. st germain."
+  },
+  {
+   "name": "Chris St Germain",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent r. bursch, m. wilson, c. st germain."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Engineer/Representative, Dillis & Roy",
+   "status": "remote",
+   "quote": "greg roy (dillis & roy) represented the applicant."
+  },
+  {
+   "name": "John Fortune",
+   "role": "Hickory Hills Landowners representative",
+   "status": "remote",
+   "quote": "john fortune (15 hemlock drive/hickory hills landowners) presented."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Staff directed to follow up with applicant for CAD-25-21 who is absent for a third time",
+   "quote": "applicant not present for a third time. asking h. jaime to check in on him."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "58 Spring Street Extended, NOI-25-27: Patio demolition, concrete foundation, screen porch, deck extension",
+   "resolution": "Continued to February 18",
+   "tags": [
+    "public-hearing",
+    "continued-hearing",
+    "notice-of-intent",
+    "residential"
+   ],
+   "quote": "a notice of intent by dduby construction llc - daniel duby for a project that involves the demolition of a patio to pour a concrete foundation, construct a screen porch and the extension of a deck. continued to february 18"
+  },
+  {
+   "topic": "30 Summer Street, NOI-25-22: Floodplain fill and compensatory floodplain compensation for storage facility",
+   "resolution": "Continued to February 18",
+   "tags": [
+    "public-hearing",
+    "continued-hearing",
+    "notice-of-intent",
+    "floodplain"
+   ],
+   "quote": "a notice of intent by safstor real estate co., llc for a project that involves floodplain fill and associated compensatory floodplain compensation. greg roy (dillis & roy) ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "763 Northfield Road, NOI-25-19: Culvert replacement at Mulpus Brook crossing",
+   "resolution": "Continued to February 18",
+   "tags": [
+    "public-hearing",
+    "continued-hearing",
+    "notice-of-intent",
+    "infrastructure",
+    "wetlands"
+   ],
+   "quote": "a notice of intent by the town of lunenburg-dpw for the replacement of the deteriorated culvert at the northfield road crossing over mulpus brook in order to mitigate furt",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "27 Fire Road 15A, NOI-25-25: Demolition of cottage and construction of replacement house and deck",
+   "resolution": "Continued to February 18",
+   "tags": [
+    "public-hearing",
+    "continued-hearing",
+    "notice-of-intent",
+    "residential"
+   ],
+   "quote": "a notice of intent by steve bean for a project that involves the demolition of an existing cottage and construction of a replacement house and deck on the property. g. roy (dillis & roy) re",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Enforcement actions update",
+   "resolution": "No updates",
+   "tags": [
+    "enforcement"
+   ],
+   "quote": "enforcement no updates"
+  },
+  {
+   "topic": "Hickory Hills Lake annual report and tree/brush removal approval",
+   "resolution": "Approved with condition to add native plants",
+   "tags": [
+    "hickory-hills-lake",
+    "environmental-management",
+    "tree-removal"
+   ],
+   "quote": "john fortune (15 hemlock drive/hickory hills landowners) presented. the full presentation is available by sending an email to the lcc@lunenburgma.gov account. this is an annual report required by dep 208-1266 issued on 25 july 2022. j. fortune reviewed water quality, phosphorus surface measurements, aquatic plant survey, fanwort survey, lake treatments, annual drawdown, fi",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "By-Law discussion with new Conservation Administrator",
+   "resolution": "Pending action with new administrator",
+   "tags": [
+    "bylaws",
+    "administration"
+   ],
+   "quote": "by-law discussion: message sent to herlin, who starts full time february 9!"
+  },
+  {
+   "topic": "Lunenburg April Earth Days",
+   "resolution": "Discussions to take place",
+   "tags": [
+    "earth-day",
+    "outreach"
+   ],
+   "quote": "lunenburg april earth days: discussions to take place."
+  }
+ ],
+ "tags": [
+  "conservation-commission",
+  "wetlands",
+  "notices-of-intent",
+  "public-hearings",
+  "continued-hearings",
+  "administrative-determinations",
+  "hickory-hills-lake",
+  "environmental-management"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

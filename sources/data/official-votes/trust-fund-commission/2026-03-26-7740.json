@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2026-03-26",
  "docid": "7740",
@@ -12,56 +12,177 @@
  },
  "votes": [
   {
-   "motion": "Accept the Letter to the Attorney General's office as written",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Accept the Letter to the Attorney General's office as written regarding the Towns",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
-   "quote": "motion to accept the letter to the attorney general's office as written with regard to the towns. the motion was seconded by mr howard. the motion was passed"
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "chairman bowen made a motion to accept the letter to the attorney general's office as written with regard to the towns. the motion was seconded by mr howard. the motion was passed unanimously"
   },
   {
-   "motion": "Submit the information packet to the Attorney General, the Town Manager and the Select Board to start the 30-day response window",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Submit the information packet to the Attorney General, the Town Manager and the Select Board forthwith to start the tolling time for the 30-day response window",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
-   "quote": "motion to submit the information packet to be submitted to the attorney general, the town manager and the select board, to be submitted forthwith to start the tolling time for the 30 d",
-   "quote_taken_from_text": true
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "chairman bowen then made a motion to submit the information packet to be submitted to the attorney general, the town manager and the select board, to be submitted forthwith to start the tolling time for the 30 days response window. the motion was seconded by mr howard. the motion passed unanimously"
   },
   {
    "motion": "Accept the signature page as written",
-   "outcome": "not stated",
-   "procedural": false,
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
-   "quote": "motion to accept the signature page as written, mr howard seconded the motion."
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "chairman bowen put forth a motion to accept the signature page as written, mr howard seconded the motion."
   },
   {
    "motion": "Approve the standard blank signature form",
+   "moved_by": "Chairman Bowen",
+   "seconded_by": "not stated",
    "outcome": "passed unanimously",
    "procedural": false,
-   "moved_by": "Chairman Bowen",
-   "quote": "motion to approve the standard blank signature form. motion passes unanimously with mr howard voting 'aye'"
+   "quote": "chairman bowen made a motion to approve the standard blank signature form. motion passes unanimously"
   },
   {
-   "motion": "Align the American Legion 283 and American Legion Poor fund eligibility requirements with the American Legion constitution",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Align the American Legion 283 and American Legion Poor fund eligibility requirements to align with the American Legion constitution within their written operating policy",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
-   "quote": "motion to align the american legion 283 and american legion poor fund eligibility requirement to align with the american legion constitution within their written operating pol",
-   "quote_taken_from_text": true
+   "outcome": "unanimous",
+   "procedural": false,
+   "quote": "chairman bowen asked for a motion to align the american legion 283 and american legion poor fund eligibility requirement to align with the american legion constitution within their written operating policy motion seconded by mr howard. the vote was unanimous"
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Adjourn the meeting at 6:32 pm",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
-   "quote": "there was a motion to adjourn the meeting at 6:32pm by mr howard, the motion was seconded by chairman bowen. the vote was unanimous with mr howard voting 'aye'"
+   "outcome": "unanimous",
+   "procedural": true,
+   "quote": "there was a motion to adjourn the meeting at 6:32pm by mr howard, the motion was seconded by chairman bowen. the vote was unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1601804
+ "note": "Minutes are complete and readable. All recorded votes include outcomes or are noted as outcome not stated. Public comment section contained no remarks from members of the public; the minutes explicitly state there were no beneficiary or public comments. Meeting adjourned at 6:32 pm.\"",
+ "cost_usd": 0.14249859999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present were mr howard and chairman bowen."
+  },
+  {
+   "name": "Mr Howard",
+   "role": "Member",
+   "status": "present",
+   "quote": "present were mr howard and chairman bowen."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chairman Bowen brought up his prior meeting with School Committee Chair and Superintendent regarding scholarships held and their use of the Town's EIN number, noting that requested information has not been received since October 2025",
+   "quote": "chairman bowen brought up his prior meeting with school committee chair and school superintendent fortuna about the scholarships held and their use of the town's ein number and has not received the information requested in october 2025."
+  },
+  {
+   "decision": "The commission was advised by the Division of Local Services to contact the Attorney General's office regarding breach issues",
+   "quote": "chairman bowen read some communication with and from the division of local services, the advice was to contact the attorney general's office."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment and Chairman's remarks on ballot and override",
+   "resolution": "remarks made; Chairman Bowen advocated for override and encouraged estate planning trusts",
+   "tags": [
+    "ballot",
+    "override",
+    "estate-planning"
+   ],
+   "quote": "chairman bowen advised the public that it was the last day to get papers in for the ballot and encouraged participation, in his opinion we have a very low rate for the number of residents."
+  },
+  {
+   "topic": "Treasurer and Finance Director reports",
+   "resolution": "none given",
+   "tags": [
+    "reports",
+    "finance"
+   ],
+   "quote": "there are no treasurer or finance director reports."
+  },
+  {
+   "topic": "Scholarships held by School Committee and their use of Town EIN number",
+   "resolution": "issue raised; information requested in October 2025 not yet received",
+   "tags": [
+    "scholarships",
+    "school-committee",
+    "ein"
+   ],
+   "quote": "chairman bowen brought up his prior meeting with school committee chair and school superintendent fortuna about the scholarships held and their use of the town's ein number and has not received the information requested in october 2025."
+  },
+  {
+   "topic": "Notice of Breach Letter regarding municipal failure on trust administration",
+   "resolution": "approved; letter to be sent to Attorney General, Town Manager, and Select Board",
+   "tags": [
+    "breach",
+    "fiduciary-duty",
+    "trust-administration",
+    "attorney-general"
+   ],
+   "quote": "this formal notice of fiduciary breach and a required referral to the attorney general, division of public charities. this is regarding longstanding municipal failure to administer, distribute, and support legally."
+  },
+  {
+   "topic": "Signature page for breach notification packet",
+   "resolution": "signed",
+   "tags": [
+    "administrative",
+    "breach-letter"
+   ],
+   "quote": "chairman bowen put forth a motion to accept the signature page as written, mr howard seconded the motion. the members signed a signature page for the information packet to be sent to the town."
+  },
+  {
+   "topic": "Standard blank signature form",
+   "resolution": "approved",
+   "tags": [
+    "administrative",
+    "forms"
+   ],
+   "quote": "chairman bowen made a motion to approve the standard blank signature form. motion passes unanimously"
+  },
+  {
+   "topic": "American Legion 283 and American Legion Poor fund eligibility alignment",
+   "resolution": "approved; requirements aligned with American Legion constitution operating policy",
+   "tags": [
+    "american-legion",
+    "fund-eligibility",
+    "policy"
+   ],
+   "quote": "chairman bowen asked for a motion to align the american legion 283 and american legion poor fund eligibility requirement to align with the american legion constitution within their written operating policy motion seconded by mr howard. the vote was unanimous"
+  },
+  {
+   "topic": "Susan Howard Poor Fund documentation",
+   "resolution": "issue raised; fund documentation, declaration, and principal missing; Attorney General notification required",
+   "tags": [
+    "missing-fund",
+    "breach",
+    "attorney-general"
+   ],
+   "quote": "chairman bowen described his efforts to locate paperwork on the susan howard poor fund, no declaration can be located and the funds cannot be located. this is a serious ===page 3=== breach. it's missing principal, earnings, documentation, and the law says that the attorney general must be notiﬁed ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "trust-funds",
+  "charitable-trusts",
+  "breach-of-fiduciary-duty",
+  "attorney-general",
+  "municipal-compliance",
+  "trust-administration",
+  "scholarships",
+  "american-legion",
+  "estate-planning"
+ ],
+ "dropped_unquoted_by_field": {}
 }

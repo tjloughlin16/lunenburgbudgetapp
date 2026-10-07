@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-03-10",
  "docid": "7702",
@@ -13,30 +13,250 @@
  "votes": [
   {
    "motion": "Adjourn the Finance Committee meeting",
-   "moved_by": "Ana Lockwood",
-   "seconded_by": "Tanya Dall",
-   "outcome": "passed 6-0",
+   "moved_by": "Member Lockwood",
+   "seconded_by": "Member Dall",
+   "outcome": "passed 6-0-0",
    "procedural": true,
    "quote": "motion by member lockwood to adjourn the finance committee meeting. seconded by member dall. call for the vote: six-aye. the motion passed unanimously (6-0-0)."
   },
   {
    "motion": "Adjourn the School Committee meeting",
-   "moved_by": "Mandy Gilman",
-   "seconded_by": "Emily Young",
-   "outcome": "passed 3-0",
+   "moved_by": "Member Gilman",
+   "seconded_by": "Member Young",
+   "outcome": "passed 3-0-0",
    "procedural": true,
    "quote": "motion by member gilman to adjourn the school committee meeting. seconded by member young. call for the vote: three-aye. the motion passed unanimously (3-0-0)."
   },
   {
    "motion": "Adjourn the Select Board meeting",
-   "moved_by": "Brian Lehtinen",
-   "seconded_by": "Amanda Moore",
-   "outcome": "passed 4-0",
+   "moved_by": "Member Lehtinen",
+   "seconded_by": "Vice-Chair Moore",
+   "outcome": "passed 4-0-0",
    "procedural": true,
    "quote": "motion by member lehtinen to adjourn the select board meeting at 9:53 p.m. seconded by vice-chair moore. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Three procedural adjournment votes. The minutes record two non-binding straw polls (on placing an override on the ballot, and on single vs. tiered override structure), but these are explicitly labeled as non-binding straw polls, not formal motions voted on, so they are not included per the definition of a vote as \"a motion the minutes say was voted on.\"",
- "cost_usd": 0.0943584
+ "dropped_unquoted": 1,
+ "note": "",
+ "cost_usd": 0.1969714,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee Chair",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood (absent- member mike rupp)"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Finance Committee Vice-Chair",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood (absent- member mike rupp)"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Finance Committee Clerk",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood (absent- member mike rupp)"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Finance Committee Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood (absent- member mike rupp)"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood (absent- member mike rupp)"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Finance Committee Member",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood (absent- member mike rupp)"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Finance Committee Member",
+   "status": "absent",
+   "quote": "finance committee members present: chair chris menard, vice-chair jean russell, clerk tom gray, member tanya dall, member jay simeone, member ana lockwood (absent- member mike rupp)"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "School Committee Chair",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, secretary mandy gilman, member emily youn",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Laura Brzozski",
+   "role": "School Committee Vice-Chair",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, secretary mandy gilman, member emily youn",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "School Committee Secretary",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, secretary mandy gilman, member emily youn",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Emily Young",
+   "role": "School Committee Member",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice-chair laura brzozoski, secretary mandy gilman, member emily youn",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Select Board Vice-Chair",
+   "status": "present",
+   "quote": "select board members present: vice-chair amanda moore, clerk renee emkey, member brian lehtinen, member glenn mcleod (absent- chair caesar nuzzolo)"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Select Board Clerk",
+   "status": "present",
+   "quote": "select board members present: vice-chair amanda moore, clerk renee emkey, member brian lehtinen, member glenn mcleod (absent- chair caesar nuzzolo)"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "select board members present: vice-chair amanda moore, clerk renee emkey, member brian lehtinen, member glenn mcleod (absent- chair caesar nuzzolo)"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "select board members present: vice-chair amanda moore, clerk renee emkey, member brian lehtinen, member glenn mcleod (absent- chair caesar nuzzolo)"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Select Board Chair",
+   "status": "absent",
+   "quote": "select board members present: vice-chair amanda moore, clerk renee emkey, member brian lehtinen, member glenn mcleod (absent- chair caesar nuzzolo)"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment, school superintendent dr. jodi fortuna, and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment, school superintendent dr. jodi fortuna, and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "School Business Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment, school superintendent dr. jodi fortuna, and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Town Moderator",
+   "status": "present",
+   "quote": "tri-board moderator: tim murphy, town moderator"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "remote",
+   "quote": "after some technical difficulty establishing audio, town counsel adam j. costa joined the meeting via telephone from his vehicle"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "resident and parent",
+   "status": "present",
+   "quote": "sarah cammer, 304 lancaster avenue, addressed the board. she spoke not as a representative of any board she serves on, but purely as a resident and parent."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Federal entitlement grants cut",
+   "what_was_recorded": "District federal entitlement grants were reduced by approximately $123,000",
+   "figures_as_printed": [
+    "$123,000"
+   ],
+   "quote": "the district's federal entitlement grants had been cut by approximately $123,000"
+  },
+  {
+   "topic": "Tax impact of three million dollar override",
+   "what_was_recorded": "Estimated annual impact of $3,000,000 override on average household was calculated",
+   "figures_as_printed": [
+    "$3,000,000",
+    "$636.27"
+   ],
+   "quote": "the estimated impact of a $3,000,000 override on that average household would be an additional $636.27 per year, based on fy26 figures"
+  },
+  {
+   "topic": "Revenue adjustments",
+   "what_was_recorded": "Investment income and motor vehicle excise tax revised upward, narrowing the balanced budget gap",
+   "figures_as_printed": [
+    "$100,000",
+    "$75,000"
+   ],
+   "quote": "investment income adjusted upward by $100,000 and motor vehicle excise tax by $75,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sarah Cammer",
+   "stated_role": "resident and parent",
+   "topic": "FY27 budget, school cuts, override structure, tiered approach concerns",
+   "quote": "fifty percent of lunenburg students are not meeting literacy targets, and called the school's requests for an interventionist, a kindergarten paraprofessional, a world language teacher, a teacher and paraprofessional for the bridge program, an english teacher, a part-time music teacher, an assistant principal, a literacy coach, and an assistant business manager entirely reasonable and defensible."
+  },
+  {
+   "speaker": "Sarah Cammer",
+   "stated_role": "parent",
+   "topic": "Override labeling and school restoration budget items",
+   "quote": "referring directly to the diagram chair menard had presented earlier, ms. cammer took issue with the labeling of the school's restoration budget items in the highest tier, particularly the items listed as \"x, y, z.\""
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, Pledge of Allegiance, and meeting procedures",
+   "resolution": "meeting called to order; procedural matters addressed",
+   "quote": "the meeting was called to order by tim murphy, who served as moderator at 7:30 pm. he asked everyone to stand and address the flag for the pledge of allegiance.",
+   "tags": [
+    "procedure",
+    "meeting-opening"
+   ]
+  },
+  {
+   "topic": "FY27 Budget and Proposition 2½ Override",
+   "resolution": "no final decision; straw polls conducted; further meetings scheduled; near-even split on single versus tiered override structure",
+   "quote": "the moderator opened the discussion by framing the central question before the tri-board: what form a proposition 2½ override should take, and how it should be structured.",
+   "tags": [
+    "budget",
+    "override",
+    "proposition-2.5",
+    "school-funding",
+    "municipal-services",
+    "fiscal-planning"
+   ]
+  }
+ ],
+ "tags": [
+  "budget",
+  "proposition-2.5-override",
+  "school-funding",
+  "municipal-services",
+  "town-meeting",
+  "fiscal-planning",
+  "override-structure"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

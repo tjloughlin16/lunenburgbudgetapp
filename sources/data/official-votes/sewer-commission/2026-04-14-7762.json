@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2026-04-14",
  "docid": "7762",
@@ -29,6 +29,125 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07158139999999999
+ "note": "Minutes are clear and complete. Meeting held via Zoom; all listed attendees participated (Scott Dall joined partway through but participated in votes). No dollar figures mentioned. No budget or transfer items discussed.",
+ "cost_usd": 0.1313386,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Chip Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Prior meeting minutes",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "administrative"
+   ],
+   "quote": "to accept the minutes of 3/31/26. roll call vote: chip-aye, arthur-aye, dan-aye and brett-aye."
+  },
+  {
+   "topic": "Manhole Repair IFB (Insituform)",
+   "resolution": "awaiting contractor start",
+   "tags": [
+    "infrastructure",
+    "repairs",
+    "contractor"
+   ],
+   "quote": "manhole repair ifb - bill reported insituform sent a list of manholes they will be repairing and the list of work. he approved the list and added the manhole at 100 laurel lane. the contractor wanted to get going but the nighttime temperatures have been below freezing."
+  },
+  {
+   "topic": "100 Laurel Lane sewer line investigation",
+   "resolution": "continued investigation",
+   "tags": [
+    "infrastructure",
+    "investigation",
+    "maintenance"
+   ],
+   "quote": "100 laurel lane - dan confirmed that he saw 3 pressure lines coming out. bill noted they have been there a couple of times and had camered the 6\" line coming out. the line goes out about 40', teeing in at 88 and stops just short of property line. bil",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "100 Laurel Lane ADU conversion",
+   "resolution": "discussed feasibility",
+   "tags": [
+    "residential",
+    "development",
+    "infrastructure"
+   ],
+   "quote": "the owner of 100 wants to convert the garage into an adu. the house will have to be pressure lined but they want to go gravity feed out of the garage. they will need to go from the garage to the stub on the",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "77 Electric Ave developer inquiry",
+   "resolution": "discussed expansion requirements",
+   "tags": [
+    "development",
+    "service area expansion",
+    "zoning"
+   ],
+   "quote": "77 electric ave.- bill reported another developer came in who wants to build houses on 14 acres which are not in the sewer service area (ssa). he told the developer that he would need to go through town meeting first and he was shocked."
+  }
+ ],
+ "tags": [
+  "sewer infrastructure",
+  "repairs",
+  "manhole maintenance",
+  "development",
+  "service area expansion",
+  "investigations",
+  "ADU"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2026-06-15",
  "docid": "7856",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from June 1, 2026",
+   "motion": "Approve the minutes from June 1, 2026",
    "moved_by": "Rudd",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "on motion by rudd and second by fortin the minutes were approved. all in favor."
   },
   {
-   "motion": "Approve variances for 146 Youngs Road (offset to wetlands from 100 feet to 34.5 feet, offset to well from 100 feet to 80.0 feet, use of sieve analysis) with condition that water test be completed prior to Certificate of Compliance",
+   "motion": "Approve the requested variances for 146 Youngs Road with condition that water testing be completed before Certificate of Compliance issuance",
    "moved_by": "Fortin",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion, motion made by fortin and second by jewell to approve the vari ances with the condition that a water test be completed prior to the issuance of a certificate of compliance. all in favor."
+   "quote": "motion made by fortin and second by jewell to approve the vari ances with the condition that a water test be completed prior to the issuance of a certificate of compliance. all in favor."
   },
   {
-   "motion": "Approve deed restriction for 222 West Townsend Road for 4 bedroom with 11 total rooms",
+   "motion": "Approve deed restriction for 222 West Townsend Road for 4 bedrooms with 11 total rooms",
    "moved_by": "Rudd",
    "seconded_by": "Jewell",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "after discussion and motion by rudd and second by jewell, the request was approved. all in favor."
   },
   {
-   "motion": "Approve allowing a letter request for approval of IA (innovative) septic systems",
+   "motion": "Approve letter request process for approval of IA (Innovative) Septic Systems",
    "moved_by": "Rudd",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -52,7 +52,113 @@
    "quote": "on motion by rudd and second by pirro, the above were elected. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06709839999999999
+ "dropped_unquoted": 1,
+ "note": "\"\"",
+ "cost_usd": 0.139498,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd nick pirro and paul fortin"
+  },
+  {
+   "name": "Matt Proctor",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd nick pirro and paul fortin"
+  },
+  {
+   "name": "Lorraine Rudd",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd nick pirro and paul fortin"
+  },
+  {
+   "name": "Nick Pirro",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd nick pirro and paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd nick pirro and paul fortin"
+  },
+  {
+   "name": "Jack Maloney",
+   "status": "present",
+   "role": "representing the owner",
+   "quote": "jack maloney met with the board on behalf of the owner."
+  },
+  {
+   "name": "The contractor",
+   "status": "present",
+   "role": "representing the owner",
+   "quote": "the contractor met with the board on behalf of the owner."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes (June 1, 2026)",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "on motion by rudd and second by fortin the minutes were approved. all in favor."
+  },
+  {
+   "topic": "146 Youngs Road septic system replacement with variances",
+   "resolution": "approved with condition",
+   "tags": [
+    "septic systems",
+    "variances",
+    "groundwater",
+    "wetlands",
+    "system replacement"
+   ],
+   "quote": "this system is in failure. this is a replacement system on a small lot with estimated groundwater at 60\" making it impossible to install a fully compliant system."
+  },
+  {
+   "topic": "Local variance requirement for IA (Innovative) Septic Systems",
+   "resolution": "approved letter request process",
+   "tags": [
+    "innovative systems",
+    "variances",
+    "DEP approval"
+   ],
+   "quote": "the town of lunenburg has a local variance requirement for all ia systems . this variance has been in place for a considerable amount of time. all of the innovative systems are approved by dep, some of which have become a standard for septic installation",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Board reorganization and election of officers",
+   "resolution": "elected",
+   "tags": [
+    "board reorganization",
+    "officers"
+   ],
+   "quote": "lorraine rudd nominated the following: chairman - matt proctor vice chairman - perry jewell secretary - paul fortin"
+  }
+ ],
+ "tags": [
+  "septic systems",
+  "variances",
+  "groundwater",
+  "wetlands",
+  "deed restriction",
+  "innovative systems",
+  "Board of Health",
+  "board reorganization"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

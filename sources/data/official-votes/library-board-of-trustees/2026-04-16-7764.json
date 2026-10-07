@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2026-04-16",
  "docid": "7764",
@@ -29,6 +29,291 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded, both procedural. No substantive policy votes taken; Gift Policy and Food & Drink Policy discussions deferred without votes.",
- "cost_usd": 0.08847239999999999
+ "note": "Document is a clear, typed set of meeting minutes with two attached reports (Director's Report and Youth Services Report). All votes are recorded with outcomes. No votes failed.",
+ "cost_usd": 0.11708260000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Muir Haman",
+   "role": "Director",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, david niose, stephanie trudel"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:48 p.m. by chair harry kubetz."
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, david niose, stephanie trudel"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, david niose, stephanie trudel"
+  },
+  {
+   "name": "David Niose",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, david niose, stephanie trudel"
+  },
+  {
+   "name": "Stephanie Trudel",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, laura boussom, robin venezia, david niose, stephanie trudel"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Trustee",
+   "status": "remote",
+   "quote": "members present remotely: maia wentrup"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "members absent: jana-lee balish, glenn mcleod (select board representative)"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board Representative",
+   "status": "absent",
+   "quote": "members absent: jana-lee balish, glenn mcleod (select board representative)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Gift Policy discussion deferred to next month",
+   "quote": "gift policy - defer until next month."
+  },
+  {
+   "decision": "Food and Drink Policy to be discussed further at next meeting",
+   "quote": "we will discuss further at our next meeting."
+  },
+  {
+   "decision": "Trustees should have a disaster plan; Muir will pull together information for board review",
+   "quote": "we should have a disaster plan. muir will pull together information for us to review."
+  },
+  {
+   "decision": "Board will work on updating the five-year strategic plan in coming months",
+   "quote": "we have a five-year strategic plan and will be working on updating it in the coming months."
+  },
+  {
+   "decision": "Technology planning handled by IT department working with Muir",
+   "quote": "working with muir, the it department handles technology planning."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Digital subscription renewals",
+   "what_was_recorded": "Digital subscription renewals coming up with approximately 40K to be charged to Library Materials",
+   "figures_as_printed": [
+    "40K"
+   ],
+   "quote": "digital subscription renewals are coming up and there will be approximately 40k charged to library materials."
+  },
+  {
+   "topic": "FY2026 budget transfer",
+   "what_was_recorded": "Transfer of 7,500 dollars from Staff Salaries and Heating to Electricity Charges due to vacancy and HVAC repairs",
+   "figures_as_printed": [
+    "$7,500"
+   ],
+   "quote": "muir is having $7,500 transferred from staff salaries and from heating to electricity charges."
+  },
+  {
+   "topic": "Terra Cycle electronic recycling donation",
+   "what_was_recorded": "Teddy Doucette donated Terra Cycle electronic recycling box to Friends, total cost 300 dollars including box and return shipping",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "his donation includes the cost of the box and shipping to send it back to terra cycle, for a total of $300."
+  },
+  {
+   "topic": "St. Pauli Textile clothing donation program potential revenue",
+   "what_was_recorded": "St. Pauli Textile clothing donation shed could generate 50 to 200 dollars monthly to Friends of Library",
+   "figures_as_printed": [
+    "$50",
+    "$200"
+   ],
+   "quote": "the friends could earn $50 to $200 per month."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Staff Salaries and Heating accounts to Electricity Charges",
+   "amount_as_printed": "$7,500",
+   "outcome": "proceeding (director stated intent to make transfer due to vacancy and HVAC repair causing increased electricity use)",
+   "quote": "muir is having $7,500 transferred from staff salaries and from heating to electricity charges."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes of March 19, 2026",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "robin made a motion to approve the minutes as amended, seconded by david. the motion passed unanimously by roll call vote."
+  },
+  {
+   "topic": "FY2027 Budget Update",
+   "resolution": "discussed",
+   "tags": [
+    "budget",
+    "town meeting"
+   ],
+   "quote": "town meeting is may 2nd. the budget will be voted on and we will have the results for our may meeting. like us, many libraries across the state are facing cuts."
+  },
+  {
+   "topic": "FY2026 Budget Update",
+   "resolution": "discussed",
+   "tags": [
+    "budget",
+    "transfers",
+    "vacancy"
+   ],
+   "quote": "digital subscription renewals are coming up and there will be approximately 40k charged to library materials. muir will be placing orders so that they can be received before the end of the year. this will",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Staff Update",
+   "resolution": "reported",
+   "tags": [
+    "staff",
+    "programming",
+    "leave"
+   ],
+   "quote": "cheryl stillman is on leave and will be back by june. she has been doing some remote work from home.harry asked about the town's remote work pol",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Poetry Recitation Event with 8th Grade ELA Classes",
+   "resolution": "completed successfully",
+   "tags": [
+    "programs",
+    "community",
+    "outreach"
+   ],
+   "quote": "the poetry recitation event with the 8th grade ela classes was a spectacular success, with almost 60 people in attendance including worcester's former poet laureate juan mato",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "St. Pauli Textile Clothing Donation Program",
+   "resolution": "pending approval from Town Manager",
+   "tags": [
+    "programs",
+    "outreach",
+    "fundraising"
+   ],
+   "quote": "st. pauli textile has asked the library if they would be interested in being a drop-off site for donations of used clothing. st. pauli would place a shed on the library grounds where people can leave d",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Cisco Umbrella Software Trial",
+   "resolution": "in progress, report at next meeting",
+   "tags": [
+    "technology",
+    "filtering"
+   ],
+   "quote": "muir is in the midst of a trial of the software and will report back to us at our next meeting."
+  },
+  {
+   "topic": "Water Fountains Repair",
+   "resolution": "in progress",
+   "tags": [
+    "building maintenance",
+    "facilities"
+   ],
+   "quote": "the water fountains are still not fixed. the access panel is in the storage room where the friends store boxes of books for their book sale."
+  },
+  {
+   "topic": "Trustee Handbook Discussion - Planning",
+   "resolution": "discussed planning requirements",
+   "tags": [
+    "governance",
+    "planning",
+    "handbook"
+   ],
+   "quote": "we reviewed chapter five of the mblc trustees handbook - planning."
+  },
+  {
+   "topic": "Conroy Memorial Garden Update",
+   "resolution": "stone donation pending engraving",
+   "tags": [
+    "memorials",
+    "building"
+   ],
+   "quote": "lydia henshaw is donating a stone for the garden. it needs to be moved to leominster monument for engraving."
+  },
+  {
+   "topic": "Gift Policy",
+   "resolution": "deferred to next month",
+   "tags": [
+    "policy",
+    "governance"
+   ],
+   "quote": "gift policy - defer until next month."
+  },
+  {
+   "topic": "Food and Drink Policy",
+   "resolution": "continued discussion",
+   "tags": [
+    "policy",
+    "governance",
+    "acceptable use"
+   ],
+   "quote": "food & drink policy - a food & drink policy is on the library website, but has never been approved by the trustees. it is actually more of a procedure, than a p",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Friends Donorbox Online Payment System",
+   "resolution": "being improved",
+   "tags": [
+    "fundraising",
+    "technology",
+    "friends"
+   ],
+   "quote": "donorbox is working for new memberships and renewals. chris has received feedback that you cannot opt out of automatic renewals. he is working with donor box to correct this."
+  },
+  {
+   "topic": "Meals on Wheels Book Delivery Collaboration",
+   "resolution": "ongoing with procedures clarification",
+   "tags": [
+    "outreach",
+    "community programs"
+   ],
+   "quote": "laura made the first delivery of books to a meals on wheels client in our collaboration with the lunenburg adult activity center."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "meeting adjourned",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "a motion to adjourn was made by maia and seconded by david. the motion passed unanimously by roll call vote and the meeting was adjourned at 8:57 p.m."
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "staff",
+  "programs",
+  "outreach",
+  "technology",
+  "building maintenance",
+  "governance",
+  "fundraising",
+  "community"
+ ],
+ "dropped_unquoted_by_field": {}
 }

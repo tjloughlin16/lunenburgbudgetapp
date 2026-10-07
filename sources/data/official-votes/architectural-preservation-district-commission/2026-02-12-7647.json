@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2026-02-12",
  "docid": "7647",
@@ -14,7 +14,7 @@
   {
    "motion": "Approve the minutes from the January 8, 2026 meeting",
    "moved_by": "Lloyd",
-   "seconded_by": "",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to approve minutes for january 8th 2026 meeting minutes, by member lloyd a. lockwood aye, lloyd aye, sculimbrene aye; motion approved"
@@ -22,13 +22,86 @@
   {
    "motion": "Resend the letter regarding 50 Main Street with a proposed April 16 meeting date with the trustees",
    "moved_by": "Lockwood",
-   "seconded_by": "",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion by member lockwood to resend the letter with a proposed april 16 meeting date with the trustees i. lloyd: aye, sculimbrene; aye, lockwood: aye - - motion passes."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Both votes passed unanimously with all three members present voting in favor. No seconders are recorded in the minutes.",
- "cost_usd": 0.08183639999999999
+ "note": "\"\"",
+ "cost_usd": 0.1281176,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, lockwood"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "925 Mass Avenue appraised value",
+   "what_was_recorded": "The appraised value of the property at 925 Mass Avenue is $135,000",
+   "figures_as_printed": [
+    "$135K"
+   ],
+   "quote": "appraised value $135k."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "Approved",
+   "tags": [
+    "procedural",
+    "administrative"
+   ],
+   "quote": "motion to approve minutes for january 8th 2026 meeting minutes, by member lloyd a. lockwood aye, lloyd aye, sculimbrene aye; motion approved"
+  },
+  {
+   "topic": "50 Main Street condo association compliance",
+   "resolution": "Motion passed to resend certified letter with proposed April 16 meeting date for trustees",
+   "tags": [
+    "property",
+    "compliance",
+    "condo"
+   ],
+   "quote": "letter has been sent owner and other members of the condo association. letters were sent certified mail."
+  },
+  {
+   "topic": "925 Mass Avenue future use and remediation",
+   "resolution": "Ongoing discussion; consultant review underway",
+   "tags": [
+    "property",
+    "remediation",
+    "future-use",
+    "planning"
+   ],
+   "quote": "state hired planning consultant to review use, could stay as a single-story building, or a small two story with limited parking."
+  }
+ ],
+ "tags": [
+  "architectural-preservation",
+  "property-review",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

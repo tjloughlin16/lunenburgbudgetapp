@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2026-03-23",
  "docid": "7732",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Extend the public comment section past 10 minutes",
+   "motion": "extend the public comment section past 10 minutes",
    "moved_by": "Ms. Gilman",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "ms. gilman makes a motion to extend the public comment section past 10 minutes, ms. brzozoski seconds the motion, all approve"
   },
   {
-   "motion": "Not pay MASC dues of $6500 for next year",
+   "motion": "not pay MASC dues of $6500 for next year",
    "moved_by": "Ms. Gilman",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. gilman makes a motion to not pay masc dues of $6500 for next year, ms. brzozoski seconds the motion all approve."
+   "quote": "ms. gilman makes a motion to not pay masc dues of $6500 for next year, ms. brzozoski seconds the motion all approve"
   },
   {
-   "motion": "Accept the FY 27 balanced budget as presented",
+   "motion": "accept the FY 27 Balanced Budget as presented",
    "moved_by": "Ms. Gilman",
    "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed",
@@ -36,15 +36,414 @@
    "quote": "ms. gilman makes a motion to accept this budget as presented, mr. sculimbrene seconds the motion, all approve"
   },
   {
-   "motion": "Adjourn at 7:39",
+   "motion": "adjourn the meeting at 7:39",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ms. brzozoski makes a motion to adjourn at 7:39, ms. gilman seconds the motion all approve."
+   "quote": "ms. brzozoski makes a motion to adjourn at 7:39, ms. gilman seconds the motion all approve"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10890739999999999
+ "dropped_unquoted": 1,
+ "note": "Minutes appear complete and readable. All four votes are clearly recorded with outcomes. No pages missing. One blank seat on committee (Member, TBD). Dr. Fortuna's presentation slides referenced but not included in text. Dollar figures for sports budgets cited by public commenter from Dr. Fortuna's presentation slides rather than stated directly in minutes text.\"",
+ "cost_usd": 0.21365860000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski, vice chair - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mandy gilman, secretary - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Member",
+   "status": "absent",
+   "quote": "emily young, member - absent"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "not stated",
+   "quote": "christopher mcnamara - business administrator"
+  },
+  {
+   "name": "Casey McDonnell",
+   "role": "teacher at Luneburg High School and head football coach",
+   "status": "present",
+   "quote": "casey mcdonnell, 1024 mass ave i'm a teacher at luneburg high school and i'm also the head football coach"
+  },
+  {
+   "name": "Nathaniel Ayles",
+   "role": "student athlete",
+   "status": "present",
+   "quote": "nathaniel ayles, student athlete, i have comments on the busing"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "resident",
+   "status": "present",
+   "quote": "chris sullivan, 108 highland street, i am not jealous or envious"
+  },
+  {
+   "name": "Jim Broden",
+   "role": "Ski Team Founder",
+   "status": "present",
+   "quote": "jim broden, ski team founder i've been involved with the ski team for over 20 years"
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "parent",
+   "status": "present",
+   "quote": "anna lockwood i want to thank mr. broden for his comments"
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "resident",
+   "status": "present",
+   "quote": "matt snyder 985 flat hill road i agree with and appreciate everything everybody said to date"
+  },
+  {
+   "name": "Kara Harunkiewicz",
+   "role": "resident",
+   "status": "present",
+   "quote": "kara harunkiewicz, 165 gilchrest street i'm normally up there and trust me, i fully agree"
+  },
+  {
+   "name": "Laura Barooshian",
+   "role": "resident",
+   "status": "present",
+   "quote": "laura barooshian, 389 mulpus road i was at the marathon meeting on wednesday night"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "school employee and district representative",
+   "status": "present",
+   "quote": "mary foyle, 985 flat hill road as someone who's worked in this district almost 25 years"
+  },
+  {
+   "name": "Griffin Case",
+   "role": "custodian at the high school",
+   "status": "present",
+   "quote": "griffin case, 305 wayland road i am a custodian at the high school"
+  },
+  {
+   "name": "Christa Palma",
+   "role": "first grade teacher",
+   "status": "not stated",
+   "quote": "the first grade team is writing to express serious concern about the proposed change from five first grade classrooms"
+  },
+  {
+   "name": "Jackie Favreau",
+   "role": "first grade teacher",
+   "status": "not stated",
+   "quote": "sincerely, christa palma, jackie favreau, kara slattery, pattie kilcommins, and mike courtemanche"
+  },
+  {
+   "name": "Kara Slattery",
+   "role": "first grade teacher",
+   "status": "not stated",
+   "quote": "sincerely, christa palma, jackie favreau, kara slattery, pattie kilcommins, and mike courtemanche"
+  },
+  {
+   "name": "Pattie Kilcommins",
+   "role": "first grade teacher",
+   "status": "not stated",
+   "quote": "sincerely, christa palma, jackie favreau, kara slattery, pattie kilcommins, and mike courtemanche"
+  },
+  {
+   "name": "Mike Courtemanche",
+   "role": "first grade teacher",
+   "status": "not stated",
+   "quote": "sincerely, christa palma, jackie favreau, kara slattery, pattie kilcommins, and mike courtemanche"
+  },
+  {
+   "name": "Nicole Bienvenu",
+   "role": "second grade teacher",
+   "status": "not stated",
+   "quote": "a team of professional educators with a collective 71 years of teaching and practical experience"
+  },
+  {
+   "name": "Melissa Bourgeois",
+   "role": "second grade teacher",
+   "status": "not stated",
+   "quote": "respectfully, nicole bienvenu, melissa bourgeois, britney gibbons, julie hudson, sara kenney, laura refrigeri, and karen hurley"
+  },
+  {
+   "name": "Britney Gibbons",
+   "role": "second grade teacher",
+   "status": "not stated",
+   "quote": "respectfully, nicole bienvenu, melissa bourgeois, britney gibbons, julie hudson, sara kenney, laura refrigeri, and karen hurley"
+  },
+  {
+   "name": "Julie Hudson",
+   "role": "second grade teacher",
+   "status": "not stated",
+   "quote": "respectfully, nicole bienvenu, melissa bourgeois, britney gibbons, julie hudson, sara kenney, laura refrigeri, and karen hurley"
+  },
+  {
+   "name": "Sara Kenney",
+   "role": "second grade teacher",
+   "status": "not stated",
+   "quote": "respectfully, nicole bienvenu, melissa bourgeois, britney gibbons, julie hudson, sara kenney, laura refrigeri, and karen hurley"
+  },
+  {
+   "name": "Laura Refrigeri",
+   "role": "second grade teacher",
+   "status": "not stated",
+   "quote": "respectfully, nicole bienvenu, melissa bourgeois, britney gibbons, julie hudson, sara kenney, laura refrigeri, and karen hurley"
+  },
+  {
+   "name": "Karen Hurley",
+   "role": "second grade teacher",
+   "status": "not stated",
+   "quote": "respectfully, nicole bienvenu, melissa bourgeois, britney gibbons, julie hudson, sara kenney, laura refrigeri, and karen hurley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board will meet with booster parents for athletics and other extracurricular activities",
+   "quote": "we met with the booster parents for athletics. we're going to meet with the booster parents for other extracurricular activities."
+  },
+  {
+   "decision": "The board committed to engaging in long-term planning year-round rather than crisis management",
+   "quote": "we need to engage in long-term planning and stop crisis management"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MASC membership dues",
+   "what_was_recorded": "Motion approved to not pay MASC dues for next year",
+   "figures_as_printed": [
+    "$6500"
+   ],
+   "quote": "ms. gilman makes a motion to not pay masc dues of $6500 for next year"
+  },
+  {
+   "topic": "Athletic transportation",
+   "what_was_recorded": "Athletic transportation proposed for elimination as part of balanced budget; multiple speakers raised concerns about liability and alternatives",
+   "figures_as_printed": [],
+   "quote": "dr. fortuna shares a slideshow to explain the consequences of the proposed balanced budget"
+  },
+  {
+   "topic": "Music and extracurricular transportation",
+   "what_was_recorded": "Music transportation proposed for cuts in balanced budget",
+   "figures_as_printed": [],
+   "quote": "there won't be an athletic transportation, there won't be a music transportation cut"
+  },
+  {
+   "topic": "Athletic trainer position",
+   "what_was_recorded": "Full-time athletic trainer position proposed for elimination",
+   "figures_as_printed": [],
+   "quote": "not having a trainer here full-time is a massive detriment to our program here at the school"
+  },
+  {
+   "topic": "Fifth grade music teacher position",
+   "what_was_recorded": "Fifth grade music teacher position proposed for elimination",
+   "figures_as_printed": [],
+   "quote": "there won't be a point to music teacher at the fifth grade"
+  },
+  {
+   "topic": "Primary school class sizes",
+   "what_was_recorded": "First grade proposed to reduce from five classrooms to four, increasing class sizes from approximately 23 to 30+ students",
+   "figures_as_printed": [
+    "5",
+    "23",
+    "4",
+    "30"
+   ],
+   "quote": "the proposed change from five first grade classrooms of approximately 23 students each to four classrooms of 30 students or more each"
+  },
+  {
+   "topic": "Middle and high school sports programs",
+   "what_was_recorded": "Multiple specific sports budgets cited from Dr. Fortuna's presentation by public commenter",
+   "figures_as_printed": [
+    "$2,400",
+    "$3,300",
+    "$4,200",
+    "$9,976",
+    "$14,415",
+    "$4,439"
+   ],
+   "quote": "we're talking about $2,400 for the ski team, $3,300 for golf, $4,200 for girls lacrosse, that's $9,976. we're presently spending $14,415 on middle school sports"
+  },
+  {
+   "topic": "Assistant principal position at primary school",
+   "what_was_recorded": "Second grade teachers' letter requested not cutting full-time assistant principal position",
+   "figures_as_printed": [],
+   "quote": "our school would be less safe and less functional without a full-time assistant principal"
+  },
+  {
+   "topic": "General education staffing",
+   "what_was_recorded": "Staff cuts at primary school level proposed; teachers' letters expressed serious concern about class sizes and reduced ability to support students",
+   "figures_as_printed": [
+    "71"
+   ],
+   "quote": "a team of professional educators with a collective 71 years of teaching and practical experience"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Casey McDonnell",
+   "stated_role": "teacher at Luneburg High School and head football coach",
+   "topic": "athletic transportation liability and alternatives",
+   "quote": "i strongly believe that a more creative avenue for further conversation needs to be had about the athletic transportation"
+  },
+  {
+   "speaker": "Nathaniel Ayles",
+   "stated_role": "student athlete",
+   "topic": "impact of cutting sports and band transportation",
+   "quote": "cutting both sports and band transportation from our budget would unfairly limit student access to essential extracurricular activities"
+  },
+  {
+   "speaker": "Chris Sullivan",
+   "stated_role": "resident",
+   "topic": "value of extracurricular activities and athletic trainer role",
+   "quote": "athletics and other extracurricular here at lunenburg play a significant role in student development"
+  },
+  {
+   "speaker": "Jim Broden",
+   "stated_role": "Ski Team Founder",
+   "topic": "ski team self-funding and co-op alternatives",
+   "quote": "we were a completely self-funded team and i believe that we could raise that money"
+  },
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "parent",
+   "topic": "education focus and pragmatic sports funding",
+   "quote": "if sports have less than number of kids then school department will not provide transportation might be a good rule"
+  },
+  {
+   "speaker": "Matt Snyder",
+   "stated_role": "resident",
+   "topic": "education funding and annual budget cycle problems",
+   "quote": "we're going through this every year right now. it's not every 10 years"
+  },
+  {
+   "speaker": "Kara Harunkiewicz",
+   "stated_role": "resident",
+   "topic": "education and class sizes as priority over athletics",
+   "quote": "you can't run successful sports programs when your lowest level of students aren't being educated"
+  },
+  {
+   "speaker": "Laura Barooshian",
+   "stated_role": "resident",
+   "topic": "override vote necessity and town meeting attendance",
+   "quote": "may 2nd is town meeting day and may 16th is voting day, 117 votes puts through an override"
+  },
+  {
+   "speaker": "Mary Foyle",
+   "stated_role": "school employee and district representative",
+   "topic": "historical budget cuts and override necessity",
+   "quote": "if the override does not go through, it will cost the town more"
+  },
+  {
+   "speaker": "Griffin Case",
+   "stated_role": "custodian and new resident",
+   "topic": "support for schools despite tax impact",
+   "quote": "i think this budget has been a little scary, but this place is amazing"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:00 PM",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "call to order at 6:00 by mr. sculimbrene"
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "completed",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "pledge of allegiance"
+  },
+  {
+   "topic": "Public Comment - first session",
+   "resolution": "extended past 10 minutes; multiple speakers discussed athletic cuts, class sizes, and override necessity",
+   "tags": [
+    "budget",
+    "athletics",
+    "extracurriculars",
+    "override"
+   ],
+   "quote": "ms. gilman makes a motion to extend the public comment section past 10 minutes, ms. brzozoski seconds the motion, all approve"
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "presented; addressed budget crisis, long-term planning needs, and override urgency",
+   "tags": [
+    "budget",
+    "planning"
+   ],
+   "quote": "this has been an especially unusual form of torture. making people who care a lot about education being legally compelled to disassemble the school district"
+  },
+  {
+   "topic": "FY 27 Balanced Budget Vote",
+   "resolution": "approved",
+   "tags": [
+    "budget",
+    "decision"
+   ],
+   "quote": "ms. gilman makes a motion to accept this budget as presented, mr. sculimbrene seconds the motion, all approve"
+  },
+  {
+   "topic": "MASC membership dues",
+   "resolution": "approved not to pay $6500 in MASC dues",
+   "tags": [
+    "budget",
+    "savings"
+   ],
+   "quote": "ms. gilman makes a motion to not pay masc dues of $6500 for next year"
+  },
+  {
+   "topic": "Public Comment - second session",
+   "resolution": "continued discussion of budget impact and override vote importance",
+   "tags": [
+    "budget",
+    "override"
+   ],
+   "quote": "everything that people said tonight, thank you. you also need to be saying it to the select board"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned at 7:39 PM",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "ms. brzozoski makes a motion to adjourn at 7:39, ms. gilman seconds the motion all approve"
+  }
+ ],
+ "tags": [
+  "budget-crisis",
+  "school-committee",
+  "budget-cuts",
+  "athletics",
+  "extracurriculars",
+  "class-sizes",
+  "education-funding",
+  "override-vote",
+  "town-meeting",
+  "staffing-reductions"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

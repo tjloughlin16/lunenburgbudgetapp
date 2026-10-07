@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-12-03",
  "docid": "7538",
@@ -12,15 +12,215 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session",
+   "motion": "Adjourn the open meeting and enter executive session, not returning to open session after exiting the executive session.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session by sarah cammer, seconded by brian laffond. all in favor."
+   "quote": "there was a motion to adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session by sarah cammer"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes do not record formal votes on prior minutes (the text states board members were unable to review them). The executive session approvals of 5 real estate exemptions are stated as approved but no formal motion, vote count, or voting language is recorded; therefore not counted as a voted motion per the rules.",
- "cost_usd": 0.0617354
+ "note": "Text is macOS Vision OCR. Page 1 approval stamp reads '102/25/26' and page 4 'APPROVED 2/4/26'; neither is legible enough to read as an approval record for this meeting, so approval status is not recorded here. The minutes show no vote on approving prior minutes (the board could not review them). The executive session approved 5 exemptions with no recorded motion or vote, so it is recorded as a decision, not a vote. Only one motion is recorded (adjournment into executive session), and the minutes give 'All in favor' with no count. Public comment: the minutes state there were no comments from the public, naming no speakers. Randy Mercier and Robin Nano are mentioned only as actors in reported work and are not recorded as attendees.",
+ "cost_usd": 0.014368970000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, member brian marple, principal assessor lynda cajka."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, member brian marple, principal assessor lynda cajka."
+  },
+  {
+   "name": "Brian Marple",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, member brian marple, principal assessor lynda cajka."
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, member brian marple, principal assessor lynda cajka."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board to review and discuss the Littleton sample code of conduct policies at a future meeting (no vote recorded).",
+   "quote": "lynda cajka provided a sample of the policies that the town of littleton developed. the board will review and discuss at a future meeting."
+  },
+  {
+   "decision": "Brian Laffond to work on getting Brian Marple access to the Assessor website (no vote recorded).",
+   "quote": "brian laffond will work on getting brian marple access."
+  },
+  {
+   "decision": "Lynda Cajka to follow up on a forestry-coded property sold in October with a lean; a certified letter was mailed (no vote recorded).",
+   "quote": "a certified letter was mailed, and lynda cajka will follow up."
+  },
+  {
+   "decision": "In executive session, all 5 real estate exemptions (3 Clause 22/Veteran, 2 Clause 22B) were approved by the Board of Assessors; no motion or vote is recorded in the minutes.",
+   "quote": "all of the 5 real estate exemptions were approved by the board of assessors."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Residential tax rate and median home value (FY 2026)",
+   "what_was_recorded": "The Select Board approved an estimated residential single tax rate; the minutes give the median single-family value and the average tax for FY 2026.",
+   "quote": "the select board approved a residential single tax rate that is estimated to be around $14.39 per thousand.",
+   "figures_as_printed": [
+    "$14.39 per thousand",
+    "$517,296",
+    "$7,443.89"
+   ]
+  },
+  {
+   "topic": "Median single-family value and average tax",
+   "what_was_recorded": "The median single-family home value and average tax for FY 2026 were reported.",
+   "quote": "the median single family home value for fy 2026 was $517,296 and the average tax was $7,443.89.",
+   "figures_as_printed": [
+    "$517,296",
+    "$7,443.89"
+   ]
+  },
+  {
+   "topic": "Motor vehicle excise tax commitment 6 of 2025",
+   "what_was_recorded": "Robin Nano processed commitment number 6 of 2025: 442 excise tax bills totaling the printed amount.",
+   "quote": "there were 442 excise tax bills that totaled $44,864.32.",
+   "figures_as_printed": [
+    "$44,864.32"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening comments",
+   "resolution": "no action; welcomed Brian Marple to the Board",
+   "quote": "brian laffond welcomed brian marple to the board.",
+   "tags": [
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "no action; status reported (tax classification, billing, excise, abutters, forms of list, Clause 18 research)",
+   "quote": "status report from principal assessor.",
+   "tags": [
+    "tax classification",
+    "billing",
+    "excise tax",
+    "abutters",
+    "forms of list"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes (Sept–Nov 2025 and Nov 19 executive session)",
+   "resolution": "not approved; board members were unable to review the minutes",
+   "quote": "the board members were unable to review any minutes. the executive session minutes for the last meeting have not been completed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Assessor website change and Board approval",
+   "resolution": "no new updates; going-live date January 1, 2026; access to be arranged",
+   "quote": "there are no new updates regarding the website aside from the anticipated going live date of january 1. 2026.",
+   "tags": [
+    "website",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Neighborhood review start date",
+   "resolution": "noted; anticipated start early January 2026 following Town Meeting approval",
+   "quote": "the article regarding the neighborhood study was approved at town meeting.",
+   "tags": [
+    "neighborhood review"
+   ]
+  },
+  {
+   "topic": "Criteria for Clause 18",
+   "resolution": "discussed; no set income or asset limits found in Westford or Littleton; research ongoing",
+   "quote": "lynda cajka contacted westford and littleton to inquire if any income and asset limitations have been established.",
+   "tags": [
+    "Clause 18",
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "BOA Code of Conduct policies",
+   "resolution": "continued; Board to review and discuss at a future meeting",
+   "quote": "lynda cajka provided a sample of the policies that the town of littleton developed.",
+   "tags": [
+    "code of conduct",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Update on new mapping software (postponed)",
+   "resolution": "postponed; no contact yet with Data Scout representative",
+   "quote": "lynda cajka has not contacted the representative at data scout.",
+   "tags": [
+    "mapping software"
+   ]
+  },
+  {
+   "topic": "BOA policies binder (postponed)",
+   "resolution": "discussed; website upload questioned, documents kept on OneDrive",
+   "quote": "brian laffond questions if these documents and information can be added to the website.",
+   "tags": [
+    "policies binder",
+    "website"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "noted; December 17, 2025 tentatively scheduled; February 4 and 25, 2026 added",
+   "quote": "upcoming meetings: december 17, 2025, january 7, 2026, and january 21, 2026.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "no comments from public or Board",
+   "quote": "there were no comments from the public",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered after adjournment of open meeting; 5 real estate exemptions approved",
+   "quote": "executive session started at 7:55 p.m.",
+   "tags": [
+    "executive session",
+    "real estate exemptions"
+   ]
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "tax classification",
+  "tax rate",
+  "excise tax",
+  "real estate exemptions",
+  "Clause 18",
+  "code of conduct",
+  "website",
+  "mapping software",
+  "neighborhood review",
+  "executive session",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

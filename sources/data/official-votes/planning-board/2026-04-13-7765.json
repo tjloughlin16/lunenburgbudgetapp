@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2026-04-13",
  "docid": "7765",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Continue the 222 West Townsend Rd stormwater permits hearing to 4/27/26 at 6:35pm",
+   "motion": "Continue 222 West Townsend Rd Stormwater Permits (PBSW-26-2, PBSW-26-3, PBSW-26-4, PBSW-26-5) until 4/27/26 at 6:35pm.",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "a. burney moved to continue until 4/27/26 @ 6:35pm. a. reid, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Continue the 0 Reservoir Rd stormwater permit hearing to 4/27/26 at 6:35pm",
+   "motion": "Continue 0 Reservoir Rd Storm Water Permit (PBSW-25-5, Peer Review) until 4/27/26 at 6:35pm.",
    "moved_by": "A. Burney",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "a. burney moved to continue to 4/27/26 @ 6:35pm. t. willsmer, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Accept bond of $21,260 via cashier's check for stormwater work at 181 Electric Ave",
+   "motion": "Accept bond of $21,260 via cashier's check for stormwater work at 181 Electric Ave. (PBSW-24-9).",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
@@ -36,7 +36,7 @@
    "quote": "a. burney moved to accept bond $21,260 via cashier's check. a. reid, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Accept and adopt the new fee schedule as presented",
+   "motion": "Accept and adopt the new fee schedule as presented.",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
@@ -44,7 +44,7 @@
    "quote": "a. burney moved to accept and adopt the new fee schedule as presented. a. reid, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Inform the Select Board that the board does not feel it is appropriate to pursue the Leominster Rd property in the current financial environment regardless of potential planning purposes",
+   "motion": "Inform the Select Board that the Planning Board does not feel it is appropriate to pursue 35 Leominster Rd ROFR in the current financial environment regardless of potential planning purposes.",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
@@ -52,7 +52,7 @@
    "quote": "a. burney made a motion to inform the select board that we do not feel it is appropriate to pursue in the current financial environment regardless of the potential planning purposes. a. reid, second. verbal vote: aye (4/0)"
   },
   {
-   "motion": "Accept the new Stormwater Permit Standard Conditions as presented",
+   "motion": "Accept the new Stormwater Permit Standard Conditions as presented.",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
@@ -60,7 +60,7 @@
    "quote": "a. burney made a motion to accept the new stormwater permit standard conditions as presented. a. reid, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Approve the 3/23/26 minutes as written",
+   "motion": "Approve 3/23/26 minutes as written.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
@@ -68,7 +68,7 @@
    "quote": "t. willsmer moved to approve as written. a. reid, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn.",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
@@ -77,6 +77,254 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0732364
+ "note": "\"\"",
+ "cost_usd": 0.11717459999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Stephen Wallace",
+   "role": "Director of Planning and Economic Development",
+   "status": "present",
+   "quote": "s. wallace reported he is still gathering examples of by-laws from other communities"
+  },
+  {
+   "name": "J. Leclair",
+   "role": "representing applicant, McCarty Engineering",
+   "status": "present",
+   "quote": "j. leclair (mccarty engineering) requested a continuance to the next meeting."
+  },
+  {
+   "name": "Chris Stoddard",
+   "role": "representing applicant, Stoddard Engineering",
+   "status": "present",
+   "quote": "chris stoddard (stoddard engineering) on behalf of the client kenneth chaplin, stated projects are 4-bedroom, single family homes."
+  },
+  {
+   "name": "Wes Flis",
+   "role": "representing applicant, McCarty Engineering",
+   "status": "present",
+   "quote": "j. leclair and wes flis (mccarty engineering) on behalf of applicant, stated the plan has changed"
+  },
+  {
+   "name": "L. Winchester",
+   "role": "resident, 172 West Townsend Rd",
+   "status": "present",
+   "quote": "l. winchester and k. roberts of 172 west townsend rd stated their well is on the property line"
+  },
+  {
+   "name": "K. Roberts",
+   "role": "resident, 172 West Townsend Rd",
+   "status": "present",
+   "quote": "l. winchester and k. roberts of 172 west townsend rd stated their well is on the property line"
+  },
+  {
+   "name": "R. Proctor",
+   "role": "representing applicant, Dillis and Roy",
+   "status": "remote",
+   "quote": "prior to the meeting r. proctor (dillis and roy) submitted email request to continue until the next meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "S. Wallace to gather examples of by-laws from other communities similar to Lunenburg, with goal to have a written draft by mid-May and present to the board for review, with feedback to be provided to other boards and committees by mid-summer for presentation at next year's annual town meeting.",
+   "quote": "s. wallace reported he is still gathering examples of by-laws from other communities that are like lunenburg. he hopes to have a written draft by mid-may out to the board for review."
+  },
+  {
+   "decision": "J. Leclair to submit continuance request in writing for 0 Reservoir Rd ANR-26-2 to the next meeting.",
+   "quote": "j. leclair (mccarty engineering) requested a continuance to the next meeting. he will submit in writing"
+  },
+  {
+   "decision": "A. Burney requested that details for 222 West Townsend Rd project list all plants and species, and requested clarification on timing of lot openings.",
+   "quote": "a. burney asked about the plant gardens as they seem sparse, and stated details need to list all plants and species."
+  },
+  {
+   "decision": "S. Wallace to review Revised Stormwater Permit Standard Conditions with town council to confirm no issues, meeting to occur the day after this meeting.",
+   "quote": "s. wallace stated he is meeting with the town council tomorrow and will ask him to review."
+  },
+  {
+   "decision": "Master Plan Steering Committee final copy received from Over and Under; M. Brenner to forward to S. Wallace to send to the Board for discussion and approval at next meeting.",
+   "quote": "m. brenner has received the \"final\" copy from over and under and will forward it to s. wallace to send it out to the board."
+  },
+  {
+   "decision": "A. Reid to attend Nashoba Health Equity Partnership meetings; S. Wallace to coordinate with health agent to avoid duplication.",
+   "quote": "a. reid stated she has come across nashoba health equity partnership, and they are meeting and will plan to attend but does not want to interfere if someone from another board is already attending. s. wallace stated he would speak with the health agent."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "181 Electric Ave. Stormwater Work Extension Bond",
+   "what_was_recorded": "Bond accepted for remaining stormwater work, with engineer and Building Commissioner inspections completed; belief that amount should cover costs.",
+   "figures_as_printed": [
+    "$21,260"
+   ],
+   "quote": "the belief is $21,260 (including the 30% escalator) should be enough to cover costs of remaining work."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "L. Winchester",
+   "stated_role": "resident, 172 West Townsend Rd",
+   "topic": "well location and stormwater concerns",
+   "quote": "l. winchester and k. roberts of 172 west townsend rd stated their well is on the property line, south of the rain gardens and wants to know where the extra water is going to go?"
+  },
+  {
+   "speaker": "K. Roberts",
+   "stated_role": "resident, 172 West Townsend Rd",
+   "topic": "well location and stormwater concerns",
+   "quote": "l. winchester and k. roberts of 172 west townsend rd stated their well is on the property line, south of the rain gardens and wants to know where the extra water is going to go?"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Chair/Director's Report",
+   "resolution": "ongoing",
+   "tags": [
+    "by-laws",
+    "annual town meeting"
+   ],
+   "quote": "s. wallace reported he is still gathering examples of by-laws from other communities that are like lunenburg. he hopes to have a written draft by mid-may out to the board for review."
+  },
+  {
+   "topic": "ANR Plans - 0 Reservoir Rd (ANR-26-2)",
+   "resolution": "continued",
+   "tags": [
+    "ANR",
+    "continuance",
+    "applicant request"
+   ],
+   "quote": "continued from 2/23/26 (applicant request): 0 reservoir rd. (anr-26-2) j. leclair (mccarty engineering) requested a continuance to the next meeting."
+  },
+  {
+   "topic": "222 West Townsend Rd Stormwater Permits (PBSW-26-2, PBSW-26-3, PBSW-26-4, PBSW-26-5)",
+   "resolution": "continued to 4/27/26",
+   "tags": [
+    "stormwater permit",
+    "4-bedroom homes",
+    "septic systems",
+    "rain gardens"
+   ],
+   "quote": "chris stoddard (stoddard engineering) on behalf of the client kenneth chaplin, stated projects are 4-bedroom, single family homes. each property has its own septic, which has already been approved."
+  },
+  {
+   "topic": "0 Reservoir Rd Storm Water Permit (PBSW-25-5, Peer Review)",
+   "resolution": "continued to 4/27/26",
+   "tags": [
+    "stormwater permit",
+    "drainage",
+    "stone depressions",
+    "easements",
+    "maintenance"
+   ],
+   "quote": "continued from 12/15/25: 0 reservoir rd. storm water permit, (pbsw-25-5(peer review)) j. leclair and wes flis (mccarty engineering) on behalf of applicant, stated the plan has changed by eliminating the common driveway and adding an individual driveway per lot."
+  },
+  {
+   "topic": "0 Reservoir Rd Special Permit (PBSP-25-10)",
+   "resolution": "pending on stormwater approval",
+   "tags": [
+    "special permit",
+    "applicant intent to withdraw"
+   ],
+   "quote": "continued from 2/9/26: 0 reservoir rd., special permit, (pbsp-25-10) discussed and voted on in conjunction with stormwater permit. j. leclair (mccarty engineering) intent is to withdraw application if stormwater is approved."
+  },
+  {
+   "topic": "860 New West Townsend Rd Site Plan Review, Stormwater Permit, and Special Permit (PBSA-26-1, PBSW-26-1, PBSP-26-1)",
+   "resolution": "continued to 4/27/26",
+   "tags": [
+    "site plan review",
+    "stormwater permit",
+    "special permit"
+   ],
+   "quote": "continued from 3/16/26: 860 new west townsend rd., site plan review, (pbsa-26- 1); stormwater permit, (pbsw-26-1); special permit, (pbsp-26-1) prior to the meeting r. proctor (dillis and roy) submitted email request to continue until the next meeting 4/27/2",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "181 Electric Ave. Stormwater Work Bond (PBSW-24-9)",
+   "resolution": "approved",
+   "tags": [
+    "bond",
+    "stormwater work",
+    "extension"
+   ],
+   "quote": "s. wallace stated there is still stormwater work to be done. the immediate work is complete. the engineer from graves has been out twice. the building commissioner was out today. the belief is $21,260 (including the 30% escalator) should be enough to cover costs of remaining work."
+  },
+  {
+   "topic": "Fee Schedule",
+   "resolution": "adopted",
+   "tags": [
+    "fee schedule",
+    "stormwater by-law",
+    "board review"
+   ],
+   "quote": "a. burney asked if it was compared to other towns. s. wallace stated he did compare to other communities. he also stated he wants to change the stormwater by-law by removing the fee and adding it to the fee schedule"
+  },
+  {
+   "topic": "35 Leominster Rd – Right of First Refusal (ROFR)",
+   "resolution": "decided not to pursue",
+   "tags": [
+    "ROFR",
+    "open space",
+    "financial environment"
+   ],
+   "quote": "t. willsmer stated the open space committee discussed it but did not come to a decision and will rediscuss at next meeting. m. brenner mentioned receiving an email stating that the decision needs to be made before their next meeting."
+  },
+  {
+   "topic": "Revised Stormwater Permit Standard Conditions",
+   "resolution": "accepted",
+   "tags": [
+    "stormwater",
+    "permit conditions",
+    "standard conditions"
+   ],
+   "quote": "a. burney stated he thinks language should be run by town council just to confirm there are no issues; he doesn't think there will be. but it's better to be sure."
+  },
+  {
+   "topic": "Master Plan Steering Committee",
+   "resolution": "pending approval",
+   "tags": [
+    "master plan",
+    "steering committee"
+   ],
+   "quote": "m. brenner has received the \"final\" copy from over and under and will forward it to s. wallace to send it out to the board."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "stormwater",
+  "permits",
+  "site plan review",
+  "special permits",
+  "ANR plans",
+  "fee schedule",
+  "by-laws",
+  "drainage",
+  "septic systems",
+  "bonds"
+ ],
+ "dropped_unquoted_by_field": {}
 }

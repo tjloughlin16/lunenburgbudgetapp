@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2026-04-06",
  "docid": "7749",
@@ -12,48 +12,175 @@
  },
  "votes": [
   {
-   "motion": "to approve a variance for an offset to wetlands from 100-90 feet on primary system and 100-60 feet on reserve area at 1491 Mass Avenue",
-   "moved_by": "Rudd",
-   "seconded_by": "Jewell",
-   "outcome": "passed",
+   "motion": "Approve variance for septic system offset at 1491 Mass Avenue, reducing requirements from 100 feet to 90 feet for primary system and 100 feet to 60 feet for reserve area",
+   "moved_by": "Lorraine Rudd",
+   "seconded_by": "Perry Jewell",
+   "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "on motion by rudd and second by jewell, a roll call vote was called as follows: rudd - yes pirro - yes jewell - yes proctor - recuse variance was approved."
+   "quote": "after discussion and on motion by rudd and second by jewell, a roll call vote was called as follows: rudd - yes pirro - yes jewell - yes proctor - recuse variance was approved."
   },
   {
-   "motion": "to designate the apartment at 3 Chase Road as a studio apartment",
-   "moved_by": "Pirro",
-   "seconded_by": "Jewell",
+   "motion": "Designate the apartment at 3 Chase Road as a studio apartment",
+   "moved_by": "Nick Pirro",
+   "seconded_by": "Perry Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by pirro and second by jewell, t he board voted to make this apartment as studio apartment. all in favor",
+   "quote": "after discussion and on motion by pirro and second by jewell, t he board voted to make this apartment as studio apartment. all in favor",
    "quote_taken_from_text": true
   },
   {
-   "motion": "to grant an extension until May 18th at 4:30 pm for resolution of water seepage at 41 New West Townsend Road",
-   "moved_by": "Jewell",
-   "seconded_by": "Rudd",
+   "motion": "Grant an extension until May 18, 2026 at 4:30 pm for resolution of water seepage issue at 41 New West Townsend Road",
+   "moved_by": "Perry Jewell",
+   "seconded_by": "Lorraine Rudd",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by rudd, the board granted an extension until may 18th at 4:30 pm at which time a solution must be provided. all in favor."
+   "quote": "after discussion and on motion by jewell and second by rudd, the board granted an extension until may 18th at 4:30 pm at which time a solution must be provided. all in favor."
   },
   {
-   "motion": "to take back the use of the Septic Repair Fund for use by the Board of Health",
-   "moved_by": "Rudd",
-   "seconded_by": "Pirro",
+   "motion": "Reclaim the use of the Septic Repair Fund from Parks Commission for use by the Board of Health",
+   "moved_by": "Lorraine Rudd",
+   "seconded_by": "Nick Pirro",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by rudd and second by pirro, the board voted to take back the use of the septic repair fund for use by the board of health. all in favor."
+   "quote": "after discussion and on motion by rudd and second by pirro, the board voted to take back the use of the septic repair fund for use by the board of health. all in favor."
   },
   {
-   "motion": "to adjourn the meeting",
-   "moved_by": "Rudd",
-   "seconded_by": "Proctor",
+   "motion": "Adjourn the meeting",
+   "moved_by": "Lorraine Rudd",
+   "seconded_by": "Matt Proctor",
    "outcome": "passed",
    "procedural": true,
-   "quote": "on motion by rudd and second by proctor the meeting was adjourned at 5:30 pm. all in favor."
+   "quote": "having no further business and on motion by rudd and second by proctor the meeting was adjourned at 5:30 pm. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09159040000000002
+ "dropped_unquoted": 3,
+ "note": "\"\"",
+ "cost_usd": 0.14807160000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Proctor",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: matt proctor, lorraine rudd, nick pirro and perry jewell."
+  },
+  {
+   "name": "Lorraine Rudd",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: matt proctor, lorraine rudd, nick pirro and perry jewell."
+  },
+  {
+   "name": "Nick Pirro",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: matt proctor, lorraine rudd, nick pirro and perry jewell."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: matt proctor, lorraine rudd, nick pirro and perry jewell."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "",
+   "status": "present",
+   "quote": "dan proctor met with the board to request an offset to wetlands less than 100 feet."
+  },
+  {
+   "name": "Carla Laventure",
+   "role": "owner",
+   "status": "present",
+   "quote": "carla laventure, owner, met with the board on an outstanding housing complaint."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Septic Repair Fund",
+   "what_was_recorded": "Septic Repair Funds (old grant money) authorized in August 2021 for septic system work at Marshall Park, now being reclaimed by Board of Health",
+   "figures_as_printed": [],
+   "quote": "in august of 2021 the board of health voted to allow the use of the septic repair funds (old grant money) be used to replace/repair the septic system at marshall park."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Septic Repair Fund from Parks Commission to Board of Health",
+   "amount_as_printed": "",
+   "outcome": "approved",
+   "quote": "the board voted to take back the use of the septic repair fund for use by the board of health. all in favor."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dan Proctor",
+   "stated_role": "",
+   "topic": "Septic system offset variance at 1491 Mass Avenue",
+   "quote": "dan proctor met with the board to request an offset to wetlands less than 100 feet."
+  },
+  {
+   "speaker": "Carla Laventure",
+   "stated_role": "owner",
+   "topic": "Housing complaint with water seepage at 41 New West Townsend Road",
+   "quote": "carla laventure, owner, met with the board on an outstanding housing complaint."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Prior meeting minutes approval",
+   "resolution": "approved",
+   "quote": "minutes approved december 6, 2025 february 2, 2026 march 16, 2026",
+   "tags": [
+    "procedural",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Septic system offset variance at 1491 Mass Avenue",
+   "resolution": "approved",
+   "quote": "dan proctor met with the board to request an offset to wetlands less than 100 feet.",
+   "tags": [
+    "septic",
+    "variance",
+    "wetlands",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Housing complaint and water seepage at 41 New West Townsend Road",
+   "resolution": "extension granted until May 18, 2026",
+   "quote": "carla laventure, owner, met with the board on an outstanding housing complaint.",
+   "tags": [
+    "housing",
+    "complaint",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "Septic Repair Fund reclamation from Parks Commission",
+   "resolution": "reclaimed for Board of Health use",
+   "quote": "in august of 2021 the board of health voted to allow the use of the septic repair funds (old grant money) be used to replace/repair the septic system at marshall park.",
+   "tags": [
+    "septic",
+    "funds",
+    "parks"
+   ]
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "housing",
+  "septic",
+  "variance",
+  "permits",
+  "complaints",
+  "funds"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1,
+  "public_comment": 1,
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2026-03-23",
  "docid": "7724",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Endorse ANR Plan for 10 Parmenter Rd (ANR-26-3)",
+   "motion": "Endorse the ANR plan for 10 Parmenter Rd (ANR-26-3)",
    "moved_by": "A. Burney",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 4-0",
@@ -20,23 +20,23 @@
    "quote": "a. burney moved to endorse. t. willsmer, second. verbal vote: aye (4/0)"
   },
   {
-   "motion": "Close the public hearing for 39 Intervale Rd Site Plan Approval (PBSA 26-2)",
+   "motion": "Close the public hearing for 39 Intervale Rd site plan",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "a. burney moved to close the hearing. a. reid, second. verbal vote: aye (4/0)"
   },
   {
-   "motion": "Approve standard conditions with construction hours 7am–5pm Monday–Friday, 9am–2pm Saturdays, no Sundays or holidays for 39 Intervale Rd (PBSA 26-2)",
+   "motion": "Approve Standard Conditions for 39 Intervale Rd with construction hours 7am–5pm Monday–Friday, 9am–2pm Saturdays, no Sundays or holidays",
    "moved_by": "A. Burney",
-   "seconded_by": "A Reid",
+   "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "a. burney moved to approve standard conditions with construction hours 7am -5pm monday - friday, 9am - 2pm saturdays. no sundays or holidays. a reid, second. verbal vote: aye (4/0)"
   },
   {
-   "motion": "Extend permit expiration to 4/15/2027 for 494 Electric Ave Site Plan Approval (PBSA-24-4)",
+   "motion": "Extend the permit expiration for 494 Electric Ave site plan approval to 4/15/2027",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
@@ -44,8 +44,8 @@
    "quote": "a. burney made motion to extend the permit expiration to 4/15/2027. a. reid, second. verbal vote: aye (4/0)"
   },
   {
-   "motion": "Approve the minutes of 3/16/2026 as written",
-   "moved_by": "A Burney",
+   "motion": "Approve the minutes from 3/16/2026 as written",
+   "moved_by": "A. Burney",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 3-0-1",
    "procedural": true,
@@ -60,7 +60,173 @@
    "quote": "motion by a. burney to adjourn. t. willsmer, second verbal vote: aye (4/0)"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09679839999999999
+ "dropped_unquoted": 1,
+ "note": "\"\"",
+ "cost_usd": 0.1272786,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Stephen Wallace",
+   "role": "Director of Planning and Economic Development",
+   "status": "present",
+   "quote": "s. wallace stated he is gathering by-law examples to show and discuss with the board"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy, representing applicant",
+   "status": "present",
+   "quote": "greg roy and ryan proctor (dillis & roy) on behalf of the applicant."
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "Dillis & Roy, representing applicant",
+   "status": "present",
+   "quote": "greg roy and ryan proctor (dillis & roy) on behalf of the applicant."
+  },
+  {
+   "name": "Joel Swenson",
+   "role": "concerned abutter",
+   "status": "present",
+   "quote": "joel swenson, 17 ruth st., is concerned that fire rd 15 is not entirely a public way."
+  },
+  {
+   "name": "Gail Wallace",
+   "role": "concerned abutter",
+   "status": "present",
+   "quote": "gail wallace, 21 parmenter rd, is concerned with storm drainage."
+  },
+  {
+   "name": "Danielle Danzing",
+   "role": "Kimley-Horn, representing applicant",
+   "status": "present",
+   "quote": "danielle danzing (kimley-horn) on behalf of the applicant."
+  },
+  {
+   "name": "Bethany Latham",
+   "role": "project engineer",
+   "status": "present",
+   "quote": "bethany latham (project engineer) stated there will be bulk storage of supplies"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "Hannigan Engineering LLC, representing applicant",
+   "status": "present",
+   "quote": "bill hannigan (hannigan engineering, llc) on behalf of the applicant,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board recommends applicant file for stormwater permits in phases to allow project to continue without posting bonds for uncompleted work",
+   "quote": "board recommends the applicant file for the stormwater permits in phases, so many lots per phase, so the project can continue moving forward without posting bonds for the projected uncompleted work."
+  },
+  {
+   "decision": "Director of Planning will present revised fee schedule and gather by-law examples for discussion at April meetings",
+   "quote": "s. wallace stated he is gathering by-law examples to show and discuss with the board at one of the april meetings. he has a revised fee schedule to present at the 1st meeting in april."
+  },
+  {
+   "decision": "Director and building commissioner will reorganize Stormwater Permit Conditions to flow in sequence of work and add or change verbiage",
+   "quote": "s. wallace stated he and the building commissioner would like to reorganize the stormwater permit conditions so that they flow in sequence of work. also, would like to add/change some of the verbiage."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Joel Swenson",
+   "stated_role": "",
+   "topic": "Fire Road 15 public way status",
+   "quote": "joel swenson, 17 ruth st., is concerned that fire rd 15 is not entirely a public way."
+  },
+  {
+   "speaker": "Gail Wallace",
+   "stated_role": "",
+   "topic": "Storm drainage concerns",
+   "quote": "gail wallace, 21 parmenter rd, is concerned with storm drainage."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ANR Plan – 10 Parmenter Rd (ANR-26-3)",
+   "resolution": "Endorsed",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "lot division"
+   ],
+   "quote": "lot 1 was changed to parcel a and a note stating to be conveyed to abutting property. they also added a clarifying note to the plan."
+  },
+  {
+   "topic": "Site Plan Approval – 39 Intervale Rd (PBSA 26-2)",
+   "resolution": "Approved with conditions",
+   "tags": [
+    "site plan",
+    "maintenance building",
+    "Amazon Center"
+   ],
+   "quote": "this property is on the town lines of lunenburg and fitchburg. the town line goes down the middle of the 5000 sq ft, 3-bay maintenance/fleet servicing building they intend to construct."
+  },
+  {
+   "topic": "Site Plan Extension Request – 494 Electric Ave (PBSA-24-4)",
+   "resolution": "Approved",
+   "tags": [
+    "site plan",
+    "permit extension"
+   ],
+   "quote": "bill hannigan (hannigan engineering, llc) on behalf of the applicant, requests a 12- month extension to complete the work on previously approved site plan",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Proposed Stormwater Permit Conditions Changes",
+   "resolution": "Discussed",
+   "tags": [
+    "stormwater",
+    "permit conditions"
+   ],
+   "quote": "s. wallace stated he and the building commissioner would like to reorganize the stormwater permit conditions so that they flow in sequence of work."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "Noted",
+   "tags": [
+    "committee reports"
+   ],
+   "quote": "master plan steering committee nothing new since last meeting"
+  }
+ ],
+ "tags": [
+  "Planning Board",
+  "site plan review",
+  "ANR approval",
+  "permit extension",
+  "stormwater",
+  "subdivision"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

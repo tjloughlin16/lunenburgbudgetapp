@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-04-21",
  "docid": "7778",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing on the application for Class II License for CarXP Auto Group",
+   "motion": "Close the Public Hearing for Car XP Auto Group Class II License application",
    "moved_by": "Vice-Chair Amanda Moore",
    "seconded_by": "Clerk Renee Emkey",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "motion by vice-chair amanda moore to close the public hearing. seconded by clerk emkey. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
   },
   {
-   "motion": "Approve the application for a Class II license for CarXP Auto Group at 36 Summer Street",
+   "motion": "Approve the application for a Class II license for Car XP Auto Group at 36 Summer Street",
    "moved_by": "Vice-Chair Amanda Moore",
    "seconded_by": "Clerk Renee Emkey",
    "outcome": "passed 4-0",
@@ -36,11 +36,11 @@
    "quote": "motion by vice-chair moore to approve the application for a one-day liquor license for home fruit wine to be a vendor at the lunenburg fair on may 30, 2026. seconded by clerk emkey. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
   },
   {
-   "motion": "Ratify the Town Manager's appointments of Andrea Mattson, Casey Corey, Olivia Coronella, and Owen Snyder as Lifeguards and Jarrod Bowser as Beach Director",
+   "motion": "Ratify the Town Manager's appointments of Andrea Mattson, Casey Corey, Olivia Coronella, and Owen Snyder as Lifeguards, and Jarrod Bowser as Beach Director",
    "moved_by": "Vice-Chair Amanda Moore",
    "seconded_by": "Clerk Renee Emkey",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by vice-chair moore to ratify the town manager's appointment of andrea mattson, casey corey, olivia coronella, and owen snyder as lifeguards, and jarrod bowser as beach director. seconded by clerk emkey. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
   },
   {
@@ -52,7 +52,7 @@
    "quote": "motion by vice-chair moore to implement the sick leave bank policy on july 1, 2026, with open enrollment during the month of june. seconded by select board clerk emkey. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
   },
   {
-   "motion": "Enter into Executive Session pursuant to MGL c. 30 §21 (a)(3) to discuss strategy with respect to collective bargaining for Lunenburg Professional Firefighters PFFM Local 5369 and AFSCME, Counsel 93",
+   "motion": "Enter Executive Session pursuant to MGL c. 30 §21 (a)(3) to discuss strategy with respect to collective bargaining for Lunenburg Professional Firefighters PFFM Local 5369 and AFSCME, Council 93 (Municipal Employees Union), and not re-enter Open Session",
    "moved_by": "Chair Caesar Nuzzolo",
    "seconded_by": "Vice-Chair Amanda Moore",
    "outcome": "passed 4-0",
@@ -61,6 +61,227 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded and tabulated. No scanned/unreadable text present.",
- "cost_usd": 0.08210139999999999
+ "note": "Official Select Board minutes, complete and readable. Minutes were reviewed and approved by the Select Board on Tuesday, August 4, 2026.",
+ "cost_usd": 0.1169506,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chair Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: member brian lehtinen"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "resident",
+   "status": "present",
+   "quote": "anna lockwood, 91 main street, addressed the board at length regarding the fy27 budget and the proposed override."
+  },
+  {
+   "name": "John Rabbit",
+   "role": "resident",
+   "status": "present",
+   "quote": "john rabbit, 314 townsend harbor road, addressed the board regarding available tax relief programs for residents considering the override."
+  },
+  {
+   "name": "Roseanne Santos",
+   "role": "co-owner of Car XP Auto Group",
+   "status": "present",
+   "quote": "roseanne santos, co-owner of car xp auto group, appeared on behalf of the business."
+  },
+  {
+   "name": "Lori Perkins",
+   "role": "applicant, Home Fruit Wine",
+   "status": "remote",
+   "quote": "chair nuzzolo confirmed the applicant, lori perkins of home fruit wine, was participating via zoom."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Select Board deferred action on the Employee Climate Survey to a future meeting to allow members adequate time to review the updated draft",
+   "quote": "the select board agreed to defer action to a future meeting to allow members adequate time to review ===page 5=== ",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "The Select Board directed the Town Manager to reach out to Planning, Agricultural Commission, Open Space, Conservation Commission, Planning Board, and Assessors for feedback on the 250 and 356 Hollis Road properties and return for a vote no later than May 12",
+   "quote": "the select board directed town manager warren-dyment to reach out to the relevant committees identified as planning, agricultural commission, open space, conservation commission, planning board, and assessors with the matter to obtain their feedback and the select board to return for a vote no later than may 12."
+  },
+  {
+   "decision": "The Select Board agreed to defer substantive discussion of the Special Event Policy until after Town Meeting and to schedule it on a future agenda",
+   "quote": "the select board agreed to defer substantive discussion until after town meeting and to schedule it on a future agenda at that time."
+  },
+  {
+   "decision": "The Town Manager agreed to consult with Town Counsel regarding whether the FY27 Budget Open House should be posted as a formal meeting under Open Meeting Law",
+   "quote": "town manager warren-dyment agreed to consult with town counsel, attorney costa, to confirm the appropriate course of action."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "resident, 91 Main Street",
+   "topic": "FY27 budget and override concerns",
+   "quote": "ms. lockwood opened by thanking chief thibodeau, officer mcnamara, chief sullivan, and firefighter lekaditis for their years of service to the town. ms. lockwood expressed concern that characterizing the balanced budget as a reduction in services was misleading to residents."
+  },
+  {
+   "speaker": "John Rabbit",
+   "stated_role": "resident, 314 Townsend Harbor Road",
+   "topic": "Tax relief programs available to residents",
+   "quote": "mr. rabbit highlighted the 41a deferral program. he also referenced the means-tested program and mentioned the senior work-off program as additional available options. mr. rabbit encouraged seniors in particular to visit the assessor's office to explore these programs, stating that many residents have discovered options available to them."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "FY27 Budget and Override Meet and Greet",
+   "resolution": "Announced for April 28 at Lunenburg Adult Activity Center",
+   "tags": [
+    "budget",
+    "meeting",
+    "override",
+    "outreach"
+   ],
+   "quote": "a fy27 budget and override meet and greet will be held on tuesday, april 28 at 7:00 pm at the lunenburg adult activity center. the event will be open house style, with coffee and light refreshments, providing residents the opportunity to ask questions and speak directly with department heads and town officials in advance of town meeting."
+  },
+  {
+   "topic": "Annual Town Meeting and Election",
+   "resolution": "Announced",
+   "tags": [
+    "town meeting",
+    "election"
+   ],
+   "quote": "annual town meeting is scheduled for saturday, may 2 at 9:00 am at the lunenburg middle/high school auditorium. ● annual town election is may 16 at the tc passios buildin",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Class II Motor Vehicle License for Car XP Auto Group",
+   "resolution": "Approved",
+   "tags": [
+    "licensing",
+    "business",
+    "vehicles"
+   ],
+   "quote": "motion by vice-chair moore to approve the application for a class ii license for car xp auto group at 36 summer street. seconded by clerk emkey. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+  },
+  {
+   "topic": "One Day Liquor License for Home Fruit Wine",
+   "resolution": "Approved for Lunenburg Fair on May 30, 2026",
+   "tags": [
+    "licensing",
+    "liquor",
+    "event"
+   ],
+   "quote": "motion by vice-chair moore to approve the application for a one-day liquor license for home fruit wine to be a vendor at the lunenburg fair on may 30, 2026. seconded by clerk emkey. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+  },
+  {
+   "topic": "Ratification of Lifeguard and Beach Director Appointments",
+   "resolution": "Approved",
+   "tags": [
+    "staffing",
+    "appointments",
+    "ratification"
+   ],
+   "quote": "motion by vice-chair moore to ratify the town manager's appointment of andrea mattson, casey corey, olivia coronella, and owen snyder as lifeguards, and jarrod bowser as beach director. seconded by clerk emkey. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+  },
+  {
+   "topic": "Resignation of John Dextraze, Senior Videographer",
+   "resolution": "Acknowledged, effective May 2, 2026",
+   "tags": [
+    "staffing",
+    "resignation"
+   ],
+   "quote": "the select board acknowledged the resignation of john dextraze as senior videographer, effective may 2, 2026."
+  },
+  {
+   "topic": "925 Mass Ave RFP",
+   "resolution": "In progress, anticipated Board consideration in May",
+   "tags": [
+    "property",
+    "development",
+    "RFP"
+   ],
+   "quote": "a public forum on the request for proposals (rfp) is currently taking place at the library. the working group is scheduled to meet the following day to review public input, and it is anticipated that the rfp will be presented to the board for consideration at the first meeting in may."
+  },
+  {
+   "topic": "Employee Climate Survey",
+   "resolution": "Deferred to future meeting",
+   "tags": [
+    "personnel",
+    "policy",
+    "survey"
+   ],
+   "quote": "the select board agreed to defer action to a future meeting to allow members adequate time to review ===page 5=== ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Sick Leave Bank Policy Implementation",
+   "resolution": "Approved for July 1, 2026 launch with June open enrollment",
+   "tags": [
+    "policy",
+    "personnel"
+   ],
+   "quote": "motion by vice-chair moore to implement the sick leave bank policy on july 1, 2026, with open enrollment during the month of june. seconded by select board clerk emkey. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+  },
+  {
+   "topic": "Tax Title Properties at 250 and 356 Hollis Road",
+   "resolution": "Deferred pending committee feedback by May 12",
+   "tags": [
+    "property",
+    "land",
+    "tax title"
+   ],
+   "quote": "the select board directed town manager warren-dyment to reach out to the relevant committees identified as planning, agricultural commission, open space, conservation commission, planning board, and assessors with the matter to obtain their feedback and the select board to return for a vote no later than may 12."
+  },
+  {
+   "topic": "Special Event Policy",
+   "resolution": "Deferred until after Town Meeting",
+   "tags": [
+    "policy",
+    "events"
+   ],
+   "quote": "select board member moore identified the special event policy as a pending action item, noting she has been working on it and needs to connect with the fire and police chiefs. the select board agreed to defer substantive discussion until after town meeting and to schedule it on a future agenda at that time."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "licensing",
+  "appointments",
+  "staffing",
+  "policy",
+  "budget",
+  "override",
+  "town meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

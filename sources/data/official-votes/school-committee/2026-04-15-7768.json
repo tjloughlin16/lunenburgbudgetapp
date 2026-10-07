@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2026-04-15",
  "docid": "7768",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from the March 4, 2026 regular session",
+   "motion": "Approve minutes from regular session of 3/4/26",
    "moved_by": "Mandy Gilman",
    "seconded_by": "Emily Young",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "ms. gilman makes a motion to approve the minutes, ms. young seconds the motion all approve."
   },
   {
-   "motion": "Accept Visual Arts student scholarship donations from the artisans of Hickory Hills",
+   "motion": "Accept Visual Arts student scholarship donation from artisans of Hickory Hills",
    "moved_by": "Mandy Gilman",
    "seconded_by": "Emily Young",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "ms. gilman makes a motion to accept the donation, ms. young seconds the motion all approve"
   },
   {
-   "motion": "Accept the Fresh Grant proposal for farm to table implementation",
+   "motion": "Accept the Fresh/Farm to Table grant proposal",
    "moved_by": "Emily Young",
    "seconded_by": "Mandy Gilman",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "ms. young makes a motion to accept the proposal, ms. gilman seconds the motion all approve."
   },
   {
-   "motion": "Approve the submission of the Prism III grant proposal to DESE in the amount of $72,250",
+   "motion": "Approve submission of Prism III grant proposal to DESE in the amount of $72,250",
    "moved_by": "Mandy Gilman",
    "seconded_by": "Emily Young",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "ms. gilman makes a motion to approve the submission of the prism iii grant proposal to dese in the amount of $72,250, ms. young seconds the motion, all approve."
   },
   {
-   "motion": "Approve the submission of Prism III grant",
+   "motion": "Approve submission of Prism III grant",
    "moved_by": "Mandy Gilman",
    "seconded_by": "Emily Young",
    "outcome": "passed",
@@ -84,7 +84,7 @@
    "quote": "ms. gilman makes a motion to waive the first reading of policy 1303.01 advertising in schools, ms. young seconds the motion, all approve"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn at 8:46",
    "moved_by": "Mandy Gilman",
    "seconded_by": "Emily Young",
    "outcome": "passed",
@@ -92,7 +92,283 @@
    "quote": "ms. gilman makes a motion to adjourn at 8:46, ms. young seconds the motion all approve."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are clear and legible. All votes passed unanimously with 'all approve' recorded. Note: The Prism II and III Grant section appears to contain two separate motions both labeled 'Prism III' (one with $72,250 specified, one without) — records show only votes on Fresh Grant, Prism III, and policy waivers; Prism II vote is not explicitly recorded.",
- "cost_usd": 0.1331484
+ "dropped_unquoted": 2,
+ "note": "Minutes are complete and clearly formatted. All votes appear to be recorded. Two successive votes on Prism III grant are recorded as they appear in the minutes; the second may be a duplicate or refer to Prism II.",
+ "cost_usd": 0.1294906,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "laura brzozoski, vice chair - absent"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mandy gilman, secretary - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Member",
+   "status": "present",
+   "quote": "emily young, member - present"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "call to order at 7:05 by dr. fortuna"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "present",
+   "quote": "mr. mcnamara shares the recent quarterly report"
+  },
+  {
+   "name": "Dr. Kimberly Sarfde",
+   "role": "Director of Teaching and Learning",
+   "status": "present",
+   "quote": "dr. sarfde presents two grants"
+  },
+  {
+   "name": "Sibyl Kaufman",
+   "role": "LEAF president",
+   "status": "present",
+   "quote": "sybil kaufman, president of leaf, gives an update for the status of leaf"
+  },
+  {
+   "name": "Ms. Hanscom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. hanscom shares her perspective on our district culture and availability of activities to any and all students"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Sculimbrene and Ms. Young will conduct cafeteria negotiations; Ms. Brzozoski and Ms. Gilman will conduct custodial negotiations",
+   "quote": "mr. sculimbrene and ms. young will do the cafeteria negotiations and ms. brzozoski and ms. gilman will do the custodial negotiations"
+  },
+  {
+   "decision": "Dr. Fortuna added her list of goals and artifacts to the committee folder for use in preparing her evaluation",
+   "quote": "dr. fortuna has added her list of goals and the different artifacts linked to her goals into the committees folder to utilize and prepare the evaluation"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "LEAF Grant Funds",
+   "what_was_recorded": "Update on funds raised to date by LEAF for grant cycle beginning May 1, 2026",
+   "figures_as_printed": [
+    "$8,366"
+   ],
+   "quote": "to date $8,366 has been raised"
+  },
+  {
+   "topic": "Prism III Grant Proposal",
+   "what_was_recorded": "Submission of Prism III grant proposal for curriculum materials and professional development, pre-K to grade 5",
+   "figures_as_printed": [
+    "$72,250"
+   ],
+   "quote": "the amount of $72,250"
+  },
+  {
+   "topic": "House Budget Update",
+   "what_was_recorded": "House budget includes increase of $160 per student and additional circuit breaker money",
+   "figures_as_printed": [
+    "$160 per kid"
+   ],
+   "quote": "the house budget came out today and it does include $160 per kid more than originally though and a little bit more in circuit breaker money"
+  },
+  {
+   "topic": "Visual Arts Student Scholarship Donation",
+   "what_was_recorded": "Two one-time scholarships for graduating senior donated by artisans of Hickory Hills",
+   "figures_as_printed": [],
+   "quote": "visual arts student scholarship, this is 2 one time scholarships for a graduating senior donated by the artisans of hickory hills care of donna silverstein"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mandy Gilman",
+   "stated_role": "not stated",
+   "topic": "Budget planning, level services funding, tri-board process",
+   "quote": "i thank both the chair and the superintendents for their comments, we have worked collaboratively for a long time over the last eight months with the rest of the town. there has been a lot of discussion about why there is not an option for level services funding, i feel strongly that the town, when they didn't endorse the override last year, asked the group of leaders in the town to get together and think about a long term plan. a long term plan is difficult in municipal finance, but the reason our budgets that are being represented include a few different things is because the goal of the tri board process was to think two to three years in advance, and i think that some of that is getting lost in the conversations."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Review and Approval of Prior Minutes",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "ms. gilman makes a motion to approve the minutes, ms. young seconds the motion all approve."
+  },
+  {
+   "topic": "Line Item Transfers",
+   "resolution": "none",
+   "tags": [
+    "budget",
+    "transfers"
+   ],
+   "quote": "line item transfers none"
+  },
+  {
+   "topic": "Visual Arts Student Scholarship Donation",
+   "resolution": "accepted",
+   "tags": [
+    "donations",
+    "scholarships"
+   ],
+   "quote": "ms. gilman makes a motion to accept the donation, ms. young seconds the motion all approve"
+  },
+  {
+   "topic": "Superintendent's Report on Budget and Override",
+   "resolution": "discussion",
+   "tags": [
+    "budget",
+    "override",
+    "community"
+   ],
+   "quote": "dr. fortuna addresses the upcoming town budget and proposition 2 ½ override votes"
+  },
+  {
+   "topic": "LEAF Grant Funds Status",
+   "resolution": "update",
+   "tags": [
+    "grants",
+    "fundraising"
+   ],
+   "quote": "sybil kaufman, president of leaf, gives an update for the status of leaf, to date $8,366 has been raised"
+  },
+  {
+   "topic": "Fresh/Farm to Table Grant Proposal",
+   "resolution": "approved",
+   "tags": [
+    "grants",
+    "food service"
+   ],
+   "quote": "ms. young makes a motion to accept the proposal, ms. gilman seconds the motion all approve."
+  },
+  {
+   "topic": "Prism III Grant Proposal Submission",
+   "resolution": "approved",
+   "tags": [
+    "grants",
+    "curriculum",
+    "professional development"
+   ],
+   "quote": "ms. gilman makes a motion to approve the submission of the prism iii grant proposal to dese in the amount of $72,250"
+  },
+  {
+   "topic": "Scholarship Tax EIN Determination",
+   "resolution": "tabled",
+   "tags": [
+    "scholarships",
+    "tax"
+   ],
+   "quote": "the committee has been provided the legal opinion in their folders tonight with their assertions. we are currently determining whose tax id numbers all the scholarships are using."
+  },
+  {
+   "topic": "Unified Sports and Co-ops Options",
+   "resolution": "discussion",
+   "tags": [
+    "athletics",
+    "opportunities"
+   ],
+   "quote": "dr. fortuna shares information with the committe e regarding available unified sports and options"
+  },
+  {
+   "topic": "Budget Quarterly Report",
+   "resolution": "presented",
+   "tags": [
+    "budget",
+    "finance"
+   ],
+   "quote": "mr. mcnamara shares the recent quarterly report"
+  },
+  {
+   "topic": "Personnel Report",
+   "resolution": "presented",
+   "tags": [
+    "personnel"
+   ],
+   "quote": "ms. peterson has provided the committee with the updated personnel report"
+  },
+  {
+   "topic": "School Committee Representatives for Negotiations",
+   "resolution": "assigned",
+   "tags": [
+    "personnel",
+    "negotiations"
+   ],
+   "quote": "mr. sculimbrene and ms. young will do the cafeteria negotiations and ms. brzozoski and ms. gilman will do the custodial negotiations"
+  },
+  {
+   "topic": "Superintendent Evaluation Preparation",
+   "resolution": "in progress",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ],
+   "quote": "dr. fortuna has added her list of goals and the different artifacts linked to her goals into the committees folder"
+  },
+  {
+   "topic": "First Reading Waiver for Four Policies",
+   "resolution": "waived",
+   "tags": [
+    "policies",
+    "procedural"
+   ],
+   "quote": "ms. gilman makes a motion to waive the first reading of policy 3303 handling of cash receipts, ms. young seconds the motion all approve."
+  },
+  {
+   "topic": "School Committee Goals",
+   "resolution": "discussion",
+   "tags": [
+    "goals",
+    "school facilities"
+   ],
+   "quote": "the goals are added to the committees' folder, the future of turkey hill, the primary school parking lot and driveway"
+  },
+  {
+   "topic": "House Budget Report from Sub-Committee",
+   "resolution": "reported",
+   "tags": [
+    "budget",
+    "state funding"
+   ],
+   "quote": "ms. gilman reports the house budget came out today and it does include $160 per kid more than originally though and a little bit more in circuit breaker money"
+  }
+ ],
+ "tags": [
+  "budget",
+  "override",
+  "grants",
+  "personnel",
+  "policies",
+  "scholarships",
+  "negotiations",
+  "schools"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1,
+  "topics": 1
+ }
 }

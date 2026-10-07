@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-03-26",
  "docid": "7737",
@@ -20,20 +20,20 @@
    "quote": "there was a motion to continue public hearing by ana lockwood, seconded by tanya dall. roll call vote: jay simeone aye, tom gray aye, mike rupp aye, ana lockwood aye, tanya dall aye, jean russell aye, chris menard aye"
   },
   {
+   "motion": "Approve minutes of February 5, 12, and 19, 2026",
+   "moved_by": "Ana Lockwood",
+   "seconded_by": "Tanya Dall",
+   "outcome": "passed 7-0",
+   "procedural": true,
+   "quote": "there was a motion to approve the minutes of february 5, 2026, february 12, 2026, and february 19, 2026, by ana lockwood, seconded by tanya dall. roll call vote: tom gray aye, jay simeone aye, mike rupp aye, ana lockwood aye, tanya dall aye, jean russell aye, chris menard aye."
+  },
+  {
    "motion": "Close public hearing",
    "moved_by": "Jean Russell",
    "seconded_by": "Tanya Dall",
    "outcome": "passed 7-0",
    "procedural": true,
    "quote": "there was a motion to close public hearing by jean russell, seconded by tanya dall. roll call vote: tom gray aye, jay simeone aye, mike rupp aye, ana lockwood aye, tanya dall aye, jean russell, chris menard."
-  },
-  {
-   "motion": "Approve the minutes of February 5, 2026, February 12, 2026, and February 19, 2026",
-   "moved_by": "Ana Lockwood",
-   "seconded_by": "Tanya Dall",
-   "outcome": "passed 7-0",
-   "procedural": true,
-   "quote": "there was a motion to approve the minutes of february 5, 2026, february 12, 2026, and february 19, 2026, by ana lockwood, seconded by tanya dall. roll call vote: tom gray aye, jay simeone aye, mike rupp aye, ana lockwood aye, tanya dall aye, jean russell aye, chris menard aye."
   },
   {
    "motion": "Adjourn",
@@ -44,7 +44,391 @@
    "quote": "there was a motion to adjourn by jean russell, seconded by mike rupp. roll call vote: tom gray aye, jay simeone aye, mike rupp aye, ana lockwood aye, tanya dall aye, jean russell aye, chris menard aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Four votes recorded. All passed unanimously 7-0. Section 7.a lists \"Votes on Articles\" scheduled for April 2, 2026, but these are future votes not taken at this meeting. Note: the second vote (close hearing) has a formatting irregularity where \"Jean Russell\" appears without \"aye\" in the roll call, but context and other votes suggest unanimous passage.",
- "cost_usd": 0.0814894
+ "dropped_unquoted": 4,
+ "note": "Minutes are clearly formatted from OCR; one voting line for closing public hearing appears incomplete (missing explicit 'aye' vote indication after Jean Russell and Chris Menard, though they are listed). All other votes are complete. Extensive budget figures and options presented; no separate transfers recorded beyond warrant article appropriations.",
+ "cost_usd": 0.1467276,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray (zoom), committee member jay simeone (zoom), committee member tanya dall, committee member ana lockwood, committee member mike rupp"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray (zoom), committee member jay simeone (zoom), committee member tanya dall, committee member ana lockwood, committee member mike rupp"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray (zoom), committee member jay simeone (zoom), committee member tanya dall, committee member ana lockwood, committee member mike rupp"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "remote",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray (zoom), committee member jay simeone (zoom), committee member tanya dall, committee member ana lockwood, committee member mike rupp"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray (zoom), committee member jay simeone (zoom), committee member tanya dall, committee member ana lockwood, committee member mike rupp"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray (zoom), committee member jay simeone (zoom), committee member tanya dall, committee member ana lockwood, committee member mike rupp"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray (zoom), committee member jay simeone (zoom), committee member tanya dall, committee member ana lockwood, committee member mike rupp"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "superintendent dr. jodi fortuna, faculties director for schools christopher mcnamara, school committee chair anthony sculimbrene were present."
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Facilities Director for Schools",
+   "status": "present",
+   "quote": "superintendent dr. jodi fortuna, faculties director for schools christopher mcnamara, school committee chair anthony sculimbrene were present."
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "School Committee Chair",
+   "status": "present",
+   "quote": "superintendent dr. jodi fortuna, faculties director for schools christopher mcnamara, school committee chair anthony sculimbrene were present."
+  },
+  {
+   "name": "Rhonda Liscio",
+   "role": "resident",
+   "status": "present",
+   "quote": "rhonda liscio,181 reservoir road, states she hasn't been able to see the warrant articles"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "resident",
+   "status": "present",
+   "quote": "renee emkey, 6 iris court, shares her support in hiring an assistant town manager."
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "resident",
+   "status": "present",
+   "quote": "dave rogers, 82 highland street, suggests parents work together to raise funds."
+  },
+  {
+   "name": "Laura Barooshian",
+   "role": "resident",
+   "status": "present",
+   "quote": "laura barooshian, 389 mulpus road, encourages residents show up at town meeting on may 2"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager recommended deferring Article G (prior fiscal year Aeroseptic bills) at town meeting",
+   "quote": "town manager recommended deferring at town meeting."
+  },
+  {
+   "decision": "Two warrant articles noted but not initially listed: Health Insurance Special Purpose Stabilization Fund and regular purpose stabilization fund",
+   "quote": "town manager noted that at the time there were 2 articles not listed."
+  },
+  {
+   "decision": "Finance Committee Report format updated; Rupp and Russell to lead upcoming presentation",
+   "quote": "chris menard updated the format used last year; additionally, he provided a detailed document with summaries and d",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY27 Revenue Adjustments",
+   "what_was_recorded": "Motor Vehicle Excise Tax and Investment Income increases recorded",
+   "figures_as_printed": [
+    "$75,000",
+    "$100,000"
+   ],
+   "quote": "adjustment in local receipts - additional $75,000 to motor vehicle excise tax - additional $100,000 to investment income"
+  },
+  {
+   "topic": "FY27 Total Starting Revenue",
+   "what_was_recorded": "Starting revenue before adjustments and assessments",
+   "figures_as_printed": [
+    "$51,611,771.99"
+   ],
+   "quote": "starting revenue: $51,611,771.99"
+  },
+  {
+   "topic": "FY27 Total New Revenue",
+   "what_was_recorded": "New revenue available for FY27 budget",
+   "figures_as_printed": [
+    "$1,549,263.89"
+   ],
+   "quote": "total \"new revenue\" fy27: $1,549,263.89"
+  },
+  {
+   "topic": "FY27 Revenue Available for Appropriation",
+   "what_was_recorded": "Total revenues available after adjustments and assessments",
+   "figures_as_printed": [
+    "$49,925,699.99"
+   ],
+   "quote": "total revenues available for appropriation: $49,925,699.99"
+  },
+  {
+   "topic": "FY27 Budget Options",
+   "what_was_recorded": "Three budget scenarios presented: balanced, tier 1 override, and tier 2 override",
+   "figures_as_printed": [
+    "$49,925,699.99",
+    "$52,280,035.68",
+    "$53,171,145.83"
+   ],
+   "quote": "there are 3 options for the fy27 budget including a balanced budget, tier 1 and tier 2 options. 1. balanced budget: $49,925,699.99 2. tier 1: $52,280,035.68 override required and is estimate",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "PEC Health Insurance Savings",
+   "what_was_recorded": "Expected savings from health insurance plan change",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "pec is in the process of voting, but it's expected to roughly be a $200,000 savings across the town and school budget."
+  },
+  {
+   "topic": "School Department Budget Additions Needed",
+   "what_was_recorded": "Four position additions required without override",
+   "figures_as_printed": [
+    "$106,537",
+    "$106,357",
+    "$10,000",
+    "$133,596"
+   ],
+   "quote": "necessary additions include: english language teacher: $106,537 special educator (primary school): $106,357 promotion of an employee to assistant business manager: $10,000 assistant principal (primary and turkey hill elementary): $133,596"
+  },
+  {
+   "topic": "School Department Positions to Eliminate",
+   "what_was_recorded": "Six positions and reductions needed to balance school budget",
+   "figures_as_printed": [
+    "$205,019",
+    "$171,811",
+    "$9,682",
+    "$74,147",
+    "$48,630",
+    "$50,203",
+    "$40,000",
+    "$15,000"
+   ],
+   "quote": "in order to balance the budget, the following positions would need to be eliminated: 1st and 2nd grade teacher: $205,019 3rd and 4th grade teacher: $171,811 .2 music teacher (turkey hill elementary) $9,682 certiﬁed occupation therapy assistant: $74,147 1 custodian: $48,630 ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "School Athletics Reductions",
+   "what_was_recorded": "Athletic positions eliminated, sports cut, transportation reduced, and fees increased",
+   "figures_as_printed": [
+    "$34,259",
+    "$4,170",
+    "$3,362",
+    "$2,444",
+    "$127,550",
+    "$5,000",
+    "$75",
+    "$120,000"
+   ],
+   "quote": "extracurricular impacts include reducing the athletics training position into a half time position: $34,259. the following extracurriculars would be eliminated: girls lacross $4,170 golf team $3,362 ski team $2,444 all athletic transportation would be cut saving: $127,550. the transportation for middle-high ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Capital Program Reauthorization",
+   "what_was_recorded": "Prior year capital funding to be reauthorized",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "fy 206 capital program funding reauthorization $300,000 needs to be reauthorized from a prior vote."
+  },
+  {
+   "topic": "FY 2027 Omnibus Budget",
+   "what_was_recorded": "Total amount to raise, appropriate, and transfer",
+   "figures_as_printed": [
+    "$49,963,990.19"
+   ],
+   "quote": "article l. fy 2027 omnibus budget article is to raise, appropriate, and transfer $49,963,990.19 from available funds."
+  },
+  {
+   "topic": "FY 2027 Proposition 2.5 Override Budgets",
+   "what_was_recorded": "Two override budget options for town meeting vote",
+   "figures_as_printed": [
+    "$52,321,641.88",
+    "$53,212,536.03"
+   ],
+   "quote": "article m. fy 2027 proposition 2 ½ override budgets tier 1: $52,321,641.88 tier 2: $53,212,536.03"
+  },
+  {
+   "topic": "OPEB Trust Fund Appropriation",
+   "what_was_recorded": "Free cash appropriated for other post-employment benefits",
+   "figures_as_printed": [
+    "$335,437"
+   ],
+   "quote": "article o. opeb trust fund the article is to raise and appropriate free cash totaling $335,437."
+  },
+  {
+   "topic": "Health Insurance Stabilization Funds",
+   "what_was_recorded": "Two separate articles to appropriate free cash to stabilization funds",
+   "figures_as_printed": [
+    "$250,000",
+    "$250,000"
+   ],
+   "quote": "an article to appropriate free cash to the health insurance special purpose stabilization fund totaling $250,000. 2. an additional article to appropriate free cash in the amount of $250,000 into the regular purpose stabilization fu",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Compensated Absences Reserve Fund",
+   "what_was_recorded": "Free cash transfer to compensated absences reserve",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "article p . compensated absences reserve fund the article proposes transferring $10,000 from free cash to the compensated absences reserve fund."
+  },
+  {
+   "topic": "300th Anniversary Committee Funding",
+   "what_was_recorded": "Free cash allocated for anniversary celebration",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "article q. appropriation to the 300th anniversary committee article is to transfer $15,000 from free cash to fund the 300th anniversary and related events."
+  },
+  {
+   "topic": "Trust Fund Legal Fees",
+   "what_was_recorded": "Free cash for trust fund legal services",
+   "figures_as_printed": [
+    "$14,252.39"
+   ],
+   "quote": "article s. trust fund legal fees this article transfers $14,252.39 from free cash to fund legal services."
+  },
+  {
+   "topic": "Public Relations Contract",
+   "what_was_recorded": "Town's contract with public relations firm for crisis communication",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "town manager states the contract is for crisis communication and costs roughly $10,000 a year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Warrant article access",
+   "speaker": "Rhonda Liscio",
+   "stated_role": "resident, 181 Reservoir Road",
+   "quote": "rhonda liscio,181 reservoir road, states she hasn't been able to see the warrant articles, making it hard to ask any questions."
+  },
+  {
+   "topic": "General",
+   "speaker": "Anthony Sculimbrene",
+   "stated_role": "resident, 92 Beal Street",
+   "quote": "anthony sculimbrene, 92 beal street, spoke to ana lockwood and wanted to thank her."
+  },
+  {
+   "topic": "Public relations contract costs",
+   "speaker": "Rhonda Liscio",
+   "stated_role": "resident, 181 Reservoir Road",
+   "quote": "rhonda liscio, 181 reservoir road, questioned the town's contract with john guilfoil public relations. town manager states the contract is for crisis communication and costs roughly $10,000 a year."
+  },
+  {
+   "topic": "Budget staffing and tier selection",
+   "speaker": "Renee Emkey",
+   "stated_role": "resident, 6 Iris Court",
+   "quote": "renee emkey, 6 iris court, shares her support in hiring an assistant town manager. additionally, renee emkey believes the number proposed in tier 1 is too high, but a level service budget isn't enough."
+  },
+  {
+   "topic": "School budget funding and community support",
+   "speaker": "Dave Rogers",
+   "stated_role": "resident, 82 Highland Street",
+   "quote": "dave rogers, 82 highland street, suggests parents work together to raise funds. fairs have been successful in prior years. additionally, he suggests reaching out to fitchburg state for student teachers."
+  },
+  {
+   "topic": "Town meeting participation",
+   "speaker": "Laura Barooshian",
+   "stated_role": "resident, 389 Mulpus Road",
+   "quote": "laura barooshian, 389 mulpus road, encourages residents show up at town meeting on may 2 and vote on may 16."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Hearing - Town Manager Balanced and Override Budget",
+   "resolution": "presented three budget options (balanced $49,925,699.99; Tier 1 $52,280,035.68; Tier 2 $53,171,145.83) with deficits and specific department cuts",
+   "tags": [
+    "FY27",
+    "budget",
+    "override",
+    "town"
+   ],
+   "quote": "town manager provided the revenue updates below: - adjustment in local receipts - additional $75,000 to motor vehicle excise tax - additional $100,000 to investment ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Public Hearing - School Department Balanced and Override Budget",
+   "resolution": "presented necessary positions/costs, positions to eliminate, extracurricular impacts, and athletic fee increases",
+   "tags": [
+    "FY27",
+    "budget",
+    "override",
+    "schools"
+   ],
+   "quote": "superintendent dr. jodi fortuna, faculties director for schools christopher mcnamara, school committee chair anthony sculimbrene were present. dr jodi fortuna states that without an override, there will be substantial impacts."
+  },
+  {
+   "topic": "Draft Warrant Articles",
+   "resolution": "outlined 25 articles (A-JJ) for town meeting including budget, capital, enterprise funds, collective bargaining, and bylaw items",
+   "tags": [
+    "warrant",
+    "town meeting",
+    "articles"
+   ],
+   "quote": "town manager states the select board will be discussing the warrant articles on march 21 st. once the select board votes to ﬁnalize the warrant articles on april 7th the warrant will then be available to the public. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Finance Committee Report",
+   "resolution": "format updated from prior year; detailed summaries and department impacts prepared",
+   "tags": [
+    "committee",
+    "reporting"
+   ],
+   "quote": "chris menard updated the format used last year; additionally, he provided a detailed document with summaries and department impacts."
+  },
+  {
+   "topic": "FY27 Proposition 2.5 Override Discussion",
+   "resolution": "continued discussion; no vote taken",
+   "tags": [
+    "FY27",
+    "override",
+    "Prop 2.5"
+   ],
+   "quote": "mike rupp believes that the numbers presented in tier 1 and tier 2 are too similar. both numbers are very large."
+  }
+ ],
+ "tags": [
+  "budget",
+  "FY2027",
+  "override",
+  "warrant articles",
+  "Proposition 2.5",
+  "capital program",
+  "town budget",
+  "school budget",
+  "finance committee"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1,
+  "budget_items": 3
+ }
 }

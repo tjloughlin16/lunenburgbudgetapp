@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-11-18",
  "docid": "7511",
@@ -12,23 +12,146 @@
  },
  "votes": [
   {
-   "motion": "Authorize payment of prior year expenses: $4,617.32 and transfers of $61,382.68 and $24,000 to City of Fitchburg, and payments of $266 to Haywood Hospital, $390 to Advanced Print Technology, and $3,500 to CBIZ",
+   "motion": "Recommend approval of Article 3 of the November 18, 2025 Special Town Meeting warrant (payment of prior year expenses, with transfers and the listed payments).",
    "moved_by": "Amanda Moore",
    "seconded_by": "Renee Emkey",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "vice-chair amanda moore moved to recommend approval of article 3: i move the town authorize the payment of prior year expenses as follows. (i) raise and appropriate the sum of $4,617.32, transfer the sum of $61,382.68"
+   "quote": "vice-chair amanda moore moved to recommend approval of article 3: i move the town authorize the payment of prior year expenses as follows."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Brian Lehtinen",
    "seconded_by": "Amanda Moore",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": true,
    "quote": "member brian lehtinen moved to adjourn. seconded by vice-chair moore. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0969924
+ "note": "Text is clean digital extraction, not a scan. Only two motions are recorded, both with a printed result. The minutes name only the five members; no other attendees, no public comment, and no non-vote decisions are recorded. The minutes say they were approved on August 4, 2026, which is after the meeting date; this is recorded as printed and not reconciled. The Article 3 vote is a recommendation to Town Meeting, not an appropriation vote.",
+ "cost_usd": 0.01599664,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Article 3: raise and appropriate for prior year expenses (City of Fitchburg)",
+   "what_was_recorded": "Article 3 would raise and appropriate a sum for prior year expenses owed to the City of Fitchburg, to be reimbursed to the General Fund from the Water Enterprise Fund in future years.",
+   "figures_as_printed": [
+    "$4,617.32"
+   ],
+   "quote": "raise and appropriate the sum of $4,617.32, transfer the sum of $61,382.68 from article 5 of the may 1, 2021 annual town meeting"
+  },
+  {
+   "topic": "Article 3: transfer from prior Article 5 for prior year expenses",
+   "what_was_recorded": "Article 3 would transfer funds from Article 5 of the May 1, 2021 Annual Town Meeting to pay prior year expenses to the City of Fitchburg.",
+   "figures_as_printed": [
+    "$61,382.68"
+   ],
+   "quote": "raise and appropriate the sum of $4,617.32, transfer the sum of $61,382.68 from article 5 of the may 1, 2021 annual town meeting"
+  },
+  {
+   "topic": "Article 3: payment to Haywood Hospital",
+   "what_was_recorded": "Article 3 would pay an unpaid prior-year bill to Haywood Hospital from the FY26 Physical line.",
+   "figures_as_printed": [
+    "$266"
+   ],
+   "quote": "one, pay the sum of $266 from the fy26 physical line to haywood hospital for an unpaid bill of the prior year."
+  },
+  {
+   "topic": "Article 3: payment to Advanced Print Technology",
+   "what_was_recorded": "Article 3 would pay an unpaid prior-year bill to Advanced Print Technology from the FY26 Facilities and Buildings- Park Department line.",
+   "figures_as_printed": [
+    "$390"
+   ],
+   "quote": "two, pay the sum of $390 to advanced print technology from the fy26 facilities and buildings- park department line"
+  },
+  {
+   "topic": "Article 3: payment to CBIZ",
+   "what_was_recorded": "Article 3 would pay an unpaid prior-year bill to CBIZ from the FY26 Town Accountant line.",
+   "figures_as_printed": [
+    "$3,500"
+   ],
+   "quote": "and three, pay the sum of $3,500 to cbiz from the fy26 town accountant line for an unpaid bill of a prior year."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Article 5 of the May 1, 2021 Annual Town Meeting to pay prior year expenses (part of Article 3)",
+   "amount_as_printed": "$61,382.68",
+   "outcome": "included in Article 3 motion, which passed 5-0-0",
+   "quote": "transfer the sum of $61,382.68 from article 5 of the may 1, 2021 annual town meeting and transfer the sum of $24,000 from article 6"
+  },
+  {
+   "description": "Transfer from Article 6 of the May 7, 2022 Annual Town Meeting to pay prior year expenses (part of Article 3)",
+   "amount_as_printed": "$24,000",
+   "outcome": "included in Article 3 motion, which passed 5-0-0",
+   "quote": "transfer the sum of $24,000 from article 6 of the may 7, 2022 annual town meeting. all for the payment of prior year expenses"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Special Town Meeting (Nov 18, 2025) warrant articles: potential votes on deferred articles",
+   "resolution": "Article 3 recommended for approval, passed 5-0-0",
+   "quote": "potential votes on deferred warrant articles vice-chair amanda moore moved to recommend approval of article 3",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "prior year expenses"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned, passed 5-0-0",
+   "quote": "member brian lehtinen moved to adjourn. seconded by vice-chair moore. call for the vote: five-aye.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "special town meeting",
+  "warrant articles",
+  "prior year expenses",
+  "reserve transfers",
+  "Article 3",
+  "Fitchburg water",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

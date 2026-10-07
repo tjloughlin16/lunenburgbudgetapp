@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2026-02-02",
  "docid": "7625",
@@ -20,7 +20,7 @@
    "quote": "motion to approve: anthony sculumbrine. seconded by: matthew brenner. unanimously approved."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting",
    "moved_by": "Anthony Sculumbrine",
    "seconded_by": "Tom Gray",
    "outcome": "unanimously approved",
@@ -28,7 +28,276 @@
    "quote": "motion to adjourn: anthony sculumbrine. seconded by: tom gray. unanimously approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Two votes recorded: approval of prior minutes and adjournment. No substantive votes on motions; the minutes record discussion and consensus decisions but do not report a formal vote on any programmatic decision (e.g., the spreadsheet review, subcommittee formation, or engagement plan).",
- "cost_usd": 0.0631394
+ "dropped_unquoted": 1,
+ "note": "",
+ "cost_usd": 0.1524376,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine, matthew brenner, laura brzozoski"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "motion to adjourn: anthony sculumbrine. seconded by: tom gray. unanimously approved."
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member",
+   "status": "present",
+   "quote": "the meeting was called to order at 5:30 pm by david blatt."
+  },
+  {
+   "name": "Anthony Sculumbrine",
+   "role": "Member",
+   "status": "present",
+   "quote": "tony sculumbrine presented a revised allocation using an industry standard of 165 square feet per person to generate required departmental square footage (this includes circulation/public access allowance, restrooms, etc.)."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner urged consideration of future town growth (e.g., planning for administrative needs of a town of 20,000 vs. ===page 3=== curr",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "subcommittee (staff-engagement) to form and meet to prepare questions: members laura, matt, and dave (greg roy as alternate/technical advisor)."
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: kristina masaitis, greg roy"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: kristina masaitis, greg roy"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee consensus to proceed to engage town employees for input on space allocation",
+   "quote": "committee consensus: proceed to engage town employees for input (clarify whether to present a pre-set allocation number or start blank)."
+  },
+  {
+   "decision": "Form staff-engagement subcommittee with Laura Brzozoski, Matthew Brenner, and David Blatt as primary members, with Greg Roy as alternate",
+   "quote": "subcommittee (staff-engagement) to form and meet to prepare questions: members laura, matt, and dave (greg roy as alternate/technical advisor)."
+  },
+  {
+   "decision": "Committee agreed to avoid presenting a $20M+ option to the public and to aim for a more modest cost solution",
+   "quote": "committee agreed to avoid presenting a $20m+ option to the public and to aim for a more modest cost solution."
+  },
+  {
+   "decision": "Schedule full committee next meeting for March 2",
+   "quote": "full committee next meeting: march 2 (committee to meet again)."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Corridor fill-in cost estimate",
+   "what_was_recorded": "Cost to fill in dashed corridor and create full rectangular addition estimated at $150,000 per level",
+   "figures_as_printed": [
+    "$150,000 per level",
+    "$300,000 total for both levels"
+   ],
+   "quote": "tony proposed possibly filling in a dashed corridor on the plan to create a full rectangular addition; that would add approx. 210 sq ft per level and cost roughly $150,000 per level (≈ $300,000 total for both levels)."
+  },
+  {
+   "topic": "New construction cost estimate",
+   "what_was_recorded": "Cost estimate for 3,200 square feet of new construction at $650 per square foot equals approximately $2.2 million",
+   "figures_as_printed": [
+    "$650 per sq ft",
+    "≈ $2.2 million"
+   ],
+   "quote": "new-construction cost estimate for 3,200 sq ft at $650/sq ft: ≈ $2.2 million."
+  },
+  {
+   "topic": "Specialized demolition cost estimate",
+   "what_was_recorded": "Cost estimate for careful brick-by-brick demolition of the 1963 addition to avoid damaging original Ritter building",
+   "figures_as_printed": [
+    "$1,000,000"
+   ],
+   "quote": "specialized demolition (to avoid damaging original ritter): $1,000,000 for \"brick-by-brick\" careful demolition of the 1963 addition."
+  },
+  {
+   "topic": "Rehab cost assumption",
+   "what_was_recorded": "Rehabilitation of remaining Ritter building assumed at $450 per square foot, noted as potentially higher than Taylor & Burns estimates",
+   "figures_as_printed": [
+    "$450 per sq ft"
+   ],
+   "quote": "rehab of remaining ritter building assumed at $450 per sq ft (tony sculumbrine noted this may be higher than taylor & burns used)."
+  },
+  {
+   "topic": "Combined project cost estimate",
+   "what_was_recorded": "Total rough project cost combining special demolition, new construction, and rehab estimated at $4.5 million",
+   "figures_as_printed": [
+    "≈ $4.5 million"
+   ],
+   "quote": "combined rough project total (special demolition + new construction + rehab): ≈ $4.5 million."
+  },
+  {
+   "topic": "Space allocation comparison: Treasurer & Tax Collector",
+   "what_was_recorded": "Taylor & Burns proposed 974 square feet while Tony Sculumbrine's allocation is 830 square feet",
+   "figures_as_printed": [
+    "974 sq ft",
+    "~830 sq ft",
+    "≈150 sq ft difference"
+   ],
+   "quote": "taylor & burns: treasurer & tax collector proposed 974 sq ft; tony sculumbrine's allocation ~830 sq ft (≈150 sq ft difference)."
+  },
+  {
+   "topic": "Space allocation comparison: Town Clerk",
+   "what_was_recorded": "Taylor & Burns proposed approximately 1,000 square feet; Tony Sculumbrine estimated 495 square feet for staff plus 110-144 square feet for vault",
+   "figures_as_printed": [
+    "~1,000 sq ft",
+    "~495 sq ft",
+    "~110–144 sq ft"
+   ],
+   "quote": "town clerk (with vault/registry of voters/records): taylor & burns ~1,000 sq ft; tony sculumbrine estimated ~495 sq ft for staff plus ~110-144 sq ft for vault - overall much smaller than taylor & burns."
+  },
+  {
+   "topic": "Town fiscal constraints and debt-excluded project appetite",
+   "what_was_recorded": "Town will do at most three debt-excluded capital projects over 10-15 years; a $22M+ town administration building unlikely to pass; $4-8M project has higher chance of approval",
+   "figures_as_printed": [
+    "$22M+",
+    "~$4–8M",
+    "$20M+"
+   ],
+   "quote": "a combined solution for ritter + town hall that comes in \"around eight figures\" (i.e., roughly mid- to high single-digit millions), not $20m+. a ~$4- 8m project has higher chance of town approval",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Building footprint dimensions",
+   "what_was_recorded": "1963 addition footprint approximately 1,625 square feet; original Ritter building approximately 1,400 square feet per level; doubled footprint would yield approximately 3,250 square feet",
+   "figures_as_printed": [
+    "≈ 1,625 sq ft",
+    "≈ 1,400 sq ft per level",
+    "≈ 2,800 sq ft total",
+    "≈ 3,250 sq ft"
+   ],
+   "quote": "greg roy's drawing / discussion: the 1963 addition's footprint ≈ 1,625 sq ft. • doubling that footprint (by adding a second level, increasing footprint, or adding a ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Spreadsheet and space-allocation review",
+   "resolution": "Reviewed; framework established for comparison with Taylor & Burns standard",
+   "quote": "chris ruth, facilities director, created the original spreadsheet listing current staff counts and departmental space.",
+   "tags": [
+    "space-planning",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Square-footage totals and design rationale",
+   "resolution": "Discussed; Tony Sculumbrine's 'mean and lean' allocation accepted as baseline (2,915 sq ft public, 1,685 sq ft non-public)",
+   "quote": "tony's totals: public-facing spaces ≈ 2,915 sq ft; non-public/private spaces ≈ 1,685 sq ft (total ≈ 4,600 sq ft before adjustments).",
+   "tags": [
+    "space-planning",
+    "allocation"
+   ]
+  },
+  {
+   "topic": "Ritter building versus 1963 addition footprint discussion",
+   "resolution": "Discussed options for reuse; existing 1963 side preferred due to known geotechnical conditions",
+   "quote": "doubling that footprint (by adding a second level, increasing footprint, or adding a basement) would yield ≈ 3,250 sq ft - enough to accommodate public functions based on tony's 2,915 sq ft public total.",
+   "tags": [
+    "building-reuse",
+    "design-options",
+    "site-constraints"
+   ]
+  },
+  {
+   "topic": "Cost estimates for project",
+   "resolution": "Preliminary back-of-napkin estimates developed; combined total estimated at $4.5 million",
+   "quote": "new-construction cost estimate for 3,200 sq ft at $650/sq ft: ≈ $2.2 million. • specialized demolition (to avoid damaging original ritter): $1,000,000",
+   "tags": [
+    "budgeting",
+    "cost-estimation"
+   ]
+  },
+  {
+   "topic": "Comparison to Taylor & Burns design program",
+   "resolution": "Discussed; Taylor & Burns design had larger allocations than Tony Sculumbrine's efficiency-focused approach",
+   "quote": "taylor & burns had much larger \"usable\" square footage for many departments, including numerous conference rooms, waiting areas, and record storage allocations.",
+   "tags": [
+    "design-comparison",
+    "space-planning"
+   ]
+  },
+  {
+   "topic": "Programmatic decisions and design philosophy",
+   "resolution": "Endorsed 'mean and lean' allocation with centralized shared spaces; agreed to gather employee input using MoSCoW method",
+   "quote": "tony and others advocated for a \"mean and lean\" allocation (smaller, efficient departmental areas, centralized/shared conference/meeting spaces rather than dedicated rooms for each department).",
+   "tags": [
+    "design-philosophy",
+    "employee-engagement"
+   ]
+  },
+  {
+   "topic": "Accessibility and meeting spaces",
+   "resolution": "Decided to relocate selectboard and public meetings to Town Hall first floor to improve accessibility",
+   "quote": "relocating selectboard/public meetings to town hall first floor (improves accessibility vs. current meeting location in ritter which requires using a chairlift for handicapped access).",
+   "tags": [
+    "accessibility",
+    "meeting-spaces"
+   ]
+  },
+  {
+   "topic": "Storage concerns",
+   "resolution": "Identified as ongoing concern; to be addressed through employee input; digital storage transition possible",
+   "quote": "committee members expressed concern about reducing departmental storage (records, registry of voters, archive space).",
+   "tags": [
+    "storage",
+    "records-management"
+   ]
+  },
+  {
+   "topic": "Site and geotechnical constraints",
+   "resolution": "Discussed; existing 1963 addition side preferred due to known subsurface conditions versus uncertainties on School Street side",
+   "quote": "question raised whether the addition must be built on the 1963 annex side of ritter or could be on the opposite (school street) side; issues include subsurface conditions and ledge on the non-annex side",
+   "tags": [
+    "site-planning",
+    "constraints"
+   ]
+  },
+  {
+   "topic": "Fiscal constraints and town appetite for debt-excluded projects",
+   "resolution": "Committed to fiscally responsible plan in $4-8M range; rejected $20M+ approach as unlikely to gain town approval",
+   "quote": "a combined solution for ritter + town hall that comes in \"around eight figures\" (i.e., roughly mid- to high single-digit millions), not $20m+. a ~$4- 8m project has higher chance of town approval",
+   "tags": [
+    "fiscal-constraints",
+    "town-approval",
+    "historic-preservation"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "municipal-building",
+  "building-renovation",
+  "facilities-planning",
+  "space-allocation",
+  "cost-estimation",
+  "design-committee",
+  "employee-engagement",
+  "accessibility",
+  "historic-preservation"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

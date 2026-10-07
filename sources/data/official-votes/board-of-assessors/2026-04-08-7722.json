@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2026-04-08",
  "docid": "7722",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of January 7, 2026",
+   "motion": "Approve the minutes of January 7, 2026",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to approve the minutes of january 7, 2026, by sarah cammer, seconded by brian marple. all in favor."
   },
   {
-   "motion": "Approve minutes of April 16, 2025",
+   "motion": "Approve the minutes of April 16, 2025",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "there was a motion to approve the minutes of april 16, 2025, by sarah cammer, seconded by brian laffond. all in favor."
   },
   {
-   "motion": "Approve executive session minutes of February 25, 2026",
+   "motion": "Approve the executive session minutes of February 25, 2026",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "there was a motion to approve the executive session minutes of february 25, 2026, by sarah cammer, seconded by brian marple. all in favor."
   },
   {
-   "motion": "Board of Assessors does not recommend exercising the right of first refusal for 35 Leominster Road",
+   "motion": "The Board of Assessors does not recommend exercising the right of first refusal for 35 Leominster Road",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed",
@@ -61,6 +61,209 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text from macOS Vision. Executive Session section mentions \"which was approved by the Board of Assessors\" and actions taken (denying an abatement, requesting additional research) but no formal motion votes are recorded for those items. All recorded votes in the open and closing sessions are included above.",
- "cost_usd": 0.0702494
+ "note": "OCR extracted text from macOS Vision. One minor OCR artifact: '1083 Northfield Ra' appears to be 'Northfield Rd' (Road). Minutes approved May 13, 2026. No public comments were made at the meeting.\"",
+ "cost_usd": 0.10908559999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair brian laffond, vice chair sarah cammer, member brian marple, principal assessor lynda cajka"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: chair brian laffond, vice chair sarah cammer, member brian marple, principal assessor lynda cajka"
+  },
+  {
+   "name": "Brian Marple",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair brian laffond, vice chair sarah cammer, member brian marple, principal assessor lynda cajka"
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "members present: chair brian laffond, vice chair sarah cammer, member brian marple, principal assessor lynda cajka"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board of Assessors approved 7 administrative real estate exemptions",
+   "quote": "lynda cajka presented 7 administrative real estate exemption to the board to review which was approved by the board of assessors."
+  },
+  {
+   "decision": "The Board of Assessors denied the administrative real estate abatement and requested that the Principal Assessor research additional information for the 1 real estate abatement",
+   "quote": "the board of assessors denied the administrative real estate abatement and requested that the principal assessor research additional information for the 1 real estate abatement."
+  },
+  {
+   "decision": "The Board signed the commitment for previously approved roll back tax on 1083 Northfield Ra",
+   "quote": "the board signed the commitment for previously approved roll back tax on 1083 northfield ra."
+  },
+  {
+   "decision": "Principal Assessor to photograph the battery storage facility property at 485 Leominster Shirley Road and discuss value with Mike Tarello; owner wants to meet with assessor and board",
+   "quote": "lynda cajka will photograph the property and talk to mike tarello about value. the owner of the property wants to meet with lynda cajka and the board of assessors."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Veterans Exemption and tax abatement reimbursements",
+   "what_was_recorded": "121 abatements/exemptions totaling $160,507 in tax relief, of which $136,067.30 was reimbursed by the state",
+   "figures_as_printed": [
+    "$160,507",
+    "$136,067.30"
+   ],
+   "quote": "there were 121 abatements/exemptions worth $160,507, which we received $136,067.30 reimbursement from the state."
+  },
+  {
+   "topic": "Hero Act credit exemptions",
+   "what_was_recorded": "32 exemptions approved for Hero Act credit totaling $7,983.85",
+   "figures_as_printed": [
+    "$7,983.85"
+   ],
+   "quote": "there were 32 exemptions received and approved for the hero act credit totaling $7,983.85."
+  },
+  {
+   "topic": "Blind and handicap exemptions",
+   "what_was_recorded": "2 blind exemptions totaling $441.43 and 2 handicap exemptions approved",
+   "figures_as_printed": [
+    "$441.43"
+   ],
+   "quote": "there were 2 blind exemptions approved totaling $441.43, 2 handicap exemptions"
+  },
+  {
+   "topic": "22d exemption",
+   "what_was_recorded": "13 of the 22d exemptions approved totaling $10,065.25",
+   "figures_as_printed": [
+    "$10,065.25"
+   ],
+   "quote": "13 of the 22d exemption totaling $10,065.25."
+  },
+  {
+   "topic": "Veterans Exemption Code 101 (single family)",
+   "what_was_recorded": "Total tax bill for Code 101 exemptions was $73,476.32, fully reimbursed by state",
+   "figures_as_printed": [
+    "$73,476.32"
+   ],
+   "quote": "the total tax bill for exemptions regarding code 101 (single family) was $73, 476.32."
+  },
+  {
+   "topic": "Veterans Exemption Code 102 (condos)",
+   "what_was_recorded": "Total tax bill for Code 102 exemptions was $14,231.71, all fully reimbursed by state",
+   "figures_as_printed": [
+    "$14,231.71"
+   ],
+   "quote": "code 102 (condos) total tax bill amount for exemptions totaling $14,231.71 all of which will be fully reimbursed by the state."
+  },
+  {
+   "topic": "Clause 22E exemptions",
+   "what_was_recorded": "27 exemptions received totaling $22,275",
+   "figures_as_printed": [
+    "$22,275"
+   ],
+   "quote": "clause 22e there was a total of 27 exemptions received totaling $22,275."
+  },
+  {
+   "topic": "Total reimbursements for all exemptions",
+   "what_was_recorded": "Total of all reimbursements will be $113,283.03",
+   "figures_as_printed": [
+    "$113,283.03"
+   ],
+   "quote": "total of all reimbursements will be $113,283.03."
+  },
+  {
+   "topic": "Motor vehicle excise tax abatements",
+   "what_was_recorded": "122 motor vehicle excise tax abatements processed in MUNIS, awaiting payment from tax collector",
+   "figures_as_printed": [],
+   "quote": "there were 122 motor vehicle excise tax abatements received in the past month. all have been processed in munis and awaiting payment from the tax collector."
+  },
+  {
+   "topic": "Real estate tax abatements pending approval",
+   "what_was_recorded": "27 real estate tax abatements completed for FY 2026 awaiting board approval",
+   "figures_as_printed": [],
+   "quote": "lynda cajka has completed 27 real estate tax abatements for fy 2026. the abatements are awaiting approval from the board of assessors later this evening during executive session."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Release from overlay account to pay for neighborhood review position continuation",
+   "amount_as_printed": "$27,500",
+   "outcome": "passed",
+   "quote": "there was a motion to release $27,500 from the overlay account to pay for the position to continue with the neighborhood review by sarah cammer, seconded by brian marple. all in favor."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval: January 7, February 4, February 25, and April 16, 2025",
+   "resolution": "approved",
+   "quote": "there was a motion to approve the minutes of january 7, 2026, by sarah cammer, seconded by brian marple. all in favor.",
+   "tags": [
+    "procedural",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY2026 Real Estate and Personal Property Tax Abatements and Chapter Land status report",
+   "resolution": "discussed",
+   "quote": "update on fy2026 real estate and personal property tax abatements and chapter land. other items as needed. in the past 2 months, 14 abutters lists were received.",
+   "tags": [
+    "assessments",
+    "abatements",
+    "tax",
+    "status report"
+   ]
+  },
+  {
+   "topic": "Battery Storage Facility at 485 Leominster Shirley Road",
+   "resolution": "under review - assessor to photograph and assess",
+   "quote": "lynda cajka states of the properties in question already has a storage facility ===page 4=== that wasn't previously noted. lynda cajka will photograph the property and talk to mike tarello",
+   "tags": [
+    "property assessment",
+    "storage"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Status of Neighborhood Review Project",
+   "resolution": "motion passed to release $27,500 from overlay account for position",
+   "quote": "there was a motion to release $27,500 from the overlay account to pay for the position to continue with the neighborhood review by sarah cammer, seconded by brian marple. all in favor.",
+   "tags": [
+    "neighborhood review",
+    "property assessment",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Right of first refusal for 35 Leominster Road",
+   "resolution": "Board does not recommend exercising",
+   "quote": "there was a motion that the board of assessors does not recommend exercising the right of first refusal for 35 leominster road by sarah cammer, seconded by brian marple. all in favor.",
+   "tags": [
+    "property assessment",
+    "right of refusal"
+   ]
+  },
+  {
+   "topic": "Postponed topics: Criteria for Clause 18 and BOA Policies Binder",
+   "resolution": "postponed",
+   "quote": "postponed topics • criteria for clause 18 • boa polices binder",
+   "tags": [
+    "policy",
+    "postponed"
+   ]
+  }
+ ],
+ "tags": [
+  "assessments",
+  "tax abatements",
+  "property",
+  "exemptions",
+  "veterans benefits",
+  "neighborhood review"
+ ],
+ "dropped_unquoted_by_field": {}
 }

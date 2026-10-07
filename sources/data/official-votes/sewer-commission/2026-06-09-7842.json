@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2026-06-09",
  "docid": "7842",
@@ -37,6 +37,173 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0737884
+ "note": "Minutes are clear and legible with no apparent scans, missing pages, or unreadable sections. No public comment provided.",
+ "cost_usd": 0.113489,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Chip Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "For 100 Laurel Lane, the Commission agreed to run 3 lines 4 feet deep to the property line with homeowner connecting from there; Bill Bernard will put work out for bids and run it down dirt without digging up road.",
+   "quote": "he discussed it with dan and they agreed to run 3 lines, 4 feet deep, to the property line and the home owner will need to connect from there. the commission reviewed the location on a map and discussed the options. bill said he will put i",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Bill Bernard will refer the matter of fees for single-family to multi-family conversions under Sewer Regulations to the Town Attorney.",
+   "quote": "bill and andrew went through the regulations but only found something about if it was empty when it was bettered and then they added to it. he will need to run it by the town attorney first."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Manhole Repair IFB",
+   "what_was_recorded": "Contractors nearly complete with framing grates switched out and inside lining work almost finished with 3 remaining; future study needed to identify next targets and reserve funds for additional work.",
+   "figures_as_printed": [],
+   "quote": "they are just about done and the framing grates are all switched out. the inside lining work is almost finished, with 3 left to do. bill added that these were the manholes identified in the contract, needing repairs. they w",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "100 Laurel Lane pressure line installation",
+   "what_was_recorded": "Initial proposal for pressure line installation; work to be put out for bids to determine final cost.",
+   "figures_as_printed": [
+    "around $9,000"
+   ],
+   "quote": "bill noted at the last meeting the home owner and contractor came up with a proposal of around $9,000."
+  },
+  {
+   "topic": "1790 Mass Ave Lot J Water Leak waiver",
+   "what_was_recorded": "Property owner had water leak under trailer for 6 weeks resulting in high sewer bill; waiver approved based on average of last 4 bills.",
+   "figures_as_printed": [
+    "about $4000",
+    "$6,260",
+    "$6,127.00"
+   ],
+   "quote": "andrew reported the owner had a high water bill and a sewer bill of about $4000. it was discovered that she had geyser leaking under h",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "990 Mass Ave Expansion of Use fees",
+   "what_was_recorded": "Discussion of potential fees for single-family to multi-family conversions; referenced Stone Farm duplexes, Electric Ave duplexes, and old funeral home with 4 new tie-ins; referred to Town Attorney.",
+   "figures_as_printed": [],
+   "quote": "bill stated at the last meeting they approved the expansion of use for adding a bedroom and noted they paid the fee. the question was asked if there is a charge to go from a single family to a multi-family."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes (5/26/26)",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "motion: scott d. second: arthur k. to accept the minutes of the 5/26/26 meeting. roll call vote: chip-aye, dan-aye, arthur-aye, scott-aye and brett-aye."
+  },
+  {
+   "topic": "Manhole Repair IFB",
+   "resolution": "continuing work; future study planned",
+   "tags": [
+    "infrastructure",
+    "repair",
+    "maintenance"
+   ],
+   "quote": "they are just about done and the framing grates are all switched out. the inside lining work is almost finished, with 3 left to do. bill added that these were the manholes identified in the contract, needing repairs. they w",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "100 Laurel Lane pressure line installation",
+   "resolution": "going to bid; alternative routing approved",
+   "tags": [
+    "infrastructure",
+    "installation",
+    "property"
+   ],
+   "quote": "bill said he will put it out for bids and will run it down the dirt without digging up the road."
+  },
+  {
+   "topic": "1790 Mass Ave Lot J water leak waiver",
+   "resolution": "approved",
+   "tags": [
+    "billing",
+    "waiver",
+    "leak",
+    "account"
+   ],
+   "quote": "motion: dan p. second: arthur k. to accept the waiver for 1790 mass ave lot j for $6,127.00. roll call vote: chip-aye, dan-aye, arthur-aye, scott-aye, and brett-aye."
+  },
+  {
+   "topic": "990 Mass Ave expansion of use and multi-family conversion fees",
+   "resolution": "referred to Town Attorney",
+   "tags": [
+    "regulations",
+    "fees",
+    "expansion",
+    "legal",
+    "property"
+   ],
+   "quote": "bill and andrew went through the regulations but only found something about if it was empty when it was bettered and then they added to it. he will need to run it by the town attorney first."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "commission",
+  "infrastructure",
+  "manhole",
+  "waiver",
+  "regulations",
+  "fees",
+  "property",
+  "expansion",
+  "pressure line"
+ ],
+ "dropped_unquoted_by_field": {}
 }

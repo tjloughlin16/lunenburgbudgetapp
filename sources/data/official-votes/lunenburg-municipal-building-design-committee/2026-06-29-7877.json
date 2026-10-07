@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2026-06-29",
  "docid": "7877",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "to adjourn",
    "moved_by": "Anthony Sculumbrine",
    "seconded_by": "Tom Gray",
    "outcome": "unanimously approved",
@@ -21,6 +21,202 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0687874
+ "note": "\"\"",
+ "cost_usd": 0.23048599999999997,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "status": "present",
+   "role": "Chair",
+   "quote": "the meeting was called to order at 5:32 pm by david blatt."
+  },
+  {
+   "name": "Brian Lehtinen",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine"
+  },
+  {
+   "name": "Tom Gray",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine"
+  },
+  {
+   "name": "Anthony Sculumbrine",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "status": "absent",
+   "role": "Member",
+   "quote": "members absent: laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  },
+  {
+   "name": "Matthew Brenner",
+   "status": "absent",
+   "role": "Member",
+   "quote": "members absent: laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  },
+  {
+   "name": "Greg Roy",
+   "status": "absent",
+   "role": "Member",
+   "quote": "members absent: laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "status": "absent",
+   "role": "Member",
+   "quote": "members absent: laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair will refine staff-by-area allocations and follow up with departments for clarifications",
+   "quote": "chair will refine staff-by-area allocations and follow up with departments for clarifications."
+  },
+  {
+   "decision": "Committee agreed to await Select Board composition before finalizing consultant engagement",
+   "quote": "concern raised about procurement/timing. committee agreed to await select board composition."
+  },
+  {
+   "decision": "Committee agreed to place TC Passios condition review on a future agenda and schedule an on-site review with facilities manager",
+   "quote": "committee agreed tc passios should be placed on a future agenda to review facility condition; recommended inviting facilities manager to present findings and to conduct a site visit as a committee."
+  },
+  {
+   "decision": "Chair will request the Select Board discuss town buildings at their July 14 meeting",
+   "quote": "chair will request the select board discuss town buildings at their july 14 meeting; committee members plan to monitor and participate in that discussion."
+  },
+  {
+   "decision": "Committee agreed to target July 20 for the next meeting, pending Select Board outcomes and additional input",
+   "quote": "committee agreed to target july 20 for the next meeting (third monday), pending select board outcomes and additional input."
+  },
+  {
+   "decision": "Chair will continue refining the spreadsheet, pursue missing departmental surveys, and push town manager for clarifications on storage and staffing data",
+   "quote": "chair will continue refining the spreadsheet, pursue missing departmental surveys, and push town manager for clarifications on storage and staffing data."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Architect/consultant professional services",
+   "what_was_recorded": "Estimated cost for consultant hours to produce conceptual drawings based on committee square footage numbers",
+   "figures_as_printed": [
+    "40 hours",
+    "$150/hr",
+    "$6,000"
+   ],
+   "quote": "buy a block of consultant hours (example: 40 hours @ $150/hr ≈ $6,000) to generate preliminary concepts."
+  },
+  {
+   "topic": "Interim community space solution",
+   "what_was_recorded": "Preliminary cost estimate for geodesic dome structure for gym activities",
+   "figures_as_printed": [
+    "$50k",
+    "30x75"
+   ],
+   "quote": "discussion of potential interim/alternative community space solutions (example: geodesic dome for gym activities; preliminary cost estimate discussed ~ $50k for a 30x75 structure)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities / Square Footage Analysis",
+   "resolution": "discussed; chair to refine allocations and follow up with departments",
+   "tags": [
+    "square footage",
+    "office space",
+    "record storage",
+    "building departments"
+   ],
+   "quote": "current usable office space estimated around 4,225 sq ft; past proposals ranged from ~5,000 to ~5,665 sq ft for office areas. • projected office need (excluding meeting spaces, elevators, bathrooms) still ~5,600 sq ft; overall building likely ~8,000 sq ft once shared meeting spaces, elevators, restrooms include",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Space Planning Concepts / Adjacencies",
+   "resolution": "discussed; recommendations made for bullpen concept and department clustering",
+   "tags": [
+    "space planning",
+    "department layout",
+    "public counter",
+    "meeting rooms"
+   ],
+   "quote": "bullpen (open/shared workspace) concept broadly favored to increase flexibility, cross-coverage, and staff interaction; recommended for departments with low headcount or intermittent public-facing needs."
+  },
+  {
+   "topic": "Department Feedback / Missing Information",
+   "resolution": "tabled pending additional survey responses; chair to pursue clarifications",
+   "tags": [
+    "department surveys",
+    "staffing data",
+    "storage needs"
+   ],
+   "quote": "several departments (assessors, accounting) have not returned updated surveys; town manager not yet provided clarifying information about storage needs (file cabinets vs. sq ft)."
+  },
+  {
+   "topic": "Design Process and Professional Support",
+   "resolution": "proposal discussed; decision deferred pending Select Board composition",
+   "tags": [
+    "architect consultation",
+    "consultant engagement",
+    "procurement",
+    "conceptual drawings"
+   ],
+   "quote": "proposal discussed to hire an architect/consultant to produce conceptual drawings based on committee square footage numbers. estimated approach: buy a block of consultant hours (example: 40 hours @ $150/hr ≈ $6,000) to generate preliminary concepts."
+  },
+  {
+   "topic": "Ritter Building / Annex Constraints",
+   "resolution": "constraints identified; subsurface conditions unknown",
+   "tags": [
+    "Ritter building",
+    "ADA accessibility",
+    "building envelope",
+    "parking",
+    "design constraints"
+   ],
+   "quote": "ritter building has multilevel entry and accessibility challenges; creating an ada- compliant primary entrance and circulation is a significant design constraint and potential cost driver",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "TC Passios (Community Building) – Scope Concern",
+   "resolution": "agreed to place on future agenda; committee site visit to be scheduled with facilities manager",
+   "tags": [
+    "TC Passios",
+    "community building",
+    "facility condition",
+    "storage",
+    "voting operations"
+   ],
+   "quote": "some members asserted tc passios must be included in committee review because it currently houses storage, voting operations, and community activities (teen club, food pantry, senior activities)."
+  },
+  {
+   "topic": "Other Business / Interim Solutions",
+   "resolution": "discussed potential alternative community space options",
+   "tags": [
+    "interim solutions",
+    "community space",
+    "geodesic dome",
+    "gym activities"
+   ],
+   "quote": "discussion of potential interim/alternative community space solutions (example: geodesic dome for gym activities; preliminary cost estimate discussed ~ $50k for a 30x75 structure)."
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "facilities planning",
+  "space planning",
+  "building design",
+  "architect consultation",
+  "square footage analysis",
+  "Ritter building",
+  "TC Passios",
+  "ADA accessibility",
+  "community space"
+ ],
+ "dropped_unquoted_by_field": {}
 }

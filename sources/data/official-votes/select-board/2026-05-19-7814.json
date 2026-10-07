@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-05-19",
  "docid": "7814",
@@ -12,12 +12,13 @@
  },
  "votes": [
   {
-   "motion": "Write off $107,232.09 in uncollectable ambulance billings and forward $65,044.85 to Coastal's collection agency for further action",
+   "motion": "Write off $107,232.09 in uncollectable ambulance billings and forward $65,044.85 to Coastal's collection agency",
    "moved_by": "Clerk Renee Emkey",
    "seconded_by": "Member Glenn McLeod",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "clerk renee emkey motioned to write off $107,232.09 in uncollectable ambulance billings and to forward $65,044.85 to coastal's collection agency for further action. seconded by member glenn mcleod. roll call vote: clerk renee emkey- aye. member glenn mcleod-aye. member brian lehtinen-aye. chair nuzzolo-aye. the motion passed (4-0-0)"
+   "quote": "motioned to write off $107,232.09 in uncollectable ambulance billings and to forward $65,044.85 to coastal's collection agency for further action. seconded by member glenn mcleod. roll c",
+   "quote_taken_from_text": true
   },
   {
    "motion": "Cause an investigation to be conducted by the Animal Control Officer regarding the nuisance dog complaint submitted by George and Jennifer Burden",
@@ -25,7 +26,24 @@
    "seconded_by": "Member McLeod",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "clerk emkey motioned to cause an investigation to be conducted by the animal control officer regarding the nuisance dog complaint submitted by george and jennifer burden. seconded by member mcleod. roll call vote: member mcleod-aye. clerk emkey-aye. member lehtinen-aye. chair nuzzolo-aye. the motion passed (4-0-0)"
+   "quote": "motioned to cause an investigation to be conducted by the animal control officer regarding the nuisance dog complaint submitted by george and jennifer burden. seconded by member mcleod. roll call vote: member mc",
+   "quote_taken_from_text": true
+  },
+  {
+   "motion": "Nominate Member Lehtinen as Select Board Chair",
+   "moved_by": "Member McLeod",
+   "seconded_by": "",
+   "outcome": "failed",
+   "procedural": true,
+   "quote": "member mcleod nominated member lehtinen as select board chair. no second. nomination fails."
+  },
+  {
+   "motion": "Nominate Chair Nuzzolo as Select Board Chair",
+   "moved_by": "Member Lehtinen",
+   "seconded_by": "",
+   "outcome": "failed",
+   "procedural": true,
+   "quote": "member lehtinen nominated chair nuzzolo for select board chair. no second. nomination fails."
   },
   {
    "motion": "Nominate Clerk Emkey as Select Board Chair",
@@ -33,32 +51,34 @@
    "seconded_by": "Member McLeod",
    "outcome": "passed 3-1-0",
    "procedural": true,
-   "quote": "member lehtinen nominated clerk emkey as select board chair. seconded by member mcleod. roll call vote: member mcleod-aye. clerk emkey-aye. member lehtinen-aye. chair nuzzolo-nay. the ===page 4=== motion p",
+   "quote": "member lehtinen nominated clerk emkey as select board chair. seconded by member mcleod. roll call vote: member mc",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Nominate Member Lehtinen for Vice-Chair of the Select Board",
+   "motion": "Nominate Member Lehtinen as Vice-Chair of the Select Board",
    "moved_by": "Clerk Emkey",
    "seconded_by": "Member McLeod",
    "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "clerk emkey nominated member lehtinen for vice-chair of the select board. seconded by member mcleod. roll call vote: member mcleod-aye. clerk emkey-aye. member lehtinen-aye. chair nuzzolo-aye. the motion passed (4-0-0)"
+   "quote": "clerk emkey nominated member lehtinen for vice-chair of the select board. seconded by member mcleod. roll call vote: member mc",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Nominate Chair Nuzzolo for Clerk of the Select Board",
+   "motion": "Nominate Chair Nuzzolo as Clerk of the Select Board",
    "moved_by": "Member McLeod",
    "seconded_by": "Member Lehtinen",
    "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "member mcleod nominated chair nuzzolo for clerk of the select board. seconded by member lehtinen. roll call vote: member mcleod-aye. clerk emkey-aye. member lehtinen-aye. chair nuzzolo-aye. the motion passed (4-0-0)"
+   "quote": "member mcleod nominated chair nuzzolo for clerk of the select board. seconded by member lehtinen. roll call vote: member mc",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Waive the selected requirements of the Special Event Policy for the Club's Shrieks and Krieks event application",
+   "motion": "Waive selected requirements of the Special Event Policy for the Club's Shrieks and Krieks event application",
    "moved_by": "Clerk Emkey",
    "seconded_by": "Member McLeod",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "clerk emkey motioned to waive the selected requirements of the special event policy for the club's shrieks and krieks event application. seconded by member mcleod. roll call vote: member mcleod- aye. clerk emkey-aye. member lehtinen-aye. chair nuzzolo-aye. the motion passed (4-0-0",
+   "quote": "clerk emkey motioned to waive the selected requirements of the special event policy for the club's shrieks and krieks event application. seconded by member mcleod",
    "quote_taken_from_text": true
   },
   {
@@ -67,26 +87,340 @@
    "seconded_by": "Member McLeod",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "clerk emkey motioned to waive the town's right of first refusal for 35 leominster road. seconded by member mcleod. roll call vote: member mcleod-aye. clerk emkey-aye. member lehtinen-aye. chair nuzzolo-aye. the motion passed (4-0-0)"
+   "quote": "clerk emkey motioned to waive the town's right of first refusal for 35 leominster road. seconded by member mcleod",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn at 7:56 pm",
    "moved_by": "Clerk Emkey",
    "seconded_by": "Member McLeod",
    "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "clerk emkey motioned to adjourn at 7:56 pm. seconded by member mcleod. roll call vote: member mcleod-aye. clerk emkey-aye. member lehtinen-aye. chair nuzzolo-aye. the motion passed (4-0-0)"
-  },
-  {
-   "motion": "Approve the minutes of May 19, 2026",
-   "moved_by": "Vice-Chair Lehtinen",
-   "seconded_by": "Clerk McLeod",
-   "outcome": "passed 3-0-0",
-   "procedural": true,
-   "quote": "vice- chair lehtinen made the motion to approve the minutes of may 19, 2026. seconded by clerk mcleod. call for the vote: three-aye. motion passed unanimously (3-0-0)."
+   "quote": "clerk emkey motioned to adjourn at 7:56 pm. seconded by member mcleod. roll call vote: member mc",
+   "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes located and extracted. Note: The final vote (approval of minutes) was recorded on July 7, 2026, when these May 19 minutes were formally approved, but is documented in this minutes text.",
- "cost_usd": 0.11864640000000001
+ "dropped_unquoted": 1,
+ "note": "\"\"",
+ "cost_usd": 0.18186799999999997,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, and member glenn mcleod, member brian lehtinen (virtual)"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, and member glenn mcleod, member brian lehtinen (virtual)"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, and member glenn mcleod, member brian lehtinen (virtual)"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, and member glenn mcleod, member brian lehtinen (virtual)"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "members absent: vice-chair amanda moore (resignation announcement made during meeting)"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "tom alonzo of 284 lancaster avenue announced a special meeting of the lunenburg water district"
+  },
+  {
+   "name": "John Bowen Jr.",
+   "role": "",
+   "status": "present",
+   "quote": "john bowen jr. of 162 highland street thanked all volunteers that came to the flag staking for memorial day this past saturday"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed to continue discussions at a future meeting regarding filling vacancy of Vice-Chair Moore after Town Clerk provides election timeline",
+   "quote": "the board agreed to continue discussions at a future meeting once the town clerk is able to give an election timeline."
+  },
+  {
+   "decision": "Board agreed to bring Tri-Board together to discuss whether the balanced budget should be brought to a Special Town Meeting",
+   "quote": "chair nuzzolo and member lehtinen agreed. member mcleod noted that there will still be a need for an ov",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Uncollected ambulance billings write-off",
+   "what_was_recorded": "Board considered recommendation to write off uncollectable ambulance receivables and forward remaining amounts to collection agency",
+   "figures_as_printed": [
+    "$107,232.09",
+    "$65,044.85"
+   ],
+   "quote": "the board considered a recommendation to write off $107,232.09 in uncollectable bills, representing charges that for various reasons have little to no prospect of being collected. simultaneously, the recommendation called for $65,044.85 to be forwarded to coastal's collection agency."
+  },
+  {
+   "topic": "Flat Hill Road Bridge project bids",
+   "what_was_recorded": "Nine bids received for bridge project; lowest bid rejected for missing bond requirement; next lowest bid noted against available funding",
+   "figures_as_printed": [
+    "$807,530",
+    "$1,417,869.50",
+    "$1,065,352",
+    "$1,378,500"
+   ],
+   "quote": "bids were opened on may 14th for the flat hill road bridge project, with nine bids received ranging from $807,530 to $1,417,869.50. the apparent low bid of $807,530 was rejected for failure to include the required bid bond. the next lowest bid was $1,065,352. total available project funding is $1,378,500"
+  },
+  {
+   "topic": "Lunenburg Adult Activity Center and Teen Center flooring projects",
+   "what_was_recorded": "Six bids received for flooring projects within capital budget showing favorable pricing pending low bidder diligence",
+   "figures_as_printed": [
+    "$74,424",
+    "$119,000",
+    "$76,000"
+   ],
+   "quote": "bids for the lunenburg adult activity center and teen center flooring projects were opened on may 6th, with six bids ranging from $74,424 to $119,000 against a $76,000 capital budget"
+  },
+  {
+   "topic": "Pavement condition assessment and management plan",
+   "what_was_recorded": "Town engaged Tighe & Bond for pavement assessment funded through Chapter 90 funds with expected completion in approximately one year",
+   "figures_as_printed": [
+    "$34,500"
+   ],
+   "quote": "the town engaged engineering firm tighe & bond for a pavement condition assessment and multi-year pavement management plan at a cost of $34,500, funded through chapter 90 funds"
+  },
+  {
+   "topic": "MassDOT Community Culvert Program award for Easter Brook design",
+   "what_was_recorded": "Town received grant award from MassDOT for design work on culvert over Easter Brook on Goodrich Street, critical east-west corridor",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "the town received a $150,000 award from the massdot community culvert program for design work on the culvert over easter brook on goodrich street"
+  },
+  {
+   "topic": "Accounts Payable warrant signed",
+   "what_was_recorded": "Board signed Accounts Payable warrant",
+   "figures_as_printed": [
+    "$126,087.73"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $126,087.73"
+  },
+  {
+   "topic": "Lunenburg Water District water treatment plant proposal",
+   "what_was_recorded": "Special meeting announced for vote on proposed $47 million water treatment plant; all voters and affected residents invited to vote and provide input",
+   "figures_as_printed": [
+    "$47 million"
+   ],
+   "quote": "tom alonzo of 284 lancaster avenue announced a special meeting of the lunenburg water district regarding a proposed $47 million water treatment plant was held on wednesday, june 3 rd at 6:00 p",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "",
+   "topic": "Water District special meeting and proposed water treatment plant",
+   "quote": "announced a special meeting of the lunenburg water district regarding a proposed $47 million water treatment plant was held on wednesday, june 3 rd at 6:00 pm at the lunenburg high school auditoriu",
+   "quote_taken_from_text": true
+  },
+  {
+   "speaker": "John Bowen Jr.",
+   "stated_role": "",
+   "topic": "Flag staking volunteers, Naval Academy candidate status, and flag retirement ceremony",
+   "quote": "thanked all volunteers that came to the flag staking for memorial day this past saturday. he also thanked dpw cemetery superintendent todd holman, dpw director bill bernard, the select board, and the town",
+   "quote_taken_from_text": true
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "",
+   "topic": "Possible ethics violation by Finance Committee member regarding letter sent before election",
+   "quote": "spoke to a letter that was sent prior to the election by a finance committee member that may be a possible ethics violation and suggested the select board to look into the matter"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements of town events",
+   "resolution": "informational",
+   "tags": [
+    "announcements",
+    "events",
+    "community"
+   ],
+   "quote": "chair nuzzolo announced the third annual classic cruise night, hosted by the turkey hill family lions club, was scheduled for the following evening, may 20 t",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Uncollected ambulance billings from Coastal Medical Billing",
+   "resolution": "approved write-off and collection forwarding",
+   "tags": [
+    "finance",
+    "ambulance",
+    "billing",
+    "receivables"
+   ],
+   "quote": "the board considered a recommendation to write off $107,232.09 in uncollectable bills"
+  },
+  {
+   "topic": "Resignation of Principal Assessor Lynda Cajka",
+   "resolution": "acknowledged",
+   "tags": [
+    "personnel",
+    "resignation"
+   ],
+   "quote": "town manager jennifer warren-dyment acknowledged the resignation of principal assessor lynda cajka effective june 30, 2026"
+  },
+  {
+   "topic": "Resignation of Outreach Coordinator Jonathan Francis",
+   "resolution": "acknowledged",
+   "tags": [
+    "personnel",
+    "resignation"
+   ],
+   "quote": "town manager warren-dyment noted that mr. francis had been appointed only a few weeks prior and had determined that the position was not the right fit for him"
+  },
+  {
+   "topic": "Resignation of Vice-Chair Amanda Moore",
+   "resolution": "acknowledged",
+   "tags": [
+    "personnel",
+    "resignation",
+    "board vacancy"
+   ],
+   "quote": "chair nuzzolo read a letter from vice-chair amanda moore announcing her decision to resign from the select board"
+  },
+  {
+   "topic": "Nuisance dog complaint investigation",
+   "resolution": "approved investigation",
+   "tags": [
+    "animal control",
+    "enforcement"
+   ],
+   "quote": "select board has received a dog complaint submitted by george and jennifer burden. there will be a future hearing regarding the complaint"
+  },
+  {
+   "topic": "Special Town Meeting and Special Town Election discussion",
+   "resolution": "deferred to future meeting",
+   "tags": [
+    "governance",
+    "elections",
+    "special meeting",
+    "budget override"
+   ],
+   "quote": "chair nuzzolo opened discussion on the need to fill ms. moore's vacancy and that a special town election would need to be held"
+  },
+  {
+   "topic": "Select Board reorganization and election of officers",
+   "resolution": "approved",
+   "tags": [
+    "governance",
+    "elections",
+    "board reorganization"
+   ],
+   "quote": "member lehtinen nominated clerk emkey as select board chair. seconded by member mcleod. roll call vote: member mc",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Review of Town Manager's annual evaluation",
+   "resolution": "deferred to next meeting",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ],
+   "quote": "chair nuzzolo has not met with the town manager regarding her evaluation. item will be carried to next meeting."
+  },
+  {
+   "topic": "Request for Proposal evaluation criteria for 925 Massachusetts Avenue",
+   "resolution": "criteria reviewed",
+   "tags": [
+    "property",
+    "development",
+    "village center",
+    "RFP"
+   ],
+   "quote": "town manager warren-dyment presented the evaluation criteria developed by the rfp working group for the disposition of 925 massachusetts avenue"
+  },
+  {
+   "topic": "Select Board liaison assignments for FY27",
+   "resolution": "liaisons assigned",
+   "tags": [
+    "governance",
+    "committees",
+    "board assignments"
+   ],
+   "quote": "the select board reviewed the current list of liaison assignments. the following assignments were made or discussed for fy27"
+  },
+  {
+   "topic": "Special Event Policy requirements waiver for Teen Center Shrieks & Krieks",
+   "resolution": "approved waiver",
+   "tags": [
+    "special events",
+    "policy"
+   ],
+   "quote": "the board discussed waiving select requirements under the town's special event policy for the club lunenburg teen center's annual shrieks & kriek",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Right of First Refusal for 35 Leominster Road",
+   "resolution": "waived",
+   "tags": [
+    "property",
+    "land use",
+    "Chapter 61"
+   ],
+   "quote": "chair nuzzolo reported that all boards and committees had discussed and that none had recommended exercising the town's first right of refusal"
+  },
+  {
+   "topic": "Town Manager report on personnel, projects, and recruitment",
+   "resolution": "informational",
+   "tags": [
+    "administration",
+    "personnel",
+    "capital projects"
+   ],
+   "quote": "town manager warren-dyment provided the following updates: personnel: full funding for the vacation system transition was approved at the annual town meeting"
+  },
+  {
+   "topic": "Stormwater Task Force progress report",
+   "resolution": "ongoing discussion",
+   "tags": [
+    "stormwater",
+    "utilities",
+    "infrastructure",
+    "fee structure"
+   ],
+   "quote": "clerk emkey reported that the stormwater task force met the previous evening. member john beal conducted analysis comparing data received from weston & sampson against the assessor's list"
+  }
+ ],
+ "tags": [
+  "select board",
+  "governance",
+  "elections",
+  "reorganization",
+  "personnel",
+  "budget",
+  "capital projects",
+  "property",
+  "public comment",
+  "resignation"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2026-01-28",
  "docid": "7621",
@@ -12,20 +12,21 @@
  },
  "votes": [
   {
-   "motion": "Allocate $1,993.36 from the Revolving Fund for a new Fitzgerald Field sign and installation",
+   "motion": "Allocate $1,993.36 from the Revolving Fund for the new Fitzgerald Field sign and installation",
    "moved_by": "C. Sullivan",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "c. sullivan moved to allocate $1,993.36 from the revolving fund for the new fitzgerald field sign and installation. seconded by c. shapiro."
+   "quote": "c. sullivan moved to allocate $1,993.36 from the revolving fund for the new fitzgerald field sign and installation. seconded by c. shapiro. call for the vote: c. sullivan-aye c. shapiro-aye m. mascari-aye k. menard-aye the motion passed unanimously (4-0-0)."
   },
   {
-   "motion": "Authorize the Lunenburg Youth Baseball Program to remove and construct two new dugouts at Powell Field using private contractors and donations through their program",
+   "motion": "Authorize the Lunenburg Youth Baseball Program to remove and construct two new dugouts at Powell Field using private contractors and donations",
    "moved_by": "C. Shapiro",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "c. shapiro moved to authorize the lunenburg youth baseball program to remove and construct two new dugouts at powell field using private contractors and donations through their program. seconded by c. sullivan."
+   "quote": "c. shapiro moved to authorize the lunenburg youth baseball program to remove and construct two new dugouts at powell field using private contractors and donations through their program. seconded by c. sullivan. call for the vote: c. sullivan-aye, c. shapiro-aye, m. mascari-aye, k. menard- aye. the motion passed unanimously (4-0-0)",
+   "quote_taken_from_text": true
   },
   {
    "motion": "Approve the October 27, 2025, and December 17, 2025, meeting minutes",
@@ -33,7 +34,7 @@
    "seconded_by": "M. Mascari",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "c. sullivan moved to approve the october 27, 2025, and december 17, 2025, meeting minutes. seconded by m. mascari."
+   "quote": "c. sullivan moved to approve the october 27, 2025, and december 17, 2025, meeting minutes. seconded by m. mascari. call for the vote: c. sullivan-aye c. shapiro-aye m. mascari-aye k. menard-aye the motion passed unanimously (4-0-0)."
   },
   {
    "motion": "Adjourn",
@@ -41,10 +42,226 @@
    "seconded_by": "C. Shapiro",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "c. sullivan moved to adjourn. seconded by c. shapiro."
+   "quote": "c. sullivan moved to adjourn. seconded by c. shapiro. call for the vote: c. sullivan-aye c. shapiro-aye m. mascari-aye k. menard-aye the motion passed unanimously (4-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09558040000000001
+ "note": "Minutes are clear and complete. All votes recorded with unanimous outcomes (4-0). No apparent OCR or scanning issues. Meeting conducted via Zoom but all members participated remotely. Meeting recorded and uploaded to YouTube per opening statement. Meeting adjourned at 8:38 PM.",
+ "cost_usd": 0.1098456,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair karin menard, vice-chair chris sullivan, member colleen shapiro, member marianne mascari"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair karin menard, vice-chair chris sullivan, member colleen shapiro, member marianne mascari"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair karin menard, vice-chair chris sullivan, member colleen shapiro, member marianne mascari"
+  },
+  {
+   "name": "Marianne Mascari",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair karin menard, vice-chair chris sullivan, member colleen shapiro, member marianne mascari"
+  },
+  {
+   "name": "C. Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "facilities director, c. ruth, stated that the town received almost two feet of snow during the recent storm."
+  },
+  {
+   "name": "Matt Gilman",
+   "role": "Lunenburg Youth Baseball Vice-President",
+   "status": "present",
+   "quote": "lunenburg youth baseball representatives matt gilman, jami anderson, and ryan franczek introduced themselves to the commission."
+  },
+  {
+   "name": "Jami Anderson",
+   "role": "Lunenburg Youth Baseball",
+   "status": "present",
+   "quote": "lunenburg youth baseball representatives matt gilman, jami anderson, and ryan franczek introduced themselves to the commission."
+  },
+  {
+   "name": "Ryan Franczek",
+   "role": "Lunenburg Youth Baseball",
+   "status": "present",
+   "quote": "lunenburg youth baseball representatives matt gilman, jami anderson, and ryan franczek introduced themselves to the commission."
+  },
+  {
+   "name": "Anthony Senesi",
+   "role": "Recording Clerk",
+   "status": "present",
+   "quote": "respectfully submitted, anthony senesi, recording clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair approved meeting recording to be uploaded to YouTube",
+   "quote": "chair k. menard informed attendees that the meeting was being recorded and would be uploaded to youtube after the meeting."
+  },
+  {
+   "decision": "Commission will review field usage forms and policies at the next meeting",
+   "quote": "k. menard stated that the commission can review the field usage forms and policies at the next commission meeting."
+  },
+  {
+   "decision": "Commission will review fee schedule for private non-profit youth baseball program field usage",
+   "quote": "k. menard stated that the commission should look into the fee schedule for instances like this."
+  },
+  {
+   "decision": "Commission to meet with Lunenburg Skate Park organizers regarding completion bond",
+   "quote": "k. menard stated that the commission has a meeting with the lunenburg skate park organizers next week regarding a completion bond."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fitzgerald Field sign replacement",
+   "what_was_recorded": "Cost of new roll sign 120 by 45 inches with installation from Add-A-Sign",
+   "figures_as_printed": [
+    "$1,993.36"
+   ],
+   "quote": "c. ruth stated that the total cost of the sign with installation would be $1,993.36 from the revolving account."
+  },
+  {
+   "topic": "Beach House sign replacement",
+   "what_was_recorded": "Estimate from Add-A-Sign to remove old sign, design and install new 72 by 36 inch raised frame aluminum belt sign",
+   "figures_as_printed": [
+    "$1,065",
+    "$1,000"
+   ],
+   "quote": "m. mascari stated that the estimate to remove the old sign, design, and install the new sign would cost $1,065. m. mascari stated that a donor will cover up to $1,000."
+  },
+  {
+   "topic": "Beach operations salary budget",
+   "what_was_recorded": "Beach fees cover approximately 50 percent of salary budget; proposed doubling of fees to achieve self-sustaining program",
+   "figures_as_printed": [
+    "50%"
+   ],
+   "quote": "k. menard stated that the beach fees do not cover all the salaries for beach operations; they cover roughly 50% of the salary budget."
+  },
+  {
+   "topic": "Lunenburg Youth Baseball dugout project",
+   "what_was_recorded": "Proposed new dugouts at Powell Field, each approximately 25 feet by 8 feet, funded entirely by private donations and volunteer labor; no cost to Town",
+   "figures_as_printed": [],
+   "quote": "m. gilman stated that the proposed new dugouts would be a donation to the town and would not cost the town any funds."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Fitzgerald Field sign and installation",
+   "amount_as_printed": "$1,993.36",
+   "outcome": "approved, authorized from Revolving Fund",
+   "quote": "c. sullivan moved to allocate $1,993.36 from the revolving fund for the new fitzgerald field sign and installation."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities Director Updates",
+   "resolution": "reported",
+   "tags": [
+    "snow",
+    "weather",
+    "maintenance"
+   ],
+   "quote": "facilities director, c. ruth, stated that the town received almost two feet of snow during the recent storm."
+  },
+  {
+   "topic": "Fitzgerald Field Sign Review and Replacement",
+   "resolution": "approved",
+   "tags": [
+    "capital",
+    "facilities",
+    "signage"
+   ],
+   "quote": "c. sullivan moved to allocate $1,993.36 from the revolving fund for the new fitzgerald field sign and installation. seconded by c. shapiro. call for the vote: c. sullivan-aye c. sh",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Lunenburg Youth Baseball Dugout Project at Powell Field",
+   "resolution": "approved",
+   "tags": [
+    "facilities",
+    "youth sports",
+    "volunteer",
+    "donations"
+   ],
+   "quote": "c. shapiro moved to authorize the lunenburg youth baseball program to remove and construct two new dugouts at powell field using private contractors and donations through their program. seconded by c. sullivan. call for the vo",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Beach House Sign Update",
+   "resolution": "pending",
+   "tags": [
+    "signage",
+    "facilities",
+    "donations"
+   ],
+   "quote": "m. mascari stated that the estimate to remove the old sign, design, and install the new sign would cost $1,065. m. mascari stated that a donor will cover up to $1,000. m. mascari stated that she will solicit two other quotes from vendors as well."
+  },
+  {
+   "topic": "2026 Beach Season Discussion",
+   "resolution": "discussed",
+   "tags": [
+    "beach",
+    "fees",
+    "operations",
+    "budget"
+   ],
+   "quote": "k. menard proposed to adjust the beach fee structure to make the program self-sustaining and not reliant on the town's operating budget."
+  },
+  {
+   "topic": "Abutters Notification from Zoning Board and Planning Board regarding 947 Massachusetts Avenue",
+   "resolution": "noted",
+   "tags": [
+    "zoning",
+    "planning",
+    "commercial"
+   ],
+   "quote": "k. menard said that the commission received abutters notification from the zoning board of appeals and the planning board regarding the dunkin donuts proposed at the former main street bank location."
+  },
+  {
+   "topic": "Field Usage Forms and Policy Review",
+   "resolution": "continued",
+   "tags": [
+    "policy",
+    "facilities",
+    "enforcement"
+   ],
+   "quote": "k. menard stated that the commission can review the field usage forms and policies at the next commission meeting."
+  },
+  {
+   "topic": "Chair Updates",
+   "resolution": "reported",
+   "tags": [
+    "skate park",
+    "capital"
+   ],
+   "quote": "k. menard stated that the commission has a meeting with the lunenburg skate park organizers next week regarding a completion bond."
+  }
+ ],
+ "tags": [
+  "park commission",
+  "facilities",
+  "capital projects",
+  "beach operations",
+  "youth sports",
+  "signage",
+  "budget",
+  "fees",
+  "donations",
+  "volunteer"
+ ],
+ "dropped_unquoted_by_field": {}
 }

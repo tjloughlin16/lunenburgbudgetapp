@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2026-06-15",
  "docid": "7855",
@@ -15,7 +15,7 @@
    "motion": "Approve minutes from June 1, 2026",
    "moved_by": "Laura Brzozoski",
    "seconded_by": "Tom Gray",
-   "outcome": "passed",
+   "outcome": "unanimously approved, one abstain",
    "procedural": true,
    "quote": "motion to approve: laura brzozoski. seconded by tom gray. unanimously approved, one abstain, greg roy."
   },
@@ -23,12 +23,145 @@
    "motion": "Adjourn the meeting",
    "moved_by": "Anthony Sculumbrine",
    "seconded_by": "Tom Gray",
-   "outcome": "passed",
+   "outcome": "unanimously approved",
    "procedural": true,
    "quote": "motion to adjourn: anthony sculumbrine. seconded by tom gray. unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded are procedural (approval of prior minutes and adjournment). The remainder of the document contains departmental presentations, findings, and action items discussed but not formally voted on. No substantive votes were recorded.",
- "cost_usd": 0.0706634
+ "note": "Complete minutes with clear agenda structure. No financial figures provided. All attendees listed with status.",
+ "cost_usd": 0.11865400000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine, laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  },
+  {
+   "name": "Tom Gray",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine, laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  },
+  {
+   "name": "David Blatt",
+   "status": "present",
+   "role": "Chair",
+   "quote": "the meeting was called to order at 5:32 pm by david blatt."
+  },
+  {
+   "name": "Anthony Sculumbrine",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine, laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine, laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  },
+  {
+   "name": "Matthew Brenner",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine, laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  },
+  {
+   "name": "Greg Roy",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine, laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, anthony sculumbrine, laura brzozoski, matthew brenner, greg roy, kristina masaitis"
+  },
+  {
+   "name": "Chris Ruth",
+   "status": "present",
+   "role": "Town Employee",
+   "quote": "town employees: chris ruth"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee to review departmental survey responses in detail, refine questions, and request clarifications where needed",
+   "quote": "committee intends to review departmental survey responses in detail, refine questions, and request clarifications where needed."
+  },
+  {
+   "decision": "Brian Lehtinen to follow up with town manager to obtain survey responses from assessor and accountant departments",
+   "quote": "two departments still outstanding on survey response (assessor and accountant); brian will follow up with the town manager to obtain them."
+  },
+  {
+   "decision": "Next meeting scheduled for June 29",
+   "quote": "next meeting scheduled: june 29"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "minutes from june 1, 2026 were reviewed. motion to approve: laura brzozoski. seconded by tom gray. unanimously approved, one abstain, greg roy."
+  },
+  {
+   "topic": "Survey Review — Overview and Process",
+   "resolution": "committee to review and refine",
+   "tags": [
+    "survey",
+    "departmental feedback"
+   ],
+   "quote": "committee intends to review departmental survey responses in detail, refine questions, and request clarifications where needed."
+  },
+  {
+   "topic": "Department-by-Department Findings, Questions, and Actions",
+   "resolution": "reviewed, clarifications requested",
+   "tags": [
+    "departmental needs",
+    "space planning",
+    "facilities"
+   ],
+   "quote": "committee intends to review departmental survey responses in detail, refine questions, and request clarifications where needed."
+  },
+  {
+   "topic": "Decisions Needed",
+   "resolution": "framework established for future decisions",
+   "tags": [
+    "building design",
+    "space requirements",
+    "security",
+    "meeting rooms"
+   ],
+   "quote": "committee concluded that departments should report storage needs by number/type of file cabinets, flat files, or cubic feet and note frequency/access needs"
+  },
+  {
+   "topic": "Next Steps and Action Items",
+   "resolution": "action items assigned",
+   "tags": [
+    "follow-up",
+    "planning"
+   ],
+   "quote": "committee to re-ask select clarifying questions to departments (storage quantified as file cabinets/type; frequency of access; visitor counts; security details)."
+  }
+ ],
+ "tags": [
+  "facilities planning",
+  "municipal building design",
+  "space survey",
+  "departmental needs assessment",
+  "building code compliance"
+ ],
+ "dropped_unquoted_by_field": {}
 }

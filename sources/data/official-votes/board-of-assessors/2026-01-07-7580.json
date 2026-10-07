@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2026-01-07",
  "docid": "7580",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Set the target overlay for FY27 at $260,000",
+   "motion": "Set the target overlay for FY2027 at $260,000",
    "moved_by": "Brian Laffond",
    "seconded_by": "Brian Marple",
    "outcome": "passed",
    "procedural": false,
-   "quote": "there was a motion to set the target overlay for fy27 at $260,000 by brian laffond, seconded by bian marple. all in favor. ",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to set the target overlay for fy27 at $260,000 by brian laffond, seconded by bian marple. all in favor."
   },
   {
-   "motion": "Adjourn the open meeting to executive session and not return to open session",
+   "motion": "Adjourn the open meeting and enter executive session, not to return to the open session after exiting",
    "moved_by": "Brian Laffond",
    "seconded_by": "Brian Marple",
    "outcome": "passed",
@@ -29,7 +28,225 @@
    "quote": "there was a motion to adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session by brian laffond, seconded by brian marple. all in favor."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Text extracted via OCR (macOS Vision). The first motion about $400,000 growth is recorded but no vote outcome is stated in the minutes.",
- "cost_usd": 0.0774834
+ "dropped_unquoted": 4,
+ "note": "This document is OCR'd from macOS Vision. OCR errors present include: \"BOARD O=\" for \"BOARD OF\", \"MASSACHUSET S\" for \"MASSACHUSETTS\", and some word spacing issues. Minutes show 8 applications for Senior Means Tested Exemptions (SMTE) with OCR artifact \"& applications\" likely representing that count. The first growth estimate motion outcome is not stated in the minutes.\"",
+ "cost_usd": 0.11531360000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, member brian marple, principal assessor lynda cajka"
+  },
+  {
+   "name": "Brian Marple",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair brian laffond, member brian marple, principal assessor lynda cajka"
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, member brian marple, principal assessor lynda cajka"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent member: vice chair sarah cammer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review and approval of minutes from September 3, 2025 through December 3, 2025 and executive session minutes postponed until next meeting when Sarah Cammer will be present",
+   "quote": "this topic was postponed until the next meeting when sarah cammer will also be present."
+  },
+  {
+   "decision": "Lynda Cajka and Randy Mercier will meet next month to discuss the personal property bridge issue",
+   "quote": "lynda cajka and randy mercier will be meeting next month to discuss the personal property bridge issue that has not been corrected."
+  },
+  {
+   "decision": "A letter will be sent to homeowners of all land parcels with identified land condition adjustments",
+   "quote": "a letter will be sent to homeowners of all land parcels."
+  },
+  {
+   "decision": "Defer creation of written criteria for Clause 18 until an application is submitted; further discussion at upcoming meetings",
+   "quote": "brian laffond proposed waiting to create criteria until an application has been submitted. there will be further discussion at upcoming meetings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2026 Overlay Budget",
+   "what_was_recorded": "The FY2026 estimated overlay budget was originally $175,000, wound with approximately $164,000, and will exceed that amount",
+   "figures_as_printed": [
+    "$175,000",
+    "~$164,000"
+   ],
+   "quote": "the estimated overlay budget for fy2026 was originally $175,000. we wound with ~$164,000. we will exceed that amount."
+  },
+  {
+   "topic": "FY2027 Overlay Target",
+   "what_was_recorded": "Target overlay for FY2027 set at $260,000",
+   "figures_as_printed": [
+    "$260,000"
+   ],
+   "quote": "there was a motion to set the target overlay for fy27 at $260,000 by brian laffond, seconded by bian marple. all in favor."
+  },
+  {
+   "topic": "Senior Means Tested Exemptions FY2026",
+   "what_was_recorded": "FY2026 SMTE totaled $16,380; 6 of 8 applications were approved",
+   "figures_as_printed": [
+    "$16,380"
+   ],
+   "quote": "fy2026 smte totaled $16,380."
+  },
+  {
+   "topic": "Projected Senior Means Tested Exemptions FY2027",
+   "what_was_recorded": "Lynda Cajka estimated approximately 20 applications expected for FY2027 with total of about $56,400",
+   "figures_as_printed": [
+    "$56,400"
+   ],
+   "quote": "lynda cajka estimated that we could expect about 20 applications for fy2027 (for about $56,400)."
+  },
+  {
+   "topic": "FY26 Tax Rate",
+   "what_was_recorded": "FY26 tax rate of $14.39 per thousand certified, representing a 3% increase from prior year",
+   "figures_as_printed": [
+    "$14.39",
+    "3%"
+   ],
+   "quote": "the fy26 tax rate of $14.39 per thousand was certified by the massachusetts bureau of accounts on december 4, 2025. - this is a 3% increase from last yea",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Assessor's Office Budget",
+   "what_was_recorded": "Brief review of Assessor's Office budget showing a 5% increase from last year, driven by inflation and contracted services",
+   "figures_as_printed": [
+    "+5%"
+   ],
+   "quote": "in total there was a +5% increase from last year. this is largely driven by inflation and existing contracted services."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Opening and closing comments",
+   "quote": "there were no comments from the public.",
+   "speaker": "Public",
+   "stated_role": ""
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Status Report from Principal Assessor",
+   "resolution": "informational",
+   "tags": [
+    "tax billing",
+    "abatements",
+    "exemptions",
+    "warrants"
+   ],
+   "quote": "lynda cajka provided the following upcates from last month. - 11 abutters list rec uests were received for the month of december. - 27 motor vehicle excise tax abatements were received and processed",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Review and Approval of Prior Minutes",
+   "resolution": "postponed",
+   "tags": [
+    "minutes",
+    "administrative"
+   ],
+   "quote": "this topic was postponed until the next meeting when sarah cammer will also be present."
+  },
+  {
+   "topic": "Assessor Website Change and Approval",
+   "resolution": "discussed",
+   "tags": [
+    "website",
+    "accessibility"
+   ],
+   "quote": "there was some discussion about formatting issues, broken links, and minor changes to address. brian laffond wants to have the youtube links added to the minutes for accessibility."
+  },
+  {
+   "topic": "FY2027 Overlay and Growth Estimates",
+   "resolution": "approved",
+   "tags": [
+    "overlay",
+    "growth",
+    "budget",
+    "exemptions"
+   ],
+   "quote": "there was a motion to set the target overlay for fy27 at $260,000 by brian laffond, seconded by bian marple. all in favor."
+  },
+  {
+   "topic": "Assessor's Office Budget Review",
+   "resolution": "reviewed",
+   "tags": [
+    "budget",
+    "administrative"
+   ],
+   "quote": "there was a brief review of the budget for the assessor's office provided by lynda cajka. in total there was a +5% increase from last year."
+  },
+  {
+   "topic": "Mapping Software",
+   "resolution": "presentation requested",
+   "tags": [
+    "mapping",
+    "software",
+    "technology"
+   ],
+   "quote": "lynda cajka followed up with data scout and wants them to come in for a presentation."
+  },
+  {
+   "topic": "Land Condition Factors and COR Objective",
+   "resolution": "ongoing",
+   "tags": [
+    "assessments",
+    "land condition",
+    "residential",
+    "commercial"
+   ],
+   "quote": "there have been 358 land condition adjustments identified that need to be inspected. 289 parcels are residential and 69 are commercial/industrial."
+  },
+  {
+   "topic": "Postponed Topics: BOA Policies, Mapping Software, Clause 18 Criteria",
+   "resolution": "deferred",
+   "tags": [
+    "policies",
+    "mapping",
+    "hardship exemptions"
+   ],
+   "quote": "after much research, brian laffond found 2 communities that actually have written criteria for clause 18. the main consensus was hardship eligibility is determined to be at the discretion of the a",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Executive Session: Real Estate Exemptions",
+   "resolution": "approved",
+   "tags": [
+    "exemptions",
+    "veteran",
+    "real estate"
+   ],
+   "quote": "all of the 5 real estate exemptions were approved by the board of assessors."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "tax rate",
+  "overlay",
+  "growth estimate",
+  "exemptions",
+  "assessments",
+  "real estate",
+  "budget",
+  "abatements"
+ ],
+ "dropped_unquoted_by_field": {
+  "votes": 1,
+  "decisions": 1,
+  "budget_items": 2
+ }
 }

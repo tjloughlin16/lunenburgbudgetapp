@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2025-11-25",
  "docid": "7535",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of November 13, 2025 as written",
+   "motion": "Approve the minutes of Nov 13, 2025 as written.",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "chairman bowen made a motion to approve the minutes of nov 13, 2025 as written, motion seconded by mr howard. the motion passed unanimously with both mr howard and chairman bowen voting 'aye'."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
    "outcome": "passed unanimously",
@@ -29,6 +29,140 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0621674
+ "note": "Text is a clean extract of the minutes, with no scan or missing pages. Two votes are recorded (approve minutes, adjourn), both 'passed unanimously' with no numeric tally printed. No motions were made on the PC-IF rewording or the Risk Management policy. The minutes spell the Chairman's name 'Bowne' once, which I read as Bowen. Mr Howard's title is not printed; the 'Commissioner' role is inferred from 'the two Trust Fund Commissioners'. Public comment: no speakers, so no entries. Named people who were not present (Town Manager, Myleen Millari, Superintendent of Schools, Town Counsel, Veterans Affairs agent) are not listed as attendees.",
+ "cost_usd": 0.015120270000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the meeting was called to order at 5:00 pm by chairman bowen. present were mr howard and chairman bowen."
+  },
+  {
+   "name": "Mr Howard",
+   "role": "Trust Fund Commissioner (minutes say 'members' and 'the two Trust Fund Commissioners'; no title printed)",
+   "status": "present",
+   "quote": "the meeting was called to order at 5:00 pm by chairman bowen. present were mr howard and chairman bowen."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission will solicit public opinion on any proposed rewording of the PC-IF filing before sending the document to the Attorney General's office.",
+   "quote": "the trust fund commission in our spirit of transparency will solicit public opinion on any proposed rewording before sending the document to the attorney general's office."
+  },
+  {
+   "decision": "The Risk Management policy review was not finished and is carried to a future meeting.",
+   "quote": "due to time constraints, the review was not completed and will be finished in a future meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unused trust monies",
+   "what_was_recorded": "Chairman Bowen said the monies have been neglected, with a sum that should have gone to needy members.",
+   "figures_as_printed": [
+    "$87,000"
+   ],
+   "quote": "chairman bowen feels the monies have been neglected, $87,000 that should have gone to needy members."
+  },
+  {
+   "topic": "Two funds that cannot be distributed as written",
+   "what_was_recorded": "Two trust funds (Gazebo and Sidewalks) cannot be distributed as originally written unless modified; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "there are two funds that as originally written and intended (gazebo trust and sidewalks trust) cannot be distributed unless modified."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment; no public present",
+   "quote": "there was no public comment: no comment from either mr howard or chairman bowen.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review and ratify minutes",
+   "resolution": "approved minutes of Nov 13, 2025",
+   "quote": "new business: review and ratify meeting minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Application process and due diligence",
+   "resolution": "discussed; no action",
+   "quote": "chairman bowen and mr howard discussed the application process to request funds from the trust fund commission.",
+   "tags": [
+    "application process",
+    "privacy",
+    "due diligence",
+    "veterans"
+   ]
+  },
+  {
+   "topic": "PC-IF form to Town Manager",
+   "resolution": "discussed; public opinion to be sought on rewording",
+   "quote": "chairman bowen stated that he sent a copy of the attorney general's office pc-if form to the town manager and myleen millari",
+   "tags": [
+    "PC-IF",
+    "Attorney General"
+   ]
+  },
+  {
+   "topic": "Unused funds and scholarships",
+   "resolution": "discussed; no action",
+   "quote": "chairman bowen feels the monies have been neglected, $87,000 that should have gone to needy members.",
+   "tags": [
+    "unused funds",
+    "scholarships",
+    "gazebo trust",
+    "sidewalks trust"
+   ]
+  },
+  {
+   "topic": "Interns",
+   "resolution": "discussed; intern role still being defined",
+   "quote": "to date we have not filed anything with any educational institutions, not received any help from any interns and are still working on defining roles.",
+   "tags": [
+    "interns",
+    "real estate"
+   ]
+  },
+  {
+   "topic": "Commission vacancy and appointment",
+   "resolution": "discussed; no action",
+   "quote": "both members discussed the vacancy on the trust fund commission, making pleas to the viewing audience to get involved.",
+   "tags": [
+    "vacancy",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Risk Management policy",
+   "resolution": "review begun; carried to a future meeting",
+   "quote": "mr howard and chairman bowen began to review and make edits to the risk management policy.",
+   "tags": [
+    "risk management policy"
+   ]
+  }
+ ],
+ "tags": [
+  "trust fund",
+  "minutes approval",
+  "application process",
+  "privacy",
+  "PC-IF",
+  "Attorney General",
+  "commission vacancy",
+  "interns",
+  "risk management policy",
+  "scholarships",
+  "unused funds",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

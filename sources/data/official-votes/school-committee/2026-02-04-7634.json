@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2026-02-04",
  "docid": "7634",
@@ -12,55 +12,264 @@
  },
  "votes": [
   {
-   "motion": "approve LHS Program of Studies",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Ms. Young",
+   "motion": "Approve LHS Program of Studies",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "Emily Young",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. gilman makes a motion to approve lhs program of studies, ms. young seconds the motion, all approve."
   },
   {
-   "motion": "accept the school choice proposal",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Ms. Young",
+   "motion": "Accept the school choice proposal",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "Emily Young",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. gilman makes a motion to accept the school choice proposal, ms. young seconds the motion all approve."
   },
   {
-   "motion": "move School Committee meetings to LHS for the foreseeable future",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Ms. Young",
+   "motion": "Move School Committee meetings to LMHS for the foreseeable future",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "Emily Young",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "ms. gilman to move meetings to lhs for the foreseeable future, ms. young seconds the motion, all approve."
   },
   {
-   "motion": "approve a discussion with Representative Scarsdale regarding the earmarked $195,000",
-   "moved_by": "Ms Young",
-   "seconded_by": "Ms. Brzozoski",
+   "motion": "Approve superintendent permission to discuss earmark funding with Representative Scarsdale",
+   "moved_by": "Emily Young",
+   "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms young makes a motion to approve a discussion with representative scarsdale, ms. brzozoski seconds the motion, ms. gilman abstains, and the motion is approved."
   },
   {
-   "motion": "accept the Facilities and Grounds Report",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Ms. Young",
+   "motion": "Accept the Facilities and Grounds Report",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "Emily Young",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. gilman makes a motion to accept the report, ms. young seconds the motion all approve."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Ms. Young",
+   "motion": "Adjourn",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "Emily Young",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. gilman makes a motion to adjourn at 9:23, ms. young seconds the motion all approve"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09573540000000001
+ "dropped_unquoted": 3,
+ "note": "Item 6 (Review and Approve Minutes) does not show an explicit motion or outcome recorded in the minutes. No transfers were recorded. No public comment was received at items 3, 11, or 13.\"",
+ "cost_usd": 0.1159976,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "anthony sculimbrene chair - absent"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski, vice chair - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mandy gilman, secretary - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Member",
+   "status": "present",
+   "quote": "emily young, member - present"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "guests: christopher mcnamara - business administrator, carla squier - primary school principal, tim santry - lmhs principal, norman yvon - thes principal"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "present",
+   "quote": "guests: christopher mcnamara - business administrator"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "courtney fuller"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dr. Fortuna to reach out to Representative Scarsdale to discuss alternative use of $195,000 in earmarked funds originally designated for two passenger vans",
+   "quote": "dr. fortuna would like to reach out to representative scarsdale to discuss the possibility of changing the earmarked $195,000 to be used for a different purpose"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DESE high impact tutoring grant",
+   "what_was_recorded": "Grant from DESE for high impact tutoring to support 117 students at Primary School, with implementation beginning week of March 9th. Grant amendment approved with $41,000 for fixed costs and $17,000 for professional development.",
+   "figures_as_printed": [
+    "$41,000",
+    "$17,000"
+   ],
+   "quote": "approximately $41,000 will cover fixed costs including lunenburg public schools dr. jodi fortuna, superintendent of schools ===page 2=== 1025 massachusetts avenue, lunenburg, massachusetts 01462",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Legislative one-time earmarked funds",
+   "what_was_recorded": "One-time earmarked funds approved by legislators totaling $53,000 allocated to touch view screens, IXL software, and safety improvements.",
+   "figures_as_printed": [
+    "$36,000",
+    "$7,000",
+    "$10,000"
+   ],
+   "quote": "$36,000 is going toward touch view screens at the primary school, $7,000 will fund ixl for our middle school students, and $10,000 is going toward safety improvements across all three campuses"
+  },
+  {
+   "topic": "IReady diagnostic assessments",
+   "what_was_recorded": "Originally allocated $42,700 for IReady diagnostic assessments, to be reallocated to better utilize funds given late approval timing.",
+   "figures_as_printed": [
+    "$42,700"
+   ],
+   "quote": "we originally allocated $42,700 toward iready diagnostic assessments"
+  },
+  {
+   "topic": "Approved warrants",
+   "what_was_recorded": "Warrants for period January 20 to February 2, 2026",
+   "figures_as_printed": [
+    "$180,039.36"
+   ],
+   "quote": "warrants 1/20/26 - 2/2/26 $180,039.36"
+  },
+  {
+   "topic": "FY27 budget overview",
+   "what_was_recorded": "Level service budget of $28.2 million with tri-board additions of $980,000 including 14.4% health insurance increase. Current FY2026 budget is $26.2 million with proposed FY2027 increase of $2 million.",
+   "figures_as_printed": [
+    "$28.2 million",
+    "$980,000",
+    "$26.2 million",
+    "$2 million",
+    "14.4%"
+   ],
+   "quote": "level service budget stands at $28.2 million, with the additions discussed with the tri-board, this would add $980,000, and this also includes the 14.4% increase in health insurance. this year budget is $26.2 million, we have a $2 million increase for fy 27."
+  },
+  {
+   "topic": "Override amount for FY27",
+   "what_was_recorded": "Committee discussed proposed override amount of $2.9 million, with decision pending on whether it will be single amount or tiered approach.",
+   "figures_as_printed": [
+    "$2.9 million"
+   ],
+   "quote": "the committee has discussed the override amount of $2.9 million"
+  },
+  {
+   "topic": "Earmarked funds for passenger vans",
+   "what_was_recorded": "Earmarked funds originally allocated for two passenger vans; superintendent seeks to discuss alternative use with Representative Scarsdale as purchase determined fiscally irresponsible at this time.",
+   "figures_as_printed": [
+    "$195,000"
+   ],
+   "quote": "the possibility of changing the earmarked $195,000 to be used for a different purpose, originally it was for 2 passenger vans and at this time, it is not fiscally responsible to purchase two vans."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "LHS Program of Studies approval",
+   "resolution": "approved",
+   "tags": [
+    "curriculum",
+    "high school"
+   ],
+   "quote": "mr. santry presents the lhs 2026/2027 program of studies, this is a list of all courses that can be offered, however, does not mean all courses that will be run, it also gives information on graduation requirements, gpa grading scales, and prerequisites etc."
+  },
+  {
+   "topic": "School Choice proposal",
+   "resolution": "approved",
+   "tags": [
+    "enrollment",
+    "high school",
+    "funding"
+   ],
+   "quote": "the committee discusses options of class sizes and funding. we are looking to only add school choice options to the high school."
+  },
+  {
+   "topic": "School Committee meeting location change",
+   "resolution": "approved",
+   "tags": [
+    "meetings",
+    "accessibility"
+   ],
+   "quote": "town hall is not very accessible if someone is not able to walk we would like to move our meetings to lmhs for the foreseeable future."
+  },
+  {
+   "topic": "FY27 budget overview and Q&A",
+   "resolution": "discussed",
+   "tags": [
+    "budget",
+    "health insurance"
+   ],
+   "quote": "level service budget stands at $28.2 million, with the additions discussed with the tri-board, this would add $980,000, and this also includes the 14.4% increase in health insurance."
+  },
+  {
+   "topic": "Coordinated Family & Community grant renewal decision",
+   "resolution": "discussed",
+   "tags": [
+    "grants",
+    "community engagement"
+   ],
+   "quote": "the committee has a memo which is a recommendation for lunenburg public schools to not pursue the renewal of the coordinated family and community engagement and parent child plus grants for the 26/27 school year"
+  },
+  {
+   "topic": "Override format and amount",
+   "resolution": "discussed",
+   "tags": [
+    "budget",
+    "override",
+    "funding"
+   ],
+   "quote": "the committee has discussed the override amount of $2.9 million, it's still undecided if it will be one town override, if it will be one amount for an override or a tiered approach"
+  },
+  {
+   "topic": "Facilities and Grounds Report",
+   "resolution": "approved",
+   "tags": [
+    "facilities",
+    "capital planning"
+   ],
+   "quote": "the committee has been provided the report. the playground study is no longer one of the capital planning recommendations. the driveway study is still on the list."
+  },
+  {
+   "topic": "School Improvement Plan updates",
+   "resolution": "discussed",
+   "tags": [
+    "school improvement",
+    "principals"
+   ],
+   "quote": "each principal gives a presentation for updates on their school improvement plans. the committee and principals have an open discussion regarding changes and effects they are seeing in the schools."
+  }
+ ],
+ "tags": [
+  "budget",
+  "grants",
+  "school choice",
+  "facilities",
+  "meetings",
+  "override",
+  "enrollment",
+  "FY27"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 3
+ }
 }

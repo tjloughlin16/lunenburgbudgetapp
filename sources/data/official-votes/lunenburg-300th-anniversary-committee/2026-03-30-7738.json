@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-300th-anniversary-committee",
  "meeting_date": "2026-03-30",
  "docid": "7738",
@@ -15,12 +15,173 @@
    "motion": "Approve the prior minutes",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "minutes were approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.062144399999999995
+ "dropped_unquoted": 1,
+ "note": "No votes recorded with numerical outcomes other than minutes approval. Meeting focused on planning for Lunenburg's 300th anniversary celebrations with discussion of fireworks costs, logo selection, and community events. Relatively informal committee meeting format.",
+ "cost_usd": 0.0976176,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paulette Beardmore",
+   "status": "present",
+   "quote": "members present: paulette beardmore, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "status": "present",
+   "quote": "members present: paulette beardmore, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Lois Filiau",
+   "status": "present",
+   "quote": "members present: paulette beardmore, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Dawn Johnson",
+   "status": "present",
+   "quote": "members present: paulette beardmore, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "status": "present",
+   "quote": "members present: paulette beardmore, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Chris Sullivan",
+   "status": "present",
+   "quote": "members present: paulette beardmore, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Bill Tyler",
+   "status": "present",
+   "quote": "members present: paulette beardmore, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Liaison",
+   "status": "present",
+   "quote": "members present: paulette beardmore, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan, bill tyler, caesar nuzzolo, liaison"
+  },
+  {
+   "name": "Michelle Belleza",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, laura brzozoski, cathy clark"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, laura brzozoski, cathy clark"
+  },
+  {
+   "name": "Cathy Clark",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, laura brzozoski, cathy clark"
+  },
+  {
+   "name": "Maura Lizek",
+   "role": "guest",
+   "status": "present",
+   "quote": "guests: maura lizek, chris ruth"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "guest",
+   "status": "present",
+   "quote": "guests: maura lizek, chris ruth"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The simple logo design was chosen over the more colorful design submitted",
+   "quote": "although the committee liked the more colorful one, the more simple one was chosen."
+  },
+  {
+   "decision": "Maura Lizek will take Tony Sculimbrene's place on the committee",
+   "quote": "maura lizek will be taking tony sculimbrene's place on the committee."
+  },
+  {
+   "decision": "There will be a presentation at the Town Meeting",
+   "quote": "there will be a presentation at the town meeting. send ideas to bill."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fireworks show costs",
+   "what_was_recorded": "Cost estimate for fireworks show with barge versus TCP location option",
+   "figures_as_printed": [
+    "$1,000/minute"
+   ],
+   "quote": "they would likely cost $1,000/minute for a decent show. barges for a later event would be more expensive."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chris Ruth",
+   "stated_role": "guest",
+   "topic": "Fireworks planning and costs",
+   "quote": "guest chris ruth advised the group about ﬁreworks. contact would be matt shea at atlas. new year's eve over tcp would be a good location. they would likely cost $1,000/minute for a decent show. ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "minutes were approved."
+  },
+  {
+   "topic": "Logo contest",
+   "resolution": "simple design selected",
+   "tags": [
+    "logo",
+    "design"
+   ],
+   "quote": "although the committee liked the more colorful one, the more simple one was chosen."
+  },
+  {
+   "topic": "Committee membership",
+   "resolution": "Maura Lizek replacing Tony Sculimbrene",
+   "tags": [
+    "membership"
+   ],
+   "quote": "maura lizek will be taking tony sculimbrene's place on the committee."
+  },
+  {
+   "topic": "Town Meeting presentation",
+   "resolution": "presentation approved; ideas to be submitted",
+   "tags": [
+    "planning",
+    "celebration"
+   ],
+   "quote": "there will be a presentation at the town meeting. send ideas to bill."
+  },
+  {
+   "topic": "Local anniversary celebrations",
+   "resolution": "noted",
+   "tags": [
+    "community",
+    "anniversary"
+   ],
+   "quote": "several local celebrations are taking place; waltham and lowell. lowell currently has charge of the large cake that was in littleton."
+  }
+ ],
+ "tags": [
+  "anniversary",
+  "celebration",
+  "committee",
+  "fireworks",
+  "logo",
+  "planning",
+  "300th-anniversary"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

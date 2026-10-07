@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-01-08",
  "docid": "7592",
@@ -12,23 +12,202 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of October 23, 2025, and November 13, 2025",
+   "motion": "Approve the minutes of October 23, 2025 and November 13, 2025",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 7-0",
+   "outcome": "Passed 7-0",
    "procedural": true,
    "quote": "there was a motion to approve minutes of october 23, 2025, and november 13, 2025 as amended by ana lockwood, seconded by tom gray. roll call vote. jean russell aye, mike rupp aye, ana lockwood aye, tanya dall aye, jay simeone aye, tom gray aye, chris menard aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting",
    "moved_by": "Jay Simeone",
    "seconded_by": "Ana Lockwood",
-   "outcome": "passed 7-0",
+   "outcome": "Passed 7-0",
    "procedural": true,
    "quote": "there was a motion to adjourn by jay simeone, seconded by ana lockwood. roll call vote. jean russell aye, mike rupp aye, ana lockwood aye, tanya dall aye, jay simeone aye, tom gray aye, chris menard aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Both votes were unanimous 7-0. All present members voted aye in both roll calls. The minutes contain no substantive motions on business items—only procedural votes to approve prior minutes and to adjourn.",
- "cost_usd": 0.0901714
+ "note": "Stephanie's last name is marked as \\\"(LAST NAME)\\\" in the minutes, indicating an incomplete entry in the original document.\"",
+ "cost_usd": 0.1613426,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jennifer warren-dyment shared several updates regarding staưing. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Stephanie",
+   "role": "newly appointed representative",
+   "status": "present",
+   "quote": "stephanie (last name) participated in the meeting as a newly appointed representative who began her role on october 1, 2025."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agrees that Monty Tech's assessment should be aligned with the Lunenburg Public Schools",
+   "quote": "the committee agrees that monty techs assessment should be aligned with the lunenberg public schools."
+  },
+  {
+   "decision": "Town Manager and Finance Committee request Monty Tech and schools present their budgets earlier than usual",
+   "quote": "the town manager and the finance committee request they present their budget earlier than usual."
+  },
+  {
+   "decision": "Service cuts and realignments will be needed to achieve a balanced budget without a Prop 2½ override",
+   "quote": "the town manager conﬁrmed that there would need to be service cuts and realignments to have a balanced budget without an override."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY27 Monty Tech budget presentation and timing",
+   "what_was_recorded": "Committee requested Monty Tech provide budget presentation earlier than usual due to potential need for cutbacks similar to public schools",
+   "figures_as_printed": [],
+   "quote": "chris menard is requesting that monty tech provide their presentation earlier than usual. chris menard believes there may need to be cutbacks similar to what the public schools have had to do."
+  },
+  {
+   "topic": "FY27 Proposition 2½ Override",
+   "what_was_recorded": "Potential Prop 2½ override by schools discussed; Committee seeking alternative solutions rather than override",
+   "figures_as_printed": [],
+   "quote": "chris menard indicates that there may be a proposition 2 ½ override proposed by the schools, the consideration of a fourth shift for the fire department, and additional measures to address the needs of the town."
+  },
+  {
+   "topic": "Department budget reduction requests",
+   "what_was_recorded": "Town Manager has spoken to department heads to provide budgets updated with 5% reductions",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "jennifer warren-dyment has spoken to department heads to update their budget as well as include a budget with a 5% reduction."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Staffing updates: Finance Director, Finance Director recruitment, Payroll Manager",
+   "resolution": "Status reported on staffing changes and hiring processes",
+   "tags": [
+    "staffing",
+    "personnel"
+   ],
+   "quote": "jennifer warren-dyment shared several updates regarding staưing. katherine mckenna was hired as the finance director. she felt this wasn't a good ﬁt and gave her 60-day notice. her last day of service was december 31, 2025. retired finance director, karen brochu, has come forward to wo",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Water billing issue and catch-up billing notification",
+   "resolution": "Notification sent to affected customers",
+   "tags": [
+    "utilities",
+    "administration"
+   ],
+   "quote": "town manager has sent notiﬁcation to the 11 customers in town who received a water bill from the town. their regular quarterly bills were not sent to them in a timely manner, and they will be issued a catch-up bill to cover january 2025 through november 2025."
+  },
+  {
+   "topic": "FY27 Budget Calendar and Monty Tech presentation timing",
+   "resolution": "Request made for earlier presentation; scheduled for February 5",
+   "tags": [
+    "budget",
+    "FY27",
+    "planning"
+   ],
+   "quote": "chris menard is requesting that monty tech provide their presentation earlier than usual. chris menard believes there may need to be cutbacks similar to what the public schools have had to",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Town Meeting information and operational budget capacity",
+   "resolution": "Discussed lack of information and no capacity to add to operational budget",
+   "tags": [
+    "town meeting",
+    "budget"
+   ],
+   "quote": "ana lockwood was uncomfortable with the last town meeting and felt not enough information was provided. she suggests having items added to the operational budget but town manager states there is no capacity to add to the operational budget."
+  },
+  {
+   "topic": "Capital Planning Committee update and standardized templates",
+   "resolution": "Status update on FY27 requests and out-year planning; template implementation initiated",
+   "tags": [
+    "capital planning",
+    "process"
+   ],
+   "quote": "jennifer warren-dyment states that the capital planning committee is currently focusing on getting through fy27 requests and then will be focusing on the out years. furthermore, the capital planning committee has initiated a request to implement a standardized template or format for use by all depart",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Potential FY27 Prop 2½ Override and alternatives",
+   "resolution": "Discussed; Committee seeking alternative solutions focused on recycling, TCP building, ambulance receipts",
+   "tags": [
+    "override",
+    "budget",
+    "revenue"
+   ],
+   "quote": "discussions on potential fy27 prop 2 ½ override chris menard indicates that there may be a proposition 2 ½ override proposed by the schools, the consideration of a fourth shift for the fire department, and additio",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Tri-Board meetings and Stormwater Task Force enterprise fund proposal",
+   "resolution": "Discussed upcoming meetings and timeline for proposal",
+   "tags": [
+    "tri-board",
+    "stormwater"
+   ],
+   "quote": "chris menard requested information from the committee and town manager about whether the stormwater task force would present a proposal for an enterprise fund. town manager states she would be surprised if they were ready for the town meeting in may."
+  }
+ ],
+ "tags": [
+  "Finance",
+  "Budget",
+  "FY27",
+  "Staffing",
+  "Proposition 2.5 Override",
+  "Monty Tech",
+  "Tri-Board",
+  "Capital Planning"
+ ],
+ "dropped_unquoted_by_field": {}
 }

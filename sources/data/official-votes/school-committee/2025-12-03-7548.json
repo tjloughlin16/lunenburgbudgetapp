@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-12-03",
  "docid": "7548",
@@ -12,24 +12,371 @@
  },
  "votes": [
   {
-   "motion": "Accept donations from Hannaford Helps to Lunenburg Primary School ($600) and Middle School ($483)",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Accept the Lunenburg Primary School donation from Hannaford Helps ($600.00) and the Middle School donation from Hannaford Helps ($483.00).",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to accept both donations, ms. gilman seconds the motion, all approve"
   },
   {
-   "motion": "Approve France and Switzerland trip for April 2027",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Mr. Yapp",
-   "outcome": "passed 4-0-1",
+   "motion": "Approve the France and Switzerland trip anticipated in April of 2027.",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "George Yapp",
+   "outcome": "passed, 4 approval and 1 abstention",
    "procedural": false,
-   "quote": "ms. gilman makes a motion to approve the trip, mr. yapp secon ds the motion, motion passes with 4 approval and 1 abstentio",
-   "quote_taken_from_text": true
+   "quote": "ms. gilman makes a motion to approve the trip, mr. yapp secon ds the motion, motion passes with 4 approval and 1 abstention"
+  },
+  {
+   "motion": "Approve the third read of policies 5201.03 Middle School Pathways and 5204.01 Competency Determination.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "ms. brzozoski m akes a motion to approve the policies, ms. gilman seconds the motion all approve"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:27.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "adjourn at 9:27, ms. gilman seconds the motion all approve"
   }
  ],
- "dropped_unquoted": 2,
- "note": "Minutes are clear and readable. The 10/15/25 minutes review was deferred (not voted on). All votes recorded with clear movers, seconders, and outcomes. One vote on the France trip recorded an abstention.",
- "cost_usd": 0.06761840000000001
+ "dropped_unquoted": 0,
+ "note": "Extracted text of a three-page minutes document with line-break and spacing artifacts (e.g., 'secon ds', 'm akes'); quotes copy the printed spacing. Several votes record only 'all approve' with no tally, so outcome is 'passed' without a count. The France and Switzerland trip vote is recorded as 4 approval and 1 abstention. Attendance is not marked for the Superintendent, Business Administrator or Dr. Sarfde except where the minutes describe them acting; the Recording Secretary's presence is not stated. The minutes do not print a roll-call. The Chairs/Student reports and second public comment item are 'None'.",
+ "cost_usd": 0.01636227,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski , vice chair - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "emily young secretary - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Member",
+   "status": "present",
+   "quote": "mandy gilman , member - present"
+  },
+  {
+   "name": "George Yapp",
+   "role": "Member",
+   "status": "present",
+   "quote": "george yapp , member - present"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. fortuna begins her report sharing her plans going forward regarding snow"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "present",
+   "quote": "christopher mcnamara - business administrator"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, courtney fuller"
+  },
+  {
+   "name": "Ms. Ayer",
+   "role": "French Teacher and Department head for the World Language Department",
+   "status": "present",
+   "quote": "ms. ayer, a french teacher and department head for the world language department, presents"
+  },
+  {
+   "name": "Ms. Petersen",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. petersen shares with the committee the anticipated calendar"
+  },
+  {
+   "name": "Dr. Sarfde",
+   "role": "Director of Teaching and Learning (new)",
+   "status": "not stated",
+   "quote": "dr. fortuna introduces the new director of teaching and learning, dr. sarfde"
+  },
+  {
+   "name": "Nancy Charbonneau",
+   "role": "concerned resident, 170 Arbor Street",
+   "status": "present",
+   "quote": "nancy charbonneau, 170 arbor street, as a concerned resident based on my son"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 10/15/25 minutes were not reviewed because the full committee had not had a chance to view them; they were pushed to the next meeting.",
+   "quote": "full committee did not get a chance to view the minutes, push to next meeting"
+  },
+  {
+   "decision": "Questions submitted by a resident on K-2 reading levels will be read into the record at a future meeting in January, with an overall picture from internal assessment tools.",
+   "quote": "in january as we will have an overall picture of what is happening using our internal assessment tools."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrants for the period 11/17/25 to 12/1/25 were listed at a total amount, with no motion recorded.",
+   "figures_as_printed": [
+    "$240,518.56"
+   ],
+   "quote": "warrants 11/17/25 - 12/1/25 $240,518.56"
+  },
+  {
+   "topic": "Donations from Hannaford Helps",
+   "what_was_recorded": "Two donations from Hannaford Helps were accepted: one to the Lunenburg Primary School for field trips and presentations, one to the Middle School for programming.",
+   "figures_as_printed": [
+    "$600.00",
+    "$483.00"
+   ],
+   "quote": "lunenburg primary school donation from hannaford helps for $600.00 with the"
+  },
+  {
+   "topic": "FY27 budget and possible override",
+   "what_was_recorded": "The committee discussed FY27 budget plans and said an override could be discussed starting in January; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the beginning of january we may start to talk about an override."
+  },
+  {
+   "topic": "Federal Entitlement Grant analysis",
+   "what_was_recorded": "The committee was given a grant analysis covering the past three years with spending recommendations; no dollar figure was printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "the committee has been provided documents on the federal entitlement grant analysis"
+  },
+  {
+   "topic": "PTO fundraising sales",
+   "what_was_recorded": "The PTO reported selling blankets at a per-unit price, with 100 available.",
+   "figures_as_printed": [
+    "$30"
+   ],
+   "quote": "selling blankets for $30 apiece"
+  },
+  {
+   "topic": "Year-to-date expenditures",
+   "what_was_recorded": "The Superintendent gave an update on year-to-date expenditures; no figure was printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "an update is shared on year to date"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "K-2 reading levels",
+   "speaker": "Nancy Charbonneau",
+   "stated_role": "concerned resident, 170 Arbor Street",
+   "quote": "nancy charbonneau, 170 arbor street, as a concerned resident based on my son when he was in the elementary school"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "1. call to order at 7:00 by mr. sculimbrene",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment on K-2 reading levels",
+   "resolution": "deferred to January meeting",
+   "quote": "will these be read tonight or at a future meeting.",
+   "tags": [
+    "reading",
+    "K-2",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chairs report",
+   "resolution": "no action",
+   "quote": "4. chairs report - none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Student representative report",
+   "resolution": "no action",
+   "quote": "student representative report - none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes (10/15/25)",
+   "resolution": "pushed to next meeting",
+   "quote": "full committee did not get a chance to view the minutes, push to next meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Line items, transfers, warrants, donations",
+   "resolution": "donations accepted; no transfers",
+   "quote": "line item transfers - none",
+   "tags": [
+    "warrants",
+    "donations",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "no action",
+   "quote": "dr. fortuna begins her report sharing her plans going forward regarding snow",
+   "tags": [
+    "superintendent",
+    "snow days",
+    "year-to-date expenditures"
+   ]
+  },
+  {
+   "topic": "France and Switzerland trip",
+   "resolution": "approved 4 approval, 1 abstention",
+   "quote": "motion passes with 4 approval and 1 abstention",
+   "tags": [
+    "trip",
+    "world language",
+    "approval"
+   ]
+  },
+  {
+   "topic": "2026-2027 school calendar",
+   "resolution": "discussed first draft",
+   "quote": "ms. petersen shares with the committee the anticipated calendar",
+   "tags": [
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Lunenburg Education Accelerator Foundation (LEAF)",
+   "resolution": "update, no action",
+   "quote": "an update on the status of the leaf program.",
+   "tags": [
+    "fundraising",
+    "foundation"
+   ]
+  },
+  {
+   "topic": "FY27 budget",
+   "resolution": "discussed; override possibly in January",
+   "quote": "the beginning of january we may start to talk about an override.",
+   "tags": [
+    "budget",
+    "FY27",
+    "override",
+    "athletics"
+   ]
+  },
+  {
+   "topic": "Federal grants",
+   "resolution": "discussed",
+   "quote": "the committee has been provided documents on the federal entitlement grant analysis",
+   "tags": [
+    "grants",
+    "federal"
+   ]
+  },
+  {
+   "topic": "Turkey Hill building",
+   "resolution": "discussed; no decision",
+   "quote": "committee discusses creating a letter of intent regarding the decision of",
+   "tags": [
+    "facilities",
+    "Turkey Hill",
+    "MSBA",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Third read of policies",
+   "resolution": "approved",
+   "quote": "third read policies 5201.03 middle school pathways, 5204.01 competency determination",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Public comment (second opening)",
+   "resolution": "no public comment",
+   "quote": "11. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Subcommittee reports",
+   "resolution": "reported",
+   "quote": "reports the pacsal has a meeting tomorrow via zoom at 6",
+   "tags": [
+    "PACSAL",
+    "PTO",
+    "Municipal Building Committee"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed",
+   "quote": "a list of accessibility upgrades that turkey hill needs",
+   "tags": [
+    "accessibility",
+    "Turkey Hill"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:27",
+   "quote": "adjourn at 9:27, ms. gilman seconds the motion all approve",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "budget",
+  "FY27 budget",
+  "override",
+  "donations",
+  "warrants",
+  "grants",
+  "policy",
+  "calendar",
+  "trip",
+  "LEAF foundation",
+  "Turkey Hill",
+  "facilities",
+  "reading levels",
+  "public comment",
+  "athletics"
+ ],
+ "dropped_unquoted_by_field": {}
 }

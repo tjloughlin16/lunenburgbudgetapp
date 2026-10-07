@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2025-11-19",
  "docid": "7513",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the amended minutes from October 8, 2025",
+   "motion": "Approve the amended minutes of the October 8, 2025 meeting.",
    "moved_by": "A. Lockwood",
    "seconded_by": "C. Shapiro",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "a. lockwood moved to approve the amended minutes. c. shapiro seconded. voted unanimously in favor by roll call."
   },
   {
-   "motion": "OSC accept the Mission Statement and Goals and that M. Toohill present same to Select Board",
+   "motion": "Accept the Mission Statement and Goals and have M. Toohill present them to the Select Board.",
    "moved_by": "A. Lockwood",
    "seconded_by": "C. Shapiro",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "a. lockwood moved that osc accept the mission statement and goals and that m. toohill present same to select board. c. shapiro seconded. voted unanimously in favor by roll call."
   },
   {
-   "motion": "OSC accept the draft bylaw and that M. Toohill circulate it to the Town Manager, Town Council, Select Board, and other committees for feedback",
+   "motion": "Accept the draft bylaw establishing a standalone OSC and have M. Toohill circulate it to the Town Manager, Town Council, Select Board, and other committees for feedback.",
    "moved_by": "A. Lockwood",
    "seconded_by": "C. Shapiro",
    "outcome": "passed",
@@ -36,15 +36,169 @@
    "quote": "a. lockwood moved that the osc accept the draft bylaw and that m. toohill circulate it to the town manager, town council, select board, and other committees for feedback. c. shapiro seconded. voted unanimously by roll call."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Lockwood",
    "seconded_by": "C. Shapiro",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a. lockwood moved to adjourn, c. shapiro seconded. voted unanimously in favor by roll call."
+   "quote": "a. lockwood moved to adjourn, c. shapiro seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "No issues. Clear minutes with four recorded votes, all passed unanimously by roll call.",
- "cost_usd": 0.0624514
+ "note": "Text is fully readable (two pages, no scan). Votes are recorded as 'unanimously' or 'voted unanimously by roll call' with no tally printed, so outcomes are recorded as 'passed' rather than a count. No dollar figures appear anywhere, so budget_items and transfers are empty. Public comment records no speakers. The 'January 14, 2025' next-meeting date is printed as is; it follows December 10, 2025, so the year is probably a typo for 2026, which the minutes do not confirm. The document also carries an 'approved by roll call vote on 12/10/25' line, which records a later approval, not a vote at this meeting, so it is not listed as a vote here.",
+ "cost_usd": 0.014723469999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Toohill",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood, colleen shapiro, eric hinds."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood, colleen shapiro, eric hinds."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood, colleen shapiro, eric hinds."
+  },
+  {
+   "name": "Eric Hinds",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood, colleen shapiro, eric hinds."
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "glenn mcleod of the select board was also in attendance and indicated no business from select board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "M. Toohill to discuss the standalone committee idea with the planning board and draft a bylaw changing OSC status from ad hoc to standing (carried from the October 8 minutes).",
+   "quote": "he would discuss the standalone committee idea with the planning board and draft a bylaw changing the osc status from ad hoc to standing."
+  },
+  {
+   "decision": "Boards will still nominate their own representatives to the OSC, confirmed by the Chair.",
+   "quote": "m. toohill confirmed that boards would still nominate their own representatives."
+  },
+  {
+   "decision": "The standalone bylaw is an opportunity to re-establish the requirement that the OSC be notified about Chapter 61 withdrawals, confirmed by the Chair.",
+   "quote": "e. hinds mentioned that this is an opportunity to re-establish requirement that osc be notified about chapter 61 withdrawals, m. toohill confirmed."
+  },
+  {
+   "decision": "Next scheduled meetings set for December 10, 2025 and January 14, 2025 (the second date as printed).",
+   "quote": "next scheduled meetings: december 10, 2025, and january 14, 2025."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "chairman toohill called meeting to order at 7:30pm."
+  },
+  {
+   "topic": "October 8, 2025 minutes approval",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes approval"
+   ],
+   "quote": "a. lockwood moved to approve the amended minutes. c. shapiro seconded. voted unanimously in favor by roll call."
+  },
+  {
+   "topic": "Draft bylaw and mission for standalone OSC, planning board reaction",
+   "resolution": "discussed",
+   "tags": [
+    "standalone committee",
+    "planning board",
+    "agriculture commission"
+   ],
+   "quote": "m. toohill indicates planning board open to standalone osc."
+  },
+  {
+   "topic": "Mission Statement and Goals",
+   "resolution": "accepted; to be presented to Select Board",
+   "tags": [
+    "mission statement"
+   ],
+   "quote": "a. lockwood moved that osc accept the mission statement and goals and that m. toohill present same to select board."
+  },
+  {
+   "topic": "Draft bylaw establishing standalone OSC",
+   "resolution": "accepted; circulated for feedback",
+   "tags": [
+    "bylaw",
+    "open space plan"
+   ],
+   "quote": "a. lockwood moved that the osc accept the draft bylaw and that m. toohill circulate it to the town manager, town council, select board, and other committees for feedback."
+  },
+  {
+   "topic": "Reports from other boards",
+   "resolution": "no action",
+   "tags": [
+    "recreation",
+    "economic development",
+    "select board"
+   ],
+   "quote": "recreation has not had a meeting, pushed to december due to no agenda items."
+  },
+  {
+   "topic": "Other items not anticipated at posting",
+   "resolution": "no action; none raised",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "other items not anticipated at time of meeting posting: none raised."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; none received",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment: no public comment."
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "next scheduled meetings: december 10, 2025, and january 14, 2025."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:12 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "a. lockwood moved to adjourn, c. shapiro seconded."
+  }
+ ],
+ "tags": [
+  "open space",
+  "standalone committee",
+  "bylaw",
+  "mission statement",
+  "planning board",
+  "agriculture commission",
+  "chapter 61",
+  "minutes approval",
+  "ad hoc to standing"
+ ],
+ "dropped_unquoted_by_field": {}
 }

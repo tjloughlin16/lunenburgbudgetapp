@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2026-02-02",
  "docid": "7605",
@@ -13,30 +13,208 @@
  "votes": [
   {
    "motion": "Accept January 5, 2026 minutes as amended",
-   "moved_by": "S.Archambault",
-   "seconded_by": "F.Beall",
+   "moved_by": "S. Archambault",
+   "seconded_by": "F. Beall",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to accept 1/05/2026 minutes as amended • (s.archambault, 2nd f.beall), passed."
+   "quote": "motion to accept 1/05/2026 minutes as amended • (s.archambault, 2nd f.beall), passe",
+   "quote_taken_from_text": true
   },
   {
    "motion": "Accept draft warrants as written to present to town manager",
-   "moved_by": "S.Archambault",
+   "moved_by": "S. Archambault",
    "seconded_by": "B. Vienneau",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion (s.archambault, 2nd b. vienneau), to accept drafts warrants as written to present to town manager - passed"
   },
   {
-   "motion": "Send amended email to Select Board",
-   "moved_by": "F.Beall",
+   "motion": "Send the amended email to Select Board requesting Cable Advisory Committee formation",
+   "moved_by": "F. Beall",
    "seconded_by": "B. Vienneau",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion (f.beall, 2nd b. vienneau), to send the amended email to select board - passed"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.07018440000000001
+ "dropped_unquoted": 2,
+ "note": "\"\"",
+ "cost_usd": 0.1434896,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall 3. manager: jo to",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Brian Vienneau",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall 3. manager: jo to",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall 3. manager: jo to",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall 3. manager: jo to",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault, faith beall 3. manager: jo to",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Town budget shortfall estimate",
+   "what_was_recorded": "Department heads discussed town budget shortfall estimated to be approximately $3 million or more",
+   "figures_as_printed": [
+    "3Mdollars+"
+   ],
+   "quote": "dept. heads meetings - discussed town budget shortfall. estimated at this point to be 3mdollars+"
+  },
+  {
+   "topic": "PACC account balance",
+   "what_was_recorded": "Current balance reported",
+   "figures_as_printed": [
+    "$1,048,313.64"
+   ],
+   "quote": "balance $1,048,313.64"
+  },
+  {
+   "topic": "Retained earnings unavailable",
+   "what_was_recorded": "Cannot access retained earnings until certified by state",
+   "figures_as_printed": [
+    "$31,000"
+   ],
+   "quote": "still can not access @ $31,000 in retained earnings until it has been certified by the state"
+  },
+  {
+   "topic": "Bartholomew Account profit",
+   "what_was_recorded": "Overall profit reported and reinvested",
+   "figures_as_printed": [
+    "$80,572"
+   ],
+   "quote": "overall profit of $80,572 and continues to be reinvested"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Bartholomew Account profit reinvested",
+   "amount_as_printed": "$80,572",
+   "outcome": "continues to be reinvested",
+   "quote": "overall profit of $80,572 and continues to be reinvested"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Prior minutes approval",
+   "resolution": "approved as amended",
+   "quote": "motion to accept 1/05/2026 minutes as amended • (s.archambault, 2nd f.beall), passe",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Communications and guidelines",
+   "resolution": "noted",
+   "quote": "s.archambault received an email from e.griffin with a guide to posting meetings, agendas and minutes.",
+   "tags": [
+    "information",
+    "guidance"
+   ]
+  },
+  {
+   "topic": "FY27 budget",
+   "resolution": "in progress",
+   "quote": "fy27 budget is still in progress • present to fincom on march 5th",
+   "tags": [
+    "budget",
+    "financial"
+   ]
+  },
+  {
+   "topic": "Annual Town Report review",
+   "resolution": "draft presented",
+   "quote": "annual town report review: • j.toale presented a draft",
+   "tags": [
+    "reporting",
+    "financial"
+   ]
+  },
+  {
+   "topic": "PACC policy update",
+   "resolution": "presented",
+   "quote": "pacc policy update: • s.archambault presented an updated table of contents and listed missing policies.",
+   "tags": [
+    "governance",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Master plan",
+   "resolution": "pending final meeting",
+   "quote": "master plan: • they will have their final meeting soon.",
+   "tags": [
+    "planning"
+   ]
+  },
+  {
+   "topic": "Studio space availability",
+   "resolution": "unknown, contingent on TCP",
+   "quote": "studio space: • future unknown as tcp is probably closing",
+   "tags": [
+    "operations",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Bartholomew Account",
+   "resolution": "profit reinvested",
+   "quote": "bartholomew account: • overall profit of $80,572 and continues to be reinvested",
+   "tags": [
+    "financial",
+    "fund management"
+   ]
+  },
+  {
+   "topic": "Cable Advisory Committee formation",
+   "resolution": "motion approved",
+   "quote": "motion (f.beall, 2nd b. vienneau), to send the amended email to select board - passed",
+   "tags": [
+    "governance"
+   ]
+  }
+ ],
+ "tags": [
+  "PACC",
+  "public access television",
+  "budget",
+  "operations",
+  "governance",
+  "cable access"
+ ],
+ "dropped_unquoted_by_field": {
+  "votes": 1,
+  "topics": 1
+ }
 }

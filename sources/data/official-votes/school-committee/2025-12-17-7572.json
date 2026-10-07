@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-12-17",
  "docid": "7572",
@@ -12,31 +12,329 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from 10/15/25",
+   "motion": "Accept the minutes from October 15, 2025",
    "moved_by": "Ms. Gilman",
    "seconded_by": "Ms. Young",
-   "outcome": "passed",
+   "outcome": "approved",
    "procedural": true,
    "quote": "ms. gilman makes a motion to accept the minutes, ms. young seconds the motion, all approve"
   },
   {
-   "motion": "Accept the statement regarding FY25 variances and changes, allowing the chair to make changes as long as the message and tone remain the same",
+   "motion": "Accept the statement regarding FY25 variances and changes, and allow changes to be made by the chair as long as the message and tone remain the same",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
-   "outcome": "passed",
+   "outcome": "approved",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to accept the statement regarding fy25 variances and changes, and allowing changes to be made by the chair as long as the message and tone remains the same, ms. gilman seconds the motion all approve."
+   "quote": "ms. brzozoski makes a motion to accept the statement regarding fy25 variances and changes, and allowing changes to be made by the chair as long as the message and tone remains the same, ms. gilman seconds the motion all approve"
   },
   {
    "motion": "Adjourn at 9:20",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
-   "outcome": "passed",
+   "outcome": "approved",
    "procedural": true,
    "quote": "ms. brzozoski m akes a motion to adjourn at 9:20, ms. gilman seconds the motion all approve"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1136034
+ "dropped_unquoted": 1,
+ "note": "Clean digital document with no scanning or text extraction issues. One committee member slot listed as \"TBD\" with status not stated.",
+ "cost_usd": 0.1127466,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski , vice chair - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "emily young secretary - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Member",
+   "status": "present",
+   "quote": "mandy gilman , member - present"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. jodi fortuna, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "present",
+   "quote": "christopher mcnamara - business administrator"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services",
+   "status": "present",
+   "quote": "julianna hanscom-director of special services"
+  },
+  {
+   "name": "Yanina Burns",
+   "role": "Athletic Director",
+   "status": "present",
+   "quote": "yanina burns-athletic director"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMHS principal",
+   "status": "present",
+   "quote": "tim santry-lmhs principal"
+  },
+  {
+   "name": "Norman Yvon",
+   "role": "THES Principal",
+   "status": "present",
+   "quote": "norman yvon-thes principal"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Primary School Principal",
+   "status": "present",
+   "quote": "carla squier-primary school principal"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "brian lehtinen, 88 beachview road, member of the select board"
+  },
+  {
+   "name": "Nancy Charbonneau",
+   "role": "community member",
+   "status": "present",
+   "quote": "nancy charbonneau, arbor street"
+  },
+  {
+   "name": "Myra",
+   "role": "parent",
+   "status": "present",
+   "quote": "a parent myra, arbor street"
+  },
+  {
+   "name": "Dawn Gearin",
+   "role": "community member, coach",
+   "status": "present",
+   "quote": "dawn gearin, 9 crescent terrace"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee acknowledged vacancy after Mr. Yapp stepped down and invited applications from interested parties",
+   "quote": "mr. yapp on december 7 th , and he indicated that he had a change in his job and is no longer able to serve on the school committee. anyone that is interested in being on the school committee please let dr. fortuna or i know."
+  },
+  {
+   "decision": "Committee will welcome Johnny Reid, a doctoral resident from Harvard University, to Central Office from July 26 to April 27 as an administrative asset",
+   "quote": "we are preparing to welcome mr. johnny reid, a doctoral resident from harvard university to our team. from july 26 to april 27 th , mr. reid will serve as a key administrative asset , working directly under my mentorship"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrants approved for the period December 3 to December 12, 2025",
+   "figures_as_printed": [
+    "$217,820.97"
+   ],
+   "quote": "b. warrants 12/3/25 - 12/12/25 $217,820.97"
+  },
+  {
+   "topic": "Line Item Transfers",
+   "what_was_recorded": "No line item transfers reported",
+   "figures_as_printed": [],
+   "quote": "a. line item transfers none"
+  },
+  {
+   "topic": "Winter Cheer Team",
+   "what_was_recorded": "New winter cheer team added to athletics program",
+   "figures_as_printed": [],
+   "quote": "we have added a winter cheer team which has been great"
+  },
+  {
+   "topic": "ELL Program",
+   "what_was_recorded": "District currently has 71 ELL students; needs of students are being determined",
+   "figures_as_printed": [],
+   "quote": "we currently have 71 ell students and it is explained how the needs of the students are determined."
+  },
+  {
+   "topic": "Class Offerings Loss",
+   "what_was_recorded": "District has lost over 30 sections of class availability due to past budget cuts",
+   "figures_as_printed": [],
+   "quote": "we have lost over 30 section s of class availability and it is really hard on the students to not have the array of class offerings"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brian Lehtinen",
+   "stated_role": "member of the Select Board",
+   "topic": "Tri-board communication",
+   "quote": "as the school committee liaison last night 's select board meeting, we voted to approve sending a letter to the tri-board members. mr. lehtinen reads the letter out loud."
+  },
+  {
+   "speaker": "Nancy Charbonneau",
+   "stated_role": "community member",
+   "topic": "Reading instruction and literacy support",
+   "quote": "i want to thank them for thoughtfully answering questions regarding reading levels for the elementary school students. i also want to thank ms. sarfde for her response and opening up the conversation about literacy. ms. charbonneau shares her concerns about the current reading levels in lunenburg and is interested in partnering with the schools in any way possible to support."
+  },
+  {
+   "speaker": "Myra",
+   "stated_role": "parent",
+   "topic": "Reading intervention access for first grade",
+   "quote": "while i take accountabilit y and do what is necessary to support my children and help them succeed. i make sure to help them with reading at home. while my son is receiving the reading support he needs, i am concerned that not all students that qualify for intervention are currently able to access it."
+  },
+  {
+   "speaker": "Dawn Gearin",
+   "stated_role": "community member, coach",
+   "topic": "Athletic director position should be full-time",
+   "quote": "my big goal is to make the point that the athletic director job needs to be full time. i am living the nightmare of having a full time job cut and then i could be expected to do both of those full time jobs"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order and Pledge",
+   "resolution": "meeting called to order",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "1. call to order at 7:00 by dr. fortuna 2. pledge of allegiance"
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "multiple community concerns heard",
+   "tags": [
+    "reading",
+    "athletics",
+    "tri-board coordination"
+   ],
+   "quote": "3. public comment brian lehtinen, 88 beachview road, member of the select board"
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "vacancy noted, applications invited",
+   "tags": [
+    "staffing",
+    "committee composition"
+   ],
+   "quote": "4. chairs report - mr. sculimbrene reports he received an email from mr. yapp on december 7 th , and he indicated that he had a change in his job and is no longer able to serve on the school committee."
+  },
+  {
+   "topic": "Review and Approve Minutes from 10/15/25",
+   "resolution": "approved",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "6. review and approve minutes a. 10/15/25 ms. gilman makes a motion to accept the minutes, ms. young seconds the motion, all approve"
+  },
+  {
+   "topic": "Review and Approve Warrants and Transfers",
+   "resolution": "approved",
+   "tags": [
+    "budget",
+    "warrants"
+   ],
+   "quote": "7. review and approve line items, transfers, warrants a. line item transfers none b. warrants 12/3/25 - 12/12/25 $217,820.97"
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "reported",
+   "tags": [
+    "central office",
+    "leadership"
+   ],
+   "quote": "8. superintendents report dr. fortuna shares spotlights and highlights. looking ahead to 2026, i am excited to announce an addition to the central office leadership."
+  },
+  {
+   "topic": "Winter Athletics Report",
+   "resolution": "discussed",
+   "tags": [
+    "athletics",
+    "winter cheer",
+    "athletic director position"
+   ],
+   "quote": "a. winter athletics report ms. burns supp lied the committee some documents regarding the athletics breakdown from 2024-2025, as well as details on the position of an athletic directors role and responsibilities, we have added a winter cheer team which has been great."
+  },
+  {
+   "topic": "Budget Workshop – Initial Draft FY 27 Budget",
+   "resolution": "discussed",
+   "tags": [
+    "budget",
+    "level service",
+    "class offerings",
+    "ELL",
+    "staffing"
+   ],
+   "quote": "b. budget workshop - initial draft fy 27 budget the committee has been provided some documentation regarding changes that have occurred and how this is reflected in the budget, including proposed expenses."
+  },
+  {
+   "topic": "Q & A FY 25 Budget",
+   "resolution": "statement approved",
+   "tags": [
+    "budget"
+   ],
+   "quote": "a. q & a fy 25 budget no public comment. ms. gilman put together a statement from the committee regarding the fy25 budget."
+  },
+  {
+   "topic": "Subcommittee Reports",
+   "resolution": "reported",
+   "tags": [
+    "PTO",
+    "middle school advisory council"
+   ],
+   "quote": "11. subcommittee reports ms. gilman reports the pto is selling blankets for $30, we have about 20 left."
+  },
+  {
+   "topic": "Topics for Future Discussion",
+   "resolution": "noted for future agenda",
+   "tags": [
+    "track facility",
+    "borrowing capacity"
+   ],
+   "quote": "13. topics for future d iscussion meet with mr. beardmore regarding the track, borrowing capacity with the town that is not related to overrides."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned at 9:20 PM",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "14. adjournment ms. brzozoski m akes a motion to adjourn at 9:20, ms. gilman seconds the motion all approve"
+  }
+ ],
+ "tags": [
+  "school committee",
+  "budget",
+  "athletics",
+  "reading instruction",
+  "literacy",
+  "ELL",
+  "special services",
+  "staffing",
+  "positions",
+  "warrants",
+  "FY27 budget"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

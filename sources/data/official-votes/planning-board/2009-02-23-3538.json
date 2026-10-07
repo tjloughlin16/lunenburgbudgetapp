@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-02-23",
  "docid": "3538",
@@ -12,24 +12,206 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from 2-9-09",
-   "moved_by": "Joanne L. Bilotta",
-   "seconded_by": "Robert J. Saiia",
+   "motion": "Approve the minutes signed 2-9-09.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "signed 2-9-09, motion, ms. bilotta, second, mr. sa iia, motion passe",
-   "quote_taken_from_text": true
+   "quote": "signed 2-9-09, motion, ms. bilotta, second, mr. sa iia, motion passed."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Joanne L. Bilotta",
-   "seconded_by": "Robert J. Saiia",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn, ms. bilotta, second, mr. saiia, motion passed"
+   "quote": "motion to adjourn, ms. bilotta, second, mr. saiia, motion passed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is a clean scan, readable throughout. One discussion item (Emerald Place three-year extension request) was tabled until the next meeting, but the minutes do not record a formal motion voted on; tabling is an action without a stated vote outcome.",
- "cost_usd": 0.0951325
+ "note": "Text is extracted with per-glyph codes (/U…) in the header and roll-call lines, so the readable plain-text copy was used for names and words. The header glyphs spell the member as 'Joanna' and the body prints 'Joanne' L. Bilotta; the body spelling is used here. Broken spacing ('Sa iia', 'Ro bert', 'elect ronic') is quoted as printed. Motions record 'passed' with no vote count. No dollar figure appears anywhere in the text, and there is no public comment section.",
+ "cost_usd": 0.00630039,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran, ro bert j. saiia, thomas w. bodkin, jr., joanne l. bil ott",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "James A. Halloran",
+   "role": "Vice Chair (per the header block)",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran, ro bert j. saiia, thomas w. bodkin, jr., joanne l. bil ott",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "member (no title printed)",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran, ro bert j. saiia, thomas w. bodkin, jr., joanne l. bil ott",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "member (no title printed)",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran, ro bert j. saiia, thomas w. bodkin, jr., joanne l. bil ott",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Joanne L. Bilotta",
+   "role": "member (no title printed)",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran, ro bert j. saiia, thomas w. bodkin, jr., joanne l. bil ott",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "m. benson, planning director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "ANR plan for 540 Northfield Road (Richard & William Millington) accepted for review, presented by Marsden Engineering; no vote recorded.",
+   "quote": "plan presented by marsden engineering and accepted for review."
+  },
+  {
+   "decision": "Emerald Place at Lake Whalom special permit extension request tabled to the next meeting; no vote recorded.",
+   "quote": "summary - the request was tabled until the next meeting."
+  },
+  {
+   "decision": "Chair directed the Planning Director to look into changing the 43D property's industrial designation; no vote recorded.",
+   "quote": "the director look into the change."
+  },
+  {
+   "decision": "Mr. Bodkin to send an electronic mail on Eagle Heights legal procedures, to be forwarded to the Board of Selectmen; no vote recorded.",
+   "quote": "which will be forwarded to the board of selectmen."
+  },
+  {
+   "decision": "Member asked for further investigation of underground electrical wiring for single family ANR houses; no vote recorded.",
+   "quote": "member would like further investigation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Planning Committee available funds",
+   "what_was_recorded": "The Director reported that a final figure of available funds has not been determined by the CAFO. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "a final figure of available fun ds has not been determined by the cafo."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointments: ANR 540 Northfield Road",
+   "resolution": "accepted for review",
+   "quote": "plan presented by marsden engineering and accepted for review.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Northfield Road"
+   ]
+  },
+  {
+   "topic": "Minutes approval (2-9-09)",
+   "resolution": "approved",
+   "quote": "signed 2-9-09, motion, ms. bilotta, second, mr. sa iia, motion passed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "quote": "mjtc- tip amendment report presented.",
+   "tags": [
+    "capital planning",
+    "MJTC",
+    "regionalization"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business",
+   "resolution": "reported; underground wiring investigation requested",
+   "quote": "member would like further investigation.",
+   "tags": [
+    "DHCD",
+    "Eagle Heights",
+    "40R",
+    "federal stimulus",
+    "energy task force",
+    "underground wiring"
+   ]
+  },
+  {
+   "topic": "43D property",
+   "resolution": "Director to look into the change",
+   "quote": "the director look into the change.",
+   "tags": [
+    "43D",
+    "Fitchburg",
+    "industrial zoning"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "Emerald Place extension tabled",
+   "quote": "summary - the request was tabled until the next meeting.",
+   "tags": [
+    "special permit",
+    "Lake Whalom",
+    "telecommunications towers",
+    "Highfield Village",
+    "Tri Town Landing"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action (see above)",
+   "quote": "unfinished business: see above",
+   "tags": []
+  },
+  {
+   "topic": "Other: Highfield Village and Aro Estates",
+   "resolution": "reported",
+   "quote": "highfield village will submit a corrected definitive plan to seek final approval for 68 units.",
+   "tags": [
+    "definitive plan",
+    "Highfield Village",
+    "Aro Estates"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:50 PM",
+   "quote": "motion to adjourn, ms. bilotta, second, mr. saiia, motion passed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivision",
+  "ANR",
+  "zoning",
+  "special permit",
+  "development status",
+  "telecommunications towers",
+  "Eagle Heights senior housing",
+  "40R housing",
+  "43D",
+  "regionalization",
+  "underground wiring",
+  "federal stimulus",
+  "road acceptance"
+ ],
+ "dropped_unquoted_by_field": {}
 }

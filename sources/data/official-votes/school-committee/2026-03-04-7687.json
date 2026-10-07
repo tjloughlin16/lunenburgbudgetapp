@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2026-03-04",
  "docid": "7687",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve line item transfers of $54,548.50 and $462.07 for SOA account allocations and special education testing supplies.",
+   "motion": "To approve line item transfers of $54,548.50 and $462.07",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
@@ -20,31 +20,31 @@
    "quote": "ms. brzozoski makes a motion to approve the line item transfers, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "Accept donations from book fair for $2,096.65 and box tops for $23.10 for field trips and presentations.",
+   "motion": "To accept book fair donation of $2,096.65 and box tops donation of $23.10",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to accept, ms. gilman seconds the motion all approve."
+   "quote": "ms. brzozoski makes a motion to accept, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "Accept donation of $220 for Girls On the Run.",
+   "motion": "To accept Girls On the Run donation of $220",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to accept the kind donation, ms. gilman seconds the motion, all approve."
+   "quote": "ms. brzozoski makes a motion to accept the kind donation, ms. gilman seconds the motion, all approve"
   },
   {
-   "motion": "Accept the generous donation in honor of Betsy B Parker scholarship.",
+   "motion": "To accept Betsy B Parker Scholarship donation",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Young",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to accept the generous donation in honor of betsy b parker, ms. young seconds the motion all approve."
+   "quote": "ms. brzozoski makes a motion to accept the generous donation in honor of betsy b parker, ms. young seconds the motion all approve"
   },
   {
-   "motion": "Accept the American Battlefield Trust grant reimbursement for the field trip to Minute Man National Historical Park.",
+   "motion": "To accept grant reimbursement for History Minuteman Field Trip",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "ms. brzozoski makes a motion to accept the grant reimbursement for the field trip to the battlefield, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "Move the facilities update before the budget discussion.",
+   "motion": "To move facilities update discussion before budget discussion",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "ms. brzozoski makes a motion to move the facilities update before the budget, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "Accept the facilities report with gratitude.",
+   "motion": "To accept facilities report",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
@@ -68,15 +68,381 @@
    "quote": "ms. brzozoski makes a motion to accept the report with gratitude, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "Adjourn the meeting.",
+   "motion": "To adjourn at 9:34",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
    "procedural": true,
+   "quote": "ms. brzozoski makes a motion to adjourn at 9:34, ms. gilman seconds the motion all approve"
+  }
+ ],
+ "dropped_unquoted": 1,
+ "note": "\"\"",
+ "cost_usd": 0.19826860000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski, vice chair - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mandy gilman, secretary - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Member",
+   "status": "present",
+   "quote": "emily young, member - present"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "present",
+   "quote": "christopher mcnamara - business administrator"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Primary School Principal",
+   "status": "present",
+   "quote": "carla squier - primary school principal"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMHS Principal",
+   "status": "present",
+   "quote": "tim santry, lmhs principal"
+  },
+  {
+   "name": "Norman Yvon",
+   "role": "THES Principal",
+   "status": "present",
+   "quote": "norman yvon - thes principal"
+  },
+  {
+   "name": "Christopher Stevens",
+   "role": "Director of Facilities",
+   "status": "present",
+   "quote": "christopher stevens - director of facilities"
+  },
+  {
+   "name": "Hailee Attorri",
+   "role": "LHS History Faculty",
+   "status": "present",
+   "quote": "hailee attorri - lhs history faculty"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "",
+   "status": "present",
+   "quote": "sarah cammer 304 lancaster ave i want to thank the committee and our superintendent"
+  },
+  {
+   "name": "Chris Robarge",
+   "role": "ASCME Council 93 staff representative",
+   "status": "present",
+   "quote": "chris robarge i am the staff rep for ascme council 93"
+  },
+  {
+   "name": "Kara Harunkiewicz",
+   "role": "",
+   "status": "present",
+   "quote": "kara harunkiewicz i would like to, for the people at home, recognize the sheer amount of custodial staff"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The School Committee agreed not to outsource facilities and grounds services",
+   "quote": "overall, the committee agrees this is not a good idea."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SOA account transfer",
+   "what_was_recorded": "Transfer of funds from instructional staff salaries to SOA account for new allocations",
+   "figures_as_printed": [
+    "$54,548.50"
+   ],
+   "quote": "a transfer of $54,548.50 to transfer funds to represent the new allocations for the soa account, these funds will be going from instructional staff salaries"
+  },
+  {
+   "topic": "Primary School special education supplies transfer",
+   "what_was_recorded": "Transfer from supply line items to Primary School special education instructional material for testing supplies",
+   "figures_as_printed": [
+    "$462.07"
+   ],
+   "quote": "a transfer of $462.07 will be transferring from the supply line items, math, art, periodicals, library, guidance, repair office machines and general supplies to the primary school special educations instructional material amount for testing supplies"
+  },
+  {
+   "topic": "Book fair donation",
+   "what_was_recorded": "Donation from book fair for field trips and presentations",
+   "figures_as_printed": [
+    "$2,096.65"
+   ],
+   "quote": "there is a donation from the book fair for $2,096.65"
+  },
+  {
+   "topic": "Box tops donation",
+   "what_was_recorded": "Donation from box tops for field trips and presentations",
+   "figures_as_printed": [
+    "$23.10"
+   ],
+   "quote": "a donation from box tops for $23.10 this will be used for field trips and presentations"
+  },
+  {
+   "topic": "Girls On the Run donation",
+   "what_was_recorded": "Donation for Girls On the Run program",
+   "figures_as_printed": [
+    "$220"
+   ],
+   "quote": "there is a donation for $220 for girls on the run"
+  },
+  {
+   "topic": "Betsy B Parker Scholarship",
+   "what_was_recorded": "Scholarship donation for senior interested in teaching with varsity letters in three sports",
+   "figures_as_printed": [],
+   "quote": "there is another donation that is for a scholarship, it is the betsy b parker scholarship"
+  },
+  {
+   "topic": "Minuteman Field Trip costs and grant",
+   "what_was_recorded": "Student field trip to Minute Man National Historical Park with student costs, bus fees, and grant reimbursement",
+   "figures_as_printed": [
+    "$5",
+    "$731.50",
+    "$500"
+   ],
+   "quote": "students will only need to pay $5 each. the trust provides a reimbursement of up to $500. we will need to pay dee bus company upfront and that cost is $731.50"
+  },
+  {
+   "topic": "FY 27 Budget deficit correction",
+   "what_was_recorded": "Correction of FY 27 budget deficit from inflated figure to actual projected deficit",
+   "figures_as_printed": [
+    "$1,978,307"
+   ],
+   "quote": "based on this information the previous deficit was artificially inflated, our actual deficit is now anticipated to be $1,978,307"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from instructional staff salaries to SOA account",
+   "amount_as_printed": "$54,548.50",
+   "outcome": "approved",
+   "quote": "a transfer of $54,548.50 to transfer funds to represent the new allocations for the soa account, these funds will be going from instructional staff salaries to the list ===page 4=== 1025 massachusetts avenue, lunenbur",
+   "quote_taken_from_text": true
+  },
+  {
+   "description": "Transfer from supply line items to Primary School special education instructional material",
+   "amount_as_printed": "$462.07",
+   "outcome": "approved",
+   "quote": "a transfer of $462.07 will be transferring from the supply line items, math, art, periodicals, library, guidance, repair office machines and general supplies to the primary school special educations instructional material amount for testing supplies"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Equity, poverty, seniors, and school budget priorities",
+   "speaker": "Sarah Cammer",
+   "stated_role": "",
+   "quote": "i want to thank the committee and our superintendent for your efforts this year and looking at what our students really need first."
+  },
+  {
+   "topic": "Concerns about outsourcing custodial services",
+   "speaker": "Chris Robarge",
+   "stated_role": "ASCME Council 93 staff representative",
+   "quote": "i am the staff rep for ascme council 93. we represent about 65 workers here in lunenburg serving as paraprofessionals, office personnel, and of course, school custodians."
+  },
+  {
+   "topic": "Custodian Mr. Jose and his importance to students",
+   "speaker": "Ms. Young",
+   "stated_role": "",
+   "quote": "i don't know many of the custodial staff, but mr. jose i just to kind of jump on how it's more than just cleaning up messes and fixing things."
+  },
+  {
+   "topic": "Student perspective on custodians",
+   "speaker": "Kara Harunkiewicz",
+   "stated_role": "",
+   "quote": "i would like to, for the people at home, recognize the sheer amount of custodial staff that we have shown up today."
+  },
+  {
+   "topic": "Value of custodians to school operations",
+   "speaker": "Chris Stevens",
+   "stated_role": "Director of Facilities",
+   "quote": "i rely on these custodians every day. i call them at night, can you do this? can you do that? and they do it!"
+  },
+  {
+   "topic": "Letter to Ways and Means Committee regarding budget",
+   "speaker": "Mandy Gilman",
+   "stated_role": "",
+   "quote": "i have drafted a letter that is in your packet that i would like you to review and for us to send to the ways and means committee and also our own legislators."
+  },
+  {
+   "topic": "Difficult budget decisions and working together as a community",
+   "speaker": "Mrs. Squier",
+   "stated_role": "",
+   "quote": "i've been listening to the discussion about positions and it's really challenging and it's really difficult."
+  },
+  {
+   "topic": "Recognition of bus drivers",
+   "speaker": "Ms. Brzozoski",
+   "stated_role": "",
+   "quote": "it was a really challenging week for our bus drivers, so i wanted to recognize them and say thank you for getting our students home safe."
+  },
+  {
+   "topic": "Read Across America Day event",
+   "speaker": "Ms. Gilman",
+   "stated_role": "",
+   "quote": "i read at read across america day and it was wonderful and i want to thank the teachers and alicia mcallister who put it together"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "heard",
+   "tags": [
+    "public comment",
+    "equity",
+    "budget",
+    "staffing"
+   ],
+   "quote": "sarah cammer 304 lancaster ave i want to thank the committee and our superintendent for your efforts this year"
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "given",
+   "tags": [
+    "athletics",
+    "budget",
+    "communication"
+   ],
+   "quote": "after 42 years, coach k finally has a girl's state championship division 5 winner for indoor track."
+  },
+  {
+   "topic": "Student Representative Report",
+   "resolution": "given",
+   "tags": [
+    "student",
+    "decision-making"
+   ],
+   "quote": "on friday, districtwide, we are wearing green in support for haddie."
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "none",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "review and approve minutes none"
+  },
+  {
+   "topic": "Line Item Transfers",
+   "resolution": "approved",
+   "tags": [
+    "transfers",
+    "budget",
+    "allocations"
+   ],
+   "quote": "ms. brzozoski makes a motion to approve the line item transfers, ms. gilman seconds the motion all approve"
+  },
+  {
+   "topic": "Donations",
+   "resolution": "approved",
+   "tags": [
+    "donations",
+    "fundraising"
+   ],
+   "quote": "there is a donation from the book fair for $2,096.65 and a donation from box tops for $23.10"
+  },
+  {
+   "topic": "History Minuteman Field Trip Grant",
+   "resolution": "approved",
+   "tags": [
+    "field trip",
+    "grant",
+    "history",
+    "education"
+   ],
+   "quote": "ms. brzozoski makes a motion to accept the grant reimbursement for the field trip to the battlefield, ms. gilman seconds the motion all approve"
+  },
+  {
+   "topic": "Outsourcing Facilities and Grounds",
+   "resolution": "rejected",
+   "tags": [
+    "facilities",
+    "outsourcing",
+    "staffing",
+    "custodians"
+   ],
+   "quote": "overall, the committee agrees this is not a good idea."
+  },
+  {
+   "topic": "FY 27 Budget",
+   "resolution": "discussed",
+   "tags": [
+    "budget",
+    "FY27",
+    "deficit"
+   ],
+   "quote": "based on this information the previous deficit was artificially inflated, our actual deficit is now anticipated to be $1,978,307."
+  },
+  {
+   "topic": "Facility Updates",
+   "resolution": "accepted",
+   "tags": [
+    "facilities",
+    "projects"
+   ],
+   "quote": "ms. brzozoski makes a motion to accept the report with gratitude, ms. gilman seconds the motion all approve"
+  },
+  {
+   "topic": "Public Comments for issues discussed tonight",
+   "resolution": "heard",
+   "tags": [
+    "public comment",
+    "budget",
+    "staffing",
+    "coordination"
+   ],
+   "quote": "mandy gilman i have drafted a letter that is in your packet that i would like you to review"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "tags": [
+    "procedure"
+   ],
    "quote": "ms. brzozoski makes a motion to adjourn at 9:34, ms. gilman seconds the motion all approve."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Four committee members were present. All votes passed unanimously (\"all approve\"). Item 6 (Review and Approve Minutes) shows \"None,\" indicating no vote on prior minutes. The discussion of outsourcing facilities (item 7e) was not formalized as a motion or vote.",
- "cost_usd": 0.0832324
+ "tags": [
+  "school committee",
+  "budget",
+  "FY27",
+  "staffing",
+  "outsourcing",
+  "facilities",
+  "field trip",
+  "grant",
+  "donations",
+  "public comment",
+  "custodians"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2025-11-20",
  "docid": "7518",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of October 16, 2025, as amended",
+   "motion": "Accept the minutes of October 16, 2025, as amended.",
    "moved_by": "Maia",
    "seconded_by": "Jana",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "maia made a motion to accept the minutes of october 16, 2025, as amended, seconded by jana. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Stephanie",
    "seconded_by": "David",
    "outcome": "passed unanimously",
@@ -29,6 +29,335 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0771314
+ "note": "Text extraction of a PDF with inconsistent spacing; quotes collapse runs of spaces and line breaks to single spaces. Pages 1-2 are the minutes; pages 3-11 are attached reports (Director's Report, Children's and Adult Services reports, Adult Programming Financial Report) whose figures are quoted as printed. Only two motions are recorded (approval of minutes and adjournment), both procedural, and both shown with outcome 'passed unanimously'; no substantive vote is recorded. Discussion items without a motion (handbook deferral, policy scheduling, Director review) are recorded as decisions without a vote. The Director's Report prints the Bemis grant as $1000 while the minutes print $1,000. Muir Haman's title is not printed in the minutes, so no role is given. Public comment reads 'None'.",
+ "cost_usd": 0.01955517,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:50 p.m. by chair harry kubetz."
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, jana balish, david niose, stephanie trudel, muir haman"
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, jana balish, david niose, stephanie trudel, muir haman"
+  },
+  {
+   "name": "Jana Balish",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, jana balish, david niose, stephanie trudel, muir haman"
+  },
+  {
+   "name": "David Niose",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, jana balish, david niose, stephanie trudel, muir haman"
+  },
+  {
+   "name": "Stephanie Trudel",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, jana balish, david niose, stephanie trudel, muir haman"
+  },
+  {
+   "name": "Muir Haman",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom, jana balish, david niose, stephanie trudel, muir haman"
+  },
+  {
+   "name": "Kate Ravelette",
+   "role": "from the Lunenburg Artisan Market",
+   "status": "present",
+   "quote": "kate ravelette, from the lunenburg artisan market, attended the meeting to talk about the 2nd annual winter artisan showcase."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trustee Handbook discussion deferred to the next meeting.",
+   "quote": "trustee handbook discussion ○ defer to next meeting."
+  },
+  {
+   "decision": "Gift Policy to be reviewed at a future meeting.",
+   "quote": "the gift policy will be reviewed at a future meeting."
+  },
+  {
+   "decision": "Investment Policy review to wait until Robin is in attendance.",
+   "quote": "we will wait for robin to be in attendance before reviewing the investment policy."
+  },
+  {
+   "decision": "Director's review to be consolidated by Harry from individual trustee reviews and discussed and amended at the December meeting.",
+   "quote": "the trustees emailed their individual reviews to harry. he will make a consolidated review for us to discuss and amend as needed at our december meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2025 order cancelled by vendor failure, expense moved to FY2026",
+   "what_was_recorded": "An FY25 library materials order with Baker & Taylor did not ship because the vendor went out of business, so the expense moves into the FY2026 budget; the Town Manager said encumbering unreceived orders at year end is no longer allowed.",
+   "figures_as_printed": [
+    "$1,300"
+   ],
+   "quote": "muir placed an order for $1,300 in fy25 with baker & taylor, a library materials supplier who has since gone out of business."
+  },
+  {
+   "topic": "End-of-year encumbrance rule",
+   "what_was_recorded": "The Town Manager told the Director he can no longer encumber items ordered but not received before fiscal year end, so spending down accounts must change.",
+   "figures_as_printed": [],
+   "quote": "he can no longer encumber items ordered, but not received before the end of the fiscal year."
+  },
+  {
+   "topic": "FY2026 budget spending pace",
+   "what_was_recorded": "Library funds were reported as 34% expended with the fiscal year 39% complete.",
+   "figures_as_printed": [
+    "39%",
+    "34%"
+   ],
+   "quote": "the fiscal year calendar is 39% complete and library funds are 34% expended."
+  },
+  {
+   "topic": "Grant applications submitted in November",
+   "what_was_recorded": "Two grant applications were submitted: one to the Bemis Community Fund and one to the Emerson Hospital Catherine Gallery Community Grant. The Director's report prints the Bemis figure as $1000.",
+   "figures_as_printed": [
+    "$1,000",
+    "$1,700",
+    "$1000"
+   ],
+   "quote": "one is for $1,000 from the bemis community fund for five monthly sessions of music and movement storytime"
+  },
+  {
+   "topic": "Friends book sale and bake sale proceeds",
+   "what_was_recorded": "The Friends reported book sale and bake sale proceeds totalling $3,459.",
+   "figures_as_printed": [
+    "$2,340",
+    "$1,119",
+    "$3,459"
+   ],
+   "quote": "the fall book sale brought in $2,340, and the bake sale brought in $1,119 for a total of $3,459."
+  },
+  {
+   "topic": "Winter Artisan Showcase guaranteed donation",
+   "what_was_recorded": "Kate Ravelette guaranteed a donation to the Friends of 1K regardless of bake sale earnings, with all proceeds going to the Friends.",
+   "figures_as_printed": [
+    "1K"
+   ],
+   "quote": "she guaranteed a donation of 1k, regardless of how much is earned from the bake sale."
+  },
+  {
+   "topic": "Adult programming financial report",
+   "what_was_recorded": "The adult programs report as of 11/1/2025 shows a grand total budget of $14,600, with 26% spent, 33% encumbered and 41% remaining.",
+   "figures_as_printed": [
+    "$14,600",
+    "26%",
+    "33%",
+    "41%",
+    "$4,500",
+    "$3,000",
+    "$500",
+    "$6,600"
+   ],
+   "quote": "grand total $14,600 26% 33% 41%"
+  },
+  {
+   "topic": "CIPA compliance discounts and filtering software",
+   "what_was_recorded": "CWMARS suggested CIPA compliance for discounts; trustees asked how much discount would apply, but no amount was given.",
+   "figures_as_printed": [],
+   "quote": "discounts will be available for libraries that comply."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of minutes",
+   "resolution": "approved as amended",
+   "quote": "maia made a motion to accept the minutes of october 16, 2025, as amended, seconded by jana.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report: FY2025 budget update",
+   "resolution": "noted, no action",
+   "quote": "muir placed an order for $1,300 in fy25 with baker & taylor, a library materials supplier",
+   "tags": [
+    "budget",
+    "FY25",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Director's report: FY2026 budget update",
+   "resolution": "noted",
+   "quote": "the fiscal year calendar is 39% complete and library funds are 34% expended.",
+   "tags": [
+    "budget",
+    "FY26"
+   ]
+  },
+  {
+   "topic": "Director's report: staff update",
+   "resolution": "noted; volunteer CORI question left with Director",
+   "quote": "staffing is at a critically low level, with two open positions and two upcoming parental leaves.",
+   "tags": [
+    "staffing",
+    "volunteers",
+    "CORI"
+   ]
+  },
+  {
+   "topic": "Director's report: grant applications",
+   "resolution": "noted",
+   "quote": "one is for $1,000 from the bemis community fund for five monthly sessions of music and movement storytime",
+   "tags": [
+    "grants",
+    "Friends",
+    "memory kits"
+   ]
+  },
+  {
+   "topic": "Director's report: programs update",
+   "resolution": "noted",
+   "quote": "due to currently not having a teen librarian, we have had to cancel a number of teen programs.",
+   "tags": [
+    "programs",
+    "teens",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Outreach update",
+   "resolution": "noted",
+   "quote": "melanie held an outreach session at baker brook apartments with 17 residents in attendance.",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Technology update and CIPA compliance",
+   "resolution": "Director to gather more information",
+   "quote": "cwmars has suggested that all libraries with a fiber line work towards cipa",
+   "tags": [
+    "technology",
+    "CIPA",
+    "filtering"
+   ]
+  },
+  {
+   "topic": "Building and maintenance update",
+   "resolution": "noted",
+   "quote": "the furniture purchased by the friends is now in our cafe.",
+   "tags": [
+    "building",
+    "furniture",
+    "HVAC"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook",
+   "resolution": "deferred to next meeting",
+   "quote": "trustee handbook discussion ○ defer to next meeting.",
+   "tags": [
+    "governance",
+    "handbook"
+   ]
+  },
+  {
+   "topic": "Conroy Memorial Garden",
+   "resolution": "no action; pricing being checked",
+   "quote": "muir is checking on pricing for engraving the quote in brass, bronze or stone.",
+   "tags": [
+    "memorial",
+    "garden"
+   ]
+  },
+  {
+   "topic": "Policy discussions: room use, gift, investment",
+   "resolution": "room use with Town Counsel; gift policy to future meeting; investment policy awaits Robin",
+   "quote": "town counsel is reviewing the room use policy.",
+   "tags": [
+    "policy",
+    "room use",
+    "gift policy",
+    "investment policy"
+   ]
+  },
+  {
+   "topic": "Brooks House update",
+   "resolution": "no update",
+   "quote": "brooks house update ○ no update.",
+   "tags": [
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Friends update and Winter Artisan Showcase",
+   "resolution": "noted; donation guaranteed",
+   "quote": "the fall book sale brought in $2,340, and the bake sale brought in $1,119 for a total of $3,459.",
+   "tags": [
+    "Friends",
+    "fundraising",
+    "Winter Artisan Showcase"
+   ]
+  },
+  {
+   "topic": "Director's review",
+   "resolution": "consolidated review to December meeting",
+   "quote": "he will make a consolidated review for us to discuss and amend as needed at our december meeting.",
+   "tags": [
+    "personnel",
+    "Director review"
+   ]
+  },
+  {
+   "topic": "Board comments and other business",
+   "resolution": "no comments",
+   "quote": "board comments ○ none",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:48 p.m.",
+   "quote": "the motion passed unanimously and the meeting was adjourned at 8:48 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Attached documents",
+   "resolution": "listed, no action",
+   "quote": "november 2025 adult services department report",
+   "tags": [
+    "reports"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "staffing",
+  "volunteers",
+  "grants",
+  "Friends of the Library",
+  "budget",
+  "FY2025",
+  "FY2026",
+  "encumbrance",
+  "technology",
+  "CIPA",
+  "programs",
+  "outreach",
+  "policy",
+  "Director review",
+  "Trustee Handbook",
+  "Conroy Memorial Garden",
+  "fundraising"
+ ],
+ "dropped_unquoted_by_field": {}
 }

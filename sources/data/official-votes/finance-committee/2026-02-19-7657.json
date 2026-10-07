@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-02-19",
  "docid": "7657",
@@ -12,15 +12,350 @@
  },
  "votes": [
   {
-   "motion": "adjourn",
+   "motion": "To adjourn the meeting",
    "moved_by": "Tom Gray",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "there was a motion to adjourn by tom gray, seconded by jay simeone. roll call vote. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Only one vote recorded. The minutes include budget presentations from various departments but no votes on those budgets or on minutes approval (minutes section explicitly states \"There were no minutes to approve\").",
- "cost_usd": 0.0704834
+ "dropped_unquoted": 4,
+ "note": "Minutes are complete and clear. No scanning issues, missing pages, or unreadable votes. One minor spelling variation noted: Committee Member listed as \"Tanya Dall\" in header but \"Tanya Doll\" appears once in body text (page 3) — both instances refer to same person. Chief Jeffrey Tibido name verified as printed.\"",
+ "cost_usd": 0.0507591,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member jay simeone"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member jay simeone"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent member: vice chair jean russell, committee member mike rupp"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "absent",
+   "quote": "absent member: vice chair jean russell, committee member mike rupp"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "the fire department budget presentation was provided by fire chief patrick sullivan."
+  },
+  {
+   "name": "Jeffrey Tibido",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "the police department budget presentation was provided by chief jeưrey tibido. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "the facilities department budget presentation was provided by facilities director, chris ruth."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY27 Revenue Summary",
+   "what_was_recorded": "Total revenues available for appropriation from property tax, state aid, local receipts, and enterprise funds",
+   "figures_as_printed": [
+    "$36,332,933.80",
+    "$11,404,917.00",
+    "$3,360,524",
+    "$338,397.19",
+    "$51,436,771.99"
+   ],
+   "quote": "fy27 revenues property tax: $36,332,933.80 state aid: $11,404,917.00 local receipts: $3,360,524 enterprise funds: $338,397.19 totaling: $51,436,771.99"
+  },
+  {
+   "topic": "FY27 Budget Deficit",
+   "what_was_recorded": "Total budget presented is unbalanced and requires override; deficit between expenditures and available revenues",
+   "figures_as_printed": [
+    "$53,107,913.87",
+    "$49,750,699.99",
+    "$3,357,213.88"
+   ],
+   "quote": "the total budget for fy27 as presented is $53,107,913.87. the available revenues for fy27 amount to $49,750,699.99, resulting in a fy27 deﬁcit of $3,357,213.88. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "New Revenue Allocation",
+   "what_was_recorded": "New revenue and Monty Tech Assessment to be split between school and town budgets",
+   "figures_as_printed": [
+    "$1,374,263.89",
+    "$117,858.00",
+    "$1,256,405.89"
+   ],
+   "quote": "new revenue for fy27 totals $1,374,263.89. the monty tech assessment stands at $117,858.00, leaving $1,256,405.89 to be allocated between the school and town budgets."
+  },
+  {
+   "topic": "School Budget Allocation",
+   "what_was_recorded": "School receives portion of new revenue with total budget and resulting deficit",
+   "figures_as_printed": [
+    "$689,059.28",
+    "$2,875,712.00",
+    "$2,186,652.72"
+   ],
+   "quote": "the schools would receive $689,059.28, bringing their total budget to $2,875,712.00 with a deﬁcit of $2,186,652.72. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Town Budget Allocation",
+   "what_was_recorded": "Town receives portion of new revenue with total budget and resulting deficit",
+   "figures_as_printed": [
+    "$567,346.61",
+    "$1,737,907.77",
+    "$1,170,561.16"
+   ],
+   "quote": "the town would receive $567,346.61, bringing their total budget to $1,737,907.77 with a deﬁcit of $1,170,561.16. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Fire Department Budget Request",
+   "what_was_recorded": "Total budget request including possible 4th shift addition for additional coverage hours",
+   "figures_as_printed": [
+    "$2,097,555.42"
+   ],
+   "quote": "the total budget request (including the possible 4th shift): $2,097,555.42."
+  },
+  {
+   "topic": "Police Department Budget Request",
+   "what_was_recorded": "Total budget request represents 1.2% increase over FY25",
+   "figures_as_printed": [
+    "$2,581,557.92"
+   ],
+   "quote": "the total budget request is $2,581,557.92. this is a 1.2% increase over fy25."
+  },
+  {
+   "topic": "Police Department Detailed Expenditures",
+   "what_was_recorded": "Breakdown of personnel, salaries, incentives, overtime, training, animal control, lockup, dispatch, and vehicle maintenance",
+   "figures_as_printed": [
+    "$2,331,947",
+    "$1,672,862",
+    "$265,787",
+    "$294,389",
+    "$98,909",
+    "$23,450",
+    "$35,015",
+    "$37,238",
+    "$46,125",
+    "$20,600",
+    "$104,764",
+    "$216,098",
+    "$67,000"
+   ],
+   "quote": "personal: $2,331,947 salaries: $1,672,862 incentives: $265,787 overtime: $294,389 training: $98,909 purchase of service: $23,450 supplies: $35,015 other: $37,238 animal control: $46,125 lockup: $20,600 front desk radio watch: $104,764 nashoba valley regional dispatch: $216,098 vehicle maintenance: $67,000"
+  },
+  {
+   "topic": "Jail Diversion Mental Health Grant",
+   "what_was_recorded": "Town awarded grant for co-response clinician program",
+   "figures_as_printed": [
+    "$109,000"
+   ],
+   "quote": "the town was awarded the jail diversion mental health grant totaling $109,000."
+  },
+  {
+   "topic": "Facilities Department Budgets",
+   "what_was_recorded": "Public building utilities with significant increase due to inflation, facility maintenance, and parks budgets",
+   "figures_as_printed": [
+    "$287,500",
+    "$770,474.56",
+    "$145,433.60"
+   ],
+   "quote": "public building utilities budget: $ 287,500 (29.88% increase) facility maintenance budget: $770,474.56 (8% increase) parks budget: $145,433.60 (8.18% increase)"
+  },
+  {
+   "topic": "TCP Revolving Fund",
+   "what_was_recorded": "Current balance in TCP Revolving Fund",
+   "figures_as_printed": [
+    "$33,500"
+   ],
+   "quote": "the tcp revolving fund currently has $33,500."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "opened at 7:02 PM",
+   "quote": "the meeting opened at 7:02 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "performed",
+   "quote": "pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "none",
+   "quote": "there were no announcements.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no comments received",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Town Manager & Finance Director Reports",
+   "resolution": "reported",
+   "quote": "town manager states the fy25 close out deadline was previously extended through february 28, 2026. the oưice expects to meet the deadline. ",
+   "tags": [
+    "FY25 closeout",
+    "free cash"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "FY27 Preliminary Budget",
+   "resolution": "presented; not balanced, requires override",
+   "quote": "town manager states the budget being presented is not balanced and is reliant on an override.",
+   "tags": [
+    "budget",
+    "FY27",
+    "override",
+    "property tax",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Fire Department Budget Presentation",
+   "resolution": "presented by Fire Chief Sullivan",
+   "quote": "the fire department budget presentation was provided by fire chief patrick sullivan.",
+   "tags": [
+    "fire department",
+    "budget",
+    "mutual aid"
+   ]
+  },
+  {
+   "topic": "Police Department Budget Presentation",
+   "resolution": "presented by Police Chief Tibido",
+   "quote": "the police department budget presentation was provided by chief jeưrey tibido. ",
+   "tags": [
+    "police department",
+    "budget",
+    "dispatch"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Facilities Department Budget Presentation",
+   "resolution": "presented by Facilities Director Ruth",
+   "quote": "the facilities department budget presentation was provided by facilities director, chris ruth.",
+   "tags": [
+    "facilities",
+    "budget",
+    "utilities",
+    "TC Passios"
+   ]
+  },
+  {
+   "topic": "FY27 Prop 2 1/2 Override",
+   "resolution": "listed for discussion",
+   "quote": "a. potential fy27 prop 2 ½ override",
+   "tags": [
+    "old business",
+    "override"
+   ]
+  },
+  {
+   "topic": "TriBoard Discussions",
+   "resolution": "listed for discussion",
+   "quote": "b. triboard discussions (prior and upcoming)",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "none",
+   "quote": "there were no committee reports.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment - Budget Questions",
+   "resolution": "Ana Lockwood maintaining list for future submission",
+   "quote": "ana lockwood is maintaining a list of all questions for department heads regarding their budget.",
+   "tags": [
+    "procedure",
+    "budget questions"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "voted to adjourn",
+   "quote": "the meeting closed at 10:23 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "budget",
+  "FY27",
+  "preliminary budget",
+  "override",
+  "property tax",
+  "state aid",
+  "fire department",
+  "police department",
+  "facilities",
+  "deficit",
+  "free cash",
+  "FY25 closeout"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 4
+ }
 }

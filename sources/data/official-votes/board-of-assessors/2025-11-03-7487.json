@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-11-03",
  "docid": "7487",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the LA4 assessment as presented",
+   "motion": "Accept the LA4 as presented.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to accept the la4 as presented by sarah cammer, seconded by brian laffond."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "not stated",
@@ -29,6 +29,189 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. Two motions recorded; neither outcome explicitly stated (though the meeting did close, implying the adjourn motion passed).",
- "cost_usd": 0.0614814
+ "note": "Text is macOS Vision OCR of scanned pages, and some words are garbled (for example 'Otheritems', and 'Tuesday, 25, 2025' where the hearing date is printed elsewhere as November 25). The LA4 motion records no result, and no vote is recorded on the adjournment outcome beyond the motion itself. The minutes carry an approval stamp ('Minutes Approved Date BPL 02/25/26') but no approval vote for these minutes. No public speakers are named; both public comment sections say there were no comments.",
+ "cost_usd": 0.013813870000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka"
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Brian Laffond will inquire with the new potential member about his availability, ahead of a Select Board meeting on appointing another member.",
+   "quote": "brian laffond will inquire with the new potential member about his availability."
+  },
+  {
+   "decision": "Lynda Cajka will contact colleagues who have addressed Senior Means Tested Exemptions to learn the funding process.",
+   "quote": "lynda cajka is unsure but will contact colleagues who have addressed those exemptions."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Property exemptions approved in the past month",
+   "what_was_recorded": "96 property exemptions were approved, totaling $74,221, with approval and denial letters mailed October 30.",
+   "figures_as_printed": [
+    "$74,221"
+   ],
+   "quote": "96 property exemptions were approved totaling $74,221. letters of approval and denial were mailed on october 30"
+  },
+  {
+   "topic": "LA13 growth for FY2025",
+   "what_was_recorded": "LA13 growth for FY2025 was updated to $518,650, against an original budget estimate of $400,000.",
+   "figures_as_printed": [
+    "$518,650",
+    "$400,000"
+   ],
+   "quote": "the la13 growth for fy2025 has been updated to $518,650. our original estimate for the budget had been $400,000."
+  },
+  {
+   "topic": "Average single-family sale price, FY2026",
+   "what_was_recorded": "The average single-family sale price for fiscal 2026 is $517,296.",
+   "figures_as_printed": [
+    "$517,296"
+   ],
+   "quote": "the average single-family sale price for fiscal 2026 is $517,296."
+  },
+  {
+   "topic": "Funding the Senior Means Tested Exemption",
+   "what_was_recorded": "Discussed how the Senior Means Tested Exemption would be funded; the board may fund it through the overlay for the first year. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "we may fund through overlay for the first year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened at 6:38 PM",
+   "quote": "the meeting opened at 6:38 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Opening comments",
+   "resolution": "no comments from the Board or public",
+   "quote": "there were no comments from the board.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "LA4 motion made (result not recorded); LA13 growth updated; classification hearing scheduled",
+   "quote": "update on fy 2026 la3, la4 and interim adjustments.",
+   "tags": [
+    "assessment",
+    "LA4",
+    "exemptions",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "no minutes approved; Board unable to review them",
+   "quote": "the board has been unable to review any minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review of interim adjustments for FY2026",
+   "resolution": "no action; neighborhood rates reviewed; Sarah Cammer requested a sales-window rule for thin neighborhoods",
+   "quote": "in vision, the site index stayed at 3.7 for fy25 to fy26.",
+   "tags": [
+    "interim adjustments",
+    "site index",
+    "neighborhoods"
+   ]
+  },
+  {
+   "topic": "41A warrant for income limitation increase, Town Meeting Nov 18, 2025",
+   "resolution": "warrant completed, ready for Special Town Meeting; wording may be confusing",
+   "quote": "the warrant document has been completed and is ready for presentation at special town meeting.",
+   "tags": [
+    "Town Meeting",
+    "warrant",
+    "income limitation"
+   ]
+  },
+  {
+   "topic": "Neighborhood review for Town Meeting",
+   "resolution": "discussed; no action recorded",
+   "quote": "lynda cajka states a neighborhood review needs to be completed within 3",
+   "tags": [
+    "neighborhood review",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "FY2026 tax classification hearing",
+   "resolution": "scheduled with Select Board",
+   "quote": "scheduled for november 25 with the select board (see above).",
+   "tags": [
+    "tax classification",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and Select Board appointment",
+   "resolution": "upcoming meeting schedule listed; Select Board meeting on appointing a member to be arranged",
+   "quote": "there needs to be an upcoming meeting with the select board about appointing another member.",
+   "tags": [
+    "appointments",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "no comments from the public or Board",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned, closed at 7:38p.m.",
+   "quote": "there was a motion to adjourn by sarah cammer, seconded by brian laffond.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "property exemptions",
+  "assessment",
+  "LA4 sales ratio",
+  "LA13 growth",
+  "interim adjustments",
+  "abatements",
+  "tax classification",
+  "Town Meeting warrant",
+  "income limitation",
+  "senior exemption",
+  "neighborhood review",
+  "board appointment",
+  "minutes backlog"
+ ],
+ "dropped_unquoted_by_field": {}
 }

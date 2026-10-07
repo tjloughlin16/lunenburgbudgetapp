@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-01-06",
  "docid": "7584",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Appoint Jennifer Sanderson to the APDC as the Historical Commission Representative, with term expiring June 2027",
+   "motion": "Appoint Jennifer Sanderson as Historical Commission Representative to the APDC, term to expire June 2027",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Amanda Moore",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "motion by chair nuzzolo to appoint jennifer sanderson to the apdc as the historical commission representative, with a term to expire june 2027. seconded by vice-chair amanda moore. call for vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "Appoint Shirley McBride to the Registrar of Voters, with term expiring March 31, 2028",
+   "motion": "Appoint Shirley McBride as Registrar of Voters, term to expire March 31, 2028",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Amanda Moore",
    "outcome": "passed 5-0",
@@ -44,15 +44,15 @@
    "quote": "motion by chair nuzzolo to approve the two forms for the abcc annual certification. seconded by vice-chair moore. call for vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "Open the Annual Town Meeting Warrant on January 6, 2026, and close it on March 16, 2026",
+   "motion": "Open the Annual Town Meeting Warrant on Tuesday, January 6, 2026, and close the warrant on March 16, 2026",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Moore",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by chair nuzzolo to open the annual town meeting warrant on tuesday, january 6, 2026, and close the warrant on march 16, 2026. seconded by vice-chair moore. call for vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "Approve all sets of minutes as presented",
+   "motion": "Approve all sets of prior meeting minutes as presented",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Clerk Emkey",
    "outcome": "passed 4-0-1",
@@ -61,7 +61,7 @@
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn at 7:51 PM",
+   "motion": "Adjourn the meeting at 7:51 PM",
    "moved_by": "Member Lehtinen",
    "seconded_by": "Clerk Emkey",
    "outcome": "passed 5-0",
@@ -70,6 +70,297 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes are clearly recorded. Note: One appointment (Debra Laffond as Part-Time Staff Librarian) was acknowledged with no formal vote required. One Accounts Payable Warrant was presented for approval but no formal vote was recorded.",
- "cost_usd": 0.13876139999999998
+ "note": "\"\"",
+ "cost_usd": 0.1607136,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Resident",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street, addressed the select board regarding the forthcoming discussion on the appointment policy."
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Conservation Commissioner",
+   "status": "present",
+   "quote": "conservation commissioner mary wilson, 138 whiting street, spoke in support of the appointment on behalf of herself and conservation commission chair jenny pewtherer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Acknowledged the Library Director and Assistant Town Manager's appointment of Debra Laffond as Part-Time Staff Librarian without formal vote",
+   "quote": "no formal vote was required; the appointment was acknowledged by the select board."
+  },
+  {
+   "decision": "Agreed to incorporate proposed modifications to Appointment Policy including introductory statement valuing resident participation, conversational interview tone language, modified reappointment language, and new Committee Commitment and Summary section requirement",
+   "quote": "the select board received this addition favorably. interview tone language: member lehtinen proposed adding language clarifying that \"interview",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Reached consensus to not move forward with proposed subcommittee concept for initial screening of applicants",
+   "quote": "the select board reached consensus to not move forward with the subcommittee concept. chair nuzzolo noted that no changes would be made to the policy to reflect that idea."
+  },
+  {
+   "decision": "Town Manager signed agreement with Complete Staffing Solutions to assist with recruitment for Finance Director position",
+   "quote": "she had signed an agreement with complete staffing solutions to assist with recruitment for the finance director position, citing their recent success with a similar munis-based recruitment in nashua, new hampshire."
+  },
+  {
+   "decision": "Appointed array of part-time candidates to process school payroll with Nancy O'Rourke assisting in training",
+   "quote": "school staff have been trained and have begun processing school payroll, with ms. o'rourke assisting in that training."
+  },
+  {
+   "decision": "Agreed to place Warrant Article pertaining to Town Meeting mailer on upcoming agenda prior to budget season",
+   "quote": "chair nuzzolo confirmed this was being tracked and would be scheduled."
+  },
+  {
+   "decision": "Will workshop Special Event Policy at the following week's Select Board meeting",
+   "quote": "the select board would workshop the special event policy at the following week's meeting."
+  },
+  {
+   "decision": "Will place finalized Appointment Policy on following week's agenda for final review and potential approval",
+   "quote": "chair nuzzolo indicated the policy was nearing completion and that it would be placed on the following week's agenda for a final review and potential approval."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Nashoba Associated Boards of Health assessment",
+   "what_was_recorded": "Nashoba voted to raise their assessments by 30% citing structural funding challenges including reduced land use activity revenue, expiring COVID-related grants, and rising health insurance and employment costs",
+   "figures_as_printed": [
+    "$13,946",
+    "just over $90,000"
+   ],
+   "quote": "nashoba voted to raise their assessments by 30%, citing structural funding challenges including reduced land use activity revenue, expiring covid-related grants, and rising health insurance and employment costs. the increase represents approximately $13,946 above what had been anticipated, bringing the total nashoba assessment to just over $90,000."
+  },
+  {
+   "topic": "Accounts Payable Warrant",
+   "what_was_recorded": "Accounts Payable Warrant was presented for approval",
+   "figures_as_printed": [
+    "$316,660.36"
+   ],
+   "quote": "an accounts payable warrant in the amount of $316,660.36 was presented for approval."
+  },
+  {
+   "topic": "Water billing catch-up",
+   "what_was_recorded": "Eleven customers had not received water bills during regular quarterly schedule; they will receive catch-up bill for water usage January 2025 through November 2025, with rate adjustment to be considered",
+   "figures_as_printed": [],
+   "quote": "eleven customers had not received water bills during the regular quarterly schedule due to a breakdown in administrative billing procedures during a period of staff transition. those customers were notified and will receive a catch-up bill reflecting water usage from january 2025 through november 2025."
+  },
+  {
+   "topic": "Open positions recruitment",
+   "what_was_recorded": "Recreation Director position (19 hours per week) noted as critically urgent; other open positions include Young Adult Staff Librarian, Finance Director, Payroll and Benefits Coordinator, Dietary Aide, and Outreach Coordinator",
+   "figures_as_printed": [
+    "19 hours per week"
+   ],
+   "quote": "town manager warren-dyment highlighted the recreation director position (19 hours per week) as critically urgent, noting that summer programming ramp-up ===page 4=== select board meeting minutes january 6, 2026 page 4 of 7 begins in early spring and the town risked being",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "Resident (91 Main Street)",
+   "topic": "Appointment policy transparency and public process",
+   "quote": "ms. lockwood expressed support for maintaining full transparency in the appointment process and cautioned against moving any portion of candidate screening outside of a public meeting setting. she noted that individuals seeking appointment to public committees should be comfortable engaging with the public, as many committees interact directly with residents."
+  },
+  {
+   "speaker": "Mary Wilson",
+   "stated_role": "Conservation Commissioner",
+   "topic": "Support for Herlin Jaime Conservation Agent appointment",
+   "quote": "commissioner wilson described ms. jaime as having mastered an efficient conservation commission workflow, noting her comprehensive site assessments, complete and timely project reviews, clear communications, and actionable regulatory recommendations. commissioner wilson stated that the conservation commission was \"hugely in favor\" of the hire, and characterized the appointment as \"a huge win for lunenburg's conservation commission.\"",
+   "quote_taken_from_text": true
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "announced",
+   "tags": [
+    "announcements",
+    "administrative",
+    "dog licenses",
+    "census"
+   ],
+   "quote": "chair nuzzolo announced that the town clerk's office had mailed census forms, which would arrive alongside 2026 dog license applications."
+  },
+  {
+   "topic": "Public comment on appointment policy",
+   "resolution": "received",
+   "tags": [
+    "public comment",
+    "appointments",
+    "transparency"
+   ],
+   "quote": "ana lockwood, 91 main street, addressed the select board regarding the forthcoming discussion on the appointment policy."
+  },
+  {
+   "topic": "Appointment of Jennifer Sanderson to APDC",
+   "resolution": "approved",
+   "tags": [
+    "appointments",
+    "APDC",
+    "historical commission"
+   ],
+   "quote": "select board's appointment of jennifer sanderson to the apdc as the historical commission representative, term to expire june 2027"
+  },
+  {
+   "topic": "Appointment of Shirley McBride as Registrar of Voters",
+   "resolution": "approved",
+   "tags": [
+    "appointments",
+    "registrar"
+   ],
+   "quote": "select board's appointment of shirley mcbride (d) to the registrar of voters, term to expire march 31, 2028."
+  },
+  {
+   "topic": "Appointment of Herlin Jaime as Conservation Agent",
+   "resolution": "approved",
+   "tags": [
+    "appointments",
+    "conservation",
+    "staffing"
+   ],
+   "quote": "town manager's appointment of herlin jaime as conservation agent, and approval of step 5 salary"
+  },
+  {
+   "topic": "Appointment of Debra Laffond as Part-Time Staff Librarian",
+   "resolution": "acknowledged",
+   "tags": [
+    "appointments",
+    "library",
+    "staffing"
+   ],
+   "quote": "acknowledgement of the library director and assistant town manager's appointment of debra laffond as part-time staff librarian"
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "reported",
+   "tags": [
+    "town operations",
+    "finance",
+    "staffing",
+    "water",
+    "planning",
+    "health"
+   ],
+   "quote": "town manager warren-dyment provided the following updates: finance department transition: finance director and town accountant katie mckenna's service concluded on december 31."
+  },
+  {
+   "topic": "ABCC Annual Certification",
+   "resolution": "approved",
+   "tags": [
+    "licensing",
+    "alcohol control"
+   ],
+   "quote": "chair nuzzolo presented two forms for the abcc annual certification: the seasonal population increase estimation form, reflecting no seasonal increase, and the renewal certification 2026 form."
+  },
+  {
+   "topic": "Annual Town Meeting Warrant",
+   "resolution": "approved",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ],
+   "quote": "the chair presented the motion to open the annual town meeting warrant on january 6, 2026, and close it on march 16, 2026."
+  },
+  {
+   "topic": "Special Event Policy",
+   "resolution": "continued",
+   "tags": [
+    "policy",
+    "events"
+   ],
+   "quote": "chair nuzzolo noted that the select board would workshop the special event policy at the following week's meeting."
+  },
+  {
+   "topic": "Appointment Policy",
+   "resolution": "continued",
+   "tags": [
+    "policy",
+    "governance",
+    "appointments",
+    "volunteer service"
+   ],
+   "quote": "chair nuzzolo opened discussion on the appointment policy. member brian lehtinen presented several proposed additions and modifications intended to make the process more welcoming and ===page 5=== select board meeting min",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Select Board Bylaw Review",
+   "resolution": "continued",
+   "tags": [
+    "bylaws",
+    "governance"
+   ],
+   "quote": "chair nuzzolo indicated that this item would likely be removed from the standing agenda going forward, and invited members to continue reviewing licensing-related bylaws independently."
+  },
+  {
+   "topic": "Prior meeting minutes approval",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "chair nuzzolo presented the following sets of minutes for approval: february 20, 2024; march 5, 2024; march 19, 2024; april 23, 2024; august 5, 2025; october 8, 2024; december 16, 2025; and december 30, 2025."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "tags": [
+    "committees",
+    "governance"
+   ],
+   "quote": "clerk emkey reported that the stormwater committee and finance committee would both be meeting on thursday."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Lunenburg",
+  "appointments",
+  "policy",
+  "governance",
+  "transparency",
+  "town operations",
+  "finance transition",
+  "staffing",
+  "volunteer service"
+ ],
+ "dropped_unquoted_by_field": {}
 }

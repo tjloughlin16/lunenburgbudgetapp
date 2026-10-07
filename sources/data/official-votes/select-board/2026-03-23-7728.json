@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-03-23",
  "docid": "7728",
@@ -12,39 +12,565 @@
  },
  "votes": [
   {
-   "motion": "to enter into Executive Session and re-enter Open Session after exiting, pursuant to MGL c. 30 §21(a)(3)",
-   "moved_by": "Chair Nuzzolo",
-   "seconded_by": "Vice-Chair Amanda Moore",
+   "motion": "Enter into Executive Session pursuant to MGL c. 30 §21(a)(3)",
+   "moved_by": "Caesar Nuzzolo",
+   "seconded_by": "Amanda Moore",
    "outcome": "passed 5-0-0",
    "procedural": true,
    "quote": "motion to enter into executive session and re-enter open session after exiting, pursuant to mgl c. 30 §21(a)(3), was made by the chair and seconded by vice-chair amanda moore. a roll call vote was conducted: renee - aye; glenn - aye; brian - aye; amanda - aye; chair - aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "to ratify the Town Manager's appointment of Inspector of Animals, Kathy Comeau, 806 West Street, for the term of May 1, 2026 through April 30, 2027",
-   "moved_by": "Chair Nuzzolo",
-   "seconded_by": "Vice-Chair Moore",
+   "motion": "Ratify the Town Manager's appointment of Inspector of Animals, Kathy Comeau, 806 West Street, for term May 1, 2026 through April 30, 2027",
+   "moved_by": "Caesar Nuzzolo",
+   "seconded_by": "Amanda Moore",
    "outcome": "passed 5-0-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by chair nuzzolo to ratify the town manager's appointment of inspector of animals, kathy comeau, 806 west street, for the term of may 1, 2026 through april 30, 2027. seconded by vice-chair moore. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "to ratify the Town Manager's appointment of Krista Deveau and to approve a Step 6 placement for the Part-Time Recreation Director position",
-   "moved_by": "Chair Nuzzolo",
-   "seconded_by": "Vice-Chair Moore",
+   "motion": "Ratify the Town Manager's appointment of Krista Deveau and approve a Step 6 placement for the Part-Time Recreation Director position",
+   "moved_by": "Caesar Nuzzolo",
+   "seconded_by": "Amanda Moore",
    "outcome": "passed 5-0-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by chair nuzzolo to ratify the town manager's appointment of krista deveau and to approve a step 6 placement for the part-time recreation director position. seconded by vice-chair moore. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "to adjourn",
-   "moved_by": "Member Lehtinen",
-   "seconded_by": "Vice-Chair Moore",
+   "motion": "Adjourn at 9:39 PM",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Amanda Moore",
    "outcome": "passed 5-0-0",
    "procedural": true,
    "quote": "motion by member lehtinen to adjourn at 9:39 pm. seconded by vice-chair moore. call for vote: five-aye. the motion passed (5-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1279004
+ "note": "Minutes approved August 18, 2026. Public comment section header states \\\"Public Comment Participants are listed in the minutes\\\" but no individual public comments are recorded in the text provided.",
+ "cost_usd": 0.13593660000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Jeffrey Thibodeau",
+   "role": "Chief of Police",
+   "status": "present",
+   "quote": "chief of police jeffrey thibodeau was present and provided context throughout the discussion."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Do not recommend further reductions to health insurance line item; maintain figures as previously presented with an additional estimated $25,000 in Tier 2 for newly added positions",
+   "quote": "town manager warren-dyment advised the select board that she did not recommend making any further reductions to the health insurance line item."
+  },
+  {
+   "decision": "Increase minute clerk pool from $6,000 to $12,000 and retain item in Tier 2",
+   "quote": "the select board indicated general support for retaining this item in tier 2."
+  },
+  {
+   "decision": "Retain full-time restoration of Communications and IT Manager position in Tier 2",
+   "quote": "the select board ultimately agreed to retain the full-time restoration in tier 2."
+  },
+  {
+   "decision": "Move second administrative assistant position for Town Clerk's office to Tier 1; remove $12,000 salary market adjustment from Tier 2",
+   "quote": "following discussion, the select board agreed to move the second administrative assistant position to tier 1, given the immediacy of the need regardless of a tier 2 outcome. the select board agreed to remove the $12,000 salary market adjustment from tier 2,",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Make no changes to police Tier 2 requests; maintain all additions including part-time administrative position, fourth Sergeant, and two Patrol Officers with second School Resource Officer",
+   "quote": "the select board agreed to make no changes to the police tier 2 requests."
+  },
+  {
+   "decision": "Reduce Tier 2 animal control line from $100,000 to $80,000 as a planning estimate",
+   "quote": "following discussion, the select board agreed to move the second administrative assistant position to tier 1, given the immediacy of the need regardless of a tier 2 outcome. the select board agreed to remove the $12,000",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Move DPW Junior Engineer/Project Manager position from Tier 2 to Tier 1",
+   "quote": "following discussion, the select board agreed to move the junior engineer position from tier 2 to tier 1."
+  },
+  {
+   "decision": "Reduce Tier 1 stormwater increase to baseline of $110,000 and maintain Tier 2 stormwater at $510,000 pending further deliberation; did not resolve standalone question",
+   "quote": "the select board discussed but did not resolve the stormwater standalone question, agreeing to revisit it. the stormwater management line was maintained in tier 2 at $510,000 pending further deliberation."
+  },
+  {
+   "decision": "Set pavement management operating budget to $282,000 in both Tier 1 and Tier 2, achieving approximately $1,000,000 total spending",
+   "quote": "the select board agreed to set both tier 1 and tier 2 pavement management at $282,000 (a nominal $3,000 increase in tier 1 to bring total spending to an even $1,000,000 at the operating level), effectively removing most of the tier 2 pavement management increase."
+  },
+  {
+   "decision": "Retain full-time Recreation Director position in Tier 2",
+   "quote": "the select board agreed to retain the full-time recreation director in tier 2."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tier 1 override (Town operations without additional restorations)",
+   "what_was_recorded": "Select Board reviewed initial Tier 1 deficit figure, later revised downward",
+   "figures_as_printed": [
+    "$970,843",
+    "$823,000"
+   ],
+   "quote": "town manager warren-dyment presented the current deficit figures: ● tier 1 override (town operations without any additional restorations): approximately $970,843"
+  },
+  {
+   "topic": "Tier 2 override (additional above Tier 1)",
+   "what_was_recorded": "Select Board reviewed Tier 2 deficit figures at multiple stages of workshop",
+   "figures_as_printed": [
+    "$1,086,383",
+    "$1,354,000"
+   ],
+   "quote": "● tier 2 override (additional above tier 1): approximately $1,086,383"
+  },
+  {
+   "topic": "Combined Tier 1 and Tier 2 total override",
+   "what_was_recorded": "Select Board reviewed combined override before workshop adjustments",
+   "figures_as_printed": [
+    "$2,025,000"
+   ],
+   "quote": "● combined tier 1 and tier 2 total override: approximately $2,025,000 (before workshop adjustments)"
+  },
+  {
+   "topic": "School's override amounts",
+   "what_was_recorded": "Reference figures for School override presented for context",
+   "figures_as_printed": [
+    "$1,601,140",
+    "$1,973,462"
+   ],
+   "quote": "for context, the school's override numbers were referenced as approximately $1,601,140 (core) and $1,973,462 (restoration)."
+  },
+  {
+   "topic": "Minute Clerk Pool increase",
+   "what_was_recorded": "Select Board discussed and approved increase to clerk pool",
+   "figures_as_printed": [
+    "$6,000",
+    "$12,000"
+   ],
+   "quote": "the select board discussed increasing the pool of funds for minute clerks from $6,000 to $12,000."
+  },
+  {
+   "topic": "Town Clerk's office second administrative position",
+   "what_was_recorded": "Estimated cost of new administrative assistant position for succession planning",
+   "figures_as_printed": [
+    "$53,000"
+   ],
+   "quote": "the proposal included: (1) the creation of a second administrative position in the office, at an estimated cost of approximately $53,000"
+  },
+  {
+   "topic": "Town Clerk salary market adjustment",
+   "what_was_recorded": "Proposed salary increase upon transition to new Town Clerk",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "and (2) a $12,000 increase to bring the town clerk's salary to market rate, which would apply upon a transition to a new town clerk."
+  },
+  {
+   "topic": "Police School Resource Officer annual cost",
+   "what_was_recorded": "Vice-Chair Moore raised question of town cost for two SROs without school contribution",
+   "figures_as_printed": [
+    "$180,000",
+    "$200,000"
+   ],
+   "quote": "vice-chair moore raised the cost to the town of funding two sros in the police budget, noting the town pays approximately $180,000 to $200,000 annually for two officers working almost exclusively in the schools, without any cost contribution from the schools."
+  },
+  {
+   "topic": "Animal Control contract costs in neighboring communities",
+   "what_was_recorded": "Chief Thibodeau provided regional comparison for contracted animal control services",
+   "figures_as_printed": [
+    "$126,000",
+    "$136,000"
+   ],
+   "quote": "chief thibodeau noted that similar contracts in neighboring communities run approximately $126,000 to $136,000 annually."
+  },
+  {
+   "topic": "Animal Control Tier 2 budget estimate",
+   "what_was_recorded": "Select Board agreed to reduce animal control Tier 2 planning estimate",
+   "figures_as_printed": [
+    "$100,000",
+    "$80,000"
+   ],
+   "quote": "the tier 2 budget had been estimated at $100,000 (including salary and expenses) as an educated approximation. following discussion, the select board agreed to reduce the tier 2 animal control line to $80,000"
+  },
+  {
+   "topic": "DPW Junior Engineer/Project Manager position cost",
+   "what_was_recorded": "DPW Director's request for new position with budget and comparable salary ranges",
+   "figures_as_printed": [
+    "$86,000",
+    "$73,000",
+    "$98,000"
+   ],
+   "quote": "town manager warren-dyment presented the dpw director's request for a junior engineer/project manager at a budgeted cost of $86,000. the dpw director characterized the position as \"highly desirable\" and noted an average starting salary of approximately $73,000 and a top salary of approximately $98,000 across five comparable communities."
+  },
+  {
+   "topic": "Stormwater management Tier 1 proposal",
+   "what_was_recorded": "Original Tier 1 proposal included large stormwater increase; later revised downward",
+   "figures_as_printed": [
+    "$350,000",
+    "$450,000",
+    "$110,000"
+   ],
+   "quote": "the tier 1 proposal had included a $350,000 increase for a total of $450,000. the select board discussed at length whether the stormwater funding should remain in tier 2, be separated into a standalone question, or be structured as a third",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Stormwater management Tier 2 proposal",
+   "what_was_recorded": "Tier 2 stormwater proposal for full MS4 compliance without utility",
+   "figures_as_printed": [
+    "$510,000"
+   ],
+   "quote": "the tier 2 proposal would have increased the stormwater management line to $510,000, representing full ms4 compliance without a stormwater utility."
+  },
+  {
+   "topic": "Stormwater utility administrative overhead estimate",
+   "what_was_recorded": "Town Manager explained cost-effectiveness analysis of direct funding versus utility",
+   "figures_as_printed": [
+    "30%"
+   ],
+   "quote": "town manager warren-dyment also explained that while a stormwater utility had been studied, the administrative overhead of a relatively small utility would be approximately 30%, making direct operating budget funding more cost-effective."
+  },
+  {
+   "topic": "Pavement Management Plan debt exclusion",
+   "what_was_recorded": "Historical reference to 2016 debt exclusion approved by town",
+   "figures_as_printed": [
+    "$4,000,000"
+   ],
+   "quote": "town manager warren-dyment provided a detailed history of the town's pavement management plan, noting it originated from a $4,000,000 debt exclusion approved at the 2016 town meeting"
+  },
+  {
+   "topic": "Pavement Condition Index target",
+   "what_was_recorded": "Updated 2023 plan calculation showed improvement to target range",
+   "figures_as_printed": [
+    "70",
+    "75",
+    "84.75"
+   ],
+   "quote": "the updated 2023 plan calculated the pci at 84.75, confirming the 2016 plan had been a \"great success.\" the original goal required $1,000,000 to $1,200,000 in annual spending"
+  },
+  {
+   "topic": "Pavement management annual funding range",
+   "what_was_recorded": "Original goal specified annual spending between Chapter 90 and operating budget",
+   "figures_as_printed": [
+    "$1,000,000",
+    "$1,200,000"
+   ],
+   "quote": "the original goal required $1,000,000 to $1,200,000 in annual spending between ===page 5=== select board meeting minu",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Pavement management Tier 1 combined funding",
+   "what_was_recorded": "Tier 1 proposal combined operating budget and Chapter 90 allotment",
+   "figures_as_printed": [
+    "$279,000",
+    "$718,000",
+    "$997,000"
+   ],
+   "quote": "in tier 1, the operating budget for pavement management was proposed at $279,000, combined with a chapter 90 allotment of $718,000, for a total of approximately $997,000, just short of the $1,000,000 floor of the original goal range."
+  },
+  {
+   "topic": "Pavement management Tier 2 additional increase",
+   "what_was_recorded": "Tier 2 proposal would add funds to reach upper end of original goal",
+   "figures_as_printed": [
+    "$202,282",
+    "$1,200,000"
+   ],
+   "quote": "the tier 2 proposal would add an additional $202,282 to reach $1,200,000."
+  },
+  {
+   "topic": "Pavement management revised Tier 1 and Tier 2",
+   "what_was_recorded": "Select Board agreed to modest increase to achieve $1,000,000 total at operating level",
+   "figures_as_printed": [
+    "$282,000",
+    "$3,000",
+    "$1,000,000"
+   ],
+   "quote": "the select board agreed to set both tier 1 and tier 2 pavement management at $282,000 (a nominal $3,000 increase in tier 1 to bring total spending to an even $1,000,000 at the operating level)"
+  },
+  {
+   "topic": "Recreation Director full-time position",
+   "what_was_recorded": "Tier 2 proposal to increase Recreation Director from part-time to full-time",
+   "figures_as_printed": [
+    "$75,000"
+   ],
+   "quote": "the tier 2 proposal would increase the recreation director from a 19-hour part-time position (as in tier 1) to a full-time position at $75,000."
+  },
+  {
+   "topic": "Revised Tier 1 deficit following adjustments",
+   "what_was_recorded": "Town Manager provided updated Tier 1 figure after all adjustments",
+   "figures_as_printed": [
+    "$823,000"
+   ],
+   "quote": "town manager warren-dyment provided updated figures: ● tier 1 deficit: approximately $823,000"
+  },
+  {
+   "topic": "Revised Tier 2 deficit following adjustments",
+   "what_was_recorded": "Town Manager provided updated Tier 2 cumulative figure after all adjustments",
+   "figures_as_printed": [
+    "$1,354,000"
+   ],
+   "quote": "● tier 2 total deficit (cumulative): approximately $1,354,000"
+  },
+  {
+   "topic": "Health insurance estimated cost for new positions",
+   "what_was_recorded": "Town Manager explained estimate for health insurance in Tier 2 based on realistic plan choices",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "with an additional estimated $25,000 included in tier 2 for any newly added positions, based on a realistic assessment of typical plan choices rather than budgeting uniformly for the highest-cost family plans."
+  },
+  {
+   "topic": "Combined Tier 1 override (Town + School)",
+   "what_was_recorded": "Select Board discussed approximate combined figures inclusive of School overrides",
+   "figures_as_printed": [
+    "$2,424,000",
+    "$2,500,000"
+   ],
+   "quote": "● tier 1 combined override (town + school): approximately $2,424,000 (to be presented as a round number of $2,500,000)"
+  },
+  {
+   "topic": "Combined Tier 2 override (Town + School)",
+   "what_was_recorded": "Select Board discussed approximate combined figures inclusive of School overrides",
+   "figures_as_printed": [
+    "$3,328,000",
+    "$3,400,000"
+   ],
+   "quote": "● tier 2 combined override (town + school): approximately $3,328,000 (to be presented as a round number of $3,400,000)"
+  },
+  {
+   "topic": "Tax impact estimate for Tier 1",
+   "what_was_recorded": "Town Manager provided tax impact estimate on $517,000 home for Tier 1 override",
+   "figures_as_printed": [
+    "$517,000",
+    "$507"
+   ],
+   "quote": "town manager warren-dyment also provided tax impact estimates on a $517,000 home: ● tier 1 ($2.4m): approximately $507 annually above current taxes"
+  },
+  {
+   "topic": "Tax impact estimate for Tier 2",
+   "what_was_recorded": "Town Manager provided tax impact estimate on $517,000 home for Tier 2 override",
+   "figures_as_printed": [
+    "$698"
+   ],
+   "quote": "● tier 2 ($3.3m): approximately $698 annually"
+  },
+  {
+   "topic": "Tax impact estimate for Tier 2 with stormwater",
+   "what_was_recorded": "Town Manager provided tax impact estimate on $517,000 home for Tier 2 including stormwater",
+   "figures_as_printed": [
+    "$786"
+   ],
+   "quote": "● tier 2 ($3.7m, with stormwater): approximately $786 annually"
+  },
+  {
+   "topic": "Animal control transition cost contingency",
+   "what_was_recorded": "Town Manager noted potential for additional transfer if animal control transition costs exceeded budget",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "the town manager noted that if costs exceeded budget, a transfer of approximately $20,000 would be more manageable than a larger gap."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive Session",
+   "resolution": "entered and exited",
+   "tags": [
+    "procedural",
+    "MGL c. 30 §21(a)(3)"
+   ],
+   "quote": "motion to enter into executive session and re-enter open session after exiting, pursuant to mgl c. 30 §21(a)(3), was made by the chair and seconded by vice-chair amanda moore."
+  },
+  {
+   "topic": "FY 27 Budget Workshop",
+   "resolution": "comprehensive discussion and adjustments to override structures",
+   "tags": [
+    "budget",
+    "FY27",
+    "Tier 1",
+    "Tier 2",
+    "override"
+   ],
+   "quote": "the select board conducted a workshop on the fy27 budget, building upon prior sessions. town manager jennifer warren-dyment led the discussion, focusing primarily on the finalization of the tier 1 and tier 2 override structures."
+  },
+  {
+   "topic": "Health Insurance",
+   "resolution": "no further reductions recommended",
+   "tags": [
+    "health insurance",
+    "budget"
+   ],
+   "quote": "town manager warren-dyment advised the select board that she did not recommend making any further reductions to the health insurance line item."
+  },
+  {
+   "topic": "Minute Clerk Pool",
+   "resolution": "increase to $12,000 retained in Tier 2",
+   "tags": [
+    "Tier 2",
+    "staffing"
+   ],
+   "quote": "the select board discussed increasing the pool of funds for minute clerks from $6,000 to $12,000."
+  },
+  {
+   "topic": "Communications and IT Manager Position",
+   "resolution": "full-time restoration retained in Tier 2",
+   "tags": [
+    "Tier 2",
+    "staffing",
+    "communications"
+   ],
+   "quote": "the restoration of the full-time communications and it manager position was discussed. town manager warren-dyment confirmed the position is cut entirely in the balanced budget and in tier 1, and only restored in tier 2."
+  },
+  {
+   "topic": "Town Clerk's Office Succession Planning",
+   "resolution": "second administrative assistant moved to Tier 1; salary adjustment removed from Tier 2",
+   "tags": [
+    "Tier 1",
+    "staffing",
+    "succession planning"
+   ],
+   "quote": "town manager warren-dyment presented a succession planning proposal for the town clerk's office, noting that the current town clerk has served for many decades, relies heavily on personal knowledge and informal volunteer support from family members"
+  },
+  {
+   "topic": "Police Department Staffing",
+   "resolution": "all Tier 2 requests maintained including fourth Sergeant and two Patrol Officers",
+   "tags": [
+    "Police",
+    "Tier 2",
+    "staffing",
+    "SRO"
+   ],
+   "quote": "town manager warren-dyment outlined the tier 2 police additions: ● restoration of the part-time administrative position. ● addition of a fourth sergeant (restoring from 3 sergeants and 2 detectives back to 4 sergeants with 2 detectives, whi",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Animal Control",
+   "resolution": "Tier 2 reduced to $80,000 as planning estimate",
+   "tags": [
+    "Animal Control",
+    "Tier 2",
+    "staffing"
+   ],
+   "quote": "town manager warren-dyment provided background on the town's current animal control arrangement, explaining that the town's animal control officer has served for nearly five decades, operates the required kennel out of their personal residence"
+  },
+  {
+   "topic": "DPW Junior Engineer/Project Manager Position",
+   "resolution": "moved from Tier 2 to Tier 1",
+   "tags": [
+    "DPW",
+    "Tier 1",
+    "staffing",
+    "engineering"
+   ],
+   "quote": "town manager warren-dyment presented the dpw director's request for a junior engineer/project manager at a budgeted cost of $86,000."
+  },
+  {
+   "topic": "Stormwater Management",
+   "resolution": "Tier 1 reduced to baseline; Tier 2 maintained at $510,000 pending further deliberation",
+   "tags": [
+    "stormwater",
+    "Tier 2",
+    "MS4 compliance"
+   ],
+   "quote": "the tier 2 proposal would have increased the stormwater management line to $510,000, representing full ms4 compliance without a stormwater utility."
+  },
+  {
+   "topic": "Pavement Management Plan",
+   "resolution": "operating budget set to $282,000; Tier 2 pavement increase removed",
+   "tags": [
+    "pavement",
+    "infrastructure",
+    "Tier 1"
+   ],
+   "quote": "the select board agreed to set both tier 1 and tier 2 pavement management at $282,000 (a nominal $3,000 increase in tier 1 to bring total spending to an even $1,000,000 at the operating level)"
+  },
+  {
+   "topic": "Recreation Director Position",
+   "resolution": "full-time position retained in Tier 2",
+   "tags": [
+    "Recreation",
+    "Tier 2",
+    "staffing"
+   ],
+   "quote": "the tier 2 proposal would increase the recreation director from a 19-hour part-time position (as in tier 1) to a full-time position at $75,000."
+  },
+  {
+   "topic": "Ratification of Inspector of Animals Appointment",
+   "resolution": "approved unanimously",
+   "tags": [
+    "appointments",
+    "ratification"
+   ],
+   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of inspector of animals, kathy comeau, 806 west street, for the term of may 1, 2026 through april 30, 2027. seconded by vice-chair moore. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+  },
+  {
+   "topic": "Ratification of Krista Deveau as Part-Time Recreation Director",
+   "resolution": "approved unanimously with Step 6 placement",
+   "tags": [
+    "appointments",
+    "ratification",
+    "step placement"
+   ],
+   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of krista deveau and to approve a step 6 placement for the part-time recreation director position. seconded by vice-chair moore. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+  },
+  {
+   "topic": "Upcoming Meetings Schedule",
+   "resolution": "noted Tri-Board Meeting scheduled for March 24, 2026",
+   "tags": [
+    "administrative"
+   ],
+   "quote": "chair nuzzolo noted that the next meeting is a tri-board meeting scheduled for the following evening, tuesday, march 24, 2026."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "budget",
+  "FY27",
+  "override",
+  "Tier 1",
+  "Tier 2",
+  "staffing",
+  "Police",
+  "DPW",
+  "stormwater",
+  "pavement management",
+  "appointments",
+  "health insurance",
+  "March 23 2026"
+ ],
+ "dropped_unquoted_by_field": {}
 }

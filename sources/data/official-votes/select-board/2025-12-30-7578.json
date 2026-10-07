@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-12-30",
  "docid": "7578",
@@ -12,24 +12,107 @@
  },
  "votes": [
   {
-   "motion": "renew the annual licenses as printed on the agenda",
+   "motion": "Renew the annual licenses as printed on the agenda",
    "moved_by": "Clerk Renee Emkey",
    "seconded_by": "Member Brian Lehtinen",
-   "outcome": "passed 4-0-0",
+   "outcome": "passed 4-0",
    "procedural": false,
    "quote": "motion by clerk renee emkey to renew the annual licenses as printed on the agenda. seconded by member brian lehtinen. call for the vote: member glenn mcleod-aye, member brian lehtinen- aye, clerk renee emkey-aye, chair caesar nuzzolo-aye. the motion passed (4-0-0)",
    "quote_taken_from_text": true
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn",
    "moved_by": "Clerk Renee Emkey",
    "seconded_by": "Member Brian Lehtinen",
-   "outcome": "passed 4-0-0",
+   "outcome": "passed 4-0",
    "procedural": true,
    "quote": "motion by clerk renee emkey to adjourn. seconded by member brian lehtinen. call for the vote: member glenn mcleod-aye, member brian lehtinen-aye, clerk renee emkey-aye, chair caesar nuzzolo-aye. the motion passed (4-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Page 2 records a vote from a separate meeting (January 6, 2026) approving the December 30, 2025 minutes; that vote is from a different meeting and not included above.",
- "cost_usd": 0.0699724
+ "note": "Brief meeting with only licensing renewals discussed. All three license types (Weekday Entertainment for two establishments, Automatic Amusement, and Jukebox) voted on as a single motion. Minutes are part of a two-page document; page 2 contains approval of prior minutes from this same meeting date, recorded at a later Select Board meeting on January 6, 2026.\"",
+ "cost_usd": 0.0909146,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn Mcleod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "members absent: vice-chair amanda moore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Annual licenses renewed for Pals Golf Lounge, Inc., d/b/a Blue Sky Golf (Weekday Entertainment, Automatic Amusement, and Jukebox) and Lunenburg Zeda's, d/b/a Bad Larry's (Weekday Entertainment)",
+   "quote": "motion by clerk renee emkey to renew the annual licenses as printed on the agenda. seconded by member brian lehtinen. call for the vote: member ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Annual Re-licensing – Weekday Entertainment",
+   "resolution": "approved",
+   "quote": "motion by clerk renee emkey to renew the annual licenses as printed on the agenda. seconded by member brian lehtinen. call for the vote: member ",
+   "tags": [
+    "licensing",
+    "entertainment"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Annual Re-licensing – Automatic Amusement",
+   "resolution": "approved",
+   "quote": "motion by clerk renee emkey to renew the annual licenses as printed on the agenda. seconded by member brian lehtinen. call for the vote: member ",
+   "tags": [
+    "licensing",
+    "amusement"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Annual Re-licensing – Jukebox",
+   "resolution": "approved",
+   "quote": "motion by clerk renee emkey to renew the annual licenses as printed on the agenda. seconded by member brian lehtinen. call for the vote: member ",
+   "tags": [
+    "licensing",
+    "entertainment"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "licensing",
+  "entertainment",
+  "annual renewal",
+  "select board"
+ ],
+ "dropped_unquoted_by_field": {}
 }

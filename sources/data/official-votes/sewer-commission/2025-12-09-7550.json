@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-12-09",
  "docid": "7550",
@@ -12,24 +12,154 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes for 11/25/25",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "motion": "Approve the minutes of 11/25/25.",
    "moved_by": "Dan P.",
    "seconded_by": "Arthur K.",
-   "quote": "motion: dan p. second: arthur k. to approve the min utes for 11/25/25. roll call vote: arthur-aye, dan-aye , and scott- aye",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to approve the min utes for 11/25/25. roll call vote: arthur-aye, dan-aye , and scott- aye."
   },
   {
-   "motion": "adjourn at 7:25 pm",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "motion": "Adjourn the meeting at 7:25 pm.",
    "moved_by": "Arthur K.",
    "seconded_by": "Scott D.",
-   "quote": "motion: arthur k. second: scott d. to adjourn at 7:25 pm. roll call vote: dan-aye , ar thur-aye, scott- aye and brett-aye ."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to adjourn at 7:25 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is a clean scan. Two votes recorded: minutes approval (3-0, prior members) and adjournment (4-0, after Brett Ramsden joined).",
- "cost_usd": 0.10112739999999999
+ "note": "Text extracted from a two-page PDF, not a scan; readable throughout. Brett Ramsden is listed as Chair but the minutes say he joined the meeting during the ADU discussion, so he may have been absent for the opening roll call and the approval vote. The minutes name no individual speaker as remote, so attendance status is recorded as present. Public comment was recorded as \"none\" twice. Votes are recorded by roll call with aye votes only; no nay or abstain is printed, and no vote totals are printed, so outcomes are recorded as \"passed\".",
+ "cost_usd": 0.01463787,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair- brett ramsden , vice-chair - scott dall , clerk- dan proctor"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair- brett ramsden , vice-chair - scott dall , clerk- dan proctor"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair- brett ramsden , vice-chair - scott dall , clerk- dan proctor"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "member : arthur katis , sewer business manager - andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "sewer business manager - andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "sewer business manager - andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "absent: dpw director- bill bernard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed it cannot shut off sewer service for unpaid bills (water could be shut off; the Water Department is a private entity and no arrangement exists).",
+   "quote": "but they agreed they cannot shut off sewer."
+  },
+  {
+   "decision": "Added to future agenda: discuss adding verbiage to the town law that a property must hook up on the street of the property's address, and discussion of ADU verbiage for Town Meeting, including whether it will be part of new construction.",
+   "quote": "discuss adding verbiage to the town law that a property is required to hook up on the street of"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY25 tax lien report: unpaid sewer bills added to tax bills",
+   "what_was_recorded": "Sewer bills not paid in FY2025 will be placed on users' tax bills; the total is roughly the amount printed.",
+   "figures_as_printed": [
+    "$72,260"
+   ],
+   "quote": "the total is roughly $72,260."
+  },
+  {
+   "topic": "Q2 FY26 demands: late fee on unpaid sewer bills",
+   "what_was_recorded": "Unpaid bills not paid by the next day incur an added late fee.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "they will have an added $10 late fee."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "quote": "vice-chair scott d. opened the meeting at 7 :04 pm ."
+  },
+  {
+   "topic": "Minutes of 11/25/25",
+   "resolution": "approved",
+   "quote": "to approve the min utes for 11/25/25. roll call vote: arthur-aye, dan-aye , and scott- aye."
+  },
+  {
+   "topic": "ADU amendment",
+   "resolution": "no action; Town Counsel says ADU rules in effect, verbiage to be updated at Spring Town Meeting",
+   "quote": "and just need to be add ed to the website."
+  },
+  {
+   "topic": "Q2 FY26 demands (unpaid sewer bills)",
+   "resolution": "no action",
+   "quote": "andrew stated any unpaid sewer bills are now past due and he will be processing the demands on thursday."
+  },
+  {
+   "topic": "FY25 tax lien report",
+   "resolution": "no action",
+   "quote": "the total is roughly $72,260."
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "noted for future agenda",
+   "quote": "discuss adding verbiage to the town law that a property is required to hook up on the street of"
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "no action",
+   "quote": "upcoming scheduled sewer commission activities :"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved",
+   "quote": "to adjourn at 7:25 pm."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "ADU",
+  "tax lien",
+  "unpaid bills",
+  "late fees",
+  "Town Counsel",
+  "minutes approval",
+  "Zoom meeting",
+  "FY25",
+  "FY26"
+ ],
+ "dropped_unquoted_by_field": {}
 }

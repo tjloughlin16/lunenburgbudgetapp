@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-11-18",
  "docid": "7517",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve the October meeting minutes",
-   "moved_by": "Ms. O'Sullivan",
+   "motion": "Approve the October meeting minutes.",
+   "moved_by": "Ms. O’Sullivan",
    "seconded_by": "Mr. Franco",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "minutes from october meeting were motioned for approval by ms. o'sullivan, seconded by mr. franco, passed unanimously."
   },
   {
-   "motion": "Have Ms. Lincoln report back to the Master Plan that the COA would like to include funding for a parking lot, funding for meals and programs, and ADA walkable spaces in town, along with Assisted Living and tax relief for seniors",
+   "motion": "Have Ms. Lincoln report back to the Master Plan that, besides Assisted Living and tax relief for seniors, the COA wants funding for a parking lot, funding for meals and programs, and ADA walkable spaces in town.",
    "moved_by": "Ms. Beale",
-   "seconded_by": "Ms. O'Sullivan",
+   "seconded_by": "Ms. O’Sullivan",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "ms. beale moved to have ms. lincoln report back to the master plan that the as well as the assisted living and tax relief for seniors, the coa would like to include funding for a parking lot, funding for meals and programs, and ada walkable spaces in town. seconded by ms. o'sullivan. vote was unanimous in favor."
+   "quote": "ms. beale moved to have ms. lincoln report back to the master plan that the as well as the assisted living and tax relief for seniors"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 11:10am.",
    "moved_by": "Ms. Lockwood",
    "seconded_by": "Mr. Franco",
    "outcome": "passed unanimously",
@@ -37,6 +37,361 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and readable. All recorded votes included.",
- "cost_usd": 0.06902439999999999
+ "note": "Text extraction is clean, not a scan. Three votes are recorded (minutes approval, Master Plan motion, adjournment). The Facebook page had members 'in favor' but no motion, so it is recorded as a decision. Public comment was 'none', so no speakers. No transfers are recorded. The Master Plan motion wording is garbled in the minutes ('report back to the Master Plan that the as well as the Assisted Living'); the quote is verbatim, and the motion paraphrase is my reading of it. The 41A item says 'Mr. Rabbitt' without a first name. Jack Rabbitt is listed as excused and Jane Rabbitt is Vice-Chair, so I read it as Jack Rabbitt; that is an inference, not printed. Roles are blank where the minutes print none (only Lincoln, Rabbitt and Goodsell have one).",
+ "cost_usd": 0.017108270000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan,"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan,"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan,"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan,"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan,"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan,"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan,"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: helen balcom, jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: helen balcom, jack rabbitt"
+  },
+  {
+   "name": "Deb Goodsell",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "guests: deb goodsell (coa director)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Franco and Ms. Lincoln will create a COA Board Facebook page; members noted they were in favor (no motion recorded).",
+   "quote": "mr. franco and ms. lincoln will work together to create this."
+  },
+  {
+   "decision": "Board flagged the Charter/Bylaws wording on COA involvement in hiring the COA Director; Ms. Lincoln to request information from the Select Board or Town Manager before final commentary.",
+   "quote": "ms. lincoln noted she is unaware if the two must match and would like to request additional information from the select board or town manager before deciding on final commentary."
+  },
+  {
+   "decision": "The board will hold a holiday party at its next meeting.",
+   "quote": "the board noted that they would like to have a holiday party at their next meeting."
+  },
+  {
+   "decision": "Questions on the 41A update deferred to a later meeting when Mr. Rabbitt can attend.",
+   "quote": "questions will be deferred to a later meeting when mr. rabbitt can be present."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lobby furnishings quote",
+   "what_was_recorded": "Blockhouse furniture quotes for tables, chairs and lounge chairs were priced at about $22k; the gift fund holds most of the funding and the rest could come from the formula grant.",
+   "figures_as_printed": [
+    "$22k"
+   ],
+   "quote": "pricing for those is approximately $22k."
+  },
+  {
+   "topic": "Lobby furnishings funding source",
+   "what_was_recorded": "The COA gift fund holds most of the furniture funding; the difference could come from the formula grant. No amount is printed for the gift fund or the grant.",
+   "figures_as_printed": [],
+   "quote": "ms. beale noted that the coa has a gift fund that has most of the funding for the furniture, and the difference could come out of the formula grant."
+  },
+  {
+   "topic": "TRI Board report follow-up: grants",
+   "what_was_recorded": "Ms. Lockwood said most grants recur annually and can be planned for; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lockwood indicated that most grants are recurring each year and can be planned for"
+  },
+  {
+   "topic": "41A financial impact",
+   "what_was_recorded": "Ms. Lockwood had questions on the financial impact of 41A; deferred because the presenter was absent. No amounts printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lockwood had some questions regarding the financial impact."
+  },
+  {
+   "topic": "Master Plan funding requests",
+   "what_was_recorded": "Motion asks that the Master Plan include funding for a parking lot, funding for meals and programs, and ADA walkable spaces; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "the coa would like to include funding for a parking lot, funding for meals and programs, and ada walkable spaces in town."
+  },
+  {
+   "topic": "Respite care funding",
+   "what_was_recorded": "Director said some respite programs exist and some funding exists under Medicare; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "ms. goodsell noted that there are programs to that provide that service and that there is some funding for that under medicare."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: state representatives",
+   "resolution": "no action; reps considering a future visit",
+   "quote": "ms. lincoln reached out to our ma house and senate representatives, and they are considering attending a future meeting.",
+   "tags": [
+    "state reps",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment: Special Town Meeting warrant article",
+   "resolution": "discussed; no action recorded",
+   "quote": "mr. franco brought to the attention of the board that there is an article for special town meeting that allows for future warrant booklets not to be mailed and to be available electronically.",
+   "tags": [
+    "special town meeting",
+    "warrant",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Board comment: Handicap parking discount",
+   "resolution": "noted; no action",
+   "quote": "ms. rabbitt was at umass memorial and noted that there is discounted parking for those with a handicap placard.",
+   "tags": [
+    "parking",
+    "accessibility"
+   ]
+  },
+  {
+   "topic": "Minutes approval: October meeting",
+   "resolution": "approved unanimously",
+   "quote": "minutes from october meeting were motioned for approval by ms. o'sullivan, seconded by mr. franco, passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "By-laws feedback: Charter vs Bylaws wording",
+   "resolution": "board flagged the change; Lincoln to seek guidance from Select Board or Town Manager",
+   "quote": "feedback on by-laws: ms. beale noted a discrepancy between the charter and bylaws on wording of appointing and having the coa be involved in the hiring of a coa director.",
+   "tags": [
+    "bylaws",
+    "charter",
+    "director hiring"
+   ]
+  },
+  {
+   "topic": "Festival of Trees",
+   "resolution": "thanks noted; no action",
+   "quote": "festival of trees: ms. lincoln thanked the board members for working on a tree for this event.",
+   "tags": [
+    "festival of trees",
+    "community event"
+   ]
+  },
+  {
+   "topic": "COA Facebook page",
+   "resolution": "Franco and Lincoln to create page",
+   "quote": "ms. lincoln noted that the coa board might want to start a facebook page.",
+   "tags": [
+    "facebook",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Staffing update",
+   "resolution": "reported; per diem driver being hired; meal site manager now a union position",
+   "quote": "ms. goodsell, director, noted that mr. mcguigan has resigned as a van driver and was thanked for his many years of service.",
+   "tags": [
+    "staffing",
+    "van driver",
+    "meal site"
+   ]
+  },
+  {
+   "topic": "Center hours change",
+   "resolution": "reported; two hours moved from Monday nights to Friday afternoons",
+   "quote": "ms. goodsell noted that hours have changed for the fall/winter months.",
+   "tags": [
+    "center hours"
+   ]
+  },
+  {
+   "topic": "Holiday party",
+   "resolution": "to be held at next meeting; food pantry donation suggested in place of ornament swap",
+   "quote": "the board noted that they would like to have a holiday party at their next meeting.",
+   "tags": [
+    "holiday party",
+    "food pantry"
+   ]
+  },
+  {
+   "topic": "Financial reports",
+   "resolution": "none at this time",
+   "quote": "financial reports: none at this time.",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Caregiver Resource Connection",
+   "resolution": "reported; third session upcoming",
+   "quote": "caregiver resource connection: third session is tomorrow at 11:30am.",
+   "tags": [
+    "caregivers"
+   ]
+  },
+  {
+   "topic": "Master Plan review",
+   "resolution": "motion to report back with COA priorities passed unanimously",
+   "quote": "ms. beale moved to have ms. lincoln report back to the master plan that the as well as the assisted living and tax relief for seniors",
+   "tags": [
+    "master plan",
+    "parking",
+    "meals",
+    "ADA",
+    "assisted living"
+   ]
+  },
+  {
+   "topic": "Local hospital services",
+   "resolution": "no new updates",
+   "quote": "update on local hospital services: no new updates noted.",
+   "tags": [
+    "hospital"
+   ]
+  },
+  {
+   "topic": "Lobby furnishings",
+   "resolution": "quote reported (~$22k); no decision recorded",
+   "quote": "pricing for those is approximately $22k.",
+   "tags": [
+    "furnishings",
+    "gift fund",
+    "formula grant"
+   ]
+  },
+  {
+   "topic": "TRI Board report follow-up",
+   "resolution": "no further comment from Director; follow-up questions pending",
+   "quote": "tri board report follow up: ms. goodsell had no further comment at this time.",
+   "tags": [
+    "tri board",
+    "grants",
+    "data"
+   ]
+  },
+  {
+   "topic": "41A update",
+   "resolution": "deferred; presenter absent",
+   "quote": "41a update: mr. rabbitt was not present to give an update.",
+   "tags": [
+    "41A"
+   ]
+  },
+  {
+   "topic": "Director's report: programs and events",
+   "resolution": "reported",
+   "quote": "ms. goodsell reported on upcoming planned programs such as mental health concerns as we age and healthy tonics.",
+   "tags": [
+    "programs",
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "no report; thanks for Festival of Trees",
+   "quote": "eagle house supporters report: no report but ms. lincoln thanked them for the festival of trees.",
+   "tags": [
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "quote": "notices and communications: none",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Board comment: Special Town Meeting that evening",
+   "resolution": "noted; encouraged to vote",
+   "quote": "ms. lockwood reported that special town meeting is tonight and encouraged all to come and vote.",
+   "tags": [
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 11:10am, passed unanimously",
+   "quote": "a motion to adjourn at 11:10am was made by ms. lockwood and seconded by mr. franco. it passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "master plan",
+  "bylaws",
+  "special town meeting",
+  "staffing",
+  "lobby furnishings",
+  "budget",
+  "senior services",
+  "facebook",
+  "center hours"
+ ],
+ "dropped_unquoted_by_field": {}
 }

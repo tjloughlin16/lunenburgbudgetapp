@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2026-01-08",
  "docid": "7596",
@@ -12,15 +12,174 @@
  },
  "votes": [
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
-   "outcome": "passed unanimously",
+   "outcome": "unanimously approved",
    "procedural": true,
    "quote": "motion to adjourn made by mr howard, seconded by chairman bowen. motion approved unanimously"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: the motion to adjourn at the end of the meeting. No other motions or votes are documented in these minutes, though various matters were discussed and decisions were made (warrant article drafting, intern program, next meeting date) without formal votes.",
- "cost_usd": 0.0657034
+ "note": "Meeting was recorded but not broadcast on Zoom. No public present in person or remotely due to Zoom platform issues. Two members present (Chairman Bowen and Mr Howard). Minutes are complete and readable with no scanning issues.",
+ "cost_usd": 0.1049196,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members recited the pledge of allegiance. chairman bowen proceeded to read the posted open meeting notice from the agenda"
+  },
+  {
+   "name": "Mr Howard",
+   "role": "Member",
+   "status": "present",
+   "quote": "members recited the pledge of allegiance. chairman bowen proceeded to read the posted open meeting notice from the agenda"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members directed to brainstorm voting structures for appointed or hybrid elected/Select Board compositions by the next meeting",
+   "quote": "chairman bowen requested that by the next meeting we each take some time to brainstorm voting structures for appointed structures or hybrid elected/select board compositions."
+  },
+  {
+   "decision": "Chairman Bowen to draft proposed warrant article wording for next meeting",
+   "quote": "chairman bowen would begin to draft the potential wording for the proposed warrant article by our next meeting"
+  },
+  {
+   "decision": "No interns will be used for 2026; issue to be revisited next year",
+   "quote": "due to the prerequisites involved in setting up a formal internship program, interns won't be used for 2026. the issue will be revisited next year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Loan from 2017",
+   "what_was_recorded": "A loan of approximately $2,700 was given by the Trust Fund Commission in 2017; enforcement obligations were not followed up due to turnover on the commission",
+   "figures_as_printed": [
+    "approximately $2,700"
+   ],
+   "quote": "chairman bowen and mr howard discussed the loan of approximately $2,700 given by the trust fund commission back in 2017. with turnover on the trust fund commission, the provisions ===page 2=== and obligations of the recipient of the loan were not followed up on, causing the enforcement to fall throug",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Technical issues and meeting start",
+   "resolution": "Meeting called to order at 5:25pm after technical issues; not broadcast on Zoom but recorded",
+   "quote": "due to technical issues, the meeting was not called to order until 5:25pm. members recited the pledge of allegiance.",
+   "tags": [
+    "procedural",
+    "technical issues"
+   ]
+  },
+  {
+   "topic": "Treasurer and Finance reports",
+   "resolution": "No Finance Director or Treasurer reports presented; quarterly reports from Private Trust Company; update expected in February 2026",
+   "quote": "no finance direct or treasurer reports were presented - as those are published by the private trust company on a quarterly basis, we expect to receive a treasurer update in february 2026.",
+   "tags": [
+    "finance",
+    "reporting"
+   ]
+  },
+  {
+   "topic": "Meeting with Town Manager",
+   "resolution": "Review of records and transaction logs related to trusts under commission control",
+   "quote": "chairman bowen provided a brief update on the meeting with town mgr. essentially, during this meeting there was a review of records and transaction logs related to the trusts held under control of the trust fund commission.",
+   "tags": [
+    "administration",
+    "records"
+   ]
+  },
+  {
+   "topic": "Vacancy and ethics training requirement",
+   "resolution": "Vacancy announced; State Ethics Training required for applicants",
+   "quote": "chairman bowen again mentioned the vacancy on the trust fund commission and the means to apply. mr howard mentioned that anyone interested would need to take state ethics training as a prerequisite to sitting on the trust fund commission.",
+   "tags": [
+    "personnel",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Warrant article for quorum absence",
+   "resolution": "Chairman Bowen to draft warrant article allowing Select Board and existing member to make distributions in absence of quorum",
+   "quote": "chairman bowen discussed the need to submit a warrant article to allow the select board to release money in the absence of a quorum on the board of trust fund commissioners. the intent is to allow the select board and the existing member of trust fund commission, in the absence of majority or quorum, they would be able to serve in the capacity to fulfill the obligations of the trust fund commission for the purposes of making distributions from the funds under control of the trust fund commission.",
+   "tags": [
+    "governance",
+    "business continuity",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Trust Fund Commission structure alternatives",
+   "resolution": "Discussed possible structures including fully appointed or hybrid elected/appointed models; concerns raised about appointment qualifications",
+   "quote": "one possible scenario discussed is the possibility that the trust fund commission could possibly be composed entirely of members of the select board or be entirely appointed by the select board. mr howard has concerns about the structure of a fully appointed trust fund commission. chairman bowen reiterated his concern that some prior appointments made by the select board were made without consideration of past experience or the actual qualifications of volunteers, relevant experience is important.",
+   "tags": [
+    "governance",
+    "structure"
+   ]
+  },
+  {
+   "topic": "Loan enforcement from 2017",
+   "resolution": "Discussed unpaid loan; enforcement fell through due to turnover and lack of follow-up on provisions and obligations",
+   "quote": "with turnover on the trust fund commission, the provisions ===page 2=== and obligations of the recipient of the loan were not followed up on, causing the enforcement to fall throug",
+   "tags": [
+    "loans",
+    "enforcement",
+    "compliance"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "American Legion 283 provisions and declarations",
+   "resolution": "Application for rewriting provisions still with Town Attorney; need to add information for veterans in good standing",
+   "quote": "the trust fund commission's application for rewriting the provisions and declarations of the american legion 283 are still with the town attorney. in the process of updating the declaration there is the need to add some info for veterans in good standing, for example.",
+   "tags": [
+    "veterans",
+    "legal review"
+   ]
+  },
+  {
+   "topic": "Real estate investigations",
+   "resolution": "Investigations proceeding slowly; investigating properties sold contrary to donor intent where proceeds should have been placed in trust",
+   "quote": "real estate investigations are going slowly as work is being performed solely by chairman bowen. the issue is any sales, or transfers of land where the donor had specific intent but the town subsequently sold the property that ended up being used for other purposes outside of the donor's intent. chairman bowen's assertion is that during conversion the proceeds should have been put into trust in the donor's name, not taken by the town.",
+   "tags": [
+    "real estate",
+    "donor intent",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Internship program",
+   "resolution": "No interns for 2026 due to program prerequisites; issue to be revisited next year",
+   "quote": "due to the prerequisites involved in setting up a formal internship program, interns won't be used for 2026. the issue will be revisited next year.",
+   "tags": [
+    "personnel",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "Next meeting scheduled for January 22, 2026",
+   "quote": "both members discussed the date for the next trust fund commission meeting. the next meeting will be held on jan 22, 2026.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "trust funds",
+  "governance",
+  "business continuity",
+  "veterans",
+  "real estate",
+  "compliance",
+  "warrant article",
+  "staffing",
+  "donor intent"
+ ],
+ "dropped_unquoted_by_field": {}
 }

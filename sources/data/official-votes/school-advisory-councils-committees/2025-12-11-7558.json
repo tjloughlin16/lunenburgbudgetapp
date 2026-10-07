@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2025-12-11",
  "docid": "7558",
@@ -11,7 +11,124 @@
   "doc_url": "/docs/meetings/school-advisory-councils-committees/2025-12-11-minutes-7558.txt"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document a School Advisory Council meeting with budget and curriculum discussions and updates, but contain no motions, outcomes, or voting language—including no explicit procedural votes to adjourn or approve prior minutes.",
- "cost_usd": 0.061480400000000004
+ "dropped_unquoted": 1,
+ "note": "No motions, votes or formal decisions are recorded; the minutes contain only discussion and reports. Date discrepancy: the minutes print the meeting date as 12/11/2026, while the requested board date is 2025-12-11. Member roles are not stated in the body, and the letterhead layout does not clearly assign titles to names, so roles are left blank. Dr Fortuna and Ms. Hanscom are referred to in the discussion, but the minutes do not say whether they attended. The adjournment at 3:27 p.m. is recorded without a motion. Only one dollar figure ($900K) appears.",
+ "cost_usd": 0.014065770000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Tim Santry",
+   "role": "not stated in minutes body (letterhead layout is ambiguous)",
+   "status": "present",
+   "quote": "members present: mr. tim santry; ms. karma tousignant; ms. yanina burns; ms. jessica frank;"
+  },
+  {
+   "name": "Ms. Karma Tousignant",
+   "role": "not stated in minutes body",
+   "status": "present",
+   "quote": "members present: mr. tim santry; ms. karma tousignant; ms. yanina burns; ms. jessica frank;"
+  },
+  {
+   "name": "Ms. Yanina Burns",
+   "role": "not stated in minutes body",
+   "status": "present",
+   "quote": "members present: mr. tim santry; ms. karma tousignant; ms. yanina burns; ms. jessica frank;"
+  },
+  {
+   "name": "Ms. Jessica Frank",
+   "role": "not stated in minutes body",
+   "status": "present",
+   "quote": "members present: mr. tim santry; ms. karma tousignant; ms. yanina burns; ms. jessica frank;"
+  },
+  {
+   "name": "Ms. Mariah Comesana",
+   "role": "not stated in minutes body",
+   "status": "present",
+   "quote": "ms. mariah comesana; mr. warren stevenson; ms. meghan arnold"
+  },
+  {
+   "name": "Mr. Warren Stevenson",
+   "role": "not stated in minutes body",
+   "status": "present",
+   "quote": "ms. mariah comesana; mr. warren stevenson; ms. meghan arnold"
+  },
+  {
+   "name": "Ms. Meghan Arnold",
+   "role": "not stated in minutes body",
+   "status": "present",
+   "quote": "ms. mariah comesana; mr. warren stevenson; ms. meghan arnold"
+  },
+  {
+   "name": "Mr. Anthony Sculimbrene",
+   "role": "member",
+   "status": "absent",
+   "quote": "absent: mr. anthony sculimbrene"
+  },
+  {
+   "name": "Ms. Lynn Radford",
+   "role": "Additional persons present; submitted the minutes",
+   "status": "present",
+   "quote": "additional persons present: ms. lynn radford"
+  },
+  {
+   "name": "Ms. Hanscom",
+   "role": "not stated in minutes body",
+   "status": "not stated",
+   "quote": "ms. hanscom priority for special ed: restoration of the bridge program"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY27 budget expected increase",
+   "what_was_recorded": "The minutes record that the FY27 budget is expected to be $900K over last year's budget, and that this figure includes insurance costs.",
+   "figures_as_printed": [
+    "$900K"
+   ],
+   "quote": "expecting $900k over last year's budget (includes insurance costs)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY27 budget update",
+   "resolution": "discussed; no action recorded",
+   "quote": "going to be a budget \"narrative\" w/dr fortuna explaining the requests"
+  },
+  {
+   "topic": "Graduation requirements guidelines (Competency Determination)",
+   "resolution": "continued; on third SC reading",
+   "quote": "-competency determination has been developed - currently on 3rd sc reading"
+  },
+  {
+   "topic": "Handbook reminder",
+   "resolution": "no action; members asked to bring revision ideas",
+   "quote": "please review and bring ideas for revision or additions to the group"
+  },
+  {
+   "topic": "Innovative pathways",
+   "resolution": "reported done; see graduation item",
+   "quote": "innovative pathways - done (see part 2)"
+  },
+  {
+   "topic": "Winter athletics update",
+   "resolution": "reported; no action recorded",
+   "quote": "-adding winter cheer (+30 girls)"
+  }
+ ],
+ "tags": [
+  "school advisory council",
+  "Lunenburg High School",
+  "FY27 budget",
+  "staffing",
+  "graduation requirements",
+  "athletics",
+  "special education",
+  "handbook"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

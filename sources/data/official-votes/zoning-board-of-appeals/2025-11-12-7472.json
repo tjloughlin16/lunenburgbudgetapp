@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "zoning-board-of-appeals",
  "meeting_date": "2025-11-12",
  "docid": "7472",
@@ -12,15 +12,156 @@
  },
  "votes": [
   {
-   "motion": "Approve the Special Permit application for the self-storage facility at 30 Summer Street as shown on Plan No. 8663, dated 09/29/2025",
+   "motion": "Approve the special permit request as shown on Plan No. 8663, dated 09/29/2025, submitted by the applicant.",
    "moved_by": "Anthony Nicastro",
    "seconded_by": "James Besarkarski",
    "outcome": "passed",
    "procedural": false,
-   "quote": "anthony nicastro made a motion to approve the request as shown on the plan no. 8663, dated 09/29/2025, submitted by the applicant. james besarkarski seconded the motion. the petition was granted."
+   "quote": "anthony nicastro made a motion to approve the request as shown on the plan no. 8663, dated 09/29/2025, submitted by the applicant. james besarkarski seconded the motion."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR is clear and readable. One substantive motion recorded with outcome stated but no vote count provided.",
- "cost_usd": 0.0781804
+ "note": "OCR text (macOS Vision), so quotes are checked against OCR output, which contains errors (e.g. 'Alfast@bravelle', 'Bullding', 'GE Administrative Assistant', 'pproved by Chairman of the Boar'). Date conflict: the header reads 'Monday, November 17, 2025' while the body says 'Wednesday November 12, 2025 at 7:00 PM'; the requested meeting date 2025-11-12 follows the body. The approval signature line is garbled and its date is unreadable. The one motion records 'The petition was granted' with no vote tally printed, so the outcome is recorded as passed without a count. No adjournment vote is recorded, only 'Hearing Adjourned at 7:22 P.M.'. No public comment, dollar figures or transfers appear in the minutes. No decisions were taken without a vote.",
+ "cost_usd": 0.013651270000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alfred Gravelle",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "alfred gravelle chairman, james besarkarski, anthony nicastro and donald gurney."
+  },
+  {
+   "name": "James Besarkarski",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "alfred gravelle chairman, james besarkarski, anthony nicastro and donald gurney."
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "alfred gravelle chairman, james besarkarski, anthony nicastro and donald gurney."
+  },
+  {
+   "name": "Donald Gurney",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "alfred gravelle chairman, james besarkarski, anthony nicastro and donald gurney."
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "of DILLIS & ROY Civil Design Group, Inc.; Representative of the Petitioner",
+   "status": "present",
+   "quote": "ryan proctor, of dillis & roy civil design group, inc., 1 main street, lunenburg, ma 01462, as"
+  },
+  {
+   "name": "Lisa Normandin",
+   "role": "Secretary of the Lunenburg Zoning Board of Appeals",
+   "status": "present",
+   "quote": "and lisa normandin, secretary of the lunenburg zoning board of appeals."
+  },
+  {
+   "name": "Deborah Crowley",
+   "role": "Administrative Assistant, Building Department (minutes submitted by)",
+   "status": "not stated",
+   "quote": "minutes submitted by deborah crowley."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing opened; petition read into the record",
+   "resolution": "hearing opened, petition read",
+   "quote": "the petitioner was seeking special permit approval for construction of a 104,700 sf, 4-story, climate",
+   "tags": [
+    "public hearing",
+    "special permit",
+    "self-storage"
+   ]
+  },
+  {
+   "topic": "Accessory use limit, 250-4.5 A (3)",
+   "resolution": "read into record, no discussion recorded",
+   "quote": "any use allowed by right or special permit within the zoning district provided that:",
+   "tags": [
+    "accessory use",
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Building height, 250-5.3 A (3)",
+   "resolution": "applicant confirmed 51 feet",
+   "quote": "mr. proctor confirmed that the building height will be 51 feet.",
+   "tags": [
+    "building height",
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Drainage, 325-4.7",
+   "resolution": "applicant stated reduction in impervious area",
+   "quote": "mr. proctor indicated that there will be a reduction in impervious area.",
+   "tags": [
+    "drainage",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Utilities underground, 250-4.5 B (2) (c)",
+   "resolution": "applicant confirmed underground sewer and water",
+   "quote": "mr. proctor confirmed that all of the utilities will be underground (sewer and water).",
+   "tags": [
+    "utilities",
+    "sewer",
+    "water"
+   ]
+  },
+  {
+   "topic": "Fire hydrants and access, 325-4.8",
+   "resolution": "Fire Department approval for front access with added hydrant",
+   "quote": "mr. proctor informed the board that the fire department gave approval for access being limited to the front of building for fire trucks, with the addition of a fire hydrant.",
+   "tags": [
+    "fire safety",
+    "hydrants",
+    "site access"
+   ]
+  },
+  {
+   "topic": "Outside lighting and keypad hours, 250-4.5 A (1) (g)",
+   "resolution": "applicant described pole light removal and 6am-10pm keypad access",
+   "quote": "mr. proctor specified that although the office hours have yet to be determined, the keypad access will be from 6am-10pm",
+   "tags": [
+    "lighting",
+    "hours",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Board deliberation and decision on petition",
+   "resolution": "special permit granted by motion",
+   "quote": "the petition was granted. hearing adjourned at 7:22 p.m.",
+   "tags": [
+    "special permit",
+    "decision"
+   ]
+  }
+ ],
+ "tags": [
+  "zoning",
+  "special permit",
+  "self-storage",
+  "30 Summer Street",
+  "public hearing",
+  "building height",
+  "drainage",
+  "utilities",
+  "fire hydrants",
+  "lighting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

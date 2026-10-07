@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2026-02-12",
  "docid": "7649",
@@ -15,25 +15,26 @@
    "motion": "Approve the Trust Fund disbursement eligibility instruction manual for Veteran's Trust Funds",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
-   "outcome": "passed",
+   "outcome": "passed 2-0",
    "procedural": false,
-   "quote": "motion was passed with chairman bowen voting 'aye' and mr howard voting 'aye'"
+   "quote": "chairman bowen made a motion to approve the trust fund disbursement eligibility instruction manual for veteran's trust funds that the town may come in control, that if the fund does not specifically state that these circumstances are not a disqualifier then they shall be applied to all veteran trust funds given or bequeathed in the beneﬁt of the town and its residents. mr howard seconded the motion as worded. motion was passed with chairman bowen voting 'aye' and mr howard voting 'aye'"
   },
   {
-   "motion": "Adopt the policy for the management and distribution of donated Trust Funds, except section 14 pending Town Meeting ratification",
+   "motion": "Adopt the policy for the management and distribution of donated Trust Funds with the exception of section 14",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
-   "outcome": "passed",
+   "outcome": "passed 2-0",
    "procedural": false,
-   "quote": "vote on motion was mr howard = aye, chairman bowen = aye."
+   "quote": "chairman bowen made a motion to adopt the policy for the management and distribution of donated trust funds, written by the board of trust fund commissioners with the exception of section 14 unless and until it is ratified at annual town meeting. if ratified at town meeting, it shall be incorporated into this document by order and di",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Adopt the trust fund disbursement eligibility instruction manual based on income for determining fund eligibility",
+   "motion": "Adopt the trust fund disbursement eligibility instruction manual based on income for any fund for which the town holds funds where income is the basis for eligibility determination",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
-   "outcome": "passed",
+   "outcome": "passed 2-0",
    "procedural": false,
-   "quote": "mr howard vote = aye, chairman bowen =aye."
+   "quote": "a motion was put forth by chairman bowen to adopt the trust fund disbursement eligibility instruction manual based on income for any fund for which the town holds of which income is the basis for the trust fund to utilize this particular format for determining eligibility. motion was second by mr howard. mr howard vote = aye, chairman bowen =aye."
   },
   {
    "motion": "Adjourn the meeting",
@@ -41,10 +42,138 @@
    "seconded_by": "Chairman Bowen",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "the motion was passed unanimously."
+   "quote": "mr howard put forth a motion to adjourn the meeting at 6:35pm, chairman bowen seconded the motion. the motion was passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10060440000000001
+ "note": "\"\"",
+ "cost_usd": 0.1450536,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present were mr howard and chairman bowen."
+  },
+  {
+   "name": "Mr Howard",
+   "role": "Member",
+   "status": "present",
+   "quote": "present were mr howard and chairman bowen."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Warrant article will be submitted to Board of Selectmen and Town Manager; bylaw will be presented to bylaw review committee",
+   "quote": "a warrant article will be submitted to the board of selectmen and the town manager, a bylaw will be presented to the bylaw review committee"
+  },
+  {
+   "decision": "Chairman Bowen to make presentation to Select Board on March 3rd and to meet with Town Counsel on cy pres filing",
+   "quote": "on march 3rd chairman bowen is scheduled to make a presentation to the select board. chairman bowen will be meeting with town counsel on the cy pres filing, which will be tied to a warrant article."
+  },
+  {
+   "decision": "Warrant article addressing distribution of trust funds in absence of quorum will be presented to bylaw review committee",
+   "quote": "this will be presented to the bylaw review committee."
+  },
+  {
+   "decision": "Past meeting minutes will be reviewed and approved at next meeting",
+   "quote": "will plan to review and approve past meeting minutes at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Legal expenses for trust fund cy pres proceedings",
+   "what_was_recorded": "Board reviewed a warrant article proposing appropriation of funds from General Fund for legal expenses related to research, analysis, and filing of cy pres petitions for correcting trust fund terms",
+   "figures_as_printed": [
+    "Fourteen Thousand Two Hundred Fifty‑Two Dollars and Thirty‑Nine Cents",
+    "$14,252.39"
+   ],
+   "quote": "to see if the town will vote to appropriate the sum of fourteen thousand two hundred fifty ‑ two dollars and thirty ‑ nine cents ($14,252.39) from the general fund for the payment of legal expe",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Veteran's Trust Fund Disbursement Eligibility Manual",
+   "resolution": "approved",
+   "tags": [
+    "veteran benefits",
+    "eligibility determination",
+    "discharge types",
+    "DD-214"
+   ],
+   "quote": "chairman bowen made a motion to approve the trust fund disbursement eligibility instruction manual for veteran's trust funds that the town may come in control, that if the fund does not specifically state that these circumstances are not ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Policy for management and distribution of donated Trust Funds",
+   "resolution": "adopted with exception of section 14",
+   "tags": [
+    "trust funds",
+    "policy",
+    "management",
+    "distribution"
+   ],
+   "quote": "chairman bowen made a motion to adopt the policy for the management and distribution of donated trust funds, written by the board of trust fund commissioners with the exception of section 14 unless and until it is ratified at annual town meeting. if ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Income eligibility policy for Poor Funds",
+   "resolution": "adopted with citizenship/residency requirements",
+   "tags": [
+    "poor funds",
+    "eligibility",
+    "income determination",
+    "federal poverty level"
+   ],
+   "quote": "a motion was put forth by chairman bowen to adopt the trust fund disbursement eligibility instruction manual based on income for any fund for which the town holds of which income is the basis for the trust fund to utilize this particular format for determ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Warrant article for cy pres legal expenses appropriation",
+   "resolution": "reviewed for submission",
+   "tags": [
+    "cy pres",
+    "legal expenses",
+    "American Legion",
+    "Worthy Poor Fund"
+   ],
+   "quote": "chairman bower reviewed the warrant article for the appropriation of funds for cy pres filings."
+  },
+  {
+   "topic": "Warrant article for trust fund distribution in absence of quorum",
+   "resolution": "reviewed for presentation to bylaw committee",
+   "tags": [
+    "quorum procedures",
+    "Select Board authority",
+    "emergency procedures"
+   ],
+   "quote": "chairman bowen read the text on the proposed warrant article that addresses the distribution of trust funds in the absence of a quorum. this will be presented to the bylaw review committee."
+  },
+  {
+   "topic": "Trust Fund Commission vacancy and goals",
+   "resolution": "ongoing recruitment discussed; no update on interns or real estate investigations",
+   "tags": [
+    "vacancy",
+    "recruitment",
+    "goals"
+   ],
+   "quote": "chairman bowen again discussed the vacancy on the trust fund commission, urging viewers to join if they have the expertise to contribute."
+  }
+ ],
+ "tags": [
+  "trust funds",
+  "veteran benefits",
+  "eligibility determination",
+  "cy pres petitions",
+  "poor funds",
+  "policy adoption",
+  "quorum procedures",
+  "warrant articles"
+ ],
+ "dropped_unquoted_by_field": {}
 }

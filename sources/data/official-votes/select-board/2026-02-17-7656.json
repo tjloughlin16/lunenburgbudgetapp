@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-02-17",
  "docid": "7656",
@@ -12,39 +12,438 @@
  },
  "votes": [
   {
-   "motion": "Approve the Common Victualler License application for Empire Athletics at 308 Massachusetts Avenue",
+   "motion": "Approve the Common Victualler License application for Empire Athletics located at 308 Massachusetts Avenue",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Amanda Moore",
-   "outcome": "passed 4-0-0",
+   "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to approve the common victualler license application for empire athletics located at 308 massachusetts avenue. seconded by vice-chair amanda moore. call for vote: four-aye"
+   "quote": "motion by chair nuzzolo to approve the common victualler license application for empire athletics located at 308 massachusetts avenue. seconded by vice-chair amanda moore. call for vote: four-aye. the motion passed unanimously (4-0-0)."
   },
   {
    "motion": "Ratify the Town Manager's appointment of Kimberly Gauvin as Payroll and Benefits Coordinator",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Moore",
-   "outcome": "passed 4-0-0",
-   "procedural": true,
-   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of kimberly gauvin as payroll and benefits coordinator. seconded by vice-chair moore. call for vote: four-aye"
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of kimberly gauvin as payroll and benefits coordinator. seconded by vice-chair moore. call for vote: four-aye. the motion passed unanimously (4-0-0)."
   },
   {
    "motion": "Declare the electric range stove from the Lunenburg Adult Activity Center as surplus property",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Moore",
-   "outcome": "passed 4-0-0",
-   "procedural": true,
-   "quote": "motion by chair nuzzolo to declare the electric range stove from the lunenburg adult activity center as surplus property. seconded by vice-chair moore. call for vote: four-aye"
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "motion by chair nuzzolo to declare the electric range stove from the lunenburg adult activity center as surplus property. seconded by vice-chair moore. call for vote: four-aye. the motion passed unanimously (4-0-0)."
   },
   {
    "motion": "Adjourn",
    "moved_by": "Clerk Emkey",
    "seconded_by": "Vice-Chair Moore",
-   "outcome": "passed 4-0-0",
+   "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion by clerk emkey to adjourn at 8:31 pm. seconded by vice-chair moore. call for vote: four-aye"
+   "quote": "motion by clerk emkey to adjourn at 8:31 pm. seconded by vice-chair moore. call for vote: four-aye. the motion passed (4-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12147340000000001
+ "note": "Minutes were reviewed and approved on Tuesday, September 1, 2026, well after the meeting date of February 17, 2026. All votes recorded and all motions carried unanimously by 4-0 vote (Brian Lehtinen absent, four members present and voting).",
+ "cost_usd": 0.1320746,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance."
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: member brian lehtinen"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Shahid Qureshi",
+   "role": "co-owner, Empire Athletics",
+   "status": "present",
+   "quote": "shahid qureshi, co-owner of empire athletics, appeared before the select board along with co-owner nicholas gallagher."
+  },
+  {
+   "name": "Nicholas Gallagher",
+   "role": "co-owner, Empire Athletics",
+   "status": "present",
+   "quote": "shahid qureshi, co-owner of empire athletics, appeared before the select board along with co-owner nicholas gallagher."
+  },
+  {
+   "name": "John Bowen",
+   "role": "resident",
+   "status": "present",
+   "quote": "john bowen, 162 highland street, addressed the select board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Select Board agreed to proceed with revised language on Notice of Town Meeting warrant article specifying notification shall include sufficient information to direct residents to full warrant text and affirming opt-in physical copy mailing provision",
+   "quote": "the select board agreed to proceed with the revised language as discussed."
+  },
+  {
+   "decision": "Formal vote on Appointment Policy deferred to March 3 meeting to allow full Select Board presence",
+   "quote": "a formal vote was deferred to the march 3 meeting to allow the full select board to be present, as the chair will be absent and member brian lehtinen was not in attendance."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY27 Budget shortfall",
+   "what_was_recorded": "Current projected shortfall exceeds three million dollars; budget will not be balanced and will require an override",
+   "figures_as_printed": [
+    "$3,000,000"
+   ],
+   "quote": "the budget will not be balanced and will be reliant on an override, with the current projected shortfall exceeding $3,000,000"
+  },
+  {
+   "topic": "Health insurance rate increase FY27",
+   "what_was_recorded": "Health insurance rate increase projected for FY27",
+   "figures_as_printed": [
+    "8.85%"
+   ],
+   "quote": "an 8.85% health insurance rate increase for fy27"
+  },
+  {
+   "topic": "FY25 Free cash",
+   "what_was_recorded": "Preliminary free cash estimated over three million dollars from FY25 close-out, attributable to School turn-back and strong investment income",
+   "figures_as_printed": [
+    "$3,000,000"
+   ],
+   "quote": "preliminary free cash is estimated at over $3,000,000, attributable in part to a significant school turn-back and strong investment income."
+  },
+  {
+   "topic": "Snow and ice deficit",
+   "what_was_recorded": "Current snow and ice deficit estimated at approximately three hundred thousand dollars",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "which the town manager estimated at approximately $300,000 currently"
+  },
+  {
+   "topic": "Regional Dispatch free cash disposition",
+   "what_was_recorded": "Regional Dispatch has four hundred thirty-three thousand dollars in free cash; Administrative Board opted to retain portion in free cash and transfer balance to stabilization and capital account",
+   "figures_as_printed": [
+    "$433,000"
+   ],
+   "quote": "the meeting addressed the disposition of $433,000 in free cash generated by the district."
+  },
+  {
+   "topic": "ClearGov software subscription cancellation",
+   "what_was_recorded": "Software subscription was not renewed following lapse in use after prior Town Manager departure; annual savings of twenty thousand dollars partially offsets rising Munis costs",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "the $20,000 in annual savings partially offsets rising munis costs"
+  },
+  {
+   "topic": "Electric range stove surplus property",
+   "what_was_recorded": "Electric range stove from Lunenburg Adult Activity Center has estimated value less than two hundred dollars",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "with an estimated value of less than $200"
+  },
+  {
+   "topic": "300th Anniversary Committee warrant article",
+   "what_was_recorded": "Multi-year allocation of fifteen thousand dollars proposed for 300th Anniversary Committee",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "a multi-year allocation of $15,000"
+  },
+  {
+   "topic": "PACC Enterprise Fund articles",
+   "what_was_recorded": "Two PACC articles: one restoring funds to Town General Fund, one appropriating amount from expected income for operations",
+   "figures_as_printed": [
+    "$31,271.94",
+    "$209,000"
+   ],
+   "quote": "one restoring $31,271.94 to the town general fund and one appropriating $209,000 from expected income for operations"
+  },
+  {
+   "topic": "Trust Fund Commission legal research article",
+   "what_was_recorded": "Trust Fund Commission article to appropriate funds for legal research",
+   "figures_as_printed": [
+    "$14,252.39"
+   ],
+   "quote": "appropriate $14,252.39 for legal research"
+  },
+  {
+   "topic": "Tax rate alternative to override",
+   "what_was_recorded": "Resident proposed tax rate increase rather than override approach; current estimate approximately one dollar eighty-six to one dollar eighty-nine per thousand to generate five million dollars annually",
+   "figures_as_printed": [
+    "$1.66",
+    "$5,000,000",
+    "$1.86–$1.89"
+   ],
+   "quote": "mr. bowen recalled a recommendation he made approximately two years ago suggesting that rather than pursuing overrides, the town consider increasing the tax rate by approximately $1.66 per thousand, which he estimated would generate $5,000,000 annually into the town's coffers. in light of the town manager's report indicating a $3,000,000-plus budget shortfall, mr. bowen suggested that approach remains viable, noting that his current estimate has risen to approximately $1.86-$1.89 per thousand."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Regional Dispatch free cash transfer to stabilization and capital account",
+   "amount_as_printed": "$433,000",
+   "outcome": "Administrative Board declined to return funds to member communities; retained portion in free cash and transferred balance to district stabilization and capital account due to anticipated assessment increases",
+   "quote": "the administrative board declined to return the funds to member communities, opting instead to retain a portion in free cash and transfer the balance to the district's stabilization and capital account, given anticipated assessment increases as grants supporting newer members hudson and sterling expire."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "resident, 162 Highland Street",
+   "topic": "Tax rate alternative to override; maximizing investment returns",
+   "quote": "mr. bowen recalled a recommendation he made approximately two years ago suggesting that rather than pursuing overrides, the town consider increasing the tax rate by approximately $1.66 per thousand, which he estimated would generate $5,000,000 annually into the town's coffers. in light of the town manager's report indicating a $3,000,000-plus budget shortfall, mr. bowen suggested that approach remains viable, noting that his current estimate has risen to approximately $1.86-$1.89 per thousand. he also expressed interest in maximizing investment returns on accumulated funds through bartholomew and suggested the approach could reduce reliance on repeated overrides."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "Meeting called to order at 7:00 PM; recording announced",
+   "tags": [
+    "procedure",
+    "recording"
+   ],
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance. chair nuzzolo advised those present that the meeting was being recorded and broadcast live over the lunenburg public access channel, on facebook live, and would be uploaded to the lunenburg access youtube channel following the meeting."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "Citizens Party Caucus March 9; Fire Department fourth shift proposal presentation February 24 announced",
+   "tags": [
+    "procedure",
+    "announcements"
+   ],
+   "quote": "first, the citizens party caucus will be held on monday, march 9 at 7:00 pm at the lunenburg middle high school auditorium, which serves as one of two pathways to appear on the ballot for elected boards. second, a public presentation and q&a on the fire department's fourth shift proposal will be held at the lunenburg adult activity center on tuesday, february 24 at 5:00 pm, and will be recorded by pacc for later viewing."
+  },
+  {
+   "topic": "Public comment period",
+   "resolution": "No public comment received in person or via Zoom",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "public comment no public comment was received in person or via zoom."
+  },
+  {
+   "topic": "Empire Athletics Common Victualler License",
+   "resolution": "Approved 4-0",
+   "tags": [
+    "licensing",
+    "business"
+   ],
+   "quote": "motion by chair nuzzolo to approve the common victualler license application for empire athletics located at 308 massachusetts avenue. seconded by vice-chair amanda moore. call for vote: four-aye. the motion passed unanimously (4-0-0)."
+  },
+  {
+   "topic": "Fire Chief Patrick Sullivan retirement acknowledgment",
+   "resolution": "Retirement effective November 6, 2026 acknowledged; formal acknowledgment to be scheduled",
+   "tags": [
+    "personnel",
+    "fire-department"
+   ],
+   "quote": "town manager warren-dyment shared that fire chief patrick sullivan, after 42 years of service, has submitted notification of his intent to retire effective november 6, 2026."
+  },
+  {
+   "topic": "Kimberly Gauvin appointment as Payroll and Benefits Coordinator",
+   "resolution": "Ratified 4-0",
+   "tags": [
+    "personnel",
+    "appointment"
+   ],
+   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of kimberly gauvin as payroll and benefits coordinator. seconded by vice-chair moore. call for vote: four-aye. the motion passed unanimously (4-0-0)."
+  },
+  {
+   "topic": "FY27 Budget preparation",
+   "resolution": "Preliminary budget nearing completion; shortfall exceeding $3,000,000 noted; will be presented to Finance Committee February 19",
+   "tags": [
+    "budget",
+    "finance"
+   ],
+   "quote": "the preliminary fy27 budget is nearing completion and will be presented to the finance committee on thursday, february 19. the town manager cautioned that the budget will not be balanced and will be reliant on an override, with the current projected shortfall exceeding $3,000,000."
+  },
+  {
+   "topic": "FY25 close-out",
+   "resolution": "Close-out progressing well; preliminary free cash estimated over $3,000,000; Town Manager to consider contributions to Stabilization Fund",
+   "tags": [
+    "budget",
+    "finance"
+   ],
+   "quote": "the town manager reported that fy25 close-out is progressing well, with an extension through the end of february. revenue and expenditure budgets are balanced, and cash reconciliation is nearly complete. preliminary free cash is estimated at over $3,000,000, attributable in part to a significant school turn-back and strong investment income."
+  },
+  {
+   "topic": "TCP Building wind-down",
+   "resolution": "Food Pantry concerned about timeline; PACC making progress on relocation",
+   "tags": [
+    "operations",
+    "property"
+   ],
+   "quote": "the town manager reported that the food pantry expressed concern about a timeline misunderstanding, they had interpreted the wind-down timeline in calendar year terms rather than fiscal year terms, making the prospect of relocating before the next heating season a substantial challenge."
+  },
+  {
+   "topic": "Regional Dispatch free cash disposition",
+   "resolution": "Administrative Board transferred funds to stabilization and capital account rather than returning to member communities",
+   "tags": [
+    "finance",
+    "operations"
+   ],
+   "quote": "the meeting addressed the disposition of $433,000 in free cash generated by the district. the administrative board declined to return the funds to member communities, opting instead to retain a portion in free cash and transfer the balance to the district's stabilization and capital account, given anticipated assessment increases as grants supporting newer members hudson and sterling expire."
+  },
+  {
+   "topic": "Current staff recruitments",
+   "resolution": "Open positions announced; Cable Advisory Committee formation announced",
+   "tags": [
+    "personnel",
+    "operations"
+   ],
+   "quote": "open positions include staff librarian (young adult department), outreach coordinator, recreation director, special assistant to the assessors, and dietary aide. the town manager also announced the formation of the cable advisory committee, with a public announcement forthcoming later in the week."
+  },
+  {
+   "topic": "Electric range stove declared surplus",
+   "resolution": "Approved 4-0",
+   "tags": [
+    "property",
+    "housekeeping"
+   ],
+   "quote": "motion by chair nuzzolo to declare the electric range stove from the lunenburg adult activity center as surplus property. seconded by vice-chair moore. call for vote: four-aye. the motion passed unanimously (4-0-0)."
+  },
+  {
+   "topic": "FY26 goals and objectives mid-year review",
+   "resolution": "Goals reviewed; several objectives modified; progress affirmed",
+   "tags": [
+    "planning",
+    "goals"
+   ],
+   "quote": "the select board conducted a mid-year review of the fy26 select board and town manager goals and objectives"
+  },
+  {
+   "topic": "Notice of Town Meeting warrant article",
+   "resolution": "Revised language approved specifying notification details and opt-in physical copy provision",
+   "tags": [
+    "warrant",
+    "town-meeting"
+   ],
+   "quote": "the following language revisions were agreed upon: (1) a new sentence specifying that the notification shall include sufficient information to reasonably direct residents to the full text of the warrant; and (2) a sentence affirming that the select board's office shall maintain an opt-in list of residents who wish to receive a physical copy of the warrant mailed to their household at least 14 days prior to town meeting."
+  },
+  {
+   "topic": "300th Anniversary Committee warrant articles",
+   "resolution": "Articles noted as straightforward; presentation at Town Meeting anticipated",
+   "tags": [
+    "warrant",
+    "town-meeting"
+   ],
+   "quote": "two articles were noted, a multi-year allocation of $15,000 and a gift account article, both described as straightforward."
+  },
+  {
+   "topic": "PACC warrant articles",
+   "resolution": "Two articles characterized as standard housekeeping for Enterprise Fund",
+   "tags": [
+    "warrant",
+    "operations"
+   ],
+   "quote": "town manager warren-dyment characterized two annual pacc articles as standard housekeeping related to the enterprise fund, one restoring $31,271.94 to the town general fund and one appropriating $209,000 from expected income for operations."
+  },
+  {
+   "topic": "Trust Fund Commission warrant articles",
+   "resolution": "Two articles noted; bylaws amendment and legal research appropriation; Commission invited to present",
+   "tags": [
+    "warrant",
+    "town-meeting"
+   ],
+   "quote": "two articles were noted. the first would amend the bylaws to allow the select board to disperse trust fund commission funds in the absence of a quorum; the select board acknowledged this is a significant change requiring further deliberation, and the trust fund commission has been invited to present at the next select board meeting."
+  },
+  {
+   "topic": "Open Space Committee formalization",
+   "resolution": "Proposal to formalize as standing committee; chair invited to present",
+   "tags": [
+    "warrant",
+    "town-meeting"
+   ],
+   "quote": "the select board discussed a proposal to formalize the open space committee as a standing committee via bylaw, replacing its current status as an ad hoc advisory body under the planning board."
+  },
+  {
+   "topic": "Appointment Policy",
+   "resolution": "Approved with revision; formal vote deferred to March 3",
+   "tags": [
+    "policy",
+    "procedure"
+   ],
+   "quote": "a formal vote was deferred to the march 3 meeting to allow the full select board to be present, as the chair will be absent and member brian lehtinen was not in attendance."
+  },
+  {
+   "topic": "Legislative earmarks for FY27 state budget",
+   "resolution": "Status discussed; no formal action; deadline end of March",
+   "tags": [
+    "budget",
+    "state-relations"
+   ],
+   "quote": "the select board briefly discussed the status of potential earmark requests. chair nuzzolo noted that the adult activity center ramp does not yet have a cost estimate, which may affect whether it is included."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "Reports from library, MPO, Master Plan, Stormwater, Finance, Capital Planning, and Bylaw Review committees",
+   "tags": [
+    "committees",
+    "operations"
+   ],
+   "quote": "member glenn mcleod reported upcoming attendance at the library board of trustees on thursday and the mpo the following day, and noted that the master plan steering committee is in its final editing phase."
+  },
+  {
+   "topic": "Public comment at end of meeting",
+   "resolution": "John Bowen addressed board on tax rate alternative",
+   "tags": [
+    "public-input",
+    "finance"
+   ],
+   "quote": "john bowen, 162 highland street, addressed the select board. mr. bowen recalled a recommendation he made approximately two years ago suggesting that rather than pursuing overrides, the town consider increasing the tax rate by approximately $1.66 per thousand, which he estimated would generate $5,000,000 annually into the town's coffers."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Meeting adjourned at 8:31 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion by clerk emkey to adjourn at 8:31 pm. seconded by vice-chair moore. call for vote: four-aye. the motion passed (4-0-0)."
+  }
+ ],
+ "tags": [
+  "budget",
+  "finance",
+  "personnel",
+  "warrant",
+  "town-meeting",
+  "licensing",
+  "policy",
+  "procedure",
+  "appointments",
+  "operations",
+  "goals",
+  "planning"
+ ],
+ "dropped_unquoted_by_field": {}
 }

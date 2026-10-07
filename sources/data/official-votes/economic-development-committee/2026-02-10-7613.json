@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "economic-development-committee",
  "meeting_date": "2026-02-10",
  "docid": "7613",
@@ -12,15 +12,147 @@
  },
  "votes": [
   {
-   "motion": "To adjourn",
+   "motion": "to adjourn",
    "moved_by": "Jeanne Dupre",
    "seconded_by": "Judy Dragoslis",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "there was a motion to adjourn by jeanne dupre , seconded by judy dragoslis . roll call vote. jeanne dupre aye, judy dragoslis aye, ana lockwood aye."
+   "quote": "there was a motion to adjourn by jeanne dupre , seconded by judy dragoslis . roll call vote. jeanne dupre aye, judy dragoslis aye, ana lockwood ay",
+   "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
  "note": "",
- "cost_usd": 0.0685514
+ "cost_usd": 0.1352086,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: vice chair ana lockwood, planning board representative matt brenner, member judy dragoslis, member jeanne dupre"
+  },
+  {
+   "name": "Matt Brenner",
+   "role": "Planning Board Representative",
+   "status": "present",
+   "quote": "present members: vice chair ana lockwood, planning board representative matt brenner, member judy dragoslis, member jeanne dupre"
+  },
+  {
+   "name": "Judy Dragoslis",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: vice chair ana lockwood, planning board representative matt brenner, member judy dragoslis, member jeanne dupre"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: vice chair ana lockwood, planning board representative matt brenner, member judy dragoslis, member jeanne dupre"
+  },
+  {
+   "name": "Joeci Gilchrest",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent members: chair joeci gilchrest, member cathy clark, select board representative glen n mcleod"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent members: chair joeci gilchrest, member cathy clark, select board representative glen n mcleod"
+  },
+  {
+   "name": "Glen n McLeod",
+   "role": "Select Board Representative",
+   "status": "absent",
+   "quote": "absent members: chair joeci gilchrest, member cathy clark, select board representative glen n mcleod"
+  },
+  {
+   "name": "Stephen Wallace",
+   "role": "Director of Planning and Economic Development",
+   "status": "present",
+   "quote": "the new director of planning and economic development , stephen wallace , was presen",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Amanda Curtis",
+   "role": "Leominster Economic Development Coordinator",
+   "status": "present",
+   "quote": "the leominster economic development coordinator, amanda curtis , was present and provided the committee with information",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "there were no comments from the public.",
+   "tags": []
+  },
+  {
+   "topic": "Introduction from Stephen Wallace",
+   "resolution": "information received",
+   "quote": "the new director of planning and economic development , stephen wallace , was presen",
+   "tags": [
+    "introduction",
+    "economic development",
+    "promotion"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Guest Speaker, Leominster Economic Development Director",
+   "resolution": "information received",
+   "quote": "the leominster economic development coordinator, amanda curtis , was present and provided the committee with information",
+   "tags": [
+    "guest speaker",
+    "marketing",
+    "business promotion"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Update from Planning Board",
+   "resolution": "continued",
+   "quote": "matt brenner stated the old auto lot located at 30 summer street may be turned into a multi-story indoor storage facility.",
+   "tags": [
+    "planning",
+    "development",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "BYOB discussion",
+   "resolution": "no action",
+   "quote": "following their conversation, they concluded that no special permission is required if the business is not a restaurant.",
+   "tags": [
+    "BYOB",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Business Overview from Cathy Clark",
+   "resolution": "deferred",
+   "quote": "cathy clark was not present, and ana lockwood didn 't receive any email updates",
+   "tags": [
+    "business overview"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "economic development",
+  "planning",
+  "business promotion",
+  "marketing",
+  "zoning",
+  "BYOB policy"
+ ],
+ "dropped_unquoted_by_field": {}
 }

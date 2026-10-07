@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2026-02-24",
  "docid": "7662",
@@ -28,7 +28,7 @@
    "quote": "motion: scott d. second: dan p. to accept the budget proposal for fy27. roll call vote: scott-aye, dan-aye and brett-aye."
   },
   {
-   "motion": "Adjourn at 7:10 pm",
+   "motion": "Adjourn at 7:10pm",
    "moved_by": "Scott D.",
    "seconded_by": "Dan P.",
    "outcome": "passed 3-0",
@@ -37,6 +37,190 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0716884
+ "note": "None",
+ "cost_usd": 0.1413036,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Allan (Chip) Wilson",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guest: allan (chip) wilson"
+  },
+  {
+   "name": "Arthur Katis",
+   "status": "absent",
+   "quote": "absent: arthur katis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bill will set up a meeting with the Select Board for Chip Wilson's interview and appointment vote",
+   "quote": "bill noted he would set up a short joint meeting with the select board for an interview and a vote to appoint chip."
+  },
+  {
+   "decision": "Commissioners will discuss the Sewer Connection Charge Policy at the March 10 meeting",
+   "quote": "andrew said they could not discuss it as it was not on the agenda but asked the commissioners to let him know if they have any edits. then they will discuss the policy at the meeting on 3/10."
+  },
+  {
+   "decision": "Commissioners agreed to the Select Board's suggestion of a joint Sewer & Stormwater Commission",
+   "quote": "the select board suggested having a joint sewer & stormwater commission and the commissioners agreed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY27 Capital Plan",
+   "what_was_recorded": "Capital repairs budgeted at $200K",
+   "figures_as_printed": [
+    "$200K"
+   ],
+   "quote": "they put in $200k for the capital plan for a few big repairs."
+  },
+  {
+   "topic": "FY27 Revenue and deficit estimates",
+   "what_was_recorded": "Original revenue estimate of $1.2 million with projected deficit of $200,000 before rate adjustments",
+   "figures_as_printed": [
+    "$1.2 million",
+    "$200,000"
+   ],
+   "quote": "they originally estimated revenues at $1.2 million but when they did all the calculations, there would be a deficit of about $200,000."
+  },
+  {
+   "topic": "FY27 Minimum charge rate increase",
+   "what_was_recorded": "Proposed minimum charge increase to help balance the FY27 budget",
+   "figures_as_printed": [
+    "$133",
+    "$139"
+   ],
+   "quote": "they are suggesting a small increase on the minimum charge from $133 to $139."
+  },
+  {
+   "topic": "FY27 Regular user rate increase",
+   "what_was_recorded": "Regular users proposed 16% rate increase projected to generate $26K surplus",
+   "figures_as_printed": [
+    "$15.85",
+    "$18.38",
+    "$26K"
+   ],
+   "quote": "the regular users would have a 16% increase - $15.85 to $18.38 - which would give a surplus of $26k."
+  },
+  {
+   "topic": "Stormwater Utility annual charge",
+   "what_was_recorded": "Proposed annual charge for single-family dwellings in new Stormwater Utility; businesses would pay higher rate",
+   "figures_as_printed": [
+    "$100/year"
+   ],
+   "quote": "single family dwellings would be charged $100/year and businesses will have a higher rate."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes (2/12/26)",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "procedural"
+   ],
+   "quote": "motion: scott d. second: dan p. to accept the minutes of 2/12/26. roll call vote: dan-aye, scott-aye and brett-aye."
+  },
+  {
+   "topic": "Prospective Commission member (Allan (Chip) Wilson)",
+   "resolution": "interview to be scheduled with Select Board",
+   "tags": [
+    "appointments",
+    "governance"
+   ],
+   "quote": "allan (chip) wilson was introduced as a potential commission member. chip asked for a run-down of typical sewer commission business. brett summarized that the commission discusses rates, needed repairs to the system, and addresse",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "FY27 Sewer Budget and User Rates",
+   "resolution": "approved",
+   "tags": [
+    "budget",
+    "rates",
+    "FY27"
+   ],
+   "quote": "motion: scott d. second: dan p. to accept the budget proposal for fy27. roll call vote: scott-aye, dan-aye and brett-aye."
+  },
+  {
+   "topic": "FY26 Delinquency Rate",
+   "resolution": "reported",
+   "tags": [
+    "financial"
+   ],
+   "quote": "delinquency rate fy26 - andrew explained the figures on the delinquency rate form, noting that the rate is not as bad as last year."
+  },
+  {
+   "topic": "Sewer/Stormwater Utility establishment",
+   "resolution": "going to May Town Meeting ballot; public information meeting 3/5",
+   "tags": [
+    "stormwater",
+    "utilities",
+    "governance"
+   ],
+   "quote": "bill reported the stormwater task force has been working to establish a stormwater utility. to cover overhead, single family dwellings would be charged $100/year and businesses will have a highe",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Sewer Connection Charge Policy",
+   "resolution": "continued to 3/10 meeting",
+   "tags": [
+    "policy",
+    "governance"
+   ],
+   "quote": "brett asked about the sewer connection charge policy draft that andrew sent out. andrew said they could not discuss it as it was not on th",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "sewer",
+  "budget",
+  "rates",
+  "FY27",
+  "stormwater",
+  "utilities",
+  "governance",
+  "appointments"
+ ],
+ "dropped_unquoted_by_field": {}
 }

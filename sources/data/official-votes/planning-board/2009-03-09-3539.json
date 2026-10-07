@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-03-09",
  "docid": "3539",
@@ -12,24 +12,228 @@
  },
  "votes": [
   {
-   "motion": "grant three year extension for Emerald Place at Lake Whalom",
+   "motion": "Approve the minutes of the prior meeting, signed 2-23-09.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Halloran",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "signed 2-23-09, motion, mr. saiia, second, mr. hal loran, motion passed",
+   "quote_taken_from_text": true
+  },
+  {
+   "motion": "Grant the three year extension for Emerald Place at Lake Whalom.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Halloran",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "the planning board voted to grant the three year extension. motion made, mr. s aiia, second, mr. halloran. vote was 4-0 with one person absent",
-   "quote_taken_from_text": true
+   "quote": "the planning board voted to grant the three year extension."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn, mr. saiia, second, mr. bodkin jr ., motion passed"
+   "quote": "motion to adjourn, mr. saiia, second, mr. bodkin jr ., motion passed."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR artifacts present in original text (spacing errors in names in roll call, e.g. \"Rob ert J. Saiia\"), but vote records are legible. No missing pages or unreadable votes.",
- "cost_usd": 0.1032305
+ "dropped_unquoted": 0,
+ "note": "Text is a machine extraction of the minutes with font-glyph codes in the page-1 header (/U76/U85... etc.) and many mid-word spaces (e.g. \"Rob ert\", \"te rm\", \"discu ssed\"). Quotes avoid those broken spans, and names are written cleaned (Robert J. Saiia) though the text prints \"Rob ert\". Only three motions are recorded: minutes approval, Emerald Place extension (printed 4-0 with one person absent, while five members are listed present, so one member's position is not recorded), and adjournment. Other items are \"consensus\" or \"shall be\" directions without a recorded vote and are listed as decisions. No public comment section is printed. No dollar figures appear; the budget items are discussion of assessment fees and the DHCD stimulus program without amounts.",
+ "cost_usd": 0.015722470000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, chair, james a. halloran"
+  },
+  {
+   "name": "James A. Halloran",
+   "role": "Board member (role not stated)",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Board member (role not stated)",
+   "status": "present",
+   "quote": "rob ert j. saiia, thomas w. bodkin, jr."
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Board member (role not stated)",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., marion m. bens on"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. bens on, planning director"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Board member (role not stated)",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consensus that a 43D bylaw can be presented, if the Board wishes, following the 43D site meetings.",
+   "quote": "consensus is that a 43d bylaw can be"
+  },
+  {
+   "decision": "Make the Select Board aware of the Board's interest in the future of underground wiring, and discuss underground wiring availability in Lunenburg with the service provider.",
+   "quote": "the select board should be made aware of the interest."
+  },
+  {
+   "decision": "Put a place holder on the Warrant for the outlying district dimension change (40,000 to 60,000 sq. ft.) and discuss further.",
+   "quote": "on the warrant and discuss further."
+  },
+  {
+   "decision": "Mr. Saiia to be presented to the caucus by the Planning Board for a second term.",
+   "quote": "shall be presented to the caucus by the planning board"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School regionalization assessment fees",
+   "what_was_recorded": "Mr. Halloran reported on the assessment/budget report noting the assessment fees for each town; the data is on file in the Planning Office.",
+   "quote": "noting the assessment fees for each town.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "DHCD Stimulus program funding for 40B projects (Tri-Town Landing)",
+   "what_was_recorded": "Minutes note Great Bridges is working with DHCD on the Stimulus program to fund the 40B projects; no dollar figure is printed.",
+   "quote": "on the stimulus program to fund the 40d",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "signed 2-23-09, motion, mr. saiia, second, mr. hal loran, motion passed",
+   "tags": [
+    "minutes"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "School Regionalization Planning Committee report",
+   "resolution": "no action (report received)",
+   "quote": "mr. halloran reported, board members given copies",
+   "tags": [
+    "regionalization",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Caucus and warrant articles",
+   "resolution": "Mr. Saiia to be presented to caucus for a second term",
+   "quote": "shall be presented to the caucus by the planning board",
+   "tags": [
+    "warrant",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "43D site and 43D bylaw",
+   "resolution": "consensus: 43D bylaw may be presented after site meetings",
+   "quote": "consensus is that a 43d bylaw can be",
+   "tags": [
+    "43D",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Underground wires",
+   "resolution": "consensus: discuss with service provider; Select Board to be informed",
+   "quote": "the select board should be made aware of the interest.",
+   "tags": [
+    "utilities",
+    "underground wiring"
+   ]
+  },
+  {
+   "topic": "Emerald Place at Lake Whalom extension",
+   "resolution": "approved: three year extension granted, 4-0",
+   "quote": "the planning board voted to grant the three year extension.",
+   "tags": [
+    "subdivision",
+    "extension",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Tri-Town Landing water and sewer",
+   "resolution": "no action (status reported)",
+   "quote": "has a verbal agreement with fitchburg on water and sewer",
+   "tags": [
+    "water",
+    "sewer",
+    "40B",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Master planning: outlying district lot size",
+   "resolution": "consensus: place holder on the Warrant; discuss further",
+   "quote": "on the warrant and discuss further.",
+   "tags": [
+    "master plan",
+    "zoning",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Aro Estates plan",
+   "resolution": "no action (plan presented; technical meeting scheduled March 12, 2009)",
+   "quote": "director presented plan submitted by o'brien homes.",
+   "tags": [
+    "subdivision",
+    "environmental impact"
+   ]
+  },
+  {
+   "topic": "CVS, Electric Avenue status",
+   "resolution": "no action (status reported)",
+   "quote": "report from cvs shows that the structure is",
+   "tags": [
+    "development status",
+    "construction"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:45 PM",
+   "quote": "motion to adjourn, mr. saiia, second, mr. bodkin jr ., motion passed.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "master plan",
+  "43D",
+  "40B",
+  "subdivision",
+  "Emerald Place",
+  "Tri-Town Landing",
+  "Aro Estates",
+  "CVS",
+  "underground wiring",
+  "school regionalization",
+  "warrant articles",
+  "sewer",
+  "water"
+ ],
+ "dropped_unquoted_by_field": {}
 }

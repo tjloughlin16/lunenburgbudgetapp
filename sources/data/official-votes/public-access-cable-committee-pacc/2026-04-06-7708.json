@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2026-04-06",
  "docid": "7708",
@@ -25,10 +25,221 @@
    "seconded_by": "B. Vienneau",
    "outcome": "passed",
    "procedural": true,
-   "quote": "meeting adjourned at 7:21 pm • (f. beall, 2nd b. vienneau) - passed)"
+   "quote": "(f. beall, 2nd b. vienneau) - passed)"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.062274399999999994
+ "dropped_unquoted": 1,
+ "note": "Minutes are clear and complete. All votes recorded with outcomes. Budget figures and operational updates documented.",
+ "cost_usd": 0.0966726,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, faith beall"
+  },
+  {
+   "name": "Brian Vienneau",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, faith beall"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, faith beall"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "steve archambault, excused"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "manager: jo toale"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Studio space lease cost increase",
+   "what_was_recorded": "New studio space lease cost will be $12,000 per year instead of previous $6,000",
+   "figures_as_printed": [
+    "$12,000",
+    "$6,000"
+   ],
+   "quote": "the new studio space lease will be $12,000 instead of $6,000"
+  },
+  {
+   "topic": "Bartholomew investment value decrease",
+   "what_was_recorded": "Investment value from Bartholomew dropped from $35,000 to $20,000",
+   "figures_as_printed": [
+    "$35,000",
+    "$20,000"
+   ],
+   "quote": "the investment value from bartholmew dropped from $35,000 to $20,000"
+  },
+  {
+   "topic": "Comcast agreement legal fees",
+   "what_was_recorded": "Legal fees for new Comcast agreement will be around $12,000 total, split between 2 years at $6,000 each",
+   "figures_as_printed": [
+    "$12,000",
+    "$6,000"
+   ],
+   "quote": "the legal fees for the new comcast agreement will be around $12,000 and will be split between 2 years at $6,000 each"
+  },
+  {
+   "topic": "CASTUS system upgrade cost",
+   "what_was_recorded": "Total cost for CASTUS upgrade is $34,895",
+   "figures_as_printed": [
+    "$34,895"
+   ],
+   "quote": "the total for the castus upgrade is $34,895"
+  },
+  {
+   "topic": "CASTUS monthly maintenance fee",
+   "what_was_recorded": "Monthly maintenance fee for CASTUS system is $1,795",
+   "figures_as_printed": [
+    "$1,795"
+   ],
+   "quote": "the monthly maintenance fee is $1,795"
+  },
+  {
+   "topic": "Committee balance",
+   "what_was_recorded": "Current balance reported as $1,077,340.59",
+   "figures_as_printed": [
+    "$1,077,340.59"
+   ],
+   "quote": "balance $1,077,340.59"
+  },
+  {
+   "topic": "Closed captioning plan",
+   "what_was_recorded": "Current plan for 500 hours for closed captioning, but may need to increase due to volume of meetings",
+   "figures_as_printed": [
+    "500"
+   ],
+   "quote": "we currently have a plan for 500 hours for closed captioning, but that may need to go up due to the volume of meetings"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Prior minutes approval",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "motion to accept 3/02/2026 minutes as amended • (f. beall, 2nd b. vienneau), passed."
+  },
+  {
+   "topic": "Storage space update",
+   "resolution": "reported",
+   "tags": [
+    "facilities",
+    "storage"
+   ],
+   "quote": "storage space update: we have storage in the town hall, it is a bit tight but it will work"
+  },
+  {
+   "topic": "Network switch replacement",
+   "resolution": "reported",
+   "tags": [
+    "equipment",
+    "technology"
+   ],
+   "quote": "the network switch was failing and needs to be replaced, currently borrowing one from ockers"
+  },
+  {
+   "topic": "Studio space relocation",
+   "resolution": "in progress",
+   "tags": [
+    "facilities",
+    "studio"
+   ],
+   "quote": "the studio space will be packed up by the end of april with storage in the eagle house, still awaiting final confirmation."
+  },
+  {
+   "topic": "Comcast franchise fee",
+   "resolution": "received",
+   "tags": [
+    "revenue",
+    "comcast"
+   ],
+   "quote": "we have received the franchise fee from comcast but it has not been posted yet"
+  },
+  {
+   "topic": "CASTUS system upgrade",
+   "resolution": "in progress",
+   "tags": [
+    "technology",
+    "programming",
+    "closed captioning"
+   ],
+   "quote": "working on the castus quote, jo met with robert haigh 04/03 • balance $1,077,340.59 • program analysis: o",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Local programming analysis",
+   "resolution": "reported",
+   "tags": [
+    "programming",
+    "castus"
+   ],
+   "quote": "80% local programming. up to 112 programs - 90 are local"
+  },
+  {
+   "topic": "PACC policy update",
+   "resolution": "no updates",
+   "tags": [
+    "policy"
+   ],
+   "quote": "pacc policy update: • no current updates"
+  },
+  {
+   "topic": "Master plan",
+   "resolution": "no updates",
+   "tags": [
+    "planning"
+   ],
+   "quote": "master plan: • no current updates"
+  },
+  {
+   "topic": "Cable advisory",
+   "resolution": "no updates",
+   "tags": [
+    "cable"
+   ],
+   "quote": "cable advisory: • no current updates"
+  },
+  {
+   "topic": "TCPassios studio space closure",
+   "resolution": "reported",
+   "tags": [
+    "facilities",
+    "studio"
+   ],
+   "quote": "tcpassios is closing as of june 30, 2026"
+  }
+ ],
+ "tags": [
+  "PACC",
+  "cable committee",
+  "studio space",
+  "CASTUS upgrade",
+  "Comcast agreement",
+  "programming",
+  "closed captioning",
+  "facilities"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

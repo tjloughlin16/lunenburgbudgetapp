@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2026-01-08",
  "docid": "7593",
@@ -12,39 +12,86 @@
  },
  "votes": [
   {
-   "motion": "approve October 20 meeting minutes",
+   "motion": "Approve minutes for October 20 meeting",
    "moved_by": "Sculimbrene",
-   "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "passed 4-0",
    "procedural": true,
    "quote": "motion to approve minutes for october 20 meeting minutes, by member sculimbrene a. sanderson aye, lockwood aye, lloyd aye, sculimbrene aye; motion approved"
   },
   {
-   "motion": "approve November meeting minutes",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Approve minutes for November",
+   "outcome": "passed 4-0",
    "procedural": true,
    "quote": "motion to approve minutes for november a. sanderson aye, lockwood aye, lloyd aye, sculimbrene aye; motion approved"
   },
   {
-   "motion": "approve December 13 meeting minutes",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Approve minutes for December 13 meeting",
+   "outcome": "passed 4-0",
    "procedural": true,
    "quote": "motion to approve minutes for december 13 meeting a. sanderson aye, lockwood aye, lloyd aye, sculimbrene aye; motion approved"
   },
   {
-   "motion": "send letter regarding 50 Main Street as drafted, subjected to legal review no later than Jan 20, 2026",
+   "motion": "Send letter as drafted, subjected to legal review no later than Jan 20, 2026",
    "moved_by": "Sculimbrene",
    "seconded_by": "Sanderson",
-   "outcome": "passed",
+   "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion to send letter as drafted, subjected to legal review no later than jan 20, 2026 by member sculimbrene, seconded by sanderson 1. jen aye; lockwood aye: lloyd aye; sculimbrene aye; motion"
+   "quote": "motion to send letter as drafted, subjected to legal review no later than jan 20, 2026 by member sculimbrene, seconded by sanderson 1. jen aye; lockwood aye: lloyd aye; sculimbrene aye; motion approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All four members voted aye on each motion; no abstentions or oppositions recorded. Vote 2 and 3 do not name the motion mover in the minutes. Vote 4 names the mover and seconder explicitly.",
- "cost_usd": 0.14403739999999998
+ "note": "\"\"",
+ "cost_usd": 0.1271466,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, lockwood, sanderson"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, lockwood, sanderson"
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, lockwood, sanderson"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, lockwood, sanderson"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "50 Main Street letter to owner",
+   "resolution": "approved",
+   "tags": [
+    "preservation",
+    "property",
+    "letter",
+    "legal-review"
+   ],
+   "quote": "50 main street a. letter to owner has been drafted by member lockwood"
+  }
+ ],
+ "tags": [
+  "preservation-district",
+  "minutes-approval",
+  "property",
+  "correspondence"
+ ],
+ "dropped_unquoted_by_field": {}
 }

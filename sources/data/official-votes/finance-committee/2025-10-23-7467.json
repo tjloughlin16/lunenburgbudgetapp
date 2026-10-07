@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-10-23",
  "docid": "7467",
@@ -12,23 +12,355 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from September 25, 2025, and October 9, 2025",
+   "motion": "Approve the minutes of September 25, 2025 and October 9, 2025.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve minutes from september 25, 2025, and october 9, 2025 by ana lockwood, seconded by tom gray. roll call vote. jay simeone aye, ana lockwood aye, tom gray aye, chris menard aye."
+   "quote": "there was a motion to approve minutes from september 25, 2025, and october 9, 2025 by ana lockwood, seconded by tom gray. roll call vote. jay simeone aye"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray. roll call vote. jay simeone aye, ana lockwood aye, tom gray aye, chris menard aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record discussion of fourteen warrant articles for a Special Town Meeting but no votes on those articles. Only procedural votes (minutes approval and adjournment) are recorded.",
- "cost_usd": 0.0650314
+ "note": "Text is clean extracted text with no scan indication. Quotes have whitespace collapsed to single spaces. The minutes never state Jennifer Warren-Dyment's title on a line of its own; 'Town Manager' is taken from the report heading and the 'Town Manager states' attributions, so her role is an inference from context. Katie McKenna, Steve Barrett, Eric Kinsherf, Nancy O'Rourke and Ezekiel Ayala are named only as subjects of the Town Manager's report and did not take part, so they are not listed as attendees. Vote tallies are not printed as totals; each roll call records four 'aye' entries, and the outcome is recorded as 'passed' without a count. The minutes motion names September 25 and October 9, 2025, but the agenda heading reads 'Minutes – July 8 (Tri-Board)'; the discrepancy is in the printed text. No votes were recorded on any warrant article: articles were described and discussed only, so no warrant-article votes appear in the votes list.",
+ "cost_usd": 0.01994977,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member ana lockwood, committee member jay simeone (zoom)"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member ana lockwood, committee member jay simeone (zoom)"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member ana lockwood, committee member jay simeone (zoom)"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "remote",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member ana lockwood, committee member jay simeone (zoom)"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent members: vice chair jean russell, committee member tanya dall, committee member mike rupp"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "absent",
+   "quote": "absent members: vice chair jean russell, committee member tanya dall, committee member mike rupp"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "absent",
+   "quote": "absent members: vice chair jean russell, committee member tanya dall, committee member mike rupp"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jennifer warren-dyment reports that ezekiel ayala's last day was monday, and katie mckenna started as finance director the same day."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee plans to collaborate with the new Finance Director to bring the FY26 first quarter reports up to standard.",
+   "quote": "the committee plans to collaborate with katie mckenna, once she is fully oriented, to bring the reports up to the desired standard."
+  },
+  {
+   "decision": "The Town Manager will poll Committee members on availability to schedule the next Tri Board meeting.",
+   "quote": "the town manager will poll committee members regarding their availability to schedule the next tri board meeting."
+  },
+  {
+   "decision": "The Town Manager will provide the Committee an exact raise-and-appropriate number for Article 2.",
+   "quote": "jennifer warren-dyment will get an exact number to the committee."
+  },
+  {
+   "decision": "The Town Manager will check the total budget for the PEG Access and Cable operation (Article 5).",
+   "quote": "jennifer warren-dyment will check but notes their operation relies on retained earnings."
+  },
+  {
+   "decision": "The Town Manager will inquire whether the Article 7 consultant engagement includes Monty Tech.",
+   "quote": "jennifer warren dyment is unsure but will inquire."
+  },
+  {
+   "decision": "The Town Manager will obtain the exact cost of printing and mailing warrant booklets (Article 12).",
+   "quote": "jennifer warren-dyment estimates it to be around $7,000 to $8,000 but will get the exact number."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Manager transition contract",
+   "what_was_recorded": "The town has a contract with a CPA for transitional finance services; no dollar figure printed.",
+   "quote": "the town has a contract with cpa, eric kinsherf, who will be providing transitional services to the town for the finance direction transition.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Tax classification hearing",
+   "what_was_recorded": "The hearing does not increase or reduce the tax levy but determines how the levy is apportioned; no figure printed.",
+   "quote": "this hearing does not increase or reduce the tax levy but will determine how the levy will be apportioned.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY26 first quarter actuals vs budget",
+   "what_was_recorded": "Committee said the FY26 first quarter budget-versus-actuals reports need improvement; no figure printed.",
+   "quote": "chris menard noted that the fy26 first quarter reports require improvement.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Article 3: prior-year bill",
+   "what_was_recorded": "An FY25 bill from Heywood Hospital, to be paid under authorization for a prior fiscal year's expenses.",
+   "quote": "at the time of printing there is a bill from fy25 from heywood hospital in the amount of $266.00.",
+   "figures_as_printed": [
+    "$266.00"
+   ]
+  },
+  {
+   "topic": "Article 4: special projects",
+   "what_was_recorded": "A request for stormwater consulting under the special projects article.",
+   "quote": "there is a request for $42,900 for stormwater consulting.",
+   "figures_as_printed": [
+    "$42,900"
+   ]
+  },
+  {
+   "topic": "Article 5: PEG Access enterprise transfer",
+   "what_was_recorded": "Transfer of retained grants from the PEB Access and Cable enterprise fund; Committee asked about the total budget, and the Town Manager noted the operation relies on retained earnings.",
+   "quote": "transfer the sum of $35,271 from retained grants of the peb access and cable related enterprise fund",
+   "figures_as_printed": [
+    "$35,271"
+   ]
+  },
+  {
+   "topic": "Article 6: cemetery transfer",
+   "what_was_recorded": "Transfer from Cemetery Sale of Lots Funds to the Cemetery Capital Article Fund.",
+   "quote": "transfer the sum of $10,000 from the cemetery sale of lots funds to the cemetery capital article fund.",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "Article 7: capital estimating consultants",
+   "what_was_recorded": "Raise and appropriate, or transfer from available funds, for consultants on capital estimations.",
+   "quote": "the sum of $50,000 for the engagement of one or more consultant(s) to assist with capital estimations",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Article 8: special education reserve fund",
+   "what_was_recorded": "Proposed reserve fund to pay unbudgeted special education, out-of-district tuition or transportation costs without further appropriation; no figure printed.",
+   "quote": "establish a special education reserve fund to be utilized in the upcoming fiscal years, to pay, without further appropriation",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Article 9: circuit breaker deferral",
+   "what_was_recorded": "Deferral of property tax for eligible seniors would require the overlay to increase to cover the funding; no figure printed.",
+   "quote": "jennifer warren- dyment states the overlay would need to increase to cover funding.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Article 10: Town Hall access easement",
+   "what_was_recorded": "Town Manager stated there is no financial impact.",
+   "quote": "jennifer warren-dyment states there is no financial impact.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Article 11: Kids Kingdom transfer",
+   "what_was_recorded": "Town Manager stated there is no financial impact.",
+   "quote": "jennifer warren-dyment states there is no financial impact.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Article 12: warrant mailing cost",
+   "what_was_recorded": "Cost of printing and mailing warrant booklets to every household, estimated but not confirmed.",
+   "quote": "jennifer warren-dyment estimates it to be around $7,000 to $8,000 but will get the exact number.",
+   "figures_as_printed": [
+    "$7,000 to $8,000"
+   ]
+  },
+  {
+   "topic": "Article 13: MBTA Communities zoning",
+   "what_was_recorded": "Non-compliance would cost state funding from a variety of grant programs and other initiatives; no figure printed.",
+   "quote": "they will lose state funding from a variety of grant programs and other initiatives.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 4: motion to transfer funds from prior fiscal years' unexpended capital articles",
+   "outcome": "not stated; no vote recorded at this meeting",
+   "quote": "there is a motion under this article to transfer funds from prior fiscal years unexpended capital articles."
+  },
+  {
+   "description": "Article 5: transfer from retained grants of the PEB Access and Cable related Enterprise Fund to the FY26 PEG Access and Cable operation and capital budget",
+   "amount_as_printed": "$35,271",
+   "outcome": "warrant article described; no vote recorded at this meeting",
+   "quote": "transfer the sum of $35,271 from retained grants of the peb access and cable related enterprise fund"
+  },
+  {
+   "description": "Article 6: transfer from Cemetery Sale of Lots Funds to the Cemetery Capital Article Fund",
+   "amount_as_printed": "$10,000",
+   "outcome": "warrant article described; no vote recorded at this meeting",
+   "quote": "transfer the sum of $10,000 from the cemetery sale of lots funds to the cemetery capital article fund."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "general public comment (item 4)",
+   "quote": "there were no comments from the public."
+  },
+  {
+   "topic": "general public comment (item 12)",
+   "quote": "there was no comment from the public."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "informational; public hearing noted for November 13",
+   "quote": "public hearing and initial votes on recommendations for articles will be discussed at the meeting on november 13th.",
+   "tags": [
+    "announcements",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no comment",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager & Finance Director Reports",
+   "resolution": "received; staffing transition and CPA contract reported",
+   "quote": "jennifer warren-dyment reports that ezekiel ayala's last day was monday, and katie mckenna started as finance director the same day.",
+   "tags": [
+    "staffing",
+    "finance director",
+    "transition"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting Warrant (Articles 1-17)",
+   "resolution": "discussed; no votes recorded on any article",
+   "quote": "6. current business a. special town meeting warrant",
+   "tags": [
+    "special town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "FY26 First Quarter Actuals vs Budget",
+   "resolution": "discussed; Committee to work with new Finance Director on reports",
+   "quote": "chris menard noted that the fy26 first quarter reports require improvement.",
+   "tags": [
+    "budget reports",
+    "FY26"
+   ]
+  },
+  {
+   "topic": "Upcoming Tri Board Topics",
+   "resolution": "Town Manager to poll members on scheduling",
+   "quote": "the town manager will poll committee members regarding their availability to schedule the next tri board meeting.",
+   "tags": [
+    "tri-board",
+    "budget calendar"
+   ]
+  },
+  {
+   "topic": "Old Business: Prior Tri-Board Meetings",
+   "resolution": "heading only; no discussion recorded",
+   "quote": "7. old business a. prior tri-board meetings",
+   "tags": [
+    "tri-board"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "there was a motion to approve minutes from september 25, 2025, and october 9, 2025 by ana lockwood, seconded by tom gray.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "discussed; reorganizing and assigning committees proposed for a future meeting",
+   "quote": "there was a conversation noting that some boards/committees have not held meetings lately.",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Actions and Topics for Future Meetings",
+   "resolution": "no action; none identified",
+   "quote": "no further actions or topics were identified for inclusion on upcoming agendas.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Important Dates & Upcoming Meetings",
+   "resolution": "informational",
+   "quote": "b. finance committee - nov 13 (public hearing)",
+   "tags": [
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no comment",
+   "quote": "there was no comment from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:03 PM",
+   "quote": "the meeting closed at 9:03 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "finance staffing transition",
+  "tri-board",
+  "FY26 budget reports",
+  "cemetery",
+  "stormwater",
+  "PEG access",
+  "circuit breaker",
+  "tax classification",
+  "MBTA communities zoning",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-01-27",
  "docid": "7617",
@@ -15,29 +15,418 @@
    "motion": "Adjourn the Select Board meeting",
    "moved_by": "Member Lehtinen",
    "seconded_by": "Vice-Chair Moore",
-   "outcome": "passed 5-0",
+   "outcome": "passed unanimously (5-0-0)",
    "procedural": true,
    "quote": "motion by member lehtinen to adjourn the select board meeting at 9: 29 p.m. seconded by vice-chair moore call for the vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
    "motion": "Adjourn the School Committee meeting",
-   "moved_by": "Vice-Chair Brzoz o ski",
+   "moved_by": "Vice-Chair Brzozoski",
    "seconded_by": "Member Young",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously (4-0-0)",
    "procedural": true,
-   "quote": "motion by vice-chair brzoz o ski to adjourn the school committee meeting at 9:30 p.m. seconded by member young . call for the vote: f our -aye. the motion passed unanimously ( 4 - 0-0)."
+   "quote": "motion by vice-chair brzoz o ski to adjourn the school committee meeting at 9:30 p.m. seconded by member young . call for the vote: f our -aye. the motion passed unanimously ( 4 - 0-0)",
+   "quote_taken_from_text": true
   },
   {
    "motion": "Adjourn the Finance Committee meeting",
    "moved_by": "Member Lockwood",
    "seconded_by": "Member Gray",
-   "outcome": "passed 6-0",
+   "outcome": "passed unanimously (6-0-0)",
    "procedural": true,
-   "quote": "motion by member lockwood to adjourn the finance committee meeting at 9:30 p.m. seconded by member gray . call for the vote: six -aye. the motion passed unanimously ( 6 -0- 0).",
+   "quote": "motion by member lockwood to adjourn the finance committee meeting at 9:30 p.m. seconded by member gray . call for the vote: six -aye. the motion passed unanimously ( 6 -0- 0)",
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 0,
- "note": "Three procedural votes recorded: adjournments of the three separate boards. The bulk of the minutes document discussions of budget drivers, revenue projections, and override options, but no motions on substantive matters were formally voted on during this joint meeting.",
- "cost_usd": 0.11024540000000001
+ "dropped_unquoted": 4,
+ "note": "Minutes are complete and clearly readable. This was a tri-board joint meeting (Finance Committee, School Committee, Select Board) held at Town Hall. Minutes were reviewed and approved by the Select Board on Tuesday June 16, 2026. The meeting was recorded and broadcast live over Lunenburg Public Access channel and Facebook Live.\"",
+ "cost_usd": 0.1456746,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair, Select Board",
+   "status": "present",
+   "quote": "select board members present: chair caesar nuzzolo, vice - chair ama n da moore , clerk renee emkey, member brian lehtinen, member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair, Select Board",
+   "status": "present",
+   "quote": "select board members present: chair caesar nuzzolo, vice - chair ama n da moore , clerk renee emkey, member brian lehtinen, member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk, Select Board",
+   "status": "present",
+   "quote": "select board members present: chair caesar nuzzolo, vice - chair ama n da moore , clerk renee emkey, member brian lehtinen, member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member, Select Board",
+   "status": "present",
+   "quote": "select board members present: chair caesar nuzzolo, vice - chair ama n da moore , clerk renee emkey, member brian lehtinen, member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member, Select Board",
+   "status": "present",
+   "quote": "select board members present: chair caesar nuzzolo, vice - chair ama n da moore , clerk renee emkey, member brian lehtinen, member glenn mcleod"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair, School Committee",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice - chair laura brzozoski, secretary mandy gilman , member emily young"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice-Chair, School Committee",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice - chair laura brzozoski, secretary mandy gilman , member emily young"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Secretary, School Committee",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice - chair laura brzozoski, secretary mandy gilman , member emily young"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Member, School Committee",
+   "status": "present",
+   "quote": "school committee members present: chair anthony sculimbrene, vice - chair laura brzozoski, secretary mandy gilman , member emily young"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Chair, Finance Committee",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice - chair jean russell , clerk tom gray, member tanya dall, member jay simeone , member ana lockwood"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice-Chair, Finance Committee",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice - chair jean russell , clerk tom gray, member tanya dall, member jay simeone , member ana lockwood"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk, Finance Committee",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice - chair jean russell , clerk tom gray, member tanya dall, member jay simeone , member ana lockwood"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Member, Finance Committee",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice - chair jean russell , clerk tom gray, member tanya dall, member jay simeone , member ana lockwood"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member, Finance Committee",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice - chair jean russell , clerk tom gray, member tanya dall, member jay simeone , member ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member, Finance Committee",
+   "status": "present",
+   "quote": "finance committee members present: chair chris menard, vice - chair jean russell , clerk tom gray, member tanya dall, member jay simeone , member ana lockwood"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Town Moderator",
+   "status": "present",
+   "quote": "tri-board moderator: tim murphy, town moderator"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "School Business Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Amy Sabbio",
+   "role": "Teacher, Turkey Hill School",
+   "status": "present",
+   "quote": "a m y s a b b io , a te a c h e r a t t u rk e y h ill, d e s c rib e d h o w h e r p o s itio n"
+  },
+  {
+   "name": "Lynn Marabello",
+   "role": "Teacher",
+   "status": "present",
+   "quote": "l y n n m a ra b e llo , a ls o a te a c h e r d e s c rib e d th e im p a c t"
+  },
+  {
+   "name": "Jennifer Miller",
+   "role": "District employee",
+   "status": "present",
+   "quote": "j e n n ife r m ille r, a 1 7 -y e a r e m p lo y e e o f th e d is tric t, s p o k e"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "District employee",
+   "status": "present",
+   "quote": "m a ry f o y le , a 2 4 -y e a r e m p lo y e e o f l u n e n b u rg s c h o o ls"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tri-Board agreed to hold next joint meeting on Monday, February 9, 2026 at 7:00 PM at the school (Middle/High School)",
+   "quote": "the tri-board agreed to hold its next joint meeting on monday, february 9, 2026 at 7:00 pm, to be held at the school (middle/high school)"
+  },
+  {
+   "decision": "Updated data including FY26 actuals should be shared with all board members",
+   "quote": "updated data including fy26 actuals should be shared with all board members, and that precision in language about staffing trends is important for maintaining public trust"
+  },
+  {
+   "decision": "The town's new Finance Director had started",
+   "quote": "the town manager announced that the town's new finance director had started that day."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY27 Total revenues projection",
+   "what_was_recorded": "Total revenues projected for FY27",
+   "figures_as_printed": [
+    "$51,004,918.00"
+   ],
+   "quote": "total revenues were projected at $51,004,918.00."
+  },
+  {
+   "topic": "FY27 Available funds for appropriation",
+   "what_was_recorded": "Available funds for appropriation after accounting for non-appropriated expenses and state assessments",
+   "figures_as_printed": [
+    "$49,805,800"
+   ],
+   "quote": "available funds for appropriation were estimated at $49,805,800"
+  },
+  {
+   "topic": "FY27 New revenue increase",
+   "what_was_recorded": "New FY27 revenue compared to FY26",
+   "figures_as_printed": [
+    "$1,429,364"
+   ],
+   "quote": "this yielded approximately $1,429,364 in new fy27 revenue"
+  },
+  {
+   "topic": "FY27 School appropriation",
+   "what_was_recorded": "Proportional revenue distribution to schools",
+   "figures_as_printed": [
+    "$762,280",
+    "53.3%"
+   ],
+   "quote": "schools (53.3%) would receive approximately $762,280"
+  },
+  {
+   "topic": "FY27 Town appropriation",
+   "what_was_recorded": "Proportional revenue distribution to town",
+   "figures_as_printed": [
+    "$627,634",
+    "43.9%"
+   ],
+   "quote": "the town (43.9%) approximately $627,634"
+  },
+  {
+   "topic": "FY27 Monty Tech appropriation",
+   "what_was_recorded": "Proportional revenue distribution to Montachusett Regional Vocational Technical School",
+   "figures_as_printed": [
+    "$39,450",
+    "2.76%"
+   ],
+   "quote": "montachusett regional vocational technical school (2.76%) approximately $39,450"
+  },
+  {
+   "topic": "Monty Tech prior year increase",
+   "what_was_recorded": "Monty Tech last year increase rate and amount",
+   "figures_as_printed": [
+    "8.8%",
+    "$117,438"
+   ],
+   "quote": "last year it represented an 8.8% increase, or approximately $117,438"
+  },
+  {
+   "topic": "Health insurance cost increase",
+   "what_was_recorded": "Health insurance projected increase revised due to removal of GLP-one drugs from coverage",
+   "figures_as_printed": [
+    "20%",
+    "8.3%",
+    "14.4%"
+   ],
+   "quote": "health insurance: previously projected at 20%, now revised to an average of 8.3% (trust average) with a high of 14.4%"
+  },
+  {
+   "topic": "Retirement cost increase",
+   "what_was_recorded": "Non-negotiable retirement increase",
+   "figures_as_printed": [
+    "10%",
+    "$240,000"
+   ],
+   "quote": "retirement: a non-negotiable 10% increase of $240,000"
+  },
+  {
+   "topic": "School transportation increase",
+   "what_was_recorded": "School transportation cost increase",
+   "figures_as_printed": [
+    "$230,000"
+   ],
+   "quote": "school transportation: $230,000 increase"
+  },
+  {
+   "topic": "Fourth shift fire department",
+   "what_was_recorded": "Cost for adding fourth shift to Fire Department",
+   "figures_as_printed": [
+    "$350,000"
+   ],
+   "quote": "fourth shift fire department: $350,000"
+  },
+  {
+   "topic": "FY27 deficit from major budget drivers",
+   "what_was_recorded": "Deficit calculated by subtracting major cost increases from new revenue",
+   "figures_as_printed": [
+    "-$615,000"
+   ],
+   "quote": "the town manager projected a deficit of approximately negative $615,000"
+  },
+  {
+   "topic": "FY27 full deficit projection",
+   "what_was_recorded": "Total deficit based on all budget requests received",
+   "figures_as_printed": [
+    "$3,000,000"
+   ],
+   "quote": "the full fy27 deficit, based on all budget requests received to date, is slightly north of $3,000,000"
+  },
+  {
+   "topic": "Recycling program cost growth",
+   "what_was_recorded": "Recycling program costs have grown significantly since COVID",
+   "figures_as_printed": [
+    "$150,000",
+    "$500,000"
+   ],
+   "quote": "the town's recycling program, which she noted had grown from approximately $150,000 at the start of covid to over $500,000"
+  },
+  {
+   "topic": "School choice enrollment revenue decline",
+   "what_was_recorded": "School choice enrollment revenue has declined significantly",
+   "figures_as_printed": [
+    "$500,000",
+    "$112,000"
+   ],
+   "quote": "school choice enrollment revenue, which has declined from approximately $500,000 to $112,000 on the cherry sheet"
+  },
+  {
+   "topic": "Mosquito control program assessment",
+   "what_was_recorded": "Potential elimination of mosquito control program assessment",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "the possibility of eliminating the mosquito control program assessment (approximately $100,000)"
+  },
+  {
+   "topic": "Override tax impact on seniors",
+   "what_was_recorded": "Estimated annual tax increase per single-family home for $3,000,000 override",
+   "figures_as_printed": [
+    "$3,000,000",
+    "$600"
+   ],
+   "quote": "a $3,000,000 override would translate to approximately $600 per year in additional taxes"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Amy Sabbio",
+   "stated_role": "Teacher, Turkey Hill",
+   "topic": "Position restructuring and impact on special education students and MTSS services",
+   "quote": "a m y s a b b io , a te a c h e r a t t u rk e y h ill, d e s c rib e d h o w h e r p o s itio n h a d b e e n c h a n g e d fro m fu ll-tim e fo u rth g ra d e s p e c ia l e d u c a tio n te a c h e r"
+  },
+  {
+   "speaker": "Lynn Marabello",
+   "stated_role": "Teacher",
+   "topic": "Impact of reduced MTSS staffing on classroom teachers and students",
+   "quote": "l y n n m a ra b e llo , a ls o a te a c h e r d e s c rib e d th e im p a c t o f re d u c e d m t s s s ta ffin g o n c la s s ro o m te a c h e rs"
+  },
+  {
+   "speaker": "Jennifer Miller",
+   "stated_role": "17-year employee of the district",
+   "topic": "Staffing and program cuts at high school, administrative reductions, teacher burnout",
+   "quote": "j e n n ife r m ille r, a 1 7 -y e a r e m p lo y e e o f th e d is tric t, s p o k e to th e im p a c t o f s ta ffin g a n d p ro g ra m c u ts"
+  },
+  {
+   "speaker": "Mary Foyle",
+   "stated_role": "24-year employee of Lunenburg schools",
+   "topic": "Historical context of budget crises, school consolidation, employee burden of budget shortfalls",
+   "quote": "m a ry f o y le , a 2 4 -y e a r e m p lo y e e o f l u n e n b u rg s c h o o ls , p ro v id e d h is to ric a l c o n te x t"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order, Pledge of Allegiance, and meeting procedures",
+   "resolution": "Meeting called to order",
+   "tags": [
+    "procedural",
+    "opening"
+   ],
+   "quote": "the meeting was called to order by tim murphy, who served as moderator. he asked everyone to stand and address the flag for the pledge of allegiance."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "Public comment received; no additional requests for second public comment period",
+   "tags": [
+    "public comment",
+    "staffing",
+    "budget"
+   ],
+   "quote": "public c o m m e n t"
+  },
+  {
+   "topic": "Preliminary FY27 Budget Plan Discussions",
+   "resolution": "Tri-Board discussion of revenue projections, budget drivers, deficit estimates, and override structures; no votes taken",
+   "tags": [
+    "FY27",
+    "budget",
+    "deficit",
+    "override",
+    "staffing",
+    "revenue"
+   ],
+   "quote": "preliminary fy27 budget plan discussions"
+  },
+  {
+   "topic": "Important Dates and Upcoming Meetings",
+   "resolution": "Next joint Tri-Board meeting scheduled for February 9, 2026 at 7:00 PM at school",
+   "tags": [
+    "scheduling",
+    "meetings"
+   ],
+   "quote": "important dates & upcoming meetings"
+  }
+ ],
+ "tags": [
+  "tri-board",
+  "FY27 budget",
+  "deficit",
+  "override",
+  "staffing cuts",
+  "school committee",
+  "fire department",
+  "fourth shift",
+  "health insurance",
+  "retirement",
+  "school transportation",
+  "revenue projections",
+  "budget drivers"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 2,
+  "public_comment": 1,
+  "topics": 1
+ }
 }

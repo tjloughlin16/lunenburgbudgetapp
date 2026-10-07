@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-06-11",
  "docid": "7845",
@@ -21,6 +21,112 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "This meeting contained only one recorded vote: the adjournment motion. No votes on substantive matters were taken. Several agenda items (year-end transfers, fiscal policy prioritization) were deferred to future meetings without a vote.",
- "cost_usd": 0.06357739999999999
+ "note": "Chair Chris Menard absent. No budget figures provided in minutes. Year-end transfer documentation was not available; item deferred to next meeting (July 9). No minutes from prior meeting were reviewed. No old business presented.\"",
+ "cost_usd": 0.095189,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: clerk tom gray"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member ana lockwood"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member jay simeone"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member mike rupp"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent member: chair chris menard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Year-end transfer documents will be available for the next meeting",
+   "quote": "the documents needed on this topic were not provided but should be available for the next meeting."
+  },
+  {
+   "decision": "Policies should be reviewed as a group to make recommendations to the Select Board and/or Tri-Board Committee",
+   "quote": "tom gray suggests reviewing policies as a group to then make recommendations to present to the select board and/or the tri-board committee."
+  },
+  {
+   "decision": "Future agenda items scheduled: year-end transfers, Tri-Board, policies, and election/re-organization if needed",
+   "quote": "actions and topics for future meetings - year-end transfers - tri-board - policies - election and re-organization (if needed)"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Year-end transfers",
+   "resolution": "deferred - documents not available",
+   "quote": "the documents needed on this topic were not provided but should be available for the next meeting.",
+   "tags": [
+    "transfers",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Fiscal policies prioritization",
+   "resolution": "discussed - to be reviewed as group",
+   "quote": "prioritization of fiscal policies to be reviewed in future meetings chris menard provided the list below prior to the meeting: - policies on free cash - revenue projections and policies - stabilization accounts - role of capital committee - opeb contributions ",
+   "tags": [
+    "policies",
+    "finance"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Municipal Building Design Committee report",
+   "resolution": "discussed",
+   "quote": "tom gray states the municipal building design committee met and had discussions about the needs of the town for town oưices. ana lockwood asked whether the former car dealership had been considered for oưice space. the option has been discussed, but concerns remain that town hall and the ritter building would be left unused and begin to deteriorate. the primary goal is to improve conditions for residents using town services and for town employees. t",
+   "tags": [
+    "municipal building",
+    "town facilities"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Tri-Board Committee continuation",
+   "resolution": "discussed",
+   "quote": "tom gray also watched the select board and school committee meetings and believes there may be interest in continuing the tri-board committee.",
+   "tags": [
+    "tri-board",
+    "governance"
+   ]
+  }
+ ],
+ "tags": [
+  "finance",
+  "municipal building",
+  "fiscal policies",
+  "transfers",
+  "tri-board",
+  "town facilities"
+ ],
+ "dropped_unquoted_by_field": {}
 }

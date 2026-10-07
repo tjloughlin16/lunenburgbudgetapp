@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2025-10-27",
  "docid": "7480",
@@ -12,15 +12,183 @@
  },
  "votes": [
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Colleen Shapiro",
-   "seconded_by": "Chris Sullivan",
+   "motion": "Adjourn the meeting at 3:59pm.",
+   "moved_by": "C. Shapiro",
+   "seconded_by": "C. Sullivan",
    "outcome": "not stated",
    "procedural": true,
    "quote": "c. shapiro motioned and c. sullivan seconded to adorn at 3:59pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text contains apparent transcription error: \"adorn\" in the adjournment motion likely should be \"adjourn\" based on context (meeting ended at 3:59pm).",
- "cost_usd": 0.0873024
+ "note": "Text extract of a PDF with ligature characters (ﬁ) and curly apostrophes preserved in quotes. Only one motion is recorded (adjournment), with no outcome printed; no other votes, so none are invented. No public comment section speakers are recorded; the guests Anthony Caiozzo and Greg Roy spoke under agenda item 2 and are listed as attendees, not public comment. Anita Schiepers appears in the letterhead only and is not in the attendance line, so she is omitted. The minutes print the adjournment motion as \"adorn\". Page headers read \"page of 31\", \"page of 32\" and \"page of 33\" for pages 1-3, which is inconsistent for a three-page text and was not resolved.",
+ "cost_usd": 0.01508697,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, chris sullivan, marianne mascari, colleen shapiro, facilities director chris ruth."
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, chris sullivan, marianne mascari, colleen shapiro, facilities director chris ruth."
+  },
+  {
+   "name": "Marianne Mascari",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendance: karin menard, chris sullivan, marianne mascari, colleen shapiro, facilities director chris ruth."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendance: karin menard, chris sullivan, marianne mascari, colleen shapiro, facilities director chris ruth."
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "attendance: karin menard, chris sullivan, marianne mascari, colleen shapiro, facilities director chris ruth."
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "Guest (Lunenburg Skate Park)",
+   "status": "present",
+   "quote": "guests: anthony caiozzo and greg roy (lunenburg skate park)"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Guest (Lunenburg Skate Park)",
+   "status": "present",
+   "quote": "guests: anthony caiozzo and greg roy (lunenburg skate park)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A fire feature at the Teen Center's Polar Plunge in November is acceptable provided the group gets Fire Chief permission.",
+   "quote": "k. menard told him as long as they got permission from the fire chief it won't be an issue."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Skate park completion bond amount",
+   "what_was_recorded": "The Chair asked whether the $100,000 bond figure from the last meeting included prevailing wage; the skate park representative said it did.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "k. menard asked if the $100,000 amount mentioned at the last meeting took prevailing wage into consideration."
+  },
+  {
+   "topic": "Contractor estimates for the bond",
+   "what_was_recorded": "The skate park representative reported contractor estimates for the work, which a Commission member thought sounded low.",
+   "figures_as_printed": [
+    "$20,000",
+    "$50,000"
+   ],
+   "quote": "he had reached out to at least ﬁve contractors who provided estimates ranging from $20,000 to $50,000."
+  },
+  {
+   "topic": "Bond split between builder and skate park group",
+   "what_was_recorded": "The skate park representative said the first part of the bonding, which falls to the builder, is around $220,000, and the second part falls to the skate park group.",
+   "figures_as_printed": [
+    "$220,000"
+   ],
+   "quote": "the ﬁrst, around $220,000, would cover the builder and fall to the builder"
+  },
+  {
+   "topic": "Town's $1.5 million bond estimate",
+   "what_was_recorded": "A Commission member asked where the Town Manager got the figures used to justify the $1.5 million bond amount; the Chair said she researched nearby communities' skate parks.",
+   "figures_as_printed": [
+    "$1.5 million"
+   ],
+   "quote": "m. mascari asked where the town manager got the ﬁgures used to justify the $1.5 million bond amount."
+  },
+  {
+   "topic": "Restoration cost",
+   "what_was_recorded": "The Facilities Director said a restoration cost is hard to estimate without knowing when in the process restoration may be triggered; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "c. ruth said it's hard to come up with a number for restoration without knowing at what point in the process it may be triggered."
+  },
+  {
+   "topic": "Turf Field project completion bond",
+   "what_was_recorded": "The Chair cited the Turf Field project, which lacked a completion bond, as a case where the town covered remaining costs after the group ran out of money; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "menard also referenced the turf field project, which lacked a completion bond; when that group ran out of money, the town had to cover the remaining costs."
+  },
+  {
+   "topic": "State earmarks for the project",
+   "what_was_recorded": "A Commission member asked about state earmarks; the skate park representative said none were found. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "m. mascari asked if any state earmarks were available. a. caiozzo said they had already explored that option but found none."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Open Meeting",
+   "resolution": "opened at 3:10pm; no Zoom, not available online",
+   "quote": "k. menard opened the meeting at 3:10pm.",
+   "tags": [
+    "procedural",
+    "meeting open"
+   ]
+  },
+  {
+   "topic": "Skate Park Project",
+   "resolution": "discussed; no vote; skate park group to brainstorm completion bond options",
+   "quote": "k. menard explained that at last week's meeting there were questions about bond requirements and stormwater basins",
+   "tags": [
+    "skate park",
+    "performance bond",
+    "restoration bond",
+    "stormwater basin",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no action; none",
+   "quote": "3. other business matters that may legally come before the commission not known at the time of posting. - none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Board and Public Comment",
+   "resolution": "Chair said a Teen Center fire feature is fine with Fire Chief permission",
+   "quote": "chris sullivan mentioned he had received communication from teen center about having a fire feature at their polar plunge in november.",
+   "tags": [
+    "Teen Center",
+    "fire permit",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion made and seconded to adjourn at 3:59pm; outcome not recorded",
+   "quote": "c. shapiro motioned and c. sullivan seconded to adorn at 3:59pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "skate park",
+  "performance bond",
+  "restoration bond",
+  "stormwater basin",
+  "Marshall Park",
+  "Turf Field",
+  "Teen Center fire permit",
+  "Park Commission",
+  "bonding"
+ ],
+ "dropped_unquoted_by_field": {}
 }

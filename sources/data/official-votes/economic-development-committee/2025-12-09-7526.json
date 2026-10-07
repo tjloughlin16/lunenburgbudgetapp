@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "economic-development-committee",
  "meeting_date": "2025-12-09",
  "docid": "7526",
@@ -12,23 +12,214 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of October 14, 2025",
+   "motion": "Approve the minutes of October 14, 2025.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Cathy Clark",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes of october 14, 2025, by ana lockwood, seconded by cathy clark. joeci gilchrest aye, cathy clark aye, ana lockwood aye, jeanne dupre aye, judy dragoslis aye."
+   "quote": "there was a motion to approve the minutes of october 14, 2025, by ana lockwood, seconded by cathy clark. joeci gilchrest aye, cathy clark aye, ana lockwood aye,"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Cathy Clark",
    "seconded_by": "Jeanne Dupre",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "there was a motion to adjourn by cathy clark, seconded by jeanne dupre. joeci gilchrest aye, cathy clark aye, ana lockwood aye, jeanne dupre aye, judy dragoslis aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0625614
+ "note": "Text extract, not a scan; the readable text is complete. Two motions are recorded with named ayes (five in each case) but no printed tally, so outcome is recorded as \"passed\" rather than a count. The Chair's surname appears as \"Joeci Gilchrest\" in the attendance line and vote roll but as \"Joeci Gilchrist\" in topic 2; the record above uses \"Gilchrest\" throughout. Brian Gingras (Building Commissioner) is named in topic 3 as working on digitization but is not recorded as taking part, so is not listed as an attendee. The minutes print no dollar figures; the only money-adjacent item is the loan-program discussion. Public comment: none recorded, so no speakers. The Select Board representative and Planning Board representative are listed as members present; the minutes do not state whether attendance was by Zoom or in person beyond the header \"Virtual Via Zoom\".",
+ "cost_usd": 0.014359170000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joeci Gilchrest",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair joeci gilchrest, vice chair ana lockwood, planning board representative matt brenner, member cathy clark, member judy dragoslis, member jeanne dupre, select board representative glenn mcleod"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: chair joeci gilchrest, vice chair ana lockwood, planning board representative matt brenner, member cathy clark, member judy dragoslis, member jeanne dupre, select board representative glenn mcleod"
+  },
+  {
+   "name": "Matt Brenner",
+   "role": "Planning Board Representative",
+   "status": "present",
+   "quote": "members present: chair joeci gilchrest, vice chair ana lockwood, planning board representative matt brenner, member cathy clark, member judy dragoslis, member jeanne dupre, select board representative glenn mcleod"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair joeci gilchrest, vice chair ana lockwood, planning board representative matt brenner, member cathy clark, member judy dragoslis, member jeanne dupre, select board representative glenn mcleod"
+  },
+  {
+   "name": "Judy Dragoslis",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair joeci gilchrest, vice chair ana lockwood, planning board representative matt brenner, member cathy clark, member judy dragoslis, member jeanne dupre, select board representative glenn mcleod"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair joeci gilchrest, vice chair ana lockwood, planning board representative matt brenner, member cathy clark, member judy dragoslis, member jeanne dupre, select board representative glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board Representative",
+   "status": "present",
+   "quote": "members present: chair joeci gilchrest, vice chair ana lockwood, planning board representative matt brenner, member cathy clark, member judy dragoslis, member jeanne dupre, select board representative glenn mcleod"
+  },
+  {
+   "name": "Travis Condon",
+   "role": "Director of Public Affairs, North Central Massachusetts Chamber of Commerce",
+   "status": "present",
+   "quote": "director of public affairs, travis condon, and the manager of economic development, sandie cataldo, from the north central massachusetts chamber of commerce were present and provided information."
+  },
+  {
+   "name": "Sandie Cataldo",
+   "role": "Manager of Economic Development, North Central Massachusetts Chamber of Commerce",
+   "status": "present",
+   "quote": "director of public affairs, travis condon, and the manager of economic development, sandie cataldo, from the north central massachusetts chamber of commerce were present and provided information."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "MPSC Implementation postponed; discussion to take place when the Director of Planning and Economic Development position is filled.",
+   "quote": "this topic was postponed and discussion will ideally take place when the director of planning and economic development position is filled."
+  },
+  {
+   "decision": "EDC Bylaw Review postponed until the Planning and Economic Development Director role is filled.",
+   "quote": "the discussion is postponed until the planning and economic development director role is filled."
+  },
+  {
+   "decision": "Next meeting scheduled for January 13th at 5:30 PM.",
+   "quote": "january 13th at 530 pm"
+  },
+  {
+   "decision": "MPSC Implementation and EDC Bylaw Review set as agenda items for the next meeting.",
+   "quote": "agenda items for next meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Small business loan programs (NCMCC lending arm)",
+   "what_was_recorded": "Sandie Cataldo discussed multiple loan programs available to small businesses through the Chamber's lending arm; no dollar figures were printed.",
+   "quote": "sandie cataldo discussed multiple loan programs that are available to small businesses through the lending arm at the chamber of commerce.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no comments",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "NCMCC Regional Presentation/Discussion",
+   "resolution": "presented and discussed; no action",
+   "quote": "ncmcc has a regional economic development plan entitled one north central.",
+   "tags": [
+    "regional economic development",
+    "North Central Massachusetts Chamber of Commerce",
+    "small business loans"
+   ]
+  },
+  {
+   "topic": "Updates from Planning Board",
+   "resolution": "informational; no action",
+   "quote": "matt brenner states there have been upgrades at the ritter memorial building and the building looks more modern.",
+   "tags": [
+    "planning board",
+    "permitting",
+    "OpenGov",
+    "Director of Planning and Economic Development"
+   ]
+  },
+  {
+   "topic": "Business overview",
+   "resolution": "informational; no action",
+   "quote": "cathy clark has provided the latest business updates below.",
+   "tags": [
+    "local businesses",
+    "openings",
+    "commercial property"
+   ]
+  },
+  {
+   "topic": "MPSC Implementation",
+   "resolution": "postponed",
+   "quote": "this topic was postponed and discussion will ideally take place when the director of planning and economic development position is filled.",
+   "tags": [
+    "MPSC implementation",
+    "postponed"
+   ]
+  },
+  {
+   "topic": "EDC Bylaw Review",
+   "resolution": "postponed",
+   "quote": "the discussion is postponed until the planning and economic development director role is filled.",
+   "tags": [
+    "EDC bylaw",
+    "postponed"
+   ]
+  },
+  {
+   "topic": "Next meeting schedule",
+   "resolution": "set for January 13th",
+   "quote": "january 13th at 530 pm",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Agenda items for next meeting",
+   "resolution": "listed",
+   "quote": "agenda items for next meeting",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Committee Comment",
+   "resolution": "no comments",
+   "quote": "there were no committee comments.",
+   "tags": [
+    "committee"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "approved",
+   "quote": "there was a motion to approve the minutes of october 14, 2025, by ana lockwood, seconded by cathy clark.",
+   "tags": [
+    "minutes approval"
+   ]
+  }
+ ],
+ "tags": [
+  "economic development",
+  "business openings",
+  "North Central Massachusetts Chamber of Commerce",
+  "small business loans",
+  "planning board",
+  "Ritter Memorial Building",
+  "MPSC implementation",
+  "EDC bylaw review",
+  "postponed items",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

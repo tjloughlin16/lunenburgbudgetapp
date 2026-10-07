@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2026-05-21",
  "docid": "7809",
@@ -12,79 +12,362 @@
  },
  "votes": [
   {
-   "motion": "Elect Robin Venezia as Treasurer, Maia Wentrup as Vice Chair, Laura Boussom as Secretary, and Harry Kubetz as Chair",
-   "moved_by": "Harry Kubetz and Robin Venezia",
-   "seconded_by": "Jana-Lee Balish and Stephanie Trudel",
-   "outcome": "passed unanimously",
+   "motion": "to elect board officers as nominated for Chair, Vice Chair, Treasurer, and Secretary",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed 7-0",
    "procedural": false,
-   "quote": "harry nominated robin for treasurer, and jana-lee seconded. harry nominated maia for vice chair, and jana-lee seconded. harry nominated laura for secretary, and jana-lee seconded. robin nominated harry for chair, and stephanie seconded. the nominations passed unanimously by roll call vote."
+   "quote": "harry nominated robin for treasurer, and jana-lee seconded. harry nominated maia for vice chair, and jana-lee seconded. harry nominated laura for secretary, and jana-lee se",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Accept the subcommittee assignments as agreed",
-   "moved_by": "Robin Venezia",
-   "seconded_by": "Jana-Lee Balish",
-   "outcome": "passed unanimously",
+   "motion": "to accept the subcommittee assignments as agreed",
+   "moved_by": "Robin",
+   "seconded_by": "Jana-Lee",
+   "outcome": "passed 7-0",
    "procedural": false,
    "quote": "robin made a motion to accept the subcommittee assignments as just agreed, and jana-lee seconded. the motion passed by roll call vote."
   },
   {
-   "motion": "Approve the minutes of April 16, 2026, as amended",
-   "moved_by": "Jana-Lee Balish",
-   "seconded_by": "Robin Venezia",
+   "motion": "to approve the minutes as amended",
+   "moved_by": "Jana-Lee",
+   "seconded_by": "Robin",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "jana-lee made a motion to approve the minutes as amended, seconded by robin. the motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Move ahead with using Umbrella software at the lowest filtering level",
-   "moved_by": "Harry Kubetz",
-   "seconded_by": "Robin Venezia",
+   "motion": "to move ahead with using Umbrella software at the lowest filtering level",
+   "moved_by": "Harry",
+   "seconded_by": "Robin",
    "outcome": "passed 5-2",
    "procedural": false,
    "quote": "harry made a motion to move ahead with using umbrella software at the lowest filtering level. robin seconded. the motion passed, 5 to 2, by roll call vote."
   },
   {
-   "motion": "Set filtering at the network level",
-   "moved_by": "Harry Kubetz",
-   "seconded_by": "Jana-Lee Balish",
+   "motion": "to implement filtering at the network level for Umbrella software",
+   "moved_by": "Harry",
+   "seconded_by": "Jana-Lee",
    "outcome": "passed 5-2",
    "procedural": false,
    "quote": "harry made a motion that filtering be at the network level. jana-lee seconded. the motion passed, 5 to 2, by roll call vote."
   },
   {
-   "motion": "Accept the Gift Policy as amended",
-   "moved_by": "Harry Kubetz",
-   "seconded_by": "Robin Venezia",
+   "motion": "to accept the Gift Policy as amended",
+   "moved_by": "Harry",
+   "seconded_by": "Robin",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "harry made a motion to accept the gift policy as amended. robin seconded. the motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Accept the Acceptable Library Use and Code of Conduct Policy as revised",
-   "moved_by": "Harry Kubetz",
-   "seconded_by": "Robin Venezia",
+   "motion": "to accept the Acceptable Library Use and Code of Conduct Policy as revised",
+   "moved_by": "Harry",
+   "seconded_by": "Robin",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "harry made a motion to accept this policy as revised. robin seconded. the vote passed unanimously by roll call vote."
   },
   {
-   "motion": "Solicit additional funding from the Selectboard for a Teen Librarian",
-   "moved_by": "Harry Kubetz",
-   "seconded_by": "Stephanie Trudel",
+   "motion": "to solicit additional funding from the Selectboard for a Teen Librarian",
+   "moved_by": "Harry",
+   "seconded_by": "Stephanie",
    "outcome": "failed 5-1",
    "procedural": false,
    "quote": "harry made a motion to solicit additional funding from the selectboard for a teen librarian. stephanie seconded. the motion failed, 5 to 1, by roll call vote."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Harry Kubetz",
-   "seconded_by": "Robin Venezia",
+   "motion": "to adjourn",
+   "moved_by": "Harry",
+   "seconded_by": "Robin",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "a motion to adjourn was made by harry, seconded by robin. the motion passed unanimously and the meeting was adjourned at 10.55 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes clearly recorded with roll call results. Note on Vote 8: Maia Wentrup lost remote connection and did not vote; the 5-1 count reflects the 6 members present and voting.",
- "cost_usd": 0.1529744
+ "dropped_unquoted": 6,
+ "note": "Complete minutes with clear voting records on all motions. One member (Maia Wentrup) joined remotely and lost connection during the final vote on Teen Librarian funding, resulting in 6 members voting on that motion. Minutes include detailed Director's Report with budget tables and youth services information.\"",
+ "cost_usd": 0.178232,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Muir Haman",
+   "role": "Director",
+   "status": "present",
+   "quote": "members present: muir haman (director)"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board Representative",
+   "status": "present",
+   "quote": "glenn mcleod (select board representative)"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "members remote: maia wentrup"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board will form a Strategic Plan subcommittee at the next meeting and will review consultant proposals",
+   "quote": "we will form a subcommittee at our next meeting. ○ muir will put together a call for proposals for a consultant for us to review at our next meetin",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "The Director will provide a self-evaluation report starting with his next review, including how he has met annual goals and objectives",
+   "quote": "starting with his next review, muir will provide a self-evaluation report which indicates how he has met his annual goals and objectives."
+  },
+  {
+   "decision": "The Director's job description will be added to the New Member file",
+   "quote": "laura asked if the director's job description can be put in the new member file, and muir said he would do that."
+  },
+  {
+   "decision": "The Director will evaluate how the Board can better support him",
+   "quote": "robin suggested that muir evaluate us on how we can better support him. he thought this was a good suggestion."
+  },
+  {
+   "decision": "No payment will be sought from parents for the damaged Bob Cole giraffe sculpture",
+   "quote": "muir did not think the damage was done maliciously and does not want to pursue payment."
+  },
+  {
+   "decision": "The Director will follow up with Police Chief and consider signage for the rainwater garden area",
+   "quote": "muir will follow up with chief thibodeau. muir will also consider temporary signage letting people know that this area is a planned garden ",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "The board will not add liquidity as a primary objective of the Trust Funds policy",
+   "quote": "we decided not to add liquidity as a primary objective, as suggested, because liquidity is adequately addressed in the policy."
+  },
+  {
+   "decision": "The Director will check with the Police Chief and Town Counsel regarding CORI checks for volunteers working with minors",
+   "quote": "harry asked if cori checks should be done on volunteers, especially when they are working with minors. muir will check with the police chief and town counsel."
+  },
+  {
+   "decision": "The board will wait to hear from other town boards before pursuing Teen Librarian funding",
+   "quote": "the other trustees thought there was time to wait and hear from the other boards in town as to what their opinions were about calling a special town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2027 Library Budget",
+   "what_was_recorded": "The library budget for fiscal year 2027 was approved at Town Meeting and represents approximately a 5% decrease from the prior year",
+   "figures_as_printed": [
+    "$598,960.20"
+   ],
+   "quote": "the library budget for fy27 is $598,960.20 per the balanced budget that passed at town meeting on may 2. this is approximately a 5% decrease from last year's budget."
+  },
+  {
+   "topic": "FY2026 Digital Databases Renewal",
+   "what_was_recorded": "Digital databases will be renewed in June 2026 and expensed to Library Materials",
+   "figures_as_printed": [
+    "around 40K"
+   ],
+   "quote": "digital databases will be renewed in june and will be expensed in library materials for around 40k."
+  },
+  {
+   "topic": "Teen Room Enlargement Capital Project",
+   "what_was_recorded": "The town recently completed an enlargement of the Teen Room at the library",
+   "figures_as_printed": [
+    "$120K"
+   ],
+   "quote": "the town just spent $120k to enlarge the teen room, and now we have no librarian to support it and teen programs."
+  },
+  {
+   "topic": "Massachusetts Community Biodiversity Grant Opportunity",
+   "what_was_recorded": "A biodiversity conservation grant opportunity is available with a potential project to create a food forest on library grounds",
+   "figures_as_printed": [
+    "$20",
+    "$150K"
+   ],
+   "quote": "grant amounts are between $20 - $150k. one type of project that would be eligible is a food forest."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Reorganization of the Board",
+   "resolution": "approved",
+   "tags": [
+    "board governance",
+    "elections"
+   ],
+   "quote": "the nominations passed unanimously by roll call vote."
+  },
+  {
+   "topic": "Approval of Minutes from April 16, 2026",
+   "resolution": "approved",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "jana-lee made a motion to approve the minutes as amended, seconded by robin. the motion passed unanimously by roll call vote."
+  },
+  {
+   "topic": "Director's Report - FY2027 Budget",
+   "resolution": "no action",
+   "tags": [
+    "budget",
+    "staffing"
+   ],
+   "quote": "the library budget for fy27 is $598,960.20 per the balanced budget that passed at town meeting on may 2."
+  },
+  {
+   "topic": "Director's Report - Staff Update",
+   "resolution": "approved",
+   "tags": [
+    "staff",
+    "programming",
+    "school partnerships"
+   ],
+   "quote": "all five 5th-grade classes visited the library this week. the last time these visits happened was in 2020."
+  },
+  {
+   "topic": "Director's Report - Technology Update and Cisco Umbrella Discussion",
+   "resolution": "approved",
+   "tags": [
+    "technology",
+    "internet filtering",
+    "network security"
+   ],
+   "quote": "harry made a motion to move ahead with using umbrella software at the lowest filtering level. robin seconded. the motion passed, 5 to 2,",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Director's Report - Building & Maintenance Update",
+   "resolution": "no action",
+   "tags": [
+    "facilities",
+    "maintenance"
+   ],
+   "quote": "new water fountains and bottle fillers are installed and working. the bob cole giraffe sculpture was damaged by two unsupervised young children ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Strategic Plan Discussion",
+   "resolution": "continued",
+   "tags": [
+    "strategic planning",
+    "grants"
+   ],
+   "quote": "our current strategic plan was labeled as fy22 to fy27. since it was a five-year plan, it should have been",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "no action",
+   "tags": [
+    "governance",
+    "handbook review"
+   ],
+   "quote": "we reviewed chapter 6 - personnel, in the mblc trustees handbook."
+  },
+  {
+   "topic": "Conroy Memorial Garden Update",
+   "resolution": "continued",
+   "tags": [
+    "memorial",
+    "gardens"
+   ],
+   "quote": "muir will be picking out a rock from lydia henshaw's yard this week to be picked up by leominster monument for engraving."
+  },
+  {
+   "topic": "Policy Discussion - Gift Policy",
+   "resolution": "approved",
+   "tags": [
+    "policy",
+    "gifts"
+   ],
+   "quote": "harry made a motion to accept the gift policy as amended. robin seconded. the motion passed unanimously by roll call vote."
+  },
+  {
+   "topic": "Policy Discussion - Acceptable Library Use and Code of Conduct",
+   "resolution": "approved",
+   "tags": [
+    "policy",
+    "conduct",
+    "food and beverage"
+   ],
+   "quote": "harry made a motion to accept this policy as revised. robin seconded. the vote passed unanimously by roll call vote."
+  },
+  {
+   "topic": "Policy Discussion - Collection Development",
+   "resolution": "continued",
+   "tags": [
+    "policy",
+    "collection",
+    "legal review"
+   ],
+   "quote": "town counsel suggested changes to our last revision of this policy, so we are reviewing it again. we are making these two suggested changes. - we will",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Policy Discussion - Room Use",
+   "resolution": "continued",
+   "tags": [
+    "policy",
+    "room reservations"
+   ],
+   "quote": "discussion of this policy was deferred to a future meeting."
+  },
+  {
+   "topic": "Policy Discussion - Trust Funds",
+   "resolution": "no action",
+   "tags": [
+    "policy",
+    "investment",
+    "trust funds"
+   ],
+   "quote": "we decided not to add liquidity as a primary objective, as suggested, because liquidity is adequately addressed in the policy."
+  },
+  {
+   "topic": "Friends Update",
+   "resolution": "no action",
+   "tags": [
+    "Friends of the Library",
+    "donations",
+    "fundraising"
+   ],
+   "quote": "the friends voted against having st. pauli place a used clothing collection shed on library grounds."
+  },
+  {
+   "topic": "Board Comments - Biodiversity Grant",
+   "resolution": "approved",
+   "tags": [
+    "grants",
+    "community programs",
+    "sustainability"
+   ],
+   "quote": "robin told us about the massachusetts community biodiversity grant for which she and muir were considering applying. this grant aims to support biodiversi",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Discussion of Teen Librarian Funding Recovery",
+   "resolution": "continued",
+   "tags": [
+    "budget",
+    "staffing",
+    "Teen services"
+   ],
+   "quote": "harry made a motion to solicit additional funding from the selectboard for a teen librarian. stephanie seconded. the motion failed, 5 to 1,",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "Library Board of Trustees",
+  "library operations",
+  "budget",
+  "staffing",
+  "policies",
+  "technology",
+  "programming",
+  "grants",
+  "facilities",
+  "community engagement"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 6
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2009-01-22",
  "docid": "2712",
@@ -12,31 +12,223 @@
  },
  "votes": [
   {
-   "motion": "Approve the prior minutes as amended",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Approve prior meeting minutes as amended",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "unanimously approved",
+   "procedural": true,
    "quote": "minutes were unanimously approved as amended."
   },
   {
    "motion": "Adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "motion made and passed to adjourn meeting at 8:40 p.m."
   },
   {
-   "motion": "Go into Executive Session to discuss Director's Evaluation",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Enter executive session to discuss Director's Evaluation",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "motion made and passed to go into executive session to discuss director's evaluation at 8:41 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded: approval of prior minutes, adjournment, and entry into executive session. No moved-by or seconded-by names stated in any motion.",
- "cost_usd": 0.0856035
+ "note": "\"\"",
+ "cost_usd": 0.1322106,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Amy Sadkin",
+   "role": "Director",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, jeanne raboin (late)"
+  },
+  {
+   "name": "Linda Kennedy",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, jeanne raboin (late)"
+  },
+  {
+   "name": "Deb Chapdelaine",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, jeanne raboin (late)"
+  },
+  {
+   "name": "Mary Ann Sudolnik",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, jeanne raboin (late)"
+  },
+  {
+   "name": "Mike Kelly",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, jeanne raboin (late)"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Trustee, Secretary",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, jeanne raboin (late)"
+  },
+  {
+   "name": "John Mara",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "not attending: john mara"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Fitchburg Public Library decertified; LPL will not lend to decertified library patrons",
+   "quote": "has officially been decertified, lpl will not be lending to them or checking books out to their patrons."
+  },
+  {
+   "decision": "Five thousand dollars from Revolving Fund allocated for library materials",
+   "quote": "$5,000 for library materials from the revolving fund"
+  },
+  {
+   "decision": "Deb will notify Selectmen of trustee vacancy; opening to be posted in Town Hall for 10 days",
+   "quote": "deb will notify the selectmen; opening will be posted in town hall for 10 days"
+  },
+  {
+   "decision": "Policy committee will meet to review Art Exhibit and Patron Customer Service policies",
+   "quote": "policy committee will meet as soon as possible to work on these."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library materials expenditure requirement",
+   "what_was_recorded": "Population dropped below 10,000, requiring library materials expenditure increase to 19% of budget",
+   "figures_as_printed": [
+    "10,000",
+    "19%"
+   ],
+   "quote": "lunenburg's dropped under 10,000 in fy07, meaning that we have to increase our library materials expenditure back to 19%."
+  },
+  {
+   "topic": "Revolving fund allocation",
+   "what_was_recorded": "Five thousand dollars allocated from revolving fund for library materials",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "$5,000 for library materials from the revolving fund"
+  },
+  {
+   "topic": "Old Mutual Account",
+   "what_was_recorded": "Old Mutual Account continues to lose money",
+   "figures_as_printed": [],
+   "quote": "old mutual account continues to lose money."
+  },
+  {
+   "topic": "World Book Encyclopedia",
+   "what_was_recorded": "Cancelled online World Book Encyclopedia subscription due to high cost and low use; purchased new hard copy edition",
+   "figures_as_printed": [],
+   "quote": "she cancelled the online version since its cost was high and had low use."
+  },
+  {
+   "topic": "ICMA grant application",
+   "what_was_recorded": "Grant application completed requesting funds for Computing Like Crazy program at Lunenburg Public Library",
+   "figures_as_printed": [
+    "$54,713"
+   ],
+   "quote": "requesting $54,713 fro the library to implement a \"computing like crazy at the lunenburg public library\" program."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved",
+   "quote": "minutes were unanimously approved as amended.",
+   "tags": [
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "accepted",
+   "quote": "director's report (see director's report for in-depth information)",
+   "tags": [
+    "technology",
+    "staff",
+    "budget",
+    "circulation",
+    "programs",
+    "facilities",
+    "endowment"
+   ]
+  },
+  {
+   "topic": "Fitchburg Public Library decertification",
+   "resolution": "decertified",
+   "quote": "has officially been decertified, lpl will not be lending to them or checking books out to their patrons.",
+   "tags": [
+    "library-policy",
+    "decertification"
+   ]
+  },
+  {
+   "topic": "Ice storm follow-up",
+   "resolution": "discussed, action items assigned",
+   "quote": "amy shows trustees photos of ice storm; she spoke to dan bourgeois about being a more integral, vital part of the community during emergencies.",
+   "tags": [
+    "emergency-response",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Town budget update",
+   "resolution": "pending",
+   "quote": "amy has not received any additional information from kerry.",
+   "tags": [
+    "town-budget"
+   ]
+  },
+  {
+   "topic": "Legislative breakfast planning",
+   "resolution": "scheduled",
+   "quote": "legislative breakfast: will be hosted by lpl on january 20. amy thinks there will be about 38 attendees.",
+   "tags": [
+    "community-outreach",
+    "events"
+   ]
+  },
+  {
+   "topic": "Rich Letarte resignation",
+   "resolution": "accepted",
+   "quote": "rich is resigning from the trustees; sent letter to trustees dated january 15, 2009.",
+   "tags": [
+    "board-governance",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Committee policy review",
+   "resolution": "scheduled",
+   "quote": "policy committee will meet as soon as possible to work on these.",
+   "tags": [
+    "policy",
+    "committees"
+   ]
+  }
+ ],
+ "tags": [
+  "library-operations",
+  "budget",
+  "technology",
+  "staff",
+  "facilities",
+  "community-partnerships",
+  "board-governance"
+ ],
+ "dropped_unquoted_by_field": {}
 }

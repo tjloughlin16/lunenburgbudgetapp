@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2026-03-11",
  "docid": "7691",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes from February",
+   "motion": "approve the meeting minutes from February",
    "moved_by": "Tim Willsmer",
    "seconded_by": "Colleen Shapiro",
    "outcome": "unanimously approved",
@@ -21,7 +21,7 @@
    "quote_taken_from_text": true
   },
   {
-   "motion": "Not exercise the Right of First Refusal for the property at 1083 Northfield Rd",
+   "motion": "not act on exercising the Right of First Refusal (ROFR) for 1083 Northfield Rd",
    "moved_by": "Tim Willsmer",
    "seconded_by": "Chris St. Germain",
    "outcome": "unanimously approved",
@@ -30,16 +30,113 @@
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "adjourn the meeting",
    "moved_by": "Colleen Shapiro",
    "seconded_by": "Chris St. Germain",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "a motion to adjourn the meeting was made by colleen shapiro. ===page 2=== • the motion was seconded by chris st. germain. • the motion pa",
    "quote_taken_from_text": true
+  },
+  {
+   "motion": "approve these minutes from March 11, 2026",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed by roll call vote",
+   "procedural": true,
+   "quote": "minutes approved by roll call vote on 4/8/26"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0726584
+ "note": "\"\"",
+ "cost_usd": 0.11548660000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "At Large",
+   "status": "present",
+   "quote": "ana lockwood - at large"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Parks and Recreation",
+   "status": "present",
+   "quote": "colleen shapiro - parks and recreation"
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "Conservation",
+   "status": "present",
+   "quote": "chris st. germain - conservation"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Planning",
+   "status": "present",
+   "quote": "tim willsmer - planning"
+  },
+  {
+   "name": "Michael Toohill",
+   "role": "Chair",
+   "status": "present",
+   "quote": "michael toohill, chair"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of February Minutes",
+   "resolution": "approved",
+   "quote": "tim willsmer made a motion to approve the meeting minutes from february. • the motion was seconded by colleen shapiro. • the minutes were unanimously appro",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Bylaw Process Update",
+   "resolution": "status reported; process expected to move forward",
+   "quote": "ana lockwood reported that she has not yet received feedback regarding the bylaws. • mike provided an update noting he received positive feedback from the selectboard. • the process is expected to move forw",
+   "tags": [
+    "bylaws",
+    "selectboard"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "ROFR – 1083 Northfield Rd",
+   "resolution": "motion to not act on Right of First Refusal passed",
+   "quote": "tim willsmer made a motion to not act on exercising the right of first refusal (rofr). • the motion was seconded by chris st. germain. • the motion was unanimously appro",
+   "tags": [
+    "rofr",
+    "conservation",
+    "property"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned",
+   "quote": "a motion to adjourn the meeting was made by colleen shapiro. ===page 2=== • the motion was seconded by chris st. germain. • the motion pa",
+   "tags": [
+    "procedural"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "open-space",
+  "rofr",
+  "bylaws",
+  "conservation",
+  "right-of-first-refusal",
+  "property"
+ ],
+ "dropped_unquoted_by_field": {}
 }

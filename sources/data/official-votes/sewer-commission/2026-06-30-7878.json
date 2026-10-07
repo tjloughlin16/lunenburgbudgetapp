@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2026-06-30",
  "docid": "7878",
@@ -12,39 +12,236 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of 6/09/26",
-   "moved_by": "Dan P.",
-   "seconded_by": "Chip W.",
+   "motion": "Accept the minutes of 6/09/26",
+   "moved_by": "Dan Proctor",
+   "seconded_by": "Chip Wilson",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: dan p. second: chip w. to accept the minutes of 6/09/26. roll call vote: arthur-aye, chip-aye, dan-aye, and brett-aye."
+   "quote": "to accept the minutes of 6/09/26. roll call vote: arthur-aye, chip-aye, dan-aye, and brett-aye."
   },
   {
-   "motion": "accept the End of Year Adjustments for FY26",
-   "moved_by": "Scott D.",
-   "seconded_by": "Dan P.",
+   "motion": "Accept the End of Year Adjustments for FY26",
+   "moved_by": "Scott Dall",
+   "seconded_by": "Dan Proctor",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: scott d. second: dan p. to accept the end of year adjustments for fy26. roll call vote: chip-aye, dan-aye, scott-aye, arthur-aye, and brett-aye."
+   "quote": "to accept the end of year adjustments for fy26. roll call vote: chip-aye, dan-aye, scott-aye, arthur-aye, and brett-aye."
   },
   {
-   "motion": "keep the appointed roles the same",
-   "moved_by": "Scott D.",
-   "seconded_by": "Dan P.",
+   "motion": "Keep the appointed roles the same",
+   "moved_by": "Scott Dall",
+   "seconded_by": "Dan Proctor",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: scott d. second: dan p. to keep the appointed roles the same. roll call vote: chip-aye, arthur-aye, dan-aye, scott-aye, and brett-aye."
+   "quote": "to keep the appointed roles the same. roll call vote: chip-aye, arthur-aye, dan-aye, scott-aye, and brett-aye."
   },
   {
-   "motion": "adjourn at 6:41pm",
-   "moved_by": "Dan P.",
-   "seconded_by": "Scott D.",
+   "motion": "Adjourn at 6:41 pm",
+   "moved_by": "Dan Proctor",
+   "seconded_by": "Scott Dall",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: dan p. second: scott d. to adjourn at 6:41pm. roll call vote: arthur-aye, dan-aye, scott-aye, chip-aye, and brett-aye."
+   "quote": "to adjourn at 6:41pm. roll call vote: arthur-aye, dan-aye, scott-aye, chip-aye, and brett-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1158854
+ "note": "\"\"",
+ "cost_usd": 0.12315899999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Chip Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Put out another Invitation to Bid for manhole replacement on Prospect Street near Laurel Lane; have CTE assess timeline; line with epoxy to extend life",
+   "quote": "bill replied no as it was already on the repair list and suggested putting out another invitation to bid to replace that one manhole. at the same time, they could line it with the epoxy so hopefully it would last longer. bill added they have time to address it, but will have cte look at it, to see how much time they have."
+  },
+  {
+   "decision": "Put together new CTE contract and aim to put it out to bid by July 8 for placement by August 27",
+   "quote": "he has put a new contract together with the goal of putting it out to bid by july 8th, so they can have it place for 8/27."
+  },
+  {
+   "decision": "Put out contract language for replacing 3 pressure lines from manhole to property line at 100 Laurel Lane through procurement, to go out for bid by July 8",
+   "quote": "bill reported he is putting out contract language for replacing 3 pressure lines from the manhole to the property line. it is going through procurement at town hall and will also go out for bid by 7/8."
+  },
+  {
+   "decision": "Look at change to by-laws regarding duplex connections; Bill and Andrew will write up language and have Town Counsel review; will discuss at next meeting",
+   "quote": "the commission agreed to look at a change to the by-laws and discussed what it would take to make a change. bill and andrew will write up the language and have town counsel look at it."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Generator repairs FY27",
+   "what_was_recorded": "Generator repairs needed at West Street and Leominster Road pump stations; estimates already received and both are budgeted for FY27",
+   "figures_as_printed": [],
+   "quote": "andrew reported in fy27 they need to do generator repairs at west st. and leominster rd. stations. they already have the estimates and both are in the budget for fy27."
+  },
+  {
+   "topic": "End of Year Adjustments FY26",
+   "what_was_recorded": "Negative adjustment due to 6-week leak at one property negating final quarter readings; property owner paid actual bill",
+   "figures_as_printed": [],
+   "quote": "andrew noted the negative number was high due to the lot with the large 6 week leak which negated the final readings in the past month for the 4th quarter."
+  },
+  {
+   "topic": "Delinquent sewer accounts Q4 FY26",
+   "what_was_recorded": "240 delinquent notices issued for Q4 representing 25 percent delinquency rate for quarter but 11-12 percent for full year",
+   "figures_as_printed": [
+    "240",
+    "25%",
+    "11-12%"
+   ],
+   "quote": "andrew reported 240 delinquent notices went out for about 25% delinquency rate for the quarter but was 11-12 % delinquency for the year."
+  },
+  {
+   "topic": "Connection and betterment fees 990 Mass Ave",
+   "what_was_recorded": "Property charged $220 for extra bedroom and had already paid betterment fee; minimum residential connection fee is $3,900 per dwelling unit per by-law",
+   "figures_as_printed": [
+    "$220",
+    "$3,900"
+   ],
+   "quote": "andrew noted 990 mass ave. was charged the $220 for the extra bedroom. and had already paid the betterment fee. dan read from the by-law that a minimal residential connection fee of $3,900 is charged per ===page 2=== dwelling unit as defined by lunenburg prote",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 6/09/26",
+   "resolution": "approved",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "motion: dan p. second: chip w. to accept the minutes of 6/09/26. roll call vote: arthur-aye, chip-aye, dan-aye, and brett-aye."
+  },
+  {
+   "topic": "Manhole repair IFB Prospect Street",
+   "resolution": "approved for bidding",
+   "tags": [
+    "infrastructure",
+    "repair",
+    "maintenance"
+   ],
+   "quote": "bill said he believes that is the one that leominster road pumps into. when the contractor looked at it they recommended replacing the manhole in kind. he estimated that manhole is about 15' deep. brett asked if it could have been a design flaw, but bill said it was typical. all the flow and gases will eventually eat a",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "CTE Pump Station repairs FY27 and O&M contract",
+   "resolution": "approved for bidding",
+   "tags": [
+    "FY27",
+    "maintenance",
+    "contract"
+   ],
+   "quote": "andrew reported in fy27 they need to do generator repairs at west st. and leominster rd. stations. they already have the estimates and both are in the budget for fy27. there are also repairs at dana st. bill noted the contract with cte ends august 26 and",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "End of Year Adjustments FY26",
+   "resolution": "approved",
+   "tags": [
+    "FY26",
+    "accounting"
+   ],
+   "quote": "motion: scott d. second: dan p. to accept the end of year adjustments for fy26. roll call vote: chip-aye, dan-aye, scott-aye, arthur-aye, and brett-aye."
+  },
+  {
+   "topic": "100 Laurel Lane pressure lines replacement",
+   "resolution": "approved for bidding",
+   "tags": [
+    "infrastructure",
+    "repair"
+   ],
+   "quote": "bill reported he is putting out contract language for replacing 3 pressure lines from the manhole to the property line. it is going through procurement at town hall and will also go out for bid by 7/8."
+  },
+  {
+   "topic": "Q4 FY26 Demands recap delinquent accounts",
+   "resolution": "discussed",
+   "tags": [
+    "FY26",
+    "revenue"
+   ],
+   "quote": "andrew reported 240 delinquent notices went out for about 25% delinquency rate for the quarter but was 11-12 % delinquency for the year."
+  },
+  {
+   "topic": "990 Mass Ave duplex expansion and fees",
+   "resolution": "continued",
+   "tags": [
+    "regulations",
+    "by-laws",
+    "fees"
+   ],
+   "quote": "the commission agreed to look at a change to the by-laws and discussed what it would take to make a change. bill and andrew will write up the language and have town counsel look at it."
+  },
+  {
+   "topic": "Sewer Commission reorganization",
+   "resolution": "approved",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "motion: scott d. second: dan p. to keep the appointed roles the same. roll call vote: chip-aye, arthur-aye, dan-aye, scott-aye, and brett-aye."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "infrastructure",
+  "maintenance",
+  "repairs",
+  "FY26",
+  "FY27",
+  "by-laws",
+  "regulations",
+  "fees",
+  "CTE contract",
+  "delinquencies"
+ ],
+ "dropped_unquoted_by_field": {}
 }

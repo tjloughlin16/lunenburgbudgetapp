@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2026-02-11",
  "docid": "7640",
@@ -12,16 +12,16 @@
  },
  "votes": [
   {
-   "motion": "Accept the December 10, 2025 meeting minutes as drafted",
+   "motion": "To accept the December 10th minutes as drafted",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Colleen Shapiro",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "a motion to accept the december 10th minutes as drafted was made by ana and seconded colleen ● the motion passed unanimously via roll cal",
+   "quote": "a motion to accept the december 10th minutes as drafted was made by ana and seconded colleen ● the motion passed unanimously via roll call",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Colleen Shapiro",
    "outcome": "passed unanimously",
@@ -30,7 +30,130 @@
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0602984
+ "dropped_unquoted": 1,
+ "note": "Minutes document notes at the bottom that these minutes were approved by roll call vote on 3/11/26, indicating they received final approval at a subsequent meeting.\"",
+ "cost_usd": 0.0946216,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Toohill",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mike toohill - chair"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "At Large",
+   "status": "present",
+   "quote": "ana lockwood - at large"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Parks and Recreation",
+   "status": "present",
+   "quote": "colleen shapiro - parks and recreation"
+  },
+  {
+   "name": "Chris St.Germain",
+   "role": "Conservation",
+   "status": "present",
+   "quote": "chris st.germain - conservation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Counsel recommended that the Select Board serve as the appointing authority for the committee, rather than the Planning Board, to improve political viability",
+   "quote": "counsel recommended that the select board serve as the appointing authority for the committee, rather than the planning board, to improve political viability."
+  },
+  {
+   "decision": "Mike Toohill scheduled to present the draft bylaw to the Bylaw Review Committee on February 12, 2026",
+   "quote": "mike is scheduled to present the draft bylaw to the bylaw review committee on february 12, 2026."
+  },
+  {
+   "decision": "Committee aims to get the bylaw on the Town Meeting warrant before it closes on March 16th",
+   "quote": "the committee aims to get the bylaw on the town meeting warrant before it closes on march 16th."
+  },
+  {
+   "decision": "Ana Lockwood will chair the March 11, 2026 meeting as Mike Toohill will be out of town",
+   "quote": "march 11, 2026: ana lockwood will chair the meeting as mike toohill will be out of town."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of December 10, 2025 minutes",
+   "resolution": "approved unanimously",
+   "quote": "the committee reviewed the minutes from the december 10, 2025, meeting.",
+   "tags": [
+    "procedural",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "January 2026 meeting cancellation",
+   "resolution": "noted",
+   "quote": "it was noted that no meeting was held in january 2026 due to a posting error at the town clerk's office.",
+   "tags": [
+    "administrative"
+   ]
+  },
+  {
+   "topic": "Committee membership and board representation",
+   "resolution": "continued pending Agricultural Commission response",
+   "quote": "the committee is still awaiting a response from the agricultural commission (agcom) regarding their interest in a designated seat.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Conservation Commission report",
+   "resolution": "informational",
+   "quote": "conservation commission: chris reported significant turnover, with himself and mary stepping down as full commissioners but remaining as associates. he provided a ===page 2=== positive update on the new conservation agent, jamie, noting her professionalism and ",
+   "tags": [
+    "Conservation Commission",
+    "staffing"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Economic Development Council report",
+   "resolution": "informational",
+   "quote": "economic development council (edc): ana reported that the edc is researching how other towns, such as leominster, manage projects and events with limited budgets.",
+   "tags": [
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Parks Commission report",
+   "resolution": "informational",
+   "quote": "parks commission: colleen noted her term on the parks commission ends in may, but she may continue as the representative to open space if the commission agrees.",
+   "tags": [
+    "Parks Commission"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "scheduled",
+   "quote": "march 11, 2026: ana lockwood will chair the meeting as mike toohill will be out of town. ● april 8, 2026: regularly scheduled meetin",
+   "tags": [
+    "administrative"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "Open Space Committee",
+  "bylaws",
+  "governance",
+  "committee membership",
+  "Conservation Commission",
+  "Parks Commission",
+  "Economic Development"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

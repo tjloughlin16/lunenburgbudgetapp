@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2009-03-19",
  "docid": "2714",
@@ -12,31 +12,210 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from February 19, 2009 as amended",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of February 19, 2009, as amended.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from february 19, 2009: motion made and passed unanimously as amended."
   },
   {
-   "motion": "Approve executive minutes from February 19, 2009",
+   "motion": "Approve the executive minutes of February 19, 2009.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "executive minutes from february 19, 2009: motion made and passed."
   },
   {
-   "motion": "Accept revised Art Exhibit Guidelines",
-   "outcome": "passed unanimously",
+   "motion": "Accept the revised Art Exhibit Guidelines.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion made and passed unanimously to accept revised art exhibit guidelines."
   },
   {
-   "motion": "That Amy address cleaning services issues and possible solution with CAFO",
+   "motion": "That Amy address the cleaning services issues and possible solution with CAFO.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion made and passed that amy address cleaning services issues and possible solution with cafo."
   }
  ],
  "dropped_unquoted": 0,
- "note": "No moved_by or seconded_by names recorded in the minutes.",
- "cost_usd": 0.0826845
+ "note": "The minutes are clean extracted text, not a scan. Motions give results but no mover or seconder, so moved_by and seconded_by are empty throughout. No dollar figures are printed anywhere, so every budget item has an empty figures list. Adjournment at 8:16 p.m. is recorded with no motion, so it is not a vote. Public comment is recorded only as 'No public comment.', which is not a speaker, so public_comment is empty. Jack Rodriquenz (DPW Director) and Rich Letarte are named but did not appear, so they are not listed as attendees. Attendance is taken from the single 'Attending' line.",
+ "cost_usd": 0.01365537,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, len smetana, john mara, jeanne raboin"
+  },
+  {
+   "name": "Linda Kennedy",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, len smetana, john mara, jeanne raboin"
+  },
+  {
+   "name": "Deb Chapdelaine",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, len smetana, john mara, jeanne raboin"
+  },
+  {
+   "name": "Mary Ann Sudolnik",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, len smetana, john mara, jeanne raboin"
+  },
+  {
+   "name": "Mike Kelly",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, len smetana, john mara, jeanne raboin"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, len smetana, john mara, jeanne raboin"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: amy sadkin, linda kennedy, deb chapdelaine, mary ann sudolnik, mike kelly, len smetana, john mara, jeanne raboin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary, Trustees of Lunenburg Public Library",
+   "status": "present",
+   "quote": "secretary, trustees of lunenburg public library"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Policy Committee set the Customer Service/Behavior Policy as the next policy to be revised.",
+   "quote": "policy committee: customer service/behavior policy will be the next policy to be revised."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cleaning services monies for the library",
+   "what_was_recorded": "Amy would ask CAFO to move cleaning service money allotted to the library from DPW's budget to the library's budget, with a risk the library could be over level-funding for 2010. No dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "move the cleaning service monies allotted for library out of dpw's budget and into library's budget"
+  },
+  {
+   "topic": "Senior tax write-off for housekeeping",
+   "what_was_recorded": "Mary Ann suggested using the senior tax write-off to cover some housekeeping items library staff currently do weekly. No dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "mary ann suggests using senior tax write-off for some of the housekeeping items the library staff currently does on a weekly basis."
+  },
+  {
+   "topic": "Budget update",
+   "what_was_recorded": "The budget update was not discussed in these minutes and was referred to the March 2009 Director's Report. No dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "budget update: covered in march 2009 director's report."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of February 19, 2009",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes from february 19, 2009: motion made and passed unanimously as amended."
+  },
+  {
+   "topic": "Executive minutes of February 19, 2009",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "executive session"
+   ],
+   "quote": "executive minutes from february 19, 2009: motion made and passed."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action; referred to the written report",
+   "tags": [
+    "director"
+   ],
+   "quote": "director's report: see march 2009 director's report for details."
+  },
+  {
+   "topic": "Art Policy",
+   "resolution": "approved revised Art Exhibit Guidelines",
+   "tags": [
+    "art",
+    "policy"
+   ],
+   "quote": "motion made and passed unanimously to accept revised art exhibit guidelines."
+  },
+  {
+   "topic": "Budget update",
+   "resolution": "no action; covered in Director's Report",
+   "tags": [
+    "budget"
+   ],
+   "quote": "budget update: covered in march 2009 director's report."
+  },
+  {
+   "topic": "Cleaning services and issues",
+   "resolution": "Amy to address with CAFO",
+   "tags": [
+    "cleaning services",
+    "DPW",
+    "CAFO",
+    "budget",
+    "facilities"
+   ],
+   "quote": "amy discussed cleaning service issues with dpw director, jack rodriquenz."
+  },
+  {
+   "topic": "Committee reports: Policy Committee",
+   "resolution": "no action; next policy to revise named",
+   "tags": [
+    "policy",
+    "committee"
+   ],
+   "quote": "policy committee: customer service/behavior policy will be the next policy to be revised."
+  },
+  {
+   "topic": "Old business: Rich Letarte's gift",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "gift",
+    "old business"
+   ],
+   "quote": "discussion of rich letarte's gift."
+  },
+  {
+   "topic": "Old business: trustees' letter to MBLC/MLTA and Rep. Flanagan",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "letter",
+    "state",
+    "old business"
+   ],
+   "quote": "discussion about trustee's letter to mblc/mlta and rep. flanagan."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "minutes",
+  "art policy",
+  "cleaning services",
+  "DPW",
+  "CAFO",
+  "budget",
+  "policy committee",
+  "gift",
+  "state legislature"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2009-02-02",
  "docid": "819",
@@ -12,39 +12,188 @@
  },
  "votes": [
   {
-   "motion": "Grant well variance for Lot 4, Lena Lane",
+   "motion": "Grant variance for well at Lot 4, Lena Lane, allowing proposed well fifteen feet from property line instead of required fifty feet",
    "moved_by": "Jewell",
    "seconded_by": "Sund",
-   "outcome": "passed",
+   "outcome": "unanimously granted",
    "procedural": false,
-   "quote": "on motion by jewell and second by sund the variance was unanimously granted"
+   "quote": "on motion by jewell and second by sund the variance was unanimously granted."
   },
   {
-   "motion": "Approve variances for 15/17 Pleasant Street septic system",
+   "motion": "Approve variances for 15/17 Pleasant Street for shared septic system including reduction of cellar wall setback, groundwater offset, and wetlands offset",
    "moved_by": "Sund",
    "seconded_by": "Rabbitt",
-   "outcome": "passed",
+   "outcome": "unanimously approved",
    "procedural": false,
-   "quote": "on motion by sund and second by rabbitt, the request for variances was unanimously approved"
+   "quote": "on motion by sund and second by rabbitt, the request for variances was unanimously approved."
   },
   {
-   "motion": "Approve variance to use sieve analysis for 322 Flat Hill Road",
+   "motion": "Approve variance to use sieve analysis for septic system at 322 Flat Hill Road with fill to raise system",
    "moved_by": "Shea",
    "seconded_by": "Sund",
-   "outcome": "passed",
+   "outcome": "unanimously approved",
    "procedural": false,
-   "quote": "on motion by shea and second by sund, the request for variance to use sieve analysis was unanimously approved"
+   "quote": "after discussion and on motion by shea and second by sund, the request for variance to use sieve analysis was unanimously approved."
   },
   {
-   "motion": "Waive tank pumping requirement and prevent occupancy until new system installed for 552 Massachusetts Avenue",
+   "motion": "Waive requirement to keep tank pumped at 552 Massachusetts Avenue and prohibit occupancy until new septic system is installed",
    "moved_by": "Sund",
    "seconded_by": "Jewell",
-   "outcome": "passed",
+   "outcome": "all in favor",
    "procedural": false,
-   "quote": "on motion by sund and second by jewell, it was agreed that the section on pumping the tank would be waived as the property is vacant. further, there would be no occupancy of the property until the new system is installed. all in favor"
+   "quote": "after discussion and on motion by sund and second by jewell, it was agreed that the section on pumping the tank would be waived as the property is vacant. further, there would be no occupancy of the property until the new system is installed. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan; no votes recorded for approval of prior minutes or adjournment, though the meeting ended at 8:25 pm.",
- "cost_usd": 0.12634250000000002
+ "dropped_unquoted": 5,
+ "note": "Text extracted via macOS Vision OCR. Meeting adjourned at 8:25 pm.\"",
+ "cost_usd": 0.1071546,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris McKenzie",
+   "role": "representing Whitman and Bingham (consultant)",
+   "status": "present",
+   "quote": "chris mckenzie of whitman and bingham met with the board to request a well variance."
+  },
+  {
+   "name": "Ms. Szocik",
+   "role": "property owner",
+   "status": "present",
+   "quote": "ms. szocik, the owner, and steve marsden met with the board."
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "engineer",
+   "status": "present",
+   "quote": "ms. szocik, the owner, and steve marsden met with the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed TITLE 5 inspection reports for five properties with results recorded",
+   "quote": "title 5 inspection reports reviewed: 196-198 killburn street - pass 75 hunting hill road - pass 78 whiting street - pass 943 chase road - fail (application has been made for testing) 2 page street - pass sep",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Septic permits signed for four addresses including 15 Pleasant Street #17, 72 NW Townsend Road, NW Townsend Road Lot 1, and Lot 4 Lena Lane",
+   "quote": "septic permits signed: 15 pleasant street, #17 72 nw townsend road nw townsend road, lot 1 lot 4, lena lane lo",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Chairman Emond will contact Abby at Wright Pierce regarding executive summary and dissenting points for Waste Water Management Plan",
+   "quote": "chairman emond will contact abby at wright pierce to discuss this."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chris McKenzie",
+   "stated_role": "Whitman and Bingham",
+   "topic": "Well variance request for Lot 4, Lena Lane",
+   "quote": "chris mckenzie of whitman and bingham met with the board to request a well variance. this lot is located within a small subdivision. the proposed well is located fifteen (15) feet off the side/rear property line. the required distance is fifty (50) feet."
+  },
+  {
+   "speaker": "Chris McKenzie",
+   "stated_role": "Whitman and Bingham",
+   "topic": "Septic system variances for 15/17 Pleasant Street",
+   "quote": "chris mckenzie of whitman and bingham met with the board to request several variances. this is a very small lot and the septic system is in failure. there are two houses on a single lot in single ownership and there are wetlands on one side."
+  },
+  {
+   "speaker": "Chris McKenzie",
+   "stated_role": "Whitman and Bingham",
+   "topic": "Septic system variance for 322 Flat Hill Road",
+   "quote": "chris mckenzie met with the board. currently, this system is in failure. the system is a two bedroom system. due to the high ground water on this lot, a sieve analysis was performed."
+  },
+  {
+   "speaker": "Ms. Szocik",
+   "stated_role": "property owner",
+   "topic": "Failed septic system at 552 Massachusetts Avenue",
+   "quote": "ms. szocik, the owner, and steve marsden met with the board. this is a rental property. the tenant called to report a failed septic system."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "TITLE 5 Inspection Reports",
+   "resolution": "reviewed with results recorded",
+   "tags": [
+    "inspections",
+    "health"
+   ],
+   "quote": "title 5 inspection reports reviewed: 196-198 killburn street - pass 75 hunting hill road - pass 78 whiting street - pass 943 chase road - fail (application has been made for testing) 2 page street - pass sep",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Septic Permits",
+   "resolution": "signed for four addresses",
+   "tags": [
+    "septic",
+    "permits"
+   ],
+   "quote": "septic permits signed: 15 pleasant street, #17 72 nw townsend road nw townsend road, lot 1 lot 4, lena lane lo",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Lot 4, Lena Lane Well Variance",
+   "resolution": "approved",
+   "tags": [
+    "variance",
+    "well",
+    "septic"
+   ],
+   "quote": "on motion by jewell and second by sund the variance was unanimously granted."
+  },
+  {
+   "topic": "15/17 Pleasant Street Septic System Variances",
+   "resolution": "approved",
+   "tags": [
+    "variance",
+    "septic",
+    "shared system"
+   ],
+   "quote": "on motion by sund and second by rabbitt, the request for variances was unanimously approved."
+  },
+  {
+   "topic": "322 Flat Hill Road Septic System Variance",
+   "resolution": "approved",
+   "tags": [
+    "variance",
+    "septic",
+    "sieve analysis"
+   ],
+   "quote": "after discussion and on motion by shea and second by sund, the request for variance to use sieve analysis was unanimously approved."
+  },
+  {
+   "topic": "552 Massachusetts Avenue Failed Septic System",
+   "resolution": "approved",
+   "tags": [
+    "septic",
+    "failure",
+    "rental property"
+   ],
+   "quote": "after discussion and on motion by sund and second by jewell, it was agreed that the section on pumping the tank would be waived as the property is vacant. further, there would be no occupancy of the property until the new system is installed. all in favor."
+  },
+  {
+   "topic": "Waste Water Management Plan",
+   "resolution": "discussion continued; action pending",
+   "tags": [
+    "wastewater",
+    "planning"
+   ],
+   "quote": "the members of the board again discussed the role that they believe they should play in the final waste water management plan to be submitted for town meeting and are concerned that there has been no executive summary prepared stating all the dissenting points."
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "septic permits",
+  "variances",
+  "inspections",
+  "wastewater management",
+  "health",
+  "town hall"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 5
+ }
 }

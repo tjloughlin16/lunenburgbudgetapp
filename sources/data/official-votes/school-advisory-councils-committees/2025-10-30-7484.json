@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2025-10-30",
  "docid": "7484",
@@ -12,6 +12,140 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe a School Advisory Council meeting with discussions of MCAS results, budget updates, professional development, core values feedback, and homecoming events, but contain no record of any motions, votes, or formal actions taken.",
- "cost_usd": 0.0570634
+ "note": "Text is a text-extracted minutes page (single page, no scan). No votes are recorded, so none are listed; no motion, second or vote count appears. Call to order (3:34 p.m.) and adjournment (4:08 p.m.) are noted in the text but are not listed as topics or procedural votes because no motion is recorded. No public comment section appears in the minutes. The budget item prints no dollar figures. Carla Squier, Kam Munroe and Nadine Lorenzen are named only in the PD Day item and are not listed as attendees. Attendance roles are mostly not stated in the body; the letterhead columns were not used as the role for each person.",
+ "cost_usd": 0.013675070000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tim Santry",
+   "role": "not stated in body (letterhead reads LMHS Principal)",
+   "status": "present",
+   "quote": "present : mr. tim santry, ms. yanina burns, mr. anthony sculimbrene, mrs. jessica frank"
+  },
+  {
+   "name": "Yanina Burns",
+   "role": "not stated in body",
+   "status": "present",
+   "quote": "present : mr. tim santry, ms. yanina burns, mr. anthony sculimbrene, mrs. jessica frank"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : mr. tim santry, ms. yanina burns, mr. anthony sculimbrene, mrs. jessica frank"
+  },
+  {
+   "name": "Jessica Frank",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : mr. tim santry, ms. yanina burns, mr. anthony sculimbrene, mrs. jessica frank"
+  },
+  {
+   "name": "Warren Stevenson",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. warren stevenson, ms. karma tousignant"
+  },
+  {
+   "name": "Karma Tousignant",
+   "role": "not stated in body; minutes submitted by her (letterhead reads Assistant Principal)",
+   "status": "present",
+   "quote": "mr. warren stevenson, ms. karma tousignant"
+  },
+  {
+   "name": "Meghan Arnold",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: mrs. meghan arnold, mrs. mariah comesana"
+  },
+  {
+   "name": "Mariah Comesana",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: mrs. meghan arnold, mrs. mariah comesana"
+  },
+  {
+   "name": "Lynn Radford",
+   "role": "additional person present (role not stated)",
+   "status": "present",
+   "quote": "additional persons present: ms. lynn radford"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Budget update (3-year outlook and two budget scenarios)",
+   "what_was_recorded": "The minutes say the 3-year budget outlook was shared with Dr. Fortuna and that two budgets, a restored service and a level service, will be presented at the next meeting. No dollar figures are printed.",
+   "quote": "two budgets will be presented - a restored service and a level service",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "MCAS results and school accountability",
+   "resolution": "no action; Tim Santry reviewed grade 10 results",
+   "quote": "mcas results and school accountability tim santry reviews grade 10 ela, math and science",
+   "tags": [
+    "MCAS",
+    "accountability",
+    "grade 10"
+   ]
+  },
+  {
+   "topic": "Budget update",
+   "resolution": "no action; more information deferred to next meeting",
+   "quote": "two budgets will be presented - a restored service and a level service",
+   "tags": [
+    "budget",
+    "3-year outlook",
+    "restored service",
+    "level service"
+   ]
+  },
+  {
+   "topic": "PD Day 11-4-2025",
+   "resolution": "informational; full-day professional development described",
+   "quote": "pd day 11-4-2025 full day of professional development focus is on curriculum,",
+   "tags": [
+    "professional development",
+    "AI training",
+    "ALICE training",
+    "PD day"
+   ]
+  },
+  {
+   "topic": "Core values feedback",
+   "resolution": "no action; staff asked to review draft and send feedback to Tim",
+   "quote": "discussion draft of core values is in the shared drive - please review and provide any feedback to tim",
+   "tags": [
+    "core values",
+    "draft",
+    "feedback"
+   ]
+  },
+  {
+   "topic": "Homecoming 2025 spirit week rally",
+   "resolution": "informational; schedule announced",
+   "quote": "homecoming 2025 spirit week rally 1:30 tomorrow saturday - parade at noon, 1:30 game, 7:00 dance",
+   "tags": [
+    "homecoming",
+    "spirit week",
+    "events"
+   ]
+  }
+ ],
+ "tags": [
+  "Lunenburg High School",
+  "school advisory council",
+  "MCAS",
+  "school budget",
+  "professional development",
+  "core values",
+  "homecoming",
+  "school accountability"
+ ],
+ "dropped_unquoted_by_field": {}
 }

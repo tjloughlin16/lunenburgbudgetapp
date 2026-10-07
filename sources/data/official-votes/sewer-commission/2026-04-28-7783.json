@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2026-04-28",
  "docid": "7783",
@@ -13,22 +13,193 @@
  "votes": [
   {
    "motion": "Accept the minutes of 4/14/26",
-   "moved_by": "Dan P.",
-   "seconded_by": "Arthur K.",
+   "moved_by": "Dan Proctor",
+   "seconded_by": "Arthur Katis",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: dan p. second: arthur k. to accept the minutes of 4/14/26. roll call vote: dan-aye, arthur-aye, chip-aye and scott-aye."
+   "quote": "to accept the minutes of 4/14/26. roll call vote: dan-aye, arthur-aye, chip-aye and scott-aye."
   },
   {
    "motion": "Adjourn at 6:35pm",
-   "moved_by": "Arthur K.",
-   "seconded_by": "Dan P.",
+   "moved_by": "Arthur Katis",
+   "seconded_by": "Dan Proctor",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: arthur k. second: dan p. to adjourn at 6:35pm. roll call vote: arthur-aye, dan-aye, chip-aye and scott-aye."
+   "quote": "to adjourn at 6:35pm. roll call vote: arthur-aye, dan-aye, chip-aye and scott-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.061915399999999995
+ "note": "\"\"",
+ "cost_usd": 0.1026976,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Chip Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: chair- brett ramsden and dpw director- bill bernard"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "absent: chair- brett ramsden and dpw director- bill bernard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Manhole repair project: Insituform to start work later this week or next week; Andrew Valliere to keep commission updated",
+   "quote": "insituform emailed that they are currently working on other jobs. he is hoping they can start later this week or next week. andrew will keep everyone updated."
+  },
+  {
+   "decision": "5 Ramgren Road project approved to be bid out; Bob Proctor awarded work at $4,800 with start next week; work from manhole to property line",
+   "quote": "bob proctor had the lowest bid of $4,800, with work starting next week if all goes well. they will be going from the manhole to the property line."
+  },
+  {
+   "decision": "Sewer budget will not use Retained Earnings to balance this year; User Rate Increase of 16% on User Charges and 5% on minimum charge is necessary",
+   "quote": "they will not be using retained earnings to balance the budget this year . the majority of income comes from user charges and pointed out leominster and fitchburg rates are going up. this necessitates a user rate increase of 16% but only 5% increase on the minimum charge."
+  },
+  {
+   "decision": "100 Laurel Lane: Commission will attempt to locate sewer stub by digging; if not found, homeowner will be owed a sewer stub",
+   "quote": "dan noted it is a pressure line and they will try digging to find the shut-off. andrew added if they cannot find it, they will owe the homeowner a sewer stub."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "5 Ramgren Road repair project bid",
+   "what_was_recorded": "Bob Proctor awarded lowest bid for property repair work from manhole to property line",
+   "figures_as_printed": [
+    "$4,800"
+   ],
+   "quote": "bob proctor had the lowest bid of $4,800, with work starting next week if all goes well."
+  },
+  {
+   "topic": "Sewer User Rate Increase",
+   "what_was_recorded": "Rate increase recommended for Town Meeting: 16% on User Charges and 5% on minimum charge due to shrinking betterments income",
+   "figures_as_printed": [
+    "16%",
+    "5%"
+   ],
+   "quote": "this necessitates a user rate increase of 16% but only 5% increase on the minimum charge."
+  },
+  {
+   "topic": "Delinquency rate",
+   "what_was_recorded": "Current sewer account delinquency rate reported",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "andrew noted the delinquency rate is under 20% currently."
+  },
+  {
+   "topic": "I/I fees on SRF projects",
+   "what_was_recorded": "Infiltration and inflow fees collected are minimal on Sewer Rate Funded projects",
+   "figures_as_printed": [],
+   "quote": "andrew replied that they are very minimum on the srf projects."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 4/14/26",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "motion: dan p. second: arthur k. to accept the minutes of 4/14/26. roll call vote: dan-aye, arthur-aye, chip-aye and scott-aye."
+  },
+  {
+   "topic": "Manhole Repair IFB",
+   "resolution": "ongoing update",
+   "tags": [
+    "maintenance",
+    "repair"
+   ],
+   "quote": "insituform emailed that they are currently working on other jobs. he is hoping they can start later this week or next week. andrew will keep everyone updated."
+  },
+  {
+   "topic": "5 Ramgren Road project",
+   "resolution": "approved, bid awarded",
+   "tags": [
+    "sewer connection",
+    "maintenance"
+   ],
+   "quote": "bob proctor had the lowest bid of $4,800, with work starting next week if all goes well. they will be going from the manhole to the property line."
+  },
+  {
+   "topic": "Rate Increase presentation for Town Meeting",
+   "resolution": "presented for Article 19",
+   "tags": [
+    "rates",
+    "revenue",
+    "town meeting"
+   ],
+   "quote": "andrew screen-shared bill bernard's slide presentation for the sewer enterprise's article 19 at town meeting. he noted that betterments are shrinking (income) and they will not be using retained earnings to balance the budget this year . the majority of income comes from user charges and pointed out leominster and fitchburg rates are going up. this necessitates a user rate increase of 16% but only 5% increase on the minimum charge."
+  },
+  {
+   "topic": "100 Laurel Lane sewer connection",
+   "resolution": "ongoing investigation",
+   "tags": [
+    "sewer connection",
+    "troubleshooting"
+   ],
+   "quote": "andrew reported they have a tie-card for the property but they are still trying to find the sewer stub. they did a video inspection but it did not go anywhere. dan noted it is a pressure line and they will try digging to find the shut-off. andrew added if they cannot find it, they will owe the homeowner a sewer stub."
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "discussed",
+   "tags": [
+    "future projects"
+   ],
+   "quote": "scott asked andrew if he had an update on the project at the old funeral home on mass. ave. and andrew replied he has not seen any updated plans. he also has no update on the potential project at the driving range. andrew reported that there is a buyer for 3 rennie street that wants to fix up the property and connect to sewer."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "commission",
+  "zoom",
+  "meetings",
+  "rate increase",
+  "budgeting",
+  "capital projects"
+ ],
+ "dropped_unquoted_by_field": {}
 }

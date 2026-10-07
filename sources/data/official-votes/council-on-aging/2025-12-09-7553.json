@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-12-09",
  "docid": "7553",
@@ -12,39 +12,376 @@
  },
  "votes": [
   {
-   "motion": "Ask the Town to research job description and funding necessary for an Assistant Director position",
+   "motion": "Ask the Town to do the research for a job description and the funding necessary for an Assistant Director position.",
    "moved_by": "Ms. Beale",
-   "seconded_by": "Mr. Franco",
-   "outcome": "passed 9-0-1",
+   "outcome": "passed, 9 in favor and one abstention",
    "procedural": false,
-   "quote": "ms. beale motioned to ask the t own to do the research for a job description and the funding necessary for an assistant director position. s econded by mr. franco . vote was 9 in favor and one abstention."
+   "quote": "vote was 9 in favor and one abstention.",
+   "seconded_by": "Mr. Franco"
   },
   {
-   "motion": "Urge the Town to move forward with finding a replacement for the Outreach Coordinator position",
+   "motion": "Urge that the Town move forward with finding a replacement for the Outreach Coordinator position.",
    "moved_by": "Ms. Lockwood",
-   "seconded_by": "Ms. O 'Sullivan",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "ms. lockwood ma d e a motion to urge that the town move forward with finding a replacement for the outreach coordinator position. seconded by ms. o 'sullivan. vote was unanimous in favor."
+   "quote": "vote was unanimous in favor.",
+   "seconded_by": "Ms. O'Sullivan"
   },
   {
-   "motion": "Work as a representative of the COA to consult with Town Manager and Select Board regarding a way to find a resolution for Article 12",
+   "motion": "Work as a representative of the COA to consult with the Town Manager and Select Board on a way to resolve Special Town Meeting Article 12.",
    "moved_by": "Mr. Franco",
-   "seconded_by": "Ms. O 'Sullivan",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. franco made a motion to work as a representative of the coa to consult with town manager and s elect board regarding a way to find a resolution for this article. seconded by ms. o 'sullivan . vote was u nanimous in favor."
+   "quote": "mr. franco made a motion to work as a representative of the coa to consult with town manager",
+   "seconded_by": "Ms. O'Sullivan"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 11:17 am.",
    "moved_by": "Ms. Lockwood",
-   "seconded_by": "Mr. Franco",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "a motion to adjourn at 11:17 am was made by ms. lockwood and seconded by mr. franco . it passed unanimously."
+   "quote": "it passed unanimously.",
+   "seconded_by": "Mr. Franco"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0799604
+ "note": "Text is OCR-extracted with broken spacing inside words (e.g. \"T own\", \"Co u lo mbe\", \"u nanimous\", \"fund raiser\"); quotes were copied with those spellings intact, and whitespace was collapsed to single spaces. Guest Barbara Coulombe's name is printed with split letters in the source and is recorded here as Barbara Coulombe. The Assistant Director motion's vote is printed as \"9 in favor and one abstention\" with no name for the abstainer. The minutes approval was passed over, not voted. The adjournment quote is a short line for the vote; the motion sentence itself has irregular spacing. Public comment was \"none\". No dollar figure was recorded for the Assistant Director funding.",
+ "cost_usd": 0.01732057,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson)"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson)"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson)"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson)"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson)"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson)"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson)"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson)"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson)"
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson)"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused : helen balcom"
+  },
+  {
+   "name": "Deb Goodsell",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "ms. goodsell reported that she would be in support of an assistant director"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager reported on the position and options for hiring"
+  },
+  {
+   "name": "Barbara Coulombe",
+   "role": "Eagle House Supporters",
+   "status": "present",
+   "quote": "ms. coulombe thanked everyone who participated in making this a success"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "glenn mcleod (select board)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of minutes passed over to allow more time to read them; Ms. Lincoln offered to send minutes for future meetings.",
+   "quote": "passed over to allow more time to read minutes."
+  },
+  {
+   "decision": "Ms. Lincoln to collect questions for the January legislative contingent and circulate them.",
+   "quote": "she will collate and disseminate."
+  },
+  {
+   "decision": "Questions for the legislative guests to be submitted to Mr. Rabbitt within two days.",
+   "quote": "questions for rep scarsdale should be submitted in two days to"
+  },
+  {
+   "decision": "Lobby furnishing item tabled until the new year.",
+   "quote": "no changes from last meeting. will be tabled until"
+  },
+  {
+   "decision": "Feedback on By-laws tabled until next month.",
+   "quote": "tabled un til next month."
+  },
+  {
+   "decision": "Caregiver Resource Connection planning team to meet again after the holidays.",
+   "quote": "the team will meet again after the holidays"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Assistant Director position funding",
+   "what_was_recorded": "The Town Manager said funding for an Assistant Director would be worked on if the Board chose that direction; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "as to funding, that will be worked on if this is"
+  },
+  {
+   "topic": "Financial reports",
+   "what_was_recorded": "Director reported most of the budget is payroll, on target, and programs, supplies and other line items are also on target; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "noted that most of budget is payroll"
+  },
+  {
+   "topic": "Festival of Trees fundraiser proceeds",
+   "what_was_recorded": "The Eagle House Supporters said the Festival of Trees raised almost $4k.",
+   "figures_as_printed": [
+    "$4k"
+   ],
+   "quote": "it raised almost $4k. the next fund raiser coming up will be a gift card frenzy"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "ms. lincoln reported that anna farrell from the gateway",
+   "tags": [
+    "announcements",
+    "concert"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public comment : none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "noted",
+   "quote": "coa board thanked pauline roy for her years as the outreach",
+   "tags": [
+    "board comment"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "passed over",
+   "quote": "passed over to allow more time to read minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Legislative contingent - January",
+   "resolution": "Lincoln to collect questions for the January meeting",
+   "quote": "ms. lincoln reported that representative scarsdale",
+   "tags": [
+    "legislators",
+    "state"
+   ]
+  },
+  {
+   "topic": "Outreach vs. Assistant Director position",
+   "resolution": "two motions passed: research Assistant Director; urge replacing Outreach Coordinator",
+   "quote": "town manager reported on the position and options for hiring",
+   "tags": [
+    "staffing",
+    "outreach",
+    "assistant director",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting Article 12",
+   "resolution": "Franco to consult Town Manager and Select Board; motion passed unanimously",
+   "quote": "mr. franco reported that this article was",
+   "tags": [
+    "special town meeting",
+    "warrant",
+    "article 12"
+   ]
+  },
+  {
+   "topic": "Financial reports",
+   "resolution": "noted; on target",
+   "quote": "noted that most of budget is payroll",
+   "tags": [
+    "budget",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Caregiver Resource Connection",
+   "resolution": "continued to after the holidays",
+   "quote": "the team will meet again after the holidays",
+   "tags": [
+    "caregivers",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Master Plan update",
+   "resolution": "noted",
+   "quote": "ms. lincoln received feedback from ms. duffy",
+   "tags": [
+    "master plan",
+    "tax relief"
+   ]
+  },
+  {
+   "topic": "Update on local hospital services",
+   "resolution": "no update",
+   "quote": "looking forward to january",
+   "tags": [
+    "hospital",
+    "health"
+   ]
+  },
+  {
+   "topic": "Lobby furnishing",
+   "resolution": "tabled to the new year",
+   "quote": "no changes from last meeting. will be tabled until",
+   "tags": [
+    "lobby"
+   ]
+  },
+  {
+   "topic": "41A update",
+   "resolution": "noted; passed at Special Town Meeting",
+   "quote": "mr. rabbitt reported this passed at the special town meeting.",
+   "tags": [
+    "41A"
+   ]
+  },
+  {
+   "topic": "Festival of Trees thank-you",
+   "resolution": "noted",
+   "quote": "ms. lincoln read a thank you letter",
+   "tags": [
+    "fundraising",
+    "festival of trees"
+   ]
+  },
+  {
+   "topic": "COA Board Facebook page",
+   "resolution": "noted",
+   "quote": "is up and running. more content to come.",
+   "tags": [
+    "communications",
+    "facebook"
+   ]
+  },
+  {
+   "topic": "By-laws feedback",
+   "resolution": "tabled to next month",
+   "quote": "tabled un til next month.",
+   "tags": [
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "noted",
+   "quote": "ms. goodsell reported on the connections",
+   "tags": [
+    "programs",
+    "events",
+    "fire safety"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "noted",
+   "quote": "ms. coulombe thanked everyone who participated in making this a success",
+   "tags": [
+    "fundraising",
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "quote": "notices and communications : none",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 11:17 am, passed unanimously",
+   "quote": "it passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "outreach coordinator",
+  "assistant director",
+  "staffing",
+  "special town meeting",
+  "article 12",
+  "festival of trees",
+  "legislative contingent",
+  "by-laws",
+  "financial reports",
+  "payroll",
+  "eagle house supporters"
+ ],
+ "dropped_unquoted_by_field": {}
 }

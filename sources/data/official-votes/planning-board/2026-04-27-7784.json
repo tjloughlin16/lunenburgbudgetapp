@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2026-04-27",
  "docid": "7784",
@@ -12,79 +12,314 @@
  },
  "votes": [
   {
-   "motion": "Close the hearing for stormwater permit PBSW-25-5",
-   "moved_by": "Adam Burney",
-   "seconded_by": "Amanda Reid",
+   "motion": "to close the hearing",
+   "moved_by": "A. Burney",
+   "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "a. burney moved to close the hearing. a. reid, second. verbal vote: aye (4/0)."
   },
   {
-   "motion": "Approve standard conditions and have legal counsel review stormwater permit PBSW-25-5",
-   "moved_by": "Adam Burney",
-   "seconded_by": "Amanda Reid",
+   "motion": "to approve standard conditions and to have legal counsel review",
+   "moved_by": "A. Burney",
+   "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "a. burney moved to approve standard conditions and to have legal counsel review. a. reid, second. verbal vote: aye (4/0)"
   },
   {
-   "motion": "Withdraw application PBSP-25-10 and continue ANR-26-2 until May 11, 2026",
-   "moved_by": "Adam Burney",
-   "seconded_by": "Amanda Reid",
+   "motion": "to withdraw the application of PBSP-25-10 and to continue ANR-26-2 until May 11, 2026",
+   "moved_by": "A. Burney",
+   "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
-   "procedural": false,
+   "procedural": true,
    "quote": "a. burney moved to withdraw the application of pbsp-25-10 and to continue anr-26-2 until may 11, 2026. a. reid, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Continue PBSW-26-11 hearing until May 11th at 6:05pm",
-   "moved_by": "Adam Burney",
-   "seconded_by": "Timothy Willsmer",
+   "motion": "to continue until May 11th at 6:05pm",
+   "moved_by": "A. Burney",
+   "seconded_by": "T. Willsmer",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "a. burney moved to continue until may 11th at 6:05pm. t. willsmer, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Continue stormwater permits PBSW-26-2, PBSW-26-3, PBSW-26-4, and PBSW-26-5 to 5/11/26 at 6:05pm",
-   "moved_by": "Adam Burney",
-   "seconded_by": "Amanda Reid",
+   "motion": "to continue to 5/11/26 at 6:05pm",
+   "moved_by": "A. Burney",
+   "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "a. burney moved to continue to 5/11/26 at 6:05pm. a. reid, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Continue PBSA-26-1, PBSW-26-1, and PBSP-26-1 to May 11, 2026 at 6:05pm",
-   "moved_by": "Adam Burney",
-   "seconded_by": "Amanda Reid",
+   "motion": "to continue to May 11,2026 at 6:05pm",
+   "moved_by": "A. Burney",
+   "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "a. burney moved to continue to may 11,2026 at 6:05pm. a. reid, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Accept $18,500.00 bond paid by cash for stormwater work at 711 Massachusetts Ave., not to be released prior to 11/1/26",
-   "moved_by": "Adam Burney",
-   "seconded_by": "Timothy Willsmer",
+   "motion": "to accept a $18,500.00 bond paid by cash, not to be released prior to 11/1/26",
+   "moved_by": "A. Burney",
+   "seconded_by": "T. Willsmer",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "a. burney moved to accept a $18,500.00 bond paid by cash, not to be released prior to 11/1/26. t. willsmer, second. verbal vote: aye (4/0)"
   },
   {
-   "motion": "Accept the minutes from 4/13/26 as written",
-   "moved_by": "Adam Burney",
-   "seconded_by": "Timothy Willsmer",
+   "motion": "to accept the minutes as written",
+   "moved_by": "A. Burney",
+   "seconded_by": "T. Willsmer",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "a. burney moved to accept the minutes as written. t. willsmer, second verbal vote: aye (4/0)"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Adam Burney",
-   "seconded_by": "Timothy Willsmer",
+   "motion": "to adjourn",
+   "moved_by": "A. Burney",
+   "seconded_by": "T. Willsmer",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "a. burney moved to adjourn. t. willsmer, second verbal vote: aye (4/0)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0934294
+ "note": "\"\"",
+ "cost_usd": 0.1646586,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "Stephen Wallace",
+   "role": "Director of Planning and Economic Development",
+   "status": "present",
+   "quote": "s. wallace explained he has started gathering examples of bylaws from surrounding communities for the by-laws we are looking to update"
+  },
+  {
+   "name": "Leigh Bain",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "l. bain reminded j. leclair he needs to provide the updated mylar since it changed."
+  },
+  {
+   "name": "J. LeClair",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "j. leclair (mccarty engineering) on behalf of the applicant."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "representing the applicants",
+   "status": "present",
+   "quote": "chris anderson (hannigan engineering) on behalf of the applicant, timothy gendron, trustee"
+  },
+  {
+   "name": "C. Stoddard",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "c. stoddard (stoddard engineering) on behalf of the applicant."
+  },
+  {
+   "name": "Dan Sheehan",
+   "role": "Haley Ward",
+   "status": "present",
+   "quote": "dan sheehan (haley ward) stated he can answer any questions for the board."
+  },
+  {
+   "name": "Nick Merlino",
+   "role": "resident, 711 Mass Ave #3",
+   "status": "present",
+   "quote": "nick merlino 711 mass ave #3, himself and other members of the hoa have some concerns regarding the hydro seeding and seeding."
+  },
+  {
+   "name": "Krishnaswamy Ravichandran",
+   "role": "resident, 711 Mass Ave #6",
+   "status": "present",
+   "quote": "krishnaswamy ravichandran, 711 mass ave #6, wanted to make it known that the back of his unit, #5, and #7, have never been hydro seeded or seeded."
+  },
+  {
+   "name": "John Paula",
+   "role": "resident, 63 Laurel Ln",
+   "status": "present",
+   "quote": "john paula 63 laurel ln stated he is concerned with water running off onto his small strip of land."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director of Planning will gather bylaw examples from surrounding communities and distribute to board by schedule, requesting feedback by end of June",
+   "quote": "s. wallace explained he has started gathering examples of bylaws from surrounding communities for the by-laws we are looking to update; senior housing, cluster housing, inclusionary zoning, and minor site plan review. he wants feedback from the board by the end of june so that he can have a draft out by july."
+  },
+  {
+   "decision": "Board agreed Maintenance Association Agreement is better option than easement for stormwater maintenance",
+   "quote": "m. brenner stated that either would work, asked the board for their thoughts. a. burney believes the maintenance association agreement is the better option as it includes the fiduciary requirement. m. brenner agreed."
+  },
+  {
+   "decision": "Director will request lien information for tax title properties to be available at next meeting",
+   "quote": "s. wallace stated he will request the lien information to have at the next meeting."
+  },
+  {
+   "decision": "Master Plan discussion continued to next meeting",
+   "quote": "m. brenner stated he was unable to get the master plan sent out and will have this item moved to the next meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bond for Stormwater Work at 711 Massachusetts Ave",
+   "what_was_recorded": "Board approved $18,500.00 cash bond for stormwater work completion, not to be released prior to 11/1/26",
+   "figures_as_printed": [
+    "$14500",
+    "$18,500.00",
+    "30%"
+   ],
+   "quote": "applicant recommended $14500 for a bond. jeff recommends $18,500.00, which would include a 30% escalator."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Paula",
+   "stated_role": "resident, 63 Laurel Ln",
+   "topic": "stormwater drainage concerns",
+   "quote": "john paula 63 laurel ln stated he is concerned with water running off onto his small strip of land."
+  },
+  {
+   "speaker": "Nick Merlino",
+   "stated_role": "resident, 711 Mass Ave #3",
+   "topic": "hydro seeding work completion",
+   "quote": "nick merlino 711 mass ave #3, himself and other members of the hoa have some concerns regarding the hydro seeding and seeding."
+  },
+  {
+   "speaker": "Krishnaswamy Ravichandran",
+   "stated_role": "resident, 711 Mass Ave #6",
+   "topic": "incomplete hydro seeding",
+   "quote": "krishnaswamy ravichandran, 711 mass ave #6, wanted to make it known that the back of his unit, #5, and #7, have never been hydro seeded or seeded."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "0 Reservoir Rd ANR-26-2 (Approval Not Required)",
+   "resolution": "continued to May 11, 2026",
+   "quote": "continued from 2/23/26 (applicant request): 0 reservoir rd. (anr-26-2) j. leclair (mccarty engineerin",
+   "tags": [
+    "ANR",
+    "stormwater",
+    "permits"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "0 Reservoir Rd Stormwater Permit PBSW-25-5",
+   "resolution": "approved with standard conditions and legal review",
+   "quote": "a. burney moved to approve standard conditions and to have legal counsel review. a. reid, second. verbal vote: aye (4/0)",
+   "tags": [
+    "stormwater",
+    "permit",
+    "approved"
+   ]
+  },
+  {
+   "topic": "0 Reservoir Rd Special Permit PBSP-25-10",
+   "resolution": "withdrawn",
+   "quote": "j. leclair (mccarty engineering) stated with the stormwater approval he would like to withdraw this application.",
+   "tags": [
+    "special permit",
+    "withdrawn"
+   ]
+  },
+  {
+   "topic": "60 Cross Rd Stormwater Permit PBSW-26-11",
+   "resolution": "continued to May 11 at 6:05pm",
+   "quote": "a. burney moved to continue until may 11th at 6:05pm. t. willsmer, second verbal vote: aye (4/0)",
+   "tags": [
+    "stormwater",
+    "permit",
+    "continued"
+   ]
+  },
+  {
+   "topic": "222 West Townsend Rd Stormwater Permits PBSW-26-2, 26-3, 26-4, 26-5",
+   "resolution": "continued to May 11 at 6:05pm",
+   "quote": "a. burney moved to continue to 5/11/26 at 6:05pm. a. reid, second verbal vote: aye (4/0)",
+   "tags": [
+    "stormwater",
+    "solar",
+    "continued"
+   ]
+  },
+  {
+   "topic": "860 New West Townsend Rd Site Plan Review and Special Permit",
+   "resolution": "continued to May 11, 2026",
+   "quote": "a. burney moved to continue to may 11,2026 at 6:05pm. a. reid, second verbal vote: aye (4/0)",
+   "tags": [
+    "site plan",
+    "special permit",
+    "continued"
+   ]
+  },
+  {
+   "topic": "711 Massachusetts Ave Bond for Stormwater Work",
+   "resolution": "approved at $18,500.00",
+   "quote": "a. burney moved to accept a $18,500.00 bond paid by cash, not to be released prior to 11/1/26. t. willsmer, second. verbal vote: aye (4/0)",
+   "tags": [
+    "bond",
+    "stormwater",
+    "approved"
+   ]
+  },
+  {
+   "topic": "Master Plan update",
+   "resolution": "continued to next meeting",
+   "quote": "m. brenner stated he was unable to get the master plan sent out and will have this item moved to the next meeting",
+   "tags": [
+    "master plan",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Tax Title Process for 250 & 356 Hollis Rd",
+   "resolution": "deferred for discussion and vote at May 11 meeting",
+   "quote": "s. wallace stated that we will discuss and the vote if needed will be taken at the next meeting on may 11th.",
+   "tags": [
+    "tax title",
+    "deferred"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "stormwater permits",
+  "site plan review",
+  "special permits",
+  "bond approval",
+  "bylaws",
+  "tax title",
+  "committee reports",
+  "continued hearings"
+ ],
+ "dropped_unquoted_by_field": {}
 }

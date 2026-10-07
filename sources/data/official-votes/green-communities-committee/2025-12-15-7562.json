@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2025-12-15",
  "docid": "7562",
@@ -12,23 +12,182 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes from August 19, 2024, September 12, 2024, July 7, 2025, and September 8, 2025",
+   "motion": "Approve the minutes of August 19, 2024, September 12, 2024, July 7, 2025, and September 8, 2025.",
    "moved_by": "David Passios",
    "seconded_by": "David Blatt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "david passios made a motion to approve the m eeting minutes from august 19, 2024, september 12, 2024, july 7, 2025, and september 8, 2025. david blatt seconded the motion. meeting minutes unanimously approved"
+   "quote": "david passios made a motion to approve the m eeting minutes from august 19, 2024,"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Kim Duffy",
    "seconded_by": "David Passios",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "kim duffy made a motion to adjourn the meeting; david passios seconded. unanimously approved by david blatt, kim duffy, chris holden, david passios by roll-call vote."
+   "quote": "kim duffy made a motion to adjourn the meeting; david passios seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0841154
+ "note": "Text is clean extracted minutes, not a scan; no dollar figures appear anywhere in the minutes, so budget_items records only two discussions of budgeting with no printed amounts. Two votes are printed, both procedural; the minutes approval records three named members (Blatt, Duffy, Passios) and does not say whether Holden, who joined at 7:08 PM, was present for it, so no count is given beyond 'passed'. The header lists Matt Snyder as a member but the minutes do not name him as attending, so he is omitted. The minutes print 'David Passios' in the header and 'Dave Passios' in the attendance and vote lines; recorded as printed. Tyler Proteau is listed as public attendance, and the make-up item refers to 'Tyler Proteau's committee seat', so his membership status is not stated by the minutes beyond that reference. The meeting was Zoom remote only, so members are recorded as 'remote'. Public comment is recorded as 'None'.",
+ "cost_usd": 0.014563870000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "members : david blatt , kim duffy , dave passios , chris holden (joined at 7:08 pm)"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "members : david blatt , kim duffy , dave passios , chris holden (joined at 7:08 pm)"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair (header prints David Passios)",
+   "status": "remote",
+   "quote": "members : david blatt , kim duffy , dave passios , chris holden (joined at 7:08 pm)"
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "remote",
+   "quote": "members : david blatt , kim duffy , dave passios , chris holden (joined at 7:08 pm)"
+  },
+  {
+   "name": "Tyler Proteau",
+   "role": "Public Attendance",
+   "status": "present",
+   "quote": "public attendance : tyler proteau"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee recommended that the town budget for LED light maintenance, either through a Reserve Fund article or a line item.",
+   "quote": "recommend town budgeting for led light maintenance - could make an article for a r eserve f und or a line item in the town budg",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Kim to add energy narrative details to the Facebook page for community outreach.",
+   "quote": "kim - add energy narrative details to facebook page for community outreach"
+  },
+  {
+   "decision": "David Blatt to pursue a PPP (30 days) for a building energy assessment/study, and CBA (30 days) with Turkey Hill and the Public Safety Building prioritized, for the April 2026 spring grant round.",
+   "quote": "spring grant round, april 2026. david blatt working on ppp (30 days) for building energy"
+  },
+  {
+   "decision": "David Blatt to contact Unitil about net metering for solar panels and George Woodbury about a possible annual maintenance reserve fund.",
+   "quote": "david blatt - to contact unitil re: net metering for solar panels, contact george woodbury"
+  },
+  {
+   "decision": "David Blatt to discuss the committee's possible re-branding and Tyler Proteau's committee seat with the Select Board.",
+   "quote": "dave blatt to discuss with select board tyler proteau 's committee seat"
+  },
+  {
+   "decision": "Next meeting timeline set for mid-January 2026.",
+   "quote": "timeline for next meeting mid-january 2026"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "LED light maintenance funding",
+   "what_was_recorded": "The committee recommended the town budget for LED light maintenance, via a Reserve Fund article or a town budget line item; no figure was printed.",
+   "quote": "recommend town budgeting for led light maintenance - could make an article for a r eserve f und or a line item in the town budg",
+   "figures_as_printed": [],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Annual maintenance reserve fund and net metering",
+   "what_was_recorded": "Action items to contact Unitil about net metering and George Woodbury about a possible annual maintenance reserve fund; no figure was printed.",
+   "quote": "david blatt - to contact unitil re: net metering for solar panels, contact george woodbury",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve pending meeting minutes",
+   "resolution": "approved",
+   "quote": "meeting minutes unanimously approved by david blatt, kim duffy, david passios by roll- call vote",
+   "tags": [
+    "minutes",
+    "procedure"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public comment none recap of last grant and final report",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Recap of last grant and annual report review",
+   "resolution": "no action",
+   "quote": "hit goal of 20% energy reduction since 2013",
+   "tags": [
+    "energy",
+    "annual report",
+    "grants",
+    "municipal buildings"
+   ]
+  },
+  {
+   "topic": "Preparing for Spring 2026 grant",
+   "resolution": "action items assigned",
+   "quote": "spring grant round, april 2026. david blatt working on ppp (30 days) for building energy",
+   "tags": [
+    "grants",
+    "energy assessment",
+    "solar",
+    "LED lighting"
+   ]
+  },
+  {
+   "topic": "Styrofoam program update",
+   "resolution": "project not completed",
+   "quote": "tyler proteau - not able to utilize hannaford . project not able to be completed",
+   "tags": [
+    "styrofoam",
+    "Hannaford"
+   ]
+  },
+  {
+   "topic": "Committee make-up and re-branding",
+   "resolution": "discussed; referred to Select Board",
+   "quote": "discussed re-branding to possibly e nergy & s ustainability c ommittee (to be more descriptive of committee charge)",
+   "tags": [
+    "committee membership",
+    "re-branding",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Timeline for next meeting",
+   "resolution": "set for mid-January 2026",
+   "quote": "timeline for next meeting mid-january 2026",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "energy",
+  "green communities",
+  "grants",
+  "municipal buildings",
+  "LED lighting",
+  "solar net metering",
+  "styrofoam",
+  "committee membership",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

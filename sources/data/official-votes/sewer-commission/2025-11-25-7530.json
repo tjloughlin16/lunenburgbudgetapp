@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-11-25",
  "docid": "7530",
@@ -12,39 +12,252 @@
  },
  "votes": [
   {
-   "motion": "Vote on the waiver request for an easement at 763 Mass. Ave.",
+   "motion": "To vote on the waiver request for an easement at 763 Mass. Ave. (the motion did not carry; hearing closed at 6:32 pm)",
    "moved_by": "Dan P.",
    "seconded_by": "Scott D.",
-   "outcome": "failed 0-4",
+   "outcome": "failed",
    "procedural": false,
-   "quote": "motion: dan p. second: scott d. to vote on the waiver request for an easement at 763 mass. ave. roll call vote: dan-nay, arthur-nay, scott-nay and brett-nay."
+   "quote": "to vote on the waiver request for an easement at 763 mass. ave. roll call vote: dan-nay, arthur-nay, scott-nay and brett-nay."
   },
   {
-   "motion": "Accept the minutes of 10/28/25",
+   "motion": "To accept the minutes of 10/28/25.",
    "moved_by": "Dan P.",
    "seconded_by": "Scott D.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: dan p. second: scott d. to accept the minutes of 10/28/25. roll call vote: arthur-aye, scott-aye, dan-aye and brett-aye."
+   "quote": "to accept the minutes of 10/28/25. roll call vote: arthur-aye, scott-aye, dan-aye and brett-aye."
   },
   {
-   "motion": "Accept the Sewer Connection Charge Policy for ADUs",
+   "motion": "To accept the Sewer Connection Charge Policy for ADUs.",
    "moved_by": "Scott D.",
    "seconded_by": "Dan P.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: scott d. second: dan p. to accept the sewer connection charge policy for adus. roll call vote: scott-aye, dan-aye, arthur-aye, and brett-aye."
+   "quote": "to accept the sewer connection charge policy for adus. roll call vote: scott-aye, dan-aye, arthur-aye, and brett-aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "To adjourn at 6:48 pm.",
    "moved_by": "Dan P.",
    "seconded_by": "Arthur K.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: dan p. second: arthur k. to adjourn at 6:48 pm. roll call vote: arthur-aye, scott-aye, dan-aye and brett-aye."
+   "quote": "to adjourn at 6:48 pm. roll call vote: arthur-aye, scott-aye, dan-aye and brett-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08574439999999998
+ "note": "Text is machine-extracted, not a scan; all votes read from printed roll calls. Attendance is printed as a list under \"Attendees\" with no per-person status, and the meeting was held via Zoom, so statuses are marked \"present\" from the list and Haley Ward's status is \"not stated\". The \"PUBLIC COMMENT – Scott noted...\" line sits under Future Agenda Items and the speaker is a board member, not a member of the public; it is recorded here as printed. The easement motion text reads \"To vote on the waiver request\" without stating the direction of the vote; outcome is recorded as printed (\"did not carry\"). The count 0-4 is derived from the roll call, not printed as a tally.",
+ "cost_usd": 0.01559187,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Daniel Sheehan",
+   "role": "representing the applicant (763 Mass. Ave. easement request)",
+   "status": "present",
+   "quote": "represented by daniel sheehan (haley ward)"
+  },
+  {
+   "name": "Haley Ward",
+   "role": "listed with Daniel Sheehan as guest; provided an update on the stub relocation per the minutes",
+   "status": "not stated",
+   "quote": "guests: daniel sheehan (haley ward)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Manhole repair contract (IFB) extended to June 30, 2026, because replacement frames arrived wrong and were reordered.",
+   "quote": "they are granting the company an extension to june 30, 2026."
+  },
+  {
+   "decision": "Commission discussed the Chestnut Street benefits but agreed it cannot force the applicant to extend the sewer.",
+   "quote": "but agreed they cannot force them to extend the sewer."
+  },
+  {
+   "decision": "Chair to add a by-law/regulation item on sewer connection on the street of the property's address to the next agenda; DPW to ask Town Counsel.",
+   "quote": "brett will add it to the next agenda and bill said they will need to discuss it with town counsel."
+  },
+  {
+   "decision": "DPW to ask Town Counsel when the new ADU policy takes effect.",
+   "quote": "bill will also ask town counsel when the new adu policy will be in effect."
+  },
+  {
+   "decision": "Manhole repair to be added to spring agendas.",
+   "quote": "the manhole repair will be added to spring agendas."
+  },
+  {
+   "decision": "Sewer and water rate increases to be taken up as an agenda item.",
+   "quote": "andrew replied they will need to look at raising the rates as an agenda item."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chestnut Street sewer extension cost (tie-ins vs three Mass. Ave. connections)",
+   "what_was_recorded": "Commissioners noted the applicant had not provided cost figures comparing Chestnut Street tie-ins with three connections to Mass. Ave.; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "scott and arthur noted they had not provided the cost figures for adding sewer to chestnut street for tie-ins vs making 3 connections to mass. ave."
+  },
+  {
+   "topic": "Cost of running sewer up Chestnut Street",
+   "what_was_recorded": "The applicant's representative said going up Chestnut Street would cost significantly more than hooking up to the stub; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "going up chestnut street would be significantly more expensive"
+  },
+  {
+   "topic": "Sewer and water rate increases",
+   "what_was_recorded": "A commissioner said other towns have raised sewer and water rates; staff said rate increases will need to be an agenda item. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "scott noted that other towns have had increases in their sewer and water rates."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Rate increases in other towns",
+   "speaker": "Scott",
+   "stated_role": "Vice-Chair",
+   "quote": "scott noted that other towns have had increases in their sewer and water rates."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action; none offered",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment/announcements - none"
+  },
+  {
+   "topic": "Public hearing: easement waiver request, 763 Mass. Ave. (continued from 10/28/25)",
+   "resolution": "waiver motion failed 0-4; hearing closed",
+   "tags": [
+    "easement",
+    "public hearing",
+    "Mass. Ave.",
+    "Chestnut Street"
+   ],
+   "quote": "the motion did not carry and the hearing was closed at 6:32 pm."
+  },
+  {
+   "topic": "Minutes of 10/28/25",
+   "resolution": "approved 4-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to accept the minutes of 10/28/25."
+  },
+  {
+   "topic": "ADU amendment and Sewer Connection Charge Policy for ADUs",
+   "resolution": "accepted 4-0",
+   "tags": [
+    "ADU",
+    "connection charge",
+    "bylaw"
+   ],
+   "quote": "to accept the sewer connection charge policy for adus."
+  },
+  {
+   "topic": "Manhole repair invitation for bid (IFB)",
+   "resolution": "contract extended to June 30, 2026; added to spring agendas",
+   "tags": [
+    "manhole repair",
+    "contract",
+    "extension"
+   ],
+   "quote": "they are granting the company an extension to june 30, 2026."
+  },
+  {
+   "topic": "Future agenda items: by-law waiver language and connection rule",
+   "resolution": "to next agenda; Town Counsel to be consulted; Town Meeting needed for by-law change",
+   "tags": [
+    "by-law",
+    "waiver",
+    "Town Meeting",
+    "Town Counsel"
+   ],
+   "quote": "bill noted they will need to go to town meeting to change the waiver language in the by- law",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Public comment: sewer and water rates",
+   "resolution": "rate review to be placed on an agenda",
+   "tags": [
+    "rates",
+    "public comment"
+   ],
+   "quote": "he asked if they will be looking at increases and andrew replied they will need to look at raising the rates as an agenda item."
+  },
+  {
+   "topic": "Upcoming Sewer Commission meetings",
+   "resolution": "no action; schedule listed",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming scheduled sewer commission activities:"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 6:48 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn at 6:48 pm. roll call vote: arthur-aye, scott-aye, dan-aye and brett-aye."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "easement",
+  "public hearing",
+  "763 Mass. Ave.",
+  "Chestnut Street",
+  "ADU",
+  "connection charge",
+  "manhole repair",
+  "rates",
+  "Zoom meeting",
+  "by-law"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2026-06-25",
  "docid": "7863",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of April 23, 2026",
+   "motion": "Approve the minutes of April 23, 2026",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "david dorren made a motion to approve the minutes; donna landry seconded the motion. aif"
   },
   {
-   "motion": "approve the minutes of May 15th",
+   "motion": "Approve the minutes of May 15th",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "david dorren made a motion to approve the minutes, donna landry seconded the motion. aif"
   },
   {
-   "motion": "approve the minutes of May 15th and June 5th",
+   "motion": "Approve the minutes of May 15th and June 5th",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "david dorren made a motion to approve the minutes, donna landry seconded the motion. aif"
   },
   {
-   "motion": "allocate $45,000 from the Sale of Lots Fund to DPW for the North Cemetery Back Lot expansion",
+   "motion": "Allocate $45,000 from the Sale of Lots Fund to DPW for the North Cemetery Back Lot expansion",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "david dorren made a motion to allocate $45k - from the \"sale of lots fund\" to dpw, for the north cemetery back lot expansion, donna landry seconded the motion, aif"
   },
   {
-   "motion": "pay $3,500 invoice to Leominster Monument",
+   "motion": "Pay the $3,500 invoice to Leominster Monument",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "david dorren made a motion to pay $3500 invoice to leominster monument; donna landry seconded the motion aif"
   },
   {
-   "motion": "increase lot sale fees",
+   "motion": "Increase lot sale fees according to the new fee schedule",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
@@ -60,7 +60,259 @@
    "quote": "david dorren made a motion to increase lot sale fees, donna landry seconded the motion aif"
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes recorded as \"AIF\" (All In Favor). Minutes are clearly printed and readable.",
- "cost_usd": 0.0821195
+ "dropped_unquoted": 3,
+ "note": "Minutes contain OCR errors: 'eƯorts' (efforts), 'SheriƯ's' (Sheriff's), 'Fich' (Fitch), 'Fiinley' (Finley). Possible name inconsistency: 'Bill Bernard' listed as DPW Director in attendees, 'Bill Barnard' mentioned in recognition section—likely the same person.",
+ "cost_usd": 0.17674499999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Clark",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: mike clark, chair"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "david dorren, vice-chair"
+  },
+  {
+   "name": "Donna Landry",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "donna landry, clerk"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Department Director",
+   "status": "present",
+   "quote": "dpw department director: bill bernard"
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "present",
+   "quote": "cemetery superintendent: todd holman"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "present",
+   "quote": "dave rodgers, of 82 highland street came to meeting to thank all"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Correction made to April 23, 2026 minutes regarding name: Richard McGrath vs. Mike McGrath",
+   "quote": "review of minutes of april 23, 2026, made correction in name of richard mcgrath vs. mike mcgrath"
+  },
+  {
+   "decision": "Correction made to April 23, 2026 minutes regarding verbiage: John Bowen championing to coordinate",
+   "quote": "correction of verbiage from john bowen championing to coordinate on page 2"
+  },
+  {
+   "decision": "Donna Landry to contact Brandon Finley for cost breakdown on Sims Cloud and GIS services",
+   "quote": "donna landry to contact brandon finley and get a breakdown on costs"
+  },
+  {
+   "decision": "Board discussed the possibility of renting Mausoleum space to funeral homes who have requested it",
+   "quote": "discussed the possibility of renting mausoleum to funeral homes, who have requested the space"
+  },
+  {
+   "decision": "Board discussed strategy for posting Cemetery Commission messages on Facebook and Discussing Lunenburg",
+   "quote": "discussed some of the issues and concerns on how to get messages out and posted from the cemetery commission on fb and discussing lunenburg"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sims Cloud annual maintenance",
+   "what_was_recorded": "Annual maintenance cost for Sims Cloud cemetery management system and discussion of licensing options and death certificate access",
+   "figures_as_printed": [
+    "$2961"
+   ],
+   "quote": "sims cloud annual maintenance $2961, is it worth getting a license for cemetery division"
+  },
+  {
+   "topic": "GIS viewing access",
+   "what_was_recorded": "Cost for GIS viewing access for public viewing discussed",
+   "figures_as_printed": [
+    "$1200"
+   ],
+   "quote": "$1200 viewing of gis for public viewing"
+  },
+  {
+   "topic": "North Cemetery Back Lot expansion",
+   "what_was_recorded": "Allocation from the Sale of Lots Fund to DPW for expansion project",
+   "figures_as_printed": [
+    "$45K"
+   ],
+   "quote": "allocate $45k - from the \"sale of lots fund\" to dpw, for the north cemetery back lot expansion"
+  },
+  {
+   "topic": "Monument repair invoice",
+   "what_was_recorded": "Invoice from Leominster Monument for repair of Levi Jr. headstone at Fitch Street Cemetery",
+   "figures_as_printed": [
+    "$3500"
+   ],
+   "quote": "david dorren made a motion to pay $3500 invoice to leominster monument"
+  },
+  {
+   "topic": "Cemetery lot sale fees",
+   "what_was_recorded": "New fee schedule established for single lot sales, full body burials, cremations, and niche wall spaces",
+   "figures_as_printed": [
+    "$1200.00",
+    "$750.00",
+    "$450.00",
+    "$500",
+    "$300",
+    "$300"
+   ],
+   "quote": "(single lot fee, two lot minimum, $1200.00 $750.00 to sale of lots fund, $450.00 to perpetual care fund, $500 full body burial, $300 cremation, $300 niche wall)"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of funds from Sale of Lots Fund to Department of Public Works for North Cemetery Back Lot expansion",
+   "amount_as_printed": "$45K",
+   "outcome": "approved",
+   "quote": "david dorren made a motion to allocate $45k - from the \"sale of lots fund\" to dpw, for the north cemetery back lot expansion, donna landry seconded the motion, aif"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Cemetery upkeep and improvements",
+   "quote": "dave rodgers, of 82 highland street came to meeting to thank all for the upkeep of the cemetery and its improvement"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of April 23, 2026 meeting minutes",
+   "resolution": "approved with corrections",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "review of minutes of april 23, 2026, made correction in name of richard mcgrath vs. mike mcgrath"
+  },
+  {
+   "topic": "Approval of May 15, 2026 meeting minutes",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "review of minutes of may 15th, david dorren made a motion to approve the minutes, donna landry seconded the motion. aif"
+  },
+  {
+   "topic": "Approval of May 15th and June 5th meeting minutes",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "review of minutes of may 15th & june 5th, david dorren made a motion to approve the minutes, donna landry seconded the motion. aif"
+  },
+  {
+   "topic": "Public commendation for cemetery maintenance",
+   "resolution": "acknowledged",
+   "tags": [
+    "public comment",
+    "recognition"
+   ],
+   "quote": "dave rodgers, of 82 highland street came to meeting to thank all for the upkeep of the cemetery and its improvement"
+  },
+  {
+   "topic": "Volunteer and community recognition for Flag Burning Day",
+   "resolution": "recognized",
+   "tags": [
+    "volunteers",
+    "recognition"
+   ],
+   "quote": "mike clark gave recognition and appreciation to john bowen jr., todd holman, the scouts, marines, bill barnard and the cemetery commission for their eưorts in flag burning day.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Social media and communication",
+   "resolution": "discussed",
+   "tags": [
+    "operations",
+    "communication"
+   ],
+   "quote": "discussed some of the issues and concerns on how to get messages out and posted from the cemetery commission on fb and discussing lunenburg"
+  },
+  {
+   "topic": "Sims Cloud cemetery management system and GIS access",
+   "resolution": "discussed; staff assigned for follow-up",
+   "tags": [
+    "budget",
+    "technology",
+    "maintenance"
+   ],
+   "quote": "sims cloud annual maintenance $2961, is it worth getting a license for cemetery division. we do not have access to the death certiﬁcates.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Mausoleum rental to funeral homes",
+   "resolution": "discussed",
+   "tags": [
+    "revenue",
+    "operations"
+   ],
+   "quote": "discussed the possibility of renting mausoleum to funeral homes, who have requested the space"
+  },
+  {
+   "topic": "North Cemetery Back Lot expansion",
+   "resolution": "approved",
+   "tags": [
+    "budget",
+    "capital",
+    "expansion"
+   ],
+   "quote": "david dorren made a motion to allocate $45k - from the \"sale of lots fund\" to dpw, for the north cemetery back lot expansion"
+  },
+  {
+   "topic": "DPW staffing and volunteers",
+   "resolution": "reported",
+   "tags": [
+    "staffing",
+    "operations"
+   ],
+   "quote": "dpw currently has 3 part time workers, and a volunteer, and also receives assistance from participants from the worcester county sheriư's oưice community service program. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Invoice payment to Leominster Monument",
+   "resolution": "approved",
+   "tags": [
+    "budget",
+    "maintenance"
+   ],
+   "quote": "david dorren made a motion to pay $3500 invoice to leominster monument; donna landry seconded the motion aif"
+  },
+  {
+   "topic": "Cemetery lot sale fees",
+   "resolution": "approved",
+   "tags": [
+    "budget",
+    "fees",
+    "revenue"
+   ],
+   "quote": "david dorren made a motion to increase lot sale fees, donna landry seconded the motion aif"
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "budget",
+  "maintenance",
+  "expansion",
+  "volunteers"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 2,
+  "topics": 1
+ }
 }

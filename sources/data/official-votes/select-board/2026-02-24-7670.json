@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-02-24",
  "docid": "7670",
@@ -12,25 +12,136 @@
  },
  "votes": [
   {
-   "motion": "Approve the prioritized list of FY27 legislative earmark requests",
+   "motion": "To approve the prioritized list of FY27 legislative earmark requests as presented",
    "moved_by": "Brian Lehtinen",
    "seconded_by": "Amanda Moore",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": false,
    "quote": "motion to approve the prioritized list of fy27 legislative earmark requests as presented was made by select board member brian lehtinen and seconded by select board member amanda moore. roll call vote: member mcleod-aye, member lehtinen-aye, clerk emkey- aye, vice-chair moore-aye, chair nuzzolo-aye. the motion passed unanimously (5-0-0)",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn at 6:58 PM",
+   "motion": "To adjourn",
    "moved_by": "Brian Lehtinen",
    "seconded_by": "Amanda Moore",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": true,
    "quote": "motion by member lehtinen to adjourn at 6:58 pm. seconded by vice-chair moore. roll call vote: member mcleod-aye, member lehtinen-aye, clerk emkey-aye, vice-chair moore- aye, chair nuzzolo-aye. the motion passed unanimously (5-0-0)",
    "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1224374
+ "note": "Zoom-only meeting. All board members present.",
+ "cost_usd": 0.0990326,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Fire Department radio upgrades",
+   "what_was_recorded": "Proposed FY27 legislative earmark request for Fire Department radio upgrades",
+   "figures_as_printed": [
+    "$45,000"
+   ],
+   "quote": "fire department radio upgrades ($45,000) and the primary school playground design ($30,000)"
+  },
+  {
+   "topic": "Primary School playground design",
+   "what_was_recorded": "Proposed FY27 legislative earmark request for Primary School playground design",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "fire department radio upgrades ($45,000) and the primary school playground design ($30,000)"
+  },
+  {
+   "topic": "Public Safety Building boiler upgrades",
+   "what_was_recorded": "Proposed FY27 legislative earmark request for Public Safety Building boiler upgrades",
+   "figures_as_printed": [
+    "$115,000"
+   ],
+   "quote": "public safety building boiler upgrades ($115,000) and fitzgerald field improvements ($55,600)"
+  },
+  {
+   "topic": "Fitzgerald Field improvements",
+   "what_was_recorded": "Proposed FY27 legislative earmark request for Fitzgerald Field improvements; subsequently removed from consideration",
+   "figures_as_printed": [
+    "$55,600"
+   ],
+   "quote": "public safety building boiler upgrades ($115,000) and fitzgerald field improvements ($55,600)"
+  },
+  {
+   "topic": "Turkey Hill and Primary School intercom upgrades",
+   "what_was_recorded": "Proposed school security communications upgrade with revised cost estimate after one unit funded through FY26 earmark",
+   "figures_as_printed": [
+    "approximately $24,044",
+    "$12,500",
+    "approximately $9,000",
+    "approximately $22,000"
+   ],
+   "quote": "intercom upgrades for turkey hill and the primary school, referencing a capital planning figure of approximately $24,044. town manager warren-dyment clarified that, following communication with the superintendent, the actual remaining need for the intercoms had been reduced to $12,500, as one unit had already been funded through a fy26 security earmark. she further noted that approximately $9,000 could be used to fund two-way radios for security at the middle/high school, and suggested bundling these items together under a general school security communications upgrade, for a combined total of approximately $22,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Request For Legislative Earmarks In The FY27 State Budget",
+   "resolution": "approved",
+   "tags": [
+    "legislative earmarks",
+    "capital planning",
+    "FY27 budget",
+    "public safety",
+    "schools"
+   ],
+   "quote": "discussion on requesting legislative earmarks in the upcoming fy27 state budget. chair nuzzolo opened the discussion by noting that, following outreach to representative scarsdale, the timeline for submitting legislative earmark requests was shorter than previously understood, with a deadline at the end of the month."
+  }
+ ],
+ "tags": [
+  "legislative earmarks",
+  "capital plan",
+  "FY27 state budget",
+  "public safety",
+  "school security",
+  "infrastructure"
+ ],
+ "dropped_unquoted_by_field": {}
 }

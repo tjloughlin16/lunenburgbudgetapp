@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2026-06-03",
  "docid": "7837",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the May 20 meeting",
+   "motion": "Approve the minutes of the 5/20/2026 meeting",
    "moved_by": "T. Doucette",
    "seconded_by": "M. Larouche",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "motion: t. doucette, to approve the minutes of the 5/20 meeting. second m. larouche vote: m. larouche - aye r. bursch - aye t. doucette - aye j. pewtherer - aye"
   },
   {
-   "motion": "Continue the hearing for 146 Youngs Road to June 17",
+   "motion": "Continue NOI-26-18 at 146 Youngs Road to June 17 meeting",
    "moved_by": "R. Bursch",
    "seconded_by": "T. Doucette",
    "outcome": "passed 5-0",
@@ -29,7 +29,7 @@
    "quote_taken_from_text": true
   },
   {
-   "motion": "Continue the hearing for 507 West Townsend Road to June 17 with four specified conditions regarding replication detail, buffer planting demarcation, structure location, and staging area",
+   "motion": "Continue NOI-26-19 at 507 West Townsend Road to June 17 with specified conditions",
    "moved_by": "M. Larouche",
    "seconded_by": "T. Doucette",
    "outcome": "passed 5-0",
@@ -37,15 +37,15 @@
    "quote": "motion: m. larouche, continue to the june 17 meeting, addressing the following: 1. replication detail on the disturbed area 2. 30-foot buffer planting demarcation native plants 3. move the structure outside the buffer zone 4. locate the staging area on the map second t. doucette vote: m. larouche - aye r. bursch - aye t. doucette - aye a. burnap - aye j. pewtherer - aye"
   },
   {
-   "motion": "Continue the hearing for 860 New West Townsend Road to June 17 pending DEP and Planning Board approvals",
+   "motion": "Continue NOI-26-1 at 860 New West Townsend Road to June 17 with conditions",
    "moved_by": "R. Bursch",
    "seconded_by": "M. Larouche",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed 4-0 with 1 abstention",
    "procedural": false,
    "quote": "motion: r. bursch, to continue to the june 17 meeting, addressing the following: 1. wait for dep to review responses 2. wait for all planning board approvals to be complete second m. larouche vote: m. larouche - aye r. bursch - aye a. burnap - aye j. pewtherer - aye t. doucette - abstain"
   },
   {
-   "motion": "Continue the hearing for 56 Ruth Street to June 17 at applicant's request",
+   "motion": "Continue NOI-26-16 at 56 Ruth Street to June 17 meeting",
    "moved_by": "M. Larouche",
    "seconded_by": "R. Bursch",
    "outcome": "passed 5-0",
@@ -53,7 +53,7 @@
    "quote": "motion: m. larouche, continue to the june 17 meeting at applicant's request. second r. bursch vote: m. larouche - aye r. bursch - aye t. doucette - aye a. burnap - aye j. pewtherer - aye"
   },
   {
-   "motion": "Continue the hearing for 934 Massachusetts Avenue to June 17 at applicant's request",
+   "motion": "Continue NOI-26-17 at 934 Massachusetts Avenue to June 17 meeting",
    "moved_by": "R. Bursch",
    "seconded_by": "M. Larouche",
    "outcome": "passed 5-0",
@@ -69,15 +69,15 @@
    "quote": "motion: t. doucette, to approve the treatment plan as presented. second m. larouche vote: m. larouche - aye r. bursch - aye t. doucette - aye a. burnap - aye j. pewtherer - aye"
   },
   {
-   "motion": "Approve $2,411.25 from the Haws fund to hire a cleaning company for the 123 Hollis Road property",
+   "motion": "Approve $2,411.25 from the Haws fund to hire a cleaning company for 123 Hollis Road property",
    "moved_by": "M. Larouche",
    "seconded_by": "T. Doucette",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed 4-0 with 1 abstention",
    "procedural": false,
    "quote": "motion: m. larouche, to approve $2,411.25 from the \"haws\" fund to hire a cleaning company for the 123 hollis road property. second t. doucette vote: m. larouche - aye r. bursch - abstain t. doucette - aye a. burnap - aye j. pewtherer - aye"
   },
   {
-   "motion": "Adjourn the meeting at 8:50 PM",
+   "motion": "Adjourn meeting at 8:50 PM",
    "moved_by": "T. Doucette",
    "seconded_by": "M. Larouche",
    "outcome": "passed 5-0",
@@ -86,6 +86,295 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded and clearly voted upon. No missing vote counts or unclear outcomes.",
- "cost_usd": 0.10461440000000001
+ "note": "Andrea Burnap was initially absent but joined the meeting remotely at 29:17 minutes into the meeting. No public comment was received from members of the public.\"",
+ "cost_usd": 0.169605,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: j. pewtherer, r. bursch, m. larouche, t. doucette"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: j. pewtherer, r. bursch, m. larouche, t. doucette"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: j. pewtherer, r. bursch, m. larouche, t. doucette"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: m. wilson, a. burnap (joined at 29:17 minutes into the meeting)"
+  },
+  {
+   "name": "Teddy Doucette",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: j. pewtherer, r. bursch, m. larouche, t. doucette"
+  },
+  {
+   "name": "Andrea Burnap",
+   "role": "Member",
+   "status": "remote",
+   "quote": "absent: m. wilson, a. burnap (joined at 29:17 minutes into the meeting)"
+  },
+  {
+   "name": "Herlin Jamie",
+   "role": "Conservation Agent",
+   "status": "present",
+   "quote": "herlin jamie - conservation agent"
+  },
+  {
+   "name": "Michael Gale",
+   "role": "Admin Assistant",
+   "status": "present",
+   "quote": "michael gale - admin assistant"
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "representing the applicants",
+   "status": "present",
+   "quote": "ryan proctor (dillis & roy) represented the applicant."
+  },
+  {
+   "name": "Zach Mann",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "zach mann (new england environmental design) represented the applicant."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "representing the violator",
+   "status": "present",
+   "quote": "brian marchetti represented the violator"
+  },
+  {
+   "name": "Dominic Meringolo",
+   "role": "presenting treatment plan",
+   "status": "present",
+   "quote": "dominic meringolo (solitude) presented the treatment plan."
+  },
+  {
+   "name": "Daniel Brackett",
+   "role": "applicant",
+   "status": "present",
+   "quote": "ryan proctor (dillis & roy) represented the applicants, who were also present."
+  },
+  {
+   "name": "Rachel Brackett",
+   "role": "applicant",
+   "status": "present",
+   "quote": "ryan proctor (dillis & roy) represented the applicants, who were also present."
+  },
+  {
+   "name": "Brad Coons",
+   "role": "interested in trail stewardship position",
+   "status": "present",
+   "quote": "j. pewtherer noted that brad coons attended the entire meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Continued NOI-26-10 at 1625 Massachusetts Avenue (ADA parking and hiking trail reconstruction) to June 17, 2026",
+   "quote": "notice of intent by the town of lunenburg conservation commission for the construction of an ada parking and re-construction of an existing hiking trail at cowdery nature center. continued to 06/17"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hickory Hills Lake 2026 treatment plan",
+   "what_was_recorded": "Approved treatment plan to begin June 10 for 5 areas of the lake totaling 25 acres",
+   "figures_as_printed": [
+    "5 areas",
+    "25 acres"
+   ],
+   "quote": "5 areas of the lake (25 acres) identified for treatment. treatment to begin june10."
+  },
+  {
+   "topic": "Cleaning services for 123 Hollis Road property",
+   "what_was_recorded": "Approved payment from Haws fund for cleaning company services including carpet cleaning, touchable surfaces, vapor treatment, supplies, and heavy pet spot removal",
+   "figures_as_printed": [
+    "$216",
+    "$1,872",
+    "$122",
+    "$100",
+    "$95",
+    "$2,405",
+    "$2,411.25"
+   ],
+   "quote": "cleaning quote includes carpet cleaning ($216), touchable services ($1,872), vapor order counteractant ($122), supplies ($100), heavy pet spot removal ($95) for a subtotal of $2,405."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Payment from Haws fund for cleaning company services at 123 Hollis Road property",
+   "amount_as_printed": "$2,411.25",
+   "outcome": "approved 4-0 with 1 abstention",
+   "quote": "motion: m. larouche, to approve $2,411.25 from the \"haws\" fund to hire a cleaning company for the 123 hollis road property. second t. doucette vote: m. larouche - aye r. bursch - abstain t. doucette - aye a. burnap - aye j. pewtherer - aye"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Pollinator Habitat Update",
+   "resolution": "update provided on May 17 event",
+   "tags": [
+    "habitat",
+    "maintenance",
+    "announcements"
+   ],
+   "quote": "m. larouche reviewed the may 17 event, sharing photos of plants and butterflies. it was basically an opportunity to organize for the upcoming season."
+  },
+  {
+   "topic": "Drought Declaration DEP May 22",
+   "resolution": "noted and discussed water conservation measures",
+   "tags": [
+    "water",
+    "drought",
+    "environmental"
+   ],
+   "quote": "dep raised the drought level to level 2 (significant drought) for the connecticut river valley, central and nantucket counties."
+  },
+  {
+   "topic": "NOI-26-18 (146 Youngs Road) - Septic System Replacement",
+   "resolution": "continued to June 17",
+   "tags": [
+    "wetlands",
+    "septic",
+    "public-hearing"
+   ],
+   "quote": "notice of intent by nichols excavating, llc for the replacement of a failed septic system"
+  },
+  {
+   "topic": "NOI-26-19 (507 West Townsend Road) - Single Family Home with Wetland Crossing",
+   "resolution": "continued to June 17 with conditions",
+   "tags": [
+    "wetlands",
+    "construction",
+    "public-hearing"
+   ],
+   "quote": "notice of intent by jahnke construction llc for the construction of a single-family home with a wetland crossing"
+  },
+  {
+   "topic": "NOI-26-10 (1625 Massachusetts Avenue) - ADA Parking and Trail Reconstruction",
+   "resolution": "continued to June 17",
+   "tags": [
+    "accessibility",
+    "trail",
+    "public-hearing"
+   ],
+   "quote": "notice of intent by the town of lunenburg conservation commission for the construction of an ada parking and re-construction of an existing hiking trail at cowdery nature center."
+  },
+  {
+   "topic": "NOI-26-1 (860 New West Townsend Road) - Common Driveway for Four Residential Lots",
+   "resolution": "continued to June 17 pending DEP and Planning Board approvals",
+   "tags": [
+    "development",
+    "residential",
+    "public-hearing"
+   ],
+   "quote": "notice of intent by daniel & rachel brackett for a common driveway to provide access to four residential lots"
+  },
+  {
+   "topic": "NOI-26-16 (56 Ruth Street) - Common Driveway with Drainage Basin",
+   "resolution": "continued to June 17 at applicant's request",
+   "tags": [
+    "development",
+    "public-hearing"
+   ],
+   "quote": "notice of intent by benjamin builders for the construction of common driveway entrance with related drainage basin and site grading"
+  },
+  {
+   "topic": "NOI-26-17 (934 Massachusetts Avenue) - Utility Substation and Utility Poles",
+   "resolution": "continued to June 17 at applicant's request",
+   "tags": [
+    "utility",
+    "public-hearing"
+   ],
+   "quote": "notice of intent by unitil for the construction of a new substation and replacement of utility poles"
+  },
+  {
+   "topic": "Enforcement - 1168 Mass Ave Rear",
+   "resolution": "monitoring USDA farm plan approval process",
+   "tags": [
+    "enforcement",
+    "agriculture"
+   ],
+   "quote": "brian marchetti represented the violator who explained the process started about a year ago when they started working with usda regarding the farm plan"
+  },
+  {
+   "topic": "Enforcement - 314 Highland St",
+   "resolution": "monitoring ongoing",
+   "tags": [
+    "enforcement"
+   ],
+   "quote": "h. jaime is in touch with the owner."
+  },
+  {
+   "topic": "Hickory Hills Lake 2026 Treatment Plan",
+   "resolution": "approved",
+   "tags": [
+    "lake",
+    "environmental",
+    "treatment"
+   ],
+   "quote": "motion: t. doucette, to approve the treatment plan as presented. second m. larouche"
+  },
+  {
+   "topic": "Central Mass Mosquito Control Plan Ditch Maintenance",
+   "resolution": "noted as courtesy notice; free to property owner",
+   "tags": [
+    "mosquito-control",
+    "maintenance"
+   ],
+   "quote": "the central mass mosquito control plan will be digging a ditch as maintenance and provided this notice as a courtesy."
+  },
+  {
+   "topic": "715 Reservoir Road Tree Planting in Buffer Zone",
+   "resolution": "spring checkup inspection planned",
+   "tags": [
+    "buffer-zone",
+    "vegetation"
+   ],
+   "quote": "h, jaime received notice that several large trees were planted at 715 reservoir rd inside the 30-foot buffer. she conducted a site visit."
+  },
+  {
+   "topic": "Conservation Budget",
+   "resolution": "final and proposed budgets ready for June 17 meeting",
+   "tags": [
+    "budget",
+    "administrative"
+   ],
+   "quote": "final and proposed budgets will be ready for the june 17 meeting. she reviewed the work required to get to this state."
+  },
+  {
+   "topic": "Hollis Road Residence Cleanup",
+   "resolution": "approved $2,411.25 from Haws fund for cleaning services",
+   "tags": [
+    "property-maintenance",
+    "budget"
+   ],
+   "quote": "motion: m. larouche, to approve $2,411.25 from the \"haws\" fund to hire a cleaning company for the 123 hollis road property."
+  }
+ ],
+ "tags": [
+  "conservation",
+  "wetlands",
+  "NOI",
+  "public-hearing",
+  "environmental",
+  "enforcement",
+  "budget",
+  "tree-planting",
+  "water-conservation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

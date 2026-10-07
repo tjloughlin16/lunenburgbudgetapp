@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2026-03-26",
  "docid": "7741",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Start the meeting",
+   "motion": "to start the meeting",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
    "procedural": true,
-   "quote": "david dorren made a motion to start the meeting, donna landry seconded the motion, aif"
+   "quote": "david dorren made a motion to start the meeting, donna landry seconded the motion, aif ."
   },
   {
-   "motion": "Approve minutes of December 19, 2025 and February 26, 2026",
+   "motion": "to approve minutes of December 19, 2025 – North Cemetery and February 26, 2026",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
    "procedural": true,
-   "quote": "david dorren made motion to approve minutes of december 19, 2025 - north cemetery and february 26, 2026, seconded by donna landry, aif"
+   "quote": "david dorren made motion to approve minutes of december 19, 2025 - north cemetery and february 26, 2026, seconded by donna landry, aif ."
   },
   {
-   "motion": "Put flowers in front of North and South cemeteries for Memorial Day from Lakeview Nurseries",
+   "motion": "to put flowers in front of North and South cemeteries for Memorial Day from Lakeview Nurseries",
    "moved_by": "David Dorren",
-   "seconded_by": "DLL",
+   "seconded_by": "Donna Landry",
    "outcome": "passed",
    "procedural": false,
    "quote": "david dorren made a motion to put ﬂowers in front of north and south cemeteries for memorial day from lakeview nurseries, dll seconded, aif"
   },
   {
-   "motion": "Transfer 20k from sale of lots for embellishment",
+   "motion": "to transfer 20k from sale of lots for embellishment",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "david dorren made a motion that we want to transfer 20k from sale of lots for embellishment, donna landry seconded, aif"
   },
   {
-   "motion": "Approve plaque for Fish Street",
+   "motion": "to approve plaque for Fish Street",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
@@ -52,23 +52,196 @@
    "quote": "david dorren made a motion to approve plaque for fish street; donna landry seconded the motion. aif"
   },
   {
-   "motion": "Accept 5UC lots from Watson and exchange 29UC for 5UC",
+   "motion": "to accept 5UC lots from Watson, and exchange 29UC for 5UC",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
    "procedural": false,
-   "quote": "david dorren made a motion to accept 5uc lots from watson, and exchange 29uc for 5uc, donna landry seconded, aif"
+   "quote": "david dorren made a motion to accept 5uc lots from watson, and exchange 29uc for 5uc, donna landry seconded, aif ."
   },
   {
-   "motion": "Adjourn",
+   "motion": "to adjourn",
    "moved_by": "Mike Clark",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mike clark made a motion to adjourn, donna landry seconded the motion, aif"
+   "quote": "mike clark made a motion to adjourn, donna landry seconded the motion, aif ."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0694774
+ "note": "\"\"",
+ "cost_usd": 0.1176566,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Clark",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mike clark made a motion to adjourn, donna landry seconded the motion, aif ."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "david dorren made motion to approve minutes of december 19, 2025 - north cemetery and february 26, 2026, seconded by donna landry, aif ."
+  },
+  {
+   "name": "Donna Landry",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "donna landry seconded the motion, aif . 6:06: david dorren made motion to approve minutes of december 19",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Department Director",
+   "status": "present",
+   "quote": "bill bernard presented the design cost estimates and plan for the north cemetery backlot expansion."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "present",
+   "quote": "todd holman handed out a recommendation on rules updates, review of cemetery rules to be reviewed by commission and discussed at next meeting."
+  },
+  {
+   "name": "Scott Watson",
+   "role": "property owner",
+   "status": "not stated",
+   "quote": "scott watson owned an 8-lot cremation plot, 3uc, which was donated back to the town to be used for hardship."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bill Bernard (DPW) directed to consult with Dillis and Roy to identify cost reductions for North Cemetery backlot expansion",
+   "quote": "bill - dpw to go back to dillis and roy to see where we can decrease costs."
+  },
+  {
+   "decision": "DPW authorized to rehire 2 part-time workers",
+   "quote": "dpw rehiring 2 part time workers."
+  },
+  {
+   "decision": "Cemetery Rules to be reviewed by Commission and discussed at next meeting",
+   "quote": "todd holman handed out a recommendation on rules updates, review of cemetery rules to be reviewed by commission and discussed at next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Memorial Day flowers arrangement",
+   "what_was_recorded": "Flowers to be placed in front of North and South cemeteries for Memorial Day from Lakeview Nurseries",
+   "figures_as_printed": [],
+   "quote": "david dorren made a motion to put ﬂowers in front of north and south cemeteries for memorial day from lakeview nurseries, dll seconded, aif"
+  },
+  {
+   "topic": "Transfer from sale of lots for embellishment",
+   "what_was_recorded": "Transfer of funds from sale of lots revenue to embellishment account",
+   "figures_as_printed": [
+    "20k"
+   ],
+   "quote": "david dorren made a motion that we want to transfer 20k from sale of lots for embellishment, donna landry seconded, aif"
+  },
+  {
+   "topic": "North Cemetery backlot expansion design and costs",
+   "what_was_recorded": "Design cost estimates and plan for North Cemetery backlot expansion presented; costs noted as higher than expected, requiring cost reduction study",
+   "figures_as_printed": [],
+   "quote": "bill bernard presented the design cost estimates and plan for the north cemetery backlot expansion. in-depth discussion of cost of projected work for the addition to north cemetery as costs were higher than expected."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "transfer from sale of lots revenue to embellishment account",
+   "amount_as_printed": "20k",
+   "outcome": "passed",
+   "quote": "david dorren made a motion that we want to transfer 20k from sale of lots for embellishment, donna landry seconded, aif"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior meeting minutes",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "david dorren made motion to approve minutes of december 19, 2025 - north cemetery and february 26, 2026, seconded by donna landry, aif ."
+  },
+  {
+   "topic": "Budget expenditures and review",
+   "resolution": "discussed",
+   "tags": [
+    "budget",
+    "operations"
+   ],
+   "quote": "budget expenditures and review"
+  },
+  {
+   "topic": "Memorial Day flowers for North and South cemeteries",
+   "resolution": "approved",
+   "tags": [
+    "flowers",
+    "memorial day",
+    "vendor management"
+   ],
+   "quote": "david dorren made a motion to put ﬂowers in front of north and south cemeteries for memorial day from lakeview nurseries, dll seconded, aif"
+  },
+  {
+   "topic": "Transfer of 20k from sale of lots for embellishment",
+   "resolution": "approved",
+   "tags": [
+    "budget",
+    "transfers",
+    "embellishment"
+   ],
+   "quote": "david dorren made a motion that we want to transfer 20k from sale of lots for embellishment, donna landry seconded, aif"
+  },
+  {
+   "topic": "North Cemetery backlot expansion design and costs",
+   "resolution": "continued pending cost reduction",
+   "tags": [
+    "capital project",
+    "expansion",
+    "north cemetery"
+   ],
+   "quote": "bill bernard presented the design cost estimates and plan for the north cemetery backlot expansion. in-depth discussion of cost of projected work for the addition to north cemetery as costs were higher than expected. bill - dpw to go back to dillis and roy to see where we can decrease costs."
+  },
+  {
+   "topic": "Fish Street plaque approval",
+   "resolution": "approved",
+   "tags": [
+    "plaque",
+    "memorial"
+   ],
+   "quote": "david dorren made a motion to approve plaque for fish street; donna landry seconded the motion. aif"
+  },
+  {
+   "topic": "Cemetery Rules updates review",
+   "resolution": "pending",
+   "tags": [
+    "rules",
+    "governance"
+   ],
+   "quote": "todd holman handed out a recommendation on rules updates, review of cemetery rules to be reviewed by commission and discussed at next meeting."
+  },
+  {
+   "topic": "Cremation plot donation and exchange",
+   "resolution": "approved",
+   "tags": [
+    "lot management",
+    "cremation",
+    "hardship"
+   ],
+   "quote": "david dorren made a motion to accept 5uc lots from watson, and exchange 29uc for 5uc, donna landry seconded, aif ."
+  }
+ ],
+ "tags": [
+  "cemetery operations",
+  "budget",
+  "capital project",
+  "lot management",
+  "memorial day",
+  "embellishment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

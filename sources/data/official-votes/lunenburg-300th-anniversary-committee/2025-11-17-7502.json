@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-300th-anniversary-committee",
  "meeting_date": "2025-11-17",
  "docid": "7502",
@@ -12,15 +12,237 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes",
+   "motion": "Accept the minutes of the prior meeting.",
    "moved_by": "Dawn",
    "seconded_by": "Bill",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to accept minutes by dawn, seconded by bill, approved unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes contain discussions about events, fundraising, Facebook page criteria, and logo contest, but no formal motions or votes beyond the approval of prior minutes.",
- "cost_usd": 0.06540040000000001
+ "note": "Text is a clean extraction of two pages; page 2 is empty. No dollar figures appear anywhere, so budget_items record discussion of money only. The minutes print no public comment section. Only one vote is recorded (approval of prior minutes); the other items record no motion. Bill is named without a surname and no role, so his status is not stated. Several questions raised (school fields, town status, seed money) have no recorded answer.",
+ "cost_usd": 0.01375827,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Laura Brzozoski",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, cathy clark, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, cathy clark, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, cathy clark, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan"
+  },
+  {
+   "name": "Lois Filiau",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, cathy clark, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan"
+  },
+  {
+   "name": "Dawn Johnson",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, cathy clark, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, cathy clark, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, cathy clark, jeanne dupre, lois filiau, dawn johnson, debbie lincoln, chris sullivan"
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, paulette beardmore, tony sculimbrene, caesar nuzzolo"
+  },
+  {
+   "name": "Paulette Beardmore",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, paulette beardmore, tony sculimbrene, caesar nuzzolo"
+  },
+  {
+   "name": "Tony Sculimbrene",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, paulette beardmore, tony sculimbrene, caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, paulette beardmore, tony sculimbrene, caesar nuzzolo"
+  },
+  {
+   "name": "Joeci Gilchrest",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guest joeci gilchrest had a number of suggestions as to how to fundraise and work with other groups"
+  },
+  {
+   "name": "Bill",
+   "role": "not stated (surname not printed)",
+   "status": "not stated",
+   "quote": "bill handed out an updated list of contact information."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee will meet monthly from now on, with the next meetings set for January 12 and February 9, 2026, at 7:00 in the library.",
+   "quote": "we will meet monthly from now on. next meetings will be :"
+  },
+  {
+   "decision": "The Facebook page is to be shareable but with no comments.",
+   "quote": "fb page should be shareable but no comments."
+  },
+  {
+   "decision": "Chris will try to get the lunenburg 300 name for the Facebook page if the Boy Scouts are not using it.",
+   "quote": "he will try to get lunenburg 300 if boy scouts are not using it."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Seed money",
+   "what_was_recorded": "A member asked the status of the committee's seed money; the minutes record the question and no answer or figure.",
+   "figures_as_printed": [],
+   "quote": "what is the status of our seed money?"
+  },
+  {
+   "topic": "Fundraising suggestions from guest",
+   "what_was_recorded": "A guest offered suggestions on fundraising and on working with the LBA, zeffy.com and the United Way; no amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "guest joeci gilchrest had a number of suggestions as to how to fundraise and work with other groups"
+  },
+  {
+   "topic": "Fundraising constraints of town status",
+   "what_was_recorded": "A question was raised whether the committee could leave town status to avoid town board fundraising limits and open meeting law; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "can we disestablish as a town entity and re-establish as an ad hoc group so that we can function without"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Updated contact information list",
+   "resolution": "no action",
+   "tags": [
+    "contacts",
+    "administration"
+   ],
+   "quote": "bill handed out an updated list of contact information."
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved unanimously",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion to accept minutes by dawn, seconded by bill, approved unanimously."
+  },
+  {
+   "topic": "Facebook page criteria",
+   "resolution": "criteria distributed; Chris to pursue page name; shareable, no comments",
+   "tags": [
+    "Facebook",
+    "communications"
+   ],
+   "quote": "chris handed out criteria for facebook page."
+  },
+  {
+   "topic": "Guest fundraising and partner suggestions",
+   "resolution": "suggestions received",
+   "tags": [
+    "fundraising",
+    "partners"
+   ],
+   "quote": "guest joeci gilchrest had a number of suggestions as to how to fundraise and work with other groups"
+  },
+  {
+   "topic": "Promotional materials for May Town Meeting",
+   "resolution": "noted; materials to be available",
+   "tags": [
+    "promotion",
+    "Town Meeting"
+   ],
+   "quote": "promotional materials should be available for the may town meeting."
+  },
+  {
+   "topic": "Lunenburg business history event idea",
+   "resolution": "noted as a possibility",
+   "tags": [
+    "events",
+    "businesses"
+   ],
+   "quote": "history of lunenburg businesses, e.g. bookbinding is a possibility of an event."
+  },
+  {
+   "topic": "Anniversary events set so far",
+   "resolution": "discussed; open questions on venues and details",
+   "tags": [
+    "events",
+    "anniversary"
+   ],
+   "quote": "4 events are set on stone at this point:"
+  },
+  {
+   "topic": "Logo contest",
+   "resolution": "discussed; details still to be firmed up",
+   "tags": [
+    "logo contest",
+    "public participation"
+   ],
+   "quote": "discussion of logo contest."
+  },
+  {
+   "topic": "Questions on school fields, town status and seed money",
+   "resolution": "raised; no answers recorded",
+   "tags": [
+    "school fields",
+    "governance",
+    "funding"
+   ],
+   "quote": "can we disestablish as a town entity and re-establish as an ad hoc group so that we can function without"
+  },
+  {
+   "topic": "Agenda length and meeting schedule",
+   "resolution": "monthly meetings set; topics to be limited per meeting",
+   "tags": [
+    "meetings",
+    "agenda"
+   ],
+   "quote": "we will meet monthly from now on."
+  }
+ ],
+ "tags": [
+  "300th anniversary",
+  "events",
+  "fundraising",
+  "Facebook page",
+  "logo contest",
+  "meeting schedule",
+  "minutes approval",
+  "May Town Meeting",
+  "school fields"
+ ],
+ "dropped_unquoted_by_field": {}
 }

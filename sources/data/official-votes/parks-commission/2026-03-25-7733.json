@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2026-03-25",
  "docid": "7733",
@@ -12,39 +12,181 @@
  },
  "votes": [
   {
-   "motion": "Authorize the partnership with the Lunenburg Business Association for the 2026 Vendor Fair with no municipal staff support.",
-   "moved_by": "Colleen Shapiro",
-   "seconded_by": "Chris Sullivan",
-   "outcome": "passed 3-0-0",
+   "motion": "Authorize partnership with Lunenburg Business Association for 2026 Vendor Fair with no municipal staff support",
+   "moved_by": "C. Shapiro",
+   "seconded_by": "C. Sullivan",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "c. shapiro moved to authorize the partnership with the lunenburg business association for the 2026 vendor fair with the understanding that no municipal staff support will be provided. seconded by c. sullivan. call for the vote: c. sullivan-aye, c. shapiro-aye, k. menard-aye. the motion passed unanimously (3-0-0)."
   },
   {
-   "motion": "Authorize Park Commission funds to rent a dunk tank for the 2026 Vendor Fair.",
-   "moved_by": "Chris Sullivan",
-   "seconded_by": "Colleen Shapiro",
-   "outcome": "passed 3-0-0",
+   "motion": "Authorize Park Commission funds to rent a dunk tank for the 2026 Vendor Fair",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "C. Shapiro",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "c. sullivan moved to authorize park commission funds to rent a dunk tank for the 2026 vendor fair. seconded by c. shapiro. call for the vote: c. sullivan-aye, c. shapiro-aye, k. menard-aye. the motion passed unanimously (3-0-0)."
   },
   {
-   "motion": "Approve the January 28, 2026, and February 3, 2026, meeting minutes with amendment.",
-   "moved_by": "Chris Sullivan",
-   "seconded_by": "Colleen Shapiro",
-   "outcome": "passed 3-0-0",
+   "motion": "Approve January 28, 2026, and February 3, 2026, meeting minutes with amendment regarding pool research",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "C. Shapiro",
+   "outcome": "passed 3-0",
    "procedural": true,
    "quote": "c. sullivan moved to approve the january 28, 2026, and february 3, 2026, meeting minutes with the amendment as described above for the january 28, 2026, meeting. seconded by c. shapiro. call for the vote: c. sullivan-aye, c. shapiro-aye, k. menard-aye. the motion passed unanimously (3-0-0)."
   },
   {
-   "motion": "Adjourn.",
-   "moved_by": "Chris Sullivan",
-   "seconded_by": "Colleen Shapiro",
-   "outcome": "passed 3-0-0",
+   "motion": "Adjourn",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "C. Shapiro",
+   "outcome": "passed 3-0",
    "procedural": true,
    "quote": "c. sullivan moved to adjourn. seconded by c. shapiro. call for the vote: c. sullivan-aye, c. shapiro-aye, k. menard-aye. the motion passed unanimously (3-0-0)."
   }
  ],
  "dropped_unquoted": 0,
  "note": "",
- "cost_usd": 0.0692474
+ "cost_usd": 0.1256466,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair k. menard called the meeting to order at 7:03 p.m."
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair karin menard, vice-chair chris sullivan, member colleen shapiro"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair karin menard, vice-chair chris sullivan, member colleen shapiro"
+  },
+  {
+   "name": "Marianne Mascari",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: member marianne mascari"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Use of Marshall Park for T-Ball program is acceptable with no issues",
+   "quote": "k. menard stated that c. ruth does not see any issues with using marshall park."
+  },
+  {
+   "decision": "Chair Menard to gather quote for dunk tank rental",
+   "quote": "k. menard stated that she will gather the quote for the dunk tank."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Dunk tank rental for 2026 Vendor Fair",
+   "what_was_recorded": "Park Commission authorized funds to rent a dunk tank for the 2026 Vendor Fair for a two-day rental",
+   "figures_as_printed": [],
+   "quote": "k. menard stated that the park commission could rent a dunk tank, like last year, for a two-day rental."
+  },
+  {
+   "topic": "T-Ball field preparation costs at Marshall Park",
+   "what_was_recorded": "Facilities Director to contact Lake View to obtain quote for field maintenance and preparation",
+   "figures_as_printed": [],
+   "quote": "k. menard stated that c. ruth would talk to lake view to see how much it would cost to get the field ready, since it has not been maintained."
+  },
+  {
+   "topic": "Budget override impacts on Recreation Director position and Town Beach operations",
+   "what_was_recorded": "Discussion of three budget scenarios and their effects on Recreation Director staffing and Town Beach funding",
+   "figures_as_printed": [],
+   "quote": "k. menard stated that if the balanced budget is approved, meaning both overrides are not passed, the recreation director position is eliminated, and the town beach salary line item will decrease, and there would be no town funds available to open the town beach in 2027."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Skate Park Update",
+   "resolution": "Continued; awaiting organizer submissions",
+   "quote": "k. menard stated that they are waiting for the lunenburg skate park organizers to submit documents to the park commission.",
+   "tags": [
+    "skate park",
+    "facilities",
+    "planning"
+   ]
+  },
+  {
+   "topic": "T-Ball Program and Marshall Park Use",
+   "resolution": "Approved for use; seeking field preparation quote",
+   "quote": "k. menard stated that c. ruth does not see any issues with using marshall park.",
+   "tags": [
+    "T-ball",
+    "facilities",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Lunenburg Business Association partnership for 2026 Vendor Fair",
+   "resolution": "Approved, voted 3-0",
+   "quote": "c. shapiro moved to authorize the partnership with the lunenburg business association for the 2026 vendor fair with the understanding that no municipal staff support will be provided.",
+   "tags": [
+    "vendor fair",
+    "partnerships",
+    "events"
+   ]
+  },
+  {
+   "topic": "Dunk tank rental for 2026 Vendor Fair",
+   "resolution": "Approved, voted 3-0",
+   "quote": "c. sullivan moved to authorize park commission funds to rent a dunk tank for the 2026 vendor fair.",
+   "tags": [
+    "vendor fair",
+    "events",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "New Recreation Director appointment",
+   "resolution": "Informational update",
+   "quote": "k. menard stated that krista deveau is the new lunenburg recreation director and will begin her position in mid-april.",
+   "tags": [
+    "staffing",
+    "recreation",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Budget override scenarios and impacts",
+   "resolution": "Discussed; awaiting town action",
+   "quote": "k. menard stated that at the tri-board meeting last night, it appears there will be a two-tiered override approach.",
+   "tags": [
+    "budget",
+    "override",
+    "staffing",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Park Commission vacancy appointment",
+   "resolution": "Discussed; temporary appointment for upcoming election",
+   "quote": "the commission discussed that the appointment would only be for one park commission meeting due to the upcoming town election.",
+   "tags": [
+    "governance",
+    "appointments"
+   ]
+  }
+ ],
+ "tags": [
+  "parks",
+  "recreation",
+  "vendor fair",
+  "budget",
+  "staffing",
+  "facilities",
+  "events"
+ ],
+ "dropped_unquoted_by_field": {}
 }

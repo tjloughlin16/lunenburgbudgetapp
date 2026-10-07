@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2026-02-25",
  "docid": "7665",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of October 22, 2025",
+   "motion": "Approve minutes of October 22, 2025",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "october 22, 2026, motion to approve sarah cammer, second brian marple. sarah cammer aye, brian laffond aye, brian marple aye."
+   "quote": "motion to approve sarah cammer, second brian marple. sarah cammer aye, brian laffond aye, brian marple aye."
   },
   {
-   "motion": "Approve the minutes of November 3, 2025",
+   "motion": "Approve minutes of November 3, 2025",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
@@ -28,15 +28,16 @@
    "quote": "november 3, 2025, motion to approve sarah cammer, second brian marple. sarah cammer aye, brian laffond aye, brian marple aye."
   },
   {
-   "motion": "Approve the minutes of November 19, 2025",
+   "motion": "Approve minutes of November 19, 2025",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "november 19, 2025, motion to approve sarah cammer, second brian marple. sarah cammeraye, brian laffond aye, brian marple aye."
+   "quote": "november 19, 2025, motion to approve sarah cammer, second brian marple. sarah cammeraye, brian laffond aye, brian marple aye. ",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Approve the minutes of December 3, 2025",
+   "motion": "Approve minutes of December 3, 2025",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
@@ -44,7 +45,7 @@
    "quote": "december 3, 2025, motion to approve sarah cammer, second brian marple. sarah cammer aye, brian laffond aye, brian marple aye."
   },
   {
-   "motion": "Approve the Executive Session minutes of February 4, 2026 with attendee list",
+   "motion": "Approve Executive Session minutes for February 4, 2026 with attendee list including Sarah Cammer",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Marple",
    "outcome": "passed 3-0",
@@ -52,15 +53,15 @@
    "quote": "executive session of february 4, 2026, motion to approve, with attendee list to include sarah cammer, sarah cammer, second brian marple. sarah cammer aye, brian laffond aye, brian marple aye."
   },
   {
-   "motion": "The Board of Assessors contact the Select Board with recommendation to not purchase the property at 1083 Northfield Road under the right of first refusal",
+   "motion": "Board of Assessors contact Select Board with recommendation not to purchase property at 1083 Northfield Road under right of first refusal",
    "moved_by": "Brian Laffond",
    "seconded_by": "Sarah Cammer",
-   "outcome": "passed",
+   "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "brian laffond made a motion that the board of assessor contact the select board with their recommendation that we do not purchase the property at 1083 northfield road under the right of first refusal, seconded by sarah cammer. all in favor."
+   "quote": "brian laffond made a motion that the board of assessor contact the select board with their recommendation that we do not purchase the property at 1083 northfield road under the right of first refusal, seconded by sarah cammer. all in favor. sarah cammer aye, brian laffond aye, brian marple aye."
   },
   {
-   "motion": "Adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session",
+   "motion": "Adjourn open meeting and enter executive session without returning to open session",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
@@ -68,7 +69,150 @@
    "quote": "there was a motion to adjourn the open meeting and enter executive session, not to return to the open session after exiting the executive session by sarah cammer, seconded by brian laffond. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan (macOS Vision). Document header shows conflicting dates: title says \"February 25, 2026\" but a page header states \"Minutes August 5, 2026\". Text contains OCR artifacts (e.g., \"Cammeraye\" for \"Cammer aye\", \"October 22, 2026\" likely should be \"2025\"). Minutes of January 7, 2026 listed for approval but no separate vote recorded.",
- "cost_usd": 0.0750964
+ "dropped_unquoted": 1,
+ "note": "OCR document with apparent transcription inconsistencies. Page 2 header shows \"Minutes August 5, 2026\" which conflicts with stated meeting date of February 25, 2026. One instance reads \"October 22, 2026\" which context suggests should be \"October 22, 2025\" (the October 22, 2025 minutes being reviewed at a February 25, 2026 meeting). Executive session items (1 real estate exemption approved, 4 abatements approved, 1 abatement denied) are mentioned but not recorded as formal votes with motion/second structure.\"",
+ "cost_usd": 0.1150236,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, member brian marple"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, member brian marple"
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, member brian marple"
+  },
+  {
+   "name": "Brian Marple",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka, member brian marple"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Lynda Cajka to investigate missing October 22, 2025 Executive Session minutes from website",
+   "quote": "previously approved october 22, 2025 executive session minutes are missing from the web site, lynda cajka to investigate."
+  },
+  {
+   "decision": "Board signed rollback taxes for three properties: 222 West Townsend Road, 801 Lancaster Road, and 781 Page Street",
+   "quote": "the board signed rollback taxes for 222 west townsend road, 801 lancaster road, and 781 page street."
+  },
+  {
+   "decision": "Lynda Cajka to further break down sewer commitment documents during executive session",
+   "quote": "lynda cajka is going to further break down the document during executive session."
+  },
+  {
+   "decision": "Lynda Cajka to set up meeting with Cycle Electric regarding battery energy storage system",
+   "quote": "lynda cajka states she was contacted to set up a meeting with cycle electric 451 leominster shirley road. they are i",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Lynda Cajka will meet with Jennifer Warren-Dyment, Julie Belliveau and Karen Barrett for further discussion of Neighborhood Review Project",
+   "quote": "lynda cajka will be meeting with jennifer warren-dyment, julie belliveau and karen barrett for further discussion."
+  },
+  {
+   "decision": "Sarah Cammer requested Board of Assessors Policies Binder be made digital",
+   "quote": "sarah cammer requested the binder also be made digital."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Rollback taxes and interest on property",
+   "what_was_recorded": "Discussion of rollback taxes and interest charges on back taxes for past 4 years on one property",
+   "figures_as_printed": [
+    "$15,257.63"
+   ],
+   "quote": "there was discussion about a property that had roll back taxes and interest for the past 4 years. the total bill was $15,257.63."
+  },
+  {
+   "topic": "FY2027 Growth Estimate",
+   "what_was_recorded": "Growth estimate for FY27 tax dollars",
+   "figures_as_printed": [
+    "$130,429"
+   ],
+   "quote": "the growth estimate for fy27 tax dollars is currently $130,429."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approval of prior meeting minutes",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "review and approve minutes of october 22, 2025, november 3, 2025, november 19, 2025, december 3, 2025, and january 7, 2026 & executive session minutes for february 4, 2026."
+  },
+  {
+   "topic": "FY2026 Real Estate and Personal Property Tax Abatements status",
+   "resolution": "reviewed",
+   "tags": [
+    "tax abatements",
+    "assessments"
+   ],
+   "quote": "lynda cajka states there were a total of 27 abatements. so far, 12 inspections have been completed, 5 are to be reviewed in executive session, and there are 10 that remain."
+  },
+  {
+   "topic": "Property at 1083 Northfield Road - right of first refusal",
+   "resolution": "motion passed to recommend against purchase",
+   "tags": [
+    "real estate",
+    "municipal property"
+   ],
+   "quote": "brian laffond made a motion that the board of assessor contact the select board with their recommendation that we do not purchase the property at 1083 northfield road under the right of first refusal, seconded by sarah cammer. all in favor."
+  },
+  {
+   "topic": "Senior Center (Eagle House) Real Estate Tax Exemption Presentation",
+   "resolution": "scheduled for March 12",
+   "tags": [
+    "exemptions",
+    "senior center"
+   ],
+   "quote": "senior center (eagle house) real estate tax exemption presentation, thursday, march 12th at 9:00a.m. lynda cajka provided the board with an updated presentation and included the new circuit breaker total."
+  },
+  {
+   "topic": "FY2027 Overlay, Budget and Growth Estimates",
+   "resolution": "reviewed",
+   "tags": [
+    "budget",
+    "overlay"
+   ],
+   "quote": "fy2027 overlay, budget and growth estimates the growth estimate for fy27 tax dollars is currently $130,429. ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Status of Neighborhood Review Project",
+   "resolution": "to continue",
+   "tags": [
+    "neighborhood review"
+   ],
+   "quote": "lynda cajka will be meeting with jennifer warren-dyment, julie belliveau and karen barrett for further discussion. at the moment, there are 2 applicants."
+  }
+ ],
+ "tags": [
+  "Board of Assessors",
+  "tax assessment",
+  "real estate abatements",
+  "exemptions",
+  "municipal property",
+  "FY2026",
+  "FY2027"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

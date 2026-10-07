@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-02-10",
  "docid": "7643",
@@ -17,14 +17,14 @@
    "seconded_by": "Vice-Chair Amanda Moore",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to approve the boot drive permit application for the club lunenburg teen center for saturday, may 30, 2026, from 10:00 am to 2:00 pm, was made by chair nuzzolo. seconded by vice-chair amanda moore. call for the vote: four-aye, one- abstain.the motion passed (4-0-1), with member glenn mcleod abstaining.",
+   "quote": "motion by chair nuzzolo to approve the boot drive permit application for the club lunenburg teen center for saturday, may 30, 2026, from 10:00 am to 2:00 pm, was made by chair nuzzolo. seconded by vice-chair amanda moore. call for the vote: four-aye, one- abstain.the motion passed (4-0-1), with member glenn mcleod abstaining",
    "quote_taken_from_text": true
   },
   {
    "motion": "Approve the request from the Director of the Lunenburg Adult Activity Center to dedicate the pavilion in honor of Peter and Deborah Lincoln",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Moore",
-   "outcome": "passed 5-0-0",
+   "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion by chair nuzzolo to approve the request from the director of the lunenburg adult activity center to dedicate the pavilion in honor of peter and deborah lincoln. seconded by vice-chair moore. call for vote: five-aye. the motion passed (5-0-0)."
   },
@@ -32,7 +32,7 @@
    "motion": "Authorize Chair Nuzzolo to sign the DLTA funding request letter on behalf of the Select Board",
    "moved_by": "Vice-Chair Moore",
    "seconded_by": "Select Member Lehtinen",
-   "outcome": "passed 5-0-0",
+   "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion by vice-chair moore to authorize chair nuzzolo to sign the dlta funding request letter on behalf of the select board. seconded by select member lehtinen. call for vote: five- aye. the motion passed (5-0-0)",
    "quote_taken_from_text": true
@@ -41,7 +41,7 @@
    "motion": "Ratify the appointments of Christopher Bergeron and Anthony Capucci to the position of Sergeant of the Lunenburg Police Department, effective February 10, 2026",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Select Board Member Lehtinen",
-   "outcome": "passed 5-0-0",
+   "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion by chair nuzzolo to ratify the appointments of christopher bergeron and anthony capucci to the position of sergeant of the lunenburg police department, effective february 10, 2026. seconded by select board member lehtinen. call for vote: five-aye. the motion passed (5-0-0)."
   },
@@ -49,16 +49,16 @@
    "motion": "Ratify the Town Manager's appointment of Mark Riccardi to the position of Council on Aging Van Driver",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Member Lehtinen",
-   "outcome": "passed 5-0-0",
+   "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion by chair nuzzolo to ratify the town manager's appointment of mark riccardi to the position of council on aging van driver. seconded by member lehtinen. call for vote: five- aye. the motion passed (5-0-0)",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Form a Cable Advisory Committee consisting of two PACC members, one Select Board member, and two at-large community members, with the charge of initiating the cable ascertainment process for the renewal of the Comcast cable contract expiring February 29, 2028, and bringing that work back to the Select Board",
+   "motion": "Form a Cable Advisory Committee consisting of two PACC members, one Select Board member, and two at-large community members, with the charge of initiating the cable ascertainment process for the renewal of the Comcast cable contract expiring February 29, 2028",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Member Lehtinen",
-   "outcome": "passed 5-0-0",
+   "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion by chair nuzzolo to form a cable advisory committee consisting of two pacc members, one select board member, and two at-large community members, with the charge of initiating the cable ascertainment process for the renewal of the comcast cable contract expiring february 29, 2028, and bringing that work back to the select board. seconded by member lehtinen. call for vote: five-aye. the motion passed (5-0-0)."
   },
@@ -66,7 +66,7 @@
    "motion": "Designate Vice-Chair Moore as the Select Board's representative to the Cable Advisory Committee",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Clerk Lehtinen",
-   "outcome": "passed 5-0-0",
+   "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion by chair nuzzolo to designate vice-chair moore as the select board's representative to the cable advisory committee. seconded by clerk lehtinen. call for vote: five-aye. the motion passed (5-0-0)."
   },
@@ -79,15 +79,431 @@
    "quote": "motion by vice-chair moore to approve the meeting minutes of june 4, july 9, july 16, and july 23, 2024. seconded by member lehtinen. call for vote: four-aye, one-abstain. the motion passed (4-0-1) with member mccleod abstaining."
   },
   {
-   "motion": "Adjourn at 10:12 PM",
+   "motion": "Adjourn",
    "moved_by": "Member Lehtinen",
    "seconded_by": "Vice-Chair Moore",
-   "outcome": "passed 5-0-0",
+   "outcome": "passed 5-0",
    "procedural": true,
    "quote": "motion by member lehtinen to adjourn at 10:12 pm. seconded by vice-chair moore. call for vote: five-aye. the motion passed (5-0-0)."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12012740000000001
+ "dropped_unquoted": 1,
+ "note": "\"\"",
+ "cost_usd": 0.2017507,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chair Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Vice-Chair Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "clerk renee emkey, member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "member brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Andrew Woods",
+   "role": "Staff member, Club Lunenburg Teen Center",
+   "status": "present",
+   "quote": "andrew woods, a staff member of the club lunenburg teen center, presented the annual boot drive permit application."
+  },
+  {
+   "name": "William Bernard",
+   "role": "Department of Public Works Director",
+   "status": "present",
+   "quote": "department of public works (dpw) director william bernard introduced jaurice schwartz"
+  },
+  {
+   "name": "Jaurice Schwartz",
+   "role": "Weston & Sampson engineering firm",
+   "status": "present",
+   "quote": "jaurice schwartz of weston & sampson, the engineering firm assisting the town"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Planning Board Chair",
+   "status": "present",
+   "quote": "planning board chair matthew brenner was present as the planning board's representative."
+  },
+  {
+   "name": "John Beale",
+   "role": "Stormwater Task Force Member",
+   "status": "present",
+   "quote": "stormwater task force member john beale noted that single-family residential fees are expected to be under $100 annually"
+  },
+  {
+   "name": "Stephen Wallace",
+   "role": "Director of Planning and Economic Development",
+   "status": "present",
+   "quote": "director of planning and economic development stephen wallace presented two project proposals"
+  },
+  {
+   "name": "Jeffrey Thibodeau",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief jeffrey thibodeau presented both candidates for ratification."
+  },
+  {
+   "name": "Christopher Bergeron",
+   "role": "Officer, Lunenburg Police Department",
+   "status": "present",
+   "quote": "officer christopher bergeron, who joined the department in 2025 after 10 years with the hubbardston police department"
+  },
+  {
+   "name": "Anthony Cappucci",
+   "role": "Officer, Lunenburg Police Department",
+   "status": "present",
+   "quote": "officer anthony capucci, who has been with the lunenburg police department since 2019"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "Homeowner, pavilion funding contributor",
+   "status": "present",
+   "quote": "peter lincoln explained that the pavilion project originated out of necessity"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Professional civil engineer and commercial property owner",
+   "status": "present",
+   "quote": "greg roy, a professional civil engineer and commercial property owner in town, spoke during public comment."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Resident",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, addressed the select board regarding the proposed stormwater utility"
+  },
+  {
+   "name": "George Burden",
+   "role": "Resident",
+   "status": "remote",
+   "quote": "george burden, 39 courtland circle, addressed the select board via zoom, raising concerns"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Public information session on the stormwater utility scheduled for Thursday, March 5 at the Lunenburg Public Library from 7:00 to 8:00 PM",
+   "quote": "the select board was informed that a public information session on the stormwater utility is scheduled for thursday, march 5 at the lunenburg public library from 7:00 to 8:00 pm."
+  },
+  {
+   "decision": "No formal action was taken on the stormwater utility bylaw presentation",
+   "quote": "no formal action was taken on this item."
+  },
+  {
+   "decision": "Town Manager to engage the Board of Health and gather additional information on mosquito control district before further action",
+   "quote": "the select board agreed to have the town manager engage the board of health and gather additional information before any further action is taken."
+  },
+  {
+   "decision": "Appointment Policy to be cleaned up with corrections incorporated for approval at a future meeting",
+   "quote": "the select board agreed to have the policy cleaned up with these corrections incorporated for approval at a future meeting."
+  },
+  {
+   "decision": "Town Manager to obtain specific equipment list from Fire Chief for legislative earmark request",
+   "quote": "chair nuzzolo committed to obtaining a specific equipment list from chief thibodeau before submission."
+  },
+  {
+   "decision": "Town Manager to contact DPW Director Bernard for cost estimate of accessibility ramp at Adult Activity Center",
+   "quote": "the town manager agreed to contact dpw director bernard to obtain a cost estimate."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Teen Center financial aid",
+   "what_was_recorded": "Summer 2025 financial aid awards to children",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "in the summer of 2025, the teen center awarded over $25,000 in financial aid to 25 children"
+  },
+  {
+   "topic": "Stormwater compliance additional annual expenditure",
+   "what_was_recorded": "Estimated additional annual expenditure needed for stormwater compliance above current DPW budget",
+   "figures_as_printed": [
+    "$340,000",
+    "$110,000"
+   ],
+   "quote": "he estimated that approximately $340,000 in additional annual expenditure-above the $110,000 currently in the dpw budget-would be needed"
+  },
+  {
+   "topic": "Stormwater utility single-family residential fees",
+   "what_was_recorded": "Expected annual fees for single-family residential properties under proposed stormwater utility",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "single-family residential fees are expected to be under $100 annually"
+  },
+  {
+   "topic": "DLTA projects combined value",
+   "what_was_recorded": "Estimated value of development constraints map update and Housing Production Plan update projects",
+   "figures_as_printed": [
+    "$20,000",
+    "$30,000"
+   ],
+   "quote": "he estimated the combined value of both projects at approximately $20,000 to $30,000."
+  },
+  {
+   "topic": "ClearGov software subscription cancellation",
+   "what_was_recorded": "Annual software subscription cost cancelled due to low utilization",
+   "figures_as_printed": [
+    "$21,000"
+   ],
+   "quote": "the town manager reported that the cleargov software subscription, approximately $21,000 annually, has been cancelled"
+  },
+  {
+   "topic": "Community Compact IT Grant",
+   "what_was_recorded": "Grant application submitted for network infrastructure upgrade at Adult Activity Center",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "the town manager reported submitting a grant application for approximately $20,000 to upgrade network infrastructure"
+  },
+  {
+   "topic": "Central Massachusetts Mosquito Control District assessment",
+   "what_was_recorded": "Town's annual assessment for membership in mosquito control district",
+   "figures_as_printed": [
+    "$91,562"
+   ],
+   "quote": "the town's annual assessment of approximately $91,562"
+  },
+  {
+   "topic": "FY26 Motor Vehicle Excise commitment",
+   "what_was_recorded": "Motor vehicle excise commitment signed by Board of Assessors",
+   "figures_as_printed": [
+    "$1,820,000"
+   ],
+   "quote": "the fy26 motor vehicle excise commitment totaling approximately $1,820,000 was signed."
+  },
+  {
+   "topic": "School special education van repurposing",
+   "what_was_recorded": "Amount earmarked for vans authorized to be repurposed toward ADA bathroom upgrades",
+   "figures_as_printed": [
+    "$195,000"
+   ],
+   "quote": "the superintendent was authorized to explore repurposing $195,000 earmarked for vans toward ada bathroom upgrades"
+  },
+  {
+   "topic": "Playground design work at Primary School",
+   "what_was_recorded": "Estimated cost for design-phase funding for playground project",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "playground design work at the primary school: estimated at approximately $30,000"
+  },
+  {
+   "topic": "Montachusett Regional Technical School assessment increase",
+   "what_was_recorded": "Preliminary budget with anticipated assessment increase percentage",
+   "figures_as_printed": [
+    "8%"
+   ],
+   "quote": "montachusett regional technical school presented its preliminary budget, with an anticipated assessment increase of approximately 8%"
+  },
+  {
+   "topic": "Town 300th Anniversary multi-year allocation",
+   "what_was_recorded": "Multi-year allocation approved for 300th Anniversary articles",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "two articles related to the town's 300th anniversary a multi-year allocation of $15,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "Resident, 181 Reservoir Road",
+   "topic": "Opposition to proposed stormwater utility",
+   "quote": "rhonda lisio, 181 reservoir road, addressed the select board regarding the proposed stormwater utility, stating her opposition to the creation of a separate utility to fund a federal mandate."
+  },
+  {
+   "speaker": "George Burden",
+   "stated_role": "Resident, 39 Courtland Circle",
+   "topic": "Public records request regarding payment to Village at Flat Hill homeowners association",
+   "quote": "george burden, 39 courtland circle, addressed the select board via zoom, raising concerns about a public records request related to a payment made by the town to the village at flat hill homeowners association"
+  },
+  {
+   "speaker": "Greg Roy",
+   "stated_role": "Professional civil engineer and commercial property owner",
+   "topic": "Support for stormwater utility and credit provisions",
+   "quote": "greg roy, a professional civil engineer and commercial property owner in town, spoke during public comment. he endorsed the need for a stormwater utility"
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "Resident, 181 Reservoir Road",
+   "topic": "Reiteration of opposition to stormwater utility",
+   "quote": "rhonda lisio reiterated her opposition to the utility, arguing that it creates unnecessary bureaucracy"
+  },
+  {
+   "speaker": "George Burden",
+   "stated_role": "Resident, 39 Courtland Circle",
+   "topic": "Concerns about mosquito control program, road salt and sand use, officer promotion, and public funds expenditure",
+   "quote": "george burden, 39 cortland circle, addressed the select board via zoom, reiterating concerns about the mosquito control program, the town's use of road salt and sand in private hoa settings, the promotion of officer capucci, and alleged improper expenditure of public funds to a private hoa."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Boot Drive Permit Application for Club Lunenburg Teen Center",
+   "resolution": "Approved for Saturday, May 30, 2026, 10:00 AM to 2:00 PM",
+   "tags": [
+    "permit",
+    "teen center",
+    "fundraiser"
+   ],
+   "quote": "boot drive permit application for the club: lunenburg teen center for saturday, may 30, 2026"
+  },
+  {
+   "topic": "Pavilion dedication in honor of Peter and Deborah Lincoln",
+   "resolution": "Approved",
+   "tags": [
+    "adult activity center",
+    "public facilities",
+    "recognition"
+   ],
+   "quote": "request to dedicate the pavilion at the adult activity center in honor of peter and deborah lincoln"
+  },
+  {
+   "topic": "Stormwater Utility Bylaw presentation by DPW Director and engineering consultant",
+   "resolution": "No formal action; public information session scheduled for March 5",
+   "tags": [
+    "stormwater",
+    "MS4 permit",
+    "utility",
+    "compliance"
+   ],
+   "quote": "joint meeting of the select board, planning board, and stormwater task force - presentation on stormwater utility bylaw by william bernard, dpw director"
+  },
+  {
+   "topic": "District Local Technical Assistance (DLTA) funding requests for development constraints map and Housing Production Plan updates",
+   "resolution": "Approved authorization for Chair to sign DLTA letter",
+   "tags": [
+    "planning",
+    "housing",
+    "grant",
+    "technical assistance"
+   ],
+   "quote": "presentation on direct local technical assistance (dlta) funding requests by stephen wallace, director of planning and economic development"
+  },
+  {
+   "topic": "Ratification of Police Department Sergeant appointments",
+   "resolution": "Ratified - Christopher Bergeron and Anthony Cappucci",
+   "tags": [
+    "police",
+    "appointments",
+    "personnel"
+   ],
+   "quote": "ratification of the town manager's appointment of christopher bergeron to the position of sergeant of the lunenburg police department, effective february ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Ratification of Council on Aging Van Driver appointment",
+   "resolution": "Ratified - Mark Riccardi",
+   "tags": [
+    "appointments",
+    "council on aging"
+   ],
+   "quote": "ratification of the town manager's appointment of mark riccardi to the position of council on aging van driver"
+  },
+  {
+   "topic": "Formation of Cable Advisory Committee",
+   "resolution": "Formed; Vice-Chair Moore designated as Select Board representative",
+   "tags": [
+    "cable",
+    "Comcast",
+    "license renewal",
+    "PACC"
+   ],
+   "quote": "form and charge a cable advisory committee"
+  },
+  {
+   "topic": "Warrant articles discussion and 300th Anniversary articles",
+   "resolution": "Continued; meeting scheduled with Franco; 300th Anniversary articles added",
+   "tags": [
+    "warrant",
+    "annual town meeting",
+    "anniversary"
+   ],
+   "quote": "discuss warrant articles to be sponsored by the select board"
+  },
+  {
+   "topic": "Central Massachusetts Mosquito Control District membership",
+   "resolution": "Information gathering; Town Manager to engage Board of Health before further action",
+   "tags": [
+    "mosquito control",
+    "budget",
+    "membership"
+   ],
+   "quote": "withdrawal from the central massachusetts mosquito control district, given the town's annual assessment"
+  },
+  {
+   "topic": "Appointment Policy revision",
+   "resolution": "Approved pending cleanup of corrections; future approval meeting scheduled",
+   "tags": [
+    "policy",
+    "appointments",
+    "governance"
+   ],
+   "quote": "discussion and approval of appointment policy"
+  },
+  {
+   "topic": "Legislative earmark requests for FY27 state budget",
+   "resolution": "Continued refinement; three proposals: Fire Department equipment, accessibility ramp, playground design",
+   "tags": [
+    "state budget",
+    "earmarks",
+    "appropriations"
+   ],
+   "quote": "request for legislative earmarks in the fy27 state budget"
+  },
+  {
+   "topic": "Approval of prior meeting minutes",
+   "resolution": "Approved - June 4, July 9, July 16, and July 23, 2024 minutes",
+   "tags": [
+    "minutes",
+    "governance"
+   ],
+   "quote": "the select board considered approval of meeting minutes from june 4, july 9, july 16, and july 23, 2024."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Lunenburg",
+  "municipal governance",
+  "stormwater utility",
+  "appointments",
+  "cable license",
+  "warrant articles",
+  "FY27 budget",
+  "emergency services",
+  "town facilities"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }
