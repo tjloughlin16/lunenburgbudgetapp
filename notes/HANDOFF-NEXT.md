@@ -49,6 +49,15 @@ detail. Everything below the line "Done" is context, not work.
 11. **An off-machine backup copy** -- the verified snapshot
     (`~/lunenburg-backups/2026-10-06-214608/`) is on the same disk as the repo.
 
+12. **The usage governor -- TJ approved 7 October, BUILD AFTER 4:40 PM that day.** Live
+    usage now arrives without /usage: `~/.claude/statusline-usage.sh` (statusLine,
+    refresh 60 s) logs `five_hour`, `seven_day` and the reset epoch to
+    `~/.claude/usage-log.csv` while a session is open. Build into process_meeting: stop at
+    X% of session OR weekly; pace along a straight line to the cap at the reset (wait when
+    ahead, add a worker -- 2-3, one dispatcher, one queue -- when behind); emergency stop if
+    the window fills >2x the planned slope over 15 min; keep backlog_pace's spend-to-output
+    guard; stale reading -> dollar estimate and ONE worker.
+
 ## Held, by TJ's decision (not work)
 
 - 5 meetings in `sources/data/review-queue.csv` are held for review; TJ: "we can skip
