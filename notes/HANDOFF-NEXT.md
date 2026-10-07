@@ -77,4 +77,20 @@ detail. Everything below the line "Done" is context, not work.
 
 ## Per-board "Missing records" pages -- status
 
-(to be filled in when the build job reports)
+Built 7 October 2026, committed `ab15603a`, not deployed.
+
+- `/boards/<slug>/records` (`fy28/src/pages/BoardRecords.tsx`): every meeting a board has
+  held; gaps only by default, "show every meeting" toggle; YouTube / official minutes /
+  transcript; MISSING in `--status-critical`, n/a with a reason where a record is not
+  expected. Linked from each board page ("Missing records ->").
+- Board pages' Recent meetings: MISSING instead of a dash; Our minutes shows `pending`
+  (in our queue) or `needs video` (written from the recording).
+- ONE definition: `scripts/meeting_records.py`, imported by `build_backlog_depth.py`,
+  `build_boards.py` and `build_board_records.py`.
+- Email reports for any board: `python3 scripts/build_board_records.py --md --board SLUG
+  --since YYYY-MM-DD --out notes/outbound/drafts/<NAME>.md` (TJ's approved format: gaps
+  only, YouTube + official minutes, newest year first).
+- Known: the page counts a missing transcript and the email format does not, so a year's
+  "N of M" can differ by design. Parks 9 Apr 2025's recording was only joined to its meeting
+  on 7 October (an override), so its captions are not fetched yet -- the next transcript
+  fetch picks it up.
