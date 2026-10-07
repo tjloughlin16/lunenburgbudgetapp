@@ -65,7 +65,12 @@ def audit(since_utc, now=None):
     now = now or dt.datetime.now(dt.timezone.utc)
     t = lambda s: dt.datetime.fromisoformat(s.replace('Z', '+00:00'))
     rows = [r for r in csv.DictReader(open(SPEND, encoding='utf-8'))
-            if r.get('at', '') >= since_utc and (now - t(r['at'])).total_seconds() > 120]
+            if r.get('at', '') >= since_utc and (now - t(r['at'])).total_seconds() > 120
+            # A FAILED STEP is not a paid call that produced nothing: it is a failure, logged
+            # with no cost, and process_meeting stops on three in a row. Counted in guard(),
+            # never matched here -- on 7 October one failed read from the run before stopped
+            # the next run in its first minute.
+            and r.get('result', 'ok') == 'ok']
     used, matched, bad = set(), 0, []
     for r in rows:
         hit = None
@@ -152,8 +157,13 @@ def guard(now=None):
     # is going round -- the shape of the 6 October runaway, which spun on refused calls.
     seen = {}
     for r in rows:
+        if r.get('result', 'ok') != 'ok':
+            continue
         k = (r['stream'], r['board'], r['date'])
         seen[k] = seen.get(k, 0) + 1
+    failed = sum(1 for r in rows if r.get('result') == 'failed')
+    if failed > 5:
+        problems.append('%d failed steps this hour' % failed)
     again = [k for k, n in seen.items() if n > 1]
     if again:
         problems.append('REPEATING: %d meeting step(s) paid for twice this hour, e.g. %s %s %s'
