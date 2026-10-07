@@ -9,6 +9,21 @@ than desired. or even stop it if the window is filling faster than expected (mea
 same as our guards, but now directly against usage limits)"* -- and, on every guard:
 *"checking that we're not burning tokens ONLY and we're producing expected output."*
 
+## The interface -- ONE command, the way minutes are already started
+
+TJ, 7 October 2026: *"my assumption was this tool is kicked off the same way i kick off
+minutes. except now, i say, 'run minutes until we hit 80% weekly usage or 90% session
+usage'."* So:
+
+    python3 scripts/process_meeting.py --until-usage --week-cap 80 --session-cap 90
+
+It runs the backlog newest-first until EITHER cap is reached. On the session cap it waits
+for the window to reset and carries on; on the weekly cap it stops. It needs no `--next N`
+and no wrapper: **this replaces `run_backlog_until.py`** (the chainer that kept one run going
+until 9 pm), which is retired once this is proven. `--next N` and `--max-usd` still work and
+bound it further. The caps default to 95 session / 90 weekly (TJ: "your decisions are fine").
+An emergency stop writes `build/STOP-METERED`, which ends the whole run.
+
 ## What exists today, and what this replaces
 
 | piece | today | after |
@@ -101,8 +116,6 @@ One line per decision change, starting `[gov HH:MM]`, so `tail_backlog.sh` shows
 3. **Capped live run:** `--next 10 --max-jobs 2 --session-cap <now+5>` -- it must stop at
    the cap, and `backlog_pace.py --audit` must show every paid call matched.
 
-## Not decided -- TJ's call
+## Decided
 
-- The default caps (95 session / 90 week are proposals).
-- Whether the emergency stop should also cancel the chain (`run_backlog_until.py`) or only
-  the current chunk. Proposal: write STOP-METERED, which stops both.
+- Defaults 95 session / 90 weekly; the emergency stop ends the run (TJ, 7 October 2026).
