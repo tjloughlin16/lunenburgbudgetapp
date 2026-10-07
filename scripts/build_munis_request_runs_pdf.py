@@ -655,6 +655,10 @@ p.status { font-size: 9pt; font-weight: 700; margin: 0 0 3pt; }
 .chip-needed { background: #ececec; color: #444; }
 .status-detail { font-size: 6.2pt; color: #444; margin-top: 2pt; }
 tr.done td { color: #888; background: #f2f2f2 !important; }
+.status-in { margin-top: 5px; }
+.lab { font-weight: 700; font-size: 0.85em; letter-spacing: 0.02em; margin: 2px 0 1px; }
+.lab + ul { margin-top: 0; }
+td .lab:not(:first-child) { margin-top: 6px; border-top: 1px solid #ddd; padding-top: 4px; }
 .vendor { font-size: 8pt; line-height: 1.4; max-width: 960px; }
 .vendor li { margin-bottom: 3pt; }
 """
@@ -673,9 +677,12 @@ def items(lst):
 
 
 def render(runs, account, excel, selection, combine, vendor, gaps_used, hashes):
-    head = ['#', 'Report', 'Status', 'What it answers', 'MUNIS program / menu path', 'Selection', 'SET (value)',
-            'CHECK ✓', 'UNCHECK', 'Years / how many runs', 'Output']
-    widths = [3, 8, 8, 12, 9, 10, 13, 10, 8, 13, 6]
+    # Eight columns, not eleven (TJ, 7 October 2026: the table was too wide): status sits
+    # under the report's name, CHECK and UNCHECK share a labelled column, and "what it
+    # answers" moved to an appendix beside the gap questions it would settle.
+    head = ['#', 'Report and status', 'MUNIS program / menu path', 'Selection', 'SET (value)',
+            'CHECK ✓ / UNCHECK', 'Years / how many runs', 'Output']
+    widths = [3, 15, 11, 12, 19, 17, 16, 7]
     CHIP_LABEL = {'received': 'RECEIVED', 'partial': 'PARTIAL', 'needed': 'STILL NEEDED'}
     CHIP_CLASS = {'received': 'chip-received', 'partial': 'chip-partial', 'needed': 'chip-needed'}
     rows = []
@@ -687,14 +694,13 @@ def render(runs, account, excel, selection, combine, vendor, gaps_used, hashes):
         row_cls = ' class="done"' if state == 'received' else ''
         rows.append(f'<tr{row_cls}>' + ''.join([
             f'<td class="n">{r["n"]}</td>',
-            f'<td><span class="rep">{esc(r["report"])}</span><br><span class="prog">{esc(r["program"])}</span></td>',
-            f'<td>{status_cell}</td>',
-            '<td>' + items([(a, []) for a in r['answers']]) + '</td>',
+            f'<td><span class="rep">{esc(r["report"])}</span><br><span class="prog">{esc(r["program"])}</span>'
+            f'<div class="status-in">{status_cell}</div></td>',
             '<td>' + items(r['path']) + '</td>',
             '<td>' + items(r['select']) + '</td>',
             '<td>' + items(r['set']) + '</td>',
-            '<td>' + items(r['check']) + '</td>',
-            '<td>' + items(r['uncheck']) + '</td>',
+            '<td><div class="lab">CHECK ✓</div>' + items(r['check'])
+            + ('<div class="lab">UNCHECK</div>' + items(r['uncheck']) if r['uncheck'] else '') + '</td>',
             '<td>' + items(r['years']) + '</td>',
             f'<td>{esc(r["output"])}</td>']) + '</tr>')
     cols = ''.join(f'<col style="width:{w}%">' for w in widths)
@@ -720,6 +726,12 @@ def render(runs, account, excel, selection, combine, vendor, gaps_used, hashes):
                     + '; '.join(f'<b>{k}</b> = {esc(v[1])}' for k, v in HELD.items()) + '.</td></tr>')
     key = '<table class="key">' + ''.join(key_rows) + '</table>'
 
+    answers_rows = ''.join(
+        f'<tr><td class="n">{r["n"]}</td><td><span class="rep">{esc(r["report"])}</span></td>'
+        f'<td>{items([(a, []) for a in r["answers"]])}</td></tr>' for r in runs)
+    answers = ('<table class="runs answers"><colgroup><col style="width:4%"><col style="width:26%">'
+               '<col style="width:70%"></colgroup><thead><tr><th>#</th><th>Report</th><th>What it answers</th>'
+               '</tr></thead><tbody>' + answers_rows + '</tbody></table>')
     gl = ''.join(f'<li>{esc(g)} <span class="cite">[run{"s" if len(ns) > 1 else ""} '
                  f'{", ".join(map(str, ns))}]</span></li>' for g, ns in gaps_used)
     n_runs = sum(1 for r in runs if r['program'] != 'Not a report in any of the four guides')
@@ -741,6 +753,8 @@ def render(runs, account, excel, selection, combine, vendor, gaps_used, hashes):
 <h2>Where the option names come from</h2>
 <p class="foot">Lunenburg publishes no MUNIS guide. Option names are given exactly as these guides print them — chiefly the CNMI’s guide (C) and Tyler’s 2020.2 procedures (F) — and Lunenburg’s version may label some differently. Where a guide only shows an option in a screenshot it is marked (screenshot). Anything not named in a row: leave it as the Town usually runs the report. If a box here is missing from the Town’s screen, or a run cannot be made as written, saying so is as useful as the data.</p>
 {key}
+<h2>Appendix: what each run answers</h2>
+{answers}
 <h2>Open questions from our gap register these runs would settle</h2>
 <ul class="foot">{gl}</ul>
 """
