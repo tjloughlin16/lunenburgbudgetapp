@@ -60,6 +60,77 @@ Every outstanding machine-reading job, placed by the **meeting’s own date** �
 | FY2026 | 0 | 319 | 0 | 0 | **319** | `████████████████████` |
 | FY2027 | 0 | 35 | 0 | 0 | **35** | `██` |
 
+## Select Board, by fiscal year
+
+Open = meetings with anything still to process, of the meetings with a record to process.
+
+| fiscal year | meetings | still open | % open | official, unread | official, votes only | reconcile | our minutes |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| FY2011 | 32 | 32 | 100% | 0 | 32 | 0 | 0 |
+| FY2012 | 34 | 34 | 100% | 0 | 34 | 0 | 0 |
+| FY2013 | 38 | 38 | 100% | 0 | 37 | 0 | 1 |
+| FY2014 | 37 | 37 | 100% | 0 | 35 | 0 | 35 |
+| FY2015 | 33 | 33 | 100% | 0 | 20 | 0 | 29 |
+| FY2016 | 40 | 40 | 100% | 0 | 40 | 0 | 16 |
+| FY2017 | 47 | 47 | 100% | 0 | 47 | 0 | 10 |
+| FY2018 | 46 | 46 | 100% | 0 | 42 | 0 | 37 |
+| FY2019 | 37 | 37 | 100% | 0 | 33 | 0 | 35 |
+| FY2020 | 42 | 42 | 100% | 0 | 38 | 0 | 40 |
+| FY2021 | 42 | 42 | 100% | 0 | 38 | 0 | 38 |
+| FY2022 | 38 | 38 | 100% | 0 | 34 | 0 | 37 |
+| FY2023 | 40 | 40 | 100% | 0 | 38 | 0 | 40 |
+| FY2024 | 41 | 41 | 100% | 0 | 41 | 0 | 40 |
+| FY2025 | 47 | 43 | 92% | 0 | 32 | 5 | 20 |
+| FY2026 | 48 | 38 | 79% | 0 | 38 | 0 | 0 |
+| FY2027 | 12 | 2 | 17% | 0 | 2 | 0 | 0 |
+
+## School Committee, by fiscal year
+
+Open = meetings with anything still to process, of the meetings with a record to process.
+
+| fiscal year | meetings | still open | % open | official, unread | official, votes only | reconcile | our minutes |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| FY2012 | 1 | 1 | 100% | 0 | 0 | 0 | 1 |
+| FY2014 | 15 | 15 | 100% | 0 | 0 | 0 | 16 |
+| FY2015 | 8 | 8 | 100% | 0 | 0 | 0 | 8 |
+| FY2016 | 2 | 2 | 100% | 0 | 0 | 0 | 2 |
+| FY2017 | 6 | 6 | 100% | 0 | 0 | 0 | 6 |
+| FY2018 | 19 | 19 | 100% | 0 | 0 | 0 | 20 |
+| FY2019 | 21 | 21 | 100% | 0 | 0 | 0 | 21 |
+| FY2020 | 24 | 24 | 100% | 0 | 0 | 0 | 24 |
+| FY2021 | 23 | 23 | 100% | 0 | 0 | 0 | 23 |
+| FY2022 | 20 | 20 | 100% | 0 | 0 | 0 | 22 |
+| FY2023 | 26 | 26 | 100% | 0 | 0 | 0 | 27 |
+| FY2024 | 27 | 27 | 100% | 0 | 25 | 0 | 19 |
+| FY2025 | 35 | 32 | 91% | 0 | 32 | 0 | 0 |
+| FY2026 | 30 | 23 | 77% | 0 | 23 | 0 | 0 |
+| FY2027 | 6 | 0 | 0% | 0 | 0 | 0 | 0 |
+
+## Finance Committee, by fiscal year
+
+Open = meetings with anything still to process, of the meetings with a record to process.
+
+| fiscal year | meetings | still open | % open | official, unread | official, votes only | reconcile | our minutes |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| FY2010 | 1 | 1 | 100% | 0 | 1 | 0 | 0 |
+| FY2011 | 20 | 20 | 100% | 0 | 20 | 0 | 0 |
+| FY2012 | 24 | 24 | 100% | 0 | 24 | 0 | 0 |
+| FY2013 | 23 | 23 | 100% | 0 | 23 | 0 | 0 |
+| FY2014 | 24 | 24 | 100% | 0 | 24 | 0 | 9 |
+| FY2015 | 21 | 21 | 100% | 0 | 20 | 0 | 7 |
+| FY2016 | 26 | 26 | 100% | 0 | 26 | 0 | 6 |
+| FY2017 | 16 | 16 | 100% | 0 | 16 | 0 | 0 |
+| FY2018 | 16 | 16 | 100% | 0 | 10 | 0 | 7 |
+| FY2019 | 20 | 20 | 100% | 0 | 15 | 0 | 17 |
+| FY2020 | 32 | 32 | 100% | 0 | 25 | 0 | 25 |
+| FY2021 | 27 | 27 | 100% | 0 | 19 | 0 | 25 |
+| FY2022 | 26 | 26 | 100% | 0 | 25 | 0 | 25 |
+| FY2023 | 24 | 24 | 100% | 0 | 23 | 0 | 22 |
+| FY2024 | 26 | 26 | 100% | 0 | 24 | 0 | 25 |
+| FY2025 | 22 | 22 | 100% | 0 | 22 | 2 | 8 |
+| FY2026 | 25 | 25 | 100% | 0 | 25 | 0 | 0 |
+| FY2027 | 4 | 1 | 25% | 0 | 1 | 0 | 0 |
+
 ## The last two years, month by month
 
 | month | official, unread | official, votes only | reconcile | our minutes | total | |

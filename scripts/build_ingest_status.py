@@ -1084,68 +1084,25 @@ STREAM_COLOUR = [('official', '#6cb6ff'), ('official-v1', '#2f5d8a'), ('reconcil
                  ('minutes', '#a371f7')]
 
 
-# THE THREE BUDGET BOARDS, ON THEIR OWN. TJ, 6 October 2026: *"add a way to see the 3 boards
-# (select board, school committee, finance committee) on the chart for backlog? I want to see
-# how many open things they specifically have."* Same streams, same colours, same grain as the
-# fiscal-year chart above it -- MEETINGS still to process -- read off the same payload's
-# by-board rollup, so the two charts cannot disagree.
-BUDGET_BOARDS = [('select-board', 'Select Board'), ('school-committee', 'School Committee'),
-                 ('finance-committee', 'Finance Committee')]
-
-
-def budget_boards_chart(bd):
-    """One stacked horizontal bar per budget board, by stream."""
-    by = {r['board']: r for r in bd.get('by_board', [])}
-    rows = [(slug, name, by.get(slug, {})) for slug, name in BUDGET_BOARDS]
-    hi = max([r.get('total', 0) for _, _, r in rows] + [1])
-    W, ROW, LABEL, PAD = 1000, 30, 170, 70
-    H = ROW * len(rows) + 8
-    out = ['<div class="card"><div class="row"><b class="grow">The three budget boards</b>'
-           '<span class="tiny">%s jobs between them &middot; a job is one meeting in one stream</span></div>'
-           % format(sum(r.get('total', 0) for _, _, r in rows), ',')]
-    out.append('<svg viewBox="0 0 %d %d" width="100%%" height="%d" style="display:block;margin:8px 0 2px">'
-               % (W, H, H))
-    for i, (slug, name, r) in enumerate(rows):
-        y = 4 + i * ROW
-        out.append('<text x="0" y="%d" fill="#e6edf3" font-size="13">%s</text>' % (y + 18, name))
-        x = LABEL
-        for stream, col in STREAM_COLOUR:
-            n = r.get(stream, 0)
-            if not n:
-                continue
-            w = (W - LABEL - PAD) * n / hi
-            out.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="%s"><title>%s %s: %s</title></rect>'
-                       % (x, y + 4, w, ROW - 10, col, name, stream, format(n, ',')))
-            if w > 34:
-                out.append('<text x="%.1f" y="%d" fill="#0d1117" font-size="11" text-anchor="middle">%s</text>'
-                           % (x + w / 2, y + 19, format(n, ',')))
-            x += w
-        out.append('<text x="%.1f" y="%d" fill="#e6edf3" font-size="12">%s</text>'
-                   % (x + 6, y + 19, format(r.get('total', 0), ',') if r else 'none'))
-    out.append('</svg>')
-    out.append('<div class="tiny">%s</div>'
-               % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, n) for n, c in STREAM_COLOUR))
-    out.append('<div class="tiny" style="margin-top:4px">Meetings of each board with anything still to '
-               'process, by what is left: the town\u2019s minutes never read, read for votes only, a '
-               'recording without our minutes, or two records not yet compared. One meeting can be '
-               'counted in more than one stream; the streams are never added into one figure.</div></div>')
-    return ''.join(out)
-
-
-def backlog_chart(bd):
-    """One stacked bar per fiscal year of the MEETING, by stream."""
-    rows = [r for r in bd.get('by_fiscal_year', []) if r.get('total')]
+# THE CHART FILTERS TO A BOARD, AND SWITCHES MEASURE. TJ, 6 October 2026: *"the select
+# board/school/finance was supposed to be a filter/toggle on the main bar chart so i could
+# see per FY what % is still open for them, and for what years."* Every combination is drawn
+# here, at build time, and two rows of buttons show one -- the page is a local file and must
+# not need a library or a network to switch a view.
+#
+#   jobs    open JOBS by stream, stacked: what is left, and what kind of work it is
+#   % open  of the MEETINGS with a record to process in that year, the share still open:
+#           one unit over the same unit, so it can be a percentage (jobs cannot -- a meeting
+#           waiting in two streams is two jobs). Read off build_backlog_depth's payload.
+def _jobs_svg(rows):
+    rows = [r for r in rows if r.get('total')]
     if not rows:
-        return ''
+        return '<div class="tiny" style="margin:12px 0">Nothing open.</div>'
     hi = max(r['total'] for r in rows)
     W, H, PAD, GAP = 1000, 210, 26, 4
     bw = max(6.0, (W - PAD * 2) / max(len(rows), 1) - GAP)
-    out = ['<div class="card"><div class="row"><b class="grow">Backlog by fiscal year of '
-           'the meeting</b><span class="tiny">%s jobs to process &middot; tallest '
-           'bar %s</span></div>'
-           % (format(bd['total_jobs'], ','), format(hi, ','))]
-    out.append('<svg viewBox="0 0 %d %d" width="100%%" height="%d" '
-               'style="display:block;margin:8px 0 2px">' % (W, H, H))
+    out = ['<svg viewBox="0 0 %d %d" width="100%%" height="%d" style="display:block;margin:8px 0 2px">'
+           % (W, H, H)]
     base = H - 26
     for i, r in enumerate(rows):
         x = PAD + i * (bw + GAP)
@@ -1157,29 +1114,99 @@ def backlog_chart(bd):
             bh = (base - 14) * n / hi
             y -= bh
             out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="%s">'
-                       '<title>%s %s: %s</title></rect>'
-                       % (x, y, bw, bh, col, r['fy'], name, format(n, ',')))
-        out.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="10" '
-                   'text-anchor="middle">%s</text>'
+                       '<title>%s %s: %s</title></rect>' % (x, y, bw, bh, col, r['fy'], name, format(n, ',')))
+        out.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="10" text-anchor="middle">%s</text>'
                    % (x + bw / 2, base + 12, '\u2019' + r['fy'][-2:]))
-        out.append('<text x="%.1f" y="%.1f" fill="#e6edf3" font-size="9.5" '
-                   'text-anchor="middle">%s</text>'
+        out.append('<text x="%.1f" y="%.1f" fill="#e6edf3" font-size="9.5" text-anchor="middle">%s</text>'
                    % (x + bw / 2, y - 3, format(r['total'], ',')))
     out.append('</svg>')
+    return ''.join(out)
+
+
+def _pct_svg(rows):
+    rows = [r for r in rows if r.get('meetings')]
+    if not rows:
+        return '<div class="tiny" style="margin:12px 0">No meetings with a record to process.</div>'
+    W, H, PAD, GAP = 1000, 210, 26, 4
+    bw = max(6.0, (W - PAD * 2) / max(len(rows), 1) - GAP)
+    out = ['<svg viewBox="0 0 %d %d" width="100%%" height="%d" style="display:block;margin:8px 0 2px">'
+           % (W, H, H)]
+    base, top = H - 26, 16
+    for i, r in enumerate(rows):
+        x = PAD + i * (bw + GAP)
+        full = base - top
+        bh = full * r['pct_open'] / 100.0
+        tip = ('%s: %d of %d meetings still open (%.0f%%) \u2014 %s'
+               % (r['fy'], r['meetings_open'], r['meetings'], r['pct_open'],
+                  ', '.join('%s %d' % (n, r.get(n, 0)) for n, _ in STREAM_COLOUR if r.get(n))
+                  or 'nothing open'))
+        out.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="#21262d"><title>%s</title></rect>'
+                   % (x, top, bw, full, tip))
+        out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="#d29922"><title>%s</title></rect>'
+                   % (x, base - bh, bw, bh, tip))
+        out.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="10" text-anchor="middle">%s</text>'
+                   % (x + bw / 2, base + 12, '\u2019' + r['fy'][-2:]))
+        out.append('<text x="%.1f" y="%.1f" fill="#e6edf3" font-size="9.5" text-anchor="middle">%.0f%%</text>'
+                   % (x + bw / 2, top - 4, r['pct_open']))
+    out.append('</svg>')
+    return ''.join(out)
+
+
+def backlog_chart(bd):
+    """The fiscal-year chart, filterable to a budget board, in two measures."""
+    byfy = bd.get('by_board_fiscal_year') or {}
+    boards = [('all', 'All boards')] + [(b['slug'], b['name']) for b in bd.get('filter_boards', [])]
+    if not byfy:                       # an older payload: the unfiltered chart only
+        byfy = {'all': bd.get('by_fiscal_year', [])}
+        boards = boards[:1]
+    btn = ('<button type="button" data-%s="%s" onclick="bkPick(this)" style="font:inherit;font-size:12px;'
+           'padding:3px 10px;margin:0 4px 4px 0;border-radius:12px;border:1px solid #30363d;'
+           'background:%s;color:#e6edf3;cursor:pointer">%s</button>')
+    out = ['<div class="card" id="bk"><div class="row"><b class="grow">Backlog by fiscal year of the meeting</b>'
+           '<span class="tiny">%s jobs to process</span></div>' % format(bd['total_jobs'], ',')]
+    out.append('<div style="margin-top:8px">%s</div>' % ''.join(
+        btn % ('board', k, '#1f6feb' if k == 'all' else '#161b22', html.escape(n)) for k, n in boards))
+    out.append('<div>%s</div>' % ''.join(
+        btn % ('measure', k, '#1f6feb' if k == 'jobs' else '#161b22', n)
+        for k, n in [('jobs', 'open jobs, by stream'), ('pct', '% of meetings still open')]))
+    for k, name in boards:
+        rows = byfy.get(k, [])
+        open_m = sum(r.get('meetings_open', 0) for r in rows)
+        held = sum(r.get('meetings', 0) for r in rows)
+        summary = ('%s: %s of %s meetings with a record to process still have something open'
+                   % (html.escape(name), format(open_m, ','), format(held, ','))) if held else ''
+        for m, draw in (('jobs', _jobs_svg), ('pct', _pct_svg)):
+            out.append('<div class="bkp" data-board="%s" data-measure="%s" style="display:%s">'
+                       '<div class="tiny" style="margin-top:6px">%s</div>%s</div>'
+                       % (k, m, 'block' if (k, m) == ('all', 'jobs') else 'none', summary, draw(rows)))
     legend = {'official': 'the town\u2019s official minutes, never read',
               'official-v1': 'the town\u2019s official minutes, votes only \u2014 to re-read structured',
               'reconcile': 'the two records of a meeting, to compare',
               'minutes': 'recordings, to write OUR minutes from'}
-    out.append('<div class="tiny">%s</div>'
-               % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, legend[n])
-                                 for n, c in STREAM_COLOUR))
-    out.append('<div class="tiny" style="margin-top:4px">Two records of every meeting: '
-               'the minutes the TOWN published, and the minutes WE write from the '
-               'recording \u2014 then a comparison of the two. Every block is JOBS '
-               'still to process, one meeting in one stream, so a meeting waiting in two streams is in two blocks, never what is inside them. By the MEETING\u2019s own '
-               'date, not by when we found it. Hover a block for its count; stacked to '
-               'show a year\u2019s composition, since the three are different jobs at '
-               'different prices and are never added into one figure.</div></div>')
+    out.append('<div class="tiny bkl" data-for="jobs">%s</div>'
+               % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, legend[n]) for n, c in STREAM_COLOUR))
+    out.append('<div class="tiny bkl" data-for="pct" style="display:none"><span style="color:#d29922">\u25a0</span> '
+               'still open &nbsp; <span style="color:#21262d">\u25a0</span> done. Of the board\u2019s meetings '
+               'in that fiscal year that have a record to process \u2014 the town\u2019s minutes with readable '
+               'text, or a usable recording \u2014 the share with anything still to do. Hover a bar for what '
+               'is left. A meeting with only an agenda has nothing to process and is not counted.</div>')
+    out.append('<div class="tiny" style="margin-top:4px">By the MEETING\u2019s own date, not by when we found it. '
+               'A job is one meeting in one stream, so a meeting waiting in two streams is two jobs; the '
+               'streams are different work at different prices and are never added into one figure.</div></div>')
+    out.append("""<script>
+function bkPick(b){var c=document.getElementById('bk');
+ var k=b.dataset.board?'board':'measure';
+ c.querySelectorAll('button[data-'+k+']').forEach(function(x){x.style.background=(x===b)?'#1f6feb':'#161b22';});
+ c.dataset[k]=b.dataset[k];
+ var bd=c.dataset.board||'all', ms=c.dataset.measure||'jobs';
+ c.querySelectorAll('.bkp').forEach(function(p){p.style.display=(p.dataset.board===bd&&p.dataset.measure===ms)?'block':'none';});
+ c.querySelectorAll('.bkl').forEach(function(l){l.style.display=(l.dataset['for']===ms)?'block':'none';});
+ try{localStorage.setItem('bk',bd+'|'+ms);}catch(e){}
+}
+(function(){try{var v=(localStorage.getItem('bk')||'').split('|');var c=document.getElementById('bk');
+ if(v[0]){var b=c.querySelector('button[data-board="'+v[0]+'"]');if(b)bkPick(b);}
+ if(v[1]){var m=c.querySelector('button[data-measure="'+v[1]+'"]');if(m)bkPick(m);}}catch(e){}})();
+</script>""")
     return ''.join(out)
 
 
@@ -2320,7 +2347,6 @@ def page_backlog(st):
     bd = backlog_depth()
     if bd and bd.get('total_jobs'):
         h.append(backlog_chart(bd))
-        h.append(budget_boards_chart(bd))
     h.append('<h2>Streams</h2>')
     for s in S:
         todo = s['todo']

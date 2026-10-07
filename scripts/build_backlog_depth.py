@@ -48,6 +48,7 @@ zero for 2019 as a gap would be reading our instrument again.
 import argparse
 import collections
 import csv
+import glob
 import io
 import json
 import os
@@ -107,6 +108,53 @@ def gather():
     return jobs, by_year, by_month, by_board
 
 
+# THE BOARDS A READER FILTERS THE CHART TO (TJ, 6 October 2026): the three budget boards,
+# so the fiscal-year chart can show, per board, how much of each year is still open.
+FILTER_BOARDS = [('select-board', 'Select Board'), ('school-committee', 'School Committee'),
+                 ('finance-committee', 'Finance Committee')]
+
+
+def processable_meetings():
+    """Every (board, date) with a record there is work to do on: the town's minutes with
+    readable text, or a recording on our-minutes' own list (open or already written). The
+    denominator of `% still open` -- a meeting with only an agenda has nothing to process
+    and would dilute it."""
+    import extract_official_votes as E
+    import refresh
+    out = {(e['board_slug'], e['date']) for e in E.minutes_files()
+           if len(E.norm(open(e['path'], encoding='utf-8', errors='replace').read())) >= E.MIN_CHARS}
+    out |= {(t['board_slug'], t['meeting_date']) for t in refresh.minutes_targets(refresh.policy())}
+    out |= {(p.split(os.sep)[-2], os.path.basename(p)[:10])
+            for p in glob.glob(os.path.join(ROOT, 'sources', 'data', 'recording-minutes', '*', '*.json'))}
+    return out
+
+
+def by_board_fy(jobs):
+    """Per fiscal year, for every board together and for each FILTER_BOARD: open jobs by
+    stream, and MEETINGS -- how many have anything to process, how many are still open.
+    `% open` is meetings over meetings, one unit; the streams are never added for it."""
+    meetings = processable_meetings()
+    open_m = {(j['board'], j['date']) for j in jobs}
+    out = {}
+    for key, keep in [('all', None)] + [(slug, slug) for slug, _ in FILTER_BOARDS]:
+        rows = collections.defaultdict(lambda: collections.Counter())
+        for j in jobs:
+            if (keep is None or j['board'] == keep) and len(j['date']) >= 7:
+                rows['FY%d' % fiscal_year(j['date'][:7])][j['stream']] += 1
+        held = collections.Counter()
+        still = collections.Counter()
+        for b, d in meetings | open_m:
+            if (keep is None or b == keep) and len(d) >= 7:
+                fy = 'FY%d' % fiscal_year(d[:7])
+                held[fy] += 1
+                still[fy] += (b, d) in open_m
+        out[key] = [dict(fy=fy, **{s: rows[fy][s] for s in STREAMS}, total=sum(rows[fy].values()),
+                         meetings=held[fy], meetings_open=still[fy],
+                         pct_open=round(100.0 * still[fy] / held[fy], 1) if held[fy] else 0.0)
+                    for fy in sorted(held)]
+    return out
+
+
 def fiscal_year(ym):
     """Massachusetts FY: July starts the next one. FY2023 is Jul 2022 - Jun 2023."""
     y, m = int(ym[:4]), int(ym[5:7])
@@ -148,6 +196,8 @@ def payload(jobs, by_year, by_month, by_board, costs):
         'by_board': [dict(board=b, **{s: by_board[b][s] for s in STREAMS},
                           total=sum(by_board[b].values()))
                      for b in sorted(by_board, key=lambda k: -sum(by_board[k].values()))],
+        'by_board_fiscal_year': by_board_fy(jobs),
+        'filter_boards': [dict(slug=s_, name=n_) for s_, n_ in FILTER_BOARDS],
         'not_established': [
             'When any of this will be done. The sweep runs in whatever allowance is left '
             'before the weekly reset, which varies.',
@@ -220,6 +270,20 @@ def render(pay):
     hi = max((r['total'] for r in pay['by_fiscal_year']), default=1)
     table(w, 'fiscal year', 'fy', pay['by_fiscal_year'], hi)
     w('')
+    for slug, name in FILTER_BOARDS:
+        rows = pay['by_board_fiscal_year'].get(slug, [])
+        if not rows:
+            continue
+        w('## %s, by fiscal year' % name)
+        w('')
+        w('Open = meetings with anything still to process, of the meetings with a record to process.')
+        w('')
+        w('| fiscal year | meetings | still open | %% open | %s |' % ' | '.join(LABEL[s] for s in STREAMS))
+        w('|---|---:|---:|---:|%s' % ('---:|' * len(STREAMS)))
+        for r in rows:
+            w('| %s | %d | %d | %.0f%% | %s |' % (r['fy'], r['meetings'], r['meetings_open'], r['pct_open'],
+                                                ' | '.join('%d' % r[s] for s in STREAMS)))
+        w('')
     w('## The last two years, month by month')
     w('')
     recent = [r for r in pay['by_month'] if r['month'] >= pay['by_month'][-1]['month'][:4]
