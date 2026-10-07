@@ -102,6 +102,36 @@ uniquely carries -- and prints the lag rather than averaging it away.
    written, not one in flight, so two processes over one queue pay twice for the same item.
 6. **Cap concurrency by the window, not by the machine.** See 3.
 
+## 6. THE TARGET PACE: ONE STREAM, SERIAL, ~80% OF A WINDOW -- TJ, 7 October 2026
+
+TJ, shown the table below: *"ok 80% in 5 hours is a perfect pace."* So that is the pace,
+and it is a DECISION about how full to run a window, not only a measurement.
+
+**Measured** (`agentic-spend.csv`, timestamped, `process_meeting.py --next 300`, haiku,
+official-v1 reads, 7 October 2026 10:22-11:52): **$5.98 an hour, 42 meetings an hour,
+$0.144 a meeting**, one at a time.
+
+**Estimated, not measured: the window is ~$37.** From section 1's ratio -- 5 weekly points
+against 68 session points is ~1/14 of a week, and a week is ~$500. The one direct reading
+agrees: $1.15 of batch spend in the first 8 minutes after the 11:39 reset, and `/usage`
+read 3% (= $1.15 / $37). But this session was also working in those 8 minutes, so the
+agreement is partly luck.
+
+| pace | window per hour | 100% after |
+|---|---:|---:|
+| 1 at a time | ~16% | ~6 h -- never, inside a 5-hour window |
+| 2 at a time | ~32% | ~3 h |
+| 3 at a time | ~48% | ~2 h |
+
+**The rule that follows:** a meeting batch runs ONE stream, serially, and that leaves ~20%
+of the window for interactive work. Two streams are only for an account with nothing else
+on it, and are checked against `/usage` at the three-hour mark. This is section 3's
+conclusion (serial, not sharded) with a number on it.
+
+**What would change it:** a reading of the session bar about an hour after a reset with no
+interactive session running. ~17-19% confirms the table; much lower means the window is
+bigger than $37 and two streams fit.
+
 ## What this does NOT establish
 
 - **The session window's dollar size.** 68 points for ~$28 of scripted spend implies roughly
