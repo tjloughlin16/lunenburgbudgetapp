@@ -41,7 +41,7 @@ BAND = 2.0               # points either side of the line that count as "on it"
 RAMP_S = 300             # at most one added worker per five minutes
 SLOPE_S = 900            # the window the emergency slope is measured over
 EMERGENCY_X = 2.0        # filling at more than this multiple of the planned slope
-PER_MEETING_PCT = 0.5    # what one in-flight meeting adds to the five-hour bar -- the
+PER_MEETING_PCT = 0.2    # what one in-flight meeting adds to the five-hour bar -- the
                          # STARTING guess only; the run measures its own (Plan.per_meeting)
 MARGIN_MAX_S = 600       # stop aiming this long before the deadline...
 MARGIN_FRAC = 0.10       # ...or this fraction of a short horizon, whichever is smaller
@@ -80,6 +80,9 @@ class Plan:
     def __init__(self, session_cap=95.0, week_cap=90.0, by=None, max_jobs=3, ramp=RAMP_S):
         self.session_cap, self.week_cap, self.by, self.max_jobs = session_cap, week_cap, by, max_jobs
         self.ramp = ramp                         # seconds between added workers
+        self.t0 = self.u0 = self.window = None   # the line's start, re-anchored each window
+        self.jobs = 1
+        self.last_change = 0.0
         # MEASURED, not assumed. A fixed 0.5 points a meeting stopped the 7 October retest at
         # 60% of a 63% cap: six $0.016 meetings in flight were reserved as 3 points. The run
         # calls measured() as meetings finish and the bar moves.
@@ -96,9 +99,6 @@ class Plan:
         dn, du = done - self.m0, u5 - self.mu0
         if dn >= 10 and du >= 2:
             self.per_meeting = min(1.0, max(0.02, du / dn))
-        self.t0 = self.u0 = self.window = None   # the line's start, re-anchored each window
-        self.jobs = 1
-        self.last_change = 0.0
 
     def deadline(self, reset):
         if self.by and reset:
