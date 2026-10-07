@@ -25,6 +25,11 @@ rendering of it). Options read off a SCREENSHOT carry no text to assert and are 
 the digest printed on the PDF, so a moved input or an edited row is caught without needing
 Chrome. The PDF itself is printed by Chrome, as build_analysis_pdf.py does: no new
 dependency.
+
+EVERY RUN ALSO CARRIES A STATUS against the 6 October 2026 delivery (Part 1 of the 4
+September request), computed by calling `delivered()` in build_munis_request_xlsx.py rather
+than re-deriving it — one place for the rule, so this PDF and MUNIS-REQUEST-FUNDS.xlsx's
+"Report runs" sheet cannot disagree about what has arrived.
 """
 import argparse
 import csv
@@ -37,6 +42,8 @@ import sys
 from datetime import date
 
 import openpyxl
+
+import build_munis_request_xlsx as xlsx_mod
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'notes', 'outbound', 'drafts', 'MUNIS-REQUEST-RUNS.pdf')
@@ -100,6 +107,46 @@ VIDEO = {
     'at': '5:46',
 }
 SRC = os.path.join(ROOT, 'sources')
+
+# --------------------------------------------------------------------------- delivery status
+# TJ, 6 October 2026: "i want basically to see what she has already done." `delivered()` is the
+# one place that knows what the 6 October delivery holds (sources/data/munis-school-ytd.csv);
+# imported rather than re-derived, so a status here and in MUNIS-REQUEST-FUNDS.xlsx cannot drift
+# apart.
+GOT = xlsx_mod.delivered()
+TB_EXISTS = xlsx_mod.TB.exists()
+DELIVERED_HUMAN = date.fromisoformat(xlsx_mod.DELIVERED_ON).strftime('%-d %b %Y')
+
+
+def _span(fys):
+    fys = sorted(fys)
+    return f'FY{fys[0]}' if len(fys) <= 1 else f'FY{fys[0]}–FY{fys[-1]}'
+
+
+def run_status(report, funds):
+    """('received'|'partial'|'needed', detail) for one run, computed from the same delivered()
+    data the spreadsheet's "Report runs" sheet reads. `detail` is empty for 'needed': nothing
+    arrived, nothing to explain."""
+    if report.startswith('Every school transaction'):
+        held_years = [fy for (f, item, fy) in xlsx_mod.HELD if f == '1301' and item == '2']
+        if held_years and TB_EXISTS:
+            return ('partial',
+                    f'Fund 1301 (athletics), {_span(held_years)}, already held (received before this request, Jun '
+                    f'2026). Fund 1300 FY2026 received {DELIVERED_HUMAN} as a trial balance with journal lines, '
+                    'not the full Account Detail export. Every other fund, and fund 1300 for earlier years, still '
+                    'needed.')
+        return ('needed', '')
+    if report.startswith('Year-end position'):
+        d300 = [fy for fy in xlsx_mod.YEARS if ('0100/300', fy) in GOT]
+        d301 = any(('0100/301', fy) in GOT for fy in xlsx_mod.YEARS)
+        all_fys = [fy for fy in xlsx_mod.YEARS if all((f, fy) in GOT for f in funds)]
+        if d300 and all_fys and not d301:
+            return ('partial',
+                    f'School department 300, {_span(d300)}, and all {len(funds)} school funds, {_span(all_fys)}, '
+                    f'expense only, received {DELIVERED_HUMAN}. Department 301, every other town department, and '
+                    'general-fund revenue still needed.')
+        return ('needed', '')
+    return ('needed', '')
 
 
 def norm(s):
@@ -325,16 +372,13 @@ def build_runs(funds, accounts):
                ('If it may not: one run per year, newest first — From YYYY/0 To YYYY/13, Year/period YYYY/13.', []),
                ('Special-education accounts: request item 2’s exception still applies — vendor number rather than name.', [])],
         output='Excel and PDF — see “Getting it out as Excel”.')
-    fy24_lines = re.search(r'on (\d+ of \d+ lines)',
-                           gap("Why the school department's FY2024 actual spending differs")).group(1)
     run(report='Year-end position, every account, FY2023–FY2026 (period 13 each)',
         program='YTD Budget Report, summary',
         answers=['The final position of every account at each year’s close: budget, transfers, spent, left — '
-                 'every school account, every school fund, every town department.',
-                 'FY2026: we hold period 12; period 13 is the close.',
-                 'FY2023: we hold the school’s report at period 12, not 13.',
-                 'FY2024: we hold the school’s period 13 report, run on 08/07/2024; ' + fy24_lines
-                 + ' of it differ from the general fund history.'],
+                 'every school account, every school fund, every town department.'],
+        # What is already held is in the Status column, computed from the delivered data;
+        # the lines that said "we hold period 12" here were true until 6 October 2026 and
+        # sat beside a status saying period 13 had arrived.
         gaps=[gap('What the schools actually spent, per line, in any year before FY2026'),
               gap('What each town department was appropriated and spent in FY2024 and FY2025'),
               gap('Which departments’ unspent appropriations produced the free cash'),
@@ -445,6 +489,8 @@ def build_runs(funds, accounts):
     runs[:] = [r for r in runs if r not in ye] + ye
     for i, r in enumerate(runs, 1):
         r['n'] = i
+    for r in runs:
+        r['status'] = run_status(r['report'], funds)
     return runs, (lo, hi, others), f24
 
 
@@ -481,7 +527,7 @@ def shared(funds, sweep, f24, runs):
         ('Purchase order reports: the Excel button on the report’s own toolbar.', [
             c('C', 24, shot='Excel'), c('C', 25, shot='Excel')]),
         ('Where the export shows a list of fields to export (the Munis Office Export Filter), leave EVERY field '
-         'selected. Only selected fields are exported, and MUNIS keeps the last selection — so a field unticked for an '
+         'selected -- except a payee-name column, if you choose to remove it (see “Removing payee names”). Only selected fields are exported, and MUNIS keeps the last selection — so a field unticked for an '
          'earlier export stays unticked until somebody ticks it again. Then Accept, and Open or Save the file.', [
             c('L', 6, shot='Munis Office Export Filter … Only selected fields will be exported. Your selections can be '
                            'saved for subsequent exports.'),
@@ -538,6 +584,45 @@ def shared(funds, sweep, f24, runs):
     return account, excel, selection, combine
 
 
+# ----------------------------------------------------------- removing payee names (help, not a demand)
+# The custodian asked TJ whether the vendor name can be stripped from the Account Detail export:
+# one special-education fund's detail carries the names of individuals (parents/families), not
+# businesses. This is help toward her own decision, not a position on what she should do.
+SPED_FUNDS = ['2640', '2742', '2758', '2800', '2813', '2814']
+
+
+def vendor_help(funds):
+    missing = [f for f in SPED_FUNDS if f not in funds]
+    if missing:
+        PROBLEMS.append(f'vendor_help: funds not on the request: {missing}')
+    listed = '; '.join(f'{f} {funds.get(f, "?")}' for f in SPED_FUNDS)
+    return [
+        (f'The funds on the request whose number or name reads as special education: {listed}. Listing all of '
+         'them is not a guess at which one prompted the question.', []),
+        ('The column that can carry it: VDR NAME/ITEM DESC, in the Town’s own June 2026 Account Detail '
+         'export. In that export, REFERENCE, REF1 and REF3 hold transaction codes and batch references rather '
+         'than names — worth a look before sending, since a different fund’s export may use them '
+         'differently.', [h('ad', 'VDR NAME/ITEM DESC'), h('ad', 'REFERENCE'), h('ad', 'REF1'), h('ad', 'REF3')]),
+        ('CHECK NO, and where a payment carries one VOUCHER or WARRANT, can be traced back to a payee through '
+         'the check register — deleting a name column after export does not by itself stop that.',
+         [h('ad', 'CHECK NO'), h('ad', 'VOUCHER'), h('ad', 'WARRANT')]),
+        ('Simplest, and needs no MUNIS feature: after exporting to Excel, delete the name-bearing column(s) — '
+         'at minimum VDR NAME/ITEM DESC — before saving, for these funds. Everything this project analyses '
+         'survives without it: fund, org, object, account, dates, journal, source and amount.', []),
+        ('A middle ground, if business vendor names should stay: replace only the payees who are individuals '
+         'with a neutral word such as INDIVIDUAL. In a fund this small, a line’s amount and date alone can '
+         'still point to one family, so for those lines sending them grouped by object and month — rather '
+         'than line by line — may serve the purpose better.', []),
+        ('A MUNIS-side option, if this screen offers it: on the export-to-Excel step, one guide describes being '
+         'able to “Check/ or uncheck anything you want to see or not see within this report” before '
+         'the file is created. If Lunenburg’s version shows that picker, unchecking VDR NAME/ITEM DESC '
+         'there removes it before the spreadsheet exists.',
+         [c('L', 6, 'Check/ or uncheck anything you want to see or not see within this report')]),
+        ('Entirely at your discretion — we only need the columns above to keep tying what was budgeted to '
+         'what was spent.', []),
+    ]
+
+
 # --------------------------------------------------------------------------- render
 CSS = """
 @page { size: Letter landscape; margin: 9mm 9mm 10mm 9mm; }
@@ -562,6 +647,16 @@ h2 { font-size: 9.5pt; margin: 10pt 0 3pt; border-bottom: 0.6pt solid #1f3a5f; }
 .box h3 { font-size: 8pt; margin: 0 0 3pt; }
 .foot { font-size: 6.6pt; color: #333; }
 .key td { padding: 1pt 4pt; vertical-align: top; font-size: 6.6pt; }
+p.status { font-size: 9pt; font-weight: 700; margin: 0 0 3pt; }
+.chip { display: inline-block; padding: 1pt 5pt; border-radius: 3pt; font-size: 6.4pt; font-weight: 700;
+        letter-spacing: .2pt; white-space: nowrap; }
+.chip-received { background: #cdefd3; color: #1a5c2a; }
+.chip-partial { background: #ffe3a8; color: #6b4600; }
+.chip-needed { background: #ececec; color: #444; }
+.status-detail { font-size: 6.2pt; color: #444; margin-top: 2pt; }
+tr.done td { color: #888; background: #f2f2f2 !important; }
+.vendor { font-size: 8pt; line-height: 1.4; max-width: 960px; }
+.vendor li { margin-bottom: 3pt; }
 """
 
 
@@ -577,15 +672,23 @@ def items(lst):
     return '<ul>' + ''.join(out) + '</ul>'
 
 
-def render(runs, account, excel, selection, combine, gaps_used, hashes):
-    head = ['#', 'Report', 'What it answers', 'MUNIS program / menu path', 'Selection', 'SET (value)',
+def render(runs, account, excel, selection, combine, vendor, gaps_used, hashes):
+    head = ['#', 'Report', 'Status', 'What it answers', 'MUNIS program / menu path', 'Selection', 'SET (value)',
             'CHECK ✓', 'UNCHECK', 'Years / how many runs', 'Output']
-    widths = [3, 9, 13, 10, 11, 14, 11, 9, 13, 6]
+    widths = [3, 8, 8, 12, 9, 10, 13, 10, 8, 13, 6]
+    CHIP_LABEL = {'received': 'RECEIVED', 'partial': 'PARTIAL', 'needed': 'STILL NEEDED'}
+    CHIP_CLASS = {'received': 'chip-received', 'partial': 'chip-partial', 'needed': 'chip-needed'}
     rows = []
     for r in runs:
-        rows.append('<tr>' + ''.join([
+        state, detail = r['status']
+        status_cell = f'<span class="chip {CHIP_CLASS[state]}">{CHIP_LABEL[state]}</span>'
+        if detail:
+            status_cell += f'<div class="status-detail">{esc(detail)}</div>'
+        row_cls = ' class="done"' if state == 'received' else ''
+        rows.append(f'<tr{row_cls}>' + ''.join([
             f'<td class="n">{r["n"]}</td>',
             f'<td><span class="rep">{esc(r["report"])}</span><br><span class="prog">{esc(r["program"])}</span></td>',
+            f'<td>{status_cell}</td>',
             '<td>' + items([(a, []) for a in r['answers']]) + '</td>',
             '<td>' + items(r['path']) + '</td>',
             '<td>' + items(r['select']) + '</td>',
@@ -620,12 +723,21 @@ def render(runs, account, excel, selection, combine, gaps_used, hashes):
     gl = ''.join(f'<li>{esc(g)} <span class="cite">[run{"s" if len(ns) > 1 else ""} '
                  f'{", ".join(map(str, ns))}]</span></li>' for g, ns in gaps_used)
     n_runs = sum(1 for r in runs if r['program'] != 'Not a report in any of the four guides')
+    counts = {'received': 0, 'partial': 0, 'needed': 0}
+    for r in runs:
+        counts[r['status'][0]] += 1
+    status_line = (f'As of {DELIVERED_HUMAN}: {counts["received"]} of {n_runs} runs received, '
+                   f'{counts["partial"]} partly received, {counts["needed"]} still needed.')
+    vendor_box = items(vendor)
     body = f"""
 <h1>MUNIS report runs for the school records request of 4 September 2026</h1>
-<p class="sub">{n_runs} runs, most useful first — send them in this order, as each is ready. Each row gives the screen, the boxes, and the guide page that shows it.</p>
+<p class="status">{status_line}</p>
+<p class="sub">{n_runs} runs, most useful first — send them in this order, as each is ready. Each row gives the screen, the boxes, and the guide page that shows it. The Account Detail export for a special-education fund can carry a payee’s name — see “Removing payee names” below.</p>
 {table}
 <h2>Notes that apply to every row</h2>
 {boxes}
+<h2>Removing payee names from the Account Detail export</h2>
+<div class="vendor">{vendor_box}</div>
 <h2>Where the option names come from</h2>
 <p class="foot">Lunenburg publishes no MUNIS guide. Option names are given exactly as these guides print them — chiefly the CNMI’s guide (C) and Tyler’s 2020.2 procedures (F) — and Lunenburg’s version may label some differently. Where a guide only shows an option in a screenshot it is marked (screenshot). Anything not named in a row: leave it as the Town usually runs the report. If a box here is missing from the Town’s screen, or a run cannot be made as written, saying so is as useful as the data.</p>
 {key}
@@ -640,11 +752,12 @@ def build(write=True):
     hashes = guide_hashes()
     runs, sweep, f24 = build_runs(funds, accounts)
     account, excel, selection, combine = shared(funds, sweep, f24, runs)
+    vendor = vendor_help(funds)
     gaps_used = {}
     for r in runs:
         for g in r['gaps']:
             gaps_used.setdefault(g, []).append(r['n'])
-    body = render(runs, account, excel, selection, combine, list(gaps_used.items()), hashes)
+    body = render(runs, account, excel, selection, combine, vendor, list(gaps_used.items()), hashes)
     for r in runs:
         for cell in ('path', 'select', 'set', 'check', 'uncheck', 'years'):
             if not r[cell]:
@@ -673,6 +786,11 @@ def main():
             sys.exit(f'{os.path.relpath(OUT, ROOT)} does not exist; run without --check')
         import pypdf
         text = ' '.join(p.extract_text() or '' for p in pypdf.PdfReader(OUT).pages)
+        # Chrome's print-to-PDF renders "ff" as a single ligature glyph in some fonts, which
+        # pypdf extracts as U+FB00 rather than two letters — quote the source, not the
+        # rendering (same issue noted in build_stopped_funding.py, there against minutes text).
+        text = text.replace('ﬀ', 'ff').replace('ﬁ', 'fi').replace('ﬂ', 'fl') \
+                   .replace('ﬃ', 'ffi').replace('ﬄ', 'ffl')
         m = re.search(r'Inputs digest ([0-9a-f]{16})', text)
         if not m or m.group(1) != digest:
             sys.exit(f'stale: the PDF says {m.group(1) if m else "no digest"}, the inputs now give {digest}. Rebuild.')
