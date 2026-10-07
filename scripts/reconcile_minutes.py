@@ -133,30 +133,61 @@ def ours_for_prompt(mm):
     return '\n'.join(out)
 
 
-def reconcile(path, force=False):
-    m = json.load(open(path, encoding='utf-8'))
-    off_path, off = official_for(m)
-    if not off_path:
-        return 'no official minutes yet'
-    sha = sha256_of(off_path)
-    have = m.get('reconciliation')
-    if have and have.get('official_sha256') == sha and not force:
-        return 'current'
-    raw = open(off_path, encoding='utf-8', errors='replace').read()
-    official_text = re.sub(r'^===PAGE \d+===$', '', raw, flags=re.M)
-    prompt = ('Meeting: %s, %s.\n\n=== OUR MINUTES (from the recording) ===\n%s\n\n=== OFFICIAL MINUTES (the town\'s) ===\n%s'
-              % (m['board'], m['meeting_date'], ours_for_prompt(m['minutes']), official_text))
-    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
-                        '--json-schema', json.dumps(SCHEMA), '--output-format', 'json',
-                        '--max-budget-usd', '1.5'],
-                       input=prompt, capture_output=True, text=True, env=env, timeout=900)
-    if r.returncode != 0:
-        raise SystemExit('claude failed reconciling %s:\n%s' % (path, (r.stdout + r.stderr)[-2000:]))
-    res = json.loads(r.stdout)
-    body = res.get('structured_output') or res.get('result')
-    if isinstance(body, str):
-        body = json.loads(body)
+def structured_official(off_path, sha):
+    """The town's minutes as a SCHEMA-2 read, if one exists for exactly this text, else None.
+
+    TWO STATES, BOTH VALID, FOR A WHILE. TJ, 6 October 2026: the official minutes are being
+    moved to a structured read that mirrors ours, so reconcile compares like with like -- and
+    the 4,574 sets already read for votes only stay as they are until somebody asks for them
+    to be re-read. So this prefers the structured file and falls back to the raw text, and
+    every reconciliation records which one it compared against."""
+    import extract_official_votes as E
+    m = re.search(r'(\d{4}-\d{2}-\d{2})-minutes-(\w+)\.txt$', off_path)
+    if not m:
+        return None
+    board = os.path.basename(os.path.dirname(off_path))
+    p = os.path.join(E.OUT, board, '%s-%s.json' % (m.group(1), m.group(2)))
+    if not os.path.exists(p):
+        return None
+    d = json.load(open(p, encoding='utf-8'))
+    if E.schema_of(d) < 2 or d.get('source', {}).get('sha256') != sha:
+        return None
+    return d
+
+
+def official_for_prompt(d):
+    """A schema-2 read, rendered in the same sections as ours_for_prompt, each item with
+    the verbatim quote the extractor already checked against the minutes."""
+    def sec(title, items, fmt):
+        return ['', title] + (['- %s\n  QUOTE: "%s"' % (fmt(x), x['quote']) for x in items] or ['- none'])
+    out = ['(Structured from the official minutes. Every QUOTE is verbatim from them -- copy a QUOTE as the `official` text.)']
+    out += sec('VOTES (non-procedural):', [v for v in d['votes'] if not v.get('procedural')],
+               lambda v: '%s — %s' % (v['motion'], v['outcome']))
+    out += sec('TRANSFERS:', d.get('transfers', []),
+               lambda t: '%s — %s (%s)' % (t['description'], t.get('amount_as_printed', ''), t['outcome']))
+    out += sec('BUDGET ITEMS (figures as printed):', d.get('budget_items', []),
+               lambda b: '%s: %s [%s]' % (b['topic'], b['what_was_recorded'], ', '.join(b.get('figures_as_printed') or [])))
+    out += sec('DECISIONS:', d.get('decisions', []), lambda x: x['decision'])
+    out += sec('ATTENDEES:', d.get('attendees', []),
+               lambda a: '%s (%s) %s' % (a['name'], a.get('role', ''), a['status']))
+    out += sec('PUBLIC COMMENT:', d.get('public_comment', []),
+               lambda c: '%s%s' % (c['topic'], ' -- ' + c['speaker'] if c.get('speaker') else ''))
+    return '\n'.join(out)
+
+
+def atomic_json(path, obj, indent=1):
+    """Write JSON so a crash leaves the old file or the new one, never half of either."""
+    tmp = path + '.tmp'
+    with open(tmp, 'w', encoding='utf-8') as fh:
+        json.dump(obj, fh, indent=indent, ensure_ascii=False)
+        fh.write('\n')
+    os.replace(tmp, path)
+
+
+def finish(path, m, off, sha, official_text, body, against, model, by, cost):
+    """Check a comparison's quotes against the town's text and write it into our minutes.
+    ONE PLACE, so a reconcile done here and one folded into the structured read of the
+    town's minutes (extract_official_votes.py) are the same object, checked the same way."""
     # Every official quote must be in the official text; a finding whose quote is not is
     # dropped and counted, never published.
     norm = normalise(official_text)
@@ -173,19 +204,54 @@ def reconcile(path, force=False):
                 'substantive difference, flagged and not resolved. Neither record is treated as the referee.',
         'official': {'url': off['url'], 'text_url': off['text_url'], 'path': off['path']},
         'official_sha256': sha,
+        # WHICH FORM OF THE TOWN'S MINUTES THIS COMPARED AGAINST. `structured` = the
+        # schema-2 read; `text` = the raw minutes, which is every reconciliation written
+        # before 6 October 2026 (they carry no key; read a missing one as `text`).
+        'against': against,
         'coverage': body['coverage'],
         'summary': body['summary'],
         'counts': counts,
         'findings': kept,
         'quotes_not_in_official_dropped': dropped,
-        'written': {'by': 'scripts/reconcile_minutes.py', 'model': MODEL,
+        'written': {'by': by, 'model': model,
                     'at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                    'cost_usd': res.get('total_cost_usd')},
+                    'cost_usd': cost},
     }
-    with open(path, 'w', encoding='utf-8') as fh:
-        json.dump(m, fh, indent=1, ensure_ascii=False)
-        fh.write('\n')
-    return 'reconciled ($%.3f): %s' % (res.get('total_cost_usd') or 0,
+    if path:
+        atomic_json(path, m)
+    return counts
+
+
+def reconcile(path, force=False):
+    m = json.load(open(path, encoding='utf-8'))
+    off_path, off = official_for(m)
+    if not off_path:
+        return 'no official minutes yet'
+    sha = sha256_of(off_path)
+    have = m.get('reconciliation')
+    if have and have.get('official_sha256') == sha and not force:
+        return 'current'
+    raw = open(off_path, encoding='utf-8', errors='replace').read()
+    official_text = re.sub(r'^===PAGE \d+===$', '', raw, flags=re.M)
+    structured = structured_official(off_path, sha)
+    against = 'structured' if structured else 'text'
+    prompt = ('Meeting: %s, %s.\n\n=== OUR MINUTES (from the recording) ===\n%s\n\n=== OFFICIAL MINUTES (the town\'s) ===\n%s'
+              % (m['board'], m['meeting_date'], ours_for_prompt(m['minutes']),
+                 official_for_prompt(structured) if structured else official_text))
+    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
+    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
+                        '--json-schema', json.dumps(SCHEMA), '--output-format', 'json',
+                        '--max-budget-usd', '1.5'],
+                       input=prompt, capture_output=True, text=True, env=env, timeout=900)
+    if r.returncode != 0:
+        raise SystemExit('claude failed reconciling %s:\n%s' % (path, (r.stdout + r.stderr)[-2000:]))
+    res = json.loads(r.stdout)
+    body = res.get('structured_output') or res.get('result')
+    if isinstance(body, str):
+        body = json.loads(body)
+    counts = finish(path, m, off, sha, official_text, body, against, MODEL,
+                    'scripts/reconcile_minutes.py', res.get('total_cost_usd'))
+    return 'reconciled against %s ($%.3f): %s' % (against, res.get('total_cost_usd') or 0,
                                       ', '.join('%s %d' % (k, n) for k, n in counts.items() if n))
 
 

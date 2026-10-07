@@ -334,6 +334,43 @@ def out_path(entry):
     return os.path.join(OUT, entry['board_slug'], '%s-%s.json' % (entry['date'], entry['video_id']))
 
 
+MIN_LINES = 5      # fewer caption lines than this and there is no meeting to write up
+
+
+_SHORT_CACHE = os.path.join(ROOT, 'build', 'transcript-too-short.json')
+_short = None
+
+
+def too_short(path):
+    """The same test write_one() refuses on, for callers deciding what is WORK. A transcript
+    this short exits 0 having written nothing, so counted as work it is queued forever --
+    and on 6 October 2026 it would have tripped process_meeting.py's no-progress stop.
+
+    Cached per file on its size and mtime (build/, gitignored): the queue asks about ~2,000
+    transcripts and the ingest dashboard rebuilds that queue every twenty seconds."""
+    global _short
+    if _short is None:
+        try:
+            _short = json.load(open(_SHORT_CACHE, encoding='utf-8'))
+        except (OSError, ValueError):
+            _short = {}
+    st = os.stat(path)
+    key, stamp = os.path.relpath(path, ROOT), '%d:%d' % (st.st_size, st.st_mtime_ns)
+    hit = _short.get(key)
+    if hit and hit[0] == stamp:
+        return hit[1]
+    v = len(lines_for(json.load(open(path, encoding='utf-8')))) < MIN_LINES
+    _short[key] = [stamp, v]
+    try:
+        os.makedirs(os.path.dirname(_SHORT_CACHE), exist_ok=True)
+        tmp = _SHORT_CACHE + '.%d.tmp' % os.getpid()
+        json.dump(_short, open(tmp, 'w', encoding='utf-8'))
+        os.replace(tmp, _SHORT_CACHE)
+    except OSError:
+        pass
+    return v
+
+
 def write_one(entry, docs, force=False):
     path = out_path(entry)
     sha = sha256_of(entry['path'])
@@ -343,7 +380,7 @@ def write_one(entry, docs, force=False):
             return 'current'
     doc = json.load(open(entry['path'], encoding='utf-8'))
     lines = lines_for(doc)
-    if len(lines) < 5:
+    if len(lines) < MIN_LINES:
         return 'too short'
     board = board_name_for(entry['board_slug'])
     video_title = doc.get('title') or ''
@@ -401,9 +438,7 @@ def write_one(entry, docs, force=False):
     if res.get('total_cost_usd') is not None:
         print('cost $%.4f' % res['total_cost_usd'])
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, 'w', encoding='utf-8') as fh:
-        json.dump(minutes, fh, indent=1, ensure_ascii=False)
-        fh.write('\n')
+    atomic_json(path, minutes, indent=1)
     digest(path)
     extra = ''
     if budget_state is not None:
@@ -451,9 +486,7 @@ def headline(path):
         body = json.loads(body)
     mm['headline'] = body['headline'].strip()
     m['written'].setdefault('backfilled', []).append({'field': 'headline', 'at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'cost_usd': res.get('total_cost_usd')})
-    with open(path, 'w', encoding='utf-8') as fh:
-        json.dump(m, fh, indent=1, ensure_ascii=False)
-        fh.write('\n')
+    atomic_json(path, m, indent=1)
     return 'headlined ($%.3f): %s' % (res.get('total_cost_usd') or 0, mm['headline'][:80])
 
 
@@ -535,9 +568,7 @@ def digest(path):
     m['digest'] = dict(body, written={'by': 'scripts/write_recording_minutes.py --digest', 'model': MODEL,
                                       'at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
                                       'cost_usd': res.get('total_cost_usd')})
-    with open(path, 'w', encoding='utf-8') as fh:
-        json.dump(m, fh, indent=1, ensure_ascii=False)
-        fh.write('\n')
+    atomic_json(path, m, indent=1)
     return 'digested ($%.3f): %s' % (res.get('total_cost_usd') or 0, body['what_happened'][0]['line'][:80])
 
 
@@ -567,9 +598,7 @@ def relink(path, docs):
         return 'current'
     had = len(m.get('town_published') or [])
     m['town_published'] = want
-    with open(path, 'w', encoding='utf-8') as fh:
-        json.dump(m, fh, ensure_ascii=False, indent=2)
-        fh.write('\n')
+    atomic_json(path, m, indent=2)
     return 'relinked (%d -> %d document(s))' % (had, len(want))
 
 
@@ -601,9 +630,7 @@ def retag(path):
         t['tags'] = got.get(i, [])
     m['written']['retagged'] = {'at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
                                 'cost_usd': res.get('total_cost_usd')}
-    with open(path, 'w', encoding='utf-8') as fh:
-        json.dump(m, fh, indent=1, ensure_ascii=False)
-        fh.write('\n')
+    atomic_json(path, m, indent=1)
     return 'retagged ($%.3f)' % (res.get('total_cost_usd') or 0)
 
 
@@ -691,6 +718,16 @@ def status():
     for k, (n, w) in sorted(by_board.items()):
         print('  %-40s %4d transcript(s), %4d with minutes' % (k, n, w))
     print('  %d of %d' % (sum(w for n, w in by_board.values()), len(ts)))
+
+
+def atomic_json(path, obj, indent=1):
+    """Write JSON so a crash leaves the old file or the new one, never half of either: a
+    truncated minutes file would read as a finished one to everything downstream."""
+    tmp = path + '.tmp'
+    with open(tmp, 'w', encoding='utf-8') as fh:
+        json.dump(obj, fh, indent=indent, ensure_ascii=False)
+        fh.write('\n')
+    os.replace(tmp, path)
 
 
 def main():

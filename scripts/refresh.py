@@ -296,6 +296,52 @@ def py(script, *args, **kw):
 SCHOOLSPRING_ALERT = os.path.join(ROOT, 'build', 'schoolspring-ALERT.txt')
 
 
+# THE METERED STEPS SHARE ONE STOP. Every step below that calls `claude -p` spends the
+# same allowance, so a usage or session limit that refuses one refuses all of them. Before
+# this, each ran with check=False and nothing read its output: a refused step printed a
+# failure and the next metered step was called anyway -- and extract_official_votes.py,
+# which counted only SUCCESSES against its --limit, would walk the whole corpus being
+# refused. On 6 October 2026 the same blind spot in the sweep spun 5,145 refused calls
+# over three and a half hours. A limit now ends every metered step for the rest of the run,
+# and the run says so in its notes. The word list is the sweep's, imported, so the two
+# cannot disagree about what a limit is.
+METERED = {'stopped': None}
+
+
+def metered(script, *args, notes=None):
+    from sweep_backlog import HARD_LIMIT_WORDS, kill_switch
+    if not METERED['stopped'] and kill_switch():
+        METERED['stopped'] = kill_switch()
+        if notes is not None:
+            notes.append('metered steps skipped: ' + METERED['stopped'])
+    if METERED['stopped']:
+        print('\n$ %s -- SKIPPED: %s' % (script, METERED['stopped']), flush=True)
+        return None
+    import time
+    env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
+    cmd = [sys.executable, os.path.join(SCRIPTS, script), *args]
+    print('\n$ ' + ' '.join(cmd), flush=True)
+    t0 = time.monotonic()
+    p = subprocess.Popen(cmd, env=env, cwd=ROOT, stdout=subprocess.PIPE,
+                         stderr=subprocess.STDOUT, text=True)
+    seen = []
+    for line in p.stdout:              # streamed, so the log still shows progress live
+        print(line, end='', flush=True)
+        seen.append(line)
+    rc = p.wait()
+    secs = time.monotonic() - t0
+    TIMINGS.append((script, secs, rc))
+    print('  [%s: %.1fs, exit %d]' % (script, secs, rc), flush=True)
+    low = ''.join(seen[-200:]).lower()
+    hit = next((w for w in HARD_LIMIT_WORDS if w in low), None)
+    if hit:
+        METERED['stopped'] = '%s hit a limit (%r); no further model calls this run' % (script, hit)
+        print('  ' + METERED['stopped'], flush=True)
+        if notes is not None:
+            notes.append(METERED['stopped'])
+    return rc
+
+
 def schoolspring_alert(rc, notes):
     """A LOUD notice when SchoolSpring stops answering us, and silence when it answers.
 
@@ -377,6 +423,10 @@ def minutes_targets(rows):
             continue
         target = os.path.join(RECORDED, t['board_slug'], '%s-%s.json' % (t['meeting_date'], t['video_id']))
         if not os.path.exists(target):
+            # A transcript the writer refuses as `too short` is not work: imported, not restated.
+            import write_recording_minutes as W
+            if W.too_short(os.path.join(ROOT, t['path'])):
+                continue
             out.append(dict(t, priority=int(row.get('priority') or 9)))
     # THE LAST TWO YEARS FIRST, ACROSS EVERY BOARD; then priority; newest first inside
     # each. TJ, 17 September 2026: "work them in priority order, newest first. Last 2
@@ -387,6 +437,27 @@ def minutes_targets(rows):
 
 
 RECENT_YEARS = 2
+
+# NEW ONLY. THE REFRESH DOES NO BACKFILL. TJ, 6 October 2026: *"Let's cancel backfill from
+# the refresh. I'll ask deliberately when to do the backfill."* Every metered step below
+# reads only what ARRIVED in the last NEW_DAYS -- by the date the document was first seen
+# or the transcript fetched, never by the meeting date, because a year-old meeting's
+# minutes can be published today (TJ, 28 September 2026) and that is new. A week, so a
+# missed morning or two is caught up rather than lost. Anything older is backlog, and
+# backlog runs only when TJ asks for it.
+NEW_DAYS = 7
+
+
+def new_since(as_of):
+    return (dt.date.fromisoformat(as_of) - dt.timedelta(days=NEW_DAYS)).isoformat()
+
+
+def new_official_minutes(as_of):
+    """(board_slug, meeting_date) for every set of the town's minutes first seen recently."""
+    since = new_since(as_of)
+    return sorted({(e['board_slug'], e['meeting_date']) for e in read_csv(MEETING_EVENTS)
+                   if e['kind'] == 'minutes' and e['first_seen'] >= since},
+                  key=lambda x: x[1], reverse=True)
 
 
 def recent_since():
@@ -649,7 +720,7 @@ def main():
         py('extract_minutes.py')
         py('build_minutes_searchable.py')
         if not a.no_minutes:
-            py('write_agenda_preview.py', '--upcoming', '--as-of', a.as_of, check=False)
+            metered('write_agenda_preview.py', '--upcoming', '--as-of', a.as_of, notes=notes)
 
     # 3d. New DOCUMENTS on the district's budget page and the town's finance pages --
     # the listing pages the archive was built from, re-walked; a shrunken index is
@@ -663,7 +734,7 @@ def main():
     # process it right then and there." One read per document, page-cited, into the same
     # budget-state shape the feed and the season boards already draw from.
     if not a.dry_run:
-        py('write_document_budget_state.py', '--new', '--as-of', a.as_of, '--limit', '3', check=False)
+        metered('write_document_budget_state.py', '--new', '--as-of', a.as_of, '--limit', '3', notes=notes)
 
     # 3e. THE TWO STAFF DIRECTORIES, WEEKLY. Who works for the town and who works for the
     # district, off the pages they publish themselves -- and the only sources here that
@@ -728,14 +799,17 @@ def main():
             since = (dt.date.fromisoformat(a.as_of) - dt.timedelta(days=TRANSCRIPT_WINDOW_DAYS)).isoformat()
             py('fetch_youtube_transcripts.py', '--since', since, '--limit', '12', '--sleep', '45', check=False)
 
-    # 7. Our minutes, inside the policy, capped.
+    wrote_minutes = set()     # (board, date) whose minutes this run wrote -- reconciled below
+    # 7. Our minutes, inside the policy, capped -- for recordings whose transcript is NEW.
     if not a.dry_run and not a.no_minutes:
         rows = policy()
-        targets = minutes_targets(rows)
+        since_new = new_since(a.as_of)
+        targets = [t for t in minutes_targets(rows) if (t.get('fetched_at') or '')[:10] >= since_new]
         if len(targets) > MAX_MINUTES_PER_RUN:
             notes.append('%d recordings await minutes; wrote %d' % (len(targets), MAX_MINUTES_PER_RUN))
         for t in targets[:MAX_MINUTES_PER_RUN]:
-            py('write_recording_minutes.py', t['board_slug'], t['meeting_date'], check=False)
+            metered('write_recording_minutes.py', t['board_slug'], t['meeting_date'], notes=notes)
+            wrote_minutes.add((t['board_slug'], t['meeting_date']))
 
     # 7b. SCANNED MINUTES, OCR'D -- local, free, about half a minute each; newest first.
     if not a.dry_run and not a.no_minutes:
@@ -746,7 +820,12 @@ def main():
     # records can arrive in either order (TJ, 17 September 2026). Runs after the OCR so
     # a scan read today is read for its votes today.
     if not a.dry_run and not a.no_minutes:
-        py('extract_official_votes.py', '--limit', str(MAX_OFFICIAL_VOTES_PER_RUN), check=False)
+        # NEW minutes only, each by board and date, through process_meeting.py -- the same
+        # runner and the same read order as the backlog: our minutes first when the captions
+        # exist, then the town's minutes read structured and reconciled in one call. A
+        # meeting already done answers `nothing to do` and costs nothing. Capped as a backstop.
+        for board, date in new_official_minutes(a.as_of)[:MAX_OFFICIAL_VOTES_PER_RUN]:
+            metered('process_meeting.py', board, date, notes=notes)
 
     # 7a. The budget state of the three budget boards' recordings -- the deficit, the cuts,
     # the warnings as put on the record -- newest first, capped like the minutes. A file
@@ -758,7 +837,10 @@ def main():
         # as its minutes (step 6), so this reads only meetings that already have minutes
         # from before the merge, or files behind the schema -- never a meeting the minutes
         # step will read anyway. TJ: "it will save both TOKENS and time."
-        py('write_budget_state.py', '--since', since, '--limit', str(MAX_MINUTES_PER_RUN), '--with-minutes-only', check=False)
+        # REMOVED 6 October 2026: this step was ONLY the catch-up -- backfill, which the refresh
+        # no longer does. A new meeting's budget state comes out of the minutes step. Run
+        # `write_budget_state.py --since ... --with-minutes-only` by hand when TJ asks.
+        pass
 
     # 7a'. The live season's board, re-read from the record: warnings straight onto the
     # page, figures and cuts PROPOSED into budget-seasons/fy28.proposed.csv for a person to
@@ -796,7 +878,12 @@ def main():
     # date. The historical backlog still belongs to sweep_backlog.py, which needs a
     # reconcile stream it does not yet have.
     if not a.dry_run and not a.no_minutes:
-        py('reconcile_minutes.py', '--limit', str(MAX_RECONCILE_PER_RUN), check=False)
+        # A pair is NEW when either side is: the town's minutes first seen recently, or our
+        # minutes written this run. reconcile_minutes.py skips a pair that is already
+        # reconciled or has no official minutes, without calling the model.
+        pairs = sorted(set(new_official_minutes(a.as_of)) | wrote_minutes, key=lambda x: x[1], reverse=True)
+        for board, date in pairs[:MAX_RECONCILE_PER_RUN]:
+            metered('reconcile_minutes.py', board, date, notes=notes)
 
     # 8. Rebuild everything derived from the above.
     if not a.dry_run:
@@ -842,7 +929,7 @@ def main():
         # archive fills in. Each closes on its election day (sources/data/budget-cycles.csv).
         for fy, closes in (('fy26', '2025-05-17'), ('fy27', '2026-05-16')):
             py('build_budget_feed.py', '--as-of', closes, '--out', 'fy28/public/data/budget-feed-%s.json' % fy)
-        py('tag_document_affinity.py', check=False)     # only documents not yet tagged; cents
+        metered('tag_document_affinity.py', notes=notes)     # only documents not yet tagged; cents
         py('build_search_index.py', '--quiet')
         py('build_app_metrics.py')
         py('build_sitemap.py')

@@ -84,19 +84,33 @@ def recording_minutes():
     return have, todo
 
 
-def official_votes():
+def official_structured():
+    """(done, todo) dates for the town's minutes read STRUCTURED (schema 2). Votes-only
+    files are TODO here -- they wait to be re-read -- and are counted apart by
+    official_votes_only() so the dual state is visible (TJ, 6 October 2026)."""
     import extract_official_votes as E
     files = E.minutes_files()
-    have = {os.path.relpath(p, E.OUT)[:-5] for p in glob.glob(os.path.join(E.OUT, '*', '*.json'))}
-    done = [e['date'] for e in files if '%s/%s-%s' % (e['board_slug'], e['date'], e['docid']) in have]
-    todo = []
+    state = {os.path.relpath(p, E.OUT)[:-5]: ('"schema": 2' in open(p, encoding='utf-8').read())
+             for p in glob.glob(os.path.join(E.OUT, '*', '*.json'))}
+    done, todo = [], []
     for e in files:
-        if '%s/%s-%s' % (e['board_slug'], e['date'], e['docid']) in have:
+        k = '%s/%s-%s' % (e['board_slug'], e['date'], e['docid'])
+        if state.get(k):
+            done.append(e['date'])
             continue
         body = open(e['path'], encoding='utf-8', errors='replace').read()
         if len(re.sub(r'\s+', ' ', body)) >= E.MIN_CHARS:
             todo.append(e['date'])
     return done, todo
+
+
+def official_votes_only():
+    """(read for votes only, never read) -- the two kinds inside the structured stream's todo."""
+    import extract_official_votes as E
+    have = {os.path.relpath(p, E.OUT)[:-5]: ('"schema": 2' in open(p, encoding='utf-8').read())
+            for p in glob.glob(os.path.join(E.OUT, '*', '*.json'))}
+    v1 = sum(1 for k, v2 in have.items() if not v2)
+    return v1
 
 
 def ocr():
@@ -279,8 +293,14 @@ def main():
         # 300 runs is $0.110, which is <=0.0193% of the week. Rule 2 reaches this
         # sentence too -- it is the figure a reader sizes a thousand calls against.
         # notes/findings/METERED-BATCH-COST.md carries the derivation.
-        ('Votes from the town’s minutes', 'extract_official_votes.py — claude -p on the small model, %s, every quote checked verbatim; the refresh reads 40 a day, newest first across every board'
-         % COST.phrase('official-votes', '~0.03% each', html=False).split(', runs by itself')[0], official_votes()),
+        # STRUCTURED, NOT VOTES (TJ, 6 October 2026). Done means schema 2; the %d sets read
+        # for votes only before that day are TODO here and named in the description, so a
+        # reader can see the dual state rather than a stream that looks nearly finished.
+        ('The town’s minutes, read structured', 'extract_official_votes.py --schema 2 — claude -p; '
+         'attendees, votes, decisions, budget items, transfers, public comment, topics, every item quoted '
+         'verbatim. %s set(s) of minutes were read for VOTES ONLY before 6 October 2026 and are counted '
+         'as still to do. NEW minutes are read by the refresh as they arrive; the backlog runs only when '
+         'TJ asks' % '{:,}'.format(official_votes_only()), official_structured()),
         ('Reconciling the annual-report tables', 'the largest backlog here and not an '
          'agentic one: rows are READ, and a row is only usable once it ties to a total '
          'the document itself prints. Mostly a per-page column ruler putting ACCOUNT '
@@ -295,7 +315,7 @@ def main():
          'not in a long session (CLAUDE.md 7g). Every task ties its dataset to a total the '
          'document prints. Tasks, priorities and progress: '
          'notes/generated/FINANCE-COMMITTEE-INGEST.md', fincom_tasks()),
-        ('OCR of scanned minutes', 'ocr_scanned_minutes.py — macOS Vision, local and free, ~30 s each; the refresh reads 40 a day, newest first; a scan read here enters search and the votes stream', ocr()),
+        ('OCR of scanned minutes', 'ocr_scanned_minutes.py — macOS Vision, local and free, ~30 s each; the refresh reads 40 a day, newest first; a scan read here enters search and the official-minutes stream', ocr()),
     ]
     b = io.StringIO()
     b.write('# The agentic backlog\n\n')
@@ -343,8 +363,14 @@ def main():
             'that actually appropriates is the one captured least precisely. Same machinery '
             'as `ocr_scanned_minutes.py` (macOS Vision, local, free), pointed at sampled '
             'frames instead of scanned PDFs.\n')
-    b.write('\n**Proposed, not built:** *The town\u2019s OFFICIAL minutes, read for more '
-            'than votes.* TJ, 28 September 2026: *"votes is ONE PIECE of what the minutes '
+    b.write('\n**BUILT 6 October 2026, and in a DUAL STATE until the backlog is re-read:** '
+            '*The town\u2019s OFFICIAL minutes, read for more than votes.* `extract_official_votes.py '
+            '--schema 2` writes the structured read beside the votes, in the same file; a file '
+            'without `schema: 2` is a votes-only read and stays valid. `reconcile_minutes.py` '
+            'compares against the structured read when one exists and records `against`. '
+            'New minutes are read structured by the refresh; the old ones only when TJ asks. '
+            'The proposal as it was written follows.\n\n'
+            'TJ, 28 September 2026: *"votes is ONE PIECE of what the minutes '
             'have in them."*\n\n'
             'WHAT WE HAVE. The TEXT of every set of the town\u2019s minutes is extracted '
             'and in the search index -- 12,095 files -- so a resident can find an '

@@ -424,7 +424,7 @@ def caption_pending():
     return group((r['board_slug'], r['meeting_date']) for r in todo)
 
 
-def register_split(want, have_dir):
+def register_split(want, have_dir, keep=None):
     """(meetings with a file, meetings without) -- ONE GRAIN, from ONE join.
 
     BOTH SIDES COME OUT OF HERE BECAUSE THE CARD ADDS THEM. TJ, reading the votes card:
@@ -447,7 +447,8 @@ def register_split(want, have_dir):
     """
     have = {os.path.relpath(p, os.path.join(DATA, have_dir))[:-5].split('/')[0] + '|' +
             os.path.basename(p)[:10]
-            for p in glob.glob(os.path.join(DATA, have_dir, '*', '*.json'))}
+            for p in glob.glob(os.path.join(DATA, have_dir, '*', '*.json'))
+            if keep is None or keep(p)}
     covered, out = 0, []
     for r in rows('meeting-register.csv'):
         if r.get('part_of') or not want(r):
@@ -780,7 +781,14 @@ def streams():
     # file exists but whose register row no longer matches it. That difference is worth
     # finding, and it is not worth guessing at from a dashboard, so the page states the
     # one figure it can stand behind: how many meetings have no file.
-    v_done, vp = register_split(lambda r: r.get('minutes') == '1', 'official-votes')
+    # DONE MEANS STRUCTURED (TJ, 6 October 2026). A meeting counts as processed only once its
+    # official minutes have the schema-2 read; one read for votes only is still to do, and
+    # the card says how many of the to-do are that, so the dual state is visible.
+    def structured(p):
+        return '"schema": 2' in open(p, encoding='utf-8').read()
+    v_done, vp = register_split(lambda r: r.get('minutes') == '1', 'official-votes', keep=structured)
+    v_any, _ = register_split(lambda r: r.get('minutes') == '1', 'official-votes')
+    v_votes_only = v_any - v_done
     # NAMED FOR WHAT IT PRODUCES, WHICH IS ONLY VOTES. TJ, 19 September 2026: "why do you
     # call it 'Votes from the town's minutes'? I assume this means 'Our own minutes'
     # because its more than votes isnt it that we're processing for?" -- a fair reading,
@@ -808,16 +816,19 @@ def streams():
     # `today` doing real work: it marks the gap rather than hiding it.
     s.append(dict(key='votes', unit=('set of the town’s minutes processed', 'sets of the town’s minutes processed', 'sets of the town’s minutes still to process'), name='The town’s OFFICIAL minutes',
                   io='in: the minutes the town published, whose TEXT is already '
-                     'extracted and searchable &rarr; out: the votes they state as '
-                     'structured rows, each quoted verbatim &mdash; votes are the only '
-                     'OBJECT we build from them today',
+                     'extracted and searchable &rarr; out: the whole meeting as the town '
+                     'recorded it &mdash; attendees, votes, decisions, budget items, '
+                     'transfers, public comment, topics &mdash; each item quoted verbatim. '
+                     '<b>%s of the meetings still to process were read for VOTES ONLY</b> '
+                     'before 6 October 2026 and wait to be re-read structured; the rest have '
+                     'never been read' % '{:,}'.format(v_votes_only),
                   done=v_done,
                   todo=sum(p['n'] for p in vp), blocked=0, blocked_why='',
                   # DERIVED, NOT TYPED. This said `~0.03% of the week each` and the
                   # measured figure is <=0.0193% -- a 35-55% overstatement in the number
                   # anybody sizes a batch against. Every vote file carries its own
                   # `cost_usd`; see notes/findings/METERED-BATCH-COST.md.
-                  cost=COST.phrase('official-votes', '~0.03% of the week each, runs by itself')
+                  cost=COST.phrase('official-votes', 'structured read not yet priced', schema=2)
                        + ' &middot; %s vote files '
                        'written, one per minutes DOCUMENT; 198 dates hold more than one '
                        'set, so files and meetings are different counts and are never '
@@ -977,8 +988,10 @@ def streams():
         # them today, and calling the stream `votes` framed a document-processing backlog
         # as a vote-counting one. The internal key stays `votes` because that is the
         # script; what a reader is shown is the document.
-        what = {'votes': 'the town\u2019s OFFICIAL minutes, still to process \u2014 votes '
-                         'are what we extract from them today, not all they hold',
+        what = {'official': 'meetings whose OFFICIAL minutes have never been read',
+                'official-v1': 'meetings whose OFFICIAL minutes were read for votes only '
+                               '\u2014 waiting to be re-read structured (attendees, '
+                               'decisions, budget items, transfers, public comment, topics)',
                 'reconcile': 'meetings where we hold both records and have not compared '
                              'ours against the town\u2019s',
                 'minutes': 'recordings we have not yet written OUR minutes from'}
@@ -988,7 +1001,7 @@ def streams():
                          ('~$%.2f a job' % st['unit_cost']) if st.get('unit_cost')
                          else 'no measured cost yet'))
         pend = [dict(board=r['fy'], n=r['total'], first='', last='',
-                     dates=['%s %s' % (r[k], k) for k in ('votes', 'reconcile', 'minutes')
+                     dates=['%s %s' % (r[k], k) for k in ('official', 'official-v1', 'reconcile', 'minutes')
                             if r.get(k)])
                 for r in reversed(bd.get('by_fiscal_year', [])) if r['total']]
         s.append(dict(
@@ -1064,7 +1077,59 @@ def backlog_depth():
 #
 # Inline SVG, no library: this page is a local file opened from disk, and a chart that
 # needed a CDN would be a blank rectangle the first time the machine was offline.
-STREAM_COLOUR = [('votes', '#6cb6ff'), ('reconcile', '#d29922'), ('minutes', '#a371f7')]
+# THE TOWN'S MINUTES IN TWO SHADES OF ONE COLOUR (TJ, 6 October 2026): never read, and
+# read for votes only. One kind of document in two states of processing, so one hue -- the
+# pale one is the dual state that drains as meetings are re-read structured.
+STREAM_COLOUR = [('official', '#6cb6ff'), ('official-v1', '#2f5d8a'), ('reconcile', '#d29922'),
+                 ('minutes', '#a371f7')]
+
+
+# THE THREE BUDGET BOARDS, ON THEIR OWN. TJ, 6 October 2026: *"add a way to see the 3 boards
+# (select board, school committee, finance committee) on the chart for backlog? I want to see
+# how many open things they specifically have."* Same streams, same colours, same grain as the
+# fiscal-year chart above it -- MEETINGS still to process -- read off the same payload's
+# by-board rollup, so the two charts cannot disagree.
+BUDGET_BOARDS = [('select-board', 'Select Board'), ('school-committee', 'School Committee'),
+                 ('finance-committee', 'Finance Committee')]
+
+
+def budget_boards_chart(bd):
+    """One stacked horizontal bar per budget board, by stream."""
+    by = {r['board']: r for r in bd.get('by_board', [])}
+    rows = [(slug, name, by.get(slug, {})) for slug, name in BUDGET_BOARDS]
+    hi = max([r.get('total', 0) for _, _, r in rows] + [1])
+    W, ROW, LABEL, PAD = 1000, 30, 170, 70
+    H = ROW * len(rows) + 8
+    out = ['<div class="card"><div class="row"><b class="grow">The three budget boards</b>'
+           '<span class="tiny">%s jobs between them &middot; a job is one meeting in one stream</span></div>'
+           % format(sum(r.get('total', 0) for _, _, r in rows), ',')]
+    out.append('<svg viewBox="0 0 %d %d" width="100%%" height="%d" style="display:block;margin:8px 0 2px">'
+               % (W, H, H))
+    for i, (slug, name, r) in enumerate(rows):
+        y = 4 + i * ROW
+        out.append('<text x="0" y="%d" fill="#e6edf3" font-size="13">%s</text>' % (y + 18, name))
+        x = LABEL
+        for stream, col in STREAM_COLOUR:
+            n = r.get(stream, 0)
+            if not n:
+                continue
+            w = (W - LABEL - PAD) * n / hi
+            out.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="%s"><title>%s %s: %s</title></rect>'
+                       % (x, y + 4, w, ROW - 10, col, name, stream, format(n, ',')))
+            if w > 34:
+                out.append('<text x="%.1f" y="%d" fill="#0d1117" font-size="11" text-anchor="middle">%s</text>'
+                           % (x + w / 2, y + 19, format(n, ',')))
+            x += w
+        out.append('<text x="%.1f" y="%d" fill="#e6edf3" font-size="12">%s</text>'
+                   % (x + 6, y + 19, format(r.get('total', 0), ',') if r else 'none'))
+    out.append('</svg>')
+    out.append('<div class="tiny">%s</div>'
+               % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, n) for n, c in STREAM_COLOUR))
+    out.append('<div class="tiny" style="margin-top:4px">Meetings of each board with anything still to '
+               'process, by what is left: the town\u2019s minutes never read, read for votes only, a '
+               'recording without our minutes, or two records not yet compared. One meeting can be '
+               'counted in more than one stream; the streams are never added into one figure.</div></div>')
+    return ''.join(out)
 
 
 def backlog_chart(bd):
@@ -1076,7 +1141,7 @@ def backlog_chart(bd):
     W, H, PAD, GAP = 1000, 210, 26, 4
     bw = max(6.0, (W - PAD * 2) / max(len(rows), 1) - GAP)
     out = ['<div class="card"><div class="row"><b class="grow">Backlog by fiscal year of '
-           'the meeting</b><span class="tiny">%s documents to process &middot; tallest '
+           'the meeting</b><span class="tiny">%s jobs to process &middot; tallest '
            'bar %s</span></div>'
            % (format(bd['total_jobs'], ','), format(hi, ','))]
     out.append('<svg viewBox="0 0 %d %d" width="100%%" height="%d" '
@@ -1101,7 +1166,8 @@ def backlog_chart(bd):
                    'text-anchor="middle">%s</text>'
                    % (x + bw / 2, y - 3, format(r['total'], ',')))
     out.append('</svg>')
-    legend = {'votes': 'the town\u2019s official minutes, to process',
+    legend = {'official': 'the town\u2019s official minutes, never read',
+              'official-v1': 'the town\u2019s official minutes, votes only \u2014 to re-read structured',
               'reconcile': 'the two records of a meeting, to compare',
               'minutes': 'recordings, to write OUR minutes from'}
     out.append('<div class="tiny">%s</div>'
@@ -1109,8 +1175,8 @@ def backlog_chart(bd):
                                  for n, c in STREAM_COLOUR))
     out.append('<div class="tiny" style="margin-top:4px">Two records of every meeting: '
                'the minutes the TOWN published, and the minutes WE write from the '
-               'recording \u2014 then a comparison of the two. Every bar counts DOCUMENTS '
-               'still to process, never what is inside them. By the MEETING\u2019s own '
+               'recording \u2014 then a comparison of the two. Every block is JOBS '
+               'still to process, one meeting in one stream, so a meeting waiting in two streams is in two blocks, never what is inside them. By the MEETING\u2019s own '
                'date, not by when we found it. Hover a block for its count; stacked to '
                'show a year\u2019s composition, since the three are different jobs at '
                'different prices and are never added into one figure.</div></div>')
@@ -2254,6 +2320,7 @@ def page_backlog(st):
     bd = backlog_depth()
     if bd and bd.get('total_jobs'):
         h.append(backlog_chart(bd))
+        h.append(budget_boards_chart(bd))
     h.append('<h2>Streams</h2>')
     for s in S:
         todo = s['todo']
@@ -2351,63 +2418,10 @@ def page_backlog(st):
     # things labeled 'ingested'.. not sure what that means." Of course -- the section was
     # named for one outcome and listed both, so the label contradicted the heading. It is
     # the INBOX: what is sitting in it, and whether each delivery has been filed.
-    # ---- THE PLAN, as its own thing above the inbox ------------------------------
-    # TJ: "We need to create a plan (a separate 'thing' on the ingestion page backlog) of
-    # which of these backlog items will be done, and when, as 'batches'. In order to
-    # optimize token spend and delivery time."
-    #
-    # The backlog says what is left. This says what is going to happen to it, in what
-    # order, and what lands when each batch does. They are different questions and the
-    # second one is the one a person actually asks.
-    plan = rows('ingest-plan.csv')
-    if plan:
-        # THE COLUMN IS `items`, AND THIS READ `pages` UNTIL IT CRASHED THE WHOLE PAGE.
-        #
-        # build_ingest_plan.py writes seq, batch, channel, kind, subjects, ITEMS, years,
-        # runs_beside, effort, cost, status, delivers. Two generators over one file, one
-        # writing `items` and one reading `pages` -- the defect shape CLAUDE.md names
-        # first, and the failure mode was the worst kind: an uncaught KeyError left
-        # backlog.html at ZERO BYTES, so the browser reported a file:// origin error and
-        # the real cause was two frames away from anything a reader could see.
-        #
-        # `.get` with a fallback rather than a rename, because the plan counts pages for
-        # some batches and RUNS for others -- 3,702 votes at 40 a day is not a page count
-        # -- and the column is deliberately called `items` for that reason.
-        def _items(r):
-            try:
-                return int(r.get('items') or r.get('pages') or 0)
-            except (TypeError, ValueError):
-                return 0
-
-        total = sum(_items(r) for r in plan)
-        h.append('<h2>The plan</h2><p class="sub" style="margin:-4px 0 10px">'
-                 'How the %s items above get done, in batches. A batch is a TABLE FAMILY, '
-                 'because the cost here is writing an extractor and that is paid once per '
-                 'family however many pages it covers \u2014 48 pages of special revenue '
-                 'funds are one job, not 48. Page counts are derived from the queue, so '
-                 'the plan cannot drift from what it is a plan for.</p>'
-                 % '{:,}'.format(total))
-        h.append('<table><tr><th class="r">#</th><th>batch</th><th>kind</th>'
-                 '<th class="r">items</th><th>years</th><th>effort</th>'
-                 '<th>what lands</th></tr>')
-        for r in plan:
-            tone = {'done': '#3fb950', 'next': '#6cb6ff'}.get(r['status'], '#8b949e')
-            beside = ('<span class="tiny" style="color:#8b949e"> \u00b7 runs in the '
-                      'background</span>' if r['runs_beside'] else '')
-            h.append('<tr><td class="r num" style="vertical-align:top;color:%s">%s</td>'
-                     '<td style="vertical-align:top"><b>%s</b>%s<div class="tiny" '
-                     'style="color:#8b949e">%s</div></td>'
-                     '<td class="tiny" style="vertical-align:top">%s</td>'
-                     '<td class="r num" style="vertical-align:top">%s</td>'
-                     '<td class="mono tiny" style="vertical-align:top">%s</td>'
-                     '<td class="tiny" style="vertical-align:top">%s</td>'
-                     '<td class="tiny" style="vertical-align:top;max-width:420px">%s</td></tr>'
-                     % (tone, html.escape(r['seq']), html.escape(r['batch']), beside,
-                        html.escape(r['subjects']), html.escape(r['kind']),
-                        html.escape(str(_items(r))), html.escape(r['years']),
-                        html.escape(r['effort']), html.escape(r['delivers'])))
-        h.append('</table>')
-
+    # THE PLAN SECTION WAS REMOVED 6 October 2026. TJ: *"remove 'The plan' part of the
+    # backlog. we are not following that."* A plan nobody follows, on the page people read
+    # to see what happens next, is a confident wrong answer. ingest-plan.csv and its
+    # generator still exist; nothing here renders them.
     h.append('<h2>The inbox</h2><p class="sub" style="margin:-4px 0 10px">'
              'Deliveries dropped in <code>build/inbox/</code>. Matched to the archive by '
              'checksum, so a file renamed on filing is still recognised.</p>')

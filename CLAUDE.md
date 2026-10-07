@@ -1549,6 +1549,14 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/extract_official_votes.py --check     # every quote verbatim in the minutes it came from
     python3 scripts/ocr_scanned_minutes.py --limit 40     # scanned minutes read by macOS Vision, newest first; local, free; marked ===OCR=== and never re-extracted over
     python3 scripts/ocr_scanned_minutes.py --check
+    python3 scripts/process_meeting.py --status          # THE BACKLOG: how many meetings still need our minutes, the
+                                                         #   town's minutes read structured, or a reconcile
+    python3 scripts/process_meeting.py --next 10 --dry-run   # the next 10, NEWEST FIRST: which steps, the estimate, the ceiling
+    python3 scripts/process_meeting.py --next 10         # ...do them. THE ONLY WAY TO WORK THIS BACKLOG, and only when TJ
+                                                         #   asks, with the number he gives. Serial, locked, ceiling 2x the
+                                                         #   estimate; stops on a limit, no progress on disk, 3 failures, or
+                                                         #   build/STOP-METERED. sweep_backlog.py is superseded and refuses
+    python3 scripts/read_order.py --summary              # transcripts FIRST: which meetings write ours before the town's are read
     python3 scripts/build_agentic_backlog.py              # every machine-reading stream: done and to do, last two years vs older -- notes/generated/AGENTIC-BACKLOG.md
     python3 scripts/extract_document_timestamps.py        # when each agenda and set of minutes was MADE, from the document's own metadata — a LOWER bound on posting
     python3 scripts/build_meeting_register.py             # THE MEETING RECORD: one row per board and date, every artifact's address, the two legal timestamps

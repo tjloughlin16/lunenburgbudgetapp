@@ -58,7 +58,15 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 
 OUT = os.path.join(ROOT, 'notes', 'generated', 'BACKLOG-DEPTH.md')
 PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'backlog-depth.json')
-STREAMS = ('votes', 'reconcile', 'minutes')
+STREAMS = ('official', 'official-v1', 'reconcile', 'minutes')
+# THE TWO OFFICIAL STREAMS ARE ONE READ IN TWO STATES (TJ, 6 October 2026): `official` is a
+# set of the town's minutes never read; `official-v1` was read for votes only and waits to
+# be re-read STRUCTURED (schema 2). Same command, same price, so they share a unit cost --
+# measured from the structured reads, never from the old votes-only rows (`votes` in the
+# ledger), which bought a smaller thing.
+SHARED_COST = {'official-v1': 'official'}
+LABEL = {'official': 'official, unread', 'official-v1': 'official, votes only',
+         'reconcile': 'reconcile', 'minutes': 'our minutes'}
 # What one job of each stream costs, measured from sources/data/agentic-spend.csv rather
 # than assumed, so a quote in weeks of allowance is derived like everything else.
 SPEND = os.path.join(ROOT, 'sources', 'data', 'agentic-spend.csv')
@@ -75,7 +83,12 @@ def unit_costs():
                 continue
             if c > 0:
                 by[r.get('stream', '')].append(c)
-    return {s: (sum(v) / len(v) if v else None) for s, v in by.items()}
+    for s, into in SHARED_COST.items():
+        by[into] = by[into] + by.pop(s, [])
+    out = {s: (sum(v) / len(v) if v else None) for s, v in by.items()}
+    for s, into in SHARED_COST.items():
+        out[s] = out.get(into)
+    return out
 
 
 def gather():
@@ -110,11 +123,12 @@ def payload(jobs, by_year, by_month, by_board, costs):
     return {
         'id': 'backlog-depth',
         'title': 'How deep the backlog is',
-        'grain': 'One row per DOCUMENT still to process, placed by the MEETING’s own '
-                 'date — never the things inside it: one set of minutes may hold eight '
-                 'votes or none, so this counts sets of minutes and not votes. Streams are '
-                 'counted separately and must not be added, being three different pieces '
-                 'of work at three different prices.',
+        'grain': 'One row per MEETING still to process (a board on a date), placed by the '
+                 'meeting’s own date — never the things inside it: one set of minutes may '
+                 'hold eight votes or none. Streams are counted separately and must not be '
+                 'added, being different pieces of work at different prices; the two '
+                 'official streams are one structured read of the town’s minutes, split by '
+                 'whether the minutes were ever read before (votes only) or never.',
         'streams': [{'name': s, 'jobs': tot[s],
                      'unit_cost': round(costs[s], 3) if costs.get(s) else None,
                      'estimated_usd': round(est[s], 2) if costs.get(s) else None}
@@ -147,6 +161,14 @@ def bar(n, hi, width=40):
     return '█' * max(1, round(width * n / hi)) if n else ''
 
 
+def table(w, head, key, rows, hi, width=40):
+    w('| %s | %s | total |%s' % (head, ' | '.join(LABEL[s] for s in STREAMS), ' |' if hi else ''))
+    w('|---|%s---:|%s' % ('---:|' * len(STREAMS), '---|' if hi else ''))
+    for r in rows:
+        w('| %s | %s | **%d** |%s' % (r[key], ' | '.join('%d' % r[s] for s in STREAMS), r['total'],
+                                       ' `%s` |' % bar(r['total'], hi, width) if hi else ''))
+
+
 def render(pay):
     L = []
     w = L.append
@@ -159,13 +181,14 @@ def render(pay):
       'allowance.' % (f"{pay['total_jobs']:,}", f"{pay['estimated_usd']:,.0f}",
                       f"{pay['estimated_weeks']:.1f}"))
     w('')
-    w('| stream | one job is | documents | $ each | $ total |')
+    w('| stream | one job is | meetings | $ each | $ total |')
     w('|---|---|---:|---:|---:|')
     # WHAT A JOB IS, NOT WHAT IT IS ABOUT. `votes` reads ONE FILE PER SET OF MINUTES, so
     # its count is sets of minutes and not votes -- a set may hold eight or none. Labelled
     # `the votes in the town's minutes` beside 3,041 it read as a count of votes, which is
     # the units failure rule 7b exists to stop.
-    what = {'votes': 'one set of the town\u2019s OFFICIAL minutes, processed',
+    what = {'official': 'one meeting\u2019s OFFICIAL minutes, never read: read, structured',
+            'official-v1': 'one meeting\u2019s OFFICIAL minutes, read for votes only: re-read, structured',
             'reconcile': 'one meeting\u2019s two records, compared',
             'minutes': 'one recording, OUR minutes written from it'}
     for s in pay['streams']:
@@ -180,54 +203,33 @@ def render(pay):
     unpriced = [x for x in pay['streams'] if not x['unit_cost']]
     if unpriced:
         w('')
-        w('**THE MONEY ABOVE IS SHORT BY %s JOB(S).** %s carries no measured cost, '
-          'because `agentic-spend.csv` is written by `sweep_backlog.py` and that stream '
-          'has only just been added \u2014 until today the daily refresh was the only '
-          'thing that ran it, and the refresh does not price into that ledger. A dash is '
-          'what an unmeasured cost looks like; the total is of the streams that have one, '
-          'and it stops understating the first time the sweeper runs.'
+        w('**THE MONEY ABOVE IS SHORT BY %s JOB(S).** %s carries no measured cost yet: '
+          'nothing of that kind has been logged in `agentic-spend.csv`, the ledger the sweep '
+          'writes. A dash is what an unmeasured cost looks like; the total is of the streams '
+          'that have one, and it stops understating the first time one of these runs is logged.'
           % (f"{sum(x['jobs'] for x in unpriced):,}",
              ' and '.join('`%s`' % x['name'] for x in unpriced)))
     w('')
     w('## By calendar year of the meeting')
     w('')
     hi = max((r['total'] for r in pay['by_year']), default=1)
-    w('| year | votes | reconcile | minutes | total | |')
-    w('|---|---:|---:|---:|---:|---|')
-    for r in pay['by_year']:
-        w('| %s | %d | %d | %d | **%d** | `%s` |'
-          % (r['year'], r['votes'], r['reconcile'], r['minutes'], r['total'],
-             bar(r['total'], hi)))
+    table(w, 'year', 'year', pay['by_year'], hi)
     w('')
     w('## By fiscal year (July–June, as the town budgets)')
     w('')
     hi = max((r['total'] for r in pay['by_fiscal_year']), default=1)
-    w('| fiscal year | votes | reconcile | minutes | total | |')
-    w('|---|---:|---:|---:|---:|---|')
-    for r in pay['by_fiscal_year']:
-        w('| %s | %d | %d | %d | **%d** | `%s` |'
-          % (r['fy'], r['votes'], r['reconcile'], r['minutes'], r['total'],
-             bar(r['total'], hi)))
+    table(w, 'fiscal year', 'fy', pay['by_fiscal_year'], hi)
     w('')
     w('## The last two years, month by month')
     w('')
     recent = [r for r in pay['by_month'] if r['month'] >= pay['by_month'][-1]['month'][:4]
               and True][-24:] if pay['by_month'] else []
     hi = max((r['total'] for r in recent), default=1)
-    w('| month | votes | reconcile | minutes | total | |')
-    w('|---|---:|---:|---:|---:|---|')
-    for r in recent:
-        w('| %s | %d | %d | %d | **%d** | `%s` |'
-          % (r['month'], r['votes'], r['reconcile'], r['minutes'], r['total'],
-             bar(r['total'], hi, 30)))
+    table(w, 'month', 'month', recent, hi, 30)
     w('')
     w('## By board')
     w('')
-    w('| board | votes | reconcile | minutes | total |')
-    w('|---|---:|---:|---:|---:|')
-    for r in pay['by_board'][:20]:
-        w('| %s | %d | %d | %d | **%d** |'
-          % (r['board'], r['votes'], r['reconcile'], r['minutes'], r['total']))
+    table(w, 'board', 'board', pay['by_board'][:20], None)
     w('')
     w('## What this does not say')
     w('')

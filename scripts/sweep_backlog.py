@@ -119,6 +119,44 @@ BACKOFF = (60, 300, 900, 1800)      # what to wait before retrying a transient r
 MY_SESSION = os.environ.get('CLAUDE_SESSION_FILE', '')
 
 
+# THE KILL SWITCH. While this file exists nothing metered starts: not the sweep, not a
+# metered step of the refresh. `touch build/STOP-METERED` stops everything at the next job
+# boundary, including a loop some session left running unattended; delete it to resume.
+# A file rather than a flag because the thing it must stop is a process nobody is
+# attached to any more -- on 6 October 2026 that was a relaunch loop reparented to launchd.
+KILL_SWITCH = os.path.join(ROOT, 'build', 'STOP-METERED')
+
+
+def kill_switch():
+    """The reason metered work is switched off, or None."""
+    if not os.path.exists(KILL_SWITCH):
+        return None
+    why = open(KILL_SWITCH, encoding='utf-8', errors='replace').read().strip()
+    return 'the kill switch is on (%s)%s' % (os.path.relpath(KILL_SWITCH, ROOT),
+                                            ': ' + why[:200] if why else '')
+
+
+# NO PROGRESS IS A STOP. A job that exits 0, costs nothing and writes nothing did no work,
+# and the queue it came from will hand it back next time. On 6 October 2026 that was 5,145
+# jobs in a row -- the same 169 meetings for three and a half hours, every one a refused
+# call the extractor reported as success. Ten in a row ends the run, and says why.
+NO_PROGRESS = 10
+
+# THE BACKLOG MUST GO DOWN. Cost and exit codes are what a job SAYS; whether it left the
+# queue is what it DID. After every job the backlog is counted again (0.3s) and the job is
+# looked for in it. A job still queued after it ran -- refused, written somewhere nothing
+# reads, failed quietly, or charged for and dropped -- made no progress whatever it cost or
+# returned. Of the last STUCK_WINDOW jobs, if STUCK_MAX are still queued, the run stops.
+# TJ, 6 October 2026: *"If the job doesn't produce results (like a decrease in a metric
+# from the backlog) then it also means something is spinning."*
+STUCK_WINDOW = 10
+STUCK_MAX = 5
+
+
+def key(j):
+    return (j['stream'], j['board'], j['date'])
+
+
 def tj_active():
     cutoff = time.time() - ACTIVE_MINUTES * 60
     for p in glob.glob(os.path.expanduser('~/.claude/projects/*/*.jsonl')):
@@ -141,18 +179,44 @@ def jobs():
     import refresh
     import extract_official_votes as E
     out = []
-    have = {os.path.relpath(p, E.OUT)[:-5] for p in glob.glob(os.path.join(E.OUT, '*', '*.json'))}
-    votes = [e for e in E.minutes_files() if '%s/%s-%s' % (e['board_slug'], e['date'], e['docid']) not in have]
+    # THE TOWN'S OFFICIAL MINUTES, IN TWO STATES. TJ, 6 October 2026: the target is the
+    # STRUCTURED read (schema 2: attendees, votes, decisions, budget items, transfers,
+    # public comment, topics), and for a while the archive holds both kinds -- so a set of
+    # minutes is one of three things, and two of them are work:
+    #
+    #   official      never read at all                       -> read, structured
+    #   official-v1   read for VOTES ONLY, before schema 2     -> re-read, structured
+    #   (done)        structured
+    #
+    # Two stream keys rather than one so every chart and count can show the split TJ asked
+    # for: which meetings have not had their official minutes processed THIS way. Both run
+    # the same command. A v1 file stays valid and in use until its meeting is re-read.
+    # (The stream was called `votes` until this day, after the extractor; the ledger keeps
+    # that name on its older rows.)
+    state = {}
+    for p in glob.glob(os.path.join(E.OUT, '*', '*.json')):
+        k = os.path.relpath(p, E.OUT)[:-5]
+        state[k] = 2 if '"schema": 2' in open(p, encoding='utf-8').read() else 1
+    todo = []
+    for e in E.minutes_files():
+        st = state.get('%s/%s-%s' % (e['board_slug'], e['date'], e['docid']))
+        if st == 2:
+            continue
+        todo.append((e, 'official' if st is None else 'official-v1'))
     # A stub the extractor will refuse as `no text` is not work. It exits 0 and writes
     # nothing, so it was logged `ok` at $0 and re-queued by every sweep -- the first seven
     # jobs on 5 October 2026 were these, and looked like a sweep that was not calling the
     # model. Same test the extractor applies, imported rather than restated.
-    votes = [e for e in votes
-             if len(E.norm(open(e['path'], encoding='utf-8', errors='replace').read())) >= E.MIN_CHARS]
+    todo = [(e, s_) for e, s_ in todo
+            if len(E.norm(open(e['path'], encoding='utf-8', errors='replace').read())) >= E.MIN_CHARS]
     recent = refresh.recent_since()
-    for e in votes:                                # already newest first
-        out.append(dict(stream='votes', board=e['board_slug'], date=e['date'], recent=e['date'] >= recent,
-                        cmd=['python3', 'scripts/extract_official_votes.py', e['board_slug'], e['date']]))
+    seen = set()
+    for e, stream in todo:                         # already newest first
+        if (stream, e['board_slug'], e['date']) in seen:
+            continue                               # one run reads every set for that board and date
+        seen.add((stream, e['board_slug'], e['date']))
+        out.append(dict(stream=stream, board=e['board_slug'], date=e['date'], recent=e['date'] >= recent,
+                        cmd=['python3', 'scripts/extract_official_votes.py', e['board_slug'], e['date'], '--schema', '2']))
     for t in refresh.minutes_targets(refresh.policy()):
         out.append(dict(stream='minutes', board=t['board_slug'], date=t['meeting_date'], recent=t['meeting_date'] >= recent,
                         cmd=['python3', 'scripts/write_recording_minutes.py', t['board_slug'], t['meeting_date']]))
@@ -186,7 +250,7 @@ def jobs():
     # minutes inside each; newest first.
     # Recent work in every stream before any stream's older work; inside a tier, cheapest
     # first -- votes ~$0.15, reconcile ~$0.32, minutes ~$0.45 -- then newest first.
-    order = {'votes': 0, 'reconcile': 1, 'minutes': 2}
+    order = {'official': 0, 'official-v1': 1, 'reconcile': 2, 'minutes': 3}
     out.sort(key=lambda j: (0 if j['recent'] else 1, order.get(j['stream'], 9),
                             -int(j['date'].replace('-', ''))))
     return out
@@ -203,6 +267,16 @@ def cost_of(text):
 
 
 def main():
+    # SUPERSEDED BY process_meeting.py (TJ, 6 October 2026: "anytime I ask you to kick that
+    # process off ... it has to be super clear"). Two ways to work one backlog is how a
+    # request for one stream ended up running three. jobs(), the stops and the ledger stay
+    # here because the backlog charts and process_meeting.py read them; running the sweep
+    # itself needs --i-know, so nobody reaches for it by accident.
+    if '--i-know' not in sys.argv:
+        sys.exit('sweep_backlog.py is superseded. Work the backlog newest first with:\n'
+                 '  python3 scripts/process_meeting.py --next 10 --dry-run\n'
+                 '  python3 scripts/process_meeting.py --next 10')
+    sys.argv.remove('--i-know')
     ap = argparse.ArgumentParser()
     ap.add_argument('--until', required=True, help='local time HH:MM to stop at')
     ap.add_argument('--now', action='store_true', help='run even while a session is active')
@@ -214,8 +288,9 @@ def main():
                          'just this one, so several nights add up to one ceiling.')
     ap.add_argument('--max', type=int, default=10_000)
     ap.add_argument('--streams', default=None,
-                    help='comma-separated streams to run (votes, reconcile, minutes); '
-                         'default all. `--streams votes` is the town\u2019s official minutes only')
+                    help='comma-separated streams to run (official, official-v1, reconcile, minutes); '
+                         'default all. `--streams official` is the town\u2019s minutes never read; '
+                         '`official-v1` is those read for votes only, to re-read structured')
     ap.add_argument('--parallel', type=int, default=4, help='jobs at once; the first sweep (17 Sep 2026) ran serial and cleared 77 in 65 minutes for 1.4%% of the week -- time, not allowance, was the limit')
     a = ap.parse_args()
     hh, mm = map(int, a.until.split(':'))
@@ -223,6 +298,8 @@ def main():
     until = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
     if until <= now:
         until += dt.timedelta(days=1)
+    if kill_switch():
+        sys.exit('sweep: not starting -- %s' % kill_switch())
     js = jobs()
     if a.streams:
         keep = set(a.streams.split(','))
@@ -251,6 +328,14 @@ def main():
     if budget is not None:
         print('   week so far: $%.2f API-equivalent (~%.1f%%); ceiling $%.2f (~%.0f%%)'
               % (week_before, week_before / PCT_DOLLARS, budget, a.budget_pct))
+    from collections import deque
+    recent_stuck = deque(maxlen=STUCK_WINDOW)   # True for each recent job still queued after it ran
+    keep_streams = set(a.streams.split(',')) if a.streams else None
+
+    def backlog():
+        return {key(x) for x in jobs() if keep_streams is None or x['stream'] in keep_streams}
+    start_backlog = len(backlog())
+    idle = 0              # consecutive jobs that exited 0 and cost nothing -- see NO_PROGRESS
     failures = 0          # non-limit failures; a transient one (a timeout, a hiccup) should not end the night
     transient = 0         # consecutive service refusals (529, 429, a dropped socket)
     requeue = []          # jobs a transient refusal interrupted, to be tried again
@@ -267,6 +352,8 @@ def main():
             while len(pending) < a.parallel and n + len(pending) < a.max:
                 if dt.datetime.now() >= until:
                     stop_reason = 'reached %s' % a.until; break
+                if kill_switch():
+                    stop_reason = kill_switch(); break
                 if budget is not None and week_before + spent >= budget:
                     stop_reason = ('the %.0f%% ceiling for the week ($%.2f spent)'
                                    % (a.budget_pct, week_before + spent)); break
@@ -287,6 +374,15 @@ def main():
             n += 1
             spent += cost or 0
             print('  %s %s %s  %s%s' % (j['stream'], j['board'], j['date'], 'ok' if ok else 'FAILED', (' $%.2f' % cost) if cost else ''), flush=True)
+            left = backlog()
+            recent_stuck.append(key(j) in left)
+            if stop_reason is None and sum(recent_stuck) >= STUCK_MAX:
+                stop_reason = ('the backlog is not going down: %d of the last %d jobs are still '
+                               'queued after running (backlog %d at the start, %d now). Last: '
+                               '%s %s %s -- it said: %s'
+                               % (sum(recent_stuck), len(recent_stuck), start_backlog, len(left),
+                                  j['stream'], j['board'], j['date'],
+                                  out.strip()[-300:].replace('\n', ' ')))
             if not ok:
                 low = out.lower()
                 said = out.strip()[-300:].replace('\n', ' ')
@@ -313,6 +409,13 @@ def main():
                         stop_reason = '%d jobs failed for reasons other than a limit — stopping rather than guessing' % failures
             else:
                 transient = 0        # a success clears the streak
+                idle = 0 if cost else idle + 1
+                if idle >= NO_PROGRESS:
+                    stop_reason = ('no progress: %d jobs in a row exited 0 and cost nothing, so '
+                                   'nothing was written and they will only be queued again. '
+                                   'Last: %s %s %s -- it said: %s'
+                                   % (idle, j['stream'], j['board'], j['date'],
+                                      out.strip()[-300:].replace('\n', ' ')))
         # Let what is in flight finish; nothing new is submitted once a reason is set.
         for fut in pending:
             j, ok, out = fut.result()
@@ -322,6 +425,7 @@ def main():
             n += 1
             spent += cost or 0
     print(stop_reason or 'done', flush=True)
+    print('backlog: %d -> %d' % (start_backlog, len(backlog())), flush=True)
     print('%d jobs, $%.2f API-equivalent (~%.1f%% of the week)' % (n, spent, spent / 5))
 
 

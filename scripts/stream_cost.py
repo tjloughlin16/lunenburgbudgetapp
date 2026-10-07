@@ -37,16 +37,26 @@ WEEK_USD = 5.70
 RECENT = 300
 
 
-def measured(subdir, field='cost_usd'):
-    """(mean usd, n) over the most recently written files, or (None, 0) if none price."""
+def measured(subdir, field='cost_usd', schema=None):
+    """(mean usd, n) over the most recently written files, or (None, 0) if none price.
+
+    `schema` restricts to files of one schema version (a file with no `schema` key is 1).
+    official-votes/ holds two reads at two prices from 6 October 2026 -- votes only, and
+    the structured read -- and a mean across both describes neither."""
     paths = glob.glob(os.path.join(ROOT, 'sources', 'data', subdir, '*', '*.json'))
     paths.sort(key=os.path.getmtime, reverse=True)
     costs = []
-    for p in paths[:RECENT]:
+    for p in paths:
+        if len(costs) >= RECENT:
+            break
         try:
-            v = json.load(open(p, encoding='utf-8')).get(field)
+            d = json.load(open(p, encoding='utf-8'))
         except (ValueError, OSError):
             continue
+        if schema is not None and int(d.get('schema') or 1) != schema:
+            continue
+        # recording-minutes nest it under `written`; it never priced until this fallback.
+        v = d.get(field) if d.get(field) is not None else (d.get('written') or {}).get(field)
         if isinstance(v, (int, float)) and v > 0:
             costs.append(float(v))
     if not costs:
@@ -54,7 +64,7 @@ def measured(subdir, field='cost_usd'):
     return statistics.mean(costs), len(costs)
 
 
-def phrase(subdir, fallback, html=True):
+def phrase(subdir, fallback, html=True, schema=None):
     """A cost line, derived -- or `fallback` if nothing prices yet.
 
     Says `<=` because WEEK_USD is a lower bound, and names the sample, because a mean over
@@ -64,7 +74,7 @@ def phrase(subdir, fallback, html=True):
     unconditionally and the generated backlog came out reading `&le;0.019% of the week`,
     which is the entity leaking into a file an agent reads as plain text.
     """
-    mean, n = measured(subdir)
+    mean, n = measured(subdir, schema=schema)
     if not mean:
         return fallback
     return ('%s%.3f%% of the week each (measured: $%.3f over the last %d), runs by itself'
@@ -72,7 +82,8 @@ def phrase(subdir, fallback, html=True):
 
 
 if __name__ == '__main__':
-    for d in ('official-votes', 'recording-minutes'):
-        m, n = measured(d)
-        print('%-20s %s' % (d, 'nothing priced' if not m else
+    for d, sch, label in (('official-votes', 1, 'official, votes only'), ('official-votes', 2, 'official, structured'),
+                          ('recording-minutes', None, 'recording-minutes')):
+        m, n = measured(d, schema=sch)
+        print('%-22s %s' % (label, 'nothing priced' if not m else
                             '$%.4f mean over %d  ->  <=%.4f%% of the week each' % (m, n, m / WEEK_USD)))
