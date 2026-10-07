@@ -1131,13 +1131,21 @@ NEEDS_REVIEW_LABEL = 'held for review — a suspect read, pulled out for a perso
 #   % open  of the MEETINGS with a record to process in that year, the share still open:
 #           one unit over the same unit, so it can be a percentage (jobs cannot -- a meeting
 #           waiting in two streams is two jobs). Read off build_backlog_depth's payload.
-def _jobs_svg(rows, key='x', show_missing=True):
+def _board_name(slug):
+    return slug.replace('-', ' ').title().replace(' Of ', ' of ').replace(' On ', ' on ').replace('Pacc', '(PACC)')
+
+
+def _jobs_svg(rows, key='x', show_missing=True, show_held=True):
     # MISSING RECORDS CAN BE HIDDEN (TJ, 7 October 2026). Hidden means drawn without them --
     # the bars rescale to the work alone -- not drawn with them and then made invisible,
     # which would leave the work squashed under empty space.
     if not show_missing:
         rows = [dict(r, **{s: 0 for s, _, _, _ in MISSING_COLOUR}) for r in rows]
         key = key + '-nm'
+    # HELD MEETINGS CAN BE HIDDEN TOO (TJ, 7 October 2026), the same way: redrawn without them.
+    if not show_held:
+        rows = [dict(r, needs_review=0) for r in rows]
+        key = key + '-nh'
     # NEITHER "no jobs" NOR "nothing open" MAY HIDE A YEAR WITH SOMETHING MISSING OR HELD
     # FOR REVIEW. A fiscal year can have every job cleared and still owe a bar, because a
     # missing record is not work and a held meeting is pulled out of the backlog, not
@@ -1177,8 +1185,11 @@ def _jobs_svg(rows, key='x', show_missing=True):
             bh = (base - 14) * nr / hi
             y -= bh
             out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="%s">'
-                       '<title>%s needs review: %s meeting(s) — %s</title></rect>'
-                       % (x, y, bw, bh, NEEDS_REVIEW_COLOUR, r['fy'], format(nr, ','), NEEDS_REVIEW_LABEL))
+                       '<title>%s held for review: %s meeting(s) \u2014 %s</title></rect>'
+                       % (x, y, bw, bh, NEEDS_REVIEW_COLOUR, r['fy'], format(nr, ','),
+                          html.escape('; '.join('%s %d' % (_board_name(b), c)
+                                                for b, c in (r.get('needs_review_boards') or {}).items())
+                                      or NEEDS_REVIEW_LABEL)))
         review_top = y
         for name, _bg, _sp, _sw in MISSING_COLOUR:
             n = r.get(name, 0)
@@ -1276,26 +1287,34 @@ def backlog_chart(bd):
     out.append('<div>%s</div>' % ''.join(
         btn % ('missing', k, '#1f6feb' if k == 'on' else '#161b22', n)
         for k, n in [('on', 'missing records: shown'), ('off', 'missing records: hidden')]))
+    total_held = sum(r.get('needs_review', 0) for r in byfy.get('all', []))
+    out.append('<div>%s</div>' % ''.join(
+        btn % ('held', k, '#1f6feb' if k == 'on' else '#161b22', n)
+        for k, n in [('on', 'held for review: shown (%s)' % format(total_held, ',')),
+                     ('off', 'held for review: hidden')]))
     for k, name in boards:
         rows = byfy.get(k, [])
         open_m = sum(r.get('meetings_open', 0) for r in rows)
         held = sum(r.get('meetings', 0) for r in rows)
         summary = ('%s: %s of %s meetings with a record to process still have something open'
                    % (html.escape(name), format(open_m, ','), format(held, ','))) if held else ''
-        for m, mi, draw in (('jobs', 'on', lambda rs, kk=k: _jobs_svg(rs, key=kk)),
-                            ('jobs', 'off', lambda rs, kk=k: _jobs_svg(rs, key=kk, show_missing=False)),
-                            ('pct', 'any', _pct_svg)):
-            out.append('<div class="bkp" data-board="%s" data-measure="%s" data-missing="%s" style="display:%s">'
-                       '<div class="tiny" style="margin-top:6px">%s</div>%s</div>'
-                       % (k, m, mi, 'block' if (k, m, mi) == ('all', 'jobs', 'on') else 'none', summary, draw(rows)))
+        variants = [('jobs', mi, he, (lambda rs, kk=k, a=(mi == 'on'), b=(he == 'on'):
+                                      _jobs_svg(rs, key=kk, show_missing=a, show_held=b)))
+                    for mi in ('on', 'off') for he in ('on', 'off')] + [('pct', 'any', 'any', _pct_svg)]
+        for m, mi, he, draw in variants:
+            out.append('<div class="bkp" data-board="%s" data-measure="%s" data-missing="%s" data-held="%s" '
+                       'style="display:%s"><div class="tiny" style="margin-top:6px">%s</div>%s</div>'
+                       % (k, m, mi, he, 'block' if (k, m, mi, he) == ('all', 'jobs', 'on', 'on') else 'none',
+                          summary, draw(rows)))
     legend = {'official': 'the town\u2019s official minutes, never read',
               'official-v1': 'the town\u2019s official minutes, votes only \u2014 to re-read structured',
               'reconcile': 'the two records of a meeting, to compare',
               'minutes': 'recordings, to write OUR minutes from'}
     out.append('<div class="tiny bkl" data-for="jobs">%s</div>'
                % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, legend[n]) for n, c in STREAM_COLOUR))
-    out.append('<div class="tiny bkl" data-for="jobs" style="margin-top:2px">'
-               '<span style="color:%s">\u25a0</span> %s</div>' % (NEEDS_REVIEW_COLOUR, NEEDS_REVIEW_LABEL))
+    out.append('<div class="tiny bkl" data-for="jobs" data-held="1" style="margin-top:2px">'
+               '<span style="color:%s">\u25a0</span> %s \u2014 hover a pink block for the boards</div>'
+               % (NEEDS_REVIEW_COLOUR, NEEDS_REVIEW_LABEL))
     out.append('<div class="tiny bkl" data-for="jobs" data-miss="1" style="margin-top:2px">Not available \u2014 not work '
                'we can do: %s</div>'
                % ' \u00b7 '.join('<span style="color:%s">\u25a0</span> %s' % (MISSING_LINE[n], MISSING_LABEL[n])
@@ -1310,20 +1329,21 @@ def backlog_chart(bd):
                'streams are different work at different prices and are never added into one figure.</div></div>')
     out.append("""<script>
 function bkPick(b){var c=document.getElementById('bk');
- var k=b.dataset.board?'board':(b.dataset.measure?'measure':'missing');
+ var k=b.dataset.board?'board':(b.dataset.measure?'measure':(b.dataset.missing?'missing':'held'));
  c.querySelectorAll('button[data-'+k+']').forEach(function(x){x.style.background=(x===b)?'#1f6feb':'#161b22';});
  c.dataset[k]=b.dataset[k];
- var bd=c.dataset.board||'all', ms=c.dataset.measure||'jobs', mi=c.dataset.missing||'on';
+ var bd=c.dataset.board||'all', ms=c.dataset.measure||'jobs', mi=c.dataset.missing||'on', he=c.dataset.held||'on';
  c.querySelectorAll('.bkp').forEach(function(p){p.style.display=(p.dataset.board===bd&&p.dataset.measure===ms
-   &&(p.dataset.missing==='any'||p.dataset.missing===mi))?'block':'none';});
+   &&(p.dataset.missing==='any'||p.dataset.missing===mi)&&(p.dataset.held==='any'||p.dataset.held===he))?'block':'none';});
  c.querySelectorAll('.bkl').forEach(function(l){l.style.display=(l.dataset['for']===ms
-   &&!(l.dataset.miss&&mi==='off'))?'block':'none';});
- try{localStorage.setItem('bk',bd+'|'+ms+'|'+mi);}catch(e){}
+   &&!(l.dataset.miss&&mi==='off')&&!(l.dataset.held&&he==='off'))?'block':'none';});
+ try{localStorage.setItem('bk',bd+'|'+ms+'|'+mi+'|'+he);}catch(e){}
 }
 (function(){try{var v=(localStorage.getItem('bk')||'').split('|');var c=document.getElementById('bk');
  if(v[0]){var b=c.querySelector('button[data-board="'+v[0]+'"]');if(b)bkPick(b);}
  if(v[1]){var m=c.querySelector('button[data-measure="'+v[1]+'"]');if(m)bkPick(m);}
- if(v[2]){var x=c.querySelector('button[data-missing="'+v[2]+'"]');if(x)bkPick(x);}}catch(e){}})();
+ if(v[2]){var x=c.querySelector('button[data-missing="'+v[2]+'"]');if(x)bkPick(x);}
+ if(v[3]){var y=c.querySelector('button[data-held="'+v[3]+'"]');if(y)bkPick(y);}}catch(e){}})();
 </script>""")
     return ''.join(out)
 

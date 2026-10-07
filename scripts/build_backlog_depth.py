@@ -182,6 +182,7 @@ def by_board_fy(jobs):
         held = collections.Counter()
         still = collections.Counter()
         review = collections.Counter()
+        review_boards = collections.defaultdict(collections.Counter)   # fy -> board -> held meetings
         for b, d in meetings | open_m:
             if (b, d) in review_keys:
                 continue
@@ -192,10 +193,13 @@ def by_board_fy(jobs):
         for b, d in review_keys:
             if keep is None or b == keep:
                 review['FY%d' % fiscal_year(d[:7])] += 1
+                review_boards['FY%d' % fiscal_year(d[:7])][b] += 1
         out[key] = [dict(fy=fy, **{s: rows[fy][s] for s in STREAMS}, total=sum(rows[fy].values()),
                          meetings=held[fy], meetings_open=still[fy],
                          pct_open=round(100.0 * still[fy] / held[fy], 1) if held[fy] else 0.0,
-                         needs_review=review[fy])
+                         needs_review=review[fy],
+                         # WHICH BOARDS (TJ, 7 October 2026: the hover must say), largest first.
+                         needs_review_boards=dict(review_boards[fy].most_common()))
                     for fy in sorted(set(held) | set(review))]
     return out
 
