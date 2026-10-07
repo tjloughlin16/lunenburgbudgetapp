@@ -1,0 +1,612 @@
+{
+ "about": "What the closed FY2025 school general fund ledger shows was unspent and moved, beside the figure the School Committee was given on 17 September 2025.",
+ "by_function": [
+  {
+   "family": 2000,
+   "label": "instruction",
+   "non_salary": 112326.42,
+   "salary": 136171.16,
+   "total": 248497.58
+  },
+  {
+   "family": 4000,
+   "label": "operations & maintenance",
+   "non_salary": 113745.59,
+   "salary": 113828.89,
+   "total": 227574.48
+  },
+  {
+   "family": 7000,
+   "label": "assets",
+   "non_salary": 64747.51,
+   "salary": 0.0,
+   "total": 64747.51
+  },
+  {
+   "family": 3000,
+   "label": "other student services",
+   "non_salary": 24915.45,
+   "salary": 5192.12,
+   "total": 30107.57
+  },
+  {
+   "family": 9000,
+   "label": "out-of-district tuition",
+   "non_salary": 29945.74,
+   "salary": 0.0,
+   "total": 29945.74
+  },
+  {
+   "family": 1000,
+   "label": "leadership / admin",
+   "non_salary": 11764.71,
+   "salary": 8850.07,
+   "total": 20614.78
+  },
+  {
+   "family": 5000,
+   "label": "fixed charges",
+   "non_salary": 5629.2,
+   "salary": 0.0,
+   "total": 5629.2
+  }
+ ],
+ "by_function_totals": {
+  "non_salary": 363074.62,
+  "salary": 264042.24,
+  "total": 627116.86
+ },
+ "conclusions": [
+  {
+   "basis": "`sources/data/munis-school-ytd.csv`, FY2025 period 13, report gf-school, type E, summed across 415 accounts; the School Committee minutes, 17 September 2025.",
+   "bearing": "sizes",
+   "claim": "The closed ledger shows $23,231 more unspent than the School Committee was told.",
+   "detail": "The closed MUNIS ledger for department 300 at period 13 shows $627,117 available at the close. The School Committee was told $603,886 on 17 September 2025. Entries posted to the department after that date are a hypothesis that would explain the gap; nothing here tests it.",
+   "figure": "diff",
+   "figures": {
+    "diff": {
+     "text": "$23,231",
+     "unit": "more unspent than the district reported, 17 September 2025",
+     "value": 23230.89
+    },
+    "district": {
+     "text": "$603,886",
+     "unit": "",
+     "value": 603885.97
+    },
+    "ledger": {
+     "text": "$627,117",
+     "unit": "",
+     "value": 627116.86
+    }
+   },
+   "id": "the-closed-ledger-exceeds-the-districts-own-figure",
+   "kind": "measured",
+   "literals": [
+    "13",
+    "17",
+    "2025.",
+    "2025",
+    "300"
+   ],
+   "not_shown": "What was posted to the department after 17 September 2025, or whether the gap is one entry or several.",
+   "see": [],
+   "so_what": "No single account, and no pair of accounts, equals the difference."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`: original_approp, transfers_adjustments and available_budget, summed across the same 415 accounts.",
+   "bearing": "sizes",
+   "claim": "$749,619 was not spent against the original appropriation of $25,304,074.",
+   "detail": "The department was appropriated $25,304,074. $122,502 of that was moved to other budgets during the year (net), and $627,117 of what remained was still unspent when the books closed, with nothing encumbered.",
+   "figure": "total",
+   "figures": {
+    "moved": {
+     "text": "$122,502",
+     "unit": "",
+     "value": 122502.44
+    },
+    "orig": {
+     "text": "$25,304,074",
+     "unit": "",
+     "value": 25304074.0
+    },
+    "total": {
+     "text": "$749,619",
+     "unit": "not spent against the original appropriation",
+     "value": 749619.3
+    },
+    "turned_back": {
+     "text": "$627,117",
+     "unit": "",
+     "value": 627116.86
+    }
+   },
+   "id": "the-department-did-not-spend-most-of-what-moved",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Where the $122,502 that moved out went — the ledger carries a net per account, no counterparty.",
+   "see": [],
+   "so_what": "$627,117 turned back at the close, plus $122,502 moved out of the department during the year."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, function 2330 accounts, transfers_adjustments and available_budget by org.",
+   "bearing": "sizes",
+   "claim": "One SPED paraprofessional line gained $53,674 mid-year; another lost $65,000.",
+   "detail": "Function 2330 (paraprofessionals) ended under budget everywhere: Primary $48,825, high school $21,768, middle school $5,874, elementary $3,154 unspent. The \"double booking of the para salaries\" named in the 17 September 2025 minutes is not visible at this grain — nothing in the ledger names a cause for either transfer.",
+   "figure": "ms",
+   "figures": {
+    "es": {
+     "text": "$65,000",
+     "unit": "removed from the elementary SPED paraprofessional line",
+     "value": 65000.0
+    },
+    "es_avail": {
+     "text": "$3,154",
+     "unit": "",
+     "value": 3154.4
+    },
+    "hs_budget": {
+     "text": "$34,960",
+     "unit": "",
+     "value": 34960.0
+    },
+    "hs_sped": {
+     "text": "$21,768",
+     "unit": "",
+     "value": 21767.92
+    },
+    "hs_spent": {
+     "text": "$4,786",
+     "unit": "",
+     "value": 4785.74
+    },
+    "ms": {
+     "text": "$53,674",
+     "unit": "added to the middle-school SPED paraprofessional line",
+     "value": 53674.0
+    },
+    "ms_avail": {
+     "text": "$5,874",
+     "unit": "",
+     "value": 5873.68
+    },
+    "ps": {
+     "text": "$48,825",
+     "unit": "",
+     "value": 48824.8
+    }
+   },
+   "id": "para-budgets-moved-in-both-directions",
+   "kind": "measured",
+   "literals": [
+    "2330",
+    "17",
+    "2025"
+   ],
+   "not_shown": "Why either transfer was made, or what \"double booking\" referred to.",
+   "see": [],
+   "so_what": "The high-school paraprofessional line (not SPED) spent $4,786 of $34,960 budgeted."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, the 4000-family accounts, available_budget split by whether the object code starts with 51 (salary); the Town’s FY27 budget press release.",
+   "bearing": "sizes",
+   "claim": "Operations & maintenance holds $227,574 of the unspent total, split evenly.",
+   "detail": "The Town’s free-cash press release states: \"significant turnover and unfilled positions in the facilities department resulted in unspent salaries and stalled maintenance projects.\" Operations & maintenance holds $227,574 unspent, $113,829 of it salary and $113,746 non-salary — consistent with that account, and not a confirmation of it: the ledger shows dollars by account, not posts or projects.",
+   "figure": "ops",
+   "figures": {
+    "non": {
+     "text": "$113,746",
+     "unit": "",
+     "value": 113745.59
+    },
+    "ops": {
+     "text": "$227,574",
+     "unit": "unspent in operations & maintenance (function 4000s)",
+     "value": 227574.48
+    },
+    "sal": {
+     "text": "$113,829",
+     "unit": "",
+     "value": 113828.89
+    }
+   },
+   "id": "consistent-with-the-towns-facilities-explanation",
+   "kind": "hypothesis",
+   "literals": [
+    "25"
+   ],
+   "not_shown": "Whether any specific post was vacant, or which maintenance project stalled. A dollar is not a post (rule 7, rule 11).",
+   "see": [],
+   "so_what": "That is CONSISTENT WITH the Town’s explanation for FY25; it does not prove it."
+  }
+ ],
+ "diff": 23230.89,
+ "district_figure": 603885.97,
+ "fy": 2025,
+ "generated_by": "scripts/build_fy25_school_surplus.py",
+ "grain": "DOLLARS, department 300 (school general fund) only, FY2025 period 13 — the closed ledger, 415 accounts. Not a comparison of budget to actual: everything here is the same closed ledger read two ways.",
+ "moved_out": 122502.44,
+ "not_established": [
+  "Where the $122,502 moved out of the department went — net per account, no counterparty.",
+  "Why the ledger is $23,231 above the district’s September figure. Entries posted after 17 September 2025 are a hypothesis; nothing here tests it.",
+  "Whether facilities’ unspent salary was unfilled posts — dollars are not posts.",
+  "What \"double booking of the para salaries\" (17 September 2025 minutes) refers to — not visible at the account grain."
+ ],
+ "not_spent_against_original": 749619.3,
+ "para_accounts": [
+  {
+   "account": "0100-3-300-2330-51-1-06-1-519015",
+   "available": 1769.26,
+   "description": "HOME/HOSPITAL TUTORING",
+   "expended": 5030.74,
+   "org": "S0511061",
+   "original": 10000.0,
+   "revised": 6800.0,
+   "school": null,
+   "transfers": -3200.0
+  },
+  {
+   "account": "0100-3-300-2330-51-1-06-1-519016",
+   "available": 0.0,
+   "description": "CONTRACTED SERVICES",
+   "expended": 0.0,
+   "org": "S0511061",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-03-2-12-1-511103",
+   "available": 0.0,
+   "description": "KINDERGARTEN AIDES/REGULAR",
+   "expended": 0.0,
+   "org": "S2032121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-03-2-13-1-511203",
+   "available": 9728.99,
+   "description": "KIND PARAPROFESSIONALS/REG",
+   "expended": 83765.97,
+   "org": "S2032131",
+   "original": 73273.0,
+   "revised": 93494.96,
+   "school": null,
+   "transfers": 20221.96
+  },
+  {
+   "account": "0100-3-300-2330-04-4-11-1-511203",
+   "available": 0.0,
+   "description": "E.S. LIBRARY PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2044111",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-04-4-12-1-511103",
+   "available": 0.0,
+   "description": "E.S. AIDES/REGULAR",
+   "expended": 0.0,
+   "org": "S2044121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-04-4-13-1-511203",
+   "available": 0.0,
+   "description": "E.S. PARAPROFESSIONALS/REGULAR",
+   "expended": 0.0,
+   "org": "S2044131",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-04-4-64-2-555008",
+   "available": 0.0,
+   "description": "E.S. CHORAL ACCOMPANIST EXPENS",
+   "expended": 0.0,
+   "org": "S2044642",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-05-5-11-1-511203",
+   "available": 0.0,
+   "description": "M.S. LIBRARY PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2055111",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-05-5-12-1-511103",
+   "available": 0.0,
+   "description": "M.S. AIDES/REGULAR",
+   "expended": 0.0,
+   "org": "S2055121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-05-5-13-1-511203",
+   "available": 0.0,
+   "description": "M.S.PARAPROFESSIONALS/REGULAR",
+   "expended": 0.0,
+   "org": "S2055131",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-06-6-11-1-511203",
+   "available": 0.0,
+   "description": "H.S. LIBRARY PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2066111",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-06-6-13-1-511203",
+   "available": 30174.26,
+   "description": "H.S. PARAPROFESSIONALS",
+   "expended": 4785.74,
+   "org": "S2066131",
+   "original": 47960.0,
+   "revised": 34960.0,
+   "school": "High school (not SPED)",
+   "transfers": -13000.0
+  },
+  {
+   "account": "0100-3-300-2330-06-6-39-1-511003",
+   "available": 0.0,
+   "description": "GREENHOUSE MANAGER H.S.",
+   "expended": 0.0,
+   "org": "S2066391",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-07-2-11-1-511103",
+   "available": 0.0,
+   "description": "P.S. LIBRARY AIDES",
+   "expended": 0.0,
+   "org": "S2072111",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-07-2-11-1-511203",
+   "available": 0.0,
+   "description": "PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2072111",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-07-2-12-1-511103",
+   "available": 0.0,
+   "description": "AIDES",
+   "expended": 0.0,
+   "org": "S2072121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-07-2-13-1-511203",
+   "available": 0.0,
+   "description": "PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2072131",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-1-13-1-511203",
+   "available": 0.95,
+   "description": "PARAPROFESSIONALS",
+   "expended": 66663.05,
+   "org": "S2511131",
+   "original": 66275.0,
+   "revised": 66664.0,
+   "school": null,
+   "transfers": 389.0
+  },
+  {
+   "account": "0100-3-300-2330-51-2-12-1-511103",
+   "available": 0.0,
+   "description": "P.S. SPED AIDES",
+   "expended": 0.0,
+   "org": "S2512121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-2-13-1-511203",
+   "available": 48824.8,
+   "description": "P.S. SPED PARAPROFESSIONALS",
+   "expended": 268318.2,
+   "org": "S2512131",
+   "original": 317143.0,
+   "revised": 317143.0,
+   "school": "Primary",
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-4-12-1-511103",
+   "available": 0.0,
+   "description": "E.S. SPECIAL ED AIDES",
+   "expended": 0.0,
+   "org": "S2514121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-4-13-1-511203",
+   "available": 3154.4,
+   "description": "E.S. SPED PARAPROFESSIONALS",
+   "expended": 244290.6,
+   "org": "S2514131",
+   "original": 312445.0,
+   "revised": 247445.0,
+   "school": "Elementary (SPED)",
+   "transfers": -65000.0
+  },
+  {
+   "account": "0100-3-300-2330-51-5-12-1-511103",
+   "available": 0.0,
+   "description": "M.S. SPECIAL ED AIDES",
+   "expended": 0.0,
+   "org": "S2515121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-5-13-1-511203",
+   "available": 5873.68,
+   "description": "M.S. SPEC ED PARAPROFESSIONALS",
+   "expended": 371572.32,
+   "org": "S2515131",
+   "original": 323772.0,
+   "revised": 377446.0,
+   "school": "Middle school (SPED)",
+   "transfers": 53674.0
+  },
+  {
+   "account": "0100-3-300-2330-51-6-12-1-511103",
+   "available": 0.0,
+   "description": "H.S. SPECIAL ED AIDES",
+   "expended": 0.0,
+   "org": "S2516121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-6-13-1-511203",
+   "available": 21767.92,
+   "description": "HS SPEC ED PARAPROFESSIONALS",
+   "expended": 294050.08,
+   "org": "S2516131",
+   "original": 347258.0,
+   "revised": 315818.0,
+   "school": "High school (SPED)",
+   "transfers": -31440.0
+  },
+  {
+   "account": "0100-3-300-2330-99-1-06-1-511018",
+   "available": 0.0,
+   "description": "HOME PARAPROFESSIONAL SALARIES",
+   "expended": 0.0,
+   "org": "S3991061",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  }
+ ],
+ "sources": [
+  {
+   "bytes": 248765,
+   "docs_url": "/docs/meetings/school-committee/2025-09-17-minutes-7408.pdf",
+   "filename": "2025-09-17-minutes-7408.pdf",
+   "note": "Minutes of 17 September 2025, page 3 of 3: \"the surplus number has gone up to $603,885.97, the change is due to closing out purchase orders from FY25.\" Quoted in sources/analyses/budget-vs-actual.md.",
+   "path": "sources/meetings/school-committee/2025-09-17-minutes-7408.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "d3a9d6add7d4e2e58cd83359f26e175d760f0635f2266104a7dc49a7b157e291",
+   "table": "school_committee_minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09172025-7408"
+  },
+  {
+   "bytes": 0,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "note": "MUNIS year-to-date budget report, department 300 (school general fund), period 13 — the closed FY2025 ledger. Original appropriation, transfers and adjustments, revised budget, year-to-date expended, encumbrances and available budget, by account. Obtained by public records request.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg — Town Accountant",
+   "sha256": "",
+   "table": "munis-school-ytd",
+   "url": ""
+  },
+  {
+   "bytes": 0,
+   "docs_url": "/docs/data/revenue-distribution-fy26.csv",
+   "filename": "revenue-distribution-fy26.csv",
+   "note": "The town’s FY26 revenue-distribution workbook. Used only for the scope check: its FY25 School Dept figure must equal, and does equal, the original appropriation summed from the MUNIS ledger above.",
+   "path": "sources/data/revenue-distribution-fy26.csv",
+   "publisher": "Town of Lunenburg",
+   "sha256": "",
+   "table": "revenue-distribution-fy26",
+   "url": ""
+  }
+ ],
+ "stats": [
+  {
+   "label": "unspent at the close, FY2025 school general fund, of $25,304,074 appropriated",
+   "tone": "var(--series-cost)",
+   "value": "$627,117"
+  },
+  {
+   "label": "more unspent than the $603,886 the School Committee was told, 17 Sept 2025",
+   "value": "$23,231"
+  },
+  {
+   "label": "moved out of the department during the year, net",
+   "value": "$122,502"
+  }
+ ],
+ "totals": {
+  "available": 627116.86,
+  "encumbered": 0.0,
+  "expended": 24554454.7,
+  "original": 25304074.0,
+  "revised": 25181571.56,
+  "transfers": -122502.44
+ },
+ "waterfall": {
+  "district_figure": 603885.97,
+  "moved_out": -122502.44,
+  "revised": 25181571.56,
+  "spent": 24554454.7,
+  "unspent": 627116.86,
+  "voted": 25304074.0
+ }
+}

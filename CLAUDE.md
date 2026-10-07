@@ -1455,6 +1455,8 @@ immediately before writing, and preserve the file's existing newline convention.
                                                  #   ...and that the persona review in notes/process/PERSONAS.md was run
     python3 scripts/verify_fy26_closeout_town.py # ...and in its town-side companion
     python3 scripts/build_closeout_charts.py     # the charts that head both closeout analyses
+    python3 scripts/build_fy25_school_surplus.py --check   # the FY25 school surplus, from the closed ledger -- UNLISTED
+    python3 scripts/verify_fy25_school_surplus.py # every figure in it, recomputed from the CSV with Decimal, a different route than the generator's
     python3 scripts/build_reports_index.py       # the /reports index, generated from what is on disk
     python3 scripts/build_reports_index.py --check    # ...and fail if an analysis is missing from it
     python3 scripts/build_reading_time.py        # how long every page takes to read, from the build; longest first

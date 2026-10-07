@@ -1820,6 +1820,16 @@ GROUPS = [
              'A rendering of analyses/fy26-closeout.md, built by '
              'scripts/build_analysis_pdf.py. The markdown is the source; every figure in '
              'it is recomputed by scripts/verify_fy26_closeout.py.'),
+            ('analyses/fy25-school-surplus.md', 'The FY25 school surplus, from the closed ledger', 2,
+             'Our analysis. What the school department left unspent in FY2025, read off the '
+             'MUNIS period-13 report rather than the minutes: the turnback at the close, what '
+             'moved out of the budget during the year, where the unspent money sat by function, '
+             'and how it compares with the figure the School Committee was told. Every figure '
+             'is generated and re-verified. Unlisted while it is reviewed.'),
+            ('analyses/charts/fy25-school-surplus-waterfall.svg',
+             'Chart: from the voted school budget to the FY25 turnback', 1,
+             'Our chart, generated with the FY25 school surplus analysis: voted, moved out, '
+             'spent and unspent at the close, beside the district\u2019s September figure.'),
             ('analyses/budget-vs-actual.md', 'Budget versus actual', 2,
              'Did what the town budgeted match what it spent? Written for two readers \u2014 '
              'plain terms and the evidence, side by side. Deliberately separate from the '
@@ -2904,6 +2914,21 @@ GROUPS = [
              'actual, for every department and account. Each year ties to the workbook’s '
              'own Grand Total; FY2025 is part-year and flagged. Built by '
              'scripts/extract_gl_history.py.'),
+            ('data/munis-school-ytd.csv',
+             'The school department at year-end, FY2023 to FY2026, every account', 3,
+             'The school General Fund and its 61 special funds at period 13, the closed year, '
+             'account by account: original appropriation, transfers, revised budget, spent, '
+             'encumbered and available. Parsed by scripts/extract_munis_school_ytd.py from the '
+             'published spreadsheets only, and refused unless every account ties to its org, '
+             'fund and grand total as the workbook prints them.'),
+            ('data/munis-trial-balance.csv',
+             'Lost books and technology fund, FY2026 trial balance by account', 1,
+             'Fund 1300: beginning balance, debits, credits and ending balance per account, '
+             'tied to the sheet\u2019s own totals.'),
+            ('data/munis-trial-balance-journal.csv',
+             'Lost books and technology fund, FY2026, every journal line', 1,
+             'Each entry behind the fund 1300 trial balance -- period, journal, source, date, '
+             'reference (vendors only) and amount; the opening-balance line is flagged, never summed.'),
             ('data/munis-ledger.csv',
              'Every MUNIS budget report we hold, one table', 3,
              'The Town Accountant\u2019s year-to-date budget reports \u2014 expenditures '
