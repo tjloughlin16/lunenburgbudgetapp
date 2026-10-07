@@ -358,5 +358,257 @@
    "at": "2026-10-06T18:05:10Z",
    "cost_usd": 0.214393
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02192025-7052",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-02-19-minutes-7052.txt",
+   "path": "sources/meetings/conservation-commission/2025-02-19-minutes-7052.pdf"
+  },
+  "official_sha256": "33c58e97df3c2fe3222241fe6acd3c3b34d5f46edcd781e0bcdc54f87ed38476",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the two Sunset Lane approvals, the tree data sheets and Chris taking the open space role. The official minutes record no vote on either Northfield Road continuation and none of the dollar figures we heard. The one thing to know is that our minutes show two roll-call continuation votes the official minutes do not mention, and the official minutes carry a different continuation (90 Howard Street) that we did not capture.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 7,
+   "discrepancy": 2,
+   "only_in_ours": 8,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: 352 Sunset Lane NOI approved with standard conditions and draw-down-period work",
+    "ours": "Approve the NOI at 352 Sunset Lane with standard order of conditions and work only during the draw down period. — passed (Jenny, Chris, Mike and chair voted aye; Jeff recused; Pete ineligible)",
+    "official": "j. pewtherer, to approve with: 3. standard conditions 4. work must be conducted during draw down period",
+    "note": "Same approval and same conditions; the official minutes also record J. Viviano recused as abutter, matching ours.",
+    "t": 3305
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: 338 Sunset Lane request for determination approved",
+    "ours": "Approve the request for determination of applicability at 338 Sunset Lane as presented. — passed (Mike, Chris, Jenny and chair aye; Jeff recused; Pete ineligible)",
+    "official": "c. st. germain, to approve second j. pewtherer",
+    "note": "Both records show the RDA approved; the official minutes name the mover and seconder but not the tally.",
+    "t": 4453
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: continue Table Rock Conservation Area NOI (994 Northfield Road) to March 5",
+    "ours": "Continue the Table Rock Conservation Area NOI hearing (994 Northfield Road) to March 5 by roll call. — passed (roll call; Jenny, Jeff, Mike, Chris, Pete and chair all aye)",
+    "official": "",
+    "note": "Our minutes record a roll-call vote and the official minutes record none; check the recording at this time and whether the town simply omitted it.",
+    "t": 1985
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: continue Latanzi NOI (780 Northfield Road) to March 5",
+    "ours": "Continue the Latanzi NOI hearing (780 Northfield Road) to March 5 by roll call. — passed (roll call; ayes heard from Jeff, Mike, Chris, Pete and chair; Jenny's response not captured)",
+    "official": "",
+    "note": "Our minutes record a roll-call vote and the official minutes record none; check the recording for the vote and Jenny's response.",
+    "t": 2823
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Real estate taxes at 338 Sunset Lane",
+    "ours": "Real estate taxes at 338 Sunset Lane: $155,000",
+    "official": "",
+    "note": "The official minutes print no dollar figure for this item; check the recording to confirm what $155,000 refers to.",
+    "t": 4390
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Wildlands grant matching",
+    "ours": "Wildlands grant matching: $50,000",
+    "official": "grants were obtained to create parking areas at conservation lands.",
+    "note": "The official minutes mention grants for parking areas but print no amount; whether this is the same item is unclear.",
+    "t": 6292
+   },
+   {
+    "kind": "agree",
+    "about": "Tree data sheets supported",
+    "ours": "Commission supports the agent continuing to use tree data sheets in the field.",
+    "official": "agreement that the data sheets are useful and not much extra work for s. dorow.",
+    "note": "Same decision, no vote in either record.",
+    "t": 6504
+   },
+   {
+    "kind": "agree",
+    "about": "Chris takes the open space role",
+    "ours": "Chris agreed to serve as the commission's representative to the open space group.",
+    "official": "c. st. germain indicated he would be willing to take this on.",
+    "note": "Same decision; official wording is softer ('willing').",
+    "t": 6995
+   },
+   {
+    "kind": "only_in_official",
+    "about": "90 Howard Street continued to March 5",
+    "ours": "",
+    "official": "applicant requested continuance to march 5.",
+    "note": "Our minutes have no 90 Howard Street item; the official minutes record it as continued at the applicant's request."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Farmland of Local Importance moved",
+    "ours": "",
+    "official": "farmland of local importance: moved to the agricultural commission",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Grants update (award year 2022) removed from agendas",
+    "ours": "",
+    "official": "grants update (lsr sponsored, award year 2022): remove from future agendas",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "April Earth Day plans",
+    "ours": "",
+    "official": "m. wilson is working on this. c. st. germaine and j. pewtherer said they would help.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Next meeting March 5 by Zoom",
+    "ours": "",
+    "official": "next meeting is march 5th, 2025, at 7:00 pm by zoom platform",
+    "note": "Our minutes mention March 5 only for continued hearings and the Hollis Road item."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Table Rock consultant and replication area relocation",
+    "ours": "Consultant to examine relocating the Table Rock replication area away from the driveway and add Caitlyn Wier's driveway to the plan reference; hearing to return March 5.",
+    "official": "",
+    "note": "The official minutes record only the public comment about the driveway, not this direction.",
+    "t": 1858
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meadow Lane debris clearing and reinspection",
+    "ours": "Meadow Lane resident to clear debris after snowmelt; conservation agent to reinspect 30 days or more after the snow melts.",
+    "official": "",
+    "note": "The official minutes cover the 48 Meadow Lane enforcement discussion but print no such outcome in the structured extract.",
+    "t": 5062
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Emergency joint executive session on 950 Chase Road",
+    "ours": "Emergency joint executive session with the select board on 950 Chase Road to be held Monday or Tuesday at 6 p.m.; Tuesday works for a quorum.",
+    "official": "",
+    "note": "Not in the official minutes extract.",
+    "t": 5602
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "1168 Massachusetts Ave SharePoint folder",
+    "ours": "Photos and files for the 1168 Massachusetts Ave rear violation to be shared via a SharePoint folder because the violation is not in OpenGov.",
+    "official": "",
+    "note": "Not in the official minutes extract.",
+    "t": 5390
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 61 parcel at 100 Harbor Road not pursued",
+    "ours": "Commission by consensus will not pursue acquiring the Chapter 61 parcel at 100 Harbor Road; no vote taken.",
+    "official": "",
+    "note": "Decision absent from the official minutes extract.",
+    "t": 6171
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hollis Road license agreement rewrite",
+    "ours": "Hollis Road custodian license agreement rewrite to be presented by volunteers on March 5.",
+    "official": "",
+    "note": "Not in the official minutes extract.",
+    "t": 6930
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Mary (chair)",
+    "official": "b. call to order at 7:00 pm by m. wilson",
+    "note": "Likely the same person, M. Wilson, who presided; caption heard the first name only.",
+    "official_reading": "M. Wilson"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Jenny",
+    "ours": "Jenny (member)",
+    "official": "present: j. pewtherer, j. viviano, m. larouche, c. st germain, p. stella, m. wilson.",
+    "note": "Presumably J. Pewtherer; captions gave only the first name.",
+    "official_reading": "J. Pewtherer"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Mike",
+    "ours": "Mike (member)",
+    "official": "present: j. pewtherer, j. viviano, m. larouche, c. st germain, p. stella, m. wilson.",
+    "note": "Presumably M. Larouche; captions gave only the first name.",
+    "official_reading": "M. Larouche"
+   },
+   {
+    "kind": "agree",
+    "about": "Members Jeff, Chris St Germain and Pete Stella present",
+    "ours": "Jeff (member); Chris (St Germain) (member); Peter Stella (Pete) (member (new))",
+    "official": "present: j. pewtherer, j. viviano, m. larouche, c. st germain, p. stella, m. wilson.",
+    "note": "All listed as present; Stella is welcomed as new in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "R. Bursch absent",
+    "ours": "",
+    "official": "absent: r. bursch welcomed p. stella to the commission.",
+    "note": "Our attendee list does not mention Bursch."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Greg Roy firm",
+    "ours": "Greg Roy (Dillon Roy) (presenter)",
+    "official": "greg roy (dillis & roy) presented for the lunenburg conservation commission.",
+    "note": "Firm name misheard.",
+    "official_reading": "Dillis & Roy"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Matt Marro",
+    "ours": "Matt Maro (presenter)",
+    "official": "matt marro represented the applicants.",
+    "note": "Spelling of surname.",
+    "official_reading": "Matt Marro"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Public commenter at Table Rock",
+    "ours": "Caitlyn Wier",
+    "official": "public comment by katlin wiener 939 northfield road: wanted to knwo where the current driveway",
+    "note": "Same commenter, name misheard.",
+    "official_reading": "Katlin Wiener"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name at 780 Northfield Road",
+    "ours": "Latanzi NOI hearing (780 Northfield Road)",
+    "official": "a notice of intent by james and allison lattanzi for the construction of a wetland replication area to",
+    "note": "Surname spelling.",
+    "official_reading": "Lattanzi"
+   },
+   {
+    "kind": "agree",
+    "about": "Conservation agent",
+    "ours": "Sophie/Sophia (conservation agent)",
+    "official": "s. dorow reviewed the concerns: vegetation removed within the buffer zone and stockpiling of inorganic material.",
+    "note": "Sophia Dorow is the agent in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:33:01Z",
+   "cost_usd": 0.267299
+  }
  }
 }

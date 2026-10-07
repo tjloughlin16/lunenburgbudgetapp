@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2025-06-04",
  "docid": "7246",
@@ -12,39 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Nominate Karin Menard as Chair of the Park Commission, effective immediately",
+   "motion": "Nominate Karin Menard as Chair of the Park Commission, effective immediately.",
    "moved_by": "C. Shapiro",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "c. shapiro moved to nominate karin menard as the chair of the park commission effective immediately. seconded by c. sullivan. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "procedural": false,
+   "quote": "c. shapiro moved to nominate karin menard as the chair of the park commission effective immediately."
   },
   {
-   "motion": "Nominate Chris Sullivan as Vice-Chair of the Park Commission, effective immediately",
+   "motion": "Nominate Chris Sullivan as Vice-Chair of the Park Commission, effective immediately.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "k. menard moved to nominate chris sullivan as the vice-chair of the park commission effective immediately. seconded by c. sullivan. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "procedural": false,
+   "quote": "k. menard moved to nominate chris sullivan as the vice-chair of the park commission effective immediately."
   },
   {
-   "motion": "Allocate $3,050.72 for proposed equipment to repair the swing and merry-go-round at Wallace Park",
+   "motion": "Allocate $3,050.72 for the proposed equipment to repair the swing and the merry-go-round at Wallace Park.",
    "moved_by": "A. Scheipers",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "a. scheipers moved to allocate $3,050.72 for the proposed equipment to repair the swing and the merry-go-round at wallace park. seconded by c. shapiro. call for the vote: five-aye. the motion passed"
+   "quote": "a. scheipers moved to allocate $3,050.72 for the proposed equipment to repair the swing and the merry-go-round at wallace park."
   },
   {
-   "motion": "Appoint Colleen Shapiro as Park Commission representative for the Open Space Committee, effective immediately",
+   "motion": "Appoint Colleen Shapiro as the Park Commission representative to the Open Space Committee, effective immediately.",
    "moved_by": "K. Menard",
    "seconded_by": "A. Scheipers",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "k. menard moved to appoint colleen shapiro as the park commission representative for the open space committee, effective immediately. seconded by a. scheipers. call for the vote: five-aye."
+   "procedural": false,
+   "quote": "k. menard moved to appoint colleen shapiro as the park commission representative for the open space committee, effective immediately."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "C. Sullivan",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 5-0-0",
@@ -53,6 +53,280 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12192040000000001
+ "note": "Clean text extraction of a digital document, not a scan. Five votes are recorded, each \"Five-aye\" with a printed 5-0-0 result; individual roll call is not printed. The minutes-approval block at the end is a blank template with no vote recorded, so it is not counted. Minutes approval was tabled. The Vice-Chair nomination of Chris Sullivan was seconded by Sullivan himself, as printed. Page-header artifacts (\"Page  of 17\") are ignored. Public comment: the minutes say only \"No public comments.\" Anthony Senesi's attendance is not stated; he is named as the appointed recording clerk.",
+ "cost_usd": 0.019518670000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair anita scheipers, vice-chair colleen shapiro, clerk karin menard,"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair anita scheipers, vice-chair colleen shapiro, clerk karin menard,"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk (as printed in attendance; later chaired the meeting)",
+   "status": "present",
+   "quote": "members present: chair anita scheipers, vice-chair colleen shapiro, clerk karin menard,"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "member chris sullivan, member marianne mascari"
+  },
+  {
+   "name": "Marianne Mascari",
+   "role": "Member",
+   "status": "present",
+   "quote": "member chris sullivan, member marianne mascari"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "also present: facilities director chris ruth, recreation director angela clement"
+  },
+  {
+   "name": "Angela Clement",
+   "role": "Recreation Director",
+   "status": "present",
+   "quote": "also present: facilities director chris ruth, recreation director angela clement"
+  },
+  {
+   "name": "Anthony Senesi",
+   "role": "Recording Clerk (appointed; signed the minutes)",
+   "status": "not stated",
+   "quote": "k. menard stated that anthony senesi was recently appointed by the select board to be the park commission recording clerk/secretary."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission did not move to nominate a Clerk; its consensus was not to proceed, because a Recording Clerk is incoming.",
+   "quote": "the commission's consensus was not to move forward with nominating a clerk."
+  },
+  {
+   "decision": "Informally chose Havana Gold as the color for the renovated Veterans Park benches (no vote recorded).",
+   "quote": "the commission informally decided on the havana gold color for the renovated benches at veterans park"
+  },
+  {
+   "decision": "Tabled approval of the minutes to the next meeting.",
+   "quote": "k. menard tabled the approval of the meeting minutes until the next meeting."
+  },
+  {
+   "decision": "Decided to speak with Skanska and RDLA on strategies to bring Phase 1+ to Fall Town Meeting or wait to bring the full project to a later Town Meeting.",
+   "quote": "the commission decided to speak with members of skanska and rdla to discuss strategies to either bring phase 1+ to fall town meeting"
+  },
+  {
+   "decision": "Agreed to spend down the remaining Marshall Park design funds; the chair will tell the design team and check ARPA funds with the Finance Director.",
+   "quote": "a. scheipers said she will communicate with the design team and will tell them the commission agrees to spend down the remaining funds on the design plans."
+  },
+  {
+   "decision": "Informally agreed to meet with the skate park representatives about their 3D models and renderings.",
+   "quote": "the park commission have a meeting with the representatives of the skate park to discuss the 3d models and renderings. the commission informally agreed."
+  },
+  {
+   "decision": "Agreed the Town Manager should be invited to discuss the Recreation Department's finances.",
+   "quote": "a. scheipers agrees that the town manager should be invited to discuss"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Veterans Park bench repairs",
+   "what_was_recorded": "Facilities Director estimated repairing all six benches at Veterans Park at $1,500; a resident offered to pay for the repairs, which the Select Board must approve.",
+   "quote": "he estimates that the costs of repairing all the benches would be $1,500.",
+   "figures_as_printed": [
+    "$1,500"
+   ]
+  },
+  {
+   "topic": "Wallace Park merry-go-round swing and rails",
+   "what_was_recorded": "Replacing the two rails and the swing was estimated at $3,050.72, with the price rising July 1, 2025; the Commission then allocated that amount.",
+   "quote": "replacing the two rails and the swing is going to cost $3,050.72, and the price will increase by july 1, 2025.",
+   "figures_as_printed": [
+    "$3,050.72"
+   ]
+  },
+  {
+   "topic": "Funding source for Wallace Park repairs",
+   "what_was_recorded": "The Facilities Director said the repairs would come from the revolving fund, and that funds were available; no amount was printed for the fund.",
+   "quote": "it would have to come from the revolving fund and that there are funds available.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town Beach weed harvesting, capital account",
+   "what_was_recorded": "The weed-removal plan would be a three-and-a-half-day contractor job, followed by a reassessment of whether the capital account holds enough funds for more work; no amount was printed.",
+   "quote": "and then reassessing to see if there are enough funds in the capital account to move forward with more work.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Marshall Park remaining appropriation",
+   "what_was_recorded": "The chair determined that just under $100,000 remains appropriated for Marshall Park, to be spent down on design.",
+   "quote": "she determined that there is just under $100,000 left that was appropriated for marshall park.",
+   "figures_as_printed": [
+    "$100,000"
+   ]
+  },
+  {
+   "topic": "Marshall Park ARPA funds",
+   "what_was_recorded": "Some of the currently allocated Marshall Park funds are ARPA funds that must be spent down; a bathroom would need additional funding. No amount was printed.",
+   "quote": "some of the currently allocated funds are arpa funds and must be spent down.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Recreation and Facilities finances",
+   "what_was_recorded": "Members cited a small revenue source against a large amount of spending, and proposed a Town Manager meeting on the finances; no amount was printed.",
+   "quote": "because of the small source of revenue that is being generated and the large amount of funding being spent.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Allocation to repair the swing and merry-go-round at Wallace Park. The minutes name the revolving fund as the funding source (said by the Facilities Director). The minutes call this an allocation, not a transfer.",
+   "outcome": "passed 5-0-0",
+   "amount_as_printed": "$3,050.72",
+   "quote": "a. scheipers moved to allocate $3,050.72 for the proposed equipment to repair the swing and the merry-go-round at wallace park."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Reorganization: Chair, Vice-Chair, Clerk",
+   "resolution": "Chair elected (Menard) and Vice-Chair elected (Sullivan), 5-0-0 each; no Clerk nominated",
+   "quote": "k. menard stated that the park commission does not need a clerk because there is an incoming recording clerk to assist with its minutes.",
+   "tags": [
+    "governance",
+    "officers",
+    "clerk"
+   ]
+  },
+  {
+   "topic": "Facilities Director update",
+   "resolution": "Wallace Park repairs allocated $3,050.72 (5-0-0); benches, tennis court, pickleball and Town Beach weeds discussed",
+   "quote": "chris ruth stated that a former resident purchased two benches for veterans park.",
+   "tags": [
+    "facilities",
+    "Veterans Park",
+    "Wallace Park",
+    "tennis courts",
+    "pickleball",
+    "Town Beach",
+    "weeds"
+   ]
+  },
+  {
+   "topic": "Recreation Director update",
+   "resolution": "informational; no action",
+   "quote": "a. clement stated that the town beach will be open for swimming on june 23, 2025.",
+   "tags": [
+    "recreation",
+    "Town Beach",
+    "programming",
+    "swim lessons",
+    "employee rates"
+   ]
+  },
+  {
+   "topic": "Marshall Park project: next steps, septic, design, funding",
+   "resolution": "Decided to speak with Skanska and RDLA about Phase 1+ or the full project; agreed to spend down remaining design funds",
+   "quote": "a. scheipers had a conversation with the town manager after the may town meeting in terms of continuing design work for marshall park.",
+   "tags": [
+    "Marshall Park",
+    "design",
+    "septic",
+    "Phase 1+",
+    "Town Meeting",
+    "ARPA",
+    "debt exclusion"
+   ]
+  },
+  {
+   "topic": "Minutes for approval",
+   "resolution": "tabled to the next meeting",
+   "quote": "k. menard tabled the approval of the meeting minutes until the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Open Space Committee representative",
+   "resolution": "Colleen Shapiro appointed, 5-0-0",
+   "quote": "k. menard stated that a former commissioner was the open space committee representative;",
+   "tags": [
+    "appointment",
+    "Open Space Committee"
+   ]
+  },
+  {
+   "topic": "New Recording Clerk",
+   "resolution": "noted; Anthony Senesi appointed by the Select Board",
+   "quote": "k. menard stated that anthony senesi was recently appointed by the select board to be the park commission recording clerk/secretary.",
+   "tags": [
+    "clerk",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Chair updates: skate park, Recreation finances, fee rates",
+   "resolution": "Informally agreed to skate park meeting; agreed to invite the Town Manager on Recreation finances",
+   "quote": "k. menard recommended that the park commission have a meeting with the representatives of the skate park",
+   "tags": [
+    "skate park",
+    "Recreation finances",
+    "program fees",
+    "Town Manager"
+   ]
+  },
+  {
+   "topic": "Commission member updates and public comment",
+   "resolution": "no updates; no public comment",
+   "quote": "no updates. no public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting dates; other business",
+   "resolution": "next meetings set for July 30 and August 20, 2025; other business none",
+   "quote": "the commission is meeting next on july 30, 2025. the commission will meet on august 20, 2025.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:45 P.M., 5-0-0",
+   "quote": "meeting adjourned at 8:45 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "parks",
+  "recreation",
+  "facilities",
+  "Veterans Park",
+  "Wallace Park",
+  "Marshall Park",
+  "Town Beach",
+  "pickleball",
+  "tennis courts",
+  "skate park",
+  "budget",
+  "ARPA",
+  "revolving fund",
+  "Town Meeting",
+  "governance",
+  "officers",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

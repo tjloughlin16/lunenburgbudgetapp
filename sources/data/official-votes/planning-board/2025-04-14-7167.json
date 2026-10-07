@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2025-04-14",
  "docid": "7167",
@@ -12,23 +12,230 @@
  },
  "votes": [
   {
-   "motion": "endorse the ANR plan for 60 Cross Rd as-presented",
+   "motion": "Endorse the ANR plan for 60 Cross Rd as presented.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. willsmer, to endorse the anr plan for 60 cross rd as-presented. second: a. reid voice vote, passed unanimously."
+   "quote": "motion: t. willsmer, to endorse the anr plan for 60 cross rd as-presented. second: a. reid"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "vice chair t. willsmer moved to adjourn. clerk a. reid seconded. voice vote, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09812340000000001
+ "note": "Text is a clean extraction of a 3-page minutes PDF; no scan. Two votes are recorded with a motion and a voice-vote result. The minutes approval and the endorsement of decisions have no motion or vote count, so they are recorded as decisions, not votes. Public comment was 'None at this time' twice, so no speakers are listed. The Chair/Director report heading carries a footnote 'Staff Report' in the text. Attendance: 'ABSENT: None'. Christopher Reilly's attendance is not stated (the minutes say only that the Land Use Director is unavailable). The $23 million figure is a committee-reported figure, not a board decision.",
+ "cost_usd": 0.014379570000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Hannigan Engineering",
+   "role": "presenter, representing the applicant Cross St. Realty Trust (60 Cross Rd ANR plan)",
+   "status": "present",
+   "quote": "hannigan engineering presented for applicant cross st. realty trust."
+  },
+  {
+   "name": "Christopher Reilly",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "christopher reilly - land use director"
+  },
+  {
+   "name": "Logan O'Connell",
+   "role": "Admin Asst. (minutes by)",
+   "status": "not stated",
+   "quote": "minutes by logan o'connell, admin asst."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board endorsed the decisions for recent applications: 485 Leominster-Shirley Rd Site Plan Approval, 1523 Mass Ave Special Permit for Common Driveway, 994 Northfield Rd Site Plan Approval, and 494 Electric Ave Site Plan Approval and Stormwater Management Permit.",
+   "quote": "the board endorsed the decisions."
+  },
+  {
+   "decision": "The Board reviewed and approved the minutes for 2025-03-24. No motion or vote count is recorded.",
+   "quote": "the board reviewed and approved the minutes for 2025-03-24."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal Bldg. Design Committee warrant article monetary ask (Brooks House disposition)",
+   "what_was_recorded": "The committee reported it decided to proceed with the monetary ask at Town Meeting using an approximate figure. The figure was reported by a committee member, not decided by this board.",
+   "figures_as_printed": [
+    "$23 million"
+   ],
+   "quote": "we did decide to proceed with the monetary ask at town meeting using the approximate $23 million figure."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "matthew brenner called the meeting to order at 6:00 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comment; none at this time",
+   "quote": "public comment none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair and Director's report: MBTA Communities Act compliance",
+   "resolution": "no action; discussed public engagement and consultant timeline",
+   "quote": "chair m. brenner also reviewed the previous work and the upcoming timeline for compliance with the mbta communities act.",
+   "tags": [
+    "MBTA Communities Act",
+    "zoning",
+    "consultant",
+    "public engagement"
+   ]
+  },
+  {
+   "topic": "Approval not required (ANR) plan: 60 Cross Rd",
+   "resolution": "endorsed as presented",
+   "quote": "hannigan engineering presented for applicant cross st. realty trust.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "60 Cross Rd"
+   ]
+  },
+  {
+   "topic": "Public hearings",
+   "resolution": "none held",
+   "quote": "public hearings none.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Decisions review",
+   "resolution": "endorsed",
+   "quote": "the board endorsed the decisions.",
+   "tags": [
+    "site plan",
+    "special permit",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Abutting community notices",
+   "resolution": "no action; none of concern",
+   "quote": "none of concern at this time.",
+   "tags": [
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reported by each committee",
+   "quote": "per g. mcleod - have not met since last meeting (lacked quorum).",
+   "tags": [
+    "Master Plan",
+    "Open Space",
+    "Municipal Bldg Design",
+    "Economic Development",
+    "Storm Water",
+    "regional planning"
+   ]
+  },
+  {
+   "topic": "Minutes approval (2025-03-24)",
+   "resolution": "approved",
+   "quote": "the board reviewed and approved the minutes for 2025-03-24.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "upcoming meetings are 05-12 and 06-09 at 6:00 p.m.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no comment; none at this time",
+   "quote": "public comment none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment: Electric Ave business event",
+   "resolution": "no action; noted",
+   "quote": "g. mcleod noted a recent event held by low places ranch at 494 electric ave (il forno).",
+   "tags": [
+    "parking",
+    "local business"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:55 P.M.",
+   "quote": "vice chair t. willsmer moved to adjourn. clerk a. reid seconded. voice vote, passed unanimously.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "MBTA Communities Act",
+  "ANR plan",
+  "site plan decisions",
+  "special permit",
+  "stormwater",
+  "Brooks House",
+  "Town Meeting warrant",
+  "minutes approval",
+  "land use director vacancy",
+  "Master Plan"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2025-07-07",
  "docid": "7298",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes from April 7, 2025 and June 2, 2025",
+   "motion": "Approve the meeting minutes of April 7, 2025 and June 2, 2025.",
    "moved_by": "David Blatt",
    "seconded_by": "Matt Snyder",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "david blatt made a motion to approve the meeting minutes from april 7, 2025 and june 2, 2025. matt snyder seconded. meeting minutes unanimously approved by david blatt, kim duffy, and chris holden."
+   "quote": "david blatt made a motion to approve the meeting minutes from april 7, 2025 and june 2, 2025. matt snyder seconded. meeting minutes unanimously approved"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Kim Duffy",
    "seconded_by": "Chris Holden",
    "outcome": "passed",
@@ -29,6 +29,162 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded: approval of prior minutes and adjournment. No substantive votes on committee business.",
- "cost_usd": 0.059120400000000004
+ "note": "Text is clean, single-page, digital; all votes are recorded with a motion and a result. Two votes are procedural (minutes approval, adjournment). The minutes give no vote counts; the adjournment is recorded only as \"Approved anonymously\", so it is entered as passed without a count. Matt Snyder is not in the attendance line but is recorded seconding the minutes motion, so his status is marked not stated. Dave Passios attended remotely. The minutes name the Chair as \"David Blatt\" in the header and \"Dave B\"/\"Dave Blatt\" in the body, and Passios as \"David\" in the header and \"Dave\" elsewhere; names are kept as printed. No dollar figures appear in the minutes. Public comment reads \"None\", so no speakers are recorded.",
+ "cost_usd": 0.013911470000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members: david blatt, kim duffy, chris holden, dave passios (remote)."
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members: david blatt, kim duffy, chris holden, dave passios (remote)."
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: david blatt, kim duffy, chris holden, dave passios (remote)."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "members: david blatt, kim duffy, chris holden, dave passios (remote)."
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "david blatt made a motion to approve the meeting minutes from april 7, 2025 and june 2, 2025. matt snyder seconded."
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "other attendees: jennifer warren-dyment (town manager), chris ruth (facilities, grounds & recreation department director)"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities, Grounds & Recreation Department Director",
+   "status": "present",
+   "quote": "chris ruth (facilities, grounds & recreation department director), chris stevens (director of facilities, schools)"
+  },
+  {
+   "name": "Chris Stevens",
+   "role": "Director of Facilities, Schools",
+   "status": "present",
+   "quote": "chris stevens (director of facilities, schools)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dave B to schedule a meeting with Chris Ruth, Chris Stevens, Sean Krusz, Matt O'Keefe and Kelly Brown to discuss the PPP.",
+   "quote": "dave b to schedule meeting with chris ruth, chris stevens, sean krusz, matt o'keefe, kelly brown to discuss the ppp"
+  },
+  {
+   "decision": "Turkey Hill is the next energy-audit priority but will wait for the PPP.",
+   "quote": "turkey hill is next priority but will wait for ppp"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Mass Save municipal energy manager and grant writer",
+   "what_was_recorded": "The June 3, 2025 MassSave Summit presentation described a K-12 school decarbonization grant for a municipal energy manager and grant writer, with the comment that comparable towns save more than the manager costs; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "k-12 school decarbonization initiative: mass save municipal energy manager competitive grant & grant writer (many other towns our size have these and save more money than they spend on manager)"
+  },
+  {
+   "topic": "Styrofoam program grant",
+   "what_was_recorded": "Tyler applied for a grant for the Styrofoam program and is waiting to hear back; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "styrofoam program update tyler applied for a grant; waiting to hear back."
+  },
+  {
+   "topic": "Spring 2026 grant round",
+   "what_was_recorded": "The next grant opportunity for the Turkey Hill energy audit is noted as available to apply in spring 2026; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "next grant in spring 2026 will be available to apply"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve pending meeting minutes",
+   "resolution": "approved",
+   "quote": "david blatt made a motion to approve the meeting minutes from april 7, 2025 and june 2, 2025. matt snyder seconded.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "2025 MA Municipal Energy Summit: program review and state funding",
+   "resolution": "no action",
+   "quote": "dave blatt attended masssave summit on june 3, 2025. presentation was shared.",
+   "tags": [
+    "MassSave",
+    "energy",
+    "grants",
+    "decarbonization"
+   ]
+  },
+  {
+   "topic": "Energy audit for Turkey Hill update",
+   "resolution": "no action; sequenced behind the PPP",
+   "quote": "turkey hill is next priority but will wait for ppp",
+   "tags": [
+    "energy audit",
+    "Turkey Hill",
+    "HVAC",
+    "PPP"
+   ]
+  },
+  {
+   "topic": "Styrofoam program update",
+   "resolution": "no action",
+   "quote": "styrofoam program update tyler applied for a grant; waiting to hear back.",
+   "tags": [
+    "Styrofoam",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Committee make-up and appointment terms",
+   "resolution": "no action",
+   "quote": "committee make-up two 3-year, two 2-year, one 1-year appointments",
+   "tags": [
+    "appointments",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Timeline for next meeting",
+   "resolution": "August 2025 set as next meeting",
+   "quote": "timeline for next meeting august 2025",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy",
+  "MassSave",
+  "decarbonization",
+  "grants",
+  "Turkey Hill",
+  "HVAC",
+  "committee appointments",
+  "minutes approval",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

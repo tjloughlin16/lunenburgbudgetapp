@@ -343,5 +343,146 @@
    "at": "2026-10-06T18:18:43Z",
    "cost_usd": 0.212029
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01092025-6944",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-01-09-minutes-6944.txt",
+   "path": "sources/meetings/finance-committee/2025-01-09-minutes-6944.pdf"
+  },
+  "official_sha256": "bfdfa49e02702228ab3a0e0f104b1ab196048debd1f8e4070f6e6413c1b50124",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records cover the same topics, and the vote, the health insurance range and the grant-writing follow-up line up. The one thing to check is the relay vote: the official records it as passing 4-0, while ours gives no result, and the cemetery figures and the $115,000 versus $15,000 scholarship also need a listen to the recording.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to relay agreement with timeline to the interim town manager",
+    "ours": "Relay to the interim town manager that the committee agrees with his timeline and the proposed department hearing schedule by date. — roll call taken; individual responses captioned as 'I', result not stated",
+    "official": "there was a motion by jay simeone, seconded by tanya dall to relay to carter terenzi that the committee is all in agreement with his suggested timeline",
+    "note": "Same motion, but ours records no result while the official says it passed 4-0; check the recording around t=850 for the roll call and tally, and whether Tom Gray (listed absent) was present.",
+    "t": 850
+   },
+   {
+    "kind": "caption_error",
+    "about": "Athletics scholarship donation amount",
+    "ours": "Athletics scholarship donation: $115,000",
+    "official": "a former lunenburg student awarded a 15,000 dollars scholarship to",
+    "note": "Same item; the captions likely ran 'a' or 'one' into the figure, giving $115,000 versus the official $15,000. Check the recording at t=1451 to confirm.",
+    "official_reading": "$15,000",
+    "t": 1451
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 health insurance rate estimates",
+    "ours": "FY26 health insurance rates: 12 to 15%, 12%",
+    "official": "are no estimates for health insurance rates but did say that market trends are running %12 to 15%.",
+    "note": "Both give a 12 to 15% market-trend range; the trailing '12%' in ours looks like a repeat of the same figure.",
+    "t": 916
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cemetery Commission $6,000 figure",
+    "ours": "Cemetery commission sale of lots account: $6,000, $1,800, $10,000",
+    "official": "there has been a misuse of $6,000 over an 18-month period by the cemetery commission through the sale of lot funds.",
+    "note": "The $6,000 matches, but ours lists it as an account figure along with $1,800 and $10,000, while the official records a resident's allegation of misuse and has no other amounts. Check the recording at t=209 for what $1,800 and $10,000 were and who said them.",
+    "t": 209
+   },
+   {
+    "kind": "agree",
+    "about": "Select Board follow-up on grant writing",
+    "ours": "Select board chair Caesar will follow up with the interim town manager on a process for grant writing services.",
+    "official": "chris menard will inquire with caesar nuzzolo and the select board",
+    "note": "Both record a follow-up on grant writing with the Select Board. They differ on who acts: ours has Caesar following up with the interim town manager, the official has Menard inquiring with Caesar and the Select Board. Check the recording to see who takes the action.",
+    "t": 1213
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Key dates for the budget calendar",
+    "ours": "Key dates discussed: committee report to town manager due March 31, votes by March 20, public hearing March 13 with ledger notice 10 days prior, draft budget and warrant February 13.",
+    "official": "",
+    "note": "The official minutes as given do not record these dates.",
+    "t": 463
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Out-of-cycle meeting February 25",
+    "ours": "One out-of-cycle meeting (February 25) will be needed; the chair will verify room availability.",
+    "official": "",
+    "note": "Not in the official minutes as given.",
+    "t": 569
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School department hearing March 6",
+    "ours": "School department hearing set for March 6; the superintendent said she would endeavor to meet that date.",
+    "official": "",
+    "note": "Not in the official minutes as given.",
+    "t": 636
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "January 23 meeting skipped unless needed",
+    "ours": "The January 23 meeting will be held only if something pressing comes up; otherwise skipped, next meeting February 13.",
+    "official": "",
+    "note": "Not in the official minutes as given.",
+    "t": 1595
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Documents changed to PDF before sending to Clerk",
+    "ours": "",
+    "official": "chris menard will change the documents to pdf before sending them to the clerk",
+    "note": "A decision in the official minutes that ours does not record.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Chair (unnamed, addressed as Mr manad) (chair)",
+    "official": "chair chris menard, vice chair jean russell (zoom)",
+    "note": "'Mr manad' is most likely a mishearing of Menard.",
+    "official_reading": "Chris Menard"
+   },
+   {
+    "kind": "agree",
+    "about": "Members Jay, Tanya and Jean present",
+    "ours": "Jay (member)",
+    "official": "committee member jay simeone",
+    "note": "Jay Simeone, Tanya Dall and Jean Russell (vice chair, by Zoom) appear in both records.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Caesar and Carol on the call",
+    "ours": "Caesar (select board chair (on the call)); Carol (school committee representative (on the call))",
+    "official": "",
+    "note": "The official attendee list has neither of them. The official also lists Tom Gray as absent, which ours does not mention.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment from John Bowen",
+    "ours": "",
+    "official": "john bowen, 162 highland street, reiterates a previous comment related to the cemetery commission.",
+    "note": "Our minutes do not list this public comment, which is probably the source of the cemetery figures.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:37:55Z",
+   "cost_usd": 0.233445
+  }
  }
 }

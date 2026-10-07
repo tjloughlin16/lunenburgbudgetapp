@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-08-26",
  "docid": "7364",
@@ -12,31 +12,410 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the School Committee meeting",
-   "moved_by": "Anthony Sculimbrene",
-   "seconded_by": "Mandy Gilman",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the School Committee meeting for lack of quorum, after Secretary Gilman's departure.",
+   "moved_by": "Chair Sculimbrene",
+   "seconded_by": "Clerk Gilman",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chair sculimbrene moved to adjourn the meeting of the school committee. seconded by clerk gilman. the motion passed unanimously"
-  },
-  {
-   "motion": "Adjourn the Finance Committee meeting",
-   "moved_by": "Ana Lockwood",
-   "seconded_by": "Tanya Dall",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion to adjourn the finance committee meeting. moved by: member lockwood. seconded by: member dall. the motion passed unanimously."
-  },
-  {
-   "motion": "Adjourn the Select Board meeting",
-   "moved_by": "Brian Lehtinen",
-   "seconded_by": "Glenn McLeod",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion to adjourn the select board meeting. moved by: member lehtinen. seconded by: member mcleod. roll-call vote: clerk emkey- aye; chair nuzzolo- aye; member mcleod- aye; and member lehtinen- aye."
+   "quote": "chair sculimbrene moved to adjourn the meeting of the school committee. seconded by clerk gilman. the motion passed unanimously at 9:02 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The \"Minute Approval\" section documents a Select Board vote from October 7, 2025 (approving these August 26 minutes), which occurred after this meeting and is excluded. Also: School Committee Secretary Mandy Gilman announced departure before the motion was made, making the sequence in the motion record ambiguous, though minutes state the outcome.",
- "cost_usd": 0.1260334
+ "note": "Digital text, not a scan; no page is unreadable. This is a Tri-Board document covering three bodies; only School Committee votes are listed. The Finance Committee and Select Board adjournment and minutes-approval motions are excluded because they are not School Committee votes. The School Committee has one recorded vote, its adjournment at 9:02 p.m. for lack of quorum. The minutes record no School Committee motion at the 9:46 p.m. adjournment, though the text says the chairs of each board moved to adjourn; the text also says Sculimbrene and Yapp remained, which is two members, below quorum. Gilman is called Secretary in the attendance list and Clerk in the motion; both are printed as such. The Select Board header line is ambiguous about McLeod, but a later line records him as present. The minutes contain no public comment section; Mary Foyle (PEC) spoke during the health insurance presentation and is listed as an attendee, not a public commenter. Mary Foyle's statement is quoted in the attendee list. Figures are as printed. Several passages are garbled ('citing family obligations).'), and the 'Health insurance' paragraph has a stray fragment.",
+ "cost_usd": 0.02037867,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairperson, School Committee",
+   "status": "present",
+   "quote": "school committee members present: chairperson anthony sculimbrene, vice chairperson laura brzozoski"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chairperson, School Committee (left meeting at 8:29 p.m.)",
+   "status": "present",
+   "quote": "chairperson laura brzozoski (left meeting at 8:29 p.m.)"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Secretary, School Committee (left meeting at 9:02 p.m.)",
+   "status": "present",
+   "quote": "secretary mandy gilman (left meeting at 9:02 p.m.)"
+  },
+  {
+   "name": "George Yapp",
+   "role": "Member, School Committee",
+   "status": "present",
+   "quote": "mr. sculimbrene and mr. yapp remained for the remainder of the meeting."
+  },
+  {
+   "name": "Emily Young",
+   "role": "Member, School Committee",
+   "status": "absent",
+   "quote": "announced that member emily young would be absent."
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair, Select Board",
+   "status": "present",
+   "quote": "chair caesar nuzzolo, clerk renee emkey (via zoom)"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk, Select Board",
+   "status": "remote",
+   "quote": "renee emkey (via zoom), glenn mcleod and brian lehtinen also present."
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member, Select Board",
+   "status": "present",
+   "quote": "renee emkey (via zoom), glenn mcleod and brian lehtinen also present."
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member, Select Board",
+   "status": "present",
+   "quote": "renee emkey (via zoom), glenn mcleod and brian lehtinen also present."
+  },
+  {
+   "name": "Amada Moore",
+   "role": "Vice Chair, Select Board",
+   "status": "absent",
+   "quote": "member glenn mcleod (absent- vice chair amada moore)"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Chair, Finance Committee",
+   "status": "present",
+   "quote": "chair chris menard, clerk tom gray, member tanya dall, member ana lockwood"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk, Finance Committee",
+   "status": "present",
+   "quote": "chair chris menard, clerk tom gray, member tanya dall, member ana lockwood"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Member, Finance Committee",
+   "status": "present",
+   "quote": "chair chris menard, clerk tom gray, member tanya dall, member ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member, Finance Committee",
+   "status": "present",
+   "quote": "chair chris menard, clerk tom gray, member tanya dall, member ana lockwood"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair, Finance Committee",
+   "status": "absent",
+   "quote": "absent- vice chair jean russell, member jay simeone, and member mike rupp"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member, Finance Committee",
+   "status": "absent",
+   "quote": "absent- vice chair jean russell, member jay simeone, and member mike rupp"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Member, Finance Committee",
+   "status": "absent",
+   "quote": "absent- vice chair jean russell, member jay simeone, and member mike rupp"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Tri-Board Moderator, Town Moderator",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:00 pm by tim murphy, who served as moderator."
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment, superintendent dr. jodi fortuna,"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment, superintendent dr. jodi fortuna,"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "finance director ezequiel ayala, and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "School Business Manager",
+   "status": "present",
+   "quote": "finance director ezequiel ayala, and school business manager christopher mcnamara"
+  },
+  {
+   "name": "Debra Goodsell",
+   "role": "Adult Activity Center Director",
+   "status": "present",
+   "quote": "debra goodsell, adult activity center director, presented the preliminary budget for the lunenburg adult activity center."
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director of the Lunenburg Public Library",
+   "status": "present",
+   "quote": "muir haman, director of the lunenburg public library, presented the preliminary budget for the library."
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "Chair of the PEC (Public Employee Committee)",
+   "status": "present",
+   "quote": "mary foyle, chair of the pec, stated that it been four years since there had been negotiations"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tabled review and approval of the July 8, 2025 minutes; each board or committee to approve them at its own upcoming meeting when it has full attendance.",
+   "quote": "it was agreed that each board or committee would review and approve these minutes at their respective upcoming meetings when they had full attendance."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Council on Aging: FY27 budget increase",
+   "what_was_recorded": "Ms. Goodsell estimated a total FY27 budgetary increase for the Adult Activity Center, including proposed staffing changes.",
+   "quote": "she estimated a total budgetary increase of $8,000, which includes these changes.",
+   "figures_as_printed": [
+    "$8,000"
+   ]
+  },
+  {
+   "topic": "Council on Aging: outside funding",
+   "what_was_recorded": "Outside funding sources cited for the Adult Activity Center: Eagle House supporter donations and a state formula grant based on the senior population.",
+   "quote": "$10,000 annually from the eagle house supporters, and a state formula grant of $46,800 based on the senior population.",
+   "figures_as_printed": [
+    "$10,000",
+    "$46,800"
+   ]
+  },
+  {
+   "topic": "Library: FY27 budget request",
+   "what_was_recorded": "The Library's FY27 budget request, covering salaries, materials, utilities and other core services.",
+   "quote": "the library's fy27 budget request was $671,142, which includes salaries, materials, utilities, and other core services.",
+   "figures_as_printed": [
+    "$671,142"
+   ]
+  },
+  {
+   "topic": "Library: CWMARS membership assessment",
+   "what_was_recorded": "The annual CWMARS network assessment is expected to rise to the full membership fee in FY27.",
+   "quote": "the annual assessment for this membership is expected to increase to the full membership fee of $8,000 in fy27.",
+   "figures_as_printed": [
+    "$8,000"
+   ]
+  },
+  {
+   "topic": "Health insurance: FY26 budget",
+   "what_was_recorded": "The FY26 town health insurance budget, which excludes school active employees and covers town actives and retirees.",
+   "quote": "she explained that the fy26 health insurance budget is $3,298,520, which represents 7% of the total budget.",
+   "figures_as_printed": [
+    "$3,298,520",
+    "7%"
+   ]
+  },
+  {
+   "topic": "Health insurance: premium increase",
+   "what_was_recorded": "Recent premium increases were reported, with FY26 premiums up 14.8%.",
+   "quote": "recent years have seen significant increases in premiums, with fy26 seeing a 14.8% increase.",
+   "figures_as_printed": [
+    "14.8%"
+   ]
+  },
+  {
+   "topic": "Health insurance: projected increase",
+   "what_was_recorded": "A projected cost increase over the next three fiscal years if current trends continue was presented and discussed.",
+   "quote": "ms. warren-dyment projected a potential over a million-dollar increase in health insurance costs over the next three fiscal years if current trends continue.",
+   "figures_as_printed": [
+    "over a million-dollar increase"
+   ]
+  },
+  {
+   "topic": "Health Services budget",
+   "what_was_recorded": "The FY26 Health Services (Board of Health) budget was reported.",
+   "quote": "with the health services budget at $126,000 for fy26.",
+   "figures_as_printed": [
+    "$126,000"
+   ]
+  },
+  {
+   "topic": "Health Services: preliminary increase",
+   "what_was_recorded": "The preliminary Health Services projection is a 6.51% increase, including a 10% assumed increase for Nashoba boards and nursing services.",
+   "quote": "the preliminary budget projections show a relatively level budget with a 6.51% increase or $8,200.",
+   "figures_as_printed": [
+    "6.51%",
+    "$8,200",
+    "10%"
+   ]
+  },
+  {
+   "topic": "Veterans Services: stipend and budget",
+   "what_was_recorded": "The VSO stipend and the proposed flat overall Veterans Services budget were reported.",
+   "quote": "receiving a stipend of $11,000 per year. ms. warren-dyment proposed keeping the overall budget flat at $77,000",
+   "figures_as_printed": [
+    "$11,000",
+    "$77,000"
+   ]
+  },
+  {
+   "topic": "Veterans Services: state reimbursement",
+   "what_was_recorded": "Chapter 115 benefits are paid by the town first and reimbursed by the state at a stated share.",
+   "quote": "the town pays out all benefits first and is then reimbursed 75% by the state.",
+   "figures_as_printed": [
+    "75%"
+   ]
+  },
+  {
+   "topic": "Town band concerts",
+   "what_was_recorded": "Band concert funding has been level for several years, with members paid per performance.",
+   "quote": "funded at $6,000 for several years, with band members paid $40 per performance.",
+   "figures_as_printed": [
+    "$6,000",
+    "$40"
+   ]
+  },
+  {
+   "topic": "Historical Commission appropriation",
+   "what_was_recorded": "The Historical Commission appropriation was reduced this fiscal year and is not intended to change.",
+   "quote": "ms. warren-dyment stated that the budget had been reduced from $3,000 to $1,000 this fiscal year",
+   "figures_as_printed": [
+    "$3,000",
+    "$1,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "the meeting was called to order at 7:00 pm by tim murphy, who served as moderator.",
+   "tags": [
+    "tri-board",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Preliminary budget: Council on Aging (Adult Activity Center)",
+   "resolution": "presented; discussed",
+   "quote": "debra goodsell, adult activity center director, presented the preliminary budget for the lunenburg adult activity center.",
+   "tags": [
+    "FY27 budget",
+    "council on aging",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Preliminary budget: Library",
+   "resolution": "presented; discussed",
+   "quote": "muir haman, director of the lunenburg public library, presented the preliminary budget for the library.",
+   "tags": [
+    "FY27 budget",
+    "library",
+    "staffing",
+    "state certification"
+   ]
+  },
+  {
+   "topic": "Health insurance costs",
+   "resolution": "presented; discussed, no action",
+   "quote": "town manager jennifer warren-dyment presented an overview of the town's health insurance costs.",
+   "tags": [
+    "health insurance",
+    "PEC",
+    "cost containment",
+    "opt-out"
+   ]
+  },
+  {
+   "topic": "Preliminary budget: Health Services (Board of Health)",
+   "resolution": "presented",
+   "quote": "ms. warren-dyment presented the preliminary budget for health services (board of health).",
+   "tags": [
+    "FY27 budget",
+    "board of health"
+   ]
+  },
+  {
+   "topic": "Preliminary budget: Veterans Services",
+   "resolution": "presented; discussed",
+   "quote": "ms. warren-dyment presented the veterans services budget, explaining that massachusetts state law requires all municipalities to administer chapter 115 benefits",
+   "tags": [
+    "veterans services",
+    "chapter 115"
+   ]
+  },
+  {
+   "topic": "Preliminary budget: town band concerts",
+   "resolution": "presented; questions raised, follow-up agreed",
+   "quote": "ms. warren-dyment briefly presented on the town band concerts",
+   "tags": [
+    "town band",
+    "culture and recreation"
+   ]
+  },
+  {
+   "topic": "Preliminary budget: Historical Commission",
+   "resolution": "presented",
+   "quote": "ms. warren-dyment stated that the budget had been reduced from $3,000 to $1,000 this fiscal year",
+   "tags": [
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Review and approval of July 8, 2025 minutes",
+   "resolution": "tabled",
+   "quote": "the committee decided to table the review and approval of the july 8, 2025 minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Important dates and upcoming meetings",
+   "resolution": "no action",
+   "quote": "the upcoming tri-board meeting dates were noted as listed in the agenda.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "School Committee adjourned at 9:02 p.m. for lack of quorum; other boards adjourned at 9:46 p.m.",
+   "quote": "at 9:46 pm, the chairs of each board moved to adjourn their respective meetings.",
+   "tags": [
+    "adjournment",
+    "quorum"
+   ]
+  }
+ ],
+ "tags": [
+  "tri-board",
+  "school committee",
+  "FY27 budget",
+  "preliminary budget",
+  "health insurance",
+  "library",
+  "council on aging",
+  "board of health",
+  "veterans services",
+  "town band",
+  "historical commission",
+  "minutes approval",
+  "adjournment",
+  "quorum"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -354,5 +354,226 @@
    "at": "2026-10-06T17:57:29Z",
    "cost_usd": 0.212163
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03272025-7124",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-03-27-minutes-7124.txt",
+   "path": "sources/meetings/cemetery-commission/2025-03-27-minutes-7124.pdf"
+  },
+  "official_sha256": "679f68123c6aa35d80cc20d826d75244877182312877aa35e82a6a83b706946f",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both votes and on the main figures ($50,000 back-lot, $50,000 road repair, $38K earmark, $30K wall). They differ on the earmark totals, on who owns the plot-survey follow-up, and on several details only one side records. Check the earmark figures first: ours say 197,000 and $285,000, the official says $190K and $280K, and the official's own parts do not add to its total.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 1,
+   "discrepancy": 6,
+   "only_in_ours": 4,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: North Cemetery back-lot expansion, $50K",
+    "ours": "Go forward with the North Cemetery back lot expansion design, the fifty thousand dollar capital plan request. — passed (voice vote, all in favor)",
+    "official": "chair nancy foss yasko made a motion to start the $50k - back-lot project - vice chair david doreen seconded; the commission voted all in favor.",
+    "note": "Same motion, same $50,000, same unanimous outcome.",
+    "t": 2519
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: special projects warrant article for road repair, $50K",
+    "ours": "Go forward with the special projects warrant article for cemetery road repairs. — passed (voice vote, all in favor)",
+    "official": "re-motion to go forward with $50k special project article, chair nancy foss yasko motioned, vice chair david doreen seconded, aif.",
+    "note": "Same motion and outcome; the official calls it a re-motion and ours has no mention of that.",
+    "t": 2852
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: North Cemetery expansion $50,000",
+    "ours": "North Cemetery expansion design: $50,000, 50 grand",
+    "official": "$50k item for expansion of north cemetery back-lot",
+    "note": "Same amount.",
+    "t": 542
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: special projects road repair $50,000",
+    "ours": "Special projects: cemetery road repairs: $50,000",
+    "official": "$50k warrant article \"special projects\" for road repair",
+    "note": "Same amount.",
+    "t": 2704
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: grave marker restoration $38K",
+    "ours": "Earmark for gravestone restoration, walls and turf: 38,000, 300,000, 197,000, 50k, $285,000, $10,000",
+    "official": "leominster monument came up with $38k.",
+    "note": "The $38,000 figure matches.",
+    "t": 3107
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Earmark figures: second wall quote and total",
+    "ours": "Earmark for gravestone restoration, walls and turf: 38,000, 300,000, 197,000, 50k, $285,000, $10,000",
+    "official": "$300k, another $190k, also the turf restoration project which was another $50k for a total of $280k in earmarking with representative michael kushmerek.",
+    "note": "Ours has 197,000 and $285,000 where the official has $190K and $280K; check the recording near t=3107 for the spoken digits. The official's own parts ($300K + $190K + $50K) do not add to its stated $280K total, so the underlying quotes need checking too.",
+    "t": 3107
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$10,000 figure in the earmark discussion",
+    "ours": "$10,000",
+    "official": "",
+    "note": "Ours has a $10,000 figure in the earmark discussion that the official minutes do not print.",
+    "t": 3107
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: wall at hedge opening about $30K",
+    "ours": "Wall along hedge area: 30, 50,000",
+    "official": "chair nancy foss yasko mentioned the open space in hedges and putting a wall in at 'x' amount of feet. around $30k.",
+    "note": "The $30K estimate matches; the 50,000 in ours has no counterpart in the official minutes.",
+    "t": 3378
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fireproof locking file cabinet $1,000",
+    "ours": "Fireproof locking file cabinet: $1,000",
+    "official": "",
+    "note": "The official minutes print no dollar figure for the cabinet; they record only that a quote will be obtained.",
+    "t": 3019
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Grave plot price 600 and 800",
+    "ours": "Grave plot price: 600, 800",
+    "official": "",
+    "note": "The official minutes print no plot price; they say only that moving a plot would cost the same as a burial.",
+    "t": 3653
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Lot sales fund balance $96,000, 1.8%, $1,800",
+    "ours": "Lot sales fund balance: $96,000, 1.8%, $1,800",
+    "official": "",
+    "note": "The official minutes do not mention the lot sales fund balance.",
+    "t": 3798
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Cost of moving a plot for a family",
+    "ours": "",
+    "official": "dpw director bill bernard responded that it would be the cost of a burial.",
+    "note": "Ours does not record this answer.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Compact backhoe in FY2026 capital plan",
+    "ours": "",
+    "official": "put in for a compact backhoe - the primarily use will be at the cemeteries for digging graves.",
+    "note": "Ours has no mention of the backhoe item.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Plot availability follow-up: who does what",
+    "ours": "The DPW director is to estimate the cost of having someone survey and mark available plots, to be brought back to the commission.",
+    "official": "bill stated that we currently have no funds for this.",
+    "note": "Ours has the DPW director estimating a survey cost; the official says there are no funds and assigns no such estimate. Check the recording near t=1848 for whether an estimate was assigned.",
+    "t": 1848
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Plot data screenshots and who sends them",
+    "ours": "Plot availability data and screenshots will be sent to the group and filed with the minutes; a slide deck of projects, warrant articles and plot data was suggested.",
+    "official": "clerk mike clark responded that he has done screen shots of the cemetery and report exports from cims and will put them together for the next meeting.",
+    "note": "Ours says the data is sent to the group and filed with the minutes and mentions a slide deck. The official says the clerk will assemble it for the next meeting. Check the recording near t=2664.",
+    "t": 2664
+   },
+   {
+    "kind": "discrepancy",
+    "about": "File cabinet action: who owns it",
+    "ours": "The commission will look into the cost of a fireproof locking cabinet for records, to be discussed later.",
+    "official": "vice chair david dorren took the action to quote a locked file cabinet.",
+    "note": "The official assigns it to the Vice Chair and says a locked cabinet; ours says the commission as a whole and specifies fireproof. Check the recording near t=3019.",
+    "t": 3019
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Next meeting and pre-meeting with Bill",
+    "ours": "Next meeting set for April 24th; a member will meet with Bill beforehand.",
+    "official": "clerk mike clark requested to meet with dpw director bill bernard and review the data exported from cims and the presentation format.",
+    "note": "Ours gives a next-meeting date of April 24th; the official extract has none. The meeting with Bill matches in substance. Check the date against the official minutes' full text or agenda.",
+    "t": 3694
+   },
+   {
+    "kind": "agree",
+    "about": "Chair to ask Town Manager about grants",
+    "ours": "The chair will ask the town manager about grant options for the hedge area.",
+    "official": "chair nancy foss yasko took an action to ask the town manager about this.",
+    "note": "Same action by the chair; ours ties it to the hedge area and the official's quote refers to grants for cemetery work generally.",
+    "t": 3589
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Back-lot expansion to Town Meeting, then design and contract",
+    "ours": "",
+    "official": "chair nancy foss yasko confirmed that the dpw director wants to take the $50k request forward to town meeting this year.",
+    "note": "Ours does not record the Town Meeting plan or the agreement to move as quickly as possible.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vice Chair request for a report of available plots",
+    "ours": "",
+    "official": "vice chair david dorren requested a report of plots with what's available and what's not.",
+    "note": "Ours does not record this request.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by John Bowen",
+    "ours": "",
+    "official": "john bowen - 163 highland street - received an email from laurie trahan's office on handling federal documents. along with other comments.",
+    "note": "Ours lists no public commenter and no public comment.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Vice Chair David",
+    "ours": "Dave (member)",
+    "official": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard",
+    "note": "Ours heard Dave, while the official reads David Doreen (it also prints Dorren in places); our role is also unrecorded as vice chair.",
+    "official_reading": "David Doreen",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Bill as member versus DPW director",
+    "ours": "Bill (member)",
+    "official": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard",
+    "note": "Ours lists Bill as a member and the DPW director as a separate presenter; the official has one person, Bill Bernard, the DPW director. Check whether our attendee list double counts him.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: chair and Mike",
+    "ours": "the chair (Madam Chair) (chair); Mike (member)",
+    "official": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard",
+    "note": "The chair and Mike (the clerk, Mike Clark) match; ours does not name the chair or give Mike's role.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:25:59Z",
+   "cost_usd": 0.3343
+  }
  }
 }

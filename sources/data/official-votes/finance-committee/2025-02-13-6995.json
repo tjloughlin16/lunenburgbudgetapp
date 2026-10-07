@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-02-13",
  "docid": "6995",
@@ -12,31 +12,319 @@
  },
  "votes": [
   {
-   "motion": "Transfer $58,320 from the reserve fund to the school department contracted services and $7,254.65 from the reserve fund to the school department computers purchase and lease line items",
+   "motion": "Transfer $58,320 from the reserve fund to the school department contracted services and $7,254.65 from the reserve fund to the school department computers purchase and lease line items.",
    "moved_by": "Tanya Dall",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "there was a motion to transfer $58,320 from the reserve fund to the school department contracted services and $7,254.65 from the reserve fund to the school department computers purchase and lease line items by tanya dall, seconded by jay simeone. roll call vote. jean russell aye, tanya dall aye, jay simeone aye, chris menard aye."
+   "quote": "there was a motion to transfer $58,320 from the reserve fund to the school department contracted services and $7,254.65"
   },
   {
-   "motion": "Approve the minutes from January 9th",
+   "motion": "Approve the minutes from January 9th.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tanya Dall",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from january 9th by jay simeone, seconded by tanya dall. roll call vote. jean russell aye, tanya dall aye, jay simeone aye, chris menard aye."
+   "quote": "there was a motion to approve the minutes from january 9th by jay simeone"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tanya Dall",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "there was a motion to adjourn by jay simeone, seconded by tanya dall. roll call vote. jean russell aye, tanya dall aye, jay simeone aye, chris menard aye."
+   "quote": "there was a motion to adjourn by jay simeone, seconded by tanya dall. roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0694074
+ "note": "Text extraction, not a scan. Several ligatures (ﬁ, ﬂ) were dropped or garbled in the extracted text, so quotes were chosen to avoid them. The minutes print a name spelled two ways for the school official (\"Dr. Kate Burham\" and \"Dr Burnham\"); both recorded as printed. Votes are recorded as roll calls with named ayes, so outcomes are counted from those ayes (4-0); the minutes do not print the word \"passed.\" Public comment: the minutes say there were no comments from the public, twice; no speakers. Carter Terenzini (Interim Town Manager) is named only as the author of a memo and was not listed as an attendee. Ezequiel Ayala and Dr Kate Burnham have no printed role or attendance status. Mason (IT staff) is mentioned but did not take part.",
+ "cost_usd": 0.01693857,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member tanya dall, committee member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member tanya dall, committee member jay simeone"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member tanya dall, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member tanya dall, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent member: clerk tom gray"
+  },
+  {
+   "name": "Susan Gilson",
+   "role": "Director of Administration and Finance",
+   "status": "present",
+   "quote": "susan gilson, director of administration and finance, was present to"
+  },
+  {
+   "name": "Dr Kate Burnham",
+   "role": "not stated",
+   "status": "present",
+   "quote": "additionally, dr burnham investigated arpa funds but that wasn"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jennifer warren-dyment, town manager, was present and states she has"
+  },
+  {
+   "name": "Casey Chisholm",
+   "role": "Director of IT",
+   "status": "present",
+   "quote": "the presentation was provided by the director of it, casey chisholm"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "ezequiel ayala is currently testing the sas cloud, and the environment has been built."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The FY26 Capital agenda topic was moved to the February 27th meeting.",
+   "quote": "this agenda topic will be discussed at the february 27th meeting."
+  },
+  {
+   "decision": "The Town Manager anticipates presenting the full budget at the February 27th Finance Committee meeting, and presented no budget on February 13.",
+   "quote": "jennifer warren-dyment anticipates presenting the full budget at the next"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "911 cabling compliance system, total cost",
+   "what_was_recorded": "The school department reported the total cost of the 911 cabling system for state and federal compliance.",
+   "figures_as_printed": [
+    "$65,574"
+   ],
+   "quote": "the total cost for the system is $65,574."
+  },
+  {
+   "topic": "Additional re-cabling cost not in original budget",
+   "what_was_recorded": "The additional re-cabling cost was not in the original school budget, though the system itself had been budgeted for.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "$60,000 was not in the original budget."
+  },
+  {
+   "topic": "Original and state bid list quotes for cabling",
+   "what_was_recorded": "The original vendor quote was higher than a second quote obtained from the state bid list.",
+   "figures_as_printed": [
+    "$106,000",
+    "$65,000"
+   ],
+   "quote": "company was $106,000. after receiving that quote, they reviewed the state"
+  },
+  {
+   "topic": "Reserve fund balance and expenditures",
+   "what_was_recorded": "The Finance Director confirmed the reserve fund balance, the amounts spent from it on the town manager search and cabling, and the remaining balance.",
+   "figures_as_printed": [
+    "$200,000",
+    "$15,000",
+    "$65,000",
+    "$120,000"
+   ],
+   "quote": "this leaves $120,000 in the reserve fund for the rest of the year."
+  },
+  {
+   "topic": "Internet speed upgrade for DPW",
+   "what_was_recorded": "IT reported that increasing DPW's internet connection would add a recurring annual cost.",
+   "figures_as_printed": [
+    "$1,000 per year"
+   ],
+   "quote": "connection, it would cost an additional $1,000 per year."
+  },
+  {
+   "topic": "ARPA funds for cabling",
+   "what_was_recorded": "ARPA funds were investigated for the cabling work and were not an option; the early-year funds used for the work have since been spent on unbudgeted costs. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "additionally, dr burnham investigated arpa funds but that wasn"
+  },
+  {
+   "topic": "Revenue estimates and Prop 2 1/2 calculation",
+   "what_was_recorded": "A mathematical error meant the allowed Prop 2 1/2 total was not applied to the full prior-year levy; local receipts were estimated on an average and the Town Manager wants a deeper review. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "in order to prepare a budget, there needs to be a review of the revenue estimates."
+  },
+  {
+   "topic": "Fiber network versus Comcast fees",
+   "what_was_recorded": "Committee asked about Comcast fees versus a fiber network; IT said grant funding options could be investigated and more cost analysis is needed. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "grant funding options that could be investigated, and more cost analysis would be needed."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reserve fund transfer to school department contracted services and computers purchase and lease line items, 911 cabling costs",
+   "amount_as_printed": "$58,320 and $7,254.65",
+   "outcome": "passed 4-0",
+   "quote": "there was a motion to transfer $58,320 from the reserve fund to the school department contracted services and $7,254.65"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; candidates for two open seats noted, budget hearings scheduled",
+   "quote": "chris menard states there are 4 candidates who are interested in being on the",
+   "tags": [
+    "committee membership",
+    "budget season"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no comments from the public",
+   "quote": "there are no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director reports",
+   "resolution": "no reports",
+   "quote": "there were no reports from the town manager or the finance director.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Reserve account transfer request, school department, 911 cabling",
+   "resolution": "approved 4-0 by roll call: transfers of $58,320 and $7,254.65 from reserve fund",
+   "quote": "reserve account transfer request by school department for 911 cabling costs",
+   "tags": [
+    "reserve fund",
+    "school department",
+    "911 cabling",
+    "transfer"
+   ]
+  },
+  {
+   "topic": "Preliminary budget",
+   "resolution": "no budget presented; full budget expected February 27",
+   "quote": "at this time, she will not be presenting",
+   "tags": [
+    "FY26 budget",
+    "revenue estimates",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "FY26 Capital",
+   "resolution": "deferred to February 27 meeting",
+   "quote": "this agenda topic will be discussed at the february 27th meeting.",
+   "tags": [
+    "capital",
+    "FY26 budget"
+   ]
+  },
+  {
+   "topic": "Information Technology Department",
+   "resolution": "presentation received; no action; discussion of MUNIS, Office 365, fiber",
+   "quote": "the presentation was provided by the director of it, casey chisholm",
+   "tags": [
+    "information technology",
+    "MUNIS",
+    "software"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "none",
+   "quote": "there is no new business.",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "Old business: FY26 budget discussions, warrant articles, Budget Task Force recommendations",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "a. fy26 budget discussions",
+   "tags": [
+    "FY26 budget",
+    "warrant articles",
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Minutes of January 9",
+   "resolution": "approved 4-0 by roll call",
+   "quote": "there was a motion to approve the minutes from january 9th by jay simeone",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted: no Finance Committee representative on Master Plan Steering Committee",
+   "quote": "currently there is no representative from the finance committee on the master plan steering committee.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Actions and topics for future meetings",
+   "resolution": "none",
+   "quote": "there are no additional topics or actions for future meetings.",
+   "tags": [
+    "future meetings"
+   ]
+  },
+  {
+   "topic": "Important dates and upcoming meetings",
+   "resolution": "listed; no action",
+   "quote": "thursday 3/13/2025 (public hearing)",
+   "tags": [
+    "schedule",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 by roll call at 7:50 PM",
+   "quote": "the meeting closed at 7:50 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "reserve fund transfer",
+  "school department",
+  "911 cabling",
+  "FY26 budget",
+  "preliminary budget",
+  "town manager transition",
+  "information technology",
+  "MUNIS",
+  "revenue estimates",
+  "Prop 2 1/2",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

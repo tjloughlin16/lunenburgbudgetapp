@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2025-02-20",
  "docid": "7049",
@@ -12,6 +12,200 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes contain director and trustee reports with program updates, budget discussions, and event planning, but no formal motions or voting outcomes.",
- "cost_usd": 0.06649440000000001
+ "note": "The text is a packet of the Library Director's Report and two trustee reports (extracted pages 4-10). Pages 1-3 have no text, and the extract contains no call to order, attendance roll, motions, votes, public comment or board decisions, so none are recorded. Attendance status for everyone named is not stated. The ITM and other staff and program presenters named in the reports are mentioned, not shown as taking part, so they are not listed as attendees. Dollar figures are kept as printed; in the FY25 table the $ sign follows the number.",
+ "cost_usd": 0.014887770000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lydia Paolilli",
+   "role": "Library Director (author of the Director's Report, signed \"Respectfully submitted\")",
+   "status": "not stated",
+   "quote": "respectfully submitted, lydia paolilli"
+  },
+  {
+   "name": "Debbie Laffond",
+   "role": "Children's Services Librarian (signed the Children's Services Trustee Report)",
+   "status": "not stated",
+   "quote": "debbie laffond, children's services librarian"
+  },
+  {
+   "name": "Joslyn Davis",
+   "role": "Library Assistant, Children's Area (signed the Children's Services Trustee Report)",
+   "status": "not stated",
+   "quote": "joslyn davis, library assistant, children's area"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY26 library budget recommendation",
+   "what_was_recorded": "ITM Carter Terenzini made a final recommendation of $625,000 for the library budget, including 100 floating hours for staff illness coverage and a 10% increase to staff salaries.",
+   "figures_as_printed": [
+    "$625,000",
+    "100 floating hours",
+    "10%"
+   ],
+   "quote": "he made a final recommendation of $625,000 for the library budget. this recommendation included funding for 100 floating hours"
+  },
+  {
+   "topic": "Staff salary increase",
+   "what_was_recorded": "The recommended library budget includes a 10% increase to staff salaries, described as required by recent negotiations and updates to the Collective Bargaining Agreement and Salary Admin Plan.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "it also includes a 10% increase to staff salaries as required by recent negotiations"
+  },
+  {
+   "topic": "FY25 library budget expenditure totals",
+   "what_was_recorded": "The FY25 budget table prints a total budget of 592,063, expended 305,475, and 52% expended.",
+   "figures_as_printed": [
+    "592,063$",
+    "305,475$",
+    "52%"
+   ],
+   "quote": "totals 592,063$ 305,475$ 52%"
+  },
+  {
+   "topic": "CWMARS network line",
+   "what_was_recorded": "The CWMARS NETWORK line is printed with its full budget expended.",
+   "figures_as_printed": [
+    "22,630$",
+    "22,630$",
+    "100%"
+   ],
+   "quote": "cwmars network 22,630$ 22,630$ 100%"
+  },
+  {
+   "topic": "Library material line",
+   "what_was_recorded": "The LIBRARY MATERIAL line is printed with 94,000 budgeted and 18,676 expended, 20% expended.",
+   "figures_as_printed": [
+    "94,000$",
+    "18,676$",
+    "20%"
+   ],
+   "quote": "library material 94,000$ 18,676$ 20%"
+  },
+  {
+   "topic": "Adult programs financial report",
+   "what_was_recorded": "The adult programs grand total is printed as $14,600 with 58% spent, 15% encumbered and 27% remaining, as of 2/18/2025.",
+   "figures_as_printed": [
+    "$14,600",
+    "58%",
+    "15%",
+    "27%"
+   ],
+   "quote": "grand total $14,600 58% 15% 27%"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY25 and FY26 budget update",
+   "resolution": "reported, no action recorded",
+   "quote": "i discussed the library budget a number of times with itm carter terenzini",
+   "tags": [
+    "budget",
+    "FY26 budget",
+    "FY25 budget"
+   ]
+  },
+  {
+   "topic": "Staff update and collaboration",
+   "resolution": "reported, no action recorded",
+   "quote": "deb goodsell, angela clement, michelle belleza and i are planning to have monthly meetings",
+   "tags": [
+    "staff",
+    "collaboration"
+   ]
+  },
+  {
+   "topic": "Renovation progress",
+   "resolution": "reported, no action recorded",
+   "quote": "the renovation is well on its way toward completion.",
+   "tags": [
+    "renovation",
+    "building"
+   ]
+  },
+  {
+   "topic": "Programs",
+   "resolution": "reported, no action recorded",
+   "quote": "jana and i met to discuss ideas for our poetry month programming",
+   "tags": [
+    "programs",
+    "poetry month"
+   ]
+  },
+  {
+   "topic": "Outreach",
+   "resolution": "reported, no action recorded",
+   "quote": "will be delivering a intro to libby workshop 3/19 at laac.",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Building and maintenance",
+   "resolution": "reported, no action recorded",
+   "quote": "we are anticipating the conclusion of the renovation in march.",
+   "tags": [
+    "building",
+    "renovation"
+   ]
+  },
+  {
+   "topic": "Technology",
+   "resolution": "reported, no action recorded",
+   "quote": "two of the newest batch of public access computers needed hard drive replacements",
+   "tags": [
+    "technology",
+    "public access computers"
+   ]
+  },
+  {
+   "topic": "Children's Services trustee report",
+   "resolution": "reported, no action recorded",
+   "quote": "little listeners storytime 3 131",
+   "tags": [
+    "children's services",
+    "programs",
+    "statistics"
+   ]
+  },
+  {
+   "topic": "Adult Services trustee report",
+   "resolution": "reported, no action recorded",
+   "quote": "january started with another music clinic and performance workshop with local music teacher jason graham",
+   "tags": [
+    "adult services",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Recurring programs and programming financial report",
+   "resolution": "reported, no action recorded",
+   "quote": "adult programs as of 2/18/2025",
+   "tags": [
+    "adult programs",
+    "book clubs",
+    "budget"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "director's report",
+  "budget",
+  "FY26 budget",
+  "staff",
+  "renovation",
+  "children's services",
+  "adult services",
+  "programs",
+  "technology",
+  "outreach"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2025-05-22",
  "docid": "7205",
@@ -12,46 +12,162 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from April 24, 2025",
+   "motion": "Approve the minutes of the April 24, 2025 meeting.",
    "moved_by": "Mike Clark",
    "seconded_by": "Donna Landry",
-   "outcome": "passed",
+   "outcome": "AIF (as printed; not expanded in minutes)",
    "procedural": true,
    "quote": "mike clark made a motion to approve the minutes of april 24, 2025, donna landry seconded - aif"
   },
   {
-   "motion": "Mike Clark be chair",
+   "motion": "Elect Mike Clark as Chair.",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "vice chair david dorren motioned for mike clark to be chair, donna landry seconded, roll call: mike clark aye, david dorren aye, donna landry aye"
+   "outcome": "passed (roll call: Mike Clark, David Dorren and Donna Landry each aye)",
+   "procedural": false,
+   "quote": "vice chair david dorren motioned for mike clark to be chair, donna landry seconded"
   },
   {
-   "motion": "David Dorren be Vice Chair",
+   "motion": "Elect David Dorren to the role of Vice Chair.",
    "moved_by": "Mike Clerk",
    "seconded_by": "Donna Landry",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "mike clerk motioned, for david dorren to take the roll of vice chair, donna landry seconded, roll call: mike clark aye, david dorren aye, donna landry aye"
+   "outcome": "passed (roll call: Mike Clark, David Dorren and Donna Landry each aye)",
+   "procedural": false,
+   "quote": "mike clerk motioned, for david dorren to take the roll of vice chair, donna landry seconded"
   },
   {
-   "motion": "Donna Landry be Clerk",
+   "motion": "Elect Donna Landry to the role of Clerk.",
    "moved_by": "David Dorren",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "david dorren motioned for donna landry to take the roll of clerk, mike clark, roll call: mike clark ayes, david dorren aye, donna landry aye"
+   "seconded_by": "",
+   "outcome": "passed (roll call: Mike Clark, David Dorren and Donna Landry each aye)",
+   "procedural": false,
+   "quote": "david dorren motioned for donna landry to take the roll of clerk, mike clark, roll call"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 9:16.",
    "moved_by": "David Dorren",
    "seconded_by": "Mike Clark",
-   "outcome": "passed",
+   "outcome": "AIF (as printed; not expanded in minutes)",
    "procedural": true,
-   "quote": "9:16 vice chair david dorren motioned to adjourn, chair mike clark seconded, voted aif"
+   "quote": "vice chair david dorren motioned to adjourn, chair mike clark seconded, voted aif"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Vote 3 uses the name as printed in the motion text (\"Mike Clerk motioned\"), which appears to be a typo for Mike Clark; the roll call in the same vote shows \"Mike Clark aye\". Vote 4's seconded_by is not clearly stated in the incomplete sentence.",
- "cost_usd": 0.09183540000000001
+ "note": "Text is a clean digital extract, not a scan. Votes are recorded as \"AIF\" (printed abbreviation, not expanded), so outcomes are kept as printed rather than inferred. The reorganization has three roll-call motions, each with a printed result of three ayes. Name spellings are inconsistent in the minutes: \"David Doreen\" in the attendance list and \"David Dorren\" in the signature block and motions; \"Mike Clerk\" appears once as a mover. The attendance list gives Mike Clark as Clerk, but he is elected Chair in the reorganization. The third reorganization motion has no printed seconder. The minutes name no public speakers (\"No comment from the public\"). The minutes print no dollar figures; the flower and fall-cost funding has no amount. The minutes say the meeting was \"held remote by Zoom – members of the Public\", so it is unclear whether the members attended in person or remotely; they are recorded as present because they appear in the attendance list.",
+ "cost_usd": 0.01421557,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Doreen",
+   "role": "Vice-Chair (as printed in attendance list; signature block prints \"David Dorren\")",
+   "status": "present",
+   "quote": "vice-chair david doreen"
+  },
+  {
+   "name": "Mike Clark",
+   "role": "Clerk (as printed in attendance list; signature block prints \"Chair\")",
+   "status": "present",
+   "quote": "clerk mike clark member donna landry"
+  },
+  {
+   "name": "Donna Landry",
+   "role": "Member (as printed in attendance list; later elected Clerk)",
+   "status": "present",
+   "quote": "clerk mike clark member donna landry"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Vice Chair David Dorren is to check with the library on conference room availability (directed follow-up on the future meeting location, no vote recorded).",
+   "quote": "vice chair david dorren to check with the library on conference room availability."
+  },
+  {
+   "decision": "The DPW would cover the Memorial Day flowers and the Cemetery Commission would cover the costs for the fall (stated in response to public-comment discussion; no vote recorded).",
+   "quote": "david dorren responded that the dpw would cover, and the cemetery commission would cover the costs for the fall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Memorial Day flowers funding",
+   "what_was_recorded": "A member mentioned that funds for Memorial Day flowers were being approved; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "mike clark mentioned funds for ﬂowers for memorial day being approved."
+  },
+  {
+   "topic": "Cemetery costs for the fall, split between DPW and the Commission",
+   "what_was_recorded": "The DPW would cover the Memorial Day flowers and the Commission would cover the fall costs; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "david dorren responded that the dpw would cover, and the cemetery commission would cover the costs for the fall."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action recorded",
+   "quote": "9:00 am - call to order",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approve minutes of April 24, 2025",
+   "resolution": "approved (AIF as printed)",
+   "quote": "mike clark made a motion to approve the minutes of april 24, 2025, donna landry seconded - aif",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Reorganization: chair, vice chair and clerk",
+   "resolution": "elected by roll call: Mike Clark chair, David Dorren vice chair, Donna Landry clerk",
+   "quote": "vice chair david dorren motioned for mike clark to be chair, donna landry seconded",
+   "tags": [
+    "officers",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "discussed; vice chair to check library room availability",
+   "quote": "future meeting schedule was discussed - all members are available on the 3rd thursday",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment and Memorial Day flowers funding",
+   "resolution": "no public comment; funding discussed, no vote",
+   "quote": "no comment from the public",
+   "tags": [
+    "public comment",
+    "Memorial Day",
+    "flowers",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:16 (AIF as printed)",
+   "quote": "vice chair david dorren motioned to adjourn, chair mike clark seconded, voted aif",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery commission",
+  "reorganization",
+  "officer elections",
+  "minutes approval",
+  "meeting schedule",
+  "Memorial Day flowers",
+  "DPW",
+  "cemetery costs",
+  "remote meeting",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

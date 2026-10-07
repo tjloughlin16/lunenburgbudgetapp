@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-02-01",
  "docid": "6994",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the superintendent screening committee membership list as presented",
+   "motion": "Approve the list of applicants recommended for the Superintendent Screening Committee membership, as presented.",
    "moved_by": "Peter Beardmore",
    "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "mr. beardmore makes a motion to approve the list as presented, ms. brzozoski seconds the list, all approve via roll call vote"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 10:57.",
    "moved_by": "Laura Brzozoski",
    "seconded_by": "Peter Beardmore",
    "outcome": "passed",
@@ -29,6 +29,95 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06260439999999999
+ "note": "Plain extracted text, not a scan. Two motions recorded, both with roll-call approval and no tally printed, so the outcome is recorded as passed. The list of ten recommended applicants is read aloud but its names are not printed in the minutes, so the approved list cannot be identified from this text. Dr. Burnham and Courtney Fuller appear in the roster with no attendance status. No public comment section is recorded. The minutes contain no dollar figures.",
+ "cost_usd": 0.012730870000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brian lehtinen, chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene, vice chair - present"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "carol archambault, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "not stated",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 10:31",
+   "quote": "1. call to order by brian lehtinen at 10:31",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Superintendent Screening Committee membership appointment",
+   "resolution": "approved the recommended list, all approve by roll call vote",
+   "quote": "carol and i met at a posted meeting of the screening committee to recommend 10 people to join the committee along with myself and carol.",
+   "tags": [
+    "superintendent search",
+    "screening committee",
+    "personnel",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:57",
+   "quote": "3. adjournment ms. brzozoski makes a motion to adjourn at 10:57",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "superintendent search",
+  "screening committee",
+  "personnel",
+  "special meeting",
+  "remote meeting",
+  "open meeting law",
+  "roll call vote"
+ ],
+ "dropped_unquoted_by_field": {}
 }

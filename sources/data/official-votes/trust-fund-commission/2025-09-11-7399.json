@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2025-09-11",
  "docid": "7399",
@@ -12,15 +12,176 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting at 2:53pm.",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr. Howard",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn at 2:53pm by chairman bowen, motion seconded by mr. howard. the motion passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record only one formal vote. The bulk of the document is a lengthy public comment statement by Chairman Bowen and a presentation by representatives of Bartholomew & Company regarding fund management. No votes are recorded on the various matters discussed (fund performance, investment strategy, vacancy on the commission, etc.).",
- "cost_usd": 0.06809839999999999
+ "note": "Plain extracted text, not a scan. Only one recorded vote: the motion to adjourn (passed unanimously; no count printed). No vote approving prior minutes, and none on the Chairman's suggested application form. The Chairman appears as both \"Chairman Bown\" (opening line) and \"Chairman Bowen\" (elsewhere); the Treasurer appears as \"Mylee\" and once as \"Myleen\". Mr. Howard has no first name and is recorded present from speaking and seconding the adjournment. The Chairman's public-comment statement is long and political; it is recorded here only by topic, not reproduced.",
+ "cost_usd": 0.01610767,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Bowen",
+   "role": "Chairman (called to order as \"Chairman Bown\")",
+   "status": "present",
+   "quote": "public comment - chairman bowen requested a moment of silence to remember those lost on 9/11/2001 and charlie kirk the previous day."
+  },
+  {
+   "name": "Mylee Mallari",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "also present were mylee mallari (treasurer) and jennifer warren-dyment (town manager)."
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present were mylee mallari (treasurer) and jennifer warren-dyment (town manager)."
+  },
+  {
+   "name": "Brian Jamros",
+   "role": "from Bartholomew & Co. (our Private Trust Company), presenter",
+   "status": "present",
+   "quote": "mr. jamros and ms. cyganiewicz proceeded to make their presentation to the commission."
+  },
+  {
+   "name": "Kathleen Cyganiewicz",
+   "role": "from Bartholomew & Co. (our Private Trust Company), presenter",
+   "status": "present",
+   "quote": "mr. jamros and ms. cyganiewicz proceeded to make their presentation to the commission."
+  },
+  {
+   "name": "Mr. Howard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr howard - thanked the visitors on their presentation and noted that many uncertainties"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next Trust Fund Commission meeting is set for October 9, 2025, not held before then because a member is out of the country.",
+   "quote": "the next meeting will not be held until october 9, 2025 due to mr howard being out of the country on the 4th thursday of october."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fiscal 2025 effective expense rate for managing the trust funds",
+   "what_was_recorded": "The effective expense rate for managing the funds came in at 0.35% overall, based on AUM, with expenses shared pro rata across accounts.",
+   "figures_as_printed": [
+    "0.35%"
+   ],
+   "quote": "based on aum our effective expense rate for managing the funds came in at 0.35% overall."
+  },
+  {
+   "topic": "Assets under management and restricted funds",
+   "what_was_recorded": "Of the AUM, about $84,000 of $2,155,000 was under the Trust Fund Commission's purview, with $1.6M of those funds restricted for perpetuity.",
+   "figures_as_printed": [
+    "$84,000",
+    "$2,155,000",
+    "$1.6M"
+   ],
+   "quote": "of the aum, approximately $84,000 of $2,155,000 was associated with funds currently defined as under the purview of the trust fund commission with $1.6m of those funds being restricted"
+  },
+  {
+   "topic": "Current investment return",
+   "what_was_recorded": "Current return from April through the meeting date was reported as 12.27%.",
+   "figures_as_printed": [
+    "12.27%"
+   ],
+   "quote": "12.27% is current return from april through the date of the meeting"
+  },
+  {
+   "topic": "Use of cemetery funds",
+   "what_was_recorded": "The commission held some discussion on the use of cemetery funds; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "there was some discussion on the use of cemetery funds."
+  },
+  {
+   "topic": "Past trust fund distributions",
+   "what_was_recorded": "Research by the Chairman found very limited distributions over the past 5 years; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "from research conducted by chairman bowen, there have been very limited distributions over the past 5 years."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chairman Bowen",
+   "stated_role": "Chairman",
+   "topic": "moment of silence and statement on 9/11 and Charlie Kirk",
+   "quote": "public comment - chairman bowen requested a moment of silence to remember those lost on 9/11/2001 and charlie kirk the previous day."
+  },
+  {
+   "topic": "no public comment from the room or on Zoom",
+   "quote": "there was no public comment from members present in the room and none on zoom."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "opened at 12:48pm; pledge recited",
+   "quote": "meeting called to order by chairman bown at 12:48pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment and moment of silence",
+   "resolution": "statement read by Chairman; no public comment received",
+   "quote": "there was no public comment from members present in the room and none on zoom.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Presentation by Bartholomew & Co.",
+   "resolution": "presented and discussed; no action recorded",
+   "quote": "mr. jamros and ms. cyganiewicz proceeded to make their presentation to the commission.",
+   "tags": [
+    "trust funds",
+    "investment performance",
+    "fees",
+    "OPEB",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Old business: vacancy and distributions",
+   "resolution": "vacancy noted; Chairman suggested an application form in the Town Report; no vote recorded",
+   "quote": "chairman bowen advised the audience that we still have a vacancy on the commission..",
+   "tags": [
+    "vacancy",
+    "distributions",
+    "Town Report"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for October 9, 2025; adjourned at 2:53pm",
+   "quote": "the next meeting will not be held until october 9, 2025 due to mr howard being out of the country on the 4th thursday of october.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "trust fund commission",
+  "Bartholomew & Co",
+  "OPEB",
+  "stabilization",
+  "investment performance",
+  "management fees",
+  "distributions",
+  "cemetery funds",
+  "vacancy",
+  "public comment",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

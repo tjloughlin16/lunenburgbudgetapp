@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2025-07-07",
  "docid": "7303",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to appoint S. Walker as Chair",
+   "motion": "Elect S. Walker as Chair of the committee.",
    "moved_by": "S.Archambault",
    "seconded_by": "F.Beall",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "s. walker as chair (s.archambault, 2nd f.beall), passed"
   },
   {
-   "motion": "to appoint F.Beall as Vice Chair",
+   "motion": "Elect F. Beall as Vice Chair of the committee.",
    "moved_by": "S.Archambault",
    "seconded_by": "S.Walker",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "f.beall as vice chair (s.archambault, 2nd s.walker), passed"
   },
   {
-   "motion": "to appoint S.Archambault as Secretary",
+   "motion": "Elect S. Archambault as Secretary of the committee.",
    "moved_by": "F.Beall",
    "seconded_by": "S.Walker",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "s.archambault as secretary (f.beall, 2nd s.walker), passed"
   },
   {
-   "motion": "to accept the amended 6/2/2025 minutes as amended",
+   "motion": "Accept the amended 6/2/2025 minutes as amended; B. Vienneau abstained.",
    "moved_by": "F.Beall",
    "seconded_by": "S.Archambault",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion to accept the amended 6/2/2025 minutes as amended • (f.beall, 2nd s.archambault - b.vienneau abstained), passed."
   },
   {
-   "motion": "to replace NAS unit, not to exceed $1,200, from maintenance budget",
+   "motion": "Replace the NAS unit at Town Hall, not to exceed $1,200, from the maintenance budget.",
    "moved_by": "S.Archambault",
    "seconded_by": "B.Vienneau",
    "outcome": "passed",
@@ -52,15 +52,247 @@
    "quote": "motion to replace nas unit, not to exceed $1,200, from maintenance budget o s.archambault, 2nd b.vienneau - passed"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "F.Beall",
    "seconded_by": "S.Archambault",
    "outcome": "passed",
    "procedural": true,
-   "quote": "meeting adjourned at 3:45 pm • ( f.beall, 2nd s.archambault) - passed)"
+   "quote": "( f.beall, 2nd s.archambault) - passed)"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09205740000000001
+ "dropped_unquoted": 1,
+ "note": "Text is OCR-like extracted text from two pages with tabs and bullets collapsed; quotes were taken with whitespace normalized to single spaces. All six votes are recorded with printed counts or \"passed\"; the minutes print no roll-call tally, so the abstention on the minutes is noted in the motion text but not as a count. Public comment was \"None\", so no speakers are listed. The \"Manager's report\" list and its items are the Manager's reported activity, not votes, except the NAS motion. No transfers are recorded.",
+ "cost_usd": 0.01570507,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member (elected Chair later in the meeting)",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, faith beall, steve archambault"
+  },
+  {
+   "name": "Brian Vienneau",
+   "role": "PACC member, new to the committee",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, faith beall, steve archambault"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member (elected Vice Chair later in the meeting)",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, faith beall, steve archambault"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member (elected Secretary later in the meeting)",
+   "status": "present",
+   "quote": "steve archambault 3. manager: jo toale"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "steve archambault 3. manager: jo toale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting was set for August 4, 2025 at 3:00 pm in the Sudolnik Conference Room, Lunenburg Town Library.",
+   "quote": "next meeting: - august 4th , 2025 3:00 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "NAS replacement at Town Hall",
+   "what_was_recorded": "A motion to replace the NAS unit used for CASTUS file backup was passed, capped at a not-to-exceed amount from the maintenance budget.",
+   "figures_as_printed": [
+    "$1,200"
+   ],
+   "quote": "motion to replace nas unit, not to exceed $1,200, from maintenance budget o s.archambault, 2nd b.vienneau - passed"
+  },
+  {
+   "topic": "Committee account balance",
+   "what_was_recorded": "The manager reported the committee's balance.",
+   "figures_as_printed": [
+    "$1,025,772.87"
+   ],
+   "quote": "balance $1,025,772.87"
+  },
+  {
+   "topic": "Enterprise fund investment income",
+   "what_was_recorded": "No update was given; the fund has averaged a stated amount of additional income each year.",
+   "figures_as_printed": [
+    "$32,000"
+   ],
+   "quote": "no update - has averaged $32,000 in addition income each year"
+  },
+  {
+   "topic": "FY25 trial balance and Comcast fee",
+   "what_was_recorded": "The FY25 trial balance is waiting on the posting of interest and the May Comcast fee; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "awaiting posting of interest and may comcast fee to complete fy25 trial balance"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order at 2:59 pm, members present",
+   "quote": "meeting was called to order at 2:59 pm.",
+   "tags": [
+    "roll call",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Appointment of officers",
+   "resolution": "Chair, Vice Chair and Secretary elected",
+   "quote": "s. walker as chair (s.archambault, 2nd f.beall), passed",
+   "tags": [
+    "officers",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Welcome of new member",
+   "resolution": "welcomed; new member gave background",
+   "quote": "welcomed b.vienneau as new committee member",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no public comment",
+   "quote": "public comments: - • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments",
+   "resolution": "discussed; no action",
+   "quote": "f.beall was interested to know more about our new member (b.vienneau).",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "reported; no action",
+   "quote": "s.walker mentioned that there was another new member possibly joining the committee to fill in the last vacancy.",
+   "tags": [
+    "membership",
+    "Cable Advisory Committee"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "6/2/2025 minutes approved as amended",
+   "quote": "motion to accept the amended 6/2/2025 minutes as amended • (f.beall, 2nd s.archambault - b.vienneau abstained), passed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's report: recordings and production",
+   "resolution": "reported",
+   "quote": "recorded lhs & lms graduations, police/fire memorial, baccalaureate, scholarship ceremony and account payable training",
+   "tags": [
+    "recording",
+    "meeting video"
+   ]
+  },
+  {
+   "topic": "Manager's report: NAS replacement",
+   "resolution": "approved, not to exceed $1,200",
+   "quote": "motion to replace nas unit, not to exceed $1,200, from maintenance budget o s.archambault, 2nd b.vienneau - passed",
+   "tags": [
+    "equipment",
+    "maintenance budget",
+    "file backup"
+   ]
+  },
+  {
+   "topic": "Manager's report: records and video destruction",
+   "resolution": "reported; state permission received",
+   "quote": "just received permission from state to destroy meeting video files from 2017-2024",
+   "tags": [
+    "records",
+    "video archive"
+   ]
+  },
+  {
+   "topic": "Manager's report: program analysis",
+   "resolution": "reported",
+   "quote": "end of fy24 there were 119 programs",
+   "tags": [
+    "programming",
+    "local programming"
+   ]
+  },
+  {
+   "topic": "Manager's report: new recordings and show planning",
+   "resolution": "reported",
+   "quote": "planning phase of \"talk of the town\". first recording scheduled for august/september.",
+   "tags": [
+    "recording",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Studio space update",
+   "resolution": "no separate discussion; as reported in manager's report",
+   "quote": "as reported in manager's report",
+   "tags": [
+    "studio"
+   ]
+  },
+  {
+   "topic": "Enterprise fund investment status",
+   "resolution": "no update",
+   "quote": "no update - has averaged $32,000 in addition income each year",
+   "tags": [
+    "enterprise fund",
+    "investment"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for August 4, 2025",
+   "quote": "next meeting: - august 4th , 2025 3:00 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 3:45 pm",
+   "quote": "meeting adjourned at 3:45 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "cable committee",
+  "officers",
+  "minutes approval",
+  "NAS backup equipment",
+  "maintenance budget",
+  "meeting recording",
+  "studio",
+  "fund balance",
+  "enterprise fund",
+  "FY25 trial balance",
+  "records destruction",
+  "Town Library"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

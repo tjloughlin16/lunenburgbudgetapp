@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2025-09-04",
  "docid": "7380",
@@ -12,31 +12,191 @@
  },
  "votes": [
   {
-   "motion": "Elect Rob Bowen as Chair of the Bylaw Review Committee",
+   "motion": "Elect Mr. Bowen as Chair (nominated by Mr. Nuzzolo).",
    "moved_by": "Mr. Nuzzolo",
    "seconded_by": "Mrs. Gray",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. nuzzolo nominated mr. bowen for the position of chair. mrs. gray seconded. the committee unanimously voted for mr. bowen for the position of chair."
   },
   {
-   "motion": "Elect Jen Duffy as Vice Chair of the Bylaw Review Committee",
+   "motion": "Elect Ms. Duffy as Vice Chair (nominated by Mr. Nuzzolo); the minutes print no count, only that the vote was unanimous.",
    "moved_by": "Mr. Nuzzolo",
    "seconded_by": "Mrs. Gray",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. nuzzolo nominated m s. duffy for the position of vice chair. mrs. gray seconded. the committee unanimously voted for mrs . duffy for the position of vice chair."
+   "quote": "mr. nuzzolo nominated m s. duffy for the position of vice chair. mrs. gray seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Elect Mr. Nuzzolo as Clerk (nominated by Mrs. Gray); the minutes print no count, only that the vote was unanimous.",
+   "moved_by": "Mr s. Gray",
+   "seconded_by": "Ms. Duffy",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the committee unanimously voted for mr. nuzzolo"
+  },
+  {
+   "motion": "Adjourn the meeting at 7:26pm.",
    "moved_by": "Mr. Nuzzolo",
    "seconded_by": "Mrs. Gray",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. nuzzolo motioned to adjourn at 7: 26pm . mrs. gray seconded. the committee voted unanimously to adjourn."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Text appears to be OCR-scanned with minor spacing artifacts (e.g., \"M s.\" for \"Ms.\", \"7: 26pm\" for \"7:26pm\"). All four votes are procedural in nature.",
- "cost_usd": 0.0661214
+ "dropped_unquoted": 0,
+ "note": "Board is labelled \"By Law Committee\"; the minutes title it \"Bylaw Review Committee\". The text is a clean extraction with no scan or missing pages (pages 1-2). Four votes are recorded and each is stated as unanimous with no count printed, so outcome is \"passed\" without a tally. The minutes print the Clerk nomination mover as \"Mr s. Gray\" (probably Mrs. Gray, Nancy Gray); it is recorded as printed. The Clerk nomination's seconder is printed \"Ms. Duffy\". No dollar figures, no public comment, and no staff or applicants appear in the text. Attendee roles for Gray and Herrick are not printed.",
+ "cost_usd": 0.014461270000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Bowen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: rob bowen (chair), jen duffy (vice chair), caesar nuzzolo (clerk), nancy gray, kathy herrick"
+  },
+  {
+   "name": "Jen Duffy",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: rob bowen (chair), jen duffy (vice chair), caesar nuzzolo (clerk), nancy gray, kathy herrick"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: rob bowen (chair), jen duffy (vice chair), caesar nuzzolo (clerk), nancy gray, kathy herrick"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Committee member (no office printed)",
+   "status": "present",
+   "quote": "members present: rob bowen (chair), jen duffy (vice chair), caesar nuzzolo (clerk), nancy gray, kathy herrick"
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "Committee member (no office printed)",
+   "status": "present",
+   "quote": "members present: rob bowen (chair), jen duffy (vice chair), caesar nuzzolo (clerk), nancy gray, kathy herrick"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Bowen will raise the inconsistencies he found in the draft Financial Policies with the Town Manager.",
+   "quote": "mr. bowen will raise these inconsistencies with the town manager."
+  },
+  {
+   "decision": "Feedback deadline for Boards/Committees/Commissions on their Bylaws set at December 1, 2025; preliminary Bylaw review may begin before feedback is collected.",
+   "quote": "decided on december 1, 2025"
+  },
+  {
+   "decision": "Mr. Bowen will further review the draft letter soliciting Bylaw feedback from other bodies.",
+   "quote": "mr. bowen will further review the letter"
+  },
+  {
+   "decision": "Ms. Herrick will send the letter to Boards/Committees/Commissions.",
+   "quote": "ms. herrick will send it out to boards/committees/commissions."
+  },
+  {
+   "decision": "The Committee will begin its Bylaw review with Part 1: Administrative Legislation at the next meeting.",
+   "quote": "the committee decided it will begin with"
+  },
+  {
+   "decision": "Ms. Herrick will print copies of the Bylaws for members to pick up at her office.",
+   "quote": "members can pick them up at her office."
+  },
+  {
+   "decision": "The Committee will meet once a month for the rest of the year, and possibly more often next spring to prepare for Annual Town Meeting.",
+   "quote": "the committee decided to meet once a month for the remainder of the year"
+  },
+  {
+   "decision": "6:45pm agreed as the standing meeting time.",
+   "quote": "the committee agreed that 6:45pm is a good time to hold meetings of the committee."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:47PM",
+   "quote": "mr. bowen called the bylaw review committee to order at 6:47pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Elect officers",
+   "resolution": "Chair, Vice Chair and Clerk elected unanimously",
+   "quote": "mr. nuzzolo nominated mr. bowen for the position of chair.",
+   "tags": [
+    "officers",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Draft Financial Policies under Town review",
+   "resolution": "Chair to raise inconsistencies with Town Manager; no vote",
+   "quote": "mr. bowen brought up the draft financial policies currently under review by the town",
+   "tags": [
+    "financial policies",
+    "charter"
+   ]
+  },
+  {
+   "topic": "Feedback letter to boards and committees on their Bylaws",
+   "resolution": "deadline December 1, 2025 set; letter to be reviewed and sent",
+   "quote": "the committee reviewed the draft email to be sent out to",
+   "tags": [
+    "bylaws",
+    "feedback"
+   ]
+  },
+  {
+   "topic": "Bylaw review process",
+   "resolution": "begin with Part 1: Administrative Legislation at next meeting",
+   "quote": "the committee discussed the process by which they will follow to review bylaws.",
+   "tags": [
+    "bylaws",
+    "process"
+   ]
+  },
+  {
+   "topic": "Presentation of Bylaw changes at Town Meeting",
+   "resolution": "discussed; no action",
+   "quote": "the committee discussed how recommended bylaw changes will be presented at town",
+   "tags": [
+    "town meeting",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "monthly for rest of year; 6:45pm meeting time agreed",
+   "quote": "the committee decided to meet once a month for the remainder of the year",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:26pm",
+   "quote": "mr. nuzzolo motioned to adjourn at 7: 26pm . mrs. gray seconded.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "bylaws",
+  "charter",
+  "financial policies",
+  "officer election",
+  "town meeting",
+  "committee organization",
+  "feedback from boards"
+ ],
+ "dropped_unquoted_by_field": {}
 }

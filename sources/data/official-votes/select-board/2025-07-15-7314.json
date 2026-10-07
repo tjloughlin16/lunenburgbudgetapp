@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-07-15",
  "docid": "7314",
@@ -12,12 +12,12 @@
  },
  "votes": [
   {
-   "motion": "Approve the Tollbooth Fundraiser Request for Lunenburg Music Aiders for August 9, 2025, from 10:00 a.m. to 3:00 p.m.",
+   "motion": "Approve the Tollbooth Fundraiser Request for Lunenburg Music Aiders, August 9, 2025, 10:00 a.m. to 3:00 p.m.",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Clerk Emkey",
    "outcome": "passed 3-1-0",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to approve the tollbooth fundraiser request for lunenburg music aiders for august 9, 2025, from 10:00 a.m. to 3:00 p.m. seconded by clerk emkey."
+   "quote": "motion by chair nuzzolo to approve the tollbooth fundraiser request for lunenburg music aiders for august 9, 2025"
   },
   {
    "motion": "Modify the charge of the Lunenburg Municipal Building Design Committee to include a representative from the Architectural Preservation District Commission and modify the quorum to four members.",
@@ -25,7 +25,7 @@
    "seconded_by": "Clerk Emkey",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to modify the charge of the lunenburg municipal building design committee to include a representative from the architectural preservation district commission and to modify"
+   "quote": "motion by chair nuzzolo to modify the charge of the lunenburg municipal building design committee to include a representative"
   },
   {
    "motion": "Adjourn the Municipal Building Design Committee meeting.",
@@ -36,7 +36,7 @@
    "quote": "mr. lehtinen moved to adjourn the municipal building design committee meeting. seconded by mr. roy."
   },
   {
-   "motion": "Appoint Kim Muzzy to the Agricultural Commission for term to expire June 30, 2026.",
+   "motion": "Appoint Kim Muzzy to the Agricultural Commission, term to expire June 30, 2026.",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Clerk Emkey",
    "outcome": "passed 4-0-0",
@@ -82,9 +82,424 @@
    "outcome": "passed 4-0-0",
    "procedural": true,
    "quote": "clerk emkey moved to adjourn. seconded by member lehtinen."
+  },
+  {
+   "motion": "Approve the minutes of April 30, 2026 (recorded in the approval block at the end of this document, not at this meeting).",
+   "moved_by": "Vice-Chair Lehtinen",
+   "seconded_by": "Clerk McLeod",
+   "outcome": "passed 3-0-0",
+   "procedural": true,
+   "quote": "vice-chair lehtinen made the motion to approve the minutes of april 30, 2026. seconded by clerk mcleod."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes clearly recorded with outcomes stated in minutes.",
- "cost_usd": 0.1300234
+ "note": "Text extraction of a 10-page document, not a scan; no votes or figures were unreadable. Public Comment is recorded as \"None\" in the minutes, so public_comment is empty; the tollbooth applicant, Town Counsel, the Trust Funds chair, and the Muzzys spoke under scheduled items and appointments, and are listed as attendees. Mark Muzzy is printed with \"her\" (as printed). \"Mr. Roy\" is named only as a seconder and is not identified. The approval block at the end (Tuesday July 21, 2026) approves April 30, 2026 minutes and names Vice-Chair Lehtinen and Clerk McLeod, whose titles differ from this meeting's roster (Member Lehtinen, Clerk Emkey); it is recorded as a vote because the minutes say it passed 3-0-0, but it is not a vote taken at this July 15, 2025 meeting. The Wallace Park, grant writer and Flat Hill items are Town Manager report statements, not board votes.",
+ "cost_usd": 0.02338497,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, member glenn mcleod, and member brian lehtinen."
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, member glenn mcleod, and member brian lehtinen."
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, member glenn mcleod, and member brian lehtinen."
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, clerk renee emkey, member glenn mcleod, and member brian lehtinen."
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "members absent: vice-chair amanda moore"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Laura Barooshian",
+   "status": "present",
+   "quote": "laura barooshian, 389 mulpus road, submitted the certificate for a tollbooth fundraiser request."
+  },
+  {
+   "name": "Adam J. Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "adam j. costa, town counsel, stated that there were two inquiries made by board members of"
+  },
+  {
+   "name": "John Bowen",
+   "role": "Board of Commissioners of Trust Funds Chair",
+   "status": "present",
+   "quote": "john bowen, 162 highland street, board of commissioners of trust funds chair, stated that he"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Vice Chair (Municipal Building Design Committee)",
+   "status": "present",
+   "quote": "vice chair david blatt called the municipal building design committee meeting to order at"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "status": "present",
+   "quote": "mr. sculimbrene stated that the new superintendent has different ideas as to where the ace"
+  },
+  {
+   "name": "Kim Muzzy",
+   "status": "present",
+   "quote": "kim muzzy, 659 west townsend road, reiterated her interest in the agricultural commission."
+  },
+  {
+   "name": "Mark Muzzy",
+   "status": "present",
+   "quote": "mark muzzy, 659 west townsend road, reiterated her interest in the stormwater task force."
+  },
+  {
+   "name": "Mr. Roy",
+   "status": "not stated",
+   "quote": "seconded by mr. roy. call for the vote: four-aye."
+  },
+  {
+   "name": "Anthony Senesi",
+   "role": "Minute Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, anthony senesi, minute clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tabled the Sick Leave Bank Policy discussion to a future meeting.",
+   "quote": "2. discussion on sick leave bank policy the agenda item was tabled for a future meeting."
+  },
+  {
+   "decision": "Tabled the Tax Investigation Report to a future meeting.",
+   "quote": "3. tax investigation report the agenda item was tabled for a future meeting."
+  },
+  {
+   "decision": "No vote on 56 Carr Ave sell or hold until after the judgement enters, per the Town Manager.",
+   "quote": "the town manager stated that a vote is not necessary until after the judgement enters."
+  },
+  {
+   "decision": "Acknowledged the resignations of Police Officer Jeffrey Hill and Conservation Agent Sophie Dorow.",
+   "quote": "acknowledge the resignation of police officer jeffrey hill, effective july 27, 2025"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY25 sewer delinquency",
+   "what_was_recorded": "The Town Manager reported the total FY25 sewer amount owed and the number of customers behind.",
+   "figures_as_printed": [
+    "$107,653.99"
+   ],
+   "quote": "there is a total of $107,653.99 owed from fy25."
+  },
+  {
+   "topic": "Miscellaneous trust fund balances",
+   "what_was_recorded": "The Town Manager gave the balances of five miscellaneous funds as of March 25, 2025, in a discussion of which board oversees the funds.",
+   "figures_as_printed": [
+    "$12,489.53",
+    "$22,211.58",
+    "$22,887.22",
+    "$10,725.46",
+    "$8,690.14"
+   ],
+   "quote": "the town manager stated that as of march 25, 2025, the balance of the miscellaneous funds is as follows:"
+  },
+  {
+   "topic": "Building design study funds",
+   "what_was_recorded": "A member said the building design study funds were already fully spent and invoices are being processed, referring to an earlier unspent amount.",
+   "figures_as_printed": [
+    "$18,500"
+   ],
+   "quote": "there was $18,500 that remained unspent regarding the building design study."
+  },
+  {
+   "topic": "Wallace Park fence and structure repair",
+   "what_was_recorded": "The Town Manager reported the actual replacement quote and that the estimate went to the Town's insurance company.",
+   "figures_as_printed": [
+    "$30,900.34"
+   ],
+   "quote": "the town manager stated that the actual quote for the replacement work is now $30,900.34."
+  },
+  {
+   "topic": "Grant Writer program",
+   "what_was_recorded": "The Town Manager said the Grant Writer program money was included in the FY26 budget.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "$50,000 for the grant writer program was included in the fy26 budget."
+  },
+  {
+   "topic": "Surplus vehicle estimated values",
+   "what_was_recorded": "The Police Department and DPW sought to surplus vehicles with estimated values stated for each.",
+   "figures_as_printed": [
+    "$1,000",
+    "$500"
+   ],
+   "quote": "seeking to surplus a 2004 ford f350 that must be towed offsite with an estimated value of $1,000"
+  },
+  {
+   "topic": "Flat Hill Road bridge repair cost",
+   "what_was_recorded": "The Town Manager reported the contractor would do the prep work at its own cost and reopen the road at no added cost to the Town.",
+   "figures_as_printed": [],
+   "quote": "will reopen the road at no additional cost to the town."
+  },
+  {
+   "topic": "MART Connect coverage",
+   "what_was_recorded": "The Town Manager reported the MART Connect program was cancelled for FY26 and coverage continues through July at MART's cost.",
+   "figures_as_printed": [],
+   "quote": "the mart connect program had been cancelled for fy26."
+  },
+  {
+   "topic": "Green Communities funding opportunities",
+   "what_was_recorded": "The Town Manager reported funding opportunities offered to the Green Communities Committee; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager stated that mr. blatt provided the green communities committee with a variety of funding opportunities."
+  },
+  {
+   "topic": "Senior free building permits proposal",
+   "what_was_recorded": "The Council on Aging discussed a proposal to waive building permit fees for seniors; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "there was discussion on a proposal to offer free building permits to seniors."
+  },
+  {
+   "topic": "Debt capacity at Town Meeting",
+   "what_was_recorded": "A member said the Committee missed a chance at Town Meeting to discuss debt capacity; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "it was a missed opportunity for the committee at town meeting to discuss debt capacity."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: special merit award nominations",
+   "resolution": "no action",
+   "quote": "nominations are open for special merit awards for the salary administration plan (sap) employees",
+   "tags": [
+    "town staff",
+    "awards"
+   ]
+  },
+  {
+   "topic": "Tollbooth fundraiser request, Lunenburg Music Aiders",
+   "resolution": "approved 3-1-0",
+   "quote": "motion by chair nuzzolo to approve the tollbooth fundraiser request for lunenburg music aiders for august 9, 2025",
+   "tags": [
+    "licenses",
+    "fundraiser",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Role and jurisdiction of the Board of Commissioners of Trust Funds",
+   "resolution": "discussed; no action",
+   "quote": "adam j. costa, town counsel, stated that there were two inquiries made by board members of",
+   "tags": [
+    "trust funds",
+    "town counsel",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Municipal Building Design Committee on Town Hall and Ritter Memorial projects",
+   "resolution": "discussed; charge modified 4-0-0; committee adjourned",
+   "quote": "vice chair david blatt called the municipal building design committee meeting to order at",
+   "tags": [
+    "town hall",
+    "ritter memorial",
+    "building design",
+    "committee"
+   ]
+  },
+  {
+   "topic": "Annual Select Board appointments (continued)",
+   "resolution": "appointed Kim Muzzy and Mark Muzzy",
+   "quote": "kim muzzy, 659 west townsend road, reiterated her interest in the agricultural commission.",
+   "tags": [
+    "appointments",
+    "boards"
+   ]
+  },
+  {
+   "topic": "Select Board appointment to Master Plan Steering Committee",
+   "resolution": "appointed Member McLeod",
+   "quote": "motion by chair nuzzolo to appoint member mcleod as the select board member to the master plan steering committee.",
+   "tags": [
+    "appointments",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Resignations acknowledged",
+   "resolution": "acknowledged",
+   "quote": "acknowledge the resignation of police officer jeffrey hill, effective july 27, 2025",
+   "tags": [
+    "resignations",
+    "police",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; no action",
+   "quote": "town manager jennifer warren-dyment provided her town manager report to the board.",
+   "tags": [
+    "flat hill road",
+    "sewer",
+    "grants",
+    "facilities",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Declare surplus: police vehicles, DPW vehicles and equipment, PACC equipment",
+   "resolution": "approved 4-0-0",
+   "quote": "motion by chair nuzzolo to declare the vehicles and pacc equipment as surplus.",
+   "tags": [
+    "surplus property",
+    "police",
+    "dpw",
+    "pacc"
+   ]
+  },
+  {
+   "topic": "Tri-Board meeting discussion",
+   "resolution": "discussed; no action",
+   "quote": "chair nuzzolo stated that he thought the most recent tri-board meeting went well.",
+   "tags": [
+    "tri-board"
+   ]
+  },
+  {
+   "topic": "Sick Leave Bank Policy",
+   "resolution": "tabled",
+   "quote": "2. discussion on sick leave bank policy the agenda item was tabled for a future meeting.",
+   "tags": [
+    "personnel",
+    "sick leave"
+   ]
+  },
+  {
+   "topic": "Tax Investigation Report",
+   "resolution": "tabled",
+   "quote": "3. tax investigation report the agenda item was tabled for a future meeting.",
+   "tags": [
+    "tax",
+    "investigation"
+   ]
+  },
+  {
+   "topic": "56 Carr Ave: sell or hold",
+   "resolution": "no vote; deferred until judgement enters",
+   "quote": "the town manager stated that a vote is not necessary until after the judgement enters.",
+   "tags": [
+    "property",
+    "tax title",
+    "56 carr ave"
+   ]
+  },
+  {
+   "topic": "Minutes of April 8, 2025 and June 3, 2025",
+   "resolution": "approved 3-0-1",
+   "quote": "motion by clerk emkey to approve the minutes of april 8, 2025, and june 3, 2025.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and action items",
+   "resolution": "none",
+   "quote": "warrants none. action items none.",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "chair nuzzolo stated that the council on aging met last tuesday.",
+   "tags": [
+    "planning board",
+    "assessors",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "announced",
+   "quote": "chair nuzzolo announced that the select board will be meeting on august 5, 2025, august 19, 2025, and august 26, 2025 (tri-board).",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "town manager comment none. public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment: Artisans of Hickory Hills scholarship letter",
+   "resolution": "no action",
+   "quote": "clerk emkey stated that she was contacted by the group called artisans of hickory hills",
+   "tags": [
+    "scholarships",
+    "high school"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:52 PM",
+   "quote": "meeting adjourned at 9:52 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "town hall",
+  "ritter memorial building",
+  "municipal building design committee",
+  "trust funds",
+  "appointments",
+  "surplus property",
+  "sewer delinquency",
+  "grants",
+  "flat hill road bridge",
+  "tollbooth fundraiser",
+  "minutes approval",
+  "56 carr ave",
+  "tax investigation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

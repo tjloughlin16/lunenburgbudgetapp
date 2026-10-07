@@ -382,5 +382,132 @@
    "at": "2026-10-06T18:17:01Z",
    "cost_usd": 0.211939
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01202025-6956",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-01-20-minutes-6956.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-01-20-minutes-6956.pdf"
+  },
+  "official_sha256": "5e5542d286d113163a415935dd35571adcfa216b7820971709ddfc69eb029e96",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Both records show a passing budget vote and a passing warrant vote, but the official minutes are a short summary with no dollar figures and no decisions. The main thing to check is the warrant vote and the roll call, which our captions could not hear. Faith's attendance also differs, since we list her as addressed and the town lists her as excused.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 0,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote on the FY26 budget",
+    "ours": "Accept the FY26 budget as prepared by Steve and Joe. — passed",
+    "official": "motion (p.lincoln, 2nd s.archambault), to accept the pac budget as presented by s.walker - passed",
+    "note": "Both record a passing budget vote, but ours credits the budget to 'Steve and Joe' and the official minutes credit only S.Walker; check the recording to see who presented it.",
+    "t": 992
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on the warrant article",
+    "ours": "Accept the proposed warrant article for the FY26 PEG access Enterprise operating and capital budgets. — not audible",
+    "official": "motion (s.archambault, 2nd p.lincoln), to accept the warrant as presented - passed",
+    "note": "The official minutes record the warrant vote as passed, but our captions could not hear the outcome; check the recording at about t=1540 to confirm it passed.",
+    "t": 1540
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Roll call on the warrant article",
+    "ours": "Roll call on the warrant article. — not audible",
+    "official": "",
+    "note": "Our minutes record a roll call on the warrant and the official minutes do not mention one; check the recording at about t=1561 to see whether a roll call was taken and how each member voted.",
+    "t": 1561
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Budget line figures (salaries, operating, capital, totals, franchise fee, investment income)",
+    "ours": "Total expenses: 54,2 72, eight $84,000, 196,197 and 69, 54,000",
+    "official": "",
+    "note": "The official minutes print no dollar figures. Our captions are garbled, so the figures cannot be checked against the town's record; verify them against the budget spreadsheet or the PowerPoint.",
+    "t": 420
+   },
+   {
+    "kind": "agree",
+    "about": "Salaries rising with more meetings covered",
+    "ours": "Salaries (benefited staff and videographers): 10 12,100, 38,500, $4,000, $42,000 and2",
+    "official": "salaries up due to increase in number of meetings covered,",
+    "note": "The official minutes say salaries are up because more meetings are covered, with no figure. Our minutes list salary figures, but the reason for the increase is not in the excerpt shown.",
+    "t": 271
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant to be submitted to Town Hall that night",
+    "ours": "The warrant article is to be submitted to Town Hall that night so it is stamped January 20 and in by the deadline.",
+    "official": "",
+    "note": "The official minutes record no decision about when the warrant is filed.",
+    "t": 1415
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Indirect costs removed from the PowerPoint",
+    "ours": "Indirect costs will be removed from the PowerPoint unless the town or finance department supplies actual figures.",
+    "official": "",
+    "note": "The official minutes list no decisions, so this is not in the town's record.",
+    "t": 1202
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Retained earnings line left blank",
+    "ours": "The retained earnings line is left blank for now, and the committee will ask the town how to treat it.",
+    "official": "",
+    "note": "The official minutes do not mention retained earnings.",
+    "t": 903
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Steve Walker",
+    "ours": "Steve W (member)",
+    "official": "pacc members present: steve walker, pete lincoln(zoom), steve archambault,",
+    "note": "'Steve W' matches Steve Walker."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Pete Lincoln",
+    "ours": "Pete (member)",
+    "official": "pacc members present: steve walker, pete lincoln(zoom), steve archambault,",
+    "note": "Same person; the official minutes add that he attended by Zoom."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Steve Archambault",
+    "ours": "Steve (member)",
+    "official": "pacc members present: steve walker, pete lincoln(zoom), steve archambault,",
+    "note": "'Steve' is most likely Steve Archambault, though the first name alone is ambiguous."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Faith Beall's attendance",
+    "ours": "Faith (member (addressed))",
+    "official": "3. excused: faith beall",
+    "note": "Our minutes list Faith only as someone who was addressed, while the official minutes record her as excused/absent; check the recording to see whether she joined or was only referred to."
+   },
+   {
+    "kind": "agree",
+    "about": "Manager Jo Toale",
+    "ours": "Joe (manager)",
+    "official": "excused: faith beall 4. manager: jo toale",
+    "note": "'Joe' as heard is the manager, Jo Toale. The official minutes do not say whether she was present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:36:24Z",
+   "cost_usd": 0.230575
+  }
  }
 }

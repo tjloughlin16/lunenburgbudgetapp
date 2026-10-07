@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2025-02-03",
  "docid": "6997",
@@ -12,31 +12,192 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from December 9, 2024",
-   "outcome": "passed 5-0",
+   "motion": "Approve the minutes of the December 9, 2024 meeting.",
    "moved_by": "",
-   "seconded_by": "",
+   "outcome": "passed 5-0",
    "procedural": true,
    "quote": "meeting minutes from monday, december 9, 2024 7:30 pm approved by roll call vote: kim duffy, matt snyder, dave passios, david blatt, chris holden (5-0 aye)."
   },
   {
-   "motion": "Request the Select Board to change 2 Associate members to 2 Alternate members to allow for quorum and voting if quorum is not met with regular members",
-   "outcome": "passed 5-0",
+   "motion": "Allow David Blatt to request that the Select Board change 2 Associate members to 2 Alternate members, to allow quorum and voting if quorum is not met with regular members.",
    "moved_by": "Dave Passios",
-   "seconded_by": "",
+   "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motions to allow david blatt to request to select board to change 2 associate members to 2 alternate members (to allow for quorum and voting if quorum is not met with regular members). roll call vote: kim duffy, matt snyder, dave passios, david blatt, chris holden (5-0 aye)."
+   "quote": "dave passios: motions to allow david blatt to request to select board to change 2 associate members to 2 alternate members"
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed 4-0",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matt Snyder",
    "seconded_by": "Chris Holden",
+   "outcome": "passed 4-0",
    "procedural": true,
    "quote": "matt snyder motioned to adjourn, chris holden seconded motion. vote by roll-call: kim duffy, matt snyder, chris holder, david blatt (4-0 aye)."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are clear and readable. Three votes recorded: approval of prior minutes, a substantive motion on committee composition, and adjournment. Note: The second vote does not explicitly name a seconder in the minutes text.",
- "cost_usd": 0.0662734
+ "dropped_unquoted": 1,
+ "note": "Text extract, not a scan; all votes are recorded with tallies. Minor issues in the minutes: the adjournment roll call prints \"Chris Holder\" for Chris Holden; David Passios is recorded as leaving at 6:31pm, yet the adjournment vote lists four names without him; the minutes say Matt Snyder is \"Matt (Recycler)\" without clarifying whether that is the member. The Dec 9 approval and the committee make-up vote name no mover or seconder. The \"School improvements will be prioritized this year\" line was not recorded as a decision. Attendance is from the header and the attendance line, which give all members as remote; Chris Holden is noted as joining at 5:39pm.",
+ "cost_usd": 0.015248169999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "members present (remote): david blatt, david passios, matt snyder, kim duffy, chris holden (joined at 5:39pm)."
+  },
+  {
+   "name": "David Passios",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "members present (remote): david blatt, david passios, matt snyder, kim duffy, chris holden (joined at 5:39pm)."
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "Member",
+   "status": "remote",
+   "quote": "members present (remote): david blatt, david passios, matt snyder, kim duffy, chris holden (joined at 5:39pm)."
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "members present (remote): david blatt, david passios, matt snyder, kim duffy, chris holden (joined at 5:39pm)."
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "remote",
+   "quote": "members present (remote): david blatt, david passios, matt snyder, kim duffy, chris holden (joined at 5:39pm)."
+  },
+  {
+   "name": "Tyler Proteau",
+   "role": "not stated; gave the Styrofoam program update",
+   "status": "present",
+   "quote": "tyler proteau provides update: met with lunenburg hannaford management, 40ft locked container to be housed outside hannaford"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "David Blatt to reach out to Kelly from Green Communities for assistance with the municipal energy manager grant.",
+   "quote": "david blatt to reach out to kelly from green communities for assistance."
+  },
+  {
+   "decision": "Tyler Proteau to look into a grant to cover the Styrofoam program costs.",
+   "quote": "tp to look into a grant to cover costs."
+  },
+  {
+   "decision": "David Passios directed reaching out to recycling contacts in town for grant help if needed.",
+   "quote": "david passios: reach out to recycling contacts in town for grant help if needed."
+  },
+  {
+   "decision": "Inside drop point recorded as the preferred Styrofoam dropoff option.",
+   "quote": "-inside drop point (preferred option)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal Energy Manager Grant, technical assistant award",
+   "what_was_recorded": "A new grant deadline is noted for a technical assistance award of $15k to identify programs for the next round of funding applications.",
+   "figures_as_printed": [
+    "$15k"
+   ],
+   "quote": "new grant deadline: march 7, 2025 for a technical assistant award for $15k to help identify programs for next round of funding applications."
+  },
+  {
+   "topic": "Styrofoam program container and pickup costs",
+   "what_was_recorded": "The initial cost of a locked container at Hannaford is given as a range, and each bulk styrofoam pickup is noted at a set cost.",
+   "figures_as_printed": [
+    "$1500-3000",
+    "$500"
+   ],
+   "quote": "40ft locked container to be housed outside hannaford (initial container cost: $1500-3000) will be placed for white shipping bulk styrofoam (each pickup cost: $500)."
+  },
+  {
+   "topic": "Styrofoam box funding",
+   "what_was_recorded": "Members discussed who would cover the cost of drop-off and the initial container cost, with no figure printed and no decision recorded.",
+   "figures_as_printed": [],
+   "quote": "matt snyder: possibly a sponsor to cover the initial cost"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve pending meeting minutes",
+   "resolution": "approved 5-0 (December 9, 2024 minutes)",
+   "quote": "meeting minutes from monday, december 9, 2024 7:30 pm approved by roll call vote: kim duffy, matt snyder, dave passios, david blatt, chris holden (5-0 aye).",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Municipal Energy Manager Grant",
+   "resolution": "discussed; Blatt to contact Green Communities for assistance",
+   "quote": "new grant deadline: march 7, 2025 for a technical assistant award for $15k to help identify programs for next round of funding applications.",
+   "tags": [
+    "energy grants",
+    "municipal energy",
+    "school energy"
+   ]
+  },
+  {
+   "topic": "New programs that could be available in 2025",
+   "resolution": "no action; awaiting word on Fall 2024 grant",
+   "quote": "will find out at the end of feb/early march if we received any grant money for grant submitted in fall 2024.",
+   "tags": [
+    "grants",
+    "state funding"
+   ]
+  },
+  {
+   "topic": "Styrofoam program update",
+   "resolution": "update given; grant to be explored; box funding, bags and public flyer still open",
+   "quote": "tyler proteau provides update: met with lunenburg hannaford management, 40ft locked container to be housed outside hannaford",
+   "tags": [
+    "styrofoam recycling",
+    "Hannaford",
+    "public information"
+   ]
+  },
+  {
+   "topic": "Committee make-up",
+   "resolution": "approved 5-0: request to Select Board to change 2 Associate members to 2 Alternate members",
+   "quote": "dave passios: motions to allow david blatt to request to select board to change 2 associate members to 2 alternate members",
+   "tags": [
+    "committee membership",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Timeline for next meeting",
+   "resolution": "next meeting set for March 3, 2025 via Zoom",
+   "quote": "march 3, 2025 @ 6pm via zoom.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 6:36pm",
+   "quote": "matt snyder motioned to adjourn, chris holden seconded motion. vote by roll-call: kim duffy, matt snyder, chris holder, david blatt (4-0 aye).",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy grants",
+  "municipal energy manager",
+  "styrofoam recycling",
+  "Hannaford",
+  "committee membership",
+  "quorum",
+  "zoom meeting",
+  "school energy"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

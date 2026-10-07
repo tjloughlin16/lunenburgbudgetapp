@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-04-08",
  "docid": "7135",
@@ -12,15 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve amended minutes",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes were amended and approved."
-  },
-  {
-   "motion": "Put on the 2027 Capital Plan a feasibility study to add a small elevator to access the second floor of the Eagle House",
+   "motion": "Put a feasibility study for a small elevator to access the second floor of the Eagle House on the 2027 Capital Plan.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -28,15 +20,288 @@
    "quote": "the coa made and passed a motion to put on the 2027 capital plan a feasibility study to add a small elevator to be able to access the second floor of the eagle house."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Approve the minutes, as amended.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes were amended and approved."
+  },
+  {
+   "motion": "Adjourn the meeting at 10:36.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "meeting was adjourned at 10:36. vote was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09083640000000001
+ "note": "Text is a clean extraction with no scan. Votes: the elevator motion is recorded as \"made and passed\" with no mover, seconder or count; the minutes approval (\"Minutes were amended and approved.\") and the adjournment carry no mover or seconder, and only adjournment prints a result (\"Vote was unanimous\"). Public comment is printed as \"None\", so no speakers are recorded. Internal inconsistencies in the text as printed: Charles Sanderson is \"100 years old\" in New Business but \"10 years old\" in Current Business; the FY26 budget sentence in Current Business is cut off after \"the Senior center budget.\"; the Eagle House Supporters' name is spelled \"Coulomb\" in one place and \"Coulombe\" in the attendance list. The director is not named. The page header reads \"Minutes approved at 5/13/25 COA Meeting\".",
+ "cost_usd": 0.01572807,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "chairperson",
+   "status": "present",
+   "quote": "deb lincoln (chairperson), jane rabbitt (vice chairperson), ana lockwood, diane nowd"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "deb lincoln (chairperson), jane rabbitt (vice chairperson), ana lockwood, diane nowd"
+  },
+  {
+   "name": "Ana Lockwood",
+   "status": "present",
+   "quote": "deb lincoln (chairperson), jane rabbitt (vice chairperson), ana lockwood, diane nowd"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "deb lincoln (chairperson), jane rabbitt (vice chairperson), ana lockwood, diane nowd"
+  },
+  {
+   "name": "Elena Christopher",
+   "status": "present",
+   "quote": "christopher, susan o'sullivan, jim mcguigan, cathy beale, judy tarbell, barbara coulombe (eagle house"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "present",
+   "quote": "susan o'sullivan reported that umass memorial health announced it is planning to"
+  },
+  {
+   "name": "Jim McGuigan",
+   "status": "present",
+   "quote": "christopher, susan o'sullivan, jim mcguigan, cathy beale, judy tarbell, barbara coulombe (eagle house"
+  },
+  {
+   "name": "Cathy Beale",
+   "status": "present",
+   "quote": "christopher, susan o'sullivan, jim mcguigan, cathy beale, judy tarbell, barbara coulombe (eagle house"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "christopher, susan o'sullivan, jim mcguigan, cathy beale, judy tarbell, barbara coulombe (eagle house"
+  },
+  {
+   "name": "Barbara Coulombe",
+   "role": "Eagle House Supporters",
+   "status": "present",
+   "quote": "christopher, susan o'sullivan, jim mcguigan, cathy beale, judy tarbell, barbara coulombe (eagle house"
+  },
+  {
+   "name": "Peter Lincoln",
+   "status": "absent",
+   "quote": "excused: peter lincoln, helen balcom."
+  },
+  {
+   "name": "Helen Balcom",
+   "status": "absent",
+   "quote": "excused: peter lincoln, helen balcom."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair asked all members to work on ideas to initiate a Senior Health Care Advisory Team; to be discussed at next month's meeting.",
+   "quote": "our chairperson, deb lincoln asked all to work on ideas to initiate a senior health care advisory"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY26 Senior center budget: program budget increase",
+   "what_was_recorded": "The director's report on the FY26 Senior center budget lists a $3,000 increase in the program budget.",
+   "quote": "increase in program budget by $3,000",
+   "figures_as_printed": [
+    "$3,000"
+   ]
+  },
+  {
+   "topic": "FY26 Senior center budget: staffing moved from grant to town budget",
+   "what_was_recorded": "The director reported losing a part-time Outreach Coordinator, moving two kitchen aides from the formula grant to the town budget, and changing the Meal Site Manager from part-time to full-time. No dollar figure was printed.",
+   "quote": "we are losing a part-time outreach coordinator and moving two kitchen aides from the formula",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY2027 staffing plans",
+   "what_was_recorded": "Plans for FY 2027 to hire a program coordinator and an Assistant director/Outreach coordinator by raising that person's grade. No dollar figure was printed.",
+   "quote": "the plans for fy 2027 are to hire a program coordinator and an assistant director/outreach",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 9:40 AM",
+   "quote": "call to order: chairperson deb lincoln called the meeting to order at 9:40 am.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: membership application",
+   "resolution": "noted",
+   "quote": "lou franco has applied to become a member of the coa",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Board comment: UMass Memorial emergency facility in Nashoba Valley",
+   "resolution": "reported; no action recorded",
+   "quote": "umass memorial health announced it is planning to",
+   "tags": [
+    "health care",
+    "regional emergency services",
+    "Groton"
+   ]
+  },
+  {
+   "topic": "Parks Commission notice: Marshall Park Design",
+   "resolution": "informational notice",
+   "quote": "ana lockwood wanted to make sure that we all knew that there is a parks commission meeting 4-9-",
+   "tags": [
+    "parks",
+    "Marshall Park",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as amended",
+   "quote": "minutes were amended and approved.",
+   "tags": [
+    "procedure",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: Century Club member",
+   "resolution": "celebration set for May 5, 2025",
+   "quote": "charles sanderson is our newest member of the century club (100 years old).",
+   "tags": [
+    "recognition"
+   ]
+  },
+  {
+   "topic": "New business: Senior Health Care Advisory Team",
+   "resolution": "members asked to develop ideas; to be discussed next month",
+   "quote": "our chairperson, deb lincoln asked all to work on ideas to initiate a senior health care advisory",
+   "tags": [
+    "health care",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "New business: elevator feasibility study for Eagle House",
+   "resolution": "passed; put on the 2027 Capital Plan",
+   "quote": "the coa made and passed a motion to put on the 2027 capital plan a feasibility study to add a small elevator to be able to access the second floor of the eagle house.",
+   "tags": [
+    "capital plan",
+    "Eagle House",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Current business: FY26 Senior center budget",
+   "resolution": "reported; no action recorded",
+   "quote": "we are losing a part-time outreach coordinator and moving two kitchen aides from the formula",
+   "tags": [
+    "budget",
+    "staffing",
+    "FY26"
+   ]
+  },
+  {
+   "topic": "Current business: Veterans breakfast",
+   "resolution": "informational",
+   "quote": "the veteran's breakfast on april 11th will honor charles sanderson, 10 years old and a wwll",
+   "tags": [
+    "veterans"
+   ]
+  },
+  {
+   "topic": "Current business: Master Plan meeting",
+   "resolution": "informational",
+   "quote": "there will be a master plan meeting on april 9,2025.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Current business: 300th town anniversary",
+   "resolution": "no update",
+   "quote": "300th town anniversary plan, no updates.",
+   "tags": [
+    "anniversary"
+   ]
+  },
+  {
+   "topic": "Current business: parking lot",
+   "resolution": "no update",
+   "quote": "parking lot, no updates.",
+   "tags": [
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "reported; kitchen and shades updates, programs announced",
+   "quote": "the kitchen is almost completed.",
+   "tags": [
+    "facilities",
+    "programs",
+    "trips"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported; VENMO accepted for fundraisers",
+   "quote": "barbara coulomb reported that the supporters now accept venmo for their fundraiser events.",
+   "tags": [
+    "fundraising",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Notices and communications; board comment",
+   "resolution": "none",
+   "quote": "notices and communications: none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:36, unanimous",
+   "quote": "meeting was adjourned at 10:36. vote was unanimous.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior services",
+  "Eagle House",
+  "FY26 budget",
+  "capital plan",
+  "elevator",
+  "health care",
+  "UMass Memorial",
+  "Nashoba Valley",
+  "Parks Commission",
+  "Marshall Park",
+  "veterans",
+  "300th anniversary",
+  "fundraising"
+ ],
+ "dropped_unquoted_by_field": {}
 }

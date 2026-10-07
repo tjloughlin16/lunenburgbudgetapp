@@ -324,5 +324,238 @@
    "at": "2026-10-06T18:15:03Z",
    "cost_usd": 0.21160299999999999
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01222025-6969",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2025-01-22-minutes-6969.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2025-01-22-minutes-6969.pdf"
+  },
+  "official_sha256": "1b8b6ff119056585e7fa95172974003400ce7dea363a331817f6b2e907f62fe7",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Neither record has a vote or a transfer, and both cover the same follow-up actions (staff feedback by end of week, rescheduling Feb 17 at the Feb 3 meeting). They differ in detail on what goes to staff and on the Select Board meeting, and the official minutes carry several architect directions, public-comment items and absentees that ours omit. Check the recording near t=5637 and t=4856 first, since those are the two places where the records contradict rather than just omit.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 5,
+   "discrepancy": 3,
+   "only_in_ours": 5,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes (non-procedural)",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Both records list no non-procedural votes.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers",
+    "ours": "TRANSFERS: (none listed)",
+    "official": "",
+    "note": "Neither record contains a transfer.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Black-and-white plans to staff, feedback returned by end of week",
+    "ours": "Chair will send the architects' presentation to staff for feedback and return it to the team by end of the week; architects to add black-and-white furnishing plans and room square footages by the next day.",
+    "official": "michael-ray to compile and relay staff feedback to the architectural team by the end of the week.",
+    "note": "Same action: the chair (Michael-Ray Jeffreys) gathers staff feedback and relays it to the architects by end of week.",
+    "t": 5637
+   },
+   {
+    "kind": "agree",
+    "about": "Rescheduling the Feb 17 meeting deferred to Feb 3",
+    "ours": "Rescheduling of the Feb 17 meeting (Presidents Day) deferred to Feb 3.",
+    "official": "committee to discuss rescheduling the february 17th meeting at the february 3rd meeting.",
+    "note": "Same decision in both records.",
+    "t": 5930
+   },
+   {
+    "kind": "discrepancy",
+    "about": "What the chair sends to staff",
+    "ours": "Chair will send the architects' presentation to staff for feedback",
+    "official": "michael-ray to distribute black-and-white floor plans to staff for feedback.",
+    "note": "Ours says the presentation goes to staff; the town says black-and-white floor plans. Check the recording near t=5637 for what was actually sent.",
+    "t": 5637
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who sends floor plans and square footages",
+    "ours": "architects to add black-and-white furnishing plans and room square footages by the next day.",
+    "official": "robert taylor to send floor plans and square footage calculations to the committee.",
+    "note": "Both have the architects supplying square footages, but ours gives a next-day deadline and the town gives none. Ours says furnishing plans and the town says floor plans. Check the recording.",
+    "t": 5637
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cost estimates and joint Select Board meeting",
+    "ours": "Cost estimates expected at the Feb 3 remote meeting; joint meeting with the Select Board Feb 4.",
+    "official": "plans for a cost estimation review and in- person select board meeting discussed",
+    "note": "The town gives no dates and calls the Select Board meeting in-person. Ours says the Feb 3 meeting is remote and the Select Board meeting is Feb 4. Check dates and format against the recording and agenda.",
+    "t": 4856
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Basement waterproofing in the cost estimate and improved renderings",
+    "ours": "",
+    "official": "architectural team instructed to improve renderings and include basement waterproofing estimates.",
+    "note": "Our minutes record no instruction on waterproofing or renderings. We heard basement excavation risk figures at t=2618. This is a decision in the town's record, so check the recording.",
+    "t": 2618
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other architect directions: preserve historical elements, rooftop solar, parking, Ritter entrance trip hazards",
+    "ours": "",
+    "official": "architectural team to: incorporate waterproofing into the basement cost estimate. ensure renovation estimates include preservation of historical elements.",
+    "note": "Our minutes omit these directions to the architects. The official list also names solar, parking and trip hazards, but the quote only covers the first two items.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chris Ruth continuing work on TC Passios building wings",
+    "ours": "",
+    "official": "chris ruth to continue work on the central and northern wings of the tc passios building.",
+    "note": "Not in our minutes. The name and building may be a caption mishearing, so check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public concerns about cost and scope; Town Hall demolition cost concerns",
+    "ours": "",
+    "official": "public concerns raised about cost and scope of expansion. alternative suggestions included: utilizing existing structures.",
+    "note": "Our minutes have no record of public cost and scope concerns or Tony Sculumbrine's demolition cost remarks. Neither record prints a dollar figure for these.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Project size figures",
+    "ours": "Project size: 55,000 Square ft, 22,000 is square feet",
+    "official": "",
+    "note": "The official minutes print no square-footage figures. These come from the captions and are unverified.",
+    "t": 3624
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Earlier renovation estimate of the other building",
+    "ours": "Earlier renovation estimate of the other building: $30 million, 14 million",
+    "official": "",
+    "note": "The official minutes print no dollar figures. Check the recording for what was said, since the captions give two different numbers.",
+    "t": 5869
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Basement excavation risk",
+    "ours": "Basement excavation risk: 12T basement, 13t basement",
+    "official": "",
+    "note": "The official minutes print no such figure. The captions are garbled, but the basement is a topic in both records.",
+    "t": 2618
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brian Lehtinen",
+    "ours": "Mr Brian Leighton (member (school committee))",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray",
+    "note": "The same member with a misheard surname. The role we give (school committee) is not in the official record.",
+    "official_reading": "Brian Lehtinen",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Michael-Ray Jeffreys (chair)",
+    "ours": "Mike Ray / Jeff (chair)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray",
+    "note": "A caption rendering of Michael-Ray Jeffreys.",
+    "official_reading": "Michael-Ray Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Matthew Allison",
+    "ours": "Mr Matt Allison (member)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray",
+    "note": "Same person, shortened first name.",
+    "official_reading": "Matthew Allison",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Greg Roy and Tom Gray",
+    "ours": "Mr Greg Roy (member); Mr Tom Gray (member)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray",
+    "note": "Both listed present in both records.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Tony Sculumbrine",
+    "ours": "Mr Tony scull and Brey (member (APDC representative))",
+    "official": "community guests: tony sculumbrine , renee embey, laura brzozoski, steve walker",
+    "note": "A misheard name. The official record lists him as a community guest, not a member or APDC representative, so the role may differ. Check the recording.",
+    "official_reading": "Tony Sculumbrine",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Laura Brzozoski",
+    "ours": "Laura brazowski (school committee member)",
+    "official": "community guests: tony sculumbrine , renee embey, laura brzozoski, steve walker",
+    "note": "A misspelled surname. The official record lists her as a community guest.",
+    "official_reading": "Laura Brzozoski",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Steve Walker",
+    "ours": "Steve Walker (PAC chair)",
+    "official": "community guests: tony sculumbrine , renee embey, laura brzozoski, steve walker",
+    "note": "Same person present; we add the PAC chair role.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Robert Taylor of Taylor and Burns",
+    "ours": "Robert Taylor (presenter (Taylor and Burns))",
+    "official": "the architectural firm taylor and burns, represented by robert taylor, provided a progress presentation and update",
+    "note": "Same presenter and firm.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendees: Steven Lauder and Marley Lynch (Taylor and Burns)",
+    "ours": "Steven Lauder (presenter (Taylor and Burns)); Marley Lynch (presenter (Taylor and Burns))",
+    "official": "",
+    "note": "The official minutes name only Robert Taylor for the firm. These may be misheard names.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Selectman 'imy / m key'",
+    "ours": "Selectman imy / m key (select board member)",
+    "official": "",
+    "note": "No Select Board member is listed in the official minutes. The name is too garbled to match to anyone.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members and Renee Embey",
+    "ours": "",
+    "official": "members absent: david blatt, kristina masaitis",
+    "note": "Our minutes list no absentees. Renee Embey, a community guest in the official record, is also not in ours.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:37:39Z",
+   "cost_usd": 0.249927
+  }
  }
 }

@@ -469,5 +469,242 @@
    "at": "2026-10-06T18:19:39Z",
    "cost_usd": 0.215235
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082025-6947",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-01-08-minutes-6947.txt",
+   "path": "sources/meetings/conservation-commission/2025-01-08-minutes-6947.pdf"
+  },
+  "official_sha256": "612f9c3282e099da7605d5598b8a1cf54c7b7f0b6424f6836d408c795b4869c1",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on every motion and its outcome, but every vote tally differs by one: ours shows 5-0 or 4-0-1 and the official 6-0 or 5-0-1. The likely cause is the chair's vote missing from our count, so check the recording. The official also leaves out several figures and follow-ups we recorded, and one grant figure ($116,000 vs $16,000) differs.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 13,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote count on 157 Goodridge/Goodrich St continuance",
+    "ours": "Continue the 157 Goodridge Street NOI hearing to January 22 — passed 5-0",
+    "official": "motion: rich b., second: mike l. to continue the hearing on 157 goodrich street to 1/22/25.",
+    "note": "Same motion and outcome, but the tallies differ (5-0 vs 6-0) and the official roll call lists six commissioners; check the recording for how many voted.",
+    "t": 2552
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote count on 400 Leominster Shirley Rd amendment continuance",
+    "ours": "Continue the 400 Lunenburg-Shirley Road amendment request to January 22 — passed 5-0",
+    "official": "motion: chris s., second: rich b. to continue the hearing on 400 leominster shirley rd. to 1/22/25.",
+    "note": "Same motion; tally 5-0 vs 6-0. The road name in ours is a caption mishearing. Check the number voting.",
+    "t": 2804
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote count on D&A Lunenburg stormwater NOI",
+    "ours": "Approve DNA Lunenburg stormwater NOI based on the September plans, with no buffer-zone changes — passed 4-0 with one abstention (Jeff)",
+    "official": "to approve the noi, based on the plans submitted in september, as long as any changed plans are submitted to the office and there are no changes in the buffer zone.",
+    "note": "Same motion and one abstention, but ours has 4 yes plus 1 abstention (5 voting) and the official has 5-0-1 (6 voting); check whether a sixth member voted. Official also adds a condition that changed plans be submitted to the office.",
+    "t": 3185
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote count on 390 Howard Street continuance",
+    "ours": "Continue the 390 Howard Street hearing to January 22 — passed 5-0",
+    "official": "to continue the hearing on 390 howard street to 1/22/25.",
+    "note": "Same outcome; tally 5-0 vs 6-0. Check the number voting.",
+    "t": 3291
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote count on 50 Pine Grove Road NOI",
+    "ours": "Approve the 50 Pine Grove Road NOI — passed 4-0 with one abstention (Jeff)",
+    "official": "to approve the noi for 50 pine grove road",
+    "note": "Same outcome and abstention, but 4-0-1 vs 5-0-1; check whether the sixth member voted.",
+    "t": 3681
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote count on 57 Round Road certificate of compliance",
+    "ours": "Approve certificate of compliance for 57 Round Road (simple wall) — passed 5-0",
+    "official": "to approve the coc for 57 round road.",
+    "note": "Same outcome; tally 5-0 vs 6-0. Check the number voting.",
+    "t": 3862
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote count on 32 Pine Grove Road certificate of compliance denial",
+    "ours": "Deny certificate of compliance for 32 Pine Grove Road until stabilized — passed 5-0",
+    "official": "to deny the coc request for 32 pine grove rd. and recommend the applicant come back when those areas are stabilized.",
+    "note": "Same outcome; tally 5-0 vs 6-0. Check the number voting.",
+    "t": 4429
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote count on 137 Flynn Road certificate of compliance",
+    "ours": "Approve certificate of compliance for 137 Flynn Road — passed 5-0",
+    "official": "to approve the coc for 137 flynn road",
+    "note": "Same outcome; tally 5-0 vs 6-0. Check the number voting.",
+    "t": 4516
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote count on letter to 10 Mass Ave owner",
+    "ours": "Send a letter to the 10 Mass Ave owner with a timeline and a request for a schedule from his wetland scientist — passed 5-0",
+    "official": "to issue a letter explaining the timeline we expect and requesting a response from his wetlands scientist on the schedule for addressing issues and when documentation will be submitted.",
+    "note": "Same motion; tally 5-0 vs 6-0. Check the number voting.",
+    "t": 4937
+   },
+   {
+    "kind": "caption_error",
+    "about": "Continuing education budget figure",
+    "ours": "FY26 continuing education budget for commissioners: eight classes, $15, 65 per class, 100",
+    "official": "sophia is looking to project how much money will be needed for classes in fy26.",
+    "note": "Ours has garbled digits ('$15, 65' probably $1,565 or similar), but the official prints no dollar figure, so it cannot be resolved against it.",
+    "official_reading": "no dollar figure printed",
+    "t": 7122
+   },
+   {
+    "kind": "agree",
+    "about": "Tax-mailing flyer / Ledger ad $1,200",
+    "ours": "Flyer with tax mailings and Ledger ad: $1,200",
+    "official": "she also suggested budgeting for flyers to be inserted into tax bills which bob estimated at $1,200.",
+    "note": "Both give $1,200 for the tax-bill flyers. The official attributes the estimate to 'Bob' and treats the Ledger ad as a separate agreed item with no cost printed.",
+    "t": 7504
+   },
+   {
+    "kind": "agree",
+    "about": "Wildlands / Forest Reserve grant 50%",
+    "ours": "Wildlands / Forest Reserve grant: 50%, $40,000",
+    "official": "the grants come around august and would give 50% of the cost.",
+    "note": "The 50% matches. The official prints no $40,000 figure, so that amount appears only in ours.",
+    "t": 7926
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Snow Riders grant closeout value returned to community",
+    "ours": "Snow Riders recreational trails grant closeout: 251 hours, $5,000, $116,000",
+    "official": "this equates to approximately $16,000 back to the community.",
+    "note": "251 hours and $5,000 agree, but ours says $116,000 and the official says about $16,000; this may be a misheard digit, so check the recording at that point.",
+    "t": 9339
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Handbook subscriptions",
+    "ours": "Handbook subscriptions: 24 for Commissioners, 25 for staff, 20",
+    "official": "",
+    "note": "The official minutes record no handbook subscription figures.",
+    "t": 7358
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "North County Land Trust workshop co-sponsorship",
+    "ours": "North County Land Trust workshop co-sponsorship: a hundred bucks",
+    "official": "",
+    "note": "The official minutes mention the land trust announcement but print no co-sponsorship amount.",
+    "t": 7022
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fine at 10 Mass Ave",
+    "ours": "Fine at 10 Mass Ave: $300",
+    "official": "",
+    "note": "The official minutes print no fine amount for 10 Mass Ave.",
+    "t": 4559
+   },
+   {
+    "kind": "discrepancy",
+    "about": "40 Fire Road hold: what is withheld",
+    "ours": "The agent will notify the town manager and select board about personal property placed on town land at 40 Fire Road; the certificate of compliance is held until the violation is cleared.",
+    "official": "the commission discussed whether to approve the noi and decided to wait until the debris is cleaned up.",
+    "note": "The notification to the Town Manager and Select Board agrees, but ours says a certificate of compliance is held while the official says a Notice of Intent is deferred; check which filing it was.",
+    "t": 5600
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting and special meeting dates",
+    "ours": "A special meeting is set for January 29 to hear the lake community reports; the next regular meeting is January 22.",
+    "official": "next meeting is 1/22 and on 1/29 there will be a special meeting for the reports from the lake communities only.",
+    "note": "Same dates and purpose.",
+    "t": 7800
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Paint drop-off follow-up",
+    "ours": "A member will look into local paint-drop-off options before the commission decides on a paint stewardship program.",
+    "official": "mary believed paint could be recycled at the devens program and chris will check on that option.",
+    "note": "Both assign a member to check, but ours says local drop-off options and a stewardship decision, while the official names the Devens program and Chris; check the recording for who and what.",
+    "t": 9020
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Land trust flyer follow-up",
+    "ours": "The agent will recirculate the land trust flyer, and the chair will contact the open space committee chair about the workshop.",
+    "official": "",
+    "note": "The official minutes record no land trust flyer follow-up.",
+    "t": 6757
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Magnesium chloride deicer and 157 Goodridge hearing reasons",
+    "ours": "Magnesium chloride was noted as a lower-impact deicer if one is needed; no deicing condition was imposed.",
+    "official": "",
+    "note": "The official minutes do not mention the deicer discussion or the in-person abutter reason for continuing 157 Goodrich.",
+    "t": 2509
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Budget asks carried into FY26 request",
+    "ours": "The agent will carry the budget asks (class counts, handbooks, tax-mailing flyer, Ledger ad) into the FY26 request; no formal vote was taken.",
+    "official": "",
+    "note": "The official has related budget discussion and agrees to a 1/4 page Ledger ad, but no matching carry-forward decision.",
+    "t": 7588
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Boulders at 40 Fire Road",
+    "ours": "",
+    "official": "chris will look into having the town place the boulders and will talk to scott benjamin.",
+    "note": "The official records Chris looking into town-placed boulders as a barrier; ours has nothing on this.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Commissioner vacancy",
+    "ours": "",
+    "official": "she will contact the select board.",
+    "note": "The official records Mary contacting the Select Board about a Commissioner vacancy; ours has nothing on this.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Follow-up items: 1168 Mass Ave update and Earth Day pollinator event",
+    "ours": "",
+    "official": "brian will give an update at the 1/22 meeting.",
+    "note": "The official also records Mike connecting with the Pollinator Habitat on Earth Day events; ours has neither.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendance and member names",
+    "ours": "Chris (member); Mike (member); Jeff (member); Rich (member); Jenny (member); Sophia (conservation agent / staff); Mary (chair)",
+    "official": "roll call: chris s., mike l., jeff v ., jenny p., rich b., mary w. and sophi a dorow (admin.)",
+    "note": "The same seven people are present, with full names in the official. Ours says 5 voted on most motions while the official gets 6 with the chair, so check whether Mary voted. Official also lists Jane Ranley as minutes clerk and Jennifer Pewtherer as vice chair.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:39:37Z",
+   "cost_usd": 0.265129
+  }
  }
 }

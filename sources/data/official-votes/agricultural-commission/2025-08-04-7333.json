@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2025-08-04",
  "docid": "7333",
@@ -12,39 +12,267 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from July 9, 2025",
+   "motion": "Approve the minutes of the July 9, 2025 meeting.",
    "moved_by": "Kathy",
    "seconded_by": "Maryrae",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "kathy made a motion to approve the minutes from the following meetings: july 9. 2025. maryrae seconded. commission unanimously approved."
   },
   {
-   "motion": "Maintain current positions: Chair as Jen Duffy, Vice Chair as Maryrae, and Clerk as Jackie",
+   "motion": "Maintain the current officer positions: Chair Jen Duffy, Vice-Chair Maryrae, and Clerk Jackie.",
    "moved_by": "Ryan",
    "seconded_by": "Kathy",
-   "outcome": "unanimously approved",
-   "procedural": true,
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "ryan made a motion to maintain the current positions within the agcomm of chair as jen duffy, vice chari as maryrae, and clerk as jackie. kathy seconded. commission unanimously approved."
   },
   {
-   "motion": "Approve Peace Farm as a vendor for Lunenburg Farmers' Market",
+   "motion": "Approve the Lunenburg Farmers' Market vendor Peace Farm.",
    "moved_by": "Maryrae",
    "seconded_by": "Kathy",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "maryrae makes a motion to approve the following vendors: peace farm. kathy seconded. commission unanimously approved."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Kathy",
    "seconded_by": "Ryan",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "kathy made a motion to adjourn; ryan seconds. commission unanimously approved."
+   "quote": "kathy made a motion to adjourn; ryan seconds. commission unanimously approved. meeting adjourned at 8:36 pm"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0686444
+ "dropped_unquoted": 2,
+ "note": "Text is a clean extraction with no scan. Four motions are recorded, each with a printed result (\"unanimously approved\"), and no motion failed. The public comment section reads \"None\", so the public comment list is empty. Clerk Jackie Chabot's attendance cell is blank, so her status is recorded as not stated. Kerri Mitton is listed under \"Public\" without a comment. The APR program terms are recorded as discussion with no attribution to a speaker. The minutes print no transfers.",
+ "cost_usd": 0.015853970000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔ clerk jackie chabot"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "clerk jackie chabot member kathy dugan ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Member",
+   "status": "present",
+   "quote": "member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Member",
+   "status": "present",
+   "quote": "member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate kira mcclellan ✔ alternate kim muzzi ✔"
+  },
+  {
+   "name": "Kim Muzzi",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate kira mcclellan ✔ alternate kim muzzi ✔"
+  },
+  {
+   "name": "Kerri Mitton",
+   "role": "Public",
+   "status": "present",
+   "quote": "public kerri mitton ✔"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kathy to look into additional vendors for the Farmers' Market / Ag Fair (named candidates: Smiths Country Cheese, Buzz and Thrive, Aaronap Cellars, Sage).",
+   "quote": "kathy to look into additional vendors - smiths country cheese, buzz and thrive, aaronap cellars, sage"
+  },
+  {
+   "decision": "Land management topics assigned to individual members (MDAR/NRCS and APR, Mass Farmland Action Plan, other towns management).",
+   "quote": "mdar/nrcs - jen apr - kathy mass farmland action plan - jackie/kira/ryan other towns management - maryrae"
+  },
+  {
+   "decision": "Post about the Ag Fair on the Agricultural Commission Facebook page.",
+   "quote": "agricultural commission facebook page post about agfair"
+  },
+  {
+   "decision": "Put a sign-up list for Agricultural Commission emails at LPR, TFE, and the FM Ag Commission booth.",
+   "quote": "put sign up list for ag comm emails at lpr, tfe, and fm ag comm booth"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Agricultural Preservation Restriction (APR) program terms",
+   "what_was_recorded": "The APR discussion gave a minimum income requirement for land enrolled in the program, expressed as dollars per acre.",
+   "figures_as_printed": [
+    "$500/ first 5 acres",
+    "$5 additional per additional acre"
+   ],
+   "quote": "apr has to make money $500/ first 5 acres, and $5 additional per additional acre"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:06 pm",
+   "quote": "call to order meeting commencement time: 7:06 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "2 public comment none 3 announcements none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no announcements",
+   "quote": "2 public comment none 3 announcements none",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved minutes of July 9, 2025",
+   "quote": "kathy made a motion to approve the minutes from the following meetings: july 9. 2025.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Re-organization",
+   "resolution": "maintained current officer positions",
+   "quote": "re-organization ryan made a motion to maintain the current positions within the agcomm of chair",
+   "tags": [
+    "officers",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Land management and maintenance: APR information",
+   "resolution": "discussion; topic leads named; no vote",
+   "quote": "land management/maintenance mdar/nrcs - jen apr - kathy",
+   "tags": [
+    "agricultural preservation restriction",
+    "land",
+    "state programs"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee agriculture items",
+   "resolution": "awaiting list from the committee; to be shared when received",
+   "quote": "waiting on list to review from master plan steering committee. will share when received.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Lunenburg Farmers' Market vendor review",
+   "resolution": "Peace Farm approved as vendor",
+   "quote": "reviewed applications for the following vendors:  peace fa",
+   "tags": [
+    "farmers market",
+    "vendors"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Farmers' Market and Ag Fair planning",
+   "resolution": "tasks assigned; vendor survey proposed; no vote",
+   "quote": "kathy to look into additional vendors - smiths country cheese, buzz and thrive, aaronap cellars, sage",
+   "tags": [
+    "farmers market",
+    "ag fair",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Community garden",
+   "resolution": "develop ideas and procedures; no action recorded",
+   "quote": "community garden - develop ideas and procedures",
+   "tags": [
+    "community garden"
+   ]
+  },
+  {
+   "topic": "Membership",
+   "resolution": "no action",
+   "quote": "membership none agricultural commission facebook page post about agfair",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Communications: Facebook and mailing list",
+   "resolution": "Facebook post about Ag Fair and sign-up list for email to be set up",
+   "quote": "agricultural commission mailing list put sign up list for ag comm emails at lpr, tfe, and fm",
+   "tags": [
+    "communications",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Committee reports and farming issues",
+   "resolution": "none",
+   "quote": "7 committee reports none 8 farming issues none",
+   "tags": [
+    "committee reports",
+    "farming"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "schedule listed",
+   "quote": "7:00 pm august 25, 2025 - fm/ag fair",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:36 pm",
+   "quote": "kathy made a motion to adjourn; ryan seconds. commission unanimously approved. meeting adjourned at 8:36 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmers market",
+  "ag fair",
+  "agricultural preservation restriction",
+  "officers and reorganization",
+  "vendors",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

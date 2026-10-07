@@ -316,5 +316,147 @@
    "at": "2026-10-06T18:08:40Z",
    "cost_usd": 0.210649
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02112025-7014",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-02-11-minutes-7014.txt",
+   "path": "sources/meetings/council-on-aging/2025-02-11-minutes-7014.pdf"
+  },
+  "official_sha256": "3fa0b73cae43a2c1cb3a8be7f069a103c8c66b4cd5cd0751f18110c29cf79b77",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Neither record has a non-procedural vote, and both agree that minutes distribution was not settled and that the Kitchen Aide funding was discussed. Our minutes carry many figures and decisions (the municipal building, solar grant, meal site positions and the Finance Committee plea) that the official minutes do not mention. The main thing to check is the \"20,000\" figure, which we label as the COA FY26 budget and the official minutes call a town transfer for Mart Connects.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 0,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Non-procedural votes",
+    "ours": "none",
+    "official": "",
+    "note": "Both records list no non-procedural votes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town transfer of 20k for Mart Connects",
+    "t": 670,
+    "ours": "COA FY26 budget: 20,000",
+    "official": "the town is transferring 20k to coa budget to",
+    "note": "The official minutes record a reported transfer (no vote) for the Mart Connects line; our minutes list no transfers and show only a 20,000 figure at t=670, which may be the same amount."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "What the 20,000 figure is",
+    "t": 670,
+    "ours": "COA FY26 budget: 20,000",
+    "official": "ms. goodsell reported that her budget for fy26 is level funded",
+    "note": "Our label calls 20,000 the FY26 budget (and our own total is $230,000), while the official minutes call 20k a transfer and the budget level funded; check the recording at t=670."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Minutes distribution (mail vs email)",
+    "t": 150,
+    "ours": "Whether to change how minutes are distributed (mail vs email) will be put on the next agenda.",
+    "official": "discussion on emailing minutes as opposed to mailing them was tabled until a full board is present.",
+    "note": "Ours says it goes on the next agenda; the official says it was tabled until a full board is present, so check what was actually said at t=150."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Plea to Finance Committee on Feb 20 re kitchen aides",
+    "t": 820,
+    "ours": "The director will make a plea to the Finance Committee on February 20th to move the kitchen aides into the town budget.",
+    "official": "discussion ensued regarding the kitchen aide positions and a request to move them from formula grant funding to the town budget.",
+    "note": "The official records only discussion of the request, with no decision and no Feb 20 plea; the Finance Committee date appears only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Kitchen aide and formula grant figures",
+    "t": 755,
+    "ours": "Formula grant and kitchen aides: 46,000, 20,000",
+    "official": "",
+    "note": "The official minutes print no figure for the Kitchen Aide positions."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Combining two meal site positions into one 36-hour position",
+    "t": 712,
+    "ours": "The two part-time meal site positions will be combined into one 36-hour position, allowing Meals on Wheels on Fridays.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA total budget and program fund figures",
+    "t": 907,
+    "ours": "Total COA budget: $230,000; COA program budget: $5,000; Remaining program funds: 2,600, 26,000, $2,600",
+    "official": "",
+    "note": "The official minutes give no dollar figures other than 20k; these captions may also be garbled."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Municipal building project, solar grant and escalation figures",
+    "t": 3859,
+    "ours": "Municipal building project cost: 28 to30 million, $14 million, $13.5 million, north of 20 million, 20 million 21 million; Solar grant: 75%; Construction cost escalation: 10%",
+    "official": "",
+    "note": "The official minutes do not mention the building project, solar grant or escalation."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DPW parking lot plan advice",
+    "t": 2006,
+    "ours": "The board was advised to engage with DPW on the parking lot architectural plan scope.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Quarterly financial reports",
+    "ours": "",
+    "official": "ms. goodsell will be providing these to the board on a quarterly basis with the first report coming in march.",
+    "note": "Our minutes do not record this commitment."
+   },
+   {
+    "kind": "agree",
+    "about": "Michael, Select Board Vice Chair guest",
+    "ours": "Michael (presenter)",
+    "official": "guests: michael ray jeffries (lunenburg select board vice chair), barbara coulombe",
+    "note": "Michael is presumably Michael Ray Jeffries, though ours gives only the first name."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair and director names",
+    "ours": "the chair (unnamed) (chair); the COA director (unnamed) (presenter)",
+    "official": "present: deb lincoln (chairperson), peter lincoln, diane nowd, elena christopher, susan",
+    "note": "The official minutes name the chair as Deb Lincoln and the director as Ms. Goodsell, who ours leaves unnamed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Caesar",
+    "ours": "Caesar (member)",
+    "official": "present: deb lincoln (chairperson), peter lincoln, diane nowd, elena christopher, susan",
+    "note": "No Caesar appears in the official present or excused lists, so check whether it is a misheard name or a non-member."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other members present, absent members and guest Barbara Coulombe",
+    "ours": "",
+    "official": "excused: helen balcom, cathy beale, jane rabbitt, ana lockwood, judy tarbell",
+    "note": "The official minutes list members present, five excused absences and guest Barbara Coulombe, none of whom our minutes name."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:33:22Z",
+   "cost_usd": 0.246061
+  }
  }
 }

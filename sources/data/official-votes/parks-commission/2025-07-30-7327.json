@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2025-07-30",
  "docid": "7327",
@@ -12,23 +12,310 @@
  },
  "votes": [
   {
-   "motion": "Approve March 26, 2025, April 9, 2025, April 26, 2025, and June 4, 2025, amended minutes",
+   "motion": "Approve the amended minutes of March 26, 2025, April 9, 2025, April 26, 2025, and June 4, 2025.",
    "moved_by": "A. Scheipers",
    "seconded_by": "C. Sullivan",
-   "outcome": "passed 3-0-0",
+   "outcome": "passed unanimously (3-0-0)",
    "procedural": true,
-   "quote": "a. scheipers moved to approve march 26, 2025, april 9, 2025, april 26, 2025, and june 4, 2025, amended minutes. seconded by c. sullivan. call for the vote: three-aye. the motion passed unanimously (3-0-0)."
+   "quote": "a. scheipers moved to approve march 26, 2025, april 9, 2025, april 26, 2025, and june 4, 2025, amended minutes. seconded by c. sullivan."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Scheipers",
    "seconded_by": "C. Sullivan",
-   "outcome": "passed 3-0-0",
+   "outcome": "passed unanimously (3-0-0)",
    "procedural": true,
    "quote": "a. scheipers moved to adjourn. seconded by c. sullivan. call for the vote: three-aye. the motion passed unanimously (3-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes only. The minutes discuss the Marshall Park Project redesign, Skate Park presentation, and fee structures, but none of these resulted in recorded motions or votes. A future vote on extending the Skate Park agreement was mentioned as planned for the next meeting but did not occur at this meeting.",
- "cost_usd": 0.0746994
+ "note": "Text is extracted, not a scan. Page numbers are blank in the extract (\"Page  of 18\" etc.), so no page citations are given. Member name is spelled \"Scheipers\" in the body and \"Schiepers\" in the letterhead; \"Scheipers\" is used as printed in the body. Two votes recorded: approval of minutes and adjournment, both 3-0-0. The closing \"Member ____made the Motion to Approve the minutes of July 30, 2025 ... Five-aye ... (5-0-0)\" block is an unfilled template with no mover, seconder or date, so it is not recorded as a vote. The Marshall Park \"unofficial consensus\" and the MRPC/MDOR agreement are recorded as decisions without a vote. No public comment speakers are recorded; the minutes say \"None.\" Figures are printed as they appear; no transfers are recorded.",
+ "cost_usd": 0.017989869999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair karin menard, vice-chair chris sullivan, member anita scheipers"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair karin menard, vice-chair chris sullivan, member anita scheipers"
+  },
+  {
+   "name": "Anita Scheipers",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair karin menard, vice-chair chris sullivan, member anita scheipers"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: member colleen shapiro, member marianne mascari"
+  },
+  {
+   "name": "Marianne Mascari",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: member colleen shapiro, member marianne mascari"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Director",
+   "status": "remote",
+   "quote": "facilities director chris ruth (via zoom), recreation director angela clement"
+  },
+  {
+   "name": "Angela Clement",
+   "role": "Recreation Director",
+   "status": "remote",
+   "quote": "facilities director chris ruth (via zoom), recreation director angela clement"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "select board member glenn mcleod"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "Presenter for the Lunenburg Skate Park; no title printed",
+   "status": "present",
+   "quote": "anthony caiozzo presented the commission with a 3d physical rendering of the proposed"
+  },
+  {
+   "name": "Anthony Senesi",
+   "role": "Recording Clerk",
+   "status": "not stated",
+   "quote": "anthony senesi, recording clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Unofficial consensus not to bring the Marshall Park Project to the Fall Special Town Meeting, due to concerns about bringing the article back too quickly after it did not pass initially (no vote recorded).",
+   "quote": "the commission's unofficial consensus was not to bring forward the marshall park project to the fall special town meeting due to concerns about bringing the article back too quickly"
+  },
+  {
+   "decision": "K. Menard and C. Sullivan to contact the design firm to continue spending down the $97,000, including the $13,000 left of ARPA funds.",
+   "quote": "k. menard stated that she and c. sullivan will contact the design firm to continue spending down the $97,000, including the $13,000 left of arpa funds."
+  },
+  {
+   "decision": "The Board will vote at its next meeting on granting an extension of the Skate Park agreement, which has expired; the chair will confirm the motion language.",
+   "quote": "k. menard stated that the board will vote to grant an extension of the agreement at the next meeting."
+  },
+  {
+   "decision": "The Commission agreed to allow MRPC and MDOR to catalogue and photograph the Town's outdoor recreation resources for a Statewide database.",
+   "quote": "the commission agreed to allow them to catalogue the town's outdoor resources."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park ARPA funds remaining",
+   "what_was_recorded": "The chair reported $13,000 of ARPA funds allocated to the Marshall Park Project, which would be returned to the federal government if not spent by December 31, 2025; the Commission then agreed to spend it on design.",
+   "figures_as_printed": [
+    "$13,000"
+   ],
+   "quote": "k. menard stated that there is currently $13,000 allocated in arpa funds for the marshall park project."
+  },
+  {
+   "topic": "Marshall Park remaining design spend",
+   "what_was_recorded": "The chair reported $97,000 remaining to be spent to bring the Marshall Park Project to 75% design.",
+   "figures_as_printed": [
+    "$97,000"
+   ],
+   "quote": "k. menard stated that there is $97,000 remaining to be expended to get the marshall park project to the 75% design level."
+  },
+  {
+   "topic": "Skate Park fundraising goal",
+   "what_was_recorded": "The skate park organizers reported a target fundraising goal and that they had reached 91% of it.",
+   "figures_as_printed": [
+    "$372,000",
+    "91%"
+   ],
+   "quote": "a. caiozzo stated that the target fundraising goal is $372,000."
+  },
+  {
+   "topic": "FY27 operating budget request for Veterans Memorial Park",
+   "what_was_recorded": "The Facilities Director said he is requesting an additional amount in the FY27 operating budget to address Veterans Memorial Park maintenance.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "c. ruth stated that for the fy27 operating budget, he is requesting an additional $10,000."
+  },
+  {
+   "topic": "Maintenance contract costs and mowings",
+   "what_was_recorded": "The chair asked for the cost of current maintenance contracts; the town exceeds the mowings in the contract; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "k. menard asked c. ruth to provide the commission with the cost of the current contracts for maintenance."
+  },
+  {
+   "topic": "User fees and School Department field rates",
+   "what_was_recorded": "The chair noted the School Department significantly increased its field rates this year; she did not recommend raising Town fees based on maintenance totals; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "k. menard stated that the school department significantly increased their rates this year."
+  },
+  {
+   "topic": "Town Beach kayak and canoe fees",
+   "what_was_recorded": "The Town Manager suggested renting kayak or canoe storage for a fee as a use of the left side of the Town Beach; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "residents could rent a kayak or canoe, or a place to store their kayak/canoe for a fee."
+  },
+  {
+   "topic": "Financial constraints on Town projects",
+   "what_was_recorded": "Select Board Member McLeod described significant financial constraints affecting the Ritter Memorial Building, Town Hall, TC Passios, PFAS regulations and the School Department; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "g. mcleod described significant financial constraints in regard to"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities Director update",
+   "resolution": "no action; Wallace tennis court bids due August 4, 2025; vehicle damage at Wallace Park; Lake Whalom weed treatment",
+   "quote": "facilities director c. ruth provided an update.",
+   "tags": [
+    "facilities",
+    "Wallace Park",
+    "tennis courts",
+    "Lake Whalom"
+   ]
+  },
+  {
+   "topic": "Recreation Director update",
+   "resolution": "no action; beach staffing closures, swim lessons, fall programming",
+   "quote": "recreation director a. clement provided an update.",
+   "tags": [
+    "recreation",
+    "Town Beach",
+    "lifeguards",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Marshall Park Project review and next steps",
+   "resolution": "unofficial consensus not to bring to Fall Special Town Meeting; continue spending down $97,000 via design firm",
+   "quote": "k. menard stated that there is currently $13,000 allocated in arpa funds for the marshall park project.",
+   "tags": [
+    "Marshall Park",
+    "ARPA",
+    "Town Meeting",
+    "design"
+   ]
+  },
+  {
+   "topic": "Lunenburg Skate Park presentation",
+   "resolution": "presentation received; agreement extension to be voted at next meeting",
+   "quote": "anthony caiozzo presented the commission with a 3d physical rendering of the proposed",
+   "tags": [
+    "skate park",
+    "drainage",
+    "fundraising",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Capital planning items",
+   "resolution": "discussion; no action; chair to make list, facilities director to add suggestions",
+   "quote": "k. menard reminded the commission that the capital planning committee will meet in november and december of this year to discuss requests.",
+   "tags": [
+    "capital planning",
+    "McNally Park",
+    "Northfield Park",
+    "Fitzgerald Park",
+    "Powell Field"
+   ]
+  },
+  {
+   "topic": "Veterans Memorial Park and Northfield Park",
+   "resolution": "discussion; no action; FY27 operating budget request noted",
+   "quote": "k. menard stated that veterans memorial park needs a clean-up effort.",
+   "tags": [
+    "Veterans Memorial Park",
+    "Northfield Park",
+    "operating budget"
+   ]
+  },
+  {
+   "topic": "Parks user fees and field scheduling",
+   "resolution": "discussion; no fee change recommended; policy and form updates to be pursued",
+   "quote": "k. menard stated that she had a meeting with c. ruth and the town manager regarding user fees.",
+   "tags": [
+    "user fees",
+    "field scheduling",
+    "youth baseball",
+    "School Department fields"
+   ]
+  },
+  {
+   "topic": "Chair updates",
+   "resolution": "noted; dog enforcement at McNally Field referred to Town Manager and Town Counsel; MRPC/MDOR cataloguing agreed",
+   "quote": "k. menard stated that the commission received a concern from a resident regarding dogs at mcnally field.",
+   "tags": [
+    "McNally Field",
+    "dogs",
+    "enforcement",
+    "outdoor recreation database"
+   ]
+  },
+  {
+   "topic": "Open Space Committee updates",
+   "resolution": "no action; none reported",
+   "quote": "open space committee updates none.",
+   "tags": [
+    "open space"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved four sets of minutes, amended",
+   "quote": "a. scheipers moved to approve march 26, 2025, april 9, 2025, april 26, 2025, and june 4, 2025, amended minutes. seconded by c. sullivan.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting dates",
+   "resolution": "noted; next meeting tentatively August 20, 2025",
+   "quote": "the commission stated that their next meeting will be tentatively on august 20, 2025.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "no action; none",
+   "quote": "other business none.",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:32 PM, passed 3-0-0",
+   "quote": "a. scheipers moved to adjourn. seconded by c. sullivan.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Marshall Park",
+  "ARPA funds",
+  "skate park",
+  "capital planning",
+  "user fees",
+  "Town Beach",
+  "recreation",
+  "facilities",
+  "youth baseball",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2025-04-14",
  "docid": "7168",
@@ -12,40 +12,242 @@
  },
  "votes": [
   {
-   "motion": "Approve the Lunenburg Agricultural Commission 2025 goals",
-   "moved_by": "Jackie Chabot",
-   "seconded_by": "Ryan Stober",
+   "motion": "Approve the Lunenburg Agricultural Commission 2025 goals (seven goals, listed in the minutes).",
+   "moved_by": "Jackie",
+   "seconded_by": "Ryan",
    "outcome": "passed",
    "procedural": false,
-   "quote": "jackie makes a motion to approve the lunenburg agricultural commission 2025 goals as follows: 1. hold 10 meetings of the agricultural commission during the 2025 calendar year 2. review and approve all meeting minutes by the end of the following meeting 3. support community members pursuit of agriculture 4. mediate, advocate, educate, and/or negotiate farming issues 5. explore ideas to managing diseases and ensure animal care 6. community garden a. collect interest about community garden from community b. create a high level outline for community garden 7. farmers' market a. hold a farmers' market b. encourage small local producers to participate c. create a \"backyard farmers\" area ryan seconded. commission unanimously approve",
-   "quote_taken_from_text": true
+   "quote": "jackie makes a motion to approve the lunenburg agricultural commission 2025 goals as follows:"
   },
   {
-   "motion": "Approve vendors Wicked Cool Projects, Mass Mammals, and Cortland Designs to participate in the farmers' market",
-   "moved_by": "Kathy Dugan",
-   "seconded_by": "Jackie Chabot",
+   "motion": "Approve vendors Wicked Cool Projects, Mass Mammals, and Cortland Designs for the Lunenburg Farmers' Market.",
+   "moved_by": "Kathy",
+   "seconded_by": "Jackie",
    "outcome": "passed",
    "procedural": false,
-   "quote": "kathy makes a motion to approve wicked cool projects, mass mammals, and cortland designs. jackie seconded. commission unanimously approved."
+   "quote": "kathy makes a motion to approve wicked cool projects, mass mammals, and cortland designs. jackie seconded."
   },
   {
-   "motion": "Approve spending not to exceed $300 on new signage for the farmers' market including 6 yard signs and 1 2.5x6 ft vinyl banner",
-   "moved_by": "Kathy Dugan",
-   "seconded_by": "Ryan Stober",
+   "motion": "Approve spending not to exceed $300 on new farmers' market signage, including 6 yard signs and one 2.5x6 ft vinyl banner.",
+   "moved_by": "Kathy",
+   "seconded_by": "Ryan",
    "outcome": "passed",
    "procedural": false,
-   "quote": "kathy makes a motion to approve spending not to exceed $300 on new signage for the farmers' market including 6 yard signs and 1 2.5x6 ft vinyl banner. ryan seconded. commission unanimously approved."
+   "quote": "kathy makes a motion to approve spending not to exceed $300 on new signage for the farmers' market including 6 yard signs and 1 2.5x6 ft vinyl banner. ryan seconded."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Ryan Stober",
-   "seconded_by": "Kathy Dugan",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ryan",
+   "seconded_by": "Kathy",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ryan made a motion to adjourn; kathy seconds. commission unanimously approved."
+   "quote": "ryan made a motion to adjourn; kathy seconds. commission unanimously approved. meeting adjourned at 8:31 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in minutes. Vote outcomes described as unanimously approved, equivalent to passed. Commission had 4 of 7 members present (Chair Duffy, Clerk Chabot, Members Dugan and Stober); no quorum requirement stated in minutes.",
- "cost_usd": 0.08500339999999999
+ "note": "Text extract, not a scan; all votes and figures read directly. Three votes recorded with 'unanimously approved' but no vote count, so outcome is 'passed'. Maryrae Holman and Kira McClellan are not marked present, and the minutes never say 'absent', so status is 'not stated'. Ryan and Kathy are named by first name only in the motions. Agenda item 2 (Public Comment) carries topic notes but no named speaker, so no public_comment entries were recorded; item 10 is recorded as None. Minutes approval (item 4) is listed as None, so no vote was recorded on it.",
+ "cost_usd": 0.014846670000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman clerk jackie chabot ✔ member kathy dugan ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "vice-chair maryrae holman clerk jackie chabot"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jackie chabot ✔ member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Member",
+   "status": "present",
+   "quote": "member kathy dugan ✔ member ryan stober ✔ alternate kira mcclellan"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Member",
+   "status": "present",
+   "quote": "member ryan stober ✔ alternate kira mcclellan alternate vacant"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan alternate vacant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Letter of support for the MVP Action Grant was submitted to participate in the grant. No vote recorded; the minutes do not say who authorised it.",
+   "quote": "mvp action grant - letter of support to participate in grant letter submitted"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Farmers' market signage costs",
+   "what_was_recorded": "The previous signs cost $220.62, and the same size and number was estimated at about $245.",
+   "figures_as_printed": [
+    "$220.62",
+    "about $245"
+   ],
+   "quote": "last signs total $220.62 same size/number total about $245"
+  },
+  {
+   "topic": "Farmers' market signage spending cap",
+   "what_was_recorded": "The commission approved spending of no more than $300 on new farmers' market signage.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "kathy makes a motion to approve spending not to exceed $300 on new signage for the farmers' market including 6 yard signs and 1 2.5x6 ft vinyl banner. ryan seconded."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:03 pm",
+   "quote": "call to order meeting commencement time: 7:03 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (agenda item 2): TV quiz invitation and field status",
+   "resolution": "no action recorded",
+   "quote": "are you smarter than a 6th grader? lunenburg teen center, friday, may 9th from 6:30-9 p.m. at lmhs invited agcomm",
+   "tags": [
+    "community events",
+    "public comment",
+    "field"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; poultry seminar noted",
+   "quote": "poultry seminar at lpr was great turnout",
+   "tags": [
+    "poultry",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Review/approve minutes",
+   "resolution": "no action; item listed as None",
+   "quote": "4 review/approve minutes none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "USDA and MDAR updates",
+   "resolution": "no action; both listed as None",
+   "quote": "usda update none mdar update none",
+   "tags": [
+    "state agencies",
+    "federal agencies"
+   ]
+  },
+  {
+   "topic": "Goals for 2025",
+   "resolution": "approved",
+   "quote": "jackie makes a motion to approve the lunenburg agricultural commission 2025 goals as follows:",
+   "tags": [
+    "goals",
+    "planning"
+   ]
+  },
+  {
+   "topic": "MVP Action Grant letter of support",
+   "resolution": "letter submitted; no vote recorded",
+   "quote": "mvp action grant - letter of support to participate in grant letter submitted",
+   "tags": [
+    "grants",
+    "climate"
+   ]
+  },
+  {
+   "topic": "Lunenburg Farmers' Market vendors and signage",
+   "resolution": "vendors approved; signage spending capped at $300",
+   "quote": "reviewed applications for the following vendors:",
+   "tags": [
+    "farmers market",
+    "vendors",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Community garden",
+   "resolution": "no action; development of ideas and procedures listed",
+   "quote": "community garden - develop ideas and procedures",
+   "tags": [
+    "community garden"
+   ]
+  },
+  {
+   "topic": "Membership, Facebook page, mailing list",
+   "resolution": "no action; all listed as None",
+   "quote": "membership none agricultural commission facebook page none",
+   "tags": [
+    "membership",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Committee reports and farming issues",
+   "resolution": "no action; both listed as None",
+   "quote": "7 committee reports none 8 farming issues none",
+   "tags": [
+    "committees",
+    "farming"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events schedule",
+   "resolution": "schedule listed through October 20, 2025",
+   "quote": "upcoming meetings/events schedule",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (agenda item 10)",
+   "resolution": "no public comment",
+   "quote": "10 public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:31 pm",
+   "quote": "ryan made a motion to adjourn; kathy seconds. commission unanimously approved. meeting adjourned at 8:31 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmers market",
+  "signage",
+  "community garden",
+  "goals",
+  "grants",
+  "poultry",
+  "meeting minutes",
+  "town board"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -407,5 +407,252 @@
    "at": "2026-10-06T18:18:37Z",
    "cost_usd": 0.216457
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01132025-6954",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-01-13-minutes-6954.txt",
+   "path": "sources/meetings/planning-board/2025-01-13-minutes-6954.pdf"
+  },
+  "official_sha256": "f94a99a36405ecc59cd30a6641e3b54cefe77bd61fdaf78483de0c62c3f541d4",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on every permit approval, the peer review requirement and both hearing continuances. Ours also records five votes to close public hearings, which the official minutes do not mention, and the official minutes record no board-level decisions (zoning workshop, next meeting dates, Master Plan committee) that our recording has. Check whether the hearing closings were voted and whether the quorum item and the clerk follow-up are the same discussion.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 8,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Approve stormwater permit, 791 Lemonster/Leominster Road",
+    "ours": "Approve the stormwater permit for 791 Lemonster Road with standard conditions and deed recording of maintenance requirements. — passed",
+    "official": "m. allison moved to approve the stormwater management permit subject to all standard conditions, and if not otherwise specified therein",
+    "note": "Same approval with standard conditions and deed recording of maintenance requirements; both passed.",
+    "t": 1421
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name Leominster Road",
+    "ours": "791 Lemonster Road",
+    "official": "t. willsmer moved to approve the stormwater management permit for 795 leominster rd with all standard conditions",
+    "official_reading": "Leominster Rd",
+    "note": "The captions heard the street name as Lemonster; the official minutes spell it Leominster, same address.",
+    "t": 1421
+   },
+   {
+    "kind": "agree",
+    "about": "Approve stormwater permit, 795 Leominster Rd",
+    "ours": "Approve the stormwater permit for 795 Lemonster Road with standard conditions. — passed",
+    "official": "t. willsmer moved to approve the stormwater management permit for 795 leominster rd with all standard conditions",
+    "note": "Same motion and outcome.",
+    "t": 1823
+   },
+   {
+    "kind": "agree",
+    "about": "Approve stormwater permit, 70 Kilburn Street",
+    "ours": "Approve 70 Kilburn Street stormwater permit as proposed with standard conditions. — passed",
+    "official": "t. willsmer moved to approve the stormwater mangement permit for 70 kilburn st with all standard conditions",
+    "note": "Same motion and outcome.",
+    "t": 2579
+   },
+   {
+    "kind": "agree",
+    "about": "Approve stormwater permit, 171 Arbor Street",
+    "ours": "Approve the stormwater management permit for 171 Arbor Street with all standard conditions. — passed",
+    "official": "a. reid moved to approve the stormwater management permit for 171 arbor st with all standard conditions",
+    "note": "Same motion and outcome.",
+    "t": 3365
+   },
+   {
+    "kind": "agree",
+    "about": "Approve common driveway special permit, 171 Arbor Street",
+    "ours": "Approve the special permit for the common driveway at 171 Arbor Street with site plan standard conditions and a condition that a legal framework for shared maintenance be recorded on deeds. — passed",
+    "official": "t. willsmer moved to approve the special permit for 171 arbor st (common driveway) using the standard conditions for site plan approval",
+    "note": "Same permit with the shared-maintenance legal framework condition; both passed.",
+    "t": 3885
+   },
+   {
+    "kind": "agree",
+    "about": "Approve modification to site plan approval and special permit, 230 Flat Hill Road",
+    "ours": "Approve modification to site plan approval and special permit for 230 Flat Hill Road as proposed with standard conditions. — passed",
+    "official": "t. willsmer moved to approve the request for modification to site plan approval and special permit",
+    "note": "Same motion and outcome.",
+    "t": 4921
+   },
+   {
+    "kind": "agree",
+    "about": "Peer review requirement, 255 Sunny Hill Road (Graves Engineering)",
+    "ours": "Require submission of a peer review deposit from the applicant, assigned to Graves Engineering, for 255 Sunny Hill Road. — passed",
+    "official": "m. allison moved to require a submission of $2,000 for purposes of peer review by the applicant, to be assigned to graves engineering, inc.",
+    "note": "Same vote; the amount is in our figures list as $2,000, matching the official $2,000.",
+    "t": 5322
+   },
+   {
+    "kind": "agree",
+    "about": "Peer review deposit amount, 255 Sunny Hill Road",
+    "ours": "Peer review deposit, 255 Sunny Hill Road: $2,000",
+    "official": "m. allison moved to require a submission of $2,000 for purposes of peer review by the applicant, to be assigned to graves engineering, inc.",
+    "note": "Both give $2,000.",
+    "t": 5322
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 255 Sunny Hill Road hearing to Jan 27",
+    "ours": "Continue the public hearing for the 255 Sunny Hill Road stormwater permit to January 27 at 6:05 p.m. — passed",
+    "official": "a. reid moved to continue the public hearing for the stormwater management permit for 255 sunny hill rd to 2025-01-27 at 6:05 p.m.",
+    "note": "Same motion, date and time.",
+    "t": 5941
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 494 Electric Ave and 558/560 Goodrich St hearings to Jan 27",
+    "ours": "Continue public hearings for 494 Electric Ave and 558/560 Goodrich Street to January 27 at 6:05 p.m. — passed",
+    "official": "t. willsmer moved to continue the public hearings for 494 electric ave and 558 & 560 goodrich st to 2025-01-27 at 6:05 p.m.",
+    "note": "Same motion, date and time.",
+    "t": 6028
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Votes to close public hearings (791 Lemonster, 795 Lemonster, 70 Kilburn, 171 Arbor, 230 Flat Hill)",
+    "ours": "Close the public hearing for the stormwater permit at 791 Lemonster Road. — passed (also 795 Lemonster Road t=1777, 70 Kilburn Street t=2223, 171 Arbor Street t=3292, 230 Flat Hill Road t=4838)",
+    "official": "",
+    "note": "Our minutes record five votes to close hearings; the official minutes record none. Check the recording at these times, and whether the official minutes left out the closings or the board closed them without a vote.",
+    "t": 1250
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Peer review cost to applicant",
+    "ours": "Peer review cost to applicant: $6,000, $2,000 per peer revie",
+    "official": "",
+    "note": "The official minutes print no dollar figure for peer review cost, apart from the $2,000 deposit. The $6,000 and the cut-off text come from the captions and need checking against the recording.",
+    "t": 2264
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost of drainage failure to neighbors",
+    "ours": "Cost of drainage failure to neighbors: $1,000 a year",
+    "official": "",
+    "note": "The official minutes have no figure for this.",
+    "t": 2388
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital planning figure",
+    "ours": "Capital planning: five and 10e plan",
+    "official": "",
+    "note": "The official minutes have no capital planning item. The captions are garbled (probably a five- and ten-year plan).",
+    "t": 7000
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MBTA Communities zoning plan direction",
+    "ours": "Staff recommended, and the chair indicated the board would proceed with, the MBTA Communities zoning plan toward fall town meeting after public engagement despite the Supreme Court ruling.",
+    "official": "",
+    "note": "The official minutes do not mention MBTA Communities.",
+    "t": 506
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Zoning workshop Jan 27",
+    "ours": "A zoning workshop was set for January 27 to begin work on the ADU and floodplain bylaws for annual town meeting.",
+    "official": "",
+    "note": "The official minutes do not mention the workshop.",
+    "t": 387
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "171 Arbor Street decision drafting",
+    "ours": "Staff will draft the 171 Arbor Street decision, with the standard conditions and HOA/maintenance condition, for review at the next meeting before signing.",
+    "official": "",
+    "note": "The official minutes do not record this follow-up.",
+    "t": 3778
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Master Plan Steering Committee follow-up with the Town Clerk",
+    "ours": "The chair will put the Master Plan Steering Committee composition on the next agenda and the chair and staff will consult the Town Clerk on quorum.",
+    "official": "m. brenner noted the town clerk should have this info and will follow up.",
+    "note": "Both involve the Town Clerk, but ours is about quorum and agenda placement, while the official minutes are about getting the committee's background documents (charge, consultants' contract). Check the recording to see whether these are the same discussion or two items.",
+    "t": 6388
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Joint meeting with Open Space Committee",
+    "ours": "The chair agreed to schedule a joint meeting with the Open Space Committee if they request one.",
+    "official": "",
+    "note": "The official minutes do not mention this.",
+    "t": 6874
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting dates",
+    "ours": "Next meetings: January 27 and February 10; February 17 is not a meeting night.",
+    "official": "",
+    "note": "The official minutes do not give a February 10 meeting or the note about February 17.",
+    "t": 7921
+   },
+   {
+    "kind": "caption_error",
+    "about": "Land use director's name",
+    "ours": "Mr Riley (land use director / staff)",
+    "official": "c. reilly explained that after receiving revisions which addressed the first peer review letter'sii comments",
+    "official_reading": "Christopher Reilly",
+    "note": "The captions heard Reilly as Riley; same role."
+   },
+   {
+    "kind": "agree",
+    "about": "Member Allison",
+    "ours": "Mr Allison (member)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod",
+    "note": "Matthew Allison is listed as a member present in both."
+   },
+   {
+    "kind": "agree",
+    "about": "Logan, planning staff",
+    "ours": "Logan (planning staff (Zoom monitor))",
+    "official": "minutes by logan o'connell, admin asst.",
+    "note": "Same person; the official minutes show him as minute-taker, with attendance not stated."
+   },
+   {
+    "kind": "agree",
+    "about": "Chair",
+    "ours": "Chair (unnamed) (chair)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod",
+    "note": "Our minutes do not name the chair; the official minutes name Matthew Brenner."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other board members present",
+    "ours": "",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod",
+    "note": "Willsmer, Reid and McLeod are listed as present in the official minutes. Our attendee list has only the chair, Allison, and staff, though they appear to have moved or spoken at the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicant representatives and engineer",
+    "ours": "",
+    "official": "ryan proctor , presenting on behalf of applicant timric realty trust , read the comments from the latest gei",
+    "note": "The official minutes name applicant representatives (Proctor, Kennefick, Marchetti) and Jeffrey Walsh of Graves Engineering. Our attendee list has none of them."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment from residents",
+    "ours": "",
+    "official": "raymond lajoie (245 leominster rd) was opposed to the previous application submitted for this site, asked if the current application's design diverts drainage into the wetlands below",
+    "note": "Public comment from Lajoie and Chapdelaine (208 Leominster Rd) appears only in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:38:32Z",
+   "cost_usd": 0.272591
+  }
  }
 }

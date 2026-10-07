@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2025-04-07",
  "docid": "7099",
@@ -12,15 +12,181 @@
  },
  "votes": [
   {
-   "motion": "Accept the amended 3/3/2025 minutes",
+   "motion": "Accept the amended 3/3/2025 minutes.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to accept the amended 3/3/2025 minutes (f.beall, 2nd p.lincoln), passed."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "F.Beale",
+   "seconded_by": "P.Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "meeting adjourned at 6:30 pm • (f.beale, 2nd p.lincoln) - passed)"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Two votes recorded. Note: The name is spelled \"Beall\" in the minutes approval vote and \"Beale\" in the adjournment vote—copied verbatim as printed.",
- "cost_usd": 0.0657824
+ "dropped_unquoted": 0,
+ "note": "Plain-text extraction of a two-page minutes document; no scan. Two procedural votes are recorded with printed mover and seconder but no vote count; both are recorded as 'passed' as printed. The adjournment line prints the mover as 'F.Beale' while the attendance line prints 'Faith Beall'; the minutes do not say whether these are the same person, so the name is kept as printed. Steve Archambault is marked excused in the minutes and is recorded as absent. Pete Lincoln is recorded as attending by zoom. The manager's roll-call status is inferred from her listing in the roll call. The FY '26 budget being 'set' is an announcement with no vote and no figure printed. Quotes are collapsed to single spaces, as the minutes' tab and line-break spacing is not preserved.",
+ "cost_usd": 0.01377267,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member (as printed: 'PACC members present')",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln (zoom), faith beall"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member, attending by zoom",
+   "status": "remote",
+   "quote": "pacc members present: steve walker, pete lincoln (zoom), faith beall"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln (zoom), faith beall"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "steve archambault, (excused) 4. manager: jo toale"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "steve archambault, (excused) 4. manager: jo toale"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "PAC account balance",
+   "what_was_recorded": "The manager reported, per the town, the current PAC balance, noting some information is not yet posted and an additional amount is expected.",
+   "quote": "according to the town, the current pac balance is $1,009,379.94",
+   "figures_as_printed": [
+    "$1,009,379.94",
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "Expected additional PAC funds",
+   "what_was_recorded": "The balance is expected to rise by a further amount, and March interest is not yet posted.",
+   "quote": "should have an additional $40,000",
+   "figures_as_printed": [
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "FY '26 PAC budget",
+   "what_was_recorded": "The chair announced the PAC FY '26 budget is set; no figure is printed in the minutes.",
+   "quote": "s.walker announced that the pac, fy '26 budget is set",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "PAC Warrant wording and numbers",
+   "what_was_recorded": "The chair, manager and Town Manager finalized the PAC Warrant wording and numbers; no figure is printed in the minutes.",
+   "quote": "s.walker, j.toale and town manager finalized pac warrant wording and numbers",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Enterprise Fund investment",
+   "what_was_recorded": "Enterprise Fund investment status was reported as having no update; no figure is printed.",
+   "quote": "enterprise fund investment status: • no update at this time",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public and committee comments",
+   "resolution": "no action (none offered)",
+   "quote": "public comments: - • none committee comments: - • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Communications: PAC Warrant",
+   "resolution": "no action (reported)",
+   "quote": "s.walker, j.toale and town manager finalized pac warrant wording and numbers",
+   "tags": [
+    "warrant",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes of 3/3/2025",
+   "resolution": "approved as amended",
+   "quote": "motion to accept the amended 3/3/2025 minutes (f.beall, 2nd p.lincoln), passed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's report",
+   "resolution": "no action (reported)",
+   "quote": "the \"welcome to pac\", video came out great and was posted on the youtube pac channel",
+   "tags": [
+    "programming",
+    "shows",
+    "video",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "FY '26 budget",
+   "resolution": "noted as set",
+   "quote": "s.walker announced that the pac, fy '26 budget is set",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Studio space update",
+   "resolution": "no action (no formal update)",
+   "quote": "studio space update: • no formal update.",
+   "tags": [
+    "studio"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund investment status",
+   "resolution": "no action (no update)",
+   "quote": "enterprise fund investment status: • no update at this time",
+   "tags": [
+    "enterprise fund",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for May 5, 2025; adjourned",
+   "quote": "next meeting: - may 5th, 2025 6:00 pm.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "Public Access Cable Committee",
+  "PAC",
+  "public access television",
+  "programming",
+  "PAC balance",
+  "FY26 budget",
+  "warrant",
+  "town meeting",
+  "minutes",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

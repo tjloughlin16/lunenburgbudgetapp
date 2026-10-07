@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2025-03-25",
  "docid": "7115",
@@ -12,15 +12,147 @@
  },
  "votes": [
   {
-   "motion": "Enter into Executive session to consider or interview applicants for employment or appointment",
+   "motion": "Enter executive session under Purpose 8, G.L. c. 30A, § 21(a)(8), to consider or interview applicants for employment or appointment, and not return to public session.",
    "moved_by": "Mr. Lehtinen",
    "seconded_by": "Ms. Archambault",
-   "outcome": "passed 12-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "voted to enter into executive session at 6:28pm by mr. lehtinen, seconded by ms. archambault"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one formal vote recorded. Item 1 (call to order) uses \"seconded\" language but is not framed as a motion or vote, and no outcome is stated. Item 3 (meeting schedule) notes a \"decision was made by committee\" without formal motion or voting language.",
- "cost_usd": 0.0800844
+ "note": "Two-page text extract, one motion recorded (entering executive session, with roll call of all twelve listed members yes; the roll call is printed by first name only). The body in the request was 'School Advisory Councils Committees' but the minutes are headed 'Superintendent Screening Committee'; the record is kept as printed. The minutes do not record a vote on the call to order, the schedule, or the interview questions, and do not record an adjournment or any close of the executive session. No dollar figures appear, so budget_items is empty. Member roles are as printed under 'Screening Committee Members'.",
+ "cost_usd": 0.01384137,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "School Committee Rep, Chair",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Rep, Vice Chair",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  },
+  {
+   "name": "Alicia Mallon",
+   "role": "MASC Field Director",
+   "status": "present",
+   "quote": "ms. mallon indicated that each interview would take approximately 70 minutes (3 minutes per question)."
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "screening committee members caesar nuzzolo tj loughlin sarah wright mary foyle brad mcnamara jane hall kristen ryan mandy gilman carla squier liz petersen"
+  },
+  {
+   "name": "TJ Loughlin",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  },
+  {
+   "name": "Sarah Wright",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  },
+  {
+   "name": "Brad McNamara",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  },
+  {
+   "name": "Jane Hall",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  },
+  {
+   "name": "Kristen Ryan",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  },
+  {
+   "name": "Liz Petersen",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "roll call: mandy-yes, kristen-yes, tj-yes, caesar-yes, carla-yes, jane-yes, mary-yes, sarah-yes, brad-yes, liz-yes, carol-yes, brian-yes"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee decided to meet Thursday, March 27th and Friday, March 28th for interviews, and Monday, March 31st for deliberation of candidates, so that original committee members could attend all evenings.",
+   "quote": "decision was made by committee to meet on thursday, march 27th, friday, march 28th for interviews"
+  },
+  {
+   "decision": "The committee was tasked with reviewing each section of interview questions and choosing or revising them to narrow the number asked per candidate.",
+   "quote": "committee was tasked with reviewing each section of questions and choosing or revising questions as appropriate"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action; called to order at 5:07pm",
+   "quote": "the meeting was called to order at 5:07pm by mr. lehtinen, seconded by ms. archambault."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment presented",
+   "quote": "public comment-no public comment was presented."
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "interview and deliberation dates set by committee decision",
+   "quote": "decision was made by committee to meet on thursday, march 27th, friday, march 28th for interviews"
+  },
+  {
+   "topic": "Review interview questions with MASC Field Director",
+   "resolution": "committee tasked with reviewing and narrowing question sections; no vote recorded",
+   "quote": "ms. mallon indicated that each interview would take approximately 70 minutes (3 minutes per question)."
+  },
+  {
+   "topic": "Executive session (Purpose 8, applicant consideration)",
+   "resolution": "entered executive session; committee did not return to public session",
+   "quote": "voted to enter into executive session at 6:28pm by mr. lehtinen, seconded by ms. archambault"
+  }
+ ],
+ "tags": [
+  "superintendent search",
+  "screening committee",
+  "executive session",
+  "personnel",
+  "interviews",
+  "MASC",
+  "open meeting law"
+ ],
+ "dropped_unquoted_by_field": {}
 }

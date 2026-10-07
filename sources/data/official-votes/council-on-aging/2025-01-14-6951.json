@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-01-14",
  "docid": "6951",
@@ -12,40 +12,320 @@
  },
  "votes": [
   {
-   "motion": "Approve the Executive Session Minutes",
+   "motion": "Approve the Executive Session Minutes.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "a motion was made and seconded to approve the executive session minutes. all approved, motion was carried."
+   "quote": "a motion was made and seconded to approve the executive session minutes."
   },
   {
-   "motion": "Approve the minutes from the Dec. 10, 2024 meeting",
+   "motion": "Approve the minutes from the Dec. 10, 2024 meeting.",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "a motion was mad e and seconded to approve the minutes from the dec. 10, 2024. meeting. all approved, motion carried."
+   "quote": "a motion was mad e and seconded to approve the minutes from the dec. 10, 2024."
   },
   {
-   "motion": "Accept the letter regarding MART providing rides to Worcester hospitals",
+   "motion": "Accept the MART Connect/Worcester letter.",
    "outcome": "passed unanimously",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "a motion was made and seconded, and was approved unanimously to accept the letter."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:28 a.m.",
    "outcome": "passed unanimously",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "a motion was made and seconded. it passed unanimously ",
-   "quote_taken_from_text": true
+   "quote": "adjournment: a motion was made and seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0618074
+ "note": "Text is extracted from the minutes, with spacing and some spellings as printed (e.g. \"Ana Loc kwood\", \"Caesar\" vs \"Cesar\", \"Jack Rabbit\" vs \"Jack Rabbitt\"); names are recorded as printed. Page 3 has \"Respectfully Submitted:\" with no name after it. Votes do not name a mover or seconder. The PUBLIC COMMENT heading holds only the chair's announcement about Channel 8, so no public speaker is recorded. No dollar figures are printed anywhere in the minutes. The minutes are headed \"Minutes approved at the 02/11/25 Council on Aging Meeting.\"",
+ "cost_usd": 0.01562057,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice chair), peter lincoln,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice chair), peter lincoln,"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice chair), peter lincoln,"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "tarbell, elena christopher, diane nowd, susan o'sullivan,"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "not stated",
+   "status": "present",
+   "quote": "elena christopher, diane nowd, susan o'sullivan,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "not stated",
+   "status": "present",
+   "quote": "elena christopher, diane nowd, susan o'sullivan,"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "elena christopher, diane nowd, susan o'sullivan,"
+  },
+  {
+   "name": "Ana Loc kwood",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ana loc kwood, jim mcguigan"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ana loc kwood, jim mcguigan"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: helen balcom, cathy beale"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: helen balcom, cathy beale"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Lunenburg Select Board Chair",
+   "status": "present",
+   "quote": "guests: lunenburg select board chair caesar nuzzolo, jack rabbitt, lou franco,"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "guest",
+   "status": "present",
+   "quote": "guests: lunenburg select board chair caesar nuzzolo, jack rabbitt, lou franco,"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "guest",
+   "status": "present",
+   "quote": "guests: lunenburg select board chair caesar nuzzolo, jack rabbitt, lou franco,"
+  },
+  {
+   "name": "Ena Thompson",
+   "role": "President, Eagle House Supporters",
+   "status": "present",
+   "quote": "eagle house supporters president ena thompson , vice president barbara coulombe"
+  },
+  {
+   "name": "Barbara Coulombe",
+   "role": "Vice President, Eagle House Supporters",
+   "status": "present",
+   "quote": "eagle house supporters president ena thompson , vice president barbara coulombe"
+  },
+  {
+   "name": "Ms. Goodsell",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "ms. goodsell reviewed the upcoming events for the rest of january"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lincoln will request that Channel 8 change the broadcast times of this meeting to something earlier, because the current times are not conducive to seniors watching.",
+   "quote": "so ms. lincoln is going to request that they change the times"
+  },
+  {
+   "decision": "Deb will put an item in the newsletter asking people to forward names of people who need a Sunshine Club card to the COA.",
+   "quote": "deb will put an item in the newsletter to ask people to forward names of"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY26 COA budget updates",
+   "what_was_recorded": "The COA will receive quarterly updates on its FY26 budget starting in March. No figure is printed.",
+   "figures_as_printed": [],
+   "quote": "fy26 coa budget: the coa will be getting quarterly updates starting in march."
+  },
+  {
+   "topic": "COA FY24 Formula Grant",
+   "what_was_recorded": "Another installment of the FY24 formula grant will be received in April. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "coa fy24 formula grant: another installment will be received in april"
+  },
+  {
+   "topic": "Senior Tax Relief bill",
+   "what_was_recorded": "The Governor signed the bill for Senior Tax Relief on 1/06/25. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "mr. franco announced that the governor signed the bill for senior tax relief on 1/06/25"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted, no action",
+   "quote": "mr. franco announced that the governor signed the bill for senior tax relief on 1/06/25",
+   "tags": [
+    "announcements",
+    "senior tax relief",
+    "thank-you card"
+   ]
+  },
+  {
+   "topic": "Public comment and Channel 8 broadcast times",
+   "resolution": "chair to request earlier broadcast times",
+   "quote": "ms. lincoln announced that channel 8 is now showing this meeting at",
+   "tags": [
+    "broadcast",
+    "channel 8",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (Executive Session Minutes; Dec. 10, 2024 minutes)",
+   "quote": "there were two sets of minutes to approve.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "New business: property tax presentation",
+   "resolution": "no action, overview given",
+   "quote": "they will be doing on 2/3/25 regarding property tax.",
+   "tags": [
+    "property tax",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Master Plan, 300th anniversary, Boston Post Cane, Nashoba Valley Medical Center",
+   "resolution": "noted, no action",
+   "quote": "lunenburg master plan meeting: no meeting was held so there is",
+   "tags": [
+    "master plan",
+    "300th anniversary",
+    "boston post cane",
+    "healthcare"
+   ]
+  },
+  {
+   "topic": "FY26 budget, FY24 formula grant, parking lot",
+   "resolution": "noted, no action",
+   "quote": "fy26 coa budget: the coa will be getting quarterly updates starting in march.",
+   "tags": [
+    "budget",
+    "grants",
+    "parking"
+   ]
+  },
+  {
+   "topic": "MART Connect/Worcester letter",
+   "resolution": "letter accepted unanimously",
+   "quote": "a motion was made and seconded, and was approved unanimously to accept the letter.",
+   "tags": [
+    "transportation",
+    "MART",
+    "hospital rides"
+   ]
+  },
+  {
+   "topic": "Sunshine Club",
+   "resolution": "newsletter item to be placed",
+   "quote": "deb will put an item in the newsletter to ask people to forward names of",
+   "tags": [
+    "sunshine club",
+    "newsletter"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "noted, no action",
+   "quote": "capital plan fencing/generator: a plan is in the works to disguise the fencing around the",
+   "tags": [
+    "capital plan",
+    "flooring",
+    "kitchen",
+    "window shades",
+    "buildings and grounds"
+   ]
+  },
+  {
+   "topic": "Upcoming events",
+   "resolution": "reviewed, no action",
+   "quote": "ms. goodsell reviewed the upcoming events for the rest of january",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Notices and communications (cards)",
+   "resolution": "noted, no action",
+   "quote": "ms. nowd gave a brief overview of the cards she sent",
+   "tags": [
+    "cards",
+    "notices"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "noted; new group introduced",
+   "quote": "there is a new supporters group. ms. lincoln introduced ena thompson as the president",
+   "tags": [
+    "eagle house",
+    "supporters group",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Board comment: Building Design Committee",
+   "resolution": "noted, no action",
+   "quote": "ana watched the most recent meeting of the building design",
+   "tags": [
+    "building design committee"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed unanimously, adjourned 10:28 a.m.",
+   "quote": "meeting adjourned at 10:28 a.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "seniors",
+  "minutes",
+  "eagle house",
+  "senior tax relief",
+  "property tax",
+  "transportation",
+  "MART",
+  "broadcast",
+  "budget",
+  "grants",
+  "capital plan",
+  "Sunshine Club"
+ ],
+ "dropped_unquoted_by_field": {}
 }

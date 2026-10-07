@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2025-01-27",
  "docid": "6989",
@@ -12,39 +12,243 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from December 16, 2024",
+   "motion": "Approve the minutes of the December 16, 2024 meeting.",
    "moved_by": "Kathy",
    "seconded_by": "Maryrae",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "kathy made a motion to approve the minutes from the following meetings: december 16, 2024. maryrae seconded. commission unanimously approved"
+   "quote": "kathy made a motion to approve the minutes from the following meetings: december 16, 2024."
   },
   {
-   "motion": "Approve the 2025 Lunenburg Community Farmers' Market Application",
+   "motion": "Approve the 2025 Lunenburg Community Farmers' Market Application.",
    "moved_by": "Ryan",
    "seconded_by": "Maryrae",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "ryan made a motion to approve the 2025 lunenburg community farmers' market application. maryrae seconded. commission unanimously approved."
+   "quote": "ryan made a motion to approve the 2025 lunenburg community farmers' market application."
   },
   {
-   "motion": "Donate proceeds from the 2024 Agricultural Fair as follows: $75 to Middlesex Night Riders 4H Club and $75 to Good Shepard 4H Club",
+   "motion": "Donate proceeds from the 2024 Agricultural Fair: $75 to Middlesex Night Riders 4H Club and $75 to Good Shepard 4H Club.",
    "moved_by": "Jackie",
    "seconded_by": "Kathy",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "jackie made a motion to donate proceeds from the 2024 agricultural fair as follows: $75 to middlesex night riders 4h club $75 to good shepard 4h club kathy seconded. commission unanimously approved."
+   "quote": "jackie made a motion to donate proceeds from the 2024 agricultural fair as follows:"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jackie",
    "seconded_by": "Maryrae",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "jackie made a motion to adjourn; maryrae seconds. commission unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0663384
+ "note": "Text is a clean digital extraction, not a scan. Votes are recorded only as 'unanimously approved' with no printed count, so outcomes are recorded as 'passed'. Kira McClellan's attendance is not marked in the attendance list. The Hudson Community Garden presenter is listed only as 'Public' and is recorded as Jodie Naze. Item 10 'Public Comment' names no speaker. The Farmers' Market application and fair donations are the only motions. Adjournment is recorded without a stated count. Minutes give no vote on New Business items.",
+ "cost_usd": 0.01440827,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔ member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔ clerk jackie chabot ✔ member kathy dugan ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jackie chabot ✔ member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Member",
+   "status": "present",
+   "quote": "member kathy dugan ✔ member ryan stober ✔ alternate kira mcclellan"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Member",
+   "status": "present",
+   "quote": "member ryan stober ✔ alternate kira mcclellan"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan"
+  },
+  {
+   "name": "Jodie Naze",
+   "role": "Public (described the Hudson Community Garden)",
+   "status": "present",
+   "quote": "public jodie naze ✔ public anthony bonanno ✔ public ana lockwood ✔"
+  },
+  {
+   "name": "Anthony Bonanno",
+   "role": "Public",
+   "status": "present",
+   "quote": "public jodie naze ✔ public anthony bonanno ✔ public ana lockwood ✔"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Public",
+   "status": "present",
+   "quote": "public jodie naze ✔ public anthony bonanno ✔ public ana lockwood ✔"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mailing list to come from an Agricultural Commission-specific email address, and the list is to be built further using content from MDAR/USDA monthly updates.",
+   "quote": "mailing list to come from agricultural commission specific email address"
+  },
+  {
+   "decision": "Commission intends to collaborate with the Community Garden at 100 Townsend Harbor Rd ahead of the Select Board meeting where it will be presented.",
+   "quote": "intend to collaborate ahead of select board meeting where this will be presented"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Donation of 2024 Agricultural Fair proceeds",
+   "what_was_recorded": "The Commission voted to donate fair proceeds to two 4H clubs, in the amounts printed.",
+   "figures_as_printed": [
+    "$75",
+    "$75"
+   ],
+   "quote": "$75 to middlesex night riders 4h club"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "not stated",
+   "stated_role": "not stated",
+   "topic": "Low Places Ranch poultry seminar",
+   "quote": "public comment low places ranch poultry seminar upcoming end of march/early april"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "convened at 6:30 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "1 call to order meeting commencement time: 6:30 pm"
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no comment recorded at this point",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment none."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no announcements",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "3 announcements none."
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "kathy made a motion to approve the minutes from the following meetings: december 16, 2024."
+  },
+  {
+   "topic": "New Business: Goals, Hudson Community Garden, USDA, MDAR, mailing list",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "goals",
+    "community garden",
+    "USDA",
+    "MDAR",
+    "mailing list",
+    "soil"
+   ],
+   "quote": "goals - review 2024, draft 2025"
+  },
+  {
+   "topic": "Current Business: MVP grant, spring event, Townsend Harbor Rd community garden, farmers market, fair donations, membership, Facebook",
+   "resolution": "farmers market application approved; fair proceeds donation approved; other items discussed",
+   "tags": [
+    "MVP grant",
+    "farmers market",
+    "fair",
+    "community garden",
+    "membership",
+    "Facebook"
+   ],
+   "quote": "mvp action grant meeting scheduled for 11:30 am- 12:30 pm monday, feb 3"
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "none",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "7 committee reports none"
+  },
+  {
+   "topic": "Farming Issues",
+   "resolution": "none",
+   "tags": [
+    "farming"
+   ],
+   "quote": "8 farming issues none"
+  },
+  {
+   "topic": "Upcoming meetings and events schedule",
+   "resolution": "schedule noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "6:30 pm february 24, 2025 lunenburg public library, sudolnik conference room"
+  },
+  {
+   "topic": "Public Comment (second item): Low Places Ranch poultry seminar",
+   "resolution": "noted",
+   "tags": [
+    "public comment",
+    "poultry"
+   ],
+   "quote": "public comment low places ranch poultry seminar upcoming end of march/early april"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:58 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting adjourned at 8:58 pm"
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "community garden",
+  "farmers market",
+  "grants",
+  "4H",
+  "fair proceeds",
+  "goals",
+  "MDAR",
+  "USDA",
+  "mailing list",
+  "minutes approval",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

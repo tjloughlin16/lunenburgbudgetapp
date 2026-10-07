@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-05-13",
  "docid": "7218",
@@ -12,25 +12,240 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 4/29/25",
+   "motion": "Accept the minutes of 4/29/25.",
    "moved_by": "Joe H.",
    "seconded_by": "Scott D.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: joe h. second: scott d. to accept the minutes of 4/29/25. roll call vote: joe-aye, scott- aye and brett- aye",
-   "quote_taken_from_text": true
+   "quote": "to accept the minutes of 4/29/25."
   },
   {
-   "motion": "Accept the Q4 FY25 Commitment and Supplemental Commitment as written",
+   "motion": "Accept the Q4 FY25 Commitment and Supplemental Commitment as written.",
    "moved_by": "Joe H.",
    "seconded_by": "Scott D.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: joe h. second: scott d. to accept the minutes of 4/29/25. roll call vote: joe-aye, scott- aye and brett- aye. ii. quarter 4 fy25 billing - andrew r",
-   "quote_taken_from_text": true
+   "quote": "commitment as written ."
+  },
+  {
+   "motion": "Adjourn the meeting at 7:31pm.",
+   "moved_by": "Scott D.",
+   "seconded_by": "Joe H.",
+   "outcome": "passed 3-0",
+   "procedural": true,
+   "quote": "to adjourn at 7:31pm ."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Text appears to be OCR-scanned with minor formatting artifacts; all votes clearly recorded with unanimous 3-0 outcomes (three commissioners: Joe H., Scott D., Brett).",
- "cost_usd": 0.09271140000000001
+ "dropped_unquoted": 0,
+ "note": "Minutes are a text extraction with broken spacing (e.g. \"$13 6\", \"T o accep t\", \"Manage r-\"); quotes reproduce the printed spacing and figures are recorded as printed. Attendees are listed as participating in a meeting held via Zoom, so status is recorded as \"remote\"; the minutes do not state each person's mode separately. Three votes recorded, all roll call 3-0 with Joe, Scott and Brett voting aye. Two of the votes have a moved-by and seconded-by name; the motion text is paraphrased. No dollar transfers recorded. Susan Sullivan and the vendor Insitufo rm are mentioned but did not take part, so they are not listed as attendees.",
+ "cost_usd": 0.01683367,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "brett ramsden , clerk- scott dall"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "brett ramsden , clerk- scott dall"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "remote",
+   "quote": "member: joe hurley , dpw"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "bill bernard , sewer business manage r-"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "remote",
+   "quote": "andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "remote",
+   "quote": "andrew valliere, minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioners agreed to mail an updated version of the vacancy letter; Andrew to make the edits and send the letters to sewer users.",
+   "quote": "agreed to mail an updated version of the letter."
+  },
+  {
+   "decision": "Corrected bills to be issued on Uni-pay with no interest charged, given the inconvenience.",
+   "quote": "due to the inconvenience"
+  },
+  {
+   "decision": "Due date extended for the corrected bills; payments already made to be reflected.",
+   "quote": "and he extended the due"
+  },
+  {
+   "decision": "Board to check whether customers on auto-pay will automatically pay the supplemental amount.",
+   "quote": "and they will check on that."
+  },
+  {
+   "decision": "Future agenda items set: commission vacancies, minutes, review end of year budget items, new Assistant Manager, Dana Street work before 7/1.",
+   "quote": "review end of year budget items"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q4 FY25 billing error and supplemental commitment",
+   "what_was_recorded": "A rate error reverted bills to 2022 rates; one customer was charged $13 6 instead of $158, requiring a supplemental commitment.",
+   "figures_as_printed": [
+    "$13 6",
+    "$158"
+   ],
+   "quote": "he was charged $13 6 but it should have been $158."
+  },
+  {
+   "topic": "Revenue at risk if corrected bills are not sent",
+   "what_was_recorded": "Bill said the Town would lose $24,000 if corrected bills were not sent.",
+   "figures_as_printed": [
+    "$24,000"
+   ],
+   "quote": "$24,000 . andrew stated the bills will reflect"
+  },
+  {
+   "topic": "Size of billing differences",
+   "what_was_recorded": "About 500 bills were incorrect; the difference on 475 of them was under $100.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "the difference on 475 was less than $100."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brett",
+   "stated_role": "Vice-Chair",
+   "topic": "Mother's Day greeting under public comment",
+   "quote": "brett wished residents with children a happy mother"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "brett opened the meeting at 7"
+  },
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no public comment or announcements",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment - & announcements - none"
+  },
+  {
+   "topic": "Commission vacancies",
+   "resolution": "discussed; updated letter to be mailed to sewer users",
+   "tags": [
+    "commission vacancies",
+    "outreach"
+   ],
+   "quote": "agreed to mail an updated version of the letter."
+  },
+  {
+   "topic": "Minutes of 4/29/25",
+   "resolution": "approved 3-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to accept the minutes of 4/29/25."
+  },
+  {
+   "topic": "Q4 FY25 billing and rate error",
+   "resolution": "discussed; supplemental commitment and corrected bills to be issued",
+   "tags": [
+    "billing",
+    "rates",
+    "Munis",
+    "supplemental commitment"
+   ],
+   "quote": "he was charged $13 6 but it should have been $158."
+  },
+  {
+   "topic": "Assistant to the Business Manager",
+   "resolution": "announced; start date 5/27",
+   "tags": [
+    "staffing",
+    "hiring"
+   ],
+   "quote": "bill announced that susan sullivan will be"
+  },
+  {
+   "topic": "Manhole repair IFB",
+   "resolution": "update received; work to start in June",
+   "tags": [
+    "manhole repair",
+    "contractor",
+    "flow meters"
+   ],
+   "quote": "they will still be starting in june"
+  },
+  {
+   "topic": "Commitment Q4 FY25",
+   "resolution": "approved 3-0",
+   "tags": [
+    "commitment",
+    "billing"
+   ],
+   "quote": "commitment as written ."
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "noted",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "review end of year budget items"
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "june 24 , 2025 @ 6pm - regular meeting, zoom meeting"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved 3-0 at 7:31pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "to adjourn at 7:31pm ."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "billing",
+  "rates",
+  "Munis",
+  "supplemental commitment",
+  "commission vacancies",
+  "staffing",
+  "manhole repair",
+  "meeting schedule",
+  "Zoom"
+ ],
+ "dropped_unquoted_by_field": {}
 }

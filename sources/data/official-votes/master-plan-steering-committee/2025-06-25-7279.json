@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2025-06-25",
  "docid": "7279",
@@ -12,45 +12,250 @@
  },
  "votes": [
   {
-   "motion": "Elect Kim Duffy as Chair",
-   "outcome": "elected",
-   "procedural": true,
+   "motion": "Elect Kim Duffy as Chair (roll-call tally, all six members voting for Kim).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "result: kim duffy elected chair."
   },
   {
-   "motion": "Elect Anthony Sculimbrene as Vice Chair",
-   "outcome": "elected",
-   "procedural": true,
+   "motion": "Elect Anthony (\"Tony\") Sculimbrene as Vice Chair (roll-call tally, all six members voting for Anthony).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "result: anthony (\"tony\") sculimbrene elected vice chair."
   },
   {
-   "motion": "Re-elect Jerry Reid as Clerk",
-   "outcome": "re-elected",
-   "procedural": true,
+   "motion": "Re-elect Jerry Reid as Clerk (roll-call tally, all six members voting for Jerry).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "result: jerry reid re-elected clerk."
   },
   {
-   "motion": "Make Emily and Kim Facebook admins for posting advertising and agendas",
+   "motion": "Make Emily and Kim Facebook admins for posting advertising and agendas.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: make emily and kim facebook admins for posting advertising and agendas."
   },
   {
-   "motion": "Approve meeting minutes from April 9, 2025",
-   "outcome": "approved",
+   "motion": "Approve the meeting minutes dated 4/9/25.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "result: minutes approved."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Kim",
    "seconded_by": "Tony",
-   "outcome": "carried",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by kim. seconded by tony."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12484210000000001
+ "note": "Digital text, four pages, no scan. Six votes are recorded. Officer elections print each member's vote by name rather than a count, so the 6-0 tally is derived by counting the lines and is not printed; outcomes are recorded as 'passed'. The Facebook-admin and adjournment votes print no count either. Strategy accept/reject entries and the bi-weekly cadence are recorded as decisions with no vote. The minutes approved are dated 4/9/25, which is not a date for any meeting shown in this text, so it is recorded as printed. The minutes print 'Quorum: Now 5' while six members are listed. Guests' attendance status is not stated beyond the attendee list; only Renee Emkey is marked remote.",
+ "cost_usd": 0.015088470000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jerry Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "- jerry reid - clerk"
+  },
+  {
+   "name": "Tim Wilsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "- tim wilsmer - kim duffy - debbie lincoln"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Member (elected Chair)",
+   "status": "present",
+   "quote": "- tim wilsmer - kim duffy - debbie lincoln"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Member",
+   "status": "present",
+   "quote": "- tim wilsmer - kim duffy - debbie lincoln"
+  },
+  {
+   "name": "Sondria Harp",
+   "role": "Member",
+   "status": "present",
+   "quote": "members - jerry reid - clerk - tim wilsmer - kim duffy - debbie lincoln - sondria harp - emily young"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Member",
+   "status": "present",
+   "quote": "members - jerry reid - clerk - tim wilsmer - kim duffy - debbie lincoln - sondria harp - emily young"
+  },
+  {
+   "name": "Rami (Over Under)",
+   "role": "Non-Member / Guest",
+   "status": "not stated",
+   "quote": "- rami (over under) - renee emkey (virtual)"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Non-Member / Guest (Virtual)",
+   "status": "remote",
+   "quote": "- rami (over under) - renee emkey (virtual)"
+  },
+  {
+   "name": "David Niose",
+   "role": "Non-Member / Guest",
+   "status": "not stated",
+   "quote": "- david niose - matthew brenner - mike rupp"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Non-Member / Guest",
+   "status": "not stated",
+   "quote": "- david niose - matthew brenner - mike rupp"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Non-Member / Guest",
+   "status": "not stated",
+   "quote": "- david niose - matthew brenner - mike rupp"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "not stated",
+   "quote": "- anthony sculimbrene - vice chair"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Non-Member / Guest",
+   "status": "not stated",
+   "quote": "- anthony sculimbrene - vice chair - amanda moore"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "- jennifer warren-dyment - town manager"
+  },
+  {
+   "name": "Cesar",
+   "role": "Planning Board",
+   "status": "not stated",
+   "quote": "- cesar (planning board)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Strategy matrix items marked Accept, Reject, or 'Already addressed' after discussion with Over Under; no vote recorded.",
+   "quote": "sponsor agricultural workshops in lunenburg - reject"
+  },
+  {
+   "decision": "Meetings set bi-weekly on the 2nd and 4th Wednesday at 6:00 PM; no vote recorded.",
+   "quote": "decision: bi-weekly meetings on the 2nd and 4th wednesday at 6:00 pm."
+  },
+  {
+   "decision": "Status of community advertising postponed to the next meeting, when a plan is available.",
+   "quote": "postponed to next meeting when a plan is available."
+  },
+  {
+   "decision": "Amanda to reach out to the Conservation Committee and ZBA (action item).",
+   "quote": "amanda: reach out to conservation committee & zba."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "I. Public Comment",
+   "resolution": "no action (none)",
+   "quote": "i. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "II.a Discussion with Over Under - current matrix",
+   "resolution": "strategy items accepted or rejected, no vote recorded",
+   "quote": "difference of opinion noted.",
+   "tags": [
+    "strategy",
+    "master plan",
+    "open space",
+    "agriculture",
+    "sidewalks",
+    "playground"
+   ]
+  },
+  {
+   "topic": "II.b Status of community advertising",
+   "resolution": "postponed to next meeting",
+   "quote": "postponed to next meeting when a plan is available.",
+   "tags": [
+    "advertising",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "II.c Official board reorganization",
+   "resolution": "Chair, Vice Chair and Clerk elected; Facebook admins approved; bi-weekly meetings set",
+   "quote": "result: kim duffy elected chair.",
+   "tags": [
+    "officer elections",
+    "governance",
+    "meeting schedule",
+    "social media"
+   ]
+  },
+  {
+   "topic": "III. Committee Comment",
+   "resolution": "no action (none)",
+   "quote": "iii. committee comment",
+   "tags": [
+    "committee comment"
+   ]
+  },
+  {
+   "topic": "IV. Meeting minutes approval",
+   "resolution": "approved",
+   "quote": "result: minutes approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "V. Adjournment",
+   "resolution": "adjourned at 8:46 PM",
+   "quote": "motion to adjourn by kim. seconded by tony.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "master plan",
+  "strategy matrix",
+  "officer elections",
+  "governance",
+  "meeting schedule",
+  "advertising and outreach",
+  "social media",
+  "open space",
+  "bikes and sidewalks",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-06-10",
  "docid": "7255",
@@ -12,24 +12,206 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 5/13/25 and 5/27/25",
-   "moved_by": "Scott Dall",
-   "seconded_by": "Joe Hurley",
-   "outcome": "passed 3-0",
+   "motion": "Approve the minutes of 5/13/25 and 5/27/25.",
+   "moved_by": "Scott D.",
+   "seconded_by": "Joe H.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: scott d., second: joe h. to approve the minutes of 5/13/25 and 5/27/25. roll call vote: joe-aye, scott-aye and brett-aye. (arthur and dan abstained)"
+   "quote": "to approve the minutes of 5/13/25 and 5/27/25. roll call vote: joe-aye, scott-aye and brett-aye. (arthur and dan abstained)"
   },
   {
-   "motion": "Adjourn the meeting at 7:33 pm",
-   "moved_by": "Joe Hurley",
-   "seconded_by": "Scott Dall",
-   "outcome": "passed 5-0",
+   "motion": "Adjourn the meeting at 7:33 pm.",
+   "moved_by": "Joe H.",
+   "seconded_by": "Scott D.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: joe h. second: scott d. to adjourn at 7 :33 pm roll call vote: dan-aye , joe-aye, scott-aye, arthur- aye and brett-aye",
-   "quote_taken_from_text": true
+   "quote": "to adjourn at 7 :33 pm roll call vote: dan-aye , joe-aye, scott-aye, arthur- aye and brett-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded. The first vote on prior minutes includes two abstentions (Arthur Katis and Dan Proctor); the second vote on adjournment passed unanimously 5-0. No substantive motions were voted on; remaining content was discussion and updates.",
- "cost_usd": 0.0685994
+ "note": "Text is a clean extraction of a three-page-or-less minutes document with no scan problems. Roll-call tallies are read from the names listed; the minutes print no numeric count, so outcomes are recorded as 'passed'. The heading 'PUBLIC COMMENT' on page 2 is followed by the Chair's remark thanking members, not a speaker from the public, so public_comment is empty. The $83, 800 figure is printed with a space and kept as printed.",
+ "cost_usd": 0.01563297,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden , vice-chair - scott dall , clerk- dan proctor"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden , vice-chair - scott dall , clerk- dan proctor"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden , vice-chair - scott dall , clerk- dan proctor"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "present",
+   "quote": "member s : joe hurley and arthur katis , sewer business manager: andrew valliere"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "member s : joe hurley and arthur katis , sewer business manager: andrew valliere"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "member s : joe hurley and arthur katis , sewer business manager: andrew valliere"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "absent : dpw director- bill bernard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Add the ADU hookup and fee discussion to the agenda for a future meeting.",
+   "quote": "they will add this discussion to the agenda."
+  },
+  {
+   "decision": "Commissioners will ask around for a new candidate to replace Joe, who can attend only one more meeting before moving.",
+   "quote": "joe said he can attend only 1 more meeting before moving and commissioners will ask around for a new candidate."
+  },
+  {
+   "decision": "Brett will talk to Bill about whether there would be additional fees for an ADU hookup.",
+   "quote": "brett stated he would need to talk to bill."
+  },
+  {
+   "decision": "Andrew will find out how many residents are on the line but not connected.",
+   "quote": "andrew replied he would find out."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Wright-Pierce ND PES Permit contract",
+   "what_was_recorded": "Brett read aloud the components of the Wright-Pierce contract, which the minutes state total $83, 800.",
+   "figures_as_printed": [
+    "$83, 800"
+   ],
+   "quote": "brett read aloud the components of the contract , which total $83, 800 ."
+  },
+  {
+   "topic": "Sewer hookup minimum charge",
+   "what_was_recorded": "Andrew read from the 2023 Regulations the minimum hookup charge, with an added charge per bedroom above three; Joe suggested comparing other towns' charges.",
+   "figures_as_printed": [
+    "$2250",
+    "$550"
+   ],
+   "quote": "the minimum charge for hooking up is $2250, plus an additional $550 for each bedroom in excess of 3."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 5/13/25 and 5/27/25",
+   "resolution": "approved",
+   "quote": "to approve the minutes of 5/13/25 and 5/27/25. roll call vote: joe-aye, scott-aye and brett-aye. (arthur and dan abstained)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Dana Street repairs",
+   "resolution": "no action; contractor staging equipment",
+   "quote": "andrew reported that p ride is starting to stage equipment and will",
+   "tags": [
+    "Dana Street",
+    "repairs",
+    "contractor"
+   ]
+  },
+  {
+   "topic": "Manhole repair IFB",
+   "resolution": "no action; update due next meeting",
+   "quote": "andrew stated the contractor sent bill the materials for submittals and they are in the process of reviewing them.",
+   "tags": [
+    "manhole repair",
+    "bid",
+    "submittals"
+   ]
+  },
+  {
+   "topic": "Quarterly demands",
+   "resolution": "no action; awaiting billing due date",
+   "quote": "andrew reported he is waiting until due date (the 17 th ) for the supplemental billing",
+   "tags": [
+    "quarterly demands",
+    "billing",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "Wright-Pierce ND PES Permit",
+   "resolution": "discussed; no vote recorded",
+   "quote": "brett read aloud the components of the contract , which total $83, 800 .",
+   "tags": [
+    "Wright-Pierce",
+    "permit",
+    "engineering",
+    "mapping"
+   ]
+  },
+  {
+   "topic": "New assistant to the Business Manager",
+   "resolution": "no action; update given",
+   "quote": "andrew reported that she is doing good and there is a lot for her to learn.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "ADU hookups and fees",
+   "resolution": "added to future agenda",
+   "quote": "they will add this discussion to the agenda.",
+   "tags": [
+    "ADU",
+    "hookup fees",
+    "connection charges"
+   ]
+  },
+  {
+   "topic": "Commission membership vacancy",
+   "resolution": "no action; new candidate to be sought",
+   "quote": "joe said he can attend only 1 more meeting before moving and commissioners will ask around for a new candidate.",
+   "tags": [
+    "membership",
+    "vacancy"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "DPW",
+  "minutes approval",
+  "Wright-Pierce permit",
+  "ADU hookups",
+  "connection fees",
+  "commission membership",
+  "manhole repair",
+  "quarterly demands",
+  "Dana Street",
+  "Munis"
+ ],
+ "dropped_unquoted_by_field": {}
 }

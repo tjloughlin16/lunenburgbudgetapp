@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-01-15",
  "docid": "6958",
@@ -12,33 +12,180 @@
  },
  "votes": [
   {
-   "motion": "appoint Jennifer Warren-Dyment as Town Manager pending successful negotiation",
+   "motion": "Appoint Jennifer Warren-Dyment as Town Manager, pending successful negotiation.",
    "moved_by": "Renee Emkey",
    "seconded_by": "Amanda Moore",
    "outcome": "passed 4-1-0",
    "procedural": false,
-   "quote": "renee emkey moved to appoint jennifer warren-dyment as town manager pending successful negotiation. amanda moore seconded the motion. call for vote: four-yes. one- no (jeffreys). motion passed (4-1-0)",
-   "quote_taken_from_text": true
+   "quote": "renee emkey moved to appoint jennifer warren-dyment as town manager pending successful negotiation."
   },
   {
-   "motion": "open the warrant on Wednesday, January 15 and close the warrant on Monday, March 17 with the internal deadline as described by the Interim Town Manager",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Michael Ray Jeffreys",
-   "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "member alonzo moved to open the warrant on wednesday, january 15 and close the warrant on monday, march 17 with the internal deadline as described by the interim town ===page 3=== page 3 of 3 select board meeting minutes january 15, 2025 manager. member jeffreys seconded t",
-   "quote_taken_from_text": true
+   "motion": "Open the annual town meeting warrant on January 15 and close it on March 17, with the internal January 31 deadline for non-citizen petition articles as described by the Interim Town Manager.",
+   "moved_by": "Member Alonzo",
+   "seconded_by": "Member Jeffreys",
+   "outcome": "passed 5-0-0 (unanimously)",
+   "procedural": false,
+   "quote": "member alonzo moved to open the warrant on wednesday, january 15 and close the warrant on monday, march 17 with the internal deadline"
   },
   {
-   "motion": "enter into executive session pursuant to MGL chapter 30, subsection 21(a)(3) to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position of the public body",
-   "moved_by": "Caesar Nuzzolo",
-   "seconded_by": "Tom Alonzo",
-   "outcome": "passed 5-0-0",
+   "motion": "Enter executive session at 7:04 P.M. under MGL chapter 30, subsection 21(a)(3), to discuss collective bargaining strategy.",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Member Alonzo",
+   "outcome": "passed 5-0-0 (roll call, unanimous)",
    "procedural": true,
-   "quote": "chair nuzzolo moved to enter into executive session at 7:04 p.m. pursuant to mgl chapter 30, subsection 21(a)(3) to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position of the public body and the chair so declares. member alonzo seconded the motion. the motion passed unanimously by roll call vote: member emkey, aye; member alonzo, aye; member moore, aye; member jeffreys, aye; chair nuzzolo, aye (5-0-0)."
+   "quote": "chair nuzzolo moved to enter into executive session at 7:04 p.m. pursuant to mgl chapter 30, subsection 21(a)(3) to discuss strategy"
+  },
+  {
+   "motion": "Approve the minutes of January 15, 2025.",
+   "moved_by": "Member Emkey",
+   "seconded_by": "Clerk Moore",
+   "outcome": "passed 5-0-0 (unanimously)",
+   "procedural": true,
+   "quote": "member emkey made the motion to approve the minutes from january 15, 2025. seconded by clerk moore."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11060740000000001
+ "note": "Text is clean and complete across 3 pages; no scan issues. No dollar figures are printed anywhere, so budget_items and transfers are empty. The Town Manager motion's vote count is printed in a separate sentence not included in the quote; the outcome is taken from 'Motion passed (4-1-0)'. The minutes-approval motion is printed after the signature block and approval date (March 11, 2025), so it records a later approval of these minutes. Annie Aubrey, who signed the minutes, and the three candidates (John Woods, Angie Ellison, Jennifer Warren) are named but did not take part in this meeting's discussion or votes, so they are omitted from attendees. Dave Rodgers' stated role is not printed.",
+ "cost_usd": 0.01514087,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance."
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "member jeffreys seconded the motion. call for vote: five- yes."
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Member (Clerk)",
+   "status": "present",
+   "quote": "amanda moore seconded the motion."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "member alonzo seconded the motion. the motion passed"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "member emkey made the motion to approve the minutes from january 15, 2025."
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "also present: carter terenzini, interim town manager"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "public comment",
+   "status": "present",
+   "quote": "dave rodgers asked for clarification on the process used for selecting candidates"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public comment; formerly of Lunenburg and now a resident of Jefferson, New Hampshire",
+   "status": "present",
+   "quote": "dave passios, formerly of lunenburg and now a resident of jefferson, new hampshire, reiterated his previous comments"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed to add a potential meeting on January 28 to the calendar, to discuss contract negotiations if needed.",
+   "quote": "the board agreed to add this meeting to the calendar."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Town Manager candidate selection process",
+   "quote": "dave rodgers asked for clarification on the process used for selecting candidates and if board members would share their thoughts"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "formerly of Lunenburg and now a resident of Jefferson, New Hampshire",
+   "topic": "Town Manager selection pace",
+   "quote": "dave passios, formerly of lunenburg and now a resident of jefferson, new hampshire, reiterated his previous comments that the town manager selection process should not be rushed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; two speakers on the Town Manager search",
+   "tags": [
+    "public comment",
+    "town manager"
+   ],
+   "quote": "dave rodgers asked for clarification on the process used for selecting candidates and if board members would share their thoughts"
+  },
+  {
+   "topic": "Name a preferred candidate for Town Manager",
+   "resolution": "appointed Jennifer Warren-Dyment pending successful negotiation (4-1-0)",
+   "tags": [
+    "town manager",
+    "hiring",
+    "appointment"
+   ],
+   "quote": "renee emkey moved to appoint jennifer warren-dyment as town manager pending successful negotiation."
+  },
+  {
+   "topic": "Open the annual town meeting warrant",
+   "resolution": "approved; warrant opened January 15, closes March 17 (5-0-0)",
+   "tags": [
+    "annual town meeting",
+    "warrant"
+   ],
+   "quote": "member alonzo moved to open the warrant on wednesday, january 15 and close the warrant on monday, march 17 with the internal deadline"
+  },
+  {
+   "topic": "Scheduling a possible January 28 meeting on contract negotiations",
+   "resolution": "agreed to add to calendar (no vote)",
+   "tags": [
+    "labor negotiations",
+    "calendar"
+   ],
+   "quote": "carter terenzini suggested scheduling a potential meeting for january 28th to discuss contract negotiations if needed."
+  },
+  {
+   "topic": "Executive session (collective bargaining)",
+   "resolution": "entered executive session at 7:04 P.M.; did not reconvene in open session",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ],
+   "quote": "the meeting entered executive session and did not reconvene in open session."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Town Manager",
+  "hiring",
+  "annual town meeting warrant",
+  "executive session",
+  "collective bargaining",
+  "public comment",
+  "calendar"
+ ],
+ "dropped_unquoted_by_field": {}
 }

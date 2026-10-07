@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2025-10-15",
  "docid": "7456",
@@ -12,68 +12,315 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of October 1",
+   "motion": "Approve the minutes of 10/1.",
    "moved_by": "M. Wilson",
    "seconded_by": "M. Larouche",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "m. wilson, to approve minutes of 10/1 second m. larouche vote: m. wilson - aye r. bursch - aye m. larouche - aye j. pewtherer - aye c. st. germain - aye"
+   "quote": "m. wilson, to approve minutes of 10/1 second m. larouche vote: m. wilson - aye r. bursch - aye"
   },
   {
-   "motion": "Approve the project at 23 Tilton Ave (NOI-25-21) as presented",
+   "motion": "Approve the project as presented for NOI-25-21, 23 Tilton Ave (replacement septic system).",
    "moved_by": "R. Bursch",
    "seconded_by": "M. Wilson",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "r. bursch, to approve the project as presented. m. wilson m. wilson - aye m. larouche - aye j. pewtherer - aye c. st. germain - aye r. bursch - aye ===pag",
-   "quote_taken_from_text": true
+   "quote": "r. bursch, to approve the project as presented. m. wilson m. wilson - aye m. larouche - aye"
   },
   {
-   "motion": "Continue hearing on 763 Northfield Rd (NOI-25-12) to November 5, 2025",
+   "motion": "Continue NOI-25-12, 763 Northfield Rd (Town of Lunenburg-DPW culvert replacement), to November 5, 2025.",
    "moved_by": "C. St. Germaine",
    "seconded_by": "M. Wilson",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "c. st. germaine, to continue to november 5, 2025. second m. wilson vote: m. wilson - aye r. bursch - aye m. larouche - aye c. st. germain - aye j. pewtherer - aye"
+   "quote": "c. st. germaine, to continue to november 5, 2025. second m. wilson vote: m. wilson - aye r. bursch - aye"
   },
   {
-   "motion": "Approve Agent's Determination for 135 Flynn Rd (CAD-25-16) with caveat requiring on-site erosion protection inspection prior to work start",
+   "motion": "Approve Agent's Determination for CAD-25-16, 135 Flynn Rd (deck replacement), with the caveat that the Agent goes on-site before work starts to confirm erosion protection.",
    "moved_by": "R. Bursch",
    "seconded_by": "M. Wilson",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "r. bursch, to approve agent's determination with the caveat: 1. prior to the start of work, the agent goes on-site to ensure erosion protection is in place properly m. wilson m. larouche - aye c. st.",
-   "quote_taken_from_text": true
+   "quote": "r. bursch, to approve agent's determination with the caveat:"
   },
   {
-   "motion": "Approve partial Certificate of Compliance for lot 6 at 155 Reservoir Road under order 208-1080",
+   "motion": "Approve a partial Certificate of Compliance applying only to lot 6 at 155 Reservoir Road under original order 208-1080.",
    "moved_by": "R. Bursch",
    "seconded_by": "C. St. Germain",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "r. bursch, to approve partial certificate of compliance: 1. applies only to lot 6 at 155 reservoir road under the original order 208-1080 second vote: c. st. germain m. wilson - aye m. larouche",
-   "quote_taken_from_text": true
+   "quote": "r. bursch, to approve partial certificate of compliance: 1. applies only to lot 6 at 155 reservoir road under the original order 208-1080"
   },
   {
-   "motion": "Approve an additional $2,000 to the Maki Purchase Order from the Timber Rights Fund",
+   "motion": "Approve an additional $2,000 to the Maki Purchase Order, coming from the Timber Rights Fund.",
    "moved_by": "M. Larouche",
    "seconded_by": "M. Wilson",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. larouche, to approve an additional $2,000 to the maki purchase order, coming from the timber rights fund. second vote: m. wilson m. wilson - aye m. larouche - aye _c. st. germain - aye r. bursc",
-   "quote_taken_from_text": true
+   "quote": "m. larouche, to approve an additional $2,000 to the maki purchase order, coming from the timber rights fund."
   },
   {
-   "motion": "Adjourn meeting at 7:50 PM",
+   "motion": "Adjourn the meeting at 7:50PM.",
    "moved_by": "M. Wilson",
    "seconded_by": "R. Bursch",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "m. wilson, to adjourn at 7:50pm second r. bursch vote: m. wilson - aye j. pewtherer - aye r. bursch - aye m. larouche - aye c. st. germain",
-   "quote_taken_from_text": true
+   "quote": "m. wilson, to adjourn at 7:50pm second r. bursch vote: m. wilson - aye j. pewtherer - aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned document",
- "cost_usd": 0.15234599999999998
+ "note": "Text is macOS Vision OCR of a scanned minutes document. The roles column in the header is scrambled, so only the presiding Chair is tied to a role; other members' roles are \"not stated\". Votes were read from layout (motion, second, then per-name AYE lines). The minutes print no tally, so outcomes are \"passed\" where every listed name voted AYE; the counts are not printed. The minutes print \"C. St. Germaine\" in one motion; this is kept as printed. Public comment is recorded as \"None\" with no named speakers, so the public_comment list is empty. The Flat Hill Rd cutting-plan number is garbled in the OCR and is not quoted. The Lane/Large Town Forest and Maki items were recorded as printed; Bob Pease is named as the source of a request and not as a participant.",
+ "cost_usd": 0.01821687,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "presided; called the meeting to order",
+   "status": "present",
+   "quote": "call to order at 7:03pm by j. pewtherer"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call: j. pewtherer, m. wilson, r. bursch, m. larouche, c. st germain."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call: j. pewtherer, m. wilson, r. bursch, m. larouche, c. st germain."
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call: j. pewtherer, m. wilson, r. bursch, m. larouche, c. st germain."
+  },
+  {
+   "name": "Chris St Germain",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call: j. pewtherer, m. wilson, r. bursch, m. larouche, c. st germain."
+  },
+  {
+   "name": "Teddy Doucette",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: a. burnap, t. doucette"
+  },
+  {
+   "name": "Andrea Burnap",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: a. burnap, t. doucette"
+  },
+  {
+   "name": "Ryan proctor",
+   "role": "represented the applicant (Dillis & Roy)",
+   "status": "present",
+   "quote": "ryan proctor (dillis & roy) represented the applicant to replace a failed septic system"
+  },
+  {
+   "name": "Stephen Raboin",
+   "role": "applicant (Notice of Intent, 23 Tilton Ave)",
+   "status": "not stated",
+   "quote": "a notice of intent by stephen raboin for the construction of a replacement septic system."
+  },
+  {
+   "name": "Louise Tata",
+   "role": "of 135 Flynn Road, as printed",
+   "status": "present",
+   "quote": "louise and john tata (135 flynn road) were present."
+  },
+  {
+   "name": "John Tata",
+   "role": "of 135 Flynn Road, as printed",
+   "status": "present",
+   "quote": "louise and john tata (135 flynn road) were present."
+  },
+  {
+   "name": "Michael Gale",
+   "role": "Admin Asst.",
+   "status": "not stated",
+   "quote": "respectfully submitted, michael gale - admin asst."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J. Pewtherer will contact the Town Manager and the town attorney about new trails reported in the Lane/Large Town Forest area.",
+   "quote": "j. pewtherer will reach out to the town manager and the town attorney."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Maki purchase order (Timber Rights Fund)",
+   "what_was_recorded": "M. Wilson reviewed a request to increase the Maki purchase order; the $2,000 would cover arrears and existing needs and leave about $1,500 for further needs.",
+   "quote": "$2,000 would cover the arrears, existing needs, and leave about $1,500 for further needs.",
+   "figures_as_printed": [
+    "$2,000",
+    "$1,500"
+   ]
+  },
+  {
+   "topic": "Grant reimbursement and ARPA funding",
+   "what_was_recorded": "Grant update: reimbursement applied for on invoices of about $35,000, about $28,000 received, and another $7,000 funded through ARPA grant money.",
+   "quote": "m. wilson applied for reimbursement for invoices totaling approximately $35,000, and we received about $28,000 reimbursement.",
+   "figures_as_printed": [
+    "$35,000",
+    "$28,000",
+    "$7,000"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Additional $2,000 to the Maki Purchase Order, funded from the Timber Rights Fund.",
+   "amount_as_printed": "$2,000",
+   "outcome": "passed",
+   "quote": "m. larouche, to approve an additional $2,000 to the maki purchase order, coming from the timber rights fund."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order 7:03pm; no action",
+   "quote": "call to order at 7:03pm by j. pewtherer",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "none on the agenda",
+   "quote": "2. appointments: none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Announcements and approval of prior minutes",
+   "resolution": "minutes of 10/1 approved; other listed minutes not voted on in the text",
+   "quote": "m. wilson, to approve minutes of 10/1",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New public hearing: 23 Tilton Ave, NOI-25-21 (septic)",
+   "resolution": "approved as presented",
+   "quote": "a notice of intent by stephen raboin for the construction of a replacement septic system.",
+   "tags": [
+    "wetlands",
+    "septic",
+    "riverfront"
+   ]
+  },
+  {
+   "topic": "Continued public hearing: 763 Northfield Rd, NOI-25-12 (culvert)",
+   "resolution": "continued to November 5, 2025",
+   "quote": "on september 30, the applicant asked for a continuance until 'further notice'.",
+   "tags": [
+    "culvert",
+    "wetlands",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Administrative determination: 135 Flynn Rd, CAD-25-16 (deck)",
+   "resolution": "Agent's Determination approved with caveat",
+   "quote": "request to replace deteriorating deck using same footprint.",
+   "tags": [
+    "administrative determination",
+    "erosion control"
+   ]
+  },
+  {
+   "topic": "Certificate of Compliance: 155 Reservoir Road",
+   "resolution": "partial Certificate of Compliance approved",
+   "quote": "at the last meeting they were missing the 'as-built' plans.",
+   "tags": [
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "Enforcement: violations and hearings",
+   "resolution": "status reported; no vote",
+   "quote": "1168 mass ave rear- violation fine to be mailed",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "New business: Maki purchase order increase",
+   "resolution": "approved $2,000 from Timber Rights Fund",
+   "quote": "m. larouche, to approve an additional $2,000 to the maki purchase order, coming from the timber rights fund.",
+   "tags": [
+    "timber rights fund",
+    "purchase order",
+    "forest"
+   ]
+  },
+  {
+   "topic": "Forest cutting plan: Flat Hill Rd",
+   "resolution": "discussed; no action; comments due within 10 days",
+   "quote": "these are exempt from the wetlands protection act, but we have 10 days to provide comments.",
+   "tags": [
+    "forest cutting",
+    "Wetlands Protection Act"
+   ]
+  },
+  {
+   "topic": "Old business: committee reports and grant update",
+   "resolution": "reviewed; no action",
+   "quote": "m. wilson reviewed the status, which included requesting an extension to improve handicapped access.",
+   "tags": [
+    "grants",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Communications: Lane/Large Town Forest trails and agenda links",
+   "resolution": "J. Pewtherer to contact Town Manager and town attorney",
+   "quote": "m. wilson noted that in the lane/large town forest area there have been reports of new trails being created without permission.",
+   "tags": [
+    "trails",
+    "town forest",
+    "public access"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "next meeting November 5 by Zoom",
+   "quote": "november 5 at 7:00pm by zoom",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:50PM",
+   "quote": "m. wilson, to adjourn at 7:50pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "septic",
+  "culvert",
+  "forest cutting",
+  "certificate of compliance",
+  "enforcement",
+  "grants",
+  "ARPA",
+  "timber rights fund",
+  "town forest trails",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -316,5 +316,172 @@
    "at": "2026-10-06T18:01:15Z",
    "cost_usd": 0.211415
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03112025-7092",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-03-11-minutes-7092.txt",
+   "path": "sources/meetings/sewer-commission/2025-03-11-minutes-7092.docx"
+  },
+  "official_sha256": "a52528920bd3c6b62f5b623162c27f25eb8253267bf149c11d970684f1922293",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Neither record has a vote or transfer, and they agree on the minute-taker, the recruitment mailing, the 26% delinquency rate and who was present. They differ on how long the $249,000 consultant fee is spread (three years in ours, four in the official minutes). Our minutes also record agenda, scheduling and permit-tabling items the official minutes omit, and the official minutes record a pump-cutoff item and a Capital-line note that ours omit.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Wright-Pierce consultant fee for permit (NPDES) work",
+    "ours": "Ray Pierce consultant services for new permit requirements: 249, 249,000 over three years, roughly 60 a year",
+    "official": "the estimate is $249,000 which will be spread over 4 years.",
+    "official_reading": "Wright Pierce",
+    "note": "The consultant name was misheard (Ray Pierce vs Wright Pierce) and the $249,000 figure agrees, but the spread period differs.",
+    "t": 832
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Spread of the $249,000 consultant fee",
+    "ours": "249,000 over three years, roughly 60 a year",
+    "official": "the estimate is $249,000 which will be spread over 4 years.",
+    "note": "Three years (about $60K a year, which would not divide evenly) vs four years in the official minutes; check the recording near t=832 and the Wright-Pierce proposal.",
+    "t": 832
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Delinquency rate and partial payments",
+    "ours": "Delinquent sewer bills and partial payments: $1,000, 500, $10 fee, 100, 5%, 26%",
+    "official": "the finance committee was concerned about the 26% delinquency rate",
+    "note": "26% agrees, but the other figures ($1,000, $500, $10 fee, 5%) do not appear in the official minutes, so confirm in the recording whether these were stated.",
+    "t": 1239
+   },
+   {
+    "kind": "agree",
+    "about": "Partial payment follow-up: who checks, and with whom",
+    "ours": "The business manager will contact the town collector to ask whether partial online payments of sewer bills are possible.",
+    "official": "andrew said he would look into options at town hall.",
+    "note": "Both assign Andrew to look into partial-payment options with the town; our minutes name the collector and the official minutes say Town Hall.",
+    "t": 1719
+   },
+   {
+    "kind": "agree",
+    "about": "AI minute-taking not adopted; Jane keeps taking minutes",
+    "ours": "Commission will not opt into the AI minute-taking companion offered for town boards, preferring to keep its minute-taker.",
+    "official": "they will continue to have jane do the minutes.",
+    "note": "Same decision.",
+    "t": 554
+   },
+   {
+    "kind": "agree",
+    "about": "Second recruitment mailing",
+    "ours": "Commissioners agreed to consider another recruitment letter/mailing, possibly to a wider list, if the current effort yields few candidates.",
+    "official": "andrew said they can figure out about doing another mailing and send it out.",
+    "note": "Same item; our minutes frame it as conditional, the official minutes as a plan.",
+    "t": 505
+   },
+   {
+    "kind": "agree",
+    "about": "No votes",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote or transfer."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Permit requirements tabled; business manager to ask DPW director about scope",
+    "ours": "Permit requirements discussion to be tabled to a future agenda; the business manager will ask the DPW director about scope.",
+    "official": "",
+    "note": "The official minutes record no tabling of the permit discussion.",
+    "t": 987
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assistant to the business manager position",
+    "ours": "Assistant to the business manager position: Monday 17",
+    "official": "",
+    "note": "The official minutes do not mention this position or the 'Monday 17' figure, which may be a date or a caption error.",
+    "t": 1111
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Future agenda items list",
+    "ours": "Future agenda items: permit requirements, remote open-meeting law, commission vacancies and the rest of current business.",
+    "official": "",
+    "note": "The official minutes name only the pump cutoff item as going on the next agenda.",
+    "t": 1927
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meeting time and schedule decision",
+    "ours": "Next meeting set for March 25 by Zoom; later meetings April 8, April 29 and May 13 to be hybrid at 7 p.m., with the April 29 time to be corrected.",
+    "official": "the commission discussed in person meetings and agreed that 7pm would work best.",
+    "note": "Both record a 7 p.m. time, but the official minutes describe in-person meetings and give no dates, while ours give Zoom/hybrid and specific dates; check the recording.",
+    "t": 2267
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pump cutoffs in the maintenance schedule",
+    "ours": "",
+    "official": "brett said he could talk to bill about this and will add it to the next agenda.",
+    "note": "Our minutes have no decision about exercising pump cutoffs in the next contract's maintenance schedule."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Capital line can cover Wright Pierce expenses",
+    "ours": "",
+    "official": "they can use money from the capital line item to pay for any wright pierce expenses that are not covered under engineering.",
+    "note": "Our minutes do not record that the FY26 Capital line can pay for Wright Pierce expenses outside Engineering."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on recruiting commissioners",
+    "ours": "",
+    "official": "scott advised that they are actively looking for new members for the commission.",
+    "note": "Our minutes have no public comment entry, though they note recruitment efforts."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-chair name",
+    "ours": "Brett Ramson (vice chairman, chaired the meeting)",
+    "official": "vice-chair: brett ramsden, clerk: scott dall, member: joe hurley, sewer business manager: andrew valliere, minutes clerk: jane ranley",
+    "official_reading": "Brett Ramsden",
+    "note": "Misheard surname; same person.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Scott Dall, Joe Hurley, Jane Ranley, Andrew Valliere present",
+    "ours": "Scott (member); Joe (member); Jane (staff member (takes minutes)); Andrew (staff / sewer business manager)",
+    "official": "vice-chair: brett ramsden, clerk: scott dall, member: joe hurley, sewer business manager: andrew valliere, minutes clerk: jane ranley",
+    "note": "Same people present; our captions give first names only and call Scott a member, while the official minutes call him clerk."
+   },
+   {
+    "kind": "agree",
+    "about": "Bill Bernard absent",
+    "ours": "Bill Bernard (DPW director (absent))",
+    "official": "absent: eli torres, dpw director- bill bernard",
+    "note": "Both record the DPW director as absent."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Eli Torres absent",
+    "ours": "",
+    "official": "absent: eli torres, dpw director- bill bernard",
+    "note": "Our minutes do not list Eli Torres as an absent member."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:28:21Z",
+   "cost_usd": 0.239147
+  }
  }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2025-01-29",
  "docid": "6985",
@@ -12,25 +12,191 @@
  },
  "votes": [
   {
-   "motion": "Approve the treatment plan as proposed and all testing results are sent to the office prior to application",
+   "motion": "Approve the Lake Shirley treatment plan as proposed, with all testing results sent to the office before application.",
    "moved_by": "C. St. Germain",
    "seconded_by": "J. Viviano",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "c. st. germain, to approve the treatment plan as proposed and all testing results are sent to the office prior to application. j. viviano r. bur",
-   "quote_taken_from_text": true
+   "quote": "c. st. germain, to approve the treatment plan as proposed and all testing results are sent to the office prior to application."
   },
   {
-   "motion": "Adjourn at 8:34 PM",
+   "motion": "Adjourn the meeting at 8:34PM.",
    "moved_by": "M. Larouche",
    "seconded_by": "R. Bursch",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: m. larouche, to adjourn at 8:34pm. second vote: r. ",
-   "quote_taken_from_text": true
+   "quote": "motion: m. larouche, to adjourn at 8:34pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes extracted via OCR (macOS Vision). OCR formatting is imperfect, particularly around section headers (Motion/Second/Vote labels), but the motion contents and vote outcomes are clear. R. Bursch joined the meeting at approximately 7:13 PM (noted as \"13:07 into the meeting\") but was present for both votes.",
- "cost_usd": 0.09449240000000002
+ "note": "Text is OCR of a scan with a jumbled layout. Vote seconders are inferred from line order: the treatment-plan second (J. Viviano) and the adjournment second (R. Bursch) sit beside the motion text, not beside a labelled Second field. The adjournment vote prints AYE for four members (Larouche, Wilson, St. Germain, Viviano) and no count; the outcome is recorded as passed without a count. The roll call lists J. Pewtherer as absent, but the minutes also say the call to order was made by J. Pewtherer; this conflict is not resolved in the text. The page-1 roles list is garbled in OCR, so roles are given only where the body text states them. Sophia Dorow, Maddison Berthet and Michael Gale are named in the header and signature, not as taking part, so status is not stated. Joanna Billotta and Dominic Meringolo have no affiliation printed. The Lake Shirley text is truncated in OCR (\"the 2024-2025 Plam\"). No dollar figures appear in the text.",
+ "cost_usd": 0.014585270000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "C. St. Germain",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: c. st. germain, m. larouche, j. viviano, m. wilson. r. bursch joined at 13:07 into the meeting."
+  },
+  {
+   "name": "M. Larouche",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: c. st. germain, m. larouche, j. viviano, m. wilson. r. bursch joined at 13:07 into the meeting."
+  },
+  {
+   "name": "J. Viviano",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: c. st. germain, m. larouche, j. viviano, m. wilson. r. bursch joined at 13:07 into the meeting."
+  },
+  {
+   "name": "M. Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: c. st. germain, m. larouche, j. viviano, m. wilson. r. bursch joined at 13:07 into the meeting."
+  },
+  {
+   "name": "R. Bursch",
+   "status": "present",
+   "quote": "r. bursch joined at 13:07 into the meeting."
+  },
+  {
+   "name": "J. Pewtherer",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent : j. pewtherer"
+  },
+  {
+   "name": "Wendy Gendron",
+   "role": "Aquatic Restoration Consulting",
+   "status": "present",
+   "quote": "joanna billotta introduced wendy gendron (aquatic restoration consulting) and dominic"
+  },
+  {
+   "name": "Dominic Meringolo",
+   "status": "present",
+   "quote": "d. meringolo discussed the fan wart problem and plans."
+  },
+  {
+   "name": "Joanna Billotta",
+   "status": "present",
+   "quote": "j. billotta noted that shirley approved the plan last night."
+  },
+  {
+   "name": "John Fortune",
+   "role": "presented the report for Hickory Hills Landowners, Inc.; resident of 50 Hemlock Drive",
+   "status": "present",
+   "quote": "john fortune (50 hemlock drive) presented the report for hickory hills landowners, inc."
+  },
+  {
+   "name": "Sophia Dorow",
+   "role": "Cons. Administrator",
+   "status": "not stated",
+   "quote": "sophia dorow - cons. administrator"
+  },
+  {
+   "name": "Maddison Berthet",
+   "role": "Admin Assistant",
+   "status": "not stated",
+   "quote": "maddison berthet - admin assistant"
+  },
+  {
+   "name": "Michael Gale",
+   "role": "Admin Asst.",
+   "status": "not stated",
+   "quote": "michael gale - admin asst."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Hickory Hills will return in May with an implementation plan for the commission's approval.",
+   "quote": "noted that they will come back in may with an implementation plan for approval."
+  },
+  {
+   "decision": "M. Wilson will check whether the Hickory Hills DEP 208-1266 order has been extended.",
+   "quote": "m. wilson will check to see if it has been extended."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hollis Road heating system service invoice",
+   "what_was_recorded": "M. Larouche reported the Hollis Road heating system was serviced and the invoice was passed along; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "m. larouche noted that the heating system at hollis road was serviced, and the invoice"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Fortune",
+   "stated_role": "50 Hemlock Drive",
+   "topic": "algae after removing phosphorus-using plants at Lake Shirley",
+   "quote": "john fortune, 50 hemlock drive, wondered if algae problems the next year the result of"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: Hollis Road heating system",
+   "resolution": "noted; invoice passed along",
+   "quote": "m. larouche noted that the heating system at hollis road was serviced, and the invoice",
+   "tags": [
+    "facilities",
+    "Hollis Road"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; none offered",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Lake Shirley annual report / OOC #208-12168",
+   "resolution": "treatment plan approved 5-0",
+   "quote": "lake shirley annual report / ooc #208-12168",
+   "tags": [
+    "Lake Shirley",
+    "aquatic plants",
+    "herbicide",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Hickory Hills annual report 2024",
+   "resolution": "presented; returns in May with implementation plan",
+   "quote": "noted that they will come back in may with an implementation plan for approval.",
+   "tags": [
+    "Hickory Hills",
+    "fanwort",
+    "aquatic plants",
+    "lake monitoring"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:34PM",
+   "quote": "motion: m. larouche, to adjourn at 8:34pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "lake management",
+  "Lake Shirley",
+  "Hickory Hills",
+  "aquatic plants",
+  "fanwort",
+  "herbicide treatment",
+  "order of conditions",
+  "Hollis Road",
+  "remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-03-11",
  "docid": "7092",
@@ -12,15 +12,222 @@
  },
  "votes": [
   {
-   "motion": "Adjourn at 7:45 pm",
-   "moved_by": "Scott Dall",
-   "seconded_by": "Joe Hurley",
+   "motion": "To adjourn the meeting at 7:45 pm.",
+   "moved_by": "Scott D.",
+   "seconded_by": "Joe H.",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion: scott d. second: joe h. to adjourn at 7:45 pm roll call vote: scott-aye, joe-aye and brett-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: the motion to adjourn. All other items in the minutes are discussions or informational reports with no motions voted on.",
- "cost_usd": 0.0624134
+ "note": "Text is clean extracted minutes, not a scan. Only one motion is recorded (adjournment, roll call 3-0). Other items are discussion and directions to staff without a motion, so they are recorded as decisions, not votes. The Scott public-comment entry is a Commission member speaking under the public comment heading; the minutes give no separate resident speaker. Eli Torres's role is not printed. The minutes print 'Scott D.' and 'Joe H.' as mover and seconder; full names are not printed there. The 26% figure is a delinquency rate, not a dollar amount.",
+ "cost_usd": 0.014402870000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair: brett ramsden, clerk: scott dall, member: joe hurley, sewer business manager: andrew valliere, minutes clerk: jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "vice-chair: brett ramsden, clerk: scott dall, member: joe hurley, sewer business manager: andrew valliere, minutes clerk: jane ranley"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "present",
+   "quote": "vice-chair: brett ramsden, clerk: scott dall, member: joe hurley, sewer business manager: andrew valliere, minutes clerk: jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "vice-chair: brett ramsden, clerk: scott dall, member: joe hurley, sewer business manager: andrew valliere, minutes clerk: jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "sewer business manager: andrew valliere, minutes clerk: jane ranley"
+  },
+  {
+   "name": "Eli Torres",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: eli torres, dpw director- bill bernard"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "absent: eli torres, dpw director- bill bernard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Brett will talk to Bill about adding exercising the cutoffs on the pumps to the maintenance schedule in the next contract, and will add it to the next agenda.",
+   "quote": "brett said he could talk to bill about this and will add it to the next agenda."
+  },
+  {
+   "decision": "The Commission agreed that 7pm would work best for in-person meetings.",
+   "quote": "the commission discussed in person meetings and agreed that 7pm would work best."
+  },
+  {
+   "decision": "Jane will continue to take the minutes; the Commission will not use AI-generated minutes.",
+   "quote": "they will continue to have jane do the minutes."
+  },
+  {
+   "decision": "Andrew will look into partial/flexible payment options at Town Hall.",
+   "quote": "andrew said he would look into options at town hall."
+  },
+  {
+   "decision": "Andrew will work out a second mailing to solicit new commissioners.",
+   "quote": "andrew said they can figure out about doing another mailing and send it out."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "NPDES requirements, Wright-Pierce fee proposal",
+   "what_was_recorded": "Wright Pierce's fee estimate for the NPDES work is $249,000, to be spread over 4 years.",
+   "quote": "the estimate is $249,000 which will be spread over 4 years.",
+   "figures_as_printed": [
+    "$249,000",
+    "4 years"
+   ]
+  },
+  {
+   "topic": "FY26 budget, Capital line for Wright Pierce expenses",
+   "what_was_recorded": "Wright Pierce expenses not covered under Engineering can be paid from the Capital line item; no dollar figure was printed.",
+   "quote": "they can use money from the capital line item to pay for any wright pierce expenses that are not covered under engineering.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Sewer delinquency and payment options",
+   "what_was_recorded": "The Finance Committee was concerned about a 26% delinquency rate, and Uni-Pay only accepts full-balance payments; partial payment options were discussed.",
+   "quote": "the finance committee was concerned about the 26% delinquency rate",
+   "figures_as_printed": [
+    "26%"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Scott",
+   "stated_role": "Clerk",
+   "topic": "recruiting new Commission members",
+   "quote": "scott advised that they are actively looking for new members for the commission."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "discussed; recruiting new members",
+   "quote": "scott advised that they are actively looking for new members for the commission.",
+   "tags": [
+    "vacancies",
+    "recruitment"
+   ]
+  },
+  {
+   "topic": "Commission vacancies",
+   "resolution": "discussed; another mailing to be considered",
+   "quote": "scott attended the town caucus, was nominated and will be on the ballot for a 3-year term.",
+   "tags": [
+    "vacancies",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Zoom/remote Open Meeting Law legislation",
+   "resolution": "discussed; agreed in-person meetings at 7pm if remote not extended",
+   "quote": "andrew explained that this is set to expire at the end of march",
+   "tags": [
+    "open meeting law",
+    "remote meetings"
+   ]
+  },
+  {
+   "topic": "NPDES requirements (Wright Pierce)",
+   "resolution": "reported; Brett to raise pump cutoff maintenance with Bill",
+   "quote": "andrew reported they have been in touch with wright pierce on the requirements to go in effect next year and into 2028.",
+   "tags": [
+    "NPDES",
+    "Wright Pierce",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Budget FY26",
+   "resolution": "reported; no significant updates",
+   "quote": "andrew reported there were not many updates",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Assistant to the Business Manager position",
+   "resolution": "reported; new assistant to start on 3/17",
+   "quote": "she will probably start on 3/17.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Demands and delinquency collections",
+   "resolution": "discussed; Andrew to look into partial payment options",
+   "quote": "andrew reported he was able to do a mail merge and send the demands out",
+   "tags": [
+    "collections",
+    "delinquency",
+    "Uni-Pay"
+   ]
+  },
+  {
+   "topic": "Manhole repair IFB",
+   "resolution": "no action; no update, frost still in the ground",
+   "quote": "andrew had no update since the frost is still in the ground.",
+   "tags": [
+    "manhole repair",
+    "bid"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed for future meetings",
+   "quote": "future agenda items- npdes requirements, zoom/remote open meeting legislature, and 3 open vacancies for commissioners.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "sewer commission",
+  "commission vacancies",
+  "open meeting law",
+  "remote meetings",
+  "NPDES",
+  "Wright Pierce",
+  "delinquency",
+  "Uni-Pay",
+  "budget FY26",
+  "manhole repair",
+  "staffing"
+ ],
+ "dropped_unquoted_by_field": {}
 }

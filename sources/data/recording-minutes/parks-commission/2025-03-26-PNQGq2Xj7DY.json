@@ -348,5 +348,190 @@
    "at": "2026-10-06T17:57:31Z",
    "cost_usd": 0.21116100000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03262025-7118",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2025-03-26-minutes-7118.txt",
+   "path": "sources/meetings/parks-commission/2025-03-26-minutes-7118.pdf"
+  },
+  "official_sha256": "2d8aa9f7da62d43a4914ef424984a44a7f1b83e70984c7f9604ebaa8edbd7c03",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both Marshall Park cost figures, the $231 full-project tax impact, and the two public-session dates. They differ on the Wednesday April 9 versus Thursday April 10 evening-session date, the $111 phase-one figure (our minutes only), and the names of several attendees.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 5,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Marshall Park full project cost",
+    "t": 3505,
+    "ours": "Marshall Park full project cost: 13,735,372",
+    "official": "cost for entire project $13,735,372",
+    "note": "Same figure in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "Tax impact, full project, 18 years",
+    "t": 3613,
+    "ours": "Tax impact, full project: $231 a year, 18-year",
+    "official": "for the full project at 18 years the impact for the average single family house would be $231 per year.",
+    "note": "Same figure and term."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Date of the public information session (evening)",
+    "t": 4098,
+    "ours": "Tentative dates set for two public information sessions on Marshall Park: Thursday April 10 at 7 p.m. and Saturday April 26 at 10 a.m., location to be determined. Later: the evening session was discussed as moving to Wednesday April 9, with TCP as the likely location.",
+    "official": "the commission decided on april 9 at 7pm and april 26 at 10am for public meetings regarding the",
+    "note": "Ours first records April 10 and then discusses a move to April 9; the official minutes record April 9 as decided. Check the recording around t=4098 to t=4445 to confirm April 9 was the final date."
+   },
+   {
+    "kind": "agree",
+    "about": "Location of the evening session and who confirms it",
+    "t": 4445,
+    "ours": "The evening session was discussed as moving to Wednesday April 9, with TCP as the likely location. The recreation director is to confirm availability the next day.",
+    "official": "c. ruth will verify availability of tcp gym.",
+    "note": "Both name the TCP as the location to confirm. Ours assigns the confirmation to the recreation director, while the official assigns it to C. Ruth (the facilities director). Check who took the action."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Debt exclusion term 18 years versus 15 years",
+    "t": 4549,
+    "ours": "Debt exclusion term: 18 years, 15 year",
+    "official": "",
+    "note": "Our figures list mentions a 15-year term alongside 18; the official minutes give only 18 years. Check the recording at t=4549."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Recreation director hours",
+    "t": 3189,
+    "ours": "Recreation director hours: 19 hours a week",
+    "official": "",
+    "note": "The official minutes carry no hours figure for the recreation director."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Marshall Park memorial area request",
+    "t": 4396,
+    "ours": "The Marshall Park memorial area request will be raised at the next design team meeting.",
+    "official": "a. scheipers thinks we should start by having a discussion with the landscape architect.",
+    "note": "Ours says it goes to the next design team meeting; the official says the chair will start with a discussion with the landscape architect. Check the recording at t=4396 for which was said."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "User fees item",
+    "t": 4906,
+    "ours": "The user fees item was pushed to the April meeting and is to be retitled 'park user fees'.",
+    "official": "a. scheipers said she and c. sullivan were still collecting user fees from other communities for reference.",
+    "note": "Ours records a deferral to April and a retitling; the official records only that fee collection is continuing. Check whether the deferral and retitling were stated."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair stepping down and reorganization",
+    "t": 4761,
+    "ours": "The chair asked for a volunteer to be chair after the election, with no answer required that night. The item was left for a later meeting.",
+    "official": "a. scheipers informed the commission that she does not want to be the chair when the board",
+    "note": "Both say the chair is asking someone else to take over. Ours does not mention the May reorganization or say the chair herself does not want to continue; the official frames it as her declining to remain chair. Check the recording wording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Skate Park speaker permission",
+    "t": 0,
+    "ours": "",
+    "official": "a. scheipers permission has been given for greg roy (skate park) to speak with the engineer working with the landscape architect.",
+    "note": "Our minutes do not record this decision or Greg Roy."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Non Red Cross swimming lessons",
+    "t": 0,
+    "ours": "",
+    "official": "a. clement said she would look into it.",
+    "note": "Our minutes do not record the request about non-Red Cross swimming lessons or the follow-up."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "t": 0,
+    "ours": "Anita Shipers (member)",
+    "official": "present: a. scheipers, k. menard, c. sullivan, c. shapiro, t. lawless. additional attendees: chris ruth, angela clement",
+    "note": "Same person, with the name misheard as Shipers; the official lists her as A. Scheipers, the Chair.",
+    "official_reading": "A. Scheipers"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Karen Manard",
+    "t": 0,
+    "ours": "Karen Manard (member)",
+    "official": "present: a. scheipers, k. menard, c. sullivan, c. shapiro, t. lawless. additional attendees: chris ruth, angela clement",
+    "note": "Same person, with the surname misheard; the official lists K. Menard as Clerk.",
+    "official_reading": "K. Menard"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Member Tim Mullis versus T. Lawless",
+    "t": 0,
+    "ours": "Tim Mullis (member)",
+    "official": "present: a. scheipers, k. menard, c. sullivan, c. shapiro, t. lawless. additional attendees: chris ruth, angela clement",
+    "note": "The surnames differ (Mullis versus Lawless) and the first-name match is only the initial T, so this is probably a misheard name but cannot be confirmed from the text; check the roll call on the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Facilities director name",
+    "t": 0,
+    "ours": "Chris (facilities director)",
+    "official": "additional attendees: chris ruth, angela clement",
+    "note": "Same person; ours gives only the first name, and the official gives Chris Ruth.",
+    "official_reading": "Chris Ruth"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Recreation director name",
+    "t": 0,
+    "ours": "Angela (recreation director)",
+    "official": "additional attendees: chris ruth, angela clement",
+    "note": "Same person; ours gives only the first name, and the official gives Angela Clement.",
+    "official_reading": "Angela Clement"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Lunenburg Business Association presenter",
+    "t": 0,
+    "ours": "Josie Gilchrist (presenter, Lunenburg Business Association, attended by Zoom)",
+    "official": "a. clement and j. gilchrest (lunenburg business association) updated the commission that work",
+    "note": "Same person, with the surname spelled Gilchrist in ours and Gilchrest in the official minutes.",
+    "official_reading": "J. Gilchrest"
+   },
+   {
+    "kind": "agree",
+    "about": "Beach staff attendee",
+    "t": 0,
+    "ours": "Jared Bowser (beach staff, attended by Zoom)",
+    "official": "j. bowser added that things did get quiet by the end of the season.",
+    "note": "Same person, J. Bowser, in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Dave Rodgers memorial request",
+    "t": 0,
+    "ours": "",
+    "official": "a. scheipers said she received a request from dave rodgers to include a memorial area within the park.",
+    "note": "Our minutes mention the memorial area request but do not name Dave Rodgers as the requester."
+   }
+  ],
+  "quotes_not_in_official_dropped": 3,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:25:50Z",
+   "cost_usd": 0.31922
+  }
  }
 }

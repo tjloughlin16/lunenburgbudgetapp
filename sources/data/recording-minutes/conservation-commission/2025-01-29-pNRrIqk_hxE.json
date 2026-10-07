@@ -228,5 +228,131 @@
    "at": "2026-10-06T18:11:34Z",
    "cost_usd": 0.209057
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01292025-6985",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-01-29-minutes-6985.txt",
+   "path": "sources/meetings/conservation-commission/2025-01-29-minutes-6985.pdf"
+  },
+  "official_sha256": "136093538abcb6e1c860ed42b9160461e40ed12938d79c4f47f9d15dcbc47941",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Both records show the Lake Shirley treatment plan passing 5-0 and Hickory Hills returning in May. They differ on the testing condition's timing, on what Hickory Hills will bring back, and on whether the chair attended. The most important thing for a reader: our minutes count the chair among the five aye votes, while the official minutes list the chair as absent and Bursch as joining late.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Lake Shirley plan vote: testing condition timing",
+    "ours": "Accept the Lake Shirley treatment plan as presented, with a condition that all testing results outlined in the plan be sent to the office within a week of receipt — passed 5-0 by roll call",
+    "official": "c. st. germain, to approve the treatment plan as proposed and all testing results are sent to the office prior to application.",
+    "note": "Both record 5-0 approval with a testing-results condition, but the deadline differs (within a week of receipt vs. prior to application); check the recording near t=3315 and the motion as made.",
+    "t": 3315
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who voted on the Lake Shirley plan / chair attendance",
+    "ours": "passed 5-0 by roll call (Rich, Jeff, Mike, Chris, chair all aye)",
+    "official": "absent : j. pewtherer",
+    "note": "Our roll call includes the chair as an aye, but the official minutes list the chair (J. Pewtherer) as absent, with R. Bursch joining late; check who presided and who voted, and whether the 'chair' was an acting chair.",
+    "t": 3315
+   },
+   {
+    "kind": "discrepancy",
+    "about": "What Hickory Hills returns with in May",
+    "ours": "Hickory Hills to return around May with spot-treatment proposals; no commission action on its annual report.",
+    "official": "noted that they will come back in may with an implementation plan for approval.",
+    "note": "Ours says spot-treatment proposals with no action on the annual report, while the official says an implementation plan for the commission's approval; check the recording near t=5495.",
+    "t": 5495
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hickory Hills fanwort control spending figure",
+    "ours": "Hickory Hills fanwort control spending: somewhere between 5007 $750,000",
+    "official": "",
+    "note": "The garbled caption figure (apparently a range) has no counterpart in the official minutes, which print no dollar figure; verify what was actually said at the recording.",
+    "t": 3674
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Wendy to submit slides",
+    "ours": "Wendy to submit her slides after the meeting for the record.",
+    "official": "",
+    "note": "The official minutes do not mention the slides being submitted for the record.",
+    "t": 3127
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Check on DEP 208-1266 order extension",
+    "ours": "",
+    "official": "m. wilson will check to see if it has been extended.",
+    "note": "Our minutes record no follow-up by M. Wilson on the Hickory Hills DEP order extension."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Hollis Road heating system service invoice",
+    "ours": "",
+    "official": "m. larouche noted that the heating system at hollis road was serviced, and the invoice",
+    "note": "A non-voted report in the official minutes with no dollar figure; absent from ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by John Fortune on Lake Shirley algae",
+    "ours": "",
+    "official": "john fortune, 50 hemlock drive, wondered if algae problems the next year the result of",
+    "note": "Our minutes list Fortune only as a presenter and record no public comment."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Wendy Gendron",
+    "ours": "Wendy jenden (presenter)",
+    "official": "joanna billotta introduced wendy gendron (aquatic restoration consulting) and dominic",
+    "note": "Same presenter; the captions misheard the surname.",
+    "official_reading": "Wendy Gendron"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Dominic Meringolo",
+    "ours": "Dominic marangola (presenter)",
+    "official": "d. meringolo discussed the fan wart problem and plans.",
+    "note": "Same presenter; the captions misheard the surname.",
+    "official_reading": "Dominic Meringolo"
+   },
+   {
+    "kind": "agree",
+    "about": "Presenters John Fortune and Joanna (Billotta)",
+    "ours": "John Fortune (presenter); Joanna (presenter)",
+    "official": "john fortune (50 hemlock drive) presented the report for hickory hills landowners, inc.",
+    "note": "Both records list Fortune as presenting for Hickory Hills; Joanna is Joanna Billotta in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Members present: Chris, Mike, Jeff, Rich",
+    "ours": "Chris (member); Mike (member); Jeff (member); Rich (member)",
+    "official": "present: c. st. germain, m. larouche, j. viviano, m. wilson. r. bursch joined at 13:07 into the meeting.",
+    "note": "The four first names and the fifth, Rich, appear to match the five members present (Mike could be Larouche or Wilson); the official lists Bursch as joining late, which ours does not note."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Staff present",
+    "ours": "",
+    "official": "sophia dorow - cons. administrator",
+    "note": "The official minutes list the Conservation Administrator and two admin staff (Berthet, Gale), whom our minutes do not list."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:35:14Z",
+   "cost_usd": 0.240347
+  }
  }
 }

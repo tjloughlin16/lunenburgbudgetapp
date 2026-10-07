@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-03-27",
  "docid": "7011",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jean Russell",
    "outcome": "not stated",
@@ -21,6 +21,523 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes record a deferred vote on the Citizens Petition Proposition 2½ Override (section 7.d: \"The Committee agrees to defer their vote awaiting additional information\") and an agreement to Option 1 for the Finance Committee Annual Report (section 8.a: \"The Committee agrees with option 1\"), but these are recorded as decisions/agreements without formal motion language. The only formal motion with mover and seconder is the adjournment. Votes on warrant articles and other items are noted as scheduled for the next meeting (April 3 and April 10).",
- "cost_usd": 0.06697940000000001
+ "note": "Text extraction, not a scan. Ligatures (ﬁ, ﬂ, ff) are garbled in places, so quotes avoid them where possible. Attendance conflicts: Tom Gray is listed as absent in the roll call, yet he is recorded as moving to adjourn and as wanting to raise a point in item 8. Only one motion is recorded (adjourn), and its result is not printed. Several figures are malformed as printed (Police \"$2,434,77.42\"), and are reproduced as printed. Status for Dave Passios is not stated; the minutes do not say whether speakers attended in person.",
+ "cost_usd": 0.01998467,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, committee member"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "tanya dall, committee member ana lockwood, committee member"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "tanya dall, committee member ana lockwood, committee member"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent member: clerk tom gray"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager, jennifer warren-dyment, will present any changes that have"
+  },
+  {
+   "name": "John Bowen",
+   "role": "Resident, 162 Highland Street (as printed)",
+   "status": "present",
+   "quote": "john bowen, 162 highland street, inquired whether or not public comment will"
+  },
+  {
+   "name": "Glenn Mcleod",
+   "role": "Resident, 436 Reservoir Road (as printed)",
+   "status": "present",
+   "quote": "glenn mcleod, 436 reservoir road, shares that the discussions about"
+  },
+  {
+   "name": "TJ Loughlin",
+   "role": "Resident, 207 Rolling Acres Road (as printed); brought forward the citizens petition override",
+   "status": "present",
+   "quote": "tj loughlin, 207 rolling acres road, addressed some of the questions posed by"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Speaker, Jefferson NH (as printed)",
+   "status": "not stated",
+   "quote": "suggests creating a link or qr code that will bring up"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee deferred its vote on the Proposition 2 1/2 override citizens petition, awaiting additional information.",
+   "quote": "the committee agrees to defer their vote awaiting additional information."
+  },
+  {
+   "decision": "The Committee agreed to Option 1 for the Finance Committee annual report: provide information the Committee approves despite remaining questions, highlighting critical items for voters.",
+   "quote": "the committee agrees with option 1."
+  },
+  {
+   "decision": "Votes on the warrant articles will be taken at the next meeting, with options of recommending approval, recommending disapproval, or finding no financial impact.",
+   "quote": "votes will be taken at the next meeting."
+  },
+  {
+   "decision": "The Chair directed that public comment will follow each agenda topic, correcting an error in the agenda.",
+   "quote": "he will follow each topic with public comment."
+  },
+  {
+   "decision": "Minutes of this meeting were deferred to the next meeting for review.",
+   "quote": "minutes will be reviewed at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Changes to the final budget (legal line)",
+   "what_was_recorded": "The Town Manager presented a $10,000 increase to the legal line.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "$10,000 increases to the legal line"
+  },
+  {
+   "topic": "Grant writer position eliminated",
+   "what_was_recorded": "A $50,000 grant writer position was eliminated to restore some of the pavement management program.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "$50,000 grant writer position has been eliminated to"
+  },
+  {
+   "topic": "Reserve fund decrease",
+   "what_was_recorded": "The reserve fund was decreased by $15,000, bringing the total to $210,000.",
+   "figures_as_printed": [
+    "$15,000",
+    "$210,000"
+   ],
+   "quote": "$15,000 decrease to the reserve fund bringing the total to $210,000."
+  },
+  {
+   "topic": "IT department increase",
+   "what_was_recorded": "The IT department budget increased by $104,089.",
+   "figures_as_printed": [
+    "$104,089"
+   ],
+   "quote": "$104,089 increase to the it department."
+  },
+  {
+   "topic": "FY2027 starting free cash",
+   "what_was_recorded": "The starting free cash figure for FY2027 was printed as $219,576.",
+   "figures_as_printed": [
+    "$219,576"
+   ],
+   "quote": "fy 2027 starting free cash $219,576"
+  },
+  {
+   "topic": "FY2026 proposed General Government budget",
+   "what_was_recorded": "The Town Manager's proposed FY2026 General Government budget was printed as $2,962,263.14.",
+   "figures_as_printed": [
+    "$2,962,263.14"
+   ],
+   "quote": "fy 2026 town manager proposed general government budget:"
+  },
+  {
+   "topic": "FY2026 proposed department budgets",
+   "what_was_recorded": "The Town Manager's proposed FY2026 budgets were printed by department. The Police figure is printed as $2,434,77.42, a malformed number, and is reproduced as printed.",
+   "figures_as_printed": [
+    "$2,434,77.42",
+    "$1,744,587.91",
+    "$368,488.90",
+    "$27,121,995",
+    "$1,334,521",
+    "$2,476,953.29",
+    "$1,067,396.30",
+    "$478,242.76",
+    "$639,036.70",
+    "$2,547,440.36",
+    "$3,425,578.98",
+    "$ 4,107,709.13"
+   ],
+   "quote": "fy 2026 town manager proposed budgets:"
+  },
+  {
+   "topic": "FY2026 capital program (presentation)",
+   "what_was_recorded": "The FY2026 capital program was printed as totaling $655,424.",
+   "figures_as_printed": [
+    "$655,424"
+   ],
+   "quote": "fy 2026 capital program totals $655,424"
+  },
+  {
+   "topic": "Assessor's overlay",
+   "what_was_recorded": "The assessor's overlay was originally budgeted at $250,000 and decreased to $175,000.",
+   "figures_as_printed": [
+    "$250,000",
+    "$175,000"
+   ],
+   "quote": "originally budgeted for $250,000 but that decreased to $175,000."
+  },
+  {
+   "topic": "Free cash transfer to public schools",
+   "what_was_recorded": "A transfer of certified free cash to support the public schools was described.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "to support the public schools."
+  },
+  {
+   "topic": "General stabilization and special purpose stabilization",
+   "what_was_recorded": "The general stabilization account was reduced to $0, and transfers to special purpose stabilization funds originally budgeted at $250,000 were removed.",
+   "figures_as_printed": [
+    "$0",
+    "$250,000"
+   ],
+   "quote": "the general stabilization account has been reduced to $0."
+  },
+  {
+   "topic": "Special projects warrant articles",
+   "what_was_recorded": "Three special projects warrant articles were described, totaling $152,500.",
+   "figures_as_printed": [
+    "$152,500",
+    "$75,000",
+    "$27,500",
+    "$50,000"
+   ],
+   "quote": "there are 3 special projects warrant articles totaling $152,500."
+  },
+  {
+   "topic": "FY25 transfers",
+   "what_was_recorded": "FY25 transfers were described as totaling $465,000, including a snow and ice deficit transfer and a school special education transfer, each subject to reduction at town meeting.",
+   "figures_as_printed": [
+    "$465,000",
+    "$415,000",
+    "$50,000"
+   ],
+   "quote": "fy 25 transfers totaling $465,000"
+  },
+  {
+   "topic": "Proposition 2 1/2 override citizens petition",
+   "what_was_recorded": "A two-million-dollar override petition brought forward by TJ Loughlin was described; the vote was deferred.",
+   "figures_as_printed": [
+    "2-million-dollar"
+   ],
+   "quote": "the 2-million-dollar override was brought forward by tj loughlin."
+  },
+  {
+   "topic": "FY2026 capital program (warrant)",
+   "what_was_recorded": "The FY2026 capital program warrant article was printed as totaling $1,225,000.",
+   "figures_as_printed": [
+    "$1,225,000"
+   ],
+   "quote": "fy 2026 capital program - totaling: $1,225,000"
+  },
+  {
+   "topic": "Decommission portion of TPC",
+   "what_was_recorded": "A warrant article to decommission a portion of TPC was listed at $75,000.",
+   "figures_as_printed": [
+    "$75,000"
+   ],
+   "quote": "decommission a portion of tpc: $75,000"
+  },
+  {
+   "topic": "Cemetery Road crack seal",
+   "what_was_recorded": "A public commenter objected to the $50,000 crack seal and said roads residents use daily should be a higher priority.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the $50,000 crack seal and believes the roads"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of certified free cash to support the public schools",
+   "amount_as_printed": "$500,000",
+   "outcome": "Described in the presentation; no vote recorded.",
+   "quote": "to support the public schools."
+  },
+  {
+   "description": "Transfers into special purpose stabilization funds, originally budgeted, removed",
+   "amount_as_printed": "$250,000",
+   "outcome": "Described as no longer being transferred; no vote recorded.",
+   "quote": "there are now no transfers into the special purpose stabilization funds which"
+  },
+  {
+   "description": "Snow and ice deficit transfer (FY25)",
+   "amount_as_printed": "$415,000",
+   "outcome": "Described; may be reduced at town meeting.",
+   "quote": "fy 25 transfers totaling $465,000"
+  },
+  {
+   "description": "School special education move-in transfer (FY25)",
+   "amount_as_printed": "$50,000",
+   "outcome": "Described; may be reduced at town meeting.",
+   "quote": "school special education move in transfer of $50,000 (may be"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street",
+   "topic": "Whether public comment follows each topic",
+   "quote": "john bowen, 162 highland street, inquired whether or not public comment will happen after each topic."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street",
+   "topic": "Grant writer elimination, cemetery funding, crack seal",
+   "quote": "john bowen,162 highland street, is upset that the grant writer program has"
+  },
+  {
+   "speaker": "Glenn Mcleod",
+   "stated_role": "436 Reservoir Road",
+   "topic": "Healthcare costs affecting retirees",
+   "quote": "glenn mcleod, 436 reservoir road, shares that the discussions about"
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street",
+   "topic": "Citizen petition financial impact and cemetery commission plan",
+   "quote": "john bowen, 162 highland street, states the citizen petition, warrant article 4, does"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Jefferson NH",
+   "topic": "QR code for information up to town meeting",
+   "quote": "suggests creating a link or qr code that will bring up"
+  },
+  {
+   "speaker": "Glenn Mcleod",
+   "stated_role": "436 Reservoir Road",
+   "topic": "Narratives from boards and committees",
+   "quote": "glenn mcleod, 436 reservoir road, encourages the committee"
+  },
+  {
+   "speaker": "TJ Loughlin",
+   "stated_role": "207 Rolling Acres Road",
+   "topic": "Questions about the school department and the override",
+   "quote": "tj loughlin, 207 rolling acres road, addressed some of the questions posed by"
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "Committee Member (as listed in roll call)",
+   "topic": "Response on school budget discrepancies",
+   "quote": "there are discrepancies in the documents and supporting"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; public hearing set for next week",
+   "quote": "chris menard stated that public hearing is scheduled for next week.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "no action; comment timing clarified",
+   "quote": "john bowen, 162 highland street, inquired whether or not public comment will happen after each topic.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director reports",
+   "resolution": "no action; no reports",
+   "quote": "there were no reports from the town manager or the finance director.",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Scheduled meetings: Town Manager final budget material",
+   "resolution": "presented; no vote",
+   "quote": "jennifer warren-dyment provided presented the following changes in the",
+   "tags": [
+    "budget",
+    "FY2026",
+    "Town Manager"
+   ]
+  },
+  {
+   "topic": "Public hearing: final budget material and capital items",
+   "resolution": "presented; no vote",
+   "quote": "town manager, jennifer warren-dyment, will present any changes that have",
+   "tags": [
+    "budget",
+    "public hearing",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Public hearing: warrant article (assessor overlay, free cash, transfers)",
+   "resolution": "presented; no vote",
+   "quote": "originally budgeted for $250,000 but that decreased to $175,000.",
+   "tags": [
+    "free cash",
+    "warrant articles",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Citizens petition: Proposition 2 1/2 override",
+   "resolution": "vote deferred to later meeting",
+   "quote": "the committee agrees to defer their vote awaiting additional information.",
+   "tags": [
+    "override",
+    "Proposition 2 1/2",
+    "schools"
+   ]
+  },
+  {
+   "topic": "New business: Finance Committee annual report",
+   "resolution": "Option 1 agreed",
+   "quote": "chris menard states there are 3 options to address the finance committees",
+   "tags": [
+    "annual report",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Old business: FY26 budget discussions (school department)",
+   "resolution": "presented; questions raised; no vote",
+   "quote": "ana lockwood provided a detailed presentation that reviewed the school",
+   "tags": [
+    "school budget",
+    "headcount",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "Old business: FY26 warrant articles",
+   "resolution": "listed; votes at next meeting",
+   "quote": "authorization for the town to enter into an agreement with the bank.",
+   "tags": [
+    "warrant articles",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Old business: Budget Task Force recommendations",
+   "resolution": "presented; no vote",
+   "quote": "implementing standardized department reporting and",
+   "tags": [
+    "budget task force",
+    "chart of accounts"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "minutes will be reviewed at the next meeting.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; none given",
+   "quote": "there were no committee reports.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Actions and topics for future meetings",
+   "resolution": "no action; none added",
+   "quote": "there are no additional actions or topics to add to future agendas.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Important dates and upcoming meetings",
+   "resolution": "noted",
+   "quote": "a. thursday, april 3 (public hearing and votes)",
+   "tags": [
+    "schedule",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action; comments recorded",
+   "quote": "tj loughlin, 207 rolling acres road, addressed some of the questions posed by",
+   "tags": [
+    "public comment",
+    "schools",
+    "override"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "motion made; result not printed; closed 11:29 PM",
+   "quote": "there was a motion to adjourn by tom gray, seconded by jean russell.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY2026 budget",
+  "FY2027",
+  "override",
+  "Proposition 2 1/2",
+  "school budget",
+  "warrant articles",
+  "free cash",
+  "stabilization",
+  "annual report",
+  "town meeting",
+  "public comment",
+  "capital program"
+ ],
+ "dropped_unquoted_by_field": {}
 }

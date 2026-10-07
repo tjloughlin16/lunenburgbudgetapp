@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-04-24",
  "docid": "7185",
@@ -12,31 +12,314 @@
  },
  "votes": [
   {
-   "motion": "Approve the consent calendar",
+   "motion": "Approve the consent calendar provided by the Town Manager.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "there was a motion to approve the consent calendar by ana lockwood, seconded by tom gray. jay simeone aye, mike rupp aye, ana lockwood aye, tanya dall aye, tom gray aye, chris menard aye."
+   "quote": "there was a motion to approve the consent calendar by ana lockwood, seconded by tom gray."
   },
   {
-   "motion": "Approve the minutes of February 25, 2025, February 27, 2025, March 6, 2025, March 13, 2025, and March 20, 2025",
+   "motion": "Approve the minutes of February 25, February 27, March 6, March 13, and March 20, 2025 (roll call: five aye, Tanya Dall no).",
    "moved_by": "Tom Gray",
    "seconded_by": "Mike Rupp",
-   "outcome": "passed 5-1",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes of february 25, 2025, february 27. 2025, march 6, 2025, march 13, 2025, and march 20, 2025, by tom gray, seconded by mike rupp. roll call vote. jay simeone aye, mike rupp aye, ana lockwood aye, tanya dall no, tom gray aye, chris menard aye."
+   "quote": "there was a motion to approve the minutes of february 25, 2025, february 27. 2025, march 6, 2025, march 13, 2025, and march 20, 2025, by tom gray, seconded by mike rupp."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting (roll call, all six aye).",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray. roll call vote. jay simeone aye, mike rupp aye, ana lockwood aye, tanya dall aye, tom gray aye, chris menard aye."
+   "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.083612
+ "dropped_unquoted": 1,
+ "note": "Text extract is readable and complete for the meeting (pages 1-4). Several words are garbled by ligature glyphs in the extraction (e.g. 'ﬁ', 'Ư' in names and 'eƯective'); quotes avoid those words where possible and keep the printed characters where they appear in names. The minutes print no tallies for the consent calendar or the minutes vote; the outcome 'passed' is read from the listed aye votes, and the minutes vote shows five aye and one no (Tanya Dall). The Article 9 prior vote itself is not in this text. Decisions and budget items are recorded only where the minutes state them; discussions with no motion are not counted as votes.",
+ "cost_usd": 0.01733997,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member ana lockwood, committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent member: vice chair jean russell"
+  },
+  {
+   "name": "Jennifer DuƯy",
+   "role": "resident, 684 Flat Hill Road (public comment)",
+   "status": "present",
+   "quote": "jennifer duưy, 684 flat hill road, inquired about the town band warrant article."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "resident, 82 Highland Street (public comment)",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, is concerned about the town taking money from free cash and from chapter 70 to maintain roads."
+  },
+  {
+   "name": "John Bowen",
+   "role": "resident, 162 Highland Street (public comment)",
+   "status": "present",
+   "quote": "john bowen,162 highland street, states that the cemetery commission had a meeting this morning."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "former resident in Lunenburg (public comment), of JeƯerson NH",
+   "status": "present",
+   "quote": "dave passios, jeưerson nh, a former resident in lunenburg, commented about the annual audit and the need to sort out some of the questionable practices."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee will investigate the town band warrant article question further, after Chris Menard suggested reaching out to Mrs. Archambault.",
+   "quote": "the committee will investigate this further."
+  },
+  {
+   "decision": "Mike Rupp will reach out to the Chair of the Master Plan Steering Committee, Tim Willsmer, about a Finance Committee liaison role.",
+   "quote": "and will reach out to the chair, tim willsmer."
+  },
+  {
+   "decision": "Tom Gray continues as liaison to the Municipal Design Committee and Chris Menard continues as liaison to the Capital Planning Committee.",
+   "quote": "tom gray will continue to be the liaison with the municipal design committee"
+  },
+  {
+   "decision": "Chris Menard requested that the Town Manager change the Finance Committee's earlier vote on Article 9 to deferred.",
+   "quote": "chris menard requested the town manager change the finance committees vote to deferred."
+  },
+  {
+   "decision": "The Committee agreed it does not want a transcript of the meeting; minutes are to carry more information.",
+   "quote": "the committee is in agreement that they don't want a transcript of the meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Annual audit required by statute",
+   "what_was_recorded": "A former resident told the Committee the statutorily required annual audit costs $60,000 and questioned its effectiveness; no action recorded.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "he disagrees with the annual audit that is required by statue that costs $60,000."
+  },
+  {
+   "topic": "Article 9 capital plan funding (primary school heat pump)",
+   "what_was_recorded": "Discussion that the schools withdrew the original capital plan and added a primary school heat pump system, with the remainder of the money to come from other sources; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "article 9 is from the schools withdrawing the original capital plan and adding the primary school heat pump system with the remainder of money to come from other sources."
+  },
+  {
+   "topic": "Town taking money from free cash and Chapter 70 for roads",
+   "what_was_recorded": "A resident expressed concern about the town using free cash and Chapter 70 money to maintain roads; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "is concerned about the town taking money from free cash and from chapter 70 to maintain roads."
+  },
+  {
+   "topic": "School budget funding source transparency",
+   "what_was_recorded": "Chris Menard said there should be full transparency about the funding source of school money, not just the amount raised and appropriated; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "there should be full transparency associated with the funding source not just raised and appropriated to the finance committee."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Town band warrant article",
+   "speaker": "Jennifer DuƯy",
+   "stated_role": "684 Flat Hill Road",
+   "quote": "jennifer duưy, 684 flat hill road, inquired about the town band warrant article."
+  },
+  {
+   "topic": "Town taking free cash and Chapter 70 for roads; school budget guidance",
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "quote": "dave rodgers, 82 highland street, is concerned about the town taking money from free cash and from chapter 70 to maintain roads."
+  },
+  {
+   "topic": "Cemetery costs and Cemetery Commission",
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street",
+   "quote": "john bowen,162 highland street, states that the cemetery commission had a meeting this morning."
+  },
+  {
+   "topic": "Annual audit cost and practices",
+   "speaker": "Dave Passios",
+   "stated_role": "former resident in Lunenburg",
+   "quote": "dave passios, jeưerson nh, a former resident in lunenburg, commented about the annual audit and the need to sort out some of the questionable practices."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements (last meeting before town meeting; Teen Center team)",
+   "resolution": "no action",
+   "quote": "the team currently consists of jean russell and tom gray. 1 additional member is needed.",
+   "tags": [
+    "teen center",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "Committee will investigate band article question",
+   "quote": "inquired about the town band warrant article.",
+   "tags": [
+    "town band",
+    "roads",
+    "school budget",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director reports",
+   "resolution": "no action",
+   "quote": "booklets have been mailed to residents for the upcoming town meeting.",
+   "tags": [
+    "town meeting booklets",
+    "school lunches"
+   ]
+  },
+  {
+   "topic": "Final Annual Town Meeting discussions (consent calendar; Article 8 and 9)",
+   "resolution": "consent calendar approved; request to change Article 9 vote to deferred",
+   "quote": "chris menard was provided with the consent calendar from the town manager.",
+   "tags": [
+    "town meeting",
+    "capital plan",
+    "consent calendar",
+    "heat pump"
+   ]
+  },
+  {
+   "topic": "2026 Budget Task Force recommendations",
+   "resolution": "discussed; no action",
+   "quote": "is looking to recharge the budget task force",
+   "tags": [
+    "budget task force",
+    "select board"
+   ]
+  },
+  {
+   "topic": "FY26 budget discussions",
+   "resolution": "no discussion",
+   "quote": "there was no discussion about this topic.",
+   "tags": [
+    "fy26 budget"
+   ]
+  },
+  {
+   "topic": "2025 Budget Task Force recommendations",
+   "resolution": "to be reviewed at upcoming meetings",
+   "quote": "chris menard wants the committee to review for discussion at upcoming meetings.",
+   "tags": [
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (five meetings)",
+   "resolution": "passed on roll call, five aye, one no",
+   "quote": "there was a motion to approve the minutes of february 25, 2025, february 27. 2025, march 6, 2025, march 13, 2025, and march 20, 2025",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (School Committee information request)",
+   "resolution": "no action; request for data renewed",
+   "quote": "ana lockwood has reached out to the school committee inquiring about obtaining",
+   "tags": [
+    "school committee",
+    "transparency",
+    "public records"
+   ]
+  },
+  {
+   "topic": "Actions and topics for future meetings",
+   "resolution": "members to brainstorm over summer",
+   "quote": "chris menard suggests that members brainstorm possible actions or topics",
+   "tags": [
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Important dates",
+   "resolution": "noted",
+   "quote": "a. town meeting, may 3, 2025",
+   "tags": [
+    "town meeting",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "heard; no committee comment",
+   "quote": "commented about the annual audit and the need to sort out some of the questionable practices.",
+   "tags": [
+    "annual audit"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned, roll call passed",
+   "quote": "the meeting closed at 9:09 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town meeting",
+  "capital plan",
+  "school budget",
+  "budget transparency",
+  "budget task force",
+  "consent calendar",
+  "minutes approval",
+  "public comment",
+  "annual audit",
+  "cemetery",
+  "roads",
+  "committee assignments"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

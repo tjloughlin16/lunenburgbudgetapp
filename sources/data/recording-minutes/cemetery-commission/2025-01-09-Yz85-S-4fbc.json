@@ -254,5 +254,88 @@
    "at": "2026-10-06T18:19:01Z",
    "cost_usd": 0.210697
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01092025-6945",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-01-09-minutes-6945.txt",
+   "path": "sources/meetings/cemetery-commission/2025-01-09-minutes-6945.pdf"
+  },
+  "official_sha256": "e27adea7366cdec0604c1ae82f65692e503afbe75a1e050287a0c9ee14d1c191",
+  "against": "text",
+  "coverage": "partial",
+  "summary": "The official text we hold has no meeting content. It is three browser print footers (\"Firefox about:blank\", \"1 of 3 3/4/2025, 8:40 AM\"), so nothing can be matched. A person should get the real minutes from the town, because every vote and decision in ours is unconfirmed until then.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 0,
+   "discrepancy": 3,
+   "only_in_ours": 4,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote: approve Town Counsel's response to the open meeting law complaint",
+    "ours": "Approve Town Counsel's response to the open meeting law complaint and authorize him to send it to Mr. Bowen and the Division of Open Government — passed 2-0 by roll call",
+    "official": "",
+    "note": "Our minutes record a 2-0 roll call vote and the official text records none. The captured text is blank, so get the real minutes and check whether this vote appears.",
+    "t": 880
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Revote: eminent domain taking response from interim town manager",
+    "ours": "Revote by roll call the vote on the eminent domain taking response from the interim town manager — passed 2-0 by roll call",
+    "official": "",
+    "note": "Our minutes record a revote and the official text records none. Check the real minutes for the revote and for the original vote.",
+    "t": 1010
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Revote: two Rainmaker license votes",
+    "ours": "Revote by roll call the two Rainmaker license votes (professional service and maintenance support) — passed 2-0 by roll call",
+    "official": "",
+    "note": "Our minutes record a 2-0 revote on both licenses and the official text records none. Check the real minutes for the votes and the amounts.",
+    "t": 1060
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Rainmaker license figures",
+    "ours": "Rainmaker professional service license: $1,200; Rainmaker maintenance support license: $800",
+    "official": "",
+    "note": "The official text has no figures, so the captioned amounts cannot be checked.",
+    "t": 1073
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair declined remaining agenda items on advice of counsel",
+    "ours": "The chair declined to discuss the remaining agenda items (DPW director updates, cemetery capital funding projects, future meeting schedule) on advice of counsel, deferring them to a future time.",
+    "official": "",
+    "note": "Our minutes record a decision to defer these items and the official text records none. Check the real minutes for how they were handled.",
+    "t": 1259
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town Counsel to finalize and send response letter",
+    "ours": "Town Counsel will finalize the response letter today and send it to Mr. Bowen, copying the town manager and the Division of Open Government.",
+    "official": "",
+    "note": "The official text does not mention it.",
+    "t": 942
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendees",
+    "ours": "Nancy Fasco / Miss yasco (chair); Mike Clark / Michael Clark (member); Attorney Adam Costa (town counsel); Bill Bernard (official)",
+    "official": "",
+    "note": "The official text has no attendee list. The chair's name is in doubt (Fasco or yasco) and needs the real roster."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:37:50Z",
+   "cost_usd": 0.258238
+  }
  }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-09-17",
  "docid": "7408",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve line item transfers for FY26 and FY25",
+   "motion": "Approve line item transfers (FY26 and FY25 transfers as described).",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Yapp",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to approve transfers, mr. yapp seconds the motion all approve."
+   "quote": "ms. brzozoski makes a motion to approve transfers, mr. yapp seconds the motion all approve"
   },
   {
-   "motion": "Accept donation of $500 to Turkey Hill Music program and $1000 to Lunenburg Middle High School Music supply budget from Music Gators",
+   "motion": "Accept the donation from the Music Gators ($500 to Turkey Hill Music program and $1000 to the Lunenburg Middle High School Music supply budget).",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Young",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "ms. brzozoski makes a motion to accept the donation, ms. young seconds the motion all approve"
   },
   {
-   "motion": "Approve Arts & Cultural Vitality Grant for approximately $7000",
+   "motion": "Approve the Arts & Cultural Vitality Grant (year 3 of a 3 year grant, approximately $7000).",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Yapp",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "ms. brzozoski makes a motion to approve mr. yapp seconds the motion all approve"
   },
   {
-   "motion": "Approve change in legal representation to a firm at $25 more per hour",
+   "motion": "Approve the change in legal representation to the firm Dr. Fortuna proposed, with an amendment as Mr. Sculimbrene explained.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Young",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "ms. brzozoski makes a motion to approve the change in legal representation with an amendment as mr. sculimbrene explained, ms. young seconds the motion all approve"
   },
   {
-   "motion": "Approve an additional 15 hours of secretarial support at Lunenburg Middle High School",
+   "motion": "Approve an additional 15 hours of secretarial support at LMHS.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Yapp",
    "outcome": "passed",
@@ -52,23 +52,23 @@
    "quote": "ms. brzozoski makes a motion to approve an additional 15 hours to secretarial support, mr. yapp seconds the motion all approve"
   },
   {
-   "motion": "Pass over superintendent's goals and save for next meeting",
+   "motion": "Pass over the superintendent's goals and save them for the next meeting.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Yapp",
    "outcome": "passed",
-   "procedural": false,
+   "procedural": true,
    "quote": "ms. brzozoski makes a motion to pass over the superintendents goals and save for the next meeting, mr. yapp seconds the motion all approve"
   },
   {
-   "motion": "Table school committee goals and subcommittee reports",
+   "motion": "Pass over (table) the school committee goals and the subcommittee reports.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Young",
    "outcome": "passed",
-   "procedural": false,
+   "procedural": true,
    "quote": "ms. brzozoski makes a motion to pass table the school committee goals and the subcommittee reports, ms. young seconds the motion all approve"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:29.",
    "moved_by": "Ms. Young",
    "seconded_by": "Mr. Yapp",
    "outcome": "passed",
@@ -76,7 +76,351 @@
    "quote": "ms. young makes a motion to adjourn at 9:29, mr. yapp seconds the motion all approve"
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes recorded as \"all approve\" indicating unanimous passage. Four members were present and voting (Brzozoski, Young, Yapp, and Sculimbrene as Chair); Mandy Gilman was absent.",
- "cost_usd": 0.0743844
+ "dropped_unquoted": 1,
+ "note": "Text extraction of a readable PDF with no scan problem. Limits: (1) The minutes say \"all approve\" for every vote and print no vote count, so each outcome is recorded as \"passed\" rather than a count. (2) The minutes record no motion to enter executive session and no motion to approve prior minutes (\"Regular session- None\"), so neither appears as a vote. (3) Item 8 (\"Ms. Brzozoski makes a motion to approve transfers\") is recorded as a motion covering both FY26 and FY25 transfers. (4) The \"pass over\"/\"pass table\" motions are marked procedural as tabling motions; that classification is mine, not the minutes'. (5) Mr. Beardmore's role and the attendance status of Courtney Fuller, Mr. Beardmore and Ms. Barooshian are not stated. (6) Public comment is recorded as \"None\" at both points, with no speakers named.",
+ "cost_usd": 0.017195870000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski, vice chair - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "emily young secretary - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Member",
+   "status": "absent",
+   "quote": "mandy gilman, member - absent"
+  },
+  {
+   "name": "George Yapp",
+   "role": "Member",
+   "status": "present",
+   "quote": "george yapp, member - present"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "dr. fortuna shares a list of district highlights and celebrations at each school"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "present",
+   "quote": "mr. mcnamara explains the surplus number has gone up to $603,885.97"
+  },
+  {
+   "name": "Mr. Beardmore",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "committee and mr. beardmore discus the items on the drafted plan"
+  },
+  {
+   "name": "Ms. Barooshian",
+   "role": "President of the Music Gators",
+   "status": "not stated",
+   "quote": "ms. barooshian, president of the music gators, kids raised $1500 through toll"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY26 line item transfers",
+   "what_was_recorded": "Two FY26 line item transfers were described: $4,222.59 moved out of the curriculum adoption line into the Primary School workbook line, and $550 moved from the Elementary School art supply to the Elementary Phys Ed line.",
+   "figures_as_printed": [
+    "$4,222.59",
+    "$550"
+   ],
+   "quote": "fy 26 we will be moving $4,222.59 out of the curriculum adoption line and putting it into the primary school workbook line and $550 from the elementary school art supply"
+  },
+  {
+   "topic": "FY25 line item transfers",
+   "what_was_recorded": "FY25 transfers were described: $50,701.43 from maintenance of buildings to sewage disposal, electricity and telephone, and $26,524 from transportation to Elementary Special Ed Para and athletic lines.",
+   "figures_as_printed": [
+    "$50,701.43",
+    "$26,524"
+   ],
+   "quote": "fy25 transfers are from maintenance of buildings to sewage disposal, electricity charges and telephone charges in the amount of $50,701.43"
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrants for 9/2/25-9/15/25 were presented with a total.",
+   "figures_as_printed": [
+    "$689,112.33"
+   ],
+   "quote": "warrants 9/2/25-9/15/25 $689,112.33"
+  },
+  {
+   "topic": "Music Gators donation",
+   "what_was_recorded": "The Music Gators raised money through a toll booth and proposed donations to two music programs.",
+   "figures_as_printed": [
+    "$1500",
+    "$500",
+    "$1000"
+   ],
+   "quote": "kids raised $1500 through toll booth in town, would like to donate $500 to turkey hill music program and $1000 to the lunenburg middle high school music supply budget"
+  },
+  {
+   "topic": "Arts & Cultural Vitality Grant",
+   "what_was_recorded": "Year 3 of a 3 year grant, approximately $7000, approved.",
+   "figures_as_printed": [
+    "$7000"
+   ],
+   "quote": "this is year 3 of a 3 year grant, its approximately $7000"
+  },
+  {
+   "topic": "Legal representation fee",
+   "what_was_recorded": "The proposed firm's fee is $25 more per hour than the current arrangement.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "the fee is $25 more per hour and would like the committees approval to move forward with the change"
+  },
+  {
+   "topic": "FY25 budget surplus",
+   "what_was_recorded": "The FY25 surplus figure rose, attributed to closing out FY25 purchase orders.",
+   "figures_as_printed": [
+    "$603,885.97"
+   ],
+   "quote": "mr. mcnamara explains the surplus number has gone up to $603,885.97, the change is due to closing out purchase orders from fy25"
+  },
+  {
+   "topic": "FY25 budget community Q&A",
+   "what_was_recorded": "Discussed money the schools missed by not spending funds, and budget issues including para salary double booking and music and supply line cuts; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "also discussed what the schools missed out on by not spending the funds."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY26 line item transfers: curriculum adoption to Primary School workbook; Elementary School art supply to Elementary Phys Ed.",
+   "outcome": "approved (approved in the transfers motion, 'all approve')",
+   "amount_as_printed": "$4,222.59 and $550",
+   "quote": "fy 26 we will be moving $4,222.59 out of the curriculum adoption line and putting it into the primary school workbook line and $550 from the elementary school art supply"
+  },
+  {
+   "description": "FY25 transfers from maintenance of buildings, transportation and other lines to sewage disposal, electricity, telephone, and para/athletic lines.",
+   "outcome": "approved (approved in the transfers motion, 'all approve')",
+   "amount_as_printed": "$50,701.43 and $26,524",
+   "quote": "fy25 transfers are from maintenance of buildings to sewage disposal, electricity charges and telephone charges in the amount of $50,701.43"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "1. call to order at 7:00 by mr. sculimbrene"
+  },
+  {
+   "topic": "Executive session on security personnel and devices",
+   "resolution": "held; returned at 7:34, no motion recorded",
+   "tags": [
+    "executive session",
+    "security"
+   ],
+   "quote": "executive session to discuss the deployment of security personnel or devices- or strategies with respect thereto. returns from executive session at 7:34"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no speakers recorded (None)",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "4. public comment none"
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action (None)",
+   "tags": [
+    "chair"
+   ],
+   "quote": "5. chairs report - none"
+  },
+  {
+   "topic": "Student representative report",
+   "resolution": "no action; reported events",
+   "tags": [
+    "students",
+    "events"
+   ],
+   "quote": "6. student representative report the lunenburg public library will be hosting a writing contest"
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "no action (regular session: None)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "a. regular session- none"
+  },
+  {
+   "topic": "Line items, transfers and warrants",
+   "resolution": "approved",
+   "tags": [
+    "transfers",
+    "warrants",
+    "budget"
+   ],
+   "quote": "8. review and approve line items, transfers, warrants"
+  },
+  {
+   "topic": "Music Gators donation",
+   "resolution": "accepted",
+   "tags": [
+    "donation",
+    "music"
+   ],
+   "quote": "donations - ms. barooshian, president of the music gators"
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "no action",
+   "tags": [
+    "superintendent",
+    "schools"
+   ],
+   "quote": "dr. fortuna shares a list of district highlights and celebrations at each school"
+  },
+  {
+   "topic": "Arts & Cultural Vitality Grant",
+   "resolution": "approved",
+   "tags": [
+    "grant",
+    "arts"
+   ],
+   "quote": "arts & cultural vitality grant details are in the folder for the school committee and posted online"
+  },
+  {
+   "topic": "Legal representation change",
+   "resolution": "approved with amendment",
+   "tags": [
+    "legal",
+    "contracts"
+   ],
+   "quote": "consideration of new legal representation dr. fortuna would like to use a firm she has used in the past"
+  },
+  {
+   "topic": "Office support at LMHS",
+   "resolution": "approved (15 additional secretarial hours)",
+   "tags": [
+    "staffing",
+    "secretarial"
+   ],
+   "quote": "increase in office support lmhs ms. brzozoski makes a motion to approve an additional 15 hours"
+  },
+  {
+   "topic": "FY draft capital plan",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "capital plan",
+    "facilities"
+   ],
+   "quote": "fy draft capital plan committee and mr. beardmore discus the items on the drafted plan"
+  },
+  {
+   "topic": "Superintendent goal draft",
+   "resolution": "passed over to next meeting",
+   "tags": [
+    "superintendent",
+    "goals"
+   ],
+   "quote": "superintendent goal draft ms. brzozoski makes a motion to pass over the superintendents goals"
+  },
+  {
+   "topic": "FY25 budget update",
+   "resolution": "discussed; no action",
+   "tags": [
+    "FY25 budget",
+    "surplus"
+   ],
+   "quote": "fy 25 budget update mr. mcnamara explains the surplus number has gone up to $603,885.97"
+  },
+  {
+   "topic": "Community Q&A on FY25 budget",
+   "resolution": "discussed; no action",
+   "tags": [
+    "FY25 budget",
+    "community questions"
+   ],
+   "quote": "community q & a fy 25 budget mr. mcnamara reads the questions that have been submitted"
+  },
+  {
+   "topic": "School committee goals",
+   "resolution": "passed over (tabled)",
+   "tags": [
+    "goals"
+   ],
+   "quote": "school committee goals ms. brzozoski makes a motion to pass table the school committee goals"
+  },
+  {
+   "topic": "Subcommittee reports",
+   "resolution": "no action (none recorded)",
+   "tags": [
+    "subcommittees"
+   ],
+   "quote": "12. subcommittee reports"
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "no action (none recorded)",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "14. topics for future discussion"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:29",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "ms. young makes a motion to adjourn at 9:29, mr. yapp seconds the motion all approve"
+  }
+ ],
+ "tags": [
+  "school committee",
+  "FY25 budget",
+  "FY25 surplus",
+  "FY26 budget",
+  "line item transfers",
+  "warrants",
+  "donations",
+  "grants",
+  "legal services",
+  "staffing",
+  "capital plan",
+  "superintendent goals",
+  "executive session",
+  "security",
+  "public comment",
+  "hybrid meeting"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

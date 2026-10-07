@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-03-13",
  "docid": "7009",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Open the public meeting",
+   "motion": "Open the public hearing.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Ana Lockwood",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to open public meeting by jay simeone, seconded by ana lockwood."
   },
   {
-   "motion": "Close the public hearing",
+   "motion": "Close the public hearing.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Ana Lockwood",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "there was a motion to close public hearing by jay simeone, seconded by ana lockwood."
   },
   {
-   "motion": "Approve the minutes from February 20, 2025",
+   "motion": "Approve the minutes of February 20, 2025.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Jean Russell",
    "outcome": "not stated",
@@ -36,7 +36,7 @@
    "quote": "there was a motion to approve the minutes from february 20, 2025, by jay simeone, seconded by jean russell."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tanya Dall",
    "outcome": "passed",
@@ -44,7 +44,435 @@
    "quote": "there was a motion to adjourn by jay simeone, seconded by tanya dall. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Four procedural votes recorded; three lack explicit outcomes (typical for routine procedural motions in these minutes).",
- "cost_usd": 0.0677654
+ "dropped_unquoted": 1,
+ "note": "Text extraction, not a scan. Several characters are mis-encoded in the minutes as printed (e.g., the 'ﬁ' and 'ﬂ' ligatures in 'conﬁrms', and 'Ư' in 'JeƯreys' and 'oƯice'); quotes keep those characters as printed. Votes: four motions recorded (open hearing, close hearing, approve Feb 20 minutes, adjourn). Only the adjournment has a stated result ('All in favor', no count); the other three record no result, so outcome is 'not stated'. The Rhonda Liscio (item 4) and Rhonda Lizio (item 6) spellings differ and the minutes give the same address for both; I recorded each as printed. Karin Menard is both the Parks Commission clerk (item 6b) and a public commenter at 672 Page Street (item 14); the minutes do not say whether these are the same person. Dave Passios's attendance mode is not stated (he says he is located in New Hampshire). Item 12 says 'There was a vote last night' about school department allocation; no such vote is in these minutes, so it is not recorded as a vote. The Town Manager and Finance Director are referred to without names, so they are not in attendees. The Old Business items and the FY26 budget discussion show no discussion or result in the minutes.",
+ "cost_usd": 0.01944767,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell, committee member tanya dall, committee member ana lockwood"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell, committee member"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "tanya dall, committee member ana lockwood, committee member"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "tanya dall, committee member ana lockwood, committee member"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent member: clerk tom gray"
+  },
+  {
+   "name": "Michael Ray JeƯreys",
+   "role": "presenter, Municipal Building Design Committee",
+   "status": "present",
+   "quote": "michael ray jeưreys, 1170 mass ave., provided the municipal building design"
+  },
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair of the Parks Commission",
+   "status": "present",
+   "quote": "anita scheipers, chair of the parks commission, and karin menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk of the Parks Commission (presenter); public comment at item 14 gives 672 Page Street, role not printed",
+   "status": "present",
+   "quote": "anita scheipers, chair of the parks commission, and karin menard"
+  },
+  {
+   "name": "Rhonda Liscio",
+   "role": "resident, 181 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda liscio, 181 reservoir road, inquires if there is a direct impact on the town's bond rating"
+  },
+  {
+   "name": "Rhonda Lizio",
+   "role": "resident, 181 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda lizio, 181 reservoir road, questions how much money has already been spent on the project."
+  },
+  {
+   "name": "John Bowen",
+   "role": "resident, 162 Highland Street",
+   "status": "present",
+   "quote": "john bowen,162 highland street, states that the committee is tasked with making a budget as an advisory committee for the citizens"
+  },
+  {
+   "name": "Glenn Mcleod",
+   "role": "resident, 436 Reservoir Road",
+   "status": "present",
+   "quote": "glenn mcleod, 436 reservoir road, disagrees with the building plan proposal."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "former Lunenburg resident, former member of the finance committee, presently in Jefferson, New Hampshire",
+   "status": "not stated",
+   "quote": "dave passios, a former lunenburg resident, former member of the ﬁnance committee, presently located in jeưerson, new hampshire"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee members were asked to email any ideas on the prop 2½, levy limits, excluded debt and policies decision to the Chair, for the Annual Report outline.",
+   "quote": "if any committee member has ideas, they should email them to chris menard."
+  },
+  {
+   "decision": "The school department is to return to the Committee on March 20, 2025.",
+   "quote": "the school department will be returning on march 20, 2025."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal Building Design Committee construction cost",
+   "what_was_recorded": "The presenter gave trade costs for each building and the total construction cost including GC OH&P, with ARPA funding named as the source of the planning work.",
+   "quote": "total construction cost with gc oh&p: $17,840,917",
+   "figures_as_printed": [
+    "$2,624,843",
+    "$2,068,279",
+    "$6,937,520",
+    "$1,657,520",
+    "$13,288,086",
+    "$15,281,299",
+    "$17,840,917"
+   ]
+  },
+  {
+   "topic": "Bond payment options per household",
+   "what_was_recorded": "The presenter stated the average per-household cost under two bond terms.",
+   "quote": "a 30-year bond would be an average cost per household of $300 for a 30-year bond or $400 per household for a 20-year bond.",
+   "figures_as_printed": [
+    "$300",
+    "$400"
+   ]
+  },
+  {
+   "topic": "Earlier TC Passios cost estimates",
+   "what_was_recorded": "The presenter described earlier cost estimates for the TC Passios building, which rose after the pandemic, and the cost to bring it up to current code.",
+   "quote": "the cost estimation was 23 million then the pandemic hit and supplies skyrocketed.",
+   "figures_as_printed": [
+    "23 million",
+    "29 million",
+    "14 to 15 million"
+   ]
+  },
+  {
+   "topic": "Marshall Park funding to date",
+   "what_was_recorded": "A resident asked how much had been spent; the Parks presenter listed the capital plan, special town meeting and ARPA amounts.",
+   "quote": "karin menard conﬁrms that $50,000 from capital plan has been approved.",
+   "figures_as_printed": [
+    "$50,000",
+    "$184,000",
+    "$250,000"
+   ]
+  },
+  {
+   "topic": "Marshall Park field rental fees",
+   "what_was_recorded": "Field rental fees were described as being used to pay for park expenses; no amount was printed.",
+   "quote": "conﬁrms that is an option and the fees are used to pay for expenses.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Other monied articles and free cash",
+   "what_was_recorded": "The Town Manager said the other monied articles would all be free cash transfers, which were still undecided until Tuesday; no amount was printed.",
+   "quote": "the town manager conﬁrmed that other monied articles would be all free cash transfers",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Reduced debt service",
+   "what_was_recorded": "The Finance Committee was told how the reduced debt service would be used: part to offset the capital program and the rest to balance the budget.",
+   "quote": "there is $393,881.14 in the reduced debt services this year.",
+   "figures_as_printed": [
+    "$393,881.14",
+    "$284,412",
+    "$109,469"
+   ]
+  },
+  {
+   "topic": "OPEB contribution and bond rating",
+   "what_was_recorded": "A resident asked whether not contributing to OPEB would affect the town's bond rating; no amount was printed.",
+   "quote": "inquires if there is a direct impact on the town's bond rating if the town does not contribute to opeb.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ADA improvement grant",
+   "what_was_recorded": "A resident encouraged departments to apply for the state ADA improvement grant and gave the statewide totals for FY 2024 and FY 2025.",
+   "quote": "in fy 2024, $3,932,321 were allocated to communities.",
+   "figures_as_printed": [
+    "$3,932,321",
+    "$4,910,668"
+   ]
+  },
+  {
+   "topic": "Grant writing services funding",
+   "what_was_recorded": "A committee member referred to grant-writing money meant to pay consultants; no amount was printed.",
+   "quote": "that money was to be used to contact consulting companies that write grants with the expertise to make it easier to get the grants.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Use of reduced debt service: part to offset the capital program",
+   "amount_as_printed": "$284,412",
+   "outcome": "stated as planned use; no vote recorded",
+   "quote": "$284,412 of that total is being used to oưset the capital program."
+  },
+  {
+   "description": "Other monied articles, all described as free cash transfers",
+   "amount_as_printed": "not stated",
+   "outcome": "undecided; the Town Manager said they were up in the air until Tuesday",
+   "quote": "the town manager conﬁrmed that other monied articles would be all free cash transfers"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Liscio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "OPEB contribution and bond rating",
+   "quote": "rhonda liscio, 181 reservoir road, inquires if there is a direct impact on the town's bond rating if the town does not contribute to opeb."
+  },
+  {
+   "speaker": "Rhonda Lizio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "Spending to date on Marshall Park",
+   "quote": "rhonda lizio, 181 reservoir road, questions how much money has already been spent on the project."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street",
+   "topic": "Committee's role in budget making",
+   "quote": "john bowen,162 highland street, states that the committee is tasked with making a budget as an advisory committee for the citizens"
+  },
+  {
+   "speaker": "Glenn Mcleod",
+   "stated_role": "436 Reservoir Road",
+   "topic": "Building plan and affordable living",
+   "quote": "glenn mcleod, 436 reservoir road, disagrees with the building plan proposal."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "former Lunenburg resident, former member of the finance committee, presently in Jefferson, New Hampshire",
+   "topic": "Next public hearing date",
+   "quote": "dave passios, a former lunenburg resident, former member of the ﬁnance committee, presently located in jeưerson, new hampshire"
+  },
+  {
+   "speaker": "Karin Menard",
+   "stated_role": "672 Page Street",
+   "topic": "Grants and ADA accessibility",
+   "quote": "karin menard, 672 page street, encourages departments to apply for grants."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action; meeting opened at 7:00 PM",
+   "quote": "the meeting opened at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance and Announcements",
+   "resolution": "no action; no announcements",
+   "quote": "there were no announcements.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "comment received; no action recorded",
+   "quote": "rhonda liscio, 181 reservoir road, inquires if there is a direct impact on the town's bond rating",
+   "tags": [
+    "OPEB",
+    "bond rating"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director Reports",
+   "resolution": "no action; no reports given",
+   "quote": "there were no reports from the town manager or the finance director.",
+   "tags": [
+    "town manager",
+    "finance director"
+   ]
+  },
+  {
+   "topic": "Municipal Building Design Committee presentation",
+   "resolution": "presented; no vote recorded",
+   "quote": "michael ray jeưreys, 1170 mass ave., provided the municipal building design",
+   "tags": [
+    "municipal buildings",
+    "TC Passios",
+    "Town Hall",
+    "Ritter building",
+    "ARPA",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Parks Commission presentation (Marshall Park)",
+   "resolution": "presented; no vote recorded",
+   "quote": "anita scheipers, chair of the parks commission, and karin menard",
+   "tags": [
+    "parks",
+    "Marshall Park",
+    "capital plan",
+    "ARPA",
+    "field rental"
+   ]
+  },
+  {
+   "topic": "Other monied articles",
+   "resolution": "no action; free cash transfers undecided until Tuesday",
+   "quote": "the town manager conﬁrmed that other monied articles would be all free cash transfers",
+   "tags": [
+    "free cash",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "Administrative, Unclassified and Debt",
+   "resolution": "reported; no vote recorded",
+   "quote": "there is $393,881.14 in the reduced debt services this year.",
+   "tags": [
+    "debt service",
+    "budget balance"
+   ]
+  },
+  {
+   "topic": "Public Hearing",
+   "resolution": "opened and closed by motion; another hearing to be scheduled",
+   "quote": "there was a motion to open public meeting by jay simeone, seconded by ana lockwood.",
+   "tags": [
+    "public hearing",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Outline Finance Committee Annual Report",
+   "resolution": "no vote; members asked to email ideas",
+   "quote": "chris menard conﬁrms there needs to be a decision about prop 2½",
+   "tags": [
+    "annual report",
+    "prop 2½",
+    "levy limits",
+    "excluded debt"
+   ]
+  },
+  {
+   "topic": "Old Business (FY26 budget items)",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "a. fy26 budget discussions* b. fy26 warrant articles",
+   "tags": [
+    "FY26 budget",
+    "warrant articles",
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Minutes of February 20, 2025",
+   "resolution": "motion made; result not recorded",
+   "quote": "there was a motion to approve the minutes from february 20, 2025, by jay simeone, seconded by jean russell.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "suggestion: watch joint meeting with School Committee and Select Board",
+   "quote": "chris menard suggest that the committee watch the joint meeting with the school committee and the select board.",
+   "tags": [
+    "joint meeting",
+    "school committee",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Actions and Topics for Future Meetings",
+   "resolution": "school department to return March 20, 2025",
+   "quote": "the school department will be returning on march 20, 2025.",
+   "tags": [
+    "school department",
+    "school budget"
+   ]
+  },
+  {
+   "topic": "Important Dates",
+   "resolution": "listed; no action",
+   "quote": "a. thursday 3/20/2025 b. thursday 3/27/2025",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing) and grant writing",
+   "resolution": "comment received; no action recorded",
+   "quote": "karin menard, 672 page street, encourages departments to apply for grants.",
+   "tags": [
+    "grants",
+    "ADA",
+    "accessibility",
+    "grant writing"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned, all in favor; closed 10:34 PM",
+   "quote": "there was a motion to adjourn by jay simeone, seconded by tanya dall. all in favor.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "municipal buildings",
+  "TC Passios",
+  "Parks",
+  "Marshall Park",
+  "ARPA",
+  "debt service",
+  "free cash",
+  "OPEB",
+  "bond rating",
+  "public hearing",
+  "FY26 budget",
+  "grants",
+  "ADA accessibility",
+  "prop 2½",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

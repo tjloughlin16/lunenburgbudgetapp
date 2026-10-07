@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-09-03",
  "docid": "7385",
@@ -12,31 +12,428 @@
  },
  "votes": [
   {
-   "motion": "Approve line item transfers for FY 25",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Approve line item transfers as outlined by Mr. McNamara",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Emily Young",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to approve line item transfers as outlined by mr. mcnamara, ms. gilman seconds the motion all approve"
+   "quote": "ms. brzozoski makes a motion to approve line item transfers as outlined by mr. mcnamara"
   },
   {
-   "motion": "Approve the FY 27 budget timeline with possible revision to the March 16th date",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Approve the FY 27 budget timeline, with a possible edit of the March 16 date after conferring with FinCom",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to approve the budget timeline, with the exception of a possible edit of the march 16 th date after conferring with fincom , ms. gilman seconds the motion all approve."
+   "quote": "ms. brzozoski makes a motion to approve the budget timeline, with the exception of a possible edit of the march 16"
   },
   {
-   "motion": "Adjourn the meeting at 9:38 PM",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Mr. Yapp",
+   "motion": "Adjourn the meeting at 9:38",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "George Yapp",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to adjourn at 9:38, mr. yapp seconds the motion all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. Note: Item 6.a (minutes approval) was postponed, not voted on. Item 9.a (appointment of SC Representative) was decided by committee determination, not a formal vote.",
- "cost_usd": 0.08519539999999999
+ "note": "Text extract, not a scan; spacing is OCR-like (stray double spaces and split words such as \"Ro d gers\" and \"didn ’t\"), so quotes copy the printed spacing. No vote totals are printed; approvals are recorded only as \"all approve\", so outcome is \"passed\" with no count. Warrants ($1,753,054.41) are listed under item 7 but no separate motion on them is recorded. The minutes postponed the 8/6/25 minutes without a vote. The $470,000, 61% and $100,000 figures are speakers' statements, not checked. Dr. Fortuna and Mr. McNamara are shown as present from their reports, since the header does not mark them present. Dr. Bookis is not named in the attendance block. The Adjournment quote is verbatim, but the vote count is not printed.",
+ "cost_usd": 0.02099687,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present dr. jodi fortuna"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski , vice chair - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "emily young secretary - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Member",
+   "status": "present",
+   "quote": "mandy gilman , member - present"
+  },
+  {
+   "name": "George Yapp",
+   "role": "Member",
+   "status": "present",
+   "quote": "george yapp , member - present"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. jodi fortuna, superintendent of schools"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LM H S Principal",
+   "status": "present",
+   "quote": "mr. santry reports our first day of school was certainly not boring."
+  },
+  {
+   "name": "Norman Yvon",
+   "role": "THES Principal",
+   "status": "present",
+   "quote": "mr. yvon reports this opening at turkey hill was the best one he has seen"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Primary School Principal",
+   "status": "present",
+   "quote": "ms. squier reports they have 394 students at the primary school"
+  },
+  {
+   "name": "Chris McNamara",
+   "role": "Business Administrator",
+   "status": "present",
+   "quote": "our new business administrator, chris mcnamara, has begun his work"
+  },
+  {
+   "name": "Dr. Bookis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dr. bookis reports from a curriculum perspective all of the programs that were cut"
+  },
+  {
+   "name": "Dave Ro d gers",
+   "role": "82 Highland Ave",
+   "status": "present",
+   "quote": "dave ro d gers, 82 highland ave"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "6 Iris Court; member of the select board, speaking as herself",
+   "status": "present",
+   "quote": "renee emkey 6 iris court"
+  },
+  {
+   "name": "TJ Loughlin",
+   "role": "207 Rolling Acres Road",
+   "status": "present",
+   "quote": "the budget is one thing, but now we are talking about the actuals that we do not have access to"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "282 Pleasant Street; former member of the school committee",
+   "status": "present",
+   "quote": "i feel like we didn 't ask the right questions at the right time"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Capital Planning Committee",
+   "status": "present",
+   "quote": "peter beardmore, capital planning committee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the regular session minutes of 8/6/25 was postponed to the next meeting because not everyone has the minutes available for review.",
+   "quote": "postponed until next meeting as not everyone has the minutes available"
+  },
+  {
+   "decision": "The committee determined that Ms. Brzozoski is currently the appointed School Committee representative to the Building Redesign Committee.",
+   "quote": "determines ms. brzozoski is currently the appointed member."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Surplus discovered in FY25 budget",
+   "what_was_recorded": "The Chair read a memo from the Superintendent about a budget surplus recently discovered, which is returned to the town.",
+   "figures_as_printed": [
+    "$582,115.44"
+   ],
+   "quote": "recently discovered in the amount of $582,115.44"
+  },
+  {
+   "topic": "Line item transfers",
+   "what_was_recorded": "The line item transfers outlined by the Business Administrator include the athletic dues transfer, the business manager salary transfer and the building maintenance transfer.",
+   "figures_as_printed": [
+    "$174.05",
+    "$4900",
+    "$53,395.19"
+   ],
+   "quote": "fy 25 $174.05 from athletic dues and fees and move to special detail"
+  },
+  {
+   "topic": "Paraprofessional double budget",
+   "what_was_recorded": "A discussion of transfer accounts noted a double budget amount for paraprofessionals.",
+   "figures_as_printed": [
+    "$243,000"
+   ],
+   "quote": "a double budget amount for paraprofessionals in the amount of $243,000"
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrants covering 6/16/25 to 8/28/25 were listed for review.",
+   "figures_as_printed": [
+    "$1,753,054.41"
+   ],
+   "quote": "warrants 6/16/25 -8/28/25 $1,753,054.41"
+  },
+  {
+   "topic": "Override amount and surplus returned to town",
+   "what_was_recorded": "A public speaker said the surplus equals 61% of the override amount, and that a fourth fire shift would cost about $470,000, which the surplus would have covered. These are the speaker's figures and were not checked by the minutes.",
+   "figures_as_printed": [
+    "61%",
+    "$470,000"
+   ],
+   "quote": "the amount of money is 61% of that override amount"
+  },
+  {
+   "topic": "Athletic revolving fund deficit",
+   "what_was_recorded": "A public speaker said they were told the athletic revolving fund was running a deficit, as reported to them.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "i was told over $100,000"
+  },
+  {
+   "topic": "Copy fee",
+   "what_was_recorded": "A public speaker referred to a one-month copy fee.",
+   "figures_as_printed": [
+    "$19,000"
+   ],
+   "quote": "a one month copy fee of $19,000"
+  },
+  {
+   "topic": "FY25 cuts and ESSER funds",
+   "what_was_recorded": "A public speaker asked whether the schools were funded beyond the ESSER cuts, referring to $500,000 added to the budget.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "then we dug in with $500,000 into that budget"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY 25 athletic dues and fees to special detail",
+   "outcome": "approved as part of the line item transfer motion (all approve)",
+   "amount_as_printed": "$174.05",
+   "quote": "fy 25 $174.05 from athletic dues and fees and move to special detail"
+  },
+  {
+   "description": "Business manager salary account to stipends account",
+   "outcome": "approved as part of the line item transfer motion (all approve)",
+   "amount_as_printed": "$4900",
+   "quote": "$4900 out of business manager salary account to the stipends account"
+  },
+  {
+   "description": "Building maintenance to cover sewage disposal, electricity and telephone charges",
+   "outcome": "approved as part of the line item transfer motion (all approve)",
+   "amount_as_printed": "$53,395.19",
+   "quote": "$53,395.19 out of building maintenance to cover sewage disposal, electricity charges and telephone charges"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Surplus and trust in the district's finances",
+   "speaker": "Dave Ro d gers",
+   "stated_role": "82 Highland Ave",
+   "quote": "i am here because of a memo i received, there are"
+  },
+  {
+   "topic": "Surplus, the override year and the superintendent's candor",
+   "speaker": "Renee Emkey",
+   "stated_role": "member of the select board, speaking as myself",
+   "quote": "i am a member of the select board but i speak as myself tonight."
+  },
+  {
+   "topic": "Whether the override money was spent as promised",
+   "speaker": "TJ Loughlin",
+   "stated_role": "207 Rolling Acres Road",
+   "quote": "the budget is one thing, but now we are talking about the actuals that we do not have access to"
+  },
+  {
+   "topic": "Budgeting versus management problem and Munis",
+   "speaker": "Peter Beardmore",
+   "stated_role": "282 Pleasant Street; former member of the school committee",
+   "quote": "i feel like we didn 't ask the right questions at the right time"
+  },
+  {
+   "topic": "Capital plan timing and the Primary School air conditioner",
+   "speaker": "Peter Beardmore",
+   "stated_role": "Capital Planning Committee",
+   "quote": "the town manager outlined the capital plan requests to the cpc are due"
+  },
+  {
+   "topic": "Thanks to former officials; the Chair's delivery of bad news",
+   "speaker": "Dave Ro d gers",
+   "stated_role": "emeritus member of town government, as described by the Chair",
+   "quote": "the previous superintendent was a very capable person."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "call to order at 7:00 by mr. sculimbrene",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "i am here because of a memo i received, there are",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair's report on surplus memo",
+   "resolution": "no action; Chair read a prepared statement",
+   "quote": "mr. sculimbrene read a prepared statement regarding a memo sent by dr. fortuna",
+   "tags": [
+    "budget surplus",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Student representative report",
+   "resolution": "no action",
+   "quote": "we started school last week.",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "postponed to next meeting",
+   "quote": "postponed until next meeting as not everyone has the minutes available",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Line item transfers, warrants and donations",
+   "resolution": "line item transfers approved; warrants listed; donations none",
+   "quote": "ms. brzozoski makes a motion to approve line item transfers as outlined by mr. mcnamara",
+   "tags": [
+    "transfers",
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "no action",
+   "quote": "dr. fortuna explains the theme of ohana",
+   "tags": [
+    "superintendent",
+    "enrollment",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Appointment of SC representative to Building Redesign Committee",
+   "resolution": "determined: Brzozoski is the appointed member",
+   "quote": "determines ms. brzozoski is currently the appointed member.",
+   "tags": [
+    "appointments",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "FY 27 budget timeline",
+   "resolution": "approved",
+   "quote": "committee has a budget timeline for fy 27 in their folder.",
+   "tags": [
+    "budget",
+    "FY27"
+   ]
+  },
+  {
+   "topic": "Back to school updates",
+   "resolution": "no action",
+   "quote": "ms. squier reports they have 394 students at the primary school",
+   "tags": [
+    "enrollment",
+    "schools"
+   ]
+  },
+  {
+   "topic": "FY 25 budget questions",
+   "resolution": "no action; discussion",
+   "quote": "dr. fortuna and mr. mcnamara provide the answers and explanations of how situations occur",
+   "tags": [
+    "FY25 budget",
+    "surplus",
+    "purchase orders"
+   ]
+  },
+  {
+   "topic": "Subcommittee reports",
+   "resolution": "no action",
+   "quote": "ms. young reports the master planning steering committee has met several",
+   "tags": [
+    "subcommittees"
+   ]
+  },
+  {
+   "topic": "Public comment on issues discussed tonight",
+   "resolution": "no action",
+   "quote": "i learned of this surplus last night, and it was gut punch",
+   "tags": [
+    "public comment",
+    "trust"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "no action; no topics recorded",
+   "quote": "topics for future d iscussion",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:38",
+   "quote": "ms. brzozoski makes a motion to adjourn at 9:38",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "FY25 budget surplus",
+  "line item transfers",
+  "FY27 budget timeline",
+  "public comment",
+  "trust and transparency",
+  "Munis",
+  "purchase orders",
+  "staffing",
+  "enrollment",
+  "capital planning",
+  "override"
+ ],
+ "dropped_unquoted_by_field": {}
 }

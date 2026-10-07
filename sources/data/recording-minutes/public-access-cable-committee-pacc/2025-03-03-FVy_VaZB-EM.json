@@ -269,5 +269,181 @@
    "at": "2026-10-06T18:02:42Z",
    "cost_usd": 0.208871
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03032025-7048",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-03-03-minutes-7048.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-03-03-minutes-7048.pdf"
+  },
+  "official_sha256": "201a92e8d67947465e2a1878be3fd2b55703659418d5cc6adb322d63c60a6a3b",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on there being no votes or transfers and on the roster of PACC members, but ours carries several figures and two decisions the official minutes do not mention. The thing to know is that the official minutes record no decisions at all, while ours record two (removing the master plan item, starting a new cable contract), and those need checking against the recording.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 4,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Neither record lists a non-procedural vote.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers",
+    "ours": "TRANSFERS: (none listed)",
+    "official": "",
+    "note": "Neither record lists a transfer.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Cable (PAC) fund balance",
+    "ours": "Cable fund balance: 1.09 million",
+    "official": "$1,019,924.34 balance. includes $7,935.74 interest payment from town hall.",
+    "note": "Same item; the captions likely turned 1.019 million into 1.09 million, so the official figure is $1,019,924.34.",
+    "t": 452,
+    "official_reading": "$1,019,924.34"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town interest income on the fund",
+    "ours": "Town interest income: $7,900, 15,000 in September",
+    "official": "$1,019,924.34 balance. includes $7,935.74 interest payment from town hall.",
+    "note": "The $7,900 is the same interest payment as the official $7,935.74, heard as a rounded figure.",
+    "t": 473,
+    "official_reading": "$7,935.74"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "'15,000 in September' interest figure",
+    "ours": "15,000 in September",
+    "official": "",
+    "note": "The official minutes print no September or $15,000 figure; check the recording around this timestamp.",
+    "t": 473
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance 14%",
+    "ours": "Health insurance: 14%",
+    "official": "",
+    "note": "The official minutes carry no health insurance figure.",
+    "t": 727
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Studio space / library renovation cost",
+    "ours": "Studio space / library renovation cost: $24 million, 27, 15, 30",
+    "official": "",
+    "note": "The official minutes do not mention a studio or library renovation; the figures are garbled and need checking against the video.",
+    "t": 1091
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Master plan project $150,000",
+    "ours": "Master plan project: $150,000",
+    "official": "",
+    "note": "The official minutes print no master plan figure.",
+    "t": 988
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Master plan steering committee item removed from agenda",
+    "ours": "The master plan steering committee item will be removed from the agenda.",
+    "official": "",
+    "note": "Our minutes record a decision that the official minutes (which list no decisions) do not; check the recording at this timestamp and the posted agenda.",
+    "t": 1050
+   },
+   {
+    "kind": "discrepancy",
+    "about": "New cable contract / advisory group",
+    "ours": "The committee will need to start work on a new cable contract; the town manager is expected to want a member on the advisory group.",
+    "official": "",
+    "note": "Our minutes record a forward-looking decision that the official minutes omit; check whether this was a decision or only discussion.",
+    "t": 160
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY '26 budget and Fin Com",
+    "ours": "",
+    "official": "town will put pac numbers into the warrant for town meeting.",
+    "note": "The official minutes record the PAC numbers going into the warrant; ours do not capture it.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Enterprise Fund investment status",
+    "ours": "",
+    "official": "no update at this time",
+    "note": "An agenda item with no update; ours has nothing on it.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Pete (Pete Lincoln)",
+    "ours": "Pete (member)",
+    "official": "pacc members present: steve walker, pete lincoln (zoom), steve archambault, faith beall",
+    "note": "Same person; the official minutes add that he attended by Zoom.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Steve (Steve Walker)",
+    "ours": "Steve (member (also takes the minutes))",
+    "official": "pacc members present: steve walker, pete lincoln (zoom), steve archambault, faith beall",
+    "note": "Presumably Steve Walker, but the first name is ambiguous because there are two Steves.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Fai",
+    "ours": "Fai (member)",
+    "official": "pacc members present: steve walker, pete lincoln (zoom), steve archambault, faith beall",
+    "note": "Fai is a misheard or shortened form of Faith Beall.",
+    "t": 0,
+    "official_reading": "Faith Beall"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Joe (manager)",
+    "ours": "Joe (manager)",
+    "official": "manager: jo toale public comments:",
+    "note": "Joe is a misheard form of Jo Toale.",
+    "t": 0,
+    "official_reading": "Jo Toale"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee Steve Archambault",
+    "ours": "",
+    "official": "pacc members present: steve walker, pete lincoln (zoom), steve archambault, faith beall",
+    "note": "The official minutes list a second Steve; ours list only one Steve.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair identified as 'me'",
+    "ours": "me (chair (runs the meeting and answers roll call))",
+    "official": "",
+    "note": "The official minutes do not name a chair; the 'me' speaker appears to be one of the listed members, so check which.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:34:57Z",
+   "cost_usd": 0.23874499999999999
+  }
  }
 }

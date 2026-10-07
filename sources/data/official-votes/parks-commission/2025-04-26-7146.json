@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2025-04-26",
  "docid": "7146",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn at 10:45am",
+   "motion": "Adjourn the meeting at 10:45am.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K. Menard",
    "outcome": "passed 4-0",
@@ -21,6 +21,184 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Parks Commission meeting, April 26, 2025. One procedural vote recorded: adjournment. The Marshall Park Project presentation that follows contains no recorded votes.",
- "cost_usd": 0.0662524
+ "note": "Text is extracted, not a scan. Only one vote is recorded (adjournment, procedural). No approval of prior minutes appears in this text; the header reads \"Approved 7/30/25\", which records when the minutes were approved, not a vote in this meeting. Pages 2-29 are the attached presentation's slide text, not the minutes' narrative; the dollar figures come from those slides, and the minutes incorporate them only by reference (\"presented attached presentation\"). The two landscape architect and project manager presenters are not named, so they are not listed as attendees. Tim Lawless appears in the signature block as a Member but is not named as present or absent in the minutes, so he is omitted. The chair's name is spelled \"Schiepers\" in the body and \"Scheipers\" in the attendance list and signature; both are kept as printed. No public comment is recorded. Pages 20-22 are blank.",
+ "cost_usd": 0.01684507,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "A. Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "a. schiepers called the meeting to order at 10am. present: a. scheipers, c. shapiro, k. menard, c. sullivan"
+  },
+  {
+   "name": "C. Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "a. schiepers called the meeting to order at 10am. present: a. scheipers, c. shapiro, k. menard, c. sullivan"
+  },
+  {
+   "name": "K. Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "a. schiepers called the meeting to order at 10am. present: a. scheipers, c. shapiro, k. menard, c. sullivan"
+  },
+  {
+   "name": "C. Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "a. schiepers called the meeting to order at 10am. present: a. scheipers, c. shapiro, k. menard, c. sullivan"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Marshall Park total project cost",
+   "what_was_recorded": "The attached presentation prints a project total for the proposed scope of $13,735,372.",
+   "figures_as_printed": [
+    "$13,735,372",
+    "13,735,372"
+   ],
+   "quote": "projecttotal13,735,372"
+  },
+  {
+   "topic": "Debt exclusion tax impact",
+   "what_was_recorded": "The presentation estimates a debt-exclusion tax impact of about $0.46 per thousand of assessed value, or $231 a year for an average single-family home assessed at $504,937, on an 18-year amortization.",
+   "figures_as_printed": [
+    "$0.46",
+    "$504,937",
+    "$231"
+   ],
+   "quote": "roughly $0.46 per thousand of a home assessed value."
+  },
+  {
+   "topic": "Reduced funding scope cost",
+   "what_was_recorded": "The presentation gives a reduced funding scope (Phase 1/2B) total cost of $6,460,691, with a tax impact of $0.22 per thousand, or about $111 a year on average.",
+   "figures_as_printed": [
+    "$6,460,691",
+    "$0.22/thousand",
+    "$111/yr"
+   ],
+   "quote": "total cost: $6,460,691"
+  },
+  {
+   "topic": "Hard-cost contingency",
+   "what_was_recorded": "The construction cost table prints a 5% contingency on hard costs of $613,689.",
+   "figures_as_printed": [
+    "613,689"
+   ],
+   "quote": "contingency on hard costs: 5%613,689"
+  },
+  {
+   "topic": "Projected new annual maintenance cost",
+   "what_was_recorded": "The presentation totals the new annual maintenance expense for the project at $53,300.",
+   "figures_as_printed": [
+    "53,300"
+   ],
+   "quote": "electric600 internet3,000 sewer700 total53,300"
+  },
+  {
+   "topic": "Current annual park maintenance cost",
+   "what_was_recorded": "The presentation totals current annual park maintenance at $23,425.00 (budget estimates, not dedicated to Marshall Park).",
+   "figures_as_printed": [
+    "23,425.00"
+   ],
+   "quote": "water2,400.00 total23,425.00"
+  },
+  {
+   "topic": "Snow shoveling cost",
+   "what_was_recorded": "The presentation lists new snow shoveling at about $500 per storm.",
+   "figures_as_printed": [
+    "+- 500 per storm"
+   ],
+   "quote": "snow shoveling (new): +- 500 per storm"
+  },
+  {
+   "topic": "Missed state grant",
+   "what_was_recorded": "The presentation says the project was selected for a $1m grant in 2024 but did not meet requirements in time.",
+   "figures_as_printed": [
+    "$1m"
+   ],
+   "quote": "selected for $1m grant in 2024 but couldn't meet the requirements in time"
+  },
+  {
+   "topic": "Possible grant amount",
+   "what_was_recorded": "The presentation lists a possible grant of up to $50k for shovel-ready projects.",
+   "figures_as_printed": [
+    "$50k"
+   ],
+   "quote": "upto $50k for shovel ready projects that foster local connections."
+  },
+  {
+   "topic": "Possible MVP grant amount",
+   "what_was_recorded": "The presentation lists a Mass MVP grant of $25K for MVP communities.",
+   "figures_as_printed": [
+    "$25K"
+   ],
+   "quote": "open to mvp communities$25k"
+  },
+  {
+   "topic": "2021 Town Meeting appropriation",
+   "what_was_recorded": "The project timeline records a Town Meeting appropriation of $50,000 for the Marshall Park Master Plan in May 2021.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "may 2021: town meeting of $50,000 for the marshall park master plan."
+  },
+  {
+   "topic": "2022 Town Meeting appropriation",
+   "what_was_recorded": "The project timeline records Town Meeting approval of $184,000 for Master Plan Schematic Design in November 2022.",
+   "figures_as_printed": [
+    "$184,000"
+   ],
+   "quote": "november 2022: town meeting approves $184,000 for master plan schematic design."
+  },
+  {
+   "topic": "ARPA funds allocation",
+   "what_was_recorded": "The project timeline records the Select Board allocating $1,000,000 in ARPA funds for the project in January 2023.",
+   "figures_as_printed": [
+    "$1,000,000"
+   ],
+   "quote": "january 2023: select board allocates $1,000,000 arpa funds for the project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Marshall Park Project informational presentation",
+   "resolution": "presented; informational only, no vote recorded",
+   "quote": "marshall park project informational presentation with landscape architect and project manager",
+   "tags": [
+    "marshall park",
+    "master plan",
+    "presentation",
+    "debt exclusion",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:45am, passed 4-0",
+   "quote": "c. sullivan motioned to adjourn at 10:45am. k. menard seconded. passed 4-0",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "marshall park",
+  "master plan",
+  "capital project",
+  "debt exclusion",
+  "town meeting",
+  "ballot question",
+  "grants",
+  "park maintenance",
+  "youth sports",
+  "informational presentation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

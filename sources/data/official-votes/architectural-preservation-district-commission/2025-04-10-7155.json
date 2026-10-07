@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2025-04-10",
  "docid": "7155",
@@ -12,31 +12,186 @@
  },
  "votes": [
   {
-   "motion": "approve March 13, 2025 minutes",
-   "moved_by": "Member Lockwood",
-   "seconded_by": "Lloyd",
-   "outcome": "approved by all members",
+   "motion": "Approve the 13 March 2025 minutes.",
+   "moved_by": "Nathan Lockwood",
+   "seconded_by": "William Lloyd",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to approve 13 march minutes by member lockwood, seconded by lloyd, approved by all members."
   },
   {
-   "motion": "approve Determination of Applicability for 3 Oak Avenue",
-   "moved_by": "Member Lloyd",
-   "seconded_by": "Member Lockwood",
-   "outcome": "approved by all members",
+   "motion": "Approve the determination of applicability for 3 Oak Ave.",
+   "moved_by": "William Lloyd",
+   "seconded_by": "Nathan Lockwood",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion to approve by member lloyd, seconded by member lockwood, approved by all members."
   },
   {
-   "motion": "approve general response to Select Board regarding Brook's House",
-   "moved_by": "member Lockwood",
-   "seconded_by": "Lloyd",
-   "outcome": "Approved by all members",
+   "motion": "Approve the general response to the Select Board on the Brook's House matter.",
+   "moved_by": "Nathan Lockwood",
+   "seconded_by": "William Lloyd",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion to approve to general response to select board by member lockwood, seconded by lloyd, approved by all members."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0616974
+ "note": "Extracted text, not a scan. Votes are recorded only as 'approved by all members' with no numeric count, so outcomes are given as 'passed'. Public comment is recorded as 'None', so no speakers. The minutes print no dollar figures; the one budget item is a discussion of requested quotes. Adjournment at 8:18 PM is recorded without a motion, so it is not listed as a vote. The Chairman's presence is stated in the Present line, and the Vacancy seat is not a person.",
+ "cost_usd": 0.013740770000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "nathan lockwood, member"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "richard mcgrath, member"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "william lloyd, clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to compile a comment from the board for the next Select Board meeting, on the Brook's House and economic development.",
+   "quote": "will compile a comment from the board to bring up at the next select board meeting next week."
+  },
+  {
+   "decision": "Member Lockwood will follow up next month on the 50 Main Street (Old Methodist Church) condo-owner quotes and see whether other bids come in.",
+   "quote": "will follow up next month and see if other bids come in."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "50 Main Street (Old Methodist Church) repair quotes",
+   "what_was_recorded": "The board requested quotes for work at 50 Main Street and will check whether other bids come in; the minutes print no dollar figure.",
+   "figures_as_printed": [],
+   "quote": "member lockwood has had several conversations with the condo owners representative, both members understand the need, and have requested quotes."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (13 March 2025)",
+   "resolution": "approved",
+   "quote": "motion to approve 13 march minutes by member lockwood, seconded by lloyd, approved by all members.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Determination of Applicability, 3 Oak Ave",
+   "resolution": "approved",
+   "quote": "the owners are on the right path and pictures showed a good demonstration of proposal.",
+   "tags": [
+    "determination of applicability",
+    "Oak Ave",
+    "Open.gov"
+   ]
+  },
+  {
+   "topic": "Lunenburg Municipal Building Design Committee activity (Brook's House)",
+   "resolution": "board response to Select Board approved",
+   "quote": "brook's house was discussed in detail, a lot of discussion about demo and no value",
+   "tags": [
+    "Brook's House",
+    "demolition",
+    "Select Board",
+    "Municipal Building Design Committee",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Status of Town Hall and Ritter repair projects",
+   "resolution": "reported, no action",
+   "quote": "town hall work on-going, roof work is completed.",
+   "tags": [
+    "Town Hall",
+    "Ritter Building",
+    "repairs",
+    "weather vane"
+   ]
+  },
+  {
+   "topic": "Historical Commission/APDC merger update",
+   "resolution": "discussed, no action",
+   "quote": "town has to make filling these positions priority",
+   "tags": [
+    "Historical Commission",
+    "APDC",
+    "quorum",
+    "merger"
+   ]
+  },
+  {
+   "topic": "Status of 763 Mass Ave",
+   "resolution": "reported, no action",
+   "quote": "still under a demolition delay status by the historical society.",
+   "tags": [
+    "763 Mass Ave",
+    "demolition delay",
+    "two-family",
+    "condos"
+   ]
+  },
+  {
+   "topic": "Status of 50 Main Street (Old Methodist Church)",
+   "resolution": "continued, follow-up next month",
+   "quote": "will follow up next month and see if other bids come in.",
+   "tags": [
+    "50 Main Street",
+    "Old Methodist Church",
+    "condo owners",
+    "quotes"
+   ]
+  },
+  {
+   "topic": "Historical Commission survey and related projects",
+   "resolution": "reported, no action",
+   "quote": "a. phase i of the survey is complete.",
+   "tags": [
+    "historic survey",
+    "Levi Goodrich headstone",
+    "Hometown Heroes",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee",
+   "resolution": "meeting scheduled",
+   "quote": "meeting to be schedule june 12 at 6:30pm at coffee shop",
+   "tags": [
+    "Master Plan"
+   ]
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "Brook's House",
+  "Town Hall",
+  "demolition delay",
+  "Historical Commission",
+  "Master Plan",
+  "Select Board",
+  "Municipal Building Design Committee"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -344,5 +344,217 @@
    "at": "2026-10-06T18:04:15Z",
    "cost_usd": 0.21207700000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02252025-7069",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-02-25-minutes-7069.txt",
+   "path": "sources/meetings/sewer-commission/2025-02-25-minutes-7069.docx"
+  },
+  "official_sha256": "9b1ffa58a226fbdc568fa1a16bd28e406e8945f3a8634c56281a20de815ee9b3",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both votes, the 27% delinquency figure, the $2.1M retained earnings balance, the $10,000 demand-printing losses and most of the agenda and decision items. The main difference is the FY26 retained earnings appropriation: ours heard only \"249\", while the official minutes print $302,232.77 as the corrected figure, so a person should check that figure against the budget.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 5,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: accept Q3 FY2025 commitment letter",
+    "ours": "Accept the third quarter FY2025 commitment letter. — passed",
+    "official": "to accept the 3rd quarter fy25 commitment letter.",
+    "note": "Same motion and outcome; the official minutes add a 3-0 tally.",
+    "t": 281
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept final FY26 budget",
+    "ours": "Accept the final version of the FY26 budget for presentation to the Finance Committee. — passed",
+    "official": "to accept the final version of the fy26 budget.",
+    "note": "Same motion and outcome; the official minutes add a 3-0 tally and do not mention the Finance Committee presentation in the vote.",
+    "t": 740
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY26 retained earnings appropriation",
+    "ours": "FY26 budget, retained earnings appropriation: 249",
+    "official": "the total retained earning appropriation is now $302,232.77",
+    "note": "Same item; the captions heard only \"249\", but the official figure is a corrected total after a formula error. Check the recording at this point to confirm the spoken figure.",
+    "official_reading": "$302,232.77",
+    "t": 448
+   },
+   {
+    "kind": "agree",
+    "about": "Delinquent customer bills",
+    "ours": "Delinquent customer bills: 27%, $400,000",
+    "official": "they have a delinquency rate of 27%, that works out to be about $400k.",
+    "note": "Same rate and amount.",
+    "t": 534
+   },
+   {
+    "kind": "agree",
+    "about": "Retained earnings balance",
+    "ours": "Retained earnings balance: $2 million, 2.1 million",
+    "official": "there currently is $2.1 million in retained earnings",
+    "note": "Both give $2.1 million; our \"$2 million\" is the same balance said loosely.",
+    "t": 578
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Debt service and betterment revenue figure 21,746",
+    "ours": "Debt service and betterment revenue: 21,746",
+    "official": "the money that is owed to leominster and fitchburg for debt service will be less than the betterments being paid in fy26.",
+    "note": "The official minutes discuss debt service versus betterments but print no dollar figure, so 21,746 cannot be compared.",
+    "t": 638
+   },
+   {
+    "kind": "agree",
+    "about": "Losses from Munis demand printing failure",
+    "ours": "Lost demand fees from MUNIS printing failure: thousands of dollars, over $10,000, $10 demand fee",
+    "official": "bill commented there were over $10,000 in losses since the munis upgrade had not been able to print out demands.",
+    "note": "Both give over $10,000. The \"$10 demand fee\" is not printed in the official minutes.",
+    "t": 1233
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Q3 FY2025 commitment amount",
+    "ours": "",
+    "official": "the commitment amount was $316, 741.96 and required a vote by the commission.",
+    "note": "Our minutes record the commitment vote but not the dollar amount."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Legal opinion on the Treasurer's demand fee",
+    "ours": "",
+    "official": "he will get a legal opinion on that issue.",
+    "note": "Our minutes do not record Bill obtaining a legal opinion on whether the demand fee can be charged."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Request to Tyler Tech and the consultant to fix demand printing",
+    "ours": "",
+    "official": "they will also ask the consultant if he can fix it.",
+    "note": "This follow-up decision is not in our decisions."
+   },
+   {
+    "kind": "agree",
+    "about": "Commissioner recruitment: Bill to ask town manager and social media staff",
+    "ours": "Bill will check with the town manager and social media staff about parameters; Scott will draft a volunteer recruitment post for local social media groups, framed as a citizen.",
+    "official": "he will talk to the town manager and social media people to ask if someone can put it on other social media sites.",
+    "note": "Same action items; Scott drafting the notice and Joe suggesting the citizen framing match the official minutes, with the framing credited to Joe there.",
+    "t": 1655
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Offer letter to Tiffaney for Assistant to the Sewer Business Manager",
+    "ours": "",
+    "official": "the offer letter will be going out to tiffaney.",
+    "note": "Our minutes list only an update on the position as a future agenda item, not that an offer letter is going out."
+   },
+   {
+    "kind": "agree",
+    "about": "Future agenda items",
+    "ours": "Next agenda to include budget information, the manhole repair IFB, an update on the assistant to the business manager position, and commissioner recruitment.",
+    "official": "future agenda items- budget updates, manhole repairs, update on assistant to business manager, plans for more commissioners.",
+    "note": "Same four items.",
+    "t": 1803
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town director to present FY26 budget to Finance Committee Thursday 7 PM",
+    "ours": "The town director will present the FY26 budget to the Finance Committee on Thursday at 7 PM; commissioners are welcome to attend.",
+    "official": "",
+    "note": "Not in the official minutes provided.",
+    "t": 386
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Upcoming meeting dates",
+    "ours": "Upcoming meetings set: March 11 (hybrid, DPW building), March 25 (Zoom), April 8 (hybrid), April 29 (Zoom).",
+    "official": "",
+    "note": "The official minutes provided do not list the meeting dates.",
+    "t": 1888
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment: Flat Hill bridge closure",
+    "ours": "",
+    "official": "bill reminded everyone that the flat hill bridge over the catacoonamug brook will be closed for work until the end of april.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: vice chair",
+    "ours": "Brett Ramon (vice chair)",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Scott, clerk",
+    "ours": "Scott D (member)",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley",
+    "note": "Surname truncated; the official minutes list him as clerk rather than member.",
+    "official_reading": "Scott Dall",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Joseph Hurley",
+    "ours": "Joseph Hurley (member)",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley",
+    "note": "Same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Bill Bernard",
+    "ours": "Bill Bernard (town director / staff)",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley",
+    "note": "Same person; the official minutes title him DPW Director, ours town director.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: billing staff",
+    "ours": "Andrew Valerie (staff (billing))",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley",
+    "note": "Misspelled surname; he is the sewer business manager.",
+    "official_reading": "Andrew Valliere",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: minutes clerk",
+    "ours": "Shane ramley (staff)",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley",
+    "note": "Likely the same person, misheard as Shane Ramley; the official minutes name the minutes clerk Jane Ranley. Confirm.",
+    "official_reading": "Jane Ranley",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Eli Torres absent",
+    "ours": "Eli Torres (member (absent))",
+    "official": "absent: eli torres brett opened the meeting at 6:01pm.",
+    "note": "Both record him absent.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:30:43Z",
+   "cost_usd": 0.249585
+  }
  }
 }

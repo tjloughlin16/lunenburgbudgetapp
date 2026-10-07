@@ -353,5 +353,202 @@
    "at": "2026-10-06T18:16:32Z",
    "cost_usd": 0.211035
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01212025-6967",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-01-21-minutes-6967.txt",
+   "path": "sources/meetings/select-board/2025-01-21-minutes-6967.pdf"
+  },
+  "official_sha256": "9c18b5fe9242208f1602c8e632802149a671c26efbfeefcef6238f0c42c896b3",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Neither record has a recorded vote or transfer, and the two agree on the survey timing and frequency and on taking no action on the foreclosed property. Our minutes carry most of the dollar figures heard on the recording, while the official minutes print almost none, so the thing to check is those figures against the video (the official minutes also add a warrant amount and an attendee, the Chair, that ours lack).",
+  "counts": {
+   "agree": 2,
+   "caption_error": 1,
+   "discrepancy": 0,
+   "only_in_ours": 9,
+   "only_in_official": 9
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Climate survey every two years, results by November 1",
+    "ours": "Board consensus to move survey timeline so results arrive about November 1 and to survey every two years rather than annually.",
+    "official": "the board agreed to conduct the survey every two years instead of annually",
+    "note": "Same decision in both; the November 1 target is also in the official text.",
+    "t": 3656
+   },
+   {
+    "kind": "caption_error",
+    "about": "Property address under discussion",
+    "ours": "No decision on retaining 55 Carver Avenue property tonight.",
+    "official": "the board agreed they needed more time to review this comprehensive and complex information before deciding regarding 55 carr avenue.",
+    "official_reading": "55 Carr Avenue",
+    "note": "Same item (no decision, more time to review); the captions misheard the street name.",
+    "t": 8561
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Climate survey consultant cost",
+    "ours": "Climate survey consultant cost: 125, 6,500",
+    "official": "",
+    "note": "The official minutes print no consultant cost; check the video at this point for the actual figures.",
+    "t": 4051
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Climate survey budget timing",
+    "ours": "Climate survey budget timing: 6,000",
+    "official": "",
+    "note": "The official minutes give no dollar figure for the survey budget.",
+    "t": 7070
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Retirement and new revenue figures",
+    "ours": "Retirement and new revenue: $325,000, $650 to $700,000",
+    "official": "",
+    "note": "The official minutes print none of these amounts; the captions may have garbled them, so check the recording.",
+    "t": 8899
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stormwater capital items",
+    "ours": "Stormwater capital items: $200,000, $300,000",
+    "official": "",
+    "note": "The official minutes do not mention stormwater capital amounts.",
+    "t": 9192
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Grants writer appropriation",
+    "ours": "Grants writer appropriation: 50, thousands of dollars, $50,000",
+    "official": "he proposed redirecting funds intended for external grants services.",
+    "note": "The official minutes describe the proposal with no amount, so the $50,000 is only in ours; confirm it is the same item.",
+    "t": 9720
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "CPA surcharge example figures",
+    "ours": "CPA surcharge example: 6,800, $53, 150",
+    "official": "identifying what the cost would be to the average taxpayer if a 3% surcharge was adopted.",
+    "note": "The official minutes say only that a member asked for the cost to be identified, with no figure computed; check the video for what was actually stated.",
+    "t": 7841
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Select Board makes final decision on survey vendor and questions",
+    "ours": "Select board to make the final decision on survey vendor and questions.",
+    "official": "",
+    "note": "The official minutes only say the board will keep refining the policy and review sample questions; they do not record who makes the final vendor decision.",
+    "t": 4572
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Request for full engagement survey results and draft questions",
+    "ours": "Board again requested the full engagement survey results and the vendor's draft questions.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 10320
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Interim town manager to brief board on public records request",
+    "ours": "Interim town manager to brief the board one-on-one on the public records request.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 10386
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Accounts payable warrant",
+    "ours": "",
+    "official": "accounts payable warrant in the amount of $34,451.80. amanda moore recused herself from signing.",
+    "note": "The warrant amount and Amanda Moore's recusal are not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "CPA state matching funds estimate",
+    "ours": "",
+    "official": "current state matching funds are estimated around 40-60%, compared to 100% in the past.",
+    "note": "Not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chapter 70 funds not yet in salary reserve",
+    "ours": "",
+    "official": "chapter 70 funds voted in the fall town meeting still hadn't appeared in the salary reserve",
+    "note": "Not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Revolving fund revenue shortfall",
+    "ours": "",
+    "official": "noted concerns about a lack of revenue in certain revolving funds, including the school choice fund",
+    "note": "Not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Electronic distribution of survey",
+    "ours": "",
+    "official": "the board agreed the survey should be distributed electronically, with accommodations made for accessibility needs.",
+    "note": "A survey-format decision in the official minutes that ours does not record.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Gather more information on CPA adoption",
+    "ours": "",
+    "official": "the board agreed to gather more information on exemptions, financial impacts, and potential benefits before deciding whether to pursue cpa adoption this year.",
+    "note": "Ours has CPA figures but records no decision on CPA.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tom Alonzo to meet town manager candidate on contract",
+    "ours": "",
+    "official": "alonzo said he would report back to the board on the outcome and request an executive session if needed to finalize the contract.",
+    "note": "Not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Renee, Tom, Amanda, Michael Ray, Carter",
+    "ours": "Renee (member); Tom (member); Amanda (member); Michael Ray (member); Carter (interim town manager)",
+    "official": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee",
+    "note": "The five people in ours appear in the official list, which gives their full names, and Carter appears in the 'also present' line.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Caesar Nuzzolo, Chair, present",
+    "ours": "",
+    "official": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee",
+    "note": "The Chair is listed present in the official minutes but is not in our attendee list; confirm on the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by John Bowen",
+    "ours": "",
+    "official": "john bowen, 162 highland st - commented regarding concerns over unauthorized access to sensitive private information by the cemetery commission",
+    "note": "Public comment not captured in ours.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:39:24Z",
+   "cost_usd": 0.24855499999999997
+  }
  }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-02-05",
  "docid": "6999",
@@ -12,31 +12,278 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from December 18 and January 8",
+   "motion": "Approve the minutes of December 18 and January 8 (as printed in the minutes).",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from december 18\" and january 8' by sarah cammer, seconded by john rabbitt. roll call vote. john rabbitt aye, sarah cammer aye, brian latfond aye."
+   "quote": "by sarah cammer, seconded by john rabbitt. roll call vote. john rabbitt aye, sarah cammer aye, brian latfond aye."
   },
   {
-   "motion": "Have the proposed document sent to the Town Counsel to review",
+   "motion": "Send the proposed deeds and homeowner-letter document to Town Counsel for review.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "there was a motion to have the proposed document sent to the town counsel to review by sarah cammer, seconded by john rabbitt. roll call vote. john rabbitt aye, sarah cammer aye, brian laffond aye."
+   "quote": "there was a motion to have the proposed document sent to the town counsel to review by sarah cammer, seconded by john rabbitt."
   },
   {
-   "motion": "Adjourn the meeting and enter executive session not to return to open session",
+   "motion": "Adjourn the open meeting and enter executive session not to return to open session.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbit",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn the open meeting and enter executive session not to return to open session by sarah cammer, seconded by john rabbit. roll call vote. john rabbitt aye, sarah cammer aye, brian laffond aye."
+   "quote": "there was a motion to adjourn the open meeting and enter executive session not to return to open session by sarah cammer, seconded by john rabbit. roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. The first vote shows OCR corruption in the dates (\"December 18\\\"\" and \"January 8'\"); the minutes heading lists multiple dates for approval (Jan 22, Jan 8, Dec 10, Nov 20, Nov 6, Oct 16, Oct 2, and executive sessions). Exemptions and abatements listed in executive session (41C Senior, 17D Senior, 22D Surviving Spouse, 22E Disabled, 22 exemptions, and real estate abatements) are recorded as approved/denied but without formal motion language, so are not counted as votes.",
- "cost_usd": 0.0976564
+ "note": "Text is macOS Vision OCR with character errors (e.g. \"Latfond\", \"werę\", \"19ih\"); quotes are copied as OCR printed them. The minutes are two documents: open session (pp.1-3) and a separate executive-session page (p.4). The vote count is not printed as a number; \"passed\" is from the three ayes listed on each roll call. The minutes of December 18 and January 8 is printed inconsistently with the agenda list (December 10, 2024). The same board member is written \"John Rabbitt\", \"John Rabbit\" and \"Jack Rabbit\"; I recorded him as \"John Rabbitt\". The executive session's approvals and denials are printed as tallies with no motion, so they are recorded as decisions, not votes. Denise McCue is named as having inspected properties but is not recorded as attending. The open meeting closed at 8:03 PM and the executive session ends at 10:05 PM, which the minutes print without comment.",
+ "cost_usd": 0.01690487,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer (zoom), clerk john rabbitt,"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer (zoom), clerk john rabbitt,"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk john rabbitt, principal assessor lynda mcquade"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "clerk john rabbitt, principal assessor lynda mcquade"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Two excise tax bills ($73.47 and $173.10) were signed by the board.",
+   "quote": "there were 2 excise tax bills for $73.47 and $173.10. they were signed."
+  },
+  {
+   "decision": "A motor vehicle exemption tax for the blind and one for the Hero Act were each signed.",
+   "quote": "there was a motor vehicle exemption tax for the blind and one for the hero act. each was signed."
+  },
+  {
+   "decision": "The board approved the drafted town report (annual report).",
+   "quote": "brian laffond created a drafted town report. the board approves the document."
+  },
+  {
+   "decision": "Executive session recorded FY2025 exemption and real estate abatement outcomes (e.g. 6 abatements approved, 7 denied) with no recorded motion.",
+   "quote": "review of exemptions and real estate abatements fy2025"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Excise tax bills signed at invoice review",
+   "what_was_recorded": "Two excise tax bills were reviewed and signed.",
+   "figures_as_printed": [
+    "$73.47",
+    "$173.10"
+   ],
+   "quote": "there were 2 excise tax bills for $73.47 and $173.10. they were signed."
+  },
+  {
+   "topic": "Suspected Near map invoice",
+   "what_was_recorded": "An invoice from Near map was suspected because of budget issues; the tool is not used by the Assessor's Office. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "there was an invoice from near map that has been suspected because of budget issues."
+  },
+  {
+   "topic": "Capital Plan money for neighborhood/site index review",
+   "what_was_recorded": "The Interim Town Manager proposed setting aside money from the budget in the Capital Plan for the review; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the interim town manager proposed putting aside some money from the budget in the capital plan to get this review kicked off."
+  },
+  {
+   "topic": "COLA cost estimate for Annual Town Meeting",
+   "what_was_recorded": "The chair said COLA cannot be predicted but he may get a first-year cost estimate to present at Annual Town Meeting; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "he believes he can get a cost estimate for the first year to present at"
+  },
+  {
+   "topic": "Senior exemption amounts reviewed in executive session",
+   "what_was_recorded": "Exemptions reviewed in executive session with their printed amounts and approval counts.",
+   "figures_as_printed": [
+    "$1000.00",
+    "$185.00",
+    "$1000.00",
+    "$400.00"
+   ],
+   "quote": "41c senior $1000.00 exemption"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening comments",
+   "resolution": "no action; chair and principal assessor noted circuit breaker discussion and abatement deadline",
+   "quote": "john rabbitt spoke to an individual about the circuit breaker.",
+   "tags": [
+    "circuit breaker",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Status report from principal assessor",
+   "resolution": "reported; no action",
+   "quote": "lynda mcquade states that the abatement period has ended. a total of 34 abatements",
+   "tags": [
+    "abatement",
+    "property records",
+    "motor vehicle excise"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved by roll call",
+   "quote": "review and approve minutes of january 22, 2025, january 8, 2025, december 10, 2024,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review and approve invoices, expense vouchers, billing errors",
+   "resolution": "excise bills and exemption tax documents signed; Near map invoice flagged",
+   "quote": "there were 2 excise tax bills for $73.47 and $173.10. they were signed.",
+   "tags": [
+    "invoices",
+    "excise tax",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Assessor conference at Senior Center, February 3, 2025",
+   "resolution": "discussed; follow-up on circuit breaker conference requested",
+   "quote": "a video was taken of the presentation, but the video is dark, and visuals are difficult to",
+   "tags": [
+    "conference",
+    "senior center",
+    "circuit breaker"
+   ]
+  },
+  {
+   "topic": "Senior means tested exemption / H.3911",
+   "resolution": "noted; design committee created, first meeting in 2 weeks",
+   "quote": "a design committee for the senior means tested exemption has been created and will have",
+   "tags": [
+    "senior exemption",
+    "H.3911"
+   ]
+  },
+  {
+   "topic": "Neighborhood/site index review in response to DOR directives",
+   "resolution": "discussed; no action; multi-year project proposed",
+   "quote": "lynda mcquade confirms they are currently doing inspections for abatements and",
+   "tags": [
+    "site index",
+    "DOR",
+    "capital plan",
+    "neighborhoods"
+   ]
+  },
+  {
+   "topic": "Policy and homeowner letter for deed issues",
+   "resolution": "sent to Town Counsel for review",
+   "quote": "lynda mcquade states there have been issues with deeds not having an address, parcel",
+   "tags": [
+    "deeds",
+    "town counsel",
+    "homeowner letter"
+   ]
+  },
+  {
+   "topic": "Assessor website",
+   "resolution": "discussed; suggestions made, no action recorded",
+   "quote": "lynda mcquade suggests simplifying the website as it can be difficult to navigate.",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "Annual report",
+   "resolution": "approved",
+   "quote": "brian laffond created a drafted town report. the board approves the document.",
+   "tags": [
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Clause 41 and 17 assets/income level adjustment exemption warrant",
+   "resolution": "documents reviewed; Town Counsel review of warrant articles confirmed; COLA estimate to follow",
+   "quote": "brian laffond provided documents to the board. sarah cammer questions if documents",
+   "tags": [
+    "warrant",
+    "exemptions",
+    "COLA",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "BOA policies",
+   "resolution": "postponed",
+   "quote": "postponed topics - boa policies.",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "listed; no action",
+   "quote": "upcoming meetings: february 19, 2025, march 5, 2025, march 19, 2025, april 2, 2025, april",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments - legislation on remote participation",
+   "resolution": "board member to bring the article to next meeting",
+   "quote": "john rabbitt states the governor just signed legislation to make the government more",
+   "tags": [
+    "remote participation",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "Executive session: exemptions and real estate abatements FY2025",
+   "resolution": "reviewed; approvals and denials recorded, no motion printed",
+   "quote": "review of exemptions and real estate abatements fy2025",
+   "tags": [
+    "executive session",
+    "exemptions",
+    "abatements"
+   ]
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "abatements",
+  "exemptions",
+  "excise tax",
+  "minutes approval",
+  "town counsel",
+  "annual report",
+  "assessor website",
+  "circuit breaker",
+  "senior exemption",
+  "COLA",
+  "capital plan",
+  "executive session",
+  "deeds",
+  "warrant articles"
+ ],
+ "dropped_unquoted_by_field": {}
 }

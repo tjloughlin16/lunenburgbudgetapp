@@ -399,5 +399,256 @@
    "at": "2026-10-06T18:18:12Z",
    "cost_usd": 0.211943
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01142025-6951",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-01-14-minutes-6951.txt",
+   "path": "sources/meetings/council-on-aging/2025-01-14-minutes-6951.pdf"
+  },
+  "official_sha256": "7a3c444c444346fd52fe9a0ce1cd9be39e963fb3674f2017635e6fafe1b36a8b",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the broad outline: the Eagle House supporters presented, the Sunshine Club item goes in the newsletter, and the attendee lists overlap heavily. Ours records an Elena liaison appointment, a Michael Ray invitation and several figures that the official minutes do not mention. The one thing to check is the MART Connect letter: ours says \"send\" with no audible outcome, and the official minutes say \"accept\" and approved unanimously.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 7,
+   "discrepancy": 2,
+   "only_in_ours": 7,
+   "only_in_official": 7
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote on the MART Connect / Worcester hospital trips letter",
+    "ours": "Send the letter to Mark asking to include Worcester-area hospital trips in Mark Connect — not audible",
+    "official": "a motion was made and seconded, and was approved unanimously to accept the letter.",
+    "note": "Same item, but ours says 'send' with the outcome not audible and the official says 'accept' and passed unanimously. Check the recording at this timestamp for what the motion said and whether the letter was sent or accepted.",
+    "t": 2780
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Appointment of Elena as liaison to Eagle House supporters",
+    "ours": "Appoint Elena as liaison to the Eagle House supporters group — not audible",
+    "official": "",
+    "note": "Ours records this as a vote and the official minutes record no appointment or vote. Check the recording to see whether a vote was taken, and ask the town whether the minutes omitted it.",
+    "t": 3390
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior tax relief maximum $2,730 and aggregate cap",
+    "ours": "Senior tax relief maximum: $2,730; aggregate cap: 1%, 75%, 33%",
+    "official": "",
+    "note": "The official minutes print no senior tax relief amounts, only that the governor signed the bill. The caption figures are unverified.",
+    "t": 233
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Governor signed Senior Tax Relief bill 1/06/25",
+    "ours": "",
+    "official": "mr. franco announced that the governor signed the bill for senior tax relief on 1/06/25",
+    "note": "Our minutes list tax relief figures but do not record the signing announcement or its date.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Window shades: 20",
+    "ours": "Window shades: 20",
+    "official": "",
+    "note": "No window shade count appears in the official minutes.",
+    "t": 3096
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Casino trip fee $15",
+    "ours": "Casino trip fee: $15",
+    "official": "",
+    "note": "The official minutes print no trip fee.",
+    "t": 3322
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tax deferral interest rate 8 to 4%",
+    "ours": "Tax deferral interest rate: 8 to 4%",
+    "official": "",
+    "note": "The official minutes do not mention the deferral rate. The caption wording is unclear.",
+    "t": 1242
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "YouTube link for meetings in newsletter",
+    "ours": "YouTube link for meetings to go in the COA newsletter from now on.",
+    "official": "",
+    "note": "This decision is not in the official minutes.",
+    "t": 545
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Liaisons between COA and Eagle House supporters",
+    "ours": "Agreed to set up liaisons between the COA and Eagle House supporters; supporters to be told meeting dates.",
+    "official": "",
+    "note": "The official minutes do not record this decision. A decision missing from the official record should be checked against the recording.",
+    "t": 798
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Invite Michael Ray back re school-owned land and parking lot",
+    "ours": "Invite Michael Ray back to the next meeting to discuss school-owned land and parking lot.",
+    "official": "",
+    "note": "The official minutes contain no mention of this invitation.",
+    "t": 2625
+   },
+   {
+    "kind": "agree",
+    "about": "Sunshine Club information in newsletter",
+    "ours": "Sunshine Club information to go in the March newsletter.",
+    "official": "deb will put an item in the newsletter to ask people to forward names of",
+    "note": "Both record a Sunshine Club newsletter item. The official minutes do not give the March date in the quoted text.",
+    "t": 2900
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Channel 8 broadcast times",
+    "ours": "",
+    "official": "so ms. lincoln is going to request that they change the times",
+    "note": "Our minutes have no decision about asking Channel 8 to change broadcast times.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY26 COA budget quarterly updates",
+    "ours": "",
+    "official": "fy26 coa budget: the coa will be getting quarterly updates starting in march.",
+    "note": "Our minutes do not mention this item.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY24 formula grant installment in April",
+    "ours": "",
+    "official": "coa fy24 formula grant: another installment will be received in april",
+    "note": "Our minutes do not mention this item, and no amount is printed.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Eagle House supporters vice president surname",
+    "ours": "Barbara Kulo (presenter, vice president of Eagle House supporters)",
+    "official": "eagle house supporters president ena thompson , vice president barbara coulombe",
+    "note": "A misheard surname for the same person and role.",
+    "official_reading": "Barbara Coulombe",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Ena Thompson, Eagle House supporters president",
+    "ours": "Ena Thompson (presenter, president of Eagle House supporters)",
+    "official": "eagle house supporters president ena thompson , vice president barbara coulombe",
+    "note": "Same name and role in both.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Lou Franco attendance",
+    "ours": "Lou Franco (presenter, former select board member and COA liaison)",
+    "official": "guests: lunenburg select board chair caesar nuzzolo, jack rabbitt, lou franco,",
+    "note": "Both list Lou Franco as a guest. The roles are described differently, and the official minutes give no role for him.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name: Debbie vs Deb Lincoln",
+    "ours": "Debbie (chair / director (apparent))",
+    "official": "present: deb lincoln (chairperson), jane rabbitt (vice chair), peter lincoln,",
+    "note": "Same person; ours has only a first name, and 'director' is our guess.",
+    "official_reading": "Deb Lincoln",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Jack, presenter",
+    "ours": "Jack (presenter)",
+    "official": "guests: lunenburg select board chair caesar nuzzolo, jack rabbitt, lou franco,",
+    "note": "Likely Jack Rabbitt, but the match is by first name only.",
+    "official_reading": "Jack Rabbitt",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Jane, member",
+    "ours": "Jane (member)",
+    "official": "present: deb lincoln (chairperson), jane rabbitt (vice chair), peter lincoln,",
+    "note": "Likely Jane Rabbitt, vice chair. Ours gives a first name and calls her a member.",
+    "official_reading": "Jane Rabbitt",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Susan, member",
+    "ours": "Susan (member)",
+    "official": "elena christopher, diane nowd, susan o'sullivan,",
+    "note": "Likely Susan O'Sullivan.",
+    "official_reading": "Susan O'Sullivan",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Mr Lincoln, member",
+    "ours": "Mr Lincoln (member)",
+    "official": "present: deb lincoln (chairperson), jane rabbitt (vice chair), peter lincoln,",
+    "note": "Likely Peter Lincoln. Note the official decision text refers to 'ms. lincoln', which is probably the chair Deb Lincoln.",
+    "official_reading": "Peter Lincoln",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Judy, member",
+    "ours": "Judy (member)",
+    "official": "tarbell, elena christopher, diane nowd, susan o'sullivan,",
+    "note": "Likely Judy Tarbell; the official quote starts at her surname.",
+    "official_reading": "Judy Tarbell",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Elena, member",
+    "ours": "Elena (member, named liaison)",
+    "official": "elena christopher, diane nowd, susan o'sullivan,",
+    "note": "Elena Christopher is present in the official minutes. They do not name her as liaison.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other members and guests present",
+    "ours": "",
+    "official": "guests: lunenburg select board chair caesar nuzzolo, jack rabbitt, lou franco,",
+    "note": "Caesar Nuzzolo (Select Board Chair), Diane Nowd, Ana Lockwood and Jim McGuigan appear in the official attendance but not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "excused: helen balcom, cathy beale",
+    "note": "Helen Balcom and Cathy Beale are excused in the official minutes; our minutes record no absences.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ms. Goodsell reviewing January events",
+    "ours": "",
+    "official": "ms. goodsell reviewed the upcoming events for the rest of january",
+    "note": "Ms. Goodsell appears only in the official minutes. She may be the director, which could be who we labelled 'Debbie (chair / director (apparent))'.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:38:07Z",
+   "cost_usd": 0.25626899999999997
+  }
  }
 }

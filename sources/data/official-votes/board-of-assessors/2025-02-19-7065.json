@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-02-19",
  "docid": "7065",
@@ -12,68 +12,326 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from October 2, 2024, with revisions",
+   "motion": "Approve the minutes of October 2, 2024, with revisions.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from october 2, 2024, with revisions by sarah cammer, seconded by john rabbitt. roll call v ote. john rabbitt aye, sarah cammer aye, brian laffond aye",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to approve the minutes from october 2, 2024, with revisions by sarah cammer, seconded by john rabbitt."
   },
   {
-   "motion": "Approve the minutes from November 6, 2024",
+   "motion": "Approve the minutes of November 6, 2024.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from october 2, 2024, with revisions by sarah cammer, seconded by john rabbitt. roll call v ote. john rabbitt aye, sarah cammer aye, br",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to approve the minutes from november 6, 2024 by sarah cammer, seconded by john rabbitt."
   },
   {
-   "motion": "Approve the minutes from November 20, 2024",
+   "motion": "Approve the minutes of November 20, 2024.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from october 2, 2024, with revisions by sarah cammer, seconded by john rabbitt. roll call v ote. john rabbitt aye, sarah cammer aye, bri",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to approve the minutes from november 20, 2024 by sarah cammer, seconded by john rabbitt."
   },
   {
-   "motion": "Approve the minutes from January 22, 2025",
+   "motion": "Approve the minutes of January 22, 2025.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from october 2, 2024, with revisions by sarah cammer, seconded by john rabbitt. roll call v ote. john rabbitt aye, sarah cammer aye, bri",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to approve the minutes from january 22, 2025, by sarah cammer, seconded by john rabbitt."
   },
   {
-   "motion": "Use the signature stamp to sign the individual certificate for motor vehicles",
+   "motion": "Use the signature stamp to sign the individual certificate for motor vehicles.",
    "moved_by": "Brian Laffond",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "there is a motion to use the signature stamp to sign the individual certificate for motor vehicles by brian laffond, seconded by john rabbitt. roll call v ote. john rabbitt aye, sarah cammer aye, brian laffond aye",
-   "quote_taken_from_text": true
+   "quote": "there is a motion to use the signature stamp to sign the individual certificate for motor vehicles by brian laffond, seconded by john rabbitt."
   },
   {
-   "motion": "Approve the letter regarding deed issues",
+   "motion": "Approve the letter regarding deed issues.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "there was a motion to approve the letter regarding deed issues by sarah cammer, seconded by john rabbitt. roll call vote: john rabbitt aye, sarah cammer aye, brian laffond aye."
+   "quote": "there was a motion to approve the letter regarding deed issues by sarah cammer, seconded by john rabbitt."
   },
   {
-   "motion": "Adjourn into executive session and not return to open session",
+   "motion": "Adjourn into executive session, not to return to open session.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn into executive session not to return to open session by sarah cammer, seconded by john rabbitt. roll call vote: john rabbitt aye, sarah cammer aye, brian laffond aye."
+   "quote": "there was a motion to adjourn into executive session not to return to open session by sarah cammer, seconded by john rabbitt."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07182940000000002
+ "note": "Clean extracted text, not a scan. Roll-call votes list ayes by name but print no count, so outcomes are recorded as 'passed' rather than a count. Public comment: none recorded, so the list is empty. Ezequiel Ayala's attendance is not stated. Mike Tarello (Vision) and Kara McCarthy are discussed but did not appear, so they are not listed as attendees. Rena Swezey's arrival at 6:40 is printed; the minutes do not say whether she was present for earlier votes.",
+ "cost_usd": 0.01662827,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt (zoom), principal assessor lynda mcquade, rena swezey (6:40)."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt (zoom), principal assessor lynda mcquade, rena swezey (6:40)."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "clerk john rabbitt (zoom),"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "principal assessor lynda mcquade, rena swezey (6:40)."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board member",
+   "status": "present",
+   "quote": "principal assessor lynda mcquade, rena swezey (6:40)."
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "ezequiel ayala confirmed the total in the overlay account is $790,000."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board determined the minimum age for the senior means-tested exemption would be 65, following changes made to Clause 41C.",
+   "quote": "due to the changes we made to 41c it was determined the minimum age would be 65."
+  },
+  {
+   "decision": "Brian Laffond volunteered to help Lynda McQuade create the application for an 8 of 58 that the Board previously agreed to submit.",
+   "quote": "brian laffond volunteered to help lynda mcquade create the application for an \"8 of 58\" that the board previously agreed to submit."
+  },
+  {
+   "decision": "John Rabbitt will ask Kara McCarthy about adding the senior center conference presentation to the Assessor website.",
+   "quote": "john rabbitt will inquire with kara mccarthy about having the presentation from the conference at the senior center added to the website."
+  },
+  {
+   "decision": "John Rabbitt was asked to bring a proposal to the Board defining the criteria to use for Clause 18.",
+   "quote": "brian laffond suggested that john rabbitt bring a proposal to the board defining the criteria we should use."
+  },
+  {
+   "decision": "Brian Laffond will rewrite the Clause 41 and 17 warrant and provide a copy to the Board before the March 14th deadline.",
+   "quote": "brian laffond will re-write and provide a copy to the board prior to the march 14th deadline."
+  },
+  {
+   "decision": "The Board must put a recommendation forward to the Town Manager on the amount to set aside in the overlay account for next year.",
+   "quote": "the board needs to put a recommendation forward to the town manager about the suggested amount to put aside in the overlay account for next year."
+  },
+  {
+   "decision": "A tentative meeting was scheduled for March 12 in case there is no quorum on March 5.",
+   "quote": "there is a tentative meeting scheduled for march 12th in case there isn't a quorum on march 5th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Neighborhood / site index revaluation work in house",
+   "what_was_recorded": "Brian Laffond noted $27,500 in the proposed budget under capital as a possible starting point for the neighborhood work.",
+   "figures_as_printed": [
+    "$27,500"
+   ],
+   "quote": "brian laffond states there is $27,500 in the proposed budget under capital and suggests these funds could be used as a good starting point."
+  },
+  {
+   "topic": "Motor vehicle refund",
+   "what_was_recorded": "A motor vehicle refund was signed.",
+   "figures_as_printed": [
+    "$767.68"
+   ],
+   "quote": "a motor vehicle refund totaling $767.68 was signed."
+  },
+  {
+   "topic": "Motor vehicle excise commitment 2025",
+   "what_was_recorded": "The first 2025 motor vehicle excise commitment totaled the amount shown, consisting of 12,599 bills.",
+   "figures_as_printed": [
+    "$1,745,393.70",
+    "12,599"
+   ],
+   "quote": "the first commitment of 2025 for motor vehicle excise tax totaled $1,745,393.70 consisting of 12,599 bills."
+  },
+  {
+   "topic": "Motor vehicle excise final commitment 2024",
+   "what_was_recorded": "The final 2024 motor vehicle excise commitment totaled the amount shown, consisting of 326 bills.",
+   "figures_as_printed": [
+    "$14,563.51",
+    "326"
+   ],
+   "quote": "the final commitment for 2024 totaled $14,563.51 consisting of 326 bills."
+  },
+  {
+   "topic": "FY2026 overlay account",
+   "what_was_recorded": "The total in the overlay account was confirmed; the Board must recommend an amount to set aside for next year.",
+   "figures_as_printed": [
+    "$790,000"
+   ],
+   "quote": "ezequiel ayala confirmed the total in the overlay account is $790,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening comments",
+   "resolution": "Board noted first circuit breaker deferral expected next week; no public comment",
+   "tags": [
+    "circuit breaker",
+    "public comment"
+   ],
+   "quote": "john rabbitt anticipates the first deferral in circuit breaker will be delivered to the assessor's office early next week."
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "No action; updates and goals for next month reported",
+   "tags": [
+    "abatements",
+    "exemptions",
+    "motor vehicle excise",
+    "commitments",
+    "mapping"
+   ],
+   "quote": "updates from lynda mcquade include:"
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "Approved minutes of October 2, November 6, November 20, 2024 and January 22, 2025; executive session minutes still outstanding",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review and approve minutes of december 10, 2024, november 20, 2024, november 6, 2024,"
+  },
+  {
+   "topic": "Review and approve invoices, vouchers and billing errors",
+   "resolution": "Refund signed, commitments signed, stamp signature motion passed; individual commitment signatures still required",
+   "tags": [
+    "commitments",
+    "motor vehicle excise",
+    "refunds"
+   ],
+   "quote": "review and approve invoices, expense v ouchers, billing errors, etc."
+  },
+  {
+   "topic": "Senior means tested exemption / H.3911 plan",
+   "resolution": "Minimum age set at 65; update expected in two weeks",
+   "tags": [
+    "senior exemption",
+    "circuit breaker",
+    "state law"
+   ],
+   "quote": "senior means tested exemption/h.3911 plan"
+  },
+  {
+   "topic": "Neighborhood / site index plan in response to DOR directives",
+   "resolution": "Discussed; in-house option raised; no action recorded",
+   "tags": [
+    "revaluation",
+    "neighborhoods",
+    "consultants"
+   ],
+   "quote": "neighborhood/site index/plan in response to dor directives"
+  },
+  {
+   "topic": "Homeowner letter on deed issues",
+   "resolution": "Letter approved",
+   "tags": [
+    "deeds",
+    "town counsel"
+   ],
+   "quote": "status of homeowner letter for issues with deeds"
+  },
+  {
+   "topic": "Assessor website",
+   "resolution": "Assignments made; circuit breaker section and Clause 18 criteria left open",
+   "tags": [
+    "website",
+    "clause 18",
+    "policies"
+   ],
+   "quote": "the policy section is still blank, and brian laffond confirms nothing has been written up yet."
+  },
+  {
+   "topic": "Annual report",
+   "resolution": "Submitted",
+   "tags": [
+    "annual report"
+   ],
+   "quote": "lynda mcquade added the financial information, and it was submitted yesterday."
+  },
+  {
+   "topic": "FY2026 overlay",
+   "resolution": "Overlay total confirmed; recommendation to Town Manager required",
+   "tags": [
+    "overlay",
+    "abatements"
+   ],
+   "quote": "ezequiel ayala confirmed the total in the overlay account is $790,000."
+  },
+  {
+   "topic": "Clause 41 and 17 assets/income level exemption warrant",
+   "resolution": "Rewrite assigned before March 14 deadline",
+   "tags": [
+    "exemptions",
+    "warrant",
+    "town counsel"
+   ],
+   "quote": "brian laffond sent a proposed copy of the warrant to the board and received several suggestions from town counsel."
+  },
+  {
+   "topic": "Postponed: BOA policies",
+   "resolution": "Postponed",
+   "tags": [
+    "policies"
+   ],
+   "quote": "postponed topics - boa policies"
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "Schedule listed; tentative March 12 meeting noted",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "upcoming meetings: march 5, 2025, march 19, 2025, april 2, 2025, april 16, 2025"
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "No public or Board comments",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there were no comments from the public."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "abatements",
+  "exemptions",
+  "senior exemption",
+  "motor vehicle excise",
+  "commitments",
+  "overlay",
+  "revaluation",
+  "circuit breaker",
+  "deeds",
+  "annual report",
+  "minutes approval",
+  "lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

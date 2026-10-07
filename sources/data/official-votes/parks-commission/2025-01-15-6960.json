@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2025-01-15",
  "docid": "6960",
@@ -11,7 +11,219 @@
   "doc_url": "/docs/meetings/parks-commission/2025-01-15-minutes-6960.txt"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document discussion and updates on various topics (facilities, recreation, Marshall Park renovations, Earth Day cleanup, master planning) but contain no formal motions, voting language, or vote outcomes.",
- "cost_usd": 0.06252339999999999
+ "dropped_unquoted": 1,
+ "note": "Date mismatch: the caller gave 2025-01-15 and the body reads \"January 15, 2025 MINUTES\", but every page header reads \"Lunenburg Park Commission February 19, 2025 Meeting Minutes\". The body date is used here; the header date may be the approval or print date. No motions, votes, or roll-call votes are recorded anywhere in the text, so votes is empty; the minutes record \"None\" for invoices and minutes approval and no motion to adjourn (only \"Adjourned: 7:59 pm\"). No public comment section is printed. Several names have no printed role (Angela Clement, Chris Ruth, J. Belliveau). J. Belliveau answers questions in the text but is not listed as present or remote, so status is not stated. Andrea Mastrototoro appears only in the closing signature line. The text is a clean digital extract, not a scan, and page footers show \"Page of 41\" through \"Page of 44\" with no page numbers, so nothing is missing from the page sequence.",
+ "cost_usd": 0.01573107,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan"
+  },
+  {
+   "name": "Tim Lawless",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: colleen shapiro"
+  },
+  {
+   "name": "Angela Clement",
+   "role": "Additional Attendee (gave the Recreation Director Updates)",
+   "status": "present",
+   "quote": "additional attendees: angela clement, and chris ruth"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Additional Attendee (gave the Facilities Director Updates)",
+   "status": "present",
+   "quote": "additional attendees: angela clement, and chris ruth"
+  },
+  {
+   "name": "J. Belliveau",
+   "role": "not printed; referred to as the person posting lifeguard and Beach Director positions",
+   "status": "not stated",
+   "quote": "a. clement asked j. belliveau if it would be allowable to increase the lifeguards salary"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Invoices that came in were approved by the Chair and Clerk signing off, with no vote recorded.",
+   "quote": "none. a. scheipers notes the ones that came in she and k. menard signed-off on as approved by the commission."
+  },
+  {
+   "decision": "C. Ruth will reach out to the Board of Health about using its money for a town sewer connection instead of a septic system.",
+   "quote": "c. ruth will reach out to the board of health."
+  },
+  {
+   "decision": "K. Menard will review her notes to identify which memorials were on Marshall Park property.",
+   "quote": "k. menard will go through her notes to see what memorials were currently on the property."
+  },
+  {
+   "decision": "The Chair will check with the Town Manager and, if necessary, Town Council on whether a Marshall Park and buildings warrant article can be split.",
+   "quote": "but would check with the town manager and if necessary town council."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Wildlife Encounters February vacation program fee",
+   "what_was_recorded": "The Recreation Director reported a junior zookeeper program fee of $10 per person with a $30 cap for families.",
+   "figures_as_printed": [
+    "$10",
+    "$30"
+   ],
+   "quote": "junior zookeeper program, $10 per person with a $30 cap for families."
+  },
+  {
+   "topic": "Board of Health money for town sewer connection",
+   "what_was_recorded": "The Chair asked whether Board of Health money could fund a sewer connection instead of a septic system; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "a. scheipers asked c. ruth if the board of health money could be used for connection to the town sewer"
+  },
+  {
+   "topic": "Town reimbursement of lifeguard WSI test cost",
+   "what_was_recorded": "The Clerk asked whether the town reimburses lifeguards for the WSI test, and the Recreation Director said yes; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "k. menard asked if the town reimburses the lifeguards for the cost of the wsi test. a. clement stated yes."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities Director Updates",
+   "resolution": "no updates",
+   "quote": "c. ruth stated he had no updates.",
+   "tags": [
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Recreation Director Updates",
+   "resolution": "reported; no votes; beach Director hiring, beach attendance, swim lessons, February programs, vendor fair insurance",
+   "quote": "a. clement stated j. belliveau posted the lifeguard and beach director positions.",
+   "tags": [
+    "recreation",
+    "beach",
+    "lifeguards",
+    "programs",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Marshall Park Updates",
+   "resolution": "layout reviewed; Board of Health sewer question and memorials follow-up assigned",
+   "quote": "the commission reviewed the updated layout of the planned renovations.",
+   "tags": [
+    "marshall park",
+    "phasing",
+    "drainage",
+    "ball fields",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Marshall Park Design and Phasing; next steps; preparation for annual town meeting",
+   "resolution": "discussed; chair to check warrant article split with Town Manager and Town Council",
+   "quote": "a. scheipers stated the select board is still wanting to work collaboratively with the commission",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "select board",
+    "marshall park"
+   ]
+  },
+  {
+   "topic": "Invoices to be approved",
+   "resolution": "none; approved by chair and clerk sign-off, no vote recorded",
+   "quote": "none. a. scheipers notes the ones that came in she and k. menard signed-off on as approved by the commission.",
+   "tags": [
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Earth Day Cleanup - formal Commission involvement",
+   "resolution": "discussed; no decision recorded",
+   "quote": "c. sullivan feels the way the commission participated last worked well.",
+   "tags": [
+    "earth day",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Master Planning Committee assignment",
+   "resolution": "no action",
+   "quote": "a. scheipers noted the commission has taken no action.",
+   "tags": [
+    "master planning"
+   ]
+  },
+  {
+   "topic": "Chair Updates",
+   "resolution": "reported; thank-you received from skate park group",
+   "quote": "a. scheipers indicated a thank you had been received from the skate park group",
+   "tags": [
+    "skate park"
+   ]
+  },
+  {
+   "topic": "Commission Updates",
+   "resolution": "no action",
+   "quote": "next item on the agenda, commission updates none.",
+   "tags": []
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "no action; none on agenda, no vote recorded",
+   "quote": "next item on the agenda, approval of minutes none.",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "beach",
+  "lifeguards",
+  "recreation programs",
+  "marshall park",
+  "phasing",
+  "town meeting warrant",
+  "select board",
+  "sewer",
+  "board of health",
+  "earth day",
+  "skate park",
+  "volunteers",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

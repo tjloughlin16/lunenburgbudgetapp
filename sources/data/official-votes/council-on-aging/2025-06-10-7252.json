@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-06-10",
  "docid": "7252",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes with the noted amendment",
+   "motion": "Accept the minutes with the noted spelling amendment.",
    "moved_by": "Mr. Lincoln",
-   "seconded_by": "Mr. McGuigan",
+   "seconded_by": "Mr.McGuigan",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln moved to accept the minutes with the noted amendment. it was seconded by mr.mcguigan. all approved, motion was carried."
   },
   {
-   "motion": "Appoint Ms. Lincoln and Ms. Rabbitt as Chair and Vice Chair for the COA Board for '25-'26",
+   "motion": "Appoint Ms. Lincoln and Ms. Rabbitt as Chair and Vice Chair of the COA Board for ‘25-’26.",
    "moved_by": "Mr. Lincoln",
-   "seconded_by": "Ms. O'Sullivan",
+   "seconded_by": "Ms. O’Sullivan",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. lincoln moved that ms. lincoln and ms. rabbitt be appointed as chair and vice chair for the coa board for '25-'26. ms. o'sullivan seconded. all approved, motion was carried."
   },
   {
-   "motion": "Proceed with a study on adding a lift to access the 2nd level",
+   "motion": "Proceed with a study of adding a lift for access to the second level (to be submitted to the capital plan).",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. Lockwood",
    "outcome": "passed",
@@ -36,15 +36,371 @@
    "quote": "mr. lincoln made a motion to proceed with a study. seconded by ms. lockwood. all approved, motion was carried."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 11:17am.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded. it passed unanimously."
+   "quote": "adjournement a motion was made and seconded. it passed unanimously. meeting adjourned at 11:17am."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0670514
+ "note": "Text is clean extracted text from a single-page header stamp (\"Minutes approved at July 8, 2025 COA Meeting\") on each page; no scan. Votes are recorded only as \"All approved\" or \"passed unanimously\", with no tallies, so outcomes are recorded as \"passed\" rather than a count. The adjournment motion names no mover or seconder. Name variants are printed as they appear: \"John Silmi\" in the guest list and \"John Cilmi\" in the body, both kept as printed. The minutes print \"Mr. Lincoln\" and \"Ms. Lincoln\" without first names; the attribution to Peter Lincoln as the Mr. is inferred from the Present list and is not stated in the minutes, so the mover is recorded as \"Mr. Lincoln\". Ms. Roy is thanked for the minutes but is not listed as present, so she is not recorded as an attendee.",
+ "cost_usd": 0.01832657,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "call to order chairperson deb lincoln called the meeting to order at 9:38am"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Peter Lincoln",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Elena Christopher",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Jim McGuigan",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Cathy Beale",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Ana Lockwood",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Helen Balcom",
+   "status": "absent",
+   "quote": "excused: helen balcom"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: jennifer warren-dyment (town manager), barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), jack rabbitt, lou franco, john silmi"
+  },
+  {
+   "name": "Barbara Coulombe",
+   "role": "Eagle House Supporters Vice President",
+   "status": "present",
+   "quote": "guests: jennifer warren-dyment (town manager), barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), jack rabbitt, lou franco, john silmi"
+  },
+  {
+   "name": "Deb Goodsell",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "guests: jennifer warren-dyment (town manager), barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), jack rabbitt, lou franco, john silmi"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "applicant for open board position",
+   "status": "present",
+   "quote": "there are three applicants, john cilmi, lou franco, jack rabbitt, for the open positions on the board and they introduced themselves."
+  },
+  {
+   "name": "Lou Franco",
+   "role": "applicant for open board position",
+   "status": "present",
+   "quote": "there are three applicants, john cilmi, lou franco, jack rabbitt, for the open positions on the board and they introduced themselves."
+  },
+  {
+   "name": "John Silmi",
+   "role": "applicant for open board position",
+   "status": "present",
+   "quote": "guests: jennifer warren-dyment (town manager), barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), jack rabbitt, lou franco, john silmi"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lockwood to continue research on helping seniors with building permits; the topic is added to the next agenda.",
+   "quote": "the board indicated that they would like her to continue to pursue this topic and will add it to the next agenda."
+  },
+  {
+   "decision": "Trial the Center's adjusted hours (Monday and Wednesday evenings, additional hours on other days, closing at noon on Fridays) for a few months.",
+   "quote": "the board agreed to trial this for a few months and see how it goes."
+  },
+  {
+   "decision": "The Director will schedule programs so they do not conflict, given the limited rooms at the LAAC.",
+   "quote": "the director will work to make sure programs are scheduled to not conflict."
+  },
+  {
+   "decision": "Ms. Lincoln to follow up with the Town Manager on the nomenclature of COA Board and COA Department at a later date.",
+   "quote": "ms. lincoln will follow up with town manager on that at a later date."
+  },
+  {
+   "decision": "A new Eagle House Supporters member is to be voted on at the next meeting.",
+   "quote": "one member has resigned but a new individual has expressed interest and will be voted on at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 27 budget priorities (Director)",
+   "what_was_recorded": "The Director's FY 27 priorities are to change the Outreach Coordinator job description to Assistant Director/Outreach Coordinator and to add a Program Coordinator; no dollar figure was printed.",
+   "quote": "ms. goodsell reported that her priorities for the fy 27 budget are to advocate for a change in the job description of the outreach coordinator",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY 27 budget planning (Town-wide)",
+   "what_was_recorded": "The Town Manager spoke about the budgetary needs of the whole town and the need to start planning for FY 27; no dollar figure was printed.",
+   "quote": "town manager spoke about the budgetary needs of the whole town and the need to start planning for fy '27.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY 25 budget spending (financial reports)",
+   "what_was_recorded": "The Director reported that most funds have been expended from the FY 25 budget and reports were submitted to the Board; no dollar figure was printed.",
+   "quote": "ms. goodsell reported that most funds have been expended from the fy '25 budget and submitted those reports to the board.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Access to second level (lift)",
+   "what_was_recorded": "The initial cost of a lift appears to be cost prohibitive, though several members noted price tags of under 100k.",
+   "quote": "the initial cost appears to be cost prohibitive, but several members noted price tags of under 100k.",
+   "figures_as_printed": [
+    "under 100k"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters fundraiser",
+   "what_was_recorded": "A Hannaford Helps bag fundraiser is running and the Supporters will receive a portion of the proceeds; no dollar figure was printed.",
+   "quote": "current fundraiser running with hannaford helps selling bags and the supporters will get a portion.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "MART rides",
+   "what_was_recorded": "MART rides will continue at no cost to riders for the time being; no dollar figure was printed.",
+   "quote": "mart rides will also continue at no cost for the time being.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "ms. lincoln announced that the historical society will be doing a presentation at the laac on 6/13 at 1pm",
+   "tags": [
+    "meetings",
+    "LAAC"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none offered",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment: building permits research",
+   "resolution": "continued to next agenda",
+   "quote": "ms. lockwood reported that she has been doing research on helping seniors with their building permits.",
+   "tags": [
+    "building permits",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved with spelling amendment",
+   "quote": "minutes approval: small adjustment needed to the spelling of one name.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Election of officers FY ‘26",
+   "resolution": "approved",
+   "quote": "election of officers for fy '26: mr. lincoln moved that ms. lincoln and ms.",
+   "tags": [
+    "officers",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Thank-yous and board applicants",
+   "resolution": "no action; applicants to meet Select Board June 17",
+   "quote": "there are three applicants, john cilmi, lou franco, jack rabbitt, for the open positions on the board and they introduced themselves.",
+   "tags": [
+    "appointments",
+    "volunteers",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "FY 27 budget and tri-board committee",
+   "resolution": "discussed; no action",
+   "quote": "ms. goodsell reported that her priorities for the fy 27 budget are to advocate for a change in the job description",
+   "tags": [
+    "FY27 budget",
+    "tri-board",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Financial reports",
+   "resolution": "reported; no action",
+   "quote": "ms. goodsell reported that most funds have been expended from the fy '25 budget",
+   "tags": [
+    "finance",
+    "FY25 budget"
+   ]
+  },
+  {
+   "topic": "Senior Advisory Team healthcare task force",
+   "resolution": "three Lunch and Learns recommended",
+   "quote": "the team met and are recommending three lunch and learns",
+   "tags": [
+    "healthcare",
+    "lunch and learn"
+   ]
+  },
+  {
+   "topic": "Local hospital services",
+   "resolution": "no action",
+   "quote": "there are no new updates at this time. umass is still seeking permissions.",
+   "tags": [
+    "healthcare",
+    "hospital"
+   ]
+  },
+  {
+   "topic": "Programs moved from the building",
+   "resolution": "reported; no action",
+   "quote": "two programs were moved to the library due to scheduling conflicts.",
+   "tags": [
+    "programs",
+    "space"
+   ]
+  },
+  {
+   "topic": "Space issues and Bucky’s Corner furniture",
+   "resolution": "discussed; no decision",
+   "quote": "ms. goodsell reported that she would like to replace the couches in bucky's corner",
+   "tags": [
+    "space",
+    "furniture",
+    "LAAC"
+   ]
+  },
+  {
+   "topic": "Access to second level: lift study",
+   "resolution": "study approved",
+   "quote": "mr. lincoln made a motion to proceed with a study. seconded by ms. lockwood.",
+   "tags": [
+    "accessibility",
+    "facilities",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Lunenburg Master Plan",
+   "resolution": "no action",
+   "quote": "update on lunenburg master plan meeting: none noted.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Sand for Seniors program",
+   "resolution": "reported; details in fall",
+   "quote": "the sand for seniors program will have some changes, and more information will be coming in the fall.",
+   "tags": [
+    "winter",
+    "seniors",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Director's report: programs and center hours",
+   "resolution": "trial of new hours agreed for a few months",
+   "quote": "adjustment of center hours: ms. goodsell is looking at adjusting the hours of operation here at the center.",
+   "tags": [
+    "programs",
+    "hours",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported; new member to be voted on next meeting",
+   "quote": "one member has resigned but a new individual has expressed interest and will be voted on at the next meeting.",
+   "tags": [
+    "Eagle House Supporters",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "quote": "notices and communications none",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Board comment: kiosk, furniture, thanks",
+   "resolution": "discussed; no action",
+   "quote": "ms. lincoln asked about the kiosk, and ms. goodsell reported that we were waiting on scheduling changes",
+   "tags": [
+    "kiosk",
+    "furniture"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:17am",
+   "quote": "adjournement a motion was made and seconded. it passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior services",
+  "FY27 budget",
+  "facilities and accessibility",
+  "programming",
+  "LAAC",
+  "officer election",
+  "board appointments",
+  "Eagle House Supporters",
+  "healthcare",
+  "Sand for Seniors"
+ ],
+ "dropped_unquoted_by_field": {}
 }

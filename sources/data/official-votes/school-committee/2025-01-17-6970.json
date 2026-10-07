@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-01-17",
  "docid": "6970",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session",
+   "motion": "Enter executive session for strategy in preparation for nonunion negotiations and collective bargaining or contract negotiations with nonunion personnel.",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -20,23 +20,23 @@
    "quote": "ms. archambault makes a motion to enter executive session, ms. brzozoski seconds the motion, all approve via roll call."
   },
   {
-   "motion": "Approve the internal job posting for superintendent",
+   "motion": "Approve the internal job posting for the Superintendent position.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to approve the internal job posting, ms. archambault seconds the motion, all approve via roll call vote."
+   "quote": "ms. brzozoski makes a motion to approve the internal job posting"
   },
   {
-   "motion": "Approve the screening committee post with potential for dates to be adjusted as needed",
+   "motion": "Approve the screening committee post, with potential for dates to be adjusted as needed.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to approve the screening committee post with potential for dates to be adjusted as needed. ms. archambault seconds the motion, all approve via roll call"
+   "quote": "ms. brzozoski makes a motion to approve the screening committee post with potential for dates to be adjusted as needed."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 4:09.",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -45,6 +45,135 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. All passed unanimously (recorded as \"all approve via roll call\"). Three members present: Lehtinen (Chair), Archambault (Secretary), and Brzozoski (Member); Sculimbrene and Beardmore were absent.",
- "cost_usd": 0.0690644
+ "note": "Text is a clean extraction, not a scan. Four motions are recorded and each result is printed only as \"all approve via roll call\" or \"all approve\"; no per-member tally or count is printed, so outcomes are recorded as \"passed\" without a count. Attendance is printed as present/absent per member, but the header calls the meeting a \"Remote Meeting\" and the minutes do not say which members attended remotely. Dr. Kate Burnham appears in the header and at the footer but no statement says she took part. The minutes describe a plan B timeline and an appointment date of February 5th but record no vote on either. No dollar figures appear in the text.",
+ "cost_usd": 0.013395670000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brian lehtinen, chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "anthony sculimbrene, vice chair - absent"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "carol archambault, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "absent",
+   "quote": "peter beardmore, member - absent"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "not stated",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted courtney fuller"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee assigned Mr. Lehtinen and Ms. Archambault to the search committee for the Superintendent search.",
+   "quote": "the school committee assigned mr. lehtinen and ms. archambault for the search committee."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action; called to order at 3:11",
+   "quote": "1. call to order by brian lehtinen at 3:11",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "no speakers recorded (\"None\")",
+   "quote": "2. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session; returned at 3:32",
+   "quote": "ms. archambault makes a motion to enter executive session",
+   "tags": [
+    "executive session",
+    "negotiations",
+    "nonunion personnel"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no speakers recorded (\"None\")",
+   "quote": "4. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Superintendent search: committee and job posting",
+   "resolution": "search committee assigned; internal job posting and screening committee post approved",
+   "quote": "the school committee assigned mr. lehtinen and ms. archambault for the search committee.",
+   "tags": [
+    "superintendent search",
+    "hiring",
+    "job posting",
+    "search committee"
+   ]
+  },
+  {
+   "topic": "Public comment (third)",
+   "resolution": "no speakers recorded (\"None\")",
+   "quote": "6. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 4:09",
+   "quote": "7. adjournment ms. archambault makes a motion to adjourn at 4:09",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "superintendent search",
+  "hiring",
+  "search committee",
+  "executive session",
+  "nonunion personnel",
+  "remote meeting",
+  "public comment none",
+  "special meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

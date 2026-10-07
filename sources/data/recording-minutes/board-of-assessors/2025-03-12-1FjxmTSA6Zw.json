@@ -440,5 +440,240 @@
    "at": "2026-10-06T18:00:58Z",
    "cost_usd": 0.213413
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122025-7091",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-03-12-minutes-7091.txt",
+   "path": "sources/meetings/board-of-assessors/2025-03-12-minutes-7091.pdf"
+  },
+  "official_sha256": "9ec7ffeb964c0a195ccca021eec01e8fa73e7588a45ef4e681350d63aca4369e",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the Island Road vote, the $175,000 overlay vote, the deed-letter policy vote, the CAI invoices and the April 10 chapter-land deadline. They disagree on the votes: the official minutes record a Highland Road chapter land vote that ours lacks, and ours record two executive-session release votes that the official minutes lack. Check those first, then the overlay year-to-date total, where $128,648 and $128,967.40 differ by more than a digit grouping.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 5,
+   "discrepancy": 4,
+   "only_in_ours": 8,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: 8.9 acres on Island Road, recreational (61B)",
+    "ours": "Approve putting about 8.9 acres on Island Road into Chapter land for recreational purposes — passed",
+    "official": "motion by sarah cammer to approve 8.9 acres on island road for recreational purposes (61b). second john rabbitt. all in favor.",
+    "note": "Same item and outcome in both records.",
+    "t": 1932
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: Highland Road chapter land application",
+    "ours": "",
+    "official": "there was a motion to approve the chapter land application for highland road by sarah cammer, seconded by john rabbitt. sarah cammer aye, john rabbitt aye, brian laffond aye.",
+    "note": "A roll-call vote appears in the official minutes and not in ours; check the recording for a Highland Road vote, since ours may have merged it with Island Road."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Votes: release of Feb 5 and Feb 19 executive session minutes",
+    "ours": "Approve for release the February 5th 2025 executive session minutes — passed; Approve the February 19th executive session minutes for release — passed",
+    "official": "",
+    "note": "Our minutes record two votes that the official minutes do not mention; check whether the town omitted them or the votes were not taken as we heard them.",
+    "t": 2444
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: deed letter adopted as policy",
+    "ours": "Accept the deed letter as the board's policy and proceed with it — passed",
+    "official": "there was a motion to approve the letter as policy by john rabbitt, seconded by sarah cammer. all in favor.",
+    "note": "Same vote on the homeowner letter about incomprehensible deeds.",
+    "t": 5215
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: overlay set at $175,000",
+    "ours": "Set the overlay request at $175,000 — passed",
+    "official": "there is a motion to approve the overlay amount of $175,000 by sarah cammer, seconded by john rabbitt. all in favor.",
+    "note": "Same amount and outcome.",
+    "t": 7327
+   },
+   {
+    "kind": "caption_error",
+    "about": "Abatements dollar total",
+    "ours": "8,796 66",
+    "official": "11 have been granted totaling $8,796.66, 9 have been denied, 13 to be",
+    "note": "Same figure; the captions dropped the punctuation.",
+    "official_reading": "$8,796.66",
+    "t": 519
+   },
+   {
+    "kind": "agree",
+    "about": "CAI invoices",
+    "ours": "3,000, 3,400, 6,400",
+    "official": "$3,000 for support renewal and an additional $3,400 for the revision of the maps",
+    "note": "Both invoice amounts match; 6,400 in ours is their sum.",
+    "t": 3104
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Motor vehicle excise abatements total",
+    "ours": "$1,174, $1,494 A9, 4,781, $132.99, $4,910 57, $1 6,638, 1436 45, 2339",
+    "official": "abatements for motor vehicle excise taxes were signed totaling $16,063.18.",
+    "note": "Ours list garbled individual amounts and give no stated total; the official total is not directly confirmable from ours.",
+    "t": 3692
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Year-to-date exemptions and abatements (overlay discussion)",
+    "ours": "128,648, 202, 12289",
+    "official": "so far this year the exemptions and abatements total $128,967.40.",
+    "note": "The captioned 128,648 differs from $128,967.40 in more than digit grouping; check the recording at this point.",
+    "t": 6690
+   },
+   {
+    "kind": "agree",
+    "about": "Overlay range discussed",
+    "ours": "175, 200",
+    "official": "$175,000 to $200,000",
+    "note": "The range matches the official overlay discussion (Laffond's suggestion).",
+    "t": 6690
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital plan for neighborhood revaluation",
+    "ours": "27,500, 275, $882,000",
+    "official": "",
+    "note": "The official minutes carry no revaluation capital plan figures.",
+    "t": 5300
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior means-tested exemption figures",
+    "ours": "2730, 275",
+    "official": "",
+    "note": "The official minutes give no corresponding figures.",
+    "t": 4290
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter land second request, April 10 deadline, and documenting the policy",
+    "ours": "Chapter land applicants get a second request and an April 10th deadline; the practice should be documented as policy.",
+    "official": "new deadline of april 10, 2025. if no response, the land will revert to full valuation.",
+    "note": "The deadline and the agreement to write the policy down match.",
+    "t": 1090
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "HERO Act motor vehicle abatements issued physically",
+    "ours": "HERO Act motor vehicle abatements must be issued as physical abatements, not removed from the commitment; the process should be documented.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3505
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Vision contract and mailing letters by street",
+    "ours": "Board will check the Vision contract to see whether Vision must mail letters to homeowners by street.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 1321
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Executive session minutes should document reasons",
+    "ours": "Executive session minutes in future should document reasons for decisions, possibly by control number.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 2488
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Joint meeting with DOR attorney, tax billing responsibility",
+    "ours": "Principal assessor to try to arrange a joint meeting with the DOR attorney, the board, the finance director and town manager.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 6250
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Overlay request to finance director by email, and next meeting dates",
+    "ours": "Overlay request to be communicated to the finance director by email. Meetings set for March 19, April 2 and April 16.",
+    "official": "",
+    "note": "Neither the email follow-up nor the dates appear in the official minutes.",
+    "t": 7933
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Senior exemption: deadline versus vote scheduling",
+    "ours": "Senior exemption application deadline targeted as the first Wednesday in September.",
+    "official": "a time will need to be scheduled for the board to vote on income and asset limits.",
+    "note": "The two describe different outcomes of the senior exemption discussion; check the recording for whether a September deadline was set.",
+    "t": 4247
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MLS renewal approved and signed",
+    "ours": "",
+    "official": "the quarterly renewal subscription for mls was approved and signed.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Farm land (61A) approval delayed",
+    "ours": "",
+    "official": "approval delayed: not eligible until june, 2026.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair",
+    "ours": "Jack (chair; also called Mr. chairman)",
+    "official": "present members: chair -brian laffond, vice chair -sarah cammer, clerk -john rabbitt, principal assessor -lynda mcquade",
+    "note": "Same person, the chair; the captions rendered the name wrongly.",
+    "official_reading": "Brian Laffond"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: clerk",
+    "ours": "Mr. Rabbit (member)",
+    "official": "present members: chair -brian laffond, vice chair -sarah cammer, clerk -john rabbitt, principal assessor -lynda mcquade",
+    "note": "Misheard surname.",
+    "official_reading": "John Rabbitt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: vice chair",
+    "ours": "Miss Hammer (member); Sarah (member)",
+    "official": "present members: chair -brian laffond, vice chair -sarah cammer, clerk -john rabbitt, principal assessor -lynda mcquade",
+    "note": "Likely one person recorded twice by the captions; the official minutes list three board members.",
+    "official_reading": "Sarah Cammer"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: principal assessor",
+    "ours": "Linda (principal assessor)",
+    "official": "present members: chair -brian laffond, vice chair -sarah cammer, clerk -john rabbitt, principal assessor -lynda mcquade",
+    "note": "Spelling of the first name differs.",
+    "official_reading": "Lynda McQuade"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendees: Robin and Denise",
+    "ours": "Robin (assessing office administrator); Denise (data collector)",
+    "official": "",
+    "note": "Staff present on the recording are not listed in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:28:57Z",
+   "cost_usd": 0.261125
+  }
  }
 }

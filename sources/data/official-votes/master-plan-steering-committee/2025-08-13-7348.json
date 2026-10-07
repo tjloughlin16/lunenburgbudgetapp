@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2025-08-13",
  "docid": "7348",
@@ -12,43 +12,200 @@
  },
  "votes": [
   {
-   "motion": "Approve the April 5, 2024 and May 15, 2024 meeting minutes",
+   "motion": "Approve the April 5, 2024 and May 15, 2024 meeting minutes.",
    "moved_by": "Jerry",
    "seconded_by": "Tony",
    "outcome": "passed",
    "procedural": true,
-   "quote": "jerry motions to approve april 5, 2024 and may 15, 2024 meeting minutes. tony seconds the motion. roll call vote: i. sondra (yes) ii. jerry (yes) iii. emily (yes) iv. teddy (yes) v. tony (aye) vi. kim (aye) vii. motion passes, meeting minutes of april 5, 2024 an",
-   "quote_taken_from_text": true
+   "quote": "jerry motions to approve april 5, 2024 and may 15, 2024 meeting minutes. tony seconds the motion."
   },
   {
-   "motion": "Approve the April 23, 2025 meeting minutes",
+   "motion": "Approve the April 23, 2025 meeting minutes.",
    "moved_by": "Tony",
    "seconded_by": "Emily",
    "outcome": "passed",
    "procedural": true,
-   "quote": "tony motions to approve the april 23, 2025 meeting minutes. emily seconds the motion. roll call vote: i. sondra (aye) ii. jerry (aye) iii. emily (aye) iv. teddy (aye) v. tony (aye) vi. kim (aye) vii. motion passes, meeting minutes of ",
-   "quote_taken_from_text": true
+   "quote": "tony motions to approve the april 23, 2025 meeting minutes. emily seconds the motion."
   },
   {
-   "motion": "Approve the July 9, 2025 meeting minutes",
+   "motion": "Approve the July 9, 2025 meeting minutes (Glen abstained).",
    "moved_by": "Jerry",
    "seconded_by": "Tony",
    "outcome": "passed",
    "procedural": true,
-   "quote": "jerry motions to approve the july 9, 2025 meeting minutes. tony seconds the motion. roll call vote: i. sondra (aye) ii. jerry (aye) iii. emily (aye)\\ iv. teddy (aye) v. tony (aye) vi. kim (aye) vii. glen (abstained) viii. motion passes, meeting mi",
-   "quote_taken_from_text": true
+   "quote": "jerry motions to approve the july 9, 2025 meeting minutes. tony seconds the motion."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Tony",
    "seconded_by": "Jerry",
    "outcome": "passed",
    "procedural": true,
-   "quote": "tony makes a motion to adjourn. jerry seconds the motion. roll call vote: ● jerry (yes) ● emily (yes) ● teddy (yes) ● glen (yes) ● tony (yes) ● kim (yes) ● sondra (yes) ● motion passes. meeting is adjou",
-   "quote_taken_from_text": true
+   "quote": "tony makes a motion to adjourn. jerry seconds the motion."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0939404
+ "note": "Typed minutes, not a scan. Roll-call votes are recorded by name without printed totals, so outcomes are given as \"passed\" from the printed \"Motion passes\"; the July 9, 2025 vote records one abstention (Glen). \"Tony\" and \"Glen\" appear in votes; the minutes do not state they are Anthony Sculimbrene and Glenn Mcleod, so that mapping is an inference from the attendee list. Tim Willsmer and Glenn Mcleod arrived at 6:10 pm and are not on the April 5, 2024 and May 15, 2024 roll call; the minutes do not say why. Public comment and committee comment were none. The minutes print no dollar figures.",
+ "cost_usd": 0.014448970000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kim Duffy",
+   "role": "Chair, Member At Large",
+   "status": "present",
+   "quote": "kim duffy (chair, member at large)"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair, Member At Large",
+   "status": "present",
+   "quote": "anthony sculimbrene (vice chair, member at large)"
+  },
+  {
+   "name": "Jerry Reid",
+   "role": "Clerk, Member At Large",
+   "status": "present",
+   "quote": "jerry reid (clerk, member at large)"
+  },
+  {
+   "name": "Emily Young",
+   "role": "School Committee Representative",
+   "status": "present",
+   "quote": "emily young (school committee representative)"
+  },
+  {
+   "name": "Sondra Harp",
+   "role": "Virtual, Member At Large",
+   "status": "remote",
+   "quote": "sondra harp (virtual, member at large)"
+  },
+  {
+   "name": "Glenn Mcleod",
+   "role": "Select Board Representative",
+   "status": "present",
+   "quote": "glenn mcleod (select board representative) - (6:10 pm arrival, in-person)"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Planning Board Representative",
+   "status": "remote",
+   "quote": "tim willsmer (planning board representative) (6:10 pm arrival, virtual, dropped at 7:24"
+  },
+  {
+   "name": "Teddy Doucette",
+   "role": "Conversation Commission Representative",
+   "status": "present",
+   "quote": "teddy doucette (conversation commission representative)"
+  },
+  {
+   "name": "Rami el Samahy",
+   "role": "Over Under Consultant",
+   "status": "present",
+   "quote": "rami el samahy (over under consultant)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Continue advertising and follow up with the Committee on the Master Plan (next steps of drafting).",
+   "quote": "keep advertising and follow up with committee"
+  },
+  {
+   "decision": "Committee will get feedback to OverUnder to get something going; goal is town meeting.",
+   "quote": "we will get feedback to overunder to get something going"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "1. call to order - 6:04pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "2. public comment - no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comment",
+   "resolution": "no committee comment",
+   "quote": "3. committee comment - no committee comment",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Vacant seats",
+   "resolution": "noted: Conservation Commission seat filled by Teddy; Zoning Board of Appeals and At Large not filled",
+   "quote": "conversation commission new member of mpsc - teddy",
+   "tags": [
+    "vacancies",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Meeting minutes approvals",
+   "resolution": "approved minutes of April 5, 2024, May 15, 2024, April 23, 2025 and July 9, 2025",
+   "quote": "jerry motions to approve april 5, 2024 and may 15, 2024 meeting minutes.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "OverUnder / Lunenburg discussion summary",
+   "resolution": "discussed; feedback to OverUnder; goal is town meeting",
+   "quote": "plan was discussed and different ways to implement / work on it",
+   "tags": [
+    "OverUnder consultant",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "OverUnder presentation of implementation strategies and document layout",
+   "resolution": "presented and discussed",
+   "quote": "overunder presentation of master plan implementation strategies and document layout",
+   "tags": [
+    "implementation strategies",
+    "document layout",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Next steps of Master Plan drafting",
+   "resolution": "continue advertising; potential public meeting October 22nd",
+   "quote": "potential public meeting october 22nd",
+   "tags": [
+    "public meeting",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:09 PM",
+   "quote": "adjournment. tony makes a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "master plan",
+  "planning",
+  "OverUnder consultant",
+  "minutes approval",
+  "vacancies",
+  "implementation strategies",
+  "public meeting",
+  "town meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

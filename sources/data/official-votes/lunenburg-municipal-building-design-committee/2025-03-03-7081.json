@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2025-03-03",
  "docid": "7081",
@@ -12,15 +12,202 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "outcome": "passed (unanimous; no count printed)",
    "procedural": true,
    "quote": "the meeting was adjourned at 6:48pm, with a unanimous vote.",
-   "moved_by": "",
    "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record only one formal vote: an adjournment vote at the end of the meeting. The body of the minutes documents discussions about building finances, future plans, and financial requests, but does not record any formal motions or votes on these topics. The language \"The committee agreed to finalize financial requests\" indicates consensus reached during discussion, not a formal vote.",
- "cost_usd": 0.0590684
+ "note": "Text-only extract of minutes, not a scan; readable throughout. Only one recorded vote: adjournment, which the minutes call unanimous without a mover, seconder, or count. No other motions are recorded, so the committee's agreement to finalize financial requests is listed as a decision, not a vote. The minutes print no public comment section, so public_comment is empty even though Tony Sculumbrine is listed as a community guest with no statement attributed to him. No dollar figure appears except the approximately $22 million high estimate. Mover and seconder for adjournment are not printed.",
+ "cost_usd": 0.01338827,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, matthew allison, greg roy, kristina masaitis, tom gray, david blatt"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, matthew allison, greg roy, kristina masaitis, tom gray, david blatt"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, matthew allison, greg roy, kristina masaitis, tom gray, david blatt"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, matthew allison, greg roy, kristina masaitis, tom gray, david blatt"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, matthew allison, greg roy, kristina masaitis, tom gray, david blatt"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, matthew allison, greg roy, kristina masaitis, tom gray, david blatt"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Members absent",
+   "status": "absent",
+   "quote": "members absent: michael-ray jeffreys"
+  },
+  {
+   "name": "Tony Sculumbrine",
+   "role": "Community Guests",
+   "status": "present",
+   "quote": "community guests: tony sculumbrine"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to finalize its financial requests and prepare for the upcoming town meeting, with a clear presentation of costs and rationale.",
+   "quote": "the committee agreed to finalize financial requests and prepare for the upcoming town meeting."
+  },
+  {
+   "decision": "The next meeting was scheduled for March 17, 2025, to discuss financials and project updates.",
+   "quote": "the next meeting was scheduled for march 17th, where further discussions on financials and project updates would take place."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Renovation and new construction cost estimate",
+   "what_was_recorded": "A high estimate of about $22 million, including contingencies for unforeseen costs, was discussed for the proposed renovations and new construction.",
+   "figures_as_printed": [
+    "$22 million"
+   ],
+   "quote": "a high estimate of approximately $22 million was discussed, including contingencies for unforeseen costs."
+  },
+  {
+   "topic": "Repair funding and maintenance spending over five years",
+   "what_was_recorded": "A member asked that the committee communicate how much time and money has been spent maintaining municipal buildings over the past five years; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the member emphasized the need to communicate how much time and money has been spent on maintaining the municipal buildings over the past five years."
+  },
+  {
+   "topic": "Repair funds allocated versus improvements made",
+   "what_was_recorded": "Significant funds were said to have been allocated for repairs, but no amount is printed and minimal funds were said to have gone to necessary repairs.",
+   "figures_as_printed": [],
+   "quote": "it was noted that significant funds had been allocated for repairs, but many essential improvements had not been made."
+  },
+  {
+   "topic": "Brooks House financial implications",
+   "what_was_recorded": "Questions were raised about the financial implications of maintaining or leasing Brooks House, and about revenue from leasing or selling; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "questions regarding the financial implications of maintaining or leasing brooks house."
+  },
+  {
+   "topic": "TC Passios building maintenance cost",
+   "what_was_recorded": "Concerns were raised about the maintenance costs and the financial burden of maintaining the TC Passios building; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "concerns were raised about its current usage and maintenance costs."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and concerns over building repair funding",
+   "resolution": "discussed; no action",
+   "tags": [
+    "budget",
+    "transparency",
+    "building repairs"
+   ],
+   "quote": "a member raised concerns about the budget information and the criticism the committee might face regarding the funding allocated for building repairs."
+  },
+  {
+   "topic": "Town Hall and Ritter building maintenance history",
+   "resolution": "discussed; no action",
+   "tags": [
+    "maintenance",
+    "Town Hall",
+    "Ritter building",
+    "roofs"
+   ],
+   "quote": "the committee discussed the financial investments in the town's buildings, particularly town hall and the ritter building."
+  },
+  {
+   "topic": "Architect's report and future plans for municipal buildings",
+   "resolution": "reviewed; no action",
+   "tags": [
+    "architect report",
+    "renovation",
+    "new construction",
+    "parking",
+    "historic preservation"
+   ],
+   "quote": "the committee reviewed the architect's report and the proposed plans for the buildings, which included renovation and potential new construction."
+  },
+  {
+   "topic": "Brooks House future",
+   "resolution": "discussed; no decision, need for a clear plan noted",
+   "tags": [
+    "Brooks House",
+    "lease",
+    "sell"
+   ],
+   "quote": "the committee discussed the brooks house and its future. there was uncertainty about the direction to take, whether to lease, sell, or maintain the building."
+  },
+  {
+   "topic": "TC Passios building future",
+   "resolution": "discussed; no action",
+   "tags": [
+    "TC Passios",
+    "temporary location",
+    "community use",
+    "voting"
+   ],
+   "quote": "the committee addressed the tc passios building's future. concerns were raised about its current usage and maintenance costs."
+  },
+  {
+   "topic": "Financial requests for renovations and new construction",
+   "resolution": "reviewed; agreed to finalize requests for town meeting",
+   "tags": [
+    "capital requests",
+    "town meeting",
+    "cost estimate"
+   ],
+   "quote": "the committee reviewed the financial requests necessary for the proposed renovations and new construction."
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for March 17; adjourned 6:48pm, unanimous",
+   "tags": [
+    "scheduling",
+    "adjournment"
+   ],
+   "quote": "the next meeting was scheduled for march 17th, where further discussions on financials and project updates would take place."
+  }
+ ],
+ "tags": [
+  "municipal buildings",
+  "Town Hall",
+  "Ritter building",
+  "Brooks House",
+  "TC Passios building",
+  "architect report",
+  "capital requests",
+  "building repairs",
+  "budget transparency",
+  "town meeting",
+  "cost estimate"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2025-04-07",
  "docid": "7130",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from March 3, 2025",
+   "motion": "Approve the minutes of March 3, 2025.",
    "moved_by": "Proctor",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -20,23 +20,23 @@
    "quote": "on motion by proctor and second by fortin, the minutes were approved."
   },
   {
-   "motion": "Approve variances for 1178 Northfield Road septic system including IA system, Geomat offset to wetlands from 50 feet to 34 feet, and sieve analysis use",
+   "motion": "Approve the variances requested for 1178 Northfield Road: use of an IA system, a Geomat, offset to wetlands from 50 feet to 34 feet, and use of a sieve analysis.",
    "moved_by": "Fortin",
    "seconded_by": "Proctor",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by fortin and second by proctor, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by fortin and second by proctor, the variances were approved."
   },
   {
-   "motion": "Accept the Recreational Department plan for porta toilets on town property",
+   "motion": "Accept the Recreational Department plan for porta toilets on town property.",
    "moved_by": "Proctor",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by proctor and second by fortin, the board voted to accept the recreational department plan for porta toilets."
+   "quote": "after discussion and on motion by proctor and second by fortin, the board voted to accept the recreational department plan for porta toilets."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 5:15 pm.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -45,6 +45,103 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08859040000000001
+ "note": "Clean digital text, not a scan; all four motions are recorded with their movers. Outcomes are 'passed' because the minutes say 'all in favor' or 'approved' but print no tally. Movers and seconders are printed by surname only, and 'Proctor' could be Matt Proctor (a member) or Dan Proctor (who appeared for the owner); the minutes do not say which. No public comment section appears; Dan Proctor's appearance is recorded as a presentation by an applicant's representative. Angela Clement and Andrea Schnepf are named but their attendance at this meeting is not stated. No dollar figures appear.",
+ "cost_usd": 0.012904470000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "Member, Board of Health",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin and matt proctor also present lorraine rudd"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Member, Board of Health",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin and matt proctor also present lorraine rudd"
+  },
+  {
+   "name": "Matt Proctor",
+   "role": "Member, Board of Health",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin and matt proctor also present lorraine rudd"
+  },
+  {
+   "name": "Lorraine Rudd",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin and matt proctor also present lorraine rudd"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Angela Clement",
+   "role": "Recreational Director",
+   "status": "not stated",
+   "quote": "today, recreational director angela clement provided andrea schnepf with the required information"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "today, recreational director angela clement provided andrea schnepf with the required information"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of March 3, 2025",
+   "resolution": "approved",
+   "quote": "on motion by proctor and second by fortin, the minutes were approved.",
+   "tags": [
+    "meeting minutes"
+   ]
+  },
+  {
+   "topic": "1178 Northfield Road septic variances",
+   "resolution": "variances approved",
+   "quote": "this system is in failure. although the property contained 1.63 acres, it is predominately wetlands.",
+   "tags": [
+    "septic system",
+    "variances",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Porta toilets on town property",
+   "resolution": "Recreational Department plan accepted",
+   "quote": "today, recreational director angela clement provided andrea schnepf with the required information",
+   "tags": [
+    "porta toilets",
+    "Recreation Department",
+    "town property"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:15 pm",
+   "quote": "on motion by jewell and seconded by fortin, the meeting was adjourned at 5:15 pm, all in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "septic system",
+  "variances",
+  "wetlands",
+  "porta toilets",
+  "Recreation Department",
+  "meeting minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

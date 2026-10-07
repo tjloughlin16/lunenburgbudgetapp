@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2025-02-03",
  "docid": "6975",
@@ -12,23 +12,215 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the January 6, 2025 meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Accept the minutes of 1/06/25.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Lincoln",
-   "quote": "motion to accept o (f.beall, 2nd p.lincoln), passed"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "1/06/25 - motion to accept o (f.beall, 2nd p.lincoln), passed"
   },
   {
-   "motion": "Accept the minutes from the January 20, 2025 meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Accept the minutes of 1/20/25.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Lincoln",
-   "quote": "motion to accept o (f.beall, 2nd p.lincoln), passed"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "1/20/25 - motion to accept o (f.beall, 2nd p.lincoln), passed"
+  },
+  {
+   "motion": "Adjourn the meeting at 6:50 pm.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "F.Beall",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "meeting adjourned at 6:50 pm • (s.archambault, 2nd f.beall - passed)"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0824854
+ "dropped_unquoted": 0,
+ "note": "Text extraction only, not a scan; readable throughout. Three motions are recorded with votes (two minutes approvals and adjournment), all carried as \"passed\" with no tally printed. No other motions or votes are recorded. The space contacts were recorded as \"(tabled)\" without a vote. Public comment and communications were both \"None\". The minutes name an \"interim Town Manager\" who is not shown as taking part, so is not listed as an attendee. Pete Lincoln is recorded as participating by zoom.",
+ "cost_usd": 0.01364287,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln (zoom), steve archambault, faith beall"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "remote",
+   "quote": "pacc members present: steve walker, pete lincoln (zoom), steve archambault, faith beall"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln (zoom), steve archambault, faith beall"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln (zoom), steve archambault, faith beall"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "manager: jo toale public comments: - • none"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J.Toale to check whether the updated PAC space need was sent to Town Hall.",
+   "quote": "s.walker asked j.toale if updated pac space need was sent to town hall. j.toale will check."
+  },
+  {
+   "decision": "J.Toale to add interest investment to the financial report.",
+   "quote": "s.walker requested that j.toale add interest investment to financial report."
+  },
+  {
+   "decision": "Two possible private space contacts presented by S.Archambault were tabled.",
+   "quote": "s.archambault presented 2 possible private space contacts (tabled)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PAC current balance",
+   "what_was_recorded": "The Manager reported the current balance.",
+   "figures_as_printed": [
+    "$1,023,147.64"
+   ],
+   "quote": "current balance $1,023,147.64"
+  },
+  {
+   "topic": "FY26 PAC budget",
+   "what_was_recorded": "S.Walker presented the budget to the interim Town Manager; discussion followed, with the question of whether the warrant should contain real numbers and no overall objections. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "s.walker presented budget to interim town manager (discussion)"
+  },
+  {
+   "topic": "Enterprise Fund investment status",
+   "what_was_recorded": "No update was given on the Enterprise Fund investment status.",
+   "figures_as_printed": [],
+   "quote": "enterprise fund investment status: • no update at this time"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no comments",
+   "quote": "public comments: - • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments: updated PAC space need",
+   "resolution": "Manager to check whether the need was sent to Town Hall",
+   "quote": "s.walker asked j.toale if updated pac space need was sent to town hall. j.toale will check.",
+   "tags": [
+    "space",
+    "Town Hall"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no communications",
+   "quote": "communications: - • none",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Minutes of 1/06/25 and 1/20/25",
+   "resolution": "approved",
+   "quote": "1/06/25 - motion to accept o (f.beall, 2nd p.lincoln), passed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's report",
+   "resolution": "received; no vote",
+   "quote": "new affiliate - madison nh • hired new videographer - lili marble",
+   "tags": [
+    "manager report",
+    "staffing",
+    "programming"
+   ]
+  },
+  {
+   "topic": "FY26 budget",
+   "resolution": "presented to interim Town Manager; discussion, no vote",
+   "quote": "s.walker presented budget to interim town manager (discussion)",
+   "tags": [
+    "budget",
+    "FY26"
+   ]
+  },
+  {
+   "topic": "Policy review: program submission policy",
+   "resolution": "continued; awaiting legal review",
+   "quote": "program submission policy was sent to legal. as of last week the attorney has not responded.",
+   "tags": [
+    "policy",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Studio space update",
+   "resolution": "private space contacts tabled; town new Town Hall space update",
+   "quote": "s.archambault presented 2 possible private space contacts (tabled)",
+   "tags": [
+    "studio space",
+    "Town Hall"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee report",
+   "resolution": "no report",
+   "quote": "master plan steering committee report: no report",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund investment status",
+   "resolution": "no update",
+   "quote": "enterprise fund investment status: • no update at this time",
+   "tags": [
+    "enterprise fund",
+    "investment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:50 pm",
+   "quote": "meeting adjourned at 6:50 pm • (s.archambault, 2nd f.beall - passed)",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "cable",
+  "PAC budget",
+  "FY26 budget",
+  "FY25 budget",
+  "studio space",
+  "Town Hall",
+  "program policy",
+  "Comcast franchise",
+  "enterprise fund",
+  "minutes",
+  "Master Plan"
+ ],
+ "dropped_unquoted_by_field": {}
 }

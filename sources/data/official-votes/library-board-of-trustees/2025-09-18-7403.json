@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2025-09-18",
  "docid": "7403",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of June 12, 2025, as amended",
+   "motion": "Accept the minutes of June 12, 2025, as amended.",
    "moved_by": "Robin",
    "seconded_by": "Stephanie",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "robin made a motion to accept the minutes of june 12, 2025, as amended, seconded by stephanie. the motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Accept gifts from the Lunenburg Women's Club and Nashoba Valley Pride",
+   "motion": "Accept the gifts from the Lunenburg Women’s Club and Nashoba Valley Pride.",
    "moved_by": "Robin",
    "seconded_by": "Harry",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "robin made a motion to accept the gifts from the lunenburg women's club and nashoba valley pride, seconded by harry. the motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Laura",
    "seconded_by": "Stephanie",
    "outcome": "passed unanimously",
@@ -37,6 +37,377 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0943914
+ "note": "Text extracted from a PDF; several tables (FY25/FY26 budget, adult programming) are garbled, so only the totals lines were quoted. Votes are recorded as 'passed unanimously by roll call vote' with no numeric count printed. The Edward Jones verbal confirmation and the Open Meeting Law and Master Plan items were not votes and are recorded as decisions or deferrals only where the minutes state one. Attachments (pages 5-13) were read for figures only. Roles are given only where the minutes print them.",
+ "cost_usd": 0.02163707,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "remote",
+   "status": "remote",
+   "quote": "attending: harry kubetz (remote), maia wentrup (acting chair), laura boussom, robin venezia, stephanie trudel, muir haman"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Acting Chair",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by acting chair maia wentrup."
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "present",
+   "quote": "attending: harry kubetz (remote), maia wentrup (acting chair), laura boussom, robin venezia, stephanie trudel, muir haman"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Treasurer of the Trustees",
+   "status": "present",
+   "quote": "edward jones already has permission from myleen mallari, town treasurer, to talk to robin, treasurer of the trustees."
+  },
+  {
+   "name": "Stephanie Trudel",
+   "status": "present",
+   "quote": "attending: harry kubetz (remote), maia wentrup (acting chair), laura boussom, robin venezia, stephanie trudel, muir haman"
+  },
+  {
+   "name": "Muir Haman",
+   "status": "present",
+   "quote": "attending: harry kubetz (remote), maia wentrup (acting chair), laura boussom, robin venezia, stephanie trudel, muir haman"
+  },
+  {
+   "name": "Nicole Groskreutz",
+   "role": "of Edward Jones",
+   "status": "present",
+   "quote": "nicole groskreutz of edward jones met with the trustees for our annual review of investments."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Keep the same investment strategy with Edward Jones.",
+   "quote": "we are staying with the same investment strategy."
+  },
+  {
+   "decision": "Robin and Muir to draft an updated investment policy and working guidelines on how funds should be distributed among the three categories, to be presented to the full Board for discussion.",
+   "quote": "robin will work with muir to draft an updated investment policy and establish working guidelines on how the funds should be distributed between these three categories."
+  },
+  {
+   "decision": "Edward Jones may communicate with the Treasurer; nothing further needs to be done (permission already given by the Town Treasurer; verbal Trustee confirmation recorded, no vote).",
+   "quote": "edward jones already has permission from myleen mallari, town treasurer, to talk to robin, treasurer of the trustees."
+  },
+  {
+   "decision": "Muir to send thank-you notes for the Women’s Club and Nashoba Valley Pride gifts.",
+   "quote": "muir will send thank you notes for these two donations."
+  },
+  {
+   "decision": "Harry to write a thank-you note to Main Street Bank.",
+   "quote": "harry will write a thank you note to main street bank."
+  },
+  {
+   "decision": "Muir to present a gift policy next month.",
+   "quote": "muir is developing a gift policy that he will present to us next month."
+  },
+  {
+   "decision": "Muir to ask the Conroy family whether they want a plaque or a dedication ceremony.",
+   "quote": "muir will ask bob conroy's family if they would like a plaque installed or a dedication ceremony."
+  },
+  {
+   "decision": "Master Plan Steering Committee feedback deferred to next month, when David is present.",
+   "quote": "we will discuss this next month when david is here, since he is our representative to the mpsc."
+  },
+  {
+   "decision": "Trustee Handbook not discussed; placed on next month’s agenda.",
+   "quote": "did not discuss. will put it on next month's agenda."
+  },
+  {
+   "decision": "Open Meeting Law discussion deferred to next month; Harry to consult Town Manager Jennifer Warren for her opinion.",
+   "quote": "harry will discuss this with jennifer warren, the town manager, to get her opinion."
+  },
+  {
+   "decision": "Muir to check whether a recently replaced meter is causing the higher electricity charge.",
+   "quote": "maia asked if a meter had recently been replaced and could be causing this increase. muir will check on this."
+  },
+  {
+   "decision": "Muir to bring the $900 cafe furniture overage to the next Friends’ meeting.",
+   "quote": "muir will bring this up at the next friends' meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Edward Jones investment total",
+   "what_was_recorded": "Total investments with Edward Jones were reported as of 9/17/25.",
+   "quote": "total investments as of 9/17/25 was $107,733.20.",
+   "figures_as_printed": [
+    "$107,733.20"
+   ]
+  },
+  {
+   "topic": "Investment allocation vs. original percentages",
+   "what_was_recorded": "Gains in the managed/balanced account moved the split away from the 2023 target percentages; the policy is to be redrafted.",
+   "quote": "due to gains in the edward jones managed/balanced account, the current distribution of funds no longer matches the original investment percentages",
+   "figures_as_printed": [
+    "40%",
+    "2%",
+    "58%",
+    "34%",
+    "5%",
+    "61%"
+   ]
+  },
+  {
+   "topic": "Lunenburg Women’s Club gift",
+   "what_was_recorded": "A $100 unrestricted gift from the Women’s Club was accepted.",
+   "quote": "the lunenburg women's club gave a $100 gift to the library with no restrictions attached.",
+   "figures_as_printed": [
+    "$100"
+   ]
+  },
+  {
+   "topic": "Nashoba Valley Pride gift",
+   "what_was_recorded": "A $100 gift restricted to books and/or materials on LGBTQIA+ topics was accepted.",
+   "quote": "nashoba valley pride gave a $100 gift to the library to be used for books and/or materials related to lgbtqia+",
+   "figures_as_printed": [
+    "$100"
+   ]
+  },
+  {
+   "topic": "FY2025 outstanding invoices",
+   "what_was_recorded": "Two invoices were still outstanding against FY2025: SHI to office supplies and Baker & Taylor to library materials.",
+   "quote": "muir is waiting for two outstanding invoices. one is from shi for $2,400, which will be entered under office supplies.",
+   "figures_as_printed": [
+    "$2,400",
+    "$1,300"
+   ]
+  },
+  {
+   "topic": "FY2025 budget totals",
+   "what_was_recorded": "The FY25 library budget table prints a total budget and an amount expended.",
+   "quote": "totals 591,686$ 586,526$ 99%",
+   "figures_as_printed": [
+    "591,686$",
+    "586,526$"
+   ]
+  },
+  {
+   "topic": "FY2026 budget totals",
+   "what_was_recorded": "The FY26 library budget table prints a total budget and an amount expended to date.",
+   "quote": "totals 632,037$ 108,362$ 17%",
+   "figures_as_printed": [
+    "632,037$",
+    "108,362$"
+   ]
+  },
+  {
+   "topic": "Electricity charges",
+   "what_was_recorded": "Electricity is running higher than last year; the $70 figure is a minimum monthly charge.",
+   "quote": "the $70 amount is a minimum monthly charge.",
+   "figures_as_printed": [
+    "$70"
+   ]
+  },
+  {
+   "topic": "Five-year plan consultant",
+   "what_was_recorded": "A consultant for the five-year plan, if hired, would be budgeted under contracted services; no amount was given.",
+   "quote": "if we hire a consultant for this, it will be budgeted under contracted services.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cafe furniture overage",
+   "what_was_recorded": "The cafe furniture order placed with Blockhouse exceeds the Friends’ allocation.",
+   "quote": "the cost is $900 over what the friends allocated.",
+   "figures_as_printed": [
+    "$900"
+   ]
+  },
+  {
+   "topic": "Teen Room renovation contingency",
+   "what_was_recorded": "The Friends released a contingency for the Teen Room renovation, to be deposited in a CD.",
+   "quote": "the 20k contingency for the teen room reno has been released and will be deposited in a cd.",
+   "figures_as_printed": [
+    "20K"
+   ]
+  },
+  {
+   "topic": "Circulation value",
+   "what_was_recorded": "The director reported the value of FY25 physical circulation.",
+   "quote": "77,543 physical items circulated (for a value of $1.148m), with another 34,363 digital circulations.",
+   "figures_as_printed": [
+    "$1.148M"
+   ]
+  },
+  {
+   "topic": "Adult programming financial report",
+   "what_was_recorded": "The adult programs budget grand total and percentages spent, encumbered and remaining as of 9/1/2025.",
+   "quote": "grand total $14,600 13% 25% 62%",
+   "figures_as_printed": [
+    "$14,600"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Laura",
+   "topic": "Library of Services fundraiser",
+   "quote": "laura explained the library of services fundraiser to the trustees and passed out forms in case anyone had a service they wished to donate."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Library of Services fundraiser",
+   "resolution": "information shared",
+   "quote": "laura explained the library of services fundraiser to the trustees and passed out forms in case anyone had a service they wished to donate.",
+   "tags": [
+    "fundraiser",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Edward Jones annual investment review",
+   "resolution": "same strategy kept; cash-out letter needed for CD rollover",
+   "quote": "nicole groskreutz of edward jones met with the trustees for our annual review of investments.",
+   "tags": [
+    "investments",
+    "Edward Jones"
+   ]
+  },
+  {
+   "topic": "Treasurer’s report: investment policy update",
+   "resolution": "Robin and Muir to draft updated policy for Board discussion",
+   "quote": "robin explained that the trustees' investment policy needs to be updated to reflect current practices and correct out-of-date information.",
+   "tags": [
+    "investment policy",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of June 12, 2025",
+   "resolution": "approved as amended",
+   "quote": "robin made a motion to accept the minutes of june 12, 2025, as amended, seconded by stephanie. the motion passed unanimously by roll call vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Thanks to Debbie Laffond",
+   "resolution": "discussed; public goodbye on October 6",
+   "quote": "we discussed what the trustees could do to recognize debbie's years of service to the library and town.",
+   "tags": [
+    "staff retirement",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Acceptance of gifts and memorial bench",
+   "resolution": "gifts accepted; bench proposal and gift policy due next month",
+   "quote": "the lunenburg women's club gave a $100 gift to the library with no restrictions attached.",
+   "tags": [
+    "gifts and donations",
+    "memorial bench"
+   ]
+  },
+  {
+   "topic": "Director’s report",
+   "resolution": "received; FY25 and FY26 budget, staff, programs, outreach, technology, building updates",
+   "quote": "we are coming off the best statistical summer ever for the library!",
+   "tags": [
+    "director's report",
+    "budget",
+    "programs",
+    "technology",
+    "building"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee feedback",
+   "resolution": "deferred to next month",
+   "quote": "we will discuss this next month when david is here, since he is our representative to the mpsc.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook",
+   "resolution": "not discussed; moved to next month’s agenda",
+   "quote": "did not discuss. will put it on next month's agenda.",
+   "tags": [
+    "trustee handbook"
+   ]
+  },
+  {
+   "topic": "Conroy Memorial Garden",
+   "resolution": "sculpture installed; plaque or dedication question to family",
+   "quote": "muir will ask bob conroy's family if they would like a plaque installed or a dedication ceremony.",
+   "tags": [
+    "memorial garden",
+    "Conroy"
+   ]
+  },
+  {
+   "topic": "Room use policy",
+   "resolution": "discussed; proposed stipulation on group contact residency",
+   "quote": "muir would like to add a stipulation that the contact person of any group using the library should live in lunenburg.",
+   "tags": [
+    "room use policy"
+   ]
+  },
+  {
+   "topic": "Brooks House update",
+   "resolution": "information only",
+   "quote": "the new superintendent may have some interest in the brooks house.",
+   "tags": [
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Friends update",
+   "resolution": "information only",
+   "quote": "the annual meeting was in july. thirteen members were in attendance.",
+   "tags": [
+    "Friends of the library"
+   ]
+  },
+  {
+   "topic": "Book challenge discussion",
+   "resolution": "discussed; patron directed to reconsideration form",
+   "quote": "a patron called and spoke with muir about a children's book that concerned them.",
+   "tags": [
+    "book challenge",
+    "reconsideration"
+   ]
+  },
+  {
+   "topic": "Open Meeting Law as applied to reviews",
+   "resolution": "deferred to next month",
+   "quote": "defer to next month when david will be here.",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:35 p.m., passed unanimously",
+   "quote": "the meeting was adjourned at 10:35 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "investments",
+  "investment policy",
+  "gifts and donations",
+  "FY25 budget",
+  "FY26 budget",
+  "director's report",
+  "Friends of the library",
+  "staff",
+  "room use policy",
+  "book challenge",
+  "open meeting law",
+  "Conroy garden",
+  "20th anniversary"
+ ],
+ "dropped_unquoted_by_field": {}
 }

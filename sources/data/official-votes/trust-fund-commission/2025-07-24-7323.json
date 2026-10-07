@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2025-07-24",
  "docid": "7323",
@@ -12,29 +12,209 @@
  },
  "votes": [
   {
-   "motion": "Approve July 10, 2025 meeting minutes",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "minutes of july 10, 2025, trust fund commission were unanimously approved as written."
-  },
-  {
-   "motion": "Adopt the Risk Mitigation and Best Practices Policy",
-   "outcome": "passed 2-0",
-   "procedural": false,
-   "moved_by": "Richard Howard",
-   "seconded_by": "John Bowen",
-   "quote": "the motion to adopt was raised by richard howard and seconded by john bowen the vote resulted in the following richard howard-aye, john bowen-aye, vote was unanimous and the risk management and best practices policy was ratified and signed."
-  },
-  {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve the minutes of July 10, 2025 as written.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
+   "quote": "minutes of july 10, 2025, trust fund commission were unanimously approved as written.",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Adopt (ratify and sign) the Risk Mitigation and Best Practices Policy compiled by Chairman Bowen.",
+   "moved_by": "Richard Howard",
+   "outcome": "passed 2-0",
+   "procedural": false,
+   "quote": "the motion to adopt was raised by richard howard and seconded by john bowen the vote resulted in the following richard howard-aye, john bowen-aye, vote was unanimous",
+   "seconded_by": "John Bowen"
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chairman Bowen",
-   "seconded_by": "Mr. Howard",
-   "quote": "there was a motion to adjourn by chairman bowen, seconded by mr. howard. the meeting was adjourned at 6:30 pm"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "there was a motion to adjourn by chairman bowen, seconded by mr. howard. the meeting was adjourned at 6:30 pm",
+   "seconded_by": "Mr. Howard"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08988040000000001
+ "note": "Text is typed minutes, not a scan; all quotes were checked against it with double spaces collapsed. Three votes recorded: minutes approval (unanimous, no mover or seconder printed), policy adoption (roll call 2-0, Howard moved and Bowen seconded), and adjournment (Bowen moved, Howard seconded, outcome stated as adjourned at 6:30 PM). The policy is called both \"Risk Mitigation and Best Practices Policy\" and \"Risk Management and Best Practices Policy\" in the minutes; the motion uses the first name. Attorney Adam Costa and the Town Manager are mentioned only as past or referenced figures, not as attendees at this meeting, so they are omitted. Board-member remarks in Section 2 are recorded as board discussion, not public comment. The 9.51% New Harbor figure is a benchmark the minutes cite, not a verified return.",
+ "cost_usd": 0.015031770000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman john bowen and vice-chair richard howard"
+  },
+  {
+   "name": "Richard Howard",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: chairman john bowen and vice-chair richard howard"
+  },
+  {
+   "name": "David Rogers",
+   "role": "member of the public, 82 Highland Ave (no role printed)",
+   "status": "present",
+   "quote": "david rogers of 82 highland ave was in attendance, mr. rogers stated he has been in lunenburg for over 50 years"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting set for Thursday, August 14, 2025 at 5:00 PM.",
+   "quote": "next meeting scheduled for thursday august 14, 2025 at 5:00 pm."
+  },
+  {
+   "decision": "Chairman Bowen to seek retrieval of the four Miscellaneous-category trust documents from the Worcester County probate court (the chair has reached out).",
+   "quote": "chairman bown has reached out to the worcester county probate court to have these documents retrieved and provided to the trust fund commission so they can be properly acted upon."
+  },
+  {
+   "decision": "Action items for next meeting: policy management and investment parameters, and funds discussion.",
+   "quote": "policy management and investment parameters, funds discussion"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Portfolio return over the past year",
+   "what_was_recorded": "Chairman Bowen characterised the portfolio's return over the past year as poor, below the rate of inflation.",
+   "figures_as_printed": [
+    "less than 2.5%"
+   ],
+   "quote": "highlighted the poor return of the portfolio over the past year, which was less than 2.5%"
+  },
+  {
+   "topic": "Benchmark return of a local fund (New Harbor Financial)",
+   "what_was_recorded": "Mr. Howard cited a local investment fund's return over the same period as a benchmark for the commission's own returns.",
+   "figures_as_printed": [
+    "9.51%"
+   ],
+   "quote": "a local investment fund (new harbor financial) achieved a return of 9.51% over this same period."
+  },
+  {
+   "topic": "Costs and penalties from comingled trust funds",
+   "what_was_recorded": "Costs and penalties from poor planning and budgeting in other funds of the Trust Fund portfolio were said to reduce all five portfolio balances; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "any costs and penalties that are incurred as a result of poor planning and budgeting of the other funds managed as part of the larger trust fund portfolio"
+  },
+  {
+   "topic": "Final fiscal year numbers from Town Accounting",
+   "what_was_recorded": "The chair stressed the need for final fiscal year numbers from Town Accounting, which was still closing the year; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "chairman bowen again stressed the importance of receiving final fiscal year numbers from the town accounting department"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Requests for trust fund documents and the public comment clause",
+   "speaker": "David Rogers",
+   "stated_role": "82 Highland Ave",
+   "quote": "david rogers, 82 highland ave. made a comment regarding the public comment clause as written in our meeting notice."
+  },
+  {
+   "topic": "Questions raised out of order during the meeting",
+   "speaker": "David Rogers",
+   "stated_role": "82 Highland Ave",
+   "quote": "chairman bowen did allow mr. rogers to ask questions and make comments out of respect for his attendance"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "opened at 5:00 PM",
+   "quote": "the meeting opened at 5:00 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "no action; out-of-order questions allowed",
+   "quote": "chairman bowen did allow mr. rogers to ask questions and make comments out of respect for his attendance",
+   "tags": [
+    "public comment",
+    "town counsel",
+    "trust fund documents"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "approved as written",
+   "quote": "minutes of july 10, 2025, trust fund commission were unanimously approved as written.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Business a. Organization",
+   "resolution": "no action; vacancy remains unfilled",
+   "quote": "the current vacancy on the trust fund commission remains unfilled.",
+   "tags": [
+    "vacancy",
+    "organization"
+   ]
+  },
+  {
+   "topic": "New Business b. Management of the Trust Funds",
+   "resolution": "Risk Mitigation and Best Practices Policy adopted by roll call vote 2-0; documents sought from probate court",
+   "quote": "the motion to adopt was raised by richard howard and seconded by john bowen the vote resulted in the following richard howard-aye, john bowen-aye, vote was unanimous",
+   "tags": [
+    "trust fund management",
+    "risk policy",
+    "portfolio returns",
+    "comingled funds",
+    "probate court",
+    "fiscal year close"
+   ]
+  },
+  {
+   "topic": "New Business c. Scheduled Meetings",
+   "resolution": "next meeting set for August 14, 2025",
+   "quote": "next meeting scheduled for thursday august 14, 2025 at 5:00 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "New Business d. Action items for next meeting",
+   "resolution": "listed for next meeting",
+   "quote": "policy management and investment parameters, funds discussion",
+   "tags": [
+    "investment policy"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no action; chair stated public comment clause complies with MGL",
+   "quote": "the chair assured mr. rogers that the public comment statement in our meeting notice is in full compliance with mgl",
+   "tags": [
+    "public comment",
+    "open meeting"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 6:30 PM",
+   "quote": "the meeting was adjourned at 6:30 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "trust funds",
+  "miscellaneous trust documents",
+  "probate court",
+  "portfolio returns",
+  "comingled funds",
+  "risk policy",
+  "vacancy",
+  "public comment",
+  "open meeting clause",
+  "fiscal year close",
+  "investment policy"
+ ],
+ "dropped_unquoted_by_field": {}
 }

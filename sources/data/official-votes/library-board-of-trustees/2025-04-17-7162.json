@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2025-04-17",
  "docid": "7162",
@@ -12,31 +12,334 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of March 20, 2025 as amended",
+   "motion": "Accept the minutes of March 20, 2025, as amended.",
    "moved_by": "Jana",
    "seconded_by": "David",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "jana made a motion to accept the minutes of march 20, 2025 as amended, seconded by david. the motion passed unanimously."
   },
   {
-   "motion": "Accept the action item list under the Outreach Plan",
+   "motion": "Accept the action item list under the Outreach Plan.",
    "moved_by": "David",
    "seconded_by": "Jana",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "david made a motion to accept the action item list under the outreach plan, seconded by jana. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "David",
    "seconded_by": "Jana",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion to adjourn was made by david, seconded by jana. the motion passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. All passed unanimously. Attendees listed as Harry Kubetz, Laura Boussom, Maia Wentrup (remote), Jana-Lee Balish, David Niose, Muir Haman, Michael-Ray Jeffreys (remote).",
- "cost_usd": 0.0903738
+ "note": "Text extracted from a PDF with page breaks and spacing artifacts; not a scan, so all text is readable. Votes are recorded only as 'passed unanimously' with no roll-call counts. The Brooks House discussion records no motion or vote. Public comment: 'No public comment.' Speaker names are spelled inconsistently in the minutes ('Micheal-Ray' in attendance, 'Michael-Ray' in the body); the attendance spelling is used. Muir Haman's role is not printed in the minutes. The attached Director's Report, Children's Services and Adult Services reports, and the FY25 table are part of this text and were read. Dollar figures in the FY25 table and the adult programs report are as printed in attachments, not minutes prose. No formal reserve or line-item transfer is recorded; the staff-leave cost cover is described as 'Muir can cover' without a vote.",
+ "cost_usd": 0.01824477,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:51 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "present",
+   "quote": "attending: harry kubetz, laura boussom, maia wentrup (remote), jana-lee balish, david niose, muir haman,"
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "remote",
+   "quote": "attending: harry kubetz, laura boussom, maia wentrup (remote), jana-lee balish, david niose, muir haman,"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "status": "present",
+   "quote": "attending: harry kubetz, laura boussom, maia wentrup (remote), jana-lee balish, david niose, muir haman,"
+  },
+  {
+   "name": "David Niose",
+   "status": "present",
+   "quote": "attending: harry kubetz, laura boussom, maia wentrup (remote), jana-lee balish, david niose, muir haman,"
+  },
+  {
+   "name": "Muir Haman",
+   "status": "present",
+   "quote": "attending: harry kubetz, laura boussom, maia wentrup (remote), jana-lee balish, david niose, muir haman,"
+  },
+  {
+   "name": "Micheal-Ray Jeffreys",
+   "status": "remote",
+   "quote": "attending: harry kubetz, laura boussom, maia wentrup (remote), jana-lee balish, david niose, muir haman,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Muir will not cancel Hoopla; he will keep an eye on reported concerns.",
+   "quote": "muir will not be cancelling hoopla but will keep an eye on reported concerns."
+  },
+  {
+   "decision": "No changes will be made to the Quiet Room policy for now; Muir will keep watching the tutoring and room-use issue.",
+   "quote": "there are no changes being made to the quiet room policy right now."
+  },
+  {
+   "decision": "The June meeting moves from June 19 (Juneteenth, library closed) to June 12.",
+   "quote": "the library is closed on june 19th. we will be meeting on june 12th."
+  },
+  {
+   "decision": "Muir will follow up with Chris Ruth on the amount of ARPA contingency funds to be spent.",
+   "quote": "no update on the amount of contingency funds that will be spent. muir will follow up with chris ruth about this."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2025 budget: staff leave cover",
+   "what_was_recorded": "Muir said he can cover any extra cost from the staff leave using excess from heating and electricity, and remaining Library Materials funds will go to databases before June renewals; no dollar figure was printed in the minutes.",
+   "quote": "muir can cover any additional cost using excess from heating and electricity.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY25 budget table (attached Director's Report)",
+   "what_was_recorded": "The attached Director's Report prints the FY25 budget, amount expended and percent expended by line; the totals line shows 67% expended.",
+   "quote": "totals 592,063$ 393,885$ 67%",
+   "figures_as_printed": [
+    "592,063$",
+    "393,885$",
+    "67%",
+    "90,726$",
+    "67,784$",
+    "94,000$",
+    "31,292$",
+    "33%"
+   ]
+  },
+  {
+   "topic": "Adult programs financial report",
+   "what_was_recorded": "The Adult Services report lists adult program budget lines as of 4/17/2025 with percent spent, encumbered and remaining; the grand total is $14,600 at 76% spent.",
+   "quote": "grand total $14,600 76% 16% 8%",
+   "figures_as_printed": [
+    "$4,500",
+    "90%",
+    "$3,000",
+    "55%",
+    "$500",
+    "89%",
+    "$6,600",
+    "70%",
+    "$14,600",
+    "76%",
+    "16%",
+    "8%"
+   ]
+  },
+  {
+   "topic": "Summer lunch grant request",
+   "what_was_recorded": "Muir is submitting a grant application to Main Street Bank asking it to fund summer lunches again this year; no amount was printed.",
+   "quote": "muir is submitting a grant application to main street bank, requesting that they provide funds to pay for summer lunches again this year.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ARPA contingency funds",
+   "what_was_recorded": "No update was given on how much of the ARPA contingency funds will be spent; no dollar figure was printed.",
+   "quote": "no update on the amount of contingency funds that will be spent.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "LCC-funded adult programs",
+   "what_was_recorded": "Adult Services noted that two programs were funded by an LCC grant; no dollar figure was printed.",
+   "quote": "this was funded by an lcc grant.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Redevelopment of Brooks House",
+   "resolution": "discussed, no action; trustees continued discussion after Micheal-Ray Jeffreys left",
+   "quote": "discussion about the redevelopment of brooks house",
+   "tags": [
+    "Brooks House",
+    "parking",
+    "safety",
+    "sale or lease"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment ● no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of March 20, 2025",
+   "resolution": "approved as amended",
+   "quote": "jana made a motion to accept the minutes of march 20, 2025 as amended, seconded by david.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report: FY2025 budget update",
+   "resolution": "noted; excess heating and electricity to cover staff leave cost",
+   "quote": "the fiscal year is 75% completed.",
+   "tags": [
+    "FY25 budget",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Director's report: FY2026 budget and staff update",
+   "resolution": "FY2026 no update; advocacy calls and IMLS letter noted",
+   "quote": "the library shared calls to participate in empowered by libraries from mblc and show up for our libraries from the ala",
+   "tags": [
+    "advocacy",
+    "IMLS",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Outreach plan",
+   "resolution": "action item list accepted",
+   "quote": "melanie, lydia, and muir have finalized a proposal for outreach services.",
+   "tags": [
+    "outreach",
+    "plan"
+   ]
+  },
+  {
+   "topic": "Programs update",
+   "resolution": "noted; grant application and Council on Aging book delivery reported",
+   "quote": "muir reported that deb goodsell, director of the council on aging, is talking to their meals on wheels clients about home delivery of books.",
+   "tags": [
+    "programs",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Technology update",
+   "resolution": "noted; vendor being contacted about broken computer",
+   "quote": "another of the new dell computers broke. muir is contacting the vendor.",
+   "tags": [
+    "technology"
+   ]
+  },
+  {
+   "topic": "Building and maintenance update",
+   "resolution": "noted",
+   "quote": "the proctor memorial garden water feature should be running this week.",
+   "tags": [
+    "building",
+    "garden"
+   ]
+  },
+  {
+   "topic": "Conroy Memorial Garden",
+   "resolution": "discussed; family supportive",
+   "quote": "bob's family are supportive of our plans for a garden and would like to work with us to make it happen.",
+   "tags": [
+    "garden"
+   ]
+  },
+  {
+   "topic": "ARPA update",
+   "resolution": "no update; Muir to follow up",
+   "quote": "no update on the amount of contingency funds that will be spent.",
+   "tags": [
+    "ARPA",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Room use and tutors in the library (deferred from March)",
+   "resolution": "no policy change; Muir to keep watching",
+   "quote": "there are no changes being made to the quiet room policy right now.",
+   "tags": [
+    "room use",
+    "tutoring",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Hoopla report",
+   "resolution": "not cancelled; monitor concerns",
+   "quote": "muir will not be cancelling hoopla but will keep an eye on reported concerns.",
+   "tags": [
+    "Hoopla",
+    "AI",
+    "security",
+    "privacy"
+   ]
+  },
+  {
+   "topic": "Library Invested Funds update",
+   "resolution": "no update",
+   "quote": "library invested funds update ○ no update.",
+   "tags": [
+    "invested funds"
+   ]
+  },
+  {
+   "topic": "Brooks House update",
+   "resolution": "see first item",
+   "quote": "brooks house update/discussion ○ see first item above.",
+   "tags": [
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Friends update",
+   "resolution": "continuing discussion; no decision on book sale schedule",
+   "quote": "this is a continuing discussion.",
+   "tags": [
+    "Friends of the Library",
+    "book sale",
+    "20th anniversary"
+   ]
+  },
+  {
+   "topic": "June meeting time",
+   "resolution": "moved to June 12",
+   "quote": "discuss our june meeting time. it falls on june 19th, the juneteenth holiday.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Board comments and other",
+   "resolution": "none",
+   "quote": "board comments ○ none ● other ○ none",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:17 p.m.",
+   "quote": "meeting was adjourned at 9:17 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "Brooks House",
+  "parking",
+  "Hoopla",
+  "outreach plan",
+  "FY25 budget",
+  "ARPA",
+  "Friends of the Library",
+  "programs",
+  "technology",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

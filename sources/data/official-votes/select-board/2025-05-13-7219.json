@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-05-13",
  "docid": "7219",
@@ -12,56 +12,501 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's Appointment of Brody Tapply as Student Police Officer, effective May 18, 2025",
+   "motion": "Ratify the Town Manager's appointment of Brody Tapply as Student Police Officer, effective May 18, 2025.",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Jeffreys",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by chair nuzzolo to ratify the town manager's appointment of brody tapply as student police officer, effective may 18, 2025. seconded by vice-chair jeffreys. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+   "quote": "chair nuzzolo to ratify the town manager's appointment of brody tapply as student police officer, effective may 18, 2025. seconded by vice-chair jeffreys."
   },
   {
-   "motion": "Co-sponsor the LHS Cares Lunenburg Trash Clean Up event on May 31st from 9:00 a.m. to 12:00 p.m.",
+   "motion": "Co-sponsor the LHS Cares Lunenburg Trash Clean Up event on May 31st, 9:00 a.m. to 12:00 p.m.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Vice-Chair Jeffreys",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by member alonzo to co-sponsor the lhs cares lunenburg trash clean up event on may 31st from 9:00 a.m. to 12:00 p.m. seconded by vice-chair jeffreys. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+   "quote": "member alonzo to co-sponsor the lhs cares lunenburg trash clean up event on may 31st from 9:00 a.m. to 12:00 p.m. seconded by vice-chair jeffreys."
   },
   {
-   "motion": "Ratify the Town Manager's Appointments of Jarrod Bowser as Seasonal Beach Director, Logan O'Connell as Executive Assistant to the Town Manager and Select Board, Brian Gingras as Land Use Director, Casey Corey as Seasonal Lifeguard, and James Versoi as Seasonal Cemetery Laborer",
+   "motion": "Ratify the Town Manager's appointments as described in the continued Appointments list (Tapply, Bowser, O'Connell, Gingras, Corey, Versoi).",
    "moved_by": "Vice-Chair Jeffreys",
    "seconded_by": "Member Alonzo",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by vice-chair jeffreys to ratify the town manager's appointments as described above. seconded by member alonzo. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+   "quote": "vice-chair jeffreys to ratify the town manager's appointments as described above. seconded by member alonzo."
   },
   {
-   "motion": "Approve the Memorandum of Agreement between the Town of Lunenburg and the Lunenburg Public Employee Committee (FY 2026 Health Insurance)",
+   "motion": "Approve the Memorandum of Agreement between the Town of Lunenburg and the Lunenburg Public Employee Committee (FY 2026 Health Insurance).",
    "moved_by": "Vice-Chair Jeffreys",
    "seconded_by": "Member Alonzo",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by vice-chair jeffreys to approve the memorandum of agreement between the town of lunenburg and the lunenburg public employee committee (fy 2026 health insurance). seconded by member alonzo. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+   "quote": "vice-chair jeffreys to approve the memorandum of agreement between the town of lunenburg and the lunenburg public employee committee (fy 2026 health insurance)."
   },
   {
-   "motion": "Create a Bylaw Review Committee consistent with the Town Charter",
+   "motion": "Create a Bylaw Review Committee consistent with the Town Charter.",
    "moved_by": "Vice-Chair Jeffreys",
    "seconded_by": "Member Alonzo",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by vice-chair jeffreys to create a bylaw review committee consistent with the town charter. seconded by member alonzo. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+   "quote": "vice-chair jeffreys to create a bylaw review committee consistent with the town charter. seconded by member alonzo."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Vice-Chair Jeffreys",
    "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "member alonzo moved to adjourn. seconded by vice-chair jeffreys. call for the vote: four- aye. the motion passed unanimously (4-0-0)",
-   "quote_taken_from_text": true
+   "quote": "member alonzo moved to adjourn. seconded by vice-chair jeffreys."
+  },
+  {
+   "motion": "Approve the minutes of May 13, 2025 (recorded at the 7 July 2026 approval block, not at this meeting).",
+   "moved_by": "Vice- Chair Lehtinen",
+   "seconded_by": "Clerk McLeod",
+   "outcome": "passed 3-0-0",
+   "procedural": true,
+   "quote": "vice- chair lehtinen made the motion to approve the minutes of may 13, 2025. seconded by clerk mcleod."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0818764
+ "note": "Text is a clean extraction with all seven pages present. Votes were all recorded with counts (4-0-0), so none is missing a result. Tabled items and the deferred Tax Investigation Report acceptance have no vote recorded and are listed as decisions. The minutes of 13 May 2025 were approved at a later meeting (7 July 2026) by a 3-0-0 vote with Vice-Chair Lehtinen and Clerk McLeod, who are not in the attendance list for this meeting; that vote is recorded as procedural and those two names are not recorded as attendees. The Tapply ratification is listed twice (once under Appointments and again in the continued list), and the continued-list vote applies \"as described above,\" which includes Tapply. Two quotes contain a line-break hyphen (\"Four-aye\", \"Vice-Chair\" split across lines), so the adjournment and other quotes were trimmed to avoid it. John Bowen Jr.'s thanks refers to \"Member Nuzzolo,\" which is Chair Nuzzolo's position as printed. Public comment lists six speakers; the student presenters are recorded as attendees rather than public comment.",
+ "cost_usd": 0.02204557,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: member renee emkey"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "John Cronin",
+   "role": "State Senator",
+   "status": "present",
+   "quote": "state senator john cronin and representative margaret scarsdale presented citations to vice-"
+  },
+  {
+   "name": "Margaret Scarsdale",
+   "role": "Representative",
+   "status": "present",
+   "quote": "state senator john cronin and representative margaret scarsdale presented citations to vice-"
+  },
+  {
+   "name": "Jeffrey Thibodeau",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief jeffrey thibodeau presented the outgoing members with a certificate of"
+  },
+  {
+   "name": "Brody Tapply",
+   "role": "Police Officer appointee (resident)",
+   "status": "present",
+   "quote": "mr. tapply thanked the town manager and the police department for their continued"
+  },
+  {
+   "name": "Grace",
+   "role": "LHS 10th grade civics class student",
+   "status": "present",
+   "quote": "grace, lola, emma, madison and ava spoke to the board regarding their civics class project in"
+  },
+  {
+   "name": "Lola",
+   "role": "LHS 10th grade civics class student",
+   "status": "present",
+   "quote": "grace, lola, emma, madison and ava spoke to the board regarding their civics class project in"
+  },
+  {
+   "name": "Emma",
+   "role": "LHS 10th grade civics class student",
+   "status": "present",
+   "quote": "grace, lola, emma, madison and ava spoke to the board regarding their civics class project in"
+  },
+  {
+   "name": "Madison",
+   "role": "LHS 10th grade civics class student",
+   "status": "present",
+   "quote": "grace, lola, emma, madison and ava spoke to the board regarding their civics class project in"
+  },
+  {
+   "name": "Ava",
+   "role": "LHS 10th grade civics class student",
+   "status": "present",
+   "quote": "grace, lola, emma, madison and ava spoke to the board regarding their civics class project in"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "public speaker, 250 Arbor Street",
+   "status": "present",
+   "quote": "lou franco, 250 arbor street: thanked senator cronin and representative scarsdale for"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "public speaker, 282 Pleasant Street",
+   "status": "present",
+   "quote": "peter beardmore, 282 pleasant street: congratulated the outgoing board members for their"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "public speaker, 82 Highland Street",
+   "status": "present",
+   "quote": "dave rogers, 82 highland street: thanked the outgoing board members for their efforts in the"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "public speaker, 985 Flat Hill Road",
+   "status": "present",
+   "quote": "mary foyle, 985 flat hill road: thanked the outgoing board members."
+  },
+  {
+   "name": "John Bowen Jr.",
+   "role": "public speaker, 162 Highland Street (via Zoom)",
+   "status": "remote",
+   "quote": "john bowen jr., 162 highland street (via zoom): thanked vice-chair jeffreys and member"
+  },
+  {
+   "name": "John Bowen",
+   "role": "public speaker, 162 Highland Street",
+   "status": "present",
+   "quote": "john bowen, 162 highland street: thanked vice-chair jeffreys, and member alonzo thanked"
+  },
+  {
+   "name": "Anthony Senesi",
+   "role": "Minute Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, anthony senesi, minute clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Old Business: Sick Leave Bank Policy discussion tabled until a further meeting (no vote recorded).",
+   "quote": "discussion on sick leave bank policy tabled until a further meeting."
+  },
+  {
+   "decision": "Old Business: Acceptance of Gift Policy discussion tabled until a further meeting (no vote recorded).",
+   "quote": "discussion on acceptance of gift policy tabled until a further meeting."
+  },
+  {
+   "decision": "Old Business: 56 Carr Avenue sell-or-hold item tabled until a further meeting (no vote recorded).",
+   "quote": "56 carr avenue: sell or hold tabled until a further meeting."
+  },
+  {
+   "decision": "Tax Investigation Report: the Board will vote on acceptance of the report at a future meeting (deferred, not decided).",
+   "quote": "chair nuzzolo stated that the board will need to vote upon the acceptance of the report at a future meeting."
+  },
+  {
+   "decision": "Vice-Chair requested that the Town Manager and Town Clerk post the Town Election and Town Meeting results on the website (a request; no vote recorded).",
+   "quote": "vice-chair jeffreys stated that he requests that the town manager and the town clerk add the town election and town meeting results on the website."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "An Accounts Payable warrant was listed under Warrants with no vote recorded in the minutes.",
+   "figures_as_printed": [
+    "$328,059.72"
+   ],
+   "quote": "accounts payable warrant in the amount of $328,059.72"
+  },
+  {
+   "topic": "DPW Support Services contract bids",
+   "what_was_recorded": "Town Manager reported one bid received from the current contractor for the DPW Support Services contract; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "she stated that the town received one bid from the current contractor."
+  },
+  {
+   "topic": "Cracked ceiling bid",
+   "what_was_recorded": "Town Manager reported one slightly higher bid for the cracked ceiling work, described as within the budget; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "she stated that the cracked ceiling bid received one bid that was slightly higher but within the budget."
+  },
+  {
+   "topic": "Health insurance agreement (FY 2026)",
+   "what_was_recorded": "Memorandum of Agreement with the Lunenburg Public Employee Committee described as a one-year extension; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "town manager warren-dyment stated that the agreement is a one-year extension."
+  },
+  {
+   "topic": "Budget Task Force charge",
+   "what_was_recorded": "Board discussed whether a Budget Task Force is needed and whether the Board, Finance Committee and School Committee should request data from the Town Manager and Superintendent; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "member alonzo stated that he does not believe a budget task force is necessary."
+  },
+  {
+   "topic": "Citizens' Petition on School budget",
+   "what_was_recorded": "A public speaker described a May Town Meeting Citizens' Petition to appropriate contingent upon revenue to fund portions of the School budget; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. beardmore described the may town meeting citizens' petition to appropriate contingent upon revenue to fund portions of the school budget."
+  },
+  {
+   "topic": "Budget cuts and staff morale",
+   "what_was_recorded": "A public speaker said budget cuts and firings affect employee morale; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. foyle stated that as an employee, she saw that budget cuts and firings take a toll on employee morale."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Lou Franco",
+   "stated_role": "250 Arbor Street",
+   "topic": "thanks to outgoing members and State delegation",
+   "quote": "lou franco, 250 arbor street: thanked senator cronin and representative scarsdale for presenting the outgoing members with citations."
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "282 Pleasant Street",
+   "topic": "Citizens' Petition on School budget contingent upon revenue",
+   "quote": "mr. beardmore described the may town meeting citizens' petition to appropriate contingent upon revenue to fund portions of the school budget."
+  },
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland Street",
+   "topic": "thanks to outgoing members",
+   "quote": "dave rogers, 82 highland street: thanked the outgoing board members for their efforts in the"
+  },
+  {
+   "speaker": "Mary Foyle",
+   "stated_role": "985 Flat Hill Road",
+   "topic": "fiduciary responsibility; budget cuts and morale",
+   "quote": "ms. foyle stated that as an employee, she saw that budget cuts and firings take a toll on employee morale."
+  },
+  {
+   "speaker": "John Bowen Jr.",
+   "stated_role": "162 Highland Street (via Zoom)",
+   "topic": "Memorial Day veterans' grave flags, volunteers sought",
+   "quote": "he stated that he is organizing the placement of cemetery stake flags on veterans' graves on memorial day."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street",
+   "topic": "Town should invest in cemeteries",
+   "quote": "he stated that the town needs to invest in the cemeteries and make it a priority."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "opened at 7:00 PM; recorded as live and broadcast",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Recognition of outgoing members Alonzo and Jeffreys",
+   "resolution": "citations and gifts presented; no action",
+   "quote": "representative scarsdale stated that both members have been integral partners with the state delegation.",
+   "tags": [
+    "recognition",
+    "state delegation"
+   ]
+  },
+  {
+   "topic": "Appointments, ratifications and resignations (Tapply)",
+   "resolution": "approved 4-0-0 (ratified)",
+   "quote": "chief thibodeau stated that mr. tapply is a resident of lunenburg and graduated from lunenburg high school in 2021.",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Board and public comment (first)",
+   "resolution": "no action",
+   "quote": "chair nuzzolo thanked the organizers of the town fair for putting together a well-managed and",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Communications from other boards",
+   "resolution": "none received",
+   "quote": "communications from other boards none.",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Announcements (Town election, yard waste, car cruise)",
+   "resolution": "informational; no action",
+   "quote": "chair nuzzolo stated that the annual town election is this saturday from 7:00 a.m. to 5:00 p.m.",
+   "tags": [
+    "announcements",
+    "town election"
+   ]
+  },
+  {
+   "topic": "LHS Cares trash clean-up presentation",
+   "resolution": "co-sponsored 4-0-0",
+   "quote": "grace, lola, emma, madison and ava spoke to the board regarding their civics class project in",
+   "tags": [
+    "youth",
+    "cleanup",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Appointments continued (six seasonal and staff appointments)",
+   "resolution": "ratified 4-0-0",
+   "quote": "vice-chair jeffreys to ratify the town manager's appointments as described above.",
+   "tags": [
+    "appointments",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; no action",
+   "quote": "town manager warren-dyment stated that the transition to the munis cloud system is taking",
+   "tags": [
+    "town manager",
+    "MUNIS",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "New Business: FY 2026 health insurance MOA with PEC",
+   "resolution": "approved 4-0-0",
+   "quote": "vice-chair jeffreys to approve the memorandum of agreement between the town of lunenburg and the lunenburg public employee committee (fy 2026 health insurance).",
+   "tags": [
+    "health insurance",
+    "labor"
+   ]
+  },
+  {
+   "topic": "New Business: Annual Bylaw Review Committee",
+   "resolution": "created 4-0-0",
+   "quote": "chair nuzzolo stated that the annual bylaw review per the town charter must occur.",
+   "tags": [
+    "bylaws",
+    "charter"
+   ]
+  },
+  {
+   "topic": "Old Business: Sick Leave Bank Policy",
+   "resolution": "tabled",
+   "quote": "discussion on sick leave bank policy tabled until a further meeting.",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Old Business: Acceptance of Gift Policy",
+   "resolution": "tabled",
+   "quote": "discussion on acceptance of gift policy tabled until a further meeting.",
+   "tags": [
+    "policy",
+    "gifts"
+   ]
+  },
+  {
+   "topic": "Old Business: Tax Investigation Report",
+   "resolution": "deferred; acceptance vote at a future meeting",
+   "quote": "chair nuzzolo stated that the board will need to vote upon the acceptance of the report at a future meeting.",
+   "tags": [
+    "tax",
+    "investigation",
+    "Department of Revenue"
+   ]
+  },
+  {
+   "topic": "Old Business: 56 Carr Avenue sell or hold",
+   "resolution": "tabled",
+   "quote": "56 carr avenue: sell or hold tabled until a further meeting.",
+   "tags": [
+    "property"
+   ]
+  },
+  {
+   "topic": "Old Business: Budget Task Force charge",
+   "resolution": "discussed; no action",
+   "quote": "member alonzo stated that he does not believe a budget task force is necessary.",
+   "tags": [
+    "budget",
+    "joint meetings",
+    "School Committee"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "AP warrant listed; no vote recorded; website request made",
+   "quote": "accounts payable warrant in the amount of $328,059.72",
+   "tags": [
+    "warrants",
+    "website"
+   ]
+  },
+  {
+   "topic": "Committee reports (Council on Aging)",
+   "resolution": "informational; no action",
+   "quote": "chair nuzzolo stated that he attended a recent council on aging meeting.",
+   "tags": [
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "informational",
+   "quote": "chair nuzzolo announced that the select board will be meeting on may 20 with a new select board slate.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0-0 at 8:53 P.M.",
+   "quote": "member alonzo moved to adjourn. seconded by vice-chair jeffreys.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "police",
+  "bylaws",
+  "health insurance",
+  "budget",
+  "school budget",
+  "tax investigation",
+  "cemeteries",
+  "town election",
+  "MUNIS",
+  "public comment",
+  "recognition",
+  "youth volunteers"
+ ],
+ "dropped_unquoted_by_field": {}
 }

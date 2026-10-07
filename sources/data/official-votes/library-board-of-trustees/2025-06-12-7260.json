@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2025-06-12",
  "docid": "7260",
@@ -12,96 +12,93 @@
  },
  "votes": [
   {
-   "motion": "Elect Harry as Chair",
+   "motion": "Elect Harry Kubetz as Chair.",
    "moved_by": "Jana",
    "seconded_by": "Maia",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "chair - jana nominated harry, maia seconded, vote was unanimous in favor."
   },
   {
-   "motion": "Elect Maia as Vice Chair",
+   "motion": "Elect Maia as Vice Chair (David Niose declined the nomination).",
    "moved_by": "Jana",
    "seconded_by": "Harry",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "jana nominated maia, harry seconded, vote was unanimous in favor."
   },
   {
-   "motion": "Elect Laura as Secretary",
+   "motion": "Elect Laura as Secretary.",
    "moved_by": "Robin",
    "seconded_by": "Harry",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "secretary - robin nominated laura, harry seconded, vote was unanimous in favor."
+   "procedural": false,
+   "quote": "robin nominated laura, harry seconded, vote was unanimous in favor."
   },
   {
-   "motion": "Elect Robin as Treasurer",
+   "motion": "Elect Robin as Treasurer.",
    "moved_by": "Harry",
    "seconded_by": "Maia",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "treasurer - harry nominated robin, maia seconded, vote was unanimous in favor."
+   "procedural": false,
+   "quote": "harry nominated robin, maia seconded, vote was unanimous in favor."
   },
   {
-   "motion": "Appoint Laura and Jana to Budget Subcommittee",
+   "motion": "Appoint Laura and Jana to the Budget Subcommittee.",
    "moved_by": "Harry",
    "seconded_by": "Robin",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "budget subcommittee - harry nominated laura and jana, robin seconded, vote was unanimous in favor."
+   "procedural": false,
+   "quote": "harry nominated laura and jana, robin seconded, vote was unanimous in favor."
   },
   {
-   "motion": "Appoint Jana to Friends Endowment Subcommittee",
+   "motion": "Appoint Jana to the Friends Endowment Subcommittee.",
    "moved_by": "Harry",
    "seconded_by": "Maia",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "friends endowment subcommittee - harry nominated jana, maia seconded, vote was unanimous in favor."
+   "procedural": false,
+   "quote": "harry nominated jana, maia seconded, vote was unanimous in favor."
   },
   {
-   "motion": "Appoint Jana, Harry, Stephanie, and Maia to Personnel Subcommittee",
-   "moved_by": "Maia, Harry",
-   "seconded_by": "Harry, Jana, Robin, Jana",
+   "motion": "Appoint Jana, Harry, Stephanie and Maia to the Personnel Subcommittee.",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "maia nominated jana, harry seconded. maia nominated harry, jana seconded.harry nominated stephanie, robin seconded. harry nominated maia, jana seconded. vote for all was unanimous in favor. ",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "vote for all was unanimous in favor."
   },
   {
-   "motion": "Appoint David and Laura to Policy Subcommittee",
-   "moved_by": "Maia, Harry",
-   "seconded_by": "Harry, Maia",
+   "motion": "Appoint David and Laura to the Policy Subcommittee.",
+   "moved_by": "Maia",
+   "seconded_by": "Harry",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "policy subcommittee - maia nominated david, harry seconded, harry nominated laura, maia seconded, vote was unanimous in favor."
+   "procedural": false,
+   "quote": "maia nominated david, harry seconded, harry nominated laura, maia seconded, vote was unanimous in favor."
   },
   {
-   "motion": "Appoint David as Master Plan Steering Committee Representative",
+   "motion": "Appoint David as Master Plan Steering Committee representative.",
    "moved_by": "Harry",
    "seconded_by": "Laura",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "master plan steering committee representative - harry nominated david, laura seconded, vote was unanimous in favor."
+   "procedural": false,
+   "quote": "harry nominated david, laura seconded, vote was unanimous in favor."
   },
   {
-   "motion": "Accept the minutes of May 15, 2025, as amended",
+   "motion": "Accept the minutes of May 15, 2025, as amended.",
    "moved_by": "Robin",
    "seconded_by": "Harry",
-   "outcome": "passed (2 abstained)",
+   "outcome": "passed (Robin and Stephanie abstaining)",
    "procedural": true,
-   "quote": "robin made a motion to accept the minutes of may 15, 2025, as amended, seconded by harry. the motion passed, with robin and stephanie abstaining."
+   "quote": "robin made a motion to accept the minutes of may 15, 2025, as amended, seconded by harry."
   },
   {
-   "motion": "Accept the Room Use Policy as amended",
+   "motion": "Accept the updated Room Use Policy as amended.",
    "moved_by": "Harry",
    "seconded_by": "David",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "harry made a motion to accept the policy as amended. david seconded. the vote was unanimous to accept the policy."
+   "quote": "harry made a motion to accept the policy as amended. david seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Harry",
    "seconded_by": "Jana",
    "outcome": "passed unanimously",
@@ -110,6 +107,324 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly readable. All votes recorded involve board organization (elections and subcommittee appointments), approval of prior minutes, one substantive policy vote, and adjournment.",
- "cost_usd": 0.1474274
+ "note": "Text is a layout-extracted copy with broken line spacing; quotes were collapsed to single spaces. Pages 4-14 are the attached Director's Report and department trustee reports, not the minutes proper; figures were taken from those attachments and quoted as printed. Votes are recorded as 'unanimous' or 'passed' with no numeric tally printed, so outcomes use the minutes' own wording. The Muir Haman role is not stated in the minutes. No public comment was taken. No transfers are recorded.",
+ "cost_usd": 0.02150787,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 7:21 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom"
+  },
+  {
+   "name": "David Niose",
+   "role": "trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, maia wentrup, laura boussom"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "new trustee",
+   "status": "present",
+   "quote": "welcome to new trustees robin venezia & stephanie trudel"
+  },
+  {
+   "name": "Stephanie Trudel",
+   "role": "new trustee",
+   "status": "present",
+   "quote": "welcome to new trustees robin venezia & stephanie trudel"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "not stated",
+   "status": "present",
+   "quote": "stephanie trudel, muir haman, glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "trustee",
+   "status": "present",
+   "quote": "stephanie trudel, muir haman, glenn mcleod"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Women's Club gift acceptance was passed over and deferred to the next meeting.",
+   "quote": "passed over. will do at our next meeting."
+  },
+  {
+   "decision": "The Trust Fund Investment Subcommittee is no longer needed, since the board has a treasurer.",
+   "quote": "trust fund investment subcommittee - we no longer need this subcommittee since we have a treasurer."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library Materials subscriptions",
+   "what_was_recorded": "Yearly subscriptions will be paid this month from the Library Materials budget, with no amount stated in the minutes.",
+   "figures_as_printed": [],
+   "quote": "yearly subscriptions will be paid this month from the library materials budget."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "An accounts payable warrant was submitted in the amount of $18,272.90 and the spreadsheet will be updated.",
+   "figures_as_printed": [
+    "$18,272.90"
+   ],
+   "quote": "accounts payable warrant submitted today in the amount of $18,272.90"
+  },
+  {
+   "topic": "FY25 library budget totals",
+   "what_was_recorded": "The FY25 library budget table prints a total budget and amount expended at 82% of the year.",
+   "figures_as_printed": [
+    "592,057$",
+    "483,765$",
+    "82%"
+   ],
+   "quote": "totals 592,057$ 483,765$ 82%"
+  },
+  {
+   "topic": "FY25 library materials line",
+   "what_was_recorded": "The library materials line shows 48% spent of the budget.",
+   "figures_as_printed": [
+    "94,000$",
+    "45,366$",
+    "48%"
+   ],
+   "quote": "library material 94,000$ 45,366$ 48%"
+  },
+  {
+   "topic": "Federal IMLS cuts and state library databases",
+   "what_was_recorded": "A likely $3.5 million state-level shortfall will cut statewide research databases from 7/1/25; some are being paid directly from library funds at a discount.",
+   "figures_as_printed": [
+    "$3.5 million"
+   ],
+   "quote": "it is likely we will see a $3.5 million shortfall at the state level."
+  },
+  {
+   "topic": "Main Street Bank donation for summer lunch",
+   "what_was_recorded": "Main Street Bank donated money to support the June and July summer lunch program.",
+   "figures_as_printed": [
+    "$9,225"
+   ],
+   "quote": "main street bank has donated $9,225 to support the lunch program in june and july."
+  },
+  {
+   "topic": "North End Subaru music program support",
+   "what_was_recorded": "North End Subaru committed to another year of support for the monthly music program, with no amount stated.",
+   "figures_as_printed": [],
+   "quote": "north end subaru has committed to another year of support for the monthly music program"
+  },
+  {
+   "topic": "Invested funds balances",
+   "what_was_recorded": "The invested funds were at 99K last month, held as approximately 4K in a money market account, 36K in a CD and 56K in a managed balanced fund.",
+   "figures_as_printed": [
+    "99K",
+    "4K",
+    "36K",
+    "56K"
+   ],
+   "quote": "there is approximately 4k in a money market account, 36k in a cd, and 56k in a managed balanced fund."
+  },
+  {
+   "topic": "Friends book and bake sales",
+   "what_was_recorded": "The Friends' spring book sale and bake sale raised the amounts stated.",
+   "figures_as_printed": [
+    "$2,610.50",
+    "$1,011.00"
+   ],
+   "quote": "the spring book sale made $2,610.50, and the bake sale made $1,011.00."
+  },
+  {
+   "topic": "Adult programs financial report",
+   "what_was_recorded": "The adult programs budget report shows a grand total of $14,600 with 86% spent as of 6/9/2025.",
+   "figures_as_printed": [
+    "$14,600",
+    "86%",
+    "$4,500",
+    "$3,000",
+    "$500",
+    "$6,600"
+   ],
+   "quote": "grand total $14,600 86% 5% 9%"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Reception for Donna Saiia and Dick Mailloux",
+   "resolution": "held before the meeting (recognition)",
+   "quote": "the reception to recognize dick's and donna's service to the library and town was held on the back patio at the library",
+   "tags": [
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment ● no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Welcome new trustees and thanks to David Niose",
+   "resolution": "welcomed; David Niose continues for another term",
+   "quote": "welcome to new trustees robin venezia & stephanie trudel",
+   "tags": [
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Board reorganization and subcommittee appointments",
+   "resolution": "officers and subcommittee members elected by unanimous votes",
+   "quote": "chair - jana nominated harry, maia seconded, vote was unanimous in favor.",
+   "tags": [
+    "governance",
+    "officer elections",
+    "subcommittees"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of May 15, 2025",
+   "resolution": "approved as amended, Robin and Stephanie abstaining",
+   "quote": "robin made a motion to accept the minutes of may 15, 2025, as amended, seconded by harry.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Acceptance of Women's Club gift",
+   "resolution": "passed over to next meeting",
+   "quote": "passed over. will do at our next meeting.",
+   "tags": [
+    "gifts",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received; budget, state funding, staffing, programs, outreach, technology and building updates",
+   "quote": "the fiscal year is 94% completed.",
+   "tags": [
+    "budget",
+    "state funding",
+    "programs",
+    "staffing",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook review",
+   "resolution": "suggested for upcoming meetings for new trustees",
+   "quote": "muir suggested we have a review of the mblc trustee handbook at our upcoming meetings for the new trustees.",
+   "tags": [
+    "governance",
+    "training"
+   ]
+  },
+  {
+   "topic": "Conroy Memorial Garden",
+   "resolution": "discussed; planting half done, sculpture due before fall",
+   "quote": "robin venezia, lydia henshaw, and family and friends of bob conroy gathered in may to begin planting the garden.",
+   "tags": [
+    "gardens",
+    "memorial"
+   ]
+  },
+  {
+   "topic": "Room Use Policy",
+   "resolution": "accepted as amended",
+   "quote": "harry made a motion to accept the policy as amended. david seconded.",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Library invested funds",
+   "resolution": "update received; statement not yet available",
+   "quote": "we do not have the june statement yet.",
+   "tags": [
+    "investments",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Brooks House",
+   "resolution": "no update",
+   "quote": "brooks house update ○ no update.",
+   "tags": [
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Friends update",
+   "resolution": "received; 20th anniversary celebration and annual meeting noted",
+   "quote": "the friends' annual meeting is 7/26/25 at 9 a.m.",
+   "tags": [
+    "Friends of the Library",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Board meeting in August",
+   "resolution": "discussed; difficult to schedule around summer plans",
+   "quote": "it will be difficult to plan a meeting to work around everyone's summer plans.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "noted Jana's absence in September; Glenn shared a legal article on open meeting law",
+   "quote": "jana will not be able to attend our september meeting.",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:29 p.m.",
+   "quote": "the meeting was adjourned at 9:29 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "officer elections",
+  "budget",
+  "state funding cuts",
+  "federal IMLS cuts",
+  "investments",
+  "Friends of the Library",
+  "donations",
+  "programs",
+  "facilities",
+  "Room Use Policy",
+  "open meeting law"
+ ],
+ "dropped_unquoted_by_field": {}
 }

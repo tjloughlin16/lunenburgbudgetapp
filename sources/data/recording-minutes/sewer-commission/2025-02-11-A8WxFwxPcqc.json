@@ -273,5 +273,185 @@
    "at": "2026-10-06T18:08:40Z",
    "cost_usd": 0.210091
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02112025-7018",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-02-11-minutes-7018.txt",
+   "path": "sources/meetings/sewer-commission/2025-02-11-minutes-7018.docx"
+  },
+  "official_sha256": "659d1349c2eabb65fdec32eb675cd26a486ff595f951e7d10be32d9cbbacc8fb",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the one vote (report accepted pending figure updates), the 11-of-911 billing errors, the agenda items and who attended; the attendee names differ only by caption errors. Our minutes carry detail the official omits (hiring timeline, manhole pre-construction meeting, $10 demand-letter fee, garbled billing figures), and the official has the 3-0 roll call, the Fitchburg/Leominster question and Eli Torres by name, which ours lack.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 5,
+   "discrepancy": 0,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to accept the FY2024 annual report",
+    "ours": "Accept the FY2024 annual report with the caveat that the yellow-highlighted numbers are finalized and changes initialed before the Friday submission deadline. — passed",
+    "official": "to accept the fy24 annual report pending updates to the figures in the report. roll call vote: joe-aye, scott-aye, and brett-aye.",
+    "note": "Both record a passed motion to accept the report conditional on figure updates; the official gives the 3-0 roll call, ours gives the Friday deadline and the highlighted-numbers detail the official omits.",
+    "t": 422
+   },
+   {
+    "kind": "agree",
+    "about": "Quarterly billing: 911 bills, 11 with errors",
+    "ours": "Quarterly billing: 911 bills, 11, 133 27, 270",
+    "official": "there were some errors where munis doubled figures, but he was able to correct them.",
+    "note": "The 911 bill count and the 11 count match the official summary (11 of 911 bills had errors); the official prints no dollar figures.",
+    "t": 548
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Garbled figures '133 27, 270' in quarterly billing",
+    "ours": "133 27, 270",
+    "official": "",
+    "note": "Unintelligible figures from the captions with no counterpart in the official minutes, which print no dollar amounts; check the recording if they matter.",
+    "t": 548
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Delinquent demand letters $10 fee",
+    "ours": "Delinquent demand letters: $10 fee",
+    "official": "",
+    "note": "The official minutes do not mention demand letters or a $10 fee.",
+    "t": 804
+   },
+   {
+    "kind": "agree",
+    "about": "Contact the member who intends to resign",
+    "ours": "The vice chair will ask the director to contact the member who intends to resign to prompt a formal resignation letter so a replacement can be sought.",
+    "official": "brett asked bill to contact him again about the letter.",
+    "note": "Both record the vice chair asking the DPW director to contact the resigning member about a letter; the official names Eli Torres and says 'again'.",
+    "t": 231
+   },
+   {
+    "kind": "agree",
+    "about": "Next agenda items",
+    "ours": "Next agenda to include billing update, the assistant business manager position, and the manhole repair.",
+    "official": "future agenda items- update on billing, assistant business manager, and manhole repairs.",
+    "note": "Same three items in both.",
+    "t": 1349
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assistant business manager hiring timeline",
+    "ours": "Hiring for the assistant business manager waits on a second interview the next morning, then reference checks by HR, before any decision.",
+    "official": "",
+    "note": "The official minutes list the position only as a future agenda item and say nothing of interviews or reference checks.",
+    "t": 949
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pre-construction meeting for the manhole repair",
+    "ours": "A pre-construction meeting will be set up for the manhole repair once the frost leaves.",
+    "official": "",
+    "note": "The official minutes mention manhole repairs only as a future agenda item.",
+    "t": 1075
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bill and Andrew to update FY24 figures before submitting to the Town Manager",
+    "ours": "",
+    "official": "bill and andrew will update the figures for fy24 before submitting the report to the town manager's office.",
+    "note": "Our minutes fold this into the vote caveat (Friday deadline) but do not name Bill and Andrew or the Town Manager's office."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Question on Fitchburg and Leominster increases",
+    "ours": "",
+    "official": "joe asked about the increases from fitchburg and leominster.",
+    "note": "Not in our minutes; the official prints no figure and no answer."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Best wishes to Mike Mackin",
+    "ours": "",
+    "official": "brett stated the commissioners extend their best to mike mackin to get well soon.",
+    "note": "Public comment item absent from our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: vice chair",
+    "ours": "Brett Ramon (vice chair, standing in for Mike Mackin)",
+    "official": "attendees:, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley",
+    "official_reading": "Brett Ramsden",
+    "note": "Misheard surname; the same person is the vice chair.",
+    "t": 231
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Joseph Earley",
+    "ours": "Joseph Earley (member)",
+    "official": "attendees:, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley",
+    "official_reading": "Joe Hurley",
+    "note": "Misheard name for the member.",
+    "t": 231
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Scott D",
+    "ours": "Scott D (member)",
+    "official": "attendees:, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley",
+    "official_reading": "Scott Dall",
+    "note": "Truncated surname; the official lists him as clerk, ours as member.",
+    "t": 231
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Andrew Valerie",
+    "ours": "Andrew Valerie (business manager)",
+    "official": "attendees:, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley",
+    "official_reading": "Andrew Valliere",
+    "note": "Misspelled surname.",
+    "t": 231
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jane ramley",
+    "ours": "Jane ramley (staff)",
+    "official": "attendees:, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley",
+    "official_reading": "Jane Ranley",
+    "note": "Misheard surname; she is the minutes clerk.",
+    "t": 231
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Bill Bernard",
+    "ours": "Bill Bernard (staff)",
+    "official": "attendees:, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley",
+    "note": "Same person; the official gives the title DPW Director.",
+    "t": 231
+   },
+   {
+    "kind": "agree",
+    "about": "Chair Mike Mackin absent",
+    "ours": "Brett Ramon (vice chair, standing in for Mike Mackin)",
+    "official": "absent: chair- mike mackin and eli torres",
+    "note": "Both have Mackin absent, with the vice chair presiding."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Eli Torres listed absent",
+    "ours": "",
+    "official": "absent: chair- mike mackin and eli torres",
+    "note": "Our attendee list does not name Eli Torres, the member the official identifies as the one who submitted a resignation letter."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:33:12Z",
+   "cost_usd": 0.24928299999999998
+  }
  }
 }

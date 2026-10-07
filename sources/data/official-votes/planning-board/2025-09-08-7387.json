@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2025-09-08",
  "docid": "7387",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Endorse ANR 830 Mass Ave Approval Not Required",
+   "motion": "Endorse the ANR plan for 830 Mass Ave.",
    "moved_by": "A.Burney",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 4-0",
@@ -20,56 +20,325 @@
    "quote": "a.burney motion to endorse t. willsmer seconded vote: a. reid - aye, t.willsmer -aye, a. burney -aye, m.brenner -aye endorsed 4-0."
   },
   {
-   "motion": "Close the public hearing for 1083 Northfield Road Common Driveway and Stormwater Management permits",
+   "motion": "Close the public hearings for 1083 Northfield Road Common Driveway / Stormwater Management Permits.",
    "moved_by": "A. Burney",
    "seconded_by": "T.Willsmer",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a. burney makes a motion to move to close the public hearings for 1083 northfield road -common driveway/ stormwater management permits second: t.willsmer vote: a. reid - aye, t.willsmer -aye, a. burney -aye, m.brenner -aye hearing closed."
+   "quote": "a. burney makes a motion to move to close the public hearings for 1083 northfield road -common driveway/ stormwater management permits"
   },
   {
-   "motion": "Approve the Special Permit for 1083 Northfield Road Common Driveway with all Standard Conditions and Special Conditions as discussed",
+   "motion": "Approve the Special Permit for 1083 Northfield Road Common Driveway with all Standard and Special Conditions as discussed.",
    "moved_by": "A. Reid",
    "seconded_by": "T.Willsmer",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "to approve the special permit for 1083 northfield road common driveway with all standard conditions and special conditions as discussed so moved: a. reid second: t.willsmer vote: a. reid - aye, t.willsmer -aye, a. burney -aye, m.brenner-aye passed."
+   "quote": "to approve the special permit for 1083 northfield road common driveway with all standard conditions and special conditions as discussed"
   },
   {
-   "motion": "Approve the Stormwater Permit for 1083 Northfield Road with all Standard Conditions and Special Conditions as discussed",
+   "motion": "Approve the Stormwater Permit for 1083 Northfield Road with all Standard and Special Conditions as discussed.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "to approve the stormwater permit with all standard conditions and special conditions as discussed for 1083 northfield road to 2025-08-25 at 6:05 p.m. so moved: t. willsmer second: a. reid vote: a. reid - aye, t.willsmer -aye, a. burney -aye, m.brenner-aye passed."
+   "quote": "to approve the stormwater permit"
   },
   {
-   "motion": "Waive first right of refusal for 222 West Townsend Road",
+   "motion": "Waive the Town's first right of refusal on 222 West Townsend Road.",
    "moved_by": "A.Burney",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "a.burney recommended to waive first right of refusal. second: t. willsmer-seconded vote: a. reid - aye, t.willsmer -aye, a. burney -aye, m.brenner -aye right of refusal accepted 4-0"
+   "quote": "motion: a.burney recommended to waive first right of refusal."
   },
   {
-   "motion": "Approve minutes of 8/25/2025",
+   "motion": "Approve the minutes of 8/25/2025.",
    "moved_by": "A.Burney",
    "seconded_by": "A.Reid",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "a.burney -moved to approve second: a.reid -seconded vote: a. reid - aye, t.willsmer -aye, a. burney -aye, m.brenner -aye. ===page 6=== 6 of 6 ",
-   "quote_taken_from_text": true
+   "quote": "motion: a.burney -moved to approve"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Burney",
    "seconded_by": "T. Willsmer",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a. burney - motion to adjourn moved. second: t. willsmer -seconded vote: a. reid - aye, t.willsmer -aye, a. burney -aye, m.brenner -aye. meeting adjourned."
+   "quote": "motion: a. burney - motion to adjourn moved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes are recorded with outcomes. Minutes are clear and legible.",
- "cost_usd": 0.1034854
+ "note": "Revised minutes; the text is clean extracted text with no scan. Several things limit the reading: (1) page headers read \"Planning Board Minutes, 2025-08-09\" while the meeting is dated 2025-09-08; (2) the 1083 Northfield stormwater motion ends \"to 2025-08-25 at 6:05 P.M.\", which is not explained; (3) the right-of-first-refusal motion is to waive, but the result line reads \"Right of refusal accepted 4-0\"; (4) several votes print no count, so they are recorded as \"passed\"; the close-hearing and adjournment votes list four Ayes but print no tally; (5) Greg Roy is printed \"Grey Roy\" once; (6) the minutes print no dollar figures at all, so budget_items hold only discussed cost with no amount. Attendance status for non-members named only in headers or reports (Farinacci, Daigle, Gingras, Allison) is not stated.",
+ "cost_usd": 0.01822427,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, a. burney, m. brenner"
+  },
+  {
+   "name": "T. Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, a. burney, m. brenner"
+  },
+  {
+   "name": "A. Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, a. burney, m. brenner"
+  },
+  {
+   "name": "A. Burney",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, a. burney, m. brenner"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "chair advised first heard under board including m. allison."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant (Dillis and Roy); printed as \"Grey Roy\" in one place",
+   "status": "present",
+   "quote": "greg roy and tanner cole presenting, dillis and roy appearing to summarize to application for common driveway"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "presenting for the applicant",
+   "status": "present",
+   "quote": "greg roy and tanner cole presenting, dillis and roy appearing to summarize to application for common driveway"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "public comment, 82 Highland Street",
+   "status": "present",
+   "quote": "dave rogers 82 highland street-didn't hear after call to order that the pledge of allegiance was said."
+  },
+  {
+   "name": "Jasmin Farinacci",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "jasmin farinacci - land use director"
+  },
+  {
+   "name": "Jennifer Daigle",
+   "role": "Admin Asst.",
+   "status": "not stated",
+   "quote": "minutes by jennifer daigle, admin asst."
+  },
+  {
+   "name": "Brian Gingras",
+   "role": "Building Commissioner",
+   "status": "not stated",
+   "quote": "brian gingras, building commissioner will be at next meeting for training in opengov."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair and admin will rework the 499 Northfield Road decision template into a more detailed template, to be submitted for signature at or before the next meeting.",
+   "quote": "the board chair and admin will rework the decision template due to the need to update to a more detailed template."
+  },
+  {
+   "decision": "Board agreed the Master Plan Steering Committee may present at Special Town Meeting; Vice Chair to confirm the Board's permission.",
+   "quote": "board agrees that presentation of the information would be a great idea."
+  },
+  {
+   "decision": "Master Plan Steering Committee document discussion continued to the 9/22 meeting.",
+   "quote": "will come back to this on 9/22 meeting as more discussion will be necessary."
+  },
+  {
+   "decision": "Chair to initiate discussion with Rami to clarify the Planning Board's role and responsibilities.",
+   "quote": "chair will initiate discussion with rami."
+  },
+  {
+   "decision": "Chair to set expectation with Community Scale that the final MBTA Communities bylaw copy be submitted by Tuesday 9/30 for the warrant.",
+   "quote": "m. brenner will set expectation to community scale so that they will submit final copy by tuesday 9/30 to make sure it is ready for the warrant."
+  },
+  {
+   "decision": "Vice Chair to obtain a request from Open Space Committee to add a seat and deliver it to the Chair for a future agenda.",
+   "quote": "t.willsmer will get a request from open space and will to deliver to the chair to add to future agenda."
+  },
+  {
+   "decision": "Recycled-asphalt wording for the common driveway to be addressed for clarification under the 10/02 warrant.",
+   "quote": "chair brenner calls for addressing this issue"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Recycled asphalt / milling for common driveway at 1083 Northfield Road",
+   "what_was_recorded": "The applicant's engineer proposed recycled milling for the driveway, citing reduced cost and sustainability; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. roy advised would like to use milling recycled from when a previous road is milled, citing reduced cost and sustainability."
+  },
+  {
+   "topic": "Capital Planning Committee goals",
+   "what_was_recorded": "The committee's goals were said to extend beyond this year because of budgetary and administrative issues; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "lofty goals that we want to move on but will look beyond this year due to budgetary and administrative issues."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland Street",
+   "topic": "pledge of allegiance not heard at call to order",
+   "quote": "dave rogers 82 highland street-didn't hear after call to order that the pledge of allegiance was said."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order / pledge",
+   "resolution": "called to order at 6:00 P.M.",
+   "quote": "chair m.brenner called the meeting to order at 6:00 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no speakers",
+   "quote": "none at this time. no public parties in person or in online waiting room.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair / Director's report",
+   "resolution": "information only",
+   "quote": "chair gave notice to board members that the planning board land use directors position has been posted and open for applications.",
+   "tags": [
+    "staffing",
+    "fraud warnings",
+    "OpenGov"
+   ]
+  },
+  {
+   "topic": "ANR 830 Mass Ave (continued from 08/25/25)",
+   "resolution": "endorsed 4-0",
+   "quote": "chair verified that the included information satisfied the boards questions from prior hearing.",
+   "tags": [
+    "ANR",
+    "public hearing",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "1083 Northfield Road common driveway special permit and stormwater permit",
+   "resolution": "special permit approved 4-0; stormwater permit approved 4-0; hearing closed",
+   "quote": "refiled without prejudice due to quorum issues.",
+   "tags": [
+    "special permit",
+    "common driveway",
+    "stormwater",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "speaker referred to a discussion at the Planning Board office",
+   "quote": "dave rogers 82 highland street-didn't hear after call to order that the pledge of allegiance was said.",
+   "tags": [
+    "public comment",
+    "pledge of allegiance"
+   ]
+  },
+  {
+   "topic": "499 Northfield Road decision template",
+   "resolution": "to be reworked for signature",
+   "quote": "the board chair and admin will rework the decision template due to the need to update to a more detailed template.",
+   "tags": [
+    "decisions",
+    "templates"
+   ]
+  },
+  {
+   "topic": "First right of refusal, 222 West Townsend Road",
+   "resolution": "waived, 4-0",
+   "quote": "chair advised no compelling reason to acquire the property.",
+   "tags": [
+    "right of first refusal",
+    "land acquisition",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee presentation and document",
+   "resolution": "presentation agreed; document continued to 9/22",
+   "quote": "will come back to this on 9/22 meeting as more discussion will be necessary.",
+   "tags": [
+    "master plan",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "MBTA Communities bylaw review",
+   "resolution": "discussed; schedule set; language due 10/02",
+   "quote": "m. brenner will set expectation to community scale so that they will submit final copy by tuesday 9/30 to make sure it is ready for the warrant.",
+   "tags": [
+    "MBTA Communities",
+    "zoning bylaw",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports only, no action",
+   "quote": "town government meet and greet is 10/02 at smokestack roasters.",
+   "tags": [
+    "committees",
+    "open space",
+    "capital planning",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "the upcoming meetings are 9/22, 10/27, 11/10 at 6:00 p.m.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Minutes approval, 8/25/2025",
+   "resolution": "approved 4-0",
+   "quote": "motion: a.burney -moved to approve",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "motion: a. burney - motion to adjourn moved.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "special permit",
+  "stormwater",
+  "common driveway",
+  "public hearing",
+  "MBTA Communities",
+  "master plan",
+  "right of first refusal",
+  "open space",
+  "minutes approval",
+  "zoning bylaw",
+  "land use"
+ ],
+ "dropped_unquoted_by_field": {}
 }

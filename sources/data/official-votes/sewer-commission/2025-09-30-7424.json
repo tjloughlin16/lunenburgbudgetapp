@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-09-30",
  "docid": "7424",
@@ -12,31 +12,214 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 9/9/25",
-   "moved_by": "Dan Proctor",
-   "seconded_by": "Arthur Katis",
-   "outcome": "passed 3-0-1",
+   "motion": "Accept the minutes of 9/9/2025.",
+   "moved_by": "Dan P.",
+   "seconded_by": "Arthur K.",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: dan p. second: arthur k. to accept the minutes of 9/9/25. roll call vote: dan-aye, arthur-aye, and brett-aye. scott abstained."
+   "quote": "to accept the minutes of 9/9/25. roll call vote: dan-aye, arthur-aye, and brett-aye."
   },
   {
-   "motion": "Accept the Change of Use for 308 Mass Ave",
-   "moved_by": "Scott Dall",
-   "seconded_by": "Arthur Katis",
-   "outcome": "passed 4-0",
+   "motion": "Accept the Change of Use for 308 Mass Ave (Empire Athletics fitness center); roll call lists four ayes (Arthur, Dan, Scott, Brett).",
+   "moved_by": "Scott D.",
+   "seconded_by": "Arthur K.",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: scott d. second: arthur k. to accept the change of use for 308 mass ave. roll call vote: , arthur-aye, dan-aye, scott-aye, and brett-aye."
+   "quote": "to accept the change of use for 308 mass ave."
   },
   {
-   "motion": "Adjourn at 6:28pm",
-   "moved_by": "Dan Proctor",
-   "seconded_by": "Scott Dall",
-   "outcome": "passed 4-0",
+   "motion": "Adjourn the meeting at 6:28pm; roll call lists four ayes (Scott, Dan, Arthur, Brett).",
+   "moved_by": "Dan P.",
+   "seconded_by": "Scott D.",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: dan p. second: scott d. to adjourn at 6:28pm. roll call vote: scott-aye, dan-aye, arthur-aye, and brett-aye."
+   "quote": "to adjourn at 6:28pm. roll call vote: scott-aye, dan-aye, arthur-aye, and brett-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07209739999999999
+ "note": "The minutes are a plain-text extraction with no scan issues. No vote tally is printed as a count (e.g. \"passed 4-0\"), so outcomes are recorded as \"not stated\"; the roll-call names are given in each motion. The 308 Mass Ave roll call begins with a blank name slot (\", Arthur-aye\"). Public comment is recorded as \"none\" at both points, so no speakers are listed. Nick, the co-owner of Empire Athletics, is mentioned but did not take part, so he is not listed as an attendee. No dollar figures are printed anywhere in the minutes.",
+ "cost_usd": 0.014724670000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair- scott dall, clerk- dan proctor, member: arthur katis"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk- dan proctor, member: arthur katis, sewer business manager- andrew valliere"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "member: arthur katis, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "absent: dpw director- bill bernard,"
+  },
+  {
+   "name": "Shahid Qureshi",
+   "role": "representing Empire Athletics (owner), applicant for 308 Mass Ave change of use",
+   "status": "present",
+   "quote": "shahid qureshi (empire athletics) - introduced himself, noting he is one of the owners of empire athletics"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to discuss the ADU regulation draft again at the next meeting.",
+   "quote": "they agreed to discuss it again at the next meeting."
+  },
+  {
+   "decision": "Next step for the ADU regulation: Town Counsel reviews the draft for edits, then the Commission votes on it, then it goes to Town Meeting for approval.",
+   "quote": "next step would be to have town counsel review the draft for any edits and then the commission will vote on it."
+  },
+  {
+   "decision": "Andrew Valliere will send Shahid Qureshi the compliance forms for the required 1st Tuesday grease trap log reports.",
+   "quote": "andrew will send shahid the compliance forms for submitting the required 1st tuesday grease trap log reports."
+  },
+  {
+   "decision": "Future agenda: public hearings set for 10/14 on a waiver easement at 830/832 Mass Ave and for 11/18/25 on a Leominster Road easement waiver.",
+   "quote": "public hearing on 10/14 for waiver easement at 830/832 mass ave."
+  },
+  {
+   "decision": "Dan Proctor will abstain from discussion of 830/832 Mass Ave but will attend the meeting.",
+   "quote": "dan noted he will need to abstain from the discussion on 830/832 mass ave but will be attending the meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q1 FY26 sewer demands",
+   "what_was_recorded": "Andrew Valliere reported the Q1 FY26 demands went out and that he processed reversals for customers who paid the same day; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "andrew reported the demands went out and he processed some reversals for those who paid that same day."
+  },
+  {
+   "topic": "ADU sewer connection fees",
+   "what_was_recorded": "Working group has been developing the process and fees for connecting an accessory dwelling unit (ADU) to sewer; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "they have been working on the process and fees for connecting an adu to sewer."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 9/9/2025",
+   "resolution": "motion recorded; roll call three aye, Scott Dall abstained",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "to accept the minutes of 9/9/25. roll call vote: dan-aye, arthur-aye, and brett-aye."
+  },
+  {
+   "topic": "ADU regulation draft",
+   "resolution": "reviewed and discussed; continued to next meeting",
+   "tags": [
+    "ADU",
+    "accessory dwelling unit",
+    "regulation",
+    "town counsel",
+    "town meeting"
+   ],
+   "quote": "they agreed to discuss it again at the next meeting."
+  },
+  {
+   "topic": "Q1 FY26 demands",
+   "resolution": "reported; reversals processed",
+   "tags": [
+    "billing",
+    "demands",
+    "sewer rates"
+   ],
+   "quote": "andrew reported the demands went out and he processed some reversals for those who paid that same day."
+  },
+  {
+   "topic": "308 Mass Ave change of use (Empire Athletics)",
+   "resolution": "change of use accepted; applicant welcomed",
+   "tags": [
+    "change of use",
+    "grease trap",
+    "fitness center",
+    "308 Mass Ave"
+   ],
+   "quote": "to accept the change of use for 308 mass ave."
+  },
+  {
+   "topic": "Manhole repair IFB",
+   "resolution": "no action (not discussed)",
+   "tags": [
+    "manhole",
+    "bid"
+   ],
+   "quote": "manhole repair ifb - not discussed."
+  },
+  {
+   "topic": "Future agenda items: easement waiver public hearings",
+   "resolution": "noted for future agenda; Dan Proctor to abstain on 830/832 Mass Ave",
+   "tags": [
+    "public hearing",
+    "easement",
+    "waiver",
+    "Mass Ave",
+    "Leominster Road"
+   ],
+   "quote": "public hearing on 10/14 for waiver easement at 830/832 mass ave."
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "information only",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "october 14, 2025 @ 7pm - regular meeting, hybrid meeting @ dpw"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:28pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn at 6:28pm. roll call vote: scott-aye, dan-aye, arthur-aye, and brett-aye."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "accessory dwelling units",
+  "change of use",
+  "grease trap",
+  "easement waiver",
+  "public hearing",
+  "minutes approval",
+  "billing demands",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

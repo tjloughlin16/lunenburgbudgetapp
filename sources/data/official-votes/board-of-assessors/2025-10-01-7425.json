@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-10-01",
  "docid": "7425",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from April 2, 2025",
+   "motion": "Approve the minutes from April 2, 2025, moved by Sarah Cammer and seconded by Brian Laffond.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "not stated",
@@ -20,15 +20,13 @@
    "quote": "there was a motion to approve the minutes from april 2, 2025, by sarah cammer, seconded by brian laffond."
   },
   {
-   "motion": "Approve the minutes, as amended, from April 16, 2025",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes, as amended, from April 16, 2025.",
    "outcome": "not stated",
    "procedural": true,
    "quote": "there was a motion to approve the minutes, as amended, from april 16, 2025."
   },
   {
-   "motion": "Approve the minutes from May 5, 2025",
+   "motion": "Approve the minutes from May 5, 2025, moved by Sarah Cammer and seconded by Brian Laffond.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "not stated",
@@ -36,16 +34,280 @@
    "quote": "there was a motion to approve the minutes from may 5, 2025, by sarah cammer, seconded by brian laffond."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting, moved by Sarah Cammer and seconded by Brian Laffond.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "there was a motion to adjourn by sarah cammer, seconded by brian laffond. all in 4",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to adjourn by sarah cammer, seconded by brian laffond."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision; text is readable and complete.",
- "cost_usd": 0.06869739999999999
+ "note": "Text is a macOS Vision OCR of scanned minutes, four pages, so every quote is subject to OCR error. Visible artifacts include the header \"Appeured\", \"Atter\" for \"After\", and \"Brian Latfond\" on page 4 (Brian Laffond is the printed name elsewhere). The minutes-approval motions name April 2, April 16 and May 5, 2025, but the agenda line lists May 5, July 16, July 29, August 13 and September 3, 2025; no minutes motion records an outcome. The adjournment line is garbled (\"ADJOURN favor.\") and the page ends at \"All in\", so the vote result is not stated. Jack Rabbitt, Kara McCarthy and the Data Scout representative (unnamed) are mentioned but not recorded as attending. Public comment is recorded only as \"no comments from the public\", so no speakers are listed.",
+ "cost_usd": 0.01630717,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka"
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka"
+  },
+  {
+   "name": "Randy Mercier",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "randy mercier came into the office and determined there could be 11 characters in our vision code."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed its goal is to keep the Assessor's Office open for business whenever Town Hall is open.",
+   "quote": "the board agreed our goal is to keep the assessor's office open for business whenever the town hall is open for business."
+  },
+  {
+   "decision": "Lynda Cajka will speak with the Data Scout representative about field mapping capabilities and relay the answer to the Board.",
+   "quote": "lynda cajka will speak to the representative about their field capabilities and will relay that information to the board."
+  },
+  {
+   "decision": "Either Lynda Cajka or Brian Laffond will submit the 41A warrant, because the deadline is the next day.",
+   "quote": "either lynda cajka or brian laffond will submit the warrant because the deadline is tomorrow."
+  },
+  {
+   "decision": "Lynda Cajka will provide an update on the Master Plan Response at the next meeting; Brian Laffond offered to draft it to relieve her of the burden.",
+   "quote": "lynda cajka confirms she has been working on this and will provide an update at the next meeting."
+  },
+  {
+   "decision": "Brian Laffond asked Lynda Cajka to follow up with IT Director Kara McCarthy on integrating YouTube videos into the Agendas and Minutes page.",
+   "quote": "brian asked lynda to follow up with our it director, kara mccarthy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY26 growth (residential, commercial, industrial, chapter land)",
+   "what_was_recorded": "FY26 growth was submitted to RRC at a total of $392,380, against an estimate of $400,000.",
+   "figures_as_printed": [
+    "$392,380",
+    "$400,000"
+   ],
+   "quote": "the fy26 growth for residential, commercial, industrial and chapter land was submitted to rrc. the total was $392,380."
+  },
+  {
+   "topic": "41D exemption new amounts",
+   "what_was_recorded": "The new amounts for the 41D exemption totaled $1,029.",
+   "figures_as_printed": [
+    "$1,029"
+   ],
+   "quote": "the new amounts for the 41d exemption totaled $1,029."
+  },
+  {
+   "topic": "Social Security deduction for exemptions",
+   "what_was_recorded": "DLS social security deduction amounts were reported: a single person and a spouse, with married couples receiving the combined amount against income for exemptions.",
+   "figures_as_printed": [
+    "$5,980",
+    "$2,990",
+    "$8,970"
+   ],
+   "quote": "for a single person the deduction is $5,980 and their spouse $2,990."
+  },
+  {
+   "topic": "Economic and functional obsolescence discounts removed for non-responding owners",
+   "what_was_recorded": "Discounts removed from six non-responding properties totaled $8,231.45, with an assessed value of $573,200.",
+   "figures_as_printed": [
+    "$8,231.45",
+    "$573,200"
+   ],
+   "quote": "the discounts totaled $8,231.45 with an assessed value of $573,200."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened at 7:35 PM",
+   "quote": "the meeting opened at 7:35 pm.",
+   "tags": [
+    "meeting"
+   ]
+  },
+  {
+   "topic": "Opening comments from Board and public",
+   "resolution": "no comments from the Board or public",
+   "quote": "there were no comments from the board.",
+   "tags": [
+    "meeting"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "informational; growth and interim work reported",
+   "quote": "4 requests for abutters lists were received.",
+   "tags": [
+    "property assessment",
+    "new growth",
+    "abatements",
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "three motions to approve minutes made; outcome not recorded",
+   "quote": "there was a motion to approve the minutes from april 2, 2025, by sarah cammer, seconded by brian laffond.",
+   "tags": [
+    "meeting minutes"
+   ]
+  },
+  {
+   "topic": "Review and approve invoices and vouchers",
+   "resolution": "no action; no documents",
+   "quote": "there were no documents to review and approve.",
+   "tags": [
+    "invoices"
+   ]
+  },
+  {
+   "topic": "2024 valid and arm's length sales report",
+   "resolution": "under review by Vision; sort options requested",
+   "quote": "there are 154 qualified sales that vision is currently reviewing and analyzing.",
+   "tags": [
+    "sales review",
+    "property assessment"
+   ]
+  },
+  {
+   "topic": "Neighborhood Review RFP",
+   "resolution": "no bids received",
+   "quote": "there were no bids for the neighborhood review rfp.",
+   "tags": [
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Economic and functional obsolescence discounts and owner notification",
+   "resolution": "notices sent; discounts removed for non-responding owners",
+   "quote": "lynda cajka stated that 2 attempts were made to contact property owners.",
+   "tags": [
+    "abatements",
+    "property assessment"
+   ]
+  },
+  {
+   "topic": "41A warrant for income limitation increase",
+   "resolution": "draft circulated; a warrant article judged superfluous; feedback sent to Town Manager",
+   "quote": "brian laffond sent a draft of the warrant to the board.",
+   "tags": [
+    "warrant articles",
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Master plan response",
+   "resolution": "continued to next meeting",
+   "quote": "lynda cajka confirms she has been working on this and will provide an update at the next meeting.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Office hours",
+   "resolution": "Board agreed on a goal",
+   "quote": "the board agreed our goal is to keep the assessor's office open for business whenever the town hall is open for business.",
+   "tags": [
+    "office operations"
+   ]
+  },
+  {
+   "topic": "GIS mapping software future upgrade",
+   "resolution": "presented; Principal Assessor to follow up on field mapping",
+   "quote": "a representative from data scout came to the office and provided a presentation.",
+   "tags": [
+    "GIS software",
+    "CAMA system"
+   ]
+  },
+  {
+   "topic": "Method to implement Senior Means Tested Exemption",
+   "resolution": "discussed; Overlay may be needed in the first year",
+   "quote": "at this time there is apparently no process to shift the tax burden for this exemption within munis.",
+   "tags": [
+    "exemptions",
+    "tax burden"
+   ]
+  },
+  {
+   "topic": "Criteria for Clause 18 (postponed)",
+   "resolution": "postponed; no criteria determined",
+   "quote": "currently, lunenburg has not determined any criteria.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Local rule exemption for disabled residents (postponed)",
+   "resolution": "postponed; research on other towns ongoing",
+   "quote": "lynda cajka is researching what other towns have done to address these citizens'",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "BOA policies binder and YouTube videos on Agendas and Minutes page (postponed)",
+   "resolution": "postponed; follow-up with IT Director",
+   "quote": "brian asked lynda to follow up with our it director, kara mccarthy.",
+   "tags": [
+    "policies",
+    "website"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "listed",
+   "quote": "upcoming meetings: october 15, 2025, november 5, 2025, november 19, 2025, december 3, 2025, and december 17, 2025",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "no public comment; Board seeks new member",
+   "quote": "the board of assessors are looking for additional member to join the team.",
+   "tags": [
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "closed at 9:25 PM",
+   "quote": "the meeting closed at 9:25 pm.",
+   "tags": [
+    "meeting"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "exemptions",
+  "abatements",
+  "new growth",
+  "sales review",
+  "GIS software",
+  "warrant articles",
+  "minutes approval",
+  "board membership"
+ ],
+ "dropped_unquoted_by_field": {}
 }

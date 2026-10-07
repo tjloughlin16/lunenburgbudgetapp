@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-10-14",
  "docid": "7443",
@@ -12,39 +12,421 @@
  },
  "votes": [
   {
-   "motion": "To approve September minutes",
+   "motion": "Approve the September minutes.",
    "moved_by": "Ms. Lockwood",
    "seconded_by": "Mr. McGuigan",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "september minutes motioned for approval by ms. lockwood, seconded by mr. mcguigan, passed unanimously."
   },
   {
-   "motion": "To ratify the previous vote to authorize Mr. Rabbitt to work with the town towards the 41A tax exemption",
+   "motion": "Ratify the previous vote authorizing Mr. Rabbitt to work with the town toward the 41A tax exemption.",
    "moved_by": "Mr. Franco",
-   "seconded_by": "Ms. O'Sullivan",
-   "outcome": "Approved unanimously",
+   "seconded_by": "Ms. O’Sullivan",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "mr. franco made a motion to ratify the previous vote to authorize mr. rabbitt to work with the town towards the 41a tax exemption, seconded by ms. o'sullivan. approved unanimously."
+   "quote": "mr. franco made a motion to ratify the previous vote to authorize mr. rabbitt to work with the town towards the 41a tax exemption, seconded by ms. o'sullivan."
   },
   {
-   "motion": "To allow Mr. Rabbitt to work with the COA Director to explore grants",
+   "motion": "Allow Mr. Rabbitt to work with the COA Director to explore grants.",
    "moved_by": "Ms. Lockwood",
-   "seconded_by": "Ms. O'Sullivan",
-   "outcome": "passed unanimously",
+   "seconded_by": "Ms. O’Sullivan",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made for the board to allow mr. rabbitt to work with the coa director to explore grants by ms. lockwood, and seconded by ms. o'sullivan. all in favor, passed unanimously."
+   "quote": "a motion was made for the board to allow mr. rabbitt to work with the coa director to explore grants by ms. lockwood, and seconded by ms. o'sullivan."
   },
   {
-   "motion": "To adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Lockwood",
    "seconded_by": "Mr. Franco",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion to adjourn was made by ms. lockwood and seconded by mr. franco. it passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0705654
+ "note": "Clean digital text, not a scan. Three votes are recorded with movers and seconders, plus adjournment; each is quoted verbatim. Two vote results are printed as 'passed unanimously' or 'Approved unanimously' with no count, so they are recorded as 'passed'. The minutes say 'Mr. Rabbitt' and 'Ms. Rabbitt' without first names; the Vice-Chair is listed as Jane Rabbitt and a member as Jack Rabbitt, so attributing each 'Mr. Rabbitt' to Jack is an inference the minutes do not state outright. The Tea Party donation is described with no amount. The minutes end with 'Minutes approved at November 18, 2025 Meeting', so they were approved after this meeting; this record reflects the text as provided.",
+ "cost_usd": 0.01729257,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan, jack rabbitt,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan, jack rabbitt,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan, jack rabbitt,"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan, jack rabbitt,"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan, jack rabbitt,"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan, jack rabbitt,"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan, jack rabbitt,"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan, jack rabbitt,"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan, jack rabbitt,"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan, cathy beale, lou franco, elena christopher, ana lockwood, susan o'sullivan, jack rabbitt,"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: helen balcom"
+  },
+  {
+   "name": "Deb Goodsell",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "guests: deb goodsell (coa director) ena keo-thompson (eagle house supporters), ceasar nuzzolo (select board chair), glenn mcleod (select board member)."
+  },
+  {
+   "name": "Ena Keo-Thompson",
+   "role": "Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: deb goodsell (coa director) ena keo-thompson (eagle house supporters), ceasar nuzzolo (select board chair), glenn mcleod (select board member)."
+  },
+  {
+   "name": "Ceasar Nuzzolo",
+   "role": "Select Board Chair",
+   "status": "present",
+   "quote": "guests: deb goodsell (coa director) ena keo-thompson (eagle house supporters), ceasar nuzzolo (select board chair), glenn mcleod (select board member)."
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "guests: deb goodsell (coa director) ena keo-thompson (eagle house supporters), ceasar nuzzolo (select board chair), glenn mcleod (select board member)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members were asked to bring their thoughts on the town bylaw to the next meeting.",
+   "quote": "ms. lincoln asked the board to come to the next meeting with their thoughts on the bylaw."
+  },
+  {
+   "decision": "Board members were asked to bring Tri-Board feedback to the next meeting.",
+   "quote": "ms. lincoln asked board members to bring any feedback to the next meeting."
+  },
+  {
+   "decision": "Mr. Rabbitt encouraged a discussion with the Outreach Coordinator about available programs for home safety modifications.",
+   "quote": "mr. rabbitt encouraged a discussion with the outreach coordinator to see if there are programs currently available"
+  },
+  {
+   "decision": "Chair will forward the Padula Day write-up to Mr. Nuzzolo; she recommends a Board of Selectmen citation rather than a celebration.",
+   "quote": "she received a write-up from mr. ebersole and will forward that to mr. nuzzolo."
+  },
+  {
+   "decision": "Director will provide a volunteer list; board asked that it note what each person volunteered for.",
+   "quote": "ms. lincon asked for a volunteer list and ms. goodsell will provide that."
+  },
+  {
+   "decision": "A new hours sign is to be completed by D&amp;G graphics and posted on the kiosk before November.",
+   "quote": "new sign for hours will be completed by d&amp;g graphics and that will be posted on the kiosk before november."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tea Party fundraising result",
+   "what_was_recorded": "The Tea Party was reported as successful and raised almost $4,000.",
+   "figures_as_printed": [
+    "almost $4,000"
+   ],
+   "quote": "tea party recap: tea party was successful and raised almost $4,000."
+  },
+  {
+   "topic": "Volunteer donation at Tea Party",
+   "what_was_recorded": "Public commenter thanked Tea Party volunteers for a generous donation; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. keo-thompson thanked the volunteers who participated in the tea party for all their work and their generous donation."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ena Keo-Thompson",
+   "stated_role": "Eagle House Supporters",
+   "topic": "thanks for Tea Party volunteers; upcoming supporter fundraisers",
+   "quote": "ms. keo-thompson thanked the volunteers who participated in the tea party for all their work and their generous donation."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order by the Chairperson",
+   "quote": "call to order chairperson deb lincoln called the meeting to order.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: moment of silence",
+   "resolution": "moment of silence held",
+   "quote": "a moment of silence was held for the passing of two century club members: kay previte and mario patacchiola.",
+   "tags": [
+    "memorial",
+    "century club"
+   ]
+  },
+  {
+   "topic": "Town bylaw as it pertains to the COA",
+   "resolution": "discussed; board to bring thoughts to next meeting",
+   "quote": "ms. lincoln presented the town bylaw as it pertains to the council on aging.",
+   "tags": [
+    "bylaw",
+    "governance",
+    "director role"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "received",
+   "quote": "public comment: ms. keo-thompson thanked the volunteers who participated in the tea party",
+   "tags": [
+    "tea party",
+    "fundraising",
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "Board comment: cardiology, Representative and Senator invitation, concerts, thanks",
+   "resolution": "reported",
+   "quote": "ms. lincoln reported that her cardiologist is leaving sterling cardiology and moving back to leominster cardiology.",
+   "tags": [
+    "health services",
+    "legislators",
+    "community events"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "September minutes approved; 41A vote ratified",
+   "quote": "september minutes motioned for approval by ms. lockwood, seconded by mr. mcguigan, passed unanimously.",
+   "tags": [
+    "minutes",
+    "41A"
+   ]
+  },
+  {
+   "topic": "Tri-Board report",
+   "resolution": "received; board feedback requested",
+   "quote": "tri-board report: ms. goodsell shared her report as presented to the tri-board.",
+   "tags": [
+    "tri-board",
+    "staffing",
+    "census",
+    "older adults"
+   ]
+  },
+  {
+   "topic": "Tea Party recap",
+   "resolution": "reported",
+   "quote": "tea party recap: tea party was successful and raised almost $4,000.",
+   "tags": [
+    "tea party",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Thank-you notes for Tea Party and volunteers",
+   "resolution": "volunteers asked to write notes",
+   "quote": "ms. lincoln provided cards and asked for volunteers to write notes thanking all who participated",
+   "tags": [
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Safe shower installation assistance",
+   "resolution": "discussed; Outreach Coordinator to be consulted",
+   "quote": "safe shower installation assistance: ms. lincoln reported that she has recently upgraded her tub to a safe shower",
+   "tags": [
+    "home modifications",
+    "assistive equipment"
+   ]
+  },
+  {
+   "topic": "Caregivers bill (Representative Kushmerek)",
+   "resolution": "presented",
+   "quote": "ms. lockwood presented on the bill that representative kushmerek has co-sponsored towards providing support and relief for caregivers.",
+   "tags": [
+    "caregivers",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "41A tax deferral report",
+   "resolution": "grants exploration authorized by vote",
+   "quote": "41a report: mr. rabbitt reported on the 41a tax deferral that is awaiting a vote to be added to the warrant for special town meeting.",
+   "tags": [
+    "41A",
+    "tax deferral",
+    "grants",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Padula Day",
+   "resolution": "citation recommended instead of celebration",
+   "quote": "padula day: ms. lincoln reported that instead of a celebration she is recommending a citation from the board of selectman.",
+   "tags": [
+    "recognition",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Financial reports",
+   "resolution": "no action",
+   "quote": "financial reports: none at this time.",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Caregiver Connection",
+   "resolution": "reported",
+   "quote": "caregiver connection: ms. beale reported that the first class went well and was well attending.",
+   "tags": [
+    "caregivers",
+    "classes"
+   ]
+  },
+  {
+   "topic": "Local hospital services update",
+   "resolution": "reported",
+   "quote": "update on local hospital services: ms. o'sullivan reported that the satellite emergency center in groton ma is on schedule to open at the end of 2026, or the beginning of 2027.",
+   "tags": [
+    "health services",
+    "hospital"
+   ]
+  },
+  {
+   "topic": "Lobby furnishings",
+   "resolution": "noted; mobile showroom date to be determined",
+   "quote": "furnishings for lobby areas: ms. goodsell noted that the rabbitts donated a tv",
+   "tags": [
+    "facilities",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Master Plan committee",
+   "resolution": "Chair stepped down; vacancy noted",
+   "quote": "ms. lincoln reported that she has stepped down from the committee as she can no longer attend the meetings.",
+   "tags": [
+    "master plan",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Sand for Seniors program",
+   "resolution": "noted",
+   "quote": "sand for seniors program: this program is in place for this year, and requests for the sand can be brought to the coa.",
+   "tags": [
+    "programs",
+    "winter safety"
+   ]
+  },
+  {
+   "topic": "Director's report: programs and events",
+   "resolution": "reported",
+   "quote": "upcoming programs and events: ms. goodsell noted that we are still looking for volunteers to be trained by aarp to assist with taxes",
+   "tags": [
+    "programs",
+    "tax assistance",
+    "foot care",
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported",
+   "quote": "eagle house supporters report: ms. keo-thompson noted that there are a number of trips, raffles and events both now and upcoming.",
+   "tags": [
+    "eagle house",
+    "fundraising",
+    "events"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "received",
+   "quote": "notices and communications: ms. lincoln shared a letter from fran therrien.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Board comment: hours sign, volunteer list",
+   "resolution": "reported; volunteer list to be provided",
+   "quote": "new sign for hours will be completed by d&amp;g graphics and that will be posted on the kiosk before november.",
+   "tags": [
+    "signage",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously",
+   "quote": "a motion to adjourn was made by ms. lockwood and seconded by mr. franco. it passed unanimously.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "tea party fundraising",
+  "41A tax deferral",
+  "caregivers",
+  "town bylaw",
+  "tri-board",
+  "padula day",
+  "volunteers",
+  "home safety",
+  "hospital services",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

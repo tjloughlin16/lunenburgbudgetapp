@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-02-26",
  "docid": "7076",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 1/22, 1/29, and 2/5",
+   "motion": "Approve the minutes of 1/22, 1/29 and 2/5 (regular meetings).",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Ms. Brzozoski",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. archambault makes a motion to approve the minutes for 1/22, 1/29, & 2/5, ms. brzozoski seconds the motion, all approve with mr. sculimb rene abstainin",
-   "quote_taken_from_text": true
+   "quote": "ms. archambault makes a motion to approve the minutes for 1/22, 1/29, & 2/5, ms. brzozoski seconds the motion, all approve"
   },
   {
-   "motion": "Approve a line item transfer of $9,200 from vehicle maintenance to contracted services for HVAC on the roof of LMHS",
+   "motion": "Approve a $9,200 line item transfer from vehicle maintenance to contracted services for HVAC work on the roof of LMHS.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
@@ -29,7 +28,7 @@
    "quote": "mr. sculimbrene makes a motion to approve line item transfer, mr. beardmore seconds the motion, all approve"
   },
   {
-   "motion": "Accept athletics fee increases to $325 for high school and $275 for middle school, with a 25% discount for siblings and reduced fees for lower-income families",
+   "motion": "Accept the proposed increase in athletic user fees (high school up to $325, middle school $275, sibling discount, reduced fees and $1,500 family cap as presented).",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed",
@@ -37,7 +36,7 @@
    "quote": "ms. archambault makes a motion to accept the increase, mr. sculimbrene seconds the motion all approve via roll call vote"
   },
   {
-   "motion": "Accept a 50% increase in facilities fees",
+   "motion": "Accept the proposal to increase facilities fees by 50% as proposed.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed",
@@ -45,7 +44,7 @@
    "quote": "mr. beardmore makes a motion to accept this as proposed, mr. sculimbrene seconds the motion, all approve via roll call vote."
   },
   {
-   "motion": "Close the public portion of the Q&A",
+   "motion": "Close the public portion of the Q&A on the FY26 budget.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed",
@@ -53,7 +52,7 @@
    "quote": "mr. beardmore makes a motion to close the public portion of the q&a, mr. sculimbrene seconds the motion all approve"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 10:43 pm.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed",
@@ -62,6 +61,538 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09925139999999999
+ "note": "Text is an extraction of the typed minutes with spacing artifacts (e.g., \"Sculimb rene\", \"Direc tor\", \"Mr. Bigelow\" listed without attendance); quotes are copied as printed and whitespace-collapsed. Votes are recorded only as \"all approve\" or \"all approve via roll call vote\"; no tallies are printed, so every outcome is \"passed\" with no count, and Mr. Sculimbrene's abstention on the minutes is noted in the topic. The roster does not mark guests as present or absent; their status is \"not stated\" unless they spoke. Public speakers are marked present because they spoke at the meeting. Board-member remarks in Public Comment (section 3) and the member resignation are recorded as topics, not as public comment.",
+ "cost_usd": 0.02579767,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brian lehtinen, chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene, vice chair - present"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "carol archambault, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "dr. burnham shares the presentation and explains how budgets are developed."
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMHS Principal (guest)",
+   "status": "not stated",
+   "quote": "guests: tim santry - lmhs principal; norman yvon - thes principal, carla squier - primary school principal"
+  },
+  {
+   "name": "Norman Yvon",
+   "role": "THES Principal (guest)",
+   "status": "not stated",
+   "quote": "guests: tim santry - lmhs principal; norman yvon - thes principal, carla squier - primary school principal"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Primary School Principal (guest)",
+   "status": "present",
+   "quote": "ms. squier answers that we can fit more kids in the classrooms, however the materials"
+  },
+  {
+   "name": "Dr. Deborah Bookis",
+   "role": "Director of Teaching & Learning (guest)",
+   "status": "present",
+   "quote": "dr. bookis responds a meta- analysis",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services (guest)",
+   "status": "not stated",
+   "quote": "julianna hanscom - director of special services, dr. susan gilson - director of administration & finance"
+  },
+  {
+   "name": "Dr. Susan Gilson",
+   "role": "Director of Administration & Finance (guest)",
+   "status": "not stated",
+   "quote": "julianna hanscom - director of special services, dr. susan gilson - director of administration & finance"
+  },
+  {
+   "name": "Amy Resnick",
+   "role": "MTSS Specialist/Coach (guest)",
+   "status": "not stated",
+   "quote": "amy resnick - mtss specialist/coach, lisa cantin - mtss specialist/coach"
+  },
+  {
+   "name": "Lisa Cantin",
+   "role": "MTSS Specialist/Coach (guest)",
+   "status": "not stated",
+   "quote": "amy resnick - mtss specialist/coach, lisa cantin - mtss specialist/coach"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "representing the LEA (public comment)",
+   "status": "present",
+   "quote": "public comment - mary foyle 985 flat hill road, i am here representing the lea, obviously the proposed cuts are"
+  },
+  {
+   "name": "Laura Peria",
+   "role": "public, 44 Whiting Street (Q&A); Whiting Street (public comment)",
+   "status": "present",
+   "quote": "laura peria, 44 whiting street i have a kindergartener, who is enrolled at the primary school"
+  },
+  {
+   "name": "Laura Barooshian",
+   "role": "public, 389 Mulpus Road (Q&A)",
+   "status": "present",
+   "quote": "laura barooshian 389 mulpus road q. can you repeat where the slide deck is online"
+  },
+  {
+   "name": "Vi-Anne Brown",
+   "role": "public, 118 Whiting Street (Q&A)",
+   "status": "present",
+   "quote": "vi-anne brown 118 whiting street i have been a resident here since 2008."
+  },
+  {
+   "name": "Amy King",
+   "role": "public, 3 Gates Place (Q&A)",
+   "status": "present",
+   "quote": "amy king 3 gates place q there has been a lot of discussion about the athletics"
+  },
+  {
+   "name": "Kara Harunkiewicz",
+   "role": "speaking on behalf of myself (public comment)",
+   "status": "present",
+   "quote": "kara harunkiewicz, 165 gilchrest street, i am speaking on behalf of myself."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Warrants of 2/3/25 – 2/4/25 signed and approved (no motion recorded).",
+   "quote": "warrants 2/3/25 - 2/4/25 $387,798.50 - signed and approved"
+  },
+  {
+   "decision": "Committee recommends Dr. Gilson meet with students to discuss possible increases in student activity fees.",
+   "quote": "committee recommends dr. gilson meet with students to discuss these possibility of increases in fees."
+  },
+  {
+   "decision": "Committee would like a survey sent to parents on the proposed transportation bus fee to gather community feedback.",
+   "quote": "committee would like a survey to go out to parents to get community feedback."
+  },
+  {
+   "decision": "Committee agreed to propose March 11 as the date for a joint meeting with the Select Board.",
+   "quote": "committee agrees this is a good idea and will propose the march 11th date for the meeting"
+  },
+  {
+   "decision": "Mr. Bigelow asked to suggest a sport to cut.",
+   "quote": "mr. bigelow is asked to suggest a sport to cut"
+  },
+  {
+   "decision": "School Committee will review the policy that prohibits advertising on school fields, in response to a public question.",
+   "quote": "currently we have a school committee policy that prohibits this. the school committee will be reviewing this policy."
+  },
+  {
+   "decision": "Committee recommends Dr. Burnham hire the candidate she has interviewed for Director of Facilities and Grounds.",
+   "quote": "it is recommended that dr. burnham hire the candidate she has interviewed."
+  },
+  {
+   "decision": "Committee does not support sharing resources with North Middlesex.",
+   "quote": "a discussion about sharing resources with north middlesex, which was not supported by the committee."
+  },
+  {
+   "decision": "Committee supports eliminating one assistant principal at the Middle High School and the part-time athletics secretary, and making the IT tech position part time.",
+   "quote": "committee supports eliminating one of the assistant principals at the middle high school and the part time athletics secretary"
+  },
+  {
+   "decision": "Committee tables the idea of eliminating the Director of Finance and Administration, and tables adding an accountant position and HR consulting contract support.",
+   "quote": "committee tables the idea of eliminating director of finance and administration and add an accountant position and hr consulting contract support."
+  },
+  {
+   "decision": "Superintendent Search Committee to proceed with its timeline as listed.",
+   "quote": "superintendent search committee discusses timeline and ultimately decide to proceed as listed."
+  },
+  {
+   "decision": "Reports tabled to the next meeting.",
+   "quote": "reports tabled for the next meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants approved",
+   "what_was_recorded": "Warrants for 2/3/25 – 2/4/25 were signed and approved at a stated total.",
+   "quote": "warrants 2/3/25 - 2/4/25 $387,798.50 - signed and approved",
+   "figures_as_printed": [
+    "$387,798.50"
+   ]
+  },
+  {
+   "topic": "Line item transfer for roof HVAC",
+   "what_was_recorded": "A line item transfer moved funds from vehicle maintenance to contracted services for HVAC work on the LMHS roof.",
+   "quote": "line item transfers - $9,200 from vehicle maintenance to contracted services to take care of hvac on roof",
+   "figures_as_printed": [
+    "$9,200"
+   ]
+  },
+  {
+   "topic": "911 upgrades at Turkey Hill",
+   "what_was_recorded": "The district requested funding from the finance committee for an unbudgeted cost of 911 upgrades at Turkey Hill.",
+   "quote": "requested funding for the $60,000 unbudgeted additional cost for the 911 upgrades at turkey hill.",
+   "figures_as_printed": [
+    "$60,000"
+   ]
+  },
+  {
+   "topic": "Athletic user fee increase",
+   "what_was_recorded": "The athletic user fee proposal raises high school and middle school fees and provides a sibling discount.",
+   "quote": "increase fee for high school up to $325 and $275 for middle school.",
+   "figures_as_printed": [
+    "$325",
+    "$275",
+    "25%"
+   ]
+  },
+  {
+   "topic": "Reduced athletic fee and family cap",
+   "what_was_recorded": "The athletic fee proposal sets a reduced fee and a family cap.",
+   "quote": "reduced fee for high school to $50 and $40 for middle school with a family cap of $1500.",
+   "figures_as_printed": [
+    "$50",
+    "$40",
+    "$1500"
+   ]
+  },
+  {
+   "topic": "Facilities fee increase",
+   "what_was_recorded": "A proposal to increase facilities fees by a percentage was accepted.",
+   "quote": "facilities proposal to increase fees by 50%",
+   "figures_as_printed": [
+    "50%"
+   ]
+  },
+  {
+   "topic": "Student activity fees",
+   "what_was_recorded": "A public commenter said six activities she participates in would cost $450, more than any athletic fee increase.",
+   "quote": "that would cost $450 which is more than any of the athletic fees were raised.",
+   "figures_as_printed": [
+    "$450"
+   ]
+  },
+  {
+   "topic": "Band instrument reeds",
+   "what_was_recorded": "A public commenter said reeds can cost $50 a semester.",
+   "quote": "you need reeds and that can cost $50 a semester.",
+   "figures_as_printed": [
+    "$50"
+   ]
+  },
+  {
+   "topic": "HR Specialist salary line",
+   "what_was_recorded": "A public question raised a salary increase of $71,000 for an HR Specialist; the superintendent said the position was moved from another part of the budget.",
+   "quote": "i saw a salary increase of $71,000 for an hr specialist",
+   "figures_as_printed": [
+    "$71,000"
+   ]
+  },
+  {
+   "topic": "Debt exclusions invested in town",
+   "what_was_recorded": "A member said the town has invested more than $60 million through debt exclusions.",
+   "quote": "in excess of $60 million just in debt exclusions.",
+   "figures_as_printed": [
+    "$60 million"
+   ]
+  },
+  {
+   "topic": "Student Opportunity Act funding",
+   "what_was_recorded": "A member said the Student Opportunity Act is set to increase statewide school funding by over $1.5 billion by 2027.",
+   "quote": "this law is set to increase school funding by over $1.5 billion by 2027",
+   "figures_as_printed": [
+    "$1.5 billion"
+   ]
+  },
+  {
+   "topic": "Inflation and school costs",
+   "what_was_recorded": "A member said costs since 2020 have risen with 18% inflation over four years.",
+   "quote": "we have experienced 18% inflation over that four year period.",
+   "figures_as_printed": [
+    "18%"
+   ]
+  },
+  {
+   "topic": "Overrides and tax levy",
+   "what_was_recorded": "A public commenter said the lack of overrides and a full tax levy creates a larger budgeted gap.",
+   "quote": "lack of overrides, a full 2 ½% tax creates an even larger budgeted gap.",
+   "figures_as_printed": [
+    "2 ½%"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfer from vehicle maintenance to contracted services for HVAC work on the roof of LMHS.",
+   "amount_as_printed": "$9,200",
+   "outcome": "approved (all approve)",
+   "quote": "line item transfers - $9,200 from vehicle maintenance to contracted services to take care of hvac on roof"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mary Foyle",
+   "stated_role": "representing the LEA",
+   "topic": "budget cuts and institutional history",
+   "quote": "public comment - mary foyle 985 flat hill road, i am here representing the lea, obviously the proposed cuts are"
+  },
+  {
+   "speaker": "Laura Peria",
+   "stated_role": "44 Whiting Street (Q&A)",
+   "topic": "class size and priorities in FY26 Q&A",
+   "quote": "laura peria, 44 whiting street i have a kindergartener, who is enrolled at the primary school"
+  },
+  {
+   "speaker": "Laura Barooshian",
+   "stated_role": "389 Mulpus Road (Q&A)",
+   "topic": "slide deck location and work-based program",
+   "quote": "laura barooshian 389 mulpus road q. can you repeat where the slide deck is online"
+  },
+  {
+   "speaker": "Vi-Anne Brown",
+   "stated_role": "118 Whiting Street (Q&A)",
+   "topic": "CPA funding and volunteers",
+   "quote": "vi-anne brown 118 whiting street i have been a resident here since 2008."
+  },
+  {
+   "speaker": "Amy King",
+   "stated_role": "3 Gates Place (Q&A)",
+   "topic": "advertising on fields and facilities fees",
+   "quote": "amy king 3 gates place q there has been a lot of discussion about the athletics"
+  },
+  {
+   "speaker": "Laura Peria",
+   "stated_role": "Whiting Street (public comment)",
+   "topic": "classroom priorities and MTSS tutors",
+   "quote": "laura peria whiting street, we started this meeting talking about priorities being classroom"
+  },
+  {
+   "speaker": "Kara Harunkiewicz",
+   "stated_role": "speaking on behalf of myself",
+   "topic": "student activity fees and music costs",
+   "quote": "kara harunkiewicz, 165 gilchrest street, i am speaking on behalf of myself."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "call to order by mr. lehtinen at 6:02 p.m.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "public comment - mary foyle 985 flat hill road, i am here representing the lea",
+   "tags": [
+    "public comment",
+    "budget cuts"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action",
+   "quote": "4. chair's report - i want to thank everyone for being here tonight, your engagement is crucial.",
+   "tags": [
+    "budget",
+    "state funding"
+   ]
+  },
+  {
+   "topic": "Student representative's report",
+   "resolution": "no action",
+   "quote": "i am here on behalf of the student council.",
+   "tags": [
+    "students",
+    "athletics fees"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved (Sculimbrene abstaining)",
+   "quote": "ms. archambault makes a motion to approve the minutes for 1/22, 1/29, & 2/5",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Line item transfers, warrants and donations",
+   "resolution": "approved",
+   "quote": "warrants 2/3/25 - 2/4/25 $387,798.50 - signed and approved",
+   "tags": [
+    "finance",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "no action",
+   "quote": "requested funding for the $60,000 unbudgeted additional cost for the 911 upgrades at turkey hill.",
+   "tags": [
+    "911 upgrades",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Presentation",
+   "resolution": "none on agenda",
+   "quote": "9. presentation - none",
+   "tags": []
+  },
+  {
+   "topic": "Increasing new and existing revenues",
+   "resolution": "athletic and facilities fees approved; student activity fees referred to Dr. Gilson; bus fee survey",
+   "quote": "a slideshow presentation of athletic user fees is presented to increase fee for high school up to $325 and $275 for middle school.",
+   "tags": [
+    "athletics fees",
+    "facilities fees",
+    "student activity fees",
+    "transportation fee",
+    "revenue"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Select Board",
+   "resolution": "agreed to propose March 11 date",
+   "quote": "committee agrees this is a good idea and will propose the march 11th date for the meeting",
+   "tags": [
+    "select board",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Protection of student information",
+   "resolution": "no action",
+   "quote": "we do not share any personal information or school records.",
+   "tags": [
+    "privacy"
+   ]
+  },
+  {
+   "topic": "FY26 budget update",
+   "resolution": "discussion, no action",
+   "quote": "slides are posted and available on the website.",
+   "tags": [
+    "FY26 budget",
+    "staffing",
+    "cuts"
+   ]
+  },
+  {
+   "topic": "FY26 budget Q&A",
+   "resolution": "public Q&A closed by motion",
+   "quote": "mr. beardmore makes a motion to close the public portion of the q&a",
+   "tags": [
+    "FY26 budget",
+    "public comment",
+    "class size",
+    "MTSS"
+   ]
+  },
+  {
+   "topic": "Committee priorities and expense cut proposal",
+   "resolution": "discussed; several positions directed or not supported",
+   "quote": "committee supports eliminating one of the assistant principals at the middle high school and the part time athletics secretary",
+   "tags": [
+    "staffing",
+    "administration",
+    "cuts"
+   ]
+  },
+  {
+   "topic": "Superintendent search committee",
+   "resolution": "proceed as listed",
+   "quote": "superintendent search committee discusses timeline and ultimately decide to proceed as listed.",
+   "tags": [
+    "superintendent search"
+   ]
+  },
+  {
+   "topic": "Reports tabled",
+   "resolution": "tabled to next meeting",
+   "quote": "reports tabled for the next meeting",
+   "tags": []
+  },
+  {
+   "topic": "Public comment (closing) and member resignation",
+   "resolution": "no action; resignation announced",
+   "quote": "that i am resigning from the school committee effective may 16 th.",
+   "tags": [
+    "public comment",
+    "school committee vacancy",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "none recorded",
+   "quote": "14. topics for future discussion",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:43 pm",
+   "quote": "mr. sculimbrene makes a motion to adjourn at 10:43 pm, ms. archambault seconds the motion, all approve",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "school budget",
+  "FY26 budget",
+  "budget cuts",
+  "athletics fees",
+  "student activity fees",
+  "transportation bus fee",
+  "facilities fees",
+  "staffing",
+  "administration",
+  "state funding",
+  "Chapter 70",
+  "Student Opportunity Act",
+  "Community Preservation Act",
+  "select board joint meeting",
+  "school committee vacancy",
+  "superintendent search",
+  "public comment",
+  "line item transfer",
+  "warrants"
+ ],
+ "dropped_unquoted_by_field": {}
 }

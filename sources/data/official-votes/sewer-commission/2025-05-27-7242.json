@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-05-27",
  "docid": "7242",
@@ -12,33 +12,316 @@
  },
  "votes": [
   {
-   "motion": "Elect Brett Ramsden as Chair",
+   "motion": "Elect Brett Ramsden as Chair (nominated by Joe, seconded by Scott).",
    "moved_by": "Joe",
    "seconded_by": "Scott",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "chair - joe-aye, scott-aye, dan-aye, and art hur -aye. brett abstaine",
-   "quote_taken_from_text": true
+   "outcome": "passed 4-0-1 (Brett abstained)",
+   "procedural": false,
+   "quote": "joe nominated brett for chair and scott seconded."
   },
   {
-   "motion": "Elect Dan Proctor as Clerk",
+   "motion": "Elect Scott Dall as Vice-Chair (nominated by Brett, seconded by Dan).",
+   "moved_by": "Brett",
+   "seconded_by": "Dan",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "brett nominated scott for vice-chair and dan seconded."
+  },
+  {
+   "motion": "Elect Dan Proctor as Clerk (nominated by Scott, seconded by Brett).",
    "moved_by": "Scott",
    "seconded_by": "Brett",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "clerk- scott-aye, dan-aye, joe-aye and arthur-aye (brett did not vote)"
+   "outcome": "passed 4-0 (Brett did not vote)",
+   "procedural": false,
+   "quote": "scott nominated dan for clerk and brett seconded."
   },
   {
-   "motion": "Adjourn at 6:53pm",
-   "moved_by": "Scott D.",
-   "seconded_by": "Dan P.",
-   "outcome": "passed 4-0",
+   "motion": "Accept the Dana Street pump station force main repair quote and move forward to schedule the work.",
+   "moved_by": "Scott",
+   "seconded_by": "Dan",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "to accept the quote and move forward to schedule the work before it becomes an issue."
+  },
+  {
+   "motion": "Adjourn the meeting at 6:53pm.",
+   "moved_by": "Scott",
+   "seconded_by": "Dan",
+   "outcome": "passed 4-0 (Joe had left)",
    "procedural": true,
-   "quote": "motion: scott d. second: dan p. to adjourn at 6:53pm roll call vote: s cott-aye , a rthur-aye , d an-aye , and brett - aye ( joe ",
-   "quote_taken_from_text": true
+   "quote": "to adjourn at 6:53pm"
   }
  ],
- "dropped_unquoted": 2,
- "note": "",
- "cost_usd": 0.1442964
+ "dropped_unquoted": 0,
+ "note": "Text extraction, not a scan; readable throughout. Spacing is broken in places (e.g. \"Art hur\", \"co s t\"), so quotes are copied with that spacing collapsed to single spaces. Four votes are recorded with an explicit result. The Chair vote's printed tally is 4 aye with Brett abstaining, and the minutes give no separate count line for it, so that outcome is my reading of the printed tally. The two sections headed PUBLIC COMMENT record remarks by board members and staff, and no resident speaker is named. Joe left before the adjournment vote.",
+ "cost_usd": 0.01866647,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brett opened the meeting at 6 :0 7 pm."
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "scott nominated dan for clerk and brett seconded."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "dan asked how much pipe was being replaced"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "present",
+   "quote": "joe said if they have someone new that is willing to come onboard, he will step down."
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "asked if there is a warranty"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill said that is duly noted."
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "andrew said he will be working on the"
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Brett asked Bill to give an update at the next meeting on the warranty for the Dana Street work.",
+   "quote": "give an update at the next meeting on the"
+  },
+  {
+   "decision": "Dana St. update and Manhole repairs update set as future agenda items, with Select Board meeting with Commission minutes.",
+   "quote": "dana st. update, manhole repairs"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Dana Street pump station force main repair",
+   "what_was_recorded": "Contractor Chad Empey, hiring Pride Environmental, quoted $123,600 for the Dana Street repair; the Commission had already added money to Capital for it.",
+   "figures_as_printed": [
+    "$123,600"
+   ],
+   "quote": "who is hiring pride environmental to do the work for $123,600"
+  },
+  {
+   "topic": "Comparison to earlier similar repair at Mass 1",
+   "what_was_recorded": "Similar work at Mass 1 cost $88K plus about $10K for pump trucks.",
+   "figures_as_printed": [
+    "$88K",
+    "$10K"
+   ],
+   "quote": "mass 1 co s t $88k plus about $10k for pump trucks."
+  },
+  {
+   "topic": "Capital funding for Dana Street repair",
+   "what_was_recorded": "Bill said the Commission had already added money to Capital to cover the repair; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "had already added money to c apital to cover this repair."
+  },
+  {
+   "topic": "Supplemental billing Q4 FY25",
+   "what_was_recorded": "Munis had calculated sewer rates from 2022 incorrectly for bills above the minimum charge, and a supplemental bill was sent for the difference; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "sent out for the difference."
+  },
+  {
+   "topic": "Manhole repair funding",
+   "what_was_recorded": "The Commission received ARPA funds for manhole repairs and the work is funded partly from the budget.",
+   "figures_as_printed": [
+    "$100K",
+    "$40K"
+   ],
+   "quote": "$100k from arpa funds (federal money)"
+  },
+  {
+   "topic": "Quarterly demands and delinquency",
+   "what_was_recorded": "Andrew estimated 27-29% of users are delinquent; delinquency for one year places the amount on the user's taxes. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "he estimated 27-29% users"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bill",
+   "stated_role": "DPW Director",
+   "topic": "Thanks to Scott, Joe, Dan and Arthur (opening, headed PUBLIC COMMENT)",
+   "quote": "bill thanked scott for running again"
+  },
+  {
+   "speaker": "Joe",
+   "stated_role": "Member",
+   "topic": "Stepping down if a new member is found (closing, headed PUBLIC COMMENT)",
+   "quote": "joe said if they have someone new that is willing to come onboard, he will step down."
+  },
+  {
+   "speaker": "Dan",
+   "stated_role": "Clerk",
+   "topic": "Getting up to speed on the Commission (closing, headed PUBLIC COMMENT)",
+   "quote": "dan asked if he can talk to bill to get up to speed on the commission"
+  },
+  {
+   "speaker": "Brett",
+   "stated_role": "Chair",
+   "topic": "Talking with Bill and Andrew (closing, headed PUBLIC COMMENT)",
+   "quote": "brett replied he can talk with bill and andrew."
+  },
+  {
+   "speaker": "Scott",
+   "stated_role": "Vice-Chair",
+   "topic": "Members cannot discuss as a group outside meetings (closing, headed PUBLIC COMMENT)",
+   "quote": "scott noted they just c an not discuss as a group outside"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "opened the meeting at 6 :0 7 pm."
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; thanks to members and new commissioners",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "bill thanked scott for running again"
+  },
+  {
+   "topic": "Commission re-organization and officer elections",
+   "resolution": "Chair, Vice-Chair and Clerk elected",
+   "tags": [
+    "officers",
+    "elections",
+    "re-organization"
+   ],
+   "quote": "they will need to vote for new officers now."
+  },
+  {
+   "topic": "Dana Street pump station force main repairs",
+   "resolution": "quote accepted and work to be scheduled; warranty update requested",
+   "tags": [
+    "Dana Street",
+    "pump station",
+    "force main",
+    "contract",
+    "warranty"
+   ],
+   "quote": "bill noted that the dana pump house is our main pump station"
+  },
+  {
+   "topic": "Supplemental billing Q4 FY25",
+   "resolution": "reported; supplemental bills sent",
+   "tags": [
+    "billing",
+    "Munis",
+    "sewer rates"
+   ],
+   "quote": "the munis system had originally calculated the rates from 2022"
+  },
+  {
+   "topic": "Manhole repair IFB (I/I)",
+   "resolution": "update; no start date yet",
+   "tags": [
+    "manholes",
+    "ARPA",
+    "inflow and infiltration",
+    "bid"
+   ],
+   "quote": "they are focusing on manholes"
+  },
+  {
+   "topic": "Quarterly demands and delinquency",
+   "resolution": "update; no action",
+   "tags": [
+    "delinquency",
+    "taxes",
+    "billing"
+   ],
+   "quote": "he estimated 27-29% users"
+  },
+  {
+   "topic": "Assistant to Sewer Business Manager",
+   "resolution": "update; staff onboarding",
+   "tags": [
+    "staffing"
+   ],
+   "quote": "susan started today and they are"
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed for a future meeting",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "dana st. update, manhole repairs"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action; member may step down if replaced",
+   "tags": [
+    "public comment",
+    "membership"
+   ],
+   "quote": "joe said if they have someone new that is willing to come onboard, he will step down."
+  },
+  {
+   "topic": "Upcoming scheduled meetings",
+   "resolution": "listed",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "july 29 , 2025 @ 6pm - regular meeting, zoom meeting"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:53pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "to adjourn at 6:53pm"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "officer elections",
+  "Dana Street pump station",
+  "force main",
+  "manhole repair",
+  "I/I",
+  "ARPA funds",
+  "sewer billing",
+  "Munis",
+  "delinquent accounts",
+  "DPW",
+  "warranty",
+  "upcoming meetings"
+ ],
+ "dropped_unquoted_by_field": {}
 }

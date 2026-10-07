@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2025-07-10",
  "docid": "7309",
@@ -12,28 +12,165 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of June 26, 2025, Trust Fund Commission",
-   "outcome": "unanimously approved",
+   "motion": "Approve the minutes of June 26, 2025 as written.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "minutes of june 26, 2025, trust fund commission were unanimously approved as written."
   },
   {
-   "motion": "Send the letter addressing the open vacancy as written, signed electronically using /S/ after the names of the commissioners",
+   "motion": "Send the letter addressing the open Commission vacancy as written, signed electronically by both commissioners, by roll call vote.",
    "moved_by": "Chairman Bowen",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "chairman bowen made the motion, by roll call vote, to send the letter as written, signed electronically using /s/ after the names of the commissioners which is the legal method of electronic signatures accepted by the courts by chairman bowen and vice-chair howard . motion passed unanimously."
+   "quote": "chairman bowen made the motion, by roll call vote, to send the letter as written, signed electronically using /s/ after the names of the commissioners"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Howard",
    "seconded_by": "Chairman Bown",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "there was a motion to adjourn by mr. howard, seconded by chairman bown. the meeting was adjourned at 6:31 pm"
+   "quote": "there was a motion to adjourn by mr. howard, seconded by chairman bown."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09688440000000001
+ "note": "Clean extracted text, not a scan. Three motions are recorded; only the vacancy letter has a printed result (\"passed unanimously\"). The adjournment motion has no recorded result, so outcome is \"not stated\", though the minutes do say \"The meeting was adjourned at 6:31 PM\". The adjournment seconder is printed as \"Chairman Bown\", which is probably a typo for Bowen; it is recorded as printed. No dollar figures appear anywhere in the minutes, so budget items are discussion of money with no figures. No decisions were recorded without a vote; the handbook item is a chair's self-reported work item, not a board decision, so it was not listed. The Bartholomew presenters appear only in a video reviewed from August 2024, not in person, so they are not listed as attendees. Public comment appears twice, and both sections record no speakers. The Town Manager, Town Attorney and Town Treasurer are referred to but did not take part.",
+ "cost_usd": 0.01428597,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman john bowen and vice-chair richard howard"
+  },
+  {
+   "name": "Richard Howard",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: chairman john bowen and vice-chair richard howard"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Attorney cost for Commission guidance",
+   "what_was_recorded": "The chairman said an attorney's cost is unnecessary for directing the Commission, and that the Town Manager could obtain guidelines free from the Massachusetts Municipal Association. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "chairman bowen felt the cost of an attorney is not necessary to \"direct us \" for two reasons"
+  },
+  {
+   "topic": "Trust fund rate of return and inflation",
+   "what_was_recorded": "Commissioner Howard commented that recent fund rates of return were far below the rate of inflation and that this needs addressing. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. howard commented on the recent fund performance (% rate of return) and commented that the earnings of the funds have been far below the rate of inflation"
+  },
+  {
+   "topic": "Trust fund portfolio concentration",
+   "what_was_recorded": "A presentation to the Budget Task Force in August 2024 suggested the portfolio is heavily weighted in the pharmaceutical sector, a possible industry risk. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "it appears that our current portfolio is heavily weighted in the pharmaceutical sector, which presents some industry risk that may expose the funds to poor returns."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action; meeting opened 5:00 PM",
+   "quote": "the meeting was opened at 5:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment; chairman statement on transparency and attorney guidance, discussion only",
+   "quote": "there was no comment from the public present in the bilotta meeting room nor from those attending the zoom meeting.",
+   "tags": [
+    "public comment",
+    "transparency",
+    "town attorney"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "approved as written",
+   "quote": "minutes of june 26, 2025, trust fund commission were unanimously approved as written.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Organization: commission vacancy letter",
+   "resolution": "letter approved by roll call vote, passed unanimously",
+   "quote": "chairman bowen expressed his concern that the vacancy on the commission is not being urgently addressed",
+   "tags": [
+    "vacancy",
+    "organization",
+    "town charter"
+   ]
+  },
+  {
+   "topic": "Management of the Trust Funds",
+   "resolution": "discussion; continued; possible executive session with the Town Treasurer",
+   "quote": "chairman bowen advised the importance of receiving final fiscal year numbers from the town accounting department",
+   "tags": [
+    "trust funds",
+    "investments",
+    "fiscal year close",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Scheduled Meetings",
+   "resolution": "next meeting set for July 24, 2025 at 5:00 PM",
+   "quote": "next meeting scheduled for thursday july 24, 2025 at 5:00 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Action items for next meeting",
+   "resolution": "no specific action items; chairman working on a handbook",
+   "quote": "there was no specific action items assigned to, or committed by, either member",
+   "tags": [
+    "handbook",
+    "trust fund duties"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "no comments from the public",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 6:31 PM",
+   "quote": "the meeting was adjourned at 6:31 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "trust fund commission",
+  "trust funds",
+  "investments",
+  "commission vacancy",
+  "minutes approval",
+  "public comment",
+  "town attorney",
+  "transparency",
+  "fiscal year close",
+  "handbook"
+ ],
+ "dropped_unquoted_by_field": {}
 }

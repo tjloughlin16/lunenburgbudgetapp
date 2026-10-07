@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-07-08",
  "docid": "7292",
@@ -12,23 +12,282 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the previous meeting",
-   "moved_by": "Ms. O'Sullivan",
+   "motion": "Accept the minutes of the previous meeting.",
+   "moved_by": "Ms. O’Sullivan",
    "seconded_by": "Mr. McGuigan",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. o'sullivan moved to accept the minutes. it was seconded by mr. mcguigan. all approved, motion was carried."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Lockwood",
-   "seconded_by": "Ms. O'Sullivan",
+   "seconded_by": "Ms. O’Sullivan",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "a motion to adjourn was made by ms. lockwood and seconded by ms. o'sullivan. it passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07640040000000001
+ "note": "Text is extracted from a three-page document; page 3 carries only the running header 'Minutes approved at 9/9/25 COA Meeting', so the minutes are complete as text. The header implies these minutes were approved at the 9/9/25 meeting, but that approval is not recorded as a vote in this text. Votes are voice-style ('All approved, motion was carried'; 'passed unanimously') with no vote count printed. The minutes use 'Ms. Rabbitt' and 'Mr. Rabbitt' without first names; these are attributed by context only where needed and are not resolved to Jane or Jack in the record. Public comment was 'none'. No dollar figure was decided on, and the only printed dollar figure is the $10,000 construction value limit, which was discussed.",
+ "cost_usd": 0.01608697,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, lou franco, jack rabbitt"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, lou franco, jack rabbitt"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, lou franco, jack rabbitt"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, lou franco, jack rabbitt"
+  },
+  {
+   "name": "Jim McGuigan",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, lou franco, jack rabbitt"
+  },
+  {
+   "name": "Cathy Beale",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, lou franco, jack rabbitt"
+  },
+  {
+   "name": "Ana Lockwood",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, lou franco, jack rabbitt"
+  },
+  {
+   "name": "Lou Franco",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, lou franco, jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, lou franco, jack rabbitt"
+  },
+  {
+   "name": "Helen Balcom",
+   "status": "absent",
+   "quote": "excused: helen balcom, elena christopher"
+  },
+  {
+   "name": "Elena Christopher",
+   "status": "absent",
+   "quote": "excused: helen balcom, elena christopher"
+  },
+  {
+   "name": "Barbara Coulombe",
+   "role": "Eagle House Supporters Vice President",
+   "status": "present",
+   "quote": "guests: barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), caesar nuzzolo (select board liaison)"
+  },
+  {
+   "name": "Deb Goodsell",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "guests: barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), caesar nuzzolo (select board liaison)"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Select Board Liaison",
+   "status": "present",
+   "quote": "guests: barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), caesar nuzzolo (select board liaison)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Rabbitt and Ms. Beale will look at other options for Bucky's Corner, discuss them with the Director, and present options at the next meeting.",
+   "quote": "ms. rabbitt and ms. beale are looking at other options. they would like to discuss this further with the director and will present options at the next meeting."
+  },
+  {
+   "decision": "Hold the staffing poster while the other kiosk posters are printed.",
+   "quote": "it was requested that we could wait on the staffing poster, but the others should get printed."
+  },
+  {
+   "decision": "New members Lou Franco and Jack Rabbitt to be added to the minutes distribution list, and given Board Orientation Packets by the next meeting.",
+   "quote": "they will need to be added to the list to receive minutes. board orientation packets will also be given to them by the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Building permits for seniors program",
+   "what_was_recorded": "Discussion of a senior building-permit program, including a construction value limit of $10,000 and a sixty-five-and-older age threshold; no decision recorded.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "discussion ensued on making this for ages sixty-five and older as well as setting a construction value limit such as $10,000."
+  },
+  {
+   "topic": "Building permit cost and volume",
+   "what_was_recorded": "Mr. Franco asked how many permits are applied for each year and the current cost of a permit; no figure was printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "mr. franco asked how many permits are currently applied for each year as well as the current cost of a permit."
+  },
+  {
+   "topic": "Electric prices (Unitil)",
+   "what_was_recorded": "The board should consider a formal request to Unitil about electric prices and the hardship for older adults; the Select Board liaison said the Select Board would sign on. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the board should consider writing a formal request to unitil regarding electric prices and the hardship that it creates for older adults."
+  },
+  {
+   "topic": "Property tax deferral application",
+   "what_was_recorded": "The first property tax deferral application was to go before the Board of Assessors later that afternoon. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the first property tax deferral application will be in front of the board of assessors later this afternoon."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted; thank-you notes read",
+   "quote": "ms. lincoln welcomed new members lou franco and jack rabbitt. ms. lincoln read thank you notes from judy tarbell and pete lincoln.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Board comment: member health, Unitil letter, tax deferral",
+   "resolution": "discussed; Unitil letter to be considered, no vote",
+   "quote": "ms. lincoln mentioned that the board should consider writing a formal request to unitil regarding electric prices and the hardship that it creates for older adults.",
+   "tags": [
+    "electric prices",
+    "Unitil",
+    "property tax deferral",
+    "member health"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "ms. o'sullivan moved to accept the minutes. it was seconded by mr. mcguigan. all approved, motion was carried.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Welcome of new members",
+   "resolution": "noted; minutes list and orientation packets to follow",
+   "quote": "welcome of new members: lou franco and jack rabbitt are now on the coa board.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Building permits for seniors",
+   "resolution": "discussed; feedback sought, no decision",
+   "quote": "building permits for seniors: ms. lockwood is working on this.",
+   "tags": [
+    "building permits",
+    "seniors",
+    "financial relief"
+   ]
+  },
+  {
+   "topic": "Kiosk posters",
+   "resolution": "partly held; staffing poster waits",
+   "quote": "kiosk: the posters have been designed but have not been printed yet due to staffing changes.",
+   "tags": [
+    "kiosk",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Kitchen staffing",
+   "resolution": "noted; temporary interviews starting",
+   "quote": "kitchen staffing: due to medical issues, the center currently has no staff in the kitchen.",
+   "tags": [
+    "kitchen",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Current business items",
+   "resolution": "mostly reported; Bucky's Corner continued to next meeting",
+   "quote": "lula lift: ms. goodsell reported that the building inspector and the facilities manager came to the center",
+   "tags": [
+    "kitchen volunteers",
+    "Lula Lift",
+    "Bucky's Corner",
+    "evening programs",
+    "Master Plan",
+    "Sand for Seniors"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "reported; Meals on Wheels drivers sought",
+   "quote": "ms. goodsell reviewed the upcoming events for the remainder of july, august and into september.",
+   "tags": [
+    "programs",
+    "Meals on Wheels",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "no report",
+   "quote": "eagle house supporters report: none this month",
+   "tags": [
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "quote": "notices and communications: none",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Board comment: centenarian and check-ins",
+   "resolution": "reported; Century Club ceremony hoped for September",
+   "quote": "ms. lincoln reported that longtime resident, fran therrien will be turning 100 in august.",
+   "tags": [
+    "Century Club",
+    "check-ins",
+    "lunch participation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed unanimously",
+   "quote": "a motion to adjourn was made by ms. lockwood and seconded by ms. o'sullivan. it passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "seniors",
+  "building permits",
+  "electric prices",
+  "Unitil",
+  "kitchen staffing",
+  "kiosk",
+  "meals on wheels",
+  "evening programs",
+  "membership",
+  "tax deferral"
+ ],
+ "dropped_unquoted_by_field": {}
 }

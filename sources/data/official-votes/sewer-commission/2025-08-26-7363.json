@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-08-26",
  "docid": "7363",
@@ -12,31 +12,227 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 8/12/25",
+   "motion": "Accept the minutes of 8/12/25.",
    "moved_by": "Scott D.",
    "seconded_by": "Dan P.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: scott d. second: dan p. to accept the minutes of 8/12/25. roll call vote: dan-aye, scott-aye, and brett- aye."
   },
   {
-   "motion": "Vote in the refund request for the incorrect billing at 17 Rennie Street",
+   "motion": "Approve the refund request for the incorrect billing at 17 Rennie Street.",
    "moved_by": "Scott D.",
    "seconded_by": "Dan P.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: scott d. second: dan p. to vote in the refund request for the incorrect billing at 17 rennie street. roll call vote: dan-aye, scott-aye, and brett- aye."
+   "quote": "to vote in the refund request for the incorrect billing at 17 rennie street. roll call vote: dan-aye, scott-aye, and brett- aye."
   },
   {
-   "motion": "Adjourn at 6:47pm",
+   "motion": "Adjourn the meeting at 6:47pm.",
    "moved_by": "Scott D.",
    "seconded_by": "Dan P.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: scott d. second: dan p. to adjourn at 6:47pm. roll call vote: scott-aye, dan-aye, and brett-aye."
+   "quote": "to adjourn at 6:47pm. roll call vote: scott-aye, dan-aye, and brett-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08925040000000001
+ "note": "The minutes are a typed text with no per-member remote or in-person status; the header says the meeting was held via Zoom, and all listed attendees are recorded as present. Roll-call votes name three ayes, but the minutes print no count, so outcomes are recorded as \"passed\" rather than \"passed 3-0\". The \"PUBLIC COMMENT\" entries are remarks by commissioners; no member of the public speaking is recorded. Town Counsel is referenced but not named or recorded as present. The ADU discussion produced no vote. The minutes contain one dollar figure ($79).",
+ "cost_usd": 0.01543967,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Commissioner",
+   "status": "absent",
+   "quote": "absent: arthur katis brett opened the meeting at 6:04 pm."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Andrew Valliere will contact Leominster and Fitchburg about their ADU regulations.",
+   "quote": "andrew will reach out to leominster and fitchburg about their regulations."
+  },
+  {
+   "decision": "Commissioners will send their ADU regulation ideas to Andrew Valliere.",
+   "quote": "commissioners will send any ideas to andrew."
+  },
+  {
+   "decision": "ADUs and the Manhole Repair IFB were placed on the future agenda.",
+   "quote": "future agenda items- adus, manhole repair ifb"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "17 Rennie Street water bill overcharge and refund",
+   "what_was_recorded": "A water meter mix-up between 17 and 10 Rennie Street overcharged the 17 Rennie St. account, and a refund was voted to correct it.",
+   "figures_as_printed": [
+    "$79"
+   ],
+   "quote": "which meant #17 was overcharged $79 on her bill."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brett",
+   "stated_role": "",
+   "topic": "thanks to attendees of Town Counsel meeting",
+   "quote": "public comment/announcements - brett thanked those that attended the meeting with town counsel."
+  },
+  {
+   "speaker": "Scott",
+   "stated_role": "",
+   "topic": "Touch-A-Truck event",
+   "quote": "scott thanked bill for including him in the touch-a-truck event and added it was great to see the smiles on the kids."
+  },
+  {
+   "speaker": "Brett",
+   "stated_role": "",
+   "topic": "cotton candy and community event",
+   "quote": "brett thanked scott for sharing the cotton candy and said it was a great event for the community."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of 8/12/25",
+   "resolution": "approved",
+   "quote": "minutes of 8/12/25 motion: scott d. second: dan p.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Town Counsel meeting and ADUs",
+   "resolution": "discussed; no vote; ideas to be sent to Andrew Valliere; Leominster and Fitchburg to be contacted",
+   "quote": "town counsel meeting and adus- bill reported he, andrew and dan met with town counsel, who gave them a high level review of the adu law.",
+   "tags": [
+    "ADU",
+    "town counsel",
+    "regulation",
+    "utilities",
+    "connections"
+   ]
+  },
+  {
+   "topic": "Touch-A-Truck event",
+   "resolution": "reported; thanks given; no action",
+   "quote": "touch-a-truck- bill gave a huge thank you to scott for providing the cotton-candy machine",
+   "tags": [
+    "community event",
+    "thanks"
+   ]
+  },
+  {
+   "topic": "Manhole Repair IFB",
+   "resolution": "reported; on future agenda",
+   "quote": "manhole repair ifb- bill reported the manhole framing gates have been ordered but are on backorder and not due in until october.",
+   "tags": [
+    "manhole",
+    "IFB",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "17 Rennie Street adjustment",
+   "resolution": "refund approved",
+   "quote": "to vote in the refund request for the incorrect billing at 17 rennie street.",
+   "tags": [
+    "billing",
+    "refund",
+    "water meter"
+   ]
+  },
+  {
+   "topic": "ADU regulation procedure",
+   "resolution": "discussed; no vote; process described (draft, Town Counsel review, advertise, public hearing, vote)",
+   "quote": "adus- scott asked what the procedure would be for regulation changes.",
+   "tags": [
+    "ADU",
+    "regulation",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed for future meetings",
+   "quote": "future agenda items- adus, manhole repair ifb",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action; remarks by commissioners only",
+   "quote": "public comment - scott thanked bill for including him in the touch-a-truck event",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed",
+   "quote": "upcoming scheduled sewer commission activities: september 9, 2025 @ 7pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:47pm",
+   "quote": "to adjourn at 6:47pm. roll call vote: scott-aye, dan-aye, and brett-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "ADU regulation",
+  "town counsel",
+  "billing refund",
+  "water meter",
+  "manhole repair",
+  "Touch-A-Truck",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

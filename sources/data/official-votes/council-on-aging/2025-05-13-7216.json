@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-05-13",
  "docid": "7216",
@@ -12,31 +12,424 @@
  },
  "votes": [
   {
-   "motion": "to accept the minutes with noted amendments",
-   "moved_by": "Ana Lockwood",
-   "seconded_by": "Susan O'Sullivan",
+   "motion": "Approve the minutes with the noted amendments.",
+   "moved_by": "Ms. Lockwood",
+   "seconded_by": "Ms. O’Sullivan",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. lockwood moved to accept the minutes with the noted amendments. it was seconded by ms. o'sullivan. all approved, motion was carried."
   },
   {
-   "motion": "to not be in favor of making Memorial Drive a green space",
+   "motion": "Not be in favor of making Memorial Drive a green space.",
    "moved_by": "Cathy Beale",
-   "seconded_by": "Susan O'Sullivan",
+   "seconded_by": "Susan O’Sullivan",
    "outcome": "passed",
    "procedural": false,
    "quote": "cathy beale made a motion to not be in favor of making memorial drive a green space. it was seconded by susan o'sullivan. all approved, motion was carried."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Nominate Ms. Lincoln and Ms. Rabbitt for another year as Chairperson and Vice Chairperson for FY '26; the slate to be voted at the next COA meeting.",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Susan O’Sullivan",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "mr. lincoln made a motion to nominate ms. lincoln and ms. rabbitt for another year as chairperson and vice chairperson. susan o'sullivan seconded the nomination."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded. it passed unanimously."
+   "quote": "a motion was made and seconded. it passed unanimously. meeting adjourned at 10:56 am."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are readable. Vote #2 on nomination of officers was explicitly stated as postponed to the next meeting (\"The slate will be voted at the next COA Meeting\"), so it was not voted on at this meeting and is not included.",
- "cost_usd": 0.06786239999999999
+ "note": "Text is extracted, not a scan; all votes are readable. The header reads \"Minutes approved at 6/10/25 COA Meeting\", so these are the version approved at a later meeting, and the approval vote for these minutes is not in this text. The nomination motion has no recorded result (the slate is deferred), so it is recorded as \"not stated\". The adjournment motion's content is not printed; only \"A motion was made and seconded. It passed unanimously.\" appears, so moved_by and the motion wording are not recorded. Public comment was \"none\". One sentence in Board Comment is cut off mid-word (\"Ms. Lockwood thanked the Eagle\") and is not reproduced. Attendees' status is taken from the Present, Excused and Guests lines; no member's presence is inferred beyond that. Two names are printed as \"Jack Rabbitt\" (guest) and \"Jane Rabbitt\" (Vice-Chair), which are separate listings. No dollar figures appear anywhere in the text.",
+ "cost_usd": 0.01791387,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), peter lincoln, diane nowd, elena christopher, susan o'sullivan, jim mcguigan, cathy beale, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "member",
+   "status": "absent",
+   "quote": "excused: helen balcom"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Lunenburg Select Board Chair – COA Liason",
+   "status": "present",
+   "quote": "guests: caesar nuzzolo (lunenburg select board chair - coa liason), barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), jack rabbitt (board of assessors)"
+  },
+  {
+   "name": "Barbara Coulombe",
+   "role": "Eagle House Supporters Vice President",
+   "status": "present",
+   "quote": "guests: caesar nuzzolo (lunenburg select board chair - coa liason), barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), jack rabbitt (board of assessors)"
+  },
+  {
+   "name": "Deb Goodsell",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "guests: caesar nuzzolo (lunenburg select board chair - coa liason), barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), jack rabbitt (board of assessors)"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Board of Assessors",
+   "status": "present",
+   "quote": "guests: caesar nuzzolo (lunenburg select board chair - coa liason), barbara coulombe (eagle house supporters vice president), deb goodsell (coa director), jack rabbitt (board of assessors)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Goodsell will email out the agenda when it is sent up to Town Hall, to address timely distribution of agendas and minutes.",
+   "quote": "ms. goodsell offered to email out the agenda when it is sent up to town hall."
+  },
+  {
+   "decision": "Ms. Christopher agreed to organize an End of Year Party.",
+   "quote": "there was and ms. christopher offered to organize."
+  },
+  {
+   "decision": "Ms. Beale took on the role of Eagle House Supporters liaison, succeeding Ms. Christopher.",
+   "quote": "ms. christopher is stepping down as supporters liason. ms. beale offered to take that role."
+  },
+  {
+   "decision": "Ms. Goodsell will look into the feasibility of accepting Venmo or credit card payments at the LAAC.",
+   "quote": "ms. goodsell indicated she would look into the feasibility of that."
+  },
+  {
+   "decision": "The COA officer slate will be voted at the next COA meeting.",
+   "quote": "the slate will be voted at the next coa meeting."
+  },
+  {
+   "decision": "The Town Manager will schedule a future meeting between the COA, Fire Dept and DPW on the Sand for Seniors program.",
+   "quote": "town manager will be scheduling a meeting in the future between the coa/fire dept/dpw."
+  },
+  {
+   "decision": "The board indicated it would continue to look at how it can provide information and advocacy on healthcare.",
+   "quote": "the board indicated that would like to continue to look at how they can provide information and advocacy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Kiosk posters",
+   "what_was_recorded": "Mr. Lincoln offered to cover the cost of three proposed posters for the kiosk; no amount was printed.",
+   "quote": "mr. lincoln offered to cover the cost of the posters.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY 27 Budget priorities",
+   "what_was_recorded": "Director reported priorities for the FY 27 Budget: a new Program Coordinator position, a changed Outreach Coordinator job description, and a feasibility study for a Lula Lift to be incorporated into the Capital Plan. No dollar figures printed.",
+   "quote": "ms. goodsell reported that her priorities for the fy 27 budget are to advocate for a new position of program coordinator.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Lula Lift/elevator capital request",
+   "what_was_recorded": "Director reported a Lula Lift/elevator request will be made as part of the Capital Requests in August; no dollar figure printed.",
+   "quote": "ms. goodsell reported that chris ruth will be requesting this as part of the capital requests in august.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "announcements: ms. lincoln noted that governor healey is holding a meeting tonight on affordable energy",
+   "tags": [
+    "energy",
+    "state"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment: kiosk posters",
+   "resolution": "proposed, no vote",
+   "quote": "mr. lincoln shared that he felt the kiosk should be getting used and proposed that we should put three large posters up on each of the three sides.",
+   "tags": [
+    "kiosk",
+    "signage",
+    "LAAC"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as amended",
+   "quote": "ms. lockwood moved to accept the minutes with the noted amendments. it was seconded by ms. o'sullivan. all approved, motion was carried.",
+   "tags": [
+    "minutes",
+    "AI"
+   ]
+  },
+  {
+   "topic": "Recap of Town Meeting",
+   "resolution": "reported",
+   "quote": "recap of town meeting: flooring and parking lot plan were approved.",
+   "tags": [
+    "town meeting",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Tax advantages for seniors",
+   "resolution": "reported, continuing",
+   "quote": "mr. rabbitt reported that an applicant has not applied for a deferral, and that they are continuing to work to fine-tune this process.",
+   "tags": [
+    "tax deferral",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Letter from Matthew Brenner (Meals on Wheels)",
+   "resolution": "reported, no cuts known",
+   "quote": "ms. goodsell reported that she isn't aware of any cuts in lunenburg at this time.",
+   "tags": [
+    "Meals on Wheels"
+   ]
+  },
+  {
+   "topic": "FY 27 Budget",
+   "resolution": "priorities reported",
+   "quote": "ms. goodsell reported that her priorities for the fy 27 budget are to advocate for a new position of program coordinator.",
+   "tags": [
+    "budget",
+    "FY27",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Nomination of officers for FY '26",
+   "resolution": "nominated; vote deferred to next meeting",
+   "quote": "mr. lincoln made a motion to nominate ms. lincoln and ms. rabbitt for another year as chairperson and vice chairperson.",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "End of year party",
+   "resolution": "volunteer organizer named",
+   "quote": "ms. lincoln asked if there was interest in doing an end of year party. there was and ms. christopher offered to organize.",
+   "tags": [
+    "social events"
+   ]
+  },
+  {
+   "topic": "Recap of Boston Post Cane/Century Club",
+   "resolution": "reported",
+   "quote": "ms. lincoln reported that the celebration was a success and a lot of fun.",
+   "tags": [
+    "events",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Financial reports",
+   "resolution": "none; next month",
+   "quote": "financial reports: none. there will be a report next month.",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Senior advisory team for healthcare task force",
+   "resolution": "continued discussion",
+   "quote": "the board indicated that would like to continue to look at how they can provide information and advocacy.",
+   "tags": [
+    "healthcare",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Local hospital services",
+   "resolution": "no new updates",
+   "quote": "mr. nuzzolo reported there are no new updates at this time.",
+   "tags": [
+    "hospital",
+    "healthcare"
+   ]
+  },
+  {
+   "topic": "Lunenburg Master Plan meeting",
+   "resolution": "reported, none scheduled",
+   "quote": "ms. lincoln reported that they met recently but there isn't another meeting scheduled at this time.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "300th Anniversary Committee",
+   "resolution": "reported",
+   "quote": "ms. lincoln reported there is a desire for a bonfire, and that talks are in the works with mr. lattanzi about holding it at hollis tree farm.",
+   "tags": [
+    "300th anniversary",
+    "events"
+   ]
+  },
+  {
+   "topic": "Master Plan: town green on Memorial Drive",
+   "resolution": "motion passed opposing green space",
+   "quote": "cathy beale made a motion to not be in favor of making memorial drive a green space.",
+   "tags": [
+    "master plan",
+    "parking",
+    "LAAC access"
+   ]
+  },
+  {
+   "topic": "Lula Lift/elevator space issues",
+   "resolution": "reported; capital request in August",
+   "quote": "ms. goodsell reported that chris ruth will be requesting this as part of the capital requests in august.",
+   "tags": [
+    "capital",
+    "space",
+    "accessibility"
+   ]
+  },
+  {
+   "topic": "Sand for Seniors program",
+   "resolution": "meeting to be scheduled",
+   "quote": "ms. goodsell reported that town manager will be scheduling a meeting in the future between the coa/fire dept/dpw.",
+   "tags": [
+    "sand",
+    "fire",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Director's report: kitchen and programs",
+   "resolution": "reported; town concerts discussed",
+   "quote": "kitchen project: work is completed and is being utilized. this is a very useful space.",
+   "tags": [
+    "kitchen",
+    "programs",
+    "events",
+    "Pavilion"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported",
+   "quote": "ms. coulombe reported that the supporters have a new logo and put together a flyer.",
+   "tags": [
+    "Eagle House",
+    "membership",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "quote": "notices and communications none",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Board comment: flowers, payments, staffing, MyChart",
+   "resolution": "offers and requests noted",
+   "quote": "ms. o'sullivan reported that she was out at the pavillion and noted a lack of flowers.",
+   "tags": [
+    "Pavilion",
+    "payments",
+    "staffing",
+    "MyChart",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:56 am",
+   "quote": "a motion was made and seconded. it passed unanimously. meeting adjourned at 10:56 am.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "seniors",
+  "LAAC",
+  "town meeting",
+  "capital plan",
+  "FY27 budget",
+  "master plan",
+  "Memorial Drive",
+  "officer nominations",
+  "Eagle House Supporters",
+  "healthcare",
+  "Meals on Wheels",
+  "kiosk",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

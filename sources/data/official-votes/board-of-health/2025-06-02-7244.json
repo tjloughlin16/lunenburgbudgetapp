@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2025-06-02",
  "docid": "7244",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve May 5, 2025 minutes",
+   "motion": "Approve the minutes of May 5, 2025.",
    "moved_by": "Proctor",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "may 5, 2025 - motion by proctor, second by fortin. all in favor"
   },
   {
-   "motion": "approve May 19, 2025 minutes",
+   "motion": "Approve the minutes of May 19, 2025.",
    "moved_by": "Proctor",
    "seconded_by": "Rudd",
    "outcome": "passed",
@@ -28,31 +28,131 @@
    "quote": "may 19, 2025 - motion by proctor, second by rudd. all in favor."
   },
   {
-   "motion": "approve variances for 1170 Mass Avenue (offset to groundwater from 4 feet to 3 feet, sieve analysis, and Presby AI system)",
+   "motion": "Approve the variances requested for 1170 Mass Avenue: offset to groundwater from 4 feet to 3 feet, use of a sieve analysis, and use of an AI system (Presby).",
    "moved_by": "Fortin",
    "seconded_by": "Rudd",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by fortin and second by rudd, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by fortin and second by rudd, the variances were approved."
   },
   {
-   "motion": "elect board officers: Chairman Matt Proctor, Vice Chairman Perry Jewell, Secretary Paul Fortin/Lorraine Rudd",
+   "motion": "Elect the board officers: Chairman Matt Proctor, Vice Chairman Perry Jewell, Secretary Paul Fortin/Lorraine Rudd.",
    "moved_by": "Rudd",
    "seconded_by": "Fortin",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "on motion by rudd and second by fortin, the board was elected. all in favor."
+   "procedural": false,
+   "quote": "on motion by rudd and second by fortin, the board was elected."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Rudd",
    "seconded_by": "Proctor",
    "outcome": "passed",
    "procedural": true,
-   "quote": "having no further business and on motion by rudd and second by proctor the meeting was adjourned at 5:40 pm. all in favor."
+   "quote": "on motion by rudd and second by proctor the meeting was adjourned at 5:40 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0621794
+ "note": "Typed minutes, not a scan. Every vote is recorded only as \"All in favor\" with no count, so outcomes are recorded as passed. The minutes print no dollar figures, so budget_items and transfers are empty. No public comment section is recorded; Jack Maloney appeared for the applicant and is listed as an attendee. The Secretary entry (\"Paul Fortin/Lorraine Rudd\") is printed without saying which of the two was elected.",
+ "cost_usd": 0.012455570000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin, matt proctor and lorraine rudd"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin, matt proctor and lorraine rudd"
+  },
+  {
+   "name": "Matt Proctor",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin, matt proctor and lorraine rudd"
+  },
+  {
+   "name": "Lorraine Rudd",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin, matt proctor and lorraine rudd"
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "jack maloney met with the board on behalf of the owner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes were approved subject to a minor topographical error being corrected.",
+   "quote": "minutes were approved with minor topographical error to be corrected."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (May 5 and May 19, 2025)",
+   "resolution": "approved",
+   "quote": "may 5, 2025 - motion by proctor, second by fortin. all in favor",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "1170 Mass Avenue septic variances",
+   "resolution": "variances approved",
+   "quote": "after discussion and on motion by fortin and second by rudd, the variances were approved.",
+   "tags": [
+    "septic",
+    "variances",
+    "groundwater",
+    "Presby system"
+   ]
+  },
+  {
+   "topic": "Board office updates",
+   "resolution": "no action",
+   "quote": "no updates to report",
+   "tags": [
+    "board office"
+   ]
+  },
+  {
+   "topic": "Reorganization of the board",
+   "resolution": "officers elected",
+   "quote": "on motion by rudd and second by fortin, the board was elected.",
+   "tags": [
+    "board organization",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:40 pm",
+   "quote": "on motion by rudd and second by proctor the meeting was adjourned at 5:40 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "septic systems",
+  "variances",
+  "1170 Mass Avenue",
+  "groundwater",
+  "Presby system",
+  "board organization",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

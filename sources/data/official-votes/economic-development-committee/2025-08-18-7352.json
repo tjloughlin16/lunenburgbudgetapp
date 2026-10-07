@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "economic-development-committee",
  "meeting_date": "2025-08-18",
  "docid": "7352",
@@ -12,32 +12,189 @@
  },
  "votes": [
   {
-   "motion": "to elect Joeci Gilchrest as Chair",
-   "moved_by": "Joeci Gilchrest",
-   "seconded_by": "A na L ockwood",
+   "motion": "Joeci Gilchrest volunteers to be Chair of the Economic Development Committee.",
+   "moved_by": "",
+   "seconded_by": "Ana Lockwood",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "joeci gilchrest volunteered to be the chair, this was seconded by a na l ockwood. cathy clark aye, jeanne dupre aye, a na lockwood aye, joeci gilchrest aye . all in favor."
   },
   {
-   "motion": "to elect A na Lockwood as Vice Chair",
+   "motion": "Joeci Gilchrest nominates Ana Lockwood for Vice Chair; Ana Lockwood accepts the nomination.",
    "moved_by": "Joeci Gilchrest",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "joeci gilchrest nominated a na lockwood for the v ice c hair position . ana lockwood accepted the nomination . cathy clark aye, jeanne dupre aye, joeci gilchrest aye, ana lockwood aye . all in favor. ",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "joeci gilchrest nominated a na lockwood for the v ice c hair position . ana lockwood accepted the nomination . cathy clark aye, jeanne dupre aye,"
   },
   {
-   "motion": "to adjourn",
-   "moved_by": "Joe c i Gilchrest",
-   "seconded_by": "A na Lockwood",
+   "motion": "Motion to adjourn the meeting.",
+   "moved_by": "Joeci Gilchrest",
+   "seconded_by": "Ana Lockwood",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn by joe c i gilchrest, seconded by ana lockwood. joeci gilchrest aye, ana lockwood aye. t",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to adjourn by joe c i gilchrest, seconded by ana lockwood. joeci gilchrest aye, ana lockwood aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR artifacts present in original document (names split with spaces: \"A na\", \"L ockwood\", \"Joe c i\", and title \"V ice C hair\"). Quotes reproduce exactly as they appear in the scanned text with line breaks collapsed to single spaces and spacing preserved.",
- "cost_usd": 0.1421224
+ "note": "The minutes are a clean text extraction of one page pair; no scan issues. Two officer elections are recorded as \"All in favor\" with a listed roll of ayes, but no numeric count is printed, so outcomes are recorded as \"passed\" rather than a count. The Chair election has no printed mover. The \"Ultimately\" suggestion to push the Meet and Greet into October and the Smokestack Roasters venue idea are recorded as suggestions only, not decisions. No dollar figures, transfers or public comment appear in the minutes.",
+ "cost_usd": 0.01540737,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joeci Gilchrest",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members : chair joeci gilchrest, vice chair ana lockwood , planning board representative matt brenner, member cathy clark, member jeanne dupre, town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members : chair joeci gilchrest, vice chair ana lockwood , planning board representative matt brenner, member cathy clark, member jeanne dupre, town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Matt Brenner",
+   "role": "Planning Board Representative",
+   "status": "present",
+   "quote": "present members : chair joeci gilchrest, vice chair ana lockwood , planning board representative matt brenner, member cathy clark, member jeanne dupre, town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members : chair joeci gilchrest, vice chair ana lockwood , planning board representative matt brenner, member cathy clark, member jeanne dupre, town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members : chair joeci gilchrest, vice chair ana lockwood , planning board representative matt brenner, member cathy clark, member jeanne dupre, town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "present members : chair joeci gilchrest, vice chair ana lockwood , planning board representative matt brenner, member cathy clark, member jeanne dupre, town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Agriculture Commission Representative",
+   "status": "absent",
+   "quote": "absent member: agriculture commission representative maryrae holman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Joeci Gilchrest will create an Eventbrite invitation for the Town Official Meet and Greet and provide the Committee with the list of tasks used at previous Meet and Greets.",
+   "quote": "joeci gilchrest will create an invitation on eventbrite and provide the committee with the list of tasks used at previous m eet and g reets."
+  },
+  {
+   "decision": "Further discussion of the Committee charge is deferred until a Land Use Director is in place.",
+   "quote": "there will be further discussion when there is a land use director in place."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Reorganization",
+   "resolution": "Joeci Gilchrest elected Chair and Ana Lockwood elected Vice Chair (all in favor)",
+   "quote": "joeci gilchrest volunteered to be the chair, this was seconded by a na l ockwood. cathy clark aye, jeanne dupre aye, a na lockwood aye, joeci gilchrest aye . all in favor.",
+   "tags": [
+    "officers",
+    "reorganization",
+    "chair election"
+   ]
+  },
+  {
+   "topic": "Town Official Meet and Greet",
+   "resolution": "Eventbrite invitation assigned to Chair; event timing and venue discussed, no final date set",
+   "quote": "joeci gilchrest will create an invitation on eventbrite and provide the committee with the list of tasks used at previous m eet and g reets.",
+   "tags": [
+    "town event",
+    "meet and greet",
+    "venue",
+    "LBA"
+   ]
+  },
+  {
+   "topic": "Planning Department Updates",
+   "resolution": "informational update, no action",
+   "quote": "matt brenner provided the following updates:",
+   "tags": [
+    "planning board",
+    "staffing",
+    "land use director"
+   ]
+  },
+  {
+   "topic": "Discussion of Committee Charge",
+   "resolution": "deferred until a Land Use Director is in place",
+   "quote": "there will be further discussion when there is a land use director in place.",
+   "tags": [
+    "committee charge",
+    "planning board",
+    "land use director"
+   ]
+  },
+  {
+   "topic": "Business Updates",
+   "resolution": "discussed, no action",
+   "quote": "joeci gilchrest confirms the lba does have upcoming events with opportunity to meet locals.",
+   "tags": [
+    "business",
+    "LBA",
+    "local businesses"
+   ]
+  },
+  {
+   "topic": "Next steps: Mission and Vision of the EDC",
+   "resolution": "members asked to consider committee tasks; no action",
+   "quote": "matt brenner suggests the edc members start thinking about what their committee is tasked to do and what they would like to see with the committee moving forward.",
+   "tags": [
+    "mission",
+    "vision",
+    "charge",
+    "resources",
+    "Chamber of Commerce"
+   ]
+  },
+  {
+   "topic": "Dates and times for regularly scheduled meetings",
+   "resolution": "survey to members suggested; no schedule set",
+   "quote": "ana lockwood suggests sending a survey to the members to check availability.",
+   "tags": [
+    "meeting schedule",
+    "availability",
+    "Small Town Initiative"
+   ]
+  },
+  {
+   "topic": "Prior meeting minutes",
+   "resolution": "discussed, no action",
+   "quote": "there are many missing minutes online that had previously been approved but haven 't been posted.",
+   "tags": [
+    "minutes",
+    "records",
+    "posting"
+   ]
+  }
+ ],
+ "tags": [
+  "economic development",
+  "reorganization",
+  "chair election",
+  "town manager",
+  "planning board",
+  "committee charge",
+  "meet and greet",
+  "business updates",
+  "meeting schedule",
+  "minutes",
+  "virtual meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

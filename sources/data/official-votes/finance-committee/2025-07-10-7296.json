@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-07-10",
  "docid": "7296",
@@ -12,16 +12,16 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from May 8, 2025, and June 12, 2025",
+   "motion": "Approve the minutes of May 8, 2025, and June 12, 2025.",
    "moved_by": "Ana Lockwood",
-   "seconded_by": "Tom Gray",
+   "seconded_by": "T om Gray",
    "outcome": "passed 6-0-1",
    "procedural": true,
    "quote": "there was a motion to approve the minutes from may 8, 2025, and june 12, 2025, by ana lockwood, seconded by t om gray. the vote was 6-0-1."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Tanya Dall",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "T anya Dall",
    "seconded_by": "Ana Lockwood",
    "outcome": "not stated",
    "procedural": true,
@@ -29,6 +29,160 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06410840000000001
+ "note": "The text is a clean digital extraction, not a scan. The minutes record one vote with a tally (minutes approval, 6-0-1); the adjournment motion is recorded without a tally, so its outcome is 'not stated' even though the minutes say the meeting closed at 7:42 PM. The minutes print no dollar figures, so budget_items are discussions of money (grant, consultant, historical data) with empty figure lists. Both public-comment periods read 'There were no comments from the public', so public_comment is empty. Tony Sculumbrine is named only as a person who made an introduction, not as taking part, so he is not listed as an attendee. The Town Manager and Finance Director are referenced but not named and gave no reports.",
+ "cost_usd": 0.014077270000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member ana lockwood, committee member mike rupp, committee member jay simeone, committee member tanya dall"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member ana lockwood, committee member mike rupp, committee member jay simeone, committee member tanya dall"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member ana lockwood, committee member mike rupp, committee member jay simeone, committee member tanya dall"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member ana lockwood, committee member mike rupp, committee member jay simeone, committee member tanya dall"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member ana lockwood, committee member mike rupp, committee member jay simeone, committee member tanya dall"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member ana lockwood, committee member mike rupp, committee member jay simeone, committee member tanya dall"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray, committee member ana lockwood, committee member mike rupp, committee member jay simeone, committee member tanya dall"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee members will read the first 42 pages of the town finance policy document in preparation for the next meeting.",
+   "quote": "the committee members are going to read the first 42 pages of the town finance policy document in preparation for the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town finance policy document",
+   "what_was_recorded": "The 90-page town finance policy was put together with a grant from the Division of Local Services, and the Committee will review it before it goes to the Select Board.",
+   "figures_as_printed": [],
+   "quote": "the committee is going to review the 90-page policy that was put together with a grant by the division of local services."
+  },
+  {
+   "topic": "School finance staffing",
+   "what_was_recorded": "A consultant was hired for the schools for several months after the school finance director left; Tanya Dall asked whether the town finance director could step in until someone is hired.",
+   "figures_as_printed": [],
+   "quote": "ana lockwood states a consultant was hired for the schools for several months after their finance director left."
+  },
+  {
+   "topic": "Historical school budget data",
+   "what_was_recorded": "Ana Lockwood requested all historical school budget data from the previous superintendent and has a meeting planned with the new superintendent.",
+   "figures_as_printed": [],
+   "quote": "ana lockwood had a meeting and requested all historical data."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 pm."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "there were no announcements."
+  },
+  {
+   "topic": "Public Comment (item 4)",
+   "resolution": "no action",
+   "quote": "there were no comments from the public."
+  },
+  {
+   "topic": "Town Manager and Finance Director reports",
+   "resolution": "no action",
+   "quote": "there were no reports from the town manager or the finance director."
+  },
+  {
+   "topic": "Tri-Board topics and first Tri-Board meeting",
+   "resolution": "discussed, no action",
+   "quote": "the first tri-board meeting was held on july 8, 2025, and concluded after roughly 2 and a half hours."
+  },
+  {
+   "topic": "Budget request forms and department briefing expectations",
+   "resolution": "discussed, no action",
+   "quote": "the town manager stated the town will soon be using cleargov."
+  },
+  {
+   "topic": "Town finance policies",
+   "resolution": "continued; reading assigned for next meeting",
+   "quote": "the committee is going to review the 90-page policy that was put together with a grant by the division of local services."
+  },
+  {
+   "topic": "Analysis of historical school budget data",
+   "resolution": "discussed, no action",
+   "quote": "ana lockwood had a meeting and requested all historical data."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 6-0-1",
+   "quote": "there was a motion to approve the minutes from may 8, 2025, and june 12, 2025, by ana lockwood, seconded by t om gray. the vote was 6-0-1."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "quote": "tom gray states that the municipal building design committee met and had a joint meeting with the select board."
+  },
+  {
+   "topic": "Actions and topics for future meetings",
+   "resolution": "reading assigned; future agenda noted",
+   "quote": "the committee members are going to read the first 42 pages of the town finance policy document in preparation for the next meeting."
+  },
+  {
+   "topic": "Important dates and upcoming meetings",
+   "resolution": "noted",
+   "quote": "tri-board meetings - august 26, sept 30, oct14, nov 12, dec 9, jan 13"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:42 PM (motion outcome not stated)",
+   "quote": "there was a motion to adjourn by t anya dall, seconded by ana lockwood."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "tri-board",
+  "town finance policies",
+  "school budget",
+  "budget request forms",
+  "ClearGov",
+  "Division of Local Services grant",
+  "minutes approval",
+  "school finance staffing",
+  "budget season"
+ ],
+ "dropped_unquoted_by_field": {}
 }

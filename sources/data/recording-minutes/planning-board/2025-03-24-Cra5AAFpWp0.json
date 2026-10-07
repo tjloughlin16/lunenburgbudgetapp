@@ -527,5 +527,222 @@
    "at": "2026-10-06T17:58:40Z",
    "cost_usd": 0.21673499999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03242025-7121",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-03-24-minutes-7121.txt",
+   "path": "sources/meetings/planning-board/2025-03-24-minutes-7121.pdf"
+  },
+  "official_sha256": "0e6d871c4eb52441a5bf092d6e77ca5003f8724c25e610a8d856656441b77560",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all 14 non-procedural votes and their outcomes. Most differences are caption misreadings of names and addresses. Three items need a person to check the recording: Mr. Allison's attendance, the $45 camera figure, and whether the Goodrich/Sunny Hill decisions were endorsed by vote.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 7,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Endorse ANR plan, 171 Arbor St",
+    "ours": "Endorse the ANR plan for 171 Arbor Street — passed",
+    "official": "t. willsmer, to endorse the anr plan for 171 arbor st.",
+    "note": "Same motion and outcome.",
+    "t": 2780
+   },
+   {
+    "kind": "agree",
+    "about": "494 Electric Ave hearing closed and site plan/SMP approved",
+    "ours": "Approve site plan review and stormwater management permit for 494 Electric Avenue with standard and special conditions — passed",
+    "official": "t. willsmer, to approve the site plan review and stormwater management permit for 494 electric avenue with standard conditions",
+    "note": "Both pass. The quoted line ends at 'standard conditions', but the official structured summary says 'Standard and Special Conditions as presented', which matches ours.",
+    "t": 3605
+   },
+   {
+    "kind": "agree",
+    "about": "213 Electric Ave SMP: hearing closed and permit approved with test-pit condition",
+    "ours": "Approve the 213 Electric Avenue stormwater management permit with standard conditions and the test pit special condition — passed",
+    "official": "t. willsmer, to approve the stormwater management permit for 213 electric ave, including",
+    "note": "Same motion and outcome. The official text is cut off, but its summary mentions the test-pit condition.",
+    "t": 4046
+   },
+   {
+    "kind": "caption_error",
+    "about": "7-Eleven Mass Ave / 711 Mass Ave de minimis change (hearing close, acceptance, approval)",
+    "ours": "Close the public hearing on the de minimis change for 7-Eleven Mass Ave — passed",
+    "official": "t. willsmer, to close the public hearing for de minimis change to 711 mass ave site plan",
+    "official_reading": "711 Mass Ave",
+    "note": "Captions heard the address '711' as '7-Eleven'. The three votes (close, accept as de minimis, approve) otherwise match and all pass.",
+    "t": 4426
+   },
+   {
+    "kind": "agree",
+    "about": "994 Northfield Rd Rear: hearing closed and site plan approved with two special conditions",
+    "ours": "Approve site plan review for 994 Northfield Road (rear) with standard conditions plus special conditions: park-at-own-risk signage and a petition to change the address — passed",
+    "official": "t. willsmer, to approve the site plan review for 994 northfield rd rear with all standard",
+    "note": "Same approval and the same two special conditions.",
+    "t": 10484
+   },
+   {
+    "kind": "caption_error",
+    "about": "485 Leominster-Shirley Rd (Silo Electric) hearing close and approval",
+    "ours": "Approve site plan review for 485 Lemoner Shirley Road with standard conditions — passed",
+    "official": "t. willsmer, to approve the site plan review for 485 leominster-shirley rd as-presented with",
+    "official_reading": "485 Leominster-Shirley Rd",
+    "note": "The road name was misheard. Both votes match and pass.",
+    "t": 11651
+   },
+   {
+    "kind": "agree",
+    "about": "1523 Mass Ave common driveway special permit",
+    "ours": "Approve the common driveway special permit for 1523 Mass Ave as per the plan of record with standard conditions, including three waivers — passed",
+    "official": "t. willsmer, to approve the special permit for common driveway as per the plan of record for",
+    "note": "Same approval. The official text as quoted does not mention the three waivers, so check them against the decision.",
+    "t": 12491
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair's name",
+    "ours": "Mr. Brena (chair)",
+    "official": "matthew brenner called the meeting to order at 5:30 p.m.",
+    "official_reading": "Matthew Brenner",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Wilner",
+    "ours": "Mr Wilner (member)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), glenn mcleod",
+    "official_reading": "Timothy Willsmer (Vice Chair)",
+    "note": "Misheard surname. The official minutes list him as the Vice Chair, and he makes every motion."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr McLoud",
+    "ours": "Mr McLoud (member)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), glenn mcleod",
+    "official_reading": "Glenn McLeod",
+    "note": "Misspelled name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mrs Reed (Amanda)",
+    "ours": "Mrs Reed (Amanda) (member)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), glenn mcleod",
+    "official_reading": "Amanda Reid (Clerk)",
+    "note": "Misspelled surname. The official minutes give her role as Clerk."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: land use director",
+    "ours": "Chris (land use director) (land use director)",
+    "official": "christopher reilly - land use director",
+    "official_reading": "Christopher Reilly",
+    "note": "Our minutes give only a first name."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Mr Allison's attendance",
+    "ours": "Mr Allison (member)",
+    "official": "matthew allison was present for executive session only.",
+    "note": "We list him as a member present. The official minutes say he attended the executive session only. Check the recording for whether he sat for the public items."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Logan, staff",
+    "ours": "Logan (staff, Zoom host)",
+    "official": "minutes by logan o'connell, admin asst.",
+    "note": "Same person; the official minutes give the full name and title."
+   },
+   {
+    "kind": "agree",
+    "about": "Table Rock land purchase 60%",
+    "ours": "Table Rock land purchase: 60%",
+    "official": "town spent money on land (purchase only 60% grant-funded).",
+    "note": "Same figure.",
+    "t": 6572
+   },
+   {
+    "kind": "agree",
+    "about": "Conservation maintenance zero tax dollars",
+    "ours": "Conservation Commission maintenance budget: zero zero tax dollars",
+    "official": "conservation has zero tax-dollars for maintaining lands (including potential cameras).",
+    "note": "Same statement.",
+    "t": 7055
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Security camera cost",
+    "ours": "Security cameras at the parking lot: $45",
+    "official": "cheap cameras are available but possibly inadequate for providing evidence.",
+    "note": "We heard a dollar figure; the official minutes record no cost. Check the recording at about 8849s to see what the number was, since the captions may have misheard it.",
+    "t": 8849
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Goodrich / Sunny Hill decisions",
+    "ours": "The board will sign the 558/560 Goodrich and 255 Sunny Hill decisions without a new vote; the land use director will scan and file them.",
+    "official": "the board found no issues and endorsed both.",
+    "note": "The official minutes record the board as having endorsed the decisions for 255 Sunny Hill and 560 Goodrich. We record signing without a vote. The address also differs (558/560 vs 560). Check the recording for whether any motion was made, and for the address.",
+    "t": 12821
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Address-change condition worded as a petition after a point of order",
+    "ours": "Board agreed to condition that the applicant petition for an address change, rather than require the outcome, after a member's point of order.",
+    "official": "",
+    "note": "The official minutes record the condition in the motion summary but not the point of order.",
+    "t": 10440
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ADU and flood plain bylaw hearings to be advertised",
+    "ours": "The ADU and flood plain bylaw public hearings are to be advertised for the second April meeting.",
+    "official": "",
+    "note": "The official minutes do not record this scheduling decision.",
+    "t": 13164
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Standard operating procedures review deferred",
+    "ours": "The board deferred the standard operating procedures review to a later meeting.",
+    "official": "",
+    "note": "The official minutes do not record this deferral.",
+    "t": 13548
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes of 2025-03-10 deferred",
+    "ours": "",
+    "official": "2025-03-10: incomplete, deferred to next meeting.",
+    "note": "Our minutes do not mention the deferral of the prior meeting's minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Stormwater Utility fee structure update",
+    "ours": "",
+    "official": "continuing to workshop fee structures, including amounts & communications.",
+    "note": "The official minutes record the Storm Water Task Force update. Our minutes do not."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicants, representatives and public commenters",
+    "ours": "",
+    "official": "laura caron-gustus (19 burke st) owns 994 northfield rd (settler's crossing golf course), was confused",
+    "note": "The official minutes name about a dozen presenters and neighbors, plus public comment on 994 Northfield Rd. Our attendee list covers only the board and staff."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:28:00Z",
+   "cost_usd": 0.33006520000000006
+  }
  }
 }

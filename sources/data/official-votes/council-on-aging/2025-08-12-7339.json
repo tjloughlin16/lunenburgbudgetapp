@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-08-12",
  "docid": "7339",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "adjourn the meeting",
+   "motion": "Motion to adjourn the meeting.",
    "moved_by": "Ms Beale",
    "seconded_by": "Mr. McGuigan",
    "outcome": "passed unanimously",
@@ -21,6 +21,341 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "MINUTES APPROVAL was postponed to next meeting (not voted on). All other items in NEW BUSINESS and CURRENT BUSINESS were discussions with no recorded motions or votes.",
- "cost_usd": 0.0676634
+ "note": "Text is clean extracted text with no OCR marks; not a scan. One motion is recorded (adjournment, passed unanimously; no tally printed). The minutes approval item was postponed with no vote. The page header reads \"Minutes approved at the 9/9/25 COA Meeting\", which records a later approval, not a vote at this meeting. Public comment was \"none\". No transfers printed. Chris Ruth (Facilities Director) is reported on but is not recorded as attending, so he is not listed as an attendee.",
+ "cost_usd": 0.014653870000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "board member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan,"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "board member",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice-chair), diane nowd, jim mcguigan,"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "board member",
+   "status": "present",
+   "quote": "cathy beale, lou franco, jack rabbitt, elena christopher"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "board member",
+   "status": "present",
+   "quote": "cathy beale, lou franco, jack rabbitt, elena christopher"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "board member",
+   "status": "present",
+   "quote": "cathy beale, lou franco, jack rabbitt, elena christopher"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "board member",
+   "status": "present",
+   "quote": "cathy beale, lou franco, jack rabbitt, elena christopher"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "board member",
+   "status": "absent",
+   "quote": "excused: helen balcom, susan o'sullivan, ana lockwood"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "board member",
+   "status": "absent",
+   "quote": "excused: helen balcom, susan o'sullivan, ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "board member",
+   "status": "absent",
+   "quote": "excused: helen balcom, susan o'sullivan, ana lockwood"
+  },
+  {
+   "name": "Deb Goodsell",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "guests: deb goodsell (coa director)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the minutes was postponed to the next meeting, without a vote recorded.",
+   "quote": "minutes approval: postponed to next meeting."
+  },
+  {
+   "decision": "Ms. Lincoln will draft a letter to Unitil, and asked board members to send her any concerns for enclosure.",
+   "quote": "ms. lincoln will work on drafting a letter for unitil. she is asking the board to forward any concerns"
+  },
+  {
+   "decision": "The Friday early closure assessment will be addressed at the September meeting so any changes can be enclosed in the November newsletter.",
+   "quote": "ms. lincoln noted she would like to address this in the september meeting"
+  },
+  {
+   "decision": "Mr. Rabbitt will put together a warrant article for the 41A deferral.",
+   "quote": "he will put together a warrant article for the 41a deferral as it needs to be approved by the town."
+  },
+  {
+   "decision": "Ms. Lincoln will follow up with Mr. Nuzzolo on an update about flags honoring Veterans.",
+   "quote": "ms. lincoln will follow up with mr. nuzzolo for an update."
+  },
+  {
+   "decision": "Bucky's Corner vendor review is assigned to Ms. Beale and Ms. Rabbitt, who will update next month.",
+   "quote": "ms. beale and ms. rabbitt are looking at vendors. they will update further next month."
+  },
+  {
+   "decision": "Ms. Lincoln is seeking Council feedback on the Master Plan goals to present to the Master Plan Committee; a response is requested by October 1st.",
+   "quote": "they would like a response by october 1st. ms. lincoln is looking for feedback from the council"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tea Party tickets",
+   "what_was_recorded": "Tea Party tickets go on sale August 19th at a printed price of $30.",
+   "figures_as_printed": [
+    "$30"
+   ],
+   "quote": "tea party tickets are going on sale on august 19th for $30"
+  },
+  {
+   "topic": "State emergency funding for North Central Fire Departments",
+   "what_was_recorded": "Governor Healy signed legislation allocating emergency funding to North Central Fire Departments, reported as an update on local hospital services.",
+   "figures_as_printed": [
+    "5 million dollars"
+   ],
+   "quote": "legislation was signed by governor healy to allocate 5 million dollars emergency funding to north central fire departments"
+  },
+  {
+   "topic": "Solar attachment pricing (Unitil)",
+   "what_was_recorded": "Mr. Rabbitt noted an increase in pricing for solar attachment pieces; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. rabbitt noted that the attachment pieces for solar has had an increase in pricing."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action; Tea Party tickets announced",
+   "quote": "announcements: tea party tickets are going on sale on august 19th for $30",
+   "tags": [
+    "announcements",
+    "tea party"
+   ]
+  },
+  {
+   "topic": "Public and board comment",
+   "resolution": "no comment from public or board",
+   "quote": "public comment: none board comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "postponed to next meeting",
+   "quote": "minutes approval: postponed to next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Century Club celebration",
+   "resolution": "no action; informational",
+   "quote": "century club: celebration for fran therrien will be on sept 2nd at 10am.",
+   "tags": [
+    "century club",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Women's Club meeting time and Friday closure",
+   "resolution": "no action; meetings unaffected per Director",
+   "quote": "women's club: ms. lincoln reported she has received calls with concern",
+   "tags": [
+    "women's club",
+    "friday closure"
+   ]
+  },
+  {
+   "topic": "Unitil solar pricing concerns",
+   "resolution": "Chair to draft letter to Unitil",
+   "quote": "unitil concerns: mr. rabbitt noted that the attachment pieces for solar has had an increase in pricing.",
+   "tags": [
+    "unitil",
+    "solar",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Assessment of Friday early closure",
+   "resolution": "deferred to September meeting",
+   "quote": "assessment of friday early closure: ms. lincoln noted she would like to address this in the september meeting",
+   "tags": [
+    "friday closure",
+    "hours"
+   ]
+  },
+  {
+   "topic": "Financial reports",
+   "resolution": "no action; none this month",
+   "quote": "financial reports: none this month",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Caregiver Connection report",
+   "resolution": "no action; Lunch and Learn sessions scheduled",
+   "quote": "caregiver connection report: ms. beale reported that dates are being finalized for three",
+   "tags": [
+    "caregivers",
+    "lunch and learn"
+   ]
+  },
+  {
+   "topic": "Local hospital services update",
+   "resolution": "no action; informational",
+   "quote": "updates on local hospital services: legislation was signed by governor healy",
+   "tags": [
+    "hospital",
+    "emergency services"
+   ]
+  },
+  {
+   "topic": "Lula Lift / elevator report",
+   "resolution": "no action; options reported",
+   "quote": "report on lula lift/elevator: ms. lincoln met with chris ruth, facilities director.",
+   "tags": [
+    "facilities",
+    "elevator",
+    "accessibility"
+   ]
+  },
+  {
+   "topic": "Bucky's Corner vendors",
+   "resolution": "continued; update next month",
+   "quote": "bucky's corner: ms. beale and ms. rabbitt are looking at vendors.",
+   "tags": [
+    "bucky's corner"
+   ]
+  },
+  {
+   "topic": "Master Plan goals for COA",
+   "resolution": "Council feedback requested; response due October 1st",
+   "quote": "update on lunenburg master plan meeting: master plan committee has provided the",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Sand for Seniors program",
+   "resolution": "no action; to be advertised later",
+   "quote": "sand for seniors program: this is being organized by olivia at the fire department.",
+   "tags": [
+    "sand for seniors",
+    "dpw",
+    "winter"
+   ]
+  },
+  {
+   "topic": "Building permits for seniors",
+   "resolution": "no update",
+   "quote": "building permits for seniors: no update at this time.",
+   "tags": [
+    "permits"
+   ]
+  },
+  {
+   "topic": "Kiosk",
+   "resolution": "completed; thanks given",
+   "quote": "kiosk: has been completed.",
+   "tags": [
+    "kiosk"
+   ]
+  },
+  {
+   "topic": "Kitchen staffing",
+   "resolution": "no action; interviews starting",
+   "quote": "kitchen staffing update: ms. goodsell reported that interviews will be starting",
+   "tags": [
+    "staffing",
+    "kitchen"
+   ]
+  },
+  {
+   "topic": "Director's report: programs and events",
+   "resolution": "no action; AARP tax services proposed pending volunteers",
+   "quote": "upcoming programs and events: ms. goodsell noted she would like to offer aarp tax",
+   "tags": [
+    "programs",
+    "aarp",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "no report",
+   "quote": "eagle house supporters report: none",
+   "tags": [
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action; exemption deadline and warrant article noted",
+   "quote": "notices and communications: mr. rabbitt reported that there are two people applying for the means tested exemption",
+   "tags": [
+    "exemptions",
+    "41A",
+    "veterans flags"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed unanimously",
+   "quote": "a motion to adjourn was made by ms beale and seconded by mr. mcguigan. it passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior services",
+  "LAAC",
+  "friday closure",
+  "unitil solar",
+  "elevator accessibility",
+  "master plan",
+  "caregivers",
+  "meals",
+  "warrant article 41A",
+  "tea party",
+  "volunteers",
+  "minutes approval postponed"
+ ],
+ "dropped_unquoted_by_field": {}
 }

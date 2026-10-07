@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-02-11",
  "docid": "7014",
@@ -12,23 +12,311 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the January 13, 2025 meeting",
-   "outcome": "passed",
+   "motion": "Accept the minutes of the January 13, 2025, meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "it was moved and seconded to accept the minutes of the january 13, 2025, meeting. all approved, motion was carried."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:56 am.",
    "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
    "procedural": true,
-   "quote": "a motion was made and seconded. it passed unanimously."
+   "quote": "a motion was made and seconded. it passed unanimously. meeting adjourned at 10:56 am."
   }
  ],
  "dropped_unquoted": 0,
- "note": "These are scanned minutes (OCR extracted). Two votes recorded: approval of prior minutes and adjournment.",
- "cost_usd": 0.060160399999999996
+ "note": "Text is macOS Vision OCR of a scanned page set, labelled as such; quotes were copied from that OCR text, with line breaks collapsed to single spaces. The minutes record no roll-call tallies, only 'All approved, motion was carried' and 'passed unanimously'; the mover and seconder are not printed for either motion. Ms. Goodsell (budget, directors report, events, Boston Post Cane) is named in the text but not in the attendance list and her first name is not printed, so her status is 'not stated'. 'Ms. Lincoln' and 'Mr Lincoln' are not given full names in the text; I attributed Ms. Lincoln to Deb Lincoln (Chairperson) and Mr Lincoln to Peter Lincoln as the only Lincolns listed, which is an inference, not printed. Representative Scarsdale and Senator Cronin are mentioned only as agreeing to sign a letter and are not recorded as attendees. The minutes state they were approved at the 3/11/25 meeting, which is noted in the text but is not a vote in these minutes.",
+ "cost_usd": 0.01529717,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), peter lincoln, diane nowd, elena christopher, susan"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), peter lincoln, diane nowd, elena christopher, susan"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), peter lincoln, diane nowd, elena christopher, susan"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "not stated",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan"
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: helen balcom, cathy beale, jane rabbitt, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: helen balcom, cathy beale, jane rabbitt, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: helen balcom, cathy beale, jane rabbitt, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: helen balcom, cathy beale, jane rabbitt, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: helen balcom, cathy beale, jane rabbitt, ana lockwood, judy tarbell"
+  },
+  {
+   "name": "Michael Ray Jeffries",
+   "role": "Lunenburg Select Board Vice Chair",
+   "status": "present",
+   "quote": "guests: michael ray jeffries (lunenburg select board vice chair), barbara coulombe"
+  },
+  {
+   "name": "Barbara Coulombe",
+   "role": "Eagle House Supporters Vice President",
+   "status": "present",
+   "quote": "guests: michael ray jeffries (lunenburg select board vice chair), barbara coulombe"
+  },
+  {
+   "name": "Ms. Goodsell",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "ms. goodsell reported that her budget for fy26 is level funded"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion on emailing minutes as opposed to mailing them was tabled until a full board is present.",
+   "quote": "discussion on emailing minutes as opposed to mailing them was tabled until a full board is present."
+  },
+  {
+   "decision": "Ms. Goodsell to provide financial reports to the board quarterly, with the first report in March.",
+   "quote": "ms. goodsell will be providing these to the board on a quarterly basis with the first report coming in march."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA FY26 budget",
+   "what_was_recorded": "Ms. Goodsell reported the FY26 budget is level funded from FY25 apart from contractual salary increases, and that the COA budget is taking on the Mart Connects program.",
+   "figures_as_printed": [],
+   "quote": "ms. goodsell reported that her budget for fy26 is level funded"
+  },
+  {
+   "topic": "Mart Connects program funding",
+   "what_was_recorded": "The town is transferring 20k to the COA budget to cover the Mart Connects line item.",
+   "figures_as_printed": [
+    "20k"
+   ],
+   "quote": "the town is transferring 20k to coa budget to"
+  },
+  {
+   "topic": "Kitchen Aide positions funding",
+   "what_was_recorded": "Discussion of a request to move the Kitchen Aide positions from Formula Grant Funding to the Town budget; no figure printed and no decision recorded.",
+   "figures_as_printed": [],
+   "quote": "discussion ensued regarding the kitchen aide positions and a request to move them from formula grant funding to the town budget."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Town transfer to the COA budget to cover the Mart Connects line item.",
+   "amount_as_printed": "20k",
+   "outcome": "Reported as planned; no vote recorded.",
+   "quote": "the town is transferring 20k to coa budget to"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board comment: counterfeit stamps email",
+   "resolution": "no action; discussed",
+   "quote": "the email stated that low-cost stamps may be counterfeit.",
+   "tags": [
+    "stamps",
+    "board comment"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved January 13, 2025 minutes; email-minutes discussion tabled",
+   "quote": "it was moved and seconded to accept the minutes of the january 13, 2025, meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Municipal Building Design Committee (consolidated Town Hall at 10 School St.)",
+   "resolution": "presented; no action recorded",
+   "quote": "mr. jeffries presented the work of the municipal building",
+   "tags": [
+    "town hall",
+    "municipal building",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Tax advantages for seniors",
+   "resolution": "informational; no action",
+   "quote": "ms. lincoln encouraged everyone to watch the presentation from feb 3, 2025",
+   "tags": [
+    "tax",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Lunenburg Master Plan meeting",
+   "resolution": "no action; next meeting TBD",
+   "quote": "the committee has not met since april as the last meeting didn't have a quorum.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "300th Anniversary Committee",
+   "resolution": "informational; no action",
+   "quote": "ms. lincoln encouraged all seniors to think about",
+   "tags": [
+    "anniversary",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Boston Post Cane Award",
+   "resolution": "informational; celebration planned for April",
+   "quote": "ms. goodsell reported that the next recipient will be mary bentley.",
+   "tags": [
+    "boston post cane"
+   ]
+  },
+  {
+   "topic": "Nashoba Valley Medical Center",
+   "resolution": "informational; location unknown",
+   "quote": "ms. lincoln reported that umass has agreed to be a provider for nvmc, but the location is still unknown.",
+   "tags": [
+    "healthcare",
+    "NVMC"
+   ]
+  },
+  {
+   "topic": "COA FY26 budget and Mart Connects program",
+   "resolution": "reported; no vote recorded",
+   "quote": "ms. goodsell reported that her budget for fy26 is level funded",
+   "tags": [
+    "budget",
+    "FY26",
+    "Mart Connects",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Financial reports",
+   "resolution": "quarterly reports to begin in March",
+   "quote": "ms. goodsell will be providing these to the board on a quarterly basis with the first report coming in march.",
+   "tags": [
+    "financial reports"
+   ]
+  },
+  {
+   "topic": "Mart Connect / Worcester letter",
+   "resolution": "letter awaiting legislators' signatures",
+   "quote": "representative scarsdale and senator cronin have agreed to sign on to the letter written by the coa board.",
+   "tags": [
+    "Mart Connect",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "Parking lot update",
+   "resolution": "informational; architectural plan next, on FY26 Capital Plan",
+   "quote": "next steps are an architectural plan which is on the capital plan for fy26.",
+   "tags": [
+    "parking lot",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Directors report",
+   "resolution": "informational; no action",
+   "quote": "capital plan: a plan is in the works to disguise the fencing around the generator.",
+   "tags": [
+    "capital plan",
+    "building",
+    "flooring",
+    "kitchen"
+   ]
+  },
+  {
+   "topic": "Upcoming events",
+   "resolution": "reviewed; no action",
+   "quote": "ms. goodsell reviewed the upcoming events for the remainder of february and for march.",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "informational; no action",
+   "quote": "ms. coulombe reported that they have two additional members joining them.",
+   "tags": [
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:56 am",
+   "quote": "a motion was made and seconded. it passed unanimously. meeting adjourned at 10:56 am.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "seniors",
+  "FY26 budget",
+  "Mart Connects",
+  "Kitchen Aide positions",
+  "Municipal Building",
+  "Town Hall",
+  "Eagle House",
+  "Nashoba Valley Medical Center",
+  "Boston Post Cane",
+  "parking lot",
+  "capital plan",
+  "counterfeit stamps",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

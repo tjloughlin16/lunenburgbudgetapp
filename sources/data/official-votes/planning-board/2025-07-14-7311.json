@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2025-07-14",
  "docid": "7311",
@@ -12,40 +12,182 @@
  },
  "votes": [
   {
-   "motion": "to continue the public hearings for 1083 Northfield Road Common Driveway/Stormwater Management Permits to 2025-07-28 at 6:05 P.M.",
+   "motion": "Continue the public hearings for 1083 Northfield Road common driveway and stormwater management permits to 2025-07-28 at 6:05 P.M.",
    "moved_by": "A. Reid",
-   "seconded_by": "A.Burney",
+   "seconded_by": "A. Burney",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "a. reid motion, to continue the public hearings for 1083 northfield road common driveway/ stormwater management permits to 2025-07-28 at 6:05 p.m. second: a.burney ===page 2=== 2 of 3 - planning board minutes, 2025-14-07 vote: a. reid - ",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "a. reid motion, to continue the public hearings for 1083 northfield road common driveway/ stormwater management permits to 2025-07-28 at 6:05 p.m."
   },
   {
-   "motion": "to continue the public hearings for 260 Falulah Rd Special Permit & Stormwater Management Permits to 2025-07-28 at 6:05 P.M.",
-   "moved_by": "A.Reid",
-   "seconded_by": "A.Burney",
+   "motion": "Continue the public hearings for 260 Falulah Rd special permit and stormwater management permits to 2025-07-28 at 6:05 P.M.",
+   "moved_by": "A. Reid",
+   "seconded_by": "A. Burney",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "a.reid motion, to continue the public hearings for 260 falulah rd special permit & stormwater management permits to 2025-07-28 at 6:05 p.m. second: a.burney vote: a. reid - aye, t.willsmer -aye, a. burney -aye, passed unanimously"
+   "procedural": false,
+   "quote": "a.reid motion, to continue the public hearings for 260 falulah rd special permit & stormwater management permits to 2025-07-28 at 6:05 p.m."
   },
   {
-   "motion": "to approve 23-06-2025 meeting minutes",
+   "motion": "Approve the minutes of 23-06-2025.",
    "moved_by": "A. Reid",
-   "seconded_by": "Burney",
+   "seconded_by": "A. Burney",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a. reid motioned to approve 23-06-2025 meeting minutes second: burney seconded vote: a. reid - aye, t. willsmer - aye, a. burney -aye approved minutes"
+   "quote": "a. reid motioned to approve 23-06-2025 meeting minutes"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "a. burney, to adjourn. second: a. reid seconded vote: voice vote, passed unanimously."
+   "quote": "motion: a. burney, to adjourn. second: a. reid seconded vote: voice vote, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1452004
+ "note": "Text extraction, not a scan; all votes are readable. Three procedural and continuance votes are recorded. The minutes approval prints 'Approved minutes' with three named ayes but no count; outcome is recorded as 'passed'. The 443 West Townsend Rd item is a delay, not a decision. No dollar figures appear, so budget_items and transfers are empty. Public comment records 'None at this time' with no speaker, so the list is empty. Appointments printed 'None' and was not recorded as a topic. The header date '2025-14-07' is garbled against the body's 2025-07-14 and was not reconciled.",
+ "cost_usd": 0.01483547,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "T. Willsmer",
+   "role": "Vice Chair (presiding)",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "A. Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "A. Burney",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, a. burney"
+  },
+  {
+   "name": "M. Brenner",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: m. brenner, m. allison"
+  },
+  {
+   "name": "M. Allison",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: m. brenner, m. allison"
+  },
+  {
+   "name": "Jasmin Farinacci",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "j. farinacci report not available interim director not in attendance"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 443 West Townsend Rd decision was not made: it was not available and was delayed to the next meeting.",
+   "quote": "decision not available - wasn't sent and jasmin doesn't have computer. delayed to next meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "called to order at 6:00 P.M.; pledge deferred",
+   "quote": "timothy willsmer called the meeting to order at 6:00 p.m. the pledge of allegiance was deferred.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "none at this time. no public parties in person or in online waiting room.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair / Director's report",
+   "resolution": "no report; director's report not submitted",
+   "quote": "j. farinacci report not available interim director not in attendance report not submitted.",
+   "tags": [
+    "staff report"
+   ]
+  },
+  {
+   "topic": "Decisions: 443 West Townsend Rd",
+   "resolution": "delayed to next meeting",
+   "quote": "decision not available - wasn't sent and jasmin doesn't have computer. delayed to next meeting.",
+   "tags": [
+    "decision",
+    "delayed"
+   ]
+  },
+  {
+   "topic": "Public hearings: 1083 Northfield Road and 260 Falulah Rd",
+   "resolution": "both continued to 2025-07-28 at 6:05 P.M. (applicant request for 1083 Northfield Rd)",
+   "quote": "board moved to continue the public hearings for 1083 northfield rd special permit & stormwater management permits to 2025-07-28 at 6:05 p.m per applicants request for continuance.",
+   "tags": [
+    "public hearing",
+    "special permit",
+    "stormwater",
+    "common driveway",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Board discussions and committee reports",
+   "resolution": "reports only; no action recorded",
+   "quote": "per vice chair t. willsmer - t. willmer noted having new quorum requirements makes it easier.",
+   "tags": [
+    "master plan",
+    "stormwater task force",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of 23-06-2025",
+   "quote": "motion: a. reid motioned to approve 23-06-2025 meeting minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; next meeting 07-28-2025 at 6:00 P.M.",
+   "quote": "the upcoming meeting is 07-28-2025 at 6:00 p.m.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned by voice vote",
+   "quote": "motion: a. burney, to adjourn. second: a. reid seconded vote: voice vote, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearings",
+  "continuances",
+  "special permit",
+  "stormwater management",
+  "common driveway",
+  "master plan",
+  "minutes approval",
+  "land use",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -299,5 +299,146 @@
    "at": "2026-10-06T18:17:12Z",
    "cost_usd": 0.210165
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01152025-6958",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-01-15-minutes-6958.txt",
+   "path": "sources/meetings/select-board/2025-01-15-minutes-6958.pdf"
+  },
+  "official_sha256": "d69d1608222510a2891e9471fe0028f9f3b3283f862915ff4c41aea12ae58aff",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on both votes (the 4-1 appointment and the unanimous warrant vote) and on the January 28 meeting. The differences are caption-garbled names and an attendee list that is missing the chair.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 4,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Name of the appointed town manager",
+    "ours": "Appoint Jennifer Warren Diamond as town manager pending successful negotiation.",
+    "official": "renee emkey moved to appoint jennifer warren-dyment as town manager pending successful negotiation.",
+    "official_reading": "Jennifer Warren-Dyment",
+    "note": "Same motion and same person; the captions misheard the surname.",
+    "t": 3245
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to appoint the town manager, pending negotiation",
+    "ours": "passed 4-1",
+    "official": "renee emkey moved to appoint jennifer warren-dyment as town manager pending successful negotiation.",
+    "note": "Both record the motion passing 4-1 (official 4-1-0).",
+    "t": 3245
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to open and close the annual town meeting warrant",
+    "ours": "Open the annual town meeting warrant January 15, close it March 17... passed unanimously",
+    "official": "member alonzo moved to open the warrant on wednesday, january 15 and close the warrant on monday, march 17 with the internal deadline",
+    "note": "Same dates and the same outcome (official 5-0-0, unanimous).",
+    "t": 3518
+   },
+   {
+    "kind": "agree",
+    "about": "Internal January 31 deadline for non-citizen-petition articles",
+    "ours": "Board supported the internal January 31 deadline for non-citizen-petition warrant articles.",
+    "official": "member alonzo moved to open the warrant on wednesday, january 15 and close the warrant on monday, march 17 with the internal deadline",
+    "note": "The official minutes fold the January 31 deadline into the warrant motion. Ours has it as a separate decision and in the motion text, and the dates match.",
+    "t": 3498
+   },
+   {
+    "kind": "agree",
+    "about": "Possible January 28 meeting for contract negotiations",
+    "ours": "Board agreed to schedule a possible meeting on January 28 in case it is needed for contract negotiations.",
+    "official": "the board agreed to add this meeting to the calendar.",
+    "note": "Same decision in both records.",
+    "t": 3560
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Possibly dropping a February meeting",
+    "ours": "Members raised possibly dropping a February meeting given absences; the chair said he would look at the agenda.",
+    "official": "",
+    "note": "Our minutes record a discussion with no decision, and the official minutes do not mention it.",
+    "t": 3601
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DPW department size cited for a candidate",
+    "ours": "DPW department size cited for a candidate: $12 million, 33 FTE",
+    "official": "",
+    "note": "The official minutes carry no budget figures. The figure is from the captions and unverified.",
+    "t": 484
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Chair Caesar Nuzzolo",
+    "ours": "Carter (interim town manager)",
+    "official": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+    "official_reading": "Carter Terenzini",
+    "note": "Carter Terenzini, the interim town manager, appears in both records. Ours has first name only, and the official reading is 'Carter Terenzini'.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr Alonzo",
+    "ours": "Mr Alonzo (member (vice chair, per a member's reference))",
+    "official": "member alonzo seconded the motion. the motion passed",
+    "official_reading": "Tom Alonzo",
+    "note": "Same member. Ours also lists a 'Tom' as a separate member, which is likely the same person, so our list may double-count him.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Michael Ray",
+    "ours": "Michael Ray (member)",
+    "official": "member jeffreys seconded the motion. call for vote: five- yes.",
+    "official_reading": "Michael Ray Jeffreys",
+    "note": "Same member, surname missing in ours.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Renee and Amanda",
+    "ours": "Renee (member); Amanda (member)",
+    "official": "amanda moore seconded the motion.",
+    "note": "These match Renee Emkey and Amanda Moore, who are listed as present.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair Caesar Nuzzolo as attendee",
+    "ours": "",
+    "official": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+    "note": "The chair is not in our attendee list, so the five-member board is not fully captured; the chair is presumably the one who spoke at 3601."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Search consultant presenting",
+    "ours": "Mr petran (John P vetan, Community Paradigm) (presenter / search consultant)",
+    "official": "",
+    "note": "The official minutes list no consultant presenter in the extracted attendees. Check the full minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment from Dave Rodgers and Dave Passios",
+    "ours": "",
+    "official": "dave rodgers asked for clarification on the process used for selecting candidates and if board members would share their thoughts",
+    "note": "Our minutes record no public comment; the official minutes give two speakers on the town manager selection process."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:37:54Z",
+   "cost_usd": 0.232015
+  }
  }
 }

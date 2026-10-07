@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2025-01-23",
  "docid": "6963",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of October 17, 2024",
+   "motion": "Approve the minutes of October 17, 2024.",
    "moved_by": "Vice Chair",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": true,
-   "quote": "vice chair made a motion to approve the minutes; tenant board member seconded , with all in favor",
-   "quote_taken_from_text": true
+   "quote": "vice chair made a motion to approve the minutes; tenant board member seconded , with all in favor."
   },
   {
-   "motion": "Approve the October and November 2024 financials as presented",
+   "motion": "Approve the October and November 2024 financials as presented.",
    "moved_by": "Tenant Board Member",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
@@ -29,16 +28,15 @@
    "quote": "tenant board member made a motion to approve the october and november 2024 financials as presented; vice chair seconded, with all in favor."
   },
   {
-   "motion": "Approve the Federal Pacific Panel CFC Project 162041",
+   "motion": "Approve Resolution 2025-1, the Federal Pacific Panel CFC Project 162041.",
    "moved_by": "Treasurer",
-   "seconded_by": "Board Member Deborah A.H. Christen",
+   "seconded_by": "Deborah A.H. Christen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by treasurer to approve the federal pacific panel cfc project 162041 ; board member deborah a.h. christen seconded the motion, with all in favor",
-   "quote_taken_from_text": true
+   "quote": "motion made by treasurer to approve the federal pacific panel cfc project 162041 ; board member deborah a.h. christen seconded the motion, with all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Board Member Deborah A.H. Christen",
    "seconded_by": "Treasurer",
    "outcome": "passed",
@@ -47,6 +45,204 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0876434
+ "note": "Text is a layout extract with spacing artifacts inside numbers and dates (e.g. '202 5', '2:00 p .m .'); figures are read as printed. Votes are recorded only as 'all in favor' with no counts, so outcomes are 'passed'. The seconder of the first vote is printed as the role 'Tenant Board Member' and the mover as 'Vice Chair' without names in that sentence. No public comment section appears in the minutes. The Modernization report and Financial report state no totals beyond the two project amounts.",
+ "cost_usd": 0.01620047,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dale Proulx",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present : members absent: dale proulx, chair none"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "linda mcdonald, vice chair"
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "wayne caron, tenant board member"
+  },
+  {
+   "name": "Nicole Waters",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "nicole waters, treasurer"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member deborah a.h. christen made a motion to adjourn the meeting"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "executive director benjamin gold, assistant executive director adam gautie"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "executive director benjamin gold, assistant executive director adam gautie"
+  },
+  {
+   "name": "Jade Tavares",
+   "role": "Administrative Assistance/Special Projects",
+   "status": "present",
+   "quote": "administrative assistance/special projects jade tavares"
+  },
+  {
+   "name": "Suzanne Bonney",
+   "role": "Director of Finance",
+   "status": "present",
+   "quote": "director of finance suzanne bonney"
+  },
+  {
+   "name": "Jessica Davies",
+   "role": "Assistant Housing Manager Satellite Locations",
+   "status": "present",
+   "quote": "assistant housing manager satellite locations jessica davies"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board requested that the print be larger for the Analysis of Nonroutine Expenditures and Credits (p. 10) and that it be broken down by month.",
+   "quote": "it was requested that the print be larger for the analysis of nonroutine expenditures and credits (p. 10) and to have it broken done by month."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial report, October and November 2024",
+   "what_was_recorded": "The October and November 2024 financials were reviewed; no dollar figures are printed in the minutes for this item.",
+   "quote": "the financials of october and november 2024 were reviewed.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "667-1 Site Improvements (FISH#162048)",
+   "what_was_recorded": "A project for various site improvements was recorded with an amount that may be needed.",
+   "quote": "this is a project for various improvements that may be needed in the amount of $9,881.",
+   "figures_as_printed": [
+    "$9,881"
+   ]
+  },
+  {
+   "topic": "667-1 Storm Door Replacement (FISH#162055)",
+   "what_was_recorded": "A new project to replace storm doors throughout the development was recorded with an amount.",
+   "quote": "this is a new project to replace storm doors throughout the development in the amount of $9,983.",
+   "figures_as_printed": [
+    "$9,983"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "quorum declared; meeting opened at 2:00 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 2:00 p .m .",
+   "tags": [
+    "quorum",
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Approval of October 17, 2024 minutes",
+   "resolution": "approved",
+   "quote": "the minutes of october 17 , 202 4 were presented.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report: maintenance personnel",
+   "resolution": "no action",
+   "quote": "executive director provided an update on the maintenance personnel.",
+   "tags": [
+    "staffing",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Financial report, October and November 2024",
+   "resolution": "approved as presented",
+   "quote": "the financials of october and november 2024 were reviewed.",
+   "tags": [
+    "financial report",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Modernization and work order report",
+   "resolution": "received, no action",
+   "quote": "this project is complete and ready for the cfc.",
+   "tags": [
+    "modernization",
+    "capital projects",
+    "work orders"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "received, no action",
+   "quote": "we have 3,626 elderly and 8,000 family applicants on the waiting list.",
+   "tags": [
+    "waiting list",
+    "occupancy"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "5. unfinished business",
+   "tags": []
+  },
+  {
+   "topic": "Resolution 2025-1, Federal Pacific Panel CFC Project 162041",
+   "resolution": "approved",
+   "quote": "resolution 202 5 -1 federal pacific panel cfc project 162041",
+   "tags": [
+    "capital projects",
+    "resolution"
+   ]
+  },
+  {
+   "topic": "Other correspondence from EOHLC",
+   "resolution": "received, no action",
+   "quote": "eohlc phn 2024-22 massachusetts state-aided housing programs property, boiler & machinery",
+   "tags": [
+    "EOHLC",
+    "state correspondence",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:46 p.m.",
+   "quote": "there being no further business,",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "EOHLC",
+  "financial report",
+  "modernization",
+  "capital projects",
+  "waiting list",
+  "occupancy",
+  "tenant board",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

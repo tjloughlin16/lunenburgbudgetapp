@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-10-01",
  "docid": "7432",
@@ -12,144 +12,547 @@
  },
  "votes": [
   {
-   "motion": "enter executive session out of order due to technical difficulties",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Enter executive session out of order due to technical difficulties.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to enter executive session out of order due to technical difficulties, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "accept minutes of regular sessions 8/6/25 and 9/3/25",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Accept the minutes of regular sessions 8/6/25 and 9/3/25.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to accept minutes, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "approve transfer of $20,000 from athletic insurance to athletic dues and fees",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Approve the line item transfer moving $20,000 from athletic insurance to athletic dues and fees.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to approve the transfer, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "accept request to donate surplus HMH 2 supplies to other districts",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Ms. Young",
+   "motion": "Accept the request to donate surplus HMH 2 supplies to other districts.",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "Emily Young",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. gilman makes a motion to accept the request to donate, ms. young seconds the motion all approve"
   },
   {
-   "motion": "add two paraprofessional positions where needed",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms Young",
+   "motion": "Add two paraprofessional positions where needed.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Emily Young",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to add two paraprofessional positions where needed, ms young seconds the motion, all approve"
   },
   {
-   "motion": "approve hire for IT Department to provide full school day coverage",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Ms. Brzozoski",
+   "motion": "Approve the request to hire for the IT Dept position restored to full time.",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. gilman makes a motion to approve this request, ms. brzozoski seconds the motion all approve"
   },
   {
-   "motion": "accept the Fall Athletics Report",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Accept the fall athletics report.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to accept the report, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "accept the quarterly budget report",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Accept the FY26 quarterly budget report.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to accept the report, ms. gilman seconds the motion all approve d. fy26 quarterly",
-   "quote_taken_from_text": true
+   "quote": "ms, brzozoski makes a motion to accept the quarterly budget report, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "accept grant funds and revolving account with caveat to remove family names from circuit breaker",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Accept the grant funds and revolving account, with the caveat that family names be removed from circuit breaker.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to accept the grant funds and revolving account, with the caveat that we remove family names from circuit breaker , ms. gilman seconds the motion all approve"
+   "quote": "ms. brzozoski makes a motion to accept the grant funds and revolving account, with the caveat that we remove family names from circuit breaker"
   },
   {
-   "motion": "accept increase in facility fees to make 1 hour of AV support mandatory",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Ms. Brzozoski",
+   "motion": "Accept the increase in facility fees (one hour of mandatory AV support).",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. gilman makes a motion to accept the increase in fees, ms. brzozoski seconds the motion all approve"
   },
   {
-   "motion": "approve the Facilities and Grounds Report",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Young",
+   "motion": "Approve the Facilities and Grounds report.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Emily Young",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to approve, ms. young seconds the motion all approve"
   },
   {
-   "motion": "add stabilization account as a warrant item",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Add a stabilization account form as a warrant item for the Town meeting.",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. gilman makes a motion to add this as a warrant item , ms. gilman seconds the motion all approve."
+   "quote": "ms. gilman makes a motion to add this as a warrant item , ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "table FY27 Budget Priorities discussion until budget priorities are declared",
-   "moved_by": "Mr. Sculimbrene",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Table the FY27 Budget Priorities item until the budget priorities are declared.",
+   "moved_by": "Anthony Sculimbrene",
+   "seconded_by": "Mandy Gilman",
    "outcome": "not stated",
    "procedural": false,
    "quote": "mr. sculimbrene makes a motion to table this item until the budget priorities are declared, ms. gilman seconds the motion"
   },
   {
-   "motion": "table Superintendent Draft Goals discussion until a future meeting",
-   "moved_by": "Ms. Gilman",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Table the Superintendent Draft Goals until a future meeting.",
+   "moved_by": "Mandy Gilman",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. gilman makes a motion to table these items until a future meeting, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "move School Committee Goals discussion to a future meeting",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Move the School Committee Goals to a future meeting.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to move until a future meeting, ms. gilman seconds the motion all approve"
   },
   {
-   "motion": "change the capital plan",
-   "moved_by": "Ms. Brzozoski",
+   "motion": "Change the FY27 draft capital plan; the motion ended in a tie, so the original plan stays as is and is submitted.",
+   "moved_by": "Laura Brzozoski",
    "seconded_by": "",
-   "outcome": "tie",
+   "outcome": "failed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to change the capital plan, it ends with a tie vote, in the event of a tie, the original plan will stay as is and be submitted."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Gilman",
+   "motion": "Adjourn the meeting at 10:25.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Mandy Gilman",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to adjourn at 10:25, ms. gilman seconds the motion all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes clearly recorded in legible minutes. Note: Item 10g mentions a proposed motion on Chapter 70 warrant article that was withdrawn by Ms. Gilman before a vote was taken, so it is not included here.",
- "cost_usd": 0.10890240000000001
+ "note": "Text extraction of the town's minutes; not a scan, and no roll-call counts are printed. Votes are recorded as 'all approve' with no numeric count, so outcomes are given as 'passed'. The stabilization-account motion and the superintendent-goals tabling list the same member as both mover and seconder; recorded as printed. The FY27 budget priorities motion has no recorded result. The capital plan motion ended in a tie; its seconder is not printed. Attendance for Courtney Fuller, Christopher McNamara and Yanina Burns is not stated. Ms. Gilman's public comment item is a member speaking in the public comment section. The Chapter 70 motion was withdrawn, not voted. The $200,00 figure is as printed in the minutes (likely a typo for $200,000). The quote for the IT hire motion lacks the full role description; the minutes say the position was cut to part time.",
+ "cost_usd": 0.02176367,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski, vice chair - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "emily young secretary - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Member",
+   "status": "present",
+   "quote": "mandy gilman, member - present"
+  },
+  {
+   "name": "George Yapp",
+   "role": "Member",
+   "status": "absent",
+   "quote": "george yapp, member - absent"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. jodi fortuna, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted courtney fuller"
+  },
+  {
+   "name": "Christopher McNamara",
+   "role": "Business Administrator",
+   "status": "not stated",
+   "quote": "christopher mcnamara - business administrator"
+  },
+  {
+   "name": "Christopher Stevens",
+   "role": "Director of Facilities",
+   "status": "present",
+   "quote": "mr stevens gives an update on the facility and ground reports"
+  },
+  {
+   "name": "Yanina Burns",
+   "role": "Athletic Director",
+   "status": "not stated",
+   "quote": "yanina burns - athletic director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Gilman withdrew her motion to add the $202,185 Chapter 70 item as a warrant article for the November Town meeting, after discussion; the Chair had stated reasons against it.",
+   "quote": "after a full discussion, ms. gilman decides to withdraw her motion for this"
+  },
+  {
+   "decision": "The soccer uniforms already bought will be kept and held for the soccer team until the Fall of 2026.",
+   "quote": "these will be kept and will be held for the soccer team until the fall of 2026"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants paid for the period",
+   "what_was_recorded": "The minutes print the warrants total for 9/5/25 to 9/26/25.",
+   "figures_as_printed": [
+    "$464,149.66"
+   ],
+   "quote": "warrants 9/5/25 - 9/26/25 $464,149.66"
+  },
+  {
+   "topic": "Athletic line item transfer",
+   "what_was_recorded": "A $20,000 transfer from athletic insurance to athletic dues and fees, reclassified after being posted to the wrong object and org number.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "we have one transfer it is to move $20,000 from athletic insurance to athletic dues and fees, they were classified in the wrong object and org number"
+  },
+  {
+   "topic": "Savings from a retirement",
+   "what_was_recorded": "The Superintendent said a recent retirement created a savings that will allow a full-time paraprofessional hire; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "a recent retirement as created a savings that will allow us to hire a full time paraprofessional"
+  },
+  {
+   "topic": "Facility fee for AV support",
+   "what_was_recorded": "Fee document change making one hour of AV support mandatory to match what it costs the district; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "we would like to make 1 hour of av support mandatory to match what it is costing us"
+  },
+  {
+   "topic": "Chapter 70 estimate and warrant article",
+   "what_was_recorded": "The school budget rests on an estimate of Chapter 70; the district reports an additional amount that must be placed on the November Town meeting warrant to be received.",
+   "figures_as_printed": [
+    "$202,185"
+   ],
+   "quote": "this year there is an additional $202,185, in order for the school to get this money it needs to be on the warrant for the town meeting in november"
+  },
+  {
+   "topic": "Salary reserve line and paraprofessional hires",
+   "what_was_recorded": "A resident asked how paraprofessional hires paid from the salary reserve show up in next year's budget; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "in regards to the salary reserve line as it relates to paras, and how these hires show up in next year's budget items."
+  },
+  {
+   "topic": "Whether the $200,000 should be used",
+   "what_was_recorded": "A resident said the $200,000 has already been allocated to the schools and that adding positions draws on the FY27 budget money.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "in regards to the $200,000, i supported the fy25 budget and override"
+  },
+  {
+   "topic": "Primary School supply lines and the $200,00 request",
+   "what_was_recorded": "A resident asked whether the $200,00 (as printed) could be used for whiteboards and supply lines that were cut.",
+   "figures_as_printed": [
+    "$200,00"
+   ],
+   "quote": "can th$200,00 be used to bolster those items"
+  },
+  {
+   "topic": "Soccer uniform purchase",
+   "what_was_recorded": "Uniforms were bought without the knowledge of the previous or current superintendent; they are personalized and cannot be returned. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "soccer uniforms were purchased without the knowledge of the previous or current superintendent, they are personalized and cannot be returned"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Athletic insurance to athletic dues and fees, reclassified for wrong object and org number",
+   "amount_as_printed": "$20,000",
+   "outcome": "approved",
+   "quote": "we have one transfer it is to move $20,000 from athletic insurance to athletic dues and fees, they were classified in the wrong object and org number"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "TJ Loughlin",
+   "topic": "salary reserve line and paraprofessional hires",
+   "quote": "in regards to the salary reserve line as it relates to paras, and how these hires show up in next year's budget items."
+  },
+  {
+   "speaker": "Ms. Gilman",
+   "topic": "PTO gear sale and fundraiser",
+   "quote": "the pto is selling gear and the sale ends next week, we will also have a great wolf lodge fundraiser"
+  },
+  {
+   "speaker": "Anna Lockwood",
+   "topic": "the $200,000 and the FY27 budget",
+   "quote": "in regards to the $200,000, i supported the fy25 budget and override"
+  },
+  {
+   "speaker": "Amy King",
+   "stated_role": "3 Gabes Place",
+   "topic": "hiring, whiteboards, soccer uniforms and fundraising",
+   "quote": "in understand the comments regarding not being able to hire people in time"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "call to order at 7:00 by mr. sculimbrene"
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "2. pledge of allegiance"
+  },
+  {
+   "topic": "Executive session entered out of order",
+   "resolution": "motion passed to enter executive session, out of order",
+   "tags": [
+    "executive session",
+    "procedure"
+   ],
+   "quote": "ms. brzozoski makes a motion to enter executive session out of order due to technical difficulties"
+  },
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "4. public comment none"
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "chairs report - none"
+  },
+  {
+   "topic": "Student Representative Report",
+   "resolution": "no action",
+   "tags": [
+    "students",
+    "schools"
+   ],
+   "quote": "the winners of the lunenburg public library writing contest will be announced on october 3rd."
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "regular session 8/6/25 & 9/3/25 ms. brzozoski makes a motion to accept minutes"
+  },
+  {
+   "topic": "Line item transfers, warrants and donations",
+   "resolution": "approved",
+   "tags": [
+    "transfers",
+    "warrants",
+    "budget",
+    "donations"
+   ],
+   "quote": "we have one transfer it is to move $20,000 from athletic insurance to athletic dues and fees"
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "no action",
+   "tags": [
+    "superintendent",
+    "budget",
+    "staffing"
+   ],
+   "quote": "dr. fortuna shares district highlights and celebrations."
+  },
+  {
+   "topic": "Additional primary professional position (paraprofessional)",
+   "resolution": "approved",
+   "tags": [
+    "staffing",
+    "paraprofessionals"
+   ],
+   "quote": "additional primary professional position principal squire included a letter in your packet"
+  },
+  {
+   "topic": "Potential hire for IT department",
+   "resolution": "approved",
+   "tags": [
+    "staffing",
+    "IT"
+   ],
+   "quote": "potential hire for it dept this was a position that was cut to part time"
+  },
+  {
+   "topic": "Fall athletics report",
+   "resolution": "accepted",
+   "tags": [
+    "athletics"
+   ],
+   "quote": "the committee has been provided a report of the fall athletics"
+  },
+  {
+   "topic": "FY26 quarterly reports: budget, personnel, Keystone",
+   "resolution": "accepted",
+   "tags": [
+    "budget",
+    "personnel",
+    "grants"
+   ],
+   "quote": "fy26 quarterly reports - budget, personnel, keystone the committee has been provided a report on budget, personnel"
+  },
+  {
+   "topic": "Facility fee document update",
+   "resolution": "approved",
+   "tags": [
+    "fees",
+    "facilities"
+   ],
+   "quote": "facility fee document update we would like to make 1 hour of av support mandatory"
+  },
+  {
+   "topic": "Facilities and grounds report",
+   "resolution": "approved",
+   "tags": [
+    "facilities"
+   ],
+   "quote": "mr stevens gives an update on the facility and ground reports"
+  },
+  {
+   "topic": "Warrant articles (stabilization account; Chapter 70 item)",
+   "resolution": "stabilization item added; Chapter 70 motion withdrawn; forensic audit discussed",
+   "tags": [
+    "warrant articles",
+    "Town meeting",
+    "Chapter 70",
+    "stabilization"
+   ],
+   "quote": "authorization for warrant article there are two warrant articles that have been proposed"
+  },
+  {
+   "topic": "FY27 budget priorities",
+   "resolution": "tabled; result not stated",
+   "tags": [
+    "FY27 budget"
+   ],
+   "quote": "fy27 budget priorities mr. sculimbrene makes a motion to table this item until the budget priorities are declared"
+  },
+  {
+   "topic": "Superintendent draft goals",
+   "resolution": "tabled to a future meeting",
+   "tags": [
+    "goals"
+   ],
+   "quote": "superintendent draft goals ms. gilman makes a motion to table these items until a future meeting"
+  },
+  {
+   "topic": "School Committee goals",
+   "resolution": "moved to a future meeting",
+   "tags": [
+    "goals"
+   ],
+   "quote": "school committee goals ms. brzozoski makes a motion to move until a future meeting"
+  },
+  {
+   "topic": "Payment for soccer uniforms",
+   "resolution": "no action; uniforms kept and held until Fall 2026",
+   "tags": [
+    "athletics",
+    "soccer",
+    "purchasing"
+   ],
+   "quote": "soccer uniforms were purchased without the knowledge of the previous or current superintendent"
+  },
+  {
+   "topic": "FY27 draft capital plan",
+   "resolution": "change failed on a tie; original plan kept and submitted",
+   "tags": [
+    "capital plan",
+    "FY27"
+   ],
+   "quote": "fy 27 draft capital plan committee discusses the list of requests and they decide on their top choices"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "12. public comment tj loughlin 207 rolling acres road"
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "no action",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "topics for future discussion"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:25",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "ms. brzozoski makes a motion to adjourn at 10:25, ms. gilman seconds the motion all approve"
+  }
+ ],
+ "tags": [
+  "school budget",
+  "FY26",
+  "FY27",
+  "paraprofessionals",
+  "staffing",
+  "warrant articles",
+  "Town meeting",
+  "Chapter 70",
+  "stabilization account",
+  "transfers",
+  "warrants",
+  "athletics",
+  "soccer uniforms",
+  "facility fees",
+  "capital plan",
+  "goals",
+  "public comment",
+  "executive session"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -484,5 +484,256 @@
    "at": "2026-10-06T18:04:39Z",
    "cost_usd": 0.21795899999999999
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02242025-7072",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-02-24-minutes-7072.txt",
+   "path": "sources/meetings/planning-board/2025-02-24-minutes-7072.pdf"
+  },
+  "official_sha256": "8d819293c74f94297ba6ce03bce0f65c69d780f6d10ac45aba71c70a11829105",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the ANR endorsement, the two site plan approvals, the MRPC GIS assignment, the March 10 meeting going ahead, and the deferral of the stormwater permit decisions. They differ on the procedural hearing votes, which only our minutes record, and on what happens to the Master Plan Steering Committee vacancies. A reader should check the recording and the town's full minutes on those two points.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 4,
+   "discrepancy": 6,
+   "only_in_ours": 8,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: endorse ANR for 589 Flat Hill Road",
+    "ours": "Endorse the ANR for 589 Flat Hill Road. — passed (voice vote, no opposition heard)",
+    "official": "g. mcleod moved to endorse the anr for 589 flat hill rd. t. willsmer seconded. voice vote, passed unanimously.",
+    "note": "Same motion and outcome in both records.",
+    "t": 802
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: continue 494 Electric Avenue hearing to March 10",
+    "ours": "Continue the 494 Electric Avenue site plan and stormwater permit hearing to March 10 at 6:05 p.m. — passed (voice vote)",
+    "official": "",
+    "note": "Our minutes record a continuation vote and the official minutes record none; check the recording at this timestamp and the town's full minutes for the continuation.",
+    "t": 4130
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: close public hearing for 801 Northfield Road",
+    "ours": "Close the public hearing for 801 Northfield Road. — passed (voice vote)",
+    "official": "",
+    "note": "Our minutes record a vote to close the hearing and the official minutes record none; check whether the town omitted it or the captions mislabelled a discussion.",
+    "t": 4828
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: site plan approval for 801 Northfield Road",
+    "ours": "Approve the site plan for 801 Northfield Road with standard conditions. — passed (voice vote)",
+    "official": "t. willsmer moved to grant site plan approval for 801 northfield rd as-presented, with standard conditions. a. reid seconded. voice vote, passed unanimously.",
+    "note": "Same motion and outcome.",
+    "t": 4848
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: continue 994 Northfield Road hearing to March 10",
+    "ours": "Continue the 994 Northfield Road public hearing to March 10 at 6:05 p.m. — passed (voice vote)",
+    "official": "",
+    "note": "Our minutes record a continuation vote and the official minutes record none; check the recording and the town's full minutes.",
+    "t": 6695
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: close public hearing for 110 Pleasant Street",
+    "ours": "Close the public hearing for 110 Pleasant Street. — passed (voice vote)",
+    "official": "",
+    "note": "Our minutes record a vote to close the hearing and the official minutes record none; check the recording.",
+    "t": 7283
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: site plan approval for 110 Pleasant Street",
+    "ours": "Approve the site plan for 110 Pleasant Street with standard conditions. — passed (voice vote)",
+    "official": "t. willsmer moved to grant site plan approval for 110 pleasant st with standard conditions. a. reid seconded. voice vote, passed unanimously.",
+    "note": "Same motion and outcome.",
+    "t": 7304
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: assign MRPC GIS contribution to Conservation Commission",
+    "ours": "Authorize the land use director to assign the MRPC GIS contribution to the Conservation Commission for trail mapping. — passed (voice vote)",
+    "official": "a. reid moved to authorize the land use director to assign the board's mrpc gis contribution to the conservation commission for trail mapping.",
+    "note": "Same motion. The quoted official text gives no second or vote tally, so the outcome rests on the structured reading of the minutes.",
+    "t": 7560
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "GIS mapping hours vs paid mapping figure",
+    "ours": "GIS mapping hours vs paid mapping: $84 an hour, eight hours",
+    "official": "",
+    "note": "The official minutes print no hourly rate or hours for GIS mapping.",
+    "t": 7453
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Municipal Building project at town meeting: $22 million",
+    "ours": "Municipal Building project at town meeting: $22 million",
+    "official": "",
+    "note": "The official minutes mention only design cost and timing feedback with no figure; the $22 million may be a caption error and should be checked against the recording.",
+    "t": 9438
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pierce Avenue entrance decision for 494 Electric Ave",
+    "ours": "For 494 Electric Ave, the board will leave the Pierce Avenue entrance as designed for now and wait for Town Counsel's review of the road status; the applicant will return March 10.",
+    "official": "",
+    "note": "The official minutes mention only the Town Counsel cost estimate for the title abstract, not this decision.",
+    "t": 3566
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Canopy as possible de minimis change",
+    "ours": "The applicant will take the canopy to the land use director as a possible de minimis change to the prior approval, to be considered at the next meeting.",
+    "official": "j. avini asked if the board could permit the inter-building canopy portion of the plan only.",
+    "note": "The official minutes touch the canopy question but do not record the de minimis referral to the land use director.",
+    "t": 3733
+   },
+   {
+    "kind": "agree",
+    "about": "March 10 meeting proceeds despite Citizens Caucus",
+    "ours": "The March 10 meeting will go ahead despite overlapping the Citizens Caucus. Applicants are advised against scheduling special permits that night because of quorum risk.",
+    "official": "the board discussed and opted to proceed with the meeting as-scheduled",
+    "note": "Same decision. The advice to applicants about quorum risk is only in ours.",
+    "t": 7836
+   },
+   {
+    "kind": "agree",
+    "about": "Stormwater decisions for 255 Sunny Hill Rd and 560 Goodrich St not signed",
+    "ours": "The board did not sign the 255 Sunny Hill Road and 560 Goodrich Street stormwater decisions because the deed-recording wording and a special condition were unclear.",
+    "official": "the board signed the special permit decision for 560 goodrich st, and deferred the stormwater management permit decisions for 560 goodrich st and 255 sunny hill rd pending revisions.",
+    "note": "Both records defer the two stormwater decisions. The official minutes give the reason as pending revisions.",
+    "t": 8365
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Which Goodrich Street decision was signed",
+    "ours": "The board agreed to sign the common driveway decision for 558/560 Goodrich Street.",
+    "official": "the board signed the special permit decision for 560 goodrich st, and deferred the stormwater management permit decisions for 560 goodrich st and 255 sunny hill rd pending revisions.",
+    "note": "Ours says a common driveway decision was signed and the official says a special permit decision was signed. Check the recording to see whether these are the same decision under different names.",
+    "t": 8677
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Neighboring-town community notices to be emailed",
+    "ours": "Community notices from neighboring towns will be emailed to the board as they arrive rather than read at meetings.",
+    "official": "",
+    "note": "The official minutes do not record this procedural decision.",
+    "t": 8850
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Master Plan Steering Committee vacant seats",
+    "ours": "The Master Plan Steering Committee will keep its two vacant seats for now; the chair will ask the Select Board whether it wants to fill its seat.",
+    "official": "board discussed, opted to have mpsc choose at their upcoming meeting.",
+    "note": "Ours keeps the seats vacant and sends a question to the Select Board, while the official minutes have the committee choosing at its next meeting; check the recording.",
+    "t": 8932
+   },
+   {
+    "kind": "agree",
+    "about": "100 Townsend Harbor Road placed on next agenda",
+    "ours": "The Open Space Committee review of the 100 Townsend Harbor Road property will go on the next agenda so the board can vote on a recommendation to the Select Board.",
+    "official": "added 100 townsend harbor rd's right of first refusal to the march 10th agenda.",
+    "note": "Both put the 100 Townsend Harbor Rd matter on the March 10 agenda. Ours adds the Open Space review and a recommendation to the Select Board.",
+    "t": 9375
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Standard operating procedures review deferred",
+    "ours": "Review of standard operating procedures is deferred until the land use director is present.",
+    "official": "",
+    "note": "The official minutes do not mention this deferral.",
+    "t": 8765
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Zoning workshops deferred",
+    "ours": "The two zoning workshops were deferred because there was no guest and no land use director.",
+    "official": "",
+    "note": "The official minutes do not mention the workshop deferral.",
+    "t": 865
+   },
+   {
+    "kind": "caption_error",
+    "about": "Land use director name",
+    "ours": "Mr Riley (land use director (absent, ill))",
+    "official": "absent: christopher reilly (land use director)",
+    "note": "Same absent person; the captions misheard the surname. The official minutes do not give the illness.",
+    "official_reading": "Christopher Reilly"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant's representative surname",
+    "ours": "Bill Hanigan (presenter (applicant's representative, 494 Electric Ave))",
+    "official": "bill hannigan (hannigan engineering) presented on behalf of applicant d&a lunenburg, llc.",
+    "note": "The captions misspelled the surname.",
+    "official_reading": "Bill Hannigan"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Engineer firm and contractor name",
+    "ours": "Greg Roy, Dillon Roy (presenter (engineer for Conservation Commission and Paradis Contractors))",
+    "official": "greg roy (dillis & roy) presented for applicant lunenburg conservation commission.",
+    "note": "The captions heard 'Dillon Roy' for the firm Dillis & Roy and 'Paradis' for Peritus Contractors. The Peritus name comes from the structured attendee entry, not the quoted text.",
+    "official_reading": "Dillis & Roy; Peritus Contractors"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Mr McL",
+    "ours": "Mr McL (member)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod",
+    "note": "The truncated caption name matches Glenn McLeod.",
+    "official_reading": "Glenn McLeod"
+   },
+   {
+    "kind": "agree",
+    "about": "Board members present (Amanda, Matt, Vice chair, Chair)",
+    "ours": "Amanda (member); Matt (member); Vice chair (vice chair); Chair (unnamed in captions) (chair)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod",
+    "note": "Five members are present in both; ours does not name the chair or vice chair, and 'Matt' could be Brenner or Allison. Ours lists four of them by role or first name.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Planning staff: Logan O'Connell",
+    "ours": "Logan / Mr O'Connell (town staff (planning staff, reads notices, minutes))",
+    "official": "minutes by logan o'connell, admin asst.",
+    "note": "Same person.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chris Anderson, engineer for 494 Electric Ave sketches",
+    "ours": "Chris Anderson (presenter (engineer, sketches for 494 Electric Ave))",
+    "official": "",
+    "note": "The official minutes do not name Chris Anderson; check whether the captions misheard a name already listed.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Counsel Jeff Avini and public speakers",
+    "ours": "",
+    "official": "j. avini asked if the board could permit the inter-building canopy portion of the plan only.",
+    "note": "The official minutes list Avini, Dave MacDonald, Bob Pease, Michelle Matthew, Laura Caron-Gustus and Tanya Eberlin, none of whom appear in our attendee list."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:31:27Z",
+   "cost_usd": 0.277525
+  }
  }
 }

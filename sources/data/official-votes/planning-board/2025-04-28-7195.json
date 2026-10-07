@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2025-04-28",
  "docid": "7195",
@@ -12,6 +12,115 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This document is an agenda and meeting notice for a School Committee meeting (May 15, 2025), not minutes of a completed meeting. It lists items to be discussed but contains no record of votes actually taken or motions made. No votes are recorded in this document.",
- "cost_usd": 0.0576894
+ "note": "Not minutes. The text is a MEETING NOTICE and AGENDA for a SPECIAL SCHOOL COMMITTEE MEETING on Thursday, May 15, 2025 (6:30 pm, LMS Collaborative Room #D132, hybrid). It records no discussion, motions, votes, or outcomes, so the votes list is empty and no vote can be read from it. The board given (Planning Board) and the meeting date (2025-04-28) do not match the document, which is a School Committee notice for 2025-05-15; this record follows the document. Attendance is the roster printed in the notice header, not a record of who attended, so status is 'not stated' throughout. The Executive Session and Adjournment items have no motion recorded. The 'Bus Fee Policy' item names a fee but prints no dollar figure, so no budget item is recorded. Both public comment slots list no speakers. Single text page; no scan.",
+ "cost_usd": 0.012899670000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair, School Committee",
+   "status": "not stated",
+   "quote": "brian lehtinen, chair dr. kate burnham"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "not stated",
+   "quote": "anthony sculimbrene, vice chair"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "not stated",
+   "quote": "carol archambault-secretary"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "laura brzozoski recording secretary"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "peter beardmore courtney fuller"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "peter beardmore courtney fuller"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "school committee superintendent brian lehtinen, chair dr. kate burnham"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "listed on agenda; no record of discussion or action",
+   "quote": "1. call to order 2. public comment",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Executive Session on nonunion personnel negotiations",
+   "resolution": "listed on agenda; no motion or entry into executive session recorded",
+   "quote": "executive session: to conduct strategy sessions in preparation for negotiations with nonunion personnel",
+   "tags": [
+    "executive session",
+    "personnel",
+    "negotiations",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "First Read of Policy 3601.1 Bus Fee Policy",
+   "resolution": "listed on agenda under Old Business with 'Action' label; no discussion, vote or result recorded",
+   "quote": "a. first read 3601.1 bus fee policy",
+   "tags": [
+    "policy",
+    "bus fees",
+    "old business"
+   ]
+  },
+  {
+   "topic": "Public Comment (two agenda slots)",
+   "resolution": "listed on agenda; no speakers recorded",
+   "quote": "5. public comment 6. adjournment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "listed on agenda; no motion recorded",
+   "quote": "5. public comment 6. adjournment",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "special meeting",
+  "bus fee policy",
+  "policy first read",
+  "executive session",
+  "nonunion personnel",
+  "collective bargaining",
+  "public comment",
+  "agenda only"
+ ],
+ "dropped_unquoted_by_field": {}
 }

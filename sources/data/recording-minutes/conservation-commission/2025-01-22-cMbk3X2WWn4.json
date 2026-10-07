@@ -424,5 +424,236 @@
    "at": "2026-10-06T18:14:53Z",
    "cost_usd": 0.215357
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01222025-6966",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-01-22-minutes-6966.txt",
+   "path": "sources/meetings/conservation-commission/2025-01-22-minutes-6966.pdf"
+  },
+  "official_sha256": "ad70d01d1716e3ea8dd48b3560e3bd24cb8b9713b9fec1c94fbaa50e730aa8ce",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all ten votes, including the 5-1 and 4-2 tallies, and on the roll of members. They differ on how several follow-up actions are described and on one dollar figure. Check the recording on who does what at 67 Island Road, 400 Leominster-Shirley Rd., 10 Mass. Ave. and the Hollis agreement, and on whether $500 was ever mentioned for the workshop.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 2,
+   "discrepancy": 5,
+   "only_in_ours": 2,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: continue 1168 Mass Ave to Feb 5",
+    "ours": "Continue the 1168 Mass Ave violation discussion to February 5th — passed",
+    "official": "motion: chris s., second: jenny p. to continue 1168 mass. ave. to 2/5/25.",
+    "note": "Same motion, same date, passed in both.",
+    "t": 1760
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 32 Hemlock Drive to Feb 5",
+    "ours": "Continue the notice of intent for 32 Hemlock Drive to February 5th — passed",
+    "official": "motion: chris s., second: rich b. to continue 32 hemlock drive to 2/5/25.",
+    "note": "Same motion and outcome.",
+    "t": 2390
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 352 Sunset Lane to Feb 5",
+    "ours": "Continue the notice of intent for 352 Sunset Lane to February 5th — passed 4-0 with Jeff recused",
+    "official": "motion: mike l., second: rich b. to continue 352 sunset lane to 2/5/25.",
+    "note": "Both record passage. The official minutes give no tally but note Jeff V. as recused on this item, which matches ours.",
+    "t": 3666
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 67 Island Road to Feb 5",
+    "ours": "Continue the request for determination at 67 Island Road to February 5th — passed",
+    "official": "motion: mike l., second: jenny p. to continue 67 island road to 2/5/25.",
+    "note": "Same motion and outcome.",
+    "t": 4911
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve NOI at 828 Lancaster Ave with special conditions",
+    "ours": "Approve the notice of intent at 828 Lancaster Ave with special conditions (75% restoration survival, previous fill replaced with clean fill) — passed (Rich voted no; other members voted aye)",
+    "official": "motion: mike l., second: jenny p. to approve the noi for 828 lancaster ave. with special condition that 75% or more of the restoration is established before they approve",
+    "note": "Both pass with the same conditions. Ours implies 5-1 with Rich opposed, and the structured official summary gives 5-1, though the quoted line has no tally and does not name the dissenter.",
+    "t": 5844
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name: 157 Goodridge vs Goodrich (vote 4-2 otherwise agrees)",
+    "ours": "Approve the 157 Goodridge gravel driveway as proposed — passed 4-2",
+    "official": "motion: chris s., second: jeff v. to approve the plan for 157 goodrich street as proposed.",
+    "note": "Same vote, same 4-2 tally; captions misheard the street name.",
+    "official_reading": "157 Goodrich Street",
+    "t": 7177
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name at 400 Lumus Shirley Road",
+    "ours": "Approve the amended order of resource area delineation at 400 Lumus Shirley Road as proposed — passed",
+    "official": "motion: rich b., second: jenny p. to approve the order of resource area delineation amendment at 400 leominster-shirley rd. as proposed.",
+    "note": "Same vote and outcome; captions misheard the road name.",
+    "official_reading": "400 Leominster-Shirley Rd.",
+    "t": 9051
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 390 Howard Street to Feb 19",
+    "ours": "Continue the abbreviated notice of resource area delineation at 390 Howard Street to February 19th — passed",
+    "official": "motion: chris s, second: mike l. to continue the hearing on 390 howard street to 2/19/25.",
+    "note": "Same date and outcome.",
+    "t": 9200
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: administrative determination at 44 Brook View Terrace",
+    "ours": "Approve the tree removal administrative determination at 44 Brook View Terrace — passed",
+    "official": "motion: rich b., second: mike l. to approve the administrative determination for 44 brookview terrace.",
+    "note": "Same item and outcome.",
+    "t": 9392
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: paint stewardship program",
+    "ours": "Do not proceed with a paint stewardship program — passed",
+    "official": "motion: chris s., second: mike l. to not pursue the paint stewardship program.",
+    "note": "Same outcome.",
+    "t": 10397
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Landowner workshop co-sponsorship amount",
+    "ours": "Landowner workshop co-sponsorship: $250, $500",
+    "official": "urged each community to contribute $250 to help defray costs.",
+    "note": "Ours lists a second figure, $500, that the official minutes do not print. Check the recording near t=359 to see whether $500 was said (for example a different tier) or is a caption error.",
+    "t": 359
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "1168 Mass Ave follow-up",
+    "ours": "The commission asked the 1168 Mass Ave representative to consult farm-plan resources and report back by February 5th.",
+    "official": "",
+    "note": "The official minutes record no such request in what was structured.",
+    "t": 1680
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "32 Hemlock Drive revisions",
+    "ours": "The applicant's engineer at 32 Hemlock Drive will revise the outlet dimensions and riprap, moving it farther from the lake.",
+    "official": "",
+    "note": "The official minutes record no revision requirement for this item.",
+    "t": 2370
+   },
+   {
+    "kind": "agree",
+    "about": "352 Sunset Lane plan changes",
+    "ours": "The 352 Sunset Lane plan is to add erosion control, the walkway extent, wall length, and tree changes. Two trees would be removed and one pruned.",
+    "official": "chris asked to update the plan regarding the tree removal and pruning.",
+    "note": "Both have the tree removal and pruning update. Ours also lists erosion control, walkway and wall items that the official minutes omit.",
+    "t": 3606
+   },
+   {
+    "kind": "discrepancy",
+    "about": "67 Island Road follow-up: who measures",
+    "ours": "The 67 Island Road owner is to provide photos of the earlier walkway, measurements from the high water mark, and the stairs on the plan.",
+    "official": "mary asked sophia to go onsite to measure to verify the wall is in the 30' buffer and to add that",
+    "note": "Ours assigns measurements to the owner. The official minutes assign an onsite measurement to Sophia. Both may be true, but check the recording for who was tasked.",
+    "t": 4843
+   },
+   {
+    "kind": "discrepancy",
+    "about": "400 Leominster-Shirley Rd. plan revision",
+    "ours": "The applicant will submit a revised plan of record for 400 Lumus Shirley Road without the D series wetland.",
+    "official": "bill will update the original plans so they can have it for their files.",
+    "note": "Both say the applicant will update plans, but only ours says the revision removes the D series wetland. Check the recording and the order itself for what the revision changes.",
+    "t": 9136
+   },
+   {
+    "kind": "discrepancy",
+    "about": "10 Mass Ave timeline",
+    "ours": "The commission accepted the applicant's timeline for 10 Mass Ave (wetland delineation likely by the first April meeting) with no vote.",
+    "official": "the commission reviewed the timeline and greg anticipated filing the noi at the 4/2/25 meeting.",
+    "note": "Ours says wetland delineation by the first April meeting. The official minutes say an NOI would be filed at the 4/2/25 meeting. Check which milestone was stated.",
+    "t": 9604
+   },
+   {
+    "kind": "agree",
+    "about": "Tree site visit form vote on Feb 5",
+    "ours": "The commission will vote on the tree site visit form at the February 5th routine meeting.",
+    "official": "they will vote on it at the 2/5/25 meeting.",
+    "note": "Same item and date.",
+    "t": 10668
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Hollis custodial agreement redlines: who",
+    "ours": "Jeff expects to deliver redlines of the Hollis custodial agreement by the second February meeting.",
+    "official": "hollis custodian agreement - michael ray will do a red line on this and commission will discuss at",
+    "note": "The two records name different people for the redline: Jeff in ours and Michael Ray in the official minutes. Michael Ray is not on either roll call. Check the recording.",
+    "t": 10774
+   },
+   {
+    "kind": "only_in_official",
+    "about": "48 Meadow Lane site visit",
+    "ours": "",
+    "official": "sophia will contact them to do a site visit.",
+    "note": "Our minutes do not mention the 48 Meadow Lane site visit."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Farmland of Local Importance referral",
+    "ours": "",
+    "official": "mary said she referred this to agricultural commission to discuss.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fee schedule review",
+    "ours": "",
+    "official": "asked sophia to look at the fee schedule to see if they should increase fees.",
+    "note": "Not in our minutes. The official minutes also record that a fee change would need two publicized meetings and a vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Grants update (Table Rock, Raino property)",
+    "ours": "",
+    "official": "grants update (lcc sponsored, award year 2023) - greg roy stated he filed a site plan with the",
+    "note": "Our minutes have no grants update. The official minutes print no dollar figures for it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment (Whitney, Viviano)",
+    "ours": "",
+    "official": "jeff viviano (338 sunset lane) stated he would give permission for his wall to be feathered into the tonole wall.",
+    "note": "Our minutes record no public comment. The official minutes list Patricia Whitney on 828 Lancaster Ave. and 157 Goodrich St., and Jeff Viviano on 352 Sunset Lane."
+   },
+   {
+    "kind": "agree",
+    "about": "Commission members and administrator present",
+    "ours": "Mary (chair), Chris, Mike, Jeff, Rich, Jenny (members), Sophia (conservation administrator)",
+    "official": "roll call: chris s., mike l., jeff v., rich b., jenny p., mary w. and sophia dorow (admin.)",
+    "note": "The same seven people, with full names in the official minutes (Mary Wilson, Chris St. Germain, Michael Larouche, Sophia Dorow)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicants, representatives and guests as attendees",
+    "ours": "",
+    "official": "anna announced they will be holding a landowner workshop on april 2nd at the bull run.",
+    "note": "The official minutes list many non-members (Anna Wilkins, Brian Marchetti, Greg Roy, Bill Hannigan and others) that our attendee list does not."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:37:00Z",
+   "cost_usd": 0.27736099999999997
+  }
  }
 }

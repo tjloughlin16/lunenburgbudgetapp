@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2025-07-16",
  "docid": "7316",
@@ -12,58 +12,440 @@
  },
  "votes": [
   {
-   "motion": "Approve both Eagle Scout projects as proposed",
+   "motion": "Approve both Eagle Scout projects as proposed.",
    "moved_by": "M. Wilson",
    "seconded_by": "M. Larouche",
    "outcome": "passed 7-0",
    "procedural": false,
-   "quote": "m. wilson, to approve both projects as proposed. second m. larouche vote: m. wilson - aye t. doucette - aye m. larouche - aye c. st germain - aye a. burnap - aye j. pewtherer - aye r. bursch - aye"
+   "quote": "m. wilson, to approve both projects as proposed."
   },
   {
-   "motion": "Grant a negative determination for 833 Flat Hill Rd RDA-25-7 as submitted",
+   "motion": "Issue a negative determination as submitted (833 Flat Hill Rd, RDA-25-7).",
    "moved_by": "R. Bursch",
    "seconded_by": "M. Larouche",
    "outcome": "passed 7-0",
    "procedural": false,
-   "quote": "r. bursch, for a negative determination as submitted m. larouche m. wilson - aye lt. doucette - aye m. larouche - aye a. burnap - aye c. st germain - aye | j. pewtherer - aye r. bursch - aye b. 225 islan",
-   "quote_taken_from_text": true
+   "quote": "r. bursch, for a negative determination as submitted"
   },
   {
-   "motion": "Approve application for 225 Island Road NOI-25-13 with requirement for silt fence if materials are stored on site",
+   "motion": "Approve 225 Island Road NOI-25-13 with a silt fence requirement if materials are stored on site.",
    "moved_by": "C. St Germain",
    "seconded_by": "M. Larouche",
    "outcome": "passed 7-0",
    "procedural": false,
-   "quote": "c. st germain, to approve with requirement for silt fence if materials are stored on site. second m. larouche vote: m. wilson - aye t. doucette - aye m. larouche - aye c. st germain - aye a. burnap - aye j. pewtherer - aye r. bursch - aye"
+   "quote": "c. st germain, to approve with requirement for silt fence if materials are stored on site."
   },
   {
-   "motion": "Continue hearing for 67 Island Ra RDA-24-9 to August 6",
+   "motion": "Continue 67 Island Ra (RDA-24-9) to Aug 6.",
    "moved_by": "M. Larouche",
    "seconded_by": "C. St Germain",
-   "outcome": "passed 6-0-1",
+   "outcome": "passed 6-0-1 (J. Pewtherer abstain)",
    "procedural": false,
-   "quote": "motion: second m. larouche, to continue to aug 6th c. st germain ===page 3=== vote: m. wilson - aye a. burnap - aye m. larouche - aye t. doucette - aye r. bursch - aye j. pewtherer - abstain c. st ",
-   "quote_taken_from_text": true
+   "quote": "m. larouche, to continue to aug 6th"
   },
   {
-   "motion": "Authorize sending out notices regarding enforcement, including requirement for monthly updates and potential fees",
+   "motion": "Peer review the 1083 Northfield Rd project (NOI-25-10).",
    "moved_by": "M. Wilson",
    "seconded_by": "R. Bursch",
-   "outcome": "passed 6-0-1",
+   "outcome": "passed 5-0 (two recorded N/A: A. Burnap, T. Doucette)",
    "procedural": false,
-   "quote": "motion: m. wilson, authorize sending out notices regarding enforcement, including requirement for monthly updates and potential fees. second vote: r. bursch m. wilson - aye t. doucette - aye m. larouche - aye c. st germain - aye a. burnap - aye j. pewtherer - abstain r. bursch - aye",
-   "quote_taken_from_text": true
+   "quote": "m. wilson, to peer review the project"
   },
   {
-   "motion": "Approve the 2026 meeting schedule",
+   "motion": "Continue 390 Howard St resource area delineation to Aug 6.",
+   "moved_by": "M. Wilson",
+   "seconded_by": "M. Larouche",
+   "outcome": "passed 5-0-2 (T. Doucette and J. Pewtherer abstain)",
+   "procedural": false,
+   "quote": "m. wilson, to continue to aug 6th"
+  },
+  {
+   "motion": "Authorize sending enforcement notices, including a requirement for monthly updates and potential fees.",
+   "moved_by": "M. Wilson",
+   "seconded_by": "R. Bursch",
+   "outcome": "passed 6-0-1 (J. Pewtherer abstain)",
+   "procedural": false,
+   "quote": "m. wilson, authorize sending out notices regarding enforcement, including requirement for monthly updates and potential fees."
+  },
+  {
+   "motion": "Approve the 2026 meeting schedule.",
    "moved_by": "M. Wilson",
    "seconded_by": "C. St Germain",
    "outcome": "passed 7-0",
    "procedural": false,
-   "quote": "motion: m. wilson, to approve the 2026 meeting schedule second c. st germain vote: m. wilson - aye t. doucette - aye m. larouche - aye c. st germain - aye _a. burnap - aye | j. pewtherer - aye r. bursch - aye"
+   "quote": "m. wilson, to approve the 2026 meeting schedule"
+  },
+  {
+   "motion": "Adjourn at 10:01PM.",
+   "moved_by": "R. Bursch",
+   "seconded_by": "M. Larouche",
+   "outcome": "passed 7-0",
+   "procedural": true,
+   "quote": "r. bursch, to adjourn at 10:01pm"
   }
  ],
- "dropped_unquoted": 3,
- "note": "OCR scanned document. Odd formatting in votes 4-6 and 8 where \"Motion:\" and \"Second\" labels appear on separate lines (likely OCR error); restored as verbatim. Vote 2 contains pipe character \"|\" before \"J. Pewtherer\"; vote 8 contains underscore before \"A. Burnap\" and pipe character before \"J. Pewtherer\" as scanned. Vote 5 shows \"N/A\" for some commissioners; vote 6 shows lowercase \"Aye\" for C. St Germain. Minutes note that prior meeting minutes were not approved (section 3.c).",
- "cost_usd": 0.15827439999999998
+ "dropped_unquoted": 0,
+ "note": "Read from OCR of a scanned minutes document (macOS Vision), not a clean text file. Vote tallies are reconstructed from the OCR'd per-member vote lists, and the listed moved-by and seconded-by names are taken from OCR line order, which is jumbled on the page 2 and page 3 motion blocks, so treat them as inferred. The Chair, Vice Chair, Clerk and Member roles are matched to names by their order in the OCR header, not by an explicit printed pairing. On 390 Howard St the second 'Abstain' is printed on a line after 'C. St Germain - Aye', so attributing it to T. Doucette rather than another member is an inference from the OCR layout. The body text spells the Eagle Scout as 'Brendan' in one place and 'Brendon' elsewhere; both are recorded. The Zoom format is stated for the meeting, but no member's attendance mode is stated individually. Outcomes are given as the printed per-member tallies, since the minutes record no explicit result. The public comment section says 'None', so the public comment list is empty.",
+ "cost_usd": 0.021330170000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: m. wilson, m. larouche, a. burnap, r. bursch, t. doucette, c. st germain, j. pewtherer"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: m. wilson, m. larouche, a. burnap, r. bursch, t. doucette, c. st germain, j. pewtherer"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: m. wilson, m. larouche, a. burnap, r. bursch, t. doucette, c. st germain, j. pewtherer"
+  },
+  {
+   "name": "Chris St Germain",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: m. wilson, m. larouche, a. burnap, r. bursch, t. doucette, c. st germain, j. pewtherer"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: m. wilson, m. larouche, a. burnap, r. bursch, t. doucette, c. st germain, j. pewtherer"
+  },
+  {
+   "name": "Teddy Doucette",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: m. wilson, m. larouche, a. burnap, r. bursch, t. doucette, c. st germain, j. pewtherer"
+  },
+  {
+   "name": "Andrea Burnap",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: m. wilson, m. larouche, a. burnap, r. bursch, t. doucette, c. st germain, j. pewtherer"
+  },
+  {
+   "name": "Herlin Jaime",
+   "role": "Interim Consv. Admin",
+   "status": "present",
+   "quote": "herlin suggested sending certified notices for each violation demanding an update in 30 days or receiving a $300 violation fee."
+  },
+  {
+   "name": "Michael Gale",
+   "role": "Admin Asst. (recording the minutes)",
+   "status": "not stated",
+   "quote": "respectfully submitted, michael gale - admin asst."
+  },
+  {
+   "name": "Colby Golding",
+   "role": "Eagle Scout project presenter, Troop 1728",
+   "status": "present",
+   "quote": "colby golding and brendon stokes presented their separate eagle scout projects."
+  },
+  {
+   "name": "Brendon Stokes",
+   "role": "Eagle Scout project presenter, Troop 1728 (body text spells Brendan)",
+   "status": "present",
+   "quote": "colby golding and brendon stokes presented their separate eagle scout projects."
+  },
+  {
+   "name": "Susan Ropiak",
+   "role": "applicant, RDA for 833 Flat Hill Rd",
+   "status": "not stated",
+   "quote": "request for determination of applicability by susan ropiak for replacement of a rear deck"
+  },
+  {
+   "name": "Thomas Bertram",
+   "role": "applicant, Notice of Intent for 225 Island Road",
+   "status": "not stated",
+   "quote": "notice of intent by thomas bertram for the removal of two oak trees next to house"
+  },
+  {
+   "name": "Melissa Cannavino",
+   "role": "applicant, RDA for 67 Island Ra",
+   "status": "not stated",
+   "quote": "request for determination of applicability by melissa cannavino for the renovation of a patio"
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "representing the applicant, 67 Island Ra",
+   "status": "present",
+   "quote": "ryan proctor represented the applicant and provided a review of the project for the new"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "applicant, Notice of Intent for 1083 Northfield Rd",
+   "status": "not stated",
+   "quote": "notice of intent by tanner cole for construction of a common driveway"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant, 1083 Northfield Rd",
+   "status": "present",
+   "quote": "greg roy represented the applicant. greg explained that the original 4-lot driveway"
+  },
+  {
+   "name": "Kevin O'Brien",
+   "role": "applicant, Abbreviated Notice of Resource Area Delineation, 390 Howard St",
+   "status": "present",
+   "quote": "kevin o'brien commented that this has been going on for almost two years"
+  },
+  {
+   "name": "Charles Caron",
+   "role": "representing the applicant, 390 Howard St",
+   "status": "present",
+   "quote": "charles caron represented the applicant. a site visit was conducted last sunday."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No minutes were approved at this meeting. Minutes of 2025-01-22, 2025-05-21, 2025-06-04, 2025-06-18 and 2025-07-02 were listed; no motion to approve is recorded.",
+   "quote": "no minutes were approved."
+  },
+  {
+   "decision": "Salt and snow storage at 1083 Northfield Rd deferred to the next session.",
+   "quote": "salt and snow storage will be covered in the next session."
+  },
+  {
+   "decision": "Herlin Jaime to speak with the Town Manager about whether the Town will file the certificate of compliance for 40 Fire Rd 12 or obtain an execution plan.",
+   "quote": "herlin will speak with the town manager to see if she will file it or get an execution plan."
+  },
+  {
+   "decision": "167 Townsend Harbor Rd (CAD-25-10) held: the Commission awaits clarification on the number of trees before deciding whether to require an RDA.",
+   "quote": "awaiting clarification on how many trees will be removed before we decide if we want them to file an rda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle Scout project cost, Small Town Forest picnic area (Colby Golding)",
+   "what_was_recorded": "The estimated total cost of the gravel picnic area project was given as a range.",
+   "figures_as_printed": [
+    "$400-$500"
+   ],
+   "quote": "total cost is estimated to be between $400-$500."
+  },
+  {
+   "topic": "Eagle Scout kiosk cost, Rayno Conservation area (Brendon Stokes)",
+   "what_was_recorded": "The total cost of the kiosk was stated, based on Home Depot quotes.",
+   "figures_as_printed": [
+    "$321.31"
+   ],
+   "quote": "total cost is $321.31 (home depot quotes)."
+  },
+  {
+   "topic": "Enforcement violation fee",
+   "what_was_recorded": "Proposed enforcement approach: certified notices with a 30-day update demand or a violation fee.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "demanding an update in 30 days or receiving a $300 violation fee."
+  },
+  {
+   "topic": "Conservation budget restructuring",
+   "what_was_recorded": "The Conservation budget has changed to a single collapsed Land Use budget; the Commission is still clarifying what this means. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "budget has changed to a single collapsed land use budget."
+  },
+  {
+   "topic": "Peer review funding (1083 Northfield Rd)",
+   "what_was_recorded": "A Commissioner suggested starting a fund to pay for the peer review. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "r. bursch suggested we also get a peer review and start a fund for that process."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order at 7pm; roll taken, all seven members listed",
+   "quote": "call to order at 7pm by j. pewtherer",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Eagle Scout project presentations",
+   "resolution": "approved as proposed, 7-0",
+   "quote": "colby golding and brendon stokes presented their separate eagle scout projects.",
+   "tags": [
+    "eagle scout",
+    "small town forest",
+    "rayno conservation area",
+    "kiosk"
+   ]
+  },
+  {
+   "topic": "Announcements: commissioner comment",
+   "resolution": "no action; volunteer and rain barrel discussion",
+   "quote": "m. larouche discussed pollinator habitat and the need for volunteers.",
+   "tags": [
+    "pollinator habitat",
+    "volunteers",
+    "rain barrels"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "no minutes approved; most members had not reviewed them",
+   "quote": "no minutes were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New public hearing: 833 Flat Hill Rd (RDA-25-7, continued from 07-02)",
+   "resolution": "negative determination issued, 7-0",
+   "quote": "request for determination of applicability by susan ropiak for replacement of a rear deck",
+   "tags": [
+    "RDA",
+    "wetlands buffer",
+    "deck"
+   ]
+  },
+  {
+   "topic": "New public hearing: 225 Island Road (NOI-25-13)",
+   "resolution": "approved with silt fence condition if materials stored, 7-0",
+   "quote": "notice of intent by thomas bertram for the removal of two oak trees next to house",
+   "tags": [
+    "NOI",
+    "oak trees",
+    "silt fence"
+   ]
+  },
+  {
+   "topic": "Continued hearing: 67 Island Ra (RDA-24-9, continued from 07-02)",
+   "resolution": "continued to Aug 6, 6-0-1",
+   "quote": "request for determination of applicability by melissa cannavino for the renovation of a patio",
+   "tags": [
+    "RDA",
+    "hickory hills lake",
+    "impervious area"
+   ]
+  },
+  {
+   "topic": "Continued hearing: 1083 Northfield Rd (NOI-25-10, continued from 07-02)",
+   "resolution": "peer review approved, 5-0",
+   "quote": "notice of intent by tanner cole for construction of a common driveway",
+   "tags": [
+    "NOI",
+    "common driveway",
+    "wetlands fill",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "Continued hearing: 390 Howard St (DEP 208-1304, continued from 07-02)",
+   "resolution": "continued to Aug 6, 5-0-2",
+   "quote": "abbreviated notice of resource area delineation by kevin o'brien at 390 howard street",
+   "tags": [
+    "resource area delineation",
+    "intermittent stream"
+   ]
+  },
+  {
+   "topic": "Administrative determinations: 167 Townsend Harbor Rd (CAD-25-10)",
+   "resolution": "held pending clarification of tree count; no extension requests; COC for 40 Fire Rd 12 referred to Town Manager",
+   "quote": "167 townsend harbor rd - cad-25-10 (removal of 3 dead trees",
+   "tags": [
+    "CAD",
+    "tree removal",
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "Enforcement",
+   "resolution": "authorized certified notices with monthly updates and potential fees, 6-0-1",
+   "quote": "herlin suggested sending certified notices for each violation demanding an update in 30 days",
+   "tags": [
+    "enforcement",
+    "violations",
+    "fees"
+   ]
+  },
+  {
+   "topic": "New business: 2026 meeting dates",
+   "resolution": "2026 meeting schedule approved, 7-0",
+   "quote": "herlin has provided all 2026 meeting dates",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "New business: MACC fall conference",
+   "resolution": "informational; no action",
+   "quote": "october 25 at the conference center in devens.",
+   "tags": [
+    "MACC",
+    "training"
+   ]
+  },
+  {
+   "topic": "Old business: conservation budget and open space items",
+   "resolution": "no action; budget restructuring still being clarified; other items none",
+   "quote": "budget has changed to a single collapsed land use budget.",
+   "tags": [
+    "budget",
+    "land use",
+    "open space",
+    "encroachment",
+    "hollis rd"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no update; open space next meets in August",
+   "quote": "open space: none, next meeting is august.",
+   "tags": [
+    "open space",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "none",
+   "quote": "10. communications / public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "next meeting 08-06 by Zoom at 7PM",
+   "quote": "a. 08-06 by zoom at 7pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:01PM, 7-0",
+   "quote": "r. bursch, to adjourn at 10:01pm",
+   "tags": [
+    "adjourn"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands protection",
+  "notice of intent",
+  "request for determination",
+  "administrative determination",
+  "enforcement",
+  "eagle scout",
+  "meeting schedule",
+  "land use budget",
+  "zoom meeting",
+  "lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

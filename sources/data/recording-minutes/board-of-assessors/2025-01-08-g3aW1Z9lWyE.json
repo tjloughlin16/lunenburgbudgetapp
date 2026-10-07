@@ -254,5 +254,153 @@
    "at": "2026-10-06T18:19:11Z",
    "cost_usd": 0.211297
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082025-6949",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-01-08-minutes-6949.txt",
+   "path": "sources/meetings/board-of-assessors/2025-01-08-minutes-6949.pdf"
+  },
+  "official_sha256": "fbac5f25c4c7c80d17b4b88426847ca7ffef3088862f8b9e49907fb716a2b564",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Neither record has a vote, and both put the minutes review and a decision at the January 22 meeting; the attendee names differ only through caption misspellings. The one thing to check is item 8-of-58 versus the resident's written questions as the January 22 decision, and the figures and abatement session that appear only in ours.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote; the official minutes say the minutes approval was deferred and no vote was taken.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Minutes review deferred to January 22",
+    "ours": "Minutes will be reviewed at the start of the January 22 meeting",
+    "official": "the minutes will be reviewed at the meeting on january 22nd.",
+    "note": "Both put review of the minutes at the January 22 meeting.",
+    "t": 1141
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Executive session on abatements after minutes review",
+    "ours": "followed by an executive session on abatements. Applicants may attend for their own property only.",
+    "official": "",
+    "note": "The official minutes carry no mention of an abatement executive session or the applicant-attendance rule.",
+    "t": 1141
+   },
+   {
+    "kind": "discrepancy",
+    "about": "What the board will decide on January 22",
+    "ours": "The board plans to decide at its January 22 meeting whether to pursue 8-of-58 for either or both applicants.",
+    "official": "brian laffond states there is a plan to decide and hold a vote at the next meeting on january 22nd.",
+    "note": "Both say a decision is planned for January 22, but ours names 8-of-58 for applicants and the official names the resident's written questions; check the recording near this point to see whether it is one item or two.",
+    "t": 531
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Executive session possibly held earlier",
+    "ours": "The January 22 executive session may be held earlier at the assessors' office. Staff will check with the applicants and schedule it.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 4627
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Confirmation of receipt to applicant",
+    "ours": "Staff will send the applicant a note officially confirming receipt of the request.",
+    "official": "",
+    "note": "The official minutes record only that the resident asked how long an answer would take.",
+    "t": 764
+   },
+   {
+    "kind": "agree",
+    "about": "Presentation copy to board before January 22",
+    "ours": "A copy is to reach the board a few days before January 22.",
+    "official": "please remove all pictures.",
+    "note": "Both record a copy of the presentation going to the board before January 22; the official minutes summarize this as a copy requested before the meeting.",
+    "t": 3149
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Instruction to remove all pictures from presentation",
+    "ours": "",
+    "official": "please remove all pictures.",
+    "note": "Chair's edit directive appears only in the official minutes; ours says only that the draft goes to other presenters for revision.",
+    "t": 3149
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior tax deferral savings figure",
+    "ours": "Senior tax deferral savings: 165,000, $5,000 times 20",
+    "official": "",
+    "note": "The official minutes print no budget figures; the amount may be conference-presentation content, so check the recording.",
+    "t": 2825
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Closed permits review figure",
+    "ours": "Closed permits review: half a million bucks",
+    "official": "",
+    "note": "Not in the official minutes; it was spoken loosely and cannot be confirmed from the official text.",
+    "t": 2105
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Clerk",
+    "ours": "John rabbit (member)",
+    "official": "present members: chair brian laffond, clerk john rabbitt, assessing consultant rena swezey",
+    "note": "Same person with the name misspelled in the captions.",
+    "official_reading": "John Rabbitt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Chair",
+    "ours": "Brian leond (member)",
+    "official": "present members: chair brian laffond, clerk john rabbitt, assessing consultant rena swezey",
+    "note": "Misheard surname for the Chair.",
+    "official_reading": "Brian Laffond"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: assessing consultant",
+    "ours": "Reena (office staff, giving the status report in place of the principal assessor)",
+    "official": "present members: chair brian laffond, clerk john rabbitt, assessing consultant rena swezey",
+    "note": "Same person, first name misheard and surname missing; the official minutes also print the surname as Sweezey.",
+    "official_reading": "Rena Swezey"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "absent members: vice chair sarah cammer, principal assessor lynda mcquade",
+    "note": "Ours lists no absences, though it implies the principal assessor was out.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Senior Housing presenter",
+    "ours": "",
+    "official": "there will be a presentation from michael-ray jeffreys regarding the senior",
+    "note": "A future presentation by Michael-Ray Jeffreys appears only in the official minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:38:44Z",
+   "cost_usd": 0.236895
+  }
  }
 }

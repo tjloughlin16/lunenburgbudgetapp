@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2025-04-07",
  "docid": "7152",
@@ -12,15 +12,144 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting",
    "moved_by": "Michael-Ray Jeffreys",
    "seconded_by": "Matthew Allison",
-   "outcome": "unanimously passed",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by michael-ray jeffreys, seconded by matthew allison at 6:58pm, unanimously passed."
   }
  ],
- "dropped_unquoted": 0,
- "note": "One procedural vote recorded. Discussions of the Brooks House and other matters are described but no formal motions on those topics were voted on.",
- "cost_usd": 0.05819440000000001
+ "dropped_unquoted": 1,
+ "note": "Text is a two-page extraction with line breaks collapsed in quotes. No dollar figures are printed anywhere in the minutes. The only recorded motion is the adjournment; the four decisions are directions and agreements without a vote. The minutes refer to a prior town vote to keep the Brooks House on-site, but that vote is not recorded in this meeting and is not captured as one here. The 'APDC representative' is mentioned but not named, and no such person is listed as attending. The 'consensus' and 'agreed' items are recorded without a vote count.",
+ "cost_usd": 0.01273577,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, tom gray, david blatt, kristina masaitis, matthew allison, greg roy"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, tom gray, david blatt, kristina masaitis, matthew allison, greg roy"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, tom gray, david blatt, kristina masaitis, matthew allison, greg roy"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, tom gray, david blatt, kristina masaitis, matthew allison, greg roy"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, tom gray, david blatt, kristina masaitis, matthew allison, greg roy"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, tom gray, david blatt, kristina masaitis, matthew allison, greg roy"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: brian lehtinen"
+  },
+  {
+   "name": "Anthony Sculumbrine",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: anthony sculumbrine"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee will draft a proposal outlining options for the Brooks House, including potential subdivision of the property.",
+   "quote": "the committee will draft a proposal outlining options for the brooks house, including potential subdivision of the property."
+  },
+  {
+   "decision": "Members agreed to seek additional input from land use professionals to explore feasible options for the Brooks House.",
+   "quote": "members agreed to seek additional input from land use professionals to explore feasible options moving forward."
+  },
+  {
+   "decision": "There was a consensus that any plan for the Brooks House should prioritize protecting the town's interests.",
+   "quote": "there was a consensus that any plan should prioritize protecting the town's interests."
+  },
+  {
+   "decision": "The committee will meet again on the 21st and the 29th at 5:30 PM to further discuss the Brooks House and other related topics.",
+   "quote": "the committee will meet again on the 21st and the 29th at 5:30 pm to further discuss the brooks house and other related topics."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Brooks House repair and demolition cost",
+   "what_was_recorded": "Members discussed the financial burden of repairs to the Brooks House, and some argued for demolition on that basis; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "some members argued for demolition, citing the financial burden and the challenges of leasing or selling an old building needing extensive repairs."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Opening public comment period",
+   "quote": "no comments were received from the board, apdc representative, or the public."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Brooks House disposition for lease or sale",
+   "resolution": "Directed staff-level next steps: draft options proposal, seek land use professional input, meet again on the 21st and 29th; no vote recorded",
+   "quote": "the committee was tasked by the select board to prepare documentation for the disposition of the brooks house for lease or sale.",
+   "tags": [
+    "Brooks House",
+    "lease or sale",
+    "demolition",
+    "parking",
+    "library"
+   ]
+  },
+  {
+   "topic": "TC Passios building",
+   "resolution": "briefly discussed; no action",
+   "quote": "the committee briefly discussed the ongoing issues with the tc passios building, including environmental concerns and plans for mothballing parts of it.",
+   "tags": [
+    "TC Passios building",
+    "environmental",
+    "mothballing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:58pm, unanimously passed",
+   "quote": "motion to adjourn by michael-ray jeffreys, seconded by matthew allison at 6:58pm, unanimously passed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "Brooks House",
+  "lease or sale",
+  "demolition",
+  "library parking",
+  "TC Passios building",
+  "environmental concerns",
+  "building design committee"
+ ],
+ "dropped_unquoted_by_field": {
+  "public_comment": 1
+ }
 }

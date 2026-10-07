@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-08-05",
  "docid": "7332",
@@ -12,40 +12,126 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing",
+   "motion": "Close the public hearing on the Shrieks and Krieks Haunted House and Hayride Fall Festival application.",
    "moved_by": "Member Glenn McLeod",
    "seconded_by": "Vice-Chair Amanda Moore",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3-0-0",
    "procedural": true,
-   "quote": "motion by member glenn mcleod to close the public hearing. seconded by vice-chair amanda moore. vice-chair moore-aye, member mcleod-aye, clerk emkey-aye. the motion passed unanimously (3-0-0)."
+   "quote": "motion by member glenn mcleod to close the public hearing. seconded by vice-chair amanda moore."
   },
   {
-   "motion": "Approve the special event license for the Shrieks and Krieks Haunted House and Hayride Fall Festival on Saturday, October 18, 2025 from 4:30 PM to 9:30 PM with a rain date of October 25, 2025",
+   "motion": "Approve the special event license for the Shrieks and Krieks Haunted House and Hayride Fall Festival on Saturday, October 18, 2025, 4:30 PM to 9:30 PM, with a rain date of October 25, 2025.",
    "moved_by": "Clerk Emkey",
    "seconded_by": "Vice-Chair Moore",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3-0-0",
    "procedural": false,
-   "quote": "motion by clerk emkey to approve the special event license for the \"shrieks and krieks haunted house and hayride fall festival\" on saturday, october 18, 2025 from 4:30 pm to 9:30 pm with a rain date of october 25, 2025. seconded by vice-chair moore. roll call vote: vice-chair moore-aye, member mcleod-aye, clerk emkey-aye. the motion passed unanimously (3-0-0)."
+   "quote": "motion by clerk emkey to approve the special event license for the"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Member McLeod",
    "seconded_by": "Vice-Chair Moore",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3-0-0",
    "procedural": true,
-   "quote": "member mcleod moved to adjourn. seconded by vice-chair moore. roll call vote: vice- chair moore-aye, member mcleod-aye, clerk emkey-aye. the motion passed unanimously (3-0-0)",
-   "quote_taken_from_text": true
+   "quote": "member mcleod moved to adjourn. seconded by vice-chair moore."
   },
   {
-   "motion": "Approve the minutes of August 5, 2025",
+   "motion": "Approve the minutes of August 5, 2025.",
    "moved_by": "Chair Caesar Nuzzolo",
    "seconded_by": "Clerk Renee Emkey",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "chair caesar nuzzolo made the motion to approve the minutes of august 5, 2025. seconded by clerk renee emkey. call for the vote: four-aye. one abstention (member mcleod). motion passed (4-0-1)."
+   "quote": "chair caesar nuzzolo made the motion to approve the minutes of august 5, 2025."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes clearly printed and readable. The fourth vote appears in the approval section at the end, recorded from a meeting on January 6, 2026 that approved these August 5, 2025 minutes.",
- "cost_usd": 0.06747840000000001
+ "note": "Text is a readable extract with no scan problems. No dollar figures appear in the minutes. No public comment period is recorded; Michelle Belleza presented as the applicant during the hearing. The minutes-approval vote (4-0-1) is printed in these minutes but records no meeting where it was taken; it is dated only by the approval date of January 6, 2026. Chair Nuzzolo, shown as absent from this meeting, is recorded as making that motion, so the meeting at which it was taken is not established by the text.",
+ "cost_usd": 0.013587070000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "members present: vice-chair amanda moore (via zoom), clerk renee emkey, and member"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: vice-chair amanda moore (via zoom), clerk renee emkey, and member"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: vice-chair amanda moore (via zoom), clerk renee emkey, and member"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "members absent: chair caesar nuzzolo and member brian lehtinen"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: chair caesar nuzzolo and member brian lehtinen"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Director of the Club (applicant presenter)",
+   "status": "present",
+   "quote": "michelle belleza, director of the club, presented the request for the"
+  },
+  {
+   "name": "Lauren Menard",
+   "role": "Minute Clerk",
+   "status": "not stated",
+   "quote": "lauren menard minute clerk"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: Shrieks and Krieks Haunted House and Hayride Fall Festival (The Club: Lunenburg Teen Center)",
+   "resolution": "special event license approved 3-0-0",
+   "quote": "clerk emkey read the public hearing notice and opened the public hearing.",
+   "tags": [
+    "special event license",
+    "public hearing",
+    "fundraiser",
+    "Teen Center"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events schedule",
+   "resolution": "no action",
+   "quote": "tri-board meeting august 26",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "special event license",
+  "public hearing",
+  "Teen Center fundraiser",
+  "haunted house",
+  "minutes approval",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

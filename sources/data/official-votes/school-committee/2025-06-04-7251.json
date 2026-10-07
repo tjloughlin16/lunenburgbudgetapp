@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-06-04",
  "docid": "7251",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from meetings on 3/19, 4/7, 4/16, 4/30, 5/1, 5/5, 5/6, 6/7, 5/15, and 5/20, allowing new members to abstain from those they did not attend",
+   "motion": "Approve the regular session minutes (3/19 through 5/20), with new members abstaining on meetings they did not attend.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Mr. Yapp",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr, sculimbrene makes a motion to approve all the minutes, allowing the new members to abstain to the ones they were not part of, mr. yapp seconds the vote, all approve via roll call vote"
+   "quote": "mr, sculimbrene makes a motion to approve all the minutes, allowing the new members to abstain to the ones they were not part of"
   },
   {
-   "motion": "Approve donations: $800 from Lauren Perilla for STEM supplies, $31.70 from Box Tops, and $2,381.08 from Scholastic Book Fair",
+   "motion": "Approve all donations with gratitude.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Mr. Yapp",
    "outcome": "passed",
@@ -28,15 +28,15 @@
    "quote": "mr. sculimbrene makes a motion to approve all donations with gratitude, mr. yapp seconds the motion, all approve via roll call vote"
   },
   {
-   "motion": "Approve line item transfer of $231,912.49",
+   "motion": "Approve line item transfers.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. sculimbrene makes a motion to approve line item transfers, ms. gilman seconds the motion all approve via roll call"
+   "quote": "mr. sculimbrene makes a motion to approve line item transfers, ms. gilman seconds the motion all approve via roll call."
   },
   {
-   "motion": "Accept FY26 School Handbook as proposed",
+   "motion": "Accept the FY26 School Handbook as proposed.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Gilman",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "mr. sculimbrene makes a motion to accept the handbook as proposed, ms. gilman seconds the motion, all approve via roll call vote"
   },
   {
-   "motion": "Approve 2024-2025 School Improvement Plans as included in the folder",
+   "motion": "Approve the 2024-2025 SIP plans as included in the folder.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Young",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "mr. sculimbrene makes a motion to approve sip plans as included in the folder. ms. young seconds the motion all approve via roll call vote"
   },
   {
-   "motion": "Accept Facilities and Grounds Report",
+   "motion": "Accept the Facilities and Grounds Report.",
    "moved_by": "Ms. Gilman",
    "seconded_by": "Ms. Young",
    "outcome": "passed",
@@ -60,23 +60,359 @@
    "quote": "ms. gilman makes a motion to accept the report, ms. young seconds the motion, all approve via roll call vote"
   },
   {
-   "motion": "Accept proposed operating protocols with amendments removing meetings location restrictions and PowerPoint ban, establishing these as rules rather than guidelines",
+   "motion": "Accept the proposed operating protocols with meetings not held at one location, a ban on PowerPoint, and the protocols treated as rules rather than guidelines, as an amendment to the current protocols.",
    "moved_by": "Ms. Gilman",
    "seconded_by": "Mr. Yapp",
-   "outcome": "passed 4-1",
+   "outcome": "passed, 4 approvals and 1 no",
    "procedural": false,
-   "quote": "ms. gilman makes a motion to accept the proposals with the removal of meetings being at one location and ban on powerpoint and that these are rules and not guidelines as an amendment to the current protocols. mr. yapp seconds the motion, motion passes with 4 approvals and 1 no."
+   "quote": "ms. gilman makes a motion to accept the proposals with the removal of meetings being at one location and ban on powerpoint and that these are rules and not guidelines"
   },
   {
-   "motion": "Enter executive session and adjourn immediately after",
+   "motion": "Enter executive session and adjourn immediately after, at 7:53.",
    "moved_by": "Ms. Gilman",
    "seconded_by": "Mr. Yapp",
-   "outcome": "passed",
+   "outcome": "passed, all approve",
    "procedural": true,
    "quote": "ms. gilman makes a motion to enter executive session and adjourn immediately after at 7:53, mr. yapp seconds the motion, all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1100294
+ "note": "Text is clean extracted minutes; no scan. Eight motions have recorded results; the warrants heading (item 8a) shows a total but no motion is recorded, so no warrant vote is listed. Several roll-call approvals say \"all approve\" with no tally, so outcomes are recorded as passed without a count. The operating protocols vote is the only one with a printed count (4 approvals, 1 no) and names no movers beyond Ms. Gilman and Mr. Yapp. Guests are listed without a stated presence. No decisions without a vote were recorded; the tri-board meeting plan was reported by the Superintendent, not decided by the board. Dollar figures are printed as in the minutes, including $598,262.6 with one decimal.",
+ "cost_usd": 0.019586569999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski, vice chair - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "emily young secretary - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Member",
+   "status": "present",
+   "quote": "mandy gilman, member - present"
+  },
+  {
+   "name": "George Yapp",
+   "role": "Member",
+   "status": "present",
+   "quote": "george yapp, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "dr. burnham reports ms. karyn giuliani is retiring from the high school"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Dr. Susan Gilson",
+   "role": "Director of Administration and Finance",
+   "status": "not stated",
+   "quote": "guests: dr. susan gilson - director of administration and finance"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMHS Principal",
+   "status": "not stated",
+   "quote": "tim santry - lmhs principal"
+  },
+  {
+   "name": "Norm Yvon",
+   "role": "THES Principal",
+   "status": "not stated",
+   "quote": "norm yvon -thes principal"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Primary School Principal",
+   "status": "not stated",
+   "quote": "carla squier - primary school principal"
+  },
+  {
+   "name": "Liz Peterson",
+   "role": "not printed",
+   "status": "present",
+   "quote": "liz peterson - reads a letter in honor of dr. burnham retirement."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "not printed",
+   "status": "present",
+   "quote": "carol archambault - thanks three retirees for all of their service."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "A warrant total for 5/19/25 to 5/29/25 was listed; no motion on the warrants is recorded.",
+   "figures_as_printed": [
+    "$598,262.6"
+   ],
+   "quote": "a. warrants 5/19/25-5/29/25 $598,262.6"
+  },
+  {
+   "topic": "Donations",
+   "what_was_recorded": "Three donations were reported: $800 from Lauren Perilla for STEM supplies, a $31.70 box top donation, and $2381.08 from the Scholastic Book fair, all to gift accounts.",
+   "figures_as_printed": [
+    "$800",
+    "$31.70",
+    "$2381.08"
+   ],
+   "quote": "lauren perilla donated $800 to the primary school for the purchase of stem"
+  },
+  {
+   "topic": "Line item transfer",
+   "what_was_recorded": "A line item transfer moved funds from multiple lines to cover expenses, unemployment, student activities and spring athletics.",
+   "figures_as_printed": [
+    "$231,912.49"
+   ],
+   "quote": "line item transfer $231,912.49 transferred from multiple lines to cover expenses"
+  },
+  {
+   "topic": "Bus fees",
+   "what_was_recorded": "Bus requests with the fee unpaid; names will not be sent to the bus company until the fee is paid. No dollar amount for the fee is printed.",
+   "figures_as_printed": [],
+   "quote": "we have received 1,074 bus requests, and have 494 unpaid at this time."
+  },
+  {
+   "topic": "Finance Director salary",
+   "what_was_recorded": "Two finalists for the Finance Director position both declined due to the salary. No salary figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there have been two finalists for the finance director position, however, both declined due to the salary."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfer from multiple lines to cover expenses, unemployment, student activities and spring athletics",
+   "amount_as_printed": "$231,912.49",
+   "outcome": "approved by roll call vote (motion by Mr. Sculimbrene, seconded by Ms. Gilman)",
+   "quote": "line item transfer $231,912.49 transferred from multiple lines to cover expenses"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ms. Gilman",
+   "stated_role": "not printed in public comment (listed as Member in attendance)",
+   "topic": "Mr. Hill's retirement and memories",
+   "quote": "ms. gilman - i am sorry mr. hill isn't here, he was my geology teacher when i was a freshmen in high school."
+  },
+  {
+   "speaker": "Liz Peterson",
+   "stated_role": "not printed",
+   "topic": "letter and plaque honoring Dr. Burnham's retirement",
+   "quote": "liz peterson - reads a letter in honor of dr. burnham retirement."
+  },
+  {
+   "speaker": "Carol Archambault",
+   "stated_role": "not printed",
+   "topic": "thanks to three retirees; letter honoring Dr. Burnham",
+   "quote": "carol archambault - thanks three retirees for all of their service."
+  },
+  {
+   "speaker": "Ms. Brzozoski",
+   "stated_role": "not printed in public comment (listed as Vice Chair in attendance)",
+   "topic": "honoring retirees and graduating seniors",
+   "quote": "ms. brzozoski - i would like to honor our retirees and the length of time they have been part of our community"
+  },
+  {
+   "speaker": "Ms. Gilman",
+   "stated_role": "not printed in public comment (listed as Member in attendance)",
+   "topic": "request to put budget task force on next agenda",
+   "quote": "ms., gilman on our agenda for next meeting can we put some discussion on the budget task force."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "1. call to order by ms. brzozoski at 6:30",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Retiree recognition",
+   "resolution": "no action; retirees recognized",
+   "quote": "3. retiree recognition dr. burnham reports ms. karyn giuliani is retiring from the high school",
+   "tags": [
+    "retirements",
+    "staff"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard",
+   "quote": "liz peterson - reads a letter in honor of dr. burnham retirement.",
+   "tags": [
+    "public comment",
+    "retirements"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action",
+   "quote": "5. chair's report isaac had mr. hill this year and he was one of the most engaging educators",
+   "tags": [
+    "retirements"
+   ]
+  },
+  {
+   "topic": "Student representative report",
+   "resolution": "none",
+   "quote": "6. student representative report none",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved",
+   "quote": "review & approve minutes a. regular session 3/19, 4/7, 4/16, 4/30",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Warrants, line item transfers and donations",
+   "resolution": "donations and line item transfer approved; no warrant motion recorded",
+   "quote": "8. review & approve warrants, line item transfers & donations",
+   "tags": [
+    "warrants",
+    "donations",
+    "line item transfers",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "no action",
+   "quote": "9. superintendents report we have received 1,074 bus requests",
+   "tags": [
+    "bus fees",
+    "staff",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "New business: FY26 School Handbook",
+   "resolution": "accepted as proposed",
+   "quote": "a. fy26 school handbook the committee has been supplied with the handbook in their folder",
+   "tags": [
+    "handbook",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Old business: 2024-2025 SIP progress reports",
+   "resolution": "approved",
+   "quote": "a. 2024-2025 sip progress reports committee has been provided a school improvement plan",
+   "tags": [
+    "SIP",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Facilities and grounds report",
+   "resolution": "accepted",
+   "quote": "b. facilities and grounds report a comprehensive summary of all projects that have gone on",
+   "tags": [
+    "facilities",
+    "capital projects"
+   ]
+  },
+  {
+   "topic": "Review of operating protocols",
+   "resolution": "passed as amended: rules, not guidelines; one location and PowerPoint ban removed/adopted as stated",
+   "quote": "c. review of operating protocols ms. brzozoski provided a version of the proposed operating protocols.",
+   "tags": [
+    "operating protocols",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Reports",
+   "resolution": "no action",
+   "quote": "12. reports mr. sculimbrene i was unable to make the pto meeting.",
+   "tags": [
+    "PTO",
+    "policy subcommittee"
+   ]
+  },
+  {
+   "topic": "Public comment (budget task force agenda request)",
+   "resolution": "agenda request made",
+   "quote": "ms., gilman on our agenda for next meeting can we put some discussion on the budget task force.",
+   "tags": [
+    "budget task force",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed for future meetings",
+   "quote": "14. topics for future discussion a statement from the committee to guide our discussions going forward",
+   "tags": [
+    "tri-board meetings",
+    "budget",
+    "superintendent evaluation"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered at 7:53 per adjournment motion",
+   "quote": "15. executive session ( to conduct strategy sessions in preparation for negotiations with nonunion",
+   "tags": [
+    "executive session",
+    "negotiations"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:53",
+   "quote": "16. adjournment ms. gilman makes a motion to enter executive session and adjourn immediately after at 7:53",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "budget",
+  "tri-board meetings",
+  "retirements",
+  "donations",
+  "line item transfers",
+  "warrants",
+  "operating protocols",
+  "FY26 handbook",
+  "SIP",
+  "facilities",
+  "bus fees",
+  "finance director hiring",
+  "public comment",
+  "executive session"
+ ],
+ "dropped_unquoted_by_field": {}
 }

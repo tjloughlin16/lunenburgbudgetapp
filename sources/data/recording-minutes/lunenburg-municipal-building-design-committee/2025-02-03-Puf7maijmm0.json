@@ -444,5 +444,213 @@
    "at": "2026-10-06T18:11:08Z",
    "cost_usd": 0.213949
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02032025-7000",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2025-02-03-minutes-7000.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2025-02-03-minutes-7000.pdf"
+  },
+  "official_sha256": "c94830242b5e4b3354c2abad7472fd9af3f416de41ede2819e8a9f18d9eabcbe",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "Both records show no non-procedural votes and no transfers, and the headline cost figures ($2.6M, $2M, ~$7M, $21-22M) agree. The official minutes are a thin summary: they omit the schedule decisions, the generator, the grant research, the alternates and the detailed pricing that ours record, and they name a different set of attendees.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 4,
+   "discrepancy": 5,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Total project cost estimate",
+    "ours": "Total project cost: 20% or 25%, 21 to 22 million",
+    "official": "the total projected cost for the entire project was estimated to be around $21-22 million.",
+    "note": "Both give $21-22 million.",
+    "t": 2145
+   },
+   {
+    "kind": "agree",
+    "about": "Trade costs: Meeting House $2.6M, Ritter $2M, new Town Hall ~$7M",
+    "ours": "Trade costs by building: 2.6 million, 2 million, about 7 million, 17, 13.3",
+    "official": "renovations to the meeting house at $2.6 million.",
+    "note": "The $2.6M, $2M and ~$7M figures match. The official minutes tie them to the Meeting House, Ritter Memorial and new Town Hall, and ours does not label them.",
+    "t": 2063
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Site improvements figure",
+    "ours": "EV charger rough-in in site work: $6.9 million, 1. 657",
+    "official": "site improvements estimated at $1.7 million.",
+    "note": "The official minutes give $1.7M for site improvements. Our captions have $6.9M with EV rough-in, and a separate $1.7M that we tie to the solar canopy alternate. Check the recording at ~t=5120 and ~t=5501 and the estimate document to see which item the $1.7M belongs to and what the $6.9M is.",
+    "t": 5501
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Select Board presentation timing",
+    "ours": "Presentation to the Select Board set for the next evening at Town Hall, appointment at 7:15 in a 45-minute slot, roughly a 20-25 minute presentation.",
+    "official": "a follow-up presentation to the select board was scheduled for the next evening,",
+    "note": "Both say the next evening. The official minutes call it a 'follow-up' presentation, while ours describes a first presentation with 7:15 timing. Check the recording to see whether it was a follow-up.",
+    "t": 6020
+   },
+   {
+    "kind": "agree",
+    "about": "Warrant article wording to be finalized",
+    "ours": "The March 17 meeting will be used to confirm the wording of the borrowing warrant article, with the committee to come prepared on which price option to pursue.",
+    "official": "the need to finalize the wording for the warrant article for the upcoming town meeting was emphasized.",
+    "note": "Both record that the warrant article wording must be finalized. Ours adds the March 17 date and the price options.",
+    "t": 8154
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meeting rescheduling (Feb 17 to Feb 19)",
+    "ours": "The February 17 meeting, falling on Presidents Day, is to be moved to February 19, pending confirmation with absent members.",
+    "official": "",
+    "note": "The official minutes do not mention the reschedule.",
+    "t": 8132
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Outreach and grant research assignments",
+    "ours": "Chair will present to the Finance Committee and Council on Aging (on the 11th) and follow up with the Historical Commission and Planning Board; Mr Blat asked to research available grant opportunities.",
+    "official": "",
+    "note": "The official minutes record none of these assignments.",
+    "t": 8236
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Generator alternate price",
+    "ours": "Architect team to quickly get a price for a generator as a possible alternate, after discussion that none is code-required.",
+    "official": "",
+    "note": "A follow-up action given to the architects. The official minutes do not mention it.",
+    "t": 3701
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Architect to send latest drawings",
+    "ours": "Architect to send the latest design drawings; the cost estimate had already been distributed.",
+    "official": "",
+    "note": "The official minutes do not record this action item.",
+    "t": 8362
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Alternates and add figures (PV canopy, slab, EV chargers, PAC add, contingency)",
+    "ours": "Alternates: PV canopy, basement slab, EV chargers: $1.8 million, $100,000, 21 EV charges, $280,000; Overall project price and PAC add: $22 million, $2 million",
+    "official": "",
+    "note": "The official minutes carry none of the alternates or the PAC add. Warrant price options of $17M, $19M, $21M and $22M (t=8174) are also absent from them. Whether to treat $22M as the headline price is worth a check, since the official minutes give $21-22M.",
+    "t": 2166
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on parking and town-school integration",
+    "ours": "",
+    "official": "community members expressed worries about whether the proposed 80 parking spaces would be sufficient for the expected increase in traffic and usage.",
+    "note": "Our minutes record no public comment on parking, and the 80-space figure appears only in the official minutes. Check the recording for this discussion.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Committee agreed to consider community concerns",
+    "ours": "",
+    "official": "the committee recognized that these concerns were valid and agreed to take them into consideration moving forward.",
+    "note": "Not among our decisions. It is a general statement of intent, not a formal vote.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair Michael-Ray Jeffreys",
+    "ours": "Michael Ray Jeff (chair)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, kristina masaitis, tom gray, david blatt",
+    "note": "Same person; the captions truncated the surname.",
+    "official_reading": "Michael-Ray Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brian Lehtinen",
+    "ours": "Mr L / Mr Leon (member)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, kristina masaitis, tom gray, david blatt",
+    "note": "The 'Mr L / Mr Leon' entry is most likely a mishearing of Lehtinen, but the identification is an inference.",
+    "official_reading": "Brian Lehtinen",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Kristina Masaitis",
+    "ours": "Miss midus (member)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, kristina masaitis, tom gray, david blatt",
+    "note": "'Miss midus' is most likely a mishearing of Masaitis.",
+    "official_reading": "Kristina Masaitis",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: David Blatt",
+    "ours": "Mr blat (Dave) (member, Green Committee chair)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, kristina masaitis, tom gray, david blatt",
+    "note": "Same person, with the surname misspelled by the captions.",
+    "official_reading": "David Blatt",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Roy and Gray present",
+    "ours": "Mr Roy (member); Mr Gray (member)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, kristina masaitis, tom gray, david blatt",
+    "note": "Both name Greg Roy and Tom Gray as present.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Matthew Allison: present or absent",
+    "ours": "Mr Allison (member)",
+    "official": "members absent: matthew allison",
+    "note": "Our minutes list Mr Allison as a member among the attendees. The official minutes list him absent. Our own decision note on the Feb 17 reschedule mentions 'absent members', so check the recording to see whether he attended.",
+    "t": 8132
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Mrs scullen brini / Tony Sculumbrine",
+    "ours": "Mrs scullen brini (member, APDC representative)",
+    "official": "community guests: tony sculumbrine, steve walker pacc, laura brzozski, rhonda lisio,",
+    "note": "The names are probably the same person misheard, but ours calls her a female committee member (Mrs) and the official minutes call 'Tony Sculumbrine' a community guest. Check the committee roster for the person's role and name.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Laura: school official vs community guest",
+    "ours": "Laura (school official, joined online)",
+    "official": "community guests: tony sculumbrine, steve walker pacc, laura brzozski, rhonda lisio,",
+    "note": "The first name matches Laura Brzozski, but the roles differ (school official joining online vs community guest). Check the recording and roster.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Presenters and consultants",
+    "ours": "Robert Taylor, Stephen Lauder, Marley Lynch (architects); Bill scandin (BLW Engineers MEP); Paul Rosen Str and Dominic Kelly (SGH structural engineers)",
+    "official": "updates were given from taylor and burns on the building design.",
+    "note": "The official minutes name only the firm, Taylor and Burns, and none of the individual presenters or the engineering consultants.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Community guests and public speakers",
+    "ours": "",
+    "official": "community guests: tony sculumbrine, steve walker pacc, laura brzozski, rhonda lisio, ana lockwood, dave rodgers",
+    "note": "Steve Walker, Rhonda Lisio, Ana Lockwood and Dave Rodgers appear only in the official minutes. The quote is assembled from two lines of the official text.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:34:57Z",
+   "cost_usd": 0.25482499999999997
+  }
  }
 }

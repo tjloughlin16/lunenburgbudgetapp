@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2025-06-26",
  "docid": "7285",
@@ -12,23 +12,227 @@
  },
  "votes": [
   {
-   "motion": "to approve the CIMS invoice for $2620.00",
-   "moved_by": "David Dorren",
-   "seconded_by": "Donna Landry",
+   "motion": "Approve the CIMS invoice for $2620.00.",
+   "moved_by": "Chair David Dorren",
    "outcome": "passed",
    "procedural": false,
-   "quote": "chair david dorren motioned we approve the cims invoice for $2620.00, clerk donna landry seconded, aif"
+   "quote": "chair david dorren motioned we approve the cims invoice for $2620.00, clerk donna landry seconded, aif",
+   "seconded_by": "Clerk Donna Landry"
   },
   {
-   "motion": "to adjourn",
-   "moved_by": "Mike Clark",
-   "seconded_by": "Donna Landry",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "chair mike clark requested a motion to adjourn, clerk donna landry seconded, aif"
+   "quote": "chair mike clark requested a motion to adjourn, clerk donna landry seconded, aif",
+   "seconded_by": "Clerk Donna Landry"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. \"AIF\" (All In Favor) indicates unanimous passage.",
- "cost_usd": 0.0778134
+ "note": "Text extraction, not a scan; all content read. Two votes recorded, both as \"AIF\" (all in favor) with no vote count printed; outcome recorded as \"passed\" on that basis. The adjournment motion does not name who moved it. The minutes print the Chair as \"Chair David Dorren\" in the CIMS motion, but the Chair is named as Mike Clark elsewhere and Dave Dorren is the Vice-Chair; names are kept as printed. The minutes say the meeting was \"held remote by Zoom\" but do not say whether each member attended remotely, so attendance status is \"not stated\". Bill Bernard (DPW Superintendent) and Nancy Foss Yasko (previous chair) are mentioned but are not described as taking part, so they are not listed as attendees. Public comment: \"No Public comments.\" so no speakers. The Town Manager is referenced without a name.",
+ "cost_usd": 0.015090270000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Clark",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "chair, chair mike clark"
+  },
+  {
+   "name": "Dave Dorren",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "vice-chair, dave dorren"
+  },
+  {
+   "name": "Donna Landry",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "clerk, clerk donna landry"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Vice Chair David Dorren to call DPW Superintendent Bill Bernard about the survey, the trees and the start of the Backlot project.",
+   "quote": "vice chair david dorren will call dpw superintendent bill bernard regarding the survey and the trees"
+  },
+  {
+   "decision": "Chair Mike Clark to investigate sourcing local stone masons to perform stone wall repairs and quote, determining scope the commission can support.",
+   "quote": "chair mike clark will investigate sourcing a couple of local stone masons who could perform the repairs and quote"
+  },
+  {
+   "decision": "Clerk Donna Landry and Vice Chair David Dorren to review the South Cemetery backlot.",
+   "quote": "clerk donna landry and vice chair david dorren will review the south cemetery backlot."
+  },
+  {
+   "decision": "Vice Chair David Dorren to contact the Town Manager about who is the point of contact for day-to-day cemetery issues.",
+   "quote": "who is the point of contact for day-to-day cemetery issues, vice chair david dorren will contact the town manager to discuss."
+  },
+  {
+   "decision": "Chair Mike Clark to reach out to state representatives on establishing the process for earmark requests.",
+   "quote": "chair mike clark will reach out to them on establishing the process for requests"
+  },
+  {
+   "decision": "Chair Mike Clark to check with town IT about the Zoom timeout issues.",
+   "quote": "9.) issues were experienced with the zoom timeout, chair mike clark to check with town it on zoom."
+  },
+  {
+   "decision": "Keep the agenda the same and note items as they are accomplished.",
+   "quote": "7.) keep the agenda the same and note as items are accomplished."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CIMS invoice",
+   "what_was_recorded": "The commission moved to approve a CIMS invoice, which passed.",
+   "figures_as_printed": [
+    "$2620.00"
+   ],
+   "quote": "chair david dorren motioned we approve the cims invoice for $2620.00, clerk donna landry seconded, aif"
+  },
+  {
+   "topic": "Hedges and stone wall replacement",
+   "what_was_recorded": "A stone wall option for replacing the hedges was tried and described as very expensive; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "tried the stone wall option but it was very expensive"
+  },
+  {
+   "topic": "Cemetery funds and balances",
+   "what_was_recorded": "Currently available balances, lot sale revenue and perpetual care funds were reviewed at length, and the commission will map revenue and determine a yearly spend; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "funds, currently available balances were reviewed and discussed at length, sale of lots, perpetual interest (perpetual care), etc."
+  },
+  {
+   "topic": "Grant writing",
+   "what_was_recorded": "Grant writing was discussed and a list of grants from the previous chair is to be reviewed; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "grant writing was discussed, vice chair david dorren has a point of contact and will"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "CIMS license and access",
+   "resolution": "invoice approved (AIF)",
+   "quote": "1.) reviewed cims license and access",
+   "tags": [
+    "CIMS software",
+    "invoice"
+   ]
+  },
+  {
+   "topic": "North Cemetery backlot expansion",
+   "resolution": "discussed; follow-up assigned to Vice Chair and Chair",
+   "quote": "2.) north cemetery backlot expansion",
+   "tags": [
+    "North Cemetery",
+    "DPW",
+    "survey",
+    "trees",
+    "hedges",
+    "stone walls"
+   ]
+  },
+  {
+   "topic": "South Cemetery plot availability and backlot",
+   "resolution": "discussed; review assigned to Clerk and Vice Chair",
+   "quote": "3.) chair mike brought up south cemetery plot availability and number of other lots",
+   "tags": [
+    "South Cemetery",
+    "plots",
+    "CIMS",
+    "GIS"
+   ]
+  },
+  {
+   "topic": "Grant writing",
+   "resolution": "discussed; follow-up assigned",
+   "quote": "4.) grant writing was discussed, vice chair david dorren has a point of contact and will",
+   "tags": [
+    "grants",
+    "Town Manager"
+   ]
+  },
+  {
+   "topic": "Earmarks",
+   "resolution": "discussed; Chair to contact state representatives",
+   "quote": "5.) earmarks were discussed, contacting our state representatives, chair mike clark will reach out to them on establishing the process for requests.",
+   "tags": [
+    "earmarks",
+    "state representatives"
+   ]
+  },
+  {
+   "topic": "Funds, balances and lot sales",
+   "resolution": "discussed at length; revenue to be mapped",
+   "quote": "funds, currently available balances were reviewed and discussed at length, sale of lots, perpetual interest (perpetual care), etc.",
+   "tags": [
+    "perpetual care",
+    "lot sales",
+    "revenue",
+    "expendable funds"
+   ]
+  },
+  {
+   "topic": "Agenda practice",
+   "resolution": "directed: keep agenda, note accomplished items",
+   "quote": "7.) keep the agenda the same and note as items are accomplished.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "August meeting and cemetery tour",
+   "resolution": "discussed; no date set",
+   "quote": "8.) clerk donna landry asked if we had scheduled a date for an august meeting",
+   "tags": [
+    "meeting schedule",
+    "cemetery tour"
+   ]
+  },
+  {
+   "topic": "Zoom timeout",
+   "resolution": "Chair to check with town IT",
+   "quote": "9.) issues were experienced with the zoom timeout, chair mike clark to check with town it on zoom.",
+   "tags": [
+    "Zoom",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "10.) no public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned (AIF)",
+   "quote": "11.) chair mike clark requested a motion to adjourn, clerk donna landry seconded, aif",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "North Cemetery",
+  "South Cemetery",
+  "CIMS software",
+  "DPW",
+  "grants",
+  "earmarks",
+  "perpetual care",
+  "lot sales",
+  "Zoom",
+  "remote meeting",
+  "stone walls",
+  "hedges"
+ ],
+ "dropped_unquoted_by_field": {}
 }

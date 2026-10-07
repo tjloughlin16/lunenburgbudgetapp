@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2025-06-09",
  "docid": "7257",
@@ -12,31 +12,224 @@
  },
  "votes": [
   {
-   "motion": "approve the Agricultural Commission's recommendation regarding 222 West Towsend Rd",
-   "moved_by": "Ryan",
-   "seconded_by": "Kathy",
-   "outcome": "unanimously approved",
+   "motion": "Approve the Agricultural Commission's recommendation regarding 222 West Towsend Rd. (ROFR property), which found no meaningful value for agricultural use.",
+   "moved_by": "Ryan Stober",
+   "seconded_by": "Kathy Dugan",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "ryan made a motion to approve the agricultural commission's recommendation regarding 222 west towsend rd. kathy seconded. commission unanimously approved."
   },
   {
-   "motion": "approve vendors It's a Flocking Farm, Nina's Jewelry, Wildflower Bakery, and Pony Shack Cider",
-   "moved_by": "Kathy",
-   "seconded_by": "Ryan",
-   "outcome": "unanimously approved",
+   "motion": "Approve all vendors listed for the Lunenburg Farmers' Market (It's a Flocking Farm, Nina's Jewelry, Wildflower Bakery, Pony Shack Cider).",
+   "moved_by": "Kathy Dugan",
+   "seconded_by": "Ryan Stober",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "kathy makes a motion to approve all vendors above. ryan seconded. commission unanimously approved."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Kathy",
-   "seconded_by": "Jackie",
-   "outcome": "unanimously approved",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Kathy Dugan",
+   "seconded_by": "Jackie Chabot",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "kathy made a motion to adjourn; jackie seconds. commission unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. Agenda item 4 noted \"No minutes to approve\" so there was no vote on prior minutes.",
- "cost_usd": 0.0857634
+ "note": "Minutes are a summary-form extract with no dollar figures, so budget_items and transfers are empty. Votes record 'unanimously approved' with no count printed; outcomes are recorded as passed unanimously. Attendance table marks no attendance for Alternate Kira McClellan, so her status is not stated; she appears only as re-appointed in the Membership line. Glen Mcleod is named only as Select Board Liaison in an announcement and is not recorded as attending. Public comment was 'None' at both points. The minutes do not state the content of the 'recommendation' approved under the ROFR item beyond the finding of no meaningful agricultural value.",
+ "cost_usd": 0.01503817,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔ member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔ member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔ member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔ member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔ member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Market details email to be sent out (Farmers' Market); no sender or owner named in the minutes.",
+   "quote": "market details email to be sent out"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:03 pm",
+   "quote": "call to order meeting commencement time: 7:03 pm",
+   "tags": [
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "no public comment",
+   "quote": "2 public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "informational; Glen Mcleod named as Select Board Liaison; regional event announced for June 27",
+   "quote": "glen mcleod is our select board liaison",
+   "tags": [
+    "announcements",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "no minutes to approve",
+   "quote": "no minutes to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Business: ROFR Property, 222 West Towsend Rd.",
+   "resolution": "approved the commission's recommendation (no meaningful agricultural value found)",
+   "quote": "the commission reviewed and discussed the property and did not find that it would have meaningful value for agricultural use.",
+   "tags": [
+    "ROFR",
+    "farmland",
+    "property"
+   ]
+  },
+  {
+   "topic": "Agency and committee updates (USDA, MDAR, Master Plan Steering Committee)",
+   "resolution": "informational; no Master Plan meeting held since prior AgComm meeting",
+   "quote": "no meeting has been held since prior to last agcomm meeting.",
+   "tags": [
+    "USDA",
+    "MDAR",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Current Business: Farmers' Market vendors and signs",
+   "resolution": "vendors approved; market details email to be sent out",
+   "quote": "reviewed applications for the following vendors:",
+   "tags": [
+    "farmers market",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Current Business: Community Garden",
+   "resolution": "no action",
+   "quote": "community garden - develop ideas and procedures none",
+   "tags": [
+    "community garden"
+   ]
+  },
+  {
+   "topic": "Current Business: Membership",
+   "resolution": "informational; two members re-appointed",
+   "quote": "membership jackie and kira have been re-appointed",
+   "tags": [
+    "membership",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Current Business: Facebook page and mailing list",
+   "resolution": "Facebook post made for Farmers' Market; no mailing list action",
+   "quote": "agricultural commission facebook page jackie posted for farmers' market",
+   "tags": [
+    "outreach",
+    "facebook",
+    "mailing list"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "7 committee reports none",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Farming Issues",
+   "resolution": "no action",
+   "quote": "8 farming issues none",
+   "tags": [
+    "farming"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings/Events",
+   "resolution": "next meeting scheduled for 7:00 pm July 7, 2025",
+   "quote": "7:00 pm july 7, 2025 lunenburg public library, wallace community room",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no public comment",
+   "quote": "10 public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned unanimously at 8:29 pm",
+   "quote": "meeting adjourned at 8:29 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "farmers market",
+  "ROFR right of first refusal",
+  "farmland",
+  "vendors",
+  "community garden",
+  "membership",
+  "minutes",
+  "public comment",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

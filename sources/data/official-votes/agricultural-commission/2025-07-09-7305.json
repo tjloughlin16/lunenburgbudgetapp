@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2025-07-09",
  "docid": "7305",
@@ -12,23 +12,207 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from May 19, 2025 and June 9, 2025",
+   "motion": "Approve the minutes of the May 19, 2025 and June 9, 2025 meetings.",
    "moved_by": "Kathy",
    "seconded_by": "Maryrae",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously (Kathy, Maryrae, Jen)",
    "procedural": true,
-   "quote": "kathy made a motion to approve the minutes from the following meetings: may 19, 2025 and june 9, 2025. maryrae seconded. kathy, maryrae, and jen unanimously approved."
+   "quote": "kathy made a motion to approve the minutes from the following meetings: may 19, 2025 and june 9, 2025."
   },
   {
-   "motion": "Approve vendors In the Meadow Farm, Worm Empire, and The Garden Party, and contact Crochet Critters for more information on their product with pictures as examples",
+   "motion": "Approve the vendors In the Meadow Farm, Worm Empire, and The Garden Party for the Farmers' Market, and contact Crochet Critters for more information on their product with pictures.",
    "moved_by": "Kathy",
    "seconded_by": "Maryrae",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously (Kathy, Maryrae, Jen)",
    "procedural": false,
-   "quote": "kathy makes a motion to approve the following vendors: in the meadow farm, worm empire, and the garden party; and to contact crochet critters for more information on their product with pictures as examples."
+   "quote": "kathy makes a motion to approve the following vendors: in the meadow farm, worm empire, and the garden party;"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1050264
+ "note": "Single-page-set text, no scan. The meeting was held on Zoom; attendance is shown by check marks, and Ryan Stober's line has no mark, so his status is recorded as not stated rather than absent. The alternate seat listed as Vacant is not recorded as a person. The minutes give no vote counts beyond 'unanimously approved' and name only three voters (Kathy, Maryrae, Jen); Kira McClellan's vote is not recorded. No motion to adjourn is recorded; the meeting ended at the Zoom time limit. Crochet Critters is to be contacted, not approved, so no approval vote covers it.",
+ "cost_usd": 0.01530277,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Member",
+   "status": "present",
+   "quote": "member kathy dugan ✔ member ryan stober"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "member ryan stober alternate kira mcclellan ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate kira mcclellan ✔"
+  },
+  {
+   "name": "Kerri Mitton",
+   "role": "Public",
+   "status": "present",
+   "quote": "public kerri mitton ✔ public kim muzzi ✔"
+  },
+  {
+   "name": "Kim Muzzi",
+   "role": "Public",
+   "status": "present",
+   "quote": "public kerri mitton ✔ public kim muzzi ✔"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members were assigned research on land management and maintenance programs, to report back: MDAR/NRCS (Jen), APR (Kathy), Mass Farmland Action Plan (Jackie, Kira, Ryan), other towns' management (Maryrae).",
+   "quote": "mdar/nrcs - jen apr - kathy mass farmland action plan - jackie/kira/ryan other towns management - maryrae"
+  },
+  {
+   "decision": "A market details email was to be sent out.",
+   "quote": "market details email to be sent out"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Farmers' Market vendor fees and yard signs",
+   "what_was_recorded": "Vendor fees were deposited to the commission's account and a reimbursement was submitted for yard signs; no amounts are printed.",
+   "quote": "jen deposited the farmers' markets vendor fees to our account and submitted for reimbursement for yard signs.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Kim Muzzi",
+   "stated_role": "Public",
+   "topic": "interest in joining the commission",
+   "quote": "kim muzzi is interested in agcomm and introduced herself"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:07 pm",
+   "quote": "meeting commencement time: 7:07 pm",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "Kim Muzzi introduced herself; no action",
+   "quote": "kim muzzi is interested in agcomm and introduced herself",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no items recorded",
+   "quote": "3 announcements 4 review/approve minutes",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved unanimously (May 19 and June 9, 2025 minutes)",
+   "quote": "kathy, maryrae, and jen unanimously approved.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "New Business: Land Management/Maintenance research",
+   "resolution": "members assigned research; USDA and MDAR updates none",
+   "quote": "research these programs and bring back information to commission such as program criteria, timeline, town input, etc",
+   "tags": [
+    "land management",
+    "research assignments"
+   ]
+  },
+  {
+   "topic": "Current Business: Farmers' Market vendors and signs",
+   "resolution": "three vendors approved; Crochet Critters to be contacted; market details email to be sent",
+   "quote": "reviewed applications for the following vendors:",
+   "tags": [
+    "farmers market",
+    "vendors",
+    "signs",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "none",
+   "quote": "7 committee reports none",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Farming Issues",
+   "resolution": "none",
+   "quote": "8 farming issues none",
+   "tags": [
+    "farming issues"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings/Events Schedule",
+   "resolution": "schedule listed; no action",
+   "quote": "7:00 pm monday, august 4, 2025 lunenburg public library, wallace community room",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "none",
+   "quote": "10 public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "ended at 7:40 pm when the Zoom time limit was reached; no adjournment motion recorded",
+   "quote": "meeting adjourned at 7:40 pm as the zoom time limit was reached.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "farmers market",
+  "vendors",
+  "land management",
+  "master plan",
+  "zoom meeting",
+  "minutes approval",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

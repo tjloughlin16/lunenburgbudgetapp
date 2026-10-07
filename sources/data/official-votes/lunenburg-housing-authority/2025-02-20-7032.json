@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2025-02-20",
  "docid": "7032",
@@ -12,58 +12,255 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of January 23, 2025",
+   "motion": "Approve the minutes of January 23, 2025.",
    "moved_by": "Tenant Board Member",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
    "procedural": true,
-   "quote": "tenant board member made a motion to approve the minutes; vice chair seconded, with all in favor ",
-   "quote_taken_from_text": true
+   "quote": "tenant board member made a motion to approve the minutes; vice chair seconded, with all in favor"
   },
   {
-   "motion": "approve the Year's End financials as presented",
+   "motion": "Approve the Year's End financials as presented.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": false,
-   "quote": "board member deborah a.h. christen made a motion to approve the year 's end financials as presented; tenant board member seconded, with all in favor",
-   "quote_taken_from_text": true
+   "quote": "board member deborah a.h. christen made a motion to approve"
   },
   {
-   "motion": "approve the Operating Budget for State-Aided Housing of Lunenburg Housing Authority (Chapter 200/667/705/689/MRVP) Program Number 400-1 for Fiscal Year Ending 12/31/2025",
+   "motion": "Approve the Operating Budget for State-Aided Housing of Lunenburg Housing Authority, Program Number 400-1, for Fiscal Year Ending 12/31/2025.",
    "moved_by": "Vice Chair",
    "seconded_by": "Deborah A.H. Christen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "vice chair made a motion to approve operating budget for state-aided housing of lunenburg housing authority (chapter 200/667/705/689/mrvp) program number 400-1 for fiscal year ending 12/31/2025 ; board member deborah a.h. christen seconded, with all in favor."
+   "quote": "vice chair made a motion to approve operating budget for state-aided housing of lunenburg"
   },
   {
-   "motion": "approve the Year-End Financial and Federal State Lead Paint Certification",
+   "motion": "Approve Resolution 2025-2, Year-End Financial and Federal State Lead Paint Certification.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by board member deborah a.h. christen to approve the year-end financial and federal state lead paint certification ; tenant board member seconded the motion, with all in favor",
-   "quote_taken_from_text": true
+   "quote": "motion made by board member deborah a.h. christen to approve the year-end financial and federal state lead paint certification"
   },
   {
-   "motion": "approve the FY2025 Budget",
+   "motion": "Approve Resolution 2025-3, FY2025 Budget.",
    "moved_by": "Vice Chair",
    "seconded_by": "Deborah A.H. Christen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by vice chair to approve the fy2025 budget; board member deborah a.h. christen seconded the motion, with all in favor."
+   "quote": "motion made by vice chair to approve the fy2025 budget"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": true,
-   "quote": "board member deborah a.h. christen made a motion to adjourn the meeting at 2:32 p.m. tenant board member seconded and with all in favor the meeting was adjourned."
+   "quote": "board member deborah a.h. christen made a motion to adjourn the meeting at 2:32 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and legible. All votes passed unanimously (with all in favor). Two pairs of related votes on Year's End Financials and FY2025 Budget are recorded: first as individual approvals during the Financial Report section, then formally as Resolutions 2025-2 and 2025-3 in New Business.",
- "cost_usd": 0.1325744
+ "note": "Text is a legible extraction, not a scan. The minutes are headed \"AMENDED 4/16/2025\", so these are the amended text. Extraction garbled some spacing and numbers (e.g. \"202 5\", \"Fisca l\"); quotes were collapsed to single spaces and read as printed. Votes are recorded only as \"all in favor\" or \"with all in favor\" with no count, so outcomes are \"passed\" rather than a tally. Motions name several members by role only (\"Tenant Board Member\", \"Vice Chair\"); the header maps Vice Chair to Linda McDonald and Tenant Board Member to Wayne Caron, but the motions themselves do not name them. The FY2025 operating budget (item 3b) and Resolution 2025-3 FY2025 Budget (item 6c) are two separate motions that may refer to the same budget; both are recorded as printed. No public comment section appears in the text.",
+ "cost_usd": 0.01752037,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dale Proulx",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair dale proulx asked for a roll call of members present"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "dale proulx-present, linda mcdonald-present, wayne caron-present,"
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "wayne caron, tenant board member"
+  },
+  {
+   "name": "Nicole Waters",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "wayne caron-present, nicole waters-present"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member deborah a.h. christen made a motion to adjourn"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Evelyn Perez",
+   "role": "Director of Housing Management Services",
+   "status": "present",
+   "quote": "evelyn perez, director of housing management services"
+  },
+  {
+   "name": "Suzanne Bonney",
+   "role": "Director of Finances",
+   "status": "present",
+   "quote": "suzanne bonney, director of finances"
+  },
+  {
+   "name": "Chris Boyer",
+   "role": "Assistant Director of Facilities",
+   "status": "present",
+   "quote": "chris boyer, assistant director of facilities"
+  },
+  {
+   "name": "Sue Honeycutt",
+   "role": "from Fenton, Ewald and Associates PC",
+   "status": "present",
+   "quote": "sue honeycutt from fenton, ewald and associates pc"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY2025 operating budget (State-Aided Housing)",
+   "what_was_recorded": "Total revenue, total expenses and the subsidy requested under the FY2025 budget were reviewed.",
+   "quote": "the total revenue is $365,216 and total expenses are $479,993, thereby requesting a subsidy of $145,931.",
+   "figures_as_printed": [
+    "$365,216",
+    "$479,993",
+    "$145,931"
+   ]
+  },
+  {
+   "topic": "Reserve level",
+   "what_was_recorded": "The reserve was reported as a percentage in the year-end financial review.",
+   "quote": "the reserve is at 64.47%",
+   "figures_as_printed": [
+    "64.47%"
+   ]
+  },
+  {
+   "topic": "667-1 Site Improvements (FISH#162048)",
+   "what_was_recorded": "A project for various improvements was described in an estimated amount.",
+   "quote": "this is a project for various improvements that may be needed in the amount of $9,881.",
+   "figures_as_printed": [
+    "$9,881"
+   ]
+  },
+  {
+   "topic": "667-1 Storm Door Replacement (FISH#162055)",
+   "what_was_recorded": "A new project to replace storm doors throughout the development was described in an amount.",
+   "quote": "this is a new project to replace storm doors throughout the development in the amount of $9,983.",
+   "figures_as_printed": [
+    "$9,983"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "quorum declared; meeting opened at 2:00 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting",
+   "tags": [
+    "quorum",
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Minutes of January 23, 2025",
+   "resolution": "approved",
+   "quote": "tenant board member made a motion to approve the minutes; vice chair seconded, with all in favor",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action (update on maintenance personnel)",
+   "quote": "executive director provided an update on maintenance personnel.",
+   "tags": [
+    "personnel",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Financial report: year-end financials and FY2025 budget",
+   "resolution": "year-end financials approved; FY2025 operating budget approved",
+   "quote": "the total revenue is $365,216 and total expenses are $479,993, thereby requesting a subsidy of $145,931.",
+   "tags": [
+    "financial report",
+    "year-end financials",
+    "FY2025 budget",
+    "subsidy"
+   ]
+  },
+  {
+   "topic": "Administration: modernization and work order report, state-aided housing report",
+   "resolution": "received; no action recorded",
+   "quote": "this project is currently bidding. quotes are due february 26, 2025.",
+   "tags": [
+    "modernization",
+    "work orders",
+    "waiting list",
+    "occupancy"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "5. unfinished business",
+   "tags": []
+  },
+  {
+   "topic": "New business: tenant board seat, Resolutions 2025-2 and 2025-3",
+   "resolution": "both resolutions approved; tenant seat vacancy noticed",
+   "quote": "notice that was sent out to all tenants informing the tenant board seat is open",
+   "tags": [
+    "tenant board",
+    "resolutions",
+    "lead paint certification"
+   ]
+  },
+  {
+   "topic": "Other correspondence",
+   "resolution": "received; no action recorded",
+   "quote": "eohlc phn 2025-2 comprehensive modernization nofa",
+   "tags": [
+    "EOHLC",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Motion to adjourn",
+   "resolution": "adjourned at 2:32 p.m.",
+   "quote": "board member deborah a.h. christen made a motion to adjourn the meeting at 2:32 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "financial report",
+  "FY2025 budget",
+  "year-end financials",
+  "subsidy",
+  "modernization",
+  "work orders",
+  "tenant board",
+  "state-aided housing",
+  "correspondence",
+  "amended minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

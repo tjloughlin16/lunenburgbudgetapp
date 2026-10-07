@@ -386,5 +386,286 @@
    "at": "2026-10-06T18:16:47Z",
    "cost_usd": 0.213059
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01212025-6972",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-01-21-minutes-6972.txt",
+   "path": "sources/meetings/sewer-commission/2025-01-21-minutes-6972.docx"
+  },
+  "official_sha256": "d6aec5487e698df6e66d6d743d9eb281d0395186d4df6cb7fa6ce8df66ab95e7",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both votes (3-0 roll calls), the main budget figures and the decisions. They differ mainly in caption-garbled names and figures, plus a few figures that only our captions carry. Check the delinquent-account count (306 vs 300), the unexplained $220,000 and $100,000 figures in our capital discussion, and whether Kimball Street was set for a future agenda or left conditional.",
+  "counts": {
+   "agree": 14,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 7,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: lien/privilege fee on 12 Kimble/Kimball St.",
+    "ours": "Assess the privilege fee/betterment (lien recorded at the registry of deeds) for 12 Kimble Street — passed (roll call: Scott aye, Joe aye, chair aye)",
+    "official": "to vote for the lien (privilege fee) on 12 kimball st. roll call vote: joe-aye, scott-aye and brett-aye.",
+    "note": "Same vote, same three ayes; Brett was presiding, so 'chair aye' is the same person. Street spelling differs (Kimble vs Kimball).",
+    "t": 526
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept FY26 budget",
+    "ours": "Accept the fiscal year 2026 budget as discussed, with the capital line raised — passed (roll call: Joe aye, Scott aye, chair aye)",
+    "official": "to accept the fy26 budget. roll call vote: joe-aye, scott-aye and brett-aye.",
+    "note": "Same vote and roll call, 3-0.",
+    "t": 2990
+   },
+   {
+    "kind": "agree",
+    "about": "Stabilization fund transfer is 10% of surplus",
+    "ours": "Transfer to stabilization fund calculated as a share of surplus (revenue minus expenses, if positive); line discussed — 10% (discussed only)",
+    "official": "the transfer to stabilization fund is 10% of any surplus.",
+    "note": "Same policy and percentage, discussed only in both.",
+    "t": 932
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Transfer to general fund for betterment debt service and OPEB",
+    "ours": "Transfer to general fund for betterment debt service, and transfer to OPEB — not stated (discussed only)",
+    "official": "",
+    "note": "The official minutes record no discussion of a general fund or OPEB transfer; check the recording around this point.",
+    "t": 2152
+   },
+   {
+    "kind": "agree",
+    "about": "Retained earnings draw of $300K",
+    "ours": "Betterment revenue and retained earnings draw: 368,000, 91,000, 300,000, $2 million, 253,000, $3,000",
+    "official": "they would make up the difference from retained earnings, from which they would need to take $300k.",
+    "note": "The $300,000 retained-earnings draw matches; neither record shows a transfer vote.",
+    "t": 2602
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Retained earnings to fund CTE cut-off checks",
+    "ours": "",
+    "official": "bill agreed they could do that and take money from retained earnings.",
+    "note": "Official records an agreement to fund CTE checks of cut-offs at other stations from retained earnings; our minutes do not capture it. No transfer vote in either.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY2026 salaries at 2.5%",
+    "ours": "FY2026 budget - salaries: two and a half percent",
+    "official": "",
+    "note": "The official minutes give no salary percentage.",
+    "t": 635
+   },
+   {
+    "kind": "caption_error",
+    "about": "Purchase of service: CTE contract and other work",
+    "ours": "Purchase of service lines (CTE contract and other): 148, 990,000",
+    "official": "purchase of service - outsourcing - cte contract is listed at $148k and an additional $90k covers other work such as line jetting.",
+    "official_reading": "$148K and $90K",
+    "note": "'990,000' is a garbled reading of '$90K'; the CTE figure matches.",
+    "t": 869
+   },
+   {
+    "kind": "agree",
+    "about": "Capital figures $368K, $125K, $80K, $10K",
+    "ours": "Capital plan: $368,000, $100,000, 125, 990,000, 80 grand, 10 grand",
+    "official": "but in fy26, they are just budgeting $80k for a generator at twin city station and $10k for spare pumps.",
+    "note": "$368K, $125K, $80K and $10K all appear in both.",
+    "t": 974
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital list $100,000 and '990,000'",
+    "ours": "$100,000, 125, 990,000",
+    "official": "",
+    "note": "The official minutes have no $100,000 in the capital discussion. '990,000' may be the $90K purchase-of-service figure bleeding in. Check the recording.",
+    "t": 974
+   },
+   {
+    "kind": "agree",
+    "about": "Mass 1 repair cost about $140K",
+    "ours": "Mass One repair cost: 140,000",
+    "official": "the commission discussed the figure of $125k for capital, noting the repair to mass 1 was about $140k.",
+    "note": "Same figure.",
+    "t": 1555
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan raised by $20K",
+    "ours": "Capital line bumped up: 20,000, $220,000",
+    "official": "the commission agreed to bump the capital plan another $20k.",
+    "note": "The $20,000 increase matches.",
+    "t": 2045
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$220,000 beside the capital bump",
+    "ours": "$220,000",
+    "official": "",
+    "note": "The official minutes give no $220,000; $125K plus $20K would be $145K. Check what this figure is.",
+    "t": 2045
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: raise capital line before budget vote",
+    "ours": "Consensus to raise the capital line by another amount above the staff proposal before the budget vote.",
+    "official": "the commission agreed to bump the capital plan another $20k.",
+    "note": "Same decision; official gives the $20K amount, ours does not.",
+    "t": 2130
+   },
+   {
+    "kind": "caption_error",
+    "about": "Total proposed FY26 expenses",
+    "ours": "Total proposed expenses: 1.8 66 million",
+    "official": "the total proposed expenses for fy26 would be $1.866 million.",
+    "official_reading": "$1.866 million",
+    "note": "Digits split by the captions; same figure.",
+    "t": 2215
+   },
+   {
+    "kind": "agree",
+    "about": "Expected revenue $1.5M and 27% delinquency",
+    "ours": "User charges and delinquency: 1.5 million, 27%, $400,000, 1.1 million",
+    "official": "they are expecting revenues of about $1.5 million but have a delinquency rate of 27%, so revenues would be lower.",
+    "note": "$1.5 million and 27% match.",
+    "t": 2282
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$400,000 and $1.1 million revenue figures",
+    "ours": "$400,000, 1.1 million",
+    "official": "",
+    "note": "The official minutes give no $400,000 or $1.1 million.",
+    "t": 2282
+   },
+   {
+    "kind": "agree",
+    "about": "Other fees and betterments add about $368K",
+    "ours": "368,000",
+    "official": "he added there are other fees collected, along with betterments paid off, which would add about $368k.",
+    "note": "Same $368K.",
+    "t": 2602
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Betterment/retained earnings figures 91,000, $2 million, 253,000",
+    "ours": "91,000, $2 million, 253,000, $3,000",
+    "official": "",
+    "note": "The official minutes carry none of these; a reader can check the recording.",
+    "t": 2602
+   },
+   {
+    "kind": "agree",
+    "about": "Fitchburg 7% and Leominster 3% increases",
+    "ours": "Fitchburg and Leominster rate increases: 7%, 3%, 16%",
+    "official": "fitchburg will go up 7% each year and leominster will go up 3% next year",
+    "note": "7% and 3% match.",
+    "t": 2895
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "16% rate figure",
+    "ours": "16%",
+    "official": "",
+    "note": "No 16% in the official minutes; check the recording.",
+    "t": 2895
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Number of delinquent customers",
+    "ours": "Delinquent accounts: 306, $3,000, $10",
+    "official": "there are 300 customers that owe for a total over $3,000.",
+    "note": "Ours says 306, official 300. The official may be rounded, so check the recording; $3,000 and the $10 late fee match.",
+    "t": 3282
+   },
+   {
+    "kind": "only_in_official",
+    "about": "No rate increase suggested",
+    "ours": "",
+    "official": "bill shared the revenue spreadsheet and stated that he is not suggesting any rate increase.",
+    "note": "The official minutes record that no rate increase was proposed for FY26; our minutes do not state it.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Absent-member item on future agenda",
+    "ours": "Absent-member issue kept on future agendas until it can be resolved.",
+    "official": "brett requested this be added to a future agenda.",
+    "note": "Same direction. Ours says 'until resolved'; official only says it is added to a future agenda.",
+    "t": 3117
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Kimball Street on future agendas",
+    "ours": "Future agendas to keep manhole repairs, second-quarter billing, assistant to business manager and Kimble Street.",
+    "official": "future agenda items - updates on manhole repairs, 2nd quarter demands, assistant to business manager.",
+    "note": "Ours lists Kimble Street as an agenda item. Official lists three items and says Bill will check whether Kimball St. needs one more meeting. Check the recording for whether it was set.",
+    "t": 3745
+   },
+   {
+    "kind": "agree",
+    "about": "Bill to contact low bidder for manhole repairs",
+    "ours": "Bill to contact the low bidder for manhole repairs to get on their spring schedule.",
+    "official": "he will reach out to them to get the ball rolling in the spring.",
+    "note": "Same action.",
+    "t": 3556
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair name",
+    "ours": "Brett Ramon (vice chair, presiding)",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, and minutes clerk- jane ranley",
+    "official_reading": "Brett Ramsden",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Scott Dall",
+    "ours": "Scott doll (member)",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, and minutes clerk- jane ranley",
+    "official_reading": "Scott Dall",
+    "note": "Misheard surname; official lists him as clerk.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Business manager name",
+    "ours": "Andrew Valeri (new business manager)",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, and minutes clerk- jane ranley",
+    "official_reading": "Andrew Valliere",
+    "note": "Misspelled surname.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees: Joe Hurley, Bill Bernard, Jane Ranley",
+    "ours": "Joseph Hurley (member); Bill Bernard (DPW director / sewer manager); Jane ranley (staff)",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, and minutes clerk- jane ranley",
+    "note": "Same people and roles; Jane is the minutes clerk.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "absent: chair- mike mackin and eli torres.",
+    "note": "Official names the chair and Eli Torres as absent; our minutes do not list absentees.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:36:59Z",
+   "cost_usd": 0.27708900000000003
+  }
  }
 }

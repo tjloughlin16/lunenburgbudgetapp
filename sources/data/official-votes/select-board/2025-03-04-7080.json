@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-03-04",
  "docid": "7080",
@@ -12,47 +12,432 @@
  },
  "votes": [
   {
-   "motion": "Approve the transfer of the common victualler license to Sam Fam Inc. d/b/a Lunenburg Diner located at 324 Electric Ave",
+   "motion": "Approve transfer of the Common Victualler license to Sam Fam Inc. d/b/a Lunenburg Diner, 324 Electric Ave.",
    "moved_by": "Member Moore",
    "seconded_by": "Member Emkey",
    "outcome": "passed 3-0-0",
    "procedural": false,
-   "quote": "member moore made motion to approve the transfer of the common victualler license to sam fam inc. d/ba/ lunenburg diner located at 324 electric ave. seconded by member emkey. roll call vote: member emkey, aye; member moore, aye. chair nuzzolo, aye. motion passed (3-0-0)."
+   "quote": "member moore made motion to approve the transfer of the common victualler license to sam fam inc. d/ba/ lunenburg diner located at 324 electric ave."
   },
   {
-   "motion": "Authorize the Town Manager to Execute the revised 911 Emergency Communications District Agreement",
+   "motion": "Authorize the Town Manager to execute the revised Regional 911 Emergency Communications District Agreement.",
    "moved_by": "Member Moore",
    "seconded_by": "Member Emkey",
    "outcome": "passed 3-0-0",
    "procedural": false,
-   "quote": "member moore made motion to authorize the town manager to execute the revised 911 emergency communications district agreement. seconded by member emkey. roll call vote: member emkey, aye; member moore, aye. chair nuzzolo, aye. motion passed (3-0-0)."
+   "quote": "member moore made motion to authorize the town manager to execute the revised 911 emergency communications district agreement."
   },
   {
-   "motion": "Enter into Executive Session to discuss strategy with respect to litigation",
+   "motion": "Declare approximately 100 cubic yards of sand (previously obtained by Town at no cost) as surplus.",
+   "moved_by": "Member Moore",
+   "seconded_by": "Member Emkey",
+   "outcome": "passed 3-0-0",
+   "procedural": false,
+   "quote": "declare 100 cubic yards of sand as surplus. member emkey seconded. roll call vote: member emkey, aye; member moore, aye. chair nuzzolo, aye. motion passed (3-0-0)."
+  },
+  {
+   "motion": "Enter Executive Session under MGL c. 30 §21 (a)(3) to discuss litigation strategy, and re-enter Open Session.",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Member Moore",
    "outcome": "passed 3-0-0",
    "procedural": true,
-   "quote": "chair nuzzolo made motion to enter into executive session and to re-enter into open session pursuant to mgl c. 30 §21 (a)(3) to discuss strategy with respect to litigation if an open meeting may have detrimental effect on the litigating position of the town, and the chair of the board so declares. member moore seconded. roll call vote: member emkey, aye; member moore, aye. chair nuzzolo, aye. motion passed (3-0-0)."
+   "quote": "chair nuzzolo made motion to enter into executive session and to re-enter into open session pursuant to mgl c. 30 §21 (a)(3)"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Member Moore",
    "seconded_by": "Member Emkey",
    "outcome": "passed 3-0-0",
    "procedural": true,
-   "quote": "member moore moved to adjourn. member emkey seconded the motion. roll call vote: member emkey, aye; member moore, aye. chair nuzzolo, aye. motion passed (3-0-0)."
+   "quote": "member moore moved to adjourn."
   },
   {
-   "motion": "Approve the minutes from March 4, 2025",
+   "motion": "Approve the minutes of the March 4, 2025 Select Board meeting.",
    "moved_by": "Member Emkey",
    "seconded_by": "Clerk Moore",
-   "outcome": "passed unanimously 5-0-0",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "member emkey made the motion to approve the minutes from march 4, 2025. seconded by clerk moore. call for the vote: five-aye. motion passed unanimously (5-0-0)."
+   "quote": "member emkey made the motion to approve the minutes from march 4, 2025. seconded by clerk moore."
   }
  ],
- "dropped_unquoted": 1,
- "note": "The sixth vote (approval of minutes) was taken on March 11, 2025, when the minutes were formally reviewed and approved, as recorded in the document footer. All quotes are verbatim from the text.",
- "cost_usd": 0.11292740000000001
+ "dropped_unquoted": 0,
+ "note": "Full seven-page text, no scan. Votes are only those with a printed motion and result. Caveats: (1) The Accounts Payable warrant ($962,530.75) is recorded with a recusal but no motion or vote. (2) The March 4 minutes approval, recorded March 11, prints \"Five-aye\" and \"(5-0-0)\", but the March 4 attendance lists three members present and every March 4 roll call was 3-0-0; the count is recorded as printed and not reconciled. (3) The first public comment section reads \"None\" and is not recorded as a speaker. (4) The Town Manager is spelled both \"Warren-Dyment\" and \"Warran-Dyment\" in the text; I used \"Jennifer Warren-Dyment\" as printed in the attendance line. (5) \"Clerk Moore\" appears once as seconder, and I took it to be Member Amanda Moore, which the minutes do not state. (6) The sand surplus motion is split across a page break; its quote begins after the break.",
+ "cost_usd": 0.022621370000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, amanda moore, renee emkey (via zoom)"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Member (also referred to as Clerk Moore in one motion)",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, amanda moore, renee emkey (via zoom)"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "remote",
+   "quote": "members present: caesar nuzzolo, amanda moore, renee emkey (via zoom)"
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: michael ray jeffreys, tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: michael ray jeffreys, tom alonzo"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "remote",
+   "quote": "lynda mcquade, principal assessor was present via zoom and brought forward two warrant articles for the boards review and discussion."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice-Chair on the Board of Assessors",
+   "status": "remote",
+   "quote": "sarah cammer, vice-chair on the board of assessors clarified (via zoom) that this is something"
+  },
+  {
+   "name": "Joeci Gilchrest",
+   "role": "President of the Lunenburg Business Association",
+   "status": "present",
+   "quote": "joeci gilchrest, president of the lunenburg business association presented to the board the"
+  },
+  {
+   "name": "Sam Somonita",
+   "role": "Applicant (Sam Fam Inc, Lunenburg Diner license transfer)",
+   "status": "present",
+   "quote": "applicant, sam somonita, was present for this hearing."
+  },
+  {
+   "name": "David Passios",
+   "role": "Vice Chair of the Green Communities Committee",
+   "status": "not stated",
+   "quote": "david passios, as the vice chair of the green communities committee (noted he missed the agenda item for communications from other boards)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of the Right of First Refusal notice for 100 Townsend Harbor Road was tabled to continue at the next meeting, with the Chair to discuss with a full Board present.",
+   "quote": "this discussion was tabled to continue to the next meeting."
+  },
+  {
+   "decision": "Review and discussion of the Budget Task Force Recommendations was passed over until a full Board is in attendance.",
+   "quote": "chair nuzzolo passed over until there is a full board in attendance."
+  },
+  {
+   "decision": "Regular Session minutes for January 15, February 4, February 11 and February 18, 2025 were passed over.",
+   "quote": "chair passed over this agenda topic."
+  },
+  {
+   "decision": "Member Moore volunteered to begin drafting a Workplace Climate Policy.",
+   "quote": "workplace climate policy: member moore volunteered to begin drafting policy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Elderly, surviving spouse and minors exemption (Ch. 59 §5(17D)-(17F)) warrant article, FY2026",
+   "what_was_recorded": "The proposed article would raise the asset limit from $40,000 to $66,000 and the exemption amount from $185 to $332.",
+   "figures_as_printed": [
+    "$40,000",
+    "$66,000",
+    "$185",
+    "$332"
+   ],
+   "quote": "asset level from $40,000 to $66,000 and the exemption amount from $185 to $332."
+  },
+  {
+   "topic": "Elderly exemption (Ch. 59 §5(41C)/(41D)) warrant article, FY2026",
+   "what_was_recorded": "The proposed article would raise the income and asset limits for the elderly exemption, individual and married.",
+   "figures_as_printed": [
+    "$24,000",
+    "$31,500",
+    "$30,000",
+    "$39,600",
+    "$40,000",
+    "$52,700",
+    "$55,000",
+    "$72,700"
+   ],
+   "quote": "income level for an individual would increase from $24,000 to $31,500 and married income level would increase from $30,000 to $39,600."
+  },
+  {
+   "topic": "Chapter 90 apportionment in the preliminary FY2026 budget",
+   "what_was_recorded": "Chapter 90 apportionment of $690,000 is described as offsetting the pavement line; it is up from last year's appropriation. The Town Manager said the amount depends on the Governor's bond authorization.",
+   "figures_as_printed": [
+    "$690,000",
+    "$418,000"
+   ],
+   "quote": "chapter 90 apportionment, $690,000, helps to offset as it is significantly more than last year's appropriation"
+  },
+  {
+   "topic": "Pavement management line in preliminary budget",
+   "what_was_recorded": "The preliminary budget reduces the pavement management line to zero; residents asked for a reduction rather than an elimination. The Town Manager proposed a possible standalone placeholder warrant article if the line is supplemented with one-time funds such as free cash.",
+   "figures_as_printed": [],
+   "quote": "the biggest change is reducing the pavement management line to zero."
+  },
+  {
+   "topic": "Town Hall roof and chimney restoration",
+   "what_was_recorded": "In response to a question, the Town Manager reported no unexpected costs to date, apart from scaffolding placement, which was resolved.",
+   "figures_as_printed": [],
+   "quote": "there have been no unexpected costs, except for the placement of scaffolding"
+  },
+  {
+   "topic": "Right of First Refusal, 100 Townsend Harbor Road",
+   "what_was_recorded": "The Town Manager explained that a purchase would require an adjustment to the current budget and would start FY27 with no Free Cash.",
+   "figures_as_printed": [],
+   "quote": "there would need to be an adjustment in the current budget to offset the cost and would start fy27 with no free cash."
+  },
+  {
+   "topic": "Revised Regional 911 Emergency Communication District Agreement (Nashoba Valley Regional Dispatch)",
+   "what_was_recorded": "Adding the Town of Hudson changes the Town's original assessment under the agreement.",
+   "figures_as_printed": [
+    "$212,000",
+    "$206,000"
+   ],
+   "quote": "this would change the original assessment for $212,000 to $206,000."
+  },
+  {
+   "topic": "Accounts Payable Warrant",
+   "what_was_recorded": "An Accounts Payable Warrant of $962,530.75 was taken up; Member Moore recused from signing. No vote is recorded.",
+   "figures_as_printed": [
+    "$962,530.75"
+   ],
+   "quote": "accounts payable warrant: $962,530.75. member moore recused from signing."
+  },
+  {
+   "topic": "Green Communities grant award",
+   "what_was_recorded": "The Town was awarded $225,000 in Green Communities funds, for a primary school heat pump, refrigeration controls, police cruisers, weather stripping, and a small amount for grant administration.",
+   "figures_as_printed": [
+    "$225,000"
+   ],
+   "quote": "notification of $225,000 in green communities dollars they applied for in october has been awarded to the town of lunenburg."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Passios",
+   "stated_role": "Vice Chair of the Green Communities Committee",
+   "topic": "Green Communities grant award passed on from the Chair",
+   "quote": "david passios, as the vice chair of the green communities committee (noted he missed the agenda item for communications from other boards)"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 p.m. and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Board comments (public safety thanks)",
+   "resolution": "no action",
+   "quote": "member moore wanted to thank public safety teams, both police and fire and several other agencies that were deployed.",
+   "tags": [
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Announcements (Citizen Party Caucus, executive session)",
+   "resolution": "no action",
+   "quote": "chair nuzzolo gave a reminder the citizen party caucus is next monday",
+   "tags": [
+    "elections",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Common Victualler license transfer, Lunenburg Diner",
+   "resolution": "approved 3-0-0",
+   "quote": "member moore made motion to approve the transfer of the common victualler license to sam fam inc.",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Board of Assessors warrant articles (elderly exemptions)",
+   "resolution": "discussed; no action taken",
+   "quote": "no further discussion or action was taken by the board.",
+   "tags": [
+    "property tax exemptions",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Spring All Vendor Fair presentation",
+   "resolution": "presented; no action",
+   "quote": "member moore mentioned any raffles for any vendor will need approval.",
+   "tags": [
+    "community events",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Appointments, ratifications and resignations",
+   "resolution": "resignations acknowledged",
+   "quote": "acknowledge the resignation of school committee member peter beardmore",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "bridge work on flat hill rd at catacoonamug brook is starting.",
+   "tags": [
+    "roads",
+    "capital projects",
+    "recruitment"
+   ]
+  },
+  {
+   "topic": "Old business: workplace climate policy, goal-setting, budget task force",
+   "resolution": "policy drafting volunteered; goal-setting discussed; task force passed over",
+   "quote": "workplace climate policy: member moore volunteered to begin drafting policy.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "FY2025 and FY2026 budget, capital plan and Annual Town Meeting warrant articles",
+   "resolution": "discussed; no action",
+   "quote": "town manager presented preliminary budget to the finance committee last week.",
+   "tags": [
+    "town budget",
+    "FY2026 budget",
+    "capital plan",
+    "pavement management",
+    "Chapter 90"
+   ]
+  },
+  {
+   "topic": "Right of First Refusal, 100 Townsend Harbor Road",
+   "resolution": "tabled to next meeting",
+   "quote": "this discussion was tabled to continue to the next meeting.",
+   "tags": [
+    "land",
+    "open space",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "Revised Regional 911 Emergency Communication District Agreement",
+   "resolution": "authorized 3-0-0",
+   "quote": "member moore made motion to authorize the town manager to execute the revised 911 emergency communications district agreement.",
+   "tags": [
+    "911 dispatch",
+    "intermunicipal agreement"
+   ]
+  },
+  {
+   "topic": "Declare 100 cubic yards of sand surplus",
+   "resolution": "declared surplus 3-0-0",
+   "quote": "declare 100 cubic yards of sand as surplus. member emkey seconded.",
+   "tags": [
+    "surplus property"
+   ]
+  },
+  {
+   "topic": "Executive session (litigation strategy)",
+   "resolution": "entered at 8:08 P.M.; re-entered open session at 9:21 P.M.",
+   "quote": "executive session began at 8:08 p.m.",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "minutes passed over; AP warrant taken up, Member Moore recused from signing",
+   "quote": "accounts payable warrant: $962,530.75. member moore recused from signing.",
+   "tags": [
+    "accounts payable",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports: Master Plan Steering Committee",
+   "resolution": "statement read; tri-board meeting requested",
+   "quote": "member moore requested a tri-board meeting",
+   "tags": [
+    "master plan",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "announced",
+   "quote": "chair nuzzolo announced the board is meeting on march 11, 2025 and march 18, 2025",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comments (second call): Green Communities award",
+   "resolution": "no action",
+   "quote": "david passios, as the vice chair of the green communities committee (noted he missed the agenda item for communications from other boards)",
+   "tags": [
+    "grants",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:28 PM, 3-0-0",
+   "quote": "the board adjourned at 9:28 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of the March 4, 2025 minutes (recorded at the March 11, 2025 meeting)",
+   "resolution": "approved 5-0-0",
+   "quote": "member emkey made the motion to approve the minutes from march 4, 2025.",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "town manager",
+  "licensing",
+  "warrant articles",
+  "property tax exemptions",
+  "FY2026 budget",
+  "pavement management",
+  "Chapter 90",
+  "Green Communities",
+  "911 dispatch",
+  "right of first refusal",
+  "open space",
+  "executive session",
+  "litigation",
+  "master plan",
+  "community events",
+  "public safety",
+  "surplus property",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

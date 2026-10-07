@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-04-15",
  "docid": "7174",
@@ -12,40 +12,436 @@
  },
  "votes": [
   {
-   "motion": "Approve the weekday Entertainment and Jukebox License and Automatic Amusement license for Blue Sky Golf, Pals Golf Lounge, LLC, 5 Summer Street",
-   "moved_by": "Member Alonzo",
-   "seconded_by": "Vice-Chair Michael-Ray Jeffreys",
-   "outcome": "passed 5-0",
+   "motion": "Approve the weekday Entertainment and Jukebox License and Automatic Amusement license for Blue Sky Golf, Pals Golf Lounge, LLC, 5 Summer Street.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Michael-Ray Jeffreys",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by member alonzo to approve the weekday entertainment and jukebox license and automatic amusement license for blue sky golf, pals golf lounge, llc, 5 summer street. seconded by vice-chair michael-ray jeffreys. call for the vote: five-aye. motion passed unanimously (5-0-0)."
+   "quote": "motion by member alonzo to approve the weekday entertainment and jukebox license and automatic amusement license for blue sky golf, pals golf lounge, llc, 5 summer street."
   },
   {
-   "motion": "Accept the cash gift in the amount of $6,900.00 from Peter and Deborah Lincoln for the installation of blinds at the Lunenburg Adult Activity Center",
-   "moved_by": "Vice-Chair Jeffreys",
-   "seconded_by": "Member Alonzo",
-   "outcome": "passed 5-0",
+   "motion": "Accept the $6,900.00 cash gift from Peter and Deborah Lincoln for the installation of blinds at the Lunenburg Adult Activity Center under MGL ch.44 section 53A.",
+   "moved_by": "Michael-Ray Jeffreys",
+   "seconded_by": "Tom Alonzo",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by vice-chair jeffreys to accept the cash gift in the amount of $6,900.00 from peter and deborah lincoln for the installation of blinds at the lunenburg adult activity center in accordance with mgl ch.44 section 53a. member alonzo seconded the motion. call for the vote: five-aye. motion passed unanimously (5-0-0)."
+   "quote": "motion by vice-chair jeffreys to accept the cash gift in the amount of $6,900.00 from peter and deborah lincoln for the installation of blinds"
   },
   {
-   "motion": "Approve the Select Board meeting minutes of January 30, 2024",
-   "moved_by": "Member Alonzo",
-   "seconded_by": "Vice-Chair Jeffreys",
-   "outcome": "passed 5-0",
+   "motion": "Approve the Select Board meeting minutes of January 30, 2024.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Michael-Ray Jeffreys",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "motion by member alonzo to approve the select board meeting minutes of january 30, 2024. seconded by vice-chair jeffreys. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by member alonzo to approve the select board meeting minutes of january 30, 2024."
   },
   {
-   "motion": "Enter Executive Session and not return to Open Session pursuant to M.G.L. c. 30A §21(a)(3) to discuss strategy with respect to collective bargaining, and §21(a)(2) to conduct strategy sessions for negotiations with nonunion personnel",
-   "moved_by": "Chair Nuzzolo",
-   "seconded_by": "Vice-Chair Jeffreys",
-   "outcome": "passed 5-0",
+   "motion": "Enter Executive Session and not return to Open Session under M.G.L. c. 30A §21(a)(3) (collective bargaining strategy) and §21(a)(2) (strategy for nonunion personnel, Police Chief).",
+   "moved_by": "Caesar Nuzzolo",
+   "seconded_by": "Michael-Ray Jeffreys",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "motion by chair nuzzolo to enter executive session and not return to open session, pursuant to m.g.l. c. 30a §21(a)(3) to discuss strategy with respect to collective bargaining, and §21(a)(2) to conduct strategy sessions for negotiations with nonunion ===page 6=== page 6 of 6 select board meeting minutes 4/15/2025 personnel (police chief). seconded by vice-chair jeffreys. roll call vote: member emkey - aye, member alonzo - aye, clerk moore - aye, vice-chair jeffreys - aye, c",
-   "quote_taken_from_text": true
+   "quote": "motion by chair nuzzolo to enter executive session and not return to open session, pursuant to m.g.l. c. 30a §21(a)(3) to discuss strategy with respect to collective bargaining"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. The Asian Imperial alcohol license hearing had no vote taken. The UMass Memorial Health SEF support letter, Sick Leave Bank Policy, Merit Award Policy, Acceptance of Gift Policy, Budget Task Force charge, 56 Carr Ave property, and budget/warrant discussions were all discussed without votes being taken on that date.",
- "cost_usd": 0.1386655
+ "note": "Text extraction, not a scan. Four votes recorded, all with a printed result (5-0-0 each); no motion to adjourn appears: the minutes say only that the meeting adjourned at 10:20 PM following the Executive Session vote, so adjournment is recorded as a time, not a vote. The executive session motion says the Board would not return to Open Session, yet the adjournment is recorded after it, which the minutes do not reconcile. The accounts payable warrant is printed as $1,562,534,57 (comma where cents belong); figure kept as printed. Public Comment is printed 'None' in each section, so no public-comment speakers are listed. Minutes were approved by the Select Board on Tuesday, September 29, 2026, per the footer. Some words in the source have stray spaces (e.g. 'Y ard', 'V endor', 'Y ouTube') and are not quoted. Attendance: the minutes list members present and 'Members Absent: none'; the applicant and presenters are listed as appearing.",
+ "cost_usd": 0.01872747,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Tony Sculimbrene",
+   "role": "Chair of the Architectural Preservation District Commission (APDC)",
+   "status": "present",
+   "quote": "tony sculimbrene, 5 island road chair of the architectural preservation district commission (apdc)"
+  },
+  {
+   "name": "Darren Storms",
+   "role": "of Blue Sky Golf Lounge (applicant)",
+   "status": "present",
+   "quote": "darren storms, 35 upland ave of blue sky golf lounge at 5 summer street appeared before the board"
+  },
+  {
+   "name": "Susan Shillue",
+   "role": "Cook & Company (presenter, health insurance)",
+   "status": "present",
+   "quote": "susan shillue of cook & company provided a detailed overview of the fy2025 health insurance renewal"
+  },
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair of the Parks Commission",
+   "status": "present",
+   "quote": "anita scheipers, chair of the parks commission, gave a presentation on a revised proposal to redevelop marshall park."
+  },
+  {
+   "name": "Rebecca Johnson",
+   "role": "Minute Clerk",
+   "status": "not stated",
+   "quote": "rebecca johnson, minute clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No formal hearing on the Asian Imperial alteration of premises; a formal hearing to be re-noticed for a future meeting.",
+   "quote": "no vote was taken; a formal hearing will be re-noticed for a future meeting."
+  },
+  {
+   "decision": "Board held off on the UMass Memorial Satellite Emergency Facility support letter pending more information; Town Manager to communicate with UMass Memorial before formal action.",
+   "quote": "they held off on voting, citing a desire to ensure the letter accurately reflects community expectations"
+  },
+  {
+   "decision": "Revised Sick Leave Bank Policy draft to be brought back for further review.",
+   "quote": "town manager warren-dyment noted that a revised draft incorporating these changes would be brought back for further review."
+  },
+  {
+   "decision": "Town Manager to revise the Merit Award Policy and present a final version at a future meeting.",
+   "quote": "town manager warren-dyment agreed to revise the draft based on input and present a final version at a future meeting."
+  },
+  {
+   "decision": "Acceptance of Gift Policy to be further revised before a formal vote.",
+   "quote": "further revisions are expected before a formal vote."
+  },
+  {
+   "decision": "Updated Budget Task Force charge to be refined and reintroduced at a future meeting.",
+   "quote": "the updated charge will be reintroduced at a future meeting."
+  },
+  {
+   "decision": "Chair suggested further evaluation of 56 Carr Avenue's development potential before a final sell-or-hold recommendation.",
+   "quote": "chair nuzzolo suggested further evaluation of the site's development potential and alignment with broader planning goals before a final recommendation is made."
+  },
+  {
+   "decision": "Town Counsel to finalize minor edits to Annual Town Meeting warrant article language before posting and printing.",
+   "quote": "minor edits were in progress and would be finalized by town counsel prior to posting and printing."
+  },
+  {
+   "decision": "Town Manager to look into printing and mailing costs of the Annual Town Meeting warrant to all households and report back before any final decision.",
+   "quote": "town manager warren-dyment agreed to look into printing and mailing costs and report back at a future meeting before any final decision is made."
+  },
+  {
+   "decision": "Member Alonzo requested a report on the Village at Flat Hill now that the drainage basin has been redone.",
+   "quote": "action item: member alonzo stated that he would like to get a report on the village at flat hill now that the drainage basin has been redone."
+  },
+  {
+   "decision": "Board reviewed and signed the Town's accounts payable warrant (no vote recorded).",
+   "quote": "the board reviewed and signed the town's accounts payable warrant."
+  },
+  {
+   "decision": "Chair requested an update on the Brooks House (Article 10) be delivered at the Annual Town Meeting in May, as the APDC asked.",
+   "quote": "the apdc requested an update be delivered at the annual town meeting in may."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Health insurance FY2025 renewal premium increase",
+   "what_was_recorded": "The FY2025 health insurance renewal showed a premium increase of about 15%, the main budget concern discussed.",
+   "figures_as_printed": [
+    "approximately 15%",
+    "15%"
+   ],
+   "quote": "showed a significant premium increase of approximately 15%. she explained the contributing factors"
+  },
+  {
+   "topic": "Marshall Park redevelopment proposal cost",
+   "what_was_recorded": "The Parks Commission's full master plan was scaled back to a $13.7M proposal, with a backup $6.46M reduced version.",
+   "figures_as_printed": [
+    "$19M",
+    "$13.7M",
+    "$6.46M"
+   ],
+   "quote": "the original $19m full master plan was scaled back to a $13.7m proposal focused on current field and recreation areas, with a backup $6.46m reduced version."
+  },
+  {
+   "topic": "Marshall Park annual maintenance cost",
+   "what_was_recorded": "The Facilities Director developed a maintenance cost estimate for Marshall Park of $53,000 a year.",
+   "figures_as_printed": [
+    "$53,000"
+   ],
+   "quote": "facilities director chris ruth developed a detailed maintenance cost estimate of $53,000 annually."
+  },
+  {
+   "topic": "State House budget earmark",
+   "what_was_recorded": "The Town Manager reported the House budget includes a $50,000 earmark for educational programs in Lunenburg, likely for the school district.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the house budget includes a $50,000 earmark intended for educational programs in lunenburg"
+  },
+  {
+   "topic": "Cash gift for Adult Activity Center blinds",
+   "what_was_recorded": "The Board accepted a $6,900.00 monetary donation from Peter and Deborah Lincoln for the Lunenburg Adult Activity Center.",
+   "figures_as_printed": [
+    "$6,900.00"
+   ],
+   "quote": "the board voted to formally accept $6,900.00 monetary donation from peter and deborah lincoln"
+  },
+  {
+   "topic": "Accounts payable warrant signed",
+   "what_was_recorded": "The Chair stated an accounts payable warrant was signed in the amount printed in the minutes.",
+   "figures_as_printed": [
+    "$1,562,534,57"
+   ],
+   "quote": "chair nuzzolo stated there is an accounts payable warrant in the amount of $1,562,534,57."
+  },
+  {
+   "topic": "FY2025 and FY2026 operating budget projections",
+   "what_was_recorded": "Updated FY2025 and FY2026 operating budget projections were presented; the Board discussed health insurance cost pressures and whether stabilization funds or grants could offset them. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "town manager warren-dyment provided the board with updated projections for the fy2025 and fy2026 operating budgets"
+  },
+  {
+   "topic": "Merit award funding sources",
+   "what_was_recorded": "Questions were raised about funding sources for employee merit awards and the frequency of recognition cycles. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "questions were also raised about funding sources for awards and the frequency of recognition cycles."
+  },
+  {
+   "topic": "Mailing the Annual Town Meeting warrant to all households",
+   "what_was_recorded": "The Town Manager agreed to look into printing and mailing costs for mailing the warrant to all households. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "town manager warren-dyment agreed to look into printing and mailing costs and report back at a future meeting"
+  },
+  {
+   "topic": "56 Carr Avenue sell or hold",
+   "what_was_recorded": "The Board revisited whether to retain or sell the Town-owned property at 56 Carr Avenue; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "the board revisited the question of whether to retain or sell the town-owned property located at 56 carr avenue."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, pledge, board comment in memory of John Latanzi",
+   "resolution": "no action",
+   "quote": "member tom alonzo offered remarks in memory of john latanzi, a well-known and long-time community member who passed away recently.",
+   "tags": [
+    "memorial"
+   ]
+  },
+  {
+   "topic": "Announcements (yard waste, Marshall Park meeting, vendor fair)",
+   "resolution": "no action",
+   "quote": "he also stated that a marshall park community meeting would be held on saturday, april 26 at 10:00 am",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Communications from other boards: Architectural Preservation District Commission",
+   "resolution": "APDC asked for Brooks House update at Annual Town Meeting",
+   "quote": "the apdc requested an update be delivered at the annual town meeting in may.",
+   "tags": [
+    "APDC",
+    "Brooks House",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Blue Sky Golf entertainment, jukebox and amusement licenses",
+   "resolution": "approved 5-0-0",
+   "quote": "motion by member alonzo to approve the weekday entertainment and jukebox license and automatic amusement license for blue sky golf, pals golf lounge, llc, 5 summer street.",
+   "tags": [
+    "licensing",
+    "entertainment",
+    "alcohol and amusement"
+   ]
+  },
+  {
+   "topic": "Asian Imperial alteration of licensed premises (outdoor patio)",
+   "resolution": "no vote; formal hearing to be re-noticed",
+   "quote": "chair nuzzolo stated that although noticed as a public hearing, no formal hearing will be held.",
+   "tags": [
+    "licensing",
+    "alcohol",
+    "patio"
+   ]
+  },
+  {
+   "topic": "FY2025 health insurance renewal",
+   "resolution": "presented; no action",
+   "quote": "susan shillue of cook & company provided a detailed overview of the fy2025 health insurance renewal",
+   "tags": [
+    "health insurance",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Marshall Park redevelopment presentation",
+   "resolution": "presented; final vote to occur at Town Meeting",
+   "quote": "anita scheipers, chair of the parks commission, gave a presentation on a revised proposal to redevelop marshall park.",
+   "tags": [
+    "Marshall Park",
+    "parks",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Town Manager report (House earmark, Flat Hill Road bridge, Eagle House, Ritter Building)",
+   "resolution": "no action",
+   "quote": "town manager jennifer warren-dyment reported that the house budget includes a $50,000 earmark",
+   "tags": [
+    "town manager",
+    "capital projects"
+   ]
+  },
+  {
+   "topic": "Letter of support for UMass Memorial Satellite Emergency Facility",
+   "resolution": "held off on vote; more information sought",
+   "quote": "consider letter of support for the establishment of a satellite emergency facility (sef) by umass memorial health (ummh)",
+   "tags": [
+    "health care",
+    "regional"
+   ]
+  },
+  {
+   "topic": "Sick Leave Bank Policy",
+   "resolution": "revised draft to return",
+   "quote": "discussion on sick leave bank policy",
+   "tags": [
+    "personnel policy"
+   ]
+  },
+  {
+   "topic": "Merit Award Policy",
+   "resolution": "continued; revised draft to return",
+   "quote": "discussion on merit award policy",
+   "tags": [
+    "personnel policy"
+   ]
+  },
+  {
+   "topic": "Acceptance of Gift Policy",
+   "resolution": "continued; further revisions before vote",
+   "quote": "discussion on acceptance of gift policy",
+   "tags": [
+    "gifts",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Cash gift from Peter and Deborah Lincoln",
+   "resolution": "accepted 5-0-0",
+   "quote": "acceptance of cash gift from peter and deborah lincoln for the lunenburg adult activity center",
+   "tags": [
+    "gifts",
+    "Adult Activity Center"
+   ]
+  },
+  {
+   "topic": "Budget Task Force charge",
+   "resolution": "continued to a future meeting",
+   "quote": "discussion on updated charge for budget task force",
+   "tags": [
+    "budget",
+    "task force"
+   ]
+  },
+  {
+   "topic": "56 Carr Avenue sell or hold",
+   "resolution": "continued; further evaluation suggested",
+   "quote": "discussion on 56 carr ave sell or hold",
+   "tags": [
+    "town property",
+    "56 Carr Ave"
+   ]
+  },
+  {
+   "topic": "FY2025/FY2026 budgets, capital plan, Annual Town Meeting warrant",
+   "resolution": "discussed; warrant mailing to be studied",
+   "quote": "discussion on fy2025 budget, fy2026 budget, capital plan, and annual town meeting warrant articles",
+   "tags": [
+    "budget",
+    "capital plan",
+    "Town Meeting warrant"
+   ]
+  },
+  {
+   "topic": "Minutes approval and accounts payable warrant",
+   "resolution": "minutes approved 5-0-0; warrant signed",
+   "quote": "motion by member alonzo to approve the select board meeting minutes of january 30, 2024.",
+   "tags": [
+    "minutes",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and Annual Town Meeting date",
+   "resolution": "noted",
+   "quote": "the next scheduled select board meetings are on april 22, 2025, and may 3, 2025.",
+   "tags": [
+    "schedule",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Executive session (collective bargaining; Police Chief negotiations)",
+   "resolution": "entered 5-0-0",
+   "quote": "motion by chair nuzzolo to enter executive session and not return to open session, pursuant to m.g.l. c. 30a §21(a)(3) to discuss strategy with respect to collective bargaining",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "Police Chief"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:20 PM",
+   "quote": "the meeting was adjourned at 10:20 pm following the executive session vote.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "licensing",
+  "alcohol and entertainment licenses",
+  "health insurance",
+  "Marshall Park",
+  "capital plan",
+  "FY2025 and FY2026 budget",
+  "Annual Town Meeting",
+  "personnel policy",
+  "gifts",
+  "executive session",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

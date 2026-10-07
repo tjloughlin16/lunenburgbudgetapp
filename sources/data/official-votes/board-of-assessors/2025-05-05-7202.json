@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-05-05",
  "docid": "7202",
@@ -12,24 +12,295 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of February 19, 2025, as amended",
-   "moved_by": "Sarah Cammer",
+   "motion": "Approve the minutes of February 19, 2025, as amended.",
+   "moved_by": "",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
    "procedural": true,
    "quote": "there was a motion to approve the minutes of february 19, 2025, as amended by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "Adjourn the open meeting and enter the executive session, not to return to the open session after exiting the executive session",
+   "motion": "Adjourn the open meeting and enter executive session, not returning to open session after exiting it.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn the open meeting and enter the executive session, ===page 6=== notto return to the open session after exiting the executive session by sarah cammer, seconded …by john rabbitt. ",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to adjourn the open meeting and enter the executive session,"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned document extracted via OCR with visible OCR errors ('notto' for 'not to', 'favör' for 'favor'). These errors are preserved in quotes as verbatim from the original text.",
- "cost_usd": 0.06666939999999999
+ "note": "Text is macOS Vision OCR and the page order is scrambled in places (e.g. page 5 begins with 'data.'), so quotes are copied as OCR printed them and may carry OCR errors. The executive session summary (pp.1-2, 'Executive Session started at 8:15PM', 'Meeting adjourned 9:18PM') repeats on two pages and conflicts with the open meeting (opened 6:44 PM, closed 8:10 PM on p.6). The executive session header calls the clerk 'Jack Rabbitt' while the rest of the minutes say 'John Rabbitt'; I did not merge them. The minutes list four sets of minutes for approval but record a motion only for the February 19, 2025 minutes. The denial and lien signings are actions taken, not votes, so they are recorded as decisions. The 2026 abatement figure is printed as '$27, 106.21' with a space. Public comment: 'There were no comments from the public' appears twice and names no speaker.",
+ "cost_usd": 0.01755077,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair brian laffond, vice chair sarah cammer, clerk john rabbitt"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "chair brian laffond, vice chair sarah cammer, clerk john rabbitt"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair brian laffond, vice chair sarah cammer, clerk john rabbitt"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "principal assessor lynda mcquade"
+  },
+  {
+   "name": "Denise McCue",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "denise mccue has already started to pull sales and records."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "One FY2025 abatement denied due to withdrawal following the ATB settlement.",
+   "quote": "1 abatement denied due to withdrawal from attorney for atb settlement."
+  },
+  {
+   "decision": "Denial of the abatement application signed by Brian Laffond, Chair, and Board Members Sarah Cammer and Jack Rabbitt.",
+   "quote": "denial of abatement application was signed by brian laffond, chair and board"
+  },
+  {
+   "decision": "Board of Assessors signed two liens for new Chapter 61A.",
+   "quote": "board of assessors signed 2 liens for new chapter 61a."
+  },
+  {
+   "decision": "Future inspection contracts to state the expectation that residents be notified before inspection, not after.",
+   "quote": "so future contracts will be clear about our expectations"
+  },
+  {
+   "decision": "Office declined to approve the cyclical inspection invoice until numbers and more information are provided.",
+   "quote": "the office declined to approve until numbers and more information can be provided."
+  },
+  {
+   "decision": "Board requested a complete report from Vision on condo factors.",
+   "quote": "the board is requesting complete report from vision."
+  },
+  {
+   "decision": "Board will request Rena Sweezey attend the next meeting on the Neighborhood/Site Index Plan.",
+   "quote": "the board will request rena sweezey attend the next meeting to discuss this topic."
+  },
+  {
+   "decision": "John Rabbitt to make suggestions and recommendations on the executive session minutes of April 16, 2025.",
+   "quote": "john rabbitt will be making suggestions and recommendations"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DOR-approved abatement, 8 of 58 PY2024 application",
+   "what_was_recorded": "The Department of Revenue approved an abatement of $5,054.85 for the 8 of 58 application, which the Board of Assessors then granted.",
+   "figures_as_printed": [
+    "$5,054.85"
+   ],
+   "quote": "the 8 of 58 application was approved by the department of revenue for an abatement of $5,054.85 by the board of assessors."
+  },
+  {
+   "topic": "FY2026 abatements received and granted",
+   "what_was_recorded": "Of 37 abatements received for 2026, 22 were granted totaling the amount printed, and 15 were denied.",
+   "figures_as_printed": [
+    "$27, 106.21"
+   ],
+   "quote": "22 were granted totaling $27, 106.21"
+  },
+  {
+   "topic": "Cyclical inspection postcard invoice",
+   "what_was_recorded": "An invoice of $190 for postcards about cyclical inspections was approved and signed.",
+   "figures_as_printed": [
+    "$190"
+   ],
+   "quote": "an invoice totaling $190 was approved and signed."
+  },
+  {
+   "topic": "Cyclical inspection contractor credit",
+   "what_was_recorded": "The inspection company credited the account $500 after the notification issue.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "there was a $500 credit to the account by the company completing"
+  },
+  {
+   "topic": "Cyclical inspection vendor invoice, not approved",
+   "what_was_recorded": "An invoice for the inspections was received without supporting data and the office declined to approve it; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "an invoice for the inspections has been received, without any supporting"
+  },
+  {
+   "topic": "State reimbursements for FY 2025",
+   "what_was_recorded": "The MDM1, Veterans exemption and motor vehicle excise reimbursement forms were approved by the Department of Revenue, with reimbursement totals printed for each.",
+   "figures_as_printed": [
+    "$103k",
+    "$78k",
+    "$12,142"
+   ],
+   "quote": "mdm1 reimbursement totaled $103k."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: FY2025 abatements, liens and Chapter Land",
+   "resolution": "held; denial signed, two liens signed, Chapter Land reviewed; no vote recorded",
+   "quote": "executive session started at 8:15pm",
+   "tags": [
+    "executive session",
+    "abatements",
+    "chapter land",
+    "liens"
+   ]
+  },
+  {
+   "topic": "Call to order and opening comments",
+   "resolution": "no action; chair noted procedure changed for cyclical inspection notice",
+   "quote": "the meeting opened at 6:44 pm.",
+   "tags": [
+    "cyclical inspections",
+    "taxpayer concerns"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comments from the public",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Principal Assessor status report: abatements",
+   "resolution": "reported; 2026 abatement counts given",
+   "quote": "for 2026, 37 abatements have been received.",
+   "tags": [
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Cyclical inspection postcards and schedule",
+   "resolution": "reported; inspections restarting May 12",
+   "quote": "220 postcards were mailed out for the next cyclical inspections restarting on",
+   "tags": [
+    "cyclical inspections",
+    "postcards"
+   ]
+  },
+  {
+   "topic": "Chapter Land applications and liens",
+   "resolution": "reported; letters sent to 8 applicants; new growth work noted",
+   "quote": "while reorganizing all the chapter land applications it was determined that",
+   "tags": [
+    "chapter land",
+    "liens",
+    "new growth"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved Feb 19, 2025 minutes as amended; other minutes listed without a recorded vote",
+   "quote": "there was a motion to approve the minutes of february 19, 2025, as amended by sarah cammer, seconded by john rabbitt. all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Invoices, expense vouchers and billing errors",
+   "resolution": "approved $190 postcard invoice; declined inspection invoice",
+   "quote": "an invoice totaling $190 was approved and signed.",
+   "tags": [
+    "invoices",
+    "cyclical inspections",
+    "billing"
+   ]
+  },
+  {
+   "topic": "DOR reimbursement forms FY 2025",
+   "resolution": "reported; all approved by the Department of Revenue",
+   "quote": "mdm1 reimbursement totaled $103k.",
+   "tags": [
+    "reimbursements",
+    "veterans exemption",
+    "motor vehicle excise"
+   ]
+  },
+  {
+   "topic": "Neighborhood/Site Index Plan for DOR directive",
+   "resolution": "reported; Board to invite Rena Sweezey to next meeting",
+   "quote": "lynda mcquade received approval at the town meeting",
+   "tags": [
+    "neighborhood index",
+    "DOR directive"
+   ]
+  },
+  {
+   "topic": "Reading Your Vision Card",
+   "resolution": "reported; Board requested complete report from Vision",
+   "quote": "the board is requesting complete report from vision.",
+   "tags": [
+    "vision",
+    "property record cards",
+    "condo factors"
+   ]
+  },
+  {
+   "topic": "Town Meeting Clause 41 and 17 exemption warrant",
+   "resolution": "reported; exemption articles passed and in formal review",
+   "quote": "all the exemptions articles passed and are now going through the formal",
+   "tags": [
+    "exemptions",
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "listed; May 21, 2025 meeting canceled",
+   "quote": "upcoming meetings: monday, may 19, 2025, may 21, 2025 (canceled), wednesday,",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "no action; chair thanked John Rabbitt, whose last meeting this was",
+   "quote": "brian laffond thanked john rabbitt for his work on the board, especially his",
+   "tags": [
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Adjourn to executive session",
+   "resolution": "passed; meeting closed at 8:10 PM per the open-session page",
+   "quote": "there was a motion to adjourn the open meeting and enter the executive session,",
+   "tags": [
+    "adjournment",
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "abatements",
+  "chapter land",
+  "cyclical inspections",
+  "liens",
+  "exemptions",
+  "DOR reimbursements",
+  "minutes approval",
+  "executive session",
+  "vision property records",
+  "town meeting warrant"
+ ],
+ "dropped_unquoted_by_field": {}
 }

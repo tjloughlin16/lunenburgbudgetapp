@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-01-09",
  "docid": "6944",
@@ -12,31 +12,288 @@
  },
  "votes": [
   {
-   "motion": "relay to Carter Terenzi that the Committee is all in agreement with the suggested timeline and the individual topics by date",
+   "motion": "Relay to Carter Terenzi that the Committee agrees with his suggested timeline and the individual topics by date.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tanya Dall",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "there was a motion by jay simeone, seconded by tanya dall to relay to carter terenzi that the committee is all in agreement with his suggested timeline and the individual topics by date. jean russell aye, tanya dall aye, jay simeone aye, chris menard aye."
+   "quote": "there was a motion by jay simeone, seconded by tanya dall to relay to carter terenzi that the committee is all in agreement with his suggested timeline"
   },
   {
-   "motion": "approve the minutes from December 19th",
+   "motion": "Approve the minutes from December 19th.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tanya Dall",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from december 19th by jay simeone, seconded by tanya dall. jean russell aye, tanya dall aye, jay simeone aye, chris menard aye."
+   "quote": "there was a motion to approve the minutes from december 19th by jay simeone, seconded by tanya dall."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tanya Dall",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "there was a motion to adjourn by jay simeone, seconded by tanya dall. roll call vote. jean russell aye, tanya dall aye, jay simeone aye, chris menard aye."
+   "quote": "there was a motion to adjourn by jay simeone, seconded by tanya dall. roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0793754
+ "note": "Text extraction, not a scan; no vote is unreadable. Three motions are recorded with counts; all were unanimous 4-0 on the roll as printed. Some extracted words carry ligature artefacts (e.g., 'conﬂicts', 'OƯice'), so the quotes avoid those words. Jean Russell is recorded as attending by Zoom. The December 19 minutes themselves are not in this text, and the item 14 public-comment entry names no speaker. Dollar figures are quoted as printed; the 'percentage' '%12 to 15%' is printed with the percent sign before the number.",
+ "cost_usd": 0.014504570000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell (zoom)"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "vice chair jean russell (zoom)"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent member: clerk tom gray"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chris Menard will inquire with Caesar Nuzzolo and the Select Board, asking them to bring up grant-writing procedures and policies at their next meeting.",
+   "quote": "chris menard will inquire with caesar nuzzolo and the select board"
+  },
+  {
+   "decision": "Chris Menard will change the Committee's documents to PDF before sending them to the Clerk's Office, because the web formatting differs from the app.",
+   "quote": "chris menard will change the documents to pdf before sending them to the clerk"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public comment: alleged misuse of Cemetery Commission lot-sale funds",
+   "what_was_recorded": "A resident alleged that the Cemetery Commission misused $6,000 over an 18-month period through the sale of lot funds; the minutes record this as a comment, not a finding.",
+   "figures_as_printed": [
+    "$6,000"
+   ],
+   "quote": "there has been a misuse of $6,000 over an 18-month period by the cemetery commission through the sale of lot funds."
+  },
+  {
+   "topic": "FY26 health insurance rates",
+   "what_was_recorded": "No estimates for FY26 health insurance rates were available; market trends were reported as running at the percentage range printed.",
+   "figures_as_printed": [
+    "%12 to 15%"
+   ],
+   "quote": "are no estimates for health insurance rates but did say that market trends are running %12 to 15%."
+  },
+  {
+   "topic": "Scholarship to athletics department",
+   "what_was_recorded": "A former Lunenburg student was reported as awarding a scholarship to the athletics department (a committee report, not a Town line item).",
+   "figures_as_printed": [
+    "15,000 dollars"
+   ],
+   "quote": "a former lunenburg student awarded a 15,000 dollars scholarship to"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Cemetery Commission and vital records program",
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street",
+   "quote": "john bowen, 162 highland street, reiterates a previous comment related to the cemetery commission."
+  },
+  {
+   "topic": "Public comment, closing session",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "there were no comments from the public."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened at 7:31 PM",
+   "quote": "the meeting opened at 7:31 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: Superintendent retirement",
+   "resolution": "noted, no action",
+   "quote": "chris menard states that the superintendent announced to the town and the school",
+   "tags": [
+    "schools",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Public comment: Cemetery Commission, vital records",
+   "resolution": "no action",
+   "quote": "john bowen, 162 highland street, reiterates a previous comment related to the cemetery commission.",
+   "tags": [
+    "public comment",
+    "cemetery commission",
+    "town clerk"
+   ]
+  },
+  {
+   "topic": "Scheduled meetings",
+   "resolution": "no action",
+   "quote": "there are no meetings.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director reports",
+   "resolution": "no reports presented",
+   "quote": "the town manager and finance director have",
+   "tags": [
+    "town manager",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Review budget season schedule",
+   "resolution": "approved relay of timeline to Carter Terenzi (4-0)",
+   "quote": "the finance committee report is due to the town manager on monday march",
+   "tags": [
+    "budget season",
+    "fy26 budget",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "FY26 budget discussions: health insurance",
+   "resolution": "noted, no estimates yet",
+   "quote": "are no estimates for health insurance rates but did say that market trends are running %12 to 15%.",
+   "tags": [
+    "fy26 budget",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "Town Manager search committee update",
+   "resolution": "noted, no action",
+   "quote": "next tuesday there will be a marathon session at",
+   "tags": [
+    "town manager",
+    "select board"
+   ]
+  },
+  {
+   "topic": "School funding formula, hold harmless communities",
+   "resolution": "noted, no action",
+   "quote": "the town is no longer in the hold harmless category.",
+   "tags": [
+    "school funding",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Grant writing services",
+   "resolution": "Chair to ask Select Board to take it up",
+   "quote": "chris menard reiterates that there needs to be procedures and policies",
+   "tags": [
+    "grants",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Budget task force recommendations",
+   "resolution": "no discussion",
+   "quote": "there were no discussions.",
+   "tags": [
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Minutes of December 19 meeting",
+   "resolution": "approved 4-0",
+   "quote": "jay simeone had 1 minor correction on the minutes from december 19th.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Committee reports: School Committee",
+   "resolution": "noted, no action",
+   "quote": "jean russell states that the school committee had a meeting last night.",
+   "tags": [
+    "school committee",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Actions and topics for future meetings",
+   "resolution": "no additions",
+   "quote": "there are no additional topics to add to future agendas.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Important dates",
+   "resolution": "no additions",
+   "quote": "there are no additional important dates.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "noted",
+   "quote": "2/13/2025 budget season begins",
+   "tags": [
+    "budget season"
+   ]
+  },
+  {
+   "topic": "Public comment, closing",
+   "resolution": "no comments",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 4-0, closed 8:00 PM",
+   "quote": "there was a motion to adjourn by jay simeone, seconded by tanya dall. roll call",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "fy26 budget",
+  "budget season",
+  "health insurance",
+  "town manager search",
+  "school funding",
+  "grant writing",
+  "cemetery commission",
+  "public comment",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

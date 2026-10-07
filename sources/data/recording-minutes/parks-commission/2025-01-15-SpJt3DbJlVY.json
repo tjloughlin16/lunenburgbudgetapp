@@ -308,5 +308,172 @@
    "at": "2026-10-06T18:17:27Z",
    "cost_usd": 0.211219
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01152025-6960",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2025-01-15-minutes-6960.txt",
+   "path": "sources/meetings/parks-commission/2025-01-15-minutes-6960.pdf"
+  },
+  "official_sha256": "7088e4d739d8a443a64e0aea93f94a6490df6a1048bdee13cde55556b2b85568",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree that no formal votes or transfers occurred and on the wildlife program fee, but the official minutes are a thin summary missing most design, scheduling and fundraising content that ours captured. The one item to check is the Board of Health follow-up: ours says a written answer on use of the funds, while the official minutes tie it to a sewer connection instead of a septic system.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Non-procedural votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "none. a. scheipers notes the ones that came in she and k. menard signed-off on as approved by the commission.",
+    "note": "Neither record has a formal vote; the official minutes record invoice approval by sign-off, not a vote.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers",
+    "ours": "TRANSFERS: (none listed)",
+    "official": "",
+    "note": "Neither record has any transfers.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Wildlife Encounters program fee",
+    "ours": "Wildlife encounters program fee: $30 cap, 10 per person",
+    "official": "junior zookeeper program, $10 per person with a $30 cap for families.",
+    "official_reading": "$10 per person, $30 cap for families",
+    "note": "Same fee and cap; captions dropped the dollar sign on the $10 per person figure.",
+    "t": 1011
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Board of Health money / written answer",
+    "ours": "Facilities director to follow up with Board of Health and get written answer on use of the funds.",
+    "official": "c. ruth will reach out to the board of health.",
+    "note": "Both record a Board of Health follow-up by the facilities director; ours adds a written answer and does not mention the sewer-connection vs septic purpose, so check the recording around t=1991.",
+    "t": 1991
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town beach usage data (MyRec scans)",
+    "ours": "Town beach usage data (MyRec scans): 1,200, 36 6, 1 183",
+    "official": "",
+    "note": "Beach usage figures appear only in ours and are garbled by captions; the official minutes print no such figures.",
+    "t": 291
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Skate park group fundraising",
+    "ours": "Skate park group fundraising: $50,000",
+    "official": "",
+    "note": "A $50,000 fundraising figure appears only in ours; the official minutes record no skate park item.",
+    "t": 3510
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Phase decision for town meeting borrowing article",
+    "ours": "Commission will decide Feb 19 whether to pursue phase one only, one plus 2A, or all phases for the town meeting borrowing article.",
+    "official": "",
+    "note": "A decision on construction phases is not in the official minutes; check the recording near t=1865.",
+    "t": 1865
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Announcer booths, utilities and access drive lights",
+    "ours": "Announcer booths to be left out for now; utilities (power and water) to be run to the locations and capped for later booths.",
+    "official": "",
+    "note": "Design decisions (booths, utilities, and the access-drive lighting lean) appear only in ours.",
+    "t": 2396
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Earth Day cleanup approach",
+    "ours": "Earth Day cleanup: keep the informal individual-participation approach as last year, with an idea to add something for younger children.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3213
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Master planning steering committee and meeting schedule",
+    "ours": "Special workshop on park user fees set for Feb 5; regular meeting Feb 19.",
+    "official": "",
+    "note": "Next-meeting dates and the no-action steering committee item appear only in ours.",
+    "t": 3592
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Lifeguard WSI test reimbursement",
+    "ours": "",
+    "official": "k. menard asked if the town reimburses the lifeguards for the cost of the wsi test. a. clement stated yes.",
+    "note": "Q&A about reimbursing lifeguards appears only in the official minutes; no amount is printed.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Marshall Park memorials and warrant article split",
+    "ours": "",
+    "official": "k. menard will go through her notes to see what memorials were currently on the property.",
+    "note": "Official action items (memorials review; checking whether the Marshall Park article can be split) are absent from ours.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Chair",
+    "ours": "Anita shyers (chair)",
+    "official": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan",
+    "official_reading": "Anita Scheipers",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Clerk",
+    "ours": "Karen man (member)",
+    "official": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan",
+    "official_reading": "Karin Menard",
+    "note": "Misheard name; official lists her as Clerk.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Chris",
+    "ours": "Chris (member); Chris (facilities director)",
+    "official": "additional attendees: angela clement, and chris ruth",
+    "note": "Ours lists two Chrises (a member and a facilities director); official has Christopher Sullivan as member and Chris Ruth as facilities director, so confirm both were present.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Tim and Angela",
+    "ours": "Tim (member); Angela (Recreation director)",
+    "official": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan",
+    "note": "Both records list Tim Lawless and Angela Clement.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "absent: colleen shapiro",
+    "note": "Vice Chair absence is only in the official minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:37:31Z",
+   "cost_usd": 0.234783
+  }
  }
 }

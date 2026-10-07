@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-01-21",
  "docid": "6972",
@@ -12,12 +12,12 @@
  },
  "votes": [
   {
-   "motion": "Approve the lien (Privilege Fee) for 12 Kimball St.",
+   "motion": "Vote to assess the lien (Privilege Fee) on 12 Kimball St.",
    "moved_by": "Scott D.",
    "seconded_by": "Joe Hurley",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: scott d. second: joe hurley to vote for the lien (privilege fee) on 12 kimball st. roll call vote: joe-aye, scott-aye and brett-aye."
+   "quote": "to vote for the lien (privilege fee) on 12 kimball st. roll call vote: joe-aye, scott-aye and brett-aye."
   },
   {
    "motion": "Accept the FY26 budget.",
@@ -25,18 +25,363 @@
    "seconded_by": "Joe H.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: scott d. second: joe h. to accept the fy26 budget. roll call vote: joe-aye, scott-aye and brett-aye."
+   "quote": "to accept the fy26 budget. roll call vote: joe-aye, scott-aye and brett-aye."
   },
   {
-   "motion": "Adjourn.",
+   "motion": "Adjourn the meeting at 7:31pm.",
    "moved_by": "Joe Hurley",
    "seconded_by": "Scott D.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: joe hurley second: scott d. to adjourn at 7:31pm. roll call vote: scott-aye, joe-aye, and brett-aye."
+   "quote": "to adjourn at 7:31pm. roll call vote: scott-aye, joe-aye, and brett-aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07259040000000001
+ "dropped_unquoted": 1,
+ "note": "Text is extracted minutes, not a scan; all three votes are recorded roll-call votes with printed results. The Commission's agreements to raise capital by $20K and to have CTE check cut-offs are recorded without a motion or vote and are listed as decisions. Attendance is listed for the whole Zoom meeting; each person is marked remote on that basis. Paula, Tyler and Insituform Technologies are named in the minutes but did not take part, so they are not listed as attendees. The Mass 1 repair figure of $140K is printed beside the $125K capital figure without a clear statement of which fund it came from.",
+ "cost_usd": 0.017568570000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "remote",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "remote",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "remote",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: chair- mike mackin and eli torres."
+  },
+  {
+   "name": "Eli Torres",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: chair- mike mackin and eli torres."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to increase the FY26 Capital Plan by another $20K, bringing the proposed Capital figure up from $125K.",
+   "quote": "the commission agreed to bump the capital plan another $20k."
+  },
+  {
+   "decision": "Bill agreed to have CTE check the cut-offs at the other stations, funded from Retained Earnings.",
+   "quote": "bill agreed they could do that and take money from retained earnings."
+  },
+  {
+   "decision": "Brett directed that the absent member (Eli Torres) item be added to a future agenda.",
+   "quote": "brett requested this be added to a future agenda."
+  },
+  {
+   "decision": "Bill will check whether Kimball St. needs to be discussed one more meeting.",
+   "quote": "bill will check if kimball st. needs to be discussed one more meeting."
+  },
+  {
+   "decision": "Bill will reach out to the low bidder for the manhole repair to get the work started in the spring.",
+   "quote": "he will reach out to them to get the ball rolling in the spring."
+  },
+  {
+   "decision": "Future agenda items set: updates on manhole repairs, 2nd quarter demands, and the Assistant to Business Manager position.",
+   "quote": "future agenda items - updates on manhole repairs, 2nd quarter demands, assistant to business manager."
+  },
+  {
+   "decision": "Bill stated he is not suggesting any rate increase for FY26.",
+   "quote": "bill shared the revenue spreadsheet and stated that he is not suggesting any rate increase."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY26 total proposed expenses",
+   "what_was_recorded": "The total proposed FY26 expenses are stated as $1.866 million after the capital increase.",
+   "quote": "the total proposed expenses for fy26 would be $1.866 million.",
+   "figures_as_printed": [
+    "$1.866 million"
+   ]
+  },
+  {
+   "topic": "FY25 capital spending",
+   "what_was_recorded": "FY25 capital was $368K, as there was a lot that needed to be done.",
+   "quote": "in fy25. they put in $368k for capital as there was a lot that needed to be done.",
+   "figures_as_printed": [
+    "$368K"
+   ]
+  },
+  {
+   "topic": "FY25 Dana St. station project",
+   "what_was_recorded": "FY25 budgeted $172K for Dana St. station work plus other repairs, totaling $368K.",
+   "quote": "bill replied in fy25, they budgeted $172k for work at dana st. station plus other repairs to total $368k",
+   "figures_as_printed": [
+    "$172K",
+    "$368K"
+   ]
+  },
+  {
+   "topic": "FY26 capital budget",
+   "what_was_recorded": "FY26 capital is budgeted at $80K for a Twin City station generator and $10K for spare pumps, then raised to $125K to be safe.",
+   "quote": "but in fy26, they are just budgeting $80k for a generator at twin city station and $10k for spare pumps.",
+   "figures_as_printed": [
+    "$80K",
+    "$10K",
+    "$125K"
+   ]
+  },
+  {
+   "topic": "Capital raised by $20K",
+   "what_was_recorded": "The Commission agreed to increase the capital plan by a further $20K.",
+   "quote": "the commission agreed to bump the capital plan another $20k.",
+   "figures_as_printed": [
+    "$20K"
+   ]
+  },
+  {
+   "topic": "Mass 1 repair cost versus capital figure",
+   "what_was_recorded": "The Commission noted the Mass 1 repair cost about $140K, and Scott asked whether an emergency repair would double the cost.",
+   "quote": "the commission discussed the figure of $125k for capital, noting the repair to mass 1 was about $140k.",
+   "figures_as_printed": [
+    "$125K",
+    "$140K"
+   ]
+  },
+  {
+   "topic": "CTE outsourcing contract",
+   "what_was_recorded": "Purchase of Service outsourcing: the CTE contract is listed at $148K, plus $90K for other work such as line jetting.",
+   "quote": "purchase of service - outsourcing - cte contract is listed at $148k and an additional $90k covers other work such as line jetting.",
+   "figures_as_printed": [
+    "$148K",
+    "$90K"
+   ]
+  },
+  {
+   "topic": "Expected revenues and delinquency",
+   "what_was_recorded": "Revenues are expected at about $1.5 million, but a 27% delinquency rate means revenues will be lower.",
+   "quote": "they are expecting revenues of about $1.5 million but have a delinquency rate of 27%, so revenues would be lower.",
+   "figures_as_printed": [
+    "$1.5 million",
+    "27%"
+   ]
+  },
+  {
+   "topic": "Other fees and betterments",
+   "what_was_recorded": "Other fees and paid-off betterments would add about $368K to revenue.",
+   "quote": "he added there are other fees collected, along with betterments paid off, which would add about $368k.",
+   "figures_as_printed": [
+    "$368K"
+   ]
+  },
+  {
+   "topic": "Retained Earnings draw to cover shortfall",
+   "what_was_recorded": "The gap would be covered from Retained Earnings, which would need to supply $300K.",
+   "quote": "they would make up the difference from retained earnings, from which they would need to take $300k.",
+   "figures_as_printed": [
+    "$300K"
+   ]
+  },
+  {
+   "topic": "Sewage disposal and rate increases",
+   "what_was_recorded": "Fitchburg rises 7% each year and Leominster 3% next year, so Bill said no rate increase is needed.",
+   "quote": "fitchburg will go up 7% each year and leominster will go up 3% next year",
+   "figures_as_printed": [
+    "7%",
+    "3%"
+   ]
+  },
+  {
+   "topic": "Stabilization Fund transfer policy",
+   "what_was_recorded": "The transfer to the Stabilization Fund is 10% of any surplus.",
+   "quote": "the transfer to stabilization fund is 10% of any surplus.",
+   "figures_as_printed": [
+    "10%"
+   ]
+  },
+  {
+   "topic": "Delinquent accounts owed",
+   "what_was_recorded": "About 300 customers owe a total over $3,000 in second quarter billing.",
+   "quote": "there are 300 customers that owe for a total over $3,000.",
+   "figures_as_printed": [
+    "$3,000"
+   ]
+  },
+  {
+   "topic": "Late fee calculation problem",
+   "what_was_recorded": "The billing system had a problem calculating the correct $10 late fee.",
+   "quote": "were having a problem with calculating the correct $10 late fee.",
+   "figures_as_printed": [
+    "$10"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Draw from Retained Earnings to cover the revenue shortfall after other fees and betterments.",
+   "outcome": "described by Bill; no transfer vote recorded",
+   "amount_as_printed": "$300K",
+   "quote": "they would make up the difference from retained earnings, from which they would need to take $300k."
+  },
+  {
+   "description": "Use Retained Earnings to pay for CTE to check cut-offs at other stations; unspent funds return to Retained Earnings.",
+   "outcome": "agreed in discussion; no transfer vote recorded",
+   "amount_as_printed": "not stated",
+   "quote": "bill agreed they could do that and take money from retained earnings."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Andrew Valliere",
+   "stated_role": "Sewer Business Manager",
+   "topic": "new job, billing challenges",
+   "quote": "andrew replied there have been billing challenges, but he is happy to learn as he goes along."
+  },
+  {
+   "speaker": "Brett Ramsden",
+   "stated_role": "Vice-Chair",
+   "topic": "thanks to staff",
+   "quote": "brett thanked the staff for keeping everything running."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and roll call",
+   "resolution": "meeting opened 6:26 pm; roll call taken",
+   "quote": "brett opened the meeting at 6:26 pm. and did a roll call of attendees.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "brett welcomed andrew and asked how he is enjoying the job.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Business Manager position new hire",
+   "resolution": "no action",
+   "quote": "brett said again that they are happy to have andrew on board.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "12 Kimball St. privilege fee lien",
+   "resolution": "lien approved 3-0",
+   "quote": "brett stated that they will need to vote to assess their privilege fee.",
+   "tags": [
+    "lien",
+    "privilege fee",
+    "connection fee"
+   ]
+  },
+  {
+   "topic": "FY2026 budget",
+   "resolution": "accepted 3-0, after capital raised by $20K",
+   "quote": "bill screen-shared the spreadsheet for the fy26 budget and reviewed the line items.",
+   "tags": [
+    "budget",
+    "capital plan",
+    "revenue",
+    "rates"
+   ]
+  },
+  {
+   "topic": "Absent members",
+   "resolution": "no update; placed on future agenda at Brett's request",
+   "quote": "bill reported that he has no update on eli torres and brett requested this be added to a future agenda.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "DPW and business manager updates",
+   "resolution": "reported; no action",
+   "quote": "bill said this work is completed. they replaced the suction lines earlier this month and it went well.",
+   "tags": [
+    "billing",
+    "delinquency",
+    "staffing",
+    "line repair",
+    "manhole repair"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "placed on future agenda",
+   "quote": "future agenda items - updates on manhole repairs, 2nd quarter demands, assistant to business manager.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "brett thanked the staff for keeping everything running.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:31pm, 3-0",
+   "quote": "to adjourn at 7:31pm. roll call vote: scott-aye, joe-aye, and brett-aye.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "FY26 budget",
+  "capital plan",
+  "billing and delinquency",
+  "privilege fee lien",
+  "retained earnings",
+  "staffing",
+  "line repairs",
+  "manhole repair",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

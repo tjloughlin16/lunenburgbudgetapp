@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-04-15",
  "docid": "7161",
@@ -12,39 +12,247 @@
  },
  "votes": [
   {
-   "motion": "Waive all interest on account #101215 6567 and accept final payment of $5,626.43",
+   "motion": "Waive all interest on the final invoice for account # 101215 6567 and accept final payment of $5,626.43 (50 Massachusetts Ave.).",
    "moved_by": "Scott D.",
    "seconded_by": "Joe H.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: scott d. second: joe h. that the commission waive all interest on the final invoice for the following account # 101215 6567 and accept final payment of $5,626.43. roll call vote: joe-aye, scott-aye and brett-aye."
+   "quote": "that the commission waive all interest on the final invoice for the following account # 101215 6567 and accept final payment of $5,626.43."
   },
   {
-   "motion": "Reimburse $14,255.64 to the town for DPW Director's time as Acting Sewer Business Manager",
+   "motion": "Reimburse $14,255. 64 to the town for the DPW Director's time as Acting Sewer Business Manager.",
    "moved_by": "Joe H.",
    "seconded_by": "Scott D.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: joe h. second: scott d. to reimburse the $14,255. 64 to the town for the dpw director's time as acting sewer business manager. roll call vote: scott-aye, joe-aye, and brett-aye."
+   "quote": "to reimburse the $14,255. 64 to the town for the dpw director's time as acting sewer business manager."
   },
   {
-   "motion": "Enable the partial payment option on UniPay platform for Sewer customers",
+   "motion": "Enable the partial payment option on the UniPay platform for Sewer customers.",
    "moved_by": "Scott D.",
    "seconded_by": "Joe H.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: scott d. second: joe h. to enable the partial payment option on our unipay platform for the sewer customers. roll call vote: scott-aye, joe-aye, and brett-aye."
+   "quote": "to enable the partial payment option on our unipay platform for the sewer customers."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:41pm.",
    "moved_by": "Joe H.",
    "seconded_by": "Scott D.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: joe h. second: scott d. to adjourn at 7:41pm roll call vote: joe-aye, scott-aye and brett-aye."
+   "quote": "to adjourn at 7:41pm roll call vote: joe-aye, scott-aye and brett-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06671940000000001
+ "note": "The minutes say the meeting was held via Zoom, and the attendee list does not mark anyone remote, so board members and staff are recorded as present. The Treasurer, Myleen, is mentioned only as a source of a suggestion and not as an attendee. The reimbursement figure is printed as \"$14,255. 64\" in the motion and \"$14,255.64\" in the narrative; both are kept as printed. The minutes name no account in the motion, so the transfer record notes that the source is not stated. Public comment is recorded as \"none\" twice, so no speakers are listed. No scan; the text is complete as extracted and signed by the Minutes Clerk.",
+ "cost_usd": 0.01567407,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager: andrew valliere,"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager: andrew valliere,"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager: andrew valliere,"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager: andrew valliere,"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager: andrew valliere,"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "absent",
+   "quote": "absent: minutes clerk- jane ranley"
+  },
+  {
+   "name": "Myleen",
+   "role": "Treasurer",
+   "status": "not stated",
+   "quote": "myleen (treasurer) suggested putting the final reads out 30 days to give time for payments."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioners agreed to keep reminding customers, via billing inserts, the website and Town Meetings, about items not to flush into the system.",
+   "quote": "the commissioners agreed to keep reminding customers about items not to be flushed into the system via billing inserts, on the website and at town meetings."
+  },
+  {
+   "decision": "Bill to email the Comprehensive Wastewater Management Plan to Commissioners; Brett suggested reviewing it during a meeting.",
+   "quote": "bill replied they have a comprehensive wastewater management plan which he will email to commissioners and brett suggested reviewing it during a meeting."
+  },
+  {
+   "decision": "Future agenda items set: Commission vacancies, Manhole Repairs and Assistant Manager.",
+   "quote": "future agenda items- commission vacancies, manhole repairs and assistant manager."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Interest waiver on 50 Massachusetts Ave. final invoice",
+   "what_was_recorded": "The amount owed on the final read was $5,626.43 and the check arrived after the date on the final read; interest over $15 could not be waived without a Commission vote, which was then taken.",
+   "figures_as_printed": [
+    "$5,626.43",
+    "$15"
+   ],
+   "quote": "andrew said the amount owed was $5,626.43 and the check came in after the date on the final read."
+  },
+  {
+   "topic": "Indirect costs for DPW Director as acting Sewer Business Manager, Q2 and Q3 FY25",
+   "what_was_recorded": "Accounting calculated the reimbursable amount for the DPW Director's time while acting as Business Manager at $14,255.64; the cost was described as offset by salary not paid during the vacancy.",
+   "figures_as_printed": [
+    "$14,255.64",
+    "$14,255. 64"
+   ],
+   "quote": "accounting calculated the amount to be $14,255.64."
+  },
+  {
+   "topic": "Funding source for the reimbursement",
+   "what_was_recorded": "The DPW Director said money sits in the Capital Improvement Account that could be moved if needed; the minutes name no amount for this.",
+   "figures_as_printed": [],
+   "quote": "bill replied they have money sitting in capital improvement account that they could move if needed."
+  },
+  {
+   "topic": "UniPay partial payments",
+   "what_was_recorded": "A partial payment is applied to the oldest bill, which the Commission agreed would help lower past-due amounts; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "if a customer makes a partial payment, it comes off the oldest bill."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reimbursement to the town for the DPW Director's time as Acting Sewer Business Manager (Q2 and Q3 FY25). The minutes say the Capital Improvement Account could be moved if needed but do not name the account in the motion.",
+   "amount_as_printed": "$14,255. 64",
+   "outcome": "motion passed; source account not named in the motion",
+   "quote": "to reimburse the $14,255. 64 to the town for the dpw director's time as acting sewer business manager."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Remote meetings under the Open Meeting Law",
+   "resolution": "reported, no action",
+   "tags": [
+    "open meeting law",
+    "hybrid meetings"
+   ],
+   "quote": "andrew reported that they have extended the hybrid meetings until june 30, 2027."
+  },
+  {
+   "topic": "Commission vacancies",
+   "resolution": "discussed; future agenda item",
+   "tags": [
+    "vacancies",
+    "appointments"
+   ],
+   "quote": "bill stated that no one has stepped forward but there was one guy who is considering it."
+  },
+  {
+   "topic": "Manhole repair IFB",
+   "resolution": "reported; future agenda item",
+   "tags": [
+    "manhole repair",
+    "contractor",
+    "construction"
+   ],
+   "quote": "he has not heard back yet on the schedule but they got the ball rolling."
+  },
+  {
+   "topic": "Interest waiver, 50 Massachusetts Ave.",
+   "resolution": "approved; interest waived, final payment of $5,626.43 accepted",
+   "tags": [
+    "interest waiver",
+    "billing",
+    "final read"
+   ],
+   "quote": "bill noted the property was sold and they gave them the final read but it should have been dated out further."
+  },
+  {
+   "topic": "Indirect costs for DPW Director as acting Business Manager",
+   "resolution": "approved; reimbursement of $14,255. 64 to the town",
+   "tags": [
+    "indirect costs",
+    "enterprise fund",
+    "staffing"
+   ],
+   "quote": "accounting calculated the amount to be $14,255.64."
+  },
+  {
+   "topic": "Online UniPay partial payment option",
+   "resolution": "approved",
+   "tags": [
+    "UniPay",
+    "billing",
+    "past due"
+   ],
+   "quote": "andrew talked to myleen about partial payments."
+  },
+  {
+   "topic": "Assistant to the Business Manager position",
+   "resolution": "reported; hiring in progress",
+   "tags": [
+    "staffing",
+    "hiring"
+   ],
+   "quote": "bill reported they are in the process of hiring a new assistant and just waiting to confirm a start date."
+  },
+  {
+   "topic": "Sewer expansion and Sewer Service Area",
+   "resolution": "discussed; plan to be emailed and reviewed",
+   "tags": [
+    "sewer expansion",
+    "sewer service area",
+    "Town Meeting",
+    "wastewater plan"
+   ],
+   "quote": "bill added that the plan was to sewer in the center of town, with future expansion around the lakes."
+  },
+  {
+   "topic": "Clogged pipes and flushing reminders",
+   "resolution": "discussed; reminders agreed",
+   "tags": [
+    "clogs",
+    "pump station",
+    "customer outreach"
+   ],
+   "quote": "bill replied the mailings concerning items not to flush into the system have worked to prevent clogs."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "DPW",
+  "interest waiver",
+  "enterprise fund",
+  "indirect costs",
+  "billing",
+  "UniPay",
+  "commission vacancies",
+  "open meeting law",
+  "hybrid meetings",
+  "sewer service area",
+  "wastewater plan",
+  "clogs",
+  "staffing"
+ ],
+ "dropped_unquoted_by_field": {}
 }

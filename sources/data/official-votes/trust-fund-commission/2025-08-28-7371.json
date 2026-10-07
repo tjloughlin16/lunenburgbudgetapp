@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2025-08-28",
  "docid": "7371",
@@ -12,23 +12,180 @@
  },
  "votes": [
   {
-   "motion": "To approve the minutes of the August 14, 2025 meeting",
+   "motion": "Approve the minutes of the Aug 14, 2025 meeting. The minutes say the motion was tabled as still under review and then not approved; no vote count is printed.",
    "moved_by": "Mr. Howard",
    "seconded_by": "",
-   "outcome": "tabled",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "mr. howard made a motion to approve the minutes of the aug 14, 2025 meeting. the motion was tabled as they are still in review and were subsequently not approved."
+   "quote": "mr. howard made a motion to approve the minutes of the aug 14, 2025 meeting."
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:34pm.",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr. Howard",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "chairman bowen made a motion to adjourn 6:34pm, seconded by mr. howard, motion passed unanimously."
+   "quote": "seconded by mr. howard, motion passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0767234
+ "note": "Text extract, not a scan; all figures and votes are readable. One motion (Aug 14 minutes) is recorded as tabled with no vote count, so it is marked 'not stated'. The minutes say the minutes of Aug 14 were 'subsequently not approved' without a recorded vote. Town Attorney Costa is named only as someone the Chairman met separately, not as a participant, so not listed as an attendee. The Treasurer and Finance Director are referred to but not named as present. The minutes record no public comment, so public_comment is empty. The minutes also describe a 1913 statute as '1/20 of 1%', which is not a dollar figure and was not recorded as one.",
+ "cost_usd": 0.01341837,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting called to order 5:04pm by chairman bowen"
+  },
+  {
+   "name": "Howard",
+   "role": "Mr. Howard (member, as printed)",
+   "status": "present",
+   "quote": "mr. howard made a motion to approve the minutes of the aug 14, 2025 meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The American Legion's request to claw back monies in one of the funds was referred to Town Counsel and Town Manager; unresolved at the meeting.",
+   "quote": "chairman bowen referred that request to town counsel and town manager."
+  },
+  {
+   "decision": "Chairman Bowen requested an updated report of all revenue received, interest, fines, penalties and trading expenses from the Treasurer and Finance Director.",
+   "quote": "chairman bowen has requested an updated report of all revenue received, interest, fines penalties and trading expenses."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Workers Comp (sec 807) funds proposed for Trust Fund Commission management",
+   "what_was_recorded": "The Chairman estimated these funds at about $145K and said they fall under the 1913 statute.",
+   "quote": "the chairman believes that the value of these funds is approximately $145k which does fall under the 1913 statute"
+  },
+  {
+   "topic": "Unidentified Town funds raised as a financial-controls issue",
+   "what_was_recorded": "The Chairman raised an amount of about $300,000 with no current understanding of its source or use.",
+   "quote": "approximately $300,000 located with no current understanding of the source/use of these funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action",
+   "quote": "no public comment from members of the live audience or via zoom.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old Business: pooled fund structure and returns",
+   "resolution": "discussed, no action",
+   "quote": "the structure of the funds currently identified as being under the purview of the trust fund",
+   "tags": [
+    "pooled funds",
+    "Cemetery",
+    "Conservation",
+    "investments"
+   ]
+  },
+  {
+   "topic": "Treasurer and Finance Director reports; pharma and bond concentration",
+   "resolution": "discussed; updated report requested",
+   "quote": "treasurer and finance director reports - have not been received since march",
+   "tags": [
+    "investments",
+    "Treasurer",
+    "reporting"
+   ]
+  },
+  {
+   "topic": "Meeting with Town Attorney on protections, investments and expenditures",
+   "resolution": "discussed; draft policy presented",
+   "quote": "chairman bowen updated the trust fund commission on his meeting with town attorney",
+   "tags": [
+    "Town Counsel",
+    "risk policy",
+    "expenditures"
+   ]
+  },
+  {
+   "topic": "Workers Comp sec 807 funds under Trust Fund management",
+   "resolution": "discussed, no action",
+   "quote": "there are others monies that chairman bowen feels should be under the management of the trust fund commission",
+   "tags": [
+    "Workers Comp",
+    "trust funds"
+   ]
+  },
+  {
+   "topic": "Financial controls: unidentified $300,000 and forensic audit",
+   "resolution": "discussed; forensic audit suggested",
+   "quote": "chairman bowen suggested that a forensic audit should be performed every 10 years or so",
+   "tags": [
+    "financial controls",
+    "audit",
+    "Town Warrant"
+   ]
+  },
+  {
+   "topic": "Investment philosophy and enforcement of declarations",
+   "resolution": "discussed; clarity requested",
+   "quote": "discussion of selections of investment philosophy, the town has historically taken a very",
+   "tags": [
+    "investment policy",
+    "declarations",
+    "Attorney General"
+   ]
+  },
+  {
+   "topic": "Scholarships handled by Trust Fund Commission",
+   "resolution": "discussed, no action",
+   "quote": "scholarships (school committee) except in uncommon circumstances, the gift should be",
+   "tags": [
+    "scholarships",
+    "School Committee"
+   ]
+  },
+  {
+   "topic": "American Legion claw-back request",
+   "resolution": "referred to Town Counsel and Town Manager; unresolved",
+   "quote": "the american legion has expressed interest in clawing back",
+   "tags": [
+    "American Legion",
+    "claw-back"
+   ]
+  },
+  {
+   "topic": "Approval of Aug 14, 2025 minutes",
+   "resolution": "tabled, not approved",
+   "quote": "mr. howard made a motion to approve the minutes of the aug 14, 2025 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:34pm",
+   "quote": "seconded by mr. howard, motion passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "trust funds",
+  "investments",
+  "pooled funds",
+  "Treasurer",
+  "financial controls",
+  "forensic audit",
+  "Workers Comp",
+  "scholarships",
+  "American Legion",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

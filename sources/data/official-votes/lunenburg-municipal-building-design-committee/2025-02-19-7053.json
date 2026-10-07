@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2025-02-19",
  "docid": "7053",
@@ -12,6 +12,228 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document a committee meeting with discussions, topic coverage, and assigned action items, but contain no record of motions, seconds, or voting outcomes. Decisions (e.g., regarding EV charging stations, solar panels, cost estimates) are described as committee consensus or direction, not as formal votes.",
- "cost_usd": 0.0591224
+ "note": "No votes or motions are recorded anywhere in these minutes, so the votes list is empty; the committee's directions are recorded as decisions without a vote. The text has no record of a motion to approve prior minutes or to adjourn, though it states adjournment at 6:49pm 'due to a technical issue with the zoom closing.' Header time is 5:30pm; called to order at 5:40pm. Public comment is recorded only as 'No public comment.' at the start; Tony Sculumbrine and Bob Doolittle spoke during discussion, which is not recorded as public comment, so public_comment is empty. The text extraction has typos (e.g., 'Tthe', 'commit1tee'). Figures are as printed; no transfers recorded.",
+ "cost_usd": 0.015429270000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: david blatt, kristina masaitis"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: david blatt, kristina masaitis"
+  },
+  {
+   "name": "Tony Sculumbrine",
+   "role": "Community Guests",
+   "status": "present",
+   "quote": "community guests: tony sculumbrine, bob doolittle"
+  },
+  {
+   "name": "Bob Doolittle",
+   "role": "Community Guests",
+   "status": "present",
+   "quote": "community guests: tony sculumbrine, bob doolittle"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The town should not install $281,000 worth of EV charging stations; instead install a couple of stations covering 4 spots, with a minimum of two, expandable later.",
+   "quote": "the town should not install $281,000 worth of electric vehicle (ev) charging stations, but rather a couple of charging stations that cover 4 spots"
+  },
+  {
+   "decision": "The team agreed to further explore the feasibility of solar panels and EV charging stations.",
+   "quote": "the team agreed to further explore the feasibility of solar panels and ev charging stations."
+  },
+  {
+   "decision": "Michael-Ray Jeffreys to contact Chris Ruth for more details on hazardous materials in Town Hall and Ritter building.",
+   "quote": "to contact chris ruth for more details on hazardous materials in town hall and ritter building."
+  },
+  {
+   "decision": "Committee to include alternates (like EV chargers, Meeting House basement slab, solar panels) in the bid package for potential future implementation.",
+   "quote": "committee to include alternates (like"
+  },
+  {
+   "decision": "Committee concluded remnants of underground oil tanks from the old fire station were unlikely, given construction of the new Public Safety building in the early 2000s.",
+   "quote": "but concluded that this was unlikely due to the construction of the new public safety building in the early 2000s."
+  },
+  {
+   "decision": "Brian Lehtinen to continue monitoring social media for public concerns and questions about the project; committee members to draft a public presentation.",
+   "quote": "brian lehtinen to continue monitoring social media for public concerns and questions about the project."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Project cost estimate and range",
+   "what_was_recorded": "The project cost was estimated at $17,000,800, with a high-range estimate of $22.3 million that includes a 25% markup for soft costs and an owner's contingency.",
+   "quote": "which was estimated at $17,000,800, but with a high range estimate of $22.3 million, including a 25% markup for soft costs",
+   "figures_as_printed": [
+    "$17,000,800",
+    "$22.3 million",
+    "25%"
+   ]
+  },
+  {
+   "topic": "Breakdown between the $17 million and $22 million estimates",
+   "what_was_recorded": "Greg Roy requested a more detailed breakdown of costs between the $17 million price tag and the $22 million estimate; Michael-Ray Jeffreys was to work with bond counsel on escalators and the breakdown.",
+   "quote": "greg requested a more detailed breakdown of the costs between the $17 million price tag and the $22 million estimate.",
+   "figures_as_printed": [
+    "$17 million",
+    "$22 million"
+   ]
+  },
+  {
+   "topic": "Escalating project cost estimate",
+   "what_was_recorded": "The project is currently estimated at $22.3 million; Bond Council to be asked to estimate escalating costs.",
+   "quote": "which is currently estimated at $22.3 million.",
+   "figures_as_printed": [
+    "$22.3 million"
+   ]
+  },
+  {
+   "topic": "Owner's Project Manager fee",
+   "what_was_recorded": "Michael-Ray Jeffreys confirmed the 5% OPM fee is standard and not negotiable.",
+   "quote": "michael-ray confirmed that the 5% opm (owner's project manager) fee is standard and not negotiable.",
+   "figures_as_printed": [
+    "5%"
+   ]
+  },
+  {
+   "topic": "EV charging stations cost",
+   "what_was_recorded": "Discussion that the town should not install EV charging stations costing $281,000 and should instead install fewer stations covering 4 spots.",
+   "quote": "the town should not install $281,000 worth of electric vehicle (ev) charging stations, but rather a couple of charging stations that cover 4 spots",
+   "figures_as_printed": [
+    "$281,000"
+   ]
+  },
+  {
+   "topic": "PV canopy funding",
+   "what_was_recorded": "Complications with PV canopy funding were explained due to frozen Inflation Reduction Act funds; no dollar figure printed.",
+   "quote": "michael-ray explains the complications with the pv canopy funding due to the frozen inflation reduction act funds.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Warrant article and project cost",
+   "resolution": "continued; committee to determine final warrant number",
+   "quote": "committee to determine the final number to request in the warrant article for the annual town meeting.",
+   "tags": [
+    "warrant article",
+    "project cost",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Hazardous materials",
+   "resolution": "action assigned to Michael-Ray Jeffreys",
+   "quote": "matthew allison brought up the concern the hazardous materials were not included.",
+   "tags": [
+    "hazardous materials",
+    "Town Hall",
+    "Ritter building"
+   ]
+  },
+  {
+   "topic": "Energy systems: fossil fuel vs all-electric, solar",
+   "resolution": "continued; committee to explore feasibility and cost",
+   "quote": "committee to explore the feasibility and cost implications of using fossil fuels vs. all-electric systems for the buildings.",
+   "tags": [
+    "energy systems",
+    "solar",
+    "all-electric"
+   ]
+  },
+  {
+   "topic": "EV charging stations",
+   "resolution": "scaled down; further exploration agreed",
+   "quote": "the team agreed to further explore the feasibility of solar panels and ev charging stations.",
+   "tags": [
+    "EV charging",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Viewshed, architectural preservation and parking lot",
+   "resolution": "no action; parking layout to be addressed in construction documents",
+   "quote": "bob doolittle raised concerns about the impact of the proposed solar panel installation on the viewshed and architectural preservation district.",
+   "tags": [
+    "viewshed",
+    "parking lot",
+    "31 School Street",
+    "public comment at meeting"
+   ]
+  },
+  {
+   "topic": "Alternates for the bid package",
+   "resolution": "directed to include alternates",
+   "quote": "committee to include alternates (like",
+   "tags": [
+    "bid package",
+    "alternates"
+   ]
+  },
+  {
+   "topic": "Social media concerns and public presentation",
+   "resolution": "presentation to be drafted; monitoring continued",
+   "quote": "the committee plans to create a presentation to address these concerns and provide more information to residents.",
+   "tags": [
+    "public engagement",
+    "presentation",
+    "social media",
+    "transparency"
+   ]
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "town hall",
+  "design committee",
+  "project cost",
+  "warrant article",
+  "solar",
+  "EV charging",
+  "hazardous materials",
+  "energy systems",
+  "public engagement"
+ ],
+ "dropped_unquoted_by_field": {}
 }

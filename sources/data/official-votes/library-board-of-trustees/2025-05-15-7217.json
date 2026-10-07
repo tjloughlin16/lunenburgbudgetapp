@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2025-05-15",
  "docid": "7217",
@@ -12,23 +12,291 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of April 17, 2025, as amended",
+   "motion": "Accept the minutes of April 17, 2025, as amended.",
    "moved_by": "Maia",
    "seconded_by": "Jana",
-   "outcome": "passed",
+   "outcome": "passed by roll call vote, with Dick and Donna abstaining",
    "procedural": true,
    "quote": "maia made a motion to accept the minutes of april 17, 2025, as amended, seconded by jana. the motion passed by roll call vote, with dick and donna abstaining."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Donna",
    "seconded_by": "Dick",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously by roll call vote",
    "procedural": true,
    "quote": "a motion to adjourn was made by donna, seconded by dick. the motion passed unanimously by roll call vote."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Two procedural votes recorded. No substantive business votes taken; policy discussions and updates were noted but not voted on.",
- "cost_usd": 0.08725939999999999
+ "dropped_unquoted": 1,
+ "note": "Text extracted from a scan-like PDF with broken spacing; quotes were collapsed to single spaces. Two roll-call votes are recorded without tallies (only abstentions and 'unanimously' are printed). The motion names 'Maia' and 'Jana' as printed; the attendance list gives 'Jana-Lee Balish' and the minutes never link the two. Attendance lists names but does not mark anyone absent; statuses are inferred from the 'Attending' line, except Dick Mailloux, marked remote. The director's report figures and the $2.1M override come from attached documents within the same text, not from the minutes' narrative. The Director's report is unsigned and its 'I' is not attributed to a named person.",
+ "cost_usd": 0.01952987,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:54 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee",
+   "status": "remote",
+   "quote": "attending: harry kubetz, dick mailloux (remote), donna saiia, laura boussom, maia wentrup, jana-lee balish, david niose, muir haman"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux (remote), donna saiia, laura boussom, maia wentrup, jana-lee balish, david niose, muir haman"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux (remote), donna saiia, laura boussom, maia wentrup, jana-lee balish, david niose, muir haman"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux (remote), donna saiia, laura boussom, maia wentrup, jana-lee balish, david niose, muir haman"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux (remote), donna saiia, laura boussom, maia wentrup, jana-lee balish, david niose, muir haman"
+  },
+  {
+   "name": "David Niose",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux (remote), donna saiia, laura boussom, maia wentrup, jana-lee balish, david niose, muir haman"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "not stated (library staff member who gives the director's update)",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux (remote), donna saiia, laura boussom, maia wentrup, jana-lee balish, david niose, muir haman"
+  },
+  {
+   "name": "Lydia Paolilli",
+   "role": "author of the Adult Services Trustee Report (attached)",
+   "status": "not stated",
+   "quote": "respectfully submitted, lydia paolilli"
+  },
+  {
+   "name": "Kaitlyn Himmelberger",
+   "role": "author of the Young Adult Services report (attached)",
+   "status": "not stated",
+   "quote": "kaitlyn himmelberger young adult services may 2025"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The reception for departing trustees Dick and Donna was postponed until the next month, because Dick needed to attend remotely.",
+   "quote": "postponed until next month because dick needed to attend the meeting remotely."
+  },
+  {
+   "decision": "Muir will edit the room use policy for the board to review.",
+   "quote": "muir will edit the policy for us to review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2025 sewer charge",
+   "what_was_recorded": "Sewer will cost an additional $600 for the year, and the bill has not yet been entered.",
+   "quote": "sewer will be an additional $600 for the year.",
+   "figures_as_printed": [
+    "$600"
+   ]
+  },
+  {
+   "topic": "FY2025 budget totals (Director's Report table)",
+   "what_was_recorded": "The FY25 library budget table shows $592,057 budgeted and $466,924 expended, 79% spent.",
+   "quote": "totals 592,057$ 466,924$ 79%",
+   "figures_as_printed": [
+    "592,057$",
+    "466,924$",
+    "79%"
+   ]
+  },
+  {
+   "topic": "FY25 library materials line",
+   "what_was_recorded": "Library Material was budgeted at $94,000 with $45,279 expended, 48% spent.",
+   "quote": "library material 94,000$ 45,279$ 48%",
+   "figures_as_printed": [
+    "94,000$",
+    "45,279$",
+    "48%"
+   ]
+  },
+  {
+   "topic": "FY2026 budget increase",
+   "what_was_recorded": "The minutes say most of the increase in the FY2026 budget is in salaries; no dollar figure is printed.",
+   "quote": "most of the increase in the fy2026 budget is in salaries.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library invested funds",
+   "what_was_recorded": "The library's invested funds have a value of approximately $99K.",
+   "quote": "the investments have a value of approximately $99k.",
+   "figures_as_printed": [
+    "$99K"
+   ]
+  },
+  {
+   "topic": "Adult programming financial report",
+   "what_was_recorded": "Adult programs budget as of 5/13/2025: grand total $14,600 with 81% spent, 13% encumbered, 6% remaining.",
+   "quote": "grand total $14,600 81% 13% 6%",
+   "figures_as_printed": [
+    "$14,600",
+    "81%",
+    "13%",
+    "6%"
+   ]
+  },
+  {
+   "topic": "Friends money for Conroy Memorial Garden",
+   "what_was_recorded": "The Friends approved money for the Conroy Memorial Garden; no amount is printed.",
+   "quote": "the friends approved money for the conroy memorial garden.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Main Street Bank funding for summer lunches",
+   "what_was_recorded": "Summer lunch program funding from Main Street Bank was awaiting confirmation; a backup funding source exists. No amount is printed.",
+   "quote": "muir is still waiting for confirmation from main street bank that they will fund",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town Meeting capital plan (HVAC)",
+   "what_was_recorded": "Town Meeting approved a capital plan including HVAC design for the library, scheduled for early FY26; no amount is printed in the minutes.",
+   "quote": "town meeting approved a capital plan that included hvac design for the library.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Citizen's petition override (attached Director's Report)",
+   "what_was_recorded": "The attached Director's Report says the Citizen's Petition Override of Prop 2 1/2 to give the schools $2.1M passed and is not on the ballot.",
+   "quote": "the citizen's petition override of prop 2 ½ to raise funds to give the schools $2.1m passed and is not on the ballot.",
+   "figures_as_printed": [
+    "$2.1M"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Excess FY2025 funds to be moved to Library Materials (Library of Things, books, etc.) and to Office Supplies.",
+   "outcome": "Stated as planned in the FY2025 budget update; no amount printed and no vote recorded.",
+   "quote": "excess funds will be moved to library materials to make purchases for the library of things, books, etc., and to office supplies."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Reception for departing trustees",
+   "resolution": "postponed to next meeting",
+   "quote": "postponed until next month because dick needed to attend the meeting remotely.",
+   "tags": [
+    "trustees",
+    "reception"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, April 17, 2025",
+   "resolution": "approved as amended, roll call",
+   "quote": "the motion passed by roll call vote, with dick and donna abstaining.",
+   "tags": [
+    "minutes",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Director's report: FY25 and FY26 budget, staffing, programs, outreach, building, technology",
+   "resolution": "received; budget update noted",
+   "quote": "the fiscal year is 82% completed. sewer will be an additional $600 for the year.",
+   "tags": [
+    "budget",
+    "FY2025",
+    "FY2026",
+    "staffing",
+    "programs",
+    "outreach",
+    "building",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Conroy Memorial Garden",
+   "resolution": "update; no action recorded",
+   "quote": "muir met with kevin boussom, the artist who will be creating a sculpture for the garden.",
+   "tags": [
+    "Conroy Memorial Garden",
+    "Friends of the Library"
+   ]
+  },
+  {
+   "topic": "Room use policy",
+   "resolution": "discussed; Muir to draft revisions for review",
+   "quote": "muir will edit the policy for us to review.",
+   "tags": [
+    "policy",
+    "room reservations"
+   ]
+  },
+  {
+   "topic": "Library invested funds",
+   "resolution": "update noted",
+   "quote": "the investments have a value of approximately $99k.",
+   "tags": [
+    "investments",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Friends update",
+   "resolution": "update noted",
+   "quote": "discussed the book & bake sale to be held june 6 & 7.",
+   "tags": [
+    "Friends of the Library",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "reception moved to next meeting (suggested by Harry)",
+   "quote": "harry suggested that we have the reception for dick and donna at our next meeting.",
+   "tags": [
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:18 p.m.",
+   "quote": "the meeting was adjourned at 9:18 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library board",
+  "trustees",
+  "FY2025 budget",
+  "FY2026 budget",
+  "staffing",
+  "programs",
+  "summer reading program",
+  "Conroy Memorial Garden",
+  "Friends of the Library",
+  "room use policy",
+  "building and HVAC",
+  "trustee departures",
+  "public comment none"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2025-03-27",
  "docid": "7124",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from February 27, 2025",
+   "motion": "Approve the minutes of the February 27, 2025 meeting.",
    "moved_by": "David Dorren",
    "seconded_by": "Nancy Foss Yasko",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "vice chair david dorren made a motion to approve the minutes, chair nancy foss yasko seconded, voted all in favor."
   },
   {
-   "motion": "Start the $50K back-lot expansion project at North Cemetery",
+   "motion": "Start the $50K back-lot project (North Cemetery expansion).",
    "moved_by": "Nancy Foss Yasko",
    "seconded_by": "David Doreen",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "chair nancy foss yasko made a motion to start the $50k - back-lot project - vice chair david doreen seconded; the commission voted all in favor."
   },
   {
-   "motion": "Go forward with $50K special project article for road repair",
+   "motion": "Go forward with the $50K special project warrant article for road repair.",
    "moved_by": "Nancy Foss Yasko",
    "seconded_by": "David Doreen",
    "outcome": "passed",
@@ -36,15 +36,248 @@
    "quote": "re-motion to go forward with $50k special project article, chair nancy foss yasko motioned, vice chair david doreen seconded, aif."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:10.",
    "moved_by": "David Dorren",
    "seconded_by": "Mike Clark",
    "outcome": "passed",
    "procedural": true,
-   "quote": "chair nancy foss yasko requested a motion to adjourn at 10:10 - vice chair david dorren, motioned to adjourn, mike seconded, aif"
+   "quote": "vice chair david dorren, motioned to adjourn, mike seconded, aif"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The Vice Chair's name is spelled inconsistently in the minutes: \"Dorren\" in the header and adjournment sections, \"Doreen\" elsewhere. Spelling is preserved as it appears in each vote's section.",
- "cost_usd": 0.06714540000000001
+ "note": "Text extraction, not a scan; it reads cleanly. Attendance: the header lists four attendees with no in-person or remote status, and the text says the meeting was held by Zoom for members of the public, so members' status is recorded as present with that ambiguity unresolved. Vote counts are not printed: 'voted all in favor' and 'AIF' are recorded as passed. AIF is read as 'all in favor' (an abbreviation not defined in the minutes). The name Vice Chair David Doreen/Dorren is printed both ways; names are kept as printed. Mike Clark signs as Michael Clark. No transfers recorded. Dollar figures are kept as printed; the stone wall and turf figures ($300K, $190K, $50K, total $280K) are not reconciled by the minutes.",
+ "cost_usd": 0.01712677,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard"
+  },
+  {
+   "name": "David Doreen",
+   "role": "Vice-Chair (minutes also print \"David Dorren\")",
+   "status": "present",
+   "quote": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard"
+  },
+  {
+   "name": "Mike Clark",
+   "role": "Clerk (signs as Michael Clark)",
+   "status": "present",
+   "quote": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard"
+  },
+  {
+   "name": "John Bowen",
+   "role": "public comment speaker (163 Highland Street)",
+   "status": "present",
+   "quote": "john bowen - 163 highland street - received an email from laurie trahan's office on handling federal documents."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Vice Chair David Dorren to obtain a quote for a locked file cabinet for the DD-214 paperwork.",
+   "quote": "vice chair david dorren took the action to quote a locked file cabinet."
+  },
+  {
+   "decision": "Chair Nancy Foss Yasko to ask the Town Manager about grants for cemetery work.",
+   "quote": "chair nancy foss yasko took an action to ask the town manager about this."
+  },
+  {
+   "decision": "Clerk Mike Clark to meet with the DPW Director to review the CIMS data export and presentation format.",
+   "quote": "clerk mike clark requested to meet with dpw director bill bernard and review the data exported from cims and the presentation format."
+  },
+  {
+   "decision": "Clerk Mike Clark to assemble screenshots and CIMS report exports for the next meeting.",
+   "quote": "clerk mike clark responded that he has done screen shots of the cemetery and report exports from cims and will put them together for the next meeting."
+  },
+  {
+   "decision": "Clerk Mike Clark volunteered to work with the DPW Director to align CIMS data with the actual available plots.",
+   "quote": "clerk mike clark volunteered to work with bill on this."
+  },
+  {
+   "decision": "Vice Chair David Dorren requested a report of plots showing what is available and what is not.",
+   "quote": "vice chair david dorren requested a report of plots with what's available and what's not."
+  },
+  {
+   "decision": "Commission agreed to move the North Cemetery back-lot expansion forward as quickly as possible; DPW Director agreed.",
+   "quote": "clerk mike clark recommended that we move forward as quickly as possible with the back-lot expansion, the dpw director agreed."
+  },
+  {
+   "decision": "DPW Director to take the $50K back-lot request to Town Meeting this year, then complete the design and put a contract together.",
+   "quote": "chair nancy foss yasko confirmed that the dpw director wants to take the $50k request forward to town meeting this year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2026 capital plan warrant article: compact backhoe",
+   "what_was_recorded": "A compact backhoe is put forward in the FY2026 Capital Plan for digging graves at the cemeteries, with no dollar figure printed for it.",
+   "quote": "put in for a compact backhoe - the primarily use will be at the cemeteries for digging graves.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "North Cemetery back-lot expansion",
+   "what_was_recorded": "A $50K item for expansion of the North Cemetery back-lot, taken to Town Meeting and voted to start.",
+   "quote": "$50k item for expansion of north cemetery back-lot",
+   "figures_as_printed": [
+    "$50K"
+   ]
+  },
+  {
+   "topic": "Plot data verification with no funds",
+   "what_was_recorded": "The DPW Director said there are currently no funds for the plot-by-plot verification of available lots.",
+   "quote": "bill stated that we currently have no funds for this.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Special projects road repair warrant article",
+   "what_was_recorded": "A $50K special projects warrant article for road repair (crack sealing, cut in and patch of potholes), moved forward.",
+   "quote": "$50k warrant article \"special projects\" for road repair",
+   "figures_as_printed": [
+    "$50K"
+   ]
+  },
+  {
+   "topic": "Earmark for restoration of old grave markers",
+   "what_was_recorded": "An earmark through Representative Michael Kushmerek for restoring old grave markers; Leominster Monument came up with a figure, and the Chair called the office for a status.",
+   "quote": "leominster monument came up with $38k.",
+   "figures_as_printed": [
+    "$38K"
+   ]
+  },
+  {
+   "topic": "Stone wall and turf restoration earmarks",
+   "what_was_recorded": "Stone wall quotes from two companies and a turf restoration project were discussed as earmarks with Representative Michael Kushmerek, with a total printed.",
+   "quote": "$300k, another $190k, also the turf restoration project which was another $50k for a total of $280k in earmarking with representative michael kushmerek.",
+   "figures_as_printed": [
+    "$300K",
+    "$190K",
+    "$50K",
+    "$280K"
+   ]
+  },
+  {
+   "topic": "Hedge opening wall",
+   "what_was_recorded": "A wall in the open space in the hedges was discussed at an estimated cost, with the opening still to be decided.",
+   "quote": "chair nancy foss yasko mentioned the open space in hedges and putting a wall in at 'x' amount of feet. around $30k.",
+   "figures_as_printed": [
+    "$30K"
+   ]
+  },
+  {
+   "topic": "Cost to move a plot for a family",
+   "what_was_recorded": "The DPW Director said moving a plot would cost the same as a burial; no figure printed.",
+   "quote": "dpw director bill bernard responded that it would be the cost of a burial.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "",
+   "topic": "email from Laurie Trahan's office on federal documents; interruption and Point of Order",
+   "quote": "john bowen - 163 highland street - received an email from laurie trahan's office on handling federal documents. along with other comments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and open meeting law statement",
+   "resolution": "no action",
+   "quote": "chair nancy foss yasko read the open meeting law statement & noted the upload",
+   "tags": [
+    "call to order",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Approve February 27, 2025 minutes",
+   "resolution": "approved",
+   "quote": "vice chair david dorren made a motion to approve the minutes, chair nancy foss yasko seconded, voted all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director updates and projects",
+   "resolution": "discussed",
+   "quote": "dpw director updates and discussions by bill bernard including approved and or in progress projects.",
+   "tags": [
+    "DPW",
+    "seasonal laborers",
+    "flagpole lights",
+    "South Cemetery",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "North Cemetery back-lot expansion and available plots",
+   "resolution": "approved to start project; plot report requested",
+   "quote": "chair nancy foss yasko made a motion to start the $50k - back-lot project - vice chair david doreen seconded",
+   "tags": [
+    "North Cemetery",
+    "plots",
+    "CIMS",
+    "back-lot expansion"
+   ]
+  },
+  {
+   "topic": "Special projects road repair article",
+   "resolution": "approved to go forward",
+   "quote": "re-motion to go forward with $50k special project article, chair nancy foss yasko motioned, vice chair david doreen seconded, aif.",
+   "tags": [
+    "roads",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Burials, mausoleum, DD-214 storage, earmarks and grants",
+   "resolution": "discussed; actions assigned",
+   "quote": "chair nancy foss yasko discussed earmarks, in january 11th 2023, we put an earmark into representative michael kushmerek",
+   "tags": [
+    "burials",
+    "DD-214 records",
+    "earmarks",
+    "grants",
+    "stone walls"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; interruption, police called",
+   "quote": "john bowen interrupted the meeting exclaiming \"point of order\".",
+   "tags": [
+    "public comment",
+    "federal documents"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:10",
+   "quote": "vice chair david dorren, motioned to adjourn, mike seconded, aif",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "North Cemetery expansion",
+  "plot data CIMS",
+  "warrant articles",
+  "capital plan",
+  "road repair",
+  "earmarks",
+  "DD-214 records",
+  "public comment",
+  "DPW"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-03-20",
  "docid": "7010",
@@ -12,15 +12,268 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting, on a roll call vote in which six named members recorded aye.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray. roll call vote. tom gray aye, jean russell aye, mike rupp aye, ana lockwood aye, jay simeone aye, chris menard aye."
+   "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: the motion to adjourn. The minutes contain extensive discussion of the School Committee's approved budget (transportation fees, summer camps, specialist coach positions, etc.), but these are discussions presented to the Finance Committee, not votes taken by the Finance Committee. Section 8 lists agenda items for Old Business (FY26 Budget Discussions, Warrant Articles, Budget Task Force Recommendations) but no votes on these items are recorded in the minutes.",
- "cost_usd": 0.0614524
+ "note": "Text is machine-extracted; ligatures (e.g. 'ﬁ', 'ﬂ', 'Ơ') appear in the source and were not quoted. Only one motion by this committee is recorded: adjournment, on a roll call with six named members recorded aye; no numeric count is printed, so outcome is 'passed'. The School Committee votes described (the bus transportation fee on 12 March, athletics summer camps, eliminating a specialist coach position) are reported second-hand and are not votes of this committee, so they are not recorded as votes here. Agenda items 8a-8c (FY26 budget discussions, warrant articles, task force recommendations) are listed with no recorded discussion, and the asterisk after 'FY26 Budget Discussions*' has no footnote in the extracted text. Public comment was not taken after the chair's decision, and no speakers are recorded.",
+ "cost_usd": 0.015422870000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell (zoom), clerk tom gray"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "vice chair jean russell (zoom)"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "clerk tom gray (zoom)"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member ana lockwood, committee member"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "absent",
+   "quote": "absent member: committee member tanya dall"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "superintendent dr. kate burnham provided the approved budget."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair Chris Menard decided not to allow public comment at this meeting, citing a Capital Planning Committee meeting scheduled to start in 3 minutes. No board vote was recorded.",
+   "quote": "chris menard made an executive decision to not allow public comment due to the capital planning committee meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School Committee approved budget: band transportation funding restored",
+   "what_was_recorded": "Some funding for band transportation was restored, with the middle school and high school each receiving an additional amount.",
+   "quote": "school received an additional $1,000 and the high school received",
+   "figures_as_printed": [
+    "$1,000",
+    "$3,000"
+   ]
+  },
+  {
+   "topic": "Bus transportation fee for students",
+   "what_was_recorded": "The School Committee voted on 12 March to implement a bus transportation fee; the minutes record the per-day rate, the per-child fee, the family cap, and the reduced-lunch fee.",
+   "quote": "the fee for 1 child is $180 and the family cap is $270 for the year.",
+   "figures_as_printed": [
+    "1 dollar per day",
+    "$180",
+    "$270",
+    "$50"
+   ]
+  },
+  {
+   "topic": "Student transportation line reduction",
+   "what_was_recorded": "The transportation fee reduced the student transportation line by a stated amount.",
+   "quote": "the implementation of transportation fee reduced the student transportation line by $11,000.",
+   "figures_as_printed": [
+    "$11,000"
+   ]
+  },
+  {
+   "topic": "Athletic transportation line",
+   "what_was_recorded": "The athletic transportation line was reduced to a stated amount.",
+   "quote": "the athletic transportation line was reduced to $102,555.",
+   "figures_as_printed": [
+    "$102,555"
+   ]
+  },
+  {
+   "topic": "Business office salaries after restructuring",
+   "what_was_recorded": "Business office salaries changed as a result of restructuring.",
+   "quote": "salaries have changed to $90,000.",
+   "figures_as_printed": [
+    "$90,000"
+   ]
+  },
+  {
+   "topic": "Athletics summer camps to generate revenue",
+   "what_was_recorded": "The School Committee approved athletics summer camps to generate revenue; the committee requested revenue projections, and a member proposed tutoring programs to also create revenue. No figures were printed.",
+   "quote": "the school committee approved to have the athletics department run summer camps to generate revenue.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Specialist coach position eliminated, grant money redirected",
+   "what_was_recorded": "The School Committee eliminated one grant-funded specialist coach position and redirected the grant money to an intervention teacher. No figures were printed.",
+   "quote": "that grant money will be applied to an intervention teacher at the elementary school.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Legal expense line",
+   "what_was_recorded": "The School Committee increased the legal expense line. No figure was printed.",
+   "quote": "the school committee increased the legal expense line.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action; opened 6:02 PM",
+   "quote": "the meeting opened at 6:02 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no announcements",
+   "quote": "there were no announcements.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no comments taken; chair cut public comment short",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager & Finance Director Reports",
+   "resolution": "no reports",
+   "quote": "there were no reports from the town manager or the finance director.",
+   "tags": [
+    "town manager",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Scheduled Meetings: School Committee Approved Budget",
+   "resolution": "discussed; no board vote",
+   "quote": "superintendent dr. kate burnham provided the approved budget.",
+   "tags": [
+    "school budget",
+    "transportation fee",
+    "athletics",
+    "summer camps",
+    "recreation department",
+    "grants",
+    "business office"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "no new business",
+   "quote": "there was no new business to discuss.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Old Business: FY26 Budget Discussions",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "fy26 budget discussions*",
+   "tags": [
+    "FY26 budget"
+   ]
+  },
+  {
+   "topic": "Old Business: FY26 Warrant Articles and Budget Task Force Recommendations",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "fy26 warrant articles",
+   "tags": [
+    "FY26 budget",
+    "warrant articles",
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "no minutes to approve",
+   "quote": "there were no minutes to approve.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no committee reports",
+   "quote": "there were no committee reports.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Actions and Topics for Future Meetings",
+   "resolution": "no additions",
+   "quote": "there are no additional actions or topics to add to future meetings.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Important Dates & Upcoming Meetings",
+   "resolution": "listed",
+   "quote": "a. thursday 3/27/2025",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 7:29 PM on roll call",
+   "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school budget",
+  "FY26 budget",
+  "school transportation fee",
+  "athletics",
+  "summer camps",
+  "recreation department",
+  "grant funding",
+  "business office salaries",
+  "public comment",
+  "Capital Planning Committee",
+  "Zoom participation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

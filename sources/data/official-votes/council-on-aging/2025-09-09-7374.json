@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-09-09",
  "docid": "7374",
@@ -12,39 +12,395 @@
  },
  "votes": [
   {
-   "motion": "Approve July minutes",
-   "moved_by": "Ms. Lockwood",
-   "seconded_by": "Mr. McGuigan",
+   "motion": "Approve the July minutes.",
+   "moved_by": "Ana Lockwood",
+   "seconded_by": "Jim McGuigan",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "july minutes motioned for approval by ms. lockwood , seconded by mr. mcguigan . m otion passed unanimously."
   },
   {
-   "motion": "Approve August minutes",
-   "moved_by": "Ms. Lockwood",
-   "seconded_by": "Mr. McGuigan",
+   "motion": "Approve the August minutes.",
+   "moved_by": "Ana Lockwood",
+   "seconded_by": "Jim McGuigan",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "august minutes motioned for approval by ms. lockwood, seconded by mr. mcguigan . motion passed unanimously."
   },
   {
-   "motion": "Support Mr. Rabbitt representing the COA to work with the town towards the 41A tax exemption",
-   "moved_by": "Ms. Lockwood",
-   "seconded_by": "Ms. Beale",
+   "motion": "Support Mr. Rabbitt representing the COA to work with the town toward the 41A tax exemption.",
+   "moved_by": "Ana Lockwood",
+   "seconded_by": "Cathy Beale",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion to support mr. rabbitt representing the coa to work with the town towards the 41a tax exemption by ms. lockwood , seconded by ms. beale . approved unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Ms. Lockwood",
-   "seconded_by": "Mr. Franco",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ana Lockwood",
+   "seconded_by": "Lou Franco",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "a motion to adjourn was made by ms. lockwood and seconded by mr. franco . it passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All four votes are recorded with outcomes. The document notes approval of these minutes at an October 14, 2025 meeting.",
- "cost_usd": 0.0647954
+ "note": "Text extraction only; no scan. The minutes carry a header stating they were approved at the October 14, 2025 meeting. Four votes are recorded: approval of July minutes, approval of August minutes, the 41A motion, and adjournment, all passed unanimously; no non-unanimous counts appear. The \"Mr. Rabbitt\" in the 41A motion is not disambiguated in the minutes; two Rabbitts are listed (Jane Rabbitt, Vice-Chair, and Jack Rabbitt), both excused, so the representative is unidentified. Names taken as printed with extraction spacing collapsed: \"Susan O ’Sullivan\" is shown as Susan O’Sullivan, and \"Barbara Co u lo mbe\" as Barbara Coulombe (the minutes' own body text prints \"Ms. Coul o mbe\"). Attendee status for Deb Goodsell and Barbara Coulombe is \"present\" because they took part, not because the minutes say so. Public comment is recorded as \"none\", so no speakers are listed. Board comment by Ms. Lockwood is treated as a board remark, not public comment. The \"close to 600k\" and \"5 million\" figures are as printed and are not verified against any source document.",
+ "cost_usd": 0.01626947,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), diane nowd, jim mcguigan , cathy beale, lou"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "member",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), diane nowd, jim mcguigan , cathy beale, lou"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "member",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), diane nowd, jim mcguigan , cathy beale, lou"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "member",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), diane nowd, jim mcguigan , cathy beale, lou"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "member",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), diane nowd, jim mcguigan , cathy beale, lou"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "member",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), diane nowd, jim mcguigan , cathy beale, lou"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "member",
+   "status": "present",
+   "quote": "present : deb lincoln (chairperson), diane nowd, jim mcguigan , cathy beale, lou"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "member",
+   "status": "absent",
+   "quote": "excused: helen balcom , susan o 'sullivan , jane rabbitt (vice-chair ), jack rabbitt"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "member",
+   "status": "absent",
+   "quote": "excused: helen balcom , susan o 'sullivan , jane rabbitt (vice-chair ), jack rabbitt"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "excused: helen balcom , susan o 'sullivan , jane rabbitt (vice-chair ), jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "absent",
+   "quote": "excused: helen balcom , susan o 'sullivan , jane rabbitt (vice-chair ), jack rabbitt"
+  },
+  {
+   "name": "Deb Goodsell",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "guests: deb goodsell (coa director) barbara co u lo mbe (eagle house supporters)"
+  },
+  {
+   "name": "Barbara Coulombe",
+   "role": "Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: deb goodsell (coa director) barbara co u lo mbe (eagle house supporters)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board indicated support for moving an assisted living facility from the 'want to have' list to the 'need to have' list in the Master Plan, with zoning raised as the route to facilitate it.",
+   "quote": "the board indicated they support that change."
+  },
+  {
+   "decision": "The Bucky's Corner furniture rearrangement (tables and chairs, furniture moved to the entrance) is a temporary change to see how it works and is utilized.",
+   "quote": "ms. beale indicated that this is a temporary change to see how it works and is utilized."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School Committee unspent FY25 funds",
+   "what_was_recorded": "Ms. Lockwood reported the School Committee shared close to $600k in unspent FY25 funds and encouraged residents to contact their officials.",
+   "quote": "ms. lockwood reported that last week the school committee shared that there was close to 600k in unspent funds from their fy25 budget.",
+   "figures_as_printed": [
+    "600k"
+   ]
+  },
+  {
+   "topic": "Financial status and Meal Site Manager funds",
+   "what_was_recorded": "Ms. Goodsell presented the financial status; the board discussed using Meal Site Manager funds to expand nutritional services for seniors. No dollar figure was printed.",
+   "quote": "discussion on utilizing funds allocated for the meal site manager to increase the nutritional services offered to seniors",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY27 initial budget",
+   "what_was_recorded": "Ms. Goodsell presented the initial FY27 budget to the Tri-Board. No dollar figure was printed.",
+   "quote": "ms. goodsell reported that she went before the tri-board and presented the initial fy27 budget",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "State funding after Nashoba Hospital closure",
+   "what_was_recorded": "Ms. Lockwood reported the state allocated 5 million to communities affected by the Nashoba Hospital closure; how it will be disbursed is still unknown.",
+   "quote": "allocated 5 million to the communities affected by the closure of nashoba hospital",
+   "figures_as_printed": [
+    "5 million"
+   ]
+  },
+  {
+   "topic": "Bucky's Corner furniture pricing",
+   "what_was_recorded": "Pricing received for new furniture was described as exorbitant. No dollar figure was printed.",
+   "quote": "the pricing they have received for new furniture has been exorbitant.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Benefits of Building Permits for Seniors program",
+   "what_was_recorded": "Ms. Lockwood described benefits beyond financial savings, such as education and protection. No dollar figure was printed.",
+   "quote": "she spoke to the benefits this could provide outside of financial savings, such as education and protection.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Mass DOT transportation grant",
+   "what_was_recorded": "Ms. Goodsell reported looking at a Mass DOT grant to offer additional transportation services. No dollar figure was printed.",
+   "quote": "ms. goodsell noted she has been looking at a grant through mass dot to offer additional transportation services.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "none reported",
+   "quote": "announcements : non e",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no speakers",
+   "quote": "public comment : none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment: School Committee unspent funds",
+   "resolution": "no action",
+   "quote": "ms. lockwood reported that last week the school committee shared that there was close to 600k in unspent funds from their fy25 budget.",
+   "tags": [
+    "school budget",
+    "unspent funds"
+   ]
+  },
+  {
+   "topic": "Minutes approval (July and August)",
+   "resolution": "approved unanimously",
+   "quote": "july minutes motioned for approval by ms. lockwood , seconded by mr. mcguigan . m otion passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "41A tax exemption support",
+   "resolution": "approved unanimously",
+   "quote": "motion to support mr. rabbitt representing the coa to work with the town towards the 41a tax exemption",
+   "tags": [
+    "tax exemption",
+    "41A"
+   ]
+  },
+  {
+   "topic": "Tea Party",
+   "resolution": "no action; tickets sold out",
+   "quote": "tea party : all tickets are sold .",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Volunteer Recognition",
+   "resolution": "reported; to be held in Spring",
+   "quote": "this will be held in the spring to align with n ational v olunteer a ppreciation week.",
+   "tags": [
+    "volunteers",
+    "events"
+   ]
+  },
+  {
+   "topic": "Hometown Heroes Program",
+   "resolution": "reported; lead named",
+   "quote": "jennifer sanderson from the historical commission is the lead for this project.",
+   "tags": [
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Historical Commission Boston Post Cane",
+   "resolution": "letter read; no action recorded",
+   "quote": "they stated they have obtained a replica cane and would like to be part of future boston post cane celebrations.",
+   "tags": [
+    "historical commission",
+    "boston post cane"
+   ]
+  },
+  {
+   "topic": "Financial reports",
+   "resolution": "presented; discussion, no action",
+   "quote": "discussion on utilizing funds allocated for the meal site manager to increase the nutritional services offered to seniors",
+   "tags": [
+    "budget",
+    "FY27",
+    "meal site"
+   ]
+  },
+  {
+   "topic": "Caregiver Connection report",
+   "resolution": "reported; no action",
+   "quote": "first lunch and learn will be next week .",
+   "tags": [
+    "caregivers",
+    "programs"
+   ]
+  },
+  {
+   "topic": "New hours in November",
+   "resolution": "announced; no vote recorded",
+   "quote": "hours will change in november to be open monday 8-5 .",
+   "tags": [
+    "hours",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Local hospital services",
+   "resolution": "reported; no action",
+   "quote": "allocated 5 million to the communities affected by the closure of nashoba hospital",
+   "tags": [
+    "hospital closure",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Bucky's Corner",
+   "resolution": "temporary furniture change; Mary Padula day to be considered",
+   "quote": "ms. beale indicated that this is a temporary change to see how it works and is utilized.",
+   "tags": [
+    "facilities",
+    "furniture",
+    "honors"
+   ]
+  },
+  {
+   "topic": "Lunenburg Master Plan meeting",
+   "resolution": "board supports assisted living on need-to-have list",
+   "quote": "the board indicated they support that change.",
+   "tags": [
+    "master plan",
+    "housing",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Building Permits for Seniors",
+   "resolution": "outline presented; no action",
+   "quote": "ms. lockwood presented an outline of how this program could work.",
+   "tags": [
+    "housing",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Kitchen staffing update",
+   "resolution": "no update",
+   "quote": "kitchen staffing update : no update at this time.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Director's report: programs, events, trips",
+   "resolution": "reported; no action",
+   "quote": "sand for seniors program has been updated for this upcoming winter season",
+   "tags": [
+    "programs",
+    "transportation",
+    "trips"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported; no action",
+   "quote": "ms. coul o mbe noted their information is available on facebook and flyers are posted .",
+   "tags": [
+    "eagle house",
+    "trips",
+    "raffles"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "quote": "notices and communications : none",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Board comment (closing)",
+   "resolution": "none",
+   "quote": "board comment : none",
+   "tags": [
+    "board comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously",
+   "quote": "a motion to adjourn was made by ms. lockwood and seconded by mr. franco . it passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "seniors",
+  "FY27 budget",
+  "school budget",
+  "unspent funds",
+  "state aid",
+  "Nashoba Hospital",
+  "Master Plan",
+  "assisted living",
+  "zoning",
+  "41A tax exemption",
+  "Boston Post Cane",
+  "transportation",
+  "programs",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

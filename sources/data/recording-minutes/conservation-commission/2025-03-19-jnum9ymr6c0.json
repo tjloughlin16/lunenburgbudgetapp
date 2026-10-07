@@ -367,5 +367,222 @@
    "at": "2026-10-06T17:59:12Z",
    "cost_usd": 0.21374700000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03192025-7108",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2025-03-19-minutes-7108.txt",
+   "path": "sources/meetings/conservation-commission/2025-03-19-minutes-7108.pdf"
+  },
+  "official_sha256": "8e47770f98d0f41d56b6ba125eb6ef4352e826eb042fdff53906e61c28f243c4",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the outcome of all six motions and on the main attendees, but the official minutes record the votes tersely and several of our details do not appear in them. The most important difference is the 221 Electric Ave peer review motion: ours says it covers Riverfront applicability and flags 102 through 104 at the applicant's cost, while the official text says only \"peer review and replacement of flags 104-104\".",
+  "counts": {
+   "agree": 9,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: approve drainage pipe NOI, 32 Hemlock Drive",
+    "ours": "Approve the notice of intent for drainage pipe replacement at 32 Hemlock Drive — passed 4-0 by roll call (chair also voted aye)",
+    "official": "j. pewtherer, to approve second m. larouche vote: j. pewtherer - aye m. wilson - aye",
+    "note": "Both record approval; the official minutes print only two roll-call lines, so the 4-0 tally and the chair's vote are not confirmed there.",
+    "t": 752
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: negative determination, 76 Laurel Lane dock",
+    "ours": "Negative determination for the dock at 76 Laurel Lane, with the already-disturbed area used as the access route — passed by roll call; all members voted aye",
+    "official": "c. st. germain, for a negative determination with the stipulation that they use an area already disturbed as the egress route.",
+    "note": "Same motion and stipulation, and both record that it passed. The official text prints no roll call, so 'all aye' is ours only.",
+    "t": 1401
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: peer review at 221 Electric Ave",
+    "ours": "Request third-party peer review of Riverfront applicability and of flags 102 through 104 at 221 Electric Ave, at applicant's cost — passed by roll call; all voted aye",
+    "official": "motion: m. larouche, for a peer review and replacement of flags 104-104.",
+    "note": "The scope differs: ours says Riverfront applicability plus flags 102-104 at the applicant's cost, and the official text says flags '104-104' with 'replacement', with no Riverfront item and no cost allocation. '104-104' looks like a typo or caption error, so check the recording at about t=3015 and the written motion.",
+    "t": 3015
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 221 Electric Ave to April 2nd",
+    "ours": "Continue the 221 Electric Ave hearing to April 2nd — passed by roll call; all voted aye",
+    "official": "motion: m. larouche, to continue to april 2nd. second j. pewtherer",
+    "note": "Same motion and date.",
+    "t": 3277
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Table Rock NOI at 994 Northfield Road",
+    "ours": "Approve the notice of intent for the Table Rock trailhead parking area at 994 Northfield Road — passed by roll call; all aye (Jenny's vote partly unclear in captions)",
+    "official": "c. st. germain, to approve. m. larouche c. st. germain - aye m. wilson - aye",
+    "note": "Both record approval. The official minutes print only two roll-call lines, so the unanimous tally is not confirmed there.",
+    "t": 4605
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve 213 Electric Ave NOI",
+    "ours": "Approve the notice of intent for 213 Electric Ave with standard order of conditions — passed by roll call; all voted aye",
+    "official": "c. st. germain, to approve, with standard order of conditions.",
+    "note": "Same motion and condition.",
+    "t": 5265
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stormwater filing fee, 32 Hemlock Drive",
+    "ours": "Stormwater point-source filing fee, 32 Hemlock Drive: category 2G fee",
+    "official": "",
+    "note": "The official minutes print no filing fee for this item. Our figure is a category label, not a dollar amount.",
+    "t": 709
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: staff obtain quotes for the 221 Electric Ave peer review",
+    "ours": "Administrator Sophia will issue requests for quotes for the peer review at 221 Electric Ave, following the prior process (about a two-week turnaround, as at Sunny Hill Road).",
+    "official": "s. dorow will obtain quotes for the peer review.",
+    "note": "Same action by the same person. The two-week turnaround and the Sunny Hill Road reference are only in ours.",
+    "t": 3037
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Correct labeling of the O&M plan on OpenGov",
+    "ours": "The applicant for 213 and 221 Electric Ave must correct the labeling of the operation and maintenance plan uploaded to OpenGov.",
+    "official": "",
+    "note": "The official minutes do not mention the O&M plan labeling.",
+    "t": 3171
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Replacement shrub for Forsythia at Table Rock",
+    "ours": "Members to seek recommendations for a replacement shrub species to Forsythia at Table Rock; a change can be handled as a minor plan modification.",
+    "official": "",
+    "note": "The official minutes do not record the shrub discussion.",
+    "t": 3787
+   },
+   {
+    "kind": "agree",
+    "about": "Share historical satellite images, 1168 Mass Ave",
+    "ours": "Sophia to share the 2021 satellite images of areas A and B at 1168 Mass Ave with the consultant for the applicant.",
+    "official": "m. wilson requested that we share the historical satellite photos with the new consultant.",
+    "note": "Same action. Ours adds the 2021 date, areas A and B, and that Sophia does it. The official text names the requester, M. Wilson.",
+    "t": 5546
+   },
+   {
+    "kind": "discrepancy",
+    "about": "April 30 training start time",
+    "ours": "Commission will aim for a 5 PM start for the April 30th training; Sophia to confirm with absent members Jeff and Rich.",
+    "official": "j. pewtherer requested we ask her what the latest start time could be.",
+    "note": "Ours records a 5 PM target and confirming with absent members. The official text records only a request to ask the presenter for the latest possible start. Check the recording around t=6129 for what was decided.",
+    "t": 6129
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Earth Day boardwalk work with National Honor Society",
+    "ours": "Chris will convene a chat about the Earth Day boardwalk work with the National Honor Society.",
+    "official": "",
+    "note": "The official minutes do not mention this item.",
+    "t": 6339
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Continuances of 390 Howard St, 201 Leominster Shirley Rd and 67 Island Rd",
+    "ours": "",
+    "official": "applicant requested a continuance to april 2nd.",
+    "note": "The official minutes record these administrative continuances (390 Howard St, 201 Leominster Shirley Rd RDA-25-1, 67 Island Rd RDA-24-9) and our minutes do not.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "950 Chase Rd and Open Space and Land Use committee assignment",
+    "ours": "",
+    "official": "this is in execution session and has reverted to the select board.",
+    "note": "The official minutes record the 950 Chase Rd matter reverting to the Select Board, and C. St. Germain taking over Open Space and Land Use from M. Wilson. Ours has neither.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jenny puer",
+    "ours": "Jenny puer (member)",
+    "official": "attending: j. pewtherer, m. larouche, c. st. germain, p. stella, m. wilson.",
+    "note": "The captions misheard Jennifer Pewtherer.",
+    "official_reading": "Jennifer Pewtherer",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mike larouche",
+    "ours": "Mike larouche (member)",
+    "official": "attending: j. pewtherer, m. larouche, c. st. germain, p. stella, m. wilson.",
+    "note": "Same person (Michael Larouche); only the first-name form differs.",
+    "official_reading": "Michael Larouche",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Chris St Germain and Pete Stella",
+    "ours": "Chris St Germain (member); Pete Stella (member)",
+    "official": "attending: j. pewtherer, m. larouche, c. st. germain, p. stella, m. wilson.",
+    "note": "Both are listed as present in each record.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: chair Mary Wilson",
+    "ours": "the chair (Mary, as addressed) (chair)",
+    "official": "attending: j. pewtherer, m. larouche, c. st. germain, p. stella, m. wilson.",
+    "note": "The official minutes identify the chair as M. Wilson; ours knows her only as 'Mary'.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Sophia (administrator)",
+    "ours": "Sophia (conservation administrator/staff)",
+    "official": "s. dorow will obtain quotes for the peer review.",
+    "note": "The captions give only the first name. The official minutes give the surname as Dorow.",
+    "official_reading": "Sophia Dorow",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter: Greg Roy (Dillon Roy)",
+    "ours": "Greg Roy (Dillon Roy) (presenter)",
+    "official": "greg roy (dillis & roy) agreed and summarized the work to date including the changes requested by the commission.",
+    "note": "The firm name was misheard.",
+    "official_reading": "Dillis & Roy",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter: Daniel Shien (Haley Ward Construction)",
+    "ours": "Daniel Shien (Haley Ward Construction) (presenter)",
+    "official": "daniel sheehan (haley ward) represented the applicant and reviewed the requested changes.",
+    "note": "The surname was misheard; the firm matches.",
+    "official_reading": "Daniel Sheehan",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members and other attendees",
+    "ours": "",
+    "official": "absent: r. bursch, j. viviano",
+    "note": "The official minutes list R. Bursch and J. Viviano as absent, and also name Bonnie Albright, Logan O'Connell and Michael Gale. Ours mentions Jeff and Rich as absent only inside a decision, and does not list the others.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:27:56Z",
+   "cost_usd": 0.255425
+  }
  }
 }

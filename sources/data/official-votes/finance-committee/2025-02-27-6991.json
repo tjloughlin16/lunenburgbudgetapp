@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-02-27",
  "docid": "6991",
@@ -12,15 +12,431 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Motion to adjourn the meeting",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "there was a motion to adjourn by ana lockwood, seconded by jay simeone."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one vote recorded in these minutes. Sections 5–8 contain presentations and discussion of department budgets and concerns, but no formal motions are put to a vote. Previous minutes were not reviewed (section 9). No votes on specific budget items, warrant articles, or budget task force recommendations are documented.",
- "cost_usd": 0.0697874
+ "note": "Text is a readable digital extraction, not a scan. Only one motion is recorded (adjournment), and its result is not stated. No other votes, and no decisions recorded without a vote. Some letters in the extraction are ligature glyphs (for example \"ﬁ\" and \"Ư\"); quotes avoid those characters. The minutes print the meeting opening at 7:00 PM and closing at \"12:08 AM\", which is reproduced as printed and not corrected. Several \"budget\" figures are the Town Manager's proposed figures or public statements, not votes. The Schools line is shown as the printed Town Manager proposal.",
+ "cost_usd": 0.01673677,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell, clerk tom gray"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell, clerk tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell, clerk tom gray"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall, committee member ana lockwood,"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall, committee member ana lockwood,"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member mike rupp, committee member jay simeone"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "the dpw director, bill bernard, provided the presentation."
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jennifer warren-dyment, town manager, states snow removal is"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "the facilities director, chris ruth, provided the presentation."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "member of the Parks Commission",
+   "status": "present",
+   "quote": "karin menard, 672 page street, member of the parks commission"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "",
+   "status": "present",
+   "quote": "greg roy, 105 chestnut street, thanks chris ruth for his work."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "formally 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, formally 56 whiting street, says when he was on the finance committee"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "82 Highland Street",
+   "status": "present",
+   "quote": "dave rogers, 82 highland street, spoke to a previous committee member"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY26 revenue totals and sources",
+   "what_was_recorded": "The Finance Director reported FY26 revenues totaling $48,594,145, split into property tax, net state aid, local receipts and other funds.",
+   "quote": "the fy26 revenues totaled $48,594,145",
+   "figures_as_printed": [
+    "$48,594,145",
+    "$35,005,838",
+    "$9,803,871",
+    "$3,360,524",
+    "$423,900"
+   ]
+  },
+  {
+   "topic": "FY26 property tax levy calculation",
+   "what_was_recorded": "The levy limit, Proposition 2 1/2 increment, new growth and excluded debt were listed to arrive at the maximum allowable levy.",
+   "quote": "maximum allowable levy: $35,005,838",
+   "figures_as_printed": [
+    "$31,602,108",
+    "$790,052.70",
+    "$400,000",
+    "$2,213,677",
+    "$35,005,838"
+   ]
+  },
+  {
+   "topic": "FY2026 capital program",
+   "what_was_recorded": "The FY 2026 capital program was reported at a stated figure.",
+   "quote": "fy 2026 capital program $615,588",
+   "figures_as_printed": [
+    "$615,588"
+   ]
+  },
+  {
+   "topic": "Debt service",
+   "what_was_recorded": "Total debt service was reported with the actual figure given.",
+   "quote": "maturing debt: $2,547,440.36",
+   "figures_as_printed": [
+    "$2,547,440.36"
+   ]
+  },
+  {
+   "topic": "Town Manager proposed budgets",
+   "what_was_recorded": "The Town Manager's proposed budget figures by department were listed, including Schools at $27,121,995.",
+   "quote": "schools: $27,121,995",
+   "figures_as_printed": [
+    "$2,547,440.36",
+    "$4,646,870.10",
+    "$2,529,486.74",
+    "$84,500",
+    "$2,456,249.51",
+    "$1,724,599.37",
+    "$310,763.90",
+    "$56,425",
+    "$126,996.30",
+    "$1,777,638.01",
+    "$1,040,396.30",
+    "$470,000",
+    "$252,267.42",
+    "$90,699",
+    "$27,121,995",
+    "$650,518.04",
+    "$30,500",
+    "$2,392,572"
+   ]
+  },
+  {
+   "topic": "DPW snow removal budget",
+   "what_was_recorded": "The DPW director is asking for a snow removal figure, and the Town Manager recommended an increase to close the gap.",
+   "quote": "bill bernard is currently asking for $363,000.",
+   "figures_as_printed": [
+    "$363,000",
+    "$110,000"
+   ]
+  },
+  {
+   "topic": "Snow removal recommended increase",
+   "what_was_recorded": "The Town Manager recommended a $110,000 increase to close the snow removal budget gap.",
+   "quote": "an increase of $110,000 to close the gap.",
+   "figures_as_printed": [
+    "$110,000"
+   ]
+  },
+  {
+   "topic": "Chapter 90 road funding",
+   "what_was_recorded": "The DPW director stated Chapter 90 funding will be $418,000, unchanged for twelve years.",
+   "quote": "states the funding will be $418,000",
+   "figures_as_printed": [
+    "$418,000"
+   ]
+  },
+  {
+   "topic": "Sewer delinquency and revenue",
+   "what_was_recorded": "A 27% delinquency rate was reported, approximately $400,000 of revenue, and no sewer rate increase this year.",
+   "quote": "there is a 27% delinquency rate (approximately $400,000 of revenue).",
+   "figures_as_printed": [
+    "27%",
+    "$400,000"
+   ]
+  },
+  {
+   "topic": "Sewer department estimated revenue and expense",
+   "what_was_recorded": "Estimated FY26 sewer revenue and expense were reported, with the gap to come from retained earnings.",
+   "quote": "estimated expense is 1.88 million.",
+   "figures_as_printed": [
+    "1.58 million",
+    "1.88 million"
+   ]
+  },
+  {
+   "topic": "Sewer operation and maintenance contract",
+   "what_was_recorded": "The yearly cost of the sewer operation and maintenance contract was given as a little over $100,000.",
+   "quote": "jay simeone questions what the operation and maintenance contract costs yearly.",
+   "figures_as_printed": [
+    "$100,000"
+   ]
+  },
+  {
+   "topic": "Sewer retained earnings",
+   "what_was_recorded": "Members asked about potential problems with retained earnings used to cover the sewer shortfall; staff did not foresee an issue.",
+   "quote": "questions if there are any potential problems related to the retained earnings.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Recreation reserve funds",
+   "what_was_recorded": "A former committee member recalled releasing reserve funds for a possible increase in recreation director hours, and the Town Manager said the revolving account change was approved.",
+   "quote": "approached about releasing some funds from the",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Marshall Park design funding",
+   "what_was_recorded": "A Parks Commission member said grants for Marshall Park were returned and design costs come from ARPA funds, capital expense and a town meeting vote.",
+   "quote": "any money being spent on the design process is coming out of arpa funds",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Facilities work and thanks to facilities director",
+   "speaker": "Greg Roy",
+   "quote": "greg roy, 105 chestnut street, thanks chris ruth for his work."
+  },
+  {
+   "topic": "Recreation director reserve funds and revolving account",
+   "speaker": "Dave Passios",
+   "stated_role": "formally 56 Whiting Street",
+   "quote": "dave passios, formally 56 whiting street, says when he was on the finance committee"
+  },
+  {
+   "topic": "Marshall Park grants and design funding",
+   "speaker": "Karin Menard",
+   "stated_role": "member of the Parks Commission",
+   "quote": "karin menard, 672 page street, member of the parks commission"
+  },
+  {
+   "topic": "Sewer department thanks",
+   "speaker": "Greg Roy",
+   "quote": "greg roy, 105 chestnut street, thanks bill bernard and his"
+  },
+  {
+   "topic": "Generators needing replacement",
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland Street",
+   "quote": "dave rogers, 82 highland street, spoke to a previous committee member"
+  },
+  {
+   "topic": "Pavement management plan and Chapter 90",
+   "speaker": "Dave Passios",
+   "stated_role": "formally 56 Whiting Street",
+   "quote": "dave passios, formally 56 whiting street, agrees with cutting down the pavement"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "chris menard shares that the town caucus is on march 10th.",
+   "tags": [
+    "elections",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "no action",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director reports",
+   "resolution": "no action",
+   "quote": "the fy26 revenues totaled $48,594,145",
+   "tags": [
+    "FY26 budget",
+    "revenue",
+    "levy",
+    "town budget"
+   ]
+  },
+  {
+   "topic": "Department of Public Works presentation",
+   "resolution": "no action",
+   "quote": "the dpw director, bill bernard, provided the presentation.",
+   "tags": [
+    "DPW",
+    "snow removal",
+    "trees",
+    "capital plan",
+    "Chapter 90"
+   ]
+  },
+  {
+   "topic": "Facilities Department presentation",
+   "resolution": "no action",
+   "quote": "the facilities director, chris ruth, provided the presentation.",
+   "tags": [
+    "facilities",
+    "capital projects",
+    "recreation",
+    "TC Passios building",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Sewer Department presentation",
+   "resolution": "no action",
+   "quote": "bill bernard reiterates that there will be no rate increase this year.",
+   "tags": [
+    "sewer",
+    "retained earnings",
+    "delinquency"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "no action",
+   "quote": "there is no new business.",
+   "tags": []
+  },
+  {
+   "topic": "Old business: FY26 budget, warrant articles, task force",
+   "resolution": "no action",
+   "quote": "a. fy26 budget discussions",
+   "tags": [
+    "FY26 budget",
+    "warrant articles",
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "no action",
+   "quote": "the committee did not review any minutes.",
+   "tags": []
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "there are no committee reports.",
+   "tags": []
+  },
+  {
+   "topic": "Actions and topics for future meetings",
+   "resolution": "no action",
+   "quote": "there are no additional topics or actions for future meetings.",
+   "tags": []
+  },
+  {
+   "topic": "Important dates and upcoming meetings",
+   "resolution": "no action",
+   "quote": "a. thursday 3/6/2025",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action",
+   "quote": "dave passios, formally 56 whiting street, agrees with cutting down the pavement",
+   "tags": [
+    "public comment",
+    "pavement management",
+    "Chapter 90"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn made by Ana Lockwood, seconded by Jay Simeone; outcome not recorded",
+   "quote": "there was a motion to adjourn by ana lockwood, seconded by jay simeone.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "FY26 budget",
+  "town budget",
+  "revenue and levy",
+  "DPW",
+  "snow removal",
+  "facilities",
+  "parks and recreation",
+  "sewer",
+  "Chapter 90",
+  "public comment",
+  "school budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

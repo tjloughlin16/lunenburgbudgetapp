@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2025-01-08",
  "docid": "6947",
@@ -12,95 +12,541 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 11/6/24",
+   "motion": "Approve the minutes of 11/6/24.",
    "moved_by": "Rich B.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed",
+   "outcome": "passed 6-0",
    "procedural": true,
-   "quote": "motion: rich b., second: jenny p. to approve the minutes of 11/6/24. roll call v ote: chris-aye, mike-aye, jeff-aye, rich-aye, jenny -aye and mary -aye."
+   "quote": "motion: rich b., second: jenny p. to approve the minutes of 11/6/24."
   },
   {
-   "motion": "Continue the hearing on 157 Goodrich Street to 1/22/25",
+   "motion": "Continue the hearing on 157 Goodrich Street to 1/22/25.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: rich b., second: mike l. to continue the hearing on 157 goodrich street to 1/22/25. roll call v ote: chris-aye, jenny -aye, rich-aye, jeff -aye, mike-aye and mary -aye."
+   "outcome": "passed 6-0",
+   "procedural": false,
+   "quote": "motion: rich b., second: mike l. to continue the hearing on 157 goodrich street to 1/22/25."
   },
   {
-   "motion": "Continue the hearing on 400 Leominster Shirley Rd. to 1/22/25",
+   "motion": "Continue the hearing on 400 Leominster Shirley Rd. to 1/22/25.",
    "moved_by": "Chris S.",
    "seconded_by": "Rich B.",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: chris s., second: rich b. to continue the hearing on 400 leominster shirley rd. to 1/22/25. roll call v ote: chris-aye, mike-aye, jeff -aye, rich -aye, jenny -aye and mary -aye."
+   "outcome": "passed 6-0",
+   "procedural": false,
+   "quote": "motion: chris s., second: rich b. to continue the hearing on 400 leominster shirley rd. to 1/22/25."
   },
   {
-   "motion": "Approve the NOI for D & A Lunenburg, LLC based on the plans submitted in September, as long as any changed plans are submitted to the office and there are no changes in the buffer zone",
+   "motion": "Approve the NOI for D & A Lunenburg, LLC (Electric Avenue and Pierce Avenue), based on the plans submitted in September, as long as any changed plans are submitted to the office and there are no changes in the buffer zone.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-1",
    "procedural": false,
-   "quote": "to approve the noi, based on the plans submitted in september, as long as any changed plans are submitted to the office and there are no changes in the buffer zone. roll call v ote: chris-aye, mike-aye, jenny-aye, rich -aye, and mary -aye. jeff abstained."
+   "quote": "to approve the noi, based on the plans submitted in september, as long as any changed plans are submitted to the office and there are no changes in the buffer zone."
   },
   {
-   "motion": "Continue the hearing on 390 Howard Street to 1/22/25",
-   "moved_by": "Mike L.",
-   "seconded_by": "Chris S",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: mike l., second: chris s to continue the hearing on 390 howard street to 1/22/25. roll call v ote: chris-aye, mike-aye, jeff -aye, jenny-aye, rich-aye, and mary -aye."
-  },
-  {
-   "motion": "Approve the NOI for 50 Pine Grove Road",
-   "moved_by": "Mike L.",
-   "seconded_by": "Chris S",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: mike l., second: chris s to approve the noi for 50 pine grove road . roll call v ote: rich-aye, jenny-aye, mike-aye, chris-aye, and mary -aye. jeff abstained."
-  },
-  {
-   "motion": "Approve the COC for 57 Round Road",
+   "motion": "Continue the hearing on 390 Howard Street to 1/22/25.",
    "moved_by": "Mike L.",
    "seconded_by": "Chris S.",
-   "outcome": "passed",
+   "outcome": "passed 6-0",
    "procedural": false,
-   "quote": "motion: mike l., second: chris s. to approve the coc for 57 round road. roll call v ote: rich-aye, jenny -aye, jeff-aye, mike-aye, chris -aye, and mary -aye."
+   "quote": "to continue the hearing on 390 howard street to 1/22/25."
   },
   {
-   "motion": "Deny the COC request for 32 Pine Grove Rd. and recommend the applicant come back when those areas are stabilized",
-   "moved_by": "Rich B.",
-   "seconded_by": "Jenny P.",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: rich b., second: jenny p. to deny the coc request for 32 pine grove rd. and recommend the applicant come back when those areas are stabilized. roll call v ote: chris-aye, mike-aye, jeff -aye, jenny -aye, rich -aye, and mary -aye."
-  },
-  {
-   "motion": "Approve the COC for 137 Flynn Road",
-   "moved_by": "Rich B.",
-   "seconded_by": "Jenny P.",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: rich b., second: jenny p. to approve the coc for 137 flynn road . roll call v ote: chris-aye, mike-aye, jeff -aye, rich-aye, jenny-aye, and mary -aye."
-  },
-  {
-   "motion": "Issue a letter explaining the timeline expected and requesting a response from the wetlands scientist on the schedule for addressing issues and when documentation will be submitted",
+   "motion": "Approve the NOI for 50 Pine Grove Road.",
    "moved_by": "Mike L.",
    "seconded_by": "Chris S.",
-   "outcome": "passed",
+   "outcome": "passed 5-0-1",
    "procedural": false,
-   "quote": "motion: mike l., second: chris s. to issue a letter explaining the timeline we expect and requesting a response from his wetlands scientist on the schedule for addressing issues and when documentation will be submitted."
+   "quote": "to approve the noi for 50 pine grove road"
   },
   {
-   "motion": "Adjourn at 9:43pm",
+   "motion": "Approve the Certificate of Compliance for 57 Round Road.",
+   "moved_by": "Mike L.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed 6-0",
+   "procedural": false,
+   "quote": "to approve the coc for 57 round road."
+  },
+  {
+   "motion": "Deny the Certificate of Compliance request for 32 Pine Grove Rd. and recommend the applicant come back when those areas are stabilized.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Jenny P.",
+   "outcome": "passed 6-0",
+   "procedural": false,
+   "quote": "to deny the coc request for 32 pine grove rd. and recommend the applicant come back when those areas are stabilized."
+  },
+  {
+   "motion": "Approve the Certificate of Compliance for 137 Flynn Road.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Jenny P.",
+   "outcome": "passed 6-0",
+   "procedural": false,
+   "quote": "to approve the coc for 137 flynn road"
+  },
+  {
+   "motion": "Issue a letter to 10 Mass. Ave. explaining the timeline expected and requesting a response from his wetlands scientist on the schedule for addressing issues and when documentation will be submitted.",
+   "moved_by": "Mike L.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed 6-0",
+   "procedural": false,
+   "quote": "to issue a letter explaining the timeline we expect and requesting a response from his wetlands scientist on the schedule for addressing issues and when documentation will be submitted."
+  },
+  {
+   "motion": "Adjourn the meeting at 9:43pm.",
    "moved_by": "Mike L.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed",
+   "outcome": "passed 6-0",
    "procedural": true,
-   "quote": "motion: mike l., second: jenny p. to adjourn at 9:43pm. roll call v ote: rich-aye, jenny -aye, jeff -aye, chris-aye, mike-aye, and mary -aye."
+   "quote": "motion: mike l., second: jenny p. to adjourn at 9:43pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded with complete roll call outcomes. Two votes (Electric Avenue NOI and 32 Pine Grove denial) have quotes exceeding 200 characters due to detailed motion descriptions, but remain verbatim excerpts as required.",
- "cost_usd": 0.1504544
+ "note": "Read from a digital text layer, not a scan; all six pages present, with page 6 blank. Spacing artifacts in the text (for example 'Sophi a', 'e quipment', '15 th.') were copied as printed. Votes are recorded by roll call with named aye counts; Jeff Viviano abstained on the two NOI approvals (5-0-1). Continuance votes and certificate votes were recorded by roll call listing six ayes. The 10 Mass. Ave. vote's motion is paraphrased with the address shortened. The 40 Fire Road 12 NOI was deferred by discussion, with no recorded vote. Patricia Whitney's letter was read into the record by staff and is recorded as public comment on that basis; the minutes' public-comment section itself reads 'none'. Attendance for Lynne Man, Stephen Violette, Christopher Anderson and Nijal Hamberg is not explicitly stated and is marked accordingly.",
+ "cost_usd": 0.02247717,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order at 7 :01pm by mary w."
+  },
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: chris s., mike l., jeff v ., jenny p., rich b., mary w. and sophi a dorow (admin.)"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "roll call: chris s., mike l., jeff v ., jenny p., rich b., mary w. and sophi a dorow (admin.)"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "roll call: chris s., mike l., jeff v ., jenny p., rich b., mary w. and sophi a dorow (admin.)"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "roll call: chris s., mike l., jeff v ., jenny p., rich b., mary w. and sophi a dorow (admin.)"
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "roll call: chris s., mike l., jeff v ., jenny p., rich b., mary w. and sophi a dorow (admin.)"
+  },
+  {
+   "name": "Sophia Dorow",
+   "role": "Conservation Administration (Admin.)",
+   "status": "present",
+   "quote": "roll call: chris s., mike l., jeff v ., jenny p., rich b., mary w. and sophi a dorow (admin.)"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "jane ranley (minutes clerk)"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy, representing the applicant",
+   "status": "present",
+   "quote": "screen-shared the site plan and noted that this is a 3 acre parcel subdivided from 828 lancaster ave."
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "Hannigan Engineering, representing the applicant",
+   "status": "present",
+   "quote": "bill hannigan (hannigan engineering) stated the order of resource area delineation was issued march 2023"
+  },
+  {
+   "name": "Anna Wilkins",
+   "role": "North County Land Trust",
+   "status": "present",
+   "quote": "anna wilkins (north county land trust)- announced that the land trust"
+  },
+  {
+   "name": "Lynne Man",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lynne man clarified that they do not want roads added but would allow hunting and passive recreation."
+  },
+  {
+   "name": "Stephen Violette",
+   "role": "applicant, Sunshine Nominee Trust",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by stephen violette of sunshine nominee trust"
+  },
+  {
+   "name": "Christopher Anderson",
+   "role": "applicant, request to amend an Order of Resource Area Delineation (400 Leominster Shirley Road)",
+   "status": "not stated",
+   "quote": "a request to amend an order of resource area delineation by christopher anderson"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "applicant, Abbreviated Notice of Resource Area Delineation (390 Howard Street)",
+   "status": "absent",
+   "quote": "no one present for this hearing."
+  },
+  {
+   "name": "Nijal Hamberg",
+   "role": "applicant, Notice of Intent (50 Pine Grove Road)",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by nijal hamberg for renovations to an existing"
+  },
+  {
+   "name": "Patricia Whitney",
+   "role": "abutter, 137 Goodrich St.; letter of concern read into the record by Sophia Dorow",
+   "status": "not stated",
+   "quote": "sophia screen-shared and read a letter of concern from abutter patricia whitney (137 goodrich st.), questioning the impact to her pond which is a certified wildlife refuge."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Defer the Notice of Intent for 40 Fire Road 12 until the debris on town property is cleaned up.",
+   "quote": "the commission discussed whether to approve the noi and decided to wait until the debris is cleaned up."
+  },
+  {
+   "decision": "Chris Reilly to look into the town placing boulders as a permanent barrier at 40 Fire Road 12 and to talk to Scott Benjamin.",
+   "quote": "chris will look into having the town place the boulders and will talk to scott benjamin."
+  },
+  {
+   "decision": "Mary to notify the Select Board and Town Manager about debris on town property at 40 Fire Road 12.",
+   "quote": "rich asked if the select board and town manager had been notified about the debris on town property and mary replied no but will contact them."
+  },
+  {
+   "decision": "Commissioners agreed to a 1/4 page Ledger ad on buffer zones with a QR code to the website, after discussing continuing education budgeting.",
+   "quote": "mary recommended putting a ¼ page ad in the ledger explaining buffer zones along with a qr code to the website. the commissioners discussed and agreed."
+  },
+  {
+   "decision": "Next meeting set for 1/22; a special meeting on 1/29 for reports from the lake communities only.",
+   "quote": "next meeting is 1/22 and on 1/29 there will be a special meeting for the reports from the lake communities only."
+  },
+  {
+   "decision": "Chris to check whether paint drop-off can be recycled at the Devens program.",
+   "quote": "mary believed paint could be recycled at the devens program and chris will check on that option."
+  },
+  {
+   "decision": "Brian Marchetti to give an update on 1168 Mass. Ave. Rear at the 1/22 meeting.",
+   "quote": "brian will give an update at the 1/22 meeting."
+  },
+  {
+   "decision": "Mike to connect with the Pollinator Habitat on the April Earth Day events.",
+   "quote": "mike will connect with the pollinator habitat also."
+  },
+  {
+   "decision": "Mary to contact the Select Board about the Commissioner vacancy after interested residents came forward.",
+   "quote": "she will contact the select board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Continuing education budget for FY26",
+   "what_was_recorded": "Sophia is to project how much money will be needed for Commissioner classes in FY26; Mary estimated the class count, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "sophia is looking to project how much money will be needed for classes in fy26."
+  },
+  {
+   "topic": "Tax-bill flyers on the Commission's budget",
+   "what_was_recorded": "Mary suggested budgeting for flyers inserted into tax bills, which Bob estimated at $1,200.",
+   "figures_as_printed": [
+    "$1,200"
+   ],
+   "quote": "she also suggested budgeting for flyers to be inserted into tax bills which bob estimated at $1,200."
+  },
+  {
+   "topic": "Wildland / Forest Reserve grants",
+   "what_was_recorded": "Grants come around August and would give 50% of the cost of land acquisition.",
+   "figures_as_printed": [
+    "50%"
+   ],
+   "quote": "the grants come around august and would give 50% of the cost."
+  },
+  {
+   "topic": "Snow Riders grant close-out (LSR, award year 2022)",
+   "what_was_recorded": "Close-out reported 251 volunteer hours and $5,000 equivalent of power equipment usage, approximately $16,000 returned to the community.",
+   "figures_as_printed": [
+    "$5,000",
+    "$16,000"
+   ],
+   "quote": "this equates to approximately $16,000 back to the community."
+  },
+  {
+   "topic": "Source of Commission funds",
+   "what_was_recorded": "The Commission receives its monies from the Timber Rights Fund; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "currently, the commission receives their monies from the timber rights"
+  },
+  {
+   "topic": "Farmland of Local Importance sponsorship",
+   "what_was_recorded": "Local Commission endorsement of NRCS soil findings is described as carrying no cost.",
+   "figures_as_printed": [],
+   "quote": "the local conservation commission would sponsor that activity by endorsing his findings but there is no cost involved."
+  },
+  {
+   "topic": "Conservation Budget Report",
+   "what_was_recorded": "The Conservation Budget Report will be posted in the meeting folder; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "will be posted in the meeting folder after the 15 th."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Patricia Whitney",
+   "stated_role": "abutter, 137 Goodrich St.",
+   "topic": "Letter of concern on 157 Goodrich Street driveway, read into the record by staff",
+   "quote": "sophia screen-shared and read a letter of concern from abutter patricia whitney (137 goodrich st.), questioning the impact to her pond which is a certified wildlife refuge."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of 11/6/24",
+   "resolution": "approved 6-0",
+   "quote": "to approve the minutes of 11/6/24.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Announcements and public comment",
+   "resolution": "no action; none offered",
+   "quote": "announcements & public comment -none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "NOI, 157 Goodrich Street (driveway, Stephen Violette)",
+   "resolution": "continued to 1/22/25",
+   "quote": "a public hearing on a notice of intent by stephen violette of sunshine nominee trust",
+   "tags": [
+    "notice of intent",
+    "wetlands",
+    "driveway",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Amend Order of Resource Area Delineation, 400 Leominster Shirley Road",
+   "resolution": "continued to 1/22/25",
+   "quote": "request to amend an order of resource area delineation by christopher anderson",
+   "tags": [
+    "resource area delineation",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "NOI, Electric Avenue and Pierce Avenue (D & A Lunenburg, LLC)",
+   "resolution": "approved 5-0-1, Jeff Viviano abstained",
+   "quote": "a public hearing on a notice of intent by d & a lunenburg, llc for construction of a",
+   "tags": [
+    "notice of intent",
+    "stormwater",
+    "wetlands",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Abbreviated NORAD, 390 Howard Street (Kevin O’Brien)",
+   "resolution": "continued to 1/22/25; no one present",
+   "quote": "no one present for this hearing.",
+   "tags": [
+    "resource area delineation",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "NOI, 50 Pine Grove Road (Nijal Hamberg)",
+   "resolution": "approved 5-0-1, Jeff Viviano abstained",
+   "quote": "a public hearing on a notice of intent by nijal hamberg for renovations to an existing",
+   "tags": [
+    "notice of intent",
+    "wetlands",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance",
+   "resolution": "57 Round Road and 137 Flynn Road approved; 32 Pine Grove Road denied",
+   "quote": "---57 round road- sophia reported there were 2 parts to this.",
+   "tags": [
+    "certificate of compliance",
+    "erosion"
+   ]
+  },
+  {
+   "topic": "Violations and enforcement",
+   "resolution": "letter to 10 Mass. Ave. approved; 40 Fire Road 12 held; 48 Meadow Lane and 1168 Mass. Ave. Rear reported",
+   "quote": "violations & enforcements:",
+   "tags": [
+    "enforcement",
+    "violations",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "New business: North County Land Trust workshop",
+   "resolution": "no action; liaison suggested to Open Space Committee",
+   "quote": "anna wilkins (north county land trust)- announced that the land trust",
+   "tags": [
+    "land conservation",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Continuing education for Commissioners",
+   "resolution": "budgeting discussed; Commissioners agreed to ad",
+   "quote": "continuing education for commissioners - sophia is looking to project how much money",
+   "tags": [
+    "training",
+    "budget",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "January meeting schedule",
+   "resolution": "noted; special meeting 1/29",
+   "quote": "january meeting schedule- next meeting is 1/22",
+   "tags": [
+    "meetings"
+   ]
+  },
+  {
+   "topic": "Wildland grants",
+   "resolution": "informational; public hearings noted as needed",
+   "quote": "wildland grants - chris stated this is a global effort",
+   "tags": [
+    "grants",
+    "land protection"
+   ]
+  },
+  {
+   "topic": "Farmland of Local Importance",
+   "resolution": "no action; outreach to Open Space, Agriculture Commission and Select Board",
+   "quote": "farmland of local importance - mary received",
+   "tags": [
+    "farmland",
+    "NRCS",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Conservation budget report",
+   "resolution": "noted; to be posted after the 15th",
+   "quote": "will be posted in the meeting folder after the 15 th.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Paint stewardship",
+   "resolution": "Chris to check recycling option",
+   "quote": "paint stewardship- chris explained that this is a program for people to drop off paint.",
+   "tags": [
+    "household hazardous waste"
+   ]
+  },
+  {
+   "topic": "Old business: title searches",
+   "resolution": "no update",
+   "quote": "update on title searches - no update",
+   "tags": [
+    "title searches"
+   ]
+  },
+  {
+   "topic": "April Earth Day events",
+   "resolution": "in progress; outreach to Parks Commission and Pollinator Habitat",
+   "quote": "april earth day events - mary is working on this",
+   "tags": [
+    "outreach",
+    "pollinators"
+   ]
+  },
+  {
+   "topic": "Encroachment issues",
+   "resolution": "executive session with Select Board on 1/7/25 reported",
+   "quote": "mary noted the commission met in executive session with the select board on 1/7/25 concerning these issues.",
+   "tags": [
+    "encroachment",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Open Space and Land Use grants and projects",
+   "resolution": "reported; Snow Riders close-out filed; bridge work at Laine property",
+   "quote": "grants update (lcc sponsored, award year 2023)- mary reported the contract engineering firm",
+   "tags": [
+    "grants",
+    "open space",
+    "conservation land",
+    "parking areas"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence maintenance",
+   "resolution": "reported; annual heating service on 1/27",
+   "quote": "update on maintenance work- mike reported the bags of invasive",
+   "tags": [
+    "maintenance",
+    "invasive species",
+    "pollinator habitat"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "Open Space meeting that night; Stormwater no update",
+   "quote": "committee reports - any update",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Public comment (Commission business)",
+   "resolution": "Chair to contact Select Board on the vacancy and Open Space representative",
+   "quote": "mary suggested the commission think about a new representative to open space committee.",
+   "tags": [
+    "vacancy",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:43pm, 6-0",
+   "quote": "to adjourn at 9:43pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands protection",
+  "notice of intent",
+  "public hearings",
+  "certificates of compliance",
+  "enforcement",
+  "violations",
+  "encroachment",
+  "stormwater",
+  "land conservation",
+  "grants",
+  "budget",
+  "continuing education",
+  "commissioner vacancy",
+  "Open Space Committee",
+  "pollinator habitat",
+  "farmland",
+  "zoom remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

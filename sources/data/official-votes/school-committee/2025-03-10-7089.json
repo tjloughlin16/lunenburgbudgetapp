@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-03-10",
  "docid": "7089",
@@ -12,15 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Call the meeting to order",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Ms. Archambault",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "call to order at 5:00pm by mr. lehtinen, seconded by ms. archambault."
-  },
-  {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at 5:57pm.",
    "moved_by": "Ms. Foyle",
    "seconded_by": "Ms. Hall",
    "outcome": "not stated",
@@ -29,6 +21,170 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09497740000000002
+ "note": "This is a Superintendent Screening Committee meeting, as the header prints, held under the School Committee board. The minutes are text, not a scan. The only motion recorded is the motion to adjourn; the minutes print no vote count or result, so its outcome is 'not stated'. The call to order is recorded as 'called to order' with a seconder, not as a vote. Attendance is not taken: the screening member list is printed without marks, so only people named in the body as taking part are marked present, and the rest are 'not stated'. No dollar figures are printed; the only money reference is 'no cost'. Public comment item 4 reads 'none'.",
+ "cost_usd": 0.01377777,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "School Committee Rep, Chair",
+   "status": "present",
+   "quote": "brian lehtinen, school committee rep, chair"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Rep, Vice Chair",
+   "status": "present",
+   "quote": "carol archambault, school committee rep, vice chair"
+  },
+  {
+   "name": "Alicia Mallon",
+   "role": "MASC Field Director",
+   "status": "present",
+   "quote": "alicia mallon, masc field director"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Screening Committee Member",
+   "status": "not stated",
+   "quote": "screening committee members caesar nuzzolo tj loughlin sarah wright mary foyle brad mcnamara jane hall kristen ryan mandy gilman carla squier liz petersen"
+  },
+  {
+   "name": "TJ Loughlin",
+   "role": "Screening Committee Member",
+   "status": "not stated",
+   "quote": "screening committee members caesar nuzzolo tj loughlin sarah wright mary foyle brad mcnamara jane hall kristen ryan mandy gilman carla squier liz petersen"
+  },
+  {
+   "name": "Sarah Wright",
+   "role": "Screening Committee Member",
+   "status": "not stated",
+   "quote": "screening committee members caesar nuzzolo tj loughlin sarah wright mary foyle brad mcnamara jane hall kristen ryan mandy gilman carla squier liz petersen"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "motion to adjourn at 5:57pm by ms. foyle, seconded by ms. hall."
+  },
+  {
+   "name": "Brad McNamara",
+   "role": "Screening Committee Member",
+   "status": "not stated",
+   "quote": "screening committee members caesar nuzzolo tj loughlin sarah wright mary foyle brad mcnamara jane hall kristen ryan mandy gilman carla squier liz petersen"
+  },
+  {
+   "name": "Jane Hall",
+   "role": "Screening Committee Member",
+   "status": "present",
+   "quote": "motion to adjourn at 5:57pm by ms. foyle, seconded by ms. hall."
+  },
+  {
+   "name": "Kristen Ryan",
+   "role": "Screening Committee Member",
+   "status": "not stated",
+   "quote": "screening committee members caesar nuzzolo tj loughlin sarah wright mary foyle brad mcnamara jane hall kristen ryan mandy gilman carla squier liz petersen"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Screening Committee Member",
+   "status": "not stated",
+   "quote": "screening committee members caesar nuzzolo tj loughlin sarah wright mary foyle brad mcnamara jane hall kristen ryan mandy gilman carla squier liz petersen"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Screening Committee Member",
+   "status": "not stated",
+   "quote": "screening committee members caesar nuzzolo tj loughlin sarah wright mary foyle brad mcnamara jane hall kristen ryan mandy gilman carla squier liz petersen"
+  },
+  {
+   "name": "Liz Petersen",
+   "role": "Screening Committee Member",
+   "status": "not stated",
+   "quote": "screening committee members caesar nuzzolo tj loughlin sarah wright mary foyle brad mcnamara jane hall kristen ryan mandy gilman carla squier liz petersen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee members to think about the survey and booklet and send three questions, which MASC will merge and compile into interview questions.",
+   "quote": "homework: think about survey and booklet. send three questions, masc will merge and compile into interview questions."
+  },
+  {
+   "decision": "Committee to meet Tuesday the 25th at 5pm to go over questions and pick semifinalists.",
+   "quote": "scheduling-meet tuesday the 25th at 5pm to go over questions, pick semifinalists."
+  },
+  {
+   "decision": "Internal applicants must apply; the answer given to the question was YES.",
+   "quote": "question whether internal applicants have to apply? yes"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Superintendent search cost",
+   "what_was_recorded": "MASC said it would conduct another search at no cost if no qualified candidate is found at the end of the process.",
+   "figures_as_printed": [],
+   "quote": "ms. mallon said that masc will come back out and do another search for no cost."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 5:00pm",
+   "quote": "call to order at 5:00pm by mr. lehtinen, seconded by ms. archambault.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment: introduction of MASC Field Director",
+   "resolution": "no action; Alicia Mallon introduced as Field Director",
+   "quote": "public comment-brian introduced alicia from masc as our field director.",
+   "tags": [
+    "MASC",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Orientation with MASC Field Director",
+   "resolution": "no action; orientation given, homework assigned, next meeting scheduled",
+   "quote": "open meeting law-ms. mallon discussed the quorum of our committee which is 7 based on the number of members(12).",
+   "tags": [
+    "superintendent search",
+    "open meeting law",
+    "MASC",
+    "interview process",
+    "orientation"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no comment",
+   "quote": "4. public comment -none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn at 5:57pm made; result not recorded",
+   "quote": "motion to adjourn at 5:57pm by ms. foyle, seconded by ms. hall.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "superintendent search",
+  "screening committee",
+  "MASC",
+  "open meeting law",
+  "executive session",
+  "interview process",
+  "public comment",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

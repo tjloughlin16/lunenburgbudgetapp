@@ -340,5 +340,188 @@
    "at": "2026-10-06T17:58:00Z",
    "cost_usd": 0.212041
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03252025-7123",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-03-25-minutes-7123.txt",
+   "path": "sources/meetings/sewer-commission/2025-03-25-minutes-7123.docx"
+  },
+  "official_sha256": "d7d128ee746839497e089387d7916e01aa56076323ec4a5531f8ad8ab4426087",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "The records agree that no votes were taken and the online bill payment item was tabled, and the sewer extension and vacancy letter follow-ups match. They differ in coverage: each has items the other lacks, and attendee names in ours are caption errors.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 5,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Non-procedural votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "the commission discussed doing a vote but decided to table the discussion until andrew gets more details.",
+    "note": "Neither record has a vote; both say the online-payment vote was not taken.",
+    "t": 2950
+   },
+   {
+    "kind": "agree",
+    "about": "Online bill payment tabled",
+    "ours": "Online bill payment vote tabled to next meeting; Andrew to get specifics from the treasurer's office on options (past due, current, custom amount).",
+    "official": "the commission discussed doing a vote but decided to table the discussion until andrew gets more details.",
+    "note": "Both record the item as tabled pending more details from Andrew.",
+    "t": 2950
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Online bill payment: request to bank",
+    "ours": "Online bill payment vote tabled to next meeting; Andrew to get specifics from the treasurer's office on options (past due, current, custom amount).",
+    "official": "andrew will put the request in to have the bank turn it on.",
+    "note": "Official has Andrew requesting the bank enable online payment, while ours only has him gathering details with the vote tabled; check the recording near t=2950 for whether a request was authorised.",
+    "t": 2950
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Online bill payment fee figure",
+    "ours": "Online bill payment: 2%",
+    "official": "",
+    "note": "Official minutes print no percentage or dollar figure for online payment; check the recording at t=2525 whether 2% is a fee and who stated it.",
+    "t": 2525
+   },
+   {
+    "kind": "agree",
+    "about": "Vacancy letter and town manager",
+    "ours": "Business manager to obtain the original vacancy recruitment letter so it can be updated; staff to ask the town manager about a combined letter for several short commissions.",
+    "official": "bill will run it by the town manager, who may want to add other committee openings on a combined letter which would cut the cost of stamps for sewer.",
+    "note": "Both have the letter going to the town manager for a possible combined letter; ours alone names the business manager fetching the original.",
+    "t": 302
+   },
+   {
+    "kind": "agree",
+    "about": "Sewer extension: Town Counsel and wastewater plan",
+    "ours": "Staff to consult Town Counsel on whether a sewer extension outside the service area needs town meeting, and to review the Comprehensive Wastewater Management Plan for the commission.",
+    "official": "bill will ask for clarification on the regulations from town counsel.",
+    "note": "Both send the question to Town Counsel and have Bill review the plan; ours specifies the town meeting question.",
+    "t": 2190
+   },
+   {
+    "kind": "agree",
+    "about": "Comprehensive Wastewater Management Plan review",
+    "ours": "review the Comprehensive Wastewater Management Plan for the commission",
+    "official": "he will dig into it to find answers to their questions.",
+    "note": "Same action: Bill to review the plan's service area map to answer questions.",
+    "t": 2190
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Remote participation and next meeting in person",
+    "ours": "Remote (Zoom) participation: leave arrangements as they are pending state action; next meeting in person.",
+    "official": "",
+    "note": "Official minutes do not mention the remote-participation discussion.",
+    "t": 426
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Manhole repair pre-construction meeting",
+    "ours": "Staff to schedule a pre-construction meeting with the manhole repair contractor for next week and share the date.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 3147
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Upcoming meeting dates",
+    "ours": "Next meetings noted: April 8 (hybrid, DPW, 7 pm), April 29 (6 pm, Zoom if allowed), May 13 (7 pm), May 27 (6 pm).",
+    "official": "",
+    "note": "Official minutes print no schedule of next meetings.",
+    "t": 3556
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Wright-Pierce NPDES scope",
+    "ours": "",
+    "official": "bill reported he has gone back and forth with wright-pierce to narrow the scope and should have a new cost for the next meeting.",
+    "note": "Ours records no Wright-Pierce item; check the recording for it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Developer pays for sewer expansion costs",
+    "ours": "",
+    "official": "he would need to pay for engineering and all the privilege fees.",
+    "note": "Ours does not record who pays for engineering and fees."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on Town Hall Saturday hours",
+    "ours": "",
+    "official": "public comment - scott noted the town hall will be open on saturday for people collecting signatures to be added to the ballot and for picking up dog licenses.",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Eli Torres",
+    "ours": "",
+    "official": "absent: eli torres",
+    "note": "Ours lists no absent member; official lists all attendees as remote, which ours does not state."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chairman",
+    "ours": "Brett Ramon",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner",
+    "ours": "Joe early",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley",
+    "note": "Misheard surname.",
+    "official_reading": "Joe Hurley"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner",
+    "ours": "Scott doll",
+    "official": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley",
+    "note": "Misheard surname.",
+    "official_reading": "Scott Dall"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Business manager",
+    "ours": "Andrew Valerie",
+    "official": "dpw director- bill bernard, sewer business manager: andrew valliere, minutes clerk- jane ranley",
+    "note": "Misheard surname.",
+    "official_reading": "Andrew Valliere"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk",
+    "ours": "Jane rley",
+    "official": "dpw director- bill bernard, sewer business manager: andrew valliere, minutes clerk- jane ranley",
+    "note": "Misheard surname.",
+    "official_reading": "Jane Ranley"
+   },
+   {
+    "kind": "agree",
+    "about": "Bill Bernard attendee",
+    "ours": "Bill Bernard (staff)",
+    "official": "dpw director- bill bernard, sewer business manager: andrew valliere, minutes clerk- jane ranley",
+    "note": "Same name; official gives title DPW Director."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:26:15Z",
+   "cost_usd": 0.24671099999999999
+  }
  }
 }

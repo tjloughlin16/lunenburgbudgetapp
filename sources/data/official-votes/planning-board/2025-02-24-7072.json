@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2025-02-24",
  "docid": "7072",
@@ -12,87 +12,467 @@
  },
  "votes": [
   {
-   "motion": "endorse the ANR for 589 Flat Hill Rd",
+   "motion": "Endorse the ANR (Approval Not Required) plan for 589 Flat Hill Rd.",
    "moved_by": "G. McLeod",
    "seconded_by": "T. Willsmer",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "g. mcleod moved to endorse the anr for 589 flat hill rd. t. willsmer seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "continue the hearing for 494 Electric Ave SPA and SMP to 2025-03-10 at 6:05 P.M.",
+   "motion": "Continue the hearing for 494 Electric Ave SPA and SMP to 2025-03-10 at 6:05 P.M.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "t. willsmer moved to continue the hearing for 494 electric ave spa and smp to 2025-03-10 at 6:05 p.m. a. reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "close the public hearing for 801 Northfield Rd SPA",
+   "motion": "Close the public hearing for 801 Northfield Rd SPA.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "t. willsmer moved to close the public hearing for 801 northfield rd spa. a. reid seconded. voice vote, passed unanimously."
+   "quote": "t. willsmer moved to close the public hearing for 801 northfield rd spa. a. reid seconded. voice vote, passed unanimously. hearing closed 7:20 p.m."
   },
   {
-   "motion": "grant Site Plan Approval for 801 Northfield Rd as-presented, with Standard Conditions",
+   "motion": "Grant Site Plan Approval for 801 Northfield Rd as presented, with Standard Conditions.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "t. willsmer moved to grant site plan approval for 801 northfield rd as-presented, with standard conditions. a. reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "continue the Public Hearing for 994 Northfield Rd SPA to 2025-03-10 at 6:05 P.M.",
+   "motion": "Continue the public hearing for 994 Northfield Rd SPA to 2025-03-10 at 6:05 P.M.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "t. willsmer moved to continue the public hearing for 994 northfield rd spa to 2025-03-10 at 6:05 p.m. a. reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "close the public hearing for 110 Pleasant St SPA",
+   "motion": "Close the public hearing for 110 Pleasant St SPA.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "t. willsmer moved to close the public hearing for 110 pleasant st spa. a. reid seconded. voice vote, passed unanimously."
+   "quote": "t. willsmer moved to close the public hearing for 110 pleasant st spa. a. reid seconded. voice vote, passed unanimously. hearing closed 8:01 p.m."
   },
   {
-   "motion": "grant Site Plan Approval for 110 Pleasant St with Standard Conditions",
+   "motion": "Grant Site Plan Approval for 110 Pleasant St with Standard Conditions.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "t. willsmer moved to grant site plan approval for 110 pleasant st with standard conditions. a. reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "authorize the Land Use Director to assign the Board's MRPC GIS contribution to the Conservation Commission for trail mapping",
+   "motion": "Authorize the Land Use Director to assign the Board's MRPC GIS contribution to the Conservation Commission for trail mapping.",
    "moved_by": "A. Reid",
    "seconded_by": "T. Willsmer",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a. reid moved to authorize the land use director to assign the board's mrpc gis contribution to the conservation commission for trail mapping. t. willsmer seconded. voice vote, passed unanimously."
+   "quote": "a. reid moved to authorize the land use director to assign the board's mrpc gis contribution to the conservation commission for trail mapping."
   },
   {
-   "motion": "approve the minutes for 2025-02-10",
+   "motion": "Approve the minutes for 2025-02-10.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "t. willsmer moved to approve the minutes for 2025-02-10. a. reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Reid",
    "seconded_by": "T. Willsmer",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a. reid moved to adjourn. t. willsmer seconded. voice vote, passed unanimously."
+   "quote": "a. reid moved to adjourn. t. willsmer seconded. voice vote, passed unanimously. adjourned 8:54 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0860644
+ "dropped_unquoted": 1,
+ "note": "Text extract of minutes, not a scan; all 10 motions recorded are voice votes with 'passed unanimously' and no tally printed, so outcomes are recorded as 'passed'. Votes to continue or close hearings are marked procedural. No dollar figures are printed anywhere in the minutes, so budget_items hold cost discussion with empty figure lists. Attendance for the Town Counsel (J. Avini) is inferred from a question he is recorded as asking at the meeting; the minutes do not state his attendance. Logan O'Connell is named only as minute-taker, so status is not stated.",
+ "cost_usd": 0.01968607,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Christopher Reilly",
+   "role": "Land Use Director",
+   "status": "absent",
+   "quote": "absent: christopher reilly (land use director)"
+  },
+  {
+   "name": "Logan O'Connell",
+   "role": "Admin Asst.",
+   "status": "not stated",
+   "quote": "minutes by logan o'connell, admin asst."
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "Hannigan Engineering, representing the applicant D&A Lunenburg, LLC",
+   "status": "present",
+   "quote": "bill hannigan (hannigan engineering) presented on behalf of applicant d&a lunenburg, llc."
+  },
+  {
+   "name": "Jeff Avini",
+   "role": "Town Counsel (Atty.)",
+   "status": "present",
+   "quote": "j. avini asked if the board could permit the inter-building canopy portion of the plan only."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy; presented for the applicants Lunenburg Conservation Commission and Peritus Contractors",
+   "status": "present",
+   "quote": "greg roy (dillis & roy) presented for applicant lunenburg conservation commission."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "public speaker, 155 Island Rd",
+   "status": "present",
+   "quote": "dave macdonald (155 island rd) advocated helping businesses through the permitting process"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "previous Conservation Commission member",
+   "status": "present",
+   "quote": "b. pease (previous conservation commission member) addressed these concerns:"
+  },
+  {
+   "name": "Michelle Matthew",
+   "role": "public speaker, 914 Northfield Rd",
+   "status": "present",
+   "quote": "michelle matthew (914 northfield rd) expressed concerns about potential increased parking near her property."
+  },
+  {
+   "name": "Laura Caron-Gustus",
+   "role": "owner and manager of abutting golf course, Settler's Crossing; 19 Burke St",
+   "status": "present",
+   "quote": "laura caron-gustus (19 burke st) & tanya eberlin own & manage abutting golf course, settler's crossing."
+  },
+  {
+   "name": "Tanya Eberlin",
+   "role": "owner and manager of abutting golf course, Settler's Crossing",
+   "status": "present",
+   "quote": "t. eberlin noted past issues with illicit activities in their own parking lot & questioned whether the new lot would be patrolled."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed the Special Permit decision for 560 Goodrich St, and deferred the Stormwater Management Permit decisions for 560 Goodrich St and 255 Sunny Hill Rd pending revisions.",
+   "quote": "the board signed the special permit decision for 560 goodrich st, and deferred the stormwater management permit decisions for 560 goodrich st and 255 sunny hill rd pending revisions."
+  },
+  {
+   "decision": "Board opted to have the Master Plan Steering Committee choose two remaining vacant positions at its upcoming meeting.",
+   "quote": "board discussed, opted to have mpsc choose at their upcoming meeting."
+  },
+  {
+   "decision": "Board opted to proceed with the 2025-03-10 meeting as scheduled despite the Citizens' Caucus overlap.",
+   "quote": "the board discussed and opted to proceed with the meeting as-scheduled"
+  },
+  {
+   "decision": "The Chair added 100 Townsend Harbor Rd's Right of First Refusal to the March 10th agenda.",
+   "quote": "added 100 townsend harbor rd's right of first refusal to the march 10th agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Counsel cost estimate for 494 Electric Ave title abstract",
+   "what_was_recorded": "The Board was awaiting a cost estimate from Town Counsel to verify the applicant's title abstract, to be paid at the applicant's expense; no figure was printed.",
+   "quote": "board is awaiting a cost estimate to verify applicant's title abstract from town counsel, would be at applicant's expense.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grant-funded parking area at Rayno Conservation Area",
+   "what_was_recorded": "The 801 Northfield Rd parking area is built using a grant for construction and improvement of conservation land access; no grant amount was printed.",
+   "quote": "using a grant for construction & improvement of conservation land access.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grant-funded parking area at Table Rock Conservation Area",
+   "what_was_recorded": "The 994 Northfield Rd parking area is built using the grant mentioned for 801 Northfield Rd; no amount was printed.",
+   "quote": "project creates 10-car parking area for table rock conservation area using grant mentioned above.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Municipal building design costs and school budget",
+   "what_was_recorded": "A school committee representative presented public feedback about costs and timing alongside school budget issues to the Municipal Bldg. Design Committee; no figure was printed.",
+   "quote": "representative from school committee presented public feedback about costs & timing with school budget issues.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Stormwater fee schedules",
+   "what_was_recorded": "The Storm Water Task Force received an initial breakdown of fee schedules and implementation from a consultant; no fee amount was printed.",
+   "quote": "received initial breakdown of fee schedules & implementation from consultant",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "494 Electric Ave permitting",
+   "speaker": "Dave MacDonald",
+   "stated_role": "155 Island Rd",
+   "quote": "dave macdonald (155 island rd) advocated helping businesses through the permitting process, suggested using conditions like b. hannigan described."
+  },
+  {
+   "topic": "494 Electric Ave straw polling and scope",
+   "speaker": "Bob Pease",
+   "stated_role": "11 Wintergreen Ct",
+   "quote": "bob pease (11 wintergreen ct) suggested more non-binding straw-polling of board members' opinions"
+  },
+  {
+   "topic": "801 Northfield Rd logging and loop trails",
+   "speaker": "Bob Pease",
+   "stated_role": "11 Wintergreen Ct",
+   "quote": "bob pease (11 wintergreen ct) explained the area is currently being logged"
+  },
+  {
+   "topic": "994 Northfield Rd parking near abutter",
+   "speaker": "Michelle Matthew",
+   "stated_role": "914 Northfield Rd",
+   "quote": "michelle matthew (914 northfield rd) expressed concerns about potential increased parking near her property."
+  },
+  {
+   "topic": "994 Northfield Rd golf course concerns",
+   "speaker": "Laura Caron-Gustus",
+   "stated_role": "19 Burke St; owns and manages abutting golf course, Settler's Crossing",
+   "quote": "laura caron-gustus (19 burke st) & tanya eberlin own & manage abutting golf course, settler's crossing."
+  },
+  {
+   "topic": "994 Northfield Rd parking lot security",
+   "speaker": "Tanya Eberlin",
+   "stated_role": "owns and manages abutting golf course, Settler's Crossing",
+   "quote": "t. eberlin noted past issues with illicit activities in their own parking lot & questioned whether the new lot would be patrolled."
+  },
+  {
+   "topic": "994 Northfield Rd responses to golf course concerns",
+   "speaker": "Bob Pease",
+   "stated_role": "previous Conservation Commission member",
+   "quote": "b. pease (previous conservation commission member) addressed these concerns:"
+  },
+  {
+   "topic": "General public comment at close of meeting",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "public comment none at this time."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "matthew brenner called the meeting to order at 6:06 p.m after slight delays.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "ANRs: 589 Flat Hill Rd",
+   "resolution": "endorsed",
+   "quote": "g. mcleod moved to endorse the anr for 589 flat hill rd.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Zoning workshop: ADUs and floodplain maps",
+   "resolution": "skipped (Land Use Director absent)",
+   "quote": "accessory dwelling units skipped due to c. reilly's absence.",
+   "tags": [
+    "zoning",
+    "accessory dwelling units",
+    "floodplain"
+   ]
+  },
+  {
+   "topic": "494 Electric Ave SPA and SMP",
+   "resolution": "continued to 2025-03-10",
+   "quote": "t. willsmer moved to continue the hearing for 494 electric ave spa and smp to 2025-03-10 at 6:05 p.m.",
+   "tags": [
+    "site plan",
+    "stormwater",
+    "Pierce Ave",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "801 Northfield Rd SPA (conservation parking)",
+   "resolution": "approved",
+   "quote": "t. willsmer moved to grant site plan approval for 801 northfield rd as-presented, with standard conditions.",
+   "tags": [
+    "site plan",
+    "conservation",
+    "parking",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "994 Northfield Rd SPA (conservation parking)",
+   "resolution": "continued to 2025-03-10",
+   "quote": "t. willsmer moved to continue the public hearing for 994 northfield rd spa to 2025-03-10 at 6:05 p.m.",
+   "tags": [
+    "site plan",
+    "conservation",
+    "golf course",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "110 Pleasant St SPA (garage and office addition)",
+   "resolution": "approved",
+   "quote": "t. willsmer moved to grant site plan approval for 110 pleasant st with standard conditions.",
+   "tags": [
+    "site plan",
+    "commercial",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "MRPC GIS contribution to Conservation Commission",
+   "resolution": "authorized",
+   "quote": "a. reid moved to authorize the land use director to assign the board's mrpc gis contribution to the conservation commission for trail mapping.",
+   "tags": [
+    "GIS",
+    "trail mapping",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Citizens' Caucus overlap with March 10 meeting",
+   "resolution": "meeting to proceed as scheduled",
+   "quote": "the board discussed and opted to proceed with the meeting as-scheduled",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Review of Standard Operating Procedures",
+   "resolution": "skipped (Land Use Director absent)",
+   "quote": "(out of order): skipped due to c. reilly's absence.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Decisions: 560 Goodrich St and 255 Sunny Hill Rd",
+   "resolution": "special permit signed; stormwater decisions deferred",
+   "quote": "the board signed the special permit decision for 560 goodrich st, and deferred the stormwater management permit decisions for 560 goodrich st and 255 sunny hill rd pending revisions.",
+   "tags": [
+    "special permit",
+    "stormwater",
+    "deed-recorded maintenance"
+   ]
+  },
+  {
+   "topic": "Abutting community notice: Lancaster",
+   "resolution": "no concerns from Board",
+   "quote": "notice from lancaster planning board and zoning board of appeals for public hearings on 2,000 sqft. addition for truck repair at 71-75 main st. no concerns from board.",
+   "tags": [
+    "abutting towns",
+    "notices"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; no action",
+   "quote": "per t. willsmer - have enough people for quorum at upcoming meeting (2025-03-03).",
+   "tags": [
+    "master plan",
+    "open space",
+    "storm water",
+    "MRPC",
+    "design committee",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Minutes approval 2025-02-10",
+   "resolution": "approved",
+   "quote": "t. willsmer moved to approve the minutes for 2025-02-10. a. reid seconded. voice vote, passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "upcoming meetings are 03-10 and 03-24 at 6:00 p.m.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "no action",
+   "quote": "on accessory dwelling unit bylaw updates, m. brenner noted mild concern from town counsel",
+   "tags": [
+    "accessory dwelling units",
+    "Town Counsel",
+    "remote work policy",
+    "494 Electric Ave"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:54 P.M.",
+   "quote": "a. reid moved to adjourn. t. willsmer seconded. voice vote, passed unanimously. adjourned 8:54 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan approval",
+  "public hearings",
+  "ANR",
+  "stormwater",
+  "conservation land parking",
+  "Pierce Ave access",
+  "golf course abutters",
+  "MRPC",
+  "zoning and ADUs",
+  "master plan",
+  "open space",
+  "minutes approval",
+  "land use director absent"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

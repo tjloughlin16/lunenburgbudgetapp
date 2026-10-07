@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-01-22",
  "docid": "6971",
@@ -12,31 +12,392 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the 12/18/24 regular session",
-   "moved_by": "Mr. Sculimbrene",
-   "seconded_by": "Ms. Archambault",
+   "motion": "Approve the minutes of the Regular Session of 12/18/24.",
+   "moved_by": "Anthony Sculimbrene",
+   "seconded_by": "Carol Archambault",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. sculimbrene makes a motion to approve minutes, ms. archambault seconds the motion, all approve with mr. beardmore abstaining"
   },
   {
-   "motion": "Approve a 4% increase to preschool tuition for FY26",
-   "moved_by": "Mr. Beardmore",
-   "seconded_by": "Ms. Archambault",
+   "motion": "Approve a 4% increase to preschool tuition in FY26.",
+   "moved_by": "Peter Beardmore",
+   "seconded_by": "Carol Archambault",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. beardmore makes a motion to approve the increase, ms. archambault seconds the motion, all approve."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Ms. Archambault",
+   "motion": "Adjourn the meeting at 9:39.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Carol Archambault",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to adjourn at 9:39, ms. archambault seconds the motion all approve via roll call vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All three votes recorded clearly in the minutes. The discussion of tabling the School Choice topic (section 10f) used language \"the committee decides to table\" rather than formal voting language, so it was not recorded as a vote.",
- "cost_usd": 0.0911434
+ "note": "Source is a clean digital text of the minutes, not a scan; all quotes checked against it. Only three motions are recorded as votes (minutes approval, preschool tuition, adjournment). The warrant total is listed with no motion. The Sick Bank Committee approvals reported in committee reports were that committee's votes, not this board's. The meeting was hybrid; no remote attendance is recorded. The minutes print the search-meeting date as February 29, which does not exist in 2025. The minutes do not state Dr. Burnham's or Ms. Fuller's attendance status explicitly; Burnham is marked present because she delivered reports. Ms. Brzozoski's public comment is a continuation of agenda item 3 and is marked as printed.",
+ "cost_usd": 0.01783527,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brian lehtinen, chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene, vice chair - present"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "carol archambault, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMHS Principal",
+   "status": "present",
+   "quote": "tim santry - lmhs principal, dr. deborah bookis - director of teaching & learning"
+  },
+  {
+   "name": "Dr. Deborah Bookis",
+   "role": "Director of Teaching & Learning",
+   "status": "present",
+   "quote": "tim santry - lmhs principal, dr. deborah bookis - director of teaching & learning"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed to pay the $50 Ledger fee to advertise the search committee vacancy.",
+   "quote": "the ledger has a $50 fee to advertise, committee agrees it is fine to pay that $50 to have this advertised."
+  },
+  {
+   "decision": "School choice topic tabled until after the budget is approved, to discuss proposed class sizes first.",
+   "quote": "ultimately the committee decides to table this topic until after the budget is approved, in order to discuss proposed class sizes."
+  },
+  {
+   "decision": "Superintendent search to start with internal candidates; an external search opens only if no internal candidate fits.",
+   "quote": "a reminder that we will start with internal candidates, we currently have up to 6 that are qualified"
+  },
+  {
+   "decision": "A future meeting is planned to discuss further and vote on committee members and a workshop (printed as February 29; that date does not exist in 2025).",
+   "quote": "a future meeting for february 29 is planned to further the discussion and vote on committee members and a workshop"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants approved in the agenda",
+   "what_was_recorded": "Warrants for 1/7/25 to 1/15/25 were listed at a total amount; no motion to approve them is recorded.",
+   "figures_as_printed": [
+    "$364,142.06"
+   ],
+   "quote": "warrants 1/7/25 to 1/15/25 $364,142.06"
+  },
+  {
+   "topic": "Leasing trailers for Central Office",
+   "what_was_recorded": "Superintendent reported three leased trailers would cost an approximate amount per year after no suitable properties were found.",
+   "figures_as_printed": [
+    "$110,000",
+    "$150,000"
+   ],
+   "quote": "we will be looking at three trailers and an approximate cost would be somewhere between $110,000 and $150,000 a year"
+  },
+  {
+   "topic": "Superintendent search: MASC services",
+   "what_was_recorded": "Ms. Brzozoski recommended engaging MASC for a superintendent search if no internal candidate is hired; the fee was stated.",
+   "figures_as_printed": [
+    "$11,500"
+   ],
+   "quote": "this does have a fee of $11,500, but this does open the candidate pool up nationwide"
+  },
+  {
+   "topic": "Newspaper advertising for search committee",
+   "what_was_recorded": "The Ledger advertising fee was stated and the committee agreed to pay it.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "the ledger has a $50 fee to advertise, committee agrees it is fine to pay that $50 to have this advertised."
+  },
+  {
+   "topic": "FY26 state aid proposed by the Governor",
+   "what_was_recorded": "Lunenburg's proposed FY26 Chapter 70 and unrestricted general government aid were reported from the Governor's budget.",
+   "figures_as_printed": [
+    "$9,191,185",
+    "$1,330,762"
+   ],
+   "quote": "the lunenburg fy26 local aid distribution for chapter 70 funding is proposed at $9,191,185, the unrestricted general government aid $1,330,762."
+  },
+  {
+   "topic": "Per-pupil minimum aid increase",
+   "what_was_recorded": "The FY26 per-pupil minimum increase was reported as $75, compared with a figure of $104 last year (as recalled by the speaker).",
+   "figures_as_printed": [
+    "$75",
+    "$104"
+   ],
+   "quote": "there is a $75 per pupil minimum increase included which is different from last year, i believe it was $104 per pupil."
+  },
+  {
+   "topic": "FY26 budget context and revenue",
+   "what_was_recorded": "Superintendent said reliable revenues are dwindling, grant money is gone and revolving accounts are tapped out; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the revenues we have been able to rely on in recent years are dwindling, grant money is gone, and our revolving accounts are tapped out."
+  },
+  {
+   "topic": "PTO movie fundraiser proceeds",
+   "what_was_recorded": "PTO fundraiser sold 378 of 400 projected tickets and made the stated amount.",
+   "figures_as_printed": [
+    "$478"
+   ],
+   "quote": "they sold 378 of them and made $478 there were a couple of no shows"
+  },
+  {
+   "topic": "Athletic fee increase proposal",
+   "what_was_recorded": "An open parent meeting on a proposed increase in athletic fees was announced; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "open meeting for parents to listen to the proposal for the increase in athletic fees and have the change to provide us with feedback."
+  },
+  {
+   "topic": "Track and field facility funding",
+   "what_was_recorded": "Discussed a separate warrant article funded by free cash for design and bid-ready documents; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a separate article funded by free cash to move forward with design and bid ready documents"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "Member",
+   "topic": "search committee timing and document release",
+   "quote": "i was unable to attend last friday's meeting due to a professional commitment, and i have a fair understanding of the path we are on."
+  },
+  {
+   "speaker": "Ms. Brzozoski",
+   "topic": "search committee goals and workshop",
+   "quote": "i was going to talk more during the search committee part of things, about goals and coming up with what we we're looking or from the committee"
+  },
+  {
+   "speaker": "Mr. Sculimbrene",
+   "topic": "superintendent's retirement",
+   "quote": "i wasn't here when you announced your retirement (dr. burnham) last time."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "call to order by brian lehtinen at 6:34",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment on search timing",
+   "resolution": "no action",
+   "quote": "i was unable to attend last friday's meeting due to a professional commitment",
+   "tags": [
+    "public comment",
+    "superintendent search"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action",
+   "quote": "i would like to congratulate jennifer warren dyment, who was selected as the town manager, by the select board.",
+   "tags": [
+    "town government"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved",
+   "quote": "mr. sculimbrene makes a motion to approve minutes, ms. archambault seconds the motion, all approve with mr. beardmore abstaining",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Line item transfers, warrants and donations",
+   "resolution": "no action",
+   "quote": "warrants 1/7/25 to 1/15/25 $364,142.06",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "no action",
+   "quote": "the committee had asked me to explore alternatives for locations for central office",
+   "tags": [
+    "central office",
+    "PowerSchool breach",
+    "911 phone upgrade"
+   ]
+  },
+  {
+   "topic": "Preschool tuition increase",
+   "resolution": "approved",
+   "quote": "there is a request for a 4% increase to tuition in fy26.",
+   "tags": [
+    "tuition",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Health and PE curriculum frameworks",
+   "resolution": "discussed",
+   "quote": "explaining the requirements we need to provide to students with physical, mental, and social health.",
+   "tags": [
+    "curriculum"
+   ]
+  },
+  {
+   "topic": "LHS program of studies",
+   "resolution": "discussed",
+   "quote": "mr. santry shared the proposed programs for fy26 with necessary changes that best meet the needs of our students.",
+   "tags": [
+    "curriculum",
+    "graduation requirements",
+    "MCAS"
+   ]
+  },
+  {
+   "topic": "Budget calendar",
+   "resolution": "no action",
+   "quote": "we will be presenting our budget on march 6 th, this is one week ahead of our expectations",
+   "tags": [
+    "budget calendar"
+   ]
+  },
+  {
+   "topic": "FY26 proposed budget",
+   "resolution": "presented",
+   "quote": "dr. burnham shares a presentation on the fy26 budget.",
+   "tags": [
+    "budget",
+    "state aid",
+    "Chapter 70"
+   ]
+  },
+  {
+   "topic": "School choice seats",
+   "resolution": "tabled",
+   "quote": "the committee discusses the advantages and disadvantages of opening school choice seats",
+   "tags": [
+    "school choice",
+    "class sizes"
+   ]
+  },
+  {
+   "topic": "Competency determinations",
+   "resolution": "no action",
+   "quote": "this was discussed earlier under the program of studies part of the agenda",
+   "tags": [
+    "graduation requirements"
+   ]
+  },
+  {
+   "topic": "Search committee",
+   "resolution": "discussed",
+   "quote": "an email has gone out to parents and staff regarding the search for members to apply to be on this committee.",
+   "tags": [
+    "superintendent search",
+    "MASC"
+   ]
+  },
+  {
+   "topic": "District offices and Central Office location",
+   "resolution": "discussed",
+   "quote": "dr burnham shares they did explore other options, however what we are seeing with the upcoming budget",
+   "tags": [
+    "central office",
+    "Turkey Hill",
+    "Ritter Building"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "mr. beardmore reports the capital planning committee will be hosting a meeting for next wednesday",
+   "tags": [
+    "capital plan",
+    "athletics",
+    "PTO",
+    "bus inspection",
+    "sick bank",
+    "municipal building"
+   ]
+  },
+  {
+   "topic": "Public comment on retirement",
+   "resolution": "no action",
+   "quote": "i wasn't here when you announced your retirement (dr. burnham) last time.",
+   "tags": [
+    "public comment",
+    "superintendent"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:39",
+   "quote": "ms. brzozoski makes a motion to adjourn at 9:39, ms. archambault seconds the motion all approve via roll call vote",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "superintendent search",
+  "FY26 budget",
+  "state aid",
+  "central office",
+  "athletic fees",
+  "curriculum",
+  "graduation requirements",
+  "school choice",
+  "public comment",
+  "hybrid meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

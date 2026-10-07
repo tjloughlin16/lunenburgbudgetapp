@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2025-05-07",
  "docid": "7208",
@@ -12,52 +12,540 @@
  },
  "votes": [
   {
-   "motion": "Approve a Notice of Intent for replacement septic system at 1178 Northfield Rd, with the condition that all debris is removed from the 30-foot no touch zone",
+   "motion": "Approve NOI-25-4 at 1178 Northfield Rd, with the condition that all debris is removed from the 30-foot no touch zone.",
    "moved_by": "C. St Germain",
    "seconded_by": "M. Larouche",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "c. st germain, to approve, with the condition that all debris is removed from the 30- foot no touch zone. m. larouche r. bursch - aye p. stella - aye m. larouche - aye c. st germain - aye m. wilson - aye j. pewtherer - aye b. 57 round ",
-   "quote_taken_from_text": true
+   "quote": "c. st germain, to approve, with the condition that all debris is removed from the 30-"
   },
   {
-   "motion": "Approve a negative determination on the condition that the exemption letter is received and accept the wetlands determinations as presented for vegetation management at 201 Leominster-Shirley Rd",
-   "moved_by": "M. Wilson",
-   "seconded_by": "M. Larouche",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "m. wilson, to approve a negative determination on the condition that the exemption letter is received and to accept the wetlands determinations as presented. (positive 2a) m. larouche r. bursch - aye m. larouche - aye m. wilson - aye j. pewtherer - aye p. stella - aye ===page 3=== ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Approve removal of 6 trees at least 10 feet each with 3:1 replacement at 191 Leominster Rd, with specified conditions for planting and pre-approval requirements",
-   "moved_by": "M. Larouche",
-   "seconded_by": "C. St Germain",
-   "outcome": "passed 6-0",
-   "procedural": false,
-   "quote": "m. larouche, to approve 6 trees at least 10 feet each with a 3:1 replacement. pine number 2 will be taken down manually while pine number one can use a bucket ===page 5=== second: vote: outside of the limit of work. a planting diagram must be pre-approved and must use native trees comparable to existing trees. they must be planted in the current growing season. c. st germain m. larouche - aye p. stella - aye m. wilson - aye r. bursch - aye c. st germain - aye 1. pe",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Create the position of associate commissioners",
-   "moved_by": "C. St Germain",
-   "seconded_by": "M. Larouche",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "c. st germain, to create the position of associate commissioners. m. larouche c. st germain - aye m. wilson- aye p. stella - aye j. pewtherer - aye r. bursch - aye ===page 6=== ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Approve $447 from the HAW account to cover $218 for plants and $229 for a trimmer at Hollis Rd Residence",
+   "motion": "Issue a negative determination for RDA-25-4 at 57 Round Rd.",
    "moved_by": "R. Bursch",
    "seconded_by": "M. Wilson",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "r. bursch, approve $447 from the haw account to cover $218 for plants and $229 for a trimmer. second: vote: m. wilson p. stella - aye c. st germain - aye m. wilson - aye m. larouche - aye r. bursch - aye j. pewtherer - aye",
-   "quote_taken_from_text": true
+   "quote": "_r. bursch, for negative determination m. wilson"
+  },
+  {
+   "motion": "Approve a negative determination for RDA-25-1 at 201 Leominster-Shirley Rd on the condition that the exemption letter is received, and accept the wetlands determinations as presented.",
+   "moved_by": "M. Wilson",
+   "seconded_by": "M. Larouche",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "m. wilson, to approve a negative determination on the condition that the exemption"
+  },
+  {
+   "motion": "Continue ANRAD DEP# 208-1304 at 390 Howard St to 5/21/2025.",
+   "moved_by": "R. Bursch",
+   "seconded_by": "C. St Germain",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "r. bursch, to continue to 5/21/2025 c. st germain"
+  },
+  {
+   "motion": "Continue NOI-24-9 at 221 Electric Ave to 5/21/2025.",
+   "moved_by": "R. Bursch",
+   "seconded_by": "C. St Germain",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "applicant requested to be continued until 5/21/2025. motion: second: vote: r. bursch, to continue to 5/21/2025"
+  },
+  {
+   "motion": "Continue RDA-24-9 at 67 Island Rd to June 18.",
+   "moved_by": "C. St Germain",
+   "seconded_by": "R. Bursch",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "c. st germain, to continue to june 18."
+  },
+  {
+   "motion": "Continue NOI-25-8 at 31 Round Rd to 5/21/2025.",
+   "moved_by": "M. Wilson",
+   "seconded_by": "C. St Germain",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "m. wilson, to continue to 5/21/2025"
+  },
+  {
+   "motion": "Approve 6 replacement trees, at least 10 feet each, with a 3:1 replacement, for CAD-25-4 at 191 Leominster Rd, with the stated tree-removal conditions.",
+   "moved_by": "M. Larouche",
+   "seconded_by": "C. St Germain",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "m. larouche, to approve 6 trees at least 10 feet each with a 3:1 replacement. pine"
+  },
+  {
+   "motion": "Create the position of associate commissioners.",
+   "moved_by": "C. St Germain",
+   "seconded_by": "M. Larouche",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "c. st germain, to create the position of associate commissioners."
+  },
+  {
+   "motion": "Approve $447 from the HAW account to cover $218 for plants and $229 for a trimmer.",
+   "moved_by": "R. Bursch",
+   "seconded_by": "M. Wilson",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "r. bursch, approve $447 from the haw account to cover $218 for plants and $229 for a trimmer."
+  },
+  {
+   "motion": "Adjourn the meeting at 10:05PM.",
+   "moved_by": "C. Larouche",
+   "seconded_by": "M. Wilson",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "c. larouche, to adjourn at 10:05pm"
   }
  ],
- "dropped_unquoted": 6,
- "note": "OCR scan (macOS Vision); one vote shows \"1. Pewtherer\" (OCR error for \"J. Pewtherer\") quoted as it appears in the minutes. Motion to adjourn shows \"C. Larouche\" as mover (appears to be a typo in the original minutes, likely intended as \"M. Larouche\"). All 11 votes recorded and extracted.",
- "cost_usd": 0.13885499999999998
+ "dropped_unquoted": 0,
+ "note": "Text is macOS Vision OCR of the minutes, not a readable scan, so OCR artifacts were read against context: 'C. St Germain' in the 6c vote and '1. Pewtherer' were recorded as printed or read as J. Pewtherer; 'C. Larouche' in the adjournment motion is recorded as printed (the clerk is M. Larouche); '18-vold' is not a figure. No tallies are printed, so outcomes are 'passed' rather than counts; the 67 Island Rd vote lists J. Pewtherer as Abstain, and the 201 Leominster-Shirley vote record omits C. St Germain. 'Sophie' is named but not identified, so not listed as an attendee. The $447 HAW-account approval is recorded as a budget item, not a transfer, since the minutes do not call it one. Public comment is 'None' in the announcements, with no named speaker. Some applicants' presence is not stated, so they are marked 'not stated'.",
+ "cost_usd": 0.02322597,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: r. bursch, m. larouche, m. wilson, peter stella, j. pewtherer."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: r. bursch, m. larouche, m. wilson, peter stella, j. pewtherer."
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: r. bursch, m. larouche, m. wilson, peter stella, j. pewtherer."
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: r. bursch, m. larouche, m. wilson, peter stella, j. pewtherer."
+  },
+  {
+   "name": "Peter Stella",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: r. bursch, m. larouche, m. wilson, peter stella, j. pewtherer."
+  },
+  {
+   "name": "Chris St Germain",
+   "role": "Member",
+   "status": "present",
+   "quote": "joined late: chris st germain"
+  },
+  {
+   "name": "Jeff Viviano",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: jeff viviano."
+  },
+  {
+   "name": "Sophia Dorow",
+   "role": "Interim Consv. Admin",
+   "status": "not stated",
+   "quote": "sophia dorow - interim consv. admin"
+  },
+  {
+   "name": "Logan O'Connell",
+   "role": "Temp Admin Asst.",
+   "status": "not stated",
+   "quote": "logan o'connell - temp admin asst."
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "representing the applicant (Dillis and Roy)",
+   "status": "present",
+   "quote": "ryan proctor with dillis and roy represented the applicant."
+  },
+  {
+   "name": "Matt Donovan",
+   "role": "represented the applicant",
+   "status": "present",
+   "quote": "matt donovan represented the applicant."
+  },
+  {
+   "name": "Mary Paquette",
+   "role": "applicant (NOI, 1178 Northfield Rd)",
+   "status": "not stated",
+   "quote": "a notice of intent by mary paquette & joan o brien for replacement of an existing failed septic"
+  },
+  {
+   "name": "Joan O Brien",
+   "role": "applicant (NOI, 1178 Northfield Rd)",
+   "status": "not stated",
+   "quote": "a notice of intent by mary paquette & joan o brien for replacement of an existing failed septic"
+  },
+  {
+   "name": "Rene Rainville",
+   "role": "applicant (RDA, 57 Round Rd)",
+   "status": "not stated",
+   "quote": "a request for determination of applicability by rene rainville for installation of a well and"
+  },
+  {
+   "name": "Dan Wolf",
+   "role": "Ross Associates (prepared the paperwork for 57 Round Rd)",
+   "status": "absent",
+   "quote": "dan wolf from ross associates has done the paperwork but could not make this meeting."
+  },
+  {
+   "name": "Kevin O'Brien",
+   "role": "applicant (ANRAD, 390 Howard St)",
+   "status": "absent",
+   "quote": "the applicant was not present."
+  },
+  {
+   "name": "Daniel Sheehan",
+   "role": "applicant (NOI, 221 Electric Ave), of Haley Ward Construction",
+   "status": "not stated",
+   "quote": "a notice of intent by daniel sheehan of haley ward construction for construction of a two-"
+  },
+  {
+   "name": "Melissa Cannavino",
+   "role": "applicant (RDA, 67 Island Rd)",
+   "status": "not stated",
+   "quote": "a request for determination of applicability by melissa cannavino for the renovation of a patio,"
+  },
+  {
+   "name": "Shawn Farrow",
+   "role": "applicant (NOI, 31 Round Rd)",
+   "status": "not stated",
+   "quote": "a notice of intent by shawn farrow for the construction of two landscape replacement walls,"
+  },
+  {
+   "name": "Stephen Bedartha",
+   "role": "applicant (CAD-25-4, 191 Leominster Rd), of 81 View Street in Fitchburg",
+   "status": "not stated",
+   "quote": "advised applicant (stephen bedartha of 81 view street in fitchburg) that the new interim administrator"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission recommends that the applicant at 42 Meadow Lane continue by filing an RDA (no vote recorded).",
+   "quote": "commission recommends the applicant continue by filing an rda."
+  },
+  {
+   "decision": "Requested an updated plan showing replacement plantings be uploaded to OpenGov for 10 Sandy Cove Rd (no vote recorded).",
+   "quote": "requested updated plan depicting location of replacement plantings be uploaded to opengov."
+  },
+  {
+   "decision": "Requested that an exemption letter from the local 30-foot bylaw be added to OpenGov for 201 Leominster-Shirley Rd (no vote recorded).",
+   "quote": "requested that an exemption letter from the local 30-foot bylaw be added to opengov."
+  },
+  {
+   "decision": "Commissioners agreed the 67 Island Rd work would not be allowed as new construction (no vote recorded).",
+   "quote": "commissioners agreed that this would not be allowed as new construction and were not convinced"
+  },
+  {
+   "decision": "Agreed that the 191 Leominster Rd trees could be a danger to the new house and should be replaced at a defined ratio based on the size of the existing tree (preceded the vote).",
+   "quote": "it was agreed that the trees could be a real danger to the new house and should be replaced at a defined ratio based on the size of the existing tree."
+  },
+  {
+   "decision": "For 60 Cross Rd, decided the changes were significant enough to need an amendment and to open fully for discussion at the next meeting (no vote recorded).",
+   "quote": "we discussed whether the changes were significant enough to need an amendment, deciding that they did"
+  },
+  {
+   "decision": "The Fitchburg admin will onboard as interim conservation administrator.",
+   "quote": "the fitchburg admin will be onboarding as our interim admin."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hollis Rd residence: plants and trimmer purchase",
+   "what_was_recorded": "A $218 plant order was submitted, a trimmer costing $229 was proposed, and the Commission approved $447 from the HAW account to cover both.",
+   "figures_as_printed": [
+    "$218",
+    "$229",
+    "$447"
+   ],
+   "quote": "submitted a $218 order for final plants for the season and requested a trimmer be purchased."
+  },
+  {
+   "topic": "Daily fine maximum (MACC training discussion)",
+   "what_was_recorded": "Discussion of training noted that daily fines have a maximum of $300 per day.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "example: daily fines have a maximum of $300 per day and must be issued every day."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action",
+   "quote": "call to order at 7:03 pm by j. pewtherer",
+   "tags": [
+    "announcements",
+    "earth day"
+   ]
+  },
+  {
+   "topic": "Appointment: 60 Cross Rd, CAOC-25-1",
+   "resolution": "not heard; applicant absent, legal notice late",
+   "quote": "applicant not present - legal notice did not go out in time.",
+   "tags": [
+    "order of conditions",
+    "notice"
+   ]
+  },
+  {
+   "topic": "NOI-25-4, 1178 Northfield Rd (septic replacement)",
+   "resolution": "approved with debris condition",
+   "quote": "a notice of intent by mary paquette & joan o brien for replacement of an existing failed septic",
+   "tags": [
+    "notice of intent",
+    "septic",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "RDA-25-4, 57 Round Rd (well and waterline)",
+   "resolution": "negative determination",
+   "quote": "a request for determination of applicability by rene rainville for installation of a well and",
+   "tags": [
+    "determination of applicability",
+    "well",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "CAOC-25-1, 60 Cross Rd (amendment request)",
+   "resolution": "deferred to next meeting",
+   "quote": "the ledger notice was not completed in time so we cannot review this item.",
+   "tags": [
+    "order of conditions",
+    "amendment",
+    "notice"
+   ]
+  },
+  {
+   "topic": "RDA-25-1, 201 Leominster-Shirley Rd (railroad vegetation management)",
+   "resolution": "negative determination approved on condition",
+   "quote": "matt donovan represented the applicant.",
+   "tags": [
+    "railroad",
+    "vegetation management",
+    "determination of applicability"
+   ]
+  },
+  {
+   "topic": "ANRAD, 390 Howard St (continued hearing)",
+   "resolution": "continued to 5/21/2025",
+   "quote": "the applicant was not present.",
+   "tags": [
+    "resource area delineation",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "NOI-24-9, 221 Electric Ave (continued hearing)",
+   "resolution": "continued to 5/21/2025",
+   "quote": "applicant requested to be continued until 5/21/2025.",
+   "tags": [
+    "notice of intent",
+    "two-family dwelling",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "RDA-24-9, 67 Island Rd (patio, stairs, walkway at Hickory Hills Lake)",
+   "resolution": "continued to June 18",
+   "quote": "commissioners agreed that this would not be allowed as new construction and were not convinced",
+   "tags": [
+    "determination of applicability",
+    "lake",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "NOI-25-8, 31 Round Rd (Lake Shirley)",
+   "resolution": "continued to 5/21/2025",
+   "quote": "continued to 05-21 per applicant's prior request via opengov.",
+   "tags": [
+    "notice of intent",
+    "lake",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "CAD-25-1, 10 Sandy Cove Rd (administrative determination)",
+   "resolution": "partial pass; updated plan requested",
+   "quote": "partial pass per sophie's 03-26 site visit.",
+   "tags": [
+    "administrative determination",
+    "solar",
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "CAD-25-2, 7 Park St Ter (administrative determination)",
+   "resolution": "waiting; no action",
+   "quote": "approved at 04-16 meeting, pending written determination from sophie.",
+   "tags": [
+    "administrative determination"
+   ]
+  },
+  {
+   "topic": "CAD-25-4, 191 Leominster Rd (tree removal near limit of work)",
+   "resolution": "approved 6 replacement trees",
+   "quote": "request to remove two unstable pine trees 15-29 ft. past the limit of work.",
+   "tags": [
+    "tree removal",
+    "replacement ratio",
+    "30-foot no touch zone"
+   ]
+  },
+  {
+   "topic": "Extensions, certificates of compliance, project changes",
+   "resolution": "none",
+   "quote": "d. extension request permits: none",
+   "tags": [
+    "administrative"
+   ]
+  },
+  {
+   "topic": "Enforcement",
+   "resolution": "no action recorded beyond boulders at 40 Fire Rd 12",
+   "quote": "the town will put the boulders in place.",
+   "tags": [
+    "enforcement",
+    "violations",
+    "trash"
+   ]
+  },
+  {
+   "topic": "42 Meadow Lane (not on agenda; work near wetlands)",
+   "resolution": "recommended RDA filing",
+   "quote": "commission recommends the applicant continue by filing an rda.",
+   "tags": [
+    "determination of applicability",
+    "new business"
+   ]
+  },
+  {
+   "topic": "Associate members",
+   "resolution": "position created",
+   "quote": "c. st germain, to create the position of associate commissioners.",
+   "tags": [
+    "associate members",
+    "bylaw",
+    "former commissioners"
+   ]
+  },
+  {
+   "topic": "Conservation administrator",
+   "resolution": "interim administrator onboarding",
+   "quote": "the fitchburg admin will be onboarding as our interim admin.",
+   "tags": [
+    "staffing",
+    "administrator"
+   ]
+  },
+  {
+   "topic": "Default continuations practice",
+   "resolution": "no action; a better rubric to be developed",
+   "quote": "as long as meetings are properly opened and the applicant is coming to meetings then we are on stable ground",
+   "tags": [
+    "continuances",
+    "process"
+   ]
+  },
+  {
+   "topic": "Training updates (Big 5, MACC)",
+   "resolution": "discussed",
+   "quote": "training updates - big 5: intended to let commissioners share the 5 things they have learned by",
+   "tags": [
+    "training",
+    "fines"
+   ]
+  },
+  {
+   "topic": "April Earth Day report",
+   "resolution": "noted",
+   "quote": "successful pollinator habitat event, a fence was put around the cherry tree.",
+   "tags": [
+    "earth day",
+    "pollinator"
+   ]
+  },
+  {
+   "topic": "Grants update (Table Rock)",
+   "resolution": "noted",
+   "quote": "grants update (lcc sponsored, award year 2023): minor paperwork for table rock completed.",
+   "tags": [
+    "grants",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Hollis Rd residence: plants and trimmer",
+   "resolution": "approved $447 from HAW account",
+   "quote": "r. bursch, approve $447 from the haw account to cover $218 for plants and $229 for a trimmer.",
+   "tags": [
+    "budget",
+    "habitat",
+    "land"
+   ]
+  },
+  {
+   "topic": "Committee reports: storm water",
+   "resolution": "noted; went to Town Meeting",
+   "quote": "storm water: went to town meeting",
+   "tags": [
+    "storm water",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Communications and public notices",
+   "resolution": "noted",
+   "quote": "noted that public notices can also be placed in the sentinel, which is a daily newspaper as",
+   "tags": [
+    "public notices",
+    "newspaper"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted",
+   "quote": "may 21, 2025, by zoom",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:05 PM",
+   "quote": "c. larouche, to adjourn at 10:05pm",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notices of intent",
+  "determinations of applicability",
+  "administrative determinations",
+  "tree removal",
+  "associate members",
+  "conservation administrator",
+  "budget",
+  "enforcement",
+  "zoom meeting",
+  "lake",
+  "continuances"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2025-02-10",
  "docid": "7029",
@@ -12,47 +12,419 @@
  },
  "votes": [
   {
-   "motion": "Endorse the Approval Not Required application for 215 Sunset Ln",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
+   "motion": "Endorse the ANR for 215 Sunset Ln.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
    "procedural": false,
    "quote": "t. willsmer moved to endorse anr for 215 sunset ln. a. reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "Endorse the Approval Not Required application for 171 Arbor St",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
+   "motion": "Endorse the ANR for 171 Arbor St.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
    "procedural": false,
    "quote": "t. willsmer moved to endorse anr for 171 arbor st. a. reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "Continue the public hearing for 494 Electric Ave to February 24, 2025 at 6:05 P.M.",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Continue the public hearing for 494 Electric Ave to 2025-02-24 at 6:05 P.M.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "t. willsmer moved to continue the public hearing for 494 electric ave to 2025-02-24 at 6:05 p.m. a. reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "Continue the public hearing for 213 Electric Ave to March 10, 2025 at 6:05 P.M.",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Continue the public hearing for 213 Electric Ave to 2025-03-10 at 6:05 P.M.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "t. willsmer moved to continue the public hearing for 213 electric ave to 2025-03-10 at 6:05 p.m. a. reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Amanda Reid",
-   "seconded_by": "Matthew Brenner",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "A. Reid",
+   "seconded_by": "M. Brenner",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a. reid moved to adjourn. m. brenner seconded. voice vote, passed unanimously."
+   "quote": "a. reid moved to adjourn. m. brenner seconded. voice vote, passed unanimously. adjourned 9:19 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0903774
+ "note": "Text is a PDF extraction, so some sentences carry footnote markers and \"(Out of order)\" insertions; quotes were copied as they appear. The minutes record voice votes as \"passed unanimously\" with no numeric count, so outcomes are recorded as \"passed\". The minutes-approval line names a motion-free approval and is recorded as a decision, not a vote; the 2025-02-13 minutes date is later than this meeting. Katie Paight is described as joining remotely; the minutes do not confirm she was on the line. The Logan O'Connell status is not stated. Votes are recorded only where the minutes name a mover and seconder.",
+ "cost_usd": 0.01838927,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Christopher Reilly",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "c. reilly explained - the state revised their guidance extensively late last week; notably impeding local powers."
+  },
+  {
+   "name": "Logan O'Connell",
+   "role": "Admin Asst. (minutes taker)",
+   "status": "not stated",
+   "quote": "minutes by logan o'connell, admin asst."
+  },
+  {
+   "name": "Katie Paight",
+   "role": "Floodplain Management specialist, DCR Flood Hazard Management program",
+   "status": "remote",
+   "quote": "katie paight from the department of conservation and recreation (dcr) will join remotely to answer questions about state-mandated floodplain map updates."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis and Roy; presented for applicants David & Brenda Pajari",
+   "status": "present",
+   "quote": "greg roy (dillis and roy) presented for applicants david & brenda pajari."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "McCarty Engineering; presented for applicants PSG Realty 393-435, LLC & Raudonat Family Revocable Trust",
+   "status": "present",
+   "quote": "brian marchetti (mccarty engineering) presented for applicants psg realty 393-435, llc & raudonat family revocable trust."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "Hannigan Engineering; presented for D&A Lunenburg, LLC",
+   "status": "present",
+   "quote": "chris anderson (hannigan engineering) presented for d&a lunenburg, llc."
+  },
+  {
+   "name": "Daniel Sheehan",
+   "role": "Haley Ward; presented on behalf of applicant Red Bird Construction, Inc.",
+   "status": "present",
+   "quote": "daniel sheehan (haley ward) presented on behalf of applicant red bird construction, inc."
+  },
+  {
+   "name": "Jeff Avini",
+   "role": "Atty.; on behalf of applicant",
+   "status": "present",
+   "quote": "atty. jeff avini on behalf of applicant - please relay any new info from town counsel on pierce ave."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "public commenter (155 Island Rd)",
+   "status": "present",
+   "quote": "dave macdonald (155 island rd) - recommend inviting bill bernard (department of public works) to site visit due to his engineering background."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "public commenter (11 Wintergreen Ct)",
+   "status": "present",
+   "quote": "bob pease (11 wintergreen ct) - town needs to support businesses better."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved minutes for 2024-12-09, 2025-02-13, and 2025-01-27, with no motion or vote count recorded (the 2025-02-13 date is later than this meeting).",
+   "quote": "the board reviewed and approved minutes for 2024-12-09, 2025-02-13, and 2025-01-27."
+  },
+  {
+   "decision": "Board scheduled a site visit for 2025-02-19 at 5:00 P.M. for 494 Electric Ave.",
+   "quote": "after discussing scheduling options, the board scheduled a site visit for 2025-02-19 at 5:00 p.m."
+  },
+  {
+   "decision": "Board deferred endorsement of the 560 Goodrich St and 255 Sunny Hill Rd decisions pending revisions for deed-recorded maintenance requirements.",
+   "quote": "the board deferred endorsement of the decisions, pending revisions to reflect the provision for deed- recorded maintenance requirements",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "C. Reilly to write a draft Zoning Amendment from the model bylaw and map info, review it with DCR, and have it ready for the Board in about two weeks.",
+   "quote": "c. reilly will write draft zoning amendment based on the model bylaw & map info, review it with k. paight to make sure it conforms with dcr, have it available for board in approx. 2 weeks."
+  },
+  {
+   "decision": "C. Reilly to draft updated sets of Standard Conditions for Site Plan Approval, Stormwater Management Permits, and Common Driveway Special Permits for Board review.",
+   "quote": "c. reilly will draft updated sets of scs for (1) site plan approval, (2) stormwater management permits, and (3) common driveway special permits for the board to review."
+  },
+  {
+   "decision": "M. Brenner to discuss the Pierce Ave ownership question with Town Counsel at his office hours on Feb 11th.",
+   "quote": "m. brenner will discuss with town counsel at his office hours on feb 11th."
+  },
+  {
+   "decision": "M. Brenner asked T. Willsmer to list which Master Plan Steering Committee groups had and hadn't been attending and, if possible, get a concrete recommendation from the MPSC on which positions to cut.",
+   "quote": "for next meeting, m. brenner asked t. willsmer to (1) list which groups had and hadn't been attending"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master Plan consultant contract (OverUnder, Inc)",
+   "what_was_recorded": "About $20,000 remains on the consultants' contract at roughly $2,000 per meeting, and the original expiry date has passed.",
+   "quote": "per c. reilly there's approx. $20,000 left at around $2,000 per meeting.",
+   "figures_as_printed": [
+    "$20,000",
+    "$2,000"
+   ]
+  },
+  {
+   "topic": "Municipal Building Design Committee renovation estimate",
+   "what_was_recorded": "The renovations subtotal presented to the Select Board was about $22 million, excluding remediation.",
+   "quote": "renovations' subtotal was approximately $22m (not including remediation).",
+   "figures_as_printed": [
+    "$22m"
+   ]
+  },
+  {
+   "topic": "Capital planning cost estimates",
+   "what_was_recorded": "Received estimates have at times been off by 100% or more, and some votes were based on inaccurate numbers; no dollar figure printed.",
+   "quote": "have had multiple cases of received estimates being off by a factor of 100% or more",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Applicant-funded peer review",
+   "what_was_recorded": "G. McLeod said he prefers applicants paying for peer review themselves rather than the Board requiring it; no dollar figure printed.",
+   "quote": "prefers applicants electing to spend their own money vs. needing to for board requirements.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Site visit: inviting DPW engineer and Police and Fire",
+   "speaker": "Dave MacDonald",
+   "stated_role": "155 Island Rd",
+   "quote": "dave macdonald (155 island rd) - recommend inviting bill bernard (department of public works) to site visit due to his engineering background."
+  },
+  {
+   "topic": "Supporting local businesses; traffic study merit; Pierce Ave ownership",
+   "speaker": "Bob Pease",
+   "stated_role": "11 Wintergreen Ct",
+   "quote": "bob pease (11 wintergreen ct) - town needs to support businesses better."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "matthew brenner called the meeting to order at 6:02 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "public comment none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair and Director's report: state floodplain map updates",
+   "resolution": "no action",
+   "quote": "katie paight from the department of conservation and recreation (dcr) will join remotely to answer questions about state-mandated floodplain map updates.",
+   "tags": [
+    "floodplain",
+    "state mandate"
+   ]
+  },
+  {
+   "topic": "ANR: 215 Sunset Ln land swap",
+   "resolution": "endorsed",
+   "quote": "t. willsmer moved to endorse anr for 215 sunset ln. a. reid seconded. voice vote, passed unanimously.",
+   "tags": [
+    "ANR",
+    "land division",
+    "Sunset Ln"
+   ]
+  },
+  {
+   "topic": "ANR: 171 Arbor St lot line",
+   "resolution": "endorsed",
+   "quote": "t. willsmer moved to endorse anr for 171 arbor st. a. reid seconded. voice vote, passed unanimously.",
+   "tags": [
+    "ANR",
+    "land division",
+    "Arbor St"
+   ]
+  },
+  {
+   "topic": "Zoning workshop: Accessory Dwelling Units",
+   "resolution": "no action",
+   "quote": "c. reilly explained - the state revised their guidance extensively late last week; notably impeding local powers.",
+   "tags": [
+    "ADU",
+    "zoning",
+    "state mandate"
+   ]
+  },
+  {
+   "topic": "Floodplain map updates and NFIP",
+   "resolution": "zoning amendment to be drafted",
+   "quote": "lunenburg is within the nashua river watershed, whose firm maps are being updated by fema (effective july 2025).",
+   "tags": [
+    "floodplain",
+    "NFIP",
+    "FEMA",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Warrant article submission process",
+   "resolution": "no action",
+   "quote": "the board discussed the warrant article submission process.",
+   "tags": [
+    "warrant articles",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Public hearing: 494 Electric Ave SPA and SMP",
+   "resolution": "continued to 2025-02-24; site visit scheduled",
+   "quote": "494 electric ave - site plan approval (spa), stormwater management permit (smp)",
+   "tags": [
+    "site plan",
+    "stormwater",
+    "traffic",
+    "Electric Ave"
+   ]
+  },
+  {
+   "topic": "Public hearing: 213 Electric Ave SMP",
+   "resolution": "continued to 2025-03-10",
+   "quote": "t. willsmer moved to continue the public hearing for 213 electric ave to 2025-03-10 at 6:05 p.m.",
+   "tags": [
+    "stormwater",
+    "duplexes",
+    "Electric Ave"
+   ]
+  },
+  {
+   "topic": "Decisions: 560 Goodrich St and 255 Sunny Hill Rd",
+   "resolution": "endorsement deferred",
+   "quote": "the board deferred endorsement of the decisions, pending revisions to reflect the provision for deed- recorded maintenance requirements",
+   "tags": [
+    "decisions",
+    "stormwater",
+    "standard conditions",
+    "deeds"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Master Plan Steering Committee composition and quorum",
+   "resolution": "no action; chair assigned follow-up",
+   "quote": "per t. willsmer - continued issues with quorum.",
+   "tags": [
+    "master plan",
+    "quorum",
+    "committee"
+   ]
+  },
+  {
+   "topic": "Master Plan consultant contract remaining balance",
+   "resolution": "no action",
+   "quote": "m. allison asked about the remaining contract with the master plan consultants (overunder, inc).",
+   "tags": [
+    "master plan",
+    "contract",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Abutting community notices",
+   "resolution": "no action",
+   "quote": "three notices from fitchburg planning board, none of local concern.",
+   "tags": [
+    "regional"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "per m. allison - highly detailed, in-depth, multi-disciplinary presentation made to select board on tuesday, 2025-02-04.",
+   "tags": [
+    "municipal building",
+    "capital planning",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (no motion recorded)",
+   "quote": "the board reviewed and approved minutes for 2024-12-09, 2025-02-13, and 2025-01-27.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "upcoming meetings are 02-24 and 03-10 at 6:00 p.m.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "no action",
+   "quote": "m. allison criticized the unusually short deadline for the board to submit warrant articles' preliminary language.",
+   "tags": [
+    "state mandates",
+    "warrant articles",
+    "unfunded mandates"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:19 P.M.",
+   "quote": "a. reid moved to adjourn. m. brenner seconded. voice vote, passed unanimously. adjourned 9:19 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "zoning",
+  "accessory dwelling units",
+  "floodplain",
+  "FEMA NFIP",
+  "site plan review",
+  "stormwater",
+  "public hearing",
+  "Electric Ave",
+  "Pierce Ave",
+  "master plan",
+  "warrant articles",
+  "Town Meeting",
+  "capital planning",
+  "municipal building"
+ ],
+ "dropped_unquoted_by_field": {}
 }

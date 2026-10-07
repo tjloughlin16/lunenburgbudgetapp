@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2025-09-08",
  "docid": "7394",
@@ -12,31 +12,226 @@
  },
  "votes": [
   {
-   "motion": "Approve Rambling Rose as a vendor for the Lunenburg Farmers' Market",
-   "moved_by": "Jackie Chabot",
-   "seconded_by": "Kathy Dugan",
-   "outcome": "unanimously approved",
+   "motion": "Approve the Lunenburg Farmers' Market vendor Rambling Rose.",
+   "moved_by": "Jackie",
+   "seconded_by": "Kathy",
+   "outcome": "passed (unanimous; no count printed)",
    "procedural": false,
    "quote": "jackie makes a motion to approve the following vendors: rambling rose. kathy seconded. commission unanimously approved."
   },
   {
-   "motion": "Approve Lions Club as a vendor for the Lunenburg Farmers' Market",
-   "moved_by": "Kathy Dugan",
-   "seconded_by": "Ryan Stober",
-   "outcome": "unanimously approved",
+   "motion": "Approve the Lunenburg Farmers' Market vendor Lions Club.",
+   "moved_by": "Kathy",
+   "seconded_by": "Ryan",
+   "outcome": "passed (unanimous; no count printed)",
    "procedural": false,
    "quote": "kathy makes a motion to approve the following vendors: lions club. ryan seconded. commission unanimously approved."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Jackie Chabot",
-   "seconded_by": "Ryan Stober",
-   "outcome": "unanimously approved",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Jackie",
+   "seconded_by": "Ryan",
+   "outcome": "passed (unanimous; no count printed)",
    "procedural": true,
-   "quote": "jackie made a motion to adjourn; ryan seconds. commission unanimously approved."
+   "quote": "jackie made a motion to adjourn; ryan seconds. commission unanimously approved. meeting adjourned at 8:04 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06271439999999999
+ "note": "Plain-text extraction of one page pair; attendance is read from check marks, so Vice-Chair Holman and Alternate McClellan are neither marked present nor absent and are recorded as 'not stated'. Three votes are recorded, each only as 'unanimously approved' with no count printed. The minutes print no dollar figures, so budget_items and transfers are empty. Public comment is recorded as 'None' at both points. The attendance table lists Kim Muzzi as an alternate, while the header roster shows a vacancy in that seat. Two decisions are one-line assignments; the Master Plan review is recorded as discussion and not counted as a decision.",
+ "cost_usd": 0.01500217,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jackie chabot ✔ member kathy dugan ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Member",
+   "status": "present",
+   "quote": "member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Member",
+   "status": "present",
+   "quote": "member kathy dugan ✔ member ryan stober ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan"
+  },
+  {
+   "name": "Kim Muzzi",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate kim muzzi ✔"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jackie to post about AgFair on the Agricultural Commission Facebook page.",
+   "quote": "agricultural commission facebook page jackie to post about agfair"
+  },
+  {
+   "decision": "Put a sign-up list for Agricultural Commission emails at the LPR, TFE and FM ag comm booths.",
+   "quote": "put sign up list for ag comm emails at lpr, tfe, and fm ag comm booth"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:07 pm",
+   "quote": "meeting commencement time: 7:07 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no comment or announcements recorded",
+   "quote": "2 public comment none 3 announcements none 4 review/approve minutes none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review/approve minutes",
+   "resolution": "no action recorded in the minutes",
+   "quote": "4 review/approve minutes none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "New business: USDA and MDAR updates",
+   "resolution": "no action recorded",
+   "quote": "new business: usda update none mdar update none",
+   "tags": [
+    "USDA",
+    "MDAR"
+   ]
+  },
+  {
+   "topic": "Current business: land management and maintenance",
+   "resolution": "assigned to members by area, no action recorded",
+   "quote": "land management/maintenance mdar/nrcs - jen",
+   "tags": [
+    "land management",
+    "MDAR",
+    "NRCS"
+   ]
+  },
+  {
+   "topic": "Mass Farmland Action Plan",
+   "resolution": "discussed; no action recorded",
+   "quote": "in ma, 1997 to 2022 113 thousand acres lost",
+   "tags": [
+    "farmland loss",
+    "Mass Farmland Action Plan"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee agriculture items",
+   "resolution": "reviewed list to finalize comments for next meeting",
+   "quote": "reviewed items on list from master plan steering committee to finalize comments for next meeting",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Lunenburg Farmers' Market vendor applications",
+   "resolution": "approved Rambling Rose and Lions Club",
+   "quote": "reviewed applications for the following vendors:",
+   "tags": [
+    "farmers market",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Farmers market promotion and events",
+   "resolution": "advertising and outreach tasks noted; Jackie to post about AgFair",
+   "quote": "ad is in lunenburg ledger 9/12 and 9/19 and event is boosted on facebook",
+   "tags": [
+    "farmers market",
+    "outreach",
+    "AgFair"
+   ]
+  },
+  {
+   "topic": "Membership, Facebook page and mailing list",
+   "resolution": "Jackie to post about AgFair; sign-up list to be put out at booths",
+   "quote": "membership none agricultural commission facebook page jackie to post about agfair",
+   "tags": [
+    "membership",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "Master Plan Steering Committee and bylaw review committee listed; no action recorded",
+   "quote": "master plan steering committee report to review bylaw review committee",
+   "tags": [
+    "master plan",
+    "bylaw review"
+   ]
+  },
+  {
+   "topic": "Farming issues",
+   "resolution": "none recorded",
+   "quote": "8 farming issues none 9 upcoming meetings/events schedule",
+   "tags": [
+    "farming"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "two meetings listed (September 22 and October 20, 2025)",
+   "quote": "6:30 pm september 22, 2025 lunenburg public library",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:04 pm, unanimous",
+   "quote": "meeting adjourned at 8:04 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmers market",
+  "vendors",
+  "farmland loss",
+  "Master Plan",
+  "MDAR",
+  "USDA",
+  "outreach",
+  "AgFair",
+  "membership"
+ ],
+ "dropped_unquoted_by_field": {}
 }

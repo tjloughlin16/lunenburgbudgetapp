@@ -415,5 +415,263 @@
    "at": "2026-10-06T18:05:44Z",
    "cost_usd": 0.213395
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02192025-7065",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-02-19-minutes-7065.txt",
+   "path": "sources/meetings/board-of-assessors/2025-02-19-minutes-7065.pdf"
+  },
+  "official_sha256": "eeabc9105fbada8cc6819f37eb1e03aa8f85896b4f2bee33467836e85b021a6b",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on both votes, the motor vehicle excise counts, the $790,000 overlay total, and the meeting-date and Clause 41/17 decisions. The official minutes are a partial summary: they omit the overlay discussion, the senior-exemption detail and the $25,000 overlay figure, and they list attendees (Rena Swezey, Ezequiel Ayala) and topics (age 65, Clause 18, the \"8 of 58\" application) that our captions did not capture. A reader should check the recording for who produced the overlay figures, and for the extra attendees.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 7,
+   "discrepancy": 1,
+   "only_in_ours": 8,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: signature stamp for motor vehicle excise abatement certificates",
+    "ours": "Allow use of a stamp instead of signature on individual motor vehicle excise abatement certificates (motor vehicle only) — passed (camer, rabbit, leond aye)",
+    "official": "there is a motion to use the signature stamp to sign the individual certificate for motor vehicles by brian laffond, seconded by john rabbitt.",
+    "note": "Same motion and outcome (passed); the official minutes record mover and seconder but no tally.",
+    "t": 2013
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: letter regarding deed issues",
+    "ours": "Adopt the drafted letter as the one sent when there is a deed problem — passed (rabbit, camer aye, roll call; third vote not clearly captioned)",
+    "official": "there was a motion to approve the letter regarding deed issues by sarah cammer, seconded by john rabbitt.",
+    "note": "Same motion, passed in both; the official minutes record no roll call, so the third member's vote is not confirmed either way.",
+    "t": 4498
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Overlay release transfer of 25,000",
+    "ours": "Overlay release of a sum to another purpose, discussed while reviewing overlay spending; exact transfer not clearly stated — 25,000 (discussed only)",
+    "official": "",
+    "note": "The official minutes list no transfers; ours is flagged as discussed only and not a clear transfer, so check the recording near this point.",
+    "t": 6527
+   },
+   {
+    "kind": "caption_error",
+    "about": "Motor vehicle excise commitment 2025 total",
+    "ours": "1 million 745,000 $393 70",
+    "official": "the first commitment of 2025 for motor vehicle excise tax totaled $1,745,393.70 consisting of 12,599 bills.",
+    "official_reading": "$1,745,393.70",
+    "note": "The captions split the same figure into words and fragments.",
+    "t": 1884
+   },
+   {
+    "kind": "caption_error",
+    "about": "Final 2024 motor vehicle excise commitment total",
+    "ours": "$1,563 51, 14, 563 and 51 cents",
+    "official": "the final commitment for 2024 totaled $14,563.51 consisting of 326 bills.",
+    "official_reading": "$14,563.51",
+    "note": "Garbled digit grouping of the same amount.",
+    "t": 1884
+   },
+   {
+    "kind": "agree",
+    "about": "Bill counts for motor vehicle commitments (12,599 and 326)",
+    "ours": "Motor vehicle excise commitments: 12599 bills, 326 bills",
+    "official": "the first commitment of 2025 for motor vehicle excise tax totaled $1,745,393.70 consisting of 12,599 bills.",
+    "note": "Both bill counts match the official minutes (326 appears in the final-commitment sentence).",
+    "t": 316
+   },
+   {
+    "kind": "caption_error",
+    "about": "Motor vehicle refund total",
+    "ours": "six $767 68",
+    "official": "a motor vehicle refund totaling $767.68 was signed.",
+    "official_reading": "$767.68",
+    "note": "Same amount, with the dollar and cents grouping garbled.",
+    "t": 1738
+   },
+   {
+    "kind": "agree",
+    "about": "Neighborhood review funding $27,500",
+    "ours": "Neighborhood review funding: 27,500",
+    "official": "brian laffond states there is $27,500 in the proposed budget under capital and suggests these funds could be used as a good starting point.",
+    "note": "The figures match.",
+    "t": 3748
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 overlay account total $790,000",
+    "ours": "FY26 overlay account: $790,000, 795,000, 50,000, 202811, 120, 127, 250, 25,000",
+    "official": "ezequiel ayala confirmed the total in the overlay account is $790,000.",
+    "note": "The $790,000 total matches; the other overlay figures in ours are not in the official minutes.",
+    "t": 5835
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior means-tested exemption asset limits and levy percentage",
+    "ours": "Senior means-tested exemption asset limits: 275,000, 50,000, 750,000, 1.3 million, 1% of the tax levy",
+    "official": "",
+    "note": "The official minutes carry none of these figures.",
+    "t": 2664
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Title search cost for deed problems",
+    "ours": "Title searches for deed problems: a couple hundred bucks",
+    "official": "",
+    "note": "An approximate cost mentioned in discussion; not in the official minutes.",
+    "t": 3914
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Business income and expense forms count",
+    "ours": "Business income and expense forms: 225",
+    "official": "",
+    "note": "The official minutes do not give this figure.",
+    "t": 1012
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stamp scope: real estate certificates still need signatures",
+    "ours": "Stamp for motor vehicle excise abatement certificates only; real estate certificates still need signatures, and the board will check whether abatements need a direct signature.",
+    "official": "",
+    "note": "The official minutes record the motion but not this limit or the follow-up check.",
+    "t": 2159
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior exemption deadline, look-back and control numbers",
+    "ours": "For the senior means-tested exemption, the application deadline would be early September, the circuit breaker tax return would look back one year, and anonymous control numbers were favored.",
+    "official": "",
+    "note": "Our minutes carry these three points; the official minutes mention only the minimum age of 65.",
+    "t": 2514
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minimum age 65 for senior means-tested exemption",
+    "ours": "",
+    "official": "due to the changes we made to 41c it was determined the minimum age would be 65.",
+    "note": "A decision the official minutes record and ours do not; confirm on the recording.",
+    "t": 2514
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who prepares the overlay recommendation",
+    "ours": "Linda to work up an overlay recommendation with analysis for the next meeting so the board can advise the town manager.",
+    "official": "the board needs to put a recommendation forward to the town manager about the suggested amount to put aside in the overlay account for next year.",
+    "note": "Both say a recommendation goes to the town manager, but ours assigns the work to Linda for the next meeting and the official minutes assign no one and set no date; check the recording.",
+    "t": 6155
+   },
+   {
+    "kind": "agree",
+    "about": "Clause 41 and 17 rewrite by the chair",
+    "ours": "The chair will rewrite the proposed Clause 41 and 17 income and asset adjustment draft after town counsel's feedback, and send it before the next meeting.",
+    "official": "brian laffond will re-write and provide a copy to the board prior to the march 14th deadline.",
+    "note": "Same decision; the official minutes give the March 14th deadline where ours says before the next meeting, and omit town counsel's feedback.",
+    "t": 6629
+   },
+   {
+    "kind": "agree",
+    "about": "March 5 meeting and tentative March 12 meeting",
+    "ours": "Keep the March 5th meeting; if there is no quorum, tentatively meet March 12th in the office for abatements.",
+    "official": "there is a tentative meeting scheduled for march 12th in case there isn't a quorum on march 5th.",
+    "note": "Same decision; ours adds the location and purpose (abatements).",
+    "t": 7121
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Circuit breaker website section rejected",
+    "ours": "A dedicated circuit breaker section on the assessor website was rejected by the chair; adding deferrals and abatement content was agreed.",
+    "official": "",
+    "note": "The official minutes record only a separate website item (the senior center presentation); this decision is not in them.",
+    "t": 5128
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Senior center conference presentation on the website",
+    "ours": "",
+    "official": "john rabbitt will inquire with kara mccarthy about having the presentation from the conference at the senior center added to the website.",
+    "note": "A website action item in the official minutes with no counterpart in ours.",
+    "t": 5128
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Application for an 8 of 58",
+    "ours": "",
+    "official": "brian laffond volunteered to help lynda mcquade create the application for an \"8 of 58\" that the board previously agreed to submit.",
+    "note": "Action item not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Clause 18 criteria proposal",
+    "ours": "",
+    "official": "brian laffond suggested that john rabbitt bring a proposal to the board defining the criteria we should use.",
+    "note": "Action item not captured in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brian Laffond (chair)",
+    "ours": "Brian leond (member)",
+    "official": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt (zoom), principal assessor lynda mcquade, rena swezey (6:40).",
+    "official_reading": "Brian Laffond",
+    "note": "Misheard surname; the official minutes also give his role as chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Sarah Cammer",
+    "ours": "Sarah camer (member)",
+    "official": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt (zoom), principal assessor lynda mcquade, rena swezey (6:40).",
+    "official_reading": "Sarah Cammer",
+    "note": "Spelling variant of the same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: John Rabbitt (remote)",
+    "ours": "John rabbit (member (remote))",
+    "official": "clerk john rabbitt (zoom),",
+    "official_reading": "John Rabbitt",
+    "note": "Spelling variant; the remote attendance matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: principal assessor",
+    "ours": "Linda McQueen (principal assessor)",
+    "official": "principal assessor lynda mcquade, rena swezey (6:40).",
+    "official_reading": "Lynda McQuade",
+    "note": "Misheard name for the same role."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Rena Swezey",
+    "ours": "",
+    "official": "principal assessor lynda mcquade, rena swezey (6:40).",
+    "note": "Listed as arriving at 6:40; not in our attendees. Check the recording for whether she spoke or voted, since the official vote tally is not given."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Ezequiel Ayala",
+    "ours": "",
+    "official": "ezequiel ayala confirmed the total in the overlay account is $790,000.",
+    "note": "Named only as the person confirming the overlay total; ours lists Linda as the overlay presenter, so confirm who spoke."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Denise (assessing office staff)",
+    "ours": "Denise (assessing office staff)",
+    "official": "",
+    "note": "Not named in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:32:51Z",
+   "cost_usd": 0.3422348
+  }
  }
 }

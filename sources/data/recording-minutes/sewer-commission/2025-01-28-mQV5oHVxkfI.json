@@ -294,5 +294,174 @@
    "at": "2026-10-06T18:12:34Z",
    "cost_usd": 0.210459
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01282025-6982",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-01-28-minutes-6982.txt",
+   "path": "sources/meetings/sewer-commission/2025-01-28-minutes-6982.pdf"
+  },
+  "official_sha256": "5054edbaf6a4e76d6b79640f7f000878eebcf7c209b973e1e07f1543435960a0",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree closely: neither has a vote or transfer, and the decisions on the annual report, Eli Torres's resignation and the interviews match. The one substantive difference is who holds the business manager role. Ours labels Bill as business manager, and the official minutes make Andrew the Sewer Business Manager and Bill the DPW Director.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Munis consultant funding source",
+    "ours": "MUNIS consultant paid from Opera money: Opera money",
+    "official": "he is being paid out of arpa money",
+    "note": "Same item, the captions rendered ARPA as 'Opera'.",
+    "official_reading": "ARPA money",
+    "t": 873
+   },
+   {
+    "kind": "agree",
+    "about": "FY2024 annual report: Jane writes, commission votes next meeting",
+    "ours": "Jane will write the FY2024 annual report for the town report; the commission will vote on it at the next meeting, ahead of a February 17th due date.",
+    "official": "so they will need to vote on it at the next meeting.",
+    "note": "Both say Jane writes it and the commission votes at the next meeting. The Feb 17 due date appears only in ours.",
+    "t": 493
+   },
+   {
+    "kind": "agree",
+    "about": "Eli Torres resignation and recruiting a replacement",
+    "ours": "Eli Torres is to submit a resignation letter to town hall; the commission will then begin recruiting a replacement.",
+    "official": "resignation is received at the town hall, they can start recruiting a new member.",
+    "note": "Same sequence: resignation received at Town Hall, then recruiting starts.",
+    "t": 575
+   },
+   {
+    "kind": "agree",
+    "about": "Assistant to the business manager interviews",
+    "ours": "Two interviews for the assistant to the business manager are scheduled; commissioners are invited to sit in.",
+    "official": "let the commissioners know when the interviews will take place",
+    "note": "Both say commissioners may sit in. The 'two interviews' count is only in ours.",
+    "t": 917
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next-agenda carry-over items",
+    "ours": "The FY24 annual report, the assistant business manager search and the quarterly billing update stay on the next agenda.",
+    "official": "",
+    "note": "The official minutes in the structured summary do not record the agenda carry-over.",
+    "t": 1086
+   },
+   {
+    "kind": "only_in_official",
+    "about": "2nd quarter billing demands with $10 fees",
+    "ours": "",
+    "official": "to go through with straight $10 fees",
+    "note": "Our minutes have no mention of the $10 fee approach for the demands.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "12 Kimball St. Privilege Fee and DocuSign",
+    "ours": "",
+    "official": "so it can go to the town treasurer",
+    "note": "Our minutes do not mention the Kimball St. privilege fee or the DocuSign signing. It is a decision, but no vote is described.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Munis consultant asked to give a high-level look",
+    "ours": "",
+    "official": "to give andrew a high level look at munis",
+    "note": "Our minutes have only the funding source for the consultant, not this request.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole repair waits for frost",
+    "ours": "",
+    "official": "they need to wait until the frost comes out of ground",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on flushing",
+    "ours": "",
+    "official": "not flush anything down their toilets other than",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Vice-Chair surname",
+    "ours": "Brett Ramon (vice chair (presiding, standing in for Mike Mackin))",
+    "official": "vice-chair- brett ramsden",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Brett Ramsden",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Clerk surname",
+    "ours": "Scott D (member)",
+    "official": "clerk- scott dall , member : joe hurley",
+    "note": "Same person, surname truncated by the captions. Ours calls him a member and the official minutes call him Clerk.",
+    "official_reading": "Scott Dall",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Joe Hurley",
+    "ours": "Joseph Hurley (member)",
+    "official": "clerk- scott dall , member : joe hurley",
+    "note": "Same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Sewer Business Manager name",
+    "ours": "Andrew Valerie (staff)",
+    "official": "bill bernard , sewer business manager-andrew va lliere, minutes clerk- jane ranley",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Andrew Valliere",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: minutes clerk name",
+    "ours": "Jan / Jane ramley (staff (writes annual report, takes minutes))",
+    "official": "bill bernard , sewer business manager-andrew va lliere, minutes clerk- jane ranley",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Jane Ranley",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee role: Bill Bernard",
+    "ours": "Bill / Bernard (business manager (staff))",
+    "official": "bill bernard , sewer business manager-andrew va lliere, minutes clerk- jane ranley",
+    "note": "The official minutes list Bill Bernard as DPW Director and Andrew Valliere as Sewer Business Manager. Ours labels Bill as business manager. Check the recording for who is addressed as business manager, and the title on the official attendance list.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "absent: chair- mike mackin and eli torres",
+    "note": "Ours mentions Mackin only as the chair Brett was standing in for, and does not list Eli Torres as absent.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:35:45Z",
+   "cost_usd": 0.241863
+  }
  }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2025-02-12",
  "docid": "7026",
@@ -12,25 +12,180 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from the January 8, 2025 meeting",
+   "motion": "Approve the minutes of the January 8, 2025 meeting.",
    "moved_by": "A. Lockwood",
    "seconded_by": "G. McLeod",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a. lockwood motioned to approve minutes from the january 8, 2025 meeting. g. mcleod seconded the motion. members present v oted unanimously in favor of approving minutes by roll call",
-   "quote_taken_from_text": true
+   "quote": "a. lockwood motioned to approve minutes from the january 8, 2025 meeting. g. mcleod seconded the motion. members present v oted unanimously in favor of approving minutes by roll call."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Lockwood",
    "seconded_by": "G. McLeod",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn the meeting was made by a. lockwood and seconded by g. mcleod. members present v oted unanimously in favor by roll call",
-   "quote_taken_from_text": true
+   "quote": "motion to adjourn the meeting was made by a. lockwood and seconded by g. mcleod. members present v oted unanimously in favor by roll call."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06309239999999999
+ "note": "Text is an extracted, not scanned, document; both pages read in full. Meeting was fully remote, but the minutes list members under \"Members Present\" and do not give a per-person remote/in-person status, so they are recorded as present. Two recorded votes, both procedural, both by roll call with unanimity printed but no tally. No vote was recorded on the 100 Townsend Harbor Road recommendation; the minutes record only a \"general consensus\" favoring a recommendation and a decision to table. No dollar figures appear. B. Kibbe is named only as a member with conflicts and is not recorded as taking part, so is excluded. The minutes state they were approved at the May 14, 2025 meeting; that is not part of this meeting's record.",
+ "cost_usd": 0.01538017,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Toohill",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting was fully remote via zoom/recorded members present: michael toohill (chair)"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member; vice chair (per Committee Positions)",
+   "status": "present",
+   "quote": "a. lockwood motioned to approve minutes from the january 8, 2025 meeting."
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "g. mcleod seconded the motion."
+  },
+  {
+   "name": "Timothy Lawless",
+   "role": "Member",
+   "status": "present",
+   "quote": "glenn mcleod timothy lawless"
+  },
+  {
+   "name": "D. Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "d. passios indicated he would continue to assist"
+  },
+  {
+   "name": "J. Duffy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in the discussion and were supportive of acquiring the property."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tabled the 100 Townsend Harbor Road Right of First Refusal discussion to the next meeting, to receive input from members unable to attend.",
+   "quote": "consensus was to table the discussion to our next meeting to receive input from"
+  },
+  {
+   "decision": "Chair Toohill agreed to continue in his current role while the discussion of committee structure continues.",
+   "quote": "in his current role while the discussion of committee structure continues."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "D. Passios",
+   "stated_role": "",
+   "topic": "open communication between boards and departments",
+   "quote": "d. passios indicated he would continue to assist"
+  },
+  {
+   "speaker": "not named in minutes",
+   "stated_role": "",
+   "topic": "support for acquiring 100 Townsend Harbor Road",
+   "quote": "supportive comments made during the 100 townsend harbor road right of first refusal discussion."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval (January 8, 2025 meeting)",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "procedure"
+   ],
+   "quote": "a. lockwood motioned to approve minutes from the january 8, 2025 meeting."
+  },
+  {
+   "topic": "100 Townsend Harbor Road Right of First Refusal",
+   "resolution": "tabled to next meeting; consensus favored recommending Selectmen acquire, no vote",
+   "tags": [
+    "right of first refusal",
+    "Chapter 61A",
+    "land acquisition",
+    "Selectmen",
+    "100 Townsend Harbor Road"
+   ],
+   "quote": "discussion on whether the committee should recommend the lunenburg board of"
+  },
+  {
+   "topic": "Notification of properties leaving Chapter 61A",
+   "resolution": "no action; McLeod working to address through OpenGov",
+   "tags": [
+    "Chapter 61A",
+    "notification",
+    "OpenGov",
+    "inter-board communication"
+   ],
+   "quote": "chair toohill reiterated the osc did not receive formal notification of 100 townsend"
+  },
+  {
+   "topic": "Reports from other boards",
+   "resolution": "no action; Planning Board invited a dual meeting",
+   "tags": [
+    "Planning Board",
+    "joint meeting"
+   ],
+   "quote": "extended an open invitation to have a dual meeting of osc and planning board."
+  },
+  {
+   "topic": "Citizen comments",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "supportive comments made during the 100 townsend harbor road right of first refusal discussion."
+  },
+  {
+   "topic": "Committee positions (chair, vice chair, secretary)",
+   "resolution": "discussion continued; chair continues in role pending structure discussion",
+   "tags": [
+    "committee structure",
+    "chair",
+    "vice chair",
+    "membership"
+   ],
+   "quote": "chair toohill agreed to continue on"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "listed; no vote",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "meeting schedule: 3/12/25 (remote)"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:36 P.M.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion to adjourn the meeting was made by a. lockwood and seconded by g. mcleod."
+  }
+ ],
+ "tags": [
+  "open space",
+  "100 Townsend Harbor Road",
+  "right of first refusal",
+  "Chapter 61A",
+  "Selectmen",
+  "Planning Board",
+  "committee structure",
+  "remote meeting",
+  "notification",
+  "OpenGov"
+ ],
+ "dropped_unquoted_by_field": {}
 }

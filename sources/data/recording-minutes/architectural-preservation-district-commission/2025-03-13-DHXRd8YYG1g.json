@@ -234,5 +234,97 @@
    "at": "2026-10-06T18:00:06Z",
    "cost_usd": 0.209409
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03132025-7097",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2025-03-13-minutes-7097.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2025-03-13-minutes-7097.pdf"
+  },
+  "official_sha256": "925444227eebc1b559419bc024ab7b04eec8d8b0a672613be5c0453091afa8b0",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Neither record has a non-procedural vote, transfer or figure, and the four members present match. The two differ on what was decided: ours has a merger warrant article left off the May warrant and a consultant invited to the next meeting, while the official minutes have town counsel invited and no mention of the warrant.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Non-procedural votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Both records show no non-procedural votes, and neither has transfers or priced budget figures.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Members present",
+    "ours": "the chair (unnamed in captions) (chair); William (whim) (member); Nathan (member); Richard (member)",
+    "official": "present: chairman sculimbrene, lloyd, mcgrath, lockwood",
+    "note": "Four members in each record. Captions give only first names (William/Lloyd, Nathan/Lockwood, Richard/McGrath) and leave the chair unnamed; the official minutes name Sculimbrene as chair.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chris Ruth named in official minutes",
+    "ours": "",
+    "official": "chris ruth said there is some roof repairs that need to happen before the vane can go",
+    "note": "Ruth appears in the official minutes (roof repairs before the vane can go) but not in ours; check whether he spoke or attended.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who is invited to the next meeting",
+    "ours": "The chair will try to have the town's consultant Adam join the next commission meeting by Zoom, possibly at a different time than 7:30.",
+    "official": "will invite town counsel to our next meeting.",
+    "note": "Ours says a consultant named Adam joins by Zoom; the official minutes say town counsel is invited. Check the recording near t=663 to see whether these are the same person or two different invitations.",
+    "t": 663
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Merger article kept off May warrant",
+    "ours": "The merger warrant article will not go on the May annual town meeting warrant; the Town Manager will email the consultant, and the work is aimed at a special town meeting in November.",
+    "official": "",
+    "note": "The official minutes do not record this decision. It could change which town meeting takes up the APDC and Historical Commission merger, so check the recording at t=516.",
+    "t": 516
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting date",
+    "ours": "The next meeting is set for April 10; minutes go to Ellen after the formatting change.",
+    "official": "",
+    "note": "The official minutes in this extract give no April 10 date and no minutes-handling note.",
+    "t": 1653
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Adapt next meeting for Zoom expiry",
+    "ours": "",
+    "official": "will adapt next meeting as needed",
+    "note": "The official minutes tie this to Zoom-capable meetings expiring 31 March 2025. Ours records Zoom only for the consultant and does not mention the expiry.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Brooks house presentation concern",
+    "ours": "",
+    "official": "concern expressed about what will be shown on powerpoint to town and potential cost to town.",
+    "note": "Only the official minutes record this concern about the Brooks house PowerPoint and its cost to the town. No figure is printed.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:28:57Z",
+   "cost_usd": 0.228327
+  }
  }
 }

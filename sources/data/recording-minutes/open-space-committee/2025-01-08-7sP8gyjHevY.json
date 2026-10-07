@@ -222,5 +222,133 @@
    "at": "2026-10-06T18:20:18Z",
    "cost_usd": 0.20944500000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082025-6946",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2025-01-08-minutes-6946.txt",
+   "path": "sources/meetings/open-space-committee/2025-01-08-minutes-6946.docx"
+  },
+  "official_sha256": "1cea45805ddf8dce7086e8f3e1c483064c349ac18bff59eb5282b7639957ffbe",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree closely on the substance: neither records a vote, both table the Farmland of Local Importance request and the Townsend Harbor Road parcel, and the four attendees match apart from spellings. The official minutes add M. Wilson's absence and the 30 School St comment, and omit the follow-up with the planning board and the next-meeting dates that ours records.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 4,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes: none recorded",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote or any transfer."
+   },
+   {
+    "kind": "agree",
+    "about": "Farmland of Local Importance tabled / more information first",
+    "ours": "Farmland of Local Importance request tabled until next month's meeting; no action requested yet.",
+    "official": "g. mcleod suggests gathering additional information prior to voting on whether or not to recommend approving, since there is no deadline to do so. the members present concur.",
+    "t": 444,
+    "note": "Both say no action was taken and the item was deferred; the official minutes give the reason (no deadline) and do not name next month's meeting."
+   },
+   {
+    "kind": "agree",
+    "about": "100 Townsend Harbor Rd Chapter 61A parcel tabled",
+    "ours": "Townsend Harbor Road parcel (Chapter 61 right of first refusal) tabled; no recommendation made, as members saw it not meeting criteria.",
+    "official": "the members present agree to table the discussion and take no action for now.",
+    "t": 1427,
+    "note": "Both record tabling with no action; the official minutes say the OSC was not asked for a recommendation, ours says members saw it as not meeting criteria, a difference in stated reason only."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Mike twohill (chair)",
+    "official": "members present: mike toohill (chair), ana lockwood, eric hinds, glenn mcleod.",
+    "note": "Same person, name misspelled in the captions.",
+    "official_reading": "Mike Toohill"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Anna/Ana Lockwood",
+    "ours": "Anna Lockwood (member)",
+    "official": "members present: mike toohill (chair), ana lockwood, eric hinds, glenn mcleod.",
+    "note": "Same attendee; spelling differs.",
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Eric Hines/Hinds",
+    "ours": "Eric Hines (member (took the September minutes))",
+    "official": "members present: mike toohill (chair), ana lockwood, eric hinds, glenn mcleod.",
+    "note": "Same attendee; surname misheard.",
+    "official_reading": "Eric Hinds"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Glenn McLoud/McLeod",
+    "ours": "Glenn McLoud (member (planning board representative))",
+    "official": "members present: mike toohill (chair), ana lockwood, eric hinds, glenn mcleod.",
+    "note": "Same attendee; surname misheard.",
+    "official_reading": "Glenn McLeod"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member M. Wilson",
+    "ours": "",
+    "official": "committee member m. wilson will present additional details but is not present tonight due to attending conservation commission meeting.",
+    "note": "Our attendee list omits the absent member who was at a Conservation Commission meeting."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on town hall project and 30 School St parcel",
+    "ours": "",
+    "official": "g. mcleod, in his capacity as a town resident, indicates that the town hall project is moving forward rapidly and that the 30 school st parcel is of interest.",
+    "note": "Ours only has a Town Hall funding figure and no mention of the 30 School St parcel."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Farmland designation has no cost",
+    "ours": "",
+    "official": "m. toohill notes that there is no cost and little effort required to do so",
+    "note": "Official records the chair saying designation costs nothing; ours does not."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Follow-up with planning board and conservation's view",
+    "ours": "Glenn to follow up at the planning board on streamlining notification of such parcels; chair to check with Mary on conservation's view.",
+    "official": "",
+    "t": 1212,
+    "note": "An action item in our minutes, not found in the official excerpt; check whether the official minutes omit it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting dates",
+    "ours": "Next meetings set for February 12 and March 12 at 7:30 on Zoom; in-person meetings to be considered from April.",
+    "official": "",
+    "t": 1847,
+    "note": "The official minutes as provided give no next-meeting dates; confirm against the full document."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figures: Conservation Commission state money and Town Hall funding",
+    "ours": "Conservation Commission state money: million dooll; Town Hall project funding: 15 million",
+    "official": "",
+    "t": 1553,
+    "note": "Official has no dollar figures for these; the first figure is garbled and the Town Hall amount is unconfirmed, so check the recording."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:38:24Z",
+   "cost_usd": 0.22996699999999998
+  }
  }
 }

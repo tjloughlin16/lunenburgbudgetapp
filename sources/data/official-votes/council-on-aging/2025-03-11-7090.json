@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2025-03-11",
  "docid": "7090",
@@ -12,23 +12,287 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of February 11, 2025",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Accept the minutes of the February 11, 2025 meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "it was moved and seconded to accept the minutes of february 11, 2025 meeting. all approved. motion was carried."
   },
   {
-   "motion": "to adjourn",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Adjourn the meeting.",
    "moved_by": "Peter Lincoln",
-   "seconded_by": "Susan O'Sullivan",
+   "seconded_by": "Susan O’Sullivan",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "a motion was made by peter lincoln and seconded by susan o'sullivan. it passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0591444
+ "note": "Text extraction of a typed minutes document, not a scan; no readability problem. The header states these minutes were approved at the April 8, 2025 COA meeting. Two motions are recorded with votes: approval of the February 11, 2025 minutes (mover and seconder not named, result given as 'All approved') and adjournment (Peter Lincoln / Susan O’Sullivan, passed unanimously; no count printed). No absences are recorded and the attendance line lists ten members as present. No dollar figures appear in the minutes. Public comment is recorded as 'None'. Minutes give adjournment time as 'adjoined at 10:19 AM'. Facilities and Director's report items are reports, not decisions.",
+ "cost_usd": 0.01519267,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice chairperson)"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice chairperson",
+   "status": "present",
+   "quote": "present: deb lincoln (chairperson), jane rabbitt (vice chairperson)"
+  },
+  {
+   "name": "Peter Lincoln",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy"
+  },
+  {
+   "name": "Elena Christopher",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy"
+  },
+  {
+   "name": "Jim McGuigan",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy"
+  },
+  {
+   "name": "Helen Balcom",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy"
+  },
+  {
+   "name": "Cathy Beale",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy"
+  },
+  {
+   "name": "Ana Lockwood",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Guest; presented the facilities update",
+   "status": "present",
+   "quote": "guests: chris ruth public comment: none"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Intent to email meeting minutes going forward; March 11 minutes will also be mailed until members can confirm they can download minutes at home.",
+   "quote": "the intent is to email the minutes."
+  },
+  {
+   "decision": "The sand for seniors program will be planned well before next winter.",
+   "quote": "as previously mentioned, the sand for seniors program will be planned well before next winter."
+  },
+  {
+   "decision": "Charles Sanderson, next eligible candidate, to be honored for the Boston Post Cane award at the Veteran’s Breakfast.",
+   "quote": "he will be honored at the veteran's breakfast on april 11, 2025."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA FY26 budget",
+   "what_was_recorded": "The FY26 COA budget was presented to the Town Manager and Finance Committee; no dollar figure is printed.",
+   "quote": "1. coa fy26 coa budget was presented to the town manager and finance committee.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Quarterly financial reports",
+   "what_was_recorded": "The Director of the Lunenburg Adult Activity Center will present quarterly financial reports to the Town Manager and Finance Committee; no dollar figure is printed.",
+   "quote": "financial reports (quarterly-march, june, sept. and december).",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Ambulance revenue",
+   "what_was_recorded": "Board member comment that the ambulance service brings revenue into the town; no dollar figure is printed.",
+   "quote": "she also indicated that the ambulance service brings revenue into the town.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action; announcements none",
+   "quote": "chairperson deb lincoln called the meeting to order at 9:36 am.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Board comment on sand for seniors",
+   "resolution": "raised; sand program to be planned before next winter",
+   "quote": "peter lincoln expressed his outrage that sand for seniors was eliminated this winter.",
+   "tags": [
+    "senior programs",
+    "winter services"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved the February 11, 2025 minutes",
+   "quote": "it was moved and seconded to accept the minutes of february 11, 2025 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Facilities update (Chris Ruth)",
+   "resolution": "reported; fence, kitchen, floor, blinds, lighting status",
+   "quote": "the fence around the generator has been installed and will be stained when the weather is warmer.",
+   "tags": [
+    "facilities",
+    "building"
+   ]
+  },
+  {
+   "topic": "Sand for seniors program",
+   "resolution": "to be planned before next winter",
+   "quote": "as previously mentioned, the sand for seniors program will be planned well before next winter.",
+   "tags": [
+    "senior programs",
+    "winter services"
+   ]
+  },
+  {
+   "topic": "Boston Post Cane award",
+   "resolution": "first candidate declined; next candidate to be honored April 11, 2025",
+   "quote": "he is eligible for the cane award as well as entry into \"the century club\".",
+   "tags": [
+    "veterans",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "FY26 COA budget",
+   "resolution": "presented to Town Manager and Finance Committee",
+   "quote": "coa fy26 coa budget was presented to the town manager and finance committee.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Quarterly financial reports",
+   "resolution": "reported as a recurring process",
+   "quote": "the director of the lunenburg adult activity center (coa) will present quarterly financial reports",
+   "tags": [
+    "budget",
+    "finance reports"
+   ]
+  },
+  {
+   "topic": "Nashoba Valley Medical Center Hospital Work Group",
+   "resolution": "reported; group disbanded by the Governor",
+   "quote": "the group has been disbanded by the governor of ma.",
+   "tags": [
+    "health care"
+   ]
+  },
+  {
+   "topic": "Lunenburg Master Plan update",
+   "resolution": "reported; committee restarting",
+   "quote": "the new master plan committee met last week.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "300th Anniversary Committee",
+   "resolution": "announced; meeting March 28",
+   "quote": "all are encouraged to attend.",
+   "tags": [
+    "anniversary"
+   ]
+  },
+  {
+   "topic": "Parking lot update",
+   "resolution": "no action; none at this time",
+   "quote": "parking lot update: none at this time.",
+   "tags": [
+    "parking"
+   ]
+  },
+  {
+   "topic": "Director’s report",
+   "resolution": "announced bus trip, lunch and learn, library presentation, postponed program",
+   "quote": "there are two more seats available on the bus to foxwoods on monday march 17, 2025",
+   "tags": [
+    "programs",
+    "trips"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "no action; nothing new to report",
+   "quote": "eagle house supporters report: nothing new to report.",
+   "tags": [
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Notes and communications",
+   "resolution": "no action; none",
+   "quote": "notes and communications: none",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Board comment on fire department staffing",
+   "resolution": "discussed; members urged residents to contact the town manager",
+   "quote": "she indicated the need for increasing the full time employees to seven days per week for the safety of our community.",
+   "tags": [
+    "fire department",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:19 AM",
+   "quote": "meeting was adjoined at 10:19 am.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior programs",
+  "facilities",
+  "Boston Post Cane",
+  "veterans",
+  "FY26 budget",
+  "finance reports",
+  "master plan",
+  "fire department staffing",
+  "sand for seniors",
+  "minutes approval",
+  "Eagle House",
+  "300th anniversary"
+ ],
+ "dropped_unquoted_by_field": {}
 }

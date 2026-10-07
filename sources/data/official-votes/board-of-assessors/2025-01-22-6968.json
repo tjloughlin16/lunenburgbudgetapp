@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-01-22",
  "docid": "6968",
@@ -12,13 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Add the spreadsheet with land use codes to the website",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "if all members are in agreement, brian laffond would like to add this document to the website. approved."
-  },
-  {
-   "motion": "Adjourn and enter into executive session",
+   "motion": "Motion to adjourn and enter into executive session.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "not stated",
@@ -27,6 +21,219 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes contain two votes. The website spreadsheet approval is recorded as consensus (\"Approved\") without a formal motion and vote count. The adjourn motion is procedural; while the meeting closed at 8:42 PM indicating the motion passed, no explicit vote result is stated in the minutes.",
- "cost_usd": 0.1150154
+ "note": "The minutes have no roll call or attendance list, so attendance is inferred from named participation and marked as such in the status field. Only one motion is recorded (the procedural motion to adjourn and enter executive session), with no result printed, so its outcome is \"not stated\". The website approval reads as consensus (\"If all members are in agreement... Approved.\") with no motion or tally, so it is recorded as a decision, not a vote. Text was extracted cleanly from all three pages and no pages appear missing.",
+ "cost_usd": 0.014373170000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor (per the status report heading)",
+   "status": "present",
+   "quote": "lynda mcquade provided the following updates:"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "sarah cammer asks if there is a document with a format or template that is submitted when a bid is put out."
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "not stated",
+   "status": "present",
+   "quote": "sarah cammer and brian laffond suggest reaching out to the registrar of deeds"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "seconded by john rabbitt."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Website addition of the old-versus-new spreadsheet with pivot table, including land use codes, approved by consensus, conditional on members agreeing; no recorded motion or tally.",
+   "quote": "if all members are in agreement, brian laffond would like to add this document to the website. approved."
+  },
+  {
+   "decision": "The Board will review and approve the minutes of January 8, 2025, December 10, 2024, November 20, 2024, November 6, 2024, October 16, 2024, October 2, 2024, and the Executive Session of December 10, 2024 at its next meeting, February 5, 2025.",
+   "quote": "the board plans to review and approve all minutes at the next meeting on february 5, 2025."
+  },
+  {
+   "decision": "Postponed: Clause 41 and 17 Assets/Income Level Adjustments for Exemptions (Brian) and BOA Policies.",
+   "quote": "clause 41 and 17 assets/income level adjustments for exemptions (brian)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cyclical inspections by Vision",
+   "what_was_recorded": "Lynda McQuade submitted a $17,000 item for cyclical inspections to be completed by Vision, described as a 3-year contract.",
+   "figures_as_printed": [
+    "$17,000"
+   ],
+   "quote": "$17,000 for cyclical inspections to be completed by vision. this is a 3- year contract",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Neighborhood revision",
+   "what_was_recorded": "$25,000 is budgeted for the neighborhood revision, covering 500 lake properties with site indexes to be reviewed per Department of Revenue.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "$25,000 is budgeted for the neighborhood revision."
+  },
+  {
+   "topic": "Map updates",
+   "what_was_recorded": "$7,500 was listed to update maps.",
+   "figures_as_printed": [
+    "$7,500"
+   ],
+   "quote": "$7,500 to update maps."
+  },
+  {
+   "topic": "Personal property appraisals",
+   "what_was_recorded": "$22,000 was listed for personal property appraisals by Real Estate Research Consultants (RRC).",
+   "figures_as_printed": [
+    "$22,000"
+   ],
+   "quote": "$22,000 for personal property appraisals by real estate research consultants (rrc)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened at 6:30 PM",
+   "quote": "the meeting opened at 6:30 pm.",
+   "tags": [
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "no action; updates given on abatements, exemptions, cards and budget submissions",
+   "quote": "lynda mcquade provided the following updates:",
+   "tags": [
+    "abatements",
+    "exemptions",
+    "property record cards",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "continued to February 5, 2025",
+   "quote": "the board plans to review and approve all minutes at the next meeting on february 5, 2025.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review and approve invoices, expense vouchers, billing errors",
+   "resolution": "skipped for this meeting",
+   "quote": "this topic was skipped for this meeting.",
+   "tags": [
+    "invoices",
+    "expenses"
+   ]
+  },
+  {
+   "topic": "Assessor Conference at the Senior Center, February 3, 2025",
+   "resolution": "Board reviewed slides and discussed edits; thanked John Rabbitt",
+   "quote": "the board reviewed the slides provided by john rabbitt and discussed their edits.",
+   "tags": [
+    "conference",
+    "training"
+   ]
+  },
+  {
+   "topic": "Senior means tested exemption",
+   "resolution": "discussed; proposal to create a subgroup on these exemptions, no decision recorded",
+   "quote": "there was discussion about creating a subgroup tasked at working on these exemptions.",
+   "tags": [
+    "exemptions",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Neighborhood/site index review and plan in response to DOR directives",
+   "resolution": "discussed; in-house review proposed, starting with lake properties; no decision recorded",
+   "quote": "lynda mcquade suggests using rena swezey and denise mccue to complete the review in-house.",
+   "tags": [
+    "neighborhood review",
+    "DOR directives",
+    "site index",
+    "lake properties"
+   ]
+  },
+  {
+   "topic": "Policy and homeowner letter for issues with deeds",
+   "resolution": "discussed; suggestions to contact attorneys, BAR association and registry of deeds; no decision recorded",
+   "quote": "lynda mcquade suggests creating a policy stating if the deed is unable to be understood then the homeowners need to reach out to the attorney who prepared it.",
+   "tags": [
+    "deeds",
+    "homeowner letter",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Assessor website",
+   "resolution": "approved by consensus to add spreadsheet to website",
+   "quote": "if all members are in agreement, brian laffond would like to add this document to the website. approved.",
+   "tags": [
+    "website",
+    "land use codes"
+   ]
+  },
+  {
+   "topic": "Postponed topics",
+   "resolution": "postponed: Clause 41 and 17 exemption adjustments; BOA policies",
+   "quote": "clause 41 and 17 assets/income level adjustments for exemptions (brian)",
+   "tags": [
+    "exemptions",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "listed",
+   "quote": "upcoming meetings: february 5, 2025, february 19, 2025, march 5, 2025, march 19, 2025",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "no comments from public or Board",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "motion to adjourn and enter executive session; closed at 8:42 PM",
+   "quote": "the meeting closed at 8:42 pm.",
+   "tags": [
+    "adjournment",
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "abatements",
+  "exemptions",
+  "senior exemption",
+  "deeds",
+  "DOR directives",
+  "neighborhood review",
+  "property record cards",
+  "assessor website",
+  "budget",
+  "executive session"
+ ],
+ "dropped_unquoted_by_field": {}
 }

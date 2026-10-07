@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2025-02-04",
  "docid": "7001",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "that the meeting be adjourned",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
@@ -21,6 +21,255 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. No votes on substantive matters. The minutes document a joint meeting with presentations and discussion but do not record any motions or votes on design decisions or other substantive business.",
- "cost_usd": 0.0592484
+ "note": "Extracted text, not a scan; all pages present. Votes: the only recorded vote is the adjournment, which gives a unanimous result but names no mover or seconder. No motions on the design were recorded. The header says 7:00pm but the minutes record the call to order at 7:47pm. The intro says this was a joint meeting with the Select Board, which is not listed among attendees. The architects are referred to but not named. The minutes have no public comment section; Tom Alonzo, Amanda Moore and Caesar Nuzzolo are listed as speaking, but their role (public or member) is not stated, so public_comment is left empty. Several words look like transcription errors (e.g. \"Frees\", \"sprinkers\", \"o1\"); quotes are copied as printed.",
+ "cost_usd": 0.01429267,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member, Lunenburg Municipal Building Design Committee",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, tom gray"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member, Lunenburg Municipal Building Design Committee",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, tom gray"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member, Lunenburg Municipal Building Design Committee",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member, Lunenburg Municipal Building Design Committee",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, tom gray"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member, Lunenburg Municipal Building Design Committee",
+   "status": "absent",
+   "quote": "members absent: david blatt, kristina masaitis, matthew allison"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member, Lunenburg Municipal Building Design Committee",
+   "status": "absent",
+   "quote": "members absent: david blatt, kristina masaitis, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member, Lunenburg Municipal Building Design Committee",
+   "status": "absent",
+   "quote": "members absent: david blatt, kristina masaitis, matthew allison"
+  },
+  {
+   "name": "Tony Sculumbrine",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: tony sculumbrine, steve walker pacc"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Community Guest, PACC (as printed)",
+   "status": "present",
+   "quote": "community guests: tony sculumbrine, steve walker pacc"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "tom alonzo asked about removing squeaking from second floor."
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "not stated",
+   "status": "present",
+   "quote": "amanda moore asked about the pacc space."
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "caesar nuzzolo appreciated the work o1 the committee and the work on the 92 parking spots added that was incredible."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The architects will include the squeaking second-floor issue in the design.",
+   "quote": "the architects will include this in the design."
+  },
+  {
+   "decision": "Operating cost assumptions to be provided later in the design process.",
+   "quote": "architects stated this would be done later in the design."
+  },
+  {
+   "decision": "Card access level of detail deferred to the next design iteration.",
+   "quote": "card access was discussed and level of detail will be in the next iteration."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Trade cost estimate by building",
+   "what_was_recorded": "The independent cost estimate printed trade costs for the meeting house, Ritter Memorial, town hall and sitework, with a subtotal.",
+   "figures_as_printed": [
+    "$2,624,842",
+    "$2,068,279",
+    "$6,937,445",
+    "$1,657,520",
+    "$13,288,086"
+   ],
+   "quote": "meeting house renovation $2,624,842, ritter memorial renovation $2,068,279, town hall"
+  },
+  {
+   "topic": "Contingency, escalation and total project cost",
+   "what_was_recorded": "Contingency and escalation percentages were applied to the trade subtotal, giving a total project cost range including OPM and design fees.",
+   "figures_as_printed": [
+    "12%",
+    "3%",
+    "$13,288,086",
+    "$21,409,100-$22,301,145"
+   ],
+   "quote": "subtotal trade costs $13,288,086. contingencies and escalation is 12% and 3% respectively."
+  },
+  {
+   "topic": "Total project cost range",
+   "what_was_recorded": "The total project cost with OPM and design fees was printed as a range.",
+   "figures_as_printed": [
+    "$21,409,100-$22,301,145"
+   ],
+   "quote": "total project cost w opm and design frees $21,409,100-$22,301,145."
+  },
+  {
+   "topic": "Alternates",
+   "what_was_recorded": "Three alternates were listed with their printed costs.",
+   "figures_as_printed": [
+    "$1,768,800",
+    "$97,279",
+    "$281,400"
+   ],
+   "quote": "alternates include alt 1 pv canopy $1,768,800, alt 2 meeting house basement slab $97,279, alt 3 ev chargers (21 units) $281,400."
+  },
+  {
+   "topic": "Limited-use lift in both buildings",
+   "what_was_recorded": "A cost was given for putting a lift in both buildings plus reconfigurations.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "if we did this in both buildings it would be $250,000 each building and reconfigurations."
+  },
+  {
+   "topic": "PACC space in basement",
+   "what_was_recorded": "Accommodating PACC in the basement was described as a cost savings compared with a separate building; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "architects initially proposed a separate building but as the process went on they determined they could accommodate that in the basement at a cost savings."
+  },
+  {
+   "topic": "Heat pump operating costs",
+   "what_was_recorded": "Members asked for operating cost assumptions for heat pumps; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "operating cost assumptions should be given."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Architect design presentation and layout",
+   "resolution": "presented; discussion, no action recorded",
+   "quote": "the architects provided a presentation of the design layout.",
+   "tags": [
+    "design",
+    "architect",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Structural, basement and Ritter building work",
+   "resolution": "discussed; design to include structural verification",
+   "quote": "the design will include verification for structural support.",
+   "tags": [
+    "structural",
+    "basement",
+    "Ritter building",
+    "moisture"
+   ]
+  },
+  {
+   "topic": "Independent cost estimate and alternates",
+   "resolution": "presented; no action recorded",
+   "quote": "cost estimate was completed two days prior, independent estimate outside of the architects, peter bradley.",
+   "tags": [
+    "cost estimate",
+    "alternates",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Heat pumps, fossil fuels and operating costs",
+   "resolution": "discussed; operating cost assumptions deferred to later design",
+   "quote": "tom alonzo mentioned that heat pumps are concerning due to unitil electricity.",
+   "tags": [
+    "heat pumps",
+    "energy",
+    "operating cost"
+   ]
+  },
+  {
+   "topic": "Limited-use lift and accessibility",
+   "resolution": "discussed; no action recorded",
+   "quote": "additionally, after renovation we will still have a limited usage lift.",
+   "tags": [
+    "accessibility",
+    "elevator"
+   ]
+  },
+  {
+   "topic": "PACC space, safety and security",
+   "resolution": "discussed; card access detail deferred to next iteration",
+   "quote": "amanda moore asked about the pacc space.",
+   "tags": [
+    "PACC",
+    "safety",
+    "security",
+    "card access"
+   ]
+  },
+  {
+   "topic": "Staffing, offices and conference space",
+   "resolution": "discussed; no action recorded",
+   "quote": "tom alonzo asked about finance director and town accountant.",
+   "tags": [
+    "staff offices",
+    "conference room",
+    "future growth"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:45pm, unanimous",
+   "quote": "the meeting was adjourned at 8:45pm, with a unanimous vote.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "town hall design",
+  "cost estimate",
+  "Ritter building",
+  "PACC",
+  "accessibility",
+  "elevator",
+  "heat pumps",
+  "structural",
+  "joint meeting Select Board"
+ ],
+ "dropped_unquoted_by_field": {}
 }

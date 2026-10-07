@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2025-07-30",
  "docid": "7330",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve prior minutes from June 26, 2025",
+   "motion": "Approve the minutes of the June 26, 2025 meeting.",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
@@ -20,39 +20,266 @@
    "quote": "chair david dorren motioned we approve the prior minutes, clerk donna landry seconded, aif"
   },
   {
-   "motion": "Approve prior minutes from July 3, 2025",
+   "motion": "Approve the minutes of the July 3, 2025 meeting.",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
    "procedural": true,
-   "quote": "chair david dorren motioned we approve the prior minutes, clerk donna landry seconded, aif"
+   "quote": "3.) reviewed and approved minutes from meeting on july 3, 2025 chair david dorren motioned we approve the prior minutes, clerk donna landry seconded, aif"
   },
   {
-   "motion": "Approve the Engineering Plans by Dillis and Roy for the completed set of plans for $11,435.00",
+   "motion": "Approve the Engineering Plans by Dillis and Roy for the completed set of plans for the North Cemetery backlot expansion, $11,435.00.",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
    "procedural": false,
-   "quote": "chair david dorren made a motion to approve the engineering plans by dillis and roy for the completed set of plans for $11,435.00 - clerk donna landry, seconded. aif"
+   "quote": "chair david dorren made a motion to approve the engineering plans by dillis and roy for the completed set of plans for $11,435.00 - clerk donna landry, seconded. aif ."
   },
   {
-   "motion": "Approve invoice for $1744.64 from W.D. Mason for fireproof file cabinet for DPW",
+   "motion": "Approve the W.D. Mason invoice of $1744.64 for a fireproof file cabinet for DPW.",
    "moved_by": "Donna Landry",
    "seconded_by": "David Dorren",
    "outcome": "passed",
    "procedural": false,
-   "quote": "clerk donna landry made a motion to approve, david dorren seconded the motion, aif"
+   "quote": "clerk donna landry made a motion to approve, david dorren seconded the motion, aif ."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "David Dorren",
+   "motion": "Adjourn the meeting at 7:45 PM.",
+   "moved_by": "",
    "seconded_by": "Donna Landry",
    "outcome": "passed",
    "procedural": true,
-   "quote": "vice chair david dorren requested a motion to adjourn, clerk donna landry seconded, aif"
+   "quote": "at 7:45, vice chair david dorren requested a motion to adjourn, clerk donna landry seconded, aif"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0793424
+ "dropped_unquoted": 1,
+ "note": "Text is a clean extraction (no scan). The minutes record \"AIF\" (read here as all in favor) for each vote and print no vote count, so outcomes are recorded as \"passed\" on that basis. The adjournment motion has no printed mover. Dave Dorren is called \"Vice-Chair\" in the header and attendance but \"Chair\" in items 2, 3 and 7; \"David Dorren\" and \"Dave Dorren\" are treated as one person. \"Bill Barnard\" in item 7 is taken to be Bill Bernard. Item 5 gives the Town Manager's direction as printed. Todd Holman appears only in the header, not in the attendance line. The minutes say the meeting was held remote by Zoom but do not say who attended remotely, so attendance is recorded as printed in the attendee line. No speaker is named under public comment, so that list is empty.",
+ "cost_usd": 0.01529057,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Clark",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: mike clark, dave dorren, donna landry, bill bernard"
+  },
+  {
+   "name": "Dave Dorren",
+   "role": "Vice-Chair (called Chair in items 2, 3 and 7)",
+   "status": "present",
+   "quote": "attendees: mike clark, dave dorren, donna landry, bill bernard"
+  },
+  {
+   "name": "Donna Landry",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: mike clark, dave dorren, donna landry, bill bernard"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Department Director",
+   "status": "present",
+   "quote": "dpw department director: bill bernard"
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "not stated",
+   "quote": "cemetery superintendent: todd holman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mike Clark to check with Brian Finley to schedule CIMS software training; training still to be scheduled, including how GIS interfaces with it.",
+   "quote": "mike to check with brian finley to schedule training. still needs to be scheduled and to see how gis interfaces with it."
+  },
+  {
+   "decision": "David Dorren to check further on grants; earmarks to take place in February 2026, per the Town Manager's direction that grants must be identified first.",
+   "quote": "we need to know what grants are available ﬁrst according to town manager. david to check further. earmarks to take place in february 2026."
+  },
+  {
+   "decision": "Future onsite meetings scheduled: North Cemetery on August 14 (later postponed to September 9 at 7:30 am) and South Cemetery on August 28 (postponed to September 18).",
+   "quote": "planned future onsite meetings at the north cemetery for august 14th and south cemetery for august 28th"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "North Cemetery backlot expansion engineering plans",
+   "what_was_recorded": "The commission approved Engineering Plans by Dillis and Roy for the completed set of plans, at a stated price.",
+   "figures_as_printed": [
+    "$11,435.00"
+   ],
+   "quote": "chair david dorren made a motion to approve the engineering plans by dillis and roy for the completed set of plans for $11,435.00 - clerk donna landry, seconded. aif ."
+  },
+  {
+   "topic": "DPW fireproof file cabinet invoice",
+   "what_was_recorded": "The commission approved an invoice from W.D. Mason for a fireproof file cabinet for DPW.",
+   "figures_as_printed": [
+    "$1744.64"
+   ],
+   "quote": "reviewed invoice for $1744.64 invoice from w.d. mason for ﬁreproof ﬁle cabinet for dpw."
+  },
+  {
+   "topic": "Grants",
+   "what_was_recorded": "David Dorren discussed grants; his contact could not help, and grants available are to be identified first. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "david discussed grants and explained that his contact cannot help us."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "6:00 pm - call to order 1.) stand for of allegiance pledge",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of June 26, 2025 minutes",
+   "resolution": "approved",
+   "quote": "reviewed and approved minutes from meeting on june 26, 2025",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Approval of July 3, 2025 minutes",
+   "resolution": "approved",
+   "quote": "3.) reviewed and approved minutes from meeting on july 3, 2025",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "CIMS software training",
+   "resolution": "continued; training still to be scheduled",
+   "quote": "discussed cims software training - mike to check with brian finley to schedule",
+   "tags": [
+    "CIMS software",
+    "training",
+    "GIS"
+   ]
+  },
+  {
+   "topic": "Grants",
+   "resolution": "continued; David Dorren to check further",
+   "quote": "david discussed grants and explained that his contact cannot help us.",
+   "tags": [
+    "grants",
+    "earmarks"
+   ]
+  },
+  {
+   "topic": "CIMS and GIS integration",
+   "resolution": "no action; to be determined in the future",
+   "quote": "mike discussed the integration between cims software and gis as well as training - to be determined in the future.",
+   "tags": [
+    "CIMS software",
+    "GIS"
+   ]
+  },
+  {
+   "topic": "North Cemetery backlot expansion",
+   "resolution": "approved engineering plans",
+   "quote": "reviewed plans for expansion with bill barnard.",
+   "tags": [
+    "North Cemetery",
+    "expansion",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Shrub replacement at North Cemetery border",
+   "resolution": "reviewed; no action recorded",
+   "quote": "reviewed possible scenarios regarding the replacement for the shrubs that were cut",
+   "tags": [
+    "North Cemetery",
+    "shrubs"
+   ]
+  },
+  {
+   "topic": "South Cemetery headstone repairs",
+   "resolution": "reviewed; initial review of stonewall repair by Amanda Construction",
+   "quote": "reviewed and discussed the head stones in the south cemetery that need to be",
+   "tags": [
+    "South Cemetery",
+    "headstones",
+    "stonewall"
+   ]
+  },
+  {
+   "topic": "DPW fireproof cabinet",
+   "resolution": "need noted; invoice approved",
+   "quote": "need another ﬁreproof cabinet for dpw.",
+   "tags": [
+    "DPW",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Tree and shrub trimming on outer walls",
+   "resolution": "discussed; no action recorded",
+   "quote": "discussed trimming of trees/shrubs on outer walls of cemetery where the trees",
+   "tags": [
+    "trees",
+    "stonewalls"
+   ]
+  },
+  {
+   "topic": "Crack sealing, North and South Cemetery",
+   "resolution": "reviewed; no action recorded",
+   "quote": "reviewed crack sealing cemetery in north and south cemetery.",
+   "tags": [
+    "paving",
+    "crack sealing"
+   ]
+  },
+  {
+   "topic": "DPW fireproof cabinet invoice",
+   "resolution": "approved",
+   "quote": "reviewed invoice for $1744.64 invoice from w.d. mason for ﬁreproof ﬁle cabinet for dpw.",
+   "tags": [
+    "invoice",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Future onsite meetings",
+   "resolution": "scheduled, with postponements",
+   "quote": "planned future onsite meetings at the north cemetery for august 14th and south",
+   "tags": [
+    "site visits",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:45",
+   "quote": "at 7:45, vice chair david dorren requested a motion to adjourn, clerk donna landry",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "North Cemetery expansion",
+  "South Cemetery headstones",
+  "CIMS software",
+  "GIS",
+  "grants",
+  "DPW invoices",
+  "fireproof cabinet",
+  "tree trimming",
+  "crack sealing",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

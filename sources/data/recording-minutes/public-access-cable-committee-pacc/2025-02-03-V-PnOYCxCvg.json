@@ -339,5 +339,177 @@
    "at": "2026-10-06T18:10:53Z",
    "cost_usd": 0.21140899999999999
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02032025-6975",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-02-03-minutes-6975.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-02-03-minutes-6975.pdf"
+  },
+  "official_sha256": "47b7bd939d3b68e040708502123c581f54b5ae7e3fb51c19d146714580c9325e",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "Both records show no votes and agree on the balance and most of the members, but the official minutes are a short outline and omit most of the discussion we recorded. The main difference is decisions: ours records several the town's minutes do not, and the town's record two action items ours lacks. The private-space contacts are described differently in the two.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 2,
+   "discrepancy": 7,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Manager's financial report: current balance",
+    "t": 618,
+    "ours": "balance: 1.23 million, 14764, 1, 23,4 764",
+    "official": "current balance $1,023,147.64",
+    "official_reading": "$1,023,147.64",
+    "note": "Same balance item; the captions garbled the digits of $1,023,147.64."
+   },
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "none",
+    "official": "none",
+    "note": "Neither record has a non-procedural vote."
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers",
+    "ours": "",
+    "official": "none",
+    "note": "Neither record has a transfer."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Possible alternate/private studio space contacts",
+    "t": 1734,
+    "ours": "The manager's phone and email contacts for possible alternate studio spaces will be kept on file. No outreach was agreed.",
+    "official": "s.archambault presented 2 possible private space contacts (tabled)",
+    "note": "Ours says the manager's contacts were kept on file; the town says S. Archambault presented two contacts and they were tabled. Check the recording for who presented and what was decided."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Program submission policy tabled pending town attorney",
+    "t": 1689,
+    "ours": "The program submission policy stays on the agenda and is tabled for now, still waiting on the town attorney's review.",
+    "official": "",
+    "note": "The decision is in ours but not in the official minutes; check whether it was a decision and whether the town omitted it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Remove master plan steering committee update from agendas",
+    "t": 2871,
+    "ours": "The master plan steering committee update item is to be removed from future agendas. The committee failed to reach a quorum.",
+    "official": "",
+    "note": "The decision is in ours but not in the official minutes; check the recording and the agenda."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Report comments go only to the manager",
+    "t": 1289,
+    "ours": "Report comments go only to the manager, who will make the edits and hope to send the report by February 14. Others should reply all.",
+    "official": "",
+    "note": "The decision is in ours but not in the official minutes. Our wording is also internally odd ('others should reply all'); check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Member to contact municipal building design committee about equipment room access",
+    "t": 2556,
+    "ours": "A member will contact the municipal building design committee that evening to get the equipment room access fixed.",
+    "official": "",
+    "note": "The action is in ours but not in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "J.Toale to check whether updated PAC space need was sent to Town Hall",
+    "ours": "",
+    "official": "s.walker asked j.toale if updated pac space need was sent to town hall. j.toale will check.",
+    "note": "The official minutes record an action item ours does not; check the recording near the space discussion."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Add interest investment to financial report",
+    "ours": "",
+    "official": "s.walker requested that j.toale add interest investment to financial report.",
+    "note": "The official minutes record a request ours does not; check the recording near the financial report."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "New town hall cost estimate",
+    "t": 2241,
+    "ours": "15 million, $600 per square foot, 600 square fet, $4.98 million, 2 and a half million",
+    "official": "",
+    "note": "Figures discussed on the recording that the official summary does not mention; the captions may have garbled them."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Rent",
+    "t": 2747,
+    "ours": "sixth grand, $1,000, $50 for each meeting",
+    "official": "",
+    "note": "Rent figures appear only in ours; 'sixth grand' looks misheard, so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Legal line / contract renewal date",
+    "t": 1434,
+    "ours": "February the 28th at midnight in 2028",
+    "official": "",
+    "note": "A contract date appears only in ours; the official minutes do not mention it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY26 PAC budget presented to interim Town Manager",
+    "ours": "",
+    "official": "s.walker presented budget to interim town manager (discussion)",
+    "note": "Our minutes record no budget presentation or discussion; the official item has no dollar figures."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Enterprise Fund investment status",
+    "ours": "",
+    "official": "enterprise fund investment status: • no update at this time",
+    "note": "Our minutes do not mention this item."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Manager name",
+    "ours": "Joe (Joe tol) (manager)",
+    "official": "manager: jo toale public comments: - • none",
+    "official_reading": "Jo Toale",
+    "note": "The captions misheard the manager's name."
+   },
+   {
+    "kind": "agree",
+    "about": "Members Steve, Pete, Faith",
+    "ours": "Steve (member); Pete (member); Faith (member)",
+    "official": "pacc members present: steve walker, pete lincoln (zoom), steve archambault, faith beall",
+    "note": "Our first names match members in the official list; the official list adds surnames and that Pete attended by Zoom."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Second Steve (Steve Archambault)",
+    "ours": "",
+    "official": "pacc members present: steve walker, pete lincoln (zoom), steve archambault, faith beall",
+    "note": "Ours lists one Steve; the official list has two (Walker and Archambault), so ours may have merged them."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Eric (staff, mentioned) and unnamed chair",
+    "ours": "Eric (staff (mentioned)); the chair (unnamed) (chair)",
+    "official": "",
+    "note": "The official minutes list no chair or staff member named Eric; Eric was only mentioned, so he may not have attended."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:34:15Z",
+   "cost_usd": 0.241913
+  }
  }
 }

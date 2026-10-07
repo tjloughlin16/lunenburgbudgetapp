@@ -354,5 +354,176 @@
    "at": "2026-10-06T18:03:47Z",
    "cost_usd": 0.21216700000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02272025-7068",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-02-27-minutes-7068.txt",
+   "path": "sources/meetings/cemetery-commission/2025-02-27-minutes-7068.pdf"
+  },
+  "official_sha256": "b2bb9ee4487ea68783c3e30b8cbce9379dd78b6fdff90ec3725bfb8e54f0aa73",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all three votes, the pulled $10K transfer, the next meeting date and the four officials present. They differ mainly in figures: ours carries several garbled captions and some figures the official minutes never state.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to pull the $10K Sales of Lots transfer article from the warrant",
+    "ours": "Pull the warrant article for the additional transfer from the sale of lots account. — passed",
+    "official": "chair nancy foss yasko made the motion to pull the article from the warrant, vice chair david dorren seconded, voted all in favor.",
+    "note": "Both records show the article pulled and the motion passing.",
+    "t": 1119
+   },
+   {
+    "kind": "agree",
+    "about": "Vote on North Cemetery expansion funded by capital planning, amount undetermined",
+    "ours": "Move forward on the North Cemetery expansion, with capital planning to fund an amount still to be determined. — passed",
+    "official": "chair nancy foss yasko made the motion that the capital plan will take out \"x\" amount of dollars to start the north cemetery expansion, vice chair david dorren seconded, voted all in favor.",
+    "note": "Both records show the same motion with the amount left as X, and both show it passing.",
+    "t": 1459
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to go forward with North Cemetery road repairs",
+    "ours": "Accept that capital planning will move forward with the North Cemetery road network repairs. — passed",
+    "official": "chair nancy foss yasko made the motion that they will be going forward with road repairs, clerk mike clark seconded, voted all in favor.",
+    "note": "Both records show the same motion passing. The official text says road repairs and does not mention capital planning in the motion itself.",
+    "t": 1694
+   },
+   {
+    "kind": "agree",
+    "about": "$10K transfer from Sales of Lots, article pulled",
+    "ours": "Proposed transfer out of the sale of lots account via warrant article; later pulled — 10,000 (voted)",
+    "official": "$10k transfer from the sales of lots account - chair nancy foss yasko made the motion to pull the article from the warrant",
+    "note": "Same amount and the same outcome: the article was pulled.",
+    "t": 600
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sale of lots account balance",
+    "ours": "Sale of lots account balance: 9439 466, $10,000",
+    "official": "sale of lots $94,394.66, capital fund $10,606.61. if we have enough in the fund, we will pull the article for $10k",
+    "note": "The captions split $94,394.66 into '9439 466'. The $10,000 is the pulled article amount.",
+    "official_reading": "$94,394.66",
+    "t": 643
+   },
+   {
+    "kind": "caption_error",
+    "about": "Capital fund balance",
+    "ours": "Capital article funding available: 10,666",
+    "official": "sale of lots $94,394.66, capital fund $10,606.61. if we have enough in the fund, we will pull the article for $10k",
+    "note": "10,666 is most likely a mishearing of $10,606.61, the capital fund balance.",
+    "official_reading": "$10,606.61",
+    "t": 684
+   },
+   {
+    "kind": "agree",
+    "about": "$50K capital item for North Cemetery expansion",
+    "ours": "Capital items and sale of lots transfer: the 50k, the 50k, 10,000 transfer",
+    "official": "$50k capital item for the north cemetery expansion area - will come out of the capital planning budget.",
+    "note": "The $50K capital item and the $10K transfer appear in both records.",
+    "t": 579
+   },
+   {
+    "kind": "agree",
+    "about": "North Cemetery road repairs $225,000 and $50,000",
+    "ours": "North Cemetery road repairs: $225,000, $50,000",
+    "official": "patching and repair estimated at $50k, currently this is not on the latest capital plan list.",
+    "note": "Both records give $225K for repaving all the roads and $50K for patching and repair.",
+    "t": 1522
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Perpetual care interest figures",
+    "ours": "Perpetual care interest: $2,782, 4,400 a year, two 9,000",
+    "official": "",
+    "note": "The official minutes carry no perpetual care interest figures. The captions are garbled, so a person should check the recording.",
+    "t": 726
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Authorized but unspent projects",
+    "ours": "Authorized but unspent projects: 3500, 650, 500, 4,650, 26,000",
+    "official": "",
+    "note": "The official minutes carry none of these figures. They are garbled and need checking against the recording.",
+    "t": 951
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "North Cemetery design contract",
+    "ours": "North Cemetery design contract: 40",
+    "official": "",
+    "note": "The official minutes do not mention a design contract figure. The caption figure '40' is unclear.",
+    "t": 1285
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Resident criticism of spending figures",
+    "ours": "Resident criticism of spending: $7,500, 10,000, $90,000, $1,600, $1.6 million",
+    "official": "mr. bowen - 162 highland street - concerns on capital planning & expenses of money",
+    "note": "The official minutes summarise Mr. Bowen's comment without any figures. A person should check the recording for what was said.",
+    "t": 2072
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Remaining open plots count",
+    "ours": "DPW director to try to report a count of remaining open plots by the next meeting.",
+    "official": "",
+    "note": "The official minutes record no action item about a count of open plots. Check the recording to see whether the commitment was made.",
+    "t": 1436
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next meeting set for March 27th.",
+    "official": "5. future meeting schedule - march 27, 2025, 9:00 am",
+    "note": "Same date in both.",
+    "t": 2324
+   },
+   {
+    "kind": "agree",
+    "about": "Fish Street and lights/skirt follow-up by the DPW director",
+    "ours": "Fish Street and the lights/skirt work to be revisited at the next meeting, with the director to do more research.",
+    "official": "dpw director bill bernard has not heard anything recently from richard mcgrath and will research further.",
+    "note": "Both have the director researching Fish Street further. The official minutes say nothing about revisiting it at the next meeting.",
+    "t": 2024
+   },
+   {
+    "kind": "only_in_official",
+    "about": "South Cemetery lights and concrete skirt under $10K, no bid needed",
+    "ours": "",
+    "official": "lights & concrete skirt at south cemetery - no updates yet, bill to check on, contractors in mind, under $10k - does not need to go out to bid.",
+    "note": "Our minutes mention lights/skirt only as a follow-up. They do not carry the under-$10K, no-bid detail."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: chair, DPW director, two members",
+    "ours": "Madam Chair (chair); Bill (DPW director); Mike (member); Dave (member)",
+    "official": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard",
+    "note": "Same four people. Ours gives first names only. The official minutes spell the vice chair Doreen in the attendee list and Dorren in the body."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Assistant Town Manager Julie Belliveau and resident Mr. Bowen",
+    "ours": "",
+    "official": "chair nancy foss yasko thanked assistant town manager julie belliveau & the town for the open meeting law presentation.",
+    "note": "Our attendee list does not include the Assistant Town Manager. Ours also lacks the resident's name and address, though our figures list shows his comment."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:30:25Z",
+   "cost_usd": 0.25938639999999996
+  }
  }
 }

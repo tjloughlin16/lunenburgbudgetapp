@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2025-02-19",
  "docid": "7052",
@@ -12,45 +12,400 @@
  },
  "votes": [
   {
-   "motion": "Continue consideration of Notice of Intent 994 Northfield Road to March 5, 2025",
+   "motion": "Continue the 994 Northfield Road NOI-25-1 hearing to March 5 with listed submissions due (DEP file number, DEP questions and responses, relocation review, 939 Northfield driveway on map, Planning Board comments).",
    "moved_by": "M. Wilson",
-   "outcome": "passed 6-0",
-   "procedural": false,
-   "quote": "m. wilson, to continue to march 5, expecting the following: 1. dep file number 2. dep questions and responses review of potentially relocation the replication area"
-  },
-  {
-   "motion": "Continue consideration of Notice of Intent 780 Northfield Road to March 5, 2025",
-   "moved_by": "M. Wilson",
-   "outcome": "passed 6-0",
-   "procedural": false,
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "m. wilson, to continue to march 5, expecting the following: 1. dep file number 2. dep questions and responses"
   },
   {
-   "motion": "Approve Notice of Intent 352 Sunset Lane with standard conditions and work conducted during draw-down period",
+   "motion": "Continue the 780 Northfield Road NOI-25-2 hearing to March 5 with DEP file number and DEP questions and responses expected.",
+   "moved_by": "M. Wilson",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "m. wilson, to continue to march 5, expecting the following: 1. dep file number 2. dep questions and responses"
+  },
+  {
+   "motion": "Approve the 352 Sunset Lane NOI-24-11 with standard conditions and a requirement that work be conducted during the draw down period.",
    "moved_by": "J. Pewtherer",
    "seconded_by": "C. St. Germain",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
    "quote": "j. pewtherer, to approve with: 3. standard conditions 4. work must be conducted during draw down period"
   },
   {
-   "motion": "Approve Request for Determination of Applicability 338 Sunset Lane",
+   "motion": "Approve the 338 Sunset Lane RDA-24-8 request for determination (removal of 10 dead trees and 2 leaning trees).",
    "moved_by": "C. St. Germain",
    "seconded_by": "J. Pewtherer",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "c. st. germain, to approve"
+   "quote": "c. st. germain, to approve second j. pewtherer"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:02 PM.",
    "moved_by": "J. Pewtherer",
    "seconded_by": "M. Larouche",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "j. pewtherer, to adjourn at 9:02pm"
+   "quote": "motion: j. pewtherer, to adjourn at 9:02pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd scan via macOS Vision. Votes are legible. Votes 1–2 show a \"Second\" line with no seconder name printed; the two were without recorded seconders.",
- "cost_usd": 0.1180934
+ "note": "The text is macOS Vision OCR of the minutes, not a checked scan, and carries OCR and typing errors that were copied verbatim (for example 'knwo', '_J. Viviano', 'C. St. Germaine'). Five votes are recorded. The 994 and 780 Northfield continuances print 'Second' with no name, and the roll-call AYE lines are listed but no tally is printed. The 352 Sunset and 338 Sunset votes are recorded by name with AYE lines and no tally. Roles other than the body's own statements (Chair, Vice Chair, Clerk) are not readable from the OCR header and were not assigned. 'Mary Wilson' and 'Jennifer Pewtherer' appear only in the header, so the body forms are used. The 90 Howard Street continuance has no motion or vote recorded. The minutes print no dollar figures; the budget items record grant mentions and a 'None' budget report.",
+ "cost_usd": 0.02034287,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Wilson",
+   "role": "presided; the minutes say the call to order was made by M. Wilson (no 'Chair' title is printed in the body)",
+   "status": "present",
+   "quote": "b. call to order at 7:00 pm by m. wilson"
+  },
+  {
+   "name": "J. Pewtherer",
+   "role": "member",
+   "status": "present",
+   "quote": "present: j. pewtherer, j. viviano, m. larouche, c. st germain, p. stella, m. wilson."
+  },
+  {
+   "name": "J. Viviano (Jeff Viviano / Jeffrey Viviano)",
+   "role": "member; recused as abutter at 352 Sunset Lane; presented his own application at 338 Sunset Lane",
+   "status": "present",
+   "quote": "jeff viviano represented himself and reviewed the project."
+  },
+  {
+   "name": "M. Larouche",
+   "role": "member",
+   "status": "present",
+   "quote": "present: j. pewtherer, j. viviano, m. larouche, c. st germain, p. stella, m. wilson."
+  },
+  {
+   "name": "C. St. Germain",
+   "role": "member",
+   "status": "present",
+   "quote": "present: j. pewtherer, j. viviano, m. larouche, c. st germain, p. stella, m. wilson."
+  },
+  {
+   "name": "P. Stella",
+   "role": "member (newly welcomed to the Commission)",
+   "status": "present",
+   "quote": "absent: r. bursch welcomed p. stella to the commission."
+  },
+  {
+   "name": "R. Bursch",
+   "role": "member",
+   "status": "absent",
+   "quote": "absent: r. bursch welcomed p. stella to the commission."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy; presented for the Commission (994 Northfield Road) and represented the applicant (780 Northfield Road)",
+   "status": "present",
+   "quote": "greg roy (dillis & roy) presented for the lunenburg conservation commission."
+  },
+  {
+   "name": "Jim Lattanzi",
+   "role": "applicant (James and Allison Lattanzi, 780 Northfield Road)",
+   "status": "present",
+   "quote": "jim lattanzi was also present."
+  },
+  {
+   "name": "James and Allison Lattanzi",
+   "role": "applicants, 780 Northfield Road (NOI-25-2)",
+   "status": "not stated",
+   "quote": "a notice of intent by james and allison lattanzi for the construction of a wetland replication area to"
+  },
+  {
+   "name": "Katlin Wiener",
+   "role": "public commenter; 939 Northfield Road as printed",
+   "status": "present",
+   "quote": "public comment by katlin wiener 939 northfield road: wanted to knwo where the current driveway"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "representing the applicants (352 Sunset Lane)",
+   "status": "present",
+   "quote": "matt marro represented the applicants."
+  },
+  {
+   "name": "Sally Tonole Luck",
+   "role": "applicant, 352 Sunset Lane (NOI-24-11), represented by Matthew Marro",
+   "status": "not stated",
+   "quote": "a notice of intent by sally tonole luck and richard tonole represented by matthew marro"
+  },
+  {
+   "name": "Richard Tonole",
+   "role": "applicant, 352 Sunset Lane (NOI-24-11), represented by Matthew Marro",
+   "status": "not stated",
+   "quote": "a notice of intent by sally tonole luck and richard tonole represented by matthew marro"
+  },
+  {
+   "name": "Kevin O'Brien",
+   "role": "applicant, 90 Howard Street (abbreviated notice of resource area delineation)",
+   "status": "not stated",
+   "quote": "an abbreviated notice of resource area delineation by kevin o'brien."
+  },
+  {
+   "name": "Jim Levasseur",
+   "role": "34 Meadow Lane; represented himself (enforcement, 48 Meadow Lane)",
+   "status": "present",
+   "quote": "jim levasseur (34 meadow lane) represented himself."
+  },
+  {
+   "name": "Sophia Dorow",
+   "role": "Conservation Admin (as printed in the header)",
+   "status": "present",
+   "quote": "s. dorow reviewed the concerns: vegetation removed within the buffer zone and stockpiling of inorganic material."
+  },
+  {
+   "name": "Maddison Berthet",
+   "role": "Admin Assistant (as printed in the header)",
+   "status": "not stated",
+   "quote": "maddison berthet - admin assistant"
+  },
+  {
+   "name": "Michael Gale",
+   "role": "Admin Asst. (signed the minutes)",
+   "status": "not stated",
+   "quote": "respectfully submitted, michael gale - admin asst."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 90 Howard Street abbreviated resource area delineation was continued to March 5 at the applicant's request. The minutes record no Commission vote on this.",
+   "quote": "applicant requested continuance to march 5."
+  },
+  {
+   "decision": "Agreed that the tree data sheets are useful and that they are not much extra work for S. Dorow.",
+   "quote": "agreement that the data sheets are useful and not much extra work for s. dorow."
+  },
+  {
+   "decision": "Farmland of Local Importance was moved to the Agricultural Commission.",
+   "quote": "farmland of local importance: moved to the agricultural commission"
+  },
+  {
+   "decision": "Grants Update (LSR sponsored, award year 2022) is to be removed from future agendas.",
+   "quote": "grants update (lsr sponsored, award year 2022): remove from future agendas"
+  },
+  {
+   "decision": "C. St. Germain indicated he would be willing to take on the Open Space item. Minutes spell the name 'C. St. Germaine' in the Earth Day line.",
+   "quote": "c. st. germain indicated he would be willing to take this on."
+  },
+  {
+   "decision": "For April Earth Day events, M. Wilson is working on the plans; C. St. Germaine and J. Pewtherer said they would help.",
+   "quote": "m. wilson is working on this. c. st. germaine and j. pewtherer said they would help."
+  },
+  {
+   "decision": "Next meeting set for March 5th, 2025, at 7:00 PM by Zoom.",
+   "quote": "next meeting is march 5th, 2025, at 7:00 pm by zoom platform"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grants for conservation parking areas",
+   "what_was_recorded": "Greg Roy said grants were obtained to create parking areas at conservation lands; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "grants were obtained to create parking areas at conservation lands."
+  },
+  {
+   "topic": "Conservation budget report",
+   "what_was_recorded": "The agenda's Conservation Budget report item is recorded as having no report; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "conservation budget report: none"
+  },
+  {
+   "topic": "Grants update (LCC sponsored, award year 2023)",
+   "what_was_recorded": "A grants update item for the LCC-sponsored award year 2023 is listed; no figures or outcome are printed.",
+   "figures_as_printed": [],
+   "quote": "grants update (lcc sponsored, award year 2023)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Katlin Wiener",
+   "topic": "location of current driveway relative to her driveway; fate of existing 2-car lot at 994 Northfield Road",
+   "quote": "public comment by katlin wiener 939 northfield road: wanted to knwo where the current driveway"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order at 7:00 PM; six present, one absent",
+   "quote": "b. call to order at 7:00 pm by m. wilson",
+   "tags": [
+    "procedure",
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Announcements (public comment, minutes, appointments)",
+   "resolution": "no items",
+   "quote": "b. minutes of previous meetings: none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "994 Northfield Road NOI-25-1 (parking area, trailhead, gravel driveway, wetland replication)",
+   "resolution": "continued to March 5",
+   "quote": "dep file number has not been received and he awaited dep comments.",
+   "tags": [
+    "wetlands",
+    "trailhead parking",
+    "Table Rock",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "780 Northfield Road NOI-25-2 (farm road culvert, riverfront crossing mitigation)",
+   "resolution": "continued to March 5",
+   "quote": "project was approved twice by the commissioners, but the dep came back with questions.",
+   "tags": [
+    "wetlands",
+    "farm road",
+    "culvert",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "352 Sunset Lane NOI-24-11 (retaining wall, pavers, tree removal on Lake Shirley)",
+   "resolution": "approved with standard conditions and draw-down work requirement",
+   "quote": "j. pewtherer, to approve with: 3. standard conditions 4. work must be conducted during draw down period",
+   "tags": [
+    "Lake Shirley",
+    "retaining wall",
+    "flood plain",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "90 Howard Street abbreviated resource area delineation",
+   "resolution": "continued to March 5 at applicant request",
+   "quote": "applicant requested continuance to march 5.",
+   "tags": [
+    "resource area delineation"
+   ]
+  },
+  {
+   "topic": "338 Sunset Lane RDA-24-8 (dead and leaning tree removal, Lake Shirley)",
+   "resolution": "approved",
+   "quote": "c. st. germain, to approve second j. pewtherer",
+   "tags": [
+    "Lake Shirley",
+    "tree removal",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "Filings previously continued (administrative tracking)",
+   "resolution": "listed; no action recorded",
+   "quote": "213 electric avenue - noi-24-10 (dep # 208-1339). (continued from december 4).",
+   "tags": [
+    "administrative tracking"
+   ]
+  },
+  {
+   "topic": "Enforcement: 48 Meadow Lane",
+   "resolution": "discussed; owner said items of concern would be removed after snow clears; no vote",
+   "quote": "j. levasseur stated that all items of concern are planned to be removed once the snow is gone.",
+   "tags": [
+    "enforcement",
+    "buffer zone",
+    "stockpiling"
+   ]
+  },
+  {
+   "topic": "100 Townsend Harbor Chap 61 removal",
+   "resolution": "discussed; no action recorded",
+   "quote": "m. wilson noted that the property does not meet any of the six criteria for conservation land.",
+   "tags": [
+    "Chapter 61",
+    "conservation land"
+   ]
+  },
+  {
+   "topic": "Farmland of Local Importance",
+   "resolution": "moved to the Agricultural Commission",
+   "quote": "farmland of local importance: moved to the agricultural commission",
+   "tags": [
+    "farmland",
+    "referral"
+   ]
+  },
+  {
+   "topic": "Tree policy and tree data sheets",
+   "resolution": "agreed the data sheets are useful",
+   "quote": "agreement that the data sheets are useful and not much extra work for s. dorow.",
+   "tags": [
+    "tree policy"
+   ]
+  },
+  {
+   "topic": "Old business: title searches, Earth Day, encroachment, 950 Chase Rd, open space, Chapter 61 workflow, grants",
+   "resolution": "mostly no update; Earth Day volunteers named; LSR grant item removed from future agendas",
+   "quote": "m. wilson is working on this. c. st. germaine and j. pewtherer said they would help.",
+   "tags": [
+    "Earth Day",
+    "encroachment",
+    "Chapter 61",
+    "grants",
+    "shed removal"
+   ]
+  },
+  {
+   "topic": "Conservation land improvement and snow trails",
+   "resolution": "noted; local mountain bikers grooming snow trails with permission",
+   "quote": "local mountain bikers got permission to groom the snow trails. m. wilson indicated they are doing a great job.",
+   "tags": [
+    "trails",
+    "conservation land"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence leases and tenant responsibilities",
+   "resolution": "members of the public to rewrite custodian license; return March 5",
+   "quote": "members of the public have volunteered to rewrite the custodian license agreement and plan to come back on march 5.",
+   "tags": [
+    "Hollis Road",
+    "lease",
+    "custodian license"
+   ]
+  },
+  {
+   "topic": "Committee reports (Open Space, Storm Water)",
+   "resolution": "C. St. Germain willing to take on Open Space; Storm Water no update",
+   "quote": "they met last week but we did not attend. c. st. germain indicated he would be willing to take this on.",
+   "tags": [
+    "open space",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:02 PM; next meeting March 5, 2025",
+   "quote": "motion: j. pewtherer, to adjourn at 9:02pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "notice of intent",
+  "requests for determination",
+  "Lake Shirley",
+  "Table Rock",
+  "Northfield Road",
+  "Sunset Lane",
+  "enforcement",
+  "conservation land",
+  "grants",
+  "Earth Day",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

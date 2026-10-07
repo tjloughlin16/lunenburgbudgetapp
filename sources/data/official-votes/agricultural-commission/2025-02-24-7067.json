@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2025-02-24",
  "docid": "7067",
@@ -12,39 +12,225 @@
  },
  "votes": [
   {
-   "motion": "Approve the document on soils of local importance",
+   "motion": "Approve the soils of local importance document.",
    "moved_by": "Ryan",
    "seconded_by": "Kathy",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimously approved; no count printed)",
    "procedural": false,
    "quote": "ryan made a motion to approve the document. kathy seconded. commission unanimously approved."
   },
   {
-   "motion": "State the recommendation to preserve the property at 100 Townsend Harbor Road",
+   "motion": "State the Agricultural Commission's recommendation that the town of Lunenburg preserve the property at 100 Townsend Harbor Road, citing the reasons stated.",
    "moved_by": "Jackie",
    "seconded_by": "Kathy",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimously approved; no count printed)",
    "procedural": false,
-   "quote": "jackie made a motion to state the recommendation of the agricultural commission is for the town of lunenburg to preserve the property at 100 townsend harbor road citing the reasons stated below. kathy seconded. commission unanimously approved."
+   "quote": "jackie made a motion to state the recommendation of the agricultural commission is for the town of lunenburg to preserve the property at 100 townsend harbor road"
   },
   {
-   "motion": "Approve all vendors aside from Fragments Fine Art for the Farmers' Market",
+   "motion": "Approve all Farmers' Market vendor applications except Fragments Fine Art, which is not within the distance required.",
    "moved_by": "Kathy",
    "seconded_by": "Ryan",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimously approved; no count printed)",
    "procedural": false,
-   "quote": "kathy makes a motion to approve all vendors aside from fragments fine art for the farmers' market. noting fragments fine art is not within the distance required for the farmers' market. ryan seconded. commission unanimously approved."
+   "quote": "kathy makes a motion to approve all vendors aside from fragments fine art for the farmers' market."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Kathy",
    "seconded_by": "Ryan",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimously approved; no count printed)",
    "procedural": true,
    "quote": "kathy made a motion to adjourn; ryan seconds. commission unanimously approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes note \"Review/Approve Minutes\" with \"None\" listed, indicating no prior minutes were voted on. All four votes recorded were unanimous.",
- "cost_usd": 0.12110939999999999
+ "dropped_unquoted": 2,
+ "note": "Text is a clean typed extraction, not a scan. Attendance is read from check marks: Chair Duffy, Clerk Chabot, Members Dugan and Stober, Alternate McClellan and public speaker Passios carry check marks; Vice-Chair Holman has no mark and the minutes do not say she was absent, so status is 'not stated'. The alternate seat is listed as vacant and is not a person. Three motions were recorded as 'unanimously approved' with no vote count printed, so outcomes read 'passed' with no count. The minutes print no dollar figures; budget_items cover only the grant and the sign quote, both without prices. The Review/Approve Minutes item shows 'None' with no vote.",
+ "cost_usd": 0.01531827,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "vice-chair maryrae holman"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jackie chabot ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Member",
+   "status": "present",
+   "quote": "member kathy dugan ✔"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Member",
+   "status": "present",
+   "quote": "member ryan stober ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate kira mcclellan ✔"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Public",
+   "status": "present",
+   "quote": "public dave passios ✔"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Continued drafting the 2025 goals (review of 2024 goals ongoing); not finished at this meeting.",
+   "quote": "goals - review 2024, draft 2025 continued to draft 2025 goals"
+  },
+  {
+   "decision": "Jackie to draft signs for the farmers' market; Jen to find a quote.",
+   "quote": "jackie to draft signs for farmers' market. jen to find quote."
+  },
+  {
+   "decision": "Continue posting about the farmers' market and USDA/MDAR updates on the Agricultural Commission Facebook page.",
+   "quote": "continue to post about farmers' market and usda/mdar updates"
+  },
+  {
+   "decision": "Bring awareness of the right of first refusal (ROFR) to the town population, noting the Select Board has not asked the commission for a recommendation on 100 Townsend Harbor Rd.",
+   "quote": "bring awareness to the rofr to the town population."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MVP Action Grant",
+   "what_was_recorded": "Chair attended a February 3 meeting with other towns interested in the grant; next steps to come and participation was discussed. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "mvp action grant jen attended meeting on february 3rd with other town interested in grant."
+  },
+  {
+   "topic": "Farmers' market signs",
+   "what_was_recorded": "Signs to be drafted and a quote to be obtained for them; no price was printed.",
+   "figures_as_printed": [],
+   "quote": "jackie to draft signs for farmers' market. jen to find quote."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Public",
+   "topic": "100 Townsend Harbor Rd farmland",
+   "quote": "dave passios commented on the property at 100 townsend harbor rd. discussion about importance of this property to maintain farmland."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:41 pm",
+   "quote": "call to order meeting commencement time: 6:41 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "Dave Passios spoke on 100 Townsend Harbor Rd; no action",
+   "quote": "dave passios commented on the property at 100 townsend harbor rd.",
+   "tags": [
+    "public comment",
+    "farmland"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "no minutes taken up",
+   "quote": "review/approve minutes none.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "New Business: USDA, MDAR, Farmland Partnership, Community Garden, Soils",
+   "resolution": "soils of local importance document approved; other updates informational",
+   "quote": "new business: usda update none.",
+   "tags": [
+    "USDA",
+    "MDAR",
+    "soils",
+    "farmland"
+   ]
+  },
+  {
+   "topic": "Current Business: goals, MVP grant, spring event, 100 Townsend Harbor Rd, farmers' market, membership, Facebook",
+   "resolution": "2025 goals continued; 100 Townsend Harbor Rd recommendation to preserve approved; farmers' market vendors approved except one",
+   "quote": "goals - review 2024, draft 2025 continued to draft 2025 goals",
+   "tags": [
+    "goals",
+    "MVP grant",
+    "100 Townsend Harbor Rd",
+    "farmers' market",
+    "Chapter 61a",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "committee reports none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings/Events Schedule",
+   "resolution": "schedule listed for March through June 2025",
+   "quote": "6:30 pm march 24, 2025 lunenburg public library, sudolnik conference room",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:16 pm",
+   "quote": "meeting adjourned at 8:16 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmland preservation",
+  "100 Townsend Harbor Rd",
+  "Chapter 61a",
+  "right of first refusal",
+  "farmers' market",
+  "MVP Action Grant",
+  "USDA/MDAR",
+  "community garden",
+  "soils of local importance",
+  "goals"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

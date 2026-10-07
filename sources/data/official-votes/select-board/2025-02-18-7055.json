@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-02-18",
  "docid": "7055",
@@ -12,39 +12,373 @@
  },
  "votes": [
   {
-   "motion": "authorize the Town Manager to execute the host community agreement with Uma Flowers on behalf of the Select Board",
+   "motion": "Authorize the Town Manager to execute the host community agreement with Uma Flowers on behalf of the Select Board.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Member Jeffreys",
-   "outcome": "passed 3-1",
+   "outcome": "passed 3-1-0",
    "procedural": false,
-   "quote": "member alonzo moved to authorize the town manager to execute the host community agreement with uma flowers on behalf of the select board. seconded by member jeffreys. call for vote: three-yes . one-no (jeffreys). motion passed (3-1-0)."
+   "quote": "member alonzo moved to authorize the town manager to execute the host community agreement with uma flowers on behalf of the select board. seconded by member jeffreys."
   },
   {
-   "motion": "approve the Workplace Climate Survey Policy, to be identified as section 2.13 of the Select Board policies and procedures",
+   "motion": "Approve the Workplace Climate Survey Policy, to be identified as section 2.13 of the Select Board policies and procedures.",
    "moved_by": "Vice-Chair Jeffreys",
    "seconded_by": "Chair Nuzzolo",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "vice-chair jeffreys moved to approve the workplace climate survey policy, to be identified as section 2.13 of the select board policies and procedures. seconded by chair nuzzolo. call for vote: four-yes. motion passed (4-0-0)."
+   "quote": "vice-chair jeffreys moved to approve the workplace climate survey policy, to be identified as section 2.13 of the select board policies and procedures. seconded by chair nuzzolo."
   },
   {
-   "motion": "approve the ARPA press release with revisions as discussed",
+   "motion": "Approve the ARPA press release with the revisions discussed.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Chair Nuzzolo",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "member alonzo moved to approve the arpa press release with revisions as discussed. seconded by chair nuzzolo. call for vote: four-yes. motion passed (4-0-0)."
+   "quote": "member alonzo moved to approve the arpa press release with revisions as discussed. seconded by chair nuzzolo."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Chair Nuzzolo",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": true,
    "quote": "member alonzo moved to adjourn. chair nuzzolo seconded the motion. call for vote: four- yes. motion passed unanimously (4-0-0)."
+  },
+  {
+   "motion": "Approve the minutes from February 18, 2025.",
+   "moved_by": "Member Emkey",
+   "seconded_by": "Clerk Moore",
+   "outcome": "passed 5-0-0",
+   "procedural": true,
+   "quote": "member emkey made the motion to approve the minutes from february 18, 2025. seconded by clerk moore. call for the vote: five-aye. motion passed unanimously (5-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded during the February 18, 2025 Select Board meeting. Note: The approval of these minutes occurred at the subsequent March 11, 2025 meeting and is not included here as it is not a vote from the meeting being documented.",
- "cost_usd": 0.0977614
+ "note": "Text extraction, not a scan; all votes are recorded with counts. Record inconsistencies: (1) the cannabis motion names \"Uma Flowers\" while the agenda item is \"Bliss Cannabis\"; (2) the closing approval motion records \"Five-aye\" and \"Clerk Moore\" as seconder, but Amanda Moore is listed as absent and only four members are listed present; (3) the minutes were reviewed and approved on March 11, 2025, so the approval motion postdates this meeting. Two items named \"John Bowen\" are separate appearances (a Zoom interjection in Committee Reports and a public comment). Quotes that span line breaks were collapsed to single spaces. Only the printed dollar figures are listed; no transfers recorded. Votes with no recorded motion (goal-setting passed over, Carr Avenue tabled) are listed as decisions.",
+ "cost_usd": 0.01790527,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, tom alonzo, renee emkey"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, tom alonzo, renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, tom alonzo, renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, tom alonzo, renee emkey"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: amanda moore"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "of 436 Reservoir Road",
+   "status": "present",
+   "quote": "glenn mcleod of 436 reservoir road commented on the municipal building design update agenda item"
+  },
+  {
+   "name": "George Burden",
+   "role": "of 39 Cortland Circle",
+   "status": "present",
+   "quote": "george burden, 39 cortland circle, raised several concerns regarding not being able to attend"
+  },
+  {
+   "name": "John Bowen",
+   "role": "of 162 Highland Street",
+   "status": "remote",
+   "quote": "john bowen of 162 highland street interjected from zoom."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Table the decision on selling or holding 56 Carr Avenue until spring, targeting the first April meeting, so an assessment can be done without snow cover.",
+   "quote": "they agreed to table the matter until spring when an assessment could be done without snow cover, targeting the first meeting in april."
+  },
+  {
+   "decision": "Pass over the review of the regular Session Minutes for January 15, February 4, and February 11, 2025.",
+   "quote": "the board passed over the review of the regular session minutes for january 15, 2025, february 4, 2025, and february 11 2025."
+  },
+  {
+   "decision": "Pass over the Select Board and Town Manager goal-setting item.",
+   "quote": "the chair passed over this item."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sidewalk design contract with BETA Group (Chapter 90)",
+   "what_was_recorded": "Town entered a contract with BETA Group for sidewalk design and engineering, funded through Chapter 90.",
+   "figures_as_printed": [
+    "$119,010"
+   ],
+   "quote": "the total contract amount is $119,010, which is funded through chapter 90."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board reviewed an accounts payable warrant of the stated amount.",
+   "figures_as_printed": [
+    "$408,887.23"
+   ],
+   "quote": "the board reviewed an accounts payable warrant for $408,887.23."
+  },
+  {
+   "topic": "Potential School budget deficit",
+   "what_was_recorded": "Board members discussed a potential School budget deficit and said they need more information before forming an opinion.",
+   "figures_as_printed": [
+    "$3.5 million"
+   ],
+   "quote": "board members discussed the potential $3.5 million deficit in the school budget."
+  },
+  {
+   "topic": "Municipal building borrowing",
+   "what_was_recorded": "Discussions have started with Bond Counsel and finance staff on borrowing details for the municipal building project; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "discussions have started with bond counsel and finance staff on borrowing details."
+  },
+  {
+   "topic": "Property tax assessments (public comment)",
+   "what_was_recorded": "A resident said his taxes went down after he raised concerns about tax assessments; no amount is printed.",
+   "figures_as_printed": [
+    "33%"
+   ],
+   "quote": "his taxes went down 33% and the value of his home went down."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Glenn McLeod",
+   "stated_role": "of 436 Reservoir Road",
+   "topic": "Municipal building design update; town management of existing buildings",
+   "quote": "glenn mcleod of 436 reservoir road commented on the municipal building design update agenda item and expressed concern about the town's management of existing buildings and their issues."
+  },
+  {
+   "speaker": "George Burden",
+   "stated_role": "of 39 Cortland Circle",
+   "topic": "Finance Committee Appointing Committee access; public records; tax assessments",
+   "quote": "george burden, 39 cortland circle, raised several concerns regarding not being able to attend the finance committee appointing committee meeting that was held this evening."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "of 162 Highland Street",
+   "topic": "Federal funding for students; Town Meeting voting procedures",
+   "quote": "john bowen of 162 highland street commented on federal funding for students and expressed concerns about voting procedures at town meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "opened at 7:00 p.m.; no action",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 p.m. and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Board comments: Alonzo not seeking re-election",
+   "resolution": "announced; no action",
+   "quote": "member alonzo announced he would not be seeking re-election to the select board this year",
+   "tags": [
+    "elections",
+    "town caucus"
+   ]
+  },
+  {
+   "topic": "Public comments (first session)",
+   "resolution": "heard; no action",
+   "quote": "glenn mcleod of 436 reservoir road commented on the municipal building design update agenda item",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Resignation of constable John E. Baker",
+   "resolution": "acknowledged effective May 2025; no vote",
+   "quote": "chair nuzzolo read a resignation letter from john e. baker, the town constable, effective may 2025.",
+   "tags": [
+    "appointments",
+    "constable"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; no action",
+   "quote": "town manager warren-dyment provided her report to the board, beginning with project updates.",
+   "tags": [
+    "town manager",
+    "projects",
+    "winter storm",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Sell or hold 56 Carr Avenue",
+   "resolution": "tabled to spring, targeting the first April meeting",
+   "quote": "they agreed to table the matter until spring when an assessment could be done without snow cover, targeting the first meeting in april.",
+   "tags": [
+    "property"
+   ]
+  },
+  {
+   "topic": "Bliss Cannabis host community agreement",
+   "resolution": "authorized execution, passed 3-1-0",
+   "quote": "the board reviewed the draft agreement with bliss cannabis.",
+   "tags": [
+    "cannabis",
+    "host community agreement"
+   ]
+  },
+  {
+   "topic": "Workplace Climate Survey Policy",
+   "resolution": "approved as section 2.13, passed 4-0-0",
+   "quote": "vice-chair jeffreys moved to approve the workplace climate survey policy, to be identified as section 2.13 of the select board policies and procedures.",
+   "tags": [
+    "policy",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Select Board and Town Manager goal-setting",
+   "resolution": "passed over",
+   "quote": "the chair passed over this item.",
+   "tags": [
+    "goal-setting"
+   ]
+  },
+  {
+   "topic": "Budget Task Force recommendations, CPA",
+   "resolution": "discussed; no action",
+   "quote": "member emkey discussed the recommendation to adopt the community preservation act (cpa) and discussed the timing",
+   "tags": [
+    "budget task force",
+    "community preservation act",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Municipal building design update",
+   "resolution": "update received; staff feedback requested before March 11",
+   "quote": "vice-chair jeffreys provided an update on the municipal building design project and stated that the committee has not met since last presenting to the select board.",
+   "tags": [
+    "municipal building",
+    "capital",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "FY2025 and FY2026 budgets, capital plan, Town Meeting warrant articles",
+   "resolution": "discussed; no action; joint meeting with School Committee considered",
+   "quote": "board members discussed the potential $3.5 million deficit in the school budget.",
+   "tags": [
+    "budget",
+    "school budget",
+    "warrant",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "ARPA press release",
+   "resolution": "approved with revisions, passed 4-0-0",
+   "quote": "member alonzo moved to approve the arpa press release with revisions as discussed.",
+   "tags": [
+    "ARPA",
+    "press release"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "minutes passed over; AP warrant reviewed; action item tracking discussed",
+   "quote": "the board passed over the review of the regular session minutes for january 15, 2025, february 4, 2025, and february 11 2025.",
+   "tags": [
+    "minutes",
+    "warrant",
+    "action items"
+   ]
+  },
+  {
+   "topic": "Committee reports: Finance Committee appointments",
+   "resolution": "reported; no action",
+   "quote": "successfully appointed two new members, ana lockwood and michael rupp, to the finance committee.",
+   "tags": [
+    "finance committee",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Committee reports: Board of Assessors senior tax abatements",
+   "resolution": "reported; no action",
+   "quote": "discuss the mechanics of implementing the senior tax abatements, which were a result of recent special legislation.",
+   "tags": [
+    "assessors",
+    "senior tax abatement"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "announced; no action",
+   "quote": "chair nuzzolo announced the board is meeting on march 4, 2025 and march 11, 2025",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comments (second session)",
+   "resolution": "heard; no action",
+   "quote": "john bowen of 162 highland street commented on federal funding for students and expressed concerns about voting procedures at town meeting.",
+   "tags": [
+    "public comment",
+    "federal funding",
+    "town meeting voting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:19 PM, passed unanimously 4-0-0",
+   "quote": "member alonzo moved to adjourn. chair nuzzolo seconded the motion.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "cannabis",
+  "host community agreement",
+  "personnel policy",
+  "school budget deficit",
+  "town meeting warrant",
+  "municipal buildings",
+  "sidewalks chapter 90",
+  "ARPA",
+  "community preservation act",
+  "finance committee appointments",
+  "senior tax abatement",
+  "public comment",
+  "minutes approval",
+  "constable resignation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

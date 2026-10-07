@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-02-11",
  "docid": "7027",
@@ -12,47 +12,550 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Police Officer Christopher Bergeron effective February 24, 2025 and Police Officer Jacob LaChance to Sergeant effective February 12, 2025",
+   "motion": "Ratify the Town Manager's appointment of Police Officer Christopher Bergeron (effective February 24, 2025) and of Police Officer Jacob LaChance to Sergeant (effective February 12, 2025).",
    "moved_by": "Caesar Nuzzolo",
    "seconded_by": "Michael-Ray Jeffreys",
    "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "chair nuzzolo moved to ratify the town manager's appointment of police officer christopher bergeron effective february 24, 2025 and the town manager's appointment of police officer jacob lachance to sergeant effective february 12, 2025. vice-chair jeffreys seconded the motion. call for vote: four- yes. motion passed (4-0-0)."
+   "quote": "chair nuzzolo moved to ratify the town manager's appointment of police officer christopher bergeron effective february 24, 2025"
   },
   {
-   "motion": "Close the evidentiary portion of the hearing on the Class II Auto Dealer License application",
+   "motion": "Close the evidentiary portion of the public hearing on the Class II Auto dealer license at 40 Summer Street.",
    "moved_by": "Michael-Ray Jeffreys",
    "seconded_by": "Amanda Moore",
    "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "vice-chair jeffreys moved to close the evidentiary portion of the hearing. member moore seconded the motion. call for vote: four- yes. motion passed (4-0-0)."
+   "quote": "vice-chair jeffreys moved to close the evidentiary portion of the hearing"
   },
   {
-   "motion": "Approve the Class II Auto dealer License at 40 Summer Street to Glauciel Bueno de Oliveira dba Web Motors Group, Inc.",
+   "motion": "Approve the Class II Auto dealer license at 40 Summer Street to Glauciel Bueno de Oliveira dba Web Motors Group, Inc.",
    "moved_by": "Michael-Ray Jeffreys",
    "seconded_by": "Renee Emkey",
-   "outcome": "failed 0-4-0",
+   "outcome": "failed 0-4-0 (minutes print 'Motion Passed (0-4-0)' but also state the motion failed and the application was denied)",
    "procedural": false,
-   "quote": "vice-chair jeffreys moved to approve the class ii auto dealer license at 40 summer street to glauciel bueno de oliveira dba web motors group, inc. member emkey seconded the motion."
+   "quote": "vice-chair jeffreys moved to approve the class ii auto dealer license at 40 summer street to glauciel bueno de oliveira dba web motors group, inc."
   },
   {
-   "motion": "Close the public hearing on the Class II Auto Dealer License application",
+   "motion": "Close the public hearing.",
    "moved_by": "Michael-Ray Jeffreys",
    "seconded_by": "Amanda Moore",
    "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "vice-chair jeffreys moved to close the public hearing. member moore seconded the motion. call for vote: four- yes. motion passed (4-0-0)."
+   "quote": "vice-chair jeffreys moved to close the public hearing."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting (adjourned at 9:36 p.m.).",
    "moved_by": "Michael-Ray Jeffreys",
    "seconded_by": "Amanda Moore",
-   "outcome": "passed 4-0-0",
+   "outcome": "passed unanimously 4-0-0",
    "procedural": true,
-   "quote": "vice chair jeffreys moved to adjourn. member moore seconded the motion. call for vote: four- yes. motion passed unanimously (4-0-0)."
+   "quote": "vice chair jeffreys moved to adjourn."
+  },
+  {
+   "motion": "Approve the minutes of February 11, 2025.",
+   "moved_by": "Renee Emkey",
+   "seconded_by": "Amanda Moore",
+   "outcome": "passed 5-0-0 (as printed; the minutes record five votes for a four-member board)",
+   "procedural": true,
+   "quote": "member emkey made the motion to approve the minutes from february 11, 2025. seconded by clerk moore. call for the vote: five-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes are from the actual February 11, 2025 meeting. The minutes note that Member Tom Alonzo was absent, so four members present voted on all measures. The March 11, 2025 approval of these minutes recorded at the end was not included as it is from a different meeting.",
- "cost_usd": 0.15067740000000002
+ "note": "Text is a machine extraction with OCR artefacts (e.g. 'Mee�ng' in the running header), which did not affect any quoted passage. Vote inconsistency: the Web Motors license vote prints 'Call for vote: Four- No. Motion Passed (0-4-0)' and then states 'The motion failed to pass and the application was denied'; recorded here as failed 0-4-0 per the stated result. The minutes-approval vote prints 'Five-aye' and 5-0-0 for a meeting where four members are listed present, and the approval is dated March 11, 2025, after this meeting. The Carr Avenue agenda address (55 Carr Avenue) is corrected in the minutes to 56 Carr Avenue. The Town Manager mentions Free Cash transfers and a 'planned' $225k debt-service offset but no transfer was voted or printed with an amount, so transfers is empty. Speaker attendance mode (in person or remote) is not stated for public commenters.",
+ "cost_usd": 0.02458307,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, renee emkey"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, renee emkey"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Member (called Clerk Moore in the closing motion)",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: tom alonzo"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "School Committee Chair (as stated in public comment)",
+   "status": "not stated",
+   "quote": "brian lehtinen of 88 beachview road spoke as school committee chair"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Public commenter (resident of 186 Reservoir Road)",
+   "status": "not stated",
+   "quote": "mandy gilman of 186 reservoir road stated she had helped to successfully lead the override last year"
+  },
+  {
+   "name": "Julie Long",
+   "role": "Public commenter (parent, 569 West Townsend Road)",
+   "status": "not stated",
+   "quote": "julie long of 569 west townsend road stated she is a parent of three children"
+  },
+  {
+   "name": "Sondria Harp",
+   "role": "Public commenter (parent, 20 Pratt Street)",
+   "status": "not stated",
+   "quote": "sondria harp of 20 pratt street stated she has two children in the school system"
+  },
+  {
+   "name": "John Bowen",
+   "role": "Public commenter (162 Highland Street)",
+   "status": "not stated",
+   "quote": "john bowen of 162 highland street stated the town is looking at five years of 2 ½ overrides"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Public commenter (91 Main Street)",
+   "status": "not stated",
+   "quote": "ana lockwood of 91 main street stated that lunenburg is a good community"
+  },
+  {
+   "name": "Glenn Mcleod",
+   "role": "Public commenter (436 Reservoir Road)",
+   "status": "not stated",
+   "quote": "glenn mcleod of 436 reservoir road welcomed the town manager."
+  },
+  {
+   "name": "Chief Thibodeau",
+   "role": "Interim Chief (Lunenburg Police)",
+   "status": "present",
+   "quote": "both mr. bergeron and mr. lachance approached the board with interim chief thibodeau."
+  },
+  {
+   "name": "Christopher Bergeron",
+   "role": "Police Officer (ratification candidate)",
+   "status": "present",
+   "quote": "both mr. bergeron and mr. lachance approached the board with interim chief thibodeau."
+  },
+  {
+   "name": "Jacob LaChance",
+   "role": "Police Officer, to be Sergeant (ratification candidate)",
+   "status": "present",
+   "quote": "both mr. bergeron and mr. lachance approached the board with interim chief thibodeau."
+  },
+  {
+   "name": "Jeffrey Hill",
+   "role": "Lunenburg Police Officer",
+   "status": "present",
+   "quote": "lunenburg police officer jeffrey hill approached the board stating he wanted to speak to the board"
+  },
+  {
+   "name": "Glauciel Bueno de Oliveira",
+   "role": "Applicant (Class II Auto dealer license; dba Web Motors Group, Inc.)",
+   "status": "present",
+   "quote": "glauciel bueno de oliveira of 3610 mystic valley parkway, medford, introduced himself as the applicant."
+  },
+  {
+   "name": "William Vilela",
+   "role": "Translator for the applicant (Brazilian Portuguese)",
+   "status": "present",
+   "quote": "with him, to assist with translation, was william vilela of 1184 mary street, elizabeth, nj."
+  },
+  {
+   "name": "Annie Aubrey",
+   "role": "Executive Assistant to the Town Manager (minutes recorder; named in the Officer Hill account)",
+   "status": "not stated",
+   "quote": "respectfully submitted, annie aubrey, executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair Nuzzolo asked that the ARPA press release draft be brought back to the next meeting, when all members can be present.",
+   "quote": "chair nuzzolo suggested bringing the draft to the next meeting of the board when all members can be present."
+  },
+  {
+   "decision": "Chair Nuzzolo to create the action item tracker.",
+   "quote": "chair nuzzolo stated he would be creating the action item tracker."
+  },
+  {
+   "decision": "The applicant for the Class II license is to receive a formal written decision from the office following the denial.",
+   "quote": "ms. warren-dyment stated the applicant will receive a formal decision in writing from the office."
+  },
+  {
+   "decision": "Workplace Climate Survey Policy and Select Board/Town Manager goal-setting were passed over by the Chair; the Feb 4 and Jan 15 minutes were also passed over.",
+   "quote": "discussion on select board and town manager goal-setting process: the chair passed over this item."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Carr Avenue property (56 Carr Avenue) holding costs",
+   "what_was_recorded": "The Town Manager went over the costs of holding the tax-taking property; no figure is printed and no decision was made.",
+   "quote": "she went over the costs of holding the property and stated there is no deadline for the board to make a decision.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "MassDOT Rural Roadways grant to DPW",
+   "what_was_recorded": "The Department of Public Works received a MassDOT grant for FY25 Rural Roadways.",
+   "quote": "the department of public works received a massdot grant for $21,953.68 for fy25 rural roadways",
+   "figures_as_printed": [
+    "$21,953.68"
+   ]
+  },
+  {
+   "topic": "Fire Department Firefighter Safety Grant",
+   "what_was_recorded": "The Fire Department received a Firefighter Safety Grant.",
+   "quote": "fire department received a firefighter safety grant for the amount of $18,960.00.",
+   "figures_as_printed": [
+    "$18,960.00"
+   ]
+  },
+  {
+   "topic": "Wellness grant for employee snacks",
+   "what_was_recorded": "The Town applied for and received funds under a Wellness grant to provide employees with healthy snacks free of charge; no amount is printed.",
+   "quote": "the town also applied for and was provided funds under the wellness grant to provide employees with healthy snacks free of charge.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Surety bonds in the Class II license application",
+   "what_was_recorded": "Two surety bonds of $25,000 each were reported as received by the Town Manager's Office with the application; the minutes record Western Surety saying the bond it held was not legitimate.",
+   "quote": "ms. aubrey had received two separate surety bonds, each for $25,000.",
+   "figures_as_printed": [
+    "$25,000"
+   ]
+  },
+  {
+   "topic": "School budget shortfall",
+   "what_was_recorded": "A resident said she was concerned about the school budget shortfall.",
+   "quote": "she was concerned about the $3.5m shortfall in the school budget.",
+   "figures_as_printed": [
+    "$3.5M"
+   ]
+  },
+  {
+   "topic": "Per-property tax amount in override comment",
+   "what_was_recorded": "A resident said that if all property owners paid a stated amount in the next fiscal year, overrides would not need discussing.",
+   "quote": "if all property owners pay $1,386.33 in the next fiscal year we will no longer need to discuss overrides.",
+   "figures_as_printed": [
+    "$1,386.33"
+   ]
+  },
+  {
+   "topic": "FY2025/FY2026 revenue budget and new growth",
+   "what_was_recorded": "The Town Manager described the revenue budget's estimate of new revenues and their split between Town and school.",
+   "quote": "the revenue budget suggested there was $1.2m in new revenues with $520k going to the town and $680k going to the school.",
+   "figures_as_printed": [
+    "$1.2M",
+    "$520k",
+    "$680k"
+   ]
+  },
+  {
+   "topic": "Health insurance and retirement cost increases",
+   "what_was_recorded": "The Town Manager described a 16% increase in health insurance and a Worcester County Retirement figure as expenditure pressures.",
+   "quote": "on the expenditure side we are looking at a 16% increase in health insurance for $489k and $264k from worcester county retirement.",
+   "figures_as_printed": [
+    "$489k",
+    "$264k"
+   ]
+  },
+  {
+   "topic": "Capital Plan",
+   "what_was_recorded": "A $1.2M Capital Plan was put together by the Town's finance staff and largely shared with the Capital Planning Committee.",
+   "quote": "mr. terenzini had put together a $1.2m capital plan, much of which was shared with the capital planning committee.",
+   "figures_as_printed": [
+    "$1.2M"
+   ]
+  },
+  {
+   "topic": "Debt service reduction used to offset capital plan",
+   "what_was_recorded": "The Town Manager said $225k from the reduction in debt service is planned to offset the capital plan, and she is unsure it can be accomplished.",
+   "quote": "there is $225k from the reduction in debt service used to offset the capital plan",
+   "figures_as_printed": [
+    "$225k"
+   ]
+  },
+  {
+   "topic": "Free Cash transfers",
+   "what_was_recorded": "Some Free Cash transfers that had been planned were discussed; no amounts are printed and no transfer was voted.",
+   "quote": "she also discussed some free cash transfers that had been planned.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Miscellaneous non-recurring revenue drop and audit",
+   "what_was_recorded": "The Budget Task Force noted miscellaneous non-recurring revenue dropped from about $1M by $400,000 and stayed down, prompting a proposed audit.",
+   "quote": "the amount dropped from about $1m by $400,000 and stayed down.",
+   "figures_as_printed": [
+    "$1M",
+    "$400,000"
+   ]
+  },
+  {
+   "topic": "Forensic audit cost",
+   "what_was_recorded": "A forensic audit was suggested, but the minutes say such audits can be expensive; no amount is printed.",
+   "quote": "a forensic audit had been suggested, but they can be expensive.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Budget Task Force recommendations and override",
+   "speaker": "Brian Lehtinen",
+   "stated_role": "School Committee Chair",
+   "quote": "brian lehtinen of 88 beachview road spoke as school committee chair and welcomed the feedback"
+  },
+  {
+   "topic": "Override and cuts to school positions",
+   "speaker": "Mandy Gilman",
+   "quote": "mandy gilman of 186 reservoir road stated she had helped to successfully lead the override last year"
+  },
+  {
+   "topic": "School budget shortfall and well-being",
+   "speaker": "Julie Long",
+   "quote": "julie long of 569 west townsend road stated she is a parent of three children"
+  },
+  {
+   "topic": "Special education budget cuts",
+   "speaker": "Sondria Harp",
+   "quote": "sondria harp of 20 pratt street stated she has two children in the school system"
+  },
+  {
+   "topic": "Overrides, property sale and tax arrears",
+   "speaker": "John Bowen",
+   "quote": "john bowen of 162 highland street stated the town is looking at five years of 2 ½ overrides"
+  },
+  {
+   "topic": "School budget timing",
+   "speaker": "Ana Lockwood",
+   "quote": "ana lockwood of 91 main street stated that lunenburg is a good community"
+  },
+  {
+   "topic": "Web Motors license hearing",
+   "speaker": "John Bowen",
+   "quote": "john bowen of 162 highland street commented. he stated he has been following this situation since september."
+  },
+  {
+   "topic": "State funding and legislative delegation",
+   "speaker": "Glenn Mcleod",
+   "quote": "glenn mcleod of 436 reservoir road welcomed the town manager."
+  },
+  {
+   "topic": "State funding (agreeing with prior speaker)",
+   "speaker": "John Bowen",
+   "quote": "john bowen of 162 highland street commented that he agreed with the last speaker."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 p.m. and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Board comments (farewell to retired Sergeant Tocci)",
+   "resolution": "no action",
+   "quote": "vice-chair jeffreys utilized the comment period to read a farewell address from retired sergeant joshua tocci.",
+   "tags": [
+    "police",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Public comments (first period)",
+   "resolution": "no action",
+   "quote": "brian lehtinen of 88 beachview road spoke as school committee chair and welcomed the feedback",
+   "tags": [
+    "public comment",
+    "school budget",
+    "override"
+   ]
+  },
+  {
+   "topic": "Appointments and ratifications",
+   "resolution": "ratified 4-0-0",
+   "quote": "ratification of the town manager's appointment of police officer christopher bergeron",
+   "tags": [
+    "police",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; no action",
+   "quote": "ms. warren-dyment provided project updates on the library teen room expansion",
+   "tags": [
+    "town manager",
+    "cable license",
+    "dispatch"
+   ]
+  },
+  {
+   "topic": "Vacant positions and grants",
+   "resolution": "informational; no action",
+   "quote": "ms. warren-dyment provided updates on vacant positions.",
+   "tags": [
+    "vacancies",
+    "grants",
+    "police chief search"
+   ]
+  },
+  {
+   "topic": "Public hearing: Class II Auto dealer license, 40 Summer Street",
+   "resolution": "application denied (vote 0-4-0 as printed)",
+   "quote": "7:05 pm public hearing for class ii auto dealer license at 40 summer street",
+   "tags": [
+    "licensing",
+    "auto dealer license",
+    "fraud allegation"
+   ]
+  },
+  {
+   "topic": "Old business: sell or hold 56 Carr Avenue",
+   "resolution": "discussed; no action",
+   "quote": "action re: sell or hold 55 (*sic) carr avenue",
+   "tags": [
+    "property",
+    "tax title"
+   ]
+  },
+  {
+   "topic": "Workplace Climate Survey Policy",
+   "resolution": "passed over",
+   "quote": "discussion on workplace climate survey policy:",
+   "tags": [
+    "personnel policy"
+   ]
+  },
+  {
+   "topic": "Select Board and Town Manager goal-setting",
+   "resolution": "passed over",
+   "quote": "discussion on select board and town manager goal-setting process:",
+   "tags": [
+    "goals"
+   ]
+  },
+  {
+   "topic": "Budget Task Force recommendations",
+   "resolution": "discussed; no vote",
+   "quote": "review and discussion on budget task force recommendations:",
+   "tags": [
+    "budget task force",
+    "audit",
+    "CPA"
+   ]
+  },
+  {
+   "topic": "ARPA press release",
+   "resolution": "draft carried to next meeting",
+   "quote": "review arpa press release:",
+   "tags": [
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "FY2025 and FY2026 budget, capital plan, and Town Meeting warrant",
+   "resolution": "discussed; no vote",
+   "quote": "discussion on fy2025 budget, fy2026 budget, capital plan, and annual town meeting",
+   "tags": [
+    "budget",
+    "capital plan",
+    "override",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Minutes of February 4 and January 15, 2025",
+   "resolution": "passed over",
+   "quote": "regular session minutes for february 4, 2025 and january 15, 2025:",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational",
+   "quote": "vice chair jeffreys reported he attended the council on aging",
+   "tags": [
+    "council on aging",
+    "MMPO"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "informational",
+   "quote": "chair nuzzolo announced the board is meeting on february 18",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comments (second period)",
+   "resolution": "no action",
+   "quote": "glenn mcleod of 436 reservoir road welcomed the town manager.",
+   "tags": [
+    "public comment",
+    "state funding"
+   ]
+  },
+  {
+   "topic": "Board comments (response to public comment)",
+   "resolution": "no action",
+   "quote": "vice-chair jeffreys voiced his strong disagreement with the prior two comments.",
+   "tags": [
+    "state funding"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:36 p.m., 4-0-0",
+   "quote": "vice chair jeffreys moved to adjourn.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "public hearing",
+  "auto dealer license",
+  "license denied",
+  "fraudulent documents",
+  "police appointments",
+  "FY2025 budget",
+  "FY2026 budget",
+  "capital plan",
+  "school budget",
+  "override",
+  "budget task force",
+  "CPA",
+  "ARPA",
+  "Carr Avenue property",
+  "town meeting warrant",
+  "grants",
+  "public comment",
+  "state funding"
+ ],
+ "dropped_unquoted_by_field": {}
 }

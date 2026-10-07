@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-04-07",
  "docid": "7153",
@@ -12,23 +12,147 @@
  },
  "votes": [
   {
-   "motion": "Endorse the town manager and superintendent's plan to modify the FY26 Capital Plan request and extend it back to the town manager",
-   "moved_by": "Peter Beardmore",
-   "seconded_by": "Anthony Sculimbrene",
+   "motion": "Endorse the town manager and superintendent's plan to modify the district's capital plan request and extend the request back to the town manager.",
+   "moved_by": "Mr. Beardmore",
+   "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. beardmore makes a motion to endorse the town manager and the superintendents plan to modify our request and extend the request back to the town manager, mr. sculimbrene seconds the motion all approve via roll call vote"
+   "quote": "mr. beardmore makes a motion to endorse the town manager and the superintendents plan to modify our request and extend the request back to the town manager"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Peter Beardmore",
-   "seconded_by": "Laura Brzozoski",
+   "motion": "Adjourn the meeting at 7:39.",
+   "moved_by": "Mr. Beardmore",
+   "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. beardmore makes a motion to adjourn at 7:39 ms. brzozoski seconds the motion, all approve"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0775344
+ "dropped_unquoted": 1,
+ "note": "Text is clean extracted text, not a scan, so votes are readable. The motion's roll-call tally is not printed, so the outcome is recorded as \"passed\" with no count. Agenda item 4 is headed \"Public Comment\" but the speaker is a committee member, so it is recorded as public comment only as the minutes label it. The call to order was made by Mr. Sculimbrene, though Mr. Lehtinen is listed as Chair. Dr. Burnham's attendance is inferred from her reporting on item 3; the header does not give a status for her.",
+ "cost_usd": 0.01605965,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brian lehtinen, chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene, vice chair - present"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "carol archambault, secretary - absent"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "recording secretary courtney fuller"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The best way to secure the remaining funds for the FY26 capital project was determined to be amending the Capital Plan requests for 2026.",
+   "quote": "it was determined the best resolution is to amend the capital plan requests for 2026."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY26 Capital Plan — Green Communities Grant and mini split phase 2 at the Primary School",
+   "what_was_recorded": "The district was awarded a Green Communities Grant of $200,000, plus additional rebate savings, to be applied to phase 2 of the mini split installation at the Primary School; the remaining funds are to be secured by amending the Capital Plan requests.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "we were awarded a green communities grant of $200,000 and additional rebate saving that could be applied to the cost of phase 2"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Beardmore",
+   "stated_role": "Member",
+   "topic": "thanks to the town manager",
+   "quote": "i want to thank the town manager for her willingness to be extremely creative and flexible in her approach"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order by Mr. Sculimbrene at 7:02",
+   "quote": "call to order by mr. sculimbrene at 7:02",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (item 2)",
+   "resolution": "no public comment",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "FY26 Capital Plan",
+   "resolution": "approved: motion to endorse modifying the request and returning it to the town manager, passed by roll call",
+   "quote": "mr. beardmore makes a motion to endorse the town manager and the superintendents plan to modify our request and extend the request back to the town manager",
+   "tags": [
+    "capital plan",
+    "Green Communities grant",
+    "Primary School",
+    "mini split"
+   ]
+  },
+  {
+   "topic": "Public comment (item 4)",
+   "resolution": "no action; a committee member thanked the town manager",
+   "quote": "i want to thank the town manager for her willingness to be extremely creative and flexible in her approach",
+   "tags": [
+    "public comment",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:39",
+   "quote": "5. adjournment mr. beardmore makes a motion to adjourn at 7:39",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "capital plan",
+  "Green Communities grant",
+  "Primary School",
+  "mini split installation",
+  "emergency meeting",
+  "remote meeting",
+  "FY26 capital",
+  "school committee"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

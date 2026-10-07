@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2025-03-17",
  "docid": "7100",
@@ -12,23 +12,114 @@
  },
  "votes": [
   {
-   "motion": "Approve Local Upgrade approvals and Local Variances for 395 Hollis Rd (sieve analysis, inlet/outlet tee reduction, groundwater offset variance, and Innovative/Alternative Technology)",
+   "motion": "Approve the four Local Upgrade approvals and Local Variances requested for 395 Hollis Rd (sieve analysis, reduced tees, offset to groundwater, innovative/alternative technology).",
    "moved_by": "Proctor",
    "seconded_by": "Fortin",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "after discussion and on motion by proctor and second by fortin the variances were approved. all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Proctor",
    "seconded_by": "Fortin",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "having no further matters before the board and on motion by proctor and seconded by fortin, the meeting was adjourned at 6:15 pm, all in favor."
+   "quote": "on motion by proctor and seconded by fortin, the meeting was adjourned at 6:15 pm, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0587964
+ "note": "Text extraction of a typed minutes document; no scan. Two motions recorded: the Hollis Rd variances (passed, with no numeric count printed, only 'All in favor') and adjournment. The Hollis Rd motion's quote contains the words 'approved' and 'All in favor'; no separate count was printed. The Nashoba presentation lists two grant programmes (PHE, CT/CI) as discussion points but prints no dollar figures and records no money discussion, so budget_items is empty. No public comment section is printed. Cara Olejarz is named only as the inspector of the 3/10/2025 reinspection and is not recorded as attending. No absences are stated.",
+ "cost_usd": 0.01265917,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin, matt proctor, jim garreffi and"
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin, matt proctor, jim garreffi and"
+  },
+  {
+   "name": "Matt Proctor",
+   "status": "present",
+   "quote": "members present: perry jewell, paul fortin, matt proctor, jim garreffi and"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Nashoba (gave the presentation)",
+   "status": "present",
+   "quote": "and jim garreffi - nashoba"
+  },
+  {
+   "name": "Jenna Montgomery- Nashoba",
+   "role": "Public Health Educator/Communications Specialist, Nashoba Associated Boards of Health",
+   "status": "present",
+   "quote": "jenna montgomery, licsw public health educator/communications specialist"
+  },
+  {
+   "name": "Lorraine Rudd",
+   "status": "present",
+   "quote": "also present lorraine rudd"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next hearing for 142 Whiting St. was scheduled for April 11, 2025, after a reinspection found several violations corrected.",
+   "quote": "the next hearing date has been scheduled for april 11th, 2025"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "395 Hollis Rd - Upgrade",
+   "resolution": "variances approved",
+   "quote": "the septic system for this site is in failure.",
+   "tags": [
+    "septic",
+    "variance",
+    "local upgrade",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "142 Whiting St.",
+   "resolution": "hearing scheduled for April 11, 2025",
+   "quote": "per a reinspection by cara olejarz on 3/10/2025, several violations have been corrected.",
+   "tags": [
+    "enforcement",
+    "violations",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Nashoba Associated Boards of Health state of the agency presentation",
+   "resolution": "no action",
+   "quote": "gave the presentation state of the agency discussion points were as follows.",
+   "tags": [
+    "Nashoba",
+    "grants",
+    "public health",
+    "presentation"
+   ]
+  }
+ ],
+ "tags": [
+  "septic",
+  "variance",
+  "local upgrade",
+  "groundwater",
+  "enforcement",
+  "hearing",
+  "Nashoba Associated Boards of Health",
+  "public health grants",
+  "presentation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-03-12",
  "docid": "7091",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the chapter land application for Highland Road",
+   "motion": "Approve the chapter land application for Highland Road (roll call printed as three ayes).",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to approve the chapter land application for highland road by sarah cammer, seconded by john rabbitt. sarah cammer aye, john rabbitt aye, brian laffond aye."
   },
   {
-   "motion": "approve 8.9 acres on Island Road for Recreational purposes (61B)",
+   "motion": "Approve 8.9 acres on Island Road for Recreational purposes (61B).",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion by sarah cammer to approve 8.9 acres on island road for recreational purposes (61b). second john rabbitt. all in favor."
   },
   {
-   "motion": "approve the minutes from October 16, 2024",
+   "motion": "Approve the minutes from October 16, 2024.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "there was a motion to approve the minutes from october 16, 2024, by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "approve the minutes from February 5, 2025",
+   "motion": "Approve the minutes from February 5, 2025.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
@@ -44,31 +44,23 @@
    "quote": "there was a motion to approve the minutes from february 5, 2025, by john rabbitt, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "approve the minutes from executive session from February 5, 2025, for release",
+   "motion": "Approve the executive session minutes from February 5, 2025 for release.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from executive session from february 5, 2025, for release by sarah cammer, seconded by john rabbitt. all in favor."
+   "quote": "for release by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "approve the minutes from executive session from February 19, 2025, for release",
+   "motion": "Approve the executive session minutes from February 19, 2025 for release.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from executive session from february 19, 2025, for release by john rabbitt, seconded by sarah cammer. all in favor."
+   "quote": "for release by john rabbitt, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "approve the letter as policy",
-   "moved_by": "John Rabbitt",
-   "seconded_by": "Sarah Cammer",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "there was a motion to approve the letter as policy by john rabbitt, seconded by sarah cammer. all in favor."
-  },
-  {
-   "motion": "approve the overlay amount of $175,000",
+   "motion": "Approve the overlay amount of $175,000.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -76,15 +68,322 @@
    "quote": "there is a motion to approve the overlay amount of $175,000 by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "adjourn the meeting and enter executive session not to return to open session",
+   "motion": "Approve the homeowner letter addressing incomprehensible deeds as policy.",
+   "moved_by": "John Rabbitt",
+   "seconded_by": "Sarah Cammer",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "there was a motion to approve the letter as policy by john rabbitt, seconded by sarah cammer. all in favor."
+  },
+  {
+   "motion": "Adjourn the meeting and enter executive session, not to return to open session.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn the meeting and enter executive session not to return to open session after exiting executive session by sarah cammer, seconded by john rabbitt. unanimous approval."
+   "quote": "there was a motion to adjourn the meeting and enter executive session not to return to open session after exiting executive session by sarah cammer, seconded by john rabbitt."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0901714
+ "dropped_unquoted": 2,
+ "note": "Text extraction, not a scan; all votes read from the printed motions. Nine motions recorded with votes, including six procedural ones (minutes approvals and the adjournment). The minutes list the regular minutes of February 19, 2025 and October 2, 2024 for approval, but no motion approving them is recorded. Robin Nano and Rep. Margaret Scarsdale are mentioned but did not take part, so they are not listed as attendees. Public comment was \"no comments\" twice, so no speakers are recorded. The Highland Road vote is shown with its printed roll call; the minutes print no tally line. The agenda item for abatement status appears twice in the extracted text.",
+ "cost_usd": 0.01819267,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair -brian laffond, vice chair -sarah cammer, clerk -john rabbitt, principal assessor -lynda mcquade"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair -brian laffond, vice chair -sarah cammer, clerk -john rabbitt, principal assessor -lynda mcquade"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair -brian laffond, vice chair -sarah cammer, clerk -john rabbitt, principal assessor -lynda mcquade"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair -brian laffond, vice chair -sarah cammer, clerk -john rabbitt, principal assessor -lynda mcquade"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Quarterly MLS renewal subscription approved and signed; no recorded vote.",
+   "quote": "the quarterly renewal subscription for mls was approved and signed."
+  },
+  {
+   "decision": "Two CAI invoices signed by the Board; no recorded vote.",
+   "quote": "there were 2 invoices from cai that were signed by the board."
+  },
+  {
+   "decision": "Motor vehicle excise abatements signed; no recorded vote.",
+   "quote": "abatements for motor vehicle excise taxes were signed totaling $16,063.18."
+  },
+  {
+   "decision": "Chapter Lands owners who have not applied get a new deadline of April 10, 2025; no response means the land reverts to full valuation.",
+   "quote": "new deadline of april 10, 2025. if no response, the land will revert to full valuation."
+  },
+  {
+   "decision": "Board agreed the Chapter Lands policy should be documented in writing.",
+   "quote": "brian laffond stated this is the de facto policy, but agreed we should document"
+  },
+  {
+   "decision": "Farm land (61A) approval delayed until eligible in June 2026.",
+   "quote": "approval delayed: not eligible until june, 2026."
+  },
+  {
+   "decision": "A time will be scheduled for the Board to vote on income and asset limits for the senior means-tested exemption.",
+   "quote": "a time will need to be scheduled for the board to vote on income and asset limits."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Abatement applications status",
+   "what_was_recorded": "Of 37 real estate and property abatement applications, 11 were granted totaling a stated dollar amount, 9 were denied, 13 were to be reviewed in executive session and 4 await information.",
+   "figures_as_printed": [
+    "$8,796.66"
+   ],
+   "quote": "11 have been granted totaling $8,796.66, 9 have been denied, 13 to be"
+  },
+  {
+   "topic": "CAI invoices signed",
+   "what_was_recorded": "Two CAI invoices were signed: one for support renewal and one for revision of the maps.",
+   "figures_as_printed": [
+    "$3,000",
+    "$3,400"
+   ],
+   "quote": "$3,000 for support renewal and an additional $3,400 for the revision of the maps"
+  },
+  {
+   "topic": "Motor vehicle excise abatements signed",
+   "what_was_recorded": "Motor vehicle excise abatements were signed totaling a stated amount.",
+   "figures_as_printed": [
+    "$16,063.18"
+   ],
+   "quote": "abatements for motor vehicle excise taxes were signed totaling $16,063.18."
+  },
+  {
+   "topic": "FY 2026 overlay",
+   "what_was_recorded": "Exemptions and abatements so far this year total a stated amount; Brian Laffond suggested an overlay between two figures; the Board approved $175,000.",
+   "figures_as_printed": [
+    "$128,967.40",
+    "$175,000 to $200,000",
+    "$175,000"
+   ],
+   "quote": "so far this year the exemptions and abatements total $128,967.40."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and opening comments",
+   "resolution": "reported; no action",
+   "quote": "brian laffond states the town caucus on monday nominated him for the 1 year open position on the boa.",
+   "tags": [
+    "board reports",
+    "town caucus"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comments",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "reported",
+   "quote": "lynda mcquade provided the following updates:",
+   "tags": [
+    "abatements",
+    "exemptions",
+    "motor vehicle excise"
+   ]
+  },
+  {
+   "topic": "Chapter land applications and Chapter Lands policy",
+   "resolution": "Highland Road and Island Road approved; Farm land 61A delayed; second-request letters sent with April 10 deadline",
+   "quote": "there was a motion to approve the chapter land application for highland road by sarah cammer, seconded by john rabbitt.",
+   "tags": [
+    "chapter lands",
+    "chapter 61",
+    "chapter 61A",
+    "chapter 61B",
+    "liens"
+   ]
+  },
+  {
+   "topic": "Cyclical inspections",
+   "resolution": "reported; begin March 18",
+   "quote": "lynda mcquade states that cyclical inspections begin on march 18th.",
+   "tags": [
+    "cyclical inspections",
+    "property record cards"
+   ]
+  },
+  {
+   "topic": "Vision to CAI parcel linking",
+   "resolution": "reported; scope unknown",
+   "quote": "there have been issues linking parcels from vision to cai.",
+   "tags": [
+    "vision",
+    "CAI",
+    "software"
+   ]
+  },
+  {
+   "topic": "HERO Act abatements",
+   "resolution": "reported; procedure clarified with DOR",
+   "quote": "lynda mcquade spoke to the dor representative regarding hero act",
+   "tags": [
+    "HERO Act",
+    "state reimbursement"
+   ]
+  },
+  {
+   "topic": "Approve minutes and executive session minutes",
+   "resolution": "approved",
+   "quote": "review and approve minutes of february 19, 2025, october 16, 2024, october 2,",
+   "tags": [
+    "minutes",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Invoices, expense vouchers and abatements signed",
+   "resolution": "signed; MLS subscription approved",
+   "quote": "the quarterly renewal subscription for mls was approved and signed.",
+   "tags": [
+    "invoices",
+    "CAI",
+    "MLS"
+   ]
+  },
+  {
+   "topic": "Senior means-tested exemption (H.3911)",
+   "resolution": "application received; vote to be scheduled",
+   "quote": "senior means tested exemption/h.3911 plan.",
+   "tags": [
+    "senior exemption",
+    "H.3911",
+    "income limits"
+   ]
+  },
+  {
+   "topic": "Neighborhood and site index review",
+   "resolution": "reported; plan to fund capital plan",
+   "quote": "neighborhood/site index review/plan in response to dor directives starting point.",
+   "tags": [
+    "neighborhood review",
+    "DOR directives",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Homeowner letter on deeds",
+   "resolution": "approved as policy",
+   "quote": "status of homeowner letter for issues with deeds.",
+   "tags": [
+    "deeds",
+    "homeowner letter",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Assessor website",
+   "resolution": "in progress",
+   "quote": "sarah cammer is in the process of revising",
+   "tags": [
+    "website",
+    "vision card"
+   ]
+  },
+  {
+   "topic": "Tax billing issue",
+   "resolution": "joint meeting proposed",
+   "quote": "john rabbitt proposes having a joint meeting with the attorneys",
+   "tags": [
+    "tax billing",
+    "collection",
+    "MUNIS"
+   ]
+  },
+  {
+   "topic": "FY 2026 overlay",
+   "resolution": "approved at $175,000",
+   "quote": "so far this year the exemptions and abatements total $128,967.40.",
+   "tags": [
+    "overlay",
+    "abatements",
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Clause 41 and 17 exemption warrant",
+   "resolution": "awaiting Town Council response",
+   "quote": "the warrant is still in front of the town council",
+   "tags": [
+    "warrant",
+    "Town Council",
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "listed",
+   "quote": "march 19, 2025, april 2, 2025, april 16, 2025.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "public: none; board: deferral process discussed",
+   "quote": "john rabbitt spoke to a resident about the deferral process.",
+   "tags": [
+    "deferral",
+    "circuit breaker"
+   ]
+  },
+  {
+   "topic": "Adjournment into executive session",
+   "resolution": "approved unanimously",
+   "quote": "there was a motion to adjourn the meeting and enter executive session not to return to open session after exiting executive session by sarah cammer, seconded by john rabbitt.",
+   "tags": [
+    "executive session",
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "abatements",
+  "exemptions",
+  "chapter lands",
+  "chapter 61",
+  "overlay",
+  "tax billing",
+  "CAI software",
+  "vision records",
+  "cyclical inspections",
+  "deeds policy",
+  "executive session",
+  "board of assessors"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1,
+  "topics": 1
+ }
 }

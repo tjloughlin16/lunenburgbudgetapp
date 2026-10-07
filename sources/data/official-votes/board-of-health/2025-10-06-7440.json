@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2025-10-06",
  "docid": "7440",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from August 18, 2025 and September 15, 2025",
+   "motion": "Approve the minutes of August 18, 2025 and September 15, 2025.",
    "moved_by": "Fortin",
    "seconded_by": "Pirro",
    "outcome": "passed",
@@ -20,31 +20,117 @@
    "quote": "on motion by fortin and second by pirro, the minutes were approved. all in favor."
   },
   {
-   "motion": "Approve variances for 225 Island Road: offset to foundation from 10 feet to 5 feet, sewer line under slab to be sleeved, and removal of scrivener's error restriction from original permit",
+   "motion": "Approve the variances requested at 225 Island Road (offset to foundation from 10 feet to 5 feet, sewer line under slab) and remove the no-expansion restriction from the original permit.",
    "moved_by": "Pirro",
    "seconded_by": "Fortin",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by pirro and second by fortin, the variances were approved and the restriction removed from the original permit as follows: pirro - yes fortin - yes rudd - yes proctor - recuse"
+   "quote": "after discussion and on motion by pirro and second by fortin, the variances were approved and the"
   },
   {
-   "motion": "Approve variances for 1498 Lancaster Road: offset to groundwater from 4 feet to 3 feet, sieve analysis, inlet and outlet tees, offset to wetland from 100 feet to 71 feet, and use of a Presby system",
+   "motion": "Approve the variances requested at 1498 Lancaster Road (groundwater offset, sieve analysis, tees, wetland offset from 100 feet to 71 feet, and use of a Presby system).",
    "moved_by": "Pirro",
    "seconded_by": "Rudd",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by pirro and second by rudd, the board voted to approve the variances. all in favor."
+   "quote": "after discussion and on motion by pirro and second by rudd, the board voted to approve the variances."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 5:45 pm.",
    "moved_by": "Rudd",
    "seconded_by": "Proctor",
    "outcome": "passed",
    "procedural": true,
-   "quote": "having no further business and on motion by rudd and second by proctor the meeting was adjourned at 5:45 pm. all in favor."
+   "quote": "having no further business and on motion by rudd and second by proctor the meeting was adjourned at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.060701399999999996
+ "note": "Text is extracted (two pages), readable with no scan problems. No dollar figures, transfers or public comment appear in the minutes. The 225 Island Road vote is recorded as individual roll-call positions (Pirro, Fortin, Rudd Yes; Proctor Recuse) rather than a printed tally, so no count is given. The 1498 Lancaster Road and minutes-approval votes are recorded as \"All in favor\" with no count printed. The minutes do not state Chris MacKenzie's role at 225 Island Road.",
+ "cost_usd": 0.01236887,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Proctor",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "members present: matt proctor, paul fortin, lorraine rudd and nick pirro."
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "members present: matt proctor, paul fortin, lorraine rudd and nick pirro."
+  },
+  {
+   "name": "Lorraine Rudd",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "members present: matt proctor, paul fortin, lorraine rudd and nick pirro."
+  },
+  {
+   "name": "Nick Pirro",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "members present: matt proctor, paul fortin, lorraine rudd and nick pirro."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "on behalf of the owner (1498 Lancaster Road); role at 225 Island Road not stated",
+   "status": "present",
+   "quote": "chris mackenzie together with tom bertram, owner , met with the board."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "owner (225 Island Road)",
+   "status": "present",
+   "quote": "chris mackenzie together with tom bertram, owner , met with the board."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes (August 18, 2025 and September 15, 2025)",
+   "resolution": "approved",
+   "quote": "on motion by fortin and second by pirro, the minutes were approved. all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "225 Island Road – addition, variances and permit restriction",
+   "resolution": "approved; Proctor recused",
+   "quote": "the variances were approved and the restriction removed from the original permit as follows:",
+   "tags": [
+    "septic",
+    "variances",
+    "permit",
+    "addition"
+   ]
+  },
+  {
+   "topic": "1498 Lancaster Road – failed septic system, Presby system",
+   "resolution": "variances approved",
+   "quote": "this system is in failure. groundwater is at 36 inches. a presby system is proposed.",
+   "tags": [
+    "septic",
+    "variances",
+    "Presby system",
+    "groundwater",
+    "wetland"
+   ]
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic variances",
+  "Title 5",
+  "permits",
+  "minutes approval",
+  "Presby system"
+ ],
+ "dropped_unquoted_by_field": {}
 }

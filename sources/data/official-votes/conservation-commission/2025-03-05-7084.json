@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2025-03-05",
  "docid": "7084",
@@ -12,49 +12,383 @@
  },
  "votes": [
   {
-   "motion": "Approve Notice of Intent for removal and replacement of drainage pipe at 32 Hemlock Drive",
+   "motion": "Approve the Notice of Intent by Ryan Vickers (32 Hemlock Drive), re-presented after abutter notice was redone; the minutes do not name the item in the motion line.",
    "moved_by": "J. Pewtherer",
    "seconded_by": "M. Larouche",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. pewtherer, to approve second m. larouche vote: j. pewtherer - aye m. wilson - aye m. larouche - aye c. st. germain - aye | p. stella - aye"
+   "quote": "j. pewtherer, to approve second m. larouche vote: j. pewtherer - aye m. wilson - aye"
   },
   {
-   "motion": "Issue negative determination of applicability for temporary modular removable rolling dock at 76 Laurel Lane with stipulation to use area already disturbed as egress route",
+   "motion": "For the Request for Determination of Applicability by Bonnie Albright (76 Laurel Lane): a negative determination with the stipulation that the egress route use an area already disturbed.",
    "moved_by": "C. St. Germain",
    "seconded_by": "M. Larouche",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: second vote: c. st. germain, for a negative determination with the stipulation that they use an area already disturbed as the egress route. m. larouche j. pewtherer - aye m. larouche - aye c. st. germain - aye p. stella - aye m. wilson - aye"
+   "quote": "c. st. germain, for a negative determination with the stipulation that they use an area already disturbed as the egress route."
   },
   {
-   "motion": "Order peer review and replacement of flags for Notice of Intent at 221 Electric Avenue",
+   "motion": "For the Notice of Intent by Daniel Sheehan (221 Electric Avenue): a peer review and replacement of flags 104-104.",
    "moved_by": "M. Larouche",
    "seconded_by": "J. Pewtherer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. larouche, for a peer review and replacement of flags 104-104. second vote: j. pewtherer j. pewtherer - aye m. larouche - aye c. st. germain - aye m. wilson - aye |p. stella - aye",
-   "quote_taken_from_text": true
+   "quote": "m. larouche, for a peer review and replacement of flags 104-104."
   },
   {
-   "motion": "Continue Notice of Intent at 221 Electric Avenue to April 2nd",
+   "motion": "Continue the Notice of Intent by Daniel Sheehan (221 Electric Avenue) to April 2nd.",
    "moved_by": "M. Larouche",
    "seconded_by": "J. Pewtherer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. larouche, to continue to april 2nd. second j. pewtherer ===page 3=== vote: p. stella - aye m. wilson - aye j. pewtherer - aye m. larouche - aye c. st. ",
-   "quote_taken_from_text": true
+   "quote": "m. larouche, to continue to april 2nd."
   },
   {
-   "motion": "Adjourn meeting",
+   "motion": "Approve the Lunenburg Conservation Commission's Notice of Intent for the Table Rock parking area and gravel driveway (994 Northfield Road).",
+   "moved_by": "C. St. Germain",
+   "seconded_by": "M. Larouche",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "c. st. germain, to approve. m. larouche c. st. germain - aye m. wilson - aye"
+  },
+  {
+   "motion": "Approve the Notice of Intent by Daniel Sheehan (213 Electric Avenue) with standard Order of Conditions.",
+   "moved_by": "C. St. Germain",
+   "seconded_by": "M. Larouche",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "c. st. germain, to approve, with standard order of conditions."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:54 PM.",
    "moved_by": "M. Larouche",
    "seconded_by": "J. Pewtherer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "[motion: m. larouche, to adjourn at 8:54pm. second j. pewtherer vote: c. st. germain - aye p. stella - aye m. larouche - aye j. pewtherer - aye m. wilson - aye"
+   "quote": "m. larouche, to adjourn at 8:54pm."
   }
  ],
- "dropped_unquoted": 2,
- "note": "OCR-extracted minutes; text reasonably readable. Five commissioners present for all votes (Bursch and Viviano absent). All votes passed unanimously 5-0. Meeting date appears to be March 19, 2025 per header, though some internal references suggest March 5.",
- "cost_usd": 0.1091944
+ "dropped_unquoted": 0,
+ "note": "Scanned minutes read by macOS Vision OCR, so quotes are verbatim from the OCR text and may carry its errors. The date conflicts: the user gave 2025-03-05, but the minutes heading reads \"Wednesday, March 19 - 7:00 PM\", several continuations point to March 19, and one item says \"Continued from March 5th, 2025, to May 7th, 2025.\" No dollar figures are printed anywhere. Vote tallies are not printed as counts, so outcomes read \"passed\" from the AYE lines. The Vickers motion does not name its item and is placed under that hearing. The seconder of the 221 Electric motions is inferred from the printed name after \"Vote:\". Roles from the OCR header are scrambled, so only Wilson's role (presiding) is assigned. Sophia Dorow spoke but is not on the roll call. The \"Public comment: None\" line is the only public-comment record; an abutter's traffic concern is reported inside the Table Rock item, not in public comment, and is not recorded as a speaker.",
+ "cost_usd": 0.02007217,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Wilson",
+   "role": "presided at call to order (roll-call title not stated)",
+   "status": "present",
+   "quote": "attending: j. pewtherer, m. larouche, c. st. germain, p. stella, m. wilson."
+  },
+  {
+   "name": "J. Pewtherer",
+   "role": "Commission member (title not stated)",
+   "status": "present",
+   "quote": "attending: j. pewtherer, m. larouche, c. st. germain, p. stella, m. wilson."
+  },
+  {
+   "name": "M. Larouche",
+   "role": "Commission member (title not stated)",
+   "status": "present",
+   "quote": "attending: j. pewtherer, m. larouche, c. st. germain, p. stella, m. wilson."
+  },
+  {
+   "name": "C. St. Germain",
+   "role": "Commission member (title not stated)",
+   "status": "present",
+   "quote": "attending: j. pewtherer, m. larouche, c. st. germain, p. stella, m. wilson."
+  },
+  {
+   "name": "P. Stella",
+   "role": "Commission member (title not stated)",
+   "status": "present",
+   "quote": "attending: j. pewtherer, m. larouche, c. st. germain, p. stella, m. wilson."
+  },
+  {
+   "name": "R. Bursch",
+   "role": "Commission member (title not stated)",
+   "status": "absent",
+   "quote": "absent: r. bursch, j. viviano"
+  },
+  {
+   "name": "J. Viviano",
+   "role": "Commission member (title not stated)",
+   "status": "absent",
+   "quote": "absent: r. bursch, j. viviano"
+  },
+  {
+   "name": "Sophia Dorow",
+   "role": "Conservation Admin",
+   "status": "present",
+   "quote": "sophia dorow - conservation admin"
+  },
+  {
+   "name": "Logan O'Connell",
+   "role": "Temp Admin Assist",
+   "status": "not stated",
+   "quote": "logan o'connell - temp admin assist"
+  },
+  {
+   "name": "Michael Gale",
+   "role": "Admin Asst. (minutes author)",
+   "status": "not stated",
+   "quote": "michael gale - admin asst."
+  },
+  {
+   "name": "Ryan Vickers",
+   "role": "applicant, Notice of Intent (32 Hemlock Drive)",
+   "status": "not stated",
+   "quote": "a notice of intent by ryan vickers for removal and replacement of a collapsed drainage pipe through the side"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant (Dillis & Roy)",
+   "status": "present",
+   "quote": "greg roy (dillis & roy) agreed and summarized the work to"
+  },
+  {
+   "name": "Bonnie Albright",
+   "role": "applicant, Request for Determination (76 Laurel Lane); represented herself",
+   "status": "present",
+   "quote": "bonnie albright represented herself. previous owners sold the old wooden dock"
+  },
+  {
+   "name": "Daniel Sheehan",
+   "role": "representing the applicant (Haley Ward Construction)",
+   "status": "present",
+   "quote": "daniel sheehan (haley ward) represented and explained is it like the 213 electric ave property already"
+  },
+  {
+   "name": "Kevin O'Brien",
+   "role": "applicant, Abbreviated Notice of Resource Area Delineation (390 Howard Street)",
+   "status": "not stated",
+   "quote": "an abbreviated notice of resource area delineation by kevin o'brien at 390 howard street (dep # 208-1304)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "S. Dorow (Conservation Admin) will obtain quotes for the peer review on 221 Electric Avenue.",
+   "quote": "s. dorow will obtain quotes for the peer review."
+  },
+  {
+   "decision": "Commission asked staff to ask the training provider what the latest start time could be for the 30 April training; the provider's email requested a 5 PM start.",
+   "quote": "j. pewtherer requested we ask her what the latest start time could be."
+  },
+  {
+   "decision": "Staff to share historical satellite photos with the new consultant for 1168 Mass Ave Rear.",
+   "quote": "m. wilson requested that we share the historical satellite photos with the new consultant."
+  },
+  {
+   "decision": "Kevin O'Brien's Abbreviated Notice of Resource Area Delineation (390 Howard Street) recorded as continued to April 2nd at the applicant's request.",
+   "quote": "applicant requested a continuance to april 2nd."
+  },
+  {
+   "decision": "201 Leominster Shirley Road (RDA-25-1) recorded as continued to April 16th, 2025 at the applicant's request.",
+   "quote": "applicant requested to continue to april 16th, 2025."
+  },
+  {
+   "decision": "67 Island Road (RDA-24-9) recorded as continued to May 7th, 2025.",
+   "quote": "67 island road, (opengov.com record id# rda-24-9). (continued from march 5th, 2025, to may 7th, 2025.)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Peer review budget and process",
+   "what_was_recorded": "Commission discussed the budget and process around peer reviews and ways to streamline them; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussed the budget and process around peer reviews and ways to streamline the process."
+  },
+  {
+   "topic": "Peer review quotes (221 Electric Avenue)",
+   "what_was_recorded": "Administrator to obtain quotes for the peer review; no cost figure printed.",
+   "figures_as_printed": [],
+   "quote": "s. dorow will obtain quotes for the peer review."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, announcements, minutes",
+   "resolution": "no action; announcements and minutes for approval recorded as None",
+   "quote": "call to order at 7pm by m. wilson",
+   "tags": [
+    "call to order",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "NOI, drainage pipe, 32 Hemlock Drive (Ryan Vickers)",
+   "resolution": "approved",
+   "quote": "a notice of intent by ryan vickers for removal and replacement of a collapsed drainage pipe through the side",
+   "tags": [
+    "notice of intent",
+    "Hickory Hills Lake",
+    "drainage",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "RDA, temporary dock, 76 Laurel Lane (Bonnie Albright)",
+   "resolution": "negative determination with stipulation",
+   "quote": "bonnie albright represented herself. previous owners sold the old wooden dock",
+   "tags": [
+    "request for determination",
+    "Lake Whalom",
+    "dock"
+   ]
+  },
+  {
+   "topic": "NOI, two-family dwelling and rain garden, 221 Electric Avenue (Daniel Sheehan)",
+   "resolution": "peer review requested; continued to April 2nd",
+   "quote": "due to the possibility of there being a protected riverfront involved, m. wilson suggested a peer review",
+   "tags": [
+    "notice of intent",
+    "peer review",
+    "stream",
+    "flags"
+   ]
+  },
+  {
+   "topic": "Abbreviated RAD, 390 Howard Street (Kevin O'Brien)",
+   "resolution": "continued to April 2nd at applicant request",
+   "quote": "applicant requested a continuance to april 2nd.",
+   "tags": [
+    "resource area delineation",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "NOI, Table Rock trailhead parking, 994 Northfield Road (Commission-sponsored)",
+   "resolution": "approved",
+   "quote": "greg roy (dillis & roy) represented the commission. he addressed the storm water concerns",
+   "tags": [
+    "notice of intent",
+    "Table Rock",
+    "wetland replication",
+    "trailhead parking"
+   ]
+  },
+  {
+   "topic": "NOI, deck removal and two-family dwelling, 213 Electric Avenue (Daniel Sheehan)",
+   "resolution": "approved with standard Order of Conditions",
+   "quote": "daniel sheehan (haley ward) represented the applicant and reviewed the requested changes.",
+   "tags": [
+    "notice of intent",
+    "deck removal",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Filings previously continued (administrative tracking)",
+   "resolution": "continued: 201 Leominster Shirley Road to April 16th; 67 Island Road to May 7th",
+   "quote": "201 leominster shirley road (opengov.com record id# rda-25-1) - applicant requested to continue to april",
+   "tags": [
+    "continuance",
+    "administrative tracking"
+   ]
+  },
+  {
+   "topic": "Enforcement: violations and hearings",
+   "resolution": "status noted; no action recorded",
+   "quote": "shared a project status (uploaded to opengov). they plan to file an noi by the end of april.",
+   "tags": [
+    "enforcement",
+    "10 Mass Ave",
+    "1168 Mass Ave",
+    "950 Chase Road",
+    "48 Meadow Lane"
+   ]
+  },
+  {
+   "topic": "Peer review process (new business)",
+   "resolution": "discussed; no action recorded",
+   "quote": "m. wilson suggests using this process more often, especially when there is a question about",
+   "tags": [
+    "peer review",
+    "process",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Conservation Commission training start time (old business)",
+   "resolution": "staff to ask provider about latest start time",
+   "quote": "sophia mentioned that brianna wanted the commission to change the start time of training on april 30",
+   "tags": [
+    "training",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Earth Day events (old business)",
+   "resolution": "noted; pollinator habitat event booked for the 14th",
+   "quote": "pollinator habitat is signed up for the 14th.",
+   "tags": [
+    "Earth Day",
+    "pollinator habitat",
+    "boardwalks"
+   ]
+  },
+  {
+   "topic": "Encroachment, 950 Chase Rd shed removal",
+   "resolution": "reverted to Select Board (executive session)",
+   "quote": "this is in execution session and has reverted to the select board.",
+   "tags": [
+    "encroachment",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Open space and land use",
+   "resolution": "noted: C. St. Germain took over from M. Wilson",
+   "quote": "c. st. germain has taken over for m. wilson.",
+   "tags": [
+    "open space",
+    "land use"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence",
+   "resolution": "noted; lease tracking, site visit being planned",
+   "quote": "lease agreement is tracking; site visit being planned.",
+   "tags": [
+    "lease",
+    "Hollis Road"
+   ]
+  },
+  {
+   "topic": "Public comment and communications",
+   "resolution": "no action; none recorded",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:54 PM; next meeting April 2nd, 2025",
+   "quote": "m. larouche, to adjourn at 8:54pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "public hearings",
+  "peer review",
+  "continuances",
+  "enforcement",
+  "Table Rock",
+  "Zoom",
+  "Hickory Hills Lake",
+  "Lake Whalom",
+  "open space",
+  "training",
+  "Earth Day"
+ ],
+ "dropped_unquoted_by_field": {}
 }

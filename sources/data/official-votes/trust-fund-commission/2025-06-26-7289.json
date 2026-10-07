@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2025-06-26",
  "docid": "7289",
@@ -12,29 +12,165 @@
  },
  "votes": [
   {
-   "motion": "Nominate John Bowen as Chairman of the Trust Fund Commission",
+   "motion": "Nominate John Bowen as Chairman of the Trust Fund Commission.",
    "moved_by": "Richard Howard",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "mr. howard made a motion to nominate mr. bowen as chairman of the trust fund commission. mot ion passed unanimously."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "mr. howard made a motion to nominate mr. bowen as chairman of the trust fund commission."
   },
   {
-   "motion": "Nominate Richard Howard as Vice-Chairman of the Trust Fund Commission",
+   "motion": "Nominate Richard Howard as Vice-Chairman of the Trust Fund Commission.",
    "moved_by": "John Bowen",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "mr. bowen made a motion to nominate mr. howard as vice-chairman of the trust fund commission. motion passed unanimously."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "mr. bowen made a motion to nominate mr. howard as vice-chairman of the trust fund commission."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Richard Howard",
    "seconded_by": "John Bowen",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "there was a motion to adjourn by vice chairman mr. howard , seconded by chairman bow e n . it was unanimously voted."
+   "quote": "there was a motion to adjourn by vice chairman"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0926554
+ "note": "No vote counts are printed (votes are recorded as 'passed unanimously'), and no seconder is printed for the two nominations. The minutes print no dollar figures, so budget_items holds one non-numeric discussion of trust fund oversight. Extracted text has irregular spacing and split words (e.g. 'Mot ion', 'Bow e n', 'adjourned  at 6:1 0'); quotes were chosen from clean spans and collapsed to single spaces. The minutes spell the Assistant Town Clerk 'Griffin' in the attendance line and 'Griffen' in item 4a; the attendee is recorded as printed in attendance. The Public Comment statement is one member's assertions on legal questions, recorded as made; the minutes record no response. Town Manager and Town Clerk are referred to but did not attend, so they are not listed as attendees.",
+ "cost_usd": 0.01444277,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Bowen",
+   "role": "elected Member (later elected Chairman in this meeting)",
+   "status": "present",
+   "quote": "present: john bowen and richard howard (elected members), assistant town clerk ellen griffin."
+  },
+  {
+   "name": "Richard Howard",
+   "role": "elected Member (later elected Vice-Chairman in this meeting)",
+   "status": "present",
+   "quote": "present: john bowen and richard howard (elected members), assistant town clerk ellen griffin."
+  },
+  {
+   "name": "Ellen Griffin",
+   "role": "Assistant Town Clerk",
+   "status": "present",
+   "quote": "present: john bowen and richard howard (elected members), assistant town clerk ellen griffin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Agreed that every other Thursday from 5:00PM-6:30PM will be the default meeting time (proposed by Mr. Howard; agreed by both members, no vote recorded).",
+   "quote": "so agreed by both members"
+  },
+  {
+   "decision": "Next meeting scheduled for Thursday, July 10, 2025.",
+   "quote": "next meeting scheduled for thursday july 10, 2025."
+  },
+  {
+   "decision": "Chairman Bowen advised the Commission to be cognizant of and ensure compliance with the recently effective MGL 203(c) (Massachusetts Prudent Investor Act); no specific action items were set for the next meeting.",
+   "quote": "needs to be cognizant of and make sure that the provisions are followed as there has"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Oversight of trust funds under the Prudent Investor Act",
+   "what_was_recorded": "Chairman Bowen said the Commission has not consistently focused on oversight of the trust funds in recent years; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "not been a consistent focus on the oversight of these funds the past few years"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Legal process for agenda submission by the town clerk",
+   "speaker": "John Bowen",
+   "stated_role": "Member",
+   "quote": "member john bowen made a statement expressing his concerns with the legal process regarding the submission of the agenda"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "meeting opened at 5:30 PM",
+   "quote": "the meeting opened at 5:30 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "statement made by Member Bowen; no action recorded",
+   "quote": "member john bowen made a statement expressing his concerns with the legal process regarding the submission of the agenda",
+   "tags": [
+    "agenda submission",
+    "open meeting law",
+    "separation of powers"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "no minutes to approve; first meeting of the commission",
+   "quote": "there were no minutes to review and approve as this is the first meeting of this",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Business: Organization",
+   "resolution": "Bowen elected Chairman and Howard elected Vice-Chairman, both unanimously",
+   "quote": "mr. howard made a motion to nominate mr. bowen as chairman of the trust fund commission.",
+   "tags": [
+    "organization",
+    "officers"
+   ]
+  },
+  {
+   "topic": "New Business: Scheduled Meetings",
+   "resolution": "default Thursday 5:00PM-6:30PM every other week agreed; next meeting July 10, 2025",
+   "quote": "next meeting scheduled for thursday july 10, 2025.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "New Business: Action items for next meeting",
+   "resolution": "no specific items; Chairman advised on MGL 203(c) Prudent Investor Act",
+   "quote": "there were no specific items to address in advance of our next meeting.",
+   "tags": [
+    "prudent investor act",
+    "oversight"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "no public comments",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 6:10 PM, unanimously",
+   "quote": "there was a motion to adjourn by vice chairman",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "trust fund commission",
+  "organization",
+  "officer election",
+  "open meeting law",
+  "agenda submission",
+  "separation of powers",
+  "prudent investor act",
+  "meeting schedule",
+  "first meeting",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

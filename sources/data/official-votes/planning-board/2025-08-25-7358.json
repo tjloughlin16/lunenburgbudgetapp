@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2025-08-25",
  "docid": "7358",
@@ -12,63 +12,318 @@
  },
  "votes": [
   {
-   "motion": "To open the public hearing on 499 Northfield Road",
-   "moved_by": "A. Reid",
-   "seconded_by": "A. Reid",
-   "outcome": "passed",
+   "motion": "Open the public hearings for 499 Northfield Road.",
+   "moved_by": "A.Reid",
+   "seconded_by": "A.Reid",
+   "outcome": "passed 2-0-1",
    "procedural": true,
-   "quote": "a.reid moved, to open the public hearings 499 northfield road second: a.reid vote: a. reid - aye, t.willsmer -aye, a. burney -abstained, passed."
+   "quote": "motion: a.reid moved, to open the public hearings 499 northfield road second: a.reid vote: a. reid - aye, t.willsmer -aye, a. burney -abstained, passed."
   },
   {
-   "motion": "To close the public hearing on 499 Northfield Road",
+   "motion": "Close the public hearings for 499 Northfield Road.",
    "moved_by": "A. Burney",
    "seconded_by": "T. Willsmer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a. burney moved, to close the public hearings 499 northfield road second: t. willsmer vote: a. reid - aye, t.willsmer -aye, a. burney -aye, hearing closed."
+   "quote": "motion: a. burney moved, to close the public hearings 499 northfield road second: t. willsmer vote: a. reid - aye, t.willsmer -aye, a. burney -aye, hearing closed."
   },
   {
-   "motion": "To approve the site plan for 499 Northfield Road with standard conditions and requirements for conditional operations plan and stormwater maintenance plan",
+   "motion": "Approve site plan for 499 Northfield Road with all standard conditions plus submission of a conditional operations plan and a maintenance plan for the storm water drip edge.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "t. willsmer moved to approve site plan with all standard conditions with additional condition of submission of conditional operations plan submission and maintenance plan for storm water drip edge submission for 499 northfield road second: a. reid vote: a. reid - aye, t.willsmer -aye, a. burney -aye, passed."
+   "quote": "motion: t. willsmer moved to approve site plan with all standard conditions with additional"
   },
   {
-   "motion": "To nominate M. Brenner to the Municipal Building Design Committee",
+   "motion": "Nominate M. Brenner to the open position on the Municipal Building Design Committee.",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "a. burney moved to nominate m. brenner to the open position on the municipal building design committee. second: a. reid vote: a. reid - aye, t.willsmer -aye, a. burney -aye, passed."
+   "procedural": false,
+   "quote": "motion: a. burney moved to nominate m. brenner to the open position on the municipal building"
   },
   {
-   "motion": "To close out the performance guarantee account for 430 Mulpus Road and transfer funds to the town treasurer for a new performance guarantee account",
+   "motion": "Close out the current account for 430 Mulpus Road Performance Guarantee, turn the funds over to the town treasurer to serve as the assurity deposit for a new performance guarantee account in the correct format.",
+   "moved_by": "A. Burney",
+   "seconded_by": "T. Willsmer",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: a. burney moved to have planning board close out the current account for 430 mulpus road"
+  },
+  {
+   "motion": "Approve the minutes of 7/14.",
    "moved_by": "A. Burney",
    "seconded_by": "T. Willsmer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a. burney moved to have planning board close out the current account for 430 mulpus road performance guarantee then turn over the funds to the town treasurer to use as the assurity deposit to create a new performance guarantee account in the correct format. second: t. willsmer vote: a. reid - aye, t.willsmer -aye, a. burney -aye, passed."
+   "quote": "motion to approve a. burney second: t. willsmer seconded"
   },
   {
-   "motion": "To approve the minutes of the July 14, 2025 meeting",
-   "moved_by": "A. Burney",
-   "seconded_by": "T. Willsmer",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion to approve a. burney second: t. willsmer seconded vote: a. reid - aye, t. willsmer - aye, a. burney -aye approved minutes"
-  },
-  {
-   "motion": "To adjourn the meeting",
-   "moved_by": "T. Willsmer",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "T.Willsmer",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "motion: m. brenner to adjourn the meeting, moved by t.willsmer second: a. reid seconded vote: voice vote, passed unanimously."
+   "quote": "motion: m. brenner to adjourn the meeting, moved by t.willsmer"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and readable. All seven votes recorded. Vote #1 included one abstention (A. Burney abstained on opening the hearing for 499 Northfield Road).",
- "cost_usd": 0.07805619999999999
+ "note": "Text is a digital extraction with no scan issues. Vote counts are tallied from the printed roll call, not printed as totals: the 499 Northfield opening vote shows A. Burney abstaining (recorded as passed 2-0-1). Two internal oddities in the text: the opening motion lists A.Reid as both mover and seconder, and the adjournment line reads 'Motion: M. Brenner to adjourn ... moved by T.Willsmer', so the mover and the seconder are as printed. No dollar figures appear anywhere in the minutes. The 'Present' line omits Jasmin Farinacci, who is recorded only as 'nothing to report'. Attendance for M. Allison, Pat Broady and Jennifer Daigle is not stated. The text does not print a 2-0-1 count; that outcome is derived from the roll.",
+ "cost_usd": 0.006613399999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, m. brenner, a. burney"
+  },
+  {
+   "name": "T. Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, m. brenner, a. burney"
+  },
+  {
+   "name": "A. Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, m. brenner, a. burney"
+  },
+  {
+   "name": "A. Burney",
+   "role": "",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, m. brenner, a. burney"
+  },
+  {
+   "name": "M. Allison",
+   "role": "Member (departed; recognized for 11 years of service)",
+   "status": "not stated",
+   "quote": "noted m. allison's departure from the board and recognized his 11 years of dedication to"
+  },
+  {
+   "name": "Jasmin Farinacci",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "j. farinacci nothing to report"
+  },
+  {
+   "name": "Jennifer Daigle",
+   "role": "Admin Asst.",
+   "status": "not stated",
+   "quote": "minutes by jennifer daigle, admin asst."
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "presenting for future parcel swap (830 Mass Ave ANR-25-10)",
+   "status": "present",
+   "quote": "ryan proctor -dillis and roy presenting for future parcel swap."
+  },
+  {
+   "name": "Justin LeClair",
+   "role": "McCarty engineering representing Mr. & Mrs. Deschamps (499 Northfield Road)",
+   "status": "present",
+   "quote": "justin leclair mccarty engineering representing mr. & mrs. deschamps 499 northfield road"
+  },
+  {
+   "name": "Pat Broady",
+   "role": "Shelter for Cats (499 Northfield Road applicant)",
+   "status": "not stated",
+   "quote": "pat broady shelter for cats looking to expand to 1800 sq ft addition to the existing building."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 830 Mass Ave ANR-25-10 applicant asked for an extension to the next meeting, 9/8, to clarify site dimensions; no vote was recorded.",
+   "quote": "applicant decides to ask for extension to next meeting, 9/8, to give clarification on site dimensions."
+  },
+  {
+   "decision": "The Master Plan Steering Committee item was moved to the next meeting's discussion agenda; no vote was recorded.",
+   "quote": "moved to next meetings discussion agenda."
+  },
+  {
+   "decision": "Meeting schedule noted: the upcoming meeting is 9/8/2025 at 6:00 P.M., with 9/22 listed and a 10/27 meeting noted as possibly not needed.",
+   "quote": "the upcoming meeting is 09-08-2025 at 6:00 p.m. 9-22-25, (10-27-25 may not need this meeting )"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "430 Mulpus Road performance guarantee funds",
+   "what_was_recorded": "Board discussed moving a performance guarantee from an old passbook account into the correct account per the Treasurer's regulations, and voted to turn the funds over to the treasurer; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "performance guarantee then turn over the funds to the town treasurer to use as the assurity deposit to create a new performance guarantee account in the correct format."
+  },
+  {
+   "topic": "Montachusett Regional Planning Commission budget",
+   "what_was_recorded": "The Clerk reported the regional commission's business was mostly budgetary; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "per clerk a. reid - nothing to update. mostly budgetary"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "none",
+   "stated_role": "",
+   "topic": "public comment at call to order",
+   "quote": "public comment- none at this time"
+  },
+  {
+   "speaker": "A. Burney",
+   "stated_role": "",
+   "topic": "scam notices tied to public hearing invoices",
+   "quote": "a. burney noted about scams linking to recent public hearing notices via invoices."
+  },
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "public comment, online and in room",
+   "quote": "no one online or in the room at this time."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order by Chair",
+   "quote": "chair m.brenner called the meeting to order",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Chair and Director's report",
+   "resolution": "noted; no action",
+   "quote": "land use director position will be posted shortly, focus on planning and economic development position.",
+   "tags": [
+    "staffing",
+    "reports",
+    "MBTA Communities",
+    "OpenGov"
+   ]
+  },
+  {
+   "topic": "830 Mass Ave ANR-25-10",
+   "resolution": "continued to 9/8 at applicant's request; no vote",
+   "quote": "830 mass ave anr-25-10",
+   "tags": [
+    "ANR",
+    "zoning",
+    "lot line",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "499 Northfield Road PBSA-25-6 public hearing",
+   "resolution": "hearing opened and closed; site plan approved with conditions",
+   "quote": "499 northfield road pbsa-25-6",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Municipal Building Design Committee vacancy",
+   "resolution": "M. Brenner nominated to the open seat",
+   "quote": "municipal building design committee -vacancy",
+   "tags": [
+    "appointments",
+    "committees"
+   ]
+  },
+  {
+   "topic": "430 Mulpus Road performance guarantee paperwork",
+   "resolution": "approved: close old account and transfer funds to treasurer",
+   "quote": "signature of paperwork- 430 mulpus road to clear up paperwork internally.",
+   "tags": [
+    "performance guarantee",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee",
+   "resolution": "moved to next meeting's discussion agenda",
+   "quote": "master plan steering committee",
+   "tags": [
+    "master plan",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; no action",
+   "quote": "economic development committee",
+   "tags": [
+    "committees",
+    "economic development",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Board discussions: abutter notices",
+   "resolution": "none to report",
+   "quote": "abutter notices- none at this time to report",
+   "tags": [
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Minutes approval, meeting of 7/14",
+   "resolution": "approved",
+   "quote": "motion to approve a. burney second: t. willsmer seconded",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting 9/8/2025 noted",
+   "quote": "the upcoming meeting is 09-08-2025 at 6:00 p.m.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment recorded beyond scam notice",
+   "quote": "no one online or in the room at this time.",
+   "tags": [
+    "public comment",
+    "scams"
+   ]
+  },
+  {
+   "topic": "Board comment / concerns",
+   "resolution": "heading only; no entries recorded",
+   "quote": "board comment / concerns",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned by unanimous voice vote",
+   "quote": "motion: m. brenner to adjourn the meeting, moved by t.willsmer",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "site plan",
+  "public hearing",
+  "499 Northfield Road",
+  "830 Mass Ave",
+  "MBTA Communities",
+  "Master Plan",
+  "performance guarantee",
+  "committee appointments",
+  "minutes approval",
+  "scam notices",
+  "stormwater"
+ ],
+ "dropped_unquoted_by_field": {}
 }

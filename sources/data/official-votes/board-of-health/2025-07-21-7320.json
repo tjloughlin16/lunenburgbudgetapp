@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2025-07-21",
  "docid": "7320",
@@ -12,63 +12,186 @@
  },
  "votes": [
   {
-   "motion": "Approve a three bedroom deed restriction",
+   "motion": "Grant a three-bedroom deed restriction on the primary residence at 833 Flatt Hill Road so a building permit can issue for a three-season porch.",
    "moved_by": "Rudd",
    "seconded_by": "Pir ro",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by rudd and second by pir ro, the approval of a three bedroom deed restrict was granted. all in favor."
+   "quote": "on motion by rudd and second by pir ro, the approval of a three bedroom deed restrict was granted."
   },
   {
-   "motion": "Require PFAS to be included in well testing",
+   "motion": "Require that PFAS also be included in the well testing for 177 Burrage Street.",
    "moved_by": "Rudd",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by rudd and second by fortin, the board voted to require pfas also be included in the well testing. all in favor."
+   "quote": "on motion by rudd and second by fortin, the board voted to require pfas also be included in the well testing."
   },
   {
-   "motion": "Rescind requirement for a cooktop",
+   "motion": "Rescind the requirement for a cooktop at 143 Island Road.",
    "moved_by": "Pirro",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "rescind requirement for a cooktop. motion by pirro and second by fortin. all in favor"
+   "quote": "motion by pirro and second by fortin. all in favor"
   },
   {
-   "motion": "Extend time to repair downstairs shower for 60 days",
+   "motion": "Extend the time to repair the downstairs shower leak at 143 Island Road by 60 days.",
    "moved_by": "Pirro",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "repair of downstairs shower. motion by pirro and second by fortin to extend time to repair for 60 days. all in favor."
+   "quote": "motion by pirro and second by fortin to extend time to repair for 60 days."
   },
   {
-   "motion": "Grant variance for reduced light in a bedroom until property is unoccupied",
+   "motion": "Grant a variance for reduced light in a bedroom at 143 Island Road until the property is unoccupied.",
    "moved_by": "Rudd",
    "seconded_by": "Pir ro",
    "outcome": "passed",
    "procedural": false,
-   "quote": "reduced light in a bedroom. motion by rudd and second by pir ro to grant variance until the property is unoccupied. all in favor."
+   "quote": "motion by rudd and second by pir ro to grant variance until the property is unoccupied."
   },
   {
-   "motion": "Grant indefinite extension for home insurance paperwork",
+   "motion": "Grant an indefinite extension for providing home insurance paperwork at 143 Island Road.",
    "moved_by": "Fortin",
    "seconded_by": "Pirro",
    "outcome": "passed",
    "procedural": false,
-   "quote": "home insurance paperwork. motion by fortin and second by pirro to grant extension indefinitely. all in favor."
+   "quote": "motion by fortin and second by pirro to grant extension indefinitely."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Rudd",
    "seconded_by": "Proctor",
    "outcome": "passed",
    "procedural": true,
-   "quote": "having no further business and on motion by rudd and second by proctor the meeting was adjourned at 6:00 pm. all in favor."
+   "quote": "on motion by rudd and second by proctor the meeting was adjourned at 6:00 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes contain 7 recorded votes, all passed unanimously. Note: the minutes contain a spelling inconsistency, with \"Pirro\" appearing both as \"Pir ro\" (with space) and \"Pirro\" (no space); quotes preserve the exact text as printed.",
- "cost_usd": 0.0815504
+ "note": "Text is a plain-text extraction with spacing artifacts ('Pir ro', 'owne r', 'complain'); names and roles are given as printed, so 'Pir ro' and 'owne r' are kept as printed. Votes are recorded only as 'All in favor' with no numeric count, so outcome is 'passed' rather than a count. The minutes print no dollar figures, so budget_items and transfers are empty. No public comment section is recorded; the anonymous complaint is a received complaint, not public comment. 'No minutes were approved' is recorded, so there is no minutes-approval vote.",
+ "cost_usd": 0.01377827,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Proctor",
+   "role": "Board member (Members Present)",
+   "status": "present",
+   "quote": "members present: matt proctor, paul fortin, lorraine rudd and nick pirro."
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member (Members Present)",
+   "status": "present",
+   "quote": "members present: matt proctor, paul fortin, lorraine rudd and nick pirro."
+  },
+  {
+   "name": "Lorraine Rudd",
+   "role": "Board member (Members Present)",
+   "status": "present",
+   "quote": "members present: matt proctor, paul fortin, lorraine rudd and nick pirro."
+  },
+  {
+   "name": "Nick Pirro",
+   "role": "Board member (Members Present)",
+   "status": "present",
+   "quote": "members present: matt proctor, paul fortin, lorraine rudd and nick pirro."
+  },
+  {
+   "name": "Cara Olejarz",
+   "role": "of Nashoba",
+   "status": "present",
+   "quote": "also present, cara olejarz of nashoba"
+  },
+  {
+   "name": "Gary Ropiak",
+   "role": "owner (representing 833 Flatt Hill Road)",
+   "status": "present",
+   "quote": "gary and susan ropiak, owners, met with the board."
+  },
+  {
+   "name": "Susan Ropiak",
+   "role": "owner (representing 833 Flatt Hill Road)",
+   "status": "present",
+   "quote": "gary and susan ropiak, owners, met with the board."
+  },
+  {
+   "name": "Marc Patacchiola",
+   "role": "owne r (143 Island Road)",
+   "status": "present",
+   "quote": "marc patacchiola, owne r, met with the board with regard to a housing order."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No action to be taken by the board on the anonymous complaint about 110 Fire Road 12 (possible unlicensed campground) at this time.",
+   "quote": "no action to be taken by the board at this time."
+  },
+  {
+   "decision": "A board member who lives on Lake Shirley will check into the possible unlicensed campground complaint at 110 Fire Road 12.",
+   "quote": "other member of the board live on lake shirley and will check into this."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "833 Flatt Hill Road: three-bedroom deed restriction for porch permit",
+   "resolution": "approved (three-bedroom deed restriction granted)",
+   "quote": "what is being requested is a 3 bedroom deed restriction be placed on the primary residence to allow them to move forward",
+   "tags": [
+    "septic",
+    "deed restriction",
+    "building permit",
+    "bedrooms"
+   ]
+  },
+  {
+   "topic": "177 Burrage Street: well testing for a prospective purchase",
+   "resolution": "approved (PFAS added to required well testing)",
+   "quote": "ms. olejarz is asking that the board require not only the standard well test be performed on the existing well",
+   "tags": [
+    "well water",
+    "PFAS",
+    "property sale",
+    "testing"
+   ]
+  },
+  {
+   "topic": "143 Island Road: housing order requests",
+   "resolution": "approved in part (cooktop rescinded; shower repair extended 60 days; light variance granted; insurance paperwork extended indefinitely)",
+   "quote": "mr. patacchiola has repaired a majority of the violations cited but is requesting the following be considered by the board:",
+   "tags": [
+    "housing order",
+    "variance",
+    "housing code",
+    "extensions"
+   ]
+  },
+  {
+   "topic": "110 Fire Road 12: anonymous complaint of unlicensed campground",
+   "resolution": "no action",
+   "quote": "an anonymous complain was received with regard to the above address.",
+   "tags": [
+    "complaint",
+    "campground",
+    "licensing"
+   ]
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "deed restriction",
+  "well water",
+  "PFAS",
+  "housing order",
+  "variance",
+  "complaint",
+  "campground",
+  "Nashoba"
+ ],
+ "dropped_unquoted_by_field": {}
 }

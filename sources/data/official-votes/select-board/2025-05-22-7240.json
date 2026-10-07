@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-05-22",
  "docid": "7240",
@@ -12,48 +12,165 @@
  },
  "votes": [
   {
-   "motion": "appoint Joseph Hurley to the Sewer Commission to serve until the next Town Election",
+   "motion": "Appoint Joseph Hurley to the Sewer Commission to serve until the next Town Election.",
    "moved_by": "Scott Dall",
    "seconded_by": "Brett Ramsden",
-   "outcome": "passed 4-0-0",
+   "outcome": "passed 2-0-0 (Sewer Commission roll call); passed 4-0-0 (Select Board roll call)",
    "procedural": false,
-   "quote": "motion by scott dall, seconded by brett ramsden to appoint joseph hurley to the sewer commission to serve until the next town election. roll call vote: dall-aye, ramsden- aye. the motion passed unanimously (2-0-0). roll call vote: moore-aye, emkey- aye, lehtinen- aye, and nuzzolo-aye. the motion passed (4-0-0)."
+   "quote": "motion by scott dall, seconded by brett ramsden to appoint joseph hurley to the sewer commission to serve until the next town election."
   },
   {
-   "motion": "appoint Daniel Proctor to the Sewer Commission to serve until the next Town Election",
+   "motion": "Appoint Daniel Proctor to the Sewer Commission to serve until the next Town Election.",
    "moved_by": "Scott Dall",
    "seconded_by": "Brett Ramsden",
-   "outcome": "passed 4-0-0",
+   "outcome": "passed 2-0-0 (Sewer Commission roll call); passed 4-0-0 (Select Board roll call)",
    "procedural": false,
-   "quote": "motion by scott dall, seconded by brett ramsden to appoint daniel proctor to the sewer commission to serve until the next town election. roll call vote: dall-aye, ramsden- aye. the motion passed unanimously (2-0-0). roll call vote: moore-aye, emkey- aye, lehtinen- aye, and nuzzolo-aye. the motion passed (4-0-0)."
+   "quote": "motion by scott dall, seconded by brett ramsden to appoint daniel proctor to the sewer commission to serve until the next town election."
   },
   {
-   "motion": "appoint Arthur Katsis to the Sewer Commission to serve until the next Town Election",
+   "motion": "Appoint Arthur Katsis to the Sewer Commission to serve until the next Town Election.",
    "moved_by": "Scott Dall",
    "seconded_by": "Brett Ramsden",
-   "outcome": "passed 4-0-0",
+   "outcome": "passed unanimously (2-0-0) (Sewer Commission roll call); passed unanimously (4-0-0) (Select Board roll call)",
    "procedural": false,
-   "quote": "motion by scott dall, seconded by brett ramsden to appoint arthur katsis to the sewer commission to serve until the next town election. roll call vote: dall-aye, ramsden- aye. the motion passed unanimously (2-0-0). roll call vote: moore-aye, emkey- aye, lehtinen- aye, and nuzzolo-aye. the motion passed unanimously (4-0-0)."
+   "quote": "motion by scott dall, seconded by brett ramsden to appoint arthur katsis to the sewer commission to serve until the next town election."
   },
   {
-   "motion": "adjourn at 7:26 PM",
+   "motion": "Adjourn the meeting at 7:26 PM.",
    "moved_by": "Member Lehtinen",
    "seconded_by": "Vice-Chair Moore",
    "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "motion by member lehtinen, seconded by vice-chair moore to adjourn at 7:26 pm. roll call vote: vice-chair moore-aye; clerk emkey-aye; member lehtinen-aye; chair nuzzolo-aye. the motion passed (4-0-0)."
+   "quote": "motion by member lehtinen, seconded by vice-chair moore to adjourn at 7:26 pm."
   },
   {
-   "motion": "approve the minutes from May 22, 2025",
+   "motion": "Approve the minutes from May 22, 2025.",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Moore",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "chair nuzzolo made the motion to approve the minutes from may 22, 2025. seconded by vice-chair moore. call for the vote: four-aye. one-abstain (mcleod). motion passed (4-0- 1)",
-   "quote_taken_from_text": true
+   "quote": "chair nuzzolo made the motion to approve the minutes from may 22, 2025. seconded by vice-chair moore."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes include four votes from the May 22, 2025 meeting (three appointments and adjournment) plus one vote from the June 17, 2025 meeting approving these minutes. For each appointment motion voted on by both the Sewer Commission and Select Board, the reported outcome is from the Select Board vote. Minutes were reviewed and approved at the subsequent meeting on June 17, 2025.",
- "cost_usd": 0.13290839999999998
+ "note": "Text is a clean digital extract, not a scan. Two internal inconsistencies: the header lists Glenn McLeod as absent, but the call-to-order roll call prints \"Glenn McLeod: Present\" (quote: \"Roll Call: Caesar Nuzzolo: Present, Amanda Moore: Present, Renee Emkey: Present, Brian Lehtinen: Present, and Glenn McLeod: Present.\"); McLeod is recorded as absent here per the header, and the minutes approval abstention also names him. The minutes approval block (June 17, 2025 review) was appended to this document and is recorded as a procedural vote at this meeting's text. The minutes print no dollar figures. Applicant introductions (Proctor, Katsis) are not labelled public comment and are not recorded as such.",
+ "cost_usd": 0.014019670000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:03 pm."
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair amanda moore, clerk renee emkey, member brian lehtinen"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: member glenn mcleod"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair, Sewer Commissioners",
+   "status": "present",
+   "quote": "vice-chair brett ramsden of the sewer commissioners called meeting of the sewer commissioners to order at 7:07 pm."
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk, Sewer Commissioners",
+   "status": "present",
+   "quote": "for the sewer commissions, brett ramsden: present and scott dall: present"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "clerk scott dall, town manager jennifer warren-dyment, and sewer business manager andrew valliere"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "clerk scott dall, town manager jennifer warren-dyment, and sewer business manager andrew valliere"
+  },
+  {
+   "name": "Daniel Proctor",
+   "role": "applicant to the Sewer Commission",
+   "status": "present",
+   "quote": "daniel proctor, joseph hurley, and arthur katsis were present on the zoom, having submitted applications to serve on the sewer commission."
+  },
+  {
+   "name": "Joseph Hurley",
+   "role": "applicant to the Sewer Commission",
+   "status": "present",
+   "quote": "daniel proctor, joseph hurley, and arthur katsis were present on the zoom, having submitted applications to serve on the sewer commission."
+  },
+  {
+   "name": "Arthur Katsis",
+   "role": "applicant to the Sewer Commission",
+   "status": "present",
+   "quote": "daniel proctor, joseph hurley, and arthur katsis were present on the zoom, having submitted applications to serve on the sewer commission."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Joint meeting with Sewer Commission: appointments to the Sewer Commission",
+   "resolution": "appointed Joseph Hurley, Daniel Proctor and Arthur Katsis (three motions, each passed)",
+   "quote": "daniel proctor, joseph hurley, and arthur katsis were present on the zoom, having submitted applications to serve on the sewer commission.",
+   "tags": [
+    "appointments",
+    "sewer commission",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:26 PM",
+   "quote": "meeting adjourned at 7:26 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Approval of the May 22, 2025 minutes",
+   "resolution": "approved 4-0-1 (McLeod abstaining)",
+   "quote": "call for the vote: four-aye. one-abstain (mcleod). motion passed (4-0- 1)",
+   "tags": [
+    "minutes approval"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "appointments",
+  "joint meeting",
+  "select board",
+  "town manager",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

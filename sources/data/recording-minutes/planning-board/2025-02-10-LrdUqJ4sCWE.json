@@ -432,5 +432,205 @@
    "at": "2026-10-06T18:09:16Z",
    "cost_usd": 0.214231
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02102025-7029",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-02-10-minutes-7029.txt",
+   "path": "sources/meetings/planning-board/2025-02-10-minutes-7029.pdf"
+  },
+  "official_sha256": "c0f18acd224d17417f2d57ded0d65474359312d9ba3335b36ff0a6432c3d6165",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all four votes, the Master Plan contract figures, the flood plain zoning draft, the Pierce Avenue step and the 19 February site visit. The main difference is that our minutes record a deferral of a traffic peer review and a Board decision to invite DPW, police and fire to the site visit. The official minutes record neither as a Board decision.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: endorse ANR for 215 Sunset Lane",
+    "ours": "Endorse the ANR (approval not required) plan for 215 Sunset Lane — passed",
+    "official": "t. willsmer moved to endorse anr for 215 sunset ln. a. reid seconded. voice vote, passed unanimously.",
+    "note": "Same item and outcome.",
+    "t": 682
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: endorse ANR for 171 Arbor Street",
+    "ours": "Endorse the ANR for 171 Arbor Street — passed",
+    "official": "t. willsmer moved to endorse anr for 171 arbor st. a. reid seconded. voice vote, passed unanimously.",
+    "note": "Same item and outcome.",
+    "t": 899
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 494 Electric Avenue hearing to 24 Feb, 6:05",
+    "ours": "Continue the public hearing for 494 Electric Avenue to the February 24th meeting at 6:05 — passed",
+    "official": "t. willsmer moved to continue the public hearing for 494 electric ave to 2025-02-24 at 6:05 p.m. a. reid seconded. voice vote, passed unanimously.",
+    "note": "Same date, time and outcome.",
+    "t": 6848
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 213 Electric Avenue hearing to 10 Mar, 6:05 p.m.",
+    "ours": "Continue the public hearing for 213 Electric Avenue storm water permit to the March 10th meeting at 6:05 p.m. — passed",
+    "official": "t. willsmer moved to continue the public hearing for 213 electric ave to 2025-03-10 at 6:05 p.m. a. reid seconded. voice vote, passed unanimously.",
+    "note": "Same date, time and outcome.",
+    "t": 8216
+   },
+   {
+    "kind": "agree",
+    "about": "Master Plan consultant contract balance",
+    "ours": "Master Plan consultant contract balance: 20K, $20,000, 2k",
+    "official": "per c. reilly there's approx. $20,000 left at around $2,000 per meeting.",
+    "note": "$20,000 left and $2,000 per meeting match.",
+    "t": 9860
+   },
+   {
+    "kind": "caption_error",
+    "about": "Municipal Building Design Committee renovation estimate",
+    "ours": "Municipal Building Design Committee cost estimate: 2.6 million, 2 million, 6 million, 133 14 million, $22 is million",
+    "official": "renovations' subtotal was approximately $22m (not including remediation).",
+    "official_reading": "$22 million",
+    "note": "The captions garbled the $22 million renovation subtotal; the other fragments (2.6 million, 14 million and so on) do not appear in the official minutes and are unresolved.",
+    "t": 10431
+   },
+   {
+    "kind": "agree",
+    "about": "Capital planning cost estimates off by 100% or more",
+    "ours": "Capital planning cost estimates: 100% or more",
+    "official": "have had multiple cases of received estimates being off by a factor of 100% or more",
+    "note": "Same claim and figure.",
+    "t": 10596
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "National flood insurance in Lunenburg",
+    "ours": "National flood insurance in Lunenburg: 19 policies, $55 million",
+    "official": "",
+    "note": "The official minutes give no policy count or coverage figure. Check the recording at this timestamp; the numbers may be misheard.",
+    "t": 2463
+   },
+   {
+    "kind": "agree",
+    "about": "Draft flood plain zoning amendment in about two weeks, with DCR",
+    "ours": "Planner to draft the flood plain zoning amendment in about two weeks, for DCR review, ahead of the March 17 warrant deadline.",
+    "official": "c. reilly will write draft zoning amendment based on the model bylaw & map info, review it with k. paight to make sure it conforms with dcr, have it available for board in approx. 2 weeks.",
+    "note": "Same task, owner and timeline. The March 17 warrant deadline appears only in ours.",
+    "t": 2418
+   },
+   {
+    "kind": "agree",
+    "about": "Site visit at 494 Electric Avenue, 19 Feb 5:00 p.m.",
+    "ours": "Site visit set for Wednesday the 19th at 5:00 p.m.",
+    "official": "after discussing scheduling options, the board scheduled a site visit for 2025-02-19 at 5:00 p.m.",
+    "note": "Same date and time.",
+    "t": 7392
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who is invited to the site visit",
+    "ours": "Board will hold a posted site visit at 494 Electric Avenue, inviting DPW, police and fire.",
+    "official": "dave macdonald (155 island rd) - recommend inviting bill bernard (department of public works) to site visit due to his engineering background.",
+    "note": "Ours records inviting DPW, police and fire as a Board decision. The official minutes record only a public commenter's recommendation (the Police/Fire part is in the public comment summary). Check the recording to see whether the Board agreed to invite them.",
+    "t": 5182
+   },
+   {
+    "kind": "agree",
+    "about": "Pierce Avenue ownership: chair to see Town Counsel",
+    "ours": "Chair to meet Town Counsel at office hours tomorrow about whether Pierce Avenue is town-owned, and share any facts obtained.",
+    "official": "m. brenner will discuss with town counsel at his office hours on feb 11th.",
+    "note": "Same action; 'tomorrow' is 11 Feb for a 10 Feb meeting.",
+    "t": 5055
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Traffic peer review deferred until after site visit",
+    "ours": "Decision on a traffic peer review deferred until after the site visit.",
+    "official": "prefers applicants electing to spend their own money vs. needing to for board requirements.",
+    "note": "The official minutes record no deferral decision on a traffic peer review, only G. McLeod's stated preference about who pays. Check the recording to see whether a deferral was actually agreed.",
+    "t": 7540
+   },
+   {
+    "kind": "agree",
+    "about": "Updated standard conditions and deed-recorded maintenance language",
+    "ours": "Planner to draft updated standard conditions for common driveways, storm water and site plan review, and add deed-recording of maintenance language to the Goodrich and Sunny Hill decisions before signing.",
+    "official": "c. reilly will draft updated sets of scs for (1) site plan approval, (2) stormwater management permits, and (3) common driveway special permits for the board to review.",
+    "note": "The drafting task matches. The Goodrich/Sunny Hill deferral pending deed-recorded maintenance language is in the official minutes as a separate item (the board deferred endorsement of the decisions).",
+    "t": 8600
+   },
+   {
+    "kind": "agree",
+    "about": "Master Plan committee attendance report in two weeks",
+    "ours": "Master Plan liaison to report in two weeks on which groups are engaged, to support a decision on trimming committee membership.",
+    "official": "for next meeting, m. brenner asked t. willsmer to (1) list which groups had and hadn't been attending",
+    "note": "Same task assigned to the Master Plan liaison (Tim = Timothy Willsmer).",
+    "t": 9697
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of earlier minutes",
+    "ours": "",
+    "official": "the board reviewed and approved minutes for 2024-12-09, 2025-02-13, and 2025-01-27.",
+    "note": "Ours does not record minutes approval, which may be treated as procedural. The official text lists 2025-02-13, which is after this meeting, so the date is probably an error in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicants' presenters and consultants",
+    "ours": "",
+    "official": "greg roy (dillis and roy) presented for applicants david & brenda pajari.",
+    "note": "The official minutes name presenters for Pajari, PSG Realty, D&A Lunenburg and Red Bird Construction (Greg Roy, Brian Marchetti, Chris Anderson, Daniel Sheehan) and attorney Jeff Avini. None are in our attendee list."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Glenn McLeod",
+    "ours": "Mr McLoud (member)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod",
+    "official_reading": "Glenn McLeod",
+    "note": "The captions misspelled the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Katie Paight (DCR)",
+    "ours": "Katie pagee / Katie Pate (DCR) (presenter)",
+    "official": "katie paight from the department of conservation and recreation (dcr) will join remotely to answer questions about state-mandated floodplain map updates.",
+    "official_reading": "Katie Paight",
+    "note": "The captions misheard the surname; she joined remotely."
+   },
+   {
+    "kind": "agree",
+    "about": "Chair, Allison, Reilly and Willsmer present",
+    "ours": "Mr chair (chair); Mr Allison (member); Chris (planning director/staff); Tim (member (Master Plan liaison))",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod",
+    "note": "The chair is Matthew Brenner, Allison is Matthew Allison, Chris is Christopher Reilly (Land Use Director) and Tim is Timothy Willsmer (vice chair)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Amanda Reid, clerk",
+    "ours": "",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod",
+    "note": "Reid is present in the official minutes and seconded every motion. Our attendee list does not name her."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Jerry (staff/member)",
+    "ours": "Jerry (staff/member)",
+    "official": "",
+    "note": "No Jerry appears in the official minutes. This may be a misheard name or the minutes taker (Logan O'Connell); check the recording."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:34:02Z",
+   "cost_usd": 0.272113
+  }
  }
 }

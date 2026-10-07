@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2025-02-19",
  "docid": "7057",
@@ -12,33 +12,32 @@
  },
  "votes": [
   {
-   "motion": "conditionally approve LYSA to use the outfield of the 90 foot diamond or any other suitable field",
+   "motion": "Approve LYSA's conditional use of the outfield of the 90 foot diamond or any other suitable field.",
    "moved_by": "C. Sullivan",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "c. sullivan made a motion conditionally to approve lysa to use the outﬁeld of the 90 foot diamond or any other ﬁeld that is suitable. c. shapiro seconded. the chair called for a vote. all in favor, motion carried (4-0). a",
+   "quote": "c. sullivan made a motion conditionally to approve lysa to use the outﬁeld of the 90 foot diamond or any other ﬁeld that is suitable. c. shapiro seconded. ",
    "quote_taken_from_text": true
   },
   {
-   "motion": "approve the $40,000 budget for the revolving fund",
+   "motion": "Approve the $40,000 budget for the revolving fund.",
    "moved_by": "C. Sullivan",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "c. sullivan made a motion to approve the $40,000 budget for the revolving fund. c. shapiro seconded. the chair called for a vote. all in favor, motion carried (4-0)."
+   "quote": "c. sullivan made a motion to approve the $40,000 budget for the revolving fund. c. shapiro seconded."
   },
   {
-   "motion": "approve the design and do the construction oversight for phases 1, 2A and 2B for the Marshall Park improvements with construction cost and general conditions cost of $13,080,797 plus the additional Skanska expenses that may need to be added",
+   "motion": "Approve the design and construction oversight for Marshall Park phases 1, 2A and 2B, with construction and general conditions cost of $13,080,797 plus additional Skanska expenses.",
    "moved_by": "C. Shapiro",
    "seconded_by": "T. Lawless",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "c. shapiro made a motion to vote to approve the design and do the construction oversight of the construction for phases 1, 2a and 2b for the marshall park improvements with the understanding that the construction cost and general conditions cost would be $13,080,797 plus the additional skanska expenses that may need to be added. t. lawless seconded. v ote taken. all in favor (4-0)",
-   "quote_taken_from_text": true
+   "quote": "c. shapiro made a motion to vote to approve the design and do the construction oversight of the construction for phases 1, 2a and 2b for the marshall park improvements"
   },
   {
-   "motion": "approve the RDLA invoice for the period from 1/1-1/31/2025 in the amount of $29,737 invoice # 24555-05",
+   "motion": "Approve RDLA invoice #24555-05 for 1/1-1/31/2025 in the amount of $29,737.",
    "moved_by": "C. Sullivan",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 4-0",
@@ -46,7 +45,7 @@
    "quote": "c. sullivan made a motion to approve. c. shapiro seconded. the chair called for a vote. all in favor, motion carried (4-0)."
   },
   {
-   "motion": "approve the minutes for November 6, 2024",
+   "motion": "Approve the minutes for November 6, 2024.",
    "moved_by": "T. Lawless",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
@@ -54,7 +53,7 @@
    "quote": "t. lawless made a motion to approve the minutes for november 6, 2024. c. sullivan seconded. the chair called for a vote. all in favor, motion carried (4-0)."
   },
   {
-   "motion": "approve the minutes for December 18, 2024",
+   "motion": "Approve the minutes for December 18, 2024.",
    "moved_by": "C. Shapiro",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
@@ -63,6 +62,242 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded were unanimous 4-0. Members present: Anita Scheipers, Tim Lawless, Christopher Sullivan, and Colleen Shapiro. Karin Menard was absent. Meeting adjourned at 8:15 PM.",
- "cost_usd": 0.0841624
+ "note": "Plain-text extraction of minutes with no scan issues. Votes are all recorded as 'All in favor' with counts (4-0); no roll call. No public comment section appears and no member of the public is recorded speaking; K. Menard's letter was read into the record by C. Sullivan, which is correspondence, not public comment. The adjournment at 8:15 pm has no recorded motion. The name 'R. Dunnis' appears once and is recorded as printed; it may refer to R. Dunetz but the minutes do not say so. The Recreation Director updates were sent by A. Clement and read by the chair; A. Clement was not recorded as present. Page footers read 'Page of 41' through 'Page of 44' inconsistently. The Marshall Park motion was 'V ote taken' with a split word in the source; the count (4-0) is as printed.",
+ "cost_usd": 0.01792987,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, tim lawless, christopher sullivan and, colleen shapiro"
+  },
+  {
+   "name": "Tim Lawless",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, tim lawless, christopher sullivan and, colleen shapiro"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member (also printed as C. Sullivan / Chris Sullivan)",
+   "status": "present",
+   "quote": "members present: anita scheipers, tim lawless, christopher sullivan and, colleen shapiro"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, tim lawless, christopher sullivan and, colleen shapiro"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: karin menard additional attendees: chris ruth"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Additional Attendee",
+   "status": "present",
+   "quote": "additional attendees: chris ruth"
+  },
+  {
+   "name": "R. Dunetz",
+   "role": "from RDLA (presenter on Marshall Park design and cost estimates)",
+   "status": "present",
+   "quote": "r. dunetz from rdla explained the two cost estimators were 30% different."
+  },
+  {
+   "name": "R. Dunnis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "r. dunnis stated the cost for the bathroom is approximately $250,000."
+  },
+  {
+   "name": "A. Clement",
+   "role": "Recreation Director (per agenda heading 'RecreationDirector Updates')",
+   "status": "not stated",
+   "quote": "a. scheipers read the updates that were sent along from a. clement."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary (minutes signatory)",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission has no interest in using the property at 100 Townsend Harbor Rd for any potential use; the Open Space Committee's Right of First Refusal matter was discussed, with no vote recorded.",
+   "quote": "the commission does not have an interest at this time."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Revolving fund value",
+   "what_was_recorded": "The value of the revolving fund was reported, and the finance director was seeking a commission vote on the amount.",
+   "figures_as_printed": [
+    "forty thousand dollars"
+   ],
+   "quote": "c. ruth indicated the value of the revolving fund is forty thousand dollars"
+  },
+  {
+   "topic": "Revolving fund budget approval",
+   "what_was_recorded": "The commission voted to approve a $40,000 budget for the revolving fund.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "c. sullivan made a motion to approve the $40,000 budget for the revolving fund. c. shapiro seconded."
+  },
+  {
+   "topic": "Marshall Park cost estimators",
+   "what_was_recorded": "RDLA said the two cost estimators' figures were 30% apart and were reconciled to a 7% difference.",
+   "figures_as_printed": [
+    "30%",
+    "7%"
+   ],
+   "quote": "r. dunetz from rdla explained the two cost estimators were 30% different."
+  },
+  {
+   "topic": "Marshall Park restroom elimination",
+   "what_was_recorded": "Eliminating a restroom was raised as a possible cost saving; a Board of Health fund for septic repair or sewer connection was mentioned.",
+   "figures_as_printed": [],
+   "quote": "r. dunetz indicated possibly eliminating a restroom for cost savings."
+  },
+  {
+   "topic": "Marshall Park contingency",
+   "what_was_recorded": "The design carries a contingency.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "they have a 10% contingency."
+  },
+  {
+   "topic": "Marshall Park phases 1 and 2 estimate",
+   "what_was_recorded": "RDLA stated phases 1 and 2 would be around 13 million dollars in construction-related cost.",
+   "figures_as_printed": [
+    "13 million dollars"
+   ],
+   "quote": "r. dunetz stated that phase 1 and 2 would be around 13 million dollars."
+  },
+  {
+   "topic": "Marshall Park bathroom cost",
+   "what_was_recorded": "The cost of the bathroom was given as approximately $250,000.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "r. dunnis stated the cost for the bathroom is approximately $250,000."
+  },
+  {
+   "topic": "Board of Health septic or sewer funds",
+   "what_was_recorded": "Board of Health money was noted as available to repair the septic or connect to town sewer; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "c. ruth noted there is board of health money available to repair the septic or to connect to town sewer."
+  },
+  {
+   "topic": "Marshall Park construction cost approval",
+   "what_was_recorded": "The approved motion set construction and general conditions cost at $13,080,797, plus additional Skanska expenses that may be added.",
+   "figures_as_printed": [
+    "$13,080,797"
+   ],
+   "quote": "with the understanding that the construction cost and general conditions cost would be $13,080,797 plus the additional skanska expenses"
+  },
+  {
+   "topic": "RDLA invoice approval",
+   "what_was_recorded": "An RDLA invoice for January 2025 was presented and approved; OPM (Scanska) recommended approval.",
+   "figures_as_printed": [
+    "$29,737"
+   ],
+   "quote": "a. scheipers presented an invoice for approval from rdla for the period from 1/1-1/31/2025 in the amount of $29,737 invoice # 24555-05."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities Director Updates",
+   "resolution": "LYSA outfield use approved conditionally 4-0; revolving fund budget of $40,000 approved 4-0",
+   "quote": "first item on the agenda, facilities director updates",
+   "tags": [
+    "facilities",
+    "LYSA",
+    "field use",
+    "revolving fund"
+   ]
+  },
+  {
+   "topic": "Recreation Director Updates",
+   "resolution": "no action; updates read into the record",
+   "quote": "next item on the agenda, recreationdirector updates",
+   "tags": [
+    "recreation programs",
+    "vendor fair",
+    "beach staffing"
+   ]
+  },
+  {
+   "topic": "Marshall Park design and cost review",
+   "resolution": "design and construction oversight for phases 1, 2A and 2B approved 4-0",
+   "quote": "a. scheipers stated the commission needs to decide tonight on the 60% design and what phase or phases does",
+   "tags": [
+    "Marshall Park",
+    "design",
+    "construction cost",
+    "town meeting warrant"
+   ]
+  },
+  {
+   "topic": "Invoices to be approved",
+   "resolution": "RDLA invoice #24555-05 approved 4-0",
+   "quote": "next item on the agenda, invoices to be approved",
+   "tags": [
+    "invoices",
+    "RDLA",
+    "Scanska"
+   ]
+  },
+  {
+   "topic": "Chair Updates",
+   "resolution": "no action; election term error noted and chair position to go on ballot",
+   "quote": "a. scheipers indicated there was a mistake in the election cycle.",
+   "tags": [
+    "elections",
+    "chair"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "minutes of November 6, 2024 and December 18, 2024 approved 4-0 each",
+   "quote": "next item on the agenda, approval of minutes",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Commission Updates",
+   "resolution": "no action; commission has no interest in 100 Townsend Harbor Rd",
+   "quote": "next item on the agenda, commission updates",
+   "tags": [
+    "open space",
+    "right of first refusal",
+    "Townsend Harbor Rd"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Marshall Park",
+  "design and construction",
+  "construction cost",
+  "LYSA field use",
+  "revolving fund",
+  "recreation programs",
+  "minutes approval",
+  "elections",
+  "open space",
+  "right of first refusal"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2025-03-03",
  "docid": "7078",
@@ -12,15 +12,164 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve the minutes of the February 3, 2025 meeting.",
+   "moved_by": "Matt Snyder",
+   "seconded_by": "David Blatt",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "matt snyder m ade a motion to approve the minutes from the following meeting: february 3 , 202 5 . david blatt seconded. a pproved by roll call vote ."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matt Snyder",
    "seconded_by": "Kim Duffy",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "matt snyder made a motion to adjourn the meeting; kim duffy seconded. approved by roll call vote to adjourn."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.059902399999999995
+ "dropped_unquoted": 0,
+ "note": "Minutes print roll-call approvals without a tally, so outcomes are recorded as passed with no count. No dollar figure appears anywhere in the text; the budget items record money discussed without amounts. Public comment reads \"None\". David Passios and Chris Holden appear in the header but are not listed as present or absent. Next-meeting line reads \"TBD - April 7, 2025\", so the date is not confirmed. Text is an extracted PDF with odd spacing; quotes collapse runs of spaces to single spaces.",
+ "cost_usd": 0.01346347,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "members present (remote) : david blatt , matt snyder, kim duffy"
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "Member",
+   "status": "remote",
+   "quote": "members present (remote) : david blatt , matt snyder, kim duffy"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "members present (remote) : david blatt , matt snyder, kim duffy"
+  },
+  {
+   "name": "David Passios",
+   "role": "Vice Chair",
+   "status": "not stated",
+   "quote": "david passios , vice chair"
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "chris holden , member"
+  },
+  {
+   "name": "Matt O’Keefe",
+   "role": "representing Unitil",
+   "status": "present",
+   "quote": "matt o 'keefe will continue to contact susan gilson for schools"
+  },
+  {
+   "name": "Kelly Brown",
+   "role": "DOER Green Communities Representative",
+   "status": "present",
+   "quote": "kelly brown (doer green communities representative)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Matt O’Keefe to send out links for the online energy audit scheduling tool (residential virtual audit; commercial virtual and in-person).",
+   "quote": "matt to send out links. residential virtual audit; commercial both virtual and in-person."
+  },
+  {
+   "decision": "Matt O’Keefe will continue to contact Susan Gilson for schools; the Primary school next step needs a gas account from National Grid.",
+   "quote": "matt o 'keefe will continue to contact susan gilson for schools but needs gas"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Energy Efficiency Plan funding",
+   "what_was_recorded": "Unitil reported the Energy Efficiency Plan funding was approved for an additional 3 years with no changes; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "energy efficiency plan funding approved for additional 3 years ; no changes."
+  },
+  {
+   "topic": "Styrofoam program grant",
+   "what_was_recorded": "A grant may have been found for the dumpster in the Styrofoam program; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "grant may have been found for the dumpster."
+  },
+  {
+   "topic": "Green Communities grant award",
+   "what_was_recorded": "Kelly Brown said the Green Communities grant notification award result was coming in the next couple of days; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "g reen communities g rant notification award result coming next couple of days.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve pending meeting minutes",
+   "resolution": "approved (February 3, 2025 minutes)",
+   "quote": "review and approve any pending meeting minutes",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "New programs that could be available in 2025",
+   "resolution": "no action; informational discussion",
+   "quote": "new programs that could be available in 2025",
+   "tags": [
+    "energy efficiency",
+    "Unitil",
+    "MSBA",
+    "grants",
+    "school buildings",
+    "audits"
+   ]
+  },
+  {
+   "topic": "Styrofoam program update",
+   "resolution": "no action; informational",
+   "quote": "styrofoam program update grant may have been found for the dumpster.",
+   "tags": [
+    "recycling",
+    "styrofoam",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Committee make-up",
+   "resolution": "no action (None)",
+   "quote": "committee make-up none",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Timeline for next meeting",
+   "resolution": "TBD; next meeting April 7, 2025 noted",
+   "quote": "timeline for next meeting tbd - april 7 , 202 5.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "Green Communities",
+  "energy efficiency",
+  "Unitil",
+  "grants",
+  "MSBA",
+  "school buildings",
+  "audits",
+  "styrofoam recycling",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

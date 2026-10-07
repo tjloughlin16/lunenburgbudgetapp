@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-03-25",
  "docid": "7123",
@@ -12,23 +12,230 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes for 2/25/25 and 3/11/25",
-   "moved_by": "Scott Dall",
-   "seconded_by": "Joe Hurley",
-   "outcome": "passed 3-0",
+   "motion": "Approve the minutes of 2/25/25 and 3/11/25.",
+   "moved_by": "Scott D.",
+   "seconded_by": "Joe H.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: scott d. second: joe h. to approve the minutes for 2/25/25 and 3/11/25. roll call vote: scott-aye, joe-aye and brett-aye"
+   "quote": "to approve the minutes for 2/25/25 and 3/11/25. roll call vote: scott-aye, joe-aye and brett-aye"
   },
   {
-   "motion": "Adjourn at 7:03pm",
-   "moved_by": "Scott Dall",
-   "seconded_by": "Joe Hurley",
-   "outcome": "passed 3-0",
+   "motion": "Adjourn the meeting at 7:03pm.",
+   "moved_by": "Scott D.",
+   "seconded_by": "Joe H.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: scott d. second: joe h. to adjourn at 7:03pm. roll call vote: joe-aye, scott-aye and brett-aye."
+   "quote": "to adjourn at 7:03pm. roll call vote: joe-aye, scott-aye and brett-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded, both procedural. Note: Discussion of online bill payment feature explicitly states \"decided to table the discussion\" — no vote taken on that item.",
- "cost_usd": 0.0665864
+ "note": "Text is clean extracted minutes, not a scan. Two recorded votes, both procedural (minutes approval and adjournment), each with a roll call printed as aye for all three voting members. No substantive vote was recorded: bill payment was tabled without a vote and the sewer expansion and easement matters were discussed without one. No dollar figures are printed anywhere in the text, so figures_as_printed is empty throughout. The Zoom format is stated for the meeting as a whole; the minutes do not say individually whether each attendee joined remotely, so status 'remote' for the members and staff is an inference from that. The first public comment heading reads 'none'; the one speaker recorded is Scott Dall, a member, under the second public comment heading. Some spellings are kept as printed, including 'Bett' and 'NDPES'.",
+ "cost_usd": 0.019928340000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "remote",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "dpw director- bill bernard, sewer business manager: andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "remote",
+   "quote": "dpw director- bill bernard, sewer business manager: andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "remote",
+   "quote": "dpw director- bill bernard, sewer business manager: andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Eli Torres",
+   "status": "absent",
+   "quote": "absent: eli torres"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Table the bill payment online discussion until Andrew has more details; no vote taken.",
+   "quote": "the commission discussed doing a vote but decided to table the discussion until andrew gets more details."
+  },
+  {
+   "decision": "Andrew to put in the request for the bank to turn on online bill payment.",
+   "quote": "andrew will put the request in to have the bank turn it on."
+  },
+  {
+   "decision": "Bill to ask Town Counsel for clarification on the sewer expansion regulations.",
+   "quote": "bill will ask for clarification on the regulations from town counsel."
+  },
+  {
+   "decision": "Bill to run the commission vacancy letter by the town manager, who may add other committee openings to a combined letter.",
+   "quote": "bill will run it by the town manager, who may want to add other committee openings on a combined letter which would cut the cost of stamps for sewer."
+  },
+  {
+   "decision": "Bill to dig into the Comprehensive Wastewater Management Plan service area map to answer the Commission's questions.",
+   "quote": "he will dig into it to find answers to their questions."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Wright-Pierce NPDES requirements",
+   "what_was_recorded": "Scope being narrowed with Wright-Pierce; a new cost is expected at the next meeting. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "bill reported he has gone back and forth with wright-pierce to narrow the scope and should have a new cost for the next meeting."
+  },
+  {
+   "topic": "Sewer expansion request: developer costs",
+   "what_was_recorded": "The developer would pay for engineering and all privilege fees. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "he would need to pay for engineering and all the privilege fees."
+  },
+  {
+   "topic": "Commission vacancy letter postage",
+   "what_was_recorded": "A combined letter with other committee openings would cut postage cost for Sewer. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "which would cut the cost of stamps for sewer."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Scott Dall",
+   "stated_role": "Clerk",
+   "topic": "Town Hall Saturday hours for signatures and dog licenses",
+   "quote": "public comment - scott noted the town hall will be open on saturday for people collecting signatures to be added to the ballot and for picking up dog licenses."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Commission vacancies",
+   "resolution": "discussed; vacancy letter to be revised and run by the town manager",
+   "quote": "commission vacancies - brett noted they will be losing joe soon and need to bring in new members.",
+   "tags": [
+    "vacancies",
+    "commission membership"
+   ]
+  },
+  {
+   "topic": "Zoom/remote Open Meeting Law legislation",
+   "resolution": "reported; no action",
+   "quote": "andrew reported the senate passed this and it is up to the governor now.",
+   "tags": [
+    "open meeting law",
+    "remote meetings"
+   ]
+  },
+  {
+   "topic": "Minutes of 2/25/25 and 3/11/25",
+   "resolution": "approved",
+   "quote": "to approve the minutes for 2/25/25 and 3/11/25.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Sewer expansion request outside service area and easement connection",
+   "resolution": "continued; Town Counsel clarification requested; no vote",
+   "quote": "bill reported that a developer came in who had bought a 10 acre property, with a tiny piece of land in the sewer service area.",
+   "tags": [
+    "sewer expansion",
+    "service area",
+    "easements",
+    "development",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Wright-Pierce NPDES requirements",
+   "resolution": "continued; new cost expected next meeting",
+   "quote": "bill reported he has gone back and forth with wright-pierce to narrow the scope and should have a new cost for the next meeting.",
+   "tags": [
+    "NPDES",
+    "Wright-Pierce",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Bill payment online feature",
+   "resolution": "tabled pending more details",
+   "quote": "the commission discussed doing a vote but decided to table the discussion until andrew gets more details.",
+   "tags": [
+    "bill payment",
+    "online payment",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Assistant to the Business Manager position",
+   "resolution": "reported; interviews held and scheduled",
+   "quote": "they reached out to 4 of them, heard back from 3 and interviewed 1 today.",
+   "tags": [
+    "staffing",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Manhole Repair IFB",
+   "resolution": "reported; pre-construction meeting set",
+   "quote": "bill has set up a pre-construction meeting for next week.",
+   "tags": [
+    "manhole repair",
+    "construction",
+    "bid"
+   ]
+  },
+  {
+   "topic": "Commissioner departure notice",
+   "resolution": "reported; no action",
+   "quote": "joe replied he will be moving sometime over the summer, around the end of july.",
+   "tags": [
+    "membership",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled sewer commission meetings",
+   "resolution": "listed",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "commission vacancies",
+  "sewer service area",
+  "sewer expansion",
+  "easements",
+  "Wright-Pierce",
+  "NPDES",
+  "bill payment",
+  "staffing",
+  "manhole repair",
+  "open meeting law",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

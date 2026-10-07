@@ -374,5 +374,257 @@
    "at": "2026-10-06T18:13:35Z",
    "cost_usd": 0.214423
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01272025-6984",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-01-27-minutes-6984.txt",
+   "path": "sources/meetings/planning-board/2025-01-27-minutes-6984.pdf"
+  },
+  "official_sha256": "c02769bee26f3d38c4ed7f0871568b93dbab3d6fe17fe0754a9cfbef444af158",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the main votes (ANR, both waivers, both 558/560 permits, the 255 Sunny Hill stormwater permit, the Master Plan Steering Committee restructure) and on the ADU and 100 Townsend Harbor Rd decisions. Ours records three votes the official minutes omit (closing the 558/560 hearings, closing the 255 Sunny Hill hearing, continuing 494 Electric Avenue to February 10), so check the recording and ask the town whether the official minutes are incomplete there.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 5,
+   "discrepancy": 6,
+   "only_in_ours": 2,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "ANR endorsement, 763 Mass Ave",
+    "ours": "Endorse the ANR for 763 Massachusetts Avenue — passed 5-0 by roll call",
+    "official": "t. willsmer moved to endorse the anr for 763 mass ave.",
+    "note": "Same motion and outcome; the official minutes give no tally.",
+    "t": 599
+   },
+   {
+    "kind": "agree",
+    "about": "Turning radius waiver, Goodridge/Goodrich St",
+    "ours": "Approve waiver for turning radius as presented on plan of record, 558/560 Goodridge Street — passed 5-0 by roll call",
+    "official": "t. willsmer moved to waive the turning radius requirement ( 250-6.4(7)(c)[4]) as-presented on the approved plans",
+    "note": "Same waiver and outcome.",
+    "t": 1504
+   },
+   {
+    "kind": "agree",
+    "about": "Turnaround waiver, common driveway",
+    "ours": "Approve waiver for required turnaround on the common driveway as presented on plan of record — passed 5-0 by roll call",
+    "official": "t. willsmer moved to waive the turnaround requirement (250 -6.4(7)(c)[7]) as-presented in the plan of record.",
+    "note": "Same waiver and outcome.",
+    "t": 1567
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to close public hearings, 558/560 Goodridge St",
+    "ours": "Close the public hearings for 558 and 560 Goodridge Street (stormwater permit and common driveway special permit) — passed 5-0 by roll call",
+    "official": "",
+    "note": "The official minutes record no vote to close these hearings; check the recording and ask the town whether the minutes omit it.",
+    "t": 1734
+   },
+   {
+    "kind": "agree",
+    "about": "Stormwater permit, 558/560 Goodridge St",
+    "ours": "Approve stormwater management permit for 558 and 560 Goodridge Street with standard conditions — passed 5-0 by roll call",
+    "official": "t. willsmer moved to approve the stormwater management permit for 558 & 560 goodrich st with standard conditions.",
+    "note": "Same motion and outcome.",
+    "t": 2100
+   },
+   {
+    "kind": "agree",
+    "about": "Common driveway special permit, 558/560 Goodridge St",
+    "ours": "Approve common driveway special permit with standard conditions and a special condition for recorded maintenance — passed 5-0 by roll call",
+    "official": "t. willsmer moved to approve the special permit for common driveway at 558 & 560 goodrich st with standard conditions and a special condition for maintenance",
+    "note": "Same motion and outcome.",
+    "t": 2162
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to close public hearing, 255 Sunny Hill Rd",
+    "ours": "Close the public hearing for 255 Sunny Hill Road — passed; four voices heard in the roll call plus the chair",
+    "official": "",
+    "note": "The official minutes record no vote to close this hearing; ours is also unclear on the tally, so check the recording.",
+    "t": 2993
+   },
+   {
+    "kind": "caption_error",
+    "about": "Engineering firm in the 255 Sunny Hill Rd stormwater condition",
+    "ours": "Approve stormwater permit for 255 Sunny Hill Road with standard conditions and a condition that it proceed once Graves Engineering is satisfied with the responses — passed 5-0 by roll call",
+    "official": "t. willsmer moved to approve the stormwater management permit for 255 sunny hill rd with standard conditions, pending gei's upcoming response.",
+    "note": "Same permit, outcome and condition; the reviewer is almost certainly GEI, misheard as Graves Engineering.",
+    "official_reading": "GEI",
+    "t": 3057
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Continuance of 494 Electric Avenue hearing",
+    "ours": "Continue public hearing for 494 Electric Avenue to February 10 at 6:05 p.m. — passed 5-0 by roll call",
+    "official": "",
+    "note": "The official minutes contain no continuance vote for 494 Electric Ave; check the recording and ask the town.",
+    "t": 3160
+   },
+   {
+    "kind": "agree",
+    "about": "Master Plan Steering Committee restructure",
+    "ours": "Restructure the Master Plan Steering Committee by eliminating the Finance Committee seat, Parks Commission seat and the at-large seat — passed 5-0 by roll call",
+    "official": "t. willsmer moved to restructure the master plan steering committee by eliminating the finance committee seat, the parks commission seat, and the at -large seat formerly held by joeci gilchrest.",
+    "note": "Same motion and outcome.",
+    "t": 7383
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Master plan consultant contract figure",
+    "ours": "Master plan consultant contract: $150, $150,000",
+    "official": "",
+    "note": "The official minutes print no dollar figure for the consultant contract; the caption is also garbled, so verify against the recording.",
+    "t": 6697
+   },
+   {
+    "kind": "agree",
+    "about": "ADU bylaw feedback",
+    "ours": "Board members will send ADU bylaw feedback to the land use director within a week for incorporation into a draft for the next meeting.",
+    "official": "the board will submit feedback on the draft by end-of-week.",
+    "note": "Same action; minor wording difference.",
+    "t": 5532
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DCR speaker on floodplain bylaw",
+    "ours": "The land use director will try to schedule a DCR representative, and possibly a regional planning representative, to speak on the floodplain bylaw at the February 10 meeting.",
+    "official": "",
+    "note": "The official minutes do not mention the floodplain bylaw discussion or the DCR speaker.",
+    "t": 6056
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who informs the committees whose seats were cut",
+    "ours": "The acting chair of the steering committee will contact the committees whose seats were cut and invite them to the next meeting, and the town clerk will be notified of the change.",
+    "official": "m. brenner asked t. willsmer to inform the affected committees and invite them to the next meeting to offer involvement.",
+    "note": "Ours assigns this to the steering committee's acting chair and adds notifying the town clerk; the official has Brenner asking Willsmer. Check who was assigned.",
+    "t": 7426
+   },
+   {
+    "kind": "agree",
+    "about": "100 Townsend Harbor Rd: wait for other bodies",
+    "ours": "Board will wait for the Open Space Committee and Agricultural Commission input before taking a position on 100 Townsend Harbor Road.",
+    "official": "the board discussed and agreed to wait for feedback from the open space committe and agricultural commission.",
+    "note": "Same decision.",
+    "t": 9081
+   },
+   {
+    "kind": "only_in_official",
+    "about": "No planning-related use for 100 Townsend Harbor Rd",
+    "ours": "",
+    "official": "the board found no planning-related use for the property.",
+    "note": "The official records a finding that ours does not."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "January 13 minutes approval pushed; reason",
+    "ours": "January 13 minutes approval pushed to the next meeting because the minutes were not in the file; next meetings are February 10 and February 24.",
+    "official": "pushed to next meeting due to technical difficulty.",
+    "note": "Both push approval, but the reasons differ (minutes missing from the file versus technical difficulty); check the recording.",
+    "t": 9402
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Endorsement of decisions and signature",
+    "ours": "",
+    "official": "the board members endorsed each of the decisions. a. reid would come the next day to sign (attending remotely).",
+    "note": "Appears only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Storm Water Task Force report",
+    "ours": "",
+    "official": "met 01-23, reviewed info for fee structures. announcement planned for next town meeting before advertising & public-input process begins.",
+    "note": "A report with no dollar figures that does not appear in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Economic Development Committee Meet and Greet funding",
+    "ours": "",
+    "official": "discussed adding future town funding for the meet and greet to reduce reliance on attending businesses.",
+    "note": "Discussion with no dollar figures that does not appear in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by Dave Passios",
+    "ours": "",
+    "official": "dave passios (formerly 56 whiting st) recommended the town use it as a community garden via the agricultural commission",
+    "note": "Public comment and the speaker appear only in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Glenn McLeod",
+    "ours": "Mr McLoud (member)",
+    "official": "amanda reid (clerk , remote), matthew allison, glenn mcleod.",
+    "note": "McLoud is a misspelling of McLeod; ours also lists 'Glenn (member)', likely the same person twice.",
+    "official_reading": "Glenn McLeod"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Timothy Willsmer",
+    "ours": "Mr Wilmer (member)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair),",
+    "note": "Wilmer is a misheard Willsmer (the vice chair).",
+    "official_reading": "Timothy Willsmer"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Amanda Reid",
+    "ours": "Ms Reed (member)",
+    "official": "amanda reid (clerk , remote), matthew allison, glenn mcleod.",
+    "note": "Reed is a misspelling of Reid; the official shows her attending remotely.",
+    "official_reading": "Amanda Reid"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Land use director Christopher Reilly",
+    "ours": "Chris (land use director)",
+    "official": "christopher reilly - land use director",
+    "note": "Same person, first name only in ours.",
+    "official_reading": "Christopher Reilly"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Mr O'Reilly listed as a member",
+    "ours": "Mr O'Reilly (member)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair),",
+    "note": "The official lists no member named O'Reilly; probably the land use director Reilly misheard, but check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Matthew Allison",
+    "ours": "Mr Allison (member)",
+    "official": "amanda reid (clerk , remote), matthew allison, glenn mcleod.",
+    "note": "Same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: the chair",
+    "ours": "the chair (chair)",
+    "official": "present: matthew brenner (chair), timothy willsmer (vice chair),",
+    "note": "Ours does not name the chair; the official names Matthew Brenner."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicant representatives",
+    "ours": "",
+    "official": "steve ballard (haley ward, inc) presented for applicant fwp realty partners, llc.",
+    "note": "The official also lists Chris Anderson (Hannigan Engineering), Justin LeClair (McCarty Engineering) and minutes taker Logan O'Connell, none in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:36:34Z",
+   "cost_usd": 0.3503366
+  }
  }
 }

@@ -398,5 +398,185 @@
    "at": "2026-10-06T18:16:00Z",
    "cost_usd": 0.215507
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01222025-6968",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-01-22-minutes-6968.txt",
+   "path": "sources/meetings/board-of-assessors/2025-01-22-minutes-6968.pdf"
+  },
+  "official_sha256": "2f4741493f4ca1445791be01e3447e5680de3590125c0ac9d5b3027c98da96a8",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the budget requests, the website posting of the parcel spreadsheet and the Feb 5 minutes review. They differ on most of the discussion decisions, which only our minutes record. The main thing to check is the exemption-limits item: ours has a warrant-article drafting task, while the official minutes list the item as postponed.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 6,
+   "only_in_ours": 4,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Cyclical inspections contract with Vision",
+    "t": 1556,
+    "ours": "Cyclical inspections contract with Vision Appraisal: $177,000 of 7 17,750, 500 every year, 10% every every year",
+    "official": "$17,000 for cyclical inspections to be completed by vision. this is a 3- year contract",
+    "note": "The amount ($177,000 or 17,750 against $17,000) and the description (recurring every year against a 3-year contract) both differ beyond plain digit grouping, so check the budget sheet or recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Neighborhood revision, $25,000",
+    "t": 1682,
+    "ours": "Neighborhood and site-index revision for lake properties: 25,000, 300 50, 500",
+    "official": "$25,000 is budgeted for the neighborhood revision.",
+    "note": "Both give $25,000 for the lake-property neighborhood and site-index revision; the stray figures in ours are caption noise."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Mapping update cost",
+    "t": 1723,
+    "ours": "Mapping and vendor cost increases: $7,400",
+    "official": "$7,500 to update maps.",
+    "note": "Same map-update item with misheard digits ($7,400 against $7,500).",
+    "official_reading": "$7,500"
+   },
+   {
+    "kind": "agree",
+    "about": "Personal property appraisals, $22,000",
+    "t": 1723,
+    "ours": "$22,000",
+    "official": "$22,000 for personal property appraisals by real estate research consultants (rrc).",
+    "note": "Same $22,000 figure appears in both."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Overlay account figures",
+    "t": 1868,
+    "ours": "Overlay account: 120,000, 25,000, $255,200",
+    "official": "",
+    "note": "The official minutes record no overlay account figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Overlay transfer last year",
+    "t": 1868,
+    "ours": "Money transferred out of the assessors' overlay last year, as recalled by members — only 25,000 (discussed only)",
+    "official": "",
+    "note": "This was discussed only, and the official minutes list no transfers."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost to record a new deed",
+    "t": 839,
+    "ours": "Cost to record a new deed: 155, 150, 250 bucks",
+    "official": "",
+    "note": "The official minutes have no deed recording cost."
+   },
+   {
+    "kind": "agree",
+    "about": "Post old-versus-new parcel spreadsheet to website",
+    "t": 7402,
+    "ours": "The assessors' old-versus-new parcel spreadsheet with land use codes and site index will be posted to the assessor website.",
+    "official": "if all members are in agreement, brian laffond would like to add this document to the website. approved.",
+    "note": "Both records show the spreadsheet going on the website."
+   },
+   {
+    "kind": "agree",
+    "about": "February 5 meeting minutes",
+    "t": 2122,
+    "ours": "The members agreed to finish the backlog of minutes edits for the February 5th meeting and to send changes a few days ahead.",
+    "official": "the board plans to review and approve all minutes at the next meeting on february 5, 2025.",
+    "note": "Both point to minutes handled for the Feb 5 meeting; the official wording is about approval and ours about sending edits ahead."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Exemption income and asset limits",
+    "t": 7615,
+    "ours": "The principal assessor will draft a placeholder warrant article on updating the exemption income and asset limits for the next meeting.",
+    "official": "clause 41 and 17 assets/income level adjustments for exemptions (brian)",
+    "note": "The official minutes list this item as postponed and record no warrant article drafting task, so check the recording and the agenda."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "In-house neighborhood and site-index review",
+    "t": 6806,
+    "ours": "The members agreed to do the neighborhood and site-index review in house, starting with the lake properties but looking at the whole town. Nothing will be implemented until the review is done.",
+    "official": "",
+    "note": "This decision is absent from the official minutes, which only note the $25,000 budget line; check whether the board actually agreed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Senior tax relief subcommittee",
+    "t": 4132,
+    "ours": "A subcommittee will work out the process for the Lunenburg senior tax relief law. It would include the principal assessor and a board member plus Lou and Tom, with a target of two months or less. The principal assessor will seek a flowchart from the Westford assessor.",
+    "official": "",
+    "note": "This decision is not in the official minutes, so check the recording and the town's records."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Deed letter and registry of deeds contact",
+    "t": 816,
+    "ours": "The assessors will draft a letter for homeowners who file unclear or multi-parcel deeds, asking them to go back to their attorney. The principal assessor will also contact the registry of deeds, and the letter will be reviewed by the board.",
+    "official": "sarah cammer and brian laffond suggest reaching out to the registrar of deeds",
+    "note": "Official minutes mention only a suggestion to contact the registrar of deeds, with no homeowner letter or decision, so check what was decided."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Presentation slide decisions (HERO Act, circuit breaker pages, 41A note, slide wording)",
+    "t": 3584,
+    "ours": "The members agreed to add the HERO Act as a fifth bullet to the exemptions slide, and to name the veterans' representative. The members agreed to pull the senior circuit breaker pages, roughly 13 through 18, out of the presentation. A note will be added near the front of the 41A deferral section that a mortgage or lien holder must approve entry into the program. The chair asked that the presentation slides not name a board member as 'Jane's husband', and that 'select persons' be corrected to 'select board'.",
+    "official": "",
+    "note": "Several presentation decisions appear only in our minutes, so check the recording or the town's records."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee John Rabbitt",
+    "ours": "John rabbit (member)",
+    "official": "seconded by john rabbitt.",
+    "note": "Misspelled name from the captions.",
+    "official_reading": "John Rabbitt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Sarah Cammer",
+    "ours": "Sarah camer (member)",
+    "official": "sarah cammer asks if there is a document with a format or template that is submitted when a bid is put out.",
+    "note": "Misspelled name from the captions.",
+    "official_reading": "Sarah Cammer"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Brian Laffond",
+    "ours": "Brian leond (member)",
+    "official": "sarah cammer and brian laffond suggest reaching out to the registrar of deeds",
+    "note": "Misheard surname.",
+    "official_reading": "Brian Laffond"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal assessor name",
+    "ours": "Linda mcle (principal assessor)",
+    "official": "lynda mcquade provided the following updates:",
+    "note": "Misheard name for the same principal assessor.",
+    "official_reading": "Lynda McQuade"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Other attendees (Matt, Lou, Courtney, Denise, Randy Mercier, Reena)",
+    "ours": "Matt (recording / broadcast staff); Lou (former assessor and former select board member, joined by Zoom); Courtney (remote participant on Zoom); Denise, Randy Mercier and Reena (referred to)",
+    "official": "",
+    "note": "The official minutes name only the four board members and the principal assessor."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:36:50Z",
+   "cost_usd": 0.3096418
+  }
  }
 }

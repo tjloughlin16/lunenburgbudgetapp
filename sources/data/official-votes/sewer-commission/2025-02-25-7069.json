@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-02-25",
  "docid": "7069",
@@ -12,39 +12,288 @@
  },
  "votes": [
   {
-   "motion": "Accept the 3rd Quarter FY25 Commitment letter",
+   "motion": "Accept the 3rd Quarter FY25 Commitment letter.",
    "moved_by": "Scott D.",
    "seconded_by": "Joe H.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: scott d. second: joe h. to accept the 3rd quarter fy25 commitment letter. roll call vote: scott-aye, joe-aye and brett-aye."
+   "quote": "to accept the 3rd quarter fy25 commitment letter."
   },
   {
-   "motion": "Accept the minutes of 1/21/25, 1/28/25 and 2/11/25",
+   "motion": "Accept the minutes of 1/21/25, 1/28/25 and 2/11/25.",
    "moved_by": "Joe H.",
    "seconded_by": "Scott D.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: joe h. second: scott d. to accept the minutes of 1/21/25, 1/28/25 and 2/11/25. roll call vote: joe-aye, scott-aye and brett-aye."
+   "quote": "to accept the minutes of 1/21/25, 1/28/25 and 2/11/25."
   },
   {
-   "motion": "Accept the final version of the FY26 Budget",
+   "motion": "Accept the final version of the FY26 Budget.",
    "moved_by": "Scott D.",
    "seconded_by": "Joe H.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: scott d. second: joe h. to accept the final version of the fy26 budget. roll call vote: scott-aye, joe-aye and brett-aye."
+   "quote": "to accept the final version of the fy26 budget."
   },
   {
-   "motion": "Adjourn at 6:34pm",
+   "motion": "Adjourn the meeting at 6:34pm.",
    "moved_by": "Scott D.",
    "seconded_by": "Joe H.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: scott d. second: joe h. to adjourn at 6:34pm. roll call vote: joe-aye, scott-aye and brett-aye."
+   "quote": "to adjourn at 6:34pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0668954
+ "note": "Meeting held via Zoom; attendance is printed as a list, so statuses are marked present without stating remote. Roll-call votes are printed by name with ayes only, so outcomes are recorded as 3-0. Chair Mike Mackin's resignation is recorded as a note and he is not listed as an attendee. The minutes print the $316, 741.96 figure with a stray space, reproduced as printed. The minutes say the Commission had already voted on the budget before this meeting; that earlier vote is not in this text. Budget items use the printed figures only; no transfers were recorded.",
+ "cost_usd": 0.015676870000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard, sewer business manager-andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Eli Torres",
+   "role": "Commission member (as listed)",
+   "status": "absent",
+   "quote": "absent: eli torres brett opened the meeting at 6:01pm."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bill Bernard will get a legal opinion on whether the Treasurer's demand fee can legally be charged, since no separate demand bill was sent.",
+   "quote": "he will get a legal opinion on that issue."
+  },
+  {
+   "decision": "The town accountant's request to Tyler Tech to fix demand printing stands, and the Consultant will also be asked to fix it.",
+   "quote": "they will also ask the consultant if he can fix it."
+  },
+  {
+   "decision": "Bill Bernard will talk to the Town Manager and Social Media people about having the commissioner recruitment notice posted on other social media sites.",
+   "quote": "he will talk to the town manager and social media people to ask if someone can put it on other social media sites."
+  },
+  {
+   "decision": "Scott Dall offered to put together a commissioner recruitment notice; Joe Hurley suggested it be posted as a citizen recommending people look into a committee.",
+   "quote": "scott said he could put something together and joe suggested posting it as a citizen recommending people look into a committee."
+  },
+  {
+   "decision": "An offer letter will go out to Tiffaney for the Assistant to the Sewer Business Manager position.",
+   "quote": "the offer letter will be going out to tiffaney."
+  },
+  {
+   "decision": "Future agenda items set: budget updates, manhole repairs, update on the Assistant to Business Manager, and plans for more Commissioners.",
+   "quote": "future agenda items- budget updates, manhole repairs, update on assistant to business manager, plans for more commissioners."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q3 FY2025 commitment",
+   "what_was_recorded": "The third-quarter commitment amount was reported and the bills were printed and sent.",
+   "figures_as_printed": [
+    "$316, 741.96"
+   ],
+   "quote": "the commitment amount was $316, 741.96 and required a vote by the commission."
+  },
+  {
+   "topic": "FY26 budget, Total Retained Earnings Appropriation",
+   "what_was_recorded": "A formula error was corrected and the Total Retained Earnings Appropriation is now stated at a corrected figure.",
+   "figures_as_printed": [
+    "$302,232.77"
+   ],
+   "quote": "the total retained earning appropriation is now $302,232.77"
+  },
+  {
+   "topic": "Customer delinquency",
+   "what_was_recorded": "A 27% delinquency rate was reported, said to be about $400K, and the Commission was told paying customers would reduce the need to take money from Retained Earnings.",
+   "figures_as_printed": [
+    "27%",
+    "$400K"
+   ],
+   "quote": "they have a delinquency rate of 27%, that works out to be about $400k."
+  },
+  {
+   "topic": "Retained Earnings balance",
+   "what_was_recorded": "The Commission was told there is $2.1 Million in Retained Earnings, and money taken out will eventually go back in.",
+   "figures_as_printed": [
+    "$2.1 Million"
+   ],
+   "quote": "there currently is $2.1 million in retained earnings"
+  },
+  {
+   "topic": "Debt service owed to Leominster and Fitchburg",
+   "what_was_recorded": "The money owed for debt service is said to be less than the betterments being paid in FY26; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the money that is owed to leominster and fitchburg for debt service will be less than the betterments being paid in fy26."
+  },
+  {
+   "topic": "Losses from Munis demand printing failure",
+   "what_was_recorded": "Losses from the inability to print demands since the Munis upgrade were reported as over $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "bill commented there were over $10,000 in losses since the munis upgrade had not been able to print out demands."
+  },
+  {
+   "topic": "Demand fee",
+   "what_was_recorded": "A demand fee appeared in Munis when a customer paid at Town Hall, but no separate bill had been sent, so its legality is in question; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "however, the demand fee had never been sent out on a separate bill so they questioned if they can legally charge it."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bill Bernard",
+   "stated_role": "DPW Director",
+   "topic": "Flat Hill bridge closure",
+   "quote": "bill reminded everyone that the flat hill bridge over the catacoonamug brook will be closed for work until the end of april."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action; none offered",
+   "quote": "public comment &amp; announcements - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Q3 FY2025 commitment letter",
+   "resolution": "accepted, passed 3-0",
+   "quote": "the commitment amount was $316, 741.96 and required a vote by the commission.",
+   "tags": [
+    "billing",
+    "commitment",
+    "quarterly bills"
+   ]
+  },
+  {
+   "topic": "Minutes of 1/21/25, 1/28/25 and 2/11/25",
+   "resolution": "approved, passed 3-0",
+   "quote": "to accept the minutes of 1/21/25, 1/28/25 and 2/11/25.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY26 budget presentation to Finance Committee",
+   "resolution": "final version accepted, passed 3-0; presentation scheduled for February 27",
+   "quote": "to accept the final version of the fy26 budget.",
+   "tags": [
+    "budget",
+    "FY26",
+    "Finance Committee",
+    "retained earnings"
+   ]
+  },
+  {
+   "topic": "Assistant to the Business Manager position",
+   "resolution": "reported; offer letter to be sent",
+   "quote": "andrew reported that tiffaney will be brought on board.",
+   "tags": [
+    "staffing",
+    "hiring",
+    "competencies"
+   ]
+  },
+  {
+   "topic": "Second quarter demands and Munis printing",
+   "resolution": "no action; legal opinion and vendor request pending",
+   "quote": "he will get a legal opinion on that issue.",
+   "tags": [
+    "demands",
+    "Munis",
+    "demand fee",
+    "delinquency"
+   ]
+  },
+  {
+   "topic": "Manhole repair IFB",
+   "resolution": "no update",
+   "quote": "manhole repair ifb- no update.",
+   "tags": [
+    "manhole repair",
+    "bid"
+   ]
+  },
+  {
+   "topic": "Old business: recruiting Commissioners",
+   "resolution": "discussed; social media posting to be explored",
+   "quote": "brett stated they are in need of commissioners and they discussed doing another mailing.",
+   "tags": [
+    "commissioners",
+    "recruitment",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Public comment: Flat Hill bridge closure",
+   "resolution": "announced",
+   "quote": "bill reminded everyone that the flat hill bridge over the catacoonamug brook will be closed for work until the end of april.",
+   "tags": [
+    "road closure",
+    "bridge"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed for future meetings",
+   "quote": "future agenda items- budget updates, manhole repairs, update on assistant to business manager, plans for more commissioners.",
+   "tags": [
+    "agenda"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "budget",
+  "FY26 budget",
+  "retained earnings",
+  "commitment",
+  "billing",
+  "delinquency",
+  "demand fees",
+  "Munis",
+  "staffing",
+  "commissioner recruitment",
+  "manhole repair",
+  "bridge closure",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

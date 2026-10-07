@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2025-07-23",
  "docid": "7321",
@@ -12,16 +12,216 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Motion to adjourn the meeting, approved by roll call of Tim, Debbie, Glen, Jerry, Kim (all Aye); meeting adjourned at 8:59 PM.",
    "moved_by": "Kim Duffy",
    "seconded_by": "Jerry",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "kim duffy made a motion to adjourn. motion was seconded by jerry. roll call vote: ○ tim (aye) ○ debbie (aye) ○ glen (aye) ○ jerry (aye) ○ kim (aye) ○ mo",
-   "quote_taken_from_text": true
+   "quote": "kim duffy made a motion to adjourn. motion was seconded by jerry. roll call vote:"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes discuss various categorizations of Master Plan recommendations (Must Have, Nice to Have, Reject Strategy, Will rephrase) but these are not recorded as formal votes—they appear to be categorizations made during consultant discussion. The only explicit vote recorded is the motion to adjourn at the end of the meeting.",
- "cost_usd": 0.0659184
+ "note": "Only one motion is recorded (adjournment, roll call, passed; no count printed, the five ayes are named). Minutes approvals are listed under 'Meeting Minutes Discussion and Approvals' but no motion or vote is recorded. The minutes print no dollar figures; the single budget item is a funding statement with no amount. 'Glen' in the roll call is presumably Glenn McLeod, but the minutes do not confirm it. 'Jerry' appears only by first name and is not in the attendee lists. 'Tony' is named but not listed as an attendee. Emily Young's attendance is recorded as remote with several left/rejoin times; she left at 8:41 PM, before adjournment. Item 7 dispositions (Must have, Nice to have, Reject Strategy, Combined, Will rephrase) are recorded classifications, not votes.",
+ "cost_usd": 0.014517570000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tim Willsmer",
+   "role": "Planning Board Representative",
+   "status": "present",
+   "quote": "tim willsmer (planning board representative)"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Council on Aging Representative",
+   "status": "present",
+   "quote": "debbie lincoln (council on aging representative)"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Chair, Member At Large",
+   "status": "present",
+   "quote": "kim duffy (chair, member at large)"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Select Board Representative",
+   "status": "present",
+   "quote": "glenn mcleod (select board representative)"
+  },
+  {
+   "name": "Emily Young",
+   "role": "School Committee Representative",
+   "status": "remote",
+   "quote": "emily young (school committee representative) - joined virtually at 6:03pm, left at 6:08pm,"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Planning Board Chair",
+   "status": "present",
+   "quote": "matthew brenner (planning board chair)"
+  },
+  {
+   "name": "Rami el Samahy",
+   "role": "Over Under Consultant",
+   "status": "present",
+   "quote": "rami el samahy (over under consultant)"
+  },
+  {
+   "name": "Tristan Searight",
+   "role": "Over Under Consultant",
+   "status": "present",
+   "quote": "tristan searight (over under consultant)"
+  },
+  {
+   "name": "Jerry",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "motion was seconded by jerry. roll call vote:"
+  },
+  {
+   "name": "Tony",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "kim and tony will take it"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Conservation Commission vacant seat to be discussed by Conservation at the next meeting.",
+   "quote": "conservation will talk about this at next meeting"
+  },
+  {
+   "decision": "Matt Brenner to reach out regarding the Zoning Board of Appeals vacant seat, which drew no response.",
+   "quote": "matt brenner will reach out"
+  },
+  {
+   "decision": "At Large vacant seat to be advertised on social media.",
+   "quote": "will advertise on social media"
+  },
+  {
+   "decision": "Over Under plans and ideas from other towns to be sent to all members.",
+   "quote": "plans and ideas will be sent to all"
+  },
+  {
+   "decision": "Over Under to provide a new feedback spreadsheet for committees.",
+   "quote": "over under to provide new spreadsheet with feedback"
+  },
+  {
+   "decision": "Kim and Tony will divide up and take the committee feedback process.",
+   "quote": "kim and tony will take it"
+  },
+  {
+   "decision": "Matt will meet with the Town Manager when she returns from vacation, before the draft is sent to her.",
+   "quote": "matt will meet when she is back"
+  },
+  {
+   "decision": "Two draft recommendations (sidewalks with MassDOT and state; bike infrastructure) to be rephrased and returned to Over Under.",
+   "quote": "will rephrase and get back to us"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Affordable housing trust funding",
+   "what_was_recorded": "Minutes record that the state will fund the proposed affordable housing trust, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "state will fund this"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:03",
+   "quote": "1. call to order - 6:03 call to order",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "2. public comment - no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comment",
+   "resolution": "no committee comment",
+   "quote": "3. committee comment - no committee comment",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Vacant seats",
+   "resolution": "no action; Conservation to discuss at next meeting; outreach and advertising assigned",
+   "quote": "vacant seats (conservation commission, zoning board of appeals, at large)",
+   "tags": [
+    "vacancies",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Meeting minutes discussion and approvals",
+   "resolution": "discussed proposed changes to 6/25/25 and 7/9/25 minutes; no approval recorded",
+   "quote": "5. meeting minutes discussion and approvals",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Over Under / Lunenburg discussion summary (7/15/25)",
+   "resolution": "discussed; plans from other towns to be sent to all",
+   "quote": "6. overunder / lunenburg discussion summary - 7/15/25",
+   "tags": [
+    "over under",
+    "consultant",
+    "comparison plans"
+   ]
+  },
+  {
+   "topic": "Over Under feedback on master plan draft recommendations",
+   "resolution": "discussed each draft recommendation; dispositions recorded (must have, nice to have, reject, combined, rephrase)",
+   "quote": "7. overunder feedback on master plan draft recommendations from july 9, 2025 meeting",
+   "tags": [
+    "master plan",
+    "housing",
+    "town center",
+    "open space",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Next steps of master plan draft",
+   "resolution": "feedback process divided; timing discussed; send to Town Manager deferred until she returns",
+   "quote": "8. next steps of master plan draft",
+   "tags": [
+    "master plan",
+    "next steps"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:59 PM on roll call vote",
+   "quote": "kim duffy made a motion to adjourn. motion was seconded by jerry. roll call vote:",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "master plan",
+  "housing",
+  "over under consultant",
+  "town center",
+  "vacancies",
+  "zoom meeting",
+  "affordable housing trust",
+  "sewer service area"
+ ],
+ "dropped_unquoted_by_field": {}
 }

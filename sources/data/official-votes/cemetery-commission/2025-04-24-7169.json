@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2025-04-24",
  "docid": "7169",
@@ -12,32 +12,216 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the March 27, 2025 meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the minutes of the March 27, 2025 meeting.",
    "moved_by": "Nancy Foss Yasko",
    "seconded_by": "David Doreen",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "chair nancy foss yasko made a motion to approve the minutes of the march 27, 2025 meeting, vice chair david doreen seconded, voting all in favor."
   },
   {
-   "motion": "Procure a secure filing cabinet for up to $2000.00 for DPW record keeping",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Use up to $2000.00 to procure a secure filing cabinet for record keeping for the DPW.",
    "moved_by": "Mike Clark",
    "seconded_by": "David Dorren",
-   "quote": "clerk mike clark motioned to use up to $2000.00 to procure a secure ﬁling cabinet for record keeping for the dpw, vice chair david dorren seconded, all in favor. ",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "clerk mike clark motioned to use up to $2000.00 to procure a secure ﬁling cabinet for record keeping for the dpw, vice chair david dorren seconded, all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Adjourn the meeting.",
    "moved_by": "Nancy Foss Yasko",
    "seconded_by": "David Dorren",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "chair nancy foss yasko made a motion to adjourn, vice chair david dorren seconded, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09184200000000001
+ "note": "Text extraction, not a scan; all content read directly. Votes are recorded only as \"all in favor\" / \"voting all in favor\" with no printed count, so outcomes are recorded as \"passed\" without a tally. The vice-chair's name is printed inconsistently (David Doreen in the attendee list, David Dorren elsewhere); both are kept as printed. Ms. Warren is listed under Attendees with no stated participation, so her status is \"not stated\". The \"Dept of Correction\" and \"Lakeview\" items are actions reported by staff, not board decisions, and are not recorded as decisions. The May meeting date is printed \"May 22th, 2025\" and recorded as printed.",
+ "cost_usd": 0.014490770000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark town of lunenburg:"
+  },
+  {
+   "name": "David Doreen (also printed as David Dorren)",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark town of lunenburg:"
+  },
+  {
+   "name": "Mike Clark",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "vice-chair david doreen clerk mike clark town of lunenburg:"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director bill bernard director of municipal finance/town accountant, ezequiel ayala town manager jennifer dyment warren"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "Director of Municipal Finance/Town Accountant",
+   "status": "present",
+   "quote": "director of municipal finance/town accountant, ezequiel ayala - discussed the purpose of each fund"
+  },
+  {
+   "name": "Jennifer Dyment Warren",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "dpw director bill bernard director of municipal finance/town accountant, ezequiel ayala town manager jennifer dyment warren"
+  },
+  {
+   "name": "John Bowen",
+   "role": "",
+   "status": "present",
+   "quote": "john bowen 162 highland street spoke on his interpretation of records retention laws, public and federal."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bill Bernard will provide a time estimate for how long it will take to go through the records.",
+   "quote": "bill will provide a time estimate on how long it will take to go through the records."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "File cabinet research (fire resistant and waterproof)",
+   "what_was_recorded": "Dorren's research priced the cabinet from $2879.00 to $1744.00; the town has a WB Mason contract and the cabinet installs on a cement slab.",
+   "quote": "david dorren presented his ﬁle cabinet research (ﬁre resistant and waterproof), from $2879.00 to $1744.00",
+   "figures_as_printed": [
+    "$2879.00",
+    "$1744.00"
+   ]
+  },
+  {
+   "topic": "Secure filing cabinet purchase authorization",
+   "what_was_recorded": "The commission voted to use up to $2000.00 to procure a secure filing cabinet for DPW record keeping.",
+   "quote": "clerk mike clark motioned to use up to $2000.00 to procure a secure ﬁling cabinet for record keeping for the dpw",
+   "figures_as_printed": [
+    "$2000.00"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street",
+   "topic": "records retention laws",
+   "quote": "john bowen 162 highland street spoke on his interpretation of records retention laws, public and federal."
+  },
+  {
+   "speaker": "Nancy Foss Yasko",
+   "stated_role": "Chair",
+   "topic": "her experience as chair and leaving the board",
+   "quote": "chair nancy foss yasko gave public comment on her experience as chair and on leaving the board."
+  },
+  {
+   "speaker": "David Dorren",
+   "stated_role": "Vice Chair",
+   "topic": "thanks to outgoing chair",
+   "quote": "vice chair david dorren followed up with a heartfelt thank you to nancy for all her hard work"
+  },
+  {
+   "speaker": "Mike Clark",
+   "stated_role": "Clerk",
+   "topic": "echoed thanks to outgoing chair",
+   "quote": "clerk mike clark echoed those sentiments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and open meeting law statement",
+   "resolution": "no action",
+   "quote": "chair nancy foss yasko read the open meeting law statement & noted the upload",
+   "tags": [
+    "open meeting law",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approve minutes of March 27, 2025",
+   "resolution": "approved",
+   "quote": "chair nancy foss yasko made a motion to approve the minutes of the march 27, 2025",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Fiscal rules and regulations presentation, cemetery funds",
+   "resolution": "discussed; no action",
+   "quote": "director of municipal finance/town accountant, ezequiel ayala - discussed the purpose of each fund",
+   "tags": [
+    "fiscal rules",
+    "cemetery funds",
+    "finance"
+   ]
+  },
+  {
+   "topic": "DPW Director updates on cemetery operations",
+   "resolution": "noted; no action",
+   "quote": "noted were 1 full burial & 5 cremation burials, footmarks repaired, updates in ramaker cmis data is ongoing.",
+   "tags": [
+    "DPW",
+    "burials",
+    "operations",
+    "seasonal staff"
+   ]
+  },
+  {
+   "topic": "File cabinet research and records storage",
+   "resolution": "approved up to $2000.00 for a secure filing cabinet",
+   "quote": "clerk mike clark motioned to use up to $2000.00 to procure a secure ﬁling cabinet",
+   "tags": [
+    "records",
+    "file cabinet",
+    "procurement",
+    "records retention"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "john bowen 162 highland street spoke on his interpretation of records retention laws",
+   "tags": [
+    "public comment",
+    "records retention"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "scheduled for May 22, 2025 as printed",
+   "quote": "next meeting is scheduled for may 22th, 2025.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned, passed",
+   "quote": "chair nancy foss yasko made a motion to adjourn, vice chair david dorren seconded, all in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "records retention",
+  "file cabinets",
+  "fiscal rules",
+  "DPW operations",
+  "burials",
+  "public comment",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

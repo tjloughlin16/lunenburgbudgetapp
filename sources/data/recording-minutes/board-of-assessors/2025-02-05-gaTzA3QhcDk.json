@@ -374,5 +374,157 @@
    "at": "2026-10-06T18:09:47Z",
    "cost_usd": 0.212975
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02052025-6999",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-02-05-minutes-6999.txt",
+   "path": "sources/meetings/board-of-assessors/2025-02-05-minutes-6999.pdf"
+  },
+  "official_sha256": "3db6b6d91156e83a50495c89b2ad8b450ba9fdb140832d59b6e0f3c0b8c9123b",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the one recorded vote (deeds policy to Town Counsel) and on the two excise bills once caption errors are read through. They differ on the Near map invoice decision and the senior-exemption item, and the official minutes omit several items ours caught.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 5,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Deeds policy / homeowner letter sent to Town Counsel",
+    "ours": "Have Town Counsel review the deeds policy and homeowner letter and advise on any additional legal language — passed (three in favor heard: John Rabbit, Sarah Camer, Brian Leon)",
+    "official": "there was a motion to have the proposed document sent to the town counsel to review by sarah cammer, seconded by john rabbitt.",
+    "note": "Both record the motion passing; official names mover/seconder, ours lists three in favor, which is not contradictory.",
+    "t": 4259
+   },
+   {
+    "kind": "caption_error",
+    "about": "Excise abatement amount $73.47",
+    "ours": "Motor vehicle excise abatements: $72 47, 17370, $724, 84 43, $498 28",
+    "official": "there were 2 excise tax bills for $73.47 and $173.10. they were signed.",
+    "note": "\"$72 47\" and \"17370\" are misheard renderings of $73.47 and $173.10; the remaining fragments ($724, 84 43, $498 28) have no match in the official text.",
+    "official_reading": "$73.47 and $173.10",
+    "t": 634
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Additional excise figures ($724, 84 43, $498 28)",
+    "ours": "$724, 84 43, $498 28",
+    "official": "",
+    "note": "Official minutes print only two excise bills; a person should check whether other abatements were discussed that the town did not record.",
+    "t": 634
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Near map invoice decision",
+    "ours": "The board agreed not to pay the near map invoice for now.",
+    "official": "there was an invoice from near map that has been suspected because of budget issues.",
+    "note": "Ours records a decision not to pay and an $8,100-ish amount heard; official records only that the invoice was suspected, with no decision and no amount. Check the video near t=1145-1188 and whether the board actually decided.",
+    "t": 1188
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Vision cyclical inspection contract",
+    "ours": "Vision cyclical inspection contract: 500 per year, three years",
+    "official": "",
+    "note": "Official minutes do not mention the Vision inspection contract or its figures.",
+    "t": 3481
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Design committee first meeting Feb 19 via Zoom",
+    "ours": "First meeting of the design committee for the senior means-tested exemption set for February 19th via Zoom, around 5:30.",
+    "official": "",
+    "note": "Official minutes do not record this scheduling.",
+    "t": 2553
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Clause 41A/17 income and asset limits article vs senior exemption amounts",
+    "ours": "Clause 41A/17 income and asset limits article: 40,000, 72,000, $5,000",
+    "official": "41c senior $1000.00 exemption",
+    "note": "Different exemption clauses and figures: ours discusses 41A/17 limits, official lists exemption amounts from executive session (41C $1000 etc.). Check the video and the official full text to see whether these are the same item.",
+    "t": 4978
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Draft town report",
+    "ours": "Draft town report update accepted with no changes; the principal assessor will submit a clean copy.",
+    "official": "brian laffond created a drafted town report. the board approves the document.",
+    "note": "Both record acceptance, but official says the chair drafted and the board approved, while ours says the principal assessor will submit a clean copy; check who authored/submits it.",
+    "t": 4549
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meeting schedule, March 5 meeting with two members",
+    "ours": "Meeting schedule left unchanged; March 5th meeting to go ahead with two members.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 5499
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Motor vehicle exemption tax for blind and Hero Act signed",
+    "ours": "",
+    "official": "there was a motor vehicle exemption tax for the blind and one for the hero act. each was signed.",
+    "note": "Signing decision recorded only in official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Executive session exemption and abatement outcomes, capital plan setaside, COLA estimate",
+    "ours": "",
+    "official": "review of exemptions and real estate abatements fy2025",
+    "note": "Official records an executive session review (e.g. 6 abatements approved, 7 denied), the Interim Town Manager's capital plan proposal, and a COLA estimate; none appear in ours.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brian Leon (chair)",
+    "official": "present members: chair brian laffond, vice chair sarah cammer (zoom), clerk john rabbitt,",
+    "note": "Misheard surname of the same chair.",
+    "official_reading": "Brian Laffond",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member names Rabbit / Camer",
+    "ours": "John Rabbit (member); Sarah Camer (member (on Zoom))",
+    "official": "vice chair sarah cammer (zoom), clerk john rabbitt,",
+    "note": "Spelling variants of Sarah Cammer and John Rabbitt; roles (vice chair, clerk) not captured by ours.",
+    "official_reading": "Sarah Cammer; John Rabbitt",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal assessor name",
+    "ours": "Linda (principal assessor)",
+    "official": "clerk john rabbitt, principal assessor lynda mcquade",
+    "note": "First name spelled differently; official gives full name.",
+    "official_reading": "Lynda McQuade",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Other attendees (Denise, Pauline, Michaela)",
+    "ours": "Denise (assessing staff (appraiser)); Pauline (helper with Council on Aging/kiosk); Michaela (visitor)",
+    "official": "",
+    "note": "Official minutes list only four attendees.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:34:09Z",
+   "cost_usd": 0.235619
+  }
  }
 }

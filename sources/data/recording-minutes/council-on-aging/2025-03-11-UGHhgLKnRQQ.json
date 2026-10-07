@@ -307,5 +307,170 @@
    "at": "2026-10-06T18:01:27Z",
    "cost_usd": 0.210513
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03112025-7090",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-03-11-minutes-7090.txt",
+   "path": "sources/meetings/council-on-aging/2025-03-11-minutes-7090.pdf"
+  },
+  "official_sha256": "b4eb63e87aefe74a8133a209a252c6000274f4d3d640173a3ec0d6e36c16a005",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree that there were no non-procedural votes and on the main decisions (emailing minutes, planning the sand program early). The official minutes print no dollar figures at all, so every figure in ours has no official counterpart. The one thing to check is the Boston Post Cane item, where ours records only a follow-up and the official minutes name a recipient and a date.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 8,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Non-procedural votes",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$500 account transfers (advertising, meetings/schools to programs, office supplies)",
+    "t": 1257,
+    "ours": "Advertising and meetings/schools accounts moved to programs and office supplies — $500 each (discussed only (reported as approved at the finance committee))",
+    "official": "",
+    "note": "The official minutes list no transfers; ours says it was only discussed and approved elsewhere, so check the finance committee record."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Outdoor electrical to shed/courts, about $5,000",
+    "t": 146,
+    "ours": "Outdoor electrical to the shed/courts: about 5,000 bucks",
+    "official": "",
+    "note": "The official minutes do not mention this item or any dollar figure for the facilities update."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA FY26 budget figures ($500, $500, $500)",
+    "t": 1257,
+    "ours": "COA FY26 budget and current-year accounts: $500, $500, $500",
+    "official": "1. coa fy26 coa budget was presented to the town manager and finance committee.",
+    "note": "The official minutes record that the FY26 budget was presented but print no figures, so the $500 amounts cannot be matched."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meal fees $5 and $3",
+    "t": 1321,
+    "ours": "Meal fees: $5, $3",
+    "official": "",
+    "note": "No meal fee discussion appears in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fire department full-time staffing request figures",
+    "t": 1977,
+    "ours": "Fire department full-time staffing request: close to a half a million dollars, about 1.5 million, 290,000, 300,000, $200,000",
+    "official": "",
+    "note": "The official minutes have no fire staffing discussion; the figures are loosely heard and should be checked against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Ambulance receipts figure $600,000",
+    "t": 2464,
+    "ours": "Revenue recognition (ambulance receipts): $600,000",
+    "official": "she also indicated that the ambulance service brings revenue into the town.",
+    "note": "Both note ambulance revenue, but the official minutes give no amount, so the $600,000 is unconfirmed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Quarterly financial reports to Town Manager and Finance Committee",
+    "ours": "",
+    "official": "financial reports (quarterly-march, june, sept. and december).",
+    "note": "The official minutes record a quarterly reporting schedule that our minutes do not capture."
+   },
+   {
+    "kind": "agree",
+    "about": "Emailing meeting minutes",
+    "t": 837,
+    "ours": "Minutes to be mailed, sent a bit sooner, for at least one more time due to email attachment problems.",
+    "official": "the intent is to email the minutes.",
+    "note": "Both record that minutes will be emailed, with the March minutes also mailed."
+   },
+   {
+    "kind": "agree",
+    "about": "Sand for seniors program planning",
+    "t": 522,
+    "ours": "Director to meet with the fire chief and town manager to plan the fall sand program.",
+    "official": "as previously mentioned, the sand for seniors program will be planned well before next winter.",
+    "note": "Both say the program will be planned ahead of winter; only ours names who will meet."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sand policy outreach methods",
+    "t": 966,
+    "ours": "Outreach on the sand policy in the fall will use PACTV slides, Constant Contact email, Facebook and possibly a robocall.",
+    "official": "",
+    "note": "The official minutes do not describe the outreach channels."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Boston Post Cane next candidate",
+    "t": 1154,
+    "ours": "Follow up on the next Boston Post Cane candidate and a possible Century Club membership.",
+    "official": "he will be honored at the veteran's breakfast on april 11, 2025.",
+    "note": "Ours records only a follow-up, while the official minutes name Charles Sanderson and an April 11 honoring; check the recording for whether a candidate was settled, and for the Century Club mention."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mr Lincoln",
+    "ours": "Mr Lincoln (member)",
+    "official": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy",
+    "note": "The official roster lists Peter Lincoln as present, which matches the heard surname.",
+    "official_reading": "Peter Lincoln"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Deb's role",
+    "ours": "Deb (director (as addressed))",
+    "official": "present: deb lincoln (chairperson), jane rabbitt (vice chairperson)",
+    "note": "We label Deb the director, while the official minutes make Deb Lincoln the chairperson; check whether the director is a separate person who is not in the official attendee list."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Jim / Jim McGuigan",
+    "ours": "Jim (member)",
+    "official": "elena christopher, susan o'sullivan, jim mcguigan, helen balcom, cathy beale, ana lockwood, judy",
+    "note": "First name matches the listed Jim McGuigan."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Chris Ruth",
+    "ours": "Chris Ruth (presenter (facilities))",
+    "official": "guests: chris ruth public comment: none",
+    "note": "Both list Chris Ruth as a guest who presented."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendees Michelle (staff) and Doug (member)",
+    "ours": "Michelle (staff); Doug (member)",
+    "official": "",
+    "note": "Neither name appears in the official attendee list; check the recording for who they are."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees listed as present",
+    "ours": "",
+    "official": "present: deb lincoln (chairperson), jane rabbitt (vice chairperson)",
+    "note": "The official minutes also list Jane Rabbitt, Diane Nowd, Elena Christopher, Susan O'Sullivan, Helen Balcom, Cathy Beale, Ana Lockwood and Judy Tarbell, none of whom our captions name."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:28:57Z",
+   "cost_usd": 0.24639699999999998
+  }
  }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-07-29",
  "docid": "7325",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "not stated",
@@ -21,6 +21,126 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text. One procedural vote recorded (adjournment); no voting outcome explicitly stated in minutes, though meeting closed at 12:17 PM indicating the motion passed.",
- "cost_usd": 0.061090399999999996
+ "note": "Text is macOS Vision OCR with visible artifacts (for example \"September 24#\", \"September 25\\\"\\\"\", \"December17\"); quotes are copied as printed. The minutes record a motion to adjourn with no vote count or result, so it is marked outcome \"not stated\". No votes on other items are recorded, and no dollar figures appear. Public comment is recorded as \"no comments\" twice, with no named speakers. The meeting opened at 11:00a.m. and closed at 12:17 PM. Tom Alonzo is named as the submitter of a form, not as an attendee, so his status is \"not stated\".",
+ "cost_usd": 0.012759470000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka."
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "former Select Board member",
+   "status": "not stated",
+   "quote": "senior means tested tax exemption form was submitted by former select board member tom alonzo."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The team agreed the Senior Means Tested Tax Exemption form was great as submitted; once the two pages are concatenated it is to go out for printing.",
+   "quote": "the team agreed the form was great as submitted."
+  },
+  {
+   "decision": "The Board will resume meeting twice a month starting in September 2025.",
+   "quote": "the board resume meeting twice a month starting in september."
+  },
+  {
+   "decision": "Lynda Cajka is asked to contact the Board's contact at ATB to check for any outstanding cases against Lunenburg.",
+   "quote": "brian laffond requests lynda cajka to reach out to our contact at atb to see if there are"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Opening and closing comments",
+   "quote": "there were no comments from the public."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening comments: GIS brochure",
+   "resolution": "no action",
+   "quote": "sarah cammer recently attended a conference and received a brochure",
+   "tags": [
+    "GIS",
+    "land records"
+   ]
+  },
+  {
+   "topic": "Response to Select Board investigation report of 2023",
+   "resolution": "reviewed; addendum suggested",
+   "quote": "brian laffond suggests writing an addendum to include:",
+   "tags": [
+    "Select Board",
+    "investigation",
+    "oversight"
+   ]
+  },
+  {
+   "topic": "Senior Means Tested Tax Exemption form",
+   "resolution": "approved as submitted; to print once pages concatenated",
+   "quote": "the team agreed the form was great as submitted.",
+   "tags": [
+    "tax exemption",
+    "seniors",
+    "forms"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and schedule",
+   "resolution": "schedule set; twice-monthly from September",
+   "quote": "the board resume meeting twice a month starting in september.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments: GIS presentation, ATB cases, Vision valuation update",
+   "resolution": "no action; requests made",
+   "quote": "sarah cammer contemplates creating a small presentation about mass gis.",
+   "tags": [
+    "GIS",
+    "ATB",
+    "Vision",
+    "interim valuation",
+    "sales report"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion made; result not recorded",
+   "quote": "there was a motion to adjourn by sarah cammer, seconded by brian laffond.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "property valuation",
+  "GIS",
+  "senior tax exemption",
+  "meeting schedule",
+  "Select Board investigation",
+  "Vision",
+  "ATB"
+ ],
+ "dropped_unquoted_by_field": {}
 }

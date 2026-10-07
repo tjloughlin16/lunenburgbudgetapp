@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-03-19",
  "docid": "7106",
@@ -12,16 +12,364 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Member Alonzo moved to adjourn the meeting.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Vice Chair Jeffreys",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "member alonzo moved to adjourn. seconded by vice chair jeffreys. roll call vote: vice- chair jeffreys-aye; clerk moore-aye; member alonzo-aye; member emkey-aye; chair nuzzolo- aye. the motion passed unanimously (5-0-0",
-   "quote_taken_from_text": true
+   "quote": "member alonzo moved to adjourn. seconded by vice chair jeffreys."
+  },
+  {
+   "motion": "Approve the minutes of the March 19, 2025 Select Board meeting.",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Vice-Chair Moore",
+   "outcome": "passed 4-0-1",
+   "procedural": true,
+   "quote": "chair nuzzolo made the motion to approve the minutes from march 19, 2025. seconded by vice-chair moore."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Page 7 contains a note that these minutes were reviewed and approved by the Select Board on June 17, 2025, with a recorded vote on that approval; that vote occurred at a different meeting and is not included here as it is not from the March 19 meeting being documented.",
- "cost_usd": 0.1136094
+ "note": "Text extracted from a 7-page PDF; line breaks were collapsed when checking quotes. Only two recorded votes exist, both procedural (adjournment, passed 5-0-0; approval of these minutes, passed 4-0-1). The PMP support and the override discussion are recorded as consensus or discussion, not votes. The warrants are listed with no recorded approval. Minutes name \"Vice-Chair Moore\" as seconder of the approval motion, but Moore is printed as Clerk and Jeffreys as Vice-Chair; the abstainer \"McLeod\" is not among the listed members and is not given a first name. Only members and the Town Manager and Finance Director are listed as present; whether members attended remotely is not stated. The minutes say public comment occurred later because of a Zoom difficulty, so speakers are placed where the minutes print them.",
+ "cost_usd": 0.020007070000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager jennifer warren-dyment, finance director/town accountant"
+  },
+  {
+   "name": "Ezequiel Ayala Jr.",
+   "role": "Finance Director/Town Accountant",
+   "status": "present",
+   "quote": "finance director/town accountant ezequiel ayala jr."
+  },
+  {
+   "name": "John Bowen",
+   "role": "public commenter",
+   "status": "remote",
+   "quote": "john bowen, 162 highland street (via zoom): thanked the finance director/town accountant"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public commenter",
+   "status": "remote",
+   "quote": "dave passios, jefferson new hampshire presidential highway (via zoom): commented on the"
+  },
+  {
+   "name": "TJ Loughlin",
+   "role": "public commenter",
+   "status": "not stated",
+   "quote": "tj loughlin, 207 rolling acres road: stated that he believes the board"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "public commenter",
+   "status": "not stated",
+   "quote": "rhonda lisio, 181 reservoir road: asked if the revised budget proposal includes a contribution"
+  },
+  {
+   "name": "McLeod",
+   "role": "abstained on approval of the minutes; first name not printed",
+   "status": "not stated",
+   "quote": "call for the vote: four-aye. one-abstain (mcleod)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed by consensus, without a vote, to support restoring the Pavement Management Program as presented by the Town Manager.",
+   "quote": "all the board members agreed that they are in support of restoring the pmp as presented by the town manager."
+  },
+  {
+   "decision": "Chair Nuzzolo asked that the Board formally vote at its next meeting not to put a municipal override forward as a Town Meeting warrant article. No vote was taken at this meeting.",
+   "quote": "chair nuzzolo stated that he would like the board to formally vote at the next meeting not to have a municipal override as a town meeting warrant article."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pavement Management Program restoration to $279,000",
+   "what_was_recorded": "The Town Manager presented two budget proposals, one restoring the PMP to $279,000 and one without restoration; the Board agreed by consensus to support the restored version.",
+   "figures_as_printed": [
+    "$279,000"
+   ],
+   "quote": "one with the pavement management program (pmp) restored to $279,000"
+  },
+  {
+   "topic": "Full PMP restoration and layoffs",
+   "what_was_recorded": "The Town Manager said restoring the PMP to its full amount would cause layoffs.",
+   "figures_as_printed": [
+    "$550,000"
+   ],
+   "quote": "if the pmp was restored to the full $550,000"
+  },
+  {
+   "topic": "Assessor Overlay decrease",
+   "what_was_recorded": "The budget became unbalanced and additional funding became available because the Assessor Overlay decreased.",
+   "figures_as_printed": [
+    "$175,000"
+   ],
+   "quote": "there was a decrease of $175,000 for the assessor overlay"
+  },
+  {
+   "topic": "Proposed removal of grant writer and Police overtime funds",
+   "what_was_recorded": "The Town Manager stated that the grant writer position and Police overtime funding could be removed from the budget.",
+   "figures_as_printed": [
+    "$50,000",
+    "$10,000"
+   ],
+   "quote": "$50,000 for the grant writer position and $10,000 in police overtime could be removed"
+  },
+  {
+   "topic": "Reserve Fund reduction",
+   "what_was_recorded": "The Reserve Fund was proposed to be reduced.",
+   "figures_as_printed": [
+    "$200,000",
+    "$185,000"
+   ],
+   "quote": "the reserve fund was proposed to be decreased from $200,000 to $185,000"
+  },
+  {
+   "topic": "Information Technology Purchase Services reduction",
+   "what_was_recorded": "Information Technology Purchase Services was proposed to be reduced.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "information technology purchase services was decreased by $5,000"
+  },
+  {
+   "topic": "Insurance-line training reduction",
+   "what_was_recorded": "Training under the insurance line was reduced.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "the $15,000 in training under the insurance line was"
+  },
+  {
+   "topic": "Capital Plan reduction to restore PMP",
+   "what_was_recorded": "The reduction to the Capital Plan needed to restore PMP to $279,000; the Town Manager said it shifts funds from taxation to Free Cash with no impact to the Plan.",
+   "figures_as_printed": [
+    "$39,000"
+   ],
+   "quote": "it is a reduction of $39,000, however, there is no impact to the plan"
+  },
+  {
+   "topic": "Free Cash for schools",
+   "what_was_recorded": "The Town Manager said about $150,000 of Free Cash could be given to the schools for FY26.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "she believes $150,000 could be given to"
+  },
+  {
+   "topic": "Cost-of-living adjustment in proposed budget",
+   "what_was_recorded": "The proposed budget includes a 2.5% COLA.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "the proposed budget includes just 2.5% cola"
+  },
+  {
+   "topic": "Snow and ice budget line funded from Free Cash",
+   "what_was_recorded": "The Town Manager expects enough Free Cash to cover the snow and ice budget line in FY2026; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "town manager warren-dyment said that she expects to have sufficient free cash to cover the snow and ice budget line."
+  },
+  {
+   "topic": "Proposed DPW trucks and Chapter 90 funds",
+   "what_was_recorded": "A Board member asked whether two proposed DPW trucks could be paid from Chapter 90 funds; the Town Manager said she would not recommend it given the PMP reduction.",
+   "figures_as_printed": [],
+   "quote": "if the two proposed new dpw trucks"
+  },
+  {
+   "topic": "School budget discrepancy with Chapter 70 funds",
+   "what_was_recorded": "A possible discrepancy was identified between the School FY25 final revised budget and additional Chapter 70 funds; staff agreed the spreadsheet would be updated.",
+   "figures_as_printed": [],
+   "quote": "there may be a discrepancy between the school fy25 final revised"
+  },
+  {
+   "topic": "OPEB contribution in revised budget",
+   "what_was_recorded": "A resident asked whether the revised budget includes an OPEB contribution; the Town Manager said yes. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "asked if the revised budget proposal includes a contribution"
+  },
+  {
+   "topic": "Warrants listed for approval",
+   "what_was_recorded": "Three warrants were listed: two Accounts Payable and one Payroll. The minutes record no vote on them.",
+   "figures_as_printed": [
+    "$239,384.27",
+    "$948,580.71",
+    "$1,169,135.29"
+   ],
+   "quote": "accounts payable warrant in the amount of $239,384.27."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street (via Zoom)",
+   "topic": "North Cemetery expansion",
+   "quote": "john bowen, 162 highland street (via zoom): thanked the finance director/town accountant"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Jefferson New Hampshire Presidential Highway (via Zoom)",
+   "topic": "North Cemetery expansion; grants procedure",
+   "quote": "dave passios, jefferson new hampshire presidential highway (via zoom): commented on the"
+  },
+  {
+   "speaker": "TJ Loughlin",
+   "stated_role": "207 Rolling Acres Road",
+   "topic": "Municipal override; long-term budget planning",
+   "quote": "tj loughlin, 207 rolling acres road: stated that he believes the board"
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "OPEB contribution in revised budget",
+   "quote": "rhonda lisio, 181 reservoir road: asked if the revised budget proposal includes a contribution"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "chair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "deferred to later in the meeting due to a Zoom technical difficulty",
+   "quote": "public comment occurred later in the meeting due to a zoom technical difficulty.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Pavement Management Program and FY2025/FY2026 budget",
+   "resolution": "discussed; Board supported restoring PMP to $279,000 by consensus, no vote",
+   "quote": "one with the pavement management program (pmp) restored to $279,000",
+   "tags": [
+    "pavement management",
+    "FY2025 budget",
+    "FY2026 budget",
+    "capital plan",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "FY2026 budget format and year-over-year comparison",
+   "resolution": "discussed; year-over-year analysis recommended; no vote",
+   "quote": "vice-chair jeffreys stated that the format of the budget is different",
+   "tags": [
+    "FY2026 budget",
+    "budget format"
+   ]
+  },
+  {
+   "topic": "Town Meeting warrant articles and override discussion",
+   "resolution": "discussed; Board opposed a municipal override; formal vote deferred to next meeting",
+   "quote": "chair nuzzolo asked the board for their opinions on putting forward a municipal override.",
+   "tags": [
+    "municipal override",
+    "school override",
+    "town meeting warrant",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "three warrants listed; no vote recorded",
+   "quote": "accounts payable warrant in the amount of $239,384.27.",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Public comment (later in meeting)",
+   "resolution": "four speakers heard",
+   "quote": "john bowen, 162 highland street (via zoom): thanked the finance director/town accountant",
+   "tags": [
+    "public comment",
+    "North Cemetery",
+    "OPEB"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "quote": "clerk moore thanked mr. loughlin for his efforts in supporting the school district.",
+   "tags": [
+    "board comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:36 PM, passed 5-0-0",
+   "quote": "member alonzo moved to adjourn. seconded by vice chair jeffreys.",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Approval of March 19, 2025 minutes",
+   "resolution": "approved, passed 4-0-1",
+   "quote": "chair nuzzolo made the motion to approve the minutes from march 19, 2025.",
+   "tags": [
+    "minutes approval"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "FY2025 budget",
+  "FY2026 budget",
+  "pavement management program",
+  "municipal override",
+  "school override",
+  "free cash",
+  "capital plan",
+  "town meeting warrant",
+  "public comment",
+  "OPEB",
+  "North Cemetery",
+  "warrants",
+  "Chapter 70",
+  "Chapter 90"
+ ],
+ "dropped_unquoted_by_field": {}
 }

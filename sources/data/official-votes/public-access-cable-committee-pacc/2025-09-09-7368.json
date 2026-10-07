@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2025-09-09",
  "docid": "7368",
@@ -12,24 +12,209 @@
  },
  "votes": [
   {
-   "motion": "transfer money from available funds to fund the FY26 Public Access Educational Government (PEG) Access Enterprise operating and capital budgets, including $31,271 to be restored to the general fund and $4,000 for a total of $35,271",
+   "motion": "To request that the Town vote to transfer money from available funds to fund the FY26 PEG Access Enterprise operating and capital budgets, including $31,271 restored to the general fund and $4,000, for a total of #35,271.",
    "moved_by": "B.Vienneau",
    "seconded_by": "S.Archambault",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion (b.vienneau, 2nd s.archambault) - to see if the town will vote to transfer money from available funds, a sum of money to fund the fy26 public access educational government (peg) access enterprise operating and capital budgets to include $31,271 to be restored to the general fund and to include $4,000 for a total of #35,271. passed"
+   "quote": "motion (b.vienneau, 2nd s.archambault) - to see if the town will vote to transfer money from available funds"
   },
   {
-   "motion": "accept 8/4/2025 minutes as amended",
+   "motion": "To accept the 8/4/2025 minutes as amended.",
    "moved_by": "B.Vienneau",
    "seconded_by": "S.Archambault",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to accept 8/4/2025 minutes as amended • (b.vienneau, 2nd s.archambault), passe",
-   "quote_taken_from_text": true
+   "quote": "motion to accept 8/4/2025 minutes as amended • (b.vienneau, 2nd s.archambault), passed."
+  },
+  {
+   "motion": "To adjourn the meeting.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "B. Vienneau",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "meeting adjourned at 6:52 pm • ( s.archambault, 2nd b. vienneau) - passed)"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.07640240000000001
+ "dropped_unquoted": 0,
+ "note": "Text is a clean extraction of a three-page document with no scan issues. Votes are recorded as \"passed\" with no tally printed, so no counts are given. The adjournment line is printed with an unbalanced parenthesis, and the amount is printed as \"#35,271\" (a hash sign, not a dollar sign); both are reproduced as printed. The Manager's attendance is not explicitly stated, so her status is \"not stated\". The minutes say \"Public Comments: - • None\" and \"Committee Comments: - • None\", so public comment is empty.",
+ "cost_usd": 0.01449427,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault"
+  },
+  {
+   "name": "Brian Vienneau",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "3. excused: faith beall"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "not stated",
+   "quote": "4. manager: jo toale public comments:"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "S.Archambault and J.Toale will go through the Master Plan categories and report on PACC policy decisions.",
+   "quote": "s.archambault & j.toale will go through and report on pacc policy decisions."
+  },
+  {
+   "decision": "J.Toale and S.Walker will advise on the Cable Advisory committee, on which S.Archambault now sits.",
+   "quote": "s.archambault met with tow manager and is on committee. j.toale and s.walker will advise"
+  },
+  {
+   "decision": "The committee agreed it needs to meet to brainstorm on the Master Plan items (dedicated studio space, automating process via AI, long-term funding).",
+   "quote": "need to meet to brainstorm;"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY26 PEG Access warrant transfer request",
+   "what_was_recorded": "The committee moved to request a Town transfer from available funds for the FY26 PEG Access Enterprise budgets, with the amounts stated as printed.",
+   "quote": "to include $31,271 to be restored to the general fund and to include $4,000 for a total of #35,271.",
+   "figures_as_printed": [
+    "$31,271",
+    "$4,000",
+    "#35,271"
+   ]
+  },
+  {
+   "topic": "Encumbering retained earnings for FY26",
+   "what_was_recorded": "The minutes say PAC needs to encumber money from retained earnings and finalize FY26 numbers, with no figure printed.",
+   "quote": "pac needs to encumber money from retained earnings, update and finalize fy26 numbers.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY25 closing balance",
+   "what_was_recorded": "The Manager reported the enterprise balance after FY25 closed.",
+   "quote": "fy25 closed • balance - $ 1,054,510.72",
+   "figures_as_printed": [
+    "$ 1,054,510.72"
+   ]
+  },
+  {
+   "topic": "FY27 budget",
+   "what_was_recorded": "The Manager reported completing the first pass of the FY27 budget, with no figure printed.",
+   "quote": "completed first pass of fy27 budget",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Enterprise Fund investment status",
+   "what_was_recorded": "The item was reported as having no report, with no figure printed.",
+   "quote": "enterprise fund investment status: - no report",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Request that the Town transfer money from available funds to fund the FY26 PEG Access Enterprise operating and capital budgets.",
+   "amount_as_printed": "#35,271 (comprising $31,271 restored to the general fund and $4,000)",
+   "outcome": "passed",
+   "quote": "motion (b.vienneau, 2nd s.archambault) - to see if the town will vote to transfer money from available funds"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications: Special Town Meeting warrant request",
+   "resolution": "motion passed to request Town transfer",
+   "quote": "s.walker received a request to put in a warrant at the special town meeting.",
+   "tags": [
+    "warrant",
+    "special town meeting",
+    "PEG access",
+    "transfer"
+   ]
+  },
+  {
+   "topic": "Minutes of 8/4/2025",
+   "resolution": "approved as amended",
+   "quote": "motion to accept 8/4/2025 minutes as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's report",
+   "resolution": "no action",
+   "quote": "hired 2 new videographers (victoria leger & jane pascko)",
+   "tags": [
+    "staffing",
+    "shows",
+    "studio",
+    "FY27 budget",
+    "FY25 close"
+   ]
+  },
+  {
+   "topic": "Studio space update",
+   "resolution": "no action; as reported in Manager's report",
+   "quote": "as reported in manager's report",
+   "tags": [
+    "studio space"
+   ]
+  },
+  {
+   "topic": "Cable Advisory",
+   "resolution": "noted; J.Toale and S.Walker to advise",
+   "quote": "s.archambault met with tow manager and is on committee. j.toale and s.walker will advise",
+   "tags": [
+    "cable advisory"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund investment status",
+   "resolution": "no report",
+   "quote": "enterprise fund investment status: - no report",
+   "tags": [
+    "enterprise fund",
+    "investment"
+   ]
+  },
+  {
+   "topic": "Master planning",
+   "resolution": "assigned review; meeting to brainstorm",
+   "quote": "s.walker received an email asking pacc to review & fill in various categories on the master plan using their template.",
+   "tags": [
+    "master plan",
+    "AI",
+    "studio space",
+    "long-term funding"
+   ]
+  }
+ ],
+ "tags": [
+  "PEG access",
+  "public access television",
+  "warrant article",
+  "FY26 budget",
+  "FY27 budget",
+  "retained earnings",
+  "enterprise fund",
+  "studio space",
+  "master plan",
+  "cable advisory",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

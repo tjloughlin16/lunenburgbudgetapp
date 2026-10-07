@@ -351,5 +351,195 @@
    "at": "2026-10-06T18:06:05Z",
    "cost_usd": 0.21229299999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02192025-7053",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2025-02-19-minutes-7053.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2025-02-19-minutes-7053.pdf"
+  },
+  "official_sha256": "452b2af9ef6cf63fa2ca205ad51e549433b67599069d15bb7f3a7a365ac880f9",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the headline figures ($22.3 million, 25% markup, 5% OPM fee, $281,000 EV chargers) and on there being no votes or transfers. The base cost figure may differ: our minutes have about $17.8 million and the official minutes print $17,000,800, so check that against the recording and the cost estimate.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Base project cost estimate ($17 million figure)",
+    "ours": "Cost of escalators in borrowing figure: $22.3 Million, 17.8 million",
+    "official": "which was estimated at $17,000,800, but with a high range estimate of $22.3 million, including a 25% markup for soft costs",
+    "note": "We heard 17.8 million (and garbled '17,8 4917') while the official minutes print $17,000,800 and later '$17 million'; this may be a captions error or a typo in the official minutes, so check the recording at t=544 and t=2539 and the estimate document.",
+    "t": 2539
+   },
+   {
+    "kind": "agree",
+    "about": "High-range estimate $22.3 million",
+    "ours": "$22.3 Million",
+    "official": "which is currently estimated at $22.3 million.",
+    "note": "Both give $22.3 million as the current high-range figure used for borrowing.",
+    "t": 2539
+   },
+   {
+    "kind": "agree",
+    "about": "25% markup for soft costs",
+    "ours": "25% markup, 22.3",
+    "official": "including a 25% markup for soft costs",
+    "note": "Same markup percentage.",
+    "t": 544
+   },
+   {
+    "kind": "agree",
+    "about": "5% OPM fee",
+    "ours": "5% OPM fee",
+    "official": "michael-ray confirmed that the 5% opm (owner's project manager) fee is standard and not negotiable.",
+    "note": "Same 5% fee.",
+    "t": 544
+   },
+   {
+    "kind": "agree",
+    "about": "EV charger cost $281,000",
+    "ours": "EV chargers alternate: 281,000",
+    "official": "the town should not install $281,000 worth of electric vehicle (ev) charging stations, but rather a couple of charging stations that cover 4 spots",
+    "note": "Same $281,000 figure.",
+    "t": 794
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Number of EV charging stations",
+    "ours": "21 EV charging stations; General agreement to price two EV chargers as part of the project, with the infrastructure included.",
+    "official": "the town should not install $281,000 worth of electric vehicle (ev) charging stations, but rather a couple of charging stations that cover 4 spots",
+    "note": "We heard '21' stations and a plan to price two chargers; the official minutes say a couple of stations covering 4 spots, so check the recording at t=794 and t=1442 for the count and whether the $281,000 was rejected or priced as an alternate.",
+    "t": 1442
+   },
+   {
+    "kind": "agree",
+    "about": "Alternates included in bid package",
+    "ours": "Alternates (EV chargers, slab, solar) to be put in the bid for pricing even if not authorized at town meeting.",
+    "official": "committee to include alternates (like",
+    "note": "Both say EV chargers, slab and solar go into the bid as alternates.",
+    "t": 1631
+   },
+   {
+    "kind": "agree",
+    "about": "Hazardous materials follow-up",
+    "ours": "Chair to ask the project engineer about hazardous material survey and the implications of reconsidering fossil fuels.",
+    "official": "to contact chris ruth for more details on hazardous materials in town hall and ritter building.",
+    "note": "Same follow-up on hazardous materials; the contact is named only in the official minutes.",
+    "t": 2290
+   },
+   {
+    "kind": "agree",
+    "about": "Bond counsel and escalators",
+    "ours": "Chair to continue with bond counsel on escalators, with the higher estimate currently used.",
+    "official": "greg requested a more detailed breakdown of the costs between the $17 million price tag and the $22 million estimate.",
+    "note": "Both record the escalator and soft-cost breakdown follow-up with bond counsel and the $17 million to $22 million range.",
+    "t": 2582
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meeting house basement slab",
+    "ours": "Meeting house basement slab to remain a bid alternate, not in the base project; $32 a square foot, 97 ,000",
+    "official": "",
+    "note": "The official minutes list the slab only among the alternates, with no per-square-foot or dollar figure.",
+    "t": 1548
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "PV canopy federal funding figures",
+    "ours": "Photovoltaic canopy and federal funding: 75%, $1.7 Million, 400,000",
+    "official": "",
+    "note": "The official minutes mention the frozen Inflation Reduction Act funds but print no dollar figure or percentage.",
+    "t": 1697
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Borrowing term",
+    "ours": "Borrowing repayment schedule: 20-year, 30-year",
+    "official": "",
+    "note": "The official minutes do not mention loan terms.",
+    "t": 238
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prior study spending",
+    "ours": "Prior study spending and design stage: another 200 Grand",
+    "official": "",
+    "note": "The official minutes have no figure for prior study spending.",
+    "t": 3477
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Explore solar panels and EV charging",
+    "ours": "",
+    "official": "the team agreed to further explore the feasibility of solar panels and ev charging stations.",
+    "note": "Our minutes do not record this agreement.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Underground oil tank remnants",
+    "ours": "",
+    "official": "but concluded that this was unlikely due to the construction of the new public safety building in the early 2000s.",
+    "note": "Our minutes do not record the oil-tank discussion.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Social media monitoring and public presentation",
+    "ours": "",
+    "official": "brian lehtinen to continue monitoring social media for public concerns and questions about the project.",
+    "note": "Our minutes do not record this action.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Brian Lehtinen",
+    "ours": "Mr Brian Leon (member (school committee))",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray",
+    "note": "Same person, name misheard.",
+    "official_reading": "Brian Lehtinen",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Tony Sculumbrine",
+    "ours": "Tony scullen bini (APDC representative)",
+    "official": "community guests: tony sculumbrine, bob doolittle",
+    "note": "Same person, name misheard.",
+    "official_reading": "Tony Sculumbrine",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Tom Gray, Matthew Allison, Greg Roy",
+    "ours": "Mr Tom Gray (member (finance committee)); Mr Allison / Matthew Allison (member (planning board)); Mr Greg Roy (member (citizen at large))",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray",
+    "note": "All three are listed present in both.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Michael-Ray Jeffreys, absent members, Bob Doolittle",
+    "ours": "the chair (chair)",
+    "official": "members absent: david blatt, kristina masaitis",
+    "note": "Our minutes list the chair only as 'the chair', and omit absences and guest Bob Doolittle; confirm whether the chair is Michael-Ray Jeffreys.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:32:18Z",
+   "cost_usd": 0.256075
+  }
  }
 }

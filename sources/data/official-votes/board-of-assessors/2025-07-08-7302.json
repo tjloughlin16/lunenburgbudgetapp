@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-07-08",
  "docid": "7302",
@@ -12,15 +12,67 @@
  },
  "votes": [
   {
-   "motion": "Postpone the review of Senior Means Tested applications until all information was verified",
+   "motion": "Postpone review of the Senior Means Tested applications until all income information is verified.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "not stated",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "the boa voted to postpone the review until all information was verified"
+   "quote": "so the boa voted to postpone the review until all information was verified."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Moved by and seconded by not stated in the minutes. Vote outcome stated only as \"voted to postpone\" with no count or result recorded.",
- "cost_usd": 0.0561484
+ "note": "Short executive-session minutes. One vote is recorded as 'the BOA voted to postpone' with no mover, seconder or count, so the outcome is recorded as passed without a tally. The executive session start and the 9:55pm adjournment have no recorded motion and are not logged as votes. No dollar figures appear in the text, so budget_items is empty.",
+ "cost_usd": 0.01146257,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attending was chair, brian laffond and board member sarah cammer."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Board member",
+   "status": "present",
+   "quote": "attending was chair, brian laffond and board member sarah cammer."
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "the assessor",
+   "status": "not stated",
+   "quote": "lynda cajka the assessor will verify this information and plan to add to the next meeting agenda in october."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Assessor Lynda Cajka to verify the applicants' income information and place the item on the October meeting agenda.",
+   "quote": "lynda cajka the assessor will verify this information and plan to add to the next meeting agenda in october."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Senior Means Tested applications (executive session)",
+   "resolution": "postponed until income verified",
+   "quote": "the 8 senior means tested applications were reviewed, but there was further information needed on 2 applicants",
+   "tags": [
+    "senior tax relief",
+    "means-tested",
+    "executive session",
+    "income verification"
+   ]
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "executive session",
+  "senior means-tested applications",
+  "income verification",
+  "postponed"
+ ],
+ "dropped_unquoted_by_field": {}
 }

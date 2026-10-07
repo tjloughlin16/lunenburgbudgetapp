@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-08-06",
  "docid": "7334",
@@ -12,31 +12,165 @@
  },
  "votes": [
   {
-   "motion": "Accept $895 donation from Kevin T Szocik foundation to Lunenburg Middle High School Athletics Program",
-   "moved_by": "Mandy Gilman",
-   "seconded_by": "Emily Young",
+   "motion": "Accept a $895 donation from the Kevin T Szocik foundation to the Lunenburg Middle High School Athletics Program.",
+   "moved_by": "Ms. Gilman",
+   "seconded_by": "Ms. Young",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. gilman makes a motion to accept the motion, ms. young seconds the motion all approve"
   },
   {
-   "motion": "Accept the Business Administrator Contract",
-   "moved_by": "Mandy Gilman",
-   "seconded_by": "Anthony Sculimbrene",
+   "motion": "Approve the Business Administrator contract.",
+   "moved_by": "Ms. Gilman",
+   "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. gilman makes a motion to accept the contract, mr. sculimbrene seconds the motion, all approve"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Laura Brzozoski",
-   "seconded_by": "Mandy Gilman",
+   "motion": "Adjourn the meeting at 5:41.",
+   "moved_by": "Ms. Brzozoski",
+   "seconded_by": "Ms. Gilman",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to adjourn at 5:41 ms. gilman seconds the motion all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0827674
+ "note": "Text extract, not a scan. Votes are recorded only as \"all approve\" with no tally, so outcomes are \"passed\" without a count. The executive session has no recorded motion to enter. Timing is internally inconsistent: the minutes say the committee returned from executive session at 6:11, but the adjournment is at 5:41. The donation motion reads \"a motion to accept the motion\" as printed; it is recorded here as a motion to accept the donation. Pledge of Allegiance and Call to Order appear on the agenda with no minutes text beyond the agenda line, so they are not listed as topics. Status for Dr. Jodi Fortuna and Courtney Fuller is not stated in the minutes.",
+ "cost_usd": 0.01328757,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene chair - present dr. jodi fortuna"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laura brzozoski , vice chair - present"
+  },
+  {
+   "name": "Emily Young",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "emily young secretary - present"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "Member",
+   "status": "present",
+   "quote": "mandy gilman , member - present"
+  },
+  {
+   "name": "George Yapp",
+   "role": "Member",
+   "status": "absent",
+   "quote": "george yapp , member - absent"
+  },
+  {
+   "name": "Dr. Jodi Fortuna",
+   "role": "Superintendent of Schools",
+   "status": "not stated",
+   "quote": "anthony sculimbrene chair - present dr. jodi fortuna"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Tracey O ’Connell Novick",
+   "role": "MASC Field Director",
+   "status": "present",
+   "quote": "tracey o 'connell novick - masc field director"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Donation to LMHS Athletics Program",
+   "what_was_recorded": "The Kevin T Szocik foundation donated a check to the Lunenburg Middle High School Athletics Program, and the committee accepted it.",
+   "quote": "kevin t szocik foundation donated a check in the amount of $895 to lunenburg middle high school",
+   "figures_as_printed": [
+    "$895"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session (negotiations with nonunion personnel)",
+   "resolution": "entered; minutes say returned to regular session at 6:11; no vote recorded",
+   "quote": "2. executive session to conduct strategy sessions in preparation for negotiations with nonunion personnel",
+   "tags": [
+    "executive session",
+    "personnel",
+    "negotiations"
+   ]
+  },
+  {
+   "topic": "Business Administrator hire announced",
+   "resolution": "announced; no action",
+   "quote": "ms. brzozoski announces that chris mcnamara has been hired as our business administrator",
+   "tags": [
+    "personnel",
+    "business administrator"
+   ]
+  },
+  {
+   "topic": "Donation to LMHS Athletics Program",
+   "resolution": "accepted",
+   "quote": "kevin t szocik foundation donated a check in the amount of $895 to lunenburg middle high school",
+   "tags": [
+    "donations",
+    "athletics"
+   ]
+  },
+  {
+   "topic": "Business Administrator contract approval",
+   "resolution": "approved",
+   "quote": "ms. gilman makes a motion to accept the contract, mr. sculimbrene seconds the motion, all approve",
+   "tags": [
+    "personnel",
+    "contracts",
+    "business administrator"
+   ]
+  },
+  {
+   "topic": "Workshop on School Committee roles and superintendent evaluation",
+   "resolution": "presented; no action",
+   "quote": "ms. tracey novick discusses roles of the school committee along with the process of superintendent evaluations.",
+   "tags": [
+    "governance",
+    "superintendent evaluation",
+    "training"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:41",
+   "quote": "ms. brzozoski makes a motion to adjourn at 5:41 ms. gilman seconds the motion all approve",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "donations",
+  "athletics",
+  "business administrator",
+  "superintendent evaluation",
+  "executive session",
+  "governance training",
+  "open meeting law"
+ ],
+ "dropped_unquoted_by_field": {}
 }

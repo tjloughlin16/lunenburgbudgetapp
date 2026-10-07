@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-03-11",
  "docid": "7096",
@@ -12,55 +12,466 @@
  },
  "votes": [
   {
-   "motion": "Opt out of in-person early voting for local annual town elections",
+   "motion": "Opt out of in-person early voting for the local annual town elections.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Clerk Moore",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion: member alonzo moved to opt out of in-person early voting for the local annual town elections. the motion was seconded by clerk moore. the motion passed unanimously (5-0-0)."
+   "quote": "member alonzo moved to opt out of in-person early voting for the local annual town elections. the motion was seconded by clerk moore. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Tiffany Tavares as Assistant to the Sewer Business Manager",
+   "motion": "Ratify the Town Manager's appointment of Tiffany Tavares as Assistant to the Sewer Business Manager.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Vice Chair Jeffreys",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "member alonzo moved to ratify the town manager's appointment of tiffany tavares as assistant to the sewer business manager. vice chair jeffreys seconded the motion. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "member alonzo moved to ratify the town manager's appointment of tiffany tavares as assistant to the sewer business manager."
   },
   {
-   "motion": "Approve Minutes for January 15, 2025, February 4, 2025, February 11, 2025, February 18, 2025, and March 4, 2025",
+   "motion": "Approve minutes for January 15, 2025, February 4, 2025, February 11, 2025, February 18, 2025, and March 4, 2025.",
    "moved_by": "Member Emkey",
    "seconded_by": "Clerk Moore",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "member emkey made motion to approve minutes for january 15, 2025, february 4, 2025, february 11, 2025, february 18, 2025, and march 4, 2025. motion was seconded by clerk moore. motion passed unanimously (5-0-0)."
+   "quote": "member emkey made motion to approve minutes for january 15, 2025, february 4, 2025, february 11, 2025, february 18, 2025, and march 4, 2025."
   },
   {
-   "motion": "Waive the Board's right of first refusal on 100 Townsend Harbor Road",
+   "motion": "Waive the Board's right of first refusal on 100 Townsend Harbor Road.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Vice Chair Jeffreys",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "member alonzo moved that the board waive its right of first refusal on 100 townsend harbor road. the motion was seconded by vice chair jeffreys. the motion passed 4-0-1, with vice chair jeffreys abstaining."
+   "quote": "member alonzo moved that the board waive its right of first refusal on 100 townsend harbor road."
   },
   {
-   "motion": "Enter into Executive Session to discuss strategy with respect to litigation",
+   "motion": "Enter into Executive Session under MGL c. 30 §21 (a)(3) to discuss litigation strategy, and not re-enter open session.",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice Chair Jeffreys",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "chair nuzzolo made motion to enter into executive session and not to re-enter into open session pursuant to mgl c. 30 §21 (a)(3) to discuss strategy with respect to litigation if an open meeting may have detrimental effect on the litigating position of the town, and the chair of the board so declares. vice chair jeffreys seconded. motion passed (5-0-0)."
+   "quote": "chair nuzzolo made motion to enter into executive session and not to re-enter into open session pursuant to mgl c. 30 §21 (a)(3)"
   },
   {
-   "motion": "Approve the minutes from March 11, 2025",
+   "motion": "Approve the minutes from March 11, 2025.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Vice Chair Jeffreys",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "member alonzo made the motion to approve the minutes from march 11, 2025. seconded by vice chair jeffreys. call for the vote: four aye. one abstention (member moore). motion passed (4-0-1)."
+   "quote": "member alonzo made the motion to approve the minutes from march 11, 2025. seconded by vice chair jeffreys."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1379714
+ "note": "Text is machine-extracted from a 10-page PDF, and extraction artifacts remain (e.g. 'conserva�vely', 'Tiﬀany', 'theTtown', and missing spaces such as '$48,594,145Net'); quotes were copied as they appear. No motion is recorded for the Select Board's adjournment ('The Board adjourned the meeting concluding the Executive Session') or for the joint meeting; the School Committee's adjournment at 7:12 pm is also unvoted. The G.W. Shaw route change is described as having 'unanimous support' with no motion, so it is recorded as a decision, not a vote. The March 11 minutes approval vote is recorded in the same document (approved May 6, 2025). Public comment appears in two places; the first is empty. Julie Belliveau, who signed the minutes, is not listed as an attendee. Clerk Menard is identified only by surname and the body is inferred from the context of the Parks presentation.",
+ "cost_usd": 0.02074177,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "members present: chairperson caesar nuzzolo, vice chair michael ray jeffreys, clerk amanda moore, member tom alonzo, member renee emkey"
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: chairperson caesar nuzzolo, vice chair michael ray jeffreys, clerk amanda moore, member tom alonzo, member renee emkey"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chairperson caesar nuzzolo, vice chair michael ray jeffreys, clerk amanda moore, member tom alonzo, member renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chairperson caesar nuzzolo, vice chair michael ray jeffreys, clerk amanda moore, member tom alonzo, member renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chairperson caesar nuzzolo, vice chair michael ray jeffreys, clerk amanda moore, member tom alonzo, member renee emkey"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "School Committee Chair",
+   "status": "present",
+   "quote": "school committee chair brian lehtinen called the meeting to order at 6:05 pm."
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "School Committee Member",
+   "status": "present",
+   "quote": "school committee member anthony sculimbrene expressed his support for the idea of pursuing"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "School Committee Member",
+   "status": "present",
+   "quote": "conversely, school committee member laura brzozoski raised concerns about the risks of not"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "School Committee Member",
+   "status": "present",
+   "quote": "school committee member peter beardmore said that the expectation of the budget task force"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Member",
+   "status": "present",
+   "quote": "school committee member carol archambault indicated that she does not believe the override"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director, bill bernard, and ben shaw from g.w. shaw, discussed proposed changes to the"
+  },
+  {
+   "name": "Ben Shaw",
+   "role": "representing G.W. Shaw & Sons",
+   "status": "present",
+   "quote": "dpw director, bill bernard, and ben shaw from g.w. shaw, discussed proposed changes to the"
+  },
+  {
+   "name": "Christopher Reilly",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director, christopher reilly, provided a presentation on two zoning warrant articles for"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Planning Board Chair",
+   "status": "present",
+   "quote": "planning board chair matthew brenner reiterated that lunenburg had"
+  },
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair, Parks Commission",
+   "status": "present",
+   "quote": "presentation by anita scheipers, chair, parks commission on town meeting"
+  },
+  {
+   "name": "Menard",
+   "role": "Clerk (Parks Commission, as printed: Clerk Menard)",
+   "status": "present",
+   "quote": "chair scheipers and clerk menard presented an update on the marshall park improvements and"
+  },
+  {
+   "name": "Ruth Anderson",
+   "role": "Board of Registrars representative",
+   "status": "present",
+   "quote": "representatives, ruth anderson and karen kemp, from the board of registrars recommended"
+  },
+  {
+   "name": "Karen Kemp",
+   "role": "Board of Registrars representative",
+   "status": "present",
+   "quote": "representatives, ruth anderson and karen kemp, from the board of registrars recommended"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "resident, of 436 Reservoir Road",
+   "status": "present",
+   "quote": "glenn mcleod of 436 reservoir road took the floor to express a series of comments and considerations to the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Both boards reached a general consensus to refrain from pursuing an override this year, using one-time funds to bridge the gap and developing an override proposal for next year.",
+   "quote": "the general consensus among both boards was to refrain from pursuing an override this year."
+  },
+  {
+   "decision": "The board agreed to continue budget discussions at future meetings; no final decisions on the FY26 budget were reached.",
+   "quote": "no final decisions were reached, but the board agreed to continue budget discussions at future meetings to refine strategies"
+  },
+  {
+   "decision": "The Town Manager will continue work on a policy for the use of grants, per Vice Chair Jeffreys's recommendation.",
+   "quote": "vice chair jeffreys recommends a policy on the utilization of grants. the town manager will is going continue working on this."
+  },
+  {
+   "decision": "The board endorsed the G.W. Shaw trash route changes (Monday load shifted to Wednesday, Thursday change to Friday), with start the week of April 7th. No motion is recorded.",
+   "quote": "the proposal received unanimous support from the select board, who commended the plan and"
+  },
+  {
+   "decision": "The board acknowledged the list of upcoming vacancies but deferred detailed review to a future meeting.",
+   "quote": "the board acknowledged receipt of the list of upcoming vacancies but deferred detailed review to a future meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY26 preliminary budget revenues and net state aid",
+   "what_was_recorded": "The Town Manager presented the FY26 Preliminary Budget with total revenues and net state aid figures.",
+   "figures_as_printed": [
+    "$48,594,145",
+    "$9,803,971"
+   ],
+   "quote": "total revenues are $48,594,145net state aid is $9,803,971."
+  },
+  {
+   "topic": "Override amount needed for one year",
+   "what_was_recorded": "Approximately $2 million was indicated as needed for the schools, bringing the total with town needs to around $2.6 million for one year.",
+   "figures_as_printed": [
+    "$2 million",
+    "$2.6 million"
+   ],
+   "quote": "it was indicated that approximately $2 million would be needed specifically for the schools, with additional town needs, bringing the total to around $2.6 million for one year."
+  },
+  {
+   "topic": "Free cash level next year",
+   "what_was_recorded": "If the one-time free cash use is approved at Town Meeting, free cash would start next year at a stated amount.",
+   "figures_as_printed": [
+    "$383,162"
+   ],
+   "quote": "if this is approved at town meeting, next year we would start free cash at $383,162."
+  },
+  {
+   "topic": "Marshall Park total project cost",
+   "what_was_recorded": "The entire Marshall Park project, all phases, is projected to cost a stated amount, to be sought as debt exclusion borrowing.",
+   "figures_as_printed": [
+    "$13.9 million"
+   ],
+   "quote": "the entire project, encompassing all phases, is projected to cost $13.9 million."
+  },
+  {
+   "topic": "Marshall Park Phase 1 fallback option",
+   "what_was_recorded": "If full funding is not supported, the Parks Commission has a fallback option to move forward only with Phase 1 including the Phase 2B building component.",
+   "figures_as_printed": [
+    "$5.8 million"
+   ],
+   "quote": "if the full funding is not supported by the town, the commission has prepared a fallback option to move forward only with phase 1"
+  },
+  {
+   "topic": "100 Townsend Harbor Road right of first refusal",
+   "what_was_recorded": "The town was determined not to have the funds available to purchase the property at the stated price.",
+   "figures_as_printed": [
+    "$400,000"
+   ],
+   "quote": "does not have $400,000 available to purchase the property."
+  },
+  {
+   "topic": "Free cash and one-time funds",
+   "what_was_recorded": "Discussion of the risks of using free cash as a stopgap; free cash is not expected to continue as in the past. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "free cash is not going to continue as it has in the past."
+  },
+  {
+   "topic": "Grant Writer budget",
+   "what_was_recorded": "Members noted a Grant Writer position had been budgeted but not filled; the Town Manager pursues a Grant and Contract Manager instead. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "vice chair jeffreys agrees and that there was a budget for a grant writer."
+  },
+  {
+   "topic": "Pavement management plan",
+   "what_was_recorded": "Concerns were raised about cutting the pavement management plan from the budget. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "concerns about cutting out the pavement management plan, it consulting services"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Glenn McLeod",
+   "stated_role": "of 436 Reservoir Road",
+   "topic": "Fire department staffing, health insurance cost splits, 100 Townsend Harbor Road waiver",
+   "quote": "glenn mcleod of 436 reservoir road took the floor to express a series of comments and considerations to the board."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "chair nuzzolo called the meeting to order at 6:00 p.m. and led the pledge of allegiance."
+  },
+  {
+   "topic": "Joint meeting with School Committee: FY26 budget",
+   "resolution": "discussed; consensus against an override this year, no vote",
+   "tags": [
+    "FY26 budget",
+    "override",
+    "free cash",
+    "school committee"
+   ],
+   "quote": "the general consensus among both boards was to refrain from pursuing an override this year."
+  },
+  {
+   "topic": "Board comments: caucus, vacancies, Sewer Commission",
+   "resolution": "no action",
+   "tags": [
+    "elections",
+    "vacancies"
+   ],
+   "quote": "it was mentioned that only one of four openings on the sewer commission was filled, potentially leading to quorum issues"
+  },
+  {
+   "topic": "G.W. Shaw & Sons proposed trash route changes",
+   "resolution": "unanimous support recorded; no motion",
+   "tags": [
+    "trash collection",
+    "DPW"
+   ],
+   "quote": "the proposal received unanimous support from the select board, who commended the plan and"
+  },
+  {
+   "topic": "Presentation on ADU and floodplain warrant articles",
+   "resolution": "presented; no action",
+   "tags": [
+    "zoning",
+    "ADU",
+    "floodplain",
+    "town meeting"
+   ],
+   "quote": "land use director, christopher reilly, provided a presentation on two zoning warrant articles for"
+  },
+  {
+   "topic": "Presentation on Marshall Park warrant article",
+   "resolution": "presented; no action",
+   "tags": [
+    "Marshall Park",
+    "parks",
+    "town meeting",
+    "debt exclusion"
+   ],
+   "quote": "chair scheipers and clerk menard presented an update on the marshall park improvements and"
+  },
+  {
+   "topic": "Early in-person voting",
+   "resolution": "opted out, passed 5-0-0",
+   "tags": [
+    "elections",
+    "early voting"
+   ],
+   "quote": "member alonzo moved to opt out of in-person early voting for the local annual town elections."
+  },
+  {
+   "topic": "Appointments, ratifications and resignations",
+   "resolution": "Tavares appointment ratified 5-0-0; resignations acknowledged",
+   "tags": [
+    "appointments",
+    "sewer",
+    "board of assessors"
+   ],
+   "quote": "member alonzo moved to ratify the town manager's appointment of tiffany tavares as assistant to the sewer business manager."
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; no action",
+   "tags": [
+    "town projects",
+    "facilities",
+    "recruitment"
+   ],
+   "quote": "the library teen room project is nearly complete, with painters scheduled to begin work"
+  },
+  {
+   "topic": "FY26 budget, capital plan and Annual Town Meeting warrant",
+   "resolution": "continued; no final decisions",
+   "tags": [
+    "FY26 budget",
+    "capital plan",
+    "town meeting",
+    "grants"
+   ],
+   "quote": "no final decisions were reached, but the board agreed to continue budget discussions at future meetings to refine strategies"
+  },
+  {
+   "topic": "Upcoming vacancies for appointed bodies",
+   "resolution": "received; review deferred",
+   "tags": [
+    "vacancies"
+   ],
+   "quote": "the board acknowledged receipt of the list of upcoming vacancies but deferred detailed review to a future meeting."
+  },
+  {
+   "topic": "Approval of minutes, five meetings",
+   "resolution": "approved 5-0-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "member emkey made motion to approve minutes for january 15, 2025, february 4, 2025, february 11, 2025, february 18, 2025, and march 4, 2025."
+  },
+  {
+   "topic": "Right of first refusal, 100 Townsend Harbor Road",
+   "resolution": "waived, passed 4-0-1",
+   "tags": [
+    "property",
+    "right of first refusal",
+    "Townsend Harbor Road"
+   ],
+   "quote": "member alonzo moved that the board waive its right of first refusal on 100 townsend harbor road."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "tags": [
+    "economic development",
+    "master planning",
+    "school superintendent search"
+   ],
+   "quote": "economic development committee: clerk moore mentioned that the committee has not met"
+  },
+  {
+   "topic": "Public comment on fire staffing, health insurance, Townsend Harbor Road",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "fire department",
+    "health insurance"
+   ],
+   "quote": "glenn mcleod of 436 reservoir road took the floor to express a series of comments and considerations to the board."
+  },
+  {
+   "topic": "Executive session: litigation strategy",
+   "resolution": "entered 5-0-0; meeting concluded with executive session",
+   "tags": [
+    "executive session",
+    "litigation"
+   ],
+   "quote": "chair nuzzolo made motion to enter into executive session and not to re-enter into open session pursuant to mgl c. 30 §21 (a)(3)"
+  },
+  {
+   "topic": "Approval of these minutes (March 11, 2025)",
+   "resolution": "approved 4-0-1 on May 6, 2025",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "member alonzo made the motion to approve the minutes from march 11, 2025. seconded by vice chair jeffreys."
+  }
+ ],
+ "tags": [
+  "select board",
+  "FY26 budget",
+  "override",
+  "free cash",
+  "school committee joint meeting",
+  "town meeting warrant",
+  "zoning",
+  "ADU",
+  "floodplain",
+  "Marshall Park",
+  "parks",
+  "early voting",
+  "appointments",
+  "right of first refusal",
+  "trash collection",
+  "health insurance",
+  "fire department staffing",
+  "executive session",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

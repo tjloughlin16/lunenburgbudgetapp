@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2025-01-16",
  "docid": "6959",
@@ -12,24 +12,24 @@
  },
  "votes": [
   {
-   "motion": "Approve 14 November minutes",
-   "moved_by": "Lloyd",
+   "motion": "Approve the 14 November minutes.",
+   "moved_by": "Mbr Lloyd",
    "seconded_by": "McGrath",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to approve 14 november minutes by mbr lloyd, seconded by mcgrath, approved by all mbrs"
   },
   {
-   "motion": "Approve 12 December minutes",
-   "moved_by": "Lloyd",
+   "motion": "Approve the 12 December minutes.",
+   "moved_by": "Mbr Lloyd",
    "seconded_by": "McGrath",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to approve 12 december minutes by mbr lloyd, seconded by mcgrath, approved by all mbrs"
   },
   {
-   "motion": "Have all discussion with/about town counsel held in executive session",
-   "moved_by": "Lockwood",
+   "motion": "Hold all discussion with or about town counsel in executive session.",
+   "moved_by": "Mbr Lockwood",
    "seconded_by": "McGrath",
    "outcome": "passed",
    "procedural": true,
@@ -37,6 +37,223 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three procedural votes recorded: two for approval of prior minutes and one to enter executive session. The note about Commission agreement to use opengov.com is recorded as general agreement, not as a formal motion with a recorded vote.",
- "cost_usd": 0.07634039999999999
+ "note": "Plain-text minutes, not a scan. Three motions carry a recorded result but no roll-call count (\"approved by all mbrs\"), so outcomes are recorded as passed. The opengov.com agreement is a decision without a motion. The minutes spell the land use director both \"Reilly\" and \"Riely\"; Reilly is used here as introduced. Public comment reads \"1) None\", so no speakers. No dollar figures are printed; the only money-related item is the mention of federal grants.",
+ "cost_usd": 0.014695070000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Christopher Reilly",
+   "role": "Land use director for Lunenburg, as introduced",
+   "status": "not stated",
+   "quote": "introduction of new land use director for lunenburg, christopher reilly."
+  },
+  {
+   "name": "Micheal Ray-Jefferies",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "micheal ray-jefferies does not know if he will pause the design"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to use opengov.com for digital format of determinations of applicability; a paper version remains for those who need one.",
+   "quote": "commission agreed to use opengov.com."
+  },
+  {
+   "decision": "Lockwood to work with Reilly and the planning board on the merger and district issues.",
+   "quote": "lockwood - will work with riely and planning board"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Federal grants for 2025",
+   "what_was_recorded": "The minutes note that federal grants for 2025 have opened, under the 50 Mass Ave item; no amount is printed.",
+   "quote": "federal grants for 2025 have opens up",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (14 November and 12 December)",
+   "resolution": "approved",
+   "quote": "motion to approve 14 november minutes by mbr lloyd, seconded by mcgrath, approved by all mbrs",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondences",
+   "resolution": "no action",
+   "quote": "correspondences: 1) none",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Introduction of new Land use director",
+   "resolution": "introduced",
+   "quote": "introduction of new land use director for lunenburg, christopher reilly.",
+   "tags": [
+    "land use",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Cyrus Kilburn Survey",
+   "resolution": "no action",
+   "quote": "historical commission has hired a consultant to do a survey of all housing and key town locations",
+   "tags": [
+    "historic survey",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Town pound",
+   "resolution": "no action",
+   "quote": "needs some tree removal and stones replaced",
+   "tags": [
+    "town pound",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Hometown Heros Project",
+   "resolution": "no action",
+   "quote": "still on-going, will be mainly focused within the apdc",
+   "tags": [
+    "hometown heroes"
+   ]
+  },
+  {
+   "topic": "APDC and Historical Commission merger",
+   "resolution": "discussed; executive session motion passed; continued",
+   "quote": "chairman sculimbrene spoke with counsel teranzini, he is concerned with the apdc bylaws",
+   "tags": [
+    "merger",
+    "bylaws",
+    "town counsel",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Lunenburg Municipal Planning Committee design",
+   "resolution": "discussed; no action",
+   "quote": "taylor and burns has the award for design",
+   "tags": [
+    "town hall",
+    "design",
+    "planning committee"
+   ]
+  },
+  {
+   "topic": "Determination of applicability digital format",
+   "resolution": "approved (opengov.com)",
+   "quote": "recommend to upgrade to digital format - building permits already use system.",
+   "tags": [
+    "permits",
+    "digital",
+    "opengov"
+   ]
+  },
+  {
+   "topic": "Town Hall and Ritter renovations",
+   "resolution": "no action",
+   "quote": "town hall chimneys are phase i of the process.",
+   "tags": [
+    "town hall",
+    "ritter building"
+   ]
+  },
+  {
+   "topic": "Brooks House",
+   "resolution": "no action",
+   "quote": "is in the hands of the lunenburg municipal design committee.",
+   "tags": [
+    "brooks house"
+   ]
+  },
+  {
+   "topic": "762 Mass Ave",
+   "resolution": "no action",
+   "quote": "762 mass ave a. no new information",
+   "tags": [
+    "762 mass ave"
+   ]
+  },
+  {
+   "topic": "50 Mass Ave",
+   "resolution": "continued",
+   "quote": "talked to other members of the condo association, will need more follow up",
+   "tags": [
+    "50 mass ave"
+   ]
+  },
+  {
+   "topic": "Owner notification",
+   "resolution": "held until merger decision",
+   "quote": "owner notification - on hold until merger decision.",
+   "tags": [
+    "owner notification"
+   ]
+  },
+  {
+   "topic": "Historical Commission cemetery work",
+   "resolution": "no action",
+   "quote": "working with cemetery commission restoring goodrich cemetery plot",
+   "tags": [
+    "cemetery",
+    "historical commission",
+    "eminent domain"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "no action",
+   "quote": "other business: 1) none",
+   "tags": []
+  }
+ ],
+ "tags": [
+  "architectural preservation district",
+  "APDC",
+  "historical commission merger",
+  "bylaws",
+  "town counsel",
+  "executive session",
+  "design review",
+  "digital permits",
+  "town hall",
+  "ritter building",
+  "cemetery",
+  "mass ave",
+  "land use director"
+ ],
+ "dropped_unquoted_by_field": {}
 }

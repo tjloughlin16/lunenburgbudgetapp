@@ -292,5 +292,149 @@
    "at": "2026-10-06T18:08:05Z",
    "cost_usd": 0.210891
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02122025-7026",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2025-02-12-minutes-7026.txt",
+   "path": "sources/meetings/open-space-committee/2025-02-12-minutes-7026.pdf"
+  },
+  "official_sha256": "6acc13b6eae7c2973d36e360adcb99a9d2e18c4c592fb652ede71c09a4058729",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the main outcome, that the Townsend Harbor Road right of first refusal discussion was tabled to the next meeting by consensus, and on the attendees apart from misheard names. Ours is much more detailed, with figures, a joint-meeting contingency, a town counsel follow-up and meeting schedules, none of which appear in the official minutes.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 4,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote/decision to table the right of first refusal recommendation",
+    "ours": "Table a recommendation vote on the right of first refusal for the Townsend Harbor Road parcel until the next meeting. — not audible; Committee agreed by consensus to table a recommendation on exercising right of first refusal to the March 12 meeting.",
+    "official": "consensus was to table the discussion to our next meeting to receive input from",
+    "note": "Both say tabled by consensus; ours lists it as a vote with an inaudible result and says a 'recommendation' was tabled, the official says a 'discussion' was tabled and records no vote, so check the recording at t=3334 for whether a formal vote occurred.",
+    "t": 3334
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Officer positions / chair continuing",
+    "ours": "Officer positions stay as is for now; clerk and chair/vice chair decisions deferred to the next meeting pending the clerk's decision.",
+    "official": "in his current role while the discussion of committee structure continues.",
+    "note": "Both keep the chair in place pending discussion, but ours also defers clerk and vice chair decisions to the next meeting and the official records only the chair agreeing to continue; check whether the clerk deferral was stated.",
+    "t": 3563
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Contingency: joint meeting with planning board if select board acts sooner",
+    "ours": "If the select board acts sooner, the committee would seek a joint meeting with the planning board before March 12.",
+    "official": "",
+    "note": "A conditional plan appears only in ours; the official minutes do not mention it.",
+    "t": 3416
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meeting format and schedule for March 12 and April 9",
+    "ours": "March 12 meeting remains remote; April 9 meeting planned in person, possibly hybrid.",
+    "official": "",
+    "note": "Official excerpt records only that this meeting was fully remote; future meeting formats are not in it.",
+    "t": 3607
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Follow-up with town counsel about agricultural commission holding land",
+    "ours": "The chair and guests will follow up with town counsel about whether the agricultural commission could hold land without a town vote.",
+    "official": "",
+    "note": "Action item absent from the official minutes.",
+    "t": 3293
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Purchase and sale price and acreage",
+    "ours": "Purchase and sale agreement for Townsend Harbor Road parcel: $400,000, 9.1 Acres",
+    "official": "",
+    "note": "The official minutes list no budget figures, so the $400,000 price, acreage, and the related figures ($75,000 assessed, 120 days, free cash amounts) are only in ours.",
+    "t": 341
+   },
+   {
+    "kind": "agree",
+    "about": "Chair attendee",
+    "ours": "Mike (to Hill) (chair)",
+    "official": "meeting was fully remote via zoom/recorded members present: michael toohill (chair)",
+    "note": "Same person; caption misheard the surname as 'to Hill' for Toohill."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Mike (to Hill)",
+    "official": "michael toohill (chair)",
+    "note": "Captions misheard Toohill.",
+    "official_reading": "Michael Toohill",
+    "t": 341
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair name",
+    "ours": "Anna Lockwood (member (vice chair))",
+    "official": "a. lockwood motioned to approve minutes from the january 8, 2025 meeting.",
+    "note": "Same person; the official spelling is Ana.",
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Glen",
+    "ours": "Glen (member (took the minutes))",
+    "official": "g. mcleod seconded the motion.",
+    "note": "Same member; captions gave only a first name, spelled Glenn McLeod officially.",
+    "official_reading": "Glenn McLeod"
+   },
+   {
+    "kind": "agree",
+    "about": "Tim Lawless attendee",
+    "ours": "Tim Lawless (member)",
+    "official": "glenn mcleod timothy lawless",
+    "note": "Same member, present in both."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Guest Dave pascos",
+    "ours": "Dave pascos (guest)",
+    "official": "d. passios indicated he would continue to assist",
+    "note": "Same person; the spelling differs, and the official gives only the initial D.",
+    "official_reading": "D. Passios"
+   },
+   {
+    "kind": "agree",
+    "about": "Jennifer Duffy attendee",
+    "ours": "Jennifer Duffy (guest, chair of the agricultural commission)",
+    "official": "in the discussion and were supportive of acquiring the property.",
+    "note": "Duffy appears in both as a guest or attendee (official lists J. Duffy); role is only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on open communication between boards",
+    "ours": "",
+    "official": "d. passios indicated he would continue to assist",
+    "note": "Official records D. Passios offering continued assistance and open communication between boards; ours has no matching item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment supporting acquisition of 100 Townsend Harbor Road",
+    "ours": "",
+    "official": "supportive comments made during the 100 townsend harbor road right of first refusal discussion.",
+    "note": "Official records supportive comments; ours does not record them as such."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:33:22Z",
+   "cost_usd": 0.232223
+  }
  }
 }

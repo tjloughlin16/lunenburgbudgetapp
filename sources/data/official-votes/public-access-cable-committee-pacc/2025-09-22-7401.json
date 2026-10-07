@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2025-09-22",
  "docid": "7401",
@@ -10,8 +10,129 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09222025-7401",
   "doc_url": "/docs/meetings/public-access-cable-committee-pacc/2025-09-22-minutes-7401.txt"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "One procedural vote for adjournment. The Master Planning section describes finalizing wording on Goals #5 and #6 but records no formal vote with motion, second, or outcome.",
- "cost_usd": 0.06338339999999999
+ "votes": [
+  {
+   "motion": "Adjourn the special meeting.",
+   "moved_by": "S. Archambault",
+   "seconded_by": "B. Vienneau",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "( s.archambault, 2nd b. vienneau) - passed)"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is a plain extraction with no scan issues. Only one motion is recorded (adjournment, with mover and seconder printed). Wording for Master Plan Goals 5 and 6 is said to be in a separate document that is not part of this text, so the goal wording itself is not recorded here. The goal decisions are recorded as decisions without a vote because the minutes record no motion for them. No dollar figures appear in the text. Public comment and committee comments are recorded as 'None'.",
+ "cost_usd": 0.012196370000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault"
+  },
+  {
+   "name": "Brian Vienneau",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, brian vienneau, steve archambault"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "excused: faith beall"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "not stated",
+   "quote": "manager: jo toale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee finalized wording for Goal #5 of the Master Plan (the wording is in a separate document, not in the minutes text).",
+   "quote": "s.walker led a discussion on filling out goal #5 of the master plan. the committee finalize wording (see document)"
+  },
+  {
+   "decision": "The committee finalized wording for Goal #6 of the Master Plan, which it felt was within PACC's jurisdiction (the wording is in a separate document, not in the minutes text).",
+   "quote": "the committee felt the goal #6 was within pacc's jurisdiction. the committee finalize wording (see document)"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "meeting called to order at 3:03pm; quorum of three members present, one excused",
+   "quote": "meeting was called to order at 3:03pm. 2. pacc members present: steve walker, brian vienneau, steve archambault",
+   "tags": [
+    "roll call",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no comments recorded",
+   "quote": "public comments: - • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments",
+   "resolution": "no comments recorded",
+   "quote": "committee comments: - • none",
+   "tags": [
+    "committee comments"
+   ]
+  },
+  {
+   "topic": "Master Plan Goal #5",
+   "resolution": "wording finalized (see document)",
+   "quote": "s.walker led a discussion on filling out goal #5 of the master plan. the committee finalize wording (see document)",
+   "tags": [
+    "master plan",
+    "goal 5"
+   ]
+  },
+  {
+   "topic": "Master Plan Goal #6",
+   "resolution": "wording finalized (see document); committee felt the goal was within PACC's jurisdiction",
+   "quote": "s.walker led a discussion on filling out goal #6 of the master plan as the committee felt the goal #6 was within pacc's jurisdiction.",
+   "tags": [
+    "master plan",
+    "goal 6",
+    "jurisdiction"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 4:09 pm, passed",
+   "quote": "meeting adjourned at 4:09 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "Public Access Cable Committee",
+  "PACC",
+  "special meeting",
+  "master plan",
+  "Goal 5",
+  "Goal 6",
+  "Lunenburg",
+  "public access television"
+ ],
+ "dropped_unquoted_by_field": {}
 }

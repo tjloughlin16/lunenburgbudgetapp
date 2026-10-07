@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-03-06",
  "docid": "7008",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from February 14, 2025",
+   "motion": "Approve the minutes of February 14, 2025.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jean Russell",
    "outcome": "passed 5-0-1",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to approve the minutes from february 14, 2025, by tom gray, seconded by jean russell. the vote was 5-0-1."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tom Gray",
    "outcome": "not stated",
@@ -28,7 +28,450 @@
    "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Two votes recorded. The adjournment motion was made and seconded but no explicit vote result was stated in the minutes—the meeting simply closed at 10:53 PM immediately after.",
- "cost_usd": 0.0715014
+ "dropped_unquoted": 1,
+ "note": "Text extraction of a digital document, not a scan; all 5 pages read. Two procedural votes are recorded: minutes approved 5-0-1, and adjournment with a mover and seconder but no outcome printed (recorded as 'not stated'). Several quotes are fragments of lines that carry the ligatures in the source ('ﬁ', 'ﬂ'), so they were avoided where possible. The minutes give no vote on the school budget, the override, or the Council on Aging request. The athletics line is a majority sense of the Committee, not a recorded vote. Brian Lehtinen's role is not stated in the minutes.",
+ "cost_usd": 0.01727447,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall, committee member ana lockwood,"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member ana lockwood, committee member mike rupp"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member ana lockwood, committee member mike rupp"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "absent",
+   "quote": "absent member: committee member jay simeone"
+  },
+  {
+   "name": "Debra Goodsell",
+   "role": "Director",
+   "status": "present",
+   "quote": "the director, debra goodsell, provided the presentation."
+  },
+  {
+   "name": "Rhonda Lizio",
+   "role": "resident, 181 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda lizio, 181 reservoir road, questions how many of the seniors come from other towns."
+  },
+  {
+   "name": "Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "kate burnham - superintendent of schools"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services",
+   "status": "present",
+   "quote": "julianna hanscom - director of special services"
+  },
+  {
+   "name": "Susan Gilson",
+   "role": "Director of Administration and Finance",
+   "status": "present",
+   "quote": "susan gilson - director of administration and finance"
+  },
+  {
+   "name": "Deborah Bookis",
+   "role": "Director of Teacher and Learning",
+   "status": "present",
+   "quote": "deborah bookis - director of teacher and learning"
+  },
+  {
+   "name": "John Bowen",
+   "role": "resident, 162 Highland Street",
+   "status": "present",
+   "quote": "john bowen, 162 highland street, has come before the committee to discuss the"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "not stated",
+   "status": "present",
+   "quote": "this will be a discussion at the meeting with the school and select board on tuesday"
+  },
+  {
+   "name": "Laura Veran",
+   "role": "resident, 389 Mulpus Road",
+   "status": "present",
+   "quote": "laura veran, 389 mulpus road, requests the actual to budget information."
+  },
+  {
+   "name": "Tom Brown",
+   "role": "Superintendent, Montachusett Regional High School",
+   "status": "present",
+   "quote": "superintendent, tom brown, and business manager for the school district, tammy crockett, provided the presentation."
+  },
+  {
+   "name": "Tammy Crockett",
+   "role": "Business Manager for the school district",
+   "status": "present",
+   "quote": "superintendent, tom brown, and business manager for the school district, tammy crockett, provided the presentation."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Majority of the Committee agrees that athletics should not be cut.",
+   "quote": "majority of the committee agrees that athletics should not be cut."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cemetery Commission sale of lots fund",
+   "what_was_recorded": "A public speaker said the Cemetery Commission declined to use the sale of lots fund despite its balance.",
+   "figures_as_printed": [
+    "$94,000"
+   ],
+   "quote": "they decided not to take any money out of the sale of lots funds despite their $94,000 balance."
+  },
+  {
+   "topic": "FY 2025 School budget total",
+   "what_was_recorded": "The school department reported its total adjusted FY 2025 budget.",
+   "figures_as_printed": [
+    "$24,883,376"
+   ],
+   "quote": "the total adjusted budget for fy 2025 is $24,883,376."
+  },
+  {
+   "topic": "Town Manager school budget increase",
+   "what_was_recorded": "The Town Manager's school budget includes an increase bringing the total to a higher figure.",
+   "figures_as_printed": [
+    "904,098",
+    "$25,787,474"
+   ],
+   "quote": "the town managers budget includes a 904,098-increase bringing the total to $25,787,474."
+  },
+  {
+   "topic": "Salary line increase",
+   "what_was_recorded": "A salary line increase was described as needed to create a level service budget.",
+   "figures_as_printed": [
+    "$949,900"
+   ],
+   "quote": "there is a $949,900 increase in the salary line to create a level service budget."
+  },
+  {
+   "topic": "Health insurance increase",
+   "what_was_recorded": "The school budget reports a percentage increase in health insurance.",
+   "figures_as_printed": [
+    "14.8%"
+   ],
+   "quote": "14.8% increase in health insurance"
+  },
+  {
+   "topic": "Dee Bus services increase",
+   "what_was_recorded": "The school budget reports a percentage increase in Dee Bus services.",
+   "figures_as_printed": [
+    "7.6%"
+   ],
+   "quote": "7.6% increase in dee bus services"
+  },
+  {
+   "topic": "Vanpool for special education transportation",
+   "what_was_recorded": "The school budget reports a percentage increase in vanpool for special education transportation.",
+   "figures_as_printed": [
+    "7%"
+   ],
+   "quote": "7% increase in vanpool for special education transportation"
+  },
+  {
+   "topic": "Prior year override amount",
+   "what_was_recorded": "The superintendent stated the override amount last year.",
+   "figures_as_printed": [
+    "$948,000"
+   ],
+   "quote": "dr. kate burnham states the override amount was $948,000."
+  },
+  {
+   "topic": "Salary reserve",
+   "what_was_recorded": "The salary reserve is projected to hold a set amount for negotiations.",
+   "figures_as_printed": [
+    "$90,769"
+   ],
+   "quote": "the salary reserve is projected to have $90,769 for paraprofessional, administrator, and superintendent salary negotiations."
+  },
+  {
+   "topic": "School bus fees",
+   "what_was_recorded": "A committee member said school bus fees should be started to help with cost; no figure given.",
+   "figures_as_printed": [],
+   "quote": "ana lockwood believes that school bus fees should be initiated to help with"
+  },
+  {
+   "topic": "Monty Tech entitlement grants",
+   "what_was_recorded": "Monty Tech reported state and federal entitlement grants awarded in FY 25.",
+   "figures_as_printed": [
+    "$1,062,891"
+   ],
+   "quote": "in fy 25 monty tech was awarded $1,062,891 in state and federal entitlement grants."
+  },
+  {
+   "topic": "Monty Tech competitive grants",
+   "what_was_recorded": "Monty Tech reported competitive grants awarded to date.",
+   "figures_as_printed": [
+    "$2,711,900"
+   ],
+   "quote": "to date, $2,711,900 have been awarded for competitive grants."
+  },
+  {
+   "topic": "Monty Tech per pupil foundational budget",
+   "what_was_recorded": "Monty Tech reported the foundational budget per pupil spent.",
+   "figures_as_printed": [
+    "$20,827"
+   ],
+   "quote": "the foundational budget per pupil spent is $20,827."
+  },
+  {
+   "topic": "Monty Tech net school spending increase",
+   "what_was_recorded": "Monty Tech reported an increase in above net school spending from FY 2025 to FY 2026.",
+   "figures_as_printed": [
+    "$872,000"
+   ],
+   "quote": "the above net school spending increased $872,000 from fy 2025 to fy 2026."
+  },
+  {
+   "topic": "Monty Tech FY 2026 budget total",
+   "what_was_recorded": "Monty Tech reported its total FY 2026 budget.",
+   "figures_as_printed": [
+    "$34,641,344"
+   ],
+   "quote": "the total fy 2026 budget is $34,641,344."
+  },
+  {
+   "topic": "Monty Tech salary increase",
+   "what_was_recorded": "Monty Tech reported a salary increase from FY 2025 to FY 2026.",
+   "figures_as_printed": [
+    "$580,731"
+   ],
+   "quote": "salaries increased $580,731"
+  },
+  {
+   "topic": "Monty Tech utilities and insurance increase",
+   "what_was_recorded": "Monty Tech reported an increase in utilities and insurance.",
+   "figures_as_printed": [
+    "$96,000"
+   ],
+   "quote": "utilities and insurance increased $96,000"
+  },
+  {
+   "topic": "Monty Tech program equipment and supplies increase",
+   "what_was_recorded": "Monty Tech reported an increase in academic and vocational program equipment and supplies.",
+   "figures_as_printed": [
+    "$103,000"
+   ],
+   "quote": "academic and vocational program equipment/supplies increased $103,000"
+  },
+  {
+   "topic": "Monty Tech total contribution from Lunenburg",
+   "what_was_recorded": "Monty Tech stated the total contribution needed from Lunenburg.",
+   "figures_as_printed": [
+    "$1,270,711"
+   ],
+   "quote": "the total contribution needed from lunenburg is $1,270,711."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "resident, 162 Highland Street",
+   "topic": "Cemetery Commission spending and a PowerPoint on fund handling",
+   "quote": "john bowen, 162 highland street, has come before the committee to discuss the cemetery commission and their frivolous spending."
+  },
+  {
+   "speaker": "Rhonda Lizio",
+   "stated_role": "resident, 181 Reservoir Road",
+   "topic": "Council on Aging participants from other towns",
+   "quote": "rhonda lizio, 181 reservoir road, questions how many of the seniors come from other towns."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "resident, 162 Highland Street",
+   "topic": "School audits and mandates",
+   "quote": "john bowen states cutting mental health professionals and teachers should be a last resort."
+  },
+  {
+   "speaker": "Laura Veran",
+   "stated_role": "resident, 389 Mulpus Road",
+   "topic": "Actual to budget information",
+   "quote": "laura veran, 389 mulpus road, requests the actual to budget information."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: Town Caucus",
+   "resolution": "announced",
+   "quote": "chris menard states the town caucus is meeting at 7pm on monday at the high school.",
+   "tags": [
+    "elections",
+    "town caucus"
+   ]
+  },
+  {
+   "topic": "Public Comment: Cemetery Commission and Project 211",
+   "resolution": "heard; no action recorded",
+   "quote": "chris menard states he reached out to representative scarsdale regarding the budget.",
+   "tags": [
+    "cemetery commission",
+    "state representative",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director Reports",
+   "resolution": "no reports",
+   "quote": "there were no reports from the town manager or the finance director.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Council on Aging presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "the council on aging is requesting to raise the meal site manager from 19 ½ to 36 hours per week.",
+   "tags": [
+    "council on aging",
+    "seniors",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "School Department budget presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "the total adjusted budget for fy 2025 is $24,883,376.",
+   "tags": [
+    "school budget",
+    "fy26 budget",
+    "override",
+    "athletics",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "Montachusett Regional High School budget presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "in fy 25 monty tech was awarded $1,062,891 in state and federal entitlement grants.",
+   "tags": [
+    "montachusett",
+    "regional school",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "Capital Plan",
+   "resolution": "no discussion",
+   "quote": "this topic was not discussed.",
+   "tags": [
+    "capital"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "no action",
+   "quote": "there was no new business.",
+   "tags": []
+  },
+  {
+   "topic": "Old Business: FY26 budget, warrant articles, task force",
+   "resolution": "listed; no discussion recorded",
+   "quote": "a. fy26 budget discussions* b. fy26 warrant articles",
+   "tags": [
+    "fy26 budget",
+    "warrant articles",
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no discussion",
+   "quote": "this topic was not discussed.",
+   "tags": []
+  },
+  {
+   "topic": "Actions and Topics for Future Meetings",
+   "resolution": "no action",
+   "quote": "there are no additional actions or topics for future meetings.",
+   "tags": []
+  },
+  {
+   "topic": "Important Dates and Upcoming Meetings",
+   "resolution": "listed",
+   "quote": "thursday 3/13/2025 (public hearing)",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no public comments",
+   "quote": "there were no public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned; vote count not stated",
+   "quote": "the meeting closed at 10:53 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school budget",
+  "fy26 budget",
+  "override",
+  "athletics",
+  "council on aging",
+  "montachusett regional",
+  "cemetery commission",
+  "public comment",
+  "health insurance",
+  "grants",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

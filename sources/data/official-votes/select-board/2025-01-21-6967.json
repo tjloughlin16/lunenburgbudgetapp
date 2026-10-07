@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2025-01-21",
  "docid": "6967",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "To enter executive session to discuss collective bargaining strategy",
+   "motion": "Enter executive session under MGL Ch. 30A Sec. 21(a)(3) to discuss collective bargaining strategy, then reenter open session.",
    "moved_by": "Caesar Nuzzolo",
    "seconded_by": "Michael-Ray Jeffreys",
    "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "motion by caesar nuzzolo at 6:48 p.m. to enter executive session and reenter into open session after exiting executive session pursuant to mgl ch. 30a sec. 21(a)(3) to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position of the public body and the chair so declares. seconded by michael-ray jeffreys. roll call vote: renee emkey - aye, tom alonzo - aye, amanda moore - aye, michael-ray jeffreys - aye, caesar nuzzolo - aye. motion passed unanimously (5-0-0)."
+   "quote": "motion by caesar nuzzolo at 6:48 p.m. to enter executive session and reenter into open session after exiting executive session pursuant to mgl ch. 30a sec. 21(a)(3)"
   },
   {
-   "motion": "To approve the minutes from January 9, 2024 and December 17, 2024 as amended",
+   "motion": "Approve the minutes of January 9, 2024 and December 17, 2024, as amended.",
    "moved_by": "Tom Alonzo",
    "seconded_by": "Renee Emkey",
    "outcome": "passed 5-0-0",
@@ -28,7 +28,15 @@
    "quote": "motion by tom alonzo to approve the minutes as amended. seconded by renee emkey. approved unanimously (5-0-0)."
   },
   {
-   "motion": "To adjourn",
+   "motion": "Approve the minutes of January 21, 2025 (recorded in the approval line dated February 4, 2025).",
+   "moved_by": "Member Tom Alonzo",
+   "seconded_by": "Member Amanda Moore",
+   "outcome": "passed 5-0-0",
+   "procedural": true,
+   "quote": "member tom alonzo made motion to approve minutes from january 21, 2025. seconded by member amanda moore. all, aye. passed unanimously (5-0-0)."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Member Jeffreys",
    "seconded_by": "Member Alonzo",
    "outcome": "passed 5-0-0",
@@ -37,6 +45,311 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1102504
+ "note": "Text is a complete six-page typed extraction, not a scan; no pages are missing. Three motions carry recorded votes (executive session, approval of prior minutes, adjournment) plus the approval of these minutes, which appears after the signature block dated Tuesday February 4, 2025, and is recorded here as printed. No substantive vote was recorded on the CPA, the climate survey, 55 Carr Avenue, or the accounts payable warrant; those are recorded as decisions, discussion or budget items only. The minutes print \"January 9, 2024\" for a meeting that likely should read 2025; recorded as printed. Remarks by board members under the PUBLIC COMMENT heading are not listed as public comment because they are members. No transfers are printed. Dollar figures are limited to the $34,451.80 warrant and the CPA percentages.",
+ "cost_usd": 0.018017870000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee"
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "also present: carter terenzini, interim town manager"
+  },
+  {
+   "name": "John Bowen",
+   "role": "public comment speaker, address as printed: 162 Highland St",
+   "status": "present",
+   "quote": "john bowen, 162 highland st - commented regarding concerns over unauthorized access to sensitive private information by the cemetery commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Conduct the employee climate survey every two years rather than annually, based on budgeting and implementation time.",
+   "quote": "the board agreed to conduct the survey every two years instead of annually"
+  },
+  {
+   "decision": "Aim to have climate survey results by November 1 to inform budget planning.",
+   "quote": "they agreed to aim for having results by november 1st to inform budget planning."
+  },
+  {
+   "decision": "Distribute the climate survey electronically, with accommodations for accessibility; results analyzed by an independent third party.",
+   "quote": "the board agreed the survey should be distributed electronically, with accommodations made for accessibility needs."
+  },
+  {
+   "decision": "Continue refining the climate survey policy, including reviewing sample questions from survey companies.",
+   "quote": "the board agreed to continue refining the policy, including reviewing sample questions from survey companies."
+  },
+  {
+   "decision": "Gather more information on CPA exemptions, financial impacts and benefits before deciding whether to pursue adoption this year.",
+   "quote": "the board agreed to gather more information on exemptions, financial impacts, and potential benefits before deciding whether to pursue cpa adoption this year."
+  },
+  {
+   "decision": "No action on 55 Carr Avenue; the Board needs more time to review the tax-foreclosure requirements.",
+   "quote": "the board agreed they needed more time to review this comprehensive and complex information before deciding regarding 55 carr avenue."
+  },
+  {
+   "decision": "Tom Alonzo to meet the selected town manager candidate on the contract template and report back, requesting an executive session if needed.",
+   "quote": "alonzo said he would report back to the board on the outcome and request an executive session if needed to finalize the contract."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "An accounts payable warrant was presented; Amanda Moore recused herself from signing it and others in attendance signed.",
+   "figures_as_printed": [
+    "$34,451.80"
+   ],
+   "quote": "accounts payable warrant in the amount of $34,451.80. amanda moore recused herself from signing."
+  },
+  {
+   "topic": "Community Preservation Act state matching funds",
+   "what_was_recorded": "State matching funds for CPA were estimated at a lower share than in the past.",
+   "figures_as_printed": [
+    "40-60%",
+    "100%"
+   ],
+   "quote": "current state matching funds are estimated around 40-60%, compared to 100% in the past."
+  },
+  {
+   "topic": "Community Preservation Act surcharge cost to taxpayers",
+   "what_was_recorded": "A member suggested identifying the cost to the average taxpayer of a 3% surcharge; no figure was computed in the minutes.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "identifying what the cost would be to the average taxpayer if a 3% surcharge was adopted."
+  },
+  {
+   "topic": "Tax-foreclosed property 55 Carr Avenue proceeds",
+   "what_was_recorded": "Surplus funds from a retained foreclosed property would be paid to the former owner under the new rules; a sale would require listing at appraised value.",
+   "figures_as_printed": [],
+   "quote": "if these deductions result in surplus funds, those funds must be paid to the former property owner within 30 days"
+  },
+  {
+   "topic": "Chapter 70 funds not in salary reserve",
+   "what_was_recorded": "School Committee reported Chapter 70 funds voted at fall town meeting had not yet appeared in the salary reserve account; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "chapter 70 funds voted in the fall town meeting still hadn't appeared in the salary reserve"
+  },
+  {
+   "topic": "Revolving fund revenue shortfall",
+   "what_was_recorded": "School Committee noted a lack of revenue in certain revolving funds, including the school choice fund; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "noted concerns about a lack of revenue in certain revolving funds, including the school choice fund"
+  },
+  {
+   "topic": "Redirecting grants-services funds",
+   "what_was_recorded": "The Interim Town Manager proposed redirecting funds intended for external grants services; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "he proposed redirecting funds intended for external grants services."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland St",
+   "topic": "cemetery commission access to vital records database",
+   "quote": "john bowen, 162 highland st - commented regarding concerns over unauthorized access to sensitive private information by the cemetery commission"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "tags": [
+    "procedure",
+    "broadcast"
+   ],
+   "quote": "the meeting was called to order at 6:45 pm by chair nuzzolo"
+  },
+  {
+   "topic": "Announcements: senior tax conference",
+   "resolution": "announced",
+   "tags": [
+    "seniors",
+    "property tax",
+    "assessors"
+   ],
+   "quote": "the board of assessors is sponsoring a senior conference on february 3rd at the senior center"
+  },
+  {
+   "topic": "Executive session, collective bargaining",
+   "resolution": "entered and reentered open session; passed 5-0-0",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ],
+   "quote": "motion by caesar nuzzolo at 6:48 p.m. to enter executive session"
+  },
+  {
+   "topic": "Public comment on town manager selection",
+   "resolution": "no action",
+   "tags": [
+    "town manager",
+    "hiring"
+   ],
+   "quote": "member jeffreys elaborated on his recent interactions with the incoming town manager"
+  },
+  {
+   "topic": "Climate survey policy workshop",
+   "resolution": "continued; policy refinement directed",
+   "tags": [
+    "workplace",
+    "employee survey",
+    "policy"
+   ],
+   "quote": "amanda moore presented a draft policy for conducting an annual climate survey of town employees."
+  },
+  {
+   "topic": "New Town Manager contract update",
+   "resolution": "no action; contract review pending",
+   "tags": [
+    "town manager",
+    "contract"
+   ],
+   "quote": "tom alonzo provided an update on contract negotiations with the selected town manager candidate."
+  },
+  {
+   "topic": "Community Preservation Act next steps",
+   "resolution": "continued; more information gathered",
+   "tags": [
+    "CPA",
+    "housing",
+    "open space"
+   ],
+   "quote": "the board discussed potentially pursuing adoption of the community preservation act (cpa) this year."
+  },
+  {
+   "topic": "Sell or hold 55 Carr Avenue",
+   "resolution": "no action; more time needed",
+   "tags": [
+    "tax foreclosure",
+    "property",
+    "legal"
+   ],
+   "quote": "carter terenzini presented updated information on the process for handling tax-foreclosed properties"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "tags": [
+    "staffing",
+    "facilities",
+    "grants",
+    "waste collection"
+   ],
+   "quote": "interim town manager carter terenzini reported a smooth transition to the new waste collection service by gw shaw and sons"
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved as amended, 5-0-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the board reviewed and approved minutes from the january 9, 2024, and december 17, 2024, meetings."
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "accounts payable warrant signed; Moore recused",
+   "tags": [
+    "warrant",
+    "accounts payable"
+   ],
+   "quote": "accounts payable warrant in the amount of $34,451.80. amanda moore recused herself from signing."
+  },
+  {
+   "topic": "Board action items",
+   "resolution": "requests made; no action",
+   "tags": [
+    "records",
+    "HR",
+    "IT"
+   ],
+   "quote": "member alonzo requested the hr report he had asked for 6 months prior."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "tags": [
+    "school committee",
+    "capital planning",
+    "assessors",
+    "economic development",
+    "building design"
+   ],
+   "quote": "school committee: member emkey reported:"
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "announced",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming meeting/events schedule"
+  },
+  {
+   "topic": "Public comment (second session)",
+   "resolution": "announced",
+   "tags": [
+    "seniors"
+   ],
+   "quote": "chair nuzzolo made note again: the board of assessors is sponsoring a senior conference on february 3rd"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:52 P.M., passed 5-0-0",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting adjourned at 9:52 p.m."
+  }
+ ],
+ "tags": [
+  "select board",
+  "town manager",
+  "executive session",
+  "collective bargaining",
+  "climate survey",
+  "community preservation act",
+  "tax foreclosure",
+  "55 Carr Avenue",
+  "warrants",
+  "school committee",
+  "municipal buildings",
+  "senior tax relief",
+  "chapter 70",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2025-03-24",
  "docid": "7120",
@@ -12,39 +12,229 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the January 27, 2025 and February 24, 2025 meetings",
-   "moved_by": "Ryan Stober",
-   "seconded_by": "Maryrae Holman",
+   "motion": "Approve the minutes of the January 27, 2025 and February 24, 2025 meetings.",
+   "moved_by": "Ryan",
+   "seconded_by": "Maryrae",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ryan made a motion to approve the minutes from the following meetings: january 27, 2025 and february 24, 2025. maryrae seconded. commission unanimously approved."
+   "quote": "ryan made a motion to approve the minutes from the"
   },
   {
-   "motion": "Approve the letter in support of Lunenburg participating in the MVP Grant",
-   "moved_by": "Ryan Stober",
-   "seconded_by": "Maryrae Holman",
+   "motion": "Approve a letter in support of Lunenburg participating in the MVP Grant.",
+   "moved_by": "Ryan",
+   "seconded_by": "Maryrae",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ryan made a motion to approve the letter in support of lunenburg participating in the mvp grant. maryrae seconded. commission unanimously approved."
+   "quote": "ryan made a motion to approve the letter in support of lunenburg participating in the mvp grant."
   },
   {
-   "motion": "Approve Whitmarz Farm and Snowplace Farm as farmers' market vendors, with conditional approval of Wildflower Bakery and Maggie's Munchies upon providing Farmers' Market Permit from the NABOH",
-   "moved_by": "Maryrae Holman",
-   "seconded_by": "Ryan Stober",
+   "motion": "Approve Whitmarz Farm and Snowplace Farm as Farmers' Market vendors, and conditionally approve Wildflower Bakery and Maggie's Munchies upon providing a Farmers' Market Permit from the NABOH.",
+   "moved_by": "Maryrae",
+   "seconded_by": "Ryan",
    "outcome": "passed",
    "procedural": false,
-   "quote": "maryrae makes a motion to approve whitmarz farm and snowplace farm. conditional approval of wildflower bakery and maggie's munchies upon providing farmers' market permit from the naboh. ryan seconded. commission unanimously approved."
+   "quote": "maryrae makes a motion to approve whitmarz farm and snowplace farm."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Ryan Stober",
-   "seconded_by": "Maryrae Holman",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ryan",
+   "seconded_by": "Maryrae",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ryan made a motion to adjourn; maryrae seconds. commission unanimously approved."
+   "quote": "maryrae seconds. commission unanimously"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0792234
+ "note": "Text is a clean extraction of a two-page document, not a scan. Four votes are recorded, each with a stated mover and seconder; the minutes print \"unanimously approved\" with no tally, so outcomes are recorded as \"passed\". Kathy Dugan (Member) appears in the roster with no attendance mark and is not named elsewhere; she is omitted from attendees because no verbatim quote of 20+ characters isolates her line cleanly. Jackie Chabot is also unmarked and is recorded as \"not stated\". No dollar figures appear in the minutes. Public comment was recorded as \"None\" both times, so no speakers are listed.",
+ "cost_usd": 0.01622507,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "jackie chabot, clerk"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Member",
+   "status": "present",
+   "quote": "member ryan stober ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate kira mcclellan ✔"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Public",
+   "status": "present",
+   "quote": "public jorge marzuca ✔"
+  },
+  {
+   "name": "Dany Marzuca",
+   "role": "Public",
+   "status": "present",
+   "quote": "public dany marzuca ✔"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:34 pm",
+   "quote": "call to order meeting commencement time: 6:34 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "no public comment",
+   "quote": "2 public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted; poultry seminar announced, question on town regulations recorded",
+   "quote": "low places ranch poultry seminar april 3rd, 6pm",
+   "tags": [
+    "poultry",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved minutes of January 27 and February 24, 2025",
+   "quote": "ryan made a motion to approve the minutes from the",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Business: USDA, MDAR and Community Garden",
+   "resolution": "community garden presentation given; no action recorded",
+   "quote": "jorge gave a presentation on many options of ideas to consider",
+   "tags": [
+    "community garden",
+    "USDA",
+    "MDAR"
+   ]
+  },
+  {
+   "topic": "MVP Action Grant letter of support",
+   "resolution": "approved",
+   "quote": "ryan made a motion to approve the letter in support of lunenburg participating in the mvp grant.",
+   "tags": [
+    "MVP grant",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Goals: finalize 2025",
+   "resolution": "no action recorded",
+   "quote": "goals - finalize 2025 none",
+   "tags": [
+    "goals"
+   ]
+  },
+  {
+   "topic": "100 Townsend Harbor Rd debrief",
+   "resolution": "procedure reviewed; no vote",
+   "quote": "reviewed procedure for chapter 61 properties rofr",
+   "tags": [
+    "Chapter 61",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "Lunenburg Farmers' Market vendor applications and signs",
+   "resolution": "approved two vendors; two conditionally approved pending NABOH permit",
+   "quote": "maryrae makes a motion to approve whitmarz farm and snowplace farm.",
+   "tags": [
+    "farmers market",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Membership, Facebook page and mailing list",
+   "resolution": "no action recorded",
+   "quote": "agricultural commission facebook page none",
+   "tags": [
+    "membership",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "none",
+   "quote": "7 committee reports none",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Farming Issues",
+   "resolution": "none",
+   "quote": "8 farming issues none",
+   "tags": [
+    "farming"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events schedule",
+   "resolution": "schedule listed through October 20, 2025",
+   "quote": "7:00 pm april 14, 2025 lunenburg public library, wallace community room",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "none",
+   "quote": "10 public comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:15 pm",
+   "quote": "maryrae seconds. commission unanimously",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "farmers market",
+  "MVP grant",
+  "community garden",
+  "poultry",
+  "Chapter 61",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

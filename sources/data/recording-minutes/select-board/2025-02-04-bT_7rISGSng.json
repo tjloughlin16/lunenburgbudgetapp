@@ -520,5 +520,260 @@
    "at": "2026-10-06T18:10:23Z",
    "cost_usd": 0.21246099999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02042025-7002",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-02-04-minutes-7002.txt",
+   "path": "sources/meetings/select-board/2025-02-04-minutes-7002.pdf"
+  },
+  "official_sha256": "bf363d00fa576caa67f5dbfd40d60be28764f8f8af513593d1ed3281b678da21",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the three main appointment and toll booth votes, the Bliss, climate survey and Budget Task Force deferrals, and most municipal building figures. They differ on the vote counts, the elevator cost, the accounts payable warrant vote (only the official minutes record it) and the Teens Center scholarship figure; check the video for the warrant vote and the scholarship amount first.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 5,
+   "discrepancy": 6,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Toll booth request, Lunenburg Teen Center, May 10 with May 17 rain date",
+    "t": 415,
+    "ours": "Approve toll booth request from the Lunenburg Teens Center for May 10, rain date May 17 — passed unanimously",
+    "official": "member alonzo moved to approve the tollbooth request from the lunenburg teen center for saturday may 10, 2025 from 10:00 a.m. to 2:00 p.m.",
+    "note": "Same motion and outcome; the official 4-0-0 is consistent with unanimous."
+   },
+   {
+    "kind": "agree",
+    "about": "Peter Stella appointed to Conservation Commission",
+    "t": 948,
+    "ours": "Appoint Peter Stella to the Conservation Commission, term to expire June — passed unanimously",
+    "official": "member alonzo moved to approve peter stella to the conservation commission with term to expire the last day of june 2025.",
+    "note": "Same appointment and term; the 4-0-0 is consistent with unanimous."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Videographer name",
+    "t": 6350,
+    "ours": "Ratify town manager's appointment of Lily Marble as videographer for public access cable — passed unanimously",
+    "official": "member alonzo moved to ratify the town manager's appointment of the videographer for public access cable, lili marble.",
+    "official_reading": "Lili Marble",
+    "note": "Same ratification; the captions spelled the name differently. The official vote is 3-0-0, which is still consistent with unanimous."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Accounts payable warrant vote",
+    "t": 10563,
+    "ours": "Accounts payable warrant: 1, 47,7 6860 (figure only, no vote recorded)",
+    "official": "member alonzo moved to approve the accounts payable warrant in the amount of $1,470.768.60.",
+    "note": "The official minutes record a vote of 3-0-1, with Member Moore recused, and our minutes record no such vote. Check the video near t=10563 for the vote and Moore's recusal, and for the correct amount, since the official figure is malformed and ours is garbled."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Elevator cost",
+    "t": 4079,
+    "ours": "Full elevators: half a million dollars",
+    "official": "he stated an elevator would cost about $250,000 in each building.",
+    "note": "The two may be one figure, $250,000 in each of two buildings totalling $500,000, or the captions may have heard a total where the official minutes give a per-building price. Check the recording for which was said."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Teens Center / The Club summer scholarships",
+    "t": 333,
+    "ours": "Teens Center summer scholarships: $115,000",
+    "official": "and that last year they awarded $15,000.",
+    "note": "$115,000 against $15,000 could be a caption error, but the official minutes attribute the figure to The Club's tollbooth last year. Check the video at t=333 for the amount and who gave it."
+   },
+   {
+    "kind": "agree",
+    "about": "Municipal building cost estimates, project total and Owner Project Manager range",
+    "t": 3425,
+    "ours": "Municipal building cost estimate: $2.6 million, $7 million, $1.7 million, $15.3 million, 17.8 million, 21 and $22.3 million",
+    "official": "general contractors, insurance and overhead brings it to about $17.8m.",
+    "note": "The $2.6M, $7M, $1.7M, $15.3M, $17.8M, $21M and $22.3M figures all appear in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "Bliss cannabis host community agreement returns February 18",
+    "t": 8008,
+    "ours": "Bliss cannabis host community agreement to return on the 18th.",
+    "official": "the board tabled the matter to february 18, 2025.",
+    "note": "Both record the matter carried to the 18th, with no vote."
+   },
+   {
+    "kind": "agree",
+    "about": "Climate survey policy redline",
+    "t": 8301,
+    "ours": "Climate survey policy redline to be produced and revisited at a future meeting.",
+    "official": "members requested the board be provided with a redline of the policy and tabled this matter to a future meeting.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "agree",
+    "about": "Budget Task Force recommendations deferred until absent member present",
+    "t": 8605,
+    "ours": "No final decisions on Budget Task Force recommendations until the absent member is present.",
+    "official": "members wanted to discuss the recommendation of a financial audit at a future meeting when member emkey could be present as she was a member of the btf.",
+    "note": "Same deferral. The official minutes tie it to the financial audit recommendation and name Emkey."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Property hold-period discussion: 55 Car Ave vs 56 Carr Avenue",
+    "t": 7409,
+    "ours": "55 Car Ave discussion carried to a later meeting; staff to find any minimum hold period.",
+    "official": "mr. alonzo asked the town manager to find out if there was a minimum time period the town would need to hold the property.",
+    "note": "The task is the same, but the address differs (55 Car Ave against 56 Carr Avenue), and ours says the discussion was carried to a later meeting while the official minutes record no deferral. Check the recording for the address and any deferral."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ARPA press release",
+    "t": 8343,
+    "ours": "ARPA press release to be verified by finance team before returning to the board.",
+    "official": "the chair passed over this item.",
+    "note": "Our minutes record a decision to have finance verify the press release, while the official minutes say the chair passed over the item. Check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Capital planning articles with and without municipal building work",
+    "t": 10359,
+    "ours": "Town manager to consider two capital planning articles, one with and one without municipal building work.",
+    "official": "he stated he would work with the town manager to come up with the funding estimate.",
+    "note": "Our minutes record a two-article decision, while the official minutes record only that Jeffreys will work with the Town Manager on a funding estimate. Check the video to see whether the two-article direction was given."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Streamlining purchase order and payroll systems",
+    "ours": "",
+    "official": "the board asked the town manager to look into streamlining the purchase order and payroll systems and consolidation of the chart of accounts.",
+    "note": "Our minutes do not record this direction to the Town Manager."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Solid waste and recycling recommendation review",
+    "ours": "",
+    "official": "ms. warren-dyment said that she will be looking at the solid waste and recycling recommendation of the btf.",
+    "note": "Our minutes do not record this commitment by the Town Manager."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrant article submissions check",
+    "ours": "",
+    "official": "she would be reaching out to all boards, committees, commissions, and departments to ensure not warrant article submissions had been missed.",
+    "note": "Our minutes do not record this action."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Animal control emergency vet care figures",
+    "t": 103,
+    "ours": "Animal control emergency vet care: $1,600, $1,000, $7,000",
+    "official": "",
+    "note": "The official minutes record no animal control figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cannabis community impact fees 3%",
+    "t": 7508,
+    "ours": "Cannabis community impact fees: 3%",
+    "official": "",
+    "note": "The official minutes record no 3% figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Alternates and construction documents figures",
+    "t": 3640,
+    "ours": "Alternates: $1.8 million, $280,000; Construction documents: $1.5 million",
+    "official": "",
+    "note": "The official minutes carry no alternates or construction documents figures. Check the recording to confirm they were said."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant delivery recommendation $7,500",
+    "t": 9737,
+    "ours": "Warrant delivery recommendation: $7,500",
+    "official": "",
+    "note": "The official minutes carry no such figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Earlier TC Passios design work cost",
+    "t": 6685,
+    "ours": "Earlier TC Passios design work: $300,000",
+    "official": "a lot of time and money was wasted on the tc passios design.",
+    "note": "The official minutes give no amount, so our $300,000 appears only in ours. The topic is the same. Check the recording for the figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tax impact figures",
+    "t": 12724,
+    "ours": "Tax impact: $212, $505,000",
+    "official": "he advised the public to look into the impact of this project on their tax rate.",
+    "note": "The official minutes print no tax impact figure. Check the video for the $212 and $505,000."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: member Alonzo",
+    "ours": "Mr Lonzo (member)",
+    "official": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo",
+    "official_reading": "Tom Alonzo",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Town Manager",
+    "ours": "Jen (town manager)",
+    "official": "also present: jennifer warren-dyment, town manager",
+    "official_reading": "Jennifer Warren-Dyment",
+    "note": "Our minutes give only a first name."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Michael Ray Jeffreys",
+    "ours": "Michael Ray (member, chair of municipal building design committee)",
+    "official": "mbdc chair, mr. jeffreys, called the meeting of the mbdc to order at 7:47 p.m.",
+    "note": "Same person (Michael-Ray Jeffreys, Vice-Chair, MBDC chair). The captions gave his first name only."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr Scullen Brini",
+    "ours": "Mr scullen brini (design committee member)",
+    "official": "joined by tony sculimbrene of the architectural preservation district commission",
+    "official_reading": "Tony Sculimbrene",
+    "note": "Misheard name. The official minutes list him as from the Architectural Preservation District Commission, not as an MBDC member."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr Leighton",
+    "ours": "Mr Leighton (design committee member)",
+    "official": "present were tom gray, brian lehtinen, greg roy, and mr. jeffreys.",
+    "official_reading": "Brian Lehtinen",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Robert Taylor, Gray, Roy, Valerio",
+    "ours": "Robert Taylor (presenter, Taylor and Burns); Mr Gray; Mr Roy; Valerio (presenter, attorney for Bliss cannabis)",
+    "official": "attorney valerio romano was present on behalf of bliss cannabis.",
+    "note": "All match the official attendees (Robert Taylor, Tom Gray, Greg Roy, Valerio Romano)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees not in our minutes",
+    "ours": "",
+    "official": "members absent: renee emkey",
+    "note": "The official minutes also list Chair Caesar Nuzzolo, absent member Renee Emkey, other design team members, Andrew Woods, Peter Stella and four public commenters. Our minutes name none of them."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:35:05Z",
+   "cost_usd": 0.265729
+  }
  }
 }

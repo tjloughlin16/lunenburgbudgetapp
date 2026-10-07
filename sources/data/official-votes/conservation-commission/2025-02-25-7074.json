@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2025-02-25",
  "docid": "7074",
@@ -12,25 +12,281 @@
  },
  "votes": [
   {
-   "motion": "Motion to continue the hearing on 213 Electric Avenue to March 5 pending plans for temporary protection, vegetation narrative, and DEP answers",
+   "motion": "Continue the Notice of Intent for 213 Electric Avenue (Daniel Sheehan) to March 5, requiring plans for temporary protection, a vegetation narrative and the DEP answers.",
    "moved_by": "R. Bursch",
    "seconded_by": "J. Viviano",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "r. bursch, to continue to march 5. need plans for temporary protection and a vegetation narrative and the dep answers. ===page 2=== second vote: j. viviano j. viviano - aye r. bursch - aye m. larouche - aye",
-   "quote_taken_from_text": true
+   "quote": "r. bursch, to continue to march 5. need plans for temporary protection and a vegetation narrative and the dep answers."
   },
   {
-   "motion": "Motion to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Larouche",
    "seconded_by": "J. Viviano",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "m. larouche, to adjourn. second j. viviano vote: m. larouche - aye j. viviano - aye r. bursch - aye respectfully submi",
-   "quote_taken_from_text": true
+   "quote": "motion: m. larouche, to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR'd but legible; votes are clearly recorded. One other motion (RDA-24-8) was heard but no vote taken due to loss of quorum when the applicant commissioner abstained.",
- "cost_usd": 0.1173814
+ "note": "Text is macOS Vision OCR of the minutes, not a clean text layer, so quotes may carry OCR errors (e.g. 'reqeusted', 'Sth', 'Dorrow'/'Dorow'); quotes are copied as they appear. Date mismatch: the user gave 2025-02-25, but the minutes are headed 'Wednesday, February 5 - 7:00 PM' and refer to a next meeting on February 19th; I have not reconciled this. Roll call conflict: C. St Germain is listed as present in the roll call and as absent in the same paragraph. Vote tallies: two motions have printed tallies (continuance 4-0, adjournment 4-0); the 7a vote tally falls after a page break and the 'Second' line is OCR-jumbled. Items 7b, 8a and 8b record no vote (quorum lost after recusal or applicant abstention). Several agenda items (11c-h, 12a-b, 12d-e, 13a-f, 14a-c) are listed by title only with no content. The public comment item notes an unnamed applicant for 67 Island Road who was not allowed discussion. No dollar figures appear in the minutes.",
+ "cost_usd": 0.01856017,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "J. Pewtherer",
+   "role": "presided at call to order",
+   "status": "present",
+   "quote": "call to order at 7pm by j. pewtherer"
+  },
+  {
+   "name": "R. Bursch",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call: r. bursch, j. viviano, m. larouche, c. st germain, j. pewtherer"
+  },
+  {
+   "name": "J. Viviano",
+   "role": "commissioner; applicant for 338 Sunset Lane (RDA)",
+   "status": "present",
+   "quote": "the applicant is a commissioner and must abstain."
+  },
+  {
+   "name": "M. Larouche",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: m. larouche, to adjourn."
+  },
+  {
+   "name": "C. St Germain",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "roll call: r. bursch, j. viviano, m. larouche, c. st germain, j. pewtherer"
+  },
+  {
+   "name": "M. Wilson",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: c. st. germain, m. wilson."
+  },
+  {
+   "name": "S. Dorow",
+   "role": "Consv. Administrator (per header)",
+   "status": "present",
+   "quote": "s. dorow read her comments for the entire commission, suggesting the trees on the peninsula are"
+  },
+  {
+   "name": "Daniel Sheehan",
+   "role": "applicant for 213 Electric Avenue; represented the applicant",
+   "status": "present",
+   "quote": "daniel sheehan (haley ward) represented the applicant and shared the plans."
+  },
+  {
+   "name": "Haley Ward",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "daniel sheehan (haley ward) represented the applicant and shared the plans."
+  },
+  {
+   "name": "Matthew Marro",
+   "role": "representing the applicant (32 Sunset Lane NOI, Tonole)",
+   "status": "not stated",
+   "quote": "a notice of intent by sally tonole luck and richard tonole represented by matthew marro for"
+  },
+  {
+   "name": "Michael Gale",
+   "role": "Admin Asst.",
+   "status": "not stated",
+   "quote": "respectfully submitted, michael gale - admin asst."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "For the Request for Determination of Applicability at 338 Sunset Lane, the Commission heard the applicant for feedback only; no vote was possible without a quorum, and the vote is deferred to the next meeting after the absent Commissioner watches the video.",
+   "quote": "the commission will hear the applicant's request to obtain feedback."
+  },
+  {
+   "decision": "The Notice of Intent for 32 Hemlock Drive was not discussed because the Notice to Abutters and the Legal Ad had not taken place.",
+   "quote": "s. dorow noted that the applicant wanted to continue but the notice to abutters and"
+  },
+  {
+   "decision": "For 213 Electric Avenue, the Commission requested a revegetation plan from the applicant, who agreed to provide it.",
+   "quote": "r. bursch asked about the deck. he requested a revegetation plan."
+  },
+  {
+   "decision": "Enforcement at 48 Meadow Lane: the Commission's agent was refused access; a letter is to be sent to 48 Meadow Lane and 32 Meadow Lane, asking them to attend the next meeting.",
+   "quote": "s. dorrow was not granted access to the property and will be sending a letter to"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "quote": "call to order at 7pm by j. pewtherer",
+   "tags": [
+    "roll call",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Announcements: new Commissioner confirmed",
+   "resolution": "noted",
+   "quote": "j. pewtherer noted that peter stella was confirmed as a new commissioner at last night's select board",
+   "tags": [
+    "appointments",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Public comment: 67 Island Road",
+   "resolution": "no discussion (Open Meeting Law)",
+   "quote": "the item was not on the agenda, so the open meeting law precludes the commission from discussion.",
+   "tags": [
+    "open meeting law",
+    "67 Island Road"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "none on agenda",
+   "quote": "4. minutes of previous meetings: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New public hearing: NOI, 213 Electric Avenue (deck removal, two-family dwelling)",
+   "resolution": "continued to March 5",
+   "quote": "a notice of intent by daniel sheehan of red bird construction for removal of an existing deck",
+   "tags": [
+    "notice of intent",
+    "wetlands",
+    "buffer zone",
+    "Electric Avenue"
+   ]
+  },
+  {
+   "topic": "New public hearing: RDA, 338 Sunset Lane (dead and leaning trees, Lake Shirley)",
+   "resolution": "no vote (no quorum); feedback only; vote next meeting",
+   "quote": "a request for determination of applicability by jeff viviano for removal of 10 dead trees and 2",
+   "tags": [
+    "request for determination",
+    "Lake Shirley",
+    "recusal",
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "Continued public hearing: NOI, 32 Hemlock Drive (drainage pipe, Hickory Hills Lake)",
+   "resolution": "not discussed (notice not completed)",
+   "quote": "a notice of intent by ryan vickers for removal and replacement of a collapsed drainage pipe",
+   "tags": [
+    "notice of intent",
+    "Hickory Hills Lake",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "Continued public hearing: NOI, 352 Sunset Lane (retaining wall, pavers, trees, Lake Shirley)",
+   "resolution": "no vote (recusal, no quorum); applicant presented",
+   "quote": "a notice of intent by sally tonole luck and richard tonole represented by matthew marro for",
+   "tags": [
+    "notice of intent",
+    "Lake Shirley",
+    "recusal",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "Filings previously continued: 390 Howard Street",
+   "resolution": "listed for tracking; no action recorded",
+   "quote": "390 howard street (dep # 208-1304). (continued from december 4th to february 19th).",
+   "tags": [
+    "administrative tracking",
+    "390 Howard Street"
+   ]
+  },
+  {
+   "topic": "Enforcement: violations and hearings",
+   "resolution": "updates recorded; letter to 48 Meadow Lane to be sent",
+   "quote": "working on a filing schedule, as requested by the commission",
+   "tags": [
+    "enforcement",
+    "violations",
+    "Land Use Director"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "DocuSign timeframe and 100 Townsend Harbor Chap 61 discussed; other items listed only",
+   "quote": "s. dorow spoke with m. wilson and there appears no interest in exercising our first right",
+   "tags": [
+    "Chapter 61",
+    "right of refusal",
+    "DocuSign",
+    "grants",
+    "tree policy"
+   ]
+  },
+  {
+   "topic": "Old business",
+   "resolution": "listed; encroachment no updates",
+   "quote": "encroachment issues: no updates",
+   "tags": [
+    "title searches",
+    "Earth Day",
+    "encroachment",
+    "Chase Road"
+   ]
+  },
+  {
+   "topic": "Open space and land use",
+   "resolution": "listed; Hollis Road cabinets still being sought",
+   "quote": "still looking for replacement cabinets",
+   "tags": [
+    "grants",
+    "Chapter 61",
+    "Hollis Road",
+    "conservation land"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "listed, no update recorded",
+   "quote": "committee reports - any update:",
+   "tags": [
+    "open space",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "passed 4-0; next meeting February 19 2025",
+   "quote": "motion: m. larouche, to adjourn.",
+   "tags": [
+    "adjournment",
+    "Zoom"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "continuance",
+  "quorum",
+  "recusal",
+  "enforcement",
+  "open meeting law",
+  "Lake Shirley",
+  "Hickory Hills Lake",
+  "Chapter 61",
+  "Zoom"
+ ],
+ "dropped_unquoted_by_field": {}
 }

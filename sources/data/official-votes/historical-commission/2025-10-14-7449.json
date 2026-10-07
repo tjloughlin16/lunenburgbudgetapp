@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2025-10-14",
  "docid": "7449",
@@ -12,6 +12,147 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe a routine meeting with discussion of correspondence, projects, and upcoming meetings, but contain no motions, votes, or recorded outcomes. The meeting adjourned at 7:15 PM but no motion to adjourn is stated.",
- "cost_usd": 0.0578564
+ "note": "The extracted text records no motions and no votes; the meeting is recorded only as adjourned at 7:15 with no motion stated. No dollar figures appear, so budget_items and transfers are empty. No public comment section is recorded. Member names are printed without first names. The status of Brian Knight and Robin Fordham is inferred from a joint zoom meeting being held with them, so it is recorded as remote and not as a stated attendance mode.",
+ "cost_usd": 0.012916670000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "members mcgrath, lakso, sanderson, and boussom were in attendance."
+  },
+  {
+   "name": "Lakso",
+   "role": "Member",
+   "status": "present",
+   "quote": "members mcgrath, lakso, sanderson, and boussom were in attendance."
+  },
+  {
+   "name": "Sanderson",
+   "role": "Member",
+   "status": "present",
+   "quote": "members mcgrath, lakso, sanderson, and boussom were in attendance."
+  },
+  {
+   "name": "Boussom",
+   "role": "Member",
+   "status": "present",
+   "quote": "members mcgrath, lakso, sanderson, and boussom were in attendance."
+  },
+  {
+   "name": "Robin Fordham",
+   "role": "liaison for the Mass Historic commission",
+   "status": "remote",
+   "quote": "returning to the town survey, a joint zoom meeting was held with robin fordham, a liaison for the mass historic commission, and brian knight."
+  },
+  {
+   "name": "Brian Knight",
+   "role": "not printed",
+   "status": "remote",
+   "quote": "returning to the town survey, a joint zoom meeting was held with robin fordham, a liaison for the mass historic commission, and brian knight."
+  },
+  {
+   "name": "Pat Slattery",
+   "role": "chair of the Historical Society",
+   "status": "not stated",
+   "quote": "pat slattery, the chair of the historical society, is willing to help with the writing for the historical markers."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Contact Town Counsel about the Arnold Litch cemetery matter, since DPW has no update on eminent domain.",
+   "quote": "so the plan is to contact town counsel for the matter."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Building inspector correspondence on 763 Mass Ave",
+   "resolution": "no action; noted",
+   "quote": "correspondence from the building inspector regarding the status of 763 mass ave explained that a death in the family may be part of the reason that the updates on the property have not been had.",
+   "tags": [
+    "763 Mass Ave",
+    "building inspector",
+    "property"
+   ]
+  },
+  {
+   "topic": "Historical markers",
+   "resolution": "noted; Pat Slattery offered to help with writing",
+   "quote": "pat slattery, the chair of the historical society, is willing to help with the writing for the historical markers.",
+   "tags": [
+    "historical markers",
+    "Historical Society"
+   ]
+  },
+  {
+   "topic": "Arnold Litch cemetery eminent domain",
+   "resolution": "no DPW update; plan to contact Town Counsel",
+   "quote": "there is no update from the dpw on obtaining eminent domain for the arnold litch cemetery, so the plan is to contact town counsel for the matter.",
+   "tags": [
+    "cemetery",
+    "eminent domain",
+    "DPW",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Town weathervane",
+   "resolution": "town manager emailed; no outcome recorded",
+   "quote": "the town manager has been emailed regarding the status of the town weathervane.",
+   "tags": [
+    "weathervane",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Town survey (Kilburn houses, phase 3)",
+   "resolution": "noted; joint zoom held; no vote",
+   "quote": "knight has until january 9th of next year to complete phase 3 of the survey.",
+   "tags": [
+    "survey",
+    "Kilburn",
+    "Brian Knight",
+    "Mass Historical Commission"
+   ]
+  },
+  {
+   "topic": "Marshall Park caves survey",
+   "resolution": "noted; caves would need to be dug out before survey",
+   "quote": "it was also noted that in order for the caves at marshall park to be surveyed, they would need to be dug out.",
+   "tags": [
+    "Marshall Park",
+    "caves",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Joint meeting with APDC on possible merger",
+   "resolution": "scheduled for October 20th; no vote",
+   "quote": "upcoming on october 20th is a joint meeting with the commission and the apdc to discuss the possible merger of both.",
+   "tags": [
+    "APDC",
+    "merger",
+    "joint meeting"
+   ]
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "historic preservation",
+  "763 Mass Ave",
+  "historical markers",
+  "cemetery",
+  "eminent domain",
+  "town survey",
+  "Kilburn houses",
+  "Marshall Park",
+  "APDC merger",
+  "weathervane"
+ ],
+ "dropped_unquoted_by_field": {}
 }

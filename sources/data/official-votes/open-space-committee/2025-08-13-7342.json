@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2025-08-13",
  "docid": "7342",
@@ -12,31 +12,165 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from the June 9, 2025 joint meeting with planning board",
+   "motion": "Approve the minutes of the June 9, 2025 joint meeting with the planning board.",
    "moved_by": "C. Shipiro",
    "seconded_by": "C St.Germain",
-   "outcome": "passed",
+   "outcome": "passed, unanimous by roll call",
    "procedural": true,
-   "quote": "c. shipiro motioned to approve minutes from the june 9, 2025 joint meeting with planning board. c st.germain seconded the motion. members present voted unanimously in favor of approving minutes by roll call."
+   "quote": "c. shipiro motioned to approve minutes from the june 9, 2025 joint meeting with planning board. c st.germain seconded the motion."
   },
   {
-   "motion": "Recommend to the select board to not exercise the right of first refusal for 222 West Townsend Road",
+   "motion": "Recommend to the select board that it not exercise its right of first refusal on 222 West Townsend Road.",
    "moved_by": "M Toohill",
    "seconded_by": "C Shapiro",
-   "outcome": "passed",
+   "outcome": "passed, unanimous by roll call",
    "procedural": false,
-   "quote": "open space committee makes a recommendation to the select board to not exercise its right of ﬁrst refusal. motioned by m toohill, seconded by c shapiro. members present voted unanimously in favor of approving minutes by roll call."
+   "quote": "motioned by m toohill, seconded by c shapiro. members present voted unanimously in favor of approving minutes by roll call."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:32 P.M.",
    "moved_by": "C Shapiro",
    "seconded_by": "C St.Germain",
-   "outcome": "passed",
+   "outcome": "passed, unanimous by roll call",
    "procedural": true,
-   "quote": "motion to adjourn the meeting was made by c shapiro, seconded by c st.germain members present voted unanimously in favor by roll call."
+   "quote": "motion to adjourn the meeting was made by c shapiro, seconded by c st.germain ",
+   "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and legible. Note: Vote 2's quote contains apparent copy-paste error (\"approving minutes\" instead of describing the substantive vote), but text is reproduced verbatim as printed.",
- "cost_usd": 0.0911054
+ "note": "Text extract, not a scan; all three votes are recorded as roll-call unanimous with no numeric count printed, so outcomes are given as 'passed, unanimous by roll call'. The minutes say 'Minutes approved by roll call vote on 9/3/25' -- that later approval of these minutes is outside this meeting and is not recorded as a vote here. The minutes print 'C. Shipiro' for the mover; the member is listed as Colleen Shapiro, and the name is kept as printed. The meeting was fully remote via Zoom; the 'Members Present' list is recorded as present. No dollar figures, transfers or public comment appear in the minutes. The 'Open space plan extended to June 2029' line is recorded as a report, not a decision, because no motion or action is described.",
+ "cost_usd": 0.01428097,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Toohill",
+   "role": "Chair",
+   "status": "present",
+   "quote": "michael toohill (chair)"
+  },
+  {
+   "name": "Chris St.Germain",
+   "role": "Conservation; recorded the minutes",
+   "status": "present",
+   "quote": "chris st.germain (conservation)"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Parks & Rec; welcomed as a new member",
+   "status": "present",
+   "quote": "colleen shapiro (parks & rec)"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Planning Board; welcomed as a new member",
+   "status": "present",
+   "quote": "tim willsmer (planning board)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members were instructed to review the Town Master Plan questions in the spreadsheet and bring comments and feedback to the next meeting.",
+   "quote": "members instructed to review questions in spreadsheet and bring comments and feedback to the next meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "called to order at 7:30 P.M.; attendance taken by roll call",
+   "quote": "meeting was called to order at 7:30 p .m. by chairman toohill",
+   "tags": [
+    "attendance",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Welcome new members",
+   "resolution": "new members Colleen Shapiro and Tim Willsmer welcomed",
+   "quote": "colleen shapiro tim willsmer",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Minutes approval (June 9, 2025 joint meeting)",
+   "resolution": "approved unanimously by roll call",
+   "quote": "c. shipiro motioned to approve minutes from the june 9, 2025 joint meeting with planning board. c st.germain seconded the motion.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Reports from other boards",
+   "resolution": "no reports",
+   "quote": "reports from other boards no reports",
+   "tags": [
+    "other boards"
+   ]
+  },
+  {
+   "topic": "Open Space Plan update",
+   "resolution": "reported: plan extended to June 2029",
+   "quote": "open space plan extended to june 2029",
+   "tags": [
+    "open space plan"
+   ]
+  },
+  {
+   "topic": "222 West Townsend Road right of first refusal",
+   "resolution": "recommendation to select board not to exercise right of first refusal, approved unanimously",
+   "quote": "open space committee makes a recommendation to the select board to not exercise its right",
+   "tags": [
+    "right of first refusal",
+    "open space",
+    "land"
+   ]
+  },
+  {
+   "topic": "Citizen comments",
+   "resolution": "none",
+   "quote": "citizen comments: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Master Plan questions",
+   "resolution": "members to review spreadsheet questions and bring feedback to next meeting",
+   "quote": "town has asked open space committee to weigh in on certain questions that apply to open space.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for September 3, remote",
+   "quote": "next meeting, september 3",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously by roll call at 8:32 P.M.",
+   "quote": "motion to adjourn the meeting was made by c shapiro, seconded by c st.germain ",
+   "tags": [
+    "procedure"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "open space",
+  "right of first refusal",
+  "222 West Townsend Road",
+  "master plan",
+  "minutes approval",
+  "remote meeting",
+  "roll call"
+ ],
+ "dropped_unquoted_by_field": {}
 }

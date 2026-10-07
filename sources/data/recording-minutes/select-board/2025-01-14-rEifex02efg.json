@@ -260,5 +260,161 @@
    "at": "2026-10-06T18:17:37Z",
    "cost_usd": 0.209101
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-01-14-minutes-rr2026-09-18-draft.txt",
+   "path": "sources/meetings/select-board/2025-01-14-minutes-rr2026-09-18-draft.pdf"
+  },
+  "official_sha256": "1553ec790b78d193503950e4fdeaadd00bd94972e5a62e421224cbd269fddb7e",
+  "against": "text",
+  "coverage": "full",
+  "summary": "Neither record has a recorded vote, and both agree no Town Manager selection was made at this meeting (the official minutes schedule it for January 15). Our minutes carry candidate-presentation figures heard in captions that the official minutes mostly omit, and our captions garbled several names and misassigned roles.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 6,
+   "discrepancy": 0,
+   "only_in_ours": 5,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes: none recorded",
+    "ours": "VOTES (non-procedural): none",
+    "official": "MEETING SCHEDULE January 15, 2025, 6:00 P .M.; Bilotta Meeting Room, Town Hall Re: Town Manager Candidate Selection",
+    "note": "Neither record has a non-procedural vote; the official minutes record only interviews and defer selection to the next meeting.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "No selection announced; selection deferred",
+    "ours": "The board told the last candidate it would be letting him know next; no selection was announced.",
+    "official": "MEETING SCHEDULE January 15, 2025, 6:00 P .M.; Bilotta Meeting Room, Town Hall Re: Town Manager Candidate Selection",
+    "note": "Consistent: no decision at this meeting. The official minutes do not mention the board telling the last candidate it would be in touch.",
+    "t": 13447
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair",
+    "ours": "Mr chair (unnamed) (chair)",
+    "official": "Chair Caesar Nuzzolo",
+    "note": "Our minutes did not capture the chair's name and list Caesar separately as a member; the official minutes identify Caesar Nuzzolo as chair.",
+    "official_reading": "Chair Caesar Nuzzolo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Vice-Chair",
+    "ours": "Michael Ray (member)",
+    "official": "Vice-Chair Michael-Ray Jeffreys",
+    "note": "Same person; ours has a partial name and wrong title.",
+    "official_reading": "Michael-Ray Jeffreys"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Tom",
+    "ours": "Tom (member)",
+    "official": "Member Tom Alonzo",
+    "note": "Same person; surname missing in ours.",
+    "official_reading": "Tom Alonzo"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Interim Town Manager and facilitator",
+    "ours": "",
+    "official": "Also Present: Interim Town Manager Carter Terenzini",
+    "note": "Official minutes name the interim town manager and John Petrin as facilitator; neither appears in our attendee list.",
+    "official_reading": "Carter Terenzini"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Candidate 1 name",
+    "ours": "Angie Ellison (Angelene Wes Ellison) (presenter)",
+    "official": "Angeline Lopes Ellison",
+    "note": "Same candidate; first name and middle name misheard.",
+    "official_reading": "Angeline Lopes Ellison"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Candidate 2 name",
+    "ours": "Jennifer Warren Diamond (presenter)",
+    "official": "Jennifer Warren-Dyment",
+    "note": "Same candidate; surname misheard.",
+    "official_reading": "Jennifer Warren-Dyment"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Candidate 3 name",
+    "ours": "John Woodall (presenter)",
+    "official": "John Woodsmall",
+    "note": "Same candidate; surname misheard.",
+    "official_reading": "John Woodsmall"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Candidate 1 mock override presentation figures",
+    "ours": "Candidate 1 mock override presentation (Fair Haven): 11 cents per every th000 valuation, $55 a year, $500,000 home, $22,000",
+    "official": "",
+    "note": "The official minutes only say she presented as if at Town Meeting on the budget process and give none of these figures. A person could check the recording at the timestamp.",
+    "t": 3257
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fair Haven deficit and override history",
+    "ours": "Fair Haven deficit and override history: $2 million deficit, 450,000, a million dollar",
+    "official": "",
+    "note": "The official minutes mention only the $2 million deficit, as a question; the 450,000 and million-dollar figures are not in them.",
+    "t": 3758
+   },
+   {
+    "kind": "agree",
+    "about": "Fairhaven $2 million deficit",
+    "ours": "$2 million deficit",
+    "official": "Member Renee Emkey stated you mentioned a $2 million deficit and asked Candidate Ellison how it happened and how she resolved it.",
+    "note": "The $2 million deficit figure appears in both.",
+    "t": 3758
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Holden Shrewsbury Street project figures",
+    "ours": "Holden Shrewsbury Street project (Candidate 3 presentation): 700 to $800,000, 11 and 12 million, about another 500,000, 1.25 million, $3 million",
+    "official": "",
+    "note": "The official minutes describe the presentation only as a state grant application for reconstruction of a street, with no figures or street name.",
+    "t": 12159
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Candidate 3 Holden department budget",
+    "ours": "Candidate 3 current Holden department budget: 11 to 12 million, $1 to $2 million, $9 million",
+    "official": "",
+    "note": "No budget figures from Holden appear in the official minutes.",
+    "t": 9172
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Candidate 3 school/town revenue split",
+    "ours": "Candidate 3 view on school/town revenue split and planning: 62 38, 6040",
+    "official": "",
+    "note": "The official minutes say only that he would work on a five-year financial plan for the town and schools, with no split figures.",
+    "t": 10107
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Meeting times and adjournment-related schedule",
+    "ours": "",
+    "official": "Chair Caesar Nuzzolo called the meeting to order at 5:37 PM",
+    "note": "The official minutes give times for call to order and interviews that ours does not record; the interview times (5:35, 6:45, 8:00 PM) are in the official minutes only.",
+    "official_reading": ""
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:37:49Z",
+   "cost_usd": 0.321357
+  }
  }
 }

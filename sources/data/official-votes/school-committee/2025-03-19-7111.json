@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2025-03-19",
  "docid": "7111",
@@ -12,71 +12,71 @@
  },
  "votes": [
   {
-   "motion": "Accept donation of $105 from a Lunenburg family for the Turkey Hill Music Department",
+   "motion": "Accept a $105 donation from a Lunenburg family for the Turkey Hill Music Department, to be deposited into the gift account.",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Mr. Sculimbrene",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "ms. archambault makes a motion to accept the donation with our gratitude, mr. sculimbrene seconds the motion, all approve via roll call."
   },
   {
-   "motion": "Accept line item transfers for substitute consolidation, paraprofessionals, textbooks, overtime, supplies, and special education evaluation",
+   "motion": "Accept the line item transfers (substitute lines consolidation, contracted services, special ed evaluation line).",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Archambault",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. sculimbrene makes a motion to accept transfers, ms. archambault seconds the motion all approve via roll call"
   },
   {
-   "motion": "Approve FY26 Extended Day & Early Learning Center Handbooks",
+   "motion": "Approve the FY26 Extended Day and ELC Handbooks.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Archambault",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. sculimbrene makes a motion to approve the handbook, ms. archambault seconds the motion, all approve via roll call"
   },
   {
-   "motion": "Move forward and apply for the grants",
+   "motion": "Move forward and apply for the grants.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Archambault",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. sculimbrene makes a motion to move forward and apply for the grants, ms. archambault seconds the motion all approve via roll call."
   },
   {
-   "motion": "Accept the FY25 Quarterly Budget Report",
+   "motion": "Accept the FY25 Quarterly Budget Report.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Archambault",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. sculimbrene makes a motion to accept the report, ms. archambault seconds the motion all approve via roll call"
   },
   {
-   "motion": "Accept the Unaffiliated Salary Schedule FY26-28",
+   "motion": "Accept the Unaffiliated Salary Schedule (FY26-28).",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Mr. Sculimbrene",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "ms. archambault makes a motion to accept the salary schedule, mr. sculimbrene seconds the motion all approve vis roll call"
   },
   {
-   "motion": "Approve the FY26 School Calendar as proposed",
+   "motion": "Approve the FY26 School Calendar as proposed.",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Mr. Sculimbrene",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "ms archambault makes a motion to approve the calendar as proposed, mr. sculimbrene second the motion, all approve via roll call vote"
   },
   {
-   "motion": "Move forward with athletic camps",
+   "motion": "Move forward with the athletic camps.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Archambault",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. sculimbrene makes a motion to move forward with camps, ms. archambault seconds the motion all approve via roll call"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:51 pm.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed unanimously",
@@ -85,6 +85,470 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and legible. All votes recorded as passed unanimously via roll call. No failed motions recorded.",
- "cost_usd": 0.0868534
+ "note": "Text is extracted from a scan-like transcription with typos and some garbled phrases preserved as printed (for example \"budget cars\", \"legislatures\", \"vis roll call\", \"ware writing\"). Votes were recorded only as \"all approve via roll call\" or \"approved unanimously\", so no per-member tallies or counts are printed; outcomes are recorded as passed. Member attendance is taken from the header block, and guests are listed without a stated attendance status. The guest Julianna Hanscom is spelled Juliana Hanscom in the public comment. Quotes with curly apostrophes were avoided. No text indicates the minutes were approved, so no approval-of-minutes vote is recorded.",
+ "cost_usd": 0.02404497,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brian lehtinen, chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene, vice chair - present"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "carol archambault, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "dr. burnham shares an explanation regarding questions from the finance committee and changes that have occurred since the last presentation."
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMHS Principal",
+   "status": "not stated",
+   "quote": "tim santry - lmhs principal"
+  },
+  {
+   "name": "Norman Yvon",
+   "role": "THES Principal",
+   "status": "not stated",
+   "quote": "norman yvon - thes principal"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Primary Principal",
+   "status": "not stated",
+   "quote": "carla squier - primary principal"
+  },
+  {
+   "name": "Dr. Deborah Bookis",
+   "role": "Director of Teaching and Learning",
+   "status": "present",
+   "quote": "dr. bookis explains what the grants are and how they will be used."
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services",
+   "status": "not stated",
+   "quote": "julianna hanscom - director of special services"
+  },
+  {
+   "name": "Dr. Susan Gilson",
+   "role": "Director of Administration & Finance",
+   "status": "not stated",
+   "quote": "dr. susan gilson - director of administration"
+  },
+  {
+   "name": "Patty McCarthy – Guillette",
+   "role": "Director of Community School Programs",
+   "status": "not stated",
+   "quote": "patty mccarthy - guillette - director of community school programs"
+  },
+  {
+   "name": "Kevin Bigelow",
+   "role": "Athletic Director",
+   "status": "not stated",
+   "quote": "kevin bigelow - athletic director"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "public comment, 186 Reservoir Road",
+   "status": "present",
+   "quote": "i have been doing some advocacy work with our state legislators about more school funding."
+  },
+  {
+   "name": "Briana Proctor",
+   "role": "public comment, 141 Gilchrest Street",
+   "status": "present",
+   "quote": "i am here to advocate to save the proposed administrative cuts to lmhs."
+  },
+  {
+   "name": "Laura Barooshian",
+   "role": "public comment, 389 Mulpus Road",
+   "status": "present",
+   "quote": "i am here to advocate for the fifth grade music program cuts and salary cuts."
+  },
+  {
+   "name": "John Bowen Jr.",
+   "role": "public comment, 162 Highland Street",
+   "status": "present",
+   "quote": "i am speaking tonight about lunenburg schools i recently moved here to lunenburg with my dad"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "School Committee agrees to use school email to reach out to community and send letters on state funding; Mr. Lehtinen to draft the information and guidelines and run them by Ms. Archambault and Dr. Burnham.",
+   "quote": "school committee agrees to use school email to reach out to community and send letters."
+  },
+  {
+   "decision": "For the athletic camp proposal, concerns were shared and communication with the Town Rec Department was recommended.",
+   "quote": "concerns are shared and it is recommended that there is communication with the town rec department"
+  },
+  {
+   "decision": "Superintendent search screening committee meetings set for 3/25, 3/27, 3/28 and 3/31 if needed.",
+   "quote": "the next meetings will be 3/25, 3/27, 3/28 and 3/31 if needed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Donation to Turkey Hill Music Department",
+   "what_was_recorded": "A $105 donation from a Lunenburg family was accepted into the gift account.",
+   "quote": "b. donations a donation of $105 from a lunenburg family, this is for the turkey hill music department and will be deposited into the gift account.",
+   "figures_as_printed": [
+    "$105"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrants for 3/3/25 to 3/12/25 were signed by the chair.",
+   "quote": "warrants 3/3/25 to 3/12/25 $138,511.41 signed by chair",
+   "figures_as_printed": [
+    "$138,511.41"
+   ]
+  },
+  {
+   "topic": "Contracted services transfer",
+   "what_was_recorded": "A transfer for contracted services was made to target the contracted services at the high school level.",
+   "quote": "a transfer for contracted services of $1,374 to target the contracted services at the high school level.",
+   "figures_as_printed": [
+    "$1,374"
+   ]
+  },
+  {
+   "topic": "Special ed evaluation line shortfall",
+   "what_was_recorded": "The Special ED evaluation line needed more money and was covered from other lines.",
+   "quote": "special ed evaluation line needs $1200.10 so we are using special education general supplies and ace program general supplies and home hospital tutoring account.",
+   "figures_as_printed": [
+    "$1200.10"
+   ]
+  },
+  {
+   "topic": "Citizen's override petition",
+   "what_was_recorded": "The warrant article for a citizen petition would raise and appropriate an amount to supplement the school budget for FY2026, contingent on a Proposition 2 1/2 ballot question; the number was calculated as the difference between the level service budget and the town manager's budget.",
+   "quote": "the language of the warrant article to see if the town will vote to raise and appropriate $2,099,337 to supplement lunenburg public schools budget for fiscal year 2026",
+   "figures_as_printed": [
+    "$2,099,337"
+   ]
+  },
+  {
+   "topic": "Override ballot initiative",
+   "what_was_recorded": "A public commenter said a group of parents filed an override ballot initiative for about $2 million, and urged that the override not be made so large it will not pass.",
+   "quote": "a group of parents did file an override ballot initiative for about $2 million",
+   "figures_as_printed": [
+    "$2 million"
+   ]
+  },
+  {
+   "topic": "Fifth grade music program cuts",
+   "what_was_recorded": "A public commenter argued the fifth grade music cut saves very small amounts of money and urged the committee to look at smaller dollar items for free cash.",
+   "quote": "it is very small amounts of money to keep our fifth grade program",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Free cash",
+   "what_was_recorded": "A member said the free cash the committee hoped to use is not guaranteed and the amount keeps going down.",
+   "quote": "my motivation was to hold out for the free cash, but that money is not guaranteed and the amount keeps going down.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Unaffiliated salary schedule",
+   "what_was_recorded": "The FY26-28 unaffiliated salary schedule has a 4% increase next year and then 2 1/2 % increases for the following two years, mostly for extended day and ELC staff paid primarily from the revolving account.",
+   "quote": "there is a 4% increase next year and then 2 ½ % increases for the following two years.",
+   "figures_as_printed": [
+    "4%",
+    "2 ½ %"
+   ]
+  },
+  {
+   "topic": "FY26 budget",
+   "what_was_recorded": "The FY26 budget will be presented to the Finance Committee again the next day with a few line changes.",
+   "quote": "we will present to the finance committee again tomorrow with a few line changes.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Finance Committee school funding",
+   "what_was_recorded": "The Finance Committee reported that money was given to the school department last year that will not happen again this year.",
+   "quote": "they have stated that last year other departments were not given money and that money was given to the school department that will not happen again this year.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Consolidate substitute lines and apply a high school paras excess in English text books and Middle School overtime secretarial; custodial collecting unused supply funds for cleaning supplies.",
+   "amount_as_printed": "",
+   "outcome": "approved in the vote on line item transfers",
+   "quote": "a request to consolidate substitute lines and applying a high school paras with excess in english text books and middle school overtime secretarial"
+  },
+  {
+   "description": "Transfer for contracted services to target the high school level.",
+   "amount_as_printed": "$1,374",
+   "outcome": "approved in the vote on line item transfers",
+   "quote": "a transfer for contracted services of $1,374 to target the contracted services at the high school level."
+  },
+  {
+   "description": "Special ED evaluation line covered from Special education general supplies, Ace Program general supplies and home hospital tutoring account.",
+   "amount_as_printed": "$1200.10",
+   "outcome": "approved in the vote on line item transfers",
+   "quote": "special ed evaluation line needs $1200.10 so we are using special education general supplies and ace program general supplies and home hospital tutoring account."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "State school funding advocacy and hearings",
+   "speaker": "Mandy Gilman",
+   "stated_role": "186 Reservoir Road",
+   "quote": "i have been doing some advocacy work with our state legislators about more school funding."
+  },
+  {
+   "topic": "Administrative cuts at LMHS",
+   "speaker": "Briana Proctor",
+   "stated_role": "141 Gilchrest Street",
+   "quote": "i am here to advocate to save the proposed administrative cuts to lmhs."
+  },
+  {
+   "topic": "Fifth grade music program and salary cuts",
+   "speaker": "Laura Barooshian",
+   "stated_role": "389 Mulpus Road",
+   "quote": "i am here to advocate for the fifth grade music program cuts and salary cuts."
+  },
+  {
+   "topic": "Waiting a year for an override",
+   "speaker": "Ms. Brzozoski",
+   "stated_role": "Member",
+   "quote": "i have been really uncomfortable since our last meeting with the select board."
+  },
+  {
+   "topic": "Override timing and citizen petition",
+   "speaker": "Mr. Beardmore",
+   "stated_role": "Member",
+   "quote": "i share all of the concerns that laura spoke of, however, my position on the override has not changed."
+  },
+  {
+   "topic": "Ways and Means hearing in Amherst",
+   "speaker": "Ms. Archambault",
+   "stated_role": "Secretary",
+   "quote": "i am planning on attending the march 24 meeting with the ways and means committee in amherst."
+  },
+  {
+   "topic": "Special services and support at LMHS",
+   "speaker": "John Bowen Jr.",
+   "stated_role": "162 Highland Street",
+   "quote": "i am speaking tonight about lunenburg schools i recently moved here to lunenburg with my dad"
+  },
+  {
+   "topic": "Response to Bowen comment",
+   "speaker": "Mr Sculimbrene",
+   "stated_role": "Vice Chair",
+   "quote": "i just want to say that was an amazing speech."
+  },
+  {
+   "topic": "Letters to elected officials",
+   "speaker": "Ms. Brzozoski",
+   "stated_role": "Member",
+   "quote": "if you ware writing letters to our elected officials, they should have your address"
+  },
+  {
+   "topic": "Acknowledging the Bowen comment",
+   "speaker": "Mr. Beardmore",
+   "stated_role": "Member",
+   "quote": "i want to acknowledge a comment made by mr. john bowen jr, frankly i am taken aback by it."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:31",
+   "quote": "call to order by mr. lehtinen at 6:31",
+   "tags": [
+    "meeting"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "meeting"
+   ]
+  },
+  {
+   "topic": "Public Comment (state funding, cuts, override)",
+   "resolution": "heard; no action",
+   "quote": "public comment - mandy gilman, 186 reservoir road",
+   "tags": [
+    "public comment",
+    "state funding",
+    "override",
+    "cuts"
+   ]
+  },
+  {
+   "topic": "Chair's Report (select board, state House, citizen override petition)",
+   "resolution": "informational",
+   "quote": "the select board is meeting at town hall in 7 minutes.",
+   "tags": [
+    "override",
+    "state funding",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Student Representative Report",
+   "resolution": "none",
+   "quote": "5. student representative report - none",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "none on agenda",
+   "quote": "a. regular session - none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Line item transfers, warrants and donations",
+   "resolution": "approved",
+   "quote": "warrants 3/3/25 to 3/12/25 $138,511.41 signed by chair",
+   "tags": [
+    "transfers",
+    "warrants",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Superintendent's Report (Pre-K, dates, facilities director)",
+   "resolution": "informational",
+   "quote": "our pre-k registration is currently open and closes on march 28th",
+   "tags": [
+    "superintendent",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Presentation",
+   "resolution": "none",
+   "quote": "9. presentation none",
+   "tags": [
+    "meeting"
+   ]
+  },
+  {
+   "topic": "FY26 Extended Day and ELC handbooks",
+   "resolution": "approved",
+   "quote": "fy26 extended day & elc handbooks the only changes in the handbooks are updated",
+   "tags": [
+    "handbooks",
+    "extended day",
+    "early learning center"
+   ]
+  },
+  {
+   "topic": "Grants",
+   "resolution": "approved to apply",
+   "quote": "dr. bookis explains what the grants are and how they will be used.",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Old Business (FY25 report, salary schedule, calendar, athletic camps, conference pilot, FY26 budget, superintendent search, state letter)",
+   "resolution": "report accepted; salary schedule, calendar and camps approved; conference pilot and FY26 budget discussed; search and state letter updated",
+   "quote": "a. fy25 quarterly budget report report in the folder",
+   "tags": [
+    "FY25 budget",
+    "FY26 budget",
+    "salary schedule",
+    "calendar",
+    "athletics",
+    "superintendent search",
+    "state funding"
+   ]
+  },
+  {
+   "topic": "Reports (PACSAL, FinCom, school choice, PTO, LMBDC, capital planning)",
+   "resolution": "informational",
+   "quote": "pacsal met on march 6th via zoom and discussed the ace program",
+   "tags": [
+    "reports",
+    "finance committee",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Public Comment (response to Bowen speech)",
+   "resolution": "heard; no action",
+   "quote": "i want to acknowledge a comment made by mr. john bowen jr, frankly i am taken aback by it.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Topics for Future Discussion",
+   "resolution": "none listed",
+   "quote": "14. topics for future discussion",
+   "tags": [
+    "meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:51 pm",
+   "quote": "ms. brzozoski makes a motion to adjourn 8:51 pm",
+   "tags": [
+    "meeting"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "FY26 budget",
+  "override",
+  "state funding",
+  "public comment",
+  "line item transfers",
+  "donations",
+  "warrants",
+  "handbooks",
+  "grants",
+  "athletics",
+  "special education",
+  "superintendent search",
+  "salary schedule",
+  "school calendar",
+  "free cash"
+ ],
+ "dropped_unquoted_by_field": {}
 }

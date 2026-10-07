@@ -421,5 +421,222 @@
    "at": "2026-10-06T18:05:35Z",
    "cost_usd": 0.213805
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02192025-7057",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2025-02-19-minutes-7057.txt",
+   "path": "sources/meetings/parks-commission/2025-02-19-minutes-7057.pdf"
+  },
+  "official_sha256": "3614fa4853b08adbf14c7eba1c043a5e86427772b49f84df6e05f3d08e587d63",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The four non-procedural votes match across both records (the official minutes add a 4-0 tally), and the remaining differences are mostly misheard names and figures. The one thing to check is that each record has decisions the other lacks: ours has the Town Meeting consensus, fee, schedule and beach staffing items, and the official minutes have the 100 Townsend Harbor Rd decision.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 5,
+   "discrepancy": 0,
+   "only_in_ours": 8,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: conditional use of 90-foot diamond outfield by youth soccer league (LYSA)",
+    "ours": "Conditionally approve the school/youth soccer league using the outfield of the 90-foot diamond (or another suitable field), provided the dimensions work — not audible",
+    "official": "c. sullivan made a motion conditionally to approve lysa to use the outﬁeld of the 90 foot diamond or any other ﬁeld that is suitable.",
+    "note": "Same motion and conditional outcome; ours does not record the 4-0 tally the official minutes give.",
+    "t": 400
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: $40,000 revolving fund budget",
+    "ours": "Approve a budget for the revolving fund — not audible",
+    "official": "c. sullivan made a motion to approve the $40,000 budget for the revolving fund. c. shapiro seconded.",
+    "note": "Same vote; ours has the $40,000 as 'the 40 Grand' elsewhere, which matches.",
+    "t": 588
+   },
+   {
+    "kind": "agree",
+    "about": "Revolving fund budget figure",
+    "ours": "Revolving fund budget: the 40 Grand, $40,000",
+    "official": "c. ruth indicated the value of the revolving fund is forty thousand dollars",
+    "note": "Same $40,000 figure.",
+    "t": 527
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Marshall Park phases 1, 2A, 2B design and construction oversight",
+    "ours": "Approve finalizing the design and construction oversight for Marshall Park phases 1, 2A and 2B, with construction and general conditions costs plus additional owner's project manager expenses to be added, and take it to Town Meeting — not audible",
+    "official": "c. shapiro made a motion to vote to approve the design and do the construction oversight of the construction for phases 1, 2a and 2b for the marshall park improvements",
+    "note": "Same motion; the official minutes call the extra expenses 'Skanska' (the OPM). Whether the vote itself included taking it to Town Meeting is not in the official motion text; see the Town Meeting finding.",
+    "t": 2708
+   },
+   {
+    "kind": "caption_error",
+    "about": "Marshall Park construction and general conditions cost",
+    "ours": "Marshall Park total for the vote: 12, 832, 13 million 068, 13, 8,797",
+    "official": "with the understanding that the construction cost and general conditions cost would be $13,080,797 plus the additional skanska expenses",
+    "note": "Garbled digits in the captions; the official figure $13,080,797 fits '13 million 068 ... 797'.",
+    "official_reading": "$13,080,797",
+    "t": 2646
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: RDLA January invoice approved",
+    "ours": "Approve the RDLA design development invoice for January — not audible",
+    "official": "c. sullivan made a motion to approve. c. shapiro seconded. the chair called for a vote. all in favor, motion carried (4-0).",
+    "note": "Same vote on the January RDLA invoice.",
+    "t": 3129
+   },
+   {
+    "kind": "caption_error",
+    "about": "RDLA invoice amount",
+    "ours": "RDLA invoice: 29,000 737, invoice number 24555",
+    "official": "a. scheipers presented an invoice for approval from rdla for the period from 1/1-1/31/2025 in the amount of $29,737 invoice # 24555-05.",
+    "note": "Same invoice; captions split the amount ('29,000 737') and dropped the '-05' suffix.",
+    "official_reading": "$29,737, invoice # 24555-05",
+    "t": 3106
+   },
+   {
+    "kind": "agree",
+    "about": "Bathroom building cost",
+    "ours": "Bathroom building cost and septic: about 250,000",
+    "official": "r. dunnis stated the cost for the bathroom is approximately $250,000.",
+    "note": "Same approximate figure.",
+    "t": 1750
+   },
+   {
+    "kind": "agree",
+    "about": "Cost estimate gap, contingency and phase estimate",
+    "ours": "Marshall Park cost estimates: 30% difference, 23%, 7%, 10% design contingency, around 13 million",
+    "official": "r. dunetz from rdla explained the two cost estimators were 30% different.",
+    "note": "30%, 7%, 10% contingency and ~13 million all appear in the official record; the '23%' in ours has no counterpart in the official text and may be misheard.",
+    "t": 985
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Consensus to take full Marshall Park project to Town Meeting",
+    "ours": "Consensus to put the full Marshall Park project (phases 1, 2A, 2B) before Town Meeting, with the option to amend the article down to phase one if support is lacking.",
+    "official": "",
+    "note": "Official minutes record no Town Meeting discussion; check the recording near this timestamp.",
+    "t": 2604
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Higher estimate used, pending OPM confirmation",
+    "ours": "The higher cost estimate will be used, conditional on the chair confirming extra owner's project manager costs with the OPM the next day.",
+    "official": "",
+    "note": "Official only says '$13,080,797 plus the additional skanska expenses'; the conditional follow-up is not recorded.",
+    "t": 2668
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fee changes and user fee workshop",
+    "ours": "No fee changes this year; a user fee workshop will be set for March or April if data comes in, possibly folded into a light April agenda.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3692
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting date",
+    "ours": "The next regular meeting is aimed at March 19, and the chair will ask the clerk's office for the room.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3668
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Public information sessions on Marshall Park",
+    "ours": "Plan for two public information sessions on Marshall Park in April; the chair will email details.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 4164
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Beach staffing on March agenda",
+    "ours": "Beach staffing will be put on the March agenda because of low lifeguard interest.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3770
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Parking spaces and debt exclusion figures",
+    "ours": "Parking spaces and grant minimum: 130, 105; Debt exclusion financing: two votes, two3",
+    "official": "",
+    "note": "Neither figure appears in the official minutes; the debt exclusion line looks garbled, so check the recording.",
+    "t": 1626
+   },
+   {
+    "kind": "only_in_official",
+    "about": "100 Townsend Harbor Rd / Right of First Refusal decision",
+    "ours": "",
+    "official": "the commission does not have an interest at this time.",
+    "note": "Official records the Commission declining interest in the property; our minutes have no such item, so check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Anita shers (chair)",
+    "official": "members present: anita scheipers, tim lawless, christopher sullivan and, colleen shapiro",
+    "note": "Misheard surname for the same chair.",
+    "official_reading": "Anita Scheipers",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter from RDLA",
+    "ours": "Ray dunis (rdla) (presenter, landscape design firm)",
+    "official": "r. dunetz from rdla explained the two cost estimators were 30% different.",
+    "note": "Same presenter; surname misheard (the official minutes also print 'Dunnis' once).",
+    "official_reading": "R. Dunetz",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Colleen",
+    "ours": "Colleen (member)",
+    "official": "members present: anita scheipers, tim lawless, christopher sullivan and, colleen shapiro",
+    "note": "Surname missing in ours; the official list shows her as Colleen Shapiro (Vice Chair).",
+    "official_reading": "Colleen Shapiro",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Sullivan, Lawless, Ruth",
+    "ours": "Chris Sullivan (member); Tim Lawless (member); Chris Ruth (facilities director)",
+    "official": "members present: anita scheipers, tim lawless, christopher sullivan and, colleen shapiro",
+    "note": "Same people present; Chris Ruth appears as an additional attendee.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Design firm presenter Tom",
+    "ours": "Tom (presenter, design firm (Tom dud Little))",
+    "official": "",
+    "note": "No Tom is listed in the official minutes; check the recording to see who this was.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent clerk",
+    "ours": "",
+    "official": "absent: karin menard additional attendees: chris ruth",
+    "note": "Official lists the clerk as absent; ours has no absence information.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:32:22Z",
+   "cost_usd": 0.261321
+  }
  }
 }

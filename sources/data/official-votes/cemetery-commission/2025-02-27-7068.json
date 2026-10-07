@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2025-02-27",
  "docid": "7068",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the January 9, 2025 meeting",
+   "motion": "Approve the minutes of the January 09, 2025 meeting.",
    "moved_by": "David Dorren",
    "seconded_by": "Nancy Foss Yasko",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "vice chair david dorren made a motion to approve the minutes of jan 09, 2025 meeting, chair nancy foss yasko seconded, voted all in favor."
   },
   {
-   "motion": "Pull the $10K transfer from Sales of Lots Account article from the warrant",
+   "motion": "Pull the $10K transfer from the Sales of Lots account article from the warrant.",
    "moved_by": "Nancy Foss Yasko",
    "seconded_by": "David Dorren",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "chair nancy foss yasko made the motion to pull the article from the warrant, vice chair david dorren seconded, voted all in favor."
   },
   {
-   "motion": "Capital plan will fund the North Cemetery expansion project",
+   "motion": "The capital plan will take out an amount printed as \"X\" to start the North Cemetery expansion (the item is headed $50K).",
    "moved_by": "Nancy Foss Yasko",
    "seconded_by": "David Dorren",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "chair nancy foss yasko made the motion that the capital plan will take out \"x\" amount of dollars to start the north cemetery expansion, vice chair david dorren seconded, voted all in favor."
   },
   {
-   "motion": "Proceed with $50K cemetery road network repairs",
+   "motion": "Going forward with road repairs (the $50K cemetery road network repairs item).",
    "moved_by": "Nancy Foss Yasko",
    "seconded_by": "Mike Clark",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "chair nancy foss yasko made the motion that they will be going forward with road repairs, clerk mike clark seconded, voted all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "David Dorren",
    "seconded_by": "Mike Clark",
    "outcome": "passed",
@@ -53,6 +53,176 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0665614
+ "note": "Text is clean and readable; no scan. Votes are recorded as \"voted all in favor\" with no numeric count, so outcomes are \"passed\". The North Cemetery motion prints a placeholder \"X\" amount; the heading gives $50K, and the motion is recorded with the placeholder. The Vice Chair appears as \"David Dorren\" in the body and \"David Doreen\" in the attendance list; I used the body spelling for names in votes and the list spelling in attendees. Julie Belliveau is named only in a thank-you, so her attendance is not stated. Richard McGrath is named but does not appear to be an attendee, so he is omitted. Public comment item 6 includes the Vice Chair's own remark, which falls under that heading.",
+ "cost_usd": 0.014964970000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard"
+  },
+  {
+   "name": "David Doreen (printed as David Dorren in the body)",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard"
+  },
+  {
+   "name": "Mike Clark (signed as Michael Clark)",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair nancy foss yasko vice-chair david doreen clerk mike clark dpw director bill bernard"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager",
+   "status": "not stated",
+   "quote": "chair nancy foss yasko thanked assistant town manager julie belliveau & the town for the open meeting law presentation."
+  },
+  {
+   "name": "Mr. Bowen",
+   "role": "resident, 162 highland street",
+   "status": "present",
+   "quote": "mr. bowen - 162 highland street - concerns on capital planning & expenses of money"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Lights and concrete skirt at South Cemetery: under $10K, so it does not need to go out to bid; DPW Director to check with contractors.",
+   "quote": "lights & concrete skirt at south cemetery - no updates yet, bill to check on, contractors in mind, under $10k - does not need to go out to bid."
+  },
+  {
+   "decision": "Next meeting set for March 27, 2025, 9:00 AM.",
+   "quote": "5. future meeting schedule - march 27, 2025, 9:00 am"
+  },
+  {
+   "decision": "DPW Director to research the Fish Street cemetery project further, after no recent word from Richard McGrath.",
+   "quote": "dpw director bill bernard has not heard anything recently from richard mcgrath and will research further."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Account balances: Sales of Lots and Capital Fund",
+   "what_was_recorded": "The chair reported the balances of the Sale of Lots account and the Capital Fund.",
+   "figures_as_printed": [
+    "$94,394.66",
+    "$10,606.61"
+   ],
+   "quote": "sale of lots $94,394.66, capital fund $10,606.61. if we have enough in the fund, we will pull the article for $10k"
+  },
+  {
+   "topic": "$10K transfer from Sales of Lots account (placeholder article)",
+   "what_was_recorded": "A $10K placeholder transfer article was pulled from the warrant if the fund had enough money.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "if we have enough in the fund, we will pull the article for $10k from the warrant."
+  },
+  {
+   "topic": "$50K capital item, North Cemetery Expansion Area",
+   "what_was_recorded": "A $50K capital item to come from the Capital Planning budget; the parcel is surveyed and design and construction remain; the DPW Director hopes $50K covers all required work.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "$50k capital item for the north cemetery expansion area - will come out of the capital planning budget."
+  },
+  {
+   "topic": "North Cemetery road network repairs",
+   "what_was_recorded": "DPW submitted $225K for repaving all North Cemetery roads; patching and repair estimated at $50K, not yet on the latest Capital Plan list.",
+   "figures_as_printed": [
+    "$225K",
+    "$50K"
+   ],
+   "quote": "patching and repair estimated at $50k, currently this is not on the latest capital plan list."
+  },
+  {
+   "topic": "South Cemetery lights and concrete skirt",
+   "what_was_recorded": "Project cost described as under $10K, so it does not need to go out to bid; no updates yet.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "lights & concrete skirt at south cemetery - no updates yet, bill to check on, contractors in mind, under $10k - does not need to go out to bid."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "$10K transfer from the Sales of Lots account, placeholder warrant article",
+   "amount_as_printed": "$10K",
+   "outcome": "Article pulled from the warrant by motion (passed, all in favor).",
+   "quote": "$10k transfer from the sales of lots account - chair nancy foss yasko made the motion to pull the article from the warrant"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Vice Chair David Dorren",
+   "stated_role": "Vice Chair",
+   "topic": "Fish Street cemetery project timing",
+   "quote": "vice chair david dorren - brought up the fish street cemetery, can we discuss on when this project can get going?"
+  },
+  {
+   "speaker": "Mr. Bowen",
+   "stated_role": "162 highland street",
+   "topic": "Capital Planning and expenses; requested warrant article to exclude money",
+   "quote": "mr. bowen - 162 highland street - concerns on capital planning & expenses of money"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, pledge, open meeting law statement",
+   "resolution": "no action",
+   "quote": "chair nancy foss yasko read the open meeting law statement & noted the upload to the lunenburg public access channel"
+  },
+  {
+   "topic": "Approve minutes of January 09, 2025",
+   "resolution": "approved",
+   "quote": "vice chair david dorren made a motion to approve the minutes of jan 09, 2025 meeting, chair nancy foss yasko seconded, voted all in favor."
+  },
+  {
+   "topic": "DPW Director updates",
+   "resolution": "no action",
+   "quote": "dpw director updates and discussions by bill bernard including approved and or in progress projects."
+  },
+  {
+   "topic": "Placeholder warrant articles and capital items",
+   "resolution": "$10K article pulled; $50K North Cemetery expansion and road repairs moved forward",
+   "quote": "place holder articles - discussion and vote on each item."
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "set March 27, 2025",
+   "quote": "5. future meeting schedule - march 27, 2025, 9:00 am"
+  },
+  {
+   "topic": "Public comment (Fish Street; Capital Planning expenses)",
+   "resolution": "discussion, no action",
+   "quote": "vice chair david dorren - brought up the fish street cemetery, can we discuss on when this project can get going?"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned",
+   "quote": "vice chair david dorren made a motion to adjourn, clerk mike clark seconded, all in favor."
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "capital planning",
+  "DPW",
+  "North Cemetery expansion",
+  "road repairs",
+  "sale of lots",
+  "warrant articles",
+  "public comment",
+  "Fish Street cemetery",
+  "remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

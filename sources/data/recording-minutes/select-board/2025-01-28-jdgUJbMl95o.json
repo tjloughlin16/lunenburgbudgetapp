@@ -326,5 +326,120 @@
    "at": "2026-10-06T18:12:44Z",
    "cost_usd": 0.21124500000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01282025-6987",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-01-28-minutes-6987.txt",
+   "path": "sources/meetings/select-board/2025-01-28-minutes-6987.pdf"
+  },
+  "official_sha256": "f9a588c0b4e83a1735e0207ced9403468ebf1430e5548e43a79a690f545c1199",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the main decisions: the town manager contract vote, the Smart Growth $200,000, the FY26 revenue estimate, the salary figures and the February 11 meeting deferral. Our figures contain several caption garbles, and the official minutes add attendees, public comment and decisions that our minutes lack. The one thing to check is the vote tally, which ours records as \"unanimously\" and the official minutes record as 4-0-0.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Town manager contract vote",
+    "ours": "Approve the contract of the new town manager, term to begin February 4, 2025. — passed unanimously",
+    "official": "member alonzo moved to approve the contract of the new town manager, jennifer warren-dyment, for a term to begin february 4, 2025. member moore seconded the motion.",
+    "note": "Same motion, same start date, same outcome (passed). Unanimous is consistent with 4-0-0 among four voting members present; the official minutes also name the new manager, which ours does not.",
+    "t": 1377
+   },
+   {
+    "kind": "agree",
+    "about": "Smart Growth funding $200,000",
+    "ours": "Smart growth program funding: $200,000",
+    "official": "$200,000 in funding secured from the smart growth program",
+    "note": "Same amount and source.",
+    "t": 1024
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY26 revenue estimate $1.25 million",
+    "ours": "FY26 revenue estimates: $1.25 million, $520,000, $325,000",
+    "official": "fy26 revenue estimates showing approximately $1,250,000 in new monies",
+    "note": "$1.25 million matches the official $1,250,000. The $520,000 and $325,000 figures have no counterpart in the official minutes; they are probably sub-items the summary omits, or misheard.",
+    "official_reading": "$1,250,000",
+    "t": 1045
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager starting salary $165,000",
+    "ours": "Town manager compensation: 165,000, 69,1 125, 173,50, 174,000, 2 and a half%",
+    "official": "starting salary of $165,000, increasing to $169,125 on july 1st and $173,353 the following year",
+    "note": "Our '69,1 125' is a garbled $169,125 and '173,50' a garbled $173,353. The '174,000' is not in the official text and may be a mishearing of the same figure or a separate item. The 2.5% matches the official annual increases.",
+    "official_reading": "$169,125 and $173,353",
+    "t": 1294
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Council on Aging meals per week",
+    "ours": "Council on Aging budget: four and maybe five meals a week, two meals per week",
+    "official": "",
+    "note": "The official minutes record no meals-per-week figures for the Council on Aging; they mention only an upcoming senior tax relief program.",
+    "t": 920
+   },
+   {
+    "kind": "agree",
+    "about": "Board to decide whether to skip the February 11 meeting",
+    "ours": "Meetings set for February 4 and February 11; whether to skip February 11 to be decided next week.",
+    "official": "noting that they would decide at the next meeting whether to cancel the february 11th meeting.",
+    "note": "Same deferral.",
+    "t": 1760
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Action item tracking and agenda-setting discussion",
+    "ours": "Board agreed action items will be tracked and reported more regularly, and the agenda-setting process may be discussed on a future agenda.",
+    "official": "chair nuzzolo agreed to consider these suggestions and discuss them with the incoming town manager.",
+    "note": "The official record covers agenda-setting suggestions from Moore, to be discussed with the incoming manager. It does not record the action-item tracking agreement. Check whether the board committed to tracking and reporting action items.",
+    "t": 1541
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote tally on the contract",
+    "ours": "passed unanimously",
+    "official": "member alonzo moved to approve the contract of the new town manager, jennifer warren-dyment, for a term to begin february 4, 2025. member moore seconded the motion.",
+    "note": "Ours says unanimous with no count. The official minutes give 4-0-0, which leaves out the absent Member Jeffreys. Check the roll call if the exact tally matters.",
+    "t": 1377
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees named and absent member",
+    "ours": "Chair (unnamed); Amanda; Tom; Mr Alonzo; Carter (interim town manager)",
+    "official": "members present: caesar nuzzolo, amanda moore, tom alonzo, renee emkey",
+    "note": "Official names four members present (Nuzzolo, Moore, Alonzo, Emkey), the interim manager Terenzini, and absent Michael Ray Jeffreys. Ours lists 'Tom' and 'Mr Alonzo' as two separate members, which is probably the same person, and has no Emkey."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Skipped minutes, executive session, and other decisions",
+    "ours": "",
+    "official": "no minutes were added to the drive, so this item was skipped.",
+    "note": "Official also records no executive session was needed, the chair following up on Ialeggio's Certificate of Compliance complaint, and a parting gift for Terenzini. None appear in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment",
+    "ours": "",
+    "official": "tim ialeggio of 318 page street expressed frustration with the town violating its own bylaws regarding his certificate of compliance (coc) request for 564 page street.",
+    "note": "Official records public comment from Ialeggio, Burden and McDonald, and member remarks on Snow Riders. Ours records none."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:35:26Z",
+   "cost_usd": 0.23816500000000002
+  }
  }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2025-03-20",
  "docid": "7102",
@@ -12,33 +12,337 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of February 20, 2025 as presented",
+   "motion": "Approve the minutes of February 20, 2025 as presented.",
    "moved_by": "Dick",
    "seconded_by": "Jana",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "dick made a motion to approve the minutes of february 20, 2025 as presented, seconded by jana. themotion passed unanimously.●",
-   "quote_taken_from_text": true
+   "quote": "dick made a motion to approve the minutes of february 20, 2025 as presented, seconded by jana."
   },
   {
-   "motion": "Accept the Computer and Internet Use Policy as amended",
+   "motion": "Accept the Computer and Internet Use Policy as amended.",
    "moved_by": "Maia",
    "seconded_by": "Jana",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "maia made a motion to accept the policy as amended. jana seconded. themotion passed unanimously.●",
-   "quote_taken_from_text": true
+   "quote": "maia made a motion to accept the policy as amended. jana seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting (adjourned at 9:00 p.m.).",
    "moved_by": "Dick",
    "seconded_by": "Jana",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "a motion to adjourn was made by dick, seconded by jana. the motion passed unanimously."
+   "quote": "a motion to adjourn was made by dick, seconded by jana."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07754139999999998
+ "note": "Text extraction, not a scan. Several words are run together in the extracted text (for example \"Themotion\", \"thisgarden\", \"Jana-LeeBalish\" with no space), so quotes avoid those joins or use the run-together form as printed. Three motions are recorded with votes; the minutes print \"passed unanimously\" with no count. The Weather Policy item states it was voted on last month and records no vote here. Public comment is recorded as none, so no speakers are listed. Money figures come from the attached Director's report and programming report as printed; the narrative items that discuss money print no dollar amounts. The 'Jana' who seconded is taken to be Jana-LeeBalish, as the minutes print only 'Jana' in motions. Muir Haman's and Dick Mailloux's roles are not printed in the minutes. Lydia Paolilli wrote an attached report but is not named as attending.",
+ "cost_usd": 0.02009067,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 7:06 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "donna saiia (left 8:21 p.m.), laura boussom, maia wentrup, jana-leebalish, david niose, muir haman"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "donna saiia (left 8:21 p.m.), laura boussom, maia wentrup, jana-leebalish, david niose, muir haman"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "donna saiia (left 8:21 p.m.), laura boussom, maia wentrup, jana-leebalish, david niose, muir haman"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "present",
+   "quote": "donna saiia (left 8:21 p.m.), laura boussom, maia wentrup, jana-leebalish, david niose, muir haman"
+  },
+  {
+   "name": "Jana-LeeBalish",
+   "role": "not stated (minutes also print 'Jana')",
+   "status": "present",
+   "quote": "donna saiia (left 8:21 p.m.), laura boussom, maia wentrup, jana-leebalish, david niose, muir haman"
+  },
+  {
+   "name": "David Niose",
+   "role": "not stated (current trustee, per caucus item)",
+   "status": "present",
+   "quote": "donna saiia (left 8:21 p.m.), laura boussom, maia wentrup, jana-leebalish, david niose, muir haman"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "not stated (author of the Director's report items; minutes name Muir)",
+   "status": "present",
+   "quote": "donna saiia (left 8:21 p.m.), laura boussom, maia wentrup, jana-leebalish, david niose, muir haman"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "gave the Friends update",
+   "status": "present",
+   "quote": "robin venezia gave the friends update."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Muir to conduct a cost/benefit analysis of the Hoopla subscription and report back to the Trustees (chair had asked whether to cancel Hoopla; no vote recorded).",
+   "quote": "muir is going to do a cost/benefit analysis and get back to us."
+  },
+  {
+   "decision": "Room Use / Tutors in the Library item deferred to the next month's meeting.",
+   "quote": "defer until next month."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2025 water and sewer",
+   "what_was_recorded": "The library is still on track to be over-expended on water and sewer; no dollar figure is printed in the minutes for this.",
+   "quote": "still on track to be over-expended on water and sewer.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "MLA Conference and HomelessTraining.com charges to Mileage Reimbursement",
+   "what_was_recorded": "Staff training costs (MLA Conference attendance and HomelessTraining.com) will be charged to the Mileage Reimbursement account; no amount is printed.",
+   "quote": "the cost of that will be charged here",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY2025 budget update table (attached Director's Report)",
+   "what_was_recorded": "The attached FY25 budget table prints a total budget of 592,063$, expended 372,595$, 63% expended against 67% of the calendar year.",
+   "quote": "totals 592,063$ 372,595$ 63%",
+   "figures_as_printed": [
+    "592,063$",
+    "372,595$",
+    "63%"
+   ]
+  },
+  {
+   "topic": "FY2026 water and sewer budget",
+   "what_was_recorded": "The FY26 budget increases the water and sewer accounts to cover higher costs in both categories; no amount is printed.",
+   "quote": "the fy26 budget has increases in the water and sewer accounts to adjust for the increased cost of both",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY2026 programs line",
+   "what_was_recorded": "The FY26 budget increases the programs line item by $1K.",
+   "quote": "there is also an increase of $1k in the programs line item for next year.",
+   "figures_as_printed": [
+    "$1K"
+   ]
+  },
+  {
+   "topic": "FY2026 staff salaries and floating time",
+   "what_was_recorded": "The FY26 budget includes a 10% increase in staff salaries and 100 hours of floating time.",
+   "quote": "the budget includes a 10% increase in staff salaries and 100 hours of floating time.",
+   "figures_as_printed": [
+    "10%",
+    "100 hours"
+   ]
+  },
+  {
+   "topic": "Unfunded library assistant position",
+   "what_was_recorded": "The FY26 budget does not include the currently unfunded library assistant position; no amount is printed.",
+   "quote": "currently unfunded library assistant position.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library invested funds",
+   "what_was_recorded": "The invested funds balance was reported.",
+   "quote": "invested funds are at $101k.",
+   "figures_as_printed": [
+    "$101K"
+   ]
+  },
+  {
+   "topic": "Teen Room and ARPA contingency funds",
+   "what_was_recorded": "A few thousand dollars of ARPA contingency funds will be used for the Teen Room; no exact amount is printed.",
+   "quote": "we will be using a few thousand dollars of the contingency funds for the teen room.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Hoopla cost and charging",
+   "what_was_recorded": "Hoopla charges the library when a patron checks out an AI-generated item; the Hoopla cost/benefit analysis is pending. No dollar figure is printed.",
+   "quote": "when a patron checks out an item, the library is charged.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Rainwater garden funding",
+   "what_was_recorded": "The rainwater garden is to be funded from the DPW budget; no amount is printed.",
+   "quote": "are in the dpw budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Adult programming financial report (attached)",
+   "what_was_recorded": "Adult programs grand total budget line as of 3/17/2025: 67% spent, 16% encumbered, 17% remaining.",
+   "quote": "grand total $14,600 67% 16% 17%",
+   "figures_as_printed": [
+    "$14,600",
+    "67%",
+    "16%",
+    "17%"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Use of ARPA contingency funds for the Teen Room",
+   "amount_as_printed": "a few thousand dollars",
+   "outcome": "Stated as planned by the Director; no vote recorded.",
+   "quote": "we will be using a few thousand dollars of the contingency funds for the teen room."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment●no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of February 20, 2025",
+   "resolution": "approved unanimously",
+   "quote": "dick made a motion to approve the minutes of february 20, 2025 as presented, seconded by jana.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report (FY25 and FY26 budget, staff, programs, outreach, technology, building)",
+   "resolution": "noted; Hoopla-related and staffing items carried into later topics",
+   "quote": "the fiscal year is 67% completed.",
+   "tags": [
+    "budget",
+    "staffing",
+    "programs",
+    "outreach",
+    "technology",
+    "building",
+    "FY26 budget"
+   ]
+  },
+  {
+   "topic": "Caucus nominees for Library Trustee",
+   "resolution": "noted",
+   "quote": "the caucus nominees for library trustee are david niose (current trustee), and robin venezia",
+   "tags": [
+    "trustees",
+    "election"
+   ]
+  },
+  {
+   "topic": "Room Use / Tutors in the Library",
+   "resolution": "deferred to next month",
+   "quote": "defer until next month.",
+   "tags": [
+    "room use",
+    "tutoring"
+   ]
+  },
+  {
+   "topic": "Weather Policy revision (deferred from 2/20)",
+   "resolution": "no action; on agenda in error, voted last month",
+   "quote": "this was on the agenda in error.",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Computer and Internet Use Policy revision (deferred from 2/20)",
+   "resolution": "approved as amended",
+   "quote": "maia made a motion to accept the policy as amended. jana seconded.",
+   "tags": [
+    "policy",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Library invested funds update",
+   "resolution": "noted",
+   "quote": "invested funds are at $101k.",
+   "tags": [
+    "finance",
+    "invested funds"
+   ]
+  },
+  {
+   "topic": "AI and its impact on libraries (Hoopla)",
+   "resolution": "discussed; Muir to do cost/benefit analysis of Hoopla",
+   "quote": "jana brought to our attention an online article about hoopla and the ai slop in its collection.",
+   "tags": [
+    "AI",
+    "Hoopla",
+    "collections",
+    "privacy"
+   ]
+  },
+  {
+   "topic": "Brooks House update",
+   "resolution": "no update",
+   "quote": "brooks house update / discussion○no update.",
+   "tags": [
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Friends update",
+   "resolution": "noted; 20th anniversary planning and native plant sale",
+   "quote": "robin venezia gave the friends update.",
+   "tags": [
+    "Friends of the library",
+    "anniversary",
+    "plant sale"
+   ]
+  },
+  {
+   "topic": "Board comments: Master Plan Steering Committee appointment",
+   "resolution": "noted; appointment needed after May election",
+   "quote": "dick reminded us that the trustees will need to appoint another member to the master plan steering committee",
+   "tags": [
+    "master plan",
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:00 p.m., passed unanimously",
+   "quote": "a motion to adjourn was made by dick, seconded by jana.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "FY25 budget",
+  "FY26 budget",
+  "water and sewer",
+  "staffing",
+  "Teen Room",
+  "Hoopla and AI",
+  "computer and internet use policy",
+  "rainwater garden",
+  "master plan steering committee",
+  "trustee election",
+  "programs and outreach",
+  "Friends of the library"
+ ],
+ "dropped_unquoted_by_field": {}
 }

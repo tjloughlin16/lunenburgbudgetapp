@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2025-10-08",
  "docid": "7442",
@@ -12,31 +12,149 @@
  },
  "votes": [
   {
-   "motion": "Approve the September 3, 2025 meeting minutes as presented",
+   "motion": "Approve the September 3, 2025 meeting minutes as presented.",
    "moved_by": "A. Lockwood",
    "seconded_by": "C. St. Germain",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a. lockwood moved to approve as presented. c. st. germain seconded. voted unanimously in favor by roll call."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "C. St. Germain",
    "seconded_by": "A. Lockwood",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "c. st. germain motion to adjourn, a. lockwood seconded. voted unanimously in favor by roll call."
-  },
-  {
-   "motion": "Approve the October 8, 2025 meeting minutes",
-   "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "minutes approved by roll call vote on 11/19/25"
+   "quote": "c. st. germain motion to adjourn, a. lockwood seconded. voted unanimously in favor by roll call."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The third vote reflects approval of these minutes at a subsequent meeting on 11/19/25; no mover or seconder is identified in the minutes text.",
- "cost_usd": 0.0606514
+ "note": "Single-page text extract; no scan. Two motions are recorded with roll-call results (approval of the September 3 minutes; adjournment). The bottom of the minutes states that they were 'approved by roll call vote on 11/19/25', but no motion or count for that vote is printed, so it is not recorded as a vote. No dollar figures appear in the text, so budget_items and transfers are empty. Tim Willsmer and Brandon Kibbe are named only as people to be notified or asked, not as participants, so they are not listed as attendees.",
+ "cost_usd": 0.01235587,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Toohill",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood, chris st. germain, eric hinds."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood, chris st. germain, eric hinds."
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood, chris st. germain, eric hinds."
+  },
+  {
+   "name": "Eric Hinds",
+   "role": "Member; recorded minutes ('Respectfully submitted')",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood, chris st. germain, eric hinds."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Lockwood will gather information on OSC bylaws in other towns for discussion at the next meeting.",
+   "quote": "a. lockwood will gather information regarding osc bylaws in other towns for discussion at the next meeting."
+  },
+  {
+   "decision": "M. Toohill will ask former OSC member Brandon Kibbe about the existing OSC foundational document.",
+   "quote": "he will ask former osc member brandon kibbe about the existing osc foundational document."
+  },
+  {
+   "decision": "M. Toohill suggested the planning board should be notified, through OSC/planning board member Tim Willsmer. Recorded as a suggestion, not a decision.",
+   "quote": "m. toohill suggests that the planning board should be notified by osc/planning board member tim willsmer"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "chairman toohill called meeting to order at 7:30pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "September 3, 2025 minutes approval",
+   "resolution": "approved",
+   "quote": "a. lockwood moved to approve as presented. c. st. germain seconded. voted unanimously in favor by roll call.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Reports from other boards: Economic Development Council meet and greet",
+   "resolution": "no action",
+   "quote": "a. lockwood discussed meet and greet hosted by economic development council between local business owners and town officials",
+   "tags": [
+    "economic development",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Items not anticipated: master plan feedback and state extension",
+   "resolution": "no action",
+   "quote": "the osc's feedback on the master plan was accepted and found useful.",
+   "tags": [
+    "master plan",
+    "state extension"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment: no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting dates",
+   "resolution": "no action",
+   "quote": "next scheduled meetings: november 12 and december 10, 2025.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Standalone committee status and OSC bylaws",
+   "resolution": "continued to next meeting",
+   "quote": "discussion of potentially making the osc a standalone committee and the procedure/timing to do so.",
+   "tags": [
+    "bylaws",
+    "standalone committee",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:47 pm",
+   "quote": "meeting adjourned at 7:47 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "open space",
+  "master plan",
+  "bylaws",
+  "standalone committee",
+  "minutes approval",
+  "economic development",
+  "state extension",
+  "planning board"
+ ],
+ "dropped_unquoted_by_field": {}
 }

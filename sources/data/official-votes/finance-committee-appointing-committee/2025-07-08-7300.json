@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee-appointing-committee",
  "meeting_date": "2025-07-08",
  "docid": "7300",
@@ -12,31 +12,99 @@
  },
  "votes": [
   {
-   "motion": "appoint Jean Russell to a full term commencing July 1, 2025",
+   "motion": "Appoint Jean Russell to a full term commencing July 1, 2025.",
    "moved_by": "Rene Emkey",
    "seconded_by": "George Yapp",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "ms emkey made a motion to appoint m s. russell to a full term commencing july 1, 2025. m r yapp seconded . the vote was unanimous."
+   "quote": "made a motion to appoint m s. russell to a full term commencing july 1, 2025."
   },
   {
-   "motion": "appoint Tanya Dall to a full term commencing July 1, 2025",
+   "motion": "Appoint Tanya Dall to a full term commencing July 1, 2025.",
    "moved_by": "George Yapp",
    "seconded_by": "Rene Emkey",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m r yapp made a motion to appoint ms. dall to a full term commencing july 1, 2025. m s emkey seconded. the vote was unanimous."
+   "quote": "made a motion to appoint ms. dall to a full term commencing july 1, 2025."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Rene Emkey",
    "seconded_by": "George Yapp",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "m s emkey made a motion to adjourn, seconded by m r. yapp , voted unanimously ."
+   "quote": "made a motion to adjourn, seconded by m r. yapp , voted unanimously ."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0946804
+ "note": "Text extraction is clean. Votes are recorded as 'unanimous' with no vote count printed, so outcomes are recorded as 'passed'. Member attendance is not stated as a roll call; the three members are listed in the header and made or seconded motions. Russell and Dall are marked present because they were interviewed. No public comment section is recorded and no dollar figures appear.",
+ "cost_usd": 0.012516369999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tim Murphy",
+   "role": "Moderator; chair (signs as Chair)",
+   "status": "present",
+   "quote": "tim murphy moderator , rene emkey select board , george yapp school committee"
+  },
+  {
+   "name": "Rene Emkey",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "tim murphy moderator , rene emkey select board , george yapp school committee"
+  },
+  {
+   "name": "George Yapp",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "tim murphy moderator , rene emkey select board , george yapp school committee"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "applicant for re-appointment, interviewed",
+   "status": "present",
+   "quote": "jean russell for re- appoint to new term"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "applicant for re-appointment, interviewed",
+   "status": "present",
+   "quote": "tanya dall for re- appoint for new term"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Interview and re-appointment of Jean Russell",
+   "resolution": "appointed to a full term commencing July 1, 2025 (unanimous)",
+   "quote": "jean russell for re- appoint to new term",
+   "tags": [
+    "appointments",
+    "reappointment",
+    "interview"
+   ]
+  },
+  {
+   "topic": "Interview and re-appointment of Tanya Dall",
+   "resolution": "appointed to a full term commencing July 1, 2025 (unanimous)",
+   "quote": "tanya dall for re- appoint for new term",
+   "tags": [
+    "appointments",
+    "reappointment",
+    "interview"
+   ]
+  }
+ ],
+ "tags": [
+  "appointments",
+  "reappointment",
+  "finance committee",
+  "appointing committee",
+  "interviews"
+ ],
+ "dropped_unquoted_by_field": {}
 }

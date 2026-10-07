@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2025-01-06",
  "docid": "6937",
@@ -12,15 +12,177 @@
  },
  "votes": [
   {
-   "motion": "Allow S.Walker and J.Toale to create a detailed budget proposal for FY26",
+   "motion": "Accept the minutes of 12/02/2024 as amended.",
+   "moved_by": "P.Lincoln",
+   "seconded_by": "S.Archambault",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "12/02/2024 - motion to accept as amended o (p.lincoln, 2nd s.archambault), passed"
+  },
+  {
+   "motion": "Accept the minutes of 12/09/2024 as amended.",
+   "moved_by": "S.ArchambaultP",
+   "seconded_by": "P.Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "12/09/2024 - motion to accept as amended o (s.archambaultp, 2nd p.lincoln), passed"
+  },
+  {
+   "motion": "To allow S.Walker and J.Toale to create a detailed budget proposal for the FY '26 PAC budget.",
    "moved_by": "S.Archambault",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion (s.archambault, 2nd p.lincoln), \"to allow s.walker & j.toale to create a detailed budget proposal\" - passed"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "P.Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "(s.archambault, 2nd p.lincoln - passed)"
   }
  ],
- "dropped_unquoted": 3,
- "note": "",
- "cost_usd": 0.0860714
+ "dropped_unquoted": 0,
+ "note": "Text extraction, not a scan. Vote tallies are not printed: every motion records only \"passed\", so each outcome is \"passed\" with no count. Mover and seconder are inferred from the parenthetical \"(Mover, 2nd Seconder)\" convention, which the minutes do not spell out as \"moved by\". The 12/09/2024 mover is printed \"S.ArchambaultP\", kept as printed. Faith Beall is recorded as excused, so absent. Public comment was \"None\" with no speakers listed.",
+ "cost_usd": 0.014173070000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault,"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault,"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault,"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "excused: faith beall"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "4. manager: jo toale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J.Toale will follow up with Town Hall on the policy statement she submitted, which has had no response.",
+   "quote": "j.toale submitted a policy statement. still no word from town hall. she will follow up."
+  },
+  {
+   "decision": "S.Walker requested a special PACC meeting for Jan. 20th to go over the full budget.",
+   "quote": "s.walker requested a special pacc meeting for jan. 20th to go over full budget"
+  },
+  {
+   "decision": "S.Archambault will attend the 1/7/25 Select Board meeting with information on past stand-alone cost reports.",
+   "quote": "s.archambault will attend with information on past \"stand alone\" cost reports"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PAC fund balance",
+   "what_was_recorded": "The Manager reported the current balance of the PAC fund.",
+   "figures_as_printed": [
+    "$1,038,818.58"
+   ],
+   "quote": "current balance $1,038,818.58"
+  },
+  {
+   "topic": "FY '26 PAC budget",
+   "what_was_recorded": "The Manager reported work on the FY '26 PAC budget, which Town Hall says is due January 21st; a brief draft budget was passed out, and no dollar figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "s.walker received a message from town hall that the pacc budget is due jan. 21st."
+  },
+  {
+   "topic": "Comcast payment",
+   "what_was_recorded": "The Manager reported that the Comcast payment continues to decline; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "comcast payment continues to decline"
+  },
+  {
+   "topic": "Studio space cost reports",
+   "what_was_recorded": "A member will bring information on past stand-alone cost reports to the Select Board; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "s.archambault will attend with information on past \"stand alone\" cost reports"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public and committee comments, communications",
+   "resolution": "no action; none offered",
+   "quote": "public comments: - • none"
+  },
+  {
+   "topic": "Minutes of 12/02/2024 and 12/09/2024",
+   "resolution": "approved as amended",
+   "quote": "12/02/2024 - motion to accept as amended o (p.lincoln, 2nd s.archambault), passed"
+  },
+  {
+   "topic": "Manager's report",
+   "resolution": "received; no vote",
+   "quote": "continuing to broadcast basketball games"
+  },
+  {
+   "topic": "FY '26 budget",
+   "resolution": "approved: members allowed to prepare detailed proposal; special meeting requested for Jan. 20th",
+   "quote": "motion (s.archambault, 2nd p.lincoln), \"to allow s.walker & j.toale to create a detailed budget proposal\" - passed"
+  },
+  {
+   "topic": "Policy review",
+   "resolution": "continued; Manager to follow up with Town Hall",
+   "quote": "j.toale submitted a policy statement. still no word from town hall. she will follow up."
+  },
+  {
+   "topic": "Studio space update",
+   "resolution": "no action; member invited to Select Board on 1/7/25",
+   "quote": "s.walker is invited to the 1/7/25 select board meeting to update pac's space needs and options"
+  },
+  {
+   "topic": "Master Plan Steering Committee report",
+   "resolution": "no action; member resigned from the committee",
+   "quote": "p.lincoln has resigned from the committee"
+  },
+  {
+   "topic": "Enterprise Fund investment status",
+   "resolution": "no action; no update",
+   "quote": "no update at this time"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:45 pm",
+   "quote": "(s.archambault, 2nd p.lincoln - passed)"
+  }
+ ],
+ "tags": [
+  "public access television",
+  "PACC",
+  "FY26 budget",
+  "studio space",
+  "Select Board",
+  "policy",
+  "Master Plan Steering Committee",
+  "broadcasting",
+  "Lunenburg",
+  "special meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

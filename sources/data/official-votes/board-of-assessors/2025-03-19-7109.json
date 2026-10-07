@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-03-19",
  "docid": "7109",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Add the appraisers schedule to the website once a schedule has been created",
+   "motion": "Add the appraisers schedule to the website once a schedule has been created.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to add the appraisers schedule to the website once a schedule has been created by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "Approve the executive session minutes of March 12, 2025",
+   "motion": "Approve the executive session minutes of March 12, 2025.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -28,15 +28,219 @@
    "quote": "there was a motion to approve the executive session minutes of march 12, 2025, by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "Adjourn the open meeting and enter Executive Session, not to return to Open Session after exiting Executive Session",
+   "motion": "Adjourn the open meeting and enter Executive Session, not to return to Open Session after exiting Executive Session.",
    "moved_by": "Brian Laffond",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn the open meeting and enter executive session, not to return to open session after exiting executive session by brian laffond, seconded by sarah cammer. all in favor."
+   "quote": "there was a motion to adjourn the open meeting and enter executive session, not to return to open session after exiting executive session by brian laffond"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are cleanly readable. Three votes recorded, all carried unanimously (All in favor).",
- "cost_usd": 0.0673244
+ "note": "Text extracted from three pages; no scan, so every line is readable. Points that limit the reading: (1) The agenda lists minutes of Feb 19, 2025 and executive sessions of Dec 10, 2024 and Mar 19, 2025 for approval, but the only recorded motion approves executive session minutes of March 12, 2025 (quoted as printed); no vote on Feb 19 minutes appears. (2) The motion to post the appraiser schedule names Sarah Cammer in a clause that could read as either mover or subject; recorded here as mover, which is an inference from sentence structure. (3) The page-one footer reads 'Approved Sept. 3, 2025'. (4) Ezequiel Ayala and Randy Mercier are named but are not recorded as taking part, so they are not listed as attendees. (5) Public comment: no comments from the public at opening or closing.",
+ "cost_usd": 0.015227570000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "principal assessor lynda mcquade"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed that the proposed senior means-tested income limits seem high.",
+   "quote": "the board agrees that these numbers seem high."
+  },
+  {
+   "decision": "The assessor organizational metrics topic will be added to the next agenda, with further discussion on April 2, 2025.",
+   "quote": "this topic will be added to the next agenda and more discussion will take place on april 2, 2025."
+  },
+  {
+   "decision": "The chapter liens letter discussion is to continue once the topic is added to the agenda.",
+   "quote": "this discussion will continue once this topic has been added to the agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2026 overlay",
+   "what_was_recorded": "The Assessors Office was told by email that the FY 2026 overlay amount was approved.",
+   "figures_as_printed": [
+    "$175,000"
+   ],
+   "quote": "the assessors office received an email from ezequiel ayala confirming that the overlay amount of $175,000 has been approved."
+  },
+  {
+   "topic": "Senior means-tested exemption income limits",
+   "what_was_recorded": "The Board discussed proposed income limits for the senior means-tested exemption and agreed the numbers seem high.",
+   "figures_as_printed": [
+    "$72,000",
+    "$91,000",
+    "$109,000"
+   ],
+   "quote": "the proposed limits of $72,000 for single person, $91,000 if an individual is the head of household, and $109,000 for joint or married."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "motion to post appraiser schedule to website passed",
+   "quote": "lynda mcquade states that the vision appraisal for cyclical inspections will start next week.",
+   "tags": [
+    "cyclical inspections",
+    "Vision",
+    "website"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "executive session minutes of March 12, 2025 approved; February 19, 2025 minutes not voted on in the text",
+   "quote": "review and approve minutes of february 19, 2025, executive sessions of december 10, 2024, march 19, 2025.",
+   "tags": [
+    "minutes",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Invoices, expense vouchers, billing errors",
+   "resolution": "no action; no documents to review",
+   "quote": "there were no documents to review or approve.",
+   "tags": [
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Senior means-tested exemption",
+   "resolution": "discussed; Board agreed proposed limits seem high",
+   "quote": "lynda mcquade created a new brochure with updated income levels.",
+   "tags": [
+    "senior exemption",
+    "income limits"
+   ]
+  },
+  {
+   "topic": "Assessor organizational metrics",
+   "resolution": "carried to April 2, 2025 agenda",
+   "quote": "john rabbitt states that the lead assessor is now reporting to the finance director as opposed to the town manager.",
+   "tags": [
+    "organization",
+    "Finance Director"
+   ]
+  },
+  {
+   "topic": "Homeowner letter for deed issues",
+   "resolution": "letter approved by Town Counsel; no vote recorded",
+   "quote": "lynda mcquade confirms that the letter relating to issues with deeds has been approved and reviewed by the town counsel.",
+   "tags": [
+    "deeds",
+    "letters",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Assessor website",
+   "resolution": "noted; cyclical information posted",
+   "quote": "lynda mcquade states that the cyclical information has been posted to the assessor website.",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "Tax billing issue",
+   "resolution": "discussed; MUNIS training and contract suggested; no vote",
+   "quote": "lynda mcquade strongly suggests that the board maintains a contract with munis expert, randy mercier.",
+   "tags": [
+    "MUNIS",
+    "Vision",
+    "tax billing",
+    "software"
+   ]
+  },
+  {
+   "topic": "FY 2026 overlay",
+   "resolution": "noted; $175,000 approved",
+   "quote": "the assessors office received an email from ezequiel ayala confirming that the overlay amount of $175,000 has been approved.",
+   "tags": [
+    "overlay"
+   ]
+  },
+  {
+   "topic": "Clause 41 and 17 exemption warrant",
+   "resolution": "awaiting Town Council response on edited language",
+   "quote": "the board is awaiting a response from the town council with the edited article language.",
+   "tags": [
+    "exemption",
+    "warrant",
+    "Town Council"
+   ]
+  },
+  {
+   "topic": "BOA policies",
+   "resolution": "listed under postponed topics; no action",
+   "quote": "lynda mcquade put together a policy list for the town manager that was then provided",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "noted",
+   "quote": "upcoming meetings: april 2, 2025, april 16, 2025.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments: chapter liens letter",
+   "resolution": "discussion continued to a future agenda",
+   "quote": "john rabbitt created a letter regarding chapter liens. this discussion will continue once",
+   "tags": [
+    "liens"
+   ]
+  },
+  {
+   "topic": "Adjournment into executive session",
+   "resolution": "passed; not returning to open session",
+   "quote": "there was a motion to adjourn the open meeting and enter executive session, not to return to open session after exiting executive session by brian laffond",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "cyclical inspections",
+  "abatements",
+  "senior exemption",
+  "overlay",
+  "MUNIS software",
+  "tax billing",
+  "deeds",
+  "Town Council warrant",
+  "executive session",
+  "board policies"
+ ],
+ "dropped_unquoted_by_field": {}
 }

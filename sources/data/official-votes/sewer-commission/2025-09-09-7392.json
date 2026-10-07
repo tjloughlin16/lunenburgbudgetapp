@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-09-09",
  "docid": "7392",
@@ -12,32 +12,203 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 8/26/25",
-   "moved_by": "Scott Dall",
-   "seconded_by": "Arthur Katis",
-   "outcome": "passed 3-0",
+   "motion": "Accept the minutes of 8/26/25.",
+   "moved_by": "Scott D.",
+   "seconded_by": "Arthur K.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "to accept the minutes of 8/26/25 . roll call vote: scott-aye, arthur- aye, and brett-aye",
-   "quote_taken_from_text": true
+   "quote": "to accept the minutes of 8/26/25 ."
   },
   {
-   "motion": "Allow Andrew to credit the next bill for 45 Riley Road for $83.24",
-   "moved_by": "Dan Proctor",
-   "seconded_by": "Arthur Katis",
-   "outcome": "passed 4-0",
+   "motion": "Allow Andrew to credit the next bill for 45 Riley Road for $83.24.",
+   "moved_by": "Dan P.",
+   "seconded_by": "Arthur K.",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "to allow andrew to credit the next bill for 45 riley road for $83.24 . roll call vote: dan-aye, arthur-aye, scott-aye, and brett-aye."
+   "quote": "to allow andrew to credit the next bill for 45 riley road for $83.24 ."
   },
   {
-   "motion": "Adjourn at 7:50 PM",
-   "moved_by": "Dan Proctor",
-   "seconded_by": "Arthur Katis",
-   "outcome": "passed 4-0",
+   "motion": "Adjourn the meeting at 7:50pm.",
+   "moved_by": "Dan P.",
+   "seconded_by": "Arthur K.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "to adjourn at 7 :50pm roll call vote: scott-aye, arthur-aye, dan-aye and brett-aye."
+   "quote": "roll call vote: scott-aye, arthur-aye, dan-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. All passed unanimously. The minutes are legible with clear vote counts and roll calls.",
- "cost_usd": 0.06266240000000001
+ "note": "Text extraction with irregular spacing and some words split across lines (e.g. 'fine tun ing', '$2 83.24'); quotes were copied with line breaks collapsed to single spaces. The printed figure '$2 83.24' for the last Riley Road bill is recorded as printed and does not match the motion's $83.24 by a visible space only; not resolved here. Roll call votes list individual ayes but no printed tally, so outcomes are recorded as 'passed' without a count. Dan Proctor joined partway through the ADU discussion, so the minutes-approval vote had three members and the credit and adjournment votes four. Attendance is from the header's attendee list for a Zoom meeting; the minutes do not state each person's individual attendance mode. Public comment is recorded as 'none' with no speakers.",
+ "cost_usd": 0.01685767,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "did a roll call of attendees"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair - scott dall"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk- dan proctor, member : arthur"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "member : arthur katis"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill would inspect the pipe and if it is bad, it would require replacement."
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "sewer business manager - andrew valliere"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to fine-tune the ADU wording at the next meeting or two, before sending it to Town Counsel for review.",
+   "quote": "the commission agreed to fine tun ing the verbiage"
+  },
+  {
+   "decision": "ADU provisions are to be added to Appendix G of the sewer regulations, per Andrew Valliere.",
+   "quote": "andrew said it would be added in appendix g of the regulations"
+  },
+  {
+   "decision": "Future agenda items set: ADUs, Minutes, Manhole Repair IFB, and easements and change in use/flow for a new gym on Mass. Ave.",
+   "quote": "future agenda items - adus, minutes, manhole repair"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ADU connection and tie-in fees",
+   "what_was_recorded": "Dan Proctor suggested a $500 tie-in fee plus a $330 fee for an extra bedroom for ADUs; the minutes say ADU fees would probably be allocated to Flow Capacity.",
+   "quote": "dan suggested a $500 fee to tie in , with a $330 fee for the extra bedroom.",
+   "figures_as_printed": [
+    "$500",
+    "$330"
+   ]
+  },
+  {
+   "topic": "45 Riley Road bill credit",
+   "what_was_recorded": "Andrew Valliere reported the resident's usual bill is about $174 and the last bill was printed as $2 83.24; the Commission approved a credit of $83.24 to the next bill.",
+   "quote": "her usual bill is around $174 but the last bill was $2 83.24",
+   "figures_as_printed": [
+    "$174",
+    "$2 83.24",
+    "$83.24"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 8/26/25",
+   "resolution": "approved",
+   "quote": "to accept the minutes of 8/26/25 .",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "ADUs (accessory dwelling units)",
+   "resolution": "discussed; wording to be fine-tuned, then sent to Town Counsel",
+   "quote": "bill gave the commissioners lists of ideas supplied by dan proctor and andrew",
+   "tags": [
+    "ADU",
+    "regulations",
+    "connection fees",
+    "sewer connections",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Manhole repair IFB",
+   "resolution": "no action; awaiting manhole cover framing",
+   "quote": "bill reported they are still waiting for the manhole cover",
+   "tags": [
+    "manhole",
+    "bid",
+    "IFB"
+   ]
+  },
+  {
+   "topic": "45 Riley Road bill credit",
+   "resolution": "approved",
+   "quote": "to allow andrew to credit the next bill for 45 riley road for $83.24 .",
+   "tags": [
+    "billing",
+    "credit"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "noted",
+   "quote": "future agenda items - adus, minutes, manhole repair",
+   "tags": [
+    "agenda",
+    "easements",
+    "change in use",
+    "flow"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; none offered",
+   "quote": "public comment /announcements",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "upcoming scheduled sewer commission activities",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved, adjourned at 7:50pm",
+   "quote": "roll call vote: scott-aye, arthur-aye, dan-aye",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "ADU",
+  "accessory dwelling units",
+  "sewer regulations",
+  "connection fees",
+  "billing credit",
+  "manhole repair",
+  "minutes approval",
+  "zoom meeting",
+  "public comment none"
+ ],
+ "dropped_unquoted_by_field": {}
 }

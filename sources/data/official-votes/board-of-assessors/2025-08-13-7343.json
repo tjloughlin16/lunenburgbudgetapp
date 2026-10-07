@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2025-08-13",
  "docid": "7343",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve executive session minutes from May 19, 2025 and July 8, 2025",
+   "motion": "Approve the executive session minutes from May 19, 2025, and July 8, 2025.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to approve the executive session minutes from may 19, 2025, and july 8, 2025, by sarah cammer, seconded by brian laffond. all in favor."
   },
   {
-   "motion": "Approve executive session minutes from April 16, 2025 and May 5, 2025, as amended",
+   "motion": "Approve the executive session minutes from April 16, 2025, and May 5, 2025, as amended.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "there was a motion to approve the executive session minutes from april 16, 2025, and may 5, 2025, as amended, by sarah cammer, seconded by brian laffond. all in favor."
   },
   {
-   "motion": "Pass on the first-right-of-refusal for the property at 222 West Townsend Road",
+   "motion": "Pass on the first-right-of-refusal for the property at 222 West Townsend Road.",
    "moved_by": "Brian Laffond",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "there was a motion to pass on the first-right-of-refusal for the property at 222 west townsend road by brian laffond, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Brian Laffond",
    "seconded_by": "Sarah Cammer",
    "outcome": "not stated",
@@ -45,6 +45,212 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted via macOS Vision. Text is legible; all recorded votes clearly stated except adjournment vote outcome (minutes record the motion but not the vote result).",
- "cost_usd": 0.0931094
+ "note": "Scanned minutes read by macOS Vision OCR (the text is marked ===OCR macOS Vision===); some words are garbled, notably the minutes-approval item, so quotes match the OCR text, not necessarily the printed page. Outcomes are as printed: the executive-session and right-of-refusal motions record \"All in favor\" with no count, and the adjournment motion records no result. No public comment was recorded. Denise McCue, Robin Nano and Jennifer Warren-Dyment are named as doing work, but the minutes do not list them as attending, so they are not in attendees. The stamp \"APPRoVid 11/19/25\" appears on page 1 and is not a vote in these minutes.",
+ "cost_usd": 0.014553370000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka"
+  },
+  {
+   "name": "Lynda Cajka",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda cajka"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Open Meeting minutes (of the listed dates) are deferred to the next meeting for review.",
+   "quote": "the open meeting minutes will be reviewed at the next meeting."
+  },
+  {
+   "decision": "Discounts on properties with no explanation will be removed; the office will add the review to the next agenda.",
+   "quote": "discounts with no explanation will be removed."
+  },
+  {
+   "decision": "Assessor input to the Master Planning Steering Committee to be drafted by Brian Laffond for the next meeting.",
+   "quote": "brian laffond will draft a response for next meeting."
+  },
+  {
+   "decision": "Lynda Cajka will inquire with Jennifer Warren-Dyment about the due date for the 41A warrant articles for November Town Meeting.",
+   "quote": "lynda cajka will inquire with jennifer warren-dyment about when the warrant articles are due for november town meeting."
+  },
+  {
+   "decision": "Lynda Cajka will research further the use of 'Above Average' as a ranking for most chapter land properties.",
+   "quote": "lynda cajka will research further."
+  },
+  {
+   "decision": "Lynda Cajka will provide an update on the chapter land roll back tax properties at the next meeting.",
+   "quote": "lynda cajka will provide an update at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Preliminary real estate growth against projection",
+   "what_was_recorded": "Preliminary real estate growth is reported at a figure, and personal property is expected to take total growth past last spring's projection.",
+   "figures_as_printed": [
+    "$394K",
+    "$400K"
+   ],
+   "quote": "preliminary real estate is $394k. when personal property is added, we should easily exceed our projection from last spring of $400k."
+  },
+  {
+   "topic": "Chapter land roll back tax",
+   "what_was_recorded": "Four properties that received chapter land roll back tax without liens were sent a letter; two responded.",
+   "figures_as_printed": [],
+   "quote": "the 4 properties that received chapter land roll back tax that didn't have liens were sent a letter."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and opening comments",
+   "resolution": "no comments from board or public",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "meeting opening"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "received; follow-up items assigned",
+   "quote": "status report from principal assessor.",
+   "tags": [
+    "abutters",
+    "motor vehicle excise",
+    "chapter land",
+    "discounts",
+    "exemptions",
+    "new growth"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "executive session minutes approved; open meeting minutes deferred",
+   "quote": "the open meeting minutes will be reviewed at the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Invoices, expense vouchers, billing errors",
+   "resolution": "noted; commitment signed",
+   "quote": "commitment 8 of 2024 motor vehicle excise tax was signed.",
+   "tags": [
+    "motor vehicle excise",
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Final review of response to Select Board investigation report",
+   "resolution": "no action; not discussed",
+   "quote": "this topic was not discussed.",
+   "tags": [
+    "select board"
+   ]
+  },
+  {
+   "topic": "Senior means tested exemption brochure and presentation",
+   "resolution": "presentation given; to be uploaded",
+   "quote": "lynda cajka provided a presentation today at the senior center regarding the fy 2026 senior real estate tax exemptions",
+   "tags": [
+    "exemptions",
+    "senior",
+    "circuit breaker"
+   ]
+  },
+  {
+   "topic": "FY2026 tax classification hearing date",
+   "resolution": "tentative date set",
+   "quote": "fy2026 tax classification hearing date: tentative november 4, 2025.",
+   "tags": [
+    "tax classification",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "First right of refusal, 222 West Townsend Road",
+   "resolution": "passed",
+   "quote": "there was a motion to pass on the first-right-of-refusal for the property at 222 west townsend road by brian laffond, seconded by sarah cammer. all in favor.",
+   "tags": [
+    "first right of refusal",
+    "property"
+   ]
+  },
+  {
+   "topic": "Master Planning Steering Committee request for Assessor input",
+   "resolution": "continued; response to be drafted",
+   "quote": "there was a request from the master planning steering committee for assessor input.",
+   "tags": [
+    "master planning"
+   ]
+  },
+  {
+   "topic": "41A warrant for income limitation increase",
+   "resolution": "continued; inquiry assigned",
+   "quote": "lynda cajka will inquire with jennifer warren-dyment about when the warrant articles are due for november town meeting.",
+   "tags": [
+    "warrant",
+    "town meeting",
+    "income limitation"
+   ]
+  },
+  {
+   "topic": "Criteria for Clause 18",
+   "resolution": "postponed",
+   "quote": "criteria for clause 18",
+   "tags": [
+    "clause 18"
+   ]
+  },
+  {
+   "topic": "BOA policies binder",
+   "resolution": "draft presented; team suggests use as template",
+   "quote": "lynda cajka provided a draft policies binder, based on one graciously provided by the assessor from everett.",
+   "tags": [
+    "policies",
+    "binder"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "no action; schedule listed",
+   "quote": "upcoming meeting/events schedule",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments and adjournment",
+   "resolution": "adjourned; no comments",
+   "quote": "there was a motion to adjourn by brian laffond, seconded by sarah cammer.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "tax exemptions",
+  "chapter land",
+  "new growth",
+  "motor vehicle excise",
+  "board policies",
+  "minutes approval",
+  "first right of refusal",
+  "town meeting warrant"
+ ],
+ "dropped_unquoted_by_field": {}
 }

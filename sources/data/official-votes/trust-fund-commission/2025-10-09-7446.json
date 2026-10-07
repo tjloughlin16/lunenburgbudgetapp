@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2025-10-09",
  "docid": "7446",
@@ -12,58 +12,242 @@
  },
  "votes": [
   {
-   "motion": "Accept the proposed application version for Trust Fund distribution requests, pending review by Town Counsel",
+   "motion": "Accept the proposed version of the distribution request application as designed, pending review by Town Counsel.",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "mr howard made a motion to accept the proposed version as designed (pending review by town counsel), chairman bowen seconded. ===page 12=== mr howard (aye), chairman bowen (aye), motion passe",
-   "quote_taken_from_text": true
+   "quote": "mr howard made a motion to accept the proposed version as designed (pending review by town counsel), chairman bowen seconded."
   },
   {
-   "motion": "Allow Chairman Bowen to continue investigative research and contact the appropriate State agencies without a vote of the Trust Fund Commission to authorize each activity",
+   "motion": "Allow Chairman Bowen to continue investigative research and contact the appropriate State agencies without a Commission vote authorizing each activity.",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "mr howard made a motion to allow chairman bowen to continue investigative research and contact the appropriate state agencies without a vote of the trust fund commission to authorize each activity. the motion was seconded by chairman bowen. vote for this motion was mr howard (aye), chair",
-   "quote_taken_from_text": true
+   "quote": "mr howard made a motion to allow chairman bowen to continue investigative research and contact the appropriate state agencies without a vote"
   },
   {
-   "motion": "Engage the town HR Department to establish a relationship for intern work through local colleges to assist in investigative research regarding the Trust Funds Commission",
+   "motion": "Engage the town HR Department to establish a relationship for intern work through local colleges to assist in investigative research regarding the Trust Funds commission.",
    "moved_by": "Chairman Bowne",
    "seconded_by": "Mr Howard",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "chairman bowne made the motion to \"engage the town hr department to establish a relationship for intern work through local colleges to assist in investigative research in regards to the trust funds commission\". mr howard seconded the motion. vote on the motion was mr howard (aye), chairman bowen (aye). motion passed unanimously ",
-   "quote_taken_from_text": true
+   "quote": "chairman bowne made the motion to \"engage the town hr department to establish a relationship for intern work through local colleges"
   },
   {
-   "motion": "Approve the meeting minutes of August 14, 2025, August 28, 2025, and September 11, 2025",
+   "motion": "Approve the meeting minutes of Aug 14, 2025, Aug 28, 2025 and Sept 11, 2025.",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr. Howard",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chairman bowen put forward a motion to approve the meeting minutes of aug 14, 2025, aug 28, 2025 and sept 11, 2025 put forward by chairman bowen, seconded by mr. howard. vote on the motion was mr howard (aye), chairman bowen (aye), motion passed unanimously."
+   "quote": "chairman bowen put forward a motion to approve the meeting minutes of aug 14, 2025, aug 28, 2025 and sept 11, 2025"
   },
   {
-   "motion": "Allow Chairman Bowen to engage in discussions with the American Legion to discuss the disposition of funds held within the Trust",
+   "motion": "Allow Chairman Bowen to engage in discussions with the American Legion about the disposition of the funds held within the Trust.",
    "moved_by": "Mr Howard",
    "seconded_by": "Chairman Bowern",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "mr howard made a motion that chairman bowen can engage in discussions with the american legion to discuss the disposition of the funds held within our trust. motion seconded by chairman bowern. vote on the motion was mr hoawrd (aye), chairman bowen (aye) unanimous. motion passed unanimously."
+   "quote": "mr howard made a motion that chairman bowen can engage in discussions with the american legion to discuss the disposition of the funds held"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:31pm.",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr Howard",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn 6:31pm made by chairman bowen, motion second by mr howard. vote on the motion was mr howard (aye), chairman bowen (aye), motion passed unanimously."
+   "quote": "motion to adjourn 6:31pm made by chairman bowen, motion second by mr howard."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text appears to be OCR'd cleanly with readable votes. Minor spelling inconsistencies in original (e.g., \"Bowne\" vs \"Bowen,\" \"Hoawrd,\" \"second\" instead of \"seconded\") have been preserved as printed. All six votes recorded with clear outcomes.",
- "cost_usd": 0.1322884
+ "note": "Machine-extracted text. Names appear misspelled in places as printed: Chairman Bown, Chairman Bowne, Chairman Bowern, Mr Hoawrd; attributed here to Bowen and Howard where the context is clear. Attendance is not recorded by roll call; only Chairman Bowen and Mr Howard are named as voting, and no other member is named. Most of the meeting is the Chairman reading a letter from the Lunenburg Board of Commissioners of Trust Funds and case-law essays. The minutes record no vote adopting its legal conclusions. Vote results print 'passed unanimously' with the two ayes listed, and no numeric count. The minutes name no public speakers. Vote 2 is recorded as seconded by Chairman Bowen with Mr Howard moving, as printed.",
+ "cost_usd": 0.01923977,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman bowen called the meeting to order at 5pm"
+  },
+  {
+   "name": "Mr Howard",
+   "role": "Commission member (title not printed)",
+   "status": "present",
+   "quote": "mr howard (aye), chairman bowen (aye), motion passed unanimously."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The agenda item on the Risk Mgt policy was tabled for the meeting, on the Chairman's request, because the proposed written policy needs amending.",
+   "quote": "chairman bowen requested that agenda item risk mgt policy be tabled for the meeting."
+  },
+  {
+   "decision": "The meeting schedule will be adjusted for the November and December holidays, with exact dates to be determined at a future meeting.",
+   "quote": "due to holidays in november and december, the meeting schedule will be adjusted as necessary."
+  },
+  {
+   "decision": "The next meeting of the Commission is set for Oct. 23, 2025 at 5pm.",
+   "quote": "the next meeting of the trust fund commission will be held on oct. 23, 2025 at 5pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Finance reports",
+   "what_was_recorded": "No Treasurer or Director finance report was presented at the meeting.",
+   "figures_as_printed": [],
+   "quote": "treasurer and director finance reports - none presented."
+  },
+  {
+   "topic": "Distribution application",
+   "what_was_recorded": "The Commission discussed an application people could submit to request a distribution against available funds. No figures were printed.",
+   "figures_as_printed": [],
+   "quote": "there was discussion regarding the application that people could submit to the trust fund commission to request a distribution against available funds."
+  },
+  {
+   "topic": "Poor Fund distributions",
+   "what_was_recorded": "Past distributions were made from the Poor Fund, one apparently worded as a loan, and the exact terms were not available. No amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "some distributions were made from the poor fund, apparently one was worded as a loan but exact details on that agreement were not available."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, pledge and meeting notice",
+   "resolution": "no action",
+   "quote": "chairman bowen called the meeting to order at 5pm",
+   "tags": [
+    "procedure",
+    "open meeting"
+   ]
+  },
+  {
+   "topic": "Meeting schedule for November and December",
+   "resolution": "to be adjusted; exact dates to be determined",
+   "quote": "due to holidays in november and december, the meeting schedule will be adjusted as necessary.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Treasurer and Director finance reports",
+   "resolution": "none presented",
+   "quote": "treasurer and director finance reports - none presented.",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Chairman's reading on trust law and case law",
+   "resolution": "read into the record; no action recorded",
+   "quote": "to educate the public audience and mr howard, chairman bowen read some of the results of research he conducted",
+   "tags": [
+    "legal research",
+    "cy pres",
+    "scholarships",
+    "cemetery funds",
+    "conservation and historical land",
+    "investigations"
+   ]
+  },
+  {
+   "topic": "Goals and distribution application",
+   "resolution": "approved as designed, pending Town Counsel review",
+   "quote": "mr howard made a motion to accept the proposed version as designed (pending review by town counsel), chairman bowen seconded.",
+   "tags": [
+    "distributions",
+    "application",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Chairman's duties on investigations",
+   "resolution": "approved",
+   "quote": "mr howard made a motion to allow chairman bowen to continue investigative research and contact the appropriate state agencies without a vote",
+   "tags": [
+    "governance",
+    "investigations",
+    "state agencies"
+   ]
+  },
+  {
+   "topic": "College intern program through HR",
+   "resolution": "approved",
+   "quote": "chairman bowne made the motion to \"engage the town hr department to establish a relationship for intern work through local colleges",
+   "tags": [
+    "intern program",
+    "HR",
+    "investigations"
+   ]
+  },
+  {
+   "topic": "Risk Mgt policy",
+   "resolution": "tabled",
+   "quote": "chairman bowen requested that agenda item risk mgt policy be tabled for the meeting.",
+   "tags": [
+    "risk management",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "chairman bowen put forward a motion to approve the meeting minutes of aug 14, 2025",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Follow-up on investigations: American Legion funds",
+   "resolution": "approved",
+   "quote": "mr howard made a motion that chairman bowen can engage in discussions with the american legion",
+   "tags": [
+    "investigations",
+    "American Legion",
+    "trust funds"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for Oct. 23, 2025 at 5pm",
+   "quote": "the next meeting of the trust fund commission will be held on oct. 23, 2025 at 5pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public comment: no comment from either in-person or on zoom",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:31pm",
+   "quote": "motion to adjourn 6:31pm made by chairman bowen, motion second by mr howard.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "trust funds",
+  "investigations",
+  "cy pres",
+  "scholarships",
+  "cemetery funds",
+  "conservation and historical land",
+  "distributions",
+  "intern program",
+  "minutes approval",
+  "meeting schedule",
+  "no public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

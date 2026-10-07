@@ -355,5 +355,127 @@
    "at": "2026-10-06T18:02:23Z",
    "cost_usd": 0.211369
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03032025-7081",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2025-03-03-minutes-7081.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2025-03-03-minutes-7081.pdf"
+  },
+  "official_sha256": "6cbd86c4d157a9619ae227bc6d337d6d17106dd650cc3dd31eb99c8752ad4349",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "Both records show no votes or transfers and agree on the roughly $22 million high estimate and the March 17 next meeting. The key difference is that ours says the final financial request was deferred pending hazardous-material costs, while the official minutes say the committee agreed to finalize its financial requests. Ours also lists attendees (Alison, Mr Leighton, Mercedes) the official roll does not.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Non-procedural votes",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote or any transfer."
+   },
+   {
+    "kind": "agree",
+    "about": "High cost estimate of about $22 million",
+    "ours": "Warrant article amount: high and low estimate: 17 million, 22 million, 22.3 million",
+    "official": "a high estimate of approximately $22 million was discussed, including contingencies for unforeseen costs.",
+    "note": "Both records give a high estimate of about $22 million; the $17 million low estimate and $22.3 million appear only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Low estimate of $17 million and other cost figures",
+    "ours": "Appendix C total project cost estimate: 21967 million, 18306, 1.8 million, 300,000, 100,000, 22 million 31,1 145; per-square-foot costs $269, $362, $500; EV charging alternate 280,000; hazardous abatement ballpark $750,000",
+    "official": "",
+    "note": "The official minutes print no figures other than the $22 million high estimate; the captions garble several of ours, so check the recording before quoting them."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Maintenance spending $300,000 and 15 years of reuse efforts ($1 million, $200,000 a year)",
+    "ours": "Maintenance spending on Town Hall, Ritter and TCP: $300,000; Cost of 15 years of building reuse efforts: $1 million, $200,000 a year",
+    "official": "the member emphasized the need to communicate how much time and money has been spent on maintaining the municipal buildings over the past five years.",
+    "note": "The official minutes cover the maintenance-spending topic but print no dollar amount, so the figures can't be compared."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Outcome on the final financial request",
+    "ours": "Final financial request for the warrant article deferred until hazardous material costs are better understood; chair to contact the facilities director, then ask the architect for an estimate.",
+    "official": "the committee agreed to finalize financial requests and prepare for the upcoming town meeting.",
+    "note": "Ours records the request as deferred pending hazardous-material costs, while the official minutes say the committee agreed to finalize; check the recording around t=4353."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting March 17",
+    "ours": "Next meeting set for March 17th at 5:30 to finalize the warrant figure.",
+    "official": "the next meeting was scheduled for march 17th, where further discussions on financials and project updates would take place.",
+    "note": "Same date; the 5:30 time and the purpose differ slightly in wording but don't conflict."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Brooks House and TCP to be addressed in town meeting slides",
+    "ours": "Members agreed Brooks House and TCP must be addressed in the town meeting slide deck.",
+    "official": "questions regarding the financial implications of maintaining or leasing brooks house.",
+    "note": "The official minutes record questions about Brooks House and concerns about TCP but no agreement about the slide deck."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Leaning toward high estimate verbatim in warrant",
+    "ours": "Committee leaned toward recommending the high estimate be put verbatim in the warrant, but this was later reopened and not finalized.",
+    "official": "",
+    "note": "The official minutes record no discussion of the warrant wording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Christina",
+    "ours": "Christina (member)",
+    "official": "kristina masaitis",
+    "note": "Misheard first name of the same member.",
+    "official_reading": "Kristina Masaitis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Dave (chair)",
+    "ours": "Dave (chair)",
+    "official": "david blatt",
+    "note": "Same first name; the official minutes list David Blatt among the members present but do not name a chair.",
+    "official_reading": "David Blatt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Tony (APDC representative)",
+    "ours": "Tony (APDC representative)",
+    "official": "community guests: tony sculumbrine",
+    "note": "Same person; the official minutes list him as a community guest with no APDC affiliation.",
+    "official_reading": "Tony Sculumbrine"
+   },
+   {
+    "kind": "agree",
+    "about": "Members Tom Gray, Greg Roy, Matthew Allison and Brian Lehtinen",
+    "ours": "Mr Gray (Tom Gray), Greg Roy, Matt / Matthew, Brian",
+    "official": "members present: brian lehtinen, matthew allison, greg roy, kristina masaitis, tom gray, david blatt",
+    "note": "These four members are present in both records."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees Alison, Mr Leighton, Mercedes",
+    "ours": "Alison (member); Mr Leighton (member); Mercedes (member)",
+    "official": "members absent: michael-ray jeffreys",
+    "note": "Ours lists three further members who are not in the official present list; they may be mishearings (for example Lehtinen or Allison) or the official minutes may be incomplete. Michael-Ray Jeffreys is listed as absent, so check the recording and the roll."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:29:50Z",
+   "cost_usd": 0.242323
+  }
  }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-01-28",
  "docid": "6982",
@@ -12,16 +12,261 @@
  },
  "votes": [
   {
-   "motion": "Adjourn at 6:25pm",
+   "motion": "Accept the minutes of 10/19/24 and 12/10/24.",
+   "moved_by": "Joe H.",
+   "seconded_by": "Scott D.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to accept the minutes of 10/19/24 and 12/10/24"
+  },
+  {
+   "motion": "Adjourn the meeting at 6:25pm.",
    "moved_by": "Scott D.",
    "seconded_by": "Joe H.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: scott d. second: joe h. to adjourn at 6:25pm roll call vote: joe-aye, scott- aye and brett-aye",
-   "quote_taken_from_text": true
+   "quote": "to adjourn at 6:25pm"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Two votes recorded, both procedural. The Commission had three voting members present at this meeting (Brett Ramsden, Scott Dall, and Joe Hurley). Roll call votes were 3-0 on both motions.",
- "cost_usd": 0.0619334
+ "dropped_unquoted": 0,
+ "note": "Extracted text with spacing artifacts inside words (e.g. \"Va lliere\", \"Directo r-\", \"w ill\"); quotes are copied as printed. Vote records are roll-call listings with no printed tally, so outcome is recorded as \"passed\". Page 1 says \"PUBLIC COMMENT & ANNOUNCEMENTS - none\", but page 2 prints a remark under PUBLIC COMMENT by \"Bill\" (role not printed at that point). No dollar transfers and no executive session. The Annual Report vote was deferred, not taken. Attendance is read from the header; Eli Torres's role is not printed in the attendance line.",
+ "cost_usd": 0.01821737,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair- brett ramsden"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk- scott dall , member : joe hurley"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "present",
+   "quote": "clerk- scott dall , member : joe hurley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill bernard , sewer business manager-andrew va lliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Va lliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "bill bernard , sewer business manager-andrew va lliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "bill bernard , sewer business manager-andrew va lliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: chair- mike mackin and eli torres"
+  },
+  {
+   "name": "Eli Torres",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: chair- mike mackin and eli torres"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commissioners will sign the 12 Kimball St. Privilege Fee document by DocuSign so it can go to the Town Treasurer.",
+   "quote": "so it can go to the town treasurer"
+  },
+  {
+   "decision": "Jane Ranley will write a draft of the Fiscal Year 2024 Annual Report and send it to Andrew and Bill for updated figures.",
+   "quote": "jane has volunteered to write it."
+  },
+  {
+   "decision": "The Commissioners will vote on the Fiscal Year 2024 Annual Report at the next meeting, before it goes to the Town Manager's office.",
+   "quote": "so they will need to vote on it at the next meeting."
+  },
+  {
+   "decision": "Recruitment for a new Commission member will start once Eli Torres's resignation letter is received at the Town Hall.",
+   "quote": "resignation is received at the town hall, they can start recruiting a new member."
+  },
+  {
+   "decision": "Bill will tell the Commissioners when the Assistant to the Business Manager interviews take place so they can sit in.",
+   "quote": "let the commissioners know when the interviews will take place"
+  },
+  {
+   "decision": "The Munis consultant was asked to give Andrew a high-level look at Munis.",
+   "quote": "to give andrew a high level look at munis"
+  },
+  {
+   "decision": "Manhole repair work waits until the frost comes out of the ground.",
+   "quote": "they need to wait until the frost comes out of ground"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2nd Quarter Billing Demands",
+   "what_was_recorded": "Andrew hopes to send the demands with straight $10 fees, pending printing.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "to go through with straight $10 fees"
+  },
+  {
+   "topic": "Munis consultant funding",
+   "what_was_recorded": "The Munis consultant who previously worked with Paula is paid from ARPA money, not the Sewer budget.",
+   "figures_as_printed": [],
+   "quote": "he is being paid out of arpa money"
+  },
+  {
+   "topic": "12 Kimball St. Privilege Fee",
+   "what_was_recorded": "The owner said he will pay the Privilege Fee in full; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the owner came into the office and stated he will pay the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bill",
+   "stated_role": "not stated",
+   "topic": "flushing reminder, toilets and wipes",
+   "quote": "not flush anything down their toilets other than"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of 10/19/24 and 12/10/24",
+   "resolution": "approved, roll call",
+   "quote": "to accept the minutes of 10/19/24 and 12/10/24",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "12 Kimball St. Privilege Fee",
+   "resolution": "owner to pay in full; Commissioners to sign DocuSign",
+   "quote": "the owner came into the office and stated he will pay the",
+   "tags": [
+    "12 Kimball St",
+    "privilege fee"
+   ]
+  },
+  {
+   "topic": "Fiscal Year 2024 Annual Report",
+   "resolution": "Jane to draft; Commission to vote at next meeting",
+   "quote": "jane has volunteered to write it.",
+   "tags": [
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Absent members",
+   "resolution": "Eli Torres to submit resignation; recruiting after it is received",
+   "quote": "resignation is received at the town hall, they can start recruiting a new member.",
+   "tags": [
+    "board vacancy"
+   ]
+  },
+  {
+   "topic": "2nd Quarter Billing Demands update",
+   "resolution": "reported, in progress",
+   "quote": "to go through with straight $10 fees",
+   "tags": [
+    "quarterly billing"
+   ]
+  },
+  {
+   "topic": "Munis consultant",
+   "resolution": "reported; consultant to visit mid-February",
+   "quote": "to give andrew a high level look at munis",
+   "tags": [
+    "Munis",
+    "ARPA funding"
+   ]
+  },
+  {
+   "topic": "Assistant to the Business Manager position",
+   "resolution": "reported; two candidates, interviews being scheduled",
+   "quote": "with interviews lined up",
+   "tags": [
+    "assistant position"
+   ]
+  },
+  {
+   "topic": "Manhole Repair IFB",
+   "resolution": "no update; waits for frost to leave ground",
+   "quote": "they need to wait until the frost comes out of ground",
+   "tags": [
+    "manhole repair"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "noted",
+   "quote": "assistant business manager, quarterly billing",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Old business",
+   "resolution": "no action, already covered",
+   "quote": "old business - already covered.",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "flushing reminder; no action",
+   "quote": "not flush anything down their toilets other than",
+   "tags": [
+    "public comment",
+    "wastewater"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed, no action",
+   "quote": "upcoming scheduled sewer commission activities",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:25pm, roll call",
+   "quote": "to adjourn at 6:25pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "minutes approval",
+  "quarterly billing",
+  "annual report",
+  "board vacancy",
+  "Munis",
+  "ARPA funding",
+  "manhole repair",
+  "public comment",
+  "12 Kimball St",
+  "privilege fee",
+  "assistant position",
+  "via Zoom"
+ ],
+ "dropped_unquoted_by_field": {}
 }

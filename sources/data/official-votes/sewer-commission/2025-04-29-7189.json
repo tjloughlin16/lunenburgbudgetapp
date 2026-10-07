@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-04-29",
  "docid": "7189",
@@ -12,15 +12,222 @@
  },
  "votes": [
   {
-   "motion": "Adjourn at 6:47 pm",
+   "motion": "Accept the minutes of 3/25/25 and 4/15/25.",
+   "moved_by": "Scott D.",
+   "seconded_by": "Joe H.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to a ccept the minutes of 3/25/25 and 4/15/25."
+  },
+  {
+   "motion": "Adjourn the meeting at 6:47 pm.",
    "moved_by": "Joe H.",
    "seconded_by": "Scott D.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: joe h. second: scott d. to adjourn at 6:47 pm roll call vote: joe-aye, scott-aye and brett-aye."
+   "quote": "roll call vote: joe-aye, scott-aye"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.06511940000000001
+ "dropped_unquoted": 0,
+ "note": "Readable text with extraction spacing artefacts (e.g. split words like \"start ing\", \"delinqu ency\", and stray spaces in times and dates). Quotes were chosen to avoid those artefacts or copied with whitespace collapsed. Two roll-call votes are recorded without numeric counts, so outcomes are \"passed\". No vote was recorded on the CWMP, vacancies, billing, manhole or assistant items. The minutes say the meeting was held via Zoom but do not give each member's attendance status, so those are \"not stated\". The Town Meeting budget article has no dollar figures printed. The opening \"PUBLIC COMMENT & ANNOUNCEMENTS - none\" is not recorded as a speaker. Candidate name \"Susan\" appears only as printed and is not listed as an attendee.",
+ "cost_usd": 0.017879970000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "brett ramsden , clerk- scott dall , member: joe hurley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "brett ramsden , clerk- scott dall , member: joe hurley"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "brett ramsden , clerk- scott dall , member: joe hurley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "not stated",
+   "quote": "bill bernard , sewer business manager: andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "not stated",
+   "quote": "bill bernard , sewer business manager: andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "bill bernard , sewer business manager: andrew valliere, minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bill will email the previous vacancy letter to the Commissioners for edits at the next meeting.",
+   "quote": "will email it to the commissioners for edits"
+  },
+  {
+   "decision": "Andrew will talk to Myleen about the partial payment process.",
+   "quote": "andrew replied he will talk to myleen"
+  },
+  {
+   "decision": "Bill will prepare the Town Meeting presentation, including a summary of revenues and estimated expenses.",
+   "quote": "bill will do the presentation"
+  },
+  {
+   "decision": "Bill will keep reminding residents that clogs are a serious issue and not to flush anything that does not belong.",
+   "quote": "he will remind people that clogs are a serious issue"
+  },
+  {
+   "decision": "Andrew will seek help if there are any issues with the demands going out again.",
+   "quote": "he will seek help if there are any issues"
+  },
+  {
+   "decision": "Future agenda items set: Commission Vacancies, Updates from DPW/Sewer Business Manager, Town Meeting Update, and a potential new Assistant update.",
+   "quote": "and potential new assistant update."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Meeting Article 22 (Budget) and retained earnings borrowing",
+   "what_was_recorded": "The budget article will be presented at Town Meeting; the Sewer enterprise will need to borrow from Retained Earnings, and the minutes say rates will not increase.",
+   "quote": "they will need to borrow from retained earnings but the good news is rates will not increase.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Quarter 4 FY25 billing delinquency",
+   "what_was_recorded": "Scott raised the 26% delinquency rate as an issue to address alongside the billing.",
+   "quote": "and the issue of the 26%",
+   "figures_as_printed": [
+    "26%"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bill Bernard",
+   "stated_role": "DPW Director",
+   "topic": "Town Meeting attendance",
+   "quote": "bill urged all to attend the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Comprehensive Wastewater Management Plan (CWMP) discussion",
+   "resolution": "discussed, no action",
+   "quote": "the town determined they needed a plan for 3 factors",
+   "tags": [
+    "CWMP",
+    "wastewater",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Commission vacancies",
+   "resolution": "discussed; prior letter to be emailed for edits at next meeting",
+   "quote": "bill talked to the town manager about a town-wide letter going out",
+   "tags": [
+    "commission vacancies",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Minutes of 3/25/25 and 4/15/25",
+   "resolution": "approved",
+   "quote": "to a ccept the minutes of 3/25/25 and 4/15/25.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Quarter 4 FY25 billing",
+   "resolution": "reported; bill run done and going out",
+   "quote": "andrew stated it took a lot of checking",
+   "tags": [
+    "billing",
+    "delinquency",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "Manhole repair IFB",
+   "resolution": "reported; contractor to start in June",
+   "quote": "insituform and they plan on",
+   "tags": [
+    "manhole repair",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Town Meeting slideshow",
+   "resolution": "presented",
+   "quote": "articles 21, 23 & 24 will be part of the consent calendar",
+   "tags": [
+    "Town Meeting",
+    "budget",
+    "retained earnings",
+    "clogs"
+   ]
+  },
+  {
+   "topic": "Assistant to Sewer Business Manager",
+   "resolution": "reported; candidate in HR process, start date planned May 27",
+   "quote": "interviewed a woman named susan",
+   "tags": [
+    "staffing",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed",
+   "quote": "and potential new assistant update.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment (Town Meeting)",
+   "resolution": "no action",
+   "quote": "bill urged all to attend the",
+   "tags": [
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:47 pm",
+   "quote": "roll call vote: joe-aye, scott-aye",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "wastewater",
+  "CWMP",
+  "billing",
+  "delinquency",
+  "Town Meeting",
+  "budget",
+  "retained earnings",
+  "commission vacancies",
+  "staffing",
+  "manhole repair",
+  "minutes approval",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

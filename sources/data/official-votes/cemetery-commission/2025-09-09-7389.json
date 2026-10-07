@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2025-09-09",
  "docid": "7389",
@@ -12,34 +12,187 @@
  },
  "votes": [
   {
-   "motion": "Allocate $3,000 to perform rock wall repair work",
+   "motion": "Allocate $3,000 to perform the rock wall repair work.",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
-   "outcome": "passed",
+   "outcome": "passed (printed as AIF, presumably all in favor; no count printed)",
    "procedural": false,
-   "quote": "david dorren motioned to allocate $3,000 to perform this repair work, donna landry seconded, aif ",
-   "quote_taken_from_text": true
+   "quote": "david dorren motioned to allocate $3,000 to perform this repair work, donna landry seconded, aif"
   },
   {
-   "motion": "Procure 20 Cedars per quote to perform hedge replacement",
+   "motion": "Procure 20 Cedars per quote to perform the hedge replacement.",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
-   "outcome": "passed",
+   "outcome": "passed (printed as AIF, presumably all in favor; no count printed)",
    "procedural": false,
-   "quote": "david dorren motioned to procure 20 cedars per quote to perform the hedge replacement, donna landry seconded, aif ",
-   "quote_taken_from_text": true
+   "quote": "david dorren motioned to procure 20 cedars per quote to perform the hedge replacement, donna landry seconded, aif"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "David Dorren",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
    "seconded_by": "Donna Landry",
-   "outcome": "passed",
+   "outcome": "passed (printed as AIF, presumably all in favor; no count printed)",
    "procedural": true,
-   "quote": "vice chair david dorren requested a motion to adjourn, clerk donna landry seconded, aif ",
-   "quote_taken_from_text": true
+   "quote": "vice chair david dorren requested a motion to adjourn, clerk donna landry seconded, aif"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0742714
+ "note": "These are minutes of an on-site walking tour of North Cemetery, so no roll call and no vote counts are printed. Every vote is recorded only as \"AIF\" with no count; I read AIF as all in favor and recorded the outcome as passed, but the minutes do not state the count or the result in words. The member David/Dave Dorren is printed both ways, so I kept each spelling as it appears. The motion to adjourn is recorded with no mover named, only \"requested\" by the Vice Chair. The \"several members of the Public\" are unnamed and no public comment is recorded. No prior minutes were approved in this meeting. The quotes for hedge replacement are recorded without a motion. Approximately 70-foot area is printed as such.",
+ "cost_usd": 0.013594370000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Department Director",
+   "status": "present",
+   "quote": "attendees: bill bernard, todd holman, mike clark, dave dorren, donna landry gregg roy of dillis & roy, robin venezia - invited for expertise in natural plantings"
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "present",
+   "quote": "attendees: bill bernard, todd holman, mike clark, dave dorren, donna landry gregg roy of dillis & roy, robin venezia - invited for expertise in natural plantings"
+  },
+  {
+   "name": "Mike Clark",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: bill bernard, todd holman, mike clark, dave dorren, donna landry gregg roy of dillis & roy, robin venezia - invited for expertise in natural plantings"
+  },
+  {
+   "name": "Dave Dorren",
+   "role": "Vice-Chair (printed as David Dorren in the commissioners list)",
+   "status": "present",
+   "quote": "attendees: bill bernard, todd holman, mike clark, dave dorren, donna landry gregg roy of dillis & roy, robin venezia - invited for expertise in natural plantings"
+  },
+  {
+   "name": "Donna Landry",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: bill bernard, todd holman, mike clark, dave dorren, donna landry gregg roy of dillis & roy, robin venezia - invited for expertise in natural plantings"
+  },
+  {
+   "name": "Gregg Roy",
+   "role": "of Dillis & Roy",
+   "status": "present",
+   "quote": "gregg roy of dillis & roy participated in the backlot conversation with todd holman."
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "invited for expertise in Natural Plantings",
+   "status": "present",
+   "quote": "robin venezia was kind enough to share her expertise in natural plantings."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Front shrub / hedge replacement quotes (approx. 70-foot area)",
+   "what_was_recorded": "Two contractor quotes were received to replace hedging in the approx. 70-foot area from the exit road to the brick building; no vote was taken on them in these minutes.",
+   "figures_as_printed": [
+    "$5,875.00",
+    "$6,925.00"
+   ],
+   "quote": "two quotes to replace those in the approx. 70-foot area from the exit road to the brick building: lakeview - $5,875.00 central mass - $6,925.00"
+  },
+  {
+   "topic": "Rock wall repair",
+   "what_was_recorded": "A repair cost of $3,000.00 was discussed for the rock wall, as an initial effort to pay stone masons on a time-and-pay basis.",
+   "figures_as_printed": [
+    "$3,000.00"
+   ],
+   "quote": "discussed the rock wall and a repair cost of $3,000.00. this would be an initial eưort to pay stone masons"
+  },
+  {
+   "topic": "Rock wall repair allocation",
+   "what_was_recorded": "A motion to allocate $3,000 for the rock wall repair work was recorded as passed (AIF).",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "david dorren motioned to allocate $3,000 to perform this repair work, donna landry seconded, aif"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and front shrubs / natural hedges",
+   "resolution": "discussed; two replacement quotes noted, no action",
+   "quote": "tour the front shrubs of the cemetery, discussed natural hedges versus cedar trees. robin venezia was kind enough to share her expertise in natural plantings.",
+   "tags": [
+    "hedges",
+    "natural plantings",
+    "quotes"
+   ]
+  },
+  {
+   "topic": "Hedge line walk to far road",
+   "resolution": "discussed; repair needs noted, no action",
+   "quote": "walked the hedge line to the far road leading to the backlot expansion project and discussed further areas of the hedging requiring maintenance and repair.",
+   "tags": [
+    "hedges",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Area beyond far road rock wall",
+   "resolution": "discussed, no action",
+   "quote": "discussed the area beyond the far road rock wall line. this area and the back lot were formed with ﬁll from a local large road project.",
+   "tags": [
+    "rock wall",
+    "fill"
+   ]
+  },
+  {
+   "topic": "Rock wall repair",
+   "resolution": "approved $3,000 allocation",
+   "quote": "david dorren motioned to allocate $3,000 to perform this repair work, donna landry seconded, aif",
+   "tags": [
+    "rock wall",
+    "repair",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Backlot expansion engineering",
+   "resolution": "reviewed, no action",
+   "quote": "we reviewed the planned backlot expansion engineering work. the lot will require grading and ﬁll material to build a suitable grade",
+   "tags": [
+    "backlot expansion",
+    "engineering",
+    "grading"
+   ]
+  },
+  {
+   "topic": "Hedge replacement procurement",
+   "resolution": "approved procurement of 20 Cedars per quote",
+   "quote": "david dorren motioned to procure 20 cedars per quote to perform the hedge replacement, donna landry seconded, aif",
+   "tags": [
+    "hedges",
+    "cedars",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:00",
+   "quote": "adjourned at 9:00, vice chair david dorren requested a motion to adjourn, clerk donna landry seconded, aif",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "North Cemetery",
+  "site visit",
+  "hedges",
+  "rock wall repair",
+  "backlot expansion",
+  "procurement",
+  "funding",
+  "natural plantings"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-08-14",
  "docid": "7344",
@@ -12,24 +12,275 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from July 10, 2025, and July 24, 2025",
+   "motion": "Approve the minutes of July 10, 2025, and July 24, 2025.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jean Russell",
-   "outcome": "passed 7-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from july 10, 2025, and july 24, 2025, by tom gray, seconded by jean russell. roll call vote. jay simeone aye, mike rupp aye, ana lockwood aye, tanya dall aye, tom gray aye, jean russell aye, chris menard aye."
+   "quote": "there was a motion to approve the minutes from july 10, 2025, and july 24, 2025, by tom gray, seconded by jean russell. roll call vote."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 7-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray. roll call ===page 4=== vote. jay simeone aye, mike rupp aye, ana lockwood aye, tanya dall aye, tom gray aye, jean russell aye, chri",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, readable. Two votes recorded: approval of prior minutes and adjournment, both procedural and both unanimous (7-0).",
- "cost_usd": 0.0636304
+ "note": "Text is macOS Vision OCR with some garbled characters (e.g. \"ill.\" and \"o.\" for list markers, \"Loom\" likely meaning Zoom); quotes are copied as OCR printed them. Both roll-call votes list each member's aye but print no tally, so outcome is recorded as \"passed\" from the listed ayes, not from a printed count. Agenda heading says \"Town Manager & Finance Director Reports\" but the attendee list gives Jennifer Warren-Dyment as Town Manager only. Item 6c repeats the tri-board topic list from 6b with no new content. Mike Rupp is printed \"(Loom)\" and Jay Simeone \"(Zoom)\"; both are recorded as remote on that basis. No budget figures beyond the two in the Town Manager report and the public comment were printed.",
+ "cost_usd": 0.01588937,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray,"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray,"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair chris menard, vice chair jean russell, clerk tom gray,"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall, committee member ana lockwood, committee member mike rupp (loom)"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall, committee member ana lockwood, committee member mike rupp (loom)"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member (listed as attending by Loom)",
+   "status": "remote",
+   "quote": "committee member mike rupp (loom), committee member jay simeone (zoom), town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member (listed as attending by Zoom)",
+   "status": "remote",
+   "quote": "committee member mike rupp (loom), committee member jay simeone (zoom), town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "committee member mike rupp (loom), committee member jay simeone (zoom), town manager jennifer warren-dyment"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "member of the public, public comment",
+   "status": "present",
+   "quote": "dave rogers, 82 highland street, heard through the grapevine that there was"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "not stated; named as co-author of a policy draft and not described as attending",
+   "status": "not stated",
+   "quote": "ezequiel ayala and ana lockwood came up with a 3-page document with the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Finance Committee will make edits to the town finance policies document and then submit it to the Select Board for review.",
+   "quote": "the finance committee will make their edits and then submit them to the select board for review."
+  },
+  {
+   "decision": "Chris Menard will reach out to the School Committee about the reported $200,000 in the school budget.",
+   "quote": "chris menard will reach out to the school committee."
+  },
+  {
+   "decision": "Jennifer Warren-Dyment will bring a copy of the full benefit package offered to town employees.",
+   "quote": "jennifer warren-dyment will bring a copy of the full benefit package"
+  },
+  {
+   "decision": "Ana Lockwood will provide additional school budget data once the schools close out at the end of August.",
+   "quote": "once the schools close out at the end of august ana lockwood will provide"
+  },
+  {
+   "decision": "Re-organization of Committee liaisons is deferred to the next meeting.",
+   "quote": "re-organization of committee liaisons will be discussed at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reported $200,000 in school budget (public comment)",
+   "what_was_recorded": "A resident asked whether a reported $200,000 found in the school budget was true; Ana Lockwood hoped the unspent money came from previous budget years, and the minutes record no confirmation of the figure.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "$200,000 found in the school budget and inquired if that was true."
+  },
+  {
+   "topic": "Additional Chapter 90 and state aid received",
+   "what_was_recorded": "The Town Manager reported an additional $500,000 received through Chapter 90 funds and an additional $230,000 received through state aid.",
+   "figures_as_printed": [
+    "$500,000",
+    "$230,000"
+   ],
+   "quote": "jennifer warren-dyment states that an additional $500,000 was received through chapter 90 funds. there was an additional $230,000 received through state aid."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland Street (no role printed)",
+   "topic": "$200,000 in school budget and business manager hiring",
+   "quote": "dave rogers, 82 highland street, heard through the grapevine that there was"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action; meeting opened at 7:00 PM",
+   "quote": "the meeting opened at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; no announcements",
+   "quote": "there were no announcements.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (school budget and business manager)",
+   "resolution": "discussed; chair to contact School Committee",
+   "quote": "dave rogers, 82 highland street, heard through the grapevine that there was",
+   "tags": [
+    "school budget",
+    "public comment",
+    "school business manager"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director reports",
+   "resolution": "reported; Chapter 90 and state aid receipts; Executive Assistant hiring in progress",
+   "quote": "jennifer warren-dyment is still in the process of hiring an executive assistant.",
+   "tags": [
+    "state aid",
+    "Chapter 90",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Town finance policies review",
+   "resolution": "reviewed; committee to edit and send to Select Board",
+   "quote": "the finance committee will make their edits and then submit them to the select board for review.",
+   "tags": [
+    "finance policies",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Upcoming tri-board topics (human services, culture and recreation, health services, health insurance)",
+   "resolution": "discussed; Town Manager to bring benefit package",
+   "quote": "jennifer warren-dyment will bring a copy of the full benefit package",
+   "tags": [
+    "tri-board",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "Budget request forms",
+   "resolution": "noted; switched to Cleargov",
+   "quote": "jennifer warren-dyment states they have switched over to cleargov.",
+   "tags": [
+    "budget process"
+   ]
+  },
+  {
+   "topic": "Analysis of historical school budget data",
+   "resolution": "deferred until school close-out",
+   "quote": "once the schools close out at the end of august ana lockwood will provide",
+   "tags": [
+    "school budget",
+    "historical data"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved by roll call",
+   "quote": "there was a motion to approve the minutes from july 10, 2025, and july 24, 2025, by tom gray, seconded by jean russell. roll call vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "deferred; liaison re-organization to next meeting",
+   "quote": "re-organization of committee liaisons will be discussed at the next meeting.",
+   "tags": [
+    "committee liaisons"
+   ]
+  },
+  {
+   "topic": "Actions and topics for future meetings",
+   "resolution": "Master Plan questionnaire received and filed; Parks and Recreation meeting suggested",
+   "quote": "tanya dall suggests having a meeting with parks and recreation as she has questions.",
+   "tags": [
+    "master plan",
+    "parks and recreation"
+   ]
+  },
+  {
+   "topic": "Important dates and upcoming meetings",
+   "resolution": "noted",
+   "quote": "tri-board meetings -aug 26, sept 30, oct 14, nov 12, dec 9, jan 13",
+   "tags": [
+    "calendar",
+    "tri-board"
+   ]
+  },
+  {
+   "topic": "Public Comment (second call)",
+   "resolution": "no comments",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "approved by roll call; closed at 9:40 PM",
+   "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "school budget",
+  "school business manager",
+  "town finance policies",
+  "tri-board meetings",
+  "health insurance",
+  "Chapter 90",
+  "state aid",
+  "public comment",
+  "minutes approval",
+  "Cleargov",
+  "master plan"
+ ],
+ "dropped_unquoted_by_field": {}
 }

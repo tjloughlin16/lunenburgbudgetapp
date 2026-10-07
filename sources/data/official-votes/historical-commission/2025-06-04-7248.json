@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2025-06-04",
  "docid": "7248",
@@ -12,6 +12,138 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe a proposal by Jen Sanderson regarding the Boston Post Cane tradition and a decision about historical marker sites, but neither includes formal motion or voting language. The Boston Post Cane vote is scheduled for a special meeting on June 11th (not held at this June 4th meeting). The historical markers decision is stated as \"it was decided\" with no recorded motion, seconder, or voting outcome. The meeting adjournment is noted with no motion or vote recorded.",
- "cost_usd": 0.0582004
+ "note": "Text is a short extract with line breaks collapsed in the quotes. No motions are recorded in the minutes, so no votes are listed, including the adjournment at 7:43PM, which the minutes state without a motion or vote. No public comment section is recorded. The 763 Mass Ave status itself is not described in the minutes. Names mentioned only as letter recipients (John Mascierelli, PFMG holdings) are not listed as attendees.",
+ "cost_usd": 0.012822070000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "members richard mcgrath, jen sanderson and kevin boussom were in attendance."
+  },
+  {
+   "name": "Jen Sanderson",
+   "role": "member",
+   "status": "present",
+   "quote": "members richard mcgrath, jen sanderson and kevin boussom were in attendance."
+  },
+  {
+   "name": "Kevin Boussom",
+   "role": "Member",
+   "status": "present",
+   "quote": "members richard mcgrath, jen sanderson and kevin boussom were in attendance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Letter on the status of 763 Mass Ave to be mailed to John Mascierelli and PFMG holdings, copied to the Town Manager and Building Inspector.",
+   "quote": "the letter regarding the status of 763 mass ave was mailed to john mascierelli and pfmg holdings, and will also be copied to the town manager and building inspector."
+  },
+  {
+   "decision": "A donation meant for the Historical Society, mailed to the Commission, is to be sent back to the society.",
+   "quote": "a donation meant for the historical society was mailed to the commission, so that will be sent back to the society."
+  },
+  {
+   "decision": "Six first sites chosen for historical markers: garrison house site on Northfield road, buttonwood tree, site of the Revere house, Houghton House, Dickinson mansion, and School house No. 5.",
+   "quote": "it was decided that the 6 first sites we should focus on marking would be the site of the garrison house on northfield road"
+  },
+  {
+   "decision": "Richard McGrath to research the cost of the markers.",
+   "quote": "richard mcgrath is to research the cost of the markers."
+  },
+  {
+   "decision": "Special meeting scheduled for Wednesday June 11th to discuss the Boston Post Cane reproduction further and vote on purchasing one.",
+   "quote": "a special meeting is scheduled for wednesday june 11th to discuss it further and vote on purchasing one."
+  },
+  {
+   "decision": "Commission to meet with the Select Board on June 17th to present the Hometown Heroes project.",
+   "quote": "the commission will also be meeting with the select board on june 17th to present the hometown heroes project."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Boston Post Cane reproduction",
+   "what_was_recorded": "Reproductions of the Boston Post Cane could be made for about $150; a special meeting was set to vote on purchasing one.",
+   "figures_as_printed": [
+    "$150"
+   ],
+   "quote": "but reproductions can be made for somewhere around $150."
+  },
+  {
+   "topic": "Historical marker costs",
+   "what_was_recorded": "Richard McGrath was assigned to research the cost of the markers; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "richard mcgrath is to research the cost of the markers."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "763 Mass Ave status letter",
+   "resolution": "letter mailed; copied to Town Manager and Building Inspector",
+   "tags": [
+    "763 Mass Ave",
+    "correspondence"
+   ],
+   "quote": "the letter regarding the status of 763 mass ave was mailed to john mascierelli and pfmg holdings, and will also be copied to the town manager and building inspector."
+  },
+  {
+   "topic": "Donation returned to society",
+   "resolution": "to be sent back to the Historical Society",
+   "tags": [
+    "donation",
+    "correspondence"
+   ],
+   "quote": "a donation meant for the historical society was mailed to the commission, so that will be sent back to the society."
+  },
+  {
+   "topic": "State register of historic places",
+   "resolution": "received, no action",
+   "tags": [
+    "state register",
+    "historic places"
+   ],
+   "quote": "the state register of historic places was received from the secretary of state."
+  },
+  {
+   "topic": "Boston Post Cane reintroduction (new business)",
+   "resolution": "special meeting set for June 11 to discuss and vote on purchase",
+   "tags": [
+    "Boston Post Cane",
+    "new business"
+   ],
+   "quote": "for new business, member jen sanderson proposed the reintroduction of the boston post cane tradition."
+  },
+  {
+   "topic": "Historical marker project",
+   "resolution": "six first sites chosen; McGrath to research marker costs",
+   "tags": [
+    "historical markers",
+    "sites"
+   ],
+   "quote": "it was decided that the 6 first sites we should focus on marking would be the site of the garrison house on northfield road"
+  },
+  {
+   "topic": "Hometown Heroes project",
+   "resolution": "to be presented to Select Board June 17",
+   "tags": [
+    "Hometown Heroes",
+    "Select Board"
+   ],
+   "quote": "the commission will also be meeting with the select board on june 17th to present the hometown heroes project."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "historical markers",
+  "Boston Post Cane",
+  "763 Mass Ave",
+  "Hometown Heroes",
+  "state register of historic places",
+  "correspondence"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2025-07-28",
  "docid": "7329",
@@ -12,48 +12,258 @@
  },
  "votes": [
   {
-   "motion": "Continue public hearing for 1083 Northfield Road Common Driveway/Stormwater Management Permits to 2025-08-25 at 6:05 P.M.",
-   "moved_by": "M.Brenner",
-   "seconded_by": "A.Reid",
+   "motion": "Continue the public hearings for 1083 Northfield Road Common Driveway / Stormwater Management Permits to 2025-08-25 at 6:05 P.M.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m.brenner moved, to continue the public hearings for 1083 northfield road common driveway/ stormwater management permits to 2025-08-25 at 6:05 p.m. second: a.reid vote: a. reid - aye, t.willsmer -aye, a. burney -abstained, passed.",
-   "quote_taken_from_text": true
+   "quote": "m.brenner moved, to continue the public hearings for 1083 northfield road common driveway/ stormwater management permits to 2025-08-25 at 6:05 p.m."
   },
   {
-   "motion": "Close public hearing for 260 Falulah Rd Modification to site plan approval and Stormwater Management Permits",
-   "moved_by": "T.Willsmer",
-   "seconded_by": "A.Reid",
-   "outcome": "not stated",
-   "procedural": true,
+   "motion": "Close the public hearings for 260 Falulah Rd modification to site plan approval and Stormwater Management Permits.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
+   "outcome": "not stated (A. Reid, T. Willsmer, M. Brenner aye; A. Burney abstained)",
+   "procedural": false,
    "quote": "t. willsmer so moved. second: a.reid vote: a. reid - aye, t.willsmer -aye, m.brenner -aye, a. burney -abstained"
   },
   {
-   "motion": "Approve Modification to Site Plan Approval and Stormwater Management Permit for 260 Falula Road and carry forward conditions from original permit and that office receive clean peer review from Graves to complete file",
-   "moved_by": "T.Willsmer",
-   "seconded_by": "A.Reid",
-   "outcome": "not stated",
+   "motion": "Approve the Modification to Site Plan Approval and Storm Water Management Permit for 260 Falula Road, carrying forward the conditions of the original permit, and that the office receive a clean peer review from Graves to complete file.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
+   "outcome": "not stated (A. Reid, T. Willsmer, M. Brenner aye; A. Burney abstained)",
    "procedural": false,
    "quote": "moved. t. willsmer second: a.reid vote: a. reid - aye, t.willsmer -aye, m.brenner - aye, a. burney -abstained"
   },
   {
-   "motion": "Approve prior meeting minutes",
+   "motion": "Approve the minutes of a prior meeting (date not printed in the minutes).",
    "moved_by": "",
    "seconded_by": "Burney",
-   "outcome": "Approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "second: burney seconded vote: a. reid - aye, t. willsmer - aye, a. burney -aye"
+   "quote": "second: burney seconded vote: a. reid - aye, t. willsmer - aye, a. burney -aye approved minutes"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "A.Burney",
-   "seconded_by": "A.Reid",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "A. Burney",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion: a. burney, to adjourn. second: a. reid seconded vote: voice vote, passed unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "One member (M.Allison) was absent; two members abstained on certain votes. The minutes contain one procedural issue: the approval of prior minutes does not record who moved the motion, only who seconded.",
- "cost_usd": 0.1368014
+ "dropped_unquoted": 1,
+ "note": "Text is a digital extraction, not a scan, so every vote tally is readable. Limits on reading: (1) Present line reads \"A. Brenner\"; the header and body name the chair as M. Brenner, so the chair is recorded as M. Brenner. (2) M. Allison is recorded absent, but no absence line states it outright; the absence is inferred from the discussion line. A. Burney is marked present in the discussion and in the minutes approval vote, but abstained on the three hearing votes. Those abstentions are recorded as printed, not counted as passes or failures. (3) Jasmine Farinacci's status conflicts within the minutes: the header says the interim director was not in attendance, yet she is recorded commenting as Director at the 260 Falulah hearing, so her status is \"not stated\". The surname is printed in several forms (Farinacci, Faranacci, Farnacci). (4) The 260 Falulah approval vote and the close-hearing vote print no result word, so their outcome is \"not stated\" with the tally. (5) The minutes approval does not identify which meeting's minutes were approved. (6) The \"upcoming meeting\" line gives 07-28-2025, the same date as this meeting. (7) The page footers print the date as 2025-28-07. (8) No dollar figures appear. Square footage (183,500 and 367,000 sq ft) is not money, and no transfers were recorded. (9) Minutes were prepared by Jennifer Daigle, Admin Asst., who is not recorded as taking part and is not listed as an attendee.",
+ "cost_usd": 0.017806370000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair m.brenner called the meeting to order at 6:00 p.m. the pledge of allegiance was deferred."
+  },
+  {
+   "name": "T. Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, a. brenner"
+  },
+  {
+   "name": "A. Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: t. willsmer, a. reid, a. brenner"
+  },
+  {
+   "name": "A. Burney",
+   "role": "Member",
+   "status": "present",
+   "quote": "mr. burney expresses concern of the additon of the 5th driveway."
+  },
+  {
+   "name": "M. Allison",
+   "role": "Member",
+   "status": "absent",
+   "quote": "discussion regarding the absence of board member allison."
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "representing the applicant (Dillis and Roy), 1083 Northfield Road",
+   "status": "present",
+   "quote": "ryan proctor, dillis and roy appearing to summarize to application for common driveway"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "Hannigan engineering, representing 260 Falulah Rd applicant",
+   "status": "present",
+   "quote": "bill hannigan, hannigan engineering appearing for 260 falulah."
+  },
+  {
+   "name": "Hailey Palazola",
+   "role": "GFI partners",
+   "status": "present",
+   "quote": "hailey palazola with gfi partners stated included in property management plan"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "tanner cole commenting mr. allison was at meeting, fd reviewed, building commissioner gingras advised the project"
+  },
+  {
+   "name": "Jasmine Farinacci",
+   "role": "Land Use Director (per minutes header); minutes also say interim director not in attendance",
+   "status": "not stated",
+   "quote": "mr brenner asks for jasmine to comment as director. jasmine states if snow removal was addressed."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "443 West Townsend Rd to be forwarded to the office (no vote recorded).",
+   "quote": "443 west townsend rd will be forwarded to office."
+  },
+  {
+   "decision": "Chair asked the Land Use office (J. Faranacci as printed) to forward post-hearing decisions for review and signatures, for 260 Falulah Road.",
+   "quote": "chair asks j. faranacci to forward decisions after hearing for review and signatures."
+  },
+  {
+   "decision": "Abutter notices will be included in SharePoint unless immediate notification to the board is necessary (reported practice; no vote recorded).",
+   "quote": "community abutter notices- will be included in sharepoint unless immediate notification necessary to board."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tanner Cole",
+   "stated_role": "not stated",
+   "topic": "1083 Northfield Road hearing: variance, FD review, precedent",
+   "quote": "tanner cole commenting mr. allison was at meeting, fd reviewed, building commissioner gingras advised the project should seek variance"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "called to order at 6:00 P.M.; pledge deferred",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "chair m.brenner called the meeting to order at 6:00 p.m. the pledge of allegiance was deferred."
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "none at this time. no public parties in person or in online waiting room."
+  },
+  {
+   "topic": "Chair / Director's report",
+   "resolution": "no report; director not in attendance, report not submitted",
+   "tags": [
+    "staff report"
+   ],
+   "quote": "per mr. willsmer (out of order): j. farinacci report not available interim director not in attendance report not submitted."
+  },
+  {
+   "topic": "Decisions (post-hearing paperwork)",
+   "resolution": "443 West Townsend Rd forwarded to office; 260 Falulah Rd decisions to be forwarded for signature",
+   "tags": [
+    "decisions",
+    "signatures"
+   ],
+   "quote": "443 west townsend rd will be forwarded to office."
+  },
+  {
+   "topic": "Public hearing: 1083 Northfield Road common driveway and stormwater permit (PBSW 25-1)",
+   "resolution": "continued to 2025-08-25 at 6:05 P.M.",
+   "tags": [
+    "public hearing",
+    "common driveway",
+    "stormwater",
+    "peer review",
+    "emergency access",
+    "1083 Northfield Road"
+   ],
+   "quote": "mr. brenner states they will need to come back due to the submission review."
+  },
+  {
+   "topic": "Public hearing: 260 Falulah Rd special permit and stormwater permit (PMOD-25-2)",
+   "resolution": "hearing closed; modification to site plan approval and stormwater permit approved",
+   "tags": [
+    "public hearing",
+    "site plan",
+    "stormwater",
+    "snow removal",
+    "peer review",
+    "260 Falulah Road"
+   ],
+   "quote": "m.brenner asks to have a motion such as to approve the modification to site plan approval & storm water management permit for 260 falula road"
+  },
+  {
+   "topic": "Board discussions and committee reports",
+   "resolution": "reported; no action taken",
+   "tags": [
+    "committees",
+    "master plan",
+    "stormwater task force",
+    "abutter notices"
+   ],
+   "quote": "per t. willsmer - last meeting was canceled"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (date of minutes not printed)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "second: burney seconded vote: a. reid - aye, t. willsmer - aye, a. burney -aye approved minutes"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "the upcoming meeting is 07-28-2025 at 6:00 p.m."
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "none",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment none at this time."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned by voice vote, passed unanimously",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: a. burney, to adjourn. second: a. reid seconded vote: voice vote, passed unanimously."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "common driveway",
+  "stormwater management",
+  "site plan",
+  "1083 Northfield Road",
+  "260 Falulah Road",
+  "443 West Townsend Road",
+  "peer review",
+  "snow removal",
+  "emergency access",
+  "committee reports",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2025-07-29",
  "docid": "7326",
@@ -12,25 +12,217 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from 7/8/25 with correction as noted",
+   "motion": "Accept the minutes of 7/8/25, with the correction noted (effort to effect).",
    "moved_by": "Scott D.",
    "seconded_by": "Dan P.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: scott d. second: dan p. to accept the minutes from 7/8/25, with correction as noted. roll call vote: scott-aye, dan-aye and brett-aye ",
+   "quote": "to accept the minutes from 7/8/25, with correction as noted. roll call vote: scott-aye, dan-aye and brett-aye ",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn at 6:47pm",
+   "motion": "Adjourn the meeting at 6:47pm.",
    "moved_by": "Scott D.",
    "seconded_by": "Dan P.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: scott d. second: dan p. to adjourn at 6:47pm. roll call vote: scott-aye, dan- aye , and brett-ay",
-   "quote_taken_from_text": true
+   "quote": "to adjourn at 6:47pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. The minutes show extensive discussion of various items (Dana Street repairs, manhole repairs, ADUs, easements, NPDES permit requirements) but no formal motions were recorded for any of these items—only for approving prior minutes and for adjournment.",
- "cost_usd": 0.0654654
+ "note": "Text extraction of a typed minutes document; no scan. Roll-call votes list each member's aye but print no count, so outcomes are recorded as \"passed\". Public comment is printed as \"none\" twice and is recorded as an empty list. The ADU fee figures ($500 or $1,000; $220/bedroom) were discussed and no fee was adopted, so they are not decisions. Some quotes were taken with whitespace normalised because the extracted text has irregular spacing and a hyphenated line break.",
+ "cost_usd": 0.01666297,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brett ramsden , vice-chair - scott dall , clerk- dan proctor"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "brett ramsden , vice-chair - scott dall , clerk- dan proctor"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "brett ramsden , vice-chair - scott dall , clerk- dan proctor"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill bernard , sewer business manager: andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "bill bernard , sewer business manager: andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "bill bernard , sewer business manager: andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "absent",
+   "quote": "member: arthur katis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jane will make the correction to the 7/8/25 minutes (effort to effect).",
+   "quote": "jane will make the correction."
+  },
+  {
+   "decision": "The Commission will go forward on a case-by-case basis for easements and new connections, following the change in its easement policy.",
+   "quote": "the commission will go forward on a case by case"
+  },
+  {
+   "decision": "Dan Proctor will recuse himself if the Mass Ave sewer connection comes before the Commission for a vote.",
+   "quote": "if this comes before the commission for a vote, he will recuse"
+  },
+  {
+   "decision": "Contractors seeking a connection outside the Sewer Service Area must come before the Commission first, before going to Town Meeting (the proponent presents).",
+   "quote": "they should also come before the commission first before going to town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ADU inspection fee proposal",
+   "what_was_recorded": "Dan suggested a flat-rate fee to cover inspections for leaks from an ADU to the existing house; Brett agreed with a flat rate. No fee was adopted.",
+   "figures_as_printed": [
+    "$500",
+    "$1,000"
+   ],
+   "quote": "of $500 or $1,000 to cover inspections"
+  },
+  {
+   "topic": "Leominster bedroom fee comparison",
+   "what_was_recorded": "The minutes report Leominster charges a fee for adding bedrooms to an existing house, cited as a comparison for the ADU discussion.",
+   "figures_as_printed": [
+    "$220/bedroom"
+   ],
+   "quote": "with a fee of $220/bedroom."
+  },
+  {
+   "topic": "Dana Street repair funding",
+   "what_was_recorded": "Andrew noted the Dana Street repair was paid from FY25 money before the end of the fiscal year. No dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "andrew noted the repair was done with fy25 money"
+  },
+  {
+   "topic": "NPDES permit consultant costs",
+   "what_was_recorded": "Wright Pierce was engaged for NPDES submittals; the minutes describe the consultant as expensive and say the mapping charge is figured on billing hours, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "andrew added it is figured on billing"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 7/8/25",
+   "resolution": "approved with correction",
+   "quote": "to accept the minutes from 7/8/25, with correction as noted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Dana Street repairs",
+   "resolution": "reported complete",
+   "quote": "andrew noted the repair was done with fy25 money",
+   "tags": [
+    "sewer repair",
+    "Dana Street"
+   ]
+  },
+  {
+   "topic": "Manhole repair IFB",
+   "resolution": "reported; frames and covers to follow, then interior repairs",
+   "quote": "bill added they did not see anything unusual - just normal looking",
+   "tags": [
+    "manholes",
+    "inflow and infiltration",
+    "IFB"
+   ]
+  },
+  {
+   "topic": "End of Year FY25 adjustment",
+   "resolution": "reported; signatures obtained",
+   "quote": "end of year fy25 adjustment- andrew noted",
+   "tags": [
+    "budget",
+    "fiscal year"
+   ]
+  },
+  {
+   "topic": "ADU fees and inspections",
+   "resolution": "discussed; flat rate agreed in principle; further discussion needed before approval; meeting with Town Counsel August 21",
+   "quote": "of $500 or $1,000 to cover inspections",
+   "tags": [
+    "ADU",
+    "fees",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Easements and possible new connections",
+   "resolution": "discussed; case-by-case policy",
+   "quote": "easements/possible new connections - bill stated a",
+   "tags": [
+    "easements",
+    "new connections"
+   ]
+  },
+  {
+   "topic": "NPDES permit",
+   "resolution": "reported; Wright Pierce engaged for submittals",
+   "quote": "bill sent the commissioners a copy of the d ep letter listing their",
+   "tags": [
+    "NPDES permit",
+    "DEP",
+    "mapping"
+   ]
+  },
+  {
+   "topic": "Old Business: connection outside Sewer Service Area",
+   "resolution": "discussed; requires Town Meeting vote; proponent to appear before Commission first",
+   "quote": "bill got a request for a connection",
+   "tags": [
+    "Town Meeting",
+    "Sewer Service Area"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled Commission activities",
+   "resolution": "listed",
+   "quote": "upcoming scheduled sewer commission activities :",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "NPDES permit",
+  "manholes",
+  "inflow and infiltration",
+  "ADU fees",
+  "easements",
+  "Town Meeting",
+  "Dana Street repair",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

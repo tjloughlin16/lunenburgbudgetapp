@@ -257,5 +257,137 @@
    "at": "2026-10-06T18:07:27Z",
    "cost_usd": 0.209607
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02132025-7023",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/architectural-preservation-district-commission/2025-02-13-minutes-7023.txt",
+   "path": "sources/meetings/architectural-preservation-district-commission/2025-02-13-minutes-7023.pdf"
+  },
+  "official_sha256": "bf995d7fc248733fd46b579ca79a42d63690f0abc259f369677a0b1dc790bea4",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the $22 million figure, on there being no votes or transfers, and on the four people present. The official minutes are a thin summary and omit the $5 million phased alternative, the 14,000 sq ft addition and all three discussion outcomes, which appear only in ours.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 0,
+   "discrepancy": 0,
+   "only_in_ours": 5,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "$22 million project cost",
+    "ours": "Municipal building project (Town Hall/Ritter addition): $22 million",
+    "official": "large price tag of $22 million.",
+    "note": "Both records give the same $22 million figure for the municipal building project.",
+    "t": 120
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Phased alternative of $5 million",
+    "ours": "Phased alternative: $5 million",
+    "official": "",
+    "note": "The official minutes do not mention a $5 million phased alternative; check the recording at this point.",
+    "t": 496
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Addition size of 14,000 square feet",
+    "ours": "Addition size: 14,000 square feet",
+    "official": "",
+    "note": "The official minutes do not record the addition's size.",
+    "t": 887
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair will voice opposition to the building project as a private individual",
+    "ours": "The chair will voice any opposition to the building project as a private individual, not on behalf of the APDC.",
+    "official": "",
+    "note": "The official minutes record no decisions, so this is only in ours. It is a stated intention, not a vote.",
+    "t": 1338
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Merger first, district expansion later",
+    "ours": "Members were fine pursuing the merger first and any district expansion or authority changes separately later.",
+    "official": "",
+    "note": "The official minutes list no decisions and no merger discussion, so this appears only in ours.",
+    "t": 2304
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair to check bylaw markup for membership-expertise language",
+    "ours": "The chair will check the bylaw markup to make sure the membership-expertise language is kept, and will report back on counsel's response.",
+    "official": "",
+    "note": "The official minutes record no bylaw follow-up, so this appears only in ours.",
+    "t": 2786
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Windows included in the project if funded",
+    "ours": "",
+    "official": "large price tag of $22 million.",
+    "note": "The official summary says windows are included if the project is funded; our minutes do not mention this.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "none",
+    "official": "none",
+    "note": "Neither record has a non-procedural vote.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers",
+    "ours": "",
+    "official": "none",
+    "note": "Neither record has a transfer.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: William Lloyd",
+    "ours": "William (member)",
+    "official": "present: chairman sculimbrene, lloyd, mcgrath, lockwood",
+    "note": "Same person. Official lists him as Clerk, ours as member.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Nathan Lockwood",
+    "ours": "Nathan (member)",
+    "official": "present: chairman sculimbrene, lloyd, mcgrath, lockwood",
+    "note": "Same person; ours gives first name only.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Richard McGrath",
+    "ours": "Richard (member)",
+    "official": "present: chairman sculimbrene, lloyd, mcgrath, lockwood",
+    "note": "Same person; ours gives first name only.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Chair",
+    "ours": "Chair (name not captioned) (chair)",
+    "official": "present: chairman sculimbrene, lloyd, mcgrath, lockwood",
+    "note": "Official names the chair as Anthony Sculimbrene; ours did not caption the name. The same four people are present in both.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:32:35Z",
+   "cost_usd": 0.22383499999999998
+  }
  }
 }

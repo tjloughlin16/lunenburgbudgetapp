@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2025-05-08",
  "docid": "7210",
@@ -12,23 +12,271 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from March 27, 2025, April 3, 2025, and April 24, 2025",
+   "motion": "Approve the minutes of March 27, April 3 and April 24, 2025.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from march 27, 2025, april 3, 2025, and april 24, 2025, by ana lockwood, seconded by tom gray. roll call vote. jean russell aye, jay simeone aye, ana lockwood aye, tanya dall aye, tom gray aye, chris menard aye."
+   "quote": "there was a motion to approve the minutes from march 27, 2025, april 3, 2025, and april 24, 2025, by ana lockwood, seconded by tom gray."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray. roll call vote. jean russell aye, jay simeone aye, ana lockwood aye, tanya dall aye, tom gray aye, chris menard aye."
+   "quote": "there was a motion to adjourn by ana lockwood, seconded by tom gray. roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.089272
+ "note": "Text extract of the minutes, two pages-worth of prose with no scan noted; readable throughout. Both votes are roll calls where every listed member is recorded as aye, but the minutes print no tally, so outcome is recorded as \"passed\" rather than a count. Mike Rupp appears in the attendance header but is not named in any vote or discussion. No dollar figures are printed anywhere in this meeting, so figures_as_printed is empty throughout and no transfers appear. The public comment at item 4 is by a Committee member (Ana Lockwood), not a member of the public; item 12 records no public comments. The new Superintendent (Dr. Jodi Fortuna) and the Town Manager are mentioned but did not take part, so they are not listed as attendees. Attendance for Jay Simeone is status remote per the \"(Zoom)\" tag in the header, which is split across a line break in the source.",
+ "cost_usd": 0.01597487,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell (zoom), clerk tom gray,"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair (attended by Zoom)",
+   "status": "remote",
+   "quote": "vice chair jean russell (zoom)"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell (zoom), clerk tom gray,"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall, committee member ana lockwood,"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall, committee member ana lockwood,"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member mike rupp, committee member jay"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member (attended by Zoom, per attendance header)",
+   "status": "remote",
+   "quote": "jay simeone agrees and states it is"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee agreed to hold one meeting for the months of June and July (no vote recorded).",
+   "quote": "the committee agrees to hold one meeting for the months of june and july."
+  },
+  {
+   "decision": "Chair Chris Menard will speak to the Town Manager about a meeting with the new Superintendent once her contract is complete and she is on board.",
+   "quote": "chris menard will speak to the town manager and inquire about"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Post Town Meeting articles",
+   "what_was_recorded": "Residents found the three large expensive articles overwhelming; a member suggested staggering or breaking them into multiple town meetings, and another said additional money articles are hard to pass given the schools' budgetary impact.",
+   "quote": "jean russell heard from several residents that the three large expensive articles were overwhelming.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "School budgetary impact on money articles",
+   "what_was_recorded": "A member said it is difficult to pass additional money articles given the severe budgetary impact of the schools.",
+   "quote": "difficult to pass any additional money articles with the severe budgetary",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY27 budget process",
+   "what_was_recorded": "Members discussed starting FY27 department budget work now, with predictable categories including new growth, salary and Chapter 7 identified in advance.",
+   "quote": "chris menard confirms there are categories that are predictable including new growth,",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Self-sustained programs",
+   "what_was_recorded": "The Chair suggested the Committee review whether self-sustained programs are truly self-sustained.",
+   "quote": "chris menard suggests the committee should review if self-sustained programs are truly self-sustained.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Debt projections",
+   "what_was_recorded": "The Chair pulled together debt projections and asked members to review the data; no figures are printed in the minutes.",
+   "quote": "chris menard pulled together debt projections and suggested members",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Brooks House disposition",
+   "what_was_recorded": "A member suggested selling the Brooks House as a house rather than as commercial office space; no price or figure was recorded.",
+   "quote": "tom gray suggests selling the brooks house as a house as opposed to commercial office space.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Vendor seeking dunk tank volunteers for the fair",
+   "speaker": "Ana Lockwood",
+   "quote": "ana lockwood was contacted by a vendor partaking in the fair on saturday."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "there were no announcements.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (vendor request for dunk tank volunteers)",
+   "resolution": "no action",
+   "quote": "ana lockwood was contacted by a vendor partaking in the fair on saturday.",
+   "tags": [
+    "public comment",
+    "fair"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director Reports",
+   "resolution": "no action",
+   "quote": "there were no reports for the town manager or the finance director.",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Post Annual Town Meeting discussion",
+   "resolution": "discussed, no action",
+   "quote": "a. post annual town meeting discussion and recommendations",
+   "tags": [
+    "town meeting",
+    "elections"
+   ]
+  },
+  {
+   "topic": "FY27 budget process and improvements",
+   "resolution": "discussed; suggestions made, no action recorded",
+   "quote": "b. fy27 budget process and improvements",
+   "tags": [
+    "FY27 budget",
+    "process"
+   ]
+  },
+  {
+   "topic": "Summer schedule and focus areas",
+   "resolution": "approved: one meeting for June and July",
+   "quote": "c. summer schedule and focus areas",
+   "tags": [
+    "schedule",
+    "meetings"
+   ]
+  },
+  {
+   "topic": "2025 Budget Task Force Recommendations",
+   "resolution": "discussed, debt projections to be reviewed",
+   "quote": "a. 2025 budget task force recommendations",
+   "tags": [
+    "debt",
+    "Brooks House",
+    "Turkey Hill",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Minutes of March 27, April 3 and April 24, 2025",
+   "resolution": "approved",
+   "quote": "8. minutes (3/27, 4/3, 4/24)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports (Municipal Building Design Committee)",
+   "resolution": "discussed, no action",
+   "quote": "tom gray states he is unsure if the municipal building design committee will remain",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Actions and Topics for Future Meetings",
+   "resolution": "request noted; committee assignments to be reviewed",
+   "quote": "10. actions and topics for future meetings",
+   "tags": [
+    "future meetings",
+    "committee assignments"
+   ]
+  },
+  {
+   "topic": "Important Dates and Upcoming Meetings",
+   "resolution": "no action",
+   "quote": "a. town election, may 17 7:00-5:00",
+   "tags": [
+    "elections",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (second period)",
+   "resolution": "no action; no public comments",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned",
+   "quote": "the meeting closed at 8:03 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Lunenburg",
+  "Finance Committee",
+  "FY27 budget",
+  "budget process",
+  "town meeting",
+  "Brooks House",
+  "Turkey Hill",
+  "debt",
+  "school budget",
+  "minutes approval",
+  "committee governance",
+  "Zoom participation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

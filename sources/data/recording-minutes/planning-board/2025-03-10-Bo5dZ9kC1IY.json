@@ -428,5 +428,214 @@
    "at": "2026-10-06T18:02:07Z",
    "cost_usd": 0.21532099999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03102025-7093",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-03-10-minutes-7093.txt",
+   "path": "sources/meetings/planning-board/2025-03-10-minutes-7093.pdf"
+  },
+  "official_sha256": "da1dad6ff862299ca6a926f30adb746d4f12474eec50722e6bdfac02cc9618ae",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the continuations, the $1,000 peer review, the standard-conditions deferrals and most attendees. Most of our votes are marked 'not audible', so the official minutes are the only record of those outcomes. The thing to check first is the 255 Sunny Hill ANR tally: ours says 3-1 and the official minutes say 3-0-1 with M. Allison recorded as 'no'.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 5,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Master Plan Steering Committee appointee name",
+    "ours": "Appoint Mr scalabrini to the open at-large position on the master plan steering committee — not audible",
+    "official": "motion: t. willsmer, approve a. sculimbrene for an open at -large position on the mpsc.",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Same appointment with a misheard surname. Our minutes record no outcome, and the official minutes say it passed unanimously.",
+    "t": 346
+   },
+   {
+    "kind": "discrepancy",
+    "about": "255 Sunny Hill Road ANR vote tally",
+    "ours": "Endorse the ANR for 255 Sunny Hill Road — passed 3-1 (chair said approved 3 to one)",
+    "official": "t. willsmer, to endorse the anr for 255 sunny hill rd.",
+    "note": "Ours is 3-1 and the official is 3-0-1 with M. Allison recorded as 'no'. The official tally also contradicts itself, since '0' no votes sits beside a 'no'. Check the recording at this timestamp for how Allison voted and whether anyone abstained.",
+    "t": 579
+   },
+   {
+    "kind": "discrepancy",
+    "about": "494 Electric Ave 'determine de minimis' vote",
+    "ours": "Determine that the 494 Electric Avenue canopy is a de minimis change — not audible",
+    "official": "",
+    "note": "Ours records two separate votes, a determination and then an approval. The official minutes record only the approval. Check whether a separate determination vote was taken.",
+    "t": 1038
+   },
+   {
+    "kind": "agree",
+    "about": "494 Electric Ave de minimis approval",
+    "ours": "Approve the de minimis change for 494 Electric Avenue as presented — not audible",
+    "official": "motion: m. allison, approve the de mininmis change as -presented.",
+    "note": "Same motion. Ours has no audible outcome, and the official minutes say it passed unanimously.",
+    "t": 1080
+   },
+   {
+    "kind": "agree",
+    "about": "711 Mass Ave peer review requirement",
+    "ours": "Require $1,000 peer review funds from the 711 Mass Ave applicant for stormwater design review — not audible",
+    "official": "motion: m. allison, require $1,000 from applicant for peer review of amended stormwater design.",
+    "note": "Same motion and the same amount. Ours has no audible outcome, and the official minutes say it passed unanimously.",
+    "t": 1778
+   },
+   {
+    "kind": "agree",
+    "about": "Peer review figure, 711 Mass Ave",
+    "ours": "Peer review funds, 711 Mass Ave: $1,000",
+    "official": "require $1,000 from applicant for peer review of amended stormwater design.",
+    "note": "The figure is the same in both records.",
+    "t": 1738
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 711 Mass Ave to March 24",
+    "ours": "Continue 711 Mass Ave de minimis change to March 24 at 6:05 — not audible",
+    "official": "motion: a. reid, continue this item to 2025 -03-24.",
+    "note": "Same continuation to 24 March. Ours labels the item a de minimis change and the official calls it the SPA item, which looks like the same agenda item.",
+    "t": 1926
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 494 Electric Ave hearing",
+    "ours": "Continue the 494 Electric Avenue public hearing to March 24 at 6:05 p.m. — not audible",
+    "official": "t. willsmer, to continue the public hearing for 494 electric ave to 2025 -03-24 at 6:05 p.m.",
+    "note": "Same item, date and time.",
+    "t": 4839
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 994 Northfield Rd hearing",
+    "ours": "Continue 994 Northfield Road site plan hearing to March 24 at 6:05 p.m. — not audible",
+    "official": "t. willsmer, to continue the public hearing for 994 northfield rd to 2025 -03-24 at 6:05 p.m.",
+    "note": "Same item, date and time.",
+    "t": 4924
+   },
+   {
+    "kind": "caption_error",
+    "about": "Electric Ave stormwater hearing continuation, address",
+    "ours": "Continue the 23 Electric Avenue stormwater hearing to March 24 at 6:05 p.m. — not audible",
+    "official": "t. willsmer, to continue the public hearing for 213 electric ave to 2025 -03-24 at 6:05 p.m.",
+    "official_reading": "213 Electric Ave",
+    "note": "The date and time are identical, so '23' is most likely a mishearing of '213'. This is an inference, so check the address against the agenda.",
+    "t": 6486
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "UMass emergency center figure",
+    "ours": "UMass standalone emergency center: $9 million",
+    "official": "",
+    "note": "Only our minutes carry this figure; it appears to be remarks during discussion, not a budget item.",
+    "t": 10611
+   },
+   {
+    "kind": "discrepancy",
+    "about": "494 Electric Ave next-step document",
+    "ours": "The land use director and applicant's counsel will draft a decision for 494 Electric Ave with special conditions (access easement to town, six-month review, legal-rights condition) for the next meeting.",
+    "official": "c. reilly will workshop draft agreement",
+    "note": "Ours describes a draft decision with named special conditions, and the official minutes describe a draft agreement with J. Avini. Check the recording to see whether this is one document or two.",
+    "t": 4753
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "23 Electric Ave test-pit condition",
+    "ours": "23 Electric Ave: a special condition on construction-time test pits will be drafted for the next meeting.",
+    "official": "",
+    "note": "The official minutes record no test-pit condition. The address may be the 213 Electric Ave item.",
+    "t": 6464
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Standard conditions on next agenda and 2021 SOPs",
+    "ours": "A motion and vote on updated standard conditions will go on the next agenda; staff to circulate three sets of standard conditions.",
+    "official": "",
+    "note": "The official minutes mention the three sets of standard conditions only as the reason for deferring decisions. They record no commitment to a next-agenda vote, and nothing about the 2021 draft standard operating procedures.",
+    "t": 7660
+   },
+   {
+    "kind": "agree",
+    "about": "Decisions signed and deferred",
+    "ours": "Board signed the 801 Northfield and 110 Pleasant decisions; the Goodrich and Sunny Hill stormwater decisions were not signed pending standard conditions.",
+    "official": "deferred the decisions for 558 / 560 goodrich st & 255 sunny hill rd pending review of the 3 sets of scs",
+    "note": "Both records say 801 Northfield and 110 Pleasant were done and that Goodrich and Sunny Hill were held pending the standard conditions.",
+    "t": 8682
+   },
+   {
+    "kind": "agree",
+    "about": "ADU and flood plain zoning amendments",
+    "ours": "ADU and flood plain zoning language will go forward; notices to affected flood plain owners will be sought.",
+    "official": "c. reilly will attend 2025-03-11 select board meeting to present",
+    "note": "Same topic. The official minutes add the 11 March Select Board presentation, and ours adds the notices to flood plain owners.",
+    "t": 10040
+   },
+   {
+    "kind": "caption_error",
+    "about": "Land use director surname",
+    "ours": "Mr Riley (Chris) (land use director / town planner)",
+    "official": "christopher reilly - land use director",
+    "official_reading": "Christopher Reilly",
+    "note": "Misheard surname for the same person.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member surname McLeod",
+    "ours": "Mr McLoud (Glenn) (member (arrived late))",
+    "official": "matthew allison* , glenn mcleod*.",
+    "official_reading": "Glenn McLeod",
+    "note": "Misheard surname. Both records have him absent for part of the meeting.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member surname Reid",
+    "ours": "Mr Reed (member)",
+    "official": "amanda reid (clerk), matthew allison*",
+    "official_reading": "Amanda Reid",
+    "note": "Misheard surname for the same member.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Members Allison, Willsmer and staff Logan",
+    "ours": "Mr Allison (Matt Allison) (member); Tim (member); Logan (staff)",
+    "official": "matthew brenner (chair), timothy willsmer",
+    "note": "Allison, Tim (Timothy Willsmer) and Logan (Logan O'Connell, admin asst.) match the official list.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair named Matthew Brenner",
+    "ours": "Chair (acting board chair, unnamed) (chair)",
+    "official": "matthew brenner (chair), timothy willsmer",
+    "note": "Our minutes could not name the chair. The official minutes name Matthew Brenner as present and chairing.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicants, representatives and public speakers",
+    "ours": "",
+    "official": "atty. jeff avini presented for applicant d&a lunenburg, llc.",
+    "note": "The official minutes list applicants' representatives and public commenters, such as Avini, Marchetti, Sheehan and Pease. Our attendee list has none of them.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:30:04Z",
+   "cost_usd": 0.3356844
+  }
  }
 }

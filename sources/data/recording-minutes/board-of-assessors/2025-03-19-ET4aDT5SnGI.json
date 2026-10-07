@@ -371,5 +371,174 @@
    "at": "2026-10-06T18:00:09Z",
    "cost_usd": 0.21210500000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03192025-7109",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2025-03-19-minutes-7109.txt",
+   "path": "sources/meetings/board-of-assessors/2025-03-19-minutes-7109.pdf"
+  },
+  "official_sha256": "ada14dc42cad93b8fe9e953701a40bc1f8bd0bc15f0fe50c5127d02bf082ea50",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the attendees, the website-schedule vote, the $175,000 overlay and the April 2 agenda item. Our minutes carry many more figures and decisions than the official summary. The main thing to check is the executive-session minutes release vote (March 12), which our minutes record as passed and the official minutes do not mention.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 1,
+   "only_in_ours": 6,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to put the inspection/appraisers schedule on the website",
+    "ours": "Allow the principal assessor to put the cyclical inspection schedule on the website when completed. — passed (all in favor, no count)",
+    "official": "there was a motion to add the appraisers schedule to the website once a schedule has been created by sarah cammer, seconded by john rabbitt. all in favor.",
+    "note": "Same motion and outcome; the official text says the schedule is 'created by sarah cammer' while ours says the principal assessor posts it, so check who is responsible for the schedule.",
+    "t": 827
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to release March 12 executive session minutes",
+    "ours": "Approve the March 12 executive session minutes for release. — passed (all in favor, no count)",
+    "official": "",
+    "note": "Our minutes record a passed vote that the official minutes do not mention; check the recording at about 934s and whether the official minutes omitted it.",
+    "t": 934
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Motion on lien holder contacted first, withdrawn",
+    "ours": "Amend the deferral process so the lien holder is contacted first. — not audible (seconded, then motion and second withdrawn at about 5993; no vote taken)",
+    "official": "",
+    "note": "The official minutes do not record this motion or its withdrawal; they only say the chapter liens letter discussion will continue.",
+    "t": 5391
+   },
+   {
+    "kind": "agree",
+    "about": "Liens/deferral discussion continues at a later agenda",
+    "ours": "The lien-holder-first motion was withdrawn and the deferral process will be discussed further next meeting.",
+    "official": "this discussion will continue once this topic has been added to the agenda.",
+    "note": "Both say the liens/deferral discussion continues; the official minutes give no timing, ours says next meeting.",
+    "t": 5993
+   },
+   {
+    "kind": "agree",
+    "about": "FY2026 overlay amount",
+    "ours": "FY2026 overlay: 175,000, $1,000",
+    "official": "the assessors office received an email from ezequiel ayala confirming that the overlay amount of $175,000 has been approved.",
+    "note": "Both give $175,000; the extra '$1,000' in ours has no counterpart in the official minutes.",
+    "t": 4212
+   },
+   {
+    "kind": "caption_error",
+    "about": "Senior exemption income limit for head of household",
+    "ours": "Senior exemption income limits: 72,000, 91, 109,000, 69,000, 86,000, 103,000",
+    "official": "the proposed limits of $72,000 for single person, $91,000 if an individual is the head of household, and $109,000 for joint or married.",
+    "note": "'91' is the head-of-household limit $91,000 misheard.",
+    "official_reading": "$91,000",
+    "t": 1744
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Second set of income limits (69,000, 86,000, 103,000)",
+    "ours": "69,000, 86,000, 103,000",
+    "official": "",
+    "note": "The official minutes give only the $72,000/$91,000/$109,000 set; check the recording to see whether these were the current limits or another town's.",
+    "t": 1744
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Vision Appraisal contract, callback fees, asset limit, other-town maximum, past oversight",
+    "ours": "Vision Appraisal cyclical inspection contract: 500, $500; Vision callback visit charges: $6 per visit; Senior exemption asset limit: 275; Another town's exemption maximum: 2,730, 64, 80, 96; Past assessor-office oversight: $1.3 million",
+    "official": "",
+    "note": "None of these figures appear in the official minutes, which are a shorter summary.",
+    "t": 424
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board agreed senior income limits seem high",
+    "ours": "",
+    "official": "the board agrees that these numbers seem high.",
+    "note": "Our minutes do not record this conclusion on the proposed limits.",
+    "t": 1744
+   },
+   {
+    "kind": "agree",
+    "about": "Organizational metrics topic on next agenda / April 2",
+    "ours": "Organizational performance metrics will stay on the April 2 agenda.",
+    "official": "this topic will be added to the next agenda and more discussion will take place on april 2, 2025.",
+    "note": "Both put the metrics topic on the agenda with discussion on April 2; wording differs slightly (stay vs be added).",
+    "t": 2911
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "April 16 meeting and senior exemption review on April 2",
+    "ours": "Next meeting set for April 2 to review the senior exemption process and numbers; another is April 16.",
+    "official": "",
+    "note": "The official minutes mention April 2 only for the metrics discussion, not April 16 or the senior exemption review.",
+    "t": 2538
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assessor reorganization concern put on next agenda",
+    "ours": "The assessor reorganization concern, with the lead assessor reporting to the finance director, will be put on the next agenda.",
+    "official": "",
+    "note": "The official minutes do not mention the reorganization or reporting-line concern.",
+    "t": 2826
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Clause 41 and 17 warrant article item dropped",
+    "ours": "The Clause 41 and 17 warrant article item will be dropped from the next agenda and revisited before town meeting.",
+    "official": "",
+    "note": "This decision does not appear in the official minutes.",
+    "t": 4424
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brian leond",
+    "official": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt",
+    "note": "Misheard surname.",
+    "official_reading": "Brian Laffond",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair name",
+    "ours": "Sarah Cameron",
+    "official": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt",
+    "note": "Misheard surname.",
+    "official_reading": "Sarah Cammer",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clerk name",
+    "ours": "John rabbit (member (arrived late))",
+    "official": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt",
+    "note": "Misspelled surname; the official minutes list him as present without noting a late arrival.",
+    "official_reading": "John Rabbitt",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal assessor name",
+    "ours": "Linda (principal assessor (addressed as Linda))",
+    "official": "principal assessor lynda mcquade",
+    "note": "First name spelled differently; the surname was not caught in captions.",
+    "official_reading": "Lynda McQuade",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:27:34Z",
+   "cost_usd": 0.24655700000000003
+  }
  }
 }
