@@ -385,5 +385,185 @@
    "at": "2026-09-27T02:38:53Z",
    "cost_usd": 0.191516
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04272026-7779",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-04-27-minutes-7779.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-04-27-minutes-7779.pdf"
+  },
+  "official_sha256": "072647a43213fff53fd4b8a3aa2a6c01111aebce17cd95c9dc404b48cc491314",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the main TC Pacios figures ($600,000 roof work, about $1,000,000 with the boiler, $30M full renovation, $300,000 2024 roof appropriation) and on the May 18 next meeting. They differ on who will meet the Town Manager about the survey, and on several decisions in ours (Google Form, added survey question, charter reaffirmation) that the official minutes do not record; neither record shows a non-procedural vote.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 1,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Dave Blad (chair)",
+    "official": "David Blatt",
+    "official_reading": "David Blatt",
+    "note": "Same person, surname misheard by the captions.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Members present",
+    "ours": "Brian, Laura, Tom, Greg, Tony / Anthony (members) plus the chair",
+    "official": "Brian Lehtinen, Tom Gray, David Blatt, Greg Roy, Anthony",
+    "note": "The six attendees match; ours has first names only (Anthony Sculumbrine and Laura Brzozoski in the official list).",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "Members absent: Kristina Masaitis, Matthew Brenner",
+    "note": "Our minutes list no absences.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "TCP roof/gym/food pantry cost",
+    "ours": "TC Pacios roof/gym/food pantry section renovation cost: $600,000 range",
+    "official": "pantry/restrooms ~ $600,000 (rounded); replacing leaking boiler could push total",
+    "note": "Same ~$600,000 estimate.",
+    "t": 239
+   },
+   {
+    "kind": "agree",
+    "about": "Boiler plus roof total",
+    "ours": "TC Pacios boiler replacement plus roof section: close to a million dollars",
+    "official": "toward ~$1,000,000.",
+    "note": "Same figure.",
+    "t": 260
+   },
+   {
+    "kind": "agree",
+    "about": "Original full renovation cost",
+    "ours": "Original TCP full renovation plan (pre-COVID): 30 million bucks, $30 million",
+    "official": "(~$30M for full modernization years earlier)",
+    "note": "Same figure.",
+    "t": 1134
+   },
+   {
+    "kind": "agree",
+    "about": "2024 roof appropriation",
+    "ours": "TC Pacios roof repair appropriation, 2024 special town meeting: $300,000",
+    "official": "(~$300,000) were not used after further assessment identified additional",
+    "note": "Same amount; the official minutes add that it went unused, which ours does not state.",
+    "t": 1548
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Community center portion of TCP, $600,000",
+    "ours": "Community center portion of TC Pacios: $600,000",
+    "official": "",
+    "note": "Not in the official minutes, which give only the roof-repair $600,000.",
+    "t": 362
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cumulative spending on TCP/Ritter studies",
+    "ours": "Cumulative spending on TCP/Ritter studies: close to or if not over a half million",
+    "official": "",
+    "note": "The official minutes mention repeated prior studies but give no total.",
+    "t": 1030
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "PAC relocation cost in prior $26 million project",
+    "ours": "PAC relocation cost within prior $26 million building project: $26 million debacle project, five or six million",
+    "official": "",
+    "note": "Not in the official minutes. The official minutes say only that the PAC will rent space at Fitchburg Center.",
+    "t": 2684
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Override tiers",
+    "ours": "Override tiers: tier two, tier three, 4 million bucks",
+    "official": "",
+    "note": "The official minutes mention only that the Town Manager was busy with the budget/override.",
+    "t": 2955
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who meets the Town Manager about the survey",
+    "ours": "The chair will meet in person with the town manager next week to finalize and push forward the town hall/facilities survey.",
+    "official": "Tom committed to meet with Town Manager next week to move survey forward.",
+    "note": "Ours names the chair; the official minutes name Tom, and separately say \"Action: Dave to finalize and send survey draft.\" Check the recording at this point.",
+    "t": 198
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Survey question on TCP use",
+    "ours": "The committee agreed to add a survey question asking residents how they use TC Pacios (storage, functions, voting) and where those uses would go if it closes.",
+    "official": "Logistical items if TCP closed: long-term storage and voting functions",
+    "note": "The official minutes discuss relocating storage and voting but record no agreement to add a survey question. Check whether the committee actually decided this.",
+    "t": 2602
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Google Form for survey",
+    "ours": "Laura offered to convert the chair's draft survey document into a Google Form so responses can be compiled in a spreadsheet; the chair agreed to send her the document.",
+    "official": "Town Manager supports doing an electronic survey to allow easy consolidation.",
+    "note": "The official minutes record neither Laura's offer nor the handoff, and say the chair will finalize and send the draft. Check who builds the electronic survey.",
+    "t": 3082
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Committee charter and TCP reuse",
+    "ours": "The committee reaffirmed that its current charter is to investigate consolidating town administrative functions into one building, not to take on TC Pacios reuse as a new project without changing that charter.",
+    "official": "Committee charter requires investigating options to consolidate town administrative",
+    "note": "The official minutes cite the charter but list \"reuse of portions of TCP\" as an option under consideration, which sits against ours. Check what was said at this point.",
+    "t": 1071
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "The committee set its next meeting for May 18th, keeping the first-and-third-Monday schedule.",
+    "official": "Monday, May 18, 2026",
+    "note": "Same date.",
+    "t": 2792
+   },
+   {
+    "kind": "only_in_official",
+    "about": "TCP groups vacating and PAC renting",
+    "ours": "",
+    "official": "Reported decision: TCP groups to vacate building; PAC to rent space at Fitchburg Center.",
+    "note": "Our minutes have no corresponding decision; it is recorded as reported rather than voted.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Turkey Hill / MSBA application",
+    "ours": "",
+    "official": "Laura reported MSBA application process will begin next cycle (next year).",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Building assessments",
+    "ours": "",
+    "official": "Committee noted free/comprehensive building assessments are underway (public",
+    "note": "Not in our minutes (public safety building done, Turkey Hill pending).",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:17:43Z",
+   "cost_usd": 0.253191
+  }
  }
 }

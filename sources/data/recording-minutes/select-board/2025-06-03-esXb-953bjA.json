@@ -551,5 +551,292 @@
    "at": "2026-09-27T18:24:53Z",
    "cost_usd": 0.20606600000000003
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06032025-7247",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-06-03-minutes-7247.txt",
+   "path": "sources/meetings/select-board/2025-06-03-minutes-7247.pdf"
+  },
+  "official_sha256": "f30c80353b6d40a2dbee046c33ffe95a84fce5a230b0e915d6666edf9ccf4f46",
+  "coverage": "full",
+  "summary": "The two records agree on nearly every vote, and most of the differences in the appointment votes are misheard names. The one substantive conflict is the budget task force vote, which ours places in FY27 and the town's minutes place in FY26. The town's minutes also record an executive session roll-call vote that ours does not, and ours holds several discussion items and figures the town's minutes lack.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 10,
+   "discrepancy": 3,
+   "only_in_ours": 8,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Progress Pride Flag vote",
+    "t": 1037,
+    "ours": "Move for the town to raise the progress pride flag on Saturday, June 7th, to be taken down Monday, June 30th. — passed unanimously",
+    "official": "Motion by Clerk Nuzzolo that the Town raise the Progress Pride Flag on Saturday, June 7 and that it be taken down on June 30, 2025.",
+    "note": "Same motion, dates and outcome (3-0-0)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Historical Commission appointee name",
+    "t": 1417,
+    "ours": "Appoint Mr. Laxo (Lassco/Yasco) to the Historical Commission, term to expire June 30, 2028. — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to appoint William Lakso to the Historical Commission for a term to expire June 30, 2028.",
+    "note": "Same vote, term and unanimous outcome; only the surname was misheard.",
+    "official_reading": "William Lakso"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Agricultural Commission reappointees",
+    "t": 2364,
+    "ours": "Reappoint Jacqueline Chabat and Cara Mlen to the Agricultural Commission, terms to expire June 30, 2028. — passed unanimously",
+    "official": "reappoint Jacqueline Chabot and Kira McClellan to the Agricultural Commission for terms to expire June 30, 2028.",
+    "note": "Same vote and term; the names were misheard.",
+    "official_reading": "Jacqueline Chabot and Kira McClellan"
+   },
+   {
+    "kind": "caption_error",
+    "about": "APDC reappointee surname",
+    "t": 2414,
+    "ours": "Reappoint Anthony Scullenbriny and William Lloyd to the APDC, term to expire June 30, 2028. — passed unanimously",
+    "official": "reappoint Anthony Sculimbrene and William Lloyd to the APDC for terms to expire June 30, 2028.",
+    "note": "Same vote; the surname was misheard.",
+    "official_reading": "Anthony Sculimbrene"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Green Communities Committee: appointment or reappointment",
+    "t": 2600,
+    "ours": "Appoint Matthew Snyder to the Green Communities Committee, term to expire June 30, 2028. — passed unanimously",
+    "official": "Motion by Member Lehtinen to reappoint Matthew Snyder to the Green Communities",
+    "note": "Ours says appoint and the official minutes say reappoint; check the recording to see which word the motion used."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Zoning Board of Appeals reappointees",
+    "t": 2653,
+    "ours": "Reappoint Alfred Grall, Donald Gurnie (associate), and Anthony Niccastro (associate) to the Zoning Board of Appeals, term to expire June 30, 2028. — passed unanimously",
+    "official": "reappoint Alfred Gravelle, Donald Gurney (associate), and Anthony Nicastro (associate) to the Zoning Board of Appeals for terms to expire June 30, 2028.",
+    "note": "Same vote; three surnames were misheard.",
+    "official_reading": "Alfred Gravelle, Donald Gurney, Anthony Nicastro"
+   },
+   {
+    "kind": "agree",
+    "about": "Bylaw Review Committee: Jen Duffy",
+    "t": 2838,
+    "ours": "Appoint Jen Duffy to the Bylaw Review Committee. — passed unanimously",
+    "official": "Motion by Member Lehtinen to appoint Jennifer Duffy to the Bylaw Review Committee.",
+    "note": "Same appointment and outcome (3-0-0)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Bylaw Review Committee: chair's name",
+    "t": 2868,
+    "ours": "Appoint Caesar Nolo to the Bylaw Review Committee. — passed unanimously",
+    "official": "Motion by Member Lehtinen to appoint Caesar Nuzzolo to the Bylaw Review Committee.",
+    "note": "Same vote; the chair's surname was misheard.",
+    "official_reading": "Caesar Nuzzolo"
+   },
+   {
+    "kind": "agree",
+    "about": "Town Manager's appointments ratified",
+    "t": 3086,
+    "ours": "Appoint all individuals as presented by the town manager (annual department head, board and police appointments). — passed unanimously",
+    "official": "Motion by Member Lehtinen to ratify the Town Manager’s appointments as presented by the Town Manager (attached).",
+    "note": "Same vote and outcome; the official minutes exclude the Americans with Disabilities Committee."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation assistant name",
+    "t": 3105,
+    "ours": "Ratify the town manager's appointment of Michael Gail as administrative assistant to conservation. — passed unanimously",
+    "official": "ratify the Town Manager’s appointment of Michael Gale as Administrative Assistant – Conservation.",
+    "note": "Same vote; the surname was misheard.",
+    "official_reading": "Michael Gale"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Seasonal lifeguard name",
+    "t": 3184,
+    "ours": "Ratify the town manager's appointment of Briana Bowser as seasonal lifeguard. — passed unanimously",
+    "official": "ratify the Town Manager’s appointment of Brionna Bowser as Seasonal Lifeguard.",
+    "note": "Same vote; the first name was misheard.",
+    "official_reading": "Brionna Bowser"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Parks Commission clerk name",
+    "t": 3227,
+    "ours": "Ratify the town manager's appointment of Anthony Sessi as board clerk/secretary for the Parks Commission. — passed unanimously",
+    "official": "ratify the Town Manager’s appointment of Anthony Senesi as Board Clerk/Secretary (Parks Commission).",
+    "note": "Same vote; the surname was misheard.",
+    "official_reading": "Anthony Senesi"
+   },
+   {
+    "kind": "agree",
+    "about": "Cash gifts to the Adult Activity Center (vote and amounts)",
+    "t": 3979,
+    "ours": "Approve the cash gifts from the women's club and the friendly seniors for the Lunenburg Adult Activity Center. — passed unanimously",
+    "official": "Motion by Clerk Emkey to accept $500 from the Friendly Seniors and $400 from the Women’s Club for the Lunenburg Adult Activity Center.",
+    "note": "Same vote and outcome; our heard figures '$400, 500' match $400 and $500, though the captions do not say which donor gave which."
+   },
+   {
+    "kind": "agree",
+    "about": "36 police phones declared surplus",
+    "t": 4009,
+    "ours": "Declare 36 police department phones as surplus. — passed unanimously",
+    "official": "Motion Member Lehtinen to declare 36 Police Department phones as surplus.",
+    "note": "Same motion and outcome (3-0-0)."
+   },
+   {
+    "kind": "agree",
+    "about": "Consent to sublease (AT&T under Verizon/Cellco tower lease)",
+    "t": 4130,
+    "ours": "Authorize the chairman to execute the consent to sublease for New Cingular Wireless PCS LLC/AT&T under the Celco/Verizon tower lease. — passed unanimously",
+    "official": "Motion by Clerk Emkey to approve the consent to sublease under the land lease agreement",
+    "note": "Same subject and outcome; ours adds that the chairman is authorized to execute it, which the official motion does not state."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Budget Task Force: fiscal year",
+    "t": 4301,
+    "ours": "Move not to recharge/recreate the budget task force for FY27. — passed unanimously",
+    "official": "Motion by Clerk Emkey to not recharge the Budget Task Force for FY26.",
+    "note": "Both record the same passed vote but name different fiscal years (FY27 vs FY26); check the recording and the agenda title."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Executive session roll-call vote",
+    "ours": "",
+    "official": "Roll Call V ote: Lehtinen – Aye, Emkey – Aye,  Nuzzolo– Aye.",
+    "note": "The town's minutes record a motion to enter executive session on collective bargaining (IBPO Local 353) by roll call (3-0); our minutes list no such vote, so check whether the recording includes it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Friends of the Library sale and gift figures",
+    "t": 619,
+    "ours": "Friends of the Library annual sale and gift: $25, $40 to $50,000",
+    "official": "",
+    "note": "The official minutes mention only the Book and Bake Sale dates, with no dollar figures; these may be misheard captions, so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Historical Commission survey grant $25,000",
+    "t": 1299,
+    "ours": "Historical Commission survey grant (past work): $25,000",
+    "official": "",
+    "note": "The official minutes do not mention a survey grant."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Board of Assessors FY26 figures",
+    "t": 4496,
+    "ours": "Board of Assessors FY26 growth and assessed values: 30 $333,842, 23 million, 400,000",
+    "official": "",
+    "note": "The official minutes give the Assessors' report as counts (13 abutter requests, 132 exemptions, 30 motor vehicle abatements) with no dollar values; the captions are garbled, so check the recording for the dollar figures."
+   },
+   {
+    "kind": "agree",
+    "about": "New applicants referred to board chairs, return June 17",
+    "t": 1831,
+    "ours": "Applicant Brian Venu will be connected with current committee members before returning June 17 to help him choose between Public Access Cable Committee and Historical Commission.",
+    "official": "They were asked to meet with the Chairs of the Boards that they were interested in and to attend a meeting if possible.  Final appointments are anticipated at the Select Board’s June 17, 2025, meeting.",
+    "note": "Same outcome: meet the chairs and return June 17. The names are misheard (Venu for Vienneau, Muzzy for Muzzi), and ours holds more detail on which committees were considered."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Conservation Commission candidates interviewed together June 17",
+    "t": 2455,
+    "ours": "Conservation Commission's four candidates for three seats will all be interviewed together on June 17 rather than split across two meetings.",
+    "official": "",
+    "note": "The official minutes do not mention this scheduling decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Leominster resident's APDC interest",
+    "t": 2394,
+    "ours": "The board declined to consider a Leominster resident's interest in the APDC since they are not a Lunenburg resident.",
+    "official": "",
+    "note": "The official minutes do not mention this."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cultural Council reappointments held off",
+    "t": 2518,
+    "ours": "Cultural Council reappointments held off pending receipt of interest forms from the two current members.",
+    "official": "",
+    "note": "The official minutes do not mention the Cultural Council deferral."
+   },
+   {
+    "kind": "agree",
+    "about": "Sewer bill timing follow-up",
+    "t": 3895,
+    "ours": "Town manager will check on the timing/status of sewer bill mailings and follow up with the board by email.",
+    "official": "the Town Manager will follow up by email regarding the timing of sewer bills now that the Town is fully using MUNIS.",
+    "note": "Same follow-up."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Job Corps/Devens closing letter to legislators",
+    "t": 4352,
+    "ours": "Town manager will look into writing a letter to legislators regarding the Job Corps/Devens closing and the board may consider it further.",
+    "official": "",
+    "note": "The official minutes do not mention Job Corps or Devens."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Farmers market schedule posted to website",
+    "t": 5399,
+    "ours": "Town manager will post the farmers market schedule to the town website.",
+    "official": "",
+    "note": "The official minutes record a resident announcing the monthly market but no Town Manager action to post it."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brian Lehtinen",
+    "ours": "Brian Leighton (also heard as \"Brian Lightning\") (member)",
+    "official": "Member Brian Lehtinen",
+    "note": "The member's surname was misheard.",
+    "official_reading": "Brian Lehtinen"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair Caesar Nuzzolo",
+    "ours": "Caesar Nolo (also heard as \"Mr. Nola\") (chair)",
+    "official": "Chair Caesar Nuzzolo",
+    "note": "The chair's surname was misheard.",
+    "official_reading": "Caesar Nuzzolo"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: 'Missy' as third member",
+    "ours": "Missy (member)",
+    "official": "Clerk Renee Emkey",
+    "note": "Our minutes name a member only as 'Missy' and the official minutes name Renee Emkey as the third member present; check the recording to confirm the speaker is Emkey and not someone else."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Town Manager",
+    "ours": "Jen (town manager)",
+    "official": "Also Present: Jennifer Warren-Dyment, Town Manager",
+    "note": "Same person, given by first name only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "Members Absent: Vice-Chair Amanda Moore and Member Glenn McLeod",
+    "note": "Our minutes do not list absentees."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:29:26Z",
+   "cost_usd": 0.381124
+  }
  }
 }

@@ -344,5 +344,148 @@
    "at": "2026-09-27T12:38:47Z",
    "cost_usd": 0.188104
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08272025-7366",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/master-plan-steering-committee/2025-08-27-minutes-7366.txt",
+   "path": "sources/meetings/master-plan-steering-committee/2025-08-27-minutes-7366.pdf"
+  },
+  "official_sha256": "3e2f6a287c908bf5fe128e8eb2daad1a0a6132a3854810de00c2dc79f87cb769",
+  "coverage": "full",
+  "summary": "The two records agree on the overall shape: neither records a substantive vote, and both treat the minutes follow-up and the info session as next steps. The official minutes are a brief outline, so most of our specific decisions (Oct 22 session, Nov 18 town meeting, Ramy's slides, master list of plans, canceling the next meeting) have no counterpart in them. The thing to check is the two minutes-approval items, where ours and the official record differ on which sets of minutes and on whether they were approved.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 5,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Which minutes Jerry will resend / whether they were approved",
+    "ours": "Jerry will resend the prior two sets of meeting minutes (including the 23rd) this week.",
+    "official": "5. Meeting Minutes Approvals (Jerry forgot to send, will send tonight / tomorrow)",
+    "note": "Ours says Jerry will resend the minutes this week; the official says tonight or tomorrow, and lists July 23 and August 13 under an 'Approvals' heading with no vote recorded either way; check the recording and the next meeting's minutes for whether any approval vote was taken.",
+    "t": 190
+   },
+   {
+    "kind": "agree",
+    "about": "Jerry to send previously approved minutes to town clerk",
+    "ours": "Jerry will send the previously approved, amended meeting minutes to the town clerk this week.",
+    "official": "● Jerry will send previously approved minutes to town clerk",
+    "note": "Same action item; ours adds 'amended' and 'this week'.",
+    "t": 228
+   },
+   {
+    "kind": "agree",
+    "about": "Follow-up with committees on the feedback spreadsheet",
+    "ours": "Kim will send committees another reminder email to get the master-plan feedback spreadsheet onto their September agendas.",
+    "official": "○ Requestor will send another email to the appropriate committees",
+    "note": "Same action; official does not name Kim or the September agendas.",
+    "t": 3388
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Public Q&A info session date and venue",
+    "ours": "A public Q&A info session on the master plan draft will be held at Smoke Stacks on October 22nd at 6:30pm, pending confirmation with the owner.",
+    "official": "● Info session at smokestack roasters discussed and good to go to start planning",
+    "note": "Official mentions the venue and go-ahead to plan but gives no date or time; ours gives October 22 at 6:30pm pending confirmation.",
+    "t": 4377
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Special town meeting date and presentation",
+    "ours": "The master plan draft will be presented at the special town meeting, now set for November 18th.",
+    "official": "",
+    "note": "Official lists 'special town meeting' only in the agenda item title and records no date or decision.",
+    "t": 4402
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Ramy to prepare presentation slides",
+    "ours": "Ramy (the town's planning consultant) will put together the presentation slides for the special town meeting.",
+    "official": "",
+    "note": "No mention of Ramy or slides in the official minutes.",
+    "t": 4504
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Master list of externally required plans",
+    "ours": "Kim will follow up with the town manager to compile a master list of externally required plans (hazard mitigation, housing production plan, spill response plan, etc.) to include in the master plan.",
+    "official": "● Hazard mitigation plan discussed",
+    "note": "Official notes only that the hazard mitigation plan was discussed and 'Need to be re done'; the town manager follow-up and master list are not recorded.",
+    "t": 4801
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Deferring decision on canceling next meeting",
+    "ours": "The committee will wait to decide on canceling the next meeting until after an upcoming call with Ramy.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 5595
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Adjournment motion and roll call vote",
+    "ours": "",
+    "official": "● Tony made a Motion to adjourn. Kim seconded the motion. Roll Call Vote:",
+    "note": "Procedural vote, but the official records an 8-0 roll call; ours records no votes, so a person could confirm whether it was a roll call (only affects attendee confirmation).",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Planning Board representative and guest",
+    "ours": "Tim (member); Matt Burner (Planning Board)",
+    "official": "• Tim Willsmer (Planning Board Representative) - Virtual",
+    "note": "Tim agrees; our 'Matt Burner (Planning Board)' is likely the official's 'Matthew Brenner (Planning Board Chair)' (name misheard)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Planning Board Chair name",
+    "ours": "Matt Burner (Planning Board)",
+    "official": "• Matthew Brenner (Planning Board Chair) - Virtual, joined 6:39 PM",
+    "note": "Same person, name misheard in captions.",
+    "official_reading": "Matthew Brenner"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Council on Aging member name",
+    "ours": "Dub (member (name unclear at roll call))",
+    "official": "• Deb Lincoln (Council on Aging Representative)",
+    "note": "Our 'Dub' is the official's Deb, misheard at roll call.",
+    "official_reading": "Deb Lincoln"
+   },
+   {
+    "kind": "agree",
+    "about": "Remaining attendees",
+    "ours": "Kim (chair); Tony (member); David (member); Glenn (member (also select board liaison)); Jerry (member); Teddy (member (Conservation Commission representative))",
+    "official": "• Kim Duffy (Chair, Member At Large)",
+    "note": "Same six members appear in both; official gives full names (Anthony Sculimbrene, David Niose, Glenn Mcleod, Jerry Reid, Teddy Doucette)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vacant seats",
+    "ours": "",
+    "official": "4. Vacant Seats (Zoning Board of Appeals, Member At Large)",
+    "note": "Official records vacancies for Zoning Board of Appeals and Member At Large seats; ours has nothing on it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "40Y / 40R housing discussion",
+    "ours": "",
+    "official": "● 40Y and 40R exist for the town to help towns build more dense housing was discussed",
+    "note": "Official records the OverUnder discussion summary; ours has no corresponding item."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:07Z",
+   "cost_usd": 0.229055
+  }
  }
 }

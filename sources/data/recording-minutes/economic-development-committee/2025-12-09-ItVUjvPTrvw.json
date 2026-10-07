@@ -333,5 +333,207 @@
    "at": "2026-09-27T11:38:07Z",
    "cost_usd": 0.190148
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12092025-7526",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/economic-development-committee/2025-12-09-minutes-7526.txt",
+   "path": "sources/meetings/economic-development-committee/2025-12-09-minutes-7526.docx"
+  },
+  "official_sha256": "a5278650822a1b40ddc66670b89f090f928b43bb92c4c735d195ebf2c8714c9c",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on attendance, the January 13 next meeting, and the postponement of the MPSC implementation and EDC bylaw items. Our minutes carry every dollar figure and the loan-program detail, which the official minutes summarize only as 'multiple loan programs'. The one thing to know is that the official minutes record a motion to approve the October 14 minutes and a motion to adjourn, and ours record no votes. They also give a 6:56 PM close against our 6:50 target, and they omit the subcommittee.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 7,
+   "discrepancy": 3,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to approve October 14, 2025 minutes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "There was a motion to approve the minutes of October 14, 2025, by Ana Lockwood, \t seconded by Cathy Clark. Joeci Gilchrest aye, Cathy Clark aye, Ana Lockwood aye, \t Jeanne Dupre aye, Judy Dragoslis aye.",
+    "note": "The official minutes record a 5-0 roll-call vote that ours omit; it may have come at the end of the meeting, which our recording might not have captured or classified. Check the recording and the roll call.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Matt Brenner and Glenn McLeod voting/attendance on the minutes vote",
+    "ours": "",
+    "official": "Joeci Gilchrest aye, Cathy Clark aye, Ana Lockwood aye, \t Jeanne Dupre aye, Judy Dragoslis aye.",
+    "note": "Only five members are recorded as voting; the two liaisons (Matt, Glenn) are not in the roll call, while both records list them as present.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Informal subcommittee on bylaw / site-plan streamlining",
+    "ours": "Formed an informal subcommittee of Josie Gilchrist and Kathy Clark (under quorum) to work with Glenn, Matt and Brian Jingris on a draft bylaw addressing a resident's request for a BYOB-type policy at a nail salon, and on streamlining site-plan/permitting requirements.",
+    "official": "",
+    "note": "The decision appears only in ours; the official minutes do not mention a subcommittee. Check the recording near t=4884 and whether the town omitted it.",
+    "t": 4884
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Agenda items 5 and 6 (MPSC implementation, EDC bylaw review) postponement reason",
+    "ours": "Agenda items 5 and 6 (master plan steering committee implementation and EDC bylaw review) were bumped to the January meeting due to expected loss of quorum.",
+    "official": "This topic was postponed and discussion will ideally take place when the Director of\t\t Planning and Economic Development position is filled. ",
+    "note": "Both agree the items were postponed, but the reasons differ: loss of quorum (ours) vs waiting for the Director position to be filled (official). The official also says discussion is postponed until the role is filled, while it lists both items on the January agenda. Check the recording.",
+    "t": 4448
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next EDC meeting set for January 13, starting at 5:30, with a target end time of 6:50.",
+    "official": "January 13th at  530 PM",
+    "note": "Date and start time match; the 6:50 target end time is only in ours.",
+    "t": 4593
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair rearranged the agenda order",
+    "ours": "Chair rearranged the agenda order for time, without a vote, since the chair has authority to skip agenda items.",
+    "official": "",
+    "note": "The official minutes list the items in the original order and do not mention the reordering.",
+    "t": 4366
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "WXLO marketing raffle package",
+    "ours": "WXLO marketing raffle package: $1,500",
+    "official": "",
+    "note": "The official minutes do not mention the raffle package or any dollar figure.",
+    "t": 337
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chamber scholarship program figures",
+    "ours": "Chamber scholarship program: 26 scholarships, $2,000 a year, $52,000",
+    "official": "",
+    "note": "The official minutes do not mention the scholarship program or its figures.",
+    "t": 1136
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chamber microloan, development corporation lending, RBI fund and Fast Track loan figures",
+    "ours": "Chamber microloan program: $150,000, $250,000; Regional Business Investment Fund (RBI): $250,000, 5 to 10 years, up to 25 years, 0 to 3% interest, one job per $20,000; Fast Track loan product: $10,000, 660, two weeks, one year tax returns",
+    "official": "Sandie Cataldo discussed multiple loan programs that are available to small businesses through the lending arm at the Chamber of Commerce. ",
+    "note": "The official minutes describe the loan programs only in general terms with no amounts, terms or products; the figures cannot be compared. Our figures are from captions and unverified.",
+    "t": 1388
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Regional tourism spending",
+    "ours": "Regional tourism spending: just under 500 billion, 500 million",
+    "official": "",
+    "note": "Not in the official minutes. The caption reads 'billion' and 'million' for what is likely one figure; check the recording before quoting.",
+    "t": 983
+   },
+   {
+    "kind": "agree",
+    "about": "Presenters from the North Central Chamber",
+    "ours": "Travis Conan (presenter, director of public affairs, North Central Massachusetts Chamber of Commerce); Sandy Catalo (presenter, manager of economic development, chamber's development corporation)",
+    "official": "Director of Public Affairs, Travis Condon, and the Manager of Economic \t Development, Sandie Cataldo, from the North Central Massachusetts Chamber of \t Commerce were present and provided information. ",
+    "note": "Same two presenters and titles; their names are spelled differently by the captions.",
+    "t": 337
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Travis Condon",
+    "ours": "Travis Conan",
+    "official": "Travis Condon",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Travis Condon",
+    "t": 337
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Sandie Cataldo",
+    "ours": "Sandy Catalo",
+    "official": "Sandie Cataldo",
+    "note": "The captions misheard the name.",
+    "official_reading": "Sandie Cataldo",
+    "t": 337
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Josie Gilchrist (chair)",
+    "official": "Chair Joeci Gilchrest",
+    "note": "The captions misheard the first name, and possibly the surname spelling; the official minutes also spell it 'Gilchrist' once.",
+    "official_reading": "Joeci Gilchrest",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Judy Dragoslis",
+    "ours": "Judy Drosis (member)",
+    "official": "Member Judy Dragoslis",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Judy Dragoslis",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Jeanne Dupre",
+    "ours": "Jean Dupree (member)",
+    "official": "Member Jeanne Dupre",
+    "note": "The captions misheard the name.",
+    "official_reading": "Jeanne Dupre",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Cathy Clark",
+    "ours": "Kathy Clark (member)",
+    "official": "Member Cathy Clark",
+    "note": "The captions rendered the first name as 'Kathy'.",
+    "official_reading": "Cathy Clark",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Glenn McLeod",
+    "ours": "Glenn (member/select board liaison)",
+    "official": "Select Board Representative Glenn McLeod",
+    "note": "Same person; our minutes give only a first name.",
+    "official_reading": "Glenn McLeod",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Josie Gilchrist (chair); Judy Drosis; Anna Lockwood; Kathy Clark; Jean Dupree; Matt (planning board liaison); Glenn (select board liaison)",
+    "official": "Members Present: Chair Joeci Gilchrest, Vice Chair Ana Lockwood, Planning Board Representative Matt Brenner, Member Cathy Clark, Member Judy Dragoslis, Member Jeanne Dupre, Select Board Representative Glenn McLeod",
+    "note": "Seven members in both records, with the same roles; only the spellings differ. Ana is 'Anna' in ours and in one place in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Business overview and Planning Board updates",
+    "ours": "",
+    "official": "Cathy Clark has provided the latest business updates below.",
+    "note": "The official minutes list updates on Conrads, Ruby Donuts, Lufa Farms and others, plus Planning Board and OpenGov news, none of which appears in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Land Use Director position change",
+    "ours": "",
+    "official": "the Land Use Director position has been changed to the Director of Planning and Economic Development as voted at town meeting.",
+    "note": "Our minutes do not mention the title change; the official minutes refer to a town meeting vote but not to a vote at this meeting.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:21:46Z",
+   "cost_usd": 0.242951
+  }
  }
 }

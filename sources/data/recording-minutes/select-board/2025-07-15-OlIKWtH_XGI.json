@@ -546,5 +546,312 @@
    "at": "2026-09-27T13:00:21Z",
    "cost_usd": 0.20314
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07152025-7314",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-07-15-minutes-7314.txt",
+   "path": "sources/meetings/select-board/2025-07-15-minutes-7314.pdf"
+  },
+  "official_sha256": "e5ecca5e53eb1388bffe806a8d14d176f3de7efdc755c2ed2141dab8bc966bc6",
+  "coverage": "full",
+  "summary": "The two records agree on every main vote and on most dollar figures; the differences are mostly caption-misheard names and digits. The one thing to know is that the official minutes record a minutes-approval vote (3-0-1, McLeod abstaining) that ours lacks, and ours records a first Kim Muzzy vote with a 2029 term that the official minutes do not show.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 9,
+   "discrepancy": 5,
+   "only_in_ours": 7,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Toll booth fundraiser vote",
+    "ours": "Approve the toll booth fundraiser request by the Lunenburg Musicares for August 9, 2025, 10 a.m. to 3 p.m. — passed 3 to 1",
+    "official": "The motion passed (3-1-0).",
+    "note": "Same item, date, hours and 3-1 outcome (McLeod nay in the official record).",
+    "t": 299
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of the fundraising group",
+    "ours": "Lunenburg Musicares",
+    "official": "Lunenburg Music Aiders",
+    "note": "Same group, misheard by captions.",
+    "official_reading": "Lunenburg Music Aiders",
+    "t": 299
+   },
+   {
+    "kind": "agree",
+    "about": "Municipal Building Design Committee charge modification",
+    "ours": "Modify the charge of the Lunenburg Municipal Building Design Committee to add an Architectural Preservation District Commission representative and set quorum at four members — passed unanimously",
+    "official": "The motion passed unanimously (4-0-0).",
+    "note": "Same motion (APDC representative, quorum of four) and unanimous outcome.",
+    "t": 7056
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Kim Muzzy Agricultural Commission appointment",
+    "ours": "Appoint Kim Muzzy to the Agricultural Commission, term to expire June 30, 2029 (later found to be the wrong term) — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to appoint Kim Muzzy to the Agricultural Commission for term to expire June 30, 2026.",
+    "note": "Ours records two votes (an initial 2029 term, then a corrected 2026 term); the official minutes record only one vote with the 2026 term. Final outcome agrees; a person should check the recording around t=7178-7220 to confirm the first vote occurred.",
+    "t": 7178
+   },
+   {
+    "kind": "agree",
+    "about": "Kim Muzzy corrected appointment",
+    "ours": "Appoint Kim Muzzy to the Agricultural Commission, corrected term to expire June 30, 2026 — passed unanimously",
+    "official": "The motion passed unanimously (4-0-0).",
+    "note": "Term (June 30, 2026) and unanimous outcome match.",
+    "t": 7220
+   },
+   {
+    "kind": "agree",
+    "about": "Mark Muzzy Stormwater Task Force appointment",
+    "ours": "Appoint Mark Muzzy to the Stormwater Task Force — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to appoint Mark Muzzy to the Stormwater Task Force until the end of the project duration.",
+    "note": "Same appointment, unanimous; official adds the term, ours gives none.",
+    "t": 7327
+   },
+   {
+    "kind": "agree",
+    "about": "Master Plan Steering Committee appointment",
+    "ours": "Appoint Glenn McCloud as the Select Board member to the Master Plan Steering Committee — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to appoint Member McLeod as the Select Board member to the Master Plan Steering Committee.",
+    "note": "Same appointment and unanimous vote; name differs only by caption error.",
+    "t": 7410
+   },
+   {
+    "kind": "agree",
+    "about": "Surplus vehicles and equipment vote",
+    "ours": "Declare police vehicles, DPW vehicles/equipment, and PAC equipment as surplus — passed unanimously",
+    "official": "The motion passed unanimously (4-0-0).",
+    "note": "Same motion and outcome; PAC is PACC in the official record.",
+    "t": 8436
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of April 8 and June 3, 2025 minutes",
+    "ours": "",
+    "official": "Motion by Clerk Emkey to approve the Minutes of April 8, 2025, and June 3, 2025.",
+    "note": "The official minutes record a roll-call vote (3-0-1, McLeod abstaining) that our minutes do not record; check the recording to see whether it was taken and by what count.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Trust fund balances",
+    "ours": "$12,48953, $22,211.58, $22,88722, $10,72546, $8,690.14",
+    "official": "American Legion Poor Fund: $12,489.53",
+    "note": "Same five balances with missing decimal points; the official figures are $12,489.53, $22,211.58, $22,887.22, $10,725.46 and $8,690.14.",
+    "official_reading": "$12,489.53, $22,211.58, $22,887.22, $10,725.46, $8,690.14",
+    "t": 1483
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of the fifth trust fund",
+    "ours": "Lunenburg Post 2838",
+    "official": "Lunenburg Post 283: $8,690.14",
+    "note": "The trailing 8 is a misheard digit; the balance matches.",
+    "official_reading": "Lunenburg Post 283",
+    "t": 1483
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Water/sewer infrastructure cost estimate",
+    "ours": "Future water/sewer infrastructure costs: 30 to 50 to 70 plus million dollars",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3096
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost of redesigning the Ritter/Town Hall plan",
+    "ours": "Hypothetical redesign cost of Ritter/Town Hall plan: $20,000, $200,000",
+    "official": "",
+    "note": "Dollar figures are not in the official minutes.",
+    "t": 4826
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Architect fees and redesign costs",
+    "ours": "Taylor and Burns architect fees already spent / cost of a redesign: $185,000, 75K, under 100, 180,000, 240",
+    "official": "",
+    "note": "The official minutes record no architect fee figures and do not name the firm.",
+    "t": 5705
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 school budget shortfall and Marshall Park request",
+    "ours": "FY26 school budget shortfall and Marshall Park request: $2 million, $12 million",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 5959
+   },
+   {
+    "kind": "agree",
+    "about": "FY25 sewer delinquency total",
+    "ours": "Sewer billing delinquency, FY25: $107,653.99, $14,000, 4.8.1%, $39,420, 15.97%, 29%",
+    "official": "She stated that there is a total of $107,653.99 owed from FY25.",
+    "note": "The $107,653.99 total matches; the other figures and percentages in ours are not in the official minutes, which instead give 115 customers over one quarter and 53 owing all four.",
+    "t": 7664
+   },
+   {
+    "kind": "agree",
+    "about": "Grant writer program funding",
+    "ours": "Grant writer program funding, FY26: $50,000",
+    "official": "The Town Manager stated that $50,000 for the Grant Writer program was included in the FY26 budget.",
+    "note": "Same figure.",
+    "t": 7857
+   },
+   {
+    "kind": "caption_error",
+    "about": "Wallace Park replacement cost",
+    "ours": "Wallace Park fence/play structure damage estimate: $18,000, $3,900.34",
+    "official": "the actual quote for the replacement work is now $30,900.34",
+    "note": "$3,900.34 appears to be a misheard $30,900.34; the $18,000 earlier estimate is not in the official minutes.",
+    "official_reading": "$30,900.34",
+    "t": 7877
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Estimated values of surplus vehicles",
+    "ours": "Estimated values of surplus vehicles and equipment: $1,000, $1,000, $1,000, $1,000, less than $500, less than $500",
+    "official": "a GMC pickup truck with an estimated value of $500, a GMC cabin chassis with an estimated value of $500",
+    "note": "Four $1,000 values agree; the last two are \"less than $500\" in ours and $500 in the official; check the recording at t=8162.",
+    "t": 8162
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Surplus threshold policy",
+    "ours": "No formal surplus-threshold policy was adopted, but the board indicated interest in letting the town manager surplus low-value items without a board vote in the future.",
+    "official": "The Town Manager suggested that the Board could adopt a policy to allow items under a certain amount not to require a vote by the Board.",
+    "note": "The official minutes record only the Town Manager's suggestion, not any board interest; check the recording around t=8393 for the board's response.",
+    "t": 8393
+   },
+   {
+    "kind": "agree",
+    "about": "56 Carr Ave no vote tonight",
+    "ours": "The board will not take a formal vote on 56 Car A tonight; a vote will follow within 14 days if and after a court judgment enters, per town counsel's guidance.",
+    "official": "The Town Manager stated that a vote is not necessary until after the judgement enters.",
+    "note": "Both say no vote until judgment enters; the 14-day window and town counsel attribution appear only in ours, and the official attributes the statement to the Town Manager.",
+    "t": 8626
+   },
+   {
+    "kind": "caption_error",
+    "about": "Property name",
+    "ours": "56 Car A",
+    "official": "56 Carr Ave: Sell or Hold",
+    "note": "Misheard street name.",
+    "official_reading": "56 Carr Ave",
+    "t": 8626
+   },
+   {
+    "kind": "agree",
+    "about": "Board of Assessors excise tax abatements",
+    "ours": "Board of Assessors excise tax abatements: 17, 427, 30 to 40",
+    "official": "He stated that they had 17 excise tax abatements.",
+    "note": "The 17 matches; 427 and 30 to 40 are not in the official minutes.",
+    "t": 8711
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Artisans of Hickory Hills auction proceeds",
+    "ours": "Artisans of Hickory Hills art auction proceeds: over $4,000, $1,000, $1,000",
+    "official": "",
+    "note": "The official minutes mention the group's fundraiser and scholarship donation but give no dollar figures.",
+    "t": 9125
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Board's decision to keep committee charge general",
+    "ours": "The board agreed to keep the committee's charge modification general rather than naming ACE or PAC space changes specifically.",
+    "official": "",
+    "note": "Not recorded in the official minutes.",
+    "t": 7015
+   },
+   {
+    "kind": "agree",
+    "about": "Facilities Director on the building committee",
+    "ours": "The facilities director's committee membership will not be decided tonight; the town manager will discuss it with him first given after-hours meeting demands.",
+    "official": "The Town Manager recommended that the action item to add the Facilities Director to the Committee be tabled until she gets confirmation that he can commit to it.",
+    "note": "Same outcome: deferred until the Town Manager confirms with him.",
+    "t": 6680
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Select Board members present",
+    "ours": "Renee (member, Select Board); MK (member, Select Board); Mr. Roy (member, Select Board)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Clerk Renee Emkey, Member Glenn McLeod, and Member Brian Lehtinen.",
+    "note": "Official lists four members present with Vice-Chair Amanda Moore absent; ours lists more members (MK, Mr. Roy) than the four recorded, so check who spoke as MK and Mr. Roy, though the official minutes also mention a \"Mr. Roy\" seconding the adjournment."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member names",
+    "ours": "Glenn McCloud; Brian Leighton",
+    "official": "Member Glenn McLeod, and Member Brian Lehtinen",
+    "note": "Misheard surnames of the same members.",
+    "official_reading": "Glenn McLeod; Brian Lehtinen"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair identity and town manager name",
+    "ours": "the chair (chair, Select Board); Warren (town manager)",
+    "official": "Chair Caesar Nuzzolo",
+    "note": "Same people; the official names the chair as Caesar Nuzzolo and the town manager as Jennifer Warren-Dyment.",
+    "official_reading": "Caesar Nuzzolo; Jennifer Warren-Dyment"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Building committee and APDC names",
+    "ours": "Dave Blat / Dave Black / Dave Glad; Tony Skolebrini / Skullenbrini",
+    "official": "Vice Chair David Blatt",
+    "note": "Misheard names; the APDC representative is Anthony Sculimbrene in the official minutes.",
+    "official_reading": "David Blatt; Anthony Sculimbrene"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Musicares presenter name",
+    "ours": "Laura Brion (presenter, Lunenburg Musicares)",
+    "official": "Laura Barooshian, 389 Mulpus Road, submitted the certificate for a tollbooth fundraiser request.",
+    "note": "Same presenter, misheard surname.",
+    "official_reading": "Laura Barooshian"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Laura (Rosecki/Rzepecki) as building committee member",
+    "ours": "Laura (Rosecki/Rzepecki, as heard) (member, Lunenburg Municipal Building Design Committee)",
+    "official": "",
+    "note": "No such person is named in the official minutes; check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Trust Funds chair and town counsel attendance",
+    "ours": "John Bowen (chairman, Board of Commissioners of Trust Funds); Adam (Mr. Costa) (town counsel)",
+    "official": "John Bowen, 162 Highland Street, Board of Commissioners of Trust Funds Chair",
+    "note": "Both attend in both records; town counsel is Adam J. Costa in the official."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Flat Hill Road Bridge update",
+    "ours": "",
+    "official": "The Town Manager provided an update regarding the Flat Hill Road Bridge project.",
+    "note": "Town Manager report items (bridge, Page Street closure, open positions, vacancies) are in the official minutes only."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minute clerk",
+    "ours": "",
+    "official": "Anthony Senesi, Minute Clerk",
+    "note": "The minute clerk is named only in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:27:04Z",
+   "cost_usd": 0.319795
+  }
  }
 }

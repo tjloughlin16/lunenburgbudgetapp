@@ -406,5 +406,245 @@
    "at": "2026-10-03T11:49:30Z",
    "cost_usd": 0.267724
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02272025-6991",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-02-27-minutes-6991.txt",
+   "path": "sources/meetings/finance-committee/2025-02-27-minutes-6991.pdf"
+  },
+  "official_sha256": "de4bb4aec3ef3162b46d456b35b0416dd22769baf6d333a45f6c3b73967f4341",
+  "coverage": "partial",
+  "summary": "The two records agree on the revenue totals, the sewer estimates, the snow removal figures, the 3/13 public hearing and most names. Our minutes' free cash transfers and several other figures (free cash totals, health insurance, pavement) do not appear in the official minutes at all, which record no votes or transfers. Check the recording to see whether the free cash transfers were only discussed or were voted on.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 5,
+   "discrepancy": 0,
+   "only_in_ours": 12,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Net state aid figure",
+    "ours": "FY26 revenue: 72%, 9,83,8 se1, 423,900",
+    "official": "Net State Aid is 20% of the revenue totaling $9,803,871.",
+    "official_reading": "$9,803,871",
+    "note": "Garbled '9,83,8 se1' is the same revenue line as $9,803,871.",
+    "t": 10896
+   },
+   {
+    "kind": "agree",
+    "about": "Property tax share and other funds revenue",
+    "ours": "72%, ... 423,900",
+    "official": "Other funds are 1% of the revenue totaling $423,900.",
+    "note": "72% property tax and $423,900 other funds match.",
+    "t": 10896
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW snow removal budget request",
+    "ours": "Snow and ice: 465,000, 363, 110,000, 415,000",
+    "official": "Bill Bernard is currently asking for $363,000.",
+    "official_reading": "$363,000",
+    "note": "'363' is the $363,000 request with the thousands dropped.",
+    "t": 1770
+   },
+   {
+    "kind": "agree",
+    "about": "Snow removal increase recommended by Town Manager",
+    "ours": "110,000",
+    "official": "The Town Manager has recommended an increase of $110,000 to close the gap.",
+    "note": "$110,000 increase matches.",
+    "t": 1770
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Snow and ice 465,000 and 415,000 figures",
+    "ours": "Snow and ice: 465,000, 363, 110,000, 415,000",
+    "official": "",
+    "note": "The official minutes give no $465,000 or $415,000 snow figure.",
+    "t": 1770
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY25 snow and ice deficit transfer from free cash",
+    "ours": "FY25 snow and ice deficit transfer from free cash — 415,000 (discussed only)",
+    "official": "",
+    "note": "The official minutes record no free cash transfer for snow and ice; check the recording at this point.",
+    "t": 13652
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School special education move-in reserve from free cash",
+    "ours": "School special education move-in reserve from free cash — $50,000 (discussed only)",
+    "official": "",
+    "note": "No such transfer appears in the official minutes.",
+    "t": 13672
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash to general stabilization",
+    "ours": "Free cash to general stabilization — $100,000 (discussed only)",
+    "official": "",
+    "note": "No such transfer appears in the official minutes.",
+    "t": 12488
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash totals and planned uses",
+    "ours": "Free cash: $2.2 million, 2.27 million; planned uses $75,000, 27,500, $50,000, 415,000, $36,250",
+    "official": "",
+    "note": "The official minutes contain no free cash figures.",
+    "t": 12107
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "New FY26 revenue figures",
+    "ours": "New FY26 revenue: 1, 6398, $691,000",
+    "official": "",
+    "note": "Not in the official minutes; the heard figures are garbled, so check the recording.",
+    "t": 11936
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance increase",
+    "ours": "Health insurance: 14.84%",
+    "official": "",
+    "note": "The official minutes do not mention health insurance.",
+    "t": 12975
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DPW pavement management figures",
+    "ours": "DPW pavement management: 550,000, 50,000, 650,000, 600,000; Pavement management line: $550,000, 20%",
+    "official": "Dave Passios, formally 56 Whiting Street, agrees with cutting down the pavement",
+    "note": "The official minutes mention only a public comment supporting cutting the pavement management plan and no dollar amounts.",
+    "t": 991
+   },
+   {
+    "kind": "agree",
+    "about": "Sewer estimated revenue",
+    "ours": "Sewer enterprise budget: 1.58",
+    "official": "The FY26 estimated revenue for the sewer department is 1.58 million.",
+    "note": "Matches.",
+    "t": 4725
+   },
+   {
+    "kind": "agree",
+    "about": "Sewer estimated expense",
+    "ours": "1.88",
+    "official": "The Fy26 estimated expense is 1.88 million.",
+    "note": "Matches.",
+    "t": 4725
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sewer $32,000 figure",
+    "ours": "$32,000",
+    "official": "",
+    "note": "The official minutes have no $32,000 in the sewer section; it lists a 27% delinquency (about $400,000) and a contract a little over $100,000.",
+    "t": 4725
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sewer follow-ups: email retained earnings graph and aging report",
+    "ours": "Sewer director to email the retained earnings graph and look into an aging report of unpaid bills.",
+    "official": "Bill Bernard states there is a graph that shows the earnings",
+    "note": "The official minutes mention the graph but not an email or an aging report; check the recording to see whether this was a request or a commitment.",
+    "t": 4800
+   },
+   {
+    "kind": "agree",
+    "about": "Regular facilities reports",
+    "ours": "Facilities director to give the committee more regular reports.",
+    "official": "Jay Simeone requests regular reports and updates from the department.",
+    "note": "Same request; the official minutes record it as a request, not an agreed action.",
+    "t": 8979
+   },
+   {
+    "kind": "agree",
+    "about": "Public hearing date",
+    "ours": "public hearing on the 13th",
+    "official": "b. Thursday 3/13/2025 (Public Hearing)",
+    "note": "The 13th public hearing matches.",
+    "t": 17820
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Article votes aimed for the 11th and 18th",
+    "ours": "Votes on articles aimed for the 11th and 18th",
+    "official": "",
+    "note": "The official minutes list meetings on 3/6, 3/13, 3/20 and 3/27 with no 11th or 18th and no article vote targets; check the recording.",
+    "t": 17820
+   },
+   {
+    "kind": "caption_error",
+    "about": "Committee member Ana Lockwood",
+    "ours": "Anna (member)",
+    "official": "Committee Member Ana Lockwood",
+    "official_reading": "Ana Lockwood",
+    "note": "Spelling of the first name.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Committee members present",
+    "ours": "Jean, Tom, Mike, Tanya, Jay (members)",
+    "official": "Vice Chair Jean Russell, Clerk Tom Gray",
+    "note": "These members match the official roster (Tanya Dall, Mike Rupp, Jay Simeone also listed).",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair Chris Menard",
+    "ours": "",
+    "official": "Present Members:  Chair Chris Menard",
+    "note": "Our attendee list has no chair; he speaks throughout the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW director name",
+    "ours": "Bill Berard (presenter)",
+    "official": "The DPW Director, Bill Bernard, provided the presentation.",
+    "official_reading": "Bill Bernard",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "Jennifer Warren Diamond (town manager)",
+    "official": "Jennifer Warren-Dyment, Town Manager",
+    "official_reading": "Jennifer Warren-Dyment",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Facilities director",
+    "ours": "Chris Ruth (presenter)",
+    "official": "The facilities Director, Chris Ruth, provided the presentation.",
+    "note": "Matches.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Ezekiel Ayala and Andrew Belair as attendees",
+    "ours": "Ezekiel Ayala (business manager); Andrew Belair (presenter)",
+    "official": "",
+    "note": "Neither name appears in the official minutes; check the recording to see whether they attended.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:54:29Z",
+   "cost_usd": 0.2607894
+  }
  }
 }

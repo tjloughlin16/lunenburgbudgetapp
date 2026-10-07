@@ -1,0 +1,277 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2025-02-11",
+ "video_id": "A8WxFwxPcqc",
+ "video_url": "https://www.youtube.com/watch?v=A8WxFwxPcqc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2025-02-11-A8WxFwxPcqc.json",
+  "sha256": "437907a5e91302aa2728fe288d3a4221fa50488d1dd97f710033fdd30b4c37a4",
+  "caption_lines": 75,
+  "segments": 565
+ },
+ "recording": {
+  "duration_s": 1586,
+  "duration": "0:26",
+  "spoken_chars": 18929,
+  "words_approx": 3154
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02112025-7018",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-02-11-agenda-7018.txt",
+   "path": "sources/meetings/sewer-commission/2025-02-11-agenda-7018.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02112025-7018",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-02-11-minutes-7018.txt",
+   "path": "sources/meetings/sewer-commission/2025-02-11-minutes-7018.docx"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-06T18:08:31Z",
+  "cost_usd": 0.29134980000000005
+ },
+ "minutes": {
+  "headline": "Sewer Commission accepted its FY2024 annual report, pending corrected numbers, before Friday's deadline; billing errors and demand letters discussed.",
+  "summary": "The vice chair, standing in for the chair, ran a short meeting. The commission voted by roll call to accept the FY2024 annual report on the condition that highlighted figures are finalized and initialed. Staff reported on a quarterly billing upload that doubled some bills, the still-broken demand letters in MUNIS, the search for an assistant business manager, and a delayed manhole repair.",
+  "attendees": [
+   {
+    "name_as_heard": "Brett Ramon",
+    "role": "vice chair, standing in for Mike Mackin"
+   },
+   {
+    "name_as_heard": "Joseph Earley",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Scott D",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "Andrew Valerie",
+    "role": "business manager"
+   },
+   {
+    "name_as_heard": "Jane ramley",
+    "role": "staff"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "fees",
+   "hiring",
+   "personnel",
+   "roads-and-dpw",
+   "technology",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 422,
+    "motion": "Accept the FY2024 annual report with the caveat that the yellow-highlighted numbers are finalized and changes initialed before the Friday submission deadline.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1562,
+    "motion": "Adjourn the meeting.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 274,
+    "topic": "FY2024 annual report figures",
+    "what_was_said": "Some figures highlighted in yellow in the report are from past years and need updating by staff before submission."
+   },
+   {
+    "t": 358,
+    "topic": "Proposed rate increase / contract rates",
+    "what_was_said": "A member asked how the proposed rate increase was calculated; the answer was that it reflected increased contract rates at the facility where sewage is sent for treatment."
+   },
+   {
+    "t": 548,
+    "topic": "Quarterly billing",
+    "what_was_said": "A file upload into MUNIS doubled some bills in the latest quarterly billing, and affected customers who called in had their bills corrected.",
+    "figures_as_heard": [
+     "911 bills",
+     "11",
+     "133 27",
+     "270"
+    ]
+   },
+   {
+    "t": 804,
+    "topic": "Delinquent demand letters",
+    "what_was_said": "MUNIS still cannot send demand letters on late accounts, a problem over a year old; the letters would carry a late fee and interest.",
+    "figures_as_heard": [
+     "$10 fee"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 231,
+    "decision": "The vice chair will ask the director to contact the member who intends to resign to prompt a formal resignation letter so a replacement can be sought."
+   },
+   {
+    "t": 1349,
+    "decision": "Next agenda to include billing update, the assistant business manager position, and the manhole repair."
+   },
+   {
+    "t": 949,
+    "decision": "Hiring for the assistant business manager waits on a second interview the next morning, then reference checks by HR, before any decision."
+   },
+   {
+    "t": 1075,
+    "decision": "A pre-construction meeting will be set up for the manhole repair once the frost leaves."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 146,
+    "topic": "Call to order, pledge, open meeting law notice, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 146,
+    "t_end": 231,
+    "topic": "Public comment and absent member who has not submitted resignation",
+    "resolution": "no resolution",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 231,
+    "t_end": 507,
+    "topic": "FY2024 annual report discussion and vote",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 507,
+    "t_end": 949,
+    "topic": "Quarterly billing errors and MUNIS demand letters",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "technology",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 949,
+    "t_end": 1054,
+    "topic": "Assistant to the business manager position",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1054,
+    "t_end": 1115,
+    "topic": "Manhole repair",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 1115,
+    "t_end": 1326,
+    "topic": "General items: business manager's contingency-based review",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1326,
+    "t_end": 1454,
+    "topic": "Future agenda items and expected connection applications",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1454,
+    "t_end": 1580,
+    "topic": "Closing comments, upcoming meetings, adjournment",
+    "resolution": "voted to adjourn",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Name of the member who made the motion at 422 is unclear.",
+   "Roll call tally on the annual report is only partly captioned; outcome stated as 'motion passes'.",
+   "Roll call for adjournment: captions render 'Scott hi Joe hi and I for myself'; adjournment declared.",
+   "Billing figures (911 bills, 11 corrections, 133 27, 270) are unreliable caption renderings.",
+   "Name of the first assistant business manager candidate is garbled ('Marsha Mara').",
+   "Time of the second interview is garbled ('10:')."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Sewer Commission voted by roll call to accept its FY2024 annual report, on condition that highlighted figures are finalized and initialed before Friday's deadline.",
+    "t": 422
+   },
+   {
+    "line": "Some figures highlighted in the report come from past years, and staff must update them before the report is submitted.",
+    "t": 274
+   },
+   {
+    "line": "A file upload into MUNIS doubled some bills in the latest quarterly billing; customers who called in had their bills corrected.",
+    "t": 548
+   },
+   {
+    "line": "MUNIS still cannot send demand letters on late accounts, a problem more than a year old.",
+    "t": 804
+   },
+   {
+    "line": "Hiring for the assistant business manager waits on a second interview and HR reference checks, and a manhole repair meeting waits for the frost to leave.",
+    "t": 949
+   }
+  ],
+  "why_it_matters": [
+   "Sewer bills come from this commission's billing system, and a doubled bill or a late account that gets no demand letter is a billing problem that lands on ratepayers or on collections.",
+   "The annual report was accepted before its numbers were final, so what the town files depends on staff corrections that the minutes show only as a condition, not as a completed check."
+  ],
+  "watch_next": [
+   "The Friday submission deadline for the FY2024 annual report, with the highlighted figures finalized and initialed.",
+   "The next agenda: a billing update, the assistant business manager position, and the manhole repair."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-06T18:08:40Z",
+   "cost_usd": 0.210091
+  }
+ }
+}

@@ -287,5 +287,125 @@
    "at": "2026-09-27T19:31:59Z",
    "cost_usd": 0.19058999999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05142025-7221",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2025-05-14-minutes-7221.txt",
+   "path": "sources/meetings/open-space-committee/2025-05-14-minutes-7221.docx"
+  },
+  "official_sha256": "3838d8735d9825806f944d24977a43c99c6ed2cec45675bb721c1cd886c93849",
+  "coverage": "full",
+  "summary": "The two records agree on the main events: Brandon Kibbe's resignation, Tim Lawless stepping down, the 3-year extension for the open space plan, and circulating it to other boards. They differ on the one motion: ours records a vote to apply for the extension, while the official minutes record only a vote with no stated subject, and the July meeting date is set differently.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 0,
+   "discrepancy": 5,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Motion to apply to state for the 3-year extension",
+    "ours": "Move to apply to the state for the extra three years' extension of the open space plan by updating the action-item table — not audible",
+    "official": "M. Toohill offered to take the lead.",
+    "note": "Ours records a motion to apply to the state; the official minutes record no such motion, only that Toohill offered to take the lead, so check the recording near t=771 for whether a vote was taken and by whom.",
+    "t": 771
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Unstated motion at end of official minutes",
+    "ours": "",
+    "official": "B. Kibbe motion, E. Hinds seconded.  Unanimously voted by roll call.  Meeting adjourned at 7:58 pm.",
+    "note": "The official minutes record a motion by Kibbe with no subject (likely adjournment, possibly the extension motion); our minutes record no roll-call vote, so check the recording to see what this motion was.",
+    "t": 771
+   },
+   {
+    "kind": "discrepancy",
+    "about": "July meeting date",
+    "ours": "July meeting will remain on its usual date, the second Wednesday of July.",
+    "official": "Next meetings: June 9, 2025 and July 9, 2025.",
+    "note": "The second Wednesday of July 2025 is July 9, so the dates are consistent, but the official minutes also list June 9 as a set meeting date, where ours says the June move was only under consideration pending quorum; check the recording.",
+    "t": 1406
+   },
+   {
+    "kind": "discrepancy",
+    "about": "June meeting move to June 9",
+    "ours": "Committee will look at moving its June meeting to Monday, June 9th to coincide with the planning board's meeting, pending quorum.",
+    "official": "Open Space Committee may have a joint meeting with the board on June 9.",
+    "note": "Ours describes moving the meeting date pending quorum; the official minutes describe a possible joint meeting with the Planning Board, which are different decisions, so check the recording around t=642.",
+    "t": 642
+   },
+   {
+    "kind": "agree",
+    "about": "Brandon resigning",
+    "ours": "Brandon announced he is resigning from the Open Space Committee effective after this meeting and will send a resignation letter to the planning board (the committee's oversight board).",
+    "official": "B. Kibbe announced that he will be resigning his position.",
+    "note": "Both record the resignation announcement; the official minutes do not mention the effective date or the letter to the planning board.",
+    "t": 196
+   },
+   {
+    "kind": "agree",
+    "about": "Tim Lawless stepping down",
+    "ours": "Tim Lawless, the parks commission's representative to the committee, is also stepping aside, creating another vacancy.",
+    "official": "M. Toohill reported that Tim Lawless (Parks Commission representative) has also stepped down.",
+    "note": "Same fact in both.",
+    "t": 306
+   },
+   {
+    "kind": "agree",
+    "about": "Open space plan extension and action-item table",
+    "ours": "Chair (Mike) will take the lead on updating the open space plan's action-item table from a 7-year to a 10-year format to secure a 3-year extension (to 2029) from the state.",
+    "official": "State offering a 3-year extension to existing 7-year plans if action item table gets updated and extended.  M. Toohill offered to take the lead.",
+    "note": "Same decision: Toohill leads the table update for the 3-year extension.",
+    "t": 708
+   },
+   {
+    "kind": "agree",
+    "about": "Circulating plan to other boards",
+    "ours": "Before sending the updated plan to the state, it will be circulated to the planning board, parks commission, agricultural commission, conservation commission, town manager and select board for input.",
+    "official": "M. Toohill suggested Planning, Conservation, Agricultural, Parks, and Select Board together with Town Manager.",
+    "note": "Same list of boards; the official minutes say Kibbe suggested forwarding to other land use boards and Toohill named them.",
+    "t": 938
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of February 12, 2025 minutes",
+    "ours": "",
+    "official": "Approval of Minutes February 12, 2025: G. McLeod motioned, E. Hinds seconded.  Unanimously voted by roll call.",
+    "note": "Our minutes record no approval of prior minutes; this is a routine vote, so it is not treated as a discrepancy."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Planning Board interest in Chapter 61 lands",
+    "ours": "",
+    "official": "G. McLeod reported that Planning Board interested in Chapter 61 lands.",
+    "note": "Committee update not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Kibbe's grant-eligibility argument",
+    "ours": "",
+    "official": "B. Kibbe recommended reminding boards that having a current, approved Open Space and Recreation Plan makes the town eligible for certain state grants",
+    "official_reading": "",
+    "note": "Rationale for outreach to other boards, recorded only in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee roles",
+    "ours": "Glenn (member/clerk (took minutes)); Brandon (member (resigning this meeting))",
+    "official": "Members Present: Mike Toohill (Chair), Brandon Kibbe (Clerk), Eric Hinds, Glenn McLeod.",
+    "note": "Same four attendees, but ours names Glenn as clerk while the official minutes name Brandon Kibbe as clerk and sign them; check who took the minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:29:22Z",
+   "cost_usd": 0.225459
+  }
  }
 }

@@ -518,5 +518,265 @@
    "at": "2026-09-27T11:14:45Z",
    "cost_usd": 0.194256
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02102026-7638",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2026-02-10-minutes-7638.txt",
+   "path": "sources/meetings/council-on-aging/2026-02-10-minutes-7638.pdf"
+  },
+  "official_sha256": "e03a3027af9d29fb09ad0f106c99b0a49f93a7bce638cc2acb06b81ba4e7e070",
+  "coverage": "official minutes are a summary only",
+  "summary": "Neither record contains a recorded vote beyond routine minutes approval, and the two agree on the broad topics (representatives' visit, honorary members, Plaud Note, bylaws). Our minutes record several decisions and figures (caregiver-reform support letter, flyer correction, reading volunteers, grant and budget amounts) that the official summary omits, and the official minutes read the WE CARE 365 time as 9:00 am, which matches our corrected 9am.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 10,
+   "discrepancy": 4,
+   "only_in_ours": 8,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes: none beyond routine approval of January minutes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "Motion was made and seconded to accept the January  minutes as presented, \napproved  unanimously.",
+    "note": "The only vote in the official minutes is procedural minutes approval, so there is no non-procedural vote in either record.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Honorary/emeritus board member idea",
+    "ours": "The chair asked members to return with thoughts on criteria for creating honorary/emeritus board member status, suggesting roughly four terms of service as a starting point.",
+    "official": "Board should consider what the criteria might look like.",
+    "note": "Both say the board should consider criteria; the four-term suggestion appears only in ours.",
+    "t": 3405
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Plaud Note AI tool for minutes",
+    "ours": "The board agreed to have someone look into trying the 'Plaud Note' AI recording/transcription tool to assist with minutes, without it replacing the work of watching and revising the meeting record.",
+    "official": "Chairperson Deb Lincoln received a gift of a Plaud Note to take minutes  and is \nhoping to give it a try at the next meeting.",
+    "note": "Ours describes a board agreement for someone to look into the tool; official says the chair was given one and plans to try it next meeting. Check the recording around t=3466 for whether a decision was made and who will do it.",
+    "t": 3466
+   },
+   {
+    "kind": "agree",
+    "about": "WE CARE 365 breakfast time",
+    "ours": "A flyer time error for the WEAR 365 breakfast presentation (listed as 10am, actually 9am) will be corrected, and Lucas will make a new flyer to be emailed out.",
+    "official": "WE CARE 365 on February 25 at 9:00 am breakfast included.",
+    "note": "The 9am time matches; 'WEAR 365' in ours is a caption error for WE CARE 365. The flyer correction itself is not in the official minutes.",
+    "t": 3920
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Letter of support for caregiver reform legislation",
+    "ours": "The council agreed to send a letter of support for Rep. Kushmerick's and Rep. Scarsdale's caregiver reform legislation, currently before the Committee on Revenue.",
+    "official": "",
+    "note": "The official minutes only say the representatives spoke at length on bills; no agreement to send a letter is recorded. Check the recording at t=1689 for whether this was a decision.",
+    "t": 1689
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Bylaws committee and approach",
+    "ours": "The bylaws subcommittee will hold its first meeting Thursday, using examples from other towns, with discussion to follow at a future council meeting.",
+    "official": "The By-law \nCommittee will be meeting .  It may be easier to start from scratch .",
+    "note": "Both say a bylaw committee will meet, but the official adds starting from scratch and omits the Thursday date and examples from other towns. Check the recording near t=4781.",
+    "t": 4781
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reading proficiency volunteer role",
+    "ours": "The council agreed its role regarding the schools' reading proficiency issue should be limited to organizing volunteer seniors to read with children at the discretion of school educators, not presenting itself as fixing the reading problem.",
+    "official": "",
+    "note": "The official minutes do not mention the reading proficiency discussion or any agreement.",
+    "t": 5511
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Home elevator installation cost",
+    "ours": "Home elevator installation cost: $25,000, $55,000",
+    "official": "",
+    "note": "Official minutes mention elevators only in passing with no costs.",
+    "t": 1050
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "T-Mobile Hometown grant",
+    "ours": "T-Mobile Hometown grant: $50,000",
+    "official": "",
+    "note": "Official minutes only mention 'a sampling of grant funding sources'.",
+    "t": 1474
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Nashoba Valley closure supplemental budget figure",
+    "ours": "Supplemental state budget for Nashoba Valley closure: $10 billion, 5 million",
+    "official": "",
+    "note": "Not in the official minutes; the figure is garbled in captions and should be checked against the recording.",
+    "t": 2377
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Small grant amounts vs administrative burden",
+    "ours": "Small grant amounts vs. administrative burden: $50,000",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 2586
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School funding gap earmarks percentage",
+    "ours": "School funding gap addressed by delegation earmarks: 15%",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3108
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Debbie Lincoln (chairman/chair)",
+    "official": "Chairperson Deb Lincoln call ed the meeting to order",
+    "note": "Same person; name variant.",
+    "official_reading": "Deb Lincoln",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member Jim McGuigan",
+    "ours": "Jim McQuathy (Mr. Mcwigan) (board member)",
+    "official": "Jim McGuigan",
+    "note": "Misheard surname for the same member.",
+    "official_reading": "Jim McGuigan"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair name",
+    "ours": "Jane Rabbit (vice chair)",
+    "official": "Jane Rabbitt  (Vice-Chair)",
+    "note": "Spelling variant.",
+    "official_reading": "Jane Rabbitt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Susan board member surname",
+    "ours": "Susan Mulla (board member)",
+    "official": "Susan O ’Sullivan",
+    "note": "Misheard surname.",
+    "official_reading": "Susan O'Sullivan"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Lou Franco",
+    "ours": "L Franco (board member, described as recovering select board member)",
+    "official": "Lou Franco",
+    "note": "First name truncated in captions.",
+    "official_reading": "Lou Franco"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director name",
+    "ours": "Deb Goodsell (director)",
+    "official": "Debra Goodsell, Director",
+    "note": "Same person; name variant.",
+    "official_reading": "Debra Goodsell"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Pete Lincoln's role",
+    "ours": "Pete Lincoln (board member)",
+    "official": "GUESTS : Pete  Lincoln",
+    "note": "Ours lists him as a board member; official lists him as a guest. Check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Jack's identity and role",
+    "ours": "Jack (board member)",
+    "official": "Ana Lockwood &  Jack  Rabbitt",
+    "note": "Ours gives only 'Jack'; official lists Jack Rabbitt as present. Likely the same, but the surname is unconfirmed.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Diane board member",
+    "ours": "Diane (board member, retired teacher)",
+    "official": "Diane Nowd",
+    "note": "Surname not captured.",
+    "official_reading": "Diane Nowd"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Kathy board member",
+    "ours": "Kathy (board member)",
+    "official": "Cathy Beale",
+    "note": "Spelling and surname.",
+    "official_reading": "Cathy Beale"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Selectboard chair name",
+    "ours": "Caesar Nazzolo (select board chair)",
+    "official": "Caesar Nuzzolo, Selectboard Chair",
+    "note": "Misspelled surname.",
+    "official_reading": "Caesar Nuzzolo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Rep. Kushmerick name",
+    "ours": "Mike Kushmerick (state representative, third Worcester district)",
+    "official": "Rep. Mike Kushmerek",
+    "note": "Spelling variant.",
+    "official_reading": "Mike Kushmerek"
+   },
+   {
+    "kind": "agree",
+    "about": "Rep. Scarsdale attendance",
+    "ours": "Margaret Scarsdale (state representative, first Middlesex district)",
+    "official": "Rep. \nMargaret Scarsdale",
+    "note": "Both record her attending.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Legislative aide attendee",
+    "ours": "Rebecca Hes (legislative aide to Rep. Kushmerick)",
+    "official": "",
+    "note": "Not listed in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees and absences",
+    "ours": "",
+    "official": "Elena Christopher, Susan O ’Sullivan,  Ana Lockwood",
+    "note": "Official lists Elena Christopher, Ana Lockwood and guest Dave Bartlett, plus Helen Balcom excused; none appear in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Personnel update on Outreach Coordinator hiring",
+    "ours": "",
+    "official": "The hiring process is near completion in the search for an Outreach Coordinator.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Special Town Meeting, hospital services, lobby furnishings, 41A",
+    "ours": "",
+    "official": "Lou Franco will be meeting with Selectboard Chair, Caesar Nuzzolo,  to \ndiscuss .",
+    "note": "Official also records UMass Groton ER late 2026, lobby furnishings chosen, and a March 12 Assessor presentation on 41A, none in ours.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:20:41Z",
+   "cost_usd": 0.246285
+  }
  }
 }

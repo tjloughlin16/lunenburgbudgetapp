@@ -514,5 +514,193 @@
    "at": "2026-09-27T18:21:30Z",
    "cost_usd": 0.199022
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06092025-7261",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-06-09-minutes-7261.txt",
+   "path": "sources/meetings/select-board/2025-06-09-minutes-7261.pdf"
+  },
+  "official_sha256": "95049e2b58a040cb1953f753838b192629509422b86d3ded23fb076c6380adf4",
+  "coverage": "full",
+  "summary": "The two records agree on the one formal vote (the Pony Shack Cider permit, 5-0-0) and on most discussion points, but they differ on a few facts: who was on the board and what several figures were. Check the 925 Main Street / 925 Mass Ave name and the $184k valuation, and the missing ARPA assignment and tri-board decisions, against the recording.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 9,
+   "only_in_ours": 7,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "about": "Farmers market permit vote, Pony Shack Cider",
+    "kind": "agree",
+    "ours": "Approve the farmers market permit/alcohol sampling application for Pony Shack Cider Inc. for the June 13, July 11, August 8, September 12, and September 27 farmers markets. — passed unanimously",
+    "official": "The motion passed unanimously (5-0-0).",
+    "note": "Same motion, same five dates, same unanimous outcome.",
+    "t": 233
+   },
+   {
+    "about": "Attendees and roles",
+    "kind": "discrepancy",
+    "ours": "the chair (chair); the town manager (town manager); Jen (member); Renee (member); Brian (member); Nathan McKinley (Nate) (presenter)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Renee Emkey, Clerk Amanda Moore, \nMember Brian Lehtinen, and Member Glenn Mcleod",
+    "note": "Ours lists Jen as a board member; the official minutes name Jennifer Warren as Town Manager, and name Amanda Moore and Glenn McLeod as members, so check who 'Jen' is in the recording. The official minutes also give Renee Emkey inconsistent titles (Vice-Chair, Clerk), and the motion is seconded by 'Vice Chair Amanda Moore'.",
+    "t": 233
+   },
+   {
+    "about": "Compensation classification study cost",
+    "kind": "caption_error",
+    "ours": "Compensation classification study: 20 grand",
+    "official": "a Compensation Classification study and a market analysis is typically $20,000",
+    "note": "Same $20,000 figure, phrased differently by the captions.",
+    "t": 3317,
+    "official_reading": "$20,000"
+   },
+   {
+    "about": "Tri-board definition",
+    "kind": "discrepancy",
+    "ours": "The board defined a new 'tri-board' as regularly scheduled joint meetings of the select board, finance committee, and school committee to prepare the FY27 budget.",
+    "official": "Chair Nuzzolo revised Objective 1 to include:  (including Select Board, Finance Committee and \nSchool Committee)",
+    "note": "Both say the tri-board is the Select Board, Finance Committee and School Committee, but the official minutes record this as a wording change to Objective 1, not a standalone definition. Check the recording only if the distinction matters.",
+    "t": 3861
+   },
+   {
+    "about": "Financial policy review moved to a separate goal",
+    "kind": "agree",
+    "ours": "Financial policy review/adoption (from the DLS community compact grant) was moved out of the budget goal and made objective one under a separate 'review select board policies' goal instead.",
+    "official": "Chair Nuzzolo moved it down to Goal No. 3 and then put review Select Board policies and procedures as Objective No. 1.",
+    "note": "Same decision, though the official text puts it as moving the item to Goal 3.",
+    "t": 4913
+   },
+   {
+    "about": "Employee recognition bonus amount",
+    "kind": "discrepancy",
+    "ours": "Employee recognition program bonus: $200, couple hundred bucks, $25",
+    "official": "Employees are not being motivated by $200",
+    "note": "The official minutes give only $200. The $25 in ours may be a separate remark or a caption misreading, so check the recording at about t=6990.",
+    "t": 6990
+   },
+   {
+    "about": "Onboarding objective tabled",
+    "kind": "discrepancy",
+    "ours": "The onboarding/orientation objective for the town manager was tabled for further work rather than finalized that night.",
+    "official": "Chair Nuzzolo suggested the wording to including  “ begin to develop ”  regarding the onboarding.",
+    "note": "Ours says the objective was tabled. The official minutes show it reworded (begin to develop) and say it is a multi-year goal, with no tabling. Check the recording to see whether it was tabled or reworded.",
+    "t": 6503
+   },
+   {
+    "about": "Contract deadlines for goals",
+    "kind": "only_in_ours",
+    "ours": "Noted (per the town manager's contract) that goals must be finalized in writing by July 15, with self-evaluation due by April 15 and a November check-in.",
+    "official": "",
+    "note": "The official minutes say only that the contract is 'very specific as to the timing of goals'. They give none of these dates.",
+    "t": 6683
+   },
+   {
+    "about": "TC Pacios roof funds moved by fall special town meeting",
+    "kind": "discrepancy",
+    "ours": "Previously appropriated funds for roof repair on one portion of the TC Pacios building to be moved, via a fall special town meeting article, to the portion of the building now planned to remain in use.",
+    "official": "There was money allocated for the roof repair but now they are doing something different and so at town meeting they have \nto get the funding moved to another area of the building.",
+    "note": "The official minutes say 'at town meeting' and, in Chair Nuzzolo's wording, 'roof repair (special town meeting)'. They do not say 'fall'. They also record no action item for an article, only a goal objective. Check the recording. Ours also lists '300' as a figure, which the official minutes do not give.",
+    "t": 7768
+   },
+   {
+    "about": "925 Main Street / 925 Mass Ave sale objective",
+    "kind": "discrepancy",
+    "ours": "Agreed the 925 Main Street sale objective will be measured by completion of sale preparation and process, not strictly a completed sale within the fiscal year.",
+    "official": "Complete the sale within the fiscal year.",
+    "note": "The official minutes name the property '925 Mass Ave' and record the objective as 'Complete the sale within the fiscal year', with no softening. Check the recording for the address and for whether the measure was loosened.",
+    "t": 8206
+   },
+   {
+    "about": "925 Main Street assessed value and tax title value",
+    "kind": "discrepancy",
+    "ours": "925 Main Street assessed value: couple hundred thousand; Tax title parcels value: 184,000",
+    "official": "Clerk Emkey asked what the assessed value is.  Town Manager Warren-Dyment stated is $184k",
+    "note": "The official minutes give $184k as the assessed value of the 925 property. Ours puts 184,000 on tax title parcels and 'couple hundred thousand' on 925 Main Street. Check which property the $184k belongs to.",
+    "t": 8270
+   },
+   {
+    "about": "Removing TC Pacios and 925 Main Street from the properties goal",
+    "kind": "discrepancy",
+    "ours": "Removed TC Pacios and 925 Main Street from the 'municipal properties' goal draft; folded TC Pacios into the Municipal Building Design Committee objective and added the Brooks House there instead.",
+    "official": "Chair Nuzzolo stated that he is going to remove 925 Mass Avenue and replace it with the Brooks House.   Clerk Emkey stated they should also remove TC Pa ss ios.",
+    "note": "Both record the removals and the Brooks House. The official minutes do not say TC Pacios was folded into the Municipal Building Design Committee objective. Check the recording.",
+    "t": 8480
+   },
+   {
+    "about": "Municipal building capital cost vs. free cash",
+    "kind": "only_in_ours",
+    "ours": "Municipal building capital cost vs. free cash: 2 million",
+    "official": "",
+    "note": "No figure of this kind appears in the official minutes.",
+    "t": 8835
+   },
+   {
+    "about": "Municipal Building Design Committee cost escalation",
+    "kind": "only_in_ours",
+    "ours": "Municipal Building Design Committee project cost escalation: 15 million, 20, 23 million",
+    "official": "",
+    "note": "The official minutes record no dollar figures for the project, only Member McLeod's general criticism.",
+    "t": 9278
+   },
+   {
+    "about": "Annual town report printing $50",
+    "kind": "only_in_ours",
+    "ours": "Annual town report printing requirement: $50",
+    "official": "",
+    "note": "The official minutes mention digitizing the annual town report but give no $50 requirement.",
+    "t": 9992
+   },
+   {
+    "about": "Warrant mailing and postcards moved into budget goal",
+    "kind": "agree",
+    "ours": "Moved the warrant-mailing/postcard bylaw idea into the FY27 budget goal's objectives rather than treating it as a separate goal.",
+    "official": "Chair Nuzzolo suggested that they put that under the Budget.",
+    "note": "Same decision.",
+    "t": 9971
+   },
+   {
+    "about": "Warrant book printing and mailing cost",
+    "kind": "only_in_ours",
+    "ours": "Cost of printing/mailing town meeting warrant books: 7,000, 78,000",
+    "official": "",
+    "note": "The official minutes give no printing cost. They say only that skipping printing saves 3 weeks.",
+    "t": 10180
+   },
+   {
+    "about": "ARPA money follow-up",
+    "kind": "discrepancy",
+    "ours": "Directed the town manager to report back (targeted for the next meeting) on how much ARPA money remains unspent this calendar year.",
+    "official": "Clerk Emkey asked Town Manager Warren-Dyment to look into how much \nARPA money is left this year.",
+    "note": "Same request, but ours says the board directed it with a next-meeting target. The official minutes record one member asking, with no deadline. Check the recording.",
+    "t": 10854
+   },
+   {
+    "about": "FY27 budget process as top-priority goal",
+    "kind": "only_in_ours",
+    "ours": "The board agreed the FY27 budget process/timeline is the select board's top-priority goal for FY26.",
+    "official": "",
+    "note": "The official minutes record Clerk Emkey saying budget should be number 1, but no board agreement or vote.",
+    "t": 3234
+   },
+   {
+    "about": "Skipping Q&A on goal-setting methodology",
+    "kind": "only_in_ours",
+    "ours": "The board agreed to skip a general Q&A on goal-setting methodology and go straight into reviewing FY25 goals.",
+    "official": "",
+    "note": "The official minutes do not record this.",
+    "t": 315
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:28:40Z",
+   "cost_usd": 0.277135
+  }
  }
 }

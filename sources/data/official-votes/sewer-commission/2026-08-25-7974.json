@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2026-08-25",
  "docid": "7974",
@@ -17,7 +17,7 @@
    "seconded_by": "Chip W.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "to accept the minutes of 8/11/26. roll call vote: arthur-aye, scott-aye, chip-aye, dan-aye and brett-aye."
+   "quote": "motion: scott d. second: chip w. to accept the minutes of 8/11/26. roll call vote: arthur-aye, scott-aye, chip-aye, dan-aye and brett-aye."
   },
   {
    "motion": "Adjourn at 6:33 pm",
@@ -25,10 +25,198 @@
    "seconded_by": "Scott D.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "to adjourn at 6:33 pm. roll call vote: arthur-aye, scott-aye, dan-aye, chip-aye and brett-aye."
+   "quote": "motion: arthur k. second: scott d. to adjourn at 6:33 pm. roll call vote: arthur-aye, scott-aye, dan-aye, chip-aye and brett-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clear, legible minutes. No votes recorded on business items (100 Laurel Lane project, CTE O&M contract, privilege fees, connection fees); those were information items only.",
- "cost_usd": 0.103111
+ "note": "",
+ "cost_usd": 0.1441046,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, and sewer business manager- andrew valliere"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, and sewer business manager- andrew valliere"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, and sewer business manager- andrew valliere"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, and sewer business manager- andrew valliere"
+  },
+  {
+   "name": "Chip Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, and sewer business manager- andrew valliere"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, and sewer business manager- andrew valliere"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, and sewer business manager- andrew valliere"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "absent",
+   "quote": "absent: minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "CTE O&M Contract extension approved to November to allow time for contract advertising and request for bid",
+   "quote": "bill gave them an extension of time until november and it was due to be signed by today. cte signed off on the extension, and it was just waiting for the town manager's approval."
+  },
+  {
+   "decision": "Privilege Fees policy to continue charging one-half of the Betterment as recommended by Town Counsel",
+   "quote": "town counsel recommended staying with charging ½ of the betterment as a privilege fee, which is what they have been doing."
+  },
+  {
+   "decision": "Commissioners agreed to consider asking contractors to check for leaks and issues in manholes they open",
+   "quote": "scott asked if they will still consider asking contractors to check for any leaks/issues in manholes they open and the other commissioners agreed it would be a good idea."
+  },
+  {
+   "decision": "Accept resignation of Arthur Katis from the Sewer Commission",
+   "quote": "the commissioners all thanked him for his time on the commission and hope he can return in the future."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "100 Laurel Lane sewer connection project costs",
+   "what_was_recorded": "Project completed with labor costs of $8,200 and materials costs of $2,000, totaling $10,200, well under the $20,000 budget",
+   "figures_as_printed": [
+    "$20K",
+    "$8,200",
+    "$2,000"
+   ],
+   "quote": "andrew replied it was about $8,200 for labor and $2,000 for materials."
+  },
+  {
+   "topic": "786-796 Mass Ave Connection Fee",
+   "what_was_recorded": "Connection Fee of $50,462.96 assessed for townhouses based on original betterment of approximately $11,000",
+   "figures_as_printed": [
+    "$50,462.96",
+    "$11,000"
+   ],
+   "quote": "the connection fee will be $50,462.96, based on the original betterment of around $11,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bill Bernard",
+   "stated_role": "DPW Director",
+   "topic": "Touch-A-Truck event announcement",
+   "quote": "bill reminded all that friday (8/28) will be the touch-a-truck event, starting at 12:30 to 3 pm at the tc passios building. he encouraged everyone to bring their kids/grandchildren to see the trucks and have some fun."
+  },
+  {
+   "speaker": "Brett Ramsden",
+   "stated_role": "Chair",
+   "topic": "Touch-A-Truck event reminder",
+   "quote": "brett reminded all to attend the touch-a-truck event on friday"
+  },
+  {
+   "speaker": "Scott Dall",
+   "stated_role": "Vice-Chair",
+   "topic": "Touch-A-Truck event",
+   "quote": "scott said he will be supplying cotton candy again."
+  },
+  {
+   "speaker": "Arthur Katis",
+   "stated_role": "Member",
+   "topic": "Resignation from Commission",
+   "quote": "arthur announced that he was offered more hours at work on tuesday nights and will need to resign for now."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of 8/11/26",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes approval"
+   ],
+   "quote": "motion: scott d. second: chip w. to accept the minutes of 8/11/26."
+  },
+  {
+   "topic": "100 Laurel Lane sewer connection project",
+   "resolution": "completed",
+   "tags": [
+    "project completion",
+    "infrastructure",
+    "sewer"
+   ],
+   "quote": "bill reported the project is finished. they started digging at the manhole, finding the line for the house that is connected and then found the other 2 lines."
+  },
+  {
+   "topic": "CTE O&M Contract extension",
+   "resolution": "approved",
+   "tags": [
+    "contract",
+    "operations",
+    "maintenance"
+   ],
+   "quote": "bill gave them an extension of time until november and it was due to be signed by today."
+  },
+  {
+   "topic": "Privilege Fees policy confirmation",
+   "resolution": "confirmed",
+   "tags": [
+    "fees",
+    "policy"
+   ],
+   "quote": "town counsel recommended staying with charging ½ of the betterment as a privilege fee, which is what they have been doing."
+  },
+  {
+   "topic": "786-796 Mass Ave Connection Fee assessment",
+   "resolution": "assessed",
+   "tags": [
+    "connection fee",
+    "property",
+    "development"
+   ],
+   "quote": "andrew sent the commissioners a spreadsheet with the figures. these are townhouses similar to 711 mass ave and they will be adding 2 more. the connection fee will be $50,462.96, based on the original betterment of around $11,000."
+  },
+  {
+   "topic": "Contractor inspection of manholes for leaks",
+   "resolution": "agreed to consider",
+   "tags": [
+    "maintenance",
+    "inspection"
+   ],
+   "quote": "scott asked if they will still consider asking contractors to check for any leaks/issues in manholes they open and the other commissioners agreed it would be a good idea."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "infrastructure maintenance",
+  "sewer connections",
+  "fees and betterment",
+  "project updates",
+  "contract administration",
+  "member resignation",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

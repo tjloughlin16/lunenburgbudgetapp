@@ -413,5 +413,164 @@
    "at": "2026-09-28T00:37:07Z",
    "cost_usd": 0.201714
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122026-7707",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2026-03-12-minutes-7707.txt",
+   "path": "sources/meetings/trust-fund-commission/2026-03-12-minutes-7707.pdf"
+  },
+  "official_sha256": "ef8567683babaaaf1767c36ed7f4c064882d932c6f44059f8bd142df2fd8ff28",
+  "coverage": "partial",
+  "summary": "The two records agree on the no-confidence vote, the roughly $3,000 gain on $87,000, the 40 hours of legal investigation and the March 26 next meeting. Ours holds many dollar figures and decisions the official minutes never mention, and the official minutes name only two members present. The citizenship-policy vote has no outcome in ours, and the official minutes record it as passed 2-0.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 7,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Citizenship/residency verification policy vote",
+    "ours": "Approve the Lunenburg Board of Trust Fund Commissioners' policy on verification of US citizenship and municipal residency — not audible",
+    "official": "Mr  Howard  made  a  motion  that  we  approve  the  Lunenburg  Board  of  Trust  Fund  Commissioners",
+    "note": "Ours records no outcome (audio inaudible); the official minutes record a 2-0 vote and that it passed unanimously. Check the recording at t=4099 or ask the Commission to confirm.",
+    "t": 4099
+   },
+   {
+    "kind": "agree",
+    "about": "Motion of no confidence",
+    "ours": "Motion of no confidence that the trust fund commission or the Select Board has any ability to make determinations on trust fund matters without proper professional investigation — passed unanimously",
+    "official": "The  Board  voted  no  confidence  as  a  formal  board  action,  finding  that  systemic",
+    "note": "Same motion and outcome (unanimous, 2-0 in the official record); the official minutes add a post-meeting narrative of the board's findings.",
+    "t": 5390
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "Mr. Chair (chair); Richard (vice chairman / commissioner); Mr. Accountant (commissioner)",
+    "official": "Present  were  Mr  Howard  and",
+    "note": "The official minutes list only Chairman Bowen and Mr Howard (both votes were 2-0), while ours lists three people. Check whether a third member was actually present; the names are likely misheard (Mr. Chair = Bowen, Richard = Howard?)."
+   },
+   {
+    "kind": "agree",
+    "about": "Interest earnings on invested funds",
+    "ours": "Quarterly interest earnings across town trust funds: $3,000, $87,000, 10 11%",
+    "official": "The  last  report  on  fund  performance  was  in  December  2025  from  our  Private  Trust  Company.",
+    "note": "Both give about $3,000 on about $87,000 invested; the '10 11%' in ours is not in the official minutes.",
+    "t": 337
+   },
+   {
+    "kind": "agree",
+    "about": "40 hours of legal investigation",
+    "ours": "Warrant article for legal investigation funding (cy pres filings): 14,25239, 40 hours, $14,000",
+    "official": "He  is  requesting  40  hours  of",
+    "note": "The 40 hours matches; the official minutes give no dollar amount, so $14,000 / 14,25239 (and $15,000 restated at t=5022) cannot be compared.",
+    "t": 951
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hourly cost of outside investigators and warrant article dollar amount",
+    "ours": "Estimated hourly cost of outside legal investigators: $350 an hour, 14,000, 40 hours; warrant article restated: $15,000, 40 hours",
+    "official": "",
+    "note": "The official minutes carry no dollar figures for the investigation; ours has $14,000 and $15,000 for the same 40 hours, which are inconsistent with each other — check the recording.",
+    "t": 3554
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fund-specific figures (sidewalk fund, Caldwell fund, American Legion Post 283)",
+    "ours": "Sidewalk fund $200 limit, $26,000 hypothetical; Caldwell memorial fund $5,000, 4%, $200 a year; Legion Post 283 $10,110, 10%, $100,000, $350 per year, 25,000, 75%",
+    "official": "",
+    "note": "The official minutes only say the Legion constitution was reviewed and enforcement is cumbersome; none of these figures appear.",
+    "t": 1554
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Use of town general fund interest ($29 million) to fund investigation",
+    "ours": "Suggestion to draw on the town's general fund interest earnings to help cover investigation costs — $29 million (discussed only)",
+    "official": "",
+    "note": "Not in the official minutes; the $29 million may be misheard and should be checked.",
+    "t": 5062
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bylaw not sent to finance committee for funding review",
+    "ours": "The proposed bylaw will not be submitted to the finance committee for funding review because it carries no cost.",
+    "official": "",
+    "note": "The official minutes mention a Finance Committee presentation at 7pm about the investigation expenditure, not this decision; check the recording.",
+    "t": 1819
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Legion fund eligibility amendment on hold",
+    "ours": "No amendment to the American Legion fund eligibility language will be pursued until the cy pres investigation and any required court filing are completed.",
+    "official": "",
+    "note": "The official minutes record no decision on this.",
+    "t": 4144
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Rewriting trust declarations via Attorney General put on hold",
+    "ours": "Rewriting trust declarations through the Attorney General's office of public charities is being put on hold for now.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 5513
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Research overview pushed to next meeting",
+    "ours": "Overview of new research and fund documentation pushed to the next meeting.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 5451
+   },
+   {
+    "kind": "agree",
+    "about": "Minutes review at next meeting",
+    "ours": "Two remaining sets of meeting minutes will be reviewed at the next meeting.",
+    "official": "Business  for  the  next  meeting  will  include  approving  meeting  minutes.",
+    "note": "Consistent; ours gives a count of two that the official minutes omit.",
+    "t": 5471
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next commission meeting set for March 26, 2026.",
+    "official": "March  26  is  the  next  meeting  starting  at  5pm.",
+    "note": "Same date.",
+    "t": 5533
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Missing Susan Howard Poor Fund",
+    "ours": "",
+    "official": "Chairman  Bowen  stated  his  concern  regarding  the  Susan  Howard  Poor  Fund  which  appears  to",
+    "note": "Official minutes record a fund last noted in 1977 as missing; ours has no such item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "School scholarship fund questions unanswered",
+    "ours": "",
+    "official": "Chairman  Bowen  expressed  concern  over  a  lack  of  response  from  the  School  on  scholarship",
+    "note": "Not in ours; questions raised in October 2025 remain unaddressed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Finance Committee presentation at 7pm",
+    "ours": "",
+    "official": "Chairman  Bowen  is  scheduled  to  make  a  presentation  to  the  Finance  Committee  at  7pm  to",
+    "note": "Not in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:19:38Z",
+   "cost_usd": 0.262529
+  }
  }
 }

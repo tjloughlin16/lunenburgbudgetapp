@@ -361,5 +361,112 @@
    "at": "2026-09-27T19:42:28Z",
    "cost_usd": 0.19739600000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04282025-7195",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-04-28-minutes-7195.txt",
+   "path": "sources/meetings/planning-board/2025-04-28-minutes-7195.pdf"
+  },
+  "official_sha256": "e094e2a6a5806e89b8a4e8053260790ed932588c4429b17378a80f2d94d03549",
+  "coverage": "partial",
+  "summary": "The two records do not describe the same meeting: the official text is a May 15, 2025 Special School Committee agenda, and it shares no votes, figures, decisions or attendees with our Planning Board minutes for April 28, 2025. A person should find the actual Planning Board minutes for 4/28/2025 and rerun the comparison before treating any of our votes as unrecorded.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 0,
+   "discrepancy": 8,
+   "only_in_ours": 2,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Which meeting the official document is",
+    "ours": "Planning Board, 2025-04-28",
+    "official": "SPECIAL SCHOOL COMMITTEE MEETING \nThursday, May 15, 2025",
+    "note": "The published text is a School Committee meeting notice and agenda for May 15, 2025, not Planning Board minutes for April 28, 2025; check that the right document was matched to this meeting.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: find 110 Pleasant Street change de minimis",
+    "ours": "Find that the requested change to the 110 Pleasant Street site plan approval is a de minimis change. — passed",
+    "official": "",
+    "note": "Our minutes record this vote and the official document records no vote on it; check the real Planning Board minutes for 4/28/2025.",
+    "t": 597
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: approve 110 Pleasant Street de minimis change",
+    "ours": "Approve the de minimis change to the 110 Pleasant Street site plan approval. — passed",
+    "official": "",
+    "note": "Our minutes record this vote and the official document has no record of it; check the correct official minutes.",
+    "t": 617
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: close ADU/flood map public hearing",
+    "ours": "Close the public hearing for the ADU and flood insurance rate map update bylaws. — passed",
+    "official": "",
+    "note": "Vote appears only in ours; the official document is a different board's agenda, so verify against the Planning Board minutes.",
+    "t": 1685
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: recommend ADU bylaw to town meeting",
+    "ours": "Recommend approval of the ADU zoning bylaw to annual town meeting. — passed",
+    "official": "",
+    "note": "Vote appears only in ours; confirm in the actual Planning Board minutes.",
+    "t": 1750
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: recommend floodplain bylaw to town meeting",
+    "ours": "Recommend approval of the floodplain bylaw update to annual town meeting. — passed",
+    "official": "",
+    "note": "Vote appears only in ours; confirm in the actual Planning Board minutes.",
+    "t": 1772
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: enforce 53G peer review fee SOP as written",
+    "ours": "Enforce the standard operating procedures (53G peer review fee) as already written in the rules and regulations, rather than adopt a new SOP. — passed",
+    "official": "",
+    "note": "Vote appears only in ours; confirm in the actual Planning Board minutes.",
+    "t": 3233
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "53G peer review figures ($2,000 deposit/fee, 14 days)",
+    "ours": "53G peer review deposit: $2,000; 53G project review fee, existing rules and regs: $2,000, 14 days",
+    "official": "",
+    "note": "The official document contains no dollar figures at all, so these cannot be compared.",
+    "t": 2067
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decisions on flood map notice, MBTA Communities scheduling, peer-review patch and SOP process",
+    "ours": "Rather than individually notifying residents affected by the flood map change (deemed not feasible with current staffing), the office will print handout instructions for using the federal online tool so residents can check their own property at town meeting.; The board will use an informal 'patch' for the peer-review process now and hold off on any formal rules-and-regulations changes until the planner position is filled.",
+    "official": "",
+    "note": "None of our eight decisions appear in the official document, which records no decisions.",
+    "t": 1104
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "the Chair, Logan, Glenn, Amanda, Matt, Ryan Proctor (Dillis Roy Civil Design Group, for Paradise Contractors)",
+    "official": "Brian Lehtinen, Chair Dr. Kate Burnham",
+    "note": "The official names School Committee members (Lehtinen, Sculimbrene, Archambault, Beardmore, Fuller) and no one from ours, which confirms a different body; check the Planning Board's official attendance.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:30:21Z",
+   "cost_usd": 0.228547
+  }
  }
 }

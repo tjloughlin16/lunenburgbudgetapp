@@ -291,5 +291,157 @@
    "at": "2026-09-29T11:12:19Z",
    "cost_usd": 0.18595840000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-03-18-minutes-rr2026-09-18.txt",
+   "path": "sources/meetings/select-board/2025-03-18-minutes-rr2026-09-18.pdf"
+  },
+  "official_sha256": "bfef7e442d3def06ca3f576c37cde180a56661dde06e52757dce23da4620a010",
+  "coverage": "full",
+  "summary": "The four votes our minutes record all appear in the official minutes with the same unanimous outcome, and the April 7 warrant deadline agrees. The official minutes record many more votes than ours (the executive session roll call, closing the hearing, and include and recommend votes on about 25 other articles), and they name Caesar Nuzzolo as chair where ours calls \"Mr Jeff\" the chair.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: Lions Club car show special event license",
+    "ours": "Approve special event license for Lions Club car show — passed unanimously",
+    "official": "The public hearing was closed and the license approved unanimously.",
+    "note": "Same item, same outcome (5-0-0 in the official minutes).",
+    "t": 4046
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Lions Club tollbooth application with rain date within two weeks",
+    "ours": "Approve toll booth application, allow rain date within two weeks — passed unanimously",
+    "official": "The Select Board approved the application and allowed the applicant two weeks to submit a rain date.",
+    "note": "Same decision and unanimous outcome.",
+    "t": 4151
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: include and recommend Article A",
+    "ours": "Include and recommend article A — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to recommend approval of Article A. Seconded by Member Alonzo. Call for Vote: Five – Aye. Motion passed unanimously (5-0-0).",
+    "note": "Official records two separate votes (include, then recommend), both unanimous; ours combines them.",
+    "t": 8951
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: letter to state delegation as amended",
+    "ours": "Approve letter to state delegation as amended — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to approve the letter to the state delegation as amended. Seconded by Clerk Moore. Call for Vote: Five – Aye. Motion passed unanimously (5-0-0).",
+    "note": "Same vote and outcome.",
+    "t": 11310
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: articles included subject to town counsel language; warrant to printer April 7",
+    "ours": "Articles approved subject to final language from town counsel; warrant to printer by April 7.",
+    "official": "The warrant must be delivered to the printer by April 7, 2025. The Town Manager noted that Town Counsel is still finalizing language on certain assessors' articles. All inclusions subject to final language from counsel were so noted.",
+    "note": "Same decision and date.",
+    "t": 8890
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Votes on Articles B through HH (include / recommend)",
+    "ours": "Only Article A is recorded as a vote.",
+    "official": "Motion by Vice-Chair Jeffreys to include Article B in the warrant. Seconded by Member Alonzo. Call for Vote: Five – Aye. Motion passed unanimously (5-0-0).",
+    "note": "The official minutes record include and recommend votes on roughly 25 further articles (B, C, E, F, H, J, K, L-M, P, Q, R, S, T, U, V, W, X, Y, Z, AA, BB, DD, EE, FF, GG, HH), all unanimous; ours has none. Check the video around t=8890-9640 to see whether our minutes dropped them or the votes were taken as a batch.",
+    "t": 8951
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Executive session roll call vote",
+    "ours": "",
+    "official": "Roll call vote: Member Tom Alonzo – Aye; Member Renee Emkey – Aye; Clerk Amanda Moore – Aye; Vice-Chair Jeffreys – Aye; Chair Nuzzolo – Aye.",
+    "note": "A recorded roll-call vote to enter executive session (litigation) appears only in the official minutes. Our recording may begin after it, so check the start of the video.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Override and school supplement articles: where they were deferred",
+    "ours": "Override and school supplement articles delayed to next night's meeting.",
+    "official": "Article N – Supplement to Lunenburg Public Schools FY2026 operating budget (free cash): Inclusion and recommendation deferred pending further information on final figures.",
+    "note": "Official says deferred pending information and names no meeting for Articles N and O. It lists the March 19 meeting only as a department-head meeting and the next Select Board date. It treats the school override (Article JJ) as already on the warrant by citizens' petition, with the recommendation withheld. Check the video at t=9640 for what was actually said about timing.",
+    "t": 9640
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who chaired the meeting",
+    "ours": "Mr Jeff (chair)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Michael-Ray Jeffreys, Clerk Amanda Moore, Member Tom Alonzo, and Member Renee Emkey",
+    "note": "Ours lists \"Michael Ray\" and \"Mr Jeff\" as two people with Jeff as chair, and never names Nuzzolo. The official minutes name Nuzzolo as chair and Jeffreys (Michael-Ray) as vice-chair, so these look like one person plus a missed chair. Check who presided in the video.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Tom",
+    "ours": "Tom (member)",
+    "official": "Member Tom Alonzo",
+    "note": "First name only in ours.",
+    "official_reading": "Tom Alonzo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Renee",
+    "ours": "Renee (member)",
+    "official": "Member Renee Emkey",
+    "note": "First name only in ours.",
+    "official_reading": "Renee Emkey"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Amanda",
+    "ours": "Amanda (member)",
+    "official": "Clerk Amanda Moore",
+    "note": "First name only in ours; official gives her role as Clerk.",
+    "official_reading": "Amanda Moore"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: town manager",
+    "ours": "the town manager (town manager)",
+    "official": "Also Present: Jennifer Warren-Dyment, Town Manager",
+    "note": "Same role; official gives the name.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Figure: OPEB trust article amount",
+    "ours": "",
+    "official": "Article U – Appropriate free cash to the OPEB trust fund ($222,500)",
+    "note": "Our figures_as_heard is empty, so no amounts were captured from the article review."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Figure: citizens' petition school override",
+    "ours": "",
+    "official": "Article JJ – Citizens' Petition, school override ($2,099,337): Already included by operation of the petition process; recommendation withheld.",
+    "note": "Not in ours, which only says an override article was delayed."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Opioid settlement funds",
+    "ours": "",
+    "official": "Opioid Settlement Funds: The Town has accumulated just over $225,000 in opioid settlement funds with no current expenditure plan.",
+    "note": "Town manager report item with no counterpart in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:52:54Z",
+   "cost_usd": 0.288855
+  }
  }
 }

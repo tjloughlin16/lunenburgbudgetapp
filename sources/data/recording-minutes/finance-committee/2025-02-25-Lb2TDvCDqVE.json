@@ -499,5 +499,241 @@
    "at": "2026-10-03T11:50:11Z",
    "cost_usd": 0.198023
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02252025-7007",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-02-25-minutes-7007.txt",
+   "path": "sources/meetings/finance-committee/2025-02-25-minutes-7007.pdf"
+  },
+  "official_sha256": "0208018a554e9fbaa81bdcbd3f9f38dded1d803c276f2df68e9895326dd54bd9",
+  "coverage": "full",
+  "summary": "The two records agree on most departmental figures; where they differ it is mostly caption misrenderings of amounts and names. The one substantive difference is the fire grant: ours has a state firefighting equipment grant of just under $119,000, while the official minutes give $18,960. Neither record shows a formal vote, and the decisions are recorded differently.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 6,
+   "discrepancy": 6,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Police body cameras ARPA cost",
+    "ours": "Police body cameras (grant/ARPA): 44722, 30 cameras",
+    "official": "There are currently 30 body worn cameras in service. This was  purchased though ARPA funds totaling $44,722.",
+    "official_reading": "$44,722",
+    "note": "Same figure and count; ours just lacks formatting.",
+    "t": 749
+   },
+   {
+    "kind": "caption_error",
+    "about": "Milo training simulator cost",
+    "ours": "Milo training simulator (state earmark): $33,900",
+    "official": "state earmark funds, totaling $33,910.",
+    "official_reading": "$33,910",
+    "note": "Same item; $33,900 vs $33,910 is most likely misheard digits.",
+    "t": 771
+   },
+   {
+    "kind": "agree",
+    "about": "Lockup budget",
+    "ours": "Lockup budget: 20,600",
+    "official": "Lockup is 1% of the budget totaling $20,600",
+    "note": "Same figure.",
+    "t": 1724
+   },
+   {
+    "kind": "caption_error",
+    "about": "Regional dispatch assessment",
+    "ours": "Regional dispatch assessment: $216,000",
+    "official": "Regional dispatch is 8% of the budget totaling $216,098",
+    "official_reading": "$216,098",
+    "note": "Same line; captions rounded or misheard the figure.",
+    "t": 1745
+   },
+   {
+    "kind": "agree",
+    "about": "Fire fourth shift cost",
+    "ours": "Fourth shift cost estimate: a little under $464,500",
+    "official": "It’s estimated to cost $464,369.26.",
+    "note": "Consistent: $464,369 is a little under $464,500.",
+    "t": 4320
+   },
+   {
+    "kind": "agree",
+    "about": "EMS supplies request",
+    "ours": "EMS supply request: 5,000",
+    "official": "EMS supplies are an",
+    "note": "Both give an additional $5,000 for EMS supplies.",
+    "t": 4696
+   },
+   {
+    "kind": "agree",
+    "about": "IT software request",
+    "ours": "IT software request: $1,000",
+    "official": "IT software is an",
+    "note": "Both give an additional $1,000.",
+    "t": 4757
+   },
+   {
+    "kind": "agree",
+    "about": "Radio maintenance request",
+    "ours": "Radio maintenance request: 10,000, $3 and $5,000, over four grand",
+    "official": "Radio maintenance is an",
+    "note": "The $10,000 request matches; the other captioned amounts have no counterpart in the official text.",
+    "t": 4818
+   },
+   {
+    "kind": "discrepancy",
+    "about": "State firefighting equipment grant amount",
+    "ours": "State firefighting equipment grant: just under $119,000",
+    "official": "State grant for ﬁreﬁghting equipment totaling $18,960.",
+    "note": "$119,000 vs $18,960 is more than misheard digits explain (possibly 'under $19,000' misheard); check the recording near t=5190.",
+    "t": 5190
+   },
+   {
+    "kind": "discrepancy",
+    "about": "SAFE/Senior SAFE grant amount",
+    "ours": "SAFE and Senior SAFE grants: $7,500",
+    "official": "S.A.F .E/Senior Safe Grant totaling $7,430.",
+    "note": "$7,500 vs $7,430 may be rounding in speech; check the recording or grant award.",
+    "t": 5395
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ARPA-funded fire equipment",
+    "ours": "ARPA-funded fire equipment: 56,000",
+    "official": "15 ﬁreground portable radios: $50,000",
+    "note": "No $56,000 ARPA line appears in the official list (the radios are $50,000); check what item the speaker meant.",
+    "t": 5067
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Federal AFG brush truck grant",
+    "ours": "Federal AFG grant for brush truck: $300,000, 5% match, 15,000",
+    "official": "",
+    "note": "The official minutes do not mention this grant; check the recording.",
+    "t": 5374
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Mental health co-responder grant figures",
+    "ours": "Mental health co-responder grant: $65,000, $120,000",
+    "official": "",
+    "note": "The official minutes say only that the funding was pulled back by the state, with no dollar amounts.",
+    "t": 2971
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Police FY26 targeted increase and motorcycle/K9 items",
+    "ours": "FY26 police targeted budget increase: $115,000, 30,000, 1.2 increase",
+    "official": "",
+    "note": "The official minutes record no FY26 police increase, motorcycle lease or K9 insurance figures.",
+    "t": 1811
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fire total FY26 increase",
+    "ours": "Fire total FY26 increase: 2.32%",
+    "official": "",
+    "note": "The official minutes say only 'generally level funded'; no percentage is given.",
+    "t": 6334
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Police FY2025 budget breakdown",
+    "ours": "",
+    "official": "FY2025 budget is $2,848,314",
+    "note": "The official minutes carry the full police budget breakdown, which our minutes do not list.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Land Use Department budget requests",
+    "ours": "",
+    "official": "Planning: $163,595",
+    "note": "Our minutes have nothing on the Land Use presentation (Planning $163,595, Conservation $90,080, Building $181,722, ZBA $4,500).",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Ambulance enterprise/revolving fund decision",
+    "ours": "Ambulance receipts, revolving/enterprise fund options to be reviewed, with the town manager to provide detail and the topic kept for a later meeting after budget season.",
+    "official": "The Committee wants to look further into a possible ambulance revolving fund.",
+    "note": "Both record follow-up, but the official minutes name Ezequiel Ayala as looking into it and say nothing of the post-budget-season timing; check the recording at t=6557.",
+    "t": 6557
+   },
+   {
+    "kind": "agree",
+    "about": "Free cash breakdown request",
+    "ours": "Town manager agreed to provide a breakdown of sources of certified free cash within about a week.",
+    "official": "Jennifer Warren-Dyment will provide those documents in a week",
+    "note": "Same commitment and timeframe.",
+    "t": 8943
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Police staffing plan decision",
+    "ours": "Police staffing plan to be reassessed by the chief and new town manager.",
+    "official": "",
+    "note": "The official minutes record no such decision, only that a screening committee for the Chief meets and hiring is hoped for by April; check the recording.",
+    "t": 2866
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Fire fourth-shift further discussion",
+    "ours": "Committee will need further discussion and targeting on the fire fourth-shift proposal once the preliminary budget is presented.",
+    "official": "Glenn Mcleod encourages the Committee to look further into the 4th shift proposal.",
+    "note": "The official minutes record only a resident's encouragement and a question about staging; they record no committee decision to defer pending the preliminary budget.",
+    "t": 7683
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mike Rupp",
+    "ours": "Mike rup (member)",
+    "official": "Committee Member Mike Rupp",
+    "official_reading": "Mike Rupp",
+    "note": "Misspelled name in captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Police chief name",
+    "ours": "Chief Tibido (acting Chief Jeffrey Tibido) (presenter)",
+    "official": "Chief JeƯrey Thibideau provided the presentation.",
+    "official_reading": "Jeffrey Thibideau",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Land Use Director",
+    "ours": "Chris Riley (presenter)",
+    "official": "The Land Use Director, Chris Reilly, provided the presentation.",
+    "official_reading": "Chris Reilly",
+    "note": "Misspelled name."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Anna Lockwood",
+    "ours": "Anna Lockwood (member)",
+    "official": "Committee Member Ana Lockwood",
+    "note": "Same person; spelling differs trivially."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Members present not in ours",
+    "ours": "",
+    "official": "Chair Chris Menard, Vice Chair Jean Russell, Clerk Tom Gray",
+    "note": "Our minutes leave the chair unnamed and omit Jean Russell, Tom Gray, Tanya Dall and Jay Simeone."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:54:29Z",
+   "cost_usd": 0.24977739999999998
+  }
  }
 }

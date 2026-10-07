@@ -404,5 +404,218 @@
    "at": "2026-09-27T11:34:45Z",
    "cost_usd": 0.251724
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12152025-7565",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-12-15-minutes-7565.txt",
+   "path": "sources/meetings/planning-board/2025-12-15-minutes-7565.pdf"
+  },
+  "official_sha256": "2f8cdf44b05392210005d5acc1ab44bb4a78330dcbb241a6b7ac3b73a3199052",
+  "coverage": "full",
+  "summary": "The two records agree on the ANR endorsement, the 30 Summer Street continuance, the $2,000 peer-review deposit and the $4,000 bond amount, all at 3-0, once the misheard names (Brenner, Burney, Reid, Leigh Bain, LeClair) are resolved. The one thing to check is the January dates: ours has the 0 Reservoir Road hearing continued to January 5 and a January 26 reschedule, while the official minutes give 1/12/26 and 1/26/26. Two further points of difference are the bond endorsement wording and the order of the common driveway and storm water permits.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 5,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Matthew Allison (chair)",
+    "official": "Matthew Brenner, Chair",
+    "official_reading": "Matthew Brenner",
+    "note": "Same person in the chair role; the captions misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Adam Burney",
+    "ours": "Adam Bernie (member)",
+    "official": "Adam Burney, Member",
+    "official_reading": "Adam Burney",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Amanda Reid",
+    "ours": "Amanda Reed (member)",
+    "official": "Amanda Reid, Clerk",
+    "official_reading": "Amanda Reid",
+    "note": "Misheard surname; the official minutes also give her role as Clerk and say she attended remotely."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Planning office staff name",
+    "ours": "Lee (planning office staff)",
+    "official": "Leigh Bain – Admin. Assistant",
+    "official_reading": "Leigh Bain",
+    "note": "First name misheard and the surname missing; this is the same staff member."
+   },
+   {
+    "kind": "caption_error",
+    "about": "0 Reservoir Road engineer's name",
+    "ours": "Justin McCarti (presenter (engineering, on behalf of SDP Realty Trust, 0 Reservoir Road))",
+    "official": "Justin LeClair (McCarty Engineering) presented on behalf of the applicant.",
+    "official_reading": "Justin LeClair (McCarty Engineering)",
+    "note": "Captions took the firm name McCarty for the presenter's surname; the official minutes give the presenter as LeClair of McCarty Engineering."
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees: Harris, Blood, Simpson",
+    "ours": "Richard Harris (interim land use director); Mike Blood (MSB Property Management); Jim Simpson (DCJS)",
+    "official": "Richard Harris –  \nInterim Planning Director",
+    "note": "Names match. Harris's title is rendered slightly differently, and Blood and Simpson appear in the official minutes as presenters."
+   },
+   {
+    "kind": "agree",
+    "about": "Members present and absent",
+    "ours": "Three members voting: Allison/Brenner, Bernie/Burney, Reed/Reid",
+    "official": "Roll Call: M. Brenner, A. Reid (remote), A. Burney;  Absent: T. Willsmer",
+    "note": "Both records show three members voting 3-0. Our minutes do not list Willsmer as absent or note Reid's remote attendance."
+   },
+   {
+    "kind": "agree",
+    "about": "Endorse ANR for 222 West Townsend Road",
+    "t": 1048,
+    "ours": "Endorse the ANR for 222 West Townsend Road — passed 3-0",
+    "official": "Roll Call Vote: A Burney, AYE; A Reid, AYE; M Brenner, AYE (3/0)",
+    "note": "Same item and the same 3-0 outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 30 Summer Street hearing",
+    "t": 1135,
+    "ours": "Continue the public hearing (storm water/site plan) for 30 Summer Street — passed 3-0",
+    "official": "A. Burney moved to continue to next meeting 1/12/26. A Reid \nSecond.",
+    "note": "Same continuance and the same 3-0 vote. The official minutes add the 1/12/26 date, which ours does not record."
+   },
+   {
+    "kind": "agree",
+    "about": "Peer review for 0 Reservoir Road and $2,000 deposit",
+    "t": 2729,
+    "ours": "Send the 0 Reservoir Road project to Graves for peer review upon receipt of a $2,000 deposit — passed 3-0",
+    "official": "A Burney moved to send to Graves for a Peer \nReview, requiring a $2000.00 deposit.",
+    "note": "Same motion, same $2,000 figure, same 3-0 outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Continuation date for 0 Reservoir Road storm water hearing",
+    "t": 2791,
+    "ours": "Continue the storm water permit hearing for 0 Reservoir Road to January 5 at 6:05pm — passed 3-0",
+    "official": "A Burney motioned to continue to 1/12/26 meeting, A Reid Second.",
+    "note": "Both records show a 3-0 vote to continue, but the dates differ (Jan 5 at 6:05pm vs 1/12/26). Check the recording at this timestamp and the posted January agendas."
+   },
+   {
+    "kind": "agree",
+    "about": "Bond amount set at $4,000, 116 Townsend Harbor Road",
+    "t": 3280,
+    "ours": "Set the bond amount at $4,000 for 116 Townsend Harbor Road storm water permit PBSW-25-2 — passed 3-0",
+    "official": "A Burney motioned to set Bond at $4000.00, A \nReid, Second.",
+    "note": "Same amount and the same 3-0 vote."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Acceptance of bond and endorsement condition",
+    "t": 3320,
+    "ours": "Accept the $4,000 bond and endorse the performance guarantee secured by deposit of money, contingent on the check clearing before a certificate of occupancy is issued — passed 3-0",
+    "official": "A Burney motioned to approve the Bond and not endorse until check clears.",
+    "note": "Both condition the endorsement on the check clearing, but ours adds a certificate-of-occupancy condition and says the board endorses, while the official minutes say it does not endorse until the check clears. Check the motion wording on the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sequence of common driveway special permit and storm water permit, 0 Reservoir Road",
+    "t": 2178,
+    "ours": "Applicant agreed to pursue the common driveway special permit and the storm water peer review at the same time (not storm water first), per the board's advice.",
+    "official": "J LeClair stated he would like to proceed with the \nStormwater permit and get a Peer Review.",
+    "note": "The official minutes say the board advised the special permit first and the applicant chose to proceed with storm water and peer review. Ours says the applicant agreed to run both together. Check what the applicant actually agreed to."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "January meeting schedule",
+    "t": 1256,
+    "ours": "Board tentatively agreed to reschedule the January 19th meeting (Martin Luther King Day) to January 26th, pending confirmation a member can attend.",
+    "official": "1/12/26 & 1/26/26",
+    "note": "The official schedule lists 1/12 and 1/26 and has no January 5 meeting, which our minutes mention. Check the January dates against the posted calendar. Ours also never records the 1/12 date given for the continued hearings."
+   },
+   {
+    "kind": "agree",
+    "about": "Objection to column-format minutes",
+    "t": 4175,
+    "ours": "Board asked that future minutes not be formatted in columnar/two-column style.",
+    "official": "does not like the \ncolumn format.",
+    "note": "Both record the column-format objection. The official minutes attribute it to A Burney during approval of the 10/27/25 minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Performance guarantee percentage and figure discussion",
+    "t": 3134,
+    "ours": "Performance guarantee bond amount, 116 Townsend Harbor Road: 25%, under 4,000, 4,000",
+    "official": "",
+    "note": "The official minutes record only that an estimated cost was discussed and $4000.00 was enough, with no 25% figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost of proposed homes at 0 Reservoir Road",
+    "t": 1699,
+    "ours": "Cost of proposed homes, 0 Reservoir Road: 3/4 of a million dollars",
+    "official": "",
+    "note": "This figure from the discussion does not appear in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bond signing set for Thursday",
+    "t": 3546,
+    "ours": "Signing of the bond paperwork for 116 Townsend Harbor Road was set for Thursday, when both applicant and staff can be present with a notary.",
+    "official": "",
+    "note": "The official minutes do not mention the signing arrangement."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "January 5 quorum contingency",
+    "t": 4512,
+    "ours": "If there is no quorum for the January 5th meeting, the meeting will be posted and cancelled, with business continuing to the next scheduled meeting.",
+    "official": "",
+    "note": "Not in the official minutes, which list no January 5 meeting. See the January schedule discrepancy."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Votes approving the 10/27/25 and 11/24/25 minutes",
+    "ours": "",
+    "official": "A Burney moved to make changes, A Reid Second",
+    "note": "The official minutes record two 3-0 roll-call votes on prior minutes (10/27 with corrections, 11/24 approved). Ours records neither vote. Minutes approvals may count as procedural, but confirm."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair's report: new Planning Director and Master Plan Steering Committee",
+    "ours": "",
+    "official": "M Brenner announced that we have a town Director of Planning and Economic \nDevelopment.",
+    "note": "The official minutes record the hire (Stephen Wallace, starting in February) and the wrap-up of the Master Plan Steering Committee. Ours records neither."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Committee reports",
+    "ours": "",
+    "official": "We do not know the budget; we will meet on Wednesday.",
+    "note": "The official minutes include reports from several committees (Capital Planning, Economic Development, Municipal Building Design and others). Ours has none."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Stormwater permit recommendation for 222 West Townsend Road",
+    "ours": "",
+    "official": "A Burney \nstated Stormwater will be required based on acreage being disturbed and is recommending a \nStormwater permit for each individual lot.",
+    "note": "Our minutes record only the ANR endorsement, not this stormwater discussion."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:21:50Z",
+   "cost_usd": 0.3338814
+  }
  }
 }

@@ -435,5 +435,197 @@
    "at": "2026-09-27T12:47:02Z",
    "cost_usd": 0.18963
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08122025-7339",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-08-12-minutes-7339.txt",
+   "path": "sources/meetings/council-on-aging/2025-08-12-minutes-7339.pdf"
+  },
+  "official_sha256": "a111fa1f7301d85380221298360362a5ae8fdc6281caae19fe9c649169f9baad",
+  "coverage": "full",
+  "summary": "The two records agree on most points: postponed minutes approval, the Women's Club accommodation, the Unitil letter, the Lula Lift, the Sept. reassessment, the kiosk, Sand for Seniors, and the 41A warrant article. They differ on who is named, on the $5 million emergency funding, and on the means-testing and deferral figures that the captions garbled or the official minutes leave out; no recorded votes appear in either except the official adjournment motion, which is skipped.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Tea Party ticket price",
+    "t": 1,
+    "ours": "Tea party fundraiser tickets: $30",
+    "official": "Tea Party tickets are going on sale on August 19th for $30",
+    "note": "Same $30 figure in both."
+   },
+   {
+    "kind": "agree",
+    "about": "Minutes approval postponed",
+    "t": 84,
+    "ours": "Minutes approval postponed to the next meeting so members have time to read them.",
+    "official": "MINUTES APPROVAL: postponed to next meeting.",
+    "note": "Same outcome; no vote in either."
+   },
+   {
+    "kind": "agree",
+    "about": "Women's Club Friday meetings unaffected",
+    "t": 333,
+    "ours": "Confirmed the Women's Club will continue its regular Friday afternoon meetings; a staff member will stay on Fridays to accommodate them.",
+    "official": "Those meetings will not be affected as Ms. Goodsell has offered to stay later those days.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "agree",
+    "about": "Trial hours reassessed in September",
+    "t": 647,
+    "ours": "Trial hours (Friday closures, Monday/Wednesday evenings) to be reassessed at the September meeting rather than decided now.",
+    "official": "Ms. Lincoln noted she would like to address this in the September meeting",
+    "note": "Both defer to September."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Unitil letter: who sends it and when",
+    "t": 544,
+    "ours": "Board agreed the chair/director will draft a letter about Unitil concerns and send it once the select board liaison is back to sign on.",
+    "official": "Ms. Lincoln will work on drafting a letter for Unitil. She is asking the board to forward any concerns they might have to her for enclosure in that letter.",
+    "note": "Official minutes do not mention waiting for the select board liaison to sign on, and ours does not mention members forwarding concerns; check the recording on whether sending was conditioned on the liaison."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Unitil solar fee amount",
+    "t": 399,
+    "ours": "Unitil solar interconnection/expansion fee: $10,200, almost 10 years",
+    "official": "Mr. Rabbitt noted that the attachment pieces for solar has had an increase in pricing.",
+    "note": "Official gives no dollar figure, so the $10,200 cannot be compared; check the recording for the amount.",
+    "official_reading": "no figure given (an increase in pricing)"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "$5 million emergency medical funding",
+    "t": 1208,
+    "ours": "State emergency medical services funding: $5 million",
+    "official": "Legislation was signed by Governor Healy to allocate 5 million dollars emergency funding to North Central Fire Departments to stabilize the emergency response system and personnel.",
+    "note": "Amount matches ($5M), but ours calls it state EMS funding while the official says it goes to North Central fire departments; the recipient and framing differ, so check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Lula Lift ruled out; porch screening suggested",
+    "t": 1481,
+    "ours": "Elevator (Lula Lift) installation ruled out as infeasible; screening in the front porch identified as the only lower-cost space option, though not decided upon.",
+    "official": "Mr. Ruth recommended other options such as screening in the front porch.",
+    "note": "Both report the facilities director's challenges and porch screening suggestion; no decision recorded in either."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior center parking lot project",
+    "t": 1441,
+    "ours": "Senior center parking lot project: another million dollar project",
+    "official": "",
+    "note": "Official minutes do not mention a parking lot project."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Elevator annual inspection fee",
+    "t": 1503,
+    "ours": "Elevator annual inspection fee: between $800 and $1,000, 800 to a thousand",
+    "official": "",
+    "note": "Official minutes give no inspection fee."
+   },
+   {
+    "kind": "agree",
+    "about": "Master plan feedback due October 1",
+    "t": 1898,
+    "ours": "Committee members asked to bring ideas for the next meeting on senior needs for the 10-year master plan, due back by October 1st.",
+    "official": "They would like a response by October 1st. Ms. Lincoln is looking for feedback from the Council to present to the Master Plan Committee.",
+    "note": "Same deadline and request."
+   },
+   {
+    "kind": "agree",
+    "about": "Sand for Seniors",
+    "t": 2115,
+    "ours": "Sand-for-seniors program considered complete/DPW-handled; item to be publicized but taken off active discussion.",
+    "official": "DPW will be providing sand for town residents this coming winter. This program will be advertised at a later date.",
+    "note": "Consistent, though 'considered complete' in ours is stronger than the official wording."
+   },
+   {
+    "kind": "agree",
+    "about": "Kiosk completed",
+    "t": 2178,
+    "ours": "New lobby kiosk considered complete.",
+    "official": "Kiosk: Has been completed.",
+    "note": "Same."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Means-testing program figures",
+    "t": 3265,
+    "ours": "Property tax means-testing program eligibility limits: $540,000, 90 up to 109,000",
+    "official": "Mr. Rabbitt reported that there are two people applying for the means tested exemption now. The deadline to apply for this program is September 3rd.",
+    "note": "Official gives no dollar limits, so the captioned figures cannot be verified; check the recording for the eligibility figures."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "41A deferral figure",
+    "t": 3389,
+    "ours": "41A tax deferral program: between $5,000 and $6,000",
+    "official": "He will put together a warrant article for the 41A deferral as it needs to be approved by the Town.",
+    "note": "Official has no dollar range; check the recording for what the $5,000-$6,000 refers to."
+   },
+   {
+    "kind": "agree",
+    "about": "Jack drafts 41A warrant article",
+    "t": 3346,
+    "ours": "Agreed Jack will draft a warrant article asking the town to formally approve the 41A tax deferral program.",
+    "official": "He will put together a warrant article for the 41A deferral as it needs to be approved by the Town.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Cathy Beale",
+    "ours": "Kathy (board/committee member)",
+    "official": "Cathy Beale",
+    "note": "Spelling of the first name differs.",
+    "official_reading": "Cathy Beale"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Deb Lincoln and Deb Goodsell",
+    "ours": "Deb (Council on Aging Director (also runs the meeting's agenda items))",
+    "official": "Chairperson Deb Lincoln called the meeting to order at 9:33 am",
+    "note": "Two Debs in the official minutes: Deb Lincoln is chair, Deb Goodsell is COA Director; ours merges them into one."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Full attendance and absences",
+    "ours": "",
+    "official": "Present: Deb Lincoln (Chairperson), Jane Rabbitt (Vice-Chair), Diane Nowd, Jim McGuigan, Cathy Beale, Lou Franco, Jack Rabbitt, Elena Christopher",
+    "note": "Ours lists only four attendees; the official also names Jane Rabbitt, Diane Nowd, Jim McGuigan, Lou Franco, Elena Christopher and three excused members."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Caregiver Connection Lunch and Learn series",
+    "ours": "",
+    "official": "Ms. Beale reported that dates are being finalized for three Lunch and Learn sessions.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Century Club celebration",
+    "ours": "",
+    "official": "Celebration for Fran Therrien will be on Sept 2nd at 10am.",
+    "note": "Not in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:49Z",
+   "cost_usd": 0.24107900000000002
+  }
  }
 }

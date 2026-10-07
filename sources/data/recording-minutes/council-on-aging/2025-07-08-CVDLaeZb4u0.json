@@ -430,5 +430,159 @@
    "at": "2026-09-27T13:05:11Z",
    "cost_usd": 0.193326
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07082025-7292",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-07-08-minutes-7292.txt",
+   "path": "sources/meetings/council-on-aging/2025-07-08-minutes-7292.pdf"
+  },
+  "official_sha256": "07578a3716bed05edf73475ab4809ec761b658a81176d7cbe92a9ec670cf4555",
+  "coverage": "full",
+  "summary": "The two records agree on the broad agenda: new members, building permits for seniors, Bucky's Corner, kiosk posters and the Century Club. Neither records a non-procedural vote. The one thing to know is that the kiosk printing decision differs (hold all new panels vs. print the others and wait only on the staffing poster), and the official minutes omit every fee figure and the August meeting date that our minutes record.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 1,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes (non-procedural)",
+    "ours": "VOTES (non-procedural): none",
+    "official": "MINUTES APPROVAL: Ms. O’Sullivan moved to accept the minutes.",
+    "note": "Neither record has a non-procedural vote; the official only records minutes approval and adjournment, which are procedural."
+   },
+   {
+    "kind": "agree",
+    "about": "Construction value limit for senior permit fee waiver",
+    "ours": "Proposed senior building-permit fee waiver: repair value limit: $10,000",
+    "official": "setting a construction value limit such as $10,000.",
+    "note": "Same $10,000 limit discussed in both."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Building permit fee schedule figures",
+    "ours": "Building permit fee schedule: $10 per 1,000, $10,000, $100, $60",
+    "official": "",
+    "note": "The official minutes record Mr. Franco asking about the current cost of a permit but give no fee schedule figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Diamond dots craft kit cost",
+    "ours": "Diamond dots craft kit cost: $10 to $20",
+    "official": "",
+    "note": "No craft kit cost appears in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Kiosk check-in counts and lunch attendance figures",
+    "ours": "Kiosk check-in counts, year over year: 360; Lunch attendance: 12; Check-in totals used for percentage question: 7700",
+    "official": "Ms. Goodsell reported that check in’s on My Senior Center and Lunch Participation are up in the last 6 months.",
+    "note": "The official gives only the direction (up over 6 months) and no numbers; the recorded figures could not be checked against it."
+   },
+   {
+    "kind": "agree",
+    "about": "Ride assistance for Helen",
+    "ours": "Coordinate ride assistance for an absent member (Helen) through the front desk if she needs it.",
+    "official": "She may need some help with rides.",
+    "note": "Same topic; the official does not record the front-desk arrangement."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Utility/heating cost letter",
+    "ours": "Council will draft a list of concerns about utility and heating costs for the next meeting, for possible referral to the Select Board as a joint letter.",
+    "official": "Ms. Lincoln mentioned that the board should consider writing a formal request to Unitil regarding electric prices and the hardship that it creates for older adults.",
+    "note": "Ours records a commitment to draft a list of concerns for the next meeting; the official records only that the board should consider a request to Unitil (electric prices) with Select Board willing to sign. Check the recording to see whether a drafting task was assigned and whether it was about Unitil or heating costs generally."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "One-page building permit proposal and Select Board route",
+    "ours": "Building-permit-fee-waiver proposer will draft a one-page proposal (age threshold, construction-value limit, list of repairs requiring permits) to bring back to the council, then to the building commissioner and Select Board; no town meeting vote needed since the Select Board sets the fee schedule.",
+    "official": "Ms. Lockwood is working on this. She would like to get feedback from the group as to the parameters that should be used for this program.",
+    "note": "The official records the topic and parameters discussed (age 65+, $10,000) but not the one-page proposal, next steps or the no-town-meeting point."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Kiosk panel printing",
+    "ours": "Hold off printing the new kiosk panel artwork until it is clear whether kitchen staff can be pictured on it; consider a two-sided panel.",
+    "official": "It was requested that we could wait on the staffing poster, but the others should get printed.",
+    "note": "Ours holds off printing the new panel artwork pending the kitchen staff question; the official says only the staffing poster waits and the others should be printed. Check the recording for which posters were to be held."
+   },
+   {
+    "kind": "agree",
+    "about": "Bucky's Corner options",
+    "ours": "Look further into seating/furniture options for Bucky's Corner and bring choices back to a future meeting.",
+    "official": "They would like to discuss this further with the Director and will present options at the next meeting.",
+    "note": "Both record that options will be brought back."
+   },
+   {
+    "kind": "agree",
+    "about": "Century Club invitation for a resident turning 100",
+    "ours": "Reach out to a longtime Girl Scout leader turning 100 on August 29 to invite her into the Century Club.",
+    "official": "She is looking to induct her into the Century Club with a ceremony hopefully in September.",
+    "note": "Same item; the official names Fran Therrien and says August, while ours gives August 29 and the Girl Scout detail."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting date change",
+    "ours": "Next meeting moved from the originally stated July date to the second Tuesday in August (the 12th).",
+    "official": "",
+    "note": "The official minutes do not record the next meeting date or a change to it."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Kathy",
+    "ours": "Kathy (member)",
+    "official": "Cathy Beale",
+    "official_reading": "Cathy Beale",
+    "note": "Caption spelling of Cathy."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: chair, Lou, Jack, Jane",
+    "ours": "the chair (Chair); Lou (new member); Jack (new member); Jane (member)",
+    "official": "Present: Deb Lincoln (Chairperson), Jane Rabbitt (Vice-Chair), Diane Nowd, Susan O’Sullivan,",
+    "note": "Chair Deb Lincoln, Jane Rabbitt, Lou Franco and Jack Rabbitt appear in both."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Deb as a member",
+    "ours": "Deb (member)",
+    "official": "Guests: Barbara Coulombe (Eagle House Supporters Vice President), Deb Goodsell (COA Director), Caesar Nuzzolo (Select Board Liaison)",
+    "note": "Ours lists a member named Deb besides the chair; the official has Deb Lincoln (chair) and Deb Goodsell (director, a guest). Check whether this Deb is the Director."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pauline and Michelle as staff",
+    "ours": "Pauline (program coordinator/staff); Michelle (front desk staff)",
+    "official": "",
+    "note": "Neither name appears in the official minutes; Deb Goodsell is the only staff listed. Check the recording to confirm who spoke."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees and excused members",
+    "ours": "",
+    "official": "Excused: Helen Balcom, Elena Christopher",
+    "note": "The official also lists Diane Nowd, Susan O’Sullivan, Jim McGuigan, Ana Lockwood, and guests Barbara Coulombe and Caesar Nuzzolo, who are not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Lula Lift, kitchen staffing, tax deferral, evening programs",
+    "ours": "",
+    "official": "Lula Lift: Ms. Goodsell reported that the Building Inspector and the Facilities Manager came to the center to see about the options for a lift and she is currently waiting for a report.",
+    "note": "Our minutes record none of these items: the Lula Lift, the kitchen having no staff, kitchen volunteers, the first property tax deferral application, evening programs, Meals on Wheels drivers."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:27:01Z",
+   "cost_usd": 0.252879
+  }
  }
 }

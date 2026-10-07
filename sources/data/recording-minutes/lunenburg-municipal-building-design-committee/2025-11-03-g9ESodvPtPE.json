@@ -304,5 +304,116 @@
    "at": "2026-09-27T11:56:45Z",
    "cost_usd": 0.18391
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11032025-7482",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2025-11-03-minutes-7482.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2025-11-03-minutes-7482.pdf"
+  },
+  "official_sha256": "36ee6e96cbd7fc373efe4186f644c3740c3c7d296587b3157725d02c4cd4be31",
+  "coverage": "full",
+  "summary": "The two records agree on the main decisions: no substantive presentation in November, Brooks House out of scope, a possible separate committee, the bubble diagram, and a November 17 meeting. The official minutes record no votes other than approving the prior minutes and adjourning, which matches our minutes' lack of non-procedural votes; the one thing to know is that our two cost figures from the recording do not appear in the official minutes.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 0,
+   "discrepancy": 0,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "No substantive presentation at November town meeting; wait for May",
+    "ours": "The committee will not present anything substantive at the November town meeting, only that work is ongoing, and will aim to have real options ready by the May town meeting.",
+    "official": "Members agreed they are not prepared to present substantive material in November and prefer to wait until the May Town Meeting following additional public hearings, community engagement, and coordination with the Master Plan rollout.",
+    "note": "Same decision in both records; the official minutes add the reasons.",
+    "t": 171
+   },
+   {
+    "kind": "agree",
+    "about": "Brooks House outside committee scope",
+    "ours": "The committee agreed not to spend more meeting time on the Brooks House and to treat it as outside its scope for now.",
+    "official": "Committee generally agrees Brooks House is outside the primary scope of LMBDC’s current work.",
+    "note": "Both say Brooks House is outside scope; the official minutes say 'generally agrees' and 'primary scope'.",
+    "t": 1163
+   },
+   {
+    "kind": "agree",
+    "about": "Recommend separate committee for Brooks House and 925 Mass Ave",
+    "ours": "Suggested that a separate committee (possibly under economic development) be recommended to the select board to study non-town uses for the Brooks House and 925 Mass. Ave.",
+    "official": "Consider recommending formation of a separate committee to study reuse/disposition along with 925 Mass Ave (former gas station).",
+    "note": "Both frame it as a suggestion to consider; the 'economic development' and 'select board' detail is only in ours.",
+    "t": 1194
+   },
+   {
+    "kind": "agree",
+    "about": "Bubble diagram with town manager",
+    "ours": "Chris Ruth will meet with the town manager (Jennifer) to produce a bubble-diagram layout showing which offices/departments should sit together.",
+    "official": "Jennifer and Chris to coordinate bubble diagram and program summary before the next meeting.",
+    "note": "Same action item; the official minutes add a deadline (before the next meeting) and a program summary.",
+    "t": 5611
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting November 17, shorter",
+    "ours": "Next meeting set for November 17th, planned as a shorter 5:30 start.",
+    "official": "Committee acknowledged conflicts with Town Meeting on the 18th and agreed a shorter meeting on the 17th is acceptable.",
+    "note": "Same date and shorter format. The official minutes give the 5:30 PM start in the 'Next Meeting Proposed Date' line.",
+    "t": 5928
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost per square foot of a new building",
+    "ours": "Cost per square foot of a new building: $5, $600 a square foot",
+    "official": "",
+    "note": "The official minutes give no cost-per-square-foot figure. The caption text is garbled ('$5, $600'), so check the recording near t=5257 before quoting it.",
+    "t": 5257
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Annex construction cost vs. renovation, four times",
+    "ours": "Annex construction cost vs. renovating existing buildings: four times",
+    "official": "",
+    "note": "The official minutes mention annex options but give no cost multiple; check the recording near t=5297.",
+    "t": 5297
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of October 20 minutes",
+    "ours": "",
+    "official": "Minutes from October 20, 2025, were reviewed. Motion to Approve: Tony Sculimbrene Seconded by: Greg Roy. Minutes approved unanimously.",
+    "note": "This is a routine vote on prior minutes, which our minutes do not record. Check the recording, but it is procedural."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Site visit summaries and measurement tasks",
+    "ours": "",
+    "official": "Chris and Tony to measure ceiling heights and stair geometry.",
+    "note": "Our minutes record none of the Town Hall and Ritter site-visit findings or the measurement action items."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Elevator preference and Greg's survey data",
+    "ours": "",
+    "official": "Committee reaffirmed its preference for a full multi-stop elevator.",
+    "note": "The official minutes record a committee preference on a full elevator, with chairlifts rejected. Our minutes record no such decision, so check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Dave (chair), Tony, Greg, Brian, Tom, Laura, Matt, Chris (Ruth) (building inspector)",
+    "official": "Members Present:   Brian Lehtinen, Tom Gray, David Blatt, Greg Roy, Anthony \nSculimbrene, Matthew Brenner, Laura Brzozoski",
+    "note": "All seven members and Chris Ruth are in both records, with first names in ours. Official lists Kristina Masaitis absent; Chris is listed as a town employee, and our 'building inspector' role is not in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:22:39Z",
+   "cost_usd": 0.228933
+  }
  }
 }

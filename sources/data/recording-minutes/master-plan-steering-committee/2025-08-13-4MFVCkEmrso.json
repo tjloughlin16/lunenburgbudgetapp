@@ -376,5 +376,171 @@
    "at": "2026-09-27T12:46:23Z",
    "cost_usd": 0.19564199999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08132025-7348",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/master-plan-steering-committee/2025-08-13-minutes-7348.txt",
+   "path": "sources/meetings/master-plan-steering-committee/2025-08-13-minutes-7348.pdf"
+  },
+  "official_sha256": "89f81f15a54c4446e0e1406dff69d0c41b0ef0a47308e0d1f8103261391e0e25",
+  "coverage": "partial",
+  "summary": "The two records agree on the meeting date, the main attendees and an October 22nd public session. They differ on votes: the official minutes record three minutes-approval votes that our minutes omit, and our minutes record several scheduling decisions that the official minutes do not state.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 5,
+   "only_in_ours": 4,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote approving April 5 and May 15, 2024 minutes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "Jerry motions to approve April 5, 2024 and May 15, 2024 meeting minutes. Tony seconds the motion.",
+    "note": "The official minutes record a roll-call vote passing; our minutes record no votes, so check the recording to see whether it happened or was missed by the captions.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote approving April 23, 2025 minutes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "Tony motions to approve the April 23, 2025 meeting minutes. Emily seconds the motion.",
+    "note": "The official minutes record a unanimous 6-0 roll-call approval that ours does not; verify in the video.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote approving July 9, 2025 minutes (Glenn abstained)",
+    "ours": "VOTES (non-procedural): none",
+    "official": "Glen (Abstained)",
+    "note": "The official minutes record a passed vote with Glenn abstaining; ours has no vote, so check the recording for the vote and the abstention.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Date of public information session / committee working meeting",
+    "ours": "Move the committee's own working meeting to October 8th and hold the public info session on October 22nd.",
+    "official": "Potential public meeting October 22nd",
+    "note": "The date agrees but the official minutes call it only a 'potential' meeting and do not mention the October 8th working meeting; check the recording for how firm the plan was.",
+    "t": 7048
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Next committee meeting on fourth Wednesday of August",
+    "ours": "Hold the next committee meeting on the fourth Wednesday of August to review which committees have responded to the feedback request and assign follow-up on the select board, planning board and school committee as priority laggards.",
+    "official": "Planning and parks responded",
+    "note": "The official minutes name planning and parks as having responded, with no next-meeting date or laggard assignments; check the recording for which committees had responded and what was decided.",
+    "t": 5726
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Public info session in October before town meeting presentation",
+    "ours": "Hold a public information/input session in October, before the town-meeting presentation, to gather citizen feedback on the draft plan.",
+    "official": "Info session before town meeting with Public and Planning board",
+    "note": "Both records have a pre-town-meeting info session, but the official minutes describe it more loosely and name no October timing apart from the 'potential' October 22nd item.",
+    "t": 6939
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair presents draft plan at town meeting",
+    "ours": "The committee chair, not multiple members, will be the one to present the draft plan at town meeting, with consultant support on slides.",
+    "official": "",
+    "note": "The official minutes do not record who will present the plan.",
+    "t": 6459
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair to contact town manager and Tim Murphy about fall special town meeting",
+    "ours": "Chair will contact the town manager and Tim Murphy about scheduling the draft plan presentation at the fall special town meeting.",
+    "official": "",
+    "note": "The official minutes record no follow-up to schedule the town meeting presentation.",
+    "t": 7255
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost-tier legend figures",
+    "ours": "Proposed cost-tier legend for recommendations: $50,000, $500,000, $5 million",
+    "official": "",
+    "note": "The official minutes record no cost tiers.",
+    "t": 2044
+   },
+   {
+    "kind": "agree",
+    "about": "Chair attendee",
+    "ours": "Kim (chair)",
+    "official": "Kim Duffy (Chair, Member At Large)",
+    "note": "Same person.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Sondra",
+    "ours": "Sandra (member)",
+    "official": "Sondra Harp (Virtual, Member At Large)",
+    "note": "Captions misheard the first name.",
+    "official_reading": "Sondra Harp"
+   },
+   {
+    "kind": "agree",
+    "about": "Member Jerry",
+    "ours": "Jerry (member)",
+    "official": "Jerry Reid (Clerk, Member At Large)",
+    "note": "Same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Member Tony",
+    "ours": "Tony (member)",
+    "official": "Anthony Sculimbrene (Vice Chair, Member At Large)",
+    "note": "Tony is Anthony; the official minutes name him Vice Chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation Commission representative Teddy",
+    "ours": "Teddy (Teddy Bus) (member, Conservation Commission representative)",
+    "official": "Teddy Doucette (Conversation Commission Representative)",
+    "note": "The captions misheard the surname as 'Bus'. The official text also misspells Conservation as 'Conversation'.",
+    "official_reading": "Teddy Doucette"
+   },
+   {
+    "kind": "agree",
+    "about": "Member Emily",
+    "ours": "Emily (member)",
+    "official": "Emily Young (School Committee Representative)",
+    "note": "Same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Select Board liaison Glenn",
+    "ours": "Glenn (member, Select Board liaison)",
+    "official": "Glenn Mcleod (Select Board Representative)",
+    "note": "Same person; the official minutes spell him Glen in places."
+   },
+   {
+    "kind": "agree",
+    "about": "Planning Board liaison Tim",
+    "ours": "Tim (member, Planning Board liaison)",
+    "official": "Tim Willsmer (Planning Board Representative)",
+    "note": "Same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Consultant Ramy",
+    "ours": "Ramy (also heard as Romy/Ronnie) (presenter, planning consultant)",
+    "official": "Rami el Samahy (Over Under Consultant)",
+    "note": "Captions misheard the name.",
+    "official_reading": "Rami el Samahy"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:35Z",
+   "cost_usd": 0.23078700000000002
+  }
  }
 }

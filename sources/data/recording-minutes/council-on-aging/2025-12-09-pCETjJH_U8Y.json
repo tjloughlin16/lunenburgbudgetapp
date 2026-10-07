@@ -533,5 +533,172 @@
    "at": "2026-09-27T11:37:56Z",
    "cost_usd": 0.21420759999999997
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12092025-7553",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-12-09-minutes-7553.txt",
+   "path": "sources/meetings/council-on-aging/2025-12-09-minutes-7553.pdf"
+  },
+  "official_sha256": "00cc3a769aaef297862b22688004e34563cb13411996d73bbb15d0e106522c68",
+  "coverage": "full",
+  "summary": "The two records agree on all three votes' outcomes and on the tabled items, and the official minutes add the vote counts and a few items our captions missed. The one substantive difference is who represents the COA on Article 12: ours says the Chair, the official minutes say Mr. Franco.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: research assistant director position",
+    "t": 3556,
+    "ours": "That the town manager do the research on what an assistant director position would look like, its approximate cost, and duties/job description — passed",
+    "official": "Vote was 9 in favor and one abstention.",
+    "note": "Same motion and outcome; only the official minutes give the 9-in-favor, one-abstention tally."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: urge replacement for outreach coordinator",
+    "t": 3768,
+    "ours": "To urge the administration to move forward with hiring a replacement for Pauline's position — passed",
+    "official": "Vote was unanimous in favor.",
+    "note": "Same motion and outcome; the official minutes add that it was unanimous."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: Article 12 representative",
+    "t": 4179,
+    "ours": "That the Chair represent the COA in an official capacity to negotiate with the Town Manager and appear before the Select Board regarding Article 12 (warrant notification/posting) — passed",
+    "official": "to work as a representative of the COA to consult with Town Manager  and",
+    "note": "Ours names the Chair as the representative and says 'negotiate'; the official minutes say Mr. Franco moved to work as the representative and 'consult'. Check the recording near t=4179 for who is appointed."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Kathy",
+    "ours": "Kathy (board member)",
+    "official": "Cathy Beale",
+    "note": "Same board member; the captions misheard the spelling.",
+    "official_reading": "Cathy Beale"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Anna",
+    "ours": "Anna (board member (finance committee))",
+    "official": "Ana Lockwood",
+    "note": "Same person with a misheard spelling; the 'finance committee' label does not appear in the official minutes.",
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees not in our list",
+    "ours": "",
+    "official": "Jane Rabbitt (Vice-Chair )",
+    "note": "The official list also has Jane Rabbitt, Jim McGuigan, Elena Christopher and Glenn McLeod (Select Board), with Helen Balcom excused; our list has none of them."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee Colleen",
+    "ours": "Colleen (board member)",
+    "official": "",
+    "note": "No Colleen appears in the official present list; check whether this is a misheard name (Elena Christopher is the closest unmatched member) or a different person."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pauline Roy thanked",
+    "ours": "",
+    "official": "COA Board thanked Pauline Roy for her years as the Outreach",
+    "note": "The official minutes give her as thanked, not as an attendee; we list her as present and departing."
+   },
+   {
+    "kind": "agree",
+    "about": "Festival of Trees proceeds",
+    "t": 5452,
+    "ours": "Festival of Trees fundraiser proceeds: almost $4,000, 30% ahead",
+    "official": "raised almost $4k",
+    "note": "Same figure; the '30% ahead' detail is not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Override figures",
+    "t": 1238,
+    "ours": "Prior school override: $947,000, $200 per household, a hundred; hypothetical future override $2 million; impact per household $2129, $517,000, $424, $112, $212",
+    "official": "",
+    "note": "The official minutes record no override discussion or figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assistant director cost delta and hours",
+    "t": 1571,
+    "ours": "Cost delta for new assistant director position: $30,000",
+    "official": "",
+    "note": "The official minutes give no cost or hours figures for the assistant director position. Treat as unverified until checked against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Budget and payroll percentages",
+    "t": 4260,
+    "ours": "COA FY budget - overall: 261,000; payroll spending 39.2%, 32%, 32.8%; meals site vendor spending 20%",
+    "official": "noted that most of budget is payroll",
+    "note": "The official minutes say only that payroll is most of the budget and on target, with no figures. These captioned figures are unverified."
+   },
+   {
+    "kind": "agree",
+    "about": "Agendas and minutes emailed",
+    "t": 3844,
+    "ours": "The Chair agreed to make sure agendas and minutes are emailed out to all board members going forward, since some had not been receiving them.",
+    "official": "offer ed  to also send minutes for future meetings.",
+    "note": "Same commitment by Ms. Lincoln; ours adds agendas and the reason, the official minutes say only minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Bylaws feedback tabled",
+    "t": 5388,
+    "ours": "Discussion of feedback on the COA bylaws was tabled/postponed to the following month's meeting.",
+    "official": "Tabled un til next month.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "agree",
+    "about": "Lobby furnishings tabled",
+    "t": 5135,
+    "ours": "The lobby furnishings item is being tabled until after the first of the year.",
+    "official": "No changes from last meeting.",
+    "note": "Same outcome; the official minutes add that the item will be tabled until the new year."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Food bank donations instead of ornament swap",
+    "t": 5583,
+    "ours": "Instead of the usual ornament swap, the board agreed to collect food bank donations this year.",
+    "official": "",
+    "note": "This decision is not in the official minutes; check the recording at t=5583."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Group photo for Facebook page",
+    "t": 4972,
+    "ours": "The Chair asked to get a group photo of the caregiver resource connection team, including Pauline, for the Facebook page.",
+    "official": "",
+    "note": "The official minutes mention the Facebook page being up and running, but not a photo request."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "41A update",
+    "ours": "",
+    "official": "6. 41A Update : Mr. Rabbitt reported this passed at the Special Town Meeting.",
+    "note": "The result of the Special Town Meeting 41A item is in the official minutes and not in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:21:50Z",
+   "cost_usd": 0.2527994
+  }
  }
 }

@@ -354,5 +354,144 @@
    "at": "2026-09-27T12:52:03Z",
    "cost_usd": 0.199372
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07292025-7326",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-07-29-minutes-7326.txt",
+   "path": "sources/meetings/sewer-commission/2025-07-29-minutes-7326.pdf"
+  },
+  "official_sha256": "3211217f8a93a5b761837e6f136a4d35e4acef928601062f3ded6b6d9dc6aa4d",
+  "coverage": "full",
+  "summary": "The records agree on the topics discussed and the next meeting dates, with caption errors in names and the ADU fee figure. Check two things: the official minutes record a 3-0 roll call approving the 7/8/25 minutes that ours omits, and ours has Bill Bernard recusing on the Mass Ave easement where the official minutes have Dan.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 1,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to approve 7/8/25 minutes",
+    "ours": "VOTES (non-procedural): none; only notes the correction was agreed to be fixed before the vote to approve them.",
+    "official": "Roll Call Vote: Scott-aye, Dan-aye",
+    "note": "Official records a motion (Scott D., second Dan P.) and a 3-0 roll call approving the 7/8/25 minutes with correction; ours lists no vote, so check the recording around t=331 for the motion and roll call.",
+    "t": 331
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who recuses on the Mass Ave easement",
+    "ours": "Bill Bernard will recuse himself from voting on the Massachusetts Avenue easement matter because he was contracted by the homeowner for the original sewer install before joining the commission.",
+    "official": "he will recuse",
+    "note": "Official attributes the Mass Ave contract work and the recusal to Dan (Proctor), not Bill Bernard; check the recording at t=1424 to see who spoke.",
+    "t": 1424
+   },
+   {
+    "kind": "caption_error",
+    "about": "Proposed ADU flat fee",
+    "ours": "Proposed ADU sewer connection fee: $500, a,000",
+    "official": "of $500 or $1,000",
+    "note": "Same flat-rate suggestion of $500 or $1,000, garbled by captions.",
+    "official_reading": "$500 or $1,000",
+    "t": 941
+   },
+   {
+    "kind": "agree",
+    "about": "Leominster per-bedroom fee",
+    "ours": "Leominster's per-bedroom sewer fee (comparison): $220",
+    "official": "with a fee of $220/bedroom",
+    "note": "Same figure in both.",
+    "t": 982
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Wright-Pierce NPDES mapping cost figure",
+    "ours": "Wright-Pierce NPDES mapping/engineering costs: 10 to 20",
+    "official": "",
+    "note": "Official gives no dollar figure for Wright Pierce or the mapping line item, only that they are expensive and the mapping charge should be less next year; the '10 to 20' is unclear and should be checked in the recording.",
+    "t": 1925
+   },
+   {
+    "kind": "agree",
+    "about": "Correction of 'effort' to 'effect'",
+    "ours": "A wording correction (from 'effort' to 'effect') was identified in the July 8 minutes and agreed to be fixed before the vote to approve them.",
+    "official": "Jane will make the correction.",
+    "note": "Same correction noted by Brett and to be made by the clerk.",
+    "t": 331
+   },
+   {
+    "kind": "agree",
+    "about": "Town counsel meeting Aug 21, one or two commissioners",
+    "ours": "Only one or two commissioners will attend the August 21 meeting with town counsel on ADU/easement regulations, to avoid triggering public-meeting quorum requirements.",
+    "official": "One or two Commissioners can also attend.",
+    "note": "Both say one or two commissioners may attend; the quorum rationale appears only in ours.",
+    "t": 1152
+   },
+   {
+    "kind": "agree",
+    "about": "Wright-Pierce to help with NPDES response",
+    "ours": "Wright-Pierce will be asked to help fill in the gaps in the NPDES permit response, per their proposal.",
+    "official": "Wright Pierce for  help",
+    "note": "Both say the commission is turning to Wright Pierce for help with the NPDES submittals.",
+    "t": 2150
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Future agenda items / Dana Street dropped",
+    "ours": "Dana Street is being dropped from future agendas since the repair is complete; the manhole IFB, ADU fee discussion, easements, and NPDES permit will remain standing agenda items.",
+    "official": "Billing  for Q1",
+    "note": "Official lists future items (Manhole IFB, Billing for Q1, ADU discussion, meeting with Town Counsel, Easements, NPDES permit) and does not mention dropping Dana Street; ours omits Billing for Q1. Check the recording at t=2252.",
+    "t": 2252
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting dates",
+    "ours": "Set the next meeting dates as August 12, August 26, September 9, and September 30, 2025, alternating regular DPW hybrid meetings and Zoom-only meetings.",
+    "official": "August 12, 2025 @ 7pm – Regular Meeting, Hybrid Meeting  @ DPW",
+    "note": "Same four dates and the same alternation of hybrid and Zoom meetings.",
+    "t": 2548
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chairman name",
+    "ours": "Brett Ramston (chairman)",
+    "official": "Chair-  Brett Ramsden",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner name",
+    "ours": "Scott Dah (commissioner)",
+    "official": "Vice-Chair - Scott Dall",
+    "note": "Misheard surname; official also gives him as Vice-Chair.",
+    "official_reading": "Scott Dall"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Business manager name",
+    "ours": "Andrew Valerie (business manager)",
+    "official": "Sewer Business Manager: Andrew Valliere",
+    "note": "Misheard surname.",
+    "official_reading": "Andrew Valliere"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "Member: Arthur Katis",
+    "note": "Official records Arthur Katis as absent; ours does not mention him."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:26:18Z",
+   "cost_usd": 0.3030186
+  }
  }
 }

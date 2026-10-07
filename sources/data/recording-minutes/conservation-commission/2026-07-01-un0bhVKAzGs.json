@@ -510,5 +510,290 @@
    "at": "2026-09-27T02:15:13Z",
    "cost_usd": 0.191916
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07012026-7880",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-07-01-minutes-7880.txt",
+   "path": "sources/meetings/conservation-commission/2026-07-01-minutes-7880.pdf"
+  },
+  "official_sha256": "2211983e4e54f40e794b25d66095074acf043ad5b74de568bdf4e64c98c40b33",
+  "coverage": "full",
+  "summary": "The two records agree on nearly every hearing vote (all 5-0, the enforcement order 4-0 with Wilson recused), and most differences are caption misspellings of names and addresses. The substantive differences are the 101 Horizon Island Road motion (ours: approve the NOI as presented; official: negative determination), the title-cost amount, and several follow-up decisions on the Hollis Road building, the woodstove, encroachment and the Chase Road warning letter.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 6,
+   "discrepancy": 6,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "101 Horizon Island Road (Wright addition) motion",
+    "t": 1996,
+    "ours": "Approve the notice of intent at 101 Horizon Island Road (Robert Wright addition) as presented — passed 5-0",
+    "official": "Motion: T Doucette, for a negative determination.",
+    "note": "Both records show a unanimous 5-0 vote, but ours is an approval of the NOI as presented and the official is a negative determination; check the recording to see which motion was made.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Reservoir Recreational Trust boat ramp NOI continued to July 15",
+    "t": 2920,
+    "ours": "Continue the Reservoir Recreational Trust boat ramp NOI (701 Reservoir Road) to July 15, 2026 — passed 5-0",
+    "official": "Motion: M. Larouche, continued to 7/15 for DEP Number",
+    "note": "Same continuance and unanimous vote; the official adds the reason (DEP number).",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Benjamin Builders NOI (10 Parmenter / 91 Round) continued",
+    "t": 3321,
+    "ours": "Continue the Benjamin Builders NOI (10 Parmenter Road / 91 Round Road) to July 15, 2026 — passed 5-0",
+    "official": "Motion: M. Larouche, continued to 7/15 for DEP Number",
+    "note": "Same continuance, 5-0.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Benjamin Builders RDA (115 Round Road) negative determination",
+    "t": 3609,
+    "ours": "Negative determination on the Benjamin Builders RDA (common driveway, 115 Round Road) — passed 5-0",
+    "official": "Motion: M. Larouche, for a negative determination",
+    "note": "Same outcome and vote.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name on 100 Laurel Lane RDA (vote continued to July 15, 5-0)",
+    "t": 3760,
+    "ours": "Continue the Brian Pard RDA (100 Laurel Lane) to July 15, 2026 — passed 5-0",
+    "official": "Request for Determination of Applicability by Brian Pollard for the decommissioning of a septic system and installation of a grinder pump",
+    "note": "Same item, continuance and vote agree; the applicant's name was misheard.",
+    "official_reading": "Brian Pollard"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Brackett common driveway NOI: name and address (continued to July 15, 5-0)",
+    "t": 3840,
+    "ours": "Continue the Bracket common driveway NOI (816 New Townsend Road) to July 15, 2026 — passed 5-0",
+    "official": "b. 860 New West Townsend Road NOI-26-1",
+    "note": "Same item and vote; name and address were misheard (the official spells the applicant Brackett).",
+    "official_reading": "Brackett, 860 New West Townsend Road"
+   },
+   {
+    "kind": "agree",
+    "about": "Unitil substation NOI continued",
+    "t": 3904,
+    "ours": "Continue the Unitil substation NOI (934 Mass Ave) to July 15, 2026 — passed 5-0",
+    "official": "Motion: M Larouche, continued to 7/15",
+    "note": "Same continuance, 5-0.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name on 507 West Townsend Road NOI (continued, 5-0)",
+    "t": 5471,
+    "ours": "Continue the Jenke Construction NOI (507 West Townsend Road, wetland crossing) to July 15, 2026 — passed 5-0",
+    "official": "Notice of Intent by Jahnke Construction LLC for the construction of a single-family home with a wetland crossing",
+    "note": "Same item and vote; the applicant's name was misheard.",
+    "official_reading": "Jahnke Construction LLC"
+   },
+   {
+    "kind": "agree",
+    "about": "Tree removal administrator's determination, Laurel Lane",
+    "t": 5846,
+    "ours": "Approve administrator's determination for tree removal at the Laurel Lane/Wayne property — passed 5-0",
+    "official": "Motion: M. Wilson, to ratify Agent's determination",
+    "note": "Same ratification, 5-0; the official lists it as 56 Laurel Lane CAD-25-7, so 'Wayne' in ours is probably a mishearing of the address.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "82 Peninsula Drive tree removal with 2:1 replacement",
+    "t": 6144,
+    "ours": "Approve administrator's determination for tree removal at 82 Peninsula Drive with a 2:1 replacement — passed 5-0",
+    "official": "Removal of a tree close to the house with an in kind 2:1 replication.",
+    "note": "Same determination ratified, 5-0.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "757 Chase Road three-year extension of order of conditions",
+    "t": 8022,
+    "ours": "Approve a three-year extension of the order of conditions for 757 Chase Road — passed 5-0",
+    "official": "Motion: M. Wilson, to approve the extension to Order of Conditions for 3 years",
+    "note": "Same outcome and vote.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Enforcement order, Mass Ave: vote and recusal",
+    "t": 8589,
+    "ours": "Approve issuance of an enforcement order, per DEP's recommendations, for the property on Mass Ave (heard as 1168/1186) — passed 4-0 (Mary Wilson recused herself)",
+    "official": "Vote: M. Wilson – Recuse M. Larouche – AYE A. Burnap - AYE T. Doucette – AYE",
+    "note": "Same 4-0 with Wilson recused.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Enforcement order address",
+    "t": 8589,
+    "ours": "the property on Mass Ave (heard as 1168/1186)",
+    "official": "i. 1168 Mass Ave Rear",
+    "note": "Address was misheard.",
+    "official_reading": "1168 Mass Ave Rear"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of the Massie tract",
+    "t": 9099,
+    "ours": "Massie tract Forest Legacy purchase",
+    "official": "i. Massey Tract",
+    "note": "Same property, name misspelled by the captions.",
+    "official_reading": "Massey"
+   },
+   {
+    "kind": "agree",
+    "about": "Commission pays 25% of title costs for Massie/Massey tract",
+    "t": 9414,
+    "ours": "Approve using the timber rights fund to cover 25% of the title exam and title insurance costs for the Massie tract Forest Legacy purchase — passed 5-0",
+    "official": "Motion: M. Wilson, to approve 25% of the funds necessary for title search and title insurance for Massey property as a part of Forest Legacy Program (through North County Land Trust)",
+    "note": "Same 25% commitment, 5-0; the official motion does not name the fund (the Timber Rights Account was only suggested in discussion), so confirm the fund.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dollar amount of the title costs / commission share",
+    "t": 9353,
+    "ours": "Use of the timber rights fund to cover the commission's 25% share of title exam and title insurance costs for the Massie tract Forest Legacy purchase — approximately $260 to $1,63 (as heard) (voted)",
+    "official": "According to Town Counsel, the total cost of Title Insurance and Title Search is below $5,000 of which the Commission would be responsible for 25%.",
+    "note": "The official gives only a ceiling of $5,000 total (25% is up to $1,250), while ours has garbled figures ($260 to $1,63, also $250,000 and $1,000 as heard); listen to the recording around t=9099-9353 to see what was said.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Mass Recreational Trails grant applications: 121 applications, 50 funded",
+    "t": 8654,
+    "ours": "Mass Recreational Trails grant applications (Table Rock parking area and Reo property park): 121, 50",
+    "official": "They had 121 applications and funded 50.",
+    "note": "Same counts; the official spells the second property 'Rayno' (ours heard 'Reo').",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chase Road car-washing warning letter",
+    "t": 7684,
+    "ours": "The conservation agent will send a formal warning/notice regarding the car-washing discharge issue at 757 Chase Road and will copy the property owner (Empire Management) directly, in addition to the tenant.",
+    "official": "A letter will be sent of a pre-warning of enforcement if activities continue.",
+    "note": "Official does not say who sends the letter or that the owner is copied; check the recording to see who committed to send it and to whom.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Enforcement order sent by certified mail the day after the meeting",
+    "t": 8526,
+    "ours": "The agent will draft and mail (via certified mail) the enforcement order to the property owner's engineer the day after the meeting.",
+    "official": "",
+    "note": "The official minutes do not mention the mailing method or timing.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Encroachment issues",
+    "t": 9457,
+    "ours": "Encroachment issues list is still pending; the agent will follow up with 'Bob' when he returns.",
+    "official": "b. Encroachment Issues: None to discuss.",
+    "note": "Ours records a pending item with a follow-up; the official says nothing to discuss; check the recording.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who posts the old woodstove on Facebook",
+    "t": 9540,
+    "ours": "The town manager (Jen Warren) will post the old wood stove for giveaway on her Facebook account since neither the facilities director nor commission members have one to use.",
+    "official": "Woodstove on Facebook – M. Wilson has a Facebook account for posting",
+    "note": "Ours names the Town Manager; the official names Commissioner Wilson; check the recording.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Contact former Hollis Road custodian about personal items",
+    "t": 9727,
+    "ours": "Mike will contact the former Hollis Road custodian to arrange removal of remaining personal items before the building cleaning on July 6th-7th.",
+    "official": "",
+    "note": "The official lists 'Personal Property Left in the Residence' and 'Cleaned on July 6th and 7th' (past tense) but records no action for Mike.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Circulating the Hollis Road deed/restrictions",
+    "t": 10054,
+    "ours": "Harlin will circulate the conservation restriction document for the Hollis Road property to the commission so members can review any use restrictions.",
+    "official": "Deed to Hollis Road Property stipulations and restrictions – to be circulated by H. Jamie",
+    "note": "Same action by the agent; the official calls it the deed rather than a conservation restriction.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee names: Burnap, Doucette, agent Jamie",
+    "t": 0,
+    "ours": "Andrea Bernat (also heard as Bernap/Bernout) (member); Teddy/Eddie Dette (also heard as Ducet/Det/Dat) (member); Harlin (also heard as Herlin/Hurlin/Herland/Herurland) (conservation agent)",
+    "official": "Present: J. Pewtherer, A. Burnap, M. Larouche, M. Wilson and T. Doucette.",
+    "note": "Same people; the official has the chair as J. Pewtherer, A. Burnap, T. Doucette and agent Herlin Jamie (the official's roster header).",
+    "official_reading": "Andrea Burnap; Teddy Doucette; Herlin Jamie; chair Jennifer Pewtherer"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee 'Caroline'",
+    "t": 0,
+    "ours": "Caroline (commission member (role as stated unclear))",
+    "official": "",
+    "note": "The official shows five members present and Bursch absent; no Caroline is listed, so this may be a mishearing or a staff or public speaker.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair Pewtherer named and absent member",
+    "t": 0,
+    "ours": "",
+    "official": "Absent: R. Bursch",
+    "note": "Ours does not name the chair or note R. Bursch's absence.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of previous minutes (06/03 and 06/17)",
+    "ours": "",
+    "official": "06/03/2026  \n \nMotion: T. Doucette, for approval \nSecond M. Wilson",
+    "note": "The official records two 5-0 votes approving prior minutes (06/03 and 06/17); ours records none (possibly treated as procedural); check the recording.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Continued hearing 1625 Massachusetts Ave",
+    "ours": "",
+    "official": "a. 1625 Massachusetts Avenue: NOI-26-10 (Continued to 7/15/26)",
+    "note": "Ours has no entry for this item; no vote is recorded in the official either.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pollinator Habitat award and admin assistant departure",
+    "ours": "",
+    "official": "The Pollinator Habitat received an official Citation from Massachusetts which stated that Pollinator Habitat received the 2026 Greening Award at the Botanical Garden in W. Boylston.",
+    "note": "Announcements and the Michael Gale farewell appear only in the official minutes.",
+    "official_reading": ""
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:15:12Z",
+   "cost_usd": 0.30249899999999996
+  }
  }
 }

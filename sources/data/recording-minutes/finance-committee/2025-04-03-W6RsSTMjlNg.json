@@ -1223,5 +1223,327 @@
    "at": "2026-09-27T23:04:48Z",
    "cost_usd": 0.20830400000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04032025-7134",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-04-03-minutes-7134.txt",
+   "path": "sources/meetings/finance-committee/2025-04-03-minutes-7134.pdf"
+  },
+  "official_sha256": "7ecf46d3ef3445040c3ab8fc3e17e8c92ff3868cd30096d1af6ecf0ecc66cfb4",
+  "coverage": "full",
+  "summary": "The two records agree on nearly every article vote (all unanimous 6-0 on a roll call), the reserve transfer, the omnibus budget and the capital program. The one substantive conflict is Article 34, where our roll call tallies 5-1 and the official minutes say 6-1, a count that cannot fit a six-member vote. The official minutes also give almost no dollar figures for the enterprise and stabilization transfers, so those exist only in our record.",
+  "counts": {
+   "agree": 24,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 5,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Article 34 (municipal building debt exclusion) vote tally",
+    "t": 10314,
+    "ours": "Recommend approval of Article 34 (municipal building/Ritter renovation debt exclusion) — passed 5-1, roll call (Jean voted No)",
+    "official": "The vote was 6-1 for approval.",
+    "note": "The official roll call lists six names (five aye, Jean Russell no), which is 5-1, so the stated 6-1 implies seven voters on a six-member vote. Check the recording and the roll call for the tally; the minutes' own roll call supports ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 1 no financial impact vote",
+    "t": 1916,
+    "ours": "Article 1 (annual town report) is no financial impact — passed unanimous, roll call",
+    "official": "The vote was unanimous 6-0.",
+    "note": "Both record a unanimous roll-call vote. Our description of the article (annual town report) differs from the official (oral reports from the Stormwater and Budget Task Forces), but the vote matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 2-7 votes (borrowing, Chapter 90, revolving funds, deferrals of 5, 6, 7)",
+    "t": 2048,
+    "ours": "Recommend approval of Articles 2, 3, 4; recommend deferral on 5, 6, 7 — each passed, roll call",
+    "official": "There was a motion to recommend deferral on Article 7 by Ana Lockwood,",
+    "note": "Same motions and outcomes in both records, each unanimous 6-0 in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 8 capital program vote and amount",
+    "t": 2343,
+    "ours": "Recommend approval of Article 8 (FY26 capital program) in its entirety — passed, roll call; figure heard as '1 point 1,225,000'",
+    "official": "Fiscal Year 2026 capital program totaling $1,225,000",
+    "note": "Vote and outcome agree; the amount matches once the garbled caption is read as $1,225,000."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Article 8 capital program amount",
+    "t": 2343,
+    "ours": "1 point 1,225,000",
+    "official": "Fiscal Year 2026 capital program totaling $1,225,000",
+    "official_reading": "$1,225,000",
+    "note": "Captions added a stray 'point' and a leading '1'; the official figure is $1,225,000."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 10 FY26 omnibus budget",
+    "t": 2953,
+    "ours": "Recommend approval of Article 10 (FY26 omnibus budget) — passed, roll call; 49,374,465",
+    "official": "Fiscal year 2026 omnibus budget totaling $49,374,465",
+    "note": "Same amount and the same outcome (approval, 6-0 in the official minutes)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Article 11 override amount",
+    "t": 3122,
+    "ours": "2,99,337",
+    "official": "Citizen petition for Proposition 2 ½ override of $2,099,337",
+    "official_reading": "$2,099,337",
+    "note": "Digit grouping lost the zero in the captions; the vote (recommend disapproval) agrees."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 11 vote (disapproval of override)",
+    "t": 3669,
+    "ours": "Recommend disapproval of Article 11 (citizens' petition override) — passed, roll call",
+    "official": "There was a motion to recommend disapproval of Article 11 by Ana",
+    "note": "Same motion and outcome; the official minutes record it as unanimous 6-0."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 12 deferral and $500,000 free cash to schools",
+    "t": 4199,
+    "ours": "Recommend deferral on Article 12 ($500,000 conditional free cash transfer to schools) — passed, roll call",
+    "official": "Transfer of $500,000 in certiﬁed free cash to the Lunenburg Public Schools for FY 2026",
+    "note": "Same amount and the same deferral vote. The official minutes do not mention the condition on the override failing."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 13, 14, 15 approvals",
+    "t": 5165,
+    "ours": "Recommend approval of Articles 13, 14 and 15 — each passed, roll call",
+    "official": "There was a motion to recommend approval of Article 15 by Ana Lockwood,",
+    "note": "Same outcomes in both records, with unanimous votes in the official minutes. The official minutes give no dollar figures for these articles, so our wage and holiday-pay figures are only in our record."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 16 and 17 no action",
+    "t": 5752,
+    "ours": "Recommend taking no action on Articles 16 and 17 (stabilization fund transfers) — passed, roll call",
+    "official": "There was a motion to take no action on Article 17 by Ana Lockwood,",
+    "note": "Same outcome. Ours records one combined vote; the official records two separate unanimous votes, one per article."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 18 OPEB trust fund transfer",
+    "t": 5859,
+    "ours": "Recommend approval of Article 18 (OPEB trust fund transfer) — passed 6-0, roll call",
+    "official": "Appropriate free cash to the OPEB trust fund totaling $222,500",
+    "note": "Vote and amount agree."
+   },
+   {
+    "kind": "caption_error",
+    "about": "OPEB trust fund amount",
+    "t": 5817,
+    "ours": "20 $222,500",
+    "official": "Appropriate free cash to the OPEB trust fund totaling $222,500",
+    "official_reading": "$222,500",
+    "note": "The stray '20' is the article number run into the amount; the amount is $222,500."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 19 and 20 compensated absences reserve fund",
+    "t": 6070,
+    "ours": "Recommend approval of Articles 19 and 20 (compensated absences reserve fund, establish and fund) — passed, roll call",
+    "official": "Article 20. Appropriation to the compensated absence reserve fund",
+    "note": "Same outcomes. The official records two separate unanimous votes and gives no $10,000 figure, which is only in our record."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 21-24 sewer-related transfers",
+    "t": 6243,
+    "ours": "Recommend approval of Articles 21, 22, 23, 24 (sewer enterprise-related transfers) — passed, roll call",
+    "official": "Article 24. Sewer reserve capacity stabilization fund",
+    "note": "Same outcomes. The official records four separate unanimous approvals with no dollar amounts."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sewer, solid waste and PEG/PAC transfer amounts",
+    "t": 6180,
+    "ours": "OPEB sewer trust fund $1,545; sewer enterprise $1,583,900 / $32,232.77; I&I stabilization $19,14.40; reserve capacity stabilization $5,133.15; solid waste $500,000; PEG/PAC $31,271.94",
+    "official": "",
+    "note": "The official minutes name these articles but give no amounts for them. Several of ours are garbled (e.g. $19,14.40, probably $1,914.40), so verify against the warrant."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 25 solid waste enterprise fund",
+    "t": 6374,
+    "ours": "Recommend approval of Article 25 (solid waste enterprise fund) — passed, roll call",
+    "official": "Article 25. Solid waste disposal program enterprise fund",
+    "note": "Same outcome; the official gives no amount, ours has $500,000."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 26 water enterprise transfer",
+    "t": 6416,
+    "ours": "Recommend approval of Article 26 (water enterprise fund) — passed, roll call; $45,000",
+    "official": "Water enterprise fund transfer of $45,000",
+    "note": "Vote and amount agree."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 27 PEG/PAC appropriation vote",
+    "t": 6779,
+    "ours": "Recommend approval of Article 27 (PEG/PAC appropriation) — passed, roll call",
+    "official": "Article 27. Public educational government access enterprise fund appropriation and",
+    "note": "Same outcome; the official gives no amount."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 28, 29, 32 no financial impact",
+    "t": 6823,
+    "ours": "State no financial impact on Article 28; find no financial impact on Articles 29 and 32 — passed, roll call",
+    "official": "Article 28. Floodplain map update",
+    "note": "Same findings and outcomes in both records, unanimous in the official."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 30 and 31 deferral",
+    "t": 7470,
+    "ours": "Defer recommendation on Articles 30 and 31 (tax exemption clauses) — passed, roll call",
+    "official": "Article 30. Amending Clause 17D, 17E, and 17F relative to tax exemptions",
+    "note": "Same outcome. Ours is a single vote; the official records separate unanimous deferral votes for each article."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 33 Marshall Park debt exclusion vote",
+    "t": 8926,
+    "ours": "Recommend approval of Article 33 (Marshall Park debt exclusion) — passed, roll call",
+    "official": "Article 33. Marshall Park design debt exclusion",
+    "note": "Same outcome, unanimous 6-0 in the official minutes. The official gives none of the debt exclusion figures we heard."
+   },
+   {
+    "kind": "agree",
+    "about": "Reserve fund transfer of $12,000 (fire vehicle maintenance)",
+    "t": 1660,
+    "ours": "Reserve fund transfer of $12,000 to cover unanticipated overages in fire department vehicle maintenance — passed (roll call, all 'I')",
+    "official": "reserve fund transfer of $12,000",
+    "note": "Same amount and outcome. The roll call was all aye in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Fire vehicle maintenance line figures",
+    "t": 1660,
+    "ours": "$12,000, $10 grand, $7,900, $20,000",
+    "official": "services lines total $32,000",
+    "note": "Ours has $20,000 where the official has $32,000 for the combined parts and services lines. It may be a mishearing or a different figure, so check the recording near t=1660."
+   },
+   {
+    "kind": "agree",
+    "about": "Finance Committee annual report approval",
+    "t": 13605,
+    "ours": "Approve the Finance Committee annual town meeting report, with the chair authorized to make editorial edits — passed, roll call",
+    "official": "allowing the Chair to make editorial comments and corrections",
+    "note": "Same motion and outcome, with a unanimous roll call in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Committee member name (Ana Lockwood)",
+    "ours": "Anna (member)",
+    "official": "Committee Member Ana Lockwood",
+    "official_reading": "Ana Lockwood",
+    "note": "Spelling of the first name, and the surname missing from captions."
+   },
+   {
+    "kind": "agree",
+    "about": "Members present and absent",
+    "ours": "Chris (chair), Tom Gray, Mike, Anna, Tanya, Jean, Jay (absent)",
+    "official": "Absent Member: Committee Member Jay Simeone",
+    "note": "Same six present and Jay absent. The official adds full names (Menard, Russell, Dall, Rupp) and that Tom Gray joined by Zoom."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Jen (town manager) as attendee",
+    "ours": "Jen (town manager)",
+    "official": "",
+    "note": "The official attendee list has no town manager, and its section 5 says there were no Town Manager or Finance Director reports. Check whether Jen was present."
+   },
+   {
+    "kind": "agree",
+    "about": "Fire chief presenting the reserve request",
+    "ours": "Chief (fire chief (presenter, article 7A))",
+    "official": "Chief Patrick Sullivan states there have been signiﬁcant repairs needed for",
+    "note": "Same person presenting the fire vehicle request; the official gives his name. Ours labels it as 'article 7A', which is the New Business item in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment",
+    "ours": "",
+    "official": "Dave Passios, JeƯerson NH formally Lunenburg resident, cautions the Committee",
+    "note": "The official records public comment (John Bowen on the cemetery request, Dave Passios on the reserve account, Glenn Mcleod thanking Jean Russell). None of it is in our minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who presented the school budget analysis and the 17.21% figure",
+    "t": 13741,
+    "ours": "Chair's independent analysis of the school budget: 24,883,000, 17,188,000, 949,25, 9.3%, 301, 254, 239, 1,598,000, 80%, 1,278,000, 2,554,000, 4,282,000, 17.21%, 944,000, 472,000",
+    "official": "She noted a 17.21% budget increase",
+    "note": "The 17.21% matches, but ours attributes the analysis to the chair while the official attributes it to Ana Lockwood. The official has none of the other figures. Check the recording for the speaker."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair to follow up with the municipal building design committee chair",
+    "t": 9758,
+    "ours": "Chair agreed to follow up directly with the municipal building design committee chair on projected operating costs for the new building.",
+    "official": "",
+    "note": "The official minutes do not record this follow-up."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Add percentage figures beside per-thousand rates in the annual report",
+    "t": 12960,
+    "ours": "Committee agreed to add percentage figures alongside per-thousand tax rate figures in the annual report for both debt exclusion projects.",
+    "official": "",
+    "note": "The official minutes say only that the Committee reviewed and edited the report; this decision is not recorded."
+   },
+   {
+    "kind": "agree",
+    "about": "Transcription service for minutes",
+    "t": 14309,
+    "ours": "Committee agreed to look into alternative methods of recording minutes, such as Zoom transcription software.",
+    "official": "Tanya Dall suggested looking into a transcription service through Zoom",
+    "note": "Same topic. The official records it as a suggestion with a concern, not as a committee agreement."
+   },
+   {
+    "kind": "agree",
+    "about": "Town meeting date",
+    "t": 127,
+    "ours": "Town meeting date confirmed as May 3, 2025.",
+    "official": "Town meeting is scheduled for May 3, 2025.",
+    "note": "Same date."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "t": 14454,
+    "ours": "Next meeting set for April 10th (or possibly the 17th/24th, chair to confirm by email)",
+    "official": "Thursday, April 10",
+    "note": "The official lists April 10 as the next Fincom meeting; the alternatives in ours are not recorded."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Committee vote procedure and article-number note",
+    "t": 1828,
+    "ours": "Committee agreed to vote on each warrant article as they went through them, rather than voting on all at the end.",
+    "official": "",
+    "note": "Procedural decisions in our record. The official minutes show the per-article votes but not the agreement."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:50:27Z",
+   "cost_usd": 0.319205
+  }
  }
 }

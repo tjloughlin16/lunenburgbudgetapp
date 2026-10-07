@@ -379,5 +379,182 @@
    "at": "2026-09-27T02:17:03Z",
    "cost_usd": 0.197508
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06292026-7877",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-06-29-minutes-7877.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-06-29-minutes-7877.pdf"
+  },
+  "official_sha256": "616b8bf648a39ec7b91bc70dcbde6cfeea7c2002c27464c9c92bae1dd693e044",
+  "coverage": "full",
+  "summary": "The two records agree on the square-footage figures, the 160 sq ft standard, the bullpen concept, the $6,000 consultant estimate, the TC Passios agenda item, the July 14 and July 20 dates and the dome estimate. They differ on how the architect question was resolved, and our minutes record a decision about the Select Board candidate and an assessor placeholder figure that the official minutes do not record. Our minutes have no votes and the official minutes record only the adjournment vote, so there is no vote to compare.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Architect/consultant: outcome of discussion",
+    "t": 1927,
+    "ours": "Committee leans toward attempting a first-pass layout themselves before deciding whether to pay for an outside architect/consultant.",
+    "official": "Committee members supported engaging a professional (architect or qualified consultant) to create visuals for staff review; some members willing to do a preliminary “paper napkin” layout first.",
+    "note": "Ours says the committee leans toward doing a layout itself before deciding on paying; the official says members supported engaging a professional, with some doing a napkin layout first, so check the recording around t=1927 for which way the group leaned."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Holding off on contacting architect Damon Mcuade",
+    "t": 1988,
+    "ours": "Hold off contacting architect Damon Mcuade about consulting, since he has filed to run for select board and it would be inappropriate given the pending special election.",
+    "official": "Concern raised about procurement/timing. Committee agreed to await Select Board composition.",
+    "note": "Both record waiting on the Select Board, but the official never names the architect or the candidacy and gives a procurement/timing reason; check the recording for the reason and whether a specific person was named."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Assessor's office placeholder figure",
+    "t": 1334,
+    "ours": "Use each department's current employee count times the per-person square-footage standard as the placeholder figure for the assessor's office, since assessors/accounting had not returned their space request.",
+    "official": "Several departments (assessors, accounting) have not returned updated surveys; town manager not yet provided clarifying information about storage needs (file cabinets vs. sq ft).",
+    "note": "The official records the missing surveys but not the decision to use headcount times 160 as a placeholder; check the recording near t=1334 to see whether that was a decision or an aside."
+   },
+   {
+    "kind": "agree",
+    "about": "Bullpen layout with town clerk distinct",
+    "t": 427,
+    "ours": "General agreement to pursue a 'bullpen' shared-space layout rather than fully separate department offices, keeping the town clerk as its own distinct area.",
+    "official": "Bullpen (open/shared workspace) concept broadly favored to increase flexibility, cross-coverage, and staff interaction",
+    "note": "Both record broad support for a bullpen and the town clerk as a separate public-facing function."
+   },
+   {
+    "kind": "agree",
+    "about": "Space standard per employee",
+    "t": 596,
+    "ours": "160 square foot per person",
+    "official": "Approximate planning metric referenced: 160 sq ft per person as starting guideline.",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Office square footage across proposals",
+    "t": 107,
+    "ours": "4,200, 4225, 5,000, 5665, 5625, 5600, 8,000",
+    "official": "Current usable office space estimated around 4,225 sq ft; past proposals ranged from ~5,000 to ~5,665 sq ft for office areas.",
+    "note": "The main figures (4,225, 5,000, 5,665, about 5,600, 8,000) match; 4,200 and 5,625 appear only in ours and are probably repeated or misheard values."
+   },
+   {
+    "kind": "agree",
+    "about": "Consultant hours estimate",
+    "t": 1651,
+    "ours": "40 hours, $150 an hour, Six grand",
+    "official": "example: 40 hours @ $150/hr ≈ $6,000",
+    "note": "Same estimate."
+   },
+   {
+    "kind": "agree",
+    "about": "Dome cost and size",
+    "t": 2764,
+    "ours": "All-weather dome for teen center gym replacement: 50k, 30 by 60, 30x75, 20 foot tall",
+    "official": "geodesic dome for gym activities; preliminary cost estimate discussed ~ $50k for a 30x75 structure",
+    "note": "The $50k and 30x75 figures match; the 30 by 60 and 20 foot height appear only in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "TC Pacios building name",
+    "t": 2852,
+    "ours": "TC Pacios building",
+    "official": "TC Passios (Community Building)",
+    "note": "Same building; the captions misspelled the name.",
+    "official_reading": "TC Passios"
+   },
+   {
+    "kind": "agree",
+    "about": "TC Passios on a future agenda with facilities manager",
+    "t": 2852,
+    "ours": "Add a future agenda item to formally review the TC Pacios building together with the facilities manager, including a report from him.",
+    "official": "Committee agreed TC Passios should be placed on a future agenda to review facility condition; recommended inviting facilities manager to present findings and to conduct a site visit as a committee.",
+    "note": "Same decision; the official also adds a committee site visit."
+   },
+   {
+    "kind": "agree",
+    "about": "July 14 Select Board discussion of town buildings",
+    "t": 3079,
+    "ours": "Chair will not speak during the select board's next meeting (no public comment scheduled) but will raise the case for including TC Pacios in the committee's charge at the select board's July 14th meeting, which is set to discuss town buildings.",
+    "official": "Chair will request the Select Board discuss town buildings at their July 14 meeting; committee members plan to monitor and participate in that discussion.",
+    "note": "Both give July 14 for the town-buildings discussion; the wording differs on whether the chair requests the agenda item or it is already scheduled."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "t": 3160,
+    "ours": "Set the committee's next meeting for July 20th, skipping the usual first-Monday date because of the holiday weekend.",
+    "official": "Next meeting scheduled: July 20",
+    "note": "Same date; ours gives the holiday as the reason and the official says third Monday, pending Select Board outcomes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Tony",
+    "ours": "Tony (member)",
+    "official": "Anthony Sculumbrine",
+    "note": "Tony is the nickname for Anthony Sculumbrine, who is on the official present list.",
+    "official_reading": "Anthony Sculumbrine"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees and chair",
+    "ours": "unidentified (chair); Tony; Tom; Ryan / Brian; Dave",
+    "official": "Members Present:   Brian Lehtinen, Tom Gray, David Blatt, Anthony Sculumbrine",
+    "note": "The official lists four present with David Blatt calling the meeting to order; ours lists five, likely counting the chair and Dave separately, so check whether the chair is David Blatt and whether Ryan/Brian is Brian Lehtinen."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Record storage figures",
+    "t": 215,
+    "ours": "14 file cabinets, 350 square feet, 150 square feet",
+    "official": "",
+    "note": "The official refers to file cabinets vs. sq ft for storage but gives no numbers."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Total staff count for meeting room sizing",
+    "t": 1024,
+    "ours": "23",
+    "official": "",
+    "note": "The official gives meeting room sizes but no staff count."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Burns and Taylor prior design cost",
+    "t": 1609,
+    "ours": "$180,000",
+    "official": "",
+    "note": "The official does not mention Burns and Taylor or this prior cost."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ritter building and Annex constraints",
+    "ours": "",
+    "official": "Ritter building has multilevel entry and accessibility challenges; creating an ADA-",
+    "note": "Our minutes record no discussion of the Ritter building or Annex constraints."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Permanent town building committee suggestion",
+    "ours": "",
+    "official": "Suggestion to consider creating a permanent town building committee to coordinate",
+    "note": "Our minutes do not record this suggestion."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:15:04Z",
+   "cost_usd": 0.253905
+  }
  }
 }

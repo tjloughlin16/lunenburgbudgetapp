@@ -289,5 +289,163 @@
    "at": "2026-09-27T12:00:12Z",
    "cost_usd": 0.18573
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10282025-7474",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-10-28-minutes-7474.txt",
+   "path": "sources/meetings/sewer-commission/2025-10-28-minutes-7474.pdf"
+  },
+  "official_sha256": "fd8056150c09ba2aea0113d7719fbe0162f20ee0c8c84605636bb1edc0b9fbe6",
+  "coverage": "full",
+  "summary": "The two records agree on the 763 Mass. Ave. continuance and on the 830/832 easement waiver being granted, and both record the \"unusual and extraordinary\" wording change. The main difference is the 830/832 vote: the official minutes record 3 ayes with Dan recused, and our minutes give no tally.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 4,
+   "discrepancy": 4,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "830/832 Mass Ave easement waiver vote tally and recusal",
+    "ours": "Grant the easement waiver for 830/832 Massachusetts Ave — passed (\"the motion passes\")",
+    "official": "Roll Call Vote: Scott-aye, Arthur-aye and Brett-aye. (Dan recused himself from the hearing and voting. )",
+    "note": "Outcome matches (granted), but ours gives no tally and does not record Dan's recusal; check the recording around t=5588 for who voted and whether Dan recused.",
+    "t": 5588
+   },
+   {
+    "kind": "discrepancy",
+    "about": "763 Mass Ave first vote: what the motion did",
+    "ours": "Extend/continue the public hearing on the 763 Massachusetts Ave waiver request to the next meeting — passed 4-0 (\"that motion carries\")",
+    "official": "To have Haley Ward get additional information for the next meeting so they can discuss it.",
+    "note": "Same 4-0 vote, but the motions are worded differently (continue hearing vs. have the applicant's firm gather information); check the recording at t=4887 for the exact motion.",
+    "t": 4887
+   },
+   {
+    "kind": "agree",
+    "about": "763 Mass Ave motion to extend permitting to next meeting",
+    "ours": "Extend the 763 Massachusetts Ave permitting/plan timeline until the next meeting — passed 4-0 (roll call ayes)",
+    "official": "To extend their permitting to the next meeting.   Roll Call Vote: Arthur-aye, Scott-aye, Dan-aye, and Brett-aye.",
+    "note": "Same motion, same 4-0 roll call.",
+    "t": 4917
+   },
+   {
+    "kind": "agree",
+    "about": "Applicant to locate the existing sewer stub and pipe size for 763 Mass Ave",
+    "ours": "Ask the 763 Massachusetts Ave applicant to locate the existing sewer stub and determine required pipe size before the commission rules on the easement waiver",
+    "official": "He asked Steve to verify where the stub is located and if the 6” stub be big enough or do they need an 8”.",
+    "note": "Same request in both records.",
+    "t": 4867
+   },
+   {
+    "kind": "agree",
+    "about": "Waiver criteria wording changed from emergency to unusual and extraordinary; bylaw change to May Town Meeting",
+    "ours": "Adopt town counsel's recommendation to use \"unusual and extraordinary\" instead of \"emergency\" as waiver criteria, and to align the wording between the regulation and the bylaw, with the bylaw change to go to the May town meeting",
+    "official": "the emergency wording will change to unusual and extraordinary circumstances. Bill noted the Commission can vote to change the regulation wording but in order to make that change in the By-law, it would need to be brought to Town Meeting in May.",
+    "note": "Both record the wording change and the May Town Meeting route; the official minutes say it will change and record no vote, and ours calls it an adoption, so check whether any vote was taken.",
+    "t": 5735
+   },
+   {
+    "kind": "agree",
+    "about": "Waiver wording vote deferred to next agenda",
+    "ours": "Defer a vote on the ADU/VADU waiver regulation wording to the next meeting's agenda",
+    "official": "Bill suggested putting the wording vote on the next agenda.",
+    "note": "Both defer the wording vote.",
+    "t": 5942
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Next meeting format and date",
+    "ours": "Confirmed the next meeting will be November 25 in person (not remote as previously planned) due to the town meeting/Veterans Day schedule, followed by a December 9 meeting also in person",
+    "official": "November 25, 2025 @ 6pm – Hybrid Meeting, in person meeting",
+    "note": "Date and in-person format agree, and the official minutes also list December 9 as in person; the official minutes give no reason for the change and do not say it was previously remote, so this is a minor difference in context only.",
+    "t": 6068
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of minutes of 10/14/25",
+    "ours": "",
+    "official": "To approve the minutes of 10/14/25.                    Roll Call Vote: Dan-aye, Scott-aye, Arthur-aye and Brett-aye.",
+    "note": "A recorded 4-0 vote that our minutes do not list; check the recording for it.  It is a vote, so someone should confirm it was taken."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole Repair IFB update",
+    "ours": "",
+    "official": "Manhole Repair IFB- Bill reported that the frames came in, but when they opened the first manhole, they realized the frames were too small, so the project is on delay again.",
+    "note": "Staff update not in our minutes; no vote."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost of extending sewer up a street vs. individual tie-ins",
+    "ours": "cost of extending sewer up a street vs. individual tie-ins: 20 grand",
+    "official": "",
+    "note": "Our figure (about $20,000, as heard) has no counterpart; the official minutes say only that Scott asked to compare costs for tying in on Mass. Ave. vs a spur on Chestnut St., with no number."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brett Ramston (chairman)",
+    "official": "Chair- Brett Ramsden",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-Chair name",
+    "ours": "Scott D (member)",
+    "official": "Vice-Chair- Scott Dall",
+    "note": "Surname truncated in captions.",
+    "official_reading": "Scott Dall"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clerk name",
+    "ours": "Dan Bctor (member)",
+    "official": "Clerk- Dan Proctor",
+    "note": "Misheard surname.",
+    "official_reading": "Dan Proctor"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name",
+    "ours": "Arthur Cats (member)",
+    "official": "Member: Arthur Katis",
+    "note": "Misheard surname.",
+    "official_reading": "Arthur Katis"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "DPW Director and Sewer Business Manager identities",
+    "ours": "Bel Vernick (staff); Andrew Bellier (DPW/Sewer director)",
+    "official": "DPW Director- Bill Bernard, Sewer Business Manager- Andrew Valliere",
+    "note": "Names are misheard, but our minutes call Andrew the DPW/Sewer director while the official minutes make Bill the DPW Director and Andrew the Sewer Business Manager; check roles against the recording.",
+    "official_reading": "Bill Bernard; Andrew Valliere"
+   },
+   {
+    "kind": "agree",
+    "about": "Minutes clerk",
+    "ours": "Jane Ranley (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "Same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Guests",
+    "ours": "Ryan Proctor (presenter, Dillis and Roy); Steve Ballard (presenter, filling in from Haley Ward for Daniel Sheen)",
+    "official": "Guests: Ryan Proctor (Dillis & Roy) and Steve Ballard (Haley Ward)",
+    "note": "Same guests and firms; the Daniel Sheen detail is only in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:22:48Z",
+   "cost_usd": 0.242339
+  }
  }
 }

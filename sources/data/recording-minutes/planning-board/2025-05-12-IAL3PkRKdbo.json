@@ -426,5 +426,196 @@
    "at": "2026-09-27T19:35:51Z",
    "cost_usd": 0.200708
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05122025-7220",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-05-12-minutes-7220.txt",
+   "path": "sources/meetings/planning-board/2025-05-12-minutes-7220.pdf"
+  },
+  "official_sha256": "b00dd75ae80b54f075c993383879afddc0fc72a4be21ac1e4f75102e94816413",
+  "coverage": "full",
+  "summary": "The two records agree on all six votes in ours, with only spelling differences in names. The official minutes also record a vote that ours does not: approval of the 2025-04-28 minutes, passed 3-0-1 with Willsmer abstaining.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: close 63 Lancaster Ave public hearing",
+    "t": 3194,
+    "ours": "Close the public hearing for the 63 Lancaster Avenue scenic road tree removal — passed",
+    "official": "Motion: T. Willsmer, to close the public hearing for 63 Lancaster Ave.",
+    "note": "Same motion; the official minutes record it as passed unanimously by voice vote."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve removal of the scenic road tree",
+    "t": 3214,
+    "ours": "Approve removal of the tree on the scenic road right-of-way, to be replaced with a similar/appropriate tree — passed",
+    "official": "Motion: T. Willsmer, to approve the removal of the tree as designated in the public hearing, to be replaced in the public right-of-way with a similar tree as able and appropriate.",
+    "note": "Same decision and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: $2,000 53G deposit, 100 Townsend-Harbor Rd",
+    "t": 6648,
+    "ours": "Require a $2,000 deposit into a 53G account from the applicant for peer review of the 100 Towns and Harbor Road storm water permit — passed",
+    "official": "Motion: Vice Chair T. Willsmer, to require $2,000.00 for 53G account.",
+    "note": "Same amount and outcome; only the street name is garbled in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name 100 Townsend-Harbor Rd",
+    "t": 6648,
+    "ours": "100 Towns and Harbor Road",
+    "official": "100 Townsend-Harbor Rd – Stormwater Management Permit",
+    "note": "The captions misheard the street name; it is the same item.",
+    "official_reading": "100 Townsend-Harbor Rd"
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 100 Townsend-Harbor Rd hearing to June 9",
+    "t": 6737,
+    "ours": "Continue the 100 Towns and Harbor Road public hearing to June 9, 2025 at 6:05 p.m. — passed",
+    "official": "Motion: Vice Chair T. Willsmer moved to continue the public hearing to 2025-06-09 at 6:05 P.M.",
+    "note": "Same date, time and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 1083 Northfield Rd hearings to June 9",
+    "t": 6948,
+    "ours": "Continue the not-yet-opened 1083 Northfield Road public hearings (common driveway special permit and storm water management permit) to June 9, 2025 at 6:05 p.m. — passed",
+    "official": "Motion: T. Willsmer, to continue the public hearings for 1083 Northfield Rd Special Permit &   Stormwater Management Permits to 2025-06-09 at 6:05 P.M.",
+    "note": "Same date, time and outcome. Ours says 'common driveway special permit' where the official says only 'Special Permit'; worth a glance but likely the same permit."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: add a member to Master Plan Steering Committee",
+    "t": 7075,
+    "ours": "Add one more member to the Master Plan Steering Committee, to be appointed by the Finance Committee — passed",
+    "official": "Motion: T. Willsmer, to add a member to MPSC (representative appointed by Fin. Comm)",
+    "note": "Same motion and outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of 2025-04-28 minutes (vote)",
+    "ours": "",
+    "official": "Vote: Passed 3-0-1. (Vice Chair T. Willsmer abstained).",
+    "note": "The official minutes record a minutes-approval vote with an abstention that our minutes do not list; check the recording near the end of the meeting for this vote and the abstention."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Application review fee figure",
+    "t": 6564,
+    "ours": "Application review fee vs. peer-review deposit: $900, $100 per acre",
+    "official": "",
+    "note": "The official minutes give no fee schedule, only that peer review costs were briefly discussed and fee structures will be revised when a Planner is hired; check the recording to confirm the $900 and $100 per acre."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: $2,000 53G peer-review deposit",
+    "t": 8499,
+    "ours": "53G peer-review deposit, 100 Towns and Harbor Road storm water permit: $2,000",
+    "official": "Motion: Vice Chair T. Willsmer, to require $2,000.00 for 53G account.",
+    "note": "Same figure."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "MBTA Communities: paper compliance preference",
+    "t": 2295,
+    "ours": "Board leans toward pursuing 'paper compliance' for the MBTA Communities mandate using the existing Tritown (37 Young's Road) district rather than adding real new capacity elsewhere",
+    "official": "He prefers paper compliance but noted benefits for some “real” options",
+    "note": "The official minutes attribute the preference to the Chair alone, mention benefits of real options, and say an option is chosen at the 06-23 meeting; check whether the recording shows a board-wide lean or only the Chair's view."
+   },
+   {
+    "kind": "agree",
+    "about": "Board wants peer review of storm water design",
+    "t": 4318,
+    "ours": "Board agreed, ahead of any vote, that it wants a professional peer review of the storm water design for 100 Towns and Harbor Road",
+    "official": "Prefers waiting for peer review & plans to visit the site.",
+    "note": "The official minutes show the Board discussing and then voting for the 53G deposit for peer review; consistent."
+   },
+   {
+    "kind": "agree",
+    "about": "Floodplain map update submitted to DCR",
+    "t": 7159,
+    "ours": "FEMA flood plain map update has been submitted to the state (DCR) and is considered handled",
+    "official": "Floodplain Map Update was submitted to DCR.",
+    "note": "Same fact; 'FEMA' and 'considered handled' appear only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Public information sessions on MBTA Communities",
+    "t": 8184,
+    "ours": "Chair will schedule one or more public information sessions on MBTA Communities zoning options, to be properly posted under the Open Meeting Law",
+    "official": "Wants to take info from Nel’s presentation tonight & have a couple public meetings.",
+    "note": "Same intent; the official minutes also say sessions are to be held before the 06-23 meeting. The Open Meeting Law posting detail is only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meeting with town counsel next Wednesday",
+    "t": 8391,
+    "ours": "One additional board member (limited to avoid a quorum) may join the chair's meeting with town counsel next Wednesday on the MBTA Communities legal question",
+    "official": "",
+    "note": "The official minutes do not mention a town counsel meeting; it falls under the 'Large discussion' they do not detail."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Chair, Vice Chair, Clerk, Glenn",
+    "ours": "Matt (Chair); Tim (board member); Glenn (board member); Amanda (board member)",
+    "official": "PRESENT: Matthew Brenner (Chair), Timothy Willsmer (Vice Chair), Amanda Reid (Clerk), Glenn \nMcLeod",
+    "note": "Same four members present; ours has first names only and omits their titles."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Matthew Allison",
+    "ours": "",
+    "official": "ABSENT: Matthew Allison",
+    "note": "Our minutes do not record an absence."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Administrative assistant's surname",
+    "ours": "Logan O'Donnell (administrative assistant)",
+    "official": "Logan O'Connell – Admin Asst.",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Logan O'Connell"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Community Scale presenter's name",
+    "ours": "Nells (Nelson) (presenter, Community Scale (MBTA Communities consultant))",
+    "official": "Nels Nelson (Community Scale) presented.",
+    "note": "The captions misheard the first name.",
+    "official_reading": "Nels Nelson"
+   },
+   {
+    "kind": "agree",
+    "about": "Tree Warden attendee",
+    "ours": "Bill Bernard (Tree Warden)",
+    "official": "Bill Bernard (Tree Warden) has looked at tree – is in rough shape.",
+    "note": "Same person and role."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other presenters and public speakers",
+    "ours": "",
+    "official": "Dan Clapham (Unitil Forestry Supervisor for Fitchburg District) presented.",
+    "note": "Our attendee list omits the Unitil presenter, the applicant's surveyor Mikael Lassila and the abutters who spoke."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:30:02Z",
+   "cost_usd": 0.273749
+  }
  }
 }

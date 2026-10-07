@@ -287,5 +287,205 @@
    "at": "2026-09-27T11:12:35Z",
    "cost_usd": 0.18826400000000001
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02102026-7613",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/economic-development-committee/2026-02-10-minutes-7613.txt",
+   "path": "sources/meetings/economic-development-committee/2026-02-10-minutes-7613.pdf"
+  },
+  "official_sha256": "df4a35470ef3fe4dcf7b1923ec5d4c00a89fcbfcddc9df6f11f04a4d345cc924",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the meeting's main threads: the minor site plan review, the sub-group offer, the BYOB conclusion and the visitor guide. The official minutes are a short summary with no budget figures and no non-procedural votes, so none of our five heard figures can be checked against them. Where the same topic appears in both, the details differ (who is drafting the site plan review, town versus state BYOB regulation, the visitor guide's name), and a person should check the recording on those.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 5,
+   "discrepancy": 3,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Non-procedural votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "There was a motion to adjourn by Jeanne Dupre",
+    "note": "The only vote in the official minutes is the adjournment, which is procedural and skipped; neither record has a substantive vote.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Minor site plan review: who is drafting it",
+    "ours": "Stephen Wallace to draft a 'minor site plan review' process so simple changes of use in small existing storefronts would not require full planning board site plan review",
+    "official": "commission,  and they are working on a minor site plan review.",
+    "note": "Ours has Wallace drafting; the official minutes say he spoke to the building commission and that they are working on it. Check the recording near t=2589 for who owns the work. Also check whether the 2,000 sq ft threshold was stated.",
+    "t": 2589
+   },
+   {
+    "kind": "agree",
+    "about": "Zoning amendment vs. planning board regulation amendment path",
+    "ours": "would need zoning language amendment for annual town meeting, or a planning board regulation amendment any time via public hearing",
+    "official": "hearing with the Planning Board.",
+    "note": "Both say a zoning change needs an amendment and a regulation change can be done at a Planning Board public hearing. The official record omits the annual town meeting detail.",
+    "t": 2589
+   },
+   {
+    "kind": "agree",
+    "about": "Sub-group to assist Wallace",
+    "ours": "Committee offered to form a sub-quorum working group (two members plus the ex officio member) to assist Stephen Wallace on the site plan review work if helpful.",
+    "official": "suggested a subgroup be created if he is in need of  any feedback",
+    "note": "Both record an offer of a subgroup to help Wallace; the official attributes it to Matt Brenner and does not give the make-up of the group.",
+    "t": 2694
+   },
+   {
+    "kind": "discrepancy",
+    "about": "BYOB conclusion: what regulation does not exist",
+    "ours": "After consulting town counsel, determined that non-restaurant businesses (e.g., a nail salon, hardware store) may allow customers to BYOB without needing town permission, since Lunenburg has no BYOB regulation for non-restaurant businesses.",
+    "official": "there are no state regulations  for non-restaurant businesses  regarding BYOB .",
+    "note": "Both conclude no special permission is needed for non-restaurants, but ours says there is no town regulation and the official minutes say no state regulation. Check the recording near t=3147 for which was said.",
+    "t": 3147
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Who consulted Town Counsel",
+    "ours": "",
+    "official": "Matt Brenner and Ana Lockwood met with Town Counsel Adam Costa to discuss",
+    "note": "The official minutes name the two members and the counsel; ours says only 'town counsel'.",
+    "t": 3147
+   },
+   {
+    "kind": "caption_error",
+    "about": "Visitor guide name",
+    "ours": "Committee noted Lunenburg lacks an advertisement in the North Central Massachusetts visitor guide and should consider adding one to promote town events.",
+    "official": "North Central Middlesex visitor guide",
+    "official_reading": "North Central Middlesex",
+    "note": "The guide name differs between records and one may be misheard; the official minutes also credit the advertising suggestion to Wallace, so check the recording at t=1162 for the name and the speaker.",
+    "t": 1162
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Leominster city events budget",
+    "ours": "Leominster city events budget: zero dollars budget, over 50 a year",
+    "official": "",
+    "note": "No budget figure for Leominster events appears in the official minutes.",
+    "t": 433
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Downtown facade improvement program (ARPA)",
+    "ours": "Downtown facade improvement program (ARPA funds): 75%, 14",
+    "official": "",
+    "note": "The official minutes mention only 'successful projects within the city' with no program or figures.",
+    "t": 514
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Small business support fund",
+    "ours": "Small business support fund: $250",
+    "official": "",
+    "note": "The official minutes say Curtis spoke about sponsorships and grants but give no amounts.",
+    "t": 598
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Newsletter printing costs",
+    "ours": "Newsletter printing costs: about 200",
+    "official": "",
+    "note": "The official minutes describe the newsletter as 8 pages but give no printing cost.",
+    "t": 1368
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Planning Board update: 30 Summer Street storage facility",
+    "ours": "",
+    "official": "Matt Brenner stated the old auto lot located at 30 Summer Street may be turned",
+    "note": "Our decisions and figures do not record this Planning Board update.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Large development project",
+    "ours": "Large development project near Shirley Road: close to 900,000 square ft",
+    "official": "There is interest in building a large facility ,",
+    "note": "Ours places a large project near Shirley Road at about 900,000 sq ft; the official minutes say a large facility is of interest, that Hannigan Engineering wants a meeting, and that no address was given. Check the recording near t=2859 for the location and size.",
+    "t": 2859
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Leominster newsletter and Facebook group",
+    "ours": "",
+    "official": "The newsletter  consists of 8 pages",
+    "note": "The official minutes record the Leominster outreach details (monthly newsletter, 8 pages, private Facebook group) that our decisions and figures list omits.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "Chair Joeci Gilchrest,  Member Cathy Clark, Select Board",
+    "note": "The official minutes list three absent members (Gilchrest, Clark, McLeod); ours lists only attendees.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: vice chair",
+    "ours": "Anna Lockwood (vice chair, chairing)",
+    "official": "Vice Chair Ana Lockwood",
+    "official_reading": "Ana Lockwood",
+    "note": "Spelling of the first name differs.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jeanne Dupre",
+    "ours": "Jean Dri (member)",
+    "official": "Member Jeanne Dupre",
+    "official_reading": "Jeanne Dupre",
+    "note": "Misheard surname and first name.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Judy Dragoslis",
+    "ours": "Judy Drosley's (member)",
+    "official": "Member Judy Dragoslis",
+    "official_reading": "Judy Dragoslis",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Planning Board representative",
+    "ours": "Matthew Brandon (Matt) (ex officio member, planning board)",
+    "official": "Planning Board Representative Matt",
+    "note": "The official minutes give the surname as Brenner, so 'Brandon' is likely misheard.",
+    "official_reading": "Matt Brenner",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Stephen Wallace",
+    "ours": "Stephen Wallace (new director of planning and economic development, Lunenburg)",
+    "official": "Wallace , was present.",
+    "note": "Same person and title in both records.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Amanda Curtis",
+    "ours": "Amanda Curtis (presenter, economic development coordinator, city of Leominster)",
+    "official": "Amanda Curtis , was",
+    "note": "Same person and role in both records.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:20:50Z",
+   "cost_usd": 0.250091
+  }
  }
 }

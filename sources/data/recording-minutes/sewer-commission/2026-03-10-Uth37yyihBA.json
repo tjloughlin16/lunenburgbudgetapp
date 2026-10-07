@@ -374,5 +374,174 @@
    "at": "2026-09-27T10:59:12Z",
    "cost_usd": 0.19184
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03102026-7694",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-03-10-minutes-7694.txt",
+   "path": "sources/meetings/sewer-commission/2026-03-10-minutes-7694.pdf"
+  },
+  "official_sha256": "9732565059c58f0bff46217eb72ed412253759b51f7539c929bdbed517d95984",
+  "coverage": "full",
+  "summary": "The two records agree on the main items: rates, bylaw wording, demand fee date, meeting dates and attendees, with a few caption-garbled names and figures. The one thing to know is that the official minutes record no commission decision to proceed or to give a \"blessing\", and it records an accepted-minutes roll call vote that ours omits.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 6,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to accept minutes of 2/24/26 and 3/3/26",
+    "ours": "VOTES (non-procedural): none",
+    "official": "To accept the minutes of the 2/24/26 Meeting and the 3/3/26 Joint Select Board Meeting. \nRoll Call Vote: Arthur-aye, Dan-aye, Chip-aye and Scott-aye.",
+    "note": "Official minutes record a roll-call vote (4-0) approving prior minutes that ours lists no vote for; a person should check the recording to see whether it was taken (it may be treated as routine in ours).",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY27 sewer user rate per unit",
+    "ours": "FY27 sewer user rates: 1838, 139, 5%, 16%",
+    "official": "the new rate will be increasing 16% to $18.38/cubic feet",
+    "official_reading": "$18.38",
+    "note": "Captions heard \"1838\" for $18.38; the 16% increase matches.",
+    "t": 1241
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY27 minimum charge",
+    "ours": "139",
+    "official": "the minimum charge will increase by 5% to $139",
+    "official_reading": "$139",
+    "note": "Same figure and 5% increase; ours lacks the dollar sign.",
+    "t": 1241
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Developer's warrant article and return to commission",
+    "ours": "Recommended the developer file a citizen's petition warrant article by March 16th to make the May 2nd town meeting deadline.; Developer asked to return to the March 31st commission meeting so the commission could consider giving its \"blessing\" to the sewer extension plan ahead of town meeting.",
+    "official": "Bill noted that if Ian wants this to happen soon, he will need to get the warrant article to the Town Manager by 3/16 to get it on the May 2nd Town Meeting. Bill added he should schedule to come back for the March 31st meeting so they can vote on it.",
+    "note": "Dates agree, but ours says the commission would consider giving a \"blessing\" and calls it a citizen's petition, while official says they would \"vote on it\"; check the recording for the wording and whether a vote was intended.",
+    "t": 880
+   },
+   {
+    "kind": "agree",
+    "about": "Demand fee notices week of March 16th",
+    "ours": "Demand fee notices to go out the week of March 16th.",
+    "official": "The Demand fees will be mailed out the week of March 16th.",
+    "note": "Same date and item.",
+    "t": 1219
+   },
+   {
+    "kind": "agree",
+    "about": "Sewer bylaw wording amendment for consistency with ADU bylaw going to town meeting",
+    "ours": "Sewer bylaw wording amendment (two words changed for consistency with the new ADU bylaw), already reviewed by town counsel, to proceed to town meeting for a vote.",
+    "official": "Scott added the Town Counsel reworded it so the sewer bylaw would have consistent language with the new ADUs. It will be voted on at the Town Meeting.",
+    "note": "Same item; official says Town Manager tweaked and Town Counsel reworded, while ours says counsel already reviewed, a minor wording difference.",
+    "t": 1893
+   },
+   {
+    "kind": "agree",
+    "about": "Upcoming meeting dates",
+    "ours": "Set upcoming meeting dates: March 31, 2026 (Zoom); April 14, 2026 (in-person/hybrid); April 28, 2026 (Zoom); May 12, 2026 (in-person/hybrid).",
+    "official": "March 31, 2026 @ 6pm – (Zoom) Meeting \nApril 14, 2026 @ 6pm – Regular (Hybrid) Meeting \nApril 28, 2026 @ 6pm – (Zoom) Meeting \nMay 12, 2026 @ 6pm – Regular (Hybrid) Meeting",
+    "note": "All four dates and formats match.",
+    "t": 2497
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital projects Pump 2 and manhole covers, April 15th",
+    "ours": "Capital projects - Pump 2 and manhole covers: April 15th",
+    "official": "",
+    "note": "Official minutes mention a manhole repair project targeting I/I but no Pump 2 or April 15th date.",
+    "t": 1412
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost of special permit/engineering for duplex proposal",
+    "ours": "Cost of special permit / engineering for duplex proposal: $100,000, tens of thousands of dollars",
+    "official": "",
+    "note": "Official public comment summary gives no cost figures for the duplex proposal.",
+    "t": 447
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Budget presentation to FinCom, no Retained Earnings",
+    "ours": "",
+    "official": "Bill will do the budget presentation 3/12/26 at 7pm. to FinCom.  Scott told Chip that they voted to accept the FY27 budget proposal at last meeting. Bill reported they will not be using any Retained Earnings this year",
+    "note": "Official records the FY27 budget presentation date, prior acceptance of the budget and no Retained Earnings use; ours has none of this.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sewer/Stormwater combination and Stormwater Utility bylaw",
+    "ours": "",
+    "official": "The bylaw to be voted on at Town Meeting is to establish the Stormwater Utility and will state that the Select Board will oversee it.",
+    "note": "Official records a second bylaw going to town meeting; ours lists only the sewer wording amendment.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Dan Proctor / Clerk",
+    "ours": "Dan Proctor (member)",
+    "official": "Clerk- Dan Proctor",
+    "official_reading": "Dan Proctor",
+    "note": "Name matches; official lists him as Clerk.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Arthur Kadis",
+    "ours": "Arthur Kadis (member)",
+    "official": "Members: Arthur Katis and Chip Wilson",
+    "official_reading": "Arthur Katis",
+    "note": "Misspelled surname in captions.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Andrew Valeri",
+    "ours": "Andrew Valeri (business manager)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "official_reading": "Andrew Valliere",
+    "note": "Surname spelling differs.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Jane Rangley",
+    "ours": "Jane Rangley (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "official_reading": "Jane Ranley",
+    "note": "Surname spelling differs.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Scott Dall, Chip Wilson, Bill Bernard",
+    "ours": "Scott D. (vice chair, presiding)",
+    "official": "Vice-Chair- Scott Dall",
+    "note": "Same people; Chip Wilson and Bill Bernard also match. Official notes the chair, Brett Ramsden, absent.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenter Ian Brennen and Fitchburg old sewer plant discussion",
+    "ours": "",
+    "official": "Ian Brennen noted he is a builder and a friend of the family is potentially looking to sell the driving range near Whalom and build duplexes.",
+    "note": "Official names the presenter; ours does not name him. The Fitchburg plant comment is also only in official.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:19:52Z",
+   "cost_usd": 0.238953
+  }
  }
 }

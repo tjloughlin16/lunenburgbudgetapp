@@ -433,5 +433,160 @@
    "at": "2026-09-27T02:47:20Z",
    "cost_usd": 0.192652
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03312026-7744",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-03-31-minutes-7744.txt",
+   "path": "sources/meetings/sewer-commission/2026-03-31-minutes-7744.pdf"
+  },
+  "official_sha256": "67565a4fae4345077681cc2e205fe5bddea20e3bced8df448d23abe67f464253",
+  "coverage": "full",
+  "summary": "The two records agree on the main business: the manhole work resuming, the Laurel Lane leak, the CTE inspector change, the 18% delinquency rate and the $3K liner cost. They differ mainly in caption-garbled names and in a few details only our recording captured. Check who presents the FY27 budget at Town Meeting, since the official minutes do not name Scott.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Manhole contractor name",
+    "t": 253,
+    "ours": "Manhole repair IFB / In Situ Technologies contract: 10 to 15, 15 manholes",
+    "official": "Bill noted the contractor is Insituform Technologies and there are 10-15 manholes left to do.",
+    "official_reading": "Insituform Technologies",
+    "note": "Same contractor and same 10-15 count; captions misheard the company name."
+   },
+   {
+    "kind": "agree",
+    "about": "About 15 manholes get frames and covers replaced",
+    "t": 253,
+    "ours": "15 manholes",
+    "official": "Also there are about 15 manholes that will have frames and covers replaced.",
+    "note": "The 15 figure matches the official item."
+   },
+   {
+    "kind": "agree",
+    "about": "Special liner cost per manhole",
+    "t": 1566,
+    "ours": "Cementitious manhole liner cost: $3,000",
+    "official": "Bill stated the special",
+    "note": "Official gives about $3K per manhole (text continues on next page); same figure as our $3,000."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Laurel Lane infiltration volume",
+    "t": 460,
+    "ours": "Laurel Lane infiltration discovery: 10,000 gallons",
+    "official": "",
+    "note": "Official says only that the discontinued line was flowing about half a pipeful of water; it gives no gallon figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Q3 FY26 delinquency rate",
+    "t": 880,
+    "ours": "FY26 third quarter demands / delinquency rate: 18%, 20%",
+    "official": "The delinquency rate is now around 18%.",
+    "note": "18% matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Second delinquency figure of 20%",
+    "t": 880,
+    "ours": "18%, 20%",
+    "official": "",
+    "note": "The official minutes give only 18%; check the recording for what 20% referred to."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Developer I&I offset gallons",
+    "t": 1376,
+    "ours": "Developer betterment for added sewer capacity (I&I offset): 500 gallons per day, 2500 gallons, 2500 gallons a day",
+    "official": "",
+    "note": "Official records only that a development must eliminate I/I or pay a fee to the I/I account, with no gallon figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Contractor go-ahead once weather warms",
+    "t": 294,
+    "ours": "The DPW director will give the manhole-lining contractor the go-ahead to resume work once nighttime temperatures rise above freezing this week.",
+    "official": "With the weather changing this week, he will give them the go ahead to finish the contract.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "agree",
+    "about": "Laurel Lane manhole added to sealing work",
+    "t": 585,
+    "ours": "The leaking/discontinued manhole found on Laurel Lane will be added to In Situ Technologies' sealing work.",
+    "official": "Bill will have Insituform seal it also.",
+    "note": "Same decision; contractor name differs only by captioning."
+   },
+   {
+    "kind": "caption_error",
+    "about": "New CTE inspector name",
+    "t": 647,
+    "ours": "CTE's on-site inspector will change from Robert to Al Packer Jr. ('Elby')",
+    "official": "The new CTE contractor will be Al Packard, Jr. (Albe)",
+    "official_reading": "Al Packard, Jr. (Albe)",
+    "note": "Same change; surname and nickname misheard."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who presents the FY27 budget at Town Meeting",
+    "t": 1004,
+    "ours": "Scott will give the budget presentation at town meeting.",
+    "official": "The FY27 Budget will be presented at Town Meeting.",
+    "note": "Official does not name a presenter; check the recording at this time to confirm Scott."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Pond St. sewer connection request",
+    "t": 1289,
+    "ours": "The Pawn Street sewer district connection request stays on hold until the property owner decides whether to fund engineering plans.",
+    "official": "Dan inquired about the proposed project on Pond St.",
+    "official_reading": "Pond St.",
+    "note": "Captions heard Pawn Street; the official minutes say Pond St. and put the next step as up to the owner."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee names",
+    "ours": "Brett Ramson, Scott Dah, Arthur Cadis, Andrew Belry, Jane Randley",
+    "official": "Chair- Brett Ramsden, Vice-Chair- Scott Dall, Clerk- Dan Proctor, Member: Arthur Katis and Chip",
+    "official_reading": "Brett Ramsden, Scott Dall, Arthur Katis, Andrew Valliere, Jane Ranley",
+    "note": "The same people, with names misheard by captions; Dan Proctor, Chip Wilson and Bill Bernard match. Official also gives Scott as Vice-Chair and Dan as Clerk."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 3/10/26 minutes",
+    "ours": "",
+    "official": "Roll Call Vote: Scott-aye, Arthur-aye, Dan-aye and Chip-aye.  (Brett abstained.)",
+    "note": "A procedural vote that our minutes do not list; Brett's abstention is on record only here."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sewer/Stormwater combination discussion",
+    "ours": "",
+    "official": "The Stormwater Task Force Committee voted to pull their article from the Town",
+    "note": "Official records that combining the commissions needs a State act and the stormwater article was pulled; our minutes carry nothing on it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY27 budget already voted and rate increase",
+    "ours": "",
+    "official": "Bill noted the Commission has already voted to approve the budget",
+    "note": "Our minutes have only the presenter item; check whether the earlier approval was mentioned on the recording."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:19:06Z",
+   "cost_usd": 0.245799
+  }
  }
 }

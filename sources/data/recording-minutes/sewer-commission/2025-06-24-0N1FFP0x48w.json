@@ -313,5 +313,199 @@
    "at": "2026-09-27T18:07:02Z",
    "cost_usd": 0.19591799999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242025-7282",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-06-24-minutes-7282.txt",
+   "path": "sources/meetings/sewer-commission/2025-06-24-minutes-7282.docx"
+  },
+  "official_sha256": "6ddefbdd3c7f376f180339a31cc4f5972cd987e5bf843343aa0b366d91648210",
+  "coverage": "full",
+  "summary": "The two records agree closely on the substance: the Dana Street and manhole schedules, the file disposal, the ADU research and the future agenda items. Our minutes misspell several names, mishear or garble the ADU fee figures, and give Dan Proctor and Scott Dollar the ADU research task as a decision, while the official minutes have them each checking with a different outside body. A reader should check the official minutes on one point: they record roll-call votes on the 6/10/25 minutes and on adjournment, but not on the ADU fee approach.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 7,
+   "only_in_ours": 0,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chairman's name",
+    "ours": "Brett Ramston (chairman)",
+    "official": "Chair- Brett Ramsden",
+    "official_reading": "Brett Ramsden",
+    "note": "Same person; captions misheard the surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Arthur Katis",
+    "ours": "Arthur Cadis (member)",
+    "official": "Member: Arthur Katis",
+    "official_reading": "Arthur Katis",
+    "note": "Misheard surname of the same member.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Scott Dall's name",
+    "ours": "Scott Dollar (member)",
+    "official": "Vice-Chair- Scott Dall",
+    "official_reading": "Scott Dall",
+    "note": "Misheard surname; the official minutes also give his role as Vice-Chair.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer business manager name",
+    "ours": "Andrew Valerie (sewer business manager)",
+    "official": "Sewer Business Manager: Andrew Valliere",
+    "official_reading": "Andrew Valliere",
+    "note": "Misspelled surname of the same person.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk name",
+    "ours": "Jane Renley (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "official_reading": "Jane Ranley",
+    "note": "Misspelled surname of the same person.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Dan Proctor attended",
+    "ours": "Dan Proctor (member)",
+    "official": "Clerk- Dan Proctor",
+    "note": "Same person and name; the official minutes list him as Clerk.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent attendees",
+    "ours": "",
+    "official": "Absent: DPW Director- Bill Bernard and Joe Hurley",
+    "note": "Our minutes list no absentees; Bill Bernard is mentioned as reviewing forms but not as absent."
+   },
+   {
+    "kind": "agree",
+    "about": "Dana Street bypass repair start date",
+    "ours": "Dana Street pump station bypass repair work tentatively scheduled to begin June 30.",
+    "official": "which is tentatively scheduled for June 30th.",
+    "note": "Same schedule in both records.",
+    "t": 329
+   },
+   {
+    "kind": "agree",
+    "about": "Manhole repair IFB schedule and compliance review",
+    "ours": "Manhole repair IFB work tentatively scheduled to begin in July, pending compliance review by Bill Bernard.",
+    "official": "Insituform has submitted most of their required forms and Bill will review them when he returns on Monday.",
+    "note": "Both describe July work, with the director's review of compliance forms pending.",
+    "t": 405
+   },
+   {
+    "kind": "agree",
+    "about": "File disposal needs no vote",
+    "ours": "Disposal of ~48 boxes of old files (dating to 1994) at the school building is informational only and does not require a commission vote; the state has been notified of what will be destroyed.",
+    "official": "Andrew stated that the Commission did not need to vote on the destroying of files- it was just for their information.",
+    "note": "Same outcome: 48 boxes, back to 1994, no vote required.",
+    "t": 644
+   },
+   {
+    "kind": "discrepancy",
+    "about": "State notification vs approval of files to destroy",
+    "ours": "the state has been notified of what will be destroyed.",
+    "official": "He sent the Commissioners a list of what the state approved for items to destroy.",
+    "note": "Ours says the state was notified; the official minutes say the state approved the list. Check the recording for which was said.",
+    "t": 644
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Location of the file storage",
+    "ours": "",
+    "official": "The section of Passios that is being used for file storage will be decommissioned soon and Bill wanted to clear out the sewer files.",
+    "note": "Our minutes place the boxes at the school building and omit the reason the files are being cleared."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Quarterly demand billing error amount",
+    "ours": "Quarterly billing/demand fee error: $30, $20, $10",
+    "official": "the system is adding strange numbers to the bills- adding more than the $10 late fee.",
+    "note": "Official gives only the $10 late fee as baseline; our $30 and $20 figures are not in it. Check the recording for what was said.",
+    "t": 750
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ADU hookup fee figures",
+    "ours": "ADU sewer hookup fee - reference to standard hookup fee: 3500, 3600",
+    "official": "Dan suggested if the ADU is 50% of the size of the house, could they charge 50% of the cost of originally hooking up the house as a fee.",
+    "note": "The official minutes give no dollar hookup fee at all; check the recording for whether $3,500 and $3,600 were stated.",
+    "t": 1111
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ADU fee percentage",
+    "ours": "ADU fee as percentage of standard fee: 2250",
+    "official": "Dan suggested if the ADU is 50% of the size of the house, could they charge 50% of the cost of originally hooking up the house as a fee.",
+    "note": "Ours gives 2250, which is not a percentage, and the official says 50%. It may be a dollar figure (half of 4500, or 65% of 3500); check the recording.",
+    "t": 1258
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Proposed ADU hookup fee structure",
+    "ours": "Proposed ADU hookup fee structure: 3500",
+    "official": "The Commission would need to consider whether to have flat fee or a sliding scale based on the size of the ADU",
+    "note": "Official records no proposed fee amount or structure, only that flat versus sliding scale is open. Check the recording for any $3,500 proposal.",
+    "t": 1367
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who researches ADU fees elsewhere",
+    "ours": "Dan Proctor and Scott Dollar agreed to research how other towns (e.g., Fitchburg, Leominster) are handling ADU sewer fees, building on outreach Andrew Valerie already started.",
+    "official": "Dan offered to check with other sewer departments about what they are doing with ADUs.",
+    "note": "Official has Dan checking other sewer departments and Dan talking to the Water District; Fitchburg and Leominster are mentioned only as Andrew's own research. Check the recording for Scott's assignment and for any Water District follow-up.",
+    "t": 1556
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bylaw and design discussion on ADUs",
+    "ours": "",
+    "official": "Brett suggested they look at what the hook-up fee would be currently for that property and base the 50% on that figure, rather than the original fee.",
+    "note": "The official minutes record the 50%-of-current-fee idea, the pipe sizing and the homeowner-pays-for-replacement idea; our minutes record none of these."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Future agenda items",
+    "ours": "Future agenda items set: Dana Street project, manhole repair IFB, quarterly demands billing issue, and ADU sewer bylaw/fee guidelines.",
+    "official": "Future Agenda Items- Dana St. work, minutes, Manhole IFB, demands, and ADU guide lines.",
+    "note": "The official list also includes minutes, which ours omits; a minor difference in the list's contents."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 6/10/25 minutes",
+    "ours": "",
+    "official": "To approve the minutes of 6/10/25.                                      Roll Call Vote: Dan-aye, Arthur-aye and Brett-aye.",
+    "note": "Our minutes record no vote, though this is a routine vote. The official minutes record a roll-call approval with three ayes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Upcoming meeting schedule and Joe Hurley's note",
+    "ours": "",
+    "official": "Jane noted Joe Hurley had emailed that he has been sick and was sorry to miss his last meeting.",
+    "note": "The official minutes also list four scheduled meetings from July 8 to August 26, 2025; our minutes record neither."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:27:39Z",
+   "cost_usd": 0.24160500000000001
+  }
  }
 }

@@ -485,5 +485,194 @@
    "at": "2026-09-27T02:12:11Z",
    "cost_usd": 0.192336
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07142026-7894",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2026-07-14-minutes-7894.txt",
+   "path": "sources/meetings/council-on-aging/2026-07-14-minutes-7894.pdf"
+  },
+  "official_sha256": "75e1a275fee1c7f7c01400204af5549edd9e9819ca573fd59608684e9530bb12",
+  "coverage": "full",
+  "summary": "The two records agree on the main items: the tea party date, the new members, the August 3 concert, the Reading Buddies training on September 9, the September luncheon and most figures. The names and attendee roster differ a lot, and ours records no votes where the official minutes record two motions (approving the minutes and adjourning), so check the recording for the minutes approval and the East Hill Farm trip date.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 3,
+   "discrepancy": 6,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Annual tea party date and theme",
+    "ours": "Annual tea party set for October 26th with the theme 'America the Beautiful.'",
+    "official": "The Annual Tea Party will be held on October 26, 2026. This year's theme is \"America the Beautiful.\"",
+    "note": "Same date and theme in both records.",
+    "t": 69
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of May and June minutes (vote)",
+    "ours": "VOTES (non-procedural): none",
+    "official": "A motion was made to approve the May and June meeting minutes. The motion was seconded, approved unanimously, and carried",
+    "note": "The official minutes record a vote approving prior minutes and ours records none; check the recording for whether the motion was made, since approving minutes may have been treated as procedural.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who prepares the meeting agendas",
+    "ours": "Miamu will prepare the meeting agendas going forward, with Deb's approval, to ease her workload.",
+    "official": "Ms. Lincoln will prepare the monthly agenda with Ms. Goodsell's approval.",
+    "note": "The records name different people as preparer and approver (ours has the Director Deb approving; official has Ms. Lincoln, listed as Chairperson, preparing with Ms. Goodsell approving); check the recording to see who said what.",
+    "t": 197
+   },
+   {
+    "kind": "caption_error",
+    "about": "New board members welcomed",
+    "ours": "New members Colleen Roy and Chris Johnson welcomed to the board, already sworn in.",
+    "official": "The Board welcomed new members Chris Johnson and Pauline Roy.",
+    "note": "Same welcome of two new members; the captions have the first name Colleen where the official minutes have Pauline Roy; the 'already sworn in' detail is only in ours.",
+    "official_reading": "Pauline Roy",
+    "t": 217
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town band concert July 20 (rain date 27th)",
+    "ours": "Board members arranged, without town funding, for the town band to play one concert July 20th (rain date the 27th) after the override's failure ended town-supported band concerts.",
+    "official": "",
+    "note": "The official minutes do not mention the July 20 band concert or the funding discussion.",
+    "t": 300
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Adult Activity Center event August 3, 7:00-8:30 p.m.",
+    "ours": "",
+    "official": "Adult Activity Center on August 3, 2026, from 7:00-8:30 p.m.",
+    "note": "The official fragment is clipped, but it gives the time of the August 3 event, which matches our August 3 pavilion concert.",
+    "t": 461
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Jazz group named 'the Comeback Crew'",
+    "ours": "A second pavilion concert on August 3rd will feature Steve's jazz group, named on the spot 'the Comeback Crew.'",
+    "official": "",
+    "note": "The official minutes do not name the group or say a concert was set; they only mention the August 3 event, with the first part of the line cut off.",
+    "t": 461
+   },
+   {
+    "kind": "caption_error",
+    "about": "COA Gift Fund balance",
+    "ours": "COA Gift Fund balance: $1,300, 185",
+    "official": "The Council on Aging Gift Fund was reviewed, Funds collected are turned over to the Town for disbursement to the Lunenburg Adult Activity Center",
+    "note": "The official minutes record the fund review but give no balance, so the garbled figure ($1,300,185 or similar) cannot be checked; verify against the recording.",
+    "t": 609
+   },
+   {
+    "kind": "agree",
+    "about": "Gift Fund vs. Eagle House Supporters donations",
+    "ours": "COA Gift Fund vs. Eagle House Supporters donations: $200",
+    "official": "The Eagle House Supporters distribute funds to the Center upon the Director's request.",
+    "note": "Both describe the two funds; the official minutes give no $200 figure, so only the description matches.",
+    "t": 651
+   },
+   {
+    "kind": "agree",
+    "about": "Veterans breakfast fee",
+    "ours": "Veterans breakfast cost: $4",
+    "official": "The Veterans Breakfast continues to be free for all veterans. A fee of $4 is charged for non-veterans.",
+    "note": "The $4 fee matches; the official minutes clarify it applies to non-veterans.",
+    "t": 757
+   },
+   {
+    "kind": "caption_error",
+    "about": "Village to Village / Nashoba Neighbors",
+    "ours": "Village to Village / Mishoba Neighbors membership fee schedule: $50, $95, $175, 80, 155, 300",
+    "official": "The Village to Village Program and Nashoba Neighbors were discussed as resources for homebound seniors.",
+    "note": "The captions have Mishoba where the official minutes have Nashoba; the fee schedule is only in ours.",
+    "official_reading": "Nashoba Neighbors",
+    "t": 1242
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Village to Village: committee decision",
+    "ours": "Board agreed to explore forming a committee to look into the Village to Village / Mishoba Neighbors model for reaching housebound seniors.",
+    "official": "The Village to Village Program and Nashoba Neighbors were discussed as resources for homebound seniors.",
+    "note": "Ours records a decision to explore forming a committee and the official minutes record only a discussion; check the recording for whether the board agreed.",
+    "t": 1519
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Friendly visitor training July 29",
+    "ours": "A friendly visitor volunteer training class was set for July 29th, 9 a.m. to noon.",
+    "official": "",
+    "note": "The official minutes do not mention the friendly visitor training.",
+    "t": 1706
+   },
+   {
+    "kind": "agree",
+    "about": "COA budget structure and spending",
+    "ours": "COA budget structure (programs and miscellaneous): 8,000",
+    "official": "The Council on Aging budget primarily consists of salaries and miscellaneous supplies.",
+    "note": "Both describe the budget as mostly one line plus miscellaneous; ours says 'programs' where the official minutes say 'salaries', and the 8,000 figure is not in the official minutes, so check the recording.",
+    "t": 1917
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Reading Buddies training date",
+    "ours": "A reading buddies training meeting was set for September 9th (Wednesday) at 10 a.m.; noted as Jack's program, not COA-sanctioned.",
+    "official": "The Reading Buddy volunteer program continues, Volunteer training is scheduled for September 9.",
+    "note": "The date matches; ours says the program is not COA-sanctioned and the official minutes say it continues, so check the recording for that point.",
+    "t": 2154
+   },
+   {
+    "kind": "agree",
+    "about": "Honorary member luncheon in September",
+    "ours": "Board agreed to hold the honorary member luncheon in September, with a specific date to be set against the calendar.",
+    "official": "An Honorary Memory Luncheon is planned for September. The luncheon date has not yet been determined.",
+    "note": "Both put the luncheon in September with the date still open; the official title says 'Memory' where ours says 'member', which is probably the OCR or a misheard word.",
+    "t": 2211
+   },
+   {
+    "kind": "discrepancy",
+    "about": "East Hill Farm trip cost and date",
+    "ours": "East Hill Farm trip cost: 18, $75",
+    "official": "On September 23, 2026, they will sponsor a trip to the Inn at East Hill Farm. The trip includes lunch and entertainment by magician Jason Purdy. Tickets are $75 per person, including transportation:",
+    "note": "The $75 price matches; the '18' in ours may be a date (the 18th) while the official minutes say September 23, so check the recording for the trip date.",
+    "t": 2748
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "Deb (Director); Colleen Roy; Chris Johnson; Glenn (board member); Peter (board member); Barbara Cologne (Eagle House Supporters / trips coordinator); June (board member); the chair",
+    "official": "Deb Lincoln (Chairperson), Lou Franco, Cathy Beale, Elena Christopher, James McGulgan, Susan O'Sullivan,\nChris Johnson, and Pauline Roy",
+    "note": "The rosters differ: official lists Glenn McLeod as a Select Board guest and Barbara Coulombe as a guest (ours has Barbara Cologne, a misheard surname) and does not list Peter or June; check the sign-in sheet for who attended and in what role.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Excused members",
+    "ours": "",
+    "official": "Jack Rabbitt, Jane Rabbitt, Ana Lockwood",
+    "note": "The official minutes list three excused members and ours has no absences.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other items in official minutes",
+    "ours": "",
+    "official": "A professional photographer will be available during the Town's 300th Anniversary Celebration to take commemorative photographs.",
+    "note": "The official minutes also record the 300th anniversary photographer, the Meals on Wheels outreach, the Caregiver Vendor Fair, the Hospice sessions, the Bylaw Committee, the Outreach Coordinator pending ratification, TOPS, the Eagle Scout project, the Canva switch, new flooring and the Festival of Trees; ours records none of them.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:14:26Z",
+   "cost_usd": 0.243613
+  }
  }
 }

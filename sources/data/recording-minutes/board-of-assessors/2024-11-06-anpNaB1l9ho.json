@@ -407,5 +407,236 @@
    "at": "2026-10-05T18:39:12Z",
    "cost_usd": 0.282822
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11062024-6865",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2024-11-06-minutes-6865.txt",
+   "path": "sources/meetings/board-of-assessors/2024-11-06-minutes-6865.pdf"
+  },
+  "official_sha256": "15b295dee645952643f4243e46d6539b32a544b8c9cf05122739464010905632",
+  "coverage": "full",
+  "summary": "The two records agree on the main votes (reject residential exemption, reject small commercial exemption, recommend single tax rate), the Vision invoice, and the minutes postponement. The one thing to know is that our minutes put the Nov. 20 outreach conference on the agenda and name Dec. 18 as a floated meeting, while the official minutes give a Nov. 19 classification hearing and a Nov. 20 meeting, and neither records the third-party review as a decision.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 7,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to reject residential exemption",
+    "ours": "Reject adoption of the residential exemption (recommend select board not adopt) — not audible",
+    "official": "3-0 voted to reject the residential exemption.",
+    "note": "Both record the rejection; the official minutes add the 3-0 tally and the mover/seconder, which our captions could not hear.",
+    "t": 7913
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to reject small commercial exemption",
+    "ours": "Reject the small commercial exemption — not audible",
+    "official": "The board voted 3-0 to reject the small commercial exemption.",
+    "note": "Same outcome in both. Our minutes list it twice (t=7975 and t=8314), apparently one vote heard twice.",
+    "t": 7975
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to recommend single tax rate",
+    "ours": "Recommend a single tax rate rather than a split rate — not audible",
+    "official": "The Board voted 3-0 to recommend a single tax rate as opposed to a split tax",
+    "note": "Same outcome in both.",
+    "t": 9523
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Open space discount: no position",
+    "ours": "The board will advise the select board to reject the residential exemption and small commercial exemption, take no position on open space discount, and recommend a single tax rate.",
+    "official": "",
+    "note": "The official minutes do not mention an open space discount or a no-position stance, though they list open space as a class.",
+    "t": 8207
+   },
+   {
+    "kind": "agree",
+    "about": "Vision software maintenance invoice amount",
+    "ours": "Vision software maintenance invoice: 13581",
+    "official": "There was a bill from Vision for the software maintenance totaling $13,581.",
+    "note": "Same figure; ours lacks the comma and dollar sign.",
+    "t": 2230
+   },
+   {
+    "kind": "agree",
+    "about": "October 2 and 16 minutes postponed",
+    "ours": "Review of the October 2 and October 16 minutes postponed to the next meeting.",
+    "official": "The minutes for October 2 and October 16 were postponed to review.",
+    "note": "Same outcome.",
+    "t": 1958
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Date of the next meeting and classification hearing",
+    "ours": "Next meeting set for Nov. 20 and a tentative meeting in early December; Dec. 18 was floated.",
+    "official": "November 20, 2024, Classification Hearing November 19. 2024 at 7 PM",
+    "note": "The official minutes give a Nov. 20 meeting, a Nov. 19 classification hearing, and tentative Dec. 3 and Dec. 18 meetings; ours omits the Nov. 19 hearing and only says early December. Check the posted agendas and the recording.",
+    "t": 10591
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Third-party review of neighborhood codes",
+    "ours": "The board agreed in principle to pursue a third-party review of neighborhood codes via an RFP and funding request, with details to come later; waterfront fixes may be done in-house.",
+    "official": "Brian \nLaffond suggests hiring a third party to revise neighborhoods based upon the set \nof guidelines.",
+    "note": "The official minutes record a suggestion and a plan to reiterate the board's decision to move forward with a professional, but no RFP, funding request, or in-house waterfront fixes. Check the recording to see whether a decision on an RFP was made.",
+    "t": 3683
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Exemptions outreach conference",
+    "ours": "An exemptions outreach conference will go on the Nov. 20 agenda, with the chair given leave to follow up with the senior center, aiming for early January.",
+    "official": "Brian Laffond will add this topic to the \nnext meeting agenda.",
+    "note": "Both record an agenda item for the next meeting, but the official minutes give no early January target or senior center follow-up. Check the recording for the January timing.",
+    "t": 451
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Motion to approve September 4 minutes",
+    "ours": "",
+    "official": "There was a motion to approve the minutes from September 4th with \namendments by Sarah Cammer, seconded by John Rabbitt. All in favor.",
+    "note": "A recorded vote on the September 4 minutes that our minutes do not list.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of executive session minutes",
+    "ours": "",
+    "official": "The executive session minutes from August 19 and July 29 were approved.",
+    "note": "The official minutes record approval of the executive session minutes; ours does not.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "32 motor vehicle abatements signed",
+    "ours": "",
+    "official": "32 motor vehicle abatements were signed.",
+    "note": "Our figures list contains no motor vehicle abatement count; the \"24 32\" under the temporary staffer item may be a different thing, so check.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Interim values approved October 24",
+    "ours": "",
+    "official": "Lynda McQuade confirms the Interim values were approved on October 24th",
+    "note": "Our minutes carry interim valuation figures but no approval date.",
+    "t": 505
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "New growth figure",
+    "ours": "New growth: 527,000",
+    "official": "",
+    "note": "The official minutes record no new growth figure.",
+    "t": 987
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Temporary assessing staffer",
+    "ours": "Value of the temporary assessing staffer: $40,000, 24 32",
+    "official": "",
+    "note": "The official minutes do not mention a temporary staffer or the $40,000.",
+    "t": 1687
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COLA clause cost and 41C limits",
+    "ours": "Cost of adopting COLA clauses for exemptions: $486, $380, 18, 27, $1,000, $500",
+    "official": "",
+    "note": "The official minutes say only that John Rabbitt questioned the warrant article on page 3 on cost of adopting certain clauses, with no figures; the 41C limits ($31,000) are also absent.",
+    "t": 3810
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tax rate scenarios, average value, small commercial exemption cost",
+    "ours": "Tax rate scenarios for split rate: 31 m628, 1339, 1277, $12,000, 8,34",
+    "official": "",
+    "note": "The official minutes record none of these scenario figures, the average single family value, or the $1,500 small commercial exemption cost; they give only the class shares 92%, 4%, 1%, 3%.",
+    "t": 9226
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Public information release on website",
+    "ours": "A public information release will be posted on the town website.",
+    "official": "",
+    "note": "The official minutes record no public information release; they discuss only website modification.",
+    "t": 9867
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brian Leon (chair)",
+    "official": "Chair Brian Laffond",
+    "note": "Same person, name misheard.",
+    "official_reading": "Brian Laffond",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name",
+    "ours": "Linda mcque (member)",
+    "official": "Principal \nAssessor Lynda McQuade",
+    "note": "Same person misheard; the official minutes list Lynda McQuade as Principal Assessor, not a member, and ours also lists \"the principal assessor\" separately.",
+    "official_reading": "Lynda McQuade",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name",
+    "ours": "Sarah C (member)",
+    "official": "Vice Chair Sarah Cammer",
+    "note": "Same person; surname truncated.",
+    "official_reading": "Sarah Cammer",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Assessing staff name",
+    "ours": "Rea (assessing staff)",
+    "official": "Assessing Consultant Rena Swezey",
+    "note": "Same person, first name misheard; the official title is Assessing Consultant.",
+    "official_reading": "Rena Swezey",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Clerk John Rabbitt attendance",
+    "ours": "",
+    "official": "Clerk John Rabbitt",
+    "note": "John Rabbitt is a present member and mover of votes in the official minutes but is not in our attendee list.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Denise (assessing staff)",
+    "ours": "Denise (assessing staff)",
+    "official": "",
+    "note": "The official present list does not include a Denise.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "New administrative assistant starting Tuesday",
+    "ours": "Robin (new admin (starting Tuesday))",
+    "official": "Starting on Tuesday there will be a new administrative assistant.",
+    "note": "Both record the new admin starting Tuesday; the official minutes give no name.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:55:49Z",
+   "cost_usd": 0.245845
+  }
  }
 }

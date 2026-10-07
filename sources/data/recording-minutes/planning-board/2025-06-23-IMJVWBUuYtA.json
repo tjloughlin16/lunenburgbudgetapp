@@ -426,5 +426,240 @@
    "at": "2026-09-27T18:07:12Z",
    "cost_usd": 0.202798
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06232025-7283",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-06-23-minutes-7283.txt",
+   "path": "sources/meetings/planning-board/2025-06-23-minutes-7283.pdf"
+  },
+  "official_sha256": "a155194f7c66219fb9c3365f8957b2a700abc733a1a5488ce4e26d3b466b54f8",
+  "coverage": "partial",
+  "summary": "The two records agree on the main votes (both ANRs, the 100 Townsend-Harbor Rd approval, the July 14 continuance, MBTA Option B and the five-member quorum), allowing for caption misspellings of names and addresses. The official minutes are an unfinished draft with template placeholders, so they omit or differ on the chair election and the peer review wording. They also carry a stray 1083 Northfield Rd continuance vote and a blank attendance list, and a reader should check those against the recording.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 6,
+   "discrepancy": 5,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "about": "Election of chair (two votes)",
+    "kind": "discrepancy",
+    "t": 557,
+    "ours": "Elect Matthew Allison as chair — failed, 1-3 (Allison yes; Reed, Wilsner, Brunner no); then Elect Matthew Brunner as chair — passed, 3-1 (Reed, Wilsner, Brunner yes; Allison no)",
+    "official": "M. Brenner nominated as Chair.",
+    "note": "Ours records two contested roll-call votes, and the official minutes record only a nomination with no vote or tally. Check the recording around t=557-579 for the Allison vote, which the official minutes omit entirely.",
+    "official_reading": ""
+   },
+   {
+    "about": "Endorse ANR for 558 and 560 Goodrich St",
+    "kind": "agree",
+    "t": 1068,
+    "ours": "Endorse the ANR for 558 and 560 Goodrich Street as per the plan of record — passed 3-0 (Reed, Wilsner, Brunner)",
+    "official": "Vote: A. Reid – Aye, T. Willsmer – Aye, M. Brenner – Aye",
+    "note": "Same motion and a 3-0 result in both records. Only the names differ, by caption spelling.",
+    "official_reading": ""
+   },
+   {
+    "about": "ANR address: 60 Crossroad",
+    "kind": "caption_error",
+    "t": 1218,
+    "ours": "Endorse the ANR for 60 Crossroad as per the plan of record — passed 3-0 (Reed, Wilsner, Brunner)",
+    "official": "Motion: T. Willsmer, to endorse the ANR for 60 Cross Rd as per the plan of record.",
+    "note": "The same ANR (ANR-25-9) and the same 3-0 vote. The captions rendered 'Cross Rd' as 'Crossroad'.",
+    "official_reading": "60 Cross Rd"
+   },
+   {
+    "about": "Close public hearing, 100 Townsend Harbor Rd",
+    "kind": "agree",
+    "t": 3007,
+    "ours": "Close the public hearing for the 100 Townsend Harbor Road stormwater management permit — passed 3-0 (Reed, Wilsner, Brunner)",
+    "official": "Motion:  MEMBER_NAME, to close the public hearing for 100 Townsend-Harbor Rd.",
+    "note": "Same motion and a 3-0 vote in both. The official minutes leave template placeholders for the mover and seconder.",
+    "official_reading": ""
+   },
+   {
+    "about": "Approve stormwater permit, 100 Townsend Harbor Rd",
+    "kind": "agree",
+    "t": 3590,
+    "ours": "Approve the stormwater management permit for 100 Townsend Harbor Road with all standard conditions — passed 3-0 (Reed, Wilsner, Brunner)",
+    "official": "Motion:  T. Willsmer, to approve the Stormwater Management Permit for 100 Townsend-Harbor Rd",
+    "note": "Same motion with all standard conditions and a 3-0 vote.",
+    "official_reading": ""
+   },
+   {
+    "about": "Peer review requirement for the Falulah Rd / Fuller Rd project",
+    "kind": "discrepancy",
+    "t": 4792,
+    "ours": "Require payment of $2,000 for peer review, deposited into the 53G account, for 260 Fuller Road — passed 3-0 (Reed, Wilsner, Brunner)",
+    "official": "Board moved to require peer review not to exceed $2,000.",
+    "note": "Ours records a formal 3-0 vote requiring $2,000 paid into a 53G account. The official minutes say only 'not to exceed $2,000', with no vote and no 53G account. A fixed payment and a cap are different. Check the recording at t=4585-4792 for the wording and whether a vote was taken.",
+    "official_reading": ""
+   },
+   {
+    "about": "Peer review fee figures ($2,000, $4,000)",
+    "kind": "discrepancy",
+    "t": 4585,
+    "ours": "260 Fuller Road peer review fee (53G account): $2,000, $4,000",
+    "official": "Board moved to require peer review not to exceed $2,000.",
+    "note": "The official minutes give only $2,000, as a ceiling. Check the recording to see what the $4,000 was (an initial estimate, a quote, or a misheard figure) and why it is absent from the official minutes.",
+    "official_reading": ""
+   },
+   {
+    "about": "Street name: 260 Fuller Road vs 260 Falulah Rd",
+    "kind": "caption_error",
+    "t": 4792,
+    "ours": "260 Fuller Road",
+    "official": "260 Falulah Rd – Special Permit, Stormwater Management Permit (PMOD-25-2)",
+    "note": "The same property. The captions misheard 'Falulah' as 'Fuller'.",
+    "official_reading": "260 Falulah Rd"
+   },
+   {
+    "about": "Continue 260 Falulah Rd hearing to July 14",
+    "kind": "agree",
+    "t": 6368,
+    "ours": "Continue the public hearing for 260 Fuller Road (modification to stormwater permit and site plan approval) to July 14, 2025 at 6:05pm — passed 3-0 (Reed, Wilsner, Brunner)",
+    "official": "to continue the public hearing for 260 Falulah Rd Modification to Site Plan",
+    "note": "The same motion, the same date and time (2025-07-14 at 6:05 P.M.), and a 3-0 vote. Only the street spelling differs.",
+    "official_reading": ""
+   },
+   {
+    "about": "Continuance motion for 1083 Northfield Rd",
+    "kind": "discrepancy",
+    "ours": "",
+    "official": "to continue the public hearings for 1083 Northfield Rd Special Permit &   Stormwater Management Permits to 2025-06-09 at 6:05 P.M.",
+    "note": "The official minutes record a voice-vote continuance to 2025-06-09 for 1083 Northfield Rd, and ours records nothing like it. The date is before this meeting, which suggests text carried over from a template or earlier minutes. Check the recording and whether the 260 Falulah hearing was continued twice.",
+    "official_reading": ""
+   },
+   {
+    "about": "MBTA Communities option, instruct Community Scale",
+    "kind": "agree",
+    "t": 7117,
+    "ours": "Instruct the board's consultant (Community Scale) to draft the MBTA Communities Act bylaw for paper compliance at the Tritown/Young's Road option (Option B) — passed 3-0 (Reed, Wilsner, Brunner)",
+    "official": "T. Willsmer moved to instruct Community Scale to draft the bylaw implementing Option B.",
+    "note": "The same decision, Option B (paper compliance at Tri-Town, Youngs Rd), and a 3-0 vote.",
+    "official_reading": ""
+   },
+   {
+    "about": "Master Plan Steering Committee quorum set to five",
+    "kind": "agree",
+    "t": 7432,
+    "ours": "Amend the Master Plan Steering Committee charter to set its quorum at five members — passed (roll call affirmative, count not fully audible)",
+    "official": "T. Willsmer moved to amend the charter of the master plan steering committee to set the quorum to 5 individuals.",
+    "note": "The same motion. The official minutes show three ayes, consistent with our affirmative roll call.",
+    "official_reading": ""
+   },
+   {
+    "about": "Town manager's advice on quorum",
+    "kind": "agree",
+    "t": 352,
+    "ours": "Town manager confirmed the board can change the Master Plan Steering Committee's quorum requirement itself, and it does not need to stay above 50%.",
+    "official": "For an advisory committee, the Planning Board can directly define quorum.",
+    "note": "The same advice. Ours adds the 'not above 50%' detail, which the official summary omits.",
+    "official_reading": ""
+   },
+   {
+    "about": "Applicant's pre-hearing changes, 100 Townsend Harbor Rd",
+    "kind": "only_in_ours",
+    "t": 1524,
+    "ours": "Applicant for 100 Townsend Harbor Road made two requested changes (erosion control and spot grades/flow clarification) ahead of the hearing, reviewed by Graves Engineering.",
+    "official": "",
+    "note": "The official minutes do not mention the changes or the review by Graves Engineering.",
+    "official_reading": ""
+   },
+   {
+    "about": "Reason for the July 14 continuance date",
+    "kind": "only_in_ours",
+    "t": 6325,
+    "ours": "Continuance date for 260 Fuller Road set for July 14, 2025 rather than a later date, partly to accommodate the review engineer's upcoming paternity leave.",
+    "official": "",
+    "note": "The official minutes give the date but not the reason.",
+    "official_reading": ""
+   },
+   {
+    "about": "443 West Townsend Rd decision signing deferred",
+    "kind": "agree",
+    "t": 7620,
+    "ours": "Chair declined to sign the 443 West Townsend Road decision document without reviewing it first since it had not been received from the planner; signing deferred to the next meeting.",
+    "official": "Decision not available – wasn't sent and Jasmin doesn’t have computer. Delayed to next meeting.",
+    "note": "Both records say the decision was not available and was deferred to the next meeting. The stated reasons are worded differently.",
+    "official_reading": ""
+   },
+   {
+    "about": "July 1 joint meeting and the 443 West Townsend Rd decision",
+    "kind": "only_in_ours",
+    "t": 8058,
+    "ours": "Board decided not to try to add the 443 West Townsend Road shared-driveway decision to the July 1 joint meeting with the select board, and to instead handle it at its next regular meeting.",
+    "official": "",
+    "note": "The official minutes do not mention the July 1 joint meeting.",
+    "official_reading": ""
+   },
+   {
+    "about": "Attendee: Chair Matthew Brunner",
+    "kind": "caption_error",
+    "ours": "Matthew Brunner (Chair)",
+    "official": "Matthew Brenner Chair",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Matthew Brenner"
+   },
+   {
+    "about": "Attendee: Tim Wilsner",
+    "kind": "caption_error",
+    "ours": "Tim Wilsner (Member)",
+    "official": "Timothy Willsmer Vice Chair",
+    "note": "The captions misheard the surname. The official minutes also give his role as Vice Chair.",
+    "official_reading": "Timothy Willsmer"
+   },
+   {
+    "about": "Attendee: Amanda Reed",
+    "kind": "caption_error",
+    "ours": "Amanda Reed (Miss Reed) (Member)",
+    "official": "Amanda Reid  Clerk",
+    "note": "The captions misheard the surname. The official minutes also give her role as Clerk.",
+    "official_reading": "Amanda Reid"
+   },
+   {
+    "about": "Attendee: interim planner",
+    "kind": "caption_error",
+    "ours": "Jasmine Ferinucci (Interim Planner (name also heard as Feroni/Ferinaci/Finani))",
+    "official": "Jasmin Farinacci – Land Use Director",
+    "note": "The captions misheard the name. The official minutes give her title as Land Use Director, not interim planner.",
+    "official_reading": "Jasmin Farinacci"
+   },
+   {
+    "about": "Attendance and Allison leaving the room",
+    "kind": "discrepancy",
+    "ours": "Matthew Allison (Member (left the room mid-meeting))",
+    "official": "PRESENT:  ",
+    "note": "The official PRESENT list is blank, and the official votes show only three members. Ours says Allison left the room mid-meeting. Check the recording for when he left, and for whether he returned, since the official minutes say M. Allison led the pledge.",
+    "official_reading": ""
+   },
+   {
+    "about": "Admin Assistant Logan O'Connell leaving the Town for OpenGov",
+    "kind": "only_in_official",
+    "ours": "",
+    "official": "L. O’Connell is leaving the Town to work for OpenGov.",
+    "note": "A staffing item in the chair's report, not in our minutes.",
+    "official_reading": ""
+   },
+   {
+    "about": "Public comment from Carl Strathmeyer and Dave Rogers",
+    "kind": "only_in_official",
+    "ours": "",
+    "official": "Dave Rogers (82 Highland St) asked about the “unsuitable” substance being left on-site.",
+    "note": "The official minutes record public comment on the hearings (Strathmeyer on 100 Townsend-Harbor Rd, Rogers on 260 Falulah Rd). Our minutes record none.",
+    "official_reading": ""
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:28:24Z",
+   "cost_usd": 0.3603804
+  }
  }
 }

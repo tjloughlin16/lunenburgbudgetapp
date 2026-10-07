@@ -294,5 +294,162 @@
    "at": "2026-09-27T02:09:18Z",
    "cost_usd": 0.192294
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07272026-7922",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-07-27-minutes-7922.txt",
+   "path": "sources/meetings/planning-board/2026-07-27-minutes-7922.pdf"
+  },
+  "official_sha256": "6a10e0c4e2c1bd051b59f54a29764812f463056cdd5740f9b0f0304db6d85dc3",
+  "coverage": "full",
+  "summary": "The two records agree on the hearing, the site plan modification, the three continuances and the master plan approval, with only caption-level spelling differences. They differ on the date of the next working session (Aug 10 vs Aug 8), on who will form the implementation committee, and on whether the official minutes record the Select Board and capital-project discussion.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Property address for the public hearing",
+    "ours": "475 Lemonster Shirley Road",
+    "official": "475 Leominster Shirley Road, Request for Modification to Site Plan  (PMOD-26-4)",
+    "official_reading": "475 Leominster Shirley Road",
+    "note": "Same hearing; captions misheard 'Leominster' as 'Lemonster'.",
+    "t": 933
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to close the public hearing for 475 Leominster Shirley Road",
+    "ours": "Close the public hearing for 475 Lemonster Shirley Road — passed",
+    "official": "A. Burney moved to close the public hearing.  A. Reid Second \nAll In favor.",
+    "note": "Both record the motion to close the hearing passing.",
+    "t": 933
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to approve site plan modification PMOD 26-4 with previous conditions carried forward",
+    "ours": "Approve the proposed site plan modification for 475 Lemonster Shirley Road (PMOD 26-4), with all previous conditions carried forward — passed",
+    "official": "A Burney moved to approve the Modification to Site plan with the condition that all \nprevious conditions of the original permit and previous modifications covey to this \napproval.  A. Reid Second. \nAll in favor.",
+    "note": "Same motion and outcome in both records.",
+    "t": 951
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name 10 Parmenter Road",
+    "ours": "10 Parmentor Road",
+    "official": "10 Parmenter Road Continued from 5/11/26",
+    "official_reading": "10 Parmenter Road",
+    "note": "Misspelled street name in captions; same item.",
+    "t": 1103
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to continue 10 Parmenter Road (first set of permits) to Aug 24 at 6 p.m.",
+    "ours": "Continue 10 Parmentor Road (PBSW2612, PBSW2613, PBSP26-3, PBSP26-4) to August 24 at 6 p.m. — passed",
+    "official": "A Burney moved to continue to 8/24/26 at 6:00 pm.  A. Reid Seconded.  \nAll in favor",
+    "note": "Same continuance and outcome; permit numbers are rendered differently (official prints PBSW-16-12, likely a typo for 26-12).",
+    "t": 1103
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to continue 10 Parmenter Road (second set of permits) to Aug 24",
+    "ours": "Continue 10 Parmentor Road (PBSP26-6, PBSP26-7, PBSW26-16) to August 24 — passed",
+    "official": "A Burney moved to continue to 8/24/26 at 6:00 pm   A. Reid Second \nAll in favor",
+    "note": "Same continuance; permit numbers differ (official lists PBSP-26-5 & PSSP-26-7, Stormwater PBSP-26-16 vs ours PBSP26-6, PBSP26-7, PBSW26-16), so check permit IDs against the agenda.",
+    "t": 1133
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to continue 860 New West Townsend Road to Aug 24",
+    "ours": "Continue 860 New West Townsend Road (PBSA 26-1, PBSW26-1, PBSP26-1) to August 24 — passed",
+    "official": "Burney moved to continue to 8/24/26 at 6:00 pm.  A. Reid Seconded.  \nAll in favor",
+    "note": "Same continuance and outcome.",
+    "t": 1155
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to accept and approve the Master Plan",
+    "ours": "Accept and approve the master plan as presented to the planning board — passed",
+    "official": "A Burney moved to accept and approve the Master Plan as presented.  A. Reid Second \nAll in favor.",
+    "note": "Same motion and outcome.",
+    "t": 1341
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Date of next working session on bylaw revisions",
+    "ours": "Next working session on the proposed bylaw revisions set for August 10, to be spent going through the revised drafts.",
+    "official": "The next working session is on August 8th , as a part of our next regularly scheduled meeting..",
+    "note": "Dates differ (Aug 10 vs Aug 8); the official meeting schedule lists 8/10 and says 8/10 is strictly a work session on bylaws, so the 'August 8th' looks like an official typo, but check the agenda.",
+    "t": 180
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who will form the master plan implementation committee",
+    "ours": "The board will formally establish a master plan implementation committee itself (as an elected body), including a charge and interviews via a talent bank form, rather than asking the Select Board to do it.",
+    "official": "After discussion, M. Brenner will reach out to K. Duffy asking if she is willing to pull  \nthe Steering Committee members over to an Implementation Committee with the \nrequired talent bank forms, interviews etc.",
+    "note": "Ours says the board forms the committee itself and the director emails former members; official says the Chair will ask K. Duffy to move steering members over. Check the recording around t=1965-1986 for who acts and whether the Select Board is involved.",
+    "t": 1986
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who contacts former steering committee members",
+    "ours": "The director will email the former master plan steering committee members to ask who is willing to serve on a new implementation committee, as a starting point for forming it.",
+    "official": "M. Brenner will reach out to K. Duffy asking if she is willing to pull  \nthe Steering Committee members over to an Implementation Committee",
+    "note": "Director emailing members (ours) vs Chair contacting K. Duffy (official) are different actions by different people; check the recording.",
+    "t": 1965
+   },
+   {
+    "kind": "agree",
+    "about": "Disbanding the Master Plan Steering Committee continued to Aug 24",
+    "ours": "Formal vote to disband the master plan steering committee will be placed on the August 24 agenda.",
+    "official": "Discussion to disband continued to 8/24/26",
+    "note": "Both defer the disbanding to Aug 24.",
+    "t": 2159
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Municipal building capital project cost discussion",
+    "ours": "Municipal building capital project(s): tens of millions of dollars",
+    "official": "",
+    "note": "Official minutes only note the Municipal Bldg. Design Committee's joint meeting with the Selectboard on July 28; the cost discussion and the $3 million town hall example are not recorded.",
+    "t": 2200
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town hall rehab cost example (Westminster)",
+    "ours": "Example: town hall rehab cost framing (Westminster): $3 million",
+    "official": "",
+    "note": "Illustrative figure from the discussion; not in the official minutes.",
+    "t": 2431
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: chair, director, applicant's engineer",
+    "ours": "Mr. Chairman (chair); Mr. Wallace (director/town planner); Chris Harrison (presenter (Hanigan Engineering, for the applicant))",
+    "official": "Chris Harrison (Hanigan Engineering) was present and stated that they are requesting a",
+    "note": "Same people; the official also gives the roll call (Brenner, Willsmer, Reid, Burney, Nicastro, none absent) and Wallace as Director, which our minutes do not name.",
+    "t": 933
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes approval of 7/13/26",
+    "ours": "",
+    "official": "T. Willsmer moved to Approve.  A. Reid  Second \nAll in favor",
+    "note": "A vote to approve the 7/13/26 minutes is in the official record and not in our votes list.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:13:56Z",
+   "cost_usd": 0.311608
+  }
  }
 }

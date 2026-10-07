@@ -409,5 +409,229 @@
    "at": "2026-09-27T11:08:14Z",
    "cost_usd": 0.195088
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02242026-7662",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-02-24-minutes-7662.txt",
+   "path": "sources/meetings/sewer-commission/2026-02-24-minutes-7662.pdf"
+  },
+  "official_sha256": "5f657945a263ef8d2f89b9039c73cd75ab184f46becd35e633d9471e58e8b934",
+  "coverage": "full",
+  "summary": "The two records agree closely on the FY27 budget vote, the figures and the main decisions. The one thing to check is the stormwater fee, which we record as \"under $100 per year\" and the town records as $100/year, along with a 6 p.m. schedule decision that the town's minutes do not describe as a decision.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to accept FY27 sewer budget",
+    "t": 1794,
+    "ours": "Motion to accept the FY27 sewer budget proposal — passed (Scott aye, Dan aye, chair aye)",
+    "official": "To accept the budget proposal for FY27.                              Roll Call Vote: Scott-aye, Dan-aye and Brett-aye.",
+    "note": "Same motion, same three ayes."
+   },
+   {
+    "kind": "agree",
+    "about": "FY27 capital plan",
+    "t": 1104,
+    "ours": "FY27 capital plan: $200,000",
+    "official": "They put in $200K for the Capital Plan for a few big repairs.",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "FY27 revenue estimate",
+    "t": 1124,
+    "ours": "FY27 user charge revenue estimate: $1.2 million",
+    "official": "They originally estimated \nRevenues at $1.2 million",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Projected deficit before rate action",
+    "t": 1144,
+    "ours": "almost $200,000",
+    "official": "there would be a deficit of about $200,000",
+    "note": "Same, 'almost' vs 'about'."
+   },
+   {
+    "kind": "agree",
+    "about": "Minimum charge increase $133 to $139",
+    "t": 1230,
+    "ours": "FY27 rate increase scenario: 5%, 133, 139",
+    "official": "they are suggesting a small increase on the minimum charge from  $133 to $139.",
+    "note": "The $133 and $139 agree; the 5% figure does not appear in the official minutes, so it is probably our derived or heard percentage."
+   },
+   {
+    "kind": "agree",
+    "about": "Regular user increase 16%",
+    "t": 1274,
+    "ours": "FY27 regular user rate increase: 16%",
+    "official": "The \nregular users would have a 16% increase - $15.85 to $18.38",
+    "note": "Same."
+   },
+   {
+    "kind": "agree",
+    "about": "Projected surplus",
+    "t": 1295,
+    "ours": "FY27 projected budget surplus: about $26,000",
+    "official": "which would give a surplus of $26K.",
+    "note": "Same."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sewer privilege/connection fee revenue figures",
+    "t": 1356,
+    "ours": "Sewer privilege/connection fee revenue: $40,000, 30,000, 48,000",
+    "official": "",
+    "note": "The official minutes give no connection-fee amounts; they say only that tie-in income goes into Retained Earnings."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town pavement management budget figures",
+    "t": 2394,
+    "ours": "Town pavement management budget (context for storm water utility argument): $50,000, $600,000, $279,000",
+    "official": "",
+    "note": "The official minutes do not mention pavement management or these amounts."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Stormwater fee for single-family homes",
+    "t": 2103,
+    "ours": "Proposed storm water utility fee: under $100 per year",
+    "official": "single family dwellings would be charged $100/year",
+    "note": "We heard 'under $100'; the town writes $100/year (Dan later says 'about $100'). Check the recording near t=2103 for the exact wording."
+   },
+   {
+    "kind": "agree",
+    "about": "Joint meeting with Select Board to appoint Chip Wilson",
+    "t": 960,
+    "ours": "Set up a joint meeting between the Select Board and Sewer Commission to consider appointing Chip Wilson to the vacant fifth commissioner seat.",
+    "official": "Bill noted he \nwould set up a short joint meeting with the Select Board for an interview and a vote to appoint Chip.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote on budget the same evening",
+    "t": 1772,
+    "ours": "Proceed with a vote on the FY27 budget that same evening rather than waiting, since the numbers were considered settled.",
+    "official": "Scott suggested doing the vote since all agreed with the \nnumbers, along with the rate increase.",
+    "note": "Same."
+   },
+   {
+    "kind": "agree",
+    "about": "Sewer connection policy review on March 10",
+    "t": 3062,
+    "ours": "Hold review and possible finalization of draft sewer connection policy/bylaw wording at the March 10th meeting, in time for the town meeting warrant deadline.",
+    "official": "Then they will discuss the policy at the meeting on 3/10. He will need to submit by the policy article by 3/14 for the \nTown Meeting.",
+    "note": "Same plan; the official minutes add a 3/14 submission date that ours lacks."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Both monthly meetings moved to 6 p.m.",
+    "t": 3373,
+    "ours": "Both monthly meetings will be held at 6 p.m. (rather than alternating 7 p.m. in-person / 6 p.m. Zoom) for the next couple of months to accommodate the director's budget-season schedule.",
+    "official": "March 10, 2026 @ 6pm – Regular (Hybrid) Meeting @DPW \nMarch 31, 2026 @ 6pm – (Zoom) Meeting",
+    "note": "The official schedule shows all meetings at 6pm but records no discussion or decision about changing the time; check the recording near t=3373 for how the change was framed."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brett Ramson (chairman)",
+    "official": "Chair- Brett Ramsden",
+    "official_reading": "Brett Ramsden",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-chair's name",
+    "ours": "Scott Dale (commissioner)",
+    "official": "Vice-Chair- Scott Dall",
+    "official_reading": "Scott Dall",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Commissioner Dan Proctor",
+    "ours": "Dan Proctor (commissioner)",
+    "official": "Clerk- Dan Proctor",
+    "official_reading": "",
+    "note": "Same name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Absent commissioner",
+    "ours": "Arthur Cadis (commissioner (absent))",
+    "official": "Absent: Arthur Katis",
+    "official_reading": "Arthur Katis",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "agree",
+    "about": "DPW Director",
+    "ours": "Bill Bernard (director)",
+    "official": "DPW Director- Bill Bernard",
+    "official_reading": "",
+    "note": "Same."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer business manager",
+    "ours": "Andrew Valer (billing/business staff)",
+    "official": "Sewer \nBusiness Manager- Andrew Valliere",
+    "official_reading": "Andrew Valliere",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk",
+    "ours": "Jane Rainley (staff (recording clerk, addressed once as \"Jean\"))",
+    "official": "Minutes Clerk- Jane Ranley",
+    "official_reading": "Jane Ranley",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Guest Chip Wilson",
+    "ours": "Chip Wilson (prospective commission member / guest)",
+    "official": "Guest: Allan (Chip) Wilson",
+    "official_reading": "",
+    "note": "Same person; the official gives the full first name."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Delinquency rate FY26 discussion",
+    "ours": "",
+    "official": "Andrew explained the figures on the delinquency rate form, noting that the rate is not \nas bad as last year.",
+    "note": "Not in our minutes; it is a report with no vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Joint Sewer & Stormwater Commission suggestion",
+    "ours": "",
+    "official": "The Select Board \nsuggested having a joint Sewer & Stormwater Commission and the Commissioners agreed.",
+    "note": "The Commissioners' agreement is a decision-like item that our minutes do not record; check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Finance Committee presentation date",
+    "ours": "",
+    "official": "Bill noted they will be presenting the budget to the Finance Committee on 3/12 and the \nCommission will need to vote to accept it prior to that date.",
+    "note": "The 3/12 deadline is in the official minutes but not ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:20:21Z",
+   "cost_usd": 0.254303
+  }
  }
 }

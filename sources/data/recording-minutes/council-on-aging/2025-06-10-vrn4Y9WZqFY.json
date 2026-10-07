@@ -524,5 +524,226 @@
    "at": "2026-09-27T18:18:10Z",
    "cost_usd": 0.199038
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06102025-7252",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-06-10-minutes-7252.txt",
+   "path": "sources/meetings/council-on-aging/2025-06-10-minutes-7252.pdf"
+  },
+  "official_sha256": "4ab9d2e10bc72f88eac1707fca7f34c0982cf5533d206423fcadb8dc23b2b407",
+  "coverage": "full",
+  "summary": "The two records agree on the officer election, the lift study vote, the permit research and the kiosk hold, but they differ on the furniture decision, the length of the hours trial and the lift cost figures. A reader should check the recording on the Bucky's Corner furniture: ours records a board agreement to seek a compromise, while the official minutes record only the Town Manager's suggestion.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 8,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Officer election (Chair and Vice Chair for FY26)",
+    "ours": "Approve Debbie and Jane for the officer slate for the coming year. — not audible",
+    "official": "Mr. Lincoln moved that Ms. Lincoln and Ms. Rabbitt be appointed as Chair and Vice Chair for the COA Board for '25-'26. Ms. O'Sullivan seconded. All approved, motion was carried.",
+    "note": "Same vote and outcome; the captions give first names (Debbie, Jane) for Deb Lincoln and Jane Rabbitt.",
+    "t": 649
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to proceed with a lift study",
+    "ours": "Do a study (architectural/feasibility) toward installing a lift for the upstairs rooms. — not audible",
+    "official": "Mr. Lincoln made a motion to proceed with a study. Seconded by Ms. Lockwood. All approved, motion was carried.",
+    "note": "Same motion and outcome; ours does not give the mover or seconder.",
+    "t": 4160
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of prior meeting minutes",
+    "ours": "",
+    "official": "Mr. Lincoln moved to accept the minutes with the noted amendment. It was seconded by Mr.McGuigan. All approved, motion was carried.",
+    "note": "This is a procedural vote on the minutes, and our record does not list it; the official minutes also note a spelling change to one name.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision on building hours",
+    "ours": "Trial the proposed increase in building hours (adding evening hours, reducing some Friday hours) through at least September before evaluating, rather than a straight vote.",
+    "official": "The Board agreed to trial this for a few months and see how it goes.",
+    "note": "Both describe a trial with no vote, but ours says it runs through at least September and the official says only 'a few months'. Check the recording near t=5676 for the trial length.",
+    "t": 5676
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Entry seating / Bucky's Corner furniture",
+    "ours": "Rather than adopt either the couches or the library-style chairs, the board agreed to look for a compromise furniture option for the entry seating area.",
+    "official": "Town Manager noted that we may need to look at other options that might meet the sanitary needs of the space without losing the comfort and hominess of the space.",
+    "note": "Ours records a board agreement to seek a compromise. The official minutes record only the Town Manager's suggestion and no board decision, and add that Ms. Rabbitt offered to help pick furniture. Check the recording near t=3608 for whether the board agreed.",
+    "t": 3608
+   },
+   {
+    "kind": "agree",
+    "about": "Building-permit help for seniors",
+    "ours": "The board agreed to let a member investigate and bring back a fuller proposal on building-permit protections for senior home repairs at a future meeting.",
+    "official": "The board indicated that they would like her to continue to pursue this topic and will add it to the next agenda.",
+    "note": "Same decision: the member (Ms. Lockwood) continues the research and it returns to a future agenda.",
+    "t": 529
+   },
+   {
+    "kind": "agree",
+    "about": "Kiosk print materials held",
+    "ours": "Hold off finalizing the kiosk print materials until the new building hours are settled.",
+    "official": "Ms. Goodsell reported that we were waiting on scheduling changes before printing those.",
+    "note": "Same item: printing waits on the schedule change.",
+    "t": 4308
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Lift cost figures",
+    "ours": "Lift/elevator installation cost estimate: $60 to $70,000, $800; public comment: $47,000; comparable building project half a million dollars",
+    "official": "The initial cost appears to be cost prohibitive, but several members noted price tags of under 100k.",
+    "note": "The official minutes give no dollar figures except 'under 100k'. Our $60-70,000 and $47,000 are consistent with that, but the half-million comparable and '$800' are not in the official text. Check the recording for the figures.",
+    "t": 3885
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meals program funding buffer",
+    "ours": "Meals program funding buffer: $5,000, $100, 75",
+    "official": "",
+    "note": "The official minutes do not mention the meals program or these figures.",
+    "t": 2235
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hannaford bag fundraiser price",
+    "ours": "Hannaford bag fundraiser: 250 for a bag, a dollar, 99",
+    "official": "",
+    "note": "The official minutes mention the Hannaford Helps fundraiser but give no price. Our figure is a garbled caption and cannot be matched to anything official.",
+    "t": 5718
+   },
+   {
+    "kind": "agree",
+    "about": "Hannaford Helps fundraiser",
+    "ours": "Hannaford bag fundraiser: 250 for a bag, a dollar, 99",
+    "official": "Current fundraiser running with Hannaford Helps selling bags and the Supporters will get a portion.",
+    "note": "Both record the fundraiser's existence; only ours gives a price.",
+    "t": 5718
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Debbie (Chair)",
+    "official": "Chairperson Deb Lincoln called the meeting to order at 9:38am",
+    "note": "Same person; the captions give 'Debbie' for Deb.",
+    "t": 649,
+    "official_reading": "Deb Lincoln"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-Chair name",
+    "ours": "Jane (board officer)",
+    "official": "Jane Rabbitt (Vice-Chair)",
+    "note": "Same person; ours gives only the first name and no title.",
+    "t": 649,
+    "official_reading": "Jane Rabbitt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Retiring member Pete",
+    "ours": "Pete (retiring board member, former chair)",
+    "official": "Peter Lincoln",
+    "note": "Same person; the official minutes record him as a member who is thanked for decades of service, and do not say he was a former chair.",
+    "official_reading": "Peter Lincoln"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town Manager's name",
+    "ours": "Jen Warren Diamond (Town Manager)",
+    "official": "Jennifer Warren-Dyment (Town Manager)",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Jennifer Warren-Dyment"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant John Sil",
+    "ours": "John Sil (prospective board applicant)",
+    "official": "John Silmi",
+    "note": "Misheard surname. The official minutes also spell it 'John Cilmi' in one place.",
+    "official_reading": "John Silmi"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant John Rabbit",
+    "ours": "John Rabbit (prospective board applicant)",
+    "official": "Jack Rabbitt",
+    "note": "The captions misheard the first name and the spelling of the surname.",
+    "official_reading": "Jack Rabbitt"
+   },
+   {
+    "kind": "agree",
+    "about": "Applicant Lou Franco",
+    "ours": "Lou Franco (prospective board applicant, former select board member)",
+    "official": "Lou Franco",
+    "note": "Same name; the 'former select board member' detail is only in ours.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Retiring member Judy Tarbell",
+    "ours": "Judy Tarbell (retiring board member)",
+    "official": "Ms. Lincoln also thanked Ms. Tarbell and Mr. Lincoln for their decades of service to the town and the COA.",
+    "note": "Same person and same thanks for her service.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director",
+    "ours": "the director (COA director)",
+    "official": "Deb Goodsell (COA Director)",
+    "note": "Ours gives no name for the director.",
+    "official_reading": "Deb Goodsell"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Susan of Eagle House Supporters",
+    "ours": "Susan (Eagle House Supporters)",
+    "official": "Barbara Coulombe (Eagle House Supporters Vice President)",
+    "note": "The official minutes name Barbara Coulombe as the Eagle House Supporters guest, and Susan O'Sullivan is a board member. Check whether our 'Susan' is the board member or someone else.",
+    "official_reading": "Barbara Coulombe"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pauline as secretary",
+    "ours": "Pauline (secretary / minutes)",
+    "official": "",
+    "note": "The official minutes thank 'Ms. Roy for the minutes' and do not name a Pauline. Check whether this is a caption error for Roy.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other board members present",
+    "ours": "",
+    "official": "Present: Deb Lincoln (Chairperson), Jane Rabbitt (Vice-Chair), Peter Lincoln, Diane Nowd, Elena Christopher, Susan O'Sullivan, Jim McGuigan, Cathy Beale, Ana Lockwood, Judy Tarbell",
+    "note": "Our attendee list leaves out Diane Nowd, Elena Christopher, Jim McGuigan, Cathy Beale and Ana Lockwood, and records Helen Balcom's excused absence nowhere.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Lunch and Learns recommended by the Health Care advisory team",
+    "ours": "",
+    "official": "the team met and are recommending three Lunch and Learns, and to hopefully bring in speakers for those.",
+    "note": "This is a recommendation to hold three programs, and ours has no record of it.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:28:16Z",
+   "cost_usd": 0.250347
+  }
  }
 }

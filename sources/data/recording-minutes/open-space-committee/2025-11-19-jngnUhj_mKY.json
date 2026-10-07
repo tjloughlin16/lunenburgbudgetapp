@@ -262,5 +262,138 @@
    "at": "2026-09-27T11:46:07Z",
    "cost_usd": 0.20946900000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11192025-7513",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2025-11-19-minutes-7513.txt",
+   "path": "sources/meetings/open-space-committee/2025-11-19-minutes-7513.pdf"
+  },
+  "official_sha256": "3854e6865b2400817bb66227b48955a8eac6f02241ea90790a95d85e63e3f20d",
+  "coverage": "partial",
+  "summary": "The two records agree on the attendees, the planning-board appointment idea, the Recreation report, and a unanimous vote on each of the two main proposals. They differ on where those proposals go: our minutes say town manager and town council, and the official minutes add the Select Board. They also differ on the October 8 minutes approval, which only the official minutes record, and the January 2026 meeting date, which the official minutes give as 2025. Check the recording for all three.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 1,
+   "discrepancy": 6,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "about": "Vote: approve mission statement and goals",
+    "ours": "Approve the mission statement and goals as drafted and authorize the chair to present the proposal to the town manager and town council. — passed 4-0",
+    "official": "A. Lockwood moved that OSC accept the Mission Statement and Goals and that M. Toohill",
+    "note": "Both record a unanimous vote, but ours sends the proposal to the town manager and town council while the official minutes say Select Board. Check the recording at t=1123 and the motion as worded.",
+    "kind": "discrepancy",
+    "t": 1123
+   },
+   {
+    "about": "Vote: approve draft bylaw",
+    "ours": "Approve the draft bylaw as presented and modified, and direct the chair to bring it to the town manager, town council, and the bylaw review committee. — passed 4-0",
+    "official": "bylaw and that M. Toohill circulate it to the Town Manager, Town Council, Select Board, and",
+    "note": "Both record a unanimous vote, but the recipient lists differ: ours has a bylaw review committee, while the official minutes add the Select Board and 'other committees for feedback'. Check the recording at t=1937 for the motion's wording.",
+    "kind": "discrepancy",
+    "t": 1937
+   },
+   {
+    "about": "Vote: approval of October 8, 2025 minutes",
+    "ours": "",
+    "official": "A. Lockwood moved to approve the amended minutes. C. Shapiro seconded. Voted unanimously in",
+    "note": "The official minutes record a roll-call vote approving the October 8 minutes, and ours records no such vote. Check whether it happened in the recording or was missed.",
+    "kind": "discrepancy"
+   },
+   {
+    "about": "Chapter 61 notification",
+    "ours": "Anna/Eric to research where the town's general bylaws specify who is notified when land comes out of Chapter 61 status, so the open space committee can be added to that notification list.",
+    "official": "E. Hinds mentioned that this is an opportunity to re-establish requirement that OSC be notified about Chapter 61 withdrawals, M. Toohill confirmed.",
+    "note": "Ours records an action item assigned to Anna and Eric. The official minutes record only that Hinds raised the idea and Toohill confirmed it. Check the recording at t=655 for any assignment.",
+    "kind": "discrepancy",
+    "t": 655
+   },
+   {
+    "about": "Planning board appoints members",
+    "ours": "Committee's working assumption (from Mike's report to the planning board) is that if it becomes a standing committee, individual members would continue to be appointed by the planning board rather than by the select board.",
+    "official": "M. Toohill proposed that planning board would appoint OSC members",
+    "note": "Both records say the planning board would appoint members.",
+    "kind": "agree",
+    "t": 326
+   },
+   {
+    "about": "Master plan reference kept in the draft bylaw",
+    "ours": "After debate, the committee decided to keep the reference to being guided by the Lunenburg master plan (in addition to the open space and recreation plan) in the draft bylaw, rather than striking it.",
+    "official": "Minor edits were discussed and accepted.",
+    "note": "Ours records a specific decision after debate, and the official minutes cover it only as unspecified 'minor edits'. Check the recording at t=1853 and the final bylaw text.",
+    "kind": "discrepancy",
+    "t": 1853
+   },
+   {
+    "about": "Recreation board report",
+    "ours": "The recreation committee/board reported it pushed its own meeting to December because it had nothing on its agenda.",
+    "official": "Recreation has not had a meeting, pushed to December due to no",
+    "note": "Both say the Recreation meeting was pushed to December for lack of agenda items.",
+    "kind": "agree",
+    "t": 2011
+   },
+   {
+    "about": "Next meeting dates",
+    "ours": "Next Open Space Committee meetings set for December 10, 2025 and January 14, 2026.",
+    "official": "Next scheduled meetings: December 10, 2025, and January 14, 2025.",
+    "note": "The December date matches. The January meeting is dated 2026 in ours and 2025 in the official minutes, which looks like an official typo. Check the recording at t=2189 and the posted agenda.",
+    "kind": "discrepancy",
+    "t": 2189
+   },
+   {
+    "about": "Attendee: Ana Lockwood",
+    "ours": "Anna (member)",
+    "official": "Ana Lockwood",
+    "note": "The name is spelled differently in the captions.",
+    "kind": "caption_error",
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "about": "Attendees: Mike, Colleen, Eric",
+    "ours": "Mike (chair); Colleen (member); Eric (clerk/member)",
+    "official": "Members Present: Mike Toohill (Chair), Ana Lockwood, Colleen Shapiro, Eric Hinds.",
+    "note": "The same four members are present in both records.",
+    "kind": "agree"
+   },
+   {
+    "about": "Select Board liaison Glenn",
+    "ours": "Glenn (select board liaison/representative)",
+    "official": "Glenn McLeod of the Select Board was also in attendance and indicated no business from",
+    "note": "Both record Glenn of the Select Board attending. The official minutes leave him off the members list but mention him in item 6.",
+    "kind": "agree"
+   },
+   {
+    "about": "Ag Commission member replacing an at-large seat",
+    "ours": "",
+    "official": "a member of Agriculture Commission would be included as a replacement for an at-",
+    "note": "The official minutes record a proposed membership change (an Ag Commission member in place of an at-large seat), and ours does not mention it.",
+    "kind": "only_in_official"
+   },
+   {
+    "about": "Economic Development Council report",
+    "ours": "",
+    "official": "A Lockwood discussed Economic Development Council meet and greet and new",
+    "note": "The official minutes record this report, and ours does not.",
+    "kind": "only_in_official"
+   },
+   {
+    "about": "Public comment",
+    "ours": "",
+    "official": "Public Comment: No public comment.",
+    "note": "The official minutes record no public comment, and ours is silent on it.",
+    "kind": "only_in_official"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:22:23Z",
+   "cost_usd": 0.2850396
+  }
  }
 }

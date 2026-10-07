@@ -461,5 +461,217 @@
    "at": "2026-10-04T11:08:28Z",
    "cost_usd": 0.208033
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02112025-7027",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-02-11-minutes-7027.txt",
+   "path": "sources/meetings/select-board/2025-02-11-minutes-7027.pdf"
+  },
+  "official_sha256": "04fec76a3b0a63d981ed7b1c4268ba3b854179f186eb94052a9482c34fc9feed",
+  "coverage": "full",
+  "summary": "The two records agree on every recorded vote, including the 0-4 denial of the auto dealer license, and mostly on the budget figures. They differ on two decisions: our minutes say the Budget Task Force item was deferred and that the chair would drop the internal warrant deadline, while the official minutes record a discussion and only a possible revisit.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 6,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: ratify police officer appointment and sergeant promotion",
+    "t": 2761,
+    "ours": "Ratify town manager's appointments of a police officer effective Feb 24, 2025 and a police officer to Sergeant effective Feb 12, 2025. — passed unanimously",
+    "official": "Ratification of the Town Manager’s Appointment of Police Officer Jacob LaChance to Sergeant effective February 12, 2025.",
+    "note": "Same motion, same effective dates; the official minutes record 4-0-0 and name the officers (Bergeron, LaChance)."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: close evidentiary portion of the hearing",
+    "t": 5104,
+    "ours": "Close the evidentiary portion of the class 2 auto dealer license hearing. — passed",
+    "official": "Vice-Chair Jeffreys moved to close the evidentiary portion of the hearing.",
+    "note": "Both record it passing; the official minutes give 4-0-0."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve Class II auto dealer license (Web Motors Group)",
+    "t": 5146,
+    "ours": "Approve the class 2 auto dealer license at 40 Summer Street for web Motors Group Inc. — failed (chair later corrected the record: 0 to 4)",
+    "official": "The motion failed to pass and the application was denied.",
+    "note": "Both records say it failed 0-4. The official text oddly reads 'Motion Passed (0-4-0)' before saying it failed, which is a wording slip in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: close the public hearing",
+    "t": 5318,
+    "ours": "Close the public hearing. — passed unanimously",
+    "official": "Vice-Chair Jeffreys moved to close the public hearing.  Member Moore seconded the motion. Call for vote: Four- Yes.  Motion passed (4-0-0).",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW MassDOT grant amount",
+    "t": 3034,
+    "ours": "DPW MassDOT grant: $219536",
+    "official": "the Department of Public Works received a MassDOT grant for\n$21,953.68 for FY25 Rural Roadways",
+    "official_reading": "$21,953.68",
+    "note": "Same grant; the captions run the digits together and misplace the grouping (219536 versus 21,953.68)."
+   },
+   {
+    "kind": "agree",
+    "about": "FY2026 new revenues and split between Town and schools",
+    "t": 6508,
+    "ours": "FY2026 total new revenues: 1,241 754; Allocation of new revenue: 42%, 55%, 3%, $1.2 million, $520,000",
+    "official": "She stated the revenue budget suggested there was $1.2M in new revenues with $520k going to the Town and $680k going to the school.",
+    "note": "The $1.2M total and the $520k Town share match. The percentages and the $1,241,754 figure are not in the official minutes, and the official $680k schools share does not appear in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance and county retirement increases",
+    "t": 6633,
+    "ours": "Health insurance and county retirement: 16%, $489,000, 264,000",
+    "official": "we are looking at a 16% increase in health insurance for $489k and $264k from Worcester County Retirement",
+    "official_reading": "",
+    "note": "Same figures: 16%, $489k, $264k."
+   },
+   {
+    "kind": "agree",
+    "about": "FY2026 capital plan and debt service offset",
+    "t": 6758,
+    "ours": "FY2026 capital plan: 1.2 uh 1.22 5 million, $225,000",
+    "official": "Mr. Terenzini had put together a $1.2M Capital Plan",
+    "note": "Same plan at about $1.2M; the $225,000 offset from reduced debt service also matches the official '$225k'."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Overlay amount",
+    "t": 6571,
+    "ours": "Overlay: $250,000",
+    "official": "",
+    "note": "The official minutes do not mention an overlay figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Snow and ice deficit transfer from free cash",
+    "t": 6862,
+    "ours": "Free cash to cover snow and ice deficit (projected) — $350,000 (discussed only); Snow and ice deficit and FEMA overspend: $350,000, 36,000",
+    "official": "She also discussed some Free Cash transfers that had been planned.",
+    "note": "The official minutes mention free cash transfers only generally, with no snow and ice amounts. Ours marks the transfer as discussed only, not voted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash for one-time items",
+    "t": 6821,
+    "ours": "Free cash for one-time items: decommissioning, cemetery road network repairs, assessors — not stated (discussed only)",
+    "official": "",
+    "note": "The official minutes do not itemize the free cash transfers."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Track and field warrant article $100,000",
+    "t": 8225,
+    "ours": "Warrant article for track and field: $100,000",
+    "official": "",
+    "note": "The official minutes only say some warrant articles were standard and some were placeholders; no track and field article or amount appears."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA allocation figures",
+    "t": 6091,
+    "ours": "ARPA allocations: 3,57 97058",
+    "official": "",
+    "note": "The official minutes mention the ARPA press release but give no allocation figures; our figure is also garbled."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "56 Carr Avenue tax title costs",
+    "t": 5445,
+    "ours": "56 Car Avenue tax title costs: $300 to $500, $500",
+    "official": "She went over the costs of holding the property and stated\nthere is no deadline for the board to make a decision.",
+    "note": "The official minutes record that costs were reviewed but give no dollar amounts. They also record no vote on the property (no vote in ours either)."
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA press release held to next meeting",
+    "t": 6278,
+    "ours": "ARPA press release review held a week so the missing member can weigh in; formatting and wording edits requested.",
+    "official": "Chair Nuzzolo suggested bringing the draft to the next meeting of the\nBoard when all members can be present.",
+    "note": "Same outcome: held to the next meeting for the absent member."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Budget Task Force recommendations: deferred or discussed",
+    "t": 5510,
+    "ours": "Workplace climate survey policy and budget task force recommendations deferred to next week with the full board.",
+    "official": "Review and Discussion on Budget Task Force Recommendations:  Member Emkey advised\nthe Board that the Budget Task Force came up with the idea for an audit",
+    "note": "Only the Workplace Climate Survey and goal-setting items were passed over in the official minutes; the Task Force item was discussed (audit scope, CPA). Check the recording near t=5510 to see whether the Task Force item was actually deferred."
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager will not present a full budget by Feb 13",
+    "t": 7767,
+    "ours": "Town manager will not present a full budget on Thursday at the finance committee; revenue and capital only.",
+    "official": "She stated that she would not be able to have\na budget presentation by February 13\nth.",
+    "note": "Same decision. February 13, 2025 was a Thursday. The 'revenue and capital only' detail is not in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Internal warrant article deadline",
+    "t": 8537,
+    "ours": "Chair indicated willingness to drop the internal warrant deadline; warrant closes March 17.",
+    "official": "Members acknowledged that the internal deadline was set by Mr. Terenzini, and not the Board and that if it becomes an issue it can be revisited.",
+    "note": "Ours has the chair willing to drop the deadline and gives a March 17 warrant close; the official minutes say only that it could be revisited, with no date. Check the recording near t=8537 for who said what."
+   },
+   {
+    "kind": "agree",
+    "about": "Members and town manager present",
+    "t": 0,
+    "ours": "Mr. Chair (chair); Jen (town manager); Amanda (member); Renee (member); Michael R (member)",
+    "official": "Members Present: Caesar Nuzzolo, Michael-Ray Jeffreys, Amanda Moore, Renee Emkey",
+    "note": "Same four members and the town manager (Jennifer Warren-Dyment). Our minutes do not record that Tom Alonzo was absent."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Acting police chief's name",
+    "t": 0,
+    "ours": "Chief Tibido (acting police chief)",
+    "official": "Interim Chief Thibodeau",
+    "official_reading": "Thibodeau",
+    "note": "The captions misheard the name; the official minutes say 'Interim Chief'."
+   },
+   {
+    "kind": "agree",
+    "about": "Officer Hill presenting on the license application",
+    "t": 0,
+    "ours": "Officer Hill (presenter, Lunenburg PD)",
+    "official": "Lunenburg Police Officer Jeffrey Hill approached the Board",
+    "note": "Same presenter; the official minutes give the first name Jeffrey."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fire Department Firefighter Safety Grant",
+    "ours": "",
+    "official": "Fire Department received a Firefighter Safety Grant\nfor the amount of $18,960.00.",
+    "note": "The official minutes record this grant; ours does not."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on override and school budget",
+    "ours": "",
+    "official": "He read from the Budget Task Force Recommendations about the limits of Proposition 2\n½ and stated Lunenburg needs an override and the Select Board needs to place the matter on the\nwarrant.",
+    "note": "Our minutes record no public comment on an override; the official minutes record several speakers on the school budget, including the School Committee Chair."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:55:28Z",
+   "cost_usd": 0.349242
+  }
  }
 }

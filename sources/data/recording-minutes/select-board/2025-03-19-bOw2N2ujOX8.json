@@ -374,5 +374,249 @@
    "at": "2026-09-29T11:10:59Z",
    "cost_usd": 0.1885944
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03192025-7106",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-03-19-minutes-7106.txt",
+   "path": "sources/meetings/select-board/2025-03-19-minutes-7106.pdf"
+  },
+  "official_sha256": "90687870a805b4b4e04595176bf188e29f88a3a2215d427694e6040d1448b6d6",
+  "coverage": "full",
+  "summary": "The two records agree on the pavement plan restoration, the major offsets, the override direction and the deferred vote. Our captions garble several names and warrant totals. The point to check is the override stance: ours says the majority opposed a \"town or school override\", while the official minutes say the majority opposed a School and Municipal override and that Vice-Chair Jeffreys preferred a School-only one.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 6,
+   "discrepancy": 2,
+   "only_in_ours": 7,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes (non-procedural)",
+    "ours": "VOTES (non-procedural): none",
+    "official": "Chair Nuzzolo stated that he would like the Board to formally vote at the next meeting not to have a municipal override as a town meeting warrant article.",
+    "note": "Neither record has a non-procedural vote; both say the override vote was pushed to a later meeting (ours adds the April 1 date).",
+    "t": 4854
+   },
+   {
+    "kind": "agree",
+    "about": "Pavement management plan restored to $279,000 vs $550,000",
+    "ours": "Pavement management plan: 279,000, 550,000",
+    "official": "Town Manager Warren-Dyment presented two different budget proposals to the Board: one with the Pavement Management Program (PMP) restored to $279,000",
+    "note": "Same two figures in both records; $550,000 is the full restoration that would cause layoffs.",
+    "t": 113
+   },
+   {
+    "kind": "agree",
+    "about": "Assessor overlay decrease",
+    "ours": "Assessor overlay: 175,000",
+    "official": "there was a decrease of $175,000 for the Assessor Overlay",
+    "note": "Figure and item match.",
+    "t": 134
+   },
+   {
+    "kind": "agree",
+    "about": "Offsets used to restore pavement plan ($50,000 grant writer, $10,000 police overtime, reserve fund $200,000 to $185,000, $5,000 IT)",
+    "ours": "Offsets to restore pavement plan: $50,000, $10,000, 200,000, 185,000, $5,000, $115,000",
+    "official": "Town Manager Warren-Dyment stated that $50,000 for the grant writer position and $10,000 in Police overtime could be removed.",
+    "note": "The $50,000, $10,000, $200,000, $185,000 and $5,000 items all appear in the official minutes.",
+    "t": 261
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$115,000 offset figure",
+    "ours": "Offsets to restore pavement plan: ... $115,000",
+    "official": "",
+    "note": "The official minutes have no $115,000 figure; check the recording around t=261 for what it refers to.",
+    "t": 261
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan offset of $39,000 shifted from taxation to Free Cash",
+    "ours": "Capital plan offset: $244,500, $39,000",
+    "official": "it is a reduction of $39,000, however, there is no impact to the Plan, it would shift the funds from taxation to Free Cash.",
+    "note": "$39,000 matches.",
+    "t": 407
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$244,500 capital plan offset figure",
+    "ours": "Capital plan offset: $244,500",
+    "official": "",
+    "note": "The official minutes do not mention $244,500.",
+    "t": 407
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Salary reserve figures",
+    "ours": "Salary reserve: 110,000, 50,000",
+    "official": "",
+    "note": "The official minutes cover the salary reserve (no payment-plan adjustments, 2.5% COLA) but give no dollar figures; check the recording.",
+    "t": 516
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library figures ($118,000, 100 hours)",
+    "ours": "Library: $118,000, 100 hours",
+    "official": "",
+    "note": "The official minutes do not mention the library budget or hours.",
+    "t": 683
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School percent-change figures",
+    "ours": "School percent change: 935 980, 90408, 3.64, 3.76%",
+    "official": "",
+    "note": "The official minutes only say there may be a discrepancy between the School FY25 final revised budget and the Chapter 70 funds; they give no percentages.",
+    "t": 1597
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Total dollar change on last page",
+    "ours": "Total dollar change on last page: 1,259 24081",
+    "official": "",
+    "note": "No such total appears in the official minutes.",
+    "t": 2107
+   },
+   {
+    "kind": "discrepancy",
+    "about": "IT department: increase vs reduction",
+    "ours": "IT department increase: $66,500, 166,000, 537",
+    "official": "Clerk Moore asked Town Manager Warren-Dyment what is included in the reduction of Information Technology Purchase Services for FY2026.",
+    "note": "Ours describes an IT increase with larger figures; the official minutes describe a $5,000 reduction in IT Purchase Services. These may be different lines, so check the recording around t=2676.",
+    "t": 2676
+   },
+   {
+    "kind": "caption_error",
+    "about": "Free cash for the schools",
+    "ours": "Free cash for schools: $500,000, 150, 50,000",
+    "official": "Town Manager Warren-Dyment said she believes $150,000 could be given to the schools.",
+    "note": "The '150' is the official $150,000; the $500,000 and 50,000 are not in the official minutes and may be other figures in the discussion.",
+    "t": 3193,
+    "official_reading": "$150,000"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decision not to use Chapter 90 funds for DPW trucks",
+    "ours": "Chapter 90 and DPW trucks: 550,000",
+    "official": "Town Manager Warren-Dyment stated that based on the reduction of the PMP that she would not recommend using Chapter 90 funds for the DPW trucks",
+    "note": "Ours records only a $550,000 figure, not the recommendation against using Chapter 90 for the trucks. The $550,000 is the PMP figure, not a truck cost.",
+    "t": 3256
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts Payable warrant (first)",
+    "ours": "Warrants: $239,300",
+    "official": "Accounts Payable warrant in the amount of $239,384.27.",
+    "note": "Same warrant; ours is a rounded or misheard amount.",
+    "t": 5004,
+    "official_reading": "$239,384.27"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Payroll warrant",
+    "ours": "Warrants: $948,000",
+    "official": "Payroll warrant in the amount of $948,580.71.",
+    "note": "Same warrant; ours is rounded or misheard.",
+    "t": 5004,
+    "official_reading": "$948,580.71"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Second Accounts Payable warrant",
+    "ours": "Warrants: 1,691 3529",
+    "official": "Accounts Payable warrant in the amount of $1,169,135.29.",
+    "note": "Digits garbled and transposed in the captions.",
+    "t": 5004,
+    "official_reading": "$1,169,135.29"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cemetery expansion figures",
+    "ours": "Cemetery expansion: $50,000, $10,000, $96,000",
+    "official": "",
+    "note": "The official minutes record only public comment for and against the North Cemetery expansion, with no dollar figures.",
+    "t": 5154
+   },
+   {
+    "kind": "agree",
+    "about": "Board comfortable with restoring the pavement plan",
+    "ours": "Board members indicated they were comfortable with the town manager's restoration of the pavement management plan and the cuts used to fund it.",
+    "official": "All the Board members agreed that they are in support of restoring the PMP as presented by the Town Manager.",
+    "note": "Same outcome.",
+    "t": 2611
+   },
+   {
+    "kind": "agree",
+    "about": "Override vote deferred to next meeting",
+    "ours": "Vote on placing an override on the ballot deferred to a later agenda; the board would meet April 1.",
+    "official": "Chair Nuzzolo stated that he would like the Board to formally vote at the next meeting not to have a municipal override as a town meeting warrant article.",
+    "note": "Both defer a formal vote; only ours gives the April 1 date, and the official minutes frame the vote as being on a municipal override.",
+    "t": 4854
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Board majority stance on overrides",
+    "ours": "A majority of the board said it would not support a town or school override on the ballot this year.",
+    "official": "Vice-Chair Jeffreys said that the Board has a majority that will not support a School and Municipal override",
+    "note": "Ours says no town or school override; the official minutes say a School and Municipal override. Jeffreys preferred a School-only override and Nuzzolo had not decided on the citizens' petition. Check the recording for each member's stance.",
+    "t": 3530
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-Chair name",
+    "ours": "Mr Jeffers (member)",
+    "official": "Vice-Chair Michael-Ray Jeffreys",
+    "note": "Misheard surname; the official minutes also list him as Vice-Chair, not a plain member.",
+    "official_reading": "Michael-Ray Jeffreys"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance Director name",
+    "ours": "Ezekiel (finance staff (presenter))",
+    "official": "Finance Director/Town Accountant Ezequiel Ayala Jr.",
+    "note": "Misheard first name.",
+    "official_reading": "Ezequiel Ayala Jr."
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees",
+    "ours": "Chair (chair); Jen (town manager); Renee (member); Tom (member); Amanda (member)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Michael-Ray Jeffreys, Clerk Amanda Moore, Member Tom Alonzo, and Member Renee Emkey",
+    "note": "All five members and the Town Manager (Jennifer Warren-Dyment) are present in both; ours has first names only.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenters",
+    "ours": "",
+    "official": "John Bowen, 162 Highland Street (via Zoom): thanked the Finance Director/Town Accountant",
+    "note": "Our attendee list has no public commenters; the official minutes name Bowen, Dave Passios, TJ Loughlin and Rhonda Lisio."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "OPEB contribution confirmed",
+    "ours": "",
+    "official": "Rhonda Lisio, 181 Reservoir Road: asked if the revised budget proposal includes a contribution to OPEB. Town Manager Warren-Dyment said yes.",
+    "note": "Our minutes do not record this exchange."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Council on Aging staffing change and 2.5% COLA",
+    "ours": "",
+    "official": "Town Manager Warren-Dyment said that the proposed budget includes just 2.5% COLA.",
+    "note": "The official minutes also cover the Council on Aging position changes; ours records neither."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:52:49Z",
+   "cost_usd": 0.279683
+  }
  }
 }

@@ -200,5 +200,93 @@
    "at": "2026-09-27T02:13:54Z",
    "cost_usd": 0.183044
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07062026-7886",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee-appointing-committee/2026-07-06-minutes-7886.txt",
+   "path": "sources/meetings/finance-committee-appointing-committee/2026-07-06-minutes-7886.pdf"
+  },
+  "official_sha256": "894aeb83ebf9ac94e434807c110e6afca750f3d9ac576ba28c8bd4f1c388db1f",
+  "coverage": "full",
+  "summary": "The two records agree on the main substantive vote: Menard and Simeone reappointed to three-year terms and Beardmore to a two-year vacancy, unanimously. They differ on who chaired and whether Tim Murphy attended, and on two procedural votes (chair election, approval of draft minutes) that our minutes do not record.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to reappoint Menard and Simeone to 3-year terms and appoint Beardmore",
+    "ours": "Reappoint Chris Menard and Jay Simeone to full 3-year terms on the Finance Committee, and appoint Peter Beardmore to the remaining 2 years of a separate vacated term. — passed unanimously",
+    "official": "Ms. Brzozoski made a Motion to appoint Mr. Menard and Mr. Simeone to three year terms, and Mr. Beardmore to fulfill a a two year vacancy, all commencing upon their swearing in with the Town Clerk. Ms. Emkey seconded and the Motion was approved unanimously.",
+    "note": "Same motion, same terms (3 years, 3 years, 2-year vacancy) and same unanimous outcome in both records.",
+    "t": 705
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Clarification that Beardmore fills the seat vacated by 'Jean'",
+    "ours": "Clarified that Peter Beardmore is filling the remainder of the term vacated by \"Jean,\" who had 2 years left, not Jay Simeone's or Chris Menard's seat.",
+    "official": "",
+    "note": "Official minutes say only 'a two year vacancy' and do not name the prior holder; 'Jean' is a caption-heard name worth confirming.",
+    "t": 623
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Election of Tim Murphy as Chair",
+    "ours": "",
+    "official": "Ms. Emkey made a motion that Mr. Murphy be the Chair, seconded by Ms. Brzozoski and the\nMotion was approved.",
+    "note": "This is a vote on a procedural office; our minutes do not record it or Murphy at all. A person should check the recording for the chair vote, since our attendee list gives Ms. Emkey as chair.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who chaired the meeting / attendee Tim Murphy",
+    "ours": "Ms. Emkey (Appointing Committee member/chair)",
+    "official": "Attendees Tim Murphy, Moderator, Rene Emkey Selectboard; Laura Brzozoski School Committee",
+    "note": "Official minutes make Tim Murphy (Moderator) the Chair; ours omit him and label Ms. Emkey chair. Check the recording for who presided and whether Murphy attended."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Laura (Brzozoski)",
+    "ours": "Laura (Appointing Committee member)",
+    "official": "Laura Brzozoski School Committee",
+    "note": "Same person; captions gave only the first name.",
+    "official_reading": "Laura Brzozoski"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Rene Emkey",
+    "ours": "Rene (Appointing Committee member)",
+    "official": "Rene Emkey Selectboard",
+    "note": "Same person, first name only in ours; spelling 'Emkey' matches.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of draft minutes",
+    "ours": "",
+    "official": "Ms. Emkey that moved to approve the draft minutes, as updated, to be typed and filed by the chair.\nMs. Brzozosku seconded and the motion was approved.",
+    "note": "A vote in the official minutes that our minutes do not record; check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Applicants interviewed: Menard, Simeone, Beardmore",
+    "ours": "Chris Menard (Finance Committee member (reappointment candidate)); Jay Simeone; Peter Beardmore (applicant for Finance Committee vacancy)",
+    "official": "Both were interviewed, separately.",
+    "note": "Both records show the three candidates and Beardmore interviewed (remotely per official)."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:14:33Z",
+   "cost_usd": 0.21953899999999998
+  }
  }
 }

@@ -48,7 +48,13 @@ to re-check it.
 
 | our copy | the publisher's address | checked |
 |---|---|---|
-| `pdf/pec-agreement-fy27-fy29.pdf` | no URL: not published. Received **5 October 2026** in answer to the records request of **19 September 2026**, made by email to the Town Manager and the Superintendent (`notes/reference/records-requests.csv`, `2026-09-19-pec-agreement`). Publisher's filename: **`Lunenburg PEC Agreement FY27 - FY29.pdf`** | sha256 `6f12f5a0d6f54e09c0ea752da2c70204d4d697f20992955acd8d1b22b7c644df`, 124,142 bytes |
+| `pdf/pec-agreement-fy27-fy29.pdf` | no URL: not published. Sent **5 October 2026, 4:39 PM**, by email from **Julie Belliveau, Human Resources Director**, Town of Lunenburg (cc Jennifer Warren-Dyment, Town Manager), after a phone conversation: *"Per our conversation, please see that attached PEC Agreement for FY27-FY29."* It answers the records request of **19 September 2026** to the Town Manager and the Superintendent (`notes/reference/records-requests.csv`, `2026-09-19-pec-agreement`). Publisher's filename: **`Lunenburg PEC Agreement FY27 - FY29.pdf`** | sha256 `6f12f5a0d6f54e09c0ea752da2c70204d4d697f20992955acd8d1b22b7c644df`, 124,142 bytes |
+| `pdf/pec-agreement-2008.pdf` | no URL: not published. Sent **6 October 2026, 12:35 PM**, by email from Julie Belliveau, Human Resources Director (cc Jennifer Warren-Dyment, Town Manager, and Renee Emkey, Select Board), as `repecagreement.zip`, in reply to the request of 5 October 2026 (`2026-10-05-pec-base-and-attachments`). Publisher's filename: **`2008 PEC Agreement.pdf`** | sha256 `aeb166be95c1ea186c9669d04d796239c0abadde0407876c32b3702f24185ee4`, 512,010 bytes |
+| `pdf/pec-fy27-attachment-a-1-network-blue-new-england.pdf` | same email. Publisher's filename: **`Bene Summary 1.pdf`** | sha256 `cdcb55f04dda810233026b4096b407c421992876a8c64377bd7b96fb32460427`, 1,234,412 bytes |
+| `pdf/pec-fy27-attachment-a-2-network-blue-select.pdf` | same email. Publisher's filename: **`Bene Summary 2.pdf`** | sha256 `91d230d3bb65594ff3d38067cca487d119e2bf216f161349c84f928f73669108`, 1,096,141 bytes |
+| `pdf/pec-fy27-attachment-a-3-access-blue-ne-saver.pdf` | same email. Publisher's filename: **`Bene Summary 3.pdf`** | sha256 `0c65f1a23eede43a03049d0f2f11efd290dca86e93ef14a708f9c5c3713e668c`, 1,033,417 bytes |
+| `pdf/pec-fy27-attachment-a-4-blue-care-elect.pdf` | same email. Publisher's filename: **`Bene Summary 4.pdf`** | sha256 `130ec4eff26d6faffa4198b26c1cce37744c733a873b939b9934e4c411d9962a`, 1,414,547 bytes |
+| `pdf/pec-fy27-attachment-b-opt-out-policy.pdf` | same email. Publisher's filename: **`Lunenburg Opt Out Policy FY27.pdf`** | sha256 `296646ecc647a6bef5e9620b8a256dd572ed42a82db31bb3fbc5933e4c659d57`, 120,788 bytes |
 
 A memorandum of agreement between the Town and the Lunenburg Public Employee Committee
 under c.32B §19, effective 1 July 2026 to 30 June 2029. Five pages, digital (`pdf_kind`:
@@ -57,16 +63,37 @@ contribution for the high-deductible plan, a $96 monthly Medicare Part B reimbur
 the splits: Town 75% / subscriber 25% on every active plan and on Managed Blue for Seniors,
 50/50 on Medex.
 
-**What it does not contain, read off the pages rather than assumed:**
+**The attachments, as the Town classifies them.** The HR Director's email of 6 October:
+*"The Benefit Summaries are Attachment A, and the Opt-Out Policy is Attachment B."* Her
+word is the Town's classification; the match below is ours, read off the pages.
 
-- **The base agreement.** It *"amends the current in-force health insurance agreement"*
-  and does not attach it. The union contracts name that one as the PEC Agreement of
-  16 June 2008. Still not held.
-- **Attachments A and B.** Page 4 prints `ATTACHMENT A` (the benefit brochures) and page 5
-  `ATTACHMENT B` (the opt-out plan), and nothing else. So the opt-out payment, which the
-  School Committee raised to $3,000/$6,000 on 18 March 2026 (below), is not in this copy.
-- **A signing date.** The signature page prints five names, one for the Town as Chair, and
-  no date.
+- **Attachment A** is four Blue Cross summaries of benefits, each headed `MIIA Town of
+  Lunenburg`: Network Blue New England $500 (the HMO), Network Blue Select $500, Blue Care
+  Elect $500 (the PPO), and Access Blue New England Saver $2,000/$4,000 (the HSA plan). Their
+  copays match the memorandum's: e.g. summary 1 p3 `$20 per visit` / `$45 per visit`,
+  `$275 per admission` / `$1500 per admission`, p4 `$10 for Tier 1 $30 for Tier 2 $65 for
+  Tier 3`. **There is no summary for Managed Blue for Seniors or for Medex**, the two
+  Medicare plans the memorandum also names.
+- **Attachment B** is a one-page digital document, *HEALTH INSURANCE OPT OUT PROGRAM
+  GUIDELINES FOR FY 27*: `Individual Coverage - $3,000`, `Family Coverage - $6,000`,
+  `Change from a family to individual coverage - $3,000`, paid at the end of the fiscal year,
+  after a minimum of one year enrolled.
+- **The 2008 agreement** is a 16-page scan (`pdf_kind`: scan, every page an image) holding
+  the eight-page agreement twice. Page 1 and the signature page (p8, p16) are dated by hand
+  the 16th of June 2008. Page 4 (and p12) carries a handwritten margin note beside the
+  Medicare Part B clause: *"retiree & spouse or just retiree?"*. The signature block is
+  names and bargaining units only, and the redaction screen, run after OCR, found nothing.
+
+**What is still not held.** The FY27 memorandum *"amends the current in-force health
+insurance agreement"* and does not name it. The 2008 agreement ran to 30 June 2012 and
+*"shall continue thereafter until the new agreement is reached"*. Between the two, the Select
+Board minutes record an amendment dated 14 May 2013 (cited 11 March 2014, when a further
+amendment was approved), an agreement expiring 30 June 2016 (10 May 2016), and a *"Public
+Employee Agreement ... effective July 1, 2022"* (12 April 2022). None of those is held, so
+the terms in force on 30 June 2026 cannot be read. The HR Director wrote on 6 October that
+she was *"working on producing a complete, current Agreement"*; that is evidence of what she
+intends, not of a document that exists. And the memorandum's signature page prints five
+names and no date.
 
 The district copy of the teachers' agreement is
 [Lunenburg Education Association 2024-2027](https://drive.google.com/file/d/19IaKYDVtYXgJ63J0MOod-8Io6F3oZ6dw/view),
@@ -207,8 +234,9 @@ benefits:
    in the district's 4% salary assumption cannot be reproduced from published documents —
    only bounded.
 
-5. **The PEC agreement's Attachments A and B, and the 2008 base agreement it amends.** The
-   FY27–FY29 memorandum arrived without them; see *The health insurance agreement* above.
+5. **The PEC instruments between 2008 and 2026, and the two Medicare plan summaries.** The
+   2008 agreement and both FY27 attachments are now held; see *The health insurance
+   agreement* above for what is still not.
 
 Items 2 and 3 are a public records request to the district; item 4 is a question for the
 Business Manager.

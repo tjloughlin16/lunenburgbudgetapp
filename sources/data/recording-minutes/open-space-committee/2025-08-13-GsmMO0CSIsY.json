@@ -282,5 +282,132 @@
    "at": "2026-09-27T12:43:42Z",
    "cost_usd": 0.184894
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08132025-7342",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2025-08-13-minutes-7342.txt",
+   "path": "sources/meetings/open-space-committee/2025-08-13-minutes-7342.pdf"
+  },
+  "official_sha256": "1c469efe9c90e3606748ba15b973070015023ca4c97a9c923a7725168b941b42",
+  "coverage": "full",
+  "summary": "The two records agree on the main outcomes (recommendation not to exercise the right of first refusal, remote September 3rd meeting, review of the master-plan spreadsheet), differing mostly in detail and in name spellings. The one thing to check is attendance and the vote count: ours has Anna present and a 5-0 roll call, while the official lists four members present with no Anna and mislabels the vote as approving minutes.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "222 West Townsend Road right of first refusal: recommendation not to exercise",
+    "ours": "Motion that the Open Space Committee recommend to the Select Board that the town not exercise its right of first refusal for 222 West Towns Road because the parcel does not meet the committee's open space criteria.",
+    "official": "Open Space Committee makes a recommendation to the select board to not exercise its \nright of ﬁrst refusal.  Motioned by M Toohill, seconded by C Shapiro.",
+    "note": "Same recommendation in both; the official minutes do not state the open-space-criteria reason.",
+    "t": 1066
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote tally on the right of first refusal motion",
+    "ours": "passed 5-0 (roll call: Colleen I, Tim I, Chris I, Anna I, chair I)",
+    "official": "Members present voted unanimously in favor of approving minutes by roll call.",
+    "note": "Ours records five voters including Anna; the official lists four members present and no Anna, and its vote line says 'approving minutes' (apparently a copy-paste slip). Check the recording for whether Anna was present and voted, and the true count (4-0 or 5-0).",
+    "t": 1066
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Anna (vice chair)",
+    "ours": "Anna (vice chair)",
+    "official": "Members Present: \nMichael Toohill (Chair) \nChris St.Germain (Conservation) \nColleen Shapiro (Parks & Rec) \nTim Willsmer (Planning Board)",
+    "note": "Our record has Anna as present and voting; the official minutes do not list her. Check the recording for her attendance, which also affects the 5-0 count."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Michael (chair)",
+    "official": "Michael Toohill (Chair)",
+    "note": "Same person; ours gives only the first name.",
+    "official_reading": "Michael Toohill"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Tim's surname",
+    "ours": "Tim Wilsmer (Planning Board representative, member)",
+    "official": "Tim Willsmer (Planning Board)",
+    "note": "Captions misspelled the surname.",
+    "official_reading": "Tim Willsmer"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chris's surname",
+    "ours": "Chris (Conservation Commission representative, member; took minutes for this meeting)",
+    "official": "Minutes recorded by Chris St. Germain",
+    "note": "Same person; ours lacks the surname, and both agree Chris took the minutes.",
+    "official_reading": "Chris St. Germain"
+   },
+   {
+    "kind": "agree",
+    "about": "Colleen Shapiro attendance",
+    "ours": "Colleen Shapiro (Parks Commission representative, member)",
+    "official": "Colleen Shapiro (Parks & Rec)",
+    "note": "Same member, same body."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting moved to September 3rd, remote",
+    "ours": "The committee moved its next meeting from September 10th to September 3rd (Zoom)",
+    "official": "Next meeting, September 3\nrd  (remote)",
+    "note": "Same date and remote format; the official omits the reasons and the October 8th follow-up.",
+    "t": 1500
+   },
+   {
+    "kind": "agree",
+    "about": "Master plan spreadsheet review before next meeting",
+    "ours": "Members agreed to individually review the town master-plan steering committee's spreadsheet before the September 3rd meeting, share notes informally, but not deliberate on it by email (only at a posted meeting).",
+    "official": "Members instructed to review questions in spreadsheet and bring comments and feedback \nto the next meeting.",
+    "note": "Same core decision; the official omits the no-email-deliberation point (open meeting law).",
+    "t": 1528
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of June 9, 2025 minutes",
+    "ours": "",
+    "official": "C. Shipiro motioned to approve minutes from the June 9, 2025 joint meeting with planning \nboard.",
+    "note": "A vote approving prior minutes (seconded by St.Germain, unanimous by roll call) appears only in the official record; ours lists no such vote. May have been treated as procedural, but check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Open space plan extended to June 2029",
+    "ours": "",
+    "official": "Open space plan extended to June 2029",
+    "note": "A plan update item recorded only in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reasons for moving the meeting and October 8th schedule",
+    "ours": "because the chair will be out for hip replacement surgery and the vice chair, Anna, will be in Scotland on the 10th; the following meeting reverts to the regular schedule on October 8th.",
+    "official": "",
+    "note": "Reasons and the October 8th meeting appear only in ours.",
+    "t": 1500
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chris agreed to take minutes since the clerk Eric was absent",
+    "ours": "Chris agreed to take minutes for tonight's meeting since the clerk, Eric, was absent.",
+    "official": "",
+    "note": "The official only says Chris recorded the minutes, not why.",
+    "t": 170
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:38Z",
+   "cost_usd": 0.225481
+  }
  }
 }

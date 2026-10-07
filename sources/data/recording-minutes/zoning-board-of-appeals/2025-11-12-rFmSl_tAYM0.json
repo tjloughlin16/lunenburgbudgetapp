@@ -210,5 +210,139 @@
    "at": "2026-09-27T11:51:50Z",
    "cost_usd": 0.186544
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11122025-7472",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2025-11-12-minutes-7472.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2025-11-12-minutes-7472.pdf"
+  },
+  "official_sha256": "ad507240a6cb9b50000e355bf4cbf12028c44f58b0b121faccab2d3d9d7c8b9a",
+  "coverage": "full",
+  "summary": "The two records agree on the outcome: the special permit for 30 Summer Street was granted. Ours misheard most names, and the official minutes carry detail ours lacks (mover and seconder, plan number, building specs). The one thing to check is that ours records a tabling discussion and a note on public comment that the official minutes never mention.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "special permit vote outcome",
+    "t": 1197,
+    "ours": "Allow Safe Store Real Estate Company a special permit for the use, to construct the storage building at 30 Summer Street, Lunenburg — passed",
+    "official": "The\npetition was granted.",
+    "note": "Both records show the special permit for 30 Summer Street granted; the official minutes give no vote count and ours gives none either."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "mover, seconder and plan on the motion",
+    "ours": "",
+    "official": "Anthony Nicastro made a motion to approve the request as shown on the Plan\nNo. 8663, dated 09/29/2025, submitted by the applicant. James Besarkarski seconded the motion.",
+    "note": "Our minutes name no mover, seconder or plan reference for the approval; the official minutes name all three."
+   },
+   {
+    "kind": "caption_error",
+    "about": "applicant name",
+    "t": 1197,
+    "ours": "Safe Store Real Estate Company",
+    "official": "SafStor Real Estate Co., LLC.",
+    "note": "Same applicant, misheard by the captions.",
+    "official_reading": "SafStor Real Estate Co., LLC."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: board secretary name",
+    "ours": "Lisa Nadan",
+    "official": "Lisa Normandin, Secretary of the Lunenburg Zoning\nBoard of Appeals",
+    "note": "Same person, name misheard.",
+    "official_reading": "Lisa Normandin"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "secretary's status",
+    "ours": "Lisa Nadan (retired board secretary, volunteering to read the application)",
+    "official": "Lisa Normandin, Secretary of the Lunenburg Zoning\nBoard of Appeals",
+    "note": "Ours calls her a retired secretary volunteering; the official minutes list her as the current Secretary. Check the recording for what was said about her role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: member Besarkarski",
+    "ours": "Jim Bezikausski (member)",
+    "official": "James Besarkarski",
+    "note": "Same member, name misheard.",
+    "official_reading": "James Besarkarski"
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: member Nicastro",
+    "ours": "Tony Niccastro (member)",
+    "official": "Anthony Nicastro",
+    "note": "Same member, name misheard.",
+    "official_reading": "Anthony Nicastro"
+   },
+   {
+    "kind": "caption_error",
+    "about": "attendee: member Gurney",
+    "ours": "Don Gurnie (member)",
+    "official": "Donald Gurney",
+    "note": "Same member, name misheard.",
+    "official_reading": "Donald Gurney"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "chair's name",
+    "ours": "the Chairman (chair)",
+    "official": "Alfred Gravelle Chairman",
+    "note": "Ours does not name the chair; the official minutes name him."
+   },
+   {
+    "kind": "agree",
+    "about": "presenter",
+    "ours": "Ryan Proctor (presenter, engineer with Dillis and Roy for the applicant Safe Store Real Estate)",
+    "official": "Ryan Proctor, of DILLIS & ROY Civil Design Group, Inc.",
+    "note": "Same presenter and firm."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "tabling the application",
+    "t": 1124,
+    "ours": "The board considered tabling the application until after the planning board review but decided to proceed since only the use, not dimensional requirements, was before the ZBA.",
+    "official": "",
+    "note": "The official minutes do not mention any consideration of tabling or the decision to proceed; check the recording near this timestamp."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "public discussion",
+    "t": 1301,
+    "ours": "The chair noted no public discussion was called because no members of the public were present.",
+    "official": "",
+    "note": "The official minutes say nothing about public comment or attendance by the public."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "project description and property owner",
+    "ours": "",
+    "official": "construction of a 104,700 SF, 4-story, climate\ncontrolled self-storage facility",
+    "note": "Ours says only 'storage building'; the official minutes also give the size and the owner, Summer Street Autos, LLC."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "applicant representations (height, utilities, lighting)",
+    "ours": "",
+    "official": "Mr. Proctor confirmed that the building height will be 51 feet.",
+    "note": "The official minutes record the applicant's statements on height, drainage, utilities, hydrant and lighting; ours records none of them."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:22:26Z",
+   "cost_usd": 0.23489100000000002
+  }
  }
 }

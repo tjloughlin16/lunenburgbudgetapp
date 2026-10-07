@@ -339,5 +339,135 @@
    "at": "2026-09-27T12:52:36Z",
    "cost_usd": 0.19963
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07282025-7329",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-07-28-minutes-7329.txt",
+   "path": "sources/meetings/planning-board/2025-07-28-minutes-7329.pdf"
+  },
+  "official_sha256": "800b2a56a8a2762c921f381b753fc1d3a18b00a830a1f356736c33df1d522770",
+  "coverage": "partial",
+  "summary": "The two records agree on the three votes they share (continue 1083 Northfield Rd, close the 260 Falulah hearing, approve the 260 Falulah modification). They differ on the 430 Mulpus Road account vote, which only our minutes have, and on who was present and what happened to the draft minutes. A reader should check the recording and the Board's own record for the Mulpus Road vote and for the minutes approval, because the official minutes are internally inconsistent on attendance and their own meeting-schedule line gives the wrong date.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 1,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: continue 1083 Northfield Road hearing to Aug 25, 2025",
+    "ours": "Continue the hearing for 1083 Northfield Road (special permit for common driveway, storm water permit) to the August 25, 2025 meeting at 6:05 p.m. — not audible",
+    "official": "Motion:  M.Brenner moved, to continue the public hearings for 1083 Northfield Road Common Driveway/ Stormwater Management Permits to 2025-08-25 at 6:05 P.M.",
+    "note": "Same motion, same date and time; the official minutes add the tally (Reid and Willsmer aye, Burney abstained, passed) that the captions could not hear.",
+    "t": 1558
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: close the 260 Falulah Road hearing",
+    "ours": "Close the public hearing for 260 Fula Road, modification to site plan approval and storm water management permit — not audible",
+    "official": "Motion:  M.Brenner asks for motion to close the public hearings for 260 Falulah Rd Modification to site plan approval and Stormwater Management Permits.",
+    "note": "Same vote; 'Fula' is a caption rendering of Falulah. The official minutes show Reid, Willsmer and Brenner aye and Burney abstained.",
+    "t": 2223
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve 260 Falulah modification with original conditions and clean Graves peer review",
+    "ours": "Approve the modification to site plan approval and storm water management permit for 260 Fula Road, carrying forward original conditions plus receipt of a clean peer review letter from Graves — not audible",
+    "official": "I would carry forward the conditions from the original permit , and that the office receive a clean peer review from Graves to complete file.",
+    "note": "Same motion and conditions; the official minutes record the tally (three aye, Burney abstained).",
+    "t": 2307
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: close 430 Mulpus Road performance guarantee passbook account",
+    "ours": "Close the performance guarantee deposit account for the storm water permit at 430 Mulpus Road because the bank no longer offers passbook accounts, contradicting the May 2024 agreement — not audible",
+    "official": "",
+    "note": "Our minutes record a vote; the official minutes mention neither 430 Mulpus Road nor any such vote. Check the recording near t=2815 and the Board's records to see whether it was voted and left out.",
+    "t": 2815
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Transfer of funds from closed Mulpus Road account to town treasurer",
+    "ours": "Turn the funds over from the closed account to the town treasurer to create a new performance guarantee account for the deposit — not audible",
+    "official": "",
+    "note": "A voted transfer appears only in ours; the official minutes have nothing on it. Verify at the recording near t=2858 and ask the Planning office whether it was recorded elsewhere.",
+    "t": 2858
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of the previous meeting's minutes",
+    "ours": "Jasmine/Jen will correct errors in the draft minutes (attendance listings, wording) and bring them back for approval at the next meeting.",
+    "official": "MINUTES APPROVAL\nSecond: Burney seconded\n Vote: A. Reid – Aye, T. Willsmer – Aye, A. Burney -Aye \nApproved minutes",
+    "note": "We heard the draft deferred for corrections; the official minutes say the minutes were approved, with no motion or date named. Check the recording near t=3760 for whether a vote was taken.",
+    "t": 3760
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendance: who was present, and Jasmine/the director",
+    "ours": "Matt (Chair); Adam (board member); Jasmine (interim Planning Department / interim director); Jennifer Dagel (Jen) (admin assistant)",
+    "official": "Present: T. Willsmer, A. Reid, A.   Brenner",
+    "note": "The official Present line omits Burney (who votes), lists 'A. Brenner', and says the interim director was not in attendance, yet the minutes record Jasmine speaking at the 260 Falulah hearing. Our list omits Willsmer and Reid, who vote in the official record. Check the recording for who attended.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Admin assistant's name",
+    "ours": "Jennifer Dagel (Jen)",
+    "official": "Minutes by Jennifer Daigle, Admin Asst.",
+    "note": "Same person; the captions misheard the surname.",
+    "official_reading": "Jennifer Daigle"
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: 443 West Townsend Road decision handled by the office",
+    "ours": "For the 443 West Townsend Road decision, Jasmine will email it to the board; members will review and, if it matches what happened at the meeting, sign it in person at the office rather than review it live at a meeting.",
+    "official": "443 West Townsend Rd will be forwarded to office. ",
+    "note": "Consistent in substance; ours gives more detail on the review and signing process.",
+    "t": 3906
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: adopt DocuSign for decisions",
+    "ours": "Board will discuss adopting DocuSign for signing decisions at the end-of-August meeting, after counsel language is circulated.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 2604
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: cancel Aug 11 meeting if no business",
+    "ours": "If no public hearings or other business come in, the chair will cancel the August 11 meeting rather than hold it for minutes alone.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3824
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: MRPC coverage Sept–Dec",
+    "ours": "Because Adam has a scheduling conflict for MRPC meetings September through December, board members will split up covering those meetings among themselves.",
+    "official": "",
+    "note": "The official minutes carry only a short MRPC report from Reid and nothing on this arrangement.",
+    "t": 4204
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Committee reports and the meeting-date line",
+    "ours": "",
+    "official": "The upcoming meeting is 07-28-2025 at 6:00 P.M.",
+    "note": "The official minutes carry board discussion reports (Master Plan, Storm Water Task Force, etc.) that ours does not. Their next-meeting line gives the date of this meeting, which looks like an error; check the actual next meeting."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:26:16Z",
+   "cost_usd": 0.253991
+  }
  }
 }

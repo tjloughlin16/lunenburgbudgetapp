@@ -417,5 +417,109 @@
    "at": "2026-09-27T22:58:02Z",
    "cost_usd": 0.198358
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04082025-7135",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-04-08-minutes-7135.txt",
+   "path": "sources/meetings/council-on-aging/2025-04-08-minutes-7135.pdf"
+  },
+  "official_sha256": "8850215e18a7431c3b77b44746be139efe1a08f924d3f80bb2e1dbee3aae618c",
+  "coverage": "full",
+  "summary": "The two records agree on the elevator feasibility study, the senior health care team and the amended minutes, but the official minutes carry no budget figures at all. The one thing to know is that our attendee roles conflict with the official minutes (Deb as director versus chairperson), and that our vote outcome is inaudible where the official minutes say the motion passed.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Elevator feasibility study motion for the capital plan",
+    "t": 1698,
+    "ours": "request the facilities department add a feasibility study for elevator/lift access to the second floor of the Eagle House building to the FY27 capital plan — not audible",
+    "official": "The COA made and passed a motion to put on the 2027 Capital Plan a feasibility study to add a small elevator to be able to access the second floor of the Eagle House.",
+    "note": "Same motion in both. Ours could not hear the outcome, while the official minutes say it passed; a person could confirm the pass on the recording near t=1698."
+   },
+   {
+    "kind": "agree",
+    "about": "Senior health care advisory/advocacy team",
+    "t": 1363,
+    "ours": "Board agreed to bring back concrete ideas for a proposed senior healthcare advocacy team at the next meeting rather than act now.",
+    "official": "Our chairperson, Deb Lincoln asked all to work on ideas to initiate a Senior Health Care Advisory Team to assist Seniors with navigating the Health Care system. We will discuss next month’s meeting.",
+    "note": "Both defer the idea to next month's meeting; the team name differs slightly (advocacy vs advisory)."
+   },
+   {
+    "kind": "agree",
+    "about": "Prior minutes amended",
+    "t": 838,
+    "ours": "Minutes amended to change the fire department wording from 'staffed on Sundays by volunteers' to 'on-call firefighters' before being sent to town hall.",
+    "official": "Minutes were amended and approved.",
+    "note": "Both record that the prior minutes were amended; the official minutes do not give the wording change."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Accessibility-study request to be emailed to facilities director",
+    "t": 1805,
+    "ours": "The accessibility-study request will be emailed to the facilities director, copying the town manager, rather than handled any other way.",
+    "official": "",
+    "note": "The official minutes record the motion but not how it would be conveyed to the facilities director and town manager."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Marshall Park renovation funding figure",
+    "t": 717,
+    "ours": "Marshall Park renovation funding: $231",
+    "official": "",
+    "note": "The official minutes mention only the Parks Commission meeting on Marshall Park Design and give no dollar figure; the $231 may be a caption error."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA FY26 budget figures",
+    "t": 1926,
+    "ours": "COA FY26 budget: $20,000; line comparison: 241,000, 261, $31,59",
+    "official": "",
+    "note": "The official minutes give no FY26 budget amounts, so these figures cannot be checked against them; verify against the recording and the town's FY26 budget."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Program budget change and FY27 requests",
+    "t": 2080,
+    "ours": "FY27 request: meal site buffer: $5,000, $5, $7; program coordinator position: 44,000, 36; outreach coordinator/assistant director title and raise: $7,600",
+    "official": "Increase in Program Budget by $3,000",
+    "note": "The official minutes give only a $3,000 program budget increase, which does not appear in our figures, and none of our FY27 dollar amounts. Check the recording and the FY26/FY27 budget documents."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY26 staffing changes",
+    "ours": "",
+    "official": "We are losing a part-time Outreach Coordinator and moving two kitchen aides from the formula grant to the town budget, as well as updating the Meal Site Manager from part-time to full-time.",
+    "note": "Our minutes list only dollar figures for the FY26 budget discussion and none of these staffing changes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees and roles",
+    "ours": "unnamed presiding member (chair); Deb (director); Pauline (outreach coordinator); Susan (board member); Michelle (staff); unnamed Eagle House Supporters representative (presenter)",
+    "official": "Present:  Deb Lincoln (chairperson), Jane Rabbitt (Vice Chairperson), Ana Lockwood, Diane Nowd, Elena",
+    "note": "The official minutes make Deb Lincoln the chairperson, while ours calls Deb the director and the chair unnamed. Pauline and Michelle are not in the official present list, and the official list names Jane Rabbitt, Ana Lockwood and others we do not. Check who spoke as chair and who is staff."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Century Club member and other announcements",
+    "ours": "",
+    "official": "Charles Sanderson is our newest member of the Century Club (100 years old).",
+    "note": "Not captured in our minutes; the official minutes also record the Lou Franco membership application, the UMass satellite emergency facility report and the Eagle House Supporters VENMO report."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:49:12Z",
+   "cost_usd": 0.310542
+  }
  }
 }

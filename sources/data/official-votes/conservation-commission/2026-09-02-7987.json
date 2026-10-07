@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2026-09-02",
  "docid": "7987",
@@ -20,7 +20,7 @@
    "quote": "motion by: m. wilson to approve second: r. bursch roll call vote: r. bursch - aye, m. wilson - aye, a. burnap - aye, m. larouche - aye, j. pewtherer - aye"
   },
   {
-   "motion": "Accept the consultant's revised proposal for ADA parking and trail reconstruction at Cowdery Nature Center",
+   "motion": "Accept the consultant's revised proposal for NOI-26-10 at 1625 Massachusetts Avenue (ADA parking and trail reconstruction at Cowdery Nature Center)",
    "moved_by": "M. Wilson",
    "seconded_by": "M. Larouche",
    "outcome": "passed 5-0",
@@ -28,36 +28,39 @@
    "quote": "motion by: m. wilson to accept the consultant's revised proposal second: m. larouche roll call vote: r. bursch - aye, m. wilson - aye, a. burnap - aye, m. larouche - aye, j. pewtherer - aye"
   },
   {
-   "motion": "Continue the hearing for the boat ramp at 701 Reservoir Road to 09/16/26",
+   "motion": "Continue the public hearing for NOI-26-21 at 701 Reservoir Road (boat ramp at Lake Shirley) to 9/16/26",
    "moved_by": "R. Bursch",
+   "seconded_by": "",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by: r. bursch to continue to 9/16/26 second: [flag - second not clearly identified in transcript] roll call vote: r. bursch - aye, m. wilson - aye, a. burnap - aye, m. larouche - aye, j. pewtherer - aye"
   },
   {
-   "motion": "Continue the hearing for the driveway at 108 Sunny Hill Road to 9/16",
+   "motion": "Continue the public hearing for NOI-26-24 at 108 Sunny Hill Road (driveway crossing isolated wetland) to 9/16",
    "moved_by": "M. Larouche",
    "seconded_by": "R. Bursch",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by: m. larouche to continue to 9/16 second: r. bursch roll call vote: r. bursch - aye, m. wilson - aye, a. burnap - aye, m. larouche - aye, j. pewtherer - aye"
   },
   {
-   "motion": "Continue the hearing for the irrigation pond at 157 Goodrich Street to 09/16/26",
+   "motion": "Continue the public hearing for NOI-26-25 at 157 Goodrich Street (irrigation pond) to 09/16/26",
    "moved_by": "R. Bursch",
    "seconded_by": "M. Larouche",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by: r. bursch to continue to 9/16/26 second: m. larouche roll call vote: r. bursch - aye, m. wilson - aye, a. burnap - aye, m. larouche - aye, j. pewtherer - aye"
   },
   {
-   "motion": "Approve the draft Wetlands Protection Bylaw fee schedule",
+   "motion": "Approve the draft changes to the Wetlands Protection Bylaw fee schedule",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "agreed to vote on the draft. roll call vote: r. bursch - aye, m. wilson - aye, a. burnap - aye, m. larouche - aye, j. pewtherer - aye"
   },
   {
-   "motion": "Approve up to $150 from the HAAS Fund for smoke and carbon monoxide detectors at Hollis Road residence",
+   "motion": "Approve up to $150 from the HAAS Fund for the purchase of smoke and carbon monoxide detectors for Hollis Road Residence",
    "moved_by": "M. Wilson",
    "seconded_by": "M. Larouche",
    "outcome": "passed 5-0",
@@ -73,7 +76,304 @@
    "quote": "motion by: r. bursch second: m. larouche roll call vote: r. bursch - aye, m. wilson - aye, a. burnap - aye, m. larouche - aye, j.pewtherer - aye"
   }
  ],
- "dropped_unquoted": 0,
- "note": "One vote (701 Reservoir Road continuation) lacks a recorded seconder in the transcript, marked as a FLAG.",
- "cost_usd": 0.15976100000000001
+ "dropped_unquoted": 1,
+ "note": "Second not clearly identified in minutes for NOI-26-21 continuation vote (flagged as FLAG in transcript). Motion statement not explicitly printed for bylaw fee schedule vote; approval inferred from context. NOI-26-17 continuation indicated on agenda rather than voted on at this meeting. Document prepared by Andrea Schnepf (signature line incomplete in source).\"",
+ "cost_usd": 0.14847559999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order at 7:01 pm by j. pewtherer"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: j. pewtherer, r. bursch, m. wilson, a. burnap, and m. larouche."
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: j. pewtherer, r. bursch, m. wilson, a. burnap, and m. larouche."
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: j. pewtherer, r. bursch, m. wilson, a. burnap, and m. larouche."
+  },
+  {
+   "name": "Andrea Burnap",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: j. pewtherer, r. bursch, m. wilson, a. burnap, and m. larouche."
+  },
+  {
+   "name": "Teddy Doucette",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: t. doucette."
+  },
+  {
+   "name": "Herlin Jaime",
+   "role": "Conservation Agent",
+   "status": "present",
+   "quote": "h. jaime advised that wpa funds may be used to help commission members"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Resident, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck of 50 sunset lane spoke to the commission regarding three process concerns"
+  },
+  {
+   "name": "G. Roy",
+   "role": "Consultant, Dillis & Roy",
+   "status": "present",
+   "quote": "g. roy of dillis & roy presented a revised proposal to evaluate an alternative access route"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No new action taken on enforcement violation at 1168 Mass Ave Rear; previous 60-day extension of enforcement deadline to 10/21/26 remains in effect",
+   "quote": "no new action was taken. the commission had previously granted a 60-day extension of the enforcement deadline to 10/21/26."
+  },
+  {
+   "decision": "No flooring purchase decision made for Hollis Road Residence at this time; additional carpet quote to be obtained to satisfy need for three quotes",
+   "quote": "no flooring purchase was voted on."
+  },
+  {
+   "decision": "Received courtesy notice of emergency certification at 467 Lancaster Ave and acknowledged assistance from Central Massachusetts Mosquito Control Project with water management work and drainage maintenance",
+   "quote": "the notice was described as a courtesy notice to the commission; no vote was taken."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "HAAS Fund expenditure for fire safety detectors",
+   "what_was_recorded": "Commission approved up to $150 from HAAS Fund for purchase of hardwired and battery-operated smoke and carbon monoxide detectors at Hollis Road Residence, to be purchased by C. Ruth",
+   "figures_as_printed": [
+    "$150"
+   ],
+   "quote": "the commission approved up to $150 from the haas fund for the purchase of the detectors, with c. ruth to purchase them."
+  },
+  {
+   "topic": "Wood stove listing price",
+   "what_was_recorded": "Wood stove from Hollis Road Residence was cleaned and listed for sale on Facebook Marketplace; fire bricks noted as in rough condition and needing replacement before use",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "the wood stove had been cleaned and was listed on facebook marketplace for $400."
+  },
+  {
+   "topic": "Grant funds for alternative access design work",
+   "what_was_recorded": "Commission discussed using remaining grant funds to support additional engineering and design work for alternative ADA parking access route at Cowdery Nature Center",
+   "figures_as_printed": [],
+   "quote": "the commission discussed using remaining grant funds for the additional engineering and design work."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "Resident, 50 Sunset Lane",
+   "topic": "Process concerns regarding timely document submission, timing of public comments during hearings, and consistency of waiver documentation",
+   "quote": "carl luck of 50 sunset lane spoke to the commission regarding three process concerns: timely submission of revised documents for continued hearings; the timing of public comments during hearings; and consistency and documentation when waivers from regulations are considered."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "Meeting called to order at 7:01 pm",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "call to order at 7:01 pm by j. pewtherer"
+  },
+  {
+   "topic": "Public comment on Commission procedures",
+   "resolution": "Carl Luck presented three process concerns; Vice Chair noted Planning Board procedures as potential model",
+   "tags": [
+    "public comment",
+    "procedures"
+   ],
+   "quote": "carl luck of 50 sunset lane spoke to the commission regarding three process concerns: timely submission of revised documents for continued hearings; the timing of public comments during hearings; and consistency and documentation when waivers from regulations are considered."
+  },
+  {
+   "topic": "Pollinator Habitat update at 123 Hollis Road",
+   "resolution": "Update provided; habitat thriving with fall flowers in bloom and active pollinators",
+   "tags": [
+    "habitat",
+    "conservation"
+   ],
+   "quote": "m. larouche provided an update on the pollinator habitat at 123 hollis road. the habitat is expected to be mowed one more time before the season winds down. goldenrod and other fall flowers are in bloom and pollinators are active."
+  },
+  {
+   "topic": "Approval of prior meeting minutes (8/19/26)",
+   "resolution": "Approved 5-0",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "motion by: m. wilson to approve second: r. bursch roll call vote: r. bursch - aye, m. wilson - aye, a. burnap - aye, m. larouche - aye, j. pewtherer - aye"
+  },
+  {
+   "topic": "NOI-26-10: ADA parking and trail reconstruction at 1625 Massachusetts Avenue (Cowdery Nature Center)",
+   "resolution": "Approved revised consultant proposal to evaluate alternative access route from Mulpus Road side",
+   "tags": [
+    "Notice of Intent",
+    "public hearing",
+    "ADA accessibility",
+    "Cowdery Nature Center"
+   ],
+   "quote": "g. roy of dillis & roy presented a revised proposal to evaluate an alternative access route from the mulpus road side. the original concept would require direct alteration of bordering vegetated wetland and fill within the floodplain, while the alternative may avoid direct wetland alteration and minimize floodplain fill."
+  },
+  {
+   "topic": "NOI-26-17: Utility substation and pole replacement at 934 Massachusetts Avenue",
+   "resolution": "Hearing continued to 09/16/26",
+   "tags": [
+    "Notice of Intent",
+    "public hearing",
+    "utilities"
+   ],
+   "quote": "notice of intent by unitil for the construction of a new substation and replacement of utility poles. the agenda indicates that the hearing was continued to 09/16/26."
+  },
+  {
+   "topic": "NOI-26-21: Concrete boat ramp at 701 Reservoir Road (Lake Shirley at Shady Point)",
+   "resolution": "Hearing continued to 09/16/26 pending applicant completion of habitat report",
+   "tags": [
+    "Notice of Intent",
+    "public hearing",
+    "Lake Shirley",
+    "recreational"
+   ],
+   "quote": "notice of intent by the reservoir recreational trust for the construction of a new concrete boat ramp on lake shirley at shady point. the applicant requested a continuance while continuing work on its habitat report. the hearing was continued to 09/16/26."
+  },
+  {
+   "topic": "NOI-26-24: Driveway crossing isolated wetland at 108 Sunny Hill Road",
+   "resolution": "Hearing continued to 9/16 pending Conservation Agent review and Planning Board ANR approval",
+   "tags": [
+    "Notice of Intent",
+    "public hearing",
+    "wetland",
+    "bylaw only"
+   ],
+   "quote": "notice of intent by jacqueline rager for a driveway crossing of isolated wetland area (bylaw only). g. roy of dillis & roy was present. the consultant stated that the revised plans had been submitted within the required window, but the conservation agent had not ye",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "NOI-26-25: Irrigation pond construction at 157 Goodrich Street",
+   "resolution": "Hearing continued to 09/16/26 pending clarification of replication square footage and Water Quality Certificate approval condition",
+   "tags": [
+    "Notice of Intent",
+    "public hearing",
+    "irrigation pond"
+   ],
+   "quote": "notice of intent by stephen violette for the construction of an irrigation pond. g. roy of dillis & roy represented the applicant. a revised plan had been submitted shortly before the meeting. the applicant reported that the 401 wat",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Enforcement: Violation at 1168 Mass Ave Rear",
+   "resolution": "No new action taken; 60-day extension of deadline to 10/21/26 remains in effect",
+   "tags": [
+    "enforcement",
+    "violations"
+   ],
+   "quote": "no new action was taken. the commission had previously granted a 60-day extension of the enforcement deadline to 10/21/26."
+  },
+  {
+   "topic": "Emergency certification: Water management at 467 Lancaster Ave",
+   "resolution": "Courtesy notice received; Central Massachusetts Mosquito Control Project to assist with drainage maintenance",
+   "tags": [
+    "emergency certification",
+    "water management"
+   ],
+   "quote": "central massachusetts mosquito control project was also contacted by the dpw director and will assist with water management work, including maintenance of pre-existing drainage ditches. the notice was described as a courtesy notice to the commission; no vote was taken."
+  },
+  {
+   "topic": "Discussion: Town Forest Conference and invasive species management",
+   "resolution": "Commission discussed free October conference; explored WPA funding for pesticide applicator licensing",
+   "tags": [
+    "professional development",
+    "invasive species",
+    "forest management"
+   ],
+   "quote": "the commission discussed a free town forest conference in october, including sessions on tracking invasives, forestry and community resilience, and managing local open space. h. jaime advised that wpa funds may be used to help commission members become licensed pesticide applicators,",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Wetlands Protection Bylaw fee schedule revision",
+   "resolution": "Approved draft for submission to Town Counsel and potential Town Meeting warrant",
+   "tags": [
+    "bylaws",
+    "regulations",
+    "fees"
+   ],
+   "quote": "the commission discussed proposed changes to the wetlands protection bylaw fee schedule. the intent is to move forward with the draft so that it can be prepared for town counsel and potentially brought forward at a regularly scheduled town meeting."
+  },
+  {
+   "topic": "Enforcement: Encroachment list status",
+   "resolution": "Awaiting completion of encroachment list from B. Pease",
+   "tags": [
+    "enforcement",
+    "encroachments"
+   ],
+   "quote": "the commission is still waiting for b. pease to provide the encroachment list."
+  },
+  {
+   "topic": "Hollis Road Residence: Smoke detection and fire safety equipment",
+   "resolution": "Approved $150 from HAAS Fund for installation of fire safety detectors per Fire Department recommendations",
+   "tags": [
+    "HAAS property",
+    "fire safety"
+   ],
+   "quote": "the commission approved up to $150 from the haas fund for the purchase of the detectors, with c. ruth to purchase them."
+  },
+  {
+   "topic": "Hollis Road Residence: Shed roof completion and flooring",
+   "resolution": "Shed roof completed; flooring decision deferred pending additional carpet quotes at prevailing wage rates",
+   "tags": [
+    "HAAS property",
+    "maintenance"
+   ],
+   "quote": "no flooring purchase was voted on."
+  },
+  {
+   "topic": "Hollis Road Residence: Wood stove disposal",
+   "resolution": "Wood stove listed for sale on Facebook Marketplace at $400; fire bricks noted as needing replacement",
+   "tags": [
+    "HAAS property",
+    "property disposal"
+   ],
+   "quote": "the wood stove had been cleaned and was listed on facebook marketplace for $400."
+  },
+  {
+   "topic": "Storm water utility warrant article",
+   "resolution": "Storm water committee preparing warrant article for establishment of utility; targeting 09/17/26 submission deadline",
+   "tags": [
+    "storm water",
+    "warrant"
+   ],
+   "quote": "the committee is preparing an article for the warrant concerning moving forward with establishing a storm water utility."
+  }
+ ],
+ "tags": [
+  "Conservation Commission",
+  "Wetlands",
+  "Notices of Intent",
+  "Public hearings",
+  "Enforcement",
+  "Bylaws",
+  "Environmental protection",
+  "ADA accessibility",
+  "Cowdery Nature Center",
+  "Lake Shirley",
+  "Pollinator habitat"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

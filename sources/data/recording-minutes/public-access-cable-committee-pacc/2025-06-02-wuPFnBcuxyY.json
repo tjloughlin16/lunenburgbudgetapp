@@ -338,5 +338,138 @@
    "at": "2026-09-27T18:24:02Z",
    "cost_usd": 0.192192
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06022025-7214",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-06-02-minutes-7214.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-06-02-minutes-7214.pdf"
+  },
+  "official_sha256": "1c159bb0538d60c6b4fd32de2eb804a1b19ede6d2e15201a03da26811f0a0f4f",
+  "coverage": "full",
+  "summary": "The two records agree on the main items: the move to 3pm, Faith's reappointment, the studio move, the Comcast liaison and the balance, which differs only by caption garbling. The one thing to know is that the official minutes record a passed motion to accept the 5/5/2025 minutes that ours omits, while ours carries Comcast payment figures and a $75,000 studio figure that the official minutes lack.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to accept the amended 5/5/2025 minutes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "Motion\tto\taccept\tthe\tamended\t5/5/2025\tminutes\t•\t(F.Beall,\t2nd\tP.Lincoln),\tpassed.",
+    "note": "The official minutes record a passed motion (Beall, second Lincoln) that ours omits; approval of minutes is arguably procedural, but check the recording for it.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Current account balance",
+    "ours": "Current account balance: 1,37,96051",
+    "official": "Current\tPAC\tbalance\t$1,037,960.51",
+    "official_reading": "$1,037,960.51",
+    "note": "Same balance; the captions garbled the digit grouping.",
+    "t": 2370
+   },
+   {
+    "kind": "caption_error",
+    "about": "Station manager name",
+    "ours": "Joe Tol (station manager/producer, gave the manager's report)",
+    "official": "Manager:\tJo\tToale",
+    "official_reading": "Jo Toale",
+    "note": "Same person, name misheard by the captions.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Comcast payment",
+    "ours": "Comcast payment posting format: $444,000; Comcast payment vs prior quarter: $100 less than last quarter",
+    "official": "Comcast\tMay\tpayment\tnot\tposted\tyet",
+    "note": "Ours gives figures for a Comcast payment, while the official minutes say the May payment had not posted; check the recording around t=1232-1256 to see what was actually discussed.",
+    "t": 1232
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Studio relocation/winterization budget",
+    "ours": "Studio relocation/winterization budget: 75,000",
+    "official": "",
+    "note": "The official minutes give no dollar figure for the studio move; verify the 75,000 and what it covers against the recording.",
+    "t": 1580
+   },
+   {
+    "kind": "agree",
+    "about": "July and August meetings moved to 3pm",
+    "ours": "Move the July and August meeting times to the afternoon (around 3:00) to accommodate members' schedule conflicts.",
+    "official": "S.Archambault\tasked\tif\tthe\tJuly\tand\tAugust\tmeetings\tcould\tbe\tmoved\tto\t3pm\tto\tavoid\tconflict\twith\tthe\tTown\tBand.",
+    "note": "Both have the move to 3pm; the official minutes give the Town Band conflict and list July 7 and Aug 4 at 3pm.",
+    "t": 554
+   },
+   {
+    "kind": "agree",
+    "about": "Faith reappointment",
+    "ours": "Inform the town manager that Faith wishes to be reappointed to the committee.",
+    "official": "F.Beall\twas\tasked\tto\tserve\tand\taccepted\tanother\tterm\ton\tthe\tcommittee.",
+    "note": "Same fact, framed differently.",
+    "t": 618
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Follow-up on two prospective applicants",
+    "ours": "A committee member should attend the select board interviews of the two prospective new committee applicants.",
+    "official": "S.Walker\twill\tcheck\twith\ttown\thall.",
+    "note": "Both have two interested people, but the follow-up action differs (attend select board interviews vs check with town hall); check the recording.",
+    "t": 722
+   },
+   {
+    "kind": "agree",
+    "about": "Comcast contract liaison",
+    "ours": "Ask the town manager to inform the select board that Steve will serve as the committee's liaison/representative on the Comcast contract.",
+    "official": "S.Archambault\tbrought\tup\tthat\tas\tof\ttoday\the\thas\thad\tno\tcommunication\twith\tregards\tto\tserving\tas\tthe\tPAC\tliaison\ton\tthe\tnew\tComcast\tcontract\tnegotiations.\tS.Walker\twill\tbring\tit\tup\twith\tthe\tTown\tManager.",
+    "note": "Same item: Walker takes it to the Town Manager. Ours says only 'Steve'; two Steves attend, and the official says it is Archambault.",
+    "t": 892
+   },
+   {
+    "kind": "agree",
+    "about": "Studio move",
+    "ours": "Studio will move into a shared classroom at the building once the current wing is closed, expected after August 1st.",
+    "official": "Reviewed\tspace\tat\tTCPassios\tfor\tstudio\tmove\tin\tearly\tAugust",
+    "note": "Both say an early-August move; ours adds a shared classroom and wing closure that the official minutes do not mention.",
+    "t": 1513
+   },
+   {
+    "kind": "agree",
+    "about": "Annual report timing",
+    "ours": "Move the annual report preparation to July instead of the usual February timeframe, per the town manager's request.",
+    "official": "Will\tbe\tstarting\twork\ton\tFY27\tbudget\tand\tAnnual\tReport\tper\tTown\tManager\trequest",
+    "note": "Both tie the annual report work to a Town Manager request; the official gives no July or February timing.",
+    "t": 1878
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee John",
+    "ours": "John (committee member (addressed directly by name; role unclear from captions))",
+    "official": "",
+    "note": "The official roll call lists Steve Walker, Pete Lincoln, Faith Beall and Steve Archambault; 'John' may be a mishearing of a Steve, so check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Program analysis statistics",
+    "ours": "",
+    "official": "Program\tanalysis\tat\t69\ttotal\tfor\tyear,\tlast\tyear\tat\t110.\tStill\t73%\tlocal\tproduced.",
+    "note": "The official manager's report has this figure and ours does not.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:29:07Z",
+   "cost_usd": 0.282283
+  }
  }
 }

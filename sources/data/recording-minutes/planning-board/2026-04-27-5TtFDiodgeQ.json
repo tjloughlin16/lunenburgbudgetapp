@@ -423,5 +423,228 @@
    "at": "2026-09-27T02:39:04Z",
    "cost_usd": 0.19340000000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04272026-7784",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-04-27-minutes-7784.txt",
+   "path": "sources/meetings/planning-board/2026-04-27-minutes-7784.pdf"
+  },
+  "official_sha256": "4a9063aa2038dcdb6003a0c29d75e96b0e5837547d27184a2586b91dd472093a",
+  "coverage": "full",
+  "summary": "The two records agree on every storm water vote, the $18,500 cash bond and the May 11 continuances. They differ on a few items: a minutes-approval vote only the town records, a withdrawn bond motion and the tax-title figures only we record, and two name and detail mismatches. The main thing to check is the 4/13/26 minutes approval, which the official minutes record as a 4/0 vote and ours omit.",
+  "counts": {
+   "agree": 14,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Close public hearing, 0 Reservoir Rd storm water permit PBSW-25-5",
+    "t": 1016,
+    "ours": "Close the public hearing on the Zero Reservoir Road storm water permit, PBSW255 — passed",
+    "official": "A. Burney moved to Close the Hearing.",
+    "note": "Both record the hearing closed by unanimous verbal vote (official 4/0); the permit number is only formatted differently."
+   },
+   {
+    "kind": "agree",
+    "about": "Approve storm water permit with standard conditions and legal review",
+    "t": 1039,
+    "ours": "Approve the storm water permit for Zero Reservoir Road, PBSW255, with standard conditions plus town counsel review of the HOA document — passed",
+    "official": "A. Burney moved to approve standard conditions and to have legal counsel review.",
+    "note": "Same motion and outcome; ours says the counsel review covers the HOA document, which the official text does not specify (it mentions a Maintenance Association Agreement earlier)."
+   },
+   {
+    "kind": "agree",
+    "about": "Withdraw special permit PBSP-25-10",
+    "t": 1100,
+    "ours": "Accept withdrawal without prejudice of the special permit for the common driveway, Zero Reservoir Road, PBS 25-10 — passed",
+    "official": "A. Burney moved to withdraw the application of PBSP-25-10 and to Continue ANR-26-2 until May 11, 2026.",
+    "note": "Same vote and outcome; the official motion also continues the ANR to May 11, and neither the words 'without prejudice' nor 'common driveway' appear in it."
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 60 Cross Rd storm water hearing to May 11",
+    "t": 3003,
+    "ours": "Continue the 60 Cross Road storm water hearing, PBSW2611, to May 11 — passed",
+    "official": "A. Burney moved to continue until May 11th at 6:05pm.",
+    "note": "Same continuance and unanimous outcome (official 4/0); PBSW2611 is PBSW-26-11 in the official text."
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 222 West Townsend Rd permits to May 11",
+    "t": 3293,
+    "ours": "Continue the storm water permits for 222 West Townsend Road, PBSW26-2 through 5, to May 11 — passed",
+    "official": "A. Burney moved to continue to 5/11/26 at 6:05pm.",
+    "note": "Same continuance and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 860 New West Townsend Rd permits to May 11",
+    "t": 3356,
+    "ours": "Continue 860 New West Townsend Road permits (PBSA26-1, PBSP26-1, PBSW26-1) to May 11 — passed",
+    "official": "A letter requesting continuance to May 11th was received prior to the meeting.",
+    "note": "Same continuance and outcome, same three permits."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Withdrawn motion to set bond at 18,500",
+    "t": 3481,
+    "ours": "Set the bond at 18,500 for 7-Eleven Mass Ave — withdrawn",
+    "official": "",
+    "note": "The official minutes record only the final motion to accept the $18,500 bond; a first motion that was withdrawn is not mentioned, which a person could confirm on the video."
+   },
+   {
+    "kind": "agree",
+    "about": "Accept $18,500 cash bond, not released before 11/1/26",
+    "t": 4270,
+    "ours": "Accept a bond of $18,500 for hydroseeding/stabilization at 7-Eleven Mass Ave, cash, not released before November 1, 2026 — passed",
+    "official": "A. Burney moved to accept a $18,500.00 bond paid by cash, not to be released prior to 11/1/26.",
+    "note": "Same amount, form, release date and outcome (official 4/0)."
+   },
+   {
+    "kind": "agree",
+    "about": "Storm water bond figures 14,500 and 18,500",
+    "t": 3397,
+    "ours": "Storm water bond, 7-Eleven Mass Ave: 14,500, 18,500",
+    "official": "Applicant recommended $14500 for a bond. Jeff recommends $18,500.00",
+    "note": "Both figures match: the applicant proposed $14,500 and the reviewing engineer $18,500."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tax title appraisal obligation figures ($500,000, 1.2 million)",
+    "t": 4724,
+    "ours": "Tax title law change - appraisal obligation: $500,000, 1.2 million",
+    "official": "",
+    "note": "The official minutes record no tax-title law change or these dollar figures; they may be a caption mishearing or an aside the clerk omitted, so check the video."
+   },
+   {
+    "kind": "agree",
+    "about": "356 Hollis Rd lot size, 4.7 acres",
+    "t": 4416,
+    "ours": "Hollis Road tax-title properties, size and suitability: 19 acres, 8 1/2 acres, 4.7",
+    "official": "356 Hollis Rd is an old large lake house that sits on 4.7acres.",
+    "note": "The 4.7 acres matches the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hollis Road acreages 19 and 8 1/2",
+    "t": 4416,
+    "ours": "Hollis Road tax-title properties, size and suitability: 19 acres, 8 1/2 acres, 4.7",
+    "official": "",
+    "note": "The official minutes give no acreage for 250 Hollis Rd and no 19 or 8 1/2 figure; check the video to see which property these refer to."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of 4/13/26 minutes",
+    "ours": "",
+    "official": "A. Burney moved to accept the minutes as written. T. Willsmer, Second",
+    "note": "The official minutes record a 4/0 vote approving the 4/13/26 minutes and ours record no such vote; check the recording around the minutes-approval item."
+   },
+   {
+    "kind": "agree",
+    "about": "Director's bylaw circulation and feedback deadline",
+    "t": 197,
+    "ours": "Director will circulate sample bylaws in stages (senior housing, then cluster housing, then inclusionary zoning) with board feedback due by end of June and drafts targeted for July.",
+    "official": "He wants feedback from the board by the end of June so that he can have a draft out by July.",
+    "note": "Same plan and dates; the official minutes add Minor Site Plan Review as a fourth bylaw and give a weekly schedule."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Board members share summer travel/quorum plans informally",
+    "t": 259,
+    "ours": "Board members will informally share summer travel/quorum plans with each other rather than discussing scheduling in public session.",
+    "official": "",
+    "note": "Nothing in the official minutes mentions summer travel or quorum plans; the closest item is the meeting-schedule discussion."
+   },
+   {
+    "kind": "agree",
+    "about": "ANR for 0 Reservoir Rd stays open",
+    "t": 343,
+    "ours": "The ANR application for Zero Reservoir Road stays open and will not be substantively discussed tonight unless the storm water permit matter is resolved.",
+    "official": "Continued to May 11, 2026.",
+    "note": "Both leave the ANR open and continued to May 11; the official minutes say it was discussed and voted as part of the storm water and special permit hearings."
+   },
+   {
+    "kind": "agree",
+    "about": "Phasing of construction at 60 Cross Rd / 30 Pine Grove",
+    "t": 1799,
+    "ours": "Applicant's engineer for 60 Cross Road/30 Pine Grove asked to submit a phasing plan and progress-based construction schedule so storm water compliance can be managed lot by lot.",
+    "official": "A. Burney recommends the construction be done in phases so that properties don’t get held up with selling because the other properties are still under construction.",
+    "note": "Both record a request for phased construction; the official says it is a recommendation and gives a sales rationale, not a storm water compliance one."
+   },
+   {
+    "kind": "agree",
+    "about": "Master Plan postponed to next meeting",
+    "t": 4352,
+    "ours": "Master plan update discussion is postponed to the next meeting after the chair did not circulate materials in time.",
+    "official": "M. Brenner stated he was unable to get the Master Plan sent out and will have this item moved to the next meeting",
+    "note": "Same decision and reason."
+   },
+   {
+    "kind": "agree",
+    "about": "Hollis Rd lien amounts and May 11 follow-up",
+    "t": 5063,
+    "ours": "Director will obtain lien amounts for both Hollis Road tax-title properties and place the matter on the May 11 agenda; board cannot vote tonight since it was not on the agenda, and will inform the Select Board a vote will come after their May 12 meeting.",
+    "official": "S. Wallace stated he will request the lien information to have at the next meeting.",
+    "note": "Same core decision; the official minutes do not mention informing the Select Board or their May 12 meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Inform Select Board vote will follow May 12 meeting",
+    "t": 5063,
+    "ours": "will inform the Select Board a vote will come after their May 12 meeting.",
+    "official": "",
+    "note": "The official minutes record no commitment to notify the Select Board or any May 12 meeting."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meeting schedule for May and June",
+    "t": 5521,
+    "ours": "Confirmed no second Planning Board meeting in May (Memorial Day conflict); two meetings scheduled in June.",
+    "official": "5/11/26, 6/8/26, 7/13/26, 7/27/26",
+    "note": "Both show one May and two June meetings (the official adds 6/22/26), but the official minutes give no Memorial Day reason and note a remaining question about May 11 ('he is still a question for May 11th'); check the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director / Town Planner name",
+    "ours": "Steven Wallace (Director / Town Planner)",
+    "official": "Stephen Wallace – Director of",
+    "official_reading": "Stephen Wallace",
+    "note": "Same person; the captions misheard the first name."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair and board members present",
+    "ours": "Mr. Chairman (unnamed in captions) (Chair)",
+    "official": "Roll Call: M. Brenner, T. Willsmer, A. Reid, A. Burney",
+    "note": "Our minutes name no board members; the official roll call gives the chair as Matthew Brenner and records four members present."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Administrative assistant attendance",
+    "ours": "",
+    "official": "Leigh Bain – Administrative",
+    "note": "L. Bain speaks in the official minutes but is absent from our attendee list."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Storm Water Task Force withdrew Town Meeting warrant",
+    "ours": "",
+    "official": "They have withdrawn their warrant for Town meeting because they do not",
+    "note": "The Task Force's withdrawal of its warrant article and plan for summer information sessions appears only in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:17:58Z",
+   "cost_usd": 0.275059
+  }
  }
 }

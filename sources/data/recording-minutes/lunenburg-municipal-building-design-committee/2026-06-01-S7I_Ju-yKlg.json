@@ -343,5 +343,132 @@
    "at": "2026-09-27T02:26:32Z",
    "cost_usd": 0.18579800000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06012026-7829",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-06-01-minutes-7829.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-06-01-minutes-7829.pdf"
+  },
+  "official_sha256": "d4e35fef7c74fc78a8eeef204f1b83ee1718530ce9495f29f05aee9b8c0fedd8",
+  "coverage": "full",
+  "summary": "The records agree on the main outcomes: the focus on needs assessment, the June 15 next meeting, and the six members present. They differ on the vote and the budget figures. The official minutes record a vote approving prior minutes, with one abstention, that ours omit. Ours carry two dollar figures ($182,000 and $100,000) that the official minutes do not mention.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Next meeting date",
+    "ours": "Committee will meet again on June 15th to review the department needs survey results.",
+    "official": "The Committee agreed to meet again on June 15, 2026, with the expectation that survey results will be available for review and discussion.",
+    "note": "Actually agrees: same date and purpose. Reclassify as agree.",
+    "t": 1837
+   },
+   {
+    "kind": "agree",
+    "about": "Committee focus on needs assessment before choosing a site",
+    "ours": "Committee will focus on assessing square footage needs for town departments before deciding on a building location, pending direction from the Select Board.",
+    "official": "The Chair emphasized that the Committee's current focus should remain on determining departmental needs and space requirements rather than selecting a final site.",
+    "note": "Same decision; ours adds 'pending direction from the Select Board', which the official minutes do not state.",
+    "t": 364
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Minutes approval vote (March 9 and April 27)",
+    "ours": "",
+    "official": "Motion to Approve: Tom Gray. Seconded by Anthony Sculumbrine. Unanimously approved, one abstain, Kristina Masaitis.",
+    "note": "Our minutes list no votes; the official record a motion to approve prior minutes with one abstention. Check the recording for this vote.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "TC Passios / Pasquale's site as an alternative location",
+    "ours": "Confirmed it was Select Board member Caesar, not Renee, who suggested investigating the Pasquale's (Paseos/TCP) site as a viable alternative location.",
+    "official": "Potential use of the former TC Passios School property for a future municipal facility.",
+    "note": "Same site (caption garbled it as Pasquale's/Paseos/TCP); the official minutes do not say who suggested it, so our attribution is only in ours.",
+    "t": 983
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ritter Memorial Building renovation option",
+    "ours": "",
+    "official": "Renovation and continued use of the Ritter Memorial Building for municipal functions.",
+    "note": "Official lists Ritter renovation as one of two concepts; our minutes do not record it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Department head survey update and its contents",
+    "ours": "",
+    "official": "David Blatt reported that the department head survey had been delayed due to staff absences but was expected to be distributed immediately.",
+    "note": "Survey status and scope are in the official minutes but not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Budget climate, override vote and Turkey Hill/MSBA discussion",
+    "ours": "",
+    "official": "Committee members discussed the impact of the recent override vote and concerns regarding the community's willingness to support major capital projects.",
+    "note": "Discussion topics (override, Turkey Hill, MSBA) appear only in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prior design work by Burns and Taylor",
+    "ours": "Prior architectural/design work by Burns and Taylor: $182,000",
+    "official": "",
+    "note": "Figure not in the official minutes; verify against the recording, as the name and amount may be misheard.",
+    "t": 1419
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost of commissioning a new building design",
+    "ours": "Cost of commissioning a new building design: $100,000",
+    "official": "",
+    "note": "Figure not in the official minutes, which only mention caution about costly studies; verify against the recording.",
+    "t": 1066
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Dave Blatchford (chair)",
+    "official": "David Blatt",
+    "note": "Misheard surname for the same chair.",
+    "official_reading": "David Blatt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Tony",
+    "ours": "Tony (member)",
+    "official": "Anthony Sculumbrine",
+    "note": "First name only in ours; same person.",
+    "official_reading": "Anthony Sculumbrine"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Christina",
+    "ours": "Christina (member)",
+    "official": "Kristina Masaitis",
+    "note": "Spelling differs; same person.",
+    "official_reading": "Kristina Masaitis"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Brian, Laura, Tom",
+    "ours": "Brian (member)",
+    "official": "Members Present:   Brian Lehtinen, Tom Gray, David Blatt, Anthony Sculumbrine, Laura \nBrzozoski, Kristina Masaitis.",
+    "note": "Six members present in both; ours has first names only. Absent members Greg Roy and Matthew Brenner are only in the official record."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:16:04Z",
+   "cost_usd": 0.22543300000000002
+  }
  }
 }

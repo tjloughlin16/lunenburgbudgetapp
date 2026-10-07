@@ -411,5 +411,294 @@
    "at": "2026-09-27T02:20:53Z",
    "cost_usd": 0.19613399999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06222026-7865",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-06-22-minutes-7865.txt",
+   "path": "sources/meetings/planning-board/2026-06-22-minutes-7865.pdf"
+  },
+  "official_sha256": "1e3e4f718975a2181ba78f4dc3f649c6f196c4c1aaf9e6c88dd1ddd3bea79274",
+  "coverage": "full",
+  "summary": "The two records agree on most votes, the 189 Electric Ave bond figures and the main decisions. They differ on the vote counts for two continuances, on how the 30 Summer St construction hours were adopted, on the meeting room for the bylaw sessions, and on the amount of the Leominster Shirley Rd bond. A reader should check the recording for who was voting on the Parmenter Rd and New West Townsend Rd continuances, since our minutes say 5-0 and the town's roll call shows four members.",
+  "counts": {
+   "agree": 18,
+   "caption_error": 6,
+   "discrepancy": 4,
+   "only_in_ours": 1,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "10 Parmenter Rd continuance vote count",
+    "t": 2812,
+    "ours": "continue the 10 Parmenter Road permits (PBSW 26-12, 26-13, PBSP 26-3, 26-4) to July 13 at 6:05pm — passed 5-0",
+    "official": "Roll Call Vote: A. Reid, AYE; A. Burney, AYE; T. Willsmer, AYE; M. Brenner, AYE \n(4/0)",
+    "note": "Our minutes say 5-0, but the town's roll call lists four members and no Nicastro; check the recording to see whether Nicastro was present and voted at this point.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "New West Townsend Rd continuance vote count",
+    "t": 4110,
+    "ours": "continue the 816 New West Townsend Road permits (PBSA 26-1, PBSW 26-1, PBSP 26-1) to July 13 at 6:05pm — passed 5-0",
+    "official": "A. Burney moved to continue all permits to 7/13/26 at \n6:05pm. A. Reid, Second. \nRoll Call Vote: A. Reid, AYE; A. Burney, AYE; T. Willsmer, AYE; M. Brenner, AYE \n(4/0)",
+    "note": "Both records continue the permits to July 13, but ours counts 5-0 and the town's roll call shows 4/0 without Nicastro; check the recording for who voted.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "New West Townsend Rd street number",
+    "t": 4110,
+    "ours": "816 New West Townsend Road",
+    "official": "860 New West Townsend Rd., Site Plan Review (PBSA-26-1)",
+    "note": "Same project and permit numbers; the captions misheard 860 as 816.",
+    "official_reading": "860"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "30 Summer St construction hours: separate amendment vote vs. part of the original motion",
+    "t": 1259,
+    "ours": "amend the site plan motion to add construction hours (7am-5pm weekdays, 8am-2pm Saturdays) — passed 4-0",
+    "official": "operating hours are to be 6am to 10pm Monday through Sunday, and construction hours are 7am to 5pm Monday through Friday and 8am to 2pm on Saturday.",
+    "note": "Our minutes record a separate amendment vote adding the hours; the town's minutes put them in the original motion with a single 4/0 vote. Check the recording to see whether an amendment was moved and voted.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Close the three 30 Summer St hearings",
+    "t": 1002,
+    "ours": "close the public hearings for 30 Summer Street (PBSW 25-6, PBSA 25-8, PBSP 25-9) — passed",
+    "official": "A. Burney moved to close all three hearings. A. Reid, Second.",
+    "note": "Same motion and outcome; the town records the vote as 4/0.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "30 Summer St stormwater permit PBSW 25-6",
+    "t": 1075,
+    "ours": "approve the stormwater permit for 30 Summer Street PBSW 25-6 with all standard conditions — passed",
+    "official": "A. Burney moved to approve Stormwater Permit PBSW-25-6 with standard conditions.",
+    "note": "Same motion and outcome; the town records 4/0.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "30 Summer St site plan PBSA 25-8 conditions",
+    "t": 1103,
+    "ours": "approve the site plan review for 30 Summer Street PBSA 25-8 with standard and additional conditions (no truck rental, police coordination on security, stated hours) — passed",
+    "official": "no truck rentals are allowed on the property",
+    "note": "The additional conditions match: no truck rentals, police coordination on the security system, and stated hours.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "30 Summer St floodplain special permit PBSP 25-9",
+    "t": 1213,
+    "ours": "approve the floodplain special permit for 30 Summer Street PBSP 25-9 with all standard conditions — passed 4-0",
+    "official": "A. Burney moved to approve Special Permit for Flood Plain PBSP-25-9 with standard \nconditions.",
+    "note": "Same motion and the same 4-0 count.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "934 Mass Ave PBSW 26-14 continuance",
+    "t": 4152,
+    "ours": "continue 934 Mass Ave PBSW 26-14 to July 13 at 6:05pm — passed 5-0",
+    "official": "A. \nBurney moved to continue to 7/13/26, at 6:05pm.",
+    "note": "Same date and time, and a 5/0 vote in both.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "1325 Mass Ave hearing closed",
+    "t": 4960,
+    "ours": "close the hearing on 1325 Mass Ave PBSA 26-5 — passed 5-0",
+    "official": "A. Burney moved to close the hearing.",
+    "note": "Same outcome, 5/0.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "1325 Mass Ave de minimis finding, 1,800 sq ft",
+    "t": 5006,
+    "ours": "find the change to the stormwater permit at 1325 Mass Ave (1,800 square feet) to be de minimis — passed 5-0",
+    "official": "A. Burney moved to find the 1800 square foot changes to Stormwater 1294 approved \n2/27/2023 to be De Minimis",
+    "note": "Same finding, same 1,800 sq ft figure, 5/0.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "1325 Mass Ave approve de minimis change",
+    "t": 5040,
+    "ours": "approve the de minimis change to the stormwater permit at 1325 Mass Ave — passed 5-0",
+    "official": "A. Burney moved to approve the De minimis changes to stormwater permit 1294.",
+    "note": "Same motion and 5/0 outcome.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "1325 Mass Ave site plan approval with construction hours",
+    "t": 5075,
+    "ours": "approve the site plan approval for 1325 Mass Ave PBSA 26-5 with stated construction hours — passed 5-0",
+    "official": "A. Burney moved to approve the Site Plan with standard conditions and construction \nhours 7am –5pm Monday through Friday, 8am –12pm Saturdays.",
+    "note": "Same approval and 5/0 vote. Our minutes do not state the hours; the town's give Saturday as 8am-12pm.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "189 Electric Ave bond vote",
+    "t": 6708,
+    "ours": "accept a bond in the amount of $4,550 for the remaining work at 189 Electric Ave — passed 5-0",
+    "official": "A. Burney moved to accept the $4550.00 Bond for 189 Electric \nAve.",
+    "note": "Same amount and the same 5/0 vote.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "189 Electric Ave bond figures",
+    "t": 5176,
+    "ours": "189 Electric Ave performance bond: $3,500, 30%, $4,550",
+    "official": "The estimate of $3500 with a 30% contingency totaling \n$4550.00",
+    "note": "All three figures match.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Leominster Shirley Rd street number",
+    "t": 6913,
+    "ours": "45 Leominster Shirley Road",
+    "official": "485 Leominster Shirley Rd – Decommission Bond",
+    "note": "Same decommissioning bond item; the captions dropped a digit from 485.",
+    "official_reading": "485"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decommissioning bond amount",
+    "ours": "",
+    "official": "A. Burney moved to accept the bond language and bond of $250,000.",
+    "note": "The town records acceptance of the language and a $250,000 bond; ours records only acceptance of the language as approved by town counsel, and has no $250,000 figure.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Room for bylaw working sessions",
+    "t": 7719,
+    "ours": "Board agreed to hold upcoming bylaw working sessions in the Belden meeting room at Town Hall so they can be filmed.",
+    "official": "the public Bylaw Working Session will be on 7/20/26 at 5pm \nin the Bilotta meeting room.",
+    "note": "The rooms differ (Belden vs Bilotta); check the recording for the room name.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "First bylaw working session date and time",
+    "t": 242,
+    "ours": "Board agreed to hold its first zoning-bylaw editing session on Monday, July 20th at 5:00 p.m., as a posted, filmed public meeting.",
+    "official": "the public Bylaw Working Session will be on 7/20/26 at 5pm",
+    "note": "Same date and time.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Asphalt thickness and Graves review",
+    "t": 3603,
+    "ours": "Board asked that Graves Engineering be asked whether the standard 3 inches of asphalt is adequate for a common driveway serving 20 units at New West Townsend Road.",
+    "official": "We can also have Graves Engineering review.",
+    "note": "The town's minutes record the 3-inch spec concern and a Graves review of the driveway, which matches our decision.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Fire protection review for New West Townsend Rd",
+    "t": 3958,
+    "ours": "Board asked the applicant to supply individual driveway-length figures and consult the fire department on hose lengths and hydrant/cistern adequacy before the next meeting.",
+    "official": "he would like a fire prevention review.",
+    "note": "Both record a request for a fire prevention review; the town does not mention the request for individual driveway-length figures.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Stop work order for Electric Ave lots",
+    "t": 6625,
+    "ours": "Board directed that enforcement (a stop-work order) be pursued against Redbird Construction for driveway disturbance on the remaining Electric Ave lots that lacked a stormwater permit.",
+    "official": "a request for a “Stop Work Order” is to be placed with the building commissioner for the remaining 3 \nlots",
+    "note": "Both record a stop-work request for the remaining three lots (195, 213 and 221). The town frames it as a request to the building commissioner.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "1325 Mass Ave impervious-change figures",
+    "t": 4600,
+    "ours": "1325 Mass Ave de minimis stormwater change: 600 square feet, 945 square feet, 216 square feet, 1,800 square feet",
+    "official": "",
+    "note": "The town's minutes give only the 1800 sq ft total (and a 'roughly 2000 square feet' building increase), not the 600, 945 and 216 sq ft components.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: chair",
+    "ours": "the chair (chair)",
+    "official": "M. Brenner, T. Willsmer (via Zoom), A. Reid, A. Burney, A. Nicastro",
+    "note": "Roll call lists M. Brenner as chair; all five members attended, with Willsmer on Zoom.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Reid",
+    "ours": "Ms. Reed (member)",
+    "official": "Amanda Reid, Clerk",
+    "note": "Misheard surname.",
+    "official_reading": "Reid"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Burney",
+    "ours": "Mr. Bernie (Adam) (member)",
+    "official": "Adam Burney, Member",
+    "note": "Misheard surname.",
+    "official_reading": "Burney"
+   },
+   {
+    "kind": "agree",
+    "about": "Member Nicastro",
+    "ours": "Mr. Nicastro (Tony) (member)",
+    "official": "Anthony Nicastro, Member",
+    "note": "Same person.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Planning director",
+    "ours": "Steve (planning director)",
+    "official": "Stephen Wallace – Director of",
+    "note": "Same person, Stephen Wallace.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Haley-Ward engineer",
+    "ours": "Dan Shan/Sherman (presenter (Haley Ward, engineer for 189 Electric Ave))",
+    "official": "Dan Sheehan (Haley-Ward)",
+    "note": "Misheard surname.",
+    "official_reading": "Sheehan"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Benjamin Builders presenter",
+    "ours": "Ally Dugan (presenter (Benjamin Builders))",
+    "official": "Ali Dougan, Benjamin Builders via Zoom",
+    "note": "Misheard name.",
+    "official_reading": "Ali Dougan"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:15:54Z",
+   "cost_usd": 0.37943299999999996
+  }
  }
 }

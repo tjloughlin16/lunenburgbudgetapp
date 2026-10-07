@@ -431,5 +431,151 @@
    "at": "2026-09-27T19:37:39Z",
    "cost_usd": 0.195002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05082025-7210",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-05-08-minutes-7210.txt",
+   "path": "sources/meetings/finance-committee/2025-05-08-minutes-7210.pdf"
+  },
+  "official_sha256": "191167cbc03deb643e60e95787ac265847a88d1ad2ef47b652dbdeac8d59572e",
+  "coverage": "full",
+  "summary": "The two records agree on the meeting's outline: the next meeting date (May 22), the committee-assignment review and the one-meeting-a-month plan for June and July. They differ on one vote and on several details. The official minutes record a roll-call vote approving the 3/27, 4/3 and 4/24 minutes that our minutes miss, and they give a different account of what was decided about minutes format.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 5,
+   "only_in_ours": 1,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to approve minutes of 3/27, 4/3, 4/24",
+    "ours": "VOTES: none. Chair said the committee will always accept the minutes as submitted by the clerk, rather than pushing for a different format.",
+    "official": "There was a motion to approve the minutes from March 27, 2025, April 3, 2025, and April 24, 2025, by Ana Lockwood, seconded by Tom Gray. Roll call vote.  Jean Russell aye, Jay Simeone aye, Ana Lockwood aye, Tanya Dall aye, Tom Gray aye, Chris Menard aye.",
+    "note": "Our minutes record no vote, but the official minutes record a unanimous 6-0 roll call; check the recording near the minutes agenda item (around t=1954) for the motion and vote.",
+    "t": 1954
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision on minutes format",
+    "ours": "Chair said the committee will always accept the minutes as submitted by the clerk, rather than pushing for a different format.",
+    "official": "Tanya Dall expressed that she is not accustomed to the way the minutes are written. \n Chris Menard suggests speaking to the Town Manager to create consistency.",
+    "note": "Ours describes a firm commitment to accept the clerk's minutes as submitted; the official records only a suggestion to talk to the Town Manager about consistency. Check the recording to see which the chair said.",
+    "t": 1954
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Summer meeting schedule",
+    "ours": "Move to roughly once-a-month meetings in June and July, with a couple of meetings in August ahead of September budget presentations.",
+    "official": "The Committee agrees to hold one meeting for the months of June and July.",
+    "note": "Both give one meeting a month in June and July. Ours adds a couple of August meetings that the official minutes do not mention; check the recording for the August plan.",
+    "t": 2605
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meetings with new Town Manager and Superintendent",
+    "ours": "Dedicate the next two Finance Committee meetings to discussions with the new town manager and new superintendent about their expectations.",
+    "official": "Tanya Dall suggests inviting the Town Manager and the new Superintendent \n of Schools to the next meeting to inquire about what they would like to see in the \n future.",
+    "note": "Ours says the next two meetings are dedicated to this; the official has a suggestion to invite both to the next meeting, with the Chair to inquire about the Superintendent once her contract is complete. Check whether it was a decision and how many meetings.",
+    "t": 2605
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next Finance Committee meeting set for May 22.",
+    "official": "b. Fincom Meeting, May 22",
+    "note": "Both give May 22.",
+    "t": 2791
+   },
+   {
+    "kind": "agree",
+    "about": "Review of committee assignments",
+    "ours": "Committee assignments to be reviewed and listed at the next meeting.",
+    "official": "There will be a review of Committee assignments.",
+    "note": "Both record a review of committee assignments.",
+    "t": 3645
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Timing of FY27 draft budget",
+    "ours": "Push to have a draft FY27 budget ready by September or early October so there is more time to discuss it.",
+    "official": "Chris Menard believes budgeting should be an all-year process and not \ncompleted within a few months.",
+    "note": "Ours gives a September/early October draft target; the official records only the all-year principle and fall preliminary presentations, with no date. Check the recording for the target.",
+    "t": 2059
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Superintendent selection",
+    "ours": "",
+    "official": "Chris Menard confirms the school committee selected the new \nSuperintendent, Dr. Jodi Fortuna.",
+    "note": "Our minutes do not mention the name of the new superintendent.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fair volunteers for dunk tank",
+    "ours": "",
+    "official": "Ana Lockwood was contacted by a vendor partaking in the fair on Saturday.",
+    "note": "Public comment item not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Post-Town Meeting remarks: three large articles overwhelming",
+    "ours": "",
+    "official": "Jean Russell heard from several residents that the three large expensive \narticles were overwhelming. She suggests staggering or breaking down \narticles into multiple town meetings.",
+    "note": "Our figures list mentions the 21 million, 13 million and 2 million warrant articles but no discussion of staggering them; the official minutes give no dollar amounts.",
+    "t": 542
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Brooks House and Turkey Hill discussion",
+    "ours": "Brooks House renovation/disposition cost: 5075 $100,000, 300 $400,000; Turkey Hill school renovation or new build cost: $750 to $1,000 a square foot, 57%",
+    "official": "There needs to be discussions about turkey hill renovations versus a re-build \nand the future of the Brooks House. Tom Gray suggests selling the Brooks \nHouse as a house as opposed to commercial office space.",
+    "note": "Both cover the topics, but the official minutes give none of the cost figures, so those cannot be checked against them.",
+    "t": 2940
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Recycling, fire fourth shift, tote fee, health insurance and salary scenarios",
+    "ours": "Recycling program cost: almost half a million dollars a year; Fire department fourth shift: about half a million dollars a year; Pay-as-you-throw tote fee: $100 a year, 5,000 homes; FY27 health insurance scenarios; non-union salary increase scenarios 2%, 3%",
+    "official": "",
+    "note": "The official minutes carry none of these figures or topics; they are only in our caption-based record.",
+    "t": 1304
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Mike Rupp",
+    "ours": "",
+    "official": "Committee Member Mike Rupp",
+    "note": "Mike Rupp is listed present in the official minutes but is not among the attendees in ours.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name: Anna",
+    "ours": "Anna (member)",
+    "official": "Committee Member Ana Lockwood",
+    "note": "Same person; the captions spelled her first name Anna.",
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees",
+    "ours": "Chris (chair); Jean (member); Jay (member); Tanya (member); Tom (member)",
+    "official": "Chair Chris Menard, Vice Chair Jean Russell (Zoom), Clerk Tom Gray, \n   Committee Member Tanya Dall",
+    "note": "Chris Menard, Jean Russell, Tom Gray, Tanya Dall and Jay Simeone match by first name."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:29:58Z",
+   "cost_usd": 0.236087
+  }
  }
 }

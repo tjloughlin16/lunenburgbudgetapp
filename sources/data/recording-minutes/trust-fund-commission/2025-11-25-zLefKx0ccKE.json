@@ -268,5 +268,149 @@
    "at": "2026-09-27T11:43:29Z",
    "cost_usd": 0.2113762
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11252025-7535",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2025-11-25-minutes-7535.txt",
+   "path": "sources/meetings/trust-fund-commission/2025-11-25-minutes-7535.pdf"
+  },
+  "official_sha256": "b91413137b2abda0a73277e8865a59a139b0561996fd2550d2e87fcdda1cb850",
+  "coverage": "full",
+  "summary": "The records agree on the two attendees, the absence of a substantive vote, the deferral of the risk management policy review and the December 11 next meeting. They differ mainly in detail: our minutes hold dollar figures and process decisions the official minutes only describe as discussion.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Chairman Bone (Chair)",
+    "official": "called  to  order  at  5:00  pm  by  Chairman  Bowen.",
+    "official_reading": "Chairman Bowen",
+    "note": "Same person; captions misheard Bowen as Bone.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Second commissioner's name",
+    "ours": "Richard (Commissioner)",
+    "official": "Present  were  Mr  Howard  and \n Chairman  Bowen.",
+    "official_reading": "Mr Howard",
+    "note": "Same attendee; our minutes heard a first name 'Richard' where the official minutes give Mr Howard. Verify whether Richard is Howard's first name or a mishearing.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendance: two members, vacancy",
+    "ours": "Chairman Bone (Chair); Richard (Commissioner)",
+    "official": "Present  were  Mr  Howard  and \n Chairman  Bowen.",
+    "note": "Both records show two members present; the official minutes also note the third seat is vacant.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Votes: none non-procedural",
+    "ours": "VOTES (non-procedural): none",
+    "official": "The  Motion \n passed  unanimously  with  both  Mr  Howard  and  Chairman  Bowen  voting  ‘Aye’.",
+    "note": "The only votes in the official minutes are approving the Nov 13 minutes and adjournment, both procedural; no substantive vote in either record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of Nov 13, 2025 minutes",
+    "ours": "",
+    "official": "Chairman  Bowen  made  a  Motion  to \n approve  the  minutes  of  Nov  13,  2025  as  written,  motion  seconded  by  Mr  Howard.",
+    "note": "Procedural minutes approval recorded only in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "$87,000 figure and what it represents",
+    "ours": "Worthy poor fund: $87,000",
+    "official": "Chairman  Bowen  feels  the  monies  have  been  neglected,  $87,000  that  should  have  gone  to \n needy  members.",
+    "note": "Same $87,000 figure but ours attributes it to the Worthy poor fund while the official describes it as neglected money for needy members, not tied to a named fund; check the recording at t=1731 for which fund it was.",
+    "t": 1731
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "American Legion fund figures ($21,000 / 20,26,000 / 15,000)",
+    "ours": "American Legion fund (post 283 / poor fund): $21,000, 20 26,000, 15,000",
+    "official": "",
+    "note": "Official mentions the American Legion only for the honorable-discharge requirement and gives no amounts; the garbled figures are unverifiable.",
+    "t": 1355
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Gazebo trust fund figures",
+    "ours": "Gazebo trust fund: 122,239, $12,000",
+    "official": "",
+    "note": "Official names the Gazebo trust only as one that cannot be distributed unless modified, with no amounts; check the recording for the figures.",
+    "t": 2003
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Handling of funding applications",
+    "ours": "Funding applications will be handled on a rolling basis via specially called meetings and executive session as needed, rather than waiting for the regular schedule, with 48-hour public notice.",
+    "official": "Chairman  Bowen  and  Mr  Howard  discussed  the  application  process  to  request  funds  from  the \n Trust  Fund  Commission.",
+    "note": "We record a decision (rolling basis, specially called meetings, executive session, 48-hour notice); official only says it was discussed and states a goal of distributing funds likely not until early 2026. Check the recording for whether a decision was made.",
+    "t": 2295
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Public review of proposed fund declaration changes",
+    "ours": "Proposed modifications to fund declarations will be included in the body of the posted agenda, and posted to the town website, so the public can review them before a public hearing.",
+    "official": "The  Trust  Fund  Commission  in  our  spirit  of  transparency  will  solicit \n public  opinion  on  any  proposed  rewording  before  sending  the  document  to  the  Attorney \n General’s  office.",
+    "note": "Both commit to public input, but ours specifies agenda posting, website posting and a public hearing while the official gives a general statement; check the recording for the mechanism.",
+    "t": 3281
+   },
+   {
+    "kind": "agree",
+    "about": "Risk management policy review deferred",
+    "ours": "Further line-by-line editing of the risk management policy (starting from the trust administrative memo section) is deferred to a future meeting.",
+    "official": "Due  to  time  constraints,  the  review  was  not  completed  and  will  be  finished  in  a  future \n meeting.",
+    "note": "Same outcome: review incomplete and continued to a future meeting.",
+    "t": 5252
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next meeting set for December 11, 2025, the commission's regular second-Thursday date.",
+    "official": "The  next  scheduled  meeting  is  planned  for  December  11,  2025.",
+    "note": "Same date.",
+    "t": 5313
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Interns discussion",
+    "ours": "",
+    "official": "Chairman  Bowen  discussed  Interns.",
+    "note": "Official records discussion of an intern program focused on real estate transactions; ours has nothing on it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "PC-IF form and Town Counsel review",
+    "ours": "",
+    "official": "The  Town  Manager  has  requested  we  review  any  changes  to  be  filed  on  Form  PC-IF",
+    "note": "Official records the Attorney General PC-IF form and that Town Counsel approval is not required; absent from ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vacancy and Superintendent scholarships",
+    "ours": "",
+    "official": "Chairman  Bowen  stated  that  he  has  not  heard  back  from  the  Superintendent  of  Schools \n regarding  Scholarships.",
+    "note": "Official also discusses the third-member vacancy and appointment process; neither appears in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:22:03Z",
+   "cost_usd": 0.23422500000000002
+  }
  }
 }

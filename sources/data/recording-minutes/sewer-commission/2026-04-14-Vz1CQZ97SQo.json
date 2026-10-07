@@ -263,5 +263,143 @@
    "at": "2026-09-27T02:43:45Z",
    "cost_usd": 0.18657
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142026-7762",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-04-14-minutes-7762.txt",
+   "path": "sources/meetings/sewer-commission/2026-04-14-minutes-7762.pdf"
+  },
+  "official_sha256": "f5b8a9cbeb0a3e4cfd61ea521bde82c58be54d9f0844af949b1bcbb9c17d2f7b",
+  "coverage": "full",
+  "summary": "The two records agree on the substance of the meeting: the manhole repair timing, the 77 Electric Ave. inquiry, and the Town Meeting budget presentation. Our minutes list no votes, but the official minutes record a roll-call vote to accept the 3/31/26 minutes (procedural) and one to adjourn, so there is no substantive vote conflict. Our minutes mishear several names.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 6,
+   "discrepancy": 0,
+   "only_in_ours": 0,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brett Ramson (member)",
+    "official": "Chair- Brett Ramsden",
+    "official_reading": "Brett Ramsden",
+    "note": "Misheard surname of the same person; the official minutes also identify him as Chair, which ours omits."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-Chair name",
+    "ours": "Scott D (member)",
+    "official": "Vice-Chair- Scott Dall",
+    "official_reading": "Scott Dall",
+    "note": "Surname truncated in the captions; same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name",
+    "ours": "Arthur Catis (member)",
+    "official": "Member: Arthur Katis",
+    "official_reading": "Arthur Katis",
+    "note": "Spelling of the surname differs; same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name",
+    "ours": "Chip Olson (member)",
+    "official": "Chip \nWilson",
+    "official_reading": "Chip Wilson",
+    "note": "Surname misheard; same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer Business Manager name",
+    "ours": "Andrew Valerie (staff)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "official_reading": "Andrew Valliere",
+    "note": "Surname misspelled by captions; same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk name",
+    "ours": "Jean Ranley (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "official_reading": "Jane Ranley",
+    "note": "First name misheard; same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Dan Proctor",
+    "ours": "Dan Proctor (member)",
+    "official": "Clerk- Dan Proctor",
+    "note": "Same name; the official minutes give his role as Clerk."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Bill Bernard",
+    "ours": "Bill Bernard (staff)",
+    "official": "DPW Director- Bill Bernard",
+    "note": "Same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Manhole repair timing",
+    "ours": "Hold off on manhole repair work until nighttime temperatures rise above freezing, and follow up with the contractor.",
+    "official": "The contractor wanted to get going but the \nnighttime temperatures have been below freezing. Bill told them they could start this week but he has not heard back \nfrom them.",
+    "note": "Same topic, but our decision is to hold off until temperatures rise, while the official text says Bill told the contractor they could start this week and has not heard back. This is a mild difference in framing, and a person could check the recording around t=210 to see whether a hold-off was decided."
+   },
+   {
+    "kind": "agree",
+    "about": "77 Electric Ave. sewer expansion",
+    "ours": "Not to vote yet on expanding the sewer district to the 14-acre Electric Ave lot, pending the developer returning with an actual plan.",
+    "official": "Bill noted that the developer was just inquiring right now.",
+    "note": "Both treat it as a preliminary inquiry with no action taken; ours frames it as a decision not to vote, which the official minutes do not state as a decision."
+   },
+   {
+    "kind": "agree",
+    "about": "Town Meeting budget presentation",
+    "ours": "Chair will prepare a budget presentation for the next meeting ahead of town meeting.",
+    "official": "---Future Agenda Items- TM budget presentation",
+    "note": "The same item. Ours adds that the Chair will prepare it, which the official minutes do not state."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "100 Laurel Lane pressure lines discussion",
+    "ours": "",
+    "official": "100 Laurel Lane – Dan confirmed that he saw 3 pressure lines coming out.",
+    "note": "The official minutes have a long discussion of the 100 Laurel Lane lines and the ADU, none of which appears in our decisions; it records no vote or decision."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote to accept 3/31/26 minutes",
+    "ours": "",
+    "official": "To accept the minutes of 3/31/26.                          Roll Call Vote: Chip-aye, Arthur-aye, Dan-aye and Brett-aye.",
+    "note": "A procedural vote the official minutes record and ours do not; ours list no votes. Not a substantive conflict."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Developer at the driving range",
+    "ours": "",
+    "official": "Bill stated the driving range developer has not returned.",
+    "note": "Mentioned only in the official minutes; no decision attached."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Upcoming meeting schedule",
+    "ours": "",
+    "official": "April 28, 2026 @ 6pm – (Zoom) Meeting",
+    "note": "The official minutes list upcoming meeting dates (4/28, 5/12, 5/26, 6/9); ours do not."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:18:15Z",
+   "cost_usd": 0.227311
+  }
  }
 }

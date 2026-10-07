@@ -687,5 +687,350 @@
    "at": "2026-09-27T02:21:08Z",
    "cost_usd": 0.198658
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06172026-7861",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-06-17-minutes-7861.txt",
+   "path": "sources/meetings/conservation-commission/2026-06-17-minutes-7861.pdf"
+  },
+  "official_sha256": "eb6237e311c65ef973f83f71ad46178ca62e964a31bdd2892765b0065929c7ed",
+  "coverage": "full",
+  "summary": "The two records agree on all 13 votes, with the same outcomes and counts. The differences are caption-misheard names, addresses and dollar figures, plus items that only one record has. The substantive question is 314 Highland Street: ours says the commissioners agreed on remediation \"rather than ... imposing a fine\", while the official minutes say the owner \"preferred the replication and fine\".",
+  "counts": {
+   "agree": 16,
+   "caption_error": 10,
+   "discrepancy": 4,
+   "only_in_ours": 5,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: negative determination, 44 Peninsula Drive (Kukula)",
+    "ours": "Negative determination for Edward Kukula, open carport at 44 Peninsula Drive — passed 4-0",
+    "official": "Vote: M. Wilson – AYE M. Larouche – AYE A. Burnap - AYE J. Pewtherer – AYE",
+    "note": "Same outcome and 4-0 tally; Doucette had not yet joined.",
+    "t": 940
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name, 44 Peninsula Drive",
+    "ours": "Edward Kukula",
+    "official": "Request for Determination of Applicability by Edward Kukkula for the construction of an open carport",
+    "note": "Spelling of the applicant's name only.",
+    "official_reading": "Edward Kukkula",
+    "t": 940
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: negative determination, 71 Chestnut Street (Wilson)",
+    "ours": "Negative determination for Jeffrey Wilson, driveway reconstruction at 71 Chestnut Street — passed 4-0",
+    "official": "Motion: M. Larouche, for a negative determination.",
+    "note": "Same motion and outcome; the official minutes record 4 ayes.",
+    "t": 1388
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue Cowdery Nature Center hearing to July 15",
+    "ours": "Continue Cowdry Nature Center ADA parking/trail hearing to July 15, 2026 — passed 5-0",
+    "official": "Motion: M. Wilson, to continue until July 15 expecting:",
+    "note": "Same date and 5-0 tally. The official minutes also attach the condition that Mass Trails funding be clarified and documented.",
+    "t": 1965
+   },
+   {
+    "kind": "caption_error",
+    "about": "Brackett common driveway address",
+    "ours": "816 New West Townsend Road",
+    "official": "860 New West Townsend Road: NOI-26-1 (Continued from 06/03/26)",
+    "note": "Same hearing (Brackett common driveway); the street number was misheard.",
+    "official_reading": "860 New West Townsend Road",
+    "t": 2131
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue Brackett hearing to July 1",
+    "ours": "Continue Brackett common driveway hearing (816 New West Townsend Road) to July 1, 2026 — passed 5-0",
+    "official": "Motion: M. Larouche, to continue until July 1 expecting:",
+    "note": "Same date and 5-0 tally. The official minutes add the expectation of Planning Board peer review results.",
+    "t": 2131
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve 56 Ruth Street common driveway (Benjamin Builders)",
+    "ours": "Approve Benjamin Builders common driveway with drainage basin, 56 Ruth Street — passed 5-0",
+    "official": "Motion: T. Doucette, to approve as presented",
+    "note": "Same outcome, 5-0.",
+    "t": 3251
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue Unitil NOI to July 1",
+    "ours": "Continue Unitil notice of intent (934 Mass Ave) to July 1, 2026 — passed 5-0",
+    "official": "Motion: M. Larouche, to continue until July 1 at the request of the applicant.",
+    "note": "Same outcome, 5-0.",
+    "t": 3312
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve 18 Oak Ridge Road with debris/staging condition",
+    "ours": "Approve 18 Oak Ridge Road demolition/reconstruction with condition that debris and staging stay outside 100-ft buffer — passed 5-0",
+    "official": "1. Debris and staging must be outside the 100-foot buffer.",
+    "note": "Same condition and 5-0 tally.",
+    "t": 3752
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve 146 Youngs Road septic replacement",
+    "ours": "Approve failed septic system replacement at 146 Youngs Road — passed 5-0",
+    "official": "Motion: T. Doucette, to approve as presented",
+    "note": "Same outcome, 5-0.",
+    "t": 4233
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 507 West Townsend Road to July 1",
+    "ours": "Continue 507 West Townsend Road hearing to July 1, 2026; office to notify applicant — passed 5-0",
+    "official": "Motion: M. Larouche, to continue to 1 July",
+    "note": "Same date and tally. The 'office to notify applicant' detail appears only in ours.",
+    "t": 4354
+   },
+   {
+    "kind": "discrepancy",
+    "about": "314 Highland St: fine or no fine",
+    "ours": "Commissioners agreed informally to pursue riprap fill in the culvert plus an on-site wetland replication area at 314 Highland Street rather than requiring removal of the pipe or imposing a fine. (Figure heard: Proposed fine for 314 Highland Street violation: $300)",
+    "official": "She explained his options and he stated he preferred the replication and fine.",
+    "note": "Ours says a fine was set aside in favour of remediation; the official minutes say the owner preferred replication and a fine, with no amount given. Check the recording around t=5100-5183 and the Order or enforcement file for whether a fine was imposed and for how much.",
+    "t": 5183
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: remediation actions at 314 Highland Street",
+    "ours": "Approve remediation actions (riprap fill and restoration area) for the 314 Highland Street violation — passed 5-0",
+    "official": "1. Under Commission supervision, install riprap in the buried pipe",
+    "note": "Same remediation items and 5-0 tally.",
+    "t": 5306
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Hollis Road Revolving Fund FY2027 budget",
+    "ours": "Approve FY2027 Hollis Road revolving fund budget allocation — passed 5-0",
+    "official": "Motion: M. Wilson, to approve the following for the Hollis Road Revolving Fund 2027",
+    "note": "Same outcome, 5-0.",
+    "t": 6701
+   },
+   {
+    "kind": "caption_error",
+    "about": "Hollis Road FY27 maintenance of grounds amount",
+    "ours": "Hollis Road FY27 budget vote: 10,000, 17,000 2654",
+    "official": "2. $17,026.54 for Maintenance of Grounds",
+    "note": "The captions garbled 17,026.54 into '17,000 2654'; the $10,000 Purchase of Services line matches.",
+    "official_reading": "$17,026.54",
+    "t": 6680
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Timber Rights fund FY2027 budget and amounts",
+    "ours": "Timber Rights FY27 budget vote: 10,000, 30,329.11",
+    "official": "2. $30,329.11 for Supplies",
+    "note": "Same amounts ($10,000 and $30,329.11) and outcome, 5-0.",
+    "t": 6994
+   },
+   {
+    "kind": "caption_error",
+    "about": "Wetlands Protection Bylaw Fees FY27 amount",
+    "ours": "Wetlands Bylaw Fees FY27 budget vote: 93 50",
+    "official": "3. $9,350 for Supplies",
+    "note": "The captions rendered $9,350 as '93 50'. The 5-0 vote agrees.",
+    "official_reading": "$9,350",
+    "t": 7310
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hollis Road fund balance and prior-year figures",
+    "ours": "Hollis Road revolving fund FY27 balance: 27,000",
+    "official": "",
+    "note": "The official minutes give only the approved amounts, not the balance or prior-year figures.",
+    "t": 6350
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Timber Rights prior-year split and procurement cap",
+    "ours": "Timber Rights procurement cap: $10,000",
+    "official": "",
+    "note": "The official minutes give no prior-year split or cap discussion.",
+    "t": 6722
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Wetlands Bylaw Fees fund balance",
+    "ours": "Wetlands Bylaw Fees fund balance: 93 53 16",
+    "official": "",
+    "note": "The official minutes record no balance for this fund.",
+    "t": 7245
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Mass Trails grant spending, match and ARPA figures",
+    "ours": "Mass Trails/DCR reimbursement and ARPA match: 28,639.07, 71,597, 71,597.7",
+    "official": "Mass Trail Grant does not need a budget set.  General discussion on uncertainty regarding the status of the account and the proper procedures will need further meetings to resolve.",
+    "note": "The official minutes give no figures for the Mass Trails grant or the ARPA match, only a general statement. The captioned figures are garbled and need the recording to confirm.",
+    "t": 7705
+   },
+   {
+    "kind": "agree",
+    "about": "Mass Trails grant account meeting",
+    "ours": "Agreed to arrange a meeting among the agent, the chair, the town's grant volunteer and the finance/grants staffer to sort out the Mass Trails grant account before the fiscal year closes.",
+    "official": "A meeting with all involved will be set up to resolve the various issues.",
+    "note": "Both records say a meeting will be set up. Ours names the participants and the fiscal-year deadline, which the official minutes do not.",
+    "t": 1901
+   },
+   {
+    "kind": "agree",
+    "about": "June 3 minutes not approved",
+    "ours": "Minutes from the June 3, 2026 meeting were tabled to the next meeting because a quorum of members who attended that meeting was not present to vote.",
+    "official": "There were insufficient participants from the last meeting to approve the minutes.",
+    "note": "Same reason and outcome.",
+    "t": 666
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Invasive plant removal approach",
+    "ours": "This year's invasive-plant removal effort will use manual removal only, since no one is currently licensed to apply herbicide on public land.",
+    "official": "Lise from Red Trillium Gardens would like to put together a fall invasive manual plant removal day, starting with the Lane property.",
+    "note": "Both involve manual removal, but ours states a decision with a herbicide-licensing reason, while the official minutes record only a proposed fall volunteer day. Check the recording near t=606 for whether a decision was made.",
+    "t": 606
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Hollis Road custodial meeting participants",
+    "ours": "Agreed to set up a meeting between the town manager, the chair, and possibly a commissioner regarding a new custodial agreement for the Hollis Road property.",
+    "official": "A meeting with the Town Manager and the Commission will be scheduled.",
+    "note": "The official minutes say the whole Commission will meet with the Town Manager. Ours says the chair and possibly one commissioner. Check the recording near t=8595 for who is to attend. The custodial agreement is not mentioned in the official minutes.",
+    "t": 8595
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Eagle Scout project at Zero Reservoir Road",
+    "ours": "Agent will informally raise with the Select Board the idea of an Eagle Scout project to re-seed and plant natives at the town-owned Zero Reservoir Road parcel where a past encroachment was cleared.",
+    "official": "M. Wilson described a violation at Zero Reservoir Road. It is not Conservation land, so we may need Select Board approval to run projects on the property.",
+    "note": "The official minutes record M. Wilson describing a violation and a possible Select Board approval requirement, and no agent action. Ours records the agent taking the idea to the Select Board. Check the recording near t=9077 for who is to act.",
+    "t": 9077
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Recurring commissioner-updates agenda item",
+    "ours": "Commission will consider adding a recurring 'commissioner updates' or property-updates subsection to future agendas.",
+    "official": "",
+    "note": "The official minutes record no agenda change discussion.",
+    "t": 9280
+   },
+   {
+    "kind": "agree",
+    "about": "Wetlands bylaw update pending legal consultation",
+    "ours": "Commission will revisit updating the wetlands bylaw and permitting fee structure once the agent meets with town legal counsel about the process.",
+    "official": "H. Jaime needs to talk with Legal before we move forward.",
+    "note": "Same substance. Ours adds the fee structure.",
+    "t": 5810
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Environmental Bond Bill",
+    "ours": "",
+    "official": "H. Jaime suggested we all follow the Environmental Bond Bill. They did not vote, so there is still time to comment.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Hollis Road ATV signs and cleaning",
+    "ours": "",
+    "official": "Signs have been posted.  (4 NO ATV signs and 1 Wetlands sign.)",
+    "note": "Not in our minutes, along with the July 6/7 cleaning."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Brad Coons becoming a commissioner",
+    "ours": "",
+    "official": "J. Pewtherer noted that Brad Coons was on the call for most of the meeting and is moving forward in the process to become a commissioner.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "1168 Mass Ave Rear enforcement update",
+    "ours": "",
+    "official": "H. Jaime noted that an email exchange with DEP asked for specific updates and their USDA contact, as they are suggesting it is, or will be, farmland.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pollinator habitat update",
+    "ours": "",
+    "official": "M. Larouche reported happenings at the Habitat, such as monarch butterflies, new growth, flowers blooming, and helpful bugs.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendance and Doucette's late arrival",
+    "ours": "Teddy Doucette (also heard as Dusett/Dziedzic/Dusat/Dusseault/Eaton) (commissioner)",
+    "official": "Absent: R. Bursch, T. Doucette (joined at 24:32)",
+    "note": "Doucette joined after the first two votes, so those were 4-0 and the rest 5-0. Ours lists no absent member (Bursch); the official minutes list him absent."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Jenny Puthaw (chair)",
+    "official": "Present: J. Pewtherer, A. Burnap, M. Larouche, M. Wilson.",
+    "note": "The captions misheard the chair's surname.",
+    "official_reading": "Jennifer Pewtherer"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation Agent's name",
+    "ours": "Harlan (also heard as Herlin/Harland/Hurlin/Arlene/Earlene/Kerlin/Carolyn) (Conservation Agent)",
+    "official": "Herlin Jamie – Conservation Agent",
+    "note": "The official letterhead gives the agent as Herlin Jamie (also spelled 'H. Jaime' in the body).",
+    "official_reading": "Herlin Jamie"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner Burnap's name",
+    "ours": "Andrea Vernat (also heard as Burnett/Burnap/Barnaby/Bernett/Bernat/Bernhardt) (commissioner)",
+    "official": "Present: J. Pewtherer, A. Burnap, M. Larouche, M. Wilson.",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Andrea Burnap"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner Larouche's name",
+    "ours": "Mike Lariush (also heard as Larish/LeRouche/Laroche/Rouche) (commissioner)",
+    "official": "Michael Larouche",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Michael Larouche"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Dan Wolfe's name",
+    "ours": "Dan Wolf (presenter (David Ross Associates))",
+    "official": "Dan Wolfe (David Ross Associates) represented the applicants.",
+    "note": "Spelling of the surname only.",
+    "official_reading": "Dan Wolfe"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Engineer's firm name",
+    "ours": "Greg Roy (presenter (engineer, Dilts and Roy / Wilson Roy / Olson Roy))",
+    "official": "Greg Roy (Dillis & Roy) represented the Commission and noted that alternatives are still being generated.",
+    "note": "Greg Roy is the same person; the firm name was misheard.",
+    "official_reading": "Dillis & Roy"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:15:47Z",
+   "cost_usd": 0.296793
+  }
  }
 }

@@ -279,5 +279,101 @@
    "at": "2026-09-27T18:01:16Z",
    "cost_usd": 0.195028
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06262025-7289",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2025-06-26-minutes-7289.txt",
+   "path": "sources/meetings/trust-fund-commission/2025-06-26-minutes-7289.pdf"
+  },
+  "official_sha256": "c21cf75cf8460bff3ca7c57542d7f1d9d3e54c3483d06512e0fed45521d17e1b",
+  "coverage": "full",
+  "summary": "The two records agree on both officer elections and on the July 10, 2025 next meeting. They differ on how often the commission meets and on whether any agenda items were set for the next meeting. Our minutes also have no record of Bowen's long public-comment statement.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 0,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: John Bowen elected chairman",
+    "ours": "Elect John Bowen chairman of the trust fund commission — passed",
+    "official": "Mr. Howard made a motion to nominate Mr. Bowen as Chairman of the Trust",
+    "note": "Both records show Bowen made chairman and the motion carrying; the official says unanimously.",
+    "t": 167
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Richard Howard vice chair",
+    "ours": "Nominate Richard Howard as vice chair of the trust fund commission (roll call) — passed",
+    "official": "Mr. Bowen made a motion to nominate Mr. Howard as Vice-Chairman of the",
+    "note": "Both show Howard passing as vice chair; the official says unanimously and does not mention a roll call.",
+    "t": 335
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meeting frequency and whether it was a vote",
+    "ours": "Regular meetings will be held the second and fourth Thursday of each month.",
+    "official": "every other Thursday",
+    "note": "Our minutes say second and fourth Thursday and record a passed vote on 5:00-6:30 PM. The official says every other Thursday as a default time 'agreed by both members', with no recorded vote. Check the recording near t=2149-2232 for the schedule wording and whether a vote was taken.",
+    "t": 2232
+   },
+   {
+    "kind": "agree",
+    "about": "Meeting time 5:00-6:30 PM",
+    "ours": "Set the commission's regular meeting time to 5:00-6:30 PM — passed",
+    "official": "Mr. Howard proposed that every other Thursday from",
+    "note": "The 5:00PM-6:30PM window matches. The official calls it a default time agreed by both members, not a formal vote.",
+    "t": 2149
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "The next meeting was set for July 10, 2025 at 5:00 PM.",
+    "official": "Next meeting scheduled for Thursday July",
+    "note": "Both give July 10, 2025. The official states no time for that meeting, apart from the 5:00PM default.",
+    "t": 2295
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Agenda items for next meeting",
+    "ours": "The two elected members agreed in advance, by email, on a six-item list of trust fund management topics to place on the next meeting's agenda (prudent investor rule, accounting methods, expendable fund withdrawal policy, a financial policy, portfolio identification, and quarterly rebalancing dates).",
+    "official": "There were no specific items to address in advance of our next meeting.",
+    "note": "Our minutes record a six-item agenda list. The official says there were no specific items and only mentions the Prudent Investor Act in a remark by the chair. Check the recording around t=1727 to see whether the list was read into the record.",
+    "t": 1727
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "John Bowen (elected member; elected chairman during this meeting); Richard Howard (elected member; elected vice chairman during this meeting); the assistant town clerk",
+    "official": "Present: John Bowen and Richard Howard (elected Members), Assistant Town Clerk",
+    "note": "Same three attendees. The official also names the assistant town clerk as Ellen Griffin (spelled Griffen elsewhere in the minutes)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment statement by Bowen",
+    "ours": "",
+    "official": "Member John Bowen made a statement expressing his concerns with the legal",
+    "note": "The official minutes carry a long statement by Bowen on the agenda being submitted by the town clerk and the Open Meeting Law. Our minutes list no such item; check whether it was said on the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Call to order time",
+    "ours": "",
+    "official": "The meeting opened at 5:30 PM.",
+    "note": "Our minutes give no start time."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:27:25Z",
+   "cost_usd": 0.234841
+  }
  }
 }

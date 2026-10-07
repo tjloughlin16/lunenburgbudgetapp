@@ -382,5 +382,183 @@
    "at": "2026-09-27T13:06:00Z",
    "cost_usd": 0.19313799999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07072025-7303",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-07-07-minutes-7303.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-07-07-minutes-7303.pdf"
+  },
+  "official_sha256": "77f8e9bcd4dda7e8a1755e1abad263ad84b636387e48155dac89e67c156063ce",
+  "coverage": "full",
+  "summary": "The two records agree on the officer elections, the NAS purchase, the program statistics, the studio move and the next meeting date. Our captions garbled the account balance and two names. The main difference is that the official minutes record the 6/2/2025 minutes vote, the vote outcomes and a fourth member, Steve Archambault, which our minutes miss.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: Steve Walker as chair",
+    "t": 158,
+    "ours": "Nominate Steve Walker as chair — not audible",
+    "official": "S.\tWalker\tas\tChair\t(S.Archambault,\t2nd\tF.Beall),\tpassed",
+    "note": "Same nomination; our minutes could not hear the outcome or the mover and seconder, which the official minutes supply (passed)."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Faith as vice chair",
+    "t": 178,
+    "ours": "Nominate Faith as vice chair — not audible",
+    "official": "F.Beall\tas\tVice\tChair\t(S.Archambault,\t2nd\t\tS.Walker),\tpassed",
+    "note": "Same item; official adds the outcome (passed), mover and seconder that our recording did not capture."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: clerk/secretary",
+    "t": 199,
+    "ours": "Appoint a member as clerk/secretary — not audible",
+    "official": "S.Archambault\tas\tSecretary\t(F.Beall,\t2nd\tS.Walker),\tpassed",
+    "note": "Same office; official names Archambault as Secretary and records that it passed."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: NAS purchase not to exceed $1,200 from maintenance",
+    "t": 1521,
+    "ours": "Authorize Joe to purchase a new NAS not to exceed $1,200 — not audible",
+    "official": "Motion\tto\treplace\tNAS\tunit,\tnot\tto\texceed\t$1,200,\tfrom\tmaintenance\tbudget",
+    "note": "Same motion and cap; official adds that it passed (Archambault, 2nd Vienneau)."
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer: NAS charged to maintenance line, $1,200",
+    "t": 1521,
+    "ours": "Purchase of a replacement NAS storage unit, charged to the maintenance line rather than capital or the manager's salary account — $1,200 (voted)",
+    "official": "Motion\tto\treplace\tNAS\tunit,\tnot\tto\texceed\t$1,200,\tfrom\tmaintenance\tbudget",
+    "note": "Funding source and ceiling match."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote approving amended 6/2/2025 minutes",
+    "ours": "",
+    "official": "Motion\tto\taccept\tthe\tamended\t6/2/2025\tminutes\tas\tamended",
+    "note": "Official records a minutes-approval vote (Beall, 2nd Archambault, Vienneau abstained, passed) that our minutes do not list; check the recording around the start of the meeting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "PACC account balance",
+    "t": 2196,
+    "ours": "PACC account balance: 2577287, 25,772 and 87",
+    "official": "Balance\t$1,025,772.87",
+    "note": "Digits garbled by captions; the same balance, which official prints as $1,025,772.87.",
+    "official_reading": "$1,025,772.87"
+   },
+   {
+    "kind": "agree",
+    "about": "Interest earned / enterprise fund income",
+    "t": 2539,
+    "ours": "Interest earned on reserve fund investment: 32,000 a year",
+    "official": "No\tupdate\t–\thas\taveraged\t$32,000\tin\taddition\tincome\teach\tyear",
+    "note": "Same $32,000 yearly figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Local programming percentage FY25",
+    "t": 2350,
+    "ours": "Local programming percentage, FY25: 75%",
+    "official": "75%\tlocal\tprogramming",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Number of programs produced",
+    "t": 2392,
+    "ours": "Number of programs produced: 80 programs, 119 programs",
+    "official": "Only\t80\tprograms\tdue\tto\tlarge\tamount\tof\tlocal\tmeetings",
+    "note": "80 for FY25 and 119 for FY24 (official: 'End\tof\tFY24\tthere\twere\t119\tprograms') both match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "NAS price quotes ($999, 800, 6)",
+    "t": 1521,
+    "ours": "Replacement NAS (video storage system): $999, $1,200, 800, 6 and 800",
+    "official": "",
+    "note": "Discussion figures heard only on the recording; the official minutes carry only the $1,200 cap."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reserve fund for future studio: $720,000 / one million",
+    "t": 1813,
+    "ours": "Enterprise/reserve fund for future studio: $720,000, one million",
+    "official": "",
+    "note": "The official minutes give no fund balance, only the $32,000 yearly income; check the recording for what the $720,000 and one million refer to."
+   },
+   {
+    "kind": "agree",
+    "about": "Studio relocation timing",
+    "t": 1688,
+    "ours": "Studio relocation to the TCP/TC Pasios space set for mid-to-late July.",
+    "official": "Moving\tstudio\tto\tdifferent\tlocation\tin\tTCP\tin\tmid/late\tJuly",
+    "note": "Same timing; 'TC Pasios' is likely our caption error for TCP."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Recording trust fund commission and tri-board meetings",
+    "t": 2069,
+    "ours": "Committee will begin recording trust fund commission meetings and, starting the next day, tri-board (select board/school committee/finance committee) meetings.",
+    "official": "Started\trecording\tTrust\tFund\tCommission\tmeetings",
+    "note": "Ours says trust fund recording will begin; official says it has already started, and 'starting the next day' for tri-board is not in the official text, so check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting",
+    "t": 2689,
+    "ours": "Next meeting set for August 4th at 3:00pm as a schedule exception.",
+    "official": "Next meeting: - August 4th , 2025 3:00 pm.",
+    "note": "Same date and time; the 'exception' framing is only in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brian",
+    "ours": "Brian (committee member, newly sworn in)",
+    "official": "PACC\tmembers\tpresent:\tSteve\tWalker,\tBrian\tVienneau,\tFaith\tBeall,\tSteve\tArchambault",
+    "note": "Same person, with the surname supplied by official.",
+    "official_reading": "Brian Vienneau"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Faith",
+    "ours": "Faith (vice chair (elected this meeting))",
+    "official": "PACC\tmembers\tpresent:\tSteve\tWalker,\tBrian\tVienneau,\tFaith\tBeall,\tSteve\tArchambault",
+    "note": "Same person; official gives the surname.",
+    "official_reading": "Faith Beall"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: manager Joe Tol",
+    "ours": "Joe Tol (PAC department manager, presenter of manager's monthly report)",
+    "official": "Manager:\tJo\tToale",
+    "note": "Misheard name; same manager.",
+    "official_reading": "Jo Toale"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Steve Archambault",
+    "ours": "",
+    "official": "PACC\tmembers\tpresent:\tSteve\tWalker,\tBrian\tVienneau,\tFaith\tBeall,\tSteve\tArchambault",
+    "note": "A fourth member who moved and seconded motions is not among our attendees."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:27:16Z",
+   "cost_usd": 0.252301
+  }
  }
 }

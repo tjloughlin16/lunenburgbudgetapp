@@ -295,5 +295,184 @@
    "at": "2026-09-27T12:42:13Z",
    "cost_usd": 0.188226
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08182025-7352",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/economic-development-committee/2025-08-18-minutes-7352.txt",
+   "path": "sources/meetings/economic-development-committee/2025-08-18-minutes-7352.pdf"
+  },
+  "official_sha256": "08a761b2620cadbf843d63e55a72bfbfd795ae3e725b7d12a4ff74097ff4425e",
+  "coverage": "full",
+  "summary": "The two records agree on both officer elections, with the same outcomes and roll calls, and on most of the event-planning and scheduling items; the differences are mostly name spellings. The thing to check is the discussion near the end: the official minutes record no $1,200 figure, treat the missing minutes as approved but unposted, and record no decision to send recordings to Danielle. Kathy Clark's role also differs between the records.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 6,
+   "discrepancy": 4,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: elect Josie Gilchrist chair",
+    "ours": "Elect Josie Gilchrist as chair of the Economic Development Committee — passed (roll call: Kathy-yes, Jean-yes, Anna-yes, Josie-yes)",
+    "official": "Joeci Gilchrest volunteered to be the  Chair, this was  seconded by A na \nL ockwood. Cathy  Clark  aye, Jeanne Dupre  aye, A na Lockwood aye, Joeci \nGilchrest aye . All in  favor.",
+    "note": "Same outcome and same four-member roll call; only name spellings differ.",
+    "t": 2585
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: elect Anna Lockwood vice chair",
+    "ours": "Elect Anna Lockwood as vice chair — passed (roll call: Kathy-yes, Jean-yes, Josie-yes, Anna-yes)",
+    "official": "Joeci Gilchrest  nominated A na Lockwood for the V ice C hair  position . Ana  \nLockwood  accepted  the nomination . Cathy Clark aye, Jeanne Dupre  aye,  Joeci \nGilchrest  aye,  Ana Lockwood aye . All in favor.",
+    "note": "Same outcome and same roll call.",
+    "t": 2689
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee names (chair)",
+    "ours": "Josie Gilchrist",
+    "official": "Chair  Joeci Gilchrest",
+    "note": "Misheard spelling of the same person.",
+    "official_reading": "Joeci Gilchrest"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name (Jean Dupri)",
+    "ours": "Jean Dupri",
+    "official": "Member  Jeanne Dupre",
+    "note": "Same member, misheard spelling.",
+    "official_reading": "Jeanne Dupre"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name (Kathy Clark)",
+    "ours": "Kathy Clark",
+    "official": "Member  Cathy Clark",
+    "note": "Same member, spelling differs.",
+    "official_reading": "Cathy Clark"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name (Matthew Brener)",
+    "ours": "Matthew Brener (also heard as Briner)",
+    "official": "Planning Board \nRepresentative Matt Brenner",
+    "note": "Same person, misheard spelling.",
+    "official_reading": "Matt Brenner"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee name (Anna Lockwood)",
+    "ours": "Anna Lockwood",
+    "official": "Vice Chair Ana Lockwood",
+    "note": "Spelling only.",
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jennifer (Warren / Diamond)",
+    "ours": "Jennifer (heard as \"Jennifer Warren\" and \"Diamond\") (town official, addressed as Jen)",
+    "official": "Town \nManager Jennifer Warren-Dyment",
+    "note": "Captions heard 'Diamond' for Dyment; same person, and she is the Town Manager.",
+    "official_reading": "Jennifer Warren-Dyment"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Kathy Clark's role",
+    "ours": "Kathy Clark (town staff / business liaison, as described; left meeting early)",
+    "official": "Member  Cathy Clark",
+    "note": "Ours describes her as town staff, but official lists her as a committee member who voted; check the recording for her role and whether she left early.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Whether the meet-and-greet postponement was decided",
+    "ours": "Committee decided not to postpone the annual town meet-and-greet; proceed this year despite the planning office being short-staffed.",
+    "official": "Jennifer Warren-Dyment suggests pushing the  event into the winter season.",
+    "note": "Official records a postponement suggestion and no decision against it, only an October push; check the recording for whether a decision was made.",
+    "t": 2039
+   },
+   {
+    "kind": "agree",
+    "about": "Event moved to October at Smoke Stack Roasters",
+    "ours": "Agreed to target early October for the event and have Josie contact Smoke Stack Coffee Roasters about venue, drinks, and food.",
+    "official": "Ultimately, Joeci Gilchrest suggests reaching out to Smoke s tack Roaster s  as a \npossible venue and pushing the event into October.",
+    "note": "Same plan; ours says early October and also covers drinks and food, official does not.",
+    "t": 2170
+   },
+   {
+    "kind": "agree",
+    "about": "Subgroup below quorum for event planning",
+    "ours": "Agreed to form a small subgroup (Josie plus others, possibly including ex officio members Matt and Glenn) to make on-the-ground event decisions without needing full committee quorum.",
+    "official": "Matt  Brenner  suggests  putting together a subgroup that does not constitute  a \nquorum for planning purposes.",
+    "note": "Same idea; official records it as a suggestion, ours as agreed.",
+    "t": 2210
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision to reorganize now rather than wait for full attendance",
+    "ours": "On Matt's recommendation, committee agreed to reorganize (elect chair and vice chair) now rather than wait for full attendance.",
+    "official": "",
+    "note": "Official records only the reorganization votes, not this preceding discussion.",
+    "t": 2460
+   },
+   {
+    "kind": "agree",
+    "about": "Charge rewrite deferred until Land Use Director",
+    "ours": "Deferred a full rewrite of the committee's charge/mission until a land use director is hired; members asked to think over what the committee has been doing and should be doing, with Josie to seek outside input (e.g., from the North Central Chamber of Commerce).",
+    "official": "There will be further discussion when there is a \nLand Use Director in place.",
+    "note": "Consistent; official also records the Chamber of Commerce suggestion, attributed to the Town Manager.",
+    "t": 3210
+   },
+   {
+    "kind": "agree",
+    "about": "Survey on meeting day and time",
+    "ours": "Agreed to send a survey to members about meeting day/time availability, noting Tuesdays currently have few other town meetings scheduled.",
+    "official": "Ana Lockwood suggests sending a survey to the members to check availability.",
+    "note": "Same item; the Tuesday remark is only in ours.",
+    "t": 4145
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Small Towns Collaborative website figure and item",
+    "ours": "Small Towns Collaborative website: $1,200",
+    "official": "Joeci Gilchrest shared that the Small Town  In itiative  created by Margaret \nScar s dale currently does not have a Lunenburg  representative.",
+    "note": "Official gives no dollar figure and describes a different item (an initiative with no Lunenburg representative); check the recording around t=4295 for the amount and its context.",
+    "t": 4295
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Handling of past unapproved minutes",
+    "ours": "Going forward, recordings of meetings will be sent to Danielle, who will produce the written minutes, resolving the backlog of unapproved past minutes.",
+    "official": "The re was a discussion about prior  meeting minutes . There are many missing  \nminutes online that had previously been approved but haven ’t been  posted.",
+    "note": "Ours records a decision (recordings to Danielle) and calls the minutes unapproved; official records only discussion and calls them approved but unposted; check the recording.",
+    "t": 4590
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Planning Department updates",
+    "ours": "",
+    "official": "There is a new administrat or for the Planning Board Department, Jennifer \n\nDaigle.",
+    "note": "Official records Planning updates (new administrator, Brian Gingras helping, Adam Burney volunteering) that ours does not.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "Absent Member: Agriculture Commission Representative Maryrae Holman",
+    "note": "Absent member is not in our attendee list.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:29Z",
+   "cost_usd": 0.239505
+  }
  }
 }

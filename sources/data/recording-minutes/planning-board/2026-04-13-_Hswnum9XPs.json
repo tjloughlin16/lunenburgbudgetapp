@@ -452,5 +452,214 @@
    "at": "2026-09-27T02:45:35Z",
    "cost_usd": 0.201014
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04132026-7765",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-04-13-minutes-7765.txt",
+   "path": "sources/meetings/planning-board/2026-04-13-minutes-7765.pdf"
+  },
+  "official_sha256": "c66d8e609dfc4158cd188a2bcf3eef4fe1f4c8ec4f79a4d738118b7651fac108",
+  "coverage": "full",
+  "summary": "The two records agree on most votes: the 222 West Townsend and Zero Reservoir continuances, the bond, the fee schedule, the Lemonster/Leominster right of first refusal and the standard conditions. They differ on the 860 New West Townsend continuance, where our minutes record a vote and the official minutes record only an emailed request, and on who was present, where ours lists five board members and the official minutes list four.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 4,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: continue 222 West Townsend Rd stormwater hearings to 4/27 at 6:35",
+    "t": 2018,
+    "ours": "Continue the public hearings for 222 West Townsend Road (PBSW26-2 through 5) to 27 April at 6:35 — passed",
+    "official": "A. Burney moved to continue until 4/27/26 @ 6:35pm. A. Reid, Second",
+    "note": "Same motion, date and time; the official minutes add the 4/0 count."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue Zero/0 Reservoir Rd storm water permit to 4/27",
+    "t": 4570,
+    "ours": "Continue Zero Reservoir Road storm water permit (PBSW255) to 27 April at 6:35 — passed",
+    "official": "A. Burney moved to continue to 4/27/26 @ 6:35pm. T. Willsmer, Second",
+    "note": "Same continuance, date and time; the official minutes record 4/0."
+   },
+   {
+    "kind": "agree",
+    "about": "Zero Reservoir Rd special permit continuance",
+    "t": 4610,
+    "ours": "Continue Zero Reservoir Road special permit for common driveway (PBSP2510) to 27 April at 6:35 p.m. — passed",
+    "official": "Discussed and voted on in conjunction with Stormwater Permit.",
+    "note": "The official minutes record no separate motion, only that it was voted with the stormwater permit. Our record of a separate vote is consistent with that, but the official minutes also say the applicant intends to withdraw if the stormwater permit is approved."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: continue 860 New West Townsend Rd to 4/27",
+    "t": 4630,
+    "ours": "Continue 860 New West Townsend Road (PBSA261, PBSW261, PBSP261) to 27 April at 6:05 p.m. — passed",
+    "official": "Prior to the meeting R. Proctor (Dillis and Roy) submitted email request to continue until the next meeting 4/27/26",
+    "note": "Ours records a board vote with a 6:05 p.m. time. The official minutes record only an emailed request and no vote or time. Check the recording at this timestamp for a motion and the time."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept 181 Electric Ave bond by cashier's check",
+    "t": 4972,
+    "ours": "Accept the bond for 181 Electric Avenue in the amount heard as $21,260, to be paid by cashier's check — passed",
+    "official": "A. Burney moved to accept bond $21,260 via cashier's check. A. Reid, Second",
+    "note": "Same amount, payment method and outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "181 Electric Ave bond amount",
+    "t": 4737,
+    "ours": "181 Electric Avenue storm water completion bond: $21,000, $21,260",
+    "official": "The belief is $21,260 (including the 30% escalator) should be enough to cover costs of remaining work.",
+    "official_reading": "$21,260",
+    "note": "The captions heard two figures for one bond; the official minutes give only $21,260."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: no bond release before end of year",
+    "t": 4951,
+    "ours": "The board indicated it would not consider releasing the 181 Electric Avenue bond before the end of the calendar year, to allow two growing seasons for loam and seed stabilization.",
+    "official": "A. Burney said there should be no release of the bond before the end of the year.",
+    "note": "Same decision; the two-growing-seasons rationale appears only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: adopt revised fee schedule",
+    "t": 5181,
+    "ours": "Adopt the revised fee schedule as proposed by the director — passed",
+    "official": "A. Burney moved to accept and adopt the new fee schedule as presented. A. Reid, Second",
+    "note": "Same motion and outcome; the official minutes record 4/0."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: right of first refusal, 35 Lemonster/Leominster Rd, inform Select Board",
+    "t": 5690,
+    "ours": "Inform the select board that the planning board does not see a need to pursue the right of first refusal for 35 Lemonster Road given the current financial environment — passed",
+    "official": "A. Burney made a motion to inform the Select Board that we do not feel it is appropriate to pursue in the current financial environment regardless of the potential planning purposes.",
+    "note": "Same decision and outcome. The official wording is that pursuing it is \"not appropriate\"; ours says the board \"does not see a need\"."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name for the right of first refusal",
+    "t": 5307,
+    "ours": "35 Lemonster Road",
+    "official": "35 Leominster Rd – ROFR",
+    "official_reading": "35 Leominster Rd",
+    "note": "The captions misheard the street name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figures heard on the 35 Lemonster/Leominster Rd parcel",
+    "t": 5307,
+    "ours": "35 Lemonster Road right of first refusal: a million or more dollars, $400,000",
+    "official": "",
+    "note": "The official minutes give no dollar figures for this item. The figures come from the captions and should be checked against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Proposed open space acquisition fund amount",
+    "t": 5538,
+    "ours": "Proposed open space acquisition fund: $5,000, $10,000, 5 to $10,000",
+    "official": "",
+    "note": "The official minutes record no open space acquisition fund or amount, so the figure is unverified; the captions also gave several readings."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept revised stormwater permit standard conditions",
+    "t": 5908,
+    "ours": "Accept the revised storm water permit standard conditions as presented — passed",
+    "official": "A. Burney made a motion to accept the new Stormwater Permit Standard Conditions as presented. A. Reid, Second",
+    "note": "Same motion and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: deed language to town counsel",
+    "t": 5836,
+    "ours": "The director will submit the proposed storm water permit standard-conditions deed language to town council for review ahead of the next meeting.",
+    "official": "S. Wallace stated he is meeting with the town council tomorrow and will ask him to review.",
+    "note": "Same action. The official minutes do not mention deed language."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: Zero Reservoir easement language reviewed by counsel",
+    "t": 4301,
+    "ours": "The applicant was directed to draft proposed easement/deed language for the shared drainage system at Zero Reservoir Road, to be reviewed by town counsel before the next meeting, rather than requiring a full homeowners' association.",
+    "official": "A. Burney stated he is not ready to move forward until he sees the language for the easements. M. Brenner agreed. S. Wallace asked if he should have town council review; A. Burney said yes.",
+    "note": "Both records have easement language going to town counsel before the hearing resumes. The official minutes record the chair wanting \"some type of maintenance association\"; ours says an association was not required. Check the recording on that."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: Zero Reservoir ANR extension/continuance",
+    "t": 313,
+    "ours": "The board (via the applicant's agreement) granted a time extension on the ANR filing deadline for Zero Reservoir Road so the applicant can update the plan.",
+    "official": "J. Leclair (McCarty Engineering) requested a continuance to the next meeting. He will submit in writing",
+    "note": "Both record a continuance of the ANR at the applicant's request. Ours adds the filing-deadline extension framing."
+   },
+   {
+    "kind": "agree",
+    "about": "Storm Water Task Force meeting Thursday",
+    "t": 6079,
+    "ours": "The storm water task force will meet Thursday, contingent on the chair submitting the agenda the next day.",
+    "official": "Possibly meeting Thursday 4/16/26",
+    "note": "Both say a Thursday meeting; the official minutes say \"possibly\" and do not mention the agenda condition."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Director's report on by-law draft",
+    "ours": "",
+    "official": "S. Wallace reported he is still gathering examples of by-laws from other communities that are like Lunenburg.",
+    "note": "The official minutes record a director's report on a by-law draft, due mid-May, aimed at next year's annual town meeting. Our minutes list no such item."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: board members present",
+    "ours": "Adam (board member); Amanda (board member); Matt (board member); Bernie (board member); Miss Reed (board member)",
+    "official": "PRESENT: M. Brenner, T. Willsmer, A. Reid, A. Burney",
+    "note": "Ours lists five board members; the official minutes list four. Matt is Matthew Brenner, Amanda/Miss Reed is Amanda Reid, and Adam and possibly Bernie are Adam Burney. T. Willsmer is not listed in ours. Check the recording for who spoke as Bernie and whether Willsmer attended."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant's engineer name and firm",
+    "ours": "Justin McCarti/McCarthy (presenter (McCarthy Engineering, applicant's engineer))",
+    "official": "J. Leclair and Wes Flis (McCarty Engineering) on behalf of applicant",
+    "official_reading": "J. Leclair, McCarty Engineering",
+    "note": "The firm name was misheard. The first name matches (J.) but the surname differs (McCarti vs Leclair), so a person should check the speaker."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Engineer name Wesley Fliss",
+    "ours": "Wesley Fliss (presenter (McCarthy Engineering))",
+    "official": "W. Flis asked if they could tie each depression to a specific lot.",
+    "official_reading": "Wes Flis",
+    "note": "Spelling of the surname differs in the captions."
+   },
+   {
+    "kind": "agree",
+    "about": "Presenter Chris Stoddard",
+    "ours": "Chris Stoddard (presenter (Stoddard Engineering, applicant's engineer))",
+    "official": "Chris Stoddard (Stoddard Engineering) on behalf of the client Kenneth Chaplin",
+    "note": "Same person and firm."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Presenters Masud Brazin and Dan Shen",
+    "ours": "Masud Brazin (presenter (applicant, Alpha Design)); Dan Shen (presenter (Haley Ward, peer review/engineering))",
+    "official": "",
+    "note": "The official minutes name neither person. They mention Graves Engineering as peer reviewer, not Haley Ward, so check these names against the recording."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:18:40Z",
+   "cost_usd": 0.268917
+  }
  }
 }

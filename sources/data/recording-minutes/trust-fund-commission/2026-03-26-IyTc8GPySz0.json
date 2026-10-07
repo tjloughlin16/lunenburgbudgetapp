@@ -333,5 +333,177 @@
    "at": "2026-09-27T02:49:44Z",
    "cost_usd": 0.19616399999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03262026-7740",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2026-03-26-minutes-7740.txt",
+   "path": "sources/meetings/trust-fund-commission/2026-03-26-minutes-7740.pdf"
+  },
+  "official_sha256": "7b552a2921ea022426fffdfc0b836f6a4c9d394c74d017f0566f2a878e9ff9cd",
+  "coverage": "full",
+  "summary": "The two records agree on the main votes and on who was present, but they differ on the override rate, the signature-page vote, and who the information packet goes to. The one thing a reader should know is that the official minutes name the Attorney General as a recipient of the packet, while our minutes name only the Town Manager and Select Board.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 8,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to accept the letter to the Attorney General as written",
+    "ours": "Accept as written the letter to the Attorney General regarding the town's duty as trustee over the charitable trust funds — passed (roll call: Richard Howard - I, John Bowen - I)",
+    "official": "The motion was passed unanimously with Mr Howard voting ‘Aye’ and Chairman Bowen voting ‘Aye’.",
+    "note": "Both records show the motion passing with both members voting aye.",
+    "t": 4696
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Recipients of the information packet",
+    "ours": "Submit the condensed information/submission packet (breach notice, appendix, exhibits) to the Town Manager and Select Board, to start the 30-day cure period before referral to the Attorney General — passed (roll call: Richard Howard - I, John Bowen - I)",
+    "official": "Chairman  Bowen  then  made  a  motion  to  submit  the  information  packet  to  be  submitted \n to  the  Attorney  General,  the  Town  Manager  and  the  Select  Board,  to  be  submitted \n forthwith  to  start  the  tolling  time  for  the  30  days  response  window.",
+    "note": "The vote passed in both, but ours sends the packet to the Town Manager and Select Board and only later refers it to the AG, while the official text lists the AG as a recipient now; check the recording near t=4738 for the motion's exact wording.",
+    "t": 4738
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on the signature page for this packet",
+    "ours": "Adopt the signature page certifying this specific submission packet as an official document — not audible",
+    "official": "Chairman  Bowen  put  forth  a  motion  to  accept  the  signature  page  as  written,  Mr  Howard \n seconded  the  motion.  The  members  signed  a  signature  page  for  the  information  packet \n to  be  sent  to  the  Town.",
+    "note": "Ours records the outcome as not audible, and the official minutes record a motion and second but no vote result; check the recording near t=4824 to see whether a vote was taken.",
+    "t": 4824
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to adopt a standard blank signature form",
+    "ours": "Adopt a blank standard signature page as a permanent form for future board filings — passed unanimously (as heard)",
+    "official": "Motion  passes  unanimously  with  Mr \n Howard  voting  ‘aye’  and  Chairman  Bowen  voting  ‘aye’.",
+    "note": "Both records show the blank signature form approved unanimously.",
+    "t": 4968
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to align American Legion Post 283 and Poor Fund eligibility with the Legion constitution",
+    "ours": "Amend the written operating policy eligibility criteria for the American Legion Poor Fund and Post 283 Fund to align with the American Legion Constitution's eligibility requirements — passed/ratified (roll call: Richard Howard - I, John Bowen - I)",
+    "official": "The  vote  was \n unanimous  with  Mr  Howard  voting  ‘aye’  and  Chairman  Bowen  voting  ‘aye’.",
+    "note": "Same motion and outcome in both records.",
+    "t": 5238
+   },
+   {
+    "kind": "caption_error",
+    "about": "Override tax rate increase per $1,000",
+    "ours": "Proposed override tax rate: $166 per $1,000, $1.89 per thousand, $700 a year",
+    "official": "Chairman \n Bowen  advocated  increasing  the  rate  by  $1.66/1,000  increase  which  he  felt  was \n necessary,  now  it  is  $1.89/1,000  due  to  inaction.",
+    "note": "The captions rendered $1.66 per $1,000 as $166; the $1.89 figure agrees, and the official minutes do not give the $700 a year figure.",
+    "t": 499,
+    "official_reading": "$1.66/1,000"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Trust fund investment income figures",
+    "ours": "Trust fund investment income: 84,000, 60,000",
+    "official": "",
+    "note": "The official minutes give no investment income figures, so these are unconfirmed.",
+    "t": 605
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant article request for trust investigation funding",
+    "ours": "Warrant article request for trust investigation funding: $14,000",
+    "official": "",
+    "note": "The official minutes mention the cost of the investigation but give no $14,000 figure.",
+    "t": 1691
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Repayment of improperly dispersed funds to the Worthy Poor fund",
+    "ours": "Repayment of improperly dispersed trust funds: $2,800",
+    "official": "",
+    "note": "The official minutes refer generally to a 2017 loan that was never recovered but state no amount and no repayment obligation.",
+    "t": 2395
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Woodward School for Girls v. Quincy liability",
+    "ours": "Woodward School for Girls v. Quincy case liability: $3.5 million",
+    "official": "",
+    "note": "The official minutes mention case law on municipal liability and a Supreme Judicial Court ruling but not this case or figure.",
+    "t": 1711
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Nathaniel Day trust gift value",
+    "ours": "1901 Nathaniel Day trust gift, present-day value: $35,000",
+    "official": "",
+    "note": "The official minutes do not mention this trust or its value.",
+    "t": 3477
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Accumulated undistributed trust earnings",
+    "ours": "Accumulated undistributed trust earnings: $62,000",
+    "official": "",
+    "note": "The official minutes do not give this figure.",
+    "t": 4347
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tabling of prior meeting minutes to April 9",
+    "ours": "Review and approval of the January 8th, January 29th, February 12th, and March 12th meeting minutes was tabled to the April 9th meeting agenda.",
+    "official": "",
+    "note": "The official minutes record no approval or tabling of earlier minutes; they give only the next meeting date of April 9, 2026.",
+    "t": 5422
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Follow-up with the town on posting the fund application manual",
+    "ours": "Chair will follow up with the town (Carrara) on posting the fund application manual to the website, which has stalled.",
+    "official": "",
+    "note": "The official minutes do not mention the application manual.",
+    "t": 5361
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "John Bowen (chairman); Richard Howard (vice chairman)",
+    "official": "Present  were  Mr \n Howard  and  Chairman  Bowen.",
+    "note": "Both records show the same two members present; the official minutes do not give Howard's title.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chairman Bowen's stated position on the override",
+    "ours": "",
+    "official": "Chairman  Bowen  stated  his  position \n on  the  override  and  is  voting  no.",
+    "note": "Our minutes do not record how the chairman said he would vote on the override.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Susan Howard Poor Fund missing documentation",
+    "ours": "",
+    "official": "Chairman  Bowen  described  his  efforts  to  locate  paperwork  on  the  Susan  Howard  Poor \n Fund,  no  declaration  can  be  located  and  the  funds  cannot  be  located.",
+    "note": "Our minutes do not record this item.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Communication with the Division of Local Services",
+    "ours": "",
+    "official": "Chairman  Bowen  read  some  communication  with  and  from  the  Division  of  Local \n Services,  the  advice  was  to  contact  the  Attorney  General’s  office.",
+    "note": "Our minutes do not record this item.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:19:01Z",
+   "cost_usd": 0.24607099999999998
+  }
  }
 }

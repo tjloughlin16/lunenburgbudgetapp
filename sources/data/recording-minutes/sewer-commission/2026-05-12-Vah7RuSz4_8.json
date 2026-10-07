@@ -347,5 +347,204 @@
    "at": "2026-09-27T02:33:01Z",
    "cost_usd": 0.18948800000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05122026-7803",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-05-12-minutes-7803.txt",
+   "path": "sources/meetings/sewer-commission/2026-05-12-minutes-7803.pdf"
+  },
+  "official_sha256": "1816cffc08e9be8fdbccc71863decb9f671addec43120634d22d1f995c205270",
+  "coverage": "full",
+  "summary": "The two records agree on the Q4 FY26 commitment vote and amount, the DEP 180-day deadline, the $4,500 drain layer proposal, and the 6 pm meeting time. Our captions garbled most names, and the official minutes record a minutes-approval vote, a Town Meeting report and a leaking-clog report that ours omit.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Q4 FY26 commitment vote",
+    "ours": "Approve the Q4 FY26 sewer commitment (quarterly billing) — passed",
+    "official": "To accept the Q4FY26 Commitment.                   Roll Call Vote: Arthur-aye, Dan-aye, Chip-aye and Scott-aye.",
+    "note": "Both record the commitment being accepted; the official minutes show a unanimous 4-0 roll call.",
+    "t": 962
+   },
+   {
+    "kind": "agree",
+    "about": "Q4 FY26 commitment amount",
+    "ours": "Quarter 4 FY26 sewer commitment billing: $304,465.51",
+    "official": "Andrew reported the Commitment was $304,465.51",
+    "note": "Identical figure.",
+    "t": 858
+   },
+   {
+    "kind": "agree",
+    "about": "DEP 180-day deadline",
+    "ours": "DEP-mandated private sewer system plans and ordinances: 180 days",
+    "official": "DEP gave them 180 days to find all the plans and maintenance",
+    "note": "Same figure; ours adds 'ordinances' where the official says 'maintenance procedures'.",
+    "t": 1005
+   },
+   {
+    "kind": "agree",
+    "about": "Drain layer proposal $4,500",
+    "ours": "Drain layer's proposal to extend sewer line at 100 Laurel Lane: 4,500 bucks",
+    "official": "he could continue the 6” line from the manhole to the house for $4,500.",
+    "note": "Same amount and item.",
+    "t": 1553
+   },
+   {
+    "kind": "agree",
+    "about": "Meetings kept at 6 pm",
+    "ours": "Keep Sewer Commission meetings at 6:00 p.m. rather than reverting to the prior alternating 6:00/7:00 p.m. schedule.",
+    "official": "The Commissioners agreed to keep all meetings at 6 pm.",
+    "note": "Same decision.",
+    "t": 1963
+   },
+   {
+    "kind": "agree",
+    "about": "Manhole repair follow-up",
+    "ours": "Continue following up with the contractor for manhole repair scheduling dates; keep it on future business.",
+    "official": "He will email them again.",
+    "note": "Same follow-up; the official minutes also list manhole repair under future agenda items.",
+    "t": 332
+   },
+   {
+    "kind": "agree",
+    "about": "Drain layer to dig up lateral",
+    "ours": "Drain layer to attempt to dig up and locate the disputed lateral on Whalen/Otis on Thursday; commission to wait and see.",
+    "official": "The drain layer will dig it up to locate the lateral.",
+    "note": "Same action; the 'Thursday' timing appears only in ours.",
+    "t": 753
+   },
+   {
+    "kind": "agree",
+    "about": "Drain layer option at 100 Laurel Lane",
+    "ours": "Pursue the drain layer's proposal to extend the existing 6-inch line rather than renting a sonde locator, pending his estimate.",
+    "official": "Bill said he could rent a Sonde to try tracking the line.  However, he got a call from the project’s \nDrain Layer who said he could continue the 6” line from the manhole to the house for $4,500.",
+    "note": "Both describe the sonde option and the drain layer's extension offer. The official minutes record no decision between them; ours records a decision to pursue the extension.",
+    "t": 1571
+   },
+   {
+    "kind": "agree",
+    "about": "Private sewer ways kept on agenda",
+    "ours": "Keep the private sewer ways / DEP matter on the agenda as ongoing current business.",
+    "official": "Scott said to keep it on the agenda for the next meeting.",
+    "note": "Same decision.",
+    "t": 1471
+   },
+   {
+    "kind": "agree",
+    "about": "Research builders for plans",
+    "ours": "Continue researching and contacting builders/condo associations for private sewer system plans ahead of the DEP deadline.",
+    "official": "Arthur suggested \nasking the builders for plans",
+    "note": "Same direction. The official minutes also mention checking Passios storage and the building department.",
+    "t": 1088
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Scott Dall",
+    "ours": "Scott Memole (vice chair)",
+    "official": "Vice-Chair- Scott Dall",
+    "note": "Same role; the captions misheard the surname.",
+    "official_reading": "Scott Dall",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Dan Proctor",
+    "ours": "Dan Broderick (member)",
+    "official": "Clerk- Dan Proctor",
+    "note": "Same first name; the captions misheard the surname, and the official minutes list him as clerk, not member.",
+    "official_reading": "Dan Proctor",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Arthur Katis",
+    "ours": "Arthur Kates (member)",
+    "official": "Member: Arthur Katis",
+    "note": "Spelling variant of the surname.",
+    "official_reading": "Arthur Katis",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Andrew Valliere",
+    "ours": "Andrew Valeri (sewer business manager / staff)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "note": "Spelling variant of the surname.",
+    "official_reading": "Andrew Valliere",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Chip Wilson, Bill Bernard, Jane Ranley",
+    "ours": "Chip Wilson (member); Bill Bernard (DPW director / staff); Jane Ranley (staff)",
+    "official": "Member: Arthur Katis and Chip Wilson, DPW Director- Bill \nBernard",
+    "note": "Names match; Jane Ranley appears as Minutes Clerk in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair absent",
+    "ours": "",
+    "official": "Absent: Chair- Brett Ramsden",
+    "note": "Our minutes do not list the absent chair.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Minutes of 4/28/26 approval vote",
+    "ours": "",
+    "official": "To accept the minutes of 4/28/26.                                              Roll Call Vote: Chip-aye, Dan-aye and Scott-aye.",
+    "note": "The official minutes record a vote accepting the 4/28/26 minutes (3-0, before Arthur joined). Ours has no such vote; check the recording near the start.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sonde rental at $140 a day",
+    "ours": "Rental of sonde locating device for 100 Laurel Lane: 140 bucks a day",
+    "official": "",
+    "note": "The official minutes mention renting a Sonde but give no daily rate; check the recording at this timestamp.",
+    "t": 1533
+   },
+   {
+    "kind": "only_in_official",
+    "about": "314 Whalom Road lateral and sketches",
+    "ours": "",
+    "official": "314 Whalom Road- Andrew reported they did a video inspection of the line last Friday and found the lateral.",
+    "note": "Ours mentions the lateral dig but does not describe the video inspection, the missing tie card or the sketches.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Meeting report and sewer by-law article",
+    "ours": "",
+    "official": "The Article passed with flying colors.",
+    "note": "The official minutes report that the sewer by-law wording change passed at Town Meeting; ours has no mention.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Leominster Road clog report",
+    "ours": "",
+    "official": "Bill reported they had a call about a clog at a house on Leominster Road.",
+    "note": "Public comment item not in our minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:16:46Z",
+   "cost_usd": 0.272194
+  }
  }
 }

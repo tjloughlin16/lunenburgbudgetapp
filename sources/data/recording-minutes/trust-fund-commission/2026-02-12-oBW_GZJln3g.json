@@ -279,5 +279,120 @@
    "at": "2026-09-27T11:09:24Z",
    "cost_usd": 0.193882
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02122026-7649",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2026-02-12-minutes-7649.txt",
+   "path": "sources/meetings/trust-fund-commission/2026-02-12-minutes-7649.pdf"
+  },
+  "official_sha256": "d34f18e603318c3c95d78887a083b4b972d8b4c44be6af391343aa8777713654",
+  "coverage": "full",
+  "summary": "The two records agree on all three votes, the warrant article amount, the March 3rd presentation and the deferral of past minutes. Two things differ: the official minutes record no executive-session or treasurer's-office handling of DD214 files, and they record no \"on hold\" decisions on the risk management policy or the Attorney General review. They also name the attendees, which our captions could not.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: veterans' trust fund eligibility manual (disqualification policy)",
+    "ours": "Adopt the trust fund dispersement eligibility instruction manual (disqualification policy) for veterans/military trust funds, including the two American Legion funds — passed (voice vote, 'I' 'I')",
+    "official": "Motion was passed with Chairman Bowen voting ‘aye’ and Mr Howard voting ‘aye’",
+    "note": "Both records show the veterans' manual adopted by a two-member voice vote; our 'I' 'I' is two ayes.",
+    "t": 1851
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: income-based eligibility manual",
+    "ours": "Adopt the trust fund dispersement eligibility instruction manual based on income, for income-based trust funds — passed, described as unanimous",
+    "official": "Mr Howard vote =  aye,  Chairman  Bowen  =aye.",
+    "note": "Both records show the income-based manual adopted, with both members voting aye.",
+    "t": 3279
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: donated funds management and distribution policy, section 14 excepted",
+    "ours": "Adopt the Board of Commissioner Trust Funds policy for the management and distribution of donated funds, excepting section 14 pending town meeting ratification — passed (voice vote, 'I' 'I')",
+    "official": "Vote  on  motion  was  Mr  Howard  =  aye,  Chairman  Bowen  =  aye.",
+    "note": "Both records show the policy adopted with section 14 excepted until annual Town Meeting ratifies it.",
+    "t": 4867
+   },
+   {
+    "kind": "agree",
+    "about": "Warrant article amount for cy pres legal expenses",
+    "ours": "Warrant article: appropriation for legal expenses related to cy pres proceedings: $14,252.39",
+    "official": "($14,252.39)",
+    "note": "The amount is the same in both.",
+    "t": 3444
+   },
+   {
+    "kind": "agree",
+    "about": "Select Board presentation on March 3rd",
+    "ours": "Chair scheduled a presentation to the select board for March 3rd covering the bylaw and warrant articles.",
+    "official": "On  March  3rd  Chairman  Bowen  is  scheduled  to  make  a  presentation  to  the  Select  Board.",
+    "note": "Both records give the same date and audience.",
+    "t": 403
+   },
+   {
+    "kind": "agree",
+    "about": "Deferral of prior meeting minutes",
+    "ours": "Ratification of the January 8, 2026 and January 29, 2026 meeting minutes was deferred to the next meeting to allow more review time.",
+    "official": "Will  plan  to  review  and  approve  past  meeting  minutes  at  the  next  meeting.",
+    "note": "Both records defer approval of past minutes to the next meeting. The official minutes do not give the January dates.",
+    "t": 4994
+   },
+   {
+    "kind": "caption_error",
+    "about": "Federal poverty figures for income eligibility",
+    "ours": "Federal poverty guideline figures used for income-based fund eligibility: 21,227, 5,320, 63,840, 86,000",
+    "official": "$21,227  $22,025  $31,920  $39,900  $47,880  $63,840  $1,769  $1,835  $2,660  $3,325  $3,990  $5,320",
+    "note": "21,227, 5,320 and 63,840 match the Appendix B family-size-1 row. 86,000 is not in that row; 86,560 is the 400% figure for family size 2, so check it against the recording.",
+    "official_reading": "$86,560",
+    "t": 3082
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Handling of DD214 case files",
+    "ours": "DD214 case files for veteran fund applicants will be kept in the treasurer's office, not with the board, and reviewed only in executive session.",
+    "official": "verification  of  DD-214  information  will  need  to  be  performed  by  Michelle  Durkey,  Veteran's  Service  Agent",
+    "note": "The official minutes give verification to the Veterans' Service Agent and say nothing of storage in the treasurer's office or review in executive session. Check the recording at this point to see whether a decision was made.",
+    "t": 907
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Risk management policy review on hold",
+    "ours": "Review of the risk management policy remains on hold while warrant article work is prioritized.",
+    "official": "",
+    "note": "The official minutes do not mention the risk management policy.",
+    "t": 5077
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attorney General public charities review on hold",
+    "ours": "Review of the trust with the Attorney General's public charities division is on hold pending the outcome of annual town meeting.",
+    "official": "Goals  -  no  update  on  interns  or  real  estate  investigations.",
+    "note": "The official minutes cover goals but do not mention the Attorney General review or its hold.",
+    "t": 5089
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "the Chair (name not stated in captions) (Chair); Richard (Trustee/board member)",
+    "official": "Present  were  Mr  Howard  and  Chairman  Bowen.",
+    "note": "Both records show two members. The official minutes name them as Chairman Bowen and Mr Howard; our captions heard only 'Richard' and no chair name, which probably matches Mr Howard."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:20:19Z",
+   "cost_usd": 0.29254319999999995
+  }
  }
 }

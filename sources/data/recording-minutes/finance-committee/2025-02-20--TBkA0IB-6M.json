@@ -447,5 +447,201 @@
    "at": "2026-10-03T11:51:17Z",
    "cost_usd": 0.19700499999999999
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02202025-6992",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-02-20-minutes-6992.txt",
+   "path": "sources/meetings/finance-committee/2025-02-20-minutes-6992.pdf"
+  },
+  "official_sha256": "0fa318b17a6e6d74d75675550ab940054cf7ce50bc33ac0771c4c142a745135d",
+  "coverage": "full",
+  "summary": "The two records agree on the main facts: the veterans' benefits cut, the PACK figures, the library's ARPA and staffing numbers, and the roughly $22 million building proposal. They differ on a few library figures, on the PACK income and expense totals (which our captions garbled), and on our \"decisions\", which are not votes in the official minutes. Our minutes record the library state-requirement as 549,500 against the official $549,755, and the official minutes record no vote or decision on the veterans line.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 7,
+   "discrepancy": 4,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Veterans benefits FY26 reduction 97,000 to 77,000",
+    "ours": "Veterans benefits (Chapter 115) FY26: 97,000, 77,000, 20,000",
+    "official": "The FY26 veterans’ beneﬁts are being reduced from 97,000 to 77,000",
+    "note": "Same reduction and amounts; the 20,000 is the difference.",
+    "t": 636
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Veterans benefits line decision",
+    "ours": "Veterans benefits line to be reduced for FY26 as presented, with option to adjust later.",
+    "official": "Jay Simeone questions what happens if a veteran is added to receive \n beneﬁts. Michelle Durkee conﬁrms there is money in the budget for \n coverage.",
+    "note": "Ours records a decision to reduce with an option to adjust later; the official minutes record only a presentation and a Q&A with no decision. Check the recording near t=743 to see whether a decision was actually made.",
+    "t": 743
+   },
+   {
+    "kind": "caption_error",
+    "about": "Veterans service officer name",
+    "ours": "Michelle derky (presenter, veteran service officer)",
+    "official": "The Veterans Service Agent, Michelle Durkee, provided the presentation.",
+    "note": "Misheard surname.",
+    "official_reading": "Michelle Durkee"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Mike Rupp",
+    "ours": "Mike rup (member (new))",
+    "official": "Committee Member Mike Rupp",
+    "note": "Misspelled in captions.",
+    "official_reading": "Mike Rupp"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "Jennifer Warren Diamond (town manager)",
+    "official": "Jennifer Warren-Dyment has no reports to present.",
+    "note": "Misheard surname.",
+    "official_reading": "Jennifer Warren-Dyment"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Library director name",
+    "ours": "M Hammond (presenter, library director)",
+    "official": "The Director of the Lunenburg Public Library, Muir Haman, provided the \n presentation.",
+    "note": "Misheard name.",
+    "official_reading": "Muir Haman"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Mr Gray attendee",
+    "ours": "Mr Gray (member)",
+    "official": "Clerk Tom Gray",
+    "note": "Same person, given by full name in the official minutes.",
+    "official_reading": "Tom Gray"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance director Izzy",
+    "ours": "Izzy (finance staff)",
+    "official": "Ezequiel Ayala states there was a request at the last Finance Committee meeting for",
+    "note": "Likely the same person, heard as a nickname.",
+    "official_reading": "Ezequiel Ayala"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other members present and absent",
+    "ours": "",
+    "official": "Present Members: Vice Chair Jean Russell, Clerk Tom Gray Committee Member Tanya Dall, \nCommittee Member Ana Lockwood, Committee Member Mike Rupp, \nCommittee Member Jay Simeone \nAbsent Member: Chair Chris Menard",
+    "note": "Our attendee list lacks Russell, Dall, Lockwood, Simeone and the absent chair.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "PACK ARPA and income components",
+    "ours": "PACK invested reserves: 720,000, 35,000, 13,000",
+    "official": "- Investment interest: $35,430      ",
+    "note": "The 35,000 and 13,000 match the investment and town interest lines. The 720,000 reserve is not in the official minutes.",
+    "t": 1512
+   },
+   {
+    "kind": "caption_error",
+    "about": "PACK FY26 income and expense totals",
+    "ours": "PACK FY26 income and expense: 146,000, 194,50, 194,195 656, $216",
+    "official": "Total income: $194,656",
+    "note": "The garbled 194,50 and 194,195 656 correspond to the total income of $194,656; the Comcast figure is $146,226.",
+    "official_reading": "$194,656",
+    "t": 1557
+   },
+   {
+    "kind": "discrepancy",
+    "about": "PACK total expenses",
+    "ours": "194,195 656, $216",
+    "official": "Total expenses: $194,872",
+    "note": "Ours does not give a clean expense total; the official minutes say $194,872. Check the recording for the expense total.",
+    "t": 1557
+   },
+   {
+    "kind": "only_in_official",
+    "about": "PACK ARPA spending",
+    "ours": "",
+    "official": "ARPA funds of $50,700 have been spent on video graph kits, studio and \nbroadcast audio. ",
+    "note": "Our minutes have no PACK ARPA figure.",
+    "t": 1512
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Library state-required appropriation",
+    "ours": "Library certification minimum appropriation: 549,500, 625,000, 2 and a half%",
+    "official": "The state requirement for appropriation for FY 26: $549,755",
+    "note": "549,500 against $549,755 is a difference of 255, which captions might explain, but the speaker's figure should be checked. Ours also records 2.5%, which the official minutes lack.",
+    "t": 3393
+   },
+   {
+    "kind": "agree",
+    "about": "Library interim town manager recommended budget",
+    "ours": "Library interim town manager recommended budget: $625,000",
+    "official": "The recommended FY 26 budget from the Interim Town Manager: $625,000",
+    "note": "Same figure.",
+    "t": 4837
+   },
+   {
+    "kind": "agree",
+    "about": "Library ARPA teen room",
+    "ours": "Library ARPA funds for teen room: $119,000",
+    "official": "This was \n     funded with $119,000 of ARPA money.",
+    "note": "Same figure.",
+    "t": 2880
+   },
+   {
+    "kind": "agree",
+    "about": "Library IT replacement",
+    "ours": "Library IT replacement plan: $13,500",
+    "official": "$13,500 for IT-related replacements.",
+    "note": "Same figure.",
+    "t": 4246
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Library FY26 budget request",
+    "ours": "",
+    "official": "Budget request for FY26: $646,617",
+    "note": "The $646,617 request is not in our figures.",
+    "t": 3237
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Municipal building design proposal",
+    "ours": "Municipal building design proposal: $21 million, 22 million3, 214",
+    "official": "The proposal was around 22 million dollars for renovations of \n the Ritter Building and the Town Hall.",
+    "note": "We hear both $21 million and 22 million; the official says around 22 million. Check the recording for which figure was stated.",
+    "t": 8231
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager budget presentation date",
+    "ours": "Town manager targets next Thursday for her budget presentation to the committee.",
+    "official": "",
+    "note": "The official minutes do not mention this target date; they only list upcoming meeting dates.",
+    "t": 8086
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 115 reimbursement and streaming fee legislation",
+    "ours": "Chapter 115 reimbursement: 75%",
+    "official": "",
+    "note": "The 75% reimbursement, streaming fee percentages, library state aid, CW Mars and library programs figures appear only in ours.",
+    "t": 530
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:54:53Z",
+   "cost_usd": 0.2397794
+  }
  }
 }

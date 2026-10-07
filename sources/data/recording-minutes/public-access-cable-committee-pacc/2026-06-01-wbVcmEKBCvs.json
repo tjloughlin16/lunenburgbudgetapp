@@ -360,5 +360,175 @@
    "at": "2026-09-27T02:26:54Z",
    "cost_usd": 0.1895
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06012026-7823",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2026-06-01-minutes-7823.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2026-06-01-minutes-7823.pdf"
+  },
+  "official_sha256": "6b088eb0bfa0e8387ef0fcc5851f822976f76b454bebd9b849cd1ce0cc6982e6",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the July 6 6:00 pm Wallace Room meeting and the new 8-input ATEM, and most name differences are caption errors. The official minutes record two votes (5/14 minutes, S. Walker's term renewal) that ours lacks, and ours records several decisions (website duties, policy book, policy review, PACC organizational meeting, advisory committee scheduling) that the official minutes do not mention.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 5,
+   "discrepancy": 8,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "July 6 meeting time and place",
+    "t": 469,
+    "ours": "Moved the July 6th meeting from 3:00 p.m. to 6:00 p.m. ... meeting will be in the Wallace Room.",
+    "official": "Next\tmeeting:\t\tMonday,\tJuly\t6,\t2026\tat\t6:00\tpm.\t\t\tWallace\tRoom",
+    "note": "Both give July 6 at 6:00 pm in the Wallace Room; the official minutes do not mention the move from 3 pm."
+   },
+   {
+    "kind": "agree",
+    "about": "Replacement ATEM switcher, eight input",
+    "t": 770,
+    "ours": "replacement broadcast equipment (ATEM switcher): eight input",
+    "official": "Purchased\tnew\t8\tinput\tATEM.\tThe\told\tone\tburnt\tout.",
+    "note": "Same item; ours gives no price and the official minutes give none either."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Station manager name",
+    "ours": "Joe (Joe Told, as heard) (station/business manager)",
+    "official": "Manager:\tJo\tToale",
+    "note": "Misheard name for the same role.",
+    "official_reading": "Jo Toale"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Committee member Beth",
+    "ours": "Beth (committee member)",
+    "official": "Faith\tBeall",
+    "note": "Likely the same person misheard; check that Beth is Faith Beall.",
+    "official_reading": "Faith Beall"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Members present: Steve Walker and Steve Archambault",
+    "ours": "Steve (committee member)",
+    "official": "PACC\tmembers\tpresent:\tSteve\tWalker,\tBrian\tVienneau,\tSteve\tArchambault,\tFaith\tBeall",
+    "note": "Official lists four members including two Steves; ours lists one Steve plus an unnamed chair, so check who chaired."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member on cable advisory committee",
+    "t": 1691,
+    "ours": "Brian Leptonen (replacing Amanda, who resigned from the select board)",
+    "official": "Brien\tLehten\t–\tSelect\tBoard\t(confirmed)",
+    "note": "Name misheard; the 'confirmed' vs 'pending appointment' status is a separate finding.",
+    "official_reading": "Brien Lehten"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Community rep Karen Menard",
+    "t": 1691,
+    "ours": "Karen Menard",
+    "official": "Karin\tMenard\t–\tCommunity\tRep.",
+    "note": "Spelling of first name.",
+    "official_reading": "Karin Menard"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Community rep Tom Bodkin",
+    "t": 1691,
+    "ours": "Tom Bodkin",
+    "official": "Tom\tBodkins\t–\tCommunity\tRep.",
+    "note": "Surname differs by one letter.",
+    "official_reading": "Tom Bodkins"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cable advisory committee: status and next step",
+    "t": 1691,
+    "ours": "membership set: Brian Leptonen..., Karen Menard, and Tom Bodkin, pending select board appointment; first meeting to be scheduled by contacting Cathy Herrick after June 16th.",
+    "official": "Once\tcommittee\tis\tfinalized\tan\torganizational\t\tmeeting\twill\tbe\tscheduled.",
+    "note": "Ours has all three pending; official has the Select Board member confirmed and only two pending, and gives no Cathy Herrick or June 16 step. Check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "July 6 as PACC organizational meeting",
+    "t": 1900,
+    "ours": "Set the July 6th meeting, 6:00 p.m., as PACC's organizational meeting to fill two open committee seats and set the year's calendar.",
+    "official": "Next\tmeeting:\t\tMonday,\tJuly\t6,\t2026\tat\t6:00\tpm.",
+    "note": "Official minutes call July 6 the next meeting and tie an organizational meeting to the advisory committee being finalized; check what was decided."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Master plan 'motion to ignore'",
+    "t": 1671,
+    "ours": "Motion to ignore (master plan update, no news to report) — not audible",
+    "official": "Master\tPlan:\t\tNo\treport",
+    "note": "Ours records a motion, likely misheard; the official minutes record none. Check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of 5/14/2026 minutes",
+    "ours": "",
+    "official": "Motion\tto\taccept\t5/14/2026\tminutes\tas\tamended\t•\t(S.Archambault,\t2nd\tF.Beall),\tpassed.",
+    "note": "Vote only in the official minutes; ours records no vote. Check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "S. Walker's term renewal",
+    "ours": "",
+    "official": "S.Waker’s\tterm\tis\tup\tand\twas\tunanimously\tasked\tto\trenew",
+    "note": "Decision only in the official minutes; ours records none. Check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Website updates taken over by Steve",
+    "t": 1345,
+    "ours": "Agreed that Steve (PACC) will take over doing the town website updates for the committee's own page",
+    "official": "",
+    "note": "Decision only in ours; official minutes are silent. Check which Steve and confirm."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Purchasing policy cheat sheet left out of policy book",
+    "t": 1406,
+    "ours": "Agreed not to publish the town purchasing policy 'cheat sheet' in the committee's posted policy book",
+    "official": "PACC\tPolicy\tUpdate:\t•\tAll\tare\tnow\taccounted\tfor.\tNeed\tto\tfinalize\tformats.",
+    "note": "Decision only in ours; official gives only a brief policy status. Check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Monthly review of policy/bylaw sections",
+    "t": 1486,
+    "ours": "Agreed to review the consolidated policy/bylaw sections one or two at a time each month going forward, starting with equipment use and drone policy.",
+    "official": "",
+    "note": "Decision only in ours; official has nothing on a monthly review. Check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town budget line-item transfers discussion",
+    "t": 1176,
+    "ours": "General discussion of town budget line-item transfers, now requiring town manager approval rather than department-head discretion alone",
+    "official": "",
+    "note": "Discussion only; no transfer was voted and the official minutes omit it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Account balance",
+    "ours": "",
+    "official": "Balance\t$1,063,010.16",
+    "note": "A figure in the official manager's report that ours does not capture."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:16:24Z",
+   "cost_usd": 0.250047
+  }
  }
 }

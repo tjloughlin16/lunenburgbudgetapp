@@ -359,5 +359,231 @@
    "at": "2026-10-04T11:07:11Z",
    "cost_usd": 0.206617
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02132025-6995",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-02-13-minutes-6995.txt",
+   "path": "sources/meetings/finance-committee/2025-02-13-minutes-6995.pdf"
+  },
+  "official_sha256": "ead2ebd2f315e47066b6f761dc081266c5ef1775a33e8bd0398529a839f432cd",
+  "coverage": "full",
+  "summary": "The two records agree on the main events: the reserve fund transfer for the school 911 cabling, the deferred budget presentation, the upcoming meeting schedule, and who attended. They differ on the transfer amounts (ours $583,120 and $7,254.65; official $58,320 and $7,254.65), on the reserve balance arithmetic, and on the cabling cost. The thing to check first is the transfer amounts, because the motion amounts are the actual vote.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 9,
+   "discrepancy": 3,
+   "only_in_ours": 4,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Reserve transfer to contracted services",
+    "ours": "From the reserve fund to the school department contracted services — $583 120",
+    "official": "There was a motion to transfer $58,320 from the reserve fund to the school department contracted services",
+    "official_reading": "$58,320",
+    "note": "Captions garbled '$58,320' into '$583 120'; the two transfers sum to $65,574.65, which matches the total cabling cost, so $58,320 is consistent.",
+    "t": 820
+   },
+   {
+    "kind": "caption_error",
+    "about": "Reserve transfer to computers purchase and lease",
+    "ours": "From the reserve fund to the school department computers purchase and lease line items — $725 4.65",
+    "official": "$7,254.65 from the reserve fund to the school department computers purchase and lease line items",
+    "official_reading": "$7,254.65",
+    "note": "Digit grouping garbled in captions; same item and same digits.",
+    "t": 820
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer vote outcome and roll call",
+    "ours": "Recommend transferring from the reserve fund to the school department contracted services and computers purchase and lease line items for the 911 cabling project — passed (roll call; members voted aye, chair announced it passes)",
+    "official": "Roll call vote. Jean Russell aye, Tanya Dall aye, Jay Simeone aye, Chris Menard aye.",
+    "note": "Both records show the transfer passing on a unanimous roll call of four ayes.",
+    "t": 840
+   },
+   {
+    "kind": "caption_error",
+    "about": "Total cost of 911 cabling project",
+    "ours": "School 911 cabling project cost: $ 65,535",
+    "official": "The total cost for \nthe system is $65,574.",
+    "official_reading": "$65,574",
+    "note": "Misheard digits; ours elsewhere also has '65574' in the reserve remaining line.",
+    "t": 362
+   },
+   {
+    "kind": "agree",
+    "about": "Original vendor quote",
+    "ours": "Original vendor requote vs state bid quote: 106,000",
+    "official": "the original quote from the \n company was $106,000.",
+    "note": "The $106,000 original quote matches. The state bid quote is $65,000 in the official minutes and is not given in ours.",
+    "t": 446
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Reserve fund balance after transfer",
+    "ours": "Reserve remaining after transfer: 50 50,000 65574 65, about 120",
+    "official": "$15,000 was expended on the town manager search and  $65,000 was \n for the cabling compliance. This leaves $120,000 in the reserve fund for the \n rest of the year.",
+    "note": "Our figures are garbled, but the 'about 120' leaves it ambiguous whether the official $120,000 is a match; check the recording around t=735 for the stated remainder.",
+    "t": 735
+   },
+   {
+    "kind": "agree",
+    "about": "Reserve fund starting balance",
+    "ours": "Finance Committee reserve fund: $200,000, 15, 185",
+    "official": "Ezequiel Ayala conﬁrmed there is currently $200,000 in the reserve fund.",
+    "note": "Both give $200,000; our '15' matches the $15,000 town manager search spend.",
+    "t": 670
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Transfer amounts: ours vs official, total",
+    "ours": "From the reserve fund to the school department contracted services — $583 120 (voted (recommended, roll call))",
+    "official": "There was a motion to transfer $58,320 from the reserve fund to the school department contracted services and $7,254.65",
+    "note": "Our '$583 120' could be $58,320 or $583,120; the official total $65,574.65 supports $58,320, but confirm against the recording at t=820.",
+    "t": 820
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Additional re-cabling cost not in original budget",
+    "ours": "",
+    "official": "The additional cost of  $60,000 was not in the original budget.",
+    "note": "Our minutes do not record the $60,000 unbudgeted additional cost."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Motion mover and seconder",
+    "ours": "",
+    "official": "by Tanya Dall, \n seconded by  Jay Simeone.",
+    "note": "Our minutes do not name who moved and seconded."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of January 9 minutes",
+    "ours": "",
+    "official": "There was a motion to approve the minutes from January 9th by Jay Simeone, \n seconded by  Tanya Dall. Roll call vote. Jean Russell aye, Tanya Dall aye, Jay \n Simeone aye, Chris Menard  aye.",
+    "note": "A vote in the official minutes with no counterpart in ours; check the recording for whether it was taken."
+   },
+   {
+    "kind": "agree",
+    "about": "Preliminary budget deferred to Feb 27",
+    "ours": "Preliminary budget presentation deferred; the town manager hopes to present the full budget on Feb 27.",
+    "official": "Jennifer Warren-Dyment anticipates presenting the full budget at the next \n Finance Committee meeting on February 27th.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Upcoming meeting schedule",
+    "ours": "Next meeting Feb 20 (Council on Aging, Public Access, Library); Feb 25 police, fire and land use; Feb 27 DPW/facility/sewer plus preliminary budget and capital.",
+    "official": "Thursday 2/27/2025– Presentations by the DPW, Facilities and Sewer",
+    "note": "The dates and departments match; the official minutes additionally list 3/6 Schools and Monty Tech and later dates, and say FY26 Capital is on Feb 27, so check that nothing else was said about the schedule."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Departments to supply full budget with prior-year actuals in Excel",
+    "ours": "Departments to supply the full budget with prior-year actuals, in standardized Excel format.",
+    "official": "",
+    "note": "The official minutes do not record this request."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Members to sign written record of reserve transfer vote",
+    "ours": "Members to sign a written record of the reserve transfer vote next week.",
+    "official": "",
+    "note": "The official minutes do not mention a signed record."
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW internet upgrade cost",
+    "ours": "DPW internet speed upgrade: $1,000 more per year, 50 meg, 500 Meg",
+    "official": "it would cost an additional $1,000 per year.",
+    "official_reading": "$1,000 per year",
+    "note": "Same $1,000 per year; the official minutes omit the 50/500 meg speeds."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fiber construction to DPW cost",
+    "ours": "Fiber construction to DPW: 29,000",
+    "official": "",
+    "note": "The official minutes do not give the $29,000 fiber construction figure; they only mention grant options and more cost analysis."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Compliance fines for missing 911 cabling",
+    "ours": "911 cabling compliance fines: up to 10,000 plus 500 a a day",
+    "official": "",
+    "note": "The official minutes do not state the fines."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "Jennifer Warren Diamond (town manager)",
+    "official": "Jennifer Warren-Dyment, Town Manager",
+    "official_reading": "Jennifer Warren-Dyment",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance director name",
+    "ours": "Ezekiel aala (finance director)",
+    "official": "Ezequiel Ayala",
+    "official_reading": "Ezequiel Ayala",
+    "note": "Misheard name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "IT director name",
+    "ours": "Casey Chisum (presenter)",
+    "official": "Casey Chisholm",
+    "official_reading": "Casey Chisholm",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Schools presenter names",
+    "ours": "Dr Gilson (presenter)",
+    "official": "Susan Gilson, Director of Administration and Finance",
+    "official_reading": "Susan Gilson",
+    "note": "Same person, with the first name and title only in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Superintendent name",
+    "ours": "Dr Burnham (superintendent)",
+    "official": "Dr. Kate Burnham",
+    "official_reading": "Dr. Kate Burnham",
+    "note": "Same person; the official minutes give the first name and spell it 'Burham' once."
+   },
+   {
+    "kind": "agree",
+    "about": "Committee members present",
+    "ours": "Jean (member)",
+    "official": "Present Members: Chair Chris Menard, Vice Chair Jean Russell, Committee Member Tanya \nDall, Committee Member Jay Simeone",
+    "note": "Jean, Tanya and Jay match; our chair is unnamed and the official gives Chris Menard. Clerk Tom Gray was absent."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "Absent Member: Clerk Tom Gray",
+    "note": "Our minutes do not list absences."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Budget revenue estimate error",
+    "ours": "",
+    "official": "There was a mathematical error and the allowed prop 2 ½ total \n was not applied to the full levy from last year.",
+    "note": "Our minutes do not record this revenue estimate discussion."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:55:16Z",
+   "cost_usd": 0.246195
+  }
  }
 }

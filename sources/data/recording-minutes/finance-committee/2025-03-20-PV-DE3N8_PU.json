@@ -535,5 +535,201 @@
    "at": "2026-09-29T11:09:47Z",
    "cost_usd": 0.26269400000000004
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03202025-7010",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-03-20-minutes-7010.txt",
+   "path": "sources/meetings/finance-committee/2025-03-20-minutes-7010.pdf"
+  },
+  "official_sha256": "0fcba4d7424843c2ee45f8db3778c95ac397a501be3b4a0ce21893817f5bc770",
+  "coverage": "official minutes are a summary only",
+  "summary": "The records agree on the band transportation, bus fee, business office, teacher count and public-comment items. The official minutes are a short summary, though, and leave out most of the health insurance, salary, Chapter 70 and school choice discussion that ours captured. The one conflict a person should check is the athletic transportation line: ours has $12,550 and the official minutes say $102,555.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 6,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Athletic transportation line amount",
+    "t": 3122,
+    "ours": "Athletic transportation line: $12,550",
+    "official": "The athletic transportation line was reduced to $102,555.",
+    "note": "The figures differ by more than a digit-grouping error explains, and ours may be a change amount rather than the resulting line; check the recording at t=3122 and the School Committee approved budget.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice Chair name",
+    "ours": "Gene Russell (member)",
+    "official": "Vice Chair Jean Russell (Zoom)",
+    "note": "Misheard first name of the same person.",
+    "official_reading": "Jean Russell",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Ana Lockwood",
+    "ours": "Anna Lockwood (member)",
+    "official": "Committee Member Ana Lockwood",
+    "note": "Spelling variant of the same person.",
+    "official_reading": "Ana Lockwood",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Superintendent name",
+    "ours": "Dr. Bernham (superintendent)",
+    "official": "Superintendent Dr. Kate Burnham provided the approved budget.",
+    "note": "Misheard surname.",
+    "official_reading": "Dr. Kate Burnham",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees (Tom Gray, Mike Rupp, Jay Simeone)",
+    "ours": "Tom Gray (member); Jay (member); Mike (member)",
+    "official": "Clerk Tom Gray \n(Zoom), Committee Member Ana Lockwood, Committee Member \nMike Rupp, Committee Member Jay Simeone",
+    "note": "The same members are recorded; ours has first names only for Jay and Mike. Ours calls the chair only 'the chair'; the official minutes name Chris Menard.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dr. Gillson, business manager, as attendee",
+    "ours": "Dr. Gillson (business manager)",
+    "official": "",
+    "note": "The official minutes do not list this person as present; the name is also possibly misheard.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "Absent Member: Committee Member Tanya Dall",
+    "note": "Ours does not record an absence.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Band transportation restoration",
+    "t": 326,
+    "ours": "Band transportation, middle and high school: $1,000, 3,000",
+    "official": "The middle \n   school received an additional $1,000 and the high school received  \n   $3,000.",
+    "note": "Same amounts."
+   },
+   {
+    "kind": "agree",
+    "about": "Bus transportation fee",
+    "t": 391,
+    "ours": "General education transportation / new bus fee: 11,000, a dollar a day, 180, 270, $50",
+    "official": "The fee for 1 \nchild is $180 and the family cap is $270 for the year.",
+    "note": "Fee, cap, reduced fee and the $11,000 reduction all match; the official minutes also record the free-lunch waiver."
+   },
+   {
+    "kind": "agree",
+    "about": "Business office salaries restructuring",
+    "t": 2229,
+    "ours": "Business office / HR salaries restructuring: 90,000",
+    "official": "to $90,000.",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Full-time teacher count vs 2019",
+    "t": 4900,
+    "ours": "Full-time teacher count vs FY19: 110, 111",
+    "official": "there were 110 full \ntime teachers back in 2019. After the proposed cuts in FY26 according \nto the presentation there will be 111 full-time teachers.",
+    "note": "Same figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Public comment not opened",
+    "t": 5022,
+    "ours": "The chair decided not to open the floor for public comment tonight due to the time limit before the capital planning committee meeting.",
+    "official": "Chris Menard made an executive decision to not allow public \ncomment",
+    "note": "Same decision and reason."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Superintendent follow-up commitments",
+    "t": 1824,
+    "ours": "The superintendent agreed to email the committee chair a five-year history of position changes back to FY21; check the $42,567 salaries discrepancy; verify the percentage of positions budgeted with health insurance.",
+    "official": "",
+    "note": "The official minutes record none of these follow-up commitments (the only action item they record is the chair requesting summer camp details); check the recording at t=1824, 1951 and 3401."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Ski team co-op cut",
+    "t": 493,
+    "ours": "Ski team co-op cut (tabled): 11,000",
+    "official": "",
+    "note": "Not mentioned in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance line 5200",
+    "t": 1867,
+    "ours": "Health insurance line (5200): $3,692,744, 50%, 14.84%",
+    "official": "",
+    "note": "The official minutes do not mention health insurance."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Salaries total discrepancy",
+    "t": 1824,
+    "ours": "Total salaries line discrepancy: $42,567",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Elementary teachers line / grant offsets",
+    "t": 2331,
+    "ours": "Elementary school teachers line / grant offset: $1,455,241; Grant-funded paraprofessional offsets: $1,900 less",
+    "official": "",
+    "note": "The official minutes mention grant money going to an intervention teacher but give no figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletics cost, position cuts, bus contract, Chapter 70, school choice figures",
+    "t": 3209,
+    "ours": "Total athletics cost, prior year: a little bit over a half million; 28 full-time equivalents, 39; Bus contract: three-year; Chapter 70 state aid: 1.3%, 55%; School choice / charter revenue share: 2.69%, 1.6, 87%, 1.58%, 2.37%",
+    "official": "",
+    "note": "The official minutes summarise the meeting and do not carry these figures."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Summer camps discussion",
+    "ours": "",
+    "official": "The School Committee approved to have the athletics department run \nsummer camps to generate revenue.",
+    "note": "Ours records nothing on summer camps, including the chair's objection and request for revenue projections."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Specialist coach position eliminated",
+    "ours": "",
+    "official": "The School Committee voted to eliminate 1 of the specialist coach \npositions that was previously grant funded.",
+    "note": "This is a School Committee vote reported in the Finance Committee minutes; ours does not mention it, so check whether it relates to our grant offset figures."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Legal expense line increase",
+    "ours": "",
+    "official": "The School Committee increased the legal expense line.",
+    "note": "Not in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:52:14Z",
+   "cost_usd": 0.247889
+  }
  }
 }

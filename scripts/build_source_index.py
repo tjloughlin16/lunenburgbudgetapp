@@ -445,7 +445,21 @@ GROUPS = [
             ('contracts/pdf/pec-agreement-fy27-fy29.pdf', 'Health insurance agreement (PEC), FY27–FY29', 3,
              'Obtained by records request, 5 October 2026. The Town pays 75% of every active plan '
              'and 50% of Medex, 1 July 2026 to 30 June 2029. Amends a base agreement it does not '
-             'attach, and its two attachments are blank in the copy received.'),
+             'attach; its two attachments arrived separately on 6 October.'),
+            ('contracts/pdf/pec-agreement-2008.pdf', 'Health insurance agreement (PEC), 16 June 2008', 3,
+             'The base agreement every union contract cites, from the Town\u2019s HR Director, '
+             '6 October 2026. A scan holding the agreement twice. Ran to 30 June 2012 and '
+             'continues until a successor is reached.'),
+            ('contracts/pdf/pec-fy27-attachment-a-1-network-blue-new-england.pdf', 'PEC FY27, Attachment A: Network Blue New England', 2,
+             'Summary of benefits, $500 deductible.'),
+            ('contracts/pdf/pec-fy27-attachment-a-2-network-blue-select.pdf', 'PEC FY27, Attachment A: Network Blue Select', 2,
+             'Summary of benefits, $500 deductible, limited network.'),
+            ('contracts/pdf/pec-fy27-attachment-a-3-access-blue-ne-saver.pdf', 'PEC FY27, Attachment A: Access Blue New England Saver', 2,
+             'Summary of benefits for the HSA plan, $2,000/$4,000 deductible.'),
+            ('contracts/pdf/pec-fy27-attachment-a-4-blue-care-elect.pdf', 'PEC FY27, Attachment A: Blue Care Elect', 2,
+             'Summary of benefits for the PPO, $500 deductible.'),
+            ('contracts/pdf/pec-fy27-attachment-b-opt-out-policy.pdf', 'PEC FY27, Attachment B: opt-out policy', 3,
+             '$3,000 individual, $6,000 family, paid at the end of the fiscal year.'),
             ('contracts/pdf/nonaffiliated-salary-schedule.pdf', 'Non-affiliated salary schedule', 1,
              'Staff outside any bargaining unit.'),
             ('contracts/pdf/nonaffiliated-benefits.pdf', 'Non-affiliated benefits', 1,
@@ -495,6 +509,41 @@ GROUPS = [
              '\u201cL.unenburg\u201d, \u201cLunchburg\u201d and truncated statuses, so '
              'accepted-versus-waitlisted must not be counted from them. The document holds '
              'no personal data: a town, an anonymous applicant number and a status.'),
+            ('peer-districts/munis-guide-cnmi-inquiries-reports.pdf',
+             'Tyler MUNIS guide: Inquiries & Reports (CNMI Department of Finance)', 2,
+             'Not a Lunenburg document and not a peer. A Tyler MUNIS user guide for general '
+             'ledger inquiries and reports, published by the Commonwealth of the Northern '
+             'Mariana Islands Department of Finance (publisher\u2019s filename '
+             '\u201cmunis-rg-inquiries-reports.pdf\u201d). It walks through the YTD Budget '
+             'Report screen by screen, with journal detail, and the standard purchase order '
+             'reports. Held because Lunenburg runs the same system and publishes no guide to '
+             'it: it is how a resident learns what to ask the Town for. Option names are as '
+             'the CNMI\u2019s version prints them and Lunenburg\u2019s may differ. Filed here '
+             'because of how it reached us -- another government\u2019s own website.'),
+            ('peer-districts/munis-guide-burlingame-overview.pdf',
+             'Tyler MUNIS Basic User Guide 1: Overview (City of Burlingame, CA)', 1,
+             'Not a Lunenburg document. The City of Burlingame Finance department\u2019s '
+             'introductory MUNIS guide (publisher\u2019s filename \u201cTyler Munis Basic '
+             'User Guide 1 - Overview.pdf\u201d). Cited for one table: the search wildcards, '
+             'where | means or and : or .. a range, which is how several funds are asked for '
+             'in one run.'),
+            ('peer-districts/munis-guide-livingston-payroll-reports.pdf',
+             'Instructions for MUNIS Payroll reports (Livingston County)', 1,
+             'Not a Lunenburg document. A payroll-report guide whose own screenshots read '
+             '\u201cMunis [Livingston County]\u201d (publisher\u2019s filename '
+             '\u201cInstructions-MUNIS-Payroll-Reports-0823.pdf\u201d). Held only for its '
+             'generic export steps: the Excel button and the Munis Office Export Filter, '
+             'which exports only the fields left selected. Nothing in it is about Lunenburg '
+             'payroll.'),
+            ('peer-districts/munis-guide-framingham-general-ledger-2020-2.pdf',
+             'Munis General Ledger procedures, version 2020.2 (hosted by Framingham, MA)', 2,
+             'Not a Lunenburg document. Tyler\u2019s own General Ledger procedural documentation '
+             'for Munis 2020.2, served by the City of Framingham under the filename '
+             '\u201cProcedures GL 2020.2.pdf\u201d; the document itself does not name '
+             'Framingham. The fullest description held of the YTD Budget Report: every option '
+             'on its screens, which years it can reach, and the option that prints the full '
+             'account number. A Massachusetts town\u2019s copy, so probably the closest of the '
+             'four guides to the version Lunenburg runs -- which is a guess, not a fact.'),
         ],
     },
     {
@@ -3989,6 +4038,20 @@ SOURCE_URLS = {
     'peer-districts/montytech-class-of-2030-lottery.pdf':
         'https://montytech.net/wp-content/uploads/2026/03/'
         'Class-of-2030-Lottery-Results.pdf',
+
+    # Three Tyler MUNIS user guides published by OTHER governments, fetched 6 October 2026.
+    # Held because Lunenburg runs MUNIS and publishes no guide to it; they are how a
+    # resident learns what a MUNIS report is called and which options it takes.
+    'peer-districts/munis-guide-cnmi-inquiries-reports.pdf':
+        'https://www.finance.gov.mp/support/document-library/documents/'
+        'munis-rg-inquiries-reports.pdf',
+    'peer-districts/munis-guide-burlingame-overview.pdf':
+        'https://cms7files.revize.com/burlingameintranet/Finance/Tyler%20Munis/'
+        'User%20Reference%20Guides/Tyler%20Munis%20Basic%20User%20Guide%201%20-%20Overview.pdf',
+    'peer-districts/munis-guide-livingston-payroll-reports.pdf':
+        'https://milivcounty.gov/wp-content/uploads/Instructions-MUNIS-Payroll-Reports-0823.pdf',
+    'peer-districts/munis-guide-framingham-general-ledger-2020-2.pdf':
+        'https://www.framinghamma.gov/DocumentCenter/View/44403/General-Ledger',
 
     # The town's own web server, which has never lost a link: 81 of 81 on 29 August and
     # again on 31 August.

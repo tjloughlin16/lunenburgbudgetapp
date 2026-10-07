@@ -568,5 +568,187 @@
    "at": "2026-09-27T19:35:17Z",
    "cost_usd": 0.201246
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05132025-7216",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-05-13-minutes-7216.txt",
+   "path": "sources/meetings/council-on-aging/2025-05-13-minutes-7216.pdf"
+  },
+  "official_sha256": "ed71473b73199aba53ff213064512ac6d8f40c80b5100bff4a1d4acd3e5e74eb",
+  "coverage": "full",
+  "summary": "The two records agree on the main decisions (Memorial Drive vote, kiosk posters, officer nomination, end-of-year party, new Supporters liaison, donated plants), differing mostly in wording and in which names the captions got wrong. The thing to know is that the official minutes record a vote approving the prior minutes that ours omit, and that ours misassigns roles (Pauline as director, Caesar as board member) and carries budget figures the official minutes do not give.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 1,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote against making Memorial Drive a green space",
+    "ours": "That the Council on Aging is not in favor of making Memorial Drive a green space, due to the impact on the senior center and teen center parking — not audible",
+    "official": "Cathy Beale made a motion to not be in favor of making Memorial Drive a green space. It was seconded by Susan O’Sullivan. All approved, motion was carried.",
+    "note": "Same motion and outcome; ours does not capture mover/seconder, and ours says 'teen center parking' while official cites hardship for seniors and the Parking Lot Design.",
+    "t": 2977
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote to accept prior minutes",
+    "ours": "",
+    "official": "Ms. Lockwood moved to accept the minutes with the noted amendments. It was seconded by Ms. O’Sullivan. All approved, motion was carried.",
+    "note": "Official records a vote approving the previous minutes that our minutes do not list; this is a vote, so a person should check the recording around the minutes-approval item."
+   },
+   {
+    "kind": "agree",
+    "about": "Kiosk repurposed into three posters",
+    "ours": "Board agreed to repurpose the existing kiosk into three large posters (Eagle House info, COA info, weekly program schedule); one member volunteered to lead design and printing and offered to fund it.",
+    "official": "proposed that we should put three large posters up on each of the three sides.",
+    "note": "Same proposal and funding offer; official frames it as a proposal by Mr. Lincoln, ours as an agreement.",
+    "t": 251
+   },
+   {
+    "kind": "agree",
+    "about": "AI minutes tool and emailing the agenda",
+    "ours": "Chair/staff agreed to email the agenda to all board members going forward once it is posted to the town.",
+    "official": "Ms. Goodsell offered to email out the agenda when it is sent up to Town Hall.",
+    "note": "Same item; official says the director offered, ours says agreed.",
+    "t": 484
+   },
+   {
+    "kind": "agree",
+    "about": "Nomination of officers for FY26",
+    "ours": "Board informally nominated Deb and Jane to continue as officers for FY26, with the slate to come to a formal vote at the next meeting.",
+    "official": "The slate will be voted at the next COA Meeting.",
+    "note": "Same outcome; official records a motion by Mr. Lincoln and a second by Susan O’Sullivan.",
+    "t": 1968
+   },
+   {
+    "kind": "agree",
+    "about": "End of year party",
+    "ours": "Board agreed to hold its usual end-of-fiscal-year party at the last meeting of the year, with Elena coordinating sign-ups for food.",
+    "official": "There was and Ms. Christopher offered to organize.",
+    "note": "Same item; official does not say the party is at the last meeting.",
+    "t": 2054
+   },
+   {
+    "kind": "agree",
+    "about": "New Eagle House Supporters liaison",
+    "ours": "Kathy was named the board's new liaison to the Eagle House Supporters, replacing Elena.",
+    "official": "Ms. Christopher is stepping down as Supporters Liason. Ms. Beale offered to take that role.",
+    "note": "Same change; Kathy is Cathy Beale and Elena is Elena Christopher.",
+    "t": 3429
+   },
+   {
+    "kind": "agree",
+    "about": "Donated plants request",
+    "ours": "A board member agreed to draft a request to local garden centers asking for donated plants for the pavilion area.",
+    "official": "She offered to reach out to local nurseries and ask if they would consider donating flowers.",
+    "note": "Same item; official says reach out, ours says draft a request.",
+    "t": 3595
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Healthcare advisory group decision",
+    "ours": "A board member volunteered to help Pauline develop a senior healthcare advisory/resource group, drawing on her own caregiving and medical-records experience.",
+    "official": "Ms. Christopher reported that she made a list of agencies that have been very helpful as she is caring for her aging mother. The board indicated that would like to continue to look at how they can provide information and advocacy.",
+    "note": "Ours has a volunteer helping Pauline; official has Ms. Christopher reporting a list and the board continuing to look at it. Check the recording around t=2470 for who said what.",
+    "t": 2470
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who is Pauline / director",
+    "ours": "Pauline (senior center director / outreach coordinator)",
+    "official": "Deb Goodsell (COA Director)",
+    "note": "Official names Deb Goodsell as director and never names Pauline. Ours may be misattributing roles or names; check who the director and outreach coordinator are.",
+    "t": 2470
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees and roles",
+    "ours": "Deb (chair); Jane (board member / took minutes this meeting); Elena; Caesar (board member); Pete; Kathy; Pauline; Michelle (front desk staff); Jack Rabbit (guest presenter, outgoing member of the Board of Assessors)",
+    "official": "Caesar Nuzzolo (Lunenburg Select Board Chair – COA Liason)",
+    "note": "Official lists Caesar as a guest (Select Board Chair), not a board member; Jane Rabbitt is Vice-Chair, not 'took minutes'. Jack Rabbitt's 'outgoing' status is not in the official. Check roles and who was present."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees",
+    "ours": "",
+    "official": "Present: Deb Lincoln (Chairperson), Jane Rabbitt (Vice-Chair), Peter Lincoln, Diane Nowd, Elena Christopher, Susan O’Sullivan, Jim McGuigan, Cathy Beale, Ana Lockwood, Judy Tarbell",
+    "note": "Official lists Diane Nowd, Susan O’Sullivan, Jim McGuigan, Ana Lockwood, Judy Tarbell, Helen Balcom (excused) and guest Barbara Coulombe, none named in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair/Jane/Jack surname",
+    "ours": "Jack Rabbit (guest presenter, outgoing member of the Board of Assessors)",
+    "official": "Jack Rabbitt (Board of Assessors)",
+    "note": "Surname misspelled in captions.",
+    "official_reading": "Jack Rabbitt"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Programs budget increase",
+    "ours": "Programs budget increase: five to eight $3,000, $3,000, 30%",
+    "official": "",
+    "note": "Official only says amendments were made regarding budget for programming, with no figures.",
+    "t": 606
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Parking lot study cost and status",
+    "ours": "Parking lot study (capital): $32,000",
+    "official": "Recap of Town Meeting: Flooring and Parking Lot Plan were approved.",
+    "note": "Official gives no dollar figure and calls it a Parking Lot Plan/Design approved at Town Meeting; ours calls it a capital-request study. Check the amount and its status.",
+    "t": 798
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Circuit breaker and tax deferral figures",
+    "ours": "Circuit breaker and tax deferral program: 1,500 bucks, $75,000, $500 a month, $100",
+    "official": "",
+    "note": "Official only says an applicant has not applied for a deferral; no amounts.",
+    "t": 954
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meal budget line figure",
+    "ours": "Meal budget line: $5",
+    "official": "",
+    "note": "No meal budget figure in official.",
+    "t": 1596
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Gloucester Harbor cruise trip cost",
+    "ours": "Gloucester Harbor cruise trip cost: 195",
+    "official": "",
+    "note": "The official minutes do not mention the cruise.",
+    "t": 3329
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY27 budget priorities",
+    "ours": "",
+    "official": "FY 27 Budget: Ms. Goodsell reported that her priorities for the FY 27 Budget are to advocate for a new position of Program Coordinator.",
+    "note": "Official records the FY27 priorities and the Lula Lift feasibility study, which our minutes do not."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Venmo and credit card payments",
+    "ours": "",
+    "official": "Ms. Beale asked if the LAAC could start taking venmo or credit card payments in liu of requiring a cash or check.",
+    "note": "Official has this request; ours does not."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:29:34Z",
+   "cost_usd": 0.26334939999999996
+  }
  }
 }

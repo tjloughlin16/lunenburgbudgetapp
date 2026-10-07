@@ -422,5 +422,231 @@
    "at": "2026-09-27T02:28:39Z",
    "cost_usd": 0.194012
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05262026-7827",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-05-26-minutes-7827.txt",
+   "path": "sources/meetings/sewer-commission/2026-05-26-minutes-7827.pdf"
+  },
+  "official_sha256": "8ab30233d0ad394fd02232a82dd825fbce2ef9079c37136534d783ecfc704c8c",
+  "coverage": "full",
+  "summary": "The two records agree on every vote and its outcome, including both abstentions. The differences are caption misrenderings of names and the 37 Wallace Park/Wallis Park address, plus one small mismatch: our minutes record a courtesy follow-up on 99 Leominster Road, while the official minutes record only Scott's suggestion to keep it on a future agenda.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 8,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: change of use at 48 West Street",
+    "t": 399,
+    "ours": "Accept the change of use at 48 West Street (added bedroom, increased sewer design flow). — passed, with Dan Proctor abstaining",
+    "official": "Roll Call Vote: Chip-aye, Arthur-aye, and Scott-aye. (Dan abstained)",
+    "note": "Same item, same outcome, same abstainer."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Address of the write-off: 37 Wallace Park vs 37 Wallis Park",
+    "t": 932,
+    "ours": "Write off the balance of $393.19 on the final-read account at 37 Wallace Park. — passed",
+    "official": "To write off the balance of $393.19 on 37 Wallis Park.",
+    "note": "Same vote and same $393.19 amount; the street name is a caption mishearing.",
+    "official_reading": "37 Wallis Park"
+   },
+   {
+    "kind": "agree",
+    "about": "Write-off of $393.19 passed",
+    "t": 937,
+    "ours": "Write-off of an uncollectible final-read balance at 37 Wallace Park after a sewer account error at closing. — 393.19 (voted)",
+    "official": "The seller’s current balance is $ 393.19, but at closing, the attorney got the wrong spreadsheet showing the minimum charge of $133.",
+    "note": "Amount, cause (wrong spreadsheet at closing) and the vote agree; the $133 minimum charge is the heard '133'."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: one-time waiver of $173.20 for 99 Leominster Road",
+    "t": 1467,
+    "ours": "Approve a one-time $173.20 waiver for 99 Leominster Road due to high usage bill. — passed",
+    "official": "To grant the one-time waiver of $173.20 for 99 Leominster Road.",
+    "note": "Same amount and outcome; the official roll call is 4-0 aye."
+   },
+   {
+    "kind": "caption_error",
+    "about": "99 Leominster Road waiver figure heard as 17320",
+    "t": 1041,
+    "ours": "17320",
+    "official": "one-time waiver of $173.20",
+    "note": "Caption digits without a decimal point; same $173.20 figure.",
+    "official_reading": "$173.20"
+   },
+   {
+    "kind": "caption_error",
+    "about": "99 Leominster Road bill amount ('752 dollar bill, 500 almost 600')",
+    "t": 1041,
+    "ours": "752 dollar bill, 500 almost 600",
+    "official": "Her bill is usually around $500 -600 but the current bill was $750",
+    "note": "Captions heard $752; the official minutes round to $750. Check the recording if the exact figure matters.",
+    "official_reading": "$750"
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: expansion of use at 990 Mass Ave",
+    "t": 2637,
+    "ours": "Allow the expanded use (added bedroom) at 990 Mass Ave. — passed, with Scott Doll abstaining",
+    "official": "Roll Call Vote: Chip-aye, Arthur-aye, and Dan-aye. (Scott abstained.)",
+    "note": "Same outcome and same abstainer."
+   },
+   {
+    "kind": "agree",
+    "about": "100 Laurel Lane estimate: $9,700 vs earlier $4,500",
+    "t": 1587,
+    "ours": "100 Laurel Lane sewer tie-in cost estimate: $9,700, $4,500, 9900",
+    "official": "the drain layer came up with a plan to connect but it will cost $9,700.",
+    "note": "$9,700 and the earlier $4,500 match; the '9900' in our captions is an extra figure not in the official text, likely a mishearing of 9,700."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: get two more quotes for 100 Laurel Lane",
+    "t": 1899,
+    "ours": "Get two additional quotes for the 100 Laurel Lane sewer connection before deciding, rather than accepting the single $9,700 estimate.",
+    "official": "Bill agreed and will get 2 more quotes.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: revisit line-tracing for Laurel Lane lateral",
+    "t": 2043,
+    "ours": "Revisit line-tracing options for the alleged old Laurel Lane lateral at a future meeting.",
+    "official": "Dan suggested adding it to the future agenda.",
+    "note": "Same; the official also lists 100 Laurel Lane under future agenda items."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Line-tracing rental cost of about $150",
+    "t": 2022,
+    "ours": "Line-tracing equipment rental for Laurel Lane lateral: 150 bucks",
+    "official": "",
+    "note": "The official minutes mention renting a tracing device but give no price."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: business manager to research the regulations on a two-family fee at 990 Mass Ave",
+    "t": 2585,
+    "ours": "Business manager will research the regulations on whether a two-family conversion (990 Mass Ave) warrants an additional fee beyond bedroom count, and report back next meeting.",
+    "official": "Bill said he needs to scour the regs.",
+    "note": "Same follow-up. Our minutes assign it to the business manager, while the official minutes say Bill (DPW Director) will get the answers, so check the recording for who owns it."
+   },
+   {
+    "kind": "agree",
+    "about": "990 Mass Ave prior sale value $20,000",
+    "t": 2311,
+    "ours": "990 Mass Ave prior sale value: $20,000",
+    "official": "He stated the house last sold for $20K in the 1970’s",
+    "note": "Same figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "990 Mass Ave bedroom-expansion fee (220, 440)",
+    "t": 2288,
+    "ours": "990 Mass Ave bedroom-expansion fee: 220, 440",
+    "official": "",
+    "note": "The official minutes say the fee is based on bedrooms but give no dollar amounts."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$10 late fee waiver possibility",
+    "t": 1313,
+    "ours": "$10 late fee waiver possibility: $10",
+    "official": "",
+    "note": "The official minutes do not mention a late fee."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "99 Leominster Road: follow-up check-in",
+    "t": 1542,
+    "ours": "Keep 99 Leominster Road on future business to check in with the homeowner after next quarter's reading as a courtesy, not as a further waiver.",
+    "official": "Scott suggested keeping it on a future agenda to check future usage and see if issue was resolved.",
+    "note": "Both records have a follow-up, but ours calls it a courtesy check-in with the homeowner and the official minutes call it a future agenda item. The official future agenda list names only Manhole Repairs and 100 Laurel Lane, so check the recording for whether it was adopted as an agenda item."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Scott Doll",
+    "ours": "Scott Doll (member)",
+    "official": "Vice-Chair- Scott Dall",
+    "note": "Name spelling differs between the records; the official minutes also give his title as Vice-Chair.",
+    "official_reading": "Scott Dall"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Arthur Cades",
+    "ours": "Arthur Cades (member)",
+    "official": "Member: Arthur Katis",
+    "note": "Misheard surname.",
+    "official_reading": "Arthur Katis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Absent: Brett Ramsdell",
+    "ours": "Brett Ramsdell (member (absent))",
+    "official": "Absent: Chair- Brett Ramsden",
+    "note": "Spelling differs; the official minutes give his title as Chair.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Andrew Valeri",
+    "ours": "Andrew Valeri (staff, sewer business manager)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "note": "Misspelled surname.",
+    "official_reading": "Andrew Valliere"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Dane Ranley",
+    "ours": "Dane Ranley (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "Misheard first name; the official minutes show her as the minutes clerk.",
+    "official_reading": "Jane Ranley"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Dan Proctor, Chip Wilson, Bill Bernard",
+    "ours": "Dan Proctor (clerk / chair); Chip Wilson (member); Bill Bernard (staff, DPW)",
+    "official": "Clerk- Dan Proctor, Member: Arthur Katis and Chip Wilson, DPW Director- Bill \nBernard",
+    "note": "Names match; our 'clerk / chair' for Dan Proctor matches the official title of Clerk."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of the 5/12/26 minutes",
+    "ours": "",
+    "official": "To accept the minutes of 5/12/26.                      Roll Call Vote: Chip-aye, Arthur-aye, Scott-aye, and Dan-aye.",
+    "note": "A vote to approve prior minutes appears only in the official record; our minutes list no such vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Wright-Pierce private sewer plans, DEP deadline 8/31",
+    "ours": "",
+    "official": "They will be locating the plans to comply by 8/31.",
+    "note": "Update with a deadline appears only in the official minutes; no vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole repair IFB update (finished by June 30)",
+    "ours": "",
+    "official": "Everything should be wrapped up by June 30th, as they have only about a week of work to do.",
+    "note": "Update appears only in the official minutes; no vote."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:16:29Z",
+   "cost_usd": 0.251349
+  }
  }
 }

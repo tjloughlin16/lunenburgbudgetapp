@@ -524,5 +524,187 @@
    "at": "2026-09-27T12:40:56Z",
    "cost_usd": 0.20025
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08252025-7358",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-08-25-minutes-7358.txt",
+   "path": "sources/meetings/planning-board/2025-08-25-minutes-7358.pdf"
+  },
+  "official_sha256": "aa7e730f2048d39e0bc6655e67089a015fafcca07cf5cc0c8210af58d1347421",
+  "coverage": "full",
+  "summary": "The two records agree on the main votes (close hearing, approve site plan, nominate Brenner, close out the Mulpus Road account), but they differ on who attended, on the vote to open the hearing, and on what happened with the master plan item. The thing to know is that the official minutes name Brenner as Chair, while our captions treat Amanda as Chair and Matt Brener as a member, so the captions' names and roles are unreliable.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 5,
+   "discrepancy": 4,
+   "only_in_ours": 1,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to close the 499 Northfield Road public hearing",
+    "ours": "Close the public hearing for 499 Northfield Road (Pat Brody shelter for cats site plan) — passed",
+    "official": "Motion:  A. Burney moved, to close the public hearings 499 Northfield Road \nSecond: T. Willsmer\nVote:  A. Reid – Aye, T.Willsmer -Aye, A. Burney -Aye, hearing closed.",
+    "note": "Both record the hearing closing; the official minutes add mover, seconder and a 3-0 roll call.",
+    "t": 2494
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to approve the 499 Northfield Road site plan with an added stormwater condition",
+    "ours": "Approve the site plan for 499 Northfield Road with all standard conditions plus a special condition requiring submission of an operation and maintenance plan for the storm water drip edge — passed",
+    "official": "Motion:  T. Willsmer moved to approve site plan with all standard conditions with additional \ncondition of submission of conditional operations plan submission and maintenance plan for storm water \ndrip edge submission for 499 Northfield Road",
+    "official_reading": "",
+    "note": "Same motion and condition; the official minutes record it passed 3-0 (Reid, Willsmer, Burney all Aye).",
+    "t": 2559
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to nominate M. Brenner to the Municipal Building Design Committee",
+    "ours": "Nominate Matt Brener as the planning board's designator to the Municipal Building Design Committee — passed",
+    "official": "Motion: A. Burney moved to nominate  M. Brenner to the open position on the Municipal Building \nDesign Committee. \nSecond: A. Reid\nVote:  A. Reid – Aye, T.Willsmer -Aye, A. Burney -Aye, passed.",
+    "note": "Same vote and outcome. Our minutes spell the name Brener, and call him a 'designator' where the official minutes say 'open position'.",
+    "t": 2709
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to close out the 430 Mulpus Road performance guarantee account and open a new one",
+    "ours": "Close out the current performance guarantee account for 430 Mulpus Road, turn funds over to the town treasurer, and open a new correctly-formatted performance guarantee account — passed",
+    "official": "Motion: A. Burney moved to have planning board close out the current account for 430 Mulpus Road \nPerformance Guarantee then turn over the funds to the town treasurer to use as the assurity deposit to \ncreate a new performance guarantee account in the correct format. ",
+    "note": "Same motion and outcome; the official minutes record a 3-0 passed vote.",
+    "t": 2856
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer of the 430 Mulpus Road performance guarantee funds to the town treasurer",
+    "ours": "Close out the old 430 Mulpus Road Performance Guarantee account (opened under an outdated bank account format) and transfer its funds to the town treasurer to establish a new, correctly formatted performance guarantee account for the same surety deposit — not stated in captions (voted)",
+    "official": "Details spoken about in \nregards to the need to move account from old passbook account to correct account standing per \nregulations as outlined by Treasurer.",
+    "note": "Both describe the same transfer to the treasurer; no dollar amount is given in either record.",
+    "t": 2856
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to open the public hearing for 499 Northfield Road",
+    "ours": "",
+    "official": "Motion:  A.Reid moved, to open the public hearings 499 Northfield Road \nSecond: A.Reid\nVote:  A. Reid – Aye, T.Willsmer -Aye, A. Burney -abstained, passed.",
+    "note": "Our minutes record no vote to open the hearing, while the official minutes record one with an abstention by Burney; the official motion also shows Reid as both mover and seconder, so check the recording for who moved and seconded it and how the votes were cast."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Master plan review: when the board takes it up",
+    "ours": "The board agreed to carry review of the Master Plan Steering Committee's draft goals/recommendations relevant to the planning board to the first meeting in September, to give members time to read it.",
+    "official": "A. Burney requests that the item be moved to first meeting in September to give \nthe board adequate time to review. M. Brenner clarified that will discuss process to community. Moved to \nnext meetings discussion agenda.",
+    "note": "Both record the move to the first September meeting (9/8), but our minutes add a second step that the official minutes do not record: the item also goes on the following meeting's agenda, for two meetings of review, as stated in our minutes at t=3313. The official minutes do not describe a second meeting, so check the recording at t=3313."
+   },
+   {
+    "kind": "agree",
+    "about": "830 Mass Ave ANR: applicant extends the 21-day review to the 9/8 meeting",
+    "ours": "Applicant for the 830 Massachusetts Ave ANR agreed to extend the board's 21-day statutory review period to the September 8 meeting so a dimensional lot-width/lot-area question could be clarified, rather than the board denying and requiring refiling.",
+    "official": "Applicant decides to ask for extension \nto next meeting, 9/8, to give clarification on site dimensions.",
+    "note": "Same decision: the applicant extends the review to 9/8 to clarify dimensions.",
+    "t": 1473
+   },
+   {
+    "kind": "agree",
+    "about": "MBTA Communities public hearing goal for 9/22",
+    "ours": "The chair's goal is to hold the MBTA Communities zoning public hearing at the September 22 meeting, contingent on the consultant delivering the finalized bylaw language in time.",
+    "official": "Goal to have public hearing on 9/22 meeting,  with info submitted by the end of \nthe week.",
+    "note": "Same goal of a 9/22 hearing; the details of the contingency are worded differently but are consistent.",
+    "t": 522
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Open space parcel on West Townsend Road",
+    "ours": "The board will not re-discuss the previously-declined West Townsend Road-area open space parcel unless time allows at a future meeting, since other committees had already said no to picking it up.",
+    "official": "Per T.Willsmer – passed on property West Townsend Rd coming out of chapter due to documenting issues.  Not \nlooking to pick up property.",
+    "note": "Both say the Open Space Committee will not pick it up, but our minutes give a reason (other committees said no) and a decision not to re-discuss it, while the official minutes give a different reason (documenting issues, coming out of Chapter) and record no board decision; check the recording at t=3505.",
+    "t": 3505
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "81X plan recording fee",
+    "ours": "81X plan recording fee: $150",
+    "official": "",
+    "note": "The $150 fee appears only in our captions; the official minutes mention the 81x only as a suggestion to do both, with no fee, so check the recording at t=2119 for the figure.",
+    "t": 2119
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees and roles",
+    "ours": "Amanda (Chair); Adam (board member); Tim (board member); Matt Brener (board member, nominated as designee to Municipal Building Design Committee)",
+    "official": "Present: T. Willsmer, A. Reid, M.   Brenner, A. Burney\nAbsent:  none",
+    "note": "Our minutes name Amanda (Reid) as Chair, but the official minutes name M. Brenner as Chair and Reid as Clerk, and give the four present as Willsmer, Reid, Brenner and Burney; check the recording for who presided. Also 'Adam' is probably A. Burney, and 'Tim' is T. Willsmer."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of the interim planner / Land Use Director",
+    "ours": "Jasmine Ferinaci (interim planner)",
+    "official": "Jasmin Farinacci – Land Use Director",
+    "official_reading": "Jasmin Farinacci",
+    "note": "Same person, misheard spelling; the official title is Land Use Director rather than interim planner."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of the admin assistant",
+    "ours": "Jen (Dagel) (planning office staff / recording clerk)",
+    "official": "Jennifer Daigle– Admin Asst.",
+    "official_reading": "Jennifer Daigle",
+    "note": "Same person; the captions misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of applicant's engineer",
+    "ours": "Justin Lair McCarti (McCarthy Engineering)",
+    "official": "Justin LeClair McCarty engineering representing Mr. & Mrs. Deschamps",
+    "official_reading": "Justin LeClair McCarty",
+    "note": "Same presenter, with the name misheard in the captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of applicant's representative",
+    "ours": "Ryan Proctor (presenter, applicant's representative (Doulison Roy) for 830 Massachusetts Ave ANR)",
+    "official": "Ryan Proctor -Dillis and Roy presenting for future parcel swap.",
+    "official_reading": "Dillis and Roy",
+    "note": "Ryan Proctor matches; the firm name is misheard as 'Doulison Roy'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of property owners",
+    "ours": "Priscilla and Edward Dischamps (applicants/property owners, present in audience)",
+    "official": "Mr. & Mrs. Deschamps 499 Northfield Road",
+    "official_reading": "Deschamps",
+    "note": "Same owners; the surname is misspelled in our captions. The official minutes give no first names."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of the 7/14 minutes",
+    "ours": "",
+    "official": "Meeting 7/14\nMotion to approve A. Burney\nSecond: T. Willsmer seconded\n Vote: A. Reid – Aye, T. Willsmer – Aye, A. Burney -Aye \nApproved minutes",
+    "note": "The official minutes record a vote to approve the 7/14 minutes; our minutes list no such vote, so check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Departure of M. Allison and other chair report items",
+    "ours": "",
+    "official": "Per  M. Brenner : Noted M. Allison’s departure from the Board and recognized his 11 years of dedication to \nthe Town",
+    "note": "The Chair's report also covers the Oct 2nd meet and greet, the Land Use Director posting, OpenGov training and the LBA stormwater request. None of these appear in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Committee reports",
+    "ours": "",
+    "official": "Capital Planning Committee\nPer M.Brenner just beginning to revive. Will be getting meetings going soon.",
+    "note": "The official minutes include committee reports (Capital Planning, Economic Development, Storm Water Task Force, MRPC, MJTC) that our minutes do not list as decisions."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:22Z",
+   "cost_usd": 0.25727500000000003
+  }
  }
 }

@@ -341,5 +341,213 @@
    "at": "2026-09-27T11:24:35Z",
    "cost_usd": 0.20156200000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01122026-7603",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-01-12-minutes-7603.txt",
+   "path": "sources/meetings/planning-board/2026-01-12-minutes-7603.pdf"
+  },
+  "official_sha256": "62d2f66c9e936ce9daaef73306110fde98f7aa5d71fb5adccdfbb2d077162eac",
+  "coverage": "full",
+  "summary": "The two records agree on every substantive vote: the ANR denial, three continuances and the 485 Leominster Shirley extension, all 4-0. They differ on who chaired, on what happened to the master plan draft, and on several items only one record carries. Check the chair first: ours calls \"Adam\" the chair, but the town lists Matthew Brenner as chair and Adam Burney as a member.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 6,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "10 Parmenter Rd ANR: deny endorsement, fee waiver if resubmitted within 6 months",
+    "t": 3700,
+    "ours": "Adopt findings that Fire Road 15 is not of sufficient width, suitable grade and adequate construction to support the proposed use, and deny endorsement of the 10 Parmentor Road ANR plan, with ANR fees waived if a revised plan covering the same land is resubmitted within 6 months. — passed 4-0",
+    "official": "Roll Call Vote: A Burney, Aye; T Willsmer, Aye; A Reid, Aye; and M Brenner, Aye (4/0)",
+    "note": "Same motion, outcome, 4-0 tally and 6-month fee waiver in both records.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name for the ANR",
+    "t": 3700,
+    "ours": "10 Parmentor Road",
+    "official": "10 Parmenter Rd (ANR-25-13)",
+    "note": "Same item; the captions misheard the street name.",
+    "official_reading": "Parmenter"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Withdrawn first motion on the ANR",
+    "t": 3325,
+    "ours": "Move that the planning board does not endorse the ANR for 10 Parmentor Road, with fees waived if resubmitted within 6 months. — withdrawn (superseded by a more detailed motion with formal findings)",
+    "official": "",
+    "note": "The official minutes record only the final motion; the withdrawn motion is not mentioned."
+   },
+   {
+    "kind": "agree",
+    "about": "30 Summer St continuance to 1/26/26",
+    "t": 4180,
+    "ours": "Continue the storm water permit and site plan approval for 30 Summer Street to January 26, 2026 at 6:05 p.m. — passed 4-0",
+    "official": "T Willsmer motioned to continue to 1/26/26 meeting. A Burney, Second.",
+    "note": "Same continuance and 4-0 roll call; the official gives no 6:05 time, only the general 6:00 P.M. meeting start.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "0 Reservoir Rd continuance to 1/26/26",
+    "t": 4244,
+    "ours": "Continue Zero Reservoir Road (PBSW255) to January 26, 2026 at 6:00. — passed 4-0",
+    "official": "A Burney made motion to continue to1/26/26. T Willsmer. Second.",
+    "note": "Same continuance and 4-0 tally; 'Zero' is the captions' rendering of '0 Reservoir Rd'.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "1083 Northfield Rd scenic road continuance",
+    "t": 4962,
+    "ours": "Continue the scenic road permit for 1083 Northfield Road to the January 26, 2026 meeting at 6:05 p.m. — passed 4-0",
+    "official": "A Burney moved to continue to 1/26/26. T Willsmer, Second.",
+    "note": "Same continuance and 4-0 tally.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "485 Leominster Shirley Rd extension of time",
+    "t": 5233,
+    "ours": "Find good cause for delay in beginning on-site construction (not the applicant's fault) and grant a one-year extension of the construction start deadline for 485 Leominster Shirley Road. — passed 4-0",
+    "official": "T Willsmer moved good cause for extension. A Burney, Second",
+    "note": "Same finding and 4-0 tally; the official minutes give no one-year length, so check the recording if the duration matters.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Plan revision for 1083 Northfield Rd",
+    "t": 4770,
+    "ours": "Applicant for 1083 Northfield Road agreed to revise the scenic road plan to show the two ~30-inch white pine trees, mark the driveway entrance on site, and reuse removed stone to minimize/flare the visible wall gap, before returning to the tree warden and the board.",
+    "official": "Discussion of reusing stones to rebuild wall. New Plan to show reuse and the trees.",
+    "note": "Same commitment to revise the plan to show the trees and the stone reuse; ours adds the driveway marking.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Master plan first draft: who gets it and when",
+    "t": 5295,
+    "ours": "Master plan first draft will be shared for initial feedback from the steering committee chair/vice chair before wider board discussion.",
+    "official": "A first draft has been sent to Over-Under for review.",
+    "note": "Ours says the draft will be shared with the steering committee chair/vice chair; the official says it has already been sent to 'Over-Under'. Check the recording at the master plan item for the recipient and whether it was already sent.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who chaired the meeting",
+    "ours": "Adam (chair)",
+    "official": "Roll Call: M. Brenner, T. Willsmer, A. Reid (remote), A. Burney",
+    "note": "The town lists Matthew Brenner as chair and Adam Burney as a member, but ours labels 'Adam' the chair and 'Mr. Bernie' a member. Check who presided and whether our roll-call tally mapped the right names.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member name Burney",
+    "ours": "Mr. Bernie (board member)",
+    "official": "A. Burney",
+    "note": "Misheard surname.",
+    "official_reading": "Burney"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member name Willsmer",
+    "ours": "Mr. Wilsmer (board member)",
+    "official": "Timothy Willsmer Vice Chair",
+    "note": "Spelling variant of the same member; the official minutes also use 'Wilsmer' once.",
+    "official_reading": "Willsmer"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member name Reid",
+    "ours": "Ms. Reed (Amanda Reed) (board member)",
+    "official": "Amanda Reid Clerk",
+    "note": "Misheard surname.",
+    "official_reading": "Reid"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant's representative for 485 Leominster Shirley Rd",
+    "ours": "Ryan McLolson (presenter (South Electric, applicant))",
+    "official": "Ryan McGlothlin (Silo Electric) representing applicant",
+    "note": "Same speaker and company, misheard by the captions.",
+    "official_reading": "Ryan McGlothlin (Silo Electric)"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Engineer's firm name",
+    "ours": "Greg Roy (presenter (Dillson Roy, applicant's engineer/representative))",
+    "official": "Greg Roy (Dillis & Roy)",
+    "note": "Same presenter; the firm name was misheard.",
+    "official_reading": "Dillis & Roy"
+   },
+   {
+    "kind": "agree",
+    "about": "Richard Harris present",
+    "ours": "Richard Harris (interim land use planner)",
+    "official": "Richard Harris – Land Use Director",
+    "note": "Same person; the title differs slightly.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair allowed public comment on the ANR",
+    "t": 3761,
+    "ours": "Chair opted to allow public comment on the 10 Parmentor Road ANR even though it is not a public hearing and comment was not required.",
+    "official": "",
+    "note": "The official records only that abutter Rich Pearson raised concerns about the cul-de-sac, not the chair's decision to permit comment."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "APDC bylaw changes follow-up",
+    "t": 6008,
+    "ours": "Chair will follow up on whether the APDC bylaw changes are still moving forward for spring town meeting, wanting the planning board included in those discussions.",
+    "official": "",
+    "note": "Nothing about APDC bylaw changes in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair to confirm Feb 10 joint meeting with select board",
+    "t": 5783,
+    "ours": "Chair will confirm by email whether the planning board will hold a joint meeting with the select board on February 10 for a storm water task force presentation, or send a board member to attend individually.",
+    "official": "Meeting at end of January, with FinCom and then the Select board on 2/10/26.",
+    "note": "The official notes the 2/10/26 Select Board date but not the chair's follow-up action."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Ally, land use attorney",
+    "ours": "Ally (presenter (land use attorney for the applicant))",
+    "official": "",
+    "note": "The official minutes name no attorney; they mention 'Ali Lorden' asking for contingent approval, which may be this person or the applicant's family. Check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "New Director of Planning starting Feb. 2, 2026",
+    "ours": "",
+    "official": "New Planner/ Director of Planning and Economic Development, Stephen Wallace will be starting Monday Feb. 2, 2026",
+    "note": "The official minutes record the incoming director; ours does not."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "A. Reid attended remotely",
+    "ours": "",
+    "official": "A. Reid (remote)",
+    "note": "Our attendee list does not note that Reid attended remotely."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:21:23Z",
+   "cost_usd": 0.26203299999999996
+  }
  }
 }

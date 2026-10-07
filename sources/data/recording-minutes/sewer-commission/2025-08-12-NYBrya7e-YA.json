@@ -332,5 +332,157 @@
    "at": "2026-09-27T12:45:23Z",
    "cost_usd": 0.189856
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08122025-7340",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-08-12-minutes-7340.txt",
+   "path": "sources/meetings/sewer-commission/2025-08-12-minutes-7340.pdf"
+  },
+  "official_sha256": "85b495b4f22915738eb3e6dc0c17cf401d35fe06b66005ed362680e70e359f1f",
+  "coverage": "full",
+  "summary": "The two records agree on the main business: the Q1 FY26 billing commitment passed, the Sunny Hill easement went to a package/hearing path, the August 21 attorney meeting, Touch A Truck and the manhole repair. They differ in attendee names (caption errors), in the official minutes recording an additional vote (the 7/29/25 minutes) and the commitment amount ($315,274.90), which ours lacks, and in one possible difference over who attends the August 21 meeting.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 3,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: accept Q1 FY26 billing notice of commitment",
+    "ours": "Accept the notice of commitment for FY2026 sewer billing — passed",
+    "official": "To accept the Q1FY26 billing notice of Commitment  for $315,274.90.",
+    "note": "Same motion and outcome (all four members aye in the official roll call); ours omits the amount.",
+    "t": 1240
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Commitment amount for Q1 FY26 billing",
+    "ours": "",
+    "official": "To accept the Q1FY26 billing notice of Commitment  for $315,274.90.",
+    "note": "Our minutes give no amount for the commitment; the official minutes give $315,274.90.",
+    "t": 1240
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to accept minutes of 7/29/25",
+    "ours": "",
+    "official": "To accept the minutes of 7/29/25.                     Roll Call Vote: Dan-aye, Scott-aye, Arthur-aye \nand Brett-aye.",
+    "note": "Official minutes record a motion and roll-call vote approving the 7/29/25 minutes that our minutes do not list; check the recording for whether it was taken (it may have been filtered as procedural).",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who attends the August 21 meeting on ADUs",
+    "ours": "Two commission members agreed to attend the August 21 Town Council meeting on the ADU sewer bylaw question, since a quorum of the commission itself could not attend.",
+    "official": "Bill noted he and Andrew will be meeting with the Town Att orney  on 8/21 to discuss ADUs.  Dan Proctor is planning on attending  and would like to ask for clarification on the wording\nfor conn ecting the unit.",
+    "note": "Ours describes a Town Council meeting attended by two commissioners; official describes a meeting with the Town Attorney attended by Bill, Andrew and Dan Proctor. Check the recording for the body, and who is going.",
+    "t": 1342
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sunny Hill easement: what the commission decided",
+    "ours": "Ed McWeeny was asked to assemble a full package/presentation, including potential problems avoided by the easement, before bringing the Sunny Hill Drive easement request to a formal hearing.",
+    "official": "Brett stated that the Commission allows easements on a case -by-case basis and suggested Ed put together a package to present at a meeting.",
+    "note": "Both have Ed preparing a package, but ours says it leads to a formal hearing and the official says present at a meeting; the official separately says a formal request needs a public hearing. Likely compatible, but check the recording.",
+    "t": 679
+   },
+   {
+    "kind": "agree",
+    "about": "Touch a Truck donations and cotton candy machine",
+    "ours": "The commission will accept school-supply donations for the Touch a Truck event at the DPW office, and a commissioner will bring a table and a personal cotton candy machine rather than the commission purchasing supplies.",
+    "official": "Scott \noffered to bring a cotton candy machine .",
+    "note": "Both record donations of school supplies and Scott bringing a cotton candy machine; the DPW drop-off appears in the official public comment. The table is only in ours.",
+    "t": 1900
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Touch a Truck cost figure",
+    "ours": "Touch a Truck event costs: under $100",
+    "official": "",
+    "note": "The under-$100 cost figure is not in the official minutes.",
+    "t": 1780
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair",
+    "ours": "Brett Ramson (chairman)",
+    "official": "Chair-  Brett Ramsden",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: vice-chair",
+    "ours": "Scott D. (member)",
+    "official": "Vice-Chair - Scott Dall",
+    "note": "Same person; official gives full surname and the Vice-Chair role.",
+    "official_reading": "Scott Dall",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Dan Proctor",
+    "ours": "Dan Proctor (member)",
+    "official": "Clerk- Dan Proctor",
+    "note": "Same person; official gives the Clerk role.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Arthur Katis",
+    "ours": "Arthur Katis (member)",
+    "official": "Member : Arthur \nKatis",
+    "note": "Same person.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: DPW director",
+    "ours": "Bill Barard (DPW director / staff)",
+    "official": "DPW Directo r-  Bill Bernard",
+    "note": "Misheard surname.",
+    "official_reading": "Bill Bernard",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: sewer business manager",
+    "ours": "Andrew Bellery (staff)",
+    "official": "Sewer Business Manager - Andrew Valliere",
+    "note": "Misheard surname.",
+    "official_reading": "Andrew Valliere",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Public commenter name",
+    "ours": "Ed McWeeny",
+    "official": "Ed McSweeney",
+    "note": "Misheard surname.",
+    "official_reading": "Ed McSweeney",
+    "t": 679
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent minutes clerk",
+    "ours": "",
+    "official": "Absent:  Minutes Clerk- Jane Ranley",
+    "note": "Official lists an absent minutes clerk; ours has no absentees.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:49Z",
+   "cost_usd": 0.235665
+  }
  }
 }

@@ -355,5 +355,133 @@
    "at": "2026-09-27T19:39:47Z",
    "cost_usd": 0.193502
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05052025-7199",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-05-05-minutes-7199.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-05-05-minutes-7199.pdf"
+  },
+  "official_sha256": "8bae09d3d6a4a920d67dcb22b17851902c3f1cdff008e3c1df6c3e7eed6a036e",
+  "coverage": "full",
+  "summary": "The two records agree on the main items (Comcast renewal volunteers, studio relocation follow-up with facilities, FY26 budget passing), and the garbled figures in ours resolve to the official balances ($1,054,776.25, $44,509.53, $781,018.45). The main differences: the official minutes record a vote approving the 4/7/2025 minutes that ours omits, and the attendee lists differ (the official lists two members named Steve and ours one).",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "PAC enterprise/current balance reported by manager",
+    "ours": "Comcast franchise fee payment: 1,54,776, 44,59, a little over $100 less than the last payment (the '1,54,776' reads as the PAC balance)",
+    "official": "PAC’s current balance is $1,054,776.25",
+    "official_reading": "$1,054,776.25",
+    "note": "Captions garbled the digit grouping of the balance ('1,54,776' for $1,054,776); same item, but ours attached it to the franchise fee line.",
+    "t": 892
+   },
+   {
+    "kind": "caption_error",
+    "about": "Comcast franchise fee payment amount",
+    "ours": "44,59",
+    "official": "Comcast payment was posted $44,509.53",
+    "official_reading": "$44,509.53",
+    "note": "Misheard/truncated digits of the same payment figure.",
+    "t": 892
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Comcast payment compared with last quarter",
+    "ours": "a little over $100 less than the last payment",
+    "official": "$100 less than last quarter",
+    "note": "Ours says 'a little over $100' less, official says '$100' less; check the recording at ~t=892 for the exact difference stated.",
+    "t": 892
+   },
+   {
+    "kind": "caption_error",
+    "about": "Enterprise fund investment balance",
+    "ours": "781,945, 781 019, 781,000 and $1945",
+    "official": "Balance of $781,018.45",
+    "official_reading": "$781,018.45",
+    "note": "Captions gave several garbled versions of the same balance; the '781 019' version is closest to the official $781,018.45.",
+    "t": 1490
+   },
+   {
+    "kind": "agree",
+    "about": "Seek committee volunteer for Comcast contract renewal",
+    "ours": "PACC will seek a committee volunteer to help with the upcoming Comcast contract renewal process.",
+    "official": "Starting soon and looking for volunteers to be part of the committee.",
+    "note": "Both record the renewal process starting and a need for committee volunteers.",
+    "t": 616
+   },
+   {
+    "kind": "agree",
+    "about": "Manager to contact facilities director about studio relocation",
+    "ours": "the manager will contact the facilities director for information on studio relocation plans and report back at the next meeting.",
+    "official": "J.Toale will contact the facilities manager for updates ad plans",
+    "note": "Same action; official does not mention reporting back at the next meeting, and says 'manager' rather than 'director'.",
+    "t": 1352
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 budget passed at Town Meeting",
+    "ours": "The FY26 budget indirect-cost concern was considered resolved since the line went through town meeting via the consent calendar, and it was agreed not to keep it on future agendas.",
+    "official": "Passed at Town Meeting :)",
+    "note": "Both say the FY26 budget passed at Town Meeting; the consent calendar detail and the agenda decision appear only in ours.",
+    "t": 1332
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Indirect-cost concern and consent calendar",
+    "ours": "The FY26 budget indirect-cost concern was considered resolved since the line went through town meeting via the consent calendar, and it was agreed not to keep it on future agendas.",
+    "official": "",
+    "note": "The official minutes do not mention the indirect-cost concern, the consent calendar, or removing the item from future agendas."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Motion to accept 4/7/2025 minutes",
+    "ours": "",
+    "official": "Motion to accept the amended 4/7/2025 minutes • (F.Beall, 2nd P.Lincoln), passed.",
+    "note": "A recorded vote on prior minutes; our minutes list no votes, so check the recording for whether this vote occurred (it may be treated as procedural)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Studio space funding status",
+    "ours": "",
+    "official": "Up in the air as funding for the new municipal building did not pass",
+    "note": "Official records the reason for the studio uncertainty; ours has only the manager contact action."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Funds redirected to finance the current budget",
+    "ours": "",
+    "official": "S.Walker wanted to note that some funds were being redirected to finance the current budget",
+    "note": "Statement about enterprise fund money being used for the budget appears only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manager's report items",
+    "ours": "",
+    "official": "Currently at 71% local programming",
+    "note": "Official has other manager's report details (71% local programming, no major purchases planned, Talking Baseball season 11, All-Vendor Fair promo) absent from ours."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "Pete (Peter) (chair); Faith (member); Steve (member); Joe Tol (manager)",
+    "official": "PACC members present: Steve Walker (zoom), Pete Lincoln (zoom), Faith Beall, Steve Archambault 3. Manager: Jo Toale",
+    "note": "Official lists four members (two Steves: Walker and Archambault) and the manager as Jo Toale; ours lists only one Steve and calls Pete chair. Check the recording for who attended and whether Pete is chair; 'Joe Tol' is a misheard 'Jo Toale'."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:30:06Z",
+   "cost_usd": 0.228019
+  }
  }
 }

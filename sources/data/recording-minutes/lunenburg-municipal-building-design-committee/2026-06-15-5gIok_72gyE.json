@@ -436,5 +436,227 @@
    "at": "2026-09-27T02:21:41Z",
    "cost_usd": 0.187022
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06152026-7855",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-06-15-minutes-7855.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-06-15-minutes-7855.pdf"
+  },
+  "official_sha256": "2ffa2774a517f0c57a21de9b98987bed0ec6d5336d84696cce8ef35b7fab185a",
+  "coverage": "full",
+  "summary": "The two records agree closely on the figures and the next meeting date, and neither records a substantive vote on policy. The main thing to know is that the official minutes record a motion to approve the June 1 minutes (with an abstention) that ours omit, and ours have a $325,000 / 500 sq ft storage figure and a survey-question action that the official minutes do not contain.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 3,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "about": "Approval of June 1, 2026 minutes (vote)",
+    "kind": "discrepancy",
+    "ours": "VOTES (non-procedural): none",
+    "official": "Motion to Approve: Laura Brzozoski. Seconded by Tom Gray. Unanimously approved, one abstain, Greg Roy.",
+    "note": "Official minutes record a vote (with an abstention) that ours do not; check the recording near the start to confirm the motion and whether Greg Roy abstained (the vote is arguably procedural, but it is a recorded vote).",
+    "t": 0
+   },
+   {
+    "about": "Storage cost: 500 sq ft, $325,000",
+    "kind": "only_in_ours",
+    "ours": "Cost of new building storage space: 500 square feet, $325,000",
+    "official": "",
+    "note": "Official minutes contain no $325,000 or 500 sq ft storage figure; check the recording around t=3251 for what this refers to.",
+    "t": 3251
+   },
+   {
+    "about": "14,000 sq ft facility, 160 sq ft per person",
+    "kind": "only_in_ours",
+    "ours": "Prior building proposal vs. current survey estimate: 14,000 square foot facility, 160 square feet per person",
+    "official": "",
+    "note": "Official minutes do not mention a 14,000 sq ft facility or a per-person allotment; verify against the recording.",
+    "t": 4307
+   },
+   {
+    "about": "Town Clerk office space 600 sq ft",
+    "kind": "only_in_ours",
+    "ours": "Town Clerk office space: 600 square feet",
+    "official": "",
+    "note": "Official Town Clerk section gives no square footage.",
+    "t": 747
+   },
+   {
+    "about": "Treasurer's office space 128 sq ft",
+    "kind": "only_in_ours",
+    "ours": "Treasurer's office space: 128 square feet",
+    "official": "",
+    "note": "Official Treasurer section gives no square footage.",
+    "t": 1225
+   },
+   {
+    "about": "HR office space 129 sq ft",
+    "kind": "only_in_ours",
+    "ours": "HR office space: 129 square feet",
+    "official": "",
+    "note": "Official HR section gives no square footage.",
+    "t": 1972
+   },
+   {
+    "about": "Town Manager office 450 sq ft + 120 sq ft storage",
+    "kind": "agree",
+    "ours": "Town Manager's office space: 450 square feet, 120 square feet",
+    "official": "approximately 450 sq ft office + ~120 sq ft storage",
+    "note": "Same figures in both records.",
+    "t": 2403
+   },
+   {
+    "about": "Conservation office 187 sq ft",
+    "kind": "agree",
+    "ours": "Conservation office space: 187 square feet",
+    "official": "One staff in office (approx. 187 sq ft)",
+    "note": "Same figure.",
+    "t": 2568
+   },
+   {
+    "about": "Planning space 750 sq ft",
+    "kind": "agree",
+    "ours": "Planning department space: 750 square feet",
+    "official": "present footprint ~750 sq ft (including a conference room)",
+    "note": "Same figure.",
+    "t": 2673
+   },
+   {
+    "about": "Facilities department space 160 sq ft",
+    "kind": "only_in_ours",
+    "ours": "Facilities department space: 160 square feet",
+    "official": "",
+    "note": "Official Facilities section gives no square footage, only the need for a shop/storage.",
+    "t": 2943
+   },
+   {
+    "about": "Building department 350 sq ft, 640 cubic feet",
+    "kind": "agree",
+    "ours": "Building department space: 350 square feet, 640 cubic feet",
+    "official": "current office ~350 sq ft including counter",
+    "note": "350 sq ft agrees; official says storage was expressed in cubic feet but gives no 640 figure.",
+    "t": 3500
+   },
+   {
+    "about": "Board of Health 179 sq ft, 14 filing cabinets",
+    "kind": "agree",
+    "ours": "Board of Health office and storage: 179 square feet, 14 filing cabinets",
+    "official": "shares 179 sq ft, including 14 filing cabinets (paper records)",
+    "note": "Same figures.",
+    "t": 3647
+   },
+   {
+    "about": "Laura to draft additional survey questions",
+    "kind": "discrepancy",
+    "ours": "Laura agreed to draft additional survey questions about how often staff interact with other departments/offices, to be sent through the town manager.",
+    "official": "Committee to re-ask select clarifying questions to departments (storage quantified as file cabinets/type; frequency of access; visitor counts; security details).",
+    "note": "Official minutes assign no one by name and describe different question topics; Brian following up with the town manager is for outstanding responses. Check who owns drafting the questions.",
+    "t": 828
+   },
+   {
+    "about": "Assess space needs independent of current buildings",
+    "kind": "agree",
+    "ours": "Committee agreed (per Chris's suggestion) to assess each department's space needs independent of whether Town Hall or the Ritter building currently houses them, rather than designing around existing buildings first.",
+    "official": "Begin consolidating realistic square-footage requirements (including shared meeting rooms, storage, and shop space) rather than forcing fit into current buildings.",
+    "note": "Same decision; attribution to Chris is only in ours.",
+    "t": 1058
+   },
+   {
+    "about": "Standardize storage reporting by filing cabinets and access frequency",
+    "kind": "agree",
+    "ours": "Committee agreed to standardize future storage questions around number of filing cabinets (or filing method) and frequency of access, rather than square footage alone.",
+    "official": "committee concluded that departments should report storage needs by number/type of file cabinets, flat files, or cubic feet and note frequency/access needs",
+    "note": "Same decision.",
+    "t": 2484
+   },
+   {
+    "about": "Next meeting June 29",
+    "kind": "agree",
+    "ours": "Next committee meeting set for June 29th.",
+    "official": "Next meeting scheduled: June 29",
+    "note": "Same date.",
+    "t": 4393
+   },
+   {
+    "about": "Outstanding surveys (assessor and accountant)",
+    "kind": "only_in_official",
+    "ours": "",
+    "official": "Two departments still outstanding on survey response (assessor and accountant); Brian will follow up with the town manager to obtain them.",
+    "note": "Action item not in ours.",
+    "t": 0
+   },
+   {
+    "about": "Recreation Department and Veterans' agent",
+    "kind": "only_in_official",
+    "ours": "",
+    "official": "Recreation Department • One staff in office (20 hours/week) with substantial seasonal/temporary lifeguard staff",
+    "note": "Recreation findings and the veterans' agent needs appear only in the official minutes.",
+    "t": 0
+   },
+   {
+    "about": "Fiscal constraints and 50-year horizon",
+    "kind": "only_in_official",
+    "ours": "",
+    "official": "significant concern about funding appetite for new construction; committee emphasized planning for cost-effective options",
+    "note": "Official records a discussion of funding appetite; ours records none, though ours has a $325,000 figure.",
+    "t": 0
+   },
+   {
+    "about": "Attendee: Dave (chair)",
+    "kind": "caption_error",
+    "ours": "Dave (chair)",
+    "official": "David Blatt",
+    "note": "Same person, full name.",
+    "official_reading": "David Blatt",
+    "t": 0
+   },
+   {
+    "about": "Attendee: Tony",
+    "kind": "caption_error",
+    "ours": "Tony (member)",
+    "official": "Anthony Sculumbrine",
+    "note": "Same person under nickname.",
+    "official_reading": "Anthony Sculumbrine",
+    "t": 0
+   },
+   {
+    "about": "Attendee: Christina",
+    "kind": "caption_error",
+    "ours": "Christina (member)",
+    "official": "Kristina Masaitis",
+    "note": "Misheard first name; same member.",
+    "official_reading": "Kristina Masaitis",
+    "t": 0
+   },
+   {
+    "about": "Attendee: Chris listed as member",
+    "kind": "discrepancy",
+    "ours": "Chris (member (facilities))",
+    "official": "Town Employees: Chris Ruth",
+    "note": "Ours lists Chris as a committee member; official lists him as a town employee, not a member. Check his role.",
+    "t": 0
+   },
+   {
+    "about": "Attendees: other members",
+    "kind": "agree",
+    "ours": "Brian (member (minutes)), Matt, Tom, Laura, Greg",
+    "official": "Members Present:   Brian Lehtinen, Tom Gray, David Blatt, Anthony Sculumbrine, Laura \nBrzozoski, Matthew Brenner, Greg Roy, Kristina Masaitis",
+    "note": "Brian, Matt, Tom, Laura and Greg match the official roster.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:15:27Z",
+   "cost_usd": 0.243537
+  }
  }
 }

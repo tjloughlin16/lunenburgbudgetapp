@@ -637,5 +637,314 @@
    "at": "2026-09-27T18:18:55Z",
    "cost_usd": 0.202894
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07012025-7293",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-07-01-minutes-7293.txt",
+   "path": "sources/meetings/select-board/2025-07-01-minutes-7293.pdf"
+  },
+  "official_sha256": "611e8c1aae554440d49667741bb4cda9bc06bfd63ba65d4eae91c5b7c5c71790",
+  "coverage": "full",
+  "summary": "The two records agree on every substantive vote we captured, all unanimous, and on most of the ARPA and budget figures, apart from caption misspellings of names and one figure ($3,57,970.58). The key difference is that the official minutes record a vote our minutes lack (approval of the December 3 and 10, 2024 minutes, 4-0-1 with one abstention) and none of the tri-board scheduling, location and public-comment decisions we recorded.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 9,
+   "discrepancy": 5,
+   "only_in_ours": 6,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Planning Board appointee's name",
+    "t": 658,
+    "ours": "Appoint Adam Bernie to the planning board, term to expire at the next annual town election (joint select board/planning board vote, roll call) — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to appoint Adam Burney to the Planning Board for a term to expire at the next Annual Town Election.",
+    "official_reading": "Adam Burney",
+    "note": "Same appointment, same term and unanimous outcome (5-0-0 Select Board, 3-0-0 Planning Board); only the surname was misheard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Communications and IT manager's name",
+    "t": 1373,
+    "ours": "Ratify the town manager's appointment of Cara McCarthy as communications and IT manager, effective July 2, 2025 — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to ratify the appointment of Kara McCarthy as the Communications and IT Manager, effective July 2, 2025.",
+    "official_reading": "Kara McCarthy",
+    "note": "Same ratification, date and unanimous vote; only the first name's spelling differs."
+   },
+   {
+    "kind": "agree",
+    "about": "Tiffany Warren, Cultural Council",
+    "t": 1599,
+    "ours": "Appoint Tiffany Warren to the Cultural Council, term to expire June 30, 2028 — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to appoint Tiffany Warren to the Cultural Council for a term to expire June 30, 2028.",
+    "note": "Appointment, term and unanimous outcome match (official 5-0-0)."
+   },
+   {
+    "kind": "agree",
+    "about": "OpenGov vote recording",
+    "t": 2289,
+    "ours": "Authorize staff to record select board votes in OpenGov for licensing and permitting signatures — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to authorize Town staff to record votes in OpenGov for Town licensing and permitting.",
+    "note": "Same motion and unanimous outcome (5-0-0)."
+   },
+   {
+    "kind": "agree",
+    "about": "FY2026 town manager goals",
+    "t": 2626,
+    "ours": "Approve the FY2026 town manager goals as revised — passed unanimously",
+    "official": "Motion by Vice-Chair Moore to approve the FY2026 Town Manager Goals.",
+    "note": "Same vote and outcome (5-0-0); the official motion does not say 'as revised' but the text describes revisions."
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 select board goals",
+    "t": 3954,
+    "ours": "Approve the FY26 select board goals as revised — passed unanimously",
+    "official": "Vice-Chair Moore to approve the FY2026 Select Board Goals as amended.",
+    "note": "Same vote and unanimous outcome (5-0-0)."
+   },
+   {
+    "kind": "agree",
+    "about": "Tri-board ground rules approval",
+    "t": 4900,
+    "ours": "Approve the tri-board (select board/school committee/finance committee) ground rules as modified — passed unanimously",
+    "official": "Motion by Member Lehtinen to endorse and approve the Tri-Board Meeting Ground Rules.",
+    "note": "Same vote and unanimous outcome (5-0-0); the official motion does not say 'as modified', so check whether the rules were changed before the vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of December 3 and 10, 2024 minutes (vote)",
+    "ours": "",
+    "official": "Motion by Chair Nuzzolo to approve the Minutes of December 3, 2024, and December 10, 2024.  Seconded by Vice-Chair Moore. Roll Call Vote: Vice-Chair Moore-aye; Clerk Emkey-Aye; Member McLeod-abstain; Member Lehtinen-aye; Chair Nuzzolo-aye. The motion passed (4-0-1).",
+    "note": "This is a vote the official minutes record (4-0-1, McLeod abstaining) and ours does not; check the recording near the minutes/warrants item to see whether it was missed or skipped."
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA funds possibly moved between projects",
+    "t": 5151,
+    "ours": "Possible movement of small unspent ARPA project remainders into other ARPA projects with shortfalls, if federal guidance allows it —  (discussed only)",
+    "official": "The Town Manager stated that the remaining ARPA funds from completed projects may potentially be transferred over to other outstanding projects in certain circumstances.",
+    "note": "Both treat this as a possibility only, with no vote."
+   },
+   {
+    "kind": "agree",
+    "about": "Legislative supplemental budget for Lunenburg schools",
+    "t": 1659,
+    "ours": "Legislative supplemental budget funding for Lunenburg schools: $300,000, $195,000, $55,000, $50,000",
+    "official": "The Town Manager thanked the State delegation for championing $300,000 for the Lunenburg Public Schools in a supplemental budget bill. She stated that $195,000 was earmarked for the purchase of two transportation vans, $55,000 for infrastructure upgrades, and $50,000 for educational materials.",
+    "note": "All four figures match."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Park damaged in vehicle accident",
+    "t": 1679,
+    "ours": "Wallace Park damage / insurance claim: $18,000",
+    "official": "damage was observed to a fence and play structure at Wallis Park due to a motor vehicle accident.",
+    "official_reading": "Wallis Park",
+    "note": "The $18,000 estimate matches; only the park name was misheard."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Temp staffing cost for executive assistant vacancy",
+    "t": 2038,
+    "ours": "Temp staffing cost, executive assistant vacancy: $80 an hour",
+    "official": "",
+    "note": "The official minutes mention the vacancy but give no hourly cost; check the recording at about 2038s."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Total ARPA funds received",
+    "t": 5089,
+    "ours": "ARPA funds received and unspent balance: $3,57,970.58, 900,000",
+    "official": "the Town received a total of $3,507,970.58 of ARPA funds",
+    "official_reading": "$3,507,970.58",
+    "note": "Digit grouping error in captions; the roughly $900,000 unspent figure matches the official 'approximately $900,000 is left unspent'."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Boys and Girls Club ARPA remainder",
+    "t": 5130,
+    "ours": "Boys and Girls Club ARPA project remainder: $150, 5600",
+    "official": "",
+    "note": "The official ARPA list has no Boys and Girls Club item; its only nearby figure is 'approximately $150,000 in remaining funds that may not be able to be reallocated', which may be what was heard, so check the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "PACC equipment ARPA remainder",
+    "t": 5254,
+    "ours": "Pack equipment upgrades ARPA remainder: $4,119",
+    "official": "PACC Equipment Upgrades: The Town Manager stated that she will work with PACC to determine if recently purchased equipment will qualify. The Town Manager stated that there is $4,119.00 that remains unspent.",
+    "official_reading": "PACC Equipment Upgrades",
+    "note": "Amount matches; 'Pack' is a mishearing of PACC."
+   },
+   {
+    "kind": "agree",
+    "about": "Municipal building design ARPA remainder",
+    "t": 5277,
+    "ours": "Municipal building design project ARPA remainder: $18,500",
+    "official": "Municipal Building Design Project: The Town Manager stated that there is a remainder of $18,500.",
+    "note": "Same project and amount."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fire ambulance ARPA remainders",
+    "t": 5298,
+    "ours": "Fire department ambulance / power stretcher ARPA remainders: $1,300, $290, $2,600",
+    "official": "",
+    "note": "The official minutes say only 'there are small amounts of funds remaining' for the ambulance and give no dollar figures; the three amounts are unverified."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dump truck ARPA overage",
+    "t": 5320,
+    "ours": "Dump truck ARPA overage: $2,500",
+    "official": "",
+    "note": "No dump truck item appears in the official ARPA list; check the recording to see what was said."
+   },
+   {
+    "kind": "agree",
+    "about": "Plow truck ARPA commitment",
+    "t": 5341,
+    "ours": "Plow truck (vehicle) ARPA commitment: $480,000",
+    "official": "She stated that $480,000 of the approximately $900,000 left unspent is due to the plow trucks.",
+    "note": "Same $480,000 figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Marshall Park ARPA remainder",
+    "t": 5402,
+    "ours": "Marshall Park ARPA remainder: $13,266",
+    "official": "Marshall Park: The Town Manager stated that there is a remaining $13,266.",
+    "note": "Same amount."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Roof replacement ARPA remainder",
+    "t": 5527,
+    "ours": "DPW roof replacement ARPA remainder: $7,700",
+    "official": "Town Hall Roof Replacement: The Town Manager stated that the project is complete with $7,700 remaining.",
+    "note": "The amount matches but the building differs (DPW vs Town Hall); check the recording to see which roof was named."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Planning Board MBTA Communities bylaw",
+    "t": 1122,
+    "ours": "Planning board (reported to select board) voted to instruct its consultant to draft an MBTA Communities bylaw raising Tritown zoning density from 22 to 26 units per acre, targeting a fall public hearing and special town meeting.",
+    "official": "Mr. Brenner stated that the proposed MBTA Communities Bylaw would increase density at TriTown Landing from 22 units per acre to 26 units per acre.",
+    "note": "The density figures match, but the official minutes record no Planning Board vote to instruct a consultant and no fall hearing or special town meeting target; check the recording and Planning Board minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Executive assistant position repost",
+    "t": 2103,
+    "ours": "Repost the vacant executive assistant to the town manager/select board position, noting a contract arrangement may be available for the right candidate.",
+    "official": "Executive Assistant position remains open.",
+    "note": "The official minutes record the vacancy but no decision to repost or the contract option; check whether the board decided this."
+   },
+   {
+    "kind": "agree",
+    "about": "Flag policy not added to goals",
+    "t": 2670,
+    "ours": "Select board will not add a flag-policy goal now, pending further specific guidance from town counsel, rather than treat it as an immediate priority.",
+    "official": "Chair Nuzzolo stated that a specific policy formation should not be incorporated into the Board's goals. Member McLeod suggested that Town Counsel review the Town’s current practices for flags.",
+    "note": "Both say a flag policy is not added to the goals and counsel review is suggested; neither records a vote."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Tri-board schedule and FY27 recommendation target",
+    "t": 3238,
+    "ours": "Select board set a target of having a tri-board recommendation on the FY27 budget by February 2026, with tri-board meetings running from July 2025 through the end of January 2026.",
+    "official": "Clerk Emkey stated that for the Tri-Board meetings' goals and objectives, she would recommend having the Tri-Board meet regularly through the end of FY26.",
+    "note": "Ours gives a February 2026 target and a January 2026 end; the official has only a recommendation to meet through the end of FY26 (June 2026) and no budget target; check the recording and the goals document."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Location of first tri-board meeting",
+    "t": 4398,
+    "ours": "First tri-board meeting will be held at the Lunenburg Adult Activity Center; subsequent meetings are expected to be at the library.",
+    "official": "The Town Manager stated that there was a desire from Tri-Board members to meet in a neutral room that the boards do not meet in regularly.",
+    "note": "The official minutes name no venue; check the recording for the Adult Activity Center and library decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "No public comment at tri-board meetings",
+    "t": 4964,
+    "ours": "No public comment period will be held at the tri-board meetings, though the public may attend and comment at each body's own regular meetings.",
+    "official": "",
+    "note": "The official minutes do not mention this, though it may be in the ground rules Chair Nuzzolo read aloud; check the ground rules document."
+   },
+   {
+    "kind": "agree",
+    "about": "Sick leave bank policy deferred",
+    "t": 5863,
+    "ours": "Sickle bank policy discussion deferred to a future meeting pending feedback.",
+    "official": "The Town Manager stated that she has received feedback but is in the process of reviewing it.",
+    "note": "Same item, no action taken ('Sickle' is a caption error for sick leave)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Property site walk",
+    "t": 6032,
+    "ours": "Scheduled a site walk of the 56 Carter Seller Hold property for Monday, July 14th at 6 p.m., as a posted meeting.",
+    "official": "56 Carr Ave: Sell or Hold",
+    "official_reading": "56 Carr Ave: Sell or Hold",
+    "note": "The date and time (July 14, 6:00 p.m.) match; the property name was misheard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member names",
+    "ours": "Mr. Mloud, Mr. Leon, Miss Em, Miss Moore, Glenn (select board members); the chair",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Amanda Moore, Clerk Renee Emkey, Member Glenn McLeod, and Member Brian Lehtinen",
+    "official_reading": "Glenn McLeod, Brian Lehtinen, Renee Emkey, Amanda Moore, Caesar Nuzzolo",
+    "note": "The same five members; the captions garbled McLeod, Lehtinen and Emkey, and the chair is Nuzzolo."
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager",
+    "ours": "Jen (town manager)",
+    "official": "Also Present: Jennifer Warren-Dyment, Town Manager",
+    "note": "Same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Teen Center executive director",
+    "ours": "Michelle Feliza (presenter, executive director, Lunenburg Teen Center)",
+    "official": "Michelle Belleza, Executive Director of the Club approached the Board",
+    "official_reading": "Michelle Belleza",
+    "note": "Same person and role; surname misheard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Planning Board attendees",
+    "ours": "Matthew Brener (planning board chair); Miss Reed (planning board member); Mr. Wils (planning board member)",
+    "official": "Members Present: Chair Matthew Brenner, Vice-Chair Timothy Willsmer, and Clerk Amanda Reid.",
+    "official_reading": "Matthew Brenner, Timothy Willsmer, Amanda Reid",
+    "note": "Same three Planning Board members, with garbled names."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Teen Center board chair and treasurer",
+    "ours": "Lisa Gamberdella (board chair, Lunenburg Teen Center); Jeremy Martin (treasurer, Lunenburg Teen Center)",
+    "official": "",
+    "note": "The official minutes name only Ms. Belleza for the Teen Center item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenters",
+    "ours": "",
+    "official": "John Bowen Sr., 162 Highland Street (via Zoom): commented that Mr. Burney is an excellent choice as a Planning Board member.",
+    "note": "The official minutes name John Bowen Sr. and John Bowen Jr. as public commenters; ours lists neither."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:27:49Z",
+   "cost_usd": 0.320485
+  }
  }
 }

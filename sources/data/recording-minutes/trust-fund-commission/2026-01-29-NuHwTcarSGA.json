@@ -300,5 +300,169 @@
    "at": "2026-09-27T11:19:19Z",
    "cost_usd": 0.185568
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01292026-7627",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2026-01-29-minutes-7627.txt",
+   "path": "sources/meetings/trust-fund-commission/2026-01-29-minutes-7627.pdf"
+  },
+  "official_sha256": "1d63ec9c3b9a22b9c2c538833a2007722a9401ad92c7eb57b40d90b80658af7e",
+  "coverage": "full",
+  "summary": "Both records agree that two warrant articles were approved by both members present and on the February 12 next meeting. They differ on the 'municipal' strike (line number, and whether it applied to the second article), the forwarding decision, and the attendee name. Several figures in ours (veterans' fund balances, thresholds) have no counterpart in the official minutes.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 2,
+   "discrepancy": 5,
+   "only_in_ours": 5,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Cy pres legal expenses warrant article vote",
+    "ours": "Approve the wording of the warrant article for appropriation of legal expenses related to trust fund cy pres proceedings, as written, with the word \"municipal\" removed from line seven of the first paragraph. — passed unanimously",
+    "official": "Vote on the motion was Mr Howard = Aye, Chairman Bowen = Aye.",
+    "note": "Both record the article approved with 'municipal' struck and both members voting aye (unanimous of two present); only the line number differs (ours 7, official 6th line).",
+    "t": 1898
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Line of first paragraph from which 'municipal' was struck",
+    "ours": "with the word \"municipal\" removed from line seven of the first paragraph",
+    "official": "After review there was identified the need to strike the word municipal from the 6th line of the first paragraph.",
+    "note": "Ours says line seven, official says 6th line; check the recording and the article text to confirm which line the word appears on.",
+    "t": 1898
+   },
+   {
+    "kind": "agree",
+    "about": "Distribution of trust funds in absence of quorum vote",
+    "ours": "Approve the warrant article for distribution of trust funds in the absence of a quorum, with the word \"municipal\" stricken from line four of paragraph one. — passed unanimously",
+    "official": "The vote on the motion was Mr Howard = Aye, Chairman Bowen = Aye.",
+    "note": "Both record the motion passing with both members aye.",
+    "t": 3751
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Amendment to quorum article ('municipal' stricken)",
+    "ours": "with the word \"municipal\" stricken from line four of paragraph one",
+    "official": "Mr Howard made a motion to approve the DISTRIBUTION OF TRUST FUNDS IN THE ABSENCE OF A QUORUM warrant.",
+    "note": "Our minutes record a wording change to this article; the official motion records no amendment (the 'municipal' removal was for the legal-expenses article). Check the recording at this point to see whether the strike applied to this article.",
+    "t": 3751
+   },
+   {
+    "kind": "caption_error",
+    "about": "Cy pres legal expenses appropriation amount",
+    "ours": "$14,252.39",
+    "official": "$14,252.39",
+    "official_reading": "$14,252.39",
+    "note": "Same figure; later captions render it as 14,25239, 1425239 and 14,26239, which are mishearings of $14,252.39.",
+    "t": 497
+   },
+   {
+    "kind": "caption_error",
+    "about": "Source of the appropriation figure",
+    "ours": "14,25239",
+    "official": "$14,252.39",
+    "official_reading": "$14,252.39",
+    "note": "Digit grouping lost in the captions; same amount.",
+    "t": 809
+   },
+   {
+    "kind": "discrepancy",
+    "about": "American Legion Poor Trust Fund balance",
+    "ours": "$14,000, 14,53158, 1425239, 14,26239",
+    "official": "",
+    "note": "Our captions give several conflicting figures, and the official minutes state no balance; $14,252.39 is the legal-fee appropriation, not a fund balance, so check the recording.",
+    "t": 1683
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Combined veterans' trust fund holdings and splits",
+    "ours": "Combined veterans' trust fund holdings: $85,000; restated split 25,000, 18,000, 12,000; Post 283 fund balance 9,916, 10,11091",
+    "official": "",
+    "note": "The official minutes record no balances or discussion of veterans' fund holdings; these figures may be misheard and should be checked against the recording.",
+    "t": 1144
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Post 283 member fund contribution and spending threshold",
+    "ours": "$5,000, $100,000, 20%",
+    "official": "",
+    "note": "The official minutes do not mention these thresholds.",
+    "t": 1519
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Annual fiscal overview at Annual Town Meeting",
+    "ours": "The commission will prepare and deliver its statutorily required annual fiscal overview of the trust funds at Annual Town Meeting.",
+    "official": "",
+    "note": "Not recorded in the official minutes.",
+    "t": 433
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair reviewing historical records boxes in early February",
+    "ours": "The chair will go through boxes of historical trust fund records held with the treasurer, coordinated with the town manager and treasurer, in early February.",
+    "official": "",
+    "note": "Not in the official minutes; the official says only that Real Estate investigations are on Hold.",
+    "t": 748
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Forwarding of warrant articles to Select Board, Bylaw Review and Finance Committee",
+    "ours": "Both warrant articles will be forwarded to the Select Board, with the bylaw amendment article also going to the Bylaw Review Committee, and a courtesy copy of both to the Finance Committee.",
+    "official": "",
+    "note": "A decision in our minutes that the official minutes do not record; check the recording.",
+    "t": 998
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Commission vacancy announcement",
+    "ours": "A commission vacancy was announced; interested residents can apply through the assistant town manager at Town Hall.",
+    "official": "",
+    "note": "The official minutes mention a warrant article on vacancies in the opening topics but record no vacancy announcement.",
+    "t": 3838
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "The next meeting was set for February 12, 2026, from 5:00 to 6:30 PM.",
+    "official": "The next meeting is scheduled to be held on February 12, 2026 at our normal time of 5:00pm.",
+    "note": "Same date and start time; end time appears only in ours.",
+    "t": 3880
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Real Estate investigations on hold",
+    "ours": "",
+    "official": "Chairman Bowen advised that Real Estate investigations are on “Hold”",
+    "note": "Only in the official minutes.",
+    "t": 3860
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Discussion of 5-0 requirement versus Select Board filling quorum",
+    "ours": "",
+    "official": "Mr Howard felt that having members of the Select Board fill the necessary gap to achieve a quorum would be a sufficient approach, but Chairman Bowen felt that since this is an unusual arrangement that the 5-0 requirement is a necessary higher standard",
+    "official_reading": "",
+    "note": "Substantive discussion in the official minutes that ours does not record."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "the Chair (referred to in the reading as \"Chairman Bowen\") (chair); Richard (Vice Chairman)",
+    "official": "There were no opening comments from either Mr Howard or Chairman Bowen.",
+    "note": "Official names two members, Mr Howard and Chairman Bowen; ours says 'Richard (Vice Chairman)', which may be a mishearing or a different person, so check against the roster."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:21:00Z",
+   "cost_usd": 0.29705899999999996
+  }
  }
 }

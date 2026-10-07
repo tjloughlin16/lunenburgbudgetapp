@@ -491,5 +491,337 @@
    "at": "2026-09-27T18:20:37Z",
    "cost_usd": 0.204672
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06092025-7258",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-06-09-minutes-7258.txt",
+   "path": "sources/meetings/planning-board/2025-06-09-minutes-7258.pdf"
+  },
+  "official_sha256": "b77fa81ab1ff5a5ad35cdcf7ccb4a249f1282f115829240644b72ccfd71b1993",
+  "coverage": "partial",
+  "summary": "The two records agree on the board reorganization (officer and committee-representative nominations, the 2-2 chair split) and the MBTA information sessions. The official minutes are a partly filled template that stops after the reorganization and carries leftover text from the 2025-05-12 meeting, so every vote on 222 West Townsend Road, 443 West Townsend Road lot 3, 1083 Northfield Road and 100 Townsend Harbor Road appears only in ours. Check those against the recording or a corrected version of the official minutes.",
+  "counts": {
+   "agree": 14,
+   "caption_error": 4,
+   "discrepancy": 11,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Chair election: tied 2-2 between Allison and Brener",
+    "t": 2392,
+    "ours": "Elect chair of the Planning Board (Matt Allison vs. Matt Brener) — tied",
+    "official": "Vote: Failed 2-2-0. (M. Allison and A. Reid Nay).",
+    "note": "Both show neither candidate won, 2-2; the official records it as two separate nomination motions that each failed 2-2-0.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Vice chair: Wilsner/Willsmer",
+    "t": 2558,
+    "ours": "Elect Tim Wilsner as vice chair — passed",
+    "official": "Motion: A. Reid, to nominate T. Willsmer as Vice Chair.",
+    "note": "Same vote, passed unanimously by voice vote in the official minutes; the surname differs only by caption spelling.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Clerk: Amanda Reed",
+    "t": 2579,
+    "ours": "Elect Amanda Reed as clerk — passed",
+    "official": "Motion: M. Allison, to nominate A. Reid as Clerk.",
+    "note": "Same vote, passed unanimously.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "MRPC representative: Reed",
+    "t": 2600,
+    "ours": "Elect Amanda Reed as MRPC representative — passed",
+    "official": "Motion: T. Willsmer, to nominate A. Reid as Rep to Montachusett Regional Planning Commission.",
+    "note": "Same vote, passed unanimously.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "MJTC representative: Reed",
+    "t": 2623,
+    "ours": "Elect Amanda Reed as MJTC representative — passed",
+    "official": "Motion: T. Willsmer, to nominate A. Reid as Rep to Montachusett Joint Transportation Committee.",
+    "note": "Same vote, passed unanimously.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Capital Planning Committee representative: Brener",
+    "t": 2665,
+    "ours": "Elect Matt Brener as Capital Planning Committee representative — passed",
+    "official": "Motion: T. Willsmer, to nominate M. Brenner as Rep to Capital Planning Committee.",
+    "note": "Same vote, passed unanimously.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Open Space Committee representative: Wilsner",
+    "t": 2706,
+    "ours": "Elect Tim Wilsner as Open Space Committee representative — passed",
+    "official": "Motion: A. Reid, to nominate T. Willsmer as Rep to Open Space Committee.",
+    "note": "Same vote, passed unanimously.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Storm Water Task Force representative: Wilsner",
+    "t": 2727,
+    "ours": "Elect Tim Wilsner as Storm Water Task Force representative — passed",
+    "official": "Motion: A. Reid, to nominate T. Willsmer as Rep to Stormwater Task Force.",
+    "note": "Same vote, passed unanimously.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Municipal Building Design Committee representative vote (Allison)",
+    "t": 2768,
+    "ours": "Elect Matt Allison as Municipal Building Design Committee representative — passed",
+    "official": "Also willing to stay on Municipal Building Design Committee.",
+    "note": "The official minutes record no motion or vote for this seat, only Allison's willingness and a committee-report line; check the recording for whether a vote was taken.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Economic Development Committee representative: Brener",
+    "t": 2790,
+    "ours": "Elect Matt Brener as Economic Development Committee representative — passed",
+    "official": "Motion: T. Willsmer, to nominate M. Brenner as Rep to Economic Development Committee.",
+    "note": "Same vote, passed unanimously.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Master Plan Steering Committee representative: Wilsner",
+    "t": 2832,
+    "ours": "Elect Tim Wilsner as Master Plan Steering Committee representative — passed",
+    "official": "Motion: A. Reid, to nominate T. Willsmer as Rep to Master Plan Steering Committee",
+    "note": "Same vote, passed unanimously.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Second chair vote (re-vote)",
+    "t": 3404,
+    "ours": "Re-vote for chair (Matt Allison vs. Matt Brener) — tied / no decision",
+    "official": "The Board discussed how to resolve a split vote for Chair.",
+    "note": "Ours records a second tied vote on chair; the official records only a discussion of how to resolve the split and no re-vote. Check the recording at this point.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Chair position left unchanged, revisited later",
+    "t": 3424,
+    "ours": "After a tied vote for chair, the board decided to leave the chair position unchanged for now and revisit the reorganization vote at the June 23rd meeting, with the chair report item first on that agenda.",
+    "official": "Chair M. Brenner believes the position remains as-is without a successful majority vote, but will keep put it on the agenda indefinitely until it’s resolved.",
+    "note": "Both leave the chair as is and keep the matter on the agenda; ours names June 23 and the official says 'indefinitely' and mentions seeking procedural clarification.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Open Space Committee vote on 222 West Townsend Road right of first refusal",
+    "t": 4941,
+    "ours": "Open Space Committee: motion not to recommend pursuing purchase (right of first refusal) of 222 West Townsend Road — passed",
+    "official": "Michael Toohill called the meeting of the Open Space Committee to order.",
+    "note": "The official minutes record no vote and no mention of 222 West Townsend Road under the Open Space Committee heading; the vote appears only in ours.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Planning Board vote not to exercise right of first refusal, 222 West Townsend Road",
+    "t": 5231,
+    "ours": "Planning Board: motion to recommend to select board not to exercise right of first refusal on 222 West Townsend Road — passed",
+    "official": "",
+    "note": "The official minutes have no record of this vote or this property; check the recording and the Select Board record.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "1083 Northfield Road hearing continued to July 14, 2025",
+    "t": 6091,
+    "ours": "Continue public hearing for 1083 Northfield Road to July 14, 2025 at 6:05 p.m. — passed",
+    "official": "Motion: T. Willsmer, to continue the public hearings for 1083 Northfield Rd Special Permit & Stormwater Management Permits to 2025-06-09 at 6:05 P.M.",
+    "note": "The only 1083 Northfield continuation in the official text is to 2025-06-09, which looks carried over from the prior meeting; the July 14 continuation is not recorded. Check the official against the recording.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "1083 Northfield Road: peer review of revised 5-lot plans",
+    "t": 6045,
+    "ours": "For 1083 Northfield Road, the board directed the applicant to obtain peer review of the revised (5-lot) plans and continued the hearing about a month to allow that.",
+    "official": "",
+    "note": "The official minutes contain no discussion or direction on 1083 Northfield Road for this meeting.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Close hearing, 443 West Townsend Road lot 3",
+    "t": 7070,
+    "ours": "Close public hearing for 443 West Townsend Road lot 3 special permit — passed",
+    "official": "",
+    "note": "This vote and the property are absent from the official minutes, whose hearings section is placeholder text; check the recording.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Three waivers, 443 West Townsend Road lot 3 common driveway",
+    "t": 7173,
+    "ours": "Grant three waivers for 443 West Townsend Road lot 3 common driveway — passed",
+    "official": "",
+    "note": "The waiver vote does not appear in the official minutes; check the recording and any decision filed for the permit.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Special permit approved, 443 West Townsend Road lot 3",
+    "t": 7193,
+    "ours": "Approve special permit for common driveway, 443 West Townsend Road lot 3, with waivers as voted — passed",
+    "official": "",
+    "note": "An approval of a special permit is missing from the official minutes entirely; this is the most consequential omission and should be checked first.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "100 Townsend Harbor Road hearing continued to June 23",
+    "t": 10506,
+    "ours": "Continue public hearing for 100 Townsend Harbor Road storm water permit to June 23, 2025 at 6:05 p.m. — passed",
+    "official": "456 Any Rd – Special Permit, Stormwater Management Permit (OPENGOV_ID)",
+    "note": "The official minutes show only a placeholder hearing ('456 Any Rd') and no vote on 100 Townsend Harbor Road; the continuance, and the request to fold in peer reviewer comments, are not recorded.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Master Plan Steering Committee quorum follow-up",
+    "t": 11744,
+    "ours": "The board chair said he would consult the town manager on whether/how the Master Plan Steering Committee's quorum requirement could be legally reduced, before any vote to change it.",
+    "official": "M. Brenner and T. Willsmer briefly discussed the board’s ability to re-define a quorum of a subcommittee. Opted for further discussion after public hearings.",
+    "note": "Ours has a follow-up with the town manager; the official has further discussion after the hearings. Check the recording to see which was said.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "MBTA Communities Act information sessions",
+    "t": 1104,
+    "ours": "Two public information sessions on MBTA Communities Act zoning options were scheduled for June 11 at 9:30 a.m. and June 16 at 6:00 p.m., both at the Adult Activity Center (Eagle House), to be posted as board meetings.",
+    "official": "Dates are 2025-06-11 at 9:30 A.M and 2025-06-16 at 6:00 P.M.",
+    "note": "Same dates and times and same venue (Eagle House).",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "06-23 vote on MBTA option and consultant plan",
+    "ours": "",
+    "official": "(Out of order): On 06-23 the Board will vote on which option to implement.",
+    "note": "Our minutes do not record the plan to vote on an MBTA compliance option on 06-23 or the consultant (Community Scale) drafting steps.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by Kim Duffy on the MPSC quorum",
+    "ours": "",
+    "official": "Kim Duffy (1479 Mass Ave, member of Master Plan Steering Committee) discussed problems with the",
+    "note": "Our minutes list no public commenter and no proposal to cut quorum to 5 with 8 alternates.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Interim Planning Director Jasmin Farinacci",
+    "ours": "",
+    "official": "Jasmin Farinacci has joined as Interim Planning Dir, providing technical planning services for the town.",
+    "note": "Ours refers only to an 'incoming interim planner' for the 100 Townsend Harbor Road item and lists no staff name.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "222 West Townsend Road tax revenue figure",
+    "t": 5085,
+    "ours": "222 West Townsend Road - tax revenue if not acquired: 90%",
+    "official": "",
+    "note": "The official minutes do not mention this figure or the property.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 61A tax break value",
+    "t": 8032,
+    "ours": "Chapter 61A tax break value: thousands of dollars a year",
+    "official": "",
+    "note": "The official minutes carry only a heading ('Discussion of Chapter 61A Procedures') and no figures.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Matt Brener",
+    "ours": "Matt Brener (chair (outgoing/incumbent, seeking re-election))",
+    "official": "Matthew Brenner Chair",
+    "note": "Same person; caption misspelled the surname.",
+    "official_reading": "Matthew Brenner"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Tim Wilsner",
+    "ours": "Tim Wilsner (member (nominated/elected vice chair))",
+    "official": "Timothy Willsmer Vice Chair",
+    "note": "Same person; caption misheard the surname.",
+    "official_reading": "Timothy Willsmer"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Amanda Reed",
+    "ours": "Amanda Reed (member (clerk))",
+    "official": "Amanda Reid Clerk",
+    "note": "Same person; caption misspelled the surname.",
+    "official_reading": "Amanda Reid"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Matt Allison",
+    "ours": "Matt Allison (member (nominated for chair))",
+    "official": "Matthew Allison Member",
+    "note": "Same person and role.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Logan, planning office staff",
+    "ours": "Logan (town planning office staff)",
+    "official": "Logan O’Connell – Admin Asst.",
+    "note": "Same person; the official gives the full name and title.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Open Space Committee chair",
+    "ours": "Mike Duhill (Open Space Committee chair)",
+    "official": "Michael Toohill called the meeting of the Open Space Committee to order.",
+    "note": "Same role and likely the same person; the caption misheard the surname and the first name is a short form.",
+    "official_reading": "Michael Toohill"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Applicants, presenters and other Open Space attendees",
+    "ours": "Greg Roy (civil engineer, Dillisen Roy Civil Design Group (presenter for applicant Tanner Cole))",
+    "official": "",
+    "note": "The official minutes name none of Greg Roy, Tanner Cole, Mika Lassa, Anna or Eric Hines, and its PRESENT/ABSENT lists are blank.",
+    "official_reading": ""
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:29:05Z",
+   "cost_usd": 0.295089
+  }
  }
 }

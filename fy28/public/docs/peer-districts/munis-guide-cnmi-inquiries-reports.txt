@@ -1,0 +1,696 @@
+===PAGE 1===
+Inquiries & Reports  
+Page 
+1  
+   
+  This MUNIS reference guide covers the following topics:  • Account Inquiry • YTD Budget • Project Detail History • Project Summary • Standard PO Reports                                
+===PAGE 2===
+Inquiries & Reports  
+Page 
+2  
+   
+Table of Contents  Account Inquiry.............................................................................................................................................. 2 4 Year Comparison Tab .............................................................................................................................. 4 YTD Budget Report......................................................................................................................................... 7 With Detail ............................................................................................................................................... 10 Project Detail History Report .................................................................................................................... 12 Project Summary ......................................................................................................................................... 15 Standard Purchase Order Reports ................................................................................................................ 17 Open PO by Account ................................................................................................................................ 17 PO by Due Date ........................................................................................................................................ 19 PO by Vendor ........................................................................................................................................... 21 PO Audit Report ....................................................................................................................................... 23 Encumbrance by PO Number ................................................................................................................... 25 Capital Asset Purchase Orders .................................................................................................................. 26             Account Inquiry  
+===PAGE 3===
+Inquiries & Reports  
+Page 
+3  
+   
+The Account Inquiry program provides both summarized and detail history for a selected set of accounts, with a focus on the current available budget. You cannot modify data in this program; you can view data and create reports of the collected data.   There are options in the Account Inquiry program for consolidating the data into a report-like format, but if you want to report on many accounts in a report format, it may be best to use the YTD Budget Report.  The information in the fields displayed throughout the program depends upon your user permissions, which are established in the System Administration General Ledger Roles program.  1. Go to Financials>Account Inquiry 2. Click Search  from the toolbar.  Complete one or more of the fields to define your search criteria. 
+ 3. Once you define the search criteria click Accept .  
+
+===PAGE 4===
+Inquiries & Reports  
+Page 
+4  
+   
+4. If you have a large find set, you can click Browse to view a list of the accounts. 
+ 5. Double-click an account to view the details.   4 Year Comparison Tab  This tab shows the current fiscal year, the previous two fiscal years, and the next fiscal year. To view additional information for a field, click the folder button. (Most commonly used)  1. Click on the yellow folders and that will take you to the detail of the line. 
+
+===PAGE 5===
+Inquiries & Reports  
+Page 
+5  
+   
+  The Account Detail screen displays the results.  Select a detail line to highlight it, and then click 
+Detail or Journal for more information or a specific entry.   
+
+===PAGE 6===
+Inquiries & Reports  
+Page 
+6  
+   
+Clicking Detail displays the single entry from the account.  The detail screen varies according to the journal entry source type.  For example, invoice entries (journal source API) display the Invoice Data screen. 
+   2. Click Back to return to the Account Detail screen.  Clicking Journal provides the Journal Inquiry/Print screen, which displays the entire journal.  
+
+===PAGE 7===
+Inquiries & Reports  
+Page 
+7  
+   
+YTD Budget Report  The Year to Date Budget Report is used primarily to view budget position through a specified period. It is only run for subsidiary ledger accounts (expense and revenue accounts). Information is presented under different rules depending on whether the accounts are multi-year or annual fund accounts. Reporting periods may range from three years prior to the following year. This report is sensitive to the setting in Fund Attributes for Available Budget Method. An option exists to print totals only, useful for a quick view or for situations where totals are not needed by account, but by Org.  Although this report is commonly used to see budget position, it is also very useful for proving encumbrance balances against the MUNIS Purchase Order application.  1. Go to Financials>General ledger Menu>Inquiries and Reports>YTD Budget Report 2. Click search  3. Enter Org Code or leave blank for wide open search. 4. Enter Object Code or leave blank for wide open search. 5. Enter Project Code or leave blank for wide open search. 6. Enter Rollup Code or leave blank for wide open search. 7. Account Type/Status • Account type: Select from drop down or leave blank for wide open search. • Account status: Select from drop down or leave blank from wide open search. 8. Click Accept .  
+9. Click on Report Options . 10. Report Sequence • Execute this report: Select from drop down (Most common option is Now) 
+
+===PAGE 8===
+Inquiries & Reports  
+Page 
+8  
+   
+• Sequence 1: Use drop down and select Fund (Most common but you can choose other options) i. Check Total ii. Check Page Break • Sequence 2: Use drop down and select Org (Most common but you can choose other options).  i. Check Total ii. Uncheck Page Break if you choose • Sequence 3 & 4: Leave Blank (Most common but you can choose other options). • Report Title: Default is YEAR-TO-DATE BUDGET REPORT.  You can change if you choose.  
+ 11. Print Options • Include only accounts that used: leave default as 0% • Order accounts by: Leave default Org, Object, Project • Uncheck Totals only • Account description: Use drop down and select Full • Uncheck Print full GL account • Uncheck Roll projects to object • Check report options  
+
+===PAGE 9===
+Inquiries & Reports  
+Page 
+9  
+   
+ This is highly recommended as if someone else comes and runs this report with different options this is the only thing that reminds you of how your set your report. • Year/Period: Use drop down and select Within year/period.  i. Enter Year you want ii. Enter Period that you want the report to run through. • Carry forward: Use drop down and select Totals (GAAP) • Uncheck Print MTD version if applicable. • Format type: Use drop down and select  • Uncheck Double space • Check Suppress zero bal accts • Uncheck Exclude YEC journals 
+ 12. Additional Options • Uncheck requisition amounts if applicable. • Uncheck Print Revenues-Version headings if applicable • Check revenue as credit • Uncheck Print revenue budgets as zero if applicable • Uncheck include fund balance if applicable. • The other options are for detail report (Will demonstrate in next option) • Click Accept .  • Click Back  button.  
+
+===PAGE 10===
+Inquiries & Reports  
+Page 
+10  
+   
+• Click on output option of your choice PDF or Excel. 
+ With Detail  Follow all steps as before but all the following:  1. Additional Options • Check Print Journal detail • From Yr/Per: Choose the Yr/Pr you want to start the detail from • To Yr/Per: Choose the Yr/Pr you want to end the detail to. • Check Include budget entries if applicable • Check encumb/liq entries if applicable • Sort option: Use drop down and select Journal Entries • Detail format option: Use drop down and select Standard format • Uncheck Include additional JE comments if applicable • Multiyear view: Use drop down and select Default view • Check Amounts/totals exceed 999 million dollars.  
+
+===PAGE 11===
+Inquiries & Reports  
+Page 
+11  
+   
+2. You will get the following notice • Select 3 if applicable.           
+ 3. Click Accept .  4. Click Back  button.   
+
+===PAGE 12===
+Inquiries & Reports  
+Page 
+12  
+   
+5. Click on output option of your choice PDF or Excel.  Project Detail History Report  This report shows the journal information on all entries to the project, including the source journal, the four reference fields, amount, general ledger year and period and the entry amount.  1. Click on General Ledger Menu>Project Accounting>Project Ledger>Project Reports>Project Detail History. 2. Click Define .  3. Template Selection • Execute this report: Use drop down and select Now.  
+
+===PAGE 13===
+Inquiries & Reports  
+Page 
+13  
+   
+• Report Title: Use default (Can change name if you chose).  
+ 4. Project String Selection • Expense: i. Project: Enter Project (Leave Blank for open search) ii. Phase: Enter Phase (Leave Blank for open search) iii. Task: Enter Phase (Lease Blank for open search) • Funding Source: i. Project: Enter Project (Leave Blank for open search) ii. Source: Enter Source (Leave Blank for open search) 
+iii. Detail: Enter Detail (Leave Blank for open search)  5. Report Options • Month/Year Range: Enter Month/Year to Month/Year • Group by: Use drop down and select None • Project Segment Sequence i. Sort Sequence 1: Use Drop Down and select Project 1. Check Total 2. Check Page Break     
+
+===PAGE 14===
+Inquiries & Reports  
+Page 
+14  
+   
+  
+ 6. Detail Options • Include Name: Use drop down and select short • Check Project String Detail • Uncheck Employee Detail if applicable • Check Include Journal Detail if applicable • Check Actual Detail if applicable • Check Encumbrance Detail if applicable • Check Budget Detail if applicable • Check Vendor Detail if applicable • Uncheck Include Unposted Transactions if applicable • Journal Source Code: Select if applicable 
+ 7. Click Accept .  8. Select Output of choice, PDF, or Excel. 
+
+===PAGE 15===
+Inquiries & Reports  
+Page 
+15  
+   
+  Project Summary  This report shows funding and expense string amounts for the projects and dates specified.  1. Click on General Ledger Menu>Project Accounting>Project Ledger>Project Reports>Project Summary. 2. Click Define . 3. Execute this Report: Use drop down and select Now. 4. Project: Enter Project or use Ellipsis to select project. 5. Start Month/Year: Select starting Month/year 6. End Month/Year: Select Ending Month/year 7. Uncheck Group by Major Project if applicable. 8. Uncheck Exclude zero balance Projects if applicable. 9. Check Include String detail if applicable. 10. Check Include string title if applicable 11. Check Exclude zero balance strings if applicable. 12. Click Accept 
+
+===PAGE 16===
+Inquiries & Reports
+Project Summary Report
+Back
+Accept
+Cancel
+Execute this report * Now
+Project
+Start Month/Year *
+End Month/Year *
+Group by Major Project
+... Exclude zero balance Projects...
+E Include string detail
+• Include string title
+• Exclude zero balance strings
+13. Select output of choice, PDF, or Excel.
+05/11/2020 19:12:32 | KB 2019.1 DATABASE Jan 31 2019
+shalee.davis
+Project Summary Report
+2019 To Jun.
+2020
+PROJECT TITLE
+CD13
+COMMUNITY DEV 2013 -2014
+BEGINNING BALANCE
+FUNDING SOURCES
+PROJECT TITLE
+CD13
+COMMUNITY DEV 2013-2014
+FUNDING SOURCES
+EXPENSE STRINGS
+ENDING BALANCE
+PROJECT TITLE
+CDBG20
+COMMUNITY DEVELOPMENT BLOCK GRANT
+BEGINNING BALANCE
+FUNDING SOURCES
+CDBG20
+-FEDERAL
+-GRANT
+EXPENSE STRINGS
+CDBG20
+-DESIGN
+CDBG20
+-DESIGN
+CDBG20
+-UeN
+- PROFSRV
+-SALARY
+-WRKRCOMP
+ENDING BALANCE
+a tyler erp solution
+PAGE 31
+pabal rot
+TITLED
+TITLE
+FUNDING SOURCE TOTAL
+EXPENSE TOTAL
+TITLE
+CDBG FEDERAL GRANT
+FUNDING SOURCE TOTAL
+TITLE
+CDBG2020 PROFESSIONAL SERVICES
+CDBG20 SALARY
+CDBG2020 WORKERS COMP INS
+EXPENSE TOTAL
+140,112.32
+AMOUNTI
+AMOUNTI
+.00
+.00
+AMOUNT
+.00
+. 00
+140,112.32
+.00
+AMOUNT
+-210, 125.00
+-210,125:00
+AMOUNT
+00,000 g
+0.000.0
+250.00
+250,250.00
+40,125.00
+Page 16
+===PAGE 17===
+Inquiries & Reports  
+Page 
+17  
+   
+Standard Purchase Order Reports  There are several standard purchase orders reports you can run:  • Open Purchase Orders by Expense Account • Open POs by Due Date • Open POs by Vendor • Open POs by Commodity Code • Audit File PO History • Open Encumbrance by PO Number • Fixed Asset Purchase Order •  Open PO by Account  1. Open ‘Open PO by Account’  Financials > Purchasing > PO Inquiry and Reports Menu > Standard PO Reports > Choose from the list the applicable report  • Description of Report  o This report displays all Open Purchase orders broken down by GL account. The report displays the Vendor Name, PO Date, Amount Ordered, Remaining Open Amount and Line Descriptions  • Report Usage  o This report can be used at the end of the year to identify “open” Purchase Orders that may need review to determine which ones should remain open and which ones should be closed prior to the year end.   
+===PAGE 18===
+Inquiries & Reports
+•
+Report Setup
+% OPEN POS BY ACCOUNT
+Back
+Accept
+Cancel
+General
+• Initially sort by Dept/Loc
+Sort by • Fund • Organization Account
+Inclusion options
+PO fiscal year
+PO entered
+Dept/Loc
+Fund
+Function/CC
+Department
+Program
+Grade
+Grant
+DOE Function
+Category
+Org
+Object
+Project
+Accounts:
+Next
+07/01/2019
+2020
+06/30/2020
+...
+•..
+•.•
+•••
+to
+to
+to
+to
+to
+to
+to
+to
+to
+to
+to
+to
+to
+•••
+2ZZZ
+22222222ZZ
+22Z2Z22ZZZ
+zzzzzzzzzz
+zzzzzzzzzz
+zzzzzzzzzZ
+2zzzZZZZzZ
+22222ZZZZZ
+1000
+2222ZZ
+ZZZZZ
+.•.
+...
+••.
+...
+.••
+...
+••.
+.•.
+•••
+1 Expense
+Revenue
+• Balance Sheet
+•••
+...
+Page 18
+===PAGE 19===
+Inquiries & Reports  
+Page 
+19  
+   
+• Report View 
+ PO by Due Date  1. Open ‘PO by Due Date’ Financials > Purchasing > PO Inquiry and Reports Menu > Standard PO Reports > Choose from the list the applicable report  • Description of Report o This report displays the original ordered amount and the remaining open balance of a PO based on the needed by date.  • Report Usage o This report can be used determine deadlines for due purchases. It can also be used to review purchase orders that are past their due date to determine if the product is still needed and if not, can the PO be cancelled.   
+
+===PAGE 20===
+Inquiries & Reports
+• Report Setup
+OPEN POS BY DUE DATE
+Back
+General
+Accept
+Cancel
+Report
+• Summary O Detail
+• Initially sort by Dept/Loc
+Inclusion options
+PO fiscal year
+POs *
+Due dates *
+Dept/Loc
+Fund
+Function/CC
+Department
+Program
+Grade
+Grant
+DOE Function
+Category
+Org
+Object
+Project
+Next
+-
+00000000
+to
+07/01/2019
+to
+• Include zero balance POS
+Include carry forward POs
+...
+.•.
+...
+•..
+...
+•.•
+to
+to
+to
+to
+to
+to
+to
+to
+to
+to
+•••
+...
+Page 20
+2020
+99999999
+06/30/2020
+22zz
+Z2ZZZZZZZZ
+222222222Z
+ZZZZZZZZZZ
+22ZZ2ZZZZZ
+2222222222
+222222Z2ZZ
+22ZZZZZZZZ
+22Z22222
+2222ZZ
+|zzzzz
+...
+•••
+...
+...
+...
+===PAGE 21===
+Inquiries & Reports  
+Page 
+21  
+   
+• Report View  
+ PO by Vendor  1. Open ‘PO by Vendor’ Financials > Purchasing > PO Inquiry and Reports Menu > Standard PO Reports > Choose from the list the applicable report  • Description of Report o This report displays the original ordered amount and the remaining open balance of a PO based on vendor  • Report Usage o This report can be used to assess how much money is owed to a vendor or to see all open POs that may need to be closed for a vendor.   
+
+===PAGE 22===
+Inquiries & Reports
+•
+Report Setup
+OPEN POS BY VENDOR
+General
+Report
+• Summary • Detail
+| Initial sort by Dept/Loc
+Sort by
+• Vendor Number O Alpha Name
+Inclusion options
+PO fiscal year
+PO *
+Next
+00000000
+to
+• Include zero balance POs
+| Include carry forward POs
+00000 ...
+...
+...
+Vendor *
+Dept/Loc
+Fund
+Function/CC
+Department
+Program
+Grade
+Grant
+DOE Function
+Category
+Org
+Object
+Project
+•..
+to
+to
+to
+to
+to
+to
+to
+to
+...
+•••
+...
+5 0 8
+Page 22
+Schedule
+2020
+99999999
+999999 ...
+•••
+•••
+2222222ZZZ
+22zZZZZZZZ
+2ZZZZZZZZZ
+22ZZ22ZZ7Z
+zzzzzZZzZZ
+22222222ZZ
+22222222z2
+...
+22222
+•••
+••.
+===PAGE 23===
+Inquiries & Reports  
+Page 
+23  
+   
+• Report View 
+ PO Audit Report  1. Open ‘PO Audit Report’ Financials > Purchasing > PO Inquiry and Reports Menu > Standard PO Reports > Choose from the list the applicable report  • Description of Report o The PO Audit Report prints a range of purchase orders showing historical information from purchase order entry through liquidation. Carryforward purchase orders may be included. • Report Usage o This option can be used periodically to purge old history records, which may consume large amounts of system space.   
+
+===PAGE 24===
+Inquiries & Reports
+•
+Report Setup
+Audit File PO History
+Back
+Output
+Print
+Display
+PDF
+Save
+Inclusion Options
+PO fiscal year
+POs *
+Audit date *
+Next
+00000000
+to
+07/01/2019
+to
+Include carry forward POs
+2020
+99999999
+06/30/2020
+Report View
+KB 2019.1 DATABASE Jan 31 2019
+AUDIT FILE PO HISTORY
+Fisyr PO#
+Chn Lin Org
+obj
+D20Г0 02170296
+Original Data
+Record Added
+02170296
+PO Printed
+2020
+02170296
+Re2020120296
+2020
+2020
+R 2020102170296
+deleted
+Proj
+ZUZU
+02170296
+E*E 20 02170296
+Rº2020: 82170296
+2020 02170296
+2020
+dde
+20200217029
+R020201100296
+2020
+added
+50.00
+15000.00
+11
+duced
+R20202490961
+ReCeiV g2170296 1
+ReCeD 2200296 1
+ece 10296 1
+R 202018270296 1
+R 2020 02170296
+R020 82370296
+eceiving adde
+1
+2020
+1717070
+added
+Ree 2170296
+Receiving added
+2020
+02170291
+Change Date
+Clerk
+New Data
+2019-07-15 12:14 munis
+2019-07-15 12:18 munis
+2019-08-20 13:36 chris. vowe 17®
+2019-08-20 13:39 chris.vowel1
+2019-09-17 15:55 argerie.matute
+2019-10-10 13:30 sarah.deroche
+2019-10-14 19:29 sarah.deroche
+2019-10-18 18:15 yen. nguyen
+75.00
+2019-10-18 18:15 yen. nguyen
+22500.00
+2019-11-22 12:45 chance.griffeth
+2019-11-22 12:50 chance.griffeth
+2019-11-22 12:52 chance.griffeth
+2019-11-22 13:54 chance.griffeth
+2019-11-22 13:56 chance.griffeth
+2019-12-10 11:28 chance.griffeth
+2019-12-10 11:31 chance.griffeth
+2020-01-21 13:34 ryan.oakes
+2020-02-13 13:05 ryan.oakes
+2020-03-12 09:20 ed.zelasko
+2020-03-12 09:25 ed.zelasko
+2020-03-26 10:02 ryan.oakes
+2020-03-26 10:02 ryan.oakes
+2019-11-22 12:45 chance.griffeth
+2019-11-22 12:50 chance.griffeth
+2019-11-22 12:52 chance.griffeth
+2020-01-21 13:34 ryan.oakes
+2020-02-13 13:05 ryan.oakes
+2019-07-15 14:57 munis
+sport generated: 05412/2020 19:37
+Program ID:
+poreport
+Excel
+D
+Define
+Purge
+go. munis
+a tyler erp solution
+Page
+1
+Page 24
+===PAGE 25===
+Inquiries & Reports  
+Page 
+25  
+   
+Encumbrance by PO Number  1. Open ‘Encumbrance by PO Number’ Financials > Purchasing > PO Inquiry and Reports Menu > Standard PO Reports > Choose from the list the applicable report  • Description of Report o This report displays the original ordered amount and the remaining open balance of a PO based on PO number. You may choose to print a summary or detail report. • Report Usage o This Report can be used to see the open amounts on a range of Purchase Orders.  • Report Setup 
+  
+
+===PAGE 26===
+Inquiries & Reports  
+Page 
+26  
+   
+• Report View 
+ Capital Asset Purchase Orders  1. Open ‘Fixed Asset Purchase Orders’ Financials > Purchasing > PO Inquiry and Reports Menu > Standard PO Reports > Choose from the list the applicable report  • Description of Report o This report displays all purchase orders that have been flagged as a fixed asset purchase. • Report Usage o This report can be used to analyze all purchase orders that have been flagged as a fixed asset. o  • Report Setup 
+
+===PAGE 27===
+Inquiries & Reports
+• Report View
+KB 2019.1 DATABASE Jan 31 2019
+CAPITAL ASSET PURCHASE ORDERS
+Year/Period Range 2020/ 1 - 2020/12
+PO #
+Lines: oty
+02170312
+2020/02
+1.00
+02170326
+2020/02
+1.00
+02170327
+2020/02
+02170328
+1.02020/02
+1.00
+02170331
+2020/02
+02170332
+1. 2020/02
+1.00
+2020/02
+Year/Per
+Vendor PO Date
+Net Pricel
+Cor
+08/14/2019
+1,500.00
+08/21/2019
+001054
+08/21/2019
+2.400090
+1,818.00
+08/22/2019
+001054
+1,850.00
+)1054
+2,850.00
+08/22/2019
+08/22/2019
+08/22/2019
+SEE
+02170383 12.00°
+02020/04 360,000.00
+Page 27
+Status
+Dept/Loc
+FINANCE
+Closed
+FINANCE
+Closed
+FINANCE
+Printed
+FINANCE
+Printed
+FINANCE
+Closed
+FINANCE
+Closed
+FINANCE
+Closed
+FINANCE
+Closed
+FINANCE
+Closed
+FINANCE
+Closed
+FINANCE
+closed
+FINANCE
+closed
+FINANCE
+Closed
+FINANCE
+Allocated FINANCE
+closed
+FINANCE
+Printed FINANCE
+Printed FINANCE
+Closed
+FINANCE
+closed
+FINANCE
+Closed
+FINANCE
+printed
+FINANCE
+Printed
+FINANCE
+Closed
+FINANCE
+closed
+FINANCE
+Closed
+FINANCE
+3e munis
+a tyler erp solution
+Comments
+test 14
+Cap Assets 1
+Cap Assets Test 2
+ABC
+TEST
+test
+Capital Asset #2 - JC
+Capital Asset #3 - JC
+capital Assets #2a - 3c
+capital Assets #3a - 3c
+testing cap assets from PO
+JC827
+JC827
+Illnessssl

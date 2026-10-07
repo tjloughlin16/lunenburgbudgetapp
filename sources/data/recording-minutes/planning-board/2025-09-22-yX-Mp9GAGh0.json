@@ -390,5 +390,159 @@
    "at": "2026-09-27T12:26:02Z",
    "cost_usd": 0.195372
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09222025-7414",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-09-22-minutes-7414.txt",
+   "path": "sources/meetings/planning-board/2025-09-22-minutes-7414.pdf"
+  },
+  "official_sha256": "f046d145d425a3e223f1fcf67f8e0c197de20a65818c3eaa97bcb626e1518f29",
+  "coverage": "partial",
+  "summary": "The two records agree that the Goodrich Street special-permit hearing was closed 4-0 and that the bond is 125%. The official minutes record no vote approving the special permit or the site plan, which our minutes record as passing 4-0, and they add stormwater-permit votes we do not have; check the town's approval record for that.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 4,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to close the public hearing, 390 Goodrich Street special permit",
+    "ours": "Motion to close the public hearing for 390 Goodrich Street — passed (roll call: Reed-I, Bernie-I, Wils-I, Chair-I)",
+    "official": "Vote:  A. Reid – Aye, T.Willsmer -Aye, A. Burney -Aye, M.Brenner -Aye 4-0 passed",
+    "note": "Both record a unanimous 4-0 vote to close the hearing; the official text carries garbled dates (2025-07-28) but the outcome matches.",
+    "t": 2206
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote approving the special permit for ground-mount solar, 390 Goodrich Street",
+    "ours": "Motion to approve the special permit for large-scale ground-mount solar at 390 Goodrich Street, conditional on uploading the one/three-phase wiring documents and the utility interconnection agreement, showing the relocated split-rail fence and erosion-control waddles on the plan, and posting a decommissioning bond prior to occupancy — passed (roll call: Reed-I, Bernie-I, Wils-I, Chair-I)",
+    "official": "",
+    "note": "The official minutes list the conditions but record only motions to close the hearing and no vote approving the special permit; check the recording near t=2251 and the Board's decision filed with the Town Clerk.",
+    "t": 2251
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote approving the site plan, 390 Goodrich Street",
+    "ours": "Motion to approve the site plan for 390 Goodrich Street with all standard and special conditions from the special permit included — passed (roll call: Reed-I, Bernie-I, Wils-I, Chair-I)",
+    "official": "",
+    "note": "No site plan approval vote appears in the official minutes; check the recording near t=2313 and whether the minutes omitted it.",
+    "t": 2313
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Stormwater Management Permit hearing-close votes",
+    "ours": "",
+    "official": "Motion:  A. Burney motion, to close the public hearings for 390 Stormwater Management Permits to",
+    "note": "The official minutes record this motion twice, once with only three votes and once 4-0, and our minutes have no stormwater vote; check the recording to see whether it happened and how many times.",
+    "t": 2206
+   },
+   {
+    "kind": "agree",
+    "about": "Decommissioning bond at 125%",
+    "ours": "Decommissioning bond for the 390 Goodrich Street solar array: 125%",
+    "official": "Financial surety for decommisssioned by way of bond equal to 125% of removal upon activation of the system",
+    "note": "Same 125% figure; ours says before occupancy and the official says upon activation, which is close in substance.",
+    "t": 1901
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Comparison removal cost for a prior solar field",
+    "ours": "Comparison removal cost for a prior large solar field in town: 6 megaww, less than half a million dollars",
+    "official": "",
+    "note": "This remark from the hearing discussion is not in the official minutes, which only mention a peer review of removal cost.",
+    "t": 2056
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision finalized outside the meeting, members to sign at the planning office",
+    "ours": "A previously pending decision (unspecified item) was finalized outside the meeting; board members were told to come by the planning office to sign it rather than review it live.",
+    "official": "",
+    "note": "The official minutes have a DECISIONS heading with nothing under it; this item appears only in our minutes.",
+    "t": 2418
+   },
+   {
+    "kind": "agree",
+    "about": "MBTA Communities bylaw language submitted for the warrant",
+    "ours": "The board agreed that whatever language the MBTA Communities bylaw consultants produce should be submitted for the town meeting warrant, with the warrant submission deadline noted as October 2nd.",
+    "official": "Language will be submitted for the warrant.",
+    "note": "Both say the language goes to the warrant; the October 2nd deadline appears only in our minutes.",
+    "t": 2478
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Response to the Master Plan Steering Committee",
+    "ours": "The board agreed to delay responding to the Master Plan Steering Committee's request for feedback, planning to rely on one board member's (Adam's) more complete comments if a fuller response is needed.",
+    "official": "Master Plan Steering committee – wait to hear from them",
+    "note": "Ours has the board delaying its own feedback; the official says to wait to hear from the committee, which is the opposite direction; check the recording near t=2591.",
+    "t": 2591
+   },
+   {
+    "kind": "agree",
+    "about": "Correction of the September 8 minutes",
+    "ours": "Planning office staff were asked to correct the September 8th meeting minutes, which were missing some votes and had an empty minutes-approval motion, for review at the board's next meeting.",
+    "official": "Changes needed to the vote to include",
+    "note": "The official line is truncated but also says the earlier vote record needs changes; the details are only in ours.",
+    "t": 3874
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Ms. Reed",
+    "ours": "Ms. Reed (member)",
+    "official": "A. Reid",
+    "note": "Misheard surname of the Clerk, Amanda Reid, who is listed as present.",
+    "official_reading": "Amanda Reid"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Bernie / Adam",
+    "ours": "Mr. Bernie (member)",
+    "official": "A. Burney",
+    "note": "Misheard surname of Adam Burney; this also suggests the separately listed Adam is the same person as Bernie.",
+    "official_reading": "Adam Burney"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Wils / Wilsmer",
+    "ours": "Mr. Wils (also heard as Wilsmer) (member)",
+    "official": "T. Willsmer",
+    "note": "Misheard surname of Timothy Willsmer, the Vice Chair.",
+    "official_reading": "Timothy Willsmer"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: the Chair",
+    "ours": "the Chair (chair)",
+    "official": "M. Brenner",
+    "note": "The Chair is Matthew Brenner; the official lists all four members present and none absent.",
+    "official_reading": "Matthew Brenner"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Brian Jingris, building commissioner",
+    "ours": "Brian Jingris (building commissioner, presenter)",
+    "official": "",
+    "note": "The official minutes list only the four board members and name K. Gebo as the applicant's representative; the building commissioner is not mentioned."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jen, planning office staff",
+    "ours": "Jen (planning office staff (minutes/administration))",
+    "official": "Minutes by Jennifer Daigle, Admin Asst.",
+    "note": "Same person, with a first name only in the captions.",
+    "official_reading": "Jennifer Daigle"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:23:50Z",
+   "cost_usd": 0.244909
+  }
  }
 }

@@ -384,5 +384,218 @@
    "at": "2026-09-27T11:12:46Z",
    "cost_usd": 0.19627799999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02122026-7648",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-02-12-minutes-7648.txt",
+   "path": "sources/meetings/sewer-commission/2026-02-12-minutes-7648.pdf"
+  },
+  "official_sha256": "fc6a4aadaaa9a2d59fec1eaea3d09616c5f1081b74ab21a06d1d43e8d9464b3f",
+  "coverage": "full",
+  "summary": "The two records agree on the three non-procedural votes, the Q3 billing commitment, the rate discussion and the schedule; the differences are mostly caption misrenderings of names and the commitment figure. The one substantive difference is the Waterworth software: our minutes say the commission would ask Groton and Concord about it, while the official minutes name the Lunenburg Water District and Concord and record no such assignment to Bill.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 4,
+   "discrepancy": 5,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: accept FY25 annual report",
+    "t": 1788,
+    "ours": "accept the FY25 annual report as written — passed",
+    "official": "To  accept the Annual Report for FY25.                               Roll Call Vote:  Scott-aye, Arthur-",
+    "note": "Both record the motion passing; official shows a unanimous roll call of the three voting members.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: accept Q3 FY26 billing commitment",
+    "t": 2003,
+    "ours": "accept the third quarter FY26 billing commitment — passed",
+    "official": "To accept the Q3FY26 billing of $296,299.21.",
+    "note": "Same motion and passed in both records.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: change in-person meeting time to 6 p.m.",
+    "t": 3425,
+    "ours": "change the commission's in-person meeting time to 6 p.m. — passed",
+    "official": "To change the in - per son meeting time to 6pm.",
+    "note": "Same motion and outcome (7pm to 6pm).",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Q3 FY26 billing commitment amount",
+    "t": 1993,
+    "ours": "Third quarter FY26 billing commitment: $296,29921",
+    "official": "The Commitment amount is  $296,299.21.",
+    "note": "Decimal point and comma lost in captions; same figure.",
+    "official_reading": "$296,299.21"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chairman's name",
+    "t": 0,
+    "ours": "Brett Ramston (chairman)",
+    "official": "Chair-  Brett Ramsden",
+    "note": "Misheard surname of the same person.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner Arthur's name",
+    "t": 0,
+    "ours": "Arthur (heard as \"Der Cadis\" at roll call) (commissioner)",
+    "official": "Member : Arthur Katis",
+    "note": "Surname misheard as 'Der Cadis'; same person.",
+    "official_reading": "Arthur Katis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk's name",
+    "t": 0,
+    "ours": "Jane Randley (staff (prepared the FY25 annual report))",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "Surname misheard; same person who prepared the report.",
+    "official_reading": "Jane Ranley"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Roles of Bill Bernard and Andrew",
+    "t": 0,
+    "ours": "Bill Bernard (commissioner); Andrew (business manager / DPW director)",
+    "official": "DPW Directo r-  \nBill Bernard , Sewer Business Manager - Andrew Valliere",
+    "note": "Our minutes call Bill a commissioner and Andrew the DPW director; the official lists Bill as DPW Director and Andrew as Sewer Business Manager. Check the role list against the recording or the town's roster.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Scott's role",
+    "t": 0,
+    "ours": "Scott (commissioner)",
+    "official": "Vice-Chair - Scott Dall",
+    "note": "Same person; ours omits vice-chair and surname. Minor, but confirm the title.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "Absent:  Dan Proctor",
+    "note": "Official lists an absent member; ours does not mention it.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 12/9/2025 minutes",
+    "ours": "",
+    "official": "To accept the minutes of 12/9/25.",
+    "note": "Official records a roll-call vote on prior minutes; ours lists no such vote (possibly treated as procedural).",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "FY27 rate increase 16% and no vote until budget finalized",
+    "t": 541,
+    "ours": "Decided not to vote on the FY27 rate increase this meeting, pending finalized budget figures from the new finance director.",
+    "official": "The Commission discussed the \nminimum charge a nd will not vote on the rate increase until the budget is finalize d.",
+    "note": "Same decision. Ours adds 'new finance director' as the reason, which the official does not state.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Keep minimum rate low",
+    "t": 478,
+    "ours": "General preference to keep the minimum rate charge lower rather than raising it the full percentage, to protect low-usage households",
+    "official": "The Commission agreed to keep the minimum low  to help those on fixed \nincomes.",
+    "note": "Same direction; official frames it as helping fixed-income households.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Wholesale rates and delinquency figures",
+    "t": 628,
+    "ours": "Fitchburg and Leominster wholesale rate increases: 7%, 3%",
+    "official": "Fitchburg will be going up 7 % for 5 years",
+    "note": "7%, 3%, 20% delinquency, $133 minimum all match.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$32,000 retained earnings transfer",
+    "t": 1676,
+    "ours": "retained earnings applied to balance the sewer enterprise budget — $32,000 (discussed only)",
+    "official": "",
+    "note": "Official minutes do not mention retained earnings or $32,000; discussion only, not a vote, but worth checking against the recording.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Waterworth subscription $5,000",
+    "t": 2137,
+    "ours": "Waterworth rate-forecasting software subscription: $5,000, $5,000 per year",
+    "official": "",
+    "note": "Figure itself matches the official ($5,000/year); see the Waterworth decision finding.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Waterworth follow-up",
+    "t": 2951,
+    "ours": "Agreed to have Bill reach out to the Groton and Concord water/sewer systems about their experience with the Waterworth software before deciding.",
+    "official": "Bill stated the Lunenburg Water District and the Town of Concord are \nusing Waterworth  so they can get information on how it is helping them.  A subscription would \nnot be done now but could be discusse d o n a future agenda.",
+    "note": "Ours says Groton and Concord; official says Lunenburg Water District and Concord. Check the recording for which entities were named, and whether an assignment to Bill was made.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sewer bylaw tie-in follow-up",
+    "t": 3158,
+    "ours": "Agreed to revisit the sewer bylaw tie-in wording after checking prior meeting notes, ahead of drafting warrant language.",
+    "official": "The C ommission  discussed  the wording  and  Andrew will do up the \nverbiage for the next meeting.",
+    "note": "Different action: ours revisits wording after checking prior notes; official assigns Andrew to draft verbiage for the next meeting. Check the recording.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Public comment on rate increase",
+    "t": 3593,
+    "ours": "Decided to specifically invite public comment on the proposed rate increase at the next meeting.",
+    "official": "Bill suggested that if the public wants to weigh in on their potential rate \nincrease, the next meeting on 2/24 would be a good time to do that.",
+    "note": "Ours calls it a decision; official records a suggestion by Bill. Check whether the commission agreed.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Upcoming meeting schedule",
+    "t": 3635,
+    "ours": "Set the upcoming meeting schedule: February 24 Zoom, March 10 in-person, March 31 Zoom, and April 14 hybrid, all at 6 p.m.",
+    "official": "March 10 , 202 6  @ 6 pm – Regular ( Hybrid )  In-person Meeting",
+    "note": "Dates and 6 pm times match; official labels March 10 and April 14 as hybrid.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Caucus announcement and paperless billing question",
+    "ours": "",
+    "official": "The Citizen Party Caucus will be March 9, 2026,  at the Middle/High \nSchool auditorium at 7pm . for candidate voting.",
+    "note": "Announcement not in ours; official also records the paperless-billing question (Munis can't do it).",
+    "official_reading": ""
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:20:17Z",
+   "cost_usd": 0.24366900000000002
+  }
  }
 }

@@ -752,5 +752,235 @@
    "at": "2026-09-30T11:11:19Z",
    "cost_usd": 0.1914684
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03112025-7096",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-03-11-minutes-7096.txt",
+   "path": "sources/meetings/select-board/2025-03-11-minutes-7096.pdf"
+  },
+  "official_sha256": "b4cc9d2c166ea0aa31d62b470d6f3442f59508e808b4312da1a5c2395fc77aa3",
+  "coverage": "partial",
+  "summary": "The two records agree on the main votes and on the consensus to skip an override this year. They differ on the vote counts and some names, on how the free cash transfers were handled, and on the revenue figures. The official minutes omit most of the budget figures and record no vote for the 19 March meeting date, so the biggest gap is that the official minutes do not capture the detailed free cash and stabilization transfers.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 6,
+   "discrepancy": 6,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Opt out of in-person early voting",
+    "ours": "Opt out of in-person early voting for the local annual town election — passed unanimously",
+    "official": "The Motion passed unanimously (5-0-0).",
+    "note": "Same motion and outcome; official adds the 5-0-0 count and the mover (Alonzo)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Assistant to sewer business manager appointee name",
+    "ours": "Tiffany Taris",
+    "official": "Ratification of the Town Manager’s Appointment of Tiffaney Tavares as Assistant to the Sewer Business Manager",
+    "official_reading": "Tiffany Tavares",
+    "note": "Same ratification vote, passed unanimously in both; the captions misheard the surname.",
+    "t": 8207
+   },
+   {
+    "kind": "agree",
+    "about": "Ratify appointment vote outcome",
+    "ours": "passed unanimously",
+    "official": "The motion passed unanimously (5-0-0).",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Waive right of first refusal, 100 Townsend Harbor Road",
+    "ours": "Waive the town's right of first refusal on 100 Townsend Harbor Road — passed 4-0-1 (one abstention)",
+    "official": "The motion passed 4-0-1, with Vice Chair Jeffreys abstaining.",
+    "note": "Same vote count and outcome.",
+    "t": 17162
+   },
+   {
+    "kind": "agree",
+    "about": "Right of first refusal price",
+    "ours": "Right of first refusal purchase price: $400,000",
+    "official": "it was determined theTtown does not have $400,000 available to purchase the property.",
+    "note": "Same $400,000 figure.",
+    "t": 16970
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY26 total revenues",
+    "ours": "FY26 revenue total: 72%, 48,5 194,195, 400,000",
+    "official": "Total revenues are $48,594,145",
+    "official_reading": "$48,594,145",
+    "note": "The captions garbled the total; the digits are close to the official figure.",
+    "t": 8775
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Net state aid figure",
+    "ours": "State aid: 11 million $3 4,268, 9,838",
+    "official": "Net State Aid is $9,803,971.",
+    "note": "Ours is garbled and may be gross state aid versus net; the amounts do not clearly match, so check the recording at t=8859 and the state aid sheet.",
+    "t": 8859
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Free cash and stabilization transfers",
+    "ours": "Free cash to the general purpose stabilization fund, OPEB trust and special purpose stabilization fund per policy — $100,000; 222 $2,500; 250,000 (discussed only)",
+    "official": "Other discussions surrounded various aspects of the budget, including the use of free cash and stabilization funds",
+    "note": "Ours records specific transfer amounts, discussed only; the official minutes record no amounts or decisions, so check the 19 March meeting and Town Meeting warrant.",
+    "t": 9788
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Snow and ice deficiency, special education, CARES grant and FY26 capital plan free cash transfers",
+    "ours": "Free cash to snow and ice deficiency for the current fiscal year — 415,000 (discussed only)",
+    "official": "",
+    "note": "The official minutes do not mention these year-end transfers or amounts.",
+    "t": 2741
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Override amount needed",
+    "ours": "Restoring town-side items with an override: $550,000, 110,000, 660,000, 3 million",
+    "official": "approximately $2 million would be needed specifically for the schools, with additional town needs, bringing the total to around $2.6 million for one year.",
+    "note": "Our figures are garbled, with 3 million against the official $2.6 million and schools gap 2 million; check the recording at t=940-962.",
+    "t": 962
+   },
+   {
+    "kind": "caption_error",
+    "about": "Free cash starting point next year",
+    "ours": "Free cash arithmetic for pavement plan: 100,000, 250,000, 350,000, 383,000, 200,000",
+    "official": "next year we would start free cash at $383,162.",
+    "official_reading": "$383,162",
+    "note": "The 383,000 appears to be the same $383,162 figure.",
+    "t": 14696
+   },
+   {
+    "kind": "agree",
+    "about": "No override this year, one-time funds, comprehensive override next year",
+    "ours": "Select Board members indicated, without a vote, that they would follow the guidance of no override this year and use one-time funds, with a comprehensive override next year.",
+    "official": "the general consensus among both boards was to refrain from pursuing an override this year.",
+    "note": "Same consensus without a formal vote."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meeting date set for continued budget discussion",
+    "ours": "An additional meeting was set for the 19th to continue budget and warrant discussion.",
+    "official": "Chair Nuzzolo announced the Board is meeting on March 19, 2025",
+    "note": "Dates match. Ours records a decision to hold extra single-topic meetings instead of moving the town meeting date, and the official minutes do not record that. Check the recording at t=15193.",
+    "t": 17659
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision not to move town meeting date",
+    "ours": "Board chose not to move the date of town meeting and to add extra single-topic meetings instead.",
+    "official": "",
+    "note": "The official minutes do not mention this decision.",
+    "t": 15193
+   },
+   {
+    "kind": "agree",
+    "about": "Grant manager position reworked",
+    "ours": "Town manager will rework the grant manager proposal (grant and contract manager) after board feedback.",
+    "official": "The Town Manager will is going continue working on this.",
+    "note": "Both record the Town Manager continuing work after board feedback on the grant position.",
+    "t": 11299
+   },
+   {
+    "kind": "agree",
+    "about": "Vacancy list review deferred",
+    "ours": "Board held off reviewing the list of upcoming board and committee vacancies.",
+    "official": "The Board acknowledged receipt of the list of upcoming vacancies but deferred detailed review to a future meeting.",
+    "note": "Same outcome.",
+    "t": 17309
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 90 for DPW vehicle items",
+    "ours": "Town manager will speak with the DPW director about using Chapter 90 for the DPW vehicle items.",
+    "official": "",
+    "note": "The official minutes do not mention this follow-up.",
+    "t": 16344
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Marshall Park phase and total costs",
+    "ours": "Marshall Park borrowing: 13, 92268, 13,923 86, 13,926 86, $ 5,824 518",
+    "official": "The entire project, encompassing all phases, is projected to cost $13.9 million.",
+    "note": "The figures are consistent in order of magnitude ($13.9M total, $5.8M phase 1); only the captions are garbled, but a person should check the exact amounts against the warrant article.",
+    "t": 6544
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Votes on minutes and executive session",
+    "ours": "",
+    "official": "Member Emkey made Motion to approve Minutes for January 15, 2025, February 4, 2025, February 11, 2025, February 18, 2025, and March 4, 2025. Motion was seconded by Clerk Moore. Motion passed unanimously (5-0-0).",
+    "note": "The minutes approval vote is not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Trash route change proposal",
+    "ours": "",
+    "official": "The proposal received unanimous support from the Select Board",
+    "note": "Our minutes list no vote or figures on the G.W. Shaw route changes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: Select Board vice chair and members",
+    "ours": "Michael Ray (Select Board member)",
+    "official": "Vice Chair Michael Ray Jeffreys",
+    "note": "Official gives full names and roles (Nuzzolo, Jeffreys, Moore, Alonzo, Emkey); our first names Caesar, Renee, Tom, Amanda are misheard or partial, so check the roster."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Land use director name",
+    "ours": "Chris Riley (land use director)",
+    "official": "Christopher Reilly",
+    "official_reading": "Christopher Reilly",
+    "note": "The captions misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Parks Commission chair name",
+    "ours": "Anita shyers (chair of the Parks Commission)",
+    "official": "Anita Scheipers, Chair, Parks Commission",
+    "official_reading": "Anita Scheipers",
+    "note": "The captions misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "School Committee chair name",
+    "ours": "Brian (School Committee chair)",
+    "official": "School Committee Chair Brian Lehtinen",
+    "official_reading": "Brian Lehtinen",
+    "note": "Same person; the captions gave the first name only."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Superintendent attendee",
+    "ours": "Dr Burnham (superintendent)",
+    "official": "",
+    "note": "The official minutes do not list the superintendent as present."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Executive session vote",
+    "ours": "",
+    "official": "Motion passed (5-0-0). Executive Session began at 11:15 PM.",
+    "note": "The executive session vote is not in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:53:19Z",
+   "cost_usd": 0.297682
+  }
  }
 }

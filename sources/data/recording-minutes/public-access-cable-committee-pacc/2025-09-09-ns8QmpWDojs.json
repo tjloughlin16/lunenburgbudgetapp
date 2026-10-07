@@ -380,5 +380,161 @@
    "at": "2026-09-27T12:34:05Z",
    "cost_usd": 0.19444599999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092025-7368",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-09-09-minutes-7368.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-09-09-minutes-7368.pdf"
+  },
+  "official_sha256": "eba0ac1503e62457b249d3d08037dd19f34d0d7da5d4e5545acef46ea917a32d",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the main vote, a transfer of $35,271 to the general fund, which includes $31,271 borrowed plus $4,000. They differ on who attended, who is assigned the Master Plan and policy work, and the date of the next meeting. The official minutes also leave out the FY27 budget figures, the Casters replacement and the franchise fee.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 5,
+   "only_in_ours": 4,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to put the FY26 transfer on the special town meeting warrant",
+    "t": 489,
+    "ours": "To combine the borrowed FY26 amount and additional videographer expenses into one special town meeting warrant article to transfer money from the PEG enterprise fund/retained earnings — passed",
+    "official": "Motion (B.Vienneau, 2nd S.Archambault)",
+    "note": "Both records show a motion passing to put one warrant article on the special town meeting warrant covering the borrowed amount plus $4,000. Neither records a vote count.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer total",
+    "t": 271,
+    "ours": "35,271 (also heard as 35,000 and 35,279)",
+    "official": "a total of #35,271",
+    "note": "The total matches the official $35,271. The 35,000 and 35,279 readings are caption variants of the same figure.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "Amount borrowed against FY26 budget",
+    "t": 250,
+    "ours": "31,126, 31,271, 31,279",
+    "official": "$31,271 to be restored to the general fund",
+    "note": "One of the heard values is the same as the official figure, and the other two are misheard digits.",
+    "official_reading": "$31,271"
+   },
+   {
+    "kind": "agree",
+    "about": "Additional videographer expense",
+    "t": 293,
+    "ours": "4,000",
+    "official": "to include $4,000",
+    "note": "Same $4,000 amount.",
+    "official_reading": ""
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY25 closing fund balance",
+    "t": 1197,
+    "ours": "1025451072, 106413774, 1077 83.55",
+    "official": "1,054,510.72",
+    "note": "The captions garbled the digits. The first heard string, 1025451072, is closest to the official balance of $1,054,510.72. Check the video if the exact figure matters.",
+    "official_reading": "$1,054,510.72"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Faith attendance",
+    "ours": "Faith (member)",
+    "official": "Excused:\tFaith\tBeall",
+    "note": "Our minutes list Faith as an attendee, but the official minutes say Faith Beall was excused. Check the recording to see whether she was present or joined remotely.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Members present: Ryan vs Steve Archambault",
+    "ours": "Ryan (member)",
+    "official": "PACC\tmembers\tpresent:\tSteve\tWalker,\tBrian\tVienneau,\tSteve\tArchambault",
+    "note": "The official minutes name no Ryan and list a second Steve (Archambault) as present. This may be a misheard name, but the chair is given only as Steve, so check which Steve is which and whether a Ryan was present.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Station manager name",
+    "ours": "Joe (Station Manager)",
+    "official": "Manager:\tJo\tToale",
+    "note": "This is the same person, with the first name misheard as Joe.",
+    "official_reading": "Jo Toale",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who represents PACC on the Master Plan Steering Committee",
+    "t": 1368,
+    "ours": "Chair confirmed to the town manager that he will serve as PACC's representative on the Master Plan Steering Committee, as previously voted by the board.",
+    "official": "S.Archambault\tmet\twith\tTow\tmanager\tand\tis\ton\tcommittee.",
+    "note": "The official minutes put S.Archambault on a committee under Cable Advisory, which is not necessarily the Master Plan Steering Committee. Our minutes name the chair, and neither record names the committee clearly. Check the recording to see who was named and for which committee.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who searches for existing PACC policies",
+    "t": 1953,
+    "ours": "Chair and manager will search their own notes and records for existing PACC policies (drone use, private equipment use, equal-time/open meeting related) ahead of the next meeting, rather than contacting a former member.",
+    "official": "S.Archambault\t&\tJ.Toale\twill\tgo\tthrough\tand\treport\ton\tPACC\tPolicy\tdecisions.",
+    "note": "Our minutes assign the chair and the manager. The official minutes assign S.Archambault and J.Toale. Whether these are the same people depends on which Steve is the chair, so check the recording.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Date of the additional meeting",
+    "t": 2504,
+    "ours": "Committee agreed to schedule an additional meeting to continue working through the Master Plan Steering Committee questionnaire, tentatively the following Monday, location depending on the studio move and library/Pacios availability.",
+    "official": "Next meeting (Special): - September 22nd, 2025 3:00 pm.",
+    "note": "The official minutes give Sept 22, which is 13 days after this meeting, while ours says the following Monday, which would be Sept 15. Check the recording and the posted notice for the actual date.",
+    "official_reading": ""
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Special meeting agenda limited to roll call, master plan and adjournment",
+    "t": 2862,
+    "ours": "The scheduled special meeting will include only a roll call, the master plan item, and a motion to adjourn.",
+    "official": "",
+    "note": "The official minutes record no agenda limit for the special meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 first-pass budget figures",
+    "t": 940,
+    "ours": "FY27 first-pass budget: revenue, expenses, and shortfall: 81%, 191,000, 255, 270, 64,000",
+    "official": "",
+    "note": "The official minutes say only that the first pass of the FY27 budget was completed and give no figures. Our figures are garbled and cannot be checked."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Casters system replacement price for FY27",
+    "t": 1070,
+    "ours": "Capital replacement of Casters system for FY27: 30,000. Manager to obtain a price for replacing the Casters system in FY27, checking whether it can also support an additional HD channel.",
+    "official": "",
+    "note": "The official minutes mention CASTUS recording problems but not this replacement plan, the $30,000 figure or the HD channel. 'Casters' is probably a mishearing of CASTUS."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "PEG franchise fee percentage",
+    "t": 1429,
+    "ours": "PEG franchise fee: 5%, 2 and a half%",
+    "official": "",
+    "note": "The official minutes do not mention the franchise fee rate."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:24:54Z",
+   "cost_usd": 0.2952346
+  }
  }
 }

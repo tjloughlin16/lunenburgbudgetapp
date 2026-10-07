@@ -380,5 +380,130 @@
    "at": "2026-09-27T12:43:37Z",
    "cost_usd": 0.194656
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08142025-7350",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2025-08-14-minutes-7350.txt",
+   "path": "sources/meetings/trust-fund-commission/2025-08-14-minutes-7350.pdf"
+  },
+  "official_sha256": "bfc23ddfe19dc1ea1cfec3d2d5285fa1f1eb36fe2d547d82e121bd34f18e99d0",
+  "coverage": "full",
+  "summary": "The records agree on attendees, the unfilled vacancy and the counsel meeting, but the official minutes are a narrative with no dollar figures and say no action items were assigned. The main thing to know is that our minutes record three decisions and a $28,100 Cemetery Commission withdrawal that the official minutes omit, and the official minutes record an approval vote that ours lacks.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 7,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Next meeting / chair's meeting with town counsel timing",
+    "ours": "The chair will meet with town counsel Adam Costa around the 26th to discuss comparable towns' trust fund commission practices and next legal steps, including the cy pres doctrine question.",
+    "official": "Chairman Bowen has scheduled time with Town Counsel, Adam Costa to discuss the comparable Trust Fund Commissions in surrounding Towns.",
+    "note": "Both record the counsel meeting; official gives no date (ours says around the 26th) and does not mention next legal steps as a decision, so check the recording at t=2886 for the date and scope."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meeting with Bartholomew about fees and trade counts",
+    "ours": "The commission will arrange a meeting with the private trust company, Bartholomew, to ask about fee levels and how many trades are executed on the pooled funds.",
+    "official": "There are no specific action items assigned during the meeting.",
+    "note": "Our minutes record a decision/action to arrange a meeting with Bartholomew; official says no action items were assigned, so check the recording at t=659."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Draft investment procedure policy read-through decision",
+    "ours": "Rather than debate the draft investment procedure policy line by line tonight, the commission will do a read-through first and take up detailed discussion/amendments at this and a following meeting.",
+    "official": "There are no specific action items assigned during the meeting.",
+    "note": "Official minutes do not mention an investment procedure policy at all and say no action items; verify at t=3934 whether this was discussed and decided."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote approving July 10 and July 24 minutes",
+    "ours": "",
+    "official": "Mr.  Howard made a motion for the approval of the minutes of both the July \n 10,2025 and July 24, 2025, meetings as written.  Chairman Bowen seconded the \n motion. Mr. Howard = Aye, Chairman Bowen = Aye. Motion passed unanimously.",
+    "note": "Official records a vote approving prior minutes; ours lists no votes, so check the recording for whether it took place."
+   },
+   {
+    "kind": "agree",
+    "about": "Continuing with two members; vacancy unfilled",
+    "ours": "The commission will continue operating with two members and a quorum while seeking a third member to fill its vacancy.",
+    "official": "The current vacancy on the Trust Fund Commission remains unfilled.",
+    "note": "Both record the vacancy and two members present; ours frames it as a decision to continue and seek a third member, official only states the vacancy remains."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "the Chair (chair); Richard (member)",
+    "official": "Present: Chairman John Bowen and Vice-Chair Richard Howard",
+    "note": "Same two attendees; ours lacks surnames and the Vice-Chair title."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Next meeting date",
+    "ours": "",
+    "official": "Next meeting scheduled for Thursday August 28, 2025, at 5:00 PM.",
+    "note": "Ours records the chair meeting counsel 'around the 26th' but no next meeting date; verify the date of the next meeting."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Name of Post 283 trust",
+    "ours": "American Legion Post 283 trust terms: $350, $25,000, 75%",
+    "official": "Chairman Bowen updated the Trust Fund Commission and audience with the \n research he was able to conduct on the Worthy Poor Fund and The VFW Post 283 \n declarations.",
+    "note": "Ours says American Legion, official says VFW Post 283; check the trust document or recording at t=2655 for which organisation it is."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Worthy Poor Fund age / original gift",
+    "ours": "Worthy Poor Fund original gift (1901): $1,000",
+    "official": "in the 118 years since the trust was funded",
+    "note": "Funding year 1901 would be 124 years before 2025, not 118 (which implies about 1907); check the trust document and recording at t=2418."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cemetery Commission withdrawal of principal",
+    "ours": "Cemetery Commission transfer/withdrawal of principal from the pooled trust fund, cited as negatively affecting other funds in the pool — $28,100 (discussed only)",
+    "official": "",
+    "note": "Official minutes record only that fees and penalties borne by each fund hurt other trusts, with no Cemetery Commission withdrawal or $28,100."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fee figures, balances and fund sizes",
+    "ours": "Overall size and return of the commission's pooled funds: $77,000, 9.78%; Worthy Poor Fund and American Legion Post 283 balances: $22,887, $8,690 14, approximately 20 uh $12,490",
+    "official": "",
+    "note": "Official minutes give no dollar figures, fee percentages, or balances; these captured figures cannot be cross-checked."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Cy pres doctrine and 'poor houses' explanation",
+    "ours": "",
+    "official": "so it may be necessary to invoke the cy près doctrine.",
+    "note": "Official gives the detailed rationale (no poor houses remain); ours only mentions the cy pres question in the counsel decision."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Division of Local Services as a resource",
+    "ours": "",
+    "official": "Additionally, the \n Comm of MA Division of Local Services will be used as a resource",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Workers' compensation insurance fund statute",
+    "ours": "Workers' compensation insurance fund (MGL c.40 §13A)",
+    "official": "Workers \n Compensation Insurance Fund (1913 statute)",
+    "note": "Both reference the same fund; no figures to compare in official."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:28Z",
+   "cost_usd": 0.231949
+  }
  }
 }

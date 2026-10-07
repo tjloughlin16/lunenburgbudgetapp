@@ -474,5 +474,171 @@
    "at": "2026-09-27T11:03:35Z",
    "cost_usd": 0.19197199999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03022026-7667",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2026-03-02-minutes-7667.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2026-03-02-minutes-7667.pdf"
+  },
+  "official_sha256": "4b0b40cab1f0b684e2594cb302376439227f484ce54825e4e33dd9f6018e17a9",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on all three non-procedural votes and their outcomes, and on the main decisions (FinCom on 3/5, the $38,000 Comcast quarterly figure, the Videographer Editor removal vote deferred, the FATV talks on 3/4). The main difference is that the official minutes carry almost none of the budget figures or the retained-earnings request, so our garbled figures such as \"97,5641\" can't be confirmed from them; the attendee names also differ (our Russ, and the official Faith Beall and Steve Archambault).",
+  "counts": {
+   "agree": 8,
+   "caption_error": 2,
+   "discrepancy": 0,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: approve amended FY27 budget presentation",
+    "ours": "Motion to approve the amended FY27 budget presentation with updated numbers — passed (voice vote, no count given)",
+    "official": "Motion\tto\tapprove\tamended\tpresentation\tas\tpresented\t§\tF.Beall,\t2nd\tS.Archambault\t–\tpassed",
+    "note": "Same motion and outcome; the official minutes add mover and seconder, ours give no count.",
+    "t": 2183
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: authorize Joe to present to FinCom",
+    "ours": "Motion to authorize Joe to present the amended presentation to FinCom on behalf of PACC — passed unanimous (voice vote)",
+    "official": "Motion\tto\thave\tJ.Toale\tpresent\tthe\tamended\tpresentation\tto\tFinCom\ton\tbehalf\tof\tPACC\t§\tMotion\tB.\tVienneau,\t2nd\tF.Beall\t–\tpassed",
+    "note": "Same outcome; the official minutes say 'passed' without 'unanimous', so the unanimity is only in ours.",
+    "t": 2265
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Steve and Brian represent PACC on Cable Advisory Committee",
+    "ours": "Motion that Steve and Brian represent PACC on the Cable Advisory Committee — passed (voice vote, no count given)",
+    "official": "Motion\tto\tappoint\tSteve\tArchambault\tand\tBrian\tVienneau\tto\trepresent\tPACC\ton\tthe\tCable\tAdvisory\tCommittee.\t-\tS.Waker,\t2nd\tF.Beall\t–\tpassed",
+    "note": "Same motion and outcome; the official minutes identify the two as Steve Archambault and Brian Vienneau.",
+    "t": 3897
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brian",
+    "ours": "Brian (heard as \"Vienno\") (member)",
+    "official": "Brian\tVienneau",
+    "note": "Captions misheard the surname of the same member.",
+    "t": 3897,
+    "official_reading": "Brian Vienneau"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: station manager",
+    "ours": "Joe (Joe Tol) (PACC station manager / presenter)",
+    "official": "Manager:\tJo\tToale",
+    "note": "Same manager role; the captions rendered the name as Joe Tol.",
+    "official_reading": "Jo Toale"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Russ (secretary)",
+    "ours": "Russ (secretary)",
+    "official": "",
+    "note": "The official roll call lists no Russ; a person should check who attended and who recorded the minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Faith Beall and Steve Archambault",
+    "ours": "",
+    "official": "PACC\tmembers\tpresent:\tSteve\tWalker,\tBrian\tVienneau,\tSteve\tArchambault,\tFaith\tBeall",
+    "note": "Official lists four members present; ours names only Steve (chair), Russ and Brian, and ours never names Faith Beall though she moved and seconded motions."
+   },
+   {
+    "kind": "agree",
+    "about": "Comcast quarterly payment lowered to $38,000",
+    "ours": "Comcast revenue projection basis lowered to a more conservative quarterly figure rather than the higher one previously used, to avoid overstating expected revenue.",
+    "official": "Discussion\t–\tamended\tComcast\tquarterly\tpayment\tto\t$38,000",
+    "note": "Same decision; ours heard $38,000 among the figures, the official minutes state it outright."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Retained earnings request / budget shortfall",
+    "ours": "Requested transfer from retained earnings to cover the FY27 PACC budget shortfall — 97,5641 (discussed only)",
+    "official": "",
+    "note": "The official minutes record no retained-earnings request or shortfall figure; ours is garbled ('97,5641'), so check the recording or the presentation for the real amount."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 line-item figures (salaries, legal, equipment, indirect, PEG revenue, investment income)",
+    "ours": "FY27 salaries line: 102,100, 112,918,000, 107,000",
+    "official": "",
+    "note": "The official minutes give no line-item budget figures beyond the $38,000 quarterly payment; our figures are caption-garbled and should be checked against the presentation."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote next meeting to remove Videographer Editor",
+    "ours": "The obsolete \"videographer editor\" job title/policy, which does not correspond to any actual town job title, will be brought back for a formal removal vote at the next meeting (policy changes require prior announcement).",
+    "official": "Vote\tnext\tmeeting\tto\tremove\t“Videographer\tEditor”",
+    "note": "Same decision to defer the removal vote to the next meeting."
+   },
+   {
+    "kind": "agree",
+    "about": "Performance review for Production Technician",
+    "ours": "A performance review needs to be added for the production technician position, currently missing from the review set; the manager will check with the town manager's office on the correct forms.",
+    "official": "Need\tto\tadd\t“Production\tTechnician”\tto\tPerformance\tReview",
+    "note": "Same item; the town manager's office follow-up is only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other policy additions",
+    "ours": "",
+    "official": "Need\tto\tadd\t“Official”\tTown\tPurchasing\tPolicy\tProcedure",
+    "note": "The official minutes also list a purchasing policy and a Water Department recording policy addition; ours records neither."
+   },
+   {
+    "kind": "agree",
+    "about": "FATV shared studio talks, meeting March 4",
+    "ours": "PACC will continue early-stage talks with FATV/Fitchburg about shared studio space, meeting again March 4, with many cost and legal details still unresolved.",
+    "official": "J.Toale\tand\tS.Walker\tmeeting\twith\tFATV\t(3/4)",
+    "note": "Same talks and date; official lists three concerns: costs, division of work, legality of a 501(c)3 leasing to a town department."
+   },
+   {
+    "kind": "agree",
+    "about": "Cable Advisory Committee formed",
+    "ours": "PACC members will spread the word informally to find two more people for the newly approved Cable Advisory Committee, pending the Select Board's process.",
+    "official": "They\tapproved\tthe\trequest\tto\tform\ta\t5\tperson\t“Cable\tAdvisory\tCommittee”\tconsisting\tof;\t1\tSelect\tBoard\tmember,\t2\tPACC\tmembers\tand\t2\ttown\tcitizens",
+    "note": "Consistent; the 'two more people' are the two town citizens, and the informal outreach appears only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "No announcement of advisory committee membership until Select Board confirms",
+    "ours": "No public announcement about cable advisory committee membership will be made until members are officially confirmed by the Select Board.",
+    "official": "",
+    "note": "Not in the official minutes, which say only 'Discussed next steps'."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bank balance",
+    "ours": "",
+    "official": "Balance\t$1,076,670.76",
+    "note": "Official reports a balance; ours records no balance figure."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "TCPassios closing",
+    "ours": "",
+    "official": "TCPassios\tis\tclosing\tas\tof\tJune\t31,\t2026",
+    "note": "Official records the closing; ours does not. Note June has 30 days, so check the date."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FinCom date may move",
+    "ours": "The manager will try to keep the FinCom presentation date but acknowledged FinCom may need to move it to give itself time to prepare questions.",
+    "official": "",
+    "note": "The official minutes state 3/5 without the caveat."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:20:13Z",
+   "cost_usd": 0.256677
+  }
  }
 }

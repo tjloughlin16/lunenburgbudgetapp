@@ -1,373 +1,596 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "planning-board",
-  "board": "Planning Board",
-  "video_title": "Planning Board",
-  "meeting_date": "2026-08-24",
-  "video_id": "vZDJ6B71qqI",
-  "video_url": "https://www.youtube.com/watch?v=vZDJ6B71qqI",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/planning-board/2026-08-24-vZDJ6B71qqI.json",
-    "sha256": "f94132f9b0a8a779136e9c1031b9891ae84c30eb7ab53249ce1339d18ee6ed6e",
-    "caption_lines": 208,
-    "segments": 1411
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2026-08-24",
+ "video_id": "vZDJ6B71qqI",
+ "video_url": "https://www.youtube.com/watch?v=vZDJ6B71qqI",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2026-08-24-vZDJ6B71qqI.json",
+  "sha256": "f94132f9b0a8a779136e9c1031b9891ae84c30eb7ab53249ce1339d18ee6ed6e",
+  "caption_lines": 208,
+  "segments": 1411
+ },
+ "recording": {
+  "duration_s": 4526,
+  "duration": "1:15",
+  "spoken_chars": 55619,
+  "words_approx": 9269
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08242026-7977",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-08-24-agenda-7977.txt",
+   "path": "sources/meetings/planning-board/2026-08-24-agenda-7977.pdf"
   },
-  "recording": {
-    "duration_s": 4526,
-    "duration": "1:15",
-    "spoken_chars": 55619,
-    "words_approx": 9269
-  },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08242026-7977",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-08-24-agenda-7977.txt",
-      "path": "sources/meetings/planning-board/2026-08-24-agenda-7977.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08242026-7977",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-08-24-minutes-7977.txt",
-      "path": "sources/meetings/planning-board/2026-08-24-minutes-7977.pdf"
-    }
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08242026-7977",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-08-24-minutes-7977.txt",
+   "path": "sources/meetings/planning-board/2026-08-24-minutes-7977.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T02:00:38Z",
+  "cost_usd": 0.37187600000000004
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the Chair (not named in captions)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Wallace",
+    "role": "Planning Director / town planner"
+   },
+   {
+    "name_as_heard": "Adam",
+    "role": "board member"
+   },
+   {
+    "name_as_heard": "Mr. Verne",
+    "role": "board member"
+   },
+   {
+    "name_as_heard": "Greg Roy",
+    "role": "presenter (Dillson Roy Civil Design Group, representing applicants)"
+   },
+   {
+    "name_as_heard": "Matthew Morrow",
+    "role": "presenter (Matthew S. Morrow Environmental Consulting, representing Nathan Jones)"
+   },
+   {
+    "name_as_heard": "Dan Wolf",
+    "role": "presenter (David Ross Associates, representing Melissa McCarthy and Steve Vittone)"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "facilities",
+   "housing",
+   "legal",
+   "planning-and-zoning",
+   "state-aid",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 817,
+    "motion": "Endorse the A&R plan for 50 Page Street, A&R 26-6 (lot-line/land swap)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1701,
+    "motion": "Close the public hearing for 881 Flat Hill Road, PBSP 26-5",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1721,
+    "motion": "Approve the special permit for 881 Flat Hill Road, PBSP 26-5, with standard administrative conditions and stated construction hours",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2018,
+    "motion": "Close the public hearing for 18 Oak Ridge Road, PBSP 26-9",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2044,
+    "motion": "Approve the project as proposed at 18 Oak Ridge Road, PBSP 26-9, with standard administrative conditions and stated construction hours",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2926,
+    "motion": "Close the public hearing for PBSP 26-8, 27 Fire Road 15A",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2950,
+    "motion": "Approve the special permit for 27 Fire Road 15A, PBSP 26-8, with standard administrative conditions and stated construction hours",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3038,
+    "motion": "Continue the hearing for 10 Parmenter Road phase 1 (PBSP 26-3, PBSP 26-4, PBSW 26-12, PBSW 26-13) to 14 September",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3108,
+    "motion": "Continue the hearing for 10 Parmenter Road phase 2 (PBSW 26-6, PBSP 26-7, PBSW 26-16) to 14 September",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3138,
+    "motion": "Continue the hearing for New West Townsend Road (PBSA 26-1, PBSP 26-1, PBSW 26-12) to 14 September",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4426,
+    "motion": "Approve the minutes as written for 27 July, 20 July, and 10 August (including working sessions)",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 4491,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 4478,
+    "topic": "Special/additional state funds allocation for town meeting",
+    "what_was_said": "A board member noted that town meeting on September 3rd would decide how to spend additional money dedicated to the town by the state legislature. No figure beyond an approximate amount was given.",
+    "figures_as_heard": [
+     "almost half a million dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1136,
+    "decision": "The applicant's representative (Greg Roy) will seek continuances for the 10 Parmenter Road and 860/816 New West Townsend Road hearings rather than proceed substantively tonight, given the quorum/Mullin-rule risk with a board member absent."
+   },
+   {
+    "t": 3428,
+    "decision": "Board consensus that applicant materials should be submitted to the planning office by noon Thursday before a meeting; Mr. Wallace to draft language for the board's formal consideration, with the board retaining discretion to accept minor late items."
+   },
+   {
+    "t": 3662,
+    "decision": "Mr. Wallace will discuss with the building commissioner (Brian) whether zoning bylaw section 2534 (the 'approval' provision for multiple dwellings) can simply be removed rather than referred to town counsel, and add it to the cleanup list for the November special town meeting if so."
+   },
+   {
+    "t": 3945,
+    "decision": "Add the shared-driveway bylaw amendment, capping the maximum number of primary dwellings sharing a driveway at four, to the list of items for the November special town meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 63,
+    "t_end": 227,
+    "topic": "Meeting opening, recording/audio technical difficulties",
+    "resolution": "resolved informally",
+    "tags": []
+   },
+   {
+    "t_start": 227,
+    "t_end": 378,
+    "topic": "Roll/attendance note (Mr. Wilsmer absent, votes to be by voice not roll call), participation options",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 378,
+    "t_end": 527,
+    "topic": "Director's report: zoning amendment working sessions, timeline to May town meeting, minor zoning amendments for November special town meeting, affordable housing trust",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "town-meeting",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 527,
+    "t_end": 920,
+    "topic": "A&R plan, 50 Page Street (A&R 26-6): lot-line land swap between 50 and 52 Page Street",
+    "resolution": "voted, endorsed",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 920,
+    "t_end": 1156,
+    "topic": "Discussion of quorum/Mullin-rule risk for continued hearings (10 Parmenter Road, 860 New West Townsend Road) with Mr. Wilsmer absent",
+    "resolution": "no vote taken; applicant to seek continuance",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1156,
+    "t_end": 1766,
+    "topic": "Public hearing, 881 Flat Hill Road (PBSP 26-5): special permit to raise/reconstruct boathouse in flood plain",
+    "resolution": "voted, approved with conditions",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1766,
+    "t_end": 2065,
+    "topic": "Public hearing, 18 Oak Ridge Road (PBSP 26-9): special permit to raise and rebuild house outside flood zone",
+    "resolution": "voted, approved with conditions",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2065,
+    "t_end": 2232,
+    "topic": "Applicant representative requests continuances for 10 Parmenter Road and New West Townsend Road hearings, notes documents submitted for town counsel review",
+    "resolution": "continuance requested; formal vote later",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 2232,
+    "t_end": 2973,
+    "topic": "Public hearing, 27 Fire Road 15A (PBSP 26-8): special permit for multiple dwellings on one lot / demolition and rebuild of middle structure",
+    "resolution": "voted, approved with conditions",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2973,
+    "t_end": 3150,
+    "topic": "Continuance votes for 10 Parmenter Road (phases 1 and 2) and New West Townsend Road to 14 September",
+    "resolution": "voted, continued",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3150,
+    "t_end": 3576,
+    "topic": "Board discussion: proposed policy requiring applicant materials be submitted a set time before meetings (noon Thursday proposed)",
+    "resolution": "no vote; Wallace to draft language for future consideration",
+    "tags": [
+     "planning-and-zoning",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3576,
+    "t_end": 3967,
+    "topic": "Board discussion: possible removal of zoning bylaw section 2534 (multiple dwellings approval provision) and shared-driveway bylaw amendment for November special town meeting",
+    "resolution": "no vote; referred to Wallace/building commissioner, items added to warrant list",
+    "tags": [
+     "planning-and-zoning",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 3967,
+    "t_end": 4394,
+    "topic": "Committee reports: Open Space Committee, Municipal Building Design Committee, Capital Planning, Economic Development, Stormwater Task Force, Montachusett Regional Planning Commission, Joint Transportation Committee",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 4394,
+    "t_end": 4456,
+    "topic": "Approval of minutes for 27 July, 20 July, and 10 August (including working sessions)",
+    "resolution": "voted, approved",
+    "tags": []
+   },
+   {
+    "t_start": 4456,
+    "t_end": 4498,
+    "topic": "Meeting schedule reminder, board comment on September 3rd town meeting deciding use of additional state funds, adjournment",
+    "resolution": "voted, adjourned",
+    "tags": [
+     "town-meeting",
+     "state-aid"
+    ]
+   }
+  ],
+  "not_audible": [
+   "No roll-call vote counts were given anywhere in the meeting; all motions passed by voice vote ('aye') with no dissent captured, per the board's stated practice with a member absent.",
+   "The absent board member's name is rendered inconsistently in captions as 'Wilsmer', 'Wilson', and 'Wilmer' — likely one person.",
+   "Whether Mr. Nicastro was present for tonight's meeting or only referenced regarding a past absence is unclear from the captions.",
+   "Precise identity/spelling of the board member addressed as 'Mr. Verne' is uncertain.",
+   "The exact address of the New West Townsend Road property is given inconsistently as '860' and '816' in the captions.",
+   "Details of the Montachusett Regional Planning Commission's past pension/OPEB funding concern were referenced only vaguely and not resolved on the record."
+  ],
+  "confidence": "moderate",
+  "headline": "Planning Board approved flood-plain and multi-dwelling special permits for three properties; two hearings continued for lack of quorum.",
+  "summary": "The Lunenburg Planning Board approved a lot-line land swap on Page Street and special permits for flood-plain work at 881 Flat Hill Road and 18 Oak Ridge Road and for a multiple-dwelling rebuild at 27 Fire Road 15A, all with standard administrative conditions. Hearings for 10 Parmenter Road and New West Townsend Road were continued to September 14th because a board member's absence created a quorum risk for the special permits involved, and the board discussed a possible submission-deadline policy and zoning bylaw cleanup items for the November special town meeting."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Planning Board approved special permits for flood-plain reconstruction at 881 Flat Hill Road and 18 Oak Ridge Road, and a multi-dwelling rebuild at 27 Fire Road 15A.",
+    "t": 1721
+   },
+   {
+    "line": "Hearings for 10 Parmenter Road and New West Townsend Road were continued to September 14th after a board member's absence created a quorum risk.",
+    "t": 3038
+   },
+   {
+    "line": "The board also endorsed a lot-line land swap between two Page Street properties.",
+    "t": 817
+   },
+   {
+    "line": "The board discussed requiring applicant materials by noon the Thursday before a meeting, and flagged zoning bylaw items -- including a possible removal of the multiple-dwelling approval provision and a four-dwelling cap on shared driveways -- for the November special town meeting.",
+    "t": 3428
+   }
+  ],
+  "why_it_matters": [
+   "Three properties got special-permit approval with standard conditions, clearing the way for flood-plain reconstruction and a multi-dwelling rebuild to proceed.",
+   "Neighbors and applicants for the Parmenter Road and New West Townsend Road projects have their hearings pushed to September 14th rather than decided tonight.",
+   "A proposed submission-deadline policy and zoning bylaw changes headed toward the November special town meeting could change how future permit applications are handled and what residents vote on."
+  ],
+  "watch_next": [
+   "Continued hearings for 10 Parmenter Road and New West Townsend Road on September 14th",
+   "Zoning bylaw cleanup items (section 2534, shared-driveway cap) at the November special town meeting"
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-27T02:00:38Z",
-    "cost_usd": 0.37187600000000004
-  },
-  "minutes": {
-    "attendees": [
-      {
-        "name_as_heard": "the Chair (not named in captions)",
-        "role": "chair"
-      },
-      {
-        "name_as_heard": "Mr. Wallace",
-        "role": "Planning Director / town planner"
-      },
-      {
-        "name_as_heard": "Adam",
-        "role": "board member"
-      },
-      {
-        "name_as_heard": "Mr. Verne",
-        "role": "board member"
-      },
-      {
-        "name_as_heard": "Greg Roy",
-        "role": "presenter (Dillson Roy Civil Design Group, representing applicants)"
-      },
-      {
-        "name_as_heard": "Matthew Morrow",
-        "role": "presenter (Matthew S. Morrow Environmental Consulting, representing Nathan Jones)"
-      },
-      {
-        "name_as_heard": "Dan Wolf",
-        "role": "presenter (David Ross Associates, representing Melissa McCarthy and Steve Vittone)"
-      }
-    ],
-    "public_comment": [],
-    "tags": [
-      "facilities",
-      "housing",
-      "legal",
-      "planning-and-zoning",
-      "state-aid",
-      "town-departments",
-      "town-meeting",
-      "warrant-article"
-    ],
-    "votes": [
-      {
-        "t": 817,
-        "motion": "Endorse the A&R plan for 50 Page Street, A&R 26-6 (lot-line/land swap)",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 1701,
-        "motion": "Close the public hearing for 881 Flat Hill Road, PBSP 26-5",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 1721,
-        "motion": "Approve the special permit for 881 Flat Hill Road, PBSP 26-5, with standard administrative conditions and stated construction hours",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 2018,
-        "motion": "Close the public hearing for 18 Oak Ridge Road, PBSP 26-9",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 2044,
-        "motion": "Approve the project as proposed at 18 Oak Ridge Road, PBSP 26-9, with standard administrative conditions and stated construction hours",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 2926,
-        "motion": "Close the public hearing for PBSP 26-8, 27 Fire Road 15A",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 2950,
-        "motion": "Approve the special permit for 27 Fire Road 15A, PBSP 26-8, with standard administrative conditions and stated construction hours",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 3038,
-        "motion": "Continue the hearing for 10 Parmenter Road phase 1 (PBSP 26-3, PBSP 26-4, PBSW 26-12, PBSW 26-13) to 14 September",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 3108,
-        "motion": "Continue the hearing for 10 Parmenter Road phase 2 (PBSW 26-6, PBSP 26-7, PBSW 26-16) to 14 September",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 3138,
-        "motion": "Continue the hearing for New West Townsend Road (PBSA 26-1, PBSP 26-1, PBSW 26-12) to 14 September",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 4426,
-        "motion": "Approve the minutes as written for 27 July, 20 July, and 10 August (including working sessions)",
-        "outcome": "passed",
-        "procedural": true
-      },
-      {
-        "t": 4491,
-        "motion": "Adjourn the meeting",
-        "outcome": "passed",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 4478,
-        "topic": "Special/additional state funds allocation for town meeting",
-        "what_was_said": "A board member noted that town meeting on September 3rd would decide how to spend additional money dedicated to the town by the state legislature. No figure beyond an approximate amount was given.",
-        "figures_as_heard": [
-          "almost half a million dollars"
-        ]
-      }
-    ],
-    "transfers": [],
-    "decisions": [
-      {
-        "t": 1136,
-        "decision": "The applicant's representative (Greg Roy) will seek continuances for the 10 Parmenter Road and 860/816 New West Townsend Road hearings rather than proceed substantively tonight, given the quorum/Mullin-rule risk with a board member absent."
-      },
-      {
-        "t": 3428,
-        "decision": "Board consensus that applicant materials should be submitted to the planning office by noon Thursday before a meeting; Mr. Wallace to draft language for the board's formal consideration, with the board retaining discretion to accept minor late items."
-      },
-      {
-        "t": 3662,
-        "decision": "Mr. Wallace will discuss with the building commissioner (Brian) whether zoning bylaw section 2534 (the 'approval' provision for multiple dwellings) can simply be removed rather than referred to town counsel, and add it to the cleanup list for the November special town meeting if so."
-      },
-      {
-        "t": 3945,
-        "decision": "Add the shared-driveway bylaw amendment, capping the maximum number of primary dwellings sharing a driveway at four, to the list of items for the November special town meeting."
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 63,
-        "t_end": 227,
-        "topic": "Meeting opening, recording/audio technical difficulties",
-        "resolution": "resolved informally",
-        "tags": []
-      },
-      {
-        "t_start": 227,
-        "t_end": 378,
-        "topic": "Roll/attendance note (Mr. Wilsmer absent, votes to be by voice not roll call), participation options",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 378,
-        "t_end": 527,
-        "topic": "Director's report: zoning amendment working sessions, timeline to May town meeting, minor zoning amendments for November special town meeting, affordable housing trust",
-        "resolution": "informational",
-        "tags": [
-          "planning-and-zoning",
-          "town-meeting",
-          "housing"
-        ]
-      },
-      {
-        "t_start": 527,
-        "t_end": 920,
-        "topic": "A&R plan, 50 Page Street (A&R 26-6): lot-line land swap between 50 and 52 Page Street",
-        "resolution": "voted, endorsed",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 920,
-        "t_end": 1156,
-        "topic": "Discussion of quorum/Mullin-rule risk for continued hearings (10 Parmenter Road, 860 New West Townsend Road) with Mr. Wilsmer absent",
-        "resolution": "no vote taken; applicant to seek continuance",
-        "tags": [
-          "planning-and-zoning",
-          "legal"
-        ]
-      },
-      {
-        "t_start": 1156,
-        "t_end": 1766,
-        "topic": "Public hearing, 881 Flat Hill Road (PBSP 26-5): special permit to raise/reconstruct boathouse in flood plain",
-        "resolution": "voted, approved with conditions",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 1766,
-        "t_end": 2065,
-        "topic": "Public hearing, 18 Oak Ridge Road (PBSP 26-9): special permit to raise and rebuild house outside flood zone",
-        "resolution": "voted, approved with conditions",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 2065,
-        "t_end": 2232,
-        "topic": "Applicant representative requests continuances for 10 Parmenter Road and New West Townsend Road hearings, notes documents submitted for town counsel review",
-        "resolution": "continuance requested; formal vote later",
-        "tags": [
-          "planning-and-zoning",
-          "legal"
-        ]
-      },
-      {
-        "t_start": 2232,
-        "t_end": 2973,
-        "topic": "Public hearing, 27 Fire Road 15A (PBSP 26-8): special permit for multiple dwellings on one lot / demolition and rebuild of middle structure",
-        "resolution": "voted, approved with conditions",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 2973,
-        "t_end": 3150,
-        "topic": "Continuance votes for 10 Parmenter Road (phases 1 and 2) and New West Townsend Road to 14 September",
-        "resolution": "voted, continued",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 3150,
-        "t_end": 3576,
-        "topic": "Board discussion: proposed policy requiring applicant materials be submitted a set time before meetings (noon Thursday proposed)",
-        "resolution": "no vote; Wallace to draft language for future consideration",
-        "tags": [
-          "planning-and-zoning",
-          "policy"
-        ]
-      },
-      {
-        "t_start": 3576,
-        "t_end": 3967,
-        "topic": "Board discussion: possible removal of zoning bylaw section 2534 (multiple dwellings approval provision) and shared-driveway bylaw amendment for November special town meeting",
-        "resolution": "no vote; referred to Wallace/building commissioner, items added to warrant list",
-        "tags": [
-          "planning-and-zoning",
-          "warrant-article"
-        ]
-      },
-      {
-        "t_start": 3967,
-        "t_end": 4394,
-        "topic": "Committee reports: Open Space Committee, Municipal Building Design Committee, Capital Planning, Economic Development, Stormwater Task Force, Montachusett Regional Planning Commission, Joint Transportation Committee",
-        "resolution": "informational",
-        "tags": [
-          "town-departments",
-          "facilities"
-        ]
-      },
-      {
-        "t_start": 4394,
-        "t_end": 4456,
-        "topic": "Approval of minutes for 27 July, 20 July, and 10 August (including working sessions)",
-        "resolution": "voted, approved",
-        "tags": []
-      },
-      {
-        "t_start": 4456,
-        "t_end": 4498,
-        "topic": "Meeting schedule reminder, board comment on September 3rd town meeting deciding use of additional state funds, adjournment",
-        "resolution": "voted, adjourned",
-        "tags": [
-          "town-meeting",
-          "state-aid"
-        ]
-      }
-    ],
-    "not_audible": [
-      "No roll-call vote counts were given anywhere in the meeting; all motions passed by voice vote ('aye') with no dissent captured, per the board's stated practice with a member absent.",
-      "The absent board member's name is rendered inconsistently in captions as 'Wilsmer', 'Wilson', and 'Wilmer' — likely one person.",
-      "Whether Mr. Nicastro was present for tonight's meeting or only referenced regarding a past absence is unclear from the captions.",
-      "Precise identity/spelling of the board member addressed as 'Mr. Verne' is uncertain.",
-      "The exact address of the New West Townsend Road property is given inconsistently as '860' and '816' in the captions.",
-      "Details of the Montachusett Regional Planning Commission's past pension/OPEB funding concern were referenced only vaguely and not resolved on the record."
-    ],
-    "confidence": "moderate",
-    "headline": "Planning Board approved flood-plain and multi-dwelling special permits for three properties; two hearings continued for lack of quorum.",
-    "summary": "The Lunenburg Planning Board approved a lot-line land swap on Page Street and special permits for flood-plain work at 881 Flat Hill Road and 18 Oak Ridge Road and for a multiple-dwelling rebuild at 27 Fire Road 15A, all with standard administrative conditions. Hearings for 10 Parmenter Road and New West Townsend Road were continued to September 14th because a board member's absence created a quorum risk for the special permits involved, and the board discussed a possible submission-deadline policy and zoning bylaw cleanup items for the November special town meeting."
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "Planning Board approved special permits for flood-plain reconstruction at 881 Flat Hill Road and 18 Oak Ridge Road, and a multi-dwelling rebuild at 27 Fire Road 15A.",
-        "t": 1721
-      },
-      {
-        "line": "Hearings for 10 Parmenter Road and New West Townsend Road were continued to September 14th after a board member's absence created a quorum risk.",
-        "t": 3038
-      },
-      {
-        "line": "The board also endorsed a lot-line land swap between two Page Street properties.",
-        "t": 817
-      },
-      {
-        "line": "The board discussed requiring applicant materials by noon the Thursday before a meeting, and flagged zoning bylaw items -- including a possible removal of the multiple-dwelling approval provision and a four-dwelling cap on shared driveways -- for the November special town meeting.",
-        "t": 3428
-      }
-    ],
-    "why_it_matters": [
-      "Three properties got special-permit approval with standard conditions, clearing the way for flood-plain reconstruction and a multi-dwelling rebuild to proceed.",
-      "Neighbors and applicants for the Parmenter Road and New West Townsend Road projects have their hearings pushed to September 14th rather than decided tonight.",
-      "A proposed submission-deadline policy and zoning bylaw changes headed toward the November special town meeting could change how future permit applications are handled and what residents vote on."
-    ],
-    "watch_next": [
-      "Continued hearings for 10 Parmenter Road and New West Townsend Road on September 14th",
-      "Zoning bylaw cleanup items (section 2534, shared-driveway cap) at the November special town meeting"
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-27T02:00:56Z",
-      "cost_usd": 0.19609000000000001
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T02:00:56Z",
+   "cost_usd": 0.19609000000000001
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08242026-7977",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-08-24-minutes-7977.txt",
+   "path": "sources/meetings/planning-board/2026-08-24-minutes-7977.pdf"
+  },
+  "official_sha256": "b50dc34047d2bbb7b87981a5f6a1fb79cfa94882b6b71ebabedd8d22c9605e95",
+  "coverage": "full",
+  "summary": "The two records agree on every hearing vote: 10 motions on matching outcomes, with only case numbers and name spellings differing. The main differences are that the official minutes say no formal submission policy was adopted and mention the shared-driveway change only as discussion, while ours record a consensus and a list addition. The official minutes also record a 7/13/26 minutes-approval vote that ours omit.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 4,
+   "discrepancy": 5,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: endorse plan at 50 Page Street (26-6)",
+    "t": 817,
+    "ours": "Endorse the A&R plan for 50 Page Street, A&R 26-6 (lot-line/land swap) — passed",
+    "official": "A Burney moved to endorse the ANR for 50 Page Street.  A. Reid Second \nAll In favor.",
+    "note": "Same motion and outcome; the official minutes record it as unanimous."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Plan type at 50 Page Street",
+    "t": 817,
+    "ours": "A&R plan for 50 Page Street, A&R 26-6",
+    "official": "50 Page Street (ANR-26-6)",
+    "official_reading": "ANR-26-6 (Approval Not Required)",
+    "note": "Captions heard 'ANR' as 'A&R'; it is the same plan and the same case number."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: close hearing, 881 Flat Hill Road",
+    "t": 1701,
+    "ours": "Close the public hearing for 881 Flat Hill Road, PBSP 26-5 — passed",
+    "official": "A. Burney moved to close the public hearing.  A. Reid Second \nAll In favor.",
+    "note": "Same motion and outcome (official case number is printed 'PMSP-26-5', apparently a typo)."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve special permit, 881 Flat Hill Road",
+    "t": 1721,
+    "ours": "Approve the special permit for 881 Flat Hill Road, PBSP 26-5, with standard administrative conditions and stated construction hours — passed",
+    "official": "A Burney moved to approve the proposed project at 881 Flat Hill Road with standard administrative conditions and construction hours of 8:00 am to 5:00 pm, Monday through Friday and 9:00 am to 2:00 pm Saturdays and no Sundays.",
+    "note": "Same approval and conditions; the official minutes give the actual hours."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: close hearing, 18 Oak Ridge Road",
+    "t": 2018,
+    "ours": "Close the public hearing for 18 Oak Ridge Road, PBSP 26-9 — passed",
+    "official": "A Burney moved to continue to close the public hearing.  A. Reid Seconded.  \nAll in favor",
+    "note": "Same outcome; the official wording 'continue to close' looks like a clerical slip for 'close'."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve project, 18 Oak Ridge Road",
+    "t": 2044,
+    "ours": "Approve the project as proposed at 18 Oak Ridge Road, PBSP 26-9, with standard administrative conditions and stated construction hours — passed",
+    "official": "A Burney moved to approve the proposed project at 18 Oak Ridge Road with standard administrative conditions and construction hours of 8:00 am to 5:00 pm, Monday through Friday and 9:00 am to 2:00 pm Saturdays.  No Sundays.",
+    "note": "Same approval and conditions."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: close hearing, 27 Fire Road 15A",
+    "t": 2926,
+    "ours": "Close the public hearing for PBSP 26-8, 27 Fire Road 15A — passed",
+    "official": "A Burney moved to continue to close the public hearing.  A. Reid Seconded.  \nAll in favor",
+    "note": "Same outcome; 'continue to close' wording is the same slip as at Oak Ridge Road."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve special permit, 27 Fire Road 15A",
+    "t": 2950,
+    "ours": "Approve the special permit for 27 Fire Road 15A, PBSP 26-8, with standard administrative conditions and stated construction hours — passed",
+    "official": "A Burney moved to approve the proposed project at 27 Fire Road 15A with standard administrative conditions and construction hours of 8:00 am to 5:00 pm, Monday through Friday and 9:00 am to 2:00 pm Saturdays.  No Sundays.",
+    "note": "Same approval and conditions."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 10 Parmenter Road phase 1 to 14 September",
+    "t": 3038,
+    "ours": "Continue the hearing for 10 Parmenter Road phase 1 (PBSP 26-3, PBSP 26-4, PBSW 26-12, PBSW 26-13) to 14 September — passed",
+    "official": "A Burney moved to continue 10 Parmenter Road, Phase 1 to 9/14/26 at 6:05 pm",
+    "note": "Same motion, date and outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Case numbers, 10 Parmenter Road phase 1",
+    "t": 3038,
+    "ours": "PBSP 26-3, PBSP 26-4, PBSW 26-12, PBSW 26-13",
+    "official": "Stormwater Permits (PBSW-26-12) &PBSW -26-23 and Special Permits (BPSP-26-2 & \nPBSP-26-4",
+    "note": "Our 26-3 vs their 26-2 and our 26-13 vs their 26-23 differ in digits, and the official text has its own typos ('BPSP'); check the filed applications to see which numbers are right."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 10 Parmenter Road phase 2 to 14 September",
+    "t": 3108,
+    "ours": "Continue the hearing for 10 Parmenter Road phase 2 (PBSW 26-6, PBSP 26-7, PBSW 26-16) to 14 September — passed",
+    "official": "A Burney moved to continue 10 Parmenter Road, Phase 1 to 9/14/26 at 6:05 pm",
+    "note": "Same date and outcome; the official motion text says 'Phase 1' under the Phase 2 heading, likely a copy error. Official case numbers list PBSP-26-6 where ours says PBSW 26-6."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue New West Townsend Road to 14 September",
+    "t": 3138,
+    "ours": "Continue the hearing for New West Townsend Road (PBSA 26-1, PBSP 26-1, PBSW 26-12) to 14 September — passed",
+    "official": "A Burney moved to continue to 9/14/26 at 6:05 pm.",
+    "note": "Same outcome; ours cites a stormwater number 26-12 (also used at Parmenter) where the official minutes list PBSP-26-1, so the case number is worth a check."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reason for continuances: quorum / Mullin-rule risk",
+    "t": 1136,
+    "ours": "The applicant's representative (Greg Roy) will seek continuances for the 10 Parmenter Road and 860/816 New West Townsend Road hearings rather than proceed substantively tonight, given the quorum/Mullin-rule risk with a board member absent.",
+    "official": "",
+    "note": "The official minutes record that the applicants requested continuances but give no quorum or Mullin-rule rationale."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Deadline for applicant submissions (noon Thursday)",
+    "t": 3428,
+    "ours": "Board consensus that applicant materials should be submitted to the planning office by noon Thursday before a meeting; Mr. Wallace to draft language for the board's formal consideration, with the board retaining discretion to accept minor late items.",
+    "official": "The Board discussed possible submission deadlines.  No formal policy was adopted.",
+    "note": "Ours records a consensus on noon Thursday and a drafting assignment, while the official minutes record only discussion and no policy; check the recording to see how firm the consensus was."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Zoning bylaw section 2534 cleanup",
+    "t": 3662,
+    "ours": "Mr. Wallace will discuss with the building commissioner (Brian) whether zoning bylaw section 2534 (the 'approval' provision for multiple dwellings) can simply be removed rather than referred to town counsel, and add it to the cleanup list for the November special town meeting if so.",
+    "official": "",
+    "note": "The official minutes do not mention this; they say only that the Board discussed the authority over multiple dwellings at 27 Fire Road. Check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Shared-driveway bylaw amendment",
+    "t": 3945,
+    "ours": "Add the shared-driveway bylaw amendment, capping the maximum number of primary dwellings sharing a driveway at four, to the list of items for the November special town meeting.",
+    "official": "The Board discussed a possible \nadditional amendment to the shared driveway provision.",
+    "note": "Ours records a decision to add it, with a cap of four dwellings. The official minutes say only 'discussed a possible' amendment and give no cap; check which is right."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "State funds allocation figure",
+    "t": 4478,
+    "ours": "Special/additional state funds allocation for town meeting: almost half a million dollars",
+    "official": "",
+    "note": "The official minutes mention the allocation of additional state funding but give no amount; the figure rests on captions and should be checked against the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Director's report on zoning amendments and affordable housing trust",
+    "ours": "",
+    "official": "S. Wallace reported that Town Counsel is reviewing the zoning amendments planned for \nMay 2027 Annual Town Meeting.",
+    "note": "Our minutes have no entry for this report, including the affordable housing trust discussion with Town Counsel."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Committee reports and Sept 17 meet and greet",
+    "ours": "",
+    "official": "The Committee reported recent activity, including a ribbon cutting event and plans for a \nlocal official meet and greet on September 17th.",
+    "note": "Committee reports and the online business certificate item appear only in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter name: Matthew Morrow",
+    "ours": "Matthew Morrow (presenter (Matthew S. Morrow Environmental Consulting, representing Nathan Jones))",
+    "official": "Matt Marro of Matthew. S. Marro Environmental Consulting represented Nathan Jones.",
+    "official_reading": "Matt Marro, Matthew S. Marro Environmental Consulting",
+    "note": "Same presenter and client; the captions spelled the surname differently."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter firm: Dillson Roy Civil Design Group",
+    "ours": "Greg Roy (presenter (Dillson Roy Civil Design Group, representing applicants))",
+    "official": "Greg Roy of Dillis & Roy represented the owners of 50 and 52 Page Street.",
+    "official_reading": "Dillis & Roy",
+    "note": "Same presenter; the firm name is rendered differently in the captions."
+   },
+   {
+    "kind": "agree",
+    "about": "Presenter: Dan Wolf",
+    "ours": "Dan Wolf (presenter (David Ross Associates, representing Melissa McCarthy and Steve Vittone))",
+    "official": "Dan Wolf of David Ross Assoc. represented Melissa McCarthy and Steven Vittone.",
+    "note": "Same presenter, firm and clients."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member Adam",
+    "ours": "Adam (board member)",
+    "official": "Adam Burney, Member",
+    "official_reading": "Adam Burney",
+    "note": "The official minutes give the surname of the member who made the motions."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Board members present",
+    "ours": "Mr. Verne (board member)",
+    "official": "Roll Call: M. Brenner, T. Willsmer,  A. Reid, A. Burney, A. Nicastro \nAbsent:  T. Willsmer",
+    "note": "No 'Verne' appears on the official roster, and A. Reid, who seconded every motion, is not in our attendees. The official roll call also lists Willsmer as both present and absent. Check the recording for who attended."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Named chair and Planning Director",
+    "ours": "the Chair (not named in captions) (chair)",
+    "official": "M. Brenner at 6:00 pm",
+    "note": "The official minutes name the chair as M. Brenner and the Planning Director as Stephen Wallace, which fits our 'Mr. Wallace'."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:14:19Z",
+   "cost_usd": 0.3552
+  }
+ }
 }

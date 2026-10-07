@@ -342,5 +342,133 @@
    "at": "2026-09-27T23:03:28Z",
    "cost_usd": 0.19531199999999999
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04072025-7099",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-04-07-minutes-7099.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-04-07-minutes-7099.pdf"
+  },
+  "official_sha256": "6f4a743df4c9011dd8ded8f19c01de6a37b147de79cc1337283f328406b4ac03",
+  "coverage": "full",
+  "summary": "The two records agree on the manager's report items (balance, 70% local programming, the show on hold, Talk of the Town, the Eagle House donation). The official minutes record no votes except routine minutes and adjournment, and our recording minutes have no votes either.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "PACC fund balance",
+    "ours": "PACC fund/package balance: a million 9,3794 (t=646); detail: 1,930, 1,9,379, a4ome,000 (t=716)",
+    "official": "According to the town, the current PAC balance is $1,009,379.94",
+    "official_reading": "$1,009,379.94",
+    "note": "The captions garbled the same balance; the digits 9,379 match the official $1,009,379.94.",
+    "t": 646
+   },
+   {
+    "kind": "agree",
+    "about": "Locally produced programming share",
+    "ours": "Locally produced programming share: 70%",
+    "official": "o 70% local",
+    "note": "Both give 70% local programming.",
+    "t": 764
+   },
+   {
+    "kind": "caption_error",
+    "about": "New show title (Knits vs Knitters)",
+    "ours": "Pre-production on the new show 'New England Knits' is on indefinite hold at the host's request.",
+    "official": "Pre-production work on the new show “New England Knitters”, was ready to go but the host put it on hold due to logistical issues",
+    "official_reading": "New England Knitters",
+    "note": "Same item on hold at the host's request; the title is misheard in our minutes. 'Indefinite' is not in the official text.",
+    "t": 458
+   },
+   {
+    "kind": "agree",
+    "about": "Talk of the Town revamp with Moderator as host",
+    "ours": "Talk of the Town is being revamped into a segmented show, and the town moderator is being asked to host it instead of the town manager to avoid a conflict of interest.",
+    "official": "Possible conflict of interest with Town Manager so looking to have the Town Moderator be the MC",
+    "note": "Same plan and rationale.",
+    "t": 520
+   },
+   {
+    "kind": "agree",
+    "about": "Talk of the Town June start",
+    "ours": "Recording of the revamped Talk of the Town is expected to begin in June, pending the moderator's decision to join.",
+    "official": "Hopefully will start in June",
+    "note": "Both expect a June start.",
+    "t": 563
+   },
+   {
+    "kind": "agree",
+    "about": "Eagle House donated set material and Storytime set change",
+    "ours": "The Eagle House donated furniture (chairs, rocking chair, small table) to the studio at no cost, prompting a redesign of the storytime set.",
+    "official": "Received free “set” material from The Eagle House.",
+    "note": "Same donation and set change; the official records the Storytime set change in the next bullet.",
+    "t": 585
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Storytime date and start time",
+    "ours": "Storytime is set for Wednesday the 16th; the start time (proposed 11 o'clock) may need to change to accommodate the host's schedule.",
+    "official": "",
+    "note": "The official minutes give no Storytime date or time.",
+    "t": 855
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Enterprise fund investment report",
+    "ours": "The chair asked Joe to encourage Mileen to send the enterprise fund investment report.",
+    "official": "Enterprise Fund Investment Status: • No update at this time",
+    "note": "Ours records a follow-up request on the report; the official says only no update. Check the recording near t=1019 to see whether the request was made and whether the report was received.",
+    "t": 1019
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Prior minutes approval",
+    "ours": "",
+    "official": "Motion to accept the amended 3/3/2025 minutes (F.Beall, 2nd P.Lincoln), passed.",
+    "note": "Official records a vote that our minutes omit; it is routine, but a person can verify it in the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY26 budget set",
+    "ours": "",
+    "official": "S.Walker announced that the PAC, FY ’26 budget is set",
+    "note": "This FY26 budget item is not in our minutes. It is an announcement, not a recorded vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Expected additional $40,000 and interest unposted",
+    "ours": "",
+    "official": "Should have an additional $40,000",
+    "note": "Official gives an expected additional $40,000 and says March interest is not posted. Our captions garbled the balance detail (t=716), possibly including this."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrant wording finalized",
+    "ours": "",
+    "official": "S.Walker, J.Toale and Town Manager finalized PAC Warrant wording and numbers",
+    "note": "Communications item missing from ours."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "Pete (member); Faith (member); Steve (chair); Joe Tol (station/manager)",
+    "official": "PACC members present: Steve Walker, Pete Lincoln (zoom), Faith Beall 3. Steve Archambault, (excused) 4. Manager: Jo Toale",
+    "note": "The same three members and the manager appear in both, with misheard surnames (Joe Tol = Jo Toale). Pete attended by Zoom and a fourth member, Steve Archambault, was excused; ours lists neither. Check whether the chair is Steve Walker."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:49:39Z",
+   "cost_usd": 0.2630752
+  }
  }
 }

@@ -335,5 +335,173 @@
    "at": "2026-09-27T19:33:32Z",
    "cost_usd": 0.202916
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05132025-7218",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-05-13-minutes-7218.txt",
+   "path": "sources/meetings/sewer-commission/2025-05-13-minutes-7218.pdf"
+  },
+  "official_sha256": "501b42469100e40238035d220612f3c469504e09b3d0a178e0a8a47adc6303a8",
+  "coverage": "full",
+  "summary": "The two records agree on the substantive items: the commitment vote, the $24,000 at risk, the ~500 incorrect bills (475 under $100), the new assistant, the vacancy letter and the meeting schedule. The differences are mostly misheard names (Ramsden, Bernard, Ranley) plus a 4/29 minutes vote that only the official records.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 5,
+   "discrepancy": 0,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to accept the Q4 FY25 commitment and supplemental commitment",
+    "ours": "Accept the regular commitment and the supplemental commitment as written — passed",
+    "official": "T o accep t the Q4  FY25 C ommitment and S up p lemental  Commitment as written .\nRoll Call Vote: Joe-aye, Scott-aye and Brett- aye.",
+    "note": "Same motion, same 'as written' wording; official shows a unanimous 3-0 roll call, so 'passed' is consistent.",
+    "t": 1400
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presiding vice chair's surname",
+    "ours": "Brett Ramston (vice chair, presiding)",
+    "official": "Vice-Chair-  Brett Ramsden",
+    "note": "Same person; captions misheard the surname.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW Director's surname",
+    "ours": "Bill Burn (staff)",
+    "official": "DPW Directo r-  \nBill Bernard",
+    "note": "Same staff member, name misheard by captions.",
+    "official_reading": "Bill Bernard"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk's surname",
+    "ours": "Jane Raymond (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Jane Ranley"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Customer-reported billing discrepancy amounts",
+    "ours": "Customer-reported billing discrepancy: 136, 158",
+    "official": "he was charged $13 6 but it \nshould have been $158.",
+    "note": "Same figures; captions dropped the dollar signs and the official text has a spacing artifact.",
+    "t": 776,
+    "official_reading": "$136 and $158"
+   },
+   {
+    "kind": "agree",
+    "about": "Scope of billing error (about 500 bills, 475 under $100)",
+    "ours": "Scope of the billing error and supplemental commitment: 500, $475, less than $100, 25, over $100",
+    "official": "about  half of the bills  were incorrect  -about 500 . Of that 500, the \ndifference on 475 was less than $100.",
+    "note": "500 and 475 match; our '$475' is a count not dollars. The official does not give the 25 over $100 explicitly, but it follows from 500 minus 475.",
+    "t": 864
+   },
+   {
+    "kind": "agree",
+    "about": "Revenue at risk without corrected bills",
+    "ours": "Revenue at risk if supplemental bills are not sent: $24,000",
+    "official": "If they don ’t send the corr ected bills , they would  lose \n$24,000 .",
+    "note": "Same figure.",
+    "t": 905
+   },
+   {
+    "kind": "agree",
+    "about": "New assistant to business manager",
+    "ours": "New assistant (named Susan Sullivan) confirmed to start in the business office on May 27.",
+    "official": "Bill announced that Susan Sullivan will be \nstarting on 5/27  as the new assistant.",
+    "note": "Same name and start date.",
+    "t": 1137
+   },
+   {
+    "kind": "agree",
+    "about": "Commission vacancy: revised letter mailed without formal vote",
+    "ours": "Proceed with a revised recruitment letter for the vacant commission seat without a formal vote, reusing the prior mailing list of water customers.",
+    "official": "The Commissioners  discussed edits  and\nagreed to mail an updated version of the letter.  Andrew will make the edits and send the letters \nto sewer users.",
+    "note": "Same outcome. The official says letters go to 'sewer users' while ours says a prior mailing list of 'water customers'; check the recording if the audience matters.",
+    "t": 529
+   },
+   {
+    "kind": "agree",
+    "about": "Dana Street work on a future agenda",
+    "ours": "Add the Dana Street sewer work update to the next meeting's agenda.",
+    "official": "D ana S treet  work before 7/1.",
+    "note": "Both list Dana Street work as a future agenda item.",
+    "t": 1643
+   },
+   {
+    "kind": "agree",
+    "about": "Upcoming meeting schedule",
+    "ours": "Confirmed upcoming meeting schedule: May 27 (Zoom, 6pm), June 10 (hybrid, 7pm), June 24 (Zoom, 6pm), July 8 (hybrid, 7pm).",
+    "official": "May 27 , 202 5  @ 6 pm – Regular Meeting , Zoom Meeting\nJune  10 , 202 5  @ 7 pm – Regular Meeting, Hybrid Meeting  @ DPW",
+    "note": "All four dates, times and formats match (the June 24 and July 8 lines follow in the official text).",
+    "t": 1663
+   },
+   {
+    "kind": "caption_error",
+    "about": "Scott's and Joe's surnames (commissioners)",
+    "ours": "Joe (commissioner)\nScott (commissioner)",
+    "official": "Clerk- Scott Dall , Member: Joe Hurley",
+    "note": "Our minutes give first names only; the official supplies surnames and Scott's title (Clerk).",
+    "official_reading": "Joe Hurley; Scott Dall"
+   },
+   {
+    "kind": "agree",
+    "about": "Business manager attendee",
+    "ours": "Andrew (business manager (handling billing), as evident from discussion)",
+    "official": "Sewer Business Manage r- Andrew Valliere",
+    "note": "Same person and role; the official gives the surname.",
+    "t": 716
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 4/29/25 minutes by roll call",
+    "ours": "",
+    "official": "Motion: Joe H.                                                                                                                          \nSecond: Scott D.\n         To accept the minutes of 4/29/25.                                     Roll Call Vote: Joe-aye, Scott-aye and Brett- aye.",
+    "note": "Our minutes record no vote on the prior minutes. It is a routine approval, but it is a recorded vote, so check the recording for it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Munis rate reversion cause, unipay, due date, cloud system change",
+    "ours": "",
+    "official": "Munis had reverted it back to the 2022 rates  for the bills over the \nminimum charge.",
+    "note": "The official gives the cause (Munis reverting to 2022 rates), the Uni-pay rebilling with no interest, the extended due date, and the cloud system change in 2 weeks. Our figures and decisions do not capture these."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole repair IFB update",
+    "ours": "",
+    "official": "Manhole Repair IFB  – Bill contacted  Insitufo rm  for an update. They are changing project \nmanagers  but they will still be starting in June .",
+    "note": "Not in our decisions or figures; informational update only."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Typical size of billing correction ($15, $20)",
+    "ours": "Typical size of the billing correction: $15, $20",
+    "official": "",
+    "note": "The official gives no typical correction amounts; it only says 475 of the bills differed by less than $100. Check the recording at t=1073.",
+    "t": 1073
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Meeting start and adjournment times, Zoom format",
+    "ours": "",
+    "official": "Brett  opened the meeting at 7 :02  pm.",
+    "note": "Our minutes record no start time; the official gives 7:02 pm and a 7:31pm adjournment."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:29:47Z",
+   "cost_usd": 0.23594700000000002
+  }
  }
 }

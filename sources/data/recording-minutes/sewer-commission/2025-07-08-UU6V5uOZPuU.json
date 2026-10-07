@@ -414,5 +414,235 @@
    "at": "2026-09-27T13:03:41Z",
    "cost_usd": 0.18889599999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07082025-7299",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-07-08-minutes-7299.txt",
+   "path": "sources/meetings/sewer-commission/2025-07-08-minutes-7299.pdf"
+  },
+  "official_sha256": "f1e9be6646e648806cdde5a4ee7b5a826347b0a0f8197bc12f45766af493a9c4",
+  "coverage": "partial",
+  "summary": "Both records agree on the main vote (accepting the FY25 adjustments, unanimous in the official roll call) and on the digital-signature and ADU follow-up, and the attendee surnames differ only by caption errors. The key difference to check is the adjustment amount ($4,786.50 officially vs. our garbled $786.50/$4,700/478650), plus the Wright Pierce mapping contract discussion and figures, which appear only in ours, and the June 24 minutes vote, which appears only in the official minutes.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 6,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "FY25 year-end adjustments vote: amount",
+    "ours": "Accept the FY25 year-end adjustments (figure heard as $786.50, also stated as $4700/478650) — passed",
+    "official": "To accept  the $ 4,786.50  in adjustments to the Fiscal Year 2025 .",
+    "note": "Both records show a passed vote on the same item, but our captions give $786.50 / $4,700 / 478650 while the official minutes give $4,786.50; the pieces ($4,700 + $86.50 or 4786.50 spoken) plausibly reconstruct $4,786.50, so check the recording at t=670-876 to confirm the amount actually stated.",
+    "t": 876
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY25 adjustments transfer amount",
+    "ours": "$786.50 (also stated as $4,700 / 478650)",
+    "official": "To accept  the $ 4,786.50  in adjustments to the Fiscal Year 2025 .",
+    "note": "Digits dropped/split in captions (\"4,786.50\" heard as \"$4,700\" and \"478650\"); the same item.",
+    "official_reading": "$4,786.50",
+    "t": 772
+   },
+   {
+    "kind": "agree",
+    "about": "FY25 adjustments vote outcome",
+    "ours": "passed",
+    "official": "Roll Call Vote: Scott-aye, Arthur-aye , Dan-aye, and Brett-aye.",
+    "note": "Both record the adjustments as accepted, unanimously by roll call in the official minutes.",
+    "t": 876
+   },
+   {
+    "kind": "agree",
+    "about": "Sign adjustments digitally",
+    "ours": "Send the FY25 adjustment document to all commissioners, including the remote member, for digital (DocuSign) signature rather than an in-person signing.",
+    "official": "Andrew will send it out digitally for all the Commissioners to sign.",
+    "note": "Same decision; ours adds DocuSign and the remote member detail.",
+    "t": 711
+   },
+   {
+    "kind": "caption_error",
+    "about": "ADU bedroom fee in Leominster",
+    "ours": "$220 per bedroom",
+    "official": "will charge a fee  of $220  for add ing  a nother bedroom",
+    "note": "Same figure; ours omits that it is Leominster's fee, but the amount agrees.",
+    "official_reading": "$220",
+    "t": 939
+   },
+   {
+    "kind": "agree",
+    "about": "Lunenburg extra bedroom fee",
+    "ours": "250",
+    "official": "Lunenburg charges $250 for extra bedrooms after 3.",
+    "note": "Same figure.",
+    "t": 939
+   },
+   {
+    "kind": "agree",
+    "about": "New construction sewer fee",
+    "ours": "$3500",
+    "official": "The new  construction fee is $3500.",
+    "note": "Same figure; our $2500 has no counterpart in the official minutes.",
+    "t": 939
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ADU maximum size",
+    "ours": "35, 700 square feet, 900 feet",
+    "official": "Dan noted the maximum size of an ADU is 9 00 sq ft.",
+    "note": "Ours lists 700 sq ft and 900 feet; the official gives only 900 sq ft as the maximum, so check the recording for whether 700 was a different figure.",
+    "t": 939
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Delinquency/collection rate figures",
+    "ours": "Delinquency/collection rate: 18%, 8%",
+    "official": "",
+    "note": "Official minutes say only that Andrew will have the delinquency rate for the next meeting; the percentages heard in the recording are not recorded, so verify them.",
+    "t": 587
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Quarterly billing dollar figures",
+    "ours": "Quarterly sewer billing/demands: $30, $10",
+    "official": "",
+    "note": "The official minutes give no dollar figures for the quarterly demands (only that the fee charge was corrected and bills sent 6/26); check the recording.",
+    "t": 525
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Water district meter fee for ADUs",
+    "ours": "Water district meter fee for ADUs: $400",
+    "official": "",
+    "note": "The official minutes mention no $400 meter fee; the Water Department only 'does not have anything in place yet for ADUs'.",
+    "t": 1582
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ADU fee decision / next step",
+    "ours": "Draft a preliminary email/letter of interest to the town board and check with legal before proposing a specific ADU fee, to start the conversation about a new fee structure.",
+    "official": "Dan suggested having Andrew put together an email on behalf of the Commission stating they would like to put a fee in place for an ADU  and ask what the procedure would be.",
+    "note": "Broadly similar (email to ask about procedure; legal review), but the official records no decision and attributes legal review to a suggestion to discuss with town counsel; confirm whether this was a decision or a suggestion.",
+    "t": 1862
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ADU fee kept open on agenda",
+    "ours": "Keep the ADU fee question open on the agenda for further research and discussion at future meetings.",
+    "official": "--- Future Agenda Items - ADU discussion, manhole  repairs , billing, mapping project  by  Wright Pierce , NP DES vs  the station service contract.",
+    "note": "Official lists ADU discussion as a future agenda item, consistent with ours; this one is effectively agreement.",
+    "t": 939
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Engineering contract figures and mapping decision",
+    "ours": "Ray Pierce engineering/collection-system mapping contract: 83800, 7,800, almost 55 grand, 250 grand, 200 grand",
+    "official": "",
+    "note": "Official minutes list only 'mapping project by Wright Pierce' as a future agenda item, with no dollar figures or discussion of annual mapping; contractor name 'Ray Pierce' is a caption error for Wright Pierce.",
+    "t": 2321
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Direction to review whether annual mapping is statutorily required",
+    "ours": "Have staff (Bill) look further into whether annual full system mapping in the engineering contract is required by statute or could be reduced to every few years.",
+    "official": "",
+    "note": "Not recorded in the official minutes; Bill Bernard is listed as absent there, so check the recording for whether this was an assignment.",
+    "t": 2214
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brett Ramston (chair)",
+    "official": "Chair-  Brett Ramsden",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-chair name",
+    "ours": "Scott D. (commissioner)",
+    "official": "Vice-Chair - Scott Dall",
+    "note": "Same person; official gives full surname and title Vice-Chair.",
+    "official_reading": "Scott Dall",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Clerk Dan Proctor",
+    "ours": "Dan Proctor (commissioner)",
+    "official": "Clerk- Dan Proctor",
+    "note": "Same person; official gives role as Clerk.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner name",
+    "ours": "Arthur Kelly (commissioner)",
+    "official": "Member - Arthur Katis",
+    "note": "Misheard surname.",
+    "official_reading": "Arthur Katis",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer business manager name",
+    "ours": "Andrew Valerie (staff, sewer business manager (as addressed))",
+    "official": "Sewer Business Manager - Andrew Valliere",
+    "note": "Misheard surname.",
+    "official_reading": "Andrew Valliere",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Minutes clerk",
+    "ours": "Jane (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "Same person.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent DPW Director",
+    "ours": "",
+    "official": "Absent: DPW Director- Bill Bernard,",
+    "note": "Our attendee list omits the absent DPW Director; our minutes refer to 'Bill' only in a staff-assignment decision.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of June 24, 2025 minutes",
+    "ours": "",
+    "official": "To ac cept the minutes of June 24, 2025.            Roll Call Vote: Dan-aye, Scott-aye, Arthur-\naye and Brett-aye.",
+    "note": "A roll call vote approving prior minutes appears in the official record only; our minutes list no such vote, so check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Dana Street repairs and manhole repair IFB",
+    "ours": "",
+    "official": "Insituform will be there on 7/15 to start work ing\non  the manholes  most in need",
+    "note": "Official records updates on Dana Street repairs and manhole repair (Insituform starting 7/15) that our minutes do not capture."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "40B project and John Fitch sewer capacity discussion",
+    "ours": "",
+    "official": "Brett stated the 40B project is now in the\ncourts . It would be a r idiculous  amount of sewer added to the system  and require add ing  3 pump\nstations",
+    "note": "Discussion of the 40B project and added pump stations is in the official minutes only."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:27:05Z",
+   "cost_usd": 0.244703
+  }
  }
 }

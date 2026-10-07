@@ -295,5 +295,155 @@
    "at": "2026-09-27T12:19:54Z",
    "cost_usd": 0.190612
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09302025-7424",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-09-30-minutes-7424.txt",
+   "path": "sources/meetings/sewer-commission/2025-09-30-minutes-7424.docx"
+  },
+  "official_sha256": "539648e62de73d1b290462a00c34b3501948bd5902cb411c2e38dd8fabffba54",
+  "coverage": "full",
+  "summary": "The records agree on the 308 Mass Ave change-of-use vote (it passed) and on the ADU next steps. Ours misheard several names, and the official minutes carry none of our fee figures. The one substantive difference is who will abstain on the 830/832 Mass Ave easement waiver: ours says Arthur Katis, the official minutes say Dan.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Who abstains on the 830/832 Mass Ave easement waiver",
+    "t": 1354,
+    "ours": "Arthur Katis will abstain and leave the room for the portion of the October 14 meeting covering the 830/832 Massachusetts Ave easement waiver because he is personally involved with that property.",
+    "official": "Dan noted he will need to abstain from the discussion on 830/832 Mass Ave but will be attending the meeting.",
+    "note": "The two records name different commissioners (Arthur Katis vs Dan) and differ on leaving the room versus attending; check the recording near t=1354 to see who spoke, and check the 10/14 minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote on 308 Mass Ave change of use (Empire Athletics)",
+    "t": 1081,
+    "ours": "Accept the use/flow-increase change for 308 Massachusetts Ave (Empire Athletics) — passed",
+    "official": "To accept the Change of Use for 308 Mass Ave.   \nRoll Call Vote: , Arthur-aye, Dan-aye, Scott-aye,  and Brett-aye.",
+    "note": "Both record the motion as carried; the official minutes show a unanimous roll call, which ours does not give. The official roll call text has a blank name before Arthur, but the four ayes shown are all of the members present."
+   },
+   {
+    "kind": "agree",
+    "about": "ADU regulation next steps",
+    "t": 646,
+    "ours": "Agreed the ADU regulation changes must go to town counsel for legal review and then to a town meeting (likely the annual meeting, thought to be in November) before taking effect.",
+    "official": "Next step would be to have Town Counsel review the draft for any edits and then the Commission will vote on it. It would then need to go to Town Meeting for approval.",
+    "note": "Both give counsel review then Town Meeting; the official minutes add a Commission vote in between and do not mention the November annual meeting."
+   },
+   {
+    "kind": "agree",
+    "about": "ADU draft: review before further action",
+    "t": 605,
+    "ours": "Commissioners agreed to take the period between meetings to review and make notes on the draft ADU sewer regulation language before it goes further.",
+    "official": "They agreed to discuss it again at the next meeting.",
+    "note": "Compatible: review between meetings and discuss again at the next one; the wording differs but no outcome conflicts."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Standard sewer connection fee",
+    "t": 379,
+    "ours": "Standard sewer connection fee: 3900",
+    "official": "",
+    "note": "The official minutes give no fee figures, so this cannot be checked against them; verify against the draft regulation."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ADU sewer connection fee structure",
+    "t": 399,
+    "ours": "ADU sewer connection fee structure: 550, 220, 440",
+    "official": "",
+    "note": "The official minutes mention fees for connecting an ADU but give no amounts; verify against the draft regulation."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "308 Mass Ave flow increase fee",
+    "t": 1070,
+    "ours": "308 Massachusetts Ave flow increase fee (Empire Athletics): 1500",
+    "official": "",
+    "note": "The official minutes mention the flow increase form but state no fee; verify against the form."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brett Ramston (chairman)",
+    "official": "Chair- Brett Ramsden",
+    "official_reading": "Brett Ramsden",
+    "note": "Misheard surname; same person and role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-chair's name",
+    "ours": "Scott D (commission member)",
+    "official": "Vice-Chair- Scott Dall",
+    "official_reading": "Scott Dall",
+    "note": "Truncated surname; the official minutes list him as Vice-Chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer business manager's name",
+    "ours": "Andrew Valerie (sewer business manager)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "official_reading": "Andrew Valliere",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk's name",
+    "ours": "Jane Renley (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "official_reading": "Jane Ranley",
+    "note": "Misheard surname; role is minutes clerk."
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees (Dan Proctor, Arthur Katis)",
+    "ours": "Dan Proctor (commission member)",
+    "official": "Clerk- Dan Proctor, Member: Arthur Katis",
+    "note": "Both records list Dan Proctor and Arthur Katis; the official minutes give Dan as Clerk."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent DPW Director",
+    "ours": "",
+    "official": "Absent: DPW Director- Bill Bernard,",
+    "note": "Our minutes do not list absentees."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 9/9/2025 minutes",
+    "ours": "",
+    "official": "To accept the minutes of 9/9/25.            Roll Call Vote: Dan-aye, Arthur-aye, and Brett-aye.  Scott abstained.",
+    "note": "Routine approval of minutes, not in ours; the roll call has an abstention by Scott."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Q1 FY26 demands update",
+    "ours": "",
+    "official": "Q1 FY26 Demands – Andrew reported the demands went out and he processed some reversals for those who paid that same day.",
+    "note": "An agenda item our minutes do not record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "11/18/25 Leominster Road easement waiver hearing",
+    "ours": "",
+    "official": "Public Hearing on 11/18/25 for Leominster Road easement waiver.",
+    "note": "A scheduled hearing our minutes do not record."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:23:51Z",
+   "cost_usd": 0.238867
+  }
  }
 }

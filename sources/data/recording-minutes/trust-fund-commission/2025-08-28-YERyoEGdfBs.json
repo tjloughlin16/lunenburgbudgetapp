@@ -366,5 +366,144 @@
    "at": "2026-09-27T12:37:32Z",
    "cost_usd": 0.19181399999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08282025-7371",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2025-08-28-minutes-7371.txt",
+   "path": "sources/meetings/trust-fund-commission/2025-08-28-minutes-7371.pdf"
+  },
+  "official_sha256": "5f70ab1fc08471f7773565769e0c2f523b7385d4d1603dc6bc4b52d6b384009e",
+  "coverage": "full",
+  "summary": "The two records agree on the main topics (pharma concentration, the ~$145K workers' comp fund, the unexplained ~$300,000, the American Legion clawback, and the Sept 11 next meeting) and neither shows a passed substantive vote. They differ most on the August 14 minutes, which the official minutes record as a tabled motion and ours record only as deferred, and on our Bartholomew & Company material and figures that are absent from the official minutes.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Approval of the August 14, 2025 minutes",
+    "ours": "Review and approval of the August 14, 2025 minutes deferred to the next meeting.",
+    "official": "Mr. Howard made a motion to approve the Minutes of the Aug 14, 2025 meeting.  The motion was tabled as they are still in review and were subsequently not approved.",
+    "note": "Our minutes record no vote and only a deferral; the official minutes record a motion by Mr. Howard that was tabled. Check the recording around t=5174 for whether a motion was made and how it was disposed of.",
+    "t": 5174
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next Trust Fund Commission meeting set for September 11, 2025 at 5:00 p.m., skipping the usual second/fourth Thursday schedule due to member absences.",
+    "official": "The next meeting of the Trust Fund Commission is scheduled to be held on Thursday, Sept. 11th at 5pm.",
+    "note": "Same date and time; the reason (member absences) appears only in ours.",
+    "t": 5234
+   },
+   {
+    "kind": "agree",
+    "about": "Workers' compensation trust fund value",
+    "ours": "Town's workers' compensation trust fund: $145,000, 65, 45, 58",
+    "official": "approximately $145K which does fall under the 1913 statute",
+    "note": "Both give about $145,000; the other numbers in our caption line are unexplained fragments.",
+    "t": 1877
+   },
+   {
+    "kind": "agree",
+    "about": "Unexplained approximately $300,000",
+    "ours": "Historical unexplained $300,000/$600,000 discrepancy: $300,000, 600,000, 300,000",
+    "official": "an amount of \napproximately $300,000 located with no current understanding of the source/use of these funds",
+    "note": "Both record the roughly $300,000 with unknown source/use; the $600,000 figure appears only in ours.",
+    "t": 2278
+   },
+   {
+    "kind": "agree",
+    "about": "American Legion clawback request",
+    "ours": "American Legion / Post 283 funds - clawback demand: $22,000",
+    "official": "the American Legion has expressed interest in clawing back \nmonies that are in one of our funds.",
+    "note": "Same issue, unresolved. The $22,000 amount and Post 283 appear only in ours; the official gives no amount.",
+    "t": 4512
+   },
+   {
+    "kind": "agree",
+    "about": "Heavy investment in pharma",
+    "ours": "Pooled fund investment in pharmaceuticals: more than 25%",
+    "official": "Both Chairman Bowen and Mr Howard expressed concern we are too heavily invested in Pharma",
+    "note": "Same concern; the 25% figure appears only in ours.",
+    "t": 642
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Joint meeting with Bartholomew & Company",
+    "ours": "Chair will wait until the requested accounting information is received from the treasurer and finance director before scheduling a joint meeting with Bartholomew & Company.",
+    "official": "",
+    "note": "The official minutes do not mention Bartholomew or a joint meeting. This is a decision-type item recorded only in ours, so check the recording near t=975.",
+    "t": 975
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Treasurer's quarterly report return figure",
+    "ours": "Treasurer's pooled trust fund quarterly report (not received): 2.54%",
+    "official": "",
+    "note": "The official says reports have not been received since March but gives no 2.54% figure.",
+    "t": 538
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bartholomew investment contract and fee schedule",
+    "ours": "Bartholomew & Company investment contract for the pool: 6223, up to 25%; Schedule of fees: 0.2%, $50",
+    "official": "",
+    "note": "The official minutes carry none of the Bartholomew contract or fee details.",
+    "t": 2603
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stabilization fund investment treatment",
+    "ours": "Stabilization fund investment treatment: $2.2 million, 1.5 million",
+    "official": "",
+    "note": "The official minutes have no stabilization fund figures.",
+    "t": 2872
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Attorney Costa meeting and draft Risk mitigation and Best Practices policy",
+    "ours": "",
+    "official": "Chairman Bowen updated the Trust Fund Commission on his meeting with Town Attorney \nCosta",
+    "note": "Our record has no note of this meeting or of the draft policy presented.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Forensic audit suggestion",
+    "ours": "",
+    "official": "Chairman Bowen suggested that a forensic audit should be performed every 10 years or so",
+    "note": "A suggestion, not a recorded vote; not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Scholarships and School Committee",
+    "ours": "",
+    "official": "Scholarships (School Committee) except in uncommon circumstances, the Gift should be \nhandled by the Trust Fund Commission",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "the Chair (chair); Richard (member)",
+    "official": "Chairman Bowen",
+    "note": "Chair is Bowen. Our \"Richard\" probably corresponds to Mr. Howard, who the official records as moving and seconding. Check the roster, since neither record lists full attendance.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:24:49Z",
+   "cost_usd": 0.229185
+  }
  }
 }

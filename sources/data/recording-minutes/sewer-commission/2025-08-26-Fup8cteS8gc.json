@@ -363,5 +363,201 @@
    "at": "2026-09-27T12:40:03Z",
    "cost_usd": 0.189808
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262025-7363",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-08-26-minutes-7363.txt",
+   "path": "sources/meetings/sewer-commission/2025-08-26-minutes-7363.docx"
+  },
+  "official_sha256": "f2f59c4058d82bce71961802f2827d518a0b88a6b633720dba9615bffbab1e48",
+  "coverage": "full",
+  "summary": "The two records agree on the one substantive vote, the 17 Rennie Street refund (passed 3-0 in the official roll call), and on the ADU follow-up actions and process. They differ mainly in captioned names and the garbled dollar figure, which the official minutes give as $79. The one thing to know is that the official minutes also record a 3-0 vote to accept the 8/12/25 minutes, and our minutes list no such vote.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 6,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to approve refund for incorrect billing at 17 Renny/Rennie Street",
+    "ours": "Approve a refund/billing adjustment for the water meter mix-up at 17 Renny Street — passed",
+    "official": "To vote in the refund request for the incorrect billing at 17 Rennie Street. \nRoll Call Vote: Dan-aye, Scott-aye, and Brett- aye.",
+    "note": "Both records show the refund vote passing; the official minutes show a unanimous 3-0 roll call and name the street Rennie.",
+    "t": 2132
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name: Renny vs Rennie",
+    "ours": "17 Renny Street",
+    "official": "17 Rennie Street",
+    "note": "Captions misspelled the street name; same item.",
+    "official_reading": "Rennie Street",
+    "t": 2132
+   },
+   {
+    "kind": "caption_error",
+    "about": "17 Renny Street billing correction amount",
+    "ours": "$79, almost $80, 7995",
+    "official": "which meant #17 was overcharged $79 on her bill",
+    "note": "The captions garble the amount with several readings, and the official minutes give $79; a person could check the $79 against 'almost $80' and '7995' if exact cents matter.",
+    "official_reading": "$79",
+    "t": 2049
+   },
+   {
+    "kind": "agree",
+    "about": "Meter mix-up cause at 17 Rennie",
+    "ours": "water meter mix-up at 17 Renny Street",
+    "official": "17 Rennie St.’s water meter was assigned to  10 Rennie and vice versa",
+    "note": "Both describe the meters being mixed up between addresses; the official minutes name 10 Rennie as the other address.",
+    "t": 2132
+   },
+   {
+    "kind": "agree",
+    "about": "Process for adopting ADU regulations",
+    "ours": "Agreed on the process for adopting ADU regulations: draft internally, send to town counsel for review, then hold a public hearing before voting the regulation in.",
+    "official": "Bil replied the Commission would put together the regulation and send it to Town Counsel for review. Then they would need to advertise and hold a public hearing, followed by a vote by the Commission.",
+    "note": "Same sequence in both: draft, town counsel review, public hearing, commission vote. Ours calls it an agreed process, while the official minutes record it as Bill's reply to Scott with no vote.",
+    "t": 2255
+   },
+   {
+    "kind": "agree",
+    "about": "Reach out to Leominster and Fitchburg about ADU regulations",
+    "ours": "Agreed to reach out to Leominster and Fitchburg to see what ADU sewer regulations or fees, if any, they have adopted.",
+    "official": "Andrew will reach out to Leominster and Fitchburg about their regulations.",
+    "note": "Same action item assigned to Andrew.",
+    "t": 1278
+   },
+   {
+    "kind": "agree",
+    "about": "Commissioners to send ADU ideas to Andrew",
+    "ours": "Each commissioner agreed to draft their own notes/ideas for ADU sewer regulations and send them to Andrew rather than one person drafting alone.",
+    "official": "Dan suggested each come up with some ideas to give to Andrew for discussion.",
+    "note": "Same decision; the official minutes repeat it as 'Commissioners will send any ideas to Andrew.'",
+    "t": 1403
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Staff to keep written notes/headings from ADU discussion",
+    "ours": "Asked staff (Andrew) to start keeping written notes/headings from the ADU discussion (meters, fees, etc.) to build toward a regulation.",
+    "official": "",
+    "note": "The official minutes do not record this request to Andrew to keep notes; it is a minor action item, not a vote.",
+    "t": 1235
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Potential ADU rental income figures",
+    "ours": "Potential ADU rental income: $12, $1,500",
+    "official": "",
+    "note": "The official minutes give no rental income figures, so these captioned amounts, which look like a passing remark and may be misheard, cannot be checked against them.",
+    "t": 1340
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brett Ramson (chairman)",
+    "official": "Chair- Brett Ramsden",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-Chair's name",
+    "ours": "Scott Dah (commissioner)",
+    "official": "Vice-Chair- Scott Dall",
+    "note": "Misheard surname; the official minutes also give his role as Vice-Chair.",
+    "official_reading": "Scott Dall"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Dan Proctor",
+    "ours": "Dan Proctor (commissioner)",
+    "official": "Clerk- Dan Proctor",
+    "note": "Same person; the official minutes give his role as Clerk."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Bill Bernard",
+    "ours": "Bill Bernard (director/staff)",
+    "official": "DPW Director- Bill Bernard",
+    "note": "Same person and role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Staff name Andrew Valry",
+    "ours": "Andrew Valry (staff)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "note": "Misheard surname.",
+    "official_reading": "Andrew Valliere"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk Jean",
+    "ours": "Jean (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "First name misheard as Jean; the official minutes name the minutes clerk as Jane Ranley.",
+    "official_reading": "Jane Ranley"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee Greenley (staff)",
+    "ours": "Greenley (staff)",
+    "official": "",
+    "note": "No one named Greenley appears in the official attendee list; this may be a misheard name or an unlisted participant, so a person should check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent commissioner",
+    "ours": "",
+    "official": "Absent: Arthur Katis",
+    "note": "The official minutes record Arthur Katis as absent; our minutes do not mention him."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of minutes of 8/12/25",
+    "ours": "",
+    "official": "To accept the minutes of 8/12/25.                                           Roll Call Vote: Dan-aye, Scott-aye, and Brett- aye.",
+    "note": "The official minutes record a 3-0 roll call vote approving the 8/12/25 minutes, and our minutes list no such vote. It may have been treated as procedural, so a person should check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Waiver and easement criteria discussion",
+    "ours": "",
+    "official": "An applicant has to meet all 3 criteria before they can grant a waiver.",
+    "note": "The official minutes record the three waiver criteria for an easement, and our minutes do not capture them."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Counsel advice that the Commission could vote to disallow ADUs",
+    "ours": "",
+    "official": "Town Counsel stated that if the Sewer Commission desired, they could vote to not allow ADUs.",
+    "note": "The official minutes record this advice, and our minutes do not mention it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Touch-A-Truck event",
+    "ours": "",
+    "official": "Bill gave a huge thank you to Scott for providing the cotton-candy machine which was had 10 deep lines all day.",
+    "note": "The official minutes record the Touch-A-Truck report and thanks, and our minutes do not."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole Repair IFB update",
+    "ours": "",
+    "official": "Bill reported the manhole framing gates have been ordered but are on backorder and not due in until October.",
+    "note": "The official minutes record this update, and our minutes do not."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:10Z",
+   "cost_usd": 0.238829
+  }
  }
 }

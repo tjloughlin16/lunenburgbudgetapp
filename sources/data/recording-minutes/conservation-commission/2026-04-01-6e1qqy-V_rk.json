@@ -610,5 +610,254 @@
    "at": "2026-09-27T02:48:39Z",
    "cost_usd": 0.19258599999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04012026-7743",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-04-01-minutes-7743.txt",
+   "path": "sources/meetings/conservation-commission/2026-04-01-minutes-7743.pdf"
+  },
+  "official_sha256": "3bd740a7e94669724570edcb9b9f26b2405d7f4221248f0dea080d5b98f64e40",
+  "coverage": "full",
+  "summary": "The two records agree on every vote they share: 15 of our 16 votes appear in the official minutes with the same outcome, and most differences are caption misspellings of names and places. The substantive gaps are that the official minutes record a vote approving the 03.18.2026 minutes that our minutes do not list, and that our minutes record a Hollis Road decision (continue the informal caretaker arrangement with Mike Larouche) that the official minutes do not.",
+  "counts": {
+   "agree": 17,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "COC for 260 Falulah Road",
+    "t": 927,
+    "ours": "Approve certificate of compliance for 260 Fula Road based on the agent's recommendation — passed",
+    "official": "M. Wilson, to approve a Certificate of Compliance as recommended by the Agent",
+    "official_reading": "260 Falulah Road: COC-26-1",
+    "note": "Same vote and outcome (unanimous, 5 ayes); captions misheard the street name."
+   },
+   {
+    "kind": "agree",
+    "about": "50 Pine Grove Road continued to April 15",
+    "t": 2783,
+    "ours": "Continue the 50 Pine Grove Road hearing to April 15, 2026 — passed",
+    "official": "M. Larouche, to continue to the April 15 meeting addressing the following concerns:",
+    "note": "Same continuance and outcome; both list the same conditions (move the patio, smaller landing, as-built stairs, extra planting)."
+   },
+   {
+    "kind": "agree",
+    "about": "Marshall Pond (855 Mass Ave) continued to April 15",
+    "t": 4573,
+    "ours": "Continue the Marshall Pond (855 Mass Ave) vegetation management hearing to April 15, 2026 — passed",
+    "official": "M. Larouche, to continue to the April 15 meeting addressing the following concerns:",
+    "note": "Same continuance; the official minutes give the reason as the DEP number."
+   },
+   {
+    "kind": "agree",
+    "about": "10 Parmenter Road Lot 16 continued",
+    "t": 5401,
+    "ours": "Continue the 10 Parmenter Road, Lot 16 hearing to April 15, 2026 — passed",
+    "official": "T. Doucette, to continue to the April 15 meeting addressing the following concerns:",
+    "note": "Same continuance and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "10 Parmenter Road Lot 17 continued",
+    "t": 6019,
+    "ours": "Continue the 10 Parmenter Road, Lot 17 hearing to April 15, 2026 — passed",
+    "official": "M. Larouche, to continue to the April 15 meeting addressing the following concerns:",
+    "note": "Same continuance and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "10 Parmenter Road Lot 22 continued with limit-of-work update",
+    "t": 6623,
+    "ours": "Continue the 10 Parmenter Road, Lot 22 hearing to April 15, 2026, with a request to update the limit-of-work drawings — passed",
+    "official": "• Update the limit of work on all lot plans",
+    "note": "Same continuance and the same limit-of-work condition."
+   },
+   {
+    "kind": "agree",
+    "about": "10 Parmenter Road Lot 23 continued",
+    "t": 7020,
+    "ours": "Continue the 10 Parmenter Road, Lot 23 hearing to April 15, 2026 — passed",
+    "official": "Motion: T. Doucette, to continue to the April 15 meeting addressing the following concerns:",
+    "note": "Same continuance and outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Culvert replacement approval (763 Northfield Rd)",
+    "t": 7346,
+    "ours": "Approve the Northville Crossing culvert replacement now that the right-of-entry and outstanding comments are resolved — passed",
+    "official": "M. Larouche, to approve.",
+    "official_reading": "763 Northfield Rd: NOI-25-12",
+    "note": "Same approval of the Mulpus Brook culvert; captions rendered the road name badly, and the official minutes give the reason as the final signature obtained."
+   },
+   {
+    "kind": "agree",
+    "about": "30 Summer Street continued to May 6",
+    "t": 7408,
+    "ours": "Continue the 30 Summer Street hearing to May 6, 2026 — passed",
+    "official": "M. Larouche, continue to May 6 at applicant's request.",
+    "note": "Same."
+   },
+   {
+    "kind": "agree",
+    "about": "860 New (West) Townsend Road continued",
+    "t": 7450,
+    "ours": "Continue the 860 New Townsend Road common driveway hearing to April 15, 2026 — passed",
+    "official": "M. Larouche, continue to April 15 at the request of the applicants.",
+    "note": "Same vote; the official name is 860 New West Townsend Road."
+   },
+   {
+    "kind": "agree",
+    "about": "Hickory Hills (19 Island Road) continued",
+    "t": 7578,
+    "ours": "Continue the Hickory Hill landowners hearing to April 15, 2026 — passed",
+    "official": "Motion: T. Doucette, continue to the April 15 at applicant's request.",
+    "note": "Same."
+   },
+   {
+    "kind": "agree",
+    "about": "189 Hemlock Drive continued",
+    "t": 7664,
+    "ours": "Continue the 189 Hemlock Drive hearing to April 15, 2026 — passed",
+    "official": "Motion: M. Larouche, continue to the April 15 at applicant's request.",
+    "note": "Same."
+   },
+   {
+    "kind": "caption_error",
+    "about": "COC-26-2 road name",
+    "t": 7807,
+    "ours": "Approve certificate of compliance COC-26-2 for 1178 Northville Road — passed",
+    "official": "_M. Larouche, to approve a Certificate of Compliance as recommended by the Agent",
+    "official_reading": "1178 Northfield Road: COC-26-2",
+    "note": "Same vote and COC number; captions misheard the road name."
+   },
+   {
+    "kind": "agree",
+    "about": "48 Meadow Lane informal release of violation",
+    "t": 8720,
+    "ours": "Issue an informal release of violation for 48 Meadow Lane, conditioned on signage at roughly 30-foot intervals along the 30-foot buffer line — passed",
+    "official": "M. Larouche, to issue an informal release of violation requiring signage approximately\nevery 30 feet at the 30-foot zone.",
+    "note": "Same vote and condition."
+   },
+   {
+    "kind": "agree",
+    "about": "1147 Mass Ave remediation/planting plan",
+    "t": 10101,
+    "ours": "Accept the agent's proposed planting plan and schedule for the vegetation-clearing violation remediation (1147 Mass Ave area) — passed",
+    "official": "M. Wilson, to issue the following remediation plan:",
+    "note": "Same vote; official detail is 8 understory plantings (blueberry, elderberry), a replacement tree, then 6-month and 3-month follow-ups."
+   },
+   {
+    "kind": "agree",
+    "about": "715 Reservoir Road continued",
+    "t": 10528,
+    "ours": "Continue the 715 Reservoir Road tree-removal violation matter to April 15, 2026 so the agent can gather more information — passed",
+    "official": "M. Wilson, continue to April 15 so H. Jaime can speak with the property owner.",
+    "note": "Same."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of 03.18.2026 minutes",
+    "ours": "",
+    "official": "M. Wilson, to approve the minutes of the March 18 meeting.",
+    "note": "The official minutes record this vote (4 ayes, with A. Burnap having audio issues); ours lists no such vote. Check the recording near the start of the meeting."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Hollis Road future arrangement",
+    "t": 12106,
+    "ours": "Hollis Road will continue under its current informal caretaker arrangement with Mike Larouche for now, while the commission continues to consider moving to a market-rate custodian agreement in the future.",
+    "official": "Deed issues must be investigated. A market rate custodial agreement should be considered as this takes a lot of time.",
+    "note": "Ours states a decision to continue the current arrangement and names Mike Larouche as caretaker; the official minutes record only discussion and name no custodian. Check the recording on both points."
+   },
+   {
+    "kind": "agree",
+    "about": "Hollis Road $2,000 figure",
+    "t": 11937,
+    "ours": "Hollis Road custodian rate / market rent: $2,000",
+    "official": "The full house could possibly get $2,000 a month but the custodial relationship exchanges part of\nthat with 30 hours of sweat equity",
+    "note": "Same $2,000 figure; the official minutes frame it as possible monthly rent for the full house and add the 30 hours of sweat equity."
+   },
+   {
+    "kind": "agree",
+    "about": "Riverfront training with Mike Toohill",
+    "t": 10891,
+    "ours": "The chair will coordinate with Mike Tuhill on dates for an off-cycle lunchtime (12-1 p.m.) meeting to train the commission on riverfront regulations, then poll members and post an agenda.",
+    "official": "A lunch meeting may be preferable. J. Pewtherer will work out a date with M. Toohill.",
+    "note": "Same decision; captions misspelled the name (Tuhill vs Toohill)."
+   },
+   {
+    "kind": "agree",
+    "about": "314 Highland Street matter kept open",
+    "t": 10214,
+    "ours": "The 314 Highland Street violation matter will remain open without a vote; the agent will contact the property owner (Richard), conduct a site visit, and report back with a remediation plan before the next meeting.",
+    "official": "H. Jaime requested a continuance to allow her time for a site visit.",
+    "note": "Both record no vote and a site visit by the agent; the official minutes do not name an owner, and 'Richard' may be a misheard name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair's audio-fix accommodation for Andrea",
+    "t": 282,
+    "ours": "Andrea will not need to formally raise her hand and wait for permission each time she tries to fix her audio connection.",
+    "official": "",
+    "note": "Procedural; the official minutes note only that A. Burnap had audio issues during one vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Executive session memo, Forest Legacy Tract 15",
+    "ours": "",
+    "official": "The session was originally cited under\nPurpose 5; however, the subject matter aligns more appropriately with Purpose 6.",
+    "note": "Included in the official minutes as a memo; ours records nothing on it, and it is not a vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "10 Mass Ave violation update",
+    "ours": "",
+    "official": "Dillis & Roy have been hired for the NOI filing, expected by April 15.",
+    "note": "An item the official minutes record that ours does not mention; no vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Member departures during the meeting",
+    "ours": "",
+    "official": "NOTE: M. Wilson dropped off at this time (1:57:26) but there was still a quorum present.",
+    "note": "The official minutes record Wilson leaving and rejoining (also left at 2:56:40); ours does not note this."
+   },
+   {
+    "kind": "agree",
+    "about": "Commission members present",
+    "ours": "Teddy Det/Ducet (Commission member); Mary Wilson; Andrea Bernett/Bernap/Bernat; Mike Larouche; the Chair",
+    "official": "Present: T. Doucette, M. Wilson, M. Larouche, A. Burnap.",
+    "note": "Same members present (chair J. Pewtherer in both); captions misspelled Doucette and Burnap. The official minutes list R. Bursch as absent."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation Agent name",
+    "ours": "Herlin/Harlin/Hurland (Conservation Agent)",
+    "official": "Herlin Jamie - Conservation Agent",
+    "official_reading": "Herlin Jamie (H. Jaime)",
+    "note": "Same person; captions varied the spelling."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenters' names",
+    "ours": "Matt Ladwick (certified lake manager, TRC); Matt Lstead (engineer, Comprehensive Environmental); Bill Hanigan",
+    "official": "Matt Ladewig (TRC) and Christopher Ruth (Town) represented the project.",
+    "official_reading": "Matt Ladewig; Matt Lundsted; Bill Hannigan",
+    "note": "Same people, misspelled in captions."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:19:03Z",
+   "cost_usd": 0.296929
+  }
  }
 }

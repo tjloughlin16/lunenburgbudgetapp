@@ -320,5 +320,194 @@
    "at": "2026-09-27T11:44:53Z",
    "cost_usd": 0.187766
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11252025-7530",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-11-25-minutes-7530.txt",
+   "path": "sources/meetings/sewer-commission/2025-11-25-minutes-7530.pdf"
+  },
+  "official_sha256": "7f5ec977aecf223b15fc3ce9cbe6525c1fb8b32c0b8414eaec52d1360e49fb1d",
+  "coverage": "full",
+  "summary": "The two records agree on both substantive votes: the 763 Mass. Ave. waiver failed unanimously and the ADU connection-charge policy passed unanimously. They differ mostly in detail: our minutes carry caption-garbled cost figures and an inferred ADU agenda decision, and the official minutes carry the minutes-approval vote, the rate-increase discussion and the Town Meeting note. The thing to check is the decisions we recorded (manhole extension, drafting a regulation, keeping the ADU item off agendas), which the official minutes describe as reports or discussion with no motion.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 5,
+   "discrepancy": 5,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "763 Mass. Ave. easement/waiver request vote",
+    "ours": "Vote on the 763 Massachusetts Ave waiver/easement request (yay or nay on accepting it) — failed — all members present voted nay; motion does not carry",
+    "official": "Roll Call Vote: Dan-nay, Arthur-nay, Scott-nay and Brett-nay.   \nThe motion did not carry and the hearing was closed at 6:32 pm.",
+    "note": "Both records show the waiver request failing on a unanimous nay vote of four members.",
+    "t": 1878
+   },
+   {
+    "kind": "agree",
+    "about": "ADU Sewer Connection Charge Policy vote",
+    "ours": "Accept the sewer connection charge policy for ADUs ($2/gallon based on Title 5 flow, one-time connection charge) — passed",
+    "official": "To accept the Sewer Connection Charge Policy for ADUs.  \nRoll Call Vote: Scott-aye, Dan-aye, Arthur-aye, and Brett-aye.",
+    "note": "Both record the ADU policy passing unanimously; the official minutes confirm it is a one-time fee.",
+    "t": 2107
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes of 10/28/25 approval vote",
+    "ours": "",
+    "official": "To accept the minutes of 10/28/25.                         Roll Call Vote: Arthur-aye, Scott-aye, Dan-aye and Brett-aye.",
+    "note": "The official minutes record a unanimous vote approving the prior minutes. Our minutes list no such vote, though it is arguably procedural."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ADU charge of $2 per gallon",
+    "ours": "ADU sewer connection charge policy: $2 per gallon",
+    "official": "",
+    "note": "The official minutes give no dollar rate for the ADU charge. They say only that it is a one-time fee, so the $2/gallon figure rests on the captions alone.",
+    "t": 2043
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost comparison: three Mass Ave connections vs extending Chestnut Street",
+    "ours": "Cost of running three separate sewer connections to Massachusetts Ave vs. extending up Chestnut Street: 200 something, about 500, 1968, 280, 7",
+    "official": "",
+    "note": "The official minutes say only that the commission had no cost figures and that Chestnut would be significantly more expensive. They give no numbers, and our caption figures are garbled.",
+    "t": 997
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chestnut Street extension per-foot and tie-in cost estimates",
+    "ours": "Estimated cost per foot to extend sewer up Chestnut Street: $200 a foot, 500 ft, $100,000; Cost to tie a Chestnut Street property into the extended sewer: 100 grand, 120 grand",
+    "official": "",
+    "note": "The official minutes record no per-foot, length or tie-in cost estimates. Treat these as unverified caption figures.",
+    "t": 1203
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Manhole contract extension date",
+    "ours": "Grant the manhole-replacement contractor a time extension to June 30, 2026 to finish work in the spring, since roads cannot be opened after November 15.",
+    "official": "The roads cannot be opened up after 11/15 and the contract was over on 10/31.  They \nare granting the company an extension to June 30, 2026.",
+    "note": "The date and extension agree. Our minutes call it a decision. The official minutes record it as a report with no motion or vote, so check whether the commission formally voted.",
+    "t": 2168
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Regulation requiring tie-in on a property's own street",
+    "ours": "Put drafting a regulation requiring sewer tie-ins to a property's own street (rather than via easement) on a future agenda for the commission to start putting together.",
+    "official": "Dan suggested discussing and making a change in their by-law or regulations to state that a property needs to \nconnect to sewer on the street of their address. Brett will add it to the next agenda and Bill said they will need to \ndiscuss it with Town Counsel.",
+    "note": "Both agree on a future agenda item. Ours says drafting a regulation; the official says discussing a by-law or regulation change, with Town Counsel input and a possible Town Meeting vote. Check the recording for how firm the commitment was.",
+    "t": 2441
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Future agenda: ADU item and manhole update",
+    "ours": "Keep the ADU item off future agendas until spring; bring the manhole update back on the spring agenda.",
+    "official": "Bill will also ask Town Counsel when the new ADU policy will be in effect. The \nManhole Repair will be added to spring agendas.",
+    "note": "The manhole item agrees. Ours says the ADU item stays off agendas until spring. The official says Bill will ask Town Counsel when the ADU policy takes effect and says nothing about agendas, so check the recording.",
+    "t": 2690
+   },
+   {
+    "kind": "discrepancy",
+    "about": "January 27 meeting time and format",
+    "ours": "Set meeting schedule: December 9 at 7pm (hybrid), January 13 at 7pm (hybrid), January 27 by Zoom, with a fourth meeting in February.",
+    "official": "January 27, 2026  @ 6pm – Zoom Meeting \nFebruary 10, 2026 @ 7pm – Regular Hybrid Meeting",
+    "note": "The December and January 13 dates and times agree. The official minutes add the Jan 27 time (6pm) and a firm Feb 10 date at 7pm, which ours leaves vague. Check the recording for the February date.",
+    "t": 2818
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Meeting needed to change the waiver language",
+    "ours": "",
+    "official": "Bill noted they will need to go to Town Meeting to change the waiver language in the by-\nlaw.",
+    "note": "Our minutes omit that a by-law change requires Town Meeting."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on sewer and water rate increases",
+    "ours": "",
+    "official": "PUBLIC COMMENT – Scott noted that other towns have had increases in their sewer and water rates. He asked if \nthey will be looking at increases and Andrew replied they will need to look at raising the rates as an agenda item.",
+    "note": "The official minutes record a rate-increase discussion that ours does not."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "763 Mass. Ave. project details",
+    "ours": "",
+    "official": "The duplexes will have a total of 19 bedrooms and they calculated the total flow to be 2,090 gal/day, which the existing 6” \npipe can handle.",
+    "note": "The official minutes give the bedroom count and flow figure. Ours has no such figures, though the caption figure '1968' in our cost line may be unrelated."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brett Ramston (also heard as Brent Ramson) (chairman)",
+    "official": "Chair- Brett Ramsden",
+    "note": "The same person, with the surname misheard.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Arthur",
+    "ours": "Arthur Cadis (member)",
+    "official": "Member: Arthur Katis",
+    "note": "The same person, with the surname misheard.",
+    "official_reading": "Arthur Katis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer Business Manager name",
+    "ours": "Andrew Valerie (staff)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "note": "The same person, with the surname misspelled by the captions.",
+    "official_reading": "Andrew Valliere"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter name",
+    "ours": "Dan Shane (also heard as Daniel Sheen) (presenter, engineer with Haley Ward)",
+    "official": "Guests: Daniel Sheehan (Haley Ward)",
+    "note": "The same person, with the surname misheard.",
+    "official_reading": "Daniel Sheehan"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk name",
+    "ours": "June Ranley (clerk (thanked as \"Jane\" for the minutes))",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "The same person. The official spelling is Jane, so 'June' is a caption error.",
+    "official_reading": "Jane Ranley"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dan Proctor and Scott D roles",
+    "ours": "Dan Proctor (member); Scott D (member)",
+    "official": "Vice-Chair- Scott Dall, Clerk- Dan Proctor",
+    "note": "Our minutes list both as plain members. The official gives Scott Dall as vice-chair and Dan Proctor as clerk. 'Scott D' is likely Scott Dall. Check the roles against the roster.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "DPW Director Bill Bernard attendance",
+    "ours": "Bill Bernard (director/business manager)",
+    "official": "DPW Director- \nBill Bernard",
+    "note": "Same person present. Our label 'director/business manager' is loose, since the official lists Andrew Valliere as business manager."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Steve Ballard referenced as engineer",
+    "ours": "Steve Ballard (engineer, referenced as having briefed the commission previously)",
+    "official": "",
+    "note": "The official minutes do not mention Steve Ballard. He was only referenced in discussion and was not an attendee."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:22:05Z",
+   "cost_usd": 0.247073
+  }
  }
 }

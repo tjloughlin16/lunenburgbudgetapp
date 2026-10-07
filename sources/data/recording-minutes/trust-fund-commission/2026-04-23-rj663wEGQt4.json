@@ -282,5 +282,125 @@
    "at": "2026-09-27T02:38:22Z",
    "cost_usd": 0.18425
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04232026-7780",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2026-04-23-minutes-7780.txt",
+   "path": "sources/meetings/trust-fund-commission/2026-04-23-minutes-7780.pdf"
+  },
+  "official_sha256": "1a22d223f9820d9f34c4ab901599b8f299121e7e2b9fe787337769ba11ebe544",
+  "coverage": "full",
+  "summary": "The two records agree on the one substantive vote (the unanimous comprehensive motion on loss of quorum), the $62,000 and $62,518.43 income figures, and the two members present. They differ on who held the chair, and our minutes record items (the $10,000 cemetery request, the risk management policy deferral) that the official minutes lack.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Comprehensive motion on continuation of fiduciary oversight upon loss of quorum",
+    "ours": "That the board of commissioners of trust funds, acting under its authority under MGL chapter 41 sections 45-47 and its fiduciary obligations under the Massachusetts Uniform Trust Code (MGL 203E), adopt the comprehensive motion and statement of findings on continuation of fiduciary oversight and delegation of authority upon loss of a quorum — passed unanimously",
+    "official": "The motion passed unanimously.",
+    "note": "Same vote in both records; the official also names Mr Howard as mover and Chairman Bowen as seconder and records both aye votes.",
+    "t": 4108
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accumulated undistributed income, precise figure",
+    "ours": "Accumulated undistributed trust fund income, precise figure: 62,51843, December 31st, 2025",
+    "official": "exceeding $62,518.43 as of December 31, 2025",
+    "note": "Same figure and date; captions dropped the punctuation.",
+    "official_reading": "$62,518.43",
+    "t": 3695
+   },
+   {
+    "kind": "agree",
+    "about": "Accumulated undistributed income, approximate figure",
+    "ours": "Accumulated undistributed trust fund income: $62,000",
+    "official": "$62,000 of money has been amassed in interest that has not been dispersed",
+    "note": "Both give about $62,000 in undistributed income.",
+    "t": 722
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair and vice chair roles / who presided",
+    "ours": "Marchant Howard (chair); John Bowen (vice chair, addressed throughout as Richard)",
+    "official": "The meeting was called to order at 5:04 pm by Chairman Bowen.",
+    "note": "Our minutes make Howard the chair and Bowen vice chair, while the official minutes make Bowen the chair; check the commission's roster and the recording for who presided and how Bowen was addressed.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Marchant Howard; John Bowen",
+    "official": "Present were Mr Howard and Chairman Bowen.",
+    "note": "Same two members present, apart from the role titles above."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cemetery commission warrant article request",
+    "ours": "Cemetery commission warrant article request: $10,000",
+    "official": "",
+    "note": "The official minutes do not mention a cemetery commission request or $10,000.",
+    "t": 825
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Delegation-of-authority decision",
+    "ours": "The board will maintain the delegation-of-authority framework so that as long as one elected commissioner remains, ministerial duties continue to be administered even without a quorum.",
+    "official": "the remaining Commissioner is authorized to continue all ministerial and administrative actions necessary to effectuate prior lawful Board decisions",
+    "note": "Both describe delegation to a remaining commissioner, but the official text limits it to ministerial actions that carry out prior Board decisions, with explicit limitations and expiry on restoration of quorum; our summary is broader, so check against the motion text.",
+    "t": 3357
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Risk management policy review deferred",
+    "ours": "Review of the rewritten risk management policy was pushed off to the following week's meeting.",
+    "official": "",
+    "note": "The official minutes have no mention of a risk management policy or its deferral.",
+    "t": 5021
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Annual town meeting report content",
+    "ours": "The upcoming annual town meeting report to the town manager will include a summary of the breach notice and other recent commission actions, not just prior meeting topics.",
+    "official": "There was a discussion on the reports and presentation for the Annual Town Meeting, but the fund balances and the accomplishments over the past year.",
+    "note": "Ours records a decision to include the breach notice summary; the official only records a discussion (the sentence appears garbled) with fund balances and accomplishments; check the recording around this point.",
+    "t": 4442
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attorney General's office acknowledgment",
+    "ours": "",
+    "official": "Chairman Bowen did receive an email from the Attorney General’s office who did acknowledge receipt of the documentation and is being reviewed for further action.",
+    "note": "Our minutes do not record this update."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Breach notice delivery",
+    "ours": "",
+    "official": "The Board has issued a Formal Breach Notice and 30-Day Compliance Notice, hand delivered on March 31, 2026.",
+    "note": "Our minutes mention the breach notice only in the town meeting decision, not the delivery date or notice type."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Constituent comments on override",
+    "ours": "",
+    "official": "Mr Howard read some comments from a constituent regarding the upcoming vote at Town Meeting on a 2 ½ override and the tiers proposed.",
+    "note": "Not in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:17:53Z",
+   "cost_usd": 0.249195
+  }
  }
 }

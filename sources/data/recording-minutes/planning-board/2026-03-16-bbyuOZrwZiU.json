@@ -497,5 +497,214 @@
    "at": "2026-09-27T02:54:51Z",
    "cost_usd": 0.19557999999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03162026-7712",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-03-16-minutes-7712.txt",
+   "path": "sources/meetings/planning-board/2026-03-16-minutes-7712.pdf"
+  },
+  "official_sha256": "498415d63ea409b40da026b9683f8063545340e0002c84a446b4eca8b9b9fcfa",
+  "coverage": "full",
+  "summary": "The two records agree closely on the continuances, the 475 Leominster-Shirley de minimis action, the 1083 Northfield decision, the 181 Electric bond motion and the four zoning amendments. The main differences are votes recorded in only one record: the official minutes have a minutes-approval vote that ours lacks, while ours has de minimis votes for 225 Leominster-Shirley and a continuance vote for 860 New West Townsend that the official minutes do not record as votes.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 7,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Continue 0 Reservoir Rd (ANR-26-2, PBSW-25-5, PBSP-25-10) to 4/13/26",
+    "ours": "Continue Zero Reservoir Road (ANR26-2, PBSW25-5, PBSP25-10) to the 13 April 2026 meeting at 6:05 p.m. — passed",
+    "official": "A. Burney moved to continue to the 4/13/26 meeting. A. Reid, Second.",
+    "note": "Same continuance; the official minutes record it as three separate 4/0 votes, ours as one combined vote, and omit the 6:05 time.",
+    "t": 1796
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 10 Parmenter Rd to 3/23/26",
+    "ours": "Continue the ANR plan for 10 Parmentor Road to 23 March 2026 — passed",
+    "official": "A. Burney moved to continue to 3/23/26 meeting. A. Reid, Second",
+    "note": "Same motion and outcome (4/0 in the official minutes).",
+    "t": 1673
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name 10 Parmenter Road",
+    "ours": "10 Parmentor Road",
+    "official": "10 Parmenter Rd. (ANR-26-3)",
+    "note": "Captions misheard the street name.",
+    "official_reading": "Parmenter",
+    "t": 1673
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 30 Summer St to 4/13/26",
+    "ours": "Continue 30 Summer Street (PBSA25-8, PBSP25-9, PBSW25-6) to 13 April 2026 at 6:06 p.m. — passed",
+    "official": "A. Burney moved to continue to the 4/13/26 meeting. A Reid, Second.",
+    "note": "Same continuance and 4/0 outcome; time of day only in ours.",
+    "t": 1840
+   },
+   {
+    "kind": "agree",
+    "about": "475 Leominster-Shirley Rd de minimis finding, conditioned approval, close hearing",
+    "ours": "Find the 475 Leominster Shirley Road rooftop solar/battery change a de minimis change to the 2021 site plan approval — passed",
+    "official": "A. Burney moved the changes are De Minimis, A. Reid, Second.",
+    "note": "All three votes pass in both records. Order differs (official closes the hearing first), the condition is 'engineered drawings' in ours vs 'a new plan' in the official, and ours calls it rooftop solar while the official says removing parking spaces for battery storage; worth a glance at the video.",
+    "t": 2540
+   },
+   {
+    "kind": "discrepancy",
+    "about": "860 New West Townsend Rd continuance vote",
+    "ours": "Continue the three 860 New West Townsend Road hearings (PBSA26-1, PBSW26-1, PBSP26-1) to 13 April 2026 at 6:05 p.m. — passed",
+    "official": "A. Burney moved to continue to 4/13/26 meeting",
+    "note": "Official minutes record the motion but no second and no verbal vote, unlike every other motion; check the recording for the vote.",
+    "t": 3516
+   },
+   {
+    "kind": "discrepancy",
+    "about": "225 Leominster-Shirley Rd de minimis finding and approval",
+    "ours": "Find the 225 Leominster Shirley Road (Palisano & Gravel's garage) changes a de minimis change — passed; Approve the de minimis changes for 225 Leominster Shirley Road as presented — passed",
+    "official": "225 Leominster-Shirley Rd. Site Plan & Storm Water Modification (PMOD-26-1), De Minimis",
+    "note": "Official lists the item only as a heading with no motion, discussion or vote; confirm against the video and whether the official minutes omitted it.",
+    "t": 4048
+   },
+   {
+    "kind": "agree",
+    "about": "1083 Northfield Rd right of first refusal",
+    "ours": "Advise the select board to pass on the town's first right of refusal for 1083 Northfield Road — passed",
+    "official": "A Burney advised passing, not to exercise our right of first refusal. A Reid, Second",
+    "note": "Same decision, 4/0 in the official minutes.",
+    "t": 4259
+   },
+   {
+    "kind": "agree",
+    "about": "181 Electric Ave bond / completion certificate motion",
+    "ours": "Send the 181 Electric bond estimate to Graves for a progress inspection, and if it checks out, require a cash bond with a 25% contingency and bring the agreement back for signature — passed",
+    "official": "A. Burney moved to send bond estimates to Graves, ask for a progress report, and a report when work is complete.",
+    "note": "Same motion and outcome; the official does not mention bringing the agreement back for signature.",
+    "t": 4665
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "181 Electric storm water bond dollar figure",
+    "ours": "181 Electric storm water completion bond: 20 and 30%, 25%, 25 to $27,000",
+    "official": "",
+    "note": "The official minutes give the 20-30% escalator and 25% contingency but no dollar amount; the $27,000 may be misheard, check the video.",
+    "t": 4483
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of prior minutes",
+    "ours": "",
+    "official": "A Burney Motioned to approve all as written. A Reid, Second",
+    "note": "The official minutes record a 4/0 vote approving minutes of 8/20/25, 6/23/25, 11/10/25, 12/15/25, 1/12/26 and 2/9/26; our minutes record no such vote, so check whether it was in the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Four zoning amendments for 2026",
+    "ours": "The board settled on four zoning amendments to pursue before the next annual town meeting: rewriting inclusionary zoning, a senior housing bylaw, minor site plan review, and a cluster-development-by-right bylaw.",
+    "official": "draft a minor",
+    "note": "Same four items (official: inclusionary zoning rewrite, senior housing, minor site plan review, cluster housing bylaw); timing is 'before town meeting' in ours vs 'by the end of the year' in the official.",
+    "t": 9799
+   },
+   {
+    "kind": "agree",
+    "about": "10 Parmenter Rd plan note conveying lot to Perkins Rev Trust",
+    "ours": "For 10 Parmentor Road, the board indicated it would accept a plan note stating Lot 1 is to be conveyed to the abutting Perkins Revocable Trust property",
+    "official": "R Proctor asked if the note of conveying lot to abutter to create a parcel",
+    "note": "Same decision (Wallace said the note would get it passed); the official also says the note is not yet on the plan.",
+    "t": 1112
+   },
+   {
+    "kind": "agree",
+    "about": "Master plan comments sent to consultant",
+    "ours": "The board will forward Adam's and Amanda's written comments on the draft master plan to the consultant (Over&Under) to finish the document",
+    "official": "S. Wallace stated he received feedback from A. Reid and A. Burney and he will be submitting to the consultant, Over Under Inc.",
+    "note": "Same; the official adds that Brenner sent his feedback directly.",
+    "t": 4951
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Applicant counsel to discuss phasing of 10 Parmenter stormwater permits",
+    "ours": "10 Parmentor Road applicant's counsel agreed to discuss with the client whether to split the 25-lot storm water/driveway permits into fewer, phased applications",
+    "official": "",
+    "note": "The official minutes only say Burney suggested phasing; no agreement by counsel is recorded.",
+    "t": 684
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fire chief meeting for 860 New West Townsend Rd",
+    "ours": "For 860 New West Townsend Road, the applicant agreed to set up a meeting with the fire chief to review the common driveway/fire-truck turnaround concerns before the continued hearing.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3264
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ZBA decision copy for 860 New West Townsend Rd",
+    "ours": "Staff will obtain a copy of the ZBA decision approving the townhome use at 860 New West Townsend Road and add it to the project file.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3116
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "No ceremonial master plan presentation",
+    "ours": "The board decided it does not need a formal ceremonial presentation from the master plan consultant once the plan is finalized.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 8153
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Scenic road and signage bylaws deferred to second year",
+    "ours": "The scenic road bylaw and a town signage bylaw were pushed off to a second year of zoning work rather than pursued this year.",
+    "official": "",
+    "note": "Official minutes do not mention deferral of these bylaws.",
+    "t": 9028
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town budget deficit and housing production plan figures",
+    "ours": "Town budget deficit and commercial development: $2.5 million; Housing production plan / one-stop growth grant: a half a percent, 1%",
+    "official": "",
+    "note": "Neither figure appears in the official minutes, which only give the HPP target completion 7-2026 through 4-2027; check the video.",
+    "t": 7067
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee T. Willsmer (Vice Chair)",
+    "ours": "",
+    "official": "Present: M. Brenner, T. Willsmer, A. Reid, A. Burney",
+    "note": "Official lists Willsmer as present and speaking on the 1083 Northfield item; ours lists no Tim/Willsmer."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Planning office staff name",
+    "ours": "Lee (planning office staff)",
+    "official": "Leigh Bain – Administrative Assistant",
+    "note": "Captions heard 'Lee' for Leigh Bain.",
+    "official_reading": "Leigh Bain"
+   },
+   {
+    "kind": "agree",
+    "about": "Planning director and other attendees",
+    "ours": "Steve (town planner); Wallace (planning director / staff); Kim Duffy (chair, Master Plan Steering Committee)",
+    "official": "Kim Duffy, 1497 Mass Ave, Chair of",
+    "note": "Steve and Wallace in ours are one person, Stephen Wallace, Director of Planning; Matt, Adam, Amanda are M. Brenner, A. Burney, A. Reid."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:19:56Z",
+   "cost_usd": 0.3507458
+  }
  }
 }

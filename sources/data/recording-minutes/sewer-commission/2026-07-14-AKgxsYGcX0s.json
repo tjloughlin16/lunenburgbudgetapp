@@ -339,5 +339,183 @@
    "at": "2026-09-27T02:12:46Z",
    "cost_usd": 0.22375399999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07142026-7900",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-07-14-minutes-7900.txt",
+   "path": "sources/meetings/sewer-commission/2026-07-14-minutes-7900.pdf"
+  },
+  "official_sha256": "834d333aa0da7b8f8f4b9f426510a45311d619ee0ecff288f9cd9f506a39e928",
+  "coverage": "full",
+  "summary": "The two records cover the same discussion and agree on the grease trap count, the 1325 Mass Ave fee and the carried-over manhole item, though the official minutes record almost no outcomes. The main difference is that ours states several decisions (staff handling applications, drainlayer manhole checks) and figures (~$20,000, ~$200,000) that the official minutes do not, and the two records give different titles for Bill Bernard and Andrew Valliere.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 4,
+   "discrepancy": 6,
+   "only_in_ours": 0,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Vice chairman name",
+    "ours": "Scott Doll (vice chairman)",
+    "official": "Vice-Chair- Scott Dall",
+    "official_reading": "Scott Dall",
+    "note": "Same person, name misheard by captions.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brett Remsen (member (stated absent, not online))",
+    "official": "Absent: Chair- Brett Ramsden",
+    "official_reading": "Brett Ramsden",
+    "note": "Same absent person; spelling misheard (and official lists him as Chair, ours as member).",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer business manager name",
+    "ours": "Andrew Valer (director)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "official_reading": "Andrew Valliere",
+    "note": "Name misheard; also roles appear swapped, see separate finding.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Roles of Bill Bernard and Andrew Valliere",
+    "ours": "Bill Bernard (business manager); Andrew Valer (director)",
+    "official": "DPW Director- Bill Bernard, Sewer Business Manager- Andrew Valliere",
+    "note": "Titles are reversed between the records; check the recording or the town's staff directory to see who holds which title (and which one our decisions attribute actions to).",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dan Proctor's role / Arthur Katis in charge of minutes",
+    "ours": "Arthur Katis (member, in charge of minutes)",
+    "official": "Clerk- Dan Proctor, Member: Arthur Katis and Chip Wilson",
+    "note": "Ours says Katis is in charge of minutes; official lists Dan Proctor as Clerk and Jane Ranley as Minutes Clerk. Check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Absent: Jane Ranley",
+    "ours": "Jane Ranley (staff (stated not online))",
+    "official": "Absent: Chair- Brett Ramsden, Minutes Clerk- Jane Ranley",
+    "note": "Both records have her absent from the meeting, though she signed the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Motion to accept 6/30/26 minutes",
+    "ours": "",
+    "official": "Motion: Dan P.                                                                                                                                 Second: Arthur K. \nTo accept the minutes of 6/30/26.                           Roll Call Vote: Chip-aye, Dan-aye, Arthur-aye and Scott-aye.",
+    "note": "Official records a roll-call vote approving prior minutes; ours lists no votes. Likely procedural, but the recording should be checked whether it happened."
+   },
+   {
+    "kind": "agree",
+    "about": "Grease trap establishments count",
+    "ours": "FY grease trap permits: about 12",
+    "official": "Andrew noted that there are 12 establishments with permits for grease traps.",
+    "note": "Same figure.",
+    "t": 190
+   },
+   {
+    "kind": "caption_error",
+    "about": "990 Mass Ave connection fee",
+    "ours": "$39, $3,900, 3,900 bucks",
+    "official": "the minimum residential connection charge is $3,900",
+    "official_reading": "$3,900",
+    "note": "The $39 is a garbled rendering of $3,900.",
+    "t": 460
+   },
+   {
+    "kind": "discrepancy",
+    "about": "990 Mass Ave fee/betterment amounts",
+    "ours": "almost 20 grand, 330 gallons per day",
+    "official": "Andrew stated he will not have any update until they meet with Town Counsel next week to discuss wording for fees for new multi-unit hookups.",
+    "note": "Our ~$20,000 and 330 gpd figures do not appear in the official minutes; check the recording for who said them and about which property.",
+    "t": 460
+   },
+   {
+    "kind": "agree",
+    "about": "1325 Mass Ave privilege fee",
+    "ours": "1325 Mass Ave betterment/privilege fee precedent: almost 11 grand",
+    "official": "he was assessed an additional privilege fee and the tie-ins for about $11K for his development at 1325 Mass Ave.",
+    "note": "Same figure and property.",
+    "t": 1016
+   },
+   {
+    "kind": "agree",
+    "about": "Commission vs staff handling of applications",
+    "ours": "The business manager and director will continue handling individual sewer connection/betterment applications rather than requiring every application to come before the full commission.",
+    "official": "Scott asked if every application is supposed to come before the Commission. The Commission discussed their role in reviewing new permit applications and when permits expire.",
+    "note": "Same discussion, but official records no outcome; ours states a decision. Check the recording that a decision was made.",
+    "t": 1385
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Drainlayer manhole check decision",
+    "ours": "The business manager will informally ask licensed drainlayers to check the manhole one section up/down/each way from their tie-in work as a courtesy, to help identify infiltration problems without a full re-survey.",
+    "official": "Chip suggested they ask the drain-layers to look at manholes near where they are working to see if they see any issues to report.",
+    "note": "Official records only a suggestion and that the as-built form could ask for adjacent manhole info; ours records a decision with an assigned person. Check the recording for whether it was agreed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "100 Laurel Lane bid",
+    "ours": "The 100 Laurel Lane item stays on current business until bids come in, with bids possibly available by the next meeting.",
+    "official": "Bill reported that he put out a work contract for bid to begin 7/21/26.",
+    "note": "Official gives a work start date of 7/21/26 and lists it as a future agenda item; ours says bids may be in by next meeting. Check the recording on timing.",
+    "t": 1775
+   },
+   {
+    "kind": "discrepancy",
+    "about": "CTE contract renewal value",
+    "ours": "CTE contract renewal (bid): 200 something thousand",
+    "official": "Bill reported that the contract will be going out shortly for a 1 year contract, with a 2 year option with an opening bid date of 8/3/26.",
+    "note": "Official gives no dollar figure; ours has ~$200,000+. Check the recording for the figure and whether it was an estimate.",
+    "t": 1795
+   },
+   {
+    "kind": "agree",
+    "about": "Prospect St./Laurel Lane manhole",
+    "ours": "The Prospect Street/Laurel Lane manhole replacement is carried over as a project to address in the future.",
+    "official": "---Future Agenda Items- 100 Laurel Lane, CTE contract renewal, 900 Mass Ave, Prospect St./Laurel Lane Manhole",
+    "note": "Both carry the manhole forward to future agenda; official adds that replacement was recommended due to condition, 15' deep.",
+    "t": 2634
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Future agenda items beyond manhole",
+    "ours": "",
+    "official": "900 Mass Ave",
+    "note": "Official lists 900 Mass Ave and CTE renewal as future items; ours does not record these as carry-overs."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Counsel meeting and November Town Meeting",
+    "ours": "",
+    "official": "If needed, it would go to the November Town Meeting.",
+    "note": "Possible bylaw change on multi-unit hookup fees is not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Meeting time and next meetings",
+    "ours": "",
+    "official": "Scott opened the meeting at 6:08pm.",
+    "note": "Official records opening time, adjournment at 6:54 pm, and upcoming meeting schedule; ours does not."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:14:34Z",
+   "cost_usd": 0.23877700000000002
+  }
  }
 }

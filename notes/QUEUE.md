@@ -1213,3 +1213,14 @@ and the header should belong to the same family — this site's tokens, not a mo
 Generate it from HTML the way the shareable post images are generated, rather than by hand
 in a design tool -- same pipeline, same tokens, reproducible, and regenerable when the
 design moves. If the post-image renderer exists by then, this is a second template in it.
+
+## REPORT IDEAS, FOR LATER — not started
+
+- **A preschool report** (TJ, 6 October 2026: *"lets add to the reports a PRESCHOOL report ... for later, not now"*).
+  What we already have to start from: preschool tuition is a general fund revenue account,
+  `0100-01001-431900`, printed `PRE-SCHOOL TUITION` in the Town's FY2020 Q4 report under
+  `31 DEPT REV - SCHOOL` and `PS TUITION` in FY2026 p9 ($75,279.04 received against $10,000
+  budgeted). The FY27 revenue presentation names it among "Dept. Revenue- Schools". The
+  journal detail for that account is run 2 of `notes/outbound/drafts/MUNIS-REQUEST-RUNS.pdf`.
+  Not yet looked for: enrolment, the fee schedule, staffing, and what the tuition pays for
+  (rule 11: the account is revenue to the general fund, not a programme budget).

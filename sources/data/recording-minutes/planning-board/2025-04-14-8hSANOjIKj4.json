@@ -299,5 +299,118 @@
    "at": "2026-09-27T22:53:46Z",
    "cost_usd": 0.192414
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142025-7167",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-04-14-minutes-7167.txt",
+   "path": "sources/meetings/planning-board/2025-04-14-minutes-7167.pdf"
+  },
+  "official_sha256": "8512e171459cce4aeaa1f45ee08a41263d69a7cb75e85753d805405e600ebd07",
+  "coverage": "full",
+  "summary": "The two records agree on the ANR vote, the Brooks House demolition vote and the roughly $23 million warrant ask. They differ on when the MBTA public information sessions happen relative to the board's choice, and on the board's endorsement of five decisions, which only the official minutes record.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "ANR plan for 60 Cross Road vote",
+    "ours": "Endorse the ANR plan for 60 Cross Road as presented — passed",
+    "official": "Motion: T. Willsmer, to endorse the ANR plan for 60 Cross Rd as-presented.",
+    "note": "Same motion and outcome; the official minutes add mover, seconder (A. Reid) and that the voice vote was unanimous.",
+    "t": 1146
+   },
+   {
+    "kind": "agree",
+    "about": "Brooks House disposition vote (Municipal Building Design Committee)",
+    "ours": "formal vote on disposition of the Brooks House — majority in favor of demolition (count not audible)",
+    "official": "Majority of the group is still in favor of demolition after formal vote.",
+    "note": "Both report a formal committee vote with a majority for demolition; neither gives a count.",
+    "t": 2254
+   },
+   {
+    "kind": "agree",
+    "about": "Brooks House warrant article dollar ask",
+    "ours": "something shy of 23 million",
+    "official": "We did decide to proceed with the monetary ask at Town Meeting using the approximate $23 million figure.",
+    "note": "Both put the ask at about $23 million. Ours says 'shy of', which suggests slightly under, while the official says 'approximate'. The wording differs but the figure does not.",
+    "t": 2296
+   },
+   {
+    "kind": "agree",
+    "about": "Decision to use the quoted estimate for the warrant article, made without a formal vote",
+    "ours": "The Municipal Building Design Committee decided, without a formal vote, to use the previously quoted cost estimate as the dollar ask for the Brooks House warrant article.",
+    "official": "We did decide to proceed with the monetary ask at Town Meeting using the approximate $23 million figure.",
+    "note": "Same decision. The official minutes do not say whether it was a formal vote.",
+    "t": 2296
+   },
+   {
+    "kind": "agree",
+    "about": "Chair covering the planning office while the Land Use Director is unavailable",
+    "ours": "The chair will fill in extra hours at the planning office to help keep operations running while the land use director is unavailable.",
+    "official": "The Chair is available at the Planning Office most mornings & can be emailed for an appointment.",
+    "note": "Consistent. The official minutes describe availability and do not mention extra hours to keep operations running.",
+    "t": 150
+   },
+   {
+    "kind": "discrepancy",
+    "about": "MBTA Communities public information sessions: timing and whether decided",
+    "ours": "The board will hold one or more public information sessions on the MBTA Communities zoning options, in addition to the May 12th presentation, before choosing a compliance option.",
+    "official": "These would have to begin after the May 12th meeting, when the Board chooses a location option for Community Scale to focus implementation work on.",
+    "note": "Ours has the sessions before the board chooses an option and treats them as a decision. The official minutes have them beginning after the board chooses on May 12 and describe a discussion only. Check the recording near t=545 for the sequence.",
+    "t": 545
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Board endorsement of five recent application decisions",
+    "ours": "",
+    "official": "The Board endorsed the decisions.",
+    "note": "The official minutes record the board endorsing decisions on 485 Leominster-Shirley Rd, 1523 Mass Ave, 994 Northfield Rd and 494 Electric Ave (two). Our minutes record no such vote. Check the recording to see whether it happened and how it was voted.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair to follow up on a document designating a representative (e.g. site walks)",
+    "ours": "The chair will follow up on whether the board formally needs to sign a document designating a representative (e.g., for site walks) or whether the chair role already covers it.",
+    "official": "",
+    "note": "The official minutes do not mention this follow-up.",
+    "t": 2001
+   },
+   {
+    "kind": "agree",
+    "about": "No second May meeting",
+    "ours": "No second Planning Board meeting will be scheduled in May because it falls on Memorial Day.",
+    "official": "Upcoming meetings are 05-12 and 06-09 at 6:00 P.M.",
+    "note": "The schedule matches: one May meeting. The official minutes omit the Memorial Day reason.",
+    "t": 2879
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Amanda Reid (Clerk)",
+    "ours": "",
+    "official": "PRESENT: Matthew Brenner (Chair), Timothy Willsmer (Vice Chair), Amanda Reid (Clerk), Matthew Allison, Glenn McLeod",
+    "note": "Our attendee list omits the clerk. Ours has Logan O'Connell as staff and the engineer as a presenter, and the official minutes list neither as present. The names Allison, Glenn and Tim match the official Allison, McLeod and Willsmer."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Presenter named Ian Hazelton",
+    "ours": "Ian Hazelton (presenter, engineer (Hanigan Engineering, for Cross Street Realty Trust))",
+    "official": "",
+    "note": "The official minutes name only 'Hannigan Engineering' and do not name the presenter. The spelling of the firm differs (Hanigan in ours, Hannigan in the official)."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:30:51Z",
+   "cost_usd": 0.240933
+  }
  }
 }

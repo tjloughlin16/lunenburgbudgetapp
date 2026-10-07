@@ -278,5 +278,108 @@
    "at": "2026-09-27T12:16:07Z",
    "cost_usd": 0.181522
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10082025-7442",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2025-10-08-minutes-7442.txt",
+   "path": "sources/meetings/open-space-committee/2025-10-08-minutes-7442.pdf"
+  },
+  "official_sha256": "07636ddbe61d9ac82122e7f764b21c7686358c6493eabbd450003f0777b451ff",
+  "coverage": "full",
+  "summary": "The two records agree on the meeting's substance: there were no votes beyond procedural ones, the extension letter was posted, the next meetings match, and the bylaw question is on the table. They differ on who does the follow-up work, and on when the bylaw discussion is scheduled.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 0,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Who gathers information on how other towns structure their open space committees",
+    "ours": "Chair will contact Tim (planning board) and Brandon to gather how other Massachusetts towns structure their open space committees, to inform a possible bylaw change.",
+    "official": "A. Lockwood will gather information regarding OSC bylaws in other towns for discussion at the next meeting. M. Toohill suggests that the planning board should be notified by OSC/planning board member Tim Willsmer and that he will ask former OSC member Brandon Kibbe about the existing OSC foundational document.",
+    "note": "Ours gives the chair the task of gathering other towns' structures; the official minutes assign that to A. Lockwood and limit the chair to notifying the planning board via Tim and asking Brandon about the foundational document, so check the recording around t=846 for who took which action.",
+    "t": 846
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Bylaw/independence status as an agenda item",
+    "ours": "Agreed to put the committee's bylaw/independence status on the November meeting agenda.",
+    "official": "Discussion of potentially making the OSC a standalone committee and the procedure/timing to do so.",
+    "note": "Both records show the standalone-committee question discussed, but ours records an agreement to put it on the November agenda while the official minutes only say information will be gathered for the next meeting; check the recording around t=705 for whether this was a decision.",
+    "t": 705
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting dates",
+    "ours": "Next meetings set for November 12th and December 10th.",
+    "official": "Next scheduled meetings: November 12 and December 10, 2025.",
+    "note": "Same dates in both.",
+    "t": 500
+   },
+   {
+    "kind": "agree",
+    "about": "Open space plan extension letter and justification table posted online",
+    "ours": "Chair had the open space plan posting restored on the town website, along with the state's three-year extension approval letter and the associated action-plan table.",
+    "official": "M. Toohill indicated that the letter from the state granting Lunenburg a 3-year extension on the existing master plan as well as the table he created justifying the extension request have been posted online.",
+    "note": "Both say the state's 3-year extension letter and the table are posted online, and ours adds that the posting was restored, which the official minutes do not mention.",
+    "t": 460
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Mike (chair), Anna (member), Chris (member), Eric (clerk/member)",
+    "official": "Members Present: Mike Toohill (Chair), Ana Lockwood, Chris St. Germain, Eric Hinds.",
+    "note": "Same four people; the captions give first names only and Anna is spelled Ana in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "none",
+    "official": "Voted unanimously in favor by roll call.",
+    "note": "The only official roll-call votes are procedural (the September 3 minutes and adjournment), so there is no non-procedural vote in either record.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of September 3, 2025 minutes",
+    "ours": "",
+    "official": "September 3, 2025, Meeting Minutes Approval: A. Lockwood moved to approve as presented. C. St. Germain seconded. Voted unanimously in favor by roll call.",
+    "note": "This is a routine minutes approval that our minutes did not record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Report from other boards: Economic Development Council Meet and Greet",
+    "ours": "",
+    "official": "A. Lockwood discussed Meet and Greet hosted by Economic Development Council between local business owners and town officials and reported it was a positive experience.",
+    "note": "Our minutes do not mention this report."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "OSC feedback on the master plan accepted",
+    "ours": "",
+    "official": "M. Toohill and A. Lockwood reported that the OSC’s feedback on the master plan was accepted and found useful.",
+    "note": "Our minutes do not mention this report."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment",
+    "ours": "",
+    "official": "Public Comment: No public comment.",
+    "note": "Our minutes do not state that there was no public comment."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:23:18Z",
+   "cost_usd": 0.22068100000000002
+  }
  }
 }

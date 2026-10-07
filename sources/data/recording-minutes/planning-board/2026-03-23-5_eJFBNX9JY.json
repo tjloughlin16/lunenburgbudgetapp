@@ -363,5 +363,156 @@
    "at": "2026-09-27T02:51:51Z",
    "cost_usd": 0.19503399999999999
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03232026-7724",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-03-23-minutes-7724.txt",
+   "path": "sources/meetings/planning-board/2026-03-23-minutes-7724.pdf"
+  },
+  "official_sha256": "7cc0f64aa1619b1a7cf532fa3e71c2813d004efa53a26bdb724f9192dc688a60",
+  "coverage": "full",
+  "summary": "The two records agree on the three main votes (ANR endorsement, closing the hearing, approving PBSA 26-2) and on the phased stormwater permit approach. They differ on the length of the 494 Electric extension and on whether the board adopted the stormwater permit conditions, and only the official minutes record the approval of the 3/16 minutes.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 6,
+   "discrepancy": 2,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: endorse ANR plan, 10 Parmenter Rd (ANR 26-3)",
+    "ours": "Endorse the ANR plan for 10 Parmentor Road, ANR 26-3 — passed",
+    "official": "A. Burney moved to Endorse. T. Willsmer, Second.",
+    "note": "Both record the endorsement passing; the official minutes give the tally as 4/0.",
+    "t": 2459
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: close public hearing, PBSA 26-2",
+    "ours": "Close the public hearing for 39 Intervail Road site plan approval, PBSA 26-2 — passed",
+    "official": "A. Burney moved to close the Hearing. A. Reid, Second.",
+    "note": "Both record the hearing closed by a unanimous vote.",
+    "t": 3138
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve PBSA 26-2 with standard conditions and construction hours",
+    "ours": "Approve PBSA 26-2 at 39 Intervail Road with standard site plan conditions and specified construction hours — passed",
+    "official": "A. Burney moved to approve Standard Conditions with construction hours 7am –5pm Monday – Friday, 9am – 2pm Saturdays. NO Sundays or Holidays.",
+    "note": "Same approval; the official minutes spell out the hours that ours calls 'specified'.",
+    "t": 3178
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: 494 Electric (PBSA 24-4) extension length",
+    "ours": "Extend PBSA 24-4 (494 Electric) for two years from April 15, 2026 (amended twice on the date) — passed",
+    "official": "A. Burney made motion to extend the permit expiration to 4/15/2027.",
+    "note": "Ours says two years from April 15, 2026, but the official minutes give a 12-month request and an expiration of 4/15/2027, which is one year; check the recording around t=3599 for the date the motion actually named.",
+    "t": 3599
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: adopting reorganized stormwater permit conditions",
+    "ours": "Board agreed informally to adopt the reorganized standard storm water permit conditions (sequenced by activity, with the building commissioner's added language) going forward, incorporating Adam's requested additions (a list of anticipated inspections, recorded easements for cross-lot drainage structures before occupancy, and a possible declaration-of-easement covenant) -- no formal vote required.",
+    "official": "add/change some of the verbiage.",
+    "note": "Ours records an informal agreement to adopt; the official minutes record only a discussion with no agreement. Check the recording near t=4020 to see whether the board actually agreed. Also, the official list of Adam's additions includes BMP installation, which ours does not, and omits the declaration-of-easement covenant.",
+    "t": 4020
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: phased stormwater permit filing without bonds for unbuilt lots",
+    "ours": "Board informally agreed the applicant may file the 10 Parmentor Road ANR lots in phased groups, with storm water permits released per lot as each phase is completed and restored, without requiring a bond for lots not yet built -- not a formal vote.",
+    "official": "Board recommends the applicant file for the stormwater permits in phases, so many lots per phase, so the project can continue",
+    "note": "Both describe a non-binding phased-filing arrangement that avoids bonds for uncompleted work.",
+    "t": 1531
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote: approval of 3/16/2026 minutes",
+    "ours": "",
+    "official": "A Burney moved to approve minutes as written. T. Willsmer, Second.",
+    "note": "The official minutes record this vote as 3/0/1, with the Chair abstaining; our minutes list no such vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Director's report: by-law examples and revised fee schedule",
+    "ours": "",
+    "official": "S. Wallace stated he is gathering by-law examples to show and discuss with the board at one",
+    "note": "The official minutes record a revised fee schedule to be presented at the first April meeting; our minutes do not mention it."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name: Parmenter Rd",
+    "ours": "10 Parmentor Road",
+    "official": "10 Parmenter Rd. (ANR-26-3)",
+    "note": "Misheard street name.",
+    "official_reading": "Parmenter"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name: Intervale Rd",
+    "ours": "39 Intervail Road",
+    "official": "39 Intervale Rd., Site Plan Approval, (PBSA 26-2)",
+    "note": "Misheard street name.",
+    "official_reading": "Intervale"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: board chair",
+    "ours": "Matt Bernie (board member)",
+    "official": "Matthew Brenner Chair",
+    "note": "The captions misheard the Chair's name and ours does not identify him as the chair; the board member called 'the chair' in ours is probably him.",
+    "official_reading": "Matthew Brenner"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Adam, board member",
+    "ours": "Adam (board member)",
+    "official": "Present: M. Brenner, T. Willsmer, A. Reid, A. Burney",
+    "note": "Ours gives only a first name; the official minutes name him A. Burney.",
+    "official_reading": "Adam Burney"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: project engineer for 39 Intervale Rd",
+    "ours": "Bethany Laam (presenter (architecture team, 39 Intervail Road))",
+    "official": "Bethany Latham (project engineer)",
+    "note": "Misheard surname; the role is also described differently (architecture team vs project engineer).",
+    "official_reading": "Bethany Latham"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: applicant's representative, 494 Electric",
+    "ours": "Mr. Hanigan",
+    "official": "Bill Hannigan (Hannigan Engineering, LLC)",
+    "note": "Misspelled surname.",
+    "official_reading": "Hannigan"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Director of Planning and presenters",
+    "ours": "Stephen (Director of Planning / Town Planner); Greg Roy, Ryan Proctor (Dillis and Roy); Danielle Danzing (Kimley Horn)",
+    "official": "Greg Roy and Ryan Proctor (Dillis & Roy) on behalf of the applicant.",
+    "note": "Stephen Wallace, Roy, Proctor and Danzing appear in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: Timothy Willsmer (Vice Chair) and Amanda Reid (Clerk)",
+    "ours": "",
+    "official": "Present: M. Brenner, T. Willsmer, A. Reid, A. Burney",
+    "note": "The official minutes list four members present, including Willsmer and Reid, who made the seconds; our attendee list names only the chair and Adam as board members."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:19:33Z",
+   "cost_usd": 0.258789
+  }
  }
 }

@@ -1,0 +1,258 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "cemetery-commission",
+ "board": "Cemetery Commission",
+ "video_title": "Cemetery Commission",
+ "meeting_date": "2025-01-09",
+ "video_id": "Yz85-S-4fbc",
+ "video_url": "https://www.youtube.com/watch?v=Yz85-S-4fbc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/cemetery-commission/2025-01-09-Yz85-S-4fbc.json",
+  "sha256": "bac774166fd29273a001a7c2dae189e8fc79e4b870b16c5a53ea8aa4c6d40148",
+  "caption_lines": 64,
+  "segments": 527
+ },
+ "recording": {
+  "duration_s": 1331,
+  "duration": "0:22",
+  "spoken_chars": 18502,
+  "words_approx": 3083
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01092025-6945",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-01-09-agenda-6945.txt",
+   "path": "sources/meetings/cemetery-commission/2025-01-09-agenda-6945.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01092025-6945",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2025-01-09-minutes-6945.txt",
+   "path": "sources/meetings/cemetery-commission/2025-01-09-minutes-6945.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-06T18:18:53Z",
+  "cost_usd": 0.24558100000000002
+ },
+ "minutes": {
+  "headline": "Cemetery Commission revoted three prior actions by roll call to cure an open meeting law violation, and approved the counsel's response.",
+  "summary": "Held by Zoom only with two of three commissioners present. After public comment from John Bowen, Town Counsel explained that voice votes at the November 21 meeting, with a remote member, breached the open meeting law. The commission approved his response letter and redid the earlier votes by roll call, then adjourned over Mr. Bowen's objection that other agenda items had not been taken up.",
+  "attendees": [
+   {
+    "name_as_heard": "Nancy Fasco / Miss yasco",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mike Clark / Michael Clark",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Attorney Adam Costa",
+    "role": "town counsel",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "official (said to be present to answer questions)",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "speaker_as_heard": "John Bowen, 162 Highland Street",
+    "stated_role": "resident",
+    "t": 44,
+    "topic": "Said he filed the open meeting law complaint and objected to the agenda's remote-access paragraph. He raised concerns about commission access to the Rainmaker records database, said he will file a warrant article on use of sale-of-lots funds, and alleged commissioners colluded to remove the cemetery superintendent."
+   }
+  ],
+  "tags": [
+   "legal",
+   "personnel",
+   "policy",
+   "public-comment",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 880,
+    "motion": "Approve Town Counsel's response to the open meeting law complaint and authorize him to send it to Mr. Bowen and the Division of Open Government",
+    "moved_by": "Nancy Fasco (chair)",
+    "outcome": "passed 2-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 945,
+    "motion": "Revote by roll call the approval of the July 25, 2024 minutes",
+    "moved_by": "Nancy Fasco (chair)",
+    "outcome": "passed 2-0 by roll call",
+    "procedural": true
+   },
+   {
+    "t": 1010,
+    "motion": "Revote by roll call the vote on the eminent domain taking response from the interim town manager",
+    "moved_by": "Nancy Fasco (chair)",
+    "outcome": "passed 2-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 1060,
+    "motion": "Revote by roll call the two Rainmaker license votes (professional service and maintenance support)",
+    "moved_by": "Nancy Fasco (chair)",
+    "outcome": "passed 2-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 1282,
+    "motion": "Adjourn at 9:22, by roll call",
+    "moved_by": "Mike Clark",
+    "outcome": "passed 2-0 by roll call",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1073,
+    "topic": "Rainmaker professional service license",
+    "what_was_said": "The commission revoted this license by roll call.",
+    "figures_as_heard": [
+     "$1,200"
+    ]
+   },
+   {
+    "t": 1073,
+    "topic": "Rainmaker maintenance support license",
+    "what_was_said": "The commission revoted this license by roll call.",
+    "figures_as_heard": [
+     "$800"
+    ]
+   },
+   {
+    "t": 172,
+    "topic": "Sale of lots funds",
+    "what_was_said": "A resident said he will file a warrant article to restrict the commission's use of these funds. This was an allegation from the public and was not discussed by the board.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1259,
+    "decision": "The chair declined to discuss the remaining agenda items (DPW director updates, cemetery capital funding projects, future meeting schedule) on advice of counsel, deferring them to a future time."
+   },
+   {
+    "t": 942,
+    "decision": "Town Counsel will finalize the response letter today and send it to Mr. Bowen, copying the town manager and the Division of Open Government."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 44,
+    "topic": "Call to order and technical difficulties",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 44,
+    "t_end": 276,
+    "topic": "Public comment by John Bowen",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "legal",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 276,
+    "t_end": 776,
+    "topic": "Town Counsel on the open meeting law complaint and corrective action",
+    "resolution": "informational",
+    "tags": [
+     "legal",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 776,
+    "t_end": 940,
+    "topic": "Vote to approve the response to the complaint",
+    "resolution": "voted by roll call",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 940,
+    "t_end": 1115,
+    "topic": "Roll-call revotes: July 2024 minutes, eminent domain response, Rainmaker licenses",
+    "resolution": "voted by roll call",
+    "tags": [
+     "legal",
+     "policy",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 1115,
+    "t_end": 1324,
+    "topic": "Point of order on unaddressed agenda items, and adjournment",
+    "resolution": "remaining items passed over; adjourned by roll call",
+    "tags": [
+     "policy",
+     "legal"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The captions do not state the date or other details of the eminent domain item beyond the interim town manager's name as heard.",
+   "The roll call words for each vote are partly garbled ('I', 'hi', 'NY'). The 2-0 counts are inferred from two members each saying their name and aye."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Cemetery Commission voted 2-0 by roll call to approve Town Counsel's response to an open meeting law complaint and to send it to the complainant and the Division of Open Government.",
+    "t": 880
+   },
+   {
+    "line": "Town Counsel said voice votes at the November 21 meeting, which included a remote member, breached the open meeting law.",
+    "t": 276
+   },
+   {
+    "line": "The commission redid by roll call, 2-0, the vote on the response to the eminent domain taking from the interim town manager.",
+    "t": 1010
+   },
+   {
+    "line": "The commission also revoted by roll call, 2-0, the two Rainmaker license votes, for professional service and maintenance support.",
+    "t": 1060
+   },
+   {
+    "line": "The chair, on advice of counsel, passed over the remaining agenda items, including cemetery capital funding projects, and the meeting adjourned.",
+    "t": 1259
+   }
+  ],
+  "why_it_matters": [
+   "Earlier commission votes, including those on the Rainmaker records-system licenses, were cured by roll call, so they now stand on a cleaner record, while cemetery capital funding and DPW updates have not been taken up.",
+   "A resident said he will file a warrant article on how sale-of-lots funds may be used; this was an allegation from the public and the board did not discuss it, but it could become a vote at Town Meeting."
+  ],
+  "watch_next": [
+   "Town Counsel's response letter, to be finalized and sent to the complainant, the town manager and the Division of Open Government.",
+   "A future meeting date for the deferred items: DPW director updates, cemetery capital funding projects and the meeting schedule."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-06T18:19:01Z",
+   "cost_usd": 0.210697
+  }
+ }
+}

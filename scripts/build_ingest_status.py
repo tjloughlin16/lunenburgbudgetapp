@@ -1018,7 +1018,7 @@ def streams():
             done=0, todo=bd['total_jobs'], blocked=0, blocked_why='',
             cost=('about $%s to clear, roughly %s of a week\u2019s allowance'
                   % (format(int(bd['estimated_usd']), ','), bd['estimated_weeks'])),
-            last=ago(newest([BACKLOG_DEPTH])),
+            last=ago(dt.datetime.now(dt.timezone.utc).isoformat()),   # computed this redraw
             note='Streams are counted separately and must never be added \u2014 '
                  '`reconcile` cannot exist before the recordings do, so its zero before '
                  'FY2025 is the channel\u2019s start date, not a gap. Falls on its own as '
@@ -1044,15 +1044,23 @@ def streams():
 # the days we happened to crawl, so a chart of them shows our crawling schedule rather than
 # the town's record. The meeting date is the town's own and does not move.
 #
-# IT READS THE GENERATED PAYLOAD, NOT THE QUEUE. `sweep_backlog.jobs()` globs thousands of
-# files and this page rewrites itself every twenty seconds; recomputing it here would make
-# the dashboard the most expensive thing on the machine. `build_backlog_depth.py` writes
-# the payload, the refresh runs it daily, and the panel says how old it is rather than
-# implying it is live.
+# IT READS THE QUEUE, LIVE. It used to read the payload `build_backlog_depth.py` writes,
+# which only the daily refresh rewrote -- on the reasoning that `sweep_backlog.jobs()` was
+# too dear to run per redraw. Measured 6 October 2026: 1.3 seconds. And the cost of the
+# shortcut was real: the refresh broke on 4 October and the chart sat on that morning's
+# numbers for two days while a sweep cleared hundreds of jobs under it. TJ: *"it should
+# pull from the source jobs directly."* So it computes the same payload from the same
+# `gather()`, in memory, writing nothing; the file is only the fallback if that fails.
 BACKLOG_DEPTH = os.path.join(ROOT, 'fy28', 'public', 'data', 'backlog-depth.json')
 
 
 def backlog_depth():
+    try:
+        import build_backlog_depth as B
+        jobs, by_year, by_month, by_board = B.gather()
+        return B.payload(jobs, by_year, by_month, by_board, B.unit_costs())
+    except Exception as e:                      # the saved payload is the fallback
+        print('backlog depth: live read failed (%s); using the saved payload' % e, file=sys.stderr)
     if not os.path.exists(BACKLOG_DEPTH):
         return None
     try:

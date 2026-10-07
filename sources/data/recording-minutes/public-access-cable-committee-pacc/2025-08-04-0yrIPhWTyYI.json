@@ -365,5 +365,147 @@
    "at": "2026-09-27T12:49:28Z",
    "cost_usd": 0.18990200000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08042025-7324",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-08-04-minutes-7324.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-08-04-minutes-7324.pdf"
+  },
+  "official_sha256": "d7df893102e79950d279dfd4f358c05aca506e2240ac469a990b9fc232a3699d",
+  "coverage": "full",
+  "summary": "The two records agree on the next meeting date and the delayed studio move, and the two main balances match once the caption errors are read through. Our minutes carry items the official minutes lack (the $720,000 fund, the franchise fee, the retreat, the 6 p.m. default, hiring), and the official minutes carry a minutes-approval vote and a fourth committee member that ours lack.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 6,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "FY25 year-end balance",
+    "ours": "FY25 year-end fund balance: a million71,64376",
+    "official": "$1,071,643.76",
+    "official_reading": "$1,071,643.76",
+    "note": "Same balance; captions garbled the digits.",
+    "t": 1101
+   },
+   {
+    "kind": "caption_error",
+    "about": "Enterprise fund investment balance",
+    "ours": "Current investment fund balance: 788,000 26830, 58,000",
+    "official": "$788,268.13",
+    "official_reading": "$788,268.13",
+    "note": "Same balance; the trailing '58,000' likely corresponds to the official 'earned $68,268.13', also garbled.",
+    "t": 1423
+   },
+   {
+    "kind": "caption_error",
+    "about": "Manager's name",
+    "ours": "Joe (Town Manager)",
+    "official": "Toale",
+    "official_reading": "Jo Toale",
+    "note": "Misheard first name; the official lists the manager as Jo Toale.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Committee members present",
+    "ours": "Steve (committee member); Dustin (committee member); the chair; Joan (PAC station manager)",
+    "official": "Brian Vienneau",
+    "note": "Official lists Steve Walker, Brian Vienneau, Faith Beall, Steve Archambault as members; no Dustin. Check who 'Dustin' and 'Joan' are (possibly staff or the manager, Jo Toale) and the true member roll.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote to accept 7/7/2025 minutes",
+    "ours": "",
+    "official": "Motion to accept",
+    "note": "Official records a motion by F.Beall, 2nd B.Vienneau, passed, to accept the 7/7/2025 minutes; ours lists no votes. Check the recording for this vote.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$720,000 earlier transfer into studio fund",
+    "ours": "Funds parked into an investment/enterprise fund for a new PAC studio, made roughly two years prior to this meeting — $720,000 (discussed only)",
+    "official": "",
+    "note": "Official mentions only the $788,268.13 balance and $68,268.13 earned; $720,000 is not stated. Plausibly the principal ($788,268.13 minus $68,268.13), so check.",
+    "t": 1397
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Comcast franchise fee payment",
+    "ours": "Comcast franchise fee payment (May): $449 36.59",
+    "official": "",
+    "note": "Figure is not in the official minutes and the digits are garbled.",
+    "t": 1059
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Streaming tax bill S2556",
+    "ours": "Streaming tax bill S2556: S41, S2556",
+    "official": "",
+    "note": "Not in official; official notes only discussion of loss of cable revenue with Mass Access. Figure garbled.",
+    "t": 240
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cable contract value",
+    "ours": "Cable contract renewal/value: 115 million",
+    "official": "",
+    "note": "Not in official; figure is likely misheard.",
+    "t": 723
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Off-site retreat",
+    "ours": "Committee agreed in principle to hold an off-site team-building/brainstorming retreat in fall 2025, tentatively around the end of September, involving committee members and videographers.",
+    "official": "",
+    "note": "A decision in ours with no counterpart in the official minutes; check the recording.",
+    "t": 790
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Videographer hiring",
+    "ours": "Manager will pursue hiring both a definite and a potential videographer opening, pending confirmation with HR.",
+    "official": "resigned",
+    "note": "Official only says a videographer resigned and records no hiring decision; check whether a hiring plan was discussed.",
+    "t": 1293
+   },
+   {
+    "kind": "agree",
+    "about": "Studio move delayed",
+    "ours": "Move into the renovated studio is delayed at least two more weeks, pending the room being painted and floors sealed.",
+    "official": "waxed",
+    "note": "Both say the move awaits painting and floors; floors 'sealed' vs 'waxed' is a wording difference, and the two-week delay isn't in the official.",
+    "t": 1355
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Default 6 p.m. meeting time",
+    "ours": "Going forward, meetings will default to 6 p.m., falling back to 3 p.m. only if 6 p.m. is unavailable.",
+    "official": "",
+    "note": "Official has no such decision; its calendar shows 6pm most months and 3pm in July and August 2026.",
+    "t": 1633
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting",
+    "ours": "Next meeting date set for September 9th at 6 p.m.",
+    "official": "Next meeting: - September 9th , 2025 6:00 pm.",
+    "note": "Same date and time.",
+    "t": 1760
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:26:00Z",
+   "cost_usd": 0.239593
+  }
  }
 }

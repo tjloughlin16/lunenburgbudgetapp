@@ -399,5 +399,150 @@
    "at": "2026-09-27T12:18:19Z",
    "cost_usd": 0.18968
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10062025-7433",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-10-06-minutes-7433.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-10-06-minutes-7433.pdf"
+  },
+  "official_sha256": "bee07b1b8cf3737bb496bf555a186d3f839067c0e3474ccc13f2edbf61a8a1f2",
+  "coverage": "full",
+  "summary": "The two records agree on the broad business (studio move, new hire and resignation, master plan thank-you, policy posting), but the official minutes record two minutes-approval motions that ours has no vote for. The official minutes also give two different dates for the next meeting, so check that against the posted schedule.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Votes to accept 9/9 and 9/22 minutes",
+    "ours": "VOTES (non-procedural): none; decision: Send the approved September 22nd special meeting minutes to town hall",
+    "official": "Motion\tto\taccept\t9/9/2025\tminutes",
+    "note": "The official minutes record motions passing for both the 9/9 and 9/22 minutes; ours records no vote and mentions only the 9/22 minutes. Check the recording near t=340 for whether both were voted on, and whether the committee treats these as procedural.",
+    "t": 340
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Date of next meeting",
+    "ours": "Next meeting set for November 3rd",
+    "official": "Next\tmeeting:\t-\tNovember\t11,\t2025\t6:00\tpm.",
+    "note": "The official minutes disagree with themselves: this line says November 11, but their own schedule lists Mon. November 3rd, which matches ours. Check the recording and the posted meeting calendar.",
+    "t": 1290
+   },
+   {
+    "kind": "caption_error",
+    "about": "Fund balance figure",
+    "ours": "Enterprise fund balance: 10437860",
+    "official": "There\tis\ta\tbalance\tof\t$1,040,378.60",
+    "note": "Same figure with a digit dropped by the captions (10437860 vs 104037860 without punctuation); official lists it under the manager's report, not as an enterprise fund item.",
+    "official_reading": "$1,040,378.60",
+    "t": 769
+   },
+   {
+    "kind": "caption_error",
+    "about": "Manager's name",
+    "ours": "Joe Tol (manager)",
+    "official": "Manager:\tJo\tToale",
+    "note": "Misheard name; same person in the manager role.",
+    "official_reading": "Jo Toale"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee Steve Archambault (and Steve Walker by name)",
+    "ours": "the chair (chair); Brian (member); Faith (member)",
+    "official": "Steve\tWalker,\tBrian\tVienneau,\tSteve\tArchambault,\tFaith\tBeall\t(zoom)",
+    "note": "Official lists four members present; ours hears three (the chair presumably being Steve Walker) and has no Steve Archambault."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant repayment figures",
+    "ours": "Warrant repayment / line item funding: 31,000, 4,000, 31,276",
+    "official": "",
+    "note": "The official minutes give no warrant amounts, only that numbers were revised and finalized with town hall; check the recording around t=983-1006 and the warrant itself.",
+    "t": 983
+   },
+   {
+    "kind": "agree",
+    "about": "Master plan thank-you",
+    "ours": "No further action needed on the thank-you communication regarding the master plan",
+    "official": "S.Walker\treceived\ta\tthank\tyou\tfrom\tA.Sculimbrene\tfor\tPAC’s\tMaster\tPlan\tinput",
+    "note": "Same item; official gives names, ours the outcome.",
+    "t": 184
+   },
+   {
+    "kind": "agree",
+    "about": "Studio ready for recording next week",
+    "ours": "Committee confidential recording to begin in the studio next week",
+    "official": "Should\tbe\tready\tfor\trecording\tnext\tweek.",
+    "note": "Same item; 'confidential' in ours looks like a caption error.",
+    "t": 800
+   },
+   {
+    "kind": "agree",
+    "about": "Policy update",
+    "ours": "Add a policy update item to the next agenda, aiming to normalize written policies and post selected ones to the website",
+    "official": "J.Toale\twill\tbegin\tto\torganize\tfor\tposting",
+    "note": "Both have policy organizing and posting; the agenda item is only in ours.",
+    "t": 1328
+   },
+   {
+    "kind": "agree",
+    "about": "Master plan update",
+    "ours": "Leave the master plan update on the agenda as a placeholder pending a response",
+    "official": "Master\tPlan:\t\t•\tNo\tupdate",
+    "note": "Consistent; official says no update.",
+    "t": 1220
+   },
+   {
+    "kind": "agree",
+    "about": "Videographer hire and resignation",
+    "ours": "The videographer position was filled before the resignation, so the vacancy was already covered",
+    "official": "Connor\tGarrity\thas\tresigned",
+    "note": "Both record the resignation; official also names the new hire, Jane Paszko.",
+    "t": 663
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Council on Aging first studio recording",
+    "ours": "Council on Aging tentatively scheduled as the first recording in the new studio, pending confirmation",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 829
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Videographers for special town meeting Nov 18",
+    "ours": "Videographers to be scheduled to cover the special town meeting on November 18th",
+    "official": "",
+    "note": "Official lists only 'special town meeting' under upcoming events, with no date or scheduling decision.",
+    "t": 850
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Comcast fee posting",
+    "ours": "",
+    "official": "Comcast\thas\tnot\tposted\tits\tAugust\tfee,\tthe\tnext\tposting\tis\tscheduled\tfor\tNovember",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "CASTU conference call on new server",
+    "ours": "",
+    "official": "Conference\tcall\twith\tCASTU\tto\treview\toptions\tand\tpricing\tfor\tnew\tserver",
+    "note": "Not in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:24:19Z",
+   "cost_usd": 0.36317279999999996
+  }
  }
 }

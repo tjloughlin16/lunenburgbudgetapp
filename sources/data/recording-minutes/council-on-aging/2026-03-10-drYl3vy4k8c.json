@@ -423,5 +423,193 @@
    "at": "2026-09-27T11:00:25Z",
    "cost_usd": 0.18724000000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03102026-7695",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2026-03-10-minutes-7695.txt",
+   "path": "sources/meetings/council-on-aging/2026-03-10-minutes-7695.pdf"
+  },
+  "official_sha256": "59a6159b7e67077c3ab0fe9ac35b68b920701d6846ff88fab081dd0963aaa7f5",
+  "coverage": "full",
+  "summary": "The two records agree on the one vote (the Honorary Board Member nomination) and on most attendees. They differ on whether the board agreed to finish the honorary-membership criteria at the next meeting, on who handles the Special Town Meeting article, and on the fundraiser and grant details. Our minutes also record several decisions the official minutes do not.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 6,
+   "discrepancy": 6,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Honorary member nomination vote",
+    "ours": "Nominate Pete Lincoln (heard also as \"Pete Lley\") for consideration as an honorary member at the next meeting — not audible",
+    "official": "A motion was made by Susan O ’Sullivan to nominate Peter Lincoln for consideration as an Honorary Board Member , Ana Lockwood seconded the motion.  All in favor- unanimously.",
+    "note": "The motion and the nominee agree. Ours says the nomination is for the next meeting and the outcome was not audible, while the official minutes record a unanimous vote with a mover and seconder, so check the recording at t=802 for the vote and its timing.",
+    "t": 802
+   },
+   {
+    "kind": "caption_error",
+    "about": "Nominee's name",
+    "ours": "Pete Lincoln (heard also as \"Pete Lley\")",
+    "official": "Peter Lincoln",
+    "note": "The same nominee, with the first name shortened and garbled by the captions.",
+    "official_reading": "Peter Lincoln",
+    "t": 802
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Honorary membership criteria",
+    "ours": "The chair proposed simplifying honorary membership rules to just letting honorary members attend and speak at meetings but not vote, rather than adopting a longer list of criteria that had been drafted. / The board agreed to finish setting the honorary membership criteria at the next meeting rather than finalizing it today.",
+    "official": "The Board members discussed consider potential criteria for such positions.",
+    "note": "The official minutes say only that criteria were discussed. They do not record the chair's simplification proposal or the agreement to finish at the next meeting, so check the recording at t=127 and t=698.",
+    "t": 698
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Special Town Meeting article follow-up",
+    "ours": "The director agreed to loop in the town manager on the language of the special town meeting article before the warrant closes.",
+    "official": "Special Town Meeting - Article 12\no Lou Franco will meet with Selectboard Chair Caesar Nuzzolo to discuss.",
+    "note": "Ours has the director contacting the town manager, while the official minutes have board member Lou Franco meeting the Selectboard Chair, so check the recording at t=1670 for who takes the action and with whom.",
+    "t": 1670
+   },
+   {
+    "kind": "agree",
+    "about": "Caregiver Resource Connection tabled",
+    "ours": "The caregiver resource connection program update was tabled until the staff member overseeing it returns; the director will email her for a status update.",
+    "official": "Caregiver Resource Connection -tabled till Cathy Beale in attendance",
+    "note": "Both record the item as tabled until the responsible person is back. The director's email follow-up appears only in ours.",
+    "t": 1608
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Telehealth hub grant amount",
+    "ours": "Telehealth hub grant: $1,500",
+    "official": "We have been notified that we have received the grant, waiting for the monies to begin.",
+    "note": "The official minutes give no amount, so check the recording at t=2763 for the $1,500 figure.",
+    "t": 2763
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA programming budget compared to the library's",
+    "ours": "COA programming budget compared to the library's: 8,000, 16,000",
+    "official": "",
+    "note": "The official minutes record no budget comparison with the library.",
+    "t": 2977
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Bingo Gift Card Frenzy",
+    "ours": "Bingo gift card frenzy fundraiser: $10, $25",
+    "official": "The Gift Card Frenzy Fundraiser will be held Sunday, March 22 at 1:00 p.m.",
+    "note": "The event is in both records, but the official minutes give no prices, so check the recording at t=2172 for the $10 and $25 figures.",
+    "t": 2172
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Eagle House Supporters hat sale",
+    "ours": "Eagle House Supporters hat sale: $20, $10",
+    "official": "New Lunenburg Baseball Caps  Fundraiser",
+    "note": "The hat fundraiser is in both records, but the official minutes give no prices, so check the recording at t=3282 for the $20 and $10 figures.",
+    "t": 3282
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sponsoring another senior on sign-up forms",
+    "ours": "The board agreed to add a line to program/trip sign-up forms letting a senior sponsor another senior's cost, after the idea was raised from a school committee meeting.",
+    "official": "",
+    "note": "The official minutes do not record this decision.",
+    "t": 2611
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Eagle House Supporters using Parks and Recreation ticketing",
+    "ours": "The director agreed to let the Eagle House Supporters use the town's existing Parks and Recreation registration software to sell tickets for their events.",
+    "official": "",
+    "note": "The official minutes do not record this decision.",
+    "t": 3553
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Outreach position hire",
+    "ours": "",
+    "official": "The Outreach position has been accepted by Melissa Sargent.  Melissa is the current \nCOA Director in Berlin and comes with a wealth of experience.",
+    "note": "A personnel update that our minutes do not include.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "By-laws feedback",
+    "ours": "",
+    "official": "Selectboard Chair Caesar Nuzzolo informed the Board that the current by-laws are \noutdated, dating back to the initial establishment of Councils on Aging.",
+    "note": "Our minutes do not include the by-laws discussion.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Debbie Lincoln",
+    "ours": "Debbie Lincoln (board member (operating the meeting's new recording device))",
+    "official": "Deb Lincoln (Chairperson)",
+    "note": "The same person. The official minutes name her as chairperson, while ours lists her as a board member and also has an unnamed chair.",
+    "official_reading": "Deb Lincoln"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Diane Nab",
+    "ours": "Diane Nab (board member)",
+    "official": "Diane Nowd",
+    "note": "A misheard surname.",
+    "official_reading": "Diane Nowd"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Anna Lockwood",
+    "ours": "Anna Lockwood (board member)",
+    "official": "Ana\nLockwood",
+    "note": "A spelling variant of the same name.",
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Susan O. Sullivan",
+    "ours": "Susan O. Sullivan (board member)",
+    "official": "Susan O ’Sullivan",
+    "note": "A misheard surname.",
+    "official_reading": "Susan O’Sullivan"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Elena Christopher and Lou Franco",
+    "ours": "Elena Christopher (board member); Lou Franco (board member)",
+    "official": "Lou Franco, Elena Christopher",
+    "note": "Both records list them as present.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Eagle House Supporters presenter",
+    "ours": "Kio Thompson (Eagle House Supporters (presenter, not a board member))",
+    "official": "President Ena Keo -Thompson present ed  the report.",
+    "note": "The same presenter, with the name misheard by the captions.",
+    "official_reading": "Ena Keo-Thompson"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Director's name",
+    "ours": "the director (name not clearly stated in captions) (Council on Aging director)",
+    "official": "Debra Goodsell, Director,",
+    "note": "Our minutes did not capture the director's name.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:19:42Z",
+   "cost_usd": 0.238017
+  }
  }
 }

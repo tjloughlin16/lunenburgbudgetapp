@@ -417,5 +417,165 @@
    "at": "2026-09-27T12:07:35Z",
    "cost_usd": 0.19308
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10272025-7478",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-10-27-minutes-7478.txt",
+   "path": "sources/meetings/planning-board/2025-10-27-minutes-7478.pdf"
+  },
+  "official_sha256": "2f9b7041cdb9594dbbaf228a0c5574ea4d2bc867285185877d11db6574119e20",
+  "coverage": "full",
+  "summary": "The two records agree on the four non-procedural votes both contain (ANR, stormwater continuance, MBTA zoning, common driveways) and on the electronic-signature vote, but ours records closing votes the official minutes do not and describes the MBTA motion differently. The one thing to know is the Dec 8 vs Dec 22 / Dec 15 meeting-schedule difference and the unverifiable MBTA 'recommend favorably' vs 'bring to Special Town Meeting' wording.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "ANR vote for 930 Massachusetts Avenue",
+    "t": 887,
+    "ours": "Endorse the ANR for 930 Massachusetts Avenue. — passed",
+    "official": "A. Burney moved to approve, A. Reid Second",
+    "note": "Both record the ANR as approved, passing 3-0 by roll call in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 255 Sunny Hill Road stormwater hearing to Nov 10",
+    "t": 3838,
+    "ours": "Continue the storm water permit public hearing for 255 Sunny Hill Road to November 10, 2025. — passed",
+    "official": "A. Burney moved to continue \nuntil next meeting 11/10/25, A. Reid \nsecond",
+    "note": "Same motion and outcome in both records."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "MBTA Communities multifamily overlay motion",
+    "t": 7793,
+    "ours": "Recommend favorably to town meeting the adoption of section 250-419, the multifamily overlay district, as amended tonight. — passed",
+    "official": "A \nBurney moved to add the zoning \namendment and bring to Special Town \nMeeting, A. Reid second",
+    "note": "Both pass, but ours says 'as amended tonight' and 'recommend favorably' while the official says add the amendment and bring to Special Town Meeting; check the recording for whether the bylaw was amended and the exact motion wording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Vote closing the MBTA Communities public hearing",
+    "t": 7772,
+    "ours": "Close the public hearing on the MBTA Communities bylaw. — passed",
+    "official": "",
+    "note": "The official minutes record no separate vote to close this hearing; it is a procedural vote but ours records it as passed, so a person can check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Common driveway bituminous concrete removal",
+    "t": 8098,
+    "ours": "Recommend favorably to town meeting the removal of the bituminous concrete requirement from the common driveways bylaw. — passed",
+    "official": "A Burney moved to Amend \nwording and bring to Special Town \nMeeting, A Reid second.",
+    "note": "Same subject and passing outcome, with differing wording of the motion (recommend favorably vs amend and bring to Special Town Meeting)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Vote closing the common driveway hearing",
+    "t": 8087,
+    "ours": "Close the public hearing on the common driveway amendment. — passed",
+    "official": "",
+    "note": "The official minutes record no separate close-hearing vote."
+   },
+   {
+    "kind": "agree",
+    "about": "Electronic signatures under MGL c.110G",
+    "t": 8386,
+    "ours": "Recognize and accept MGL chapter 110G regarding electronic signatures for board documents, with electronic and wet-ink signatures carrying equal legal weight. — passed",
+    "official": "This is to allow electronic signatures as well \nas live ink signatures on legal documents. A \nBurney moved to accept, A Reid second",
+    "note": "Same vote and passing outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "December meeting schedule",
+    "t": 9339,
+    "ours": "Chair to poll the board by email about shifting the December 8th meeting to December 15th to avoid a long gap into January.",
+    "official": "Only one Dec meeting on 12/15/25",
+    "note": "Ours describes a pending poll to move Dec 8 to Dec 15, official records a settled single December meeting on 12/15; check the recording for whether it was decided or still open."
+   },
+   {
+    "kind": "agree",
+    "about": "No meeting before Christmas",
+    "t": 8130,
+    "ours": "Board agreed not to schedule a meeting three days before Christmas.",
+    "official": "Meeting on 12/22?",
+    "note": "Official lists a 12/22 meeting question and a single December meeting, consistent with not meeting Dec 22."
+   },
+   {
+    "kind": "agree",
+    "about": "Public comment practice change",
+    "t": 24,
+    "ours": "Chair changed practice so open, non-agenda public comment is discouraged; residents should email the planning office to get items on the agenda instead.",
+    "official": "Removing designated Public Comment section \nfrom agenda. Will continue to ask for Public \nComment as each topic is discussed.",
+    "note": "Both record removal of the standing public comment section; the email-the-office detail is only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Zoning bylaw full rewrite material and consultant",
+    "t": 9446,
+    "ours": "Chair will draft written material for the next meeting laying out why the zoning bylaw needs a full rewrite, to support future funding requests for a consultant.",
+    "official": "",
+    "note": "Official minutes attribute the bylaw revamp and possible consultant to A Burney, with no chair drafting task recorded; compare who said what."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stormwater applicant and abutter to work out pipe plan",
+    "t": 3216,
+    "ours": "Board directed the storm water applicant and the abutter to try to work out details of the pipe/culvert plan before the November 10 meeting.",
+    "official": "",
+    "note": "The official minutes only mention added drainage narrative and unpaid taxes, not this direction."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "40R Tritown annual payment figure",
+    "t": 5049,
+    "ours": "40R smart growth annual payment for Tritown: $20 something,000 a year, 0 to $230,000",
+    "official": "",
+    "note": "The official minutes do not give any dollar figure; the caption figure is garbled and should be checked against the video."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Median home assessment",
+    "t": 8660,
+    "ours": "Median home assessment: 1.3",
+    "official": "",
+    "note": "Not in the official minutes; the caption figure is unclear."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Unpaid taxes raised on 255 Sunny Hill Road",
+    "ours": "",
+    "official": "A. Burney brought up unpaid \ntaxes.",
+    "note": "Our minutes do not mention the unpaid taxes issue."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member and attendance",
+    "ours": "Matt (chair); Adam (board member); Amanda (board member)",
+    "official": "ROLL CALL: M Brenner, A REID, A BURNEY             ABSENT: T WILLSMER",
+    "note": "Same three present as Matthew Brenner, Amanda Reid and Adam Burney; only the official records Timothy Willsmer absent."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Committee reports and new Interim Land Use Director",
+    "ours": "",
+    "official": "M Brenner: Richard Harris is the new \nInterim Land Use Director.",
+    "note": "Official includes committee reports and this announcement, none of which appear in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:22:56Z",
+   "cost_usd": 0.237173
+  }
  }
 }

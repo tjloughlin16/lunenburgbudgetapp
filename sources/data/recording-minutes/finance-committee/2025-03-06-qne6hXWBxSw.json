@@ -469,5 +469,272 @@
    "at": "2026-10-02T11:12:00Z",
    "cost_usd": 0.198623
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03062025-7008",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-03-06-minutes-7008.txt",
+   "path": "sources/meetings/finance-committee/2025-03-06-minutes-7008.pdf"
+  },
+  "official_sha256": "ee8670a6cd6269105b97a74e4d1ab0a75e0a22d290fce9ca59985a75a298f9d8",
+  "coverage": "full",
+  "summary": "The two records agree on the school budget's main figures and on the Monty Tech grant totals, and most differences are caption misspellings of names and digits. Our minutes record no votes while the official minutes record one (approval of the February 14 minutes, 5-0-1), and our minutes carry many figures (Council on Aging, Monty Tech percentages, transportation, tuition, band travel) that the official minutes omit, so those could not be cross-checked.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 8,
+   "discrepancy": 1,
+   "only_in_ours": 7,
+   "only_in_official": 7
+  },
+  "findings": [
+   {
+    "kind": "only_in_official",
+    "about": "Vote to approve February 14, 2025 minutes",
+    "ours": "",
+    "official": "There was a motion to approve the minutes from February 14, 2025, by Tom Gray, seconded by Jean Russell. The vote was 5-0-1.",
+    "note": "Our minutes list no votes; this is a routine minutes approval so it may have been filtered as procedural, but confirm against the recording and note the 5-0-1 count (one abstention) implies six voting members.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "School starting budget total",
+    "ours": "24.8 Million, 24883376888",
+    "official": "The total adjusted budget for FY 2025 is $24,883,376.",
+    "official_reading": "$24,883,376",
+    "note": "The garbled digit run 24883376888 matches $24,883,376; note the official minutes label this the FY2025 adjusted budget while ours calls it the FY26 starting budget.",
+    "t": 6035
+   },
+   {
+    "kind": "caption_error",
+    "about": "Salary line increase",
+    "ours": "$94,900",
+    "official": "There is a $949,900 increase in the salary line to create a level service budget.",
+    "official_reading": "$949,900",
+    "note": "Captions appear to have dropped a digit; the same item is $949,900 in the official minutes.",
+    "t": 6035
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager's budget increase and total",
+    "ours": "",
+    "official": "The Town Managers budget includes a 904,098-increase bringing the total to  $25,787,474.",
+    "note": "Our figures list does not capture the Town Manager's increase or the resulting total.",
+    "t": 6035
+   },
+   {
+    "kind": "caption_error",
+    "about": "Salary reserve amount",
+    "ours": "90,000 7 $769, 379,000",
+    "official": "the salary reserve is projected to have $90,769 for paraprofessional, administrator, and superintendent salary negotiations.",
+    "official_reading": "$90,769",
+    "note": "The captions split $90,769 into fragments; the trailing 379,000 has no counterpart in the official minutes.",
+    "t": 8782
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance increase",
+    "ours": "14.84%, 16%, 21.88%",
+    "official": "14.8% increase in health insurance",
+    "note": "14.84% rounds to the official 14.8%; the 16% and 21.88% figures do not appear in the official minutes.",
+    "t": 7595
+   },
+   {
+    "kind": "agree",
+    "about": "Bus and vanpool transportation increases",
+    "ours": "7.6%, 7%, 27%, 120,000, 9,000",
+    "official": "7.6% increase in Dee Bus services",
+    "note": "The 7.6% (Dee Bus) and 7% (vanpool, quoted in the official minutes as '7% increase in vanpool for special education transportation') match; 27%, 120,000 and 9,000 are not in the official minutes.",
+    "t": 6886
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Out-of-district tuition",
+    "ours": "Out-of-district tuition: $310,000",
+    "official": "",
+    "note": "The official minutes do not mention out-of-district tuition or this figure.",
+    "t": 7050
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Three school budget versions",
+    "ours": "28.5 FTE, 7.9 FTE, 5.5%",
+    "official": "",
+    "note": "The official minutes do not describe the three budget versions, FTE counts or the 5.5% figure; check the recording for what was presented.",
+    "t": 6247
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Last year's override amount",
+    "ours": "",
+    "official": "Dr. Kate Burnham states the override amount was $948,000.",
+    "note": "Our figures omit the prior-year override amount of $948,000.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Band travel budget",
+    "ours": "Band travel budget: $8,900",
+    "official": "",
+    "note": "The official minutes do not mention band travel; they record only that the Committee agreed athletics should not be cut.",
+    "t": 13416
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Council on Aging budget figures",
+    "ours": "30,000, $72; 5,000 to 7500, $150 and $250",
+    "official": "",
+    "note": "The official minutes record no Council on Aging dollar figures; they give the meal site manager hours request (19 1/2 to 36 hours) and participation counts instead.",
+    "t": 1133
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Council on Aging meal site manager hours request",
+    "ours": "",
+    "official": "The Council on Aging is requesting to raise the meal site manager from 19 ½ to 36 hours per week.",
+    "note": "Our figures and decisions do not capture the hours request, which is the substantive ask in the official record.",
+    "t": 1262
+   },
+   {
+    "kind": "agree",
+    "about": "Monty Tech grants",
+    "ours": "over a million dollars, $2.7 million",
+    "official": "In FY 25 Monty Tech was awarded $1,062,891 in state and federal entitlement grants. To date, $2,711,900 have been awarded for competitive grants.",
+    "note": "Our rounded figures are consistent with $1,062,891 and $2,711,900.",
+    "t": 2228
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Monty Tech FY26 budget percentages and E&D",
+    "ours": "3.51%, 2.9%, 6.11%, 13, 178 539; excess and deficiency: 500,000, 1.6 to 1.7 million",
+    "official": "",
+    "note": "The official minutes give no percentages or excess and deficiency figures; '13, 178 539' is unclear and the official total budget is $34,641,344, so it does not obviously correspond.",
+    "t": 3662
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Lunenburg Monty Tech contribution",
+    "ours": "Lunenburg Monty Tech minimum contribution: 98,0 457",
+    "official": "The total contribution needed from Lunenburg is $1,270,711.",
+    "note": "Ours appears to be a minimum contribution (possibly $980,457) while the official gives a total contribution of $1,270,711; they may be different measures, so check the recording at about t=4070.",
+    "t": 4070
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Monty Tech total budget",
+    "ours": "",
+    "official": "The total FY 2026 budget is $34,641,344.",
+    "note": "Our figures do not record the Monty Tech total budget or the line-item increases.",
+    "t": 3662
+   },
+   {
+    "kind": "agree",
+    "about": "School and Select Board meeting on override",
+    "ours": "School and select board to meet Tuesday and the following Wednesday to try to finalize the school budget; the override question is expected on Tuesday.",
+    "official": "Brian Lehtinen conﬁrms this will be a discussion at the meeting with the School and Select Board on Tuesday.",
+    "note": "Both put the override discussion at the Tuesday joint meeting; the Wednesday follow-up is only in ours.",
+    "t": 11250
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan deferred; public hearing next Thursday",
+    "ours": "Capital plan discussion moved to next week; next Thursday's meeting is a public hearing.",
+    "official": "This topic was not discussed.",
+    "note": "Both say the capital plan was not discussed, and the official lists Thursday 3/13/2025 as the public hearing; ours adds that it was moved to next week.",
+    "t": 13813
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant closing date",
+    "ours": "The warrant closes March 17; an article can still be placed without a final figure, though complicated.",
+    "official": "",
+    "note": "The official minutes list FY26 Warrant Articles as old business but record no discussion or the March 17 date.",
+    "t": 11353
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on Cemetery Commission",
+    "ours": "",
+    "official": "they decided not to take any money out of the sale of lots funds despite their $94,000 balance.",
+    "note": "John Bowen's public comment and the $94,000 balance are not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Council on Aging director",
+    "ours": "Deb Goodsall / Deborah Goodell",
+    "official": "The Director, Debra Goodsell, provided the presentation.",
+    "official_reading": "Debra Goodsell",
+    "note": "Captions rendered the name two ways; the official spelling is Debra Goodsell.",
+    "t": 1133
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director of special services",
+    "ours": "Juliana hansam",
+    "official": "Julianna Hanscom – Director of Special Services",
+    "official_reading": "Julianna Hanscom",
+    "note": "Misheard name.",
+    "t": 6035
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director of finance",
+    "ours": "Dr Gilson",
+    "official": "Susan Gilson – Director of Administration and Finance",
+    "official_reading": "Susan Gilson",
+    "note": "Same person; the official minutes give the first name and no title of Dr.",
+    "t": 6035
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director of teaching and learning",
+    "ours": "Dr bookis",
+    "official": "Deborah Bookis – Director of Teacher and Learning",
+    "official_reading": "Deborah Bookis",
+    "note": "Misheard spelling.",
+    "t": 6035
+   },
+   {
+    "kind": "caption_error",
+    "about": "School committee chair",
+    "ours": "Brian (school committee chair (remote))",
+    "official": "Brian Lehtinen conﬁrms this will be a discussion",
+    "official_reading": "Brian Lehtinen",
+    "note": "Our minutes give only the first name; the official minutes give the surname and do not say he was remote or the school committee chair.",
+    "t": 11250
+   },
+   {
+    "kind": "agree",
+    "about": "Monty Tech presenters and superintendent of schools",
+    "ours": "Tom Brown (Monty Tech superintendent); Tammy Crockett (Monty Tech business manager); Kate Burnham (superintendent of schools)",
+    "official": "Superintendent, Tom Brown, and Business Manager for the school district,  Tammy Crockett, provided the presentation.",
+    "note": "Names and roles match; Kate Burnham is listed as Superintendent of Schools in the official minutes.",
+    "t": 2228
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Finance Committee members present and absent",
+    "ours": "Chair (Finance Committee) (chair)",
+    "official": "Present Members:  Chair Chris Menard, Vice Chair Jean Russell, Clerk Tom Gray \nCommittee Member Tanya Dall, Committee Member Ana Lockwood, \nCommittee Member Mike Rupp \nAbsent Member:  Committee Member Jay Simeone",
+    "note": "Our attendee list names only an unnamed chair, not the six members present or the absent member.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pauline Roy, Council on Aging outreach",
+    "ours": "Pauline Roy (presenter (Council on Aging outreach))",
+    "official": "",
+    "note": "The official minutes name only the Director as presenter; check the recording for Pauline Roy's role.",
+    "t": 1133
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:53:55Z",
+   "cost_usd": 0.268825
+  }
  }
 }

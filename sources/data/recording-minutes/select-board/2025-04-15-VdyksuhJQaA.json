@@ -1,612 +1,813 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "select-board",
-  "board": "Select Board",
-  "video_title": "Select Board",
-  "meeting_date": "2025-04-15",
-  "video_id": "VdyksuhJQaA",
-  "video_url": "https://www.youtube.com/watch?v=VdyksuhJQaA",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/select-board/2025-04-15-VdyksuhJQaA.json",
-    "sha256": "0d9105b9d05dd427560712fa2eb9ae5383f02aab9090b386ce26658c6e3b0c10",
-    "caption_lines": 651,
-    "segments": 5797
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2025-04-15",
+ "video_id": "VdyksuhJQaA",
+ "video_url": "https://www.youtube.com/watch?v=VdyksuhJQaA",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-04-15-VdyksuhJQaA.json",
+  "sha256": "0d9105b9d05dd427560712fa2eb9ae5383f02aab9090b386ce26658c6e3b0c10",
+  "caption_lines": 651,
+  "segments": 5797
+ },
+ "recording": {
+  "duration_s": 13589,
+  "duration": "3:46",
+  "spoken_chars": 208140,
+  "words_approx": 34690
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04152025-7170",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-agenda-7170.txt",
+   "path": "sources/meetings/select-board/2025-04-15-agenda-7170.pdf"
   },
-  "recording": {
-    "duration_s": 13589,
-    "duration": "3:46",
-    "spoken_chars": 208140,
-    "words_approx": 34690
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04152025-7174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-agenda-7174.txt",
+   "path": "sources/meetings/select-board/2025-04-15-agenda-7174.pdf"
   },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04152025-7170",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-agenda-7170.txt",
-      "path": "sources/meetings/select-board/2025-04-15-agenda-7170.pdf"
-    },
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04152025-7174",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-agenda-7174.txt",
-      "path": "sources/meetings/select-board/2025-04-15-agenda-7174.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-minutes-rr2026-09-18-draft.txt",
-      "path": "sources/meetings/select-board/2025-04-15-minutes-rr2026-09-18-draft.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04152025-7170",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-minutes-7170.txt",
-      "path": "sources/meetings/select-board/2025-04-15-minutes-7170.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04152025-7174",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-minutes-7174.txt",
-      "path": "sources/meetings/select-board/2025-04-15-minutes-7174.pdf"
-    }
+  {
+   "kind": "minutes",
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-minutes-rr2026-09-18-draft.txt",
+   "path": "sources/meetings/select-board/2025-04-15-minutes-rr2026-09-18-draft.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04152025-7170",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-minutes-7170.txt",
+   "path": "sources/meetings/select-board/2025-04-15-minutes-7170.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04152025-7174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-minutes-7174.txt",
+   "path": "sources/meetings/select-board/2025-04-15-minutes-7174.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-27T22:53:18Z",
+  "cost_usd": 1.27494
+ },
+ "minutes": {
+  "headline": "Select Board reviewed a $13.7M Marshall Park rebuild going to the May 3 town meeting as a debt-exclusion vote.",
+  "summary": "The board heard warnings that health insurance renewal costs are up nearly 15% with no relief expected, then reviewed the Parks Commission's Marshall Park renovation proposal (full and a smaller alternative) headed to the May 3 town meeting as a debt exclusion. Most of the meeting was spent line-by-line drafting three new personnel policies (sick leave bank, merit award, gift acceptance), with several open questions left for staff to revise before adoption.",
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Amanda",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Michael Ray",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jen",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Julie",
+    "role": "HR director",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Anita Shipers",
+    "role": "chair of the parks commission, presenter"
+   },
+   {
+    "name_as_heard": "Susan Shulu (Sue Shaloo)",
+    "role": "health plan consultant, Cook and Company, presenter"
+   },
+   {
+    "name_as_heard": "Tony Skelleny",
+    "role": "chair, Architectural Preservation District Commission"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 47,
+    "topic": "Recognized the passing of a longtime community member, John Latanzi, and his service to town boards.",
+    "speaker_as_heard": "Mr. Longville",
+    "stated_role": "resident"
+   }
+  ],
+  "tags": [
+   "capital",
+   "contracts-and-unions",
+   "debt",
+   "executive-session",
+   "facilities",
+   "fees",
+   "health-insurance",
+   "hiring",
+   "override",
+   "personnel",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "recreation",
+   "staffing",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 592,
+    "motion": "Approve the weekday entertainment jukebox license and automatic amusement license for Blue Sky Golf/Pal's Golf Lounge LLC as presented",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 6358,
+    "motion": "Support the letter, as read and edited by the chair, for the establishment of a satellite emergency facility by UMass Memorial in Groton",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 11929,
+    "motion": "Accept the cash donation of $6,900 from Deb and Pete Lincoln for installation of blinds at the Lunenburg Adult Activity Center, under MGL chapter 44 section 53A",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 13337,
+    "motion": "Approve the minutes for January 30, 2024, as amended",
+    "outcome": "passed unanimously",
+    "procedural": true
+   },
+   {
+    "t": 13554,
+    "motion": "Enter executive session under MGL chapter 30 section 21A(3) to conduct strategy sessions in preparation for negotiations with non-union personnel, including the police chief, and not to reconvene in open session afterward",
+    "outcome": "passed 5-0 (roll call: Renee, Tom, Amanda, Michael Ray, chair all voted yes)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 551,
+    "topic": "Sunday entertainment license fee",
+    "what_was_said": "The clerk noted a Sunday entertainment license, which the applicant did not request, costs more than the weekday one.",
+    "figures_as_heard": [
+     "$400"
+    ]
+   },
+   {
+    "t": 1588,
+    "topic": "Municipal health insurance (MIIA) renewal rate",
+    "what_was_said": "The town's insurance broker said Lunenburg's MIIA renewal came in just under the average increase for all MIIA communities, part of a statewide spike in health costs.",
+    "figures_as_heard": [
+     "between 10% and 20%",
+     "just under 15%",
+     "just under 15%"
+    ]
+   },
+   {
+    "t": 2093,
+    "topic": "Family health plan cost",
+    "what_was_said": "A board member noted family health plans are already very expensive before next year's projected increase, calling the trend unsustainable.",
+    "figures_as_heard": [
+     "$34,000",
+     "$35,000",
+     "15%"
+    ]
+   },
+   {
+    "t": 3708,
+    "topic": "Marshall Park project soft costs",
+    "what_was_said": "The parks commission chair broke out design, permitting and other soft costs for the proposed Marshall Park construction, plus a contingency.",
+    "figures_as_heard": [
+     "$87,531",
+     "5%",
+     "$847,98"
+    ]
+   },
+   {
+    "t": 3749,
+    "topic": "Marshall Park project hard (construction) costs",
+    "what_was_said": "Direct construction, general contractor costs, escalation and design contingency were totaled, with a 5% contingency added.",
+    "figures_as_heard": [
+     "$10,56,022",
+     "$12,273,775",
+     "5%",
+     "$12,887,464"
+    ]
+   },
+   {
+    "t": 3852,
+    "topic": "Marshall Park total project cost",
+    "what_was_said": "Soft and hard costs together were presented as the full project cost to be funded.",
+    "figures_as_heard": [
+     "$13,735,372"
+    ]
+   },
+   {
+    "t": 3915,
+    "topic": "Marshall Park debt exclusion tax impact",
+    "what_was_said": "An 18-year amortization was proposed, translating to an added rate per thousand of assessed value and an annual cost to the town's average home.",
+    "figures_as_heard": [
+     "46 cents per thousand",
+     "$504,937",
+     "$231"
+    ]
+   },
+   {
+    "t": 4478,
+    "topic": "Marshall Park smaller/reduced-scope project alternative",
+    "what_was_said": "A member asked about a smaller project option that could be substituted at town meeting, with its own cost and tax impact.",
+    "figures_as_heard": [
+     "$6,460,000",
+     "22 cents per thousand",
+     "$111"
+    ]
+   },
+   {
+    "t": 4021,
+    "topic": "Marshall Park grants previously secured but relinquished",
+    "what_was_said": "The parks commission previously won two large grants for the full master-plan version but had to decline them when the town couldn't fund the match; officials encouraged reapplication.",
+    "figures_as_heard": [
+     "$1 million",
+     "$500,000"
+    ]
+   },
+   {
+    "t": 4104,
+    "topic": "Marshall Park grants still available for the revised project",
+    "what_was_said": "The chair listed grant programs the commission still plans to pursue for the scaled-back project.",
+    "figures_as_heard": [
+     "$1 million",
+     "up to $500,000",
+     "up to $250,000",
+     "up to $100,000",
+     "up to $50,000",
+     "$25,000"
+    ]
+   },
+   {
+    "t": 4246,
+    "topic": "Marshall Park ongoing maintenance costs",
+    "what_was_said": "The facilities director's maintenance plan showed current spending on the park versus a worst-case estimate of what full new amenities would require annually.",
+    "figures_as_heard": [
+     "$23,425",
+     "$53,000"
+    ]
+   },
+   {
+    "t": 5188,
+    "topic": "State supplemental budget item for Lunenburg schools",
+    "what_was_said": "The town manager said the House's FY25 supplemental budget included a local earmark intended for Lunenburg public schools, still subject to Ways and Means and conference committee.",
+    "figures_as_heard": [
+     "$50,000"
+    ]
+   },
+   {
+    "t": 9997,
+    "topic": "Merit award program cost",
+    "what_was_said": "The board discussed a one-time monetary award tied to the SAP merit award policy, debating whether it should extend to union employees.",
+    "figures_as_heard": [
+     "$250"
+    ]
+   },
+   {
+    "t": 10586,
+    "topic": "Gift policy dollar thresholds",
+    "what_was_said": "The draft gift policy sets a review/approval threshold between the town manager and select board, and a cap on gifts to individual employees.",
+    "figures_as_heard": [
+     "$500",
+     "$50"
+    ]
+   },
+   {
+    "t": 11889,
+    "topic": "Lincoln donation for Adult Activity Center blinds",
+    "what_was_said": "A couple donated funds already used to install shades at the Adult Activity Center, requiring retroactive select board acceptance.",
+    "figures_as_heard": [
+     "$6,900"
+    ]
+   },
+   {
+    "t": 13363,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "The board reviewed and signed an accounts payable warrant; a member suggested publicly stating such totals more often given digital signing.",
+    "figures_as_heard": [
+     "1,562,53457"
+    ]
+   },
+   {
+    "t": 12913,
+    "topic": "Town meeting warrant mailing cost",
+    "what_was_said": "A member raised switching to a newspaper insert or postcard mailing like another town does, citing the cost of the current mailing.",
+    "figures_as_heard": [
+     "a little over 7,000"
+    ]
+   },
+   {
+    "t": 7205,
+    "topic": "Sick leave bank size threshold",
+    "what_was_said": "The draft policy sets contribution and replenishment triggers for the shared sick leave bank in days.",
+    "figures_as_heard": [
+     "two sick days",
+     "one day",
+     "300 days",
+     "50 days",
+     "2 days"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 9955,
+    "decision": "Apply the merit award policy only to SAP (non-union) employees for this first year, and pursue a warrant article at the fall special town meeting to move it out of the SAP and make it a townwide policy."
+   },
+   {
+    "t": 12703,
+    "decision": "Proceed with getting the 56 Cedar Circle (\"56 Car A Seller\") property professionally appraised before further board action."
+   },
+   {
+    "t": 12597,
+    "decision": "Check in with the school committee and finance committee for suggestions before finalizing the recharged budget task force membership."
+   },
+   {
+    "t": 8266,
+    "decision": "Draft a three-year lockout on re-enrollment for any employee who withdraws from the sick leave bank program, rather than making enrollment fully irrevocable or a simple annual opt-in/out."
+   },
+   {
+    "t": 8225,
+    "decision": "Have town counsel draft the confidentiality/compliance language for sick leave bank committee records rather than relying on the vague 'strictest confidence' wording."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 40,
+    "topic": "Pledge of allegiance and opening remarks",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 40,
+    "t_end": 122,
+    "topic": "Public comment: no comments from the public; a board member honored the late John Latanzi",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 122,
+    "t_end": 183,
+    "topic": "Announcements: yard waste days, Marshall Park community meeting, vendor fair",
+    "resolution": "informational",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 183,
+    "t_end": 430,
+    "topic": "Communication from the Architectural Preservation District Commission on Brooks House warrant compliance and town meeting update",
+    "resolution": "informational, no vote",
+    "tags": [
+     "facilities",
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 430,
+    "t_end": 613,
+    "topic": "Weekday entertainment jukebox and automatic amusement license for Blue Sky Golf/Pal's Golf Lounge",
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 613,
+    "t_end": 1442,
+    "topic": "Discussion (no public hearing yet) on altering the alcohol license premises for an outdoor patio at Asian Imperial, and board's role versus the planning board",
+    "resolution": "no resolution; public hearing to be scheduled later",
+    "tags": [
+     "planning-and-zoning",
+     "facilities",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1442,
+    "t_end": 2597,
+    "topic": "Health insurance renewal presentation by MIIA consultant Sue Shaloo",
+    "resolution": "informational",
+    "tags": [
+     "health-insurance"
+    ]
+   },
+   {
+    "t_start": 2597,
+    "t_end": 5187,
+    "topic": "Marshall Park renovation project presentation: scope, cost, funding via debt exclusion, grants, maintenance",
+    "resolution": "informational ahead of May 3 town meeting vote",
+    "tags": [
+     "capital",
+     "debt",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 5187,
+    "t_end": 5543,
+    "topic": "Town manager report: state supplemental budget item, Flat Hill Road bridge closure, Eagle House/Ritter roof projects, hiring updates",
+    "resolution": "informational",
+    "tags": [
+     "state-aid",
+     "facilities",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 5543,
+    "t_end": 6399,
+    "topic": "Letter of support for UMass Memorial's proposed satellite emergency facility in Groton, edited and voted",
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 6399,
+    "t_end": 9537,
+    "topic": "Line-by-line review of draft sick leave bank policy: eligibility, applicability to union employees, committee structure, benefit caps",
+    "resolution": "reviewed, sent back for revisions with employee feedback",
+    "tags": [
+     "contracts-and-unions",
+     "personnel",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 9537,
+    "t_end": 10422,
+    "topic": "Discussion of the special merit award policy and whether it should extend beyond SAP employees",
+    "resolution": "decided to keep to SAP for this year, pursue fall town meeting article",
+    "tags": [
+     "contracts-and-unions",
+     "personnel",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 10422,
+    "t_end": 11867,
+    "topic": "Line-by-line review of draft gift acceptance policy",
+    "resolution": "reviewed, minor edits requested, no vote taken on policy itself",
+    "tags": [
+     "policy",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 11867,
+    "t_end": 11949,
+    "topic": "Acceptance of $6,900 cash gift from Peter and Deborah Lincoln for Adult Activity Center blinds",
+    "resolution": "voted, passed unanimously",
+    "tags": [
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 11949,
+    "t_end": 12617,
+    "topic": "Discussion of updated charge for the budget task force, including possible community-member seats",
+    "resolution": "no changes made; agreed to consult other committees before next meeting",
+    "tags": [
+     "budget",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 12617,
+    "t_end": 12724,
+    "topic": "Old business: appraisal of 56 Cedar Circle property",
+    "resolution": "decided to proceed with appraisal",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 12724,
+    "t_end": 12975,
+    "topic": "Discussion on budget, capital plan, and annual town meeting warrant articles, including warrant mailing format/cost",
+    "resolution": "no resolution, informational",
+    "tags": [
+     "budget",
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 12975,
+    "t_end": 13337,
+    "topic": "Review and approval of January 30, 2024 minutes",
+    "resolution": "voted, approved unanimously with corrections",
+    "tags": []
+   },
+   {
+    "t_start": 13337,
+    "t_end": 13513,
+    "topic": "Warrants and action items, including accounts payable warrant and Flat Hill drainage follow-up",
+    "resolution": "reviewed, no vote recorded",
+    "tags": [
+     "roads-and-dpw",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 13513,
+    "t_end": 13554,
+    "topic": "Committee reports, upcoming meetings, final public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 13554,
+    "t_end": 13595,
+    "topic": "Vote to enter executive session for non-union personnel/police chief contract negotiations",
+    "resolution": "voted 5-0 by roll call",
+    "tags": [
+     "executive-session",
+     "contracts-and-unions"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The accounts payable warrant total figure appears garbled in captions ('1,562,53457') and its exact vote is not captured.",
+   "Several names are mangled or unclear, including the chair's own name (only addressed as 'Mr. Chair'), 'Whale Maros', and 'TC Pacios Gymnasium'.",
+   "The last inspection date for the Flat Hill Road bridge pipe deterioration was estimated by the town manager but not confirmed on the record.",
+   "Exact figures in the Marshall Park cost breakdown (e.g., '$10,56,022', '$847,98') are rendered ambiguously by the captioning and cannot be confirmed as printed."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Select Board reviewed the Marshall Park renovation, headed to a May 3 town meeting vote as a debt exclusion, with the project cost as heard in the recording.",
+    "t": 2597
+   },
+   {
+    "line": "The town's insurance broker said the municipal health plan renewal came in just under the average increase across MIIA communities, part of a statewide spike.",
+    "t": 1588
+   },
+   {
+    "line": "The board spent most of the meeting drafting three new personnel policies -- sick leave bank, merit award, and gift acceptance -- sending open questions back to staff.",
+    "t": 6399
+   },
+   {
+    "line": "The board decided the merit award policy applies only to non-union (SAP) employees this year, with a possible townwide article planned for the fall special town meeting.",
+    "t": 9955
+   },
+   {
+    "line": "The board voted unanimously to accept a cash gift for blinds at the Adult Activity Center and to support a letter backing a satellite emergency facility in Groton.",
+    "t": 11929
+   }
+  ],
+  "why_it_matters": [
+   "If approved at the May 3 town meeting, Marshall Park's cost would be repaid through a debt-exclusion property tax increase, outside the town's normal levy limit.",
+   "A larger-than-usual health insurance renewal affects the town's overall budget picture and could add pressure elsewhere as the town builds its next spending plan.",
+   "The sick leave, merit award and gift acceptance policies being drafted will set the rules for town employees' benefits and how the town can accept outside donations."
+  ],
+  "watch_next": [
+   "May 3 town meeting: debt-exclusion vote on the Marshall Park project",
+   "Fall special town meeting: possible warrant article extending the merit award policy beyond SAP employees"
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-27T22:53:18Z",
-    "cost_usd": 1.27494
-  },
-  "minutes": {
-    "headline": "Select Board reviewed a $13.7M Marshall Park rebuild going to the May 3 town meeting as a debt-exclusion vote.",
-    "summary": "The board heard warnings that health insurance renewal costs are up nearly 15% with no relief expected, then reviewed the Parks Commission's Marshall Park renovation proposal (full and a smaller alternative) headed to the May 3 town meeting as a debt exclusion. Most of the meeting was spent line-by-line drafting three new personnel policies (sick leave bank, merit award, gift acceptance), with several open questions left for staff to revise before adoption.",
-    "attendees": [
-      {
-        "name_as_heard": "the chair",
-        "role": "chair"
-      },
-      {
-        "name_as_heard": "Renee",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Tom",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Amanda",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Michael Ray",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Jen",
-        "role": "town manager"
-      },
-      {
-        "name_as_heard": "Julie",
-        "role": "HR director",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Anita Shipers",
-        "role": "chair of the parks commission, presenter"
-      },
-      {
-        "name_as_heard": "Susan Shulu (Sue Shaloo)",
-        "role": "health plan consultant, Cook and Company, presenter"
-      },
-      {
-        "name_as_heard": "Tony Skelleny",
-        "role": "chair, Architectural Preservation District Commission"
-      }
-    ],
-    "public_comment": [
-      {
-        "t": 47,
-        "topic": "Recognized the passing of a longtime community member, John Latanzi, and his service to town boards.",
-        "speaker_as_heard": "Mr. Longville",
-        "stated_role": "resident"
-      }
-    ],
-    "tags": [
-      "capital",
-      "contracts-and-unions",
-      "debt",
-      "executive-session",
-      "facilities",
-      "fees",
-      "health-insurance",
-      "hiring",
-      "override",
-      "personnel",
-      "policy",
-      "public-comment",
-      "public-safety",
-      "recreation",
-      "staffing",
-      "town-departments",
-      "town-meeting",
-      "warrant-article"
-    ],
-    "votes": [
-      {
-        "t": 592,
-        "motion": "Approve the weekday entertainment jukebox license and automatic amusement license for Blue Sky Golf/Pal's Golf Lounge LLC as presented",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 6358,
-        "motion": "Support the letter, as read and edited by the chair, for the establishment of a satellite emergency facility by UMass Memorial in Groton",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 11929,
-        "motion": "Accept the cash donation of $6,900 from Deb and Pete Lincoln for installation of blinds at the Lunenburg Adult Activity Center, under MGL chapter 44 section 53A",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 13337,
-        "motion": "Approve the minutes for January 30, 2024, as amended",
-        "outcome": "passed unanimously",
-        "procedural": true
-      },
-      {
-        "t": 13554,
-        "motion": "Enter executive session under MGL chapter 30 section 21A(3) to conduct strategy sessions in preparation for negotiations with non-union personnel, including the police chief, and not to reconvene in open session afterward",
-        "outcome": "passed 5-0 (roll call: Renee, Tom, Amanda, Michael Ray, chair all voted yes)",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 551,
-        "topic": "Sunday entertainment license fee",
-        "what_was_said": "The clerk noted a Sunday entertainment license, which the applicant did not request, costs more than the weekday one.",
-        "figures_as_heard": [
-          "$400"
-        ]
-      },
-      {
-        "t": 1588,
-        "topic": "Municipal health insurance (MIIA) renewal rate",
-        "what_was_said": "The town's insurance broker said Lunenburg's MIIA renewal came in just under the average increase for all MIIA communities, part of a statewide spike in health costs.",
-        "figures_as_heard": [
-          "between 10% and 20%",
-          "just under 15%",
-          "just under 15%"
-        ]
-      },
-      {
-        "t": 2093,
-        "topic": "Family health plan cost",
-        "what_was_said": "A board member noted family health plans are already very expensive before next year's projected increase, calling the trend unsustainable.",
-        "figures_as_heard": [
-          "$34,000",
-          "$35,000",
-          "15%"
-        ]
-      },
-      {
-        "t": 3708,
-        "topic": "Marshall Park project soft costs",
-        "what_was_said": "The parks commission chair broke out design, permitting and other soft costs for the proposed Marshall Park construction, plus a contingency.",
-        "figures_as_heard": [
-          "$87,531",
-          "5%",
-          "$847,98"
-        ]
-      },
-      {
-        "t": 3749,
-        "topic": "Marshall Park project hard (construction) costs",
-        "what_was_said": "Direct construction, general contractor costs, escalation and design contingency were totaled, with a 5% contingency added.",
-        "figures_as_heard": [
-          "$10,56,022",
-          "$12,273,775",
-          "5%",
-          "$12,887,464"
-        ]
-      },
-      {
-        "t": 3852,
-        "topic": "Marshall Park total project cost",
-        "what_was_said": "Soft and hard costs together were presented as the full project cost to be funded.",
-        "figures_as_heard": [
-          "$13,735,372"
-        ]
-      },
-      {
-        "t": 3915,
-        "topic": "Marshall Park debt exclusion tax impact",
-        "what_was_said": "An 18-year amortization was proposed, translating to an added rate per thousand of assessed value and an annual cost to the town's average home.",
-        "figures_as_heard": [
-          "46 cents per thousand",
-          "$504,937",
-          "$231"
-        ]
-      },
-      {
-        "t": 4478,
-        "topic": "Marshall Park smaller/reduced-scope project alternative",
-        "what_was_said": "A member asked about a smaller project option that could be substituted at town meeting, with its own cost and tax impact.",
-        "figures_as_heard": [
-          "$6,460,000",
-          "22 cents per thousand",
-          "$111"
-        ]
-      },
-      {
-        "t": 4021,
-        "topic": "Marshall Park grants previously secured but relinquished",
-        "what_was_said": "The parks commission previously won two large grants for the full master-plan version but had to decline them when the town couldn't fund the match; officials encouraged reapplication.",
-        "figures_as_heard": [
-          "$1 million",
-          "$500,000"
-        ]
-      },
-      {
-        "t": 4104,
-        "topic": "Marshall Park grants still available for the revised project",
-        "what_was_said": "The chair listed grant programs the commission still plans to pursue for the scaled-back project.",
-        "figures_as_heard": [
-          "$1 million",
-          "up to $500,000",
-          "up to $250,000",
-          "up to $100,000",
-          "up to $50,000",
-          "$25,000"
-        ]
-      },
-      {
-        "t": 4246,
-        "topic": "Marshall Park ongoing maintenance costs",
-        "what_was_said": "The facilities director's maintenance plan showed current spending on the park versus a worst-case estimate of what full new amenities would require annually.",
-        "figures_as_heard": [
-          "$23,425",
-          "$53,000"
-        ]
-      },
-      {
-        "t": 5188,
-        "topic": "State supplemental budget item for Lunenburg schools",
-        "what_was_said": "The town manager said the House's FY25 supplemental budget included a local earmark intended for Lunenburg public schools, still subject to Ways and Means and conference committee.",
-        "figures_as_heard": [
-          "$50,000"
-        ]
-      },
-      {
-        "t": 9997,
-        "topic": "Merit award program cost",
-        "what_was_said": "The board discussed a one-time monetary award tied to the SAP merit award policy, debating whether it should extend to union employees.",
-        "figures_as_heard": [
-          "$250"
-        ]
-      },
-      {
-        "t": 10586,
-        "topic": "Gift policy dollar thresholds",
-        "what_was_said": "The draft gift policy sets a review/approval threshold between the town manager and select board, and a cap on gifts to individual employees.",
-        "figures_as_heard": [
-          "$500",
-          "$50"
-        ]
-      },
-      {
-        "t": 11889,
-        "topic": "Lincoln donation for Adult Activity Center blinds",
-        "what_was_said": "A couple donated funds already used to install shades at the Adult Activity Center, requiring retroactive select board acceptance.",
-        "figures_as_heard": [
-          "$6,900"
-        ]
-      },
-      {
-        "t": 13363,
-        "topic": "Accounts payable warrant",
-        "what_was_said": "The board reviewed and signed an accounts payable warrant; a member suggested publicly stating such totals more often given digital signing.",
-        "figures_as_heard": [
-          "1,562,53457"
-        ]
-      },
-      {
-        "t": 12913,
-        "topic": "Town meeting warrant mailing cost",
-        "what_was_said": "A member raised switching to a newspaper insert or postcard mailing like another town does, citing the cost of the current mailing.",
-        "figures_as_heard": [
-          "a little over 7,000"
-        ]
-      },
-      {
-        "t": 7205,
-        "topic": "Sick leave bank size threshold",
-        "what_was_said": "The draft policy sets contribution and replenishment triggers for the shared sick leave bank in days.",
-        "figures_as_heard": [
-          "two sick days",
-          "one day",
-          "300 days",
-          "50 days",
-          "2 days"
-        ]
-      }
-    ],
-    "transfers": [],
-    "decisions": [
-      {
-        "t": 9955,
-        "decision": "Apply the merit award policy only to SAP (non-union) employees for this first year, and pursue a warrant article at the fall special town meeting to move it out of the SAP and make it a townwide policy."
-      },
-      {
-        "t": 12703,
-        "decision": "Proceed with getting the 56 Cedar Circle (\"56 Car A Seller\") property professionally appraised before further board action."
-      },
-      {
-        "t": 12597,
-        "decision": "Check in with the school committee and finance committee for suggestions before finalizing the recharged budget task force membership."
-      },
-      {
-        "t": 8266,
-        "decision": "Draft a three-year lockout on re-enrollment for any employee who withdraws from the sick leave bank program, rather than making enrollment fully irrevocable or a simple annual opt-in/out."
-      },
-      {
-        "t": 8225,
-        "decision": "Have town counsel draft the confidentiality/compliance language for sick leave bank committee records rather than relying on the vague 'strictest confidence' wording."
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 0,
-        "t_end": 40,
-        "topic": "Pledge of allegiance and opening remarks",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 40,
-        "t_end": 122,
-        "topic": "Public comment: no comments from the public; a board member honored the late John Latanzi",
-        "resolution": "informational",
-        "tags": [
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 122,
-        "t_end": 183,
-        "topic": "Announcements: yard waste days, Marshall Park community meeting, vendor fair",
-        "resolution": "informational",
-        "tags": [
-          "recreation"
-        ]
-      },
-      {
-        "t_start": 183,
-        "t_end": 430,
-        "topic": "Communication from the Architectural Preservation District Commission on Brooks House warrant compliance and town meeting update",
-        "resolution": "informational, no vote",
-        "tags": [
-          "facilities",
-          "town-meeting",
-          "warrant-article"
-        ]
-      },
-      {
-        "t_start": 430,
-        "t_end": 613,
-        "topic": "Weekday entertainment jukebox and automatic amusement license for Blue Sky Golf/Pal's Golf Lounge",
-        "resolution": "voted, passed unanimously",
-        "tags": [
-          "fees"
-        ]
-      },
-      {
-        "t_start": 613,
-        "t_end": 1442,
-        "topic": "Discussion (no public hearing yet) on altering the alcohol license premises for an outdoor patio at Asian Imperial, and board's role versus the planning board",
-        "resolution": "no resolution; public hearing to be scheduled later",
-        "tags": [
-          "planning-and-zoning",
-          "facilities",
-          "policy"
-        ]
-      },
-      {
-        "t_start": 1442,
-        "t_end": 2597,
-        "topic": "Health insurance renewal presentation by MIIA consultant Sue Shaloo",
-        "resolution": "informational",
-        "tags": [
-          "health-insurance"
-        ]
-      },
-      {
-        "t_start": 2597,
-        "t_end": 5187,
-        "topic": "Marshall Park renovation project presentation: scope, cost, funding via debt exclusion, grants, maintenance",
-        "resolution": "informational ahead of May 3 town meeting vote",
-        "tags": [
-          "capital",
-          "debt",
-          "town-meeting"
-        ]
-      },
-      {
-        "t_start": 5187,
-        "t_end": 5543,
-        "topic": "Town manager report: state supplemental budget item, Flat Hill Road bridge closure, Eagle House/Ritter roof projects, hiring updates",
-        "resolution": "informational",
-        "tags": [
-          "state-aid",
-          "facilities",
-          "hiring"
-        ]
-      },
-      {
-        "t_start": 5543,
-        "t_end": 6399,
-        "topic": "Letter of support for UMass Memorial's proposed satellite emergency facility in Groton, edited and voted",
-        "resolution": "voted, passed unanimously",
-        "tags": [
-          "public-safety"
-        ]
-      },
-      {
-        "t_start": 6399,
-        "t_end": 9537,
-        "topic": "Line-by-line review of draft sick leave bank policy: eligibility, applicability to union employees, committee structure, benefit caps",
-        "resolution": "reviewed, sent back for revisions with employee feedback",
-        "tags": [
-          "contracts-and-unions",
-          "personnel",
-          "policy"
-        ]
-      },
-      {
-        "t_start": 9537,
-        "t_end": 10422,
-        "topic": "Discussion of the special merit award policy and whether it should extend beyond SAP employees",
-        "resolution": "decided to keep to SAP for this year, pursue fall town meeting article",
-        "tags": [
-          "contracts-and-unions",
-          "personnel",
-          "policy"
-        ]
-      },
-      {
-        "t_start": 10422,
-        "t_end": 11867,
-        "topic": "Line-by-line review of draft gift acceptance policy",
-        "resolution": "reviewed, minor edits requested, no vote taken on policy itself",
-        "tags": [
-          "policy",
-          "legal"
-        ]
-      },
-      {
-        "t_start": 11867,
-        "t_end": 11949,
-        "topic": "Acceptance of $6,900 cash gift from Peter and Deborah Lincoln for Adult Activity Center blinds",
-        "resolution": "voted, passed unanimously",
-        "tags": [
-          "seniors"
-        ]
-      },
-      {
-        "t_start": 11949,
-        "t_end": 12617,
-        "topic": "Discussion of updated charge for the budget task force, including possible community-member seats",
-        "resolution": "no changes made; agreed to consult other committees before next meeting",
-        "tags": [
-          "budget",
-          "policy"
-        ]
-      },
-      {
-        "t_start": 12617,
-        "t_end": 12724,
-        "topic": "Old business: appraisal of 56 Cedar Circle property",
-        "resolution": "decided to proceed with appraisal",
-        "tags": [
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 12724,
-        "t_end": 12975,
-        "topic": "Discussion on budget, capital plan, and annual town meeting warrant articles, including warrant mailing format/cost",
-        "resolution": "no resolution, informational",
-        "tags": [
-          "budget",
-          "town-meeting",
-          "warrant-article"
-        ]
-      },
-      {
-        "t_start": 12975,
-        "t_end": 13337,
-        "topic": "Review and approval of January 30, 2024 minutes",
-        "resolution": "voted, approved unanimously with corrections",
-        "tags": []
-      },
-      {
-        "t_start": 13337,
-        "t_end": 13513,
-        "topic": "Warrants and action items, including accounts payable warrant and Flat Hill drainage follow-up",
-        "resolution": "reviewed, no vote recorded",
-        "tags": [
-          "roads-and-dpw",
-          "water-sewer"
-        ]
-      },
-      {
-        "t_start": 13513,
-        "t_end": 13554,
-        "topic": "Committee reports, upcoming meetings, final public comment",
-        "resolution": "informational",
-        "tags": [
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 13554,
-        "t_end": 13595,
-        "topic": "Vote to enter executive session for non-union personnel/police chief contract negotiations",
-        "resolution": "voted 5-0 by roll call",
-        "tags": [
-          "executive-session",
-          "contracts-and-unions"
-        ]
-      }
-    ],
-    "not_audible": [
-      "The accounts payable warrant total figure appears garbled in captions ('1,562,53457') and its exact vote is not captured.",
-      "Several names are mangled or unclear, including the chair's own name (only addressed as 'Mr. Chair'), 'Whale Maros', and 'TC Pacios Gymnasium'.",
-      "The last inspection date for the Flat Hill Road bridge pipe deterioration was estimated by the town manager but not confirmed on the record.",
-      "Exact figures in the Marshall Park cost breakdown (e.g., '$10,56,022', '$847,98') are rendered ambiguously by the captioning and cannot be confirmed as printed."
-    ],
-    "confidence": "moderate"
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "Select Board reviewed the Marshall Park renovation, headed to a May 3 town meeting vote as a debt exclusion, with the project cost as heard in the recording.",
-        "t": 2597
-      },
-      {
-        "line": "The town's insurance broker said the municipal health plan renewal came in just under the average increase across MIIA communities, part of a statewide spike.",
-        "t": 1588
-      },
-      {
-        "line": "The board spent most of the meeting drafting three new personnel policies -- sick leave bank, merit award, and gift acceptance -- sending open questions back to staff.",
-        "t": 6399
-      },
-      {
-        "line": "The board decided the merit award policy applies only to non-union (SAP) employees this year, with a possible townwide article planned for the fall special town meeting.",
-        "t": 9955
-      },
-      {
-        "line": "The board voted unanimously to accept a cash gift for blinds at the Adult Activity Center and to support a letter backing a satellite emergency facility in Groton.",
-        "t": 11929
-      }
-    ],
-    "why_it_matters": [
-      "If approved at the May 3 town meeting, Marshall Park's cost would be repaid through a debt-exclusion property tax increase, outside the town's normal levy limit.",
-      "A larger-than-usual health insurance renewal affects the town's overall budget picture and could add pressure elsewhere as the town builds its next spending plan.",
-      "The sick leave, merit award and gift acceptance policies being drafted will set the rules for town employees' benefits and how the town can accept outside donations."
-    ],
-    "watch_next": [
-      "May 3 town meeting: debt-exclusion vote on the Marshall Park project",
-      "Fall special town meeting: possible warrant article extending the merit award policy beyond SAP employees"
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-27T22:53:37Z",
-      "cost_usd": 0.20292200000000002
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-27T22:53:37Z",
+   "cost_usd": 0.20292200000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-15-minutes-rr2026-09-18-draft.txt",
+   "path": "sources/meetings/select-board/2025-04-15-minutes-rr2026-09-18-draft.pdf"
+  },
+  "official_sha256": "a8968dc1a1da68d65c1f540efe5e4f07ec93873dcea98e495b6c58d8385d26e4",
+  "coverage": "full",
+  "summary": "The two records agree on the Blue Sky Golf license vote, the Lincoln $6,900 donation, and the headline Marshall Park, health insurance and state earmark figures. They differ on outcomes: ours records a vote on the UMass Memorial letter and decisions on the merit award, sick leave bank, 56 Carr Ave appraisal and task force that the official minutes describe only as discussion with drafts to return. Check the recording first on the UMass letter vote.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 4,
+   "discrepancy": 5,
+   "only_in_ours": 5,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Blue Sky Golf / Pal's Golf Lounge license vote",
+    "t": 592,
+    "ours": "Approve the weekday entertainment jukebox license and automatic amusement license for Blue Sky Golf/Pal's Golf Lounge LLC as presented — passed unanimously",
+    "official": "Motion passed unanimously (5-0-0).",
+    "note": "Same item, same unanimous outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on UMass Memorial satellite emergency facility letter",
+    "t": 6358,
+    "ours": "Support the letter, as read and edited by the chair, for the establishment of a satellite emergency facility by UMass Memorial in Groton — passed unanimously",
+    "official": "they held off on voting, citing a desire to ensure the letter accurately reflects community expectations and aligns with regional planning.",
+    "note": "Ours records a unanimous vote; the official minutes say no vote was taken. Check the recording around t=6358 for a motion and roll call."
+   },
+   {
+    "kind": "agree",
+    "about": "Lincoln cash donation for Adult Activity Center blinds",
+    "t": 11929,
+    "ours": "Accept the cash donation of $6,900 from Deb and Pete Lincoln for installation of blinds at the Lunenburg Adult Activity Center, under MGL chapter 44 section 53A — passed unanimously",
+    "official": "Motion passed unanimously (5-0-0).",
+    "note": "Same amount, purpose, statute and outcome; donor names are informal in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant amount",
+    "t": 13363,
+    "ours": "Accounts payable warrant: 1,562,53457",
+    "official": "there is an accounts payable warrant in the amount of $1,562,534,57",
+    "note": "Same warrant; captions dropped the separators from the amount.",
+    "official_reading": "$1,562,534,57"
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance renewal increase",
+    "t": 1588,
+    "ours": "Municipal health insurance (MIIA) renewal rate: between 10% and 20%, just under 15%, just under 15%",
+    "official": "significant premium increase of approximately 15%",
+    "note": "Both put the increase at about 15%."
+   },
+   {
+    "kind": "agree",
+    "about": "Marshall Park total and reduced-scope costs",
+    "t": 3852,
+    "ours": "Marshall Park total project cost: $13,735,372",
+    "official": "scaled back to a $13.7M proposal focused on current field and recreation areas, with a backup $6.46M reduced version",
+    "note": "Both give $13.7M full and $6.46M reduced."
+   },
+   {
+    "kind": "agree",
+    "about": "Marshall Park annual maintenance estimate",
+    "t": 4246,
+    "ours": "Marshall Park ongoing maintenance costs: $23,425, $53,000",
+    "official": "maintenance cost estimate of $53,000 annually",
+    "note": "The $53,000 matches; the $23,425 figure appears only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Marshall Park debt exclusion tax impact and soft/hard costs",
+    "t": 3915,
+    "ours": "Marshall Park debt exclusion tax impact: 46 cents per thousand, $504,937, $231",
+    "official": "",
+    "note": "Official minutes give no tax impact or cost breakdown; the garbled captions ($10,56,022, $847,98) cannot be checked against them."
+   },
+   {
+    "kind": "agree",
+    "about": "State/House $50,000 earmark for Lunenburg schools",
+    "t": 5188,
+    "ours": "State supplemental budget item for Lunenburg schools: $50,000",
+    "official": "the House budget includes a $50,000 earmark intended for educational programs in Lunenburg",
+    "note": "Same amount and purpose."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant mailing cost estimate",
+    "t": 12913,
+    "ours": "Town meeting warrant mailing cost: a little over 7,000",
+    "official": "",
+    "note": "Official says the Town Manager would look into printing and mailing costs and report back, with no figure given."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Merit award policy decision",
+    "t": 9955,
+    "ours": "Apply the merit award policy only to SAP (non-union) employees for this first year, and pursue a warrant article at the fall special town meeting to move it out of the SAP and make it a townwide policy.",
+    "official": "Town Manager Warren-Dyment agreed to revise the draft based on input and present a final version at a future meeting.",
+    "note": "Ours records a decision (SAP-only, fall warrant article); official records only revision of the draft. Check the recording near t=9955."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sick leave bank policy decisions",
+    "t": 8266,
+    "ours": "Draft a three-year lockout on re-enrollment for any employee who withdraws from the sick leave bank program, rather than making enrollment fully irrevocable or a simple annual opt-in/out.",
+    "official": "Town Manager Warren-Dyment noted that a revised draft incorporating these changes would be brought back for further review.",
+    "note": "Ours records specific direction (three-year lockout, counsel drafting confidentiality language); official has only general suggestions. Check whether the board gave direction or only discussed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "56 Carr Ave sell or hold: appraisal",
+    "t": 12703,
+    "ours": "Proceed with getting the 56 Cedar Circle (\"56 Car A Seller\") property professionally appraised before further board action.",
+    "official": "Chair Nuzzolo suggested further evaluation of the site's development potential and alignment with broader planning goals before a final recommendation is made.",
+    "note": "The address is a caption error for 56 Carr Avenue, but ours records an appraisal decision the official minutes do not mention. Check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Budget task force charge",
+    "t": 12597,
+    "ours": "Check in with the school committee and finance committee for suggestions before finalizing the recharged budget task force membership.",
+    "official": "It was agreed that the final language would be refined to reflect these concerns. The updated charge will be reintroduced at a future meeting.",
+    "note": "Both defer the charge, but ours records consulting the school and finance committees on membership; the official does not. Check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Gift policy dollar thresholds",
+    "t": 10586,
+    "ours": "Gift policy dollar thresholds: $500, $50",
+    "official": "",
+    "note": "The official minutes describe the gift policy discussion without any dollar thresholds."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sunday entertainment license fee",
+    "t": 551,
+    "ours": "Sunday entertainment license fee: $400",
+    "official": "",
+    "note": "No fee is mentioned in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Parks Commission chair name",
+    "ours": "Anita Shipers (chair of the parks commission, presenter)",
+    "official": "Anita Scheipers, Chair of the Parks Commission",
+    "note": "Misheard surname.",
+    "official_reading": "Anita Scheipers"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Health plan consultant name",
+    "ours": "Susan Shulu (Sue Shaloo) (health plan consultant, Cook and Company, presenter)",
+    "official": "Susan Shillue of Cook & Company",
+    "note": "Misheard surname.",
+    "official_reading": "Susan Shillue"
+   },
+   {
+    "kind": "caption_error",
+    "about": "APDC chair name",
+    "ours": "Tony Skelleny (chair, Architectural Preservation District Commission)",
+    "official": "Tony Sculimbrene, 5 Island Road Chair of the Architectural Preservation District Commission (APDC)",
+    "note": "Misheard surname.",
+    "official_reading": "Tony Sculimbrene"
+   },
+   {
+    "kind": "agree",
+    "about": "Select Board members present",
+    "ours": "the chair (chair), Renee (member), Tom (member), Amanda (member), Michael Ray (member), Jen (town manager)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Michael-Ray Jeffreys, Clerk Amanda Moore , Member Tom Alonzo, and Member Renee Emkey",
+    "note": "All five members and the town manager appear in both; ours gives first names only."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "HR director attendee",
+    "ours": "Julie (HR director)",
+    "official": "",
+    "note": "The official minutes list no HR director and mention no one by that name; check whether she spoke on the sick leave bank and merit award items."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Asian Imperial patio alteration hearing",
+    "ours": "",
+    "official": "No vote was taken; a formal hearing will be re-noticed for a future meeting.",
+    "note": "Our minutes do not record this scheduled item; no vote involved."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:30:46Z",
+   "cost_usd": 0.270443
+  }
+ }
 }

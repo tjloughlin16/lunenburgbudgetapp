@@ -510,5 +510,221 @@
    "at": "2026-09-27T19:34:29Z",
    "cost_usd": 0.199424
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05132025-7219",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-05-13-minutes-7219.txt",
+   "path": "sources/meetings/select-board/2025-05-13-minutes-7219.pdf"
+  },
+  "official_sha256": "fe52e06b9a4d246f0064b453880aace4d33c89ce4e96f9789320519f952a9e00",
+  "coverage": "full",
+  "summary": "The two records agree on all five non-procedural votes and the main decisions, with the differences mostly in names and figures. The main point for a reader: our minutes say the board \"leaned toward\" joint sessions and a standing monthly meeting, but the official minutes record no decision on that. They also record no figures for the Council on Aging or cemetery items we caught, and they print the warrant as $328,059.72 where our captions garbled it.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 5,
+   "discrepancy": 4,
+   "only_in_ours": 6,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: ratify Brody Tapley/Tapply appointment as student police officer effective May 18, 2025",
+    "ours": "Ratify the town manager's appointment of Brody Tapley as student police officer effective May 18, 2025 — passed unanimously",
+    "official": "Motion by \nChair Nuzzolo to ratify the Town Manager’s Appointment of Brody \nTapply as Student Police Officer, effective May 18, 2025. Seconded by Vice-Chair \nJeffreys. Call for the vote: Four-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same motion, date and outcome; only the surname spelling differs (Tapley vs Tapply).",
+    "t": 2290
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: co-sponsor LHS Cares trash cleanup May 31, 9-12",
+    "ours": "Co-sponsor the LHS Cares Lunenburg trash pickup on May 31 from 9 a.m. to 12 p.m. — passed unanimously",
+    "official": "Motion by \nMember Alonzo to co-sponsor the LHS Cares Lunenburg Trash Clean Up event \non May 31st from 9:00 a.m. to 12:00 p.m. Seconded by Vice-Chair Jeffreys. Call for the vote: \nFour-aye. The motion passed unanimously (4-0-0).",
+    "note": "Same motion and outcome.",
+    "t": 3899
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: ratify batch of five appointments",
+    "ours": "Ratify appointments of Jared Bowser (seasonal beach director), Logan Okonnell (executive assistant), Brian Gingris (land use manager), Casey Corey (seasonal lifeguard), and James Versoy (seasonal cemetery laborer) — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to ratify the Town Manager’s Appointments as described \nabove. Seconded by Member Alonzo. Call for the vote: Four-aye. The motion passed \nunanimously (4-0-0).",
+    "note": "Same unanimous ratification; names in ours are misheard versions of the official ones, and the official lists the Tapply appointment again in this batch.",
+    "t": 4094
+   },
+   {
+    "kind": "caption_error",
+    "about": "Appointee name: Jared Bowser / Jarrod Bowser",
+    "ours": "Jared Bowser (seasonal beach director)",
+    "official": "Ratification of the Town Manager's Appointment of Jarrod Bowser as Seasonal \nBeach Director",
+    "note": "Same appointment, name misheard.",
+    "official_reading": "Jarrod Bowser",
+    "t": 4094
+   },
+   {
+    "kind": "caption_error",
+    "about": "Appointee name: Logan O'Connell",
+    "ours": "Logan Okonnell (executive assistant)",
+    "official": "Ratification of the Town Manager's Appointment of Logan O’Connell as Executive \nAssistant to the Town Manager and Select Board",
+    "note": "Same appointment, name misheard.",
+    "official_reading": "Logan O’Connell",
+    "t": 4094
+   },
+   {
+    "kind": "caption_error",
+    "about": "Appointee name: Brian Gingras",
+    "ours": "Brian Gingris (land use manager)",
+    "official": "Ratification of the Town Manager's Appointment of Brian Gingras as Land Use \nDirector",
+    "note": "Name misheard; title differs (manager vs director) but it is the same appointment.",
+    "official_reading": "Brian Gingras",
+    "t": 4094
+   },
+   {
+    "kind": "caption_error",
+    "about": "Appointee name: James Versoi",
+    "ours": "James Versoy (seasonal cemetery laborer)",
+    "official": "Ratification of the Town Manager's Appointment of James Versoi as Seasonal \nCemetery Laborer",
+    "note": "Name misheard.",
+    "official_reading": "James Versoi",
+    "t": 4094
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: MOA with Public Employee Committee for FY2026 health insurance",
+    "ours": "Approve the memorandum of agreement between the Town of Lunenburg and the Lunenburg Public Employee Committee for FY2026 health insurance, effective July 1, 2025 through June 30, 2026 — passed unanimously",
+    "official": "Motion by \nVice-Chair Jeffreys to approve the Memorandum of Agreement between the Town \nof Lunenburg and the Lunenburg Public Employee Committee (FY 2026 Health \nInsurance). Seconded by Member Alonzo. Call for the vote: Four-aye. The motion passed \nunanimously (4-0-0).",
+    "note": "Same motion and outcome; the effective dates are only in ours.",
+    "t": 4554
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: create Bylaw Review Committee",
+    "ours": "Create a bylaw review committee consistent with the town charter — passed unanimously",
+    "official": "Motion by \nVice-Chair Jeffreys to create a Bylaw Review Committee consistent with the Town \nCharter. Seconded by Member Alonzo. Call for the vote: Four-aye. The motion passed \nunanimously (4-0-0).",
+    "note": "Same motion and outcome.",
+    "t": 4861
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant amount",
+    "ours": "Accounts payable warrant: $328,59.72",
+    "official": "Accounts Payable warrant in the amount of $328,059.72",
+    "note": "Digit grouping dropped a zero in the captions.",
+    "official_reading": "$328,059.72",
+    "t": 5504
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Budget Task Force / joint sessions decision",
+    "ours": "The board leaned toward not recharging the budget task force, favoring joint sessions between the select board and school committee on the budget instead",
+    "official": "Member Alonzo stated that he does not believe a Budget Task Force is necessary.",
+    "note": "Official minutes record individual members' views and no board decision; ours calls it the board's lean. Check the video around t=5342 on whether any consensus was reached.",
+    "t": 5342
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Standing monthly joint meeting with school and finance committees",
+    "ours": "Consider a standing monthly joint meeting with the school committee and finance committee on the budget, to be finalized with the incoming board",
+    "official": "Clerk Moore stated that there should be more regularly scheduled joint meetings with the School Committee.",
+    "note": "Official has no monthly cadence, no finance committee, and no deferral to the incoming board; check the video at t=5463.",
+    "t": 5463
+   },
+   {
+    "kind": "agree",
+    "about": "Post town election/meeting results on website",
+    "ours": "Town manager asked to post town meeting results and booklets more accessibly on the town website",
+    "official": "Vice-Chair Jeffreys stated that he requests that the Town Manager and the Town Clerk add the Town Election and Town Meeting results on the website.",
+    "note": "Same request; ours adds booklets and omits the Town Clerk and election results.",
+    "t": 5528
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Board help sharing LHS Cares sign-up form",
+    "ours": "The board will help share the LHS Cares cleanup sign-up form through the superintendent's email and school channels",
+    "official": "",
+    "note": "Official minutes do not mention the sign-up form or the sharing through the superintendent's email.",
+    "t": 3569
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Memorial Day flag-staking posted on Facebook",
+    "ours": "The board agreed to post John Bowen Jr.'s Memorial Day flag-staking event on the town's Facebook page",
+    "official": "He stated that he is organizing the placement of cemetery stake flags \non veterans’ graves on Memorial Day.",
+    "note": "Official records the event announcement and no board agreement to post it; check the video at t=6461.",
+    "t": 6461
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Trivia fundraiser over $31,000",
+    "ours": "Are You Smarter Than a Sixth Grader trivia fundraiser: over $31,000",
+    "official": "",
+    "note": "Official only thanks participants of the event and gives no amount.",
+    "t": 2545
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance cost increase 14%",
+    "ours": "Health insurance cost increases: 14%",
+    "official": "",
+    "note": "Official minutes of the MOA item give no percentage.",
+    "t": 4615
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School budget growth model 12%",
+    "ours": "School budget growth model: 12%",
+    "official": "",
+    "note": "Official minutes give no such figure.",
+    "t": 5279
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Council on Aging $3,000 line and $5 senior meal fee",
+    "ours": "Council on Aging program budget line: $3,000; Senior meal fee / possible meal budget: $5",
+    "official": "",
+    "note": "Official Council on Aging report mentions a Program Coordinator and payment processing but no dollar figures.",
+    "t": 5756
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cemetery capital funding figures",
+    "ours": "Cemetery capital funding: over $1 million, $100,000 a year, $14.36, 2.5%",
+    "official": "",
+    "note": "Official only records John Bowen saying the Town needs to invest in the Cemeteries; no figures.",
+    "t": 6653
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tax Investigation Report and tabled items",
+    "ours": "",
+    "official": "Chair Nuzzolo stated that the Board will need to vote upon the acceptance of the report at a future meeting.",
+    "note": "Official records report discussion and tabled sick leave, gift policy and 56 Carr Avenue items, with no vote; ours has none of these.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: board composition and names",
+    "ours": "Tom Alonzo (select board member (outgoing)); Michael Ray Jeff (select board member (outgoing)); Amanda (select board member); the Chair (select board chair); Jen (Warren) (town manager); the Chief (police chief)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Michael-Ray Jeffreys, Clerk Amanda \nMoore, Member Tom Alonzo \nMembers Absent: Member Renee Emkey \nAlso Present: Jennifer Warren-Dyment, Town Manager",
+    "note": "Same people with names misheard or unnamed (Michael-Ray Jeffreys, Amanda Moore, Warren-Dyment, Chief Thibodeau). Official also names Nuzzolo as chair and lists Emkey as absent; ours omits her.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: state delegation and student presenters",
+    "ours": "Senator John Cronin (state senator); Representative Margaret Scarsdale (state representative)",
+    "official": "State Senator John Cronin and Representative Margaret Scarsdale presented citations to Vice-\nChair Michael-Ray Jeffreys and Member Tom Alonzo.",
+    "note": "Both present; the five LHS Cares students (Grace, Lola, Emma, Madison, Ava) appear in both with some surname captions in ours not in the official.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:29:49Z",
+   "cost_usd": 0.270611
+  }
  }
 }

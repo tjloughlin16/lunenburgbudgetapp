@@ -449,5 +449,218 @@
    "at": "2026-09-27T22:58:08Z",
    "cost_usd": 0.20024
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04072025-7152",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2025-04-07-minutes-7152.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2025-04-07-minutes-7152.pdf"
+  },
+  "official_sha256": "be4d4f51c820e0e6adf12fcc96c266d42060e348d232ade06dcbe206a16bdbff",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the Brooks House discussion (a lean toward demolition, parking worries, subdivision options, and the 21st and 29th meetings). The official minutes are a short summary and leave out the Town Hall/Ritter cost figures, the warrant article, the Finance Committee vote and the open-house and presentation planning that fill most of our record. A reader should check who the \"Anthony Sculumbrine\" is: we list him as a member, and the town lists him as a community guest.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 10,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Anthony/Tony Skellen Breeny: member or guest",
+    "t": 0,
+    "ours": "Tony Skellen Breeny (also heard as Stellenbreeny/Scullen Breeny) (member)",
+    "official": "Community Guests: Anthony Sculumbrine",
+    "note": "Same person by name, but we list him as a committee member and the town lists him as a community guest; check the roll call in the recording and the committee roster."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Christina's surname",
+    "t": 0,
+    "ours": "Christina (roll call surname heard as \"Msidis\") (member)",
+    "official": "Kristina Masaitis",
+    "note": "Misheard surname and first-name spelling of the same member.",
+    "official_reading": "Kristina Masaitis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Dave's surname",
+    "t": 0,
+    "ours": "Dave (roll call surname heard as \"Allison\") (member)",
+    "official": "David Blatt",
+    "note": "The captions gave Dave the surname Allison, which the official minutes give to Matthew; the member is David Blatt.",
+    "official_reading": "David Blatt"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Matt",
+    "t": 0,
+    "ours": "Matt (member)",
+    "official": "Matthew Allison",
+    "note": "Same member, given by first name only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Tom Gray and Greg Roy",
+    "t": 0,
+    "ours": "Greg Roy (member); Tom Gray (member)",
+    "official": "Members Present: Michael-Ray Jeffreys, Tom Gray, David Blatt, Kristina Masaitis, Matthew \nAllison, Greg Roy",
+    "note": "Both are listed as present in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair's name and absent member",
+    "t": 0,
+    "ours": "the Chair (not named in captions; addressed as \"Mr. Chair\") (chair)",
+    "official": "Members absent: Brian Lehtinen",
+    "note": "The official minutes name the absent member (Brian Lehtinen), which we do not record; the chair is presumably Michael-Ray Jeffreys, who moved to adjourn, but the official text does not say so."
+   },
+   {
+    "kind": "agree",
+    "about": "Brooks House demolition leaning",
+    "t": 2251,
+    "ours": "Committee reaffirmed that a majority still supports demolition of the Brooks House, to be relayed to the select board as feedback rather than following the November town meeting charge for sale/lease.",
+    "official": "The committee largely leaned towards demolition, indicating that the building might not be a viable option for long-term use.",
+    "note": "Both record a lean toward demolition; neither records a formal vote, and only ours says it goes to the select board as feedback."
+   },
+   {
+    "kind": "agree",
+    "about": "Library parking concerns",
+    "t": 3081,
+    "ours": "The chair will communicate to the select board that Christina has significant concerns about parking impacts on the library if Brooks House parking/easements are created.",
+    "official": "Concerns were raised regarding the impact on existing library parking spaces, especially \nduring peak usage times.",
+    "note": "Same concern; ours attributes it to Christina and adds a follow-up to the select board."
+   },
+   {
+    "kind": "agree",
+    "about": "Subdivision option for Brooks House",
+    "t": 3121,
+    "ours": "Chair will follow up with the land use director for prior subdivision work; Greg Roy and Matt were invited to sketch a possible subdivision/parcel option to bring back for discussion.",
+    "official": "The committee will draft a proposal outlining options for the Brooks House, including \npotential subdivision of the property.",
+    "note": "Same direction; ours names who will sketch the option."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting dates",
+    "t": 4306,
+    "ours": "An additional meeting was set for April 29th, 5:30-6:15pm, to review the town meeting presentation, in addition to the previously scheduled April 21st meeting.",
+    "official": "The committee will meet again on the 21st and the 29th at 5:30 PM to further discuss the \nBrooks House and other related topics.",
+    "note": "Both give April 21 and 29; the official minutes give no end time and describe the topic as the Brooks House, while ours says the 29th reviews the town meeting presentation."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Brooks House sale expectations",
+    "t": 574,
+    "ours": "Brooks House sale expectations: $400,000, $500,000",
+    "official": "",
+    "note": "The official summary has no sale price expectations."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town Hall/Ritter construction cost estimate",
+    "t": 3458,
+    "ours": "Town Hall/Ritter building construction cost estimate: $18 million",
+    "official": "",
+    "note": "The official minutes contain no project cost figures; the recording should be checked for the figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Environmental testing and abatement allowance",
+    "t": 3478,
+    "ours": "Environmental testing and abatement allowance: $183",
+    "official": "",
+    "note": "Not in the official minutes; the captured figure of $183 is probably truncated (possibly $183,000), so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Total project cost estimate and FF&E",
+    "t": 3499,
+    "ours": "Total project cost estimate: roughly 22 million; Furnishings, fixtures and equipment (FF&E): half a mill, almost half a million bucks",
+    "official": "",
+    "note": "Cost estimates are discussed in the recording but not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bond counsel target and warrant article figure",
+    "t": 3525,
+    "ours": "Bond counsel target estimate: 23 million; Precision of the warrant article dollar figure: $21 million,997,000 and500",
+    "official": "",
+    "note": "The warrant article amount is garbled in the captions and absent from the official minutes; check the recording for the exact figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Projected operating/utility costs",
+    "t": 4980,
+    "ours": "Projected operating/utility costs for new building: $3 and $4.50 a square foot",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Finance Committee recommendation vote",
+    "t": 4769,
+    "ours": "Finance Committee recommendation vote on warrant article: five to one, six to one",
+    "official": "",
+    "note": "Our minutes give two different counts (5-1 and 6-1) for a vote of another body; neither appears in the official minutes, so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Open houses limited to Town Hall and Ritter",
+    "t": 3142,
+    "ours": "Open houses for town meeting will focus only on Town Hall and Ritter buildings, not Brooks House or TC Pacios, given limited staff time and to keep the article's scope clear.",
+    "official": "",
+    "note": "The official minutes record no open-house decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Storyboards and printed renderings",
+    "t": 3925,
+    "ours": "Committee will order storyboards and print colored 11x17 renderings (roughly 200-300 packets) as handouts for the open houses.",
+    "official": "",
+    "note": "A decision about handouts that the official minutes do not record."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town meeting presentation by the chair",
+    "t": 4409,
+    "ours": "The chair will give the town meeting presentation, with another member offering to stand up in support.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Brooks House charge and October 30 target",
+    "t": 0,
+    "ours": "",
+    "official": "Aim for the property to be available for sale or lease \nby October 30, 2025.",
+    "note": "The official minutes describe the select board's charge, including the October 30, 2025 target date and the four-parking-space minimum; ours does not record these."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "TC Passios building discussion",
+    "t": 0,
+    "ours": "",
+    "official": "The committee briefly discussed the ongoing issues with the TC Passios building, including \nenvironmental concerns and plans for mothballing parts of it.",
+    "note": "Ours mentions TC Pacios only in the open-house scoping decision; the mothballing discussion is not recorded."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Condition of the Brooks House and stormwater basin parking",
+    "t": 0,
+    "ours": "",
+    "official": "Potential solutions, including converting stormwater retention basins into parking spaces, were discussed.",
+    "note": "The official minutes record repair needs and the idea of converting stormwater basins to parking, and ours does not."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:49:10Z",
+   "cost_usd": 0.281358
+  }
  }
 }

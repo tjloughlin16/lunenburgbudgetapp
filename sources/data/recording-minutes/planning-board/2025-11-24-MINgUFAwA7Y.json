@@ -397,5 +397,200 @@
    "at": "2026-09-27T11:45:43Z",
    "cost_usd": 0.19408
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11242025-7528",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-11-24-minutes-7528.txt",
+   "path": "sources/meetings/planning-board/2025-11-24-minutes-7528.pdf"
+  },
+  "official_sha256": "71e8831800a26246bb3375bab2bf8f7a18ce6e3a8ae5936c3589c2a4b5f74b3f",
+  "coverage": "full",
+  "summary": "Both records agree on the main outcomes: the Dragos appointment, Graves peer review, continuance to 12/15, the single December meeting, the schedule, and the Townsend Harbor bond left undecided. They differ on the Special Permit continuance vote, which only the official minutes record, and on whether Amanda Reid attended, since the official minutes mark her absent and ours list her as a member.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Appoint Judy Dragos to Economic Development Committee",
+    "ours": "Appoint Judy Dragos to the open seat on the Economic Development Committee — passed",
+    "official": "Judy Dragoslis - candidate for EDC",
+    "note": "Same appointment and a passed outcome; the official spelling 'Dragoslis' looks like a typo for Dragos, and the official roll call is 3-0.",
+    "t": 461
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Flood-plain/Special Permit hearing continuance",
+    "ours": "Open only the site plan approval and storm water permit hearings for 30 Summer Street tonight; continue the flood-plain special permit hearing, with the applicant to sign a continuance form.",
+    "official": "Special Permit – Gregory Roy (Dillis&Roy) requested Continuance until 12/15/25 for a full 4-member quorum., A. Burney requested Letter to be filed",
+    "note": "The official minutes record a roll-call vote (3-0) on the Special Permit continuance and a reason (full 4-member quorum); ours records no vote and describes a continuance form, not a letter. Check the recording around t=650.",
+    "t": 650
+   },
+   {
+    "kind": "agree",
+    "about": "Send 30 Summer Street stormwater/site plan to Graves for peer review",
+    "ours": "Send the 30 Summer Street application (site plan approval and storm water permit) to Graves for peer review — passed",
+    "official": "Stormwater and Site Plan – A. Burney made motion for Peer Review to Graves Engineering; T. Willsmer second",
+    "note": "Same motion. The official text gives no separate vote result for this motion, while ours says passed.",
+    "t": 2536
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 30 Summer Street hearing to 12/15",
+    "ours": "Continue the 30 Summer Street public hearing to the December 15th meeting at 6:05 p.m. — passed",
+    "official": "Motion by A. Burney to continue until 12/15/25; T. Willsmer second",
+    "note": "Same continuance to 12/15, passed 3-0 by roll call in the official minutes. The 6:05 p.m. time appears only in ours (official lists 6:00 P.M. as the usual start).",
+    "t": 2844
+   },
+   {
+    "kind": "agree",
+    "about": "Combine December meetings into one",
+    "ours": "Combine the two December meetings into a single meeting on December 15th.",
+    "official": "December condensed to 1 meeting due to Holidays",
+    "note": "Same decision.",
+    "t": 2707
+   },
+   {
+    "kind": "agree",
+    "about": "Meeting schedule",
+    "ours": "Set the meeting schedule: December 15th, then January 5th and January 19th at the usual time.",
+    "official": "12/15, 1/5/26, 1/19/26",
+    "note": "Same dates.",
+    "t": 4749
+   },
+   {
+    "kind": "agree",
+    "about": "100/116 Townsend Harbor Road bond tabled",
+    "ours": "Table the 100/116 Towns Harbor Road bond amount until the applicant provides a planting cost estimate.",
+    "official": "No Decision – have not received an estimate",
+    "note": "Same outcome: no decision pending an estimate. 'Towns Harbor' is a caption error for Townsend Harbor, and the official minutes do not say it is a planting estimate.",
+    "t": 2984
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Correct address error on Mulpus/Goodrich Street decision",
+    "ours": "Correct the front-page address error on the Mulpus/Goodrich Street decision before it is signed.",
+    "official": "",
+    "note": "No such item appears in the official minutes.",
+    "t": 3047
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Master Plan Steering Committee grid comfort",
+    "ours": "Board members present said they were comfortable with the direction of the Master Plan Steering Committee's grid without further formal discussion tonight.",
+    "official": "",
+    "note": "The official minutes list only 'Nothing new, finalizing/collecting input requests' for the Master Plan Steering Committee and do not mention the grid.",
+    "t": 3794
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "30 Summer Street project scope figures",
+    "ours": "30 Summer Street self-storage facility scope: approximately 104,700 square ft, 104,700",
+    "official": "",
+    "note": "The official minutes carry no project details such as square footage.",
+    "t": 736
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stormwater/impervious area figures",
+    "ours": "Stormwater/impervious area, 30 Summer Street: .9 five or 995, .86 acres, 12 or 13%",
+    "official": "",
+    "note": "Not in the official minutes. The caption text is garbled and unreliable.",
+    "t": 1157
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Project cost vs. parking sizing",
+    "ours": "Project cost vs. parking sizing, 30 Summer Street: three four million dollars",
+    "official": "",
+    "note": "Not in the official minutes. The caption figure is unclear ('three four million').",
+    "t": 2201
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: chair and member roster, and Amanda",
+    "ours": "Matthew (chair); Tim (member); Adam (member); Amanda (member)",
+    "official": "Roll Call: M. Brenner, T. Willsmer, A. Burney                             Absent:  A. Reid",
+    "note": "Ours lists Amanda as a member present, but the official minutes mark A. Reid (Amanda Reid) absent and record only three votes; check the recording to see whether Amanda attended. Matthew, Tim and Adam correspond to Brenner, Willsmer and Burney.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Planning office admin name",
+    "ours": "Lee Bane (planning office admin assistant)",
+    "official": "A. Burney welcomed Leigh Bain as the new Admin for the Planning Dept.",
+    "note": "Same person; the captions misheard the name.",
+    "official_reading": "Leigh Bain"
+   },
+   {
+    "kind": "agree",
+    "about": "Richard Harris, land use director",
+    "ours": "Richard Harris (interim land use director)",
+    "official": "Richard Harris – Land Use Director",
+    "note": "Same person; ours adds 'interim'.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant's engineer name",
+    "ours": "Greg Roy (presenter (applicant's engineer, Dillison Roy))",
+    "official": "Gregory Roy (Dillis&Roy)",
+    "note": "Same person and firm, with the firm name misheard in the captions.",
+    "official_reading": "Gregory Roy (Dillis&Roy)"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Special Permit continuance vote",
+    "ours": "",
+    "official": "Special Permit – Gregory Roy (Dillis&Roy) requested Continuance until 12/15/25 for a full 4-member quorum., A. Burney requested Letter to be filed",
+    "note": "The roll-call vote (3-0) on the Special Permit continuance does not appear as a vote in ours; see the discrepancy on the continuance.",
+    "t": 650
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair/Director's report and committee reports",
+    "ours": "",
+    "official": "MBTA passed non-controversially at Special Town Meeting",
+    "note": "Not in our minutes; the same goes for the committee reports (Open Space, Capital Planning, EDC, Storm Water Task Force).",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes approval backlog",
+    "ours": "",
+    "official": "No minutes to approve as still a backlog due to staffing",
+    "note": "Not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fitchburg Zoning Act abutting community notice",
+    "ours": "",
+    "official": "Fitchburg Planning Board – Zoning Act",
+    "note": "No action was required, and ours does not mention it.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "A. Burney absent 1/5/26",
+    "ours": "",
+    "official": "A. Burney will not be attending 1/5/26 meeting",
+    "note": "Not in ours.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:22:11Z",
+   "cost_usd": 0.23901899999999998
+  }
  }
 }

@@ -918,5 +918,362 @@
    "at": "2026-09-28T12:17:18Z",
    "cost_usd": 0.203294
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03272025-7011",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-03-27-minutes-7011.txt",
+   "path": "sources/meetings/finance-committee/2025-03-27-minutes-7011.pdf"
+  },
+  "official_sha256": "d19635b8f9742b5557e366e974c476138486053d9409317b8f0446d3ebf3c0d8",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the free cash, stabilization, special-projects and FY25 transfer figures and on most department totals once digit grouping is repaired. They differ on the attendee list, on several department totals (Facilities, Human Services, Culture and Recreation, Intergovernmental, Unclassified), and on decisions recorded by only one side. The official minutes are a summary and omit the sewer, OPEB and reserve-transfer discussion, while ours omit the override deferral and the annual-report option decision.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 10,
+   "discrepancy": 12,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Certified free cash to schools $500,000",
+    "ours": "Certified free cash to the Lunenburg Public Schools FY26 operating budget — $500,000 (discussed only, proposed for warrant)",
+    "official": "There is a transfer of $500,000 of certiﬁed free cash to support the public",
+    "note": "Same amount and purpose; neither record shows a vote.",
+    "t": 650
+   },
+   {
+    "kind": "agree",
+    "about": "General stabilization reduced to zero",
+    "ours": "Free cash to general stabilization fund — $100,000 reduced to zero (discussed only, proposed for warrant)",
+    "official": "The general stabilization account has been reduced to $0.",
+    "note": "Same outcome; the $100,000 original figure appears only in ours.",
+    "t": 672
+   },
+   {
+    "kind": "agree",
+    "about": "Special purpose stabilization $250,000 eliminated",
+    "ours": "Free cash to special purpose stabilization funds — $250,000 eliminated (discussed only, proposed for warrant)",
+    "official": "There are   now no transfers into the special purpose stabilization funds which",
+    "note": "Both say the transfers are eliminated from the original $250,000.",
+    "t": 694
+   },
+   {
+    "kind": "agree",
+    "about": "Assessor's overlay $250,000 to $175,000",
+    "ours": "Assessor's overlay reserve: $250,000, 175,000",
+    "official": "The assessor’s overlay was originally budgeted for $250,000 but that",
+    "note": "Same reduction from $250,000 to $175,000.",
+    "t": 567
+   },
+   {
+    "kind": "agree",
+    "about": "Special projects articles totalling $152,500",
+    "ours": "Special projects warrant article: $152,500, 75,000, 27,500, $50,000",
+    "official": "There are 3 special projects warrant articles totaling $152,500.",
+    "note": "Total and the three components ($75,000, $27,500, $50,000) match.",
+    "t": 778
+   },
+   {
+    "kind": "agree",
+    "about": "FY25 snow and ice deficit transfer $415,000",
+    "ours": "FY25 transfer to close snow and ice deficit — 415,000 (discussed only, proposed for warrant)",
+    "official": "- Snow and ice deﬁcit transfer of $415,000 (may be reduced at town",
+    "note": "Same amount; the $465,000 total of FY25 transfers also matches.",
+    "t": 821
+   },
+   {
+    "kind": "agree",
+    "about": "FY25 special education move-in transfer $50,000",
+    "ours": "FY25 transfer for special education student move-in costs — 50,000 (discussed only, proposed for warrant)",
+    "official": "- School special education move in transfer of $50,000 (may be",
+    "note": "Same amount and purpose.",
+    "t": 865
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY26 capital program total",
+    "ours": "FY2026 Capital program: $655,000",
+    "official": "FY 2026 Capital program totals $655,424",
+    "note": "Looks like a rounded or truncated hearing of $655,424; check the recording if exactness matters.",
+    "t": 927,
+    "official_reading": "$655,424"
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY26 capital program detail in warrant list",
+    "ours": "FY2026 Capital program detail: 1, 225,000",
+    "official": "- FY 2026 Capital program - totaling: $1,225,000",
+    "note": "Digit grouping error. Note the official minutes give two different capital totals ($655,424 and $1,225,000).",
+    "t": 9689,
+    "official_reading": "$1,225,000"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Starting free cash figure",
+    "ours": "Total FY26 expenditures / remaining free cash: $219,500",
+    "official": "FY 2027 starting free cash $219,576",
+    "note": "Likely a rounded hearing of $219,576; official labels it FY 2027 starting free cash, so confirm what the figure represents.",
+    "t": 1009,
+    "official_reading": "$219,576"
+   },
+   {
+    "kind": "caption_error",
+    "about": "General government budget",
+    "ours": "General government total budget: 2,962 $263.4",
+    "official": "$2,962,263.14",
+    "note": "Misgrouped digits of the same figure.",
+    "t": 1967,
+    "official_reading": "$2,962,263.14"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police budget",
+    "ours": "Police budget total: 2,434 77247",
+    "official": "Police: $2,434,77.42",
+    "note": "Same figure garbled; the official text itself is malformed (likely $2,434,477.42), so check the packet.",
+    "t": 3707,
+    "official_reading": "$2,434,77.42"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Fire budget",
+    "ours": "Fire budget total: 1,744 $587.6",
+    "official": "Fire: $1,744,587.91",
+    "note": "Digit grouping error.",
+    "t": 3834,
+    "official_reading": "$1,744,587.91"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Other public safety total",
+    "ours": "Other Public Safety total: $368,900",
+    "official": "Other public safety: $368,488.90",
+    "note": "Differs by about $411, more than rounding; check the town manager's budget document.",
+    "t": 3965
+   },
+   {
+    "kind": "caption_error",
+    "about": "Education budget",
+    "ours": "Education (school) budget total: 27 million $21,995",
+    "official": "Education: $27,121,995",
+    "note": "Misgrouped digits of $27,121,995.",
+    "t": 4051,
+    "official_reading": "$27,121,995"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Monty Tech assessment",
+    "ours": "Monti Tech assessment: 1,334 521, 8.88%",
+    "official": "Monty Tech: $1,334,521",
+    "note": "Name spelling and digit grouping; the 8.88% is only in ours.",
+    "t": 4121,
+    "official_reading": "$1,334,521"
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW budget",
+    "ours": "DPW budget total: 2,476 95329",
+    "official": "DPW: $2,476,953.29",
+    "note": "Digit grouping error.",
+    "t": 4248,
+    "official_reading": "$2,476,953.29"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Facilities and Buildings total",
+    "ours": "Facilities and buildings total: 1,673 19630",
+    "official": "Facilities and Buildings: $1,067,396.30",
+    "note": "1,673,196.30 vs 1,067,396.30 differ in more than grouping; check the budget document and recording.",
+    "t": 4351
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Human Services total",
+    "ours": "Human Services total: $478,900",
+    "official": "Human Services (consolidated): $478,242.76",
+    "note": "Differ by about $657; check the budget document.",
+    "t": 4476
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Culture and Recreation total",
+    "ours": "Culture and Recreation total: $39,375, $2,000",
+    "official": "Culture and Recreation (consolidated): $639,036.70",
+    "note": "Ours is far below $639,036.70 and cannot be read as the same total; check the recording.",
+    "t": 4807
+   },
+   {
+    "kind": "agree",
+    "about": "Maturing debt approx $2.5 million",
+    "ours": "Maturing debt: $393,100, $244,500, $2.5 million",
+    "official": "Maturing Debt: $2,547,440.36",
+    "note": "Consistent with $2.5 million; the component figures appear only in ours.",
+    "t": 4943
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Intergovernmental assessments total",
+    "ours": "Intergovernmental assessments / Worcester County Retirement: 2,392 572, 2 milon $127,800, $264,700, 12%",
+    "official": "Intergovernmental Assessments: $3,425,578.98",
+    "note": "Ours reads about $2.39 million versus $3.43 million; check the recording and budget document.",
+    "t": 4994
+   },
+   {
+    "kind": "discrepancy",
+    "about": "General government unclassified total",
+    "ours": "General government unclassified total: 4,177 n13, 14.84%, 7%",
+    "official": "General Government Unclassiﬁed: $ 4,107,709.13",
+    "note": "4,177,xxx vs 4,107,709; differ beyond grouping; check the budget document.",
+    "t": 5207
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Grant writer position",
+    "ours": "Grant manager/grant writer position: $50,000",
+    "official": "$50,000 grant writer position has been eliminated to",
+    "note": "Official records the position eliminated to restore pavement management; ours lists only the figure. Check the recording for whether elimination was announced.",
+    "t": 1988
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Reserve fund total",
+    "ours": "Finance committee reserve fund: $200,000, 185,000, $15,000",
+    "official": "$15,000 decrease to the reserve fund bringing the total to",
+    "note": "Official gives a $210,000 reserve fund after a $15,000 decrease; ours has $200,000 and $185,000 and puts $210,000 on the salary reserve. Check which fund was reduced and to what.",
+    "t": 2611
+   },
+   {
+    "kind": "only_in_official",
+    "about": "IT department increase",
+    "ours": "",
+    "official": "- $104,089 increase to the IT department.",
+    "note": "Ours has IT figures (166,000, 134,000, outsourced IT) but not this increase.",
+    "t": 3164
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Override vote deferred",
+    "ours": "",
+    "official": "The Committee agrees to defer their vote awaiting additional",
+    "note": "Official records the Committee deferring its vote on the citizen petition override; ours records no vote or deferral. Check the recording near the petition discussion.",
+    "t": 9061
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Annual report option chosen",
+    "ours": "",
+    "official": "The Committee agrees with option 1.",
+    "note": "Official records a decision to give an approved opinion despite open questions; ours has no such decision. Check the recording.",
+    "t": 15233
+   },
+   {
+    "kind": "agree",
+    "about": "Votes and public hearing next week",
+    "ours": "Committee will vote on all warrant articles and finalize its town meeting report at next week's meeting, with a public hearing held the same night.",
+    "official": "Votes will be taken at the next meeting.",
+    "note": "Both defer voting to next week; official also lists the Thursday, April 3 public hearing and votes.",
+    "t": 9061
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Backup Zoom meeting April 7",
+    "ours": "Committee will schedule a backup Zoom meeting for Monday, April 7 at 7:00 pm to finalize the annual town meeting report if needed.",
+    "official": "",
+    "note": "Official lists April 3 and April 10 only; check whether April 7 was agreed.",
+    "t": 15233
+   },
+   {
+    "kind": "agree",
+    "about": "School headcount and budget questions",
+    "ours": "Anna will formally request from the school department: (1) employee headcount FY20-FY26 across all funding sources, and (2) a reconciled comprehensive operating budget presentation",
+    "official": "- School department headcount",
+    "note": "Official lists headcount and budget comparison among Ana Lockwood's topics; it does not record a formal request.",
+    "t": 13704
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Outside review of school budget",
+    "ours": "",
+    "official": "Jay Simeone suggests having an outside source complete a deep dive of their",
+    "note": "Suggestion not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sewer and OPEB transfers",
+    "ours": "General fund transfer to OPEB sewer trust fund — $22,500; Sewer stabilization fund transfer — $1,144; Sewer reserve capacity stabilization fund transfer — $5,133 15",
+    "official": "",
+    "note": "Official only lists OPEB transfers and the sewer enterprise without amounts.",
+    "t": 11202
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fire chief reserve transfer request",
+    "ours": "Reserve transfer request from fire chief for vehicle maintenance — 10K 11k (discussed only, to be decided next meeting)",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 15361
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "SAP COLA and IT sub-detail follow-ups",
+    "ours": "IT department will provide the committee a sub-detail breakdown of the roughly $442,000 contracted services line.",
+    "official": "",
+    "note": "Official lists the COLA article without figures and does not mention these follow-ups.",
+    "t": 3436
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Tom Gray",
+    "ours": "Tom (Finance Committee member)",
+    "official": "Absent Member: Clerk Tom Gray",
+    "note": "Official lists Tom Gray absent, yet also has him speaking on the annual report and moving to adjourn; check attendance.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Anna",
+    "ours": "Anna (Finance Committee member)",
+    "official": "Committee Member Ana Lockwood",
+    "note": "Name spelling.",
+    "t": 0,
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Jen vs Vice Chair Jean Russell and Tanya Dall",
+    "ours": "Jen (Finance Committee member)",
+    "official": "Vice Chair Jean Russell, Committee Member",
+    "note": "Jen may be Jean Russell misheard, but Tanya Dall (present per official) is not in ours; check who attended.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendees not named in official",
+    "ours": "Ezekiel (Izzy) (Finance Director); Brian (School Committee representative)",
+    "official": "",
+    "note": "Official says no Finance Director report and does not name these two.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment",
+    "ours": "",
+    "official": "John Bowen, 162 Highland Street, inquired whether or not public comment will",
+    "note": "Official records residents' comments (Bowen, Mcleod, Passios); ours do not.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:52:24Z",
+   "cost_usd": 0.100319
+  }
  }
 }

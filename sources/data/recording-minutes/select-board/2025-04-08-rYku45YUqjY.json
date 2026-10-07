@@ -637,5 +637,355 @@
    "at": "2026-09-27T22:58:34Z",
    "cost_usd": 0.203074
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04082025-7156",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-08-minutes-7156.txt",
+   "path": "sources/meetings/select-board/2025-04-08-minutes-7156.pdf"
+  },
+  "official_sha256": "575b9aa9d9444a17712eb1987adfe59f84c4b03a21b3535d0d93f285aaa7a141",
+  "coverage": "full",
+  "summary": "The two records agree on every recorded motion and its tally except that the official minutes also record a January 23, 2024 minutes approval and a close-of-hearing vote that ours lack. Most differences are misheard names and one misheard dollar figure. Ours records discussion, decisions and figures (debt, tax impact, school budget gap) that the official minutes do not.",
+  "counts": {
+   "agree": 16,
+   "caption_error": 7,
+   "discrepancy": 5,
+   "only_in_ours": 9,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: ratify Chief of Police appointment",
+    "ours": "Ratify the town manager's appointment of Jeffrey Tibido as Chief of Police, contingent on successful contract negotiation. — passed unanimously",
+    "official": "Thibodeau as Chief of Policy contingent upon successful contract negotiation.",
+    "note": "Same motion, contingency and unanimous 5-0-0 result; name differences are logged separately.",
+    "t": 816
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Shriners toll booth June 7",
+    "ours": "Approve the Shriners' toll booth fundraiser request for June 7. — passed unanimously",
+    "official": "Motion by Member Alonzo to approve the tollbooth fundraiser request by the",
+    "note": "Same motion, date and unanimous (5-0-0) result.",
+    "t": 987
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Home Fruit Wine one-day license",
+    "ours": "Approve special 1-day wine and malt license for Home Fruit Wine, May 10 (rain date May 11). — passed unanimously",
+    "official": "Motion by Member Alonzo to approve the special one-day wine/malt license application for",
+    "note": "Same motion, date, rain date and unanimous result.",
+    "t": 1151
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Ecoloop peddler's license with no-UAS stipulation, 4-1",
+    "ours": "Approve peddler's license for Paul Chenchuli/Ecoloop with stipulation of no UAS/drone use under the license. — passed 4 to 1",
+    "official": "doing business as Ecoloop with the additional stipulation that no UAS flights are permitted",
+    "note": "Same motion and 4-1 tally; official names the lone no vote as Vice-Chair Jeffreys, which ours does not state.",
+    "t": 1727
+   },
+   {
+    "kind": "caption_error",
+    "about": "Peddler applicant's name",
+    "ours": "Paul Chenchuli/Ecoloop",
+    "official": "Motion by Member Alonzo to approve the peddlers license application for Paul Cianciulli",
+    "note": "Misheard surname of the same applicant.",
+    "t": 1727,
+    "official_reading": "Paul Cianciulli"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Peddler's license: Sunday exclusion",
+    "ours": "Board declined to restrict the peddler's license to exclude Sunday hours.",
+    "official": "exclude Sundays from the license.",
+    "note": "Official only says the Vice-Chair wanted Sundays excluded and records no board decision on it; the final motion has no Sunday limit. Check the recording around t=1706 for whether the board explicitly declined.",
+    "t": 1706
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: pole petition West Townsend Road",
+    "ours": "Approve the pole petition for West Townsend Road, Plan 978-L. — passed unanimously",
+    "official": "3978-L, with the proposed new pole being as indicated on the provided documentation.",
+    "note": "Same vote, 5-0-0. Official motion text says 3978-L while its own hearing heading says #978-L; likely a typo in the official minutes.",
+    "t": 1974
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote to close the pole petition public hearing",
+    "ours": "",
+    "official": "Motion by Member Alonzo to close the Public Hearing. Seconded by Vice-Chair Jeffreys.",
+    "note": "Official records a separate 5-0-0 vote to close the hearing; ours has no such vote (procedural in nature)."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article 8 recommendation withdrawn, replaced with defer",
+    "ours": "Withdraw the recommended approval of Article 8 (capital program) and replace it with a deferral. — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to withdraw the recommendation to “approve” and replace",
+    "note": "Same motion, unanimous 5-0-0.",
+    "t": 3427
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article 13 recommend approval",
+    "ours": "Recommend approval of Article 13. — passed unanimously",
+    "official": "Motion by Member Alonzo to recommend approval of Article 13. Seconded by Vice-Chair",
+    "note": "Same motion and result.",
+    "t": 3448
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article 14 recommend approval",
+    "ours": "Recommend approval of Article 14. — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys for the Selectmen to recommend approval of Article 14.",
+    "note": "Same motion and result.",
+    "t": 3489
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article 29 recommend approval",
+    "ours": "Recommend approval of Article 29 (municipal building/renovation project). — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to recommend approval of Article 29. Seconded by Clerk",
+    "note": "Same motion and result.",
+    "t": 6911
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: annual town election warrant",
+    "ours": "Approve the annual town election warrant. — passed unanimously",
+    "official": "Motion by Member Alonzo to approve the Annual Town Election warrant. Seconded by",
+    "note": "Same motion and result.",
+    "t": 7168
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: 2025 town meeting booklet",
+    "ours": "Approve the 2025 annual town meeting booklet as presented, with changes at the town manager's discretion. — passed unanimously",
+    "official": "Motion by Member Alonzo to approve the 2025 Annual Town Meeting booklet and include",
+    "note": "Same motion and result.",
+    "t": 7209
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on January 23, 2024 minutes",
+    "ours": "",
+    "official": "Motion by Vice-Chair Jeffreys to approve the minutes of January 23, 2024. Seconded by",
+    "note": "Official records a unanimous 5-0-0 approval of the January 23, 2024 minutes; ours records no such vote. Check the recording near the minutes item (around t=8042)."
+   },
+   {
+    "kind": "agree",
+    "about": "March 11 and 18 minutes not approved",
+    "ours": "March 11 and March 18, 2025 minutes were sent back for revision rather than approved, given inaccuracies noted by members.",
+    "official": "The Board provided feedback on the March 11, 2025 and March 18, 2025 minutes and the Town",
+    "note": "Both show no approval and a redraft; official does not mention inaccuracies explicitly.",
+    "t": 8042
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Articles 32 and 33 assessors exemptions",
+    "ours": "Board kept its recommendation of approval on the assessors' exemption articles 32 and 33 despite uncertainty about Department of Revenue approval.",
+    "official": "what the Department of Revenue was going to do with these articles if passed.",
+    "note": "Official records only the Town Manager's uncertainty and no vote or kept recommendation; check the recording near t=3635 for whether a recommendation was actually affirmed.",
+    "t": 3635
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Articles 32 and 33 removed from consent calendar",
+    "ours": "Articles 32 and 33 (assessors exemptions) were removed from the proposed consent calendar due to late-changed language.",
+    "official": "calendar and the possibility of adding others.",
+    "note": "Official only says discussion occurred and lists no removal of these articles; check the recording near t=7440.",
+    "t": 7440
+   },
+   {
+    "kind": "agree",
+    "about": "Marshall Park ballot question",
+    "ours": "The Marshall Park ballot question was drafted to cover the base scope common to either version that might pass at town meeting, without a dollar figure, per legal requirements for debt exclusion ballot language.",
+    "official": "She said they have made one ballot question for the Marshall Park project which covers any",
+    "note": "Same single ballot question covering any town meeting outcome; official omits the no-dollar-figure and legal-requirement detail.",
+    "t": 7148
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town meeting motion assignment round-robin",
+    "ours": "Town meeting motion assignments will generally follow a round-robin among board members, with members who worked directly on an article presenting it.",
+    "official": "",
+    "note": "Not mentioned in the official minutes.",
+    "t": 7688
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Invite Green Communities Committee chair",
+    "ours": "Town manager will try to invite the Green Communities Committee chair to explain the grant process to the board.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 2951
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town counsel check on school capital swap presentation",
+    "ours": "Board directed staff to check with town counsel whether the school capital swap can be presented as two options under one article, or as two separate articles, before the warrant goes to print.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3387
+   },
+   {
+    "kind": "agree",
+    "about": "Fire grant $3,964",
+    "ours": "FY25 fire/EMS grant funds (unexpended, being awarded): $3,964",
+    "official": "Town Manager Warren-Dyment stated Lunenburg will be receiving $3,964 from the Executive",
+    "note": "Same amount.",
+    "t": 2217
+   },
+   {
+    "kind": "caption_error",
+    "about": "SAFE grant $4,699.45",
+    "ours": "$4,69945",
+    "official": "will receive $4,699.45 from the FY25 SAFE program and $2,199.87 from the Senior SAFE",
+    "note": "Decimal point dropped by captions; Senior SAFE $2,199.87 matches.",
+    "t": 2248,
+    "official_reading": "$4,699.45"
+   },
+   {
+    "kind": "agree",
+    "about": "Article 8 heat pump $146,865",
+    "ours": "$146,865, 170,000",
+    "official": "$146,865 for the new heat pump.",
+    "note": "The $146,865 figure matches.",
+    "t": 2578
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Article 8 second figure 170,000",
+    "ours": "170,000",
+    "official": "",
+    "note": "Official minutes give no 170,000 figure for the swap.",
+    "t": 2578
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Shriners fundraising example figures",
+    "ours": "$50, $60,000",
+    "official": "",
+    "note": "Official minutes do not record these amounts.",
+    "t": 902
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Marshall Park and municipal building tax impact figures",
+    "ours": "$33 a household; $54,937, 55,000, $288 a year",
+    "official": "",
+    "note": "Official minutes say only that the Board discussed impacts to taxpayers, with no figures.",
+    "t": 3945
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Debt assumptions and projected excludable debt percentages",
+    "ours": "4%, 4.5; 14%, 11%; 6.87%, 9.86, 12.27, 11.81, 11.22%, 10.83%",
+    "official": "",
+    "note": "Official only says the Board discussed the Town debt policy; none of these figures appear.",
+    "t": 4192
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Comparison to prior consolidation plan",
+    "ours": "$29 million, 22.4, 2/3",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 5988
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School budget gap and override history; state aid requests",
+    "ours": "$948,000, $2 million, 8%, 38, 9%; $100,000, $200,000, $190,000, $240,000, $150",
+    "official": "",
+    "note": "Not in the official minutes. Official School Committee report mentions only $500,000 free cash, a different item.",
+    "t": 8913
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Caesar Nuzolo (chair)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Michael-Ray Jeffreys, Clerk Amanda",
+    "note": "Misspelled surname.",
+    "official_reading": "Caesar Nuzzolo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair's name",
+    "ours": "Michael Ray Jeffy (member (vice chair; chairs the Municipal Building Design Committee))",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Michael-Ray Jeffreys, Clerk Amanda",
+    "note": "Misheard surname.",
+    "official_reading": "Michael-Ray Jeffreys"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Renee's surname",
+    "ours": "Renee (member)",
+    "official": "Moore, Member Tom Alonzo, and Member Renee Emkey",
+    "note": "Surname not caught by captions.",
+    "official_reading": "Renee Emkey"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Amanda's role and the clerk",
+    "ours": "Amanda (member); the clerk (clerk)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Michael-Ray Jeffreys, Clerk Amanda",
+    "note": "Official makes Amanda Moore the board's Clerk; ours lists Amanda as a member and a separate unnamed clerk. Check whether 'the clerk' is the same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Member Tom Alonzo present",
+    "ours": "Tom Alonzo (member)",
+    "official": "Moore, Member Tom Alonzo, and Member Renee Emkey",
+    "note": "Same attendee."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager's name",
+    "ours": "Jen (town manager)",
+    "official": "Also Present: Jennifer Warren-Dyment, Town Manager",
+    "note": "First name only in captions.",
+    "official_reading": "Jennifer Warren-Dyment"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police chief's name",
+    "ours": "Jeffrey Tibido (interim chief of police, presented for ratification as chief of police)",
+    "official": "Ratification of Town Manager’s Appointment of Chief of Police Jeffrey Thibodeau",
+    "note": "Misheard surname; same person.",
+    "official_reading": "Jeffrey Thibodeau"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minute clerk",
+    "ours": "",
+    "official": "Lauren Menard",
+    "note": "Minute clerk named in official minutes; absent from ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager report items",
+    "ours": "",
+    "official": "Town Manager Warren-Dyment stated Lunenburg will be receiving $3,964 from the Executive",
+    "note": "Official has a long Town Manager report (health insurance renewal, Flat Hill bridge, vacancies, PEC contract) and committee reports that ours does not record as votes or decisions."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment speakers",
+    "ours": "",
+    "official": "Glenn McLeod, 436 Reservoir Road commented regarding the Municipal Building Design",
+    "note": "Official records Sculimbrene, McLeod and Bowen and Member Alonzo's closing comment; ours has none."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:49:46Z",
+   "cost_usd": 0.40477599999999997
+  }
  }
 }

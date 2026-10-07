@@ -382,5 +382,205 @@
    "at": "2026-09-27T02:16:03Z",
    "cost_usd": 0.19456800000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06302026-7878",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-06-30-minutes-7878.txt",
+   "path": "sources/meetings/sewer-commission/2026-06-30-minutes-7878.pdf"
+  },
+  "official_sha256": "e11f457cc7eb94c65d5d127c3c174ec0fc7dbe2fef60d97663189decf8beeb12",
+  "coverage": "full",
+  "summary": "The two records agree on the substance: both record the same two 5-0 votes, the same 990 Mass Ave and delinquency discussion, and the same reorganization outcome. Differences are mostly caption misrenderings of names and figures. The one substantive gap is that the official minutes record an additional vote, to accept the minutes of 6/09/26, which our minutes omit. Our $6,000 figure, the Laurel Lane contract and the CTE contract bid are also unmatched in the other record.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 8,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: accept End of Year Adjustments",
+    "t": 1090,
+    "ours": "Accept the end-of-year adjustments (final-reading commitment) — passed 5-0 (Chip, Dan, Scott, Art, chair all aye)",
+    "official": "To accept the End of Year Adjustments for FY26.  \nRoll Call Vote: Chip-aye, Dan-aye, Scott-aye, Arthur-aye, and Brett-aye.",
+    "note": "Same motion and same 5-0 roll call in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: keep appointed roles the same",
+    "t": 2181,
+    "ours": "Keep all appointed sewer commission roles (chair, vice chair, clerk) the same, no changes — passed 5-0 (Chip, Art, Dan, Scott, chair all aye)",
+    "official": "To keep the appointed roles the same.  \nRoll Call Vote: Chip-aye, Arthur-aye, Dan-aye, Scott-aye, and Brett-aye.",
+    "note": "Same motion and 5-0 outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to accept minutes of 6/09/26",
+    "ours": "",
+    "official": "To accept the minutes of 6/09/26.                         Roll Call Vote: Arthur-aye, Chip-aye, Dan-aye, and Brett-aye.",
+    "note": "The official minutes record a 4-0 roll call (Scott absent from the vote) that our minutes do not list; check the recording near the start of the meeting for this vote and whether Scott voted."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brett Ramston (chairman)",
+    "official": "Chair- Brett Ramsden",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair's name",
+    "ours": "Scott Doll (vice chair)",
+    "official": "Vice-Chair- Scott Dall",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Scott Dall"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Arthur's name",
+    "ours": "Arthur Gaters (member)",
+    "official": "Member: Arthur Katis",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Arthur Katis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Chip's name",
+    "ours": "Chip Olsen (member)",
+    "official": "Chip \nWilson",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Chip Wilson"
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW director's name",
+    "ours": "Bill Bertic (DPW director)",
+    "official": "DPW Director- Bill Bernard",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Bill Bernard"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Business manager's name",
+    "ours": "Andrew Bellier (business manager)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Andrew Valliere"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk's name",
+    "ours": "Jane Manley (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Jane Ranley"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Connection charge for extra bedroom",
+    "t": 1500,
+    "ours": "990 Mass Ave connection/betterment charges: 5330, 220",
+    "official": "990 Mass Ave. was charged the $220 for the extra bedroom. and had already paid \nthe betterment fee.",
+    "note": "220 matches; '5330' has no counterpart in the official minutes and is likely a mishearing of 'betterment' or an unrelated figure, so check the recording if it matters.",
+    "official_reading": "$220"
+   },
+   {
+    "kind": "agree",
+    "about": "Minimum residential connection fee",
+    "t": 1536,
+    "ours": "Minimum residential connection charge (bylaw): 3900, $3900",
+    "official": "a minimal residential connection fee of $3,900 is charged per",
+    "note": "Same $3,900 figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Q4 delinquency recap",
+    "t": 1197,
+    "ours": "Q4 FY26 demands recap: late fees and delinquency: $1,920, 240, 25%, 11%, 12%, 10%, 20%",
+    "official": "240 delinquent notices went out for about 25% delinquency rate for \nthe quarter but was 11-12 % delinquency for the year.",
+    "note": "240, 25% and 11-12% match; $1,920, 10% and 20% do not appear in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Gas-affected manhole depth",
+    "t": 343,
+    "ours": "Replacement of the gas-affected manhole: 15 ft",
+    "official": "He estimated that manhole is about 15’ deep.",
+    "note": "Same depth figure."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Manhole decision: how to proceed",
+    "t": 343,
+    "ours": "Continue investigating the deep, gas-affected manhole on Prospect Street/Laurel Lane before committing to a plan.",
+    "official": "Bill replied no as it was already on the repair list and suggested putting out another \nInvitation to Bid to replace that one manhole.",
+    "note": "Ours frames it as continued investigation; official says Bill proposed a new IFB to replace the manhole while having CTE assess the timeline. Check the recording to see whether a replacement bid was settled on."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Contractor cutting open manhole cover to inspect",
+    "t": 568,
+    "ours": "Have the contractor cut open the manhole cover and inspect with flashlights to gauge the timeline before deciding on urgency.",
+    "official": "",
+    "note": "The official minutes say only that CTE will look at it; the cut-open-and-flashlight detail is not recorded."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "End-of-year adjustment / delinquent account $6,000",
+    "t": 944,
+    "ours": "End-of-year adjustments / delinquent account: $6,000",
+    "official": "",
+    "note": "The official minutes mention a high negative number from a 6-week leak but give no $6,000 figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Commission reviewing the contractor's bid language together",
+    "t": 896,
+    "ours": "The commission will continue to review the sewer contractor's bid language together before it goes out.",
+    "official": "",
+    "note": "The official minutes say Bill will email the contract to the Commissioners but do not describe a joint review."
+   },
+   {
+    "kind": "agree",
+    "about": "Bylaw language for extra-unit connection fee",
+    "t": 2034,
+    "ours": "The director and business manager will draft bylaw/regulation language addressing a connection fee for homes split into additional dwelling units or addresses, and bring it to the next meeting.",
+    "official": "Bill and Andrew will write up the language and have Town Counsel \nlook at it.",
+    "note": "Same task assigned to Bill and Andrew, with discussion at the next meeting; the official adds the Town Counsel review."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Laurel Lane pressure line contract",
+    "ours": "",
+    "official": "Bill reported he is putting out contract language for replacing 3 pressure lines from the manhole \nto the property line.",
+    "note": "Our minutes do not record the 100 Laurel Lane pressure line replacement bid, due out by 7/8."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "CTE contract renewal and bid timing",
+    "ours": "",
+    "official": "He has put a new contract together with the goal of putting it out to bid by July 8th",
+    "note": "The official minutes record the CTE O&M contract ending August and a new bid by July 8; ours does not."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Counsel's opinion on extra connection fee",
+    "ours": "",
+    "official": "Andrew and Bill met with Town Counsel, who said they \ncannot charge another connection fee.",
+    "note": "Counsel's advice that a connection fee cannot be charged again is not in our decisions."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:14:53Z",
+   "cost_usd": 0.243257
+  }
  }
 }

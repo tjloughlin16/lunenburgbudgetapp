@@ -526,3 +526,21 @@ aggregated. Nothing here is `checked`.
   fund and no document closes that.
 - That the district's line-level figures are gross. At least one is documented as net, by
   the district's own comment, and nothing marks which others are.
+
+## When the MUNIS PO history arrives: read it for liquidations (6 October 2026)
+
+TJ, on the PO Audit Report run in `notes/outbound/drafts/MUNIS-REQUEST-RUNS.pdf`: a PO opened
+for $15,000 and paid at $11,000 shows in an expense report as an ordinary $11,000 payment.
+Only the PO history shows the $15,000 commitment, and the date the $4,000 remainder was
+**liquidated** back to the line. Across many POs, that is one candidate source of a year-end
+surplus that the expense side cannot explain. Reference:
+https://www.deschutescounty.gov/365/Munis-Purchasing-Topics-Part-IV-Analyses (not yet read
+or archived).
+
+What to measure, per PO: original amount, every change, amount paid, amount liquidated, and
+when -- especially liquidations after 30 June, and POs carried forward into the next year.
+Rule 7 applies: a large liquidation is a MEASUREMENT. "Departments over-encumber to hold
+money" is a HYPOTHESIS; a conservative quote, a cancelled order and a vendor credit produce
+the same record. Run 1's journal detail also carries the encumbrance and liquidation entries
+by account (Include encumb/liq entries, CNMI p10), so the two can be reconciled against each
+other.

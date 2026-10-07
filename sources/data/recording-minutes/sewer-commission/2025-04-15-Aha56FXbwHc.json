@@ -373,5 +373,197 @@
    "at": "2026-09-27T22:51:55Z",
    "cost_usd": 0.273352
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04152025-7161",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-04-15-minutes-7161.txt",
+   "path": "sources/meetings/sewer-commission/2025-04-15-minutes-7161.docx"
+  },
+  "official_sha256": "1d9d84a9340ebe05280d5cf161995190ed6ff7553341c6742153033ca9da827c",
+  "coverage": "full",
+  "summary": "The two records agree on all three votes and on the $5,626.43 and $14,255.64 amounts. They differ in small ways: the account and bill numbers, how the reimbursement would be funded, and a few attendee names and details only one record has. The thing to know is that our minutes record a plan to move the money from the capital improvement account and re-vote line items later. The official minutes say only that Bill noted the money could be moved if needed, and record no such plan.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 5,
+   "discrepancy": 3,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: waive interest on final invoice, account 101215, accept $5,626.43",
+    "ours": "That the commission waive all interest on the final invoice for account 101215, bill number 65067, and accept final payment in the amount of $5,626.43 — passed",
+    "official": "That the Commission waive all interest on the final invoice for the following account # 101215 6567 and accept final payment of $5,626.43.",
+    "note": "Same motion and amount; the official record shows a roll call of Joe, Scott and Brett, all aye, so it passed.",
+    "t": 648
+   },
+   {
+    "kind": "caption_error",
+    "about": "Bill number on the interest waiver",
+    "ours": "bill number 65067",
+    "official": "101215 6567",
+    "official_reading": "6567",
+    "note": "Our '65067' looks like a mishearing or misparse of the official '6567', which follows the account number; the official text may itself be truncated, so check the invoice.",
+    "t": 648
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: reimburse town $14,255.64 for DPW Director's time",
+    "ours": "To reimburse the town $14,255.64 from the sewer enterprise for the DPW director's time covering the business manager vacancy — passed",
+    "official": "To reimburse the $14,255. 64 to the town for the DPW Director’s time as Acting Sewer Business Manager.",
+    "note": "Same motion, amount and outcome (roll call all aye); only our 'from the sewer enterprise' is not in the official motion text.",
+    "t": 1016
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: enable UniPay partial payment option",
+    "ours": "To enable the partial payment option on the UniPay platform for water and sewer customers — passed",
+    "official": "To enable the partial payment option on our UniPay platform for the Sewer customers.",
+    "note": "Same motion and outcome (roll call all aye); ours says 'water and sewer customers' while the official says 'Sewer customers', a small wording difference.",
+    "t": 1298
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Funding of the $14,255.64 reimbursement / transfer",
+    "ours": "Cost of reimbursing the town for the business manager vacancy coverage to be drawn from the sewer capital improvement account, with line items to be formally re-arranged at a future meeting — $14,255.64 (discussed only)",
+    "official": "Joe asked if there would be any impact to the budget and Bill replied they have money sitting in Capital Improvement Account that they could move if needed. He noted the Commission would need to vote to approve.",
+    "note": "Ours says the funding will be drawn from the capital improvement account, with line items to be re-voted later. The official minutes say only that money could be moved if needed and a vote would be required, and record no decision. Check the recording near t=976 for what was actually agreed.",
+    "t": 976
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision on re-arranging line items at a future meeting",
+    "ours": "Line items will be re-arranged and voted on at a future meeting to reflect covering the $14,255.64 reimbursement from the capital improvement account rather than as a formal transfer tonight.",
+    "official": "Future Agenda Items- Commission vacancies, Manhole Repairs and Assistant Manager.",
+    "note": "Ours records a decision to re-arrange and vote on line items later, and the official future agenda list does not include it. Check the recording to see whether it was a decision or only a possibility.",
+    "t": 976
+   },
+   {
+    "kind": "agree",
+    "about": "Interest threshold and DPW time share",
+    "ours": "Waiver of interest on a final sewer bill (account 101215, bill 65067): $5,626.43, $5,626, $35, $15",
+    "official": "There was more interest due and since it was more than $15, it cannot be waived without a vote by the Commission.",
+    "note": "The $15 threshold matches. The $5,626.43 matches, and '$5,626' is a rounding of it. The official minutes do not mention the $35 we heard, so that figure is unconfirmed.",
+    "t": 469
+   },
+   {
+    "kind": "agree",
+    "about": "DPW Director time percentages",
+    "ours": "Reimbursement to the town for the DPW director's time covering the business manager vacancy: $14,255.64, 15%, 50%",
+    "official": "Bill noted that usually 15% of his time is paid from the Sewer Enterprise Fund. However, while he was Acting Business Manager, 50% or more of his time was spent on Sewer issues. Accounting calculated the amount to be $14,255.64.",
+    "note": "The amount, 15% and 50% all match.",
+    "t": 792
+   },
+   {
+    "kind": "caption_error",
+    "about": "Assistant to the business manager position figure",
+    "ours": "Assistant to the business manager position: 17",
+    "official": "Assistant to the Business Manager Position- Bill reported they are in the process of hiring a new assistant and just waiting to confirm a start date.",
+    "note": "The official minutes give no figure for this item, so '17' is probably a caption artifact (possibly a date or number misheard) and should not be treated as a budget figure.",
+    "official_reading": "",
+    "t": 1351
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: vice chair",
+    "ours": "Brett Ramston (vice chair)",
+    "official": "Vice-Chair- Brett Ramsden",
+    "note": "Same person; the surname was misheard.",
+    "official_reading": "Brett Ramsden",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: commissioner Scott",
+    "ours": "Scott D. (commissioner)",
+    "official": "Clerk- Scott Dall",
+    "note": "Same person; the official gives the surname Dall and the role of Clerk.",
+    "official_reading": "Scott Dall",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: sewer business manager",
+    "ours": "Andrew Valerie (also heard 'Galier') (sewer business manager)",
+    "official": "Sewer Business Manager: Andrew Valliere",
+    "note": "Same person; the surname was misheard.",
+    "official_reading": "Andrew Valliere",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Joe Hurley and Bill Bernard",
+    "ours": "Joseph Hurley (commissioner); Bill Bernard (DPW director)",
+    "official": "Member: Joe Hurley, DPW Director- Bill Bernard",
+    "note": "Same people; 'Joseph' for 'Joe' is a harmless variation.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes clerk and Treasurer",
+    "ours": "",
+    "official": "Absent: Minutes Clerk- Jane Ranley",
+    "note": "The official minutes list the minutes clerk as absent, and Myleen (Treasurer) is mentioned in the text; ours records neither.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: reminders about not flushing items",
+    "ours": "Add an ongoing reminder on bills/website about not flushing wipes etc., since the prior mailing reduced pump clogs, possibly annually.",
+    "official": "The Commissioners agreed to keep reminding customers about items not to be flushed into the system via billing inserts, on the website and at Town Meetings.",
+    "note": "Same decision, with slightly different channels: ours says 'possibly annually' and omits Town Meetings.",
+    "t": 1971
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Next agenda items: Zoom/remote meeting law item",
+    "ours": "Drop the Zoom/remote-meeting-law item from the next agenda; keep vacancies and manhole/business-manager updates as standing agenda items.",
+    "official": "Future Agenda Items- Commission vacancies, Manhole Repairs and Assistant Manager.",
+    "note": "The future agenda lists broadly agree (vacancies, manhole, assistant), but the official minutes do not say the Zoom item was dropped. Check the recording for that decision.",
+    "t": 2015
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole repair pre-construction meeting",
+    "ours": "",
+    "official": "Manhole Repair IFB- Bill reported that they held a pre-construction meeting with Insituform Technologies on 4/2",
+    "note": "Our minutes do not record the pre-construction meeting with Insituform on 4/2.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sewer expansion discussion",
+    "ours": "",
+    "official": "Sewer Expansion- Joe asked if they have a mission statement on expanding sewer in town.",
+    "note": "Our minutes do not record the sewer expansion discussion (Comprehensive Wastewater Management Plan, Sewer Service Area, Town Meeting vote).",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Hybrid meetings extended",
+    "ours": "",
+    "official": "Andrew reported that they have extended the hybrid meetings until June 30, 2027.",
+    "note": "The extension of hybrid meetings to June 30, 2027 is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reminder of 4 months coverage and offsetting salary",
+    "ours": "Reimbursement to the town for the DPW director's time covering the business manager vacancy",
+    "official": "",
+    "note": "Not applicable; the official minutes do contain the 4-month coverage and the offsetting-salary point, so this item is omitted from ours rather than only in ours.",
+    "t": 792
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:30:46Z",
+   "cost_usd": 0.245303
+  }
  }
 }

@@ -1,0 +1,4617 @@
+===PAGE 1===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Munis 
+General Ledger 
+______________________________________________________  
+Procedural Documentation 
+ 
+  
+ 
+ 
+ 
+ 
+For more information, visit www.tylertech.com.  
+
+===PAGE 2===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 2 
+ 
+TABLE OF CONTENTS 
+Chart Manager ..................................................................................................................................................... 3 
+Account Master ................................................................................................................................................. 12 
+General Journal Entry/Proof ....................................................................................................................... 24 
+Recurring General Journal Entry ............................................................................................................... 41 
+General Journal Approval ............................................................................................................................. 48 
+Accounting Entries .......................................................................................................................................... 53 
+Month End Manager ........................................................................................................................................ 68 
+Month-End Processing Checklist ................................................................................................................ 71 
+Account Inquiry ................................................................................................................................................ 77 
+Year-to-Date Budget Report ........................................................................................................................ 93 
+Account Trial Balance Report ................................................................................................................... 104 
+Import Journals .............................................................................................................................................. 112 
+Year End Manager ......................................................................................................................................... 118 
+  
+===PAGE 3===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 3 
+ 
+Chart Manager  
+Overview 
+The Chart Manager program maintains your organization's chart of account segments and accounts. 
+The program also provides direct access to associated Munis programs that offer additional 
+maintenance actions for accounts and segments.  
+ 
+ 
+Use these options to create or maintain data in Munis programs: 
+• Excel Export—Export s data to Microsoft Excel. The program requires you to select whether 
+to export the currently displayed code values (fund, segment, and so on) or the current list of 
+accounts. 
+• Accounts— Opens the Account Master program. 
+• Copy Accounts—Copies one or more general ledger accounts using the Account Mass 
+Creation program. 
+• Account Change—Updates accounts, org codes, or segment values in the Change General 
+Ledger Account Codes program.  
+• Import Accounts— Opens the GL Account Import program to import accounts into Munis 
+from an electronic file. 
+• Account Merge—Merge s two or more general ledger accounts. 
+• Account Overview—Opens the Accounts Overview program to display general ledger 
+account details.  
+• Due To/Due From—Opens the Due To/Due From  Setup program to view and maintain due-
+to/due-from relationships.  
+• GL Settings— Opens the General Ledger Settings program to define parameters for general 
+ledger processing.  
+• Adv. Segment Info—Displays the Advanced Segment Information dialog box, featuring 
+account segment lengths and project segment lengths for expense and funding strings. 
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+• You have the appropriate permissions for maintaining general ledger accounts.  
+• All fund and segment codes, as well as your organization, object, and project codes, have 
+been created.  
+  
+
+===PAGE 4===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 4 
+ 
+Procedures 
+When you first open the Chart Manager program, it displays your organization's existing account 
+segments, in segment order.  
+ 
+ 
+Click the Adv. Segment Info option on the toolbar to view segment sizes for balance, expense, and 
+revenue accounts, as well as project segment sizes for funding and expense strings. 
+ 
+ 
+
+===PAGE 5===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 5 
+ 
+To view segment details, click the segment tab to refresh the display with the items specific to that 
+segment. For example, click the Fund tab to view all the available funds. Choose a fund from the list to 
+display details about it in the panel on the right. 
+  
+Adding a Rollup Code  
+ Click the Rollup Code tab. 
+ Click Add Rollup Code. 
+The program opens the fields for entry.  
+ 
+ 
+ Complete the fields, and then click Save to create the code.  
+
+===PAGE 6===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 6 
+ 
+Adding an Org Code  
+ Click the Organization tab. 
+ Click Add Organization. 
+The program opens the fields for entry. 
+ 
+ 
+ Complete the fields. 
+ Click Save to create the code. 
+ 
+
+===PAGE 7===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 7 
+ 
+Adding a Segment Code 
+When you use the Chart Manager program to add new segment codes to your organization's chart of 
+accounts structure, the program creates new codes for fund, segments 2–8, orgs, and objects. You can 
+view project codes in Chart Manager, but you must use the Project Master program to create new 
+project codes.  
+ Click the tab name that corresponds to the segment type to add. For example, to add a Department 
+code, click the Department tab.  
+The program refreshes the screen to display the existing segments of that type. 
+ 
+ 
+ Click Add Department. 
+Note: The name of the link varies depending on the segments your organization has established. 
+The program opens the fields for entry. 
+ 
+ 
+
+===PAGE 8===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 8 
+ 
+ Complete the fields to define the attributes of the segment code.  
+ Click Save to create the segment code. 
+Deleting a Segment Code 
+ Click the tab that corresponds to the segment of the segment code to delete. For example, to delete 
+a department code, click the Department tab. 
+ Locate the code and select it. 
+The program displays the details of the code. 
+ 
+ 
+ Click Delete Department to delete the selected code. 
+Note: The name of the link varies depending on your organization’s established segments. 
+The program displays a deletion confirmation message. 
+ 
+ 
+ Click Yes to continue. 
+The program deletes the code. 
+ 
+
+===PAGE 9===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 9 
+ 
+Exporting to Excel 
+The Chart Manager program provides two options to export information to Microsoft® Excel®: 
+• Export a list of the currently displayed segment codes. 
+• Export a list of accounts for a single segment code.  
+To produce a list of segment codes: 
+ Select the tab that corresponds to the type of segment code to export. For example, click the 
+Department tab to export a list of department codes. 
+ Click Excel Export. 
+The program displays a drop-down list with Export Department(s) as the only accessible option.  
+ 
+ 
+ Select Export Department(s). 
+The program generates the Excel file. 
+ 
+ 
+
+===PAGE 10===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 10 
+ 
+To produce a list of accounts: 
+ Select the tab that corresponds to the type of segment code associated with accounts to export. For 
+example, click the Department tab to export accounts that are associated with a specific department 
+code. 
+ Choose the segment code for which to export accounts. 
+The program refreshes to display the details of the selected segment code. 
+ 
+ 
+ Select the Accounts subtab. 
+The program displays a list of accounts that are associated with the selected segment code. 
+ 
+ 
+
+===PAGE 11===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 11 
+ 
+ Click Excel Export. 
+The program displays a drop-down list with options to either export the segment codes or the 
+accounts.  
+ 
+ 
+ Click Export Accounts. 
+The program generates the Excel file. 
+ 
+ 
+ 
+  
+
+===PAGE 12===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 12 
+ 
+Account Master  
+Objective 
+This document provides the procedure for creating general ledger accounts in Munis using the Account 
+Master program. 
+Overview 
+A Munis account number is constructed using a combination of the organization, object, and project 
+codes. If these components are not linked using the Account Master program, Munis will not recognize 
+them as a valid account during transaction entry, and you will not be able to post transactions.  
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+ 
+• You have menu access to the Account Master program.  
+• You have the appropriate permissions for maintaining general ledger accounts.  
+• All fund and segment codes, as well as your organization, object, and project codes, have 
+been created.  
+• A detailed chart of accounts (COA), which helps you to avoid errors such as misplaced or 
+incorrectly defined accounts, is in place.  
+• Any required budget rollup codes have been established in the Chart Manager program. 
+===PAGE 13===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 13 
+ 
+Procedure 
+Use the following steps to create accounts: 
+ Open the Account Master program. 
+Financials > General Ledger Menu > Set-Up/Chart of Accounts > Account Master 
+ 
+ 
+ On the toolbar, click Add.  
+ Complete the fields as required, referring to the following table as a guide. 
+Field Description Notes 
+Account 
+Org Code Contains the org code for the account 
+that you are creating. Enter the code or 
+use the field help button to select it.  
+ 
+Object Code Specifies the object code for the account. 
+Enter the code or use the field help 
+button to select it.  
+ 
+ 
+Project Code Indicates the project code for the 
+account. Project codes are an optional 
+feature and are applicable if your 
+organization uses Munis Project 
+Accounting. If applicable, enter the 
+appropriate code or use the field help 
+button to select it. 
+ 
+Fund Identifies the account fund, which is 
+always the first segment.  
+ 
+Segments 2–8 Identify the account segments. Segment 
+labels and order are assigned in General 
+Ledger Settings.  
+ 
+Object Specifies the object code of the account 
+being maintained.  
+ 
+
+===PAGE 14===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 14 
+ 
+Field Description Notes 
+If you are updating an account record, 
+the default value for the object code is 
+entered from the account being 
+maintained.  
+If you are adding a new record, enter an 
+object code.  
+Project Defines the project code of the account 
+being maintained.  
+If you are updating an account record, 
+the default value for the project code is 
+entered from the account being 
+maintained.  
+If you are adding a new record, you can 
+enter a project code.  
+ 
+Posting Effective Dates 
+Beginning/Ending 
+Effective Date 
+Determine the dates within which 
+transactions can be posted to this 
+account.  
+Leave both boxes blank to always allow 
+posting to the account. 
+ 
+Account Detail 
+Last Updated Displays the date that the account record 
+was most recently updated. The program 
+completes this box; it is a display-only 
+value. 
+This box is accessible as search criteria 
+when you click Search to locate an 
+account record.  
+ 
+Account Type Specifies the type of account: balance, 
+revenue, expense, or statistic.  
+Statistic accounts are used with Munis 
+Performance Based Budgeting. 
+ 
+Status Identifies the status of the account. The 
+status determines whether the account 
+can be included in reports and if 
+transactions can be posted to it. When 
+you are adding a record, the default 
+value is Active. The status options are: 
+• Active—I ndicates accounts that can 
+appear on all reports that display 
+account information and are available 
+for posting.  
+• Next—I ndicates accounts that are 
+designated as next year accounts. 
+An account with the Next status is 
+only available for next year budget 
+entries and reports. You cannot post 
+current year transactions to an 
+account identified with the Next 
+status. Accounts with the Next status 
+ 
+===PAGE 15===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 15 
+ 
+Field Description Notes 
+are automatically changed to the 
+Active status when you complete the 
+Year End Close program. 
+• Inactive—I ndicates accounts to 
+which you cannot post unless your 
+user ID is assigned to one or more 
+roles for which the General 
+Maintenance on Accounts permission 
+is granted in the General Ledger 
+Roles program. This permission also 
+allows you to include inactive 
+accounts on reports.  
+• Closed—I ndicates accounts to which 
+you cannot post. Closed accounts 
+only appear on reports that have the 
+option to print closed accounts. An 
+account cannot be closed if there has 
+been any nonbudgetary activity to it 
+in the current fiscal year. 
+Contra Account Designates the account as a contra 
+account, if selected. Contra accounts 
+show a negative amount for expenses 
+and a positive amount for revenues. 
+Available budget checks are not 
+performed for contra accounts. This 
+check box is not available for balance 
+sheet accounts. 
+ 
+Entity Identifies an entity code for the account, 
+if applicable. Entity codes determine how 
+Munis programs are shared between two 
+locations. The following options are 
+available: 
+ 
+1—First entity access only  
+2—Second entity access only  
+3—Shared access  
+ 
+Entity codes are established in the 
+System Settings program, which is 
+accessible from the System 
+Administration menu. 
+ 
+Spending Plan Contains the spending plan to which the 
+account belongs, if applicable.  
+ 
+Character Code Indicates the character code for the 
+account. This field is for display only. 
+You cannot edit the character code here. 
+Character codes are altered in Chart of 
+Account Segments. 
+ 
+Grant Associates the account with an entered 
+grant record. This can be done when the 
+ 
+===PAGE 16===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 16 
+ 
+Field Description Notes 
+account is created, as an update to an 
+existing account, or by using the Global 
+Update feature.  
+Accounts that have been associated with 
+a grant record are used to calculate the 
+amounts on the Application # tab of the 
+Grant Manager program. If the 
+associated account is an expense or 
+revenue account, it also appears on the 
+Associated Accounts/Projects tab in 
+Grant Manager. 
+Requires Project 
+String on Entry 
+Indicates that transactions that utilize this 
+account must enter a project string as 
+part of the account detail, if selected. 
+ 
+Budget 
+Budgetary Determines how the account’s budget is 
+created, if selected. Identifying an 
+account as a budgetary account allows it 
+to have a budget amount entered in the 
+Next Year Budget Entry program. 
+Nonbudgetary accounts usually have a 
+carryforward balance at the end of the 
+year instead of a new budget. 
+This option is not available for balance or 
+statistic accounts. 
+ 
+Auto-encumber Automatically encumbers the account’s 
+entire budget amount when it is posted 
+for the new fiscal year, if selected. This is 
+useful for salary accounts as it ensures 
+that you cannot spend money set aside 
+for employee pay. 
+This option is only available for expense 
+accounts. 
+ 
+Require Budget 
+Detail 
+Requires entry of budget detail when you 
+create budget projections for this 
+account, if selected. If the box is not 
+selected, budget entry has no 
+restrictions. 
+This box is not available for statistic 
+accounts. 
+ 
+Roll Available 
+Budget Forward 
+Directs the Open New Fiscal Year 
+program to use the account's remaining 
+available budget as the new year's 
+original budget, if selected. If the check 
+box is cleared, the Open New Fiscal 
+Year program enters a zero-dollar 
+amount as the original budget. The 
+Budget Completion Journal program 
+generates a journal entry for the original 
+budget from the budget projection. The 
+ 
+===PAGE 17===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 17 
+ 
+Field Description Notes 
+Account Inquiry program displays only 
+the budget completion journal (BUC), not 
+the remaining available budget that was 
+carried from the previous year. 
+This check box is only accessible for 
+annual fund accounts. 
+Allow Monthly 
+Budgeting 
+Indicates that the selected account can 
+be included in monthly budgeting, when 
+selected. 
+ 
+Budget Rollup 
+Code 
+Contains the budget rollup code to which 
+the account belongs, if applicable. 
+Budget rollup codes are established in 
+the Chart Manager program. 
+ 
+Budget Subrollup 
+Code 
+Specifies the budget rollup subgroup to 
+which the account belongs. The box is 
+only available if a rollup code has been 
+entered in the Budget Rollup Code box. 
+ 
+Next Year Budget 
+Rollup 
+Identifies the rollup group to use when 
+processing next year transactions for an 
+account. This field is accessible if the 
+Allow Use of Next Year Rollup Groups 
+setting is enabled in General Ledger 
+Settings. For budget checking for next 
+year transactions only, if the Allow Use of 
+Next Year Rollup Groups setting is 
+enabled and the Next Year Budget 
+Rollup field is completed with a valid 
+rollup code, the available budget 
+calculation uses the accounts with that 
+same next year code to determine the 
+available budget for the group. 
+ 
+Payroll 
+Payroll 
+Encumbrance 
+Account 
+Indicates that the account is used for 
+payroll encumbrance, if selected. This 
+check box can also be selected 
+automatically if you designate the object 
+code to be used for payroll encumbrance 
+accounts in the Chart of Account 
+Segments program. 
+The check box is only used for salary 
+accounts and not benefit/projection 
+accounts. 
+ 
+Balance Sheet 
+Balance Type Determines the type of balance sheet 
+account that you are creating: asset, 
+liability, or fund balance. This option is 
+only available for the balance account 
+type.  
+ 
+Normal Balance Identifies the normal balance for this 
+account: debit or credit.  
+ 
+===PAGE 18===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 18 
+ 
+Field Description Notes 
+Closing Balances Determines how Munis manages a 
+balance sheet account at year end:  
+• Carry—C auses the account balance 
+to be carried into the next fiscal year. 
+• Zero—C auses the account balance 
+to be closed to another account at 
+year end, and the balance begins the 
+new year at $0.00. If you choose this 
+option, you must complete the 
+Reference Account field with the 
+account number to which this 
+account closes. 
+• SOY Transfer—Causes the account 
+balance to be closed at the start of 
+the fiscal year. If you choose this 
+option, you must complete the 
+Reference Account field with the 
+account number to which this 
+account closes. The Open New 
+Fiscal Year program transfers all 
+balances to their designated 
+reference accounts.  
+ 
+If you change the value of this field while 
+updating an existing record, the program 
+displays a warning message that informs 
+you of the implications of your changes. 
+ 
+Control Account Identifies the type of control account, if 
+you are creating a control account. You 
+need to define certain control accounts 
+for each fund or fund/segment 
+combination.  
+See the Control Account Types section 
+of this document for a description of each 
+control account type. 
+ 
+Account Description 
+Full Specifies the name of the account as it 
+should appear on Munis programs and 
+reports.  
+The program automatically completes 
+the name with the description of the 
+object code entered, but you can change 
+it.  
+The name can contain up to 30 
+characters. 
+ 
+Short Provides a shortened version of the 
+account description as it should appear 
+on screens and reports where character 
+space is limited.  
+ 
+===PAGE 19===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 19 
+ 
+Field Description Notes 
+The short description can be up to 10 
+characters.  
+The default value for the short 
+description is the first 10 characters of 
+the full description.  
+Account Notes Displays a Text screen, where you can 
+maintain notes related to the active 
+account.  
+ 
+Next Year Full Identifies the name of the account for the 
+next year, if the account name changes 
+by fiscal year. This field must be 
+completed if you selected Next as the 
+account status. 
+ 
+Reference Account 
+Org 
+Obj 
+Project 
+Provide the org, object, and project 
+codes for the reference account of an 
+expense account type with a closing 
+balance method of Zero or SOY 
+Transfer. It can also be used for revenue 
+accounts in Donation fund types. In this 
+case, enter the expenditure account 
+number whose budget should be 
+increased when revenues are posted. 
+ 
+Notification 
+Warning 
+Level/Percent 
+Specifies a warning level for the account. 
+If you do not want to use this feature, set 
+the warning level to 0.00. If you do use 
+this feature, when the account balance 
+reaches the designated warning level or 
+below, a notification is sent. 
+For expense and revenue accounts, the 
+warning level is a percentage. 
+For balance sheet accounts, the warning 
+level is an actual cash amount. 
+To establish a recipient of warning 
+messages, create a business rule in the 
+Workflow Business Rules program with a 
+process type of BWA – Budget Warning 
+Notifications. 
+ 
+ Click Accept to save the record. 
+ Repeat the preceding steps for each account to create. 
+Results 
+The accounts necessary for your organization’s accounting process are available for use. These 
+accounts are the basis of all Munis accounting transactions.  
+Status Change 
+Accounts are now active in Munis General Ledger and are available for use in other modules. 
+===PAGE 20===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 20 
+ 
+Control Account Types 
+The following table provides descriptions of the different control account types, along with notations as 
+to whether they are required types and what their normal balance types should be. 
+ 
+Account Type Required? Normal 
+Balance 
+Description 
+AP Cash Yes Debit The AP cash account designates the account from 
+which accounts payable checks are posted. The due-
+to/due-from table keeps these funds in balance. The 
+AP cash account is typically the general fund or a 
+pooled cash fund. If your organization plans to use 
+distinct AP cash accounts along with corresponding 
+AP check forms, discuss the appropriate setup with 
+your project manager. Otherwise, the AP cash 
+account is the same for all funds. 
+ACI Liability No Credit An ACI liability account is used in conjunction with the 
+Active Card Integration (ACI) Export program. This 
+program imports files into the Works Fast Track 
+purchase card management system, which allows you 
+to issue payments using the ACI method. Payments 
+made using ACI create a credit to the ACI liability 
+control account, and a debit to the accounts payable 
+account. However, no vendor payment is made. 
+When the vendor submits an invoice, the amount 
+debits from the ACI liability account. 
+Accounts 
+Payable 
+Yes Credit An accounts payable account is the unique accounts 
+payable account for each fund. When an AP invoice 
+proof is updated, the expense accounts listed on its 
+invoices are debited and the accounts payable 
+account is credited. The system requires that the 
+account entered for this type be within the same fund 
+that was entered in the Fund field. 
+Appropriation No Credit An appropriation account type is necessary if you plan 
+to use the Budgetary GL Control option from the 
+General Ledger Settings program. When an 
+amendment (budget transfer) is entered to an 
+expense account within the fund, a balancing debit or 
+credit is made to the appropriation account. It is 
+combined with the estimated revenue balance at year 
+end, and the resulting figure is posted to the 
+budgetary fund balance – unreserved account. 
+Budgetary 
+Fund Balance 
+- Unreserved 
+No Debit A budgetary fund balance – unreserved account is 
+posted to once a year when the Close Current Fiscal 
+Year program is run. It receives the amount of the 
+carried forward appropriated fund balance account. 
+This number is the sum of balances from the 
+appropriation and estimated revenue accounts. The 
+budgetary fund balance – unreserved account is the 
+budgetary control account when using the Budgetary 
+GL Control option. 
+===PAGE 21===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 21 
+ 
+Account Type Required? Normal 
+Balance 
+Description 
+Budgetary 
+Fund Balance 
+– Reserved for 
+Encumbrances 
+Yes Credit The budgetary fund balance – reserved for 
+encumbrances account is only utilized if your 
+organization uses the Munis Purchase Order module. 
+This account is automatically updated when 
+encumbrances and liquidations are processed. When 
+an encumbrance is created, such as when a purchase 
+order is created, this account is credited. Once the 
+purchase order is liquidated, this account is debited 
+for the amount of the order.  
+Checks 
+Payable 
+No Credit The checks payable account type is only used if the 
+Update Cash During Cash Disbursements Journal 
+check box is not selected in the Accounts Payable 
+Settings program. Use this liability account if you do 
+not want checks updated when written, but rather 
+when cleared checks are returned from the bank. You 
+should use this account type if your bank returns 
+cleared checks daily. Do not use this account type if 
+your checks are returned monthly. This account will 
+be updated instead of the AP cash account when you 
+run a cash disbursements journal. After a cleared 
+check is entered into the Check Reconciliation 
+program, the checks payable and AP cash accounts 
+are updated. 
+Direct 
+Disbursements 
+Cash 
+No Debit This account type is optional, and it affects the Direct 
+Disbursements program. If your direct disbursements 
+are drawn from a petty cash account, and not AP 
+cash, enter the petty cash account as the reference 
+account. This causes the system to use this account 
+as a default cash account when an invoice is coded 
+as a direct disbursement.  
+Due To/Due 
+From 
+Yes  Due-to/due from accounts are required unless you are 
+using a distinct check stock for each checking 
+account, and creating individual warrants by checking 
+account. Coding an account as a due-to/due-from 
+account is not necessary if you are balancing to a 
+fund, as you must still set up the due-to/due-from 
+relationships in the Due To/Due From Setup program. 
+You only need to define an account as a due-to/due-
+from if you are balancing to a fund-segment 
+combination. 
+Encumbrances Yes Debit Encumbrance accounts are only used if your 
+organization utilizes the Munis Purchase Order 
+module. An account of this type is automatically 
+updated as encumbrances and liquidations are 
+processed. Whenever an encumbrance is created, 
+this account is debited by the system. Once 
+liquidation is processed, the account is credited. The 
+balance of this account should be the sum of the total 
+encumbrances within the fund. 
+===PAGE 22===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 22 
+ 
+Account Type Required? Normal 
+Balance 
+Description 
+Estimated 
+Revenues 
+No Debit Estimated revenues accounts need to be defined if 
+the Use Budgetary GL Control check box is selected 
+in the General Ledger Settings program. Whenever 
+an amendment (budget transfer) is entered to a 
+revenue account within the fund, a debit or credit is 
+made to this account. It is combined with the 
+appropriation balance at year end, and the total is 
+posted to the budgetary fund balance – unreserved 
+account. 
+Expenditures Yes Debit For an expenditures account, Munis automatically 
+creates a duplicate journal entry to this account every 
+time a journal entry is made to an expenditure 
+account within this fund. The resulting balance is the 
+year-to-date total of all expenses posted to this fund. 
+This is used by the Close Current Fiscal Year 
+program. At year end, the balance is netted with the 
+revenue control balance. The result is posted to the 
+fund balance – unreserved, undesignated account 
+and a journal entry is made to zero the balance. 
+Fund Balance 
+– Reserved for 
+Encumbrance 
+Yes Debit When the value of the Budget Carry Forward Method 
+option in the General Ledger Settings program is 2 – 
+Budgetary, an account with this type is used when 
+carrying forward a budget at year end. This account 
+replaces the original expense accounts for purchase 
+orders that are still open at the end of a year. The 
+Close Fiscal Year program uses this account to 
+reclassify a fund balance.  
+For Budget Carry Forward Methods 1-GAAP, 3-
+GAAP/Budgetary Combined, and 4-Transfer, the total 
+of liquidated purchase order amounts creates a carry 
+forward budget amount that increases the Fund 
+Balance – Reserved for Encumbrances account, and 
+decreases the Fund Balance – Unreserved account. 
+Fund Balance 
+– Unreserved, 
+Undesignated 
+Yes Credit This is the primary fund balance account. This 
+account receives a single posting at year end, which 
+is the net total of the revenue and expenditure control 
+account balances. An account of this type must be 
+created before the Close Current Fiscal Year program 
+can be run for a fund. 
+Payroll Liability No Credit A payroll liability account is used when you defer cash 
+posting to the second period for a split payroll. No 
+cash movement takes place during the first period of 
+the split. During the second period, the cash 
+movement for both periods occurs and this account is 
+liquidated. 
+Revenues Yes Credit A revenues account is a running balance of all 
+revenue posted to the fund for the year to date. Munis 
+creates a duplicate journal entry to this account every 
+time a journal entry is made to a revenue account 
+===PAGE 23===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 23 
+ 
+Account Type Required? Normal 
+Balance 
+Description 
+within the associated fund. The account is used by the 
+Close Current Fiscal Year program, which combines it 
+with the expenditures control account balance. The 
+result is posted to the fund balance – unreserved, 
+undesignated account. As a final step, a journal entry 
+is made to reset the balance of the revenues control 
+account to zero. 
+Use Tax No Credit A use tax account type is used by organizations that 
+utilize the sales tax feature in Munis Accounts 
+Payable. An account of this type stores accumulated 
+use tax amounts that must be paid to the state. When 
+these payments are sent, they are subtracted from 
+this control account, and expensed to the paying 
+accounts. 
+ 
+  
+===PAGE 24===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 24 
+ 
+General Journal Entry/Proof  
+Objective 
+This document provides instructions on how to enter a manual general journal entry, update the entry, 
+proof the entry, and release the entry for approval and posting.  
+Overview 
+Department staff members are responsible for entering journal entries, which will be released to the 
+approval process. General ledger posting is typically centralized to the accountants within your 
+organization’s finance office.  
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+• You have the appropriate general ledger permissions for processing journal entries. 
+• The chart of accounts (COA) has been created.  
+• The Journal Number Control program has been completed to establish journal numbers.   
+===PAGE 25===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 25 
+ 
+Procedure  
+Use the following steps to create a manual general journal entry: 
+ Open the General Journal Entry/Proof program. 
+Financials > General Ledger Menu > Journal Entry/History > General Journal Entry/Proof 
+ 
+ 
+ Click Add. 
+ Complete the fields according to the following table to enter the manual journal. Press Tab to move 
+through the fields.  
+Field Description Notes 
+Effective Date Specifies the date that the transaction 
+affects programs in Munis.  
+The default value is the current date, 
+but you can change this if necessary. 
+In certain circumstances, you can enter 
+an effective date that is a future date.  
+Type a date or click the calendar button 
+to select a date. 
+ 
+Fiscal Year Identifies the fiscal year associated 
+with the journal entry. This field is 
+assigned using the year entered in the 
+Default Year/Period boxes in the 
+General Ledger Settings program. This 
+is a required field. Type the fiscal year 
+in the YYYY format. 
+ 
+Period Indicates the period within the fiscal 
+year associated with the journal entry. 
+The default value for this period is the 
+value of the Default Year/Period box in 
+the General Ledger Settings program. 
+ 
+
+===PAGE 26===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 26 
+ 
+Field Description Notes 
+When you are adding data, you can 
+enter a different period if you have 
+appropriate permissions. Period is part 
+of the journal key for all general ledger 
+transactions. 
+If the default period does not match the 
+effective date, those with the necessary 
+permissions see a warning message 
+and the period is updated automatically 
+to the current period. Those who do not 
+have permission to change the default 
+period are warned that the effective 
+date and period do not match, but the 
+period does not change and entry must 
+be made to the original default period. 
+Journal Displays an automatic sequential 
+number based on the numbering 
+system set up in Journal Number 
+Control. The program completes this 
+number and you cannot change it.  
+ 
+Source Journal Identifies the source of the journal you 
+are entering. A general journal entry 
+source is typically GEN for general or 
+GCR for cash receipt. 
+If the value is GCR and the fund is a 
+revolving fund, the program updates 
+the following fields in Account Master: 
+Revised Budget (CY), Budget Transfer 
+In (CY), Budget Transfer Out (CY), and 
+Last Updated. If the fund is also a 
+multiyear fund, the program updates 
+the value of the Inception Revised 
+Budget field. 
+ 
+Entity Code  Indicates how Munis is shared between 
+two locations (such as a town and a 
+school): 
+ 
+1 - First entity only 
+2 - Second entity only 
+3 - Always shared 
+ 
+Entity codes are established in the 
+System Settings program, which is 
+available from the System 
+Administration menu.  
+If your organization uses entity codes, 
+you must select an entity code.  
+ 
+===PAGE 27===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 27 
+ 
+Field Description Notes 
+Auto Reverse 
+Journal 
+Designates the journal as an Auto 
+Reverse Journal (an accrual journal 
+entry), indicating that this journal is to 
+be included when you select the Auto 
+Reverse option in the Journal Reversal 
+program. The default value is N - No. 
+Type Y (Yes) to identify this journal as 
+an auto reverse journal. 
+ 
+Short Description Contains the user-defined journal 
+reference. Munis programs use this 
+description on screens and reports 
+where journal information is 
+summarized. It occupies the Ref 4 
+position. This is a required field. 
+ 
+Journal 
+Reference 
+Specifies the user-defined journal 
+reference code that stays with each 
+transaction throughout its life. It may be 
+a control number, a date, or a note. 
+The journal reference from General 
+Journal Entry/Proof occupies the Ref 1 
+position on inquiry screens and reports. 
+Entries in the Reference 2 and 
+Reference 3 boxes display in Ref 2 and 
+Ref 3 on screens and in reports. The 
+short description occupies the Ref 4 
+position on inquiry screens and reports. 
+Information in reference fields varies 
+depending on the program in which the 
+journal is created. For example, if the 
+journal was created during Invoice 
+Entry, it may contain the vendor 
+number. 
+ 
+Journal Type Indicates the type of journal. The 
+default value for this box is blank, but 
+you can add a type code. There are 
+three typical journal type codes: 
+Normal (N), Interfund (I), or 
+Adjustments (A). If you consistently 
+assign type codes, they may be used 
+as search criteria in queries and 
+reports. 
+If the default value for this box is “~” 
+and the value of the Source Code box 
+is GCR, this is an imported journal and 
+you cannot change the type code. 
+ 
+Budget Year 
+Code 
+Identifies the budget year code, which 
+can be either 1 for Current Year or 2 for 
+Carry Forward. This box can only be 
+ 
+===PAGE 28===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 28 
+ 
+Field Description Notes 
+changed from the default of 1 if the 
+value of the Budget Carry Forward 
+Method option in the General Ledger 
+Settings program is 3–
+GAAP/Budgetary Combined. Setting 
+this option to 2–Carry Forward adds 
+the gross amount of each transaction 
+to the Carry Forward from Last Year 
+Actual field in Account Master. (It 
+codes the entry as related to last year's 
+budget so it can be excluded from a 
+current year budget report if desired.) 
+Due-to/Due-from 
+Fund 
+Identifies the target fund to use when 
+you are generating due-to/due-from 
+accounts. The default value for these 
+boxes is the due to/due from fund 
+selected in the User Attributes 
+program, but you can change this. 
+Note: Due-to/due-from accounts must 
+be created in the Due To/Due From 
+Setup program. 
+ 
+Reference 2, 3 Offer the option for entering more 
+detailed information. The values 
+entered display on screens and 
+reports. Each box contains up to ten 
+characters. 
+ 
+Approval Status Indicates the current approval status of 
+the entry. If your organization uses 
+Munis Workflow, the program updates 
+this value as the approval process 
+progress. A journal that is initially 
+entered has a status of Held until 
+approved by a designated approver. 
+ 
+WO # Specifies the work order to which the 
+journal applies. If you enter a work 
+order number, the program creates 
+actual supply detail lines for that work 
+order. 
+This box is applicable if your 
+organization uses Tyler Asset 
+Maintenance.  
+ 
+Task # Contains the task number or code to 
+which the journal applies. You must 
+enter a task in this box. 
+This box is applicable if your 
+organization uses Tyler Asset 
+Maintenance, and you have entered a 
+work order number. 
+ 
+===PAGE 29===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 29 
+ 
+Field Description Notes 
+Vendor Identifies the vendor assigned for the 
+work order and task specified. Type a 
+vendor number or click the field help 
+button to select a vendor from a list of 
+available vendors.  
+This box is applicable if your 
+organization uses Tyler Asset 
+Maintenance, and you have entered a 
+work order number. 
+ 
+Project Accounts 
+Apply 
+Indicates that project account strings 
+apply as part of the journal entry, if 
+selected.  
+ 
+Transaction 
+Type 
+Indicates how the journal transaction 
+was made: by adjustment or by wire 
+transfer. Select the blank option to omit 
+this value.  
+This information appears in the thirtieth 
+position of the comment field when the 
+journal is posted.  
+ 
+ 
+Once you complete the header information, the Journal Lines group is accessible.  
+ 
+ 
+ Complete the fields, using the following table as a guide, to enter the line detail information. 
+Field Description Notes 
+Line Assigns the line number of the journal entry. 
+The program completes this number; there is 
+no access to this field.  
+ 
+T Indicates whether the line is for an expense 
+or funding source string, if the journal entry 
+applies to a project from the Project 
+Accounting module. 
+ 
+Project String Provides the project string to which the entry 
+applies. Click the field help button to select a 
+string from a list of available options. 
+ 
+Project Description Provides the name of the selected project 
+string. 
+ 
+Org 
+Object 
+Project 
+Indicate the org, object, and project codes for 
+the general ledger account.  
+ 
+Account 
+Description 
+Provides the account description from the 
+Chart of Accounts for the selected general 
+ledger account.  
+ 
+
+===PAGE 30===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 30 
+ 
+Field Description Notes 
+Line Description Contains the user-defined description for the 
+individual line posting. The description can 
+contain up to 30 characters.  
+ 
+Ref 1 Specifies the user-defined short description 
+of the posting for the individual journal line. 
+The description can contain up to 10 
+characters. 
+ 
+Effective Date Indicates the date the transaction affects the 
+general ledger.  
+ 
+D/C Identifies if the line is a debit (D) or credit (C).   
+Amount Specifies the amount of the transaction. This 
+should be a positive number. Zeros and 
+negative numbers are not accepted. For this 
+value, the program checks the available 
+budget for expense accounts. The program 
+displays a warning if it detects an over-
+budget entry; it allows you to continue if you 
+have permissions to make over-budget 
+entries. If you are not authorized to enter 
+over budget amounts, the program does not 
+all you to continue without entry of a 
+supervisor password.  
+ 
+ 
+ To add detail lines, press Tab from the last box in a row to create a new detail line.  
+The Line Description from the previous line is the default value for a new line. Make necessary 
+changes to default values; as you add details, the program tracks debits and credits in the Journal 
+Totals group at the bottom of the screen.  
+ Click Accept when you have completed entering your journal lines.   
+===PAGE 31===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 31 
+ 
+Updating a Journal Entry Prior to General Ledger Posting  
+To update a journal entry: 
+ Open the General Journal Entry/Proof program. 
+Financials > General Ledger Menu > Journal Entry/History > General Journal Entry/Proof 
+ 
+ 
+ Click Search, enter the search criteria, and click Accept to find the journal to update. 
+ If the period chosen on the batch header needs to be changed, click Period.  
+The program displays the Journal Year/Period Change screen.  
+ 
+ 
+Note: You can only access this option if your permissions allow you to post outside of the default 
+year and period. 
+ Complete the New Year/Period boxes, and then click Accept to save the change and return to the 
+main screen.  
+ Click Update to make the necessary changes to the fields in the Journal Information group.  
+
+===PAGE 32===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 32 
+ 
+ When you have finished updating the journal fields, click Accept to save the changes. 
+ To change the journal lines, click Modify Lines.  
+This allows you to make changes to the account numbers, descriptions, and dollar amounts in the 
+journal lines.  
+ When you have finished modifying the journal lines, click Accept to save the changes.  
+To verify if the funds are in balance, click Summary and the fund balances appear as shown in the 
+following example. If the funds are not in balance, there are discrepancies in the fund between the 
+debit and credit columns. 
+ 
+ 
+
+===PAGE 33===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 33 
+ 
+Proofing a Journal Entry for General Ledger Posting 
+This procedure assumes that a journal entry has been created, released for approval, and approved by 
+all approvers.  
+To proof a journal entry: 
+ Open the General Journal Entry/Proof program. 
+Financials > General Ledger Menu > Journal Entry/History > General Journal Entry/Proof 
+ 
+ 
+ Click Browse. 
+The program displays the Options screen.  
+ 
+ 
+• Browse Own Journals— Displays only those journals created by your user ID. 
+• Browse All Journals—Displays all available journals.  
+
+===PAGE 34===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 34 
+ 
+• Browse by Clerk—Displays only those journals for the user ID entered in the Clerk ID box . If 
+you choose this option, enter the clerk's user ID in the Clerk ID box. 
+ Select an option and click Accept.  
+The program displays a list of journals.  
+ 
+ 
+ Highlight the journal to proof and then click Accept.  
+The program refreshes to display the selected journal. 
+ Click Output-Post on the toolbar. 
+The program displays the Options screen.  
+ 
+ 
+• The Current Journal Only—Posts only the journal currently selected.  
+• All of Your Own Journals—Posts all available journals for your user ID.  
+• All Journals—Posts all available journals.  
+• All Journals for Clerk—Posts only those journals for the user ID entered in the Clerk ID box.  
+
+===PAGE 35===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 35 
+ 
+ Select the appropriate option and then click Accept.  
+The program displays the Output screen, where you can define the journal proof report settings. 
+ Select the Save output option, note the file name, and click OK.  
+If the program finds no errors, it displays the Post Journal Confirmation box. 
+ Click No. 
+ Open the Saved Reports program.  
+Departmental Functions > Saved Reports 
+ 
+ 
+ Click Search. 
+ Enter your user ID in the User ID field. 
+ Click Accept to display the list of reports. 
+ Highlight the report to view and click an output option from the toolbar to display the report.  
+The program displays the report.  
+ 
+ 
+ Once the journal has been verified, return to the General Journal Entry/Proof program and click 
+Output-Post again. 
+ Click Yes on the Post Journal Confirmation screen to post the journal.  
+
+===PAGE 36===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 36 
+ 
+Copying a Posted Journal 
+Use these steps to find a posted journal and create a new journal from it: 
+ Open the General Journal Entry/Proof program.  
+Financials > General Ledger Menu > Journal Entry/History > General Journal Entry/Proof 
+ 
+ 
+ Click Posted Find. 
+The program displays the Find Posted Journals screen.
+ 
+ 
+ Click Search. 
+ Complete one or more of the fields to specify the search criteria or leave the fields blank to search 
+all journals. 
+
+===PAGE 37===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 37 
+ 
+ Click Accept to execute the search.  
+The program displays a list of journals that meet the search criteria in the Posted Journal Results 
+group. The toolbar also refreshes to provide the Inquiry and Create Jnl options. 
+ 
+ 
+ Select the journal to view.  
+
+===PAGE 38===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 38 
+ 
+ Click Inquiry. 
+The Journal Inquiry/Print screen displays the journal detail. 
+ 
+ 
+ Click Back on the toolbar to return to the Find Posted Journal program. 
+ Click Create Jnl to copy the selected journal. 
+The program displays the Define Required Journal Fields screen. 
+ 
+ Complete the Fiscal Year, Period, and Effective Date boxes.  
+
+===PAGE 39===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 39 
+ 
+ Click Accept. 
+The program checks the available budget and your user permissions to validate the journal creation 
+and provides a status message.  
+ 
+ 
+Note: The message varies accordingly. If you do not have the proper permissions, you cannot 
+continue. 
+ Click OK. 
+The program creates the journal and provides a message indicating the year, period, and journal 
+identifier. 
+ 
+ 
+ Click OK to close the status message. 
+ Click Back to return to the main General Journal Entry/Proof program. 
+The program displays the journal you created, which must go through the normal approval process 
+before it is posted to the general ledger. 
+ 
+ 
+ Click Release to submit the journal entry into the workflow for approval.  
+
+===PAGE 40===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 40 
+ 
+Results 
+A journal has been created from a previously posted journal and submitted for workflow approval. 
+GL Impact 
+Once the new journal entry is posted, the general ledger accounts are affected by the amounts entered 
+in the journal entry line detail. This impact is reflected in the Actuals box in the Account Inquiry 
+program.  
+ 
+ 
+  
+  
+===PAGE 41===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 41 
+ 
+Recurring General Journal Entry    
+Overview 
+The Recurring Journal Entry/Generate program allows for the creation, generation, and maintenance of 
+recurring journal entries. A recurring journal entry is an entry that occurs consistently as to date and 
+amount. 
+You can use this program to create recurring journal entries to manage indirect costs or charge-backs. 
+At month-end, you can distribute an accumulated cost from one account (usually an expense account) 
+to another set of accounts. 
+This program must be accessed on a regular basis to maintain journal debits and credits, and to 
+generate the recurring journals.  
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+ 
+• You have access to the Recurring Journal Entry program. 
+• All accounts referenced in the recurring journal entry exist in the chart of accounts (COA). 
+• Journal numbers have been established in the Journal Number Control program.   
+===PAGE 42===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 42 
+ 
+Procedure 
+To create a recurring journal entry: 
+ Open the Recurring Journal Entry/Generate program. 
+Financials > General Ledger Menu > Journal Entry/History > Recurring Journal Entry/Generate 
+ 
+ 
+ Click Add. 
+ Complete the fields according to the following table to add a new recurring journal entry. 
+Field Description Notes 
+Scheduled Run 
+Execute This 
+Report 
+Determines when the recurring journal is 
+created.  
+• Now—The report is generated 
+immediately. Use the output options in the 
+toolbar to view, print, or save the report. 
+• In Background (Now) or At a Scheduled 
+Time— The report is created using Munis 
+Scheduler. When you complete the 
+Journal Header and Frequency sections, 
+the program displays the Munis Scheduler 
+dialog box, where you can define the 
+processing times, enable notifications, 
+and establish the recurring setup. 
+ 
+Journal Header 
+
+===PAGE 43===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 43 
+ 
+Field Description Notes 
+Journal Code Stores a unique, user-defined ID code for the 
+journal. The code should contain six digits.  
+Hint: To aid in identifying and generating 
+journals, use the first three digits to represent 
+the department creating the journal.  
+ 
+Source Journal Identifies a source code associated with the 
+journal entry. Recurring journals are manual 
+journal entries and can be either GEN for a 
+general journal or GCR for a cash receipt. 
+ 
+Journal 
+Reference 
+Displays a user-defined journal reference 
+code that stays with each transaction 
+throughout its life. This may be a control 
+number, a date, or a note. 
+ 
+Short 
+Description 
+Contains a short, user-defined description for 
+this recurring journal entry. This brief 
+description contains up to ten characters.  
+ 
+Journal Type Stores a user-defined, single-character code 
+that describes the type of journal being 
+created. Use journal type codes that are 
+meaningful to your organization. For example, 
+A for adjustment journal, I for interfund 
+journal, or N for normal.  
+ 
+Entity Code Signifies the entity (for example, city/town or 
+school) with which the journal is associated. 
+Entity codes are assigned in the System 
+Settings program; typically, this value is 1 for 
+the city/town. 
+ 
+Auto Reverse 
+Journal 
+Indicates if the journal is available for 
+automatic reversal. If selected, this check box 
+indicates that the journal is an auto-reverse 
+journal. 
+ 
+Due To/Due 
+From Fund 
+Specifies the target due-to/due-from fund that 
+keeps the journal entries balanced. 
+DT/DF funds must exist in the Chart of 
+Account Segments program. 
+ 
+Reset After GEN Determines whether to reset all amounts to 
+zero after journal generation. The default 
+value is No (cleared). When this check box is 
+selected, the journal resets all amounts 
+entered to zero after generation. If this box is 
+cleared, the journal holds the last amounts 
+that were created. 
+ 
+Effective Dates Define the range of dates for which the 
+recurring journal should be generated. These 
+dates can span the fiscal year or multiple 
+years. 
+ 
+Clerk Identifies the name of the person who is 
+creating the journal entry. The program 
+completes the value of this field; it is only 
+ 
+===PAGE 44===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 44 
+ 
+Field Description Notes 
+accessible as search criteria when you click 
+Search. 
+Allocated Directs that amounts are to be allocated by a 
+percentage, if selected. If the amounts are 
+allocated, then the Reset After GEN check 
+box is automatically selected and uses the 
+account (segments) values identified in the 
+account fields.  
+ 
+Org Indicates the org code to use with the 
+allocation. 
+This box is accessible when the Allocated 
+check box is selected. 
+ 
+Object  Identifies the object code to use with the 
+allocation. 
+This box is accessible when the Allocated 
+check box is selected. 
+ 
+Project Specifies the project code to use with the 
+allocation. 
+This box is accessible when the Allocated 
+check box is selected. 
+ 
+Project Accounts 
+Apply 
+Directs the program to include project account 
+strings in the recurring journal entry, if 
+selected. Clear the check box to exclude 
+project accounts. 
+ 
+Frequency 
+Months  Identify the calendar months a recurring 
+journal is to be created. For a monthly journal, 
+select the check box for each month.  
+ 
+Weeks  Specify the weeks in which a recurring journal 
+is to be created. 
+ 
+ 
+ When the fields are completed, click Lines in the toolbar to display the Journal Entry Detail screen.  
+ 
+
+===PAGE 45===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 45 
+ 
+ Complete the fields, referring to the following table as required. 
+Field  Description Notes 
+Journal Lines 
+T Identifies the project account type: expense or 
+funding. 
+ 
+Project String Indicates the project account string to which 
+the recurring journal applies. 
+ 
+Org/Obj/Proj Identify the general ledger account number.  
+Description Stores a description of the journal entry. The 
+description entered becomes part of the detail 
+transaction and stays with it throughout the life 
+of the entry. In the event of an audit, a clear 
+description identifying the item can be helpful.  
+ 
+Percent Identifies the percentage of the total amount to 
+allocate to this account. 
+ 
+Journal Ref Stores the user-defined journal reference code 
+that stays with each transaction throughout its 
+life. This code may be a control number, a 
+date, or a note. 
+The default value for this field is entered from 
+the main Recurring Journal Entry/Gen screen.  
+ 
+Perm/Temp Identifies whether this is a permanent or 
+temporary journal entry. 
+ 
+Debit/Credit Indicates whether this is a debit or credit 
+journal. Select Debit or Credit from the list; to 
+enter no amount but to add a line of text, select 
+Text. You can enter text in the Description 
+field. 
+ 
+Amount Identifies the amount of the transaction. 
+Type a value up to 99,999,999,999.99. Do not 
+enter the decimal point and zeros if the 
+transaction is a whole dollar amount. You 
+cannot enter a negative value in this field. 
+Note: When the amount is entered for an 
+expense account, the available budget is 
+instantly reduced. Any subsequent change or 
+deletion makes corresponding adjustments to 
+available budget. 
+ 
+ When all lines have been completed, click Accept to save the entries.  
+ To update line detail, highlight the line and then click Update. 
+ Make any necessary changes to the line and then click Accept to save the changes.  
+ Verify that your journal totals (debits/credits) are in balance.  
+ Click Back on the toolbar to return to the Recurring Journal Entry screen.  
+The recurring journal template is complete.  
+===PAGE 46===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 46 
+ 
+Generating a Recurring Journal 
+To generate a recurring journal: 
+ Open the Recurring Journal Entry/Generate program. 
+Financials > General Ledger Menu > Journal Entry History > Recurring Journal Entry/Generate 
+ 
+ 
+ Click Search. 
+ Enter the search criteria to define the set of journals to generate, and then click Accept.  
+ Click Lines to review the journal entry details.  
+ Click Update to make changes to the lines. 
+ To delete a line from the recurring journal entry, highlight the account to remove and click Delete.  
+The program displays a confirmation message; click Yes to permanently remove that line from the 
+recurring journal entry. 
+ To add a line to the recurring journal entry, click Add.  
+Select the account to add to the recurring journal entry and indicate if this account will be a 
+permanent or temporary addition to the journal. 
+ Click Accept to save your changes to the recurring journal entry and return to the main screen.  
+
+===PAGE 47===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 47 
+ 
+ Once you have returned to the main screen, click Generate on the toolbar to generate the recurring 
+journal entry for your active set of journal entries. 
+The program displays the Generate Journals screen. 
+ 
+ 
+ Enter the appropriate year, period, and effective date, and then click Accept to continue.  
+The program saves your entries and makes the Define, Gen Journals, and Gen Journal options 
+available on the toolbar. 
+ Select Generate Journals (all journals in the active set) or Generate Journal (only the current 
+journal). 
+The program displays a confirmation message.  
+ Select Yes to create the journal proofs.  
+Results 
+Once the journal is generated, the journal proof resides in the General Journal Entry/Proof program.  
+GL Impact  
+The general ledger is not directly affected by the generation of the journal entry. When the journal entry 
+is posted, the general ledger accounts are affected by the amounts entered in the journal entry line 
+detail. This impact is reflected in the Actuals box in the Account Inquiry and Account Master programs.  
+What’s Next? 
+Proof and then output/post journals from the General Journal Entry/Proof program.   
+
+===PAGE 48===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 48 
+ 
+General Journal Approval                 
+Overview 
+Once a general journal is released, the established workflow business rules route the journal for 
+approval. This is often used where the audit department or outside auditor has established a procedure 
+wherein the person who enters a financial transaction cannot be the same person who approves the 
+transaction. 
+ 
+Journal entries may be routed to one person or multiple people. Once the journal has been fully 
+approved by the required users, it may be posted. If a journal is rejected, then the originator of that 
+journal will be notified. At this point, the originator may delete the journal or make corrections to it. If the 
+originator makes corrections to the rejected journal, then the journal must be released to go through the 
+approval process again. This document will look at the approval process using the Approvals card in 
+Tyler Hub.  
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+• Approvers are established in the Workflow User Attributes program.  
+• Workflow business rules have been established. 
+• Journals have been completed and released. 
+ 
+Approvers are notified by email or Workflow Assistant of general ledger journals pending approval. This 
+option is determined by the value of the Workflow Delivery list in the User Attributes program.  
+===PAGE 49===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 49 
+ 
+Procedure 
+Munis Workflow transactions are approved using the Approvals card in Tyler Hub. 
+  
+ 
+If you do not have this card, you can add it to a page from the Content Library if you have sufficient 
+permissions. 
+  
+To approve an item: 
+1. Click the Approvals card to list all items currently awaiting approval. Use the All Process Codes and 
+All Dates lists to refine the selection criteria.  
+ 
+ 
+2. Review the items awaiting approval.  
+
+===PAGE 50===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 50 
+ 
+3. To view additional information, click the Launch option to view the item in the applicable Munis 
+program.  
+ 
+ 
+4. To approve the item from the Munis program, select the Workflow option to display the Workflow 
+Approval dialog box, and then choose the appropriate action. 
+ 
+ 
+
+===PAGE 51===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 51 
+ 
+5. To approve the item from the Approvals card, select the item to display the Workflow options, and 
+then select the appropriate action.  
+ 
+ 
+When you select Approve, Reject, Forward, or Hold, an Optional Comment (Approve) or Required 
+Comment (Reject, Forward, or Hold) box displays. For required comments, enter the reason.  
+ 
+Button Description  
+Approve Identifies the record as approved and sends notification to the next approver in 
+sequence. 
+Reject Rejects the item. You must enter a rejection reason. The program notifies the 
+originator of the rejection and reason. The originator determines the next 
+course of action (alteration and resubmission or deletion).  
+Forward Allows you to choose another Munis user to review this pending record. If you 
+are approving an item that has been forwarded to you, the Forward option is 
+not available. 
+Hold Retains an item in your approval queue for additional review. It will remain 
+here until further action is taken. 
+Status Change 
+The following status changes occur according to the action taken for the transaction: 
+• Approved records move to the next step of approvers, if necessary. If this is the final approval, 
+the transaction is updated to a status of Approved and is ready for posting.  
+• Rejected records return to the originator with a note regarding the reason for rejection. The 
+originator takes the next appropriate action for the record (delete the record or update and 
+resubmit it). 
+• Held transactions remain in the queue until further action is taken by the required approver. 
+• Forwarded transactions move to the queue of the identified recipient. The recipient reviews and 
+updates the transaction to determine the next step. 
+
+===PAGE 52===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 52 
+ 
+What’s Next? 
+Journal entries that have been approved are now ready to be posted to the general ledger.  
+Rejected journal entries may be corrected by the originators and resubmitted through the approval 
+process.  
+===PAGE 53===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 53 
+ 
+Accounting Entries 
+Overview 
+The Accounting Entries program displays and maintains general journal entries, budget transfers and 
+amendments, and encumbrance journals. When you open the program, the General Journals tab is the 
+default tab selected, and it displays all the general ledger journal entries you have permission to view.  
+ 
+ 
+
+===PAGE 54===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 54 
+ 
+The Accounting Entries screen is divided into three tabs: General Journal, Budget 
+Amendments/Transfers, and Encumbrance Entry. Each tab provides entries for the specified type and 
+an option for adding records of that type. 
+ 
+ 
+Prerequisites  
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.   
+
+===PAGE 55===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 55 
+ 
+Procedures  
+Maintaining Journal Details 
+On the main screen, click a journal number to display the details. For example, on the General Ledger 
+Journal tab, click a journal number to display the journal details and lines.  
+ 
+ 
+When you view journal details, the toolbar provides various options to view or maintain the journal. 
+  
+ 
+• Return—Returns to the main screen.  
+• Delete—Deletes the entire journal.  
+• Void—Voids the selected journal.  
+• Generate DT/DF—Generates due- to/due-from journals. 
+• Release—Releases the journal to  the workflow process. 
+• Post Journal—Posts the journal.  
+• Workflow—Displays the workflow approval steps your organization has established for the 
+selected record. 
+• Proof Report—O pens the Journal Proof SSRS Report program, which allows you to generate 
+the report output. 
+• Attach—Displays the Defined Mappings screen for attaching documentation to the selected 
+record, if your organization uses Tyler Content Manager. 
+• View UDF—Provides information on user -defined fields. 
+
+===PAGE 56===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 56 
+ 
+ 
+On the Journal screen: 
+• Click the arrow beside the Additional Attributes group to view or update other journal details. 
+• Click Add Line in the Journal Lines header to add a new journal line. 
+• Click the More button beside a journal line to access the Notes and Delete options.  
+o The Notes option displays the Additional Description dialog box, where you can add 
+comments for the selected journal line. 
+o The Delete option allows you to delete the journal line. 
+ 
+Adding a General Journal 
+To add a general journal: 
+1. From the General Journal tab, click Add Journal. 
+The program refreshes the screen to display general journal fields. 
+ 
+ 
+
+===PAGE 57===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 57 
+ 
+2. Complete the fields as required, using the following table as a reference. 
+Field Description Notes 
+Journal Header 
+Journal Contains the journal number, which is 
+automatically assigned using the next 
+available journal number in Journal 
+Number Control. This field is for 
+display only. 
+ 
+Entry Clerk Provides the user ID of the user who 
+created the journal entry. This field is 
+for display only. 
+ 
+Year Indicates the accounting year for the 
+general journal. The default value is 
+the fiscal year established in General 
+Ledger Settings, but you can change 
+this if you have the appropriate 
+permissions. Valid entries are the 
+current year, next year, or last year. 
+ 
+Period Specifies the fiscal period for the 
+journal entry. The default value is the 
+period established in General Ledger 
+Settings, but you can change this if 
+you have the appropriate permissions. 
+ 
+Effective Date Sets the date that the transaction 
+affects programs in the Munis system. 
+This does not affect processing 
+(proofing or posting) of general ledger 
+transactions. However, the program 
+displays a warning if the date is 
+outside of the current fiscal period. 
+Typically, this date is the same for all 
+detail lines in a journal entry, but it can 
+be different from line to line. 
+ 
+Short Description Establishes the description to be used 
+by the system when referring to this 
+journal. The program uses this 
+description on screens and reports 
+where journal information is 
+summarized. It is also the fourth 
+reference field in Journal Inquiry. You 
+can enter up to 10 characters as a 
+short description. 
+ 
+Source Indicates the source code for the 
+journal: GEN (general journal) or GCR 
+(general cash receipt). If the value is 
+GCR and the fund is a revolving fund, 
+the program updates the following 
+fields in Account Master: Revised 
+Budget (CY), Budget Transfer In (CY), 
+Budget Transfer Out (CY), and Last 
+ 
+===PAGE 58===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 58 
+ 
+Field Description Notes 
+Updated. If the fund is also a 
+multiyear fund, the program updates 
+the Inception Revised Budget field in 
+Account Master. 
+Status Displays the status of the journal. 
+When you enter a journal, the status 
+is Held. The program completes this 
+box and you cannot change it. 
+ 
+PA Applied Instructs the program to include 
+project accounts for the journal entry, 
+when selected. Clearing the check 
+box indicates that you are separating 
+the project accounts from the journal 
+entry process. The column headings 
+in the Journal Lines group 
+automatically update to include the 
+Project column if this box is selected. 
+ 
+Total Debits Displays the total amount of debits for 
+the journal entry. 
+ 
+Total Credits Displays the total amount of credits for 
+the journal entry. 
+ 
+ 
+3. If other attributes must be defined, click the Additional Attributes arrow to expand the group and 
+complete the fields as required. Use the following table as a reference. 
+Field Description Notes 
+Additional Attributes 
+Auto Reverse 
+Journal 
+Indicates that the journal is an Auto 
+Reverse Journal (an accrual journal 
+entry), which means that this journal is 
+to be included when you select the 
+Auto Reverse option in the Journal 
+Reversal program. The default value 
+is No. Choose Yes from the list to 
+identify this journal as an auto reverse 
+journal. 
+ 
+Budget Year Code Controls how journal amounts are 
+processed for budget reports. The 
+budget year code can be either 1 for 
+Current Year or 2 for Carry Forward. 
+This box can only be changed from 
+the default of 1 if the value of the 
+Budget Carry Forward Method box in 
+General Ledger Settings is 3–
+GAAP/Budgetary Combined. Setting 
+the Budget Carry Forward Method 
+option to 2–Budgetary adds the gross 
+amount of each transaction to the 
+Carry Forward from Last Year Actual 
+field in Account Master. (It codes the 
+ 
+===PAGE 59===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 59 
+ 
+Field Description Notes 
+entry as related to last year's budget 
+so it can be excluded from a current 
+year budget report if needed.) 
+Entity Code Determines which location's data you 
+can access. Entity codes are used if 
+Munis programs are shared between 
+two locations, such as a town and a 
+school. Entity codes are established in 
+System Settings: 
+• 1—Name of the first entity  (for 
+example, the town) 
+• 2—Name of the second entity 
+(for example, the school) 
+• 3— Shared 
+ 
+Reference 1 
+Reference 2 
+Reference 3 
+Store user-defined journal reference 
+codes that stay with each transaction 
+throughout its life. A code may be a 
+control number, a date, or a note. You 
+may use up to six characters for the 
+Reference 1 code, up to ten 
+characters for the Reference 2 code, 
+and up to 12 characters for the 
+Reference 3 code. Information in 
+reference fields varies depending on 
+the program in which the journal was 
+created. For example, if the journal 
+was created during Invoice Entry, it 
+may contain the vendor number. 
+ 
+Transaction Type Provides options to select how the 
+journal transaction is made. You can 
+choose None, Adjustment, or Wire 
+Transfer. For cash accounts included 
+on the journal, the selected 
+transaction type displays in bank 
+reconciliation programs. 
+ 
+Due to/Due from Assigns the target fund to use when 
+you choose the Generate DT/DF 
+option. The default value for this box 
+is the due-to/due-from fund selected 
+on the Attributes tab in General 
+Ledger User Attributes, but you can 
+change this. 
+Note: The appropriate accounts must 
+be established in Due to/Due from 
+Setup, otherwise the program 
+encounters an error. 
+ 
+Journal Type Identifies the type of journal. There 
+are three typical journal type codes: 
+Normal (N), Interfund (I), or 
+Adjustments (A). If you consistently 
+ 
+===PAGE 60===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 60 
+ 
+Field Description Notes 
+assign type codes, they can be used 
+as search criteria in queries and 
+reports. If the default value for this box 
+is ~ and the value of the Source Code 
+box is GCR, then this is an imported 
+journal and you cannot change the 
+type code.  
+ 
+4. In the Journal Lines group, click Add Line. 
+The program automatically saves the journal and displays fields to add a journal line.
+ 
+ 
+5. Complete the fields to specify the journal line. 
+6. Repeat the two previous steps until you have added all the lines required for the journal. 
+7. Click Save to save the record. 
+Adding a Budget Amendment Journal 
+To add a budget amendment journal: 
+1. From the Budget Amendments/Transfers tab, click Add Budget Amendment. 
+The program refreshes the screen to display the budget amendment and transfer fields. 
+ 
+ 
+2. Complete the fields as required, using the following table as a reference. 
+Field Description Notes 
+Budget Amendment/Transfer 
+Journal Contains the journal number. This 
+field is for display only. 
+ 
+
+===PAGE 61===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 61 
+ 
+Field Description Notes 
+Entry Clerk Provides the User ID of the user who 
+created the budget amendment 
+entry. This field is for display only. 
+ 
+Year Indicates the accounting year for the 
+transfer or amendment. The default 
+value is the fiscal year established in 
+General Ledger Settings, but you can 
+change this if you have the 
+appropriate permissions. Valid 
+entries are the current year, next 
+year, or last year. 
+ 
+Period Specifies the fiscal period for the 
+transfer or amendment. The default 
+value is the period established in 
+General Ledger Settings, but you can 
+change this if you have the 
+appropriate permissions. 
+ 
+Projection Inclusion Identifies whether the amendment is 
+a one-time or continuing budget item. 
+If you select One Time (temporary), 
+the amendment is not included when 
+the Next Year Budget Entry program 
+is updated. One-time amendments 
+are excluded in budget projections 
+when the Exclude Temporary Budget 
+Amendments check box in 
+Define/Start Budget Projection 
+program is selected. If you select 
+Continuing, you must have recurring 
+journal entries set up that match your 
+budget. When this amendment is 
+posted, the corresponding recurring 
+journal is updated. For each new 
+journal, the program completes this 
+field with the default value from 
+Budget Settings, but you can change 
+this as required.  
+ 
+Effective Date Sets the date that the transaction 
+affects programs in the Munis 
+system. This does not affect 
+processing (proofing or posting) of 
+general ledger transactions. 
+However, the program displays a 
+warning if the date is outside of the 
+current fiscal period. Typically, this 
+date is the same for all detail lines in 
+a journal entry, but it can be different 
+from line to line. 
+ 
+Short Description Establishes the description to be 
+used by the system when referring to 
+ 
+===PAGE 62===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 62 
+ 
+Field Description Notes 
+this journal. The program uses this 
+description on screens and reports 
+where journal information is 
+summarized. It is also the fourth 
+reference field in Journal Inquiry. You 
+can enter up to 10 characters as a 
+short description. 
+Update Recurring 
+Journal 
+Directs the system to include this 
+journal in the recurring journal 
+process, when selected. 
+ 
+Entity Code Determines which location's data you 
+can access. Entity codes are used if 
+Munis programs are shared between 
+two locations, such as a town and a 
+school. Entity codes are established 
+in System Settings: 
+• 1—Name of the first entity (for 
+example, the town) 
+• 2—Name of the second entity 
+(for example, the school) 
+• 3— Shared 
+ 
+Amendment Type Indicates whether the journal is a 
+Budget Journal, Budget Amendment, 
+or Budget Appropriation Change: 
+• 1, 4: Expense account to 
+expense account or revenue 
+account to revenue account 
+• 2, 5: Expense account to 
+revenue account 
+• 3, 6: Expense or revenue 
+account; one-sided (taken 
+from Budgetary Fund 
+Balance) 
+• 7, 8: Expense or revenue 
+accounts; balance across 
+funds 
+• 9: Statistic accounts 
+For type 3 or 6 budget amendments, 
+you can also enter non-control 
+balance sheet accounts or the cash 
+account. The default value when you 
+are adding a record is type 1. 
+ 
+PA Applied Instructs the program to include 
+project accounts when making the 
+transfer or amendment, when 
+selected. Clearing the check box 
+indicates that you are separating the 
+project accounts from the transfer 
+and amendment process. The 
+column headings in the Budget 
+ 
+===PAGE 63===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 63 
+ 
+Field Description Notes 
+Amendment Lines group 
+automatically update to include the 
+Project column if this box is selected. 
+Reference 1 
+Reference 2 
+Indicate user-defined reference 
+codes that stay with a transaction 
+throughout its life. A journal reference 
+may be a control number, a date, or 
+a note. Information in reference 
+boxes varies depending on the 
+program in which the journal is 
+created. 
+ 
+Status Displays the status of the 
+amendment:  
+• Held—Establishes the initial 
+status of the added journal. 
+• Unbalanced—Displays if the 
+journal is not in balance. 
+Unbalanced journals cannot 
+be released unless your user 
+role has permission to 
+override out-of-balance 
+amendments. 
+• Pending Approval—Indicates 
+the journal has been released 
+and is pending workflow 
+approval. 
+• Approved—Denotes that the 
+journal has been approved 
+using the workflow process or 
+the Budget Approvals 
+program. 
+• Error—Identifies that an error 
+has occurred in the workflow 
+process. (See the Workflow 
+help content for more 
+information on this 
+functionality.) 
+When you add a new record, the 
+program automatically enters Held in 
+this field, and then continues to 
+update the status automatically as 
+the entry moves through the approval 
+process. There is no direct access to 
+this field. 
+ 
+Source Provides the source code for the 
+journal. This field is for display only. 
+ 
+Budget Year Code Stores the budget year code. This 
+field is for display only. The budget 
+year code creates budget transfers 
+against either 1–Current year or 2–
+ 
+===PAGE 64===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 64 
+ 
+Field Description Notes 
+Carry forward budget amounts. To 
+process a budget transfer against a 
+carry forward budget, you must enter 
+against an expense account that is 
+not a multiyear account. In General 
+Ledger Settings, the Budget Carry 
+Forward Method option must be 3–
+GAAP/Budgetary Combined.  
+ 
+3. In the Budget Amendment Lines group, click Add Line. 
+The program automatically saves the journal and displays fields to add a journal line.
+ 
+ 
+4. Complete the fields to specify the budget amendment line. 
+5. When you reach the end of the line, press Tab to add a new line, if required, and then complete 
+those fields. 
+6. Click Save to save the record. 
+Adding an Encumbrance Journal 
+To add an encumbrance journal: 
+1. From the Encumbrance Entry tab, click Add Encumbrance Entry. 
+The program refreshes the screen to display encumbrance entry fields. 
+ 
+ 
+2. Complete the fields as required, using the following table as a reference. 
+Field Description Notes 
+Encumbrance Journal Header 
+
+===PAGE 65===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 65 
+ 
+Field Description Notes 
+Journal Contains the journal number. This 
+field is for display only. 
+ 
+Entry Clerk Provides the user ID of the user who 
+created the journal entry. This field 
+is for display only. 
+ 
+Year Indicates the accounting year for the 
+journal entry. The default value is 
+the fiscal year established in 
+General Ledger Settings, but you 
+can change this if you have the 
+appropriate permissions. Valid 
+entries are the current year, next 
+year, or last year. 
+ 
+Period Specifies the fiscal period for the 
+journal entry. The default value is 
+the period established in General 
+Ledger Settings, but you can 
+change this if you have the 
+appropriate permissions. 
+ 
+Effective Date Sets the date that the transaction 
+affects programs in the Munis 
+system. This does not affect 
+processing (proofing or posting) of 
+general ledger transactions. 
+However, the program displays a 
+warning if the date is outside of the 
+current fiscal period. Typically, this 
+date is the same for all detail lines in 
+a journal entry, but it can be 
+different from line to line. 
+ 
+Short Description Establishes the description to be 
+used by the system when referring 
+to this journal. The program uses 
+this description on screens and 
+reports where journal information is 
+summarized. It is also the fourth 
+reference field in Journal Inquiry. 
+You can enter up to 10 characters 
+as a short description. 
+ 
+Source Indicates the source code for the 
+journal: GEL (general 
+encumbrance). 
+The program completes this field 
+and you cannot change it. 
+ 
+Status Displays the status of the journal. 
+When you enter a journal, the status 
+is Held. The program completes this 
+field and you cannot change it. 
+ 
+PA Applied Instructs the program to include 
+project accounts for the journal 
+ 
+===PAGE 66===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 66 
+ 
+Field Description Notes 
+entry, when selected. Clearing the 
+check box indicates that you are 
+separating the project accounts from 
+the journal entry process. The 
+column headings in the Journal 
+Lines group automatically update to 
+include the Project column if this 
+box is selected. 
+Encumbrances Displays the total amount of 
+encumbrances for the journal entry. 
+ 
+Liquidations Displays the total amount of 
+liquidations for the journal entry.  
+ 
+ 
+3. If other attributes must be defined, click the Additional Attributes arrow to expand the group and 
+complete the fields as required. Use the following table as a reference. 
+Field Description Notes 
+Additional Attributes 
+Budget Year Code Controls how journal amounts are 
+processed for budget reports. The 
+budget year code can be either 1 for 
+Current Year or 2 for Carry Forward. 
+This box can only be changed from the 
+default of 1 if the value of the Budget 
+Carry Forward Method box in General 
+Ledger Settings is 3–GAAP/Budgetary 
+Combined. Setting the Budget Carry 
+Forward Method option to 2–Budgetary 
+adds the gross amount of each 
+transaction to the Carry Forward from 
+Last Year Actual field in Account 
+Master. (It codes the entry as related to 
+last year's budget so it can be excluded 
+from a current year budget report if 
+needed.) 
+ 
+Entity Code Determines which location's data you 
+can access. Entity codes are used if 
+Munis programs are shared between 
+two locations, such as a town and a 
+school. Entity codes are established in 
+System Settings: 
+• 1—Name of the first entity (for 
+example, the town) 
+• 2—Name of the second entity 
+(for example, the school) 
+• 3— Shared 
+ 
+Reference 1 
+Reference 2 
+Store user-defined journal reference 
+codes that stay with each transaction 
+throughout its life. A code may be a 
+control number, a date, or a note. You 
+may use up to six characters for the 
+ 
+===PAGE 67===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 67 
+ 
+Field Description Notes 
+Reference 1 code and up to ten 
+characters for the Reference 2 code. 
+Information in reference fields varies 
+depending on the program in which the 
+journal is created. For example, if the 
+journal was created during Invoice 
+Entry, it may contain the vendor 
+number. 
+ 
+4. In the Journal Lines group, click Add Line. 
+The program automatically saves the journal and displays fields to add a journal line. 
+ 
+ 
+5. Complete the fields to specify the journal line. 
+6. When you reach the end of the line, press Tab to add a new line, if required, and then complete 
+those fields. 
+7. Click Save to save the record. 
+  
+
+===PAGE 68===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 68 
+ 
+Month End Manager  
+The Month End Manager program establishes a closed date for each period. It supports the ability to 
+roll the current period forward upon closing that period.  
+ 
+The Monthly Amounts table is updated at the time a journal is posted to the general ledger. All journals 
+are posted to the History status and monthly amounts are updated immediately. Monthly budget 
+transfers are initiated through the Monthly Budget Amounts program in Munis Budget Processing and 
+create transactions to represent the transfer between periods.  
+ 
+ 
+For each period, the program displays the following information: 
+• Unposted Journals—Identifies the number of unposted transactions for a period. Unposted 
+transactions are those transactions that are not posted to the general ledger, such as proof 
+journals, purchase orders, contracts, invoices, and requisitions. All the unposted 
+transactions that are queried in Table Validation are also represented here. 
+• Open Journals— Indicates the number of journals that are open for a period, or the number 
+that have been posted after the period’s closing date. If a period has not been closed, then 
+the number reflects all posted journals. Once the period has been closed, only the number 
+of journals posted after the closing date is displayed. 
+• Unbalanced Journals—Provides the number of journals that are out of balance based on 
+both net debits and credits, as well as expenses to expenditure control or revenues to 
+revenue control. Unbalanced journals display for the entire period regardless of the journal’s 
+posted date with respect to the closing date for the period. 
+• Fund Control Discrepancies—Specifies the number of inquiries that display the total 
+expenses, expenditure control, and any discrepancies between the two. The program 
+accounts for periods 1–12 when calculating fund control discrepancy amounts for period 13 
+of the previous year. This column does not display when you view data for the prior year. 
+• Unbalanced Funds—Displays the number of funds that are out of balance based on net 
+expense versus revenue, as well as expense actuals to expenditure control and revenue 
+actuals to revenue control. This functionality remains in Table Validation, but is replicated 
+here. 
+
+===PAGE 69===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 69 
+ 
+ 
+Clicking a number in one of these columns provides a screen with additional information, depending on 
+the column. When you click a record number from this display, the program opens the applicable 
+supporting program. For example, if you click a GEN journal number in the Proof Journals category, 
+that journal opens in the Accounting Entries program.  
+ 
+ 
+ 
+The toolbar for the Month End Manager program provides direct access to associated Munis programs.  
+ 
+ 
+• Table Validation— Opens the General Ledger Tables Validation program, which performs 
+system checks against the main general ledger and amount tables and transactions to ensure 
+there are no conditions that require action before the month-end process is run or a fiscal year 
+is closed. 
+• Balance Sheet Report— Opens the Balance Sheet Report program, which summarizes the net 
+change for a specified range of funds during a period, as well as the ending account balance for 
+each account. 
+• Account Trial Balance— Opens the Account Trial Balance program. This program prints a trial 
+balance for a single account or a range of accounts, including the entire chart of accounts. 
+• Journal Inquiry—Opens the Journal Inquiry/Print program to view journal details.  
+
+===PAGE 70===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 70 
+ 
+• Accounting Entries— Opens the Accounting Entries program. This program displays and 
+maintains general journal entries, budget transfers and amendments, and encumbrance 
+journals. 
+• Journal Reversal—Opens the Journal Reversal program, which is used to create  a reversal 
+general journal or change the posting period of a general journal. 
+• Roll Accounting Period— Opens the Roll Accounting Period program. This program allows a 
+system administrator or your organization's accountant to change the value of the Default 
+Year/Period box in General Ledger Settings for all users of your organization’s Munis system. 
+Closing Journals  
+For journals in the current period, the Actions menu provides the Close option as well as the Close and 
+Roll Forward option. The current period is the only period that provides both options; other periods have 
+the Close option only.  
+ 
+ 
+When you close open journals, the program refreshes the screen to remove the Open Journals number 
+and provide the closing date.  
+ 
+When you select Close and Roll Forward, the program updates the Closing Date field and also updates 
+the Current Fiscal Period to the next period. For example, if you are currently in period 7 and select 
+Close and Roll Forward, the program resets the period to 8 and then highlights period 8 in the display. 
+ 
+ 
+ 
+ 
+  
+
+===PAGE 71===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 71 
+ 
+Month-End Processing Checklist 
+Overview 
+The Munis month-end closing process moves all transactions for a specified period to the history table. 
+Prior to processing the month-end close, a complete reconciliation of the system should be performed, 
+including actuals, encumbrances, control accounts, and memo balances. 
+ 
+This checklist highlights the reports that are used in the reconciliation process, the tools to assist in the 
+reconciliation, and the processes that are to be followed. Scheduled monthly reconciliation will keep your 
+accounts and funds in balance. It will also reduce the amount of time that is needed at year-end to close 
+out the year. 
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+• You have access to the programs found on the End of Period submenu. 
+• There are no general ledger account access restrictions associated with your user ID that 
+would prevent successfully completing the checklist items.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+===PAGE 72===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 72 
+ 
+Month End Checklist 
+As you create reports, save them to the Munis Saved Reports directory so they are archived for future 
+reference. 
+ 
+Initials Date Task 
+  Day 1 of new month – Roll the Accounting Period. (This changes the default 
+period in General Ledger Settings.) 
+  Verify General Ledger Settings Default Period is the new period to which end 
+users are posting transactions; this is changed by Roll the Accounting Period 
+process. (Optional) 
+  Run the Capital Assets Monthly Depreciation program, if applicable. 
+  Enter and post all month end journal entries. 
+  Post all open batches. This is only required for transactions within the period 
+that is being closed and this can be viewed within the Month End Manager 
+program. 
+• Purchase Orders (Financials > Purchasing > PO Processing > PO 
+Entry/Proof > Find Batch) 
+• AP Invoices (Financials > Accounts Payable > Invoice Processing > 
+Invoice Entry/Proof)  
+• General Journals (Financials > General Ledger Menu > Journal 
+Entry/History > General Journal Entry/Proof > Browse) 
+• Encumbrance Journals (Financials > General Ledger Menu > Journal 
+Entry/History > Encumbrance Journal Entry/Proof > Browse) 
+• Budget Transfers/Amendments (Financials > Budget Processing > 
+Budget Transfers and Amendments > Browse) 
+• Capital Asset Transactions (Financials > Capital Assets > Capital 
+Assets Processing > Capital Asset Transaction Entry/Post > Find for 
+every type of transaction) 
+• Employee Expense Claims (Appear as encumbrances that are 
+liquidated when converted to AP or PR)  
+• Cash Receipts (General Revenues > Payment Processing > Payments 
+Journal) 
+  Run utilities and correct any errors found during the GLENCUTE process. 
+To run GLENCUTE, use the System Update program: 
+System Administration >Miscellaneous Administration >System Update. 
+Select Define Update Options, enter the eight-character program name, and 
+click Run System Update.  
+1. GLFIXREQ (fixes errors once you print and process) 
+2. GLFIXMEM (fixes errors once you print and process) 
+3. GLENCUTE (may require importing and posting the glencute00x.txt file, 
+located in the Saved Reports directory; x = a number assigned by 
+Munis) 
+Reconciliation  
+  Use the Full option in the General Ledger Tables Validation program to run a 
+full table validation; correct any errors.  
+  If necessary, run GLFIXCTL from the System Update program to correct 
+revenue/expense. This does not sum control errors; these errors are erased 
+from the General Ledger Table Validation report when the month is closed.  
+===PAGE 73===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 73 
+ 
+Initials Date Task 
+Important! Use this option with caution and with the help of Munis Technical 
+Support personnel.  
+  Rerun the Full validation in the General Ledger Tables Validation program until 
+only warnings appear 
+  Run the Account Trial Balance for balance sheet accounts in summary and 
+confirm beginning and ending fund balances are zero 
+  Run the Account Trial Balance for all accounts in summary and confirm 
+beginning and ending fund balances are zero 
+  Print a Balance Sheet report in summary (consolidated) and in detail for each 
+fund through the period being closed: 
+• Confirm each fund’s assets = liabilities + fund balance. 
+• Record the AP control account balances. 
+• Record the Inventory account balances.  
+• Record the FA account balance. 
+• Record the expenditure control account balance. 
+• Record the revenue control account balance. 
+Note: Run the Account Trial Balance for all accounts in detail to use if reconciliations below show 
+differences between the modules and the Account Trial Balance totals and export to Microsoft Excel 
+so you can sort by source journal. 
+  Reconcile accounts receivable by: 
+• Completing the Detail Receivables by Date report.  
+• Comparing the AR/GL Reconciliation Report by Fund to the 
+Account Trial Balance Accounts Receivable control account for 
+each fund. 
+• Comparing the Invoice Detail Report Summary by Charge Code to 
+the Account Trial Balance Revenue Accounts. 
+  Reconcile accounts payable by comparing the Invoice History by GL Account 
+Report to the Account Trial Balance for the AP Control Account.  
+Reconcile: 
+• History By Fund 
+• Invoice Selection–Only Open Invoices  
+• Year/Period equals Period Being Closed 
+• Last check date is the last day of the month to be closed 
+  Reconcile capital assets by comparing the Asset History by GL Account report 
+for active assets and capitalized assets to the Account Trial Balance capital 
+asset account totals. 
+  Reconcile inventory by comparing the Perpetual Inventory Report to Account 
+Trial Balance. 
+Running the GL Table Validation, the Trial Balance for All Accounts, and then Trial Balance for 
+Balance Sheets Accounts completes the prove process for accounts. When you run the Trial 
+Balance for All Accounts, the control accounts are ignored and the subsidiary ledger takes their 
+place. When you run the Trial Balance for Balance Sheet Accounts, the control accounts take the 
+place of the subsidiary ledger. If either are out of balance, then there is an issue with control 
+accounts not equaling the subsidiary ledger. The General Ledger Table Validation program, as well 
+as the Month End Manager program, indicate which journals are in error. 
+===PAGE 74===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 74 
+ 
+Initials Date Task 
+  Perform the month-end close from the Month End Manager program. (Note 
+that the Monthly Trial Balance by Fund program shows zero information once a 
+period is closed, while the General Ledger Tables Validation program verifies 
+closed period transactions in more detail than open period transactions.) 
+This is the last step in the process. All reconciliation should be performed 
+before the month is closed. 
+ 
+Sample General Ledger Table Validation Report 
+ 
+  
+
+===PAGE 75===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 75 
+ 
+Guide to the Table Validation Report  
+ 
+Number Group Error Message 
+01 Fund Control Account Does Not Exist 
+02 Fund Fund Does Not Net to Zero 
+03 Fund Fund Does Not Net to Zero by Period 
+04 Fund Fund Does Not Sum to Control 
+05 Account Invalid Account Type on Acct Master 
+06 Account Invalid Balance Type on Account 
+07 N/A N/A 
+08 Account Allocation Record Not Defined as GL Account 
+09 Account Reserved Budget Amounts Exist 
+10 Account CY Monthly Balance Does Not Sum to Account 
+11 Account Reference Account Check 
+12 Account Control Account Closing Balance Check 
+13 N/A N/A 
+14 Unposted Summary JE Transactions Exist 
+15 Unposted Purchase Orders Exist 
+16 Unposted Purchase Orders with Change Orders Exist 
+17 Unposted Contracts Exist 
+18 Unposted Contract Change Orders Exist 
+19 Unposted Unposted Transactions Exist in Gen JNL Proof 
+20 Unposted Unposted Transactions Exist in BG JNL Proof 
+21 Unposted Unposted Transactions Exist in ENC JNL Proof 
+22 Unposted Unposted Transactions Exist in FA JNL Proof 
+23 Unposted Unposted AR Receipts 
+24 Unposted Unposted EE Claims  
+25 Unposted Unposted P-Card Transactions 
+26 Unposted Contracts Exist to Roll into Next Year 
+27 Unposted Open Invoices  
+28 Unposted Open Student Activity Adjustments 
+29 Unposted Open Requisitions 
+30 Unposted Open Check Requests 
+49 Unposted Open Student Activity Transfers 
+51 Unposted Open Student Activity Transactions 
+57 Unposted Open Fixed Asset Transactions 
+ 
+ 
+  
+===PAGE 76===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 76 
+ 
+Guide to Table Validation Error Messages  
+Each line on the Table Validation Report is produced by a specific error test. Review the report carefully 
+as some of the messages look very similar.  
+ 
+ Hint: When taking corrective measures, always start from the end of the report and work to the 
+beginning. 
+ 
+ Hint: Correcting one error condition may yield positive results on more than one error test. Try to 
+solve errors that have the least impact on the general ledger first: from requisitions, to purchase 
+orders, to journals in proof, to journals still unprocessed through month-end, to funds out of 
+balance, and so on. Solving one error first may result in other errors being relieved. Conversely, 
+correcting an error may result in new errors. Therefore, you may want to run the validation between 
+corrective actions.  
+ 
+ Hint: As always, if there are any questions or concerns, please contact Munis Technical Support for 
+assistance. 
+ 
+ 
+ 
+ 
+  
+===PAGE 77===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 77 
+ 
+Account Inquiry  
+Overview 
+The Account Inquiry program provides both summarized and detail history for accounts, with a focus on 
+the current available budget. You can view data and create reports of the collected data, but you cannot 
+modify data in this program.  
+There are options in the Account Inquiry program for consolidating the data into a report-like format, but 
+if you want to report on many accounts in a report format, it may be best to use the YTD Budget Report. 
+The information in the fields displayed throughout the program depends upon your user permissions, 
+which are established in the System Administration General Ledger Roles program.  
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+• Accounts exist in the Munis system. 
+• You have appropriate permissions to view accounts.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+===PAGE 78===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 78 
+ 
+Procedures 
+Finding Accounts 
+To find accounts: 
+ Open the Account Inquiry program. 
+Financials > General Ledger Menu > Inquiries and Reports > Account Inquiry  
+Or:  
+Departmental Functions > Account Inquiry  
+ 
+ 
+
+===PAGE 79===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 79 
+ 
+ Click Search or Seg Find in the toolbar.  
+When you click Search, complete one or more of the fields to define your search criteria, and then 
+click Accept.  
+When you select Seg Find, the program displays the Account Segment Finder screen.  
+ 
+ 
+ Complete the fields on this screen according to the following table, and then click Accept.  
+For either search method, the program creates an active set of all accounts matching your search 
+criteria.  
+Field Description Notes 
+Organization Contains the org code for the account. 
+Click the field help button to select the 
+org code from a list of available codes 
+or enter the org code directly in the 
+box. 
+ 
+Fund Specifies the first account segment to 
+include in the report.  
+Segment 1 is always Fund. 
+Click the field help button to select the 
+fund from a list of available funds or 
+enter the fund code directly in the box. 
+ 
+Segments 2–8 Contain specific account segments to 
+include in the report. Organizational 
+labels for account segments are 
+determined in the General Ledger 
+Settings program. Examples of 
+common segment labels include 
+program, department, and grade. 
+ 
+
+===PAGE 80===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 80 
+ 
+Field Description Notes 
+Click the field help button in each box 
+to select a segment code from a list of 
+available codes or enter the segment 
+code directly in the box. 
+Object Indicates the object code for the 
+account. 
+Click the field help button to select the 
+object code from a list of available 
+codes or enter the object code directly 
+in the box. 
+ 
+Project Identifies the project code for the 
+account, if applicable. Project codes 
+are applicable if your organization 
+uses Munis® Project Accounting.  
+Click the field help button to select the 
+object code from a list of available 
+codes or enter the object code directly 
+in the box.  
+ 
+Account Type Indicates the type of account. Account 
+types are expense, revenue, or 
+balance. The blank option includes 
+accounts of all types. 
+ 
+Account Status Specifies the account status: Active, 
+Closed, Inactive, or Next (Next Year). 
+The blank option includes accounts 
+with all status codes. 
+ 
+Rollup Code Contains the budget rollup group code 
+to which the account belongs.  
+ 
+Character Code Identifies the character code. 
+Click the field help button to display a 
+list of available character codes.  
+ 
+[User-Defined 
+Fields] 
+Provides any user-defined fields.  
+Percent Used 
+Click Define Percent Used to access these fields as search criteria.  
+Fiscal Year 1 
+Fiscal Year 2 
+Fiscal Year 3 
+Contain the minimum percentage used 
+in the fiscal year. You can specify 
+percentages for last year, the current 
+year, and next year. For whole 
+percentages, you do not need to 
+include decimal points; for 
+percentages less than one, use 
+decimal points. For example, type 25 
+for 25%; type 25.5 for 25½%. 
+ 
+ Click Accept to save the criteria. 
+The program displays a confirmation message. 
+ Click Yes, Continue to proceed with creating the record set. 
+===PAGE 81===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 81 
+ 
+ Click Browse to view a list of accounts in the active set of records. 
+ Double-click an account to view the details.  
+Viewing Account Details  
+On the Account Inquiry screen, the Account group provides the basic details for the account (that is, 
+account segments, type, status, and so on).  
+ 
+ 
+Field Description Notes 
+Fund Identifies the fund (or account segment 1) to 
+query. Click the field help button to select the fund 
+from a list of available funds. 
+ 
+Org Specifies the org code for the account to query. 
+Click the field help button to select the org code 
+from a list of available codes. 
+ 
+Object  Indicates the object code for the account to query. 
+Click the field help button to select the object code 
+from a list of available codes.  
+ 
+Project  Establishes the project code for the account to 
+query. Click the field help button to select the 
+project code from a list of available codes. The 
+project code applies if your organization uses 
+Munis Project Accounting.  
+ 
+Acct Displays the full general ledger account number. 
+Each segment is typically separated with a dash. 
+There is no access to this field.  
+ 
+Acct Name Provides the name of the account, as established 
+in the Account Master program. There is no 
+access to this box.  
+ 
+Type Specifies the type of account: balance sheet, 
+expense, revenue, or statistic. Select the blank 
+option to select all account types.  
+ 
+Status  Identifies the account status. An account's status 
+determines whether it appears on reports and if 
+transactions can be posted to it. The status is 
+updated using the either Account Master or 
+Account Mass Change/Reset program. Status 
+indicators are: 
+• Active—This is the most common status for 
+accounts. Active accounts can appear on all 
+reports displaying account information and are 
+ 
+
+===PAGE 82===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 82 
+ 
+Field Description Notes 
+generally available for posting (according to 
+your defined permissions).  
+• Next Year— This status indicates that an 
+account is only available for next year budget 
+entries and reports. No transactions posted to 
+this account are allowed in the current year. 
+The status of the account automatically 
+changes once the Year End Close is 
+processed.  
+• Inactive—This status prevents all posting to an 
+account without proper permissions. If you 
+have Amount Maintenance on Accounts 
+permission granted in the Roles – General 
+Ledger program, you can post transactions to 
+an inactive account. The Inactive account 
+prints on all reports (provided you have 
+adequate authorization). An account can be 
+rendered inactive at any time in the fiscal year, 
+regardless of the presence of current year 
+transactions. The account can be reactivated 
+at any time.  
+• Closed—This  status indicates that an account 
+is completely closed to all input and only prints 
+on those reports offering the option to print 
+closed accounts. No transactions may be 
+entered against it. An account will be 
+designated as Closed if there has been no 
+activity—other than budget activity if the fund 
+is a multiyear fund—posted to it in the current 
+year.  
+Rollup Contains the budget rollup group code to which 
+the account belongs. If the box contains a value, 
+click the highlighted folder button to view the 
+rollup code details. 
+ 
+NY Rollup Specifies the next year budget rollup group code 
+to which the account belongs, if applicable. This 
+field is only available when the Allow Use of Next 
+Year Rollup Groups setting is enabled in General 
+Ledger Settings.  
+ 
+Sub-Rollup Identifies the subrollup code associated with the 
+account. 
+ 
+Annual 
+Budgeting 
+Establishes that the account is part of a multiyear 
+fund, and that the account is budgeted annually, 
+instead of once for the life of the account. This 
+check box only displays when it applies to the 
+account record. 
+ 
+Multi Yr Fund Indicates that the account is a multiyear fund, if 
+selected. This check box is not accessible.  
+ 
+ 
+===PAGE 83===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 83 
+ 
+4 Year Comparison Tab 
+This tab shows the current fiscal year, the previous two fiscal years, and the next fiscal year. 
+ 
+ 
+ 
+Field Description Notes 
+Yr/Per Indicates the current year and period.  
+Original Budget  Displays the adopted budget at the 
+beginning of the fiscal year, as 
+determined by the Budget Completion 
+Journal. 
+ 
+Transfers In  Provides the total amount of any 
+budget transfers increasing budget if 
+the account. View account detail by 
+selecting the yellow folder. 
+ 
+Transfers Out  Indicates the total amount of any 
+budget transfers decreasing the 
+budget from the account. View account
+ 
+detail by clicking the folder button.  
+ 
+Revised Budget  Displays the sum of the Original 
+Budget plus Transfers In, less 
+Transfers Out. 
+ 
+Actual (Memo) Provides the general ledger balance 
+that includes posted and unposted 
+transactions. Click the folder button to 
+view account detail. 
+ 
+Encumbrances  Indicates the sum of all open purchase 
+orders for the account. Click the folder 
+button to view account detail. 
+ 
+Requisitions Displays the total amount of 
+requisitions in status 4–Allocated, 6–
+Released, and 8–Approved. View 
+account detail by clicking the folder 
+button. 
+ 
+Available Provides the budgeted amount 
+remaining in the account. 
+ 
+Percent Used Identifies the percent of the budget 
+that has been spent, transferred out, or 
+encumbered. 
+ 
+
+===PAGE 84===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 84 
+ 
+Field Description Notes 
+When you are using this field as 
+search criteria, enter the smallest 
+percent used that you need to find. For 
+example, if you enter 10, the program 
+finds 10 and everything up to 100 
+percent.  
+ 
+Current Year Tab 
+This tab displays the current year, carry forward, and GAAP totals, if carry forward monies exist. If there 
+are no carry forward monies, the columns display as Current Year and Last Year. The Current Year 
+column shows the current year, as determined by the General Ledger Settings. The Carry Forward 
+column shows any purchase orders that have been carried forward from a previous year. The GAAP 
+Totals column shows the combined totals of the Current Year and Carry Forward columns. The fields 
+change according to the type of account you are viewing.  
+ 
+ 
+On the Current Year tab, the CFWD BUA is reported in the CFWD column as Original Appropriation, 
+not Amendments, so it is excluded from the Amendments detail. 
+ 
+The Current Year tab is hidden when you view a revenue account. The tab is also hidden if there are 
+balance sheet accounts and other account types in the active set of records. For active sets of records 
+that consist of only expense accounts, the Carry Forward column always displays, even if the current 
+account does not have carry forward amounts.  
+Account Descriptions  
+The following tables provide descriptions for the account types that display on the Current Year tab.  
+ 
+Balance Sheet Account 
+ 
+Field Description Notes 
+Starting Balance Provides the balance at the beginning of the 
+current fiscal year and last year.  
+ 
+Activity Indicates the sum of the activity for the 
+current fiscal year and last year. 
+ 
+
+===PAGE 85===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 85 
+ 
+Ending Balance Identifies the most recent account balance, 
+calculated as follows: Starting Balance – 
+Activity.  
+ 
+Memo Balance Displays the general ledger memo balance 
+that includes posted and unposted items.  
+ 
+ 
+Expense Account 
+ 
+Field Description Notes 
+Original Approp Indicates the starting budget in the current 
+fiscal year and last year.  
+ 
+Amendments Provides the sum of any budget transfers in 
+and/or out for the current fiscal year and 
+last year. 
+ 
+Revised Budget Displays the current revised budget, 
+calculated as follows: Original Approp +/– 
+Amendments. 
+ 
+YTD Actual Identifies the actual balance at the end of 
+the fiscal period or year. 
+ 
+Encumbrance Specifies the sum of all open purchase 
+orders as of the current fiscal year and last 
+year. 
+ 
+Requisitions Indicates the sum of all requisitions (status 
+4, 6, and 8) in the current fiscal year and 
+last year.  
+ 
+Incep to Date Provides the sum of activity since the 
+inception of the account to the current date. 
+This is only populated for multiyear type 1 
+accounts. 
+ 
+Available Budget Displays the remaining available budget, 
+calculated as follows: Revised Budget – 
+YTD Actual – Encumbrance – Requisition 
+(– Incept to Date, if multiyear). 
+ 
+% Used Provides the percent of the revised budget 
+that has been used to date. 
+ 
+ 
+Revenue Account 
+ 
+Field Description Notes 
+Original Est Rev Indicates the estimated amount of the 
+original budget for current fiscal year and 
+last year. 
+ 
+Est Rev Adjusted Specifies the sum of any budget 
+transfers or amendments for current 
+fiscal year and last year. 
+ 
+Rev Est Rev Displays the revised estimated revenue, 
+calculated as follows: Original Est Rev 
++/– Est Rev Adjusted. 
+ 
+Incep to Date Provides the sum of revenue since the 
+inception of the account to the current 
+ 
+===PAGE 86===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 86 
+ 
+Field Description Notes 
+date. This is only populated for multiyear 
+type 2 accounts. 
+Actual YTD Rev Identifies the actual revenue collected 
+for the identified accounting period. 
+ 
+Remaining Rev Provides the amount of revenue 
+remaining to be collected for the current 
+fiscal year and last year. 
+ 
+Percent Collected Displays the percent of revenue already 
+collected. 
+ 
+ 
+History Tab 
+This tab provides a view of all years in the account's history; click the arrow buttons to view other years. 
+This example shows the history for a revenue account. 
+ 
+ 
+
+===PAGE 87===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 87 
+ 
+4 Year Graph Tab 
+This tab displays a bar graph of amounts for the current year, two previous years, and the next year. 
+Available, Actual (Memo), Encumbrances, and Requisitions amounts are charted in distinct colors. 
+When you hover the cursor over a chart element, the program provides additional information. 
+ 
+ 
+Options to print or download the data as a .CSV file are found in the lower left corner below the graph. 
+History Graph Tab 
+This tab provides a graph of historical Available, Actual (Memo), and Encumbrances amounts for 
+previous years, beyond those shown in the 4 Year Graph tab. 
+ 
+ 
+Options to print or download the data as a .CSV file are found in the lower left corner below the graph. 
+
+===PAGE 88===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 88 
+ 
+Bienniums and Biennium Graph Tabs 
+If your organization uses biennial budgeting, the program displays the Bienniums and Biennium Graph 
+tabs. These tabs provide budget amounts and a graph of the 24-month period of the biennial fiscal 
+year. 
+ 
+ 
+If you click Months, the Account Monthly Data screen indicates the monthly amounts for the biennium. 
+ 
+ 
+Note: In order to use biennial budgeting functionality, Munis personnel must run a utility to switch the 
+database to a biennial format. This can only be accomplished at the start of the biennium (year 1). The 
+carry forward method must be set to 3–GAAP/Budgetary Combined. Nonstandard fiscal year funds are 
+not allowed in a biennial database. 
+
+===PAGE 89===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 89 
+ 
+Program Options  
+If there are notes associated with an account, the Account Notes button is highlighted yellow; click 
+Account Notes to view the contents.  
+ 
+Detail 
+Click Detail in the toolbar to search for transactions that have been posted to an account using the 
+Journal Selection Criteria screen.  
+ 
+ 
+Enter the search criteria to use, and then click Accept to submit the search. You can search by date 
+range, year/period, journal source, or reference field. If you select the Include Unposted Journals check 
+box, any general ledger journal entries still in the proof file are included.  
+ 
+
+===PAGE 90===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 90 
+ 
+The Account Detail screen displays the results. Click Detail or Journal on the toolbar for more 
+information on a selected entry. 
+ 
+ 
+When you highlight an entry and click Detail, the program displays the details for that account 
+transaction in the appropriate program. The detail screen varies based on the journal entry source type. 
+For example, if you select a POE entry, the Purchase Order Inquiry screen opens and provides the 
+information for that record.  
+ 
+ 
+
+===PAGE 91===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 91 
+ 
+If you highlight an entry from the Account Detail screen and click Journal, the Journal Inquiry/Print 
+program opens, providing the journal details of the selected record. 
+ 
+Months 
+To view account monthly data, click Months on the Account Inquiry screen. 
+The program displays a monthly view of all journal transactions that have been closed to a period. If the 
+transactions have not been through a month-end process, they are not included in the monthly data. 
+However, you can view transactions not yet closed in the current month detail. Transactions that are in 
+journal entry/proof and have not yet been posted are not visible in any screen.  
+ 
+ 
+Click Curr Month Detail on the toolbar to display all the posted activity (that has been closed to a 
+period). 
+
+===PAGE 92===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 92 
+ 
+Click Monthly Totals on the toolbar to show the totals of all the posted activity (that has been closed to 
+a period) for the accounts in the active set by month for the current year.  
+Totals 
+To view account totals, click Totals on the Account Inquiry screen. The program refreshes to show the 
+combined totals for all accounts in the active set. Click Exit Totals in the toolbar to return to the main 
+Account Inquiry screen. 
+ 
+GL Impact 
+The general ledger is not affected by this program as it is for inquiry only. 
+
+===PAGE 93===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 93 
+ 
+Year-to-Date Budget Report  
+Overview 
+The Year-to-Date Budget report serves as a primary monthly budget report, but its flexible definition 
+makes it suitable for special analysis purposes. The YTD Budget Report program can be run for the 
+following purposes: 
+ 
+• To report revenues collected to a specific period. 
+• To report expenses to a specific period. 
+• To report encumbrances to a specific period. 
+• To report the current budget, expenditures versus carry forward budget, expenditures, and 
+encumbrances. 
+• To report available budget from posted transactions or available budget from pending 
+transactions. 
+• To report on fund balance position. 
+• To proof budget, encumbrance, expenditure, and revenue balances. 
+• To proof chart of accounts (COA) conversions and account balance conversions. 
+ 
+This report can also be run for the following years and periods: 
+• Three years prior to the current fiscal year for periods 1–13. 
+• Two years prior to the current fiscal year for periods 1–13. 
+• The previous fiscal year for periods 1–13 and for 99 (memo balance). 
+• The current fiscal year for periods 1–13 and for 99 (memo balance). 
+• The next fiscal year for periods 1–13 and 99 (memo balance). 
+ 
+This document covers the available options and how they affect the presentation of the report. 
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+ 
+• You have the appropriate permissions to view the general ledger accounts and funds on 
+which to report. 
+• The chart of accounts (COA) has been established.  
+• The adopted budget has been posted. 
+ 
+===PAGE 94===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 94 
+ 
+Procedure 
+To create a year-to-date budget report: 
+ Open the YTD Budget Report program. 
+Financials > General Ledger Menu > Inquiries and Reports > YTD Budget Report  
+Or: 
+Departmental Functions > YTD Budget Report  
+ 
+ 
+ Click Search or Seg Find to identify accounts for the report.  
+• If you click Search, complete the fields according to the following table.  
+Field Description Notes 
+Account Rollup 
+Org 
+Object 
+Project  
+Contain the org, object, and project (if 
+applicable) codes that represent the 
+account for which to create a report.  
+ 
+Rollup Code Stores the budget rollup code for the 
+specified account. To search on a range 
+of budget rollup codes, insert a colon (:) 
+between the first and last codes in the 
+search range. Use the asterisk (*) 
+wildcard character to find all codes. 
+ 
+Account Type/Status 
+Account Type Indicates the type of account: revenue or 
+expense. You can select the blank option 
+to include all account types.  
+ 
+Account Status Determines the account status: active or 
+inactive. You can select the blank option 
+to include both active and inactive 
+accounts.  
+ 
+
+===PAGE 95===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 95 
+ 
+ 
+• If you select Seg Find, complete the fields on the GL Segment Find screen. 
+ 
+ 
+ Click Accept. 
+The program indicates the number of records found.  
+ 
+ 
+
+===PAGE 96===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 96 
+ 
+ Click Report Options. 
+The program displays the Report Options screen.  
+ 
+ 
+ Complete the fields according to the following table to define the report settings.  
+Field Description Notes 
+Execute This 
+Report 
+Allows you to use Munis Scheduler to 
+process the report.  
+• If you select Now to process the report 
+immediately, click an output option to 
+print, view, or save the report.  
+• If you select In Background (Now) to 
+process the report a single time using 
+the event log and email notification 
+features, or if you select At a Scheduled 
+Time to establish a specific time when 
+the report runs, the program uses Munis 
+Scheduler. 
+ 
+Field # (Sequence 
+1 to 4) 
+Establish a component (for example, 
+segment, org, or object) of the account 
+structure to use as a sort key for the print 
+sequence. 
+Sequence 1 is the primary sort key for all 
+accounts on the report, Sequence 2 is the 
+secondary sort, and so on. 
+The default sort is by fund, org, character, 
+and object. Object does not need to be 
+defined if it is the lowest level of the report. 
+ 
+Total Prints a subtotal line whenever the 
+sequence changes, if selected. For 
+ 
+
+===PAGE 97===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 97 
+ 
+Field Description Notes 
+example, org code may have been selected 
+as part of the sort sequence so that the 
+system prints a total whenever the org 
+changes. If this check box is not selected, 
+Sequence 1 Total Revenues and Total 
+Expenses are suppressed for this level. If 
+this check box is selected in Sequence 1 
+and in Sequence 4, there is no label on the 
+last level. 
+Page Break Directs the program to start a new page 
+whenever the sequence changes, if 
+selected. If this check box is not selected in 
+Sequence 1, there is no label in the page 
+header and this level has a header label like 
+all other sequence levels. 
+ 
+Report Title  Contain the title for the YTD report. The 
+default value for the first line of the title is 
+Year-to Date Budget Report, but you can 
+change this. 
+You can enter up to 40 characters of text on 
+the two lines of text. The title centers 
+automatically when the report prints. 
+ 
+ 
+Print Options Tab 
+This tab provides additional options for printing the report. 
+ 
+ 
+Field Description Notes 
+Report Options 
+Include Only Accounts 
+That Used _% or 
+Greater of Budget  
+Indicates which accounts to include based on 
+the percent of the budget used. For example, 
+if you type 100 in this box, the report includes 
+accounts with a percent used greater than or 
+equal to 100. This includes accounts that have 
+ 
+
+===PAGE 98===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 98 
+ 
+Field Description Notes 
+used the entire budget or have exceeded the 
+budget. 
+If the value of this box is 0 or greater, up to 
+100, the percent used is set to and prints on 
+the report as 100% when the account has zero 
+revised budget and actual or encumbrance 
+activity. 
+Type a value or leave this box blank to include 
+all accounts. 
+Order Accounts By Allows you to select the order in which 
+accounts are sorted: org/object/project or full 
+account. 
+ 
+Totals Only Causes the report to print totals as described 
+in the Field # Sequence selections, if selected. 
+This means that the report does not include 
+any accounts that are not entered in the 
+Sequence boxes and does not include 
+transaction detail. If none of the four sequence 
+groups is selected, the report includes only a 
+Grand Total. 
+ 
+Account Description Determines the description that prints next to 
+the account: full or short. The full description 
+contains up to 30 characters; the short 
+description contains 10. 
+ 
+Print Full GL Account Directs the report to print the full account 
+number, if selected. This prints instead of the 
+org/object/project codes. 
+This option is only accessible when the Totals 
+Only check box is not selected. 
+ 
+Roll Projects to Object  Instructs the program to summarize all general 
+ledger accounts that have a project code 
+under their common org and object, when 
+project accounting is in use. Rather than each 
+project account printing with its description, it 
+is included under the org/object. 
+ 
+Print Report Options  Causes the program to append the search 
+criteria and report option settings at the end of 
+the report, if selected. 
+ 
+Year/Period Indicates the year and period for which 
+information for the budget report is selected. 
+If you select Within Year/Period, you must 
+specify a fiscal year and period:  
+• For the fiscal year, you can enter the 
+current year, next year (which must be 
+period 99), last year, two years ago, or 
+three years ago. 
+• For the fiscal period, you can enter periods 
+1–13 and 99 (memo balance, which 
+includes posted and pending transactions). 
+ 
+===PAGE 99===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 99 
+ 
+Field Description Notes 
+For the current year, next year, or last 
+year, the report may be run for any period 
+other than 00 (start-of-year), including 
+memo balance (99). For 2 and 3 years 
+prior, the report may only be run for 
+periods 1–13. 
+The default value for the period populates 
+from the Current Year/Period field in Roll 
+Accounting Period, but you can enter any 
+period. 
+Notes:  
+• Any period includes entries for that period 
+that have not been closed using Month-
+End Processing.  
+• Period 99 retrieves up-to-the-minute totals, 
+using the Memo Balance field for actuals, 
+the Encumbrances field for encumbrances, 
+and the Revised Budget field for Budget. 
+Choosing Period 99 aligns the report to 
+Account Inquiry reporting.  
+• Last fiscal year retrieves last-year figures.  
+• Next fiscal year retrieves next-year actuals 
+and encumbrances. If Post to Master for 
+Reports on the Budget menu has been 
+run, next fiscal year also includes next 
+year adopted budget.  
+• If the fund is a multiyear fund, the program 
+calculates and displays the three budget 
+field amounts (original appropriation, 
+transfers/adjustment, and revised budget) 
+as if the period selected were 99.  
+If period 13 of the prior year is requested, the 
+current year carry forward budget is used for 
+the encumbrance amount. 
+Carry Forward  Defines the report output as: 
+• Totals (GAAP)— Includes current year and 
+carry forward activity.  
+• Current Year Only—E xcludes activity 
+related to encumbrance carry forward.  
+• Carry Forward Only— Includes only activity 
+related to encumbrance carry forward.  
+The default value is Totals (GAAP), but you 
+can change this option for any period in the 
+entered year. 
+ 
+Print MTD Version Causes the report to print a month-to-date 
+column on the report, if selected. The MTD 
+column is either MTD Expended or Actual 
+ 
+===PAGE 100===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 100 
+ 
+Field Description Notes 
+MTD Revenue. If the MTD option is chosen, 
+the Transfers/Adjustments column is omitted. 
+Format Type Determines the detail format option: Standard 
+or Cents in Budget Amount. When you select 
+Cents in Budget Amount, the 
+Transfers/Adjustments and Revised Budget 
+columns display cents. 
+ 
+Double Space Causes the report to print in double-spaced 
+format, if selected. 
+This option is only accessible when the Totals 
+Only check box is not selected. 
+ 
+Suppress Zero 
+Balance Accounts  
+Directs the report to exclude accounts that 
+meet the following conditions: zero original 
+budget, zero budget transfers, zero revised 
+budget, zero actual, zero month-to-date 
+actual, zero encumbrances, zero available 
+budget, and if detail is selected, no detail for 
+the reporting period. 
+ 
+Exclude YEC Journals Excludes period 13 year-end-close journals 
+when you run the report for prior years, when 
+selected. 
+ 
+ 
+Additional Options Tab 
+This tab provides options to further specify how the report displays.  
+ 
+ 
+Field Description Notes 
+Additional Options 
+Include Requisition 
+Amounts 
+Causes the program to add requisition 
+amounts to the report and to rename the 
+Encumbrances column to Enc/Req to reflect 
+this, if selected. 
+This check box is accessible for only current 
+year and next year reporting and when period 
+ 
+
+===PAGE 101===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 101 
+ 
+Field Description Notes 
+99 is chosen. The Available Budget column is 
+affected as it uses the encumbrance amount 
+in its calculation. 
+Print Revenues - 
+Version Headings 
+Directs the program to print the revenue-
+related column headings versus the standard 
+column headings, if selected. Select this 
+check box to print revenues-version headings. 
+There is no encumbrances column. 
+ 
+Print Revenue as 
+Credit 
+Causes the report to print revenue accounts 
+as credits, if selected. This check box is 
+available when the report is being run for just 
+revenue accounts. If not selected, the report 
+prints revenue account balances without the 
+minus sign. 
+ 
+Print Revenue 
+Budgets as Zero 
+Indicates to the program that revenue budget 
+amounts should print as zero, if selected. 
+ 
+Include Fund 
+Balance 
+Specifies to the program that fund balance 
+summary information is included, if selected. 
+If you select this option, the fund balance 
+summary prints at the end of each fund. 
+This check box is only accessible if there are 
+both revenue and expense accounts in the 
+active set and the Field # in Sequence 1 is 
+Fund. 
+ 
+Sort/Total Budget 
+Rollup 
+Causes the program to display the budget 
+rollup code totals in the report, if selected. 
+This check box is only accessible if the Rollup 
+field is completed on the main YTD Budget 
+Report screen. 
+ 
+Print Journal Detail Instructs the program to extract detail 
+transactions from the GL Journal Hold and GL 
+History tables and prints these detail lines for 
+each account. When printing journal entry 
+detail, SOY entries are treated like purchase 
+order entries. These SOY entries are the 
+encumbrance entries for purchase orders 
+carried over into the current year from last 
+year. To include the SOY journal entries, you 
+must use a starting period of 0. 
+ 
+Include Budget 
+Entries 
+Causes transaction type 5 journal entries to 
+be included in the detail of the report, if 
+selected. 
+ 
+Include Encumb/Liq 
+Entries 
+Includes transaction type 4 (encumbrance) 
+journal entries in the detail of the report, if 
+selected. 
+ 
+Sort Option Determines the sort order if the Print Journal 
+Detail check box is selected; sort options are 
+journal entries or purchase orders. 
+ 
+===PAGE 102===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 102 
+ 
+Field Description Notes 
+Detail Format Option Determines the journal detail format: 
+• Standard—A standard report where 
+journal detail is presented as is.  
+• Column Sensitive—The detail line 
+formatted based on the journal source 
+code of the detail.  
+For example, AP*, PO*, SOY, and R* source 
+journals have reference 1 labeled "VND" and 
+reference 2 labeled "PO." The detail line also 
+has the vendor's alpha name presented 
+before the journal comment and the detail line 
+ends with the check number where available. 
+In all other journals, only reference 1 is 
+presented with the label REG (reference 2 is 
+omitted) and the line ends with the journal 
+comment. 
+ 
+Include Additional JE 
+Comments 
+Prints journal entry comments on the report, if 
+selected. 
+ 
+Multiyear View Specifies the view for multiyear funds. If 
+Default View is selected, the program applies 
+the default setting from each account. If Life-
+to-Date View or Fiscal Year View is selected, 
+the program applies that view to all accounts 
+in the set, regardless of each account’s 
+individual default settings. 
+ 
+Amounts/Totals 
+Exceed 999 Million 
+Dollars 
+Directs the program to include amounts that 
+exceed $999,999,999.00 by displaying the 
+account description on a separate line from 
+the totals.  
+If this box is cleared, the report includes the 
+amounts by shortening the account 
+description to make room for the dollar 
+amount and displays all account information 
+on a single line. 
+ 
+From Yr/Per 
+To Yr/Per 
+Define the range of years and periods for 
+which to include account detail on the report. 
+Typically, this would reflect one month's 
+detail, but it could be year-to-date. 
+These boxes are only accessible if the Print 
+Journal Detail check box is selected. 
+ 
+ Click Accept.  
+ Click Back on the toolbar to close the Report Options screen. 
+ On the main screen, choose an output option to view, print, or save the report. 
+===PAGE 103===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 103 
+ 
+Example Report 
+ 
+Results 
+You can now analyze what transactions have occurred within your search and sequence settings, 
+confirm that a budget was posted correctly, proof your chart of accounts, or look at transactions for a 
+specific period. 
+  
+
+===PAGE 104===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 104 
+ 
+Account Trial Balance Report  
+Objective 
+This document provides the procedure for completing the Account Trial Balance Report program in its 
+full form to check if a fund is in balance. If the fund is not in balance, the report identifies where and 
+what entries have caused it to go out of balance. This report is an important tool when reconciling funds 
+prior to year-end and month-end closes.  
+Overview 
+The Account Trial Balance report indicates if a fund is out of balance, or by what amount your fund is 
+out of balance. When you create an Account Trial Balance report for all accounts in a fund, both the 
+beginning balance and the ending balance should be zero (debits should equal credits for the fund 
+totals). If a fund is out of balance, use both the All and Balance options to narrow down the type of 
+account in which the discrepancy has occurred. You can also use the Detail option to see every 
+transaction that has occurred within that fund to identify what transactions have caused the 
+discrepancy. 
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+• You have the proper general ledger permissions to view the accounts and funds to be 
+reported.  
+• The chart of accounts (COA) has been established.  
+  
+===PAGE 105===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 105 
+ 
+Procedure 
+Use the following procedures to create trial balance reports: 
+ Open the Account Trial Balance program. 
+Financials > General Ledger Menu > Journal Entry/History > Account Trial Balance 
+ 
+ 
+ Click Search.  
+The program displays the GL Segment Find screen.  
+ 
+ 
+
+===PAGE 106===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 106 
+ 
+ Complete the fields to define the report data. The segment names vary according to the labels 
+assigned by your organization.  
+ Click Accept. 
+The program creates an active set of records matching the search criteria and returns to the main 
+screen.  
+ Click Report Options on the toolbar.  
+The program makes the reporting criteria fields accessible. 
+ Complete the fields according to the following table to define the report settings.  
+Field Description Notes 
+Report Options 
+Execute This 
+Report 
+Allows you to use Munis Scheduler to 
+process the report.  
+• If you select Now to process the 
+report immediately, use the output 
+options to print, view, or save the 
+report.  
+• If you select In Background (Now) 
+to process the report a single time 
+using the event log and email 
+notification features, or if you select 
+At a Scheduled Time to establish a 
+specific time when the report runs, 
+the program uses Munis Scheduler.  
+ 
+Print (D)etail or 
+(S)ummary 
+Specifies the level of reporting. 
+If you select Detail, the report includes 
+all journal entries for that account 
+whether they have been closed to a 
+month or not. By choosing Summary 
+the report will display only totals for 
+each account. 
+ 
+Fiscal Year-to-Date 
+Version 
+Causes the report to include fiscal year-
+to-date balances, if selected. 
+If you select this check box, the report 
+automatically enters 1 in the Reporting 
+from Period box. If you do not select 
+this check box, you can enter a value in 
+the Reporting from Period box. 
+You cannot run the report for the start-
+of-year period 00. 
+ 
+Reporting Year Indicates the year to include in the 
+report. 
+The reporting year must be either the 
+current year (the default) or last year. 
+ 
+Reporting from 
+Period 
+Identifies the range of fiscal periods to 
+include. If the Fiscal Year-to-Date 
+check box is selected, this field is not 
+available. 
+ 
+===PAGE 107===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 107 
+ 
+Field Description Notes 
+Journal Detail from Contain the first and last dates that 
+define the range of journal dates to 
+include. 
+This box is only accessible if the value 
+of the Print Detail or Summary option is 
+Detail. 
+ 
+(B)alance Sheet or 
+(A)ll Accounts 
+Indicates the account types that the 
+report includes. 
+If you select balance sheet accounts, 
+the program includes revenue and 
+expenditure control accounts. If you 
+select All Accounts, then all accounts 
+except the revenue and expenditure 
+control accounts are included. To 
+ensure that the fund is in balance, run 
+the report for both Balance (B) and All 
+Accounts (A). 
+ 
+Rollup Projects to 
+Object Level 
+Instructs the program to summarize 
+project accounts on the report, if 
+selected. 
+The detail posted to these accounts is 
+rolled up to the org/object level. 
+The ending balance is calculated as the 
+net of all projects associated with the 
+org/object. 
+ 
+Omit Zero Balance 
+Accounts 
+Causes the report to omit accounts with 
+zero balances, if selected. 
+ 
+Sort By Establishes the sort sequence of the 
+report. 
+The default value is 1–Fund, 
+Segments.  
+For the Org account entry mode, if All 
+Accounts are selected for account 
+types, the options are 1–Fund, 
+Segments and 3–Org-Obj-Project. 
+For the Org account entry mode, if 
+Balance Sheet is selected for the 
+account type, all the options are 
+available.  
+ 
+Print Org Code Causes the report to display the org 
+code below the account, if selected. 
+ 
+Print Fund Header 
+and Org/Obj on 
+Total Line 
+Directs the program to print the fund 
+account as the header and the org/obj 
+in the totals, if selected. 
+ 
+Include Page 
+Break Between 
+Funds 
+Causes the program to separate fund 
+totals in the printed report, if selected. 
+This check box applies to both Detail 
+and Summary reports. 
+The default value for this check box is 
+selected (Yes). This will ensure that a 
+ 
+===PAGE 108===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 108 
+ 
+Field Description Notes 
+new fund does not start in the middle of 
+a page. 
+Amounts/Totals 
+Exceed 999 Million 
+Dollars 
+Indicates that the report contains 
+amounts and/or totals that exceed 
+$999,000,000, if selected. The program 
+adjusts the format of the report to 
+account for the additional required 
+characters. 
+ 
+Print Report 
+Options 
+ 
+Directs the program to include a 
+summary of the report options used to 
+generate the report, if selected. 
+Clear this check box to exclude the 
+summary. 
+ 
+Include Hold 
+Journals in 
+Beginning Balance 
+Causes the report to include journals 
+that have not yet been closed to a 
+month, if selected. 
+ 
+Include Page 
+Break Between 
+Each Subfund 
+Instructs the report to include a page 
+break after each subfund code, if 
+selected.  
+ 
+Print Subfund 
+Totals 
+Directs the program to include the total 
+for each subfund on the report, if 
+selected.  
+ 
+ Click Accept. 
+ Choose an output option from the toolbar to view, print, or save the report. 
+Example Report 
+ 
+Your report may display differently depending on the report options you have chosen. 
+ 
+
+===PAGE 109===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 109 
+ 
+The Display Format option allows you to display your search results to the screen as you enter the 
+data. 
+To create a Display Format report: 
+ Click Display Format.  
+The program displays the Brief Account Trail Balance Display screen.  
+ 
+ 
+ Click Search. 
+ Enter the search criteria. 
+ Click Accept. 
+The program returns to the Brief Account Trial Balance Display screen. 
+ Complete the fields to define the effective dates.  
+ Click Accept.  
+The program displays a confirmation message. 
+
+===PAGE 110===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 110 
+ 
+ Click Yes, Continue. 
+The program refreshes the screen to display an active set of records that consists of all the 
+accounts that matched the criteria.  
+ 
+ 
+ Use the navigation buttons to view the accounts.  
+ Choose an output option to view, print, or save the report. 
+Example Report 
+ 
+ 
+
+===PAGE 111===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 111 
+ 
+Results 
+The report indicates if a fund is in balance, and if not, what transactions have caused it to be out of 
+balance. When reading the Account Trial Balance Report, remember that both the beginning balances 
+and the ending balances should be zero, and debits should equal credits for the fund totals. 
+What’s Next? 
+If there are any discrepancies in the report, post the correcting journal entries to bring the fund back into 
+balance.  
+  
+===PAGE 112===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 112 
+ 
+Import Journals     
+Objective 
+This document provides instructions on how to import data from ASCII files using the Import Journals 
+program. This program is used for journal imports from systems or sources other than Munis.  
+Overview 
+When you import journal data into Munis, data must be in specific formats and you must understand the 
+various file layouts. The following import formats are available in the Import Journals program: 
+• Budget— This is a fixed length ASCII file layout for importing standard journal entries.   
+• Budget Long Account— The account type is in position 141 and the long account number is in 
+positions 142 to 176; the remaining format is the same as the Budget Import Format. 
+• Cayenta—This is a fixed length ASCII file layout for importing journal entries from a Cayenta 
+system into Munis.   
+• Faster— This is a fixed length ASCII file layout for importing journal entries from a FASTER fleet 
+maintenance system into Munis. (Note: FASTER is the name of the software.) 
+• ISIS Payroll ZF65 Report—This format imports data from Microsoft Excel. This import is specific 
+to the Louisiana Department of Education. 
+• Jonas— This format is tab-delimited. 
+• NC Vehicle Property Tax—This import format is specific to the state of North Carolina.  
+• Oklahoma Benefit— This format is intended for use by El Monte and Tulsa, Oklahoma. 
+• Oklahoma Payroll—This format is intended for use by El Monte and Tulsa, Oklahoma.  
+• PeopleSoft— This format imports Excel data from a PeopleSoft system into Munis. 
+• Pipe Delimited 1— This format is delimited using pipe characters (|). When you import using this 
+format, the program examines the org and object codes and determines whether the 
+combination represents an existing Munis account. If the account is valid, the program uses that 
+account. If the account is not valid, the program combines the org and object with a hyphen 
+between the two, and then applies that value to the cross-reference table in order to select a 
+cross reference string. 
+• Standard— This is a fixed length ASCII file layout for importing standard journal entries. 
+• Standard Excel— This is a standard format for importing a Microsoft Excel file. When this format 
+is selected, the program displays the Generate Excel Template button. Clicking the button 
+opens Excel with a blank form containing only column headers. This form can be used to create 
+the import file. 
+===PAGE 113===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 113 
+ 
+• Standard Long Account—This is a fixed length ASCII file layout for importing standard journal 
+entries using the Munis long account format. It is identical to the Standard Import Format, but it 
+includes the full general ledger account number in positions 142 to 196. If you click Pre-Edit 
+after selecting this format, the program displays the full account number. 
+• Standard Multi-Journal— This is a fixed length ASCII file layout for importing standard journal 
+entries into multiple journals in Munis. 
+• Template—Various custom template formats are available if you have defined them in the 
+Journal Import Templates program. 
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+ 
+• The chart of accounts (COA) has been established and includes all general ledger accounts 
+being imported or referenced in the Account X-Reference program. 
+• The Account X-Reference table has been created, if applicable. 
+  
+===PAGE 114===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 114 
+ 
+Procedure  
+To complete the journal import process: 
+ Open the Import Journals program. 
+Financials > General Ledger Menu > Journal Entry/History > Import Journals 
+ 
+ 
+ Click Define. 
+ Complete the fields to define the import parameters, referring to the following table for details.  
+Field Description Notes 
+Import Options 
+Execute This 
+Import... 
+Determines when to generate the import 
+when Munis Scheduler is enabled: 
+• Now—Completes the import 
+immediately. This option does not 
+use Munis Scheduler; use the 
+Import option within the program to 
+complete the import. 
+• In Background (Now)—Opens 
+Munis Scheduler to complete the 
+import one time using the event log 
+and email notification features. 
+• At a Scheduled Time— Uses Munis 
+Scheduler to establish a specific 
+time to complete the import. 
+ 
+Import Format Specifies the format of the import. When 
+you select a format and then click the 
+Generate button, the program creates a 
+ 
+
+===PAGE 115===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 115 
+ 
+Field Description Notes 
+blank template based on the selected 
+format. 
+Skip Budget Check Directs the program to ignore budget 
+amounts, when selected. 
+ 
+Report Over 
+Budget Warnings 
+Instructs the program to display report 
+warnings if over-budget lines are detected 
+on the import, when selected. 
+ 
+Release After 
+Import 
+Directs the program to release all imported 
+journals after the import completes 
+successfully, when selected. 
+ 
+Import File Contains the path of the file to import. 
+Type the file path or use the Local File or 
+Server File options to select a file from the 
+appropriate location. 
+The program indicates the format of the 
+import file, such as Text (ASCII) File or 
+Excel File, after you select an option from 
+the Import Format list and advance to the 
+next field. 
+ 
+Skip First Line Directs the program to skip the first line or 
+row of the import file, when selected. 
+Select this check box if the import file 
+includes column labels or field names. 
+ 
+Remove Import File Instructs the program to remove the import 
+file from its location after it is successfully 
+imported into the Munis system, when 
+selected. This prevents the program from 
+performing duplicate imports. 
+ 
+Journal Information 
+Fiscal Year/Period Identifies the fiscal year and period the 
+program uses for imported journals. 
+If you select Within Year/Period, you must 
+enter a specific year and period. The 
+default values for the fiscal year and 
+period are completed from General Ledger 
+Settings, but you can change this if you 
+have the appropriate permissions. 
+Valid entries for the Fiscal Year box are 
+the current year or next year.  
+Valid entries for the Period box are 01 
+through 13, inclusive. Period 13 
+represents end-of-year (EOY) and is only 
+valid in the prior year. 
+ 
+Effective Date Defines the effective date the program 
+uses for imported journals. 
+ 
+===PAGE 116===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 116 
+ 
+Field Description Notes 
+Reference Assigns a user-defined journal 
+reference code that stays with each 
+transaction throughout its life. 
+This is a user-defined code; it may be a 
+control number, a date, or a note. 
+ 
+Journal Source Specifies the journal source code for 
+journals that are imported. The program 
+automatically selects the journal source 
+based on the value chosen from the 
+Import Format list. 
+ 
+Reference 3 Indicates the journal reference code that 
+appears in the Reference 3 field. 
+For some import formats, the program 
+automatically completes this field and you 
+cannot change it. 
+For period 12 journals that need to be 
+reported on the Oklahoma Grant Claims 
+Supplemental Report, 
+type SUPPLEMENTAL. 
+ 
+Budget 
+Amendment Type 
+Indicates the budget amendment type for 
+expense and revenue accounts: 
+• 1—Exp to Exp or Rev to Rev  
+• 2—Exp to Rev or Rev to Exp  
+• 3—Exp/Rev one- sided (not 
+balanced) 
+• 4—Exp to Exp or Rev to Rev 
+• 5—Exp to Rev or Rev to Exp  
+• 6—Exp/Rev one- sided (not 
+balanced) 
+• 7—Exp to Rev or Rev to Exp 
+interfund 
+• 8—Exp to Exp interfund  
+• 9—Statistic accounts  
+Use Type 1, 2, or 3 when the amount on 
+each line in the import file is the amount 
+that the account’s budget should be 
+increased or decreased. 
+Use Type 4, 5, or 6 when the amount on 
+each line in the import file is the new 
+budget amount. The amendment is made 
+for the difference between the amount 
+being imported and the amount currently 
+budgeted on the account. 
+This box is accessible when the value of 
+the Import Format list is Budget. 
+ 
+Short Description Provides a short description of the journal 
+contents. 
+ 
+===PAGE 117===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 117 
+ 
+Field Description Notes 
+The description can be up to 10 
+alphanumeric characters. 
+This field is required. 
+Import Summary 
+Year 
+Period 
+Journal 
+Source 
+Status 
+Short Description 
+Displays a table of the imported journals. 
+The Open Journal and Release All options 
+below the table allow you to select a 
+journal from the table and view it or 
+release all journals in the table into the 
+workflow, respectively. 
+ 
+ 
+ When you have completed the applicable fields, click Accept.  
+ Click Pre-Edit to find any errors in the file prior to importing the data. 
+ Select an output option on the toolbar to review the journals. 
+ Click Import to import the journal entries. 
+Results 
+The program imports journal entries or budget amendments in the proof stage. Each record is 
+processed, verifying that each account exists in Account Master and is not a revenue or expense 
+control account.  
+ 
+If the account is invalid or matches either of the control accounts, the program displays an error and 
+you are prompted either to continue checking other accounts or to abort the process. In either case, 
+records are not created for a new journal. 
+What’s Next? 
+To affect the general ledger, you must output/post the journals using the General Journal Entry/Proof or 
+Budget Transfers and Amendments program. To find the journals, click Browse on the toolbar when 
+you open either program.  
+  
+===PAGE 118===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 118 
+ 
+Year End Manager 
+Objective 
+This document provides instructions on creating a year-end checklist in the Year End Manager program 
+to manage and streamline year-end processing. 
+Overview 
+The Year End Manager program provides a centralized location to organize and track progress on all 
+the tasks that must be completed prior to running the year-end close process. It provides customizable 
+checklists and detailed information about each task and associated records. 
+Prerequisites  
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+• You have access to the programs on the End of Period submenu. 
+• Month-end processing has been performed for all months in the year. 
+• There are no general ledger account access restrictions associated with your user ID. 
+ 
+  
+===PAGE 119===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 119 
+ 
+Procedures 
+Creating a Year-End Checklist 
+To create a year-end checklist: 
+1. Open the Year End Manager program. 
+Financials > General Ledger Menu > End of Period > Fiscal Year End Processing > Year End 
+Manager 
+ 
+ 
+2. Click Edit Checklist. 
+The program refreshes the screen to display the Available Tasks and Checklist panes. 
+ 
+ 
+
+===PAGE 120===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 120 
+ 
+3. Click New Checklist. 
+The program displays the Create Checklist dialog box. 
+ 
+ 
+4. Choose how to create the checklist: 
+• Use the Default Checklist—Adds all the default tasks in the System Generated tab to the 
+checklist. 
+• Start with a Blank Checklist—Creates a bl ank checklist with no tasks. The tasks in the 
+System Generated tab are available to be added manually. 
+• Copy Tasks from an Existing Checklist—Copies tasks from a previous year's checklist to 
+the new checklist. When selected, this option provides a list of existing checklists from 
+which to copy tasks. The Copy Comments check box, when selected, copies comments 
+from the selected checklist to the new checklist. 
+ 
+ 
+5. Click Create. 
+The program refreshes the screen based on the selected option. 
+6. Review the default tasks in either the Available Tasks or Checklist pane, depending on your 
+selection.  
+7. If tasks exist in the Available Tasks pane, select the check box for each task to add to the 
+Checklist pane. 
+The Add to Checklist link displays. 
+ 
+ 
+ 
+
+===PAGE 121===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 121 
+ 
+8. Click Add to Checklist. 
+The selected task is added to the bottom of the Checklist pane and removed from the Available 
+Tasks pane. 
+ 
+ 
+9. In the Checklist pane, drag a task to reorder it. 
+The program automatically renumbers the tasks accordingly. 
+10. To remove tasks from the Checklist pane, select the check box for each task to remove. 
+The Remove from Checklist link displays. 
+ 
+ 
+11. Click Remove from Checklist. 
+The selected tasks are removed from the Checklist pane and added to the Available Tasks 
+pane. The remaining tasks in the checklist are renumbered accordingly. 
+ 
+ 
+
+===PAGE 122===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 122 
+ 
+12. The User Defined tab holds any user-defined tasks that are specific to your organization. To add 
+a user-defined task, click New Task. 
+The program displays the Add Task dialog box. 
+ 
+ 
+13. Complete the fields to define the new task and then click Save. 
+The program adds the new task to the User Defined tab. 
+14. Select the check box for the user-defined task to add to the Checklist pane. 
+The program displays the Add to Checklist, Edit, and Delete options. 
+ 
+ 
+Note: If you select multiple tasks, the program displays the Add to Checklist option only. The 
+Edit and Delete options are only available for individual tasks. 
+15. Click Add to Checklist to add the selected user-defined task to the Checklist pane. 
+16. Drag the task to reorder it as needed.  
+17. Once you have added all the tasks to the checklist, click Return. 
+The program automatically saves the checklist. 
+ 
+ 
+
+===PAGE 123===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 123 
+ 
+Assigning Due Dates, Reminders, and Tasks 
+To enable email notifications, GLYE and GLYED alerts (for reminders and due dates, respectively) 
+must be established in the Alert Business Rules program, which is accessible from the System 
+Administration > Alert Administration submenu. Once these alerts are set up and valid emails are 
+established for the task assignees, emails will be sent to the assignees based on the reminder and due 
+dates. 
+ 
+1. From an existing checklist, click Dates. 
+The program displays the Checklist Dates dialog box.
+ 
+ 
+2. For each checklist item, enter the name of the user who is assigned the task, the due date, and 
+the date on which to send a reminder in the relevant fields. 
+When you start typing in the Assignee field, the program provides a list of available options. 
+Assignees must be established users in the Munis system.  
+For the Due and Reminder fields, use the calendar button to select dates as needed. 
+3. Click Save. 
+The program returns to the checklist. The Due, Assigned To, and Reminder fields for the 
+individual checklist tasks include the information you supplied. 
+ 
+Results 
+Once your organization has defined all the required steps in the year-end checklist, the checklist can be 
+used to manage and track progress in the year-end process. The checklist can be copied and edited 
+from one year to the next, accommodating any necessary customizations to the process. 
+GL Impact 
+The general ledger is not affected by creating year-end checklists. However, depending on the tasks 
+included in the checklist, and when the tasks are undertaken, the general ledger may be affected 
+accordingly. For example, reviewing and posting unposted transactions directly impacts the general 
+ledger. 

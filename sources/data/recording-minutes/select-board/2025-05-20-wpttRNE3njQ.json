@@ -509,5 +509,244 @@
    "at": "2026-09-27T19:29:20Z",
    "cost_usd": 0.20198000000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05202025-7231",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-05-20-minutes-7231.txt",
+   "path": "sources/meetings/select-board/2025-05-20-minutes-7231.pdf"
+  },
+  "official_sha256": "046ffe2119244f814ed5559d367e4c6793b46c35e2cfda007984c6473394b283",
+  "coverage": "full",
+  "summary": "The two records agree on every vote, the outcome of each (all unanimous 5-0-0), and the grant figures. The differences are mostly misheard names. The one substantive difference is the liaison assignments, where our minutes give Renee Mi three committees that the official minutes give to Member McLeod or Member Lehtinen.",
+  "counts": {
+   "agree": 14,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair nomination: Caesar Nolo",
+    "ours": "Nominate Caesar Nolo for chair — passed unanimously",
+    "official": "Motion by Clerk Amanda Moore to nominate Caesar Nuzzolo as Chair.",
+    "official_reading": "Caesar Nuzzolo",
+    "note": "Same vote and outcome; the captions misheard the surname.",
+    "t": 147
+   },
+   {
+    "kind": "agree",
+    "about": "Vice chair nomination: Amanda Moore",
+    "ours": "Nominate Amanda Moore for vice chair — passed unanimously",
+    "official": "Motion by Chair Nuzzolo to nominate Amanda Moore as Vice-Chair.",
+    "note": "Same nominee and outcome. The official header lists Emkey as Vice-Chair and Moore as Clerk, which are the pre-reorganization titles.",
+    "t": 191
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clerk nomination: Renee Mi",
+    "ours": "Nominate Renee Mi for clerk — passed unanimously",
+    "official": "Motion by Vice-Chair Moore to nominate Renee Emkey as Clerk.",
+    "official_reading": "Renee Emkey",
+    "note": "Same vote and outcome; the captions misheard the surname.",
+    "t": 212
+   },
+   {
+    "kind": "agree",
+    "about": "Close hearing, St. Boniface special event license",
+    "ours": "Close the public hearing for St. Bonafice's special event license — passed unanimously",
+    "official": "Motion by Vice-Chair Moore to close the public hearing.",
+    "note": "Same vote and outcome, 5-0-0 in the official minutes.",
+    "t": 765
+   },
+   {
+    "kind": "agree",
+    "about": "Approve Sounds of Jubilee special event and beer/wine licenses",
+    "ours": "Approve the special event license for Sounds of Jubilee (June 22, noon-8pm) and one-day beer/wine license for the same date and time — passed unanimously",
+    "official": "Motion by Clerk Emkey to approve the Special Event License and One Day Beer and Wine",
+    "note": "Same date, hours and outcome.",
+    "t": 848
+   },
+   {
+    "kind": "agree",
+    "about": "Ratify Peter Schmidt, seasonal cemetery laborer",
+    "ours": "Ratify the town manager's appointment of Peter Schmidt as seasonal cemetery laborer — passed unanimously",
+    "official": "Motion by Member Lehtinen to ratify the Town Manager ’s appointment of Peter Schmidt",
+    "note": "Same vote and outcome.",
+    "t": 889
+   },
+   {
+    "kind": "caption_error",
+    "about": "Lifeguard names",
+    "ours": "Ratify the appointment of Andrea Matson and Olivia Cornella as seasonal lifeguards — passed unanimously",
+    "official": "Motion by Vice-Chair Moore to ratify the Town Manager ’s appointments of Andrea",
+    "official_reading": "Andrea Mattson and Olivia Coronella",
+    "note": "Same vote and outcome; the surnames are spelled differently in our minutes.",
+    "t": 952
+   },
+   {
+    "kind": "agree",
+    "about": "Letter of support, Senate Bill 400",
+    "ours": "Approve the letter of support for Senate Bill 400 (Chapter 70 commission), as amended — passed unanimously",
+    "official": "Motion by Member Lehtinen to approve the letter of support for Senate Bill 400 as",
+    "note": "Same vote and outcome. Our parenthetical calls it a Chapter 70 \"commission\" and the official calls it \"Chapter 70 Modernization\"; check the bill title if that matters.",
+    "t": 2891
+   },
+   {
+    "kind": "agree",
+    "about": "Delegate chapter 232 noncriminal disposition to Building Commissioner",
+    "ours": "Delegate the select board's noncriminal disposition enforcement authority for chapter 232 (unregistered vehicles) to the building commissioner — passed unanimously",
+    "official": "Motion by Clerk Emkey to delegate the Select Board ’s noncriminal disposition",
+    "note": "Same vote and outcome.",
+    "t": 3244
+   },
+   {
+    "kind": "agree",
+    "about": "Surplus property from Council on Aging",
+    "ours": "Declare items listed in the Council on Aging director's May 6, 2025 email (chairs, a bench, a piano) as surplus property — passed unanimously",
+    "official": "Motion by Vice-Chair Moore to declare the listed items from the Council on Aging",
+    "note": "Same vote and outcome. The official minutes do not list the items or the email date.",
+    "t": 3395
+   },
+   {
+    "kind": "agree",
+    "about": "Clean Water SRF grant",
+    "ours": "Clean Water State Revolving Fund storm water grant: $99,335, $59,565",
+    "official": "The Town has been awarded $99,335 through the Clean Water State Revolving Fund, to be matched with $59,565 locally",
+    "note": "Both figures match; the official minutes identify $59,565 as the local match.",
+    "t": 1014
+   },
+   {
+    "kind": "agree",
+    "about": "Cultural Council grant",
+    "ours": "Cultural Council grant allocation: $9,200",
+    "official": "The Cultural Council was awarded $9,200.",
+    "note": "Same figure.",
+    "t": 1076
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "TC Pacios roof repair funding by warrant article",
+    "ours": "TC Pacios roof repair funding to be moved by warrant article: 300,000",
+    "official": "",
+    "note": "The official minutes mention only unspecified project updates (the Ritter Building roof, T.C. Passios partial decommissioning), with no amount or warrant article. Not a vote.",
+    "t": 1389
+   },
+   {
+    "kind": "agree",
+    "about": "Friends of the Library membership $25",
+    "ours": "Friends of the Library membership and annual library support: $25, four to 40 to $50,000",
+    "official": "Membership is available for $25 annually.",
+    "note": "The $25 membership figure matches. The rest of our line (\"four to 40 to $50,000\") has no counterpart in the official minutes and is probably garbled captions or a separate item.",
+    "t": 357
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "56 Carr Avenue appraisal cost",
+    "ours": "Appraisal cost for 56 Cara Sell tax-title property: $500, $2,000",
+    "official": "",
+    "note": "The official minutes say only that an informational appraisal will be conducted, with no dollar amounts. The property name is also misheard in ours (Carr Avenue, Sell or Hold).",
+    "t": 6768
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 70 local contribution cap",
+    "ours": "Chapter 70 local contribution cap: 82.5%",
+    "official": "",
+    "note": "The official minutes do not record this percentage, which was presumably said in the Senate Bill 400 discussion.",
+    "t": 2658
+   },
+   {
+    "kind": "agree",
+    "about": "Reapplication deadline extended to May 30",
+    "ours": "Extend the deadline for board and committee members to reapply or new applicants to apply from May 15 to May 30, for one more recruitment push targeted at boards with no applicants (e.g. the Conservation Commission).",
+    "official": "The deadline for applications was extended to May 30.",
+    "note": "Same decision. The official minutes omit the May 15 original date and the Conservation Commission example.",
+    "t": 2013
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Select Board liaison assignments",
+    "ours": "Select board members reassigned themselves as liaisons to various boards and committees (e.g. Capital Planning and Council on Aging to the chair; Economic Development to Amanda Moore; Finance Committee, Library Trustees, Board of Assessors and Open Space to Renee Mi; Planning Board to Glenn Mloud; School Committee to Brian; Storm Water Task Force to Renee Mi; Municipal Building Design Committee to Brian).",
+    "official": "Member McLeod: Agricultural Commission, Library Trustees, Planning Board, Open Space, MART/MNPO/MRPC",
+    "note": "Ours gives Library Trustees and Open Space to Renee (Emkey) and Board of Assessors to Renee; the official gives Library Trustees and Open Space to McLeod and Board of Assessors to Lehtinen. Ours also lists Capital Planning for the chair, which the official does not. Check the recording at this point, since the speakers may have been misattributed.",
+    "t": 3415
+   },
+   {
+    "kind": "agree",
+    "about": "56 Carr Avenue site visit",
+    "ours": "Board agreed to organize a joint site visit, as a posted meeting, to the 56 Cara Sell tax-title property.",
+    "official": "An informational appraisal will be conducted and a site visit scheduled.",
+    "note": "Both record a site visit. The official minutes do not say it is a joint or posted meeting.",
+    "t": 6808
+   },
+   {
+    "kind": "agree",
+    "about": "June 9 goals workshop and June 10 cancellation",
+    "ours": "Board scheduled a joint select board/town manager goals-setting workshop for Monday, June 9 at 6 p.m. and agreed to cancel the regular June 10 meeting.",
+    "official": "A workshop for Select Board and Town Manager goals will be scheduled for June 9. The June 10 meeting will be canceled.",
+    "note": "Same decision. The 6 p.m. start appears only in ours.",
+    "t": 7309
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Glenn Mloud",
+    "ours": "Glenn Mloud (member)",
+    "official": "Member Glenn Mcleod",
+    "official_reading": "Glenn Mcleod",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair surname",
+    "ours": "Caesar Nolo (chair)",
+    "official": "Chair Caesar Nuzzolo",
+    "official_reading": "Caesar Nuzzolo",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Renee Mi (clerk)",
+    "ours": "Renee Mi (clerk)",
+    "official": "Clerk Emkey",
+    "official_reading": "Renee Emkey",
+    "note": "Misheard surname. The official header gives the pre-reorganization titles, but after the reorganization Emkey is Clerk and Moore is Vice-Chair.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Brian and the Town Manager",
+    "ours": "Brian (member)",
+    "official": "Member Brian Lehtinen, and Member Glenn Mcleod",
+    "note": "Brian is Brian Lehtinen. Ours has the town manager as \"Jen\", and the official gives Jennifer Warren, Town Manager. All five members are present in both records.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Resignation of Brandon Kibbe",
+    "ours": "",
+    "official": "The Board acknowledged the resignation and thanked Mr. Kibbe for his years of service.",
+    "note": "Acknowledgement of a resignation from the Open Space Committee. Our minutes have no entry for it, and no vote is recorded."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sick Leave Bank Policy discussion",
+    "ours": "",
+    "official": "The policy will return for further discussion.",
+    "note": "Old business item with no vote; our minutes do not list it."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:29:38Z",
+   "cost_usd": 0.270183
+  }
  }
 }

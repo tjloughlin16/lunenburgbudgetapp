@@ -447,5 +447,260 @@
    "at": "2026-09-27T02:14:54Z",
    "cost_usd": 0.19673
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07132026-7906",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-07-13-minutes-7906.txt",
+   "path": "sources/meetings/planning-board/2026-07-13-minutes-7906.pdf"
+  },
+  "official_sha256": "73766a2a3965110f3e88672105e739cee05e7d7eba63e24d05e73fc9ed0ac3f0",
+  "coverage": "full",
+  "summary": "The two records agree on most votes: the de minimis change, the 171 Arbor Street votes, the three continuances to 27 July, and the minutes-format direction. They differ on the 934 Mass Ave vote count, a minutes-approval vote only the official record has, who chaired, and several of the director's stated next steps. Check the 934 Mass Ave vote first: the official roll call lists four members, while our minutes say 5-0.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 5,
+   "discrepancy": 9,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "934 Mass Ave close hearing vote count",
+    "t": 5530,
+    "ours": "Close the public hearing for 934 Mass Ave, PBSW26-14 — passed 5-0 (roll call all aye)",
+    "official": "Roll Call Vote:  A. Nicastro – Aye, A. Burney – Aye,  T. Willsner – Aye, M. Brenner – Aye",
+    "note": "The official roll call has four ayes and no entry for A. Reid, who also does not second this motion, while ours says 5-0; check the recording for whether Reid voted, abstained or stepped out."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "934 Mass Ave approval vote count",
+    "t": 5552,
+    "ours": "Approve the project at 934 Mass Ave PBSW26-14 with construction hours of 7 a.m.-4 p.m. Mon-Fri, 8 a.m.-1 p.m. Saturday — passed 5-0 (roll call all aye)",
+    "official": "Roll Call Vote:  A. Nicastro – Aye, A. Burney – Aye, T. Willsner – Aye, M. Brenner – Aye",
+    "note": "The motion and hours match, but the official record shows four ayes where ours shows 5-0; check the recording for Reid's vote."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of 6/8/26 and 6/22/26 minutes",
+    "ours": "",
+    "official": "A Burney moved Approve.  A. Reid  Second \nRoll Call Vote:  A. Nicastro – Aye, A. Burney – Aye, A Reid – Aye, T. Willsner – Aye, M. Brenner – Aye",
+    "note": "The official minutes record a 5-0 vote approving the 6/8 and 6/22 minutes that our minutes do not list; check the recording for whether it happened."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "171 Arbor Street approval and construction hours",
+    "t": 1355,
+    "ours": "Approve record 1412 / 171 Arbor Street modification of the common driveway special permit and storm water plan, with construction hours 7-4 Monday-Friday, 8-1 Saturday, no Sundays/holidays — passed 5-0 (roll call all aye)",
+    "official": "A Burney moved to include hours of construction hours in the decision, 7-4 Friday, 8-1 Saturday and no Sunday.  A. Reid Second",
+    "note": "The official minutes record the hours as a separate motion and vote, and give 7-4 as 'Friday' rather than Monday-Friday with no mention of holidays; check the recording for whether there were one or two motions and the exact hours."
+   },
+   {
+    "kind": "agree",
+    "about": "De minimis change at 942-944 Reservoir Road (determination and acceptance)",
+    "t": 844,
+    "ours": "Determine that the requested change at 942-944 Reservoir Road (single family to duplex) is a de minimis change to the special permit — passed 5-0; Accept the de minimis change — passed 5-0",
+    "official": "A. Burney moved to approve a De Minimis Change.  A Reid Second.",
+    "note": "Both records show two motions, each passing 5-0 on roll call, though the official wording is 'approve' then 'accept'."
+   },
+   {
+    "kind": "agree",
+    "about": "Close public hearing, 171 Arbor Street",
+    "t": 1288,
+    "ours": "Close the public hearing for 171 Arbor Street — passed 5-0 (roll call all aye)",
+    "official": "A. Burney moved to close the public hearing.  A. Reid Second",
+    "note": "Same motion and a 5-0 roll call in both."
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 10 Parmenter Road PBSW/PBSP 26-12, 26-13, 26-3, 26-4 to 27 July",
+    "t": 3876,
+    "ours": "Continue 10 Parmenter Road PBSW26-12, PBSW26-13, PBSP26-3 and PBSP26-4 to 27 July at 6 p.m. — passed 5-0 (roll call all aye)",
+    "official": "A Burney moved to continue to 7/27/26 at 6:00 pm.  A. Reid Seconded.",
+    "note": "Same continuance date, time and 5-0 vote; the official minutes print PBSW-16-12 for the first permit, which looks like a typo."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Permit number on the second 10 Parmenter Road continuance",
+    "t": 4604,
+    "ours": "Continue 10 Parmenter Road PBSP26-6, PBSP26-7 and PBSW26-16 to 27 July at 6 p.m. — passed 5-0 (roll call all aye)",
+    "official": "10 Parmenter Road, Special Permit, (PBSP-26-5 & PSSP – 26-7, and Stormwater Permit (PBSP-26-16)",
+    "note": "The vote, date and 5-0 result agree, but the special permit is 26-6 in ours and 26-5 in the official minutes, and the stormwater permit is PBSW in ours and PBSP in the official; check the agenda for the true permit numbers."
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 860 New Westminster Road to 27 July",
+    "t": 5260,
+    "ours": "Continue 860 New Westminster Road PBSA26-1, PBSW26-1 and PBSP26-1 to 27 July at 6 p.m. — passed 5-0 (roll call all aye)",
+    "official": "Burney moved to continue to 7/27/26 at 6:00 pm.  A. Reid Seconded.",
+    "note": "Same continuance and a 5-0 vote."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of road for 860 New West Townsend Road",
+    "t": 5260,
+    "ours": "860 New Westminster Road",
+    "official": "860 New West Townsend Road, Continued from 3/16/26,  Site Plan Review",
+    "note": "The same item, with the road name misheard by the captions.",
+    "official_reading": "860 New West Townsend Road"
+   },
+   {
+    "kind": "agree",
+    "about": "Direct staff to use existing minutes format",
+    "t": 6152,
+    "ours": "Direct the new staff member preparing minutes to use the existing format — passed 5-0 (roll call all aye)",
+    "official": "S. Wallace would like the board to direct her to use the existing format for preparing meeting minutes.",
+    "note": "Same motion and a 5-0 vote; the official minutes print the roll call twice."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who chaired the meeting",
+    "ours": "Mr. Wallace (chair)",
+    "official": "M. Brenner at 6:00 pm",
+    "note": "The official minutes name Matthew Brenner as Chair and Stephen Wallace as Director of Planning; our attendee list calls Wallace the chair, so check the recording for who ran the meeting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Niccastro",
+    "ours": "Mr. Niccastro (member)",
+    "official": "Anthony Nicastro, Member",
+    "note": "Same person, spelling misheard.",
+    "official_reading": "Nicastro"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Bernie",
+    "ours": "Mr. Bernie (member)",
+    "official": "Adam Burney, Member",
+    "note": "Same person, misheard.",
+    "official_reading": "Burney"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Reed",
+    "ours": "Miss Reed (member)",
+    "official": "Amanda Reid, Clerk",
+    "note": "Same person, spelling misheard.",
+    "official_reading": "Reid"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Wilsmer",
+    "ours": "Mr. Wilsmer (member)",
+    "official": "Timothy Willsmer, Vice Chair",
+    "note": "Same person, spelling misheard.",
+    "official_reading": "Willsmer"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Late arrival of T. Willsmer",
+    "ours": "",
+    "official": "T. Willsmer entered late at 6:15 pm",
+    "note": "The official roll call records a late arrival that ours does not; yet ours has Wilsmer voting on the first item, at about 14 minutes into the recording, so check the timing."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tim, bylaw consultant",
+    "ours": "Tim (bylaw consultant)",
+    "official": "",
+    "note": "The official minutes name no bylaw consultant; the person may be a captions error."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Inclusionary housing bylaw next step",
+    "t": 150,
+    "ours": "Director will consult town counsel and the town manager before finalizing an approach to the inclusionary housing bylaw, to be discussed further at next Monday's working session",
+    "official": "The first working session to discuss the By-Laws has been schedule for Monday, July 20th at 5pm.",
+    "note": "The official minutes record only that drafts were distributed and a July 20 work session was set, and say nothing about consulting counsel or the town manager; check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "10 Parmenter Road construction sequencing follow-up",
+    "t": 3164,
+    "ours": "Director will set up a meeting between the applicant's engineer and Graves Engineering to work out a detailed construction sequencing/inspection schedule for 10 Parmenter Road before the next meeting",
+    "official": "S. Wallace stated that a fairly detailed sequence of construction would be prepared before the next meeting.",
+    "note": "Both expect a sequencing plan before the next meeting, but the official minutes do not mention the director setting up an engineer-Graves meeting; check who prepares it."
+   },
+   {
+    "kind": "agree",
+    "about": "Applicant to bring phasing plan, and HOA or alternative, to next meeting",
+    "t": 3184,
+    "ours": "Applicant to bring a more detailed phasing plan and either a draft HOA or an alternative deed-restriction/covenant mechanism to the next meeting for further discussion",
+    "official": "S. Wallace stated that what is required for the next meeting is a Phasing Schedule, an inspection schedule for Graves Engineering with a cost estimate and a time frame for when the project will begin.",
+    "note": "Both require a phasing schedule next time; the official minutes list an inspection schedule and cost estimate and discuss HOA or other maintenance means without making the HOA a stated requirement."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Two Parmenter/Round Road permit sets treated as separate items",
+    "t": 4624,
+    "ours": "Board will continue to treat the two Parmenter/Round Road permit sets as two separate items at future meetings, while allowing itself flexibility to apply comments across both",
+    "official": "",
+    "note": "The official minutes list them as separate hearings but record no such board statement."
+   },
+   {
+    "kind": "agree",
+    "about": "Town counsel review of draft HOA for 860 New Westminster Road",
+    "t": 4877,
+    "ours": "Board wants to hear town counsel's review of the draft HOA for 860 New Westminster Road, expected by July 27, before proceeding further",
+    "official": "M. Brenner stated that he would like to hear Town Counsel’s review.",
+    "note": "Same request; the July 27 expectation is not in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Graves Engineering opinion on road subbase",
+    "t": 5050,
+    "ours": "Director will obtain and share Graves Engineering's opinion on the road subbase for 860 New Westminster Road before the next meeting",
+    "official": "S. Wallace asked Graves for an opinion on the sub-base of the road which was shared.  S. Wallace will provide R. Proctor with that opinion.",
+    "note": "Same action; the official minutes name R. Proctor as recipient."
+   },
+   {
+    "kind": "agree",
+    "about": "Master plan review deferred to July 27",
+    "t": 5617,
+    "ours": "Board will take two more weeks to individually review the draft master plan update before voting on approval at the July 27 meeting",
+    "official": "Moved to July 27th meeting to allow all member to review",
+    "note": "Same deferral to July 27 for member review."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Common driveway bylaw amendment",
+    "t": 5744,
+    "ours": "Director will look at whether a common-driveway bylaw amendment (limiting units per lot / clarifying ADU treatment) can be folded into the editorial corrections planned for the November special town meeting warrant",
+    "official": "A. Burney stated although there were no board discussions, he asked whether the Common Driveway Permit could be included with the other 4 Bylaws the board would be reviewing.  S. Wallace responded yes.  We are going to the November Town Meeting with a series of editorial corrections",
+    "note": "The official minutes say the common driveway permit would be added to the four bylaws under review, and mention November editorial corrections only as an aside; ours says it would be folded into those corrections, so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "No public comment at July 20 work session",
+    "t": 6234,
+    "ours": "No public comment will be taken during the July 20 zoning bylaw working session; the public may attend and watch, with formal public comment reserved for the eventual public hearings expected around March",
+    "official": "",
+    "note": "The official minutes record the July 20 work session but not any public-comment policy."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Budget-style figures for 10 Parmenter Road (completion bond, per-lot cost, home price)",
+    "t": 1709,
+    "ours": "Storm water completion bond, 10 Parmenter Road phasing: 25 or 30%; less than $10,000, somewhere in the ballpark of five; 7 to $900,000 homes",
+    "official": "",
+    "note": "The official minutes carry none of these figures and give no bond, cost or price discussion; they are loosely heard and should be checked against the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on 10 Parmenter Road",
+    "ours": "",
+    "official": "Gail and Bart Lawless of 21 Parmenter Road were present for the public hearing and have questions with regard to the Phasing of the project.",
+    "note": "The official minutes record resident and Zoom comments on phasing, runoff and a wildlife corridor, which our minutes omit."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:15:05Z",
+   "cost_usd": 0.297673
+  }
  }
 }

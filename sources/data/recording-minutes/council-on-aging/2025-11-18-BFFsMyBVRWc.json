@@ -483,5 +483,194 @@
    "at": "2026-09-27T11:50:58Z",
    "cost_usd": 0.194856
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11182025-7517",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-11-18-minutes-7517.txt",
+   "path": "sources/meetings/council-on-aging/2025-11-18-minutes-7517.docx"
+  },
+  "official_sha256": "972bb115100030739597a21d153ab35d2937b01f747e687b82be1d9a0199b48c",
+  "coverage": "full",
+  "summary": "The two records agree on the main events, but the official minutes record a formal, unanimous Master Plan vote that our minutes call \"not audible\". The official minutes also leave out most of the dollar figures we heard, and the attendee names differ.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 7,
+   "only_in_ours": 6,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Master Plan needs-list vote",
+    "t": 2604,
+    "ours": "Ask the director to convey a list of needs to the master plan committee (assisted living, tax relief, parking lot funding, staff funding, meals funding, walkable ADA space, and program funding such as caregiver support) — not audible",
+    "official": "Ms. Beale moved to have Ms. Lincoln report back to the Master Plan that the as well as the Assisted Living and tax relief for seniors, the COA would like to include funding for a parking lot, funding for meals and programs, and ADA walkable spaces in town. Seconded by Ms. O’Sullivan. Vote was unanimous in favor.",
+    "note": "Our minutes have the director conveying the list, the official minutes have Chair Lincoln reporting back, and the official minutes record a mover, seconder and unanimous vote that ours could not hear; our list also includes staff funding and caregiver support, which the motion omits. Check the recording near t=2604 for who is to report and whether a vote was taken."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Electronic-only warrant: formal action",
+    "t": 529,
+    "ours": "Board members voiced individual opposition/concern about the town's proposed electronic-only warrant distribution without taking a formal vote, ahead of that night's town meeting.",
+    "official": "Board discussion was on the difficulties this may place on seniors.",
+    "note": "Both records show discussion with no vote, but the official minutes record only concern about seniors, while ours records opposition; check the recording to see whether members stated opposition."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Finance Committee did not support the warrant article",
+    "ours": "",
+    "official": "Ms. Lockwood said that the Finance Committee did not vote to support this article as they felt there was more need for public discussion on this article.",
+    "note": "Our minutes do not mention the Finance Committee's position; they only list a Finance Committee member as present."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Lobby furniture quote and funding",
+    "t": 2711,
+    "ours": "Lobby furniture for the senior center (Block House Furniture): 22,000, 228.99, 22422; Gift fund plus revolving/formula grant funds proposed to cover the balance of the lobby furniture purchase — the difference (discussed only)",
+    "official": "Pricing for those is approximately $22k. Ms. Beale noted that the COA has a gift fund that has most of the funding for the furniture, and the difference could come out of the formula grant.",
+    "note": "The $22k matches our 22,000 and the other captioned figures look like misheard digits of it, but our minutes name a revolving fund as well as the formula grant, while the official minutes name only the formula grant. Check whether a revolving fund was mentioned."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant e-distribution cost figure",
+    "t": 256,
+    "ours": "Cost of switching town warrants to electronic-only distribution: $49 million, $6,000",
+    "official": "",
+    "note": "The official minutes give no cost for the warrant change, and the captioned figure is garbled, so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Grant writer $50,000",
+    "t": 3546,
+    "ours": "Town-funded grant writer: $50,000",
+    "official": "",
+    "note": "The official minutes do not mention a grant writer or this figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "41A deferral figures",
+    "t": 4169,
+    "ours": "41A elderly property tax deferral eligibility: $71,000, 175,000",
+    "official": "",
+    "note": "The official minutes say only that Ms. Lockwood had questions about the financial impact and give no income or asset thresholds."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Kitchen aide pay and hybrid rebate figures",
+    "t": 4083,
+    "ours": "Kitchen/dietary aide position pay: $10,000; Hybrid vehicle purchase rebate (grants example): $10,000",
+    "official": "",
+    "note": "The official minutes do not mention either figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA funding compared with the library",
+    "t": 2228,
+    "ours": "COA program funding compared to the library: a little more than a third",
+    "official": "",
+    "note": "The official minutes do not record this comparison."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "By-law comments vs charter language",
+    "t": 1091,
+    "ours": "Agreed to seek more information from the select board and town manager on whether COA bylaw comments must match the charter language before the December 1 deadline.",
+    "official": "Ms. Lincoln noted she is unaware if the two must match and would like to request additional information from the Select Board or Town Manager before deciding on final commentary. Board has reviewed it and is flagging that change.",
+    "note": "Both records show the request for information, but the official minutes also say the board is flagging the change and wanting to keep the wording, and omit the December 1 deadline. Check whether the board agreed to flag it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair follow-up on director hiring language",
+    "t": 1216,
+    "ours": "Chair will follow up with the town manager and Cesar about COA board participation in the director hiring process language.",
+    "official": "Ms. Lincoln noted she is unaware if the two must match and would like to request additional information from the Select Board or Town Manager before deciding on final commentary.",
+    "note": "Our minutes name a follow-up with the town manager and Cesar, while the official minutes name the Select Board or Town Manager and no Cesar. Check the recording for the name."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "COA Facebook page",
+    "t": 1406,
+    "ours": "Board agreed to create a COA Facebook page, with two members volunteering to run it.",
+    "official": "Mr. Franco and Ms. Lincoln will work together to create this. Board members all noted they were in favor.",
+    "note": "Both record agreement to create the page, but the official minutes name the chair and Mr. Franco as creators, while ours says two members volunteered without naming them; this is likely the same fact, so check the names."
+   },
+   {
+    "kind": "agree",
+    "about": "Holiday party and food bank donation",
+    "t": 1785,
+    "ours": "Board agreed to hold its usual holiday party and replace the ornament swap with collective donations to the local food bank.",
+    "official": "Ms. Rabbitt suggested that instead of doing an ornament swap they would make a donation to the Lunenburg Food Pantry as a board.",
+    "note": "Both records replace the ornament swap with a board donation to the local food pantry or bank."
+   },
+   {
+    "kind": "agree",
+    "about": "TRI Board report follow-up deferred",
+    "t": 3421,
+    "ours": "Follow-up on the tri-board report questions deferred until the director meets with Jen.",
+    "official": "Ms. Lockwood suggested that maybe she could meet with Director offline prior to the budget meeting presentation for Finance Committee regarding the questions she had previously shared with the board.",
+    "note": "Both records defer the follow-up to a meeting with the director; the person named differs (Jen in ours, Ms. Lockwood in the official minutes), which may be a misheard name."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Personnel plan recommendation",
+    "t": 3940,
+    "ours": "Recommendation to add new positions to the personnel plan administratively rather than eliminating existing positions through the town meeting budget, to preserve flexibility.",
+    "official": "",
+    "note": "The official minutes record no recommendation about adding positions administratively."
+   },
+   {
+    "kind": "agree",
+    "about": "41A deferred until Jack is present",
+    "t": 4294,
+    "ours": "41A eligibility question deferred until Jack, who has the relevant data, is available (he was in the hospital).",
+    "official": "Questions will be deferred to a later meeting when Mr. Rabbitt can be present.",
+    "note": "Both defer the 41A questions until Mr. Rabbitt (Jack) is available."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes approval vote",
+    "ours": "",
+    "official": "Minutes from October meeting were motioned for approval by Ms. O’Sullivan, seconded by Mr. Franco, passed unanimously.",
+    "note": "Our minutes list no vote approving the October minutes; check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Staffing update and meal site manager",
+    "ours": "",
+    "official": "Meal site manager position has also been advertised and is now a Union position and is no longer on the SAP.",
+    "note": "The official minutes record a van driver resignation, a per diem driver hire and a union meal site manager position; ours records none of these."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Center hours change",
+    "ours": "",
+    "official": "Two hours have been shifted from Monday nights to Friday afternoons.",
+    "note": "Our minutes do not mention the change in center hours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Caregiver Resource Connection session",
+    "ours": "",
+    "official": "Third session is tomorrow at 11:30am.",
+    "note": "Our minutes do not mention the session."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "the chair; Deb (Deborah) (Council on Aging Director); Lou; Jane; Kathy; James; Pauline (staff); a Finance Committee member (liaison); Shaquila (staff)",
+    "official": "Present: Deb Lincoln (Chairperson), Jane Rabbitt (Vice-Chair), Diane Nowd, Jim McGuigan, Cathy Beale, Lou Franco, Elena Christopher, Ana Lockwood, Susan O’Sullivan, \nExcused: Helen Balcom, Jack Rabbitt\nGuests: Deb Goodsell (COA Director)",
+    "note": "Lou, Jane, Kathy and James correspond to Franco, Rabbitt, Beale and McGuigan, and the director is Deb Goodsell. The official minutes list no staff, Pauline or Shaquila, and no Finance Committee member, though Ms. Lockwood (Ana) is probably the Finance Committee member our minutes mention, so check who was present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:22:29Z",
+   "cost_usd": 0.248483
+  }
  }
 }

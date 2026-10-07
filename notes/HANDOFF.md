@@ -28,9 +28,17 @@ Blue for Seniors, 50/50 Medex, $96/mo Part B, HSA $1,000/$2,000. **The PEC appea
 WITHDRAWN — do not send it** (draft, register, QUEUE all say so). Missing from the copy:
 the in-force agreement it amends, and Attachments A (brochures) and B (opt-out plan), which
 are blank. **TJ asked for all three on 5 Oct** -> register row
-`2026-10-05-pec-base-and-attachments`. When they land: close the two PEC rows in
-`money-gaps.csv`, fill the opt-out figure, and compare plan design to the prior terms.
-Who at the Town sent the memo is not recorded — ask TJ.
+`2026-10-05-pec-base-and-attachments`. **ANSWERED 6 Oct** by Julie Belliveau, HR Director
+(who also sent the memo, 5 Oct 4:39 PM): `contracts/pdf/pec-agreement-2008.pdf` (scan, signed
+16 Jun 2008), `pec-fy27-attachment-a-{1..4}-*.pdf` (four BCBS/MIIA benefit summaries, active
+plans only) and `pec-fy27-attachment-b-opt-out-policy.pdf` (**$3,000 individual / $6,000
+family**). Passed the redaction gate after OCR. Money-gaps: the "what §19 sets" row CLOSED,
+the "what is in the PEC agreement" row NARROWED, one row ADDED for the Managed Blue for
+Seniors and Medex summaries. Still not held: the instruments BETWEEN 2008 and FY27 that the
+minutes record (amendment 14 May 2013, amendment 11 Mar 2014, an agreement expiring 30 Jun
+2016, one "effective July 1, 2022") -- so which agreement the memo amends is not
+established. Belliveau says she is "working on producing a complete, current Agreement".
+Nothing committed yet.
 
 **3. Options held until after FY29.** TJ: keep every option, say it is not available
 until after FY29. New fields `held_until/held_basis/held_url` on a lever (rendered in
@@ -40,8 +48,10 @@ Both pages were rendered and read back.
 
 **NOT established, do not restate:** that §§21–22 could or could not override the
 agreement (turns on whether §§21–23 were ever accepted — no vote found); that the memo's
-"PPO/HMO/HMO Blue Select Benchmark 4" are the rate letter's Blue Care Elect / Network Blue
-NE / Blue Select (our reading); what changed in the FY27 round (prior terms not held).
+"PPO/HMO/HMO Blue Select Benchmark 4" are Blue Care Elect / Network Blue NE / Blue Select
+(our reading, now backed by the Town calling the summaries Attachment A and by matching
+copays); what changed in the FY27 round itself (the 2022 terms are not held -- only 2008
+against FY27 can be compared).
 Not done, offered: Part B reimbursement and the HSA in the model.
 
 **Left stale, on purpose (battery):** `build_reading_time`, `build_short_versions`,

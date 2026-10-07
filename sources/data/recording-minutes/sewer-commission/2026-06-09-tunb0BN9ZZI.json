@@ -346,5 +346,152 @@
    "at": "2026-09-27T02:23:04Z",
    "cost_usd": 0.185276
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06092026-7842",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-06-09-minutes-7842.txt",
+   "path": "sources/meetings/sewer-commission/2026-06-09-minutes-7842.pdf"
+  },
+  "official_sha256": "03bb2d7e0e9029133f482705d15de8ce1583078d43759104218ae8f119e3100e",
+  "coverage": "full",
+  "summary": "The two records agree on the main topics: manhole repairs, the Laurel Lane bid, the Lot J waiver passing, and the question to town counsel. They differ on the waiver amount, the Laurel Lane design, the 990 Mass Ave fee and the attendee names. The thing to check first is the waiver amount: the official motion says $6,127.00, while ours has about $3,000 waived.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 0,
+   "discrepancy": 6,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote on waiver for 1790 Mass Ave Lot J (amount)",
+    "ours": "accept the waiver of the sewer bill for 1790 Mass Ave, Lot J — passed; amount waived: three grand",
+    "official": "To accept the waiver for 1790 Mass Ave Lot J for $6,127.00.",
+    "note": "Both record a passed vote, but ours has about $3,000 waived while the official motion is for $6,127.00; check the recording near t=1193 to 1236 for the amount actually moved.",
+    "t": 1112
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Amount waived / charged for 1790 Mass Ave Lot J",
+    "ours": "amount waived: three grand; proposed average/minimum bill: $6,127, 6,100",
+    "official": "Andrew suggested charging her the average of her last 4 bills, which is usually just the minimum. He clarified that her sewer bill was actually $6,260.",
+    "note": "The official $6,127.00 appears to be the waiver amount in the motion, while ours treats $6,127 as the proposed bill she would pay and a separate 'three grand' as waived; verify which figure is the waiver and which is the amount charged.",
+    "t": 1236
+   },
+   {
+    "kind": "agree",
+    "about": "Actual quarterly sewer bill, 1790 Mass Ave Lot J",
+    "ours": "actual quarterly bill: $6,260",
+    "official": "He clarified that her sewer bill was actually $6,260.",
+    "note": "Same figure in both.",
+    "t": 1216
+   },
+   {
+    "kind": "agree",
+    "about": "Initial sewer bill from water leak",
+    "ours": "sewer bill from water leak: $4,000",
+    "official": "the owner had a high water bill and a sewer bill of about $4000.",
+    "note": "Same figure in both.",
+    "t": 1030
+   },
+   {
+    "kind": "agree",
+    "about": "Laurel Lane contractor estimate",
+    "ours": "contractor estimate: 9,000 something",
+    "official": "the home owner and contractor came up with a proposal of around $9,000.",
+    "note": "Consistent; ours is vague on the exact figure.",
+    "t": 293
+   },
+   {
+    "kind": "agree",
+    "about": "Manhole repairs finished; new study needed",
+    "ours": "Completed manhole repairs under the current contract are finished; the commission will need a new study to identify the next manholes to target and set aside money for it.",
+    "official": "They will need to do another study to see what to target next and put aside money for that.",
+    "note": "Same decision; official says 3 lining jobs remain, so 'finished' in ours is slightly stronger.",
+    "t": 231
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Laurel Lane design: pressure line vs. three lines to property line",
+    "ours": "Install pressure sewer lines (rather than a gravity line) to serve 1100/104 Laurel Lane properties, since the terrain lacks the pitch/elevation for gravity flow.",
+    "official": "they agreed to run 3 lines, 4 feet deep, to the property line and the home owner will need to connect from there.",
+    "note": "Official minutes describe running three lines to the property line and E1 systems, and do not mention a pressure-line decision or the terrain/pitch reason; check the recording around t=513 for what was decided.",
+    "t": 513
+   },
+   {
+    "kind": "agree",
+    "about": "Laurel Lane work put out to bid",
+    "ours": "Put the Laurel Lane pressure-line project out to bid as soon as the design is finalized.",
+    "official": "Bill said he will put it out for bids and will run it down the dirt without digging up the road.",
+    "note": "Both say it goes out to bid; official does not mention waiting for a finalized design.",
+    "t": 662
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Laurel Lane address",
+    "ours": "1100 Laurel Lane sewer repair; 1100/104 Laurel Lane properties",
+    "official": "--100 Laurel Lane- Bill noted at the last meeting",
+    "note": "Address differs (1100 vs 100 Laurel Lane); likely a caption or typo issue but check the agenda for the correct address.",
+    "t": 293
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Expansion of use fee at 990 Mass Ave",
+    "ours": "990 Mass Ave expansion of use fee: $220",
+    "official": "Bill stated at the last meeting they approved the expansion of use for adding a bedroom and noted they paid the fee.",
+    "note": "Official minutes give no fee amount, so $220 appears only in ours; check the recording near t=1429.",
+    "t": 1429
+   },
+   {
+    "kind": "agree",
+    "about": "Ask town counsel about fee for single to multi-family conversion",
+    "ours": "The sewer superintendent will ask town counsel whether any additional fee can be charged when a single-family connection is converted to multi-family use, though he considers it a long shot.",
+    "official": "Bill replied that he will talk to Town Counsel about fees.",
+    "note": "Same action item; the 'long shot' remark is only in ours.",
+    "t": 1511
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: names and roles",
+    "ours": "Brett Manthorne (Chairman); Scott Dougal; Stephen Goddard; Arthur Peters; Jeff Wilson; Bill Burnett (staff); Bill Lear (staff); Lee (staff)",
+    "official": "Attendees: Chair- Brett Ramsden, Vice-Chair- Scott Dall, Clerk- Dan Proctor, Member: Arthur Katis and Chip \nWilson, DPW Director- Bill Bernard, Sewer Business Manager- Andrew Valliere, Minutes Clerk- Jane Ranley",
+    "note": "Surnames are probably misheard, but ours lists Stephen Goddard and Jeff Wilson where the official has Dan Proctor and Chip Wilson, and omits Andrew Valliere and the minutes clerk, so check the roll call.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 5/26/26 minutes",
+    "ours": "",
+    "official": "To accept the minutes of the 5/26/26 meeting.",
+    "note": "A roll-call vote (5 aye) is in the official minutes but not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Probe at Laurel Lane and E1 system discussion",
+    "ours": "",
+    "official": "Dan went out and stuck a probe into where they thought the pressure line would be but there wasn’t anything there.",
+    "note": "The probe, the engineer's drawing and the E1 system discussion appear only in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Future agenda items and upcoming meetings",
+    "ours": "",
+    "official": "---Future Agenda Items- 100 Laurel Lane, fees for extra connections",
+    "note": "The future agenda item and the upcoming meeting schedule are only in the official minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:15:48Z",
+   "cost_usd": 0.235867
+  }
  }
 }

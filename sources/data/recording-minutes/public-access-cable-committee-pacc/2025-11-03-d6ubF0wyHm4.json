@@ -453,5 +453,136 @@
    "at": "2026-09-27T11:57:01Z",
    "cost_usd": 0.18725
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11032025-7489",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-11-03-minutes-7489.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-11-03-minutes-7489.pdf"
+  },
+  "official_sha256": "a71ae5c25f90cfa5b54fb08ba4de1d361051ed264d6cc689c3aecab8b3469746",
+  "coverage": "partial",
+  "summary": "The records agree on the vote to present the FY27 budget to the Tri-Board and on the enterprise fund balance. The official minutes are a short summary with no budget figures. The one substantive difference is the by-law motion: ours says the by-laws were accepted as amended, while the official minutes say they were sent to the Town By-Law Review Committee.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to have the manager present the FY27 budget to the Tri-Board as amended",
+    "ours": "Approve that Joe (the PACC manager) presents the FY27 budget proposal, as amended, to the Tri-Board — passed (unanimous by roll call: Steve yes, Faith yes, Brian yes, chair yes)",
+    "official": "Motion (F.Beall, 2nd B.Vienneau), To approve having J.Toale present the PAC FY27 budget proposal as amended to the Tri-Board committee",
+    "note": "Same motion and outcome; the official minutes name the mover and seconder, say passed, and record no roll call.",
+    "t": 2285
+   },
+   {
+    "kind": "discrepancy",
+    "about": "By-law vote: what the motion did",
+    "ours": "Accept the PACC bylaws/guidelines as amended (channel number correction) — passed (unanimous by roll call)",
+    "official": "Motion (S.Archambault, 2nd F.Beall), To send the amended PACC By-Laws to the Town By-Law Rerview Committee",
+    "note": "Ours records accepting the by-laws; the official minutes record sending them to the Town By-Law Review Committee and give no outcome. Check the recording near t=2793 for the motion's wording and whether the vote was to adopt or to forward.",
+    "t": 2793
+   },
+   {
+    "kind": "caption_error",
+    "about": "Enterprise fund balance",
+    "ours": "PACC enterprise fund balance: $796,35.3 7",
+    "official": "As of 9/30.25 there is $796,305.37 in the account",
+    "note": "Garbled digit grouping of the same balance; the official figure is $796,305.37.",
+    "official_reading": "$796,305.37",
+    "t": 3496
+   },
+   {
+    "kind": "caption_error",
+    "about": "Manager's name",
+    "ours": "Joe Tol (PACC manager, presenter)",
+    "official": "Manager:\tJo\tToale",
+    "note": "Misheard surname and likely first name; the official minutes give Jo Toale.",
+    "official_reading": "Jo Toale"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: members present",
+    "ours": "the chair (chair); Steve (member); Faith (member (secretary)); Brian (member)",
+    "official": "PACC\tmembers\tpresent:\tSteve\tWalker,\tBrian\tVienneau,\tSteve\tArchambault,\tFaith\tBeall\t(zoom)",
+    "note": "Ours lists four members, with the chair and Steve as separate people. The official minutes name two Steves, Walker and Archambault, so the chair may be one of them. Check the recording to see who chaired and who voted.",
+    "t": 2285
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Prior minutes approval",
+    "ours": "",
+    "official": "Motion\tto\taccept\t10/6/2025\tminutes\tas\tamended\t•\t(B.Vienneau,\t2nd\tS.Archambault),\tpassed.",
+    "note": "The official minutes record a vote to accept the 10/6/2025 minutes as amended. It is not in ours; a person should check whether it was in the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manager's report current balance",
+    "ours": "",
+    "official": "Current\tbalance\t$1,066,845.77",
+    "note": "The official minutes give a current balance of $1,066,845.77. Ours has a budget total of '1,66,8457' at t=517 that may be this figure misheard, but it is not labelled as a balance, so this is not treated as a caption error.",
+    "t": 517
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 budget figures (franchise fee, salaries, capital, legal fees, shortfall)",
+    "ours": "FY27 anticipated Comcast franchise fee: $161,000; FY27 summary budget: $159,120, $35,648, $39,100, $233,868, $29,000, $24,868, $65,000, $89,868",
+    "official": "",
+    "note": "The official minutes refer to a handout for budget details and print none of these figures, so they cannot be compared.",
+    "t": 1050
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Follow-up on Cable Advisory Committee",
+    "ours": "Email the town manager to ask about the Cable Advisory Committee's schedule, since no notice of meetings or dates had been received despite being told a seat was arranged.",
+    "official": "No\tupdate\t–\tS.Archambault\twill\tcontact\tTown\tHall\tand\task\tfor\tan\tupdate\ton\tdates\tand\ttimeline.",
+    "note": "Both describe a follow-up on the schedule. Ours says email the town manager and the official minutes say S.Archambault will contact Town Hall, so check who is to do it and how.",
+    "t": 3453
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Policy book decision",
+    "ours": "Compile a PACC policy book, including the bylaws, bring hard copies to the next meeting to order them, then create an electronic booklet, post it to the PACC website, and give a copy to the town manager.",
+    "official": "S.Archambault\twill\tbring\thard\tcopies,\tto\tthe\tnext\tmeeting,\tof\tall\trelevant\tpolicies\tfor\treview",
+    "note": "Both have hard copies at the next meeting. Ours adds an electronic booklet, a website posting and a copy to the town manager, which the official minutes do not mention; check the recording for those steps.",
+    "t": 3106
+   },
+   {
+    "kind": "agree",
+    "about": "Master plan follow-up",
+    "ours": "Follow up with whoever organizes materials for the master plan meeting to confirm PACC's submitted information was received and in the right form.",
+    "official": "S.Walker\twill\tdouble\tcheck\tthat\tthe\tinformation\twas\treceived.",
+    "note": "Same follow-up: confirm PACC's submission to the master plan was received.",
+    "t": 3291
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Removal of legislative funding-split percentages from the Tri-Board presentation",
+    "ours": "Remove the bullet points citing specific legislative funding-split percentages (20/40/40%) from the Tri-Board presentation because the ratios are not yet confirmed.",
+    "official": "",
+    "note": "The official minutes mention discussion of 'An Act to Modernize Funding for Community Media' but record no decision to remove these bullets. Check whether this was a decision in the recording.",
+    "t": 2097
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fund investments",
+    "ours": "PACC fund investments: 720,000, a million, 200 plus thousand",
+    "official": "",
+    "note": "The official minutes do not record this discussion of investments.",
+    "t": 3559
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:23:03Z",
+   "cost_usd": 0.2788326
+  }
  }
 }

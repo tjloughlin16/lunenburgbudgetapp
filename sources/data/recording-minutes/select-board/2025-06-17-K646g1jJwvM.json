@@ -559,5 +559,238 @@
    "at": "2026-09-27T18:10:14Z",
    "cost_usd": 0.196664
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06172025-7277",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-06-17-minutes-7277.txt",
+   "path": "sources/meetings/select-board/2025-06-17-minutes-7277.pdf"
+  },
+  "official_sha256": "a046246038309d2b8099ef3ffaf47d5a6f123822755f4d5ef4a2f5067b980f96",
+  "coverage": "full",
+  "summary": "The two records agree on all seven non-procedural votes and on most figures, apart from misheard names and digits in our captions. The differences to check are the minutes-approval vote our record lacks, our five-member roster against the official four present, and the 222 West Townsend Road and tax investigation items, where the two describe different outcomes.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 9,
+   "discrepancy": 5,
+   "only_in_ours": 1,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Hometown Heroes Banner Program vote",
+    "ours": "Approve the town's participation in the Hometown Heroes Banner Program. — passed unanimously",
+    "official": "The motion passed unanimously (4-0-\n0).",
+    "note": "Same motion and outcome in both records.",
+    "t": 1589
+   },
+   {
+    "kind": "agree",
+    "about": "Appoint Mary Wilson, Conservation Commission",
+    "ours": "Appoint Mary Wilson to the Conservation Commission, term to expire June 30, 2028. — passed unanimously",
+    "official": "Clerk Emkey to appoint Mary Wilson to the Conservation Commission for a",
+    "note": "Same appointment, term and unanimous outcome.",
+    "t": 3954
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation appointment of Bernap and Doucette",
+    "ours": "Appoint Andrea Bernap and Teddy Ducet to the Conservation Commission, terms to expire June 30, 2028. — passed unanimously",
+    "official": "Chair Nuzzolo to appoint Andrea Bernap and Teddy Doucette to the",
+    "note": "Same vote and outcome; the captions misheard the surname Doucette.",
+    "official_reading": "Teddy Doucette",
+    "t": 4124
+   },
+   {
+    "kind": "caption_error",
+    "about": "Council on Aging reappointment, Rabbitt and O'Sullivan",
+    "ours": "Appoint Jane Rabbit and Susan O'Sullivan to the Council on Aging, terms to expire June 30, 2028. — passed unanimously",
+    "official": "Chair Nuzzolo to reappoint Susan O’Sullivan and Jane Rabbitt to the Council on",
+    "note": "Same vote and outcome; the surname is spelled Rabbitt in the official minutes.",
+    "official_reading": "Jane Rabbitt",
+    "t": 5758
+   },
+   {
+    "kind": "caption_error",
+    "about": "Council on Aging appointment, Franco and Rabbitt",
+    "ours": "Appoint Lou Franco and John (Jack) Rabbit to the Council on Aging, terms to expire June 30, 2028. — passed unanimously",
+    "official": "Vice-Chair Moore to appoint Lou Franco and John Rabbitt to the Council on",
+    "note": "Same vote and outcome; the surname is spelled Rabbitt in the official minutes.",
+    "official_reading": "John Rabbitt",
+    "t": 6072
+   },
+   {
+    "kind": "caption_error",
+    "about": "Public Access Cable Committee appointment",
+    "ours": "Appoint Brian Vienno to the Public Access Committee, term to expire June 30, 2028. — passed unanimously",
+    "official": "Clerk Emkey to appoint Brian Vienneau to the Public Access Cable Committee",
+    "note": "Same vote and outcome; the captions misheard the surname and shortened the committee name.",
+    "official_reading": "Brian Vienneau",
+    "t": 6279
+   },
+   {
+    "kind": "agree",
+    "about": "21 Main Street license agreement vote and $1 fee",
+    "ours": "Authorize the chair to sign the license agreement for 21 Main Street on behalf of the select board. — passed unanimously",
+    "official": "Vice-Chair Moore to authorize the Chair to sign the License Agreement (21 Main",
+    "note": "Same vote, and the $1 fee matches the official $1.00.",
+    "t": 7741
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to approve prior meeting minutes",
+    "ours": "",
+    "official": "Call for the vote: Chair Nuzzolo-aye, Vice-Chair Moore-aye, Clerk Emkey-aye, Member McLeod-abstain. The motion passed (3-0-1).",
+    "note": "The official minutes record a 3-0-1 vote approving eleven sets of minutes with McLeod abstaining, and ours has no such vote; check the recording around the minutes item.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Executive session roll call vote",
+    "ours": "",
+    "official": "Roll Call Vote: Member\nMcLeod-aye; Vice-Chair Moore-Aye; Clerk Emkey-Aye; Chair Nuzzolo-aye. The motion passed unanimously (4-0-0).",
+    "note": "The official minutes record a roll-call vote to enter executive session for Police union bargaining, and ours does not; it may have been treated as procedural, so check.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Hometown Heroes first 10 banners",
+    "ours": "Hometown Heroes Banner Program: 10",
+    "official": "She stated that\nthe Historical Commission is willing to pay for the first 10 banners.",
+    "note": "The figure of 10 matches the number of banners the Historical Commission will pay for.",
+    "t": 1158
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Conservation accessibility grant",
+    "ours": "Conservation accessibility grant: $48,000",
+    "official": "",
+    "note": "The official minutes do not mention a $48,000 conservation accessibility grant; check the recording around t=3832.",
+    "t": 3832
+   },
+   {
+    "kind": "agree",
+    "about": "FY25 Q3 total revenue",
+    "ours": "FY25 Q3 total revenue: 39,160,000, 78%",
+    "official": "the total revenue collected was $39,160,000, which is 78% of\nthe total projected revenue for the fiscal year.",
+    "note": "Amount and percentage match.",
+    "t": 6427
+   },
+   {
+    "kind": "caption_error",
+    "about": "Investment income",
+    "ours": "Investment income: 40,430,6440, 344 12%",
+    "official": "the total investment income\ncollected was $430,640, which is 344% over the projected revenue for the fiscal year.",
+    "note": "Same item; the captions garbled the digits of $430,640 and 344%.",
+    "official_reading": "$430,640, 344%",
+    "t": 6447
+   },
+   {
+    "kind": "agree",
+    "about": "State aid collected, Q3",
+    "ours": "State aid collected, Q3: 75.3%, 8 million, 74.8%, 75%",
+    "official": "the state aid collected is at 75.3% of the estimated amount.",
+    "note": "75.3%, 74.8% (state-owned land) and 75% (Chapter 70) match. The official also gives charter tuition reimbursement at 35.5%, which ours lacks, and has no '8 million'.",
+    "t": 6633
+   },
+   {
+    "kind": "caption_error",
+    "about": "Local receipts, motor vehicle excise",
+    "ours": "Local receipts, Q3: 106.4%, 3.5 million, 197%, 84%, 97 1.5%, 190%, 50%, 92.5%",
+    "official": "He stated that motor vehicle excise is 97.5%.",
+    "note": "The other percentages (106.4, 197, 84, 190, 50, 92.5) match; '97 1.5%' is a garbled 97.5%, and '3.5 million' has no counterpart in the official text.",
+    "official_reading": "97.5%",
+    "t": 6696
+   },
+   {
+    "kind": "agree",
+    "about": "Total expenditures Q3",
+    "ours": "Total expenditures, Q3: 33 million, 70.6%",
+    "official": "were roughly $33 million, or 70.6% the estimated amount.",
+    "note": "Amount and percentage match.",
+    "t": 6925
+   },
+   {
+    "kind": "discrepancy",
+    "about": "222 West Townsend Road follow-up",
+    "ours": "Town manager to notify the Parks Commission about the possible sale of 222 West Townsend Road (recreational land), which other boards had already been asked about.",
+    "official": "She\nstated that the Town Counsel deemed the notice insufficient, so the owner will be\nresubmitting the notice in a couple of weeks.",
+    "note": "Ours records an action to notify the Parks Commission; the official records the notice being resubmitted and the Planning Board and Open Space Committee expressing no interest, with no Parks Commission action. Check the recording around t=7455.",
+    "t": 7455
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 goal setting deferred",
+    "ours": "FY26 select board/town manager goal setting deferred until the full board is present.",
+    "official": "Chair Nuzzolo stated that the item will be tabled for the entire Board will be in attendance.",
+    "note": "Same deferral.",
+    "t": 7741
+   },
+   {
+    "kind": "agree",
+    "about": "Sick leave bank policy",
+    "ours": "Board to keep developing the sick leave bank policy language, including how an appeals process (possibly handled in executive session) would work, once union feedback is complete.",
+    "official": "Chair\nNuzzolo stated that there will need to be future discussions regarding the process for appeals.",
+    "note": "Both record that union feedback is being collected and the appeals process needs more discussion. The executive-session detail appears only in ours.",
+    "t": 7784
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Tax investigation report",
+    "ours": "Tax investigation report discussion held over again; assessor to present on directives and next steps at the July 1st meeting.",
+    "official": "Chair Nuzzolo stated that he is waiting to receive the report.",
+    "note": "The official has no assessor presentation. The only July 1 item in it is an ARPA review by the Finance Director, so check the recording for who presents on July 1.",
+    "t": 8287
+   },
+   {
+    "kind": "caption_error",
+    "about": "Site walk of 56 Carr Avenue",
+    "ours": "Board to continue trying to schedule a site walk of 56 Carter Road.",
+    "official": "Clerk Emkey requested a site walk of 56 Carr Avenue.",
+    "note": "Same site-walk item; the captions heard Carter Road for Carr Avenue.",
+    "official_reading": "56 Carr Avenue",
+    "t": 8560
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Members present",
+    "ours": "Mr. Mloud (member); Miss Em / Emy (member); Amanda Moore (member); Glenn (member); the chair (chair)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Amanda Moore, Clerk Renee Emkey, and\nMember Glenn McLeod.",
+    "note": "The official lists four members present, and ours lists five. 'Mr. Mloud' and 'Glenn' look like one person, Glenn McLeod, so check the roster. Miss Em is Emkey.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance director name",
+    "ours": "Ezekiel Ayala (finance director)",
+    "official": "FY2025 Quarter Three Financial Report, Presented by Ezequiel Ayala, Finance Director",
+    "note": "Same person; the first name was misheard.",
+    "official_reading": "Ezequiel Ayala"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Historical Commission presenter",
+    "ours": "J. Anderson (presenter (Historical Commission member))",
+    "official": "Richard McGrath, Chair of the Historical Commission, and Jennifer Sanderson member of the\nHistorical Commission, introduced themselves.",
+    "note": "Same person; the captions heard Anderson for Sanderson.",
+    "official_reading": "Jennifer Sanderson"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment and Town Manager report",
+    "ours": "",
+    "official": "John Bowen Jr., 162 Highland Street: commented that he is preparing to dedicate his life to the\nservice of the United States as a United States Marine.",
+    "note": "The official records public comment on the pride flag, the Master Plan quorum and the Sewer Department, plus a long Town Manager report, none of which appear in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:28:16Z",
+   "cost_usd": 0.29867299999999997
+  }
  }
 }

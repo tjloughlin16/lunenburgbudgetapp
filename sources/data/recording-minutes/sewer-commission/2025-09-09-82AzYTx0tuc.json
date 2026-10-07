@@ -315,5 +315,136 @@
    "at": "2026-09-27T12:31:42Z",
    "cost_usd": 0.19079
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092025-7392",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-09-09-minutes-7392.txt",
+   "path": "sources/meetings/sewer-commission/2025-09-09-minutes-7392.pdf"
+  },
+  "official_sha256": "57a827a8c2bb36597d50eaf7c01920c7dd88e84fb3849b74cfb180a3edf296f6",
+  "coverage": "full",
+  "summary": "The two records agree on the one substantive vote (crediting the 45 Riley Road bill) and on the ADU discussion. Most differences are caption errors in names, the Riley Road dollar figures and \"Town Counsel\". The main gap is that our minutes never state the $83.24 credit amount, and several of our figures (550, 2250, \"a,000\") have no counterpart in the official minutes.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 3,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to credit the 45 Riley Road resident's next bill",
+    "t": 2238,
+    "ours": "Allow Andrew to credit the Riley Road resident's sewer account — passed",
+    "official": "To allow Andrew to credit the next bill for 45 Riley Road for $83.24 .",
+    "note": "Same motion and outcome; the official minutes add the amount and a unanimous roll call (Dan, Arthur, Scott, Brett aye)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Riley Road bill figures",
+    "t": 2113,
+    "ours": "Bill credit for 45 Riley Road: 28324, 174, 8324, 1787, a,000",
+    "official": "her usual bill is around $174 but the last bill was $2 83.24",
+    "note": "Garbled digits for the $174 usual bill, the $283.24 last bill and the $83.24 credit; the stray 1787 and a,000 have no match in the official minutes.",
+    "official_reading": "$174 usual bill; $283.24 last bill; $83.24 credit"
+   },
+   {
+    "kind": "agree",
+    "about": "ADU fee Dan suggested ($500 tie-in, $330 extra bedroom)",
+    "t": 437,
+    "ours": "ADU proposed fees (Dan's suggestion): $500, $330",
+    "official": "Dan suggested a $500 fee to tie in",
+    "note": "The $500 and $330 figures match; the official minutes tie the $330 to the extra bedroom."
+   },
+   {
+    "kind": "agree",
+    "about": "State-law ADU size limit",
+    "t": 414,
+    "ours": "ADU minimum square footage vs. house minimum connection size: 900 square feet, 2250",
+    "official": "limits the size to  900 sq.ft.",
+    "note": "The 900 sq ft figure matches, but the official minutes call it a state-law size limit, not a minimum."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Existing ADU sewer tie-in fee of 550 and house minimum connection size of 2250",
+    "t": 372,
+    "ours": "ADU sewer tie-in fee, existing regulation: 550",
+    "official": "",
+    "note": "The official minutes mention neither an existing $550 fee nor a 2250 house figure; check the recording for what these referred to."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Flat ADU fee if tying into the house: 500, a,000",
+    "t": 1957,
+    "ours": "Proposed flat ADU fee if tying into the house: 500, a,000",
+    "official": "",
+    "note": "The $500 is consistent with Dan's suggestion, but the official minutes record no separate flat-fee proposal, and 'a,000' is unreadable; listen to the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "ADU line must tie into the existing line on the property",
+    "t": 517,
+    "ours": "Proposed (not yet voted) that an ADU sewer line must tie into the existing sewer line on the property, with no new connections directly from the street.",
+    "official": "ADU unit sewer line must tie into the existing sewer",
+    "note": "Both records show a suggestion from Dan and no vote."
+   },
+   {
+    "kind": "agree",
+    "about": "Direct street connection charged the full connection fee",
+    "t": 1620,
+    "ours": "Discussed that if a direct connection to the street line were ever unavoidable, it would be charged the same as a full new house connection fee rather than a lesser ADU fee.",
+    "official": "the house along with the ADU would be connected to sewer and the usual",
+    "note": "The official minutes frame this as a scenario such as the main home being on septic and say the usual connection fee would be charged."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Draft consolidated and sent for legal review",
+    "t": 1090,
+    "ours": "Commissioners agreed to consolidate Dan's and Andrew's separate ADU fee ideas into one draft document to discuss at the next meeting before bringing it to town council.",
+    "official": "before sending it to Town Counsel",
+    "note": "'Town council' is a mishearing of Town Counsel; the substance (combine ideas, discuss next meeting, then legal review) matches.",
+    "official_reading": "Town Counsel"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Commissioners take draft ADU proposal home to review",
+    "t": 1908,
+    "ours": "Each commissioner agreed to take a copy of the draft ADU proposal home to review before refining it further at a future meeting.",
+    "official": "",
+    "note": "The official minutes only say the verbiage would be fine-tuned at the next meeting or two."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee names and titles",
+    "ours": "Brett Ramston (chairman); Scott Dah (commissioner); Dan Parker (commissioner); Arthur Cadis (commissioner); Andrew Bellier (staff / engineer)",
+    "official": "Chair-  Brett Ramsden , Vice-Chair - Scott Dall , Clerk- Dan Proctor, Member : Arthur",
+    "note": "Misheard surnames; the official minutes also give Arthur Katis, Andrew Valliere as Sewer Business Manager (not engineer), and Bill Bernard and Jane Ranley as in ours.",
+    "official_reading": "Brett Ramsden, Scott Dall, Dan Proctor, Arthur Katis, Andrew Valliere"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 8/26/25 minutes",
+    "ours": "",
+    "official": "To accept the minutes of 8/26/25 .",
+    "note": "Roll-call vote (Scott, Arthur, Brett aye) appears only in the official minutes; routine, but our minutes list no such vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Separate meter, fee allocation and easements for ADUs",
+    "ours": "",
+    "official": "Dan  questioned where the ADU fees would be allocat",
+    "note": "Official minutes record that ADU fees would probably go to Flow Capacity, a separate ADU meter would be optional, and easements would not be needed; ours omits these."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:24:50Z",
+   "cost_usd": 0.25271699999999997
+  }
  }
 }

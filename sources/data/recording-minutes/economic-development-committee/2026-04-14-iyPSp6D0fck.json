@@ -325,5 +325,175 @@
    "at": "2026-09-27T02:43:11Z",
    "cost_usd": 0.1916764
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142026-7759",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/economic-development-committee/2026-04-14-minutes-7759.txt",
+   "path": "sources/meetings/economic-development-committee/2026-04-14-minutes-7759.pdf"
+  },
+  "official_sha256": "7f835e11bb4764f900cd9c211df73a328d68e4d604b661c68eb10c4bfec9be7e",
+  "coverage": "full",
+  "summary": "The records agree on the $3,000 revolving fund, the attendee names (after caption fixes) and the Feb 10 minutes carried to the next meeting. They differ on a vote, on how several decisions are described, and on who held which role. The thing to know is that the official minutes record a roll-call vote approving the January 13 minutes, and ours record no votes at all.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 4,
+   "discrepancy": 8,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to approve January 13, 2026 minutes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "There was a motion to approve the minutes of January 13, 2026,",
+    "note": "The official minutes record a motion and a four-member aye roll call; our minutes record no vote, so check the recording for the motion and whether it passed.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "EDC revolving fund amount",
+    "ours": "EDC revolving loan fund / account: $3,000",
+    "official": "The article proposes a $3,000 budget.",
+    "note": "Same $3,000 figure; ours calls it a revolving loan fund, the official calls it a warrant article for a revolving fund.",
+    "t": 897
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "925 Mass Ave cleanup cost",
+    "ours": "925 Massachusetts Ave (old gas station site) cleanup cost: 130,000, $180,000",
+    "official": "",
+    "note": "The official minutes give no cleanup cost for the gas station site; the caption figure is garbled and cannot be confirmed from the official text.",
+    "t": 1076
+   },
+   {
+    "kind": "only_in_official",
+    "about": "April 21 public forum on gas station site",
+    "ours": "",
+    "official": "there will be a public forum at the library to obtain",
+    "note": "The official minutes record an April 21 6:30 PM library forum on the 925 Mass Ave site; our minutes do not mention it.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Zoning amendments: action and town meeting",
+    "ours": "Planning board directed the planning director to draft four zoning amendments over the summer, including a minor site plan review provision, ahead of the May town meeting.",
+    "official": "Stephen Wallace confirmed that the Planning Board has approved 4 zoning",
+    "note": "Ours says drafting is directed ahead of the May town meeting; the official says the amendments were approved for review over the summer ahead of fall town meeting. Check the recording for the meeting and the action.",
+    "t": 390
+   },
+   {
+    "kind": "agree",
+    "about": "Clerk notifications of business certificates",
+    "ours": "The town clerk's office will now notify the planning office whenever a business files a business certificate, so the EDC can send a welcome email.",
+    "official": "when a business fills out a business certificate.",
+    "note": "Both record the Clerk's Office notifying planning; the official says the information is relayed to the EDC and does not mention a welcome email.",
+    "t": 768
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Ribbon cuttings",
+    "ours": "EDC will facilitate ribbon cuttings for new businesses by connecting them with the Chamber of Commerce rather than running the process itself.",
+    "official": "There was discussion about the possibility of hosting ribbon cuttings.",
+    "note": "Ours records a decision on how the EDC will handle ribbon cuttings; the official records only discussion and follow-up to get information from two chambers. Check the recording.",
+    "t": 1250
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Standing LBA updates agenda item",
+    "ours": "Committee agreed to add a standing \"LBA updates\" item to future EDC agendas.",
+    "official": "received permission from the Committee to share",
+    "note": "The official records permission for the chair to share LBA updates, not a standing agenda item; check the recording for what was agreed.",
+    "t": 2355
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Business guide workshop",
+    "ours": "Committee agreed to consider a workshop-style meeting next month to work on shortening the business guide to two pages.",
+    "official": "Stephen Wallace has reviewed the business guidelines",
+    "note": "The official records only a suggestion to trim the guide, with no workshop meeting and no two-page target; check the recording.",
+    "t": 2687
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Town meet-and-greet",
+    "ours": "Chair will contact PJ Keating about hosting the fourth annual town official meet-and-greet in September.",
+    "official": "- Updates regarding the Town Meet and Greet",
+    "note": "The official minutes list the meet-and-greet only as a topic for next meeting, with no action, host or date; check the recording.",
+    "t": 2772
+   },
+   {
+    "kind": "agree",
+    "about": "February 10 minutes carried to next meeting",
+    "ours": "Committee will request the missing February 10, 2026 minutes from the town's staff (Danielle) so they can be approved at the next meeting.",
+    "official": "- Review and approve minutes of February 10, 2026",
+    "note": "Both put the February 10 minutes on the next meeting; the request to staff is only in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair/member Gilchrest",
+    "ours": "Josie Gilchrist (committee member)",
+    "official": "Chair Joeci Gilchrest",
+    "note": "Misheard name; the official also makes her Chair, while ours lists her as a member and leaves the chair unnamed.",
+    "official_reading": "Joeci Gilchrest"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Dupre",
+    "ours": "Jane Duprey (also heard as \"Jane Dubri\")",
+    "official": "Member Jeanne Dupre",
+    "note": "Misheard first and last name.",
+    "official_reading": "Jeanne Dupre"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Dragoslis",
+    "ours": "Judy Drosis (also heard as \"Judy Traosalus\")",
+    "official": "Member Judy Dragoslis",
+    "note": "Misheard surname.",
+    "official_reading": "Judy Dragoslis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Clark",
+    "ours": "Kathy Clark (committee member)",
+    "official": "Member Cathy Clark",
+    "note": "Spelling of first name.",
+    "official_reading": "Cathy Clark"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Matt Brenner's role",
+    "ours": "Matt Brener (planning director)",
+    "official": "Planning Board Representative Matt Brenner,",
+    "note": "The name is a caption error, but the roles differ: the official lists Brenner as Planning Board Representative; check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Stephen Wallace's role",
+    "ours": "Stephen (Wallace) (town planning office staff / EDC liaison)",
+    "official": "Planning and Economic Development",
+    "note": "The official gives Wallace as Director of Planning and Economic Development, while ours gives the director title to Brenner; check who was speaking in the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "Vice Chair Ana Lockwood",
+    "note": "The official minutes list Vice Chair Ana Lockwood and Select Board Representative Glenn McLeod as absent; ours does not record absences.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:18:24Z",
+   "cost_usd": 0.25332299999999996
+  }
  }
 }

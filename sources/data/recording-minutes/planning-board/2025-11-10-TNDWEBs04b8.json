@@ -333,5 +333,163 @@
    "at": "2026-09-27T11:55:07Z",
    "cost_usd": 0.189408
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11102025-7500",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-11-10-minutes-7500.txt",
+   "path": "sources/meetings/planning-board/2025-11-10-minutes-7500.pdf"
+  },
+  "official_sha256": "43259899af7587467fb6128b2caa525a3906039c432d8699cb3313839bd07bd1",
+  "coverage": "full",
+  "summary": "The two records agree on both permits and their conditions, and on the four members present. They differ on vote tallies and on how the Open Space Committee outcome is described.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Close hearing and approve stormwater permit, 255 Sunny Hill Rd (PBSW-25-4)",
+    "ours": "Close the public hearing on the Sunny Hill Road stormwater/order-of-conditions matter — passed; Approve the storm water permit for 255 Sunny Hill Road (corrected to PBSW254) including standard conditions plus additional inspections",
+    "official": "A. Burney moved to approve Stormwater PBSW-25-4 including all standard conditions and the additional condition that inspections be conducted at the pre-tree removal, the erosion and sedimentation control in installation phase, and the bottom inspections for all the stormwater facilities.",
+    "note": "Same permit, same added inspections (pre-tree removal, erosion control, facility bottoms, media cut sheets, final); both passed.",
+    "t": 1099
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Roll call tally on the Sunny Hill Road stormwater approval",
+    "ours": "Approve the storm water permit for 255 Sunny Hill Road ... — passed",
+    "official": "Roll Call Vote: A Burney, AYE; A Reid, AYE; M Brenner, AYE (3/0)",
+    "note": "Ours records no count; the official gives 3/0 with Willsmer excluded as absent at the opening. Check the recording for whether Willsmer abstained or sat out.",
+    "t": 1099
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Close hearing vote, Sunny Hill Road (who voted)",
+    "ours": "Close the public hearing on the Sunny Hill Road stormwater/order-of-conditions matter — passed",
+    "official": "A. Burney moved to close hearing. A. Reid, Second. M. Brenner reminded T. Willsmer he cannot vote as he was not present when hearing opened.",
+    "note": "The official records no roll call or tally for closing the hearing, only the reminder that Willsmer cannot vote. Check the recording to see whether he voted.",
+    "t": 805
+   },
+   {
+    "kind": "agree",
+    "about": "Close hearing and approve special permit PBSP-25-7, 560 Mulpus Rd solar",
+    "ours": "Approve special permit PBSP257 at 560 Mulpus Road with standard special permit conditions (modified to remove inapplicable ones) plus conditions requiring return to the board if Board of Health septic requirements alter panel location/size/orientation, and requiring the interconnection approval be uploaded before a building permit issues — passed",
+    "official": "A. Burney moved to approve with standard special permit conditions and to be modified to remove any not applicable to the solar development. If the Board of Health requires modification that substantially alters the location, size, or orientation of the solar panels, the applicant returns to Planning Board.",
+    "note": "Same conditions and a passing outcome; official gives 4/0.",
+    "t": 2513
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Close the public hearing on the Mulpus Road solar permit",
+    "ours": "Close the public hearing on the 560 Mulpus Road solar special permit — passed",
+    "official": "",
+    "note": "The official minutes record no motion to close this hearing; it is a procedural step in the recording only, not a conflict.",
+    "t": 2317
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Open Space Committee: what the board decided",
+    "ours": "The Open Space Committee will draft a standalone bylaw, modeled on Medway's, ... with the planning board remaining the appointing authority, and will bring it to the bylaw review committee before returning to the planning board for a vote.",
+    "official": "Determined best course of action is M Toohill is to write the new By-law and send it to the board for review and the Board will endorse that language before the B y-law Review Committee.",
+    "note": "Ours has the bylaw going to the Bylaw Review Committee first and then back to the board for a vote. The official has the board endorsing the language before the committee. Check the order of the steps in the recording.",
+    "t": 3007
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Suggestion that the proposal go to the select board and the spring meeting",
+    "ours": "",
+    "official": "A Burney stated it should be brought before select board as they appoint commission members, however Planning is an elected board so not out of scope. It should be presented at spring meeting.",
+    "note": "Our minutes do not record Burney's select board and spring meeting point.",
+    "t": 3325
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Revised survey plan swapped in administratively",
+    "ours": "The revised survey plan for the Sunny Hill Road property will be swapped in administratively with conservation; no new hearing or approval is needed since the lot-line change is minor and does not affect Wetlands Protection Act compliance.",
+    "official": "",
+    "note": "The official says only that the plan was the same one Conservation approved and was missing 2 pipe locations. It does not mention a survey plan swap.",
+    "t": 64
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "OpenGov hearing notice practice",
+    "ours": "The chair will raise with staff (Brian) getting the legal hearing notice added to OpenGov as standard practice going forward.",
+    "official": "",
+    "note": "The official does not mention OpenGov or the legal notice.",
+    "t": 1435
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Board of Health septic sign-off handled as a condition",
+    "ours": "The pending Board of Health septic setback sign-off for the solar project will be handled as a condition of approval rather than delaying the hearing.",
+    "official": "",
+    "note": "The official records only the resulting condition, with no separate discussion of the sign-off.",
+    "t": 2295
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meeting schedule: November 24 and December 15",
+    "ours": "The December 15 meeting room is booked; the November 24 meeting will likely be cancelled if no new hearings are filed in time.",
+    "official": "11/24, 12/15",
+    "note": "The official lists both dates as meetings and does not mention a likely cancellation of 11/24. Check whether 11/24 was held.",
+    "t": 4192
+   },
+   {
+    "kind": "caption_error",
+    "about": "CPTC training classes cost",
+    "ours": "CPTC training classes: 45 or 50 bucks",
+    "official": "The CPTC classes are starting again.",
+    "note": "The official gives no price, so the figure cannot be checked against it. It is the same CPTC item, and the cost is only in the recording.",
+    "official_reading": "",
+    "t": 4358
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Adam (member); Tim (member); Miss Reed (member); the chair (chair)",
+    "official": "Roll Call: M. Brenner, T. Willsmer, A. Reid, A. Burney",
+    "note": "Same four members; ours has first names only and Reed is a mishearing of Reid.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter name, Team Sunshine Construction",
+    "ours": "Evan St. Thomas Datilio",
+    "official": "Evan St. Thomas Dutill (Team Sunshine)",
+    "note": "Misheard surname.",
+    "official_reading": "Evan St. Thomas Dutill",
+    "t": 2000
+   },
+   {
+    "kind": "caption_error",
+    "about": "Open Space Committee chair name",
+    "ours": "Mike Tuhill",
+    "official": "Mike Toohill, Chair, Community Member",
+    "note": "Misheard surname.",
+    "official_reading": "Mike Toohill",
+    "t": 3007
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Director's report and committee reports",
+    "ours": "",
+    "official": "M. Brenner stated that the slides for the two warrant articles are ready and submitted for the Special Town Meeting.",
+    "note": "Our minutes carry nothing from the chair's report, the committee reports (Municipal Building Design, Capital Planning, Storm Water Task Force) or the Mass APA and MBTA housing comments.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:22:37Z",
+   "cost_usd": 0.243623
+  }
  }
 }

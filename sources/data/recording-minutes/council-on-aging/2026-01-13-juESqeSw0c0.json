@@ -421,5 +421,148 @@
    "at": "2026-09-27T11:24:51Z",
    "cost_usd": 0.19215
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01132026-7598",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2026-01-13-minutes-7598.txt",
+   "path": "sources/meetings/council-on-aging/2026-01-13-minutes-7598.pdf"
+  },
+  "official_sha256": "7bbb382da4566f9aace9391f38984bbc41ce1b93e5667fb8950d2dfdcc8a6e0f",
+  "coverage": "full",
+  "summary": "The two records agree on the main discussion topics: the senior-school idea, board minute-taking and the bylaw rewrite. They differ on whether any formal motions were made, and on several figures that only our minutes carry.\nCheck the recording at t=1001 and t=1898, where ours records motions the official minutes do not, and also check the 41A figures and the lobby funding status.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote on senior-school program",
+    "ours": "Jack moved that the committee and Council on Aging support developing a program incorporating seniors into the school system — not audible",
+    "official": "The board discussed and are in favor of exploring ways that the senlors could benefit the students.",
+    "note": "Ours lists a motion at t=1001 but our own decision at t=1065 says there was no formal vote; the official minutes record no motion. Check the recording around t=1001-1065 to see whether a motion was made.",
+    "t": 1001
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on board taking its own minutes",
+    "ours": "Motion that the Council on Aging board take on responsibility for producing meeting minutes and figure out an accurate, easy way to do them — not audible",
+    "official": "Chairperson Deb Lincoln suggested that the COA Board take its own minutes. It was suggested that Board Members take turns monthly. It was also suggested that the Board look into Al options. The board will reconvene with more information at the next meeting.",
+    "note": "Ours records a motion; the official minutes record only suggestions and no vote. Check the recording at t=1898 for a motion and any vote.",
+    "t": 1898
+   },
+   {
+    "kind": "agree",
+    "about": "Minute-taking: investigate options, report next meeting",
+    "ours": "General consensus to investigate ways to relieve staff of minute-taking duties, including AI transcription tools and rotating or volunteer note-takers, ahead of the next meeting.",
+    "official": "The board will reconvene with more information at the next meeting.",
+    "note": "Both describe an informal plan to look into AI tools and rotating note-takers, with no formal decision.",
+    "t": 1773
+   },
+   {
+    "kind": "agree",
+    "about": "Bylaw review",
+    "ours": "The Council on Aging bylaw language will be brought to the bylaw review committee for research into other towns' bylaws and a rewrite, since it appears outdated and possibly inconsistent with the town-manager form of government.",
+    "official": "the current by-",
+    "note": "Both say the bylaws are outdated and the bylaw committee will take them up and may rewrite them.",
+    "t": 3330
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Food pantry donation amount",
+    "ours": "Food pantry donation: $160",
+    "official": "",
+    "note": "The official minutes mention the Food Pantry donation but give no amount.",
+    "t": 2
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "41A abatement figures",
+    "ours": "41A property tax abatements: 112 abatements, 166,000",
+    "official": "There will be a bulletin board at the Center with information regarding 41A and other potential tax breaks for seniors.",
+    "note": "The official minutes give no abatement count or dollar figure for 41A; they mention only a bulletin board. Check the recording for the figures.",
+    "t": 2856
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Lobby furnishings funding",
+    "ours": "Lobby furnishings / gift fund: 100%",
+    "official": "Furnishings have been chosen. The hold-up is waiting to make sure funding",
+    "note": "Ours suggests 100% funding from a gift fund, while the official minutes say funding is not yet confirmed. Check what the 100% refers to.",
+    "t": 2773
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Superintendent intergenerational program",
+    "ours": "The director has already spoken with the district superintendent, who is interested in developing an intergenerational program pairing seniors with elementary students.",
+    "official": "",
+    "note": "The official minutes do not mention the director's conversation with the superintendent.",
+    "t": 663
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assistant director job description with HR",
+    "ours": "Staff will check with HR on the status of the assistant director job description and try to have an update by the next meeting.",
+    "official": "",
+    "note": "The official minutes do not mention the assistant director job description or the HR follow-up.",
+    "t": 2039
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director's name",
+    "ours": "Deb (director)",
+    "official": "Director Debra Goodsell",
+    "note": "Our minutes call the director Deb. The official minutes name the director Debra Goodsell and the chair Deb Lincoln, so the two may have been mixed up.",
+    "official_reading": "Debra Goodsell"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Eagle House Supporters representative",
+    "ours": "Barbara (Eagle House Supporters Group representative)",
+    "official": "Barbara Coulombe, Eagle House Supporters",
+    "note": "Same person; ours has only the first name.",
+    "official_reading": "Barbara Coulombe"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Jeff",
+    "ours": "Jeff (board member)",
+    "official": "Jim McGuigan",
+    "note": "No Jeff appears in the official attendee list, which has Jim McGuigan. This may be a misheard name, but check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Presenter on bylaws",
+    "ours": "unnamed (presenter, bylaw review (appears to be counsel/staff))",
+    "official": "Selectboard Chair, Caesar Nuzzolo informed the board",
+    "note": "Our minutes could not identify the bylaw presenter. The official minutes name Selectboard Chair Caesar Nuzzolo."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Full attendance and guests",
+    "ours": "",
+    "official": "Excused: Helen Balcom and Ana Lockwood",
+    "note": "The official minutes list nine members present, two excused and several guests. Ours names only a few people."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes approval, Meal Site Manager, legislator visit, hospital update",
+    "ours": "",
+    "official": "Motion was made and seconded to accept the December minutes as presented, approved unanimously.",
+    "note": "The official minutes record approval of the November and December minutes, the new Meal Site Manager, the postponed legislator visit and the UMass Groton ER update. None of these appear in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:21:21Z",
+   "cost_usd": 0.29185479999999997
+  }
  }
 }

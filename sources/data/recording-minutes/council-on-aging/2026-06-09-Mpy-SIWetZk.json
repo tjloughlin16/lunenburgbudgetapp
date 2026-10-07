@@ -500,5 +500,168 @@
    "at": "2026-09-27T02:25:23Z",
    "cost_usd": 0.191314
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06092026-7844",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2026-06-09-minutes-7844.txt",
+   "path": "sources/meetings/council-on-aging/2026-06-09-minutes-7844.pdf"
+  },
+  "official_sha256": "f43599b7393cc19d205b920328f06b1019ba43fa5bc4eaa054a5c2cb56a80de8",
+  "coverage": "full",
+  "summary": "The two records agree on the main votes (orientation packet, officers, honorary-member policy, Susan Doherty) but differ on the mail-in ballot motion, the veterans breakfast fee, the bylaws and who attended. The thing to check first is the mail-in ballot item: ours records a subcommittee with an inaudible result, while the official minutes record a unanimous vote to send a letter.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 1,
+   "discrepancy": 5,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Mail-in ballot subcommittee vote",
+    "ours": "Form a subcommittee to explore mail-in/absentee voting facilitation with the Select Board and town clerk, and report back with a draft letter — not audible",
+    "official": "a motion was made, seconded, and unanimously approved to submit a letter to the Selectboard outlining the proposal.",
+    "note": "Official records a unanimous approval to submit a letter; ours records a subcommittee motion with an inaudible result. Check the recording at t=499 for what was moved and the outcome.",
+    "t": 499
+   },
+   {
+    "kind": "agree",
+    "about": "Place COA orientation packet on town website",
+    "ours": "Seek town manager authorization to place the COA orientation packet, including policies and procedures, on the town website — passed",
+    "official": "A motion was made, seconded, and unanimously approved to place the Council on Aging Orientation Packet on the Town website.",
+    "note": "Same vote and outcome; ours adds the town manager authorization detail.",
+    "t": 2951
+   },
+   {
+    "kind": "agree",
+    "about": "Officer slate vote",
+    "ours": "Approve the officer slate (chair and vice chair) for the new year — passed",
+    "official": "A motion was made, seconded, and unanimously approved to elect:",
+    "note": "Both record the chair and vice chair slate approved; official names Deborah Lincoln and Lou Franco.",
+    "t": 3193
+   },
+   {
+    "kind": "agree",
+    "about": "Amend honorary-member policy",
+    "ours": "Amend the honorary-member policy to allow, at the Council's discretion, people who were not previously COA members to become honorary members — passed",
+    "official": "a motion was made and approved to amend the policy to include non-Council on Aging Board members.",
+    "note": "Same vote and outcome.",
+    "t": 3763
+   },
+   {
+    "kind": "agree",
+    "about": "Susan Doherty honorary member",
+    "ours": "Nominate Susan Doherty as an honorary member of the Council on Aging — passed",
+    "official": "A subsequent motion was made and approved to designate Susan Doherty as an honorary member.",
+    "note": "Same vote and outcome.",
+    "t": 3806
+   },
+   {
+    "kind": "caption_error",
+    "about": "Gift fund balance",
+    "ours": "COA gift fund balance: 1300",
+    "official": "the Gift Fund currently contains approximately $1,300.",
+    "note": "Same figure; ours lacks the dollar sign.",
+    "t": 1641,
+    "official_reading": "$1,300"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Veterans breakfast guest fee",
+    "ours": "Veterans breakfast caregiver fee: $5, four",
+    "official": "Veterans attend free of charge and guests pay $4.",
+    "note": "Ours is garbled ($5, four) and labels it a caregiver fee; official says guests pay $4. Check the recording at t=2342 for the amount and who pays.",
+    "t": 2342
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Gift fund policy decision",
+    "ours": "Table the question of COA gift fund policy and Eagle House Supporters fund separation until the director can provide input at a future meeting.",
+    "official": "Discussion will continue at the next meeting.",
+    "note": "Both defer, but ours says tabled pending the director while official says only that discussion continues. Official also says the Chair suggested a donation-notification policy; confirm whether that was decided.",
+    "t": 1714
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Bylaws status",
+    "ours": "Hold off submitting the COA bylaws until vague provisions conflicting with the Mass Council on Aging model are resolved, and identify the current bylaw committee.",
+    "official": "The Chair noted that the bylaws have not yet been submitted. She requested that Liaison Glenn McLeod gather additional information regarding their status.",
+    "note": "Reasons and actions differ: ours has a hold plus conflict resolution, official has the liaison gathering information. Check the recording at t=3529.",
+    "t": 3529
+   },
+   {
+    "kind": "agree",
+    "about": "Move honorary members luncheon",
+    "ours": "Move the honorary-member recognition luncheon from August to September due to a member's scheduled knee surgery.",
+    "official": "The Chair also suggested moving the Honorary Members Luncheon from August to September due to Peter Lincoln's unavailability.",
+    "note": "Same move; the stated reason is a knee surgery in ours and unavailability in official, and the official names Peter Lincoln.",
+    "t": 3871
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Friendly-visit publicity push",
+    "ours": "Pursue a publicity push (newsletter, cable/PACK crawl, Meals on Wheels flyers) to identify isolated seniors for a revived friendly-visit/friendly-call program, without a formal vote.",
+    "official": "The Chair suggested exploring alternative ways to market the program.",
+    "note": "Official covers the discussion more briefly and gives no specific outreach channels.",
+    "t": 1271
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Notify board of operational policy changes",
+    "ours": "Board members agreed they should be informed going forward whenever an operational policy (such as the veterans breakfast fee) changes.",
+    "official": "",
+    "note": "Not recorded in the official minutes.",
+    "t": 2656
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Caregiver session agenda placeholder",
+    "ours": "Add a caregiver support session update as a standing placeholder on the next meeting's agenda.",
+    "official": "It was also noted that the Caregiver Resource Connection will not meet again until after the summer months.",
+    "note": "Related but different: official only notes the Caregiver Resource Connection pause, with no agenda item. Check the recording at t=4795.",
+    "t": 4795
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Gift amounts and Eagle House donors",
+    "ours": "Charlene Adams gift to the Eagle House / COA fund: $4,000; Large donor gift to Eagle House Supporters: 40, $4,000; Sunshine card program seed funds: a dollar",
+    "official": "",
+    "note": "Official has no gift amounts, the donor name, or the seed funds figure. Ours may be partly misheard.",
+    "t": 1610
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sunshine Person appointment",
+    "ours": "",
+    "official": "Elena Christopher was appointed as the new Sunshine Person.",
+    "note": "Official records an appointment; ours mentions only the Sunshine card program seed funds.",
+    "t": 3281
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Personnel update and lobby furnishings",
+    "ours": "",
+    "official": "there are currently four candidates under consideration and interviews will begin soon.",
+    "note": "Official reports four candidates for a position and installed lobby furniture seating about 20; ours has neither.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "the chair; Lou; Anna; Deb; Susan; Jane; Jack; Glenn Mloud; Sue Dari",
+    "official": "Present:\n• Deborah Lincoln, Chair\n• Jane Rabbitt\n• Lou Franco\n• Susan O'Sullivan\n• Elena Christopher\n• Diane Nowd\n• Jim McGuigan\n• Jack Rabbitt",
+    "note": "Official lists Ana Lockwood as excused, while ours lists Anna as a board member present. Ours lists Sue Dari, whom official does not list; official has Barbara Coulombe representing Eagle House Supporters. Glenn Mloud corresponds to Glenn McLeod. Verify who was present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:15:34Z",
+   "cost_usd": 0.2560554
+  }
  }
 }

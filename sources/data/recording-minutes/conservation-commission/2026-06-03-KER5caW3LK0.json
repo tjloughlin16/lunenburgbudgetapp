@@ -498,5 +498,241 @@
    "at": "2026-09-27T02:28:05Z",
    "cost_usd": 0.196082
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06032026-7837",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-06-03-minutes-7837.txt",
+   "path": "sources/meetings/conservation-commission/2026-06-03-minutes-7837.pdf"
+  },
+  "official_sha256": "3864fac7b056a16fc7e279f9ef7a46e8f783ec937c15dae54603f57fdd0ac3e0",
+  "coverage": "full",
+  "summary": "The two records agree on most continuances and on the Hickory Hills and Hollis Road votes. They differ on how Teddy Doucette voted on the Brackett driveway and on what the 507 West Townsend Road continuance requires. The thing to know: our minutes record Doucette as muted and not voting on Brackett, while the official minutes record him as abstaining, and only the official record of the 507 motion asks the applicant to move the house outside the buffer.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: continue 146 Young's Road NOI (Nichols Excavating) to June 17",
+    "t": 807,
+    "ours": "Continue the Nichols Excavating LLC NOI (146 Young's Road septic replacement) to June 17, 2026 — passed 5-0",
+    "official": "Motion: R. Bursch, to continue to the June 17 meeting.",
+    "note": "Both record a continuance to June 17; the official roll shows five AYE votes (Larouche, Bursch, Doucette, Burnap, Pewtherer)."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 507 West Townsend Road NOI to June 17",
+    "t": 2264,
+    "ours": "Continue the New England Environmental Design NOI (507 West Townsend Road, single-family home with wetland crossing) to June 17, 2026 — passed 5-0",
+    "official": "Motion: M. Larouche, continue to the June 17 meeting, addressing the following:",
+    "note": "Continuance and 5-0 tally match; the conditions attached to it differ (see next finding). Our minutes name the representative's firm as the applicant, whereas the official minutes name Jahnke Construction LLC as applicant."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Conditions attached to the 507 West Townsend Road continuance",
+    "t": 2202,
+    "ours": "Commission will require, before the next hearing, a planting schematic and construction detail for the temporary disturbance, a replication plan for permanent disturbance, native deciduous planting demarcation along the 30-foot buffer, and a construction sequence/staging plan for 507 West Townsend Road.",
+    "official": "3. Move the structure outside the buffer zone",
+    "note": "The official motion includes moving the house outside the buffer zone, which our minutes omit. Ours includes a planting schematic and construction sequence that the official motion does not list (the schematic was requested in discussion). Check the recording around the motion to see which conditions were actually moved."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: continue Brackett common driveway NOI (860 New West Townsend Rd)",
+    "t": 2867,
+    "ours": "Continue the Brackett common driveway NOI (860 New Towns and Road) to June 17, 2026 — passed with Teddy Ducet not recorded (muted); quorum maintained",
+    "official": "T. Doucette - Abstain",
+    "note": "Ours says Doucette was muted and not recorded; the official minutes record him abstaining (4 AYE, 1 abstain). Check the video for whether he voted, abstained, or could not be heard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Address of Brackett common driveway",
+    "t": 2867,
+    "ours": "860 New Towns and Road",
+    "official": "b. 860 New West Townsend Road: NOI-26-1 (Continued from 05/20/26)",
+    "official_reading": "860 New West Townsend Road",
+    "note": "Misheard street name for the same item."
+   },
+   {
+    "kind": "agree",
+    "about": "Brackett continuance conditions: wait for DEP and Planning Board",
+    "t": 2826,
+    "ours": "Commission agreed to wait for DEP confirmation it received the Brackett common driveway materials, and for the planning board process to finish, before closing that hearing.",
+    "official": "1. Wait for DEP to review responses",
+    "note": "Both record waiting on DEP and the Planning Board (official item 2: \"Wait for all Planning Board approvals to be complete\")."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 56 Ruth Street NOI (Benjamin Builders)",
+    "t": 2993,
+    "ours": "Continue the Benjamin Builders common driveway NOI (56 Ruth Street) to June 17, 2026 — passed 5-0",
+    "official": "Motion: M. Larouche, continue to the June 17 meeting at applicant’s request.",
+    "note": "Same continuance; five AYE votes in the official roll."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 934 Mass Ave NOI (Unitil)",
+    "t": 3013,
+    "ours": "Continue the Unitil substation/utility pole NOI (934 Mass Ave) to June 17, 2026 — passed 5-0",
+    "official": "Motion: R. Bursch, continue to the June 17 meeting at applicant’s request.",
+    "note": "Same continuance; five AYE votes in the official roll."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve Hickory Hills Lake 2026 treatment plan",
+    "t": 3646,
+    "ours": "Approve the Hickory Hills Lake 2026 herbicide treatment plan for June 10, 2026 — passed 5-0",
+    "official": "Motion: T. Doucette, to approve the treatment plan as presented.",
+    "note": "Both record approval, 5 AYE; treatment to begin June 10."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve Hollis Road cleaning company quote",
+    "t": 5654,
+    "ours": "Approve the cleaning/restoration company's quote for the Hollis Road building — passed, Richard Burch abstained",
+    "official": "Vote: M. Larouche – AYE R. Bursch – Abstain T. Doucette - AYE A. Burnap – AYE",
+    "note": "Both show Bursch abstaining and the motion carrying; the official minutes state the amount approved as $2,411.25 from the Haws fund."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Hollis Road quote total",
+    "t": 5295,
+    "ours": "24114 25",
+    "official": "Motion: M. Larouche, to approve $2,411.25 from the “Haws” fund to hire a cleaning company",
+    "official_reading": "$2,411.25",
+    "note": "Digit grouping lost; the $6.25 difference from the $2,405 subtotal is heard in ours but not itemised in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Hollis Road quote line items and subtotal",
+    "t": 5295,
+    "ours": "$216, $1,872, $122, $100, $95, 2405",
+    "official": "Cleaning quote includes carpet cleaning ($216), touchable services ($1,872), vapor order counteractant ($122), supplies ($100), heavy pet spot removal ($95) for a subtotal of $2,405.",
+    "note": "Line items and subtotal match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$6.25 item in Hollis Road quote",
+    "t": 5295,
+    "ours": "$6.25",
+    "official": "",
+    "note": "The official minutes give no $6.25 line; it would explain the gap between the $2,405 subtotal and the $2,411.25 approved, but that is not stated."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of the fund for Hollis Road",
+    "t": 5588,
+    "ours": "Haw Fund balance (Hollis Road property fund)",
+    "official": "This would come from the “Haws” fund.",
+    "official_reading": "Haws fund",
+    "note": "Same fund; name misheard."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Haws fund balance",
+    "t": 5588,
+    "ours": "Haw Fund balance (Hollis Road property fund): $26,68410",
+    "official": "",
+    "note": "The official minutes give no balance; our figure is garbled (probably $26,684.10), so check against the recording or the fund ledger."
+   },
+   {
+    "kind": "agree",
+    "about": "Water at Hollis Road restored",
+    "t": 4959,
+    "ours": "Water service at the Hollis Road building will be turned back on so the cleaning contractor has water to work with.",
+    "official": "Power and water will need to be restored.",
+    "note": "Both record that water must be restored; the official text frames it as a need, not a decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Closing small conservation accounts into the general fund",
+    "t": 4282,
+    "ours": "Closing several small conservation accounts and moving the remaining balances into the general fund — 18 cents (discussed only)",
+    "official": "",
+    "note": "Not in the official minutes; the 18-cent figure may be misheard, so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stormwater utility fee for commercial properties",
+    "t": 5778,
+    "ours": "Stormwater utility fee for commercial properties: 1 to 10,000",
+    "official": "",
+    "note": "The official minutes say only \"Storm Water: Figuring out how to approach commercial properties.\" and give no fee figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "1168 Mass Ave enforcement: move on without continuance",
+    "t": 3370,
+    "ours": "Commission will move on from the 1168 Mass Ave enforcement matter without setting a continuance date, since USDA and DEP have not yet responded.",
+    "official": "",
+    "note": "The official minutes record the status update (waiting on USDA, DEP report not sent) but no decision about a continuance date."
+   },
+   {
+    "kind": "agree",
+    "about": "715 Reservoir Road tree-planting inspection",
+    "t": 4175,
+    "ours": "The tree-planting compliance inspection at 715 Reservoir Road will be done in spring after snowmelt rather than at the 6-month mark.",
+    "official": "A six-month inspection would be in December, so she suggested a spring checkup. The Commission agreed.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Agent to ask seed-collection applicant if still interested",
+    "t": 6255,
+    "ours": "The conservation agent will first ask the seed-collection applicant whether she is still interested before scheduling any hearing.",
+    "official": "",
+    "note": "The official minutes mention the seed-collection discussion but record no agent follow-up."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "1625 Massachusetts Ave (Cowdery) continued to 06/17",
+    "t": 0,
+    "ours": "",
+    "official": "Notice of Intent by the Town of Lunenburg Conservation Commission for the construction of an ADA parking and re-construction of an existing hiking trail at Cowdery Nature Center. Continued to 06/17",
+    "note": "Our minutes have no entry for this hearing; check whether it was continued without a vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 5/20/2026 minutes",
+    "t": 0,
+    "ours": "",
+    "official": "Motion: T. Doucette, to approve the minutes of the 5/20 meeting.",
+    "note": "Official records a 4-0 vote approving the previous minutes; ours lists no such vote."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member names",
+    "ours": "Richard Burch (member); Teddy Ducet (member); Andrea Bernap (member); Herlin (conservation agent)",
+    "official": "Richard Bursch",
+    "official_reading": "Richard Bursch, Teddy Doucette, Andrea Burnap, Herlin Jamie (Conservation Agent)",
+    "note": "Same people with misheard spellings."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendance: Burnap, chair, and absences",
+    "ours": "Andrea Bernap (member); the chair (chair)",
+    "official": "Absent: M. Wilson, A. Burnap (joined at 29:17 minutes into the meeting)",
+    "note": "Official names Jennifer Pewtherer as chair, lists Mary Wilson absent, and says Burnap joined at 29:17; ours does not name the chair or Wilson, and the official roll call has only four present at the start. Check Burnap's arrival time against the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public participants",
+    "ours": "",
+    "official": "Ryan Proctor (Dillis & Roy) represented the applicant.",
+    "note": "Applicant representatives and guests (Ryan Proctor, Zach Mann, Dominic Meringolo, Brian Marchetti, Brad Coons) appear only in the official minutes' attendee detail."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:16:24Z",
+   "cost_usd": 0.276131
+  }
  }
 }

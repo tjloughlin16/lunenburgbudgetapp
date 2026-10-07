@@ -375,5 +375,163 @@
    "at": "2026-09-27T02:36:11Z",
    "cost_usd": 0.191348
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05042026-7788",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2026-05-04-minutes-7788.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2026-05-04-minutes-7788.pdf"
+  },
+  "official_sha256": "9e62977f0652b8e365f0c40219bb50c53ee14b7aa0fd26f76f49f6aee72ed98b",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the 81% local programming figure, Town Meeting approval of the FY27 budget, the June 1 meeting, and the outreach to fill the Cable Advisory committee. The balances and the manager's name differ only because the captions garbled them. Our minutes hold budget figures and discussions the official minutes omit, while the official minutes name two members ours does not and record staffing and policy items we missed; neither record contains a vote.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 3,
+   "discrepancy": 0,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Current account ending balance",
+    "ours": "Current account ending balance: a,65,442.78",
+    "official": "$1,065,442.78",
+    "official_reading": "$1,065,442.78",
+    "note": "Same balance, with the digits garbled by the captions.",
+    "t": 508
+   },
+   {
+    "kind": "caption_error",
+    "about": "Enterprise/investment account balance",
+    "ours": "Investment/trust account principal and balance: 720,000, 88,974, 7,000, 8,000",
+    "official": "$808,974.49",
+    "official_reading": "$808,974.49",
+    "note": "88,974 is probably a mishearing of 808,974. Check the recording at this point, because ours also lists other figures (720,000, 7,000, 8,000) that the official minutes do not.",
+    "t": 2297
+   },
+   {
+    "kind": "caption_error",
+    "about": "Manager's name",
+    "ours": "Joe Told (manager (public access/cable coordinator))",
+    "official": "Toale",
+    "official_reading": "Jo Toale",
+    "note": "The captions misheard the manager's name.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Locally produced programming share",
+    "ours": "Locally produced programming share: 81%",
+    "official": "81%",
+    "note": "Both records give 81% local programming.",
+    "t": 549
+   },
+   {
+    "kind": "agree",
+    "about": "FY27 budget approval at Town Meeting",
+    "ours": "FY27 budget as approved at Town Meeting - retained earnings: $40,84755 (approved at Town Meeting, not a vote of this committee)",
+    "official": "Presented and approved at Town Meeting.",
+    "note": "Both say the FY27 budget was approved at Town Meeting and not voted by the committee. The official minutes give no retained-earnings figure.",
+    "t": 703
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Retained earnings figure and FY27 revenue/expense breakdown",
+    "ours": "Retained earnings $40,84755; revenue mix 69%, 31%, 86%, 11%, 3%; projected revenue 177,000 vs 217,847",
+    "official": "",
+    "note": "The official minutes carry none of the FY27 budget amounts. The retained-earnings figure is garbled, so check it against the budget as approved at Town Meeting.",
+    "t": 633
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting",
+    "ours": "Next PACC meeting set for June 1st at 6 PM in the same room.",
+    "official": "6:00",
+    "note": "Both give June 1 at 6 PM in the Sudolnik room.",
+    "t": 2516
+   },
+   {
+    "kind": "agree",
+    "about": "Comcast license / Cable Advisory committee recruitment",
+    "ours": "Each committee member will individually reach out to residents to recruit volunteers for the Comcast license renegotiation committee, aiming to have names by June.",
+    "official": "Committee will begin community outreach",
+    "note": "Both describe community outreach to fill the Cable Advisory committee. Ours adds the June target and individual recruiting, which the official minutes do not.",
+    "t": 1584
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Correction to draft minutes ('estimated investment value')",
+    "ours": "Minutes will be corrected to read 'estimated investment value' rather than 'investment value,' since the committee did not set that figure - the town treasurer did.",
+    "official": "",
+    "note": "The official minutes record only that the prior minutes were accepted as amended, without saying what the amendment was. Our minutes do not record the acceptance vote.",
+    "t": 192
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Removing 'videographer editor' from review documents",
+    "ours": "No vote needed to remove 'videographer editor' from performance-review documents; the role is already listed only as 'videographer.'",
+    "official": "",
+    "note": "Nothing in the official minutes covers this item.",
+    "t": 1148
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meeting to reconcile enterprise/investment fund numbers",
+    "ours": "The committee will try to meet before the end of June to reconcile the enterprise/investment fund numbers with the finance department's posting.",
+    "official": "",
+    "note": "The official minutes record neither the reconciliation plan nor any extra meeting.",
+    "t": 2494
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Storage rental / space costs",
+    "ours": "Storage rental / space costs: 6,000",
+    "official": "",
+    "note": "The official minutes mention the search for storage and the FATV rental, but give no dollar amount.",
+    "t": 1400
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Historical interest vs budgeted interest",
+    "ours": "Historical annual interest vs. budgeted interest: 30,000, 32, 33, 20,000",
+    "official": "",
+    "note": "The official minutes do not record the interest discussion.",
+    "t": 2387
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: other members present",
+    "ours": "Steve (member); Brian (member)",
+    "official": "Beall",
+    "note": "The official roll lists four members present: Steve Walker, Brian Vienneau, Steve Archambault and Faith Beall. Our minutes name only two first names, so check who the 'Steve' is and whether the other two attended.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manager's report items (retirement, studio move)",
+    "ours": "",
+    "official": "Dextraze",
+    "note": "The official minutes record John Dextraze's retirement, the studio move to the Eagle House, and the camera loan to the ACE program. None appear in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Policy update and committee terms",
+    "ours": "",
+    "official": "Water",
+    "note": "The official minutes list policy additions (Community Videographer's, Water District, and a procurement link) and an action for S.Archambault to check committee terms on the town website. Ours has neither.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:17:40Z",
+   "cost_usd": 0.294134
+  }
  }
 }

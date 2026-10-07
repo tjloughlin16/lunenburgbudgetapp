@@ -374,5 +374,172 @@
    "at": "2026-09-27T12:34:21Z",
    "cost_usd": 0.192938
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09082025-7387",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-09-08-minutes-7387.txt",
+   "path": "sources/meetings/planning-board/2025-09-08-minutes-7387.pdf"
+  },
+  "official_sha256": "67aad3e8568b10ccfc8ce3a0fa3e30a16ae84ac25df96deec7652f5f2440f9ee",
+  "coverage": "full",
+  "summary": "The two records agree on all five votes and their 4-0 outcomes, and on who attended. The difference to check is the driveway-paving waiver: our minutes say the board could not waive the requirement, and the official minutes record only a request for clarification under the 10/02 warrant.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "ANR 830 Mass Ave endorsement vote",
+    "ours": "Motion to endorse the ANR plan for 830 Mass Ave — passed",
+    "official": "Endorsed 4-0.",
+    "note": "Same motion and outcome; the official minutes add the 4-0 tally and the mover and seconder.",
+    "t": 513
+   },
+   {
+    "kind": "agree",
+    "about": "Close public hearing, 1083 Northfield Road",
+    "ours": "Motion to close the public hearing for 1083 Northfield Road — passed",
+    "official": "Vote:  A. Reid – Aye, T.Willsmer -Aye, A. Burney -Aye, M.Brenner -Aye Hearing closed.",
+    "note": "Both record the hearing closed by unanimous vote.",
+    "t": 4838
+   },
+   {
+    "kind": "agree",
+    "about": "Special permit, common driveway, 1083 Northfield Road",
+    "ours": "Motion to approve the special permit for the common driveway at 1083 Northfield Road with standard conditions plus special conditions (storm water/maintenance plan, no further division of lots, no further expansion of impervious area/limit of work) — passed",
+    "official": "Application Approved – 4-0",
+    "note": "Same approval with standard and special conditions; the official minutes list the conditions as bullets and give the tally.",
+    "t": 4921
+   },
+   {
+    "kind": "agree",
+    "about": "Stormwater management permit, 1083 Northfield Road",
+    "ours": "Motion to approve the storm water management permit for 1083 Northfield Road with the same special conditions — passed",
+    "official": "Application Approved - 4-0.",
+    "note": "Same approval. The official motion text carries a stray 'to 2025-08-25 at 6:05 P.M.' that looks like a copy-paste error and does not change the outcome.",
+    "t": 5048
+   },
+   {
+    "kind": "agree",
+    "about": "Waive first right of refusal, 222 West Townsend Road",
+    "ours": "Motion to recommend the Select Board waive/exercise (wave) the town's first right of refusal for 222 West Townsend Road (open space parcel) — passed",
+    "official": "Right of refusal accepted 4-0",
+    "note": "Both record a motion to waive the right, passed unanimously. The official wording 'accepted' is loose but the motion itself says waive.",
+    "t": 5828
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Driveway paving requirement / waiver, 1083 Northfield Road",
+    "ours": "Board agreed it cannot waive the bylaw's 3-inch bituminous concrete driveway-paving requirement for 1083 Northfield Road, and will consider a warrant article to remove that requirement from the common-driveway bylaw, with language due by the October 2nd warrant deadline.",
+    "official": "Discussion by the Board that the language is confusing. Chair Brenner calls for addressing this issue  for clairification under 10/02 warrant.",
+    "note": "Ours records a decision that the board cannot waive the requirement and may remove it by warrant article; the official minutes record only that the language is confusing and needs clarification, with no ruling on the waiver. Check the video near t=4345 for what was decided.",
+    "t": 4345
+   },
+   {
+    "kind": "agree",
+    "about": "MBTA Communities bylaw hearing date and warrant deadline",
+    "ours": "Public hearing on the draft MBTA Communities zoning bylaw amendment will be held October 27th rather than September 22nd, since the required ad could not be placed in time; warrant language is due October 2nd.",
+    "official": "Review of MBTA Communities bylaw – discussion of schedule of public hearing dates off calendar or 10/27. ",
+    "note": "Both point to 10/27 for the hearing and 10/02 for language. The official minutes do not give the ad-timing reason and do not state a firm decision, and their 9/22 line is a review date.",
+    "t": 5912
+   },
+   {
+    "kind": "agree",
+    "about": "Master Plan Steering Committee presenting at Special Town Meeting",
+    "ours": "Board agreed the Master Plan Steering Committee may present its progress at Special Town Meeting without a formal vote, since it is a seated committee and does not need the board's permission.",
+    "official": "Board agrees that presentation of the information would be a \ngreat idea.",
+    "note": "Both record the board's agreement to the presentation; the 'no formal vote' point appears only in ours, and the official minutes list no motion.",
+    "t": 5870
+   },
+   {
+    "kind": "agree",
+    "about": "Adam's master plan feedback to the consultant",
+    "ours": "Chair will take Adam's written feedback on the master plan draft directly to the consultant (Ramy/Overunder) for discussion, rather than distributing it to the full steering committee at this time.",
+    "official": "More discussion with Rami will be needed to clarify the role and responsibilities.  Chair will initiate \ndiscussion with Rami.",
+    "note": "Same action by the chair. The official minutes do not mention the full steering committee.",
+    "t": 8516
+   },
+   {
+    "kind": "caption_error",
+    "about": "Consultant's name",
+    "ours": "Ramy/Overunder",
+    "official": "Rami",
+    "note": "Same consultant, with the name spelled differently by the captions.",
+    "official_reading": "Rami",
+    "t": 8516
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant's engineering firm",
+    "ours": "Greg Roy (presenter (applicant's engineer, Dillison Roy))",
+    "official": "Grey Roy presenting for Dillis and Roy",
+    "note": "Same firm and presenter, misheard by the captions. The official minutes themselves vary between 'Grey' and 'Greg' Roy.",
+    "official_reading": "Dillis and Roy"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MBTA Communities consultant cost",
+    "ours": "MBTA Communities bylaw consultant (Overunder/Community Scale, via MHP): 25,000",
+    "official": "",
+    "note": "The official minutes name Community Scale but record no dollar amount.",
+    "t": 7309
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School department override funds",
+    "ours": "School department override funds (context in master plan discussion): almost $600,000",
+    "official": "",
+    "note": "The official minutes record no figure for this.",
+    "t": 7892
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Matt (chair); Adam (member); Tim (member); Amanda (member)",
+    "official": "Present: T. Willsmer, A. Reid, A. Burney, M. Brenner",
+    "note": "The four voting members match by first name. The official roster also lists Matthew Allison as a member, who is not named as present or absent, and the minutes say 'Absent: none'."
+   },
+   {
+    "kind": "agree",
+    "about": "Applicant presenters and recorder",
+    "ours": "Greg Roy (presenter (applicant's engineer, Dillison Roy)); Tanner Cole (applicant / property owner); Jen (planning office staff / recorder)",
+    "official": "Greg Roy and Tanner Cole presenting",
+    "note": "Presenters match. Jen is the recorder, Jennifer Daigle, Admin Asst., per the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes approval vote, 8/25/2025",
+    "ours": "",
+    "official": "Minutes approved 4-0",
+    "note": "The official minutes record a vote approving the 8/25 minutes that ours does not list. It may be treated as procedural; check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "499 Northfield Road decision template",
+    "ours": "",
+    "official": "DECISIONS : 499 Northfield Road - The board chair and admin will rework the decision template due to the need \nto update to a more detailed template.",
+    "note": "Ours records no decision or discussion about the 499 Northfield Road decision template."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Open Space Committee additional seat",
+    "ours": "",
+    "official": "Per T. Willsmer – Brief discussion on adding additional seat.",
+    "note": "A discussion item that ours does not record; no vote is recorded in the official minutes either."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:03Z",
+   "cost_usd": 0.261267
+  }
  }
 }

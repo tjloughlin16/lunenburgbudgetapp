@@ -369,5 +369,155 @@
    "at": "2026-09-27T02:37:01Z",
    "cost_usd": 0.186782
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04282026-7783",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2026-04-28-minutes-7783.txt",
+   "path": "sources/meetings/sewer-commission/2026-04-28-minutes-7783.pdf"
+  },
+  "official_sha256": "4e613652ed76abbe8bd12c1a44e3063075d99755f557a7e362d99c1dff52eca8",
+  "coverage": "full",
+  "summary": "The two records agree on attendance, the 4,800 Ramgren Road bid, and most future agenda items. They differ on the rate increase figure (5% vs 16%), the 20% figure's meaning, a 12% late interest rate only we record, and the 4/14 minutes vote only the official minutes record. A reader should check the recording at t=714 and t=798 first, since the two records give different figures and descriptions for the rate increase and the 20%.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Rate increase percentage",
+    "ours": "Rate increase percentage: 5%",
+    "official": "This necessitates a User Rate Increase of 16% but only 5% increase on the minimum charge.",
+    "note": "Ours gives a single 5% rate increase; the official minutes say the user rate increase is 16% and 5% applies only to the minimum charge. Check the recording near t=714 to see which figure was stated as the rate increase.",
+    "t": 714
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Delinquency / debt service share",
+    "ours": "Debt service as share of revenue: 20%",
+    "official": "Andrew noted the delinquency rate is under 20% currently.",
+    "note": "Ours labels 20% as debt service as a share of revenue; the official minutes describe it as a delinquency rate under 20%. Check at t=798 what the 20% referred to.",
+    "t": 798
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Late payment interest rate 12%",
+    "ours": "Late payment interest rate: 12%",
+    "official": "",
+    "note": "The official minutes record no late payment interest rate; check the recording at t=841 for whether it was discussed.",
+    "t": 841
+   },
+   {
+    "kind": "caption_error",
+    "about": "5 Ramgren Road bid amount",
+    "ours": "5 Ramgren Road sewer tie-in bid: 4,800, 10 grand",
+    "official": "Bob Proctor had the lowest bid of $4,800, with work starting next week if all goes well.",
+    "note": "Same bid; the captions added a stray '10 grand' alongside the $4,800 figure.",
+    "official_reading": "$4,800",
+    "t": 341
+   },
+   {
+    "kind": "agree",
+    "about": "100 Laurel Lane on future agenda",
+    "ours": "Keep 100 Laurel Lane sewer stub issue on the agenda as a future/ongoing item.",
+    "official": "---Future Agenda Items- 100 Laurel Lane, Manhole Repair, Q4 Commitment, Town Meeting feedback and discussion.",
+    "note": "Both list 100 Laurel Lane as a future agenda item.",
+    "t": 1341
+   },
+   {
+    "kind": "agree",
+    "about": "Q4 commitment on next agenda",
+    "ours": "Add the quarter four billing commitment to the next meeting's agenda (May 12).",
+    "official": "---Future Agenda Items- 100 Laurel Lane, Manhole Repair, Q4 Commitment, Town Meeting feedback and discussion.",
+    "note": "Both list the Q4 commitment as a future item; the official minutes do not specify May 12 for it.",
+    "t": 1568
+   },
+   {
+    "kind": "agree",
+    "about": "Town meeting feedback on future agenda",
+    "ours": "Add a brief discussion of town meeting feedback to the next meeting's agenda.",
+    "official": "---Future Agenda Items- 100 Laurel Lane, Manhole Repair, Q4 Commitment, Town Meeting feedback and discussion.",
+    "note": "Both list town meeting feedback as a future agenda item.",
+    "t": 1608
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole Repair as a future agenda item",
+    "ours": "",
+    "official": "---Future Agenda Items- 100 Laurel Lane, Manhole Repair, Q4 Commitment, Town Meeting feedback and discussion.",
+    "note": "The official minutes list Manhole Repair as a future agenda item; ours do not record it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to accept minutes of 4/14/26",
+    "ours": "VOTES (non-procedural): none",
+    "official": "To accept the minutes of 4/14/26.                         Roll Call Vote:  Dan-aye, Arthur-aye, Chip-aye and Scott-aye.",
+    "note": "The official minutes record a roll call vote approving prior minutes (4-0); ours record no votes. Approval of minutes is often treated as procedural, so check whether to count it and whether the recording shows the vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole Repair IFB update",
+    "ours": "",
+    "official": "Andrew reported that Insituform emailed that they are currently working on other jobs.",
+    "note": "Official minutes report Insituform's delay on the manhole repair; ours record nothing on it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Article 19 rate presentation and retained earnings",
+    "ours": "",
+    "official": "they will not be using Retained Earnings to balance the budget this year",
+    "note": "Official minutes describe the Town Meeting Article 19 presentation, including no use of Retained Earnings; ours have only the percentages."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Old business items",
+    "ours": "",
+    "official": "Andrew reported that there is a buyer for 3 Rennie Street that wants to fix up the property and connect to sewer.",
+    "note": "Official minutes cover old business (funeral home, Driving Range, 3 Rennie Street); ours record none."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Scott Dolliver name",
+    "ours": "Scott Dolliver (Vice Chairman, presiding (Chairman absent))",
+    "official": "Vice-Chair- Scott Dall",
+    "note": "Same attendee with a differently spelled surname.",
+    "official_reading": "Scott Dall"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Arthur Cades name",
+    "ours": "Arthur Cades (member)",
+    "official": "Member: Arthur Katis",
+    "note": "Same attendee with a misheard surname.",
+    "official_reading": "Arthur Katis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Andrew Valeri name",
+    "ours": "Andrew Valeri (staff, DPW/sewer business manager (also heard as 'Andrew Malloy'))",
+    "official": "Sewer Business \nManager- Andrew Valliere",
+    "note": "Same person with a misspelled surname.",
+    "official_reading": "Andrew Valliere"
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees and absences",
+    "ours": "Dan Proctor (member); Alan Chip Wilson (member); Brett Ramsden (absent); Jane Ranley (staff); Bill Bernard (absent)",
+    "official": "Absent: Chair- Brett Ramsden and DPW Director- Bill Bernard",
+    "note": "Same people present and absent; the official minutes also list Dan Proctor as Clerk."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:17:25Z",
+   "cost_usd": 0.231707
+  }
  }
 }

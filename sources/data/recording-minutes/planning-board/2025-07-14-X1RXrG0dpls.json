@@ -274,5 +274,113 @@
    "at": "2026-09-27T12:57:54Z",
    "cost_usd": 0.185338
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07142025-7311",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-07-14-minutes-7311.txt",
+   "path": "sources/meetings/planning-board/2025-07-14-minutes-7311.pdf"
+  },
+  "official_sha256": "ebdd58e3b616a1206f90076e6749fbbebc0812b93dd771e72f0fce860b21b01b",
+  "coverage": "full",
+  "summary": "The two records agree on both hearing continuations to July 28 at 6:05 p.m. and on deferring a decision document. They differ on who presided, the minutes-approval vote (official only), the MRPC item, the abutter-notice outcome and the 260 Falulah permit type.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 4,
+   "only_in_ours": 0,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Continuation of 1083 Northfield Road hearing to July 28 at 6:05 p.m.",
+    "ours": "Motion to continue the public hearing for 1083 Northfield Road (special permit, common driveway and stormwater management permit) to the July 28th meeting at 6:05 p.m. — passed",
+    "official": "Motion:  A. Reid motion, to continue the public hearings for 1083 Northfield Road Common Driveway/ \nStormwater Management Permits to 2025-07-28 at 6:05 P.M.",
+    "note": "Same motion, same date and time, passed in both; official adds mover/seconder and a 3-0 roll call.",
+    "t": 152
+   },
+   {
+    "kind": "agree",
+    "about": "Continuation of 260 Falulah Rd hearing to July 28 at 6:05 p.m.",
+    "ours": "Motion to continue 260 Fula Road modification to site plan approval and stormwater management permit to the July 28th meeting at 6:05 p.m. — passed",
+    "official": "Motion:  A.Reid motion, to continue the public hearings for 260 Falulah Rd Special Permit & \nStormwater Management Permits to 2025-07-28 at 6:05 P.M.",
+    "note": "Same continuation vote and passed in both; our caption renders the street as 'Fula Road'.",
+    "t": 172
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name 260 Falulah Rd",
+    "ours": "260 Fula Road",
+    "official": "260 Falulah Rd – Special Permit, Stormwater Management Permit (  PMOD-25-2  )",
+    "note": "Misheard street name; same item.",
+    "official_reading": "Falulah Rd",
+    "t": 172
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Type of permit for 260 Falulah Rd",
+    "ours": "260 Fula Road modification to site plan approval and stormwater management permit",
+    "official": "260 Falulah Rd – Special Permit, Stormwater Management Permit (  PMOD-25-2  )",
+    "note": "Ours calls it a modification to site plan approval; official calls it a Special Permit. Check the agenda/application for the permit type.",
+    "t": 172
+   },
+   {
+    "kind": "agree",
+    "about": "Decision document not available, delayed to next meeting",
+    "ours": "The decision document for a previously approved project could not be located in the packet and is short of signatures, so it will be taken up at the next meeting instead.",
+    "official": "Decision not available – wasn't sent and Jasmin doesn’t have computer. Delayed to next meeting.",
+    "note": "Both defer the decision to the next meeting; the reasons given differ in detail (missing signatures vs. not sent), and official names the project as 443 West Townsend Rd.",
+    "t": 213
+   },
+   {
+    "kind": "discrepancy",
+    "about": "MRPC seat fill-in request",
+    "ours": "The chair put out a request for another board member to fill in on the MRPC seat for three meetings (Sept-Dec) due to a scheduling conflict, to be discussed further on July 28.",
+    "official": "Per Clerk A. Reid – last minute meeting to approve out of district travel",
+    "note": "Official MRPC item records a last-minute meeting to approve out-of-district travel and no request for a fill-in; check the recording near t=275 and whether the official minutes omitted it.",
+    "t": 275
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Abutting-community notices",
+    "ours": "Review of the abutting-community notices included in the packet was deferred until a meeting when the full board, including Matt, is present.",
+    "official": "Community  Abutter Notices- will be included in SharePoint unless immediate notification necessary to \nboard.",
+    "note": "Ours records a deferral to a full-board meeting; official records a handling decision (SharePoint). Check the recording for which was decided.",
+    "t": 355
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair and attendance",
+    "ours": "the chair (unnamed in captions) (chair)",
+    "official": "Present: T. Willsmer, A. Reid, A. Burney\nAbsent: M. Brenner, M. Allison",
+    "note": "Ours has a chair presiding and mentions Matt as absent; official says Vice Chair Willsmer ran the meeting because Chair Brenner was absent. Confirm who presided; ours also lists Adam only as staff while official lists A. Burney as a board member.",
+    "t": 355
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 23-06-2025 minutes",
+    "ours": "",
+    "official": "Motion:  A. Reid motioned to approve 23-06-2025 meeting minutes\nSecond: Burney seconded\n Vote: A. Reid – Aye, T. Willsmer – Aye, A. Burney -Aye ",
+    "note": "A non-procedural vote approving prior minutes is in the official minutes and not in ours; check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Committee reports (Master Plan, Open Space, Storm Water, etc.)",
+    "ours": "",
+    "official": "Master Plan Steering Committee\nPer Vice Chair T. Willsmer – T. Willmer noted having new quorum requirements makes it easier.",
+    "note": "Liaison reports appear only in the official minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:26:32Z",
+   "cost_usd": 0.228381
+  }
  }
 }

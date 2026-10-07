@@ -548,5 +548,226 @@
    "at": "2026-09-27T18:04:45Z",
    "cost_usd": 0.202344
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06252025-7279",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/master-plan-steering-committee/2025-06-25-minutes-7279.txt",
+   "path": "sources/meetings/master-plan-steering-committee/2025-06-25-minutes-7279.pdf"
+  },
+  "official_sha256": "cd7a0017c51fa61816f14712b70eefb9bf74276e45770a89cbd2e8fd1af81730",
+  "coverage": "full",
+  "summary": "The records agree on the officer elections, quorum, meeting cadence and most strategy outcomes, with only name misrenderings in the captions. They differ on who was made Facebook admin, the fate of two matrix items (vacant-space advertising and after-school use of buildings), the 4/9/25 minutes approval, and parts of the attendee list.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 2,
+   "discrepancy": 6,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Chair election",
+    "ours": "Nominate a chair for the committee (both Tim and Kim were nominated) — passed (described as unanimous)",
+    "official": "Result: Kim Duffy elected Chair.",
+    "note": "Both record a chair vote; ours does not name the winner, the official minutes name Kim Duffy, and they do not conflict.",
+    "t": 7015
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair name",
+    "ours": "Nominate Anthony Scalbrini (Tony) as vice chair — passed",
+    "official": "Result: Anthony (\"Tony\") Sculimbrene elected Vice Chair.",
+    "note": "Same vote and same person; the surname was misheard in the captions.",
+    "official_reading": "Anthony Sculimbrene",
+    "t": 7166
+   },
+   {
+    "kind": "agree",
+    "about": "Clerk vote",
+    "ours": "Nominate Jerry (Gerald) to remain as clerk — passed",
+    "official": "Result: Jerry Reid re-elected Clerk.",
+    "note": "Same vote, same outcome.",
+    "t": 7331
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Facebook page admins",
+    "ours": "Designate Emily, Sundre, and the chair as admins of the committee's Facebook page to post meeting announcements — passed",
+    "official": "Motion: Make Emily and Kim Facebook admins for posting advertising and agendas.",
+    "note": "Ours names three admins including Sundre (Sondria Harp), while the official minutes name only Emily and Kim; check the recording around t=9486 for who was actually designated.",
+    "t": 9486
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of 4/9/25 minutes vote",
+    "ours": "",
+    "official": "Date: 4/9/25",
+    "note": "The official minutes record a vote approving the 4/9/25 minutes; ours records no such vote, so check whether it was taken and the captions missed it."
+   },
+   {
+    "kind": "agree",
+    "about": "Quorum reduced to five",
+    "ours": "Quorum for the committee was reduced to five members via a prior binding board vote, easing future scheduling.",
+    "official": "Quorum: Now 5 due to Planning Board changes.",
+    "note": "Both give a quorum of five; the stated reasons differ in detail.",
+    "t": 62
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Advertise vacant spaces for sale/lease",
+    "ours": "Tentative consensus to mark the 'advertise vacant spaces for sale/lease' item as accepted alongside the zoning-barrier review, pending wording (later contested). Leaned toward rewording the item so the town encourages a dialogue with commercial realtors rather than the town itself advertising.",
+    "official": "Review business bylaws to simplify advertising spaces for sale/lease - Accept",
+    "note": "Ours describes a reworded, contested item about realtor dialogue; the official minutes record an unqualified Accept of a bylaw review. Check the recording around t=857 to t=1093 for the final wording.",
+    "t": 857
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Empty town buildings for after-school activities",
+    "ours": "Agreed the 'use empty town buildings for after-school activities' item needs a preceding overall plan for the town's vacant buildings.",
+    "official": "Use empty town buildings for after-school activities - Reject",
+    "note": "Ours says the item stays, contingent on a prior plan; the official minutes say Reject. Check the recording around t=2690 for the actual outcome.",
+    "t": 2690
+   },
+   {
+    "kind": "agree",
+    "about": "Community garden",
+    "ours": "Accepted the community-garden strategy for the master plan.",
+    "official": "Develop community garden - Accept",
+    "note": "Same decision.",
+    "t": 2128
+   },
+   {
+    "kind": "agree",
+    "about": "Year-round programming",
+    "ours": "Accepted the year-round-programming-of-gathering-spaces strategy, with a request to add concrete examples for the consultant.",
+    "official": "Encourage year-round programming (farmers market, artisan market, tree lighting) - Accept",
+    "note": "Same outcome; the official minutes list examples in the item.",
+    "t": 2565
+   },
+   {
+    "kind": "agree",
+    "about": "Universally accessible playground",
+    "ours": "Agreed to keep the universally accessible playground strategy in the master plan despite its tie to the currently unfunded Marshall Park project.",
+    "official": "Develop universally accessible playground for all ages - Accept",
+    "note": "Same outcome.",
+    "t": 2801
+   },
+   {
+    "kind": "agree",
+    "about": "Crosswalks added to walkability",
+    "ours": "Agreed to add 'crosswalks' alongside 'sidewalks' in the walkability strategy language.",
+    "official": "Add crosswalks and sidewalks to master plan - Accept",
+    "note": "Same decision.",
+    "t": 3260
+   },
+   {
+    "kind": "agree",
+    "about": "Green community",
+    "ours": "Agreed to keep language about the town continuing to be a 'green community' under the stretch energy code.",
+    "official": "Continue to be a green community - Accept",
+    "note": "Same decision.",
+    "t": 4150
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other strategy decisions",
+    "ours": "",
+    "official": "Sponsor agricultural workshops in Lunenburg - Reject",
+    "note": "The official minutes record other strategy decisions (bikes accepted, agricultural workshops rejected, farmers market accepted, MassDOT sidewalks accepted, resiliency accepted) that ours does not."
+   },
+   {
+    "kind": "agree",
+    "about": "Must-have vs nice-to-have sorting",
+    "ours": "Agreed to sort matrix items into 'must have' versus 'nice to have' categories before finalizing recommendations.",
+    "official": "Committee: Define \"must have\" vs. \"nice to have\" items.",
+    "note": "Same item.",
+    "t": 1347
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Thanksgiving draft target",
+    "ours": "Informally set Thanksgiving as the target date for a completed master-plan draft, with no hard deadline.",
+    "official": "",
+    "note": "The official minutes do not mention a draft target date.",
+    "t": 4420
+   },
+   {
+    "kind": "agree",
+    "about": "Bi-weekly meeting schedule",
+    "ours": "Agreed to try to meet bi-weekly, on the second and fourth Wednesday of the month at 6 p.m.",
+    "official": "Decision: Bi-weekly meetings on the 2nd and 4th Wednesday at 6:00 PM.",
+    "note": "Same decision.",
+    "t": 7413
+   },
+   {
+    "kind": "agree",
+    "about": "Roster changes",
+    "ours": "Confirmed the roster no longer includes Parks & Recreation or one at-large seat, and is still missing Conservation Commission and Zoning Board of Appeals representatives.",
+    "official": "Parks removed from MPSC.",
+    "note": "Parks removal and the Conservation/ZBA gaps (action item for Amanda) appear in both; the at-large seat appears only in ours.",
+    "t": 8057
+   },
+   {
+    "kind": "agree",
+    "about": "Cable channel announcement",
+    "ours": "Agreed on draft wording for a public-access cable channel announcement slide about the committee.",
+    "official": "Explore TV \"crawl\" for announcements.",
+    "note": "Same topic; official describes exploring it, ours describes draft wording being agreed.",
+    "t": 9241
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Postponed community advertising item",
+    "ours": "",
+    "official": "Postponed to next meeting when a plan is available.",
+    "note": "Official records the Status of Community Advertising as postponed and a next meeting of July 9, 2025; ours has neither."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee names",
+    "ours": "Sandre / Sundre (committee member)",
+    "official": "Sondria Harp",
+    "note": "Captions gave first names or approximations; the official minutes list Tim Wilsmer, Kim Duffy, Jerry Reid, Sondria Harp, Rami.",
+    "official_reading": "Sondria Harp"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Christine as a member",
+    "ours": "Christine (committee member)",
+    "official": "Debbie Lincoln",
+    "note": "Ours lists a Christine and the official minutes list Debbie Lincoln as a member; this may be a misheard name or a different person, so check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Member status and Planning Board attendees",
+    "ours": "Matt (planning board chair (liaison, non-voting)); David (committee member); Amanda Moore (committee member)",
+    "official": "Cesar (Planning Board)",
+    "note": "The official minutes list David Niose and Amanda Moore as non-members and show Cesar for the Planning Board, with Matthew Brenner under guests; check who was present and who voted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tristan (consultant)",
+    "ours": "Tristan (consultant, Overunder (colleague of Ramy))",
+    "official": "",
+    "note": "The official attendee list does not include Tristan."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager and other guests",
+    "ours": "",
+    "official": "Jennifer Warren-Dyment - Town Manager",
+    "note": "The official list includes the Town Manager, Renee Emkey (virtual) and Mike Rupp, none of whom appear in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:27:51Z",
+   "cost_usd": 0.3240512
+  }
  }
 }

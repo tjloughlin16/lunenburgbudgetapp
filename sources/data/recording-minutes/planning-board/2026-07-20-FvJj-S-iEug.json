@@ -372,5 +372,129 @@
    "at": "2026-09-27T02:11:37Z",
    "cost_usd": 0.191336
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07202026-7910",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-07-20-minutes-7910.txt",
+   "path": "sources/meetings/planning-board/2026-07-20-minutes-7910.pdf"
+  },
+  "official_sha256": "909b63bb208b6ee156556159b8c60cdbe36d834d99e9d65e5c04d73d4076b459",
+  "coverage": "official minutes are a summary only",
+  "summary": "The official minutes are a short summary of a working session: they list the four zoning topics and the issues discussed, and record no votes, figures or decisions. Our minutes record fifteen specific decisions and several dollar figures that the official record does not mention, and a reader should treat those as unconfirmed by the town.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 1,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Attendees: board members present",
+    "ours": "the chair (chair); Adam (board member); Tony (board member); Matt (board member); Stephen (presenter)",
+    "official": "Roll Call: M. Brenner, T. Willsmer, A. Reid, A. Burney, A. Nicastro",
+    "note": "Chair, Adam (Burney), Tony (Nicastro) and Stephen (Wallace, Planning Director) match; the official roll call is the fuller list.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member 'Matt' (name as heard)",
+    "ours": "Matt (board member)",
+    "official": "Chairman Brenner at 5:00 pm",
+    "official_reading": "Matthew Brenner, Chair",
+    "note": "Our 'Matt' is most likely the chair, Matthew Brenner, listed separately from 'the chair', so it is probably a duplicate. Worth confirming against the video.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: Willsmer and Reid, and 'Absent: None'",
+    "ours": "",
+    "official": "Absent:  None",
+    "note": "The official roll call lists Timothy Willsmer and Amanda Reid as present. Our minutes name neither.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Meeting times",
+    "ours": "",
+    "official": "Chairman Brenner at 5:00 pm",
+    "note": "Official gives the call-to-order time of 5:00 pm. Ours records no start time. It does note the August 10 session as 6:00 to 7:00 PM.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decisions made at the working session",
+    "ours": "Fifteen decisions, among them: drop the C2 full site plan review provision; raise the cluster single-family density cap from two to four units per acre; keep the cluster minimum parcel at 10 acres; remove letters of credit as a performance guarantee; reinstate payment-in-lieu for inclusionary housing; omit an under-18 occupancy exclusion from senior housing.",
+    "official": "This meeting was a working session for the Planning Board to work with the Planning Director to draft new and revised zoning bylaws for voter consideration at the 2027 Annual Town Meeting.",
+    "note": "The official record states no decisions, only topics discussed. Check the video to see whether these were consensus directions or firm decisions, since no vote is recorded in either record.",
+    "t": 1414
+   },
+   {
+    "kind": "agree",
+    "about": "Topics covered: senior housing, inclusionary housing, cluster housing, minor site plan review",
+    "ours": "Decisions on cluster buffers, density and parking; inclusionary payment-in-lieu and offsite units; senior housing size cap and parking; minor changes near residential abutters.",
+    "official": "Senior Housing – issues discussed: minimum tract size, by right or by special permit, setbacks, dimensional standards, age restrictions, density standards, support services, parking, common land, and property maintenance.",
+    "note": "Both records cover the same four zoning topics. The official gives only a list of issues.",
+    "t": 1414
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Inclusionary housing: payment-in-lieu and offsite units",
+    "ours": "Reinstate a payment-in-lieu option and an offsite-unit option for developers triggering inclusionary housing requirements, with amounts to ramp up with the number of units.",
+    "official": "Inclusionary Housing – issues discussed: by right or by special permit, affordability requirements, payments in lieu, allowing affordable housing units off-site, thresholds of applicability, density bonuses, development standards and enforcement.",
+    "note": "The official says these were discussed. Ours records a decision to reinstate both. Check the video at about 3157 for whether the board agreed.",
+    "t": 3157
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Minor site plan review: change to C2 provision",
+    "ours": "Drop the proposed C2 provision requiring full site plan review for minor changes near residential abutters, in favor of relying on the more easily amended site plan regulations.",
+    "official": "Minor Site Plan Review – issues discussed: allowing minor site plan review for changes of use where no alteration of the building or parking are proposed, thresholds for environmental and traffic reviews, eventual changes to the site plan regulations.",
+    "note": "The official mentions only discussion of eventual changes to the site plan regulations. It does not say a C2 provision was dropped.",
+    "t": 1414
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dollar figures (ARPA funds, payment-in-lieu tiers, housing trust purchase, market costs)",
+    "ours": "ARPA funds toward senior housing land: $undred,000; payment-in-lieu tiered $100,000, 300,000; housing trust home purchase $8.25; local market costs 650700, 700, 800, 1.2",
+    "official": "",
+    "note": "The official minutes carry no dollar amounts. Our figures are garbled by the captions and cannot be checked against them.",
+    "t": 2148
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "State grant funding for a past affordable senior housing project",
+    "ours": "State grant funding for a past affordable senior housing project: 50 units",
+    "official": "",
+    "note": "The official minutes do not mention the past project or its unit count.",
+    "t": 2106
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next working session on August 10, 6:00 to 7:00 PM",
+    "ours": "Hold the next working session on August 10th from 6:00 to 7:00 PM before the regular hearing agenda.",
+    "official": "",
+    "note": "The official minutes do not mention a next session date.",
+    "t": 6365
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meeting end time and adjournment",
+    "ours": "Next working session set for August 10th from 6:00 to 7:00 PM; the recording shows the board still in discussion at about t=6365.",
+    "official": "A. Burney motion to adjourn, A. Nicastro Second, meeting adjourned at 6:05 pm.",
+    "note": "Adjournment is procedural and was not compared. The official gives 6:05 pm. If it began at 5:00 pm, that is about 65 minutes, against a recording of roughly 6,400+ seconds (about 107 minutes). Check the video length against the stated times.",
+    "t": 6365
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:14:16Z",
+   "cost_usd": 0.23106300000000002
+  }
  }
 }

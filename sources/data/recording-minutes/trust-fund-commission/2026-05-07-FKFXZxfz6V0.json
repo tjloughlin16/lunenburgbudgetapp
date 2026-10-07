@@ -371,5 +371,135 @@
    "at": "2026-09-27T02:34:30Z",
    "cost_usd": 0.191418
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05072026-7801",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2026-05-07-minutes-7801.txt",
+   "path": "sources/meetings/trust-fund-commission/2026-05-07-minutes-7801.pdf"
+  },
+  "official_sha256": "471acc3b12edb76e0c1c2fe209657ba91886788fbf7e93fc6cc022571fa0f264",
+  "coverage": "partial",
+  "summary": "The two records agree on the $62,000 figure, the May 21 next meeting, and the substance of the town counsel letter. Our minutes record several discussions, dollar figures and follow-up decisions that the official minutes leave out, and the official minutes record a minutes-approval vote that ours miss.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 6,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "$62,000 for underserved residents",
+    "t": 399,
+    "ours": "Trust fund cy pres money for underserved residents: $62,000",
+    "official": "enable the distribution of $62,000 to underserved populations, including",
+    "note": "Same figure and purpose in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "t": 5361,
+    "ours": "Next meeting set for May 21.",
+    "official": "The next meeting will be held on May 21, 2026.",
+    "note": "Same date in both."
+   },
+   {
+    "kind": "agree",
+    "about": "$100,000 expert/litigation cost",
+    "t": 4742,
+    "ours": "Potential litigation/expert costs for American Legion Poor Fund: $100,000",
+    "official": "fees for this type of expert can well exceed $100,000 over the lifetime of a case",
+    "note": "Both give $100,000 for expert and litigation costs. The official figure comes from the counsel letter's footnote, so check that the recording is referring to the same statement."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Second attendee",
+    "ours": "Richard (member)",
+    "official": "Present were Mr Howard and",
+    "official_reading": "Mr Howard",
+    "note": "The two records name a different second member. 'Richard' is probably a first name or a mishearing of Howard, and nothing in the record confirms which."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of minutes of March 26 and April 9, 2026",
+    "ours": "",
+    "official": "Chairman Bowen made a motion to approve the minutes of March 26, 2026 and April 9, 2026 as written.  The motion was seconded by Mr Howard.  Motion passed unanimously.",
+    "note": "This is a minutes-approval vote that our minutes do not record. Check the recording for it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair to call town counsel for the cy pres petition before a vote",
+    "t": 5163,
+    "ours": "The chair will personally call town counsel to request the cy pres petition document for the Nathaniel Day Worthy Poor Fund before the commission votes on it.",
+    "official": "",
+    "note": "The official minutes record no such decision. The counsel letter they quote only says counsel awaits the commission's instruction on the petition. Check the recording near t=5163."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Draft compliance/investigation letter on school non-response",
+    "t": 5289,
+    "ours": "A draft compliance/investigation-request letter concerning the school department's non-response on scholarship and trust records will be reviewed at the next meeting.",
+    "official": "Chairman Bowen updated the commission that the School is still not responding to our requests for information.",
+    "note": "The official minutes record only an update that the School is not responding. They record no plan for a draft letter, so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Override tax impact",
+    "t": 795,
+    "ours": "Proposed override's tax impact on residents: $6 million, $800 a year, 78 to $80 a month",
+    "official": "",
+    "note": "The official minutes do not mention the override discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Trailer-park water/sewer spending history",
+    "t": 1041,
+    "ours": "Historical trailer-park water/sewer spending (context, not current budget): $30,000, $40,000, $800,000, million and a half$2 million dollars, $160,000",
+    "official": "",
+    "note": "The official minutes do not mention this discussion. The captions are garbled, so the figures are unreliable."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town legal fees responding to breach notice",
+    "t": 1420,
+    "ours": "Town's legal fees responding to the commission's breach notice: 6 $7,000, 8,000",
+    "official": "",
+    "note": "The official minutes mention the irony of legal fees but give no amounts. Our figures are garbled."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost of legal response vs requested investigation",
+    "t": 2252,
+    "ours": "Cost of legal response versus cost of requested investigation: $14,000",
+    "official": "",
+    "note": "The official minutes give no dollar figure for this comparison."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hypothetical funding from assistant town manager position",
+    "t": 4242,
+    "ours": "Hypothetical funding for fund investigations from the assistant town manager position: $100,000",
+    "official": "",
+    "note": "The official minutes do not record this discussion or figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager's salary",
+    "t": 4304,
+    "ours": "Town manager's salary: $170,000 a year",
+    "official": "",
+    "note": "The official minutes do not record this figure."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:17:12Z",
+   "cost_usd": 0.2440994
+  }
  }
 }

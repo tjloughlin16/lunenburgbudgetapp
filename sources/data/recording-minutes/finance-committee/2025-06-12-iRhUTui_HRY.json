@@ -451,5 +451,137 @@
    "at": "2026-09-27T18:12:45Z",
    "cost_usd": 0.196254
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06122025-7273",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-06-12-minutes-7273.txt",
+   "path": "sources/meetings/finance-committee/2025-06-12-minutes-7273.pdf"
+  },
+  "official_sha256": "88e36a4a962637f9e8cd8ee5329df7891596f9fd79853c859361a425521efcc6",
+  "coverage": "full",
+  "summary": "The two records agree on the main outline (July tri-board start, July 10 next meeting, six members present), but our minutes carry detailed staffing and revenue figures and two transfers that the official minutes never mention. The one thing a reader should know is that our 'agreement in principle', the $30,000 and $200,000 transfers and the building committee outcome are all stated differently in or absent from the official minutes, so these need checking against the recording.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 5,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Tri-board budget process: decision vs. discussion",
+    "ours": "Agreement in principle to launch a joint 'tri-board' (finance committee, select board, school committee) budget development process starting in July, following the schedule presented by the town manager.",
+    "official": "There will be an initial meeting with the Select Board, School Committee, and Finance Committee.",
+    "note": "Ours records an 'agreement in principle'; official records only a planned initial meeting and no agreement or vote. Check the recording at t=603 for whether the committee actually agreed.",
+    "t": 603
+   },
+   {
+    "kind": "agree",
+    "about": "Tri-board first meeting in July",
+    "ours": "starting in July",
+    "official": "The first meeting will be in July to explore consolidation and efficiencies particularly around the school and town.",
+    "note": "Both place the start of the joint process in July.",
+    "t": 603
+   },
+   {
+    "kind": "discrepancy",
+    "about": "No Finance Committee meeting on June 26",
+    "ours": "No Finance Committee meeting will be held on June 26.",
+    "official": "",
+    "note": "Official minutes do not mention a June 26 cancellation; check the recording at t=4695 and the posted calendar.",
+    "t": 4695
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting July 10",
+    "ours": "Next Finance Committee meeting set for July 10.",
+    "official": "The next meeting is scheduled for July 10, 2025.",
+    "note": "Same date.",
+    "t": 4715
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Building design committee next steps",
+    "ours": "The building design committee will bring options for next steps to the select board following the vote against renovating the current building.",
+    "official": "Tom Gray confirms that the Municipal Building Design Committee met with the Select Board to discuss the next steps. This includes possibly creating a new committee or dropping it all together.",
+    "note": "Ours says the committee will bring options in future after a vote against renovation; official says it already met with the Select Board and may create a new committee or drop the project. Check the tense and the vote referenced at t=4547.",
+    "t": 4547
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Athletic transportation transfer $30,000",
+    "ours": "School committee approved a line transfer into athletic transportation — $30,000 (discussed only)",
+    "official": "",
+    "note": "Official minutes mention no transfer or approval; check the recording at t=2347 for whether this was a decision or background.",
+    "t": 2347
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Athletics revolving account deficit transfer $200,000",
+    "ours": "Funds moved from the school department's regular budget into the athletics revolving account to cover its deficit — $200,000 (negative balance) (discussed only)",
+    "official": "There are issues with finance management and the inability to see where grant money and revolving funds are being moved and spent.",
+    "note": "Official gives only a general complaint about revolving fund visibility, with no $200,000 figure or transfer; check the recording at t=4132 for whether a transfer occurred or was discussed.",
+    "t": 4132
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Staffing FTE figures (FY16-FY25) and enrollment trend",
+    "ours": "Total school department staffing (FTEs), FY16-FY25: 204, 213, 243; District enrollment vs. staffing trend: 1649, 1563",
+    "official": "",
+    "note": "Official records only that Ana Lockwood requested staffing and enrollment data for the past 5 years; none of the figures appear. Captions may have garbled the FTE counts.",
+    "t": 3560
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FTE breakdowns by staff category and clerical 700% increase",
+    "ours": "Instructional staff FTEs: 104, 106; Paraprofessional FTEs: 54, 67; Special education related staff FTEs: 10, 12; Office/clerical and administrative support FTEs: 11, 16, 17, 12, almost 16, 15 and a half, 18; Clerical staffing increase (specific line): 1, seven, 700%",
+    "official": "",
+    "note": "Detailed staffing figures are not in the official minutes, which only summarise the data review.",
+    "t": 3667
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Out-of-district tuition, circuit breaker, lunch revenue, override figures",
+    "ours": "School out-of-district tuition revenue: half a million dollars, less than 100,000; Circuit breaker / out-of-district placement accounting: extra $800,000; School lunch revenue: a half a million dollars; FY26 override amount: a million, a half a million; Override strategy: 30, 40%",
+    "official": "",
+    "note": "None of these figures appear in the official minutes; the captions are loosely worded so they should be checked against the recording.",
+    "t": 3960
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees present",
+    "ours": "Chris (chair); Jean (member); Mike (member); Anna (member); Jay (member); Tom (member); Jen (Town Manager)",
+    "official": "Present Members:  Chair Chris Menard, Vice Chair Jean Russell (Zoom), Clerk Tom Gray, \n   Committee Member Ana Lockwood, Committee Member Mike Rupp,  \n   Committee Member Jay Simeone",
+    "note": "Same six members; Jennifer Warren-Dyment appears in the official body as the Town Manager. Tanya Dall absent per official.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Committee member Ana Lockwood's name",
+    "ours": "Anna (member)",
+    "official": "Committee Member Ana Lockwood",
+    "note": "Same person; captions spelled her first name 'Anna'.",
+    "t": 0,
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote to adjourn and other agenda items",
+    "ours": "",
+    "official": "Dave Rogers, 82 Highland Street, doesn’t agree with the Tri-Committee and believes \n there will be too many people.",
+    "note": "Official records a public comment opposing the Tri-Committee; ours has none. The official also records the proposed month-by-month presentation schedule, the farmers market and MBTA announcements, and the financial policies discussion, none of which are in ours.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:28:07Z",
+   "cost_usd": 0.234117
+  }
  }
 }

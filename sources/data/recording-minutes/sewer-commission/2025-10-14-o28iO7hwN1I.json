@@ -389,5 +389,227 @@
    "at": "2026-09-27T12:14:48Z",
    "cost_usd": 0.19148199999999999
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142025-7448",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-10-14-minutes-7448.txt",
+   "path": "sources/meetings/sewer-commission/2025-10-14-minutes-7448.docx"
+  },
+  "official_sha256": "c95e98e73b3c4d20efe669f1809f9e6f4394d4fefef71585d57ce36f505d04e8",
+  "coverage": "full",
+  "summary": "The two records agree on both votes (waiver for 792 Mass. Ave. and continuing the 830/832 hearing to 10/28, both 3-0) and on the main decisions, and most attendee differences are misheard names. The thing to check is the $83,000: ours ties it to Mass DOT permitting and paving, the official minutes to Wright Pierce mapping. The 10/28 meeting format (hybrid vs in-person), the 10/2 warrant deadline, and the vacant seat call for applicants also differ.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 6,
+   "discrepancy": 3,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: grant waiver for 792 Mass. Ave. (FWP Realty)",
+    "ours": "Motion to grant the waivers as requested (792 Massachusetts Ave, FWP Realty/Botnas LLC) — passed 3-0",
+    "official": "To grant the waiver as requested by FWP Realty for 792 Mass. Ave.\nRoll Call Vote: Dan-aye, Scott-aye and Brett-aye.",
+    "note": "Same motion and a 3-0 result in both; the official minutes say 'waiver' singular and do not name Botnas LLC.",
+    "t": 2928
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 830/832 Mass. Ave. hearing to 10/28 at 6pm",
+    "ours": "Motion to continue the 830/832 Massachusetts Ave hearing until the 28th at 6 p.m. — passed 3-0",
+    "official": "To continue the 830/832 Mass. Ave. hearing to 10/28 at 6pm.  \nRoll Call Vote: Dan-aye, Scott-aye and Brett-aye.",
+    "note": "Same motion, date, time and 3-0 outcome.",
+    "t": 3407
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: Mass DOT/mapping cost $83,000",
+    "ours": "Mass DOT permitting and paving costs: $83,000",
+    "official": "noting the Wright Pierce price of $83K for the mapping was not expected",
+    "note": "The $83K amount matches, but ours attributes it to Mass DOT permitting and paving while the official minutes attribute it to Wright Pierce mapping. Check the recording at about 1208s to see which is right.",
+    "t": 1208
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital reserve proposed vs. budgeted figures",
+    "ours": "Capital reserve amount originally proposed vs. budgeted: 100, 145, 140 45, 20",
+    "official": "",
+    "note": "The official minutes give no capital reserve amounts; our figures are garbled and cannot be checked against them.",
+    "t": 1214
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital reserve fund drawdown 70%",
+    "ours": "Capital reserve fund drawdown: 70%",
+    "official": "",
+    "note": "The official minutes do not mention a 70% drawdown of the capital reserve.",
+    "t": 1259
+   },
+   {
+    "kind": "agree",
+    "about": "ADU draft review with Town Counsel on 10/23",
+    "ours": "Up to two commission members will attend the town counsel meeting on Thursday, October 23rd (aiming for around 11:00 a.m.) to review the ADU bylaws draft.",
+    "official": "Bill, Andrew, Scott and Brett will meet with Town Counsel on 10/23 to discuss the draft.",
+    "note": "The date and purpose match. Ours says up to two commissioners and gives an 11:00 time; the official minutes name Scott and Brett, plus Bill and Andrew. Check the recording.",
+    "t": 565
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Capital reserve warrant article: timing and deadline",
+    "ours": "The question of adding a capital reserve line item to the November Town Meeting warrant will be taken up and voted on at the October 28th meeting, since it is not on tonight's agenda and time is short.",
+    "official": "However, they discovered the deadline for warrant articles was 10/2. Bill will talk to the Town Manager about it and the Commission will discuss it, as well as vote, at the 10/28 meeting.",
+    "note": "Both say the discussion and vote are on 10/28. The official minutes add that the 10/2 warrant deadline had already passed and that Bill will talk to the Town Manager; ours does not. Check the recording to see whether the vote is still possible for the November meeting.",
+    "t": 1290
+   },
+   {
+    "kind": "agree",
+    "about": "Tabling the 830/832 hearing for lack of quorum",
+    "ours": "The commission will table the 830/832 Massachusetts Ave hearing (lacking a voting quorum due to a member's recusal and a member's absence) and proceed to the 792 Massachusetts Ave hearing, while continuing to try to reach the absent commissioner.",
+    "official": "This left the Commission without a quorum so the hearing could not proceed. The Commission agreed to table the hearing until later in the meeting in case Arthur was able to attend.",
+    "note": "Same decision and same reason: a recusal plus an absence.",
+    "t": 1772
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "No vote on 763 Mass. Ave. waiver",
+    "ours": "The commission will not vote on the related 763 Massachusetts Ave (old funeral home) waiver tonight because it was not properly on the agenda; it will be addressed at a future meeting.",
+    "official": "",
+    "note": "The official minutes only say that 763 Mass. Ave. was not on the agenda, in the line 'Daniel S. asked if the Commission wanted a presentation on 763 Mass. Ave. but Bill noted it was not on the agenda.' They do not record a decision to address it at a future meeting.",
+    "t": 2967
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Format of the 10/28 meeting",
+    "ours": "The October 28th meeting will be held as an in-person/hybrid meeting rather than fully remote, and will keep its scheduled 6:00 p.m. start time.",
+    "official": "October 28, 2025 @ 6pm – Regular Meeting, In-person DPW",
+    "note": "Ours says in-person/hybrid; the official minutes say in-person at the DPW. Check the recording to see whether a remote option was offered.",
+    "t": 3115
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Call for applicants for the vacant commissioner seat",
+    "ours": "The commission asked residents interested in filling its vacant commissioner seat to contact the DPW office or Town Hall about applying.",
+    "official": "",
+    "note": "The official minutes record no appeal for applicants. The roll call in them also shows Arthur Katis listed as absent, not vacant. Check whether his seat is vacant.",
+    "t": 3364
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brett Ramson (chairman)",
+    "official": "Chair- Brett Ramsden",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-Chair name",
+    "ours": "Scott D (commissioner)",
+    "official": "Vice-Chair- Scott Dall",
+    "note": "Ours gives only an initial; the official minutes give the full surname.",
+    "official_reading": "Scott Dall",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clerk name",
+    "ours": "Dan Barra (commissioner (also heard as \"Dan Proctor\"/\"Dan Browner\"/\"Dan Parker\" at different roll calls))",
+    "official": "Clerk- Dan Proctor",
+    "note": "The captions rendered the surname several ways; the official minutes give Dan Proctor.",
+    "official_reading": "Dan Proctor",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer Business Manager name",
+    "ours": "Andrew Bellier (staff)",
+    "official": "Sewer Business Manager- Andrew Valliere",
+    "note": "Misheard surname.",
+    "official_reading": "Andrew Valliere",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk name",
+    "ours": "Jane Renley (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "Misheard surname.",
+    "official_reading": "Jane Ranley",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Engineer presenter name",
+    "ours": "Daniel Sheen (presenter (engineer, Haley Ward, for 792 Massachusetts Ave applicant))",
+    "official": "Daniel Sheehan (Haley Ward)",
+    "note": "Misheard surname.",
+    "official_reading": "Daniel Sheehan",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "DPW Director attendee",
+    "ours": "Bill Bernard (staff (DPW))",
+    "official": "DPW Director- Bill Bernard",
+    "note": "Same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Guest Ryan Proctor of Dillis & Roy",
+    "ours": "Brian Proctor (anticipated speaker)",
+    "official": "Guests: Ryan Proctor (Dillis &amp; Roy) and Daniel Sheehan (Haley Ward)",
+    "note": "Probably the same person with a misheard first name. Ours calls him an anticipated speaker; the official minutes list him as a guest. Check the recording to see whether he spoke or attended.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "'Ward' as a separate anticipated speaker",
+    "ours": "Ward (anticipated speaker)",
+    "official": "",
+    "note": "This is likely the Haley Ward firm name mistaken for a person, not a separate attendee.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent commissioner Arthur Katis",
+    "ours": "",
+    "official": "Absent: Arthur Katis",
+    "note": "Ours refers to an absent commissioner but never names him.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 9/30/25 minutes",
+    "ours": "",
+    "official": "To approve the minutes of 9/30/25.                                        Roll Call Vote: Dan-aye, Scott-aye and Brett-aye.",
+    "note": "The official minutes record a 3-0 vote to approve the previous minutes. Our list of non-procedural votes has no such vote; the vote is arguably procedural."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole repair IFB update",
+    "ours": "",
+    "official": "the repair of the 26 manholes will tentatively start on Friday, October 17th.",
+    "note": "The official minutes give a status update (26 manholes, Tango Construction, Insituform, failed flow tilt meter); ours records none of it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Easement conditions for 792 Mass. Ave. waiver",
+    "ours": "",
+    "official": "The Commission discussed the waiver request and agreed the request met the criteria of emergency, hardships and in the best interest of the town.",
+    "note": "The official minutes give the findings behind the waiver, plus the 6\" to 8\" stub upgrade and the easement width. Ours records only the vote."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:23:20Z",
+   "cost_usd": 0.251075
+  }
  }
 }

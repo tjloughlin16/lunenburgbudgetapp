@@ -328,5 +328,133 @@
    "at": "2026-09-27T12:16:47Z",
    "cost_usd": 0.193188
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10092025-7446",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2025-10-09-minutes-7446.txt",
+   "path": "sources/meetings/trust-fund-commission/2025-10-09-minutes-7446.pdf"
+  },
+  "official_sha256": "3fd33cb24bb7a53aaf945dd9d63252b1c27a36d77c9b459e2f0d1c472b1fc0be",
+  "coverage": "full",
+  "summary": "The two records agree on the application vote and the intern vote. They differ on what the American Legion vote authorized and on who will rework the risk policy. Our minutes also hold three dollar figures and a case-law-revision decision that the official minutes never mention.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 3,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: accept trust fund distribution application",
+    "t": 3814,
+    "ours": "Accept the trust fund distribution application as written, pending legal counsel confirmation on privacy/HIPAA requirements. — passed unanimously",
+    "official": "Mr Howard made a motion to accept the proposed version as designed (pending review by Town Counsel), Chairman Bowen seconded.",
+    "note": "Same motion and unanimous outcome; the privacy/HIPAA reason for the counsel review appears only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: chairman authority for investigations",
+    "t": 4152,
+    "ours": "Assign the chairman authority to represent the commission's interests for investigative purposes with any agency regarding trust fund administration. — passed unanimously",
+    "official": "Mr Howard made a motion to allow Chairman Bowen to continue investigative research and contact the appropriate State agencies without a vote of the Trust Fund Commission to authorize each activity.",
+    "note": "Same vote and outcome; ours says 'any agency' where the official says 'State agencies', so check the scope if it matters."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: engage town HR for college interns",
+    "t": 4662,
+    "ours": "Engage the town HR department to establish a relationship for college intern work to assist trust fund commission investigative research. — passed unanimously",
+    "official": "“engage the town HR Department to establish a relationship for intern work through local colleges to assist in investigative research in regards to the Trust Funds commission”",
+    "note": "Same motion, same unanimous result."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: American Legion funds",
+    "t": 5297,
+    "ours": "Allow the chairman to discuss the American Legion funds with the public charities office to change the declaration language, in alignment with donor intent. — passed unanimously",
+    "official": "Mr Howard made a motion that Chairman Bowen can engage in discussions with the American Legion to discuss the disposition of the funds held within our Trust.",
+    "note": "Ours has the chairman talking to the public charities office about changing declaration language; the official has him talking to the American Legion about disposition of the funds. Check the recording near t=5297 for who the counterparty is."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: risk management policy tabled",
+    "t": 4813,
+    "ours": "Rewriting the risk policy was tabled until the vice chair reviews and edits it, for discussion at the next meeting.",
+    "official": "Chairman Bowen requested that agenda item Risk Mgt policy be tabled for the meeting.  Per Chairman Bowen, the proposed written policy needs amending.",
+    "note": "Both table the item, but ours assigns the vice chair to review and edit it for the next meeting; the official gives no assignee and no follow-up. Check the recording at t=4813."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote: approval of Aug 14, Aug 28 and Sept 11 minutes",
+    "ours": "",
+    "official": "Chairman Bowen put forward a motion to approve the meeting minutes of Aug 14, 2025,  Aug 28, 2025 and Sept 11, 2025 put forward by Chairman Bowen, seconded by Mr. Howard.",
+    "note": "Our minutes list no minutes-approval vote; it is probably omitted as procedural, but confirm against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: chairman to keep revising written policy",
+    "t": 4879,
+    "ours": "The chairman will keep revising the commission's proposed written policy as new case law is researched.",
+    "official": "",
+    "note": "Nothing in the official minutes says the chairman will keep revising the policy as case law is researched."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: cy pres filing threshold",
+    "t": 1042,
+    "ours": "Cy pres filing threshold at public charities office: $75,000",
+    "official": "",
+    "note": "The official minutes name no dollar threshold; the cy pres process is described without figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: prudent investor rule limit",
+    "t": 3312,
+    "ours": "Prudent investor rule limit on trust holdings: $84,000",
+    "official": "",
+    "note": "The official minutes give no figure for the prudent investor rule; the figure may be a mishearing."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: Worthy Poor Fund past distributions",
+    "t": 3856,
+    "ours": "Worthy Poor Fund past distributions: $2,397",
+    "official": "",
+    "note": "The official minutes say only that some distributions were made from the Poor Fund and give no amount."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chairman's name",
+    "ours": "Chairman Bowen (also heard as \"Bowman\") (chair)",
+    "official": "Chairman Bowen called the meeting to order at 5pm",
+    "official_reading": "Bowen",
+    "note": "Same chair; 'Bowman' is a caption mishearing."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: second member (vice chair)",
+    "ours": "Richard (vice chair)",
+    "official": "Mr Howard (aye), Chairman Bowen (aye), motion passed unanimously.",
+    "note": "The official minutes name the only other member as Mr Howard and never give a vice chair. Check whether 'Richard' is Mr Howard's first name and whether he is the vice chair."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Next meeting date",
+    "ours": "",
+    "official": "The next meeting of the Trust Fund Commission will be held on Oct. 23, 2025 at 5pm.",
+    "note": "Our minutes record no next-meeting date."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:23:26Z",
+   "cost_usd": 0.27303499999999997
+  }
  }
 }

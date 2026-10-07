@@ -459,5 +459,183 @@
    "at": "2026-09-27T12:31:04Z",
    "cost_usd": 0.19255999999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092025-7374",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-09-09-minutes-7374.txt",
+   "path": "sources/meetings/council-on-aging/2025-09-09-minutes-7374.pdf"
+  },
+  "official_sha256": "cbc259aab5899c4976e4c2e1e51eb1de8f91c44703c700478cafcbb63bf26a4a",
+  "coverage": "full",
+  "summary": "The records agree on most substantive items: the 41A vote, the school surplus, the hospital aid, the hours change, the assisted-living stance and the Spring volunteer recognition. They differ on who was present, because our attendee list is incomplete and misheard, and on several details that exist in only one record (the fee-waiver decision, the percent figures, the Mary Padula Day wording). Check the hours change first, since our minutes say weekdays close at 5 and the official minutes say only Monday 8-5.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 6,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote on 41A tax exemption work by Jack Rabbitt",
+    "ours": "Approve Jack continuing to work on the 41A tax exemption on behalf of/relating to the Council on Aging — passed",
+    "official": "Motion to support Mr. Rabbitt  representing the COA to  work with the town towards the 41A tax exemption by Ms. Lockwood , seconded by Ms. Beale . Approved unanimously.",
+    "note": "Same motion and outcome (passed); the official minutes add mover, seconder and unanimity.",
+    "t": 944
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendance of Jack Rabbitt",
+    "ours": "Jack (Rabbit) (board member)",
+    "official": "Excused:  Helen Balcom , Susan O ’Sullivan , Jane Rabbitt (Vice-Chair ), Jack Rabbitt ,",
+    "note": "Our minutes list Jack as an attendee, but the official minutes list Jack Rabbitt as excused; check the recording to see whether he was present or only discussed, and whether the 41A motion refers to an absent member.",
+    "t": 944
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director's name",
+    "ours": "Deb / Debbie Goodsold (director)",
+    "official": "Deb Goodsell (COA Director)",
+    "note": "Same person, with the surname misheard by the captions.",
+    "official_reading": "Deb Goodsell"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair's identity",
+    "ours": "the chair (unnamed) (chair)",
+    "official": "Chairperson Deb Lincoln called the meeting to order at 9: 37 am",
+    "note": "Our minutes leave the chair unnamed, and the official minutes name Deb Lincoln as chair, separate from the director Deb Goodsell; confirm which Deb is which in our attendee list."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Eagle House Supporters liaison",
+    "ours": "Barbara (Eagle House Supporters liaison)",
+    "official": "Barbara Co u lo mbe (Eagle House Supporters)",
+    "note": "Same person; ours gives the first name only, and the official minutes give the surname Coulombe.",
+    "official_reading": "Barbara Coulombe"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other members present",
+    "ours": "",
+    "official": "Present : Deb Lincoln (Chairperson), Diane Nowd, Jim McGuigan , Cathy Beale, Lou \nFranco, Elena Christopher , Ana Lockwood",
+    "note": "Our attendee list omits Jim McGuigan, Cathy Beale, Lou Franco, Elena Christopher and Ana Lockwood, and lists 'Pauline', who does not appear in the official minutes; check the roll."
+   },
+   {
+    "kind": "agree",
+    "about": "FY25 school budget surplus",
+    "ours": "FY25 school budget surplus after override: close to $600,000",
+    "official": "close to 600k  in unspent funds from  their FY25 Budget",
+    "note": "Same figure, reported by Ms. Lockwood as coming from the School Committee.",
+    "t": 22
+   },
+   {
+    "kind": "agree",
+    "about": "Hospital-closure state aid",
+    "ours": "State aid for hospital-closure-affected communities: $5 million, 13 communities, around $250,000",
+    "official": "the s tate has \nallocated 5 million to the communities affected by the closure of Nashoba \nHospital.",
+    "note": "The $5 million figure agrees. The official minutes do not give the 13 communities or the roughly $250,000 per community, so those are only in ours.",
+    "t": 1739
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA program budget 38% to date",
+    "ours": "COA program budget FY26 to date: 38%",
+    "official": "",
+    "note": "The official minutes give no percentage; they say only that Ms. Goodsell presented the current financial status.",
+    "t": 992
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Boston Post Cane replica cost",
+    "ours": "Boston Post Cane replica cost: $25",
+    "official": "",
+    "note": "The official minutes say the Historical Commission obtained a replica cane and give no cost.",
+    "t": 749
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior building-permit fee waiver figures",
+    "ours": "Proposed fee waiver for senior building permits: about 200 permits, $10,000 and less, 40 to 80 permits, $4,000 to $8,000, $65",
+    "official": "",
+    "note": "The official minutes record only that Ms. Lockwood presented an outline, with no permit counts or dollar amounts.",
+    "t": 3198
+   },
+   {
+    "kind": "agree",
+    "about": "Volunteer recognition timing",
+    "ours": "Volunteer recognition will follow the town's National Volunteer Appreciation Week celebration already planned for a Monday in April rather than a separate fall event.",
+    "official": "Volunteer Recognition : Ms. Goodsell reported that this will be held in the Spring \nto align with N ational V olunteer A ppreciation week.",
+    "note": "Both align it with National Volunteer Appreciation Week in the spring. April and Monday are only in ours.",
+    "t": 271
+   },
+   {
+    "kind": "agree",
+    "about": "Historical Commission and Boston Post Cane",
+    "ours": "Board agreed the historical commission may participate going forward in Boston Post Cane presentations alongside the select board and senior center.",
+    "official": "They stated they have obtained a replica cane and would \nlike to be part of future  Boston Post Cane celebrations.",
+    "note": "Same item. The official minutes record the Commission's request, not a board agreement, and do not mention the select board or senior center.",
+    "t": 892
+   },
+   {
+    "kind": "discrepancy",
+    "about": "New hours from November",
+    "ours": "Center hours will revert to closing earlier (until 5) on weekdays other than Wednesday starting in November through February, keeping only Wednesday evenings open late.",
+    "official": "Hours will change  in November to be open Monday 8-5 .\nWednesday will remain open late.  This change will stay in effect for the fall/winter\nmonths.",
+    "note": "Ours covers all weekdays other than Wednesday and runs through February; the official minutes name only Monday and say 'fall/winter'. Check the recording for which days close at 5 and the end date.",
+    "t": 1697
+   },
+   {
+    "kind": "agree",
+    "about": "Assisted living as a 'must have'",
+    "ours": "Board agreed to tell the planning process that an assisted-living facility should be characterized as a 'must have,' not just 'nice to have,' for the town given the loss of medical facilities.",
+    "official": "Ms. Lincoln would like an assisted \nLiving Facility  to be on the need to have  list , not the want to have  list. The Board \nindicated they support that change.",
+    "note": "Same decision. The loss of medical facilities as the reason is only in ours.",
+    "t": 2859
+   },
+   {
+    "kind": "caption_error",
+    "about": "Mary Padula Day name",
+    "ours": "Board expressed general support for creating an annual 'Mary Padulla Day' honoring the town's late longtime town clerk and state senator, with details on date/format to be worked out.",
+    "official": "Mary Padula would be turning 100 this year on November 21 st . She\nwould like to consider having a Mary Padula day to honor  her achievements  and \nall she has done for th is  community.",
+    "note": "The name is misspelled in ours (Padulla vs Padula).",
+    "official_reading": "Mary Padula",
+    "t": 2298
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Mary Padula Day: status of the idea and of Ms. Padula",
+    "ours": "Board expressed general support for creating an annual 'Mary Padulla Day' honoring the town's late longtime town clerk and state senator, with details on date/format to be worked out.",
+    "official": "She\nwould like to consider having a Mary Padula day to honor  her achievements  and \nall she has done for th is  community.",
+    "note": "Ours says the board expressed support for an annual day and calls Ms. Padula 'late'; the official minutes say only that the chair would like to consider it, and that she would be turning 100, which implies she is living. Check the recording.",
+    "t": 2298
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Fee waiver for senior building permits: decision to present",
+    "ours": "Board member will develop a short presentation on a proposed senior building-permit fee waiver to bring back to the board before seeking select board approval.",
+    "official": "Ms. Lockwood presented an outline of how this \nprogram could work.",
+    "note": "Ours records a follow-up decision to prepare a presentation before going to the select board, and the official minutes record no such decision; check the recording.",
+    "t": 3449
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meal-site-manager salary funds",
+    "ours": "Possible transfer of unused meal-site-manager salary funds at year end, pending select board approval — not stated (discussed only)",
+    "official": "Discussion  on utilizing funds allocated for the Meal Site Manager to increase the \nnutritional services offered to seniors .",
+    "note": "Both record a discussion. Ours describes a possible year-end transfer pending select board approval, while the official minutes describe using the funds for nutritional services with no transfer or approval step; check the recording.",
+    "t": 1050
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:24:33Z",
+   "cost_usd": 0.24529299999999998
+  }
  }
 }

@@ -378,5 +378,194 @@
    "at": "2026-09-27T12:20:39Z",
    "cost_usd": 0.19118
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09292025-7423",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2025-09-29-minutes-7423.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2025-09-29-minutes-7423.pdf"
+  },
+  "official_sha256": "2517ed8813a7f5c91ab392727216c2a914942083b19be5982fcfa1547f679b56",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the meeting's outline: the Brooks House tour dates, the next meeting date of October 20, and the main attendees. The official minutes are a short summary that records no dollar figures, no transfers and no decisions about project scope. Our minutes record no votes. The official minutes record two motions, both procedural: approving the prior minutes and adjourning.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 6,
+   "discrepancy": 2,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Brooks House tour dates",
+    "t": 3731,
+    "ours": "Two Brooks House tour dates set: Wednesday October 1st at noon and Tuesday October 7th at 5:30pm, meeting at the Brooks House; attendance optional/either or both.",
+    "official": "•Date Options: Wednesday, October 1 at noon; Tuesday, October 7 at 5:30 PM",
+    "note": "Same two dates and times; the official minutes call them options and do not say attendance is optional."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "t": 4726,
+    "ours": "Next committee meeting set for October 20th, contingent on the town manager and facilities director being available.",
+    "official": "Next Meeting: October 20, 2025",
+    "note": "Same date; the contingency on the town manager and facilities director is only in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Blatt (Chair)",
+    "ours": "Dave (Chair)",
+    "official": "David Blatt",
+    "note": "Same person; the captions gave only a first name.",
+    "official_reading": "David Blatt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Lehtinen",
+    "ours": "Mr. Leighton (member)",
+    "official": "Brian Lehtinen",
+    "note": "Misheard surname; 'Brian' in our list is probably the same person, so Leighton and Brian may be one attendee listed twice.",
+    "official_reading": "Brian Lehtinen"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Brenner",
+    "ours": "Mr. Brener (member)",
+    "official": "Matthew Brenner",
+    "note": "Spelling variant; 'Matt' in our list is the same person.",
+    "official_reading": "Matthew Brenner"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Brzozoski",
+    "ours": "Laura (Miss Bzowski) (member)",
+    "official": "Laura Brzozoski",
+    "note": "Misheard surname.",
+    "official_reading": "Laura Brzozoski"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Sculumbrine",
+    "ours": "Mr. Scalambrini (member)",
+    "official": "Anthony Sculumbrine",
+    "note": "Misheard surname; 'Tony' in our list is the same person.",
+    "official_reading": "Anthony Sculumbrine"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Masaitis",
+    "ours": "Christina (member)",
+    "official": "Kristina Masaitis",
+    "note": "First name spelled differently in the official minutes.",
+    "official_reading": "Kristina Masaitis"
+   },
+   {
+    "kind": "agree",
+    "about": "Members Gray and Roy",
+    "ours": "Mr. Gray (member)",
+    "official": "Tom Gray, David Blatt, Greg Roy",
+    "note": "Both records list Gray and Roy as members; 'Tom' and 'Greg' in our list are the same people."
+   },
+   {
+    "kind": "agree",
+    "about": "Superintendent attendance",
+    "ours": "Dr. Fortuna (Jody) (Superintendent of Schools)",
+    "official": "Community Guests: Superintendent Fortuna, Bill Tyler.",
+    "note": "Both record the superintendent as present."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Guest Bill Tyler",
+    "ours": "",
+    "official": "Community Guests: Superintendent Fortuna, Bill Tyler.",
+    "note": "Bill Tyler, who spoke on the 30 School Street site, is not in our attendee list."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of September 15 minutes (vote)",
+    "ours": "",
+    "official": "Minutes from September 15, 2025, were reviewed. Motion to Approve: Matthew Brenner Seconded by: Greg Roy, Minutes approved unanimously.",
+    "note": "Ours lists no votes and the official minutes record this approval; it may be a procedural vote ours skipped, so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill renovation figure",
+    "t": 1855,
+    "ours": "Turkey Hill renovation to bring building 'up to standard': 16 million",
+    "official": "",
+    "note": "The official minutes give no dollar figures and do not mention Turkey Hill."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "May town meeting building project figure",
+    "t": 2622,
+    "ours": "May town meeting building project: $22 million",
+    "official": "",
+    "note": "The official minutes give no dollar figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Brooks House site survey and deed figure",
+    "t": 3667,
+    "ours": "Brooks House site survey and deed development: $2,2500",
+    "official": "",
+    "note": "The official minutes give no dollar figures; the digit grouping in ours is garbled, so check the recording before quoting it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Brooks House renovate-to-lease cost",
+    "t": 3605,
+    "ours": "Brooks House renovate-to-lease cost: a million dollars, 2,000 a month",
+    "official": "",
+    "note": "The official minutes give no dollar figures."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Superintendent's ACE preference and effect on project scope",
+    "t": 2456,
+    "ours": "Committee treated the superintendent's stated preference (ACE and central office collocated with the school, not town hall) as a likely major change reducing the scope/footprint of the town administrative building project.",
+    "official": "Dr. Fortuna: Responded that while collaboration is important, ACE leadership needs to remain near school administration for daily interactions.",
+    "note": "Both have the superintendent wanting ACE near school administration, but only ours records the committee treating it as a likely scope reduction; check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Plan to consult the town manager on collocation",
+    "t": 4412,
+    "ours": "Committee to schedule a discussion with the town manager to get her input on whether town offices still need to be collocated, given changes like OpenGov online permitting.",
+    "official": "• Ensure that both the Town Manager and Superintendent are included in discussions.",
+    "note": "The official action item is similar but does not mention collocation or OpenGov."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Shared document site for committee materials",
+    "t": 4890,
+    "ours": "Chair to continue setting up a shared document site with town administration for committee materials.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Action items: site visits and department head questions",
+    "ours": "",
+    "official": "• Develop a standardized set of questions for department heads to assess space and service needs.",
+    "note": "Our decisions do not list this action item or the site visits to town facilities."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comments on new construction and the Ritter Building",
+    "ours": "",
+    "official": "Bill Tyler suggested that the 30 School Street site should be considered for new construction, emphasizing the importance of preserving the historical integrity of the Ritter Building.",
+    "note": "Our minutes have no entry for the public comments, the TC Passios site or the Ritter and Town Hall condition discussion."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:23:57Z",
+   "cost_usd": 0.2861422
+  }
  }
 }

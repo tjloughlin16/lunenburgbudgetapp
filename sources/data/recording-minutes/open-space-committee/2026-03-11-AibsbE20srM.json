@@ -203,5 +203,140 @@
    "at": "2026-09-28T00:36:44Z",
    "cost_usd": 0.2048842
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03112026-7691",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2026-03-11-minutes-7691.txt",
+   "path": "sources/meetings/open-space-committee/2026-03-11-minutes-7691.pdf"
+  },
+  "official_sha256": "c4c96d8570cc7b58ad148c0244cb73946b05db34801bb66287af9264f3e58315",
+  "coverage": "partial",
+  "summary": "The two records agree on the one non-procedural vote (not acting on the 1083 Northfield Road right of first refusal) and mostly on attendees, apart from a misheard first name and chair. Official minutes record approval of February minutes, a bylaw update and chair attribution (Michael Toohill) that ours lacks, while ours has decisions and a $600,000 value the official minutes omit; the chair identity differs and should be checked.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 4,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to not act on ROFR for 1083 Northfield Road",
+    "ours": "Motion to not act on the committee's first right of refusal on the 1083 Northfield Road parcel — passed",
+    "official": "Tim Willsmer made a motion to not act on exercising the Right of First Refusal (ROFR).",
+    "note": "Same motion and outcome (official records it as unanimous, seconded by Chris St. Germain).",
+    "t": 488
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair/member name Anna vs Ana Lockwood",
+    "ours": "Anna Lockwood (chair)",
+    "official": "Ana Lockwood – At Large",
+    "official_reading": "Ana Lockwood",
+    "note": "Spelling of the first name differs; same person.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who chaired the meeting",
+    "ours": "Anna Lockwood (chair)",
+    "official": "Michael Toohill, Chair",
+    "note": "Ours calls Lockwood chair while the official minutes are signed by Michael Toohill as Chair and list Lockwood as At Large; check the recording and the committee roster.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Chris",
+    "ours": "Chris (member (notetaker/minutes))",
+    "official": "Chris St. Germain – Conservation",
+    "official_reading": "Chris St. Germain",
+    "note": "Captions gave only a first name; same member.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Colleen",
+    "ours": "Colleen (member)",
+    "official": "Colleen Shapiro – Parks and Recreation",
+    "official_reading": "Colleen Shapiro",
+    "note": "Surname missing in ours; same member.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Tim",
+    "ours": "Tim (member)",
+    "official": "Tim Willsmer – Planning",
+    "official_reading": "Tim Willsmer",
+    "note": "Surname missing in ours; same member.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee Mike / Michael Toohill",
+    "ours": "",
+    "official": "Mike provided an update noting he received positive feedback from the Selectboard.",
+    "note": "Mike (Michael Toohill) speaks in the official minutes but is not among our attendees; check whether he attended.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of February minutes",
+    "ours": "",
+    "official": "The minutes were unanimously approved.",
+    "note": "The official minutes record a vote approving the February minutes; ours records no such vote, so check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bylaw process update",
+    "ours": "",
+    "official": "The process is expected to move forward.",
+    "note": "Bylaw update and Selectboard feedback appear only in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "1083 Northfield Road property value",
+    "ours": "1083 Northfield Road property value: $600,000",
+    "official": "",
+    "note": "The official minutes give no property value; confirm the figure against the recording.",
+    "t": 282
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair emailing Slack board member about mandate",
+    "ours": "The chair will email a Slack board member (Caesar) to clarify that the committee has a formal mandate to update the town's state-required open space plan, rather than acting ad hoc.",
+    "official": "",
+    "note": "Not in the official minutes; the name Caesar may be misheard.",
+    "t": 135
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meetings April 8 and May 13; may become official board",
+    "ours": "Next meetings set for April 8 and May 13; the committee may become an official town board by May 13.",
+    "official": "",
+    "note": "Official minutes only mention approval on 4/8/26, not scheduling or board status.",
+    "t": 520
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Conservation Commission resignee continues as representative",
+    "ours": "A member who resigned from the Conservation Commission will continue attending Open Space Committee meetings as its representative until the seat status (at-large vs. conservation liaison) is resolved.",
+    "official": "",
+    "note": "Not in official minutes, which list Chris St. Germain as Conservation; check the seat status.",
+    "t": 596
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:19:22Z",
+   "cost_usd": 0.220925
+  }
  }
 }

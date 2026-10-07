@@ -545,5 +545,188 @@
    "at": "2026-09-30T11:10:13Z",
    "cost_usd": 0.19138039999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03132025-7009",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-03-13-minutes-7009.txt",
+   "path": "sources/meetings/finance-committee/2025-03-13-minutes-7009.pdf"
+  },
+  "official_sha256": "46a03650affc2cd03e9b5b39e9129a2341fa3508a9f0c613fe39e5e7200e6737",
+  "coverage": "partial",
+  "summary": "The two records agree on the Town Hall/Ritter per-household costs, Marshall Park spending, the debt-service offset, the ADA grant figures and the next-hearing dates, with only caption slips in names and digits. The official minutes leave out the later budget discussion (school choice, cemetery, pavement, Chapter 90, the override and the committee's follow-up tasks), and the $22 million project figure in ours doesn't match the official $17.84 million total, so check that one.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 6,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Town Hall and Ritter total project cost",
+    "ours": "Town Hall and Ritter project cost: 23 $22 million, 13 or so million dollar, 5 to 7%, 22,300",
+    "official": "Total construction cost with GC OH&P: $17,840,917",
+    "note": "Ours hears about $22 million; the official total is $17.84M (trade subtotal $13,288,086), which is not a digit-grouping difference; check the presentation slide for whether $22M was an all-in figure with soft costs.",
+    "t": 3102
+   },
+   {
+    "kind": "agree",
+    "about": "Earlier TC Passios estimate",
+    "ours": "Earlier Town Hall/TC Pasos project estimate: 23 million, $29 million, $30 million, 14 15 million",
+    "official": "The cost estimation was 23 million then the pandemic hit and supplies skyrocketed. Before the meeting in May the price rose to 29 million. It could cost 14 to 15 million just to get the building up to the current code.",
+    "note": "23M, 29M and 14-15M match; the $30 million in our captions has no counterpart in the official minutes.",
+    "t": 379
+   },
+   {
+    "kind": "agree",
+    "about": "Per-household tax impact of Town Hall bond",
+    "ours": "Per-household tax impact of town hall: $33, 300 bucks, $400, 514, 492, 490, 385",
+    "official": "A 30-year bond would be an average cost per household of $300 for a 30-year bond or $400 per household for a 20-year bond.",
+    "note": "$300 and $400 agree; the other numbers in ours (514, 492, 490, 385) are not in the official minutes.",
+    "t": 3309
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Marshall Park ARPA spending to date",
+    "ours": "Marshall Park spending to date: $50,000, $184,000, $1 million, 700,000 78,000, 220,000, 500,000",
+    "official": "Lastly, $250,000 of ARPA funds have been used.",
+    "note": "$50,000 and $184,000 match, but ours has no $250,000 ARPA figure (220,000 and 500,000 appear instead); check the recording near this point for the ARPA amount.",
+    "t": 7925
+   },
+   {
+    "kind": "caption_error",
+    "about": "Debt service reduction total",
+    "ours": "Debt service reduction: $300,000, $393,100, $284,400",
+    "official": "There is $393,881.14 in the reduced debt services this year.",
+    "note": "Same item; our $393,100 is a misheard $393,881.14.",
+    "t": 8241,
+    "official_reading": "$393,881.14"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Debt service used to offset capital program",
+    "ours": "$284,400",
+    "official": "$284,412 of that total is being used to oƯset the capital program.",
+    "note": "Same item; $284,400 is a misheard $284,412.",
+    "t": 8241,
+    "official_reading": "$284,412"
+   },
+   {
+    "kind": "caption_error",
+    "about": "ADA improvement grant FY2025",
+    "ours": "MOD ADA grants: three 93232, 4,910 668, 59 grants",
+    "official": "For FY 2025 the ADA improvement grant totaled $4,910,668. This consisted of 59 grants, 25 for planning and 34 for projects.",
+    "note": "Digit grouping garbled; 59 grants agrees; 'three 93232' is the FY2024 $3,932,321.",
+    "t": 12129,
+    "official_reading": "$4,910,668"
+   },
+   {
+    "kind": "agree",
+    "about": "Free cash transfers uncertain",
+    "ours": "Free cash transfers said to be very much up in the air after the select board meeting.",
+    "official": "other monied articles would be all free cash transfers and those are up in the air until Tuesday.",
+    "note": "Same statement; no transfer made in either.",
+    "t": 8156
+   },
+   {
+    "kind": "agree",
+    "about": "Another public hearing date",
+    "ours": "Another public hearing to be planned, likely on the 27th or April 3.",
+    "official": "Chris Menard conﬁrms there will be another public hearing scheduled for March 27th or April 3rd.",
+    "note": "Same.",
+    "t": 11647
+   },
+   {
+    "kind": "agree",
+    "about": "School department returns March 20",
+    "ours": "School committee to present its budget at next week's (20th) meeting.",
+    "official": "The school department will be returning on March 20, 2025.",
+    "note": "Same item.",
+    "t": 10234
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Ana Lockwood",
+    "ours": "Anna (member)",
+    "official": "Committee Member Ana Lockwood",
+    "note": "First name misspelled in captions.",
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Parks Commission chair",
+    "ours": "Anita Sher (presenter, Parks Commission chair)",
+    "official": "Anita Scheipers, Chair of the Parks Commission",
+    "note": "Misheard surname.",
+    "official_reading": "Anita Scheipers"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Parks presenter Karin Menard",
+    "ours": "Karen Menard (presenter, Parks Commission member)",
+    "official": "Karin Menard, Clerk of  the Parks Commission",
+    "note": "Spelling differs and the official minutes give her role as clerk, not member.",
+    "official_reading": "Karin Menard"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Members present",
+    "ours": "",
+    "official": "Present Members:  Chair Chris Menard, Vice Chair Jean Russell, Committee Member \nTanya Dall, Committee Member Ana Lockwood, Committee Member \nMike Rupp, Committee Member Jay Simeone \nAbsent Member:  Clerk Tom Gray",
+    "note": "Our attendee list omits Jean Russell and Tanya Dall and does not note Tom Gray absent."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on OPEB and hearing comments",
+    "ours": "",
+    "official": "Rhonda Liscio, 181 Reservoir Road, inquires if there is a direct impact on the town’s \n  bond rating if the town does not contribute to OPEB.",
+    "note": "Public comment and public-hearing speakers (Bowen, Mcleod, Passios) appear only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Hall trade-cost breakdown and meeting space",
+    "ours": "",
+    "official": "Town Hall: $6,937,520",
+    "note": "Official lists each building's trade cost and 6,500 sq ft meeting space; ours has none of the line items."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Marshall Park phases and timeline",
+    "ours": "",
+    "official": "The new design consists of 3 phases.",
+    "note": "Design phases and timeline are only in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Marshall Park project cost and grants",
+    "ours": "Marshall Park project cost: $13 m922, $922,000, $ 5,824 518; Marshall Park grants: 500,000, $1 million",
+    "official": "",
+    "note": "The official minutes give no project cost or grant amounts, only that the Commission will re-apply for awarded grants."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Later budget items (school choice, cemetery, pavement, Chapter 90, override, debt policy, studies)",
+    "ours": "School choice tuition deficit: $150,000, 668,000, $700,000, $600,000, 2.5 million; Cemetery capital item: $96,000, $50,000; Pavement management cut: $550,000; Citizens' petition override: $2 million; Spent to date on studies: $800,000",
+    "official": "",
+    "note": "These budget discussions are absent from the official minutes, which list FY26 budget discussions only as a heading."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Follow-up tasks and scheduling decisions",
+    "ours": "Town manager to request the capital planning committee reconvene.",
+    "official": "",
+    "note": "This and the print-vendor/warrant mailing and added-meeting plans are not in the official minutes; check the recording since these are decisions."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:53:19Z",
+   "cost_usd": 0.260425
+  }
  }
 }

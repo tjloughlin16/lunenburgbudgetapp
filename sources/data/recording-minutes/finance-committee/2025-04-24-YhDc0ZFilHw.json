@@ -586,5 +586,154 @@
    "at": "2026-09-27T19:46:54Z",
    "cost_usd": 0.200144
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04242025-7185",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-04-24-minutes-7185.txt",
+   "path": "sources/meetings/finance-committee/2025-04-24-minutes-7185.pdf"
+  },
+  "official_sha256": "269d89f531f0daefd5c6d88288d69074a82516c95397ac9345295f8e80156c5d",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the consent calendar vote, the deferred capital plan vote, the attendees, the next meeting date, and the $60,000 audit figure. The official minutes are a summary and omit nearly all of our budget figures. The main differences are the recorded 5-1 vote on prior minutes that we do not list, and several decisions we record (Tanya's follow-up, the public records request, the timeline redesign) that the official minutes do not carry or word differently.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Consent calendar vote for town meeting",
+    "ours": "Recommend approval of the consent calendar for town meeting — passed (roll call, all aye)",
+    "official": "There was a motion to approve the consent calendar by Ana   Lockwood, seconded by Tom Gray.  Jay Simeone aye, Mike Rupp aye, Ana \n Lockwood aye, Tanya Dall aye, Tom Gray aye, Chris Menard aye.",
+    "note": "Both records show all six present members voting aye.",
+    "t": 2947
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote to approve five sets of earlier minutes (Tanya Dall no)",
+    "ours": "",
+    "official": "There was a motion to approve the minutes of February 25, 2025, February 27. 2025, \n March 6, 2025, March 13, 2025, and March 20, 2025, by Tom Gray, seconded by Mike \n Rupp. Roll call vote. Jay Simeone aye, Mike Rupp aye, Ana Lockwood aye, Tanya Dall \n no, Tom Gray aye, Chris Menard aye.",
+    "note": "A recorded 5-1 vote on minutes approval is absent from our list of non-procedural votes; it may have been treated as procedural, but a person should check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan article vote changed to deferred",
+    "ours": "Committee's prior vote on the capital plan article was changed to a deferral because the article's content changed",
+    "official": "The Committee previously voted on the article, but Chris \n Menard requested the Town Manager change the Finance Committees vote \n to deferred.",
+    "note": "Both say the earlier vote was changed to deferred; the official ties it to the schools withdrawing the original plan (Article 9)."
+   },
+   {
+    "kind": "agree",
+    "about": "Teen Center trivia team",
+    "ours": "Committee will try to field a trivia team for the teen center's event if one more volunteer responds",
+    "official": "The Teen Center has asked if the Committee would ﬁeld a team to compete at Are \n You Smarter than a 6th Grader.  The team currently consists of Jean Russell and Tom \n Gray. 1 additional member is needed.",
+    "note": "Same item in both.",
+    "t": 172
+   },
+   {
+    "kind": "agree",
+    "about": "Town band inquiry follow-up",
+    "ours": "The chair will send a note to the town manager and try to reach the town band's organizer to answer a resident's transparency questions",
+    "official": "Chris Menard suggests reaching out to Mrs. Archambault. The Committee will \n investigate this further.",
+    "note": "Same follow-up; ours adds a note to the town manager, which the official does not mention.",
+    "t": 509
+   },
+   {
+    "kind": "agree",
+    "about": "Master Plan liaison",
+    "ours": "Mike will look into representing the Finance Committee on the Master Planning Committee; the chair will discuss with Tim",
+    "official": "Mike Rupp has expressed    interest and will reach out to the Chair, Tim Willsmer.",
+    "note": "Same item, but the contact differs slightly: we say the chair will discuss with Tim, the official says Mike will reach out to Tim.",
+    "t": 4894
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Tanya's minutes-content concerns",
+    "ours": "Tanya will raise minutes-content concerns directly with the town manager and report back",
+    "official": "Tanya Dall feels the minutes are not adequate and are missing information. The \n Committee is in agreement that they don’t want a transcript of the meeting.",
+    "note": "Ours records an action item for Tanya to take the concern to the town manager; the official records no such action and says the Committee does not want a transcript. Check the recording around t=5433.",
+    "t": 5433
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Public records request for unexplained school transfers",
+    "ours": "The chair will file a public records request whenever school committee line-item transfers are not explained aloud in their meetings",
+    "official": "",
+    "note": "The official minutes record no such decision; check the recording at t=6594.",
+    "t": 6594
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Budget timeline redesign",
+    "ours": "The chair will work with the town manager, finance director, and incoming school business manager/superintendent to redesign the budget development timeline for next year",
+    "official": "The Committee anticipates completing a full year budget cycle going forward where \n budget requests are received much earlier.",
+    "note": "Ours names a specific chair-led working group; the official gives only a general anticipation. Check the recording at t=7008.",
+    "t": 7008
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next Finance Committee meeting set for May 8th",
+    "official": "b. Fincom Meeting, May 8",
+    "note": "Same date.",
+    "t": 7509
+   },
+   {
+    "kind": "agree",
+    "about": "Annual town audit cost",
+    "ours": "Annual town audit cost: $60,000",
+    "official": "the annual audit that is required by statue that costs $60,000",
+    "note": "Same figure.",
+    "t": 7594
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 90, Chapter 70, override, excluded debt, and Marshall Park figures",
+    "ours": "Chapter 70 growth rate: 1.3%; Last year's override: $1 million 948; Excluded debt scenarios 12%, 11; Marshall Park project cost: 30 million",
+    "official": "",
+    "note": "The official minutes are a summary and contain none of these budget figures, so they cannot be checked against them."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School budget figures: athletic revolving deficit, extended day shortfall, lunch subsidy, copies transfer, staffing cuts",
+    "ours": "Athletic revolving account deficit: $115,000, 169,000, 120,000; School line-item transfer for copies: 16,000, 19,000",
+    "official": "",
+    "note": "None of the school revolving fund or transfer figures appear in the official minutes, so the roughly $16,000-$19,000 copies transfer is unconfirmed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cemetery fee and cost figures",
+    "ours": "Cemetery burial and cremation fees: $100, $800, $500, 300; Cemetery sale-of-lots fund balance: $96,000",
+    "official": "",
+    "note": "The official minutes mention only the cemetery public comment, with no figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Chris (chair), Jay, Mike, Anna, Tanya, Tom",
+    "official": "Present Members:  Chair Chris Menard, Clerk Tom Gray, Committee Member Tanya Dall, \nCommittee Member Ana Lockwood, Committee Member Mike Rupp, \nCommittee Member Jay Simeone",
+    "note": "Same six members; the caption spelling 'Anna' is a misheard 'Ana'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Ana Lockwood",
+    "ours": "Anna (member)",
+    "official": "Committee Member Ana Lockwood",
+    "note": "Caption spelling of the same person.",
+    "official_reading": "Ana Lockwood"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:30:29Z",
+   "cost_usd": 0.258804
+  }
  }
 }

@@ -217,5 +217,131 @@
    "at": "2026-09-27T11:11:12Z",
    "cost_usd": 0.18698399999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02112026-7640",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/open-space-committee/2026-02-11-minutes-7640.txt",
+   "path": "sources/meetings/open-space-committee/2026-02-11-minutes-7640.pdf"
+  },
+  "official_sha256": "b7d8e5bd44f755ae5615b84b4529ca855a77b364b9773c27fa61ecf7bcadc822",
+  "coverage": "full",
+  "summary": "The two records agree closely on the substance: the Select Board as appointing authority, direct appointment by other boards, the AgCom seat, and Ana chairing March 11. Both record no non-procedural votes, and the main gaps are the placeholder warrant article (only in ours) and some caption-level name misspellings.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Select Board as appointing authority per town counsel",
+    "ours": "The draft bylaw, per town counsel's recommendation, will list the select board (rather than the planning board) as the appointing authority for the committee, with advice and consent of the planning board.",
+    "official": "Counsel recommended that the Select Board serve as the appointing authority for the  committee, rather than the Planning Board, to improve political viability.",
+    "t": 298,
+    "note": "Same recommendation in both; the 'advice and consent of the planning board' detail appears only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Other boards' representatives appointed directly by their own boards",
+    "ours": "The draft bylaw will be revised so that board/commission representatives (planning, conservation, agriculture, parks) are simply appointed by their own board rather than requiring a separate select board appointment, to avoid an extra bureaucratic step.",
+    "official": "The committee discussed ensuring that representatives from other boards (Parks,  Conservation, Agriculture) are appointed directly by their respective groups to avoid \nunnecessary bureaucracy.",
+    "t": 443,
+    "note": "Same point; ours lists planning as well and states it as a revision, while the official says the committee 'discussed' it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "AgCom seat becoming at-large: decided or merely possible",
+    "ours": "If the agriculture commission (ADCOM/eggcom) does not respond about naming a representative, that seat will be made an at-large seat instead, to be addressed by a vote at the March 11 meeting.",
+    "official": "If no response is received by the next meeting, the committee may vote to return that seat to an \"at-large\" position.",
+    "t": 897,
+    "note": "Ours records a firm decision, while the official says the committee 'may vote'; check the recording near t=897 to see whether it was a decision or a possibility. Ours also says the vote is at March 11, and the official says 'the next meeting'."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant article filed as a placeholder",
+    "ours": "The town meeting warrant article will be filed as a placeholder ('establish an open space committee') since final bylaw language can be finalized up until close to the warrant deadline.",
+    "official": "",
+    "t": 940,
+    "note": "The official minutes only say the committee aims to get the bylaw on the warrant before it closes March 16; they do not mention the placeholder approach."
+   },
+   {
+    "kind": "agree",
+    "about": "Anna chairs March 11 meeting",
+    "ours": "Anna will run the March 11th meeting because the chair will be out of town (Las Vegas).",
+    "official": "March 11, 2026: Ana Lockwood will chair the meeting as Mike Toohill will be out \nof town.",
+    "t": 1277,
+    "note": "Same decision; Las Vegas appears only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of December 10, 2025 minutes by roll call",
+    "ours": "",
+    "official": "A motion to accept the December 10th minutes as drafted was made by Ana and seconded Colleen",
+    "note": "Our minutes record no votes; the official records the approval of minutes passing unanimously by roll call. This is a routine procedural vote, so it is listed but not treated as a discrepancy."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bylaw Review Committee presentation and warrant deadline",
+    "ours": "",
+    "official": "Mike is scheduled to present the draft bylaw to the Bylaw Review Committee on  \nFebruary 12, 2026.",
+    "note": "The official also gives a warrant closing date of March 16th; neither the Feb 12 presentation nor that date is in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other board reports (Conservation, EDC, Parks)",
+    "ours": "",
+    "official": "Conservation Commission: Chris reported significant turnover, with himself and Mary\nstepping down as full commissioners but remaining as associates.",
+    "note": "Ours only mentions Chris stepping down in the attendee line; the EDC report on Leominster, the new Conservation Agent, and Colleen's Parks term ending in May are only in the official."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "No January 2026 meeting",
+    "ours": "",
+    "official": "It was noted that no meeting was held in January 2026 due to a posting error at the\nTown Clerk's office.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Mike Tuhill (chair)",
+    "official": "Mike Toohill - Chair",
+    "official_reading": "Mike Toohill",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Anna's name",
+    "ours": "Anna (member, at-large (formerly parks representative))",
+    "official": "Ana Lockwood - At Large",
+    "official_reading": "Ana Lockwood",
+    "note": "Spelling and missing surname; same person. 'Formerly parks representative' is in ours only."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Agriculture commission name",
+    "ours": "agriculture commission (ADCOM/eggcom)",
+    "official": "Agricultural Commission (AgCom)",
+    "official_reading": "AgCom",
+    "note": "Captions garbled the abbreviation."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Chris and Colleen",
+    "ours": "Chris (member, conservation commission representative (stepping down, staying as associate))",
+    "official": "Chris St.Germain - Conservation",
+    "note": "Same attendees; the official adds surnames (St.Germain, Shapiro) that the captions did not capture."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:20:31Z",
+   "cost_usd": 0.22708699999999998
+  }
  }
 }

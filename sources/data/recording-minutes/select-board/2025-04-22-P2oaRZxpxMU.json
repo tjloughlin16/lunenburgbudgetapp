@@ -408,5 +408,230 @@
    "at": "2026-09-27T19:56:48Z",
    "cost_usd": 0.198548
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-22-minutes-rr2026-09-18.txt",
+   "path": "sources/meetings/select-board/2025-04-22-minutes-rr2026-09-18.pdf"
+  },
+  "official_sha256": "dbef7b65c0cb82da8f79eb1545d86b7729763e0edac2c93b821e47140334060e",
+  "coverage": "full",
+  "summary": "The two records agree closely on the one vote, the figures and the decisions. They differ mainly in captioned names, in which articles were pulled from the consent calendar, and in a few items only our recording has. A person should check the consent calendar contents (articles 27, 32 and 33 against 2, 3, 19 and 20) and the $240,000 grant figure.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 6,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to approve the annual town meeting consent calendar",
+    "t": 2223,
+    "ours": "Motion to approve the annual town meeting consent calendar as amended. — passed unanimously (voice vote)",
+    "official": "Motion by Member Alonzo to approve the Annual Town Meeting Consent Calendar. Seconded by Clerk Moore. Call for Vote: Four – Aye. The motion passed unanimously (4-0-0).",
+    "note": "Same motion and same unanimous outcome; the official minutes add the mover, seconder and 4-0-0 count."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Which articles were on or off the consent calendar",
+    "t": 2223,
+    "ours": "Board decided to leave warrant articles 27 (PEG access/cable), 32 and 33 (board of assessors items) on the consent calendar as-is rather than pulling them off in advance.",
+    "official": "Member Emkey raised a question about Article 27 (PEG Access and Cable), expressing some concern that it could draw discussion from the floor and might be worth removing from the consent calendar.",
+    "note": "Both record Article 27 staying, but the official minutes do not mention 32 and 33, and ours does not mention the removal of Articles 2, 3, 19 and 20 or the addition of Payment of Prior Years' Bills; check the recording around t=2223 for what was actually decided."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Articles removed from the consent calendar",
+    "ours": "",
+    "official": "several articles were to be removed from the consent calendar for individual consideration, as they are new to the town: Article 2 (Borrow in Anticipation of Revenue), Article 3 (Expend Funds in Anticipation of Reimbursement of State Highway Aid), and Articles 19 and 20 (Compensated Absences Reserve Fund).",
+    "note": "Our minutes record no removal of these articles, and the 'as amended' in our motion may refer to this."
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 70 increase and net projected increase",
+    "t": 356,
+    "ours": "FY26 state budget / Chapter 70 aid: 6.7%, $124,310",
+    "official": "The House Ways and Means Committee recommended a 6.7% increase in Chapter 70 funding and level-funded unrestricted general government aid. The net projected increase for Lunenburg relative to prior planning figures is $124,310.",
+    "note": "Both figures match."
+   },
+   {
+    "kind": "agree",
+    "about": "Town meeting box lunch fee",
+    "t": 501,
+    "ours": "Town meeting box lunch fee: $8",
+    "official": "Pre-bagged lunches will again be sold by the school department for $8.00",
+    "note": "Same amount."
+   },
+   {
+    "kind": "agree",
+    "about": "Ritter building roof contractor",
+    "t": 606,
+    "ours": "Board directed staff to press the Ritter building roof/gutter contractor to begin work before the April 30 extension deadline rather than granting another extension without progress.",
+    "official": "Work has been slow to start; the contract has been extended through April 30th. The Town Manager indicated that the contractor must commence work before the deadline or a further extension will not be granted.",
+    "note": "Same April 30 deadline and no further extension; ours frames it as a board direction while the official frames it as a Town Manager statement."
+   },
+   {
+    "kind": "agree",
+    "about": "School heat pump project cost breakdown",
+    "t": 1064,
+    "ours": "School HVAC central-system project cost: 480,000, 310,000, 200, 110, 170,000, 300,000",
+    "official": "the total project cost was approximately $480,000, of which $310,000 comprising $200,000 from Green Communities and $110,000 from Unitil was contingent upon the installation of a central building control system. The remaining Town/school share would have been approximately $170,000.",
+    "note": "$480,000, $310,000, $200,000, $110,000 and $170,000 all match."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Incentive total in the heat pump project",
+    "t": 1064,
+    "ours": "300,000",
+    "official": "$310,000 comprising $200,000 from Green Communities and $110,000 from Unitil",
+    "note": "The $200,000 and $110,000 components sum to $310,000, so the $300,000 in our list is a misheard repetition of the $310,000.",
+    "official_reading": "$310,000"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Green Communities heat pump grant of $240,000",
+    "t": 940,
+    "ours": "Green Communities heat pump grant: $240,000, 200,000",
+    "official": "$200,000 from Green Communities",
+    "note": "The official minutes give $200,000 from Green Communities and no $240,000 figure; check the recording around t=940 for what $240,000 refers to (a different grant or a misheard figure)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cumulative Green Communities grant funding",
+    "t": 1849,
+    "ours": "Cumulative Green Communities grant funding: $900,000",
+    "official": "",
+    "note": "The official minutes give no cumulative $900,000 figure for Green Communities grants."
+   },
+   {
+    "kind": "agree",
+    "about": "Street light conversion savings",
+    "t": 1870,
+    "ours": "Street light conversion savings: 10,000, 1,500",
+    "official": "monthly streetlight costs having been reduced from over $10,000 to approximately $1,500 per month following the LED conversion",
+    "note": "Same before and after figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Green Communities committee associates to alternates",
+    "t": 1541,
+    "ours": "Board agreed in principle to change the Green Communities Committee's associate members to alternates (or otherwise let associates vote to make quorum), pending confirmation from town counsel that it is legal.",
+    "official": "The Select Board agreed to move forward with the change, pending Town Counsel review.",
+    "note": "Same decision and same condition."
+   },
+   {
+    "kind": "agree",
+    "about": "Connecting department heads with Green Communities Committee",
+    "t": 1642,
+    "ours": "Board agreed the town manager should connect key department heads with the Green Communities Committee over the summer, before the capital plan process, so energy-grant options are considered earlier.",
+    "official": "He called on the Town Manager to schedule a summer meeting with key department heads to ensure they engage the Green Communities Committee early in any capital project planning process.",
+    "note": "Same decision; the official minutes add Emkey's capital plan consultation check suggestion."
+   },
+   {
+    "kind": "agree",
+    "about": "Non-board members moving their own warrant articles",
+    "t": 2307,
+    "ours": "Board agreed that going forward, non-select-board officials (e.g., parks commission chair, school committee chair) and citizen petitioners should move their own warrant articles at town meeting rather than always having a select board member do it.",
+    "official": "The Select Board agreed that the Marshall Park article should be moved by the Parks Commission Chair, the Free Cash transfer to the school should be moved by the School Committee Chair, and Planning Board articles should be moved by the Planning Board Chair.",
+    "note": "Same decision; the official minutes add that a citizens' petition not moved by a petitioner would not be moved."
+   },
+   {
+    "kind": "agree",
+    "about": "Standby Select Board meeting before town meeting",
+    "t": 2471,
+    "ours": "Board agreed to schedule a standby meeting ahead of town meeting in case deferred articles need board action, even if it may end up not being needed.",
+    "official": "The Select Board agreed to schedule this meeting, with the understanding that it would be cancelled if not needed.",
+    "note": "Same decision; the official minutes add the 8:30 AM time on May 3."
+   },
+   {
+    "kind": "agree",
+    "about": "Free cash transfer to the school department and $500,000",
+    "t": 2659,
+    "ours": "Free cash to the school department (warrant Article 11) — not stated at this point; school committee later cited $500,000 (t=2659) (discussed only — who should move the article at town meeting)",
+    "official": "the School Committee met the prior week and discussed the planned use of $500,000 in free cash should it be approved at Town Meeting primarily for staff replenishment.",
+    "note": "Same $500,000 and same school free cash article; the Article 11 number appears only in ours, and no vote was taken."
+   },
+   {
+    "kind": "agree",
+    "about": "Turkey Hill facilities cost estimate",
+    "t": 2679,
+    "ours": "Turkey Hill facilities study cost estimate: $16 million",
+    "official": "Preliminary figures to carry the building forward 20 to 30 years were estimated at approximately $16 million.",
+    "note": "Same figure; the official minutes attribute it to a draft ADA study."
+   },
+   {
+    "kind": "agree",
+    "about": "Town meeting warrant totals",
+    "t": 2807,
+    "ours": "Town meeting warrant totals: $49 million plus, 22 plus million dollar, 13 plus million dollar",
+    "official": "including a $49 million-plus omnibus budget, a $22-plus million municipal building project, and a $13-plus million Marshall Park plan",
+    "note": "Same three figures."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board chair's name",
+    "ours": "Nolo (chair, select board)",
+    "official": "Chair Caesar Nuzzolo",
+    "note": "'Nolo' is a misheard form of Nuzzolo.",
+    "official_reading": "Caesar Nuzzolo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member Renee",
+    "ours": "Renee (select board member)",
+    "official": "Member Renee Emkey",
+    "note": "Same person; ours has only the first name.",
+    "official_reading": "Renee Emkey"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member Tom Alonzo",
+    "ours": "Tom (select board member)",
+    "official": "Member Tom Alonzo",
+    "note": "Ours lists 'Tom' and 'Alonzo' as two separate members, but the official minutes show one person, Tom Alonzo.",
+    "official_reading": "Tom Alonzo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "Jen (town manager)",
+    "official": "Jennifer Warren-Dyment, Town Manager",
+    "note": "Same person; ours has only the first name.",
+    "official_reading": "Jennifer Warren-Dyment"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Green Communities Committee chair name",
+    "ours": "Dave Blat (chair, Green Communities Committee (presenter))",
+    "official": "David Blatt, Chair of the Green Communities Committee",
+    "note": "Misspelled in captions.",
+    "official_reading": "David Blatt"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Clerk Amanda Moore and absent Vice-Chair",
+    "ours": "",
+    "official": "Members Present: Chair Caesar Nuzzolo, Clerk Amanda Moore, Member Tom Alonzo, and Member Renee Emkey Members Absent: Vice-Chair Michael-Ray Jeffreys",
+    "note": "Our attendee list omits Clerk Amanda Moore, who seconded the motion, and the absent Vice-Chair."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assistant town manager Julie",
+    "ours": "Julie (assistant town manager)",
+    "official": "",
+    "note": "The official minutes list only Jennifer Warren-Dyment as also present, so check whether Julie attended."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:30:43Z",
+   "cost_usd": 0.275257
+  }
  }
 }

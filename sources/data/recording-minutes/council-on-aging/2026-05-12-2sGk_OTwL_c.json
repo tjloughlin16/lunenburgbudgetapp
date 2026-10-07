@@ -555,5 +555,107 @@
    "at": "2026-09-27T02:34:24Z",
    "cost_usd": 0.19184
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05122026-7799",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2026-05-12-minutes-7799.txt",
+   "path": "sources/meetings/council-on-aging/2026-05-12-minutes-7799.pdf"
+  },
+  "official_sha256": "ab4ee1df10e46b4a347ed3cbe931d72a1484b2f3d879018be31d9c587cd09aca",
+  "coverage": "partial",
+  "summary": "The official minutes supplied are for the 18 November 2025 Council on Aging meeting, not 12 May 2026, so the two records describe different meetings and almost nothing lines up. Treat every difference here as unverified until the real May 12 minutes are found; only some names (Lincoln, Balcom, Nowd, Franco) overlap, and those are likely caption errors.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "which meeting the official minutes cover",
+    "ours": "Council on Aging, 2026-05-12",
+    "official": "November 18,  2025",
+    "note": "The official text is for the 18 November 2025 meeting, not 12 May 2026, so nothing in it can confirm or contradict our record; check whether the town has published or linked the wrong minutes, and find the May 12 minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "votes on chair/vice chair slate (Lincoln, Franco) and honorary-member process",
+    "ours": "Nominate David Lincoln for chair and Lou Franco for vice chair, effective July 1; slate approved as read; adopt a case-by-case process for future honorary members.",
+    "official": "",
+    "note": "The November 2025 minutes record no officer election or honorary-member vote; this absence says nothing about the May meeting's real minutes.",
+    "t": 1131
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "decisions: Colleen Roy application, bylaws subcommittee, flowers for Helen Bolkum, end-of-year gathering",
+    "ours": "Colleen Roy's board application is accepted to fill one of the two vacancies; the bylaws subcommittee will propose removing the sentence about clerk appointment.",
+    "official": "",
+    "note": "None of these appear in the November 2025 minutes; the only bylaws item there is a different discussion (Charter vs. Bylaws wording on hiring the COA Director).",
+    "t": 2639
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "figures as heard ($50 trip subsidy, $15,000 giving circle, 20%/80% parking lot funding)",
+    "ours": "Trip cost subsidy proposal: $50; Giving circle donations (context): $15,000; Parking lot accessibility funding search: 80%",
+    "official": "",
+    "note": "The only figure in the official text is about $22k for lobby furniture, which our minutes do not list, so no figure can be compared.",
+    "t": 2003
+   },
+   {
+    "kind": "caption_error",
+    "about": "chair's name",
+    "ours": "David Lincoln (member, nominated/voted chair for July)",
+    "official": "Chairperson Deb Lincoln called the meeting to order",
+    "note": "Likely 'Deb' heard as 'David' in the captions, but this rests on a different meeting's minutes; confirm against the May 12 roster.",
+    "official_reading": "Deb Lincoln",
+    "t": 1109
+   },
+   {
+    "kind": "caption_error",
+    "about": "departing member's surname",
+    "ours": "Helen Bolkum (outgoing board member (not returning, health))",
+    "official": "Excused:  Helen Balcom , Jack Rabbitt",
+    "note": "Probable misheard surname; the official minutes list the member as Balcom, though in a different meeting.",
+    "official_reading": "Helen Balcom",
+    "t": 2949
+   },
+   {
+    "kind": "caption_error",
+    "about": "board member Diana",
+    "ours": "Diana (board member (outgoing, vacancy))",
+    "official": "Diane Nowd",
+    "note": "First name spelling and surname probably match the same member; unconfirmed because the meetings differ.",
+    "official_reading": "Diane Nowd",
+    "t": 1047
+   },
+   {
+    "kind": "agree",
+    "about": "attendee Lou Franco",
+    "ours": "Lou Franco (member, nominated/voted vice chair for July)",
+    "official": "Lou Franco",
+    "note": "Same member appears on the board roster in both records, though the official one is for a different meeting.",
+    "t": 1109
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "attendees Colleen Roy, John Francis, Michelle, Caesar, Bobby, Deb (facilities)",
+    "ours": "Colleen Roy (incoming board member (application accepted)); John Francis (new outreach coordinator)",
+    "official": "",
+    "note": "None of these are named in the November 2025 attendance list, which names the director as Deb Goodsell; compare against the May 12 attendance.",
+    "t": 1047
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:16:47Z",
+   "cost_usd": 0.270598
+  }
  }
 }

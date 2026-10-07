@@ -345,5 +345,164 @@
    "at": "2026-09-27T02:44:59Z",
    "cost_usd": 0.19800199999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04092026-7761",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2026-04-09-minutes-7761.txt",
+   "path": "sources/meetings/trust-fund-commission/2026-04-09-minutes-7761.pdf"
+  },
+  "official_sha256": "d7c148829db3a8963a80df50636419bbf40cee0b44ee4a0aa0f723c0976b1aaf",
+  "coverage": "full",
+  "summary": "The two records agree on all five votes, each passing 2-0 by roll call, and on the attendees and the $14,000 warrant article. The official minutes leave out the letter figures, the scholarship count, the risk-policy and workers' comp deferrals, the posting hold and the April 23 meeting date. Only the official minutes record the March 12 minutes approval, the Select Board's refusal to support the warrant articles, and the Annual Report review. The one thing to check is the Senator Cronin letter vote: our minutes say it carried address and date corrections, and the official minutes record none.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 7,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: addendum to formal breach notice and submission packet",
+    "t": 2547,
+    "ours": "Motion to submit the addendum to the formal breach notice and submission packet to the town manager, select board and Attorney General — passed, roll call: Richard Howard aye, John Bowen aye",
+    "official": "The vote on the motion was Mr Howard ‘aye’ and Chairman Bowen ‘aye’. The motion passed unanimously.",
+    "note": "Same motion, same 2-0 outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: transmittal letter to AG Public Charities Division",
+    "t": 2901,
+    "ours": "Motion to accept and send the transmittal letter to the Attorney General's Public Charities Division — passed, roll call: Richard Howard aye, John Bowen aye",
+    "official": "The vote was Mr Howard ‘aye’, Chairman Bowen ‘aye’. The motion passes unanimously",
+    "note": "Same motion and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: demand letter re school-held scholarships, with date correction",
+    "t": 3279,
+    "ours": "Motion to accept and send the demand letter to the town manager, select board, superintendent and school committee regarding school-held scholarships/gifts, with a date correction — passed, roll call: Richard Howard aye, John Bowen aye",
+    "official": "Mr Howard seconded the motion with the correction of October 2024 referenced on page 1 of the document being changed to October 2025.. The motion passed unanimously with Mr Howard voting ‘aye’ and Chairman Bowen voting ‘aye’.",
+    "note": "Same motion, same date correction, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: letter to Senator Cronin",
+    "t": 3401,
+    "ours": "Motion to send the letter requesting emergency senatorial assistance to Senator John Cronin, with address and date corrections — passed, roll call: Richard Howard aye, John Bowen aye",
+    "official": "Chairman Bowen put forth a motion to send the letter to Senator Cronin, the motion was seconded by Mr Howard. The motion passed unanimously with Mr Howard voting ‘aye’ and Chairman Bowen voting ‘aye’.",
+    "note": "Same vote and outcome. Our minutes add address and date corrections that the official text does not mention, so check the recording at this timestamp if that matters."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: chair to write report to Town Moderator",
+    "t": 5237,
+    "ours": "Motion to allow the chair to write a report on the commission's activities to submit to the town moderator — passed, Richard Howard aye, John Bowen aye",
+    "official": "The vote was unanimous with Mr Howard voting ‘aye’ and Chairman Bowen voting ‘aye’.",
+    "note": "Same motion and outcome. The official text adds 'or other party that would be privy to that information'."
+   },
+   {
+    "kind": "agree",
+    "about": "Warrant article amount for cy pres investigations",
+    "t": 866,
+    "ours": "Warrant article requesting funds to start cy pres investigations/filings: $14,000",
+    "official": "seeking approximately $14,000 for investigations necessary to prepare cy pres filings",
+    "note": "Same item and figure; the official text says 'approximately'."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Total restricted trust principal cited in Cronin letter",
+    "t": 3570,
+    "ours": "Total restricted trust principal cited in letter to Senator Cronin: $13,7418",
+    "official": "",
+    "note": "The official minutes do not quote the letter's figures. The digits look garbled, so check the letter itself."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Undistributed earnings cited in Cronin letter",
+    "t": 3592,
+    "ours": "Undistributed earnings cited in letter to Senator Cronin: $62,51843",
+    "official": "",
+    "note": "The official minutes do not quote the letter's figures. The digits look garbled, so check the letter itself."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Count of scholarships and gifts held by school department",
+    "t": 4991,
+    "ours": "Scholarships and gifts held by the school department under the town's EIN: 51",
+    "official": "",
+    "note": "The official minutes mention funds held under the town's EIN but give no count."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hold on posting breach notice online (ADA/PDF accessibility)",
+    "t": 4485,
+    "ours": "Chair will hold off posting the breach notice, application manual and donor information online until getting an answer on ADA/PDF accessibility compliance requirements.",
+    "official": "",
+    "note": "The official minutes do not record this decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Risk management policy not reviewed",
+    "t": 4807,
+    "ours": "The board will not review the rewritten risk management policy tonight; it will be taken up at a future meeting.",
+    "official": "",
+    "note": "The official minutes do not mention the risk management policy."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Workers' comp statute item deferred",
+    "t": 5154,
+    "ours": "Discussion of the workers' comp statute item is deferred / taken off the agenda for now, as other filings take priority.",
+    "official": "",
+    "note": "The official minutes do not mention the workers' comp item."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting set for April 23",
+    "t": 5309,
+    "ours": "Next meeting set for April 23rd, the week before annual town meeting.",
+    "official": "Chairman Bowen reminded the public that our meetings are usually held on the 2nd and 4th Thursday of the month and mentioned the vacancy on the board.",
+    "note": "The official minutes give only the usual 2nd and 4th Thursday schedule, with no specific next date. April 23 is a 4th Thursday, so the two are consistent."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of March 12, 2026 minutes",
+    "ours": "",
+    "official": "Chairman Bowen made a motion to approve the meeting minutes from March 12, 2026. The motion was seconded by Mr Howard, the motion was passed unanimously.",
+    "note": "The official minutes record this vote and ours does not, though it may have been treated as procedural. Check the recording for the vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Select Board did not support warrant articles",
+    "ours": "",
+    "official": "Neither of the two proposed warrant articles were supported by the Board of Selectmen.",
+    "note": "Our minutes record the $14,000 article but not the Select Board's non-support or the bylaw article on operating without a quorum."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Annual Report FY2025 review",
+    "ours": "",
+    "official": "The Trust Fund Commission reviewed the Annual Report.",
+    "note": "The official minutes carry the full FY2025 report text, including a $1,454,369.67 grand total, and our minutes do not mention it."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "John Bowen (Chairman); Richard Howard (Vice Chairman / Commissioner)",
+    "official": "Present were Mr Howard and Chairman Bowen.",
+    "note": "Same two members. Our minutes add the 'Vice Chairman' title, which the official text does not give."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:18:40Z",
+   "cost_usd": 0.261171
+  }
  }
 }

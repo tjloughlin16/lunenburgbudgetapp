@@ -384,5 +384,225 @@
    "at": "2026-09-27T19:26:37Z",
    "cost_usd": 0.19506600000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05272025-7242",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-05-27-minutes-7242.txt",
+   "path": "sources/meetings/sewer-commission/2025-05-27-minutes-7242.pdf"
+  },
+  "official_sha256": "6951e0b7279d4aae32c0bfb38801c2cabca246eb3e140a6c9ff9edae6dbaa611",
+  "coverage": "full",
+  "summary": "The two records agree on the main events: the officer elections, the Dana Street approval, the manhole funding, the delinquency estimate and the meeting schedule. They differ on how the officer votes went, on the Dana Street amount ($123,000.6 against $123,600), and on how the warranty was handled.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 5,
+   "discrepancy": 6,
+   "only_in_ours": 1,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Chair election vote (Brett Ramston)",
+    "ours": "Roll call vote to elect Brett Ramston as chair — passed",
+    "official": "Chair – Joe-aye, Scott-aye, Dan-aye, and Art hur -aye.  Brett abstained .",
+    "note": "Both records say Brett was elected chair; the official minutes add that Brett abstained, and ours does not give the tally, so check the recording at about t=577 for the individual votes.",
+    "t": 577
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vice chair election vote",
+    "ours": "Roll call vote to elect Scott Dah as vice chair — passed",
+    "official": "Vice-Chair – Art hur -aye,  Joe-aye, Dan-aye, Scott-aye and Brett-aye.",
+    "note": "The outcome is the same (Scott elected); the official minutes list five ayes, ours gives no tally, and the name is spelled Dah in ours and Dall in the official minutes.",
+    "t": 599
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Clerk election vote",
+    "ours": "Roll call vote to elect Dan Proctor as clerk — passed",
+    "official": "Clerk- Scott-aye, Dan-aye, Joe-aye and Arthur-aye  (Brett did not vote)",
+    "note": "The outcome is the same (Dan elected); the official minutes record that Brett did not vote, and ours does not, so check the recording at about t=641.",
+    "t": 641
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Separate vote on the chair nomination",
+    "ours": "Nominate Brett Ramston for chair — passed",
+    "official": "",
+    "note": "Ours lists the nomination as a vote that passed. The official minutes record only that Joe nominated and Scott seconded, with no vote on the nomination itself.",
+    "t": 318
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Brett Ramston",
+    "official": "Chair-  Brett Ramsden",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair's name",
+    "ours": "Scott Dah",
+    "official": "Vice -Chair - Scott Dall",
+    "note": "Misheard surname.",
+    "official_reading": "Scott Dall"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer business manager's name",
+    "ours": "Andrew Villery",
+    "official": "Sewer Business Manager: Andrew Valliere",
+    "note": "Misheard surname.",
+    "official_reading": "Andrew Valliere"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Commissioner Arthur Katis",
+    "ours": "Arthur Katis (also heard \"Arthur KZ\"/\"Arthur Ketus\")",
+    "official": "Joe Hurley  and Arthur Katis",
+    "note": "Our primary spelling matches the official one, and the variants are caption noise.",
+    "official_reading": "Arthur Katis"
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees",
+    "ours": "Joseph Hurley, Dan Proctor, Bill Bernard, Jane Ranley",
+    "official": "Clerk- Dan Proctor, Member s : Joe \nHurley",
+    "note": "These names and roles match. Hurley appears as Joe in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Dana Street force main repair cost",
+    "ours": "Dana Street pump station force main repair: $123,000.6",
+    "official": "for $123,600",
+    "note": "Same item; the captions garbled the figure, and the digits $123,600 are the likely reading.",
+    "official_reading": "$123,600",
+    "t": 767
+   },
+   {
+    "kind": "agree",
+    "about": "Mass One comparison cost",
+    "ours": "Mass One pump station force main comparison cost: $88,000",
+    "official": "S imilar work  done at \nMass 1 co s t $88K plus about $10K for pump trucks.",
+    "note": "The $88K figure matches. The extra $10K for pump trucks is in the official minutes only.",
+    "t": 799
+   },
+   {
+    "kind": "agree",
+    "about": "Dana Street repair approval vote",
+    "ours": "Motion to accept the quote and move forward to schedule the Dana Street pump station force main repair — passed",
+    "official": "To accept the quote  and move forward to schedule the work before it becomes an \nissue.",
+    "note": "Both record the motion passing. The official minutes give a unanimous roll call, which ours does not list.",
+    "t": 1636
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Warranty handling and vote wording",
+    "ours": "Bill Bernard/Andrew Villery to ask the repair contractor about a warranty on the Dana Street force main work and report back at the next meeting, without delaying or conditioning the already-approved work.",
+    "official": "B rett asked B ill to give an update at the next meeting on the  warranty .",
+    "note": "Both have a warranty follow-up at the next meeting. Ours assigns it to Bill and Andrew and says the vote was not conditioned. The official minutes assign it to Bill, and say the Commission discussed making the vote dependent on a warranty, so check the recording around t=1721.",
+    "t": 1721
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cut-off valve maintenance",
+    "ours": "Commission noted (to revisit with the maintenance contractor at next contract renewal) that cutoff valves should be exercised annually as part of routine preventive maintenance, following the Mass One cutoff failure experience.",
+    "official": "Scott  inquired about the \ncontractor ex ercising the cut-offs and if they will be adding it to the future maintenance \ncontract . Bill said that is duly noted.",
+    "note": "Both records show the subject was raised. Ours records a Commission conclusion (annual exercising, revisit at renewal) and the Mass One failure, and the official minutes record only that Bill noted it, so check the recording around t=1364.",
+    "t": 1364
+   },
+   {
+    "kind": "agree",
+    "about": "Manhole repair ARPA funding",
+    "ours": "Manhole repairs IFB — ARPA/OPA funding: $100,000",
+    "official": "received $100K of \nARPA funds to make sewer manhole  repairs",
+    "note": "The amounts match. \"OPA\" in ours is a caption error for ARPA.",
+    "t": 1992
+   },
+   {
+    "kind": "agree",
+    "about": "Manhole contract cost versus grant funding",
+    "ours": "Manhole repairs contract cost vs. grant funding: 140,000, 40,000",
+    "official": "$100K from ARPA funds \n(Federal money)  and $40K from the  budget.",
+    "note": "The $140K total ($100K ARPA plus $40K budget) and the $40K budget share match.",
+    "t": 2113
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole contractor and project manager change",
+    "ours": "",
+    "official": "Insituform Technol ogies was the  lowest bidder.",
+    "note": "The official minutes name the low bidder and say the project managers changed so there is no start date yet; ours does not record this.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Supplemental billing figures",
+    "ours": "Supplemental billing FY25 Q4 — sewer rate correction: 115, 133",
+    "official": "Munis system had originally calculated the rates from 2022 and the sewer rates were \n\nwrong.",
+    "note": "The official minutes give no figures for the supplemental billing. Check the recording near t=1792 for what 115 and 133 refer to.",
+    "t": 1792
+   },
+   {
+    "kind": "agree",
+    "about": "Delinquency rate",
+    "ours": "Quarterly demands / delinquency rate: 27 to 29%, 29%",
+    "official": "He estimated 27-29% users  are delinquent .",
+    "note": "The 27–29% range matches.",
+    "t": 2162
+   },
+   {
+    "kind": "agree",
+    "about": "Joe Hurley offer to step down",
+    "ours": "Joseph Hurley offered to step down from the commission whenever a replacement member is found, rather than waiting for his term to fully end.",
+    "official": "Joe said if they have someone new that is willing to come onboard, he \nwill step down.",
+    "note": "Same decision in both records.",
+    "t": 2436
+   },
+   {
+    "kind": "agree",
+    "about": "Meeting schedule",
+    "ours": "Meeting schedule set: June 10, 2025 (7:00 p.m., DPW/hybrid); June 24, 2025 (6:00 p.m., Zoom); July 8, 2025 (7:00 p.m., DPW/hybrid); July 29, 2025 (6:00 p.m., Zoom).",
+    "official": "June 10, 2025 @ 7pm – Regular Meeting, Hybrid Meeting  at DPW",
+    "note": "All four dates and times match.",
+    "t": 2685
+   },
+   {
+    "kind": "agree",
+    "about": "Officer elections held at this meeting",
+    "ours": "Officer elections (chair, vice chair, clerk) would be held at this meeting rather than deferred, since reorganization is due now.",
+    "official": "Bill advis ed they will need to vote for new officers now.",
+    "note": "Same decision.",
+    "t": 297
+   },
+   {
+    "kind": "only_in_official",
+    "about": "New assistant to Sewer Business Manager",
+    "ours": "",
+    "official": "Susan started today  and they are \nget ting her set  up  so s he can  shadow Andrew .",
+    "note": "The official minutes record a new assistant starting, and ours does not.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Future agenda items",
+    "ours": "",
+    "official": "Future Agenda Items-  Dana St. update, Manhole repairs  update , Select Board meeting \nw/Commission  minutes",
+    "note": "The official minutes list future agenda items, and ours does not.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:29:04Z",
+   "cost_usd": 0.248369
+  }
  }
 }

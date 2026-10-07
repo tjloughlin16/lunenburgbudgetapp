@@ -543,5 +543,200 @@
    "at": "2026-09-27T12:56:30Z",
    "cost_usd": 0.21315399999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07232025-7321",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/master-plan-steering-committee/2025-07-23-minutes-7321.txt",
+   "path": "sources/meetings/master-plan-steering-committee/2025-07-23-minutes-7321.pdf"
+  },
+  "official_sha256": "67b9fae43ff0776164d9e45c9ec1babbf7bb72e7e6e9123acf78f9ce83839042",
+  "coverage": "full",
+  "summary": "The records agree on topic and broad outcomes for the draft recommendations (affordable housing trust to must-have, farmland strategy to must-have, town center walkability must-have), but the official minutes are a bullet outline with no vote record other than adjournment, and the two differ on who attended, on the 30 School Street disposition, and on several decisions only one side records. The one thing to know: the 30 School Street outcome (parking prioritized in ours, \"Nice to Have\" green space in the official) and the unrecorded committee chair identity and attendee roster should be checked against the recording.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 2,
+   "discrepancy": 10,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Affordable housing trust upgraded to must-have",
+    "ours": "Upgrade the affordable housing trust fund item to a must-have, since it costs the town little beyond staff time.",
+    "official": "Establish affordable housing trust to help with housing projects \n ○ State will fund this \n ○ Convert to must have",
+    "note": "Both records show the trust item converted to must-have; the rationale differs in wording (staff time only vs. 'State will fund this').",
+    "t": 5442
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Rationale for the affordable housing trust",
+    "ours": "[t=5296] state Affordable Housing Trust Fund allocation: in the millions every year; item costs the town little beyond staff time",
+    "official": "○ State will fund this",
+    "note": "Both attribute funding to the state, but ours says the town's cost is staff time and the state allocation is in the millions; the official says only that the state will fund it. Check the recording around t=5296 to see what was actually said.",
+    "t": 5296
+   },
+   {
+    "kind": "agree",
+    "about": "Farmland strategy as must-have",
+    "ours": "Restore the farmland inventory/strategy item as a must-have rather than dropping it.",
+    "official": "Create Strategy for town owned farmland \n ○ Must have",
+    "note": "Both end with the farmland item as a must-have.",
+    "t": 6940
+   },
+   {
+    "kind": "agree",
+    "about": "Make town center more walkable stays must-have",
+    "ours": "Confirm 'make the town center more walkable' remains a must-have, as previously voted.",
+    "official": "Making town center more walkable \n ○ Must Have",
+    "note": "Same outcome in both.",
+    "t": 7164
+   },
+   {
+    "kind": "discrepancy",
+    "about": "30 School Street / old primary school site",
+    "ours": "Combine competing 30 School Street proposals into 'develop options for green space or parking,' with parking prioritized for now.",
+    "official": "Develop options for a green space at 30 School site (Old Primary School Site) \n ○ Nice to Have",
+    "note": "Ours combines green space and parking with parking prioritized; the official lists only green space as Nice to Have with no mention of parking or a combination. Check the recording near t=7834 for the final wording and priority.",
+    "t": 7834
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Small-business startup funding / Economic Director",
+    "ours": "Drop dedicated small-business startup funding; focus instead on easing bylaws/permitting for new businesses.",
+    "official": "Hire Economic Director \n ○ Reject Strategy",
+    "note": "The official records rejecting an Economic Director strategy and does not mention startup funding or permitting; these may be different items. Check which item was being decided at t=7376.",
+    "t": 7376
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Specific building reuse (TC Passios) vs. general land/building inventory",
+    "ours": "Keep only a general 'inventory and create a long-term plan for all town land and buildings' item, since specific building reuse proposals have repeatedly failed at town meeting.",
+    "official": "Partially Demolish and repurpose TC Passios as a community center \n ○ Reject Strategy",
+    "note": "Both drop the specific building proposal, but the official does not record the general inventory/long-term plan that ours says was kept. Confirm at t=8351 whether the general item was kept.",
+    "t": 8351
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sidewalk and bike connectivity items",
+    "ours": "Keep sidewalk/bike connectivity items as nice-to-have, flagged with a feasibility/cost caveat rather than removed.",
+    "official": "Work with MasDOT and state add sidewalks \n ○ Will rephrase and get back to us \n● Prioritize bike infrastructure to connect surrounding areas \n ○ Will rephrase and get back to us",
+    "note": "Ours records a decision to keep them as nice-to-have with a caveat; the official says the consultant will rephrase and report back, with no categorization. Check the recording near t=8942 for whether a tier was set.",
+    "t": 8942
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Townhouse recommendation reworked into missing middle housing",
+    "ours": "Rework the townhouse recommendation into a broader 'missing middle' housing recommendation covering a range of housing types.",
+    "official": "",
+    "note": "The official minutes record no decision about townhouses or missing middle housing; they list other items from the July 9 draft. Check the recording near t=1581 and whether the official omitted it.",
+    "t": 1581
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Inclusionary zoning wording",
+    "ours": "Reword the inclusionary zoning must-have to 'study the impacts of inclusionary zoning on development feasibility.'",
+    "official": "Require a percentage of units in market rate developments to be deed-restricted \n affordable housing - was discussed",
+    "note": "The official says only 'was discussed' with no outcome; ours records a rewording decision. Check the recording near t=2546.",
+    "t": 2546
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Complete Streets construction funding figure",
+    "ours": "Complete Streets construction funding: $500,000",
+    "official": "",
+    "note": "The official minutes carry no dollar figure for Complete Streets; the $500,000 should be checked against the recording at t=8735 since captions may mishear amounts.",
+    "t": 8735
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Distribution of feedback spreadsheet",
+    "ours": "Distribute the committee feedback spreadsheet only to chairs and vice chairs of other boards, not full boards, to avoid open meeting law issues.",
+    "official": "Tristan shared a sheet to help get feedback from committees \n ○ Over Under to provide new spreadsheet with feedback \n● How to divide to get feedback \n ○ Kim and Tony will take it",
+    "note": "Official says Kim and Tony will take dividing the feedback and does not record the chairs/vice-chairs restriction or open meeting law concern. Check the recording near t=9958.",
+    "t": 9958
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Target date for board feedback",
+    "ours": "Target roughly early-to-mid September for other town boards/committees to return feedback on the draft recommendations.",
+    "official": "Finalize timing was discussed",
+    "note": "The official says timing was discussed without giving a date; the September target is only in ours.",
+    "t": 10177
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town meeting presentation and October listening session",
+    "ours": "Briefly present the master plan's current state at the upcoming town meeting without seeking a vote, and hold a fuller public listening session in October.",
+    "official": "",
+    "note": "Nothing about a town meeting presentation or an October session appears in the official minutes. Check the recording near t=10306.",
+    "t": 10306
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Items rejected or merged",
+    "ours": "",
+    "official": "Encourage farm to table restaurants \n ○ Combined with farmers market",
+    "note": "The official lists several items rejected or merged (farm to table, locally grown product, open space connectivity, farmers market, lower town common), which our decision list does not capture.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Nice-to-have: land subdivision and first-time buyer program",
+    "ours": "",
+    "official": "Encourage land subdivision in areas with sewer and water \n ○ Nice to Have",
+    "note": "The official records these two nice-to-have classifications; ours has no corresponding decisions.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vacant seats and minutes approvals",
+    "ours": "",
+    "official": "Vacant Seats (Conservation Commission, Zoning Board of Appeals, At Large)",
+    "note": "The official records discussion of vacant seats and corrections to the 6/25 and 7/9 minutes; ours records none of this.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Adjournment vote",
+    "ours": "none (no non-procedural votes)",
+    "official": "Kim Duffy made a Motion to Adjourn. Motion was seconded by Jerry. Roll Call Vote:",
+    "note": "Adjournment is procedural, but the official roll call lists Jerry among voters while Jerry is not in its attendee list; also meeting ends 8:59 PM and Emily left 8:41 PM. Check the roster.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees and chair",
+    "ours": "the chair (chair); Debbie; Glenn; Jerry; Tim; Emily; Kim; Matt; Ramy; Tristan",
+    "official": "Kim Duffy (Chair, Member At Large)",
+    "note": "Ours does not identify Kim as chair and includes Jerry, who is absent from the official attendee list yet appears in its adjournment vote; check the recording and the official roster.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Consultant name",
+    "ours": "Ramy (consultant (Overunder planning team))",
+    "official": "Rami el Samahy (Over Under Consultant)",
+    "note": "Same person, spelling misheard.",
+    "official_reading": "Rami el Samahy"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Planning board chair name",
+    "ours": "Matt (town official (land use/planning))",
+    "official": "Matthew Brenner (Planning Board Chair)",
+    "note": "Same person; ours has first name only and a vaguer role.",
+    "official_reading": "Matthew Brenner"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:26:25Z",
+   "cost_usd": 0.244319
+  }
  }
 }

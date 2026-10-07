@@ -364,5 +364,182 @@
    "at": "2026-09-27T19:41:17Z",
    "cost_usd": 0.196438
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04292025-7189",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-04-29-minutes-7189.txt",
+   "path": "sources/meetings/sewer-commission/2025-04-29-minutes-7189.pdf"
+  },
+  "official_sha256": "8a7623b3153e699db1c2bc81d4e3d2e3a5b8aa7613992df05e3d88ec8533b1f1",
+  "coverage": "full",
+  "summary": "The records agree on the broad agenda, the 26% delinquency figure, the hiring of Susan with a May 27 start, and no commission votes on warrant articles 21, 23 and 24. The main difference is the roll-call vote to accept the 3/25 and 4/15 minutes, which only the official minutes record; our minutes also carry dollar figures ($14,000, $20, 1.276 million) that the official minutes do not.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 6,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Approval of 3/25/25 and 4/15/25 minutes (vote)",
+    "ours": "VOTES (non-procedural): none",
+    "official": "To a ccept the minutes of 3/25/25 and 4/15/25.                Roll Call Vote: Scott-aye, Joe-\naye and Brett-aye.",
+    "note": "The official minutes record a roll-call vote (3-0) to accept prior minutes that our minutes do not capture; our list may have treated it as procedural, but check the recording around the start of the DPW updates.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Warrant articles 21, 23, 24 handled without a vote (transfers)",
+    "ours": "Warrant article 21: transfer of funds related to OPEB — not stated (discussed only); article 23: move money into the I&I fund; article 24: move money into the sewer reserve capacity fund — discussed only",
+    "official": "Articles 21, 23 & 24 will be part of the Consent Calendar and Article 22 (Budget) will be presented at Town Meeting.",
+    "note": "Both records show these articles were discussed, not voted by the commission; official minutes add they go on the Consent Calendar but give no transfer amounts.",
+    "t": 1763
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant article 22 revenue/indirect cost figure of 1.276 million",
+    "ours": "Warrant article 22 revenue/indirect cost figure: 1.276 million",
+    "official": "",
+    "note": "Official minutes mention a summary of revenues and estimated expenses for Article 22 but give no dollar figure.",
+    "t": 1931
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Q4 FY25 sewer billing amount",
+    "ours": "Q4 FY25 sewer billing: $14,000",
+    "official": "",
+    "note": "Official minutes discuss the Q4 billing run but give no dollar amount; the official '14' refers to Munis curveballs, so $14,000 may be a mishearing and should be checked on the recording.",
+    "t": 1508
+   },
+   {
+    "kind": "caption_error",
+    "about": "Uncollected billing / delinquency rate",
+    "ours": "Uncollected billing: 26%",
+    "official": "the issue of the 26% delinqu ency rate",
+    "note": "Same 26% figure; official calls it a delinquency rate.",
+    "official_reading": "26% delinquency rate",
+    "t": 2127
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Demand billing discrepancy of $20",
+    "ours": "Demand billing discrepancy: $20",
+    "official": "",
+    "note": "Official minutes mention demands being mailed but no $20 discrepancy.",
+    "t": 2188
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Commission vacancies follow-up",
+    "ours": "Scott will locate the town volunteer form and email address, and Bill/Scott will draft a short recruitment letter for commission vacancies to bring to the next meeting.",
+    "official": "Bill was abl e to locate the previous  letter sent out and will \nemail it to the Commissioners for edits  at the next meeting.",
+    "note": "Who does what differs: ours has Scott locating the volunteer form and Bill/Scott drafting a new letter; official has Bill locating the previous letter and emailing it for edits. Check the recording.",
+    "t": 1093
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who presents the town meeting slideshow",
+    "ours": "Bill will present the town meeting slideshow in place of Brett, who cited difficulty hearing in the meeting room.",
+    "official": "Bill will do the presentation  which will include  a summary of the \nRe venues and estimated E xpenses .",
+    "note": "Both say Bill presents, but the official minutes do not mention Brett being replaced or the hearing reason; confirm on the recording.",
+    "t": 2057
+   },
+   {
+    "kind": "agree",
+    "about": "Assistant to Sewer Business Manager hire",
+    "ours": "The commission has recommended hiring a candidate named Susan for the assistant to the business manager position, with an anticipated start date of May 27 pending HR completion.",
+    "official": "Bill reported they  interviewed a woman named Susan  and she is going through the HR process. If everything goes as planned, her start date will be \nMay 27 th .",
+    "note": "Same candidate and start date; our 'commission recommended hiring' is stronger than the official 'interviewed' wording, which records no commission vote.",
+    "t": 2422
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brett Ramston",
+    "ours": "Brett Ramston (vice chair)",
+    "official": "Vice-Chair-  Brett Ramsden",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Joseph Early",
+    "ours": "Joseph Early (commissioner)",
+    "official": "Member: Joe Hurley",
+    "note": "Misheard surname.",
+    "official_reading": "Joe Hurley",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Scott Dah",
+    "ours": "Scott Dah (commissioner)",
+    "official": "Clerk- Scott Dall",
+    "note": "Misheard surname; official gives his role as Clerk.",
+    "official_reading": "Scott Dall",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Bill Bernard",
+    "ours": "Bill Bernard (DPW director / sewer business manager)",
+    "official": "DPW Directo r-  \nBill Bernard , Sewer Business Manager: Andrew Valliere",
+    "note": "Name matches.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Andrew Valerie",
+    "ours": "Andrew Valerie (staff, billing)",
+    "official": "Sewer Business Manager: Andrew Valliere",
+    "note": "Misspelled surname; official lists Andrew as Sewer Business Manager.",
+    "official_reading": "Andrew Valliere",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jane Ranway",
+    "ours": "Jane Ranway (recording secretary / minute taker)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "Misheard surname.",
+    "official_reading": "Jane Ranley",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "CWMP discussion",
+    "ours": "",
+    "official": "---CWMP  (Comprehensive Wastewater Management Plan )  discussion-  Bill emailed  the",
+    "note": "The official minutes record a long CWMP discussion (phases, priority areas, Leominster vs Fitchburg) that does not appear in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Manhole repair start date",
+    "ours": "",
+    "official": "III. Manhole Repair IFB  – Bill contacted  Insituform and they plan on start ing  in June .",
+    "note": "Official records Insituform starting in June; not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Borrowing from Retained Earnings, no rate increase",
+    "ours": "",
+    "official": "They will need to borrow from Retained Earnings but the \ngood news is rates will not increase.",
+    "note": "Budget-relevant statement about Article 22 funding and rates absent from our minutes; verify on the recording.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:30:18Z",
+   "cost_usd": 0.23921699999999999
+  }
  }
 }

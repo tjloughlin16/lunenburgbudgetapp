@@ -672,5 +672,361 @@
    "at": "2026-09-27T02:37:10Z",
    "cost_usd": 0.19701839999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05062026-7797",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-05-06-minutes-7797.txt",
+   "path": "sources/meetings/conservation-commission/2026-05-06-minutes-7797.pdf"
+  },
+  "official_sha256": "4e9afedb03497ef1434e471a8979d2a06f369a1b34f14a8467bc7f81bae4e11e",
+  "coverage": "full",
+  "summary": "The two records agree on nearly every vote, outcome and condition, and most differences are caption misreadings of names and street names. The substantive differences: our minutes say LaRouche was \"recused\" on 922 Flatill Road and 189 Hemlock Drive while the town records \"Abstain\"; our minutes give a 30% native-cover condition on Marshall Pond that the town's minutes lack; and the date the finance director attends (May 20 vs \"June 20\") differs.",
+  "counts": {
+   "agree": 24,
+   "caption_error": 10,
+   "discrepancy": 4,
+   "only_in_ours": 1,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Hollis Road shed roof repair vote, $191.86, 5-0",
+    "t": 274,
+    "ours": "Approve $191.86 for shingles, nails and construction bags to repair the front section of the Hollis Road shed roof, funds from the Haw/Hollis Road fund — passed 5-0",
+    "official": "M. Larouche, to approve $191.86 from the HAWS fund for shed repair at 123 Hollis.",
+    "note": "Same amount, purpose and five AYE votes; 'Haw' is a caption rendering of HAWS, and the transfer from that fund matches."
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 17 Crocker RDA to later in meeting",
+    "t": 582,
+    "ours": "Continue the RDA hearing for 17 Crocker until later in the meeting (applicant absent) — passed 5-0",
+    "official": "M. Wilson, to continue to later in the meeting.",
+    "note": "Same motion and unanimous outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "30 Pine Grove Road NOI approval with conditions",
+    "t": 1362,
+    "ours": "Approve NOI for 30 Pine Grove Road with special conditions on grading/seeding schedule and recording the flood-plain plan — passed 5-0",
+    "official": "1. The grading to the east side of the driveway is completed by September 1st.",
+    "note": "Same approval, 5 AYE; official conditions are the Sept 1 grading deadline and submitting the BLFS plan with the Order, matching our summary."
+   },
+   {
+    "kind": "agree",
+    "about": "64 Cross Road notice of project change",
+    "t": 1591,
+    "ours": "Approve de minimis notice of project change at 64 Cross Road (raise structure elevation) — passed 5-0",
+    "official": "the applicant wanted to raise the elevation of the structure",
+    "note": "Same item and outcome, 5 AYE."
+   },
+   {
+    "kind": "agree",
+    "about": "68 Cross Road project change (dry well)",
+    "t": 1715,
+    "ours": "Approve de minimis change at 68 Cross Road (add dry well) — passed 5-0",
+    "official": "the applicant wanted to add an additional drywall system",
+    "note": "Same approval; the official 'drywall system' is evidently a dry well, so it may be a typo in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "881 Flat Hill Road boat house approval",
+    "t": 2696,
+    "ours": "Approve order of conditions for 881 Flatill Road boat house reconstruction with condition that debris be removed daily — passed 5-0",
+    "official": "1. Building material and debris to be removed daily from the site",
+    "note": "Same condition and 5 AYE; 'Flatill' is a caption error for 'Flat Hill'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name Flat Hill Road",
+    "t": 2696,
+    "ours": "881 Flatill Road",
+    "official": "881 Flat Hill Road: NOI-26-15",
+    "official_reading": "Flat Hill Road",
+    "note": "Caption misheard the street name; applies to 922 Flatill Road too."
+   },
+   {
+    "kind": "agree",
+    "about": "56 Ruth Street continued to May 20",
+    "t": 3389,
+    "ours": "Continue 56 Ruth Street hearing to May 20 pending peer review — passed 5-0",
+    "official": "M. Larouche, to continue to May 20, expecting the following:",
+    "note": "Same continuance and unanimous vote; official expects driveway-grading narrative and peer review results."
+   },
+   {
+    "kind": "agree",
+    "about": "30 Summer Street approval with conditions",
+    "t": 3996,
+    "ours": "Approve 30 Summer Street with condition that updated O&M plans and storm water reports be submitted before the order issues — passed 5-0",
+    "official": "1. Updated 0&M plans are provided",
+    "note": "Same approval with updated O&M plans and stormwater reports; 'before the order issues' is not in the official text but the substance matches."
+   },
+   {
+    "kind": "agree",
+    "about": "860 New West Townsend Road continued to May 20",
+    "t": 4059,
+    "ours": "Continue 860 New Weston Road to May 20 at applicant's request — passed 5-0",
+    "official": "Motion: M. Larouche, to continue to May 20 at the request of the applicant",
+    "note": "Same outcome and 5 AYE."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name for 860 New West Townsend Road",
+    "t": 4059,
+    "ours": "860 New Weston Road",
+    "official": "860 New West Townsend Road: NOI-26-1 (Continued from 04/15/26)",
+    "official_reading": "New West Townsend Road",
+    "note": "Caption misheard the street name."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "922 Flat Hill Road continuance, LaRouche recused vs abstained",
+    "t": 4693,
+    "ours": "Continue 922 Flatill Road to May 20 — passed with Mike LaRouche recused",
+    "official": "M. Larouche - Abstain",
+    "note": "Recusal and abstention differ in meaning (conflict of interest vs. declining to vote); check the recording at this timestamp to see whether LaRouche stated a conflict."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "189 Hemlock Drive NOI, LaRouche recused vs abstained; Wilson not called",
+    "t": 5020,
+    "ours": "Approve NOI at 189 Hemlock Drive — passed with Mike LaRouche recused",
+    "official": "M. Wilson - not called\nM. Larouche - Abstain",
+    "note": "The official records an abstention (and Wilson not called) where ours says recused; check the recording for whether a conflict was declared and who actually voted."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Marshall Pond vegetation management condition and vote",
+    "t": 5482,
+    "ours": "Approve Marshall Pond vegetation management with condition not to eradicate native aquatic species, retaining at least 30% native cover — passed (Mike LaRouche voted after being told he could, since no testimony was taken at the meeting he missed)",
+    "official": "1. Take special precautions to not eradicate the native aquatic plant species that\nare currently in the lake.",
+    "note": "The official condition has no 30% native-cover figure and no mention of LaRouche being cleared to vote; check the recording for whether 30% was part of the motion."
+   },
+   {
+    "kind": "agree",
+    "about": "10 Parmenter Road Lot 16 NOI approved as presented",
+    "t": 6096,
+    "ours": "Approve NOI as presented for 10 Perimeter Road, lot 16 — passed",
+    "official": "M. Wilson, to approve as presented.",
+    "note": "Same approval; all six members voted AYE in the official record."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name Parmenter Road",
+    "t": 6096,
+    "ours": "10 Perimeter Road",
+    "official": "4 Parmenter Rd PKA 10 Parmenter Road Lot 16: NOI-26-6",
+    "official_reading": "Parmenter Road",
+    "note": "Caption misheard Parmenter as Perimeter."
+   },
+   {
+    "kind": "agree",
+    "about": "83 Round Road (lot 17) approval",
+    "t": 6410,
+    "ours": "Approve NOI for 83 Round Road (lot 17) — passed",
+    "official": "J. Pewtherer, to approve.",
+    "note": "Same approval, unanimous in official."
+   },
+   {
+    "kind": "agree",
+    "about": "99 Round Road (lot 22) approval with O&M condition",
+    "t": 6935,
+    "ours": "Approve 99 Round Road (lot 22) with condition that O&M schedule/plan be recorded with the order, extended to prior lots too — passed",
+    "official": "2. This requirement be added to the other lots in the larger project.",
+    "note": "Same condition: O&M plan recorded with the Order, extended to other lots."
+   },
+   {
+    "kind": "agree",
+    "about": "107 Round Road (lot 23) approval",
+    "t": 7231,
+    "ours": "Approve 107 Round Road (lot 23) — passed",
+    "official": "J. Pewtherer, to approve.",
+    "note": "Same approval."
+   },
+   {
+    "kind": "agree",
+    "about": "1625 Massachusetts Avenue continued to May 20",
+    "t": 7528,
+    "ours": "Continue 1625 Massachusetts Avenue (Cary Nature Center ADA parking/trail) to May 20 — passed",
+    "official": "J. Pewtherer, to continue to May 20.",
+    "note": "Same continuance."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Nature center name",
+    "t": 7528,
+    "ours": "Cary Nature Center",
+    "official": "Cowdery Nature Center",
+    "official_reading": "Cowdery Nature Center",
+    "note": "Caption misheard the name."
+   },
+   {
+    "kind": "agree",
+    "about": "60 Peninsula Drive alternate patio approval",
+    "t": 8322,
+    "ours": "Approve the alternate patio plan (outside the 30-ft buffer) at 60 Peninsula Drive with erosion-control conditions — passed",
+    "official": "M. Wilson, to approve the second patio proposal.",
+    "note": "Same approval of the second plan outside the 30-foot zone; official notes erosion protection at the 40-foot line, not as a formal motion condition."
+   },
+   {
+    "kind": "agree",
+    "about": "18 Oak Ridge Road continued to June 17",
+    "t": 8509,
+    "ours": "Continue 18 Oakridge Road to June 17 — passed",
+    "official": "J. Pewtherer, to continue to June 17 at applicant's request.",
+    "note": "Same continuance date."
+   },
+   {
+    "kind": "agree",
+    "about": "60 Cross Road amended order continued",
+    "t": 8961,
+    "ours": "Continue the 60 Cross Road amended order of conditions to May 20 — passed",
+    "official": "M. Larouche, to continue to May 20.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "50 Sunset Lane agent determination ratified",
+    "t": 9658,
+    "ours": "Ratify the agent's determination at 50 Sunset Lane (tree removal/replacement) — passed",
+    "official": "R. Bursch, to ratify Agent's recommendation",
+    "note": "Same ratification."
+   },
+   {
+    "kind": "agree",
+    "about": "715 Reservoir Road replacement trees and stabilization",
+    "t": 10852,
+    "ours": "Require 11 replacement trees (3 maple, 3 pine, 3 oak, 2 birch) and erosion stabilization within 30 days at 715 Reservoir Road, or daily fines — passed",
+    "official": "5. Immediate stabilization with matting/seed or mulch within 30 days or\nimplement daily fines",
+    "note": "Same tree mix (11 total), 30-day stabilization and daily-fine consequence."
+   },
+   {
+    "kind": "agree",
+    "about": "250/356 Hollis Road, no commission interest",
+    "t": 11739,
+    "ours": "Authorize the chair to tell the Select Board the commission is not interested in the town acquiring 250/356 Hollis Road — passed",
+    "official": "M. Wilson, to authorize the Chair to inform the Town, this Commission has no interest\nin the properties.",
+    "note": "Same decision; official says 'the Town' rather than the Select Board."
+   },
+   {
+    "kind": "agree",
+    "about": "Pollinator habitat use of Hollis Road shed",
+    "t": 12796,
+    "ours": "Approve giving the pollinator habitat use of the remaining section of the Hollis Road shed — passed",
+    "official": "M. Wilson, to authorize the Pollinator Habitat to utilize the right side of the shed at 123\nHollis.",
+    "note": "Same authorization, unanimous."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Date the finance director/budget meeting occurs",
+    "t": 12140,
+    "ours": "The new finance director will join the May 20 meeting at 6:45 p.m., 15 minutes early, to walk through the conservation budget.",
+    "official": "Meeting with finance has been scheduled and she will present to the Commission at the\nJune 20 meeting.",
+    "note": "Ours says May 20 at 6:45 p.m.; the official says June 20 (the upcoming schedule lists only 05/20); check the recording for the date, since the official may contain a typo."
+   },
+   {
+    "kind": "agree",
+    "about": "Fee schedule bylaw proposal for fall town meeting",
+    "t": 11908,
+    "ours": "The conservation agent will meet town counsel in June to draft updated fee-schedule bylaw/charter language, targeting a fall town meeting warrant article.",
+    "official": "She will meet again in June to finalize the proposal for the fall town meeting.",
+    "note": "Same June timing and fall town meeting target; the official does not mention town counsel or say who 'she' is."
+   },
+   {
+    "kind": "agree",
+    "about": "NHS students volunteering at Hollis Road shed",
+    "t": 12459,
+    "ours": "National Honor Society student volunteers will be used to help strip and re-shingle the Hollis Road shed roof and possibly mow the property.",
+    "official": "M. Wilson\nreminded everyone they NHS students need community volunteer hours. M. Larouche noted that he needs\nstudents to mow the lawn.",
+    "note": "Same discussion about student volunteers and mowing; the official does not mention re-shingling."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair handoff for administrative portion",
+    "t": 8568,
+    "ours": "Chair duties for the administrative/business portion of the meeting were handed from Richard Burch to Jenny Putra.",
+    "official": "",
+    "note": "The official minutes record no handoff of chair duties."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of April 15 minutes",
+    "ours": "",
+    "official": "T. Doucette, to approve the minutes of the April 15 meeting.",
+    "note": "The official records this vote (Wilson abstaining); ours lists no minutes vote, though it is procedural."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation agent name",
+    "t": 0,
+    "ours": "Harland (also heard as Hurland/Herland/Erlin) (conservation agent/administrator)",
+    "official": "Herlin Jamie - Conservation Agent",
+    "official_reading": "Herlin Jamie",
+    "note": "Caption variants of the agent's name; the official minutes also refer to him as 'H. Jaime'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "t": 0,
+    "ours": "Richard Burch (\"Rich\") (chair)",
+    "official": "Richard Bursch",
+    "official_reading": "Richard Bursch",
+    "note": "Caption spelled the surname Burch."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Pewtherer",
+    "t": 0,
+    "ours": "Jenny Putra (member; took over as chair for the administrative portion)",
+    "official": "Jennifer Pewtherer",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "Caption misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Doucette",
+    "t": 0,
+    "ours": "Teddy Ducet (member)",
+    "official": "Teddy Doucette",
+    "official_reading": "Teddy Doucette",
+    "note": "Caption misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Burnap",
+    "t": 0,
+    "ours": "Andrea Bernap (member)",
+    "official": "Andrea Burnap",
+    "official_reading": "Andrea Burnap",
+    "note": "Caption misheard the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Larouche",
+    "t": 0,
+    "ours": "Mike LaRouche (member)",
+    "official": "Michael Larouche",
+    "official_reading": "Michael Larouche",
+    "note": "Capitalization and first-name form differ only."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendance: Mary Wilson present",
+    "t": 0,
+    "ours": "Mary Wilson (member)",
+    "official": "i. Present: M. Wilson, M. Larouche, T. Doucette, A. Burnap, R. Bursch.",
+    "note": "All six commissioners attended; official notes Pewtherer joined partway through the meeting."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:17:38Z",
+   "cost_usd": 0.31486539999999996
+  }
  }
 }

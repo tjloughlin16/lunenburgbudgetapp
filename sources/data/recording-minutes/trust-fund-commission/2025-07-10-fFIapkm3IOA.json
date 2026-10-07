@@ -322,5 +322,120 @@
    "at": "2026-09-27T13:00:44Z",
    "cost_usd": 0.187256
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07102025-7309",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2025-07-10-minutes-7309.txt",
+   "path": "sources/meetings/trust-fund-commission/2025-07-10-minutes-7309.pdf"
+  },
+  "official_sha256": "53cf2b74f977396f8fe3a4ca5f6e63bd22eb259dcb5f3c7de9db0ff47f03baa1",
+  "coverage": "full",
+  "summary": "The two records agree on the one vote (the vacancy letter, unanimous by roll call), the next meeting date and the two attendees. Our minutes add figures and decisions the official minutes do not record. The caption-heard total of expendable trust funds is garbled and has no official counterpart.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to send the letter on the commission vacancy",
+    "ours": "To send/update the letter to the select board regarding the vacancy on the commission — passed, unanimous (roll call, 2 members voting)",
+    "official": "Chairman  Bowen made the motion, by roll call\nvote, to send the letter as written, signed electronically using /S/ after the names of the \ncommissioners which is the legal method of electronic signatures accepted by the courts\nby Chairman  Bowen and Vice-Chair Howard .  Motion passed unanimously.",
+    "note": "Both record a unanimous roll-call vote of the two members to send the vacancy letter. Ours says 'send/update'; the official says 'as written'. The wording differs slightly but the outcome is the same.",
+    "t": 4846
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next regular meeting set for Thursday, July 24.",
+    "official": "Next meeting scheduled for Thursday July 24, 2025  at 5:00 PM.",
+    "note": "Same date in both.",
+    "t": 5301
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "John Bowen (chairman); Richard Howard (vice chairman)",
+    "official": "Present: Chairman  John Bowen and Vice-Chair Richard Howard",
+    "note": "Same two members present.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Executive session / declaration review decision",
+    "ours": "Commission will pursue executive session access to trust declaration documents at the treasurer's office rather than reviewing them elsewhere.",
+    "official": "A \nreview of these declarations may need to be carried out  in Executive  Session in \ncooperation with the Town Treasurer.",
+    "note": "Ours records a decision to pursue executive session access at the treasurer's office. The official says only that a review 'may need to be' done in executive session. Check the recording at t=4949 to see whether the commission actually decided or only floated it.",
+    "t": 4949
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Governing policy / table discussion",
+    "ours": "Table discussion of creating a governing policy for the trust funds until the next meeting, listed as old business, pending clarity on which statutes and declarations apply.",
+    "official": "There was no specific action items assigned to, or committed by, either member \nof the Commission that are due in advance of the next scheduled meeting .",
+    "note": "Ours records a decision to table the governing-policy discussion to the next meeting. The official records no such decision and says no action items were assigned. Check the recording at t=5053 for whether a tabling was agreed.",
+    "t": 5053
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Letter to Bartholomew and/or treasurer",
+    "ours": "Commission will continue drafting a letter to the investment firm Bartholomew and/or the treasurer once it has enough information, but could not yet send one.",
+    "official": "There was no specific action items assigned to, or committed by, either member \nof the Commission that are due in advance of the next scheduled meeting .",
+    "note": "Ours records an ongoing commitment to draft a letter. The official says no action items were committed and does not mention this letter. Check the recording at t=5219.",
+    "t": 5219
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bartholomew and Company total managed assets",
+    "ours": "Bartholomew and Company's total managed assets: $2.9 billion",
+    "official": "",
+    "note": "The official minutes name the firm and the presentation but give no asset figure.",
+    "t": 1906
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prudent investor projected returns and bond yields",
+    "ours": "Prudent investor projected returns: 6% annualized return, 6 to 7%; Current bond yields: about 5%",
+    "official": "Representatives of Bartholemew discussed the new Prudent Investor Rule MGL 203c \nthat expands investment opportunities to allow Municipalities to seek higher returns and \ndiversification",
+    "note": "The official minutes mention the Prudent Investor Rule but give no return or yield figures. These figures appear only in ours.",
+    "t": 2892
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Trust fund totals, annual yield and scholarship payout example",
+    "ours": "Total town trust/investment funds: $27 million; annual yield 2.4%; scholarship payout example $50 a year; expendable trust funds total 1,454,3 454,369 607, 1,454,36967",
+    "official": "",
+    "note": "None of these figures appears in the official minutes. The expendable total in ours is garbled by the captions and cannot be read as one amount. The official does say Mr. Howard found returns 'far below the rate of inflation', with no number.",
+    "t": 3941
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pharmaceutical sector concentration",
+    "ours": "",
+    "official": "During the presentation, it appears that our current portfolio  is heavily weighted  in the pharmaceutical sector, which presents some  industry risk that may expose the funds to \npoor returns.",
+    "note": "Our minutes do not record this observation about the portfolio.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Attorney / Town Manager exchange and Chairman's statement",
+    "ours": "",
+    "official": "Chairman  Bowen felt the \ncost of an Attorney is not necessary to “direct us ” for two reasons",
+    "note": "The chairman's statement on transparency and his objection to hiring the Town Attorney appear only in the official minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:26:41Z",
+   "cost_usd": 0.230541
+  }
  }
 }

@@ -268,5 +268,149 @@
    "at": "2026-09-27T12:27:15Z",
    "cost_usd": 0.189972
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09222025-7401",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-09-22-minutes-7401.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-09-22-minutes-7401.pdf"
+  },
+  "official_sha256": "244f1280ea496989ac55e0603e53347a07534cc12da90c44bf996fa6538fb967",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the meeting, the two Master Plan goals discussed, and the October 6 next meeting. The official minutes are a summary that points to an attached document for the wording, so the bylaw citations, referenced materials and edit process are only in ours. They also record an adjournment vote and an excused member that ours lacks.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to designate who submits the master-plan feedback document",
+    "t": 1488,
+    "ours": "designate who (the IT guy/secretary) submits the completed master-plan feedback document — not audible",
+    "official": "",
+    "note": "Ours lists a vote the official minutes do not record; the official minutes show only an adjournment vote. Check the recording at 1488 to see whether a motion was actually made and who was designated.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Goal 6 discussed as within PACC's jurisdiction",
+    "t": 1652,
+    "ours": "Place PACC's building/space needs under Goal 6 (\"Optimize use of municipal buildings and properties\") rather than only under Goal 5 (\"Support Community Gathering Spaces\").",
+    "official": "S.Walker\tled\ta\tdiscussion\ton\tfilling\tout\tGoal\t#6\tof\tthe\tMaster\tPlan\tas\tthe\tcommittee\tfelt\tthe\tGoal\t#6\twas\twithin\tPACC’s\tjurisdiction.",
+    "note": "Both say the committee treated Goal 6 as within its remit; the official minutes say nothing about the Goal 5 comparison."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bylaw citation for Goal 5 answers (Article 5, 12-9 to 12-16)",
+    "t": 2132,
+    "ours": "Cite town bylaws Article 5, sections 12-9 through 12-16, as the source bylaw for PACC's answers under Goal 5.",
+    "official": "",
+    "note": "The official minutes say only that wording was finalized, 'see document'. The bylaw citation could be checked in that attached document."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bylaw citation for Goal 6 (12-9 to 12-16, mission in 12-10)",
+    "t": 3686,
+    "ours": "Cite the same bylaw sections (12-9 through 12-16), including PACC's mission stated in bylaw 12-10, as the source bylaw under Goal 6.",
+    "official": "",
+    "note": "The official minutes do not describe the Goal 6 content; check the attached Master Plan document."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reference to studio space plans and equipment inventory",
+    "t": 2662,
+    "ours": "Reference existing PACC materials -- studio space plans (as originally proposed) and a current equipment inventory list -- as the committee's existing policy/planning documents for the form.",
+    "official": "",
+    "note": "The official minutes do not mention these materials."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Secretary compiles edits; comments go to chair only",
+    "t": 3859,
+    "ours": "The secretary will compile all committee members' edits into one master document; members are to send comments to the chair (Steve W) only, not to each other, per the open meeting law.",
+    "official": "",
+    "note": "The official minutes record no follow-up process or open meeting law instruction."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Studio build-out cost",
+    "t": 2806,
+    "ours": "Studio build-out cost: a pretty penny",
+    "official": "",
+    "note": "No figure is given in ours and the official minutes contain no budget figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "t": 3979,
+    "ours": "Next (regular) meeting set for October 6.",
+    "official": "Next meeting: - October 6, 2025 6:00 pm.",
+    "note": "Same date; the official minutes add the 6:00 pm time."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Meeting manager's name",
+    "ours": "Joe (manager)",
+    "official": "Manager:\tJo\tToale",
+    "note": "Captions heard 'Joe'; the official minutes give Jo Toale.",
+    "official_reading": "Jo Toale"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee 'T manager'",
+    "ours": "T manager (as stated (unclear))",
+    "official": "Manager:\tJo\tToale",
+    "note": "Probably a garbled rendering of 'Toale, manager'; the same person as Jo Toale.",
+    "official_reading": "Toale"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Brian",
+    "ours": "Brian (member)",
+    "official": "Brian\tVienneau",
+    "note": "First name only in ours; the official minutes give the surname.",
+    "official_reading": "Brian Vienneau"
+   },
+   {
+    "kind": "agree",
+    "about": "Member Steve Walker present",
+    "ours": "Steve Walker (member)",
+    "official": "Steve\tWalker",
+    "note": "Present in both."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Third member and chair identity",
+    "ours": "Steve (chair)",
+    "official": "Steve\tArchambault",
+    "note": "Ours lists 'Steve (chair)' separately from Steve Walker; the official minutes name a third member, Steve Archambault, and never say who chaired. Check whether 'Steve (chair)' is Archambault and who chaired, since ours also calls Steve W the chair at 3859."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Excused member",
+    "ours": "",
+    "official": "Excused:\tFaith\tBeall",
+    "note": "Ours does not list the absent member."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Adjournment motion and times",
+    "ours": "",
+    "official": "Meeting\tadjourned\tat\t4:09\tpm\t•\t(\tS.Archambault,\t2nd\tB.\tVienneau)\t–\tpassed)",
+    "note": "Procedural, but it is the only recorded vote. Ours has no start or end time."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:24:13Z",
+   "cost_usd": 0.23506499999999997
+  }
  }
 }

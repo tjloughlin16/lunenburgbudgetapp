@@ -330,5 +330,170 @@
    "at": "2026-09-27T02:09:45Z",
    "cost_usd": 0.19053
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07242026-7923",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2026-07-24-minutes-7923.txt",
+   "path": "sources/meetings/trust-fund-commission/2026-07-24-minutes-7923.pdf"
+  },
+  "official_sha256": "39b7a2368aeccd7a426f040aff41da476ba689bb0652fdfef1c683ad584593aa",
+  "coverage": "full",
+  "summary": "The two records agree on the vice-chair vote and the August 27 next meeting, but differ on the second vote: ours records a motion to accept Sund's clarification, while the official minutes record a motion to accept his signature on an attestation, with a third aye. Most figures and the claw-back and attorney decisions in ours are not in the official minutes, and the official minutes' 75% of interest and 3-year residency details are not in ours as such.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 4,
+   "only_in_ours": 7,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to make Richard Howard vice chairman",
+    "t": 446,
+    "ours": "Motion by the chair to make Richard Howard vice chairman of the commission — passed (roll call: Bowen aye, Howard aye)",
+    "official": "Chairman Bowen made a motion  to elect Mr. Howard as the Vice-Chairman of the Lunenburg Board of Trust Fund Commissioners.  Mr. Howard seconded the motion.  The result of the vote was Chairman Bowen = aye, Mr. Howard = aye.",
+    "note": "Same motion, same two ayes in both records."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Second vote on the American Legion Post 283 item",
+    "t": 3149,
+    "ours": "Motion to accept, as written, Ernie Sund's clarification of donor intent regarding the American Legion Post 283 trust fund's eligibility terms — passed (Bowen aye, Howard aye/second)",
+    "official": "Chairman Bowen put forward a motion to accept Mr. Ernie Sund’s signature on the attestation.  The vote on the motion was Chairman Bowen=aye, Mr. Howard=aye, Mr. Ernie Sund=aye.",
+    "note": "The motion is worded differently (clarification of donor intent vs. signature on the attestation) and the official minutes record Sund, a non-member, voting aye; check the recording around t=3149 for the exact motion and whether Sund voted."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "t": 3770,
+    "ours": "Next commission meeting set for August 27, 2026, deferring the treasurer/finance report and other agenda items.",
+    "official": "Due to scheduling conflicts, the next meeting of the Trust Fund Commission will be held on Thursday, August 27,2026.",
+    "note": "Same date; the official minutes do not mention the deferred agenda items."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Deferral of treasurer/finance report and other agenda items",
+    "t": 3770,
+    "ours": "deferring the treasurer/finance report and other agenda items.",
+    "official": "",
+    "note": "Official minutes give only the scheduling-conflict reason and do not mention deferred items."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision not to claw back improperly disbursed money from another fund",
+    "t": 1846,
+    "ours": "Commission will not seek to claw back money improperly disbursed from another fund over the past 15 years, since recipients were not at fault.",
+    "official": "",
+    "note": "A decision in ours that the official minutes do not record at all; check the recording near t=1826-1846 for whether a decision or only discussion occurred."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cy pres filing for Post 283 fund",
+    "t": 595,
+    "ours": "Cy pres filing cost avoidance: under $75,000, less than 20 years old",
+    "official": "Chairman Bowen, along with Town Counsel, feel that a cy pres filing is not necessary for the American Legion Post 283 fund.",
+    "note": "Official gives a conclusion with Town Counsel; ours records a cost/age threshold for avoiding a filing; check the recording at t=595 to confirm the thresholds and that they apply to this fund."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair pursuing town attorney on a separate fund's PC-15 probate filing",
+    "t": 3811,
+    "ours": "Chair will continue pursuing the town attorney (Attorney Chapin, MTC Law) specifically regarding a separate fund's PC-15 probate filing, now that the Legion fund issue is resolved.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Disbursement cap and balance thresholds for Post 283 fund",
+    "t": 2325,
+    "ours": "American Legion Post 283 fund disbursement cap: $350, 25,000, 75%",
+    "official": "which at the current account balance would be equal to 75% of the interest earned.  Chairman Bowen also clarified that there are provisions when the account balance exceeds $25,000 when different amounts can be disbursed.",
+    "note": "The 75% and $25,000 match, but the official minutes do not mention a $350 figure; check the recording at t=2325 for what $350 refers to."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Post 283 balance and distributable amount",
+    "t": 2458,
+    "ours": "American Legion Post 283 trust fund balance: 955147, 10,63233, 11.3%",
+    "official": "",
+    "note": "The official minutes give no balance or distributable amount, and ours are garbled; a person should check the recording and the treasurer's records."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Original seed amount and growth target",
+    "t": 1002,
+    "ours": "Original American Legion fund seed amount and growth target: $25,000, 6 or $7,000",
+    "official": "",
+    "note": "Official minutes do not state the seed amount or growth target."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Total funds held back across trust funds",
+    "t": 2966,
+    "ours": "Total funds held back across trust funds: $64,000",
+    "official": "",
+    "note": "Figure not in official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Improper past disbursements from the poor fund",
+    "t": 1826,
+    "ours": "Poor fund improper past disbursements: over the last uh 15 years",
+    "official": "",
+    "note": "Official minutes do not mention this topic."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Eligibility criteria for Post 283 disbursements",
+    "ours": "",
+    "official": "The eligibility to receive a disbursement  from the American Legion is determined by eligibility to join the American Legion, 3 years verified residency in Lunenburg, and only those that served during a period of conflict.",
+    "note": "Our minutes record no eligibility criteria beyond a reference to eligibility terms."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Unspent funds do not carry forward",
+    "ours": "",
+    "official": "Mr Howard asked a clarifying question on previously unexpended funds, and Mr. Sund clarified that previous year unspent funds do not carry forward.",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Intent to fund a new Post, not in declaration",
+    "ours": "",
+    "official": "Mr. Sund stated that the intent was to have funds also available to start a new Post in Town if people wanted.  This specific item Mr Sund noted is currently not written into the declaration.",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by the chair on appointee process",
+    "ours": "",
+    "official": "Chairman Bowen made some public comment on process improvements that should be implemented on the  handling of appointees.",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: commissioners and Ernie Sund",
+    "ours": "John Bowen (Chair); Richard Howard (Vice Chairman); Ernie Sund (presenter — former Select Board member and American Legion Post 283 fund devisee, not a commission member)",
+    "official": "Commissioners present were Mr. Richard Howard and Chairman John Bowen.",
+    "note": "Same two commissioners, and Sund as a guest and former Selectman in both."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee Kayla (recording/technical support)",
+    "ours": "Kayla (recording/technical support)",
+    "official": "",
+    "note": "Not named in official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:14:12Z",
+   "cost_usd": 0.237009
+  }
  }
 }

@@ -497,5 +497,156 @@
    "at": "2026-09-27T12:28:52Z",
    "cost_usd": 0.194544
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09152025-7398",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2025-09-15-minutes-7398.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2025-09-15-minutes-7398.pdf"
+  },
+  "official_sha256": "0a5219c15b99afd17e8b0f161bd0140139433cd1cedefaac8ef2f28d1d7f5d89",
+  "coverage": "full",
+  "summary": "The two records agree on the officer elections, the attendees, the next-meeting date and the next steps. Our minutes carry the dollar figures from the discussion and a few extra decisions that the official minutes leave out. The official minutes' main extras are the member-by-member discussion and the public input. The one thing to know is that the official minutes have no dollar figures at all, so none of ours can be confirmed from them.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "t": 126,
+    "ours": "Nominate Dave Blad as chair — passed 6-0",
+    "official": "Chair: David Blatt was nominated, seconded and unanimously elected.",
+    "official_reading": "David Blatt",
+    "note": "Same vote and outcome; the captions misheard the surname as 'Blad'. The 6-0 count is ours; the official says 'unanimously' and lists eight members present, so the tally may be incomplete."
+   },
+   {
+    "kind": "agree",
+    "about": "Vice chair election",
+    "t": 234,
+    "ours": "Nominate Tony as vice chair — passed 6-0",
+    "official": "Vice Chair: Anthony Sculumbrine was nominated, seconded, and unanimously elected.",
+    "note": "Same vote and outcome; Tony is Anthony Sculumbrine. Our 6-0 count versus eight members present is the only thing to check."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Kristina Masaitis",
+    "ours": "Christina (at-large member)",
+    "official": "At-Large Members: David Blatt, Kristina Masaitis, Greg Roy",
+    "official_reading": "Kristina Masaitis",
+    "note": "Misheard first name; same at-large member."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Select Board member",
+    "ours": "Brian (select board member)",
+    "official": "Select Board: Brian Lehtinen",
+    "official_reading": "Brian Lehtinen",
+    "note": "Same person; ours has only the first name."
+   },
+   {
+    "kind": "agree",
+    "about": "Other committee members",
+    "ours": "Greg (at-large); Laura (school committee); Matt (planning board); Tom (finance committee); Tony (APD commission)",
+    "official": "Appointed Members: o Select Board: Brian Lehtinen o School Committee: Laura Brzozoski o Planning Board: Matthew Brenner o Finance Committee: Tom Gray o Architectural Preservation District Commission: Anthony Sculumbrine",
+    "note": "Roles match for every member."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chris Ruth, facilities director, as attendee",
+    "ours": "Chris Ruth (facilities director)",
+    "official": "",
+    "note": "The official minutes list 'Town Employees: NA' and do not name Chris Ruth, so check whether he attended."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Community guests",
+    "ours": "",
+    "official": "Community Guests: Glenn McLoud, Dave Rodgers, Rhonda Lisio",
+    "note": "Our minutes list no community guests; Dave Rodgers is also recorded in the official public input."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Clerk election",
+    "t": 527,
+    "ours": "Deferred electing a clerk until the next meeting; Tony agreed to research how to turn the Zoom AI transcript into usable minutes and report back.",
+    "official": "Clerk: Discussion took place regarding the need for a clerk. While Brian Lehtinen currently types the minutes, concerns were raised about relying on AI-generated transcripts. The committee discussed rotating the clerk role among members to manage workload.",
+    "note": "Both say no clerk was elected, but only ours records an explicit deferral to the next meeting and Tony's assignment; the official mentions rotation instead. Check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Charter and scope decision",
+    "t": 608,
+    "ours": "Committee's charter was reset to focus on housing town administration, school administration, ACE and PAC, moving ACE and PAC out of the town hall building itself.",
+    "official": "The committee is tasked by the select board to explore options for a town building that accommodates town administration and school administration.",
+    "note": "Ours describes a reset charter including ACE and PAC moving out of the town hall; the official lists only town and school administration and has PAC relocating to the town hall second floor. Check the recording for the direction of the PAC move and whether the scope was changed."
+   },
+   {
+    "kind": "agree",
+    "about": "Department walkthroughs and questionnaire",
+    "t": 4271,
+    "ours": "Chair will contact the town manager and superintendent to help set up department walkthroughs and a standard interview questionnaire for all departments.",
+    "official": "Schedule walkthroughs of town buildings • Develop a standardized questionnaire for departments to assess needs • Reach out to the Town Manager and Superintendent for input",
+    "note": "Same next steps. The official does not assign the outreach to the chair."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "t": 4787,
+    "ours": "Set the next committee meeting for Monday, September 29th.",
+    "official": "The next meeting was scheduled for September 29",
+    "note": "Same date."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Greg distributing prior committee's report",
+    "t": 5039,
+    "ours": "Greg agreed to distribute the prior committee's compiled department needs/final report to the current members.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Shared drive for committee documents",
+    "t": 5100,
+    "ours": "Committee will look into setting up a shared drive for committee documents.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dollar figures discussed",
+    "t": 1797,
+    "ours": "TC Pacios roof repair: $300,000; prior admin building proposal $22 million; future capital price tag $10 million; hypothetical combined projects $150 million (borrowing range 150/100/75 million); annual capital spending $2 million",
+    "official": "",
+    "note": "The official minutes record no dollar amounts at all, only a mention of the previous project's rejection due to high costs. These are captioned figures and should be checked against the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public input",
+    "ours": "",
+    "official": "Dave Rodgers emphasized that public support would depend heavily on financial implications and urged the committee to consider long-term costs associated with ongoing projects.",
+    "note": "Our minutes record no public comment."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Member-by-member discussion",
+    "ours": "",
+    "official": "Concerns were raised about the previous project's rejection due to high costs and limited community engagement. Members agreed to focus on a simplified project scope and stronger stakeholder engagement.",
+    "note": "Our minutes have no individual member positions; the official records them in detail, including Brooks House and Turkey Hill."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:24:09Z",
+   "cost_usd": 0.234577
+  }
  }
 }

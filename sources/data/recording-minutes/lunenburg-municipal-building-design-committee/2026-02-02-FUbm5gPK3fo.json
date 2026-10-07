@@ -414,5 +414,248 @@
    "at": "2026-09-27T11:17:29Z",
    "cost_usd": 0.189716
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02022026-7625",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2026-02-02-minutes-7625.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2026-02-02-minutes-7625.pdf"
+  },
+  "official_sha256": "24e281af87b0ff484545f7a5faa8a9a80b2ece46eb0ae9c5f69c194a440d75fc",
+  "coverage": "full",
+  "summary": "The two records agree closely on the space-allocation and cost figures, the March 2 next meeting, and the 1:00 PM Tuesday the 10th subcommittee meeting. They differ on who sits on that subcommittee, on whether Chris is a committee member, and on how the target cost is described (\"around eight figures\" against \"mid- to high single-digit millions\"). A person should check the subcommittee roster and the cost target against the recording.",
+  "counts": {
+   "agree": 16,
+   "caption_error": 0,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Subcommittee membership",
+    "ours": "Subcommittee (Laura, Matt, Tony, with Greg Roy as an alternate to avoid a quorum issue) will meet at 1:00 pm on Tuesday the 10th",
+    "official": "members Laura, Matt, and Dave (Greg Roy as alternate/technical advisor)",
+    "note": "Our minutes name Tony as the third member and the official minutes name Dave, so check the recording around t=3905 to see who was named.",
+    "t": 3905
+   },
+   {
+    "kind": "agree",
+    "about": "Subcommittee meeting date and time",
+    "ours": "will meet at 1:00 pm on Tuesday the 10th",
+    "official": "Date/time: Tuesday the 10th at 1:00 PM",
+    "note": "Both records give the same day and time.",
+    "t": 3905
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Subcommittee meeting location",
+    "ours": "location to be the Ritter conference room if available",
+    "official": "",
+    "note": "The official minutes give no location for the subcommittee meeting.",
+    "t": 3905
+   },
+   {
+    "kind": "agree",
+    "about": "Next full committee meeting",
+    "ours": "The full committee's next meeting was set for March 2nd.",
+    "official": "Full committee next meeting: March 2 (committee to meet again).",
+    "note": "Same date in both records.",
+    "t": 4032
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Chris",
+    "ours": "Chris (committee member)",
+    "official": "Chris Ruth, Facilities Director, created the original spreadsheet listing current staff counts and departmental space.",
+    "note": "The official minutes list Chris Ruth as the Facilities Director, not a member, and show Town Employees as NA, so check whether Chris spoke at the meeting and in what role.",
+    "t": 192
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Brian, Tom, Dave, Tony, Matt, Laura",
+    "ours": "Dave (Chair), Brian, Tom, Matt, Tony, Laura",
+    "official": "Members Present:   Brian Lehtinen, Tom Gray, David Blatt, Anthony Sculumbrine, Matthew",
+    "note": "The six members match once first names are matched to full names, and David Blatt chaired.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members",
+    "ours": "",
+    "official": "Members absent: Kristina Masaitis, Greg Roy",
+    "note": "Our minutes do not record who was absent. Greg Roy appears in ours only as the subcommittee alternate.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of Nov 17, 2025 minutes",
+    "ours": "",
+    "official": "Motion to Approve: Anthony Sculumbrine. Seconded by: Matthew Brenner. Unanimously",
+    "note": "Our minutes record no votes. This is a routine approval of minutes and may have been left out as procedural, but the recording should show it.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "165 sq ft per person standard",
+    "ours": "Space allocation standard: 165 square feet per person, 3 people, about 500 square feet, 495",
+    "official": "165 square feet per person",
+    "note": "The standard is the same, and 495 is 3 x 165, matching the Town Clerk staff allocation in the official minutes.",
+    "t": 192
+   },
+   {
+    "kind": "agree",
+    "about": "Public vs private totals",
+    "ours": "2915 square ft, 1685 square ft",
+    "official": "public-facing spaces ≈ 2,915 sq ft; non-public/private spaces ≈",
+    "note": "Both records give the same totals.",
+    "t": 466
+   },
+   {
+    "kind": "agree",
+    "about": "1963 addition footprint and doubled scenario",
+    "ours": "Existing addition footprint: 1625 square ft",
+    "official": "the 1963 addition’s footprint ≈ 1,625 sq ft.",
+    "note": "The footprint matches, and the doubled figure of 3,250 sq ft also matches.",
+    "t": 767
+   },
+   {
+    "kind": "agree",
+    "about": "Original Ritter footprint",
+    "ours": "1,400 square ft per level, 2,800 square ft total",
+    "official": "Original/old Ritter building footprint ≈ 1,400 sq ft per level (≈ 2,800 sq ft",
+    "note": "Same figures in both records.",
+    "t": 877
+   },
+   {
+    "kind": "agree",
+    "about": "Corridor infill cost",
+    "ours": "$210 square feet per level, about a $150,000, $300,000 more",
+    "official": "that would add approx. 210 sq ft per level and cost",
+    "note": "Same figures ($150,000 per level, about $300,000 total). Our \"$210 square feet\" is a captioning glitch for 210 sq ft.",
+    "t": 1043
+   },
+   {
+    "kind": "agree",
+    "about": "New addition cost",
+    "ours": "3200 square foot addition, $650 a square foot, $2.2 million",
+    "official": "New-construction cost estimate for 3,200 sq ft at $650/sq ft: ≈ $2.2",
+    "note": "Same figures.",
+    "t": 1150
+   },
+   {
+    "kind": "agree",
+    "about": "Specialized demolition",
+    "ours": "a million dollars",
+    "official": "Specialized demolition (to avoid damaging original Ritter): $1,000,000",
+    "note": "Same amount.",
+    "t": 1171
+   },
+   {
+    "kind": "agree",
+    "about": "Rehab rate and project total",
+    "ours": "$450 a square foot, $4.5 million",
+    "official": "Rehab of remaining Ritter building assumed at $450 per sq ft",
+    "note": "The rate matches, and the ≈ $4.5 million combined total in the official minutes also matches.",
+    "t": 1193
+   },
+   {
+    "kind": "agree",
+    "about": "Treasurer/collector space",
+    "ours": "974 square feet, 500 830",
+    "official": "Treasurer & Tax Collector proposed 974 sq ft; Tony",
+    "note": "The 974 and 830 figures match. The stray \"500\" in ours is likely a caption fragment.",
+    "t": 1543
+   },
+   {
+    "kind": "agree",
+    "about": "Town clerk space",
+    "ours": "about 1,000 square feet, 495 square feet, 110 square feet, 120 square feet",
+    "official": "~1,000 sq ft; Tony Sculumbrine estimated ~495 sq ft for staff plus",
+    "note": "The 1,000, 495 and 110 figures match. Our 120 falls inside the official 110–144 range.",
+    "t": 1624
+   },
+   {
+    "kind": "agree",
+    "about": "Building department space",
+    "ours": "192 square feet, 200 square feet, around 600 square feet, 330",
+    "official": "more than Tony Sculumbrine’s proposed ~330 sq ft.",
+    "note": "Only the 330 figure appears in the official minutes. The other figures in ours are not in the official record.",
+    "t": 1709
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assessor's office comparison",
+    "ours": "Assessor's office comparison: 474, 495",
+    "official": "",
+    "note": "The official minutes do not mention the assessor's office figures.",
+    "t": 1647
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager's office figures",
+    "ours": "Town manager's office space comparison: 1,000 square feet, 800 square feet, 700 square feet, 140 square feet",
+    "official": "",
+    "note": "The official minutes record only that the office moved to the private category, with no square-foot figures.",
+    "t": 1790
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Employee vs shared-space split",
+    "ours": "Employee vs. shared-space split: 5,000 square feet, reduce that by 20%, 4,000 square feet, 1,000 square feet",
+    "official": "",
+    "note": "The 5,000 / 20% / 4,000 / 1,000 sq ft discussion is not in the official minutes.",
+    "t": 2104
+   },
+   {
+    "kind": "agree",
+    "about": "Debt-excluded projects",
+    "ours": "Debt-excluded capital projects: $22 million",
+    "official": "A very large $22M+ town-admin",
+    "note": "Both records give the $22 million figure.",
+    "t": 3527
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Target total cost",
+    "ours": "eight figure number, eight figures, $20 million",
+    "official": "A combined solution for Ritter + Town Hall that comes in “around eight figures” (i.e., roughly mid- to high single-digit millions), not $20M+.",
+    "note": "\"Eight figures\" means $10M or more, while the official gloss says single-digit millions and also gives \"$4–8M\", so check what target the chair and members actually stated near t=3797.",
+    "t": 3797
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Whether renovating Ritter is settled",
+    "ours": "The chair stated the committee should treat renovating Ritter and Town Hall (rather than building new) as settled given the committee's charter, though at least one member said he remained unconvinced Ritter is the right building.",
+    "official": "Other members countered that",
+    "note": "Ours records the chair declaring the question settled. The official minutes describe a disagreement with no resolution, so check the recording around t=3049.",
+    "t": 3049
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decision to engage town employees",
+    "ours": "",
+    "official": "Committee consensus: proceed to engage town employees for input (clarify whether",
+    "note": "Our decisions list does not include this consensus, which is the stated reason for the subcommittee.",
+    "t": 3883
+   },
+   {
+    "kind": "agree",
+    "about": "Overall cost goal",
+    "ours": "keep the combined project fiscally responsible (around eight figures).",
+    "official": "Importance of a fiscally responsible plan that addresses uses for existing",
+    "note": "Both record a goal of a fiscally responsible plan for the existing buildings. See the separate finding on the \"eight figures\" wording.",
+    "t": 3883
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:21:21Z",
+   "cost_usd": 0.33541459999999995
+  }
  }
 }

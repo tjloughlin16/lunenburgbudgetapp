@@ -437,5 +437,230 @@
    "at": "2026-10-02T11:13:04Z",
    "cost_usd": 0.199319
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03042025-7080",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-03-04-minutes-7080.txt",
+   "path": "sources/meetings/select-board/2025-03-04-minutes-7080.pdf"
+  },
+  "official_sha256": "aa4b94a3b253cac7e7b92f84059b8feb05776425cd2c0df7824b35c44d0a9200",
+  "coverage": "full",
+  "summary": "The records agree on all three votes and their 3-0 outcomes, and most figure differences are caption errors in ours. They differ on one vote only the official minutes record (executive session), on what the goal-setting workshop and drafting item was about, and on the placeholder pavement article, where ours has the Chair agreeing and the official minutes do not.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 4,
+   "discrepancy": 4,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: transfer of common victualler license to Sam Fam Inc (Lunenburg Diner)",
+    "ours": "Approve transfer of the common victualler license to Sam Fam Inc, doing business as Lunenburg Diner, 324 Electric Ave — passed (roll call, all three members aye)",
+    "official": "Roll Call Vote: Member Emkey, Aye; Member Moore, aye. Chair Nuzzolo, Aye. Motion passed (3-0-0).",
+    "note": "Same motion, same roll call, same 3-0 outcome.",
+    "t": 470
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: regional 911 district agreement",
+    "ours": "Authorize the town manager to execute the revised regional 911 emergency communications district agreement adding Hudson — passed unanimously",
+    "official": "Member Moore made Motion to Authorize the Town Manager to Execute the",
+    "note": "Official records a 3-0-0 roll call; ours says unanimously.",
+    "t": 3940
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: declare 100 cubic yards of sand surplus",
+    "ours": "Declare approximately 100 cubic yards of sand surplus — passed unanimously",
+    "official": "Potential Vote to declare approximately 100 cubic yards of sand (previously obtained by",
+    "note": "Official records a 3-0-0 roll call; ours says unanimously.",
+    "t": 4062
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Executive session vote",
+    "ours": "",
+    "official": "Chair Nuzzolo made Motion to Enter into Executive Session and to re-enter into Open",
+    "note": "Official records a 3-0-0 roll call vote to enter executive session (8:08 to 9:21 PM) under c.30 §21(a)(3); our minutes list no such vote. Check the recording around the 8:00 PM announcement.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Regional dispatch assessment, new figure",
+    "ours": "Regional dispatch assessment: $212,000, $26,000",
+    "official": "assessment for $212,000 to $206,000.",
+    "note": "Same item; the $212,000 original agrees, and $26,000 is most likely a mishearing of $206,000.",
+    "official_reading": "$206,000",
+    "t": 3894
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 90 apportionment and prior year",
+    "ours": "Chapter 90 apportionment: 690,000, 418,000",
+    "official": "Chapter 90 apportionment, $690,000, helps to offset",
+    "note": "The $690,000 figure and the $418,000 prior-year figure both agree.",
+    "t": 3137
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$1.5 billion Bond Bill",
+    "ours": "$1.5 billion Bond Bill",
+    "official": "",
+    "note": "The official minutes only say the Governor is asking for bond authorization, with no amount.",
+    "t": 3137
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash and purchase of 100 Townsend Harbor Road, $400,000",
+    "ours": "Free cash and purchase of 100 Townsend Harbor Road: $400,000",
+    "official": "would start FY27 with no Free Cash.",
+    "note": "The official minutes give no dollar figure for the purchase.",
+    "t": 3692
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant amount",
+    "ours": "Accounts payable warrant: $ 96257",
+    "official": "Accounts Payable Warrant: $962,530.75. Member Moore recused from signing.",
+    "note": "Same warrant item; the captured digits are a garbled or truncated version of $962,530.75.",
+    "official_reading": "$962,530.75",
+    "t": 8551
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Member Moore recused from signing the warrant",
+    "ours": "",
+    "official": "Accounts Payable Warrant: $962,530.75. Member Moore recused from signing.",
+    "note": "Our minutes do not mention the recusal."
+   },
+   {
+    "kind": "agree",
+    "about": "Green Communities grant award $225,000",
+    "ours": "Green Communities grant award: $225,000",
+    "official": "notification of $225,000 in Green Communities dollars",
+    "note": "The headline award agrees.",
+    "t": 8756
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Green Communities sub-figures ($200,000, $10,000, $5,000, 3,300)",
+    "ours": "$200,000, $10,000, $5,000, 3,300",
+    "official": "a couple thousand for the administration of the grants by Town employees.",
+    "note": "The official minutes list uses of the funds but give none of these amounts; they may be misheard or a breakdown the minutes omit.",
+    "t": 8756
+   },
+   {
+    "kind": "agree",
+    "about": "Clauses 17D/E/F exemption levels",
+    "ours": "Elderly/surviving spouse exemption levels (clauses 17D/E/F): 40,000 to 66,000, $185 to $332",
+    "official": "asset level from $40,000 to $66,000 and the exemption amount from $185 to $332.",
+    "note": "Both figures match.",
+    "t": 657
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clause 41D income and asset limits",
+    "ours": "Clause 41D income and asset limits: 24,000 to 31,500, 30,000 to 396, $40,000 to 527, 55,000 to 727",
+    "official": "increase from $40,000 to $52,700; and married couples would increase from $55,000 to $72,700.",
+    "note": "The same four limits; 396, 527 and 727 are misheard 39,600, 52,700 and 72,700.",
+    "official_reading": "$39,600; $52,700; $72,700",
+    "t": 1008
+   },
+   {
+    "kind": "agree",
+    "about": "COLA wording check with counsel",
+    "ours": "Assessors and manager to check with town counsel whether the COLA must be expressly stated in the article language.",
+    "official": "Ms. McQuade mentioned that at the last Town Meeting that was approved",
+    "note": "Both record the question of whether COLA language is needed and a check with Counsel.",
+    "t": 1263
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Placeholder pavement management warrant article",
+    "ours": "Chair agreed to the manager adding a placeholder warrant article to supplement pavement management with one-time funds.",
+    "official": "like to request to add an additional warrant article as a placeholder to supplement the pavement",
+    "note": "The official minutes record only the manager's request, with no agreement by the Chair or the Board; check the recording at this point for any assent.",
+    "t": 3453
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Goal-setting workshop and who drafts",
+    "ours": "Board agreed to hold a workshop for select board and town manager goal setting; one member to draft the goals.",
+    "official": "Workplace Climate Policy: Member Moore volunteered to begin drafting Policy.",
+    "note": "Official has the board discussing scheduling a workshop, and Moore drafting a Workplace Climate Policy, a separate item; check whether anyone was to draft goals.",
+    "t": 3012
+   },
+   {
+    "kind": "agree",
+    "about": "Right of first refusal, 100 Townsend Harbor Road, deferred",
+    "ours": "No decision on right of first refusal for 100 Townsend Harbor Road; deferred to a full board. Decision needed before warrant closes.",
+    "official": "This discussion was tabled to continue to the next meeting.",
+    "note": "Both record no decision and deferral; the warrant-deadline remark is only in ours.",
+    "t": 3830
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Diner license needing a third signature",
+    "ours": "The diner license cannot be signed until a third signature is obtained.",
+    "official": "",
+    "note": "The official minutes do not mention the signature issue.",
+    "t": 505
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: board members and town manager",
+    "ours": "Chair (name not in captions); Amanda (member); Renee (member); Jen (town manager)",
+    "official": "Members Present: Caesar Nuzzolo, Amanda Moore, Renee Emkey (via Zoom)",
+    "note": "Same three members and the Town Manager, Jennifer Warren-Dyment; the official minutes also list two absent members.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal assessor's name",
+    "ours": "Linda (principal assessor)",
+    "official": "Lynda McQuade, Principal Assessor was present via Zoom and brought forward two Warrant",
+    "note": "Same person; spelling misheard.",
+    "official_reading": "Lynda McQuade"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sarah's role",
+    "ours": "Sarah (presenter)",
+    "official": "Sarah Cammer, Vice-Chair on the Board of Assessors clarified (via Zoom) that this is something",
+    "note": "Same person likely, but described as presenter in ours and as Vice-Chair of the Board of Assessors (clarifying) in the official minutes; check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town counsel Adam Costa as attendee",
+    "ours": "Adam Costa (town counsel)",
+    "official": "",
+    "note": "The official minutes do not list town counsel as present; possibly a mishearing or a name mentioned only in discussion."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Spring All Vendor Fair presentation",
+    "ours": "",
+    "official": "Joeci Gilchrest, President of the Lunenburg Business Association presented to the Board the",
+    "note": "A full agenda item with no counterpart in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Master Planning Steering Committee statement",
+    "ours": "",
+    "official": "Master Planning Steering Committee: Member Moore read aloud a prepared statement.",
+    "note": "Moore's request for a tri-board meeting is not in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:54:03Z",
+   "cost_usd": 0.298753
+  }
  }
 }

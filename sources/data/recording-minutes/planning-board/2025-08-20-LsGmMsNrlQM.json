@@ -158,5 +158,84 @@
    "at": "2026-09-27T12:40:35Z",
    "cost_usd": 0.1807
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08202025-7357",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2025-08-20-minutes-7357.txt",
+   "path": "sources/meetings/planning-board/2025-08-20-minutes-7357.pdf"
+  },
+  "official_sha256": "d30b1f1e079ea4622bb53975c126f303fa4cc8befcff7f0e32f6b6aa45fc89a0",
+  "coverage": "full",
+  "summary": "The two records agree on the meeting's purpose and on the process for correcting errors in executive-session minutes, but they differ on the vote. The official minutes record a 3/0 vote to approve and release the 3/24/25 executive session minutes, and ours records no vote at all, so someone should check the recording for that vote.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 0,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to approve the 3/24/25 executive session minutes for release",
+    "ours": "VOTES (non-procedural): none",
+    "official": "T. Willsmer made motion to Approve and be Released. A. Reid Second.\nRoll Call Vote: T. Willsmer, AYE; A. Reid, AYE; M. Brenner, AYE (3/0)",
+    "note": "The official minutes record a 3/0 roll-call vote to approve and release the 3/24/25 executive session minutes; ours records no vote, so check the recording for the motion and roll call, which may have been missed or not captioned.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Error in executive-session minutes handled by re-entering executive session",
+    "ours": "If a board member later finds an error in executive-session minutes, the board will vote to re-enter executive session to discuss the error rather than raise it publicly.",
+    "official": "If an error, it will be addressed by entering into an executive session (vote/motion) and the error \nwill be discussed in that session.",
+    "note": "Both records give the same procedure for correcting an error; the official minutes add that no executive session was held.",
+    "t": 182
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Three voting options for the executive session minutes",
+    "ours": "",
+    "official": "• Approve to be released (fine)\n• Approve to be released, partial redaction\n• Approved but not for release",
+    "note": "The official minutes list the three options available to the board; ours does not mention them."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Adam Burney",
+    "ours": "",
+    "official": "Absent: A. Burney",
+    "note": "The official minutes name Burney as absent; ours lists only three attendees and says nothing of an absence."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Vice Chair Tim",
+    "ours": "Tim (member)",
+    "official": "Roll Call: M. Brenner, T. Willsmer, A. Reid",
+    "note": "Same person: Tim is Timothy Willsmer, the Vice Chair, not a plain member.",
+    "official_reading": "Timothy Willsmer (Vice Chair)"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Amanda Reid",
+    "ours": "Amanda (member)",
+    "official": "Amanda Reid Clerk",
+    "note": "Same person; the official minutes give her title as Clerk rather than member."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: the chair",
+    "ours": "the chair (chair)",
+    "official": "Matthew Brenner Chair",
+    "note": "The unnamed chair in ours is Matthew Brenner per the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:25:15Z",
+   "cost_usd": 0.214901
+  }
  }
 }

@@ -541,5 +541,344 @@
    "at": "2026-09-27T02:42:19Z",
    "cost_usd": 0.19748
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04152026-7767",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-04-15-minutes-7767.txt",
+   "path": "sources/meetings/conservation-commission/2026-04-15-minutes-7767.pdf"
+  },
+  "official_sha256": "b3b6c0672121aad2b694350d21ce538fcf7f9b81acf27bba601fce1daafdacbd",
+  "coverage": "full",
+  "summary": "The two records agree on nearly every continuance and approval, and on the outcome of each recorded vote. Our captions garble many names (commissioners, applicants, street names). The one real difference is the Frascalosi seed-collection request: ours lists a vote heard as \"not audible\", while the official minutes record a motion to approve but no vote, then a decision to defer it to May 6.",
+  "counts": {
+   "agree": 21,
+   "caption_error": 9,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Seed collection request (Lee Frascalosi / Lise Fracalossi): was a vote taken",
+    "t": 1470,
+    "ours": "Allow Lee Frascalosi to ethically collect native seed from town conservation property — not audible",
+    "official": "After a motion to approve by T. Doucette, R. Bursch suggested this should be an agenda topic, so residents will be better in formed of a decision that could benefit an individual's business. It was agreed to add the seed collection to the agenda of the next meeting (May 6).",
+    "note": "Ours lists a vote with no audible outcome (though its own decisions say it was not voted on); the official minutes record a motion by Doucette but no vote and no roll call, only deferral to May 6; check the recording near t=1470 for whether any vote or second occurred."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Informal go-ahead to start collecting seed now",
+    "t": 1447,
+    "ours": "The commission informally told Lee Frascalosi she could go ahead and start collecting seed now given the seasonal timing, ahead of the formal May 6 agenda item.",
+    "official": "",
+    "note": "The official minutes say nothing about permission to begin collecting before May 6; they record only concern about a single resident collecting and the deferral; check the recording around t=1447."
+   },
+   {
+    "kind": "agree",
+    "about": "Seed collection placed on May 6 agenda",
+    "t": 1526,
+    "ours": "The seed-collection request from Lee Frascalosi will be placed as its own item on the May 6 agenda so the public request to use town conservation property is properly noticed, rather than voted on this evening.",
+    "official": "It was agreed to add the seed collection to the agenda of the next meeting (May 6).",
+    "note": "Both records defer the item to May 6."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of seed collection requester",
+    "t": 1470,
+    "ours": "Lee Frascalosi",
+    "official": "Lise Fracalossi- Invasive removal/seed collection",
+    "note": "Same person, name misheard in captions.",
+    "official_reading": "Lise Fracalossi"
+   },
+   {
+    "kind": "agree",
+    "about": "Chainsaw/power tool authority for conservation agent (vote)",
+    "t": 471,
+    "ours": "Delegate authority to the conservation agent to allow use of chainsaws/power tools to clear logs on conservation properties, using her best judgment — passed",
+    "official": "R. Bursch, to confirm that our regulations allow the Conservation Agent to make decisions allowing volunteers to use more than hand saws to clear trails.",
+    "note": "Same motion in different wording, passed 4-0 in the official roll call; the official frames it as confirming existing regulations, ours as a delegation."
+   },
+   {
+    "kind": "agree",
+    "about": "Residents clearing downed trees should contact the agent",
+    "t": 218,
+    "ours": "Going forward, residents asking to clear downed trees/logs with more than hand tools on conservation land should contact the conservation agent directly rather than come before the full commission.",
+    "official": "J. Pewtherer explained that he only needed to discuss this with the Conservation Agent.",
+    "note": "Same guidance."
+   },
+   {
+    "kind": "agree",
+    "about": "1625 Mass Ave NOI continued",
+    "t": 1958,
+    "ours": "Continue the NOI at 1625 Mass Ave (25-626) — passed",
+    "official": "Applicant requested continuance to 05/06/26.",
+    "note": "Both continue to May 6; our file number 25-626 is a caption garble of the official NOI-26-10."
+   },
+   {
+    "kind": "agree",
+    "about": "60 Peninsula Drive NOI continued",
+    "t": 2140,
+    "ours": "Continue the NOI at 60 Peninsula Drive (Michael Fallon) to May 6 — passed",
+    "official": "R. Bursch, to continue to the May 6 meeting.",
+    "note": "Same outcome, applicant did not appear."
+   },
+   {
+    "kind": "agree",
+    "about": "Benjamin Builders water main NOI approved with wetlands delineation condition",
+    "t": 3727,
+    "ours": "Approve the Benjamin Builders water main extension NOI (10 Parmenter Street) with condition that the commission is not approving the delineation of wetlands shown, only the work in the roadway — passed",
+    "official": "R. Bursch, to approve with the stipulation that the wetlands delineation is not confirmed as all work is under the road.",
+    "note": "Same approval and condition; official gives the address as 10 Parmenter Road, ours says Street."
+   },
+   {
+    "kind": "agree",
+    "about": "18 Oak Ridge Road NOI continued",
+    "t": 5588,
+    "ours": "Continue the NOI at 18 Oakridge Road (Veton/McCarthy) to May 6 — passed",
+    "official": "R. Bursch, to continue to the May 6 meeting.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name at 18 Oak Ridge Road",
+    "t": 5588,
+    "ours": "Veton/McCarthy",
+    "official": "Notice of Intent by Steven Vitone & Melissa McCarthy",
+    "note": "Applicant name misheard.",
+    "official_reading": "Vitone"
+   },
+   {
+    "kind": "agree",
+    "about": "860 New West Townsend Road common driveway NOI continued",
+    "t": 5698,
+    "ours": "Continue the common driveway NOI at 860 New Westtown Road (Brackett) to May 6 — passed",
+    "official": "R. Bursch, to continue to the May 6 meeting.",
+    "note": "Same outcome; road name is 'West Townsend' in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Hickory Hills 19 Island Road NOI approved with conditions",
+    "t": 6247,
+    "ours": "Approve the Hickory Hills NOI at 19 Island Road with conditions: asphalt (not regrind) ADA parking surface and an operation & maintenance plan for the rain garden approved by the agent — passed",
+    "official": "R. Bursch, to approve with the following stipulation:",
+    "note": "Same two conditions: asphalt and a rain garden maintenance plan approved by the Agent; the 'not regrind' detail is only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "922 Flat Hill Road NOI continued",
+    "t": 6394,
+    "ours": "Continue the NOI at 922 Flat Hill Road (Pataski) to May 6 — passed",
+    "official": "R. Bursch, to continue to the May 6 meeting.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name at 922 Flat Hill Road",
+    "t": 6394,
+    "ours": "Pataski",
+    "official": "Notice of Intent by Mike Potasky for the construction of a single-family home with a garage",
+    "note": "Applicant name misheard.",
+    "official_reading": "Potasky"
+   },
+   {
+    "kind": "agree",
+    "about": "189 Hemlock Drive NOI continued pending research on order of conditions",
+    "t": 7380,
+    "ours": "Continue the NOI at 189 Hemlock Drive (Catalis) to May 6 pending research into a missing recorded order of conditions — passed",
+    "official": "H. Jaime needs to research the proper way to process the old order.",
+    "note": "Both continue to May 6 and have the agent researching the earlier order; our decision at t=6923 matches."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant name at 189 Hemlock Drive",
+    "t": 7380,
+    "ours": "Catalis",
+    "official": "Notice of Intent by David Katralis & Korry Dow-Katralis for an addition and removal of stone patio",
+    "note": "Applicant name misheard.",
+    "official_reading": "Katralis"
+   },
+   {
+    "kind": "agree",
+    "about": "50 Pine Grove Road amended order approved",
+    "t": 7635,
+    "ours": "Approve the amended order of conditions at 50 Pine Grove Road (simplified landscape/path plan) — passed",
+    "official": "R. Bursch, to approve as presented.",
+    "note": "Same approval; official notes the project was simplified."
+   },
+   {
+    "kind": "agree",
+    "about": "Marshall Pond (855 Mass Ave) NOI continued",
+    "t": 7706,
+    "ours": "Continue the NOI for Marshall Pond vegetation management (855 Mass Ave) to May 6 — passed",
+    "official": "R. Bursch, to continue to the May 6 meeting as requested by the applicant.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "4 Parmenter Road NOI continued",
+    "t": 7758,
+    "ours": "Continue the NOI at 4 Parmenter Road to May 6 — passed",
+    "official": "Applicant requested a continuance to May 6",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "83 Round Road NOI continued",
+    "t": 7780,
+    "ours": "Continue the NOI at 83 Round Road to May 6 — passed",
+    "official": "83 Round Rd PKA 10 Parmenter Road Lot 17: NOI-26-7 (Continued from 04/01/26)",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "99 Round Road NOI continued",
+    "t": 7801,
+    "ours": "Continue the NOI at 99 Round Road to May 6 — passed",
+    "official": "99 Round Rd PKA 10 Parmenter Road Lot 22: NOI-26-8 (Continued from 04/01/26)",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "107 Round Road NOI continued",
+    "t": 7823,
+    "ours": "Continue the NOI at 107 Round Road to May 6 — passed",
+    "official": "107 Round Rd PKA 10 Parmenter Road Lot 23: NOI-26-2 (Continued from 04/01/26)",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Right of first refusal at 35 Lemonster/Lancaster Road",
+    "t": 8968,
+    "ours": "Inform the Board of Selectmen the Conservation Commission is not exercising its right of first refusal at 35 Lemonster/Lancaster Road — passed",
+    "official": "R. Bursch, to inform the Board of Selectmen that the Conservations Commission will waive their right of first refusal on this property.",
+    "note": "Same decision and unanimous vote; the street is Leominster Rd in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name of right of first refusal property",
+    "t": 8968,
+    "ours": "35 Lemonster/Lancaster Road",
+    "official": "Right of First Refusal: 35 Leominster Rd",
+    "note": "Street name misheard.",
+    "official_reading": "35 Leominster Rd"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure 500,000 for right of first refusal property",
+    "t": 8967,
+    "ours": "35 Lemonster/Lancaster Road right of first refusal: 500,000",
+    "official": "",
+    "note": "The official minutes give no dollar figure for this property; check the recording at t=8967 for what 500,000 refers to (price?)."
+   },
+   {
+    "kind": "agree",
+    "about": "Kennedy RDA at 17 Crocker Ave",
+    "t": 7314,
+    "ours": "Bradford Kennedy (17 Crocker Ave./retaining wall) will file an RDA application before he leaves town; the conservation agent will help him complete it, and the commission agreed it can deliberate the RDA at the May 6 meeting even if he is not present.",
+    "official": "The applicant agreed to file an RDA. The commission agreed to discuss the RDA without the applicant being present, as he will be out of town for the next meeting.",
+    "note": "Same decision; agent assistance is only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "925 Mass Ave public input session",
+    "t": 9282,
+    "ours": "Commissioners will attend the town's public input session on the future of 925 Mass Ave on April 21 at 6:30 at the library.",
+    "official": "Being conducted by the Planning Department. April 21 at the Library.",
+    "note": "Same event and date; time 6:30 and commissioners' attendance are only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Earth Day event help",
+    "t": 9305,
+    "ours": "Commissioners will help the conservation agent set up and staff an Earth Day event, meeting at noon to load materials.",
+    "official": "",
+    "note": "The official minutes list only 'Earth Day-04/22/2026' with no detail on commissioner help or the noon meeting."
+   },
+   {
+    "kind": "agree",
+    "about": "NHS student trail work April 25",
+    "t": 9537,
+    "ours": "Commissioners will help coordinate National Honor Society student trail cleanup work at Kibble/Table Rock conservation area on April 25.",
+    "official": "M. Wilson is helping NHS students with projects and needs Commissioners to assist for 3 hours. April 25th.",
+    "note": "Same request; location is only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of April 1 minutes",
+    "ours": "",
+    "official": "R. Bursch, to approve the minutes of the April 1 meeting.",
+    "note": "Roll-call vote 4-0 is in the official minutes only; ours lists no such vote, check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "30 Summer St NOI continued",
+    "ours": "",
+    "official": "Notice of Intent by SatStor Real Estate Co.,LLC for a project that involves floodplain fill and associated compensatory floodplain compensation. (Continued to 05/06/26)",
+    "note": "Official lists this continuance with no motion or vote recorded; ours has no item on it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Invasive species removal at Lane Conservation Area",
+    "ours": "",
+    "official": "Lise Fracalossi (Red Trillium) wants to lead an invasive species removal effort at the Lane Conservation Area.",
+    "note": "Part of the same public comment; ours does not mention it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Agenda ADA compliance discussion",
+    "ours": "",
+    "official": "R. Bursch wondered if our agendas are ADA compliant due to the font size.",
+    "note": "Discussion item in the official minutes with no counterpart in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Richard Burch",
+    "ours": "Richard Burch (Commissioner)",
+    "official": "Present: R. Bursch, T. Doucette, A. Burnap, J. Pewtherer",
+    "note": "Name misheard.",
+    "official_reading": "Richard Bursch"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Teddy Dette",
+    "ours": "Teddy Dette (Commissioner)",
+    "official": "Present: R. Bursch, T. Doucette, A. Burnap, J. Pewtherer",
+    "note": "Name misheard.",
+    "official_reading": "Teddy Doucette"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Andrea Bernat",
+    "ours": "Andrea Bernat (Commissioner)",
+    "official": "Present: R. Bursch, T. Doucette, A. Burnap, J. Pewtherer",
+    "note": "Name misheard.",
+    "official_reading": "Andrea Burnap"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation Agent name",
+    "ours": "Harlin (Conservation Agent)",
+    "official": "Herlin Jamie - Conservation Agent",
+    "note": "Name misheard; the official OCR itself also gives 'H. Jaime' elsewhere.",
+    "official_reading": "Herlin Jamie"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair identity and absences",
+    "ours": "the chair (Chair)",
+    "official": "Call to Order at 7:03pm by J. Pewtherer",
+    "note": "Official names the chair as J. Pewtherer, a fourth present member, and lists M. Larouche and M. Wilson as absent; ours does not."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:18:26Z",
+   "cost_usd": 0.303711
+  }
  }
 }

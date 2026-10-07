@@ -382,5 +382,147 @@
    "at": "2026-10-04T11:06:19Z",
    "cost_usd": 0.276602
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02182025-7055",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-02-18-minutes-7055.txt",
+   "path": "sources/meetings/select-board/2025-02-18-minutes-7055.pdf"
+  },
+  "official_sha256": "1e440cedc368702575f6ffa03dcd9be02a13b4925edf1ceb0af1a32950dd7695",
+  "coverage": "full",
+  "summary": "The two records agree closely on the votes and decisions; the official minutes are a full record. The one substantive difference is the accounts payable warrant, where our captions garbled the figure, and our record lacks the ARPA vote result and who made the motions.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Host community agreement vote (Bliss Cannabis / Uma Flowers)",
+    "ours": "Authorize the town manager to execute the host community agreement with Bliss cannabis (Uma Flowers Lunenburg) on behalf of the select board. — passed 3-1",
+    "official": "Call for vote: Three-Yes . One-No (Jeffreys).  Motion passed (3-1-0).",
+    "note": "Same motion and same 3-1 outcome.",
+    "t": 1285
+   },
+   {
+    "kind": "agree",
+    "about": "Workplace Climate Survey Policy vote",
+    "ours": "Approve the workplace climate survey policy as section 2.13 of the select board policies and procedures. — passed unanimously",
+    "official": "Call for vote: Four-Yes.  Motion passed (4-0-0).",
+    "note": "Unanimous 4-0 in both.",
+    "t": 1436
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ARPA press release vote outcome",
+    "ours": "Approve the ARPA press release with revisions as discussed. — not audible",
+    "official": "Call for vote: Four-Yes.  Motion passed (4-0-0).",
+    "note": "Same motion, but ours records no result while the official minutes record a 4-0 passage; check the recording near t=3625 to confirm the vote.",
+    "t": 3625
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant amount",
+    "ours": "Accounts payable warrant: $ 48,8 18723",
+    "official": "The Board reviewed an accounts payable warrant for $408,887.23.",
+    "note": "Garbled captions of the same warrant figure.",
+    "official_reading": "$408,887.23",
+    "t": 3731
+   },
+   {
+    "kind": "caption_error",
+    "about": "BETA Group sidewalk design contract amount",
+    "ours": "Sidewalk design contract with Beta Group: $119,000",
+    "official": "The total contract amount is $119,010, which is funded through Chapter 90.",
+    "note": "Same contract; captions rounded or dropped the $10, so the official figure is $119,010.",
+    "official_reading": "$119,010",
+    "t": 617
+   },
+   {
+    "kind": "agree",
+    "about": "School budget deficit",
+    "ours": "School deficit: $3.5 million, a million",
+    "official": "Board members discussed the potential $3.5 million deficit in the School budget.",
+    "note": "Same $3.5 million figure; the trailing 'a million' is caption noise.",
+    "t": 2566
+   },
+   {
+    "kind": "agree",
+    "about": "56 Carr Avenue decision",
+    "ours": "Table the 56 Carr Avenue tax-title matter until spring, targeting the first meeting in April.",
+    "official": "They agreed to table the matter until spring when an assessment could be done without snow cover, targeting the first meeting in April.",
+    "note": "Same decision.",
+    "t": 1162
+   },
+   {
+    "kind": "agree",
+    "about": "Joint or special meeting with School Committee",
+    "ours": "Try to schedule a joint meeting or special meeting with the School Committee; date not settled.",
+    "official": "expressed interest in meeting jointly with the School Committee and discussed potential scheduling options including holding a special meeting.",
+    "note": "Same, with no date set.",
+    "t": 2873
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant recommendation vote dates and printer date",
+    "ours": "Warrant recommendation votes to be taken March 11, with March 18 possible for the rest; printer date April 3.",
+    "official": "",
+    "note": "The official minutes say only that a schedule was discussed, with no dates.",
+    "t": 3249
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tax investigation report scheduled for March 18",
+    "ours": "Tax investigation report scheduled for March 18.",
+    "official": "",
+    "note": "Not mentioned in the official minutes.",
+    "t": 4115
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Federal per-pupil funding figure",
+    "ours": "Federal per-pupil funding: $2,120 per pupil",
+    "official": "",
+    "note": "The official minutes record only that John Bowen commented on federal funding for students, with no figure.",
+    "t": 4547
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Finance Committee appointments",
+    "ours": "",
+    "official": "successfully appointed two new members, Ana Lockwood and Michael Rupp, to the Finance Committee.",
+    "note": "Reported by Member Alonzo; not in our decisions.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Constable resignation and other items",
+    "ours": "",
+    "official": "Acknowledge the resignation of John E. Baker, Constable, effective May 2025",
+    "official_reading": "",
+    "note": "Resignation acknowledged in the official minutes; our record lacks it.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "Chair (chair); Mr Alonzo (member); Jen (town manager); Pack (member); Tom (member)",
+    "official": "Members Present: Caesar Nuzzolo, Michael-Ray Jeffreys, Tom Alonzo, Renee Emkey",
+    "note": "Ours lists five members, including Alonzo twice and 'Pack'. The official minutes list four present and Amanda Moore absent, though a later line has Clerk Moore seconding on March 11; check the roll call.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:54:51Z",
+   "cost_usd": 0.23770339999999998
+  }
  }
 }

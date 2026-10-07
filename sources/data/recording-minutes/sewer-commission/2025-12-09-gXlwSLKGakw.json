@@ -325,5 +325,152 @@
    "at": "2026-09-27T11:37:01Z",
    "cost_usd": 0.188296
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12092025-7550",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-12-09-minutes-7550.txt",
+   "path": "sources/meetings/sewer-commission/2025-12-09-minutes-7550.pdf"
+  },
+  "official_sha256": "540add3e32cc3395b4d2d33d497d1a0a90f4664e23dd220caa75f4599de2dbb2",
+  "coverage": "full",
+  "summary": "The two records agree on the three billing figures ($10, 423 of 943) and most attendees, once the misheard names are corrected. They differ on Bill Bernard's attendance, on a roll-call vote on the 11/25 minutes that ours omits, and on how far the future-agenda decisions go.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 3,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Sewer bill demand late fee amount",
+    "ours": "Sewer bill demand fee: $10",
+    "official": "they  are still not paid, they\nwill have an added $10 late fee.",
+    "note": "Both give $10; the official calls it a late fee, ours a demand fee.",
+    "t": 426
+   },
+   {
+    "kind": "agree",
+    "about": "Unpaid sewer bills this quarter",
+    "ours": "Unpaid sewer bills this quarter: 423",
+    "official": "there were 423 bills that were  not paid out of a \ntotal  9 4 3 bills  sent out",
+    "note": "Count of unpaid bills matches.",
+    "t": 447
+   },
+   {
+    "kind": "agree",
+    "about": "Total customers billed this quarter",
+    "ours": "Total customers billed this quarter: 943",
+    "official": "total  9 4 3 bills  sent out",
+    "note": "Total of 943 matches (ours says customers, official says bills sent).",
+    "t": 470
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Brett Ramsden",
+    "ours": "Brett Ramden (member)",
+    "official": "Chair-  Brett Ramsden",
+    "note": "Misheard surname; the official minutes also show he is Chair.",
+    "official_reading": "Brett Ramsden"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Scott Dall",
+    "ours": "Scott Doll (member)",
+    "official": "Vice-Chair - Scott Dall",
+    "note": "Misheard surname; the official minutes show he is Vice-Chair.",
+    "official_reading": "Scott Dall"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Arthur Katis",
+    "ours": "Arthur Cadis (member)",
+    "official": "Member : Arthur \nKatis",
+    "note": "Misheard surname.",
+    "official_reading": "Arthur Katis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Sewer business manager name",
+    "ours": "Andrew Valeri (sewer business manager)",
+    "official": "Sewer Business Manager - Andrew Valliere",
+    "note": "Misspelled surname.",
+    "official_reading": "Andrew Valliere"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minutes clerk name",
+    "ours": "Jane Bradley (staff)",
+    "official": "Minutes Clerk- Jane Ranley",
+    "note": "Surname misheard; the official minutes give her role as Minutes Clerk.",
+    "official_reading": "Jane Ranley"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Dan Proctor",
+    "ours": "Dan Proctor (member)",
+    "official": "Clerk- Dan Proctor",
+    "note": "Same person; the official minutes give him as Clerk.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Bill Bernard attendance",
+    "ours": "Bill Bernard (staff)",
+    "official": "Absent:  DPW Director- Bill Bernard",
+    "note": "Ours lists him as an attendee but the official minutes mark him absent; check the recording to see if he spoke or joined.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of 11/25/25 minutes by roll call",
+    "ours": "",
+    "official": "To approve the min utes for 11/25/25.                               Roll Call Vote: Arthur-aye, Dan-aye , \nand Scott- aye.",
+    "note": "A vote on prior minutes (Dan P. moved, Arthur K. seconded, 3-0) that our minutes list nothing for; our 'none' may have counted it as procedural, so check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Future agenda item: tie-in-address regulation",
+    "ours": "Put a proposed regulation requiring new sewer connections to tie into the line on the street the property is actually addressed to on the agenda for the next meeting.",
+    "official": "Future Agenda Items-  Discuss adding verbiage to the town law that a property is required to \nhook up on the street of  the property ’s address,",
+    "note": "Both record the topic as a future agenda item, but ours says it goes on the next meeting's agenda and the official gives no meeting; check the recording for the timing.",
+    "t": 842
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Combining tie-in regulation with ADU work for town counsel and special town meeting",
+    "ours": "Combine that tie-in-address regulation discussion with the ongoing ADU regulation work, both to be prepped together for town counsel and the spring special town meeting.",
+    "official": "Discussion on ADU for Town Meeting verbiage \nchange  and if this will be part of new construction.",
+    "note": "Ours records a decision to combine the two items for town counsel and a spring special town meeting; the official lists only an ADU discussion item and does not say they are combined, so check the recording.",
+    "t": 863
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY25 tax lien report amount",
+    "ours": "",
+    "official": "The total is roughly $72,260.",
+    "note": "The official minutes give a roughly $72,260 figure for unpaid FY2025 bills going on tax bills; ours has no figure for it.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Upcoming meeting schedule",
+    "ours": "",
+    "official": "January 13 , 2026 @ 7pm – Regular ( Hybrid )  Meeting",
+    "note": "The official minutes list the upcoming meetings, which ours omits.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:21:40Z",
+   "cost_usd": 0.227027
+  }
  }
 }

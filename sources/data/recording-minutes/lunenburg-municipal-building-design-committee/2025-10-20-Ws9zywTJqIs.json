@@ -503,5 +503,135 @@
    "at": "2026-09-27T12:12:38Z",
    "cost_usd": 0.193286
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10202025-7464",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2025-10-20-minutes-7464.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2025-10-20-minutes-7464.pdf"
+  },
+  "official_sha256": "6145be980ca4e52fd341383441f1ddb4329382c3b88ef1411b5fc5afd62c2925",
+  "coverage": "partial",
+  "summary": "The two records agree on the November 3 follow-up meeting, the building walkthroughs and most attendees, and neither records a non-procedural vote. They differ on which weekday goes with each walkthrough date, on whether Chris is a member, and on the substantive discussion: ours has the project-combining lean, the Pacios figures and the design review, while the official minutes cover Town Hall layout and ADA.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 4,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Building walkthrough dates and weekdays",
+    "t": 5647,
+    "ours": "Building walkthroughs scheduled for Tuesday October 28 and Thursday October 30 at 5:00 p.m., meeting at Ritter.",
+    "official": "Thursday, October 28 at 5:00 PM",
+    "note": "Both give October 28 and 30 at 5:00 PM but swap the weekdays (the official has Thursday Oct 28 and Tuesday Oct 30); check the calendar and the recording for which weekday is right, since a typo in either would send people on the wrong day.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date and purpose",
+    "t": 5752,
+    "ours": "Next committee meeting set for November 3rd, 5:30 p.m., to recap the building tours.",
+    "official": "The next meeting is scheduled for Monday, November 3, 2025, at 5:30 PM to recap building tours and further discuss design and space needs.",
+    "note": "Same date, time and purpose."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision to tour buildings in person",
+    "t": 5374,
+    "ours": "Committee agreed to see the town hall and Ritter buildings in person before formulating questions for department staff.",
+    "official": "Members agreed to conduct building walkthroughs to assess current facility conditions.",
+    "note": "Both record agreement to walk the buildings; the official minutes do not mention doing so before drafting questions for staff."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Kristina Masaitis",
+    "ours": "Christina (member)",
+    "official": "Kristina Masaitis",
+    "note": "Same person, first name misheard by the captions.",
+    "official_reading": "Kristina Masaitis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board guest",
+    "ours": "Renee MK (select board member (not a member of this committee))",
+    "official": "Renee Emkey",
+    "note": "The captions misheard the surname; the official lists her as a community guest.",
+    "official_reading": "Renee Emkey"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chris's role at the meeting",
+    "ours": "Chris (member)",
+    "official": "Town Employees: Jennifer Warren, Chris Ruth",
+    "note": "Ours lists Chris as a committee member, while the official minutes list Chris Ruth as a town employee and name eight members; check the roster and the recording to confirm Chris is staff and not a voting member.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees",
+    "ours": "Dave (chair); Greg; Brian; Matt; Laura; Tom; Tony; Jen Warren (town manager)",
+    "official": "Members Present:   Brian Lehtinen, Tom Gray, David Blatt, Greg Roy, Anthony Sculimbrene, Matthew Brenner, Laura Brzozoski, Kristina Masaitis",
+    "note": "First names match the official members, and Jen Warren is Jennifer Warren; absences are 'none' officially."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "TC Pacios roof repair and renovation figures",
+    "t": 4784,
+    "ours": "TC Pacios roof repair warrant: $300,000; TC Pacios renovation project cost: $1.4 million",
+    "official": "",
+    "note": "The official minutes record no dollar figures at all."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital prioritization threshold and GSA space allocation figures",
+    "t": 2076,
+    "ours": "Capital project prioritization threshold: million dollars; Space allocation calculation (GSA standard): 200 square feet, 5,000 square ft",
+    "official": "",
+    "note": "Neither figure appears in the official minutes; the captions' versions are garbled, so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Review of prior Taylor and Burns design",
+    "t": 3580,
+    "ours": "Committee will review the prior Taylor and Burns design in a future in-person meeting to identify baseline needs versus feature creep/extras.",
+    "official": "",
+    "note": "The official minutes do not mention the earlier design."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Routing of department space-needs questions",
+    "t": 3706,
+    "ours": "Committee agreed department space-needs questions should be funneled through both the town manager and directly to department heads.",
+    "official": "",
+    "note": "The official minutes do not record this."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Combined Lunenburg schools project vs Master Plan priorities",
+    "t": 4914,
+    "ours": "Committee leaning toward combining Turkey Hill renovation, a revised central office, the middle/high school track and field, and the primary school playground/entryway into one combined 'Lunenburg schools' project.",
+    "official": "An update on Master Plan was discussed including priority projects include the Town Hall, Ritter Building, and Turkey Hill.",
+    "note": "Ours records a leaning toward combining school projects, while the official records only a Master Plan update naming Town Hall, Ritter and Turkey Hill; check the recording to see whether a combination was discussed or decided."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Hall design priorities and ADA",
+    "ours": "",
+    "official": "The committee agreed on full ADA compliance for entrances, meeting rooms, and facilities.",
+    "note": "Our minutes record no ADA agreement; the official's two-story layout, Town Clerk vault, and Treasurer/Accounting separation points are likewise absent from ours, so check the recording to see whether each was a decision."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:23:02Z",
+   "cost_usd": 0.23691099999999998
+  }
  }
 }

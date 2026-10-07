@@ -447,5 +447,258 @@
    "at": "2026-09-27T02:25:33Z",
    "cost_usd": 0.195204
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06082026-7841",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-06-08-minutes-7841.txt",
+   "path": "sources/meetings/planning-board/2026-06-08-minutes-7841.pdf"
+  },
+  "official_sha256": "150489d18eeb073a0afdfb613107bf5d4adb00aeefa67fe8979a228f9f760766",
+  "coverage": "full",
+  "summary": "The two records agree on nearly every vote and outcome: all four-member 4/0 votes match, including the failed de minimis motion. They differ on the 10 Parmenter Road continuation date (official text says 6/8/26), the 757 Chase Road votes (one combined motion officially, two in ours), a vote to approve the 5/11/26 minutes that we omit, and a \"Sam\" in our attendee list who is not on the official roll.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 8,
+   "discrepancy": 5,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: keep slate of officers and appointees as last year",
+    "ours": "Keep the slate of officers and committee/board appointees the same as last year — passed",
+    "official": "Verbal Vote: AYE (4/0)",
+    "note": "Both record the slate being kept the same; official shows 4/0 aye (motion Burney, second Willsmer).",
+    "t": 1208
+   },
+   {
+    "kind": "caption_error",
+    "about": "260 Fula Road ANR endorsement (ANR26-5)",
+    "ours": "Endorse the ANR for 260 Fula Road (ANR26-5) — passed",
+    "official": "260 Falulah Rd., (ANR-26-5)",
+    "note": "Same item and outcome (endorsed 4/0); captions misheard the street name.",
+    "official_reading": "260 Falulah Rd.",
+    "t": 1584
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: endorse ANR for 171 Arbor Street (ANR-26-4)",
+    "ours": "Endorse the ANR for 171 Arbor Street (ANR26-4) — passed",
+    "official": "171 Arbor St., (ANR-26-4)",
+    "note": "Both record endorsement passing (official 4/0 aye).",
+    "t": 3426
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: de minimis change at 171 Arbor Street fails",
+    "ours": "Find the requested changes at 171 Arbor Street a de minimis change to the special permit/site plan — failed",
+    "official": "Verbal Vote: NAY (4/0)",
+    "note": "Official motion was 'this is a De Minimis change' and voted down 4/0, matching our failed outcome.",
+    "t": 3471
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 934 Mass Ave (Unitil) storm water permit to June 22",
+    "ours": "Continue the 934 Massachusetts Avenue (Unitil substation) storm water permit hearing to June 22 — passed",
+    "official": "A. Burney moved to continue to 6/22/26 @ 6:05pm.",
+    "note": "Same continuation, same date, passed 4/0.",
+    "t": 5034
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: close public hearing for 757 Chase Road",
+    "ours": "Close the public hearing for 757 Chase Road — passed",
+    "official": "A. Burney moved to close the Hearing.",
+    "note": "Both record closing the hearing, passed 4/0.",
+    "t": 5989
+   },
+   {
+    "kind": "discrepancy",
+    "about": "757 Chase Road approvals: one motion or two",
+    "ours": "Two votes: PBSA26-4 site plan approved with standard conditions plus vehicles loaded/unloaded only within the site; PBSW26-15 storm water permit approved with standard conditions plus soil testing at the infiltration system, reviewed by Graves Engineering",
+    "official": "A. Burney moved to approve with standard conditions along with the condition Soil testing shall be done at the location of the infiltration system before the system is installed.",
+    "note": "Official records a single motion and one 4/0 vote carrying both conditions; ours splits it into two votes with one condition each. Check the recording to see whether there were one or two motions and which permit each condition attached to.",
+    "t": 6009
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 30 Summer Street to June 22 at 6:05 p.m.",
+    "ours": "Continue 30 Summer Street (PBSW25-6, PBSA25-8, PBSP25-9) to June 22 at 6:05 p.m. — passed",
+    "official": "A. Burney motioned to continue until 6/22/26 at 6:05pm.",
+    "note": "Same date and time, passed 4/0.",
+    "t": 6262
+   },
+   {
+    "kind": "discrepancy",
+    "about": "10 Parmenter Road continuation date",
+    "ours": "Continue 10 Parmentor Road (PBSW26-12/13, PBSP26-3/4) to June 22 at 6:05 p.m. — passed",
+    "official": "A. Burney moved to continue until 6/8/26 at 6:05pm.",
+    "note": "Official text gives 6/8/26, the date of this meeting itself, which looks like a typo for 6/22/26; check the recording and the next agenda. (Street name 'Parmentor' is a caption error for Parmenter.)",
+    "t": 6296
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: continue 860 New West Townsend Road to June 22",
+    "ours": "Continue 860 New West Townsend Road (PBSA26-1, PBSW26-1, PBSP26-1) to June 22 at 6:05 p.m. — passed",
+    "official": "A. Burney moved to continue until the June 22nd meeting at 6:05pm.",
+    "note": "Same continuation, passed 4/0.",
+    "t": 6328
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vote to approve 5/11/26 minutes",
+    "ours": "",
+    "official": "A. Burney moved to approve. T. Willsemer, Second.",
+    "note": "Official records a 4/0 aye vote approving the 5/11/26 minutes; ours records no such vote. Check the recording for it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Working sessions in July and August",
+    "ours": "Board agreed to hold working sessions in July and August to hammer out zoning bylaw language ahead of a future town meeting.",
+    "official": "Would like to have working sessions- ",
+    "note": "Official has the Director wanting working sessions, hoping for one at a regular meeting, with no agreement or July/August timing. Check the recording for whether the board actually agreed.",
+    "t": 498
+   },
+   {
+    "kind": "agree",
+    "about": "Stay after meeting to compare summer calendars",
+    "ours": "Board agreed to stay briefly after the meeting to compare summer calendars for quorum planning.",
+    "official": "M. Brenner asked the board to stay after; to go over summer calendars so that we can",
+    "note": "Both record the chair asking the board to stay after for calendars.",
+    "t": 539
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Graves Engineering billing the 171 Arbor applicant directly (53G)",
+    "ours": "Graves Engineering will bill the 171 Arbor Street applicant directly for review rather than processing a formal fee filing; applicant to submit revised calculations the next day.",
+    "official": "",
+    "note": "Official only says the board wants new calculations confirmed and that Graves reviewed the earlier plans; the 53G fee arrangement and next-day submission are not recorded.",
+    "t": 3220
+   },
+   {
+    "kind": "agree",
+    "about": "Sunny Hill Road common driveway preliminary consult",
+    "ours": "Board gave informal positive feedback on the Sunny Hill Road common driveway concept, directing the applicant to address fire-truck turning movements before filing a formal application.",
+    "official": "A. Burney stated the biggest concern is a turnaround for fire trucks.",
+    "note": "Both record the fire-truck turnaround as the main concern, with a suggested 'U' loop in the official.",
+    "t": 4159
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Request to 860 New West Townsend applicant about alternative driveway",
+    "ours": "Chair directed the planner to ask the 860 New West Townsend Road applicant to explain whether they explored an alternative ('needle eye') driveway design.",
+    "official": "A. Burney asked S. Wallace to pass along to applicant that he strongly encourages an",
+    "note": "Same request, but official attributes it to A. Burney rather than the Chair; check the recording for who asked.",
+    "t": 6370
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Hearings with special permits continued for lack of quorum",
+    "ours": "",
+    "official": "M. Brenner let the public know that all hearings that have Special Permits will be",
+    "note": "Official gives lack of quorum as the reason for the continuances; ours does not record it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Burney statement on override and commercial zoning",
+    "ours": "",
+    "official": "expand the commercial zones, encourage revenue positive development.",
+    "note": "Official records board comment on relaxing commercial zoning after the failed override; ours has no such item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Master Plan item moved to next meeting",
+    "ours": "",
+    "official": "M. Brenner stated it has not been sent out and will move to next meeting",
+    "note": "Official records the Master Plan approval being deferred; ours has nothing on it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee 'Sam (board member)'",
+    "ours": "Sam (board member)",
+    "official": "Roll Call: M. Brenner, T. Willsmer, A. Burney, A. Nicastro ",
+    "note": "Official shows four members present (all votes 4/0) and A. Reid absent; no Sam. Check whether the captions misattributed a speaker or Sam is someone else."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member Tony Niccastro",
+    "ours": "Tony Niccastro (board member, newly elected)",
+    "official": "M. Brenner welcomed newest elected Board Member, Anthony Nicastro",
+    "note": "Same person, misspelled in captions.",
+    "official_reading": "Anthony Nicastro"
+   },
+   {
+    "kind": "agree",
+    "about": "Chair, Vice Chair, Adam, Steve Wallace",
+    "ours": "Matt (Chair); Tim (board member, Vice Chair); Adam (board member); Steve Wallace (Planning Director)",
+    "official": "Roll Call: M. Brenner, T. Willsmer, A. Burney, A. Nicastro ",
+    "note": "Matthew Brenner, Timothy Willsmer and Adam Burney are present in both; Wallace speaks in both."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter David Loy (260 Fula Road)",
+    "ours": "David Loy (presenter (land surveyor, Hanigan Engineering, 260 Fula Road))",
+    "official": "David LeRoy (Hannigan Engineering) representing the applicant, Fitchburg",
+    "note": "Same presenter; name and firm misheard.",
+    "official_reading": "David LeRoy (Hannigan Engineering)"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Justin McCarti (171 Arbor, Sunny Hill)",
+    "ours": "Justin McCarti (presenter (engineer, 171 Arbor Street and Sunny Hill Road))",
+    "official": "Justin LeClair (McCarty Engineering) representing the applicant, Scott Perry",
+    "note": "Captions heard the firm name as the surname; the engineer is Justin LeClair of McCarty Engineering.",
+    "official_reading": "Justin LeClair (McCarty Engineering)"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Applicant Ed McWeeny (Sunny Hill Road)",
+    "ours": "Ed McWeeny (applicant (Sunny Hill Road))",
+    "official": "Justin LeClair (McCarty Engineering) representing Ed McSweeney, who was in the",
+    "note": "Same person; official spells it McSweeney (and 'Ed Sweeny' elsewhere).",
+    "official_reading": "Ed McSweeney"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Ten Chan (TF Moran)",
+    "ours": "Ten Chan (presenter (TF Moran, engineer for Unitil substation))",
+    "official": "Ting Chang (TF Moran, Inc) and the applicant, Nate Sherwood, Unitil explained",
+    "note": "Same presenter, name misheard.",
+    "official_reading": "Ting Chang"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Brian Laferty (757 Chase Road)",
+    "ours": "Brian Laferty (presenter (Colonial Automotive Group / Empire Management, 757 Chase Road))",
+    "official": "Applicant Brian Lafferty, Empire Management Corp., and via zoom, engineer Jim",
+    "note": "Same person; spelling differs. Official does not mention Colonial Automotive Group.",
+    "official_reading": "Brian Lafferty"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Jim Elante (Land Design Collaborative)",
+    "ours": "Jim Elante (presenter (Land Design Collaborative, remote video))",
+    "official": "Almonte, Land Design Collaborative, presented the project.",
+    "note": "Same remote engineer; surname misheard (Jim Almonte).",
+    "official_reading": "Jim Almonte"
+   },
+   {
+    "kind": "agree",
+    "about": "Nate Sherwood (Unitil)",
+    "ours": "Nate Sherwood (presenter (Unitil, applicant))",
+    "official": "Ting Chang (TF Moran, Inc) and the applicant, Nate Sherwood, Unitil explained",
+    "note": "Name and role match."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:16:14Z",
+   "cost_usd": 0.286865
+  }
  }
 }

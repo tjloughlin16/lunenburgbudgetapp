@@ -670,5 +670,181 @@
    "at": "2026-09-27T02:48:26Z",
    "cost_usd": 0.197072
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04062026-7708",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2026-04-06-minutes-7708.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2026-04-06-minutes-7708.pdf"
+  },
+  "official_sha256": "a0e5af1235b791ee02ddd26182e160fca71ee90b2ee8bda123eb4936cf98857e",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the studio lease, the investment drop, the legal fees and the Comcast balance. The official minutes are a short summary with no votes besides minutes approval and adjournment, and none of the FY27 budget, warrant article or transfer figures. The main differences to check are the Castis quote (monthly vs annual maintenance, and whether $34,895 is the total or only the base unit) and the tabled policy vote that the official minutes don't mention.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Studio lease increase",
+    "t": 917,
+    "ours": "FY27 studio lease line item: $6,000, $12,000, $1,000 per month",
+    "official": "The\tnew\tstudio\tspace\tlease\twill\tbe\t$12,000\tinstead\tof\t$6,000",
+    "note": "Both give the lease rising from $6,000 to $12,000 (our $1,000 per month is the same $12,000 a year)."
+   },
+   {
+    "kind": "agree",
+    "about": "Investment income drop",
+    "t": 1445,
+    "ours": "FY27 investment income estimate: 20,000, 35,000, 12,000, 47,000",
+    "official": "• The investment value from Bartholmew dropped from $35,000 to $20,000",
+    "note": "Both record the investment figure falling from $35,000 to $20,000; our extra figures (12,000, 47,000) are not in the official text."
+   },
+   {
+    "kind": "agree",
+    "about": "Legal fees for Comcast agreement",
+    "t": 1105,
+    "ours": "Legal fees for cable advisory committee: around 12, $12,000, 10 or 12, 6,000 a year",
+    "official": "• The legal fees for the new Comcast agreement will be around $12,000 and will be split between 2 years at $6,000 each",
+    "note": "Both give about $12,000 split over two years at $6,000 a year; our caption calls it 'cable advisory committee' legal fees."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Comcast franchise fee / balance",
+    "t": 528,
+    "ours": "Comcast franchise fee balance: 39781.90, a,77, 340.59",
+    "official": "•\tBalance\t$1,077,340.59",
+    "note": "Our '$1,077,340.59' is garbled into fragments ('a,77, 340.59'); the official balance matches the tail of ours.",
+    "official_reading": "$1,077,340.59"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Station manager name",
+    "ours": "Joe Tol (station manager / member)",
+    "official": "Manager:\tJo\tToale",
+    "note": "Misheard name; the official minutes list Jo Toale as Manager, not as a member present.",
+    "official_reading": "Jo Toale"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Walker, Brian, Faith",
+    "ours": "Steve Walker (chair); Brian (secretary pro tem); Faith (member)",
+    "official": "PACC\tmembers\tpresent:\tSteve\tWalker,\tBrian\tVienneau,\tFaith\tBeall",
+    "note": "The same three members are present; the official gives their full names. The roles ('chair', 'secretary pro tem') are not in the official text."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "Steve\tArchambault,\texcused",
+    "note": "The official minutes name an excused member. Ours records only that a required member was absent for the tabled vote."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Castis maintenance fee: annual or monthly",
+    "t": 1981,
+    "ours": "Castis quote: annual support and maintenance: $1,795",
+    "official": "o\tThe\tmonthly\tmaintenance\tfee\tis\t$1,795",
+    "note": "Same $1,795, but ours calls it annual and the official calls it monthly. Check the vendor quote or the recording near t=1981."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Castis total vs base unit",
+    "t": 1915,
+    "ours": "Castis quote: base playout unit: $34,895",
+    "official": "o\tThe\ttotal\tfor\tthe\tCASTUS\tupgrade\tis\t$34,895",
+    "note": "The official calls $34,895 the total. Ours treats it as the base unit and adds more items (migration, professional services, app) that bring the total to about $63,000, and a $70,000 warrant article. Check the written quote."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Other Castis quote line items",
+    "t": 2860,
+    "ours": "Castis quote: professional services, installation and training: $4,272; server/content migration: 1490; mobile app subscription: $2,90, 2,000 90,000, 290",
+    "official": "",
+    "note": "The official minutes give none of these line items. Our figures for them are partly garbled by the captions."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY27 PEG budget, revenue and shortfall figures",
+    "t": 1508,
+    "ours": "FY27 total PEG revenue: 177,000; FY27 PEG budget shortfall / retained earnings transfer: 40,84755",
+    "official": "",
+    "note": "The official minutes have no FY27 budget figures. Our '40,84755' is probably garbled and should be checked against the warrant article."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Retained earnings transfers / warrant articles",
+    "t": 1662,
+    "ours": "From retained earnings to fund the Castis system replacement (proposed warrant article) — $70,000 (discussed only)",
+    "official": "",
+    "note": "The official minutes do not mention the warrant articles or the retained earnings transfers."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 salary shortfall line-item transfers",
+    "t": 278,
+    "ours": "From the equipment maintenance and supplies line to the salaries line item — $2,000 (discussed only)",
+    "official": "",
+    "note": "The official minutes do not mention the $6,000 salary shortfall or the transfers covering it ($36.50, $350 and $2,000 in ours)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Network switcher cost",
+    "t": 340,
+    "ours": "Network switcher replacement: $2 to $300",
+    "official": "",
+    "note": "The official minutes say the switch is failing and a loaner is in use, but give no cost. Our figure is garbled."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Castis decisions (add-ons, motherboard, June 30 install)",
+    "t": 3475,
+    "ours": "Agreed to include optional add-ons (mobile app, branded streaming channel) now and re-evaluate usage in a year",
+    "official": "•\tWorking\ton\tthe\tCASTUS\tquote,\tJo\tmet\twith\tRobert\tHaigh\t04/03",
+    "note": "Ours records agreements on add-ons, the motherboard line and the June 30 install. The official records no decisions, only that the quote is being worked on. Check the recording and whether any vote was taken."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "PACC policy vote tabled",
+    "t": 3796,
+    "ours": "Tabled the PACC policy vote item because a required member was absent.",
+    "official": "PACC\tPolicy\tUpdate:\t•\tNo\tcurrent\tupdates",
+    "note": "Ours records an item tabled for lack of a required member; the official says only 'no current updates'. Check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Enterprise fund status",
+    "t": 3883,
+    "ours": "Enterprise fund investment status will be reported at the next meeting once the town's figures are available.",
+    "official": "Enterprize\tAccount:\t\t\t\t\t\t\t\t•\tShould\tbe\tavailable\tnext\tmonth",
+    "note": "Both say the enterprise account report comes at the next meeting, in about a month."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Closed captioning hours and concurrent streams",
+    "ours": "",
+    "official": "o\tJo\twill\tcheck\tto\tsee\tif\tthe\tRMTP\tpricing\tincludes\tthe\tcapability\tfor\t2\tconcurrent\tstreams",
+    "note": "This follow-up and the 500-hour closed captioning plan are in the official minutes but not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Program analysis",
+    "ours": "",
+    "official": "O\t80%\tlocal\tprogramming.\tUp\tto\t112\tprograms\t–\t90\tare\tlocal",
+    "note": "The official gives program statistics that our minutes do not capture."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:19:09Z",
+   "cost_usd": 0.3127372
+  }
  }
 }

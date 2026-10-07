@@ -344,5 +344,173 @@
    "at": "2026-09-27T18:19:24Z",
    "cost_usd": 0.192338
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06102025-7255",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2025-06-10-minutes-7255.txt",
+   "path": "sources/meetings/sewer-commission/2025-06-10-minutes-7255.pdf"
+  },
+  "official_sha256": "3a3536c084b407470ccad3c494c321ae422290696ec7a000cdf5c3f34e6b2cd3",
+  "coverage": "full",
+  "summary": "The two records agree on the main business: the Wright-Pierce contract total, the ADU fee discussion, the standing agenda items and a member leaving. They differ on the roll (our captions add Fred Mson and Shane Brainley, who the official list lacks), the minutes-approval vote our record omits, and the Wright-Pierce component figures that only ours carries.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 5,
+   "discrepancy": 0,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "only_in_official",
+    "about": "Vote to approve minutes of 5/13/25 and 5/27/25",
+    "ours": "",
+    "official": "Roll Call Vote: Joe-aye, Scott-aye and Brett-aye. (Arthur and Dan abstained)",
+    "note": "Our minutes record no votes; this roll call approving prior minutes (3 aye, 2 abstentions) is only in the official minutes. It is arguably procedural, but check the recording for the vote and the abstentions.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Engineering contractor name",
+    "ours": "PS engineering service agreement (Ray Pierce NPDES permit work)",
+    "official": "Wright-Pierce ND PES Permit-",
+    "note": "'Ray Pierce' is a mishearing of Wright-Pierce; same NPDES permit work item.",
+    "official_reading": "Wright-Pierce",
+    "t": 527
+   },
+   {
+    "kind": "agree",
+    "about": "Wright-Pierce contract total",
+    "ours": "83,800",
+    "official": "which total  $83, 800 .",
+    "note": "The contract total matches in both records.",
+    "t": 527
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Wright-Pierce contract components (hours and dollar amounts)",
+    "ours": "4400, 300, 54 hours, 7,800, 84 hours, 13,700, 326 hours, 54,900",
+    "official": "",
+    "note": "The official minutes give only the $83,800 total, not the component hours and amounts. Those component figures are caption-derived and unverified.",
+    "t": 527
+   },
+   {
+    "kind": "agree",
+    "about": "Sewer minimum connection charge and per-bedroom fee",
+    "ours": "2250, 550",
+    "official": "the minimum charge for hooking up is \n$2250, plus an additional $550  for each bedroom in excess of  3.",
+    "note": "The $2250 minimum and $550 per extra bedroom match.",
+    "t": 736
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figures 500, 1,000 and 3,420 for ADU / tie-in fees",
+    "ours": "500, 1,000, 3,420 (standard tie-in example $3,420)",
+    "official": "",
+    "note": "The official minutes do not mention $3,420, $500 or $1,000. Check the recording to see whether these were stated or are mishearings.",
+    "t": 982
+   },
+   {
+    "kind": "agree",
+    "about": "ADU sewer fee put on a future agenda",
+    "ours": "Put the question of an ADU/accessory-unit sewer connection fee on the next meeting's agenda and have Bill and Andrew research the legal and technical requirements first.",
+    "official": "They will add \nthis discussion to the agenda.",
+    "note": "Both put the ADU fee discussion on the agenda. Ours adds that Bill and Andrew research it first; the official says only that Brett would need to talk to Bill. Minor difference in detail.",
+    "t": 1582
+   },
+   {
+    "kind": "agree",
+    "about": "Standing future agenda items",
+    "ours": "Keep Dana Street repairs and manhole repair as standing items on future agendas, and keep quarterly demands on the agenda until billing goes out.",
+    "official": "Future Agenda Items-  Minutes, Dana  St. work , Manhole Repair, Quarterly Demands, and \ndiscussion  on ADU hookups and fees.",
+    "note": "Same items: Dana St, Manhole Repair, Quarterly Demands.",
+    "t": 1750
+   },
+   {
+    "kind": "agree",
+    "about": "Member leaving; recruit replacement",
+    "ours": "Resume outreach/recruitment for new commission members since one member is leaving after selling his house.",
+    "official": "Joe said he can attend only 1 more meeting  before moving and Commissioners will ask \naround for a new candidate.",
+    "note": "Same outcome: one member leaving and a search for a replacement. The official says 'moving' where ours says 'selling his house'.",
+    "t": 1622
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Brett Ransson (chairman)",
+    "official": "Chair-  Brett Ramsden",
+    "note": "Misheard surname.",
+    "official_reading": "Brett Ramsden",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clerk name",
+    "ours": "Dan Parthur (commissioner)",
+    "official": "Clerk- Dan Proctor",
+    "note": "Misheard surname; the official minutes list him as Clerk.",
+    "official_reading": "Dan Proctor",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-chair name",
+    "ours": "Scott D (commissioner)",
+    "official": "Vice-Chair - Scott Dall",
+    "note": "Ours gives only an initial; the official gives the full surname.",
+    "official_reading": "Scott Dall",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Business manager name",
+    "ours": "Andrew Bellery (business manager)",
+    "official": "Sewer Business Manager: Andrew Valliere",
+    "note": "Misheard surname.",
+    "official_reading": "Andrew Valliere",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Commissioners Joe and Arthur",
+    "ours": "Joe (commissioner), Arthur (commissioner)",
+    "official": "Member s : Joe \nHurley  and Arthur Katis",
+    "note": "Both records list Joe and Arthur as members; the official gives the surnames.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fred Mson (commissioner)",
+    "ours": "Fred Mson (commissioner)",
+    "official": "",
+    "note": "The official attendee list has no Fred. It may be a misheard name for another attendee or someone who spoke on the recording. Check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Shane Brainley (staff)",
+    "ours": "Shane Brainley (staff)",
+    "official": "",
+    "note": "The official list shows no such staff member. It names Jane Ranley as minutes clerk and Bill Bernard as absent. Check whether this is a misheard clerk or staff name.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent DPW Director and minutes clerk",
+    "ours": "",
+    "official": "Absent : DPW Director- Bill Bernard",
+    "note": "Our minutes list neither the absent DPW Director nor the minutes clerk, Jane Ranley.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:28:28Z",
+   "cost_usd": 0.239209
+  }
  }
 }

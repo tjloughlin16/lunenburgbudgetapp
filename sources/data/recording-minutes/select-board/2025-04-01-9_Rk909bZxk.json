@@ -1,779 +1,1142 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "select-board",
-  "board": "Select Board",
-  "video_title": "Select Board",
-  "meeting_date": "2025-04-01",
-  "video_id": "9_Rk909bZxk",
-  "video_url": "https://www.youtube.com/watch?v=9_Rk909bZxk",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/select-board/2025-04-01-9_Rk909bZxk.json",
-    "sha256": "be75bfe244815dd97d70c82ca7b0ed9dda59715bc174a63643525e4a03f25f06",
-    "caption_lines": 531,
-    "segments": 4727
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2025-04-01",
+ "video_id": "9_Rk909bZxk",
+ "video_url": "https://www.youtube.com/watch?v=9_Rk909bZxk",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2025-04-01-9_Rk909bZxk.json",
+  "sha256": "be75bfe244815dd97d70c82ca7b0ed9dda59715bc174a63643525e4a03f25f06",
+  "caption_lines": 531,
+  "segments": 4727
+ },
+ "recording": {
+  "duration_s": 11052,
+  "duration": "3:04",
+  "spoken_chars": 169471,
+  "words_approx": 28245
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04012025-7101",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-agenda-7101.txt",
+   "path": "sources/meetings/select-board/2025-04-01-agenda-7101.pdf"
   },
-  "recording": {
-    "duration_s": 11052,
-    "duration": "3:04",
-    "spoken_chars": 169471,
-    "words_approx": 28245
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04012025-7132",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-agenda-7132.txt",
+   "path": "sources/meetings/select-board/2025-04-01-agenda-7132.pdf"
   },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04012025-7101",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-agenda-7101.txt",
-      "path": "sources/meetings/select-board/2025-04-01-agenda-7101.pdf"
-    },
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04012025-7132",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-agenda-7132.txt",
-      "path": "sources/meetings/select-board/2025-04-01-agenda-7132.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-minutes-rr2026-09-18-draft.txt",
-      "path": "sources/meetings/select-board/2025-04-01-minutes-rr2026-09-18-draft.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04012025-7101",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-minutes-7101.txt",
-      "path": "sources/meetings/select-board/2025-04-01-minutes-7101.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04012025-7132",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-minutes-7132.txt",
-      "path": "sources/meetings/select-board/2025-04-01-minutes-7132.pdf"
-    }
+  {
+   "kind": "minutes",
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-minutes-rr2026-09-18-draft.txt",
+   "path": "sources/meetings/select-board/2025-04-01-minutes-rr2026-09-18-draft.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04012025-7101",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-minutes-7101.txt",
+   "path": "sources/meetings/select-board/2025-04-01-minutes-7101.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04012025-7132",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-minutes-7132.txt",
+   "path": "sources/meetings/select-board/2025-04-01-minutes-7132.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-28T12:06:20Z",
+  "cost_usd": 0.744462
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Jen",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Julie",
+    "role": "assistant town manager / HR director"
+   },
+   {
+    "name_as_heard": "Ezekiel Ayala",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Chief Sullivan",
+    "role": "fire chief"
+   },
+   {
+    "name_as_heard": "Michael Ray",
+    "role": "select board member"
+   },
+   {
+    "name_as_heard": "Amanda (Miss Moore)",
+    "role": "select board member"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "select board member"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "select board member"
+   },
+   {
+    "name_as_heard": "Mr. Alonzo",
+    "role": "select board member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 103,
+    "topic": "Opposition to a school override, criticizing the superintendent's DEI initiatives and school performance",
+    "speaker_as_heard": "Daryl Plant",
+    "stated_role": "parent/resident, 490 Lancaster A"
+   },
+   {
+    "t": 314,
+    "topic": "Free speech complaint against the cemetery commission for calling his prior remarks 'disinformation'",
+    "speaker_as_heard": "John Bowen",
+    "stated_role": "resident, 162 Highland Street"
+   },
+   {
+    "t": 1226,
+    "topic": "Questions as an abutter about placement and enclosure of proposed propane tanks",
+    "speaker_as_heard": "Devin Shay",
+    "stated_role": "resident, 612 Lancaster A"
+   },
+   {
+    "t": 1353,
+    "topic": "Asked how the propane tank site relates to the new Zone 2 water protection district rules",
+    "speaker_as_heard": "Daryl Plant",
+    "stated_role": "abutter, 490 Lancaster A"
+   },
+   {
+    "t": 1702,
+    "topic": "Clarified that DEP, not conservation or the water district, designates the water protection zone",
+    "speaker_as_heard": "Ron Delissio",
+    "stated_role": "resident, 181 Reservoir Road"
+   },
+   {
+    "t": 1784,
+    "topic": "Raised whether a right-to-farm bylaw affects what conservation can restrict",
+    "speaker_as_heard": "Ron Delissio",
+    "stated_role": "resident, 181 Reservoir Road"
+   },
+   {
+    "t": 10542,
+    "topic": "Continued statement supporting the cemetery-commission citizens petition and records-privacy concerns",
+    "speaker_as_heard": "John Bowen",
+    "stated_role": "resident, 162 Highland Street"
+   },
+   {
+    "t": 10789,
+    "topic": "Praised the board's vote against the school override and the Brooks House discussion; raised concern about loss of hospital services",
+    "speaker_as_heard": "Glenn Mload",
+    "stated_role": "resident, 436 Reservoir Road"
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy26",
+   "capital",
+   "contracts-and-unions",
+   "debt",
+   "elections",
+   "facilities",
+   "grants",
+   "hiring",
+   "library",
+   "override",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "public-safety",
+   "retirement",
+   "staffing",
+   "state-aid",
+   "superintendent-report",
+   "tax-rate",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 2296,
+    "motion": "Close the public hearing on the DEO Gas flammable storage license",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2317,
+    "motion": "Conditionally approve the flammable storage license for four 1,000-gallon propane tanks at 181 Kilburn Street, contingent on conservation agent feedback",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2502,
+    "motion": "Accept the ambulance write-off request as presented by the fire chief and finance director",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5006,
+    "motion": "Ratify the town manager's appointment of Kathy Ko as Inspector of Animals",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5883,
+    "motion": "Recommend approval of Article 4 (revolving funds)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5904,
+    "motion": "Defer a recommendation on Article 5 (prior fiscal year expenses)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5926,
+    "motion": "Defer Article 6 (FY2025 budget adjustments)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5946,
+    "motion": "Defer Article 7 (FY2025 closeouts)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 6134,
+    "motion": "Recommend approval of Article 8 (FY2026 capital program)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 6256,
+    "motion": "Remove Article 9 (Lunenburg Middle/High School track and field complex) from the warrant",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 6404,
+    "motion": "Re-recommend approval of Article 10 (special projects funding) with updated figures",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 6507,
+    "motion": "Recommend approval of Article 11 (FY2026 omnibus budget)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 7587,
+    "motion": "Recommend disapproval of Article 12, the citizens' petition for a Proposition 2½ override for the schools",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 7736,
+    "motion": "Recommend approval of Article 13 (transfer of free cash to the schools' FY26 budget, contingent on the override failing)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 7947,
+    "motion": "Recommend that town meeting take no action on Articles 17 and 18 (stabilization fund appropriations, no dollar amount)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 8094,
+    "motion": "Recommend approval of Article 21 (appropriation to the compensated absence reserve fund)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 8135,
+    "motion": "Recommend approval of Article 26 (Solid Waste Disposal Program Enterprise Fund)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 8155,
+    "motion": "Recommend approval of Article 27 (Water Enterprise Fund)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 8175,
+    "motion": "Recommend approval of Article 28 (PEG Access Enterprise Fund)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 8334,
+    "motion": "Recommend disapproval of Article 33, the cemetery-commission citizens petition",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 8520,
+    "motion": "Recommend approval of Article 34 (Marshall Park design debt exclusion)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 8795,
+    "motion": "Do not place a Proposition 2½ override ballot question on the annual town election warrant",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 10227,
+    "motion": "Sign on to the congressional delegation letter opposing cuts to IMLS library/museum funding",
+    "outcome": "passed 4-1",
+    "procedural": false
+   },
+   {
+    "t": 11024,
+    "motion": "Adjourn",
+    "outcome": "passed unanimously",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2400,
+    "topic": "Quarterly ambulance receivables write-off",
+    "figures_as_heard": [
+     "$19,546.36"
+    ],
+    "what_was_said": "The finance director and fire chief presented uncollectible ambulance billing to be written off the town's books. They plan to move this to a semiannual process instead of quarterly."
+   },
+   {
+    "t": 3499,
+    "topic": "FY26 SAP salary schedule COLA",
+    "figures_as_heard": [
+     "3%",
+     "2 and a half%",
+     "$43,46",
+     "$7,300"
+    ],
+    "what_was_said": "The assistant town manager recommended a 3% COLA for SAP employees instead of the previously budgeted 2.5%, citing the added cost as roughly $43,46, about $7,300 more than the 2.5% option."
+   },
+   {
+    "t": 3582,
+    "topic": "DPW Director reclassification and new Communications/IT Manager position",
+    "figures_as_heard": [
+     "grade 16",
+     "grade 17",
+     "$4879",
+     "$601",
+     "5320",
+     "6543",
+     "$5 an hour",
+     "$10,400"
+    ],
+    "what_was_said": "A warrant article would reclassify the DPW director from grade 16 to grade 17 and create a Communications and IT Manager position without adding headcount; members debated whether one grade increase was enough."
+   },
+   {
+    "t": 5121,
+    "topic": "FY25 local receipts collection",
+    "figures_as_heard": [
+     "2,18,9767",
+     "3,361,988.50",
+     "60%",
+     "60.9 cents"
+    ],
+    "what_was_said": "The town manager reported local receipts collected through March against the year's target, noting the collection rate was similar to the same point last year."
+   },
+   {
+    "t": 5288,
+    "topic": "State legislative earmark requests",
+    "figures_as_heard": [
+     "$50,000",
+     "$38,000"
+    ],
+    "what_was_said": "The town manager submitted earmark requests under a roughly $50,000 target to the state representative, choosing school security camera server upgrades; the cemetery commission separately renewed a request for monument restoration funding."
+   },
+   {
+    "t": 5614,
+    "topic": "Roadway fog seal/crack seal contract",
+    "figures_as_heard": [
+     "$233,000",
+     "9.52 miles",
+     "6.99 miles"
+    ],
+    "what_was_said": "The town is putting out a bid for road fog seal and crack seal work with an anticipated total cost and mileage stated."
+   },
+   {
+    "t": 6195,
+    "topic": "Track and field complex capital request",
+    "figures_as_heard": [
+     "north of a $100,000"
+    ],
+    "what_was_said": "The town manager noted this school capital article was unfunded and had been pulled from capital planning ranking, recommending it be removed from the warrant."
+   },
+   {
+    "t": 6297,
+    "topic": "Article 10 special projects funding",
+    "figures_as_heard": [
+     "152,000",
+     "500"
+    ],
+    "what_was_said": "The town manager described swapping a cemetery road repair item for grant-writer pilot services within this warrant article, based on finance committee feedback."
+   },
+   {
+    "t": 6520,
+    "topic": "Citizens petition override for FY26 school budget",
+    "figures_as_heard": [
+     "$2 million"
+    ],
+    "what_was_said": "The citizens petition sought a Proposition 2½ override to fund the schools; members discussed the figure repeatedly in debating whether to recommend it."
+   },
+   {
+    "t": 6610,
+    "topic": "Supplemental transfer to schools contingent on override outcome",
+    "figures_as_heard": [
+     "500,000"
+    ],
+    "what_was_said": "Article 13 would transfer certified free cash to the Lunenburg schools' FY26 operating budget, but only if the override fails."
+   },
+   {
+    "t": 7013,
+    "topic": "Impact of the school budget gap if the override fails",
+    "figures_as_heard": [
+     "$2 million",
+     "20"
+    ],
+    "what_was_said": "A member said the $2 million shortfall was described to him as equating to the loss of more than 20 teaching positions."
+   },
+   {
+    "t": 7157,
+    "topic": "School department budget growth trend",
+    "figures_as_heard": [
+     "13%"
+    ],
+    "what_was_said": "A member noted the school department budget had grown by about 13% over roughly the last two years while the district still faced a shortfall."
+   },
+   {
+    "t": 7177,
+    "topic": "Estimated tax bill impact of override options",
+    "figures_as_heard": [
+     "400 bucks",
+     "800",
+     "1,200 bucks"
+    ],
+    "what_was_said": "A member compared the tax impact of a $2 million override to a larger override, saying the smaller one was more likely to pass with voters."
+   },
+   {
+    "t": 7862,
+    "topic": "Stabilization fund appropriations (Articles 17-18)",
+    "figures_as_heard": [
+     "222,000",
+     "12,000"
+    ],
+    "what_was_said": "The town manager recommended no action on these articles this year because free cash is instead being directed to the schools, while noting other reserve funds (OPEB, compensated absences) are still being funded."
+   },
+   {
+    "t": 8094,
+    "topic": "Compensated absence reserve fund appropriation",
+    "figures_as_heard": [
+     "10,000"
+    ],
+    "what_was_said": "The board voted to recommend approval of a $10,000 appropriation to this reserve fund."
+   },
+   {
+    "t": 8135,
+    "topic": "Solid Waste Disposal Program Enterprise Fund",
+    "figures_as_heard": [
+     "500,000"
+    ],
+    "what_was_said": "The board recommended approval of this enterprise fund article once the dollar figure was supplied."
+   },
+   {
+    "t": 8520,
+    "topic": "Marshall Park design debt exclusion",
+    "figures_as_heard": [
+     "$13.8 million",
+     "13 million",
+     "$5 million"
+    ],
+    "what_was_said": "The board recommended approval of a debt exclusion for the Marshall Park project, discussing a main motion for the full project and a fallback lower-cost motion."
+   },
+   {
+    "t": 10333,
+    "topic": "Accounts payable warrant",
+    "figures_as_heard": [
+     "$717,38623"
+    ],
+    "what_was_said": "The board reviewed and processed a large accounts payable warrant; one member recused herself from it."
+   }
+  ],
+  "transfers": [
+   {
+    "t": 7610,
+    "description": "Certified free cash to the Lunenburg public schools' FY26 operating budget, contingent on the override failing",
+    "amount_as_heard": "500,000",
+    "outcome": "voted (select board recommended approval to town meeting)"
+   },
+   {
+    "t": 8094,
+    "description": "Free cash appropriation to the compensated absence reserve fund",
+    "amount_as_heard": "10,000",
+    "outcome": "voted"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 6317,
+    "decision": "Swap the cemetery road network repair line in Article 10 for one-time grant-writer pilot services, per finance committee feedback."
+   },
+   {
+    "t": 8437,
+    "decision": "Keep the Marshall Park and municipal building debt-exclusion articles positioned near the end of the warrant so residents stay through the monetary votes."
+   },
+   {
+    "t": 8881,
+    "decision": "Town manager will bring two alternative formats for showing the multi-year budget comparison table to next week's meeting."
+   },
+   {
+    "t": 9591,
+    "decision": "Hold off voting on the January 23, 2024 minutes until Mr. Alonzo's misspelled name is corrected throughout."
+   },
+   {
+    "t": 9295,
+    "decision": "Municipal Building Design Committee will bring an interim Brooks House update to the board before town meeting despite lacking funded site-plan work."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 17,
+    "t_end": 78,
+    "topic": "Opening, pledge of allegiance, meeting notices",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 78,
+    "t_end": 624,
+    "topic": "Public comment: override opposition and cemetery-commission free speech dispute",
+    "resolution": "no resolution",
+    "tags": [
+     "public-comment",
+     "override"
+    ]
+   },
+   {
+    "t_start": 624,
+    "t_end": 707,
+    "topic": "Announcements: dog licenses, trash route changes, vendor fair",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 707,
+    "t_end": 2377,
+    "topic": "Public hearing: flammable storage license for propane tanks at 181 Kilburn Street",
+    "resolution": "voted - conditionally approved",
+    "tags": [
+     "planning-and-zoning",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2377,
+    "t_end": 2522,
+    "topic": "Ambulance write-off request",
+    "resolution": "voted - approved",
+    "tags": [
+     "public-safety",
+     "transfers"
+    ]
+   },
+   {
+    "t_start": 2522,
+    "t_end": 3163,
+    "topic": "State of the organization: employee turnover and exit-interview findings",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "staffing",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 3163,
+    "t_end": 4902,
+    "topic": "FY26 Salary Administration Plan (SAP): COLA, DPW director reclassification, new IT/communications role",
+    "resolution": "informational - votes deferred to next meeting",
+    "tags": [
+     "contracts-and-unions",
+     "personnel",
+     "budget-fy26"
+    ]
+   },
+   {
+    "t_start": 4924,
+    "t_end": 5068,
+    "topic": "Ratification of Inspector of Animals appointment (Kathy Ko)",
+    "resolution": "voted - approved",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 5080,
+    "t_end": 5718,
+    "topic": "Town manager report: local receipts, UMass ER proposal, state budget/earmarks, MRPC grant, project and vacancy updates",
+    "resolution": "informational",
+    "tags": [
+     "state-aid",
+     "grants",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 5801,
+    "t_end": 6507,
+    "topic": "Annual town meeting warrant review: Articles 1-11 (budget, capital, special projects)",
+    "resolution": "voted on each article",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "budget-fy26"
+    ]
+   },
+   {
+    "t_start": 6527,
+    "t_end": 7736,
+    "topic": "Citizens petition override (Article 12) and school supplement transfer (Article 13)",
+    "resolution": "voted - override recommendation disapproved; supplement approved",
+    "tags": [
+     "override",
+     "budget-fy26",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 7757,
+    "t_end": 8774,
+    "topic": "Remaining warrant articles: SAP grades, reserve funds, enterprise funds, tax exemptions, cemetery petition, Marshall Park debt exclusion",
+    "resolution": "voted or deferred per article",
+    "tags": [
+     "warrant-article",
+     "tax-rate",
+     "debt"
+    ]
+   },
+   {
+    "t_start": 8774,
+    "t_end": 8815,
+    "topic": "Vote on including a Prop 2½ override question on the town election ballot",
+    "resolution": "voted - declined",
+    "tags": [
+     "override",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 8815,
+    "t_end": 9026,
+    "topic": "Discussion of budget printout format for the town meeting booklet",
+    "resolution": "informational - to be revisited",
+    "tags": [
+     "budget-fy26",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 9026,
+    "t_end": 9170,
+    "topic": "Annual town election warrant approval deferred (Marshall Park ballot question language pending)",
+    "resolution": "deferred",
+    "tags": [
+     "elections",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 9170,
+    "t_end": 9339,
+    "topic": "Select Board report to town meeting on the Brooks House",
+    "resolution": "no resolution - report to be prepared",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 9692,
+    "t_end": 10227,
+    "topic": "Letter to congressional delegation on federal library/museum (IMLS) funding cuts",
+    "resolution": "voted - board signed on 4-1",
+    "tags": [
+     "library",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 10227,
+    "t_end": 10394,
+    "topic": "Minutes, warrants, and committee reports",
+    "resolution": "minutes deferred; warrant processed",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 10394,
+    "t_end": 10519,
+    "topic": "Board committee updates: municipal building design, conservation, superintendent screening committee",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "hiring",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 10519,
+    "t_end": 11043,
+    "topic": "Closing public comments, board comments on volunteerism, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The exact local receipts figure ('2,18,9767') is garbled in the captions and cannot be confirmed as printed.",
+   "The SAP 3% COLA cost figure ('$43,46') appears truncated/garbled in the captions.",
+   "The accounts payable warrant total was stated inconsistently ('$77', then '$17', then '$717,38623') before settling on the final figure.",
+   "Most motions in the warrant-article review are not attributed to a specific speaker by name in the captions (no diarization).",
+   "The name of the one board member who voted against signing the IMLS library letter is not stated in the vote itself, though the debate strongly suggests it was Michael Ray.",
+   "Long stretches of the propane-tank public hearing involve unlabeled cross-talk among board members and the applicant that could not be reliably attributed."
+  ],
+  "confidence": "moderate",
+  "headline": "Select Board voted not to put the schools' override question on the town election ballot, ending it.",
+  "summary": "The Select Board declined to recommend the citizens' petition Proposition 2½ override for the schools and voted separately not to place any override question on the annual town election ballot, ending the override effort for this cycle; members cited a lack of a multi-year plan and the school committee's own non-endorsement. The board also worked through nearly all annual town meeting warrant articles (capital plan, special projects, enterprise funds, a Marshall Park debt exclusion, a school-supplement transfer contingent on the override's failure), reviewed the FY26 SAP salary/COLA plan and a DPW director reclassification, heard an HR report on staff turnover, and voted 4-1 to sign a letter opposing federal library-funding cuts."
+ },
+ "digest": {
+  "watch_next": [
+   "Annual town meeting vote on the warrant articles, including the FY26 omnibus budget and the contingent free-cash transfer to schools",
+   "Whether the school committee identifies cuts equivalent to the shortfall members described in the district's FY26 budget"
+  ],
+  "what_happened": [
+   {
+    "line": "The Select Board voted not to put any Proposition 2½ override question on the annual town election ballot, ending the effort this cycle.",
+    "t": 8795
+   },
+   {
+    "line": "The board separately voted not to recommend the citizens' petition override for the schools, citing no multi-year plan and the school committee's own non-endorsement.",
+    "t": 7587
+   },
+   {
+    "line": "The board approved a transfer of free cash to the schools' FY26 budget, but only if the override fails at town meeting.",
+    "t": 7736
+   },
+   {
+    "line": "The board worked through most of the annual town meeting warrant, including removing an unfunded track and field complex article and recommending a Marshall Park debt exclusion.",
+    "t": 6256
+   },
+   {
+    "line": "The board voted 4-1 to sign a congressional letter opposing federal cuts to library and museum funding.",
+    "t": 10227
+   }
+  ],
+  "why_it_matters": [
+   "Residents will not see an override question on this year's town election ballot, so any additional school funding now depends on town meeting votes and the free-cash transfer instead.",
+   "The contingent free-cash transfer means the size of the schools' FY26 budget still turns on what town meeting decides about the override article.",
+   "The Marshall Park debt exclusion and other warrant articles the board recommended will go to a town-wide vote and can affect the tax bill."
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-28T12:06:20Z",
-    "cost_usd": 0.744462
-  },
-  "minutes": {
-    "attendees": [
-      {
-        "name_as_heard": "Jen",
-        "role": "town manager"
-      },
-      {
-        "name_as_heard": "Julie",
-        "role": "assistant town manager / HR director"
-      },
-      {
-        "name_as_heard": "Ezekiel Ayala",
-        "role": "finance director"
-      },
-      {
-        "name_as_heard": "Chief Sullivan",
-        "role": "fire chief"
-      },
-      {
-        "name_as_heard": "Michael Ray",
-        "role": "select board member"
-      },
-      {
-        "name_as_heard": "Amanda (Miss Moore)",
-        "role": "select board member"
-      },
-      {
-        "name_as_heard": "Renee",
-        "role": "select board member"
-      },
-      {
-        "name_as_heard": "Tom",
-        "role": "select board member"
-      },
-      {
-        "name_as_heard": "Mr. Alonzo",
-        "role": "select board member"
-      }
-    ],
-    "public_comment": [
-      {
-        "t": 103,
-        "topic": "Opposition to a school override, criticizing the superintendent's DEI initiatives and school performance",
-        "speaker_as_heard": "Daryl Plant",
-        "stated_role": "parent/resident, 490 Lancaster A"
-      },
-      {
-        "t": 314,
-        "topic": "Free speech complaint against the cemetery commission for calling his prior remarks 'disinformation'",
-        "speaker_as_heard": "John Bowen",
-        "stated_role": "resident, 162 Highland Street"
-      },
-      {
-        "t": 1226,
-        "topic": "Questions as an abutter about placement and enclosure of proposed propane tanks",
-        "speaker_as_heard": "Devin Shay",
-        "stated_role": "resident, 612 Lancaster A"
-      },
-      {
-        "t": 1353,
-        "topic": "Asked how the propane tank site relates to the new Zone 2 water protection district rules",
-        "speaker_as_heard": "Daryl Plant",
-        "stated_role": "abutter, 490 Lancaster A"
-      },
-      {
-        "t": 1702,
-        "topic": "Clarified that DEP, not conservation or the water district, designates the water protection zone",
-        "speaker_as_heard": "Ron Delissio",
-        "stated_role": "resident, 181 Reservoir Road"
-      },
-      {
-        "t": 1784,
-        "topic": "Raised whether a right-to-farm bylaw affects what conservation can restrict",
-        "speaker_as_heard": "Ron Delissio",
-        "stated_role": "resident, 181 Reservoir Road"
-      },
-      {
-        "t": 10542,
-        "topic": "Continued statement supporting the cemetery-commission citizens petition and records-privacy concerns",
-        "speaker_as_heard": "John Bowen",
-        "stated_role": "resident, 162 Highland Street"
-      },
-      {
-        "t": 10789,
-        "topic": "Praised the board's vote against the school override and the Brooks House discussion; raised concern about loss of hospital services",
-        "speaker_as_heard": "Glenn Mload",
-        "stated_role": "resident, 436 Reservoir Road"
-      }
-    ],
-    "tags": [
-      "budget",
-      "budget-fy26",
-      "capital",
-      "contracts-and-unions",
-      "debt",
-      "elections",
-      "facilities",
-      "grants",
-      "hiring",
-      "library",
-      "override",
-      "personnel",
-      "planning-and-zoning",
-      "public-comment",
-      "public-safety",
-      "retirement",
-      "staffing",
-      "state-aid",
-      "superintendent-report",
-      "tax-rate",
-      "town-departments",
-      "town-meeting",
-      "transfers",
-      "warrant-article",
-      "water-sewer"
-    ],
-    "votes": [
-      {
-        "t": 2296,
-        "motion": "Close the public hearing on the DEO Gas flammable storage license",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 2317,
-        "motion": "Conditionally approve the flammable storage license for four 1,000-gallon propane tanks at 181 Kilburn Street, contingent on conservation agent feedback",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 2502,
-        "motion": "Accept the ambulance write-off request as presented by the fire chief and finance director",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 5006,
-        "motion": "Ratify the town manager's appointment of Kathy Ko as Inspector of Animals",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 5883,
-        "motion": "Recommend approval of Article 4 (revolving funds)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 5904,
-        "motion": "Defer a recommendation on Article 5 (prior fiscal year expenses)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 5926,
-        "motion": "Defer Article 6 (FY2025 budget adjustments)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 5946,
-        "motion": "Defer Article 7 (FY2025 closeouts)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 6134,
-        "motion": "Recommend approval of Article 8 (FY2026 capital program)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 6256,
-        "motion": "Remove Article 9 (Lunenburg Middle/High School track and field complex) from the warrant",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 6404,
-        "motion": "Re-recommend approval of Article 10 (special projects funding) with updated figures",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 6507,
-        "motion": "Recommend approval of Article 11 (FY2026 omnibus budget)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 7587,
-        "motion": "Recommend disapproval of Article 12, the citizens' petition for a Proposition 2½ override for the schools",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 7736,
-        "motion": "Recommend approval of Article 13 (transfer of free cash to the schools' FY26 budget, contingent on the override failing)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 7947,
-        "motion": "Recommend that town meeting take no action on Articles 17 and 18 (stabilization fund appropriations, no dollar amount)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 8094,
-        "motion": "Recommend approval of Article 21 (appropriation to the compensated absence reserve fund)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 8135,
-        "motion": "Recommend approval of Article 26 (Solid Waste Disposal Program Enterprise Fund)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 8155,
-        "motion": "Recommend approval of Article 27 (Water Enterprise Fund)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 8175,
-        "motion": "Recommend approval of Article 28 (PEG Access Enterprise Fund)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 8334,
-        "motion": "Recommend disapproval of Article 33, the cemetery-commission citizens petition",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 8520,
-        "motion": "Recommend approval of Article 34 (Marshall Park design debt exclusion)",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 8795,
-        "motion": "Do not place a Proposition 2½ override ballot question on the annual town election warrant",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 10227,
-        "motion": "Sign on to the congressional delegation letter opposing cuts to IMLS library/museum funding",
-        "outcome": "passed 4-1",
-        "procedural": false
-      },
-      {
-        "t": 11024,
-        "motion": "Adjourn",
-        "outcome": "passed unanimously",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 2400,
-        "topic": "Quarterly ambulance receivables write-off",
-        "figures_as_heard": [
-          "$19,546.36"
-        ],
-        "what_was_said": "The finance director and fire chief presented uncollectible ambulance billing to be written off the town's books. They plan to move this to a semiannual process instead of quarterly."
-      },
-      {
-        "t": 3499,
-        "topic": "FY26 SAP salary schedule COLA",
-        "figures_as_heard": [
-          "3%",
-          "2 and a half%",
-          "$43,46",
-          "$7,300"
-        ],
-        "what_was_said": "The assistant town manager recommended a 3% COLA for SAP employees instead of the previously budgeted 2.5%, citing the added cost as roughly $43,46, about $7,300 more than the 2.5% option."
-      },
-      {
-        "t": 3582,
-        "topic": "DPW Director reclassification and new Communications/IT Manager position",
-        "figures_as_heard": [
-          "grade 16",
-          "grade 17",
-          "$4879",
-          "$601",
-          "5320",
-          "6543",
-          "$5 an hour",
-          "$10,400"
-        ],
-        "what_was_said": "A warrant article would reclassify the DPW director from grade 16 to grade 17 and create a Communications and IT Manager position without adding headcount; members debated whether one grade increase was enough."
-      },
-      {
-        "t": 5121,
-        "topic": "FY25 local receipts collection",
-        "figures_as_heard": [
-          "2,18,9767",
-          "3,361,988.50",
-          "60%",
-          "60.9 cents"
-        ],
-        "what_was_said": "The town manager reported local receipts collected through March against the year's target, noting the collection rate was similar to the same point last year."
-      },
-      {
-        "t": 5288,
-        "topic": "State legislative earmark requests",
-        "figures_as_heard": [
-          "$50,000",
-          "$38,000"
-        ],
-        "what_was_said": "The town manager submitted earmark requests under a roughly $50,000 target to the state representative, choosing school security camera server upgrades; the cemetery commission separately renewed a request for monument restoration funding."
-      },
-      {
-        "t": 5614,
-        "topic": "Roadway fog seal/crack seal contract",
-        "figures_as_heard": [
-          "$233,000",
-          "9.52 miles",
-          "6.99 miles"
-        ],
-        "what_was_said": "The town is putting out a bid for road fog seal and crack seal work with an anticipated total cost and mileage stated."
-      },
-      {
-        "t": 6195,
-        "topic": "Track and field complex capital request",
-        "figures_as_heard": [
-          "north of a $100,000"
-        ],
-        "what_was_said": "The town manager noted this school capital article was unfunded and had been pulled from capital planning ranking, recommending it be removed from the warrant."
-      },
-      {
-        "t": 6297,
-        "topic": "Article 10 special projects funding",
-        "figures_as_heard": [
-          "152,000",
-          "500"
-        ],
-        "what_was_said": "The town manager described swapping a cemetery road repair item for grant-writer pilot services within this warrant article, based on finance committee feedback."
-      },
-      {
-        "t": 6520,
-        "topic": "Citizens petition override for FY26 school budget",
-        "figures_as_heard": [
-          "$2 million"
-        ],
-        "what_was_said": "The citizens petition sought a Proposition 2½ override to fund the schools; members discussed the figure repeatedly in debating whether to recommend it."
-      },
-      {
-        "t": 6610,
-        "topic": "Supplemental transfer to schools contingent on override outcome",
-        "figures_as_heard": [
-          "500,000"
-        ],
-        "what_was_said": "Article 13 would transfer certified free cash to the Lunenburg schools' FY26 operating budget, but only if the override fails."
-      },
-      {
-        "t": 7013,
-        "topic": "Impact of the school budget gap if the override fails",
-        "figures_as_heard": [
-          "$2 million",
-          "20"
-        ],
-        "what_was_said": "A member said the $2 million shortfall was described to him as equating to the loss of more than 20 teaching positions."
-      },
-      {
-        "t": 7157,
-        "topic": "School department budget growth trend",
-        "figures_as_heard": [
-          "13%"
-        ],
-        "what_was_said": "A member noted the school department budget had grown by about 13% over roughly the last two years while the district still faced a shortfall."
-      },
-      {
-        "t": 7177,
-        "topic": "Estimated tax bill impact of override options",
-        "figures_as_heard": [
-          "400 bucks",
-          "800",
-          "1,200 bucks"
-        ],
-        "what_was_said": "A member compared the tax impact of a $2 million override to a larger override, saying the smaller one was more likely to pass with voters."
-      },
-      {
-        "t": 7862,
-        "topic": "Stabilization fund appropriations (Articles 17-18)",
-        "figures_as_heard": [
-          "222,000",
-          "12,000"
-        ],
-        "what_was_said": "The town manager recommended no action on these articles this year because free cash is instead being directed to the schools, while noting other reserve funds (OPEB, compensated absences) are still being funded."
-      },
-      {
-        "t": 8094,
-        "topic": "Compensated absence reserve fund appropriation",
-        "figures_as_heard": [
-          "10,000"
-        ],
-        "what_was_said": "The board voted to recommend approval of a $10,000 appropriation to this reserve fund."
-      },
-      {
-        "t": 8135,
-        "topic": "Solid Waste Disposal Program Enterprise Fund",
-        "figures_as_heard": [
-          "500,000"
-        ],
-        "what_was_said": "The board recommended approval of this enterprise fund article once the dollar figure was supplied."
-      },
-      {
-        "t": 8520,
-        "topic": "Marshall Park design debt exclusion",
-        "figures_as_heard": [
-          "$13.8 million",
-          "13 million",
-          "$5 million"
-        ],
-        "what_was_said": "The board recommended approval of a debt exclusion for the Marshall Park project, discussing a main motion for the full project and a fallback lower-cost motion."
-      },
-      {
-        "t": 10333,
-        "topic": "Accounts payable warrant",
-        "figures_as_heard": [
-          "$717,38623"
-        ],
-        "what_was_said": "The board reviewed and processed a large accounts payable warrant; one member recused herself from it."
-      }
-    ],
-    "transfers": [
-      {
-        "t": 7610,
-        "description": "Certified free cash to the Lunenburg public schools' FY26 operating budget, contingent on the override failing",
-        "amount_as_heard": "500,000",
-        "outcome": "voted (select board recommended approval to town meeting)"
-      },
-      {
-        "t": 8094,
-        "description": "Free cash appropriation to the compensated absence reserve fund",
-        "amount_as_heard": "10,000",
-        "outcome": "voted"
-      }
-    ],
-    "decisions": [
-      {
-        "t": 6317,
-        "decision": "Swap the cemetery road network repair line in Article 10 for one-time grant-writer pilot services, per finance committee feedback."
-      },
-      {
-        "t": 8437,
-        "decision": "Keep the Marshall Park and municipal building debt-exclusion articles positioned near the end of the warrant so residents stay through the monetary votes."
-      },
-      {
-        "t": 8881,
-        "decision": "Town manager will bring two alternative formats for showing the multi-year budget comparison table to next week's meeting."
-      },
-      {
-        "t": 9591,
-        "decision": "Hold off voting on the January 23, 2024 minutes until Mr. Alonzo's misspelled name is corrected throughout."
-      },
-      {
-        "t": 9295,
-        "decision": "Municipal Building Design Committee will bring an interim Brooks House update to the board before town meeting despite lacking funded site-plan work."
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 17,
-        "t_end": 78,
-        "topic": "Opening, pledge of allegiance, meeting notices",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 78,
-        "t_end": 624,
-        "topic": "Public comment: override opposition and cemetery-commission free speech dispute",
-        "resolution": "no resolution",
-        "tags": [
-          "public-comment",
-          "override"
-        ]
-      },
-      {
-        "t_start": 624,
-        "t_end": 707,
-        "topic": "Announcements: dog licenses, trash route changes, vendor fair",
-        "resolution": "informational",
-        "tags": [
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 707,
-        "t_end": 2377,
-        "topic": "Public hearing: flammable storage license for propane tanks at 181 Kilburn Street",
-        "resolution": "voted - conditionally approved",
-        "tags": [
-          "planning-and-zoning",
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 2377,
-        "t_end": 2522,
-        "topic": "Ambulance write-off request",
-        "resolution": "voted - approved",
-        "tags": [
-          "public-safety",
-          "transfers"
-        ]
-      },
-      {
-        "t_start": 2522,
-        "t_end": 3163,
-        "topic": "State of the organization: employee turnover and exit-interview findings",
-        "resolution": "informational",
-        "tags": [
-          "personnel",
-          "staffing",
-          "hiring"
-        ]
-      },
-      {
-        "t_start": 3163,
-        "t_end": 4902,
-        "topic": "FY26 Salary Administration Plan (SAP): COLA, DPW director reclassification, new IT/communications role",
-        "resolution": "informational - votes deferred to next meeting",
-        "tags": [
-          "contracts-and-unions",
-          "personnel",
-          "budget-fy26"
-        ]
-      },
-      {
-        "t_start": 4924,
-        "t_end": 5068,
-        "topic": "Ratification of Inspector of Animals appointment (Kathy Ko)",
-        "resolution": "voted - approved",
-        "tags": [
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 5080,
-        "t_end": 5718,
-        "topic": "Town manager report: local receipts, UMass ER proposal, state budget/earmarks, MRPC grant, project and vacancy updates",
-        "resolution": "informational",
-        "tags": [
-          "state-aid",
-          "grants",
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 5801,
-        "t_end": 6507,
-        "topic": "Annual town meeting warrant review: Articles 1-11 (budget, capital, special projects)",
-        "resolution": "voted on each article",
-        "tags": [
-          "town-meeting",
-          "warrant-article",
-          "budget-fy26"
-        ]
-      },
-      {
-        "t_start": 6527,
-        "t_end": 7736,
-        "topic": "Citizens petition override (Article 12) and school supplement transfer (Article 13)",
-        "resolution": "voted - override recommendation disapproved; supplement approved",
-        "tags": [
-          "override",
-          "budget-fy26",
-          "town-meeting"
-        ]
-      },
-      {
-        "t_start": 7757,
-        "t_end": 8774,
-        "topic": "Remaining warrant articles: SAP grades, reserve funds, enterprise funds, tax exemptions, cemetery petition, Marshall Park debt exclusion",
-        "resolution": "voted or deferred per article",
-        "tags": [
-          "warrant-article",
-          "tax-rate",
-          "debt"
-        ]
-      },
-      {
-        "t_start": 8774,
-        "t_end": 8815,
-        "topic": "Vote on including a Prop 2½ override question on the town election ballot",
-        "resolution": "voted - declined",
-        "tags": [
-          "override",
-          "elections"
-        ]
-      },
-      {
-        "t_start": 8815,
-        "t_end": 9026,
-        "topic": "Discussion of budget printout format for the town meeting booklet",
-        "resolution": "informational - to be revisited",
-        "tags": [
-          "budget-fy26",
-          "town-meeting"
-        ]
-      },
-      {
-        "t_start": 9026,
-        "t_end": 9170,
-        "topic": "Annual town election warrant approval deferred (Marshall Park ballot question language pending)",
-        "resolution": "deferred",
-        "tags": [
-          "elections",
-          "warrant-article"
-        ]
-      },
-      {
-        "t_start": 9170,
-        "t_end": 9339,
-        "topic": "Select Board report to town meeting on the Brooks House",
-        "resolution": "no resolution - report to be prepared",
-        "tags": [
-          "facilities"
-        ]
-      },
-      {
-        "t_start": 9692,
-        "t_end": 10227,
-        "topic": "Letter to congressional delegation on federal library/museum (IMLS) funding cuts",
-        "resolution": "voted - board signed on 4-1",
-        "tags": [
-          "library",
-          "grants"
-        ]
-      },
-      {
-        "t_start": 10227,
-        "t_end": 10394,
-        "topic": "Minutes, warrants, and committee reports",
-        "resolution": "minutes deferred; warrant processed",
-        "tags": [
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 10394,
-        "t_end": 10519,
-        "topic": "Board committee updates: municipal building design, conservation, superintendent screening committee",
-        "resolution": "informational",
-        "tags": [
-          "superintendent-report",
-          "hiring",
-          "facilities"
-        ]
-      },
-      {
-        "t_start": 10519,
-        "t_end": 11043,
-        "topic": "Closing public comments, board comments on volunteerism, adjournment",
-        "resolution": "adjourned",
-        "tags": [
-          "public-comment"
-        ]
-      }
-    ],
-    "not_audible": [
-      "The exact local receipts figure ('2,18,9767') is garbled in the captions and cannot be confirmed as printed.",
-      "The SAP 3% COLA cost figure ('$43,46') appears truncated/garbled in the captions.",
-      "The accounts payable warrant total was stated inconsistently ('$77', then '$17', then '$717,38623') before settling on the final figure.",
-      "Most motions in the warrant-article review are not attributed to a specific speaker by name in the captions (no diarization).",
-      "The name of the one board member who voted against signing the IMLS library letter is not stated in the vote itself, though the debate strongly suggests it was Michael Ray.",
-      "Long stretches of the propane-tank public hearing involve unlabeled cross-talk among board members and the applicant that could not be reliably attributed."
-    ],
-    "confidence": "moderate",
-    "headline": "Select Board voted not to put the schools' override question on the town election ballot, ending it.",
-    "summary": "The Select Board declined to recommend the citizens' petition Proposition 2½ override for the schools and voted separately not to place any override question on the annual town election ballot, ending the override effort for this cycle; members cited a lack of a multi-year plan and the school committee's own non-endorsement. The board also worked through nearly all annual town meeting warrant articles (capital plan, special projects, enterprise funds, a Marshall Park debt exclusion, a school-supplement transfer contingent on the override's failure), reviewed the FY26 SAP salary/COLA plan and a DPW director reclassification, heard an HR report on staff turnover, and voted 4-1 to sign a letter opposing federal library-funding cuts."
-  },
-  "digest": {
-    "watch_next": [
-      "Annual town meeting vote on the warrant articles, including the FY26 omnibus budget and the contingent free-cash transfer to schools",
-      "Whether the school committee identifies cuts equivalent to the shortfall members described in the district's FY26 budget"
-    ],
-    "what_happened": [
-      {
-        "line": "The Select Board voted not to put any Proposition 2½ override question on the annual town election ballot, ending the effort this cycle.",
-        "t": 8795
-      },
-      {
-        "line": "The board separately voted not to recommend the citizens' petition override for the schools, citing no multi-year plan and the school committee's own non-endorsement.",
-        "t": 7587
-      },
-      {
-        "line": "The board approved a transfer of free cash to the schools' FY26 budget, but only if the override fails at town meeting.",
-        "t": 7736
-      },
-      {
-        "line": "The board worked through most of the annual town meeting warrant, including removing an unfunded track and field complex article and recommending a Marshall Park debt exclusion.",
-        "t": 6256
-      },
-      {
-        "line": "The board voted 4-1 to sign a congressional letter opposing federal cuts to library and museum funding.",
-        "t": 10227
-      }
-    ],
-    "why_it_matters": [
-      "Residents will not see an override question on this year's town election ballot, so any additional school funding now depends on town meeting votes and the free-cash transfer instead.",
-      "The contingent free-cash transfer means the size of the schools' FY26 budget still turns on what town meeting decides about the override article.",
-      "The Marshall Park debt exclusion and other warrant articles the board recommended will go to a town-wide vote and can affect the tax bill."
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-28T12:06:34Z",
-      "cost_usd": 0.274632
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-28T12:06:34Z",
+   "cost_usd": 0.274632
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2025-04-01-minutes-rr2026-09-18-draft.txt",
+   "path": "sources/meetings/select-board/2025-04-01-minutes-rr2026-09-18-draft.pdf"
+  },
+  "official_sha256": "a480de959035ee5fde8312a65fbb49625788c41ac58ba1f80da58e807ad51e64",
+  "coverage": "full",
+  "summary": "The two records agree on nearly every recorded vote, with all of them passing 5-0 except the IMLS letter at 4-1, and the differences in figures are mostly caption errors. The one substantive conflict is Article 10, where our minutes describe the swap in the opposite direction from the official minutes. Check also the extra Article 13 inclusion vote, which only the official minutes record, and which set of minutes had Mr. Alonzo's name misspelled.",
+  "counts": {
+   "agree": 22,
+   "caption_error": 6,
+   "discrepancy": 4,
+   "only_in_ours": 8,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to close the public hearing on the propane flammable storage license",
+    "t": 2296,
+    "ours": "Close the public hearing on the DEO Gas flammable storage license — passed unanimously",
+    "official": "Motion by Member Alonzo to close the public hearing. Seconded by Clerk Moore.",
+    "note": "Same vote, unanimous 5-0-0. The company name (DEO vs DiLeo Gas) is a caption error."
+   },
+   {
+    "kind": "agree",
+    "about": "Conditional approval of the flammable storage license, 181 Kilburn Street",
+    "t": 2317,
+    "ours": "Conditionally approve the flammable storage license for four 1,000-gallon propane tanks at 181 Kilburn Street, contingent on conservation agent feedback — passed unanimously",
+    "official": "with the condition that the Conservation Agent approves the request.",
+    "note": "Both record a conditional approval passing unanimously. Our 'feedback' is looser than the official 'approves'."
+   },
+   {
+    "kind": "agree",
+    "about": "Ambulance write-off vote and amount",
+    "t": 2502,
+    "ours": "Accept the ambulance write-off request as presented by the fire chief and finance director — passed unanimously",
+    "official": "Motion by Member Alonzo to approve and accept ambulance write-off request of $19,546.36 as presented by Patrick Sullivan, Fire Chief, and Ezequiel Ayala, Finance Director.",
+    "note": "The vote and the $19,546.36 figure match."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Name of the Inspector of Animals appointee",
+    "t": 5006,
+    "ours": "Ratify the town manager's appointment of Kathy Ko as Inspector of Animals — passed unanimously",
+    "official": "Ratification of the Town Manager’s Appointment of Inspector of Animals, Kathy Comeau, 806 West Street",
+    "official_reading": "Kathy Comeau",
+    "note": "The vote is the same, unanimous. 'Ko' is a misheard 'Comeau'."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 4 revolving funds",
+    "t": 5883,
+    "ours": "Recommend approval of Article 4 (revolving funds) — passed unanimously",
+    "official": "Motion by Member Alonzo to recommend approval of Article 4 as described.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 5, 6 and 7 deferred to Town Meeting",
+    "t": 5904,
+    "ours": "Defer a recommendation on Article 5 (prior fiscal year expenses) — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to defer Article 5 to Town Meeting.",
+    "note": "Articles 5, 6 and 7 each match, unanimous 5-0-0."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 8 FY26 capital program",
+    "t": 6134,
+    "ours": "Recommend approval of Article 8 (FY2026 capital program) — passed unanimously",
+    "official": "Motion by Member Alonzo to recommend approval of Article 8 as described.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Removal of Article 9 (track and field complex) from the warrant",
+    "t": 6256,
+    "ours": "Remove Article 9 (Lunenburg Middle/High School track and field complex) from the warrant — passed unanimously",
+    "official": "Motion by Member Alonzo to remove Article 9 from the May Town Meeting warrant.",
+    "note": "Same vote. The official heading says 'Middle School' only."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 10 re-recommendation",
+    "t": 6404,
+    "ours": "Re-recommend approval of Article 10 (special projects funding) with updated figures — passed unanimously",
+    "official": "Motion by Member Alonzo to re-recommend approval for Article 10 to Town Meeting.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Article 10 total amount",
+    "t": 6297,
+    "ours": "Article 10 special projects funding: 152,000, 500",
+    "official": "He stated that the total amount is $152,500.",
+    "official_reading": "$152,500",
+    "note": "The captions split the figure as '152,000' and '500'."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article 10 swap: which item replaced which",
+    "t": 6317,
+    "ours": "Swap the cemetery road network repair line in Article 10 for one-time grant-writer pilot services, per finance committee feedback.",
+    "official": "She stated that at the Finance Committee meeting, they recommended that the pilot Grant Writer position be swapped out with the cemetery road network repair.",
+    "note": "The two records give opposite directions: ours drops cemetery road repair for the grant writer, while the official minutes drop the grant writer for cemetery road repair. Check the recording around t=6317 and the final Article 10 text."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 11 FY26 omnibus budget",
+    "t": 6507,
+    "ours": "Recommend approval of Article 11 (FY2026 omnibus budget) — passed unanimously",
+    "official": "Motion by Member Alonzo to recommend approval of Article 11 as described.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 12 citizens' petition override: recommend disapproval",
+    "t": 7587,
+    "ours": "Recommend disapproval of Article 12, the citizens' petition for a Proposition 2½ override for the schools — passed unanimously",
+    "official": "Motion by Member Alonzo to disapprove of Article 12.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 13 recommendation and the $500,000 free cash transfer",
+    "t": 7736,
+    "ours": "Recommend approval of Article 13 (transfer of free cash to the schools' FY26 budget, contingent on the override failing) — passed unanimously",
+    "official": "Motion by Member Alonzo to recommend approval of Article 13 as described.",
+    "note": "The recommendation vote and the $500,000, contingent on the override failing, agree with 'Chair Nuzzolo stated that this article would transfer $500,000 from certified Free Cash to the Schools.'"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Separate vote to include Article 13 in the warrant",
+    "ours": "",
+    "official": "Motion by Member Alonzo to include Article 13 as described in the Town Meeting warrant. Seconded by Vice-Chair Jeffreys. Call for the vote: Five-aye. The motion passed unanimously (5-0-0).",
+    "note": "The official minutes record a separate 5-0 vote to include Article 13 in the warrant, in addition to the recommendation vote. Our minutes list only the recommendation, so check the recording just before t=7736."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 17 and 18, take no action",
+    "t": 7947,
+    "ours": "Recommend that town meeting take no action on Articles 17 and 18 (stabilization fund appropriations, no dollar amount) — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to recommend that the Town Meeting take no action on Article 17 and Article 18.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stabilization fund figures for Articles 17-18",
+    "t": 7862,
+    "ours": "Stabilization fund appropriations (Articles 17-18): 222,000, 12,000",
+    "official": "",
+    "note": "The official minutes give no amounts for Articles 17 and 18, so these heard figures cannot be confirmed against them."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 21 compensated absence reserve fund vote",
+    "t": 8094,
+    "ours": "Recommend approval of Article 21 (appropriation to the compensated absence reserve fund) — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to recommend approval of Article 21 as described.",
+    "note": "The vote matches."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$10,000 free cash appropriation to the compensated absence reserve fund",
+    "t": 8094,
+    "ours": "Free cash appropriation to the compensated absence reserve fund — 10,000 (voted)",
+    "official": "",
+    "note": "The official minutes give no dollar amount for Article 21. Check the warrant article for the amount."
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 26, 27 and 28 enterprise funds",
+    "t": 8135,
+    "ours": "Recommend approval of Article 26 (Solid Waste Disposal Program Enterprise Fund) — passed unanimously",
+    "official": "Town Manager Warren-Dyment stated that the amount is $500,000.",
+    "note": "Articles 26, 27 and 28 each match, and the $500,000 for Article 26 agrees."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 33 citizens' petition on cemeteries: recommend disapproval",
+    "t": 8334,
+    "ours": "Recommend disapproval of Article 33, the cemetery-commission citizens petition — passed unanimously",
+    "official": "Motion by Member Alonzo to recommend disapproval of Article 33 as described.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 34 Marshall Park design debt exclusion",
+    "t": 8520,
+    "ours": "Recommend approval of Article 34 (Marshall Park design debt exclusion) — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to recommend approval of Article 34 as described.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Marshall Park cost figures",
+    "t": 8520,
+    "ours": "Marshall Park design debt exclusion: $13.8 million, 13 million, $5 million",
+    "official": "",
+    "note": "The official minutes give no Marshall Park dollar figures."
+   },
+   {
+    "kind": "agree",
+    "about": "No Proposition 2½ override question on the town election warrant",
+    "t": 8795,
+    "ours": "Do not place a Proposition 2½ override ballot question on the annual town election warrant — passed unanimously",
+    "official": "Motion by Member Alonzo to not place a Proposition 2 ½ Override Ballot Question Annual Town Election Warrant.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "IMLS congressional delegation letter, 4-1",
+    "t": 10227,
+    "ours": "Sign on to the congressional delegation letter opposing cuts to IMLS library/museum funding — passed 4-1",
+    "official": "Four – Aye. One – Nay (Vice-Chair Jeffreys). The motion passed (4-1-0).",
+    "note": "Same vote and same split."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Local receipts collected to date",
+    "t": 5121,
+    "ours": "FY25 local receipts collection: 2,18,9767, 3,361,988.50, 60%, 60.9 cents",
+    "official": "She stated that the Town has collected $2,018,976.67. She stated that the projected amount is $3,361,988.50.",
+    "official_reading": "$2,018,976.67",
+    "note": "The $3,361,988.50 projection matches. The collected figure is mangled digits in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "SAP 3% COLA cost",
+    "t": 3499,
+    "ours": "FY26 SAP salary schedule COLA: 3%, 2 and a half%, $43,46, $7,300",
+    "official": "it is roughly $43,406, which is a $7,300 increase compared to the cost of a 2 ½ COLA",
+    "official_reading": "$43,406",
+    "note": "'$43,46' is a truncated $43,406. The 3%, 2½% and $7,300 figures match."
+   },
+   {
+    "kind": "agree",
+    "about": "DPW Director reclassification and Communications & IT Manager",
+    "t": 3582,
+    "ours": "DPW Director reclassification and new Communications/IT Manager position: grade 16, grade 17, $4879, $601, 5320, 6543, $5 an hour, $10,400",
+    "official": "a separate town meeting article to reclassify the DPW Director from grade 16 to grade 17 will be brought forth",
+    "note": "Grade 16 to 17 agrees. The other dollar figures in ours do not appear in the official minutes and are not confirmed."
+   },
+   {
+    "kind": "agree",
+    "about": "Roadway fog seal and crack seal contract",
+    "t": 5614,
+    "ours": "Roadway fog seal/crack seal contract: $233,000, 9.52 miles, 6.99 miles",
+    "official": "She stated that the estimated cost is $233,000, and it is 9.52 miles of fog seal and 6.99 miles of crack seal.",
+    "note": "All three figures match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$38,000 earmark request figure",
+    "t": 5288,
+    "ours": "State legislative earmark requests: $50,000, $38,000",
+    "official": "she provided Representative Scarsdale with four projects under $50,000",
+    "note": "The official minutes give only 'under $50,000'. The $38,000 is not in them and is not confirmed."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Track and field capital cost",
+    "t": 6195,
+    "ours": "Track and field complex capital request: north of a $100,000",
+    "official": "",
+    "note": "The official minutes give no cost for the track and field article."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Override tax bill impacts and school gap figures",
+    "t": 7177,
+    "ours": "Estimated tax bill impact of override options: 400 bucks, 800, 1,200 bucks",
+    "official": "",
+    "note": "The official minutes do not record the tax impact estimates or the $2 million school gap discussion."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant amount",
+    "t": 10333,
+    "ours": "Accounts payable warrant: $717,38623",
+    "official": "Accounts Payable warrant in the amount of $717,386.23.",
+    "official_reading": "$717,386.23",
+    "note": "A digit-grouping error. The official minutes also record that Clerk Moore recused herself, which ours does not mention."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Which minutes were held for Mr. Alonzo's misspelled name",
+    "t": 9591,
+    "ours": "Hold off voting on the January 23, 2024 minutes until Mr. Alonzo's misspelled name is corrected throughout.",
+    "official": "Clerk Moore stated that the March 11, 2025 minutes have Member Alonzo’s name misspelled.",
+    "note": "The official minutes put the misspelling in the March 11, 2025 minutes, and both sets of minutes were on the agenda. Check the recording to see which set was held, or whether both were."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Marshall Park and municipal building articles kept near the end of the warrant",
+    "t": 8437,
+    "ours": "Keep the Marshall Park and municipal building debt-exclusion articles positioned near the end of the warrant so residents stay through the monetary votes.",
+    "official": "",
+    "note": "This discussion is not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Alternative formats for the multi-year budget comparison table",
+    "t": 8881,
+    "ours": "Town manager will bring two alternative formats for showing the multi-year budget comparison table to next week's meeting.",
+    "official": "",
+    "note": "The official minutes do not record this commitment."
+   },
+   {
+    "kind": "agree",
+    "about": "Brooks House interim update from the Municipal Building Design Committee",
+    "t": 9295,
+    "ours": "Municipal Building Design Committee will bring an interim Brooks House update to the board before town meeting despite lacking funded site-plan work.",
+    "official": "Chair Nuzzolo stated that the Municipal Building Design Committee will be meeting regarding making a presentation and report to the Board regarding the future of the Brooks House.",
+    "note": "Broadly consistent. The 'despite lacking funded site-plan work' detail is only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Articles 14, 15 and 35 and the Warrants tabled or deferred",
+    "official": "Chair Nuzzolo stated that this article will be tabled for discussion and vote until the next meeting.",
+    "ours": "",
+    "note": "Our minutes record no vote or decision on Articles 14, 15 and 35, which the official minutes show were deferred or tabled to the next meeting. These are non-votes but worth noting."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "State of the Organization presentation",
+    "official": "Assistant Town Manager/HR Director Belliveau stated that there were 38 total Town employee departures in the past two years.",
+    "ours": "",
+    "note": "The official minutes carry a long HR presentation with turnover figures. Our figures and decisions list does not cover it beyond the COLA and reclassification items."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance director's name",
+    "ours": "Ezekiel Ayala (finance director)",
+    "official": "Ezequiel Ayala, Finance Director",
+    "official_reading": "Ezequiel Ayala",
+    "note": "A misheard first name."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Select Board attendees: Chair Nuzzolo missing and Alonzo listed twice",
+    "ours": "Michael Ray (select board member); Amanda (Miss Moore) (select board member); Renee (select board member); Tom (select board member); Mr. Alonzo (select board member)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Michael-Ray Jeffreys, Clerk Amanda Moore, Member Tom Alonzo, and Member Renee Emkey",
+    "note": "'Tom' and 'Mr. Alonzo' in ours are the same person, and the chair, Caesar Nuzzolo, is absent from our attendee list. The other members match, with surnames missing in ours, and the recording confirms five votes were cast."
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager and assistant town manager present",
+    "ours": "Jen (town manager)",
+    "official": "Also Present: Jennifer Warren-Dyment Town Manager",
+    "note": "The same person. Julie (HR director) is Julie Belliveau and Chief Sullivan is Patrick Sullivan, both in the official minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T17:50:34Z",
+   "cost_usd": 0.345715
+  }
+ }
 }

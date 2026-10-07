@@ -322,5 +322,178 @@
    "at": "2026-09-27T12:59:50Z",
    "cost_usd": 0.19323400000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07102025-7296",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2025-07-10-minutes-7296.txt",
+   "path": "sources/meetings/finance-committee/2025-07-10-minutes-7296.pdf"
+  },
+  "official_sha256": "193c30dc933b7e235de74da644d7bfa5591ecf206c7f6dae3edecd309ab919ab",
+  "coverage": "full",
+  "summary": "The two records agree on the main decisions: ClearGov, reading the first ~42 pages of the finance policy, and the tri-board dates. Our minutes have no votes, while the official minutes record a 6-0-1 vote approving earlier minutes; our minutes also carry several items (the $90,000 account, school-building cost comparisons, a tri-board debrief plan) that the official minutes do not.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 2,
+   "discrepancy": 0,
+   "only_in_ours": 6,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "only_in_official",
+    "about": "Vote approving May 8 and June 12, 2025 minutes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "The vote was 6-0-1.",
+    "note": "The official minutes record a 6-0-1 vote on prior minutes (likely procedural, hence absent from ours); check the recording to confirm it occurred and who abstained.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Vice Chair",
+    "ours": "Jeene (member)",
+    "official": "Vice Chair Jean Russell",
+    "official_reading": "Jean Russell",
+    "note": "Misheard first name; ours also omits her vice-chair role.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Ana Lockwood",
+    "ours": "Anna (member)",
+    "official": "Committee Member Ana Lockwood",
+    "official_reading": "Ana Lockwood",
+    "note": "Spelling of the first name differs; same person.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Chris, Tanya, Jay, Mike",
+    "ours": "Chris (member); Tanya (member); Jay (member); Mike (member); the chair (name not stated) (chair)",
+    "official": "Chair Chris Menard, Vice Chair Jean Russell, Clerk Tom Gray,",
+    "note": "Chris Menard is the chair, so our 'Chris (member)' and 'the chair (name not stated)' are probably the same person; Tanya Dall, Jay Simeone and Mike Rupp match.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Clerk Tom Gray",
+    "ours": "",
+    "official": "Clerk Tom Gray,",
+    "note": "Tom Gray is listed present (and speaks in the official minutes) but is not in our attendee list.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "ClearGov adoption",
+    "ours": "The town/school finance staff will begin using the ClearGov platform to standardize department budget presentations.",
+    "official": "The Town Manager stated the Town will soon be using ClearGov.",
+    "note": "Same fact; ours says town/school and 'standardize', the official attributes the statement to the Town Manager.",
+    "t": 409
+   },
+   {
+    "kind": "agree",
+    "about": "Read first ~42 pages of finance policy before next meeting",
+    "ours": "Members agreed to each read the 'financial planning' portion (about the first ~40 pages, through roughly page 39-42) of the town finance policy document before the next meeting",
+    "official": "The Committee members are going to read the first 42 pages of the town finance policy document in preparation for the next meeting.",
+    "note": "Same decision; official gives 42 pages.",
+    "t": 1200
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Aim to vote on policy sections by September",
+    "ours": "aiming to vote on sections by around September",
+    "official": "",
+    "note": "The official minutes say a vote will follow review but give no September target; verify on the recording.",
+    "t": 1200
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Recirculate past department-presentation expectations document",
+    "ours": "The finance committee will locate and recirculate a past document listing its expectations for department budget presentations and add data points from best-practice guidance.",
+    "official": "",
+    "note": "Not in the official minutes, which record only Ana Lockwood's template suggestion and Tanya Dall's portal suggestion.",
+    "t": 790
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Member to talk to Jen about department data points",
+    "ours": "A member will talk to Jen (town finance staff) about compiling department data-point expectations and circulate her existing draft.",
+    "official": "",
+    "note": "Action item absent from the official minutes.",
+    "t": 923
+   },
+   {
+    "kind": "agree",
+    "about": "Reorganization / committee assignments",
+    "ours": "A reorganization meeting, including committee assignments, will be placed on the August agenda.",
+    "official": "Upcoming actions for future meetings include discussing the budget season schedule and reorganization of Committee assignments.",
+    "note": "Both record reorganization of committee assignments as a future item; the official minutes do not say 'August' or 'a reorganization meeting', so check the recording for the timing.",
+    "t": 2359
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tri-board pre-meeting alignment and post-meeting retrospective",
+    "ours": "Going forward, the meeting before each tri-board session will be used to align on topics to raise, and the meeting after will include a retrospective/debrief on the tri-board meeting.",
+    "official": "",
+    "note": "Process decision not recorded in the official minutes.",
+    "t": 2423
+   },
+   {
+    "kind": "agree",
+    "about": "Tri-board meeting dates Aug 26, Sept 30, Oct 14",
+    "ours": "Noted upcoming tri-board meeting dates: August 26th, September 30th, and October 14th.",
+    "official": "Tri-Board Meetings - August 26, Sept 30, Oct14, Nov 12, Dec 9, Jan 13",
+    "note": "The three dates match.",
+    "t": 2465
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Later tri-board dates",
+    "ours": "",
+    "official": "Nov 12, Dec 9, Jan 13",
+    "note": "Official lists three further tri-board dates that ours does not note.",
+    "t": 2465
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "TCP building repair/maintenance revolving account $90,000",
+    "ours": "TCP building repair/maintenance revolving account: $90,000",
+    "official": "",
+    "note": "Figure not in the official minutes; check the recording at this time to see whether it was a transfer or just a mention.",
+    "t": 1493
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School building cost comparisons",
+    "ours": "Cost of new school buildings generally: hundred million dollars; another community: over half a billion dollars; Marshfield and Hingham: almost hundred million dollars",
+    "official": "",
+    "note": "Context remarks in discussion, absent from the official minutes; the figures are loosely heard, so verify the recording.",
+    "t": 2122
+   },
+   {
+    "kind": "only_in_official",
+    "about": "School finance manager vacancy discussion",
+    "ours": "",
+    "official": "Tanya Dall is concerned that the schools don’t have a finance manager and",
+    "note": "Old Business item (including the consultant hired by the schools) is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Municipal Building Design Committee report",
+    "ours": "",
+    "official": "Tom Gray states that the Municipal Building Design Committee met and had a joint",
+    "note": "Committee report on the Ritter building and Town Hall renovation not in our minutes; ours has only unrelated building-cost remarks.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:26:46Z",
+   "cost_usd": 0.246081
+  }
  }
 }

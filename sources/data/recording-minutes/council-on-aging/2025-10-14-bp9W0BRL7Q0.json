@@ -489,5 +489,182 @@
    "at": "2026-09-27T12:15:14Z",
    "cost_usd": 0.193612
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142025-7443",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/council-on-aging/2025-10-14-minutes-7443.txt",
+   "path": "sources/meetings/council-on-aging/2025-10-14-minutes-7443.docx"
+  },
+  "official_sha256": "40aa0cb8434575ec93462daf35a63ac02de19b639f14bc618697ed34659916ba",
+  "coverage": "full",
+  "summary": "The two records agree on the 41A ratification vote, the Tea Party total, the bylaw follow-up and the Master Plan resignation. They differ on how the 'Doula/Padula Day' item ended, on who the COA Director is, and on the grants vote, whose outcome our captions could not hear. Our minutes also carry figures (including the $268,143 budget request) that the official minutes do not.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 6,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: ratify prior vote authorizing Jack Rabbit(t) to work on 41A",
+    "ours": "Ratify the Council on Aging's previous vote authorizing Jack Rabbit to work with the town on a 41A article for town meeting — passed unanimously",
+    "official": "Mr. Franco made a motion to ratify the previous vote to authorize Mr. Rabbitt to work with the town towards the 41A tax exemption, seconded by Ms. O’Sullivan. Approved unanimously.",
+    "note": "Same vote and same outcome; the official minutes add mover and seconder, and spell the surname Rabbitt.",
+    "t": 1747
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: Jack to work on grants",
+    "ours": "Give the board's permission for Jack to continue working on grant-funding opportunities with the town — not audible",
+    "official": "A motion was made for the board to allow Mr. Rabbitt to work with the COA Director to explore grants by Ms. Lockwood, and seconded by Ms. O’Sullivan. All in favor, passed unanimously.",
+    "note": "Ours records no audible outcome while the official minutes record unanimous passage, and the two differ on who Jack works with (the town vs the COA Director); check the recording at this point.",
+    "t": 4109
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Anna (board member)",
+    "ours": "Anna (board member)",
+    "official": "Ana Lockwood",
+    "note": "Misheard or abbreviated first name for the same board member.",
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jack Rabbit",
+    "ours": "Jack (Rabbit) (board member)",
+    "official": "Jack Rabbitt",
+    "note": "Surname spelling differs only.",
+    "official_reading": "Jack Rabbitt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Caesar (town official)",
+    "ours": "Caesar (town official/liaison)",
+    "official": "Ceasar Nuzzolo (Select Board Chair)",
+    "note": "Same person; official gives full name and title.",
+    "official_reading": "Ceasar Nuzzolo"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: who is the COA Director and who is Chair",
+    "ours": "Madam Chair (unnamed) (chair); Deb / Debbie Lincoln (COA Director)",
+    "official": "Chairperson Deb Lincoln called the meeting to order.",
+    "note": "Official has Deb Lincoln as Chairperson and Deb Goodsell as COA Director; ours labels Lincoln the Director and leaves the Chair unnamed. Check the recording for who spoke as Director.",
+    "t": 372
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: other members and guests",
+    "ours": "",
+    "official": "Present: Deb Lincoln (Chairperson), Jane Rabbitt (Vice-Chair), Diane Nowd, Jim McGuigan, Cathy Beale, Lou Franco, Elena Christopher, Ana Lockwood, Susan O’Sullivan, Jack Rabbitt,",
+    "note": "Ours names only a few attendees; the official lists ten members, Helen Balcom excused, and guests including Glenn McLeod and Ena Keo-Thompson."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "COA FY27 budget request",
+    "ours": "COA FY27 budget request presented to the tri-board: $268,143",
+    "official": "",
+    "note": "The official minutes say only that Ms. Goodsell shared her Tri-Board report and give no dollar figure.",
+    "t": 1940
+   },
+   {
+    "kind": "agree",
+    "about": "Tea Party proceeds",
+    "ours": "Tea party fundraiser proceeds: close to $4,000, $37.97, $3,800",
+    "official": "Tea Party was successful and raised almost $4,000.",
+    "note": "'Close to $4,000' matches 'almost $4,000'; the $37.97 and $3,800 figures are not in the official minutes.",
+    "t": 2679
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Caregiver bill tax credit figure",
+    "ours": "State caregiver support bill - proposed tax credit: $1,500",
+    "official": "",
+    "note": "Official only says Ms. Lockwood presented on the Kushmerek caregiver bill, with no amount.",
+    "t": 3344
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "41A deferral figures (income limits, savings, households)",
+    "ours": "41A tax deferral - household income eligibility: $109,000, 72; prior income limit: $20,000; typical savings 5 to $6,000; households using exemptions 20 or so",
+    "official": "",
+    "note": "The official 41A Report records no figures; these are caption-derived and may be misheard, so verify against the recording before use.",
+    "t": 3729
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior center check-ins",
+    "ours": "Senior center check-ins, year over year: 900",
+    "official": "",
+    "note": "No check-in figure appears in the official minutes.",
+    "t": 2510
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Request for Director's job description",
+    "ours": "Board asked to be sent a copy of the COA Director's job description and duties to compare against the proposed bylaw language",
+    "official": "",
+    "note": "Official records only a general discussion of the roles of the Director and the Board.",
+    "t": 372
+   },
+   {
+    "kind": "agree",
+    "about": "Hold bylaw revisions for feedback at next meeting",
+    "ours": "Board will hold the proposed Article 3 bylaw revisions for the next meeting and prepare feedback ahead of a stated deadline",
+    "official": "Ms. Lincoln asked the board to come to the next meeting with their thoughts on the bylaw.",
+    "note": "Same action: members bring bylaw feedback to the next meeting; the 'Article 3' label and deadline are only in ours.",
+    "t": 455
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Staffing/reorganization ideas process",
+    "ours": "Board asked the director to bring staffing/reorganization ideas to the full board for discussion before presenting them to the tri-board in the future",
+    "official": "She wants a high-level overview of staffing needs and a chance to work with the Director to collaborate on that plan.",
+    "note": "Official frames this as one member's request for a staffing overview and collaboration, not a board decision on the order of presentation; check the recording for whether the board agreed.",
+    "t": 2338
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Doula Day / Padula Day outcome",
+    "ours": "Board decided not to hold a public 'Doula Day' celebration for lack of interest, opting instead to informally mark the volunteer's 100th birthday",
+    "official": "Padula Day: Ms. Lincoln reported that instead of a celebration she is recommending a citation from the Board of Selectman.",
+    "note": "The name is likely a caption error (Doula/Padula), but the outcomes differ: informal birthday marking and lack of interest in ours, a Select Board citation in the official minutes; check the recording.",
+    "t": 4210
+   },
+   {
+    "kind": "agree",
+    "about": "Chair steps down from Master Plan Committee",
+    "ours": "Chair announced her resignation from the Master Plan Committee and invited another board member to take her place",
+    "official": "Ms. Lincoln reported that she has stepped down from the committee as she can no longer attend the meetings. If anyone else would like to join this committee she would be happy to speak to them after the meeting,",
+    "note": "Same event; ours says she invited a board member to replace her, the official says she would talk to anyone interested.",
+    "t": 4550
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Updated council contact list and meals-on-wheels volunteers",
+    "ours": "Board agreed to obtain an updated volunteer list (including who does meals-on-wheels) and an updated council contact list before the next meeting",
+    "official": "Ms. Lincon asked for a volunteer list and Ms. Goodsell will provide that.",
+    "note": "The volunteer list is in both records; the contact list and the meals-on-wheels detail are only in ours, and the official adds that the list should say what each person volunteered for.",
+    "t": 5352
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Safe shower assistance, Sand for Seniors, hospital update, lobby furnishings",
+    "ours": "",
+    "official": "Safe Shower Installation Assistance: Ms. Lincoln reported that she has recently upgraded her tub to a safe shower which was not without cost.",
+    "note": "Several agenda items (safe shower, Caregiver Connection, Satellite Emergency Center, lobby furnishings, Sand for Seniors) appear only in the official minutes and none involves a vote."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:23:21Z",
+   "cost_usd": 0.260595
+  }
  }
 }

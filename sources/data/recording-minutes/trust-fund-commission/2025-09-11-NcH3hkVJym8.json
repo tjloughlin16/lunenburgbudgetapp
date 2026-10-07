@@ -485,5 +485,197 @@
    "at": "2026-09-27T12:29:27Z",
    "cost_usd": 0.19502
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09112025-7399",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/trust-fund-commission/2025-09-11-minutes-7399.txt",
+   "path": "sources/meetings/trust-fund-commission/2025-09-11-minutes-7399.pdf"
+  },
+  "official_sha256": "c3219b79287b5635340eaed2b7fd0a325b9c4678dccc55157a82a836aab828b5",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the 0.35% fee, the 12.27% return, the $84,000 / $2.155M / $1.6M split and the October 9 next meeting, and most other differences are misheard names. The thing to know is that the official minutes leave out several decisions in ours (policy rewrite, November goal, AG cy-pres filing, workers' comp fund), and the two give different vehicles for publicizing applications (special town meeting booklet vs Town Report).",
+  "counts": {
+   "agree": 4,
+   "caption_error": 5,
+   "discrepancy": 3,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Town Manager name",
+    "ours": "Jennifer Warren Diamond (town manager)",
+    "official": "Jennifer Warren-Dyment (Town Manager)",
+    "official_reading": "Jennifer Warren-Dyment",
+    "note": "Same person; captions misheard the surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Treasurer name",
+    "ours": "Mileen (treasurer)",
+    "official": "Mylee Mallari (Treasurer)",
+    "official_reading": "Mylee Mallari",
+    "note": "Same role, misheard name.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Bartholomew presenter names",
+    "ours": "Brian Gerros (presenter); Kathleen Saganowitz (presenter); John Bowen (presenter, possibly same as Brian Gerros)",
+    "official": "Brian Jamros and Kathleen  Cyganiewicz  from Bartholomew & Co.",
+    "official_reading": "Brian Jamros and Kathleen Cyganiewicz",
+    "note": "Two presenters with misheard names; our 'John Bowen' is likely a confusion with Chairman Bowen, so check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "the chairman (unnamed in captions) (chair)",
+    "official": "Meeting called to order by Chairman Bown at 12:48pm.",
+    "official_reading": "Chairman Bowen",
+    "note": "The official names the chair (Bowen, spelled 'Bown' once); our captions did not.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member name",
+    "ours": "Richard (board member)",
+    "official": "Mr Howard - thanked the visitors on their presentation",
+    "official_reading": "Mr. Howard",
+    "note": "Probably the same member; our captions give a first name and the official only 'Mr. Howard', so confirm in the recording.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Bartholomew annual management fee",
+    "ours": "Bartholomew and Company annual management fee: .35, 35",
+    "official": "our effective expense rate for managing the funds came in at  0.35% overall",
+    "note": "Both record a 0.35% effective rate.",
+    "t": 1783
+   },
+   {
+    "kind": "agree",
+    "about": "Return since new strategy",
+    "ours": "Portfolio return since new investment strategy adopted: 12.27%",
+    "official": "12.27% is current return from April through the date of the meeting",
+    "note": "Same 12.27% figure.",
+    "t": 2503
+   },
+   {
+    "kind": "agree",
+    "about": "Pooled fund value, expendable/non-expendable",
+    "ours": "Total pooled fund value, expendable and non-expendable portions: 84,000, 2,155,276, 1.6 million, 218,000",
+    "official": "approximately $84,000 of $2,155,000 was associated with funds currently defined as under the purview of the Trust Fund Commission with $1.6M of those funds being restricted",
+    "note": "Same $84,000, about $2.155M and $1.6M; ours adds a 218,000 not in the official summary.",
+    "t": 3411
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Value of pool assets managed by Bartholomew",
+    "ours": "Value of pool assets managed by Bartholomew: 84,63673",
+    "official": "approximately $84,000 of $2,155,000 was associated with funds currently defined as under the purview of the Trust Fund Commission",
+    "note": "Ours reads a pool value near $84.6 million; the official gives no such figure, so check the recording at t=1930 for the pool's total value.",
+    "t": 1930
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hypothetical transfer between pooled sub-accounts",
+    "ours": "Hypothetical example of moving cash between pooled sub-accounts (e.g., into the conservation fund) to meet a withdrawal need without selling underlying investments — $100,000 / $20,000 (discussed only)",
+    "official": "",
+    "note": "Illustrative example only, not a real transfer; the official minutes do not mention it.",
+    "t": 2768
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Workers' compensation fund and town manager response",
+    "ours": "Commission is awaiting a response from the town manager on whether the workers' compensation fund(s) will be added to the pool.",
+    "official": "",
+    "note": "The official minutes do not mention the workers' compensation fund or this pending response.",
+    "t": 7130
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cemetery Commission figures and spending",
+    "ours": "Cemetery Commission recent spending and potential investment gains: $22,000, a million dollars",
+    "official": "There was some discussion on the use of Cemetery funds.",
+    "note": "The official notes the discussion but gives no figures.",
+    "t": 6557
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Withdrawal/independent investing policy",
+    "ours": "Chair to rewrite the commission's proposed written policy to explicitly state members' right to withdraw funds from the pool and invest independently.",
+    "official": "TFC can invest individually if they want.",
+    "note": "The official gives a bare statement and no direction to rewrite a written policy; check whether a rewrite was directed.",
+    "t": 6919
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Where to publicize fund applications",
+    "ours": "Commission to explore publicizing the trust funds and an application process in the upcoming special town meeting booklet.",
+    "official": "Chairman Bowen made a  suggestion that we create a form and have it added to the Town Report to get visibility and have a means for people to apply.",
+    "note": "Ours says the special town meeting booklet, the official the Town Report; check the recording for which was meant.",
+    "t": 7022
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Informal November goal for distribution processes",
+    "ours": "Chair set an informal goal of having fund distribution processes worked out by November.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 7002
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attorney General cy-pres filing instead of probate court",
+    "ours": "Commission to pursue attorney general Cypress-filing declarations rather than probate court for outdated trust documents.",
+    "official": "",
+    "note": "This decision about outdated trust documents is absent from the official minutes.",
+    "t": 7085
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next regular meeting set for October 9 at 5:00 p.m.",
+    "official": "The next meeting will not be held until October 9, 2025",
+    "note": "Same date; the official gives no time, so 5:00 p.m. is only in ours.",
+    "t": 7191
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Meeting start time",
+    "ours": "",
+    "official": "Meeting called to order by Chairman Bown at 12:48pm.",
+    "note": "The official gives start and adjournment times; ours has none.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair's prepared statement and moment of silence",
+    "ours": "",
+    "official": "Public comment - Chairman Bowen requested a moment of silence to remember those lost on 9/11/2001 and Charlie Kirk the previous day.",
+    "note": "The chair's long statement is in the official minutes and not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bartholomew background and quarterly data request",
+    "ours": "",
+    "official": "The Town of Lunenburg has worked with Bartholomew & Co. since 2005.",
+    "note": "Also official-only: 4 advisors/330 municipalities, no early-withdrawal penalties, the request for quarterly performance data, the Commission vacancy, and the focus on international equities and commodities.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-06T12:24:32Z",
+   "cost_usd": 0.30644999999999994
+  }
  }
 }
