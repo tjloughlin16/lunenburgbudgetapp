@@ -10,9 +10,10 @@ detail. Everything below the line "Done" is context, not work.
    ~36 min today, never a bare `vite build`), then `npx wrangler pages deploy` from `fy28/`
    (Node 22), then check `/boards/parks-commission/records` on production. The same build
    relabels the email-notice agenda link (item 8). See the section at the bottom.
-2. **Make the site build incremental** -- `notes/HANDOFF-FASTER-SITE-BUILD.md`. A full build
-   took 36.5 minutes on 7 October (781 routes, serial, one Chrome per page). Re-render only
-   pages whose code or data files changed; render 3-4 at once; print per-page progress.
+2. **The site build is incremental** (7 October, `HANDOFF-FASTER-SITE-BUILD.md`): a build
+   with nothing changed takes ~1 minute, one data file ~2. NOT YET DEPLOYED with it: the
+   og:url fix (every live page says `localhost:61348`), the "not available" approval
+   window on board records, and `meeting-record-explanations.csv`.
 3. **A way to delete from the archive** -- `notes/HANDOFF-TAKEDOWN.md`. Still wanted, but
    it has NO current case: the MUNIS logins it was for look like staff email names, and TJ
    decided on 7 October they are not an issue (see the top of that handoff). Not urgent.

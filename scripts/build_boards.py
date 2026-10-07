@@ -412,6 +412,7 @@ def build(as_of=None):
     # table cannot disagree with either about what counts as a gap. `first_video` and the
     # policy rows are each read once here rather than per meeting.
     first_video = MR.first_video_dates(reg.values())
+    due = MR.due_dates(reg.values())
     pol_rows = MR.policy_rows()
     feed = json.load(open(FEED, encoding='utf-8'))
     notices = json.load(open(NOTICES, encoding='utf-8'))
@@ -478,7 +479,7 @@ def build(as_of=None):
                 agenda_url=(a and a['url']) or rg.get('agenda_url') or None,
                 minutes_url=(mn and mn['url']) or rg.get('minutes_url') or None,
                 video_url=_video_url)
-            _st = MR.status(_status_row, first_video)
+            _st = MR.status(_status_row, first_video, due.get((slug, d)))
             _our_minutes = MR.our_minutes_status(o is not None, _st['video']['status'],
                                                  MR.in_policy(slug, d, pol_rows))
             meetings.append(dict(
@@ -500,11 +501,14 @@ def build(as_of=None):
                                 votes=o['counts'].get('votes'), reconciled=o.get('has_official_minutes'),
                                 discrepancies=o.get('discrepancies')),
                 # STATUS, FOR THE TABLE TO COLOUR. video/minutes/transcript are each
-                # 'posted'/'missing'/'n/a' (meeting_records.status); our_minutes is a
+                # 'posted'/'not-available'/'missing'/'n/a' (meeting_records.status); our_minutes is a
                 # fourth, separate question -- 'posted'/'pending'/'needs-video'/'n/a' --
                 # because it is OUR queue, not the town's record.
-                record=dict(video=_st['video'], minutes=_st['minutes'], transcript=_st['transcript'],
-                            our_minutes=_our_minutes),
+                # `due` closes the approval window: before it an absent record is 'not
+                # available', after it MISSING -- judged again by the page on the reader's
+                # clock, so nothing waits on a deploy to turn.
+                record=dict(due=_st['due'], video=_st['video'], minutes=_st['minutes'],
+                            transcript=_st['transcript'], our_minutes=_our_minutes),
                 # The preview, where write_agenda_preview.py wrote one. It is only ever
                 # available BEFORE a meeting, so it travels on the row rather than in a
                 # separate `upcoming` list -- the row is the meeting, whenever it is read.

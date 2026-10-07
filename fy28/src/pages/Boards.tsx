@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { RecordCell, type RecordStatus } from '../components/RecordCell'
 import { boardSlugFromPath, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
 import { BoardGoals } from '../components/BoardGoals'
@@ -37,9 +38,10 @@ type Meeting = {
   // never a stand-in for 'missing': it means the record was never going to exist (the
   // board doesn't record, or this is before its first recording).
   record?: {
-    video: { status: 'posted' | 'missing' | 'n/a'; url?: string | null; reason?: string | null }
-    minutes: { status: 'posted' | 'missing'; url?: string | null }
-    transcript: { status: 'posted' | 'missing' | 'n/a'; captions_disabled: boolean; reason?: string | null }
+    due: string | null
+    video: { status: RecordStatus; url?: string | null; reason?: string | null }
+    minutes: { status: RecordStatus; url?: string | null; reason?: string | null }
+    transcript: { status: RecordStatus; captions_disabled: boolean; reason?: string | null }
     our_minutes: { state: 'posted' | 'pending' | 'needs-video' | 'n/a'; reason?: string | null }
   } | null
   // Written before the meeting by write_agenda_preview.py, so only ever present on one that
@@ -83,16 +85,6 @@ const n0 = (n: number) => n.toLocaleString('en-US')
 const pct = (x: number) => `${Math.round(x * 100)}%`
 const hours = (s: number) => `${(s / 3600).toFixed(1)} h`
 
-/** ONE CELL, for video or minutes: a link when posted, bold MISSING in the one colour
- *  this table already uses for "something went wrong" (the failed-vote/conflict red,
- *  `--status-critical`), or a muted "n/a" with a short tooltip saying why it will never
- *  exist. Never a bare dash -- a dash does not say whether the record is overdue or was
- *  never going to be there. */
-function RecordCell({ status, url, label, reason }: { status: 'posted' | 'missing' | 'n/a'; url?: string | null; label: string; reason?: string | null }) {
-  if (status === 'posted') return url ? <a className="underline" href={url}>{label}</a> : <span>{label}</span>
-  if (status === 'missing') return <strong style={{ color: 'var(--status-critical)' }}>MISSING</strong>
-  return <span title={reason || undefined} style={{ color: 'var(--text-muted)' }}>n/a</span>
-}
 const FY = (fy: number) => 'FY' + String(fy).slice(2)
 const dateText = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
 const mmdd = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -516,11 +508,11 @@ function BoardPage({ b, d }: { b: Board; d: Payload }) {
                   : <span title="written from the recording" style={{ color: 'var(--text-muted)' }}>needs video</span>}
               </td>
               <td className="py-2 pr-3 align-top">
-                {r.record ? <RecordCell status={r.record.video.status} url={r.record.video.url} label="video" reason={r.record.video.reason} /> : (r.video_url ? <a className="underline" href={r.video_url}>video</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>)}
+                {r.record ? <RecordCell status={r.record.video.status} due={r.record.due} url={r.record.video.url} label="video" reason={r.record.video.reason} /> : (r.video_url ? <a className="underline" href={r.video_url}>video</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>)}
                 {r.record?.video.status === 'posted' && (r.captions_disabled ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · no captions</span> : !r.transcript ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · no transcript yet</span> : null)}
               </td>
               <td className="py-2 pr-3 align-top">{r.agenda_doc ? <a className="underline" href={r.agenda_doc}>agenda</a> : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
-              <td className="py-2 align-top">{r.record ? <RecordCell status={r.record.minutes.status} url={r.minutes_doc} label="minutes" /> : (r.minutes_doc ? <a className="underline" href={r.minutes_doc}>minutes</a> : <span style={{ color: 'var(--text-muted)' }}>not yet</span>)}</td>
+              <td className="py-2 align-top">{r.record ? <RecordCell status={r.record.minutes.status} due={r.record.due} url={r.minutes_doc} label="minutes" /> : (r.minutes_doc ? <a className="underline" href={r.minutes_doc}>minutes</a> : <span style={{ color: 'var(--text-muted)' }}>not yet</span>)}</td>
             </tr>))}</tbody>
         </table>
       </div>

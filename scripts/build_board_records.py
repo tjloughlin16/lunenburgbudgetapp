@@ -14,10 +14,14 @@ for the same thing on every board: "every board should have a link that shows it
 data. and list every meeting, and the table of which data is missing (youtube, official
 minutes, etc)."
 
-ONE DEFINITION, SHARED. Every status below -- posted, missing, or n/a -- comes from
+ONE DEFINITION, SHARED. Every status below -- posted, not available, missing, or n/a --
+comes from
 `scripts/meeting_records.py`, the same module `build_backlog_depth.py`'s chart and
 `build_boards.py`'s Recent-meetings table read. A missing record here is a missing record
-there; nothing is recomputed a second way.
+there; nothing is recomputed a second way. That includes the APPROVAL WINDOW: an absent
+record is "not available" until the later of 30 days and the board's third meeting after
+it, and MISSING only after (`meeting_records.due_dates`). The page re-judges each row's
+`due` on the reader's clock; the email export judges it on the day it is written.
 
 ONLY HELD MEETINGS. A meeting the town has noticed but not yet held owes nobody a record
 yet, so both the payload and the markdown export drop anything dated after today --
@@ -91,7 +95,8 @@ def year_counts(rows):
     for y in sorted(by_year, reverse=True):
         yrows = by_year[y]
         missing = [r for r in yrows if MR.is_missing(r)]
-        out.append(dict(year=y, meetings=len(yrows), missing=len(missing)))
+        waiting = [r for r in yrows if MR.is_gap(r) and not MR.is_missing(r)]
+        out.append(dict(year=y, meetings=len(yrows), missing=len(missing), not_available=len(waiting)))
     return out
 
 
@@ -103,7 +108,8 @@ def payload():
     for slug in sorted(names):
         rows = held_only(MR.records(slug), today)
         for r in rows:
-            r['missing'] = MR.is_missing(r)   # for the page's gaps-only toggle; 'n/a' never counts
+            r['missing'] = MR.is_missing(r)   # 'n/a' and 'not-available' never count
+            r['gap'] = MR.is_gap(r)           # the gaps-only toggle shows not-available too
         missing = [r for r in rows if r['missing']]
         boards.append(dict(
             board_slug=slug, board=names[slug], meetings=len(rows), missing=len(missing),
@@ -114,9 +120,15 @@ def payload():
         'title': 'Missing records, board by board',
         'grain': 'One row per meeting a board has HELD (noticed meetings still to come are '
                  'not counted here -- see each board’s own page for those). video, '
-                 'minutes and transcript are each ‘posted’, ‘missing’, '
-                 'or ‘n/a’ -- n/a for a board that has never recorded, or for a '
-                 'date before its own first recording, and never a stand-in for missing.',
+                 'minutes and transcript are each ‘posted’, ‘not available’, '
+                 '‘missing’ or ‘n/a’. Not available means absent but still inside '
+                 'the Open Meeting Law’s window for approving minutes -- the later of 30 '
+                 'days and the board’s next three meetings (940 CMR 29.11) -- and it '
+                 'becomes MISSING once that window closes. Not provided means somebody has '
+                 'explained why the record will never exist, and the explanation is shown. '
+                 'n/a is for a board that has never '
+                 'recorded, or a date before its own first recording, and is never a '
+                 'stand-in for missing.',
         'as_of': as_of,
         'boards': boards,
         'not_established': [
@@ -126,12 +138,23 @@ def payload():
             'Whether a missing set of minutes was ever approved and simply not posted, or '
             'never written at all -- both print the same way in the town’s own '
             'AgendaCenter.',
+            'Whether a board showed good cause for a delay, which the law allows. The '
+            'window here is the general rule; a record past it is MISSING from what the '
+            'town has posted, which is not a finding that the board broke the law.',
+            'Whether the town posted something later than our last check of its site. '
+            'The window counts the board’s meetings as the register holds them, '
+            'including ones it has noticed and not yet held.',
         ],
     }
 
 
 def _cell(status):
-    return '**MISSING**' if status == 'missing' else ('n/a' if status == 'n/a' else 'posted')
+    return {'missing': '**MISSING**', 'not-available': 'not available', 'n/a': 'n/a'}.get(status, 'posted')
+
+
+def _cell_of(rec):
+    """A record's cell: `_cell`, or for an explained one, the explanation itself."""
+    return 'not provided: ' + rec['reason'] if rec['status'] == 'not-provided' else _cell(rec['status'])
 
 
 def _email_missing(r):
@@ -139,6 +162,12 @@ def _email_missing(r):
     'missing something' there means video or minutes only -- never transcript, which the
     web records page shows as a fourth column instead."""
     return r['video']['status'] == 'missing' or r['minutes']['status'] == 'missing'
+
+
+def _email_gap(r):
+    """Missing, or not yet available inside the approval window -- listed, and labelled
+    as such, so a recent meeting is neither hidden nor called MISSING."""
+    return any(r[k]['status'] in ('missing', 'not-available') for k in ('video', 'minutes'))
 
 
 def _date_text(iso):
@@ -160,22 +189,27 @@ def render_md(board_slug, since, pay=None):
     w('# %s %s: meetings missing a recording or minutes' % (b['board'], yr_range))
     w('')
     w('As of %s. Each meeting below had an agenda posted; only meetings missing something '
-      'are listed.' % long_date(dt.date.today().isoformat()))
+      'are listed. A record is MISSING once the window for approving minutes has closed -- '
+      'the later of 30 days and the board\'s next three meetings; before that it is '
+      '"not available".' % long_date(dt.date.today().isoformat()))
     for y in years:
         yrows = sorted([r for r in rows if r['date'][:4] == y], key=lambda r: r['date'])
         missing = [r for r in yrows if _email_missing(r)]
+        listed = [r for r in yrows if _email_gap(r)]
+        waiting = len(listed) - len(missing)
         w('')
-        w('## %s: %d of %d meetings missing something' % (y, len(missing), len(yrows)))
+        w('## %s: %d of %d meetings missing something%s' % (
+            y, len(missing), len(yrows), ', %d not yet due' % waiting if waiting else ''))
         w('')
-        if not missing:
+        if not listed:
             w('Nothing missing.')
             continue
         w('| Meeting (agenda) | YouTube recording | Official minutes |')
         w('|---|---|---|')
-        for r in missing:
+        for r in listed:
             dtext = _date_text(r['date'])
             label = '[%s](%s)' % (dtext, r['agenda']['url']) if r['agenda']['url'] else dtext
-            w('| %s | %s | %s |' % (label, _cell(r['video']['status']), _cell(r['minutes']['status'])))
+            w('| %s | %s | %s |' % (label, _cell_of(r['video']), _cell_of(r['minutes'])))
     w('')
     w("Checked against the town's AgendaCenter (agendas and minutes, %s) and every upload "
       "on the Lunenburg Access YouTube channel (as of %s), matched by board and date and "
