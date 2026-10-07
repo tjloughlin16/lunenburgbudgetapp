@@ -96,6 +96,11 @@ def join_links(text_path):
         return None
     t = open(p, encoding='utf-8', errors='replace').read()
     flat = re.sub(r'\s+', ' ', t)
+    # A SCHEME SPLIT BY THE PDF'S TEXT LAYER. The School Committee template prints its
+    # Facebook address as "(h ttps://www.facebook.com/...)" once extracted -- 37 agendas on
+    # 7 October 2026 -- so the link was never recognised and the card had no Facebook link
+    # though the agenda printed one. Rejoin the scheme; the address itself is the agenda's.
+    flat = re.sub(r'\bh\s*t\s*t\s*p(s?)\s*:\s*/\s*/', r'http\1://', flat)
     out = dict(zoom=None, facebook=None, youtube=None, meeting_id=None, passcode=None, phone=None, facebook_live=None)
     for u in URL_RE.findall(flat):
         u = u.rstrip('.,;')
