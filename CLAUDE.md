@@ -929,6 +929,17 @@ public version with all redacted PII removed. This will come up in MUNIS data to
 A screen is not a clearance: it finds per-person TABLES and identifier PATTERNS, and cannot
 recognise a name in running prose. The register's `decided_by` says who looked.
 
+**MUNIS: PROCESS, VERIFY IT IS SAFE, PUBLISH -- AND ONLY THEN BUILD AGAINST IT.** TJ,
+6 October 2026: *"once we process the data, and verify its safe, it can all be made public.
+dont build against the private data. confirm the data is safe, make it public, then build
+against it. the town manager doesnt need to confirm. we are responsible for checking
+ourselves."* `redact.gate()` holds every key under `town-ledgers/` as `pending` whatever the
+screen finds, because a clean screen is not the check: it cannot see a person's name in an
+account description or a journal reference. The check is ours -- every distinct text field
+read for a person -- and it ends in `publish` in `redactions.csv`. Until then nothing is
+analysed, extracted into `sources/`, loaded into `lunenburg.db` or put on a page. The fact of
+a delivery (the register row, the filenames) is public from the start.
+
 
 ---
 

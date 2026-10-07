@@ -132,6 +132,12 @@ def upsert(row):
 
 # --- the gate --------------------------------------------------------------------------
 
+MUNIS_PREFIX = 'town-ledgers/'
+MUNIS_REASON = ('MUNIS: held until we verify it is safe -- every text field reviewed for a '
+                'person, not only the screen -- then published, and only then built against '
+                '(TJ, 6 October 2026).')
+
+
 def gate(key, blob, upstream='', delivered_as=''):
     """None if this document may go to the PUBLIC bucket as it is; otherwise the reason it
     is held. A held document's raw bytes are in the private bucket before this returns."""
@@ -143,6 +149,20 @@ def gate(key, blob, upstream='', delivered_as=''):
     if any(r['public_sha256'] == sha for r in rows if r['decision'] == 'redact'):
         return None
     row = by_sha(rows).get(sha)
+    # MUNIS IS HELD WHATEVER THE SCREEN SAYS, UNTIL WE HAVE VERIFIED IT. TJ, 6 October 2026:
+    # *"once we process the data, and verify its safe, it can all be made public. dont build
+    # against the private data. confirm the data is safe, make it public, then build against
+    # it ... we are responsible for checking ourselves."* A clean screen is not the check -- it
+    # finds patterns and tables, never a name in a description or a journal reference -- so
+    # every MUNIS delivery (town-ledgers/) waits as `pending` until our own review of every
+    # text field writes `publish` here. Nothing is built from it while it waits.
+    if row is None and key.startswith(MUNIS_PREFIX):
+        findings = pii_screen.screen(key, blob)
+        row = {'raw_sha256': sha, 'delivered_as': delivered_as, 'raw_key': key,
+               'raw_private_key': private_key_for(key), 'decision': 'pending',
+               'findings': ' | '.join(findings),
+               'reason': MUNIS_REASON,
+               'decided_on': datetime.date.today().isoformat()}
     if row is None:
         findings = pii_screen.screen(key, blob)
         if not findings:
