@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2026-07-01",
  "docid": "7885",
@@ -12,6 +12,116 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes explicitly state that no public or executive session minutes were reviewed or approved. Remaining items are status updates and discussion topics with no formal motions.",
- "cost_usd": 0.0602124
+ "note": "Listed prior meeting minutes from February through June were not reviewed or approved at this meeting. Two topics (Criteria for Clause 18 and BOA Policies Binder) were postponed.",
+ "cost_usd": 0.1020006,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, finance director/town accountant karen barrett, member bryant moscon, consultant rena swezey"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, finance director/town accountant karen barrett, member bryant moscon, consultant rena swezey"
+  },
+  {
+   "name": "Karen Barrett",
+   "role": "Finance Director/Town Accountant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, finance director/town accountant karen barrett, member bryant moscon, consultant rena swezey"
+  },
+  {
+   "name": "Bryant Moscon",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, finance director/town accountant karen barrett, member bryant moscon, consultant rena swezey"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Consultant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, finance director/town accountant karen barrett, member bryant moscon, consultant rena swezey"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karen Barrett will reach out to the Director at the Adult Activity Center to schedule the Seniors Means Tested Exemption presentation",
+   "quote": "karen barrett will reach out to the director at the adult activity center regarding scheduling."
+  },
+  {
+   "decision": "The recording of the Seniors Means Tested Exemption presentation will be shared and made available to view on the Lunenburg Public Access channel",
+   "quote": "the recording of the presentation will be shared and made available to view on the lunenburg public access channel."
+  },
+  {
+   "decision": "Further discussion on Veterans Exemption will be held at upcoming meetings in hopes of presenting something at the November Special Town Meeting",
+   "quote": "there will be further discussion at upcoming meetings in hopes of having something to present at the november special town meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve prior meeting minutes",
+   "resolution": "not approved",
+   "quote": "review and approve minutes of february 4, 2026, february 25, 2026, april 8, 2026, and april 22, 2026, may 13, 2026, and june 3, 2026. executive session minutes for april 8, 2026, april 22, 2026, and may 13, 2026. no public or executive session minutes were reviewed or approved.",
+   "tags": [
+    "procedure",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Neighborhood Review Project update",
+   "resolution": "ongoing",
+   "quote": "rena swezey has completed the site indexes for the lakefront/waterfront properties. along the way, she identified and corrected mislabeled properties. there were also several land use codes that needed to manually be changed. rena swezey anticipates starting to review \"little hickory\" next.",
+   "tags": [
+    "property-assessment",
+    "data-management"
+   ]
+  },
+  {
+   "topic": "Principal Assessor search status",
+   "resolution": "continued",
+   "quote": "karen barrett confirmed there are 2 candidates that will be going into the second round of interviews.",
+   "tags": [
+    "personnel",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Seniors Means Tested Exemption presentation planning",
+   "resolution": "scheduled",
+   "quote": "brian laffond suggests having the presentation at the adult activity center in early august. karen barrett will reach out to the director at the adult activity center regarding scheduling. brian laffond contacted lou franco who facilitated the writing and sponsored the legislation to the legislature. applica",
+   "tags": [
+    "exemptions",
+    "seniors",
+    "public-outreach"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Veterans Exemption discussion",
+   "resolution": "continued",
+   "quote": "there was a brief discussion about the veterans exemption and whether the town would adopt an increase from $400 to $600 (or some other amount). there will be further discussion at upcoming meetings in hopes of having something to present at the november special town meeting.",
+   "tags": [
+    "exemptions",
+    "veterans"
+   ]
+  }
+ ],
+ "tags": [
+  "board-of-assessors",
+  "property-assessment",
+  "exemptions",
+  "seniors",
+  "veterans",
+  "personnel",
+  "hiring"
+ ],
+ "dropped_unquoted_by_field": {}
 }

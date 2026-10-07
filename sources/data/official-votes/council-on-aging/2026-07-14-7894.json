@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2026-07-14",
  "docid": "7894",
@@ -12,19 +12,134 @@
  },
  "votes": [
   {
-   "motion": "approve the May and June meeting minutes",
-   "outcome": "passed unanimously",
+   "motion": "Approve the May and June meeting minutes",
+   "outcome": "approved unanimously",
    "procedural": true,
-   "quote": "a motion was made to approve the may and june meeting minutes. the motion was seconded, approved unanimously, and carried"
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "quote": "a motion was made to approve the may and june meeting minutes. the motion was seconded, approved unanimously, and carried,"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "a motion to adjourn was made and seconded. the motlon passed unanimously, and the meeting adjourned"
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "quote": "a motion to adjourn was made and seconded. the motlon passed unanimously,"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-extracted text. Typo \"motlon\" (for \"motion\") in the adjournment vote preserved verbatim from the source.",
- "cost_usd": 0.0681204
+ "dropped_unquoted": 13,
+ "note": "OCR'd from scan using macOS Vision with one minor OCR error: 'motlon' (should be 'motion') in the adjournment vote. All meeting content is legible and complete across four pages.\"",
+ "cost_usd": 0.13456859999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [
+  {
+   "decision": "Ms. Lincoln will prepare the monthly agenda with Ms. Goodsell's approval",
+   "quote": "ms. lincoln will prepare the monthly agenda with ms. goodsell's approval."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Veterans Breakfast program fee",
+   "what_was_recorded": "Fee charged for non-veterans participating in the free veterans breakfast",
+   "figures_as_printed": [
+    "$4"
+   ],
+   "quote": "a fee of $4 is charged for non-veterans."
+  },
+  {
+   "topic": "Inn at East Hill Farm senior trip",
+   "what_was_recorded": "Ticket price for upcoming Eagle House Supporters trip including lunch and entertainment",
+   "figures_as_printed": [
+    "$75"
+   ],
+   "quote": "tickets are $75 per person, including transportation"
+  },
+  {
+   "topic": "Council on Aging fiscal year budget",
+   "what_was_recorded": "No spending during new fiscal year; prior year funds reverted to Town; budget comprises salaries and miscellaneous supplies",
+   "figures_as_printed": [],
+   "quote": "there has been no spending during the new fiscal year. any remaining funds from the previous fiscal year reverted to the town. the council on aging budget primarily consists of salaries and miscellaneous supplies."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior meeting minutes",
+   "resolution": "approved unanimously",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "a motion was made to approve the may and june meeting minutes. the motion was seconded, approved unanimously, and carried,"
+  },
+  {
+   "topic": "Welcome new board members",
+   "resolution": "welcomed",
+   "tags": [
+    "membership",
+    "board"
+   ],
+   "quote": "the board welcomed new members chris johnson and pauline roy."
+  },
+  {
+   "topic": "Annual Tea Party announcement",
+   "resolution": "announced",
+   "tags": [
+    "events",
+    "community"
+   ],
+   "quote": "the annual tea party will be held on october 26, 2026. this year's theme is \"america the beautiful.\""
+  },
+  {
+   "topic": "Adult Activity Center and senior programs",
+   "resolution": "reviewed",
+   "tags": [
+    "programs",
+    "facilities",
+    "aging-services"
+   ],
+   "quote": "the council on aging gift fund was reviewed, funds collected are turned over to the town for disbursement to the lunenburg adult activity center:"
+  },
+  {
+   "topic": "Veterans Breakfast and senior trips",
+   "resolution": "ongoing",
+   "tags": [
+    "programs",
+    "veterans"
+   ],
+   "quote": "the veterans breakfast continues to be free for all veterans. a fee of $4 is charged for non-veterans."
+  },
+  {
+   "topic": "Budget status report",
+   "resolution": "no spending",
+   "tags": [
+    "budget",
+    "fiscal"
+   ],
+   "quote": "there has been no spending during the new fiscal year. any remaining funds from the previous fiscal year reverted to the town."
+  },
+  {
+   "topic": "Eagle House Supporters activities and planning",
+   "resolution": "reported",
+   "tags": [
+    "fundraising",
+    "community-partners"
+   ],
+   "quote": "the eagle house supporters recently sponsored a successful trip to boston to view the tall ships."
+  }
+ ],
+ "tags": [
+  "council-on-aging",
+  "aging-services",
+  "senior-programs",
+  "community-outreach",
+  "lunenburg"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 13
+ }
 }

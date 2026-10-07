@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2026-08-10",
  "docid": "7937",
@@ -12,15 +12,78 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Motion to adjourn",
    "moved_by": "A. Burney",
    "seconded_by": "A. Nicastro",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a. burney motion to adjourn, a. nicastro second, meeting adjourned at 6:30 pm"
+   "quote": "a. burney motion to adjourn, a. nicastro second, meeting adjourned at 6:30 pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Working session with no votes on substantive matters; only adjournment vote recorded.",
- "cost_usd": 0.0579684
+ "dropped_unquoted": 1,
+ "note": "This was a working session with discussion only; no motions or decisions were voted on other than adjournment. Topics discussed included Senior Housing, Inclusionary Housing, Cluster Housing, and Minor Site Plan Review as potential zoning amendments for the 2027 Annual Town Meeting.",
+ "cost_usd": 0.1148442,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: t. willsmer, a. reid, a. burney, a. nicastro"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: t. willsmer, a. reid, a. burney, a. nicastro"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: t. willsmer, a. reid, a. burney, a. nicastro"
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: t. willsmer, a. reid, a. burney, a. nicastro"
+  },
+  {
+   "name": "Stephen Wallace",
+   "role": "Director of Planning and Economic Development",
+   "status": "not stated",
+   "quote": "the board and planning director discussed the following zoning initiatives"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Zoning Amendment Working Session",
+   "resolution": "working session - zoning initiatives discussed for 2027 Annual Town Meeting",
+   "quote": "this meeting was a working session for the planning board to work with the planning director to draft new and revised zoning bylaws for voter consideration at the 2027 annual town meeting.",
+   "tags": [
+    "zoning",
+    "bylaws",
+    "senior housing",
+    "inclusionary housing",
+    "cluster housing",
+    "site plan review"
+   ]
+  }
+ ],
+ "tags": [
+  "zoning",
+  "bylaws",
+  "housing",
+  "planning",
+  "working session"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

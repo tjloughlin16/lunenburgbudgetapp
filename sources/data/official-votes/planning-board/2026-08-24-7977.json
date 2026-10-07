@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2026-08-24",
  "docid": "7977",
@@ -28,7 +28,7 @@
    "quote": "a. burney moved to close the public hearing. a. reid second all in favor."
   },
   {
-   "motion": "Approve the proposed project at 881 Flat Hill Road with standard administrative conditions and construction hours of 8:00 am to 5:00 pm, Monday through Friday and 9:00 am to 2:00 pm Saturdays and no Sundays",
+   "motion": "Approve the proposed project at 881 Flat Hill Road with standard administrative conditions and construction hours of 8:00 am to 5:00 pm Monday through Friday and 9:00 am to 2:00 pm Saturdays and no Sundays",
    "moved_by": "A Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "a burney moved to continue to close the public hearing. a. reid seconded. all in favor"
   },
   {
-   "motion": "Approve the proposed project at 18 Oak Ridge Road with standard administrative conditions and construction hours of 8:00 am to 5:00 pm, Monday through Friday and 9:00 am to 2:00 pm Saturdays and no Sundays",
+   "motion": "Approve the proposed project at 18 Oak Ridge Road with standard administrative conditions and construction hours of 8:00 am to 5:00 pm Monday through Friday and 9:00 am to 2:00 pm Saturdays and no Sundays",
    "moved_by": "A Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "a burney moved to continue to close the public hearing. a. reid seconded. all in favor"
   },
   {
-   "motion": "Approve the proposed project at 27 Fire Road 15A with standard administrative conditions and construction hours of 8:00 am to 5:00 pm, Monday through Friday and 9:00 am to 2:00 pm Saturdays and no Sundays",
+   "motion": "Approve the proposed project at 27 Fire Road 15A with standard administrative conditions and construction hours of 8:00 am to 5:00 pm Monday through Friday and 9:00 am to 2:00 pm Saturdays and no Sundays",
    "moved_by": "A Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
@@ -68,19 +68,19 @@
    "quote": "a burney moved to approve the proposed project at 27 fire road 15a with standard administrative conditions and construction hours of 8:00 am to 5:00 pm, monday through friday and 9:00 am to 2:00 pm saturdays. no sundays. a. reid seconded. all in favor"
   },
   {
-   "motion": "Continue 10 Parmenter Road, Phase 1 to 9/14/26 at 6:05 pm",
+   "motion": "Continue 10 Parmenter Road Phase 1 to 9/14/26 at 6:05 pm",
    "moved_by": "A Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "a burney moved to continue 10 parmenter road, phase 1 to 9/14/26 at 6:05 pm a. reid second all in favor"
   },
   {
-   "motion": "Continue 10 Parmenter Road, Phase 2 to 9/14/26 at 6:05 pm",
+   "motion": "Continue 10 Parmenter Road Phase 2 to 9/14/26 at 6:05 pm",
    "moved_by": "A Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "a burney moved to continue 10 parmenter road, phase 1 to 9/14/26 at 6:05 pm a. reid second all in favor"
   },
   {
@@ -88,11 +88,11 @@
    "moved_by": "A Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "a burney moved to continue to 9/14/26 at 6:05 pm. a. reid seconded. all in favor"
   },
   {
-   "motion": "Approve the minutes from 7/13/26",
+   "motion": "Approve minutes from 7/13/26",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
@@ -100,7 +100,7 @@
    "quote": "a. burney moved to approve. a. reid second all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn at 7:18 pm",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
@@ -108,7 +108,198 @@
    "quote": "a. burney motion to adjourn at 7:18 pm, a. reid second all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Planning Board meeting minutes, 2026-08-24. All votes clearly recorded with outcomes. Note: the minutes contain an apparent typo under the \"10 Parmenter Road, Phase 2\" section, where the motion text states \"Phase 1\" — this has been quoted verbatim as it appears.",
- "cost_usd": 0.1036725
+ "dropped_unquoted": 1,
+ "note": "Clean digital text. Minor note: motion for 10 Parmenter Road Phase 2 states \"Phase 1\" in the vote text, likely a transcription error. Roll call includes Willsmer but he is also listed as absent; recorded as absent per explicit notation. Phrase \"continue to close the public hearing\" appears for two hearings—phrasing is unclear but recorded verbatim.\"",
+ "cost_usd": 0.21920610000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "m. brenner at 6:00 pm"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney, a. nicastro"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney, a. nicastro"
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer, a. reid, a. burney, a. nicastro"
+  },
+  {
+   "name": "Stephen Wallace",
+   "role": "Director of Planning and Economic Development",
+   "status": "present",
+   "quote": "s. wallace reported that town counsel is reviewing the zoning amendments"
+  },
+  {
+   "name": "Leigh Bain",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "leigh bain - administrative assistant"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing owners, Dillis & Roy",
+   "status": "present",
+   "quote": "greg roy of dillis & roy represented the owners of 50 and 52 page street."
+  },
+  {
+   "name": "Matt Marro",
+   "role": "representing applicant, Matthew. S. Marro Environmental Consulting",
+   "status": "present",
+   "quote": "matt marro of matthew. s. marro environmental consulting represented nathan jones."
+  },
+  {
+   "name": "Nathan Jones",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "matt marro of matthew. s. marro environmental consulting represented nathan jones."
+  },
+  {
+   "name": "Dan Wolf",
+   "role": "representing applicants, David Ross Assoc.",
+   "status": "present",
+   "quote": "dan wolf of david ross assoc. represented melissa mccarthy and steven vittone."
+  },
+  {
+   "name": "Melissa McCarthy",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "dan wolf of david ross assoc. represented melissa mccarthy and steven vittone."
+  },
+  {
+   "name": "Steven Vittone",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "dan wolf of david ross assoc. represented melissa mccarthy and steven vittone."
+  },
+  {
+   "name": "Steven Bean",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "greg roy of dillis and roy represented steven bean."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board plans to post zoning amendments online in September, meet with relevant boards and committees during the fall, hold a public forum, conduct a required public hearing in March, and bring amendments to Town Meeting in May 2027",
+   "quote": "the board plans to post the proposed amendments online in september, meet with relevant boards and committees during the fall, hold a public forum, conduct the required public hearing in march and bring the amendments to town meeting in may, 2027."
+  },
+  {
+   "decision": "Town Counsel will prepare a step-by-step guide for creation of an affordable housing trust",
+   "quote": "town counsel will prepare a step by step guide."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plans - 50 Page Street",
+   "resolution": "endorsed",
+   "tags": [
+    "land exchange",
+    "frontage"
+   ],
+   "quote": "greg roy of dillis & roy represented the owners of 50 and 52 page street. the application proposes an equal exchange of land between the two parcels."
+  },
+  {
+   "topic": "Special Permit - 881 Flat Hill Road (Flood Plain)",
+   "resolution": "approved",
+   "tags": [
+    "boathouse",
+    "flood plain",
+    "Lake Shirley"
+   ],
+   "quote": "the application proposes reconstruction of a boathouse and deck area on an island in lake shirley within the flood plain."
+  },
+  {
+   "topic": "Special Permit - 18 Oak Ridge Road (Flood Plain)",
+   "resolution": "approved",
+   "tags": [
+    "dwelling reconstruction",
+    "flood plain",
+    "septic"
+   ],
+   "quote": "the proposal is to remove and reconstruct an existing two-bedroom single family dwelling farther from lake shirley and outside the flood plain."
+  },
+  {
+   "topic": "Special Permit - 27 Fire Road 15A (Two Dwellings on One Lot)",
+   "resolution": "approved",
+   "tags": [
+    "multiple dwellings",
+    "reconstruction"
+   ],
+   "quote": "the proposed is to remove and replace one of three existing dwelling structurers on the property."
+  },
+  {
+   "topic": "10 Parmenter Road Phase 1 (Stormwater & Special Permits)",
+   "resolution": "continued to 9/14/26",
+   "tags": [
+    "stormwater",
+    "permits"
+   ],
+   "quote": "the board discussed outstanding materials, including a proposed legal/maintenance agreement, construction inspection information and review by town counsel and graves engineering."
+  },
+  {
+   "topic": "10 Parmenter Road Phase 2 (Stormwater & Special Permits)",
+   "resolution": "continued to 9/14/26",
+   "tags": [
+    "stormwater",
+    "permits"
+   ],
+   "quote": "the applicant requested continuances. the board discussed outstanding materials, including a proposed legal/maintenance agreement, construction inspection information and review by town counsel and graves engineering."
+  },
+  {
+   "topic": "860 New West Townsend Road (Site Plan Review & Stormwater)",
+   "resolution": "continued to 9/14/26",
+   "tags": [
+    "site plan",
+    "stormwater"
+   ],
+   "quote": "the board noted outstanding review items, including conditions recommended by graves engineering and driveway permit thickness."
+  },
+  {
+   "topic": "Board Submissions - Material Review Deadlines",
+   "resolution": "discussed, no formal policy adopted",
+   "tags": [
+    "procedures"
+   ],
+   "quote": "a burney proposed that applicants submit materials intended for board consideration sufficiently in advance of meetings to allow adequate review by the board and staff. the board discussed possible submission deadlines."
+  },
+  {
+   "topic": "Zoning Amendments - May 2027 Annual Town Meeting",
+   "resolution": "in process",
+   "tags": [
+    "zoning"
+   ],
+   "quote": "s. wallace reported that town counsel is reviewing the zoning amendments planned for may 2027 annual town meeting."
+  }
+ ],
+ "tags": [
+  "planning",
+  "zoning",
+  "special permits",
+  "flood plain",
+  "stormwater",
+  "dwelling",
+  "affordable housing",
+  "ANR plans"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

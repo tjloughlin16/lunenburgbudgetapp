@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-07-27",
  "docid": "7925",
@@ -12,39 +12,130 @@
  },
  "votes": [
   {
-   "motion": "Call a Special Town Meeting for Thursday, September 3, 2026 at 7:00 PM at the Lunenburg Middle/High School Auditorium",
-   "moved_by": "Vice-Chair Brian Lehtinen",
-   "seconded_by": "Clerk Glenn McLeod",
-   "outcome": "passed 3-0-0",
-   "procedural": false,
-   "quote": "vice-chair brian lehtinen moved in accordance with massachusetts general law, chapter 39, section 10, and article 2, § 2-5 of the town charter, and upon the receipt of a written petition signed by the necessary number of registered voters"
+   "motion": "Call a Special Town Meeting for Thursday, September 3, 2026 at 7:00 PM at the Lunenburg Middle/High School Auditorium, with warrant opening July 28, 2026 and closing at 5:00 PM on Friday, August 7, 2026",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Glenn McLeod",
+   "outcome": "passed 3-0",
+   "procedural": true,
+   "quote": "vice-chair brian lehtinen moved in accordance with massachusetts general law, chapter 39, section 10, and article 2, § 2-5 of the town charter, and upon the receipt of a written petition signed by the necessary number of registered voters of the town of lunenburg, the select board, at the meeting of july 27, 2026, voted to call a special town meeting for thursday, september 3, 2026 at 7:00 pm at the lunenburg middle/high school auditorium, and further motioned that the warrant for the special town meeting be opened on tuesday, july 28, 2026 and that the warrant closes at 5:00 pm on friday, august 7, 2026 with all articles to be submitted to the office of the select board. seconded by clerk glenn mcleod. call for the vote: three-aye. the motion passed (3-0-0)"
   },
   {
    "motion": "Approve the September 1, 2026 State Primary Election warrant",
-   "moved_by": "Vice-Chair Brian Lehtinen",
-   "seconded_by": "Clerk Glenn McLeod",
-   "outcome": "passed 3-0-0",
-   "procedural": false,
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Glenn McLeod",
+   "outcome": "passed 3-0",
+   "procedural": true,
    "quote": "vice-chair brian lehtinen moved to approve the september 1, 2026 state primary election warrant. seconded by clerk glenn mcleod. call for the vote: three-aye. the motion passed (3-0-0)"
   },
   {
    "motion": "Ratify the Teamsters Union Local 170 (DPW) Collective Bargaining Agreement",
-   "moved_by": "Vice-Chair Brian Lehtinen",
-   "seconded_by": "Clerk Glenn McLeod",
-   "outcome": "passed 3-0-0",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Glenn McLeod",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "vice-chair brian lehtinen motioned to ratify the teamsters union local 170 (dpw) collective bargaining agreement. seconded by clerk glenn mcleod. call for the vote: three-aye. the motion passed (3-0-0)"
   },
   {
-   "motion": "Adjourn at 6:18 PM",
-   "moved_by": "Vice-Chair Brian Lehtinen",
-   "seconded_by": "Clerk Glenn McLeod",
-   "outcome": "passed 3-0-0",
+   "motion": "Adjourn the meeting",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Glenn McLeod",
+   "outcome": "passed 3-0",
    "procedural": true,
    "quote": "vice-chair brian lehtinen motioned to adjourn at 6:18 pm. seconded by clerk glenn mcleod. call for the vote: three-aye. the motion passed (3-0-0)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10429240000000001
+ "note": "Minutes are complete and readable. All votes recorded with vote counts (3-0). No budget figures discussed.",
+ "cost_usd": 0.11017060000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Renee Emkey",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen, and member glenn mcleod"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Town Moderator",
+   "status": "present",
+   "quote": "tim murphy of 97 island road, and lunenburg town moderator, announced he is available for special town meeting on september 2nd, but not on september 3rd."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Legal ad will be posted in the Lunenburg Ledger rather than Sentinel and Enterprise",
+   "quote": "there was a discussion on whether the legal ad should be posted in the lunenburg ledger or the sentinel and enterprise since the sentinel has a quicker turn over. it was determined the ads would be posted in the lunenburg ledger."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tim Murphy",
+   "stated_role": "Town Moderator",
+   "topic": "Moderator availability for Special Town Meeting and Deputy Moderator protocol",
+   "quote": "tim murphy of 97 island road, and lunenburg town moderator, announced he is available for special town meeting on september 2nd, but not on september 3rd. mr. murphy discussed the protocol in the case the moderator is not available, and the deputy moderator is able to moderate the meeting. rob bowen is the town's deputy moderator."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Special Town Meeting call and warrant dates",
+   "resolution": "approved; meeting called for September 3, 2026 at 7:00 PM",
+   "tags": [
+    "procedural",
+    "special-town-meeting",
+    "warrant"
+   ],
+   "quote": "vice-chair brian lehtinen moved in accordance with massachusetts general law, chapter 39, section 10, and article 2, § 2-5 of the town charter, and upon the receipt of a written petition signed by the necessary number of registered voters of the town of lunenburg, the select board, at the meeting of july 27, 2026, voted to call a special town meeting for thursday, september 3, 2026 at 7:00 pm at the lunenburg middle/high school auditorium"
+  },
+  {
+   "topic": "State Primary Election warrant",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "state-election",
+    "warrant"
+   ],
+   "quote": "vice-chair brian lehtinen moved to approve the september 1, 2026 state primary election warrant. seconded by clerk glenn mcleod. call for the vote: three-aye. the motion passed (3-0-0)"
+  },
+  {
+   "topic": "Teamsters Union Local 170 collective bargaining agreement ratification",
+   "resolution": "approved",
+   "tags": [
+    "labor",
+    "DPW",
+    "collective-bargaining"
+   ],
+   "quote": "vice-chair brian lehtinen motioned to ratify the teamsters union local 170 (dpw) collective bargaining agreement. seconded by clerk glenn mcleod. call for the vote: three-aye. the motion passed (3-0-0)"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "special-town-meeting",
+  "election",
+  "warrant",
+  "labor-agreement",
+  "DPW"
+ ],
+ "dropped_unquoted_by_field": {}
 }

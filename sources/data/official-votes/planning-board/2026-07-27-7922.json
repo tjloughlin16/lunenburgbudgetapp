@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2026-07-27",
  "docid": "7922",
@@ -12,71 +12,209 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing for the 475 Leominster Shirley Road Site Plan Modification request",
+   "motion": "Close the public hearing for 475 Leominster Shirley Road",
    "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a. burney moved to close the public hearing. a. reid second"
+   "quote": "a. burney moved to close the public hearing. a. reid second all in favor."
   },
   {
-   "motion": "Approve the modification to site plan for 475 Leominster Shirley Road with the condition that all previous conditions of the original permit and previous modifications convey to this approval",
-   "moved_by": "A Burney",
+   "motion": "Approve the Modification to Site Plan for 475 Leominster Shirley Road with the condition that all previous conditions of the original permit and previous modifications convey to this approval",
+   "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a burney moved to approve the modification to site plan with the condition that all previous conditions of the original permit and previous modifications covey to this approval. a. reid second."
+   "quote": "a burney moved to approve the modification to site plan with the condition that all previous conditions of the original permit and previous modifications covey to this approval. a. reid second. all in favor."
   },
   {
-   "motion": "Continue the 10 Parmenter Road hearing to 8/24/26 at 6:00 pm",
-   "moved_by": "A Burney",
+   "motion": "Continue the public hearing for 10 Parmenter Road stormwater permits to August 24, 2026 at 6:00 pm",
+   "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "a burney moved to continue to 8/24/26 at 6:00 pm. a. reid seconded."
+   "procedural": false,
+   "quote": "a burney moved to continue to 8/24/26 at 6:00 pm. a. reid seconded. all in favor"
   },
   {
-   "motion": "Continue the 10 Parmenter Road hearing to 8/24/26 at 6:00 pm",
-   "moved_by": "A Burney",
+   "motion": "Continue the public hearing for 10 Parmenter Road special permits to August 24, 2026 at 6:00 pm",
+   "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "a burney moved to continue to 8/24/26 at 6:00 pm a. reid second"
+   "procedural": false,
+   "quote": "a burney moved to continue to 8/24/26 at 6:00 pm a. reid second all in favor"
   },
   {
-   "motion": "Continue the 860 New West Townsend Road hearing to 8/24/26 at 6:00 pm",
-   "moved_by": "Burney",
+   "motion": "Continue the public hearing for 860 New West Townsend Road site plan review to August 24, 2026 at 6:00 pm",
+   "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "burney moved to continue to 8/24/26 at 6:00 pm. a. reid seconded."
+   "procedural": false,
+   "quote": "burney moved to continue to 8/24/26 at 6:00 pm. a. reid seconded. all in favor"
   },
   {
    "motion": "Accept and approve the Master Plan as presented",
-   "moved_by": "A Burney",
+   "moved_by": "A. Burney",
    "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a burney moved to accept and approve the master plan as presented. a. reid second"
+   "quote": "a burney moved to accept and approve the master plan as presented. a. reid second all in favor."
   },
   {
-   "motion": "Approve the minutes from 7/13/26",
+   "motion": "Approve the minutes from July 13, 2026",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
    "outcome": "passed",
    "procedural": true,
-   "quote": "t. willsmer moved to approve. a. reid second"
+   "quote": "t. willsmer moved to approve. a. reid second all in favor"
   },
   {
-   "motion": "Adjourn the meeting at 6:48 pm",
+   "motion": "Adjourn the meeting",
    "moved_by": "A. Burney",
    "seconded_by": "T. Willsmer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a. burney motion to adjourn at 6:48 pm, t. willsmer second"
+   "quote": "a. burney motion to adjourn at 6:48 pm, t. willsmer second all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes passed with \"All in favor\" recorded in the minutes. Five board members were present (M. Brenner, T. Willsmer, A. Reid, A. Burney, A. Nicastro) with none absent.",
- "cost_usd": 0.09409640000000001
+ "dropped_unquoted": 1,
+ "note": "\"\"",
+ "cost_usd": 0.13227,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "m. brenner at 6:00 pm"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "t. willsmer moved to approve. a. reid second"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Member",
+   "status": "present",
+   "quote": "a. burney moved to close the public hearing."
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: m. brenner, t. willsmer,, a. reid, a. burney, a. nicastro"
+  },
+  {
+   "name": "Stephen Wallace",
+   "role": "Director of Planning and Economic Development",
+   "status": "present",
+   "quote": "s. wallace stated that last monday's working session was a good one."
+  },
+  {
+   "name": "Chris Harrison",
+   "role": "Hanigan Engineering",
+   "status": "present",
+   "quote": "chris harrison (hanigan engineering) was present and stated that they are requesting a minor modification"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "M. Brenner directed to reach out to K. Duffy asking if she is willing to pull Steering Committee members over to an Implementation Committee with required talent bank forms and interviews",
+   "quote": "m. brenner will reach out to k. duffy asking if she is willing to pull the steering committee members over to an implementation committee with the required talent bank forms, interviews etc."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chris Harrison",
+   "stated_role": "Hanigan Engineering",
+   "topic": "475 Leominster Shirley Road site plan modification",
+   "quote": "they are requesting a minor modification to the use of the building to include manufacturing. in the office industrial zoning district, manufacturing is allowed by right, which is a change in use and modification to the site plan."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "475 Leominster Shirley Road Site Plan Modification",
+   "resolution": "approved",
+   "tags": [
+    "site plan review",
+    "manufacturing",
+    "public hearing"
+   ],
+   "quote": "chris harrison (hanigan engineering) was present and stated that they are requesting a minor modification to the use of the building to include manufacturing."
+  },
+  {
+   "topic": "10 Parmenter Road Stormwater and Special Permits",
+   "resolution": "continued to 8/24/26",
+   "tags": [
+    "stormwater permits",
+    "special permits",
+    "continuance"
+   ],
+   "quote": "applicant has requested a continuance until 8/24/26"
+  },
+  {
+   "topic": "860 New West Townsend Road Site Plan Review",
+   "resolution": "continued to 8/24/26",
+   "tags": [
+    "site plan review",
+    "stormwater permit",
+    "continuance"
+   ],
+   "quote": "applicant requested a continuance until 8/24/26"
+  },
+  {
+   "topic": "Master Plan",
+   "resolution": "approved",
+   "tags": [
+    "Master Plan",
+    "implementation planning"
+   ],
+   "quote": "a burney moved to accept and approve the master plan as presented. a. reid second all in favor."
+  },
+  {
+   "topic": "Bylaws Update",
+   "resolution": "informational",
+   "tags": [
+    "bylaws",
+    "inclusionary housing"
+   ],
+   "quote": "s. wallace stated that last monday's working session was a good one. based on the feedback received, the updated bylaws were sent out today with the exception of the inclusionary bylaw."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "informational",
+   "tags": [
+    "Master Plan Steering Committee",
+    "Economic Development",
+    "Stormwater Task Force"
+   ],
+   "quote": "t. willsmer stated that they are near the end of reviewing the data they that they have. they have budget comparisons still to complete"
+  },
+  {
+   "topic": "Meeting Schedule",
+   "resolution": "announced",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "6:00 pm at town hall or stated otherwise 8/10, 8/24, 9/14 & 9/28"
+  }
+ ],
+ "tags": [
+  "Planning Board",
+  "site plan review",
+  "special permits",
+  "stormwater permits",
+  "Master Plan",
+  "public hearings",
+  "bylaws",
+  "manufacturing",
+  "continuance"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

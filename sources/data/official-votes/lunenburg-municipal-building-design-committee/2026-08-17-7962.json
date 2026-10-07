@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2026-08-17",
  "docid": "7962",
@@ -13,16 +13,16 @@
  "votes": [
   {
    "motion": "approve minutes of July 28",
-   "moved_by": "",
-   "seconded_by": "",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to approve minutes of july 28, seconded and approved unanimously."
   },
   {
    "motion": "approve minutes of August 3, 2026",
-   "moved_by": "",
-   "seconded_by": "",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to approve minutes of august 3, 2026, seconded and approved unanimously."
@@ -37,6 +37,191 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0622264
+ "note": "Text is complete and legible. No scanning issues. Meeting minutes are detailed. No votes on substantive matters; all votes were procedural (approving prior minutes and adjourning). Multiple recommendations and discussion items but no dollar figures attached to budget discussions except reference to FY2026 digitization funds already allocated.\"",
+ "cost_usd": 0.1142286,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, matthew brenner, anthony sculumbrine"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, matthew brenner, anthony sculumbrine"
+  },
+  {
+   "name": "David Blatt",
+   "role": "member",
+   "status": "present",
+   "quote": "the meeting was called to order at 5:34 pm by david blatt."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, matthew brenner, anthony sculumbrine"
+  },
+  {
+   "name": "Anthony Sculumbrine",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, tom gray, david blatt, matthew brenner, anthony sculumbrine"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "member",
+   "status": "absent",
+   "quote": "members absent: kristina masaitis, laura brzozoski, greg roy"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "member",
+   "status": "absent",
+   "quote": "members absent: kristina masaitis, laura brzozoski, greg roy"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "member",
+   "status": "absent",
+   "quote": "members absent: kristina masaitis, laura brzozoski, greg roy"
+  },
+  {
+   "name": "Andrew Gillis",
+   "role": "architectural preservation commission member/structural civil engineer",
+   "status": "present",
+   "quote": "andrew gillis (architectural preservation commission member/structural civil engineer) concurred that deck appears in decent shape, positive sign for renovation options."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting scheduled for Monday, August 31, 2026, at approximately 5:30 PM",
+   "quote": "the next meeting was scheduled for monday, august 31, 2026, at approximately 5:30 pm."
+  },
+  {
+   "decision": "Invite PACC/Land Use Director (Steve Wallace) to next meeting to clarify PACC intentions and space requirements",
+   "quote": "recommendation: invite pacc/land use director (steve wallace) to next meeting to clarify pacc intentions and space requirements."
+  },
+  {
+   "decision": "Committee recommends PACC provide best-case and worst-case scenarios for future funding and space needs",
+   "quote": "committee recommends pacc provide best-case / worst-case scenarios for future funding and space needs so planning can accommodate likely outcomes."
+  },
+  {
+   "decision": "Conduct time-and-motion observational study during peak periods to document visitor flows and counter demand",
+   "quote": "recommendation to conduct a time-and-motion / observational study during peak periods (end-of-quarter, tax season, dog-license season, early voting) to document visitor flows and counter demand."
+  },
+  {
+   "decision": "Collect meeting-hour data from each department using a clear definition of meeting",
+   "quote": "suggestion: collect meeting-hour data from each department using a clear definition of meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Digitization funding for records",
+   "what_was_recorded": "Digitization funding referenced in capital plan with funds allocated for fiscal 2026; progress unclear. Funds allocated to digitize planning records with specialized scanning equipment.",
+   "figures_as_printed": [
+    "fiscal 2026"
+   ],
+   "quote": "digitization funding referenced in capital plan; progress unclear ===page 2=== but funds allocated (",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes (July 28 and August 3, 2026)",
+   "resolution": "approved",
+   "quote": "motion to approve minutes of july 28, seconded and approved unanimously. motion to approve minutes of august 3, 2026, seconded and approved unanimously.",
+   "tags": [
+    "procedural",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Walkthrough Report - Ritter and TC Passios facilities",
+   "resolution": "discussed",
+   "quote": "david blatt apologized for missing the walkthrough; has visited brook's house and tc passios after recent rains.",
+   "tags": [
+    "facilities",
+    "records-storage",
+    "building-condition",
+    "roof"
+   ]
+  },
+  {
+   "topic": "Space Needs and Square Footage Discussion for town administration building",
+   "resolution": "discussed, planning guidelines reviewed",
+   "quote": "project scope: town administration building planning, planning target assumed ~30 employees (conservative planning number) and 10 visitors at peak. police and fire excluded.",
+   "tags": [
+    "space-planning",
+    "staffing",
+    "building-design"
+   ]
+  },
+  {
+   "topic": "PACC (Public Access Cable) Space Uncertainty",
+   "resolution": "recommendation for PACC to present options to next meeting",
+   "quote": "pacc location unclear: currently operating out of \"eagle house\" semi-permanently; question whether pacc will need studio/control room space in town hall or remain at eagle house.",
+   "tags": [
+    "PACC",
+    "space-planning",
+    "cable-contract"
+   ]
+  },
+  {
+   "topic": "Conference Rooms and Meeting Spaces",
+   "resolution": "discussed sizing and distribution needs",
+   "quote": "majority of departments requested small conference rooms (6-8 persons) for typical meetings. a town-level larger conference room desirable for management/all-hands (capable of 18 people; full 30-person meetings likely held in meeting hall).",
+   "tags": [
+    "space-planning",
+    "meeting-spaces",
+    "conference-rooms"
+   ]
+  },
+  {
+   "topic": "Counter/Reception Layout and Public Flow",
+   "resolution": "recommendation for observational study of visitor flows",
+   "quote": "shared reception/counter for quick acknowledgment and triage recommended; this would minimize need for separate counters for each department.",
+   "tags": [
+    "public-services",
+    "space-planning",
+    "counter-design"
+   ]
+  },
+  {
+   "topic": "Records Storage and Digitization Strategy",
+   "resolution": "discussed retention and access assessment needs",
+   "quote": "confirmed substantial stored paper records at tc passios; need to determine: • which documents must remain physical by law, and required retention period",
+   "tags": [
+    "records-management",
+    "digitization",
+    "storage",
+    "document-retention"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved",
+   "quote": "motion to adjourn: anthony sculumbrine. seconded by tom gray. unanimously approved.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "building-design",
+  "town-administration",
+  "space-planning",
+  "records-management",
+  "facilities",
+  "PACC",
+  "municipal"
+ ],
+ "dropped_unquoted_by_field": {}
 }

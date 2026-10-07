@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cable-advisory-committee",
  "meeting_date": "2026-08-13",
  "docid": "7954",
@@ -12,15 +12,110 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from July 23, 2026",
+   "motion": "Approve the minutes from July 23",
    "moved_by": "S. Archambault",
    "seconded_by": "K. Menard",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to accept 7/23 minutes (1st s. archambault, 2nd k. menard) passed"
+  },
+  {
+   "motion": "Adjourn the meeting",
+   "moved_by": "K. Menard",
+   "seconded_by": "B. Vienneau",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "(k. menard, 2nd b. vienneau) - passed)"
   }
  ],
  "dropped_unquoted": 1,
- "note": "The second vote's motion text (\"Adjourn\") is inferred from context—the minutes show the vote result under the Adjournment section but do not explicitly state the motion text. The quote captures what the minutes record about this vote.\"",
- "cost_usd": 0.0904
+ "note": "",
+ "cost_usd": 0.15400560000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Archambault",
+   "role": "CAC member",
+   "status": "present",
+   "quote": "cac members present:steve archambault, karin menard, tom bodkin, brian vienneau"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "CAC member",
+   "status": "present",
+   "quote": "cac members present:steve archambault, karin menard, tom bodkin, brian vienneau"
+  },
+  {
+   "name": "Tom Bodkin",
+   "role": "CAC member",
+   "status": "present",
+   "quote": "cac members present:steve archambault, karin menard, tom bodkin, brian vienneau"
+  },
+  {
+   "name": "Brian Vienneau",
+   "role": "CAC member",
+   "status": "present",
+   "quote": "cac members present:steve archambault, karin menard, tom bodkin, brian vienneau"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Cable Access Manager",
+   "status": "present",
+   "quote": "cable access manager jo toale was also in attendance"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee members divided responsibilities for cable license renewal: B. Vienneau to conduct facility tour, K. Menard and S. Archambault to review surrounding towns' license agreements with Comcast, T. Bodkin to reach out to school system, S. Archambault to check with Library and Teen Center, K. Menard to check with town departments, S. Archambault to check for service area map, B. Lehtenin to review financial documents",
+   "quote": "we reviewed the process and duties we needed to perform to complete the process, we decided to split the responsibilities up as followed:"
+  },
+  {
+   "decision": "Future meeting scheduled for a Tuesday in October, exact date to be announced",
+   "quote": "it was decided that we will meet on a tuesday in october, the exact date is tba"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Cable Advisory Legal Representative Update",
+   "resolution": "awaiting answer from Town Hall",
+   "quote": "town hall states we should get an answer on legal representation shortly",
+   "tags": [
+    "legal representation",
+    "legal counsel"
+   ]
+  },
+  {
+   "topic": "Review and Discuss Cable License Renewal Procedures",
+   "resolution": "committee members assigned specific responsibilities",
+   "quote": "we reviewed the process and duties we needed to perform to complete the process, we decided to split the responsibilities up as followed:",
+   "tags": [
+    "cable license renewal",
+    "Comcast agreement",
+    "operating facilities",
+    "surrounding towns"
+   ]
+  },
+  {
+   "topic": "Discussion of Future Meeting",
+   "resolution": "scheduled for Tuesday in October",
+   "quote": "it was decided that we will meet on a tuesday in october, the exact date is tba",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "Cable Advisory Committee",
+  "cable license renewal",
+  "Comcast",
+  "legal representation",
+  "operating facilities"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

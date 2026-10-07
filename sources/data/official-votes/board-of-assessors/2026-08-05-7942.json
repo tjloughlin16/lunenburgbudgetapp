@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2026-08-05",
  "docid": "7942",
@@ -68,7 +68,146 @@
    "quote": "there was a motion to adjourn by sarah cammer, seconded by bryant moscon."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes of July 1, 2026 listed in the agenda but no separate vote recorded for it.",
- "cost_usd": 0.0724954
+ "dropped_unquoted": 1,
+ "note": "Executive session minutes from April 8, April 22, and a third date (agenda lists May 13, text mentions May 3) could not be located due to transition of Lead Assessor; minutes may need to be recreated. July 1, 2026 minutes are listed on the agenda but no motion to approve was recorded. Date discrepancy in text (May 3 vs. May 13) may be a typo in the source document.",
+ "cost_usd": 0.24960359999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, member bryant moscon, consultant rena swezey"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, member bryant moscon, consultant rena swezey"
+  },
+  {
+   "name": "Bryant Moscon",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, member bryant moscon, consultant rena swezey"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Consultant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, member bryant moscon, consultant rena swezey"
+  },
+  {
+   "name": "John Beale",
+   "role": "representing the Stormwater Task Force",
+   "status": "present",
+   "quote": "john beale was present on behalf of the stormwater task force."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board will review Clause 22 exemption amounts in surrounding towns",
+   "quote": "the board will review other clause 22 exemptions in surrounding towns."
+  },
+  {
+   "decision": "Neighborhood review updates will take place in spring rather than immediately",
+   "quote": "mike suggests the neighborhood updates take place in the spring."
+  },
+  {
+   "decision": "Rena Swezey to use test Town to model proposed neighborhood changes",
+   "quote": "brian laffond suggested that rena swezey should utilize the test \"town\" to model the proposed changes."
+  },
+  {
+   "decision": "Further discussion between Rena Swezey and Sarah Cammer regarding Neighborhood 3 and next steps",
+   "quote": "there will be further discussion between rena swezey and sarah cammer (on august 12th or august 18th) regarding neighborhood 3 and next steps."
+  },
+  {
+   "decision": "IT to attempt to locate executive session minutes on transitioning Lead Assessor Lynda Cajka's computer",
+   "quote": "brian laffond confirms that it is trying to access lynda cajka's computer."
+  },
+  {
+   "decision": "Tonight's planned Executive Session postponed; next executive session August 11 or 12",
+   "quote": "tonight's planned executive session will be postponed. the next executive session will be held on either august 11, 2026, or august 12, 2026, depending on karen barrett's availability."
+  },
+  {
+   "decision": "Lou Franco will provide Senior Means Tested Exemption presentation on August 10",
+   "quote": "tom alonzo will be unavailable to provide the presentation but lou franco has agreed to participate."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve minutes from multiple meetings",
+   "resolution": "approved (six meeting dates; July 1, 2026 listed but not voted on; executive session minutes from three dates could not be located)",
+   "quote": "review and approve minutes of february 4, 2026, february 25, 2026, april 8, 2026, and april 22, 2026, may 13, 2026, june 3, 2026, and july 1, 2026. executive session minutes for april 8, 2026, april 22, 2026, and may 13, 2026.",
+   "tags": [
+    "minutes approval",
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Stormwater Task Force data request and utility planning",
+   "resolution": "information presented; Board to work with task force on data provision",
+   "quote": "appointment with storm water task force to understand their ask of the assessors.",
+   "tags": [
+    "stormwater",
+    "utility",
+    "DPW",
+    "data request"
+   ]
+  },
+  {
+   "topic": "Increasing Clause 22 veteran exemption amount",
+   "resolution": "continued; Board to research other towns' practices and present more information",
+   "quote": "discussion about increasing exemption amount for clause 22 (veteran exemption).",
+   "tags": [
+    "veteran exemption",
+    "tax exemption",
+    "research"
+   ]
+  },
+  {
+   "topic": "Neighborhood review project status",
+   "resolution": "continued to spring; updates to proceed following database freeze for interim adjustments",
+   "quote": "update of neighborhood review project",
+   "tags": [
+    "neighborhood review",
+    "database",
+    "assessments"
+   ]
+  },
+  {
+   "topic": "Principal Assessor search completion",
+   "resolution": "position filled; Brian Fernandes ratified by Select Board, start date August 18, 2026",
+   "quote": "brian laffond confirms that a principal assessor, brian fernandes, was ratified by the select board on august 4, 2026. his anticipated start date is august 18, 2026.",
+   "tags": [
+    "staffing",
+    "principal assessor"
+   ]
+  },
+  {
+   "topic": "Senior Means Tested Exemption presentation preparation",
+   "resolution": "presentation scheduled for August 10, 2026",
+   "quote": "senior means tested exemption presentation for august 10, 2026.",
+   "tags": [
+    "senior exemption",
+    "presentation"
+   ]
+  }
+ ],
+ "tags": [
+  "Board of Assessors",
+  "assessments",
+  "exemptions",
+  "stormwater utility",
+  "principal assessor",
+  "veteran exemption",
+  "neighborhood review"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

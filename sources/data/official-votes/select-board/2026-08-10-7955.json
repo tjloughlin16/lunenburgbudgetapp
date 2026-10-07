@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2026-08-10",
  "docid": "7955",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "include Article 1 submitted by the School Department on the warrant",
+   "motion": "to include Article 1 submitted by the School Department on the warrant",
    "moved_by": "Vice-Chair Brian Lehtinen",
    "seconded_by": "Member Alonzo",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "vice-chair lehtinen moved to include article 1 submitted by the school department's article on the warrant. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)"
   },
   {
-   "motion": "approve the Special Town Meeting warrant as presented",
+   "motion": "to approve the Special Town Meeting warrant as presented",
    "moved_by": "Vice-Chair Brian Lehtinen",
    "seconded_by": "Member Alonzo",
    "outcome": "passed 5-0",
@@ -28,7 +28,7 @@
    "quote": "vice-chair lehtinen moved to approve the special town meeting warrant as presented. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "to adjourn",
    "moved_by": "Vice-Chair Brian Lehtinen",
    "seconded_by": "Member Alonzo",
    "outcome": "passed 5-0",
@@ -36,7 +36,121 @@
    "quote": "vice-chair lehtinen moved to adjourn at 7:13 pm. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08756699999999999
+ "dropped_unquoted": 1,
+ "note": "Minutes clearly formatted with all votes recorded with outcomes. No scanned text or missing information noted.",
+ "cost_usd": 0.1333786,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Renee Emkey",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen, clerk glenn mcleod, member damon mcquaid, and tom alonzo"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen, clerk glenn mcleod, member damon mcquaid, and tom alonzo"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen, clerk glenn mcleod, member damon mcquaid, and tom alonzo"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen, clerk glenn mcleod, member damon mcquaid, and tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair renee emkey, vice-chair brian lehtinen, clerk glenn mcleod, member damon mcquaid, and tom alonzo"
+  },
+  {
+   "name": "Jennifer Warren-Dyment",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jennifer warren-dyment, town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to consult with Town Counsel regarding valid funding sources for Article 3 pending certification of free cash",
+   "quote": "town manager warren-dyment explained that the article that was received stated certified free cash or available funds. while free cash will not be certified by the special town meeting, she has asked town counsel about what funds may be in scope. since town counsel has not yet replied town manager warren-dyment did not want to comment publicly but there may be other funding options."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY27 School Department Operating Budget",
+   "what_was_recorded": "Article 1 submitted by School Department to raise and appropriate an additional sum for FY27 operating budget",
+   "figures_as_printed": [
+    "$418,056"
+   ],
+   "quote": "article 1 (submitted by the school department) is to raise and appropriate an additional sum of $418,056 for the fy27 operating budget for the school department or take any other action relative thereto."
+  },
+  {
+   "topic": "FY27 School Department Operating Budget Supplement",
+   "what_was_recorded": "Article 2 submitted by citizen petition to raise and appropriate or transfer from available funds to supplement school budget with unspecified amount",
+   "figures_as_printed": [],
+   "quote": "article 2 (submitted by citizen petition) is to see if the town will vote to raise and appropriate or transfer from available funds a sum of money to supplement the school department's fy27 operating budget or take any other action relative thereto."
+  },
+  {
+   "topic": "FY27 School Athletic Department and Student Transportation",
+   "what_was_recorded": "Article 3 submitted by citizen petition to transfer funds for athletic department to reinstate middle school sports and provide student transportation",
+   "figures_as_printed": [
+    "151,338.38"
+   ],
+   "quote": "article 3 (submitted by citizen petition) to see if the town will vote to transfer a sum of money in the amount of 151,338.38 from certified free cash or available funds to the lunenberg public schools fy27 operating budget for the purpose of supplementing the athletic department budget to reinstate middle school sports as well as provide transportation for student athletes or take any other action relative thereto."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from certified free cash or available funds to Lunenberg Public Schools FY27 operating budget for athletic department and student transportation",
+   "amount_as_printed": "151,338.38",
+   "outcome": "approved for warrant",
+   "quote": "article 3 (submitted by citizen petition) to see if the town will vote to transfer a sum of money in the amount of 151,338.38 from certified free cash or available funds to the lunenberg public schools fy27 operating budget for the purpose of supplementing the athletic department budget to reinstate middle school sports as well as provide transportation for student athletes"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board Congratulations to Newly Elected Members",
+   "resolution": "discussed",
+   "tags": [
+    "elections",
+    "board-membership"
+   ],
+   "quote": "vice-chair brian lehtinen congratulated mr. tom alonzo and mr. damon mcquaid on their win in the recent election. he also thanked them for volunteering."
+  },
+  {
+   "topic": "Special Town Meeting Warrant for September 3, 2026",
+   "resolution": "approved",
+   "tags": [
+    "warrant",
+    "school-budget",
+    "athletics",
+    "free-cash"
+   ],
+   "quote": "vice-chair lehtinen moved to approve the special town meeting warrant as presented. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)"
+  }
+ ],
+ "tags": [
+  "select-board",
+  "school-budget",
+  "warrant",
+  "special-town-meeting",
+  "athletics",
+  "free-cash",
+  "middle-school-sports",
+  "student-transportation"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

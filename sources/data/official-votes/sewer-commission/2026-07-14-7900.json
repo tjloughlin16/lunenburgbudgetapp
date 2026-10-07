@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2026-07-14",
  "docid": "7900",
@@ -12,23 +12,180 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 6/30/26",
-   "moved_by": "Dan P.",
-   "seconded_by": "Arthur K.",
+   "motion": "accept the minutes of 6/30/26",
+   "moved_by": "Dan Proctor",
+   "seconded_by": "Arthur Katis",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "motion: dan p. second: arthur k. to accept the minutes of 6/30/26. roll call vote: chip-aye, dan-aye, arthur-aye and scott-aye."
   },
   {
-   "motion": "Adjourn at 6:54 pm",
-   "moved_by": "Dan P.",
-   "seconded_by": "Arthur K.",
+   "motion": "adjourn at 6:54 pm",
+   "moved_by": "Dan Proctor",
+   "seconded_by": "Arthur Katis",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "motion: dan p. second: arthur k. to adjourn at 6:54 pm. roll call vote: arthur-aye, chip-aye, dan-aye and scott-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06624239999999999
+ "note": "\"\"",
+ "cost_usd": 0.1297316,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: vice-chair- scott dall"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk- dan proctor, member: arthur katis"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "member: arthur katis and chip wilson"
+  },
+  {
+   "name": "Chip Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "member: arthur katis and chip wilson"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- bill bernard, sewer business manager"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "sewer business manager- andrew valliere"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: chair- brett ramsden"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "absent",
+   "quote": "minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Andrew Valliere will check on school grease trap maintenance and cleaning schedule",
+   "quote": "dan asked about the grease traps at the schools and andrew replied that they clean it out in june but he will check on that."
+  },
+  {
+   "decision": "Commission will meet with Town Counsel to discuss wording for sewer connection fees for multi-unit dwellings",
+   "quote": "andrew stated he will not have any update until they meet with town counsel next week to discuss wording for fees for new multi-unit hookups."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Residential Sewer Connection Charge Regulation",
+   "what_was_recorded": "Reference to minimum residential connection charge under sewer regulations for single-family and multi-unit properties",
+   "figures_as_printed": [
+    "$3,900"
+   ],
+   "quote": "the minimum residential connection charge is $3,900 and each separate unit of a multi-unit dwelling shall constitute a separate residential connection."
+  },
+  {
+   "topic": "Development Fees and Tie-ins at 1325 Mass Ave",
+   "what_was_recorded": "Dan Proctor noted fees assessed for his property development including privilege fee and sewer tie-in charges",
+   "figures_as_printed": [
+    "about $11K"
+   ],
+   "quote": "dan noted that he was assessed an additional privilege fee and the tie-ins for about $11k for his development at 1325 mass ave."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Prior Minutes",
+   "resolution": "approved via roll call vote",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "motion: dan p. second: arthur k. to accept the minutes of 6/30/26. roll call vote: chip-aye, dan-aye, arthur-aye and scott-aye."
+  },
+  {
+   "topic": "FY27 Yearly Grease Trap Permits",
+   "resolution": "ongoing; follow-up needed from permit holders by August 3rd",
+   "tags": [
+    "permits",
+    "grease-traps",
+    "regulatory"
+   ],
+   "quote": "andrew reported that he sent out the permit renewals on 7/1 but has only received back a renewal from ruby donuts. he asked the other grease trap owners to submit their renewals by august 3rd. andrew noted that there are 12 establishments with permits for grease traps."
+  },
+  {
+   "topic": "990 Mass Ave Expansion of Use Sewer Regulations",
+   "resolution": "continued pending Town Counsel meeting",
+   "tags": [
+    "multi-unit-housing",
+    "expansion",
+    "regulatory",
+    "connection-fees"
+   ],
+   "quote": "andrew stated he will not have any update until they meet with town counsel next week to discuss wording for fees for new multi-unit hookups. if needed, it would go to the november town meeting."
+  },
+  {
+   "topic": "100 Laurel Lane Work Contract",
+   "resolution": "work contract out for bid to begin 7/21/26",
+   "tags": [
+    "infrastructure",
+    "construction",
+    "bidding"
+   ],
+   "quote": "bill reported that he put out a work contract for bid to begin 7/21/26."
+  },
+  {
+   "topic": "CTE Contract Renewal",
+   "resolution": "contract to be issued with opening bid date of 8/3/26",
+   "tags": [
+    "contracts",
+    "bidding",
+    "operations"
+   ],
+   "quote": "bill reported that the contract will be going out shortly for a 1 year contract, with a 2 year option with an opening bid date of 8/3/26."
+  },
+  {
+   "topic": "Manhole Assessment and Maintenance",
+   "resolution": "need to re-assess manholes from 2014 assessment; Prospect St./Laurel Lane manhole recommended for replacement",
+   "tags": [
+    "infrastructure",
+    "maintenance",
+    "assessment"
+   ],
+   "quote": "the commission discussed needing to re-assess the ===page 2=== manholes noted in the 2014 assessment. chip added that the as-built form could ask for information on the adjacent manholes. dan asked if there was an upda",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "sewer",
+  "wastewater",
+  "grease-traps",
+  "permits",
+  "multi-unit-housing",
+  "connection-fees",
+  "infrastructure",
+  "maintenance",
+  "utilities"
+ ],
+ "dropped_unquoted_by_field": {}
 }

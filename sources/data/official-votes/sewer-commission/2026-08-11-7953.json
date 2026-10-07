@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2026-08-11",
  "docid": "7953",
@@ -13,30 +13,214 @@
  "votes": [
   {
    "motion": "Accept the minutes of 7/28/26",
-   "moved_by": "Arthur K.",
-   "seconded_by": "Chip W.",
+   "moved_by": "Arthur Katis",
+   "seconded_by": "Chip Wilson",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: arthur k. second: chip w. to accept the minutes of 7/28/26. roll call vote: chip-aye, dan-aye, scott-aye, arthur-aye and brett-aye."
+   "quote": "to accept the minutes of 7/28/26. roll call vote: chip-aye, dan-aye, scott-aye, arthur-aye and brett-aye."
   },
   {
    "motion": "Accept the Q1 FY27 Commitment of $339,779.55",
-   "moved_by": "Chip W.",
-   "seconded_by": "Arthur K.",
+   "moved_by": "Chip Wilson",
+   "seconded_by": "Arthur Katis",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: chip w. second: arthur k. to accept the q1 fy27 commitment of $339,779.55. roll call vote: arthur-aye, scott-aye, dan-aye, chip-aye, and brett-aye."
+   "quote": "to accept the q1 fy27 commitment of $339,779.55. roll call vote: arthur-aye, scott-aye, dan-aye, chip-aye, and brett-aye."
   },
   {
    "motion": "Adjourn at 6:36 pm",
-   "moved_by": "Scott D.",
-   "seconded_by": "Arthur K.",
+   "moved_by": "Scott Dall",
+   "seconded_by": "Arthur Katis",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: scott d. second: arthur k. to adjourn at 6:36 pm. roll call vote: chip-aye, dan-aye, scott-aye, arthur-aye, and brett-aye."
+   "quote": "to adjourn at 6:36 pm. roll call vote: chip-aye, dan-aye, scott-aye, arthur-aye, and brett-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0716734
+ "note": "None. Minutes are clear and all votes recorded with full roll call.",
+ "cost_usd": 0.1081656,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Chip Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Chip Guercio",
+   "role": "resident of Shirley, MA, owning property at 104 Laurel Lane",
+   "status": "present",
+   "quote": "chip guercio, a resident of shirley, ma, stated he owns property at 104 laurel lane that he purchased in 1989."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "DPW highway crew will handle most work on 100 Laurel Lane project; planning to start work the following week",
+   "quote": "bill stated that the dpw highway crew will do most of the work on this project such as the digging, backfilling and patching."
+  },
+  {
+   "decision": "The Commission agreed to keep Betterment vs Connection Fee on the future agenda",
+   "quote": "the commission agreed to keep the subject on the future agenda."
+  },
+  {
+   "decision": "Bill and Andrew will get clarification from Town Counsel on betterment versus privilege fee",
+   "quote": "bill and andrew will get clarification from town counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q1 FY27 Sewer Billing",
+   "what_was_recorded": "First quarter billing completed with new rate increase",
+   "figures_as_printed": [
+    "$339,779.55"
+   ],
+   "quote": "billing for the 1st quarter was completed and totaled $339,779.55 with the new rate increase."
+  },
+  {
+   "topic": "Betterment and Connection Fees for 790 Mass Ave",
+   "what_was_recorded": "Property divided into 3 properties; 2 new properties charged betterments on top of connection fees",
+   "figures_as_printed": [
+    "almost $35K"
+   ],
+   "quote": "the property across the street at the old funeral home was divided into 3 properties and the 2 new properties will be charged betterments on top of the connection fees, for a total of almost $35k."
+  },
+  {
+   "topic": "Sewer System Construction Debt",
+   "what_was_recorded": "Amount of debt held from sewer system construction",
+   "figures_as_printed": [
+    "$1.9 million"
+   ],
+   "quote": "brett asked how much debt they were holding from the construction of the sewer system and andrew replied about $1.9 million."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chip Guercio",
+   "stated_role": "resident of Shirley, MA, property owner at 104 Laurel Lane",
+   "topic": "Future sewer connection and pipe stub installation",
+   "quote": "he is aware that his neighbor at 100 laurel lane has been before the commission about connecting to sewer for an adu and possibly his house. chip g. stated that he has no plans to tie in now but wanted to know if the pipe would come down from the manhole in case they wanted to tie-in in the future."
+  },
+  {
+   "speaker": "Scott Dall",
+   "stated_role": "Vice-Chair",
+   "topic": "100 Laurel Lane project completion",
+   "quote": "scott said he was very impressed on how quickly bill, dan and andrew got the 100 laurel lane project going to get it completed. he thanked whoever facilitated it."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of Prior Meeting Minutes",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "motion: arthur k. second: chip w. to accept the minutes of 7/28/26."
+  },
+  {
+   "topic": "Q1 FY27 Sewer Commitment",
+   "resolution": "approved",
+   "tags": [
+    "budget",
+    "billing",
+    "rates"
+   ],
+   "quote": "motion: chip w. second: arthur k. to accept the q1 fy27 commitment of $339,779.55."
+  },
+  {
+   "topic": "CTE O & M Contract Extension",
+   "resolution": "approved for extension to November",
+   "tags": [
+    "contract",
+    "operations",
+    "maintenance"
+   ],
+   "quote": "bill reported that they are going to extend their contract to november, which gives them plenty of time to get the new contract in place."
+  },
+  {
+   "topic": "100 Laurel Lane Sewer Connection Project",
+   "resolution": "continued, work to begin the following week",
+   "tags": [
+    "capital project",
+    "connection",
+    "laterals"
+   ],
+   "quote": "bill stated that the dpw highway crew will do most of the work on this project such as the digging, backfilling and patching."
+  },
+  {
+   "topic": "Betterment vs Connection Fee Policy",
+   "resolution": "tabled for clarification from Town Counsel",
+   "tags": [
+    "fees",
+    "policy",
+    "legal"
+   ],
+   "quote": "the commission discussed the cost of a betterment and a privilege fee. bill stated that this topic was discussed with town counsel who said a privilege fee is half of a betterment."
+  },
+  {
+   "topic": "Touch-a-Truck Community Event",
+   "resolution": "scheduled for August 28",
+   "tags": [
+    "community engagement",
+    "public event"
+   ],
+   "quote": "will be on august 28th at the tc passios building 12 - 2:30 pm."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "rates",
+  "betterments",
+  "connection fees",
+  "capital project",
+  "contract",
+  "community event",
+  "policy clarification"
+ ],
+ "dropped_unquoted_by_field": {}
 }

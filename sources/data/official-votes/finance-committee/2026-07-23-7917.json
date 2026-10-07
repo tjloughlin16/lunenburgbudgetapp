@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2026-07-23",
  "docid": "7917",
@@ -41,7 +41,7 @@
    "seconded_by": "Tom Gray",
    "outcome": "passed 5-0-2",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes of may 28, 2026, and june 11, 2026, by ana lockwood, seconded by tom gray. there was a motion to approve the triboard minutes of january 12, 2026, january 27, 2026, and march 10, 2026, by ana lockwood, seconded by tom gray. both sets of minutes were approved by a vote of 5-0-2."
+   "quote": "there was a motion to approve the minutes of may 28, 2026, and june 11, 2026, by ana lockwood, seconded by tom gray."
   },
   {
    "motion": "Approve the Triboard minutes of January 12, 2026, January 27, 2026, and March 10, 2026",
@@ -49,10 +49,10 @@
    "seconded_by": "Tom Gray",
    "outcome": "passed 5-0-2",
    "procedural": true,
-   "quote": "there was a motion to approve the triboard minutes of january 12, 2026, january 27, 2026, and march 10, 2026, by ana lockwood, seconded by tom gray. both sets of minutes were approved by a vote of 5-0-2."
+   "quote": "there was a motion to approve the triboard minutes of january 12, 2026, january 27, 2026, and march 10, 2026, by ana lockwood, seconded by tom gray."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Jay Simeone",
    "outcome": "passed",
@@ -60,7 +60,215 @@
    "quote": "there was a motion to adjourn by ana lockwood, seconded by jay simeone. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11106340000000002
+ "dropped_unquoted": 2,
+ "note": "\"\"",
+ "cost_usd": 0.1390526,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member peter beardmore"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member jay simeone"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member ana lockwood"
+  },
+  {
+   "name": "Mike Rupp",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member mike rupp"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Chair of the Green Communities Committee",
+   "status": "present",
+   "quote": "the chair of the green communities committee, david blatt, provided the presentation."
+  },
+  {
+   "name": "Matt O'Keefe",
+   "role": "Mass Save representative",
+   "status": "not stated",
+   "quote": "the representative at mass save is matt o'keefe"
+  },
+  {
+   "name": "Sean Krauss",
+   "role": "National Grid representative",
+   "status": "not stated",
+   "quote": "the representative from national grid is sean krauss"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Assigned Finance Committee liaisons to various town boards and committees",
+   "quote": "the assignments are as follows: council on aging: ana lockwood ===page 3=== green communities co",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Deferred assignments for the Capital Planning Committee, Stormwater Task Force, and Planning Board",
+   "quote": "the assignments for the capital planning committee, stormwater task force, planning board were deferred."
+  },
+  {
+   "decision": "Accepted Peter Beardmore as contact person for Police Department, Facilities Department, and Department of Public Works liaisons",
+   "quote": "peter beardmore volunteered to be the contact person for department liaison with the police department, facilities department and the department of public works."
+  },
+  {
+   "decision": "Scheduled Finance Committee public hearing for August 27, 2026, to discuss state aid and revenues",
+   "quote": "the finance committee public hearing has been scheduled to take place on august 27, 2026."
+  },
+  {
+   "decision": "Chris Menard to contact DLS representative to arrange presentation on best practices for Finance Committee and Select Board",
+   "quote": "chris menard will reach out to the dls representative to set up a presentation regarding best practice and knowledge for the finance committee and the select board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter 70 State Aid Increase",
+   "what_was_recorded": "Increase of $135,915 in Chapter 70 funds",
+   "figures_as_printed": [
+    "$135,915"
+   ],
+   "quote": "- $135,915 increase in chapter 70 funds"
+  },
+  {
+   "topic": "Charter School Tuition Reimbursement",
+   "what_was_recorded": "Increase of $116,413 in charter school tuition reimbursement",
+   "figures_as_printed": [
+    "$116,413"
+   ],
+   "quote": "- $116,413 increase in charter school tuition reimbursement"
+  },
+  {
+   "topic": "Smart Growth School Reimbursement",
+   "what_was_recorded": "Receipt of $160,187 in Smart Growth school reimbursement",
+   "figures_as_printed": [
+    "$160,187"
+   ],
+   "quote": "- $160,187 was received in receipts from the smart growth school reimbursement."
+  },
+  {
+   "topic": "Total School Related State Aid Increase",
+   "what_was_recorded": "Total increase of $402,730 in school related state aid",
+   "figures_as_printed": [
+    "$402,730"
+   ],
+   "quote": "- there was a total increase of $402,730 in school related state aid."
+  },
+  {
+   "topic": "Superintendent Requests",
+   "what_was_recorded": "Five requests from the Superintendent totaling $350,000 for Reading Specialists, Vice Principal promotion, full-time Music Teacher, and Online tutoring program",
+   "figures_as_printed": [
+    "$350,000"
+   ],
+   "quote": "below are the 5 requests proposed by the superintendent totaling $350,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Reorganization of Finance Committee",
+   "resolution": "Approved",
+   "tags": [
+    "committees",
+    "organizational",
+    "staffing"
+   ],
+   "quote": "there was a motion to nominate chris menard for chair by jay simeone, seconded by tanya dall. all in favor. there was a motion to nominate peter beardmore as vice chair by jay simeone, seconded by tom gray. all in favor. there was a motion to nominate tom gray for clerk by ana lockwood, seconded by peter beardmore. all in favor."
+  },
+  {
+   "topic": "Green Communities Presentation on Mass Save Programs and Incentives",
+   "resolution": "Presented",
+   "tags": [
+    "energy",
+    "green communities",
+    "mass save",
+    "incentives",
+    "weatherization"
+   ],
+   "quote": "the chair of the green communities committee, david blatt, provided the presentation. david blatt discussed diưerent programs and incentives oưered by mass save and national grid. t",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Additional State Aid, Other Revenues, and Savings Discussion",
+   "resolution": "Public hearing scheduled",
+   "tags": [
+    "state aid",
+    "revenues",
+    "school funding",
+    "budget"
+   ],
+   "quote": "the finance committee public hearing has been scheduled to take place on august 27, 2026. below are some highlights anticipated to be discussed at the public hearing."
+  },
+  {
+   "topic": "Committee and Liaison Assignments",
+   "resolution": "Most assigned, some deferred",
+   "tags": [
+    "committees",
+    "liaisons",
+    "assignments"
+   ],
+   "quote": "the assignments are as follows: council on aging: ana lockwood ===page 3=== green communities committee: tom gray library board of trustees: jay simeone master plan steeri",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Upcoming Priorities and Calendars",
+   "resolution": "Discussed",
+   "tags": [
+    "planning",
+    "budget",
+    "professional development"
+   ],
+   "quote": "chris menard anticipates that department heads will present their requests prior to the budget season, most likely during wintertime."
+  },
+  {
+   "topic": "Approval of Prior Minutes",
+   "resolution": "Approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "both sets of minutes were approved by a vote of 5-0-2."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "Noted",
+   "tags": [
+    "committees",
+    "municipal building"
+   ],
+   "quote": "tom gray states the municipal building design committee will be meeting with the select board on july 28, 2026, to discuss the future of the committee."
+  }
+ ],
+ "tags": [
+  "finance",
+  "committees",
+  "organizational",
+  "state aid",
+  "school funding",
+  "budget",
+  "green communities",
+  "energy efficiency",
+  "superintendent requests"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 2
+ }
 }

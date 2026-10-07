@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2026-07-30",
  "docid": "7928",
@@ -12,55 +12,220 @@
  },
  "votes": [
   {
-   "motion": "to keep the committee organization the same",
+   "motion": "Keep the committee organization the same",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
-   "outcome": "passed",
+   "outcome": "AIF",
    "procedural": true,
    "quote": "david dorren make a motion to approve to keep the organization the same, donna landry seconded, aif"
   },
   {
-   "motion": "to approve the minutes of June 30, 2026",
+   "motion": "Approve the minutes of June 30, 2026",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
-   "outcome": "passed",
+   "outcome": "AIF",
    "procedural": true,
    "quote": "david dorren made a motion to approve the minutes of june 30, 2026, donna landry seconded, aif"
   },
   {
-   "motion": "to pay the CIMS Cloud Annual Maintenance & burial hosting renewal of $2691.00",
+   "motion": "Pay the current CIMS Cloud Annual Maintenance & burial hosting renewal of $2691.00",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
-   "outcome": "passed",
+   "outcome": "AIF",
    "procedural": false,
    "quote": "david dorren made a motion to pay the current cims cloud annual maintenance & burial hosting renewal of $2691.00, donna landry seconded, aif"
   },
   {
-   "motion": "to return the Yaskos' cemetery fees",
+   "motion": "Return the Yasko's cemetery Sale of Lots and Perpetual Care fees",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
-   "outcome": "passed",
+   "outcome": "AIF",
    "procedural": false,
    "quote": "david dorren made a motion to return their fees as they are choosing to be buried in the veterans cemetery in winchendon, donna landry seconded, aif"
   },
   {
-   "motion": "to return $1200 to Raymond Maki",
+   "motion": "Return Raymond Maki's lot fee of $1200 in full",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
-   "outcome": "passed",
+   "outcome": "AIF",
    "procedural": false,
    "quote": "david dorren made a motion to return their $1200 in full, donna landry seconded, aif"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn",
    "moved_by": "David Dorren",
    "seconded_by": "Donna Landry",
-   "outcome": "passed",
+   "outcome": "AIF",
    "procedural": true,
    "quote": "david dorren made a motion to adjourn: 7:11, donna landry seconded, aif"
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes show \"AIF\" (All In Favor) as the outcome; no vote counts or dissents are recorded.",
- "cost_usd": 0.11776
+ "dropped_unquoted": 4,
+ "note": "\"\"",
+ "cost_usd": 0.1295746,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [
+  {
+   "decision": "Todd Holman to submit invoice to Town Hall on Monday for payment",
+   "quote": "todd holman to submit it to the town hall on monday for payment"
+  },
+  {
+   "decision": "Rules and regulations to be reviewed with Bill Bernard present",
+   "quote": "need to review with bill bernard present"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CIMS Cloud Annual Maintenance & burial hosting renewal",
+   "what_was_recorded": "Board voted to pay for CIMS Cloud Annual Maintenance and burial hosting renewal",
+   "figures_as_printed": [
+    "$2691.00"
+   ],
+   "quote": "david dorren made a motion to pay the current cims cloud annual maintenance & burial hosting renewal of $2691.00"
+  },
+  {
+   "topic": "Yasko cemetery fee refund",
+   "what_was_recorded": "Refund for Yasko family cemetery Sale of Lots and Perpetual Care fees for lots 989 and 990",
+   "figures_as_printed": [
+    "$1,200.00",
+    "$800",
+    "$400"
+   ],
+   "quote": "$800 from sale of lots, $400 from perpetual care"
+  },
+  {
+   "topic": "Raymond Maki lot fee refund",
+   "what_was_recorded": "Refund of $1200 lot fee originally requested in 2007 for South Cemetery lot 288",
+   "figures_as_printed": [
+    "$1200"
+   ],
+   "quote": "david dorren made a motion to return their $1200 in full, donna landry seconded, aif"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Refund to Yasko family for cemetery lot sale and perpetual care fees",
+   "amount_as_printed": "$1,200.00",
+   "outcome": "approved, split as $800 from sale of lots and $400 from Perpetual Care",
+   "quote": "$800 from sale of lots, $400 from perpetual care"
+  },
+  {
+   "description": "Refund to Raymond Maki for returned lot in South Cemetery",
+   "amount_as_printed": "$1200",
+   "outcome": "approved",
+   "quote": "david dorren made a motion to return their $1200 in full, donna landry seconded, aif"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Committee Reorganization (Chair, Vice Chair, Secretary)",
+   "resolution": "approved, kept same structure",
+   "tags": [
+    "organization",
+    "procedural"
+   ],
+   "quote": "david dorren make a motion to approve to keep the organization the same, donna landry seconded, aif"
+  },
+  {
+   "topic": "Approval of prior minutes (June 30, 2026)",
+   "resolution": "approved",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "david dorren made a motion to approve the minutes of june 30, 2026, donna landry seconded, aif"
+  },
+  {
+   "topic": "CIMS Cloud Annual Maintenance & burial hosting renewal",
+   "resolution": "approved to pay $2691.00",
+   "tags": [
+    "maintenance",
+    "budget"
+   ],
+   "quote": "david dorren made a motion to pay the current cims cloud annual maintenance & burial hosting renewal of $2691.00"
+  },
+  {
+   "topic": "DPW Reports",
+   "resolution": "informational only",
+   "tags": [
+    "burial operations",
+    "lot inventory"
+   ],
+   "quote": "dpw reports - todd holman, 11 full burials, 20 cremations, 31 total since april 1 to now, 4 niche wall spots, 40 lots left in north cemetery"
+  },
+  {
+   "topic": "North Cemetery Backlot expansion",
+   "resolution": "no update; project has not yet gone out to bid",
+   "tags": [
+    "projects",
+    "expansion"
+   ],
+   "quote": "north cemetery backlot expansion - no update on dillis and roy, project has not yet gone out to bid"
+  },
+  {
+   "topic": "Fish Street Cemetery headstone repair",
+   "resolution": "in progress; headstone expected next week",
+   "tags": [
+    "cemetery maintenance"
+   ],
+   "quote": "fish street cemetery - todd holman spoke to rich mcgrath, who repaired levi's headstone - should have headstone in next week"
+  },
+  {
+   "topic": "Yasko family cemetery fee refund request",
+   "resolution": "approved; $1,200 returned ($800 from lot sales, $400 from perpetual care)",
+   "tags": [
+    "refunds",
+    "budget"
+   ],
+   "quote": "david dorren made a motion to return their fees as they are choosing to be buried in the veterans cemetery in winchendon, donna landry seconded, aif"
+  },
+  {
+   "topic": "Raymond Maki lot fee refund request",
+   "resolution": "approved; $1200 returned in full for South Cemetery lot 288",
+   "tags": [
+    "refunds",
+    "budget"
+   ],
+   "quote": "david dorren made a motion to return their $1200 in full, donna landry seconded, aif"
+  },
+  {
+   "topic": "Review of lot pricing",
+   "resolution": "tabled; needs Town approval in November",
+   "tags": [
+    "lot sales",
+    "pricing"
+   ],
+   "quote": "review of lot pricing, needs to be approved by the town in november"
+  },
+  {
+   "topic": "Rules and regulations review",
+   "resolution": "scheduled; to be reviewed with Bill Bernard (DPW Director) present",
+   "tags": [
+    "governance"
+   ],
+   "quote": "need to review and discuss rules and regulations - need to review with bill bernard present"
+  },
+  {
+   "topic": "Grants and natural burials",
+   "resolution": "deferred; scheduled for next meeting",
+   "tags": [
+    "future business"
+   ],
+   "quote": "grants and natural burials to be discussed at next meeting"
+  }
+ ],
+ "tags": [
+  "Cemetery Commission",
+  "cemetery operations",
+  "lot sales",
+  "refunds",
+  "burial operations",
+  "maintenance",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 4
+ }
 }

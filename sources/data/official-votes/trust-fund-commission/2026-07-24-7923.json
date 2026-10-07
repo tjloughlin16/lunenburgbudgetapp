@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "trust-fund-commission",
  "meeting_date": "2026-07-24",
  "docid": "7923",
@@ -12,22 +12,22 @@
  },
  "votes": [
   {
-   "motion": "Elect Mr. Howard as the Vice-Chairman of the Lunenburg Board of Trust Fund Commissioners",
+   "motion": "Elect Mr. Howard as Vice-Chairman of the Lunenburg Board of Trust Fund Commissioners",
    "moved_by": "Chairman Bowen",
    "seconded_by": "Mr. Howard",
    "outcome": "passed 2-0",
-   "procedural": false,
+   "procedural": true,
    "quote": "chairman bowen made a motion to elect mr. howard as the vice-chairman of the lunenburg board of trust fund commissioners. mr. howard seconded the motion. the result of the vote was chairman bowen = aye, mr. howard = aye."
   },
   {
-   "motion": "Accept Mr. Ernie Sund's signature on the attestation",
+   "motion": "Accept Mr. Ernie Sund's signature on the attestation of the original declaration",
    "moved_by": "Chairman Bowen",
    "outcome": "passed 3-0",
-   "procedural": false,
+   "procedural": true,
    "quote": "chairman bowen put forward a motion to accept mr. ernie sund's signature on the attestation. the vote on the motion was chairman bowen=aye, mr. howard=aye, mr. ernie sund=aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 6:07pm",
    "seconded_by": "Mr Howard",
    "outcome": "passed unanimously",
    "procedural": true,
@@ -35,6 +35,84 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09713940000000001
+ "note": "Minutes appear complete. The notes state there was no public comment from attendees; Chairman Bowen made remarks on process improvements but these are not included as public comment. Mr. Sund, a special guest and original devisee of the American Legion 283 Fund, voted on the motion to accept his signature on the attestation.",
+ "cost_usd": 0.1399316,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Howard",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners present were mr. richard howard and chairman john bowen."
+  },
+  {
+   "name": "John Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "commissioners present were mr. richard howard and chairman john bowen."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "special guest",
+   "status": "present",
+   "quote": "chairman bowen introduced a special guest, mr. ernie sund, who was one of the original devisees for the american legion 283 fund."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Determined that no cy pres filing is necessary for the American Legion Post 283 fund",
+   "quote": "chairman bowen, along with town counsel, feel that a cy pres filing is not necessary for the american legion post 283 fund."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "American Legion 283 Fund annual disbursement policy",
+   "what_was_recorded": "Annual disbursement is set at 75% of interest earned at the current account balance",
+   "figures_as_printed": [
+    "75%"
+   ],
+   "quote": "there was a bit of discussion on the amount of funds that can be disbursed annually, which at the current account balance would be equal to 75% of the interest earned."
+  },
+  {
+   "topic": "American Legion 283 Fund account balance threshold for variable disbursement",
+   "what_was_recorded": "When account balance exceeds $25,000, different disbursement amounts may be applied",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "chairman bowen also clarified that there are provisions when the account balance exceeds $25,000 when different amounts can be disbursed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Election of Vice-Chairman",
+   "resolution": "Elected Richard Howard as Vice-Chairman",
+   "tags": [
+    "internal governance",
+    "board officers"
+   ],
+   "quote": "chairman bowen made a motion to elect mr. howard as the vice-chairman of the lunenburg board of trust fund commissioners. mr. howard seconded the motion. the result of the vote was chairman bowen = aye, mr. howard = aye."
+  },
+  {
+   "topic": "American Legion Post 283 Fund—Eligibility Standards and Governance",
+   "resolution": "Clarified eligibility standards; confirmed no cy pres filing required; reviewed fund governance and disbursement provisions",
+   "tags": [
+    "American Legion",
+    "veterans",
+    "fund governance",
+    "eligibility standards"
+   ],
+   "quote": "we now have more clarity on the eligibility standard, which does not require membership in the american legion, but applicants must meet the eligibility to join the american legion."
+  }
+ ],
+ "tags": [
+  "trust funds",
+  "American Legion",
+  "veterans",
+  "fund governance",
+  "eligibility standards"
+ ],
+ "dropped_unquoted_by_field": {}
 }

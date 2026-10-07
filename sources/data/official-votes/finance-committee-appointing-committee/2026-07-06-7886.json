@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee-appointing-committee",
  "meeting_date": "2026-07-06",
  "docid": "7886",
@@ -12,39 +12,130 @@
  },
  "votes": [
   {
-   "motion": "Appoint Tim Murphy as Chair",
+   "motion": "to appoint Tim Murphy as Chair",
    "moved_by": "Rene Emkey",
    "seconded_by": "Laura Brzozoski",
-   "outcome": "passed",
+   "outcome": "approved",
    "procedural": true,
    "quote": "ms. emkey made a motion that mr. murphy be the chair, seconded by ms. brzozoski and the motion was approved."
   },
   {
-   "motion": "Appoint Mr. Menard and Mr. Simeone to three-year terms and Mr. Beardmore to a two-year vacancy",
+   "motion": "to appoint Chris Menard and Jay Simeone to three year terms and Peter Beardmore to a two year vacancy commencing upon their swearing in with the Town Clerk",
    "moved_by": "Laura Brzozoski",
    "seconded_by": "Rene Emkey",
-   "outcome": "unanimously approved",
+   "outcome": "approved unanimously",
    "procedural": false,
    "quote": "ms. brzozoski made a motion to appoint mr. menard and mr. simeone to three year terms, and mr. beardmore to fulfill a a two year vacancy, all commencing upon their swearing in with the town clerk. ms. emkey seconded and the motion was approved unanimously."
   },
   {
-   "motion": "Approve the draft minutes, as updated, to be typed and filed by the chair",
+   "motion": "to approve the draft minutes as updated to be typed and filed by the chair",
    "moved_by": "Rene Emkey",
    "seconded_by": "Laura Brzozoski",
-   "outcome": "passed",
+   "outcome": "approved",
    "procedural": true,
    "quote": "ms. emkey that moved to approve the draft minutes, as updated, to be typed and filed by the chair. ms. brzozosku seconded and the motion was approved."
   },
   {
-   "motion": "That the meeting adjourn",
+   "motion": "that the meeting adjourn",
    "moved_by": "Rene Emkey",
    "seconded_by": "Laura Brzozoski",
-   "outcome": "passed",
+   "outcome": "approved",
    "procedural": true,
    "quote": "ms emkey then moved that the meeting adjourn, ms. brzozoski seconded and the meeting adjourned at 6:18pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; legible.",
- "cost_usd": 0.06552140000000001
+ "note": "Document is OCR-scanned and contains several transcription errors including \"Ms Emkey that moved\" (should be \"then\"), \"Brzozosku\" (should be \"Brzozoski\"), and \"a a two year vacancy\" (double \"a\"). The signature line also contains OCR errors. These do not affect substantive meaning.",
+ "cost_usd": 0.0996526,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tim Murphy",
+   "role": "Moderator",
+   "status": "present",
+   "quote": "attendees tim murphy, moderator, rene emkey selectboard; laura brzozoski school committee"
+  },
+  {
+   "name": "Rene Emkey",
+   "role": "Selectboard",
+   "status": "present",
+   "quote": "attendees tim murphy, moderator, rene emkey selectboard; laura brzozoski school committee"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "attendees tim murphy, moderator, rene emkey selectboard; laura brzozoski school committee"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "candidate for re-appointment",
+   "status": "present",
+   "quote": "both were interviewed, separately."
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "candidate for re-appointment",
+   "status": "present",
+   "quote": "both were interviewed, separately."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "talent bank applicant",
+   "status": "remote",
+   "quote": "mr. beardmore was then interviewed remotely."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee considered the re-appointment of Chris Menard and Jay Simeone and conducted separate interviews of both candidates",
+   "quote": "the agenda called for the committee to consider re-appointment of mr. chris menard and mr. jay simeone. both were interviewed, separately."
+  },
+  {
+   "decision": "The committee considered a talent bank application from Peter Beardmore and conducted a remote interview of the candidate",
+   "quote": "at the conclusion of those interviews, the committee then considered the talent bank application of peter beardmore. mr. beardmore was then interviewed remotely."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Re-appointment of Chris Menard and Jay Simeone to Finance Committee",
+   "resolution": "approved for three-year terms",
+   "tags": [
+    "appointments",
+    "committee",
+    "finance"
+   ],
+   "quote": "the agenda called for the committee to consider re-appointment of mr. chris menard and mr. jay simeone."
+  },
+  {
+   "topic": "Appointment from talent bank: Peter Beardmore",
+   "resolution": "approved to fill two-year vacancy",
+   "tags": [
+    "appointments",
+    "committee",
+    "talent bank"
+   ],
+   "quote": "the committee then considered the talent bank application of peter beardmore"
+  },
+  {
+   "topic": "Approval and filing of draft minutes",
+   "resolution": "approved",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "ms. emkey that moved to approve the draft minutes, as updated, to be typed and filed by the chair."
+  }
+ ],
+ "tags": [
+  "appointments",
+  "committee",
+  "finance",
+  "finance-committee-appointing-committee",
+  "moderator-selection"
+ ],
+ "dropped_unquoted_by_field": {}
 }

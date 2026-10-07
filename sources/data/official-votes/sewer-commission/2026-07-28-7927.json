@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2026-07-28",
  "docid": "7927",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 7/14/26",
+   "motion": "To accept the minutes of 7/14/26",
    "moved_by": "Chip W.",
    "seconded_by": "Dan P.",
    "outcome": "passed 4-0-1",
@@ -20,7 +20,7 @@
    "quote": "motion: chip w. second: dan p. to accept the minutes of 7/14/26. roll call vote: scott-aye, dan-aye, arthur-aye and chip-aye. brett abstained."
   },
   {
-   "motion": "Adjourn at 6:54 pm",
+   "motion": "To adjourn at 6:54 pm",
    "moved_by": "Scott D.",
    "seconded_by": "Arthur K.",
    "outcome": "passed 5-0",
@@ -29,6 +29,223 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clear, readable minutes. Two procedural votes recorded with full roll calls and clear outcomes.",
- "cost_usd": 0.0770274
+ "note": "\"\"",
+ "cost_usd": 0.2135864,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Arthur Katis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Chip Wilson",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Andrew Valliere",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- brett ramsden, vice-chair- scott dall, clerk- dan proctor, member: arthur katis and chip wilson, dpw director- bill bernard, sewer business manager- andrew valliere, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Aaron Steeves",
+   "role": "representing the 100 Laurel Lane project",
+   "status": "present",
+   "quote": "aaron steeves, representing the 100 laurel lane project, stated he had a couple of questions."
+  },
+  {
+   "name": "Gary Steeves",
+   "role": "",
+   "status": "present",
+   "quote": "gary steeves asked to clarify they would be putting in 3 lines."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The town owes 100 Laurel Lane the stub for sewer service connection",
+   "quote": "bill will send aaron a copy of the rfb and agreed the town owes them the stub."
+  },
+  {
+   "decision": "The town will refund $550 to 990 Mass Ave for the extra bedroom expansion of use fee",
+   "quote": "town counsel said they will need to give them back the $550 collected for the extra bed",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Francis St. pump station replacement",
+   "what_was_recorded": "Cost of completed pump replacement at Francis St. station",
+   "figures_as_printed": [
+    "$7,468"
+   ],
+   "quote": "andrew reported they just completed a pump replacement at the francis st. station at a cost of $7,468."
+  },
+  {
+   "topic": "100 Laurel Lane pressure line bids",
+   "what_was_recorded": "Two bids received for 3 pressure lines installation; both rejected",
+   "figures_as_printed": [
+    "$20K",
+    "$50K"
+   ],
+   "quote": "one bid was $20k but the bidder did not submit the required forms. the 2nd bid was very high at $50k so both bids were thrown out."
+  },
+  {
+   "topic": "Upcoming pump station repairs",
+   "what_was_recorded": "Additional pump station repairs needed before contract expiration on 8/26; some under $10K, some over $10K",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "there are a couple more that need to be done, hopefully before the contract expires on 8/26. a few are under $10k but there are also a couple over $10k."
+  },
+  {
+   "topic": "990 Mass Ave refund",
+   "what_was_recorded": "Refund required for expansion of use fee collected for extra bedroom",
+   "figures_as_printed": [
+    "$550"
+   ],
+   "quote": "town counsel said they will need to give them back the $550 collected for the extra bed",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Betterment reserve balance",
+   "what_was_recorded": "Remaining balance in betterment reserve under special assessments",
+   "figures_as_printed": [
+    "$2 Million"
+   ],
+   "quote": "andrew noted under special assessments, the remaining amount is almost $2 million."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Aaron Steeves",
+   "stated_role": "representing the 100 Laurel Lane project",
+   "topic": "100 Laurel Lane project questions",
+   "quote": "aaron steeves, representing the 100 laurel lane project, stated he had a couple of questions."
+  },
+  {
+   "speaker": "Brett Ramsden",
+   "stated_role": "Chair",
+   "topic": "Thanks to Scott Dall",
+   "quote": "brett thanked scott for standing in for him for a couple meetings."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes (7/14/26)",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "motion: chip w. second: dan p. to accept the minutes of 7/14/26. roll call vote: scott-aye, dan-aye, arthur-aye and chip-aye. brett abstained."
+  },
+  {
+   "topic": "CTE contract renewal and repackaging",
+   "resolution": "discussed; delayed for rebidding under Mass. General Law 30B",
+   "tags": [
+    "contracts",
+    "service",
+    "construction",
+    "bidding"
+   ],
+   "quote": "it should be advertised as mass. general law 30b, which is a service contract. the previous contract went out as a mass. general law 3039, which is a construction contract."
+  },
+  {
+   "topic": "100 Laurel Lane pressure line installation bid",
+   "resolution": "rejected; repackaging needed",
+   "tags": [
+    "infrastructure",
+    "sewer main",
+    "bidding",
+    "construction"
+   ],
+   "quote": "bill reported they put out an ifb to install 3 pressure lines from the manhole to the property line at 100 laurel lane and only got 2 bids."
+  },
+  {
+   "topic": "Pump station repairs",
+   "resolution": "reported; Francis St. completed, more needed before 8/26",
+   "tags": [
+    "infrastructure",
+    "pump stations",
+    "maintenance"
+   ],
+   "quote": "andrew reported they just completed a pump replacement at the francis st. station at a cost of $7,468. there are a couple more that need to be done, hopefully before the contract expires on 8/26."
+  },
+  {
+   "topic": "Quarter 1 FY27 Sewer Billing",
+   "resolution": "completed; system issues noted",
+   "tags": [
+    "billing",
+    "Munis system"
+   ],
+   "quote": "andrew reported that the q1 bills have been completed, printed and it took 5 days to do them."
+  },
+  {
+   "topic": "990 Mass Ave expansion of use and betterment regulations",
+   "resolution": "discussed; agreed to refund $550; betterment discussion continued",
+   "tags": [
+    "regulations",
+    "fees",
+    "betterments"
+   ],
+   "quote": "this property is changing a single family into a multi-family which would be charged 2 connection fees and 2 betterments."
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "scheduled",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "future agenda items- betterment vs connection fee discussion, 100 laurel lane."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "infrastructure",
+  "pump stations",
+  "sewer main",
+  "construction",
+  "billing",
+  "regulations",
+  "fees",
+  "betterments",
+  "contracts"
+ ],
+ "dropped_unquoted_by_field": {}
 }

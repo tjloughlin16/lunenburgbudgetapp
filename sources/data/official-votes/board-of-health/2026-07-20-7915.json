@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2026-07-20",
  "docid": "7915",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve June 15, 2026 minutes",
+   "motion": "Approve the minutes of June 15, 2026",
    "moved_by": "Rudd",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -20,31 +20,155 @@
    "quote": "on motion by rudd and second by fortin the minutes were approved. all in favor."
   },
   {
-   "motion": "Continue this matter until August 17th at 4:30 pm",
+   "motion": "Continue the matter regarding 757 Chase Road until August 17th at 4:30 pm",
    "moved_by": "Fortin",
    "seconded_by": "Rudd",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "on motion by fortin and second by rudd, this matter was continued until august 17th at 4:30 pm. all in favor."
+   "procedural": false,
+   "quote": "after discussion and on motion by fortin and second by rudd, this matter was continued until august 17th at 4:30 pm. all in favor."
   },
   {
-   "motion": "Allow the existing well to be used for irrigation purposes at 48 Island Road with receipt of documentation that house has been disconnected",
+   "motion": "Allow the existing well at 48 Island Road to be used for irrigation purposes with the receipt of a document showing the house has been completely disconnected from the potable water system",
    "moved_by": "Jewell",
    "seconded_by": "Rudd",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by rudd, the board voted to allow the existing well to be used for irrigation purposes with the receipt of a document showing the house has been completely discounted from the house. all in favor."
+   "quote": "after discussion and on motion by jewell and second by rudd, the board voted to allow the existing well to be used for irrigation purposes with the receipt of a document showing the house has been completely discounted from the house. all in favor."
   },
   {
-   "motion": "Allocate up to $50,000 for the repair of the septic system at the Old Primary School for temporary use of the Food Pantry and future use as a park",
+   "motion": "Allocate up to $50,000 for the repair of the septic system at the Old Primary School for the temporary use of the Food Pantry and future use of a park",
    "moved_by": "Rudd",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by rudd and second by fortin, the board voted to allocate up to $50,000 for the repair of the septic system at the old primary school for the temporary use of the food pantry (with conditions) and future use of a park. all in favor."
+   "quote": "after discussion, and on motion by rudd and second by fortin, the board voted to allocate up to $50,000 for the repair of the septic system at the old primary school for the temporary use of the food pantry (with conditions) and future use of a park. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. No scanned images or missing data.",
- "cost_usd": 0.0886034
+ "note": "A long string of spacing characters appears at the end of the document, suggesting OCR or formatting artifact, but does not affect content readability. One apparent typo: \"discounted\" in the 48 Island Road section likely should be \"disconnected.\"",
+ "cost_usd": 0.1011456,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd and paul fortin"
+  },
+  {
+   "name": "Matt Proctor",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd and paul fortin"
+  },
+  {
+   "name": "Lorraine Rudd",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd and paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: perry jewell, matt proctor, lorraine rudd and paul fortin"
+  },
+  {
+   "name": "Cara Olejard",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent cara olejard stated in her comments that she has concerns with car washing"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the tenant (dealerships)",
+   "status": "present",
+   "quote": "greg roy met with the board on behalf of the tenant (dealerships)."
+  },
+  {
+   "name": "Danny Hernandez",
+   "role": "property owner",
+   "status": "present",
+   "quote": "danny hernandez, owner, was present at the meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "757 Chase Road: Matter continued pending receipt of documentation that the existing well has been disconnected from potable water systems and buildings, a site plan showing the proposed car washing area, and plans for the proposed industrial wastewater holding tank, conditioned on the installation of the holding tank prior to any car washing on site",
+   "quote": "the following documents are required: documentation that the existing well has been disconnected from the potable water systems and buildings; a site plan showing the proposed car washing area; plans for the proposed industrial wastewater holding tank; and conditioned on the installation of the holding tank prior to any car washing on site"
+  },
+  {
+   "decision": "Old Primary School: Food Pantry should provide the Board of Health with a site plan if they decide to move forward, and will need a food service permit through Nashoba Associated Boards of Health",
+   "quote": "if the food bank does decide to move forward, they would need to provide the board of health with a site plan of their proposal. in addition, they would need a food service permit through nashoba associated boards of health."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Old Primary School septic system repair",
+   "what_was_recorded": "Allocation of up to $50,000 from Board of Health Grant Fund for repair of septic system for temporary use of Food Pantry and future use of park",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the board voted to allocate up to $50,000 for the repair of the septic system at the old primary school for the temporary use of the food pantry (with conditions) and future use of a park"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes (June 15, 2026)",
+   "resolution": "approved",
+   "quote": "on motion by rudd and second by fortin the minutes were approved. all in favor.",
+   "tags": [
+    "procedural",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "757 Chase Road car dealership - well retention for irrigation, car washing, and fire suppression",
+   "resolution": "continued to August 17 pending documentation",
+   "quote": "greg roy met with the board on behalf of the tenant (dealerships). the tenant is requesting the old well be retained for: irrigation car washing (future) fire suppression (future)",
+   "tags": [
+    "water",
+    "property",
+    "well",
+    "requirements",
+    "industrial"
+   ]
+  },
+  {
+   "topic": "48 Island Road - well retention for irrigation",
+   "resolution": "approved",
+   "quote": "mr. hernandez has had public water connected to the house but would like to retain the well for irrigation purposes.",
+   "tags": [
+    "water",
+    "property",
+    "well",
+    "irrigation"
+   ]
+  },
+  {
+   "topic": "Old Primary School septic system repair and Food Pantry relocation",
+   "resolution": "approved with $50,000 budget allocation",
+   "quote": "what is being proposed is using funds from the board of health grant fund to repair the system for future uses as a park. short term, the system could be used for the temporary site of food bank.",
+   "tags": [
+    "budget",
+    "septic",
+    "food-service",
+    "infrastructure",
+    "park"
+   ]
+  }
+ ],
+ "tags": [
+  "water-management",
+  "property-permits",
+  "septic-systems",
+  "wells",
+  "food-service",
+  "park-development",
+  "irrigation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2026-07-10",
  "docid": "7893",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of June 18, 2026, as amended",
+   "motion": "Accept the minutes of June 18, 2026, as amended",
    "moved_by": "Robin",
    "seconded_by": "Jana-Lee",
    "outcome": "passed 6-0",
@@ -20,7 +20,7 @@
    "quote": "robin made a motion to accept the minutes of june 18, 2026, as amended. jana-lee seconded. the motion passed 6 to 0."
   },
   {
-   "motion": "support a collaboration between the Lunenburg Recreation Department and Lunenburg Public Library pursuant to the terms of the Memorandum of Understanding",
+   "motion": "Support a collaboration between the Lunenburg Recreation Department and Lunenburg Public Library pursuant to the terms of the Memorandum of Understanding",
    "moved_by": "Laura",
    "seconded_by": "Stephanie",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "laura made a motion that the trustees support a collaboration between the lunenburg recreation department and lunenburg public library pursuant to the terms of the memorandum of understanding. stephanie seconded. the motion passed unanimously."
   },
   {
-   "motion": "establish a subcommittee for strategic planning with members Stephanie, Maia, and Laura",
+   "motion": "Establish a subcommittee for strategic planning with members Stephanie, Maia, and Laura",
    "moved_by": "Robin",
    "seconded_by": "Harry",
    "outcome": "passed unanimously",
@@ -36,7 +36,7 @@
    "quote": "robin made a motion to establish a subcommittee for strategic planning. members will be stephanie, maia, and laura. harry seconded. the motion passed unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn",
    "moved_by": "Jana-Lee",
    "seconded_by": "Stephanie",
    "outcome": "passed unanimously",
@@ -45,6 +45,168 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0803825
+ "note": "\"\"",
+ "cost_usd": 0.1284226,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Muir Haman",
+   "role": "Director",
+   "status": "present",
+   "quote": "members present: muir haman (director), harry kubetz, maia wentrup"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chair",
+   "status": "present",
+   "quote": "called to order at 5:02 p.m. by chair harry kubetz"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Member",
+   "status": "present",
+   "quote": "maia wentrup (arrived 5:20 p.m.)"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura boussom, robin venezia, jana-lee balish, david niose"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura boussom, robin venezia, jana-lee balish"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "Member",
+   "status": "present",
+   "quote": "robin venezia, jana-lee balish, david niose, stephanie trudel"
+  },
+  {
+   "name": "David Niose",
+   "role": "Member",
+   "status": "present",
+   "quote": "jana-lee balish, david niose, stephanie trudel"
+  },
+  {
+   "name": "Stephanie Trudel",
+   "role": "Member",
+   "status": "present",
+   "quote": "david niose, stephanie trudel members remote: none"
+  },
+  {
+   "name": "Glenn McCloud",
+   "role": "Select Board Representative",
+   "status": "present",
+   "quote": "select board representative: glenn mccloud"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Muir will revise the MOU as requested by the board",
+   "quote": "muir will revise the mou as requested."
+  },
+  {
+   "decision": "Muir will add a public-facing statement to the library's website about collaboration with the Recreation Department",
+   "quote": "muir will add a public-facing statement to the library's website about our collaboration with the rec department."
+  },
+  {
+   "decision": "Change RFP submission timeline to end of August 2026 and project completion to June 2027",
+   "quote": "we agreed as a group to change this timeline to have the rfp issued by the end of august 2026, and to have the project completion date be june 2027."
+  },
+  {
+   "decision": "Update the existing strategic plan instead of creating a whole new one",
+   "quote": "we decided to update the existing plan instead of creating a whole new one."
+  },
+  {
+   "decision": "Work on a five-year plan instead of a shorter time period",
+   "quote": "we will work on a five-year plan, instead of one for a shorter time period."
+  },
+  {
+   "decision": "Muir to speak with Town Manager about damage repairs liability coming from town funds, not library budget",
+   "quote": "harry suggested that muir speak with the town manager and come to an understanding that if any damage is done to the library facilities during these programs, that the cost of repairs would come from town funds and not from the library's budget."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library equipment and improvements",
+   "what_was_recorded": "Solar shade for patio and window shades for main hall remain unpurchased; VR system suggested for educational purposes",
+   "figures_as_printed": [],
+   "quote": "the solar shade for the patio and shades for the main hall still have not been purchased. maia suggested a vr system, which could be used for educational purposes."
+  },
+  {
+   "topic": "Friends of the Library endowment funding",
+   "what_was_recorded": "Friends will use their endowment to purchase library equipment items on approved wish list",
+   "figures_as_printed": [],
+   "quote": "the friends will use their endowment to purchase the approved items."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes of June 18, 2026",
+   "resolution": "approved",
+   "tags": [
+    "procedural",
+    "minutes"
+   ],
+   "quote": "robin made a motion to accept the minutes of june 18, 2026, as amended. jana-lee seconded. the motion passed 6 to 0."
+  },
+  {
+   "topic": "MOU between Parks Commission and LPL Trustees re: Room Use",
+   "resolution": "approved - Trustees support collaboration with Recreation Department through end of FY27",
+   "tags": [
+    "parks",
+    "collaboration",
+    "room use",
+    "MOU"
+   ],
+   "quote": "the trustees support allowing the rec department to use the wallace community room for their programs until the end of fy27."
+  },
+  {
+   "topic": "New LPL Strategic Plan",
+   "resolution": "strategic planning process initiated with timeline and structure changes",
+   "tags": [
+    "strategic planning",
+    "RFP",
+    "five-year plan"
+   ],
+   "quote": "we decided to update the existing plan instead of creating a whole new one. harry suggested we add a goal to have the trustees become more involved in ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Board Comments - Equipment and Fundraising",
+   "resolution": "wish list compiled for Friends fundraising",
+   "tags": [
+    "fundraising",
+    "equipment",
+    "Friends"
+   ],
+   "quote": "harry said that he would be meeting with the friends to give them a wishlist of items from the library."
+  },
+  {
+   "topic": "Friends Annual Meeting",
+   "resolution": "meeting date announced",
+   "tags": [
+    "Friends",
+    "announcement"
+   ],
+   "quote": "robin reminded us that the friend's annual meeting is saturday, august 8 at 9:00 a.m."
+  }
+ ],
+ "tags": [
+  "library",
+  "strategic planning",
+  "parks commission",
+  "collaboration",
+  "MOU",
+  "board of trustees",
+  "fundraising"
+ ],
+ "dropped_unquoted_by_field": {}
 }
