@@ -96,6 +96,8 @@ HELD = {
     'fy20': ('budget-workbooks/finance-committee/fy20-budget/text/fy20-4th-quarter-summary-and-reports-1.pdf.txt',
              'the Town’s FY2020 4th-quarter revenue report, as extracted (under “31 DEPT REV - SCHOOL” the account '
              'numbers and the labels come out as two separate lists, paired here by order)'),
+    'tb': ('town-ledgers/account-details/account-details-fy2026-trial-balance-fund1300.xlsx',
+           'the FY2026 Account Trial Balance for fund 1300 the Town sent on 6 October 2026'),
     'ad': ('town-ledgers/account-details/account-details-fy2025-fund1301.xlsx',
            'the Account Detail export the Town sent in June 2026, sheet Journal Detail Export'),
 }
@@ -601,12 +603,17 @@ def vendor_help(funds):
         ('Export the Account Detail report to Excel. If the export screen lets you pick columns, '
          'untick VDR NAME/ITEM DESC there.',
          [c('L', 6, 'Check/ or uncheck anything you want to see or not see within this report')]),
+        ('Keep the vendor number. On a payment line the reference starts with it, then the invoice or PO '
+         'number, then the name. In a new column headed VENDOR NO, =LEFT(cell, FIND(" ", cell) - 1) keeps '
+         'just the number.',
+         [h('tb', 'Reference'), c('F', 59, 'may contain the vendor number')]),
         ('For any fund whose payees include private individuals: delete the VDR NAME/ITEM DESC column.',
          [h('ad', 'VDR NAME/ITEM DESC')]),
+        ('In REFERENCE, REF1, REF3 and COMMENTS, clear any person\u2019s name; the VENDOR NO column still '
+         'says who was paid.',
+         [h('ad', 'REFERENCE'), h('ad', 'REF1'), h('ad', 'REF3'), h('ad', 'COMMENTS')]),
         ('For those funds: delete CHECK NO, VOUCHER and WARRANT.',
          [h('ad', 'CHECK NO'), h('ad', 'VOUCHER'), h('ad', 'WARRANT')]),
-        ('Look through REFERENCE, REF1, REF3 and COMMENTS for any person\u2019s name, and clear those cells.',
-         [h('ad', 'REFERENCE'), h('ad', 'REF1'), h('ad', 'REF3'), h('ad', 'COMMENTS')]),
         ('Save and send.', []),
     ]
 
