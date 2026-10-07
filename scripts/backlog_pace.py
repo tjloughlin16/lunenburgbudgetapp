@@ -86,6 +86,28 @@ def audit(since_utc, now=None):
                 break
             if hit:
                 break
+        if not hit:
+            # ONE STEP, SEVERAL DOCUMENTS. A meeting the town filed two sets of minutes for
+            # (conservation-commission 2025-12-17: -7569 and -7571) is read in one step and
+            # logged as ONE row whose cost is the SUM. Match the row to every file for that
+            # board and date written during the step whose costs add up to it.
+            group, total = [], 0.0
+            for d in OUT_DIRS:
+                for f in glob.glob(os.path.join(ROOT, 'sources', 'data', d, r['board'], r['date'] + '*.json')):
+                    m = dt.datetime.fromtimestamp(os.path.getmtime(f), dt.timezone.utc)
+                    if f in used or not (-900 <= (m - t(r['at'])).total_seconds() <= 120):
+                        continue
+                    try:
+                        c = json.load(open(f, encoding='utf-8')).get('cost_usd')
+                    except ValueError:
+                        continue
+                    if c is not None:
+                        group.append(f)
+                        total += float(c)
+            if len(group) > 1 and abs(total - float(r['cost_usd'] or 0)) <= 0.001:
+                used.update(group)
+                matched += 1
+                continue
         if hit:
             used.add(hit)
             matched += 1
