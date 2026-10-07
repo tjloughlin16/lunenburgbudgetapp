@@ -39,6 +39,16 @@ WHY IT CANNOT RUN AWAY. Every one of these stops the whole run, says why, and ex
 
 And it runs ONE STEP AT A TIME. Parallel runs cost the same dollars and spend them faster,
 which is what exhausts the five-hour window and takes TJ's own session down with it.
+
+THE PACE IS THE POINT, AND IT HAS A NUMBER. TJ, 7 October 2026: *"80% in 5 hours is a
+perfect pace."* One serial run of this script, measured that day from
+`sources/data/agentic-spend.csv`: **~$6 an hour, ~42 meetings an hour, ~$0.14 a meeting.**
+Against a five-hour window ESTIMATED at ~$37 (one confounded reading; not yet measured on an
+idle account) that is ~16% of the window an hour -- ~80% over five hours, leaving room for
+interactive work. Two runs at once would be ~32% an hour and fill a window in about three.
+So: ONE run, and the lock above enforces it. Quote a batch with `--dry-run` (it prints % of
+the week); the window share is hours x 16%. The derivation, and the `/usage` reading that
+would confirm the $37, is `notes/findings/METERED-BATCH-COST.md` section 6.
 """
 import argparse
 import csv
