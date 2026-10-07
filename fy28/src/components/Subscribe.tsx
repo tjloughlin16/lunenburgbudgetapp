@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { SITE } from '../lib/abs'
 
 /** A FEED, ANNOUNCED TWICE: once in the head, so a feed reader pointed at this page's
  *  URL finds it on its own (autodiscovery), and once on the page, so a person does.
@@ -26,7 +27,7 @@ export function useFeedLink(path: string | null, title: string) {
 }
 
 export function Subscribe({ path, what }: { path: string; what: string }) {
-  const url = `${window.location.origin}${path}`
+  const url = `${SITE}${path}`
   return (
     <p className="text-[13px] leading-relaxed mt-4 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
       <strong style={{ color: 'var(--text-primary)' }}>Get told when {what}.</strong>{' '}

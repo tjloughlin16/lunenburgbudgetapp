@@ -41,6 +41,13 @@ import MANIFEST from '../data/agent-manifest.json'
  */
 const FILE_PREFIX = /^\/(?:docs|data|api|minutes)\//
 
+/** The site's own address, from the one copy of it (`agent-manifest.json`). Use this, never
+ *  `window.location.origin`, for any URL that is written INTO the page: the prerenderer runs
+ *  the app on `http://localhost:<port>`, and on 7 October 2026 every one of 830 prerendered
+ *  pages was found carrying `og:url=http://localhost:61348/...` -- the address a share
+ *  preview credits -- because the origin was read at render time. */
+export const SITE: string = MANIFEST.site
+
 export const abs = (p: string | undefined | null): string => {
   if (!p) return ''
   return FILE_PREFIX.test(p) ? `${MANIFEST.site}${p}` : p

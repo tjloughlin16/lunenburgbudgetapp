@@ -1,6 +1,6 @@
 # Handoff: a site build that only re-renders what changed
 
-Written 7 October 2026 for a fresh session. Nothing here is built yet.
+Written 7 October 2026 for a fresh session. **BUILT the same day** -- see "Done" at the end.
 
 ## Why
 
@@ -59,3 +59,44 @@ have changed."*
   time; check with a pattern that cannot match itself (`pgrep -f "[v]ite build"`).
 - Never a bare `vite build` into dist (it clobbers the prerendered dist).
 - Deploying is rule 10: only when TJ asks. `npx wrangler pages deploy` from `fy28/`, Node 22.
+
+## Done, 7 October 2026 -- measured
+
+`fy28/scripts/prerender.mjs` now reuses a page when every input it was SEEN to read is
+byte-identical, renders the rest four at a time (`PRERENDER_JOBS`), prints one line per
+page, and keeps its cache in `fy28/.prerender-cache/` (gitignored; `vite build` empties
+`dist/`, so the cache cannot live there). `FULL=1` renders everything.
+
+| build | rendered | reused | prerender step |
+|---|---:|---:|---:|
+| full, old serial script | 830 | -- | 36.5 min (781 routes) |
+| full, 4 at a time | 830 | 0 | 20 min |
+| nothing changed | 0 | 830 | 2 s (whole `build:site` 49 s) |
+| `board-records.json` changed | 49 | 781 | 76 s |
+
+The nothing-changed build was compared byte for byte with the full one: 841 of 841 HTML
+files identical.
+
+**What the design above missed: THE CLOCK.** A page's HTML also depends on today's date
+("upcoming", "in 3 days", and now "not available" turning MISSING), which no file records.
+The served shell carries a probe that wraps `Date` and `fetch`: a page that READS the clock
+is reused only on the day it was rendered, one that fetches another origin never. The
+first probe counted creating a Date as reading it -- d3-time makes two scratch Dates on
+load, Cloudflare's beacon times itself -- and flagged all 830 pages; the second counts a
+Date only when its value is used before a setter overwrites it, and ignores other origins'
+scripts. 65 pages read the clock today, all of them the ones that show meetings.
+
+**Checked for false negatives, not assumed:** every one of the 765 unflagged pages was
+rendered again with the clock three days ahead and compared with the build: 0 changed.
+The one difference was not the clock -- see below. The checker is not in the repo; it is
+cheap to rewrite (render with `Date` shifted, compare visible text) and worth re-running
+if a page starts showing a date.
+
+**Found on the way: every prerendered page shipped `og:url=http://localhost:61348/...`**,
+the build server's own address, because `setShareMeta` read `window.location.origin`;
+`Subscribe` printed feed URLs the same way. Both now use `SITE` from `src/lib/abs.ts`, and
+the prerender fails any page containing a `localhost:<port>` address.
+
+Still open: 4 workers made a full render only ~1.8x faster than serial -- the next gain
+there is not launching a fresh Chrome per page (one browser, many tabs via CDP), which is
+a bigger change than this one and not needed while most builds are reuse builds.

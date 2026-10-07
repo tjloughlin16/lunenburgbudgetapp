@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { SITE } from './abs'
 
 /** EVERY PAGE HAD THE SAME `<title>`. All 157 of them: "The Lunenburg Budget Project —
  *  FY28 and beyond", from the shared index.html. So the browser tab, the bookmark, the
@@ -72,7 +73,7 @@ export function setShareMeta(o: { title?: string | null; description?: string | 
   upsert('name', 'description', description, page)
   upsert('property', 'og:title', title, page)
   upsert('property', 'og:description', description, page)
-  upsert('property', 'og:url', window.location.origin + window.location.pathname, page)
+  upsert('property', 'og:url', SITE + window.location.pathname, page)
   upsert('property', 'og:type', o.type ?? 'website', page)
   upsert('property', 'og:site_name', SITE_NAME, page)
   upsert('name', 'twitter:card', 'summary', page)

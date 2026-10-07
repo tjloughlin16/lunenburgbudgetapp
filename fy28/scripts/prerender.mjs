@@ -35,7 +35,8 @@
  */
 import { createServer } from 'node:http'
 import { execFile } from 'node:child_process'
-import { readFile, writeFile, mkdir, readdir, stat, rm } from 'node:fs/promises'
+import { readFile, writeFile, mkdir, readdir, stat, rm, rename } from 'node:fs/promises'
+import { createHash } from 'node:crypto'
 import { existsSync } from 'node:fs'
 import { promisify } from 'node:util'
 import { join, extname, dirname } from 'node:path'
@@ -60,7 +61,6 @@ const SITE = JSON.parse(
 //
 // Port 0 asks the OS for a free one, so two builds can never collide. The real port is
 // read back off the server once it is listening, below.
-let PORT = 0
 
 // A page that renders to less than this much visible text has not rendered. The smallest
 // real page on the site is several times this; the empty shell is zero.
@@ -205,14 +205,22 @@ async function readRoutes() {
   return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...finance, ...records, ...departments, ...meetings]
 }
 
-/** Serve dist, falling back to the PRISTINE shell.
+/** Serve dist, falling back to the PRISTINE shell -- with the probe in it.
  *
  *  Pristine matters: this script overwrites dist/index.html with the rendered root. Without
  *  holding the original in memory, a second run would prerender a page that was already
- *  prerendered, nesting the output. Serving from memory makes the script idempotent. */
+ *  prerendered, nesting the output. Serving from memory makes the script idempotent.
+ *
+ *  ONE SERVER PER WORKER, and each records every path requested of it. A worker renders one
+ *  route at a time, so everything its server saw between two renders is what that route
+ *  READ -- an observed dependency list, never a hand-kept one. Several Chrome processes
+ *  sharing one server could not be told apart. */
 function serve(shell) {
-  return createServer(async (req, res) => {
+  const probed = shell.replace('<script type="module"', `${PROBE}<script type="module"`)
+  const seen = new Set()
+  const server = createServer(async (req, res) => {
     const path = decodeURIComponent(new URL(req.url, 'http://x').pathname)
+    seen.add(path)
     const file = join(DIST, path)
     try {
       const s = await stat(file)
@@ -223,9 +231,63 @@ function serve(shell) {
       }
     } catch { /* falls through to the shell, exactly as the host does */ }
     res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' })
-    res.end(shell)
+    res.end(probed)
   })
+  server.seen = seen
+  return server
 }
+
+/** WHAT A PAGE READS THAT IS NOT A FILE: THE CLOCK, AND OTHER HOSTS.
+ *
+ *  A route's HTML is a function of the files it fetched -- which the server sees -- and of
+ *  two things it cannot see. "Upcoming meetings" and "in 3 days" read today's date, so a
+ *  board page rendered yesterday is wrong today with every input file unchanged. And a
+ *  fetch to another origin never reaches our server at all.
+ *
+ *  So the served shell carries this probe. It wraps fetch, so that a cross-origin request
+ *  marks the document, and it wraps Date -- carefully, because CREATING a date is not
+ *  READING the clock. d3-time makes two blank `new Date` objects as scratch space when it
+ *  loads and overwrites them before use; Cloudflare's beacon reads the time for its own
+ *  timing. The first version of this probe counted both, flagged every one of 830 routes as
+ *  date-dependent and would have reused nothing past midnight. So:
+ *
+ *    - `Date.now()` is a read.
+ *    - A bare `new Date()` is a read only if its VALUE is used -- any getter, formatter,
+ *      arithmetic, or copying it into another Date or an Intl format -- before a setter
+ *      has overwritten it.
+ *    - A read whose caller is another origin's script is not counted: it cannot reach the
+ *      DOM except through our own code, which would be counted itself.
+ *
+ *  The marks come back in the dumped DOM and are stripped, with the probe, before anything
+ *  is written. A page that reads the clock is reused only on the same calendar day; one
+ *  that reads another host is never reused. A false positive costs one re-render; the
+ *  probe exists so that there is no false negative to cost a stale page. */
+const PROBE = `<script id="__prerender_probe">(function(){` +
+  `var R=document.documentElement,D=Date,O=location.origin,DOC=location.href.split('#')[0],NOW=Symbol(),DP=D.prototype;` +
+  `function mark(k){R.setAttribute('data-pr-'+k,'1')}` +
+  // The caller is the first frame that is a script and is not this probe (inline, so its
+  // frames carry the document's own URL).
+  `function clock(){var L=(new Error().stack||'').split('\\n').slice(1);for(var i=0;i<L.length;i++){` +
+  `var c=L[i];if(c.indexOf('http')<0||c.indexOf(DOC+':')>=0)continue;if(c.indexOf(O)>=0)mark('clock');return}}` +
+  `function use(d){if(d&&d[NOW])clock()}` +
+  `class P extends D{constructor(...a){use(a[0]);super(...a);if(!a.length)this[NOW]=1}}` +
+  `P.now=function(){clock();return D.now()};` +
+  `Object.getOwnPropertyNames(DP).forEach(function(k){var f=DP[k];` +
+  `if(k==='constructor'||typeof f!=='function')return;` +
+  `P.prototype[k]=k.slice(0,3)==='set'?function(){this[NOW]=0;return f.apply(this,arguments)}` +
+  `:function(){use(this);return f.apply(this,arguments)}});` +
+  `var TP=DP[Symbol.toPrimitive];P.prototype[Symbol.toPrimitive]=function(h){use(this);return TP.call(this,h)};` +
+  `window.Date=P;` +
+  `var IP=Intl.DateTimeFormat.prototype;['format','formatToParts','formatRange','formatRangeToParts'].forEach(function(k){` +
+  `var g=Object.getOwnPropertyDescriptor(IP,k);if(!g)return;var get=g.get,val=g.value;` +
+  `function wrap(f){return function(){if(!arguments.length)clock();for(var i=0;i<arguments.length;i++)use(arguments[i]);return f.apply(this,arguments)}}` +
+  `if(get)Object.defineProperty(IP,k,{configurable:true,get:function(){return wrap(get.call(this))}});` +
+  `else Object.defineProperty(IP,k,{configurable:true,writable:true,value:wrap(val)})});` +
+  `var F=window.fetch;window.fetch=function(i){try{var u=new URL(typeof i==='string'?i:i.url,location.href);` +
+  `if(u.origin!==O)mark('external')}catch(e){}return F.apply(this,arguments)}` +
+  `})()</script>`
+const PROBE_RE = /<script id="__prerender_probe">[\s\S]*?<\/script>/
+const MARK_RE = / data-pr-(clock|external)="1"/g
 
 /** Visible text, the way a reader without JS would experience the page. */
 function visibleText(html) {
@@ -236,6 +298,54 @@ function visibleText(html) {
     .replace(/&[a-z]+;|&#\d+;/gi, ' ')
     .replace(/\s+/g, ' ')
     .trim()
+}
+
+/** REUSE A PAGE ONLY WHEN EVERY INPUT IT WAS SEEN TO READ IS BYTE-IDENTICAL.
+ *
+ *  TJ, 7 October 2026: *"we should only be regenerating the pages that have changed."* A
+ *  full render was 36.5 minutes for 781 routes, and most builds change a handful of data
+ *  files. The cache lives OUTSIDE dist/ because `vite build` empties dist/ every time.
+ *
+ *  An entry is reused when: the shell, this script and the probe are unchanged (GLOBAL);
+ *  every path the route requested last time hashes the same now -- the JS and CSS bundle
+ *  among them, so any code change re-renders every page; the page did not read another
+ *  host; and if it read the clock, it was rendered today. Anything else renders: a route
+ *  never seen, a route with no entry, a cached file gone missing. FULL=1 renders all of
+ *  them, for when the map itself is in doubt. */
+const CACHE = join(APP, '.prerender-cache')
+const CACHE_HTML = join(CACHE, 'html')
+const CACHE_DEPS = join(CACHE, 'deps.json')
+const JOBS = Math.max(1, Number(process.env.PRERENDER_JOBS) || 4)
+const sha256 = buf => createHash('sha256').update(buf).digest('hex')
+const cachedFile = route => join(CACHE_HTML, `${encodeURIComponent(route)}.html`)
+const today = () => new Date().toLocaleDateString('en-CA')
+
+const hashes = new Map()
+/** The sha256 of what dist/ would serve for a path, or `shell` for the fallback. Memoised:
+ *  a data file hashed once per run, however many routes read it. */
+async function hashOf(path) {
+  if (!hashes.has(path)) {
+    hashes.set(path, (async () => {
+      try {
+        const file = join(DIST, path)
+        if ((await stat(file)).isFile()) return sha256(await readFile(file))
+      } catch { /* not a file: the host answers with the shell */ }
+      return 'shell'
+    })())
+  }
+  return hashes.get(path)
+}
+
+async function canReuse(entry, route, global) {
+  if (!entry || entry.global !== global || entry.external) return false
+  if (entry.clock && entry.date !== today()) return false
+  // The page itself, against the hash recorded beside it: a run killed after writing a page
+  // and before writing the map leaves a newer page under an older entry.
+  if (!existsSync(cachedFile(route)) || sha256(await readFile(cachedFile(route))) !== entry.html) return false
+  for (const [path, h] of Object.entries(entry.deps)) {
+    if (await hashOf(path) !== h) return false
+  }
+  return true
 }
 
 async function main() {
@@ -268,6 +378,8 @@ async function main() {
   //
   // The shell check below still applies: this reads dist/index.html for the preamble, so
   // ONLY cannot be used against a dist that has already been prerendered over.
+  //
+  // ONLY never reuses: naming a route is asking for it to be rendered.
   const only = (process.env.ONLY || '').split(',').map(s => s.trim()).filter(Boolean)
   const routes = only.length ? all.filter(r => only.includes(r)) : all
   if (only.length) {
@@ -307,10 +419,21 @@ async function main() {
 
   const sitemap = await readFile(SITEMAP, 'utf8')
 
-  const server = serve(shell)
-  await new Promise(r => server.listen(0, r))
-  PORT = server.address().port
-  console.log(`serving dist/ on port ${PORT}`)
+  // DECIDE WHAT TO REUSE before any Chrome starts, and say so.
+  const global = sha256(shell + PROBE + await readFile(fileURLToPath(import.meta.url), 'utf8'))
+  let deps = {}
+  try { deps = JSON.parse(await readFile(CACHE_DEPS, 'utf8')) } catch { /* first run */ }
+  const full = !!process.env.FULL || only.length > 0
+  const reuse = [], render = []
+  for (const route of routes) {
+    if (!full && await canReuse(deps[route], route, global)) reuse.push(route)
+    else render.push(route)
+  }
+  console.log(`${render.length} to render, ${reuse.length} reused (every input unchanged)` +
+    (process.env.FULL ? ' — FULL=1' : '') + `, ${JOBS} at a time`)
+
+  const servers = Array.from({ length: Math.min(JOBS, Math.max(render.length, 1)) }, () => serve(shell))
+  for (const s of servers) await new Promise(r => s.listen(0, r))
   // PREFLIGHT, BECAUSE ENOSPC DOES NOT PRESENT AS A DISK PROBLEM. When the disk filled on
   // 19 September 2026 the visible symptom was a prerender exiting 1 with no message, then
   // every unrelated command failing too. Fail here, with the reason, rather than there.
@@ -320,7 +443,7 @@ async function main() {
   // concurrent build's profile is not ours to delete.
   await sweepLeakedProfiles()
 
-  console.log(`prerendering ${routes.length} routes with ${chrome}\n`)
+  console.log(`prerendering ${render.length} routes with ${chrome}\n`)
 
   // WHAT CHROME LEAVES BEHIND, AND WHY WE NO LONGER TOUCH HOW IT MAKES IT.
   //
@@ -342,10 +465,50 @@ async function main() {
 
   const failures = []
   const rows = []
-  try {
+  await mkdir(CACHE_HTML, { recursive: true })
 
-  for (const route of routes) {
-    const url = `http://localhost:${PORT}${route}`
+  /** The checks every page passes, rendered or reused. Returns the reason it fails. */
+  function check(route, html, text) {
+    if (text.length < MIN_TEXT) return `${route}: rendered only ${text.length} chars of text (min ${MIN_TEXT})`
+    if (!html.includes(scriptTag[1])) return `${route}: rendered HTML lost the module script ${scriptTag[1]}`
+    if (!html.startsWith(preamble)) return `${route}: lost the doctype/agent-comment preamble`
+    if (PROBE_RE.test(html) || /data-pr-(clock|external)/.test(html)) return `${route}: the prerender probe leaked into the page`
+    // THE BUILD SERVER'S ADDRESS, written into a page that ships. Every one of 830 pages
+    // carried og:url=http://localhost:61348/... until 7 October 2026, read off
+    // window.location.origin at render time. Use SITE from src/lib/abs.ts.
+    if (/https?:\/\/(localhost|127\.0\.0\.1):\d+/.test(html)) return `${route}: carries the prerender server's own address (localhost) -- build URLs from SITE in src/lib/abs.ts`
+    return null
+  }
+
+  async function write(route, html, text) {
+    if (route !== '/' && !sitemap.includes(`<loc>https://lunenburgbudgetproject.org${route}</loc>`)) {
+      failures.push(`${route}: rendered fine but is missing from public/sitemap.xml`)
+    }
+    // `<slug>.html`, NOT `<slug>/index.html`. Pages serves a directory by 308-redirecting
+    // /athletics to /athletics/, so the canonical URL in the sitemap would answer with a
+    // redirect rather than the page -- an extra hop, and one some fetchers do not follow.
+    // Extension-less serving of <slug>.html answers /athletics directly with 200.
+    const out = route === '/' ? join(DIST, 'index.html') : join(DIST, `${route}.html`)
+    await mkdir(dirname(out), { recursive: true })
+    await writeFile(out, html)
+    rows.push({ route, bytes: html.length, text: text.length, text_body: text })
+  }
+
+  // THE REUSED PAGES go through every check a rendered one does. A cached file is not
+  // trusted for being cached.
+  for (const route of reuse) {
+    const html = await readFile(cachedFile(route), 'utf8')
+    const text = visibleText(html)
+    const bad = check(route, html, text) || (html.includes(`<link rel="canonical" href="${SITE}${route}">`)
+      ? null : `${route}: cached page has no canonical link`)
+    if (bad) { failures.push(bad); delete deps[route]; continue }
+    await write(route, html, text)
+  }
+
+  let done = 0
+  const t0 = Date.now()
+  async function renderOne(route, server) {
+    const url = `http://localhost:${server.address().port}${route}`
     let html
     // RETRY ONCE, BECAUSE THIS FAILURE IS NOT ABOUT THE PAGE.
     //
@@ -361,6 +524,7 @@ async function main() {
     // so this buys tolerance of a flake without hiding a break.
     let lastErr = null
     for (let attempt = 0; attempt < 2 && html === undefined; attempt++) {
+      server.seen.clear()
       try {
         const { stdout } = await execFileAsync(chrome, [
           '--headless', '--disable-gpu', '--no-sandbox', '--hide-scrollbars',
@@ -385,6 +549,7 @@ async function main() {
         if (attempt === 0) console.log(`  retrying ${route} — chrome failed once`)
       }
     }
+    delete deps[route]
     if (html === undefined) {
       // LOG WHAT NODE ACTUALLY ATTACHED, not `.message`. Its first line is only ever
       // "Command failed: <the command we already know>", so every Chrome failure in this
@@ -404,25 +569,18 @@ async function main() {
       ].filter(Boolean).join(', ')
       failures.push(`${route}: chrome failed twice` +
         (detail ? ` — ${detail}` : ' — no signal, code or stderr on the error'))
-      continue
+      return
     }
 
+    // What the page read, before the probe's marks are stripped.
+    const clock = /<html[^>]* data-pr-clock="1"/.test(html)
+    const external = /<html[^>]* data-pr-external="1"/.test(html)
+    const read = [...server.seen].sort()
+    html = html.replace(PROBE_RE, '').replace(MARK_RE, '')
+
     const text = visibleText(html)
-    if (text.length < MIN_TEXT) {
-      failures.push(`${route}: rendered only ${text.length} chars of text (min ${MIN_TEXT})`)
-      continue
-    }
-    if (!html.includes(scriptTag[1])) {
-      failures.push(`${route}: rendered HTML lost the module script ${scriptTag[1]}`)
-      continue
-    }
-    if (!html.startsWith(preamble)) {
-      failures.push(`${route}: lost the doctype/agent-comment preamble`)
-      continue
-    }
-    if (route !== '/' && !sitemap.includes(`<loc>https://lunenburgbudgetproject.org${route}</loc>`)) {
-      failures.push(`${route}: rendered fine but is missing from public/sitemap.xml`)
-    }
+    const bad = check(route, html, text)
+    if (bad) { failures.push(bad); return }
 
     // A SELF-REFERENTIAL canonical, one per route, injected here rather than put in
     // index.html — the template is shared by every route, so a canonical in it would
@@ -443,22 +601,36 @@ async function main() {
     html = html.replace('</head>', `    ${canonical}\n  </head>`)
     if (!html.includes(canonical)) {
       failures.push(`${route}: could not inject the canonical link — no </head> found`)
-      continue
+      return
     }
+    await write(route, html, text)
 
-    // `<slug>.html`, NOT `<slug>/index.html`. Pages serves a directory by 308-redirecting
-    // /athletics to /athletics/, so the canonical URL in the sitemap would answer with a
-    // redirect rather than the page -- an extra hop, and one some fetchers do not follow.
-    // Extension-less serving of <slug>.html answers /athletics directly with 200.
-    const out = route === '/' ? join(DIST, 'index.html') : join(DIST, `${route}.html`)
-    await mkdir(dirname(out), { recursive: true })
-    await writeFile(out, html)
-    rows.push({ route, bytes: html.length, text: text.length, text_body: text })
+    await writeFile(cachedFile(route), html)
+    deps[route] = {
+      global, clock, external, date: today(), html: sha256(html),
+      deps: Object.fromEntries(await Promise.all(read.map(async p => [p, await hashOf(p)]))),
+    }
+    done++
+    const flags = [clock && 'clock', external && 'external'].filter(Boolean).join(', ')
+    console.log(`  [${done}/${render.length}] ${route}${flags ? `  (reads ${flags})` : ''}` +
+      `  ${((Date.now() - t0) / 1000).toFixed(0)}s`)
   }
+
+  try {
+    let next = 0
+    await Promise.all(servers.map(async server => {
+      while (next < render.length) await renderOne(render[next++], server)
+    }))
   } finally {
     // WHETHER OR NOT THE RUN SUCCEEDED -- a build that dies half way is exactly the one
     // that used to leave 300 profiles behind.
     await sweepOurProfiles(startedAt)
+    for (const s of servers) s.close()
+    // Only routes this build still has; tmp + rename, so a killed run cannot leave half a
+    // map that a later run would trust.
+    const keep = Object.fromEntries(Object.entries(deps).filter(([r]) => all.includes(r)))
+    await writeFile(`${CACHE_DEPS}.tmp`, JSON.stringify(keep, null, 1))
+    await rename(`${CACHE_DEPS}.tmp`, CACHE_DEPS)
   }
 
   // Two routes rendering identical text means the router did not route -- most likely a
@@ -466,6 +638,7 @@ async function main() {
   // anything it does not recognise rather than erroring. That fallback is right for a
   // visitor following an old link and silent for us, so it is caught here: it is exactly
   // how /athletics was found being served as the front page.
+  rows.sort((a, b) => routes.indexOf(a.route) - routes.indexOf(b.route))
   const byText = new Map()
   for (const r of rows) {
     const same = byText.get(r.text_body)
@@ -475,15 +648,15 @@ async function main() {
     } else byText.set(r.text_body, r.route)
   }
 
-  server.close()
-
   const pad = Math.max(...rows.map(r => r.route.length), 8)
   console.log(`${'route'.padEnd(pad)}  ${'html'.padStart(9)}  ${'text'.padStart(8)}`)
   for (const r of rows) {
     console.log(`${r.route.padEnd(pad)}  ${r.bytes.toLocaleString().padStart(9)}  ` +
       `${r.text.toLocaleString().padStart(8)}`)
   }
-  console.log(`\n${rows.length}/${routes.length} routes written into dist/`)
+  const secs = ((Date.now() - startedAt) / 1000).toFixed(0)
+  console.log(`\n${rows.length}/${routes.length} routes written into dist/: ` +
+    `rendered ${done}, reused ${reuse.length}, in ${secs}s`)
 
   if (failures.length) {
     console.error(`\n${failures.length} problem(s):`)

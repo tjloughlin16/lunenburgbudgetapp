@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# prerender reuse cache: route -> observed inputs, and the HTML (scripts/prerender.mjs)
+.prerender-cache
