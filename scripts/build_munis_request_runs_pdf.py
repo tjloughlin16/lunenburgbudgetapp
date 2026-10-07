@@ -595,31 +595,19 @@ def vendor_help(funds):
     missing = [f for f in SPED_FUNDS if f not in funds]
     if missing:
         PROBLEMS.append(f'vendor_help: funds not on the request: {missing}')
-    listed = '; '.join(f'{f} {funds.get(f, "?")}' for f in SPED_FUNDS)
+    listed = ', '.join(SPED_FUNDS)
+    # JUST THE STEPS (TJ, 7 October 2026: "simplify ... to just be the steps? no context").
+    # Each step keeps its checked citation.
     return [
-        (f'The funds on the request whose number or name reads as special education: {listed}. Listing all of '
-         'them is not a guess at which one prompted the question.', []),
-        ('The column that can carry it: VDR NAME/ITEM DESC, in the Town’s own June 2026 Account Detail '
-         'export. In that export, REFERENCE, REF1 and REF3 hold transaction codes and batch references rather '
-         'than names — worth a look before sending, since a different fund’s export may use them '
-         'differently.', [h('ad', 'VDR NAME/ITEM DESC'), h('ad', 'REFERENCE'), h('ad', 'REF1'), h('ad', 'REF3')]),
-        ('CHECK NO, and where a payment carries one VOUCHER or WARRANT, can be traced back to a payee through '
-         'the check register — deleting a name column after export does not by itself stop that.',
-         [h('ad', 'CHECK NO'), h('ad', 'VOUCHER'), h('ad', 'WARRANT')]),
-        ('Simplest, and needs no MUNIS feature: after exporting to Excel, delete the name-bearing column(s) — '
-         'at minimum VDR NAME/ITEM DESC — before saving, for these funds. Everything this project analyses '
-         'survives without it: fund, org, object, account, dates, journal, source and amount.', []),
-        ('A middle ground, if business vendor names should stay: replace only the payees who are individuals '
-         'with a neutral word such as INDIVIDUAL. In a fund this small, a line’s amount and date alone can '
-         'still point to one family, so for those lines sending them grouped by object and month — rather '
-         'than line by line — may serve the purpose better.', []),
-        ('A MUNIS-side option, if this screen offers it: on the export-to-Excel step, one guide describes being '
-         'able to “Check/ or uncheck anything you want to see or not see within this report” before '
-         'the file is created. If Lunenburg’s version shows that picker, unchecking VDR NAME/ITEM DESC '
-         'there removes it before the spreadsheet exists.',
+        ('Export the Account Detail report to Excel. If the export screen lets you pick columns, '
+         'untick VDR NAME/ITEM DESC there.',
          [c('L', 6, 'Check/ or uncheck anything you want to see or not see within this report')]),
-        ('Entirely at your discretion — we only need the columns above to keep tying what was budgeted to '
-         'what was spent.', []),
+        (f'For funds {listed}: delete the VDR NAME/ITEM DESC column.', [h('ad', 'VDR NAME/ITEM DESC')]),
+        ('For the same funds: delete CHECK NO, VOUCHER and WARRANT.',
+         [h('ad', 'CHECK NO'), h('ad', 'VOUCHER'), h('ad', 'WARRANT')]),
+        ('Look through REFERENCE, REF1, REF3 and COMMENTS for any person\u2019s name, and clear those cells.',
+         [h('ad', 'REFERENCE'), h('ad', 'REF1'), h('ad', 'REF3'), h('ad', 'COMMENTS')]),
+        ('Save and send.', []),
     ]
 
 
@@ -661,6 +649,7 @@ tr.done td { color: #888; background: #f2f2f2 !important; }
 td .lab:not(:first-child) { margin-top: 6px; border-top: 1px solid #ddd; padding-top: 4px; }
 .vendor { font-size: 8pt; line-height: 1.4; max-width: 960px; }
 .vendor li { margin-bottom: 3pt; }
+.vendor ol { margin: 0; padding-left: 14pt; }
 """
 
 
@@ -740,7 +729,7 @@ def render(runs, account, excel, selection, combine, vendor, gaps_used, hashes):
         counts[r['status'][0]] += 1
     status_line = (f'As of {DELIVERED_HUMAN}: {counts["received"]} of {n_runs} runs received, '
                    f'{counts["partial"]} partly received, {counts["needed"]} still needed.')
-    vendor_box = items(vendor)
+    vendor_box = items(vendor).replace('<ul>', '<ol>', 1).replace('</ul>', '</ol>')
     body = f"""
 <h1>MUNIS report runs for the school records request of 4 September 2026</h1>
 <p class="status">{status_line}</p>
@@ -748,7 +737,7 @@ def render(runs, account, excel, selection, combine, vendor, gaps_used, hashes):
 {table}
 <h2>Notes that apply to every row</h2>
 {boxes}
-<h2>Removing payee names from the Account Detail export</h2>
+<h2>Removing payee names from the Account Detail export: steps</h2>
 <div class="vendor">{vendor_box}</div>
 <h2>Where the option names come from</h2>
 <p class="foot">Lunenburg publishes no MUNIS guide. Option names are given exactly as these guides print them — chiefly the CNMI’s guide (C) and Tyler’s 2020.2 procedures (F) — and Lunenburg’s version may label some differently. Where a guide only shows an option in a screenshot it is marked (screenshot). Anything not named in a row: leave it as the Town usually runs the report. If a box here is missing from the Town’s screen, or a run cannot be made as written, saying so is as useful as the data.</p>
