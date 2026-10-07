@@ -230,9 +230,42 @@ def verify_quotes(items, flat, field=None):
             v['quote'] = flat[i:i + len(q)]
             v['quote_taken_from_text'] = True
             kept.append(v)
+            continue
+        # THE TOWN'S TEXT HAS STRAY SPACES ("Lehtinen ,", "May 12 , 2026", "A N N O U N C E
+        # M E N T S") and the model quotes it tidily, so the test above fails on words that
+        # are the town's own. 7 October 2026: 207 of 5,127 items read that day were dropped
+        # this way, 29 of 41 from one Select Board meeting -- while `squash()`, written for
+        # exactly this test, was called by nothing. Match with ALL whitespace removed, then
+        # store the town's text for that span, so the stored quote is still verbatim and
+        # check() still passes on it.
+        span = _squashed_span(q, flat)
+        if span:
+            v['quote'] = span
+            v['quote_taken_from_text'] = True
+            kept.append(v)
         else:
             dropped += 1
     return kept, dropped
+
+
+_SQ = {}
+
+
+def _squashed_span(q, flat):
+    """The span of `flat` (already canon) whose non-whitespace characters equal
+    squash(q), or None. `flat` is indexed once per text and cached."""
+    if flat not in _SQ:
+        idx = [i for i, c in enumerate(flat) if not c.isspace()]
+        _SQ.clear()
+        _SQ[flat] = (''.join(flat[i] for i in idx), idx)
+    sq, idx = _SQ[flat]
+    qs = squash(q)
+    if len(qs) < 4:
+        return None
+    j = sq.find(qs)
+    if j < 0:
+        return None
+    return flat[idx[j]:idx[j + len(qs) - 1] + 1]
 
 
 def ours_for(e):
