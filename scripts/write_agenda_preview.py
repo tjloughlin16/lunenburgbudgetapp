@@ -120,6 +120,23 @@ def agendas(board=None, date=None, upcoming_from=None):
         out.append({'board_slug': slug, 'board': r['board'], 'date': r['date'],
                     'file_id': r['file_id'], 'url': r['url'], 'text': txt,
                     'text_rel': os.path.relpath(txt, ROOT), 'stem': stem})
+    # AGENDAS THE TOWN SENT SOME OTHER WAY (sources/data/meeting-notices-email.csv -- the
+    # register build_meeting_feed.py and build_boards.py read). The School Committee's
+    # 7 October 2026 agenda came only by email, so it had no preview until this read it.
+    have = {(x['board_slug'], x['date']) for x in out}
+    email = os.path.join(ROOT, 'sources', 'data', 'meeting-notices-email.csv')
+    for r in (csv.DictReader(open(email, encoding='utf-8')) if os.path.exists(email) else []):
+        if r['kind'] != 'agenda' or (r['board_slug'], r['date']) in have:
+            continue
+        if (board and r['board_slug'] != board) or (date and r['date'] != date) \
+                or (upcoming_from and r['date'] < upcoming_from):
+            continue
+        stem = os.path.splitext(r['path'])[0]
+        txt = os.path.join(TEXT, stem + '.txt')
+        if os.path.exists(txt):
+            out.append({'board_slug': r['board_slug'], 'board': r['board'], 'date': r['date'],
+                        'file_id': r['file_id'], 'url': SITE + '/docs/meetings/' + r['path'], 'text': txt,
+                        'text_rel': os.path.relpath(txt, ROOT), 'stem': stem})
     return out
 
 
