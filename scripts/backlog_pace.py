@@ -72,15 +72,20 @@ def audit(since_utc, now=None):
             # never matched here -- on 7 October one failed read from the run before stopped
             # the next run in its first minute.
             and r.get('result', 'ok') == 'ok']
-    used, matched, bad = set(), 0, []
+    # ONE FILE CAN SERVE SEVERAL STEPS. Our minutes are written, then reconciled, in the SAME
+    # file (parks-commission 2024-12-18, 7 October: `minutes` then `reconcile`), so a file is
+    # spent once PER STREAM, and a recording-minutes file rewritten by a later step still
+    # matches the earlier step's row.
+    used, files_used, matched, bad = set(), set(), 0, []
     for r in rows:
         hit = None
         for d in OUT_DIRS:
             for f in glob.glob(os.path.join(ROOT, 'sources', 'data', d, r['board'], r['date'] + '*.json')):
-                if f in used:
+                if (f, r['stream']) in used:
                     continue
                 m = dt.datetime.fromtimestamp(os.path.getmtime(f), dt.timezone.utc)
-                if abs((m - t(r['at'])).total_seconds()) > 120:
+                lag = (m - t(r['at'])).total_seconds()
+                if not (-120 <= lag <= 120 or (d == 'recording-minutes' and lag > 0)):
                     continue
                 try:
                     j = json.load(open(f, encoding='utf-8'))
@@ -107,7 +112,7 @@ def audit(since_utc, now=None):
             for d in OUT_DIRS:
                 for f in glob.glob(os.path.join(ROOT, 'sources', 'data', d, r['board'], r['date'] + '*.json')):
                     m = dt.datetime.fromtimestamp(os.path.getmtime(f), dt.timezone.utc)
-                    if f in used or not (-900 <= (m - t(r['at'])).total_seconds() <= 120):
+                    if (f, r['stream']) in used or not (-900 <= (m - t(r['at'])).total_seconds() <= 120):
                         continue
                     try:
                         c = json.load(open(f, encoding='utf-8')).get('cost_usd')
@@ -117,18 +122,20 @@ def audit(since_utc, now=None):
                         group.append(f)
                         total += float(c)
             if len(group) > 1 and abs(total - float(r['cost_usd'] or 0)) <= 0.001:
-                used.update(group)
+                used.update((g, r['stream']) for g in group)
+                files_used.update(group)
                 matched += 1
                 continue
         if hit:
-            used.add(hit)
+            used.add((hit, r['stream']))
+            files_used.add(hit)
             matched += 1
         else:
             bad.append('%s %s %s %s $%s' % (r['at'], r['stream'], r['board'], r['date'], r['cost_usd']))
     lo = t(since_utc + ':00Z' if len(since_utc) == 16 else since_utc)
     unpaid = [os.path.relpath(f, ROOT) for d in OUT_DIRS
               for f in glob.glob(os.path.join(ROOT, 'sources', 'data', d, '*', '*.json'))
-              if f not in used and lo.timestamp() <= os.path.getmtime(f) <= now.timestamp() - FILE_SETTLE_S]
+              if f not in files_used and lo.timestamp() <= os.path.getmtime(f) <= now.timestamp() - FILE_SETTLE_S]
     return matched, bad, unpaid
 
 
