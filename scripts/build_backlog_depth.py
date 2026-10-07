@@ -159,8 +159,19 @@ def processable_meetings():
 def by_board_fy(jobs):
     """Per fiscal year, for every board together and for each FILTER_BOARD: open jobs by
     stream, and MEETINGS -- how many have anything to process, how many are still open.
-    `% open` is meetings over meetings, one unit; the streams are never added for it."""
+    `% open` is meetings over meetings, one unit; the streams are never added for it.
+
+    NEEDS-REVIEW MEETINGS ARE PULLED OUT ENTIRELY, not added as a fourth stream. TJ, 7
+    October 2026: a meeting with an OPEN row in `review-queue.csv` is "pulled out of the
+    normal flow of processing so they can't back anything up" -- so it is work for a
+    person, never in the machine job totals, the cost, or `% open`, the same way a
+    missing record is never counted as backlog. `review_queue.open_keys()` is the one
+    function that decides this, imported by process_meeting.py too, so the two can never
+    disagree about which meetings are held."""
+    import review_queue as Q
+    review_keys = {k for k in Q.open_keys() if len(k[1]) >= 7}
     meetings = processable_meetings()
+    jobs = [j for j in jobs if (j['board'], j['date']) not in review_keys]
     open_m = {(j['board'], j['date']) for j in jobs}
     out = {}
     for key, keep in [('all', None)] + [(slug, slug) for slug, _ in FILTER_BOARDS]:
@@ -170,15 +181,22 @@ def by_board_fy(jobs):
                 rows['FY%d' % fiscal_year(j['date'][:7])][j['stream']] += 1
         held = collections.Counter()
         still = collections.Counter()
+        review = collections.Counter()
         for b, d in meetings | open_m:
+            if (b, d) in review_keys:
+                continue
             if (keep is None or b == keep) and len(d) >= 7:
                 fy = 'FY%d' % fiscal_year(d[:7])
                 held[fy] += 1
                 still[fy] += (b, d) in open_m
+        for b, d in review_keys:
+            if keep is None or b == keep:
+                review['FY%d' % fiscal_year(d[:7])] += 1
         out[key] = [dict(fy=fy, **{s: rows[fy][s] for s in STREAMS}, total=sum(rows[fy].values()),
                          meetings=held[fy], meetings_open=still[fy],
-                         pct_open=round(100.0 * still[fy] / held[fy], 1) if held[fy] else 0.0)
-                    for fy in sorted(held)]
+                         pct_open=round(100.0 * still[fy] / held[fy], 1) if held[fy] else 0.0,
+                         needs_review=review[fy])
+                    for fy in sorted(set(held) | set(review))]
     return out
 
 
@@ -269,7 +287,8 @@ def payload(jobs, by_year, by_month, by_board, costs):
         if m['captions_disabled']:
             missing_tot['captions_disabled'] += 1
     fy_zero = dict(**{s: 0 for s in STREAMS}, total=0)
-    board_fy_zero = dict(**{s: 0 for s in STREAMS}, total=0, meetings=0, meetings_open=0, pct_open=0.0)
+    board_fy_zero = dict(**{s: 0 for s in STREAMS}, total=0, meetings=0, meetings_open=0, pct_open=0.0,
+                         needs_review=0)
     byfy_all = _with_missing(
         [dict(fy=f, **{s: by_fy[f][s] for s in STREAMS}, total=sum(by_fy[f].values())) for f in sorted(by_fy)],
         missing_fy['all'], fy_zero)

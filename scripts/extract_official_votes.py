@@ -201,13 +201,20 @@ def is_limit(text):
     return any(w in low for w in HARD_LIMIT_WORDS)
 
 
-def verify_quotes(items, flat):
+def verify_quotes(items, flat, field=None):
     """(kept, dropped): the items whose quote is verbatim in `flat`, with the quote stored
-    in its canonical form."""
+    in its canonical form.
+
+    `attendees` ONLY: the floor is 4 characters, not 20. TJ, 7 October 2026, after two
+    schema-2 reads came back with their whole attendance list dropped although both sets
+    of minutes print one ("PRESENT", "In attendance:") -- an attendee's quote is often
+    just a name ("Pauline Roy"), and the 20-character floor built for a vote's quote threw
+    out every one of them. Every other field keeps the 20-character floor unchanged."""
+    min_len = 4 if field == 'attendees' else 20
     kept, dropped = [], 0
     for v in items:
         q = canon(v.get('quote', ''))
-        if len(q) < 20:
+        if len(q) < min_len:
             dropped += 1
             continue
         if q in flat:
@@ -305,7 +312,7 @@ def extract_one(e, force=False, schema=1, model=None, out_dir=None):
     flat = canon(text)
     checked, dropped_by = {}, {}
     for field in (QUOTED if schema >= 2 else ('votes',)):
-        checked[field], dropped_by[field] = verify_quotes(body.get(field) or [], flat)
+        checked[field], dropped_by[field] = verify_quotes(body.get(field) or [], flat, field)
     kept = checked['votes']
     dropped = sum(dropped_by.values())
     doc = {

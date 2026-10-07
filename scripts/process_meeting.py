@@ -104,7 +104,9 @@ def snapshot():
     import reconcile_minutes as R
     import write_recording_minutes as W
     import read_order
+    import review_queue as Q
     read_order.reset()
+    held = Q.open_keys()
     official, has_official = {}, set()
     for e in E.minutes_files():
         has_official.add((e['board_slug'], e['date']))
@@ -126,16 +128,32 @@ def snapshot():
         rc = m.get('reconciliation')
         if not rc or rc.get('official_sha256') != R.sha256_of(off_path):
             recon.add((m['board_slug'], m['meeting_date']))
-    return dict(official=official, ours=ours, reconcile=recon, has_official=has_official)
+    # A meeting HELD FOR REVIEW is pulled out of every one of these, not merely left out of
+    # the final queue: `has_official` feeds the reconcile test in steps() too, and a held
+    # meeting must not back that up either.
+    official = {k: v for k, v in official.items() if k not in held}
+    has_official = {k for k in has_official if k not in held}
+    ours = {k for k in ours if k not in held}
+    recon = {k for k in recon if k not in held}
+    return dict(official=official, ours=ours, reconcile=recon, has_official=has_official, held=held)
 
 
 def steps(board, date, snap=None):
     """The steps this meeting still needs, in order. Without `snap`, read fresh from disk --
-    which is how the run re-checks a meeting after working it."""
+    which is how the run re-checks a meeting after working it.
+
+    A meeting with an OPEN review-queue row needs NOTHING: `review_queue.held()` is the
+    one place that decides this, imported here and by build_backlog_depth.py, so the two
+    can never disagree about which meetings are pulled out of the normal flow (TJ, 7
+    October 2026: "pulled out of the normal flow of processing so they can't back
+    anything up")."""
     import read_order
+    import review_queue as Q
+    k = (board, date)
+    if (k in snap['held']) if snap else Q.held(board, date):
+        return []
     if snap is None:
         read_order.reset()
-    k = (board, date)
     need = []
     if (k in snap['ours']) if snap else _ours_needed(board, date):
         need.append('ours')
@@ -226,6 +244,7 @@ def main():
     a = ap.parse_args()
 
     if a.status:
+        import review_queue as Q
         q = queue()
         by = {}
         for _, _, st in q:
@@ -234,9 +253,16 @@ def main():
         print('%d meetings need something: %s' % (len(q), ', '.join('%s %d' % kv for kv in sorted(by.items()))))
         if q:
             print('newest: %s %s   oldest: %s %s' % (q[0][0], q[0][1], q[-1][0], q[-1][1]))
+        held_n = len(Q.open_keys())
+        if held_n:
+            print('%d meeting(s) held for review (scripts/review_queue.py --list)' % held_n)
         return 0
 
     if a.board and a.date:
+        import review_queue as Q
+        if Q.held(a.board, a.date):
+            print('%s %s: held for review -- scripts/review_queue.py --list' % (a.board, a.date))
+            return 0
         plan = [(a.board, a.date, steps(a.board, a.date))]
         if not plan[0][2]:
             print('%s %s: nothing to do' % (a.board, a.date))

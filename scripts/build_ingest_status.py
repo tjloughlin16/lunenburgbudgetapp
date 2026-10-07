@@ -1107,6 +1107,19 @@ MISSING_LINE = {'missing_minutes': '#d07878', 'missing_video': '#6fbf95', 'missi
 MISSING_LABEL = {'missing_minutes': 'no town minutes', 'missing_video': 'no recording',
                  'missing_transcript': 'no transcript'}
 
+# NEEDS REVIEW IS NEITHER A JOB NOR AN ABSENCE -- a third thing on the same bar. TJ, 7
+# October 2026: two schema-2 reads came back with their whole attendance list dropped by
+# the quote check although both sets of minutes print one, and *"these should be FLAGGED
+# somehow, show up on the chart, put back into the backlog and need a direct review
+# (pulled out of the normal flow of processing so they can't back anything up)."* So it is
+# drawn as its own SOLID segment -- not hatched like a missing record, because this is a
+# real document we hold and the gap is in OUR reading of it, not in the town's record --
+# in a hue clear of the four job colours and the three missing hues. `review_queue.py`
+# decides what is held; this only draws the count `build_backlog_depth.py` already pulled
+# out of the job totals and `% open`.
+NEEDS_REVIEW_COLOUR = '#f778ba'
+NEEDS_REVIEW_LABEL = 'held for review — a suspect read, pulled out for a person to check'
+
 
 # THE CHART FILTERS TO A BOARD, AND SWITCHES MEASURE. TJ, 6 October 2026: *"the select
 # board/school/finance was supposed to be a filter/toggle on the main bar chart so i could
@@ -1125,13 +1138,16 @@ def _jobs_svg(rows, key='x', show_missing=True):
     if not show_missing:
         rows = [dict(r, **{s: 0 for s, _, _, _ in MISSING_COLOUR}) for r in rows]
         key = key + '-nm'
-    # NEITHER "no jobs" NOR "nothing open" MAY HIDE A YEAR WITH SOMETHING MISSING. A fiscal
-    # year can have every job cleared and still owe a bar, because a missing record is not
-    # work and clearing the backlog does not make the town's record complete.
-    rows = [r for r in rows if r.get('total') or any(r.get(s) for s, _, _, _ in MISSING_COLOUR)]
+    # NEITHER "no jobs" NOR "nothing open" MAY HIDE A YEAR WITH SOMETHING MISSING OR HELD
+    # FOR REVIEW. A fiscal year can have every job cleared and still owe a bar, because a
+    # missing record is not work and a held meeting is pulled out of the backlog, not
+    # cleared from it.
+    rows = [r for r in rows
+           if r.get('total') or r.get('needs_review') or any(r.get(s) for s, _, _, _ in MISSING_COLOUR)]
     if not rows:
         return '<div class="tiny" style="margin:12px 0">Nothing open, and nothing missing.</div>'
-    hi = max(r['total'] + sum(r.get(s, 0) for s, _, _, _ in MISSING_COLOUR) for r in rows)
+    hi = max(r['total'] + r.get('needs_review', 0) + sum(r.get(s, 0) for s, _, _, _ in MISSING_COLOUR)
+            for r in rows)
     W, H, PAD, GAP = 1000, 210, 26, 4
     bw = max(6.0, (W - PAD * 2) / max(len(rows), 1) - GAP)
     pid = re.sub(r'[^a-z0-9]+', '-', key.lower()).strip('-') or 'x'
@@ -1156,6 +1172,14 @@ def _jobs_svg(rows, key='x', show_missing=True):
             out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="%s">'
                        '<title>%s %s: %s</title></rect>' % (x, y, bw, bh, col, r['fy'], name, format(n, ',')))
         job_top = y
+        nr = r.get('needs_review', 0)
+        if nr:
+            bh = (base - 14) * nr / hi
+            y -= bh
+            out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="%s">'
+                       '<title>%s needs review: %s meeting(s) — %s</title></rect>'
+                       % (x, y, bw, bh, NEEDS_REVIEW_COLOUR, r['fy'], format(nr, ','), NEEDS_REVIEW_LABEL))
+        review_top = y
         for name, _bg, _sp, _sw in MISSING_COLOUR:
             n = r.get(name, 0)
             if not n:
@@ -1179,11 +1203,26 @@ def _jobs_svg(rows, key='x', show_missing=True):
         if r['total']:
             out.append('<text x="%.1f" y="%.1f" fill="#e6edf3" font-size="9.5" text-anchor="middle">%s</text>'
                        % (x + bw / 2, job_label_y, format(r['total'], ',')))
+        # THREE LABELS CAN NOW STACK ON ONE BAR -- job total, needs-review, missing total --
+        # so each is forced at least 10px above whichever label below it actually printed,
+        # never above a slot nothing occupies, or a tiny segment prints its label floating
+        # in empty space above a gap.
+        review_label_y = None
+        if nr:
+            review_label_y = review_top - 3
+            if r['total']:
+                review_label_y = min(review_label_y, job_label_y - 10)
+            out.append('<text x="%.1f" y="%.1f" fill="%s" font-size="8" text-anchor="middle">%s</text>'
+                       % (x + bw / 2, review_label_y, NEEDS_REVIEW_COLOUR, format(nr, ',')))
         miss_tot = sum(r.get(s, 0) for s, _, _, _ in MISSING_COLOUR)
         if miss_tot:
-            miss_label_y = min(y - 3, job_label_y - 10) if r['total'] else y - 3
+            floor = y - 3
+            if review_label_y is not None:
+                floor = min(floor, review_label_y - 10)
+            elif r['total']:
+                floor = min(floor, job_label_y - 10)
             out.append('<text x="%.1f" y="%.1f" fill="#8b949e" font-size="8" text-anchor="middle">+%s</text>'
-                       % (x + bw / 2, miss_label_y, format(miss_tot, ',')))
+                       % (x + bw / 2, floor, format(miss_tot, ',')))
     out.append('</svg>')
     return ''.join(out)
 
@@ -1255,6 +1294,8 @@ def backlog_chart(bd):
               'minutes': 'recordings, to write OUR minutes from'}
     out.append('<div class="tiny bkl" data-for="jobs">%s</div>'
                % ' &nbsp; '.join('<span style="color:%s">\u25a0</span> %s' % (c, legend[n]) for n, c in STREAM_COLOUR))
+    out.append('<div class="tiny bkl" data-for="jobs" style="margin-top:2px">'
+               '<span style="color:%s">\u25a0</span> %s</div>' % (NEEDS_REVIEW_COLOUR, NEEDS_REVIEW_LABEL))
     out.append('<div class="tiny bkl" data-for="jobs" data-miss="1" style="margin-top:2px">Not available \u2014 not work '
                'we can do: %s</div>'
                % ' \u00b7 '.join('<span style="color:%s">\u25a0</span> %s' % (MISSING_LINE[n], MISSING_LABEL[n])
