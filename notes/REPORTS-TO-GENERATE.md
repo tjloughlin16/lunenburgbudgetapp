@@ -1,4 +1,32 @@
-# Reports to build from the Finance Committee data
+# Reports to generate -- every one, in the order to build them
+
+ONE LIST, from 6 October 2026: the Finance Committee reports agreed on 5 October (1-11, kept
+below as written) and what the Town's period-13 MUNIS delivery of 6 October adds (12-15).
+**The order is a proposal for TJ to rearrange.** Build each one the model-driven way
+(CLAUDE.md 7d) -- generator, payload, verifier, `conclusions.py`, charts as components,
+persona review before it is linked -- and only against PUBLISHED data (13e).
+
+## The order
+
+| order | report | why here | data | size |
+|---:|---|---|---|---|
+| 1 | **9. Is anyone sitting on money?** -- now with the schools' turnback at the close, FY2023-FY2026 | TJ's live question, and the delivery's biggest single answer: the `available` column at period 13 IS what the schools turned back | `munis-school-ytd.csv` + the annual reports' fund tables | M |
+| 2 | **7. Are we spending what comes in?** -- per school fund, four years | the same theory from the other side; the special-funds reports carry each fund's revenue AND spending | `munis-school-ytd.csv` (`type` R and E) | M |
+| 3 | **12. Spent with no budget** (new) | the kindergarten-paraprofessional pattern, generalised: every account that spent against a $0 appropriation | `munis-school-ytd.csv` | S |
+| 4 | **3. The school budget beyond the vote** -- four years, not one | answers "how much never reaches Town Meeting" with a trend instead of a snapshot | `munis-school-ytd.csv`, `fincom-ledgers.csv` | S |
+| 5 | **5. The grant cliff** -- now on CLOSED years | the old limit was "FY25 is part-year"; FY2025 and FY2026 are now closed | `munis-school-ytd.csv` | M |
+| 6 | **10. What is over-budgeted** -- the schools extended to FY2026 | `gl-history.csv` stops at FY2024; persistence needs the recent years | both | M |
+| 7 | **6. Special education, every source together** | circuit breaker, IDEA and the general fund, four closed years | `munis-school-ytd.csv` | M |
+| 8 | **4. Who is paid outside the voted budget** | payroll objects outside fund 0100, four years | `munis-school-ytd.csv` + FTE | M |
+| 9 | **13. Moved mid-year** (new) | which school accounts are topped up or drained every year | `transfers_adjustments` column | S |
+| 10 | **11. Athletics through the books** | the revolving fund 1301 is now in all four years | both | S |
+| 11 | **8. What each part of Lunenburg really costs** | the capstone: needs 3, 4, 5 and 10 first | everything | L |
+| 12 | **1. The town's own deficit** and **2. Town budget against spending** | the delivery adds nothing town-side; data unchanged since 5 October | town datasets | M each |
+| 13 | **14. Lost books and technology, entry by entry** (new) | small, and the only fund with journal detail | trial balance | S |
+| -- | **15. The close, measured** (new, a note not a page) | how encumbrances at the close resolve; from the FY2024 report run twice | the two FY2024 runs | S |
+
+Size: S = one table and a few conclusions; M = a page; L = the big one. A report the town side
+cannot support yet says so and registers the gap (7c) rather than waiting.
 
 Agreed with TJ, 5 October 2026, after the delivery was read into tables (37 of 37 tasks, see
 `notes/generated/FINANCE-COMMITTEE-INGEST.md`). Not started: the week's usage was spent on the
@@ -175,3 +203,53 @@ trainer, officials, transportation, uniforms...), the revolving fund by building
 the coaching stipend schedule by sport (the teachers' contract) -- together, cost per sport from
 records rather than estimates. Fields, custodial and utilities are not coded 3510 at all
 (money-gaps row on athletics' share of grounds).
+
+
+---
+
+## Added 6 October 2026: what the Town's period-13 delivery adds
+
+Source: `sources/data/munis-school-ytd.csv` -- MUNIS `glytdbud`, the school department's
+General Fund and special funds (61 funds) at **period 13, the closed year, FY2023-FY2026**,
+account by account, revenue and expense; and `munis-trial-balance*.csv`, fund 1300 FY2026
+with every journal line. Provenance: `sources/town-ledgers/expenses/PROVENANCE-fy2023-fy2026-p13-school.md`.
+What was asked for and what came: `notes/findings/MUNIS-REQUEST-ASKED-VS-DELIVERED.md`.
+
+**What it changes in 1-11.** Every school report above was written against the FY2024 ledger
+alone, with FY2025 part-year. All of them can now use four closed years. Report 5's stated
+limit (*"FY25 is part-year"*) no longer applies; report 9's *"do not conclude from one
+snapshot"* is answerable with four year-ends. **What it does NOT carry:** fund balances (the
+report is budget-form: in and out per year, not what is held), positions, vendors (except
+fund 1300), or the town side.
+
+**One trap, found while extracting:** the FY2024 period-13 report now exists twice -- run
+08/07/2024 (`fincom-ledgers.csv`) and 10/06/2026 -- and the two do NOT cover the same scope
+(departments 300 + 301 every fund, against orgs beginning `S`). Compare like for like or not
+at all.
+
+### 12. Spent with no budget
+**Question:** which school accounts spent money against a $0 appropriation, how much, and how
+often does it recur?
+**Data:** `munis-school-ytd.csv`, `revised_budget` = 0 and `ytd_expended` > 0, by year.
+**The worked case:** kindergarten aides and paraprofessionals (`S2032121`, `S2032131`), FY2026.
+**Say plainly:** spending against a zero line is not by itself improper -- it can be covered
+elsewhere in the department's total; what it shows is that the voted line-item budget did not
+describe what happened. What the spending WAS needs a journal export (asked for next).
+
+### 13. Moved mid-year
+**Question:** which accounts have their budget changed during the year, by how much, and is it
+the same accounts every year?
+**Data:** `transfers_adjustments`, four years. **Limit:** a net figure per account with no
+counterparty -- what moved WHERE is the FY2026 transfer schedule, not yet delivered.
+
+### 14. Lost books and technology, entry by entry
+**Question:** what the fund 1300 money came from and went to in FY2026.
+**Data:** `munis-trial-balance-journal.csv` (receipts, payments, purchase orders; vendors named).
+Small, and the only fund here with transaction detail -- useful mainly as the worked example of
+what a journal export shows, for the next request.
+
+### 15. The close, measured (a note, not a page)
+**Measured, 6 October 2026:** like for like (General Fund), the August 2024 run's encumbrances
+equal the later rise in spent plus the later rise in available, to the cent. **Hypothesis, not
+stated as fact:** purchase orders closed out over two years. Worth a short finding, because it
+says how much a period-13 figure can still move -- which every report above leans on.
