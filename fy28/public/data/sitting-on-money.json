@@ -1,0 +1,2078 @@
+{
+ "about": "Every pot of money the town and the schools hold outside the voted budget, as a balance at each 30 June, and whether it is growing.",
+ "circuit_breaker": {
+  "fell_years": [
+   2021,
+   2022,
+   2023,
+   2024,
+   2026
+  ],
+  "flows": {
+   "2023": {
+    "received": 415750.0,
+    "spent": 494967.72
+   },
+   "2024": {
+    "received": 301589.0,
+    "spent": 466295.98
+   },
+   "2025": {
+    "received": 608818.0,
+    "spent": 498451.35
+   },
+   "2026": {
+    "received": 325970.0,
+    "spent": 337499.41
+   }
+  },
+  "peak_fy": 2020
+ },
+ "conclusions": [
+  {
+   "basis": "`special-revenue-read.csv` (FY2011-FY2023, ties to every printed total); `munis-school-ytd.csv` period 13 (FY2024-FY2026); proved against `school-special-revenue-fy26-q3.csv`.",
+   "bearing": "sizes",
+   "claim": "The schools’ fee, choice, lunch and circuit-breaker funds held $1,167,744 at 30 June 2026.",
+   "detail": "The same fourteen funds every year, from $483,815 at 30 June 2011. Through FY2023 each balance is the annual report’s own; after it, the 30 June 2023 balance is carried through the period-13 ledgers, and the 30 June 2025 result matches the Town’s March 2026 report to the cent for every fund. The grant funds are not in this total.",
+   "figure": "last",
+   "figures": {
+    "first": {
+     "text": "$483,815",
+     "unit": "",
+     "value": 483815.22
+    },
+    "last": {
+     "text": "$1,167,744",
+     "unit": "held by the same fourteen school funds, 30 June 2026",
+     "value": 1167744.31
+    },
+    "peak": {
+     "text": "$2,170,682",
+     "unit": "",
+     "value": 2170682.37
+    }
+   },
+   "id": "the-schools-funds-peaked-and-have-fallen",
+   "kind": "measured",
+   "literals": [
+    "30 June 2026",
+    "30 June 2023",
+    "30 June 2025",
+    "30 June 2011",
+    "FY2022",
+    "FY2023",
+    "March 2026",
+    "13"
+   ],
+   "not_shown": "What the balances were spent on, or whether a lower balance means a programme cost more, took in less, or was deliberately drawn down.",
+   "see": [
+    {
+     "label": "The money outside the budget",
+     "slug": "/money-outside-the-budget"
+    }
+   ],
+   "so_what": "They rose to $2,170,682 in FY2022 and have fallen since: not growing now."
+  },
+  {
+   "basis": "`free-cash-history-fincom.csv` (the Town’s fact sheet) checked against `free-cash-proof.csv` (the Division of Local Services).",
+   "bearing": "lever",
+   "claim": "Certified free cash rose from $263,188 at the FY2015 close to $3,354,370 at the FY2025 close.",
+   "detail": "Not a steady climb: it fell in 3 of 10 years and rose in 7. The state’s own proof agrees with every figure it covers. Free cash is not held by any department: Town Meeting appropriates it. The Town’s FY27 budget release cites a state guide of 5-7% of its annual budget.",
+   "figure": "last",
+   "figures": {
+    "fell": {
+     "text": "3",
+     "unit": "years",
+     "value": 3
+    },
+    "first": {
+     "text": "$263,188",
+     "unit": "",
+     "value": 263188.0
+    },
+    "firstpct": {
+     "text": "0.81%",
+     "unit": "",
+     "value": 0.81
+    },
+    "last": {
+     "text": "$3,354,370",
+     "unit": "certified free cash, as of 1 July 2025",
+     "value": 3354370.0
+    },
+    "pct": {
+     "text": "6.65%",
+     "unit": "",
+     "value": 6.65
+    },
+    "rose": {
+     "text": "7",
+     "unit": "years",
+     "value": 7
+    },
+    "steps": {
+     "text": "10",
+     "unit": "years",
+     "value": 10
+    }
+   },
+   "id": "free-cash-has-grown-most",
+   "kind": "measured",
+   "literals": [
+    "FY2015",
+    "FY2025",
+    "1 July 2025",
+    "FY27",
+    "5-7% of its annual budget"
+   ],
+   "not_shown": "Whether the balance is too high or too low: the guide is a range, and how much of each year’s free cash was then appropriated is in /analysis/free-cash, not here.",
+   "see": [
+    {
+     "label": "Free cash: hoarding, or rebuilding?",
+     "slug": "/analysis/free-cash"
+    }
+   ],
+   "so_what": "6.65% of the prior year’s budget by the Town’s own count, against 0.81% then. Spent only by Town Meeting."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, report gf-school, period 13, `available_budget` summed; the free cash proof’s line CL#11.",
+   "bearing": "sizes",
+   "claim": "The school general fund closed FY2026 with $482,118 unspent; FY2025 with $627,117.",
+   "detail": "$106,827 in FY2023 and $215,776 in FY2024, so the last two years are larger. A further $236,767 was still committed to open purchase orders at the FY2026 close. The state’s free cash proof adds unspent, uncommitted appropriations back as one of its lines, which is how this money reaches free cash.",
+   "figure": "y26",
+   "figures": {
+    "enc": {
+     "text": "$236,767",
+     "unit": "",
+     "value": 236766.94
+    },
+    "y23": {
+     "text": "$106,827",
+     "unit": "",
+     "value": 106826.75
+    },
+    "y24": {
+     "text": "$215,776",
+     "unit": "",
+     "value": 215776.28
+    },
+    "y25": {
+     "text": "$627,117",
+     "unit": "",
+     "value": 627116.86
+    },
+    "y26": {
+     "text": "$482,118",
+     "unit": "unspent in the school general fund at the FY2026 close",
+     "value": 482118.07
+    }
+   },
+   "id": "the-school-turnback-goes-to-the-town",
+   "kind": "measured",
+   "literals": [
+    "FY2026",
+    "FY2025",
+    "FY2024",
+    "FY2023",
+    "CL#11"
+   ],
+   "not_shown": "Why more was left in FY2025 and FY2026; which accounts it sat in is in the FY25 and FY26 school surplus reports.",
+   "see": [],
+   "so_what": "Not kept by the schools: the state’s free cash calculation adds unspent appropriations back for the town."
+  },
+  {
+   "basis": "`free-cash-proof.csv` line CL#11 against `munis-school-ytd.csv` gf-school period 13 `available_budget`.",
+   "bearing": "sizes",
+   "claim": "The schools were $627,117 of the $2,457,761 the town left unspent at the FY2025 close.",
+   "detail": "17.6% at the FY2024 close and 18.1% at the FY2023 close. Two documents, set side by side: the state’s proof prints one town-wide line, and the school figure is department 300’s own ledger. The remainder is everything else the town appropriated, which nothing published splits by department.",
+   "figure": "share",
+   "figures": {
+    "s23": {
+     "text": "18.1%",
+     "unit": "",
+     "value": 18.1
+    },
+    "s24": {
+     "text": "17.6%",
+     "unit": "",
+     "value": 17.6
+    },
+    "school": {
+     "text": "$627,117",
+     "unit": "",
+     "value": 627116.86
+    },
+    "share": {
+     "text": "25.5%",
+     "unit": "of the town’s unspent appropriations at the FY2025 close was the schools’",
+     "value": 25.5
+    },
+    "town": {
+     "text": "$2,457,761",
+     "unit": "",
+     "value": 2457761.0
+    }
+   },
+   "id": "the-schools-share-of-what-went-unspent",
+   "kind": "measured",
+   "literals": [
+    "FY2025",
+    "FY2024",
+    "FY2023",
+    "300"
+   ],
+   "not_shown": "Which town departments or articles make up the remainder: registered as a gap, closed by a departmental turnback schedule.",
+   "see": [
+    {
+     "label": "What we cannot answer",
+     "slug": "/what-we-cannot-answer"
+    }
+   ],
+   "so_what": "25.5% — the rest of the general fund left the larger part, and no published document says which departments."
+  },
+  {
+   "basis": "`free-cash-proof.csv`, line CL#6, Lunenburg; Finance Committee minutes of 28 May 2026.",
+   "bearing": "lever",
+   "claim": "Receipts above the town’s estimate added over $1,000,000 a year to free cash, FY2022–FY2025.",
+   "detail": "The state’s proof shows between $1,006,025 and $1,363,025 a year. On 28 May 2026 a Finance Committee member said the town had not collected less than four million in local receipts in ten years, against an estimate of 3.535 million. Why the estimate is set where it is is a hypothesis here; nothing tests it.",
+   "figure": "min",
+   "figures": {
+    "max": {
+     "text": "$1,363,025",
+     "unit": "",
+     "value": 1363025.0
+    },
+    "million": {
+     "text": "$1,000,000",
+     "unit": "",
+     "value": 1000000.0
+    },
+    "min": {
+     "text": "$1,006,025",
+     "unit": "the smallest of those years’ receipts above estimate",
+     "value": 1006025.0
+    }
+   },
+   "id": "receipts-above-estimate-feed-free-cash",
+   "kind": "measured",
+   "literals": [
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "28 May 2026",
+    "3.535",
+    "CL#6"
+   ],
+   "not_shown": "Whether the margin is deliberate caution, receipts that grew faster than anyone could forecast, or one-time money; each fits the same line.",
+   "see": [],
+   "so_what": "Where the town sets its revenue estimate is a decision, and it decides part of how big free cash gets."
+  },
+  {
+   "basis": "`special-revenue-read.csv`, FY2011-FY2023, non-school funds, split by name.",
+   "bearing": "sizes",
+   "claim": "Of $8,277,392 in town special revenue funds at 30 June 2023, 86% was ARPA or utility money.",
+   "detail": "Federal relief $3,337,921 and enterprises $3,800,195. Everything else the town held in special revenue came to $1,139,277, against $813,012 at 30 June 2011. Later years are printed in a different table this project has not yet read.",
+   "figure": "pct",
+   "figures": {
+    "ent": {
+     "text": "$3,800,195",
+     "unit": "",
+     "value": 3800194.91
+    },
+    "other": {
+     "text": "$1,139,277",
+     "unit": "",
+     "value": 1139276.72
+    },
+    "other11": {
+     "text": "$813,012",
+     "unit": "",
+     "value": 813012.01
+    },
+    "pct": {
+     "text": "86%",
+     "unit": "of town special revenue at 30 June 2023 was federal relief or enterprise",
+     "value": 86.2
+    },
+    "relief": {
+     "text": "$3,337,921",
+     "unit": "",
+     "value": 3337920.52
+    },
+    "total": {
+     "text": "$8,277,392",
+     "unit": "",
+     "value": 8277392.149999999
+    }
+   },
+   "id": "most-town-special-revenue-is-not-free-to-spend",
+   "kind": "measured",
+   "literals": [
+    "30 June 2023",
+    "30 June 2011",
+    "30 June 2024, 2025 or 2026"
+   ],
+   "not_shown": "What the town funds held at 30 June 2024, 2025 or 2026: registered as a gap.",
+   "see": [],
+   "so_what": "Federal relief with federal deadlines, and water, sewer, trash and cable money kept for ratepayers."
+  },
+  {
+   "basis": "`stabilization-balances.csv`, name STABILIZATION, `ending_cash`.",
+   "bearing": "sizes",
+   "claim": "The general stabilization fund grew from $1,186,777 in FY2011 to $2,901,158 in FY2024.",
+   "detail": "Year-end cash, each year closed on the identities its own table prints. The special-purpose stabilization funds are counted separately in /analysis/stabilization-funds.",
+   "figure": "last",
+   "figures": {
+    "first": {
+     "text": "$1,186,777",
+     "unit": "",
+     "value": 1186776.91
+    },
+    "last": {
+     "text": "$2,901,158",
+     "unit": "in the general stabilization fund, 30 June 2024",
+     "value": 2901157.6
+    }
+   },
+   "id": "the-general-stabilization-fund-is-growing",
+   "kind": "measured",
+   "literals": [
+    "FY2011",
+    "FY2024"
+   ],
+   "not_shown": "How much of the growth is deposits voted by Town Meeting and how much is interest.",
+   "see": [
+    {
+     "label": "Stabilization funds",
+     "slug": "/analysis/stabilization-funds"
+    }
+   ],
+   "so_what": "A reserve by design: spending it takes a two-thirds vote of Town Meeting."
+  },
+  {
+   "basis": "`special-revenue-read.csv` (“50/50 Grant Sped Tuitions”), then fund 2640 in `munis-school-ytd.csv`; identified by FY2023 receipts equal to the cent.",
+   "bearing": "sizes",
+   "claim": "The circuit breaker fund closed FY2026 at $281,806, down from $482,004 at its FY2020 high.",
+   "detail": "The state reimburses part of high-cost special education after the year; the district may carry it forward. In March 2024 the district told the Finance Committee a tuition rise was probably absorbed by circuit breaker carry-over, which is why the account had gone down.",
+   "figure": "last",
+   "figures": {
+    "fell": {
+     "text": "5",
+     "unit": "years",
+     "value": 5
+    },
+    "last": {
+     "text": "$281,806",
+     "unit": "in the circuit breaker fund, 30 June 2026",
+     "value": 281805.77
+    },
+    "peak": {
+     "text": "$482,004",
+     "unit": "",
+     "value": 482004.0
+    },
+    "span": {
+     "text": "6",
+     "unit": "years",
+     "value": 6
+    }
+   },
+   "id": "the-circuit-breaker-is-being-drawn-down",
+   "kind": "measured",
+   "literals": [
+    "FY2026",
+    "FY2020",
+    "March 2024",
+    "2640",
+    "FY2023",
+    "50/50"
+   ],
+   "not_shown": "Which children’s costs the carry-over paid for in any year.",
+   "see": [
+    {
+     "label": "What special education costs",
+     "slug": "/what-special-education-costs"
+    }
+   ],
+   "so_what": "It fell in 5 of the 6 years since: received and spent, not piling up."
+  }
+ ],
+ "free_cash": [
+  {
+   "amount": 263188.0,
+   "budget": 32452875.0,
+   "certified": "10/13/2015",
+   "fy": 2015,
+   "pct": "0.81%"
+  },
+  {
+   "amount": 888944.0,
+   "budget": 34948060.0,
+   "certified": "2/16/2017",
+   "fy": 2016,
+   "pct": "2.54%"
+  },
+  {
+   "amount": 818886.0,
+   "budget": 36762549.0,
+   "certified": "10/3/2017",
+   "fy": 2017,
+   "pct": "2.23%"
+  },
+  {
+   "amount": 1512483.0,
+   "budget": 39300938.0,
+   "certified": "10/22/2018",
+   "fy": 2018,
+   "pct": "3.85%"
+  },
+  {
+   "amount": 1107694.0,
+   "budget": 40482685.0,
+   "certified": "10/18/2019",
+   "fy": 2019,
+   "pct": "2.74%"
+  },
+  {
+   "amount": 1804185.0,
+   "budget": 42520507.0,
+   "certified": "10/13/2020",
+   "fy": 2020,
+   "pct": "4.24%"
+  },
+  {
+   "amount": 2666962.0,
+   "budget": 42743616.0,
+   "certified": "10/8/2021",
+   "fy": 2021,
+   "pct": "6.24%"
+  },
+  {
+   "amount": 2923290.0,
+   "budget": 44742766.0,
+   "certified": "10/25/2022",
+   "fy": 2022,
+   "pct": "6.53%"
+  },
+  {
+   "amount": 1870612.0,
+   "budget": 47551576.0,
+   "certified": "11/3/2023",
+   "fy": 2023,
+   "pct": "3.93%"
+  },
+  {
+   "amount": 2270060.0,
+   "budget": 49661935.0,
+   "certified": "12/11/2024",
+   "fy": 2024,
+   "pct": "4.57%"
+  },
+  {
+   "amount": 3354370.0,
+   "budget": 50420663.0,
+   "certified": "3/11/2026",
+   "fy": 2025,
+   "pct": "6.65%"
+  }
+ ],
+ "free_cash_proof": {
+  "2021": {
+   "certified": 2666962.0,
+   "cherry": 240260.0,
+   "receipts": 590516.0,
+   "unspent": 1377642.0,
+   "unused": 318581.0
+  },
+  "2022": {
+   "certified": 2923290.0,
+   "cherry": 120947.0,
+   "receipts": 1049137.0,
+   "unspent": 754201.0,
+   "unused": 516732.0
+  },
+  "2023": {
+   "certified": 1870612.0,
+   "cherry": 327281.0,
+   "receipts": 1006025.0,
+   "unspent": 588680.0,
+   "unused": 209426.0
+  },
+  "2024": {
+   "certified": 2270060.0,
+   "cherry": -390814.0,
+   "receipts": 1363025.0,
+   "unspent": 1224836.0,
+   "unused": 214884.0
+  },
+  "2025": {
+   "certified": 3354370.0,
+   "cherry": 149455.0,
+   "receipts": 1225720.0,
+   "unspent": 2457761.0,
+   "unused": 270669.0
+  }
+ },
+ "gaps": [
+  "What the town’s own special revenue funds held at 30 June 2024, 2025 and 2026",
+  "What the school grant funds held at 30 June 2024, 2025 and 2026",
+  "Why local receipts come in above the town’s own estimate",
+  "How much of free cash is the schools’"
+ ],
+ "generated_by": "scripts/build_sitting_on_money.py",
+ "grain": "DOLLARS held at a 30 June, fund by fund, for as many years as a document prints it — balances, not flows — except the turnback, which is one year’s unspent appropriation at the close. Series from different documents are set side by side and never added.",
+ "not_established": [
+  "What any balance was spent on, or why a balance rose or fell — the ledgers give amounts, not reasons.",
+  "What the town’s own special revenue funds held after 30 June 2023 (registered gap).",
+  "What the school grant funds held after 30 June 2023 (registered gap).",
+  "Which town departments make up the unspent appropriations that are not the schools’ (registered gap).",
+  "Why receipts come in above the estimate (registered gap).",
+  "The FY2026 school balances against any second document; they are carried, and the carry is proved only to 30 June 2025."
+ ],
+ "pots": [
+  {
+   "key": "school",
+   "label": "The schools’ own fourteen funds",
+   "points": [
+    {
+     "fy": 2011,
+     "value": 483815.22
+    },
+    {
+     "fy": 2012,
+     "value": 402510.53
+    },
+    {
+     "fy": 2013,
+     "value": 169822.74
+    },
+    {
+     "fy": 2014,
+     "value": 295328.1
+    },
+    {
+     "fy": 2015,
+     "value": 521173.03
+    },
+    {
+     "fy": 2016,
+     "value": 1118121.84
+    },
+    {
+     "fy": 2017,
+     "value": 798884.21
+    },
+    {
+     "fy": 2018,
+     "value": 759300.53
+    },
+    {
+     "fy": 2019,
+     "value": 1169548.11
+    },
+    {
+     "fy": 2020,
+     "value": 1566606.02
+    },
+    {
+     "fy": 2021,
+     "value": 1922745.79
+    },
+    {
+     "fy": 2022,
+     "value": 2170682.37
+    },
+    {
+     "fy": 2023,
+     "value": 1707119.54
+    },
+    {
+     "fy": 2024,
+     "value": 1232100.08
+    },
+    {
+     "fy": 2025,
+     "value": 1530376.06
+    },
+    {
+     "fy": 2026,
+     "value": 1167744.31
+    }
+   ],
+   "who": "School Committee, without a Town Meeting vote"
+  },
+  {
+   "key": "free_cash",
+   "label": "Free cash (certified)",
+   "points": [
+    {
+     "fy": 2015,
+     "value": 263188.0
+    },
+    {
+     "fy": 2016,
+     "value": 888944.0
+    },
+    {
+     "fy": 2017,
+     "value": 818886.0
+    },
+    {
+     "fy": 2018,
+     "value": 1512483.0
+    },
+    {
+     "fy": 2019,
+     "value": 1107694.0
+    },
+    {
+     "fy": 2020,
+     "value": 1804185.0
+    },
+    {
+     "fy": 2021,
+     "value": 2666962.0
+    },
+    {
+     "fy": 2022,
+     "value": 2923290.0
+    },
+    {
+     "fy": 2023,
+     "value": 1870612.0
+    },
+    {
+     "fy": 2024,
+     "value": 2270060.0
+    },
+    {
+     "fy": 2025,
+     "value": 3354370.0
+    }
+   ],
+   "who": "Town Meeting, for any lawful purpose"
+  },
+  {
+   "key": "stabilization",
+   "label": "General stabilization fund",
+   "points": [
+    {
+     "fy": 2011,
+     "value": 1186776.91
+    },
+    {
+     "fy": 2012,
+     "value": 989608.54
+    },
+    {
+     "fy": 2013,
+     "value": 999548.94
+    },
+    {
+     "fy": 2014,
+     "value": 1299077.98
+    },
+    {
+     "fy": 2015,
+     "value": 1388105.33
+    },
+    {
+     "fy": 2016,
+     "value": 1511526.92
+    },
+    {
+     "fy": 2017,
+     "value": 1631430.63
+    },
+    {
+     "fy": 2018,
+     "value": 1740279.81
+    },
+    {
+     "fy": 2019,
+     "value": 1848802.86
+    },
+    {
+     "fy": 2020,
+     "value": 1978347.74
+    },
+    {
+     "fy": 2021,
+     "value": 2447755.21
+    },
+    {
+     "fy": 2022,
+     "value": 2574673.21
+    },
+    {
+     "fy": 2023,
+     "value": 2730600.73
+    },
+    {
+     "fy": 2024,
+     "value": 2901157.6
+    }
+   ],
+   "who": "Town Meeting, by a two-thirds vote"
+  },
+  {
+   "key": "town_other",
+   "label": "Town special revenue, other",
+   "points": [
+    {
+     "fy": 2011,
+     "value": 813012.01
+    },
+    {
+     "fy": 2012,
+     "value": 287205.41
+    },
+    {
+     "fy": 2013,
+     "value": 756490.2
+    },
+    {
+     "fy": 2014,
+     "value": 790123.86
+    },
+    {
+     "fy": 2015,
+     "value": 824861.36
+    },
+    {
+     "fy": 2016,
+     "value": 419310.36
+    },
+    {
+     "fy": 2017,
+     "value": 930195.03
+    },
+    {
+     "fy": 2018,
+     "value": 968613.74
+    },
+    {
+     "fy": 2019,
+     "value": 1126964.03
+    },
+    {
+     "fy": 2020,
+     "value": 844981.65
+    },
+    {
+     "fy": 2021,
+     "value": 388368.61
+    },
+    {
+     "fy": 2022,
+     "value": 658991.86
+    },
+    {
+     "fy": 2023,
+     "value": 1139276.72
+    }
+   ],
+   "who": "Each fund under its own statute or vote"
+  },
+  {
+   "key": "enterprise",
+   "label": "Water, sewer, trash and cable enterprises",
+   "points": [
+    {
+     "fy": 2011,
+     "value": 1497430.65
+    },
+    {
+     "fy": 2012,
+     "value": 1429762.41
+    },
+    {
+     "fy": 2013,
+     "value": 1335475.2
+    },
+    {
+     "fy": 2014,
+     "value": 1436177.64
+    },
+    {
+     "fy": 2015,
+     "value": 1390972.34
+    },
+    {
+     "fy": 2016,
+     "value": 1545961.32
+    },
+    {
+     "fy": 2017,
+     "value": 1905512.58
+    },
+    {
+     "fy": 2018,
+     "value": 2235244.04
+    },
+    {
+     "fy": 2019,
+     "value": 2288992.07
+    },
+    {
+     "fy": 2020,
+     "value": 3024913.97
+    },
+    {
+     "fy": 2021,
+     "value": 3411161.67
+    },
+    {
+     "fy": 2022,
+     "value": 3922392.11
+    },
+    {
+     "fy": 2023,
+     "value": 3800194.91
+    }
+   ],
+   "who": "Town Meeting, for that utility only"
+  },
+  {
+   "key": "relief",
+   "label": "Federal pandemic relief (ARPA, CARES)",
+   "points": [
+    {
+     "fy": 2020,
+     "value": 97897.92
+    },
+    {
+     "fy": 2021,
+     "value": 689131.26
+    },
+    {
+     "fy": 2022,
+     "value": 1647745.03
+    },
+    {
+     "fy": 2023,
+     "value": 3337920.52
+    }
+   ],
+   "who": "Under federal rules, with federal deadlines"
+  }
+ ],
+ "quotes": [
+  {
+   "body": "School Committee",
+   "date": "26 August 2026",
+   "file": "school-committee/2026-08-26-minutes-7980.txt",
+   "text": "She referenced balances in several school-related accounts and questioned whether any portion of those funds could legally or appropriately be used to reduce pressure on the operating budget",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+   "who": "a resident, speaking for herself in public comment"
+  },
+  {
+   "body": "School Committee",
+   "date": "26 August 2026",
+   "file": "school-committee/2026-08-26-minutes-7980.txt",
+   "text": "referenced an estimated cost of approximately $19,350 to restore certain middle school sports",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+   "who": "the same speaker, just before"
+  },
+  {
+   "body": "Finance Committee",
+   "date": "14 March 2024",
+   "file": "finance-committee/2024-03-14-minutes-6469.txt",
+   "text": "it is probably absorbed with a lot of the carry over for the circuit breaker monies and that’s why that account has gone down",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03142024-6469",
+   "who": "the district’s Director of Special Services, asked how the previous year’s tuition increase had been absorbed"
+  },
+  {
+   "body": "School Committee",
+   "date": "8 January 2025",
+   "file": "school-committee/2025-01-08-minutes-6948.txt",
+   "text": "these accounts are following the same patterns as other revolving accounts, which is the money coming in is not enough to cover the money going out",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082025-6948",
+   "who": "the district, presenting the school choice and facilities revolving accounts"
+  },
+  {
+   "body": "Finance Committee",
+   "date": "28 May 2026",
+   "file": "finance-committee/2026-05-28-minutes-7828.txt",
+   "text": "for the last 10 years the town has not collected less than 4 million dollars in local receipts. This year’s estimate is 3.535 million.",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05282026-7828",
+   "who": "two Finance Committee members"
+  },
+  {
+   "body": "Finance Committee",
+   "date": "28 May 2026",
+   "file": "finance-committee/2026-05-28-minutes-7828.txt",
+   "text": "suggests having an analyst review all of the town’s policies on free cash and estimates",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05282026-7828",
+   "who": "the same meeting"
+  }
+ ],
+ "school_categories": [
+  {
+   "key": "cb",
+   "label": "Circuit breaker (special education reimbursement)",
+   "short": "Circuit breaker"
+  },
+  {
+   "key": "choice",
+   "label": "School choice tuition received",
+   "short": "School choice"
+  },
+  {
+   "key": "lunch",
+   "label": "School lunch",
+   "short": "Lunch"
+  },
+  {
+   "key": "fees",
+   "label": "Fee-funded revolving funds (athletics, after-school, extended day, rentals and four more)",
+   "short": "Fee-funded revolving"
+  },
+  {
+   "key": "gifts",
+   "label": "Gift funds",
+   "short": "Gifts"
+  }
+ ],
+ "school_funds": [
+  {
+   "balances": {
+    "2023": 347675.51,
+    "2024": 182968.53,
+    "2025": 293335.18,
+    "2026": 281805.77
+   },
+   "category": "cb",
+   "fund": "2640",
+   "march_2026_balance": 615300.66,
+   "march_2026_implied_opening": 293335.18,
+   "name": "50/50 Grant Sped Tuitions"
+  },
+  {
+   "balances": {
+    "2023": 338540.8,
+    "2024": 147912.14,
+    "2025": 246902.71,
+    "2026": 326281.11
+   },
+   "category": "choice",
+   "fund": "1308",
+   "march_2026_balance": 299460.97,
+   "march_2026_implied_opening": 246902.71,
+   "name": "School Choice"
+  },
+  {
+   "balances": {
+    "2023": 347541.61,
+    "2024": 437584.39,
+    "2025": 455125.72,
+    "2026": 75038.97
+   },
+   "category": "lunch",
+   "fund": "2200",
+   "march_2026_balance": 287770.77,
+   "march_2026_implied_opening": 455125.72,
+   "name": "School Lunch"
+  },
+  {
+   "balances": {
+    "2023": 126372.26,
+    "2024": 11562.99,
+    "2025": 110247.89,
+    "2026": 152280.91
+   },
+   "category": "fees",
+   "fund": "1301",
+   "march_2026_balance": 169944.8,
+   "march_2026_implied_opening": 110247.89,
+   "name": "Chapter 658 School Athletics"
+  },
+  {
+   "balances": {
+    "2023": 183725.02,
+    "2024": 148503.63,
+    "2025": 132397.09,
+    "2026": 134542.19
+   },
+   "category": "fees",
+   "fund": "1305",
+   "march_2026_balance": 148577.68,
+   "march_2026_implied_opening": 132397.09,
+   "name": "After School Activities"
+  },
+  {
+   "balances": {
+    "2023": 238492.97,
+    "2024": 183356.08,
+    "2025": 94567.02,
+    "2026": -2568.63
+   },
+   "category": "fees",
+   "fund": "1312",
+   "march_2026_balance": 54160.66,
+   "march_2026_implied_opening": 94567.02,
+   "name": "Extended Day Revolving Fund"
+  },
+  {
+   "balances": {
+    "2023": 7522.06,
+    "2024": 3010.67,
+    "2025": 65241.82,
+    "2026": 70838.82
+   },
+   "category": "fees",
+   "fund": "1306",
+   "march_2026_balance": 71558.82,
+   "march_2026_implied_opening": 65241.82,
+   "name": "School Facilities Use"
+  },
+  {
+   "balances": {
+    "2023": 11293.75,
+    "2024": 11163.75,
+    "2025": 11623.75,
+    "2026": 12893.75
+   },
+   "category": "fees",
+   "fund": "1302",
+   "march_2026_balance": 12743.75,
+   "march_2026_implied_opening": 11623.75,
+   "name": "Adult Education"
+  },
+  {
+   "balances": {
+    "2023": 14347.1,
+    "2024": 14099.37,
+    "2025": 14466.17,
+    "2026": 2000.42
+   },
+   "category": "fees",
+   "fund": "1300",
+   "march_2026_balance": 16665.42,
+   "march_2026_implied_opening": 14466.17,
+   "name": "Recovery for Lost Books"
+  },
+  {
+   "balances": {
+    "2023": 2372.77,
+    "2024": 2372.77,
+    "2025": 2390.77,
+    "2026": 1390.77
+   },
+   "category": "fees",
+   "fund": "1310",
+   "march_2026_balance": 2390.77,
+   "march_2026_implied_opening": 2390.77,
+   "name": "Greenthumb Revolving"
+  },
+  {
+   "balances": {
+    "2023": 1954.71,
+    "2024": 1954.71,
+    "2025": 1954.71,
+    "2026": 1954.71
+   },
+   "category": "fees",
+   "fund": "1314",
+   "march_2026_balance": 1954.71,
+   "march_2026_implied_opening": 1954.71,
+   "name": "Vending Machine Revolving"
+  },
+  {
+   "balances": {
+    "2023": 74980.34,
+    "2024": 75310.41,
+    "2025": 89822.59,
+    "2026": 101417.57
+   },
+   "category": "gifts",
+   "fund": "1311",
+   "march_2026_balance": 109397.82,
+   "march_2026_implied_opening": 89822.59,
+   "name": "School Gift Fund"
+  },
+  {
+   "balances": {
+    "2023": 2300.64,
+    "2024": 2300.64,
+    "2025": 2300.64,
+    "2026": -132.05
+   },
+   "category": "gifts",
+   "fund": "1315",
+   "march_2026_balance": 2300.64,
+   "march_2026_implied_opening": 2300.64,
+   "name": "Family Network Gift Fund"
+  },
+  {
+   "balances": {
+    "2023": 10000.0,
+    "2024": 10000.0,
+    "2025": 10000.0,
+    "2026": 10000.0
+   },
+   "category": "gifts",
+   "fund": "1549",
+   "march_2026_balance": 10000.0,
+   "march_2026_implied_opening": 10000.0,
+   "name": "Technology for School Children Gift Fund"
+  }
+ ],
+ "school_gf": {
+  "2023": {
+   "available_budget": 106826.75,
+   "encumbrances": 0.0,
+   "original_approp": 22325309.0,
+   "revised_budget": 22510690.19,
+   "transfers_adjustments": 185381.19,
+   "ytd_expended": 22403863.44
+  },
+  "2024": {
+   "available_budget": 215776.28,
+   "encumbrances": 0.0,
+   "original_approp": 22883442.0,
+   "revised_budget": 22959235.83,
+   "transfers_adjustments": 75793.83,
+   "ytd_expended": 22743459.55
+  },
+  "2025": {
+   "available_budget": 627116.86,
+   "encumbrances": 0.0,
+   "original_approp": 25304074.0,
+   "revised_budget": 25181571.56,
+   "transfers_adjustments": -122502.44,
+   "ytd_expended": 24554454.7
+  },
+  "2026": {
+   "available_budget": 482118.07,
+   "encumbrances": 236766.94,
+   "original_approp": 26247474.0,
+   "revised_budget": 26332564.24,
+   "transfers_adjustments": 85090.24,
+   "ytd_expended": 25613679.23
+  }
+ },
+ "school_other_2023": 46588.09,
+ "school_series": [
+  {
+   "basis": "annual report",
+   "cb": 35565.1,
+   "choice": 191468.27,
+   "fees": 199717.99,
+   "fy": 2011,
+   "gifts": 44863.11,
+   "lunch": 12200.75,
+   "total": 483815.22
+  },
+  {
+   "basis": "annual report",
+   "cb": 23253.84,
+   "choice": 134583.69,
+   "fees": 177677.74,
+   "fy": 2012,
+   "gifts": 52225.26,
+   "lunch": 14770.0,
+   "total": 402510.53
+  },
+  {
+   "basis": "annual report",
+   "cb": -136411.97,
+   "choice": 61644.33,
+   "fees": 165217.33,
+   "fy": 2013,
+   "gifts": 49794.1,
+   "lunch": 29578.95,
+   "total": 169822.74
+  },
+  {
+   "basis": "annual report",
+   "cb": -112882.47,
+   "choice": 88023.05,
+   "fees": 244478.55,
+   "fy": 2014,
+   "gifts": 54201.43,
+   "lunch": 21507.54,
+   "total": 295328.1
+  },
+  {
+   "basis": "annual report",
+   "cb": -119894.01,
+   "choice": 254512.23,
+   "fees": 284712.59,
+   "fy": 2015,
+   "gifts": 75792.08,
+   "lunch": 26050.14,
+   "total": 521173.03
+  },
+  {
+   "basis": "annual report",
+   "cb": 256030.83,
+   "choice": 396869.58,
+   "fees": 354455.8,
+   "fy": 2016,
+   "gifts": 99025.68,
+   "lunch": 11739.95,
+   "total": 1118121.84
+  },
+  {
+   "basis": "annual report",
+   "cb": 238144.39,
+   "choice": 255288.07,
+   "fees": 243328.16,
+   "fy": 2017,
+   "gifts": 60680.13,
+   "lunch": 1443.46,
+   "total": 798884.21
+  },
+  {
+   "basis": "annual report",
+   "cb": 207928.39,
+   "choice": 251272.6,
+   "fees": 254031.16,
+   "fy": 2018,
+   "gifts": 45337.88,
+   "lunch": 730.5,
+   "total": 759300.53
+  },
+  {
+   "basis": "annual report",
+   "cb": 430958.0,
+   "choice": 329505.67,
+   "fees": 307485.41,
+   "fy": 2019,
+   "gifts": 42278.78,
+   "lunch": 59320.25,
+   "total": 1169548.11
+  },
+  {
+   "basis": "annual report",
+   "cb": 482004.0,
+   "choice": 496879.19,
+   "fees": 409571.32,
+   "fy": 2020,
+   "gifts": 49328.91,
+   "lunch": 128822.6,
+   "total": 1566606.02
+  },
+  {
+   "basis": "annual report",
+   "cb": 455562.92,
+   "choice": 666904.01,
+   "fees": 583211.91,
+   "fy": 2021,
+   "gifts": 81669.96,
+   "lunch": 135396.99,
+   "total": 1922745.79
+  },
+  {
+   "basis": "annual report",
+   "cb": 426893.23,
+   "choice": 533167.09,
+   "fees": 779557.19,
+   "fy": 2022,
+   "gifts": 90154.22,
+   "lunch": 340910.64,
+   "total": 2170682.37
+  },
+  {
+   "basis": "annual report",
+   "cb": 347675.51,
+   "choice": 338540.8,
+   "fees": 586080.64,
+   "fy": 2023,
+   "gifts": 87280.98,
+   "lunch": 347541.61,
+   "total": 1707119.54
+  },
+  {
+   "basis": "carried from FY2023 through MUNIS, proved against March 2026",
+   "cb": 182968.53,
+   "choice": 147912.14,
+   "fees": 376023.97,
+   "fy": 2024,
+   "gifts": 87611.05,
+   "lunch": 437584.39,
+   "total": 1232100.08
+  },
+  {
+   "basis": "carried from FY2023 through MUNIS, proved against March 2026",
+   "cb": 293335.18,
+   "choice": 246902.71,
+   "fees": 432889.22,
+   "fy": 2025,
+   "gifts": 102123.23,
+   "lunch": 455125.72,
+   "total": 1530376.06
+  },
+  {
+   "basis": "carried from FY2023 through MUNIS",
+   "cb": 281805.77,
+   "choice": 326281.11,
+   "fees": 373332.94,
+   "fy": 2026,
+   "gifts": 111285.52,
+   "lunch": 75038.97,
+   "total": 1167744.31
+  }
+ ],
+ "school_share_of_unspent": {
+  "2023": 18.1,
+  "2024": 17.6,
+  "2025": 25.5
+ },
+ "sources": [
+  {
+   "bytes": 31626604,
+   "docs_url": "/docs/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",
+   "filename": "4117-fy-2011-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "551f9edd75d051ae4d863a5d5c13925c0b9a2f93459e63268c507c5226398b81",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4117 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/121"
+  },
+  {
+   "bytes": 56577710,
+   "docs_url": "/docs/town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf",
+   "filename": "4118-fy-2012-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "75d645ee7055f68c6a7adc0d32f534f49a1fd2a81a421d79536b14e683d25f6a",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4118 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/124"
+  },
+  {
+   "bytes": 37839397,
+   "docs_url": "/docs/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
+   "filename": "4119-fy-2013-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "00670845b7d322166015c1b6ce4d3cef6ac2007d1085f326c44ebc9ac6d418bd",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4119 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/125"
+  },
+  {
+   "bytes": 5718041,
+   "docs_url": "/docs/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
+   "filename": "4120-fy-2014-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "f5ef6e9aec7866f7a32d140b047e5604ccf417e2e44c93fc25eb6540ecf1641a",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4120 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/126"
+  },
+  {
+   "bytes": 7590404,
+   "docs_url": "/docs/town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf",
+   "filename": "4121-fy-2015-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "712afbb458b2a452a1c4b3ce618478c8f59a31d7f046d349d5307f97fb8bef69",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4121 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/127"
+  },
+  {
+   "bytes": 5456453,
+   "docs_url": "/docs/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf",
+   "filename": "4123-fy-2016-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "f13af7a7c78d4a14be7897a5a039b189197ea94b9aa752bf913aa2185bf77438",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4123 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/132"
+  },
+  {
+   "bytes": 37102314,
+   "docs_url": "/docs/town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf",
+   "filename": "4124-fy-2017-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4124-fy-2017-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "4c6fbf70d0aff247bc2e18914ec1b0dcfddeeb33da85d5411dc44170eec61579",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4124 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/128"
+  },
+  {
+   "bytes": 8052398,
+   "docs_url": "/docs/town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf",
+   "filename": "4125-fy-2018-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "364a1138df754668ee59a499cf3d76b6ac006d47a4ae7d273b7ff9bbfea18409",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4125 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/129"
+  },
+  {
+   "bytes": 9333883,
+   "docs_url": "/docs/town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf",
+   "filename": "4126-fy-2019-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "220f1c778148feb90489cf65c6615569db118f8a4eade1e72a40574058e89582",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4126 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/130"
+  },
+  {
+   "bytes": 20544500,
+   "docs_url": "/docs/town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf",
+   "filename": "4127-fy-2020-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "c3bf67f1259a5c19f553baefa18e02f16f2bf33c73c5f067a600daf21603ab5d",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4127 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/131"
+  },
+  {
+   "bytes": 82620223,
+   "docs_url": "/docs/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf",
+   "filename": "4128-fy-2021-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "7ec4740034a2b9bd3aa7450f63c91d10e6ead472450edc5fbe9c0da327fb94d3",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4128 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/122"
+  },
+  {
+   "bytes": 16840445,
+   "docs_url": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "filename": "4129-fy-2022-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "d1673d634dba15c2783107f2642703270bbced41a875fd530b4f617bfd6cfbe7",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4129 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/123"
+  },
+  {
+   "bytes": 18274143,
+   "docs_url": "/docs/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+   "filename": "4131-fy-2023-annual-town-report.pdf",
+   "note": "Annual town report, Special Revenue Funds schedule: each fund’s balance carried forward at 30 June. Read off the page; every row and the printed GRAND TOTAL tie (special-revenue-read.csv).",
+   "path": "sources/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "d273ebb71360e30df1327fa02cc755cc00da98265dc3f28ce841dbc3bc51d4fa",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4131 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/160"
+  },
+  {
+   "bytes": 88329,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2023-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2023-p13-special-school.xlsx",
+   "note": "School special funds, period 13: each fund’s revenue and expense for the year. Delivered 6 October 2026.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2023-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "99a51e287874f44ed8df7082399e545ce88797a67599fae36776eec5d8a324a5",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82796,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2023-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2023-p13-gf-school.xlsx",
+   "note": "School general fund, department 300, period 13: budget, spent, encumbered and available at the close.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2023-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "0e5571abf937a30a4374c96bcec731ed85958c2c345689223a96b258f4bf5825",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 88941,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "note": "School special funds, period 13: each fund’s revenue and expense for the year. Delivered 6 October 2026.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "7a7da97eaa4337a5d8f2db3a82f80e87fd9cb4f8941dbd94970e3e966550431c",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82215,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "note": "School general fund, department 300, period 13: budget, spent, encumbered and available at the close.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "35ddff540b044ab9b0744250e81d56488ebdded2132735d6ce8b7df57343e457",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 88962,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2025-p13-special-school.xlsx",
+   "note": "School special funds, period 13: each fund’s revenue and expense for the year. Delivered 6 October 2026.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "745e180a33fa0fe8a0b801186b9d5201790dead640bfbb4cc3445000f7977397",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82879,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "note": "School general fund, department 300, period 13: budget, spent, encumbered and available at the close.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "0df2dc74da99ddc8ea0514b1716112753322d11a140e270ce52a91d772e7b019",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 88024,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "note": "School special funds, period 13: each fund’s revenue and expense for the year. Delivered 6 October 2026.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "8c572c5f42ef6de3df3709ddb809434eeea74fa80422496fdc0792cc7e86bdad",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82789,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "note": "School general fund, department 300, period 13: budget, spent, encumbered and available at the close.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "ec2f620cb36d0dfd0f129293740931067f736872c44bd20b2234993a48c644fb",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 56447,
+   "docs_url": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "filename": "special-revenue-fy2026-p09.xlsx",
+   "note": "Every school special revenue fund to 31 March 2026, with its balance. Used here only to PROVE the carried-forward balances, never as a year-end.",
+   "path": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "4b9777d83c747c1c39fa7f3e4b33624976dae918855cf8422528dba57e274d4e",
+   "table": "school_special_revenue_fy26_q3",
+   "url": ""
+  },
+  {
+   "bytes": 7938,
+   "docs_url": "/docs/state-dls/free-cash-proof-lunenburg.xlsx",
+   "filename": "free-cash-proof-lunenburg.xlsx",
+   "note": "The state’s free cash proof, 2021-2025: the certified figure and the components it is built from.",
+   "path": "sources/state-dls/free-cash-proof-lunenburg.xlsx",
+   "publisher": "Massachusetts Division of Local Services",
+   "sha256": "d9a0fac630d1e59ef406dc84ba209e81a87ab8cd43d5aa3215d1b7c672a2809c",
+   "table": "free_cash_proof",
+   "url": ""
+  },
+  {
+   "bytes": 28933,
+   "docs_url": "/docs/budget-workbooks/finance-committee/fy27-budget/tm-warrant/free-cash-fact-sheet.docx",
+   "filename": "free-cash-fact-sheet.docx",
+   "note": "The Town’s free cash fact sheet in the FY27 warrant materials: each certification since 2015, its date, and its share of the prior budget.",
+   "path": "sources/budget-workbooks/finance-committee/fy27-budget/tm-warrant/free-cash-fact-sheet.docx",
+   "publisher": "Town of Lunenburg",
+   "sha256": "0c8f7b74b491d302cf2bdaac28b1b12b8ad70a1eb14588cbb7fa662b73cb8214",
+   "table": "free_cash_history_fincom",
+   "url": ""
+  },
+  {
+   "bytes": 731758,
+   "docs_url": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "filename": "general-fund-budget-vs-actuals-history.xlsx",
+   "note": "Revised budget and actual for every general fund account, FY2010-FY2025. A workbook a person assembled: stated, not proof (rule 13a).",
+   "path": "sources/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "publisher": "Lunenburg Finance Committee (assembled from MUNIS exports)",
+   "sha256": "92968c581fa2aed02216e85f8b02346d07424af9676edf20173c2ae2ceaeaac0",
+   "table": "gl_history",
+   "url": ""
+  },
+  {
+   "bytes": 226170,
+   "docs_url": "/docs/town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf",
+   "filename": "4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf",
+   "note": "The FY27 budget release, which cites the guide: \"5-7% of its annual budget\".",
+   "path": "sources/town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-lunenburg-apos-s-fy27-budget-how-.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "dd2e6bac44379acf630907818eee12fdf737258d775471c8eb31b2b7062f9cdf",
+   "table": "town_budget",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4090"
+  },
+  {
+   "bytes": 269606,
+   "docs_url": "/docs/meetings/school-committee/2026-08-26-minutes-7980.pdf",
+   "filename": "2026-08-26-minutes-7980.pdf",
+   "note": "Minutes of 26 August 2026: \"She referenced balances in several school-related accounts and questioned whether any portion of those funds could legally or appropriately be used to reduce pressure on the operating budget\"",
+   "path": "sources/meetings/school-committee/2026-08-26-minutes-7980.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "12d1149ebcc2fa529e48b281ac4f039d10d90a4c97408ae5d46aebec30551f4a",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980"
+  },
+  {
+   "bytes": 45898,
+   "docs_url": "/docs/meetings/finance-committee/2024-03-14-minutes-6469.docx",
+   "filename": "2024-03-14-minutes-6469.docx",
+   "note": "Minutes of 14 March 2024: \"it is probably absorbed with a lot of the carry over for the circuit breaker monies and that’s why that account has gone down\"",
+   "path": "sources/meetings/finance-committee/2024-03-14-minutes-6469.docx",
+   "publisher": "Lunenburg Finance Committee",
+   "sha256": "f84338c5699fda269de30a0402604fd3f1729f6fd82ed6ed695eac1713f2c6e6",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03142024-6469"
+  },
+  {
+   "bytes": 258867,
+   "docs_url": "/docs/meetings/school-committee/2025-01-08-minutes-6948.pdf",
+   "filename": "2025-01-08-minutes-6948.pdf",
+   "note": "Minutes of 8 January 2025: \"these accounts are following the same patterns as other revolving accounts, which is the money coming in is not enough to cover the money going out\"",
+   "path": "sources/meetings/school-committee/2025-01-08-minutes-6948.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "c571e77558f7133544f7dd2d32da9dfd263613799396a05a245f810e6574c900",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082025-6948"
+  },
+  {
+   "bytes": 45827,
+   "docs_url": "/docs/meetings/finance-committee/2026-05-28-minutes-7828.pdf",
+   "filename": "2026-05-28-minutes-7828.pdf",
+   "note": "Minutes of 28 May 2026: \"for the last 10 years the town has not collected less than 4 million dollars in local receipts. This year’s estimate is 3.535 million.\"",
+   "path": "sources/meetings/finance-committee/2026-05-28-minutes-7828.pdf",
+   "publisher": "Lunenburg Finance Committee",
+   "sha256": "1b725d03b4d55445f262424bbb20993328a1fd627f698f38964981ea205ee3e5",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05282026-7828"
+  }
+ ],
+ "stabilization": [
+  {
+   "amount": 1186776.91,
+   "basis": "both identities hold",
+   "document": "sources/town-budget/ocr/4117-fy-2011-annual-town-report.tsv",
+   "fy": 2011,
+   "page": 74
+  },
+  {
+   "amount": 989608.54,
+   "basis": "both identities hold",
+   "document": "sources/town-budget/ocr/4118-fy-2012-annual-town-report.tsv",
+   "fy": 2012,
+   "page": 74
+  },
+  {
+   "amount": 999548.94,
+   "basis": "both identities hold",
+   "document": "sources/town-budget/ocr/4119-fy-2013-annual-town-report.tsv",
+   "fy": 2013,
+   "page": 79
+  },
+  {
+   "amount": 1299077.98,
+   "basis": "both identities hold (the page READ, and checked against the total it prints; OCR cannot read this block)",
+   "document": "sources/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
+   "fy": 2014,
+   "page": 38
+  },
+  {
+   "amount": 1388105.33,
+   "basis": "both identities hold",
+   "document": "sources/town-budget/ocr/4121-fy-2015-annual-town-report.tsv",
+   "fy": 2015,
+   "page": 39
+  },
+  {
+   "amount": 1511526.92,
+   "basis": "both identities hold",
+   "document": "sources/town-budget/ocr/4123-fy-2016-annual-town-report.tsv",
+   "fy": 2016,
+   "page": 41
+  },
+  {
+   "amount": 1631430.63,
+   "basis": "beginning + activity = ending cash",
+   "document": "sources/town-budget/ocr/4124-fy-2017-annual-town-report.tsv",
+   "fy": 2017,
+   "page": 38
+  },
+  {
+   "amount": 1740279.81,
+   "basis": "both identities hold",
+   "document": "sources/town-budget/ocr/4125-fy-2018-annual-town-report.tsv",
+   "fy": 2018,
+   "page": 45
+  },
+  {
+   "amount": 1848802.86,
+   "basis": "both identities hold",
+   "document": "sources/town-budget/ocr/4126-fy-2019-annual-town-report.tsv",
+   "fy": 2019,
+   "page": 46
+  },
+  {
+   "amount": 1978347.74,
+   "basis": "both identities hold",
+   "document": "sources/town-budget/ocr/4127-fy-2020-annual-town-report.tsv",
+   "fy": 2020,
+   "page": 41
+  },
+  {
+   "amount": 2447755.21,
+   "basis": "both identities hold",
+   "document": "sources/town-budget/ocr/4128-fy-2021-annual-town-report.tsv",
+   "fy": 2021,
+   "page": 41
+  },
+  {
+   "amount": 2574673.21,
+   "basis": "both identities hold (the page READ, and checked against the total it prints; OCR cannot read this block)",
+   "document": "sources/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "fy": 2022,
+   "page": 42
+  },
+  {
+   "amount": 2730600.73,
+   "basis": "both identities hold (the page READ, and checked against the total it prints; OCR cannot read this block)",
+   "document": "sources/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+   "fy": 2023,
+   "page": 51
+  },
+  {
+   "amount": 2901157.6,
+   "basis": "both identities hold",
+   "document": "sources/town-budget/ocr/4132-fy-2024-annual-town-report.tsv",
+   "fy": 2024,
+   "page": 34
+  }
+ ],
+ "stats": [
+  {
+   "label": "held by the schools’ fourteen fee, choice, lunch, gift and circuit-breaker funds at 30 June 2026 — $2,170,682 at the FY2022 peak",
+   "tone": "var(--series-cost)",
+   "value": "$1,167,744"
+  },
+  {
+   "label": "certified free cash at the FY2025 close, held by the town — $263,188 at the FY2015 close",
+   "value": "$3,354,370"
+  },
+  {
+   "label": "left unspent in the school general fund at the FY2026 close, which goes back to the town",
+   "value": "$482,118"
+  }
+ ],
+ "town_series": [
+  {
+   "enterprise": 1497430.65,
+   "fy": 2011,
+   "printed_total": 2766954.67,
+   "relief": 0.0,
+   "school_all": 456512.01,
+   "town_other": 813012.01
+  },
+  {
+   "enterprise": 1429762.41,
+   "fy": 2012,
+   "printed_total": 2062621.79,
+   "relief": 0.0,
+   "school_all": 345653.97,
+   "town_other": 287205.41
+  },
+  {
+   "enterprise": 1335475.2,
+   "fy": 2013,
+   "printed_total": 2209000.67,
+   "relief": 0.0,
+   "school_all": 117035.27,
+   "town_other": 756490.2
+  },
+  {
+   "enterprise": 1436177.64,
+   "fy": 2014,
+   "printed_total": 2599893.63,
+   "relief": 0.0,
+   "school_all": 373592.13,
+   "town_other": 790123.86
+  },
+  {
+   "enterprise": 1390972.34,
+   "fy": 2015,
+   "printed_total": 2704480.72,
+   "relief": 0.0,
+   "school_all": 488647.02,
+   "town_other": 824861.36
+  },
+  {
+   "enterprise": 1545961.32,
+   "fy": 2016,
+   "printed_total": 3173622.7,
+   "relief": 0.0,
+   "school_all": 1208351.02,
+   "town_other": 419310.36
+  },
+  {
+   "enterprise": 1905512.58,
+   "fy": 2017,
+   "printed_total": 3564136.36,
+   "relief": 0.0,
+   "school_all": 728428.75,
+   "town_other": 930195.03
+  },
+  {
+   "enterprise": 2235244.04,
+   "fy": 2018,
+   "printed_total": 3972219.13,
+   "relief": 0.0,
+   "school_all": 768361.35,
+   "town_other": 968613.74
+  },
+  {
+   "enterprise": 2288992.07,
+   "fy": 2019,
+   "printed_total": 4576323.49,
+   "relief": 0.0,
+   "school_all": 1160367.39,
+   "town_other": 1126964.03
+  },
+  {
+   "enterprise": 3024913.97,
+   "fy": 2020,
+   "printed_total": 5596048.89,
+   "relief": 97897.92,
+   "school_all": 1628255.35,
+   "town_other": 844981.65
+  },
+  {
+   "enterprise": 3411161.67,
+   "fy": 2021,
+   "printed_total": 6414742.67,
+   "relief": 689131.26,
+   "school_all": 1926081.13,
+   "town_other": 388368.61
+  },
+  {
+   "enterprise": 3922392.11,
+   "fy": 2022,
+   "printed_total": 8645488.67,
+   "relief": 1647745.03,
+   "school_all": 2416359.67,
+   "town_other": 658991.86
+  },
+  {
+   "enterprise": 3800194.91,
+   "fy": 2023,
+   "printed_total": 10031099.78,
+   "relief": 3337920.52,
+   "school_all": 1753707.63,
+   "town_other": 1139276.72
+  }
+ ],
+ "turnback": [
+  {
+   "fy": 2021,
+   "school": null,
+   "town_wide": 1377642.0
+  },
+  {
+   "fy": 2022,
+   "school": null,
+   "town_wide": 754201.0
+  },
+  {
+   "fy": 2023,
+   "school": 106826.75,
+   "town_wide": 588680.0
+  },
+  {
+   "fy": 2024,
+   "school": 215776.28,
+   "town_wide": 1224836.0
+  },
+  {
+   "fy": 2025,
+   "school": 627116.86,
+   "town_wide": 2457761.0
+  },
+  {
+   "fy": 2026,
+   "school": 482118.07,
+   "town_wide": null
+  }
+ ],
+ "unspent_share": {
+  "rows": [
+   {
+    "fy": 2010,
+    "rest_pct": 0.04,
+    "rest_revised": 12175954.65,
+    "rest_unspent": 4626.79,
+    "school_pct": 1.17,
+    "school_revised": 14540878.3,
+    "school_unspent": 170807.06
+   },
+   {
+    "fy": 2011,
+    "rest_pct": 1.69,
+    "rest_revised": 12677066.57,
+    "rest_unspent": 214006.59,
+    "school_pct": 0.64,
+    "school_revised": 14565310.34,
+    "school_unspent": 92501.0
+   },
+   {
+    "fy": 2012,
+    "rest_pct": 1.57,
+    "rest_revised": 13204110.2,
+    "rest_unspent": 207373.4,
+    "school_pct": 0.49,
+    "school_revised": 14965822.21,
+    "school_unspent": 72932.43
+   },
+   {
+    "fy": 2013,
+    "rest_pct": 1.32,
+    "rest_revised": 13848356.58,
+    "rest_unspent": 183008.15,
+    "school_pct": 0.26,
+    "school_revised": 15523116.12,
+    "school_unspent": 40725.95
+   },
+   {
+    "fy": 2014,
+    "rest_pct": 2.46,
+    "rest_revised": 14261583.2,
+    "rest_unspent": 350293.41,
+    "school_pct": 0.29,
+    "school_revised": 16158192.79,
+    "school_unspent": 47324.02
+   },
+   {
+    "fy": 2015,
+    "rest_pct": 2.07,
+    "rest_revised": 14720486.19,
+    "rest_unspent": 305287.68,
+    "school_pct": 0.24,
+    "school_revised": 16796318.6,
+    "school_unspent": 40035.24
+   },
+   {
+    "fy": 2016,
+    "rest_pct": 4.32,
+    "rest_revised": 17086185.88,
+    "rest_unspent": 737711.98,
+    "school_pct": 1.01,
+    "school_revised": 17554508.3,
+    "school_unspent": 176934.3
+   },
+   {
+    "fy": 2017,
+    "rest_pct": 3.14,
+    "rest_revised": 18277683.41,
+    "rest_unspent": 574041.21,
+    "school_pct": 1.61,
+    "school_revised": 18630568.97,
+    "school_unspent": 300384.66
+   },
+   {
+    "fy": 2018,
+    "rest_pct": 5.71,
+    "rest_revised": 19136413.31,
+    "rest_unspent": 1092586.79,
+    "school_pct": 0.65,
+    "school_revised": 19885151.59,
+    "school_unspent": 129281.69
+   },
+   {
+    "fy": 2019,
+    "rest_pct": 5.4,
+    "rest_revised": 19378681.18,
+    "rest_unspent": 1045837.29,
+    "school_pct": 0.34,
+    "school_revised": 20280903.62,
+    "school_unspent": 69421.92
+   },
+   {
+    "fy": 2020,
+    "rest_pct": 8.06,
+    "rest_revised": 19946528.95,
+    "rest_unspent": 1606922.82,
+    "school_pct": 2.24,
+    "school_revised": 20842761.01,
+    "school_unspent": 467194.54
+   },
+   {
+    "fy": 2021,
+    "rest_pct": 4.68,
+    "rest_revised": 20630526.08,
+    "rest_unspent": 965863.48,
+    "school_pct": 3.35,
+    "school_revised": 21508162.21,
+    "school_unspent": 720544.16
+   },
+   {
+    "fy": 2022,
+    "rest_pct": 4.16,
+    "rest_revised": 21089710.12,
+    "rest_unspent": 877938.35,
+    "school_pct": 1.09,
+    "school_revised": 21786018.95,
+    "school_unspent": 237048.2
+   },
+   {
+    "fy": 2023,
+    "rest_pct": 3.58,
+    "rest_revised": 22362679.71,
+    "rest_unspent": 799784.43,
+    "school_pct": 0.48,
+    "school_revised": 22546062.19,
+    "school_unspent": 109252.46
+   },
+   {
+    "fy": 2024,
+    "rest_pct": 5.89,
+    "rest_revised": 23314578.54,
+    "rest_unspent": 1372612.76,
+    "school_pct": 0.97,
+    "school_revised": 22977154.04,
+    "school_unspent": 222065.09
+   }
+  ],
+  "totals": {
+   "rest": {
+    "pct": 3.94,
+    "revised": 262110544.57,
+    "unspent": 10337895.13
+   },
+   "school": {
+    "pct": 1.04,
+    "revised": 278560929.24,
+    "unspent": 2896452.72
+   }
+  }
+ },
+ "years": [
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ]
+}

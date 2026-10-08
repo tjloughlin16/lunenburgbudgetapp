@@ -162,6 +162,184 @@ def flat(text):
     return ' '.join(text.split())
 
 
+# ---- why there was money left over: the category section, by the Decimal route ------
+#
+# The categories are recomputed here from their written RULES, as ranges -- not by
+# importing the generator's table -- so a change to one that is not made to the other
+# fails. Same order as the generator's table: first match wins.
+
+SALARY_KEYS = ('teachers', 'counselors', 'paras', 'admin', 'custodians', 'other_staff')
+DISCRETIONARY = ('buildings', 'equipment', 'supplies')
+
+
+def cat_of(func, sal):
+    if sal:
+        if func == 2330:
+            return 'paras'
+        if 2300 <= func <= 2399:
+            return 'teachers'
+        if 2700 <= func <= 2899:
+            return 'counselors'
+        if 1000 <= func <= 2299:
+            return 'admin'
+        if 4000 <= func <= 4999:
+            return 'custodians'
+        return 'other_staff'
+    if func >= 9000:
+        return 'tuition'
+    if func in (2310, 2320):
+        return 'sped_services'
+    if func == 3300:
+        return 'transport'
+    if func in (4120, 4130):
+        return 'utilities'
+    if 5000 <= func <= 5999:
+        return 'benefits'
+    if 4000 <= func <= 4999:
+        return 'buildings'
+    if 7000 <= func <= 7999 or func == 2451:
+        return 'equipment'
+    return 'supplies'
+
+
+def categories(rows):
+    out = {}
+    for r in rows:
+        k = cat_of(int(r['account'].split('-')[3]), r['obj'].startswith('51'))
+        c = out.setdefault(k, dict(revised=D('0'), expended=D('0'), encumbered=D('0'),
+                                   unspent=D('0'), under=D('0'), over=D('0'),
+                                   original=D('0'), transfers=D('0')))
+        a = D(r['available_budget'])
+        c['revised'] += D(r['revised_budget'])
+        c['expended'] += D(r['ytd_expended'])
+        c['encumbered'] += D(r['encumbrances'])
+        c['original'] += D(r['original_approp'])
+        c['transfers'] += D(r['transfers_adjustments'])
+        c['unspent'] += a
+        if a > 0:
+            c['under'] += a
+        else:
+            c['over'] += a
+    return out
+
+
+def money(v):
+    n = int(D(v).quantize(D('1'), rounding='ROUND_HALF_EVEN'))
+    return ('-$%s' if n < 0 else '$%s') % format(abs(n), ',d')
+
+
+def verify_causes(run, rows, s, expect):
+    """Every figure in the 'why' section and the thrift test, recomputed. `expect` holds
+    the values written down when the section was built: total discretionary, the three
+    largest categories, and the years-under counts."""
+    cats = categories(rows)
+    pc = {c['key']: c for c in run.pay['causes']['categories']}
+    run.check(set(pc) == set(cats), 'payload categories %s, recomputed %s'
+              % (sorted(pc), sorted(cats)))
+    for k, c in cats.items():
+        p = pc.get(k)
+        if not p:
+            continue
+        for f in ('revised', 'expended', 'encumbered', 'unspent', 'under', 'over',
+                  'original', 'transfers'):
+            run.check(D(str(p[f])) == c[f], 'category %s %s: payload %s, recomputed %s'
+                      % (k, f, p[f], c[f]))
+        want_kind = 'discretionary' if k in DISCRETIONARY else 'circumstantial'
+        run.check(p['kind'] == want_kind, 'category %s is %s, expected %s'
+                  % (k, p['kind'], want_kind))
+    run.check(sum(c['unspent'] for c in cats.values()) == s['available'],
+              'the categories do not sum to the unspent total')
+    disc = sum(cats[k]['unspent'] for k in DISCRETIONARY if k in cats)
+    circ = s['available'] - disc
+    run.check(disc == expect['disc'], 'discretionary recomputed as %s, expected %s'
+              % (disc, expect['disc']))
+    pd = run.pay['causes']['discretionary']
+    run.check(D(str(pd['unspent'])) == disc, 'payload discretionary.unspent mismatch')
+    share = disc / s['available'] * 100
+    run.check(abs(D(str(pd['share_pct'])) - share) < D('0.01'), 'payload share mismatch')
+    sal_net = sum(cats[k]['unspent'] for k in SALARY_KEYS if k in cats)
+    run.check(D(str(run.pay['causes']['salary_net'])) == sal_net, 'salary_net mismatch')
+    order = sorted(cats, key=lambda k: -cats[k]['unspent'])
+    run.check(order[:3] == expect['top3'], 'the three largest categories are %s, expected %s'
+              % (order[:3], expect['top3']))
+    top3 = sum(cats[k]['unspent'] for k in order[:3])
+    under = sum(c['under'] for c in cats.values())
+    over = sum(c['over'] for c in cats.values())
+    overs = sorted((k for k in cats if cats[k]['unspent'] < 0), key=lambda k: cats[k]['unspent'])
+
+    # Does it repeat: every closed year, recomputed.
+    hist = run.pay['causes']['history']
+    years = hist['years']
+    per_year = {y: categories(rows_for(y)) for y in years}
+    rep_disc = 0
+    for h in hist['rows']:
+        got = [per_year[y].get(h['key'], {}).get('unspent', D('0')) for y in years]
+        run.check([D(str(v)) for v in h['by_year']] == got,
+                  'history %s: payload %s, recomputed %s' % (h['key'], h['by_year'], got))
+        n_under = sum(1 for v in got if v > D('0.5'))
+        run.check(h['years_under'] == n_under, 'history %s years_under mismatch' % h['key'])
+        if h['key'] in DISCRETIONARY and n_under == len(years):
+            rep_disc += 1
+    for k, n in expect['years_under'].items():
+        got = [h for h in hist['rows'] if h['key'] == k][0]['years_under']
+        run.check(got == n, 'years under for %s is %d, expected %d' % (k, got, n))
+
+    # Other funds: the circuit breaker's tuition spending, straight off the CSV.
+    cb = sum(D(r['ytd_expended']) for r in csv.DictReader(open(LEDGER, encoding='utf-8'))
+             if r['fiscal_year'] == str(run.fy) and r['report'] == 'special-school'
+             and r['type'] == 'E' and r['fund'] == '2640'
+             and int(r['account'].split('-')[3]) >= 9000)
+    sf = [x for x in run.pay['causes']['special_funds']
+          if x['fund'] == '2640' and x['category'] == 'tuition']
+    run.check(len(sf) == 1 and D(str(sf[0]['expended'])) == cb,
+              'circuit-breaker tuition spending: payload %s, recomputed %s' % (sf, cb))
+    run.check(cb == expect['circuit_breaker'], 'circuit breaker tuition recomputed as %s'
+              % cb)
+
+    # Largest single account, recomputed.
+    top = max(rows, key=lambda r: D(r['available_budget']))
+    run.check(run.pay['causes']['top_unspent'][0]['account'] == top['account'],
+              'largest unspent account mismatch')
+
+    # Every quote on record still verbatim in the text the payload says it came from.
+    for e in run.pay['causes']['record']:
+        path = os.path.join(ROOT, e['text'])
+        if e['kind'] == 'caption':
+            d = json.load(open(path, encoding='utf-8'))
+            txt = ' '.join(' '.join(x['text'].split()) for x in d['segments'])
+            run.check(e['quote'] in txt, 'caption quote not in %s: %r' % (e['text'], e['quote']))
+        else:
+            run.check(e['quote'] in flat(open(path, encoding='utf-8').read()),
+                      'quote not verbatim in %s: %r' % (e['text'], e['quote']))
+        run.need(e['quote'], 'a quote on record')
+
+    for text, label in ((money(disc), 'discretionary total'), (money(circ), 'the rest'),
+                        (money(under), 'under-budget accounts'),
+                        (money(-over), 'over-budget accounts')):
+        run.need(text, label)
+    for k in order[:3]:
+        run.need(money(cats[k]['unspent']), 'category %s' % k)
+
+    wants = {'c_three': top3, 'c_under': under, 'c_total': s['available'],
+             'c_disc': disc, 'c_circ': circ, 'c_disc_share': (share, D('0.000001')),
+             'c_years': D(len(years)), 'c_rep': D(rep_disc),
+             'c_ndisc': D(len(DISCRETIONARY)),
+             's_net': sal_net}
+    for i, k in enumerate(order[:3]):
+        wants['c_top%d' % i] = cats[k]['unspent']
+    if overs:
+        wants['c_over'] = -cats[overs[0]]['unspent']
+        wants['c_over_tot'] = -over
+        wants['s_paras'] = -cats['paras']['unspent']
+    else:
+        wants['c_lead_pct'] = (cats[order[0]]['unspent'] / cats[order[0]]['revised'] * 100,
+                               D('0.05'))
+    if 'counselors' in cats:
+        wants['s_couns'] = cats['counselors']['unspent']
+        wants['s_teach'] = cats['teachers']['unspent']
+    return wants
+
+
 # ---- FY2025 -------------------------------------------------------------------------
 
 def verify_2025(run):
@@ -265,12 +443,16 @@ def verify_2025(run):
             for k, v in want.items():
                 run.check(D(str(r[k])) == v, 'payload para %s %s mismatch' % (org, k))
 
-    check_conclusions(run, {
+    wants = verify_causes(run, rows, s, dict(
+        disc=D('240114.95'), top3=['supplies', 'paras', 'custodians'],
+        circuit_breaker=D('473650.35'),
+        years_under={'buildings': 4, 'supplies': 4, 'custodians': 4, 'equipment': 1}))
+    check_conclusions(run, dict(wants, **{
         'diff': diff, 'ledger': s['available'], 'district': DISTRICT_FIGURE,
         'total': not_spent, 'orig': s['original'], 'turned_back': s['available'],
         'moved': moved_out, 'ops': sum(fam[4000][:2]), 'sal': fam[4000][0],
         'non': fam[4000][1],
-    })
+    }))
     return '415 accounts, %d function families, %d para accounts, %d conclusions' % (
         len(fam), len(para(rows)), len(run.pay['conclusions']))
 
@@ -444,7 +626,11 @@ def verify_2026(run):
     check_payload_families(run, EXPECT_FAMILY, with_enc=True)
 
     tol = (D('0.000001'),)
-    check_conclusions(run, {
+    wants = verify_causes(run, rows, s, dict(
+        disc=D('283991.32'), top3=['buildings', 'counselors', 'teachers'],
+        circuit_breaker=D('333494.89'),
+        years_under={'buildings': 4, 'counselors': 4, 'teachers': 4, 'paras': 3}))
+    check_conclusions(run, dict(wants, **{
         'p13': s['available'], 'moved': moved, 'accounts': D(len(rows)), 'floor': floor,
         'period-13-landed-at-the-bottom-of-the-june-range/ceiling': ceiling12,
         'still-committed-to-open-purchase-orders/ceiling': ceiling13,
@@ -455,7 +641,7 @@ def verify_2026(run):
         'floor_share': (floor_share,) + tol, 'ceiling_share': (ceiling_share,) + tol,
         'ops': sum(fam[4000][:2]), 'ops_enc': fam[4000][2], 'next_u': sum(fam[2000][:2]),
         'next_o': fam[9000][2], 'sal': fam[4000][0], 'non': fam[4000][1],
-    })
+    }))
     return ('415 accounts, 258 joined to period 12, 1 changed, 27 still encumbered, '
             '%d conclusions' % len(run.pay['conclusions']))
 

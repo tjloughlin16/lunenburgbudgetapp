@@ -22,7 +22,10 @@ So each year has its own story function -- the conclusions, the prose, the paylo
 year-specific fields -- and everything they compute from goes through the shared readers.
 
 `scripts/build_fy25_school_surplus.py` is kept as a thin wrapper (`--fy 2025`): the FY25
-payload names it as its generator, and that payload is held byte-identical.
+payload names it as its generator. That payload was held byte-identical until 8 October
+2026, when both years gained the same "why there was money left over" and "was it thrift?"
+sections from `why()` -- one presentation for both reports (rule 7d) -- and FY25 changed
+on purpose.
 
 Reads ONLY `sources/data/munis-school-ytd.csv` (report `gf-school`, `type` E -- department
 300's period-13 expense ledger, extracted from the PUBLISHED spreadsheets; the PDFs of the
@@ -396,6 +399,900 @@ def waterfall_svg(t, moved_note, unspent_label, compare, rbw, gap_text, title, s
 
 
 # ======================================================================================
+# WHY THERE WAS MONEY LEFT OVER -- shared by every year, so both reports read alike
+# ======================================================================================
+#
+# TJ, 8 October 2026: *"give some analysis on the reasons for the surplus ... in the short
+# section, with some charts and graphs and easy to understand explanations"*; and then,
+# *"the school leaders just said 'we were thrifty'. How do we confirm if that's accurate?"*
+#
+# Two halves, kept apart on purpose (rule 7):
+#
+#   * WHERE the money was left is MEASURED: every account goes into exactly one plain-
+#     English category by the table below, and the categories are summed off the ledger.
+#   * WHY it was left is not in the ledger at all. It comes only from a document that says
+#     so, quoted verbatim and checked here against the archive's text, or it is printed as
+#     a HYPOTHESIS with the one record that would settle it.
+#
+# THE CATEGORY TABLE -- one table, one place. First match wins. `func` is the DESE function
+# code (the account string's 4th segment); `sal` is whether the object code starts `51`.
+# `kind` is the thrift test: DISCRETIONARY lines are the ones a decision to spend less
+# moves directly (supplies, materials, equipment, repairs and contracted upkeep, dues,
+# travel, legal, other services); CIRCUMSTANTIAL lines follow staffing, placements,
+# prices and enrolment (salaries, tuition, plan-required special-education services,
+# transportation, utilities, insurance and benefits). That split is OURS, and the method
+# section of each report says so.
+CATEGORIES = (
+    # key, label, kind, rule as printed in the method table, test(func, sal)
+    ('teachers', 'Teachers & substitutes', 'circumstantial',
+     'salary lines, functions 2300–2399 except 2330 (teachers, special-education teachers, '
+     'specialists, substitutes, librarians)',
+     lambda f, s: s and 2300 <= f < 2400 and f != 2330),
+    ('counselors', 'Counselors & psychologists', 'circumstantial',
+     'salary lines, functions 2700–2899 (guidance, social workers, psychologists)',
+     lambda f, s: s and 2700 <= f < 2900),
+    ('paras', 'Paraprofessionals', 'circumstantial',
+     'salary lines, function 2330', lambda f, s: s and f == 2330),
+    ('admin', 'Administrators & office staff', 'circumstantial',
+     'salary lines, functions 1000–2299 (central office, directors, principals, secretaries)',
+     lambda f, s: s and 1000 <= f < 2300),
+    ('custodians', 'Custodians', 'circumstantial',
+     'salary lines, functions 4000–4999', lambda f, s: s and 4000 <= f < 5000),
+    ('other_staff', 'Nurses, coaches & other staff', 'circumstantial',
+     'every other salary line (nurses, athletics, advisors, reserves)', lambda f, s: s),
+    ('tuition', 'Out-of-district tuition', 'circumstantial',
+     'functions 9000 and up (private and collaborative special-education tuition)',
+     lambda f, s: f >= 9000),
+    ('sped_services', 'Special-ed contracted services', 'circumstantial',
+     'non-salary lines, functions 2310 and 2320 (contracted therapists, evaluations, '
+     'tutoring)', lambda f, s: f in (2310, 2320)),
+    ('transport', 'Transportation', 'circumstantial',
+     'non-salary lines, function 3300 (regular and special-education buses)',
+     lambda f, s: f == 3300),
+    ('utilities', 'Heat, electricity & utilities', 'circumstantial',
+     'non-salary lines, functions 4120 and 4130', lambda f, s: f in (4120, 4130)),
+    ('benefits', 'Health insurance & benefits', 'circumstantial',
+     'functions 5000–5999 (health insurance, Medicare, unemployment)',
+     lambda f, s: 5000 <= f < 6000),
+    ('buildings', 'Building & grounds upkeep', 'discretionary',
+     'every other non-salary line in functions 4000–4999 (repairs, contracted maintenance, '
+     'custodial and grounds supplies)', lambda f, s: 4000 <= f < 5000),
+    ('equipment', 'Equipment & technology', 'discretionary',
+     'functions 7000–7999, and 2451 (furniture, equipment, computers and their leases)',
+     lambda f, s: 7000 <= f < 8000 or f == 2451),
+    ('supplies', 'Supplies, services & everything else', 'discretionary',
+     'every remaining non-salary line (classroom supplies, textbooks, professional '
+     'development, legal, dues, athletics expenses, office services)',
+     lambda f, s: True),
+)
+CAT_LABEL = {c[0]: c[1] for c in CATEGORIES}
+# The same categories in two words, for a conclusion card's 95 characters.
+CAT_SHORT = {'teachers': 'teachers', 'counselors': 'counselors', 'paras': 'paraprofessionals',
+             'admin': 'administration', 'custodians': 'custodians',
+             'other_staff': 'other staff', 'tuition': 'tuition',
+             'sped_services': 'special-ed services', 'transport': 'transportation',
+             'utilities': 'utilities', 'benefits': 'benefits', 'buildings': 'building upkeep',
+             'equipment': 'equipment', 'supplies': 'supplies'}
+CAT_KIND = {c[0]: c[2] for c in CATEGORIES}
+KIND_LABEL = {'discretionary': 'discretionary — what spending less moves directly',
+              'circumstantial': 'circumstantial — follows staff, placements, prices'}
+HISTORY_YEARS = (2023, 2024, 2025, 2026)
+EXPLAIN_MIN = 25000.0      # a category is explained in prose when it moved at least this
+TOP_N, TOP_OVER_N = 8, 5
+
+# Fund names exactly as the special-funds report PRINTS them, truncated where it truncates
+# (the CSV carries the number only): `glytdbud-expense-fy2025-p13-special-school.xlsx` and
+# the FY2026 report, the `Total <fund> <name>` rows -- e.g. row 411, "Total 2640 SPECIAL ED
+# CIRCUIT BREAK". Rule 13: the printed label, never our gloss of it.
+FUND_NAMES = {'1301': 'CHAPTER 658 REVOLVING FU', '1308': 'SCHOOL CHOICE REVOLVING',
+              '1312': 'EXTENDED DAY REVOLVING F', '2200': 'SCHOOL LUNCH REVOLVING',
+              '2622': 'FY25 FAMILY & COMMUNITY', '2640': 'SPECIAL ED CIRCUIT BREAK',
+              '2681': 'COMP SCHOOL HEALTH SERV', '2713': 'FY25 TITLE I #305',
+              '2781': 'FY22 #119 ESSER III GRAN'}
+
+KIND_COLOR = {'discretionary': '#eb6834', 'circumstantial': '#3987e5'}
+OVER_COLOR = '#b9b8ae'
+
+
+def func_of(r):
+    parts = r['account'].split('-')
+    return int(parts[3]) if len(parts) > 3 else 0
+
+
+def category_of(r):
+    f, s = func_of(r), r['obj'].startswith('51')
+    for key, _, _, _, test in CATEGORIES:
+        if test(f, s):
+            return key
+    fail('no category for account %s' % r['account'])
+
+
+def causes(rows):
+    """Every category summed off the ledger. `unspent` is NET available (the surplus is a
+    net figure); `under` and `over` are the accounts that ended under and over, kept apart
+    so an offset inside a category is visible rather than netted away."""
+    acc = {}
+    for r in rows:
+        k = category_of(r)
+        a = acc.setdefault(k, dict(original=0.0, transfers=0.0, revised=0.0, expended=0.0,
+                                   encumbered=0.0, unspent=0.0, under=0.0, over=0.0,
+                                   accounts=0, functions=set()))
+        av = float(r['available_budget'])
+        a['original'] += float(r['original_approp'])
+        a['transfers'] += float(r['transfers_adjustments'])
+        a['revised'] += float(r['revised_budget'])
+        a['expended'] += float(r['ytd_expended'])
+        a['encumbered'] += float(r['encumbrances'])
+        a['unspent'] += av
+        if av > 0:
+            a['under'] += av
+        else:
+            a['over'] += av
+        a['accounts'] += 1
+        a['functions'].add(func_of(r))
+    out = []
+    for key, label, kind, rule, _ in CATEGORIES:
+        a = acc.get(key)
+        if not a:
+            continue
+        row = {k: round(v, 2) for k, v in a.items() if isinstance(v, float)}
+        row.update(key=key, label=label, kind=kind, accounts=a['accounts'],
+                   functions=sorted(a['functions']))
+        row['pct_of_revised'] = (round(100 * a['unspent'] / a['revised'], 1)
+                                 if round(a['revised'], 2) else None)
+        out.append(row)
+    out.sort(key=lambda d: -d['unspent'])
+    return out
+
+
+def account_name(r):
+    return '%s (%s)' % (r['description'].strip().title(), CAT_LABEL[category_of(r)].lower())
+
+
+def top_accounts(rows):
+    def one(r):
+        return dict(account=r['account'], org=r['org'], obj=r['obj'],
+                    name=account_name(r), category=category_of(r),
+                    revised=round(float(r['revised_budget']), 2),
+                    expended=round(float(r['ytd_expended']), 2),
+                    encumbered=round(float(r['encumbrances']), 2),
+                    available=round(float(r['available_budget']), 2))
+    srt = sorted(rows, key=lambda r: (-float(r['available_budget']), r['account']))
+    under = [one(r) for r in srt[:TOP_N] if float(r['available_budget']) > 0]
+    over = [one(r) for r in reversed(srt[-TOP_OVER_N:]) if float(r['available_budget']) < 0]
+    return under, over
+
+
+def special_rows(fy):
+    out = []
+    with open(LEDGER, encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            if (r['fiscal_year'] == str(fy) and r['period'] == str(PERIOD)
+                    and r['report'] == 'special-school' and r['type'] == 'E'):
+                out.append(r)
+    if not out:
+        fail('no FY%d special-school expense rows in %s' % (fy, rel(LEDGER)))
+    return out
+
+
+def special_overlap(fy, cats):
+    """What the school's special funds (grants, revolving funds, the circuit breaker) spent
+    on the SAME DESE function, salary or not, as a general-fund category. Rule 11: a
+    general-fund line can look underspent because another fund paid. A special-fund account
+    coded to a round thousand (2000, 0000) names no function and is NOT matched -- it is
+    totalled separately and said to be unmatchable rather than guessed at."""
+    by_cat = {c['key']: set(c['functions']) for c in cats}
+    sal_of = {c['key']: c['key'] in ('teachers', 'counselors', 'paras', 'admin',
+                                      'custodians', 'other_staff') for c in cats}
+    matched, coarse = {}, 0.0
+    for r in special_rows(fy):
+        f, s = func_of(r), r['obj'].startswith('51')
+        ex = float(r['ytd_expended'])
+        if not round(ex, 2):
+            continue
+        if f % 1000 == 0:
+            coarse += ex
+            continue
+        hit = None
+        for key, funcs in by_cat.items():
+            if f in funcs and sal_of[key] == s:
+                hit = key
+                break
+        if hit is None:
+            continue
+        m = matched.setdefault(hit, {})
+        m[r['fund']] = m.get(r['fund'], 0.0) + ex
+    rows = []
+    for key, funds in matched.items():
+        for fund, ex in sorted(funds.items(), key=lambda kv: -kv[1]):
+            if round(ex, 2):
+                rows.append(dict(category=key, fund=fund, name=FUND_NAMES.get(fund),
+                                 expended=round(ex, 2)))
+    rows.sort(key=lambda d: -d['expended'])
+    return rows, round(coarse, 2)
+
+
+def history(cats_now, fy):
+    """Net unspent by category for every closed year the CSV holds. Same lines left over
+    every year reads as budgeted high, not run lean."""
+    years = [y for y in HISTORY_YEARS]
+    table = {}
+    for y in years:
+        for c in causes(ledger_rows(y)):
+            table.setdefault(c['key'], {})[y] = c['unspent']
+    out = []
+    for c in cats_now:
+        per = [table.get(c['key'], {}).get(y, 0.0) for y in years]
+        out.append(dict(key=c['key'], label=c['label'], kind=c['kind'],
+                        by_year=[round(v, 2) for v in per],
+                        years_under=sum(1 for v in per if v > 0.5)))
+    return dict(years=list(years), rows=out)
+
+
+# ---- what the record says, per year ----------------------------------------------------
+
+PRESS_RELEASE_KEY = ('town-budget/docs/4090-click-here-for-a-release-on-quot-understanding-'
+                     'lunenburg-apos-s-fy27-budget-how-.pdf')
+PRESS_RELEASE_TXT = os.path.join(ROOT, 'sources', 'town-budget', 'text',
+                                 '4090-click-here-for-a-release-on-quot-understanding-'
+                                 'lunenburg-apos-s-fy27-budget-how-.txt')
+CAPTIONS = os.path.join(DATA, 'youtube-transcripts', 'school-committee')
+CITE = 'https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/%s'
+
+
+def sc_minutes(name, date, quote, cats, note=''):
+    return dict(kind='documented', board='School Committee', date=date, doc='minutes',
+                text=os.path.join(SC_TEXT, name), quote=quote, categories=cats, note=note,
+                cite=CITE % name, key='meetings/school-committee/%s' % name.replace('.txt', '.pdf'),
+                town='https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_%s-%s'
+                     % (date[5:7] + date[8:10] + date[:4], name.split('-')[-1][:-4]))
+
+
+def caption(name, date, quote, cats, note=''):
+    return dict(kind='caption', board='School Committee', date=date, doc='recording',
+                # A caption is printed under "Was it thrift?" only, never as the explanation
+                # of a category: it locates a moment, it is not a record (rule 7).
+                text=os.path.join(CAPTIONS, name), quote=quote, categories=[], note=note,
+                video='https://www.youtube.com/watch?v=%s' % name[11:-5])
+
+
+RECORD = {
+    2025: [
+        dict(kind='documented', board='Town of Lunenburg', date='2026', doc='press release',
+             text=PRESS_RELEASE_TXT, categories=['custodians', 'buildings'],
+             quote='significant turnover and unfilled positions in the facilities department '
+                   'resulted in unspent salaries and stalled maintenance projects',
+             cite='https://lunenburgbudgetproject.org/docs/' + PRESS_RELEASE_KEY,
+             key=PRESS_RELEASE_KEY,
+             town='https://www.lunenburgma.gov/DocumentCenter/View/4090',
+             note='The Town’s release “Understanding Lunenburg’s FY27 Budget”, naming '
+                  'the first of two causes of the FY25 school surplus.'),
+        dict(kind='documented', board='Town of Lunenburg', date='2026', doc='press release',
+             text=PRESS_RELEASE_TXT, categories=['paras'],
+             quote='several paraprofessional salaries were ultimately covered by newly '
+                   'identified grants',
+             cite='https://lunenburgbudgetproject.org/docs/' + PRESS_RELEASE_KEY,
+             key=PRESS_RELEASE_KEY,
+             town='https://www.lunenburgma.gov/DocumentCenter/View/4090',
+             note='The same release, the second cause.'),
+        sc_minutes('2025-09-03-minutes-7385.txt', '2025-09-03',
+                   'a discussion of transfer accounts regarding a double budget amount for '
+                   'paraprofessionals in the amount of $243,000', ['paras']),
+        sc_minutes('2025-09-17-minutes-7408.txt', '2025-09-17',
+                   'double booking of the para salaries, the music program and supply line '
+                   'cuts', ['paras', 'supplies']),
+        caption('2026-02-04-HsjpFotE9hc.json', '2026-02-04',
+                'We are on a budget freeze', ['supplies', 'equipment', 'buildings'],
+                note='A forum on the FY2025 surplus; a speaker recounting what teachers '
+                     'were told.'),
+    ],
+    2026: [
+        sc_minutes('2026-07-29-minutes-7930.txt', '2026-07-29',
+                   '$81,075.96 from the High School Special Education Resource Room Teacher '
+                   'account to Hospital Tutoring and the ACE, Primary School, Elementary '
+                   'School, Middle School and High School Special Education Paraprofessional '
+                   'accounts to cover overages in those areas', ['teachers', 'paras']),
+        sc_minutes('2026-07-29-minutes-7930.txt', '2026-07-29',
+                   'the funds were associated with a leave of absence', ['teachers']),
+        sc_minutes('2026-07-29-minutes-7930.txt', '2026-07-29',
+                   'regular transportation had been budgeted too low for FY26', ['transport']),
+        sc_minutes('2026-07-29-minutes-7930.txt', '2026-07-29',
+                   '$11,000 from Heating Charges, where funds remained available, to Regular '
+                   'Transportation to cover an overage', ['utilities', 'transport']),
+        sc_minutes('2026-02-04-minutes-7634.txt', '2026-02-04',
+                   'we have also had students move into the district that require out of '
+                   'district placements', ['tuition'],
+                   note='It does not say which tuition line those placements were charged '
+                        'to.'),
+        caption('2025-11-19-6PZ-J-oIAkQ.json', '2025-11-19',
+                'last year there was a freeze, so we haven’t had that yet'.replace(
+                    '’', "'"), ['supplies', 'equipment', 'buildings'],
+                note='A speaker answering, in November, whether FY26 spending was on track.'),
+        caption('2026-10-07-kPZcnFd5COw.json', '2026-10-07',
+                "We were thrifty and we didn't spend every dime",
+                ['supplies', 'equipment', 'buildings'],
+                note='A speaker discussing what to do with the money left over.'),
+    ],
+}
+
+# What fits the same numbers where no document explains a category -- printed as a
+# HYPOTHESIS every time, with the one record that would settle it. Figure-free on
+# purpose (rule 2): the figures beside them are interpolated.
+HYPOTHESES = {
+    'teachers': ('a post left vacant or filled late, a leave of absence covered for less '
+                 'than the salary, or teachers hired at a lower step than budgeted',
+                 'the district’s position-control roster by month: each budgeted post, '
+                 'who held it, from when, and at what step'),
+    'counselors': ('a counselor or psychologist post vacant or on leave for part of the '
+                   'year, or the work bought from a contractor instead',
+                   'the position-control roster by month for functions 2710 and 2800'),
+    'paras': ('aides hired late or not at all, or aides paid from a grant instead',
+              'paraprofessional payroll by month and by funding source'),
+    'admin': ('a vacancy or a change of person in an administrative post',
+              'the position-control roster by month'),
+    'custodians': ('custodial vacancies or turnover',
+                   'the custodial roster by month, with overtime'),
+    'other_staff': ('stipends not paid for seasons or programs that did not run, or a '
+                    'nurse post vacant for part of the year',
+                    'the stipend and nursing payroll by month'),
+    'tuition': ('fewer children placed than budgeted, placements starting later, a '
+                'placement paid from the circuit breaker fund instead, or a placement '
+                'billed to a different tuition line',
+                'the placement list by setting, with start dates and the tuition invoice '
+                'for each'),
+    'sped_services': ('more children needing contracted therapy or evaluation than '
+                      'budgeted, or contractors covering for vacant staff posts',
+                      'the contracted-service invoices by service type'),
+    'transport': ('route or contract prices above budget, or special-education routes added '
+                  'mid-year', 'the transportation contract and the route list by month'),
+    'utilities': ('weather, energy prices, or a bill for one year paid in another',
+                  'the utility bills by month'),
+    'benefits': ('fewer employees enrolled in the health plan than budgeted, staff opting '
+                 'out, or premiums below the estimate',
+                 'health-plan enrolment by month and the premium rates'),
+    'buildings': ('maintenance projects postponed or not started, a shortage of facilities '
+                  'staff to run them, or a deliberate hold on spending',
+                  'the facilities work-order and project list with dates'),
+    'equipment': ('purchases deferred, or made from another fund',
+                  'the purchase-order list for these accounts'),
+    'supplies': ('a deliberate hold on purchasing, or purchases made from grants and '
+                 'revolving funds instead',
+                 'the general-fund journal detail by month'),
+}
+
+
+def check_record(fy):
+    """Every quote must be verbatim in the archive's text of its document (whitespace
+    collapsed), and every caption quote in our captions of that recording -- or this
+    refuses to write. Returns the entries with page / timestamp filled in."""
+    out = []
+    for e in RECORD.get(fy, []):
+        e = dict(e)
+        if e['kind'] == 'caption':
+            d = json.load(open(e['text'], encoding='utf-8'))
+            segs = d['segments']
+            txt, starts = '', []
+            for s in segs:
+                starts.append((len(txt), s['start']))
+                txt += ' '.join(s['text'].split()) + ' '
+            at = txt.find(e['quote'])
+            if at < 0:
+                fail('%s does not caption %r' % (rel(e['text']), e['quote']))
+            sec = int(max(st for off, st in starts if off <= at))
+            e['seconds'] = sec
+            e['at'] = '%d:%02d:%02d' % (sec // 3600, sec % 3600 // 60, sec % 60)
+            e['cite'] = '%s&t=%ds' % (e['video'], sec)
+        else:
+            e['page'] = page_of(e['text'], e['quote'])
+        e['text'] = rel(e['text'])
+        out.append(e)
+    return out
+
+
+def minutes_posted(date):
+    with open(MEETING_INDEX, encoding='utf-8') as fh:
+        return any(r['board'] == 'School Committee' and r['date'] == date
+                   and r['kind'] == 'minutes' for r in csv.DictReader(fh))
+
+
+def record_line(e):
+    """One record entry as a line of markdown: who, when, the verbatim words, the link."""
+    if e['kind'] == 'caption':
+        posted = minutes_posted(e['date'])
+        return ('- *%s, %s — the recording at [%s](%s), our machine captions, not a record:* '
+                '“%s”. %s%s' % (e['board'], long_date(e['date']), e['at'], e['cite'],
+                                e['quote'], (e['note'] + ' ') if e['note'] else '',
+                                'The archive holds the Town’s minutes of this meeting.'
+                                if posted else
+                                'The archive’s catalogue of the Town’s postings lists no '
+                                'minutes for this meeting, so the recording is the only '
+                                'record.'))
+    when = long_date(e['date']) if len(e['date']) == 10 else e['date']
+    where = ('page %d' % e['page']) if e.get('page') else e['doc']
+    return ('- *%s %s, %s (%s):* “%s”. [Our copy](%s) · [the Town’s](%s).%s'
+            % (e['board'], e['doc'], when, where, e['quote'], e['cite'], e['town'],
+               (' ' + e['note']) if e['note'] else ''))
+
+
+# ---- the two charts, as SVG for /docs and the PDF (the page draws components) --------
+
+def _esc(s):
+    return str(s).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+
+def causes_svg(cats, title, subtitle):
+    """Where the money was left: net unspent by category, largest first, coloured by the
+    thrift test. Over-budget categories run left of zero."""
+    W, ROW, TOP, LBL = 680, 24, 64, 200
+    H = TOP + ROW * len(cats) + 40
+    lo = min(0.0, min(c['unspent'] for c in cats))
+    hi = max(0.0, max(c['unspent'] for c in cats))
+    span = (hi - lo) or 1.0
+    x0, x1 = LBL + 70, W - 70
+    sc = (x1 - x0) / span
+    zx = x0 + (0 - lo) * sc
+    b = []
+    for i, c in enumerate(cats):
+        y = TOP + i * ROW
+        v = c['unspent']
+        col = KIND_COLOR[c['kind']] if v >= 0 else OVER_COLOR
+        bx = zx if v >= 0 else zx + v * sc
+        b.append('<text x="%d" y="%.1f" font-size="11" text-anchor="end" fill="%s">%s</text>'
+                 % (LBL, y + 14, INK, _esc(c['label'])))
+        b.append('<rect x="%.1f" y="%.1f" width="%.1f" height="16" fill="%s" rx="2"/>'
+                 % (bx, y + 3, max(abs(v) * sc, 1), col))
+        tx = (zx + v * sc + 4) if v >= 0 else (zx + v * sc - 4)
+        b.append('<text x="%.1f" y="%.1f" font-size="10.5" font-weight="700" '
+                 'text-anchor="%s" fill="%s">%s</text>'
+                 % (tx, y + 15, 'start' if v >= 0 else 'end', INK, usd(v)))
+    b.append('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s"/>'
+             % (zx, TOP, zx, TOP + ROW * len(cats), AXIS))
+    ly = TOP + ROW * len(cats) + 22
+    lx = 0
+    for kind, text in (('discretionary', 'Discretionary (supplies, upkeep, equipment)'),
+                       ('circumstantial', 'Circumstantial (staff, tuition, prices)')):
+        b.append('<rect x="%d" y="%d" width="10" height="10" fill="%s"/>'
+                 % (lx, ly - 9, KIND_COLOR[kind]))
+        b.append('<text x="%d" y="%d" font-size="10" fill="%s">%s</text>'
+                 % (lx + 14, ly, SECOND, text))
+        lx += 260
+    b.append('<rect x="%d" y="%d" width="10" height="10" fill="%s"/>' % (lx, ly - 9, OVER_COLOR))
+    b.append('<text x="%d" y="%d" font-size="10" fill="%s">Over budget</text>'
+             % (lx + 14, ly, SECOND))
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
+            'role="img" aria-label="%s. %s" font-family=\'%s\'>\n'
+            '<rect width="%d" height="%d" fill="%s"/>\n'
+            '<text x="0" y="16" font-size="13" font-weight="700" fill="%s">%s</text>\n'
+            '<text x="0" y="33" font-size="10.5" fill="%s">%s</text>\n%s\n</svg>\n'
+            % (W, H, W, H, _esc(title), _esc(subtitle), FONT, W, H, SURFACE, INK,
+               _esc(title), SECOND, _esc(subtitle), ''.join(b)))
+
+
+BVS_CAP = 130.0   # the share axis stops here; a category spent past it says so in words
+
+
+def bvs_rows(cats):
+    """Per category, the revised budget split into spent / still committed / left, as
+    shares of that budget, for the budget-vs-spent chart. Computed here, once, so the page
+    component draws these numbers rather than computing its own (rule 2)."""
+    out = []
+    for c in sorted(cats, key=lambda c: -c['revised']):
+        if not round(c['revised'], 2):
+            continue
+        sp = 100 * c['expended'] / c['revised']
+        en = 100 * c['encumbered'] / c['revised']
+        left = 100 - sp - en
+        out.append(dict(key=c['key'], label=c['label'], revised=c['revised'],
+                        spent_pct=round(sp, 1), committed_pct=round(en, 1),
+                        left_pct=round(max(left, 0), 1), over_pct=round(max(-left, 0), 1),
+                        spent_shown=round(min(sp, BVS_CAP), 1)))
+    return out
+
+
+def bvs_svg(rows, title, subtitle):
+    W, ROW, TOP, LBL = 680, 24, 64, 200
+    H = TOP + ROW * len(rows) + 40
+    x0, x1 = LBL + 70, W - 40
+    sc = (x1 - x0) / BVS_CAP
+    b = []
+    for i, r in enumerate(rows):
+        y = TOP + i * ROW
+        b.append('<text x="%d" y="%.1f" font-size="11" text-anchor="end" fill="%s">%s</text>'
+                 % (LBL, y + 14, INK, _esc(r['label'])))
+        b.append('<text x="%d" y="%.1f" font-size="10" text-anchor="end" fill="%s">%s</text>'
+                 % (LBL + 64, y + 14, MUTED, usdk(r['revised'])))
+        x = x0
+        for w, col in ((min(r['spent_pct'], BVS_CAP), SPENT),
+                       (r['committed_pct'], MOVED), (r['left_pct'], UNSPENT)):
+            w = min(w, (x1 - x) / sc)
+            if w > 0:
+                b.append('<rect x="%.1f" y="%.1f" width="%.1f" height="16" fill="%s"/>'
+                         % (x, y + 3, w * sc, col))
+                x += w * sc
+        if r['over_pct'] or r['left_pct'] >= 1:
+            txt = ('%s%% spent' % format(r['spent_pct'], '.0f')) if r['over_pct'] else \
+                  ('%s%% left' % format(r['left_pct'], '.0f'))
+            b.append('<text x="%.1f" y="%.1f" font-size="10" font-weight="700" fill="%s">%s</text>'
+                     % (min(x + 4, x1 - 2), y + 15, '#b3261e' if r['over_pct'] else INK, txt))
+    hx = x0 + 100 * sc
+    b.append('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-dasharray="3,2"/>'
+             % (hx, TOP - 4, hx, TOP + ROW * len(rows), '#b3261e'))
+    b.append('<text x="%.1f" y="%d" font-size="9.5" text-anchor="middle" fill="%s">the budget '
+             '(100%%)</text>' % (hx, TOP - 8, '#b3261e'))
+    ly = TOP + ROW * len(rows) + 22
+    lx = 0
+    for col, text in ((SPENT, 'Spent'), (MOVED, 'Still committed (open orders)'),
+                      (UNSPENT, 'Left over')):
+        b.append('<rect x="%d" y="%d" width="10" height="10" fill="%s"/>' % (lx, ly - 9, col))
+        b.append('<text x="%d" y="%d" font-size="10" fill="%s">%s</text>'
+                 % (lx + 14, ly, SECOND, text))
+        lx += 200
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
+            'role="img" aria-label="%s. %s" font-family=\'%s\'>\n'
+            '<rect width="%d" height="%d" fill="%s"/>\n'
+            '<text x="0" y="16" font-size="13" font-weight="700" fill="%s">%s</text>\n'
+            '<text x="0" y="33" font-size="10.5" fill="%s">%s</text>\n%s\n</svg>\n'
+            % (W, H, W, H, _esc(title), _esc(subtitle), FONT, W, H, SURFACE, INK,
+               _esc(title), SECOND, _esc(subtitle), ''.join(b)))
+
+
+def why_sources(fy):
+    """The documents the why-section quotes, plus the special-funds report it reads --
+    rule 12, from the manifest. Captions are cited as the video at a timestamp."""
+    out = [held_source('town-ledgers/expenses/glytdbud-expense-fy%d-p13-special-school.xlsx'
+                       % fy, 'munis-school-ytd', 'Town of Lunenburg — Town Accountant',
+                       'MUNIS year-to-date budget report, the school special funds (grants, '
+                       'revolving funds, the circuit breaker), FY%d period 13. Read only to '
+                       'see where another fund paid for the same DESE function.' % fy)]
+    seen = set()
+    for e in RECORD.get(fy, []):
+        if e['kind'] != 'documented':
+            continue
+        key = e['key']
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(held_source(key, 'why_the_surplus', e['board'],
+                               'Quoted in “Why there was money left over”: “%s”.'
+                               % e['quote']))
+    return out
+
+
+WHY_NOT_ESTABLISHED = [
+    'Why any category was left under budget. The ledger shows where money was left; '
+    'vacancies, placements, prices and restraint all produce the same rows.',
+    'Whether anyone chose to spend less. The discretionary share is the most thrift could '
+    'explain, not a finding that it did; the monthly journal would show it and is not '
+    'published.',
+]
+
+
+# ---- the whole section, for one year -----------------------------------------------
+
+def why(fy, rows, t):
+    """Everything the 'why' half of a report needs: the computed figures, the record, the
+    markdown for the short version and for two sections, the conclusions, the charts."""
+    slug = paths(fy)['slug']
+    cats = causes(rows)
+    total = t['available']
+    under_tot = round(sum(c['under'] for c in cats), 2)
+    over_tot = round(sum(c['over'] for c in cats), 2)
+    if round(sum(c['unspent'] for c in cats), 2) != round(total, 2):
+        fail('the categories sum to %.2f, not the unspent total %.2f'
+             % (sum(c['unspent'] for c in cats), total))
+    by = {c['key']: c for c in cats}
+    disc = round(sum(c['unspent'] for c in cats if c['kind'] == 'discretionary'), 2)
+    circ = round(total - disc, 2)
+    disc_share = 100 * disc / total
+    disc_enc = round(sum(c['encumbered'] for c in cats if c['kind'] == 'discretionary'), 2)
+    sal = [c for c in cats if c['key'] in ('teachers', 'counselors', 'paras', 'admin',
+                                            'custodians', 'other_staff')]
+    sal_net = round(sum(c['unspent'] for c in sal), 2)
+    top_u, top_o = top_accounts(rows)
+    record = check_record(fy)
+    hist = history(cats, fy)
+    hist_by = {h['key']: h for h in hist['rows']}
+    sf, sf_coarse = special_overlap(fy, cats)
+    bvs = bvs_rows(cats)
+    biggest = [c for c in cats if c['unspent'] > 0][:3]
+    biggest_sum = round(sum(c['unspent'] for c in biggest), 2)
+    overs = sorted([c for c in cats if c['unspent'] < 0], key=lambda c: c['unspent'])
+    disc_cats = [c for c in cats if c['kind'] == 'discretionary']
+    disc_repeat = [c for c in disc_cats if hist_by[c['key']]['years_under'] == len(
+        hist['years'])]
+    yrs = hist['years']
+    span = '%s–FY%d' % (C.fy(yrs[0]), yrs[-1])
+
+    # ---- charts ----
+    svg_causes = causes_svg(
+        cats, 'Where the FY%d money was left, by category' % fy,
+        '%s left net: %s in accounts that ended under budget, %s over in the rest'
+        % (usd(total), usd(under_tot), usd(abs(over_tot))))
+    svg_bvs = bvs_svg(
+        bvs, 'Budget against spending, FY%d, by category' % fy,
+        'Each bar is that category’s revised budget; the figure beside the name is its size')
+
+    # ---- markdown: the short version's addition ----
+    s = []
+    s.append('![Where the FY%d school surplus was left, by category: %s.](charts/%s-causes.svg)\n'
+             % (fy, '; '.join('%s %s' % (c['label'], usd0(c['unspent'])) for c in cats),
+                slug))
+    s.append('**Where it came from. Three categories left the most:** %s. Accounts that ended '
+             'over budget used %s of what the rest left%s.\n'
+             % ('; '.join('%s, %s (%s of its budget)'
+                          % (c['label'].lower(), usd(c['unspent']),
+                             C.pct(c['pct_of_revised'])) for c in biggest),
+                usd(abs(over_tot)),
+                (', led by %s' % ' and '.join('%s, %s over' % (c['label'].lower(),
+                                                                 usd(abs(c['unspent'])))
+                                              for c in overs[:2])) if overs else ''))
+    s.append('**Was it thrift? %s of it (%s) sat in discretionary lines — supplies, upkeep '
+             'and equipment, the part a decision to spend less could explain.** The other %s '
+             'sat in salaries, benefits, tuition and other lines that follow staffing, '
+             'placements and prices. The split of lines into the two groups is ours; see '
+             '*Was it thrift?* below.\n'
+             % (usd(disc), C.pct(disc_share, 0), usd(circ)))
+
+    # ---- markdown: the "why" section (restHead on the page) ----
+    w = []
+    w.append('## Why there was money left over\n')
+    w.append('![Each category’s FY%d revised budget split into what was spent, what is still '
+             'committed to open purchase orders, and what was left.](charts/%s-budget-vs-spent.svg)\n'
+             % (fy, slug))
+    w.append('Every one of the %s accounts is put in exactly one category by its DESE function '
+             'and object code (the table is under *How the categories are built*). The '
+             'surplus is net: accounts that ended under budget left %s, and accounts that '
+             'ended over used %s of it.\n'
+             % (C.num(len(rows)), usd(under_tot), usd(abs(over_tot))))
+    w.append('| category | revised budget | spent | still committed | left over (net) | '
+             '% of its budget | under-budget accounts | over-budget accounts |\n'
+             '|---|---:|---:|---:|---:|---:|---:|---:|')
+    for c in cats:
+        w.append('| %s | %s | %s | %s | **%s** | %s | %s | %s |'
+                 % (c['label'], usd0(c['revised']), usd0(c['expended']),
+                    usd0(c['encumbered']) if c['encumbered'] else '—', usd0(c['unspent']),
+                    C.pct(c['pct_of_revised']) if c['pct_of_revised'] is not None else '—',
+                    usd0(c['under']) if c['under'] else '—',
+                    usd0(c['over']) if c['over'] else '—'))
+    w.append('| **Total** | %s | %s | %s | **%s** | %s | %s | %s |\n'
+             % (usd0(t['revised']), usd0(t['expended']), usd0(t['encumbered']), usd0(total),
+                C.pct(100 * total / t['revised']), usd0(under_tot), usd0(over_tot)))
+    w.append('### What the ledger shows, and what explains it\n')
+    w.append('For each category that moved by at least %s: first what the ledger shows '
+             '(measured), then what a document says about why — quoted, never paraphrased — '
+             'or, where no document here says, the causes that fit the same numbers, marked '
+             'as a hypothesis, and the one record that would settle it.\n' % usd(EXPLAIN_MIN))
+    explained = []
+    for c in sorted(cats, key=lambda c: -abs(c['unspent'])):
+        recs = [e for e in record if c['key'] in e['categories']]
+        if abs(c['unspent']) < EXPLAIN_MIN and not [e for e in recs if e['kind'] == 'documented']:
+            continue
+        explained.append(c['key'])
+        if c['unspent'] >= 0:
+            fact = ('%s left %s of %s (%s of its budget).'
+                    % (c['label'], usd(c['unspent']), usd(c['revised']),
+                       C.pct(c['pct_of_revised'])))
+        else:
+            fact = ('%s ran %s over a budget of %s.'
+                    % (c['label'], usd(abs(c['unspent'])), usd(c['revised'])))
+        if c['under'] and c['over']:
+            fact += (' Inside it, accounts under budget left %s and accounts over budget '
+                     'used %s.' % (usd(c['under']), usd(abs(c['over']))))
+        if c['encumbered']:
+            fact += ' %s more is still committed to open orders.' % usd(c['encumbered'])
+        h = hist_by[c['key']]
+        fact += (' It ended under budget in %s of the %s closed years held (%s).'
+                 % (C.num(h['years_under']), C.num(len(yrs)), span))
+        paid = [r for r in sf if r['category'] == c['key']]
+        if paid:
+            fact += (' Other funds also paid on the same lines: %s.'
+                     % '; '.join('fund %s%s, %s' % (r['fund'], (' “%s”' % r['name'])
+                                                     if r['name'] else '', usd(r['expended']))
+                                 for r in paid))
+        w.append('**%s.** %s\n' % (c['label'], fact))
+        docs = [e for e in recs if e['kind'] == 'documented']
+        caps = [e for e in recs if e['kind'] == 'caption']
+        if docs or caps:
+            w.append('*On the record — evidence of what was said, not a test of it:*\n')
+            for e in docs + caps:
+                w.append(record_line(e))
+            w.append('')
+        hyp, settles = HYPOTHESES[c['key']]
+        if not docs:
+            w.append('*Possible causes, not established by any document here (a hypothesis):* '
+                     '%s. *Would settle it:* %s.\n' % (hyp, settles))
+        else:
+            w.append('*What the record does not establish:* how much of the figure above it '
+                     'accounts for. Other causes that fit: %s. *Would settle it:* %s.\n'
+                     % (hyp, settles))
+    w.append('### The largest single accounts\n')
+    w.append('| left over | account | budget | spent | committed |\n|---:|---|---:|---:|---:|')
+    for a in top_u:
+        w.append('| %s | %s `%s` | %s | %s | %s |'
+                 % (usd0(a['available']), a['name'], a['account'], usd0(a['revised']),
+                    usd0(a['expended']), usd0(a['encumbered']) if a['encumbered'] else '—'))
+    w.append('')
+    if top_o:
+        w.append('| over budget | account | budget | spent | committed |\n|---:|---|---:|---:|---:|')
+        for a in top_o:
+            w.append('| %s | %s `%s` | %s | %s | %s |'
+                     % (usd0(a['available']), a['name'], a['account'], usd0(a['revised']),
+                        usd0(a['expended']),
+                        usd0(a['encumbered']) if a['encumbered'] else '—'))
+        w.append('')
+    w.append('---\n')
+
+    # ---- markdown: "Was it thrift?" ----
+    th = []
+    th.append('## Was it thrift?\n')
+    caps_thrift = [e for e in record if e['kind'] == 'caption']
+    th.append('A statement that the district was careful is evidence that it was said, not of '
+              'what happened (rule 7). The ledger can test it five ways; a sixth needs a '
+              'record nobody has published.\n')
+    th.append('**1. Which lines.** %s of the %s left over sat in discretionary lines (%s); '
+              '%s sat in circumstantial ones. Salary lines alone, net: %s. Thrift shows up in '
+              'the first group; the second follows vacancies, placements and prices whatever '
+              'anyone decides about purchases.\n'
+              % (usd(disc), usd(total), C.pct(disc_share, 0), usd(circ), usd(sal_net)))
+    th.append('**2. Does it repeat?** Left over, net, by category, in every closed year the '
+              'ledger holds. A line left over every year reads as budgeted high rather than '
+              'run lean.\n')
+    th.append('| category | kind | %s | years under |\n|---|---|%s---:|'
+              % (' | '.join(C.fy(y) for y in yrs), '---:|' * len(yrs)))
+    for h in hist['rows']:
+        th.append('| %s | %s | %s | %s of %s |'
+                  % (h['label'], h['kind'], ' | '.join(usd0(v) for v in h['by_year']),
+                     C.num(h['years_under']), C.num(len(yrs))))
+    th.append('')
+    th.append('%s of the %s discretionary categories ended under budget in all %s years%s.\n'
+              % (C.num(len(disc_repeat)), C.num(len(disc_cats)), C.num(len(yrs)),
+                 (' (%s)' % ', '.join(c['label'].lower() for c in disc_repeat))
+                 if disc_repeat else ''))
+    th.append('**3. Budget moves during the year.** What was voted, what moved, and what the '
+              'budget became, by category — slack moved from one line to cover another is '
+              'not saving.\n')
+    th.append('| category | voted | moved during the year | revised |\n|---|---:|---:|---:|')
+    for c in sorted(cats, key=lambda c: -abs(c['transfers'])):
+        if not round(c['transfers'], 2):
+            continue
+        th.append('| %s | %s | %s | %s |' % (c['label'], usd0(c['original']),
+                                            usd0(c['transfers']), usd0(c['revised'])))
+    th.append('')
+    th.append('**4. Other funds paying.** The school’s special funds (grants, revolving funds, '
+              'the circuit breaker) spent on the same DESE function as these categories:\n')
+    if sf:
+        for r in sf:
+            th.append('- %s: fund %s%s spent %s.'
+                      % (CAT_LABEL[r['category']], r['fund'],
+                         (' “%s”' % r['name']) if r['name'] else '', usd(r['expended'])))
+        th.append('')
+    th.append('A match means the same kind of spending, not that it replaced general-fund '
+              'spending: neither report says which staff member or child a payment covered.\n')
+    th.append('%s more of special-fund spending is coded to a round function (2000, 0000 and '
+              'the like) that names no line, so it cannot be matched to any category here. '
+              'Where another fund paid, a general-fund line can look underspent without '
+              'anyone having spent less (rule 11).\n' % usd(sf_coarse))
+    th.append('**5. Committed is not saved.** %s is still committed to open purchase orders '
+              '— %s of it in discretionary lines. It is not in the %s and is not savings until '
+              'an order is released.\n' % (usd(t['encumbered']), usd(disc_enc), usd(total)))
+    th.append('**6. A decision on record.** What the archive holds about a hold on spending:\n')
+    for e in [e for e in record if e['kind'] == 'caption']:
+        th.append(record_line(e))
+    th.append('')
+    th.append('No posted minutes in the archive record a vote or a directive to freeze FY%d '
+              'spending; searched for *thrift*, *freeze*, *spending freeze*, *hold on '
+              'spending*, *frugal* and *conservative* in School Committee, Finance Committee '
+              'and Select Board documents. *Would settle it:* the general-fund journal by '
+              'month — thrift would show as discretionary spending slowing late in the year '
+              'against prior years.\n' % fy)
+    th.append('---\n')
+
+    # ---- method ----
+    m = []
+    m.append('## How the categories are built\n')
+    m.append('One table in `scripts/build_school_surplus.py` (`CATEGORIES`), first match '
+             'wins. *Function* is the account string’s 4th segment, the DESE function code; '
+             '*salary* means the object code starts `51`. The discretionary / circumstantial '
+             'split is ours, a judgement about which lines a decision to spend less moves '
+             'directly, and it is stated so it can be disagreed with.\n')
+    m.append('| category | kind | rule |\n|---|---|---|')
+    for key, label, kind, rule, _ in CATEGORIES:
+        m.append('| %s | %s | %s |' % (label, kind, rule))
+    m.append('')
+    m.append('---\n')
+
+    # ---- conclusions ----
+    lead = biggest[0]
+    rws = [
+        conclusion(
+            id='where-the-surplus-was-left',
+            claim='%s was left in three categories: %s, %s and %s.'
+                  % (usd(biggest_sum), CAT_SHORT[biggest[0]['key']],
+                     CAT_SHORT[biggest[1]['key']], CAT_SHORT[biggest[2]['key']]),
+            so_what=('Accounts over budget used %s; the largest overrun was %s, %s over.'
+                     % (usd(abs(over_tot)), CAT_SHORT[overs[0]['key']],
+                        usd(abs(overs[0]['unspent']))))
+                    if overs else
+                    ('No category ran over, net; the largest, %s, left %s of its budget.'
+                     % (CAT_SHORT[lead['key']], C.pct(lead['pct_of_revised']))),
+            figures=dict(
+                {'c_three': figure(biggest_sum, usd(biggest_sum),
+                                   'left over in the three largest categories'),
+                 'c_under': figure(under_tot, usd(under_tot)),
+                 'c_total': figure(total, usd(total))},
+                **({'c_over': figure(abs(overs[0]['unspent']), usd(abs(overs[0]['unspent']))),
+                    'c_over_tot': figure(abs(over_tot), usd(abs(over_tot)))}
+                   if overs else
+                   {'c_lead_pct': figure(lead['pct_of_revised'],
+                                         C.pct(lead['pct_of_revised']))}),
+                **{'c_top%d' % i: figure(c['unspent'], usd(c['unspent']))
+                   for i, c in enumerate(biggest)}),
+            figure='c_three', kind='measured', bearing='sizes',
+            detail='By category, net: %s. Accounts under budget left %s in all, and the '
+                   'surplus is what remained, %s. The ledger shows where money was left, '
+                   'never why.'
+                   % ('; '.join('%s %s' % (c['label'].lower(), usd(c['unspent']))
+                                for c in biggest),
+                      usd(under_tot), usd(total)),
+            basis='`sources/data/munis-school-ytd.csv`, FY%d period 13, report gf-school, '
+                  'every account put in one category by `CATEGORIES` in the generator.' % fy,
+            not_shown='Why any category was left under budget — vacancies, placements, '
+                      'prices and restraint all produce the same ledger.',
+            allow=('13', str(fy)),
+        ),
+        conclusion(
+            id='how-much-thrift-could-explain',
+            claim='%s of the surplus (%s) sat in discretionary lines thrift could explain.'
+                  % (C.pct(disc_share, 0), usd(disc)),
+            so_what='The other %s sat in staff, tuition and benefit lines, which follow '
+                    'vacancies, placements and prices.' % usd(circ),
+            figures={'c_disc_share': figure(disc_share, C.pct(disc_share, 0),
+                                            'of the surplus in discretionary lines'),
+                     'c_disc': figure(disc, usd(disc)),
+                     'c_circ': figure(circ, usd(circ)),
+                     'c_years': figure(len(yrs), C.num(len(yrs)), 'years'),
+                     'c_rep': figure(len(disc_repeat), C.num(len(disc_repeat)),
+                                     'categories'),
+                     'c_ndisc': figure(len(disc_cats), C.num(len(disc_cats)),
+                                       'categories')},
+            figure='c_disc_share', kind='measured', bearing='sizes',
+            detail='Discretionary means supplies, upkeep and equipment — the split is ours, '
+                   'stated in the method table. %s of the %s discretionary categories were also '
+                   'left under budget in all %s closed years held, which reads as budgeted high '
+                   'as much as run lean. It is the most thrift could explain, not a finding '
+                   'that it did.'
+                   % (C.num(len(disc_repeat)), C.num(len(disc_cats)), C.num(len(yrs))),
+            basis='`munis-school-ytd.csv`, FY2023 to FY2026 period 13, gf-school; the '
+                  'category table in the generator.',
+            not_shown='Whether anyone chose to spend less. That would show in the monthly '
+                      'journal, which is not published.',
+        ),
+    ]
+    payload = dict(
+        categories=cats,
+        category_rules=[dict(key=k, label=l, kind=kd, rule=r) for k, l, kd, r, _ in CATEGORIES],
+        under_total=under_tot, over_total=over_tot,
+        discretionary=dict(unspent=disc, share_pct=round(disc_share, 2), encumbered=disc_enc,
+                           repeat_every_year=[c['key'] for c in disc_repeat]),
+        circumstantial=dict(unspent=circ),
+        salary_net=sal_net,
+        top_unspent=top_u, top_over=top_o,
+        budget_vs_spent=bvs, bvs_cap=BVS_CAP,
+        history=hist,
+        special_funds=sf, special_funds_unmatched=sf_coarse,
+        record=[{k: v for k, v in e.items()} for e in record],
+        explained=explained,
+        hypotheses={k: dict(causes=h, settles=s) for k, (h, s) in HYPOTHESES.items()
+                    if k in explained},
+        explain_min=EXPLAIN_MIN,
+    )
+    return dict(short='\n'.join(s).rstrip('\n') + '\n', section='\n'.join(w) + '\n',
+                thrift='\n'.join(th) + '\n', method='\n'.join(m) + '\n',
+                conclusions=rws, payload=payload,
+                charts={slug + '-causes': svg_causes, slug + '-budget-vs-spent': svg_bvs})
+
+
+# ======================================================================================
 # FY2025 -- against the figure the School Committee was told, 17 September 2025
 # ======================================================================================
 
@@ -468,6 +1365,7 @@ def fy2025():
     bf = by_function(rows)
     pa = para_accounts(rows)
     page = page_of(FY25_MINUTES_TXT, '$603,885.97')
+    y = why(fy, rows, t)
 
     fam = {r['family']: r for r in bf}
     instr = fam.get(2000, dict(total=0.0))
@@ -583,6 +1481,10 @@ def fy2025():
         ),
     ]
 
+    # What caused it comes first: where the money sat, how much thrift could explain, and
+    # the Town's own stated explanation. The comparison cards follow, in the fold.
+    rws = y['conclusions'] + [rws[3]] + rws[:3]
+
     chart_svg = waterfall_svg(
         t, '%s moved out mid-year →' % usdk(t['transfers']), 'Unspent\nat the close',
         [('Our ledger', t['available'], UNSPENT),
@@ -610,6 +1512,7 @@ def fy2025():
       'back at the close plus %s moved to other budgets mid-year, against an original '
       'appropriation of %s.\n' % (usd(not_spent_against_original), usd(t['available']),
                                    usd(moved_out), usd(t['original'])))
+    w(y['short'])
     w('**The closed ledger’s %s exceeds the district’s own %s by %s.** The '
       'School Committee was told the surplus had reached $603,885.97 on 17 September 2025. '
       'No single account, and no pair of accounts, accounts for the gap; entries posted '
@@ -620,6 +1523,8 @@ def fy2025():
       '(%s) equals the Town’s own FY25 school figure in its revenue-distribution '
       'workbook (%s).\n' % (usd(orig), usd(revdist_fy25)))
     w('---\n')
+    w(y['section'])
+    w(y['thrift'])
     w('## Where it sat, by DESE function\n')
     w('Net unspent at the close, by function family (the account string’s 4th segment, '
       'grouped to the thousands) and whether the line is salary (object code starting `51`) '
@@ -638,6 +1543,7 @@ def fy2025():
       'is not visible at this grain — the ledger carries no narrative behind either '
       'transfer.*\n')
     w('---\n')
+    w(y['method'])
     w('## What it does not show\n')
     w('- What any dollar was spent on, or when — no journal.\n')
     w('- Where the %s moved out of the department went — net per account, no '
@@ -693,8 +1599,9 @@ def fy2025():
         by_function_totals=dict(salary=tot_sal, non_salary=tot_non,
                                 total=round(tot_sal + tot_non, 2)),
         para_accounts=pa,
-        sources=fy25_sources(page),
-        not_established=[
+        causes=y['payload'],
+        sources=fy25_sources(page) + why_sources(fy),
+        not_established=WHY_NOT_ESTABLISHED + [
             'Where the %s moved out of the department went — net per account, no '
             'counterparty.' % usd(moved_out),
             'Why the ledger is %s above the district’s September figure. Entries '
@@ -707,7 +1614,7 @@ def fy2025():
         ],
         conclusions=emit('fy25-school-surplus', rws),
     )
-    return md, pay, chart_svg
+    return md, pay, chart_svg, y['charts']
 
 
 # ======================================================================================
@@ -945,6 +1852,37 @@ def fy2026():
     if spent_moved != 0:
         fail('spending moved between period 12 and period 13 (%s); the report says it did '
              'not and must be rewritten' % usd2(spent_moved))
+    y = why(fy, rows, t)
+    ycat = {c['key']: c for c in y['payload']['categories']}
+    sal_net = y['payload']['salary_net']
+    paras_over = abs(ycat['paras']['unspent'])
+    if ycat['paras']['unspent'] >= 0:
+        fail('FY26 paraprofessionals no longer ran over; the salary card must be rewritten')
+    salary_card = conclusion(
+        id='salary-lines-left-money-though-aides-ran-over',
+        claim='Salary lines left %s net, though paraprofessionals ran %s over.'
+              % (usd(sal_net), usd(paras_over)),
+        so_what='The record names one leave of absence; no document here says why counselor '
+                'money was left.',
+        figures={'s_net': figure(sal_net, usd(sal_net), 'left over in salary lines, net'),
+                 's_paras': figure(paras_over, usd(paras_over)),
+                 's_couns': figure(ycat['counselors']['unspent'],
+                                   usd(ycat['counselors']['unspent'])),
+                 's_teach': figure(ycat['teachers']['unspent'],
+                                   usd(ycat['teachers']['unspent']))},
+        figure='s_net', kind='measured', bearing='sizes',
+        detail='Counselors & psychologists left %s and teachers & substitutes %s. The 29 July '
+               '2026 minutes say money in a special-education teacher account "%s", and was '
+               'moved to cover paraprofessional overages. Vacancies, leaves and hiring steps '
+               'all fit the rest; the position-control roster would settle it.'
+               % (usd(ycat['counselors']['unspent']), usd(ycat['teachers']['unspent']),
+                  'was associated with a leave of absence'),
+        basis='`munis-school-ytd.csv`, FY2026 period 13, salary lines (object 51xxxx) by '
+              'category; School Committee minutes, 29 July 2026.',
+        not_shown='Which posts were vacant or on leave, and for how long. A dollar is not a '
+                  'post (rule 7, rule 11).',
+        allow=('29 July 2026',),
+    )
 
     rws = [
         conclusion(
@@ -1052,6 +1990,9 @@ def fy2026():
         ),
     ]
 
+    # What caused it comes first; the period-12 comparison follows, in the fold.
+    rws = y['conclusions'] + [salary_card] + rws
+
     compare = [('June ledger,\nfloor', floor12, MOVED),
                ('Period 13,\n6 Oct 2026', t['available'], UNSPENT),
                ('June ledger,\nceiling', ceiling12, CEILING)]
@@ -1083,6 +2024,7 @@ def fy2026():
       'FY2026**, of a revised budget of %s (%s voted, %s %s during the year).\n'
       % (usd(t['available']), usd(t['revised']), usd(t['original']),
          usd(abs(t['transfers'])), 'moved in' if t['transfers'] > 0 else 'moved out'))
+    w(y['short'])
     w('**It landed at the bottom of the period-12 range: %s above the %s the June ledger '
       'showed.** Spending did not change by a cent in any of the %s accounts between the '
       'run of %s and the run of %s. The one change was %s.\n'
@@ -1095,6 +2037,8 @@ def fy2026():
       % (usd(t['encumbered']), C.num(n_open), usd(t['available']), usd(ceiling13),
          usd(fy25_enc)))
     w('---\n')
+    w(y['section'])
+    w(y['thrift'])
     w('## Against the period-12 range\n')
     w('`fy26-closeout.md` read the period-12 report and said the year would close between '
       '%s (every open order paid) and %s (every open order released). Department 300, the '
@@ -1191,6 +2135,7 @@ def fy2026():
          C.num(len(sped_in)), usd(kinder_budget), usd(kinder_spent)))
     para_table(pa, w)
     w('---\n')
+    w(y['method'])
     w('## What it does not show\n')
     w('- Whether the %s still encumbered will be paid, released, or carried into FY2027 — '
       'the ledger shows the commitment, not its fate.\n' % usd(t['encumbered']))
@@ -1306,8 +2251,9 @@ def fy2026():
         by_function=bf,
         by_function_totals=tot,
         para_accounts=pa,
-        sources=srcs,
-        not_established=[
+        causes=y['payload'],
+        sources=srcs + why_sources(fy),
+        not_established=WHY_NOT_ESTABLISHED + [
             'Whether the %s still encumbered will be paid, released, or carried into '
             'FY2027.' % usd(t['encumbered']),
             'Where the %s moved into the department during the year came from — net per '
@@ -1323,7 +2269,7 @@ def fy2026():
         ],
         conclusions=emit(slug, rws),
     )
-    return md, pay, chart_svg
+    return md, pay, chart_svg, y['charts']
 
 
 STORIES = {2025: fy2025, 2026: fy2026}
@@ -1331,26 +2277,27 @@ STORIES = {2025: fy2025, 2026: fy2026}
 
 def run(fy, check):
     p = paths(fy)
-    md, pay, chart_svg = STORIES[fy]()
+    md, pay, chart_svg, extra = STORIES[fy]()
     pay_text = json.dumps(pay, indent=1, ensure_ascii=False, sort_keys=True) + '\n'
+    charts_dir = os.path.dirname(p['chart'])
+    outputs = [(p['md'], md), (p['payload'], pay_text), (p['chart'], chart_svg)] + [
+        (os.path.join(charts_dir, name + '.svg'), svg) for name, svg in sorted(extra.items())]
     if check:
         def cur(path):
             return open(path, encoding='utf-8').read() if os.path.exists(path) else ''
-        bad = [os.path.basename(path) for path, gen in (
-            (p['md'], md), (p['payload'], pay_text), (p['chart'], chart_svg),
-        ) if gen != cur(path)]
+        bad = [os.path.basename(path) for path, gen in outputs if gen != cur(path)]
         if bad:
             print('STALE %s' % ', '.join(bad), file=sys.stderr)
             return 1
-        print('%s.md, .json and the chart are current' % p['slug'])
+        print('%s.md, .json and its %d charts are current' % (p['slug'], len(outputs) - 2))
         return 0
-    os.makedirs(os.path.dirname(p['chart']), exist_ok=True)
-    for path, text in ((p['md'], md), (p['payload'], pay_text), (p['chart'], chart_svg)):
+    os.makedirs(charts_dir, exist_ok=True)
+    for path, text in outputs:
         tmp = path + '.tmp'
         with open(tmp, 'w', encoding='utf-8') as fh:
             fh.write(text)
         os.replace(tmp, path)
-    print('wrote %s, %s and %s' % (rel(p['md']), rel(p['payload']), rel(p['chart'])))
+    print('wrote %s' % ', '.join(rel(path) for path, _ in outputs))
     return 0
 
 

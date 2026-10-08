@@ -77,6 +77,9 @@ DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 GL = os.path.join(ROOT, 'sources', 'data', 'gl-history.csv')
 MUNIS = os.path.join(ROOT, 'sources', 'data', 'munis-school-ytd.csv')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
+Q3 = os.path.join(ROOT, 'sources', 'data', 'school-special-revenue-fy26-q3.csv')
+SRR = os.path.join(ROOT, 'sources', 'data', 'special-revenue-read.csv')
+CB_FUND_NAME = '50/50 Grant Sped Tuitions'   # fund 2640 as the annual report names it
 OUT_MD = os.path.join(ROOT, 'sources', 'analyses', ID + '.md')
 OUT_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', ID + '.json')
 CHART_DIR = os.path.join(ROOT, 'sources', 'analyses', 'charts')
@@ -128,6 +131,14 @@ QUOTES = [
          why='A second route to a surprise that no count of children shows: the price of a '
              'place rising after the budget is built. The minutes record the question and '
              'not the answer, and which tuition the rise applied to is not stated.'),
+    dict(key='carryover', path='sources/meetings/text/finance-committee/2024-03-14-minutes-6469.txt',
+         board='Finance Committee', date='2024-03-14',
+         quote='Dave Passion questions how the 14% increase was absorbed last year. Julianna '
+               'Hanscom states it is probably absorbed with a lot of the carry over for the '
+               'circuit breaker monies and that’s why that account has gone down.',
+         why='The district’s own account, as minuted in March 2024, of the circuit breaker '
+             'balance being drawn down to absorb a tuition rise. “Probably” is in the minutes: '
+             'a belief stated at a meeting, not a measurement.'),
     dict(key='radar', path='sources/meetings/text/school-committee/2026-02-04-minutes-7634.txt',
          board='School Committee', date='2026-02-04',
          quote='we currently have students on our radar that may require out of district '
@@ -170,6 +181,58 @@ TOWN_MEETING = dict(
 AGENDA = dict(path='sources/meetings/text/school-committee/2026-10-07-agenda-8058.txt',
               quote='Vote an Amount to Fund the Special Education Reserve Fund Approved at '
                     'November 2026 Town Meeting')
+
+# WHAT WAS SAID ABOUT THE SIZE OF THE RESERVE, autumn 2026. The town has not yet published
+# minutes for these meetings, so the only record in this archive is the machine captions of
+# the recordings -- OURS, derived, and a FINDING AID: a caption model hears "fifteen
+# hundred", "$1,500" and "$50" alike. Each is re-found verbatim in the caption file on every
+# build, its timestamp computed, and it is cited as THE VIDEO AT THAT MOMENT, never as a
+# record. A figure in one is what the captions render, to be checked against the video.
+SC = 'sources/data/youtube-transcripts/school-committee/'
+CAPTIONS = [
+    dict(key='overages', file=SC + '2026-10-07-kPZcnFd5COw.json', board='School Committee',
+         date='2026-10-07',
+         quote='if our overages were almost $600,000 this year, we should put some more money away'),
+    dict(key='one', file=SC + '2026-10-07-kPZcnFd5COw.json', board='School Committee',
+         date='2026-10-07', quote='So 300,000 out of district possibly.'),
+    dict(key='average', file=SC + '2026-10-07-kPZcnFd5COw.json', board='School Committee',
+         date='2026-10-07',
+         quote='the average price of 150,000 per child, which is just an average, not the '
+               'exact amount'),
+    dict(key='fifteen', file=SC + '2026-10-07-kPZcnFd5COw.json', board='School Committee',
+         date='2026-10-07',
+         quote='if we have 15 outofd district placements at the end by the end of this year, '
+               'we\'re talking about spending about 2,250,000 on out of district placements'),
+    dict(key='motion', file=SC + '2026-10-07-kPZcnFd5COw.json', board='School Committee',
+         date='2026-10-07',
+         quote='We\'re going to request $300,000 in free cash if the free cash is certified at '
+               'the November town meeting'),
+    dict(key='range', file=SC + '2025-11-19-6PZ-J-oIAkQ.json', board='School Committee',
+         date='2025-11-19', quote='they\'re probably ranging between 3 and 800,000 right now'),
+]
+
+# HOW THE CIRCUIT BREAKER WORKS, in the district's own words. The statute (M.G.L. c.71B
+# s.5A) is not in this archive; this presentation to the School Committee is, and every
+# line of the mechanism the report states is quoted from it and re-read on every build.
+# It is the district's DESCRIPTION of the programme, and the report says so each time.
+CB_DOC = 'sources/district-budget/text/sc-meetings/2023-2024-circuit-breaker-presentation.txt'
+CB_PDF = 'district-budget/docs/sc-meetings/2023-2024-circuit-breaker-presentation.pdf'
+CB_QUOTES = dict(
+    threshold='four times the state average foundation budget per pupil (as calculated under '
+              'the chapter 70 program). For FY24, the threshold is $51,721',
+    share='the state reimburses approximately 75 percent of the costs above that threshold '
+          '(however it has been as low as 40%).',
+    eligible='In-District as well as Out–of-District costs are eligible.',
+    prior='Circuit breaker reimbursements are for the district\'s prior year\'s expenses.',
+    first='September: receive 1st quarterly reimbursement payment',
+    last='June: receive 4th quarterly reimbursement payment',
+    account='Circuit breaker reimbursements should be deposited into a special education '
+            'reimbursement account.',
+    spend='These funds may be expended by the school committee in the year received or in '
+          'the following',
+    vote='for any special education- related purposes, without further appropriation.',
+    plan='the appropriating authority can and should consider the projected reimbursements',
+)
 
 
 def fail(msg):
@@ -334,6 +397,11 @@ def load_state(db):
         d['all_funds'] += t or 0
     if len(dese) < 15:
         fail('DESE out-of-district tuition came back with %d years' % len(dese))
+    func = {}
+    for fy, code, t in db.execute(
+            "SELECT fy, func_code, total FROM dese_function_expenditure WHERE lea=? AND "
+            "level='detail' AND func_code IN ('9300','9400')", (LEA,)):
+        func.setdefault(fy, {})[code] = t or 0
     breaker = {fy: dict(paid=round(p or 0), tuition=round(t or 0), transport=round(tr or 0),
                         students=int(s or 0))
                for fy, p, t, tr, s in db.execute(
@@ -372,7 +440,7 @@ def load_state(db):
     nss = {fy: dict(nss=round(n), stage=st) for fy, n, st in db.execute(
         "SELECT fy, net_school_spending, nss_stage FROM dese_ch70_formula WHERE lea=? AND "
         "net_school_spending IS NOT NULL ORDER BY fy", (LEA,))}
-    return dese, breaker, placed, sped, move, nss
+    return dese, breaker, placed, sped, move, nss, func
 
 
 def said():
@@ -389,11 +457,38 @@ def said():
             fail('the Town Meeting vote is no longer in the FY2025 annual report as quoted (%s)' % k)
     if squash(AGENDA['quote']) not in text_of(AGENDA['path']):
         fail('the School Committee agenda item is no longer as quoted')
+    cbt = text_of(CB_DOC)
+    for k, q in CB_QUOTES.items():
+        if squash(q) not in cbt:
+            fail('the circuit breaker presentation no longer says %r (%s)' % (q, k))
     m = re.search(r'Yes (\d+), No (\d+), Abstain (\d+)', TOWN_MEETING['quote'])
     vote = dict(yes=int(m.group(1)), no=int(m.group(2)), abstain=int(m.group(3)),
                 date='2025-11-18', cite='/docs/' + TOWN_MEETING['path'][len('sources/'):],
                 quote=TOWN_MEETING['quote'])
-    return out, vote
+    caps = []
+    for c in CAPTIONS:
+        j = json.load(open(os.path.join(ROOT, c['file']), encoding='utf-8'))
+        txt, at = '', []
+        for seg in j['segments']:
+            at.append((len(txt), seg['start']))
+            txt += seg['text'] + ' '
+        txt = squash(txt)
+        # positions shift under squash only where whitespace collapses; re-find on the
+        # squashed string and map back by counting segments up to that point instead.
+        k = txt.find(squash(c['quote']))
+        if k < 0:
+            fail('the caption %r is no longer in %s' % (c['quote'], c['file']))
+        n, acc = 0, ''
+        for seg in j['segments']:
+            nxt = squash(acc + seg['text'] + ' ')
+            if len(nxt) > k:
+                break
+            acc, n = nxt, n + 1
+        t = int(j['segments'][min(n, len(j['segments']) - 1)]['start'])
+        caps.append(dict(key=c['key'], board=c['board'], date=c['date'], quote=c['quote'],
+                         seconds=t, at='%d:%02d:%02d' % (t // 3600, t % 3600 // 60, t % 60),
+                         cite='%s&t=%ds' % (j['video_url'], t)))
+    return out, vote, caps
 
 
 def med(xs):
@@ -404,8 +499,8 @@ def measure():
     db = sqlite3.connect(DB)
     ledger, cb2640, tie_years, partial = load_ledger()
     ell = ell_tie(db)
-    dese, breaker, placed, sped, move, nss = load_state(db)
-    quotes, vote = said()
+    dese, breaker, placed, sped, move, nss, func = load_state(db)
+    quotes, vote, captions = said()
 
     first, last = ledger[0]['fy'], ledger[-1]['fy']
     n_years = len(ledger)
@@ -469,6 +564,56 @@ def measure():
             pairs.append(dict(fy_a=a['fy'], fy_b=b['fy'], total=a['dese_paid'] + b['dese_paid'],
                               shifted=a['dese_paid'] - a['cb_fund_receipts']))
     receipts_tie = [x['fy'] for x in allfunds if x['dese_paid'] == x['cb_fund_receipts']]
+
+    # ---- WHO PAID THE TUITION, and the circuit breaker beside it. One row per spending
+    # year. The total is DESE's End of Year Financial Report (functions 9300 + 9400, every
+    # fund) wherever DESE has published the year; the town's year-end report splits the
+    # part DESE calls "other funds" into the circuit breaker account (fund 2640) and the
+    # rest, for the years it covers. FY2026 is not yet in DESE's file, so for it only the
+    # town's two funds are shown and the remainder is NOT ESTABLISHED, never zero.
+    af = {x['fy']: x for x in allfunds}
+    who = []
+    for fy in range(first, last + 1):
+        d, b, nb = dese.get(fy), breaker.get(fy), breaker.get(fy + 1)
+        row = dict(fy=fy, received=b['paid'] if b else None,
+                   earned=nb['paid'] if nb else None,
+                   gf=None, cb_account=None, other=None, other_unsplit=None, total=None)
+        if d:
+            gf, oth = round(d['gen_fund']), round(d['other_funds'])
+            row.update(gf=gf, total=gf + oth)
+            if fy in af:
+                # THE TIE that lets two sources sit in one stack: DESE's general fund
+                # figure and the town's ledger must be the same dollars.
+                if abs(gf - af[fy]['gf_spent']) > 1:
+                    fail('FY%d: DESE general fund tuition %s does not tie to the town ledger %s'
+                         % (fy, gf, af[fy]['gf_spent']))
+                cba = af[fy]['cb_fund_spent']
+                if cba > oth + 1:
+                    fail('FY%d: the circuit breaker account paid more tuition (%s) than DESE '
+                         'reports from every non-general fund (%s)' % (fy, cba, oth))
+                row.update(cb_account=cba, other=max(0, oth - cba), basis='dese+munis')
+            else:
+                row.update(other_unsplit=oth, basis='dese')
+        elif fy in af:
+            row.update(gf=af[fy]['gf_spent'], cb_account=af[fy]['cb_fund_spent'],
+                       basis='munis')
+        else:
+            continue
+        who.append(row)
+    if len(who) < 15:
+        fail('the who-paid series came back with %d years' % len(who))
+    split = [r for r in who if r['basis'] == 'dese+munis']
+    big_other = max(split, key=lambda r: r['other'])
+    cb_last = max(breaker)
+    cb_now = dict(fy=cb_last, paid=breaker[cb_last]['paid'], for_fy=cb_last - 1,
+                  ledger_received=af.get(cb_last, {}).get('cb_fund_receipts'))
+    # The decomposition of the worst every-fund year, which the conclusion states.
+    wa = max(allfunds, key=lambda x: x['above_voted'])
+    gf_over = wa['gf_spent'] - wa['gf_original']
+    if gf_over + wa['cb_fund_spent'] != wa['above_voted']:
+        fail('the every-fund overrun does not decompose into the general fund overrun plus '
+             'the circuit breaker account')
+    gf_need_that_year = next(x for x in need if x['fy'] == wa['fy'])['gross']
 
     # ---- the trend, on one basis per series
     trend = []
@@ -535,6 +680,114 @@ def measure():
     recent_yoy = [x for x in yoy if x['fy'] >= pp_recent[0]['fy']]
     biggest_recent_yoy = max(recent_yoy, key=lambda x: x['change'])
 
+    # ---- TWO BASES FOR A BAD YEAR, the four closed years the ledger prints in full.
+    # AFTER the circuit breaker account: `need`, above -- what exceeded BOTH sources.
+    # BEFORE it: the same rule, with the account's tuition spending put back on the
+    # tuition line. The account pays tuition EVERY year, overrun or not (asserted below),
+    # so this counts routine spending as surprise. It is an UPPER BOUND on the cash a
+    # buffer would need if the account were empty, never a measure of surprise.
+    bases = []
+    for r in ledger:
+        if r['fy'] not in af:
+            continue
+        c = af[r['fy']]['cb_fund_spent']
+        before = (max(0, r['ood']['spent'] + c - r['ood']['original'])
+                  + max(0, r['indist']['variance']) + max(0, r['trans']['variance']))
+        after = next(x for x in need if x['fy'] == r['fy'])['gross']
+        bases.append(dict(fy=r['fy'], after=after, before=before, cb_tuition=c))
+    if not all(b['cb_tuition'] > 0 for b in bases):
+        fail('the circuit breaker account did not pay tuition in every closed year; the '
+             'report says it does')
+    T300, T500 = 300000, 500000
+    after_over_300 = sum(1 for x in need if x['gross'] > T300)
+    before_over_300 = sum(1 for b in bases if b['before'] > T300)
+    before_within_500 = sum(1 for b in bases if b['before'] <= T500)
+    worst_before = max(bases, key=lambda b: b['before'])
+
+    # ---- THE ACCOUNT ITSELF: in, out, and a balance derived from one snapshot.
+    snap_row = None
+    for r in csv.DictReader(open(Q3, encoding='utf-8')):
+        if (r['fund'] or '').lstrip("'") == '2640':
+            snap_row = r
+    if not snap_row:
+        fail('fund 2640 is not in the FY26 March special revenue report')
+    q3_bal, q3_rev, q3_exp = (num(snap_row['balance']), num(snap_row['revenue']),
+                              num(snap_row['expenditure']) + num(snap_row['salaries'])
+                              + num(snap_row['encumbered']))
+    if round(q3_rev) != af[last]['cb_fund_receipts']:
+        fail('the March snapshot revenue %s is not the FY%d year-end receipt %s'
+             % (q3_rev, last, af[last]['cb_fund_receipts']))
+    # THE YEAR-END BALANCE, the same way /analysis/sitting-on-money builds it, so the two
+    # reports cannot disagree: the annual town report's own Special Revenue schedule
+    # ("50/50 Grant Sped Tuitions", special-revenue-read.csv, every row tying to the printed
+    # total) through FY2023, then the 30 June 2023 balance carried forward through the
+    # period-13 ledgers. The March 2026 report is used only to CHECK the carry.
+    raw = {}
+    for r in csv.DictReader(open(MUNIS, encoding='utf-8')):
+        if r['period'] == '13' and r['fund'] == '2640':
+            d = raw.setdefault(int(r['fiscal_year']), [0.0, 0.0, 0.0])
+            if r['type'] == 'R':
+                d[0] += -num(r['ytd_expended'])
+            else:
+                d[1] += num(r['ytd_expended']) + num(r['encumbrances'])
+                d[2] += num(r['revised_budget'])
+    acct = []
+    for r in sorted(csv.DictReader(open(SRR, encoding='utf-8')), key=lambda r: int(r['fy'])):
+        if r['fund'] == CB_FUND_NAME:
+            fy = int(r['fy'])
+            acct.append(dict(fy=fy, opening=num(r['forward']), received=num(r['receipts']),
+                             spent=num(r['disbursements']), closing=num(r['carried']),
+                             budgeted=raw.get(fy, [0, 0, 0])[2], source='annual report'))
+    if [a['fy'] for a in acct] != list(range(acct[0]['fy'], acct[-1]['fy'] + 1)):
+        fail('the annual report balances for the circuit breaker account are not consecutive')
+    if acct[-1]['fy'] in raw and abs(acct[-1]['received'] - raw[acct[-1]['fy']][0]) > 0.01:
+        fail('the annual report receipts for FY%d do not equal fund 2640 in MUNIS'
+             % acct[-1]['fy'])
+    for fy in sorted(y for y in raw if y > acct[-1]['fy']):
+        o = acct[-1]['closing']
+        acct.append(dict(fy=fy, opening=o, received=raw[fy][0], spent=raw[fy][1],
+                         closing=o + raw[fy][0] - raw[fy][1], budgeted=raw[fy][2],
+                         source='carried through the year-end ledger'))
+    for a_ in acct:
+        for k in ('opening', 'received', 'spent', 'closing', 'budgeted'):
+            a_[k] = round(a_[k], 2)
+    implied = q3_bal - q3_rev + q3_exp
+    if abs(implied - next(a_ for a_ in acct if a_['fy'] == last)['opening']) > 0.01:
+        fail('the carried 30 June %d balance does not equal the opening the March report '
+             'implies (%s)' % (last - 1, implied))
+    acct_snap = dict(balance=round(q3_bal, 2), received=round(q3_rev, 2), spent=round(q3_exp, 2),
+                     as_of='2026-03-31', fy=last)
+    peak = max(acct, key=lambda a_: a_['closing'])
+    recent6 = acct[-7:]
+    fell = sum(1 for p_, q_ in zip(recent6, recent6[1:]) if q_['closing'] < p_['closing'])
+    pre = [a_ for a_ in acct if a_['fy'] in dese and a_['fy'] < munis_first]
+    ties = [a_['fy'] for a_ in pre if abs(a_['spent'] - round(dese[a_['fy']]['other_funds'])) <= 2]
+    acct_summary = dict(peak=peak, last=acct[-1], fell=fell, of=len(recent6) - 1,
+                        dese_ties=ties, dese_years=len(pre))
+
+    # ---- PER CHILD BY TYPE -- OUR ESTIMATE, and a test of whether it can be made at all.
+    # DESE splits tuition by school type (9300 non-public, 9400 collaborative); the town's
+    # 1 March count splits children into collaborative, day and residential. Day and
+    # residential are BOTH non-public here as far as the dollars go, so they are summed.
+    m_first_pp = pp_recent[0]['fy']
+    by_type = []
+    for fy, p in sorted(placed.items()):
+        f = func.get(fy)
+        if not f or not p['collaborative'] or p['day'] is None or p['residential'] is None:
+            continue
+        col, nonpub = int(p['collaborative']), int(p['day']) + int(p['residential'])
+        by_type.append(dict(fy=fy, collaborative=col, day=int(p['day']),
+                            residential=int(p['residential']),
+                            tuition_9400=round(f.get('9400', 0)), tuition_9300=round(f.get('9300', 0)),
+                            per_collaborative=round(f.get('9400', 0) / col),
+                            per_nonpublic=round(f.get('9300', 0) / nonpub) if nonpub else None))
+    bt_recent = [x for x in by_type if x['fy'] >= m_first_pp]
+    low_collab = min(bt_recent, key=lambda x: x['per_collaborative'])
+    np_recent_med = round(med([x['per_nonpublic'] for x in bt_recent]))
+    avg = next(c for c in captions if c['key'] == 'average')['quote']
+    said_per_child = int(re.search(r'average price of ([\d,]+) per child', avg).group(1)
+                         .replace(',', ''))
+
     # ---- the reserve, as Town Meeting created it, and its cap AS DESCRIBED
     cap_fy = max(y for y in nss if y <= last)
     cap = round(0.02 * nss[cap_fy]['nss'])
@@ -561,12 +814,23 @@ def measure():
         snap=snap, biggest_mid=biggest_mid, yoy=yoy, biggest_yoy=biggest_yoy,
         biggest_recent_yoy=biggest_recent_yoy, move=move, cap=cap, cap_fy=cap_fy,
         cap_nss=nss[cap_fy], scen=scen, in_band=in_band, quotes=quotes, vote=vote,
-        placed=placed, sped=sped, dese=dese)
+        placed=placed, sped=sped, dese=dese, who=who, big_other=big_other, cb_now=cb_now,
+        gf_over=gf_over, gf_need_that_year=gf_need_that_year, bases=bases, T300=T300,
+        T500=T500, after_over_300=after_over_300, before_over_300=before_over_300,
+        before_within_500=before_within_500, worst_before=worst_before, acct=acct,
+        acct_snap=acct_snap, acct_summary=acct_summary, by_type=by_type, bt_recent=bt_recent, low_collab=low_collab,
+        np_recent_med=np_recent_med, said_per_child=said_per_child, captions=captions)
 
 
 # --------------------------------------------------------------------- conclusions
 
 def build_conclusions(m):
+    """Six cards, in the order a resident needs them: the answer (how much a bad year
+    took), where the swing comes from, what the circuit breaker account adds, when the
+    state's money arrives, the size of one placement, and the reserve that now exists.
+    Every dollar figure says its basis in the card itself -- general fund or every fund,
+    before or after the circuit breaker account -- because a reader quoting one at a
+    meeting will not carry the footnote with it."""
     P, rows = m['per'], []
     o, t, i = P['ood'], P['trans'], P['indist']
     w = m['worst_need']
@@ -575,18 +839,19 @@ def build_conclusions(m):
     rows.append(conclusion(
         id='the-worst-year-in-seventeen',
         bearing='lever',
-        claim='Covering the worst year in %s would have taken %s.' % (C.num(m['n_years']),
-                                                                    C.usd(w['gross'])),
-        so_what='That is %s, the most the three special education lines ran past the budget '
-                'voted for them.' % C.fy(w['fy']),
-        detail='Each year from %s, the out-of-district tuition, in-district and '
-               'transportation lines are set against the budget the town voted before the '
-               'year began, and every line’s overrun is added up without netting it '
-               'against another line’s underspend. %s of the %s years needed something; '
-               'the median year needed %s. A reserve sized to the worst year would have '
-               'covered every one of them, and that is a rule we chose — not a figure '
-               'any document recommends.'
-               % (span, C.num(m['years_needing']), C.num(m['n_years']), C.usd(m['med_need'])),
+        claim='In the worst of %s years, special education needed %s more than its voted budget.'
+              % (C.num(m['n_years']), C.usd(w['gross'])),
+        so_what='That was %s; the median year needed %s. General fund: what exceeded the '
+                'circuit breaker account too.' % (C.fy(w['fy']), C.usd(m['med_need'])),
+        detail='Each year from %s, the tuition, in-district and transportation lines are set '
+               'against the budget the town voted before the year began, and every line’s '
+               'overrun is added up without netting it against another line’s underspend. '
+               '%s of the %s years needed something. These are general fund figures, measured '
+               'after whatever tuition the district charged to its circuit breaker account that '
+               'year — so they are what exceeded both sources. A reserve sized to '
+               'the worst year would have covered every one of them — a rule we chose, not a '
+               'figure any document recommends.'
+               % (span, C.num(m['years_needing']), C.num(m['n_years'])),
         figures={'n': figure(m['n_years'], C.num(m['n_years']), 'years'),
                  'worst': figure(w['gross'], C.usd(w['gross'])),
                  'fy': figure(w['fy'], C.fy(w['fy'])),
@@ -599,109 +864,158 @@ def build_conclusions(m):
               'ledger history before that. The grouping of accounts is ours.'
               % C.fyspan(m['munis_first'], m['last']),
         not_shown='What a future year will need. Seventeen years hold one bad year of each '
-                  'kind at most, and the circuit breaker account paid part of the bill in '
-                  'every year without appearing in these lines.'))
+                  'kind at most, and the split between the general fund and the circuit '
+                  'breaker account is the district’s choice each year.'))
 
     rows.append(conclusion(
         id='tuition-misses-both-ways',
         bearing='sizes',
-        claim='Out-of-district tuition ran over its voted budget in %s of %s years.'
+        claim='Out-of-district tuition is the swing: over its voted budget in %s of %s years.'
               % (C.num(o['years_over']), C.num(o['years'])),
-        so_what='The worst, %s, was %s over. In the others it came in under, by as much as %s.'
-                % (C.fy(o['worst_fy']), C.usd(o['worst']), C.usd(-o['best'])),
-        detail='The general fund tuition line is a forecast of which children will need a '
-               'placement and at what price, made months ahead. The median year landed %s '
-               'from it. A line that misses in both directions is not under-budgeted; it is '
-               'unpredictable, which is the thing a reserve is for.'
-               % C.usd(o['median_variance']),
+        so_what='The worst, %s, was %s over. In-district spending never ran more than %s over.'
+                % (C.fy(o['worst_fy']), C.usd(o['worst']), C.pct(m['in_band'])),
+        detail='The tuition line is a forecast, made months ahead, of which children will '
+               'need a placement and at what price. In the other years it came in under, by '
+               'as much as %s, and the median year landed %s from it — a line that misses in '
+               'both directions is unpredictable rather than under-budgeted. Transportation '
+               'ran over in %s years, by as much as %s in %s. All general fund.'
+               % (C.usd(-o['best']), C.usd(o['median_variance']), C.num(t['years_over']),
+                  C.usd(t['worst']), C.fy(t['worst_fy'])),
         figures={'over': figure(o['years_over'], C.num(o['years_over']), 'years over budget'),
                  'years': figure(o['years'], C.num(o['years']), 'years'),
                  'fy': figure(o['worst_fy'], C.fy(o['worst_fy'])),
                  'worst': figure(o['worst'], C.usd(o['worst'])),
+                 'band': figure(m['in_band'], C.pct(m['in_band'])),
                  'best': figure(-o['best'], C.usd(-o['best'])),
-                 'median': figure(o['median_variance'], C.usd(o['median_variance']))},
-        figure='over', kind='measured',
-        basis='General fund accounts in functions 9100, 9300 and 9400, special education '
-              'programme, original budget against spent, %s.' % span,
-        not_shown='Why any year missed. A placement that began or ended mid-year, a tuition '
-                  'rate set by the state after the budget, and money moved to the circuit '
-                  'breaker account all look the same from the ledger.',
-        allow=('9100', '9300', '9400')))
-
-    a = m['worst_all']
-    rows.append(conclusion(
-        id='counting-the-reimbursement-account',
-        bearing='sizes',
-        claim='Counting every fund, tuition ran %s past its voted budget in %s.'
-              % (C.usd(a['above_voted']), C.fy(a['fy'])),
-        so_what='The circuit breaker account paid %s of that, outside the budget the town votes.'
-                % C.usd(a['cb_fund_spent']),
-        detail='The accounting system’s year-end reports for the school special funds '
-               'show the circuit breaker account paying tuition every year from %s to %s. '
-               'Counting it, spending on placements ran above the general fund line voted '
-               'for them in all %s of those years. That account is filled by the state’s '
-               'reimbursement for the year before, so it is money the district can expect '
-               '— but it is not money anyone votes.'
-               % (C.fy(m['munis_first']), C.fy(m['last']), C.num(len(m['allfunds']))),
-        figures={'above': figure(a['above_voted'], C.usd(a['above_voted'])),
-                 'fy': figure(a['fy'], C.fy(a['fy'])),
-                 'cb': figure(a['cb_fund_spent'], C.usd(a['cb_fund_spent'])),
-                 'first': figure(m['munis_first'], C.fy(m['munis_first'])),
-                 'last': figure(m['last'], C.fy(m['last'])),
-                 'n': figure(len(m['allfunds']), C.num(len(m['allfunds'])), 'years')},
-        figure='above', kind='measured',
-        basis='MUNIS year-end reports, school general fund and school special funds (fund '
-              '2640, the special education circuit breaker account), %s. Four years.'
-              % C.fyspan(m['munis_first'], m['last']),
-        not_shown='How the district planned to use the account. If it budgets the general '
-                  'fund line expecting the account to pay part, the gap is a plan rather '
-                  'than a surprise, and nothing published says which.',
-        allow=('2640',)))
-
-    rows.append(conclusion(
-        id='in-district-lands-close',
-        bearing='sizes',
-        claim='In-district special education never ran over its voted budget by more than %s.'
-              % C.pct(m['in_band']),
-        so_what='Its overruns are small. The large ones, in both directions, are tuition and '
-                'transportation.',
-        detail='Across %s the in-district lines came in over budget in %s years, the worst '
-               'by %s in %s. Transportation ran over in %s years, by as much as %s in %s.'
-               % (span, C.num(i['years_over']), C.usd(i['worst']), C.fy(i['worst_fy']),
-                  C.num(t['years_over']), C.usd(t['worst']), C.fy(t['worst_fy'])),
-        figures={'band': figure(m['in_band'], C.pct(m['in_band'])),
-                 'span': figure(m['first'], span),
-                 'i_over': figure(i['years_over'], C.num(i['years_over']), 'years'),
-                 'i_worst': figure(i['worst'], C.usd(i['worst'])),
-                 'i_fy': figure(i['worst_fy'], C.fy(i['worst_fy'])),
+                 'median': figure(o['median_variance'], C.usd(o['median_variance'])),
                  't_over': figure(t['years_over'], C.num(t['years_over']), 'years'),
                  't_worst': figure(t['worst'], C.usd(t['worst'])),
                  't_fy': figure(t['worst_fy'], C.fy(t['worst_fy']))},
-        figure='band', kind='measured',
-        basis='General fund special education programme accounts other than tuition, less '
-              'the two English learner accounts; original budget against spent. Ours.',
-        not_shown='Whether services were delivered as planned. Spending close to budget is '
-                  'equally consistent with posts filled as planned and with vacancies '
-                  'offset by substitutes or contracted services.'))
+        figure='over', kind='measured',
+        basis='General fund accounts in functions 9100, 9300 and 9400, special education '
+              'programme, original budget against spent, %s; in-district is every other '
+              'special education account less two English learner accounts. Ours.' % span,
+        not_shown='Why any year missed. A placement that began or ended mid-year, a tuition '
+                  'rate set after the budget, and money moved to the circuit breaker account '
+                  'all look the same from the ledger.'))
+
+    wb, T3, T5 = m['worst_before'], m['T300'], m['T500']
+    nb = len(m['bases'])
+    rows.append(conclusion(
+        id='the-300000-question',
+        bearing='lever',
+        claim='Measured after the circuit breaker account, no year in %s needed more than %s.'
+              % (C.num(m['n_years']), C.usd(T3)),
+        so_what='Counting that account’s routine tuition as surprise, %s of %s recent years '
+                'did; %s covers %s of %s.'
+                % (C.num(m['before_over_300']), C.num(nb), C.usd(T5),
+                   C.num(m['before_within_500']), C.num(nb)),
+        detail='The first basis is the general fund after the circuit breaker account: what '
+               'exceeded both sources, and what a surprise reserve has had to cover. The second '
+               'puts the account’s tuition spending back on the tuition line, so it is an upper '
+               'bound — what a buffer would need in cash if the account were empty. Its worst '
+               'year is %s at %s. The reserve’s cap, as described, is %s.'
+               % (C.fy(wb['fy']), C.usd(wb['before']), C.usd(m['cap'])),
+        figures={'n': figure(m['n_years'], C.num(m['n_years']), 'years'),
+                 't300': figure(T3, C.usd(T3)),
+                 'over': figure(m['before_over_300'], C.num(m['before_over_300']), 'years'),
+                 'nb': figure(nb, C.num(nb), 'years'),
+                 't500': figure(T5, C.usd(T5)),
+                 'within': figure(m['before_within_500'], C.num(m['before_within_500']), 'years'),
+                 'wfy': figure(wb['fy'], C.fy(wb['fy'])),
+                 'wbefore': figure(wb['before'], C.usd(wb['before'])),
+                 'cap': figure(m['cap'], C.usd(m['cap']))},
+        figure='t300', kind='measured',
+        basis='Original general fund budget against spending at the close, every special '
+              'education line, overruns added without netting; the second basis adds fund '
+              '2640 tuition spending from the MUNIS year-end reports, %s. The rule is ours.'
+              % C.fyspan(m['munis_first'], m['last']),
+        not_shown='What the next year will need, and how much of the account is already '
+                  'spoken for: nothing published says what the district plans to spend from it.'))
+
+    ac, sm, sn = m['acct'], m['acct_summary'], m['acct_snap']
+    bs = m['bases']
+    lo_ = min(b['cb_tuition'] for b in bs)
+    hi_ = max(b['cb_tuition'] for b in bs)
+    b23 = next(a for a in ac if a['budgeted'] > 1)
+    pk, ls = sm['peak'], sm['last']
+    rows.append(conclusion(
+        id='the-account-pays-tuition-every-year',
+        bearing='sizes',
+        claim='The circuit breaker account pays tuition every year, not only when the budget '
+              'runs over.',
+        so_what='It paid %s to %s of tuition a year, %s to %s. At 30 June %s it held %s.'
+                % (C.usd(lo_), C.usd(hi_), C.fy(bs[0]['fy']), C.fy(bs[-1]['fy']),
+                   '%d' % ls['fy'], C.usd(ls['closing'])),
+        detail='It is a routine second source for tuition, not a fund that only catches '
+               'overruns: in %s the ledger shows %s budgeted in it for tuition. So how much of '
+               'any overrun it absorbed cannot be told from the ledger. Its year-end balance '
+               'peaked at %s in %s and fell in %s of the last %s years.'
+               % (C.fy(b23['fy']), C.usd(b23['budgeted']), C.usd(pk['closing']), C.fy(pk['fy']),
+                  C.num(sm['fell']), C.num(sm['of'])),
+        figures={'lo': figure(lo_, C.usd(lo_)), 'hi': figure(hi_, C.usd(hi_)),
+                 'a': figure(bs[0]['fy'], C.fy(bs[0]['fy'])),
+                 'b': figure(bs[-1]['fy'], C.fy(bs[-1]['fy'])),
+                 'year': figure(ls['fy'], '%d' % ls['fy']),
+                 'bal': figure(ls['closing'], C.usd(ls['closing'])),
+                 'bfy': figure(b23['fy'], C.fy(b23['fy'])),
+                 'budget': figure(b23['budgeted'], C.usd(b23['budgeted'])),
+                 'peak': figure(pk['closing'], C.usd(pk['closing'])),
+                 'pfy': figure(pk['fy'], C.fy(pk['fy'])),
+                 'fell': figure(sm['fell'], C.num(sm['fell']), 'years'),
+                 'of': figure(sm['of'], C.num(sm['of']), 'years')},
+        figure='hi', kind='measured',
+        basis='MUNIS year-end reports for the school special funds, fund 2640, %s; year-end '
+              'balances from the annual town reports’ Special Revenue schedule to FY2023, then '
+              'carried through the year-end ledgers — the same series /analysis/sitting-on-money '
+              'uses.' % C.fyspan(bs[0]['fy'], bs[-1]['fy']),
+        not_shown='Whether the voted tuition line is set net of expected circuit breaker '
+                  'money, and how much of the balance is earmarked for the next year.',
+        allow=('30 June',)))
+
+    n = m['cb_now']
+    rows.append(conclusion(
+        id='the-refund-arrives-a-year-later',
+        bearing='lever',
+        claim='The state pays back part of a year’s high special education costs the year '
+              'after.',
+        so_what='%s brought %s, for %s’s costs. A surprise this year is repaid, in part, '
+                'next year.' % (C.fy(n['fy']), C.usd(n['paid']), C.fy(n['for_fy'])),
+        detail='As the district described it to the School Committee: for a child whose '
+               'costs pass a threshold — four times the state’s average foundation budget per '
+               'pupil — the state reimburses about three-quarters of the cost above it, for '
+               'the prior year’s expenses, in quarterly payments from September to June. The '
+               'money goes into the circuit breaker account, not the general fund or the new '
+               'reserve, and this year’s surprise is paid back only next year.',
+        figures={'fy': figure(n['fy'], C.fy(n['fy'])),
+                 'paid': figure(n['paid'], C.usd(n['paid'])),
+                 'for': figure(n['for_fy'], C.fy(n['for_fy']))},
+        figure='paid', kind='measured',
+        basis='DESE circuit breaker reimbursement file, by fiscal year of payment; the '
+              'mechanism quoted from the district’s Circuit Breaker Program Overview to the '
+              'School Committee, 2023-2024.',
+        not_shown='The statute’s own terms (M.G.L. c.71B s.5A is not in this archive), and '
+                  'how much of any one placement comes back: the payment covers in-district '
+                  'and transport costs too.'))
 
     s = m['scen'][1]
     rows.append(conclusion(
         id='a-placement-is-a-six-figure-step',
         bearing='sizes',
-        claim='Tuition worked out to %s per child placed, the median of %s to %s. Our estimate.'
-              % (C.usd(m['pp_recent_med']), C.fy(m['pp_recent'][0]['fy']),
-                 C.fy(m['pp_recent'][-1]['fy'])),
-        so_what='The count rose by %s within %s, so %s children is about %s.'
-                % (C.num(m['biggest_mid']['net']), C.fy(m['biggest_mid']['fy']),
-                   C.num(s['children']), C.usd(s['total'])),
-        detail='Our estimate, and only that: every dollar the district spent on '
-               'out-of-district tuition in a year, from every fund, divided by the number of '
-               'children the town counted as placed on one day in March. It is not what a '
-               'placement costs — a residential placement and a collaborative day place '
-               'are priced very differently, children placed for part of the year are counted '
-               'or missed depending on that day, and transportation is in another line. The '
-               'rise is two different counts set side by side, DESE’s in October and the '
-               'town’s in March, and may be partly a difference in what each counts.',
+        claim='One more child placed out of district is roughly %s a year. Our estimate.'
+              % C.usd(m['pp_recent_med']),
+        so_what='Every fund’s tuition divided by children placed on 1 March, median %s to '
+                '%s. A scale, not a price.'
+                % (C.fy(m['pp_recent'][0]['fy']), C.fy(m['pp_recent'][-1]['fy'])),
+        detail='Our estimate, and only that. It is not what a placement costs: a residential '
+               'placement and a collaborative day place are priced very differently, children '
+               'placed for part of the year are counted or missed depending on the day, and '
+               'transportation is in another line. The count rose by %s within %s between '
+               'DESE’s October count and the town’s March one, and %s children at this '
+               'estimate is about %s — two different counts set side by side, which may '
+               'partly be a difference in what each counts.'
+               % (C.num(m['biggest_mid']['net']), C.fy(m['biggest_mid']['fy']),
+                  C.num(s['children']), C.usd(s['total'])),
         figures={'pp': figure(m['pp_recent_med'], C.usd(m['pp_recent_med'])),
                  'a': figure(m['pp_recent'][0]['fy'], C.fy(m['pp_recent'][0]['fy'])),
                  'b': figure(m['pp_recent'][-1]['fy'], C.fy(m['pp_recent'][-1]['fy'])),
@@ -716,35 +1030,8 @@ def build_conclusions(m):
               'The division is ours.',
         not_shown='What any one placement costs. No document in this archive prices one, and '
                   'the count is a single day’s snapshot.',
-        allow=('9300', '9400', '1 March')))
+        allow=('1 March',)))
 
-    rows.append(conclusion(
-        id='the-reserve-town-meeting-created',
-        bearing='lever',
-        claim='The reserve Town Meeting created in %s can hold up to about %s.'
-              % (C.fy(2026), C.usd(m['cap'])),
-        so_what='That is 2%% of %s net school spending, the cap as the Town Manager described it.'
-                % C.fy(m['cap_fy']),
-        detail='Town Meeting voted %s to %s on %s to establish a special education reserve '
-               'fund. As described to the Select Board, spending from it takes a majority of '
-               'both the School Committee and the Select Board. The worst year measured here '
-               'needed %s. How much has been put into it is not in this archive.'
-               % (C.num(m['vote']['yes']), C.num(m['vote']['no']), '18 November 2025',
-                  C.usd(m['worst_need']['gross'])),
-        figures={'fy': figure(2026, C.fy(2026)),
-                 'cap': figure(m['cap'], C.usd(m['cap'])),
-                 'cap_fy': figure(m['cap_fy'], C.fy(m['cap_fy'])),
-                 'yes': figure(m['vote']['yes'], C.num(m['vote']['yes']), 'votes'),
-                 'no': figure(m['vote']['no'], C.num(m['vote']['no']), 'votes'),
-                 'worst': figure(m['worst_need']['gross'], C.usd(m['worst_need']['gross']))},
-        figure='cap', kind='measured',
-        basis='Town Meeting vote, FY2025 annual town report; the cap as minuted at the Select '
-              'Board on 7 October 2025; net school spending from DESE’s Chapter 70 '
-              'district profile, %s. The multiplication is ours.' % m['cap_nss']['stage'],
-        not_shown='The statute’s own terms. Mass. General Laws chapter 40 section 13E is '
-                  'not in this archive, so the cap and the two-board vote are as described at '
-                  'a meeting, not as read in the law.',
-        allow=('2%', '18 November 2025')))
     return emit(ID, rows)
 
 
@@ -775,24 +1062,102 @@ def render_md(m, rows):
     span = C.fyspan(m['first'], m['last'])
     w = []
     a = w.append
-    a('# Special education: what a bad year costs\n\n')
-    a('**How far special education spending has landed from the budget voted for it, '
-      'year by year since %s — and what a reserve for the bad years would have needed.**\n\n'
-      % C.fy(m['first']))
+    a('# Special education: how much a bad year needs\n\n')
+    a('**How far special education spending has landed from the budget voted for it, every '
+      'year since %s — and what that says about holding money back for mid-year '
+      'surprises.**\n\n' % C.fy(m['first']))
     a('![Bars, one group per fiscal year %s, of how far each special education line landed '
-      'from the budget voted for it: out-of-district tuition, in-district, and '
+      'from the budget voted for it, general fund: out-of-district tuition, in-district, and '
       'transportation. Above the line is an overrun. Tuition swings furthest in both '
       'directions; its largest overrun is %s in %s.](charts/%s-surprise.svg)\n\n'
       % (span, C.usd(o['worst']), C.fy(o['worst_fy']), ID))
-    a('Analysis, October 2026. A draft for review. Every figure is computed by '
-      '`scripts/build_sped_costs.py`; the grouping of accounts, the reserve rule and every '
-      'per-child figure are ours and say so where they appear.\n\n---\n\n')
-
     a('## The short version\n\n')
     for c in rows:
         tag = ' *(a hypothesis, not a measurement)*' if c['kind'] == 'hypothesis' else ''
         a('**%s**%s %s\n\n' % (c['claim'], tag, c['so_what']))
     a('---\n\n')
+
+    # ---------------------------------------------------------------- 0. the request
+    T3, T5 = m['T300'], m['T500']
+    cap_ = {c['key']: c for c in m['captions']}
+    a('## The %s request, against the record\n\n' % C.usd(T5))
+    a('### The same years, on two bases\n\n')
+    body = [[C.fy(b['fy']), C.usd(b['after']), C.usd(b['before']), C.usd(b['cb_tuition']),
+             'yes' if b['before'] > T3 else 'no'] for b in m['bases']]
+    a(table(['FY', '(a) general fund, after the circuit breaker account — what exceeded both',
+             '(b) counting the account’s tuition as surprise — an upper bound',
+             'tuition the account paid that year', '(b) above %s?' % C.usd(T3)],
+            'lrrrl', body))
+    wn = m['worst_need']
+    a('\n*%s, the four closed years the year-end reports print in full; every special '
+      'education line, overruns added without netting (our rule).* On basis (a), across all '
+      '%s years since %s, no year passed %s; the worst was %s, in %s.\n\n'
+      % (C.fyspan(m['munis_first'], m['last']), C.num(m['n_years']), C.fy(m['first']),
+         C.usd(T3), C.usd(wn['gross']), C.fy(wn['fy'])))
+    sn = m['acct_snap']
+    b23 = next(x for x in m['acct'] if x['budgeted'] > 1)
+    a('- **(b) is the closest the ledger comes to “what hits us mid-year”** — the cash a '
+      'buffer would have to find if the circuit breaker account could not be used in time. '
+      'In %s the account had spent %s by 31 March and charged its %s of tuition after that, '
+      'so through the year the general fund carried the bills; that is observed for %s only.\n'
+      % (C.fy(sn['fy']), C.usd(sn['spent']),
+         C.usd(next(b for b in m['bases'] if b['fy'] == sn['fy'])['cb_tuition']), C.fy(sn['fy'])))
+    a('- **But (b) overstates.** The account pays tuition every year, overrun or not — in %s '
+      'the ledger budgeted %s in it for tuition — so (b) counts planned spending as surprise.\n'
+      % (C.fy(b23['fy']), C.usd(b23['budgeted'])))
+    a('- **(a) is what the town’s budget ultimately absorbed**, and it is the basis this page '
+      'uses to size a reserve — our choice. On it, %s would have covered every year; on (b), %s covers %s '
+      'of %s, and the reserve’s cap as described is %s.\n\n'
+      % (C.usd(T3), C.usd(T5), C.num(m['before_within_500']), C.num(len(m['bases'])),
+         C.usd(m['cap'])))
+    a('### What was said\n\n')
+    a('The town has not yet published minutes for these meetings. These are our machine '
+      'captions of the recordings — a finding aid, not a record: open the video at the '
+      'moment given and check every figure there.\n\n')
+    for k in ('overages', 'one', 'average', 'fifteen', 'motion', 'range'):
+        c = cap_[k]
+        a('- *"%s"* — %s, %s, [video at %s](%s)\n' % (c['quote'], c['board'], c['date'],
+                                                      c['at'], c['cite']))
+    a('\nA request for %s, and the words *two kids* or *two students* beside a reserve, were '
+      'not found. Searched: the town’s minutes and our captions for the School Committee, '
+      'Finance Committee and Select Board since 1 July 2025, for *500,000*, *five hundred*, '
+      '*half a million*, *buffer*, *two kids*, *two students*, *two placements* and '
+      '*reserve*. That is a statement about this archive, not about the meetings — a meeting '
+      'not yet captioned, or said outside one, would not show here. What the captions do '
+      'hold is the School Committee voting to request %s on 7 October 2026 — to be checked '
+      'against the video.\n\n' % (C.usd(T5),
+                                                                            C.usd(T3)))
+    a('### Is %s two children?\n\n' % C.usd(T3))
+    a('At the %s per child the captions render, %s is two. Our own estimate — every fund’s '
+      'tuition divided by children placed on 1 March — has a median of %s for %s, and was %s '
+      'in %s. *(Our estimate, a hypothesis, not a price.)*\n\n'
+      % (C.usd(m['said_per_child']), C.usd(T3), C.usd(m['pp_recent_med']),
+         C.fyspan(m['pp_recent'][0]['fy'], m['pp_recent'][-1]['fy']),
+         C.usd(max(m['pp_recent'], key=lambda x: x['per_child'])['per_child']),
+         C.fy(max(m['pp_recent'], key=lambda x: x['per_child'])['fy'])))
+    body = [[C.fy(x['fy']), C.num(x['collaborative']), C.num(x['day']), C.num(x['residential']),
+             C.usd(x['tuition_9400']), C.usd(x['tuition_9300']), C.usd(x['per_collaborative']),
+             C.usd(x['per_nonpublic'])] for x in m['bt_recent']]
+    a(table(['FY', 'collaborative, 1 March', 'day', 'residential',
+             'tuition to collaboratives (DESE 9400)', 'tuition to non-public schools (DESE 9300)',
+             'per collaborative child — OUR ESTIMATE', 'per day or residential child — OUR ESTIMATE'],
+            'lrrrrrrr', body))
+    lc = m['low_collab']
+    a('\n**A cost by type of placement cannot be derived here.** The counts split by type and '
+      'the dollars split by type of school, but they do not line up: %s gives %s per '
+      'collaborative child, which is no tuition. Day and residential places are both '
+      'non-public schools in the dollars, so they cannot be separated, and nothing in this '
+      'archive prices a residential place against a day place — so this page does not say '
+      'which costs more. The day-or-residential column has a median of %s over these years; '
+      'treat it as a hypothesis.\n\n'
+      % (C.fy(lc['fy']), C.usd(lc['per_collaborative']), C.usd(m['np_recent_med'])))
+    a('### Arrivals, not the net\n\n')
+    a('Every figure on this page is a NET result at the close of a year: children who arrived, '
+      'less children who left, less anything else that came in under budget. A surprise of '
+      'hundreds of thousands a year may describe arrivals alone, and arrivals are not '
+      'published. A dated log of placements would settle it; it is the '
+      'gap registered as *How many children enter or leave an out-of-district placement '
+      'during a school year, and when?*\n\n---\n\n')
 
     # ---------------------------------------------------------------- 1. the surprise
     a('## How far each year landed from its budget\n\n')
@@ -861,43 +1226,136 @@ def render_md(m, rows):
       'rule above covers the worst of them, not the worst possible.\n\n---\n\n'
       % C.num(m['n_years']))
 
-    # ---------------------------------------------------------------- 2. every fund
-    a('## Counting the money outside the budget\n\n')
+    # ---------------------------------------------------------------- 2. the circuit breaker
+    a('## How the circuit breaker fits in\n\n')
+    who = m['who']
+    split = [r for r in who if r['basis'] == 'dese+munis']
+    a('![Stacked bars, one per fiscal year %s, of out-of-district tuition by who paid it: the '
+      'general fund, the circuit breaker account, and other funds — split for %s, and only '
+      'the town’s two funds for %s. Beside them, a line for the circuit breaker money the '
+      'state paid that year, and a dashed line for the money that year’s costs earned, paid '
+      'the year after. The dashed line is the solid one moved a year to the left: that shift '
+      'is the lag.](charts/%s-circuit-breaker.svg)\n\n'
+      % (C.fyspan(who[0]['fy'], who[-1]['fy']), C.fyspan(split[0]['fy'], split[-1]['fy']),
+         C.fy(who[-1]['fy']), ID))
     a('### In plain terms\n\n')
-    a('The general fund is not the only account that pays tuition. The state reimburses part '
-      'of the cost of the most expensive placements a year later, through the circuit breaker, '
-      'and that money lands in a school special fund the town does not vote on. In every one '
-      'of the %s years the accounting system reports in full, that account paid tuition too, '
-      'so the whole bill for placements ran above the general fund line every year.\n\n'
-      % C.num(len(m['allfunds'])))
+    Q = CB_QUOTES
+    a('The circuit breaker is the state paying back part of the cost of the most expensive '
+      'children’s services. As the district explained it to the School Committee:\n\n')
+    a('- **Who qualifies.** A child whose costs pass a threshold of *"%s"*. Above it, *"%s"* '
+      '*"%s"*\n' % (Q['threshold'], Q['share'], Q['eligible']))
+    a('- **When.** *"%s"* The state pays in four instalments, from *"%s"* to *"%s"*.\n'
+      % (Q['prior'], Q['first'], Q['last']))
+    a('- **Where it goes.** *"%s"* — fund 2640 in the town’s ledger. *"%s"* fiscal year '
+      '*"%s"* The town does not vote it.\n' % (Q['account'], Q['spend'], Q['vote']))
+    a('- **What that means for a surprise.** A tuition bill that runs over this year is paid '
+      'back, in part, next year — into that account, not into the general fund or the new '
+      'reserve. What can help in the middle of a year is whatever is already in the account '
+      'from last year’s payment.\n\n')
+    a('*Quoted from the district’s Circuit Breaker Program Overview to the School Committee, '
+      '2023-2024 ([PDF](/docs/%s)). That is the district’s description; the statute, Mass. '
+      'General Laws chapter 71B section 5A, is not in this archive, so the threshold and '
+      'the share are as the district stated them.*\n\n' % CB_PDF)
     a('### The evidence\n\n')
+    body = []
+    for r in who:
+        if r['basis'] == 'dese':
+            cba, oth = '—', '%s (all non-general funds together)' % C.usd(r['other_unsplit'])
+        elif r['basis'] == 'dese+munis':
+            cba, oth = C.usd(r['cb_account']), C.usd(r['other'])
+        else:
+            cba, oth = C.usd(r['cb_account']), 'not yet published'
+        body.append([C.fy(r['fy']), C.usd(r['gf']), cba, oth, dash(r['total']),
+                     dash(r['received']), dash(r['earned'])])
+    a(table(['FY', 'tuition paid by the general fund', 'by the circuit breaker account',
+             'by other funds', 'tuition, every fund', 'circuit breaker received that year '
+             '(for the year before)', 'circuit breaker earned by that year’s costs (received '
+             'the year after)'], 'lrrrrrr', body))
+    a('\n*%s. Tuition is out-of-district tuition, functions 9300 and 9400. The general fund '
+      'and every-fund totals are DESE’s End of Year Financial Report; for %s the '
+      'circuit breaker account is the town’s year-end report for fund 2640, and other funds '
+      'are DESE’s non-general-fund total less that account. DESE’s general fund figure ties '
+      'to the town’s ledger to the dollar in each of those years, and the build refuses if it '
+      'stops. %s is the town’s ledger alone, because DESE has not yet published it. The two '
+      'circuit breaker columns are DESE’s payment file, keyed by year of payment, and cover '
+      'in-district and transport costs as well as tuition.*\n\n'
+      % (C.fyspan(who[0]['fy'], who[-1]['fy']), C.fyspan(split[0]['fy'], split[-1]['fy']),
+         C.fy(who[-1]['fy'])))
+    sm, sn = m['acct_summary'], m['acct_snap']
+    a('**A routine second source, not an overflow.** The circuit breaker account paid tuition '
+      'in every closed year the ledger reports, overrun or not, beside the general fund — so '
+      'how much of any overrun it absorbed cannot be told from the ledger. Every general fund '
+      'figure on this page is measured after whatever was charged to it: what exceeded both. '
+      'Before %s the account’s own disbursements, as the annual report prints them, equal '
+      'DESE’s non-general-fund tuition to within %s in %s of %s years, so the grey bars are '
+      'probably mostly this account; year by year that is not established.\n\n'
+      % (C.fy(m['munis_first']), C.usd(2), C.num(len(sm['dese_ties'])),
+         C.num(sm['dese_years'])))
+    a('**The cushion that already exists.** The account’s balance at each year end:\n\n')
+    body = [[C.fy(x['fy']), C.usd(x['opening']), C.usd(x['received']), C.usd(x['spent']),
+             C.usd(x['closing']), x['source']] for x in m['acct']]
+    a(table(['FY', 'balance, 1 July', 'received', 'spent', 'balance, 30 June', 'from'],
+            'lrrrrl', body))
+    pk, ls = sm['peak'], sm['last']
+    a('\n*The same series /analysis/sitting-on-money uses: the annual town report’s Special '
+      'Revenue schedule (“%s”) through %s, then carried through the year-end ledgers.* It '
+      'peaked at %s at the close of %s and was %s at 30 June %s, falling in %s of the last %s '
+      'years. Within %s, the Town’s special revenue report showed %s on 31 March, a snapshot '
+      'taken before the year’s tuition was charged: %s had been spent from it by then, %s by '
+      'the close. The carried 30 June %s '
+      'balance equals the opening that report implies, to the cent.\n\n'
+      % (CB_FUND_NAME, C.fy(max(a_['fy'] for a_ in m['acct'] if a_['source'] == 'annual report')),
+         C.usd(pk['closing']), C.fy(pk['fy']), C.usd(ls['closing']), ls['fy'],
+         C.num(sm['fell']), C.num(sm['of']), C.fy(sn['fy']), C.usd(sn['balance']),
+         C.usd(sn['spent']), C.usd(ls['spent']), sn['fy'] - 1))
+    q = next(x for x in m['quotes'] if x['key'] == 'carryover')
+    a('> *"%s"* — %s, %s ([minutes](%s))\n\n%s\n\n'
+      % (q['quote'], q['board'], q['date'], q['cite'], q['why']))
     body = [[C.fy(x['fy']), C.usd(x['gf_original']), C.usd(x['gf_spent']),
              C.usd(x['cb_fund_spent']), C.usd(x['all_spent']), sgn(x['above_voted']),
              spct(x['above_voted_pct']), C.usd(x['cb_fund_receipts']),
              dash(x['dese_paid'])] for x in m['allfunds']]
     a(table(['FY', 'tuition voted (general fund)', 'spent, general fund',
-             'spent, circuit breaker account', 'spent, every fund', 'above the voted line',
-             'as a share of it', 'circuit breaker received (ledger)',
+             'spent, circuit breaker account', 'spent, both',
+             'both, above the general fund line voted (counts the account’s routine spending)',
+             'as a share of it', 'circuit breaker received (town ledger)',
              'circuit breaker paid (state schedule)'], 'lrrrrrrrr', body))
-    a('\n*%s, four years, MUNIS year-end reports for the school general fund and the '
-      'school special funds; the circuit breaker account is fund 2640.* The account also '
-      'paid %s in these years for things other than tuition.\n\n'
-      % (C.fyspan(m['munis_first'], m['last']), C.usd(sum(x['cb_fund_other'] for x in m['allfunds']))))
+    a('\n*%s, MUNIS year-end reports for the school general fund and the school special '
+      'funds.* The account also paid %s in these years for things other than tuition.\n\n'
+      % (C.fyspan(m['munis_first'], m['last']),
+         C.usd(sum(x['cb_fund_other'] for x in m['allfunds']))))
     if m['pairs']:
         p = m['pairs'][0]
         a('**The ledger and the state agree, a year apart.** The receipts the ledger books '
           'and the payments the state’s schedule lists match in %s. Where they do not, '
           'the difference moves between years: %s and %s together come to %s in both, with '
-          '%s booked a year later than the state lists it. A reserve has to bridge that '
-          'timing, because the reimbursement for a placement arrives in the following year '
-          'at the earliest.\n\n'
+          '%s booked a year later than the state lists it. In %s the ledger booked %s of '
+          'the %s the state lists.\n\n'
           % (', '.join(C.fy(y) for y in m['receipts_tie']) or 'no year',
-             C.fy(p['fy_a']), C.fy(p['fy_b']), C.usd(p['total']), C.usd(p['shifted'])))
+             C.fy(p['fy_a']), C.fy(p['fy_b']), C.usd(p['total']), C.usd(p['shifted']),
+             C.fy(m['cb_now']['fy']), C.usd(m['cb_now']['ledger_received']),
+             C.usd(m['cb_now']['paid'])))
+    bo = m['big_other']
+    if bo['other'] != bo['received']:
+        fail('the FY%d remainder no longer equals the state payment; rewrite the paragraph'
+             % bo['fy'])
+    a('**One figure we cannot explain.** In %s, DESE’s total for tuition from funds other '
+      'than the general fund is %s more than the circuit breaker account paid — and %s is '
+      'also, to the dollar, the circuit breaker payment the state lists for %s. That may be a '
+      'coincidence or a reporting choice; nothing here says which, and it is registered as a '
+      'gap. In the other years the remainder is %s.\n\n'
+      % (C.fy(bo['fy']), C.usd(bo['other']), C.usd(bo['other']), C.fy(bo['fy']),
+         ' and '.join('%s in %s' % (C.usd(r['other']), C.fy(r['fy']))
+                      for r in split if r['fy'] != bo['fy'])))
     a('### What this does not show\n\n')
-    a('Whether the district planned on the account. If the general fund line is built '
+    a('Whether the district plans on the account. If the general fund tuition line is built '
       'expecting the circuit breaker to pay part, the amount above it is a plan rather than '
-      'a surprise. Nothing published says which — the same open question '
-      '`sped-and-funds.md` asks of the FY27 line.\n\n---\n\n')
+      'a surprise. The district’s own presentation says *"%s"* for the following year when '
+      'deliberating on the general fund budget; nothing published says whether '
+      'Lunenburg’s line does — the same open question `sped-and-funds.md` asks of '
+      'the FY27 line. Nor does this show how much of any one placement comes back: the '
+      'state’s payment covers in-district and transport costs too, and is not split by '
+      'child.\n\n---\n\n' % CB_QUOTES['plan'])
 
     # ---------------------------------------------------------------- 3. trend + averages
     a('## The trend, and the averages\n\n')
@@ -1046,30 +1504,42 @@ def render_md(m, rows):
     a('## Sizing a reserve — our arithmetic, not a recommendation\n\n')
     a('### In plain terms\n\n')
     s1, s2 = m['scen']
-    a('Three ways of putting a number on a bad year, each from a different piece of the '
-      'record, and each ours:\n\n')
+    a('**This page sizes a reserve on one basis: the general fund, measured after whatever '
+      'was charged to the circuit breaker account — what exceeded both sources.** The '
+      'account pays tuition every year, so counting its spending as surprise overstates; '
+      'that upper bound is shown beside it, labelled. How much goes on the account, and when '
+      'in the year, is the district’s choice. Every row is our arithmetic.\n\n')
+    wa = m['worst_all']
     body = [
-        ['The worst year in the ledger, every line’s overrun added', span,
-         C.usd(m['worst_need']['gross'])],
-        ['The worst of the four years MUNIS reports in full', C.fyspan(m['munis_first'], m['last']),
+        ['**General fund, after the circuit breaker account** — the worst year, every '
+         'line’s overrun added', '%s (%s)' % (span, C.fy(m['worst_need']['fy'])),
+         '**%s**' % C.usd(m['worst_need']['gross'])],
+        ['General fund, after the circuit breaker account — the worst of the four years with '
+         'year-end reports', '%s (%s)' % (C.fyspan(m['munis_first'], m['last']),
+                                         C.fy(m['worst_recent']['fy'])),
          C.usd(m['worst_recent']['gross'])],
-        ['The median year', span, C.usd(m['med_need'])],
-        ['Out-of-district tuition, every fund, above its voted line — worst year',
-         C.fyspan(m['munis_first'], m['last']), C.usd(m['worst_all']['above_voted'])],
-        ['One unplanned placement at the per-child estimate', C.fyspan(m['pp_recent'][0]['fy'],
-                                                                     m['pp_recent'][-1]['fy']),
-         C.usd(s1['total'])],
-        ['%s unplanned placements — the largest rise between October and March'
+        ['General fund, after the circuit breaker account — the median year', span,
+         C.usd(m['med_need'])],
+        ['UPPER BOUND, counting the circuit breaker account’s routine tuition as surprise — '
+         'worst year', '%s (%s)' % (C.fyspan(m['munis_first'], m['last']),
+                                    C.fy(m['worst_before']['fy'])),
+         C.usd(m['worst_before']['before'])],
+        ['The circuit breaker account’s balance at 30 June %d — a cushion that already exists'
+         % m['acct_summary']['last']['fy'], C.fy(m['acct_summary']['last']['fy']),
+         C.usd(m['acct_summary']['last']['closing'])],
+        ['One unplanned placement at the per-child estimate (every fund)',
+         C.fyspan(m['pp_recent'][0]['fy'], m['pp_recent'][-1]['fy']), C.usd(s1['total'])],
+        ['%s unplanned placements — the largest rise between October and March (every fund)'
          % C.num(s2['children']), C.fy(m['biggest_mid']['fy']), C.usd(s2['total'])],
         ['The reserve’s cap, 2%% of %s net school spending, as described' % C.fy(m['cap_fy']),
          C.fy(m['cap_fy']), C.usd(m['cap'])],
     ]
     a(table(['measure', 'from', 'amount'], 'llr', body))
     a('\n### What changes what a reserve must cover\n\n')
-    a('- **The circuit breaker pays a year late.** The state’s schedule pays each year '
-      'for the year before, so a placement that starts in September is reimbursed, in part, '
-      'the following year at the earliest. The reserve carries the whole of a surprise in '
-      'the year it lands.\n')
+    a('- **The circuit breaker pays a year late, and into its own account.** A placement '
+      'that starts in September is reimbursed, in part, the following year at the earliest, '
+      'and the payment lands in the circuit breaker account rather than the reserve. See *How '
+      'the circuit breaker fits in*.\n')
     q = next(x for x in m['quotes'] if x['key'] == 'april')
     a('- **A child who moves in late may not land on this budget at all that year.** The '
       'district told the School Committee on %s that a child entering after 1 April is the '
@@ -1112,13 +1582,14 @@ def render_md(m, rows):
     # ---------------------------------------------------------------- persona review
     a('## Read as each reader\n\n')
     a('`notes/process/PERSONAS.md`, run before publishing.\n\n')
-    a('- **Already sure the schools are not straight with them.** The worst figure on the '
-      'page — %s spent on placements above the line voted for them, in %s — is in the '
-      'summary at full size, and so is the fact that in-district spending never ran more '
-      'than %s over.\n'
-      % (C.usd(m['worst_all']['above_voted']), C.fy(m['worst_all']['fy']), C.pct(m['in_band'])))
-    a('- **Hears it second-hand.** The sentence they will repeat is the first card: the '
-      'worst year in %s needed %s. It is true as worded; it is not a statement that '
+    a('- **Already sure the schools are not straight with them.** The largest figure on the '
+      'page — %s in %s, counting the circuit breaker account’s routine tuition as surprise — '
+      'is in the summary, labelled as the upper bound it is, and so is the fact that '
+      'in-district spending never ran more than %s over.\n'
+      % (C.usd(m['worst_before']['before']), C.fy(m['worst_before']['fy']), C.pct(m['in_band'])))
+    a('- **Hears it second-hand.** The sentence they will repeat is the first card: in the '
+      'worst of %s years special education needed %s more than its voted budget. It is true '
+      'as worded, on the general fund basis it names; it is not a statement that '
       'anybody overspent, because tuition came in under budget in most years.\n'
       % (C.num(m['n_years']), C.usd(m['worst_need']['gross'])))
     a('- **Close to the boards.** No finding names a person. The one person named is '
@@ -1137,6 +1608,9 @@ def render_md(m, rows):
 
     # ---------------------------------------------------------------- method + sources
     a('## Method and classification\n\n')
+    a('Analysis, October 2026. A draft for review. Every figure is computed by '
+      '`scripts/build_sped_costs.py`; the grouping of accounts, the reserve rule and every '
+      'per-child figure are ours and say so where they appear.\n\n')
     a('- **Which accounts.** In the town’s account string the fourth segment is the '
       'function code and the fifth is `51` on every general fund school account whose own '
       'description names special education — checked on every run — except special '
@@ -1185,6 +1659,10 @@ def sources():
          'general fund and every other fund'),
         ('state-dese/dese-circuit-breaker.xlsx', DESE_NAME, 'dese_circuit_breaker',
          'the circuit breaker reimbursement schedule, by fiscal year of payment'),
+        (CB_PDF, 'Lunenburg Public Schools', 'quoted',
+         'Circuit Breaker Program Overview, presented to the School Committee in 2023-2024: '
+         'the threshold, the share, the timing and the account, as the district describes '
+         'them'),
         ('state-dese/dese-sped-program-characteristics.xlsx', DESE_NAME, 'dese_sped_program',
          'children with a plan, in district and out of district'),
         ('state-dese/dese-sped-movement.xlsx', DESE_NAME, 'dese_sped_movement',
@@ -1216,8 +1694,9 @@ def payload(m, rows):
     P = m['per']
     return dict(
         generated_by='scripts/build_sped_costs.py',
-        about='How far special education spending has landed from the budget voted for it, '
-              'every year %s, and what a reserve for the bad years would have needed.'
+        about='How much a bad year of special education has needed beyond its voted budget, '
+              'every year %s, set against the request to fund the new reserve, and how the '
+              'circuit breaker account fits around it.'
               % C.fyspan(m['first'], m['last']),
         grain='DOLLARS, general fund, budget voted before the year against spending at its '
               'close, %s; every fund for %s. Children are counted separately and never '
@@ -1226,19 +1705,22 @@ def payload(m, rows):
         first_fy=m['first'], last_fy=m['last'], munis_first_fy=m['munis_first'],
         stats=[
             dict(value=C.usd(m['worst_need']['gross']), tone='var(--series-cost)',
-                 label='the most the special education lines ran past their voted budget in '
-                       'one year, %s (%s), %s years' % (C.fy(m['worst_need']['fy']),
-                                                       C.fyspan(m['first'], m['last']),
-                                                       C.num(m['n_years']))),
-            dict(value=C.usd(P['indist']['avg_spent']),
-                 label='a year, in-district special education, general fund, average %s'
-                       % C.fyspan(m['first'], m['last'])),
-            dict(value=C.usd(P['ood']['avg_spent']),
-                 label='a year, out-of-district tuition, general fund, average %s'
-                       % C.fyspan(m['first'], m['last'])),
-            dict(value=C.usd(m['combined_avg']),
-                 label='a year, the two combined, same basis, average %s'
-                       % C.fyspan(m['first'], m['last'])),
+                 label='needed beyond the voted special education budget in the worst year, '
+                       '%s — general fund, after the circuit breaker account; %s'
+                       % (C.fy(m['worst_need']['fy']), C.fyspan(m['first'], m['last']))),
+            dict(value=C.usd(m['acct_summary']['last']['closing']),
+                 label='in the circuit breaker account at 30 June %d — the school’s own '
+                       'cushion beside any new reserve; %s at its %s high'
+                       % (m['acct_summary']['last']['fy'],
+                          C.usd(m['acct_summary']['peak']['closing']),
+                          C.fy(m['acct_summary']['peak']['fy']))),
+            dict(value=C.usd(m['cb_now']['paid']),
+                 label='circuit breaker paid by the state in %s, for %s’s costs — into the '
+                       'circuit breaker account, not the general fund'
+                       % (C.fy(m['cb_now']['fy']), C.fy(m['cb_now']['for_fy']))),
+            dict(value=C.usd(m['cap']),
+                 label='the most the new special education reserve can hold — 2%% of %s net '
+                       'school spending, as described' % C.fy(m['cap_fy'])),
         ],
         surprise=[dict(fy=r['fy'], source=r['source'],
                        ood=r['ood']['variance'], indist=r['indist']['variance'],
@@ -1251,6 +1733,30 @@ def payload(m, rows):
                   worst_recent=m['worst_recent']),
         all_funds=m['allfunds'],
         receipts_timing=m['pairs'],
+        request=dict(bases=m['bases'], thresholds=[m['T300'], m['T500']],
+                     after_over_300=m['after_over_300'], before_over_300=m['before_over_300'],
+                     before_within_500=m['before_within_500'], worst_before=m['worst_before'],
+                     said=m['captions'], said_per_child=m['said_per_child'],
+                     by_type=m['bt_recent'], nonpublic_median=m['np_recent_med'],
+                     captions_note='Machine captions of the recordings: a finding aid, not a '
+                                   'record. Check each at the video timestamp.'),
+        cb_account=dict(years=m['acct'], snapshot=m['acct_snap'], summary=m['acct_summary']),
+        circuit_breaker=dict(
+            rows=m['who'],
+            keys=[dict(key='gf', name='General fund'),
+                  dict(key='cb_account', name='Circuit breaker account'),
+                  dict(key='other', name='Other funds'),
+                  dict(key='other_unsplit', name='Every non-general fund, not split')],
+            lines=[dict(key='received', name='Circuit breaker received that year'),
+                   dict(key='earned', name='Earned by that year’s costs, received next year')],
+            basis='Bars: out-of-district tuition (functions 9300 and 9400) by fund — DESE End '
+                  'of Year Financial Report, with the circuit breaker account (fund 2640) from '
+                  'the town’s year-end reports where they exist; the last year is the town '
+                  'ledger alone. Lines: DESE circuit breaker payments, by year of payment.',
+            now=m['cb_now'], unexplained=m['big_other'],
+            mechanism=dict(source='/docs/' + CB_PDF, quotes=CB_QUOTES,
+                           note='The district’s description to the School Committee, '
+                                '2023-2024. The statute is not in this archive.')),
         trend=m['trend'],
         averages=dict(indist=P['indist']['avg_spent'], ood_gf=P['ood']['avg_spent'],
                       trans=P['trans']['avg_spent'], combined_gf=m['combined_avg'],
@@ -1280,6 +1786,19 @@ def payload(m, rows):
             'read from the account names; the chart of accounts is not published.',
             'The terms of Mass. General Laws chapter 40 section 13E as written, and how much '
             'the new reserve holds.',
+            'Why DESE’s FY2024 figure for tuition paid from funds other than the general fund '
+            'exceeds what the circuit breaker account paid by exactly the circuit breaker '
+            'payment the state lists for FY2024.',
+            'Whether the voted tuition line is set net of expected circuit breaker money '
+            '(the district’s budget narrative for the tuition line would say), and how much of '
+            'the circuit breaker balance is earmarked for the next year (its spending plan '
+            'would say).',
+            'How many children ARRIVED in an out-of-district placement during any year; every '
+            'figure here is net of departures and other savings.',
+            'Any cost by type of placement: the counts and the dollars split by type do not '
+            'line up.',
+            'The circuit breaker mechanism as the statute states it. The threshold, the share '
+            'and the timing here are the district’s description to the School Committee.',
         ],
         conclusions=rows,
     )
@@ -1372,6 +1891,61 @@ def svg_trend(pay):
     return ''.join(o)
 
 
+def svg_cb(pay):
+    cb = pay['circuit_breaker']
+    rows = cb['rows']
+    stack = [('gf', COL['ood']), ('cb_account', COL['cb']), ('other', '#9ca3af'),
+             ('other_unsplit', '#cbd5e1')]
+    W, H, L, R, T, B = 780, 400, 74, 16, 52, 40
+    tops = [sum(r[k] or 0 for k, _ in stack) for r in rows]
+    tops += [r[k] for r in rows for k in ('received', 'earned') if r[k] is not None]
+    hi = -((-max(tops)) // 500000) * 500000
+    y = lambda v: T + (H - T - B) * (1 - v / hi)
+    slot = (W - L - R) / len(rows)
+    cx = lambda j: L + slot * (j + 0.5)
+    o = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" font-family="system-ui,'
+         'sans-serif" font-size="11"><rect width="100%%" height="100%%" fill="#ffffff"/>' % (W, H)]
+    v = 0
+    while v <= hi:
+        o.append('<line x1="%d" x2="%d" y1="%.1f" y2="%.1f" stroke="#e5e7eb"/>'
+                 '<text x="%d" y="%.1f" text-anchor="end" fill="#6b7280">%s</text>'
+                 % (L, W - R, y(v), y(v), L - 6, y(v) + 4, html.escape(C.usd(v))))
+        v += 500000
+    for j, r in enumerate(rows):
+        base = 0
+        for k, col in stack:
+            val = r[k] or 0
+            if val:
+                o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="%s"/>'
+                         % (cx(j) - slot * 0.32, y(base + val), slot * 0.64,
+                            y(base) - y(base + val), col))
+            base += val
+        o.append('<text x="%.1f" y="%d" text-anchor="middle" fill="#6b7280">%s</text>'
+                 % (cx(j), H - 22, "FY'%02d" % (r['fy'] % 100)))
+    for k, dash_ in (('received', ''), ('earned', ' stroke-dasharray="5 4"')):
+        seq = [(j, r[k]) for j, r in enumerate(rows) if r[k] is not None]
+        d = ' '.join('%s%.1f,%.1f' % ('M' if n == 0 else 'L', cx(j), y(val))
+                     for n, (j, val) in enumerate(seq))
+        o.append('<path d="%s" fill="none" stroke="#111827" stroke-width="2"%s/>' % (d, dash_))
+    x = L
+    names = {k['key']: k['name'] for k in cb['keys']}
+    for k, col in stack:
+        o.append('<rect x="%d" y="8" width="10" height="10" fill="%s"/><text x="%d" y="17" '
+                 'fill="#111827">%s</text>' % (x, col, x + 14, html.escape(names[k])))
+        x += 14 + 6 * len(names[k]) + 16
+    x = L
+    for ln, dash_ in zip(cb['lines'], ('', ' stroke-dasharray="5 4"')):
+        o.append('<line x1="%d" x2="%d" y1="32" y2="32" stroke="#111827" stroke-width="2"%s/>'
+                 '<text x="%d" y="36" fill="#111827">%s</text>'
+                 % (x, x + 18, dash_, x + 24, html.escape(ln['name'])))
+        x += 24 + 6 * len(ln['name']) + 22
+    o.append('<text x="%d" y="%d" fill="#6b7280">out-of-district tuition by who paid it; lines '
+             'are the state&#8217;s circuit breaker payments. %s</text>'
+             % (L, H - 6, html.escape(C.fyspan(rows[0]['fy'], rows[-1]['fy']))))
+    o.append('</svg>\n')
+    return ''.join(o)
+
+
 # --------------------------------------------------------------------- main
 
 def outputs():
@@ -1383,6 +1957,7 @@ def outputs():
         OUT_MD: render_md(m, rows),
         os.path.join(CHART_DIR, '%s-surprise.svg' % ID): svg_surprise(pay),
         os.path.join(CHART_DIR, '%s-trend.svg' % ID): svg_trend(pay),
+        os.path.join(CHART_DIR, '%s-circuit-breaker.svg' % ID): svg_cb(pay),
     }
 
 

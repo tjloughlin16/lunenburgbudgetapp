@@ -1,5 +1,5 @@
 import {
-  Bar, BarChart, CartesianGrid, Legend, Line, LineChart, ReferenceLine,
+  Bar, BarChart, CartesianGrid, ComposedChart, Legend, Line, LineChart, ReferenceLine,
   ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts'
 import type { ChartProps } from './analysisCharts'
@@ -13,7 +13,13 @@ import type { ChartProps } from './analysisCharts'
  * so tuition, in-district and transportation never borrow each other's colour between the
  * two charts. The "every fund" tuition line is drawn dashed in the tuition colour rather
  * than given a fourth hue, because it is the same quantity on a wider basis; the circuit
- * breaker is neutral because it is money coming back, not a cost line. */
+ * breaker is neutral because it is money coming back, not a cost line.
+ *
+ * The circuit breaker chart is all tuition, split by WHO PAID IT, so there the tuition hue
+ * is the general fund (the money the town votes) and the revenue hue is the circuit
+ * breaker account (money the state paid back, spent without a town vote). Its two lines
+ * are the state's payments: solid by the year received, dashed by the year whose costs
+ * earned them -- the same series a year apart, which is how the lag shows. */
 
 const N = (v: unknown) => (Array.isArray(v) ? Number(v[0]) : Number(v))
 const usd = (v: number) => `${v < 0 ? '−' : ''}$${Math.abs(Math.round(v)).toLocaleString('en-US')}`
@@ -33,10 +39,20 @@ type Trend = {
   fy: number; indist_spent: number | null; ood_gf_spent: number | null
   ood_all_funds: number | null; cb_paid: number | null
 }
+type CbRow = {
+  fy: number; basis: string; gf: number | null; cb_account: number | null
+  other: number | null; other_unsplit: number | null; total: number | null
+  received: number | null; earned: number | null
+}
 type Payload = {
   surprise: Surprise[]
   surprise_keys: { key: string; name: string }[]
   trend: Trend[]
+  circuit_breaker: {
+    rows: CbRow[]
+    keys: { key: keyof CbRow; name: string }[]
+    lines: { key: keyof CbRow; name: string }[]
+  }
 }
 
 const box = {
@@ -103,6 +119,53 @@ export function SpecialEducationCostsTrend({ data }: ChartProps) {
               strokeDasharray={l.dash} connectNulls={false} />
           ))}
         </LineChart>
+      </ResponsiveContainer>
+    </div>
+  )
+}
+
+/** THE CIRCUIT BREAKER SECTION'S SIGNATURE: tuition by who paid it, and the state's money
+ *  beside it -- received (solid) against earned a year earlier (dashed). */
+export function SpecialEducationCostsCircuitBreaker({ data }: ChartProps) {
+  const d = (data as Payload).circuit_breaker
+  const rows = d.rows.map(r => ({ ...r, label: `FY${String(r.fy).slice(2)}` }))
+  const fill: Record<string, { c: string; o?: number }> = {
+    gf: { c: 'var(--series-cost)' }, cb_account: { c: 'var(--series-revenue)' },
+    other: { c: 'var(--text-muted)', o: 0.75 }, other_unsplit: { c: 'var(--text-muted)', o: 0.35 },
+  }
+  const basis: Record<string, string> = {
+    dese: 'every fund (DESE); the circuit breaker account is not separated before FY2023',
+    'dese+munis': 'every fund (DESE), circuit breaker account from the town ledger',
+    munis: 'town ledger only; other funds not yet published by DESE',
+  }
+  return (
+    <div style={{ width: '100%', height: 380 }}>
+      <ResponsiveContainer>
+        <ComposedChart data={rows} margin={{ top: 8, right: 8, left: 4, bottom: 4 }}>
+          <CartesianGrid stroke="var(--grid)" vertical={false} />
+          <XAxis dataKey="label" tick={{ fontSize: 11, fill: 'var(--text-muted)' }}
+            interval="preserveStartEnd" minTickGap={8} />
+          <YAxis width={56} tickFormatter={v => short(N(v))}
+            tick={{ fontSize: 11, fill: 'var(--text-muted)' }} />
+          <Tooltip contentStyle={box}
+            formatter={(v, name) => [usd(N(v)), String(name)]}
+            labelFormatter={(_l, p) => {
+              const r = (p?.[0] as { payload?: CbRow } | undefined)?.payload
+              if (!r) return ''
+              const tot = r.total != null ? `tuition, every fund ${usd(r.total)}` : 'every-fund total not yet published'
+              return `FY${r.fy} — ${tot} · ${basis[r.basis] ?? ''}`
+            }} />
+          <Legend wrapperStyle={{ fontSize: 12 }} />
+          {d.keys.map(k => (
+            <Bar key={k.key} dataKey={k.key} name={k.name} stackId="paid"
+              fill={fill[k.key]?.c} fillOpacity={fill[k.key]?.o ?? 1} isAnimationActive={false} />
+          ))}
+          {d.lines.map((l, i) => (
+            <Line key={l.key} dataKey={l.key} name={l.name} type="linear"
+              stroke="var(--text-primary)" strokeWidth={2} strokeDasharray={i ? '5 4' : undefined}
+              dot={{ r: 2.5 }} connectNulls={false} isAnimationActive={false} />
+          ))}
+        </ComposedChart>
       </ResponsiveContainer>
     </div>
   )

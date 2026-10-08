@@ -16,14 +16,22 @@ import {
   TownBudgetsTrends, TownBudgetsTotal, TownBudgetsTown,
 } from './TownBudgetsCharts'
 import { DepartmentBudgetsIndex, DepartmentBudgetsPull } from './DepartmentBudgetsCharts'
-import { SchoolSurplusWaterfall } from './SchoolSurplusCharts'
 import {
-  SpecialEducationCostsSurprise, SpecialEducationCostsTrend,
+  SchoolSurplusWaterfall, SchoolSurplusCauses, SchoolSurplusBudgetVsSpent,
+} from './SchoolSurplusCharts'
+import {
+  SpecialEducationCostsSurprise, SpecialEducationCostsTrend, SpecialEducationCostsCircuitBreaker,
 } from './SpecialEducationCostsCharts'
 import {
   TownsLikeUsMap, TownsLikeUsDrivers, TownsLikeUsFunding, TownsLikeUsPositions,
   TownsLikeUsHeat,
 } from './TownComparisonCharts'
+import {
+  SittingOnMoneyBalances, SittingOnMoneySchool, SittingOnMoneyTurnback,
+} from './SittingOnMoneyCharts'
+import {
+  SpendingWhatComesInKinds, SpendingWhatComesInFunds, SpendingWhatComesInAthletics,
+} from './SpendingWhatComesInCharts'
 
 /* THE REGISTRY THAT LETS A CHART STOP BEING A PICTURE.
  *
@@ -72,8 +80,13 @@ export const ANALYSIS_CHARTS: Record<string, Entry> = {
   'department-budgets-pull': { render: DepartmentBudgetsPull, needs: has('groups') },
   'fy25-school-surplus-waterfall': { render: SchoolSurplusWaterfall, needs: has('waterfall') },
   'fy26-school-surplus-waterfall': { render: SchoolSurplusWaterfall, needs: has('waterfall') },
+  'fy25-school-surplus-causes': { render: SchoolSurplusCauses, needs: has('causes') },
+  'fy26-school-surplus-causes': { render: SchoolSurplusCauses, needs: has('causes') },
+  'fy25-school-surplus-budget-vs-spent': { render: SchoolSurplusBudgetVsSpent, needs: has('causes') },
+  'fy26-school-surplus-budget-vs-spent': { render: SchoolSurplusBudgetVsSpent, needs: has('causes') },
   'special-education-costs-surprise': { render: SpecialEducationCostsSurprise, needs: has('surprise','surprise_keys') },
   'special-education-costs-trend': { render: SpecialEducationCostsTrend, needs: has('trend') },
+  'special-education-costs-circuit-breaker': { render: SpecialEducationCostsCircuitBreaker, needs: has('circuit_breaker') },
   'towns-like-us-map': { render: TownsLikeUsMap, needs: has('map','local','twins') },
   'towns-like-us-drivers': { render: TownsLikeUsDrivers, needs: has('correlations') },
   'towns-like-us-funding': { render: TownsLikeUsFunding, needs: has('funding') },
@@ -101,6 +114,12 @@ export const ANALYSIS_CHARTS: Record<string, Entry> = {
   'stabilization-holdings': { render: StabilizationHoldings, needs: has('funds','totals') },
   'stabilization-option-split': { render: StabilizationOptionSplit, needs: has('both') },
   'stabilization-option-burndown': { render: StabilizationOptionBurndown, needs: has('burndown') },
+  'sitting-on-money-balances': { render: SittingOnMoneyBalances, needs: has('pots','years') },
+  'sitting-on-money-school': { render: SittingOnMoneySchool, needs: has('school_series','school_categories') },
+  'sitting-on-money-turnback': { render: SittingOnMoneyTurnback, needs: has('turnback') },
+  'spending-what-comes-in-kinds': { render: SpendingWhatComesInKinds, needs: has('kinds') },
+  'spending-what-comes-in-funds': { render: SpendingWhatComesInFunds, needs: has('funds') },
+  'spending-what-comes-in-athletics': { render: SpendingWhatComesInAthletics, needs: has('athletics') },
 }
 
 /** The chart registered for `charts/foo.svg` IF this payload can feed it, else undefined

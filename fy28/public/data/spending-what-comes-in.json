@@ -1,0 +1,3315 @@
+{
+ "about": "For each school fund outside the voted budget: what came in and what went out, FY2023 to FY2026, and whether the revolving funds cover their own booked costs.",
+ "athletics": {
+  "fee_share_pct": 25.5,
+  "fees_in": 601140.87,
+  "fund_share_pct": 31.6,
+  "fund_spent": 745146.38,
+  "gf_spent": 1613200.61,
+  "years": [
+   {
+    "fees_in": 144949.68,
+    "fund_share_pct": 48.4,
+    "fund_spent": 314863.84,
+    "fy": 2023,
+    "gf_spent": 335765.67
+   },
+   {
+    "fees_in": 135765.36,
+    "fund_share_pct": 45.8,
+    "fund_spent": 250574.63,
+    "fy": 2024,
+    "gf_spent": 295979.27
+   },
+   {
+    "fees_in": 131481.37,
+    "fund_share_pct": 5.7,
+    "fund_spent": 32796.47,
+    "fy": 2025,
+    "gf_spent": 541945.42
+   },
+   {
+    "fees_in": 188944.46,
+    "fund_share_pct": 25.1,
+    "fund_spent": 146911.44,
+    "fy": 2026,
+    "gf_spent": 439510.25
+   }
+  ]
+ },
+ "conclusions": [
+  {
+   "basis": "`munis-school-ytd.csv`, special-school, period 13, FY2023-FY2026 (revenue and expense per fund); balances from /analysis/sitting-on-money.",
+   "bearing": "sizes",
+   "claim": "The schools’ fourteen own funds spent $1,002,938 more than came in over four years.",
+   "detail": "FY2023 to FY2026, the fourteen fee, choice, lunch, gift and circuit-breaker funds took in $8,059,022 and spent $9,061,961. Their combined balance fell from $2,170,682 at 30 June 2022 to $1,167,744 at 30 June 2026. Every kind spent more than it took in except the gift funds, which took in $21,131 more than they spent.",
+   "figure": "net",
+   "figures": {
+    "bal22": {
+     "text": "$2,170,682",
+     "unit": "",
+     "value": 2170682.37
+    },
+    "bal26": {
+     "text": "$1,167,744",
+     "unit": "",
+     "value": 1167744.31
+    },
+    "gifts": {
+     "text": "$21,131",
+     "unit": "",
+     "value": 21131.3
+    },
+    "in": {
+     "text": "$8,059,022",
+     "unit": "",
+     "value": 8059022.449999999
+    },
+    "net": {
+     "text": "$1,002,938",
+     "unit": "",
+     "value": 1002938.06
+    },
+    "out": {
+     "text": "$9,061,961",
+     "unit": "",
+     "value": 9061960.51
+    }
+   },
+   "id": "the-school-funds-drew-down",
+   "kind": "measured",
+   "literals": [
+    "30 June 2022",
+    "30 June 2026",
+    "FY2023–FY2026",
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026"
+   ],
+   "not_shown": "Why each fund drew down. Spending a balance down can be a plan to use accumulated fees, a fee set below cost, or one-time purchases; the ledger gives amounts, not reasons.",
+   "see": [],
+   "so_what": "That money came out of balances built up to FY2022: it was spent, not held back."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, special-school, period 13.",
+   "bearing": "sizes",
+   "claim": "Three of the fourteen funds spent more than came in, in three of the four years.",
+   "detail": "Counted per fund, FY2023 to FY2026: a year counts when expenditure exceeded revenue. No fund did it in all four years.",
+   "figure": "n",
+   "figures": {
+    "n": {
+     "text": "Three",
+     "unit": "funds",
+     "value": 3
+    }
+   },
+   "id": "three-funds-every-year",
+   "kind": "measured",
+   "literals": [
+    "30 June 2022",
+    "30 June 2026",
+    "FY2023–FY2026",
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026"
+   ],
+   "not_shown": "Whether the pattern continues. Four closed years is what the ledgers cover.",
+   "see": [],
+   "so_what": "After-school activities, extended day and the circuit breaker: a pattern, not one bad year."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, fund 1312; School Committee minutes, 5 February 2025.",
+   "bearing": "lever",
+   "claim": "Extended day, minuted as self-sustaining, spent $241,062 more than it took in since FY2024.",
+   "detail": "It took in more than it spent in FY2023 and less in each of FY2024, FY2025 and FY2026. Carried forward, its balance stood at -$2,569 at 30 June 2026; that year-end is carried through the ledger, not yet checked against a second document.",
+   "figure": "short",
+   "figures": {
+    "bal": {
+     "text": "-$2,569",
+     "unit": "",
+     "value": -2568.63
+    },
+    "short": {
+     "text": "$241,062",
+     "unit": "",
+     "value": 241061.6
+    }
+   },
+   "id": "extended-day-not-covering",
+   "kind": "measured",
+   "literals": [
+    "30 June 2022",
+    "30 June 2026",
+    "FY2023–FY2026",
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026"
+   ],
+   "not_shown": "Why: a fee held while wages rose, more staff, fewer families, or a cost recoded into the fund would all look the same here.",
+   "see": [],
+   "so_what": "Its fees stopped covering its own booked spending; it ran on its balance instead."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`: special-school fund 1301 and gf-school function 3510, period 13.",
+   "bearing": "lever",
+   "claim": "Athletics fees paid for 25.5% of the athletics spending the books show, FY2023–FY2026.",
+   "detail": "The fee fund spent $745,146 and the general fund $1,613,201 under function 3510, the only fee-funded programme where both book to the same code. In FY2025 the fee fund spent $32,796 while the general fund spent $541,945.",
+   "figure": "share",
+   "figures": {
+    "f25": {
+     "text": "$32,796",
+     "unit": "",
+     "value": 32796.47
+    },
+    "fund": {
+     "text": "$745,146",
+     "unit": "",
+     "value": 745146.38
+    },
+    "g25": {
+     "text": "$541,945",
+     "unit": "",
+     "value": 541945.42
+    },
+    "gf": {
+     "text": "$1,613,201",
+     "unit": "",
+     "value": 1613200.61
+    },
+    "share": {
+     "text": "25.5%",
+     "unit": "",
+     "value": 25.5
+    }
+   },
+   "id": "athletics-fees-pay-a-share",
+   "kind": "measured",
+   "literals": [
+    "30 June 2022",
+    "30 June 2026",
+    "FY2023–FY2026",
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026",
+    "3510"
+   ],
+   "not_shown": "The whole cost of athletics: fields, custodians, utilities and buses booked elsewhere are not in either figure (registered gaps).",
+   "see": [],
+   "so_what": "The general fund carried most of it, under the same athletics function code."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, fund 2200 revenue lines, period 13.",
+   "bearing": "sizes",
+   "claim": "School lunch runs on federal money: 93.8% of its receipts, against 3.8% from sales.",
+   "detail": "Four years, FY2023 to FY2026. In FY2026 it spent $380,087 more than it took in, and its balance fell to $75,039.",
+   "figure": "fed",
+   "figures": {
+    "b26": {
+     "text": "$75,039",
+     "unit": "",
+     "value": 75038.97
+    },
+    "fed": {
+     "text": "93.8%",
+     "unit": "",
+     "value": 93.8
+    },
+    "fee": {
+     "text": "3.8%",
+     "unit": "",
+     "value": 3.8
+    },
+    "n26": {
+     "text": "$380,087",
+     "unit": "",
+     "value": 380086.75
+    }
+   },
+   "id": "lunch-is-federal-money",
+   "kind": "measured",
+   "literals": [
+    "30 June 2022",
+    "30 June 2026",
+    "FY2023–FY2026",
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026"
+   ],
+   "not_shown": "Whether FY2026’s shortfall is late reimbursement booked after the close or a real loss; nothing here separates them.",
+   "see": [],
+   "so_what": "Whether lunch “pays its own way” is a question about reimbursement, not about prices."
+  }
+ ],
+ "encumbrances": 13779.73,
+ "function_test": [
+  {
+   "function": "3400",
+   "fund": "2200",
+   "fund_spent": 3036364.06,
+   "generic": false,
+   "gf_spent": 0.0,
+   "name": "School Lunch"
+  },
+  {
+   "function": "4000",
+   "fund": "2200",
+   "fund_spent": 8534.25,
+   "generic": true,
+   "gf_spent": 0.0,
+   "name": "School Lunch"
+  },
+  {
+   "function": "5200",
+   "fund": "2200",
+   "fund_spent": 433231.84,
+   "generic": true,
+   "gf_spent": 13216691.47,
+   "name": "School Lunch"
+  },
+  {
+   "function": "3510",
+   "fund": "1301",
+   "fund_spent": 745146.38,
+   "generic": false,
+   "gf_spent": 1613200.61,
+   "name": "Chapter 658 School Athletics"
+  },
+  {
+   "function": "2000",
+   "fund": "1305",
+   "fund_spent": 790031.46,
+   "generic": true,
+   "gf_spent": 6181.62,
+   "name": "After School Activities"
+  },
+  {
+   "function": "2000",
+   "fund": "1312",
+   "fund_spent": 1049651.49,
+   "generic": true,
+   "gf_spent": 6181.62,
+   "name": "Extended Day Revolving Fund"
+  },
+  {
+   "function": "4000",
+   "fund": "1312",
+   "fund_spent": 71500.0,
+   "generic": true,
+   "gf_spent": 0.0,
+   "name": "Extended Day Revolving Fund"
+  },
+  {
+   "function": "5200",
+   "fund": "1312",
+   "fund_spent": 205701.53,
+   "generic": true,
+   "gf_spent": 13216691.47,
+   "name": "Extended Day Revolving Fund"
+  },
+  {
+   "function": "4000",
+   "fund": "1306",
+   "fund_spent": 105220.13,
+   "generic": true,
+   "gf_spent": 0.0,
+   "name": "School Facilities Use"
+  },
+  {
+   "function": "2000",
+   "fund": "1302",
+   "fund_spent": 19780.0,
+   "generic": true,
+   "gf_spent": 6181.62,
+   "name": "Adult Education"
+  },
+  {
+   "function": "2000",
+   "fund": "1300",
+   "fund_spent": 20728.22,
+   "generic": true,
+   "gf_spent": 6181.62,
+   "name": "Recovery for Lost Books"
+  },
+  {
+   "function": "2000",
+   "fund": "1310",
+   "fund_spent": 1966.0,
+   "generic": true,
+   "gf_spent": 6181.62,
+   "name": "Greenthumb Revolving"
+  }
+ ],
+ "funds": [
+  {
+   "active": true,
+   "balance_2022": 13897.02,
+   "balance_2026": 2000.42,
+   "fund": "1300",
+   "kind": "fees",
+   "munis_name": "LOST BOOKS/TECH REV FUND",
+   "name": "Recovery for Lost Books",
+   "net": -11896.6,
+   "total_in": 8831.62,
+   "total_out": 20728.22,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 450.08,
+     "net": 450.08,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 1110.29,
+     "net": -247.73,
+     "out": 1358.02
+    },
+    {
+     "fy": 2025,
+     "in": 4076.0,
+     "net": 366.8,
+     "out": 3709.2
+    },
+    {
+     "fy": 2026,
+     "in": 3195.25,
+     "net": -12465.75,
+     "out": 15661.0
+    }
+   ],
+   "years_out_above_in": 2
+  },
+  {
+   "active": true,
+   "balance_2022": 296286.42,
+   "balance_2026": 152280.91,
+   "fund": "1301",
+   "kind": "fees",
+   "munis_name": "CHAPTER 658 REVOLVING FUND",
+   "name": "Chapter 658 School Athletics",
+   "net": -144005.51,
+   "total_in": 601140.87,
+   "total_out": 745146.38,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 144949.68,
+     "net": -169914.16,
+     "out": 314863.84
+    },
+    {
+     "fy": 2024,
+     "in": 135765.36,
+     "net": -114809.27,
+     "out": 250574.63
+    },
+    {
+     "fy": 2025,
+     "in": 131481.37,
+     "net": 98684.9,
+     "out": 32796.47
+    },
+    {
+     "fy": 2026,
+     "in": 188944.46,
+     "net": 42033.02,
+     "out": 146911.44
+    }
+   ],
+   "years_out_above_in": 2
+  },
+  {
+   "active": true,
+   "balance_2022": 9833.75,
+   "balance_2026": 12893.75,
+   "fund": "1302",
+   "kind": "fees",
+   "munis_name": "ADULT EDUCATION REVOLVING FUND",
+   "name": "Adult Education",
+   "net": 3060.0,
+   "total_in": 22840.0,
+   "total_out": 19780.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 7240.0,
+     "net": 1460.0,
+     "out": 5780.0
+    },
+    {
+     "fy": 2024,
+     "in": 4830.0,
+     "net": -130.0,
+     "out": 4960.0
+    },
+    {
+     "fy": 2025,
+     "in": 5020.0,
+     "net": 460.0,
+     "out": 4560.0
+    },
+    {
+     "fy": 2026,
+     "in": 5750.0,
+     "net": 1270.0,
+     "out": 4480.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "balance_2022": 203041.02,
+   "balance_2026": 134542.19,
+   "fund": "1305",
+   "kind": "fees",
+   "munis_name": "AFTER SCHOOL ACTIVITIES FUND",
+   "name": "After School Activities",
+   "net": -68498.83,
+   "total_in": 721532.63,
+   "total_out": 790031.46,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 197143.56,
+     "net": -19316.0,
+     "out": 216459.56
+    },
+    {
+     "fy": 2024,
+     "in": 180338.49,
+     "net": -35221.39,
+     "out": 215559.88
+    },
+    {
+     "fy": 2025,
+     "in": 136316.79,
+     "net": -16106.54,
+     "out": 152423.33
+    },
+    {
+     "fy": 2026,
+     "in": 207733.79,
+     "net": 2145.1,
+     "out": 205588.69
+    }
+   ],
+   "years_out_above_in": 3
+  },
+  {
+   "active": true,
+   "balance_2022": 60665.55,
+   "balance_2026": 70838.82,
+   "fund": "1306",
+   "kind": "fees",
+   "munis_name": "SCHOOL FACILITIES USE REVOLV",
+   "name": "School Facilities Use",
+   "net": 10173.27,
+   "total_in": 115393.4,
+   "total_out": 105220.13,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 15115.5,
+     "net": -53143.49,
+     "out": 68258.99
+    },
+    {
+     "fy": 2024,
+     "in": 16887.5,
+     "net": -4511.39,
+     "out": 21398.89
+    },
+    {
+     "fy": 2025,
+     "in": 64719.9,
+     "net": 62231.15,
+     "out": 2488.75
+    },
+    {
+     "fy": 2026,
+     "in": 18670.5,
+     "net": 5597.0,
+     "out": 13073.5
+    }
+   ],
+   "years_out_above_in": 2
+  },
+  {
+   "active": true,
+   "balance_2022": 533167.09,
+   "balance_2026": 326281.11,
+   "fund": "1308",
+   "kind": "choice",
+   "munis_name": "SCHOOL CHOICE REVOLVING FUND",
+   "name": "School Choice",
+   "net": -206885.98,
+   "total_in": 485153.48,
+   "total_out": 692039.46,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 116976.0,
+     "net": -194626.29,
+     "out": 311602.29
+    },
+    {
+     "fy": 2024,
+     "in": 94912.0,
+     "net": -190628.66,
+     "out": 285540.66
+    },
+    {
+     "fy": 2025,
+     "in": 157234.44,
+     "net": 98990.57,
+     "out": 58243.87
+    },
+    {
+     "fy": 2026,
+     "in": 116031.04,
+     "net": 79378.4,
+     "out": 36652.64
+    }
+   ],
+   "years_out_above_in": 2
+  },
+  {
+   "active": true,
+   "balance_2022": 1865.77,
+   "balance_2026": 1390.77,
+   "fund": "1310",
+   "kind": "fees",
+   "munis_name": "GREENTHUMB REVOLVING FUND",
+   "name": "Greenthumb Revolving",
+   "net": -475.0,
+   "total_in": 1491.0,
+   "total_out": 1966.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 507.0,
+     "net": 507.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 984.0,
+     "net": 18.0,
+     "out": 966.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -1000.0,
+     "out": 1000.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "balance_2022": 77853.58,
+   "balance_2026": 101417.57,
+   "fund": "1311",
+   "kind": "gifts",
+   "munis_name": "SCHOOL GIFT FUND",
+   "name": "School Gift Fund",
+   "net": 23563.99,
+   "total_in": 105982.53,
+   "total_out": 82418.54,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 26292.83,
+     "net": -2873.24,
+     "out": 29166.07
+    },
+    {
+     "fy": 2024,
+     "in": 19102.81,
+     "net": 330.07,
+     "out": 18772.74
+    },
+    {
+     "fy": 2025,
+     "in": 35794.2,
+     "net": 14512.18,
+     "out": 21282.02
+    },
+    {
+     "fy": 2026,
+     "in": 24792.69,
+     "net": 11594.98,
+     "out": 13197.71
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "balance_2022": 192012.95,
+   "balance_2026": -2568.63,
+   "fund": "1312",
+   "kind": "fees",
+   "munis_name": "EXTENDED DAY REVOLVING FUND",
+   "name": "Extended Day Revolving Fund",
+   "net": -194581.58,
+   "total_in": 1132271.44,
+   "total_out": 1326853.02,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 306342.72,
+     "net": 46480.02,
+     "out": 259862.7
+    },
+    {
+     "fy": 2024,
+     "in": 280399.78,
+     "net": -55136.89,
+     "out": 335536.67
+    },
+    {
+     "fy": 2025,
+     "in": 271203.64,
+     "net": -88789.06,
+     "out": 359992.7
+    },
+    {
+     "fy": 2026,
+     "in": 274325.3,
+     "net": -97135.65,
+     "out": 371460.95
+    }
+   ],
+   "years_out_above_in": 3
+  },
+  {
+   "active": false,
+   "balance_2022": 1954.71,
+   "balance_2026": 1954.71,
+   "fund": "1314",
+   "kind": "fees",
+   "munis_name": "VENDING REVOLVING",
+   "name": "Vending Machine Revolving",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "balance_2022": 2300.64,
+   "balance_2026": -132.05,
+   "fund": "1315",
+   "kind": "gifts",
+   "munis_name": "FAMILY NETWORK GIFT FUND",
+   "name": "Family Network Gift Fund",
+   "net": -2432.69,
+   "total_in": 0.0,
+   "total_out": 2432.69,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -2432.69,
+     "out": 2432.69
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": false,
+   "balance_2022": 10000.0,
+   "balance_2026": 10000.0,
+   "fund": "1549",
+   "kind": "gifts",
+   "munis_name": "TECHNOLOGY FOR SCHOOL CHILDREN",
+   "name": "Technology for School Children Gift Fund",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "balance_2022": 340910.64,
+   "balance_2026": 75038.97,
+   "fund": "2200",
+   "kind": "lunch",
+   "munis_name": "SCHOOL LUNCH REVOLVING",
+   "name": "School Lunch",
+   "net": -265871.67,
+   "total_in": 3212258.48,
+   "total_out": 3478130.15,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 739686.9,
+     "net": 6630.97,
+     "out": 733055.93
+    },
+    {
+     "fy": 2024,
+     "in": 927541.97,
+     "net": 90042.78,
+     "out": 837499.19
+    },
+    {
+     "fy": 2025,
+     "in": 878806.94,
+     "net": 17541.33,
+     "out": 861265.61
+    },
+    {
+     "fy": 2026,
+     "in": 666222.67,
+     "net": -380086.75,
+     "out": 1046309.42
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2582",
+   "kind": "grants",
+   "munis_name": "EECBG ENERGY EFFICIENCY GRANT",
+   "name": "Eecbg Energy Efficiency Grant",
+   "net": 18.25,
+   "total_in": 18.25,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 9.18,
+     "net": 9.18,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 9.07,
+     "net": 9.07,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2622",
+   "kind": "grants",
+   "munis_name": "FY25 FAMILY & COMMUNITY",
+   "name": "Fy25 Family & Community",
+   "net": 67200.08,
+   "total_in": 72737.0,
+   "total_out": 5536.92,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 72737.0,
+     "net": 73277.08,
+     "out": -540.08
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -6077.0,
+     "out": 6077.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "balance_2022": 426893.23,
+   "balance_2026": 281805.77,
+   "fund": "2640",
+   "kind": "cb",
+   "munis_name": "SPECIAL ED CIRCUIT BREAKER",
+   "name": "50/50 Grant Sped Tuitions",
+   "net": -145087.46,
+   "total_in": 1652127.0,
+   "total_out": 1797214.46,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 415750.0,
+     "net": -79217.72,
+     "out": 494967.72
+    },
+    {
+     "fy": 2024,
+     "in": 301589.0,
+     "net": -164706.98,
+     "out": 466295.98
+    },
+    {
+     "fy": 2025,
+     "in": 608818.0,
+     "net": 110366.65,
+     "out": 498451.35
+    },
+    {
+     "fy": 2026,
+     "in": 325970.0,
+     "net": -11529.41,
+     "out": 337499.41
+    }
+   ],
+   "years_out_above_in": 3
+  },
+  {
+   "active": true,
+   "fund": "2649",
+   "kind": "grants",
+   "munis_name": "DISPLACED STUDENTS-PUERTO RICO",
+   "name": "Displaced Students-Puerto Rico",
+   "net": -10660.63,
+   "total_in": 0.0,
+   "total_out": 10660.63,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": -10660.63,
+     "out": 10660.63
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": false,
+   "fund": "2650",
+   "kind": "grants",
+   "munis_name": "UNDER STORAGE TANK GRANT",
+   "name": "Under Storage Tank Grant",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2653",
+   "kind": "grants",
+   "munis_name": "FY24 FAMILY & COMMUNITY #237",
+   "name": "Fy24 Family & Community #237",
+   "net": 433.7,
+   "total_in": 72737.0,
+   "total_out": 72303.3,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 72737.0,
+     "net": 933.7,
+     "out": 71803.3
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": -500.0,
+     "out": 500.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2667",
+   "kind": "grants",
+   "munis_name": "FY24  #718 ARTS/CULTURAL VITAL",
+   "name": "Fy24  #718 Arts/Cultural Vital",
+   "net": 11.1,
+   "total_in": 5200.0,
+   "total_out": 5188.9,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 5200.0,
+     "net": 28.04,
+     "out": 5171.96
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": -16.94,
+     "out": 16.94
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2672",
+   "kind": "grants",
+   "munis_name": "FY26 FAMILY & COMMUNITY 237",
+   "name": "Fy26 Family & Community 237",
+   "net": 58772.65,
+   "total_in": 48557.87,
+   "total_out": -10214.78,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 48557.87,
+     "net": 58772.65,
+     "out": -10214.78
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2681",
+   "kind": "grants",
+   "munis_name": "COMP SCHOOL HEALTH SERV GRANT",
+   "name": "Comp School Health Serv Grant",
+   "net": -23945.52,
+   "total_in": 155775.0,
+   "total_out": 179720.52,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 130000.0,
+     "net": 47117.51,
+     "out": 82882.49
+    },
+    {
+     "fy": 2024,
+     "in": 15000.0,
+     "net": -69922.89,
+     "out": 84922.89
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 10775.0,
+     "net": -1140.14,
+     "out": 11915.14
+    }
+   ],
+   "years_out_above_in": 2
+  },
+  {
+   "active": true,
+   "fund": "2690",
+   "kind": "grants",
+   "munis_name": "FY26 #309 TITLE IV PART A",
+   "name": "Fy26 #309 Title Iv Part A",
+   "net": -10107.0,
+   "total_in": 0.0,
+   "total_out": 10107.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -10107.0,
+     "out": 10107.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2702",
+   "kind": "grants",
+   "munis_name": "FY25 CSHS INST/SUPRT SALARIES",
+   "name": "Fy25 Cshs Inst/Suprt Salaries",
+   "net": 2937.9,
+   "total_in": 24000.0,
+   "total_out": 21062.1,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 24000.0,
+     "net": 2937.9,
+     "out": 21062.1
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2705",
+   "kind": "grants",
+   "munis_name": "FY24 305 TITLE 1 GRANT",
+   "name": "Fy24 305 Title 1 Grant",
+   "net": 0.0,
+   "total_in": 197260.03,
+   "total_out": 197260.03,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 165760.03,
+     "net": 0.0,
+     "out": 165760.03
+    },
+    {
+     "fy": 2025,
+     "in": 31500.0,
+     "net": 0.0,
+     "out": 31500.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": false,
+   "fund": "2709",
+   "kind": "grants",
+   "munis_name": "FY12  REG DISSEMINATION GR#321",
+   "name": "Fy12  Reg Dissemination Gr#321",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2713",
+   "kind": "grants",
+   "munis_name": "FY25 TITLE 1 #305",
+   "name": "Fy25 Title 1 #305",
+   "net": 33867.6,
+   "total_in": 194517.0,
+   "total_out": 160649.4,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 194517.0,
+     "net": 33867.6,
+     "out": 160649.4
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": false,
+   "fund": "2727",
+   "kind": "grants",
+   "munis_name": "FY15 TITLE I #305",
+   "name": "Fy15 Title I #305",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2728",
+   "kind": "grants",
+   "munis_name": "FY24 TITLE 11 PART A #140",
+   "name": "Fy24 Title 11 Part A #140",
+   "net": 5107.68,
+   "total_in": 36509.0,
+   "total_out": 31401.32,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 36509.0,
+     "net": 8677.5,
+     "out": 27831.5
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": -352.5,
+     "out": 352.5
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -3217.32,
+     "out": 3217.32
+    }
+   ],
+   "years_out_above_in": 2
+  },
+  {
+   "active": false,
+   "fund": "2742",
+   "kind": "grants",
+   "munis_name": "FY17 SPEC ED PRO IMP #274",
+   "name": "Fy17 Spec Ed Pro Imp #274",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2748",
+   "kind": "grants",
+   "munis_name": "FY24 117 EVIDENCE",
+   "name": "Fy24 117 Evidence",
+   "net": 0.0,
+   "total_in": 136583.0,
+   "total_out": 136583.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 136583.0,
+     "net": 0.0,
+     "out": 136583.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2750",
+   "kind": "grants",
+   "munis_name": "FY24 TITLE IV-PART A #309",
+   "name": "Fy24 Title Iv-Part A #309",
+   "net": -18.5,
+   "total_in": 14026.5,
+   "total_out": 14045.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 14026.5,
+     "net": -18.5,
+     "out": 14045.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": false,
+   "fund": "2755",
+   "kind": "grants",
+   "munis_name": "FY19 TITLE IV #309",
+   "name": "Fy19 Title Iv #309",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2758",
+   "kind": "grants",
+   "munis_name": "FY23 240",
+   "name": "Fy23 240",
+   "net": -8166.51,
+   "total_in": 413690.42,
+   "total_out": 421856.93,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 239897.0,
+     "net": 0.0,
+     "out": 239897.0
+    },
+    {
+     "fy": 2025,
+     "in": 173793.42,
+     "net": -6500.61,
+     "out": 180294.03
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -1665.9,
+     "out": 1665.9
+    }
+   ],
+   "years_out_above_in": 2
+  },
+  {
+   "active": true,
+   "fund": "2765",
+   "kind": "grants",
+   "munis_name": "FY20 TITLE IIA #140",
+   "name": "Fy20 Title Iia #140",
+   "net": -69.0,
+   "total_in": 200.0,
+   "total_out": 269.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 200.0,
+     "net": -69.0,
+     "out": 269.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": false,
+   "fund": "2766",
+   "kind": "grants",
+   "munis_name": "FY20 TITLE I #305",
+   "name": "Fy20 Title I #305",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2767",
+   "kind": "grants",
+   "munis_name": "FY20 TITLE IV #309",
+   "name": "Fy20 Title Iv #309",
+   "net": -612.03,
+   "total_in": 200.0,
+   "total_out": 812.03,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 200.0,
+     "net": -612.03,
+     "out": 812.03
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": false,
+   "fund": "2768",
+   "kind": "grants",
+   "munis_name": "FY21 ESSER FUND CODE 113",
+   "name": "Fy21 Esser Fund Code 113",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2769",
+   "kind": "grants",
+   "munis_name": "FY21 TITLE II #140",
+   "name": "Fy21 Title Ii #140",
+   "net": -199.45,
+   "total_in": 0.0,
+   "total_out": 199.45,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": -199.45,
+     "out": 199.45
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2770",
+   "kind": "grants",
+   "munis_name": "FY25 TITLE IV 309",
+   "name": "Fy25 Title Iv 309",
+   "net": 1721.25,
+   "total_in": 20175.0,
+   "total_out": 18453.75,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 4916.0,
+     "net": 0.0,
+     "out": 4916.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 15259.0,
+     "net": 1721.25,
+     "out": 13537.75
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": false,
+   "fund": "2771",
+   "kind": "grants",
+   "munis_name": "FY21 TITLE I #305",
+   "name": "Fy21 Title I #305",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": false,
+   "fund": "2772",
+   "kind": "grants",
+   "munis_name": "FY21 SCHOOL REOPENING #102",
+   "name": "Fy21 School Reopening #102",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2778",
+   "kind": "grants",
+   "munis_name": "FY25 117 SOA EVIDENCE BASE",
+   "name": "Fy25 117 Soa Evidence Base",
+   "net": -27960.88,
+   "total_in": 116000.0,
+   "total_out": 143960.88,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 116000.0,
+     "net": -22572.54,
+     "out": 138572.54
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -5388.34,
+     "out": 5388.34
+    }
+   ],
+   "years_out_above_in": 2
+  },
+  {
+   "active": true,
+   "fund": "2781",
+   "kind": "grants",
+   "munis_name": "FY22 119 ESSER III FRINGE BENEFIT",
+   "name": "Fy22 119 Esser Iii Fringe Benefit",
+   "net": -108276.89,
+   "total_in": 961119.0,
+   "total_out": 1069395.89,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 252821.0,
+     "net": -103348.79,
+     "out": 356169.79
+    },
+    {
+     "fy": 2024,
+     "in": 708298.0,
+     "net": -3519.64,
+     "out": 711817.64
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": -1408.46,
+     "out": 1408.46
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 3
+  },
+  {
+   "active": true,
+   "fund": "2787",
+   "kind": "grants",
+   "munis_name": "FY22 TITLE IV PART A #309",
+   "name": "Fy22 Title Iv Part A #309",
+   "net": -2929.38,
+   "total_in": 8626.0,
+   "total_out": 11555.38,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 8626.0,
+     "net": 1970.31,
+     "out": 6655.69
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": -4899.69,
+     "out": 4899.69
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2788",
+   "kind": "grants",
+   "munis_name": "FY22 TITLE II #140",
+   "name": "Fy22 Title Ii #140",
+   "net": 1646.92,
+   "total_in": 20388.0,
+   "total_out": 18741.08,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 20388.0,
+     "net": 4146.92,
+     "out": 16241.08
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": -2500.0,
+     "out": 2500.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2793",
+   "kind": "grants",
+   "munis_name": "SCHOOL WATER IMPROVEMENT GRANT",
+   "name": "School Water Improvement Grant",
+   "net": 4001.89,
+   "total_in": 6000.0,
+   "total_out": 1998.11,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 6000.0,
+     "net": 4001.89,
+     "out": 1998.11
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2795",
+   "kind": "grants",
+   "munis_name": "FY23 TITLE IV #309",
+   "name": "Fy23 Title Iv #309",
+   "net": 214.0,
+   "total_in": 12052.0,
+   "total_out": 11838.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 1290.0,
+     "net": -10548.0,
+     "out": 11838.0
+    },
+    {
+     "fy": 2024,
+     "in": 10762.0,
+     "net": 10762.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2796",
+   "kind": "grants",
+   "munis_name": "FY23 TITLE II #140",
+   "name": "Fy23 Title Ii #140",
+   "net": -5680.42,
+   "total_in": 31556.0,
+   "total_out": 37236.42,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 19126.0,
+     "net": -728.92,
+     "out": 19854.92
+    },
+    {
+     "fy": 2024,
+     "in": 12430.0,
+     "net": -4951.5,
+     "out": 17381.5
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 2
+  },
+  {
+   "active": true,
+   "fund": "2797",
+   "kind": "grants",
+   "munis_name": "FY23 #719 ACCELERATED LITERACY",
+   "name": "Fy23 #719 Accelerated Literacy",
+   "net": 0.12,
+   "total_in": 26862.0,
+   "total_out": 26861.88,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 26862.0,
+     "net": 0.12,
+     "out": 26861.88
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": true,
+   "fund": "2800",
+   "kind": "grants",
+   "munis_name": "FY25 140   080524093026",
+   "name": "Fy25 140   080524093026",
+   "net": 0.0,
+   "total_in": 33663.0,
+   "total_out": 33663.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 33663.0,
+     "net": -2208.0,
+     "out": 35871.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 2208.0,
+     "out": -2208.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2809",
+   "kind": "grants",
+   "munis_name": "FY26 117 soa Evidence Based",
+   "name": "Fy26 117 Soa Evidence Based",
+   "net": -92176.45,
+   "total_in": 0.0,
+   "total_out": 92176.45,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -92176.45,
+     "out": 92176.45
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2813",
+   "kind": "grants",
+   "munis_name": "FY25 #240",
+   "name": "Fy25 #240",
+   "net": 27914.85,
+   "total_in": 422716.0,
+   "total_out": 394801.15,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 422716.0,
+     "net": 140895.51,
+     "out": 281820.49
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -112980.66,
+     "out": 112980.66
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2814",
+   "kind": "grants",
+   "munis_name": "FY26 #240",
+   "name": "Fy26 #240",
+   "net": -320894.99,
+   "total_in": 0.0,
+   "total_out": 320894.99,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -320894.99,
+     "out": 320894.99
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": true,
+   "fund": "2832",
+   "kind": "grants",
+   "munis_name": "FY25 #274  0205202509302025",
+   "name": "Fy25 #274  0205202509302025",
+   "net": 0.35,
+   "total_in": 10000.0,
+   "total_out": 9999.65,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 10000.0,
+     "net": 5427.35,
+     "out": 4572.65
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": -5427.0,
+     "out": 5427.0
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active": false,
+   "fund": "2903",
+   "kind": "grants",
+   "munis_name": "BC/BS MINI GRANT",
+   "name": "Bc/Bs Mini Grant",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": false,
+   "fund": "2911",
+   "kind": "grants",
+   "munis_name": "TECH PREP PRIVATE GRANT",
+   "name": "Tech Prep Private Grant",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": false,
+   "fund": "2912",
+   "kind": "grants",
+   "munis_name": "TUFTS UNIVERSITY HEAT GRANT",
+   "name": "Tufts University Heat Grant",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  },
+  {
+   "active": false,
+   "fund": "2914",
+   "kind": "grants",
+   "munis_name": "HACH SCIENTIFIC FOUNDATION GR",
+   "name": "Hach Scientific Foundation Gr",
+   "net": 0.0,
+   "total_in": 0.0,
+   "total_out": 0.0,
+   "years": [
+    {
+     "fy": 2023,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2024,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2025,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    },
+    {
+     "fy": 2026,
+     "in": 0.0,
+     "net": 0.0,
+     "out": 0.0
+    }
+   ],
+   "years_out_above_in": 0
+  }
+ ],
+ "gaps": [
+  "Which school special revenue funds the period-13 special funds report leaves out",
+  "What a fee-funded school programme costs that is not booked to its own fund",
+  "Whether a general fund athletics line is net of the revolving fund",
+  "What share of the schools’ grounds, custodial, heating and utility cost is athletics",
+  "What the school grant funds held at 30 June 2024, 2025 and 2026",
+  "What the town’s own special revenue funds held at 30 June 2024, 2025 and 2026"
+ ],
+ "generated_by": "scripts/build_spending_what_comes_in.py",
+ "grain": "DOLLARS of revenue and expenditure per fund per fiscal year, as the MUNIS period-13 ledger books them — flows, not balances. Balances are sitting-on-money’s.",
+ "kinds": [
+  {
+   "active_funds": 1,
+   "funds": 1,
+   "in": 1652127.0,
+   "key": "cb",
+   "label": "Circuit breaker (special education reimbursement)",
+   "net": -145087.46,
+   "out": 1797214.46,
+   "short": "Circuit breaker",
+   "years": [
+    {
+     "fy": 2023,
+     "in": 415750.0,
+     "net": -79217.72,
+     "out": 494967.72
+    },
+    {
+     "fy": 2024,
+     "in": 301589.0,
+     "net": -164706.98,
+     "out": 466295.98
+    },
+    {
+     "fy": 2025,
+     "in": 608818.0,
+     "net": 110366.65,
+     "out": 498451.35
+    },
+    {
+     "fy": 2026,
+     "in": 325970.0,
+     "net": -11529.41,
+     "out": 337499.41
+    }
+   ],
+   "years_out_above_in": 3
+  },
+  {
+   "active_funds": 1,
+   "funds": 1,
+   "in": 485153.48,
+   "key": "choice",
+   "label": "School choice tuition received",
+   "net": -206885.98,
+   "out": 692039.46,
+   "short": "School choice",
+   "years": [
+    {
+     "fy": 2023,
+     "in": 116976.0,
+     "net": -194626.29,
+     "out": 311602.29
+    },
+    {
+     "fy": 2024,
+     "in": 94912.0,
+     "net": -190628.66,
+     "out": 285540.66
+    },
+    {
+     "fy": 2025,
+     "in": 157234.44,
+     "net": 98990.57,
+     "out": 58243.87
+    },
+    {
+     "fy": 2026,
+     "in": 116031.04,
+     "net": 79378.4,
+     "out": 36652.64
+    }
+   ],
+   "years_out_above_in": 2
+  },
+  {
+   "active_funds": 1,
+   "funds": 1,
+   "in": 3212258.48,
+   "key": "lunch",
+   "label": "School lunch",
+   "net": -265871.67,
+   "out": 3478130.15,
+   "short": "Lunch",
+   "years": [
+    {
+     "fy": 2023,
+     "in": 739686.9,
+     "net": 6630.97,
+     "out": 733055.93
+    },
+    {
+     "fy": 2024,
+     "in": 927541.97,
+     "net": 90042.78,
+     "out": 837499.19
+    },
+    {
+     "fy": 2025,
+     "in": 878806.94,
+     "net": 17541.33,
+     "out": 861265.61
+    },
+    {
+     "fy": 2026,
+     "in": 666222.67,
+     "net": -380086.75,
+     "out": 1046309.42
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active_funds": 7,
+   "funds": 8,
+   "in": 2603500.96,
+   "key": "fees",
+   "label": "Fee-funded revolving funds (athletics, after-school, extended day, rentals and four more)",
+   "net": -406224.25,
+   "out": 3009725.21,
+   "short": "Fee-funded revolving",
+   "years": [
+    {
+     "fy": 2023,
+     "in": 671748.54,
+     "net": -193476.55,
+     "out": 865225.09
+    },
+    {
+     "fy": 2024,
+     "in": 619331.42,
+     "net": -210056.67,
+     "out": 829388.09
+    },
+    {
+     "fy": 2025,
+     "in": 613801.7,
+     "net": 56865.25,
+     "out": 556936.45
+    },
+    {
+     "fy": 2026,
+     "in": 698619.3,
+     "net": -59556.28,
+     "out": 758175.58
+    }
+   ],
+   "years_out_above_in": 3
+  },
+  {
+   "active_funds": 2,
+   "funds": 3,
+   "in": 105982.53,
+   "key": "gifts",
+   "label": "Gift funds",
+   "net": 21131.3,
+   "out": 84851.23,
+   "short": "Gifts",
+   "years": [
+    {
+     "fy": 2023,
+     "in": 26292.83,
+     "net": -2873.24,
+     "out": 29166.07
+    },
+    {
+     "fy": 2024,
+     "in": 19102.81,
+     "net": 330.07,
+     "out": 18772.74
+    },
+    {
+     "fy": 2025,
+     "in": 35794.2,
+     "net": 14512.18,
+     "out": 21282.02
+    },
+    {
+     "fy": 2026,
+     "in": 24792.69,
+     "net": 9162.29,
+     "out": 15630.4
+    }
+   ],
+   "years_out_above_in": 1
+  },
+  {
+   "active_funds": 32,
+   "funds": 45,
+   "in": 3041168.07,
+   "key": "grants",
+   "label": "Grants (federal and state, every other 2xxx fund)",
+   "net": -407849.31,
+   "out": 3449017.38,
+   "short": "Grants",
+   "years": [
+    {
+     "fy": 2023,
+     "in": 470429.0,
+     "net": -58269.44,
+     "out": 528698.44
+    },
+    {
+     "fy": 2024,
+     "in": 1417211.71,
+     "net": -65401.8,
+     "out": 1482613.51
+    },
+    {
+     "fy": 2025,
+     "in": 1094194.49,
+     "net": 213916.08,
+     "out": 880278.41
+    },
+    {
+     "fy": 2026,
+     "in": 59332.87,
+     "net": -498094.15,
+     "out": 557427.02
+    }
+   ],
+   "years_out_above_in": 3
+  }
+ ],
+ "lunch_sources": {
+  "CONTRIBUTIONS AND DONATIONS": 0.0,
+  "FEDERAL REVENUE THROUGH STATE": 3013322.96,
+  "STATE REVENUE": 77829.44,
+  "USER CHARGES": 121106.08
+ },
+ "not_established": [
+  "Why any fund spent more or less than it took in — the ledger gives amounts, not reasons.",
+  "The whole cost of any fee-funded programme: costs booked to the general fund under generic function codes cannot be attributed (registered gap).",
+  "Whether a general fund athletics line is budgeted net of the revolving fund (registered gap).",
+  "Whether the FY2026 grant and lunch shortfalls are reimbursements booked after the close (registered gap).",
+  "School funds the period-13 special funds report does not carry (registered gap).",
+  "The FY2026 balances against any second document; they are carried through the ledger.",
+  "The town’s own special revenue funds: these ledgers are the schools’ alone, and the town’s receipts and disbursements are read only to FY2023 (registered gap).",
+  "Encumbrances: $13,780 is still committed in these funds at the closes and is not counted as spent."
+ ],
+ "quotes": [
+  {
+   "body": "School Committee",
+   "date": "8 January 2025",
+   "file": "school-committee/2025-01-08-minutes-6948.txt",
+   "text": "these accounts are following the same patterns as other revolving accounts, which is the money coming in is not enough to cover the money going out",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082025-6948",
+   "who": "the district, presenting the school choice and facilities revolving accounts"
+  },
+  {
+   "body": "School Committee",
+   "date": "5 February 2025",
+   "file": "school-committee/2025-02-05-minutes-7006.txt",
+   "text": "this is primarily for the extended day staff, which is a self-sustaining program and has no budgetary impact",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02052025-7006",
+   "who": "the minutes, on the unaffiliated salary schedule"
+  },
+  {
+   "body": "School Committee",
+   "date": "15 November 2023",
+   "file": "school-committee/2023-11-15-minutes-3952.txt",
+   "text": "We could be looking at an increase in athletic fees in the next two years.",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11152023-3952",
+   "who": "the district, presenting the athletics report"
+  },
+  {
+   "body": "School Committee",
+   "date": "26 August 2026",
+   "file": "school-committee/2026-08-26-minutes-7980.txt",
+   "text": "Of that amount, $10,000 would come from the additional appropriation and $50,000 from the athletic revolving account.",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+   "who": "the Superintendent, on restoring athletic transportation"
+  },
+  {
+   "body": "School Committee",
+   "date": "26 August 2026",
+   "file": "school-committee/2026-08-26-minutes-7980.txt",
+   "text": "Town Meeting could not appropriate school revolving funds or circuit-breaker funds, which were school funds and, in some cases, restricted to specific purposes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+   "who": "the same meeting"
+  },
+  {
+   "body": "School Committee",
+   "date": "12 March 2025",
+   "file": "school-committee/2025-03-12-minutes-7098.txt",
+   "text": "I don't have the full picture for each sport because of this lack of information regarding cost to particular athletic programs",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122025-7098",
+   "who": "a resident, in public comment on the FY26 athletics cuts"
+  },
+  {
+   "body": "School Committee",
+   "date": "12 March 2025",
+   "file": "school-committee/2025-03-12-minutes-7098.txt",
+   "text": "Splitting everything into revolving funds is not a good way to manage finances. We need to lay out all revenues and all expenses.",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122025-7098",
+   "who": "another resident, the same evening"
+  },
+  {
+   "body": "Finance Committee",
+   "date": "12 June 2025",
+   "file": "finance-committee/2025-06-12-minutes-7273.txt",
+   "text": "There are issues with finance management and the inability to see where grant money and revolving funds are being moved and spent.",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06122025-7273",
+   "who": "the minutes, summarising members"
+  }
+ ],
+ "reconciliation": {
+  "balance_2022": 2170682.37,
+  "balance_2026": 1167744.31,
+  "coverage_2023": {
+   "annual_report_in": 3667635.76,
+   "annual_report_out": 4333279.94,
+   "ledger_in": 2440883.27,
+   "ledger_out": 2962715.54
+  },
+  "difference": 0.0,
+  "fy2023": [
+   {
+    "ar_carried_2023": 14347.1,
+    "ar_disbursements": 0.0,
+    "ar_receipts": 450.08,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "1300",
+    "identity_diff": 0.0,
+    "ledger_in": 450.08,
+    "ledger_out": 0.0,
+    "name": "Recovery for Lost Books",
+    "receipts_diff": 0.0,
+    "som_2023": 14347.1,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 126372.26,
+    "ar_disbursements": 316320.33,
+    "ar_receipts": 146406.17,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 1456.49,
+    "fund": "1301",
+    "identity_diff": -0.0,
+    "ledger_in": 144949.68,
+    "ledger_out": 314863.84,
+    "name": "Chapter 658 School Athletics",
+    "receipts_diff": 1456.49,
+    "som_2023": 126372.26,
+    "ties": false
+   },
+   {
+    "ar_carried_2023": 11293.75,
+    "ar_disbursements": 5780.0,
+    "ar_receipts": 7240.0,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "1302",
+    "identity_diff": 0.0,
+    "ledger_in": 7240.0,
+    "ledger_out": 5780.0,
+    "name": "Adult Education",
+    "receipts_diff": 0.0,
+    "som_2023": 11293.75,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 183725.02,
+    "ar_disbursements": 216459.56,
+    "ar_receipts": 197143.56,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "1305",
+    "identity_diff": 0.0,
+    "ledger_in": 197143.56,
+    "ledger_out": 216459.56,
+    "name": "After School Activities",
+    "receipts_diff": 0.0,
+    "som_2023": 183725.02,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 7522.06,
+    "ar_disbursements": 68258.99,
+    "ar_receipts": 15115.5,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "1306",
+    "identity_diff": 0.0,
+    "ledger_in": 15115.5,
+    "ledger_out": 68258.99,
+    "name": "School Facilities Use",
+    "receipts_diff": 0.0,
+    "som_2023": 7522.06,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 338540.8,
+    "ar_disbursements": 311602.29,
+    "ar_receipts": 116976.0,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "1308",
+    "identity_diff": -0.0,
+    "ledger_in": 116976.0,
+    "ledger_out": 311602.29,
+    "name": "School Choice",
+    "receipts_diff": 0.0,
+    "som_2023": 338540.8,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 2372.77,
+    "ar_disbursements": 0.0,
+    "ar_receipts": 0.0,
+    "continuity_diff": 507.0,
+    "disbursements_diff": 0.0,
+    "fund": "1310",
+    "identity_diff": 507.0,
+    "ledger_in": 507.0,
+    "ledger_out": 0.0,
+    "name": "Greenthumb Revolving",
+    "receipts_diff": -507.0,
+    "som_2023": 2372.77,
+    "ties": false
+   },
+   {
+    "ar_carried_2023": 74980.34,
+    "ar_disbursements": 29166.07,
+    "ar_receipts": 26292.83,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "1311",
+    "identity_diff": 0.0,
+    "ledger_in": 26292.83,
+    "ledger_out": 29166.07,
+    "name": "School Gift Fund",
+    "receipts_diff": 0.0,
+    "som_2023": 74980.34,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 238492.97,
+    "ar_disbursements": 259862.7,
+    "ar_receipts": 306342.72,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "1312",
+    "identity_diff": 0.0,
+    "ledger_in": 306342.72,
+    "ledger_out": 259862.7,
+    "name": "Extended Day Revolving Fund",
+    "receipts_diff": 0.0,
+    "som_2023": 238492.97,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 1954.71,
+    "ar_disbursements": 0.0,
+    "ar_receipts": 0.0,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "1314",
+    "identity_diff": 0.0,
+    "ledger_in": 0.0,
+    "ledger_out": 0.0,
+    "name": "Vending Machine Revolving",
+    "receipts_diff": 0.0,
+    "som_2023": 1954.71,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 2300.64,
+    "ar_disbursements": 0.0,
+    "ar_receipts": 0.0,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "1315",
+    "identity_diff": 0.0,
+    "ledger_in": 0.0,
+    "ledger_out": 0.0,
+    "name": "Family Network Gift Fund",
+    "receipts_diff": 0.0,
+    "som_2023": 2300.64,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 10000.0,
+    "ar_disbursements": 0.0,
+    "ar_receipts": 0.0,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "1549",
+    "identity_diff": 0.0,
+    "ledger_in": 0.0,
+    "ledger_out": 0.0,
+    "name": "Technology for School Children Gift Fund",
+    "receipts_diff": 0.0,
+    "som_2023": 10000.0,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 347541.61,
+    "ar_disbursements": 733055.93,
+    "ar_receipts": 739686.9,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "2200",
+    "identity_diff": 0.0,
+    "ledger_in": 739686.9,
+    "ledger_out": 733055.93,
+    "name": "School Lunch",
+    "receipts_diff": 0.0,
+    "som_2023": 347541.61,
+    "ties": true
+   },
+   {
+    "ar_carried_2023": 347675.51,
+    "ar_disbursements": 494967.72,
+    "ar_receipts": 415750.0,
+    "continuity_diff": 0.0,
+    "disbursements_diff": 0.0,
+    "fund": "2640",
+    "identity_diff": 0.0,
+    "ledger_in": 415750.0,
+    "ledger_out": 494967.72,
+    "name": "50/50 Grant Sped Tuitions",
+    "receipts_diff": 0.0,
+    "som_2023": 347675.51,
+    "ties": true
+   }
+  ],
+  "net": -1002938.06
+ },
+ "sources": [
+  {
+   "bytes": 88329,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2023-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2023-p13-special-school.xlsx",
+   "note": "School special funds, period 13: each fund’s revenue and expense for FY2023. Delivered 6 October 2026.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2023-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "99a51e287874f44ed8df7082399e545ce88797a67599fae36776eec5d8a324a5",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82796,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2023-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2023-p13-gf-school.xlsx",
+   "note": "School general fund, period 13, FY2023: spending by DESE function, used for athletics (3510).",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2023-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "0e5571abf937a30a4374c96bcec731ed85958c2c345689223a96b258f4bf5825",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 88941,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "note": "School special funds, period 13: each fund’s revenue and expense for FY2024. Delivered 6 October 2026.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "7a7da97eaa4337a5d8f2db3a82f80e87fd9cb4f8941dbd94970e3e966550431c",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82215,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "note": "School general fund, period 13, FY2024: spending by DESE function, used for athletics (3510).",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "35ddff540b044ab9b0744250e81d56488ebdded2132735d6ce8b7df57343e457",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 88962,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2025-p13-special-school.xlsx",
+   "note": "School special funds, period 13: each fund’s revenue and expense for FY2025. Delivered 6 October 2026.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "745e180a33fa0fe8a0b801186b9d5201790dead640bfbb4cc3445000f7977397",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82879,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "note": "School general fund, period 13, FY2025: spending by DESE function, used for athletics (3510).",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "0df2dc74da99ddc8ea0514b1716112753322d11a140e270ce52a91d772e7b019",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 88024,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "note": "School special funds, period 13: each fund’s revenue and expense for FY2026. Delivered 6 October 2026.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "8c572c5f42ef6de3df3709ddb809434eeea74fa80422496fdc0792cc7e86bdad",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82789,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "note": "School general fund, period 13, FY2026: spending by DESE function, used for athletics (3510).",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "ec2f620cb36d0dfd0f129293740931067f736872c44bd20b2234993a48c644fb",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 16840445,
+   "docs_url": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "filename": "4129-fy-2022-annual-town-report.pdf",
+   "note": "Annual town report FY2022, Special Revenue Funds schedule: each school fund’s forward, receipts, disbursements and carried. The FY2023 reconciliation.",
+   "path": "sources/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "d1673d634dba15c2783107f2642703270bbced41a875fd530b4f617bfd6cfbe7",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4129 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/123"
+  },
+  {
+   "bytes": 18274143,
+   "docs_url": "/docs/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+   "filename": "4131-fy-2023-annual-town-report.pdf",
+   "note": "Annual town report FY2023, Special Revenue Funds schedule: each school fund’s forward, receipts, disbursements and carried. The FY2023 reconciliation.",
+   "path": "sources/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "d273ebb71360e30df1327fa02cc755cc00da98265dc3f28ce841dbc3bc51d4fa",
+   "table": "special_revenue_read",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4131 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/160"
+  },
+  {
+   "bytes": 56447,
+   "docs_url": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "filename": "special-revenue-fy2026-p09.xlsx",
+   "note": "Every school special revenue fund to 31 March 2026: used here for MUNIS’s fund names only.",
+   "path": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "4b9777d83c747c1c39fa7f3e4b33624976dae918855cf8422528dba57e274d4e",
+   "table": "school_special_revenue_fy26_q3",
+   "url": ""
+  },
+  {
+   "bytes": 258867,
+   "docs_url": "/docs/meetings/school-committee/2025-01-08-minutes-6948.pdf",
+   "filename": "2025-01-08-minutes-6948.pdf",
+   "note": "Minutes of 8 January 2025: \"these accounts are following the same patterns as other revolving accounts, which is the money coming in is not enough to cover the money going out\"",
+   "path": "sources/meetings/school-committee/2025-01-08-minutes-6948.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "c571e77558f7133544f7dd2d32da9dfd263613799396a05a245f810e6574c900",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082025-6948"
+  },
+  {
+   "bytes": 288150,
+   "docs_url": "/docs/meetings/school-committee/2025-02-05-minutes-7006.pdf",
+   "filename": "2025-02-05-minutes-7006.pdf",
+   "note": "Minutes of 5 February 2025: \"this is primarily for the extended day staff, which is a self-sustaining program and has no budgetary impact\"",
+   "path": "sources/meetings/school-committee/2025-02-05-minutes-7006.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "3f1da85b3189e292f14f1182cb7a2e8b4d71a5b421c0e1d8d90a6fd7493b51d7",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02052025-7006"
+  },
+  {
+   "bytes": 243391,
+   "docs_url": "/docs/meetings/school-committee/2023-11-15-minutes-3952.pdf",
+   "filename": "2023-11-15-minutes-3952.pdf",
+   "note": "Minutes of 15 November 2023: \"We could be looking at an increase in athletic fees in the next two years.\"",
+   "path": "sources/meetings/school-committee/2023-11-15-minutes-3952.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "f857ca413828ac578e793bf56da33ef192086332cb46b038cadf19f5546d0387",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11152023-3952"
+  },
+  {
+   "bytes": 269606,
+   "docs_url": "/docs/meetings/school-committee/2026-08-26-minutes-7980.pdf",
+   "filename": "2026-08-26-minutes-7980.pdf",
+   "note": "Minutes of 26 August 2026: \"Of that amount, $10,000 would come from the additional appropriation and $50,000 from the athletic revolving account.\"",
+   "path": "sources/meetings/school-committee/2026-08-26-minutes-7980.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "12d1149ebcc2fa529e48b281ac4f039d10d90a4c97408ae5d46aebec30551f4a",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980"
+  },
+  {
+   "bytes": 296980,
+   "docs_url": "/docs/meetings/school-committee/2025-03-12-minutes-7098.pdf",
+   "filename": "2025-03-12-minutes-7098.pdf",
+   "note": "Minutes of 12 March 2025: \"I don't have the full picture for each sport because of this lack of information regarding cost to particular athletic programs\"",
+   "path": "sources/meetings/school-committee/2025-03-12-minutes-7098.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "83ec492ea9f18323de2b1c7dabc4ea036dff14521255f0e2043d63fe96d56d08",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122025-7098"
+  },
+  {
+   "bytes": 35912,
+   "docs_url": "/docs/meetings/finance-committee/2025-06-12-minutes-7273.pdf",
+   "filename": "2025-06-12-minutes-7273.pdf",
+   "note": "Minutes of 12 June 2025: \"There are issues with finance management and the inability to see where grant money and revolving funds are being moved and spent.\"",
+   "path": "sources/meetings/finance-committee/2025-06-12-minutes-7273.pdf",
+   "publisher": "Lunenburg Finance Committee",
+   "sha256": "e9b5b9ce7bbc10b31b7c8752d7208216fda6f7586be1688bd3a908c960c87527",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06122025-7273"
+  }
+ ],
+ "stats": [
+  {
+   "label": "more spent than came in, FY2023–FY2026, across the schools’ fourteen fee, choice, lunch, gift and circuit-breaker funds",
+   "tone": "var(--series-cost)",
+   "value": "$1,002,938"
+  },
+  {
+   "label": "funds that spent more than they took in, in three of the four years",
+   "value": "3 of 14"
+  },
+  {
+   "label": "of booked athletics spending matched by athletics fees, FY2023–FY2026",
+   "value": "25.5%"
+  }
+ ],
+ "years": [
+  2023,
+  2024,
+  2025,
+  2026
+ ]
+}

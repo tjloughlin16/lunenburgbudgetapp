@@ -1,26 +1,71 @@
-# Special education: what a bad year costs
+# Special education: how much a bad year needs
 
-**How far special education spending has landed from the budget voted for it, year by year since FY2010 — and what a reserve for the bad years would have needed.**
+**How far special education spending has landed from the budget voted for it, every year since FY2010 — and what that says about holding money back for mid-year surprises.**
 
-![Bars, one group per fiscal year FY2010 to FY2026, of how far each special education line landed from the budget voted for it: out-of-district tuition, in-district, and transportation. Above the line is an overrun. Tuition swings furthest in both directions; its largest overrun is $204,015 in FY2019.](charts/special-education-costs-surprise.svg)
-
-Analysis, October 2026. A draft for review. Every figure is computed by `scripts/build_sped_costs.py`; the grouping of accounts, the reserve rule and every per-child figure are ours and say so where they appear.
-
----
+![Bars, one group per fiscal year FY2010 to FY2026, of how far each special education line landed from the budget voted for it, general fund: out-of-district tuition, in-district, and transportation. Above the line is an overrun. Tuition swings furthest in both directions; its largest overrun is $204,015 in FY2019.](charts/special-education-costs-surprise.svg)
 
 ## The short version
 
-**Covering the worst year in 17 would have taken $223,774.** That is FY2013, the most the three special education lines ran past the budget voted for them.
+**In the worst of 17 years, special education needed $223,774 more than its voted budget.** That was FY2013; the median year needed $39,766. General fund: what exceeded the circuit breaker account too.
 
-**Out-of-district tuition ran over its voted budget in 7 of 17 years.** The worst, FY2019, was $204,015 over. In the others it came in under, by as much as $432,526.
+**Out-of-district tuition is the swing: over its voted budget in 7 of 17 years.** The worst, FY2019, was $204,015 over. In-district spending never ran more than 2.7% over.
 
-**Counting every fund, tuition ran $553,565 past its voted budget in FY2024.** The circuit breaker account paid $466,296 of that, outside the budget the town votes.
+**Measured after the circuit breaker account, no year in 17 needed more than $300,000.** Counting that account’s routine tuition as surprise, 3 of 4 recent years did; $500,000 covers 3 of 4.
 
-**In-district special education never ran over its voted budget by more than 2.7%.** Its overruns are small. The large ones, in both directions, are tuition and transportation.
+**The circuit breaker account pays tuition every year, not only when the budget runs over.** It paid $333,495 to $494,968 of tuition a year, FY2023 to FY2026. At 30 June 2026 it held $281,806.
 
-**Tuition worked out to $119,480 per child placed, the median of FY2022 to FY2025. Our estimate.** *(a hypothesis, not a measurement)* The count rose by 3 within FY2023, so 3 children is about $358,440.
+**The state pays back part of a year’s high special education costs the year after.** FY2026 brought $579,142, for FY2025’s costs. A surprise this year is repaid, in part, next year.
 
-**The reserve Town Meeting created in FY2026 can hold up to about $541,717.** That is 2% of FY2026 net school spending, the cap as the Town Manager described it.
+**One more child placed out of district is roughly $119,480 a year. Our estimate.** *(a hypothesis, not a measurement)* Every fund’s tuition divided by children placed on 1 March, median FY2022 to FY2025. A scale, not a price.
+
+---
+
+## The $500,000 request, against the record
+
+### The same years, on two bases
+
+| FY | (a) general fund, after the circuit breaker account — what exceeded both | (b) counting the account’s tuition as surprise — an upper bound | tuition the account paid that year | (b) above $300,000? |
+|---|---:|---:|---:|---|
+| FY2023 | $0 | $309,798 | $494,968 | yes |
+| FY2024 | $152,724 | $619,020 | $466,296 | yes |
+| FY2025 | $0 | $41,124 | $473,650 | no |
+| FY2026 | $150,131 | $395,104 | $333,495 | yes |
+
+*FY2023 to FY2026, the four closed years the year-end reports print in full; every special education line, overruns added without netting (our rule).* On basis (a), across all 17 years since FY2010, no year passed $300,000; the worst was $223,774, in FY2013.
+
+- **(b) is the closest the ledger comes to “what hits us mid-year”** — the cash a buffer would have to find if the circuit breaker account could not be used in time. In FY2026 the account had spent $4,005 by 31 March and charged its $333,495 of tuition after that, so through the year the general fund carried the bills; that is observed for FY2026 only.
+- **But (b) overstates.** The account pays tuition every year, overrun or not — in FY2023 the ledger budgeted $515,000 in it for tuition — so (b) counts planned spending as surprise.
+- **(a) is what the town’s budget ultimately absorbed**, and it is the basis this page uses to size a reserve — our choice. On it, $300,000 would have covered every year; on (b), $500,000 covers 3 of 4, and the reserve’s cap as described is $541,717.
+
+### What was said
+
+The town has not yet published minutes for these meetings. These are our machine captions of the recordings — a finding aid, not a record: open the video at the moment given and check every figure there.
+
+- *"if our overages were almost $600,000 this year, we should put some more money away"* — School Committee, 2026-10-07, [video at 1:33:13](https://www.youtube.com/watch?v=kPZcnFd5COw&t=5593s)
+- *"So 300,000 out of district possibly."* — School Committee, 2026-10-07, [video at 1:42:51](https://www.youtube.com/watch?v=kPZcnFd5COw&t=6171s)
+- *"the average price of 150,000 per child, which is just an average, not the exact amount"* — School Committee, 2026-10-07, [video at 1:45:21](https://www.youtube.com/watch?v=kPZcnFd5COw&t=6321s)
+- *"if we have 15 outofd district placements at the end by the end of this year, we're talking about spending about 2,250,000 on out of district placements"* — School Committee, 2026-10-07, [video at 1:45:04](https://www.youtube.com/watch?v=kPZcnFd5COw&t=6304s)
+- *"We're going to request $300,000 in free cash if the free cash is certified at the November town meeting"* — School Committee, 2026-10-07, [video at 1:48:59](https://www.youtube.com/watch?v=kPZcnFd5COw&t=6539s)
+- *"they're probably ranging between 3 and 800,000 right now"* — School Committee, 2025-11-19, [video at 0:30:43](https://www.youtube.com/watch?v=6PZ-J-oIAkQ&t=1843s)
+
+A request for $500,000, and the words *two kids* or *two students* beside a reserve, were not found. Searched: the town’s minutes and our captions for the School Committee, Finance Committee and Select Board since 1 July 2025, for *500,000*, *five hundred*, *half a million*, *buffer*, *two kids*, *two students*, *two placements* and *reserve*. That is a statement about this archive, not about the meetings — a meeting not yet captioned, or said outside one, would not show here. What the captions do hold is the School Committee voting to request $300,000 on 7 October 2026 — to be checked against the video.
+
+### Is $300,000 two children?
+
+At the $150,000 per child the captions render, $300,000 is two. Our own estimate — every fund’s tuition divided by children placed on 1 March — has a median of $119,480 for FY2022 to FY2025, and was $182,096 in FY2024. *(Our estimate, a hypothesis, not a price.)*
+
+| FY | collaborative, 1 March | day | residential | tuition to collaboratives (DESE 9400) | tuition to non-public schools (DESE 9300) | per collaborative child — OUR ESTIMATE | per day or residential child — OUR ESTIMATE |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| FY2022 | 4 | 2 | 2 | $207,684 | $737,611 | $51,921 | $184,403 |
+| FY2023 | 3 | 3 | 1 | $209,049 | $619,505 | $69,683 | $154,876 |
+| FY2024 | 4 | 3 | 1 | $290,003 | $1,166,767 | $72,501 | $291,692 |
+| FY2025 | 6 | 3 | 1 | $41,617 | $1,164,332 | $6,936 | $291,083 |
+
+**A cost by type of placement cannot be derived here.** The counts split by type and the dollars split by type of school, but they do not line up: FY2025 gives $6,936 per collaborative child, which is no tuition. Day and residential places are both non-public schools in the dollars, so they cannot be separated, and nothing in this archive prices a residential place against a day place — so this page does not say which costs more. The day-or-residential column has a median of $237,743 over these years; treat it as a hypothesis.
+
+### Arrivals, not the net
+
+Every figure on this page is a NET result at the close of a year: children who arrived, less children who left, less anything else that came in under budget. A surprise of hundreds of thousands a year may describe arrivals alone, and arrivals are not published. A dated log of placements would settle it; it is the gap registered as *How many children enter or leave an out-of-district placement during a school year, and when?*
 
 ---
 
@@ -76,28 +121,90 @@ Why any year missed. A child placed or leaving mid-year, a tuition rate the stat
 
 ---
 
-## Counting the money outside the budget
+## How the circuit breaker fits in
+
+![Stacked bars, one per fiscal year FY2010 to FY2026, of out-of-district tuition by who paid it: the general fund, the circuit breaker account, and other funds — split for FY2023 to FY2025, and only the town’s two funds for FY2026. Beside them, a line for the circuit breaker money the state paid that year, and a dashed line for the money that year’s costs earned, paid the year after. The dashed line is the solid one moved a year to the left: that shift is the lag.](charts/special-education-costs-circuit-breaker.svg)
 
 ### In plain terms
 
-The general fund is not the only account that pays tuition. The state reimburses part of the cost of the most expensive placements a year later, through the circuit breaker, and that money lands in a school special fund the town does not vote on. In every one of the 4 years the accounting system reports in full, that account paid tuition too, so the whole bill for placements ran above the general fund line every year.
+The circuit breaker is the state paying back part of the cost of the most expensive children’s services. As the district explained it to the School Committee:
+
+- **Who qualifies.** A child whose costs pass a threshold of *"four times the state average foundation budget per pupil (as calculated under the chapter 70 program). For FY24, the threshold is $51,721"*. Above it, *"the state reimburses approximately 75 percent of the costs above that threshold (however it has been as low as 40%)."* *"In-District as well as Out–of-District costs are eligible."*
+- **When.** *"Circuit breaker reimbursements are for the district's prior year's expenses."* The state pays in four instalments, from *"September: receive 1st quarterly reimbursement payment"* to *"June: receive 4th quarterly reimbursement payment"*.
+- **Where it goes.** *"Circuit breaker reimbursements should be deposited into a special education reimbursement account."* — fund 2640 in the town’s ledger. *"These funds may be expended by the school committee in the year received or in the following"* fiscal year *"for any special education- related purposes, without further appropriation."* The town does not vote it.
+- **What that means for a surprise.** A tuition bill that runs over this year is paid back, in part, next year — into that account, not into the general fund or the new reserve. What can help in the middle of a year is whatever is already in the account from last year’s payment.
+
+*Quoted from the district’s Circuit Breaker Program Overview to the School Committee, 2023-2024 ([PDF](/docs/district-budget/docs/sc-meetings/2023-2024-circuit-breaker-presentation.pdf)). That is the district’s description; the statute, Mass. General Laws chapter 71B section 5A, is not in this archive, so the threshold and the share are as the district stated them.*
 
 ### The evidence
 
-| FY | tuition voted (general fund) | spent, general fund | spent, circuit breaker account | spent, every fund | above the voted line | as a share of it | circuit breaker received (ledger) | circuit breaker paid (state schedule) |
+| FY | tuition paid by the general fund | by the circuit breaker account | by other funds | tuition, every fund | circuit breaker received that year (for the year before) | circuit breaker earned by that year’s costs (received the year after) |
+|---|---:|---:|---:|---:|---:|---:|
+| FY2010 | $203,871 | — | $335,638 (all non-general funds together) | $539,509 | $211,224 | $201,165 |
+| FY2011 | $630,620 | — | $194,574 (all non-general funds together) | $825,194 | $201,165 | $419,945 |
+| FY2012 | $665,200 | — | $567,150 (all non-general funds together) | $1,232,350 | $419,945 | $615,317 |
+| FY2013 | $949,835 | — | $605,088 (all non-general funds together) | $1,554,923 | $615,317 | $575,389 |
+| FY2014 | $1,261,690 | — | $590,702 (all non-general funds together) | $1,852,392 | $575,389 | $672,634 |
+| FY2015 | $1,450,036 | — | $644,777 (all non-general funds together) | $2,094,813 | $672,634 | $784,099 |
+| FY2016 | $966,251 | — | $586,891 (all non-general funds together) | $1,553,142 | $784,099 | $507,832 |
+| FY2017 | $637,677 | — | $532,720 (all non-general funds together) | $1,170,397 | $507,832 | $366,790 |
+| FY2018 | $868,927 | — | $271,230 (all non-general funds together) | $1,140,157 | $366,790 | $430,958 |
+| FY2019 | $958,495 | — | $208,206 (all non-general funds together) | $1,166,701 | $430,958 | $478,987 |
+| FY2020 | $869,557 | — | $445,610 (all non-general funds together) | $1,315,167 | $478,987 | $484,579 |
+| FY2021 | $335,377 | — | $536,052 (all non-general funds together) | $871,429 | $484,579 | $519,394 |
+| FY2022 | $397,233 | — | $548,062 (all non-general funds together) | $945,295 | $519,394 | $415,750 |
+| FY2023 | $304,748 | $494,968 | $28,838 | $828,554 | $415,750 | $401,966 |
+| FY2024 | $588,508 | $466,296 | $401,966 | $1,456,770 | $401,966 | $508,441 |
+| FY2025 | $732,298 | $473,650 | $1 | $1,205,949 | $508,441 | $579,142 |
+| FY2026 | $1,202,771 | $333,495 | not yet published | — | $579,142 | — |
+
+*FY2010 to FY2026. Tuition is out-of-district tuition, functions 9300 and 9400. The general fund and every-fund totals are DESE’s End of Year Financial Report; for FY2023 to FY2025 the circuit breaker account is the town’s year-end report for fund 2640, and other funds are DESE’s non-general-fund total less that account. DESE’s general fund figure ties to the town’s ledger to the dollar in each of those years, and the build refuses if it stops. FY2026 is the town’s ledger alone, because DESE has not yet published it. The two circuit breaker columns are DESE’s payment file, keyed by year of payment, and cover in-district and transport costs as well as tuition.*
+
+**A routine second source, not an overflow.** The circuit breaker account paid tuition in every closed year the ledger reports, overrun or not, beside the general fund — so how much of any overrun it absorbed cannot be told from the ledger. Every general fund figure on this page is measured after whatever was charged to it: what exceeded both. Before FY2023 the account’s own disbursements, as the annual report prints them, equal DESE’s non-general-fund tuition to within $2 in 7 of 12 years, so the grey bars are probably mostly this account; year by year that is not established.
+
+**The cushion that already exists.** The account’s balance at each year end:
+
+| FY | balance, 1 July | received | spent | balance, 30 June | from |
+|---|---:|---:|---:|---:|---|
+| FY2011 | -$33,279 | $262,734 | $193,889 | $35,565 | annual report |
+| FY2012 | $35,565 | $554,839 | $567,150 | $23,254 | annual report |
+| FY2013 | $23,254 | $445,423 | $605,089 | -$136,412 | annual report |
+| FY2014 | -$136,412 | $614,230 | $590,700 | -$112,882 | annual report |
+| FY2015 | -$112,882 | $637,765 | $644,777 | -$119,894 | annual report |
+| FY2016 | -$119,894 | $962,816 | $586,891 | $256,031 | annual report |
+| FY2017 | $256,031 | $507,832 | $525,718 | $238,144 | annual report |
+| FY2018 | $238,144 | $248,016 | $278,232 | $207,928 | annual report |
+| FY2019 | $207,928 | $431,236 | $208,206 | $430,958 | annual report |
+| FY2020 | $430,958 | $600,500 | $549,454 | $482,004 | annual report |
+| FY2021 | $482,004 | $484,579 | $511,020 | $455,563 | annual report |
+| FY2022 | $455,563 | $519,393 | $548,063 | $426,893 | annual report |
+| FY2023 | $426,893 | $415,750 | $494,968 | $347,676 | annual report |
+| FY2024 | $347,676 | $301,589 | $466,296 | $182,969 | carried through the year-end ledger |
+| FY2025 | $182,969 | $608,818 | $498,451 | $293,335 | carried through the year-end ledger |
+| FY2026 | $293,335 | $325,970 | $337,499 | $281,806 | carried through the year-end ledger |
+
+*The same series /analysis/sitting-on-money uses: the annual town report’s Special Revenue schedule (“50/50 Grant Sped Tuitions”) through FY2023, then carried through the year-end ledgers.* It peaked at $482,004 at the close of FY2020 and was $281,806 at 30 June 2026, falling in 5 of the last 6 years. Within FY2026, the Town’s special revenue report showed $615,301 on 31 March, a snapshot taken before the year’s tuition was charged: $4,005 had been spent from it by then, $337,499 by the close. The carried 30 June 2025 balance equals the opening that report implies, to the cent.
+
+> *"Dave Passion questions how the 14% increase was absorbed last year. Julianna Hanscom states it is probably absorbed with a lot of the carry over for the circuit breaker monies and that’s why that account has gone down."* — Finance Committee, 2024-03-14 ([minutes](/docs/meetings/text/finance-committee/2024-03-14-minutes-6469.txt))
+
+The district’s own account, as minuted in March 2024, of the circuit breaker balance being drawn down to absorb a tuition rise. “Probably” is in the minutes: a belief stated at a meeting, not a measurement.
+
+| FY | tuition voted (general fund) | spent, general fund | spent, circuit breaker account | spent, both | both, above the general fund line voted (counts the account’s routine spending) | as a share of it | circuit breaker received (town ledger) | circuit breaker paid (state schedule) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | FY2023 | $489,918 | $304,748 | $494,968 | $799,716 | +$309,798 | +63.2% | $415,750 | $415,750 |
 | FY2024 | $501,239 | $588,508 | $466,296 | $1,054,804 | +$553,565 | +110.4% | $301,589 | $401,966 |
 | FY2025 | $1,164,824 | $732,298 | $473,650 | $1,205,948 | +$41,124 | +3.5% | $608,818 | $508,441 |
 | FY2026 | $1,291,293 | $1,202,771 | $333,495 | $1,536,266 | +$244,973 | +19.0% | $325,970 | $579,142 |
 
-*FY2023 to FY2026, four years, MUNIS year-end reports for the school general fund and the school special funds; the circuit breaker account is fund 2640.* The account also paid $28,806 in these years for things other than tuition.
+*FY2023 to FY2026, MUNIS year-end reports for the school general fund and the school special funds.* The account also paid $28,806 in these years for things other than tuition.
 
-**The ledger and the state agree, a year apart.** The receipts the ledger books and the payments the state’s schedule lists match in FY2023. Where they do not, the difference moves between years: FY2024 and FY2025 together come to $910,407 in both, with $100,377 booked a year later than the state lists it. A reserve has to bridge that timing, because the reimbursement for a placement arrives in the following year at the earliest.
+**The ledger and the state agree, a year apart.** The receipts the ledger books and the payments the state’s schedule lists match in FY2023. Where they do not, the difference moves between years: FY2024 and FY2025 together come to $910,407 in both, with $100,377 booked a year later than the state lists it. In FY2026 the ledger booked $325,970 of the $579,142 the state lists.
+
+**One figure we cannot explain.** In FY2024, DESE’s total for tuition from funds other than the general fund is $401,966 more than the circuit breaker account paid — and $401,966 is also, to the dollar, the circuit breaker payment the state lists for FY2024. That may be a coincidence or a reporting choice; nothing here says which, and it is registered as a gap. In the other years the remainder is $28,838 in FY2023 and $1 in FY2025.
 
 ### What this does not show
 
-Whether the district planned on the account. If the general fund line is built expecting the circuit breaker to pay part, the amount above it is a plan rather than a surprise. Nothing published says which — the same open question `sped-and-funds.md` asks of the FY27 line.
+Whether the district plans on the account. If the general fund tuition line is built expecting the circuit breaker to pay part, the amount above it is a plan rather than a surprise. The district’s own presentation says *"the appropriating authority can and should consider the projected reimbursements"* for the following year when deliberating on the general fund budget; nothing published says whether Lunenburg’s line does — the same open question `sped-and-funds.md` asks of the FY27 line. Nor does this show how much of any one placement comes back: the state’s payment covers in-district and transport costs too, and is not split by child.
 
 ---
 
@@ -273,21 +380,22 @@ How many children arrived or left during any year, or when. The two snapshots ma
 
 ### In plain terms
 
-Three ways of putting a number on a bad year, each from a different piece of the record, and each ours:
+**This page sizes a reserve on one basis: the general fund, measured after whatever was charged to the circuit breaker account — what exceeded both sources.** The account pays tuition every year, so counting its spending as surprise overstates; that upper bound is shown beside it, labelled. How much goes on the account, and when in the year, is the district’s choice. Every row is our arithmetic.
 
 | measure | from | amount |
 |---|---|---:|
-| The worst year in the ledger, every line’s overrun added | FY2010 to FY2026 | $223,774 |
-| The worst of the four years MUNIS reports in full | FY2023 to FY2026 | $152,724 |
-| The median year | FY2010 to FY2026 | $39,766 |
-| Out-of-district tuition, every fund, above its voted line — worst year | FY2023 to FY2026 | $553,565 |
-| One unplanned placement at the per-child estimate | FY2022 to FY2025 | $119,480 |
-| 3 unplanned placements — the largest rise between October and March | FY2023 | $358,440 |
+| **General fund, after the circuit breaker account** — the worst year, every line’s overrun added | FY2010 to FY2026 (FY2013) | **$223,774** |
+| General fund, after the circuit breaker account — the worst of the four years with year-end reports | FY2023 to FY2026 (FY2024) | $152,724 |
+| General fund, after the circuit breaker account — the median year | FY2010 to FY2026 | $39,766 |
+| UPPER BOUND, counting the circuit breaker account’s routine tuition as surprise — worst year | FY2023 to FY2026 (FY2024) | $619,020 |
+| The circuit breaker account’s balance at 30 June 2026 — a cushion that already exists | FY2026 | $281,806 |
+| One unplanned placement at the per-child estimate (every fund) | FY2022 to FY2025 | $119,480 |
+| 3 unplanned placements — the largest rise between October and March (every fund) | FY2023 | $358,440 |
 | The reserve’s cap, 2% of FY2026 net school spending, as described | FY2026 | $541,717 |
 
 ### What changes what a reserve must cover
 
-- **The circuit breaker pays a year late.** The state’s schedule pays each year for the year before, so a placement that starts in September is reimbursed, in part, the following year at the earliest. The reserve carries the whole of a surprise in the year it lands.
+- **The circuit breaker pays a year late, and into its own account.** A placement that starts in September is reimbursed, in part, the following year at the earliest, and the payment lands in the circuit breaker account rather than the reserve. See *How the circuit breaker fits in*.
 - **A child who moves in late may not land on this budget at all that year.** The district told the School Committee on 2024-02-28 that a child entering after 1 April is the sending district’s cost for the rest of that year and the next. That is a statement at a meeting; the rule itself is not in this archive.
 - **The forecast for FY2027 is well above the recent counts.** The School Committee was told on 2026-08-26 that 19 placements were anticipated. The town counted 10 on 1 March 2025; the last year it counted 19 or more was FY2016. If the forecast holds, the per-child estimate above puts the difference at about $1,075,320 a year — our arithmetic on a forecast, not a measurement.
 
@@ -317,8 +425,8 @@ What the town should hold. A reserve sized to the worst of 17 years covers the w
 
 `notes/process/PERSONAS.md`, run before publishing.
 
-- **Already sure the schools are not straight with them.** The worst figure on the page — $553,565 spent on placements above the line voted for them, in FY2024 — is in the summary at full size, and so is the fact that in-district spending never ran more than 2.7% over.
-- **Hears it second-hand.** The sentence they will repeat is the first card: the worst year in 17 needed $223,774. It is true as worded; it is not a statement that anybody overspent, because tuition came in under budget in most years.
+- **Already sure the schools are not straight with them.** The largest figure on the page — $619,020 in FY2024, counting the circuit breaker account’s routine tuition as surprise — is in the summary, labelled as the upper bound it is, and so is the fact that in-district spending never ran more than 2.7% over.
+- **Hears it second-hand.** The sentence they will repeat is the first card: in the worst of 17 years special education needed $223,774 more than its voted budget. It is true as worded, on the general fund basis it names; it is not a statement that anybody overspent, because tuition came in under budget in most years.
 - **Close to the boards.** No finding names a person. The one person named is quoted for an argument made on the record at a public meeting.
 - **Finance Committee.** One thing to do differently: ask, before voting the tuition line, how much of it the district expects the circuit breaker account to pay, and for the placement count it was built on.
 - **School Committee.** *Is this FY2025 again?* is answered in the first section.
@@ -326,6 +434,8 @@ What the town should hold. A reserve sized to the worst of 17 years covers the w
 - **Somebody with one concrete thing.** The meeting archive was searched for *out of district*, *special education reserve*, *13E*, *mid-year*, *move into the district* and *unanticipated*, in the town’s published minutes and agendas; every quotation on this page came out of that search and is re-read from the archive on every build. Machine transcripts of the recordings were not searched for this page.
 
 ## Method and classification
+
+Analysis, October 2026. A draft for review. Every figure is computed by `scripts/build_sped_costs.py`; the grouping of accounts, the reserve rule and every per-child figure are ours and say so where they appear.
 
 - **Which accounts.** In the town’s account string the fourth segment is the function code and the fifth is `51` on every general fund school account whose own description names special education — checked on every run — except special education transportation. Out-of-district tuition is functions 9100, 9300 and 9400 in that segment. In-district is every other account in it, less two the district’s budget book labels as English learner costs (ELL General Supplies, $8,000 in FY2026, District Wide Specials (ELL), $185,878 in FY2026), tied to the budget book by amount on every run. Reading `51` as "special education" is ours.
 - **Spent** is expended plus encumbered at the year-end close.
@@ -339,6 +449,7 @@ What the town should hold. A reserve sized to the worst of 17 years covers the w
 - **Lunenburg Finance Committee** — the general fund original budget, revised budget and actual, every account, FY2010-FY2025, assembled from MUNIS exports; used for FY2010-FY2022 after its school rows tie to the MUNIS reports. `sources/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx` sha256 `92968c581fa2`
 - **Massachusetts Department of Elementary and Secondary Education** — End of Year Financial Report, functions 9300 and 9400, general fund and every other fund. `sources/state-dese/district-expenditures-by-function.xlsx` sha256 `9e43789807b1`
 - **Massachusetts Department of Elementary and Secondary Education** — the circuit breaker reimbursement schedule, by fiscal year of payment. `sources/state-dese/dese-circuit-breaker.xlsx` sha256 `b710ba4f88fb`
+- **Lunenburg Public Schools** — Circuit Breaker Program Overview, presented to the School Committee in 2023-2024: the threshold, the share, the timing and the account, as the district describes them. `sources/district-budget/docs/sc-meetings/2023-2024-circuit-breaker-presentation.pdf` sha256 `c72b48070c0e`
 - **Massachusetts Department of Elementary and Secondary Education** — children with a plan, in district and out of district. `sources/state-dese/dese-sped-program-characteristics.xlsx` sha256 `417435bddfca`
 - **Massachusetts Department of Elementary and Secondary Education** — children moving in and out of special education services. `sources/state-dese/dese-sped-movement.xlsx` sha256 `2b5e67f3ba6b`
 - **Massachusetts Department of Elementary and Secondary Education** — net school spending, for the reserve cap. `sources/state-dese/dese-ch70-district-profile.xlsx` sha256 `a0dc63bc9d51`

@@ -156,18 +156,123 @@ def main():
     check('tuition largest underspend', -min(ood), f('tuition-misses-both-ways', 'best'))
 
     cb = fund2640()
-    above = {y: led[y]['ood'][1] + cb.get(y, 0) - led[y]['ood'][0] for y in munis_years}
-    wy = max(above, key=above.get)
-    check('every fund, worst above voted', above[wy],
-          f('counting-the-reimbursement-account', 'above'))
-    check('every fund, worst year', wy, f('counting-the-reimbursement-account', 'fy'))
-    check('circuit breaker account that year', cb[wy], f('counting-the-reimbursement-account', 'cb'))
-    if not all(v > 0 for v in above.values()):
-        bad.append('the claim that every fund ran above the voted line in all four years no '
-                   'longer holds: %s' % above)
+    # TWO BASES. After: the gross need already computed. Before: the account's tuition put
+    # back on the tuition line, overruns added the same way.
+    before = {y: max(0, led[y]['ood'][1] + cb.get(y, 0) - led[y]['ood'][0])
+              + max(0, var[y]['indist']) + max(0, var[y]['trans']) for y in munis_years}
+    rq = pay['request']
+    T3, T5 = 300000, 500000
+    if rq['thresholds'] != [T3, T5]:
+        bad.append('thresholds changed: %s' % rq['thresholds'])
+    for b in rq['bases']:
+        check('before basis FY%d' % b['fy'], before[b['fy']], b['before'])
+        check('after basis FY%d' % b['fy'], gross[b['fy']], b['after'])
+        check('account tuition FY%d' % b['fy'], cb[b['fy']], b['cb_tuition'])
+    if any(cb.get(y, 0) <= 0 for y in munis_years):
+        bad.append('the account did not pay tuition in every closed year; a card says it does')
+    q = 'the-300000-question'
+    check('years in 17 over 300k, after', sum(1 for y in years if gross[y] > T3), 0)
+    check('years over 300k, before', sum(1 for y in munis_years if before[y] > T3), f(q, 'over'))
+    check('years within 500k, before', sum(1 for y in munis_years if before[y] <= T5), f(q, 'within'))
+    wb = max(munis_years, key=lambda y: before[y])
+    check('worst before-basis year', wb, f(q, 'wfy'))
+    check('worst before-basis amount', before[wb], f(q, 'wbefore'))
+    q4 = 'the-account-pays-tuition-every-year'
+    check('account tuition, low', min(cb[y] for y in munis_years), f(q4, 'lo'))
+    check('account tuition, high', max(cb[y] for y in munis_years), f(q4, 'hi'))
+
+    # THE ACCOUNT'S BALANCE, by a second route: the annual report rows read with Decimal,
+    # then the DATABASE's fund 2640 rows carried forward, then checked against the March
+    # report's implied opening.
+    bal = {}
+    with open(os.path.join(DATA, 'special-revenue-read.csv'), encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            if r['fund'] == '50/50 Grant Sped Tuitions':
+                bal[int(r['fy'])] = D(r['carried'])
+    db = sqlite3.connect(os.path.join(DATA, 'lunenburg.db'))
+    flow = {}
+    for fy, typ, e, enc in db.execute("SELECT fiscal_year, type, ytd_expended, encumbrances FROM "
+                                      "munis_school_ytd WHERE period=13 AND fund='2640'"):
+        a = flow.setdefault(int(fy), [D(0), D(0)])
+        if typ == 'R':
+            a[0] -= D(str(e or 0))
+        else:
+            a[1] += D(str(e or 0)) + D(str(enc or 0))
+    for fy in sorted(y for y in flow if y > max(bal)):
+        bal[fy] = bal[fy - 1] + flow[fy][0] - flow[fy][1]
+    with open(os.path.join(DATA, 'school-special-revenue-fy26-q3.csv'), encoding='utf-8') as fh:
+        q3 = next(r for r in csv.DictReader(fh) if r['fund'].lstrip("'") == '2640')
+    implied = D(q3['balance']) - D(q3['revenue']) + D(q3['expenditure'])
+    if abs(implied - bal[max(bal) - 1]) > D('0.01'):
+        bad.append('carried 30 June balance %s is not the March report implied %s'
+                   % (bal[max(bal) - 1], implied))
+    yrs = pay['cb_account']['years']
+    for row in yrs:
+        if abs(D(str(row['closing'])) - bal[row['fy']]) > D('0.01'):
+            bad.append('account balance FY%d: payload %s, recomputed %s'
+                       % (row['fy'], row['closing'], bal[row['fy']]))
+    pk = max(bal, key=bal.get)
+    check('account balance peak year', pk, f(q4, 'pfy'))
+    check('account balance peak', float(bal[pk]), f(q4, 'peak'))
+    check('account balance at the last close', float(r0(bal[max(bal)] * 100)) / 100,
+          f(q4, 'bal'))
+    ys = sorted(bal)[-7:]
+    check('years falling, last six', sum(1 for a, b in zip(ys, ys[1:]) if bal[b] < bal[a]),
+          f(q4, 'fell'))
 
     pct = max(round(100.0 * var[y]['indist'] / led[y]['indist'][0], 1) for y in years)
-    check('in-district largest overrun share', pct, f('in-district-lands-close', 'band'))
+    check('in-district largest overrun share', pct, f('tuition-misses-both-ways', 'band'))
+    tr = [var[y]['trans'] for y in years]
+    check('transport years over', sum(1 for v in tr if v > 0), f('tuition-misses-both-ways', 't_over'))
+    check('transport worst overrun', max(tr), f('tuition-misses-both-ways', 't_worst'))
+
+    # THE CIRCUIT BREAKER CHART, every row, by a second route: DESE's CSV extracts rather
+    # than the database, the payment file's CSV, Decimal sums.
+    pays = {}
+    with open(os.path.join(DATA, 'dese-circuit-breaker.csv'), encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            if r['lea'] == LEA and r['level'] == 'district':
+                pays[int(r['fy'])] = r0(D(r['total_quarterly_payment'] or '0'))
+    split = {}
+    with open(os.path.join(DATA, 'dese-function-expenditure.csv'), encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            if r['lea'] == LEA and r['level'] == 'detail' and r['func_code'] in ('9300', '9400'):
+                a = split.setdefault(int(r['fy']), [D(0), D(0)])
+                a[0] += D(r['gen_fund'] or '0')
+                a[1] += D(r['grants_revolving'] or '0')
+    want = []
+    for y in years:
+        row = dict(fy=y, received=pays.get(y), earned=pays.get(y + 1), gf=None, cb_account=None,
+                   other=None, other_unsplit=None, total=None)
+        if y in split:
+            g, o = r0(split[y][0]), r0(split[y][1])
+            row.update(gf=g, total=g + o)
+            if y in cb:
+                row.update(cb_account=cb[y], other=o - cb[y], basis='dese+munis')
+            else:
+                row.update(other_unsplit=o, basis='dese')
+        else:
+            row.update(gf=led[y]['ood'][1], cb_account=cb[y], basis='munis')
+        want.append(row)
+    got = pay['circuit_breaker']['rows']
+    if len(got) != len(want):
+        bad.append('circuit breaker chart: %d rows, recomputed %d' % (len(got), len(want)))
+    for g, w in zip(got, want):
+        if g != w:
+            bad.append('circuit breaker chart FY%s: payload %r, recomputed %r' % (w['fy'], g, w))
+    last = max(pays)
+    check('latest circuit breaker payment', pays[last], f('the-refund-arrives-a-year-later', 'paid'))
+    check('latest payment year', last, f('the-refund-arrives-a-year-later', 'fy'))
+    check('the year it pays for', last - 1, f('the-refund-arrives-a-year-later', 'for'))
+    # The paragraph that calls one figure unexplained rests on an equality; assert it.
+    u = pay['circuit_breaker']['unexplained']
+    if u['other'] != pays.get(u['fy']):
+        bad.append('the unexplained remainder no longer equals the FY%d payment' % u['fy'])
+    # The stat row, recomputed.
+    stats = [x['value'] for x in pay['stats']]
+    for v in (gross[worst_fy], r0(bal[max(bal)]), pays[last]):
+        if '${:,}'.format(v) not in stats:
+            bad.append('stat %s is not in the stat row' % v)
 
     af, pl = dese_all_funds(), placed()
     per = {y: r0(af[y] / pl[y]) for y in sorted(pl) if y in af}
@@ -185,7 +290,45 @@ def main():
     n = nss()
     cy = max(y for y in n if y <= years[-1])
     check('reserve cap, 2% of net school spending', r0(n[cy] * D('0.02')),
-          f('the-reserve-town-meeting-created', 'cap'))
+          f('the-300000-question', 'cap'))
+    if '${:,}'.format(r0(n[cy] * D('0.02'))) not in [x['value'] for x in pay['stats']]:
+        bad.append('the reserve cap is not in the stat row')
+
+    # PER CHILD BY TYPE, from the CSV extracts.
+    ft = {}
+    with open(os.path.join(DATA, 'dese-function-expenditure.csv'), encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            if r['lea'] == LEA and r['level'] == 'detail' and r['func_code'] in ('9300', '9400'):
+                ft[(int(r['fy']), r['func_code'])] = D(r['total'] or '0')
+    with open(os.path.join(DATA, 'placement-counts.csv'), encoding='utf-8') as fh:
+        pc = {int(r['fy']): r for r in csv.DictReader(fh)}
+    nps = []
+    for row in rq['by_type']:
+        r = pc[row['fy']]
+        col, npub = int(r['collaborative']), int(r['day']) + int(r['residential'])
+        check('per collaborative FY%d' % row['fy'], r0(ft[(row['fy'], '9400')] / col),
+              row['per_collaborative'])
+        check('per non-public FY%d' % row['fy'], r0(ft[(row['fy'], '9300')] / npub),
+              row['per_nonpublic'])
+        nps.append(r0(ft[(row['fy'], '9300')] / npub))
+    check('non-public median', r0(D(str(median(nps)))), rq['nonpublic_median'])
+
+    # THE CAPTIONS: every quote re-found in its caption file, by a plain substring search
+    # over the raw segments joined with single spaces, and the per-child figure re-parsed.
+    for c in rq['said']:
+        fn = os.path.join(ROOT, 'sources', 'data', 'youtube-transcripts', 'school-committee')
+        hit = False
+        for name in os.listdir(fn):
+            if name.startswith(c['date']):
+                segs = json.load(open(os.path.join(fn, name), encoding='utf-8'))['segments']
+                if ' '.join(' '.join(x['text'].split()) for x in segs).find(c['quote']) >= 0:
+                    hit = True
+        if not hit:
+            bad.append('caption not found: %r' % c['quote'][:50])
+    m_ = re.search(r'average price of ([\d,]+) per child',
+                   next(c['quote'] for c in rq['said'] if c['key'] == 'average'))
+    check('per child as the captions render it', int(m_.group(1).replace(',', '')),
+          rq['said_per_child'])
 
     # Every registered rendering is in the published document, on a word boundary.
     for c in pay['conclusions']:
