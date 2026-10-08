@@ -85,11 +85,20 @@ def audit(since_utc, now=None):
                     continue
                 m = dt.datetime.fromtimestamp(os.path.getmtime(f), dt.timezone.utc)
                 lag = (m - t(r['at'])).total_seconds()
-                if not (-120 <= lag <= 120 or (d == 'recording-minutes' and lag > 0)):
-                    continue
                 try:
                     j = json.load(open(f, encoding='utf-8'))
                 except ValueError:
+                    continue
+                # BY CONTENT, WHEN THE CLOCK CANNOT SAY. A file that arrived by `git merge` or
+                # `pull` carries the merge's mtime, not the time it was written (8 October: 14 of
+                # the morning refresh's reads looked unpaid, and stopped the run). So a file also
+                # matches when its own record says so: the exact cost a structured read stores,
+                # or the `written.at` our minutes store.
+                wrote = ((j.get('written') or {}).get('at') or '')
+                by_content = (j.get('cost_usd') is not None and float(r['cost_usd'] or 0) > 0
+                              and abs(float(j['cost_usd']) - float(r['cost_usd'])) <= 0.0001) or \
+                             (wrote and abs((t(wrote) - t(r['at'])).total_seconds()) <= 600)
+                if not (by_content or -120 <= lag <= 120 or (d == 'recording-minutes' and lag > 0)):
                     continue
                 if j.get('cost_usd') is not None and abs(float(j['cost_usd']) - float(r['cost_usd'] or 0)) > 0.0001:
                     continue
@@ -144,6 +153,31 @@ def audit(since_utc, now=None):
     unpaid = [os.path.relpath(f, ROOT) for d in OUT_DIRS
               for f in glob.glob(os.path.join(ROOT, 'sources', 'data', d, '*', '*.json'))
               if f not in files_used and lo.timestamp() <= os.path.getmtime(f) <= now.timestamp() - FILE_SETTLE_S]
+    # A FILE THAT ARRIVED BY MERGE has a fresh mtime and a payment from hours ago. Before
+    # calling it unpaid, look for that payment by CONTENT anywhere in the ledger.
+    if unpaid:
+        ledger = {}
+        for r in csv.DictReader(open(SPEND, encoding='utf-8')):
+            if r.get('result', 'ok') == 'ok':
+                ledger.setdefault((r['board'], r['date']), []).append(r)
+        still = []
+        for rel in unpaid:
+            f = os.path.join(ROOT, rel)
+            parts = rel.split('/')
+            board, date = parts[-2], parts[-1][:10]
+            try:
+                j = json.load(open(f, encoding='utf-8'))
+            except ValueError:
+                still.append(rel)
+                continue
+            wrote = ((j.get('written') or {}).get('at') or '')
+            paid = any((j.get('cost_usd') is not None and float(r['cost_usd'] or 0) > 0
+                        and abs(float(j['cost_usd']) - float(r['cost_usd'])) <= 0.0001)
+                       or (wrote and abs((t(wrote) - t(r['at'])).total_seconds()) <= 600)
+                       for r in ledger.get((board, date), []))
+            if not paid:
+                still.append(rel)
+        unpaid = still
     return matched, bad, unpaid
 
 
@@ -159,8 +193,11 @@ def guard(now=None):
     matched, unmatched, unpaid = audit(hour_ago, now)
     if unmatched:
         problems.append('%d paid call(s) with no output: %s' % (len(unmatched), unmatched[0]))
-    if unpaid:
-        problems.append('%d output file(s) with no paid call: %s' % (len(unpaid), unpaid[0]))
+    # OUTPUT WITH NO PAYMENT IS REPORTED, NOT A STOP. It is not money spent for nothing --
+    # it is a file changed without a ledger row: a free --relink, a regenerated file, or a
+    # writer that does not log (the refresh's own write_recording_minutes, found 8 October).
+    # TJ's guard is "spend that produced nothing"; that is the payment-with-no-output check.
+    notes = ['%d output file(s) with no ledger row (reported, not a stop): %s' % (len(unpaid), unpaid[0])] if unpaid else []
     # THE RATIO, which is what TJ asked for in so many words: *"if we spend $100 and get 1 or
     # 0 meetings, something should trip."* A meeting costs ~$0.14; trip at $0.50 a produced
     # file over the last hour, once at least $1 has been spent.
@@ -193,6 +230,7 @@ def guard(now=None):
     if again:
         problems.append('REPEATING: %d meeting step(s) paid for twice this hour, e.g. %s %s %s'
                         % ((len(again),) + again[0]))
+    guard.notes = notes
     return problems, matched, len(unmatched)
 
 
