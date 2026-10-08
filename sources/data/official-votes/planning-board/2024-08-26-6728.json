@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-08-26",
  "docid": "6728",
@@ -12,84 +12,435 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing for 255 Sunny Hill Rd",
+   "motion": "Close the public hearing for 255 Sunny Hill Rd (Stormwater Management Permit).",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "t. willsmer moved to close the public hearing for 255 sunny hill rd. m. allison seconded. roll call vote: yes m. allison, t. willsmer, a. reid, m. brenner no abstain g. mcleod"
+   "quote": "t. willsmer moved to close the public hearing for 255 sunny hill rd."
   },
   {
-   "motion": "Approve the Stormwater Management Permit for 255 Sunny Hill Rd subject to standard conditions and the three conditions previously discussed",
+   "motion": "Approve the Stormwater Management Permit for 255 Sunny Hill Rd subject to the standard conditions and the three conditions previously discussed.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
    "outcome": "2-2-1",
    "procedural": false,
-   "quote": "t. willsmer moved to approve the stormwater management permit for 255 sunny hill rd subject to the standard conditions and the three conditions previously discussed. a. reid seconded. roll call vote: yes m. brenner, a. reid no m. allison, t. willsmer abstain g. mcleod"
+   "quote": "t. willsmer moved to approve the stormwater management permit for 255 sunny hill rd subject to the standard conditions and the three conditions previously discussed."
   },
   {
-   "motion": "Defer the decision on 255 Sunny Hill to the 2024-09-09 meeting",
+   "motion": "Defer the decision for 255 Sunny Hill to the 2024-09-09 meeting.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0-1",
-   "procedural": true,
-   "quote": "t. willsmer moved to defer the decision for 255 sunny hill to the 2024-09-09 meeting. a. reid seconded. roll call vote: yes m. allison, t. willsmer. a. reid, m. brenner no abstain g. mcleod"
+   "procedural": false,
+   "quote": "t. willsmer moved to defer the decision for 255 sunny hill to the 2024-09-09 meeting."
   },
   {
-   "motion": "Close the public hearing for 3 Lancaster Avenue Special Permit",
+   "motion": "Close the public hearing for the 3 Lancaster Avenue Special Permit.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "t. willsmer moved to close the public hearing for 3 lancaster ave's special permit. m. allison seconded. roll call vote: yes g. mcleod, m. allison, t. willsmer. a. reid, m. brenner"
+   "quote": "t. willsmer moved to close the public hearing for 3 lancaster ave's special permit."
   },
   {
-   "motion": "Approve the Special Permit for signage at 3 Lancaster Avenue with all standard conditions and as presented",
+   "motion": "Approve the Special Permit for signage at 3 Lancaster Avenue with all standard conditions and as presented.",
    "moved_by": "M. Allison",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "m. allison moved to approve the special permit for signage at 3 lancaster avenue with all standard conditions and as presented. t. willsmer seconded. roll call vote: yes g. mcleod, m. allison, t. willsmer. a. reid, m. brenner"
+   "quote": "m. allison moved to approve the special permit for signage at 3 lancaster avenue with all standard conditions and as presented."
   },
   {
-   "motion": "Approve the Site Plan for 240 Summer Street",
+   "motion": "Site Plan Approval for 240 Summer St (no mover recorded in the minutes).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0-2",
    "procedural": false,
-   "quote": "roll call vote yes g. mcleod, a. reid, t. willsmer no abstain m. allison, m. brenner site plan approved 3-0-2"
+   "quote": "site plan approved 3-0-2"
   },
   {
-   "motion": "Approve the Stormwater Management Permit for 240 Summer Street",
+   "motion": "Stormwater Management Permit for 240 Summer St granted (no mover recorded in the minutes).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0-2",
    "procedural": false,
-   "quote": "roll call vote yes g. mcleod, a. reid, t. willsmer no abstain m. allison, m. brenner site plan approved 3-0-2 stormwater manage",
-   "quote_taken_from_text": true
+   "quote": "stormwater management permit granted 3-0-2"
   },
   {
-   "motion": "Include the amendments recommended on the July 8th Planning Board meeting with the addition of swimming, and exclude the Water District's proposed amendments regarding water treatment plants",
+   "motion": "Include the Water Supply Protection District amendments recommended on the July 8th Planning Board meeting, with the addition of swimming, and exclude the Water District’s proposed water treatment plant amendments.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "t. willsmer moved to include the amendments recommended on the july 8th planning board meeting, with the addition of swimming, and exclude the water district's proposed amendments regarding water treatment plants. m. allison seconded. roll call vote: yes g. mcleod, m. allison, t. willsmer. a. reid, m. brenner"
+   "quote": "t. willsmer moved to include the amendments recommended on the july 8th planning board meeting, with the addition of swimming"
   },
   {
-   "motion": "Have L. O'Connell submit the draft language to the Town Manager's office for the Article of Warrant and schedule the corresponding Public Hearing on 2024-09-23",
+   "motion": "Have L. O’Connell submit the draft ADU language (as presented) to the Town Manager’s office for the Article of Warrant, and schedule the corresponding Public Hearing on 2024-09-23.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "M. Allison",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "t. willsmer moved to have l. o'connell submit the draft language (as presented) to the town manager's office for the article of warrant"
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "t. willsmer moved to have l. o'connell submit the draft language (as presented) to the town manager's office for the article of warrant, and to schedule the corresponding public hearing on 2024-09-23. m. allison seconded. roll call vote: yes g. mcleod, m. allison, t. willsmer. a. reid, m. brenner"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "T. Willsmer",
-   "seconded_by": "M. Allison",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "t. willsmer moved to adjourn the meeting. m. allison seconded. roll call vote: yes g. mcleod, m. allison, t. willsmer. a. reid, m. brenner"
+   "quote": "t. willsmer moved to adjourn the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.206859
+ "note": "Text extraction of a complete, typed minutes document (header reads '2024-08-26 (complete)'); no scan. Limits: (1) 255 Sunny Hill approval vote was 2-2-1 and the minutes say only that the board 'was unsure how to proceed'; no passed/failed result is printed, so the outcome is recorded as the count. (2) The 240 Summer St roll calls name no mover, and the roll call lists G. McLeod voting Yes and M. Brenner abstaining, while the minutes say the voting members were T. Willsmer, M. Brenner and A. Reid; the two accounts do not reconcile. (3) G. McLeod was recused from 255 Sunny Hill, so that vote was 4-0-1 with him abstaining. (4) No dollar figures appear anywhere in the text; budget items are discussion of money without figures. (5) Christopher Reilly is named only in the letterhead, so attendance is not stated. Stefan McSweeney is named only as the person represented. Public comment during the Water Supply discussion is recorded as board-invited comment within a discussion item, not under the 'PUBLIC COMMENT' heading, which reads 'None.' at the opening.",
+ "cost_usd": 0.02184397,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew brenner, timothy willsmer, amanda reid, glenn mcleod, matthew allison"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew brenner, timothy willsmer, amanda reid, glenn mcleod, matthew allison"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew brenner, timothy willsmer, amanda reid, glenn mcleod, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, timothy willsmer, amanda reid, glenn mcleod, matthew allison"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, timothy willsmer, amanda reid, glenn mcleod, matthew allison"
+  },
+  {
+   "name": "Christopher Reilly",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "christopher reilly - land use director"
+  },
+  {
+   "name": "Logan O’Connell",
+   "role": "Administrative Asst",
+   "status": "present",
+   "quote": "l. o'connell elaborated - a sign permit was originally issued by the building commissioner in error"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Interim Land Use Director",
+   "status": "present",
+   "quote": "r. harris recommended deferring the decision to the next meeting"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "representing applicant Stefan McSweeney; project engineer",
+   "status": "present",
+   "quote": "brian marchetti (representing applicant stefan mcsweeney) summarized previous delays"
+  },
+  {
+   "name": "Stefan McSweeney",
+   "role": "applicant (named as represented by Brian Marchetti)",
+   "status": "not stated",
+   "quote": "brian marchetti (representing applicant stefan mcsweeney) summarized previous delays"
+  },
+  {
+   "name": "Kenneth Patton",
+   "role": "abutter",
+   "status": "present",
+   "quote": "kenneth patton (290 leominster rd, abutter) noted an inaccuracy with the plan's discharge location"
+  },
+  {
+   "name": "Sandy Leavenworth",
+   "role": "representing AlphaGraphics",
+   "status": "present",
+   "quote": "sandy leavenworth (50 island rd, groton) representing alphagraphics briefly outlined the history and"
+  },
+  {
+   "name": "John Fortune",
+   "role": "memo author (50 Hemlock Dr)",
+   "status": "present",
+   "quote": "john fortune (50 hemlock dr) presented a memo outlining the following requests for 250-4.9 section"
+  },
+  {
+   "name": "Joan Pease",
+   "role": "resident (11 Wintergreen Ct)",
+   "status": "present",
+   "quote": "joan pease (11 wintergreen ct) opined that either swimming and boating should be allowed"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "of the Water District (20 Buttonwood Place)",
+   "status": "present",
+   "quote": "mark bursch (20 buttonwood place) of the water district agreed that boating should be left in"
+  },
+  {
+   "name": "Fran McNamara",
+   "role": "of the Water District",
+   "status": "present",
+   "quote": "fran mcnamara of the water district disagreed with mr. fortune's proposed changes to (2)(g) due to"
+  },
+  {
+   "name": "Debbie Ritchie",
+   "role": "resident (98 Royal Front Dr)",
+   "status": "present",
+   "quote": "debbie ritchie (98 royal front dr) clarified that verbal references to \"state law\" should've said"
+  },
+  {
+   "name": "Andrew Starvaski",
+   "role": "resident (8 Wintergreen Ct)",
+   "status": "present",
+   "quote": "andrew starvaski (8 wintergreen ct) said he had previously emailed the planning board members"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "resident (82 Highland St)",
+   "status": "present",
+   "quote": "dave rogers (82 highland st) asked whether the previous speakers had shared their"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "resident (11 Wintergreen Ct)",
+   "status": "present",
+   "quote": "bob pease (11 wintergreen ct) asked the board to poll its own positions on the special permit"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "of Hannigan Engineering",
+   "status": "present",
+   "quote": "bill hannigan of hannigan engineering attempted to clarify the upcoming steps"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed on conditions for 255 Sunny Hill: the standard conditions; no work on the abutter's property without written consent; changes submitted simultaneously to the Conservation Commission and Planning Board; and the pipe maintenance agreement.",
+   "quote": "the board discussed and agreed on the following conditions:"
+  },
+  {
+   "decision": "The Board agreed to choose the set of revisions for the Water Supply Protection District proposal, and discussed them.",
+   "quote": "the board agreed to choose the set of revisions for the proposal and discussed."
+  },
+  {
+   "decision": "Chair directed/allowed that the Water Supply discussion remain open for further polling of the Board's positions on the Special Permit requirement.",
+   "quote": "m. brenner leaned towards special permit but wanted to push more polling later"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Water District financial burdens of extra piping (Zone 1 proposal)",
+   "what_was_recorded": "A Water District representative said the requested change to (2)(g) would impose financial burdens from the additional piping it would require. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the financial burdens associated with the additional piping it would require."
+  },
+  {
+   "topic": "Cost of PFAS compliance for water treatment",
+   "what_was_recorded": "A resident said water treatment to meet the State's upcoming PFAS limits would be costly no matter what. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the water treatment needed to comply with the state's upcoming pfas limits would be costly no matter what"
+  },
+  {
+   "topic": "Who bears Water District construction overruns",
+   "what_was_recorded": "The Chair said overruns are addressed through rate hikes, falling on water takers; a Water District member said the Town is a substantial water taker, extending the effect to taxpayers. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "overruns are addressed through rate hikes"
+  },
+  {
+   "topic": "Extra costs of owning only Zone 1 within Keatings",
+   "what_was_recorded": "A resident said the Water District's point about extra costs from owning only the Zone 1 within Keatings was moot. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the water district's point about extra costs due to only owning the zone 1 within keatings was moot"
+  },
+  {
+   "topic": "Cost of Special Permit requirement for Water District",
+   "what_was_recorded": "A Board member expressed the expectation that Special Permits would significantly increase costs such as lag time. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "m. allison reiterated his expectation of special permits to significantly increase costs such as lag time."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brian Marchetti",
+   "stated_role": "representing applicant Stefan McSweeney",
+   "topic": "255 Sunny Hill stormwater permit hearing",
+   "quote": "brian marchetti (representing applicant stefan mcsweeney) summarized previous delays-e.g. conservation commission's request for 3rd party review"
+  },
+  {
+   "speaker": "Kenneth Patton",
+   "stated_role": "abutter",
+   "topic": "255 Sunny Hill pipe location and written consent",
+   "quote": "k. patton re-emphasized that he doesn't want any digging or work done on his property without his written permission."
+  },
+  {
+   "speaker": "Sandy Leavenworth",
+   "stated_role": "representing AlphaGraphics",
+   "topic": "3 Lancaster Ave sign special permit",
+   "quote": "sandy leavenworth (50 island rd, groton) representing alphagraphics briefly outlined the history and procedural delays"
+  },
+  {
+   "speaker": "John Fortune",
+   "stated_role": "",
+   "topic": "Water Supply Protection District requested changes",
+   "quote": "john fortune (50 hemlock dr) presented a memo outlining the following requests for 250-4.9 section"
+  },
+  {
+   "speaker": "Joan Pease",
+   "stated_role": "",
+   "topic": "Water Supply: swimming and boating",
+   "quote": "joan pease (11 wintergreen ct) opined that either swimming and boating should be allowed, or neither should be included."
+  },
+  {
+   "speaker": "Mark Bursch",
+   "stated_role": "of the Water District",
+   "topic": "Water Supply: boating and swimming",
+   "quote": "mark bursch (20 buttonwood place) of the water district agreed that boating should be left in"
+  },
+  {
+   "speaker": "Fran McNamara",
+   "stated_role": "of the Water District",
+   "topic": "Water Supply: piping costs and treatment hazards",
+   "quote": "fran mcnamara of the water district disagreed with mr. fortune's proposed changes to (2)(g) due to"
+  },
+  {
+   "speaker": "Debbie Ritchie",
+   "stated_role": "",
+   "topic": "Water Supply: state law vs state regulations",
+   "quote": "debbie ritchie (98 royal front dr) clarified that verbal references to \"state law\" should've said"
+  },
+  {
+   "speaker": "Andrew Starvaski",
+   "stated_role": "",
+   "topic": "Water Supply: Special Permit and public input",
+   "quote": "andrew starvaski (8 wintergreen ct) said he had previously emailed the planning board members"
+  },
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "",
+   "topic": "Water Supply: transparency and PFAS",
+   "quote": "dave rogers (82 highland st) asked whether the previous speakers had shared their documentation"
+  },
+  {
+   "speaker": "Bob Pease",
+   "stated_role": "",
+   "topic": "Water Supply: Board polling on Special Permit",
+   "quote": "bob pease (11 wintergreen ct) asked the board to poll its own positions on the special permit"
+  },
+  {
+   "speaker": "Bill Hannigan",
+   "stated_role": "of Hannigan Engineering",
+   "topic": "Water Supply: upcoming steps and draft bylaw",
+   "quote": "bill hannigan of hannigan engineering attempted to clarify the upcoming steps"
+  },
+  {
+   "speaker": "Logan O’Connell",
+   "stated_role": "Administrative Asst",
+   "topic": "Town file-management practices",
+   "quote": "l. o'connell mentioned seeing recurring difficulties with the town's file-management practices"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "the meeting was called to order at 6:01 p.m. matthew allison led the pledge of allegiance."
+  },
+  {
+   "topic": "255 Sunny Hill Rd Stormwater Management Permit (continued hearing)",
+   "resolution": "hearing closed; permit vote split 2-2-1; decision deferred to 2024-09-09",
+   "quote": "255 sunny hill rd - stormwater management permit (cont. from 2024-08-12)"
+  },
+  {
+   "topic": "3 Lancaster Avenue Special Permit (freestanding sign)",
+   "resolution": "hearing closed; Special Permit approved 5-0",
+   "quote": "3 lancaster avenue - special permit for village center district freestanding sign"
+  },
+  {
+   "topic": "240 Summer St Site Plan Approval and Stormwater Permit",
+   "resolution": "approved 3-0-2",
+   "quote": "240 summer st - site plan approval, stormwater management permit"
+  },
+  {
+   "topic": "Water Supply Protection District zoning amendments",
+   "resolution": "amendments recommended on July 8th included with swimming added, Water District treatment-plant amendments excluded (5-0); Special Permit question left open",
+   "quote": "m. brenner invited comment from the public and the water district."
+  },
+  {
+   "topic": "Accessory Dwelling Units (state-required changes)",
+   "resolution": "approved 5-0 to submit draft to Town Manager for Warrant and schedule Public Hearing 2024-09-23",
+   "quote": "m. brenner noted that lunenburg's by-law for adus is already permissive compared to other municipalities"
+  },
+  {
+   "topic": "Abutting community notices",
+   "resolution": "postponed",
+   "quote": "postponed. ongoing items"
+  },
+  {
+   "topic": "MBTA Zoning",
+   "resolution": "discussed; no action",
+   "quote": "g. mcleod suggested getting approval of a draft article the executive office of housing and livable"
+  },
+  {
+   "topic": "Chair / Director's report",
+   "resolution": "postponed",
+   "quote": "chair / director's report"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "postponed",
+   "quote": "committee reports postponed."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "postponed",
+   "quote": "minutes approval postponed."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; next meetings 2024-09-09 and 2024-09-23",
+   "quote": "upcoming meetings: 2024-09-09, 2024-09-23"
+  },
+  {
+   "topic": "Public comment (file management)",
+   "resolution": "no action",
+   "quote": "l. o'connell mentioned seeing recurring difficulties with the town's file-management practices"
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "no action",
+   "quote": "m. brenner commended t. willsmer and a. reid for their recent performances as chair in his absence."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 10:27 P.M.",
+   "quote": "meeting adjourned 10:27 p.m."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "stormwater permit",
+  "special permit",
+  "site plan approval",
+  "water supply protection district",
+  "accessory dwelling units",
+  "public hearing",
+  "MBTA zoning",
+  "land use",
+  "Town Meeting warrant"
+ ],
+ "dropped_unquoted_by_field": {}
 }

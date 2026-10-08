@@ -192,9 +192,13 @@ def decide(plan, hist, now, in_flight=0):
 
     # EMERGENCY: the window filling far faster than the plan, and above it.
     recent = [h for h in hist if now - h['t'] <= SLOPE_S and h['reset'] == reset]
-    if len(recent) >= 2 and recent[-1]['t'] - recent[0]['t'] >= SLOPE_S / 2 and planned_slope > 0:
+    # NOT TWITCHY. 7 October 22:28: one worker on $0.37 meetings, with the interactive session
+    # busy too, moved the bar 6 -> 10 in five minutes, and a half-window slope on whole-percent
+    # readings called that 2x the plan and stopped the run. At one worker, running ahead is the
+    # PAUSE's job; the brake is for a runaway -- a sustained slope AND well over the line.
+    if len(recent) >= 2 and recent[-1]['t'] - recent[0]['t'] >= SLOPE_S * 0.8 and planned_slope > 0:
         slope = (recent[-1]['u5'] - recent[0]['u5']) / (recent[-1]['t'] - recent[0]['t'])
-        if slope > EMERGENCY_X * planned_slope and u5 > target + BAND:
+        if slope > EMERGENCY_X * planned_slope and u5 > target + 3 * BAND:
             return dict(jobs=0, start=False, wait_reset=False, target=target,
                         stop='EMERGENCY: filling at %.1f%%/h, %.1fx the plan (%.1f%%/h), %g%% against a line at %.0f%%'
                         % (slope * 3600, slope / planned_slope, planned_slope * 3600, u5, target), note='')
@@ -258,6 +262,11 @@ def _test():
     decide(p2, [R(now - 10, 40)], now)
     d = decide(p2, [R(now + 590, 55)], now + 600)
     case('ahead of the line at one worker: pause', not d['start'] and not d['stop'])
+    p3b = Plan(session_cap=100, max_jobs=6)
+    decide(p3b, [R(now - 10, 6)], now)
+    blip = [R(now + 60, 6), R(now + 300, 10)]
+    d = decide(p3b, blip, now + 320)
+    case('6 -> 10 in five minutes at one worker: pause, NOT an emergency', not d['stop'])
     p3 = Plan(session_cap=90, max_jobs=3)
     decide(p3, [R(now - 10, 40)], now)
     spike = [R(now + 60, 40), R(now + 600, 48), R(now + 960, 60)]
@@ -294,7 +303,7 @@ def _test():
     first = p10.session_cap
     decide(p10, [dict(t=now + 5 * 3600, u5=0, u7=50, reset=reset + 5 * 3600)], now + 5 * 3600 + 5)
     case('caps 100,80: the second window aims at 80', first == 100 and p10.session_cap == 80)
-    print('%d of %d rules hold' % (13 - len(fails), 13))
+    print('%d of %d rules hold' % (14 - len(fails), 14))
     return 1 if fails else 0
 
 

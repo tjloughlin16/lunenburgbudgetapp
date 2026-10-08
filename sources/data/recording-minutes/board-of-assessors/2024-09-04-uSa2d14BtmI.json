@@ -422,5 +422,278 @@
    "at": "2026-10-07T21:48:30Z",
    "cost_usd": 0.22052300000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09042024-6733",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2024-09-04-minutes-6733.txt",
+   "path": "sources/meetings/board-of-assessors/2024-09-04-minutes-6733.pdf"
+  },
+  "official_sha256": "428e0da2e002fb900ce0d250ebdc0b9a93369a1d04d3367a32e97749ff9fc817",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on both votes (41D limits and the 41A deferral rate cut from 8% to 6%), the two invoices, and who attended. Most of the figure differences are caption garbling. The one to check is the prior-commitment motor vehicle abatements: ours reads $4,690.02 and the official minutes print $4,006.92.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 10,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: 41D adjusted income and asset limits as amended",
+    "ours": "Accept the adjusted income and asset limits for Clause 41D warrant article as amended today — passed",
+    "official": "there was a motion to accept the adjusted income and asset limits for clause 41d as amended today by sarah cammer, seconded by john rabbitt. all in favor.",
+    "note": "Same vote, same outcome in both records.",
+    "t": 5803
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: 41A deferral interest accrual 8% to 6%",
+    "ours": "Accept the 41A property tax deferral modification warrant article (interest rate accrual of 6% on deferred funds) — passed",
+    "official": "there was a motion by john rabbitt to accept the modification to 41a consistent with general law 59 section 5 mass general law subsection 5, seconded by sarah cammer. all in favor.",
+    "note": "Same vote and outcome; our 6%, 8% figures at t=2895 match the official 8% to 6% change.",
+    "t": 6012
+   },
+   {
+    "kind": "agree",
+    "about": "Real Estate Research Consultants invoice",
+    "ours": "Real Estate Research Consultants invoice (personal property listing/discovery): 10,100",
+    "official": "there was an invoice from real estate research consultations (rrc) relating to personal property totaling $10,100 that was signed.",
+    "note": "Same amount.",
+    "t": 1236
+   },
+   {
+    "kind": "agree",
+    "about": "NearMap invoice",
+    "ours": "NearMap annual license invoice: $8,100",
+    "official": "an invoice from rgis integration and nearmap oblique totaling $8,100 was signed.",
+    "note": "Same amount.",
+    "t": 1431
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Motor vehicle abatements for prior commitment",
+    "ours": "Motor vehicle excise abatements for prior commitments: $4,690 2 cents",
+    "official": "abatements for a previous commitment totaling $4,006.92 were signed.",
+    "note": "Ours reads $4,690.02 and the official says $4,006.92, which is more than a digit-grouping error; check the recording at this point and the signed abatement list.",
+    "t": 1666
+   },
+   {
+    "kind": "caption_error",
+    "about": "Overlay surplus five-year abatement total",
+    "ours": "Overlay surplus review, five-year abatement average: $38,988, 127",
+    "official": "the total from 5 years of abatements granted was $138,981.",
+    "note": "Garbled digits in the captions; the official figure appears to be the five-year total. Our own wording calls it an average, so check that too.",
+    "official_reading": "$138,981",
+    "t": 2266
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY2024 abatements and exemptions plus ATB estimate",
+    "ours": "FY2024 abatements and exemptions granted, pending appeals: $181,000 726, 20,000, $2,726",
+    "official": "4 atb cases from 2024 that were estimated to be $20,000 bringing the fy 24 total up to $201,726.",
+    "note": "The captions split $181,726, $20,000 and $201,726 into pieces.",
+    "official_reading": "$181,726, $20,000, $201,726",
+    "t": 2329
+   },
+   {
+    "kind": "agree",
+    "about": "41C 2006 limits and abatement amount",
+    "ours": "41C income and asset limits: 24,000, 30, 40,000, 55,000, 750, $1,000",
+    "official": "were adjusted to $24,000 for single persons and the asset limits were $40,000 and married couples to $30,000",
+    "note": "The $24,000, $30,000, $40,000, $55,000 and $750 figures match; the captions split $30,000. The official minutes have no $1,000.",
+    "t": 3732
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Motor vehicle excise commitment",
+    "ours": "Motor vehicle excise commitment: 525 invoices, 5,745 $122, $87,400",
+    "official": "",
+    "note": "The official minutes only say the board signed motor vehicle commitments, with no count or amount.",
+    "t": 1576
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Overlay surplus estimate",
+    "ours": "Overlay surplus estimate: 379,000, 221,000, 158,000",
+    "official": "",
+    "note": "The official minutes carry no overlay surplus estimate figures.",
+    "t": 2478
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior work-off cap",
+    "ours": "Senior tax work-off program cap: 1500, 2000",
+    "official": "",
+    "note": "The official minutes do not mention the work-off cap.",
+    "t": 2751
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "State reimbursement for 41C exemptions",
+    "ours": "State reimbursement for 41C exemptions: $52, $250, 500",
+    "official": "",
+    "note": "The official minutes do not give the state reimbursement figures.",
+    "t": 5173
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Clause 17D figures",
+    "ours": "Clause 17D exemption and asset limit: 66,000, 332, $180, $185",
+    "official": "",
+    "note": "The official minutes mention 17D only as a possible exemption, with no figures.",
+    "t": 6117
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Motor vehicle abatements batch",
+    "ours": "",
+    "official": "a batch of roughly $10,000 motor vehicle abatements were received.",
+    "note": "Our minutes have no matching figure.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Current DLS 41C limits",
+    "ours": "",
+    "official": "the dls database states 41c income limit is $31,500 for single person and $39,600 for assets.",
+    "note": "Our minutes do not list the current DLS single-person limits.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "41C married limits",
+    "ours": "",
+    "official": "under 41c for married is $52,700 and their assets cannot exceed $72,700.",
+    "note": "Our minutes do not list the married limits.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Letter to town manager on excise file conflict of interest",
+    "ours": "Board will consider putting a draft letter to the town manager on the conflict of interest in assessing handling the motor vehicle billing file on a later agenda, after the member reviews what the Department of Revenue contact said.",
+    "official": "the board suggests drafting a letter for the next meeting to discuss further the conflict of interest.",
+    "note": "Ours is conditional ('will consider', on a later agenda, after a DOR review); the official says to draft a letter for the next meeting. Check the recording for which was decided.",
+    "t": 886
+   },
+   {
+    "kind": "agree",
+    "about": "Ask town counsel about asset amount and COLA",
+    "ours": "Board will ask town counsel, via the town manager, whether it can set an asset level for Clause 17D and then add cost-of-living adjustment under 17E/17F.",
+    "official": "check with town counsel to see if an amount for assets and income can be set and have cola added for 41d and for 17d, e and f.",
+    "note": "Same decision; the official also lists 41D and income amounts.",
+    "t": 7210
+   },
+   {
+    "kind": "agree",
+    "about": "Assessors' web page quick links",
+    "ours": "The member responsible will revise the assessors' web landing page to put quick links (motor vehicle, abatement, maps) up front.",
+    "official": "board agreed that under the first tab, directly under agendas&minutes, the",
+    "note": "Same decision. The official quote is cut off, but its tab list names motor vehicle abatement, tax abatement forms and maps.",
+    "t": 8706
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Excise check issue moved from public comment",
+    "ours": "The excise check/billing-file responsibility issue was moved from public comment to the principal assessor's report for discussion.",
+    "official": "",
+    "note": "The official minutes list public comment as none and do not record this move.",
+    "t": 292
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Rules for tax files and 17 article on Sept 18 agenda",
+    "ours": "Rules for tax files and the Clause 17 article to be placed on the September 18 agenda; the member will email the town manager.",
+    "official": "",
+    "note": "The official minutes do not record this agenda placement.",
+    "t": 1091
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Overlay review informational; work-off liability reporting",
+    "ours": "Overlay surplus review is informational only; the senior work-off liability is to be reported once applications close, with the item repeated later in the fall.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3355
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting September 18",
+    "ours": "Next meeting set for September 18.",
+    "official": "",
+    "note": "The official minutes give no next-meeting date.",
+    "t": 8747
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Assignments for 41D edits and 17D work",
+    "ours": "",
+    "official": "sarah cammer will type the edits and send to lynda mcquade for submission to the november town warrant.",
+    "note": "Our minutes do not name who types the 41D edits or the November warrant submission.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes approval skipped; calendar postponed",
+    "ours": "",
+    "official": "sarah cammer suggests skipping over the approval of minutes from august 19th",
+    "note": "Our minutes do not record the skipped approval of the August 19 minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair name",
+    "ours": "Sarah camera (vice chair (stepping in for the absent chair))",
+    "official": "present members: vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade",
+    "note": "Misheard name; she is also the vice chair in the official record.",
+    "official_reading": "Sarah Cammer",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name John",
+    "ours": "John rabit (member)",
+    "official": "present members: vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade",
+    "note": "Misheard spelling; the official minutes list him as clerk.",
+    "official_reading": "John Rabbitt",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Linda",
+    "ours": "Linda mcade (member)",
+    "official": "present members: vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade",
+    "note": "Misheard name; the official minutes list her as principal assessor, and ours also has an unnamed principal assessor.",
+    "official_reading": "Lynda McQuade",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent chair and consultant",
+    "ours": "",
+    "official": "absent members: chair brian laffond, assessing consultant rena swezey",
+    "note": "Our minutes say only that the chair was absent, without names, and do not mention the consultant.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Denise McHugh, new data collector",
+    "ours": "Denise McHugh (data collector (mentioned, new staff))",
+    "official": "",
+    "note": "Not listed in the official minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T02:24:19Z",
+   "cost_usd": 0.271133
+  }
  }
 }
