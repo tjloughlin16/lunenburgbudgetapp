@@ -16,6 +16,10 @@ import {
   TownBudgetsTrends, TownBudgetsTotal, TownBudgetsTown,
 } from './TownBudgetsCharts'
 import { DepartmentBudgetsIndex, DepartmentBudgetsPull } from './DepartmentBudgetsCharts'
+import { SchoolSurplusWaterfall } from './SchoolSurplusCharts'
+import {
+  SpecialEducationCostsSurprise, SpecialEducationCostsTrend,
+} from './SpecialEducationCostsCharts'
 import {
   TownsLikeUsMap, TownsLikeUsDrivers, TownsLikeUsFunding, TownsLikeUsPositions,
   TownsLikeUsHeat,
@@ -66,6 +70,10 @@ const has = (...keys: string[]) => (d: Record<string, unknown>) =>
 export const ANALYSIS_CHARTS: Record<string, Entry> = {
   'department-budgets-index': { render: DepartmentBudgetsIndex, needs: has('index_series','index_keys') },
   'department-budgets-pull': { render: DepartmentBudgetsPull, needs: has('groups') },
+  'fy25-school-surplus-waterfall': { render: SchoolSurplusWaterfall, needs: has('waterfall') },
+  'fy26-school-surplus-waterfall': { render: SchoolSurplusWaterfall, needs: has('waterfall') },
+  'special-education-costs-surprise': { render: SpecialEducationCostsSurprise, needs: has('surprise','surprise_keys') },
+  'special-education-costs-trend': { render: SpecialEducationCostsTrend, needs: has('trend') },
   'towns-like-us-map': { render: TownsLikeUsMap, needs: has('map','local','twins') },
   'towns-like-us-drivers': { render: TownsLikeUsDrivers, needs: has('correlations') },
   'towns-like-us-funding': { render: TownsLikeUsFunding, needs: has('funding') },

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-02-26",
  "docid": "6432",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Continue the public hearing for 255 Sunnyhill to March 11th",
+   "motion": "Continue the 255 Sunnyhill public hearing to the March 11th Planning Board meeting.",
    "moved_by": "M Allison",
    "seconded_by": "A. Reid",
    "outcome": "not stated",
-   "procedural": true,
-   "quote": "m allison made motion to continue to march 11th. a. reid seconded."
+   "procedural": false,
+   "quote": "m allison made motion to continue to march 11th. a. reid seconded. 7:25pm"
   },
   {
-   "motion": "Withhold the certificate of completion for 147 & 159 Holman until GEI review comments are resolved",
+   "motion": "Not yet release the certificate of completion for 147 & 159 Holman until comments from the GEI review are resolved.",
    "moved_by": "M. Allison",
    "seconded_by": "T. Willsmer",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "m. allison moved to not yet release certificate of completion until comments from gei review are resolved. t. willsmer seconded."
   },
   {
-   "motion": "Withhold the performance guarantee for 147 & 159 Holman until GEI review comments are resolved",
+   "motion": "Not release the performance guarantee for 147 & 159 Holman until comments are resolved.",
    "moved_by": "M. Allison",
    "seconded_by": "T. Willsmer",
    "outcome": "not stated",
@@ -37,6 +37,223 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three motions recorded with seconds, but outcomes (pass/fail votes) not explicitly stated in the minutes.",
- "cost_usd": 0.09470210000000001
+ "note": "Text extract of a typed minutes document, not a scan. Three motions are recorded (continuance of 255 Sunnyhill, and two motions on 147 & 159 Holman) but none has a recorded result, vote count or vote tally, so all three are marked 'not stated'. No motion or vote is recorded for opening or closing the hearing, the adjournment at 9:05PM, or approval of prior minutes. Richard Harris's attendance is not listed in the attendance block; his status is marked 'not stated' because he is named as giving input. Annie M. Aubrey appears only in the letterhead and is not recorded as taking part, so she is omitted.",
+ "cost_usd": 0.0044334000000000005,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew brenner, matthew allison, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew brenner, matthew allison, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew brenner, matthew allison, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, matthew allison, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Interim Land Use Director",
+   "status": "not stated",
+   "quote": "per richard harris, to issue performance guarantee to ensure the work is completed"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "of Dillis and Roy, representing Tim Battles",
+   "status": "present",
+   "quote": "greg roy of dillis and roy representing tim battles."
+  },
+  {
+   "name": "Tim Battles",
+   "role": "applicant (represented by Greg Roy); role not stated in minutes",
+   "status": "present",
+   "quote": "tim battles explained he has a contractor - for both lots it is to be $49,000."
+  },
+  {
+   "name": "John Plefka",
+   "role": "McCarty Engineering",
+   "status": "present",
+   "quote": "mccarty engineering - john plefka. scheduled site walk with conservation commission this wednesday."
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "public comment, 82 Highland Street",
+   "status": "present",
+   "quote": "dave rogers - 82 highland street - public comment - this is the 3rd or 4th continuation for this project."
+  },
+  {
+   "name": "Ken Matson",
+   "role": "public comment, Leominster Rd.",
+   "status": "present",
+   "quote": "ken matson - public comment - leominster rd. driveway is at an elevation 2ft below his driveway."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Richard Harris to provide a draft of the battery energy systems bylaw by the following Monday.",
+   "quote": "by next monday richard harris will provide a draft of the battery energy systems bylaw."
+  },
+  {
+   "decision": "Planning Board to discuss bylaw drafts at the March 11th meeting, before the public hearing on warrant articles.",
+   "quote": "the planning board will have discussion about drafts at the next planning meeting march 11th prior to public hearing for warrant articles."
+  },
+  {
+   "decision": "A possible joint meeting of the Green Committee and the Planning Board on March 6th to discuss the solar bylaw.",
+   "quote": "the green committee will have a possible joint meeting on march 6th with the planning meeting to discuss solar bylaw."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Performance guarantee for 317-321 Sunnyhill stormwater work",
+   "what_was_recorded": "Tim Battles reported that the contractor's cost for both lots is $49,000, in connection with the performance guarantee request.",
+   "figures_as_printed": [
+    "$49,000"
+   ],
+   "quote": "tim battles explained he has a contractor - for both lots it is to be $49,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "ROFR process",
+   "speaker": "Greg Roy",
+   "stated_role": "public comment",
+   "quote": "greg roy - public comment - asked about rofr process. m. allison responded in starting the process with the town"
+  },
+  {
+   "topic": "255 Sunnyhill continuance and wetlands",
+   "speaker": "Dave Rogers",
+   "stated_role": "public comment, 82 Highland Street",
+   "quote": "dave rogers - 82 highland street - public comment - this is the 3rd or 4th continuation for this project."
+  },
+  {
+   "topic": "255 Sunnyhill driveway elevation and runoff",
+   "speaker": "Ken Matson",
+   "stated_role": "public comment, Leominster Rd.",
+   "quote": "ken matson - public comment - leominster rd. driveway is at an elevation 2ft below his driveway."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: ROFR process",
+   "resolution": "no action; Allison said the process is starting with the town and Open Space Committee",
+   "quote": "greg roy - public comment - asked about rofr process. m. allison responded in starting the process with the town",
+   "tags": [
+    "ROFR",
+    "open space"
+   ]
+  },
+  {
+   "topic": "317-321 Sunnyhill stormwater permit public hearing",
+   "resolution": "hearing closed 6:47PM; temporary certificate of occupancy requested; no vote recorded",
+   "quote": "317-321 sunnyhill - stormwater permit- public hearing 6:10pm",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "certificate of occupancy",
+    "Sunnyhill"
+   ]
+  },
+  {
+   "topic": "255 Sunnyhill continued public hearing",
+   "resolution": "continued to March 11th on motion; outcome not stated",
+   "quote": "continuance is being requested until the next planning board meeting march 11th.",
+   "tags": [
+    "public hearing",
+    "wetlands",
+    "continuance",
+    "Sunnyhill"
+   ]
+  },
+  {
+   "topic": "Certificate of completion, 147 & 159 Holman",
+   "resolution": "motions not to release certificate or performance guarantee until GEI comments resolved; outcome not stated",
+   "quote": "m. allison moved to not yet release certificate of completion until comments from gei review are resolved.",
+   "tags": [
+    "certificate of completion",
+    "performance guarantee",
+    "stormwater",
+    "Holman"
+   ]
+  },
+  {
+   "topic": "Board discussions: solar and battery storage bylaw",
+   "resolution": "discussed; draft battery bylaw to be provided; joint meeting with Green Committee possible March 6th",
+   "quote": "by next monday richard harris will provide a draft of the battery energy systems bylaw.",
+   "tags": [
+    "solar bylaw",
+    "battery storage",
+    "zoning bylaw",
+    "Green Committee"
+   ]
+  },
+  {
+   "topic": "Board discussions: scenic roads and water supply protection district",
+   "resolution": "discussed; no action recorded",
+   "quote": "water supply protection district - mr. harris submitted a line-by-line comparison of the water supply protection district for the board to review.",
+   "tags": [
+    "scenic roads",
+    "water supply protection district",
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; Stormwater Task Force and MRPC discussed; most committees no report",
+   "quote": "stormwater task force - met with cei - topic was making stormwater management fund.",
+   "tags": [
+    "committee reports",
+    "stormwater",
+    "MRPC",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and adjournment",
+   "resolution": "next meetings March 11th and March 25th; adjourned 9:05PM with no motion recorded",
+   "quote": "meeting schedule: march 11th, march 25th",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "stormwater",
+  "public hearing",
+  "certificate of occupancy",
+  "certificate of completion",
+  "performance guarantee",
+  "solar bylaw",
+  "battery storage",
+  "water supply protection district",
+  "scenic roads",
+  "Sunnyhill",
+  "Holman",
+  "ROFR",
+  "open space",
+  "zoning"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -102,6 +102,10 @@ CHECKS = [
     ('build_stabilization_option.py', ['--check']),
     ('build_stabilization_option_charts.py', ['--check']),
     ('build_stabilization_charts.py', ['--check']),
+    # The school surplus by year, from the period-13 ledger -- both reports, one generator,
+    # and every figure recomputed by the verifier's different route.
+    ('build_school_surplus.py', ['--all', '--check']),
+    ('verify_school_surplus.py', ['--all']),
     ('build_reports_index.py', ['--check']),
     # How long every page is, measured from the build. It changes whenever a page does,
     # which is the point: a page that grew past the table's top row grew on the record.

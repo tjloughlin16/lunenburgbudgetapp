@@ -1,0 +1,545 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2024-02-26",
+ "video_id": "ZhOp4r6EeOI",
+ "video_url": "https://www.youtube.com/watch?v=ZhOp4r6EeOI",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2024-02-26-ZhOp4r6EeOI.json",
+  "sha256": "5c236e5fd0b4b105fd8ea4195222e5b6c278a271c3a99c3a25c68c554ef6d02e",
+  "caption_lines": 515,
+  "segments": 3874
+ },
+ "recording": {
+  "duration_s": 10896,
+  "duration": "3:01",
+  "spoken_chars": 131850,
+  "words_approx": 21975
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02262024-6432",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2024-02-26-agenda-6432.txt",
+   "path": "sources/meetings/planning-board/2024-02-26-agenda-6432.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02262024-6432",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2024-02-26-minutes-6432.txt",
+   "path": "sources/meetings/planning-board/2024-02-26-minutes-6432.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T14:10:55Z",
+  "cost_usd": 0.5462312
+ },
+ "minutes": {
+  "headline": "Planning Board approved the Sunny Hill storm water permit but declined to release the Holman completion certificates and bonds.",
+  "summary": "The board took public comment on an open space donation and on restoring the Pledge of Allegiance, then handled three storm water matters. It approved the 317-321 Sunny Hill permit with standard conditions, continued the 255 Sunny Hill hearing to March 11, and declined to issue completion certificates or release performance guarantees for 147 and 159 Holman. Discussion covered the draft battery energy storage bylaw, the water supply protection district rewrite and hearing timing, and committee reports.",
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr Allison",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Wilmer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Miss Reed",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Harris",
+    "role": "land use director"
+   },
+   {
+    "name_as_heard": "Miss Gilchrist",
+    "role": "staff filling in at the planning office"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 103,
+    "topic": "Asked how someone would offer an open space land donation; told the select board is the likely first contact.",
+    "speaker_as_heard": "Greg Roy"
+   },
+   {
+    "t": 207,
+    "topic": "Asked why the board no longer opens with the Pledge of Allegiance and asked the chair to restore it.",
+    "speaker_as_heard": "Dave Rogers"
+   },
+   {
+    "t": 3463,
+    "topic": "Opposed the 255 Sunny Hill project because the site is very wet; commented on repeated continuances.",
+    "speaker_as_heard": "Dave Rogers"
+   },
+   {
+    "t": 4112,
+    "topic": "Abutter asked for assurance the driveway will be built two feet below his driveway, and said town sewer drawings show wetlands differently from the plan.",
+    "speaker_as_heard": "Ken Patton"
+   },
+   {
+    "t": 4936,
+    "topic": "Site owner clarified the Wednesday site walk is at 10:00 a.m. with the conservation agent.",
+    "speaker_as_heard": "Stephan mcweeny"
+   }
+  ],
+  "tags": [
+   "legal",
+   "msba",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "town-departments",
+   "town-meeting",
+   "turkey-hill",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 2853,
+    "motion": "Close the public hearing for the storm water permit at 317-321 Sunny Hill.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3230,
+    "motion": "Approve the 317-321 Sunny Hill storm water permit with standard conditions and the previously set residential construction hours.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5082,
+    "motion": "Continue the 255 Sunny Hill Road storm water hearing to 6:05 p.m. on March 11.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5524,
+    "motion": "Do not issue certificates of completion for 147 and 159 Holman based on the Graves engineering report.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5942,
+    "motion": "Do not yet release the performance guarantee for 147 and 159 Holman.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 10851,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1706,
+    "topic": "Cost of storm water improvements at Sunny Hill",
+    "what_was_said": "The applicant gave the cost of the storm water work for both lots and the board discussed performance guarantees against it.",
+    "figures_as_heard": [
+     "$49,000"
+    ]
+   },
+   {
+    "t": 5795,
+    "topic": "Performance guarantees for Holman Street",
+    "what_was_said": "Board members discussed the amount held for the two Holman houses and the cost of fixing the stone trench.",
+    "figures_as_heard": [
+     "16,000",
+     "8,000 per",
+     "$88,000",
+     "$4,000 each"
+    ]
+   },
+   {
+    "t": 9983,
+    "topic": "Storm water enterprise fund",
+    "what_was_said": "The storm water task force is working on what goes into an enterprise fund, with public outreach expected before a vote.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 10405,
+    "topic": "State funding shortfalls",
+    "what_was_said": "A member recounted select board discussion of expected state funds that did not arrive.",
+    "figures_as_heard": [
+     "a couple $100,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2708,
+    "decision": "The board agreed not to address the temporary certificate of occupancy now; standard completion-before-CO condition applies, and the applicant may return later to request a partial performance guarantee."
+   },
+   {
+    "t": 8554,
+    "decision": "Staff to advertise the water supply protection district rewrite and battery storage bylaw for a March 25 hearing, with further discussion March 11."
+   },
+   {
+    "t": 8973,
+    "decision": "Board members to confirm attendance at the March 6 Green Communities solar meeting so it can be posted by Monday."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 103,
+    "t_end": 207,
+    "topic": "Public comment: open space donation process",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 207,
+    "t_end": 737,
+    "topic": "Public comment: Pledge of Allegiance",
+    "resolution": "chair declined to restore it; Mr Rogers led the pledge himself",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 783,
+    "t_end": 3336,
+    "topic": "Public hearing: storm water permit, 317-321 Sunny Hill",
+    "resolution": "approved with standard conditions",
+    "tags": [
+     "planning-and-zoning",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3336,
+    "t_end": 5103,
+    "topic": "Public hearing: storm water permit, 255 Sunny Hill",
+    "resolution": "continued to March 11",
+    "tags": [
+     "planning-and-zoning",
+     "public-comment",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 5103,
+    "t_end": 6009,
+    "topic": "Certificates of completion and performance guarantee, 147 and 159 Holman",
+    "resolution": "voted not to issue or release",
+    "tags": [
+     "planning-and-zoning",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 6009,
+    "t_end": 8030,
+    "topic": "Draft battery energy storage bylaw and solar",
+    "resolution": "informational; draft due next week",
+    "tags": [
+     "planning-and-zoning",
+     "warrant-article",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 8030,
+    "t_end": 8890,
+    "topic": "Water supply protection district rewrite and hearing timing",
+    "resolution": "hearing planned March 25; discussion March 11",
+    "tags": [
+     "planning-and-zoning",
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 8890,
+    "t_end": 9327,
+    "topic": "Green Communities meeting and minutes backlog",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 9327,
+    "t_end": 10216,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "turkey-hill",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 10216,
+    "t_end": 10872,
+    "topic": "Board comments and call for candidates",
+    "resolution": "informational",
+    "tags": [
+     "elections",
+     "town-departments"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote counts were not stated for any motion; outcomes are inferred only from calls of all in favor with no opposition heard.",
+   "Some stretches on performance guarantee mechanics near 2213-2246 are garbled.",
+   "The mid-recording stretch near 3647-3670 is garbled."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board voted to approve the 317-321 Sunny Hill storm water permit with standard conditions and the previously set residential construction hours.",
+    "t": 3230
+   },
+   {
+    "line": "The board voted not to issue completion certificates for 147 and 159 Holman, and then not to release the performance guarantee for the two houses.",
+    "t": 5524
+   },
+   {
+    "line": "The board continued the 255 Sunny Hill Road storm water hearing to 6:05 p.m. on March 11, after an abutter and another speaker raised drainage and wetland concerns.",
+    "t": 5082
+   },
+   {
+    "line": "Staff will advertise the water supply protection district rewrite and the battery storage bylaw for a March 25 hearing, with further discussion on March 11.",
+    "t": 8554
+   },
+   {
+    "line": "The board heard that the storm water task force is working on an enterprise fund, with public outreach expected before any vote.",
+    "t": 9983
+   }
+  ],
+  "why_it_matters": [
+   "Holding the Holman guarantee means the town keeps the money that secures the stone trench fix until the work is accepted, which protects the town rather than the developer.",
+   "The storm water enterprise fund, if it reaches a vote, would change how storm water work is paid for, and residents would be asked to vote on it after outreach.",
+   "The battery storage and water supply protection district bylaws are headed to a March 25 hearing, where residents can comment on land-use rules."
+  ],
+  "watch_next": [
+   "March 11: the continued 255 Sunny Hill Road storm water hearing, at 6:05 p.m., and further discussion of the bylaws.",
+   "March 25: the planned public hearing on the water supply protection district rewrite and the battery storage bylaw."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T14:11:21Z",
+   "cost_usd": 0.219631
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02262024-6432",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2024-02-26-minutes-6432.txt",
+   "path": "sources/meetings/planning-board/2024-02-26-minutes-6432.pdf"
+  },
+  "official_sha256": "33d2a02a2fdaa5c480816b8ce635dbe3ee47ff15fd5e38849022d6890adc7077",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the 255 Sunny Hill continuance to March 11, the not-yet-release votes for 147 and 159 Holman, and the $49,000 figure. Our minutes record two 317-321 Sunny Hill storm water votes (close the hearing, approve the permit) that the official minutes never mention. A person should check those two against the recording or the board's decision record.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to close the 317-321 Sunny Hill storm water hearing",
+    "t": 2853,
+    "ours": "Close the public hearing for the storm water permit at 317-321 Sunny Hill. — passed",
+    "official": "",
+    "note": "Our minutes record a vote to close this hearing and the official minutes contain no such vote; check the recording at this time and the board's decision record for 317-321 Sunny Hill."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to approve the 317-321 Sunny Hill storm water permit",
+    "t": 3230,
+    "ours": "Approve the 317-321 Sunny Hill storm water permit with standard conditions and the previously set residential construction hours. — passed",
+    "official": "",
+    "note": "Our minutes record a permit approval vote that the official minutes do not mention at all (they discuss only the performance guarantee for this site); verify whether the vote happened and why the official minutes omit it."
+   },
+   {
+    "kind": "agree",
+    "about": "Continue 255 Sunny Hill storm water hearing to March 11",
+    "t": 5082,
+    "ours": "Continue the 255 Sunny Hill Road storm water hearing to 6:05 p.m. on March 11. — passed",
+    "official": "m allison made motion to continue to march 11th. a. reid seconded. 7:25pm",
+    "note": "Both record a continuance to March 11; the official minutes give no time slot for March 11 and no tally, and 7:25pm is the time of the motion."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Certificates of completion for 147 and 159 Holman: engineering reviewer",
+    "t": 5524,
+    "ours": "Do not issue certificates of completion for 147 and 159 Holman based on the Graves engineering report. — passed",
+    "official": "m. allison moved to not yet release certificate of completion until comments from gei review are resolved. t. willsmer seconded.",
+    "official_reading": "GEI",
+    "note": "Same motion not to release the certificates; the reviewer is probably GEI, misheard as 'Graves' (an inference). The official minutes add the condition 'until comments are resolved'."
+   },
+   {
+    "kind": "agree",
+    "about": "Do not release performance guarantee for 147 and 159 Holman",
+    "t": 5942,
+    "ours": "Do not yet release the performance guarantee for 147 and 159 Holman. — passed",
+    "official": "m. allison made motion to not release performance guarantee until comments are resolved. t. willsmer seconded.",
+    "note": "Same motion in both; the official minutes add the 'until comments are resolved' condition and do not state an outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "$49,000 storm water cost at Sunny Hill",
+    "t": 1706,
+    "ours": "Cost of storm water improvements at Sunny Hill: $49,000",
+    "official": "tim battles explained he has a contractor - for both lots it is to be $49,000.",
+    "note": "Same figure; the official minutes tie it to the contractor's cost for both lots in connection with the performance guarantee."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Holman Street performance guarantee amounts",
+    "t": 5795,
+    "ours": "Performance guarantees for Holman Street: 16,000, 8,000 per, $88,000, $4,000 each",
+    "official": "",
+    "note": "The official minutes print no Holman guarantee amounts; our figures are garbled captions and should be checked against the recording before use."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "State funding shortfalls remark",
+    "t": 10405,
+    "ours": "State funding shortfalls: a couple $100,000",
+    "official": "",
+    "note": "A passing remark about state funding that does not appear in the official minutes; the figure is loosely heard."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Temporary certificate of occupancy decision",
+    "t": 2708,
+    "ours": "The board agreed not to address the temporary certificate of occupancy now; standard completion-before-CO condition applies, and the applicant may return later to request a partial performance guarantee.",
+    "official": "",
+    "note": "The official minutes do not mention the certificate of occupancy discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Advertising the water supply protection district rewrite and battery storage bylaw for a March 25 hearing",
+    "t": 8554,
+    "ours": "Staff to advertise the water supply protection district rewrite and battery storage bylaw for a March 25 hearing, with further discussion March 11.",
+    "official": "",
+    "note": "The official minutes do not mention the March 25 hearing or the advertising; they cover only the March 11 discussion of drafts, which both records share."
+   },
+   {
+    "kind": "agree",
+    "about": "March 6 Green Committee solar meeting",
+    "t": 8973,
+    "ours": "Board members to confirm attendance at the March 6 Green Communities solar meeting so it can be posted by Monday.",
+    "official": "the green committee will have a possible joint meeting on march 6th with the planning meeting to discuss solar bylaw.",
+    "note": "Both describe a March 6 solar meeting with the Planning Board; the committee is named Green Communities in ours and Green Committee in the official minutes, and the posting deadline appears only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Draft battery energy systems bylaw due from Richard Harris",
+    "ours": "",
+    "official": "by next monday richard harris will provide a draft of the battery energy systems bylaw.",
+    "note": "Our minutes do not record this assignment, though they mention a Monday deadline for posting the solar meeting."
+   },
+   {
+    "kind": "agree",
+    "about": "March 11 discussion of bylaw drafts",
+    "ours": "with further discussion March 11.",
+    "official": "the planning board will have discussion about drafts at the next planning meeting march 11th prior to public hearing for warrant articles.",
+    "note": "Both place bylaw draft discussion on March 11."
+   },
+   {
+    "kind": "agree",
+    "about": "Chair attendance",
+    "ours": "the chair (chair)",
+    "official": "matthew brenner, matthew allison, amanda reid, timothy willsmer",
+    "note": "Our 'the chair' is Matthew Brenner, the Chair named in the official minutes (the match is inferred, not stated)."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Mr Allison",
+    "ours": "Mr Allison (member)",
+    "official": "matthew brenner, matthew allison, amanda reid, timothy willsmer",
+    "note": "Matthew Allison is present in both; the official minutes list him as Vice Chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mr Wilmer",
+    "ours": "Mr Wilmer (member)",
+    "official": "matthew brenner, matthew allison, amanda reid, timothy willsmer",
+    "official_reading": "Timothy Willsmer",
+    "note": "Misheard surname for the member who seconds the motions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Miss Reed",
+    "ours": "Miss Reed (member)",
+    "official": "matthew brenner, matthew allison, amanda reid, timothy willsmer",
+    "official_reading": "Amanda Reid",
+    "note": "Misspelled surname; the official minutes list her as Clerk."
+   },
+   {
+    "kind": "agree",
+    "about": "Mr Harris, land use director",
+    "ours": "Mr Harris (land use director)",
+    "official": "per richard harris, to issue performance guarantee to ensure the work is completed",
+    "note": "Richard Harris appears in both, listed as Interim Land Use Director in the official record."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Miss Gilchrist, staff filling in at the planning office",
+    "ours": "Miss Gilchrist (staff filling in at the planning office)",
+    "official": "",
+    "note": "The official minutes do not list this person."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Erik Torgersen",
+    "ours": "",
+    "official": "absent: erik torgersen",
+    "note": "Our minutes do not list absences."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicant, engineers and public commenters",
+    "ours": "",
+    "official": "greg roy of dillis and roy representing tim battles.",
+    "note": "Our minutes list no applicant, engineers or public commenters; the official minutes name Greg Roy, Tim Battles, John Plefka, Dave Rogers and Ken Matson."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment (ROFR process, 255 Sunnyhill continuance and driveway runoff)",
+    "ours": "",
+    "official": "ken matson - public comment - leominster rd. driveway is at an elevation 2ft below his driveway.",
+    "note": "Our minutes have no public comment section; the official minutes record comments from Greg Roy, Dave Rogers and Ken Matson."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T14:12:39Z",
+   "cost_usd": 0.3214114
+  }
+ }
+}

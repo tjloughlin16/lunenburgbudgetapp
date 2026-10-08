@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-02-27",
  "docid": "6434",
@@ -12,65 +12,427 @@
  },
  "votes": [
   {
-   "motion": "To accept the minutes of the 1/30/24 meeting",
+   "motion": "Accept the minutes of the 1/30/24 meeting.",
    "moved_by": "Mike N.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike n. second: brett r. to accept the minutes of the 1/30/24 meeting. roll call vote: mike m.-aye, mike n.-aye, brett-aye, and john-aye."
+   "quote": "to accept the minutes of the 1/30/24 meeting. roll call vote: mike m.-aye, mike n.-aye, brett-aye, and john-aye."
   },
   {
-   "motion": "To accept the minutes of the 2/13/24 workshop meeting",
+   "motion": "Accept the minutes of the 2/13/24 meeting.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike M.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: brett r. second: mike m. to accept the minutes of the 2/13/24 meeting. roll call vote: mike m.-aye, brett-aye, mike n.-aye, and john-aye."
+   "quote": "to accept the minutes of the 2/13/24 meeting. roll call vote: mike m.-aye, brett-aye, mike n.-aye, and john-aye."
   },
   {
-   "motion": "To adopt the warrant articles as written",
+   "motion": "Adopt the warrant articles for Town Meeting as written (sewer enterprise operating sum; $35,000 to the Sewer Capital Reserve Stabilization Fund; $1,500 to the OPEB Sewer Trust Fund).",
    "moved_by": "Mike M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike m. second: mike n. to adopt the warrant articles as written. roll call vote: mike m.-aye, brett-aye, mike n.-aye, and john-aye."
+   "quote": "to adopt the warrant articles as written. roll call vote: mike m.-aye, brett-aye, mike n.-aye, and john-aye."
   },
   {
-   "motion": "To move $200K into Capital",
+   "motion": "Move $200K into Capital (later reconsidered and superseded by the $250K motion).",
    "moved_by": "Mike M.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike m. second: brett r. to move $200k into capital. discussion: paula asked if the commission wanted to",
-   "quote_taken_from_text": true
+   "quote": "to move $200k into capital."
   },
   {
-   "motion": "To reconsider the vote of moving $200K to Capital",
+   "motion": "Reconsider the vote of moving $200K to Capital.",
    "moved_by": "Mike M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: mike m. second: mike n. to reconsider the vote of moving $200k to capital. roll call vote: mike n.-aye, mike m.-aye, brett-aye, dave-aye, and john-aye."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to reconsider the vote of moving $200k to capital. roll call vote: mike n.-aye, mike m.-aye, brett-aye, dave-aye, and john-aye."
   },
   {
-   "motion": "To increase the money to Capital to $250K to support the pump stations' needs",
+   "motion": "Increase the money to Capital to $250K to support the pump stations' needs, taken from Retained Earnings.",
    "moved_by": "Dave M.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: dave m. second: brett r. to increase the money to capital to $250k to support the pump stations' needs. (john lost signal and brett took over the meeting) roll call vote",
-   "quote_taken_from_text": true
+   "quote": "to increase the money to capital to $250k to support the pump stations' needs."
   },
   {
-   "motion": "To adjourn at 7:18pm",
+   "motion": "Adjourn the meeting at 7:18pm.",
    "moved_by": "Dave",
    "seconded_by": "Mike M.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: dave second: mike m. to adjourn at 7:18pm. roll call vote: mike m.-aye, mike n.-aye, brett-aye, dave-aye, and john-aye."
+   "quote": "to adjourn at 7:18pm. roll call vote: mike m.-aye, mike n.-aye, brett-aye, dave-aye, and john-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in these minutes were passed unanimously. Note that the $200K capital motion shows only three votes recorded (Mike N., Mike M., and Brett) though others were present; the vote to reconsider brought all five members' votes on record.",
- "cost_usd": 0.1353081
+ "note": "Machine-extracted text, not a scan; all pages present (PAGE 1-3). Every member and staff participant is marked \"remote\" because the header says the meeting was via Zoom. Robert Lilley's and Scott's attendance is not stated (they are described as having met or reported, not as present). Roll calls on the $200K and $250K motions list four or five members, and Brett was not listed on the $250K roll because he was chairing after John lost signal; no count is printed, so outcomes are \"passed\". The $200K vote was later reconsidered and superseded by the $250K motion. Warrant article votes and transfers are recorded as adopted for Town Meeting, not as appropriations.",
+ "cost_usd": 0.021736270000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, members: dave macdonald and mike mackin"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, members: dave macdonald and mike mackin"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, members: dave macdonald and mike mackin"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "remote",
+   "quote": "(dave m. joined the meeting)."
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "remote",
+   "quote": "members: dave macdonald and mike mackin"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "remote",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "remote",
+   "quote": "director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Robert Lilley",
+   "role": "CTE",
+   "status": "not stated",
+   "quote": "paula and bill met with scott (pride environmental) and robert lilley (cte) at the mass 1 station."
+  },
+  {
+   "name": "Scott",
+   "role": "Pride Environmental",
+   "status": "not stated",
+   "quote": "paula and bill met with scott (pride environmental) and robert lilley (cte) at the mass 1 station."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Hold the public hearing on Appendix G, Sewer Connection Charge Policy, on 3/26/24.",
+   "quote": "the commission discussed a date and agreed to holding the hearing on 3/26/24."
+  },
+  {
+   "decision": "Agreed the current 16% rate increase is a solid number, with the rate to be looked at again next year.",
+   "quote": "the commission discussed the rate increase and agreed it was a solid number, but they will need to look at the rate again next year."
+  },
+  {
+   "decision": "Capital money to be taken only from Retained Earnings, not from the Capital Reserve Stabilization Fund.",
+   "quote": "the commission discussed and agreed to take only from retained earnings."
+  },
+  {
+   "decision": "Paula and Bill to speak with the Town Manager about the insurance question.",
+   "quote": "paula said she and bill will talk to the town manager."
+  },
+  {
+   "decision": "CTE and Pride Environmental repair figures expected for the 3/12 meeting.",
+   "quote": "paula noted that cte and pride environmental are working on figures and she should have them for the 3/12 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Mass 1 pump station emergency repair cost",
+   "what_was_recorded": "The repair cost is estimated at about $40K, which will take most of the Capital.",
+   "figures_as_printed": [
+    "$40K"
+   ],
+   "quote": "the cost of the repair will be about $40k which will take most of the capital."
+  },
+  {
+   "topic": "Capital budget adequacy",
+   "what_was_recorded": "Capital was budgeted at $100K and Paula asked whether that was enough.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "paula stated they are budgeting $100k for capital but asked if that was enough."
+  },
+  {
+   "topic": "Doubling capital and rate impact",
+   "what_was_recorded": "Brett suggested doubling the capital figure; Paula replied it could cause a substantial rate increase. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "brett suggested doubling it and paula replied that could cause a substantial rate increase."
+  },
+  {
+   "topic": "Retained Earnings draw for capital",
+   "what_was_recorded": "Paula said the plan was to take $182K from Retained Earnings and that it will now be $282K.",
+   "figures_as_printed": [
+    "$182K",
+    "$282K"
+   ],
+   "quote": "she stated that they were going to take $182k from retained earnings but will now take $282k."
+  },
+  {
+   "topic": "Alternative $100K from Retained Earnings to Capital",
+   "what_was_recorded": "An option discussed was putting another $100K from Retained Earnings into Capital, which would not affect the rate.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "one option would be to consider putting another $100k from retained earnings into capital, which would not impact the rate."
+  },
+  {
+   "topic": "Capital increase to $250K",
+   "what_was_recorded": "The Commission first moved $200K into Capital, reconsidered, and then voted to increase Capital to $250K.",
+   "figures_as_printed": [
+    "$200K",
+    "$250K"
+   ],
+   "quote": "to increase the money to capital to $250k to support the pump stations' needs."
+  },
+  {
+   "topic": "Rate increase",
+   "what_was_recorded": "The Commission had voted a 16% rate increase; it was discussed as a solid number.",
+   "figures_as_printed": [
+    "16%"
+   ],
+   "quote": "john stated they had voted on a 16% rate increase."
+  },
+  {
+   "topic": "Dana St. pump replacement cost",
+   "what_was_recorded": "Replacement pumps at Dana St. can be upwards of $40K each.",
+   "figures_as_printed": [
+    "$40K"
+   ],
+   "quote": "upwards of $40k each."
+  },
+  {
+   "topic": "Generator repairs",
+   "what_was_recorded": "Generator repairs are underway at a cost of $5K.",
+   "figures_as_printed": [
+    "$5K"
+   ],
+   "quote": "the generator repairs are underway for $5k."
+  },
+  {
+   "topic": "Mass 1 dialer",
+   "what_was_recorded": "A dialer for Mass 1 has been ordered at about $3K.",
+   "figures_as_printed": [
+    "$3K"
+   ],
+   "quote": "they have ordered a dialer for mass 1 which will be about $3k."
+  },
+  {
+   "topic": "Manhole I/I repair funding from ARPA",
+   "what_was_recorded": "The town received $100K of ARPA money for manhole repairs covering 30 manholes; 145 more remain.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "they received $100k of arpa money for that work."
+  },
+  {
+   "topic": "Proposed manhole repair budget",
+   "what_was_recorded": "Paula proposed budgeting $50K for manhole repairs, addressing 20-30 per year.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "paula has proposed budgeting $50k for manhole repairs, which will address 20-30/year."
+  },
+  {
+   "topic": "Insurance coverage of underground repairs",
+   "what_was_recorded": "Brett questioned why insurance is paid if it does not cover underground work. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "brett questioned why they are paying insurance if it does not cover underground."
+  },
+  {
+   "topic": "Employee salary adjustment",
+   "what_was_recorded": "The Committee's salary grid may move no grades but may apply 3% across the board.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "but may do 3% across the board."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Warrant article 2: transfer from available funds into the Sewer Capital Reserve Stabilization Fund, for Town Meeting.",
+   "amount_as_printed": "$35,000",
+   "outcome": "Warrant article adopted as written (passed) for Town Meeting.",
+   "quote": "to see if the town will vote to transfer from available funds $35,000 into the sewer capital reserve stabilization fund;"
+  },
+  {
+   "description": "Warrant article 3: transfer from available funds into the OPEB Sewer Trust Fund, for Town Meeting.",
+   "amount_as_printed": "$1,500",
+   "outcome": "Warrant article adopted as written (passed) for Town Meeting.",
+   "quote": "to see if the town will vote to transfer from available funds the sum of $1,500 into the opeb sewer trust fund;"
+  },
+  {
+   "description": "Increase Capital from Retained Earnings to $250K for pump station needs (supersedes the earlier $200K motion).",
+   "amount_as_printed": "$250K",
+   "outcome": "passed",
+   "quote": "to increase the money to capital to $250k to support the pump stations' needs."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Brett",
+   "stated_role": "Vice-Chair",
+   "topic": "Congratulating Dave on retirement",
+   "quote": "public comment- brett congratulated dave on his retirement from the salvation army"
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "Member",
+   "topic": "Retirement from Salvation Army disaster services",
+   "quote": "dave said he retired from going nationwide with salvation army disaster services and will still work locally."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; congratulations to Dave on his retirement",
+   "quote": "public comment- brett congratulated dave on his retirement from the salvation army",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes of 1/30/24 and 2/13/24",
+   "resolution": "approved",
+   "quote": "minutes of 1/30/24 meeting and 2/13/24 workshop",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Leominster intermunicipal agreement update",
+   "resolution": "no action; Select Board to discuss at 3/5/24 meeting",
+   "quote": "leominster intermunicipal agreement negotiations update - paula reported that she forwarded it to heather for approval",
+   "tags": [
+    "Leominster",
+    "intermunicipal agreement"
+   ]
+  },
+  {
+   "topic": "Warrant articles for Town Meeting",
+   "resolution": "adopted as written",
+   "quote": "warrant articles for town meeting - paula stated these are the standard articles as follows:",
+   "tags": [
+    "warrant articles",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Appendix G sewer connection charge policy hearing",
+   "resolution": "public hearing set for 3/26/24",
+   "quote": "regulation changes appendix g, sewer connection charge policy- john stated that the policy change is a result of the new ima",
+   "tags": [
+    "public hearing",
+    "connection charge",
+    "IMA"
+   ]
+  },
+  {
+   "topic": "Mass 1 pump station repairs",
+   "resolution": "reported; no vote; estimates pending",
+   "quote": "repairs at mass 1 pump station- paula and bill met with scott (pride environmental) and robert lilley (cte)",
+   "tags": [
+    "Mass 1 pump station",
+    "pump repair",
+    "CTE",
+    "Pride Environmental"
+   ]
+  },
+  {
+   "topic": "Budget and rate increase; capital funding",
+   "resolution": "capital raised to $250K from Retained Earnings; rate to be revisited next year",
+   "quote": "budget & rate increase discussion- john stated they had voted on a 16% rate increase.",
+   "tags": [
+    "capital budget",
+    "rate increase",
+    "Retained Earnings",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Business Manager report: system maintenance and upgrades",
+   "resolution": "reported; no action",
+   "quote": "--update on system maintenance & upgrades - paula noted she is still waiting for quotes for the other repairs at mass 1.",
+   "tags": [
+    "Dana St pump",
+    "West St",
+    "FOG",
+    "manholes",
+    "I/I",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Sewer Business Manager job rating",
+   "resolution": "discussed; no action; Personnel Committee meetings 3/11 and 3/13",
+   "quote": "sewer business manager job rating- paula noted she was happy when they met with the personnel committee",
+   "tags": [
+    "personnel",
+    "job rating",
+    "salary grid"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "public comment - dave said he retired from going nationwide with salvation army disaster services",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed",
+   "quote": "march 12, 2024 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:18pm",
+   "quote": "to adjourn at 7:18pm. roll call vote: mike m.-aye, mike n.-aye, brett-aye, dave-aye, and john-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "capital budget",
+  "pump stations",
+  "Mass 1 pump station",
+  "Retained Earnings",
+  "rate increase",
+  "warrant articles",
+  "Town Meeting",
+  "public hearing",
+  "inflow and infiltration",
+  "manholes",
+  "personnel job rating",
+  "Leominster intermunicipal agreement",
+  "remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

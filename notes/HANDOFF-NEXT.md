@@ -23,9 +23,14 @@ detail. Everything below the line "Done" is context, not work.
    `tail -f build/process-meeting-*.log | grep --line-buffered -E "^\[|wrote|FAILED|STOPPED|done|completed"`.
    ~$0.14 a meeting measured. If a session watches it, by EXCEPTION only (memory:
    monitor-by-exception).
-5. **FY25 school surplus report** (`/analysis/fy25-school-surplus`, UNLISTED) -- before it is
-   linked: the waterfall chart is an SVG, the web COMPONENT is owed (rule 7f); run the
-   persona review (rule 15a); then delete its line from `sources/analyses/UNLISTED`.
+5. **FY25 and FY26 school surplus reports** (`/analysis/fy25-school-surplus`,
+   `/analysis/fy26-school-surplus`, both UNLISTED) -- one generator,
+   `scripts/build_school_surplus.py --fy <year>`, one verifier,
+   `scripts/verify_school_surplus.py --fy <year>`. The waterfall is now a component
+   (`SchoolSurplusCharts.tsx`, rule 7f) -- unseen in a browser until the next site build.
+   FY26 is period 13 AS RUN 6 October 2026 with $236,767 still encumbered: rerun when the
+   Town's post-close report arrives. Before linking either: the persona review (rule 15a);
+   then delete its line from `sources/analyses/UNLISTED`.
 6. **MUNIS Part 2** -- the Town Manager is still preparing it; she is removing citizen names
    that appear as vendors in a special-education fund. The request PDF she has
    (`notes/outbound/drafts/MUNIS-REQUEST-RUNS.pdf`) gives her the steps, keeping the vendor

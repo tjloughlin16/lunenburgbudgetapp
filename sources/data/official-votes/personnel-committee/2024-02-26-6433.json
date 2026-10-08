@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2024-02-26",
  "docid": "6433",
@@ -12,15 +12,206 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Motion by W. Bertrand, seconded by S. Andrews, to adjourn the meeting at 6:29pm.",
    "moved_by": "W. Bertrand",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "w. bertrand made a motion to adjourn the meeting at 6:29pm second: s. andrews roll call vote: all in favor"
+   "quote": "w. bertrand made a motion to adjourn the meeting at 6:29pm"
   }
  ],
- "dropped_unquoted": 0,
- "note": "The minutes record discussions and agreements on salary grid options and decisions to meet again, but these are recorded as committee discussion and consensus, not as formal motions voted upon. Only the adjournment motion is recorded with explicit voting language.",
- "cost_usd": 0.0696893
+ "dropped_unquoted": 1,
+ "note": "Text is clean extracted minutes, not a scan. Only one recorded vote: adjournment, roll call \"All in Favor\" with no count printed, so outcome is \"passed\" without a tally. No votes on minutes approval (none available) or on the grid options; the two grid results and the meeting dates are recorded as decisions without a vote. Attendance is not given by mode; the location line says Ritter Building and Zoom but does not say who joined remotely. Nancy O’Rourke, Sue Andrews and Donna Fortune are described as preparing options, and only Nancy O’Rourke is shown speaking, so their attendance is marked not stated. \"Sue Andrews\" is treated as the same person as \"Susan Andrews\" from the attendee list, which is an inference from the name.",
+ "cost_usd": 0.01334987,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta,"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta,"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee member; opened the meeting",
+   "status": "present",
+   "quote": "j. bilotta opened the meeting at 5:05pm with members noted in attendance"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "HR Director",
+   "status": "present",
+   "quote": "julie belliveau, hr director, amanda moore, administrative support police department"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Administrative support Police Department",
+   "status": "present",
+   "quote": "amanda moore, administrative support police department, pauline roy, coa, paula"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA",
+   "status": "present",
+   "quote": "pauline roy, coa, paula"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Sewer Dept",
+   "status": "present",
+   "quote": "paula bertram, sewer dept"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Named as working with Sue Andrews and Donna Fortune on the options; spoke in public comment",
+   "status": "not stated",
+   "quote": "nancy o'rourke advised the committee that she had reviewed previous sap salary adjustments"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Named as working on the options; outlined issues during review",
+   "status": "not stated",
+   "quote": "donna outlined the issues identified as the options were reviewed for final submission to committee."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee decided on two primary results for the SAP grid: drop Grade 1 and keep the other grades as they were while adding a grade 17; or drop Grade 1 and Step 1 and keep a 3% step adjustment; or drop Grade 1, start the grid at $15.50 with a 3% step adjustment.",
+   "quote": "the committee decided on two primary results. dropping grade 1, leaving each of the remaining"
+  },
+  {
+   "decision": "The committee agreed that FY2025 would be adjusted differently, and that possibly half a dozen jobs might be given a level adjustment from the job description reviews.",
+   "quote": "the committee agreed that fy2025 would be adjusted differently and also agreed that there were possibly half a dozen jobs"
+  },
+  {
+   "decision": "The group decided to meet again on Monday March 11, 2024, with Wednesday March 13, 2024 as a second option if needed.",
+   "quote": "the group decided to meet again monday march 11, 2024 to continue this important work."
+  },
+  {
+   "decision": "The committee asked members to review which job roles might need to be upgraded and be prepared to discuss at the next meeting.",
+   "quote": "the committee was asked to review which job roles they might consider needed to be upgraded and be"
+  },
+  {
+   "decision": "Nancy O’Rourke agreed to take the options outlined and prepare a cost assessment on each for the committee’s review.",
+   "quote": "nancy agreed to take the options outlined and prepare a cost assessment on each"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Starting salary grid under the proposed option",
+   "what_was_recorded": "One of the two primary options would drop Grade 1 and start the SAP grid at a set rate with a 3% step adjustment.",
+   "figures_as_printed": [
+    "$15.50",
+    "3%"
+   ],
+   "quote": "dropping grade 1 and starting grid at $15.50 with a 3% step adjustment."
+  },
+  {
+   "topic": "Historical SAP grid adjustments",
+   "what_was_recorded": "Nancy O’Rourke reported that FY18 had a 6% grid change, with no adjustment for a few years before it, and 2%-2.5% grid adjustments each year since.",
+   "figures_as_printed": [
+    "6%",
+    "2%-2.5%"
+   ],
+   "quote": "nancy o'rourke advised the committee that she had reviewed previous sap salary adjustments and that fy18 had"
+  },
+  {
+   "topic": "Salary survey reliability",
+   "what_was_recorded": "The recently completed salary survey was judged inconsistent and could not reliably be used to set new SAP grids, though some towns reported only one figure.",
+   "figures_as_printed": [],
+   "quote": "they also agreed that the salary survey recently completed was inconsistent as the nature of the roles reviewed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Prior SAP salary adjustments",
+   "speaker": "Nancy O’Rourke",
+   "stated_role": "not stated",
+   "quote": "nancy o'rourke advised the committee that she had reviewed previous sap salary adjustments and that fy18 had"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "opened at 5:05pm",
+   "tags": [
+    "attendance"
+   ],
+   "quote": "j. bilotta opened the meeting at 5:05pm with members noted in attendance"
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there was not committee comment nor public comment."
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "no action; no minutes available",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "no minutes were available for review."
+  },
+  {
+   "topic": "Review of SAP grid options",
+   "resolution": "two primary results decided; cost assessment assigned; next meeting set",
+   "tags": [
+    "SAP grid",
+    "salary schedule",
+    "job descriptions",
+    "compensation"
+   ],
+   "quote": "the committee reviewed the outcome of the various options they had selected for analysis the previous meeting."
+  },
+  {
+   "topic": "Next meeting dates",
+   "resolution": "next meeting set for March 11, 2024",
+   "tags": [
+    "scheduling",
+    "Town Meeting"
+   ],
+   "quote": "the group decided to meet again monday march 11, 2024 to continue this important work."
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "Nancy O’Rourke gave historical grid adjustment figures",
+   "tags": [
+    "SAP history",
+    "salary adjustments"
+   ],
+   "quote": "nancy o'rourke advised the committee that she had reviewed previous sap salary adjustments and that fy18 had"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:29pm, roll call all in favor",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "w. bertrand made a motion to adjourn the meeting at 6:29pm"
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "SAP salary grid",
+  "compensation",
+  "job descriptions",
+  "salary survey",
+  "FY2025",
+  "Town Meeting",
+  "HR"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

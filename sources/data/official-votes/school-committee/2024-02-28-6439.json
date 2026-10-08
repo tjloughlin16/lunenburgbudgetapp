@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-02-28",
  "docid": "6439",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Extend public comment past 10 minutes",
+   "motion": "Extend public comment past 10 minutes.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "mr. sculimbrene makes a motion to extend public comment past 10 minutes, ms. brzozoski seconds the motion all in favor"
   },
   {
-   "motion": "Support the override",
+   "motion": "Support the override (the minutes do not state the amount or the form of the override).",
    "moved_by": "Mr. Lehtinen",
    "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "mr. lehtinen makes a motion to support the override, mr. sculimbrene seconds the motion, mr. lehtinen, ms. brzozoski, mr. sculimbrene, and ms. archambault vote yes. mr. beardmore votes no."
+   "quote": "mr. lehtinen makes a motion to support the override, mr. sculimbrene seconds the motion, mr. lehtinen, ms. brzozoski, mr. sculimbrene, and ms. archambault vote yes."
   },
   {
-   "motion": "The school committee does not agree with the 2.9% budget",
+   "motion": "That the school committee does not agree with the 2.9%.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "mr. beardmore makes a motion that the school committee does not agree with the 2.9%, ms. brzozoski seconds the motion. all agree"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 10:10.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Lehtinen",
    "outcome": "passed",
@@ -45,6 +45,294 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0794951
+ "note": "Text extraction, not a scan; votes are readable. Limits: (1) The override motion's vote is printed by name, not as a tally; 4-1 is counted from the names and no tally is printed. (2) The override motion does not state an amount or form. (3) The motion on the 2.9% is recorded as 'All agree', not as a numbered tally. (4) Dr. Burnham's presence is inferred from her presenting; the header lists her without 'here'. (5) Anna Lockwood's figures are a resident's reading of figures she attributes to the town manager; the minutes say her numbers may not match, and they are not verified here. Several printed percentages conflict (2.94, 2.94 proposed increase, 2.98, 2.9/3.0%, 2.97%), and the minutes do not reconcile them. (6) No decisions taken without a vote are recorded; the Chair's deferral of the budget number is a statement, not a recorded decision. (7) The Business Manager/HR Director is listed without a name and is not recorded as present.",
+ "cost_usd": 0.0222358,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - here"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - here"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - here"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - here"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - here"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "dr. burnham shared a slide show of the budget options and discussed wha t positions may be cut"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services",
+   "status": "present",
+   "quote": "guests: julianna hanscom, director of special services"
+  },
+  {
+   "name": "Sophia Mulè",
+   "role": "Public commenter, 139 Cove Road",
+   "status": "present",
+   "quote": "sophia mulè, 139 cove road i want to address the issue with intervention regarding the music department."
+  },
+  {
+   "name": "Jude Pancholi",
+   "role": "Public commenter, 622 West Street",
+   "status": "present",
+   "quote": "jude pancholi, 622 west street i am in the fourth grade."
+  },
+  {
+   "name": "Shoshana Mulè",
+   "role": "Public commenter, 139 Cove Road",
+   "status": "present",
+   "quote": "shoshana mulè 139 cove road i just want to thank the committee and the superintendent"
+  },
+  {
+   "name": "Krista Dimatopolis",
+   "role": "Public commenter, 53 Whiting Street",
+   "status": "present",
+   "quote": "krista dimatopolis, 53 whiting street i am also a seventh grade teacher here at lunenburg middle school."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "Public commenter, 91 Main Street",
+   "status": "present",
+   "quote": "anna lockwood, 91 main street i am going to read off some numbers which i asked the town manager for her latest line item budget"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Warrant total approved for signature",
+   "what_was_recorded": "The warrant total for 2/1/24 to 2/21/24 was reported with no questions; the Chair signed.",
+   "figures_as_printed": [
+    "$356,137.65"
+   ],
+   "quote": "warrant total 2/1/24 - 2/21/24 $356,137.65 - no questions, ms. archambault has signed"
+  },
+  {
+   "topic": "FY25 combined budget increase (public comment, Anna Lockwood)",
+   "what_was_recorded": "A resident read figures she said came from the town manager's line item budget: a combined increase, an average percentage, a lost amount, and a total school budget after pro-forma recap.",
+   "figures_as_printed": [
+    "$8,809,402",
+    "1.94%",
+    "$342,000",
+    "$24,825,018"
+   ],
+   "quote": "the combined budget increase that we will h ave for fy 25 is $8,809,402"
+  },
+  {
+   "topic": "School budget increase (public comment, Anna Lockwood)",
+   "what_was_recorded": "A resident stated a preliminary school budget and its increase, and the school share of the total increase.",
+   "figures_as_printed": [
+    "$24,867,000",
+    "2.98%",
+    "$7,117,649",
+    "8.69%",
+    "2.5%"
+   ],
+   "quote": "that increase in the school budget $7,117,649."
+  },
+  {
+   "topic": "Other departments budget (public comment, Anna Lockwood)",
+   "what_was_recorded": "A resident stated the non-school budget, its increase, and the share of the total increase held by the other departments.",
+   "figures_as_printed": [
+    "$22,312,018",
+    "$171,700",
+    "$2859",
+    "99.31%"
+   ],
+   "quote": "making her budget $22,312,018 which is an increase of $171,700"
+  },
+  {
+   "topic": "Modest override cost to the average home (public comment, Anna Lockwood)",
+   "what_was_recorded": "A resident proposed a modest override of about 2% and estimated its annual and monthly cost to the average single-family home.",
+   "figures_as_printed": [
+    "$800,000",
+    "$150",
+    "$12.50"
+   ],
+   "quote": "a modest override such as a 2% equivalent to just under $800,000 would impact the average single family home in lunenburg approximately $150 annually or $12.50 monthly."
+  },
+  {
+   "topic": "Health insurance and total budget (Superintendent)",
+   "what_was_recorded": "The superintendent said health insurance costs rise with rates and participation, adding an amount on top of the current total budget.",
+   "figures_as_printed": [
+    "2.6 million",
+    "25.5 million"
+   ],
+   "quote": "an additional 2.6 million on top of this year's total budget of 25.5 million."
+  },
+  {
+   "topic": "Circuit breaker and tuition increase",
+   "what_was_recorded": "Ms. Brzozoski asked when the committee learned of a tuition increase; no dollar figure is printed in the minutes.",
+   "figures_as_printed": [
+    "14%"
+   ],
+   "quote": "ms. brzozoski regarding the 14% increase in tuition, when did we find out about this?"
+  },
+  {
+   "topic": "Projected cost without ESSER",
+   "what_was_recorded": "Mr. Lehtinen stated the projected figure without ESSER funding.",
+   "figures_as_printed": [
+    "$1.43 million"
+   ],
+   "quote": "mr. lehtinen shares it is projected to be $1.43 million without esser."
+  },
+  {
+   "topic": "Percentage used to estimate taxpayer cost",
+   "what_was_recorded": "The Chair said the 2.97% figure would be used to estimate what the average taxpayer pays per year.",
+   "figures_as_printed": [
+    "2.97%"
+   ],
+   "quote": "ms. archambault shares we have to use 2.97% to base how much money it will cost the average tax payer per year."
+  },
+  {
+   "topic": "Budget option percentages under discussion",
+   "what_was_recorded": "Members voiced concern about the 2.9/3.0% and 5.5% budget and asked whether to support 8.73% with the hope of an override.",
+   "figures_as_printed": [
+    "2.9/3.0%",
+    "5.5%",
+    "8.73%"
+   ],
+   "quote": "there are a lot of concerns with the 2.9/3.0% and 5.5% budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sophia Mulè",
+   "stated_role": "139 Cove Road",
+   "topic": "music department intervention and band cuts",
+   "quote": "sophia mulè, 139 cove road i want to address the issue with intervention regarding the music department."
+  },
+  {
+   "speaker": "Jude Pancholi",
+   "stated_role": "622 West Street, I am in the fourth grade",
+   "topic": "fifth grade band",
+   "quote": "jude pancholi, 622 west street i am in the fourth grade."
+  },
+  {
+   "speaker": "Shoshana Mulè",
+   "stated_role": "139 Cove Road",
+   "topic": "fifth grade band scheduling and stipend position",
+   "quote": "shoshana mulè 139 cove road i just want to thank the committee and the superintendent"
+  },
+  {
+   "speaker": "Krista Dimatopolis",
+   "stated_role": "seventh grade teacher at Lunenburg Middle School, 53 Whiting Street",
+   "topic": "override proposal and staff impact",
+   "quote": "krista dimatopolis, 53 whiting street i am also a seventh grade teacher here at lunenburg middle school."
+  },
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "91 Main Street",
+   "topic": "budget figures and a proposed override",
+   "quote": "anna lockwood, 91 main street i am going to read off some numbers which i asked the town manager for her latest line item budget"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "motion to extend passed; band and override comments heard",
+   "quote": "mr. lehtinen comments, that he missed the last meeting as he was on vacation with his family"
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "no action; Finance Committee voted to organize an override effort",
+   "quote": "it has been a very busy couple of weeks, we've met with our state delegation, and they do not paint a rosy picture regarding additional state funding."
+  },
+  {
+   "topic": "Review & Approve Minutes",
+   "resolution": "no action; none listed",
+   "quote": "5. review & approve minutes - none"
+  },
+  {
+   "topic": "Review & Approve Warrants & Line Item Transfers",
+   "resolution": "warrant noted, Chair signed",
+   "quote": "a. warrant total 2/1/24 - 2/21/24 $356,137.65 - no questions, ms. archambault has signed"
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "no action; registration dates and reminders",
+   "quote": "kindergarten registration has been ongoing since early january, currently we have 90 kindergarteners enrolled for next school year."
+  },
+  {
+   "topic": "Student Representative Report",
+   "resolution": "no action; none",
+   "quote": "8. student representative report - none"
+  },
+  {
+   "topic": "Circuit Breaker Presentation",
+   "resolution": "presented and discussed, no action",
+   "quote": "ms. hanscom shares her presentation on circuit breaker."
+  },
+  {
+   "topic": "Override Discussion",
+   "resolution": "motion to support the override passed 4-1",
+   "quote": "b. override discussion ms. archambault reports at the last finance meeting, they did vote to organize an override"
+  },
+  {
+   "topic": "FY25 Budget Update",
+   "resolution": "motion that committee does not agree with 2.9% passed; budget number deferred to next meeting",
+   "quote": "dr. burnham was requested to create a"
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "no action; none",
+   "quote": "11. public comment none (meeting had to end abruptly as the lights were scheduled to shut off)"
+  },
+  {
+   "topic": "Reports and Topics for Future Discussion",
+   "resolution": "no action; blank",
+   "quote": "12. reports 13. topics for future discussion"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:10",
+   "quote": "ms. brzozoski made a motion to adjourn at 10:10, mr. lehtinen seconded the motion, all approve"
+  }
+ ],
+ "tags": [
+  "school budget",
+  "FY25 budget",
+  "override",
+  "music program",
+  "fifth grade band",
+  "circuit breaker",
+  "ESSER",
+  "public comment",
+  "warrants",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

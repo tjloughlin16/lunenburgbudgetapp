@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-02-26",
  "docid": "6435",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the senior property tax work off program payout amounts",
+   "motion": "Approve the senior property tax work off program payout amounts from 2023 (total under $9,363.65 for 11 individuals).",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -20,21 +20,331 @@
    "quote": "there was a motion to approve the senior property tax work off program payout amounts by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "sign the motor vehicle excise tax bills for commitment number 7 from 2023",
+   "motion": "Sign the motor vehicle excise tax bills for commitment number 7 from 2023 (135 bills).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "roll call vote. all in favor."
+   "quote": "there were 135 bills for people that bought newer vehicles later in the year and traded in their prior vehicle. roll call vote. all in favor."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn by sarah cammer, seconded by jack rabbitt. all in favor."
+   "quote": "motion to adjourn by sarah cammer, seconded by jack rabbitt."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10357150000000001
+ "note": "Text extraction, not a scan; all pages readable. Three recorded votes: two printed as 'All in favor' with no count, and the excise bill signing is recorded as a roll call with no mover, so its moved_by is blank. Motion wording for that item is paraphrased from the minutes' description. The minutes print both 'John Rabbitt' and 'Jack Rabbitt' (the Senior Center item and the adjournment second); I treated them as printed and did not merge or split them. Minutes approval was deferred and is not a vote. Items 'Use of responses as FAQs' and 'ad-hoc citizen committees' carry the same sentence, which is recorded once per item. No transfers are printed.",
+ "cost_usd": 0.01696837,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "public commenter, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, asked why the vision property cards appear to have been removed."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "public commenter, 11 Wintergreen Ct.",
+   "status": "present",
+   "quote": "bob pease, 11 wintergreen ct., asked when the neighborhood map be made available."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No approval of the listed minutes (Jan. 8, Jan. 22, Jan. 29, Jan. 31 canceled, Feb. 5, Feb. 12, 2024) at this meeting; the Board is still making amendments.",
+   "quote": "there will be no approval of minutes as the board is continuing to make amendments."
+  },
+  {
+   "decision": "Establish ad-hoc citizen committees and the use of citizen-question responses as FAQs deferred to future agendas.",
+   "quote": "the board hasn't had a chance to discuss this so this will be add to future agendas."
+  },
+  {
+   "decision": "The Board agreed that circuit breakers should not be listed as a topic at the Senior Center orientation, as it does not relate to the Board of Assessors.",
+   "quote": "the board agrees that this shouldn't be listed as a topic as it doesn't relate to the board of assessors."
+  },
+  {
+   "decision": "Sarah Cammer to send out the edited 'How to Read Your Vision Card' once updated.",
+   "quote": "sarah cammer will send out the edited how to read your vision card once updated."
+  },
+  {
+   "decision": "John Rabbitt to continue researching and re-phrasing the 41C exemption proposal with Sue Doherty's help, to be considered as a warrant article for the Annual Town Meeting.",
+   "quote": "john rabbitt will continue to research and re-phrase wording with the help of sue doherty."
+  },
+  {
+   "decision": "The public disclosure period was extended by one day because of a one-day delay.",
+   "quote": "the public disclosure period was extended by 1 day due to a 1-day delay."
+  },
+  {
+   "decision": "February 28, 2024 meeting canceled.",
+   "quote": "february 28, 2024- canceled"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Vision invoice",
+   "what_was_recorded": "A bill from Vision was presented for review.",
+   "quote": "there was a bill from vision totaling $43,109.50.",
+   "figures_as_printed": [
+    "$43,109.50"
+   ]
+  },
+  {
+   "topic": "MFS invoice",
+   "what_was_recorded": "A bill from MFS was presented for hours of phone calls, emails and spreadsheets.",
+   "quote": "there was a bill from mfs for $2,250.",
+   "figures_as_printed": [
+    "$2,250"
+   ]
+  },
+  {
+   "topic": "Senior property tax work off program payout (2023)",
+   "what_was_recorded": "The payout total for 11 individuals, which the Board signed and approved by motion.",
+   "quote": "the total is under $9,363.65 for 11 individuals.",
+   "figures_as_printed": [
+    "$9,363.65"
+   ]
+  },
+  {
+   "topic": "41C senior exemption reimbursement increase",
+   "what_was_recorded": "A proposal to increase the senior reimbursement by 250 dollars, which the minutes say would come out of everyone's tax bills.",
+   "quote": "john rabbit suggests increasing reimbursement by 250 dollars for seniors.",
+   "figures_as_printed": [
+    "250 dollars"
+   ]
+  },
+  {
+   "topic": "Neighborhood maps cost from CAI",
+   "what_was_recorded": "Individual neighborhood maps were not printed because of a significant additional cost from CAI; they are on the GIS website instead. No dollar figure is printed.",
+   "quote": "the individual neighborhood maps haven't been printed out because of a significant additional cost from cai.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Vision property cards missing",
+   "quote": "carl luck, 50 sunset lane, asked why the vision property cards appear to have been removed."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Basis of lake property assessments",
+   "quote": "carl luck asked about what the assessments are based on for lake properties."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Documents for validating ratings in the review",
+   "quote": "carl luck asked where the documents were that were used to manage how they validate or not validate the rating during the review and re-evaluation without a criterion."
+  },
+  {
+   "speaker": "Bob Pease",
+   "stated_role": "11 Wintergreen Ct.",
+   "topic": "Availability of neighborhood maps",
+   "quote": "bob pease, 11 wintergreen ct., asked when the neighborhood map be made available."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting opened at 6:30PM",
+   "quote": "the meeting opened at 6:30pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Opening comments and public comment",
+   "resolution": "no action; board comments and public questions recorded",
+   "quote": "john rabbitt shared an alert that was published by dls that is sent out on a",
+   "tags": [
+    "DLS",
+    "procurement",
+    "staffing",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Status report from interim principal assessor",
+   "resolution": "received; uploads and excise bill inquiries noted",
+   "quote": "rena swezey provided a brief summary as she was out sick for a few days.",
+   "tags": [
+    "DOR",
+    "excise tax",
+    "impact notices"
+   ]
+  },
+  {
+   "topic": "Approve minutes",
+   "resolution": "deferred; no approval this meeting",
+   "quote": "there will be no approval of minutes as the board is continuing to make amendments.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Status of 5-year revaluation: DOR response and public disclosure period",
+   "resolution": "no action; disclosure period extended one day, classification hearing set for the 12th",
+   "quote": "the public disclosure period was extended by 1 day due to a 1-day delay.",
+   "tags": [
+    "revaluation",
+    "DOR",
+    "disclosure period"
+   ]
+  },
+  {
+   "topic": "Finalize impact statement",
+   "resolution": "closed; already completed",
+   "quote": "this was a carryover from the last agenda and has already been completed.",
+   "tags": [
+    "impact statement"
+   ]
+  },
+  {
+   "topic": "Review and approve invoices, expense vouchers, payroll, billing errors",
+   "resolution": "approved senior work-off payout; excise bills signed",
+   "quote": "there was a bill from vision totaling $43,109.50.",
+   "tags": [
+    "invoices",
+    "senior tax work-off",
+    "excise tax",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Finalize 'How to Read Your Vision Card'",
+   "resolution": "edits discussed; Sarah Cammer to resend",
+   "quote": "discussion and edits were made to the document.",
+   "tags": [
+    "vision card",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Status of community outreach: website and senior center orientation",
+   "resolution": "status noted; orientation March 25, 2024; circuit breakers excluded as a topic",
+   "quote": "john rabbitt met with kara mccarthy. the layout is completed and google documents are starting to be loaded.",
+   "tags": [
+    "website",
+    "senior center",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "41C proposed exemption increases for FY2025",
+   "resolution": "continued; possible Annual Town Meeting warrant article",
+   "quote": "john rabbitt will continue to research and re-phrase wording with the help of sue doherty.",
+   "tags": [
+    "41C",
+    "exemptions",
+    "seniors",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Establish ad-hoc citizen committees",
+   "resolution": "deferred to future agenda",
+   "quote": "brian laffond wants to take advantage of this program but isn't sure how to proceed.",
+   "tags": [
+    "citizen committees"
+   ]
+  },
+  {
+   "topic": "Use of responses to extensive citizen questions as FAQs",
+   "resolution": "deferred to future agenda",
+   "quote": "the board hasn't had a chance to discuss this so this will be add to future agendas.",
+   "tags": [
+    "FAQ",
+    "citizen questions"
+   ]
+  },
+  {
+   "topic": "Zoom session for public Q&A with Nate Cramer",
+   "resolution": "discussed; not scheduled",
+   "quote": "sarah cammer believes there should be that opportunity for residents to have a discussion with nate cramer.",
+   "tags": [
+    "public Q&A",
+    "revaluation"
+   ]
+  },
+  {
+   "topic": "Work breakdown structure",
+   "resolution": "discussed; no action",
+   "quote": "john rabbitt wanted to address organization related issues.",
+   "tags": [
+    "organization",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "February 28 canceled; March dates tentative",
+   "quote": "february 28, 2024- canceled",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing public comment and board comment",
+   "resolution": "no public comment; abatement question answered",
+   "quote": "there was no public comment.",
+   "tags": [
+    "abatements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:30 PM",
+   "quote": "motion to adjourn by sarah cammer, seconded by jack rabbitt.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "revaluation",
+  "DOR",
+  "exemptions",
+  "senior tax relief",
+  "Vision card",
+  "CAI",
+  "public comment",
+  "board operations",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

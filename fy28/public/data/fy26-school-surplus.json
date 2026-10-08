@@ -1,0 +1,1026 @@
+{
+ "about": "What the FY2026 school general fund ledger at period 13 shows was left unspent, against the range the period-12 ledger allowed and what the School Committee was told in July 2026.",
+ "accounts_changed": [
+  {
+   "account": "0100-3-300-2110-51-0-04-2-545001",
+   "available_p12": 4912.99,
+   "available_p13": 4929.94,
+   "description": "GENERAL SUPPLIES",
+   "encumbered_p12": 16.95,
+   "encumbered_p13": 0.0,
+   "expended_p12": 3070.06,
+   "expended_p13": 3070.06,
+   "obj": "545001",
+   "org": "S2510042",
+   "original_p12": 8000.0,
+   "original_p13": 8000.0,
+   "revised_p12": 8000.0,
+   "revised_p13": 8000.0,
+   "transfers_p12": 0.0,
+   "transfers_p13": 0.0
+  }
+ ],
+ "by_function": [
+  {
+   "encumbered": 106098.37,
+   "family": 4000,
+   "label": "operations & maintenance",
+   "non_salary": 174141.77,
+   "salary": 11352.16,
+   "total": 185493.93
+  },
+  {
+   "encumbered": 10064.55,
+   "family": 2000,
+   "label": "instruction",
+   "non_salary": -45797.35,
+   "salary": 158075.19,
+   "total": 112277.84
+  },
+  {
+   "encumbered": 0.0,
+   "family": 5000,
+   "label": "fixed charges",
+   "non_salary": 107003.35,
+   "salary": 0.0,
+   "total": 107003.35
+  },
+  {
+   "encumbered": 58708.07,
+   "family": 9000,
+   "label": "out-of-district tuition",
+   "non_salary": 88521.62,
+   "salary": 0.0,
+   "total": 88521.62
+  },
+  {
+   "encumbered": 20303.81,
+   "family": 1000,
+   "label": "leadership / admin",
+   "non_salary": 24019.66,
+   "salary": -2915.5,
+   "total": 21104.16
+  },
+  {
+   "encumbered": 36788.78,
+   "family": 3000,
+   "label": "other student services",
+   "non_salary": -41549.0,
+   "salary": 25699.53,
+   "total": -15849.47
+  },
+  {
+   "encumbered": 4803.36,
+   "family": 7000,
+   "label": "assets",
+   "non_salary": -16433.36,
+   "salary": 0.0,
+   "total": -16433.36
+  }
+ ],
+ "by_function_totals": {
+  "encumbered": 236766.94,
+  "non_salary": 289906.69,
+  "salary": 192211.38,
+  "total": 482118.07
+ },
+ "conclusions": [
+  {
+   "basis": "`sources/data/munis-school-ytd.csv`, FY2026 period 13, report gf-school, type E; `sources/data/munis-ledger.csv`, FY2026 period 12, department 300; joined account by account on org and object.",
+   "bearing": "sizes",
+   "claim": "The FY26 school surplus stands at $482,118, $16.95 more than the June ledger showed.",
+   "detail": "The period-12 report run on 1 September 2026 allowed the year to close anywhere between $482,101 and $718,885. The period-13 report run on 6 October 2026 lands at the bottom of that range: the only change between them is $16.95 of a purchase order released in one supplies account.",
+   "figure": "p13",
+   "figures": {
+    "accounts": {
+     "text": "415",
+     "unit": "accounts",
+     "value": 415
+    },
+    "ceiling": {
+     "text": "$718,885",
+     "unit": "",
+     "value": 718885.01
+    },
+    "floor": {
+     "text": "$482,101",
+     "unit": "",
+     "value": 482101.12
+    },
+    "moved": {
+     "text": "$16.95",
+     "unit": "",
+     "value": 16.95
+    },
+    "p13": {
+     "text": "$482,118",
+     "unit": "unspent and uncommitted at period 13",
+     "value": 482118.07
+    }
+   },
+   "id": "period-13-landed-at-the-bottom-of-the-june-range",
+   "kind": "measured",
+   "literals": [
+    "1 September 2026",
+    "6 October 2026",
+    "FY26",
+    "period-12",
+    "period-13"
+   ],
+   "not_shown": "Whether period 13 is complete: the report was run while purchase orders were still open.",
+   "see": [],
+   "so_what": "Not one of the 415 accounts changed its spending between the two runs."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, FY2026 and FY2025 period 13, the encumbrances column, department 300.",
+   "bearing": "sizes",
+   "claim": "$236,767 is still committed to open purchase orders, across 27 accounts.",
+   "detail": "The two largest are electricity charges ($62,362) and collaborative tuitions ($58,708). The FY2025 report of the same department, run the same day, shows $0 encumbered: that year is fully closed and this one is not.",
+   "figure": "enc",
+   "figures": {
+    "ceiling": {
+     "text": "$718,885",
+     "unit": "",
+     "value": 718885.01
+    },
+    "enc": {
+     "text": "$236,767",
+     "unit": "still encumbered at period 13",
+     "value": 236766.94
+    },
+    "fy25": {
+     "text": "$0",
+     "unit": "",
+     "value": 0.0
+    },
+    "n": {
+     "text": "27",
+     "unit": "accounts",
+     "value": 27
+    },
+    "p13": {
+     "text": "$482,118",
+     "unit": "",
+     "value": 482118.07
+    },
+    "top1": {
+     "text": "$62,362",
+     "unit": "",
+     "value": 62362.13
+    },
+    "top2": {
+     "text": "$58,708",
+     "unit": "",
+     "value": 58708.07
+    }
+   },
+   "id": "still-committed-to-open-purchase-orders",
+   "kind": "measured",
+   "literals": [
+    "FY2025"
+   ],
+   "not_shown": "Which orders will be paid, released, or carried into the next year.",
+   "see": [],
+   "so_what": "Paid, the surplus stays at $482,118; released, it can rise to at most $718,885."
+  },
+  {
+   "basis": "School Committee minutes, 29 July 2026, pages 3 to 4; `munis-school-ytd.csv`, FY2026 period 13.",
+   "bearing": "sizes",
+   "claim": "In July the Committee heard FY26 would return well below FY25’s $600,000.",
+   "detail": "The minutes of 29 July 2026 record the business manager as \"confident the remaining amount would be well below that figure\" — the FY25 return, put at about 2.5% of the budget. As a share of FY26’s revised budget the floor is 1.8% and the ceiling 2.7%. Whether the statement holds depends on the open purchase orders.",
+   "figure": "stated",
+   "figures": {
+    "ceiling": {
+     "text": "$718,885",
+     "unit": "",
+     "value": 718885.01
+    },
+    "ceiling_share": {
+     "text": "2.7%",
+     "unit": "",
+     "value": 2.730022809202876
+    },
+    "floor_share": {
+     "text": "1.8%",
+     "unit": "",
+     "value": 1.8308815867907289
+    },
+    "p13": {
+     "text": "$482,118",
+     "unit": "",
+     "value": 482118.07
+    },
+    "share_stated": {
+     "text": "2.5%",
+     "unit": "",
+     "value": 2.5
+    },
+    "stated": {
+     "text": "$600,000",
+     "unit": "returned in FY25, as stated in the minutes",
+     "value": 600000.0
+    }
+   },
+   "id": "what-the-school-committee-was-told-in-july",
+   "kind": "measured",
+   "literals": [
+    "FY26",
+    "FY25",
+    "29 July 2026"
+   ],
+   "not_shown": "What the business manager meant by \"that figure\", the dollars or the share; and a minute is a summary, not a transcript.",
+   "see": [],
+   "so_what": "The floor, $482,118, is below it; the ceiling, $718,885, is above it."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, FY2026 period 13, available_budget and encumbrances grouped by the 4th segment of the account string.",
+   "bearing": "sizes",
+   "claim": "Operations & maintenance holds $185,494 of the surplus and $106,098 of what is still open.",
+   "detail": "Of the operations & maintenance surplus, $11,352 is salary and $174,142 is not. The Town’s explanation for FY25’s surplus was unfilled facilities posts; nothing in this ledger says whether FY26 is the same story — it shows dollars by account, not posts.",
+   "figure": "ops",
+   "figures": {
+    "next_o": {
+     "text": "$58,708",
+     "unit": "",
+     "value": 58708.07
+    },
+    "next_u": {
+     "text": "$112,278",
+     "unit": "",
+     "value": 112277.84
+    },
+    "non": {
+     "text": "$174,142",
+     "unit": "",
+     "value": 174141.77
+    },
+    "ops": {
+     "text": "$185,494",
+     "unit": "unspent in operations & maintenance (function 4000s)",
+     "value": 185493.93
+    },
+    "ops_enc": {
+     "text": "$106,098",
+     "unit": "",
+     "value": 106098.37
+    },
+    "sal": {
+     "text": "$11,352",
+     "unit": "",
+     "value": 11352.16
+    }
+   },
+   "id": "operations-and-maintenance-holds-the-most-of-both",
+   "kind": "measured",
+   "literals": [
+    "FY25",
+    "FY26"
+   ],
+   "not_shown": "Why any of it was left unspent. A dollar is not a post (rule 7, rule 11).",
+   "see": [],
+   "so_what": "Next largest: instruction, $112,278 unspent; out-of-district tuition, $58,708 still open."
+  }
+ ],
+ "fy": 2026,
+ "fy25_encumbered": 0.0,
+ "generated_by": "scripts/build_school_surplus.py --fy 2026",
+ "grain": "DOLLARS, department 300 (school general fund) only, FY2026 period 13 as run on 6 October 2026, 415 accounts — compared account by account with the period-12 run of 1 September 2026. Not a comparison of budget to actual: one ledger at two periods.",
+ "moved_since_p12": 16.95,
+ "not_established": [
+  "Whether the $236,767 still encumbered will be paid, released, or carried into FY2027.",
+  "Where the $85,090 moved into the department during the year came from — net per account, no counterparty.",
+  "What \"expense accounts\" meant in the 29 July 2026 minutes, and so whether the ledger agrees with \"approximately 100.2% expended\".",
+  "Why operations & maintenance was left unspent — dollars are not posts.",
+  "What was said under \"FY26 Year End Budget review\" on 2 September 2026 and 9 September 2026: no minutes for either meeting are held."
+ ],
+ "open_encumbrances": [
+  {
+   "account": "0100-3-300-4130-99-1-74-2-521011",
+   "available": -110338.43,
+   "description": "ELECTRICITY CHARGES",
+   "encumbered": 62362.13,
+   "family": 4000,
+   "obj": "521011",
+   "org": "S3991742"
+  },
+  {
+   "account": "0100-3-300-9400-51-1-06-2-535023",
+   "available": -434107.56,
+   "description": "COLLABORATIVE TUITIONS",
+   "encumbered": 58708.07,
+   "family": 9000,
+   "obj": "535023",
+   "org": "S5511062"
+  },
+  {
+   "account": "0100-3-300-3510-06-6-67-2-535016",
+   "available": 4421.01,
+   "description": "TRANSPORTATION",
+   "encumbered": 23523.5,
+   "family": 3000,
+   "obj": "535016",
+   "org": "S3066672"
+  },
+  {
+   "account": "0100-3-300-4120-99-1-74-2-521025",
+   "available": 45560.42,
+   "description": "HEATING CHARGES/NATURAL GAS",
+   "encumbered": 17968.44,
+   "family": 4000,
+   "obj": "521025",
+   "org": "S1991742"
+  },
+  {
+   "account": "0100-3-300-3300-99-1-69-2-535026",
+   "available": -67555.39,
+   "description": "SPECIAL ED TRANSPORTATION",
+   "encumbered": 13265.28,
+   "family": 3000,
+   "obj": "535026",
+   "org": "S3991692"
+  },
+  {
+   "account": "0100-3-300-4220-99-1-74-2-541002",
+   "available": 19548.87,
+   "description": "BUILDING MTC SUPPLIES",
+   "encumbered": 9146.8,
+   "family": 4000,
+   "obj": "541002",
+   "org": "S0991742"
+  },
+  {
+   "account": "0100-3-300-4220-01-1-74-2-535006",
+   "available": 75660.2,
+   "description": "CONTRACTED SERVICES",
+   "encumbered": 8848.0,
+   "family": 4000,
+   "obj": "535006",
+   "org": "S0011742"
+  },
+  {
+   "account": "0100-3-300-1430-01-1-01-2-535004",
+   "available": 14029.59,
+   "description": "COUNSEL/LEGAL EXPENSES",
+   "encumbered": 8287.5,
+   "family": 1000,
+   "obj": "535004",
+   "org": "S4011012"
+  },
+  {
+   "account": "0100-3-300-2310-51-1-06-2-535011",
+   "available": 0.0,
+   "description": "HOSPITAL TUTORING",
+   "encumbered": 5923.13,
+   "family": 2000,
+   "obj": "535011",
+   "org": "S1511062"
+  },
+  {
+   "account": "0100-3-300-4130-99-1-74-2-523001",
+   "available": 1939.85,
+   "description": "WATER CHARGES",
+   "encumbered": 5770.0,
+   "family": 4000,
+   "obj": "523001",
+   "org": "S3991742"
+  },
+  {
+   "account": "0100-3-300-1410-01-1-03-2-545001",
+   "available": -3834.0,
+   "description": "GENERAL SUPPLIES",
+   "encumbered": 5600.0,
+   "family": 1000,
+   "obj": "545001",
+   "org": "S1011032"
+  },
+  {
+   "account": "0100-3-300-1210-01-1-02-2-534400",
+   "available": 1000.0,
+   "description": "POSTAGE",
+   "encumbered": 5291.93,
+   "family": 1000,
+   "obj": "534400",
+   "org": "S1011022"
+  },
+  {
+   "account": "0100-3-300-7300-99-1-10-2-585003",
+   "available": -16825.98,
+   "description": "NEW EQUIPMENT/SYSTEM",
+   "encumbered": 2450.19,
+   "family": 7000,
+   "obj": "585003",
+   "org": "S7991102"
+  },
+  {
+   "account": "0100-3-300-4130-99-1-74-2-521013",
+   "available": 3127.85,
+   "description": "RUBBISH REMOVAL CHARGES",
+   "encumbered": 1928.0,
+   "family": 4000,
+   "obj": "521013",
+   "org": "S3991742"
+  },
+  {
+   "account": "0100-3-300-7400-99-1-52-2-525013",
+   "available": -8194.14,
+   "description": "COMPUTERS-PURCHASE & LEASE",
+   "encumbered": 1414.23,
+   "family": 7000,
+   "obj": "525013",
+   "org": "S7991522"
+  },
+  {
+   "account": "0100-3-300-2310-51-1-06-2-535012",
+   "available": -100520.05,
+   "description": "CONTRACT RELATED SERVICES",
+   "encumbered": 1262.4,
+   "family": 2000,
+   "obj": "535012",
+   "org": "S1511062"
+  },
+  {
+   "account": "0100-3-300-2210-07-2-08-2-545002",
+   "available": 1.84,
+   "description": "OFFICE SUPPLIES/MATERIALS",
+   "encumbered": 983.18,
+   "family": 2000,
+   "obj": "545002",
+   "org": "S2072082"
+  },
+  {
+   "account": "0100-3-300-1410-01-1-03-2-535006",
+   "available": -21743.75,
+   "description": "CONTRACTED SERVICES",
+   "encumbered": 975.0,
+   "family": 1000,
+   "obj": "535006",
+   "org": "S1011032"
+  },
+  {
+   "account": "0100-3-300-7400-99-1-08-2-525012",
+   "available": 19268.95,
+   "description": "EQUIPMENT-MTC & LEASE",
+   "encumbered": 938.94,
+   "family": 7000,
+   "obj": "525012",
+   "org": "S7991082"
+  },
+  {
+   "account": "0100-3-300-2357-99-1-50-2-535015",
+   "available": -10213.2,
+   "description": "PROFESSIONAL DEVELOPMENT EXP",
+   "encumbered": 475.0,
+   "family": 2000,
+   "obj": "535015",
+   "org": "S2991502"
+  },
+  {
+   "account": "0100-3-300-2110-51-1-06-2-545001",
+   "available": 8288.76,
+   "description": "ACE GENERAL SUPPLIES",
+   "encumbered": 377.94,
+   "family": 2000,
+   "obj": "545001",
+   "org": "S2511062"
+  },
+  {
+   "account": "0100-3-300-2451-07-2-52-2-535006",
+   "available": 2.13,
+   "description": "CONTRACTED SERVICES",
+   "encumbered": 366.84,
+   "family": 2000,
+   "obj": "535006",
+   "org": "S2072522"
+  },
+  {
+   "account": "0100-3-300-2210-06-6-08-2-535008",
+   "available": 40.13,
+   "description": "GRADUATION EXPENSES",
+   "encumbered": 275.0,
+   "family": 2000,
+   "obj": "535008",
+   "org": "S2066082"
+  },
+  {
+   "account": "0100-3-300-2451-99-1-52-2-555038",
+   "available": 6129.26,
+   "description": "COMPUTER SUPPLIES",
+   "encumbered": 266.39,
+   "family": 2000,
+   "obj": "555038",
+   "org": "S2991522"
+  },
+  {
+   "account": "0100-3-300-1210-01-1-02-2-545001",
+   "available": 4515.45,
+   "description": "GENERAL SUPPLIES",
+   "encumbered": 149.38,
+   "family": 1000,
+   "obj": "545001",
+   "org": "S1011022"
+  },
+  {
+   "account": "0100-3-300-2415-07-2-30-2-555004",
+   "available": 5.19,
+   "description": "READING SUPPLIES",
+   "encumbered": 134.67,
+   "family": 2000,
+   "obj": "555004",
+   "org": "S2072302"
+  },
+  {
+   "account": "0100-3-300-4400-99-1-52-2-535006",
+   "available": 18564.76,
+   "description": "CONTRACTED SERVICES",
+   "encumbered": 75.0,
+   "family": 4000,
+   "obj": "535006",
+   "org": "S4990522"
+  }
+ ],
+ "para_accounts": [
+  {
+   "account": "0100-3-300-2330-51-1-06-1-519015",
+   "available": 1000.0,
+   "description": "HOME/HOSPITAL TUTORING",
+   "expended": 0.0,
+   "org": "S0511061",
+   "original": 1000.0,
+   "revised": 1000.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-1-06-1-519016",
+   "available": 1000.0,
+   "description": "CONTRACTED SERVICES",
+   "expended": 0.0,
+   "org": "S0511061",
+   "original": 1000.0,
+   "revised": 1000.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-03-2-12-1-511103",
+   "available": -93691.03,
+   "description": "KINDERGARTEN AIDES/REGULAR",
+   "expended": 93691.03,
+   "org": "S2032121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-03-2-13-1-511203",
+   "available": -5373.12,
+   "description": "KIND PARAPROFESSIONALS/REG",
+   "expended": 5373.12,
+   "org": "S2032131",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-04-4-11-1-511203",
+   "available": 0.0,
+   "description": "E.S. LIBRARY PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2044111",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-04-4-12-1-511103",
+   "available": 0.0,
+   "description": "E.S. AIDES/REGULAR",
+   "expended": 0.0,
+   "org": "S2044121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-04-4-13-1-511203",
+   "available": 0.0,
+   "description": "E.S. PARAPROFESSIONALS/REGULAR",
+   "expended": 0.0,
+   "org": "S2044131",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-04-4-64-2-555008",
+   "available": 0.0,
+   "description": "E.S. CHORAL ACCOMPANIST EXPENS",
+   "expended": 0.0,
+   "org": "S2044642",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-05-5-11-1-511203",
+   "available": 0.0,
+   "description": "M.S. LIBRARY PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2055111",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-05-5-12-1-511103",
+   "available": 0.0,
+   "description": "M.S. AIDES/REGULAR",
+   "expended": 0.0,
+   "org": "S2055121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-05-5-13-1-511203",
+   "available": 0.0,
+   "description": "M.S.PARAPROFESSIONALS/REGULAR",
+   "expended": 0.0,
+   "org": "S2055131",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-06-6-11-1-511203",
+   "available": 0.0,
+   "description": "H.S. LIBRARY PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2066111",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-06-6-13-1-511203",
+   "available": 0.0,
+   "description": "H.S. PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2066131",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": "High school (not SPED)",
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-06-6-39-1-511003",
+   "available": 0.0,
+   "description": "GREENHOUSE MANAGER H.S.",
+   "expended": 0.0,
+   "org": "S2066391",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-07-2-11-1-511103",
+   "available": 0.0,
+   "description": "P.S. LIBRARY AIDES",
+   "expended": 0.0,
+   "org": "S2072111",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-07-2-11-1-511203",
+   "available": 0.0,
+   "description": "PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2072111",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-07-2-12-1-511103",
+   "available": 0.0,
+   "description": "AIDES",
+   "expended": 0.0,
+   "org": "S2072121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-07-2-13-1-511203",
+   "available": 0.0,
+   "description": "PARAPROFESSIONALS",
+   "expended": 0.0,
+   "org": "S2072131",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-1-13-1-511203",
+   "available": -5373.12,
+   "description": "PARAPROFESSIONALS",
+   "expended": 68314.44,
+   "org": "S2511131",
+   "original": 43741.96,
+   "revised": 62941.32,
+   "school": null,
+   "transfers": 19199.36
+  },
+  {
+   "account": "0100-3-300-2330-51-2-12-1-511103",
+   "available": 0.0,
+   "description": "P.S. SPED AIDES",
+   "expended": 0.0,
+   "org": "S2512121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-2-13-1-511203",
+   "available": -23642.94,
+   "description": "P.S. SPED PARAPROFESSIONALS",
+   "expended": 464971.36,
+   "org": "S2512131",
+   "original": 424415.75,
+   "revised": 441328.42,
+   "school": "Primary",
+   "transfers": 16912.67
+  },
+  {
+   "account": "0100-3-300-2330-51-4-12-1-511103",
+   "available": 0.0,
+   "description": "E.S. SPECIAL ED AIDES",
+   "expended": 0.0,
+   "org": "S2514121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-4-13-1-511203",
+   "available": -28162.02,
+   "description": "E.S. SPED PARAPROFESSIONALS",
+   "expended": 286937.53,
+   "org": "S2514131",
+   "original": 225152.15,
+   "revised": 258775.51,
+   "school": "Elementary (SPED)",
+   "transfers": 33623.36
+  },
+  {
+   "account": "0100-3-300-2330-51-5-12-1-511103",
+   "available": 0.0,
+   "description": "M.S. SPECIAL ED AIDES",
+   "expended": 0.0,
+   "org": "S2515121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-5-13-1-511203",
+   "available": -24806.28,
+   "description": "M.S. SPEC ED PARAPROFESSIONALS",
+   "expended": 394175.83,
+   "org": "S2515131",
+   "original": 373590.0,
+   "revised": 369369.55,
+   "school": "Middle school (SPED)",
+   "transfers": -4220.45
+  },
+  {
+   "account": "0100-3-300-2330-51-6-12-1-511103",
+   "available": 0.0,
+   "description": "H.S. SPECIAL ED AIDES",
+   "expended": 0.0,
+   "org": "S2516121",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  },
+  {
+   "account": "0100-3-300-2330-51-6-13-1-511203",
+   "available": -29033.22,
+   "description": "HS SPEC ED PARAPROFESSIONALS",
+   "expended": 312067.53,
+   "org": "S2516131",
+   "original": 275472.65,
+   "revised": 283034.31,
+   "school": "High school (SPED)",
+   "transfers": 7561.66
+  },
+  {
+   "account": "0100-3-300-2330-99-1-06-1-511018",
+   "available": 0.0,
+   "description": "HOME PARAPROFESSIONAL SALARIES",
+   "expended": 0.0,
+   "org": "S3991061",
+   "original": 0.0,
+   "revised": 0.0,
+   "school": null,
+   "transfers": 0.0
+  }
+ ],
+ "period12": {
+  "accounts": 258,
+  "doc": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+  "run": "1 September 2026",
+  "totals": {
+   "available": 482101.12,
+   "encumbered": 236783.89,
+   "expended": 25613679.23,
+   "original": 26247474.0,
+   "revised": 26332564.24,
+   "transfers": 85090.24
+  }
+ },
+ "range": {
+  "above_floor": 16.95,
+  "below_ceiling": 236766.94,
+  "ceiling_p12": 718885.01,
+  "ceiling_p13": 718885.01,
+  "floor_p12": 482101.12,
+  "p13": 482118.07
+ },
+ "salary_split": {
+  "non_salary": {
+   "committed_pct": 96.9,
+   "encumbered": 236766.94,
+   "expended": 8685187.26,
+   "revised": 9211860.89,
+   "spent_pct": 94.3
+  },
+  "salary": {
+   "committed_pct": 98.9,
+   "encumbered": 0.0,
+   "expended": 16928491.97,
+   "revised": 17120703.35,
+   "spent_pct": 98.9
+  }
+ },
+ "sources": [
+  {
+   "bytes": 82789,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "note": "MUNIS year-to-date budget report, department 300 (school general fund), FY2026 period 13, run 6 October 2026. Obtained by the records request of 4 September 2026; see PROVENANCE-fy2023-fy2026-p13-school.md.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg — Town Accountant",
+   "sha256": "ec2f620cb36d0dfd0f129293740931067f736872c44bd20b2234993a48c644fb",
+   "table": "munis-school-ytd",
+   "url": ""
+  },
+  {
+   "bytes": 73581,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "filename": "glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "note": "MUNIS year-to-date budget report, every general fund department, FY2026 period 12, run 1 September 2026; sent by the Town Manager. The report fy26-closeout.md was written from. See PROVENANCE-fy2026-p12.md.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+   "publisher": "Town of Lunenburg — Town Accountant",
+   "sha256": "215dd64f597f1f2d8a373080756a188c0fecfd7caff9158824ec7d293e287cd1",
+   "table": "munis-ledger",
+   "url": ""
+  },
+  {
+   "bytes": 82879,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "note": "The FY2025 period-13 report of the same department, run the same day; used only to compare what is still encumbered.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg — Town Accountant",
+   "sha256": "0df2dc74da99ddc8ea0514b1716112753322d11a140e270ce52a91d772e7b019",
+   "table": "munis-school-ytd",
+   "url": ""
+  },
+  {
+   "bytes": 307013,
+   "docs_url": "/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf",
+   "filename": "2026-07-29-minutes-7930.pdf",
+   "note": "Minutes of 29 July 2026, pages 3 to 4: \"expense accounts were approximately 100.2% expended\"; \"expected final salary expenditures to be close to, but below, 100% of the budget\"; \"the approximately $600,000 that had been returned, which was estimated during the discussion to represent approximately 2.5% of the budget\"; \"he was confident the remaining amount would be well below that figure\".",
+   "path": "sources/meetings/school-committee/2026-07-29-minutes-7930.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "72f9193886547f29cd2dbf2e09d555720bec507537486cf9dc7e82189ea4dc32",
+   "table": "school_committee_minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07292026-7930"
+  },
+  {
+   "bytes": 136432,
+   "docs_url": "/docs/meetings/school-committee/2026-09-02-agenda-7990.pdf",
+   "filename": "2026-09-02-agenda-7990.pdf",
+   "note": "Agenda of 2 September 2026, item \"FY26 Year End Budget review (5 min)\".",
+   "path": "sources/meetings/school-committee/2026-09-02-agenda-7990.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "4af18b992c8e4edb81b31a2a6790e87eb08477fae0862ea2c96c099f8fb21e55",
+   "table": "school_committee_agendas",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09022026-7990"
+  },
+  {
+   "bytes": 138064,
+   "docs_url": "/docs/meetings/school-committee/2026-09-09-agenda-8002.pdf",
+   "filename": "2026-09-09-agenda-8002.pdf",
+   "note": "Agenda of 9 September 2026, item \"FY26 Year End Budget review (5 min)\".",
+   "path": "sources/meetings/school-committee/2026-09-09-agenda-8002.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "3806f0496615386a9f5db6e71f779ba7f135636ee0e1590f9bfedf40f8bfbb42",
+   "table": "school_committee_agendas",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09092026-8002"
+  }
+ ],
+ "spending_moved_since_p12": 0.0,
+ "stated": {
+  "ceiling_share_pct": 2.73,
+  "date": "2026-07-29",
+  "expense_accounts_pct": 100.2,
+  "floor_share_pct": 1.83,
+  "quotes": [
+   "expense accounts were approximately 100.2% expended",
+   "expected final salary expenditures to be close to, but below, 100% of the budget",
+   "the approximately $600,000 that had been returned",
+   "estimated during the discussion to represent approximately 2.5% of the budget",
+   "he was confident the remaining amount would be well below that figure"
+  ],
+  "returned_fy25": 600000.0,
+  "share_fy25_pct": 2.5
+ },
+ "stats": [
+  {
+   "label": "unspent and uncommitted at period 13, FY2026 school general fund, of $26,332,564 revised budget",
+   "tone": "var(--series-cost)",
+   "value": "$482,118"
+  },
+  {
+   "label": "still encumbered in 27 accounts — the most the surplus can still rise",
+   "value": "$236,767"
+  },
+  {
+   "label": "the whole change from the June ledger — no spending moved",
+   "value": "$16.95"
+  }
+ ],
+ "totals": {
+  "available": 482118.07,
+  "encumbered": 236766.94,
+  "expended": 25613679.23,
+  "original": 26247474.0,
+  "revised": 26332564.24,
+  "transfers": 85090.24
+ },
+ "waterfall": {
+  "compare": [
+   {
+    "label": "June ledger, floor",
+    "value": 482101.12
+   },
+   {
+    "label": "Period 13, 6 Oct 2026",
+    "value": 482118.07
+   },
+   {
+    "label": "June ledger, ceiling",
+    "value": 718885.01
+   }
+  ],
+  "gap": 236766.94,
+  "gap_label": "still encumbered",
+  "moved_out": 85090.24,
+  "revised": 26332564.24,
+  "spent": 25613679.23,
+  "unspent": 482118.07,
+  "voted": 26247474.0
+ },
+ "year_end_agenda": {
+  "dates": [
+   "2026-09-02",
+   "2026-09-09"
+  ],
+  "item": "FY26 Year End Budget review",
+  "minutes_held": []
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-300th-anniversary-committee",
  "meeting_date": "2024-02-26",
  "docid": "6431",
@@ -12,19 +12,243 @@
  },
  "votes": [
   {
-   "motion": "Approve the prior meeting minutes with the parade date corrected to Sunday, 9/10/2028",
+   "motion": "Approve the prior meeting's minutes with the parade date corrected to Sunday, 9/10/2028.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes were approved with the parade date corrected to sunday, 9/10/2028."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
    "quote": "a motion for adjournment was called for and seconded at 8:39."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08795130000000001
+ "note": "The minutes record no vote tallies. The approval of prior minutes names no mover or seconder, and the adjournment motion is recorded as called for and seconded with no result, so both are kept with outcomes as printed or not stated. The text has no public comment section; Ana Lockwood appears as a guest presenter and is listed under attendees, not public comment. Chris Ruth and Robin Venezia are mentioned but did not take part, so they are not listed. Quotes were checked against the extracted text, with line breaks collapsed.",
+ "cost_usd": 0.01530947,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michelle Belleza",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michelle belleza, kathy comeau, dawn johnson, debbie lincoln, pete lincoln, tony sculimbrene, bill tyler, liaison lou franco"
+  },
+  {
+   "name": "Kathy Comeau",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michelle belleza, kathy comeau, dawn johnson, debbie lincoln, pete lincoln, tony sculimbrene, bill tyler, liaison lou franco"
+  },
+  {
+   "name": "Dawn Johnson",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michelle belleza, kathy comeau, dawn johnson, debbie lincoln, pete lincoln, tony sculimbrene, bill tyler, liaison lou franco"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michelle belleza, kathy comeau, dawn johnson, debbie lincoln, pete lincoln, tony sculimbrene, bill tyler, liaison lou franco"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:07 by chair pete lincoln."
+  },
+  {
+   "name": "Tony Sculimbrene",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michelle belleza, kathy comeau, dawn johnson, debbie lincoln, pete lincoln, tony sculimbrene, bill tyler, liaison lou franco"
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michelle belleza, kathy comeau, dawn johnson, debbie lincoln, pete lincoln, tony sculimbrene, bill tyler, liaison lou franco"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Liaison",
+   "status": "present",
+   "quote": "members present: michelle belleza, kathy comeau, dawn johnson, debbie lincoln, pete lincoln, tony sculimbrene, bill tyler, liaison lou franco"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: laura brzozoski, cathy clark, lois filiau, chris sullivan"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: laura brzozoski, cathy clark, lois filiau, chris sullivan"
+  },
+  {
+   "name": "Lois Filiau",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: laura brzozoski, cathy clark, lois filiau, chris sullivan"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: laura brzozoski, cathy clark, lois filiau, chris sullivan"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guest ana lockwood presented the idea of a carnival on whalom lakefront, closing lake front avenue."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Liaison Lou Franco will bring a request to the Selectboard, at its next meeting, for a walk-through of Northfield Park.",
+   "quote": "debbie asked if the selectboard could do a walk through and lou indicated he would bring it up at the next meeting."
+  },
+  {
+   "decision": "The Chair directed members to gather ideas on events and places in the meantime.",
+   "quote": "what members can do in the meantime is get ideas as to events and places to hold them."
+  },
+  {
+   "decision": "The next meeting was set for September 9, 2024 at 7:00 in the Sudolnik Room at the library.",
+   "quote": "the next meeting will be september 9, 2024 at 7:00 at the library in the sudolnik room."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Carnival fireworks cost, Whalom Lakefront",
+   "what_was_recorded": "Fireworks for the proposed carnival would cost $12,000 with barges on Lake Whalom and $6,000 without barges.",
+   "figures_as_printed": [
+    "$12,000",
+    "$6,000"
+   ],
+   "quote": "they would cost $12,000 with barges on lake whalom, and $6,000 without the barges."
+  },
+  {
+   "topic": "Shuttle bus cost for carnival",
+   "what_was_recorded": "The committee noted the cost of shuttle buses would need to be factored in; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "parking could be made available at local businesses and shuttle buses used."
+  },
+  {
+   "topic": "Vendor revenue share and firework payment",
+   "what_was_recorded": "Vendors would give the committee 20% of gross event profits and pay 50% of fireworks costs if a multi-day event were held.",
+   "figures_as_printed": [
+    "20%",
+    "50%"
+   ],
+   "quote": "there are vendors who would give us 20% of gross event proﬁts, and pay 50% of ﬁreworks if we held a multi-day event."
+  },
+  {
+   "topic": "Westminster dog cracker sponsorship",
+   "what_was_recorded": "A prior Westminster sponsorship idea was looked into but did not appear to make money; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "dawn had looked into what westminster did for their dogs for the westminster cracker sponsorship, but it didn't seem that they made money on it"
+  },
+  {
+   "topic": "Ice Out fundraiser prize",
+   "what_was_recorded": "A fundraising idea to name the Ice Out dummy with a prize for the winner; no dollar figure was given.",
+   "figures_as_printed": [],
+   "quote": "michelle suggested namig the \"ice out\" dummy, with prize for the winner"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and committee timing",
+   "resolution": "discussion; no action",
+   "quote": "the meeting was called to order at 7:07 by chair pete lincoln.",
+   "tags": [
+    "governance",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved with a date correction",
+   "quote": "minutes were approved with the parade date corrected to sunday, 9/10/2028.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Carnival proposal on Whalom Lakefront",
+   "resolution": "discussed; no action; Northfield Park walk-through to go to Selectboard via Liaison",
+   "quote": "guest ana lockwood presented the idea of a carnival on whalom lakefront, closing lake front avenue.",
+   "tags": [
+    "carnival",
+    "fireworks",
+    "Whalom Lakefront",
+    "parking",
+    "shuttles"
+   ]
+  },
+  {
+   "topic": "Committee progress reports",
+   "resolution": "reports received; no action",
+   "quote": "debbie got the approval from the cemetery commission for the halloween ghost walk.",
+   "tags": [
+    "historical society",
+    "Lions Club",
+    "Humane Society",
+    "Woo Sox",
+    "cemetery walks",
+    "community garden"
+   ]
+  },
+  {
+   "topic": "New ideas",
+   "resolution": "discussed; no action",
+   "quote": "pete suggested luther burbank week, with events such as potato races and a stone marker at the burbank house",
+   "tags": [
+    "Luther Burbank",
+    "historical markers",
+    "Ice Out"
+   ]
+  },
+  {
+   "topic": "Fundraising suggestions",
+   "resolution": "suggestions noted; no action",
+   "quote": "dawn suggested a facsimile of new yorker magazine cover made as lunenburg as a poster.",
+   "tags": [
+    "fundraising",
+    "sponsorship"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn seconded at 8:39; result not stated",
+   "quote": "a motion for adjournment was called for and seconded at 8:39.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "300th anniversary",
+  "carnival",
+  "fireworks",
+  "Whalom Lakefront",
+  "Northfield Park",
+  "progress reports",
+  "fundraising",
+  "historical markers",
+  "cemetery walks",
+  "community events"
+ ],
+ "dropped_unquoted_by_field": {}
 }
