@@ -92,11 +92,16 @@ function EvidenceItem({ e }: { e: Evidence }) {
   )
 }
 
-function FindingCard({ f }: { f: Finding }) {
+/** NUMBERED so a point can be referred to -- "point 4" in an email or at a meeting --
+ *  and linked to directly: …/oml#point-4. TJ, 8 October 2026. The number is the point's
+ *  place in the page's own order (status, then the file's order), which is fixed for a
+ *  given review; a re-run review is a new review and may number differently. */
+function FindingCard({ f, n }: { f: Finding; n: number }) {
   const color = STATUS_COLOR[f.status] ?? 'var(--text-muted)'
   return (
-    <section className="mt-6 rounded-lg border p-4 sm:p-5" style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)' }}>
+    <section id={`point-${n}`} className="mt-6 rounded-lg border p-4 sm:p-5 scroll-mt-20" style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)' }}>
       <div className="flex flex-wrap items-center gap-2 text-[11px] font-semibold uppercase tracking-wider">
+        <a href={`#point-${n}`} className="tnum text-[15px] font-bold no-underline" style={{ color: 'var(--text-primary)' }}>Point {n}</a>
         <span className="px-2 py-0.5 rounded" style={{ border: `1px solid ${color}`, color }}>{f.status}</span>
         <span style={{ color: 'var(--text-muted)' }}>{f.criterion} &middot; {f.bearing}{f.by === 'script' ? ' · computed, not read' : ''}</span>
       </div>
@@ -156,12 +161,14 @@ export function OmlReview() {
       {d.overall && <p className="mt-5 text-[16px] leading-relaxed max-w-3xl">{d.overall}</p>}
       <p className="mt-2 text-[13px]" style={{ color: 'var(--text-muted)' }}>
         <a className="underline" href={d.agenda_url} target="_blank" rel="noreferrer">The agenda</a> &middot;{' '}
-        <a className="underline" href={d.minutes_url} target="_blank" rel="noreferrer">the town’s minutes</a> &middot;{' '}
+        {d.minutes_url
+          ? <a className="underline" href={d.minutes_url} target="_blank" rel="noreferrer">the town’s minutes</a>
+          : <span>the town’s minutes (not yet posted)</span>} &middot;{' '}
         <a className="underline" href={d.video_url} target="_blank" rel="noreferrer">the recording</a> &middot;{' '}
         <a className="underline" href={d.our_minutes_page}>our minutes of the recording</a>
       </p>
 
-      {findings.map((f, i) => <FindingCard key={i} f={f} />)}
+      {findings.map((f, i) => <FindingCard key={i} f={f} n={i + 1} />)}
 
       <H2>What no published record can show</H2>
       <ul className="mt-2 list-disc pl-5 space-y-1 text-[15px]" style={{ color: 'var(--text-secondary)' }}>
