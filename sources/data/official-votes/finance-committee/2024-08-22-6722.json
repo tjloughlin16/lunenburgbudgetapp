@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-08-22",
  "docid": "6722",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from August 8, 2024",
+   "motion": "Approve the minutes of August 8, 2024.",
    "moved_by": "Dave Passios",
    "seconded_by": "Tom Gray",
    "outcome": "passed 3-0-2",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to approve the minutes from august 8, 2024, by dave passios, seconded by tom gray. the vote was 3-0-2."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
    "outcome": "not stated",
@@ -29,6 +29,324 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0653724
+ "note": "Text extraction, not a scan; all votes are readable. Only two motions appear: approval of the 8/8/24 minutes (3-0-2, as printed; five votes against six present members, with no explanation given) and adjournment (no result printed). Item 14 says 'There were no public comments'; the Munis remark that follows is by Dave Passios, a committee member, so it is not recorded as public comment. Chapter 90 is named 'Bill Bernard' in the body and 'William Bernard' in the guest list; both are recorded as printed. Kathleen Glowacki appears only on the guest line, so her status is 'not stated'. Bartholomew's draft Special Town Meeting language and the Maynard comparison are discussion, not votes.",
+ "cost_usd": 0.01580377,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent members: clerk tiffaney tavares"
+  },
+  {
+   "name": "William Bernard",
+   "role": "DPW Director (printed as Bill Bernard in the text)",
+   "status": "present",
+   "quote": "bill bernard is unsure but will reach out to the mass dot district office."
+  },
+  {
+   "name": "Chuck Patterson",
+   "role": "representing Bartholomew",
+   "status": "present",
+   "quote": "chuck patterson provided a presentation."
+  },
+  {
+   "name": "Kathleen Glowacki",
+   "role": "representing Bartholomew",
+   "status": "not stated",
+   "quote": "guests: william bernard - dpw director; chuck patterson and kathleen glowacki - bartholomew"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "President of the Teacher’s Union",
+   "status": "present",
+   "quote": "mary foyle, 985 flat hill road, was present and provided some comments."
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Manager",
+   "status": "absent",
+   "quote": "the interim town manager, carter terenzini, went home sick and was unable to"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Evan Watters will follow up with the Interim Town Manager to schedule a meeting.",
+   "quote": "evan watters will follow up to schedule a meeting."
+  },
+  {
+   "decision": "Bill Bernard will reach out to the Mass DOT district office for an estimate of Fair Share funding.",
+   "quote": "bill bernard is unsure but will reach out to the mass dot district office."
+  },
+  {
+   "decision": "Evan Watters will reach out to Interim Town Manager Carter Terenzini for his opinion and suggestions on the budget process.",
+   "quote": "evan watters will reach out to the interim town manager, carter terenzini, to get his opinion and suggestions based on past experiences."
+  },
+  {
+   "decision": "The Town Treasurer will be invited to the 9/26/24 meeting.",
+   "quote": "b. 9/26/24 - the town treasurer will be invited to this meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Investment strategy: firm's scale",
+   "what_was_recorded": "Bartholomew and Company is described as managing a stated sum of municipal money across its client base.",
+   "figures_as_printed": [
+    "roughly 5 billion dollars"
+   ],
+   "quote": "the firm manages roughly 5 billion dollars and works with 325"
+  },
+  {
+   "topic": "Chapter 90 allocation for Lunenburg",
+   "what_was_recorded": "The Commonwealth's Chapter 90 allocation for the Town of Lunenburg was stated.",
+   "figures_as_printed": [
+    "$418,227.26"
+   ],
+   "quote": "the allocated amount for the town of lunenburg is $418,227.26."
+  },
+  {
+   "topic": "Chapter 90 received in FY24",
+   "what_was_recorded": "The town received a regular allotment plus Fair Share and Rural Roadway Program amounts in FY24.",
+   "figures_as_printed": [
+    "$418,064.75",
+    "$240,503.00",
+    "$21,979.00"
+   ],
+   "quote": "in fy 24, the town received $418,064.75 in regular allotment as well as $240,503.00 from fair share and $21,979.00 from the rural roadway program."
+  },
+  {
+   "topic": "Grant writing services: cost to investigate further",
+   "what_was_recorded": "Dave Passios suggested seeking funds from the Town Manager to investigate additional grants further.",
+   "figures_as_printed": [
+    "$5,000 to $10,000"
+   ],
+   "quote": "he suggests reaching out to the town manager to obtain $5,000 to $10,000 to investigate further."
+  },
+  {
+   "topic": "Comparison town Maynard: state aid",
+   "what_was_recorded": "The Budget Task Force found Maynard similar in numbers to Lunenburg, but receiving more state aid.",
+   "figures_as_printed": [
+    "3 million dollars"
+   ],
+   "quote": "a big difference was that they were receiving 3 million dollars more in state aid"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mary Foyle",
+   "stated_role": "President of the Teacher’s Union; Chairperson of the Public Employee Committee (PEC)",
+   "topic": "health insurance negotiations and PEC questions",
+   "quote": "mary foyle, 985 flat hill road, was present and provided some comments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (item 4)",
+   "resolution": "heard; no action recorded",
+   "tags": [
+    "health insurance",
+    "public comment"
+   ],
+   "quote": "mary foyle, 985 flat hill road, was present and provided some comments."
+  },
+  {
+   "topic": "Interim Town Manager Report (item 5)",
+   "resolution": "no report; Evan Watters to schedule a meeting",
+   "tags": [
+    "town manager"
+   ],
+   "quote": "so there was no report to discuss."
+  },
+  {
+   "topic": "Finance Director Report (item 6)",
+   "resolution": "skipped",
+   "tags": [
+    "finance director"
+   ],
+   "quote": "this topic was skipped."
+  },
+  {
+   "topic": "Investment strategy, Bartholomew (7a)",
+   "resolution": "presented; draft Special Town Meeting language received; no vote",
+   "tags": [
+    "investments",
+    "OPEB",
+    "Chapter 44",
+    "Special Town Meeting"
+   ],
+   "quote": "bartholemew and company is an independent investment advisory firm out"
+  },
+  {
+   "topic": "Chapter 90 presentation (7b)",
+   "resolution": "presented and discussed; Mass DOT estimate to be sought",
+   "tags": [
+    "Chapter 90",
+    "roads",
+    "stormwater"
+   ],
+   "quote": "chapter 90 is money provided by the commonwealth of massachusetts and"
+  },
+  {
+   "topic": "Review budget process (7c)",
+   "resolution": "discussed; suggestions gathered; no action recorded",
+   "tags": [
+    "budget process",
+    "software"
+   ],
+   "quote": "there is discussion about tripling up instead of doubling up on presentations"
+  },
+  {
+   "topic": "DLS Financial Policy Manual draft (7d)",
+   "resolution": "skipped",
+   "tags": [
+    "DLS"
+   ],
+   "quote": "this topic was skipped."
+  },
+  {
+   "topic": "Town Manager Search Committee (8a)",
+   "resolution": "update; firm to be selected at next meeting",
+   "tags": [
+    "town manager search"
+   ],
+   "quote": "chris menard confirms that the town manager search committee met with"
+  },
+  {
+   "topic": "Budget Task Force (8b)",
+   "resolution": "update; comparison with similar towns (Maynard)",
+   "tags": [
+    "budget",
+    "state aid",
+    "comparison towns"
+   ],
+   "quote": "evan watters states the budget task force met and spoke with bartholomew."
+  },
+  {
+   "topic": "Grant Writing Services (8c)",
+   "resolution": "update; Town Manager funding to be sought",
+   "tags": [
+    "grants",
+    "Parks Commission"
+   ],
+   "quote": "dave passios made a presentation at the last parks commission meeting."
+  },
+  {
+   "topic": "Consolidation of services and departments (8d)",
+   "resolution": "discussed; charter review supported; no vote recorded",
+   "tags": [
+    "charter review",
+    "governance"
+   ],
+   "quote": "dave passios suggests that the select board vote to seat a review"
+  },
+  {
+   "topic": "Minutes of 8/8/24 (item 9)",
+   "resolution": "approved 3-0-2",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "there was a motion to approve the minutes from august 8, 2024, by dave passios, seconded by tom gray. the vote was 3-0-2."
+  },
+  {
+   "topic": "Committee reports (item 10)",
+   "resolution": "reported; no action",
+   "tags": [
+    "Green Communities",
+    "Sewer Commission",
+    "Capital Planning",
+    "Parks Commission"
+   ],
+   "quote": "dave passios states that green communities committee met."
+  },
+  {
+   "topic": "Topics for future meetings (item 11)",
+   "resolution": "no additions",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "there are no additional topics to add to future agendas."
+  },
+  {
+   "topic": "Important dates (item 12)",
+   "resolution": "none",
+   "tags": [],
+   "quote": "there are no important upcoming dates."
+  },
+  {
+   "topic": "Upcoming meetings (item 13)",
+   "resolution": "listed; Town Treasurer invited to 9/26/24",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "b. 9/26/24 - the town treasurer will be invited to this meeting."
+  },
+  {
+   "topic": "Public Comment (item 14)",
+   "resolution": "no public comments recorded",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there were no public comments."
+  },
+  {
+   "topic": "Adjournment (item 15)",
+   "resolution": "motion to adjourn; closed at 10:13 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "there was a motion to adjourn by chris menard, seconded by dave passios."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "investment strategy",
+  "Bartholomew",
+  "Chapter 90",
+  "budget process",
+  "town manager search",
+  "health insurance",
+  "grants",
+  "Munis",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

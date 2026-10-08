@@ -130,6 +130,14 @@ def audit(since_utc, now=None):
             used.add((hit, r['stream']))
             files_used.add(hit)
             matched += 1
+            # ONE STEP, SEVERAL FILES OF ITS OWN: a meeting with two recordings (lunenburg-water-
+            # district 2024-08-28, 7 October) gets two minutes files from one paid step. Every
+            # other file for this board and date written during the step is that step's too.
+            for d in OUT_DIRS:
+                for f in glob.glob(os.path.join(ROOT, 'sources', 'data', d, r['board'], r['date'] + '*.json')):
+                    lag = (dt.datetime.fromtimestamp(os.path.getmtime(f), dt.timezone.utc) - t(r['at'])).total_seconds()
+                    if f not in files_used and -900 <= lag <= 120:
+                        files_used.add(f)
         else:
             bad.append('%s %s %s %s $%s' % (r['at'], r['stream'], r['board'], r['date'], r['cost_usd']))
     lo = t(since_utc + ':00Z' if len(since_utc) == 16 else since_utc)

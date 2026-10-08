@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-08-21",
  "docid": "6713",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Move forward with RDLA as the landscape design firm for Marshall Park",
+   "motion": "Move forward with RDLA (Ray Dunetz Landscape Architect) as the design firm for Marshall Park.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K. Menard",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "c. sullivan moved that the committee vote to move forward with rdla (ray dunetz landscape architect). the motion was seconded by k. menard. the chair called for a vote. the motion was approved unanimously."
+   "quote": "c. sullivan moved that the committee vote to move forward with rdla (ray dunetz landscape architect). the motion was seconded by k. menard."
   },
   {
-   "motion": "Approve the Parks Commission revolving fund as submitted to the Town Manager's office",
+   "motion": "Approve the Parks Commission revolving fund as submitted to the Chair by the Town Manager’s office.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K. Menard",
    "outcome": "passed 4-0",
@@ -29,6 +29,209 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0737844
+ "note": "Text is a plain extraction with some garbled spots (e.g. 'Nick -----' in the RDLA section) and no page-level OCR errors affecting the votes. Two votes are recorded with results; no motion to approve prior minutes, enter executive session or adjourn is recorded (the minutes show 'Adjourned: 9:58 pm' with no motion). Minutes alternate between 'Park Commission' and 'Parks Commission' in the headers and text. The November Special Town Meeting articles were discussed with no vote recorded. Board comment about a beach closure is not public comment and is not treated as such. No dollar figure is printed for the Marshall Park project itself.",
+ "cost_usd": 0.01556667,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan"
+  },
+  {
+   "name": "Tim Lawless",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, and christopher sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: colleen shapiro"
+  },
+  {
+   "name": "Tom Doolittle",
+   "role": "OPM firm Skanska",
+   "status": "present",
+   "quote": "additional attendees: tom doolittle, opm firm skanska, chris ruth"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Additional Attendee (role not stated)",
+   "status": "present",
+   "quote": "additional attendees: tom doolittle, opm firm skanska, chris ruth"
+  },
+  {
+   "name": "Andrew Bohne",
+   "role": "Landscape Architect, Fuss & O’Neill",
+   "status": "present",
+   "quote": "andrew bohne, landscape architect, and a. fairweather, landscape designer of fuss & o'neill gave a brief overview and discussed their presentation and design."
+  },
+  {
+   "name": "A. Fairweather",
+   "role": "Landscape Designer, Fuss & O’Neill",
+   "status": "present",
+   "quote": "andrew bohne, landscape architect, and a. fairweather, landscape designer of fuss & o'neill gave a brief overview and discussed their presentation and design."
+  },
+  {
+   "name": "Arsen Hambardzumian",
+   "role": "Principal Engineer, NESRA Engineering",
+   "status": "present",
+   "quote": "arsen hambardzumian, principal engineer, and his associate gave a brief overview and discussed their presentation and design."
+  },
+  {
+   "name": "Ray Dunetz",
+   "role": "Presenter, RDLA",
+   "status": "present",
+   "quote": "ray dunetz and david nardone gave a brief overview and discussed their presentation and design."
+  },
+  {
+   "name": "David Nardone",
+   "role": "Presenter, RDLA",
+   "status": "present",
+   "quote": "ray dunetz and david nardone gave a brief overview and discussed their presentation and design."
+  },
+  {
+   "name": "Nick Betts",
+   "role": "not stated (speaks in the RDLA section)",
+   "status": "present",
+   "quote": "nick betts indicated there will be three dedicated engineers on the project doing quality assurance and quality control."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "minutes submitted by (role not stated)",
+   "status": "not stated",
+   "quote": "submitted by: andrea mastrototoro"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Scoring of the written landscape design proposals was deferred until after the interviews.",
+   "quote": "a. scheipers suggested finishing the evaluation scoring after the interviews."
+  },
+  {
+   "decision": "The next meeting was set for September 18, 2024.",
+   "quote": "next item on the agenda, next meeting september 18, 2024"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Revolving fund amount",
+   "what_was_recorded": "The Chair reported a suggestion to raise the revolving fund to $40,000; the revolving fund was then approved 4-0 as submitted by the Town Manager’s office.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "a. scheipers indicated a. clement suggested raising the revolving fund to $40,000."
+  },
+  {
+   "topic": "Fuss & O’Neill project size experience",
+   "what_was_recorded": "Commissioner Lawless raised concern that Fuss & O’Neill had no experience with projects over a stated dollar size.",
+   "figures_as_printed": [
+    "2 million dollars"
+   ],
+   "quote": "t. lawless expressed concerns with fuss & o'neill not having experience with projects over 2 million dollars"
+  },
+  {
+   "topic": "Marshall Park funding sources",
+   "what_was_recorded": "The OPM noted the project is funded with state and federal grants, which carry reporting requirements and drive the phase 1 schedule.",
+   "figures_as_printed": [],
+   "quote": "t. doolittle indicated this project is funded with state and federal grants."
+  },
+  {
+   "topic": "Additional funding for Town Meeting",
+   "what_was_recorded": "The Chair asked how to get a dollar figure for additional Marshall Park funding for Town Meeting; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "a.scheipers what is the best way to get a dollar number for additional funding for town meeting?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Scoring of written proposals, Marshall Park landscape design",
+   "resolution": "scoring deferred until after interviews",
+   "quote": "first item on the agenda, complete scoring of written proposals from the submitting landscape design firms",
+   "tags": [
+    "Marshall Park",
+    "landscape design selection"
+   ]
+  },
+  {
+   "topic": "Interviews with three landscape design firms",
+   "resolution": "interviews held with NESRA, Fuss & O’Neill and RDLA",
+   "quote": "next item on the agenda, conduct interviews with the three landscape design firms: nesra, fuss & o'neill, and rdla",
+   "tags": [
+    "Marshall Park",
+    "landscape design selection"
+   ]
+  },
+  {
+   "topic": "Finalize rankings and vote for top design firm",
+   "resolution": "passed unanimously: move forward with RDLA",
+   "quote": "next item on the agenda, finalize rankings of design firms and vote for top choice firm for contracting with the town",
+   "tags": [
+    "Marshall Park",
+    "landscape design selection",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Parks Commission revolving fund",
+   "resolution": "approved 4-0 as submitted by Town Manager’s office",
+   "quote": "c. sullivan made a motion the parks commission revolving fund as submitted to the chair by the town manager's office.",
+   "tags": [
+    "revolving fund"
+   ]
+  },
+  {
+   "topic": "November Special Town Meeting articles",
+   "resolution": "discussed; no action recorded",
+   "quote": "a. scheipers discussed the article to increase the recreation director's hours from 19 to 28.",
+   "tags": [
+    "Town Meeting articles",
+    "Recreation Director",
+    "revolving fund",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Chair updates",
+   "resolution": "none reported",
+   "quote": "next item on the agenda, chair updates",
+   "tags": []
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for September 18, 2024",
+   "quote": "next item on the agenda, next meeting september 18, 2024",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "Marshall Park",
+  "landscape design selection",
+  "revolving fund",
+  "Town Meeting articles",
+  "state and federal grants",
+  "Recreation Director",
+  "beach closure"
+ ],
+ "dropped_unquoted_by_field": {}
 }
