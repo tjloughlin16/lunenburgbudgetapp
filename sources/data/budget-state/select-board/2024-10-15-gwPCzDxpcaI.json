@@ -1,0 +1,85 @@
+{
+ "board": "Select Board",
+ "board_slug": "select-board",
+ "meeting_date": "2024-10-15",
+ "source": {
+  "sha256": "f9993403d06a4e458b74806a7712a2069fb5f4d5984a44674f87c4304421519f",
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-10-15-gwPCzDxpcaI.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$31,800",
+    "fiscal_year": 2025,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Article 2 would raise an additional sum for the school FY25 operating budget, tied to a Chapter 70 increase.",
+    "status": "proposed",
+    "t": 4753,
+    "who": "the chair"
+   },
+   {
+    "amount_as_heard": "just shy of a million dollars",
+    "fiscal_year": 2025,
+    "kind": "override",
+    "scope": "town",
+    "statement": "A member said the town just passed an override of just under a million dollars.",
+    "status": "announced",
+    "t": 6133,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "$5.2 million",
+    "fiscal_year": 2025,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Articles 12 and 13 would authorize borrowing to complete Marshall Park.",
+    "status": "proposed",
+    "t": 8366,
+    "who": "the chair"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2025,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "No certified free cash is available yet, and the tax rate and new growth are not certified.",
+    "status": "announced",
+    "t": 5983,
+    "who": "the interim town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "levy limit and revenue",
+    "condition": "if appropriations are set before values and new growth are certified",
+    "fiscal_year": 2025,
+    "prediction": "Without certified tax rate and new growth the town could appropriate beyond its levy limit and leave revenue on the table.",
+    "scope": "town",
+    "t": 6133,
+    "who": "a member"
+   },
+   {
+    "about": "regular debt capacity",
+    "condition": "if borrowed as regular rather than excluded debt",
+    "fiscal_year": 2025,
+    "prediction": "The regular debt for Marshall Park would affect the rest of the operating budget and other departments.",
+    "scope": "town",
+    "t": 8095,
+    "who": "a member"
+   }
+  ]
+ },
+ "video_id": "gwPCzDxpcaI",
+ "video_url": "https://www.youtube.com/watch?v=gwPCzDxpcaI",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-07T21:34:35Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

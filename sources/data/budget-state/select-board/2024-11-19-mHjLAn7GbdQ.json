@@ -1,0 +1,86 @@
+{
+ "board": "Select Board",
+ "board_slug": "select-board",
+ "meeting_date": "2024-11-19",
+ "source": {
+  "sha256": "94e18d8f18ea53bf632d3266d250f6f0a25ce7b292fd691e888b52a9711d8ee3",
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-11-19-mHjLAn7GbdQ.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "33,976",
+    "fiscal_year": 2025,
+    "kind": "levy",
+    "scope": "town",
+    "statement": "The assessor presented an estimated FY2025 total levy, up from last year.",
+    "status": "announced",
+    "t": 695,
+    "who": "the principal assessor"
+   },
+   {
+    "amount_as_heard": "$14.37",
+    "fiscal_year": 2025,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The estimated FY2025 single tax rate was presented, about 1.9% above last year.",
+    "status": "announced",
+    "t": 737,
+    "who": "the principal assessor"
+   },
+   {
+    "amount_as_heard": "single rate",
+    "fiscal_year": 2025,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The board voted for a single tax rate with no exemptions.",
+    "status": "voted",
+    "t": 2870,
+    "who": "the board"
+   },
+   {
+    "amount_as_heard": "12 to 15%",
+    "fiscal_year": 2026,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The town was told to expect a health insurance trend rate of 12 to 15%, with renewals in mid-January.",
+    "status": "announced",
+    "t": 4291,
+    "who": "the interim town manager"
+   },
+   {
+    "amount_as_heard": "0%",
+    "fiscal_year": 2026,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Property insurance renewal carries no increase for FY26.",
+    "status": "announced",
+    "t": 4227,
+    "who": "the interim town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "health insurance",
+    "condition": "actual renewals not yet received",
+    "fiscal_year": 2026,
+    "prediction": "Health insurance renewal expected at a high trend rate.",
+    "scope": "town",
+    "t": 4291,
+    "who": "the interim town manager"
+   }
+  ]
+ },
+ "video_id": "mHjLAn7GbdQ",
+ "video_url": "https://www.youtube.com/watch?v=mHjLAn7GbdQ",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-07T21:22:27Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

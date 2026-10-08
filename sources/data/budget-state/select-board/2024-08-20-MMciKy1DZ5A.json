@@ -1,0 +1,75 @@
+{
+ "board": "Select Board",
+ "board_slug": "select-board",
+ "meeting_date": "2024-08-20",
+ "source": {
+  "sha256": "518ea2d499dbb3851e7a736b54405d2114bf0079a14ca202568c3102de560cba",
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-08-20-MMciKy1DZ5A.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$ 31,8 182",
+    "fiscal_year": 2025,
+    "kind": "state_aid",
+    "scope": "school",
+    "statement": "School committee letter reports Chapter 70 came in above the governor's proposal and asks that it go to the school budget at the November special town meeting.",
+    "status": "proposed",
+    "t": 1437,
+    "who": "a letter from the school committee, read by the chair"
+   },
+   {
+    "amount_as_heard": "$339,700",
+    "fiscal_year": 2025,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The unallocated ARPA balance available for reprogramming was stated as this amount, later raised after adjusting payroll services.",
+    "status": "announced",
+    "t": 3334,
+    "who": "the interim town manager"
+   },
+   {
+    "amount_as_heard": "$353,500 60",
+    "fiscal_year": 2025,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The final ARPA allocation by median ranking was read as this total, and the board voted to commit it.",
+    "status": "voted",
+    "t": 6857,
+    "who": "the chair"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "fall town meeting appropriations",
+    "condition": null,
+    "fiscal_year": 2025,
+    "prediction": "The interim manager said he is trying not to appropriate any new money at the fall town meeting because he is not comfortable with the budget.",
+    "scope": "town",
+    "t": 3091,
+    "who": "the interim town manager"
+   },
+   {
+    "about": "ARPA funds not expended",
+    "condition": "if money is not spent",
+    "fiscal_year": null,
+    "prediction": "ARPA recipients that do not spend their funds may have them pulled back by the board.",
+    "scope": "town",
+    "t": 2582,
+    "who": "the interim town manager"
+   }
+  ]
+ },
+ "video_id": "MMciKy1DZ5A",
+ "video_url": "https://www.youtube.com/watch?v=MMciKy1DZ5A",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-08T02:43:32Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

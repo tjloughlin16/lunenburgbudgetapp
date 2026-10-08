@@ -1,0 +1,65 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2024-05-23",
+ "source": {
+  "sha256": "5c0fc70a48337c148e6f049b54b1cbe1c80199afb477cef47f656ba184b0489d",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2024-05-23-yGE1_U8665E.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$92,000",
+    "fiscal_year": 2025,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "A member said the state cherry sheet estimates show a net increase in revenue over the Governor's proposal.",
+    "status": "announced",
+    "t": 4121,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "948 136",
+    "fiscal_year": 2025,
+    "kind": "override",
+    "scope": "school",
+    "statement": "Members said the passed override goes in as one line item to the schools.",
+    "status": "announced",
+    "t": 1745,
+    "who": "a member"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "override",
+    "condition": null,
+    "fiscal_year": null,
+    "prediction": "Another override may be needed for the town side",
+    "scope": "town",
+    "t": 446,
+    "who": "a member"
+   },
+   {
+    "about": "short-term borrowing",
+    "condition": null,
+    "fiscal_year": 2025,
+    "prediction": "Town may not be able to take short-term debt in 2025 without a revenue source",
+    "scope": "town",
+    "t": 404,
+    "who": "a member"
+   }
+  ]
+ },
+ "video_id": "yGE1_U8665E",
+ "video_url": "https://www.youtube.com/watch?v=yGE1_U8665E",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-08T06:12:04Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2024-09-26",
+ "source": {
+  "sha256": "63a0392d8e31ac08911cbbbd89388ff727e9cc972620c34f148ee3e683b02676",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2024-09-26-GUHNS4ZUcHQ.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$1.5 million",
+    "fiscal_year": null,
+    "kind": "override",
+    "scope": "both",
+    "statement": "A member said salaries alone could justify an override of this size.",
+    "status": "proposed",
+    "t": 3014,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "$3 million",
+    "fiscal_year": null,
+    "kind": "override",
+    "scope": "both",
+    "statement": "Split tax rate modeling compared tax bills with a $3 million override at different shifts.",
+    "status": "proposed",
+    "t": 8957,
+    "who": "a member"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "layoffs",
+    "condition": "if budget grows only at the levy limit while salary increases run higher",
+    "fiscal_year": null,
+    "prediction": "Salary increases above the levy limit will leave no money for anything else and force layoffs.",
+    "scope": "both",
+    "t": 2889,
+    "who": "a member"
+   },
+   {
+    "about": "grant writing services line",
+    "condition": "if it does not show it can bear fruit",
+    "fiscal_year": 2026,
+    "prediction": "Grant writing line may be absorbed into another budget line in FY26.",
+    "scope": "town",
+    "t": 9714,
+    "who": "a member"
+   },
+   {
+    "about": "overrides",
+    "condition": null,
+    "fiscal_year": null,
+    "prediction": "More overrides will be needed because the levy limit does not keep up with inflation.",
+    "scope": "both",
+    "t": 2760,
+    "who": "a member"
+   }
+  ]
+ },
+ "video_id": "GUHNS4ZUcHQ",
+ "video_url": "https://www.youtube.com/watch?v=GUHNS4ZUcHQ",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-07T21:38:56Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}
