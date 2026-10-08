@@ -571,7 +571,7 @@ def wait_for_reset(gp, S, G):
         dt.datetime.now().strftime('%H:%M'), ('%g' % h[-1]['u5']) if h else '?', when))
     while not S.kill_switch():
         time.sleep(30)
-        G.fetch(force=True)
+        G.fetch()                        # paced by usage_governor, not by this loop
         h = G.readings()
         # A NEW WINDOW BEGINS WITH ITS FIRST USE, so after the old reset the server may name no
         # reset at all until something calls the model. Resume once the old reset has passed

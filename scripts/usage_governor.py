@@ -44,8 +44,10 @@ import sys
 
 LOG = os.path.expanduser('~/.claude/usage-api-log.csv')   # written by fetch(), and only by it
 URL = 'https://api.anthropic.com/api/oauth/usage'
-FETCH_EVERY_S = 55
-STALE_S = 300            # a reading older than this is unknown, never current
+FETCH_EVERY_S = 150      # the endpoint answers 429 when polled every minute (7 October, 22:40)
+BACKOFF_S = 600          # after a refusal, ask nothing for this long
+_BACKOFF = os.path.expanduser('~/.claude/usage-api-backoff')
+STALE_S = 420            # a reading older than this is unknown, never current (> FETCH_EVERY_S x 2)
 BAND = 2.0               # points either side of the line that count as "on it"
 RAMP_S = 300             # at most one added worker per five minutes
 SLOPE_S = 900            # the window the emergency slope is measured over
@@ -73,8 +75,11 @@ def fetch(force=False):
     import json
     import urllib.request
     hist = readings()
-    if not force and hist and dt.datetime.now().timestamp() - hist[-1]['t'] < FETCH_EVERY_S:
-        return True
+    now = dt.datetime.now().timestamp()
+    if hist and now - hist[-1]['t'] < (FETCH_EVERY_S if not force else 60):
+        return True                      # even a forced fetch is at most once a minute
+    if os.path.exists(_BACKOFF) and now - os.path.getmtime(_BACKOFF) < BACKOFF_S:
+        return False                     # refused recently: ask nothing until the back-off ends
     try:
         req = urllib.request.Request(URL, headers={
             'Authorization': 'Bearer ' + _token(), 'anthropic-beta': 'oauth-2025-04-20',
@@ -89,7 +94,9 @@ def fetch(force=False):
             fh.write('%s,%s,%s,%d\n' % (dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
                                          f5['utilization'], f7['utilization'], reset))
         return True
-    except Exception:                                   # noqa: BLE001 -- any failure is "unknown"
+    except Exception as e:                              # noqa: BLE001 -- any failure is "unknown"
+        if getattr(e, 'code', None) == 429:
+            open(_BACKOFF, 'w').write(str(now))
         return False
 
 
@@ -283,8 +290,8 @@ def _test():
     d = decide(p5, [R(now - 10, 40, 80)], now)
     case('weekly cap reached: stop', bool(d['stop']) and 'weekly' in d['stop'])
     p6 = Plan()
-    d = decide(p6, [R(now - 400, 40)], now)
-    case('a reading over five minutes old: STALE, one worker', d['jobs'] == 1 and 'STALE' in d['note'])
+    d = decide(p6, [R(now - STALE_S - 60, 40)], now)
+    case('a reading older than STALE_S: STALE, one worker', d['jobs'] == 1 and 'STALE' in d['note'])
     p7 = Plan(session_cap=60, by=now + 1800)
     decide(p7, [R(now - 10, 50)], now)
     d = decide(p7, [R(now + 1795, 55)], now + 1800)
