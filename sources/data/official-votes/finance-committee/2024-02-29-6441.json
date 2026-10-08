@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-02-29",
  "docid": "6441",
@@ -12,23 +12,376 @@
  },
  "votes": [
   {
-   "motion": "approve the letter to be sent to the Select Board",
+   "motion": "Approve the letter to be sent to the Select Board (Town grant writer letter).",
    "moved_by": "Chris Menard",
    "seconded_by": "Jean Russell",
-   "outcome": "passed 6-0",
-   "procedural": true,
-   "quote": "there was a motion to approve the letter to be sent to the select board by chris menard, seconded by jean r ussell. roll call vote. jean russel l aye, dave passios aye, tom gray aye, j ay simeone aye, chris menard aye, evan watters aye. unanimous vote."
+   "outcome": "passed unanimously (roll call; six ayes listed)",
+   "procedural": false,
+   "quote": "there was a motion to approve the letter to be sent to the select board by chris menard, seconded by jean r ussell."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
-   "outcome": "passed 6-0",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "there was a motion to adjourn by chris menard , seconded by dave passios . jean russell aye, dave passios aye, tom gray aye, j ay simeone aye, chris menard aye, evan watters aye. unanimous vote."
+   "quote": "there was a motion to adjourn by chris menard , seconded by dave passios ."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text preserved in quotes exactly as scanned, including spacing artifacts.",
- "cost_usd": 0.1278601
+ "note": "Text is extracted with stray spaces inside words and figures (e.g. 'Chis holm', 'W atters', '$ 9 9, 614'); quotes reproduce that spacing as printed, and line breaks are collapsed to single spaces. Two votes recorded: the grant writer letter (roll call, all six members listed as aye, printed as 'Unanimous vote') and adjournment (printed as 'Unanimous vote', no roll listed). No vote recorded on the override or warrant article. Ezequiel Ayala is named only as someone Chris Menard spoke with, so not listed as an attendee. Minutes were OCR-like text with no scan indicator; figures marked odd are recorded as printed.",
+ "cost_usd": 0.02046627,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair evan watters, vice chair chris menard, board member tom"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "chair evan watters, vice chair chris menard, board member tom"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "chair evan watters, vice chair chris menard, board member tom"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member dave passios, board member jean russell, board member jay"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member dave passios, board member jean russell, board member jay"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member dave passios, board member jean russell, board member jay"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent member: clerk tiffaney tavares"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "public commenter, 181 Reservoir Road (as printed in the minutes)",
+   "status": "present",
+   "quote": "rhonda lisio , 181 reservoir road , states that she came close to filing an"
+  },
+  {
+   "name": "Casey Chisholm",
+   "role": "IT Director",
+   "status": "present",
+   "quote": "casey chisholm confirms it is not benefited."
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Chief (Police)",
+   "status": "present",
+   "quote": "chief thomas gammel presented the budget."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Collecting FY21-FY23 revenue and expenditure totals to show trends is to be done in the off season, and the topic is added to future agendas.",
+   "quote": "the suggestion is for this to be done in the off season. this will be added"
+  },
+  {
+   "decision": "An additional discussion relating to a warrant article is added to the agenda for the meeting on the 6th.",
+   "quote": "will be added to the agenda for the meeting on the 6"
+  },
+  {
+   "decision": "Casey Chisholm will investigate whether the connection to the cloud is functioning properly.",
+   "quote": "casey chisholm will investigate"
+  },
+  {
+   "decision": "Casey Chisholm will research whether there is a better process for uploading meeting YouTube videos to the minutes.",
+   "quote": "casey chisholm will do some research and"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "IT FY25 hardware maintenance request",
+   "what_was_recorded": "Hardware maintenance under the IT FY25 budget requests is described as maintaining the device replacement cycle, totaling the printed figure.",
+   "figures_as_printed": [
+    "$ 30,000"
+   ],
+   "quote": "hardware maintenance includes maintaining the device replacement cycle totaling $ 30,000 ."
+  },
+  {
+   "topic": "IT FY25 public safety phone system upgrade",
+   "what_was_recorded": "The public safety phone system upgrade is requested at a printed total, including completion of phase 2.",
+   "figures_as_printed": [
+    "$ 12,000"
+   ],
+   "quote": "public safety phone system upgrade totaling $ 12,000 . this includes the"
+  },
+  {
+   "topic": "Police FY25 personnel budget",
+   "what_was_recorded": "Personnel is printed as 83% of the police budget, at a dollar figure.",
+   "figures_as_printed": [
+    "83%",
+    "$2,375,310"
+   ],
+   "quote": "personnel is 83% or $2,375,310 of the budget."
+  },
+  {
+   "topic": "Police FY25 overtime",
+   "what_was_recorded": "Overtime is printed as 13% of the police budget, at a dollar figure.",
+   "figures_as_printed": [
+    "13%",
+    "$301,680"
+   ],
+   "quote": "overtime is 13% or $301,680."
+  },
+  {
+   "topic": "Police FY25 training",
+   "what_was_recorded": "Training is printed as 4% of the police budget. The dollar figure is printed with stray spaces as '$ 9 9, 614' (rendering of the amount is not confirmed by the text).",
+   "figures_as_printed": [
+    "4%",
+    "$ 9 9, 614"
+   ],
+   "quote": "training is 4% or $ 9 9, 614 ."
+  },
+  {
+   "topic": "Police FY25 vehicle maintenance",
+   "what_was_recorded": "Vehicle Maintenance is printed as 2% of the police budget, at a dollar figure.",
+   "figures_as_printed": [
+    "2%",
+    "$ 67,000"
+   ],
+   "quote": "vehicle maintenance is 2% or $ 67,000 ."
+  },
+  {
+   "topic": "Police FY25 animal control services",
+   "what_was_recorded": "Animal Control services are printed as 2% of the police budget, at a dollar figure.",
+   "figures_as_printed": [
+    "2%",
+    "$ 46,125"
+   ],
+   "quote": "animal control services total 2% or $ 46,125."
+  },
+  {
+   "topic": "Comfort dog program (unfunded request) and Town Manager recommendation",
+   "what_was_recorded": "The Town Manager's budget recommends a printed figure for the comfort dog program, and the FY25 rate for a K9 handler or comfort dog handler is printed separately.",
+   "figures_as_printed": [
+    "$ 19,095 .09",
+    "$19,572.47"
+   ],
+   "quote": "budget recommends $ 19,095 .09"
+  },
+  {
+   "topic": "Comfort dog program rate",
+   "what_was_recorded": "The FY25 rate for a K9 handler and/or comfort dog handler is printed as a dollar figure.",
+   "figures_as_printed": [
+    "$19,572.47"
+   ],
+   "quote": "a comfort dog handler is $19,572.47."
+  },
+  {
+   "topic": "Police request versus preliminary budget gap",
+   "what_was_recorded": "Committee member notes a $20,000 difference between the police request budget and the preliminary budget; the chief says that $20,000 would be valuable for a comfort dog.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "states the request budget versus preliminary budget has a $20,000"
+  },
+  {
+   "topic": "FY25 override options as share of budget",
+   "what_was_recorded": "The School Committee's four override options are printed as percentages of the budget; no dollar figures are printed for them in this passage.",
+   "figures_as_printed": [
+    "2.94%",
+    "5.42%",
+    "8.73%",
+    "11.46%"
+   ],
+   "quote": "was 11.46% of the budget."
+  },
+  {
+   "topic": "Overnight sewer project cost overrun",
+   "what_was_recorded": "A Sewer Commission project started overnight was reported as significantly costly, requiring additional money; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "was apparent there needed to be additional work and money to complete the"
+  },
+  {
+   "topic": "Tax bill impact of override and debt exclusion",
+   "what_was_recorded": "A public commenter asked what tax bill increases to expect from a combination of the budget override and debt exclusion; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "from a combination of the budget override and the debt exclusion"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 Reservoir Road (as printed)",
+   "topic": "open meeting law complaint and tax impact of override and debt exclusion",
+   "quote": "rhonda lisio , 181 reservoir road , states that she came close to filing an"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "heard; no action recorded",
+   "quote": "rhonda lisio , 181 reservoir road , states that she came close to filing an",
+   "tags": [
+    "public comment",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Finance Director Report",
+   "resolution": "no report",
+   "quote": "are no new updates or reports.",
+   "tags": [
+    "finance director"
+   ]
+  },
+  {
+   "topic": "IT FY25 Budget Presentation",
+   "resolution": "presented; questions answered",
+   "quote": "casey chisholm confirms it is not benefited.",
+   "tags": [
+    "information technology",
+    "FY25 budget"
+   ]
+  },
+  {
+   "topic": "Police FY25 Budget Presentation",
+   "resolution": "presented; questions answered; reductions and comfort dog discussed",
+   "quote": "chief thomas gammel presented the budget.",
+   "tags": [
+    "police",
+    "FY25 budget",
+    "comfort dog"
+   ]
+  },
+  {
+   "topic": "FY21-FY23 Revenue and Expenditures Recap Discussion",
+   "resolution": "to be added to future agendas",
+   "quote": "the suggestion is for this to be done in the off season.",
+   "tags": [
+    "revenue",
+    "expenditures",
+    "trends"
+   ]
+  },
+  {
+   "topic": "Public Comment on FY25 Budget Presentations",
+   "resolution": "no comments",
+   "quote": "no comments from the public.",
+   "tags": [
+    "public comment",
+    "FY25 budget"
+   ]
+  },
+  {
+   "topic": "Town Grant Writer Letter",
+   "resolution": "approved",
+   "quote": "the letter edited by tiffaney tavares, dave passios, and jay simeone was",
+   "tags": [
+    "grant writer",
+    "select board"
+   ]
+  },
+  {
+   "topic": "FY25 Budget Update: Override Warrant Article",
+   "resolution": "discussed; warrant article discussion added to next agenda",
+   "quote": "there was a vote by the school dept",
+   "tags": [
+    "override",
+    "warrant article",
+    "school budget"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "no action",
+   "quote": "there are n o minutes to review.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported",
+   "quote": "dave passios attended the green communities and there is now a full 5-seat",
+   "tags": [
+    "sewer",
+    "assessors",
+    "green communities"
+   ]
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "notes taken",
+   "quote": "evan watters took notes throughout the meeting",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Upcoming FY25 Budget Meetings",
+   "resolution": "schedule listed",
+   "quote": "mar 7th - dpw & facilities (fincom)",
+   "tags": [
+    "FY25 budget",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Important Dates",
+   "resolution": "listed",
+   "quote": "jan 9th-mar 18th - town meeting warrant open",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "election"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no public comments",
+   "quote": "there were no public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned unanimously at 10:35PM",
+   "quote": "the meeting closed at 10:35pm",
+   "tags": [
+    "adjourn"
+   ]
+  }
+ ],
+ "tags": [
+  "FY25 budget",
+  "information technology",
+  "police",
+  "comfort dog",
+  "override",
+  "warrant article",
+  "public comment",
+  "open meeting law",
+  "revenue recap",
+  "grant writer letter",
+  "town meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

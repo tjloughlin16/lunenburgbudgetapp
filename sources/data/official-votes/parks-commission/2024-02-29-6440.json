@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-02-29",
  "docid": "6440",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept revised beach fee rates",
+   "motion": "Accept the revised rates for 2024 town beach and pass fees, as listed.",
    "moved_by": "A. Schiepers",
    "seconded_by": "K. Menard",
    "outcome": "passed 3-1",
@@ -20,7 +20,7 @@
    "quote": "a. schiepers made a motion to accept the revised rates. k. menard seconded all in favor, motion carried (3-1)."
   },
   {
-   "motion": "Pursue the change of Marshall Park address from Chestnut Street to Mass Ave",
+   "motion": "Pursue the change of address for Marshall Park from Chestnut Street to Mass Ave.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K. Menard",
    "outcome": "passed 4-0",
@@ -28,7 +28,7 @@
    "quote": "c. sullivan made a motion to pursue the change to mass ave. k. menard seconded. all in favor, motion carried (4-0)."
   },
   {
-   "motion": "Approve the minutes from October 18 & December 6, 2023",
+   "motion": "Approve the minutes of October 18 and December 6, 2023.",
    "moved_by": "C. Sullivan",
    "seconded_by": "A. Lockwood",
    "outcome": "passed 4-0",
@@ -37,6 +37,343 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0688344
+ "note": "Digital text, not a scan. Five pages of a longer packet (page headers read 'page of 51' to '55'). Three motions are recorded with counts; the 3-1 vote does not name the dissenter, and no abstentions are stated. Adjournment at 9:08 pm is recorded without a motion. Names vary across the text (Schiepers/Scheipers; Christopher/Chris Sullivan; C. Ruth's role is not printed). The Shady Point presenter is printed only as 'Chris'. Items the minutes describe as suggestions or updates are not recorded as decisions.",
+ "cost_usd": 0.01789467,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and anita schiepers"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and anita schiepers"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and anita schiepers"
+  },
+  {
+   "name": "Anita Schiepers",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, and anita schiepers"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: colleen shapiro"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Additional Attendee (gave the budget update; role not printed)",
+   "status": "present",
+   "quote": "additional attendees: chris ruth"
+  },
+  {
+   "name": "J. Swenson",
+   "role": "Public comment",
+   "status": "present",
+   "quote": "j. swenson stated he is satisfied with the direction chris from shady point is going."
+  },
+  {
+   "name": "Chris (Shady Point Campground)",
+   "role": "Presented offer on Lake Shirley parcels (surname not printed)",
+   "status": "present",
+   "quote": "chris, of shady point campground proposed an offer to open up their ramp for kayaks"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed that the Chair would represent the Commission in signing the Skate Park agreement on its behalf, once Town Council and insurance are satisfied.",
+   "quote": "the committee agreed for the chair to represent."
+  },
+  {
+   "decision": "The Commission decided to ask that the Shady Point property offer be transferred to Parks.",
+   "quote": "the commission decided to ask to transfer the property to parks."
+  },
+  {
+   "decision": "The Chair would like C. Ruth to take the concern about level-funded programming and Senior Center lines to the Town Manager.",
+   "quote": "would like c. ruth to reiterate that to the town manager."
+  },
+  {
+   "decision": "A. Schiepers will reach out to C. Shapiro about Earth Day Celebrations.",
+   "quote": "a. schiepers will reach out to c. shapiro"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2025 budget: Recreation Director hours and landscaping",
+   "what_was_recorded": "C. Ruth reported the budget would raise the Recreation Director's hours from 19 to 28 and add money for landscaping; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "c. ruth indicated the budget would increase the recreation director"
+  },
+  {
+   "topic": "Town beach salaries budgeted",
+   "what_was_recorded": "The Chair noted that $20,000 is budgeted for beach salaries, and that fees collected help offset salaries and maintenance.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "a. lockwood noted that $20,000 is budgeted for beach salaries."
+  },
+  {
+   "topic": "Swim lesson fee increase",
+   "what_was_recorded": "A proposal to raise swim lessons to $30 per child per session, $60 for a second, capped at $90 per family; the Vice Chair felt swim lessons should be self-funded.",
+   "figures_as_printed": [
+    "$30",
+    "$60",
+    "$90"
+   ],
+   "quote": "k. menard suggested an increase to $30 per child per session for swim lessons, respectively $60 and capped at $90 per family."
+  },
+  {
+   "topic": "Daily pass fee schedule for 2024",
+   "what_was_recorded": "The revised schedule lists resident and non-resident daily pass prices and a $1 increase to the day pass; the season pass stays the same.",
+   "figures_as_printed": [
+    "$6",
+    "$3",
+    "$12",
+    "$6",
+    "$1"
+   ],
+   "quote": "resident daily pass 2 adults and 3 children $6, additional children $3"
+  },
+  {
+   "topic": "Lunenburg Night fireworks",
+   "what_was_recorded": "The Chair noted a good fireworks display could run $12,000 for a proposed community event.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "a. lockwood suggested the possibility of fireworks, a good display could run $12,000."
+  },
+  {
+   "topic": "Marshall Park renovation funding",
+   "what_was_recorded": "The project is funded by a State grant and ARPA money; no exact dollar figure is printed, only the phrases shown.",
+   "figures_as_printed": [
+    "half-million-dollar grant",
+    "a million dollars from ARPA"
+   ],
+   "quote": "this project is funded through a half-million-dollar grant from the state which will cover the pavilion"
+  },
+  {
+   "topic": "Land and Water Conservation grant",
+   "what_was_recorded": "The Chair suggested reapplying next year if the Commission is not awarded the Land and Water Conservation grant.",
+   "figures_as_printed": [
+    "million-dollar grant"
+   ],
+   "quote": "reapplying next year if the commission was not awarded the land and water conservation million-dollar grant"
+  },
+  {
+   "topic": "Dredging grant application",
+   "what_was_recorded": "The grant application for dredging and hydro raking at the Town Beach and the Marshall Park pond is just shy of $700,000.",
+   "figures_as_printed": [
+    "$700,000"
+   ],
+   "quote": "the grant, just shy of $700,000 is to put together a proper design and construction for dredging and hydro raking at both locations."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "J. Swenson",
+   "stated_role": "not stated",
+   "topic": "Shady Point offer on Lake Shirley parcels",
+   "quote": "j. swenson stated he is satisfied with the direction chris from shady point is going."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Facilities Director & Recreation Director Update",
+   "resolution": "no action; updates read into the record",
+   "tags": [
+    "recreation",
+    "spring schedule",
+    "summer schedule"
+   ],
+   "quote": "first item on the agenda, facilities director & recreation director update"
+  },
+  {
+   "topic": "Budget Discussion for FY2025",
+   "resolution": "discussed; Chair to raise level-funded lines with Town Manager",
+   "tags": [
+    "FY2025 budget",
+    "recreation",
+    "senior center"
+   ],
+   "quote": "next item on the agenda, budget discussion for fy2025"
+  },
+  {
+   "topic": "Town Beach House Work: set timeline",
+   "resolution": "no timeline set; K. Menard to review schedule with C. Ruth",
+   "tags": [
+    "town beach",
+    "timeline"
+   ],
+   "quote": "next item on the agenda, town beach house work: set timeline"
+  },
+  {
+   "topic": "Skate Park Agreement",
+   "resolution": "committee agreed the Chair would sign for the Commission",
+   "tags": [
+    "skate park",
+    "contracts",
+    "insurance",
+    "concrete testing"
+   ],
+   "quote": "next item on the agenda, skate park agreement"
+  },
+  {
+   "topic": "Town Beach Fees",
+   "resolution": "revised 2024 fee schedule approved, passed 3-1",
+   "tags": [
+    "beach fees",
+    "swim lessons",
+    "daily pass"
+   ],
+   "quote": "next item on the agenda, town beach fees: discussion"
+  },
+  {
+   "topic": "Marshall Park address change",
+   "resolution": "approved, passed 4-0",
+   "tags": [
+    "marshall park",
+    "address"
+   ],
+   "quote": "next item on the agenda, request change of address for marshall park from chestnut street to mass ave."
+  },
+  {
+   "topic": "Lunenburg Night at Whalom Park",
+   "resolution": "discussed; Chair to discuss with Angela; no vote",
+   "tags": [
+    "events",
+    "whalom park",
+    "fireworks",
+    "parking"
+   ],
+   "quote": "a. lockwood suggested having a community event at lake avenue."
+  },
+  {
+   "topic": "Lake Shirley parcels: Shady Point kayak ramp offer",
+   "resolution": "Commission decided to ask Open Space to transfer property to Parks; Chris to follow up with Select Board",
+   "tags": [
+    "lake shirley",
+    "shady point",
+    "open space",
+    "kayaks"
+   ],
+   "quote": "next item on the agenda, discussion about the lake shirley parcels"
+  },
+  {
+   "topic": "Earth Day Celebrations",
+   "resolution": "assigned: A. Schiepers to reach out to C. Shapiro",
+   "tags": [
+    "earth day",
+    "events"
+   ],
+   "quote": "next item on the agenda, earth day celebrations"
+  },
+  {
+   "topic": "NHS Project",
+   "resolution": "no response yet; C. Sullivan had emailed Body",
+   "tags": [
+    "nhs project"
+   ],
+   "quote": "next item on the agenda, nhs project"
+  },
+  {
+   "topic": "Marshall Park Renovation: funding timeline",
+   "resolution": "discussed; OPM proposals due March 13, interview March 27, decision a week later",
+   "tags": [
+    "marshall park",
+    "rfq",
+    "opm",
+    "grants",
+    "arpa"
+   ],
+   "quote": "next item on the agenda, marshall park renovation: funding timeline"
+  },
+  {
+   "topic": "Dredging grant",
+   "resolution": "application being finalized; no vote",
+   "tags": [
+    "dredging",
+    "town beach",
+    "marshall park pond",
+    "grants"
+   ],
+   "quote": "next item on the agenda, dredging grant"
+  },
+  {
+   "topic": "0 Whalom Road lot",
+   "resolution": "owners unwilling to give lot to Town; no action",
+   "tags": [
+    "whalom road",
+    "land"
+   ],
+   "quote": "next item on the agenda, update: 0 whalom road"
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "Master Plan Steering meeting March 7; Open Space decision on Shady Point noted",
+   "tags": [
+    "master plan",
+    "open space"
+   ],
+   "quote": "next item on the agenda, committee updates"
+  },
+  {
+   "topic": "Approval of minutes October 18 & December 6, 2023",
+   "resolution": "approved, passed 4-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "next item on the agenda, approval of minutes october 18 & december 6, 2023."
+  },
+  {
+   "topic": "Comments: Little League T-ball",
+   "resolution": "noted; Little League discussing move to old primary school property with Select Board",
+   "tags": [
+    "little league",
+    "t-ball",
+    "select board"
+   ],
+   "quote": "c. sullivan stated the little league is looking to move the t-ball and has discussed with the select board"
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for March 20 & 27, 2024 at 7 pm",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "last item on the agenda: next meeting, march 20 & 27, 2024 at 7 pm."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "recreation",
+  "FY2025 budget",
+  "beach fees",
+  "swim lessons",
+  "skate park",
+  "marshall park",
+  "grants",
+  "lake shirley",
+  "whalom park",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

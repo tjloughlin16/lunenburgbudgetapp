@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2024-02-29",
  "docid": "6425",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of January 18, 2024",
+   "motion": "Approve the minutes of January 18, 2024.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "board member deborah a.h. christen made a motion to approve the minutes; vice chair seconded, with all in favor."
   },
   {
-   "motion": "Approve the November 2023 financials as presented",
+   "motion": "Approve the November, 2023 financials as presented.",
    "moved_by": "Vice Chair",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "vice chair made a motion to approve the november, 2023 financials as presented; tenant board member seconded, with all in favor."
   },
   {
-   "motion": "Approve the Year's End financials as presented",
+   "motion": "Approve the Year's End financials as presented.",
    "moved_by": "Vice Chair",
    "seconded_by": "Deborah A.H. Christen",
    "outcome": "passed",
@@ -36,15 +36,15 @@
    "quote": "vice chair made a motion to approve the year's end financials as presented; board member deborah a.h. christen seconded, with all in favor."
   },
   {
-   "motion": "Approve the Operating Budget for State-Aided Housing of Lunenburg Housing Authority (Chapter 200/667/705/689/MRVP) Program Number 400-1 for Fiscal Year Ending 12/31/2024",
+   "motion": "Approve the Operating Budget for State-Aided Housing of Lunenburg Housing Authority (Chapter 200/667/705/689/MRVP) Program Number 400-1 for Fiscal Year Ending 12/31/2024.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
    "procedural": false,
-   "quote": "board member deborah a.h. christen made a motion to approve the operating budget for state-aided housing of lunenburg housing authority (chapter 200/667/705/689/mrvp) program number 400-1 for fiscal year ending 12/31/2024; vice chair seconded, with all in favor."
+   "quote": "board member deborah a.h. christen made a motion to approve the operating budget for state-aided housing of lunenburg housing authority"
   },
   {
-   "motion": "Approve the Year-End Financial and Federal-State Lead Paint Certifications",
+   "motion": "Resolution 2024-2: approve the Year-End Financial and Federal-State Lead Paint Certifications.",
    "moved_by": "Vice Chair",
    "seconded_by": "Deborah A.H. Christen",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "motion made by vice chair to approve the year-end financial and federal-state lead paint certifications; board member deborah a.h. christen seconded the motion, with all in favor."
   },
   {
-   "motion": "Approve the Year-End Financial and Federal-State Lead Paint Certifications",
+   "motion": "Resolution 2024-3 FY2024 Budget: the motion as printed approves the Year-End Financial and Federal-State Lead Paint Certifications (the minutes' heading says Budget; the motion text does not).",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "motion made by board member deborah a.h. christen to approve the year-end financial and federal-state lead paint certifications; vice chair seconded the motion, with all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 2:37p.m.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Vice Chair",
    "outcome": "passed",
@@ -69,6 +69,243 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Resolution 2024-3 (votes 6) contains the same motion text as Resolution 2024-2 (vote 5), which appears to be a copy-paste error in the minutes. Resolution 2024-3 is labeled as concerning the FY2024 Budget, while Resolution 2024-2 concerns Year-End Financial and Federal-State Lead Paint Certifications. The actual FY2024 Operating Budget approval appears as vote 4.",
- "cost_usd": 0.1499317
+ "note": "Text extraction of a typed minutes document, not a scan; all content was readable. Every vote is recorded as \"with all in favor\" with no count, so outcomes are recorded as \"passed\". Resolution 2024-3 is headed \"FY2024. Budget\", but its motion text approves the Year-End Financial and Federal-State Lead Paint Certifications; both are recorded as printed. Motion lines name the Vice Chair and Tenant Board Member by role only; the names appear only in the roll call, and I did not infer which person seconded. Only the GASB75 and budget discussion touched money, and only one dollar-type figure (45.63%, a percentage) was printed; no dollar amounts appear. No transfers were recorded.",
+ "cost_usd": 0.01658907,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dale Proulx",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair dale proulx asked for a roll call of members present: dale proulx-present, linda mcdonald-present, wayne caron-present, and deborah a.h. christen-present."
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "chair dale proulx asked for a roll call of members present: dale proulx-present, linda mcdonald-present, wayne caron-present, and deborah a.h. christen-present."
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "chair dale proulx asked for a roll call of members present: dale proulx-present, linda mcdonald-present, wayne caron-present, and deborah a.h. christen-present."
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "chair dale proulx asked for a roll call of members present: dale proulx-present, linda mcdonald-present, wayne caron-present, and deborah a.h. christen-present."
+  },
+  {
+   "name": "Nicole Waters",
+   "role": "Treasurer",
+   "status": "absent",
+   "quote": "nicole waters, treasurer"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "also present, were executive director benjamin gold, assistant executive director adam gautie, and administrative assistance/special projects jade tavares, director of finance suzanne bonney, and fenton, ewald and associates pc sue honeycutt."
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "also present, were executive director benjamin gold, assistant executive director adam gautie, and administrative assistance/special projects jade tavares, director of finance suzanne bonney, and fenton, ewald and associates pc sue honeycutt."
+  },
+  {
+   "name": "Jade Tavares",
+   "role": "Administrative Assistance/Special Projects",
+   "status": "present",
+   "quote": "also present, were executive director benjamin gold, assistant executive director adam gautie, and administrative assistance/special projects jade tavares, director of finance suzanne bonney, and fenton, ewald and associates pc sue honeycutt."
+  },
+  {
+   "name": "Suzanne Bonney",
+   "role": "Director of Finance",
+   "status": "present",
+   "quote": "also present, were executive director benjamin gold, assistant executive director adam gautie, and administrative assistance/special projects jade tavares, director of finance suzanne bonney, and fenton, ewald and associates pc sue honeycutt."
+  },
+  {
+   "name": "Sue Honeycutt",
+   "role": "from Fenton, Ewald and Associates PC",
+   "status": "present",
+   "quote": "sue honeycutt from fenton, ewald and associates pc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Assistant Executive Director to follow up with the Director of Facilities about the laundry machines needing cleaning.",
+   "quote": "assistant executive director to follow up with the director of facilities."
+  },
+  {
+   "decision": "Executive Director to follow up on a request for an updated list of office hours.",
+   "quote": "executive director to follow up."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Year-end financials: income and reserve",
+   "what_was_recorded": "Sue Honeycutt said year's income was greater than expected and expenses have increased; the reserve was reported as a percentage.",
+   "figures_as_printed": [
+    "45.63%"
+   ],
+   "quote": "the reserve is 45.63%, which is good."
+  },
+  {
+   "topic": "Line 4541 Employee Benefits GASB75 and Pension",
+   "what_was_recorded": "The chair asked about the GASB75 line; the minutes say the projected amounts for it and the Pension line do not affect the Reserve.",
+   "figures_as_printed": [],
+   "quote": "chair asked about line 4541 employee benefits - gasb75."
+  },
+  {
+   "topic": "FY2024 operating budget",
+   "what_was_recorded": "Per unit amounts were updated; maintenance, contract, property tax and accounting costs increased. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "maintenance and contract costs have increased, along with property tax and accounting costs."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "not stated",
+   "stated_role": "",
+   "topic": "laundry machines needing cleaning",
+   "quote": "a discussion was held about the laundry machines needing cleaning."
+  },
+  {
+   "speaker": "A tenant",
+   "stated_role": "tenant",
+   "topic": "updated list of office hours",
+   "quote": "a tenant asked for an updated list of office hours"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opportunity for Public Comments",
+   "resolution": "follow-up assigned to Assistant Executive Director and Executive Director",
+   "quote": "assistant executive director to follow up with the director of facilities.",
+   "tags": [
+    "public comment",
+    "laundry",
+    "office hours",
+    "tenants"
+   ]
+  },
+  {
+   "topic": "Meeting called to order",
+   "resolution": "quorum declared; opened 2:00p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 2:00p.m.",
+   "tags": [
+    "quorum",
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Approval of January 18, 2024 minutes",
+   "resolution": "approved",
+   "quote": "board member deborah a.h. christen made a motion to approve the minutes; vice chair seconded, with all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "reported; no action recorded",
+   "quote": "the executive director talked about the board member training, which is due by april 28th",
+   "tags": [
+    "board training",
+    "ethics training",
+    "MassNAHRO",
+    "lease",
+    "board seat"
+   ]
+  },
+  {
+   "topic": "Financial Report",
+   "resolution": "November 2023 financials, Year's End financials and FY2024 Operating Budget approved",
+   "quote": "the financials of november, 2023 were reviewed.",
+   "tags": [
+    "financials",
+    "year-end",
+    "operating budget",
+    "reserve"
+   ]
+  },
+  {
+   "topic": "Modernization and Work Order Report",
+   "resolution": "reported; project near completion",
+   "quote": "project is near completion.",
+   "tags": [
+    "work orders",
+    "modernization",
+    "emergencies"
+   ]
+  },
+  {
+   "topic": "State-Aided Housing Report",
+   "resolution": "reported; no action recorded",
+   "quote": "we received 10 standard applications (7 elderly/young disabled and 3 family).",
+   "tags": [
+    "waiting list",
+    "occupancy",
+    "applications",
+    "lease-ups"
+   ]
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "none",
+   "quote": "unfinished business - none",
+   "tags": []
+  },
+  {
+   "topic": "New Business: Resolutions 2024-2 and 2024-3",
+   "resolution": "both approved",
+   "quote": "resolution 2024-2 year-end financial and federal-state lead paint certifications.",
+   "tags": [
+    "resolutions",
+    "lead paint certification",
+    "year-end"
+   ]
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "listed; no action recorded",
+   "quote": "eohlc phn 2024-2 requirement to consult residents when entering into management agreements",
+   "tags": [
+    "EOHLC",
+    "management agreements",
+    "residents"
+   ]
+  },
+  {
+   "topic": "Motion to Adjourn",
+   "resolution": "adjourned at 2:37p.m.",
+   "quote": "board member deborah a.h. christen made a motion to adjourn the meeting 2:37p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "year-end financials",
+  "FY2024 operating budget",
+  "reserve",
+  "public comment",
+  "laundry",
+  "office hours",
+  "tenants",
+  "board training",
+  "state-aided housing",
+  "occupancy",
+  "waiting list",
+  "work orders",
+  "lead paint certification",
+  "EOHLC"
+ ],
+ "dropped_unquoted_by_field": {}
 }

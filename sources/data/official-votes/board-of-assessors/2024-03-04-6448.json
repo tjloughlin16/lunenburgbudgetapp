@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-03-04",
  "docid": "6448",
@@ -12,15 +12,309 @@
  },
  "votes": [
   {
-   "motion": "Suspend open meeting and enter executive session",
+   "motion": "Suspend open meeting and enter into executive session, not to return to open session after executive session.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a motion to suspend open meeting and enter into executive session not to return to open session after executive session by sarah cammer, seconded by john rabbitt. roll call vote. john rabbitt aye"
+   "quote": "there was a motion to suspend open meeting and enter into executive session not to return to open session after executive session by sarah cammer, seconded by john rabbitt. roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1268911
+ "note": "Date discrepancy: the request gives 2024-03-04, but the minutes' own header reads \"APRIL 1, 2024\", they schedule the next meeting for April 22, 2024, and \"March 04, 2024\" appears only in the list of minutes to approve. Treated as the April 1, 2024 meeting; the board date should be checked. Text is extracted from a non-scanned document; no scan limitation. Only one recorded vote (the executive session motion, roll call with three ayes printed, no numeric count). The minutes approval was postponed, not voted. The Clause 41C discussion records positions but no motion. The lien release, commitments and MLS bill were signed, with no vote recorded. Page 5 repeats the executive session entry with the statutory purpose; it is one motion, not two. Heather Lemieux is named as mentioning a training but is not recorded as attending.",
+ "cost_usd": 0.017346570000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda mcquade, interim principal assessor rena swezey. via zoom ‒ clerk john rabbitt."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda mcquade, interim principal assessor rena swezey. via zoom ‒ clerk john rabbitt."
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda mcquade, interim principal assessor rena swezey. via zoom ‒ clerk john rabbitt."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, principal assessor lynda mcquade, interim principal assessor rena swezey. via zoom ‒ clerk john rabbitt."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "via zoom ‒ clerk john rabbitt."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Guest",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, sorted through many of the questions that could be answered and pulled out the still relevant questions."
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "dave macdonald, 155 island road, is still disappointed with last year's bills being mailed out late."
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "not stated",
+   "quote": "heather lemieux mentioned there is training for vision that she will look into."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The quarterly MLS bill of $126 was signed.",
+   "quote": "the quarterly bill from multiple listing service (mls) service for the amount of $126 was signed."
+  },
+  {
+   "decision": "The real estate and personal property commitments were signed.",
+   "quote": "the real estate commitment is $2,177,837,450 and personal property commitment is $64,914,630 totaling $2,242,752,080. both documents were signed."
+  },
+  {
+   "decision": "The Committee signed a release of a lien on rollback taxes for some Holman Street lots.",
+   "quote": "the committee signed the release of a lien on rollback taxes for some lots on holman street."
+  },
+  {
+   "decision": "Rena Swezey will stay on until the end of May, as confirmed with Heather Lemieux.",
+   "quote": "rena swezey has confirmed with heather lemieux that she will stay on until the end of may."
+  },
+  {
+   "decision": "Lynda McQuade and Rena Swezey will begin reviewing building permits the following week to catch up on the backlog.",
+   "quote": "lynda mcquade and rena swezey will start reviewing building permits next week to catch up on the backlog."
+  },
+  {
+   "decision": "Approval of the listed minutes was postponed to the next meeting.",
+   "quote": "brian laffond suggests going over the minutes when the board members are all physically in the room. this topic was postponed to the next meeting."
+  },
+  {
+   "decision": "The Work Breakdown Structure topic stays on the future agenda.",
+   "quote": "this topic will be kept on as a future agenda topic."
+  },
+  {
+   "decision": "The next meeting is set for April 22, 2024.",
+   "quote": "the board agrees to have the next meeting on april 22, 2024."
+  },
+  {
+   "decision": "Brian Laffond will find and reserve a meeting location.",
+   "quote": "brian laffond will find and reserve a location."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MLS quarterly bill",
+   "what_was_recorded": "The quarterly Multiple Listing Service bill was signed at $126.",
+   "figures_as_printed": [
+    "$126"
+   ],
+   "quote": "the quarterly bill from multiple listing service (mls) service for the amount of $126 was signed."
+  },
+  {
+   "topic": "Real estate and personal property commitments",
+   "what_was_recorded": "The real estate commitment, personal property commitment and their total were recorded; both documents were signed.",
+   "figures_as_printed": [
+    "$2,177,837,450",
+    "$64,914,630",
+    "$2,242,752,080"
+   ],
+   "quote": "the real estate commitment is $2,177,837,450 and personal property commitment is $64,914,630 totaling $2,242,752,080. both documents were signed."
+  },
+  {
+   "topic": "Clause 41C elderly exemption limits and abatement (historical, last acted on 2006)",
+   "what_was_recorded": "The minutes record the 2006 elderly exemption income limits and abatement amount: the single-person limit, the married-couple limit, and the abatement increase.",
+   "figures_as_printed": [
+    "$24,000",
+    "$30,000",
+    "$600",
+    "$750"
+   ],
+   "quote": "the elderly exemption income limits for a single person were $24,000 and married couple were $30,000. the abatement was raised from $600 to $750."
+  },
+  {
+   "topic": "Clause 41C proposed abatement amount",
+   "what_was_recorded": "John Rabbitt wants to move forward with a range of $750 to $1,000 and change the age limit; no decision was recorded.",
+   "figures_as_printed": [
+    "$750",
+    "$1,000"
+   ],
+   "quote": "john rabbitt wants to move forward with $750 to $1,000 and change the age limit to be consistent with what all other communities are doing."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave MacDonald",
+   "topic": "late tax bills and public updates",
+   "quote": "dave macdonald, 155 island road, is still disappointed with last year's bills being mailed out late."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening comments",
+   "resolution": "no comments from the Board or public",
+   "quote": "the meeting opened at 6:30 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Status reports from interim and new Principal Assessor",
+   "resolution": "no action",
+   "quote": "the new principal assessor, lynda mcquade, started on monday.",
+   "tags": [
+    "staffing",
+    "motor vehicle excise",
+    "MUNIS",
+    "Vision"
+   ]
+  },
+  {
+   "topic": "Review and approve invoices, expense vouchers, payroll, billing errors",
+   "resolution": "MLS bill of $126 signed; commitments signed",
+   "quote": "review and approve invoices, expense v ouchers, payroll, billing errors, etc.",
+   "tags": [
+    "invoices",
+    "commitments",
+    "MLS"
+   ]
+  },
+  {
+   "topic": "Lien release on rollback taxes, Holman Street",
+   "resolution": "release signed",
+   "quote": "the committee signed the release of a lien on rollback taxes for some lots on holman street.",
+   "tags": [
+    "liens",
+    "rollback taxes"
+   ]
+  },
+  {
+   "topic": "Potential revision to warrant article, Clause 41C",
+   "resolution": "continued; more information needed",
+   "quote": "potential revision to warrant article about clause 41c",
+   "tags": [
+    "warrant article",
+    "elderly exemption",
+    "Clause 41C",
+    "COLA"
+   ]
+  },
+  {
+   "topic": "Status of community outreach: assessor conference, website, FAQs",
+   "resolution": "no action; website to go live mid to late April",
+   "quote": "all in all, the conference was well received.",
+   "tags": [
+    "outreach",
+    "website",
+    "FAQ",
+    "conference"
+   ]
+  },
+  {
+   "topic": "FAQs from citizen questions, guest Carl Luck",
+   "resolution": "no action; suggested a findable 'How to Read Your Property Card' page",
+   "quote": "carl luck, 50 sunset lane, sorted through many of the questions that could be answered and pulled out the still relevant questions.",
+   "tags": [
+    "FAQ",
+    "guest"
+   ]
+  },
+  {
+   "topic": "Status of 5-year revaluation and tax bills",
+   "resolution": "no action; bills expected in two weeks, due mid-May",
+   "quote": "status of 5-year revaluation / tax bills",
+   "tags": [
+    "revaluation",
+    "tax bills",
+    "exemptions",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "DOR directives: neighborhood (site code) review committee",
+   "resolution": "proposed; no vote",
+   "quote": "brian laffond wants to put together a neighborhood reevaluation team including a member of the board",
+   "tags": [
+    "DOR",
+    "neighborhood codes",
+    "revaluation"
+   ]
+  },
+  {
+   "topic": "Approve minutes of January through March 2024 meetings",
+   "resolution": "postponed to next meeting",
+   "quote": "this topic was postponed to the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Future topics",
+   "resolution": "kept on agenda; BOA policies no discussion",
+   "quote": "this topic will be kept on as a future agenda topic.",
+   "tags": [
+    "future agenda",
+    "work breakdown structure",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "next meeting set for April 22, 2024",
+   "quote": "the board agrees to have the next meeting on april 22, 2024.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments: public and board",
+   "resolution": "Sarah Cammer proposed submitting a data collector budget request to the Town Manager",
+   "quote": "sarah cammer proposes submitting to the town manager the information about adding a data collector to our budget",
+   "tags": [
+    "staffing",
+    "budget",
+    "data collector",
+    "Town Manager"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "passed; entered executive session, not to return to open session",
+   "quote": "there was a motion to suspend open meeting and enter into executive session not to return to open session after executive session by sarah cammer, seconded by john rabbitt. roll call vote.",
+   "tags": [
+    "executive session",
+    "Purpose 7"
+   ]
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "property assessment",
+  "tax bills",
+  "revaluation",
+  "motor vehicle excise",
+  "elderly exemption",
+  "Clause 41C",
+  "warrant article",
+  "COLA",
+  "website",
+  "FAQ",
+  "staffing",
+  "commitments",
+  "liens",
+  "executive session",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }
