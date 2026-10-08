@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2024-03-12",
  "docid": "6451",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the February 13, 2024 minutes",
+   "motion": "Approve the February 13, 2024 minutes.",
    "moved_by": "Ms. Beale",
    "seconded_by": "Mr. McGuigan",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "ms. beale motioned to approve the february 13, 2024 minutes. mr. mcguigan seconded the motion. all approved and motion carried."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Lincoln",
    "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed",
@@ -29,6 +29,277 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned OCR document. Discussion items listed in CURRENT BUSINESS sections (1-9) had no formal motions; the Eagle House Supporters report is a status update with no board vote recorded.",
- "cost_usd": 0.09763770000000001
+ "note": "Text is macOS Vision OCR with garbled passages: \"Master Pian\" (Plan), a list number \"2.\" interleaved into item 1, and the meeting cancellation policy paragraph is unreadable, so it was not used. Both recorded motions say \"All approved\" or \"motion carried\" with no vote count, so outcome is \"passed\" with no tally. Eagle House's \"Lori Holden was voted in\" is a Supporters' vote reported in the COA minutes, with no motion or count, so it is not recorded as a board vote. \"Mr. Lincoln\" (item 4) is not matched to Pete Lincoln because the minutes do not say. The minutes are marked \"Approved at the 4/9/2024 COA Meeting\", so they are the approved version.",
+ "cost_usd": 0.01594217,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, betty digiacomo, jim"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, betty digiacomo, jim"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, betty digiacomo, jim"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, betty digiacomo, jim"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, betty digiacomo, jim"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "cathy beale, jane rabbitt, susan o'sullivan, judy tarbell, helen balcom & michele beauvais"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "cathy beale, jane rabbitt, susan o'sullivan, judy tarbell, helen balcom & michele beauvais"
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "cathy beale, jane rabbitt, susan o'sullivan, judy tarbell, helen balcom & michele beauvais"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "cathy beale, jane rabbitt, susan o'sullivan, judy tarbell, helen balcom & michele beauvais"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "cathy beale, jane rabbitt, susan o'sullivan, judy tarbell, helen balcom & michele beauvais"
+  },
+  {
+   "name": "Michele Beauvais",
+   "role": "not stated",
+   "status": "present",
+   "quote": "michele beauvais excused diane nowd"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "michele beauvais excused diane nowd"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "from Lunenburg Assessors",
+   "status": "present",
+   "quote": "guests jack rabbitt from lunenburg assessors & ryan murphy from suzor it"
+  },
+  {
+   "name": "Ryan Murphy",
+   "role": "from Suzor IT",
+   "status": "present",
+   "quote": "guests jack rabbitt from lunenburg assessors & ryan murphy from suzor it"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "After discussion, the chair stated that the COA policies and procedures are acceptable, and that the Mass General Law on Councils on Aging cannot change unless Town Meeting changes it. No vote was recorded.",
+   "quote": "however, the coa policies & procedures are acceptable."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House newsletter subscription price",
+   "what_was_recorded": "Newsletter subscriptions will now cost $8.00 because postage increased.",
+   "figures_as_printed": [
+    "$8.00"
+   ],
+   "quote": "newsletters subscriptions will now cost $8.00 due to the increase in postage."
+  },
+  {
+   "topic": "FY25 COA budget and Meal Site extended hours request",
+   "what_was_recorded": "The Director and Chair attended the Fin/Com budget meeting for the COA; Fin/Com pushed back on the Meal Site manager's request for extended hours. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "they had push back on the meal site managers request for extended hours"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Rabbitt",
+   "stated_role": "from Lunenburg Assessors",
+   "topic": "41C-Modification",
+   "quote": "public comment mr. rabbitt presented & reviewed the 41c-modification with the board."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "called to order at 9:35 am",
+   "quote": "chairperson deb lincoln called the meeting to order at 9:35 am.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announced; no action",
+   "quote": "ms. lincoln announced that mr. franco would not be running for a second term.",
+   "tags": [
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Public comment: 41C-Modification",
+   "resolution": "presented and reviewed with the board; no action recorded",
+   "quote": "public comment mr. rabbitt presented & reviewed the 41c-modification with the board.",
+   "tags": [
+    "41C",
+    "assessors"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved February 13, 2024 minutes",
+   "quote": "ms. beale motioned to approve the february 13, 2024 minutes. mr. mcguigan seconded the motion. all approved and motion carried.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Lunenburg Master Plan survey",
+   "resolution": "discussed; survey available at Town Hall and COA",
+   "quote": "ms. lincoln encourages everyone to take the new master",
+   "tags": [
+    "master plan",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Senior tax relief",
+   "resolution": "no discussion recorded",
+   "quote": "discussion lunenburg senior tax relief: none",
+   "tags": [
+    "tax relief"
+   ]
+  },
+  {
+   "topic": "COA board email",
+   "resolution": "IT guest available to help with email problems",
+   "quote": "ryan murphy from it was available to assist",
+   "tags": [
+    "email",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Lunenburg 300 celebration",
+   "resolution": "suggested; no action recorded",
+   "quote": "he suggested placing a large boulder with a commemorative plaque in the",
+   "tags": [
+    "Luther Burbank",
+    "celebration"
+   ]
+  },
+  {
+   "topic": "Recreation area update",
+   "resolution": "no update",
+   "quote": "recreation area update none",
+   "tags": [
+    "recreation"
+   ]
+  },
+  {
+   "topic": "COA board member opening",
+   "resolution": "position still available; no action",
+   "quote": "council on aging board member opening: position still available.",
+   "tags": [
+    "board membership"
+   ]
+  },
+  {
+   "topic": "COA logo choices",
+   "resolution": "choices presented and colour options discussed; no choice recorded",
+   "quote": "ms. lincoln presented several choices for the coa logo.",
+   "tags": [
+    "logo"
+   ]
+  },
+  {
+   "topic": "Mass General Law on Councils on Aging",
+   "resolution": "no change possible absent Town Meeting; COA policies acceptable",
+   "quote": "unless a change is made at town meeting, no changes can be made to this law.",
+   "tags": [
+    "state law",
+    "town meeting",
+    "policies"
+   ]
+  },
+  {
+   "topic": "FY25 COA budget",
+   "resolution": "reported from Fin/Com budget meeting; no action recorded",
+   "quote": "they had push back on the meal site managers request for extended hours",
+   "tags": [
+    "budget",
+    "fin com",
+    "meal site"
+   ]
+  },
+  {
+   "topic": "Upcoming events",
+   "resolution": "reviewed for April and rest of March",
+   "quote": "ms. doherty reviewed the upcoming events for april and the remainder of",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported; newsletter price raised to $8.00",
+   "quote": "lori holden was voted in as an honorary member of the supporters.",
+   "tags": [
+    "eagle house",
+    "newsletter"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:41 am",
+   "quote": "ms. lincoln motioned to adjourn the meeting. ms. digiacomo seconded the motion. all approved and the motion was carried.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "budget",
+  "meal site",
+  "master plan",
+  "eagle house",
+  "logo",
+  "town meeting",
+  "public comment",
+  "minutes approval",
+  "board membership"
+ ],
+ "dropped_unquoted_by_field": {}
 }

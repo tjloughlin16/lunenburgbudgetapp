@@ -1,0 +1,582 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "public-access-cable-committee-pacc",
+ "board": "Public Access Cable Committee (PACC)",
+ "video_title": "PACC",
+ "meeting_date": "2024-03-11",
+ "video_id": "tnGa6QMY3Qg",
+ "video_url": "https://www.youtube.com/watch?v=tnGa6QMY3Qg",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/public-access-cable-committee-pacc/2024-03-11-tnGa6QMY3Qg.json",
+  "sha256": "4e3fb13333e58b739e3fea09d06c9e2651e0fc3e50b1ec2cb0f0951b34e8ea01",
+  "caption_lines": 245,
+  "segments": 1666
+ },
+ "recording": {
+  "duration_s": 5238,
+  "duration": "1:27",
+  "spoken_chars": 52868,
+  "words_approx": 8811
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03112024-6450",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2024-03-11-agenda-6450.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2024-03-11-agenda-6450.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03112024-6450",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2024-03-11-minutes-6450.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2024-03-11-minutes-6450.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T11:05:47Z",
+  "cost_usd": 0.3755984
+ },
+ "minutes": {
+  "headline": "PACC voted to raise the manager's hours, approve the budget, and let the chair present it to the Finance Committee.",
+  "summary": "The Public Access Cable Committee reviewed the manager's report, then walked through the budget presentation and spreadsheet prepared by the chair and manager. It voted on three linked motions: manager's hours, the budget, and the chair presenting. It also approved the prior minutes, named a representative to the town master plan, and tabled a rebranding idea.",
+  "attendees": [
+   {
+    "name_as_heard": "Steve",
+    "role": "chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Paul",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Faith",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Pete",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Joe",
+    "role": "manager",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Eric",
+    "role": "staff (referred to as staff)",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 147,
+    "topic": "Chair asked for public comments at the start of the meeting; none were heard."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "fees",
+   "grants",
+   "legal",
+   "personnel",
+   "public-comment",
+   "staffing",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 208,
+    "motion": "Appoint a member as PACC's representative to the town master plan meetings.",
+    "outcome": "passed (roll call yes votes heard from Steve, Paul and Faith; full count not clear)",
+    "procedural": false
+   },
+   {
+    "t": 464,
+    "motion": "Accept the minutes of the prior meeting as amended.",
+    "outcome": "passed (roll call affirmatives heard; names garbled)",
+    "procedural": true
+   },
+   {
+    "t": 4392,
+    "motion": "Increase the manager's hours to 36 hours per week.",
+    "outcome": "passed unanimously by roll call",
+    "procedural": false
+   },
+   {
+    "t": 4503,
+    "motion": "Approve the budget as discussed and modified at the meeting.",
+    "outcome": "passed (roll call all in favor heard)",
+    "procedural": false
+   },
+   {
+    "t": 4545,
+    "motion": "Approve the PACC chair to make the budget presentation to the Finance Committee and elsewhere as needed.",
+    "outcome": "passed by roll call (affirmatives heard)",
+    "procedural": false
+   },
+   {
+    "t": 5126,
+    "motion": "Table the discussion of rebranding PACC.",
+    "outcome": "passed (seconded; voice call, result not explicitly stated)",
+    "procedural": false
+   },
+   {
+    "t": 5189,
+    "motion": "Adjourn.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 572,
+    "topic": "ARPA funding for studio equipment",
+    "what_was_said": "The manager has quotes and is awaiting a purchase order and money transfer from the ARPA funds.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 974,
+    "topic": "Indirect costs owed back to PACC (FY22/FY23)",
+    "what_was_said": "Indirect costs were budgeted at the highest insurance estimate for a technician never hired; the actual was lower and the difference has not been returned. Finance has agreed it is owed.",
+    "figures_as_heard": [
+     "$21,000",
+     "$25,000",
+     "30,000",
+     "35,000"
+    ]
+   },
+   {
+    "t": 2648,
+    "topic": "Comcast franchise fee income estimate for FY25",
+    "what_was_said": "Estimate built from average quarterly fees; the decline is smaller than at many other access stations.",
+    "figures_as_heard": [
+     "47,800",
+     "194,50"
+    ]
+   },
+   {
+    "t": 2877,
+    "topic": "Interest and bond interest income",
+    "what_was_said": "Regular interest is taken from the FY23 actual, with an unexplained spike. Bond interest is reserved for capital and not relied on for operations.",
+    "figures_as_heard": [
+     "3,960",
+     "27,800"
+    ]
+   },
+   {
+    "t": 3024,
+    "topic": "FY25 summary budget",
+    "what_was_said": "Salaries, indirect costs, non-salary operations and a capital line are summed against estimated income, leaving a small surplus.",
+    "figures_as_heard": [
+     "112,000",
+     "48,000",
+     "25,000",
+     "24,000",
+     "46,000",
+     "30,000",
+     "191,000",
+     "16,000"
+    ]
+   },
+   {
+    "t": 3382,
+    "topic": "Manager hours scenario and resulting margin",
+    "what_was_said": "Raising the manager's hours from 28 to 36 leaves the budget near zero; reserves in the Enterprise fund could cover capital in future years.",
+    "figures_as_heard": [
+     "28",
+     "34",
+     "36",
+     "$3,300"
+    ]
+   },
+   {
+    "t": 3754,
+    "topic": "Line-by-line budget spreadsheet",
+    "what_was_said": "Videographer costs rose with more meeting coverage. Rent, vendor, equipment maintenance and a capital line were reviewed, and indirect costs were recalculated with the health care rate.",
+    "figures_as_heard": [
+     "33,000",
+     "$6,000",
+     "1400",
+     "15,000",
+     "30,000",
+     "5.7%",
+     "6.6"
+    ]
+   },
+   {
+    "t": 1864,
+    "topic": "Revenue sources slide",
+    "what_was_said": "PACC revenue is reserved for PACC and does not affect town budgets; the Comcast franchise fee is the main income.",
+    "figures_as_heard": [
+     "30,000"
+    ]
+   },
+   {
+    "t": 4952,
+    "topic": "Indirect costs as town income",
+    "what_was_said": "Indirect costs paid by PACC are income to the town general fund; the Comcast fees go to the Enterprise fund.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [
+   {
+    "t": 572,
+    "description": "Purchase order and money transfer from ARPA funds for studio equipment, awaiting Finance",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 208,
+    "decision": "A member volunteered to attend the town master plan meetings as PACC's representative."
+   },
+   {
+    "t": 355,
+    "decision": "Chair and manager will write a letter to the joint committee chair supporting the H74 streaming bill, with the manager's draft to be shared tomorrow."
+   },
+   {
+    "t": 4567,
+    "decision": "Chair will present the budget at the Finance Committee on March 21; members will watch the posted agenda for the time and avoid three or more attending."
+   },
+   {
+    "t": 5189,
+    "decision": "Next meeting set for April 1 at 6 pm at the Lunenburg town library."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 18,
+    "t_end": 126,
+    "topic": "Meeting-law notice and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 147,
+    "t_end": 292,
+    "topic": "Public comment and town master plan representative",
+    "resolution": "voted",
+    "tags": [
+     "public-comment",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 292,
+    "t_end": 355,
+    "topic": "Thanks to staff for meeting coverage",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 355,
+    "t_end": 399,
+    "topic": "Communications: H74 streaming bill letter",
+    "resolution": "informational",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 399,
+    "t_end": 510,
+    "topic": "Prior meeting minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 510,
+    "t_end": 1397,
+    "topic": "Manager's report: ARPA, H74 bill, indirect cost refund, programming",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "grants",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 1397,
+    "t_end": 2515,
+    "topic": "FY25 budget presentation slides",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2515,
+    "t_end": 3004,
+    "topic": "Spreadsheet: Comcast income and interest estimates",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 3004,
+    "t_end": 4230,
+    "topic": "Summary budget, manager hours and line-by-line review",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "staffing",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 4230,
+    "t_end": 5061,
+    "topic": "Three motions: manager hours, budget, chair presentation",
+    "resolution": "voted",
+    "tags": [
+     "budget",
+     "staffing",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 5061,
+    "t_end": 5231,
+    "topic": "Rebranding, enterprise fund report, next meeting, adjournment",
+    "resolution": "tabled / adjourned",
+    "tags": [
+     "policy"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call counts for several votes were garbled; names and tallies were not fully captioned.",
+   "Whether the master plan representative was Paul or another member is unclear from the captions.",
+   "Adjournment vote outcome was cut off by the end of the captions.",
+   "Some figures (e.g. the Comcast estimate) were truncated or garbled.",
+   "Which member stated each question in the discussions was not identified."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Public Access Cable Committee voted unanimously by roll call to raise the manager's hours to 36 per week.",
+    "t": 4392
+   },
+   {
+    "line": "The committee approved the FY25 budget as discussed and modified at the meeting, by roll call.",
+    "t": 4503
+   },
+   {
+    "line": "It authorized the chair to present the budget to the Finance Committee and elsewhere as needed; the presentation is set for March 21.",
+    "t": 4545
+   },
+   {
+    "line": "Members heard that the manager-hours increase leaves the budget near zero, with Enterprise fund reserves possibly covering capital in future years.",
+    "t": 3382
+   },
+   {
+    "line": "Members heard that indirect costs from FY22 and FY23 were budgeted above the actual, and Finance has agreed the difference is owed back to PACC.",
+    "t": 974
+   }
+  ],
+  "why_it_matters": [
+   "PACC is funded by the Comcast franchise fee through the Enterprise fund rather than by taxes, so this budget does not draw on the town's general fund tax levy.",
+   "The indirect costs PACC pays count as income to the town general fund, so the refund owed for FY22 and FY23 and the recalculated FY25 amount touch how much the general fund receives from this program."
+  ],
+  "watch_next": [
+   "The chair presents the PACC budget to the Finance Committee on March 21; the posted agenda will give the time.",
+   "PACC's next meeting is April 1 at 6 pm at the Lunenburg town library."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T11:05:56Z",
+   "cost_usd": 0.219287
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03112024-6450",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2024-03-11-minutes-6450.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2024-03-11-minutes-6450.pdf"
+  },
+  "official_sha256": "e99a0b06bc3e57e6525f3c53d86752c9a55c2436f228b3707a23525bd735bc64",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "All five non-procedural votes appear in both records with the same outcome, and the next-meeting date and time agree. The official minutes print almost no budget figures, so the figures in our minutes can't be checked against them. The attendee lists differ: the official minutes name two members called Steve and no Eric, and they say the Enterprise Fund Investment item was tabled with no motion, which our minutes don't mention.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: PACC representative to master plan",
+    "ours": "Appoint a member as PACC's representative to the town master plan meetings. — passed (roll call yes votes heard from Steve, Paul and Faith; full count not clear)",
+    "official": "motion to have p.lincoln represent pacc on the master planning committee (s.archambault, 2nd p.sarapas), passed.",
+    "note": "Both records show the motion passing. Ours doesn't name the member, and the official minutes name P.Lincoln.",
+    "t": 208
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: manager hours to 36 per week",
+    "ours": "Increase the manager's hours to 36 hours per week. — passed unanimously by roll call",
+    "official": "motion to increase jo toale's hours as manager of pac to 36 hours per week.",
+    "note": "Same motion and same outcome. The official quote doesn't print the word passed, but its structured entry marks the vote as passed.",
+    "t": 4392
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve FY25 budget as modified",
+    "ours": "Approve the budget as discussed and modified at the meeting. — passed (roll call all in favor heard)",
+    "official": "motion to approve the budget as discussed and modified at the pacc meeting of march 11th 2024.",
+    "note": "Same motion and same outcome.",
+    "t": 4503
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: chair to present budget to Finance Committee",
+    "ours": "Approve the PACC chair to make the budget presentation to the Finance Committee and elsewhere as needed. — passed by roll call (affirmatives heard)",
+    "official": "motion to approve the pacc chair to make the presentation, with the updated budget numbers and calculations as needed,",
+    "note": "Same motion and same outcome.",
+    "t": 4545
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: table rebranding",
+    "ours": "Table the discussion of rebranding PACC. — passed (seconded; voice call, result not explicitly stated)",
+    "official": "motion to table (f.beall, 2nd p.sarapas - passed)",
+    "note": "Both records show the motion to table passing. The official minutes name the mover and seconder.",
+    "t": 5126
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Enterprise Fund Investment item tabled without a motion",
+    "ours": "",
+    "official": "enterprise fund investment: - tabled",
+    "note": "The official minutes record this item as tabled with no motion. Our minutes have no matching item, so check the recording for a vote or discussion on it.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA purchase orders / transfer",
+    "ours": "Purchase order and money transfer from ARPA funds for studio equipment, awaiting Finance — not stated (discussed only)",
+    "official": "arpa fund update - continued work on all phases. quotes are in and now obtaining po's.",
+    "note": "Both records treat ARPA purchase orders as an update, and neither records a transfer vote.",
+    "t": 572
+   },
+   {
+    "kind": "only_in_official",
+    "about": "PAC fund balance",
+    "ours": "",
+    "official": "balance $1,006,400.74",
+    "note": "The manager's reported fund balance appears only in the official minutes. Our minutes list no balance figure.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Rent cost $6,000",
+    "ours": "Line-by-line budget spreadsheet: 33,000, $6,000, 1400, 15,000, 30,000, 5.7%, 6.6",
+    "official": "p.lincoln expressed concern over the $6,000 rent cost.",
+    "note": "Both records contain a $6,000 figure. Our list doesn't say it is the rent line, so check the video at the spreadsheet segment.",
+    "t": 3754
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Budget figures as heard (revenue, interest, FY25 summary, manager-hours margin)",
+    "ours": "FY25 summary budget: 112,000, 48,000, 25,000, 24,000, 46,000, 30,000, 191,000, 16,000",
+    "official": "",
+    "note": "The official minutes print none of these figures, including the Comcast, interest, indirect-cost and manager-hours amounts. They can't be checked against the town's record and stay caption-derived.",
+    "t": 3024
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY23 indirect cost surplus",
+    "ours": "Indirect costs owed back to PACC (FY22/FY23): $21,000, $25,000, 30,000, 35,000",
+    "official": "there is an indirect cost surplus in the fy 23 budget due to a vacant position.",
+    "note": "Both records discuss FY23 indirect costs. The official minutes give a cause (a vacant position) and no dollar figure, and ours gives figures and no cause. Treat the two as related but not matching.",
+    "t": 974
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Letter supporting H74 streaming bill",
+    "ours": "Chair and manager will write a letter to the joint committee chair supporting the H74 streaming bill, with the manager's draft to be shared tomorrow.",
+    "official": "",
+    "note": "The official minutes don't mention this decision. Check whether the town's record omitted it.",
+    "t": 355
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair presents at Finance Committee March 21",
+    "ours": "Chair will present the budget at the Finance Committee on March 21; members will watch the posted agenda for the time and avoid three or more attending.",
+    "official": "",
+    "note": "The official minutes record the motion authorizing the presentation but not the March 21 date or the quorum precaution.",
+    "t": 4567
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting",
+    "ours": "Next meeting set for April 1 at 6 pm at the Lunenburg town library.",
+    "official": "next meeting: - april 1st, 6:00 pm.",
+    "note": "Same date and time. The official minutes add that the room is the Sudolnik Conference Room at the library.",
+    "t": 5189
+   },
+   {
+    "kind": "caption_error",
+    "about": "Manager's name",
+    "ours": "Joe (manager)",
+    "official": "3. manager: jo toale",
+    "official_reading": "Jo Toale",
+    "note": "The captions rendered the manager's first name as Joe.",
+    "t": 4392
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: members named Steve",
+    "ours": "Steve (chair)",
+    "official": "2. pacc members present: steve walker, steve archambault, pete lincoln. faith beall via zoom), paul sarapas",
+    "note": "The official minutes list two members named Steve, Walker and Archambault, while ours heard one Steve as chair. Check the video to see which Steve chaired and whether both were present.",
+    "t": 208
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Paul, Faith, Pete",
+    "ours": "Paul (member)",
+    "official": "2. pacc members present: steve walker, steve archambault, pete lincoln. faith beall via zoom), paul sarapas",
+    "note": "Paul Sarapas, Faith Beall and Pete Lincoln appear in both lists. The official minutes show Faith attending by Zoom, and ours doesn't say so.",
+    "t": 208
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Eric (staff)",
+    "ours": "Eric (staff (referred to as staff))",
+    "official": "",
+    "note": "The official minutes list no staff member named Eric. Check the recording to see whether he is a separate person or a misheard name, and whether he attended.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T11:07:04Z",
+   "cost_usd": 0.25206300000000004
+  }
+ }
+}

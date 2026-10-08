@@ -1,0 +1,602 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2024-03-12",
+ "video_id": "heIX4acnxRQ",
+ "video_url": "https://www.youtube.com/watch?v=heIX4acnxRQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-03-12-heIX4acnxRQ.json",
+  "sha256": "75fff4ecd20312bf9be677bbd0af0dfeae22274d00f38004647fbb3e9be918bc",
+  "caption_lines": 433,
+  "segments": 3588
+ },
+ "recording": {
+  "duration_s": 9129,
+  "duration": "2:32",
+  "spoken_chars": 125446,
+  "words_approx": 20907
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03122024-6468",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-03-12-agenda-6468.txt",
+   "path": "sources/meetings/select-board/2024-03-12-agenda-6468.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122024-6468",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-03-12-minutes-6468.txt",
+   "path": "sources/meetings/select-board/2024-03-12-minutes-6468.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T10:57:24Z",
+  "cost_usd": 0.6049336000000001
+ },
+ "minutes": {
+  "headline": "Select Board put a school override placeholder on the warrant and ballot and voted a single tax rate.",
+  "summary": "Long public comment on the school override, mostly urging support. A joint session with the Board of Assessors ended in a single tax rate vote and acceptance of a warrant article lowering the low-income senior exemption age. The board suspended its 60-day ballot policy so override language can be finalized later in March, and a member asked to discuss ARPA funds for school items.",
+  "attendees": [
+   {
+    "name_as_heard": "Lou Franco",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Miss zimy",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Brian leant",
+    "role": "Board of Assessors chair"
+   },
+   {
+    "name_as_heard": "John rabbit",
+    "role": "Board of Assessors member"
+   },
+   {
+    "name_as_heard": "Nate Kramer",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 190,
+    "speaker_as_heard": "Sarah Cammer",
+    "topic": "Urged full board support for the override and parents to attend town meeting."
+   },
+   {
+    "t": 374,
+    "speaker_as_heard": "Laura brazowski",
+    "topic": "Speaking as a private citizen, asked the board to add and publicly support the override."
+   },
+   {
+    "t": 538,
+    "speaker_as_heard": "Mary foil",
+    "stated_role": "president of the Lunenberg Education Association",
+    "topic": "Said schools have long been underfunded and residents get what they pay for."
+   },
+   {
+    "t": 688,
+    "speaker_as_heard": "delissio",
+    "topic": "Opposed the override; raised tax liens, bus costs and special education spending."
+   },
+   {
+    "t": 897,
+    "speaker_as_heard": "passal",
+    "stated_role": "finance committee member, speaking for himself",
+    "topic": "Said school budgeting was unsustainable for years and the town budgeted conservatively."
+   },
+   {
+    "t": 1005,
+    "speaker_as_heard": "Mandy Gilman",
+    "topic": "Thanked the board for engaging respectfully and hoped for support of the override."
+   },
+   {
+    "t": 8720,
+    "speaker_as_heard": "civil coffin",
+    "topic": "Said override language is simple; asked the board to settle on one number and a united front, or citizens may petition."
+   }
+  ],
+  "tags": [
+   "budget",
+   "free-cash",
+   "override",
+   "personnel",
+   "public-comment",
+   "recreation",
+   "tax-rate",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 4161,
+    "motion": "Adopt a single tax rate of $14.10 and take no action on open space, residential exemption or small commercial exemption.",
+    "outcome": "passed (roll call: Franco, Zimy and chair in favor)",
+    "procedural": false
+   },
+   {
+    "t": 4895,
+    "motion": "Absorb the senior exemption cost within the current overlay.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 5804,
+    "motion": "Accept the senior exemption age warrant article as submitted and send to Town Counsel to modify language.",
+    "outcome": "passed (roll call, all in favor)",
+    "procedural": false
+   },
+   {
+    "t": 7025,
+    "motion": "Suspend the policy requiring 60 days notice before putting a question on the ballot.",
+    "outcome": "passed (roll call, all in favor)",
+    "procedural": false
+   },
+   {
+    "t": 9097,
+    "motion": "Adjourn.",
+    "outcome": "passed (roll call)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2832,
+    "topic": "FY24 new growth",
+    "what_was_said": "Assessor consultant said new growth was significantly higher than normal.",
+    "figures_as_heard": [
+     "$630,000"
+    ]
+   },
+   {
+    "t": 4701,
+    "topic": "Senior exemption cost",
+    "what_was_said": "Cost to the town of lowering eligibility age described as small.",
+    "figures_as_heard": [
+     "$2,500",
+     "57 cents per residence"
+    ]
+   },
+   {
+    "t": 5026,
+    "topic": "Overlay account",
+    "what_was_said": "Town manager recalled the overlay balance.",
+    "figures_as_heard": [
+     "562 th000"
+    ]
+   },
+   {
+    "t": 6248,
+    "topic": "Road maintenance bid",
+    "what_was_said": "Bid came in below the office estimate.",
+    "figures_as_heard": [
+     "127,000"
+    ]
+   },
+   {
+    "t": 6456,
+    "topic": "Cemetery article",
+    "what_was_said": "Cemetery commission article to appropriate from lot sales.",
+    "figures_as_heard": [
+     "$10,000"
+    ]
+   },
+   {
+    "t": 6500,
+    "topic": "School committee free cash article",
+    "what_was_said": "School committee submitted article to raise and appropriate or transfer from free cash.",
+    "figures_as_heard": [
+     "$82,900"
+    ]
+   },
+   {
+    "t": 6695,
+    "topic": "School override request",
+    "what_was_said": "School committee requested a little over a million dollars; number still moving.",
+    "figures_as_heard": [
+     "a million 70"
+    ]
+   },
+   {
+    "t": 7781,
+    "topic": "ARPA for school items",
+    "what_was_said": "Member wants to discuss using ARPA for school cybersecurity and compliance upgrades.",
+    "figures_as_heard": [
+     "$145,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 6592,
+    "decision": "Override placeholder stays on warrant; a special meeting targeted for March 26 to finalize language and number."
+   },
+   {
+    "t": 8413,
+    "decision": "Upcoming vacancy list pushed to next week."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 20,
+    "t_end": 190,
+    "topic": "Opening and board comments on override",
+    "resolution": "informational",
+    "tags": [
+     "override"
+    ]
+   },
+   {
+    "t_start": 190,
+    "t_end": 1048,
+    "topic": "Public comment on school override",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "override"
+    ]
+   },
+   {
+    "t_start": 1092,
+    "t_end": 2119,
+    "topic": "Skate park update",
+    "resolution": "informational",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 2141,
+    "t_end": 4220,
+    "topic": "Tax classification hearing",
+    "resolution": "voted",
+    "tags": [
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 4389,
+    "t_end": 6058,
+    "topic": "Senior exemption warrant article",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 6079,
+    "t_end": 6416,
+    "topic": "Town manager report and new growth",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 6416,
+    "t_end": 7060,
+    "topic": "Warrant articles and override placeholder",
+    "resolution": "voted",
+    "tags": [
+     "override",
+     "warrant-article",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 7060,
+    "t_end": 8413,
+    "topic": "Board comments on budget, ARPA, sick leave bylaw",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 8413,
+    "t_end": 9118,
+    "topic": "Warrants, public comment, adjourn",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Whether the overlay absorption motion at about 4895 was voted and its count",
+   "Exact override figure; FY25 new growth figures garbled"
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted by roll call to adopt a single tax rate and took no action on open space, residential exemption or small commercial exemption.",
+    "t": 4161
+   },
+   {
+    "line": "The board accepted the warrant article lowering the low-income senior exemption age and sent it to Town Counsel to modify the language.",
+    "t": 5804
+   },
+   {
+    "line": "The board suspended its 60-day notice policy for ballot questions, so override language can be finalized later.",
+    "t": 7025
+   },
+   {
+    "line": "The school override placeholder stays on the warrant, with a special meeting targeted for March 26 to settle the language and the number.",
+    "t": 6592
+   },
+   {
+    "line": "The school committee's override request was described as a little over a million dollars, with the number still moving.",
+    "t": 6695
+   }
+  ],
+  "why_it_matters": [
+   "The single tax rate means residential and commercial property are taxed at the same rate, which sets how the levy is split among tax bills.",
+   "The school override is a question residents will be asked to vote on, and its wording and size are not yet fixed.",
+   "Lowering the senior exemption age would widen who qualifies for a tax break, with the cost absorbed within the town's overlay account."
+  ],
+  "watch_next": [
+   "Special meeting targeted for March 26 to finalize the override language and number.",
+   "Town Counsel's revised language for the senior exemption warrant article."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T10:57:34Z",
+   "cost_usd": 0.217287
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03122024-6468",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-03-12-minutes-6468.txt",
+   "path": "sources/meetings/select-board/2024-03-12-minutes-6468.pdf"
+  },
+  "official_sha256": "db9589de7d119b1a2e75860987b139ec7b66e5ac043473f888adc82a4a4680c4",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the tax rate vote, the senior exemption article vote, the policy suspension vote and most of the headline figures. The main differences are the Assessors' overlay vote, which our recording could not hear but the town records as 3-0-0, and the School Committee free cash amount ($82,900 in ours, $82,119.00 in the town's).",
+  "counts": {
+   "agree": 8,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 4,
+   "only_in_official": 7
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Single tax rate vote ($14.10)",
+    "ours": "Adopt a single tax rate of $14.10 and take no action on open space, residential exemption or small commercial exemption. — passed (roll call: Franco, Zimy and chair in favor)",
+    "official": "motion was amended by chair jeffreys to include $14.10 as the single tax rate. seconded by member emkey.",
+    "note": "Same motion, same rate and same outcome. The official minutes give 3-0-0, which matches the three members in favor in ours.",
+    "t": 4161
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to absorb the Clause 41C senior exemption cost within the overlay",
+    "ours": "Absorb the senior exemption cost within the current overlay. — not audible",
+    "official": "mr. laffond to absorb the recommended change within the current overlay seconded by ms. cammer. call for the vote: three-aye.",
+    "note": "Ours records no outcome for this vote; the town records it as 3-0-0. It was a Board of Assessors vote. Check the recording near t=4895 to confirm it was taken and passed.",
+    "t": 4895
+   },
+   {
+    "kind": "agree",
+    "about": "Accept senior exemption article as submitted, Town Counsel to modify language",
+    "ours": "Accept the senior exemption age warrant article as submitted and send to Town Counsel to modify language. — passed (roll call, all in favor)",
+    "official": "chair jeffreys to accept the request as submitted and to provide town counsel the ability to modify the language of the article. seconded by member emkey.",
+    "note": "Same motion and outcome. The official minutes give 3-0-0, which matches all in favor.",
+    "t": 5804
+   },
+   {
+    "kind": "agree",
+    "about": "Suspend 60-day notice policy for ballot question",
+    "ours": "Suspend the policy requiring 60 days notice before putting a question on the ballot. — passed (roll call, all in favor)",
+    "official": "chair franco to suspend the board's policy regarding the requirement for a 60-day notice before putting a question on the town ballot. seconded by member emkey.",
+    "note": "Same motion and outcome, 3-0-0 in the official minutes.",
+    "t": 7025
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY24 new growth",
+    "ours": "FY24 new growth: $630,000",
+    "official": "the town manager notified town officials and staff that the fy2024 new growth was approved at $630,220.",
+    "official_reading": "$630,220",
+    "note": "Same item. The captions rounded or misheard the figure; the official minutes print $630,220.",
+    "t": 2832
+   },
+   {
+    "kind": "agree",
+    "about": "Senior exemption cost",
+    "ours": "Senior exemption cost: $2,500, 57 cents per residence",
+    "official": "mr. laffond stated that the proposed change of 41c would cost $2,500 to the town. mr. laffond stated that it would cost every residence $0.57 a year.",
+    "note": "Both give $2,500 in total and 57 cents per residence.",
+    "t": 4701
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Overlay account balance",
+    "ours": "Overlay account: 562 th000",
+    "official": "",
+    "note": "The official minutes name the overlay but print no balance. The caption is garbled, so the figure needs checking against the recording near t=5026.",
+    "t": 5026
+   },
+   {
+    "kind": "agree",
+    "about": "Road maintenance bid",
+    "ours": "Road maintenance bid: 127,000",
+    "official": "she stated that the bid was approximately $127,000 lower than the estimated budget.",
+    "note": "Same $127,000 figure. The official minutes say it is the amount the bid came in below the estimate, which ours does not say.",
+    "t": 6248
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cemetery article $10,000",
+    "ours": "Cemetery article: $10,000",
+    "official": "",
+    "note": "The official minutes print no cemetery article. Their only $10,000 is the additional senior exemption request. Check the recording near t=6456.",
+    "t": 6456
+   },
+   {
+    "kind": "discrepancy",
+    "about": "School Committee free cash article amount",
+    "ours": "School committee free cash article: $82,900",
+    "official": "the school committee submitted an article to raise and appropriate or transfer from free cash a sum of $82,119.00 to pay for network security upgrades",
+    "note": "$82,900 and $82,119.00 differ by more than a digit-grouping error. Check the warrant article and the recording near t=6500 for the correct figure.",
+    "t": 6500
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School override request amount",
+    "ours": "School override request: a million 70",
+    "official": "",
+    "note": "The official minutes print no override amount, only a placeholder. The caption reads as roughly $1.07 million; check the recording near t=6695.",
+    "t": 6695
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA for school items $145,000",
+    "ours": "ARPA for school items: $145,000",
+    "official": "",
+    "note": "The official minutes record only Member Emkey's request to discuss ARPA funding at the next meeting and print no figure. Check the recording near t=7781.",
+    "t": 7781
+   },
+   {
+    "kind": "agree",
+    "about": "Override placeholder and meeting dates",
+    "ours": "Override placeholder stays on warrant; a special meeting targeted for March 26 to finalize language and number.",
+    "official": "chair jeffreys stated that the board will meet on march 19, 2024, and a tentative meeting on march 26, 2024, to discuss the school override language.",
+    "note": "Both have a March 26 meeting on the override language. The official minutes also give March 19 and call March 26 tentative.",
+    "t": 6592
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Upcoming vacancy list",
+    "ours": "Upcoming vacancy list pushed to next week.",
+    "official": "review list of upcoming vacancies in boards/committees for fy25 the item was tabled.",
+    "note": "Ours says the item was pushed to next week; the town says it was tabled with no date. Check the recording near t=8413 for whether a date was given.",
+    "t": 8413
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Emkey",
+    "ours": "Miss zimy (member)",
+    "official": "member renee emkey stated that she has questions regarding the budget",
+    "official_reading": "Renee Emkey",
+    "note": "A misheard name for the same member. In the town's record she seconds the motions.",
+    "t": 4161
+   },
+   {
+    "kind": "caption_error",
+    "about": "Assessors chair",
+    "ours": "Brian leant (Board of Assessors chair)",
+    "official": "board of assessors chair brian laffond called the board of assessors meeting to order at 7:30",
+    "official_reading": "Brian Laffond",
+    "note": "A misheard surname for the same person.",
+    "t": 4895
+   },
+   {
+    "kind": "caption_error",
+    "about": "Assessor member",
+    "ours": "John rabbit (Board of Assessors member)",
+    "official": "members present: chair brian laffond, member sarah cammer, member john rabbitt",
+    "official_reading": "John Rabbitt",
+    "note": "A misspelling of the same member's name.",
+    "t": 4895
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Lou Franco",
+    "ours": "Lou Franco (member)",
+    "official": "vice-chair lou franco(via zoom)",
+    "note": "Same person. The town records him as Vice-Chair attending remotely.",
+    "t": 4161
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Nate Kramer",
+    "ours": "Nate Kramer (presenter)",
+    "official": "mr. laffond stated that nate kramer of municipal financial services will provide a presentation",
+    "note": "Same presenter.",
+    "t": 2832
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent Select Board members",
+    "ours": "",
+    "official": "members absent: clerk caesar nuzzolo, member tom alonzo",
+    "note": "Ours does not list absences or name the chair (Michael-Ray Jeffreys)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Skate park fundraising",
+    "ours": "",
+    "official": "mr. moore stated that their non-profit has raised more than $330,000 to fund the project.",
+    "note": "A figure printed in the town's minutes and not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Marshall Park PARC grant",
+    "ours": "",
+    "official": "chair jeffreys stated that $2.5 million has been awarded from other sources that are not directly paid by lunenburg taxpayers.",
+    "note": "A grant figure in the town's minutes and not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrants approved for payment",
+    "ours": "",
+    "official": "accounts payable warrant in the amount of $355,054.87. accounts payable warrant in the amount of $699,281.70. payroll warrant in the amount of $985,077.55.",
+    "note": "Warrant totals appear only in the town's minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Levy limit presentation (FY2024)",
+    "ours": "",
+    "official": "mr. kramer stated that the fy2024 levy limit is $29,375,036, debt exclusion: $2,477,704, fy2024 maximum allowable levy: $31,852,740",
+    "note": "Ours has none of the levy limit figures from the Assessor's presentation."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chapter 90 funds for school sidewalks and the Assessors' options request",
+    "ours": "",
+    "official": "chair jeffreys requests that the board of assessors bring forward both options to the select board.",
+    "note": "Ours omits this request, and Emkey's Chapter 90 request. It records only the ARPA figure."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenters",
+    "ours": "",
+    "official": "ms. foyle stated that the school district is understaffed due to low salaries compared to other districts.",
+    "note": "The town lists public comment from Cammer, Brzozoski, Foyle, Lisio, Passios, Gilman and Kaufman. Ours has no public comment section."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T11:00:04Z",
+   "cost_usd": 0.273903
+  }
+ }
+}

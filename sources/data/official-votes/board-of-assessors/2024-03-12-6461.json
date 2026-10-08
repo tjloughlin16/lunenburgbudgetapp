@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-03-12",
  "docid": "6461",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Adopt a single tax rate of $14.10 for Lunenburg and take no action on open space, residential, or commercial exemptions",
+   "motion": "Adopt a single tax rate of $14.10 for the town, with no action on open space, residential or commercial exemption discounts (motion as amended to include the $14.10 rate).",
    "moved_by": "Michael-Ray Jeffreys",
    "seconded_by": "Renee Emkey",
-   "outcome": "passed 3-0",
+   "outcome": "not stated (3 aye recorded on roll call: Lou Franco, Renee Emkey, Michael-Ray Jeffreys)",
    "procedural": false,
-   "quote": "there was a motion for the select board to adopt a single tax rate for the town of lunenburg and to take no action on a discount for open space, a discount for residential exemptions, a discount for commercial exemptions by michael-ray jeffreys, seconded by renee emkey. the motion was amended to include the $14.10 as the single tax rate by michael-ray jeffreys, seconded by renee emkey. roll call vote. lou franco aye, renee emkey aye, michael-ray jeffreys aye."
+   "quote": "the motion was amended to include the $14.10 as the single tax rate by michael-ray jeffreys, seconded by renee emkey. roll call vote."
   },
   {
-   "motion": "Absorb the recommended 41C exemption change within the current overlay",
+   "motion": "Absorb the recommended 41C change within the current overlay, taking the funding out of the existing overlay.",
    "moved_by": "Brian Laffond",
    "seconded_by": "Sarah Cammer",
-   "outcome": "passed 3-0",
+   "outcome": "not stated (3 aye recorded on roll call: John Rabbitt, Sarah Cammer, Brian Laffond)",
    "procedural": false,
-   "quote": "there was a motion to absorb this recommended change within the current overlay by brian laffond, seconded by sarah cammer. there was a vote to take the funding out of the existing overlay by brian laffond, seconded by sarah cammer. john rabbitt aye, sarah cammer aye, brian laffond aye."
+   "quote": "there was a vote to take the funding out of the existing overlay by brian laffond, seconded by sarah cammer."
   },
   {
-   "motion": "Accept the 41C exemption request as submitted and provide it to Town Council to modify the language",
+   "motion": "Board of Assessors moves that the Select Board accept the 41C request as submitted and provide it to Town Council to modify the language.",
    "moved_by": "Michael-Ray Jeffreys",
    "seconded_by": "Renee Emkey",
-   "outcome": "passed 3-0",
+   "outcome": "not stated (3 aye recorded on roll call: Lou Franco, Renee Emkey, Michael-Ray Jeffreys)",
    "procedural": false,
-   "quote": "the board of assessors moves for the select board to accept the request as submitted and to provide it to town council to modify the language by michael-ray jeffreys, seconded by renee emkey. roll call vote. lou franco aye, renee emkey aye. michael-ray jeffreys aye."
+   "quote": "the board of assessors moves for the select board to accept the request as submitted and to provide it to town council"
   },
   {
-   "motion": "Adjourn the Board of Assessors meeting",
+   "motion": "Adjourn the Board of Assessors meeting at 8:41 PM.",
    "moved_by": "Brian Laffond",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
@@ -45,6 +45,282 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0958571
+ "note": "Clean digital text, not a scan. Roll-call motions record ayes but no result in words, so outcomes are given as 'not stated' with the ayes printed. Heather Lemieux is listed present for the joint meeting but appears in neither roll call. Sarah Cammer appears under public comment and as a Board of Assessors member; she is recorded in both places. The presenter is printed as 'Nate Cramer' and later 'Nate Kramer'; recorded as Nate Cramer. Arithmetic in the levy block does not foot as printed: 424,043,723 + 701,093 + 630,220 = 425,375,036, not 29,375,036. The 2.5% figure ($701,093) equals 2.5% of 28,043,723, and 28,043,723 + 701,093 + 630,220 = 29,375,036. That the base was typed as 424,043,723 is a hypothesis; the figures are recorded as printed. The 41C option costs are the Select Board's stated figures; the combined third option is described without a dollar figure.",
+ "cost_usd": 0.02228797,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lou Franco",
+   "role": "member, joint meeting (Members Present line)",
+   "status": "present",
+   "quote": "members present: lou franco, renee emkey, michael-ray jeffreys, heather lemieux"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "member, joint meeting (Members Present line)",
+   "status": "present",
+   "quote": "members present: lou franco, renee emkey, michael-ray jeffreys, heather lemieux"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "member, joint meeting (Members Present line)",
+   "status": "present",
+   "quote": "members present: lou franco, renee emkey, michael-ray jeffreys, heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "member, joint meeting (Members Present line)",
+   "status": "present",
+   "quote": "members present: lou franco, renee emkey, michael-ray jeffreys, heather lemieux"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "member, Board of Assessors",
+   "status": "present",
+   "quote": "members present: john rabbitt, brian laffond, sarah cammer"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Chair (refers to himself as chair)",
+   "status": "present",
+   "quote": "as the chair i allowed the board to investigate and evaluate an article warrant to make some modifications to 41c."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "member, Board of Assessors; also spoke under public comment",
+   "status": "present",
+   "quote": "members present: john rabbitt, brian laffond, sarah cammer"
+  },
+  {
+   "name": "Mike Tarello",
+   "role": "from Vision (consultant, as printed)",
+   "status": "present",
+   "quote": "the board has worked with mike tarello from vision and have reviewed every property in the community."
+  },
+  {
+   "name": "Nate Cramer",
+   "role": "presenter (NATE CRAMER PRESENTATION; spelled Nate Kramer later in the minutes)",
+   "status": "not stated",
+   "quote": "nate cramer presentation- to address questions"
+  },
+  {
+   "name": "Laura Brazowski",
+   "role": "concerned citizen, 21 Francis Ave",
+   "status": "present",
+   "quote": "laura brazowski, 21 francis ave, is a concerned citizen."
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "president of the Lunenburg Education Association",
+   "status": "present",
+   "quote": "mary foyle, 985 flat hill road, is the president of the lunenburg education association."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "resident, 181 Reservoir Road (no children in district)",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, has a different take on the override."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "lifelong resident, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, is a lifelong resident of lunenburg."
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "not stated (186 Reservoir Road)",
+   "status": "present",
+   "quote": "mandy gilman,186 reservoir road, appreciates everyone's hard work and would love the select boards full support for the override."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board of Assessors is asked to forward both 41C options to the Select Board (requested by Michael-Ray Jeffreys; no vote recorded).",
+   "quote": "michael-ray jeffreys request that the board of assessors forward both options to the select board."
+  },
+  {
+   "decision": "The Select Board will place the 41C warrant article on the warrant with the modified language (stated, no vote recorded).",
+   "quote": "the select board is going to put this on the warrant with the modified language."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2024 levy limit and maximum allowable levy",
+   "what_was_recorded": "The Board presented the FY2024 levy-limit build-up and the maximum allowable levy; as printed, the FY2023 base does not foot to the FY2024 limit.",
+   "figures_as_printed": [
+    "424,043,723",
+    "$701,093",
+    "$630,220",
+    "$29,375,036",
+    "$2,477,704",
+    "$31,852,740"
+   ],
+   "quote": "fy 2024 maximum allowable levy: $31,852,740"
+  },
+  {
+   "topic": "Single tax rate",
+   "what_was_recorded": "The amended motion set the single tax rate at $14.10.",
+   "figures_as_printed": [
+    "$14.10"
+   ],
+   "quote": "the motion was amended to include the $14.10 as the single tax rate"
+  },
+  {
+   "topic": "Small commercial exemption",
+   "what_was_recorded": "The town may exempt up to 10% of valuation for owner-occupied businesses with 10 or fewer employees and valuation under a million; the minutes did not adopt this.",
+   "figures_as_printed": [
+    "10%",
+    "a million"
+   ],
+   "quote": "exempt up to 10% of the property valuation for owner occupied businesses with 10 or less employees and valuation of less than a million."
+  },
+  {
+   "topic": "41C recommended change: cost and funding",
+   "what_was_recorded": "The 41C recommendation was described as costing about $2,500 to the town, about 57 cents per residence, and Brian Laffond suggested absorbing it from the current overlay.",
+   "figures_as_printed": [
+    "$2,500",
+    "57 cents per residence"
+   ],
+   "quote": "their recommendation has an implication of costing about $2,500 to the town."
+  },
+  {
+   "topic": "41C low-income senior exemption options",
+   "what_was_recorded": "The Select Board was given four annual cost figures: doing nothing at $5,000 a year, an additional $250 at $10,000 a year, lowering eligibility to age 65 at $7,500 a year, and a combined option. Lou Franco said he would have supported an additional $10,000.",
+   "figures_as_printed": [
+    "$5,000",
+    "$250",
+    "$10,000",
+    "$7,500"
+   ],
+   "quote": "your option to do nothing is $5,000 a year, which is the current option."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "41C recommended change funded by taking the cost out of the existing overlay (no destination line printed).",
+   "amount_as_printed": "about $2,500",
+   "outcome": "vote recorded; result not stated (3 aye recorded)",
+   "quote": "there was a vote to take the funding out of the existing overlay by brian laffond, seconded by sarah cammer."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Sarah Cammer",
+   "stated_role": "not stated (later listed as Board of Assessors member present)",
+   "topic": "school librarian cut; support for override",
+   "quote": "sarah cammer states that 5 years ago she stood in this room concerned with the superintendent of schools cutting the school librarian."
+  },
+  {
+   "speaker": "Laura Brazowski",
+   "stated_role": "concerned citizen, 21 Francis Ave",
+   "topic": "add override to warrant and May ballot",
+   "quote": "she is encouraging the board to add the override to the town meeting warrant and to the may municipal election ballot"
+  },
+  {
+   "speaker": "Mary Foyle",
+   "stated_role": "president of the Lunenburg Education Association",
+   "topic": "Esser funds and school funding as a town issue",
+   "quote": "esser funds were a band aid problem that we have had for decades."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "resident, 181 Reservoir Road",
+   "topic": "opposes override; bus transportation policy",
+   "quote": "rhonda lisio doesn't support the override."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "lifelong resident, 56 Whiting Street",
+   "topic": "school budgets not sustainable",
+   "quote": "he has been warning for decades that the school budgets were not sustainable."
+  },
+  {
+   "speaker": "Mandy Gilman",
+   "stated_role": "not stated (186 Reservoir Road)",
+   "topic": "asks Select Board support for override",
+   "quote": "would love the select boards full support for the override."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (joint meeting)",
+   "resolution": "no action; six speakers recorded",
+   "quote": "sarah cammer states that 5 years ago she stood in this room concerned with the superintendent of schools cutting the school librarian.",
+   "tags": [
+    "public comment",
+    "school override"
+   ]
+  },
+  {
+   "topic": "Revaluation update and Nate Cramer value-change presentation",
+   "resolution": "presented; no vote recorded",
+   "quote": "the board has worked with mike tarello from vision and have reviewed every property in the community.",
+   "tags": [
+    "revaluation",
+    "abatements",
+    "property values"
+   ]
+  },
+  {
+   "topic": "FY2024 levy limit",
+   "resolution": "presented; no vote recorded",
+   "quote": "fy 2024 maximum allowable levy: $31,852,740",
+   "tags": [
+    "levy limit",
+    "debt exclusion"
+   ]
+  },
+  {
+   "topic": "Tax classification hearing (M.G.L. Ch.40 § 56)",
+   "resolution": "single tax rate of $14.10 adopted by amended motion; discount options not adopted",
+   "quote": "tax classification hearing as required by m.g.l. ch.40 § 56 on allocation of the local property tax levy",
+   "tags": [
+    "tax classification",
+    "single tax rate",
+    "open space discount",
+    "small commercial exemption"
+   ]
+  },
+  {
+   "topic": "Funding for 41C recommended change",
+   "resolution": "absorbed within existing overlay (vote; result not stated)",
+   "quote": "there was a motion to absorb this recommended change within the current overlay by brian laffond, seconded by sarah cammer.",
+   "tags": [
+    "overlay",
+    "senior tax exemption 41C"
+   ]
+  },
+  {
+   "topic": "41C low-income senior exemption warrant article (age 70 to 65)",
+   "resolution": "forwarded to Select Board with both options; sent to Town Council to modify language; Select Board to place on warrant",
+   "quote": "changing mgl chapter 59 section 5 clause 41c low income senior tax from 70 to 65 years or older",
+   "tags": [
+    "senior tax exemption 41C",
+    "annual town meeting warrant"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed; adjourned 8:41 PM",
+   "quote": "there was a motion to adjourn the board of assessors meeting at 8:41pm by brian laffond, seconded by sarah cammer. all in favor.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "tax classification",
+  "single tax rate",
+  "senior tax exemption 41C",
+  "overlay",
+  "school override",
+  "revaluation",
+  "levy limit",
+  "public comment",
+  "joint meeting with Select Board",
+  "annual town meeting warrant"
+ ],
+ "dropped_unquoted_by_field": {}
 }

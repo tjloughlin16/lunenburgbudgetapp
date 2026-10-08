@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-03-12",
  "docid": "6468",
@@ -12,49 +12,545 @@
  },
  "votes": [
   {
-   "motion": "Adopt a single tax rate of $14.10 for Lunenburg and take no action on discounts for open space, residential exemptions, or commercial exemptions",
-   "outcome": "passed 3-0",
+   "motion": "Adopt a single tax rate for the Town of Lunenburg, amended to $14.10, with no action on open space, residential exemption or commercial exemption discounts.",
+   "moved_by": "Chair Jeffreys",
+   "seconded_by": "Member Emkey",
+   "outcome": "passed 3-0-0",
    "procedural": false,
-   "moved_by": "Chair Michael-Ray Jeffreys",
-   "seconded_by": "Member Renee Emkey",
-   "quote": "motion by chair jeffreys to adopt a single tax rate for the town of lunenburg and to take no action on a discount for open space, a discount for residential exemptions, or a discount for commercial exemptions. seconded by member emkey. motion was amended by chair jeffreys to include $14.10 as the single tax rate. seconded by member emkey. roll call vote: vice-chair franco- aye; member emkey-aye; chair jeffreys- aye. the motion passed unanimously (3-0-0)."
+   "quote": "motion was amended by chair jeffreys to include $14.10 as the single tax rate. seconded by member emkey."
   },
   {
-   "motion": "Absorb the cost of the Low Income Senior Tax Exemption change within the current overlay",
-   "outcome": "passed 3-0",
+   "motion": "Board of Assessors: absorb the recommended change to Clause 41C within the current overlay.",
+   "moved_by": "Mr. Laffond",
+   "seconded_by": "Ms. Cammer",
+   "outcome": "passed 3-0-0",
    "procedural": false,
-   "moved_by": "Mr. Brian Laffond",
-   "seconded_by": "Ms. Sarah Cammer",
-   "quote": "motion by mr. laffond to absorb the recommended change within the current overlay seconded by ms. cammer. call for the vote: three-aye. the motion passed unanimously (3- 0-0",
-   "quote_taken_from_text": true
+   "quote": "mr. laffond to absorb the recommended change within the current overlay seconded by ms. cammer. call for the vote: three-aye."
   },
   {
-   "motion": "Accept the request to change M.G.L. Ch. 59 §5 Clause 41C Low Income Senior Tax Exemption from age 70 to 65 years old and authorize Town Counsel to modify the article language",
-   "outcome": "passed 3-0",
+   "motion": "Accept the Board of Assessors request to change the low-income senior exemption article as submitted, and let Town Counsel modify the article language.",
+   "moved_by": "Chair Jeffreys",
+   "seconded_by": "Member Emkey",
+   "outcome": "passed 3-0-0",
    "procedural": false,
-   "moved_by": "Chair Michael-Ray Jeffreys",
-   "seconded_by": "Member Renee Emkey",
-   "quote": "motion by chair jeffreys to accept the request as submitted and to provide town counsel the ability to modify the language of the article. seconded by member emkey. roll call vote: vice-chair franco- aye; member emkey-aye; chair jeffreys- aye. the motion passed unanimously (3-0-0)."
+   "quote": "chair jeffreys to accept the request as submitted and to provide town counsel the ability to modify the language of the article. seconded by member emkey."
   },
   {
-   "motion": "Adjourn the Board of Assessors meeting",
-   "outcome": "passed 3-0",
+   "motion": "Board of Assessors: adjourn the Assessors meeting.",
+   "moved_by": "Mr. Laffond",
+   "seconded_by": "Ms. Cammer",
+   "outcome": "passed 3-0-0",
    "procedural": true,
-   "moved_by": "Mr. Brian Laffond",
-   "seconded_by": "Ms. Sarah Cammer",
-   "quote": "mr. laffond moved to adjourn. seconded by ms. cammer. call for the vote: three- aye. the motion passed unanimously (3-0-0)."
+   "quote": "mr. laffond moved to adjourn. seconded by ms. cammer. call for the vote: three- aye."
   },
   {
-   "motion": "Adjourn the Select Board meeting",
-   "outcome": "passed 3-0",
+   "motion": "Suspend the Board policy requiring 60-day notice before putting a question on the Town ballot.",
+   "moved_by": "Vice-Chair Franco",
+   "seconded_by": "Member Emkey",
+   "outcome": "passed 3-0-0",
+   "procedural": false,
+   "quote": "chair franco to suspend the board's policy regarding the requirement for a 60-day notice before putting a question on the town ballot. seconded by member emkey."
+  },
+  {
+   "motion": "Adjourn the Select Board meeting.",
+   "moved_by": "Member Emkey",
+   "seconded_by": "Vice-Chair Franco",
+   "outcome": "passed 3-0-0",
    "procedural": true,
-   "moved_by": "Member Renee Emkey",
-   "seconded_by": "Vice-Chair Lou Franco",
-   "quote": "member emkey moved to adjourn. seconded by vice-chair franco. roll call vote: vice-chair franco- aye; member emkey-aye; chair jeffreys- aye. the motion passed unanimously (3-0- 0)",
-   "quote_taken_from_text": true
+   "quote": "member emkey moved to adjourn. seconded by vice-chair franco."
+  },
+  {
+   "motion": "Approve the minutes of the March 12, 2024 Select Board meeting (recorded in the approval block after the signature).",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Vice-Chair Moore",
+   "outcome": "passed 4-0-1",
+   "procedural": true,
+   "quote": "chair nuzzolo made the motion to approve the minutes from march 12, 2024. seconded by vice-chair moore."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes were approved at a subsequent meeting on June 17, 2025 (shown at the end of the document as 4-0-1) but that vote occurred on a different date and is not included in the March 12, 2024 meeting votes.",
- "cost_usd": 0.1296131
+ "dropped_unquoted": 0,
+ "note": "Clean extracted text, 8 pages, no scan indicators; votes are printed as roll calls or 'passed unanimously'. The Board of Assessors portion (Laffond, Cammer, Rabbitt) has its own motions, recorded here as Assessors votes, not Select Board votes. The tax-rate motion was amended to $14.10 before the vote; only the amended motion is recorded as voted. The minutes-approval motion (4-0-1) is printed after the clerk's signature, with the note 'reviewed and approved by the Select Board on: Tuesday June 17, 2025'; it names Chair Nuzzolo, Vice-Chair Moore and a McLeod abstention, none of whom are listed as present at this meeting, so the vote is recorded as printed. The minute clerk Anthony Senesi is named only as author and is not listed as an attendee. Sarah Cammer appears both as a Board of Assessors member and as a public commenter; she is listed once with both roles. Public comment figures are as printed; no dollar figure was checked against another source.",
+ "cost_usd": 0.02700387,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair michael-ray jeffreys called the meeting to order at 7:00 pm"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "vice-chair lou franco(via zoom)"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "member renee emkey stated that she has questions regarding the budget"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "members absent: clerk caesar nuzzolo, member tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: clerk caesar nuzzolo, member tom alonzo"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux town manager"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Chair, Board of Assessors",
+   "status": "present",
+   "quote": "board of assessors chair brian laffond called the board of assessors meeting to order at 7:30"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Member, Board of Assessors (also spoke in public comment as a resident of 304 Lancaster Avenue)",
+   "status": "present",
+   "quote": "members present: chair brian laffond, member sarah cammer, member john rabbitt"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Member, Board of Assessors",
+   "status": "present",
+   "quote": "members present: chair brian laffond, member sarah cammer, member john rabbitt"
+  },
+  {
+   "name": "Nate Kramer",
+   "role": "presenter, Municipal Financial Services",
+   "status": "present",
+   "quote": "mr. laffond stated that nate kramer of municipal financial services will provide a presentation"
+  },
+  {
+   "name": "Mike Tarello",
+   "role": "from Vision",
+   "status": "present",
+   "quote": "mr. laffond stated that the board of assessors have worked with mike tarello from vision"
+  },
+  {
+   "name": "Aidan Moore",
+   "role": "skate park initiative (presenter)",
+   "status": "present",
+   "quote": "aidan moore, 51 wildwood road: stated that he is the only member of the skate park initiative"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "resident",
+   "status": "present",
+   "quote": "laura brzozoski, 21 francis avenue: stated that she is speaking as a resident"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "President of the Lunenburg Education Association",
+   "status": "present",
+   "quote": "mary foyle, 985 flat hill road: stated that she serves as the president of the lunenburg education association"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "public commenter, 181 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road: stated that she is not in support of the school district"
+  },
+  {
+   "name": "David Passios",
+   "role": "lifelong resident of Lunenburg",
+   "status": "present",
+   "quote": "david passios, 56 whiting street: stated that he is speaking as a lifelong resident of lunenburg."
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "public commenter, 186 Reservoir Road",
+   "status": "present",
+   "quote": "mandy gilman, 186 reservoir road: thanked the board for engaging with residents"
+  },
+  {
+   "name": "Sibyl Kaufman",
+   "role": "public commenter, 27 Oak Avenue",
+   "status": "present",
+   "quote": "sibyl kaufman, 27 oak avenue: stated that the override language is 2-3 sentences on the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair Jeffreys reported a placeholder for the school district override has been put on the warrant, following an informal Board agreement at the last meeting to add it to the warrant and as a ballot question.",
+   "quote": "chair jeffreys stated that a placeholder on the warrant for the school district override has been made."
+  },
+  {
+   "decision": "The Board and the School Committee will meet at the end of March to go over the override language, with the Town Counsel invited at the Town Manager's recommendation.",
+   "quote": "chair jeffreys stated that the board and the school committee will meet at the end of march to go over the language of the override."
+  },
+  {
+   "decision": "Discuss Environmental Policies and Select Board By-laws was tabled.",
+   "quote": "discuss environmental policies and select board by-laws the item was tabled."
+  },
+  {
+   "decision": "Review List of Upcoming Vacancies in Boards/Committees for FY25 was tabled.",
+   "quote": "review list of upcoming vacancies in boards/committees for fy25 the item was tabled."
+  },
+  {
+   "decision": "Chair Jeffreys requests that the Board of Assessors bring forward both options (the additional $250 exemption options) to the Select Board.",
+   "quote": "chair jeffreys requests that the board of assessors bring forward both options to the select board."
+  },
+  {
+   "decision": "Member Emkey requested that the next Select Board meeting discuss ARPA funding for School cybersecurity upgrades, and Chapter 90 funds for school sidewalks, so the money need not come from Free Cash.",
+   "quote": "member emkey requested that at the next select board meeting, discuss arpa funding to cover cybersecurity upgrades for the school district"
+  },
+  {
+   "decision": "The Board will meet on March 19, 2024, with a tentative meeting on March 26, 2024, to discuss the school override language.",
+   "quote": "chair jeffreys stated that the board will meet on march 19, 2024, and a tentative meeting on march 26, 2024, to discuss the school override language."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Single tax rate",
+   "what_was_recorded": "The Board adopted, as amended, a single tax rate of $14.10 for the Town.",
+   "figures_as_printed": [
+    "$14.10"
+   ],
+   "quote": "motion was amended by chair jeffreys to include $14.10 as the single tax rate. seconded by member emkey."
+  },
+  {
+   "topic": "FY2023 levy limit and new growth",
+   "what_was_recorded": "Assessor's presentation of the FY2023 levy limit, the 2.5% increase and new growth.",
+   "figures_as_printed": [
+    "$424,043,723",
+    "$701,093",
+    "$630,220"
+   ],
+   "quote": "mr. kramer stated that fy2023 levy limit is $424,043,723, plus 2.5%: $701,093, plus new growth: $630,220"
+  },
+  {
+   "topic": "FY2024 levy limit and maximum allowable levy",
+   "what_was_recorded": "Assessor's presentation of the FY2024 levy limit, debt exclusion and maximum allowable levy.",
+   "figures_as_printed": [
+    "$29,375,036",
+    "$2,477,704",
+    "$31,852,740"
+   ],
+   "quote": "mr. kramer stated that the fy2024 levy limit is $29,375,036, debt exclusion: $2,477,704, fy2024 maximum allowable levy: $31,852,740"
+  },
+  {
+   "topic": "Low-income senior exemption (Clause 41C) cost",
+   "what_was_recorded": "The Assessors stated the 41C change would cost the Town $2,500, about $0.57 per residence per year.",
+   "figures_as_printed": [
+    "$2,500",
+    "$0.57"
+   ],
+   "quote": "mr. laffond stated that the proposed change of 41c would cost $2,500 to the town. mr. laffond stated that it would cost every residence $0.57 a year."
+  },
+  {
+   "topic": "Additional exemption amount",
+   "what_was_recorded": "Vice-Chair Franco said he would have supported an additional $10,000 request to raise the exemption to an additional $250.",
+   "figures_as_printed": [
+    "$10,000",
+    "$250"
+   ],
+   "quote": "vice-chair franco stated that he would have supported the request for an additional $10,000 if it had been brought forward to raise the exemption to an additional $250."
+  },
+  {
+   "topic": "Small commercial exemption limits",
+   "what_was_recorded": "The Town may exempt up to 10% of valuation for owner-occupied businesses under the statutory limits of 10 or fewer employees and under $1 million valuation.",
+   "figures_as_printed": [
+    "10%",
+    "$1 million"
+   ],
+   "quote": "the town is allowed to exempt up to 10% of the property valuation for owner-occupied businesses with 10 or fewer employees and a valuation of less than $1 million."
+  },
+  {
+   "topic": "Skate park fundraising",
+   "what_was_recorded": "The skate park non-profit reported raising more than $330,000 toward the project.",
+   "figures_as_printed": [
+    "$330,000"
+   ],
+   "quote": "mr. moore stated that their non-profit has raised more than $330,000 to fund the project."
+  },
+  {
+   "topic": "Road maintenance bid",
+   "what_was_recorded": "The road maintenance IFB was awarded to PJ Keating at approximately $127,000 below the estimated budget.",
+   "figures_as_printed": [
+    "$127,000"
+   ],
+   "quote": "she stated that the bid was approximately $127,000 lower than the estimated budget."
+  },
+  {
+   "topic": "FY2024 new growth",
+   "what_was_recorded": "FY2024 new growth was approved at $630,220, and any new growth funds would go toward the School budget.",
+   "figures_as_printed": [
+    "$630,220"
+   ],
+   "quote": "the town manager notified town officials and staff that the fy2024 new growth was approved at $630,220."
+  },
+  {
+   "topic": "School network security article",
+   "what_was_recorded": "The School Committee submitted a Town Meeting article to raise and appropriate or transfer from Free Cash $82,119.00 for network security upgrades.",
+   "figures_as_printed": [
+    "$82,119.00"
+   ],
+   "quote": "the school committee submitted an article to raise and appropriate or transfer from free cash a sum of $82,119.00 to pay for network security upgrades"
+  },
+  {
+   "topic": "Warrants approved for payment",
+   "what_was_recorded": "Two Accounts Payable warrants and one Payroll warrant were listed.",
+   "figures_as_printed": [
+    "$355,054.87",
+    "$699,281.70",
+    "$985,077.55"
+   ],
+   "quote": "accounts payable warrant in the amount of $355,054.87. accounts payable warrant in the amount of $699,281.70. payroll warrant in the amount of $985,077.55."
+  },
+  {
+   "topic": "ARPA and Chapter 90 funding for school cybersecurity and sidewalks",
+   "what_was_recorded": "Member Emkey asked for a discussion of ARPA funding for School cybersecurity and of Chapter 90 funds for school sidewalks, so Free Cash is not used; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "member emkey requested that at the next select board meeting, discuss arpa funding to cover cybersecurity upgrades for the school district"
+  },
+  {
+   "topic": "Marshall Park renovation grant",
+   "what_was_recorded": "A PARC grant for Marshall Park renovations was awarded, with $2.5 million from other sources not paid directly by Lunenburg taxpayers.",
+   "figures_as_printed": [
+    "$2.5 million"
+   ],
+   "quote": "chair jeffreys stated that $2.5 million has been awarded from other sources that are not directly paid by lunenburg taxpayers."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Cost of the Clause 41C change, absorbed within the current overlay as the Board of Assessors voted.",
+   "outcome": "Assessors voted 3-0-0 to absorb the change within the current overlay; no transfer amount is printed for that action.",
+   "amount_as_printed": "$2,500",
+   "quote": "mr. laffond stated that the proposed change of 41c would cost $2,500 to the town."
+  },
+  {
+   "description": "School Committee Town Meeting article to raise and appropriate or transfer from Free Cash for network security upgrades.",
+   "outcome": "Submitted as a Town Meeting article; no vote at this meeting.",
+   "amount_as_printed": "$82,119.00",
+   "quote": "the school committee submitted an article to raise and appropriate or transfer from free cash a sum of $82,119.00 to pay for network security upgrades"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Sarah Cammer",
+   "stated_role": "",
+   "topic": "School budget and override",
+   "quote": "sarah cammer: 304 lancaster avenue: described the education her child receives in the town"
+  },
+  {
+   "speaker": "Laura Brzozoski",
+   "stated_role": "resident",
+   "topic": "School override on Town Meeting warrant and ballot",
+   "quote": "ms. brzozoski requested that the board put the school override on the town meeting warrant, and a municipal ballot question"
+  },
+  {
+   "speaker": "Mary Foyle",
+   "stated_role": "President of the Lunenburg Education Association",
+   "topic": "School funding and staffing",
+   "quote": "ms. foyle stated that the school district is understaffed due to low salaries compared to other districts."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "",
+   "topic": "Opposition to School override",
+   "quote": "ms. lisio stated that she has concerns about higher property taxes due to the proposed override."
+  },
+  {
+   "speaker": "David Passios",
+   "stated_role": "lifelong resident of Lunenburg",
+   "topic": "Long-term School and Town budgets",
+   "quote": "mr. passios stated that he has been concerned about unsustainable school budgets for the past decades."
+  },
+  {
+   "speaker": "Mandy Gilman",
+   "stated_role": "",
+   "topic": "Thanks to Board for engagement",
+   "quote": "mandy gilman, 186 reservoir road: thanked the board for engaging with residents regarding"
+  },
+  {
+   "speaker": "Sibyl Kaufman",
+   "stated_role": "",
+   "topic": "Support for a School override vote",
+   "quote": "she stated that she would like the board to publicly support voting for a school override."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "chair michael-ray jeffreys called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment and Board comment",
+   "resolution": "heard; no action",
+   "quote": "chair jeffreys stated that the board is aware of the outpouring of concerns and support for the school override ballot question.",
+   "tags": [
+    "school override",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Lunenburg Skate Park update (7:15 PM appointment)",
+   "resolution": "presented; no action",
+   "quote": "aidan moore, 51 wildwood road: stated that he is the only member of the skate park initiative",
+   "tags": [
+    "skate park",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Tax classification hearing (7:30 PM, M.G.L. Ch.40 § 56)",
+   "resolution": "single tax rate of $14.10 adopted 3-0-0; no action on open space or exemption discounts",
+   "quote": "7:30 pm tax classification hearing as required by m.g.l. ch.40 § 56 on allocation of the",
+   "tags": [
+    "tax classification",
+    "tax rate",
+    "assessors"
+   ]
+  },
+  {
+   "topic": "Board of Assessors Clause 41C senior exemption article",
+   "resolution": "request accepted 3-0-0; Town Counsel may modify language; cost absorbed in overlay",
+   "quote": "mr. laffond stated that the proposed change of 41c would cost $2,500 to the town.",
+   "tags": [
+    "senior tax exemption",
+    "warrant article",
+    "assessors",
+    "overlay"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational",
+   "quote": "the town manager stated that the warrant for the annual town meeting is currently open for article submissions",
+   "tags": [
+    "town meeting",
+    "vacancies",
+    "employment"
+   ]
+  },
+  {
+   "topic": "Old Business: Environmental Policies and Select Board By-laws",
+   "resolution": "tabled",
+   "quote": "discuss environmental policies and select board by-laws the item was tabled.",
+   "tags": [
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Old Business: FY2024/FY2025 budget, capital plan, ATM warrant",
+   "resolution": "discussed; override placeholder kept; 60-day ballot notice policy suspended 3-0-0",
+   "quote": "chair jeffreys stated that a placeholder on the warrant for the school district override has been made.",
+   "tags": [
+    "school override",
+    "budget",
+    "town meeting warrant",
+    "ballot question"
+   ]
+  },
+  {
+   "topic": "Current Business: Environmental Policies (repeated item)",
+   "resolution": "tabled",
+   "quote": "discuss environmental policies and select board by-laws the item was tabled.",
+   "tags": [
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Current Business: Upcoming vacancies FY25",
+   "resolution": "tabled",
+   "quote": "review list of upcoming vacancies in boards/committees for fy25 the item was tabled.",
+   "tags": [
+    "vacancies",
+    "boards"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "warrants listed; ARPA funding discussion requested for next meeting",
+   "quote": "accounts payable warrant in the amount of $355,054.87.",
+   "tags": [
+    "warrants",
+    "ARPA",
+    "free cash",
+    "school cybersecurity"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational",
+   "quote": "vice-chair franco stated that he was not able to attend a council on aging meeting",
+   "tags": [
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "meetings scheduled",
+   "quote": "chair jeffreys stated that the board will meet on march 19, 2024, and a tentative meeting on march 26, 2024, to discuss the school override language.",
+   "tags": [
+    "schedule",
+    "school override"
+   ]
+  },
+  {
+   "topic": "Public comment: Town Manager comment and public comment",
+   "resolution": "informational",
+   "quote": "the town manager stated that the parks commission received a notification on a successful parc grant award to fund renovations at marshall park.",
+   "tags": [
+    "marshall park",
+    "grants",
+    "parks",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:32 PM",
+   "quote": "meeting adjourned at 8:32 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of March 12, 2024 (recorded after signature block)",
+   "resolution": "approved 4-0-1",
+   "quote": "chair nuzzolo made the motion to approve the minutes from march 12, 2024. seconded by vice-chair moore.",
+   "tags": [
+    "minutes approval"
+   ]
+  }
+ ],
+ "tags": [
+  "school override",
+  "tax classification",
+  "single tax rate",
+  "board of assessors",
+  "senior tax exemption",
+  "warrant article",
+  "town meeting",
+  "skate park",
+  "budget",
+  "free cash",
+  "ARPA",
+  "school cybersecurity",
+  "marshall park",
+  "public comment",
+  "warrants",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

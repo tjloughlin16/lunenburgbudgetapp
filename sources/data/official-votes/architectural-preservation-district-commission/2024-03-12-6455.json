@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2024-03-12",
  "docid": "6455",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve February 14, 2024 minutes",
+   "motion": "Approve the February 14, 2024 minutes.",
    "moved_by": "Member McGrath",
    "seconded_by": "Lloyd",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve by member mcgrath, seconded by lloyd, approved by all"
+   "quote": "february 14, 2024 - motion to approve by member mcgrath, seconded by lloyd, approved by all"
   },
   {
-   "motion": "Adjust guidelines to ease solar installation as a future guideline change",
+   "motion": "Commission to adjust guidelines to ease solar installation as a future guideline change, as amended by Mbr Lloyd.",
    "moved_by": "Mbr Lockwood",
    "seconded_by": "Mbr McGrath",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mbr lockwood motions to commission to adjust guidelines to ease solar installation as a future guideline change, seconded by mbr mcgrath - amended verbiage by mbr lloyd - approved by all members"
+   "quote": "mbr lockwood motions to commission to adjust guidelines to ease solar installation as a future guideline change, seconded by mbr mcgrath"
   },
   {
-   "motion": "Approve guidelines",
+   "motion": "Approve the APD property owner guidelines.",
    "moved_by": "Chair",
    "seconded_by": "Mbr McGrath",
    "outcome": "passed",
@@ -37,6 +37,140 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0999427
+ "note": "Text is a summary-style set of minutes. No roll-call tallies are printed; unanimous outcomes are recorded as 'Approved by all' and are entered as 'passed'. Adjournment at 8:25 PM and the next meeting (April 9, 2024) are recorded with no motion. The cupola and recruiting items have discussion but no recorded vote or decision. Kim Duffy and the temp hire 'Jocie' are named but did not appear, so they are not listed as attendees. The Vacancy line is not a person.",
+ "cost_usd": 0.01399147,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Brian Gingras",
+   "role": "Building commissioner",
+   "status": "not stated",
+   "quote": "communication with brian gingras (building commissioner)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair will discuss the solar matter with legal counsel and the Planning Board.",
+   "quote": "chair will discuss with legal council and planning board"
+  },
+  {
+   "decision": "Mbr Lockwood will try to set up a one-on-one meeting with the 50 Main Street condo association owner rather than a call, to bring the matter to council.",
+   "quote": "mbr lockwood will try and set up the one-on-one meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public notice posting fee for APD property owner notification",
+   "what_was_recorded": "The fee to post a public notice is set as the starting point for any future fees for a CTA.",
+   "figures_as_printed": [
+    "$40"
+   ],
+   "quote": "fee to post a public notice is $40 which will be the starting point for any future fees for a cta."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved February 14, 2024 minutes",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "february 14, 2024 - motion to approve by member mcgrath, seconded by lloyd, approved by all"
+  },
+  {
+   "topic": "Correspondence: building commissioner",
+   "resolution": "noted; no land use director, temp hire and contractor used to fill the gap",
+   "tags": [
+    "staffing",
+    "building department"
+   ],
+   "quote": "no land use director, which is critical to town business"
+  },
+  {
+   "topic": "Cupola from 925 Mass Ave gas station",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "historic preservation",
+    "demolition"
+   ],
+   "quote": "cupola from old gas station at 925 mass ave"
+  },
+  {
+   "topic": "Solar panel installation",
+   "resolution": "approved motion to commission guideline changes easing solar installation; Chair to consult legal counsel and Planning Board",
+   "tags": [
+    "solar",
+    "guidelines",
+    "planning board"
+   ],
+   "quote": "two houses recently had solar panels installed with building permits, but are within the apdc"
+  },
+  {
+   "topic": "Recruiting new member",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "membership",
+    "meeting schedule"
+   ],
+   "quote": "chair had discussion with kim duffy to join the apdc, wants to discuss moving meeting to first"
+  },
+  {
+   "topic": "APD property owner notification",
+   "resolution": "guidelines approved; mailer and new CTA and form to follow",
+   "tags": [
+    "notification",
+    "fees",
+    "guidelines"
+   ],
+   "quote": "approved guidelines will create a new cta and a new form for easy submittal."
+  },
+  {
+   "topic": "50 Main Street",
+   "resolution": "continued; Mbr Lockwood to arrange one-on-one meeting with owner",
+   "tags": [
+    "50 Main Street",
+    "condo association"
+   ],
+   "quote": "mbr lockwood was not able to reconnect with owner of the condo association."
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "solar panels",
+  "historic cupola",
+  "property owner notification",
+  "public notice fee",
+  "guidelines",
+  "staffing",
+  "membership",
+  "50 Main Street"
+ ],
+ "dropped_unquoted_by_field": {}
 }
