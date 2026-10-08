@@ -48,6 +48,16 @@ idle account) that is ~16% of the window an hour -- ~80% over five hours, leavin
 interactive work. Two runs at once would be ~32% an hour and fill a window in about three.
 So: ONE run, and the lock above enforces it.
 
+WHAT A MEETING COSTS, MEASURED 7-8 October 2026 (the governed runs; TJ: "So 1% per meeting"):
+  * a meeting needing ALL THREE steps (our minutes from the recording on sonnet, the town's
+    minutes read, the reconcile) ~ $0.60 API-equivalent ~ 1% of a five-hour window
+    ~ 0.1% of the week. 100 such meetings ~ a full window ~ 10% of a week.
+  * a meeting needing only the town's minutes read ~ $0.02 ~ 0.05% of a window -- about
+    twenty times cheaper.
+  * a window of pure batch work measured ~ $42 ($0.42 a point, overnight 7-8 Oct: 96 meetings
+    moved the bar 6% -> 100%; 74 meetings 3% -> 66%). The governor steers by the server's bar,
+    not by these numbers; they are for sanity-checking its projection.
+
 THE ONE EXCEPTION: `--oldest --gap SECONDS`, a SLOW second run from the other end of the
 queue, to use what one run leaves of a window (TJ, 7 October 2026: *"15% remaining in the
 session is quite a lot"*). It takes its OWN lock, so there is still never more than one run

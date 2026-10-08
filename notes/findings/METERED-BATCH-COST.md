@@ -141,3 +141,20 @@ bigger than $37 and two streams fit.
 - **Whether the session bar is linear.** Two readings cannot show a shape.
 - **That sharding would in fact have failed.** It was not tried. The 69% reading made the
   test not worth paying for, which is a decision and not a measurement.
+
+## 7. MEASURED PER MEETING, 7-8 October 2026 -- and the $37 estimate retired
+
+The usage governor now reads the server's own bars (`usage_governor.fetch`), so the window's
+size is observed rather than estimated. Overnight 7-8 October, with the interactive session
+nearly idle: **96 meetings moved the session bar from 6% to 100% for $39.80** (~$0.42 a point,
+a window of pure batch ~$42), and **74 meetings moved it 3% -> 66% for $34.71**.
+
+| a meeting that needs | API-equivalent | of a 5-hour window | of the week |
+|---|---:|---:|---:|
+| all three steps (our minutes on sonnet, town minutes read, reconcile) | ~$0.60 | **~1%** | **~0.1%** |
+| only the town's minutes read | ~$0.02 | ~0.05% | ~0.005% |
+
+TJ, reading it: *"So 1% per meeting."* For the backlog as it stands (early 2024, mostly
+three-step meetings), yes: a full window is ~90-100 meetings, 100 meetings ~10% of a week.
+Section 6's $37 window was inflated by the interactive Opus session sharing it; the batch-only
+measurement above supersedes it.
