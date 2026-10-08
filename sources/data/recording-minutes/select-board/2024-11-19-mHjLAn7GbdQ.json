@@ -667,5 +667,279 @@
    "at": "2026-10-07T21:22:27Z",
    "cost_usd": 0.221399
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-11-19-minutes-rr2026-09-18-draft.txt",
+   "path": "sources/meetings/select-board/2024-11-19-minutes-rr2026-09-18-draft.pdf"
+  },
+  "official_sha256": "fe669e9a8b89b032d4310ebfd2acf0661678f4f0ee9e105e97d854efec050e7d",
+  "against": "text",
+  "coverage": "full",
+  "summary": "The two records agree on every headline vote (all passed 5-0) and on the tax-bill figures. They differ on what the ARPA package contained, who drafts the skate park letter, and the teen room funding. Several of our figures are caption errors (fence change order, warrant, ARPA balance, small ARPA amounts).",
+  "counts": {
+   "agree": 12,
+   "caption_error": 8,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: ratify Autumn Buck as DPW laborer/driver",
+    "ours": "Ratify the appointment of Autumn Buck as DPW laborer and driver. — passed unanimously",
+    "official": "Vice-Chair Jeffreys moved to ratify the appointment of Autumn Buck as DPW Laborer Driver.  Seconded by Clerk Moore.  Call for the Vote:  Five-aye. The motion passed unanimously (5-0-0)",
+    "note": "Same motion and outcome.",
+    "t": 252
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: single tax rate, no exemptions",
+    "ours": "Adopt a single tax classification rate and not adopt any available exemptions. — passed unanimously",
+    "official": "Vice Chair Jeffreys moved to adopt a single tax classification and to not adopt any available exemptions.  Seconded by Member Alonzo.  Call for the Vote:  Five-aye. The motion passed unanimously (5-0-0)",
+    "note": "Same motion and outcome; the decision to follow the assessors also matches.",
+    "t": 2870
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: skate park T-Mobile grant support letter",
+    "ours": "Provide a letter of support for the skate park's T-Mobile grant. — passed unanimously",
+    "official": "Vice-Chair Jeffreys moved for the Select Board to provide a letter of support for the Lunenburg Skate Park T-Mobile grant.  Seconded by Clerk Moore.  Call for the Vote:  Five-aye. The motion passed unanimously (5-0-0)",
+    "note": "Same motion and outcome.",
+    "t": 3490
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who drafts the skate park letter, and the deadline",
+    "ours": "The interim town manager will draft the skate park support letter for the next meeting, with a December 31 deadline.",
+    "official": "Vice-Chair Jeffreys stated he has no problem preparing the letter.",
+    "note": "Official has the Vice-Chair preparing the letter and records no deadline; check the recording near t=3304 to see who took the task.",
+    "t": 3304
+   },
+   {
+    "kind": "agree",
+    "about": "Skate park prior grant amount",
+    "ours": "Skate park grant: 200,000, $50,000",
+    "official": "they have previously applied for the $50,000 grant from T-Mobile and were denied",
+    "note": "The $50,000 figure matches; the $200,000 appears only in our captions.",
+    "t": 3347
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: t-ball on old primary school property",
+    "ours": "Approve use of the old primary school property for t-ball by Lunenburg Youth Baseball and Softball as presented. — passed unanimously",
+    "official": "Member Alonzo moved to approve the request to use the old primary school property for t-ball with Lunenburg youth softball and Softball, Inc. as presented tonight.",
+    "note": "Same motion and 5-0 outcome; the organization name is garbled in the official text and the agenda calls it Little League.",
+    "t": 3262
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: appoint Ryan Stobber to Agricultural Commission",
+    "ours": "Appoint Ryan stobber to the Agricultural Commission, term expiring June 2027. — passed unanimously",
+    "official": "Member Alonzo moved the Board to appoint Ryan Stobber to the Agricultural Commission with a term to expire June 2027.",
+    "note": "Same motion, term and outcome.",
+    "t": 3678
+   },
+   {
+    "kind": "agree",
+    "about": "Vote and transfer: Marshall Park ARPA allocation $1M to $2,250",
+    "ours": "ARPA allocation for Marshall Park reduced from the original amount to the remainder — $1 million to $2,250 (voted)",
+    "official": "moved the Board to change the allocation for the Marshall Park Project from $1M to $2,250.00.",
+    "note": "Same amounts and unanimous outcome.",
+    "t": 6025
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: ARPA commitments of the remaining balance",
+    "ours": "Commit ARPA funds to Boys and Girls Club computers and 3D printer, Historical Society items, and a small fencing amount. — passed unanimously",
+    "official": "$1,299 to the Lunenburg Historical Society for glass negative scanner and $33 for the Council on Aging.",
+    "note": "Official's motion has no fencing item; it ends with a $33 Council on Aging item and a $1,299 scanner. Check the recording near t=6743 for what the small final item was.",
+    "t": 6743
+   },
+   {
+    "kind": "caption_error",
+    "about": "Boys & Girls Club computers amount",
+    "ours": "$564 195",
+    "official": "$5,649.95 to the Lunenburg Boys and Girls Club for 5 computers",
+    "note": "Same item; digits and grouping garbled by captions.",
+    "official_reading": "$5,649.95",
+    "t": 6136
+   },
+   {
+    "kind": "caption_error",
+    "about": "3D printer amount",
+    "ours": "$699.99",
+    "official": "$699.98 to the Lunenburg Boys and Girls Club for a 3D printer",
+    "note": "One-cent difference on the same item, probably misheard; verify against the recording.",
+    "official_reading": "$699.98",
+    "t": 6136
+   },
+   {
+    "kind": "caption_error",
+    "about": "Historical Society HVAC and scanner amounts",
+    "ours": "$ 48,6 ... $1,000 $299",
+    "official": "$499 to the Lunenburg Historical Society for HV AC upgrades in the attic",
+    "note": "Our fragments correspond to $499 and $1,299.",
+    "official_reading": "$499 and $1,299",
+    "t": 6136
+   },
+   {
+    "kind": "caption_error",
+    "about": "Uncommitted ARPA balance",
+    "ours": "Uncommitted ARPA balance: $222,450, $33",
+    "official": "there is $222,499.88 remaining",
+    "note": "Same balance with misheard digits.",
+    "official_reading": "$222,499.88",
+    "t": 5877
+   },
+   {
+    "kind": "agree",
+    "about": "Procurement card policy adoption",
+    "ours": "Adopt the procurement card policy as section 3.11 of the rules and regulations. — passed unanimously",
+    "official": "Vice Chair Jeffreys stated it is Section 3.11.",
+    "note": "Same vote and outcome; the official motion text itself reads 'Section 3.1.1' while the discussion says 3.11, so the section number is inconsistent in the official minutes.",
+    "t": 7043
+   },
+   {
+    "kind": "caption_error",
+    "about": "Fence change order",
+    "ours": "Fence change order: $122,000, $2,033",
+    "official": "Of the $12,000 approved it came to $12,033.",
+    "note": "Same item; digits garbled.",
+    "official_reading": "$12,000 approved, $12,033 actual",
+    "t": 3788
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant",
+    "ours": "Warrant: $41,988 46",
+    "official": "There was an accounts payable warrant in the amount of $241,981.46.",
+    "note": "Same warrant; leading digit and grouping lost in captions.",
+    "official_reading": "$241,981.46",
+    "t": 7812
+   },
+   {
+    "kind": "agree",
+    "about": "Average tax bill FY2025",
+    "ours": "Average tax bill increase: $467, 6,787 97 cents, 7,255, 6.8%",
+    "official": "the average tax bill for FY2025 would be about $7,255.18, where last year it was about $6,787.97 so the difference is about a $467 increase which is about 6.8%.",
+    "note": "Figures match, apart from caption formatting.",
+    "t": 1656
+   },
+   {
+    "kind": "agree",
+    "about": "MUNIS cloud move discount",
+    "ours": "MUNIS cloud move: 108,000, 126,000, 10% discount",
+    "official": "They are working with legal to commit to a 2-year contract with a 10% discount for each of the years.",
+    "note": "The 10% discount matches; the dollar figures are only in ours.",
+    "t": 6307
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Teen room funding plan",
+    "ours": "The teen room contingency plan awaits formal town counsel advice and an alternative funding source.",
+    "official": "Interim Town Manager Terenzini stated as long as the contingency can be identified the contract can be signed.",
+    "note": "Official cites no town counsel advice and says the Friends of the Library can cover the shortfall; check the recording near t=5816.",
+    "t": 5816
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cannabis host agreement follow-up",
+    "ours": "Members were asked to send concerns on the cannabis host agreement template within a week.",
+    "official": "Chair Nuzzolo stated he needs more time to read through it.",
+    "note": "Official records no request for written concerns within a week; check the recording near t=7596.",
+    "t": 7596
+   },
+   {
+    "kind": "agree",
+    "about": "Climate survey and goal-setting postponed",
+    "ours": "The climate survey policy and the Select Board goal-setting discussions were postponed to December.",
+    "official": "Chair Nuzzolo stated the same with this item, we will push it to December.",
+    "note": "Both items continued to December.",
+    "t": 7108
+   },
+   {
+    "kind": "agree",
+    "about": "Brooks House assigned to Municipal Building Design Committee",
+    "ours": "The Municipal Building Design Committee will take on the Brooks house work and give regular updates.",
+    "official": "The Board agreed to send it to the Municipal Building Design Committee.",
+    "note": "Same decision; the 'regular updates' detail is only in ours.",
+    "t": 7790
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library envelope ARPA reallocation",
+    "ours": "Library exterior envelope ARPA leftover reallocated in part — 27,000 (discussed only)",
+    "official": "",
+    "note": "The official minutes do not mention the library envelope leftover; they say only the paint project was on budget.",
+    "t": 5260
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA administration, payroll and spreadsheet figures",
+    "ours": "ARPA administration and payroll lines: $60,000, $72,400, 33,000",
+    "official": "",
+    "note": "The official minutes only say the Chair reviewed the spreadsheet; the line figures are not recorded.",
+    "t": 4868
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cannabis community impact fee percentage",
+    "ours": "Cannabis community impact fees: 3%",
+    "official": "",
+    "note": "Official says only that the fee calculation is the biggest change.",
+    "t": 7233
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tax rate figures and insurance discussion",
+    "ours": "Estimated FY2025 single tax rate: $14.37, 1410, 1.9%, 77255 18",
+    "official": "",
+    "note": "The official minutes give no tax rate, levy summary, insurance renewal or loss ratio figures.",
+    "t": 737
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attempt to delay the tax classification vote",
+    "ours": "",
+    "official": "Mr. Rabbit is recommending they put the vote on hold for a week.",
+    "note": "Our minutes do not record the assessor's request to delay, or the public comments for and against a split rate.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Boys & Girls Club van request and sewer manager offer declined",
+    "ours": "",
+    "official": "They did make an offer to the preferred candidate for sewer business manager but they declined the offer.",
+    "note": "Official also records the Boys & Girls Club's passenger van request; ours does not.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendees: board members and staff names",
+    "ours": "Michael Ray (member); Tom (member); Mr Alonzo (member); Jeff (member); Carter (interim town manager); Linda McQuade",
+    "official": "Chair Caesar Nuzzolo, Vice Chair Michael-Ray Jeffreys,     Clerk Amanda Moore, Member Tom Alonzo and Member Renee Emkey",
+    "note": "Ours lists Michael Ray and Jeff as separate members, and Tom and Mr Alonzo as separate members. Official shows five members, so these are duplicate mishearings; McQuade is spelled Lynda and Carter is Carter Terenzini.",
+    "official_reading": "Caesar Nuzzolo, Michael-Ray Jeffreys, Amanda Moore, Tom Alonzo, Renee Emkey, Carter Terenzini, Lynda McQuade"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board of Assessors members",
+    "ours": "Sarah (board of assessors member); Jack/John Rabbit (board of assessors member)",
+    "official": "Vice Chair Sarah Cammer (Board of Assessors)",
+    "note": "Official gives Sarah's surname as Cammer and the other member as Jack Rabbit.",
+    "official_reading": "Sarah Cammer; Jack Rabbit"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T02:19:50Z",
+   "cost_usd": 0.38144199999999995
+  }
  }
 }

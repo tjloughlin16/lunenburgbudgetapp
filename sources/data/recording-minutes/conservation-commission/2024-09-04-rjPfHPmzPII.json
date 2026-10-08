@@ -416,5 +416,254 @@
    "at": "2026-10-07T21:47:59Z",
    "cost_usd": 0.22160300000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09042024-6738",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2024-09-04-minutes-6738.txt",
+   "path": "sources/meetings/conservation-commission/2024-09-04-minutes-6738.pdf"
+  },
+  "official_sha256": "bb0cd10fa7747dcad054562349a14705b5e6724272193dbe598736f7d5ed007f",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all eleven votes and on every outcome, and the $300 per day violation rate matches. The one thing to check is that our minutes show a five-member board and \"all five aye\" while the official roll call lists six members, including Chair Mary Wilson, who never appears in our attendee list.",
+  "counts": {
+   "agree": 14,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "1147 Mass Ave RDA, negative determination",
+    "ours": "Approve request for determination of applicability (negative determination) for driveway replacement and sewer connection grading — passed",
+    "official": "motion: chris s., second: jenny p. to approve with negative determination.",
+    "note": "Same item and outcome; the official minutes name the applicant and address.",
+    "t": 436
+   },
+   {
+    "kind": "agree",
+    "about": "390 Howard St ANRAD continued to Oct 2",
+    "ours": "Continue the 390 Howard Street abbreviated notice of resource area delineation hearing to October 2 — passed",
+    "official": "motion: mike l., second: rich b. to continue 390 howard st. to 10/2/2024.",
+    "note": "Same continuation date and outcome.",
+    "t": 664
+   },
+   {
+    "kind": "agree",
+    "about": "160 Sunset Lane continued to Sept 18",
+    "ours": "Continue the 160 Sunset Lane tree removal determination to September 18 pending a more detailed erosion control and replanting plan — passed",
+    "official": "motion: rich b., second: mike l. to continue to september 18th",
+    "note": "Same date and outcome; the more detailed plan condition matches the official decision.",
+    "t": 2131
+   },
+   {
+    "kind": "agree",
+    "about": "24 Brookview Terrace dead pines removal",
+    "ours": "Accept the agent's recommendation to approve removal of three dead pines at 24 Brookview Terrace, leaving the stumps — passed",
+    "official": "motion: jeff v., second: chris s. to approve removal of the three dead pine trees.",
+    "note": "Same vote and outcome. 'Leaving the stumps' appears only in ours, and the official motion does not mention it.",
+    "t": 2312
+   },
+   {
+    "kind": "agree",
+    "about": "Certificate of compliance, 39 Main Street",
+    "ours": "Approve certificate of compliance for 39 Main Street — passed",
+    "official": "motion: jeff v., second: chris s. to approve certificate of compliance.",
+    "note": "Same vote and outcome.",
+    "t": 2397
+   },
+   {
+    "kind": "agree",
+    "about": "Certificate of compliance, 17 Watt Street lot 6",
+    "ours": "Approve certificate of compliance for 17 Watt Street lot six — passed",
+    "official": "motion: rich b., second: mike l. to approve certificate of compliance.",
+    "note": "Same vote and outcome.",
+    "t": 2503
+   },
+   {
+    "kind": "discrepancy",
+    "about": "441 Townsend Harbor Road CoC roll call, number voting",
+    "ours": "Approve certificate of compliance for 441 Townsend Harbor Road — passed (roll call; all five aye as heard)",
+    "official": "to approve certificate of compliance. roll call vote: jenny-aye, rich-aye, jeff-aye, mike-aye, chris-aye, and mary-aye.",
+    "note": "The outcome matches, but the official roll call has six ayes including Mary and ours has five. Check the recording to see whether the chair voted and the tally was missed.",
+    "t": 2552
+   },
+   {
+    "kind": "agree",
+    "about": "10 Sunset Ave project change, Jenny recused",
+    "ours": "Approve the notice of project change at 10 Sunset Ave as presented (member Jenny recused) — passed (roll call; four members voting plus chair as heard)",
+    "official": "motion: mike l., second: jeff v . to approve of the proposed project change.",
+    "note": "Same approval and the same recusal (Jenny Pewtherer). Neither record gives a tally that conflicts with the other.",
+    "t": 2847
+   },
+   {
+    "kind": "agree",
+    "about": "390 Howard St violation notice $300 per day",
+    "ours": "Issue a violation notice of $300 per day at 390 Howard Street until erosion controls are put back in place and approved by the office — passed",
+    "official": "motion: rich b., second: chris s. to issue a violation notice of $300.00 per day until the erosion controls are put back in place and approved by the office.",
+    "note": "Same vote, amount and condition. Ours also says Jenny did not vote, and the official minutes record no individual votes.",
+    "t": 4099
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Other violation-fine figures heard, 390 Howard St",
+    "ours": "Violation fines, 390 Howard Street: $300 per day, 500 a day, up to 300",
+    "official": "",
+    "note": "The '500 a day' and 'up to 300' figures come from discussion and are not in the official minutes. They are probably talk about fine levels and not a second vote.",
+    "t": 4099
+   },
+   {
+    "kind": "caption_error",
+    "about": "Bob Pease access to PO for bridge repairs",
+    "ours": "Allow Bob Pease access to the town purchase order for bridge repairs at the Larkin Town Forest, with prior authorization from chair or office — passed",
+    "official": "motion: rich b., second: jenny p. to allow bob pease to access the maki po for large t own forest bridge repairs with prior authorization from chair or office.",
+    "note": "It is the same motion. The captions rendered 'Large Town Forest' as 'Larkin Town Forest' and 'Maki PO' as 'town purchase order'.",
+    "t": 4525,
+    "official_reading": "Maki PO for Large Town Forest"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Condition on Maki PO use",
+    "ours": "",
+    "official": "bob should notify the office or the chair of an approximate dollar amount before the po is used.",
+    "note": "The official minutes record a notification condition on top of the vote. Ours does not mention it.",
+    "t": 4525
+   },
+   {
+    "kind": "agree",
+    "about": "2024 GIS hours request to planning board",
+    "ours": "Authorize the chair to ask the planning board to release the 2024 GIS hours for updating trail maps — passed",
+    "official": "motion: rich b., second: mike l. to authorize mary to resend an email to the planning board to request release of the 2024 gis hours.",
+    "note": "Same action. Mary is the Chair in the official attendee list, so the two descriptions are consistent.",
+    "t": 4593
+   },
+   {
+    "kind": "agree",
+    "about": "160 Sunset Lane return with more detailed plan",
+    "ours": "Applicant at 160 Sunset Lane is expected to return on Sept 18 with a native planting plan to quickly revegetate the eroding slope; proposed conditions included removing the three trees nearest the dock with roots left in place and replacing removed trees three to one with whips.",
+    "official": "applicants should offer a more detailed planting plan for erosion management during the september 18th meeting before the proposal can be voted on.",
+    "note": "Same decision. Ours adds the proposed conditions (trees near the dock, 3:1 replacement), which the official minutes omit.",
+    "t": 2207
+   },
+   {
+    "kind": "agree",
+    "about": "390 Howard St escalation by agent",
+    "ours": "Agent to send a certified violation notice with a deadline to 390 Howard Street, and to ask DEP and other agencies about escalating the project.",
+    "official": "she will investigate escalating the issue.",
+    "note": "Both record that the agent will look into escalation. Ours adds the certified notice and DEP.",
+    "t": 3800
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Agent may contact DEP; ANRAD could be denied",
+    "ours": "Commission members agreed the agent may reach out to DEP for advice, and that the ANRAD could be denied for lack of information if the applicant keeps continuing it.",
+    "official": "",
+    "note": "This is a discussion-level agreement that the official minutes do not record. A person should check whether any vote was taken.",
+    "t": 4270
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "40 Fire Road violation letter priority",
+    "ours": "Violation letter for 40 Fire Road 12 to be moved to the top of the agent's priority list, with 390 Howard Street a close second.",
+    "official": "",
+    "note": "The official minutes do not mention 40 Fire Road or the prioritisation.",
+    "t": 4355
+   },
+   {
+    "kind": "agree",
+    "about": "Part-time office assistant, hours",
+    "ours": "Office assistant hours and budget: 10 to 3 Tuesdays and Thursdays, 10 [hours], five hours",
+    "official": "sophie proposed the hire of an assistant who would work 10 hours per week, 5 of which would be dedicated to minutes",
+    "note": "Ten hours per week, five on minutes, agrees. The 10 to 3 Tuesday and Thursday schedule appears only in ours, and the official minutes print no dollar figure.",
+    "t": 5015
+   },
+   {
+    "kind": "agree",
+    "about": "Assistant hire approved by select board",
+    "ours": "New part-time office assistant starts the next day after select board approval.",
+    "official": "the hire was approved by the select board.",
+    "note": "Both say the select board approved the hire. The start date appears only in ours.",
+    "t": 5015
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Snow Rider and ConCom sponsored grant updates",
+    "ours": "",
+    "official": "no update on snow rider grant.",
+    "note": "The official minutes record the grant updates (ConCom sponsored grant awarded 2023, Snow Rider with no update). Ours has neither.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendance: Chair Mary Wilson",
+    "ours": "Jenny puer (member); Rich Burch (member); Jeff vivano (member); michae larouche (member); Chris St Germain (member)",
+    "official": "roll call: jenny p., rich b., chris s., mike l., jeff v ., mary w., and sophie d. (admin)",
+    "note": "The official roll call has six members including Chair Mary Wilson, and ours lists five with no Mary. This bears on the 'all five aye' tallies, so check the recording for who chaired and voted.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Jenny",
+    "ours": "Jenny puer (member)",
+    "official": "roll call: jenny p., rich b., chris s., mike l., jeff v ., mary w., and sophie d. (admin)",
+    "note": "The captions misheard the surname. The official minutes give Jennifer Pewtherer (Vice Chair).",
+    "t": 0,
+    "official_reading": "Jennifer Pewtherer"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Rich",
+    "ours": "Rich Burch (member)",
+    "official": "roll call: jenny p., rich b., chris s., mike l., jeff v ., mary w., and sophie d. (admin)",
+    "note": "The captions misheard the surname. The official minutes give Richard Bursch.",
+    "t": 0,
+    "official_reading": "Richard Bursch"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name: Jeff",
+    "ours": "Jeff vivano (member)",
+    "official": "roll call: jenny p., rich b., chris s., mike l., jeff v ., mary w., and sophie d. (admin)",
+    "note": "The captions misheard the surname. The official minutes give Jeffrey Viviano.",
+    "t": 0,
+    "official_reading": "Jeffrey Viviano"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Staff name: Sophie",
+    "ours": "Sophie / Sophia (conservation agent / staff)",
+    "official": "roll call: jenny p., rich b., chris s., mike l., jeff v ., mary w., and sophie d. (admin)",
+    "note": "The official minutes give Sophia Dorow (Conservation Administration). Ours has the first name only, with two spellings.",
+    "t": 0,
+    "official_reading": "Sophia Dorow"
+   },
+   {
+    "kind": "agree",
+    "about": "Presenters Bob Proctor, Chuck Karen, Ryan Proctor",
+    "ours": "Ryan Proctor (presenter (representative for 10 Sunset Ave applicants))",
+    "official": "ryan proctor (dillis & roy) is representative of the applicants (jenny pewtherer and jack sheen).",
+    "note": "Presenters and the clients they represent match. Chuck Karen appears in the official minutes as working with Kevin O'Brien (not present).",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bob Pease and Maddison Berthet as named persons",
+    "ours": "",
+    "official": "maddison berthet conservation assistant",
+    "note": "The official minutes name Maddison Berthet as the minutes author and Bob Pease as a volunteer. Bob Pease is not in our attendee list, though he is named in our vote.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T02:22:06Z",
+   "cost_usd": 0.36358999999999997
+  }
  }
 }

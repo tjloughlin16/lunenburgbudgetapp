@@ -15,7 +15,7 @@ EXPECTED, from process_meeting.py's docstring (one serial run, 7 October): ~$6 a
 ~42 meetings an hour. The band is wide on purpose -- $2 to $10 an hour over the last 60
 minutes -- because the point is to catch a runaway (two streams, a retry loop) or a stall,
 not to police a slow meeting. And SPEND PER OUTPUT: over $0.50 a produced file in the last
-hour (expected ~$0.14), once $1 has been spent, trips -- $100 for one meeting cannot pass. A stall is no costed row for 15 minutes, unless the chain
+hour, once $1 has been spent, over $1.00 a matched paid call trips -- $100 for one meeting cannot pass. A stall is no costed row for 15 minutes, unless the chain
 says it is waiting for the window to reset.
 
 Health is read from OUTPUT (agentic-spend.csv), never from a process being alive --
@@ -156,10 +156,19 @@ def guard(now=None):
     # THE RATIO, which is what TJ asked for in so many words: *"if we spend $100 and get 1 or
     # 0 meetings, something should trip."* A meeting costs ~$0.14; trip at $0.50 a produced
     # file over the last hour, once at least $1 has been spent.
-    per = usd / matched if matched else float('inf')
-    if usd >= 1 and per > 0.50:
-        problems.append('$%.2f spent for %d output file(s) in the last hour -- $%s each, expected ~$0.14'
-                        % (usd, matched, 'inf' if not matched else '%.2f' % per))
+    # LIKE FOR LIKE: only the calls old enough to have been audited (audit() skips the last
+    # 2 minutes), divided by the paid calls matched among them. The first version divided ALL
+    # the hour's spend by only the audited files and stopped a healthy run at 22:22 on
+    # 7 October ($1.34 over 1 file, when 3 of the 4 calls were too new to audit). And the
+    # bar is per PAID CALL, at $1.00: our own minutes (sonnet, from a recording) are $0.30-0.80
+    # a call, so $0.50 a file was a bar the honest work could not clear.
+    aged = [r for r in rows if r.get('result', 'ok') == 'ok' and
+            (now - dt.datetime.fromisoformat(r['at'].replace('Z', '+00:00'))).total_seconds() > 120]
+    aged_usd = sum(float(r['cost_usd'] or 0) for r in aged)
+    per = aged_usd / matched if matched else float('inf')
+    if aged_usd >= 1 and per > 1.00:
+        problems.append('$%.2f spent for %d matched call(s) in the last hour -- $%s each, expected under $1'
+                        % (aged_usd, matched, 'inf' if not matched else '%.2f' % per))
     # REPEATING: the same step paid for the same meeting twice inside the hour. Every step
     # is skipped once done, so a second paid call means the save did not take and the run
     # is going round -- the shape of the 6 October runaway, which spun on refused calls.
@@ -194,7 +203,7 @@ def check():
     # governed run's opening `[gov] ` line -- an earlier run's STOPPED is history.
     marks = [m.end() for m in re.finditer(r'chunk of|\n\[gov\] ', tail)]
     current = tail[marks[-1]:] if marks else tail
-    waiting = 'waiting for the window to reset' in current
+    waiting = bool(re.search(r'waiting for the (window to reset|[0-9:]+ reset)', current))
     problems, matched, n_unmatched = guard(now)
     if 'STOPPED' in current:
         problems.append('a run STOPPED')

@@ -458,5 +458,276 @@
    "at": "2026-10-07T21:32:30Z",
    "cost_usd": 0.25353200000000004
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-10-22-minutes-rr2026-09-18-draft.txt",
+   "path": "sources/meetings/select-board/2024-10-22-minutes-rr2026-09-18-draft.pdf"
+  },
+  "official_sha256": "dd14d60359d3ea86b68335fdb20ff9e58f930d7c5a2e03d216ecf33c00082b2d",
+  "against": "text",
+  "coverage": "full",
+  "summary": "The two records agree on nearly every vote that both contain, and the main differences are in what each one leaves out. The official minutes record votes that ours lacks (Articles 3, 7, 8, 9 and the Executive Session minutes) and split Article 11 into two motions, while ours has caption errors in the tree-cutting figure and in two member names.",
+  "counts": {
+   "agree": 19,
+   "caption_error": 2,
+   "discrepancy": 5,
+   "only_in_ours": 5,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "All-alcohol license transfer to St Mary and Christ Inc",
+    "t": 2445,
+    "ours": "Approve the all alcohol license transfer to St Mary and Christ Inc at One Main Street — passed unanimously",
+    "official": "The motion passed unanimously (5-0-0).",
+    "note": "Same motion and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Hold Common Victualler license pending Board of Health",
+    "t": 2482,
+    "ours": "Hold the common victualler license until Board of Health confirmation — passed unanimously",
+    "official": "Motion by Member Alonzo to hold the Common Victualler license transfer to St. Mary and Christ Inc. until such time as the applicants provide or until the Board of Health, either one, provides us with notification",
+    "note": "Same motion, passed 5-0-0."
+   },
+   {
+    "kind": "agree",
+    "about": "One-day entertainment license, American Graffiti",
+    "t": 2591,
+    "ours": "Approve one-day entertainment license for American Graffiti on November 27 — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to approve the One Day Entertainment License for American Graffiti, 113 Summer St for 11/27/24 from 7:30 PM – 11:00 PM.",
+    "note": "Same vote, passed 5-0-0."
+   },
+   {
+    "kind": "agree",
+    "about": "Extend interim town manager contract 90 days",
+    "t": 4204,
+    "ours": "Extend the interim town manager contract for 90 days — passed 3 to 2",
+    "official": "Three-aye. Two –nay (Member Alonzo and Member Emkey). The motion passed unanimously (3-2-0).",
+    "note": "The tally matches. The official text calls a 3-2 vote 'unanimously', which is an internal error in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 1 late bills",
+    "t": 4433,
+    "ours": "Accept and recommend approval of Article 1 (late bills) — passed unanimously",
+    "official": "Motion by Member Alonzo to accept and recommend approval of Article 1.",
+    "note": "Same, 5-0-0."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 2 accept and recommend",
+    "t": 4514,
+    "ours": "Accept Article 2 and recommend approval (FY25 school budget amendment) — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to accept and recommend approval of Article 2.",
+    "note": "Same, 5-0-0."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 4 prudent investor rule",
+    "t": 4616,
+    "ours": "Accept Article 4 (prudent investor rule), then recommend approval — recommendation passed 4 to 1",
+    "official": "Call for the vote: Four Aye.  One No (Vice-Chair Jeffreys). The motion passed 5-1-0.",
+    "note": "Both give 4 aye, 1 no on the recommendation and accept unanimously. The official tally '5-1-0' is an internal arithmetic slip."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 5 tax exemptions",
+    "t": 4931,
+    "ours": "Accept Article 5 (tax exemption clauses) — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to accept Article 5 as presented.",
+    "note": "Same, 5-0-0."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 6 defer",
+    "t": 4952,
+    "ours": "Defer Article 6 recommendation — passed 4-0-1",
+    "official": "Motion by Vice-Chair Jeffreys to defer Article 6.  Seconded by Member Alonzo.  Call for the vote: Four Aye.  Member Emkey abstains.  The motion passed 4-0-1.",
+    "note": "Same tally."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 10 accept as modified",
+    "t": 8718,
+    "ours": "Accept Article 10 as modified (step four cap, strike text after medical emergencies) — passed 4 to 1",
+    "official": "Motion by Vice-Chair Jeffreys to accept Article 10 as modified (clarification that in the absence of a Personnel Committee, the Town Manager can only go to Step 4 increases, and delete section 70-21-1 after ‘medical emergency’).",
+    "note": "Same modification and 4-1 vote (Emkey no)."
+   },
+   {
+    "kind": "agree",
+    "about": "Recommend Article 10",
+    "t": 8784,
+    "ours": "Recommend approval of Article 10 — passed 3-1-1",
+    "official": "The motion passed 3-1-1.",
+    "note": "Same tally."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article 11 votes",
+    "t": 9498,
+    "ours": "Accept Article 11 as presented — passed 4 to 1; Recommend approval of Article 11 — passed 4 to 1",
+    "official": "Article 11 A (Intermittent Employee V acation & Sick Leave): Motion by Vice-Chair Jeffreys to accept and recommend approval of Article 11 as presented.  Seconded by Clerk Moore.  Call for the vote: Four Aye. One No (Member Alonzo).  The motion passed 4-1-0.",
+    "note": "Ours has two separate 4-1 votes (accept, then recommend); the official has one combined motion for 11A, plus a separate 11B accept at 5-0 that ours does not record. Check the recording for whether there were two motions and whether 11B was voted."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 12 Marshall Park debt",
+    "t": 9752,
+    "ours": "Accept Article 12 (Marshall Park debt) and defer recommendation — passed unanimously",
+    "official": "Motion by Vice Chair Jeffreys to recommend to accept Article 12 and defer recommendation to the floor of the Town Meeting.",
+    "note": "Same, 5-0-0."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 13 citizens petition defer",
+    "t": 9835,
+    "ours": "Defer Article 13 (citizens petition) — passed unanimously",
+    "official": "Motion by Member Alonzo to recommend to defer Article 13.",
+    "note": "Same, 5-0-0."
+   },
+   {
+    "kind": "agree",
+    "about": "Legacy budget amendment article (new Article 1) and defer",
+    "t": 10390,
+    "ours": "Add legacy budget amendment article as new article one and authorize manager to update dates — passed unanimously",
+    "official": "Motion by Vice-Chair Jeffreys to authorize the Town Manager to revise standard verbiage as needed for insertion as the new Article 1 in current Town Warrant",
+    "note": "Same two votes (add, then defer), both 5-0-0. The official calls it Article 14."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article 3 vote",
+    "ours": "",
+    "official": "Article 3: Motion by Vice-Chair Jeffreys to accept Article 3.  Seconded by Clerk Moore.  Call for the vote: Five Aye.  The motion passed 5-0-0.",
+    "note": "The official records a vote on Article 3 that ours does not. Check the recording around Articles 2 to 4."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Articles 7, 8 and 9 votes",
+    "ours": "",
+    "official": "Article 7 (COA revolving fund for meals program): Motion by Member Alonzo to include it.  Seconded by Vice-Chair Jeffreys.  Call for the vote: Five Aye.  The motion passed 5-0-0.",
+    "note": "The official also records votes on Article 8 (include and recommend) and Article 9 (include), all 5-0-0. Ours has no votes between Article 6 and Article 10. Check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Executive Session minutes of Oct 8, 2024",
+    "ours": "",
+    "official": "Motion by Member Alonzo to accept the minutes of the Executive Session of October 8, 2024.  Seconded by Member Emkey.  Call for the vote: 3 Aye (Chair Nuzzolo, Member Alonzo, Member Emkey), 0 No, 2 Abstain (Vice-Chair Jeffreys, Clerk Moore).  Motion passed 3-0-2.",
+    "note": "A 3-0-2 vote appears only in the official minutes. Check whether the recording has it."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Tree cutting services contract amount",
+    "t": 2654,
+    "ours": "Tree cutting services contract: 475",
+    "official": "they've agreed to accept the unit price at $47,500 not to exceed",
+    "note": "The captions dropped the digit grouping and the zeros.",
+    "official_reading": "$47,500"
+   },
+   {
+    "kind": "agree",
+    "about": "Green Communities grant request",
+    "t": 3010,
+    "ours": "Green Communities grant request: $225,000",
+    "official": "The Interim Town Manager signed a grant request from the Green communities program for $225,000.",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Lunenburg Connect fares",
+    "t": 2969,
+    "ours": "Lunenburg Connect ride fares: 3 to 4, $7",
+    "official": "A 1-10 mile ride will go from $3 to $4.  The 11-15 mile ride goes from $4 to $5, and the 16-20 mile ride will be $7.",
+    "note": "Consistent; ours is a partial rendering."
+   },
+   {
+    "kind": "agree",
+    "about": "Salary plan financial impact",
+    "t": 6166,
+    "ours": "Salary plan changes financial impact: $5,000",
+    "official": "A modest ($5,000) financial impact would be expected",
+    "note": "Same figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Article 2 school budget amendment figures",
+    "t": 4453,
+    "ours": "Article 2 FY25 school budget amendment: 31,000 $882",
+    "official": "",
+    "note": "The official gives no dollar amounts for Article 2. The captioned figure is garbled, so check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Marshall Park project figure",
+    "t": 9780,
+    "ours": "Marshall Park project citizens petition: $5.2 million",
+    "official": "",
+    "note": "The official has no $5.2 million figure; it only mentions Marshall Park funding in public comment and Article 12."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Unused levy / new growth figures",
+    "t": 10024,
+    "ours": "Unused levy / new growth: $230,000, $150,000, 115,000",
+    "official": "",
+    "note": "The official has no dollar figures here, only that the New Growth Certification is expected before the Special Town Meeting."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 10 modification decision",
+    "t": 8508,
+    "ours": "Article 10 modified to cap the manager's starting step at step four and to end the sick leave bank text at medical emergencies.",
+    "official": "The Board agreed to cap the Town Manager’s ability to go beyond Step 4.",
+    "note": "Same decision. Ours says 'starting step', which is a loose wording of the cap on increases beyond Step 4."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Staff to help call master plan steering committee meeting",
+    "t": 10930,
+    "ours": "Staff will help call a meeting of the master plan steering committee.",
+    "official": "",
+    "note": "The official only reports that the chair has stepped down and the committee needs to be re-organized, with no decision to call a meeting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-Chair name",
+    "ours": "Mr. Jaffre (member)",
+    "official": "Vice-Chair Michael-Ray Jeffreys",
+    "note": "Misheard name.",
+    "official_reading": "Michael-Ray Jeffreys"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee 'Mr. Tanzini (member)'",
+    "ours": "Mr. Tanzini (member)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Michael-Ray Jeffreys, Clerk Amanda Moore, Member Tom Alonzo, and Member Renee Emkey",
+    "note": "No member named Tanzini exists in the official roster. It is likely a mishearing of Terenzini or Nuzzolo, so check the recording. Ours also omits Clerk Amanda Moore and Member Renee Emkey, who vote throughout."
+   },
+   {
+    "kind": "agree",
+    "about": "Interim Town Manager",
+    "ours": "Carter (interim town manager)",
+    "official": "Also Present: Interim Town Manager Carter Terenzini",
+    "note": "Same person."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Julie, assistant town manager / HR",
+    "ours": "Julie (assistant town manager / HR)",
+    "official": "",
+    "note": "The official minutes do not list her as present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T02:21:07Z",
+   "cost_usd": 0.299305
+  }
  }
 }

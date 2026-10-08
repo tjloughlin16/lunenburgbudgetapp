@@ -480,5 +480,32 @@
    "at": "2026-10-07T21:28:31Z",
    "cost_usd": 0.220389
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-11-05-minutes-rr2026-09-18-draft.txt",
+   "path": "sources/meetings/select-board/2024-11-05-minutes-rr2026-09-18-draft.pdf"
+  },
+  "official_sha256": "361a0ca1e1dce2ef371f4229c592badc507db9578d2f85b8bf55d7a392e7cec2",
+  "against": "text",
+  "coverage": "full",
+  "summary": "placeholder",
+  "counts": {
+   "agree": 0,
+   "caption_error": 0,
+   "discrepancy": 0,
+   "only_in_ours": 0,
+   "only_in_official": 0
+  },
+  "findings": [],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T02:20:28Z",
+   "cost_usd": 0.291727
+  }
  }
 }
