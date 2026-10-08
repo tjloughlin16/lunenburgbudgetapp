@@ -95,12 +95,17 @@ def post(path, body):
         return json.load(r)
 
 
+TOLERANT = False
+
+
 def lookup(number):
     """The portal's record for one determination number: (doc ID, name, columns)."""
     d = post('/CustomQuery/KeywordSearch',
              {'QueryID': 104, 'Keywords': [{'ID': 135, 'Value': number}], 'QueryLimit': 0})
     heads = [c['Heading'] for c in d.get('DisplayColumns') or []]
     hits = [x for x in d.get('Data') or [] if x['Name'].startswith('DETERMINATION')]
+    if not hits and TOLERANT:
+        return None, None, None                 # --all walks numbers; a gap is not an error
     if len(hits) != 1:
         raise SystemExit('%s: the portal returned %d determinations, expected 1: %s'
                          % (number, len(hits), [x['Name'] for x in d.get('Data') or []]))
@@ -133,47 +138,90 @@ def did_of(number):
     return 'oml-det-' + re.sub(r'[^0-9]+', '-', number).strip('-')
 
 
-def fetch():
+def fetch_one(number, rows, today):
+    """Fetch, land and catalogue one determination. -> 'held' | 'ok' | 'gap' | 'failed'."""
     import ingest
+    did = did_of(number)
+    if did in rows:
+        return 'held'
+    doc_id, name, cols = lookup(number)
+    if doc_id is None:
+        return 'gap'
+    url, status, disp, blob = download(doc_id)
+    if status != 200 or not blob.startswith(b'%PDF'):
+        print('  !! %-14s HTTP %s, not a PDF' % (number, status), flush=True)
+        return 'failed'
+    pub = F.publisher_filename(url, disp, 'application/pdf')
+    key = 'state-law/%s/determinations/%s' % (today, F.archival_name(pub))
+    ok, reason = ingest.land(key, blob, url)
+    if not ok:
+        print('  !! %-14s %s' % (number, reason), flush=True)
+        return 'failed'
+    local = os.path.join(ROOT, 'sources', key)
+    txt = os.path.join(F.TEXT, did + '.txt')
+    verdict = cols.get('Violation') or 'not stated'
+    # The portal's Violation field is for the LETTER, across every allegation in it --
+    # not for any one topic. Labelled as the portal's field so it is not read as more.
+    label = ('AG determination %s, %s, %s (portal Violation field: %s)'
+             % (cols.get('Determination Number', number), cols.get('Determination Date', ''),
+                html.unescape(cols.get('Public Body Name') or '').title(), verdict))
+    rows[did] = {'id': did, 'label': label, 'publisher': AG, 'upstream': url,
+                 'publisher_filename': pub, 'local': os.path.relpath(local, ROOT),
+                 'text': os.path.relpath(txt, ROOT), 'bytes': str(len(blob)),
+                 'sha256': hashlib.sha256(blob).hexdigest(), 'retrieved': today,
+                 'fetched_via': ('plain HTTPS from the AG determination lookup (%s), '
+                                 'found by Determination Number "%s"; the document '
+                                 'ID in the URL is minted per search' % (LOOKUP, number)),
+                 'read': F.extract(local, txt, url)}
+    F.write_index(rows)
+    print('  ok %-14s %7d bytes  %s  %s' % (number, len(blob), rows[did]['sha256'][:12], pub), flush=True)
+    return 'ok'
+
+
+def fetch():
     rows = F.read_index()
     today = dt.date.today().isoformat()
-    failed = 0
-    for number, why in CHOSEN:
-        did = did_of(number)
-        if did in rows:
-            continue
-        doc_id, name, cols = lookup(number)
-        url, status, disp, blob = download(doc_id)
-        if status != 200 or not blob.startswith(b'%PDF'):
-            print('  !! %-14s HTTP %s, not a PDF' % (number, status))
-            failed += 1
-            continue
-        pub = F.publisher_filename(url, disp, 'application/pdf')
-        key = 'state-law/%s/determinations/%s' % (today, F.archival_name(pub))
-        ok, reason = ingest.land(key, blob, url)
-        if not ok:
-            print('  !! %-14s %s' % (number, reason))
-            failed += 1
-            continue
-        local = os.path.join(ROOT, 'sources', key)
-        txt = os.path.join(F.TEXT, did + '.txt')
-        verdict = cols.get('Violation') or 'not stated'
-        # The portal's Violation field is for the LETTER, across every allegation in it --
-        # not for any one topic. Labelled as the portal's field so it is not read as more.
-        label = ('AG determination %s, %s, %s (portal Violation field: %s)'
-                 % (cols.get('Determination Number', number), cols.get('Determination Date', ''),
-                    html.unescape(cols.get('Public Body Name') or '').title(), verdict))
-        rows[did] = {'id': did, 'label': label, 'publisher': AG, 'upstream': url,
-                     'publisher_filename': pub, 'local': os.path.relpath(local, ROOT),
-                     'text': os.path.relpath(txt, ROOT), 'bytes': str(len(blob)),
-                     'sha256': hashlib.sha256(blob).hexdigest(), 'retrieved': today,
-                     'fetched_via': ('plain HTTPS from the AG determination lookup (%s), '
-                                     'found by Determination Number "%s"; the document '
-                                     'ID in the URL is minted per search' % (LOOKUP, number)),
-                     'read': F.extract(local, txt, url)}
-        F.write_index(rows)
-        print('  ok %-14s %7d bytes  %s  %s' % (number, len(blob), rows[did]['sha256'][:12], pub))
+    failed = sum(fetch_one(number, rows, today) == 'failed' for number, _ in CHOSEN)
     return 1 if failed else 0
+
+
+# EVERY DETERMINATION, NOT A CHOSEN FEW. TJ, 8 October 2026: "Is it ingesting ALL
+# determinations? Beyond acronyms". The portal has no "list everything" call this client
+# could find, but it answers a lookup by DETERMINATION NUMBER, and the numbers run
+# OML <year>-1, -2, ... within each year from 2010 (when the AG took over the law). So
+# --all walks the numbers, year by year, and moves to the next year after GAP_STOP numbers
+# in a row return nothing. Resumable: anything already held is skipped. Plain downloads,
+# no model calls; polite pacing, because this is the AG's own server.
+GAP_STOP = 25
+PAUSE_S = 0.5
+
+
+def fetch_all(first_year=2010, last_year=None):
+    import time
+    global TOLERANT
+    TOLERANT = True
+    rows = F.read_index()
+    today = dt.date.today().isoformat()
+    last_year = last_year or dt.date.today().year
+    totals = {'held': 0, 'ok': 0, 'gap': 0, 'failed': 0}
+    for year in range(first_year, last_year + 1):
+        n, gaps, found = 0, 0, 0
+        while gaps < GAP_STOP:
+            n += 1
+            number = 'OML %d-%d' % (year, n)
+            try:
+                r = fetch_one(number, rows, today)
+            except Exception as e:                   # noqa: BLE001 -- one letter must not end the walk
+                print('  !! %-14s %s' % (number, str(e)[:120]), flush=True)
+                r = 'failed'
+            totals[r] += 1
+            gaps = gaps + 1 if r == 'gap' else 0
+            found += r in ('ok', 'held')
+            if r != 'held':
+                time.sleep(PAUSE_S)
+        print('%d: %d determinations held, walked to %d' % (year, found, n - GAP_STOP), flush=True)
+    print('all years: %(ok)d fetched, %(held)d already held, %(failed)d failed, %(gap)d numbers with no letter' % totals)
+    return 1 if totals['failed'] else 0
 
 
 def check():
@@ -212,9 +260,13 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--search')
+    ap.add_argument('--all', action='store_true', help='walk every determination number, 2010 to this year (resumable)')
+    ap.add_argument('--year', type=int, help='with --all: one year only')
     a = ap.parse_args()
     if a.search:
         return search(a.search)
+    if a.all:
+        return fetch_all(a.year or 2010, a.year)
     return check() if a.check else fetch()
 
 
