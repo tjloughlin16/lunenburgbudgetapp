@@ -468,6 +468,18 @@ def run_governed(plan, a, S, ceiling):
     gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs, ramp=a.ramp, caps=caps)
     G.fetch(force=True)
     say('[gov %s] %s' % (dt.datetime.now().strftime('%H:%M'), G.describe(gp, G.readings(), time.time())))
+    # THE DENOMINATOR IS THE PLAN, NOT THE BACKLOG. TJ, 8 October 2026: "when we set the
+    # session or weekly limit, i'd like a projection of how many we could get done in that
+    # time instead of the count of all. that way, i can sanity check."
+    seed = ledger_points_per_meeting()
+    if seed:
+        gp.per_meeting = seed
+    h0 = G.readings()
+    say('[gov %s] projection: ~%d meetings -- %s points of room (caps %s, now %s%%) at ~%.2f points a meeting%s'
+        % (dt.datetime.now().strftime('%H:%M'), projected_remaining(gp, h0),
+           '%.0f' % (max(0.0, gp.caps[0] - (h0[-1]['u5'] if h0 else 0)) + sum(gp.caps[1:])),
+           ','.join('%g' % c for c in gp.caps), ('%g' % h0[-1]['u5']) if h0 else '?', gp.per_meeting,
+           '' if seed else ' (a guess: too few recent meetings in the ledger)'))
     T, stop = Tally(), None
     pool = cf.ThreadPoolExecutor(max_workers=a.max_jobs)
     active = {}
@@ -560,7 +572,8 @@ def run_governed(plan, a, S, ceiling):
             if d and d['start'] and nxt < n and len(active) < d['jobs']:
                 board, date, _ = plan[nxt]
                 nxt += 1
-                fut = pool.submit(work_meeting, board, date, S, '%d/%d' % (nxt, n), a.max_jobs > 1)
+                proj = nxt - 1 + len(active) + projected_remaining(gp, G.readings())
+                fut = pool.submit(work_meeting, board, date, S, '%d/~%d' % (nxt, max(proj, nxt)), a.max_jobs > 1)
                 active[fut] = (board, date)
                 last_tick = 0 if len(active) < d['jobs'] else last_tick   # fill up promptly
                 continue
@@ -576,6 +589,33 @@ def run_governed(plan, a, S, ceiling):
             T.add(outcome, cost)
         pool.shutdown(wait=True)
     return finish(T, n, stop, S)
+
+
+DOLLARS_PER_POINT_MEASURED = 0.55   # the 7 October evening and overnight runs, haiku/sonnet batch work
+
+
+def ledger_points_per_meeting(hours=6):
+    """What one meeting has recently cost, in points of the five-hour bar: the ledger's
+    dollars per (board, date) over the last `hours`, over DOLLARS_PER_POINT_MEASURED. The
+    seed for the projection and the in-flight reserve until the run measures its own."""
+    since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=hours)).strftime('%Y-%m-%dT%H:%M:%SZ')
+    per = {}
+    for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data', 'agentic-spend.csv'), encoding='utf-8')):
+        if r.get('at', '') >= since and r.get('result') == 'ok':
+            k = (r['board'], r['date'])
+            per[k] = per.get(k, 0.0) + float(r.get('cost_usd') or 0)
+    if len(per) < 10:
+        return None
+    return sum(per.values()) / len(per) / DOLLARS_PER_POINT_MEASURED
+
+
+def projected_remaining(gp, h):
+    """Meetings the plan has room for from here: the points left under this window's cap,
+    plus every later window's cap in full, over the points one meeting costs."""
+    u5 = h[-1]['u5'] if h else 0.0
+    i = min(gp.windows_seen, len(gp.caps) - 1)
+    points = max(0.0, gp.caps[i] - u5) + sum(gp.caps[gp.windows_seen + 1:])
+    return int(points / max(gp.per_meeting, 0.05))
 
 
 def spend_since(ts):
