@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2024-01-16",
  "docid": "6333",
@@ -12,23 +12,177 @@
  },
  "votes": [
   {
-   "motion": "Approve August 2023 meeting minutes",
-   "moved_by": "Member McGrath",
+   "motion": "Approve the August 2023 meeting minutes.",
+   "moved_by": "McGrath",
    "seconded_by": "Sculimbrene",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve by member mcgrath, seconded by sculimbrene, approved by all"
+   "quote": "august 2023 - motion to approve by member mcgrath, seconded by sculimbrene, approved by all"
   },
   {
-   "motion": "Approve December 2023 meeting minutes",
-   "moved_by": "Member McGrath",
+   "motion": "Approve the December 2023 meeting minutes.",
+   "moved_by": "McGrath",
    "seconded_by": "Sculimbrene",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve by member mcgrath, seconded by sculimbrene, approved by all"
+   "quote": "december 2023 - motion to approve by member mcgrath, seconded by sculimbrene, approved by all"
   }
  ],
  "dropped_unquoted": 0,
- "note": "No other motions were voted on. The Certificate to Alter discussion (section f) states \"All members agree\" but records no formal motion or vote. No motion to adjourn is recorded despite the meeting ending.",
- "cost_usd": 0.0804913
+ "note": "Text-only minutes, not a scan; readable in full. The only recorded votes are two approvals of prior minutes, each marked 'Approved by all' with no numeric count, so outcome is recorded as 'passed'. No motion to adjourn is recorded, and the minutes print only 'Adjourned: 8:10 PM'. No dollar figures are printed; the two budget items discuss a fee waiver and a grant without amounts. Public comment reads 'None'.",
+ "cost_usd": 0.013382990000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Member Sculimbrene will review the minutes and complete the annual review.",
+   "quote": "member sculimbrene will review minutes and complete review."
+  },
+  {
+   "decision": "Member Sculimbrene will ask other committees whether any members are interested in serving as the fifth member.",
+   "quote": "member sculimbrene will ask other committees if any members are interested."
+  },
+  {
+   "decision": "50 Main Street owner to be invited to the next meeting, and other options to be offered to meet.",
+   "quote": "will invite to next meeting, and will offer other options to meet"
+  },
+  {
+   "decision": "Meetings about the Lunenburg Master Plan held in buildings affected by the plan; the Senior Center agreed upon as the location for the February 1 meeting.",
+   "quote": "discussing about having meetings in buildings that are affected by the master plan, agreed upon the senior center."
+  },
+  {
+   "decision": "All members agreed to shorten the Certificate to Alter form, speed up the process, and look into electronic means.",
+   "quote": "all members agree to shorten form, speed up process, and look into electronic means ."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Certificate to Alter (CTA) application fee",
+   "what_was_recorded": "A proposal that the application fee be waived for the new interim CTA form; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "proposed application fee to be waived, and one submittal location to drop off"
+  },
+  {
+   "topic": "Historical Commission grant for Cyrus Killorn survey",
+   "what_was_recorded": "The Historical Commission is applying for a grant to survey Cyrus Killorn historical facilities; no grant amount is printed.",
+   "figures_as_printed": [],
+   "quote": "historical commission is applying for a grant to survey cyrus killorn historical facilities"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Annual Review",
+   "resolution": "assigned to Member Sculimbrene to review minutes and complete",
+   "quote": "member sculimbrene will review minutes and complete review.",
+   "tags": [
+    "annual review"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes (August and December 2023)",
+   "resolution": "approved",
+   "quote": "august 2023 - motion to approve by member mcgrath, seconded by sculimbrene, approved by all",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Need for a fifth member",
+   "resolution": "Sculimbrene to ask other committees for interested members",
+   "quote": "member sculimbrene will ask other committees if any members are interested.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "50 Main Street",
+   "resolution": "continued; owner to be invited to next meeting",
+   "quote": "continues to disintegrate, with no action by owner",
+   "tags": [
+    "50 Main Street",
+    "demolition by neglect"
+   ]
+  },
+  {
+   "topic": "Lunenburg Master Plan",
+   "resolution": "no action; meeting set for February 1 at the Senior Center",
+   "quote": "meeting on february 1st 630-800 at lunenburg senior center.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Certificate to Alter (CTA) interim form",
+   "resolution": "members agreed to shorten the form and speed up the process; electronic review to be looked into",
+   "quote": "create an interim form; referencing bylaw 113-7 minor alteration vs major.",
+   "tags": [
+    "certificate to alter",
+    "bylaw 113-7",
+    "application fee"
+   ]
+  },
+  {
+   "topic": "Brochure to ADPC houses",
+   "resolution": "no action; examples from another town may be available",
+   "quote": "might have examples from another town.",
+   "tags": [
+    "brochure"
+   ]
+  },
+  {
+   "topic": "Historical Commission grant for Cyrus Killorn survey",
+   "resolution": "informational; no action recorded",
+   "quote": "historical commission is applying for a grant to survey cyrus killorn historical facilities",
+   "tags": [
+    "grant",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no action",
+   "quote": "other business: 1) none",
+   "tags": []
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "certificate to alter",
+  "50 Main Street",
+  "lunenburg master plan",
+  "minutes approval",
+  "membership",
+  "grant",
+  "bylaw"
+ ],
+ "dropped_unquoted_by_field": {}
 }

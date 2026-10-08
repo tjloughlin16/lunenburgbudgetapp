@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2024-01-17",
  "docid": "6351",
@@ -12,87 +12,388 @@
  },
  "votes": [
   {
-   "motion": "Continue 390 Howard Street hearing to 2/7/24 with office, chair or vice-chair reaching out to reschedule the meeting with Mr. O'Brien's agent, Matt Marro",
+   "motion": "Continue the 390 Howard Street hearing to 2/7/24, with the office, chair or vice-chair rescheduling with Mr. O’Brien’s agent, Matt Marro.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "motion: rich b., second: chris s. to continue 390 howard street hearing to 2/7/24 with office, chair or vice-chair reaching out to reschedule the meeting with mr. o'brien's agent, matt marro. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Continue 255 Sunny Hill Road hearing to 2/7/24",
-   "moved_by": "Rich B.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "motion: rich b., second: chris s. to continue 255 sunny hill road hearing to 2/7/24. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Continue 171 Arbor Street to 2/7/24",
-   "moved_by": "Rich B.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "motion: rich b., second: chris s. to continue 171 arbor street to 2/7/24. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Continue 20 Kilburn St-Lot 1 to 2/7/24",
-   "moved_by": "Rich B.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "motion: rich b., second: chris s. to continue 20 kilburn st-lot 1 to 2/7/24. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Continue 20 Kilburn St-Lot 2 to 2/7/24",
-   "moved_by": "Rich B.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "motion: rich b., second: chris s. to continue 20 kilburn st-lot 2 to 2/7/24. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Continue 20 Kilburn St-Lot 3 to 2/7/24",
-   "moved_by": "Rich B.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "motion: rich b., second: chris s. to continue 20 kilburn st-lot 3 to 2/7/24. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Extend the current application for 3 years and request a narrative on the activities for the last 3 years and what their continued plan would be for the next 3 years",
-   "moved_by": "Rich B.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "motion: rich b., second: chris s. to extend the current application for 3 years and request a narrative on the activities for the last 3 years and what their continued plan would be for the next 3 years. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Approve timber harvesting on the Rayno property and authorize the Chair or Vice-Chair to sign the contract as they see fit",
-   "moved_by": "Rich B.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "motion: rich b., second: chris s. to approve timber harvesting on the rayno property and authorize the chair or vice-chair to sign the contract as they see fit. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Direct and give permission to the Vice-Chair to discuss 390 Howard Street with Town Counsel",
-   "moved_by": "Rich B.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "motion: rich b., second: chris s. to direct and give permission to the vice-chair to discuss 390 howard street with town counsel. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Adjourn at 8:33pm",
-   "moved_by": "Rich B.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
+   "outcome": "passed (roll call, unanimous)",
    "procedural": true,
-   "quote": "motion: rich b., second: chris s. to adjourn at 8:33pm. roll call vote was unanimous to approve."
+   "quote": "to continue 390 howard street hearing to 2/7/24 with office, chair or vice-chair reaching out to reschedule the meeting with mr. o'brien's agent, matt marro."
+  },
+  {
+   "motion": "Continue the 255 Sunny Hill Road hearing to 2/7/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed (roll call, unanimous)",
+   "procedural": true,
+   "quote": "to continue 255 sunny hill road hearing to 2/7/24."
+  },
+  {
+   "motion": "Continue the 171 Arbor Street hearing to 2/7/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed (roll call, unanimous)",
+   "procedural": true,
+   "quote": "to continue 171 arbor street to 2/7/24."
+  },
+  {
+   "motion": "Continue the 20 Kilburn St-Lot 1 hearing to 2/7/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed (roll call, unanimous)",
+   "procedural": true,
+   "quote": "to continue 20 kilburn st-lot 1 to 2/7/24."
+  },
+  {
+   "motion": "Continue the 20 Kilburn St-Lot 2 hearing to 2/7/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed (roll call, unanimous)",
+   "procedural": true,
+   "quote": "to continue 20 kilburn st-lot 2 to 2/7/24."
+  },
+  {
+   "motion": "Continue the 20 Kilburn St-Lot 3 hearing to 2/7/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed (roll call, unanimous)",
+   "procedural": true,
+   "quote": "to continue 20 kilburn st-lot 3 to 2/7/24."
+  },
+  {
+   "motion": "Extend the current Brockleman Pond application for 3 years and request a narrative on the last 3 years of activities and the plan for the next 3 years.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed (roll call, unanimous)",
+   "procedural": false,
+   "quote": "to extend the current application for 3 years and request a narrative on the activities for the last 3 years"
+  },
+  {
+   "motion": "Approve timber harvesting on the Rayno property and authorize the Chair or Vice-Chair to sign the contract as they see fit.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed (roll call, unanimous)",
+   "procedural": false,
+   "quote": "to approve timber harvesting on the rayno property and authorize the chair or vice-chair to sign the contract as they see fit."
+  },
+  {
+   "motion": "Direct and give permission to the Vice-Chair to discuss 390 Howard Street with Town Counsel.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed (roll call, unanimous)",
+   "procedural": false,
+   "quote": "to direct and give permission to the vice-chair to discuss 390 howard street with town counsel."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:33pm.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed (roll call, unanimous)",
+   "procedural": true,
+   "quote": "to adjourn at 8:33pm. roll call vote was unanimous to approve."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One motion (Chris S. to grant extension for Brockleman Pond) was made but not seconded and was not voted on; it was superseded by a subsequent motion by Rich B. that was voted on.",
- "cost_usd": 0.14055649999999997
+ "note": "Clean extracted text, no scan issue. Meeting was held on ZOOM REMOTE, but the minutes do not mark individual attendees as remote. Chair Mary W. absent; Mike Larouche presided. Every recorded vote is a roll call printed as 'unanimous' with no count, so outcomes read 'passed (roll call, unanimous)'. Brockleman Pond: Chris S.'s first motion was 'not seconded' and is not recorded as a vote; the seconded motion (Rich B./Chris S.) is. No dollar figures appear in the minutes, so budget_items and transfers are empty. Matt Marro's attendance at this meeting is not stated. Timric Realty Trust and Dillis & Roy are named but no person is recorded as attending.",
+ "cost_usd": 0.0217777,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: chair, mary w."
+  },
+  {
+   "name": "Mike Larouche",
+   "role": "presided; called the meeting to order",
+   "status": "present",
+   "quote": "call to order at 7pm by mike larouche"
+  },
+  {
+   "name": "Rich B.",
+   "role": "Commissioner (Richard Bursch on letterhead)",
+   "status": "present",
+   "quote": "roll call: rich b., jeff v ., chris s., bob p., mike l., and sophie d. (administrator)"
+  },
+  {
+   "name": "Jeff V.",
+   "role": "Commissioner (Jeffrey Viviano on letterhead)",
+   "status": "present",
+   "quote": "roll call: rich b., jeff v ., chris s., bob p., mike l., and sophie d. (administrator)"
+  },
+  {
+   "name": "Chris S.",
+   "role": "Commissioner (Chris St. Germain on letterhead)",
+   "status": "present",
+   "quote": "roll call: rich b., jeff v ., chris s., bob p., mike l., and sophie d. (administrator)"
+  },
+  {
+   "name": "Bob P.",
+   "role": "Vice Chair (Bob Pease on letterhead)",
+   "status": "present",
+   "quote": "roll call: rich b., jeff v ., chris s., bob p., mike l., and sophie d. (administrator)"
+  },
+  {
+   "name": "Sophie D.",
+   "role": "Administrator",
+   "status": "present",
+   "quote": "roll call: rich b., jeff v ., chris s., bob p., mike l., and sophie d. (administrator)"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "applicant, 390 Howard Street",
+   "status": "present",
+   "quote": "kevin o'brien stated that at the last meeting on 12/20 they talked about having a site walk"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "agent of Kevin O’Brien",
+   "status": "not stated",
+   "quote": "reschedule the meeting with mr. o'brien's agent, matt marro."
+  },
+  {
+   "name": "Jim Lattanzi",
+   "role": "owner, 780 Northfield Road (enforcement)",
+   "status": "present",
+   "quote": "jim lattanzi stated he did a site walk with dep in late summer/early fall"
+  },
+  {
+   "name": "Stefan McSweeny",
+   "role": "applicant, 255 Sunny Hill Road",
+   "status": "absent",
+   "quote": "(continued from 1/3/24 to 1/17/24) - no representative was present and mike asked for a vote to continue to 2/7/24."
+  },
+  {
+   "name": "Steve Powell",
+   "role": "applicant, 171 Arbor Street",
+   "status": "absent",
+   "quote": "(dep 208-1308) (continued from 12/20/23 to 1/17/24). - no representative was present"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sophie will schedule and attend a site walk at 390 Howard Street with Bob or Mary, after Mike asked her to contact Bob.",
+   "quote": "sophie agreed to schedule and attend a site walk with bob or mary."
+  },
+  {
+   "decision": "The 780 Northfield Road enforcement hearing is moved to the next agenda so the full Commission can hear it.",
+   "quote": "jim said he can wait until the full commission is present and rich b. suggested moving it to the next agenda."
+  },
+  {
+   "decision": "Sophie will call the 10 Mass Ave property directly to obtain contact information.",
+   "quote": "sophie will call the property directly to obtain contact information."
+  },
+  {
+   "decision": "The 32 Cortland Circle discussion is moved to another meeting; no hearing is opened because the item was not properly on the agenda.",
+   "quote": "chris stated that it is in reference to water issues on flat hill and the discussion will need to move to another meeting."
+  },
+  {
+   "decision": "The 37 Pearl St. Notice of Intent cannot be addressed at this meeting because it was not on the agenda and not properly noticed.",
+   "quote": "rich b. pointed out they cannot address it due to not being on the agenda and not properly notified."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sophie D.",
+   "stated_role": "Administrator",
+   "topic": "Google Drive to SharePoint file transfer update",
+   "quote": "public comment: sophie asked to give some information on the transfer from the google drive to sharepoint."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements & Public Comment",
+   "resolution": "no items",
+   "quote": "announcements & public comment- none",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "no action; none ready to vote on",
+   "quote": "minutes of previous meetings - none are ready to vote on.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New public hearings",
+   "resolution": "no action; none listed",
+   "quote": "new public hearings - none",
+   "tags": [
+    "public hearings"
+   ]
+  },
+  {
+   "topic": "Continued public hearing: 390 Howard Street (ANRAD, Kevin O’Brien)",
+   "resolution": "continued to 2/7/24",
+   "quote": "a public hearing on an abbreviated notice of resource area delineation by kevin o'brien at 390 howard street.",
+   "tags": [
+    "wetlands",
+    "ANRAD",
+    "continuance",
+    "site walk"
+   ]
+  },
+  {
+   "topic": "Continued public hearing: 255 Sunny Hill Road (NOI, Stefan McSweeny)",
+   "resolution": "continued to 2/7/24",
+   "quote": "to continue 255 sunny hill road hearing to 2/7/24.",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Continued public hearing: 171 Arbor Street (NOI, Steve Powell)",
+   "resolution": "continued to 2/7/24",
+   "quote": "to continue 171 arbor street to 2/7/24.",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Continued public hearings: 20 Kilburn St Lots 1-3 (Timric Realty Trust)",
+   "resolution": "all three continued to 2/7/24",
+   "quote": "to continue 20 kilburn st-lot 3 to 2/7/24.",
+   "tags": [
+    "wetlands",
+    "RFD",
+    "NOI",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "New business: 37 Pearl St. Notice of Intent",
+   "resolution": "not addressed; not on agenda",
+   "quote": "rich b. pointed out they cannot address it due to not being on the agenda and not properly notified.",
+   "tags": [
+    "agenda notice",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "New business: 32 Cortland Circle",
+   "resolution": "moved to another meeting",
+   "quote": "chris stated that it is in reference to water issues on flat hill and the discussion will need to move to another meeting.",
+   "tags": [
+    "water issues",
+    "agenda notice"
+   ]
+  },
+  {
+   "topic": "Old business: title searches, MACC classes, encroachment issues",
+   "resolution": "no action; no updates on encroachments",
+   "quote": "update if any on encroachment issues at:",
+   "tags": [
+    "encroachment",
+    "training"
+   ]
+  },
+  {
+   "topic": "Administrative determination: Brockleman Pond extension request (DEP 208-0936)",
+   "resolution": "extension granted 3 years with narrative requested",
+   "quote": "to extend the current application for 3 years and request a narrative on the activities for the last 3 years",
+   "tags": [
+    "extension",
+    "aquatic vegetation",
+    "Brockleman Pond"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance: 120 West St, 176 Elmwood Rd, 81 Maple Pkway",
+   "resolution": "no action; site walk updates",
+   "quote": "--120 west street -site walk - sophie reported that the site walk has been completed",
+   "tags": [
+    "certificate of compliance",
+    "site walk"
+   ]
+  },
+  {
+   "topic": "Enforcement: 780 Northfield Road, 205 Sunset, 10 Mass Ave, 1168 Mass Ave Rear",
+   "resolution": "780 Northfield moved to next agenda; others updates only",
+   "quote": "780 northfield road - jim lattanzi stated he did a site walk with dep",
+   "tags": [
+    "enforcement",
+    "erosion controls",
+    "pipe upsizing"
+   ]
+  },
+  {
+   "topic": "Timber harvest: Rayno contract renewal",
+   "resolution": "approved",
+   "quote": "to approve timber harvesting on the rayno property and authorize the chair or vice-chair to sign the contract as they see fit.",
+   "tags": [
+    "timber harvest",
+    "conservation land"
+   ]
+  },
+  {
+   "topic": "Conservation land improvement; 123 Hollis Road property maintenance",
+   "resolution": "no action; no update",
+   "quote": "123 hollis road residence-property maintenance work - mike reported that chris ruth (facilities)",
+   "tags": [
+    "property maintenance",
+    "roof"
+   ]
+  },
+  {
+   "topic": "Committee reports: Master Plan Committee",
+   "resolution": "no action; reported",
+   "quote": "rich b. reported that he attended the last master plan committee meeting",
+   "tags": [
+    "master plan",
+    "surveys"
+   ]
+  },
+  {
+   "topic": "Communications: consult Town Counsel on 390 Howard Street",
+   "resolution": "permission given to Vice-Chair",
+   "quote": "to direct and give permission to the vice-chair to discuss 390 howard street with town counsel.",
+   "tags": [
+    "town counsel",
+    "violation"
+   ]
+  },
+  {
+   "topic": "Public comment: SharePoint file transfer",
+   "resolution": "informational; no action",
+   "quote": "sophie asked to give some information on the transfer from the google drive to sharepoint.",
+   "tags": [
+    "records",
+    "SharePoint",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:33pm",
+   "quote": "to adjourn at 8:33pm. roll call vote was unanimous to approve.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "public hearings",
+  "continuances",
+  "extension request",
+  "enforcement",
+  "certificates of compliance",
+  "timber harvest",
+  "Brockleman Pond",
+  "town counsel",
+  "SharePoint transition",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

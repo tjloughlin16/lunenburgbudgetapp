@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-01-11",
  "docid": "6325",
@@ -12,23 +12,294 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from November 30, 2023, and December 7, 2023",
+   "motion": "Approve the minutes of November 30, 2023 and December 7, 2023.",
    "moved_by": "Tiffaney Tavares",
    "seconded_by": "Jay Simeone",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimous (roll call)",
    "procedural": true,
    "quote": "there was a motion to approve minutes from november 30, 2023, and december 7, 2023 by tiffaney tavares, seconded by jay simeone. roll call vote. unanimous."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "Jay Simeone",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimous (roll call)",
    "procedural": true,
    "quote": "motion to adjourn by dave passios, seconded by jay simeone. roll call vote. unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0776311
+ "note": "Clean digital text, not a scan. Votes were roll call recorded only as 'Unanimous', with no per-member tally, so outcomes are given as unanimous rather than a count. The minutes print no dollar figures at all, so budget items record money discussed without amounts. The Governor's email is quoted second-hand and was not received by the committee directly. Heather Lemieux is mentioned only as someone the chair spoke to outside the meeting, so she is not listed as an attendee.",
+ "cost_usd": 0.01638125,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair evan watters, tom gray, dave passios, jean russell, jay simeone, tiffaney tavares."
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, tom gray, dave passios, jean russell, jay simeone, tiffaney tavares."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, tom gray, dave passios, jean russell, jay simeone, tiffaney tavares."
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, tom gray, dave passios, jean russell, jay simeone, tiffaney tavares."
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, tom gray, dave passios, jean russell, jay simeone, tiffaney tavares."
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Member",
+   "status": "present",
+   "quote": "tiffaney tavares has joined the board as the 7th member."
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "absent: vice-chair chris menard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee reorganization and committee liaisons were tabled to the next meeting so the full 7-member committee could be present.",
+   "quote": "the committee reorganization and committee liaisons were tabled to the next meeting in order to have the full 7-member committee present."
+  },
+  {
+   "decision": "The committee agreed to request budgetary lists one week prior to the meeting and to have presentations provided 72 hours prior to the scheduled presentation.",
+   "quote": "the committee agrees to request budgetary lists a week prior to the meeting and presentations be provided 72 hours prior to the scheduled presentation."
+  },
+  {
+   "decision": "Chair Evan Watters will ask the Town Manager whether department heads can attend the next meeting to answer committee questions.",
+   "quote": "evan watters will ask the town manger if the departments heads can attend the next meeting to answer questions from the committee."
+  },
+  {
+   "decision": "Chair Evan Watters will reach out to the school department and the Town Manager to ask for current healthcare costs.",
+   "quote": "evan watters will reach out to the school department and the town manager to ask what the current healthcare costs are"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CPC capital project cost estimates",
+   "what_was_recorded": "Dave Passios said estimates for many items were collected during pandemic-era cost escalations and believes they should be requested again because costs are likely lower.",
+   "figures_as_printed": [],
+   "quote": "dave passios shares that the estimates for many items were collected during the cost escalations during the pandemic."
+  },
+  {
+   "topic": "Capital projects and free cash",
+   "what_was_recorded": "Chair questioned whether all of the top 13 CPC-ranked projects can be completed given the current free cash situation. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "evan watters questions about whether or not all of the top 13 projects will be able to get completed based on the current free cash situation."
+  },
+  {
+   "topic": "Loss of grant funding and state aid",
+   "what_was_recorded": "Dave Passios said budget season faces a challenge from known and unknown losses of grant funding and possibly state aid. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "this will be a challenge again this year with the knowns and unknowns in loss of grant funding and possibly state aid."
+  },
+  {
+   "topic": "Healthcare cost inflation",
+   "what_was_recorded": "Chair will ask for current healthcare costs because of suggestions of inflation in healthcare costs. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "evan watters will reach out to the school department and the town manager to ask what the current healthcare costs are"
+  },
+  {
+   "topic": "State budget cuts",
+   "what_was_recorded": "Chair read a Governor's office email to the Town Manager saying there would be no impact to Lunenburg from state budget cuts and that no earmarks were received this fiscal year. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "it appears that there will be no impact to lunenburg at this time. we did not receive any ear marks through the state this fiscal year."
+  },
+  {
+   "topic": "Green Community funding",
+   "what_was_recorded": "Department heads have raised upcoming projects and the potential for Green Community funding. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "several department heads have reached out regarding upcoming projects and the potential for green community funding."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "topic": "inaccurate information at a recent meeting",
+   "quote": "dave passios states that he witnessed inaccurate information at a recent meeting from a person of influence during a committee deliberation."
+  },
+  {
+   "speaker": "Dave Passios",
+   "topic": "statement on upcoming budget season",
+   "quote": "dave passios shares a semi-prepared statement about the upcoming budget season."
+  },
+  {
+   "speaker": "Dave Passios",
+   "topic": "historical documents found in the vault",
+   "quote": "dave passios shares that historical documents and materials were found in the vault in tc passios."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "meeting opened 7:01 PM",
+   "quote": "the meeting opened at 7:01 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements (Plan Lunenburg survey; new member)",
+   "resolution": "noted; Tiffaney Tavares joined as 7th member",
+   "quote": "tiffaney tavares has joined the board as the 7th member.",
+   "tags": [
+    "membership",
+    "Plan Lunenburg"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "statements heard; no action",
+   "quote": "dave passios shares a semi-prepared statement about the upcoming budget season.",
+   "tags": [
+    "public comment",
+    "budget season"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "reported; Select Board to interview Finance Director candidate",
+   "quote": "the board will be interviewing a potential candidate for the finance director position.",
+   "tags": [
+    "hiring",
+    "Finance Director"
+   ]
+  },
+  {
+   "topic": "Old Business: CPC Final Recommendations",
+   "resolution": "discussed; chair to ask whether department heads can attend next meeting",
+   "quote": "evan watters provided a document with the capital planning committee ranking priority for the committee to review.",
+   "tags": [
+    "capital planning",
+    "CPC",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "New Business: Committee Reorganization & Liaisons",
+   "resolution": "tabled to next meeting",
+   "quote": "the committee reorganization and committee liaisons were tabled to the next meeting",
+   "tags": [
+    "reorganization",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "New Business: FinCom Budget Review Discussion",
+   "resolution": "agreed document submission timing",
+   "quote": "the committee agrees to request budgetary lists a week prior to the meeting",
+   "tags": [
+    "budget season",
+    "document deadlines"
+   ]
+  },
+  {
+   "topic": "Email from Governor on budget cuts (unnumbered, after New Business)",
+   "resolution": "read into record; no impact to Lunenburg stated",
+   "quote": "it appears that there will be no impact to lunenburg at this time.",
+   "tags": [
+    "state aid",
+    "budget cuts"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved unanimously",
+   "quote": "there was a motion to approve minutes from november 30, 2023, and december 7, 2023",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports (School Committee scheduling, healthcare, Green Communities)",
+   "resolution": "noted; school presentation date may change",
+   "quote": "evan watters states there is an issue with the scheduling of the school committee presentation.",
+   "tags": [
+    "school committee",
+    "healthcare",
+    "Green Communities"
+   ]
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "listed; no action",
+   "quote": "there are 2 more regular meetings before budget season starts and some topics are as follows:",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "listed; no action",
+   "quote": "january 18th - 5 year financial forecast & capital plan recommendations",
+   "tags": [
+    "calendar",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Important Dates",
+   "resolution": "listed; members registered for MMA meeting",
+   "quote": "evan watters and dave passios are registered to attend.",
+   "tags": [
+    "calendar",
+    "MMA",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Comments (public and committee)",
+   "resolution": "noted; no committee comments",
+   "quote": "dave passios shares that historical documents and materials were found in the vault in tc passios.",
+   "tags": [
+    "historical documents"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 8:14 PM, unanimous",
+   "quote": "the meeting closed at 8:14 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "budget season",
+  "capital planning",
+  "CPC",
+  "free cash",
+  "state aid",
+  "grant funding",
+  "healthcare costs",
+  "public comment",
+  "minutes",
+  "Town Meeting",
+  "Plan Lunenburg",
+  "Finance Director hiring"
+ ],
+ "dropped_unquoted_by_field": {}
 }

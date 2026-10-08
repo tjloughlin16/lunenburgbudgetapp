@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-01-09",
  "docid": "6329",
@@ -12,40 +12,336 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 12/12/23",
+   "motion": "Approve the minutes of 12/12/23.",
    "moved_by": "Mike M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "to approve the minutes of 12/12/23. roll call vote: mike n.-aye, dave-aye, brett-aye, mike m.-aye, and john-aye."
+   "quote": "to approve the minutes of 12/12/23."
   },
   {
-   "motion": "Accept the proposal and extend Bad Larry's deadline to 1/29",
+   "motion": "Accept the proposal and extend the landlord for Bad Larry’s (1 Main St.) to 1/29.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike M.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "to accept the proposal and extend the landlord for bad larry's to 1/29. roll call vote: mike n.-aye, dave-aye, mike m.-aye, brett-aye, and john-aye."
+   "quote": "to accept the proposal and extend the landlord for bad larry's to 1/29."
   },
   {
-   "motion": "Authorize the Negotiating Committee to proceed with the next step in Leominster intermunicipal agreement negotiations",
+   "motion": "Authorize the Negotiating Committee to go to the next step with the town of Leominster and the IMA.",
    "moved_by": "Mike M.",
    "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "that the commission authorize the negotiating committee to go to the next step with the town of leominster and the ima. discussion: paula suggested in the discussions with leominster they make sur",
-   "quote_taken_from_text": true
+   "quote": "that the commission authorize the negotiating committee to go to the next step with the town of leominster and the ima."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn at 7:35pm.",
    "moved_by": "Mike M.",
    "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "to adjourn at 7:35pm roll call vote: mike n.-aye, dave-aye, mike m.-aye, brett-aye, and john-aye."
+   "quote": "to adjourn at 7:35pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09205550000000001
+ "note": "Text extraction of a Zoom meeting's minutes; the meeting was held via Zoom but per-person attendance mode is not stated, so attendees are marked present. Attendance is taken from the header roll. Vote outcomes are recorded from the printed roll calls, each listing five ayes. Two 'Motion' lines (Bad Larry's extension and IMA authorization) were moved as printed; the minutes print no separate vote-count line beyond the roll call. Quotes have whitespace collapsed and are checked against the extracted text. No dollar transfers recorded. Dollar figures are as printed; no totals were computed.",
+ "cost_usd": 0.0233125,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, members: dave macdonald and"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, members: dave macdonald and"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, members: dave macdonald and"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, members: dave macdonald and"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Kevin Olson",
+   "role": "consultant (Wright Pierce)",
+   "status": "present",
+   "quote": "kevin olson & matt corbin (wright pierce), robert lilley (cte)"
+  },
+  {
+   "name": "Matt Corbin",
+   "role": "consultant (Wright Pierce)",
+   "status": "present",
+   "quote": "kevin olson & matt corbin (wright pierce), robert lilley (cte)"
+  },
+  {
+   "name": "Robert Lilley",
+   "role": "CTE",
+   "status": "present",
+   "quote": "kevin olson & matt corbin (wright pierce), robert lilley (cte)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to hold off looking at the Fitchburg rerouting numbers until it meets with Leominster.",
+   "quote": "the commission agreed to hold off looking at the numbers until they meet with leominster."
+  },
+  {
+   "decision": "John asked Wright Pierce (Matt and Kevin) to look at the additional 7% per year in Fitchburg rates in the rerouting analysis.",
+   "quote": "john asked matt and kevin to look at the additional 7% per year."
+  },
+  {
+   "decision": "Paula will correct the redlined 70% factor in Section 18-1 (connection charge) of the Leominster IMA.",
+   "quote": "john asked to make a correction to section 18-1 (connection charge), where they redlined a factor of 70% and paula will correct that."
+  },
+  {
+   "decision": "The Commissioners agreed a bill should be sent to Heather for reimbursement over the billing software problems.",
+   "quote": "the commissioners agreed they are upset that it is still not fixed and a bill should be sent to heather for reimbursement."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fitchburg rerouting: 20-year savings vs construction cost",
+   "what_was_recorded": "Wright Pierce estimated 20-year savings from redirecting flow to Leominster at $2 Million against a $6 Million construction cost, and judged it not cost effective.",
+   "figures_as_printed": [
+    "$2 Million",
+    "$6 Million"
+   ],
+   "quote": "they estimated the 20 year savings of redirecting the flow would be $2 million vs the construction cost of $6 million, so"
+  },
+  {
+   "topic": "Fitchburg sewer rate increases",
+   "what_was_recorded": "Fitchburg will increase rates 7% each year for the next five years, which the Commission had not yet built into the rerouting costs.",
+   "figures_as_printed": [
+    "7%"
+   ],
+   "quote": "dave noted fitchburg will be increasing rates for the next 5 years and paula confirmed they will increase 7% each year."
+  },
+  {
+   "topic": "Leominster rate increase at IMA start",
+   "what_was_recorded": "Paula said the initial increase under the Leominster arrangement would be substantial, more than 10% to start.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "paula stated there will be a substantial increase initially -more than 10% to start."
+  },
+  {
+   "topic": "Billing software: lost late-fee revenue",
+   "what_was_recorded": "Outstanding bills are losing late fees; 238 bills outstanding were reported as losing $2,300, with a $10 late fee.",
+   "figures_as_printed": [
+    "$10",
+    "238",
+    "$2,300"
+   ],
+   "quote": "there are currently 238 bills still outstanding, which is $2,300 they are losing."
+  },
+  {
+   "topic": "Pump station cleaning quote",
+   "what_was_recorded": "A quote from Hall pump for pump-outs at all stations except Meadowwoods came to $7,500 plus disposal.",
+   "figures_as_printed": [
+    "$7,500"
+   ],
+   "quote": "paula finally got a quote from hall pump for $7,500 plus disposal for all but meadowwoods."
+  },
+  {
+   "topic": "Capital spending to date vs budget",
+   "what_was_recorded": "Capital spending this year was $52,559 against a budget of $95,408.",
+   "figures_as_printed": [
+    "$52,559",
+    "$95,408"
+   ],
+   "quote": "paula reported they have spent $52,559 on capital this year and they budgeted $95,408."
+  },
+  {
+   "topic": "Capital spending history and FY24 plan",
+   "what_was_recorded": "Capital spending in past years did not exceed $25K; the $95K budgeted for FY24 will be spent.",
+   "figures_as_printed": [
+    "$25K",
+    "$95K"
+   ],
+   "quote": "paula noted that in the past years they have not spent more than $25k on capital and they will spend the $95k budgeted for fy24."
+  },
+  {
+   "topic": "Projected Capital expenditure through FY32",
+   "what_was_recorded": "Paula is looking at spending up to $120K per year on Capital Expenditures through FY32.",
+   "figures_as_printed": [
+    "$120K"
+   ],
+   "quote": "however looking forward through fy32, she is looking at spending up to $120k per year on capital expenditures."
+  },
+  {
+   "topic": "Maintenance program funding",
+   "what_was_recorded": "The Maintenance program was funded at $100K per year but was not all spent; unspent money went into retained earnings.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "dave pointed out they funded the maintenance program with $100k per year but it was not all spent."
+  },
+  {
+   "topic": "Leominster IMA: free maintenance services",
+   "what_was_recorded": "The Commission is asking Leominster for 100 hours of maintenance services each fiscal year free of charge.",
+   "figures_as_printed": [],
+   "quote": "paula noted they are asking leominster for 100 hours of maintenance services each fiscal year, free of charge, with 30 day advanced notice."
+  },
+  {
+   "topic": "Leominster IMA: rate parity with Leominster residents",
+   "what_was_recorded": "Dave said that if Lunenburg is charged a rate similar to Leominster residents, services should be provided too or a reduced rate given.",
+   "figures_as_printed": [],
+   "quote": "dave's thought was if lunenburg is going to be charged a rate similar to leominster residents, then services should be provided too or give us a reduced rate."
+  },
+  {
+   "topic": "Leominster IMA: phasing fee increases",
+   "what_was_recorded": "Dave said he wished the fee increases could be broken up over two or three years.",
+   "figures_as_printed": [],
+   "quote": "dave said he wished they could break up the fee increases over 2 or 3 years."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "topic": "thanks to DPW staff for storm response",
+   "quote": "he added in regard to the recent storms, he was very, very impressed with bill and his dpw staff. it was an"
+  },
+  {
+   "speaker": "Dave",
+   "topic": "Water District meeting on articles",
+   "quote": "dave urged people in the water district to attend the water district meeting on 1/10 to vote on articles."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointments: Wright Pierce, rerouting wastewater from Fitchburg to Leominster",
+   "resolution": "discussed; numbers held until meeting with Leominster",
+   "quote": "recently, the commission asked wright pierce to again look at updated costs in two areas.",
+   "tags": [
+    "Fitchburg",
+    "Leominster",
+    "Wright Pierce",
+    "rerouting",
+    "rates"
+   ]
+  },
+  {
+   "topic": "Minutes of 12/12/23",
+   "resolution": "approved 5-0",
+   "quote": "to approve the minutes of 12/12/23.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Request for extension, 1 Main St. (grease trap)",
+   "resolution": "approved 5-0, extension to 1/29",
+   "quote": "to accept the proposal and extend the landlord for bad larry's to 1/29.",
+   "tags": [
+    "grease trap",
+    "extension"
+   ]
+  },
+  {
+   "topic": "Business Manager report: billing and software issues",
+   "resolution": "discussed; Commission asked for reimbursement bill to Heather",
+   "quote": "paula reported the billing/software issues still continue and munis has several problems.",
+   "tags": [
+    "billing",
+    "Munis",
+    "Tyler",
+    "software"
+   ]
+  },
+  {
+   "topic": "CTE system maintenance and upgrades",
+   "resolution": "no action; report received",
+   "quote": "since december, he reported there have quite a few pump clogs at a variety of stations.",
+   "tags": [
+    "pump stations",
+    "wet wells",
+    "CTE",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Capital planning",
+   "resolution": "discussed; no action",
+   "quote": "paula reported they have spent $52,559 on capital this year and they budgeted $95,408.",
+   "tags": [
+    "capital",
+    "pump stations",
+    "generators",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Leominster intermunicipal agreement (IMA) negotiations",
+   "resolution": "approved 5-0, authorized next step",
+   "quote": "paula stated what the major changes are to the ima and",
+   "tags": [
+    "Leominster",
+    "IMA",
+    "negotiations"
+   ]
+  },
+  {
+   "topic": "Sewer Business Manager job description",
+   "resolution": "discussed; Personnel Committee to review 1/17; no vote",
+   "quote": "paula said bill talked to julie and she said the personnel committee will be reviewing the revised job description at the 1/17 meeting.",
+   "tags": [
+    "personnel",
+    "job description"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "wastewater",
+  "Fitchburg",
+  "Leominster",
+  "intermunicipal agreement",
+  "Wright Pierce",
+  "billing software",
+  "Munis",
+  "capital planning",
+  "pump stations",
+  "CTE",
+  "grease trap",
+  "Water District"
+ ],
+ "dropped_unquoted_by_field": {}
 }

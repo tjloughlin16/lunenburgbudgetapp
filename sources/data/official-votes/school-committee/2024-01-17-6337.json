@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-01-17",
  "docid": "6337",
@@ -12,29 +12,248 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from regular session on 11/15/23",
+   "motion": "Approve the minutes of the Regular Session of 11/15/23.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "mr. sculimbrene makes a motion to approve minutes, ms. brzozoski seconded the motion, roll call, ms. archambault - yes, mr. lehtinen - yes, mr. sculimbrene - yes, mr. beardmore - abstain, ms. brzozoski - yes"
+   "quote": "mr. sculimbrene makes a motion to approve minutes, ms. brzozoski seconded the motion"
   },
   {
-   "motion": "Approve line item transfer of $14,840 from Capital Improvements to Maintenance of Building Contract Service for the High School elevator repair",
+   "motion": "Approve a $14,840 line item transfer from Capital Improvements to Maintenance of Building Contract Service for the High School elevator repair.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. beardmore makes a motion to approve the line item transfer, mr. sculimbrene seconds the motion, roll call, ms. archambault - yes, mr. lehtinen - yes, mr. sculimbrene - yes, mr. beardmore - yes, ms. brzozoski -yes"
+   "procedural": false,
+   "quote": "mr. beardmore makes a motion to approve the line item transfer, mr. sculimbrene seconds the motion, roll call, ms. archambault - yes"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:35.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "makes a motion to adjourn at 9:35 seconds the motion, roll call, ms. archambault - yes, mr. lehtinen - yes, mr. sculimbrene - yes, mr. beardmore - yes, ms. brzozoski - yes"
+   "quote": "adjournment makes a motion to adjourn at 9:35 seconds the motion, roll call, ms. archambault - yes"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Adjournment vote lacks mover and seconder names in the transcribed text; appears to be a transcription gap.",
- "cost_usd": 0.09679009999999999
+ "note": "Text extraction, not a scan; all votes are readable. The minutes do not print a tally for the minutes approval; 4-0-1 is counted from the roll call (Mr. Beardmore abstained). The adjournment motion and second are not attributed to a named member. The minutes say 'Hybrid' but do not record remote participation by any member. Courtney Fuller is named as Recording Secretary with no attendance status. The warrant total's dollar amount is blank in the text. Public comment was 'None' at both points.",
+ "cost_usd": 0.018700900000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services",
+   "status": "present",
+   "quote": "julianna hanscom - director of special services"
+  },
+  {
+   "name": "Annica Scott",
+   "role": "Director of Teaching and Learning",
+   "status": "present",
+   "quote": "annica scott-director of teaching and learning"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "It was determined that an additional School Committee meeting on the budget will be held on January 24, 2024.",
+   "quote": "it is determined an additional meeting will happen on january 24, 2024"
+  },
+  {
+   "decision": "The Chair will speak with the town manager and the finance committee about keeping the public hearing date of March 20.",
+   "quote": "ms. archambault will speak with town manager and fincom to discuss the need for the date of the 20th"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Line item transfer for High School elevator repair",
+   "what_was_recorded": "A $14,840 line item transfer from Capital Improvements to Maintenance of Building Contract Service was approved for the High School elevator repair.",
+   "figures_as_printed": [
+    "$14,840"
+   ],
+   "quote": "line item transfer $14,840 to transfer money from capital improvements to maintenance of building contract service for the high school elevator repair"
+  },
+  {
+   "topic": "Warrant total",
+   "what_was_recorded": "A warrant total for 1/3/24-1/9/24 was listed with the dollar amount left blank in the minutes; a member asked for warrant information earlier, and the Chair had signed off on the warrant.",
+   "figures_as_printed": [],
+   "quote": "warrant total 1/3/24-1/9/24 $ mr. beardmore requests the warrant information get into the folder with more time"
+  },
+  {
+   "topic": "Proposed FY25 budget cost pressures",
+   "what_was_recorded": "The administration anticipated a 10% increase in health insurance, contractual increases and the loss of ESSER funds, each with a dollar figure.",
+   "figures_as_printed": [
+    "$500,000",
+    "$400,000",
+    "$600,000"
+   ],
+   "quote": "we are anticipating a 10% increase in health insurance to be $500,000, contractual increases of $400,000 and the loss of esser funds of $600,000"
+  },
+  {
+   "topic": "Dollar values for potential position cuts",
+   "what_was_recorded": "A member suggested a dollar value be attached to each position up for potential cuts; no dollar figure was printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "mr. sculimbrene suggests a dollar value be"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfer from Capital Improvements to Maintenance of Building Contract Service for the High School elevator repair",
+   "amount_as_printed": "$14,840",
+   "outcome": "approved 5-0",
+   "quote": "line item transfer $14,840 to transfer money from capital improvements to maintenance of building contract service for the high school elevator repair"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "called to order at 6:30 p.m.",
+   "quote": "call to order by carol archambault at 6:30 p.m.",
+   "tags": [
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no speakers",
+   "quote": "3. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action; budget meeting and public hearing dates discussed",
+   "quote": "i am working with the finance committee to schedule our budget meeting, they have us scheduled with them",
+   "tags": [
+    "budget",
+    "public hearing",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved 4-0-1",
+   "quote": "mr. sculimbrene makes a motion to approve minutes, ms. brzozoski seconded the motion",
+   "tags": [
+    "minutes",
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Warrants and line item transfers",
+   "resolution": "transfer approved 5-0; warrant reviewed",
+   "quote": "to transfer money from capital improvements to maintenance of building contract",
+   "tags": [
+    "warrants",
+    "line item transfer",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "received; no action",
+   "quote": "dr. burnham reports kindergarten registration is open, pre-k registration will open march 1.",
+   "tags": [
+    "superintendent",
+    "registration",
+    "inclement weather"
+   ]
+  },
+  {
+   "topic": "Student representative report",
+   "resolution": "none",
+   "quote": "student representative report - none",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Proposed FY25 budget",
+   "resolution": "discussed; additional budget meeting set for January 24, 2024",
+   "quote": "we are anticipating a 10% increase in health insurance to be $500,000, contractual increases of $400,000 and the loss of esser funds of $600,000",
+   "tags": [
+    "FY25 budget",
+    "health insurance",
+    "ESSER",
+    "position cuts",
+    "staffing",
+    "athletics",
+    "paraprofessionals"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no speakers",
+   "quote": "10. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:35, passed 5-0",
+   "quote": "adjournment makes a motion to adjourn at 9:35",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "FY25 budget",
+  "health insurance",
+  "ESSER funds",
+  "line item transfer",
+  "warrants",
+  "public hearing scheduling",
+  "position cuts",
+  "minutes approval",
+  "hybrid meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

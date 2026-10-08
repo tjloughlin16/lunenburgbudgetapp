@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2024-01-10",
  "docid": "6334",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from October 25, 2023 for distribution",
+   "motion": "Approve the minutes of 10/25/23 for distribution.",
    "moved_by": "M. Wilson",
    "seconded_by": "E. Hinds",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "m. wilson motion: approved for distribution. e. hinds seconded. unanimously voted."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Lockwood",
    "seconded_by": "M. Wilson",
    "outcome": "passed unanimously",
@@ -29,6 +29,206 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0886903
+ "note": "Text is clean and complete from call to order to adjournment. No dollar figures appear; the budget_items are grant and tax-burden mentions with no amounts. Public comment from Steven Batone is recorded only as '??', so his position cannot be read. Debra Yauer's name is marked '(sp?)' in the minutes. The footer says the minutes were approved at the 2/28/24 meeting; the vote record here is the one printed in these minutes. Two votes are recorded, both procedural; no substantive motion was voted on.",
+ "cost_usd": 0.01416005,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Toohill",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood (vice chair, joined at 7:53), mary wilson, matthew allison, eric hinds."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Vice Chair (joined at 7:53)",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood (vice chair, joined at 7:53), mary wilson, matthew allison, eric hinds."
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood (vice chair, joined at 7:53), mary wilson, matthew allison, eric hinds."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: mike toohill (chair), ana lockwood (vice chair, joined at 7:53), mary wilson, matthew allison, eric hinds."
+  },
+  {
+   "name": "Eric Hinds",
+   "role": "member; submitted the minutes",
+   "status": "present",
+   "quote": "respectfully submitted, eric hinds"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "resident, 362 Sunset Lane (public comment)",
+   "status": "present",
+   "quote": "jay simeone of 362 sunset lane is opposed to parks taking over land on lake shirley."
+  },
+  {
+   "name": "Debra Yauer",
+   "role": "resident, 226 Sunset Lane (public comment; name marked (sp?) in minutes)",
+   "status": "present",
+   "quote": "debra yauer(sp?) 226 sunset lane also speaks against park commission taking care and control of lake-adjacent parcels."
+  },
+  {
+   "name": "Steven Batone",
+   "role": "resident, 18 Oak Ridge Road (public comment)",
+   "status": "present",
+   "quote": "steven batone of 18 oak ridge road says ??"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Because at least 3 OSC members plan to attend the 1/16/24 Board of Selectmen meeting, the chair will post that meeting as an OSC meeting rather than a joint OSC/BOS meeting.",
+   "quote": "given that at least 3 osc members plan to attend, m. toohill plans to post it as an osc meeting."
+  },
+  {
+   "decision": "Vice Chair Lockwood will invite members of the Parks committee to the 1/16/24 BOS discussion of the Lake Shirley/Stump Cove and Parmenter Road parcels.",
+   "quote": "a. lockwood plans to invite members of the parks committee since osc has recommended that these properties be transferred to the care and control of the parks commission."
+  },
+  {
+   "decision": "All members were asked to review their files for minutes or notes showing whether a quorum was present at meetings with missing minutes.",
+   "quote": "m. toohill requests that all members review their files to see if they have minutes or notes regarding whether a quorum was present."
+  },
+  {
+   "decision": "The chair reminded the public that OSC has only recommended that Parks take care and control of the public parcels, and that potential future uses are still being decided.",
+   "quote": "m. toohill reminds public that osc has only recommended that parks take care and control of the public parcels, and that potential future uses are still being decided."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant received by Lunenburg Snowriders (trail work)",
+   "what_was_recorded": "A 2022 grant to the Lunenburg Snowriders is funding gravel on trails in Lane Conservation Property and trail improvements in Small Town Forest; no dollar amount is printed.",
+   "quote": "lunenburg snowriders received grant in 2022 to add gravel along trails in lane conservation property",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grant received by ConCom (engineering drawings)",
+   "what_was_recorded": "A 2023 grant to ConCom funds engineering drawings for accessibility and safety work in several conservation areas; no dollar amount is printed.",
+   "quote": "concom received grant in 2023 to fund engineering drawings in several conservation areas to improve safety and accessibility",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Lake maintenance funding and tax burden",
+   "what_was_recorded": "A public commenter said lake maintenance is supported by residents around the lake whose tax burden recently increased; no dollar figure is printed.",
+   "quote": "discusses that maintenance of the lake is supported by the residents around that lake whose tax burden recently was increased.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jay Simeone",
+   "stated_role": "resident, 362 Sunset Lane",
+   "topic": "opposes Parks control of Lake Shirley land",
+   "quote": "jay simeone of 362 sunset lane is opposed to parks taking over land on lake shirley."
+  },
+  {
+   "speaker": "Debra Yauer",
+   "stated_role": "resident, 226 Sunset Lane",
+   "topic": "opposes Parks care of lake-adjacent parcels; safety, parking, ADA, trash, invasive plants",
+   "quote": "debra yauer(sp?) 226 sunset lane also speaks against park commission taking care and control of lake-adjacent parcels."
+  },
+  {
+   "speaker": "Steven Batone",
+   "stated_role": "resident, 18 Oak Ridge Road",
+   "topic": "comment recorded only as '??'; content not recoverable",
+   "quote": "steven batone of 18 oak ridge road says ??"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Review and approve minutes of 10/25/23",
+   "resolution": "approved for distribution",
+   "quote": "review and approve minutes for 10/25/23: m. wilson motion: approved for distribution.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Missing meeting minutes and quorum records",
+   "resolution": "no vote; members asked to check their files",
+   "quote": "town clerk is missing meetings in 2021 and for up to 5 meetings in 2023.",
+   "tags": [
+    "minutes",
+    "quorum",
+    "records"
+   ]
+  },
+  {
+   "topic": "BOS meeting of 1/16/24 on Lake Shirley / Stump Cove and Parmenter Road",
+   "resolution": "no vote; OSC to post as its own meeting; Parks invited",
+   "quote": "m. toohill discusses that some osc members will attend this meeting to discuss recommendation regarding 0 shirley reservoir lake (aka stump cove) and parmenter road",
+   "tags": [
+    "Board of Selectmen",
+    "open meeting law",
+    "Lake Shirley",
+    "Stump Cove",
+    "Parks commission",
+    "Parmenter Road"
+   ]
+  },
+  {
+   "topic": "Committee comments: grants, volunteers, trail maps",
+   "resolution": "discussed; no action",
+   "quote": "m. wilson reports that 2 grants have recently been approved.",
+   "tags": [
+    "grants",
+    "conservation",
+    "volunteers",
+    "trail maps",
+    "Earth Day"
+   ]
+  },
+  {
+   "topic": "Public comment on Lake Shirley parcels",
+   "resolution": "discussed; no action",
+   "quote": "jay simeone of 362 sunset lane is opposed to parks taking over land on lake shirley.",
+   "tags": [
+    "public comment",
+    "Lake Shirley",
+    "Parks commission",
+    "access",
+    "tax burden"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted",
+   "quote": "next meetings: february 14 and march 13, 2024.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:06 pm, unanimous",
+   "quote": "a. lockwood motion, m. wilson seconded. unanimously voted. meeting adjourned at 8:06 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "open space",
+  "conservation land",
+  "Lake Shirley",
+  "Stump Cove",
+  "Parmenter Road",
+  "Parks commission",
+  "Board of Selectmen",
+  "open meeting law",
+  "grants",
+  "public comment",
+  "minutes",
+  "quorum records",
+  "volunteers"
+ ],
+ "dropped_unquoted_by_field": {}
 }

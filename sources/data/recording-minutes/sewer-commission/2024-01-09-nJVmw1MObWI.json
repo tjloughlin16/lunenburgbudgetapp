@@ -1,0 +1,718 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2024-01-09",
+ "video_id": "nJVmw1MObWI",
+ "video_url": "https://www.youtube.com/watch?v=nJVmw1MObWI",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2024-01-09-nJVmw1MObWI.json",
+  "sha256": "393b34944a5f386f0a5e15adfdb9e68f2e5120491c1c0c261d7c933fd5f1e670",
+  "caption_lines": 262,
+  "segments": 2058
+ },
+ "recording": {
+  "duration_s": 5503,
+  "duration": "1:31",
+  "spoken_chars": 69738,
+  "words_approx": 11623
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01092024-6329",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-01-09-agenda-6329.txt",
+   "path": "sources/meetings/sewer-commission/2024-01-09-agenda-6329.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01092024-6329",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-01-09-minutes-6329.txt",
+   "path": "sources/meetings/sewer-commission/2024-01-09-minutes-6329.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T20:30:38Z",
+  "cost_usd": 0.43026200000000003
+ },
+ "minutes": {
+  "headline": "Sewer Commission voted to send the revised Lemonster intermunicipal agreement forward and extended the One Main Street grease-trap deadline.",
+  "summary": "The commission heard Wright-Pierce say that rerouting sewage from Fitchburg to Leominster was not cost effective, and it will hold off on any update until the Leominster talks progress. It also heard about billing software failures and the state of the pump stations. It approved the minutes, the grease-trap extension, a motion to move the IMA to the next step with Leominster, and adjournment.",
+  "attendees": [
+   {
+    "name_as_heard": "John Reynolds",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Brett ramsten",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Dave McDonald",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike KN",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike Mackin",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "staff (DPW)"
+   },
+   {
+    "name_as_heard": "Paula",
+    "role": "sewer business manager / staff"
+   },
+   {
+    "name_as_heard": "Kevin Olen",
+    "role": "presenter (Wright-Pierce)"
+   },
+   {
+    "name_as_heard": "Matt Corbin",
+    "role": "presenter (Wright-Pierce)"
+   },
+   {
+    "name_as_heard": "Robert Lily",
+    "role": "presenter (CTE wastewater operator)"
+   },
+   {
+    "name_as_heard": "Jan rley",
+    "role": "staff"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 167,
+    "topic": "No members of the public commented at the opening."
+   },
+   {
+    "t": 5297,
+    "topic": "Only staff and commissioners were present. A commissioner invited residents to the water district meeting the next evening."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "fees",
+   "legal",
+   "personnel",
+   "public-comment",
+   "technology",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 1436,
+    "motion": "Accept the minutes of the 12/12/23 meeting",
+    "moved_by": "Mike",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 1606,
+    "motion": "Extend the One Main Street grease trap deadline for the landlord to January 29th",
+    "moved_by": "Dave McDonald",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4943,
+    "motion": "Authorize the negotiating committee to take the IMA to the next step with Leominster",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5430,
+    "motion": "Adjourn the meeting",
+    "moved_by": "Michael Mackin",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 541,
+    "topic": "Rerouting flow from Fitchburg to Leominster",
+    "what_was_said": "Wright-Pierce estimated the 20-year savings were well below the construction cost, so it was not cost effective in their opinion.",
+    "figures_as_heard": [
+     "2.4 million",
+     "6.5 million"
+    ]
+   },
+   {
+    "t": 705,
+    "topic": "Fitchburg sewer rate increases",
+    "what_was_said": "Fitchburg rates were said to rise every year for five years. The analysis had not escalated Fitchburg's rate and will be updated.",
+    "figures_as_heard": [
+     "7%"
+    ]
+   },
+   {
+    "t": 1146,
+    "topic": "Leominster rate increase under IMA renegotiation",
+    "what_was_said": "Paula said the initial increase would be substantial, and called the 30% assumption in the analysis high.",
+    "figures_as_heard": [
+     "more than 10%",
+     "30%"
+    ]
+   },
+   {
+    "t": 1818,
+    "topic": "Lost late-fee revenue from billing software",
+    "what_was_said": "Demands cannot run, so late fees are not being collected while bills remain outstanding.",
+    "figures_as_heard": [
+     "$10 fee",
+     "238",
+     "$22,000",
+     "$2,300"
+    ]
+   },
+   {
+    "t": 1966,
+    "topic": "Staff time on the billing software problem",
+    "what_was_said": "Paula has spent a very large number of hours on the problem, and a commissioner said the time should be reimbursed.",
+    "figures_as_heard": [
+     "400 hours"
+    ]
+   },
+   {
+    "t": 2730,
+    "topic": "Wet well pump-out quote from Hall Pump",
+    "what_was_said": "Hall Pump quoted a price for pumping and a separate cost for disposal, and this does not include Meadow Woods.",
+    "figures_as_heard": [
+     "$7,500"
+    ]
+   },
+   {
+    "t": 3195,
+    "topic": "Capital spending and budget this year",
+    "what_was_said": "Spending to date was reported against the capital budget, and the high-priority items will be chosen from quotes.",
+    "figures_as_heard": [
+     "52559",
+     "95,4"
+    ]
+   },
+   {
+    "t": 3344,
+    "topic": "Odor control (carbon) replacements",
+    "what_was_said": "These were described as low-cost items for odor only and not critical.",
+    "figures_as_heard": [
+     "$2,500"
+    ]
+   },
+   {
+    "t": 3549,
+    "topic": "Generator replacement forecast",
+    "what_was_said": "The forecast for a Mass 3 generator seemed an anomaly compared with Twin City and Electric Ave.",
+    "figures_as_heard": [
+     "$110,000"
+    ]
+   },
+   {
+    "t": 4055,
+    "topic": "Historic capital spending and future need",
+    "what_was_said": "Past capital spending was low, and Paula expects capital needs to run at a substantial annual figure out to 2032, which will factor into a rate increase.",
+    "figures_as_heard": [
+     "20,000",
+     "$120,000 a year",
+     "95,000"
+    ]
+   },
+   {
+    "t": 4536,
+    "topic": "Connection fees under the IMA",
+    "what_was_said": "Connection fees are a pass-through. The percentage increase was not settled.",
+    "figures_as_heard": [
+     "5%",
+     "12%",
+     "$3500"
+    ]
+   },
+   {
+    "t": 4618,
+    "topic": "IMA additions",
+    "what_was_said": "Leominster would provide maintenance hours free, with an emergency rate to be agreed by July 1, 2024.",
+    "figures_as_heard": [
+     "100 hours"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1250,
+    "decision": "The commission will hold off on updating the Wright-Pierce reroute analysis until the Leominster negotiations clarify rates."
+   },
+   {
+    "t": 3862,
+    "decision": "Mike Mackin and the chair will tour the pump stations with Robert on Friday the 12th at 9:00 am."
+   },
+   {
+    "t": 4808,
+    "decision": "The draft IMA will be submitted to Leominster to be redlined, including the new sections 9 and 10."
+   },
+   {
+    "t": 5174,
+    "decision": "Several commissioners will attend the Personnel Committee meeting on the 17th, which will be posted as a meeting."
+   },
+   {
+    "t": 4033,
+    "decision": "Robert will meet with Paula the next morning to go over capital priorities."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 167,
+    "topic": "Call to order, pledge, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 167,
+    "t_end": 268,
+    "topic": "Public and commissioner comments",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 268,
+    "t_end": 1394,
+    "topic": "Wright-Pierce review of rerouting sewage from Fitchburg to Leominster",
+    "resolution": "informational; update deferred",
+    "tags": [
+     "water-sewer",
+     "capital",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 1414,
+    "t_end": 1499,
+    "topic": "Minutes of 12/12/23",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 1499,
+    "t_end": 1649,
+    "topic": "One Main Street grease trap extension",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1671,
+    "t_end": 2384,
+    "topic": "Billing software (Munis) problems",
+    "resolution": "informational",
+    "tags": [
+     "technology",
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2384,
+    "t_end": 3195,
+    "topic": "System maintenance update: pump outs, grease, preventive maintenance",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 3195,
+    "t_end": 4055,
+    "topic": "Capital planning priorities and site visit",
+    "resolution": "informational; site visit set",
+    "tags": [
+     "capital",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4055,
+    "t_end": 4389,
+    "topic": "Capital spending history and funding",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4389,
+    "t_end": 5026,
+    "topic": "Intermunicipal agreement with Leominster",
+    "resolution": "voted to proceed to next step",
+    "tags": [
+     "water-sewer",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 5026,
+    "t_end": 5297,
+    "topic": "Sewer business manager job description",
+    "resolution": "going to the Personnel Committee",
+    "tags": [
+     "personnel",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 5297,
+    "t_end": 5490,
+    "topic": "Public comment, upcoming meetings, budget timeline, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment",
+     "budget"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll-call counts for the motions were mostly given by name and 'I', but the captions garble some names.",
+   "The quote figures for capital spending (52559 and 95,4) and the wet well pump-out costs are unclear.",
+   "Which fiscal year the Mass 3 generator forecast belongs to is unclear.",
+   "The speaker of some remarks cannot be identified."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Sewer Commission voted to authorize its negotiating committee to take the intermunicipal agreement with Leominster to the next step.",
+    "t": 4943
+   },
+   {
+    "line": "The commission voted to extend the One Main Street grease trap deadline for the landlord to January 29th.",
+    "t": 1606
+   },
+   {
+    "line": "Wright-Pierce said rerouting sewage from Fitchburg to Leominster was not cost effective; the commission will hold off updating that analysis until the Leominster talks clarify rates.",
+    "t": 1250
+   },
+   {
+    "line": "The draft agreement will go to Leominster to be redlined, including new sections 9 and 10; an emergency maintenance rate is to be agreed by July 1, 2024.",
+    "t": 4808
+   },
+   {
+    "line": "The commission heard that billing software problems mean demands cannot run and late fees are not being collected while bills remain outstanding.",
+    "t": 1818
+   }
+  ],
+  "why_it_matters": [
+   "The agreement with Leominster will set the rates for sewage treatment, and the commission's staff expect the initial increase to be substantial, so it bears on future sewer bills.",
+   "Capital needs were described as running at a large annual level through 2032 and will factor into a rate increase, and the billing software failure means some bills are going uncollected in the meantime."
+  ],
+  "watch_next": [
+   "Leominster's redline of the draft agreement, including new sections 9 and 10, and the emergency maintenance rate due to be agreed by July 1, 2024.",
+   "The pump station tour on Friday the 12th and the Personnel Committee meeting on the 17th on the sewer business manager job description."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T20:30:50Z",
+   "cost_usd": 0.308284
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01092024-6329",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-01-09-minutes-6329.txt",
+   "path": "sources/meetings/sewer-commission/2024-01-09-minutes-6329.pdf"
+  },
+  "official_sha256": "f0dd42603dd8f2da180d77c37e143c5d69131bd30c35c1bfc32fd20f84f8e40c",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both votes and on most figures (7%, $7,500, $52,559 spent, 100 hours). They differ on the Fitchburg reroute estimate ($2.4M/$6.5M vs $2M/$6M), and ours has several figures the official lacks, including $22,000, 400 hours and the 5%/12%/$3500 connection fees. Our minutes also record follow-up decisions (the pump station tour, sending the draft IMA to Leominster) that the official minutes omit, and the official record has the billing-reimbursement decision that ours omits.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 7,
+   "discrepancy": 6,
+   "only_in_ours": 7,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: extend One Main Street grease trap/landlord deadline to January 29",
+    "ours": "Extend the One Main Street grease trap deadline for the landlord to January 29th — passed",
+    "official": "to accept the proposal and extend the landlord for bad larry's to 1/29.",
+    "note": "Same vote and outcome (official records 5-0); the official names the tenant, ours names the grease trap issue.",
+    "t": 1606
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: authorize negotiating committee to take the IMA to next step with Leominster",
+    "ours": "Authorize the negotiating committee to take the IMA to the next step with Leominster — passed",
+    "official": "that the commission authorize the negotiating committee to go to the next step with the town of leominster and the ima.",
+    "note": "Same vote, both passed.",
+    "t": 4943
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Fitchburg rerouting: savings vs construction cost",
+    "ours": "Rerouting flow from Fitchburg to Leominster: 2.4 million, 6.5 million",
+    "official": "they estimated the 20 year savings of redirecting the flow would be $2 million vs the construction cost of $6 million, so",
+    "note": "Figures differ beyond misheard digits ($2.4M/$6.5M vs $2M/$6M); check the recording near this point and the Wright-Pierce analysis.",
+    "t": 541
+   },
+   {
+    "kind": "agree",
+    "about": "Fitchburg sewer rate increase 7%",
+    "ours": "Fitchburg sewer rate increases: 7%",
+    "official": "dave noted fitchburg will be increasing rates for the next 5 years and paula confirmed they will increase 7% each year.",
+    "note": "Same figure.",
+    "t": 705
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Leominster rate increase under IMA",
+    "ours": "Leominster rate increase under IMA renegotiation: more than 10%, 30%",
+    "official": "paula stated there will be a substantial increase initially -more than 10% to start.",
+    "note": "Both say more than 10%; ours also has a 30% figure that the official minutes do not record (official mentions a 70% factor in section 18-1 only). Check the recording for what 30% referred to.",
+    "t": 1146
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Billing software lost late fees",
+    "ours": "Lost late-fee revenue from billing software: $10 fee, 238, $22,000, $2,300",
+    "official": "there are currently 238 bills still outstanding, which is $2,300 they are losing.",
+    "note": "$10, 238 and $2,300 match; ours also has $22,000 which the official does not record. Check whether it is a separate annual or total figure or a mishearing.",
+    "t": 1818
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Staff time on billing software problem",
+    "ours": "Staff time on the billing software problem: 400 hours",
+    "official": "",
+    "note": "The official minutes do not mention 400 hours.",
+    "t": 1966
+   },
+   {
+    "kind": "agree",
+    "about": "Hall Pump quote",
+    "ours": "Wet well pump-out quote from Hall Pump: $7,500",
+    "official": "paula finally got a quote from hall pump for $7,500 plus disposal for all but meadowwoods.",
+    "note": "Same figure.",
+    "t": 2730
+   },
+   {
+    "kind": "caption_error",
+    "about": "Capital spending and budget this year",
+    "ours": "Capital spending and budget this year: 52559, 95,4",
+    "official": "paula reported they have spent $52,559 on capital this year and they budgeted $95,408.",
+    "note": "Same item; captions truncated the budget figure.",
+    "official_reading": "$52,559 spent; $95,408 budgeted",
+    "t": 3195
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Odor control (carbon) replacements",
+    "ours": "Odor control (carbon) replacements: $2,500",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3344
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Generator replacement forecast",
+    "ours": "Generator replacement forecast: $110,000",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3549
+   },
+   {
+    "kind": "agree",
+    "about": "Historic capital spending and future need",
+    "ours": "Historic capital spending and future need: 20,000, $120,000 a year, 95,000",
+    "official": "paula noted that in the past years they have not spent more than $25k on capital and they will spend the $95k budgeted for fy24.",
+    "note": "$120K a year and $95K match; ours says 20,000 where the official says $25K, likely a misheard figure. Check the recording.",
+    "t": 4055
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Past capital spending ceiling",
+    "ours": "20,000",
+    "official": "paula noted that in the past years they have not spent more than $25k on capital",
+    "note": "$20,000 vs $25k: could be misheard, but verify against the recording.",
+    "t": 4055
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Connection fees under the IMA",
+    "ours": "Connection fees under the IMA: 5%, 12%, $3500",
+    "official": "john asked to make a correction to section 18-1 (connection charge), where they redlined a factor of 70% and paula will correct that.",
+    "note": "Ours gives 5%, 12% and $3500; official gives only a 70% factor correction. Not reconcilable from the text; check the recording.",
+    "t": 4536
+   },
+   {
+    "kind": "agree",
+    "about": "IMA additions: 100 hours of maintenance",
+    "ours": "IMA additions: 100 hours",
+    "official": "paula noted they are asking leominster for 100 hours of maintenance services each fiscal year, free of charge, with 30 day advanced notice.",
+    "note": "Same figure.",
+    "t": 4618
+   },
+   {
+    "kind": "agree",
+    "about": "Hold off on Fitchburg reroute analysis until Leominster negotiations",
+    "ours": "The commission will hold off on updating the Wright-Pierce reroute analysis until the Leominster negotiations clarify rates.",
+    "official": "the commission agreed to hold off looking at the numbers until they meet with leominster.",
+    "note": "Same decision.",
+    "t": 1250
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Wright Pierce asked to model additional 7% Fitchburg increases",
+    "ours": "The commission will hold off on updating the Wright-Pierce reroute analysis until the Leominster negotiations clarify rates.",
+    "official": "john asked matt and kevin to look at the additional 7% per year.",
+    "note": "Official records John asking Wright Pierce to add the 7% yearly increase to the analysis, alongside the hold-off; ours records only the hold-off. Check whether both happened.",
+    "t": 1250
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pump station tour",
+    "ours": "Mike Mackin and the chair will tour the pump stations with Robert on Friday the 12th at 9:00 am.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3862
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Draft IMA to be sent to Leominster for redline",
+    "ours": "The draft IMA will be submitted to Leominster to be redlined, including the new sections 9 and 10.",
+    "official": "",
+    "note": "Not in the official minutes as a decision.",
+    "t": 4808
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Personnel Committee meeting on the 17th",
+    "ours": "Several commissioners will attend the Personnel Committee meeting on the 17th, which will be posted as a meeting.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 5174
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Robert to meet Paula on capital priorities",
+    "ours": "Robert will meet with Paula the next morning to go over capital priorities.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 4033
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bill to be sent to Heather for billing software reimbursement",
+    "ours": "",
+    "official": "the commissioners agreed they are upset that it is still not fixed and a bill should be sent to heather for reimbursement.",
+    "note": "A decision in the official minutes that ours does not record.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Maintenance program funding of $100K per year",
+    "ours": "",
+    "official": "dave pointed out they funded the maintenance program with $100k per year but it was not all spent.",
+    "note": "Figure in the official minutes not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment: storm response thanks and Water District meeting",
+    "ours": "",
+    "official": "dave urged people in the water district to attend the water district meeting on 1/10 to vote on articles.",
+    "note": "Public comment items are not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Brett Ramsden",
+    "ours": "Brett ramsten (member)",
+    "official": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, members: dave macdonald and",
+    "note": "Misspelled name; official lists him as Vice-Chair.",
+    "official_reading": "Brett Ramsden",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mike Nault",
+    "ours": "Mike KN (member)",
+    "official": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, members: dave macdonald and",
+    "note": "Misheard name; official lists him as Clerk.",
+    "official_reading": "Mike Nault",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Dave MacDonald",
+    "ours": "Dave McDonald (member)",
+    "official": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, members: dave macdonald and",
+    "note": "Spelling variant.",
+    "official_reading": "Dave MacDonald",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Kevin Olson",
+    "ours": "Kevin Olen (presenter (Wright-Pierce))",
+    "official": "kevin olson & matt corbin (wright pierce), robert lilley (cte)",
+    "note": "Misheard surname.",
+    "official_reading": "Kevin Olson",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Robert Lilley",
+    "ours": "Robert Lily (presenter (CTE wastewater operator))",
+    "official": "kevin olson & matt corbin (wright pierce), robert lilley (cte)",
+    "note": "Spelling variant.",
+    "official_reading": "Robert Lilley",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Jane Ranley",
+    "ours": "Jan rley (staff)",
+    "official": "mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley",
+    "note": "Garbled name; official lists her as Minutes Clerk.",
+    "official_reading": "Jane Ranley",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Reynolds, Mackin, Bernard, Corbin, Paula",
+    "ours": "John Reynolds (chair); Mike Mackin (member); Bill Bernard (staff (DPW)); Matt Corbin (presenter (Wright-Pierce)); Paula (sewer business manager / staff)",
+    "official": "mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley",
+    "note": "Same people; the official gives Paula's surname as Bertram.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T20:32:17Z",
+   "cost_usd": 0.3693092
+  }
+ }
+}
