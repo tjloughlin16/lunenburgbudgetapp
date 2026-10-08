@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-05-14",
  "docid": "6569",
@@ -12,23 +12,155 @@
  },
  "votes": [
   {
-   "motion": "Appoint Ms. Gilson to the position of Business/HR Manager pending final approval in contracts with the superintendent",
-   "moved_by": "Mr. Beardmore",
-   "seconded_by": "Mr. Lehtinen",
+   "motion": "Appoint Susan Gilson to the position of Business/HR Manager, pending final approval in contracts with the superintendent.",
+   "moved_by": "Peter Beardmore",
+   "seconded_by": "Brian Lehtinen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. beardmore makes a motion to appoint ms. gilson to the position of business/hr manager pending final approval in contracts with the superintendent, mr. lehtinen seconds the motion all approve via roll call."
+   "quote": "mr. beardmore makes a motion to appoint ms. gilson to the position of business/hr manager pending final approval in contracts with the superintendent,"
   },
   {
-   "motion": "Enter into executive session and adjourn immediately following at 6:09",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Ms. Brzozoski",
+   "motion": "Enter into executive session and adjourn immediately following at 6:09.",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr. lehtinen makes a motion to enter into executive session and adjourn immediately following at 6:09, ms. brzozoski seconds the motion all approve via roll call"
+   "quote": "mr. lehtinen makes a motion to enter into executive session and adjourn immediately following at 6:09,"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0379578
+ "note": "The header reads \"6:00 - Remote\" and the attendance block marks members Present/Absent as printed; the minutes do not say how each member joined. The appointment motion records \"all approve via roll call\" with no vote count printed, so its outcome is recorded as passed without a count. The executive session motion is likewise \"all approve via roll call\" with no count. No dollar figures appear anywhere in the text. Public comment is recorded as \"None\" twice, so no speakers are listed. Courtney Fuller's presence is not stated as present or absent; she appears only as Recording Secretary and as the author of the minutes.",
+ "cost_usd": 0.013311670000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "anthony sculimbrene, secretary - absent"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Susan Gilson",
+   "role": "Business/HR Manager Candidate",
+   "status": "present",
+   "quote": "guests: susan gilson, business/ hr manager candidate"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:00",
+   "quote": "call to order by carol archambault at 6:00",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (first)",
+   "resolution": "no comment",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "no action; reminder of upcoming votes",
+   "quote": "i want to remind everyone we have two important votes this week.",
+   "tags": [
+    "election",
+    "water district",
+    "override"
+   ]
+  },
+  {
+   "topic": "Business/HR Manager Candidate Appointment",
+   "resolution": "approved, pending contract approval with the superintendent",
+   "quote": "ms. gilson is introduced, and has already met with the members",
+   "tags": [
+    "personnel",
+    "hiring",
+    "business office"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "no comment",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive Session (applicant interviews)",
+   "resolution": "entered executive session",
+   "quote": "executive session to consider or interview applicants for employment or appointment by a preliminary screening committee",
+   "tags": [
+    "personnel",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:09 after entering executive session",
+   "quote": "adjournment mr. lehtinen makes a motion to enter into executive session and adjourn immediately following at 6:09,",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "special meeting",
+  "remote meeting",
+  "personnel appointment",
+  "business manager hiring",
+  "executive session",
+  "budget office staffing",
+  "town election",
+  "water district vote",
+  "override vote"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-03-20",
  "docid": "6481",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
    "outcome": "passed",
@@ -20,7 +20,488 @@
    "quote": "there was a motion to adjourn by chris menard, seconded by dave passios. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "This meeting contains presentations and discussion of various budgets (Monty Tech, Sewer Department, Administration/Unclassified/Debt Service) and warrant articles, but no votes on those budgets or articles are recorded. Minutes from 2/22/2024 were postponed for approval but no vote on the postponement is explicitly stated. Only the motion to adjourn at the end of the meeting records an explicit vote.",
- "cost_usd": 0.0818975
+ "dropped_unquoted": 1,
+ "note": "Text extracted from the minutes; no scan. Only one motion is recorded (adjournment, by voice, 'All in favor', no count printed, outcome recorded as passed). Budget presentations, warrant discussion and minutes postponement have no motions. The minutes postpone five sets of minutes 'to the meeting scheduled for tomorrow' without a vote. Attendance: Jean Russell and Tiffaney Tavares are printed as absent; Heather Lemieux's role is not printed in the minutes. The minutes spell the Chair 'Evan Watter' and 'Evans Watters' in places; treated as Evan Watters. Ambiguity: section 4 and section 8f are headed Public Comment, but the Dave Passios items are a Board Member's remarks; they are recorded as public comment only because they sit under that heading, and the other members' remarks under 8f are not recorded as public comment. Some items print dates in 2025 (for example the natural gas rate effective November 30th of 2025) inside a March 2024 meeting; recorded as printed. The minutes state 'There was no public comment' for the Monty Tech and Sewer budgets. Dollar figures are as printed, including the '$1,172, 061' spacing and '$1,751,189.00'. Percentages (70%, 10%, 6%, 5.7%, 16.7%, 16%) are recorded in figures_as_printed though they are not dollars.",
+ "cost_usd": 0.02173407,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "dave passios, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "dave passios, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "absent members: board member jean russell and clerk tiffaney tavares"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent members: board member jean russell and clerk tiffaney tavares"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jay simeone asks if el harvey disposes of the town trash. heather lemieux confirms."
+  },
+  {
+   "name": "Tom Browne",
+   "role": "Superintendent-Director",
+   "status": "present",
+   "quote": "the superintendent-director tom browne and human resources/business manager"
+  },
+  {
+   "name": "Tammy Crockett",
+   "role": "Human Resources/Business Manager",
+   "status": "present",
+   "quote": "tammy crockett presented the budget."
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice Chair of the Sewer Commission",
+   "status": "present",
+   "quote": "there was a presentation by the vice chair of the sewer commission, brett ramsden, and"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager, paula bertram."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ana lockwood had a comment relating to some of the proposed positions going from part-time to"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of the warrant report timeline was deferred to the next meeting, when Clerk Tiffaney Tavares is in attendance.",
+   "quote": "additionally, discussion will take place at the next meeting when tiffaney tavares is in"
+  },
+  {
+   "decision": "The five sets of minutes for approval, including 2/22/2024, were postponed to the meeting scheduled for the following day.",
+   "quote": "the committee postponed the 5 sets of minutes for approval to the meeting scheduled for"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Natural gas contract",
+   "what_was_recorded": "Town and school natural gas rate under a new contract, locked for 3 years, presented as a raise over the current rate.",
+   "figures_as_printed": [
+    "$5.66",
+    "$4.39"
+   ],
+   "quote": "the rate for the town and school is $5.66 and it's a locked in rate for 3 years. this is a raise"
+  },
+  {
+   "topic": "Solid waste and recycling contract (El Harvey)",
+   "what_was_recorded": "Extending the expiring solid waste contract would cost a 70% increase, so the town will bid it out.",
+   "figures_as_printed": [
+    "70%"
+   ],
+   "quote": "to extend that contract, there would be a 70% increase."
+  },
+  {
+   "topic": "Monty Tech grants received",
+   "what_was_recorded": "Monty Tech reported grant receipts for FY 24, including a workforce grant contribution, an auto body grant and Perkins funds.",
+   "figures_as_printed": [
+    "1.4 million",
+    "$500,000",
+    "$25,000",
+    "$298,000"
+   ],
+   "quote": "for fy 24 monty tech received 1.4 million in grants."
+  },
+  {
+   "topic": "Monty Tech Perkins funds",
+   "what_was_recorded": "Perkins funds were used for industry recognized credentials.",
+   "figures_as_printed": [
+    "$298,000"
+   ],
+   "quote": "this $298,000 was used on industry recognized credentials."
+  },
+  {
+   "topic": "Monty Tech foundation budget and enrollment",
+   "what_was_recorded": "Total foundation budget divided by foundation enrollment gives a per-pupil figure.",
+   "figures_as_printed": [
+    "$29,900,307",
+    "$2,258"
+   ],
+   "quote": "total foundation budget was $29,900,307 which then gets divided by the foundation"
+  },
+  {
+   "topic": "Chapter 70 aid to Monty Tech",
+   "what_was_recorded": "Chapter 70 funding received, and the FY 25 aid amount, which the minutes describe as a hold harmless district.",
+   "figures_as_printed": [
+    "$18,318,704",
+    "$18,257,075"
+   ],
+   "quote": "the amount of aid for fy 25 is $18,257,075 and this year is considered to be a hold harmless district."
+  },
+  {
+   "topic": "Minimum aid and chapter 78",
+   "what_was_recorded": "State minimum aid of 30 per pupil adds an additional amount in chapter 78.",
+   "figures_as_printed": [
+    "$44,280"
+   ],
+   "quote": "so that's an additional $44,280 in"
+  },
+  {
+   "topic": "Required net school spending and district contribution",
+   "what_was_recorded": "Required net school spending, and a budgeted increase of $525,000 that falls on the communities.",
+   "figures_as_printed": [
+    "$30,011,216",
+    "$525,000"
+   ],
+   "quote": "the required net school spending is $30,011,216."
+  },
+  {
+   "topic": "Monty Tech transportation",
+   "what_was_recorded": "Cost of transportation for 30 buses, in year 2 of a contract with a 4% contractual increase.",
+   "figures_as_printed": [
+    "$2,516,010"
+   ],
+   "quote": "the transportation cost for 30 buses equals $2,516,010."
+  },
+  {
+   "topic": "Minimum required contribution for Lunenburg",
+   "what_was_recorded": "Required minimum rose as Lunenburg foundation enrollment went from 97 to 99 students.",
+   "figures_as_printed": [
+    "$1,127,113",
+    "$1,172, 061"
+   ],
+   "quote": "the required minimum went from $1,127,113 to $1,172, 061."
+  },
+  {
+   "topic": "Sewer capital plan",
+   "what_was_recorded": "Sewer capital plan increased for FY 25, for replacing aging equipment and priority repairs.",
+   "figures_as_printed": [
+    "$368,749"
+   ],
+   "quote": "the capital plan has increased to $368,749 for fy 25."
+  },
+  {
+   "topic": "Sewer manhole repairs (ARPA)",
+   "what_was_recorded": "ARPA funds awarded to repair manholes throughout the town, with a bid planned for spring.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "arpa funds of $100,000 were awarded to repair manholes throughout the town."
+  },
+  {
+   "topic": "Sewer enterprise fund revenues and contingency",
+   "what_was_recorded": "FY 25 enterprise fund revenues total, and the amount held in the emergency contingency.",
+   "figures_as_printed": [
+    "$1,751,189.00",
+    "$33,750"
+   ],
+   "quote": "the fy 25 enterprise fund budget revenues totals $1,751,189.00."
+  },
+  {
+   "topic": "Sewer rate increases",
+   "what_was_recorded": "Sewer rates rise for the average residential customer, with quarterly bill, minimum charge and connection fee increases.",
+   "figures_as_printed": [
+    "$12.34",
+    "$233",
+    "$270",
+    "$115",
+    "$126",
+    "$2,250",
+    "$3,900"
+   ],
+   "quote": "sewer rates will increase by $12.34 per month for the average residential customer."
+  },
+  {
+   "topic": "Sewer connection fee",
+   "what_was_recorded": "Connection fee rises due to Leominster's increase.",
+   "figures_as_printed": [
+    "$2,250",
+    "$3,900"
+   ],
+   "quote": "the connection fee will increase from $2,250 to $3,900 due to leominster's increase."
+  },
+  {
+   "topic": "Administration line increases",
+   "what_was_recorded": "Finance budget increases for dues, conferences, postage, contracted services and training.",
+   "figures_as_printed": [
+    "$2,000",
+    "$500",
+    "$100",
+    "$50",
+    "$1,000"
+   ],
+   "quote": "$2,000 increases in the cost of dues and membership line."
+  },
+  {
+   "topic": "Grant writer budget",
+   "what_was_recorded": "Grant writer budget for writing services in FY 25.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the grant writer budget includes $50,000 for fy 25 for writing services."
+  },
+  {
+   "topic": "Health insurance renewal",
+   "what_was_recorded": "Health insurance budget reflects renewal rate increases for active employees and retirees; percentages only, no dollar figure printed.",
+   "figures_as_printed": [
+    "10%",
+    "6%",
+    "5.7%"
+   ],
+   "quote": "the health insurance budget reflects the 10% renewal rate increase for active employees and a"
+  },
+  {
+   "topic": "Salary and reserve fund reductions",
+   "what_was_recorded": "Estimated decreases in the salary reserve and reserve funds.",
+   "figures_as_printed": [
+    "$199,000",
+    "$100,000",
+    "$275,000"
+   ],
+   "quote": "salary reserve estimated decrease from $199,000 to $100,000."
+  },
+  {
+   "topic": "Debt service FY 25",
+   "what_was_recorded": "Total FY 25 debt service appropriation, with named debt retirements and reductions.",
+   "figures_as_printed": [
+    "$2,941,322",
+    "$163,806",
+    "$335,148",
+    "$1,250",
+    "$59,969",
+    "$4"
+   ],
+   "quote": "non-discretionary -total appropriation for fy 25 debt service is $2,941,322."
+  },
+  {
+   "topic": "ARPA reallocation by Select Board",
+   "what_was_recorded": "Select Board reallocated ARPA funds to network, 911 phone and Chromebook equipment; reported as coming out of the school's budget.",
+   "figures_as_printed": [
+    "$221,640"
+   ],
+   "quote": "network upgrade equipment, 911 compliant phone systems, and chromebooks totaling $221,640."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Select Board reallocation of ARPA funding to network upgrade equipment, 911 compliant phone systems and Chromebooks, paid through ARPA from the school budget as reported.",
+   "amount_as_printed": "$221,640",
+   "outcome": "Reported to the committee by Heather Lemieux; no committee vote recorded.",
+   "quote": "network upgrade equipment, 911 compliant phone systems, and chromebooks totaling $221,640."
+  },
+  {
+   "description": "Pause on the pavement management plan, reallocating funds toward the schools.",
+   "amount_as_printed": "$50,000",
+   "outcome": "Reported to the committee; no committee vote recorded.",
+   "quote": "and that would reallocate $50,000 towards the schools."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Citizen's petition connected to the committee",
+   "quote": "dave passios states at the select board meeting last night it was announced that it was a"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Ashby capital exemption comparison",
+   "quote": "dave passios questions why some budding towns such as ashby are capital exemption for"
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "",
+   "topic": "Part-time to full-time proposed positions",
+   "quote": "ana lockwood had a comment relating to some of the proposed positions going from part-time to"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (citizen's petition)",
+   "resolution": "discussed, no action",
+   "quote": "dave passios states at the select board meeting last night it was announced that it was a",
+   "tags": [
+    "public comment",
+    "override",
+    "citizen petition"
+   ]
+  },
+  {
+   "topic": "Town Manager Report (bids, natural gas, solid waste)",
+   "resolution": "reported, no action",
+   "quote": "there are several bids out right now include:",
+   "tags": [
+    "bids",
+    "natural gas",
+    "solid waste"
+   ]
+  },
+  {
+   "topic": "Monty Tech FY25 budget presentation",
+   "resolution": "presented, no vote; no public comment",
+   "quote": "the superintendent-director tom browne and human resources/business manager",
+   "tags": [
+    "Monty Tech",
+    "school budget",
+    "grants",
+    "chapter 70",
+    "transportation"
+   ]
+  },
+  {
+   "topic": "Sewer Department FY25 budget presentation",
+   "resolution": "presented, no vote; no public comment",
+   "quote": "there was a presentation by the vice chair of the sewer commission, brett ramsden, and",
+   "tags": [
+    "sewer",
+    "enterprise fund",
+    "sewer rates",
+    "NPDES"
+   ]
+  },
+  {
+   "topic": "Administration, Unclassified & Debt Service FY25 budget presentation",
+   "resolution": "presented, no vote; public comment taken",
+   "quote": "e. administration, unclassified, & debt service fy25 budget presentation selectmen",
+   "tags": [
+    "town budget",
+    "health insurance",
+    "debt service",
+    "reserves"
+   ]
+  },
+  {
+   "topic": "Warrant article discussion",
+   "resolution": "discussed, no action",
+   "quote": "the below list are updated warrant articles submitted by the town manager:",
+   "tags": [
+    "warrant articles",
+    "ARPA",
+    "pavement management"
+   ]
+  },
+  {
+   "topic": "FinCom report for warrant",
+   "resolution": "deferred to next meeting",
+   "quote": "there was a brief discussion about the timeline that this report needs to be completed by.",
+   "tags": [
+    "warrant report",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Old Business: FY25 budget update",
+   "resolution": "discussed, no action",
+   "quote": "dave passios reiterates his concern relating to the food service manager position",
+   "tags": [
+    "FY25 budget",
+    "food service"
+   ]
+  },
+  {
+   "topic": "Minutes of 2/22/2024",
+   "resolution": "postponed to next meeting",
+   "quote": "the committee postponed the 5 sets of minutes for approval to the meeting scheduled for",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "dave passios states there is a green communities meeting on the 25th.",
+   "tags": [
+    "green communities",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "listed, no action",
+   "quote": "create a table or graph of the override per household",
+   "tags": [
+    "override",
+    "capital plan",
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Upcoming FY25 budget meetings",
+   "resolution": "listed, no action",
+   "quote": "12. upcoming fy25 budget meetings",
+   "tags": [
+    "budget calendar"
+   ]
+  },
+  {
+   "topic": "Public Comment (positions, Council on Aging, Parks)",
+   "resolution": "discussed, no action",
+   "quote": "ana lockwood had a comment relating to some of the proposed positions going from part-time to",
+   "tags": [
+    "public comment",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "there was a motion to adjourn by chris menard, seconded by dave passios. all in favor.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY25 budget",
+  "Monty Tech",
+  "school budget",
+  "sewer enterprise fund",
+  "sewer rates",
+  "town budget",
+  "health insurance",
+  "debt service",
+  "warrant articles",
+  "ARPA",
+  "solid waste",
+  "natural gas",
+  "chapter 70",
+  "reserves"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

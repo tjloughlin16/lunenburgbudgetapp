@@ -1,0 +1,633 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2024-04-30",
+ "video_id": "OkKAA9ng5B8",
+ "video_url": "https://www.youtube.com/watch?v=OkKAA9ng5B8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2024-04-30-OkKAA9ng5B8.json",
+  "sha256": "fc3b73529cbd2d32fc9af4f822a45e9c72e4e7d8f770b6dce55361a9c503f41d",
+  "caption_lines": 242,
+  "segments": 1842
+ },
+ "recording": {
+  "duration_s": 5106,
+  "duration": "1:25",
+  "spoken_chars": 61346,
+  "words_approx": 10224
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04302024-6551",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-04-30-agenda-6551.txt",
+   "path": "sources/meetings/sewer-commission/2024-04-30-agenda-6551.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04302024-6551",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-04-30-minutes-6551.txt",
+   "path": "sources/meetings/sewer-commission/2024-04-30-minutes-6551.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T07:42:09Z",
+  "cost_usd": 0.343595
+ },
+ "minutes": {
+  "headline": "Sewer Commission voted to waive interest for one prompt-paying customer and others who come forward, over billing-mail problems.",
+  "summary": "The commission discussed a costly engineering quote for a pump-station energy study needed for a grant, manhole repair scoping and whether Chapter 90 could pay part of it, and a turnover procedure for cash. Most of the evening went on interest waivers for bills many customers say they never received, which ended in a split roll-call vote. It also agreed its position on an overdue liquor-license account ahead of the Select Board hearing.",
+  "attendees": [
+   {
+    "name_as_heard": "Mike Mackin",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike n",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Dave McDonald",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Paula",
+    "role": "business manager"
+   },
+   {
+    "name_as_heard": "Jane rley",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "engineer/DPW director (as evident from discussion)"
+   },
+   {
+    "name_as_heard": "John",
+    "role": "chair (as evident; also referred to as speaking for the commission)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 192,
+    "topic": "Chair asked for public comment; none was offered."
+   },
+   {
+    "t": 4919,
+    "topic": "Second call for public comment at close; none offered."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "fees",
+   "grants",
+   "legal",
+   "public-comment",
+   "roads-and-dpw",
+   "technology",
+   "town-departments",
+   "town-meeting",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 360,
+    "motion": "Accept the minutes of the earlier meeting (22724).",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 405,
+    "motion": "Accept the minutes of 4/9/24.",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3083,
+    "motion": "Waive interest for the contested customer and for any customer who was current and comes forward within seven days.",
+    "moved_by": "Mike n",
+    "outcome": "passed (majority ayes; one no and one abstention stated)",
+    "procedural": false
+   },
+   {
+    "t": 5064,
+    "motion": "Adjourn the meeting.",
+    "moved_by": "Mike n",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 488,
+    "topic": "Energy study task order for pump stations (grant application)",
+    "what_was_said": "The engineering firm's task order was seen as too high while money is tight, and the commission leaned against paying it.",
+    "figures_as_heard": [
+     "$7,200"
+    ]
+   },
+   {
+    "t": 592,
+    "topic": "Electricity cost at three pump stations",
+    "what_was_said": "The business manager said the three stations spend about this per year on electricity.",
+    "figures_as_heard": [
+     "$25,000 a year"
+    ]
+   },
+   {
+    "t": 1642,
+    "topic": "Manhole repair budget and bid",
+    "what_was_said": "Repair costs could exceed the budgeted amount; the capital budget was buffered, and the engineering proposal would be a quarter of it.",
+    "figures_as_heard": [
+     "100,000",
+     "25%"
+    ]
+   },
+   {
+    "t": 1972,
+    "topic": "Formal bid threshold",
+    "what_was_said": "Work over the threshold needs a formal bid, so inspections and repairs may be two separate projects.",
+    "figures_as_heard": [
+     "$50,000"
+    ]
+   },
+   {
+    "t": 2224,
+    "topic": "Minimum sewer charge for Q4 bill insert",
+    "what_was_said": "The minimum charge based on the flow minimum was recalculated and came out higher than first estimated.",
+    "figures_as_heard": [
+     "842 gallons",
+     "133",
+     "126"
+    ]
+   },
+   {
+    "t": 2582,
+    "topic": "Interest waiver",
+    "what_was_said": "The treasurer cannot waive interest over a threshold without a commission vote; the contested interest was stated.",
+    "figures_as_heard": [
+     "$15",
+     "$74.75",
+     "$10 fee"
+    ]
+   },
+   {
+    "t": 4194,
+    "topic": "Lost revenue from demands not sent",
+    "what_was_said": "Demands could not be sent in two quarters because of billing software problems, costing the sewer enterprise fund.",
+    "figures_as_heard": [
+     "$8,000"
+    ]
+   },
+   {
+    "t": 3849,
+    "topic": "Town meeting presentation",
+    "what_was_said": "Slides cite a monthly increase rather than a percentage increase.",
+    "figures_as_heard": [
+     "16%",
+     "$12.3 per month"
+    ]
+   },
+   {
+    "t": 4281,
+    "topic": "Overdue payments from liquor-license holder",
+    "what_was_said": "The account holder made a partial payment, remains well behind its agreement, and owes weekly payments and full payment by a late-May date.",
+    "figures_as_heard": [
+     "$2,000",
+     "$22,000",
+     "$600 weekly",
+     "$66,000"
+    ]
+   },
+   {
+    "t": 3677,
+    "topic": "Receipts",
+    "what_was_said": "Receipts are down and billing delays may push revenue out before the fiscal year ends.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1015,
+    "decision": "Do not accept the engineering firm's energy-study task order; the business manager is to seek the information from the electrical contractor and others before the May 10 grant deadline, and no application will be filed if it can't be obtained."
+   },
+   {
+    "t": 1497,
+    "decision": "A member will check with the state aid engineer whether Chapter 90 can cover the manhole covers and frames."
+   },
+   {
+    "t": 2139,
+    "decision": "Bill to ask the town's procurement officer whether a contractor can be hired to inspect and price manhole repairs; to return next meeting."
+   },
+   {
+    "t": 2285,
+    "decision": "Q4 bill insert wording is accepted by consensus without a vote."
+   },
+   {
+    "t": 3982,
+    "decision": "Town meeting slides to be sent to the town manager's office as drafted."
+   },
+   {
+    "t": 4861,
+    "decision": "No vote on the liquor-license account; the commission will tell the Select Board the account must be paid in full by the deadline or the license should not be renewed, and the business manager will ask whether the hearing can move."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 5,
+    "t_end": 172,
+    "topic": "Pledge, open meeting notice, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 172,
+    "t_end": 339,
+    "topic": "Public comment, town meeting reminder, billing software concerns",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 339,
+    "t_end": 426,
+    "topic": "Approval of prior minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 426,
+    "t_end": 1015,
+    "topic": "Energy study task order for pump stations and grant",
+    "resolution": "directed to pursue alternatives",
+    "tags": [
+     "grants",
+     "water-sewer",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 1139,
+    "t_end": 2181,
+    "topic": "Manhole repair scope, Chapter 90, inspection and bid procedure",
+    "resolution": "referred to next meeting",
+    "tags": [
+     "capital",
+     "roads-and-dpw",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2181,
+    "t_end": 2305,
+    "topic": "Q4 bill insert wording",
+    "resolution": "consensus approval",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2305,
+    "t_end": 2473,
+    "topic": "Draft cash turnover procedure",
+    "resolution": "informational",
+    "tags": [
+     "policy",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2473,
+    "t_end": 3656,
+    "topic": "Interest waiver for undelivered bills",
+    "resolution": "voted",
+    "tags": [
+     "fees",
+     "water-sewer",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 3656,
+    "t_end": 4258,
+    "topic": "Manager's report, budget status, town meeting slides, demands, billing system",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "town-meeting",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 4258,
+    "t_end": 4919,
+    "topic": "Overdue liquor-license account and Select Board hearing",
+    "resolution": "position agreed without vote",
+    "tags": [
+     "legal",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4919,
+    "t_end": 5100,
+    "topic": "Public comment, scheduling, well-wishes, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Whether the first set of minutes passed was only stated by the chair; no count was captured.",
+   "The roll-call count on the waiver is incomplete; a no and an abstention are stated.",
+   "Several speakers are unidentified, so who said what is uncertain.",
+   "The chair's identity is unclear; the chair spoke at the start and John took over late.",
+   "Date of the Select Board hearing appears as both the 21st and 23rd."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The commission voted to waive interest for one contested customer and any customer who was current and comes forward within seven days; the roll call was split.",
+    "t": 3083
+   },
+   {
+    "line": "It declined the engineering firm's energy-study task order for pump stations; the business manager will seek the information elsewhere before the May 10 grant deadline.",
+    "t": 1015
+   },
+   {
+    "line": "On manhole repairs, a member will ask the state aid engineer whether Chapter 90 can cover covers and frames, and Bill will ask about hiring a contractor to inspect and price repairs.",
+    "t": 2139
+   },
+   {
+    "line": "The commission took no vote on an overdue liquor-license account; it will tell the Select Board the account must be paid in full by the deadline or the license should not be renewed.",
+    "t": 4861
+   },
+   {
+    "line": "The Q4 bill insert wording was accepted by consensus without a vote.",
+    "t": 2285
+   }
+  ],
+  "why_it_matters": [
+   "Sewer customers who say they never received a bill, and were current, may have interest waived if they come forward within seven days of the vote.",
+   "Billing-software problems kept demands from going out in two quarters, which cost the sewer enterprise fund revenue and bears on receipts and on future sewer charges.",
+   "Manhole repair costs could exceed the budgeted amount, and whether Chapter 90 money can help is still open."
+  ],
+  "watch_next": [
+   "May 10 grant deadline for the pump-station energy study; no application will be filed if the information cannot be obtained.",
+   "Next commission meeting: the procurement officer's answer on a manhole inspection contractor, and the Select Board hearing on the liquor-license account."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T07:42:25Z",
+   "cost_usd": 0.219519
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04302024-6551",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-04-30-minutes-6551.txt",
+   "path": "sources/meetings/sewer-commission/2024-04-30-minutes-6551.pdf"
+  },
+  "official_sha256": "16e8160d4bc36700f7291c86dc9130fdd7d7044de6ce6a963e8d7958889204fb",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the interest-waiver vote, the $7,200 quote decision, the Q4 insert wording and the liquor-license outcome, and their figures mostly match. They differ on the manhole/Chapter 90 decision, the vote count and who took the vote, and on who is to ask the electrical contractor; a person should check the 21-manhole Chapter 90 decision against the video.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 5,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Interest waiver vote",
+    "ours": "Waive interest for the contested customer and for any customer who was current and comes forward within seven days. — passed (majority ayes; one no and one abstention stated)",
+    "official": "to take care of the customer at hand with the interest and any body who has been current up to this last billing that comes forward in the next 7 days with interest",
+    "note": "Same motion and outcome; official gives the tally as 3-1-1, ours as a majority with one no and one abstention.",
+    "t": 3083
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chapter 90 and manhole covers",
+    "ours": "A member will check with the state aid engineer whether Chapter 90 can cover the manhole covers and frames.",
+    "official": "the commission discussed the list and agreed up to 21 manholes could be covered by chapter 90 money.",
+    "note": "Ours records an open question to be checked; the official minutes record an agreement that up to 21 manholes could be covered. Check the video around t=1497 for whether this was settled or left pending.",
+    "t": 1497
+   },
+   {
+    "kind": "agree",
+    "about": "Energy/pump efficiency quote of $7,200 not accepted",
+    "ours": "Do not accept the engineering firm's energy-study task order; the business manager is to seek the information from the electrical contractor and others before the May 10 grant deadline, and no application will be filed if it can't be obtained.",
+    "official": "the commission discussed and agreed to not spend the $7,200",
+    "note": "Same decision not to spend the $7,200; official adds that they will apply for the grant if the data can be obtained in time.",
+    "t": 1015
+   },
+   {
+    "kind": "agree",
+    "about": "Pump energy study figure $7,200",
+    "ours": "Energy study task order for pump stations (grant application): $7,200",
+    "official": "the quote for looking at the efficiency of the pumps came in at $7 ,200",
+    "note": "Same amount; the official text has a stray space.",
+    "t": 488
+   },
+   {
+    "kind": "agree",
+    "about": "Electricity cost at three pump stations",
+    "ours": "Electricity cost at three pump stations: $25,000 a year",
+    "official": "they spend $25k/year for th ose 3 stations",
+    "note": "Same figure, stated as $25k.",
+    "t": 592
+   },
+   {
+    "kind": "agree",
+    "about": "Grant deadline May 10",
+    "ours": "before the May 10 grant deadline",
+    "official": "the d eadline for the grant is 5/10",
+    "note": "Same date.",
+    "t": 1015
+   },
+   {
+    "kind": "agree",
+    "about": "Manhole repair cost over $100,000",
+    "ours": "Manhole repair budget and bid: 100,000, 25%",
+    "official": "could end up costing more than $100k.",
+    "note": "The $100,000 figure matches; the 25% is not in the official quote.",
+    "t": 1642
+   },
+   {
+    "kind": "agree",
+    "about": "Formal bid threshold $50,000",
+    "ours": "Formal bid threshold: $50,000",
+    "official": "since it is over $ 50k.",
+    "note": "Same figure.",
+    "t": 1972
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who to ask on energy data",
+    "ours": "the business manager is to seek the information from the electrical contractor and others",
+    "official": "paula will reach out to john at unitil.",
+    "note": "Ours says the electrical contractor and others; official names a specific contact at Unitil, the electric utility. Check the video for who was named.",
+    "t": 1015
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Manhole inspection and pricing follow-up",
+    "ours": "Bill to ask the town's procurement officer whether a contractor can be hired to inspect and price manhole repairs; to return next meeting.",
+    "official": "john said they will discuss this again at the next meeting.",
+    "note": "Both carry the item to the next meeting, but the official minutes do not record Bill's task to ask the procurement officer. Little conflict, but the assignment is only in ours.",
+    "t": 2139
+   },
+   {
+    "kind": "agree",
+    "about": "Q4 bill insert wording",
+    "ours": "Q4 bill insert wording is accepted by consensus without a vote.",
+    "official": "the commission agreed with the wording on the insert.",
+    "note": "Same outcome; neither records a formal vote.",
+    "t": 2285
+   },
+   {
+    "kind": "agree",
+    "about": "Interest waiver total $74.75",
+    "ours": "Interest waiver: $15, $74.75, $10 fee",
+    "official": "waiver of interest request for 3 accounts- (car wash es and office ) for total of $74.75.",
+    "note": "Same total; the $15 approval threshold and the $10 demand fee also match the official text.",
+    "t": 2582
+   },
+   {
+    "kind": "agree",
+    "about": "Lost revenue $8,000",
+    "ours": "Lost revenue from demands not sent: $8,000",
+    "official": "she was unable to send out demands in q2 and q3 - a loss of $8k.",
+    "note": "Same figure.",
+    "t": 4194
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town meeting presentation figures",
+    "ours": "Town meeting presentation: 16%, $12.3 per month",
+    "official": "",
+    "note": "The official minutes have no 16% or $12.3 per month figure.",
+    "t": 3849
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town meeting slides sent to town manager's office",
+    "ours": "Town meeting slides to be sent to the town manager's office as drafted.",
+    "official": "",
+    "note": "This decision is not recorded in the official minutes.",
+    "t": 3982
+   },
+   {
+    "kind": "agree",
+    "about": "Liquor-license holder overdue payments and recommendation",
+    "ours": "No vote on the liquor-license account; the commission will tell the Select Board the account must be paid in full by the deadline or the license should not be renewed, and the business manager will ask whether the hearing can move.",
+    "official": "the commission agreed that if reboot does not pay in full, they recommend the select board",
+    "note": "Same substance: recommend to the Select Board if not paid in full; official quote is cut off at 'select board', and revoke vs not renew should be checked.",
+    "t": 4861
+   },
+   {
+    "kind": "agree",
+    "about": "Liquor-license holder $2,000 payment",
+    "ours": "Overdue payments from liquor-license holder: $2,000, $22,000, $600 weekly, $66,000",
+    "official": "t hey came in with $2k",
+    "note": "The $2,000 matches; the $22,000, $600 weekly and $66,000 figures are not in the official minutes.",
+    "t": 4281
+   },
+   {
+    "kind": "only_in_official",
+    "about": "OBEP transfer on consent calendar",
+    "ours": "",
+    "official": "the obep transfer will be in the consent calendar but the budget will be done separate .",
+    "note": "Our minutes record no transfers; the official minutes say the OBEP transfer goes on the Town Meeting consent calendar, with no vote recorded."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Paula to hold off on Q4 billing",
+    "ours": "",
+    "official": "she will hold off on q4 billing until she comes back",
+    "note": "Not in our decisions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mike Nault, clerk",
+    "ours": "Mike n (member)",
+    "official": "chair- john reynolds , vice-chair- brett ramsden , clerk- mike nault",
+    "note": "Our truncated name is the clerk Mike Nault, and the role differs from 'member' too.",
+    "official_reading": "Mike Nault"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Dave McDonald",
+    "ours": "Dave McDonald (member)",
+    "official": "members: dave macdonald and mike mackin",
+    "note": "Spelling differs; same person.",
+    "official_reading": "Dave MacDonald"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Paula, business manager",
+    "ours": "Paula (business manager)",
+    "official": "bill bernard , business manager- paula bertram",
+    "note": "We have only the first name; the official minutes give Paula Bertram.",
+    "official_reading": "Paula Bertram"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Jane rley",
+    "ours": "Jane rley (staff)",
+    "official": "minutes clerk- jane ranley",
+    "note": "Garbled surname; the official minutes give Jane Ranley, minutes clerk.",
+    "official_reading": "Jane Ranley"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair John, surname",
+    "ours": "John (chair (as evident; also referred to as speaking for the commission))",
+    "official": "chair- john reynolds , vice-chair- brett ramsden , clerk- mike nault",
+    "note": "We have only the first name; the official minutes give John Reynolds.",
+    "official_reading": "John Reynolds"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Mike Mackin and Bill Bernard",
+    "ours": "Mike Mackin (member)",
+    "official": "members: dave macdonald and mike mackin",
+    "note": "Same; Bill Bernard is also listed as DPW director in both.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Brett Ramsden, vice-chair",
+    "ours": "",
+    "official": "vice-chair- brett ramsden , clerk- mike nault",
+    "note": "The vice-chair is not in our attendee list."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T07:44:13Z",
+   "cost_usd": 0.250705
+  }
+ }
+}

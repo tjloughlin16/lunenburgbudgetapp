@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2024-05-02",
  "docid": "6555",
@@ -12,6 +12,166 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded in these minutes. While the meeting was called to order and adjourned, and budgetary matters were discussed, no motions with recorded votes are stated in the text.",
- "cost_usd": 0.0678445
+ "note": "No votes are recorded: the minutes contain no motion, vote, or adjournment motion, so the votes list is empty. The header lists five members, but the Present line names only McGrath, Lakso and Sanderson; the minutes do not state whether Boussom and Lordan were absent, so they are marked not stated. The minutes spell the commenter 'Ana Lockwood' in Public Comment and 'Anna Lockwood' in Correspondence; both are recorded as printed. Several agenda items are one-line summaries with no detail. The minutes contain no dollar figures.",
+ "cost_usd": 0.013369370000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: mcgrath, lakso, sanderson"
+  },
+  {
+   "name": "Bill Lakso",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: mcgrath, lakso, sanderson"
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "member",
+   "status": "present",
+   "quote": "present: mcgrath, lakso, sanderson"
+  },
+  {
+   "name": "Kevin Boussom",
+   "role": "member",
+   "status": "not stated",
+   "quote": "kevin boussom, member"
+  },
+  {
+   "name": "Megan Lordan",
+   "role": "member",
+   "status": "not stated",
+   "quote": "megan lordan, member"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "ana lockwood spoke concerning perceived misinformation in the minutes"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "McGrath and the Commissioners are to clean and restore antique directional markers stored at the Historical Society, with the intention of resetting them in their original positions in town.",
+   "quote": "mcgrath and commissioners to clean and restore antique directional markers being stored at the historical society, with the intention to reset them in their original positions in town."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hometown Heroes Banners budget",
+   "what_was_recorded": "The minutes record a fund to be used for the Hometown Heroes Banner program, with no dollar amount printed.",
+   "quote": "fund to be used for hometown heroes banner program",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cemetery grant and Community Preservation Act funding",
+   "what_was_recorded": "Possible grant sources for cemetery work were discussed, and other towns' cemeteries were noted as having received Community Preservation Act money; no dollar figures are printed.",
+   "quote": "have received money for wall repair and restoration, as well as gravestone and general cemetery restoration",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "",
+   "topic": "perceived misinformation in minutes about Marshall Park; asks for video recording of meetings",
+   "quote": "ana lockwood spoke concerning perceived misinformation in the minutes regarding the underground structures at marshall park and the testimony of members of the park commission"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Correspondence",
+   "resolution": "received; no action stated",
+   "quote": "chair mcgrath received an email from anna lockwood requesting the recording of meetings.",
+   "tags": [
+    "public records",
+    "recording",
+    "APDC",
+    "cemeteries"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "heard; no action stated",
+   "quote": "ana lockwood spoke concerning perceived misinformation in the minutes regarding the underground structures at marshall park",
+   "tags": [
+    "Marshall Park",
+    "minutes accuracy",
+    "recording"
+   ]
+  },
+  {
+   "topic": "Town Wide Survey",
+   "resolution": "no action; no new information",
+   "quote": "town wide survey - no new information",
+   "tags": [
+    "survey"
+   ]
+  },
+  {
+   "topic": "Hometown Heroes Banners",
+   "resolution": "continued; progress expected in June",
+   "quote": "hometown heroes banners - expect progress in june",
+   "tags": [
+    "Hometown Heroes",
+    "banners"
+   ]
+  },
+  {
+   "topic": "763 Mass Ave Demo Delay",
+   "resolution": "no action; comment recorded",
+   "quote": "someone wishing to purchase and restore property was told it was under contract, despite a for sale sign in front of the property.",
+   "tags": [
+    "demolition delay",
+    "763 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Budget",
+   "resolution": "noted; fund designated for banner program",
+   "quote": "fund to be used for hometown heroes banner program",
+   "tags": [
+    "budget",
+    "Hometown Heroes"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "directed; clean and reset directional markers; Demolition by Neglect reported",
+   "quote": "mcgrath reported that the historic home at the corner of lancaster ave and goodrich st was experiencing demolition by neglect",
+   "tags": [
+    "directional markers",
+    "demolition by neglect",
+    "Lancaster Ave",
+    "Goodrich St"
+   ]
+  },
+  {
+   "topic": "Meeting Adjournment",
+   "resolution": "adjourned at 7:26 pm; no motion recorded",
+   "quote": "meeting adjournment 7:26 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "cemeteries",
+  "demolition delay",
+  "demolition by neglect",
+  "Hometown Heroes banners",
+  "public records",
+  "recording requests",
+  "Community Preservation Act",
+  "historic preservation",
+  "Marshall Park",
+  "directional markers"
+ ],
+ "dropped_unquoted_by_field": {}
 }

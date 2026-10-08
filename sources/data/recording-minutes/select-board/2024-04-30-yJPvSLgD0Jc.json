@@ -1,0 +1,669 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2024-04-30",
+ "video_id": "yJPvSLgD0Jc",
+ "video_url": "https://www.youtube.com/watch?v=yJPvSLgD0Jc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-04-30-yJPvSLgD0Jc.json",
+  "sha256": "ed36669ac31762312b0e5a8200ed15a3393515cc0eedbed56401034a77981271",
+  "caption_lines": 247,
+  "segments": 1908
+ },
+ "recording": {
+  "duration_s": 5186,
+  "duration": "1:26",
+  "spoken_chars": 64855,
+  "words_approx": 10809
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04302024-6550",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-04-30-agenda-6550.txt",
+   "path": "sources/meetings/select-board/2024-04-30-agenda-6550.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04302024-6550",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-04-30-minutes-6550.txt",
+   "path": "sources/meetings/select-board/2024-04-30-minutes-6550.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T07:46:01Z",
+  "cost_usd": 0.3878696
+ },
+ "minutes": {
+  "headline": "Select Board approved two toll booths, a revenue turnover policy and appointments; water district previewed May 16 vote costs.",
+  "summary": "The vice chair ran the meeting. The board heard public comment from a cemetery commissioner write-in candidate, then the Water Commissioners chair on Article 25 and treatment plant costs ahead of the May 16 vote; members said they could not read his material. It approved two toll booth requests, a Council on Aging appointment, two ratifications and the revenue turnover policy. It also covered Town Meeting logistics, capital plan status, a student award idea, the surplus property policy, the manager evaluation timeline and scheduling.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr Franco",
+    "role": "vice chair, chairing"
+   },
+   {
+    "name_as_heard": "Mr n solo / Mr Alonzo",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Jeff",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Madam Town Manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "Mark bur",
+    "role": "presenter, chair of Board of Water Commissioners"
+   },
+   {
+    "name_as_heard": "Debbie Lincoln",
+    "role": "presenter, chair of Council on Aging"
+   },
+   {
+    "name_as_heard": "Miss hemp",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 175,
+    "speaker_as_heard": "John Bowen 162 Highland Street",
+    "stated_role": "write-in candidate for cemetery commissioner",
+    "topic": "Criticised the cemetery commission, urged making it a corporation and asked for the board's endorsement."
+   },
+   {
+    "t": 533,
+    "topic": "Same speaker replied that he was not campaigning after a board member said it bordered on campaigning."
+   }
+  ],
+  "tags": [
+   "capital",
+   "facilities",
+   "fees",
+   "hiring",
+   "override",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 1916,
+    "motion": "Accept toll booth fundraiser request for June 1st, 9 a.m. to 2 p.m., by the Fitchburg Leominster Shriners Club",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 2087,
+    "motion": "Approve toll booth fundraiser on May 22nd, 4 to 7 p.m., for the Boys and Girls Club",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2317,
+    "motion": "Appoint Elena Christopher to the Council on Aging, term to expire June 30th 2026",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2420,
+    "motion": "Ratify town manager's appointment of alternate plumbing gas inspector Jeremy Pierce",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 2460,
+    "motion": "Ratify appointment of seasonal lifeguard Cole kefir",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2857,
+    "motion": "Approve the revenue turnover policy as amended",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5158,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 259,
+    "topic": "Cemetery donation and DPW cost",
+    "what_was_said": "A speaker said a donation was returned because the commission cannot hold money, and cited DPW wages for cemetery work.",
+    "figures_as_heard": [
+     "$175,000",
+     "$22,000"
+    ]
+   },
+   {
+    "t": 1019,
+    "topic": "Water treatment plant cost per customer",
+    "what_was_said": "The Water Commissioners chair gave quarterly per-customer costs for treating wells under state revolving fund or bond financing.",
+    "figures_as_heard": [
+     "$13.79",
+     "$177 23",
+     "$21,000",
+     "$10 per quarter",
+     "$1,200 over 30 years"
+    ]
+   },
+   {
+    "t": 2774,
+    "topic": "Revenue turnover threshold",
+    "what_was_said": "The turnover threshold was raised and timing made weekly.",
+    "figures_as_heard": [
+     "250"
+    ]
+   },
+   {
+    "t": 2961,
+    "topic": "Salary reserve transfer",
+    "what_was_said": "Additional funds for FY24 wage adjustments come from the reserve fund into the salary reserve.",
+    "figures_as_heard": [
+     "13,570 and. 73",
+     "239,000 $73.95"
+    ]
+   },
+   {
+    "t": 4378,
+    "topic": "Senior tax relief impact",
+    "what_was_said": "Members said relief given is minimal and the cap limits it.",
+    "figures_as_heard": [
+     "10 or $15,000",
+     "400,000",
+     "30 applicants"
+    ]
+   },
+   {
+    "t": 3957,
+    "topic": "Surplus property bid threshold",
+    "what_was_said": "Items of the threshold value or more must be competitively bid.",
+    "figures_as_heard": [
+     "$10,000"
+    ]
+   },
+   {
+    "t": 2501,
+    "topic": "Town Meeting lunch",
+    "what_was_said": "School offers bag lunches at Town Meeting.",
+    "figures_as_heard": [
+     "$7 cash"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 2961,
+    "description": "Reserve fund to salary reserve account for FY24 wage adjustments",
+    "amount_as_heard": "13,570 and. 73",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1645,
+    "decision": "Joint meeting with the water district tentatively the 14th, date to be confirmed by staff."
+   },
+   {
+    "t": 3848,
+    "decision": "Board agreed to do a student award built around select board member for a day; no formal vote."
+   },
+   {
+    "t": 4805,
+    "decision": "Next meeting leaning toward Wednesday the 7th/Thursday the 9th pending room conflicts."
+   },
+   {
+    "t": 4150,
+    "decision": "Surplus property policy deferred to a later meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 175,
+    "topic": "Pledge, open meeting notice, board comment",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 175,
+    "t_end": 553,
+    "topic": "Public comment on cemetery commission",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 553,
+    "t_end": 756,
+    "topic": "Announcements: Town Meeting, census, dogs, absentee voting",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 756,
+    "t_end": 1874,
+    "topic": "Water district: Article 25 and treatment plant costs, scheduling",
+    "resolution": "referred",
+    "tags": [
+     "water-sewer",
+     "warrant-article",
+     "debt"
+    ]
+   },
+   {
+    "t_start": 1874,
+    "t_end": 2128,
+    "topic": "Toll booth requests",
+    "resolution": "voted",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2128,
+    "t_end": 2480,
+    "topic": "Appointments and ratifications",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 2480,
+    "t_end": 2690,
+    "topic": "Town manager report on Town Meeting logistics",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 2690,
+    "t_end": 2877,
+    "topic": "Revenue turnover policy",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2877,
+    "t_end": 3406,
+    "topic": "Town meeting warrant updates and capital plan status",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "warrant-article",
+     "transfers"
+    ]
+   },
+   {
+    "t_start": 3406,
+    "t_end": 3869,
+    "topic": "PTO student award idea",
+    "resolution": "no resolution",
+    "tags": []
+   },
+   {
+    "t_start": 3869,
+    "t_end": 4150,
+    "topic": "Surplus property policy",
+    "resolution": "referred",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 4150,
+    "t_end": 4600,
+    "topic": "Manager evaluation, senior tax relief, legislation",
+    "resolution": "no resolution",
+    "tags": [
+     "personnel",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 4600,
+    "t_end": 5073,
+    "topic": "Scheduling",
+    "resolution": "no resolution",
+    "tags": []
+   },
+   {
+    "t_start": 5073,
+    "t_end": 5181,
+    "topic": "Public comment and adjournment",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "override"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote counts on several motions not stated beyond 'all in favor'.",
+   "Water district figures garbled by captions and slides not visible."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved the revenue turnover policy as amended, with a raised threshold and weekly timing.",
+    "t": 2857
+   },
+   {
+    "line": "The board approved two toll booth fundraiser requests, one for the Fitchburg Leominster Shriners Club and one for the Boys and Girls Club.",
+    "t": 1916
+   },
+   {
+    "line": "The Water Commissioners chair previewed treatment plant costs per customer ahead of the May 16 vote; members said they could not read his material.",
+    "t": 1019
+   },
+   {
+    "line": "The board appointed a Council on Aging member and ratified two appointments, a plumbing and gas inspector and a seasonal lifeguard.",
+    "t": 2317
+   },
+   {
+    "line": "The surplus property policy was deferred to a later meeting, and a joint meeting with the water district was tentatively set for the 14th.",
+    "t": 4150
+   }
+  ],
+  "why_it_matters": [
+   "The water treatment plant costs heard here feed into the May 16 vote, which residents will be asked to take and which bears on what water customers pay.",
+   "The revenue turnover policy sets how often and above what amount town departments hand collected money to the town, which touches how quickly town cash is accounted for."
+  ],
+  "watch_next": [
+   "The May 16 water district vote on Article 25 and treatment plant costs.",
+   "The joint meeting with the water district, tentatively the 14th and awaiting staff confirmation."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T07:46:10Z",
+   "cost_usd": 0.21848900000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04302024-6550",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-04-30-minutes-6550.txt",
+   "path": "sources/meetings/select-board/2024-04-30-minutes-6550.pdf"
+  },
+  "official_sha256": "f247fdcc788373b4432884389e19df378f085890bad3ed9fb2b188a819c406a6",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all six votes, and every vote passed 4-0 in the official minutes. Most differences are caption errors in names and figures. The main thing to check is the reserve fund item, which our minutes label as a salary reserve transfer and the official minutes describe as a budget adjustment article, along with a member ours lists as present but the official minutes list as the absent chair.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 5,
+   "discrepancy": 2,
+   "only_in_ours": 7,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Shriners toll booth fundraiser vote, June 1",
+    "t": 1916,
+    "ours": "Accept toll booth fundraiser request for June 1st, 9 a.m. to 2 p.m., by the Fitchburg Leominster Shriners Club — passed 4-0",
+    "official": "clerk nuzzolo moved to approve the tollbooth fundraiser request for june 1st from 9am",
+    "note": "Same motion, date, hours, sponsor and 4-0 outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Boys and Girls Club toll booth vote, May 22",
+    "t": 2087,
+    "ours": "Approve toll booth fundraiser on May 22nd, 4 to 7 p.m., for the Boys and Girls Club — passed",
+    "official": "member alonzo moved to approve the tollbooth fundraiser request on may 22, 2024",
+    "note": "Same motion and outcome; official records 4-0-0 and no hours."
+   },
+   {
+    "kind": "agree",
+    "about": "Elena Christopher Council on Aging appointment",
+    "t": 2317,
+    "ours": "Appoint Elena Christopher to the Council on Aging, term to expire June 30th 2026 — passed",
+    "official": "member alonzo moved to appoint elena christopher, 91 autumn road to the council on aging, term to expire june 30, 2026.",
+    "note": "Same appointee, body, term and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Ratify Jeremy Pierce, alternate plumbing/gas inspector",
+    "t": 2420,
+    "ours": "Ratify town manager's appointment of alternate plumbing gas inspector Jeremy Pierce — passed 4-0",
+    "official": "clerk nuzzolo moved to ratify the town manager's appointment of alternate",
+    "note": "Same appointment and 4-0 outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Seasonal lifeguard name",
+    "t": 2460,
+    "ours": "Ratify appointment of seasonal lifeguard Cole kefir — passed",
+    "official": "member alonzo moved to ratify of the town manager's appointment of seasonal",
+    "official_reading": "Cole Keifer",
+    "note": "Same vote; the surname was misheard (the official minutes' structured summary gives Cole Keifer)."
+   },
+   {
+    "kind": "agree",
+    "about": "Revenue turnover policy as amended",
+    "t": 2857,
+    "ours": "Approve the revenue turnover policy as amended — passed",
+    "official": "member tom alonzo moved to approve the revenue turnover policy has amended and",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Reserve fund amount",
+    "t": 2961,
+    "ours": "Reserve fund to salary reserve account for FY24 wage adjustments — 13,570 and. 73 (discussed only)",
+    "official": "the prior budget adjustment article was finalized at $239,573.73 coming out of reserve fund.",
+    "official_reading": "$239,573.73",
+    "note": "The garbled '13,570 and. 73' and '239,000 $73.95' appear to be the same $239,573.73. A person should check our 'salary reserve account / FY24 wage adjustments' label, since the official text calls it a prior budget adjustment article and records no transfer vote."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Hickory Hills well cost per water taker",
+    "t": 1019,
+    "ours": "$10 per quarter, $1,200 over 30 years",
+    "official": "currently under a 30-year plan the hickory hills well will cost each water taker $622 per quarter.",
+    "note": "Ours has no $622 and gives $10 per quarter and $1,200 over 30 years. This is not explained by misheard digits, so check the recording for the per-quarter and 30-year figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Revenue turnover threshold",
+    "t": 2774,
+    "ours": "Revenue turnover threshold: 250",
+    "official": "so they compromised to weekly and to also increase the threshold to $250.",
+    "note": "Same threshold."
+   },
+   {
+    "kind": "agree",
+    "about": "Surplus property policy threshold",
+    "t": 3957,
+    "ours": "Surplus property bid threshold: $10,000",
+    "official": "they are require by mass general law to have a policy for any surplus items less than $10,000.",
+    "note": "Same $10,000 figure; ours calls it a bid threshold, the official minutes a policy threshold."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cemetery donation and DPW cost",
+    "t": 259,
+    "ours": "Cemetery donation and DPW cost: $175,000, $22,000",
+    "official": "",
+    "note": "The official minutes record no such figures; check the recording at this time."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior tax relief figures",
+    "t": 4378,
+    "ours": "Senior tax relief impact: 10 or $15,000, 400,000, 30 applicants",
+    "official": "",
+    "note": "The official minutes give no numbers, only that the board needs the count of residents from the assessor."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town Meeting lunch price",
+    "t": 2501,
+    "ours": "Town Meeting lunch: $7 cash",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Joint meeting with water district",
+    "t": 1645,
+    "ours": "Joint meeting with the water district tentatively the 14th, date to be confirmed by staff.",
+    "official": "",
+    "note": "Not in the official minutes, which record only the request to put the topic on next week's agenda."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Student award, select board member for a day",
+    "t": 3848,
+    "ours": "Board agreed to do a student award built around select board member for a day; no formal vote.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting date",
+    "t": 4805,
+    "ours": "Next meeting leaning toward Wednesday the 7th/Thursday the 9th pending room conflicts.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Surplus property policy deferral",
+    "t": 4150,
+    "ours": "Surplus property policy deferred to a later meeting.",
+    "official": "",
+    "note": "The official minutes mention only the legal threshold and record no deferral; a person should check whether it was deferred."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Water well funding topic returning to next week's agenda",
+    "ours": "",
+    "official": "mr. bursch confirmed and stated it's a large issue that impacts the town.",
+    "note": "A decision to bring the topic back next week, with no vote; ours has no matching item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager evaluation forms",
+    "ours": "",
+    "official": "vice chair franco stated that he agrees and that they need to be aggressive about it.",
+    "note": "Official records agreement to send out evaluation forms now; ours has nothing on it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Senior tax relief count from assessor",
+    "ours": "",
+    "official": "they need this information from the tax assessor.",
+    "note": "The board needs the number of residents taking senior tax relief and will get it from the assessor; ours records only figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Mr Franco, vice chair presiding",
+    "ours": "Mr Franco (vice chair, chairing)",
+    "official": "vice chair lou franco called the meeting to order at 7:00 pm",
+    "note": "Same person and role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Alonzo",
+    "ours": "Mr n solo / Mr Alonzo (member)",
+    "official": "member tom alonzo thanked everyone for coming out and watching the boys and girls club",
+    "official_reading": "Tom Alonzo",
+    "note": "The 'Mr n solo' variant is a misheard Alonzo."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Emkey",
+    "ours": "Miss hemp (member)",
+    "official": "member emkey requested that this be discussed at a different time.",
+    "official_reading": "Renee Emkey",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Water commissioners chair",
+    "ours": "Mark bur (presenter, chair of Board of Water Commissioners)",
+    "official": "mark bursch, chair of the water district commission addressed the board and stated that he",
+    "official_reading": "Mark Bursch",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Debbie Lincoln, Council on Aging chair",
+    "ours": "Debbie Lincoln (presenter, chair of Council on Aging)",
+    "official": "debbie lincoln 46 hemlock drive, chair of the council on aging addressed the board and",
+    "note": "Same person and role."
+   },
+   {
+    "kind": "agree",
+    "about": "Town Manager Heather Lemieux",
+    "ours": "Madam Town Manager (town manager)",
+    "official": "town manager heather lemieux stated that annual town meeting is saturday may 4, 2024 at",
+    "note": "Ours lists 'Heather (staff)' and 'Madam Town Manager' separately; both appear to be the Town Manager."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Mr Jeff listed as present member",
+    "ours": "Mr Jeff (member)",
+    "official": "members absent: chair michael-ray jeffreys",
+    "note": "Ours lists a 'Mr Jeff' as a member in attendance, but the official minutes list Chair Jeffreys as absent. A person should check whether 'Jeff' was a misheard name or whether the chair attended."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Clerk Caesar Nuzzolo present",
+    "ours": "",
+    "official": "clerk nuzzolo moved to approve the tollbooth fundraiser request for june 1st from 9am",
+    "note": "Ours lists no clerk or Nuzzolo as an attendee."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment speakers John Bowen and Jeanmarie Price",
+    "ours": "",
+    "official": "john bowen and jeanmarie price, 162 highland street addressed the board.",
+    "note": "Public comment on the Cemetery Commission is not in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T07:47:44Z",
+   "cost_usd": 0.272137
+  }
+ }
+}

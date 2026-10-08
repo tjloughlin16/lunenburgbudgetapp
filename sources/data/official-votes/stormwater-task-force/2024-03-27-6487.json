@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2024-03-27",
  "docid": "6487",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the meetings on 12/28/23, 1/18/24, and 2/22/24",
+   "motion": "Approve the minutes of the meetings of 12/28/23, 1/18/24, and 2/22/24.",
    "moved_by": "John Beale",
    "seconded_by": "Renee Emkey",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from the meetings on 12/28/23, 1/18/24, and 2/22/24 by john beale, seconded by renee emkey. roll call vote. jenny pewtherer aye, renee emkey aye, john beale aye, tim willsmer aye."
+   "quote": "there was a motion to approve the minutes from the meetings on 12/28/23, 1/18/24, and 2/22/24 by john beale, seconded by renee emkey."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John Beale",
    "seconded_by": "Renee Emkey",
    "outcome": "passed",
@@ -29,6 +29,257 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0702107
+ "note": "Text extract of the minutes with clean page breaks; no scan. One roll-call vote is recorded (approval of minutes); the minutes print no numeric count, only four named ayes, so outcome is recorded as \"passed\". The adjournment vote is recorded as \"All in favor\" with no count. The CEI presenter and \"Nick from CEI\" are mentioned but not named as attendees. Public comment: none. Budget figures are the Director's preliminary, self-described as guesses in part.",
+ "cost_usd": 0.01481207,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tim Willsmer",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair tim willsmer, member john beale, dpw director bill bernard, select board representative renee emkey, conservation commission representative jenny pewtherer."
+  },
+  {
+   "name": "John Beale",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair tim willsmer, member john beale, dpw director bill bernard, select board representative renee emkey, conservation commission representative jenny pewtherer."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "members present: chair tim willsmer, member john beale, dpw director bill bernard, select board representative renee emkey, conservation commission representative jenny pewtherer."
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Select Board Representative",
+   "status": "present",
+   "quote": "members present: chair tim willsmer, member john beale, dpw director bill bernard, select board representative renee emkey, conservation commission representative jenny pewtherer."
+  },
+  {
+   "name": "Jenny Pewtherer",
+   "role": "Conservation Commission Representative",
+   "status": "present",
+   "quote": "members present: chair tim willsmer, member john beale, dpw director bill bernard, select board representative renee emkey, conservation commission representative jenny pewtherer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Task Force deferred appointing a new Vice Chair until the new member is present.",
+   "quote": "the task force wants to appoint a new vice chair but wants to wait until the new member is present."
+  },
+  {
+   "decision": "Bill Bernard will ask Nick from CEI about impervious surfaces at businesses and the assessments.",
+   "quote": "bill bernard will ask nick from cei about impervious surfaces at businesses and the assessments."
+  },
+  {
+   "decision": "Bill Bernard will run the idea of filtering water to a different location before it goes downstream by Nick from CEI.",
+   "quote": "bill bernard will run this idea by nick from cei."
+  },
+  {
+   "decision": "Next steps toward a stormwater plan include writing bylaws and specifications, and turning over information on business footprints to CEI.",
+   "quote": "writing up bylaws and specifications."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter 90 road funding request",
+   "what_was_recorded": "Bill Bernard has requested Chapter 90 project funding for four roads, and members noted Chapter 90 funding is far short of need.",
+   "quote": "bill bernard has put in a request for projects on 4 roads totaling $700,000.",
+   "figures_as_printed": [
+    "$700,000",
+    "over 2 million dollars"
+   ]
+  },
+  {
+   "topic": "Chapter 90 total available",
+   "what_was_recorded": "Renee Emkey noted that even with over two million dollars in Chapter 90 funding, the need is not close to covered.",
+   "quote": "renee emkey states that even though there is over 2 million dollars in chapter 90 funding",
+   "figures_as_printed": [
+    "over 2 million dollars"
+   ]
+  },
+  {
+   "topic": "Chapter 90 for FY 2025 drainage work",
+   "what_was_recorded": "Bill Bernard confirmed FY 2025 Chapter 90 funding will go toward drainage swales on Reservoir Road and multiple drainage improvements; no dollar figure was printed.",
+   "quote": "bill bernard confirms that funding for fy 2025 will be used toward drainage swales on reservoir road and multiple drainage improvements.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Equipment purchase by loan",
+   "what_was_recorded": "Bill Bernard described taking out a loan to buy equipment as an option; no dollar figure was printed.",
+   "quote": "bill bernard states an option to purchase equipment would be to take out a loan then just pay that loan.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Preliminary 1-year DPW budget: engineering",
+   "what_was_recorded": "The preliminary budget includes a $50,000 expense for engineering small audits with CEI.",
+   "quote": "a $50,000 expense for engineering small audits with cei",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Stormwater line item",
+   "what_was_recorded": "This year's stormwater line item totals $141,000, with $86,000 already spent.",
+   "quote": "there is a stormwater line item for this year totaling $141,000 and currently $86,000 has already been spent.",
+   "figures_as_printed": [
+    "$141,000",
+    "$86,000"
+   ]
+  },
+  {
+   "topic": "Drainage line item",
+   "what_was_recorded": "This year's drainage line item totals $60,000, with $59,000 already spent.",
+   "quote": "there is a drainage line item for this year totaling $60,000 and currently $59,000 has been spent.",
+   "figures_as_printed": [
+    "$60,000",
+    "$59,000"
+   ]
+  },
+  {
+   "topic": "Stormwater labor cost",
+   "what_was_recorded": "An estimated labor line was discussed; approximately $22,000 was spent on labor in 2023.",
+   "quote": "in 2023 approximately $22,000 was spent on labor.",
+   "figures_as_printed": [
+    "$22,000"
+   ]
+  },
+  {
+   "topic": "Flat Hill and Page Street project and smaller projects",
+   "what_was_recorded": "The big project, repairs on Flat Hill and Page Street, is estimated around $200,000; two smaller projects are roughly $50,000, possibly replacing a pipe or two.",
+   "quote": "the big project would be the repairs on flat hill and page street and that is estimated around $200,000",
+   "figures_as_printed": [
+    "$200,000",
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Stormwater utility cost",
+   "what_was_recorded": "Renee Emkey asked about a stormwater utility; Bill Bernard confirmed a best-guess of roughly 1.1 million in the first year, falling to $800,000 to $900,000 annually after.",
+   "quote": "to get a stormwater utility going its roughly 1.1 million for the first year. after the first year it decreases down to $800,000 to $900,000 annually.",
+   "figures_as_printed": [
+    "1.1 million",
+    "$800,000 to $900,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "I. Public comment",
+   "resolution": "no action",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "II. Announcements",
+   "resolution": "no action",
+   "quote": "there were no announcements.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "III. Appointment of Vice Chair",
+   "resolution": "deferred until the new member is present",
+   "quote": "the task force wants to appoint a new vice chair but wants to wait until the new member is present.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "III. CEI presentation and Chapter 90 funding",
+   "resolution": "discussed; no action",
+   "quote": "in general, the task force members felt the presentation was very informative.",
+   "tags": [
+    "CEI",
+    "Chapter 90",
+    "stormwater budget",
+    "drainage",
+    "stormwater utility"
+   ]
+  },
+  {
+   "topic": "III. Next steps toward a stormwater plan",
+   "resolution": "discussed; tasks assigned to staff and CEI",
+   "quote": "tim willsmer discussed potential next steps to move towards a stormwater plan.",
+   "tags": [
+    "bylaws",
+    "stormwater plan",
+    "CEI",
+    "business footprints"
+   ]
+  },
+  {
+   "topic": "IV. Meeting minutes",
+   "resolution": "approved",
+   "quote": "there was a motion to approve the minutes from the meetings on 12/28/23, 1/18/24, and 2/22/24 by john beale, seconded by renee emkey.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "V. Middle/High stormwater garden",
+   "resolution": "discussed; project start late June",
+   "quote": "bill bernard is looking at late june once school is over to start the project.",
+   "tags": [
+    "stormwater garden",
+    "school",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "VI. Public outreach",
+   "resolution": "discussed; outline circulated for suggestions",
+   "quote": "john beale put together an outline of what could be presented to the public to educate residents.",
+   "tags": [
+    "public outreach"
+   ]
+  },
+  {
+   "topic": "VI. Items for next meeting",
+   "resolution": "discussed; resident count requested",
+   "quote": "the task force is requesting information about how many residents are in town.",
+   "tags": [
+    "MS4 permit",
+    "residents",
+    "projects"
+   ]
+  },
+  {
+   "topic": "VIII. Adjourn",
+   "resolution": "adjourned",
+   "quote": "there was a motion to adjourn by john beale, seconded by renee emkey. all in favor.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "Chapter 90",
+  "DPW budget",
+  "CEI consultant",
+  "MS4 permit",
+  "stormwater utility",
+  "drainage",
+  "public outreach",
+  "equipment",
+  "bylaws"
+ ],
+ "dropped_unquoted_by_field": {}
 }

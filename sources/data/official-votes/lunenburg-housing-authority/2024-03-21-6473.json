@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2024-03-21",
  "docid": "6473",
@@ -14,47 +14,236 @@
   {
    "motion": "Approve the minutes of February 29, 2024.",
    "moved_by": "Tenant Board Member",
-   "seconded_by": "Board Member Deborah A. H. Christen",
+   "seconded_by": "Deborah A. H. Christen",
    "outcome": "passed",
    "procedural": true,
    "quote": "with no discussion, tenant board member made a motion to approve the minutes; board member deborah a. h. christen seconded, with all in favor."
   },
   {
-   "motion": "Approve the January and February 2024 financials as presented.",
+   "motion": "Approve the January and February, 2024 financials as presented.",
    "moved_by": "Treasurer",
-   "seconded_by": "Board Member Deborah A. H. Christen",
+   "seconded_by": "Deborah A. H. Christen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "treasurer made a motion to approve the january and february, 2024 financials as presented; board member deborah a. h. christen seconded, with all in favor."
+   "quote": "treasurer made a motion to approve the january and february, 2024 financials as presented;"
   },
   {
-   "motion": "Approve Resolution 2024-4 RSC Grant Application.",
+   "motion": "Approve Resolution 2024-4, the RSC Grant Application.",
    "moved_by": "Treasurer",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by treasurer to approve the rsc grant application ; tenant board member seconded the motion, with all in favor",
-   "quote_taken_from_text": true
+   "quote": "motion made by treasurer to approve the rsc grant application ; tenant board member seconded the motion, with all in favor."
   },
   {
-   "motion": "Conditionally approve Resolution 2024-5 CO1 Federal Pacific Panel Replacement Project 16204 based on response from engineers regarding stated board concerns.",
-   "moved_by": "Board Member Deborah A. H. Christen",
+   "motion": "Conditionally approve Resolution 2024-5, CO1 Federal Pacific Panel Replacement Project 16204, based on the response from engineers to the stated board concerns.",
+   "moved_by": "Deborah A. H. Christen",
    "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by board member deborah a. h. christen to conditionally approve , based off of the response from engineers with the stated board concerns, the co1 federal pacific panel replacement project 16204; treasurer seconded the motion, with all in favor",
-   "quote_taken_from_text": true
+   "quote": "motion made by board member deborah a. h. christen to conditionally approve , based off of the response from engineers with the stated board concerns"
   },
   {
-   "motion": "Adjourn the meeting.",
-   "moved_by": "Board Member Deborah A. H. Christen",
+   "motion": "Adjourn the meeting at 2:36 p.m.",
+   "moved_by": "Deborah A. H. Christen",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there being no further business, board member deborah a. h. christen made a motion to adjourn the meeting 2:36 p.m. tenant board member seconded and with all in favor the meeting was adjourned."
+   "quote": "board member deborah a. h. christen made a motion to adjourn the meeting 2:36 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11672370000000001
+ "note": "Plain text extraction of a digital document, not a scan; all pages were read. Vote counts are not printed: the minutes say \"with all in favor\", recorded here as passed without a count. The mover of the minutes motion and of the adjournment seconder are printed as roles only (\"Tenant Board Member\"), not names. Dale Proulx is listed as absent under \"Members Absent\". No public comment speakers were recorded. Next meeting is printed as April 25, 2024.",
+ "cost_usd": 0.01493767,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "linda mcdonald-present, wayne caron-"
+  },
+  {
+   "name": "Dale Proulx",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "members present : members absent: linda mcdonald, vice chair dale proulx, chai r"
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "linda mcdonald-present, wayne caron-"
+  },
+  {
+   "name": "Nicole Waters",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "nicole waters-present , and deborah a.h. christen-present"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "nicole waters-present , and deborah a.h. christen-present"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "executive director benjamin gold, assistant executive director adam gautie , and"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "executive director benjamin gold, assistant executive director adam gautie , and"
+  },
+  {
+   "name": "Jade Tavares",
+   "role": "Administrative Assistance/Special Projects",
+   "status": "present",
+   "quote": "administrative assistance/special projects jade tavares , and assistant housing manager"
+  },
+  {
+   "name": "Jessica Davies",
+   "role": "Assistant Housing Manager Satellite Sites",
+   "status": "present",
+   "quote": "satellite sites jessica davies . the chair declared a quorum present"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to conditionally approve the change order, to be based on the engineer's response to the stated concerns, with the Assistant Executive Director to follow up.",
+   "quote": "the board members agreed to conditionally approve the change order and will be based off of the response from the engineer regarding"
+  },
+  {
+   "decision": "The Assistant Executive Director would look into the total breakdown of the change order cost.",
+   "quote": "assistant executive director stated he would look into the total breakdown of cost."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Change order, 667-1 Intercom System/Federal Pacific Panel Replacement",
+   "what_was_recorded": "A change order to rewire the feeders to the electric ranges from 3-wire to 4-wire, to meet electrical code, was reported.",
+   "figures_as_printed": [
+    "$63,662.89"
+   ],
+   "quote": "there is a change order in the amount of $63,662.89 to rewire the feeders to the electric"
+  },
+  {
+   "topic": "Whether labor was included in the change order",
+   "what_was_recorded": "A Tenant Board Member asked whether additional labor was included in the change order, and stated rewiring labor belonged in the original bid; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "asked if additional labor was included in the c hange o rder request"
+  },
+  {
+   "topic": "RSC Grant Application",
+   "what_was_recorded": "A grant application (Resolution 2024-4) was approved; the minutes print no grant amount.",
+   "figures_as_printed": [],
+   "quote": "resolution 202 4 -4 rsc grant application"
+  },
+  {
+   "topic": "January and February 2024 financials",
+   "what_was_recorded": "The financials for January and February 2024 were reviewed and approved; the minutes print no dollar figures.",
+   "figures_as_printed": [],
+   "quote": "the financials of january and february, 2024 were reviewed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opportunity for Public Comments",
+   "resolution": "no comments",
+   "quote": "1. opportunity for public comments - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Meeting called to order and minutes approved",
+   "resolution": "quorum declared; February 29, 2024 minutes approved",
+   "quote": "the chair declared a quorum present and opened the meeting at",
+   "tags": [
+    "roll call",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "no action; discussion of ethics trainings and MassNAHRO events",
+   "quote": "a discussion was held about the board member and ethics trainings",
+   "tags": [
+    "training",
+    "MassNAHRO"
+   ]
+  },
+  {
+   "topic": "Financial Report",
+   "resolution": "January and February 2024 financials approved",
+   "quote": "treasurer made a motion to approve the january and february, 2024 financials as presented",
+   "tags": [
+    "financials"
+   ]
+  },
+  {
+   "topic": "Administration: modernization work orders and state-aided housing report",
+   "resolution": "change order conditionally approved; occupancy and waiting list reported",
+   "quote": "the board members agreed to conditionally approve the change order and will be based off of the response from the engineer regarding",
+   "tags": [
+    "modernization",
+    "change order",
+    "occupancy",
+    "waiting list"
+   ]
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "none",
+   "quote": "6. unfinished business - none",
+   "tags": []
+  },
+  {
+   "topic": "New Business: RSC grant and CO1 Federal Pacific panel change order",
+   "resolution": "RSC Grant Application approved; CO1 conditionally approved",
+   "quote": "resolution 202 4 -4 rsc grant application . motion made by treasurer",
+   "tags": [
+    "grant",
+    "change order",
+    "electrical"
+   ]
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "received; no action recorded",
+   "quote": "eohlc phn 202 4 -3 updates to vacant unit policies for 2024",
+   "tags": [
+    "EOHLC",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:36 p.m.",
+   "quote": "board member deborah a. h. christen made a motion to adjourn the meeting 2:36 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "public housing",
+  "modernization",
+  "change order",
+  "electrical work",
+  "financials",
+  "grants",
+  "occupancy",
+  "waiting list",
+  "EOHLC correspondence"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-04-23",
  "docid": "6535",
@@ -12,56 +12,548 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Joel Ortega as full-time police officer",
+   "motion": "Ratify the Town Manager's appointment of Joel Ortega as full-time police officer.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by chair jeffreys to ratify the town manager's appointment of joel ortega to the position of full-time police officer, seconded by clerk nuzzolo. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+   "quote": "motion by chair jeffreys to ratify the town manager's appointment of joel ortega to the position of full-time police officer, seconded by clerk nuzzolo."
   },
   {
-   "motion": "Write off ambulance billing balances in the amount of $464,095.55",
+   "motion": "Write off ambulance billing debts in the amount of $464,095.55 as presented.",
    "moved_by": "Vice-Chair Franco",
    "seconded_by": "Member Alonzo",
-   "outcome": "passed 3-1",
+   "outcome": "passed 3-1-0",
    "procedural": false,
-   "quote": "motion by vice-chair franco to write off the ambulance debts in the amount of $464,095.55 as presented. seconded by member alonzo. call for the vote: vice-chair franco-aye, clerk nuzzolo-aye, member alonzo-aye, chair jeffreys-nay. the motion passed unanimously (3-1-0)."
+   "quote": "motion by vice-chair franco to write off the ambulance debts in the amount of $464,095.55 as presented. seconded by member alonzo."
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Allan Smith as Facilities Custodian",
+   "motion": "Ratify the Town Manager's appointment of Allan Smith as Facilities Custodian.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Vice Chair Franco",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by member alonzo to ratify the appointment of allan smith as facilities custodian as presented by the town manager. seconded by vice chair franco. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+   "quote": "motion by member alonzo to ratify the appointment of allan smith as facilities custodian"
   },
   {
-   "motion": "Ratify the appointments of Elizabeth Simeone as Beach Director and Mason Bowser and Paige Gengler as Seasonal Lifeguards",
+   "motion": "Ratify the Town Manager's appointment of Elizabeth Simeone as Beach Director and Mason Bowser and Paige Gengler as Seasonal Lifeguards.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Vice Chair Franco",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by member alonzo to ratify the appointment of elizabeth simeone as beach director and mason bowser and paige gengler as seasonal lifeguards as presented by the town manager. seconded by vice chair franco. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+   "quote": "motion by member alonzo to ratify the appointment of elizabeth simeone as beach director"
   },
   {
-   "motion": "Accept the minutes of October 10, 2023",
+   "motion": "Accept the minutes of October 10, 2023.",
    "moved_by": "Clerk Nuzzolo",
    "seconded_by": "Vice-Chair Franco",
    "outcome": "passed 3-0-1",
    "procedural": true,
-   "quote": "motion by clerk nuzzolo to accept the minutes of october 10, 2023. seconded by vice- chair franco. call for the vote: three-zero-one (member alonzo abstained as he was not at that meeting). the motion passed (3-0-1)",
-   "quote_taken_from_text": true
+   "quote": "motion by clerk nuzzolo to accept the minutes of october 10, 2023."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Approve the minutes of April 23, 2024.",
+   "moved_by": "Chair Caesar Nuzzolo",
+   "seconded_by": "Clerk Renee Emkey",
+   "outcome": "passed 4-0-1",
+   "procedural": true,
+   "quote": "chair caesar nuzzolo made the motion to approve the minutes of april 23, 2024."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Vice-Chair Lou Franco",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "member alonzo moved to adjourn. seconded by vice-chair lou franco. call for the vote: four-aye. the motion passed unanimously (4-0-0)."
+   "quote": "member alonzo moved to adjourn. seconded by vice-chair lou franco."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1253451
+ "note": "Text extraction of a 9-page digital PDF, not a scan; no OCR involved. Several internal inconsistencies in the minutes as printed, recorded as printed and not corrected: (1) The ambulance write-off motion records \"passed unanimously (3-1-0)\" while the roll call shows one nay (Chair Jeffreys), so the count is recorded as 3-1-0 and the word \"unanimously\" is not carried over. (2) Page 9's approval block names \"Chair Caesar Nuzzolo\", \"Clerk Renee Emkey\" and \"Member McLeod\", none of whom match the roster on page 1 (Jeffreys chair, Nuzzolo clerk, Emkey absent); it is recorded as printed. (3) The minutes' approval stamp reads \"Tuesday, January 6, 2026\" for a meeting dated April 23, 2024. (4) The Chapter 90 passage says \"spending plans going forward to FY 2016\", which is likely a typo for a later year; recorded as printed. (5) The Sharon Jordan 'Respectfully Submitted' block and the Jean-Marie Price attendance line are minimal; Price is listed as present with no recorded remarks. Dollar figures in the Water District item are the district's own communication, not Town budget figures. No transfers recorded. Votes on ratifications used 'Call for the vote: Four-aye' and printed counts were kept.",
+ "cost_usd": 0.022016769999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair michael-ray jeffreys, vice chair lou franco, clerk caesar nuzzolo"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "chair michael-ray jeffreys, vice chair lou franco, clerk caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair michael-ray jeffreys, vice chair lou franco, clerk caesar nuzzolo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "member tom alonzo announced that this friday is the 10th anniversary"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: member renee emkey"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "quarterly financial report from finance director ezequiel ayala"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "chief sullivan requested a write-off for ambulance billing balances that are uncollectable"
+  },
+  {
+   "name": "Gammel",
+   "role": "Police Chief",
+   "status": "not stated",
+   "quote": "police chief gammel notified the board that devon o'brien resigned effective april 19, 2024"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "mr. bernard provided a slide presentation on chapter 90 (state funds to towns for capital"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Chair of the Agricultural Commission",
+   "status": "remote",
+   "quote": "mr. matthew allison, chair of the agricultural commission attended via zoom."
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Chair of the Water District Commission",
+   "status": "present",
+   "quote": "mr. mark bursch, chair of the water district commission, announced that a townwide"
+  },
+  {
+   "name": "John Bowen",
+   "role": "resident, 162 Highland St.",
+   "status": "present",
+   "quote": "mr. john bowen and jean-marie price, 162 highland st., were present."
+  },
+  {
+   "name": "Jean-Marie Price",
+   "role": "resident, 162 Highland St.",
+   "status": "present",
+   "quote": "mr. john bowen and jean-marie price, 162 highland st., were present."
+  },
+  {
+   "name": "George Burden",
+   "role": "resident, 39 Cortland Circle",
+   "status": "present",
+   "quote": "m r. george burden, 39 cortland circle, believes the select board has authority to enforce an issue",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Dave Passios",
+   "role": "resident, 56 Whiting St.",
+   "status": "remote",
+   "quote": "mr. dave passios, 56 whiting st., via zoom."
+  },
+  {
+   "name": "Jen Duffy",
+   "role": "resident, 684 Flat Hill Rd.; member of the Agricultural Commission",
+   "status": "present",
+   "quote": "ms. jen duffy, 684 flat hill rd. ms. duffy attended in person."
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "Minute Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, sharon jordan minute clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board delayed the Review of the Draft Turnover Policy by one week so the public can be fully informed about the revenue turnover policy draft.",
+   "quote": "the board delayed this for a week to give enough time for the public to be fully informed about the revenue turnover policy draft."
+  },
+  {
+   "decision": "The Consent Calendar grouping of non-controversial Annual Town Meeting articles was accepted by the Board.",
+   "quote": "was presented by the town manager and accepted by the board."
+  },
+  {
+   "decision": "Chair Jeffreys will look into scheduling a meeting with the Water District Commissioners and the Superintendent about two weeks before the Water District's April 25 community meeting.",
+   "quote": "chair jeffreys said he would look into scheduling that meeting."
+  },
+  {
+   "decision": "Chair Jeffreys requested that the spending plans going forward to FY 2016 be included in the DPW presentation for the Finance Committee.",
+   "quote": "he requested that the spending plans going forward to fy 2016 be included in the dpw presentation for the finance committee."
+  },
+  {
+   "decision": "Chair Jeffreys requested a report that breaks out Medicare from non-Medicare bills on the ambulance receivables.",
+   "quote": "chair jeffreys requested a report that breaks out medicare from non-medicare bills"
+  },
+  {
+   "decision": "Member Alonzo requested that future ambulance write-off reports be broken down by fiscal year.",
+   "quote": "member alonzo requested that future reports be broken down by fiscal year"
+  },
+  {
+   "decision": "The Board agreed that a functioning Agricultural Commission is needed; Chair Jeffreys offered to meet with the Committee.",
+   "quote": "the board agreed that we need a functioning committee, and that representatives of the farming community would be hard to replace."
+  },
+  {
+   "decision": "The Board will propose two dates on which a Select Board member could meet with the Agricultural Commission when a quorum is available.",
+   "quote": "chair jeffreys offered that the board will propose two dates that a select board member could meet with the agcomm when a quorum is available."
+  },
+  {
+   "decision": "Chair Jeffreys requested that the Town Manager develop a standard template with a minimum size font for presentations to the Board, so those watching on TV can read the content.",
+   "quote": "chair jeffreys requested that the town manager develop a standard template with a minimum size font"
+  },
+  {
+   "decision": "Warrants were signed.",
+   "quote": "warrants were signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter 90 state road funding",
+   "what_was_recorded": "The DPW reported state Chapter 90 funding, the Town's FY 2024 allocations, its spending since FY 2020, and the unspent balance.",
+   "quote": "since fy 2020, lunenburg has spent $890,954 in chapter 90 funds, leaving $2,002,925 remaining unspent.",
+   "figures_as_printed": [
+    "$200 million",
+    "$418,064",
+    "$240,500",
+    "$22,000",
+    "$890,954",
+    "$2,002,925"
+   ]
+  },
+  {
+   "topic": "ARPA funds and DPW projects",
+   "what_was_recorded": "The Board noted that ARPA funds cannot be saved or spent on expenses already funded another way, and that Chapter 90 and ARPA needs may require a legal opinion.",
+   "quote": "arpa funds cannot be saved and also cannot be spent on already-planned expenses which were already funded another way.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Ambulance receivables write-off",
+   "what_was_recorded": "The Fire Chief requested a write-off of uncollectable ambulance billing balances back to 2019, which the Board approved by vote.",
+   "quote": "the total requested write-off is $464,095.55.",
+   "figures_as_printed": [
+    "$464,095.55",
+    "60%-65%",
+    "64%"
+   ]
+  },
+  {
+   "topic": "Quarterly financial report, FY24 Q2",
+   "what_was_recorded": "Revenue and expenditures through 12/31/23 were reported against the same period last year.",
+   "quote": "total revenue collected through 12/31/23 (fy24 q2) were $23,499,570.02, which is 6.09% ($1.5 million) less than the same time period",
+   "figures_as_printed": [
+    "$23,499,570.02",
+    "6.09%",
+    "$1.5 million",
+    "$21,743,068.85",
+    "4%",
+    "$900,000"
+   ]
+  },
+  {
+   "topic": "Flat Hill culvert project funding",
+   "what_was_recorded": "The Town requested and expects an additional $100,000 in state funding for the Flat Hill culvert, with its existing grant and appropriation figures and the low bid recorded.",
+   "quote": "we currently have $500,000 from small bridge grant and remaining about $375,800 in the town appropriation.",
+   "figures_as_printed": [
+    "$100,000",
+    "$500,000",
+    "$375,800",
+    "$830,000"
+   ]
+  },
+  {
+   "topic": "Rural Roadways supplemental funds",
+   "what_was_recorded": "The Town received a small Rural Roadways supplemental amount that adds to its Chapter 90 total.",
+   "quote": "we received funds of about $21,979 in the rural roadways supplemental program",
+   "figures_as_printed": [
+    "$21,979"
+   ]
+  },
+  {
+   "topic": "Water District PFAS treatment plan",
+   "what_was_recorded": "The Water District reported its PFAS treatment budget and the amount it will seek a vote to continue, with cost per customer to be given at its meeting.",
+   "quote": "the total budget will be about $42 million, and there will be a vote at that time to continue the plan, including applying for funding, for about $32 million.",
+   "figures_as_printed": [
+    "$42 million",
+    "$32 million"
+   ]
+  },
+  {
+   "topic": "TC Passios building facilities",
+   "what_was_recorded": "The Town Manager reported that facilities issues at the building are becoming more frequent and will bring more expenses that require planning; no figures were given.",
+   "quote": "the facilities issues at the building are becoming more frequent and there will be more expenses, which will require planning.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Cemetery role and Cemetery Commission",
+   "speaker": "Mr. John Bowen",
+   "stated_role": "162 Highland St.",
+   "quote": "mr. bowen questioned the role of the town manager vis-à-vis the cemetery, procurement of services, and the dpw."
+  },
+  {
+   "topic": "Flat Hill HOA conservation land dispute",
+   "speaker": "Mr. George Burden",
+   "stated_role": "39 Cortland Circle",
+   "quote": "m r. george burden, 39 cortland circle, believes the select board has authority to enforce an issue",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Agricultural Committee re-organization and Farmers Market",
+   "speaker": "Mr. Dave Passios",
+   "stated_role": "56 Whiting St., via Zoom",
+   "quote": "mr. passios stated that the select board needs to assist with the re-organization of the agricultural committee"
+  },
+  {
+   "topic": "Agricultural Commission meeting coordination",
+   "speaker": "Ms. Jen Duffy",
+   "stated_role": "684 Flat Hill Rd.; speaking for herself, a member of the Agricultural Commission",
+   "quote": "ms. duffy stated that her understanding was that the agcomm would be meeting tonight"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "c hair michael-ray jeffreys called the meeting to order at 7:00 p.m. and led the pledge of",
+   "tags": [
+    "meeting procedure"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Public comment and board comment",
+   "resolution": "no action",
+   "quote": "member tom alonzo announced that this friday is the 10th anniversary",
+   "tags": [
+    "public comment",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Communications from the Water District Commission (PFAS)",
+   "resolution": "no action; Chair to look into scheduling a joint meeting",
+   "quote": "mr. mark bursch, chair of the water district commission, announced that a townwide",
+   "tags": [
+    "water district",
+    "PFAS"
+   ]
+  },
+  {
+   "topic": "Ratify police officer appointment, Joel Ortega",
+   "resolution": "approved 4-0-0",
+   "quote": "motion by chair jeffreys to ratify the town manager's appointment of joel ortega",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "DPW Chapter 90 funding and road/drainage projects",
+   "resolution": "presented; Board requested spending plans in Finance Committee presentation",
+   "quote": "mr. bernard provided a slide presentation on chapter 90 (state funds to towns for capital",
+   "tags": [
+    "DPW",
+    "roads",
+    "Chapter 90",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Abatement of ambulance receivables",
+   "resolution": "write-off approved 3-1-0",
+   "quote": "chief sullivan requested a write-off for ambulance billing balances that are uncollectable",
+   "tags": [
+    "ambulance",
+    "billing",
+    "write-off",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Quarterly financial report (FY24 Q2)",
+   "resolution": "received; no concerns other than health and sanitation payment timing",
+   "quote": "total revenue collected through 12/31/23 (fy24 q2) were $23,499,570.02",
+   "tags": [
+    "finance",
+    "revenue",
+    "expenditures"
+   ]
+  },
+  {
+   "topic": "Update from Agricultural Commission",
+   "resolution": "discussed; Board agreed a functioning committee is needed; Chair offered to meet",
+   "quote": "mr. matthew allison, chair of the agricultural commission attended via zoom.",
+   "tags": [
+    "agricultural commission",
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "Ratify Facilities Custodian appointment, Allan Smith",
+   "resolution": "approved 4-0-0",
+   "quote": "motion by member alonzo to ratify the appointment of allan smith as facilities custodian",
+   "tags": [
+    "appointments",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Ratify Beach Director and seasonal lifeguard appointments",
+   "resolution": "approved 4-0-0",
+   "quote": "motion by member alonzo to ratify the appointment of elizabeth simeone as beach director",
+   "tags": [
+    "appointments",
+    "beach",
+    "lifeguards"
+   ]
+  },
+  {
+   "topic": "Town Manager report on upcoming meetings and events",
+   "resolution": "no action",
+   "quote": "the town manager announced the dates of the annual town meeting, 9 a.m., saturday, may",
+   "tags": [
+    "town meeting",
+    "election",
+    "vacancies",
+    "employment"
+   ]
+  },
+  {
+   "topic": "Flat Hill drainage and culvert, Woodruff property, TC Passios building",
+   "resolution": "no action",
+   "quote": "the town manager gave an update on the flat hill drainage project.",
+   "tags": [
+    "flat hill",
+    "drainage",
+    "TC Passios",
+    "facilities",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Review draft turnover policy",
+   "resolution": "continued one week",
+   "quote": "the board delayed this for a week to give enough time for the public to be fully informed about the revenue turnover policy draft.",
+   "tags": [
+    "policy",
+    "turnover"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting consent calendar",
+   "resolution": "accepted by the Board",
+   "quote": "was presented by the town manager and accepted by the board.",
+   "tags": [
+    "town meeting",
+    "consent calendar"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "approved minutes of October 10, 2023 (3-0-1); warrants signed",
+   "quote": "motion by clerk nuzzolo to accept the minutes of october 10, 2023.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Comments from the Board",
+   "resolution": "Town Manager asked to develop a presentation template; PTO raffle idea discussed",
+   "quote": "chair jeffreys requested that the town manager develop a standard template with a minimum size font",
+   "tags": [
+    "presentations",
+    "PTO",
+    "Cruise Night"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "clerk nuzzolo reported that the planning board continued the hearing for 255 sunny hill rd.",
+   "tags": [
+    "planning board",
+    "finance committee",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "no action",
+   "quote": "the select board will be meeting weekly until the end of may, with mr. franco chairing on the 7",
+   "tags": [
+    "meeting schedule",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Public comment on Agricultural Committee",
+   "resolution": "no action",
+   "quote": "mr. dave passios, 56 whiting st., via zoom.",
+   "tags": [
+    "agricultural commission",
+    "farmers market",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Public comment from the Board closing reminder",
+   "resolution": "no action",
+   "quote": "member alonzo reminded the public that the boys and girls club fundraiser is friday, 7 p.m.",
+   "tags": [
+    "public comment",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0-0 at 9:43 P.M.",
+   "quote": "member alonzo moved to adjourn. seconded by vice-chair lou franco.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "Chapter 90",
+  "DPW",
+  "ambulance billing",
+  "write-off",
+  "finance report",
+  "agricultural commission",
+  "water district",
+  "PFAS",
+  "cemetery commission",
+  "town meeting",
+  "Flat Hill drainage",
+  "TC Passios building",
+  "turnover policy",
+  "public comment",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2024-03-13",
  "docid": "6460",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Approve the amended minutes of the March 11, 2024 meeting",
+   "motion": "Approve the amended minutes of the March 11, 2024 meeting.",
    "moved_by": "W. Bertrand",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by w. bertrand to approve the amended minutes of the march 11, 2024 meeting. second: d. fortune roll call vote: all in favor"
+   "quote": "motion by w. bertrand to approve the amended minutes of the march 11, 2024 meeting."
   },
   {
-   "motion": "Recommend a grade change for the PAC Manager from SAP Grade 11 to SAP Grade 12",
+   "motion": "Recommend that the Town Manager consider changing the PAC Manager from SAP Grade 11 to SAP Grade 12.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews to recommend that the town manager consider a grade change be made to the pac manager from a sap grade 11 to a sap grade 12."
+   "quote": "motion by s. andrews to recommend that the town manager consider a grade change be made to the pac manager"
   },
   {
-   "motion": "Retroactively adjust the FY2024 SAP salary grid starting at $15.50 for Grade 1, Step 1, with 3% step adjustments, and modify the FY2025 SAP salary grid by dropping Step 1 and adding a 2.5% increase",
+   "motion": "Recommend that the Town retroactively adjust the FY2024 SAP grid starting at $15.50 for Grade 1, Step 1 with 3% steps, and for FY2025 drop Step 1, keep 3% steps and add a 2.5% grid increase.",
    "moved_by": "W. Bertrand",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion by w. bertrand to recommend that the town retroactively adjust the current fy2024 sap salary grid starting with $15.50 at grade 1, step 1, and leaving a 3% step adjustment."
+   "quote": "a motion by w. bertrand to recommend that the town retroactively adjust the current fy2024 sap salary grid"
   },
   {
-   "motion": "Adopt the updated SAP Sick Leave Policy",
+   "motion": "Adopt J. Belliveau's recommended change updating the SAP Sick Leave Policy.",
    "moved_by": "D. Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
@@ -44,15 +44,15 @@
    "quote": "a motion by d. fortune to adopt the recommendation of j. belliveau for the change that will update the sap sick leave policy."
   },
   {
-   "motion": "Accept the recommendation for Article X regarding grade level changes for several job roles",
+   "motion": "Accept the recommendation for Warrant Article X (job roles recommended for grade level changes, including the PACC Manager change).",
    "moved_by": "W. Bertrand",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion from w. bertrand to accept the recommendation for article x, which outlines several job roles that the committee recommends for grade level changes"
+   "quote": "a motion from w. bertrand to accept the recommendation for article x, which outlines several job roles that the"
   },
   {
-   "motion": "Accept the recommendation for Article XX regarding changes to the SAP Salary Grid for FY2024 and FY2025",
+   "motion": "Accept the recommendation for Warrant Article XX (changes to the SAP Salary Grid for FY2024 and FY2025).",
    "moved_by": "D. Fortune",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "a motion from d. fortune to accept the recommendation for article xx which outlines changes to the sap salary grid for fy2024 and fy 2025."
   },
   {
-   "motion": "Accept the recommendation for Article XXX regarding changes to the SAP sick leave policy",
+   "motion": "Accept the recommendation for Warrant Article XXX (changes to the SAP regarding use of sick leave).",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
@@ -68,7 +68,7 @@
    "quote": "a motion from s. andrews to accept the recommendation for article xxx which outlines changes to the sap regarding the use of sick leave, for sap employees."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 5:50pm.",
    "moved_by": "D. Fortune",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
@@ -77,6 +77,245 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Eight votes recorded, all passing unanimously. The minutes consistently state \"All in favor\" for each roll call vote. Four committee members were present: Wendy Bertrand, Susan Andrews, Joanna Bilotta, and Donna Fortune.",
- "cost_usd": 0.09605469999999999
+ "note": "Text is a clean digital extraction, not a scan; all votes are roll calls recorded only as 'All in Favor' or 'All in favor' with no vote count printed, so outcomes are recorded as 'passed' without a count. The attendance list does not say 'present' for committee members; they are recorded as present because they are listed as Committee Attendees. Ana Lockwood's status is 'remote' inferred from 'via Zoom' printed after her name. The chair role is not printed (Bilotta opened the meeting). The 'unanimously agreed' recommendation on the PAC Manager is covered by the recorded motion and not listed as a separate vote.",
+ "cost_usd": 0.01680337,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee member (opened the meeting, chair role not printed)",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, assistant town manager/hr director, nancy o'rourke, payroll and benefits coordinator/risk"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll and Benefits Coordinator/Risk Manager",
+   "status": "present",
+   "quote": "julie belliveau, assistant town manager/hr director, nancy o'rourke, payroll and benefits coordinator/risk"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Parks Commission",
+   "status": "remote",
+   "quote": "manager, ana lockwood, parks commission via zoom:"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA Outreach Coordinator",
+   "status": "present",
+   "quote": "pauline roy, coa outreach coordinator, bill bernard dpw director, jay simione, finance committee"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "pauline roy, coa outreach coordinator, bill bernard dpw director, jay simione, finance committee"
+  },
+  {
+   "name": "Jay Simione",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "pauline roy, coa outreach coordinator, bill bernard dpw director, jay simione, finance committee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed to leave the job title as Beach Director, after public comment from Ana Lockwood.",
+   "quote": "j. bilotta agreed and said that the committee agrees to leave it as beach director."
+  },
+  {
+   "decision": "Committee discussed the COA Director's input on the COA Outreach Coordinator grade and did not add a second grade change at this time.",
+   "quote": "the committee discussed the input but did not feel a second grade change was warranted at this time."
+  },
+  {
+   "decision": "J. Belliveau will prepare the Committee's recommendations into a formal package for the Town Manager, who will pass it to the Select Board and Finance Committee; members will be available for questions.",
+   "quote": "julie will prepare the recommendations into a formal package to deliver to the town manager, who will then provide it to the select board and finance committee."
+  },
+  {
+   "decision": "Chair acknowledged the Committee will return to reviewing the SAP vacation accrual calculation practice, which the job description project had delayed.",
+   "quote": "j. bilotta acknowledged that the job description project just completed had fully overtaken the group"
+  },
+  {
+   "decision": "Next meeting scheduled for April 30, 2024 at 5:00pm, unless a sooner meeting is needed.",
+   "quote": "next meeting will be scheduled for april 30, 2024 at 5:00pm, unless a sooner meeting is needed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Retroactive pay cost, FY2024 SAP grid adjustment",
+   "what_was_recorded": "Adapting the FY2024 SAP grid (Grade 1, Step 1 at $15.50, 3% steps) would cost approximately $89,771.61 in retroactive pay to the FY2024 budget.",
+   "figures_as_printed": [
+    "$15.50",
+    "$89,771.61"
+   ],
+   "quote": "this would cost approximately $89,771.61 in retroactive pay to the fy2024 budget."
+  },
+  {
+   "topic": "Cost of FY2025 SAP grid option",
+   "what_was_recorded": "Dropping Step 1 from the FY2025 SAP grid, keeping 3% steps and adding a 2.5% increase would cost approximately $110,948.87.",
+   "figures_as_printed": [
+    "$110,948.87",
+    "2.5%"
+   ],
+   "quote": "this would cost approximately $110,948.87."
+  },
+  {
+   "topic": "Financial impact of SAP salary grid options",
+   "what_was_recorded": "The Committee examined each option's financial impact on the budget, with the Payroll and Benefits Coordinator preparing a cost model; no dollar figure is printed in that passage.",
+   "figures_as_printed": [],
+   "quote": "the committee examined each options goals and the financial impact each would have for the budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Beach Director job title",
+   "speaker": "Ana Lockwood",
+   "stated_role": "Parks Commission",
+   "quote": "ana lockwood spoke regarding her support to allow the job title of beach director to remain."
+  },
+  {
+   "topic": "SAP vacation accrual calculation review",
+   "speaker": "P. Roy",
+   "stated_role": "COA Outreach Coordinator",
+   "quote": "p. roy asked for an update on the committee's review of calculation of the sap vacation accrual."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment on Beach Director title",
+   "resolution": "Committee agreed to keep the title Beach Director",
+   "quote": "ana lockwood spoke regarding her support to allow the job title of beach director to remain.",
+   "tags": [
+    "job titles",
+    "Beach Director",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Thanks for salary scenario cost work",
+   "resolution": "acknowledged, no action",
+   "quote": "d. fortune acknowledged and thanked nancy o'rourke for all the work she had undertaken to calculate the impact of",
+   "tags": [
+    "salary grid",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Approval of March 11, 2024 minutes",
+   "resolution": "approved as amended",
+   "quote": "motion by w. bertrand to approve the amended minutes of the march 11, 2024 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "PAC Manager grade classification",
+   "resolution": "recommended upgrade from SAP Grade 11 to Grade 12",
+   "quote": "the committee reviewed the grade classification for the pac manager.",
+   "tags": [
+    "job classification",
+    "SAP",
+    "PAC Manager"
+   ]
+  },
+  {
+   "topic": "COA Outreach Coordinator grade (management input)",
+   "resolution": "no second grade change recommended",
+   "quote": "j. belliveau reported that she had discussed all the previous recommendations for sap grade changes with appropriate management leaders.",
+   "tags": [
+    "job classification",
+    "SAP",
+    "COA"
+   ]
+  },
+  {
+   "topic": "SAP salary grid options FY2024 and FY2025",
+   "resolution": "recommended retroactive FY2024 adjustment and FY2025 grid changes",
+   "quote": "the committee again reviewed the sap salary grid options they had selected for final review.",
+   "tags": [
+    "salary grid",
+    "SAP",
+    "retroactive pay",
+    "FY2024",
+    "FY2025"
+   ]
+  },
+  {
+   "topic": "SAP Sick Leave policy wording",
+   "resolution": "adopted recommended change",
+   "quote": "the committee reviewed j. belliveau recommendation for rewording of the sick leave section of the salary administration plan",
+   "tags": [
+    "sick leave",
+    "SAP policy"
+   ]
+  },
+  {
+   "topic": "Warrant wording for May 4, 2024 Town Meeting",
+   "resolution": "accepted recommendations for Articles X, XX and XXX",
+   "quote": "the committee then reviewed and finalized the wording for the warrant that will be presented for the may 4, 2024 town meeting.",
+   "tags": [
+    "town meeting warrant",
+    "May 4 2024"
+   ]
+  },
+  {
+   "topic": "Next steps to forward recommendations",
+   "resolution": "Julie Belliveau to prepare formal package for Town Manager",
+   "quote": "julie will prepare the recommendations into a formal package to deliver to the town manager, who will then provide it to the select board and finance committee.",
+   "tags": [
+    "process",
+    "Select Board",
+    "Finance Committee"
+   ]
+  },
+  {
+   "topic": "SAP vacation accrual review (public comment follow-up)",
+   "resolution": "Committee to return to review; no decision",
+   "quote": "p. roy asked for an update on the committee's review of calculation of the sap vacation accrual.",
+   "tags": [
+    "vacation accrual",
+    "SAP"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "SAP salary grid",
+  "job classification",
+  "retroactive pay",
+  "sick leave policy",
+  "town meeting warrant",
+  "FY2024",
+  "FY2025",
+  "Beach Director",
+  "PAC Manager",
+  "vacation accrual"
+ ],
+ "dropped_unquoted_by_field": {}
 }

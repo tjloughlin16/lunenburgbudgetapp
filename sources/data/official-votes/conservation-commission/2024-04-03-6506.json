@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2024-04-03",
  "docid": "6506",
@@ -12,146 +12,629 @@
  },
  "votes": [
   {
-   "motion": "approve minutes of 3/6/24 as distributed",
+   "motion": "Approve the minutes of 3/6/24 as distributed.",
    "moved_by": "Bob P.",
    "seconded_by": "Chris S.",
    "outcome": "passed 6-0",
    "procedural": true,
-   "quote": "motion: bob p., second: chris s. to approve the minutes of 3/6/24 as distributed. roll call vote: bob p.-aye, jenny p.-aye, rich b.-aye, mike l.-aye, chris s.-aye, and mary w.-aye."
+   "quote": "motion: bob p., second: chris s. to approve the minutes of 3/6/24 as distributed."
   },
   {
-   "motion": "approve minutes of 9/6/23",
+   "motion": "Approve the minutes of 9/6/23.",
    "moved_by": "Chris S.",
    "seconded_by": "Mike L.",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-1",
    "procedural": true,
-   "quote": "motion: chris s., second: mike l. to approve the minutes of 9/6/23. roll call vote: bob p.-aye, jenny p.-aye, mike l.-aye, chris s.-aye, and mary w.-aye. rich b. - abstaine",
-   "quote_taken_from_text": true
+   "quote": "motion: chris s., second: mike l. to approve the minutes of 9/6/23."
   },
   {
-   "motion": "approve minutes of 8/16/23",
+   "motion": "Approve the minutes of 8/16/23.",
    "moved_by": "Bob P.",
    "seconded_by": "Chris S.",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-1",
    "procedural": true,
-   "quote": "motion: bob p., second: chris s. to approve the minutes of 3/6/24 as distributed. roll call vote: bob p.-aye, jenny p.-aye, rich b.-aye, mike l.-aye, chris s.-aye, and mary",
-   "quote_taken_from_text": true
+   "quote": "motion: bob p., second: chris s. to approve the minutes of 8/16/23."
   },
   {
-   "motion": "continue 171 Arbor Street hearing to 4/17/24",
+   "motion": "Continue 171 Arbor St. hearing to 4/17.",
    "moved_by": "Chris S.",
    "seconded_by": "Bob P.",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: chris s., second: bob p. to continue 171 arbor st. hearing to 4/17. roll call vote: bob p.-aye, mike l.-aye, chris s.-aye, and mary w.-aye."
+   "outcome": "passed 4-0-1",
+   "procedural": false,
+   "quote": "motion: chris s., second: bob p. to continue 171 arbor st. hearing to 4/17."
   },
   {
-   "motion": "continue 189 Hemlock Drive hearing to 5/1/24",
+   "motion": "Continue 189 Hemlock Drive hearing to 5/1/24.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
    "outcome": "passed 6-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: mike l. to continue 189 hemlock drive hearing to 5/1/24. roll call vote: bob p.-aye, jenny p.-aye, rich b.-aye, mike l.-aye, chris s.-aye, and mary w.-aye."
+   "procedural": false,
+   "quote": "motion: rich b., second: mike l. to continue 189 hemlock drive hearing to 5/1/24."
   },
   {
-   "motion": "continue 141 Hemlock Drive hearing to 5/15/24",
+   "motion": "Continue 141 Hemlock Drive hearing to 5/15/24.",
    "moved_by": "Mike L.",
    "seconded_by": "Rich B.",
    "outcome": "passed 6-0",
-   "procedural": true,
-   "quote": "motion: mike l., second: rich b. to continue 141 hemlock drive hearing to 5/15/24. roll call vote: bob p.-aye, jenny p.-aye, rich b.-aye, mike l.-aye, chris s.-aye, and mary w.-aye."
+   "procedural": false,
+   "quote": "motion: mike l., second: rich b. to continue 141 hemlock drive hearing to 5/15/24."
   },
   {
-   "motion": "approve application at 376 Sunset Lane with special conditions: standard open seam decking, expansion allowed, dry well denied, simple hand construction of safety fence",
+   "motion": "Approve the 376 Sunset Lane Notice of Intent with special conditions: standard open seam decking, expansion allowed, proposed dry well denied, hand installation of safety fence.",
    "moved_by": "Rich B.",
    "seconded_by": "Bob P.",
    "outcome": "passed 4-2",
    "procedural": false,
-   "quote": "motion: rich b., second: bob p. to approve the application with special conditions that the decking be standard open seam decking, that the expansion be allowed, the proposed dry well to be denied and simple hand construction installation of the safety fence. roll call vote: chris s.-aye, mike l.-no, rich b.-aye, jenny p.-aye, bob p.-aye, and mary w.-no."
+   "quote": "motion: rich b., second: bob p. to approve the application with special conditions that the decking be standard open seam decking"
   },
   {
-   "motion": "continue 386 Sunset Lane hearing to 4/17/24",
-   "moved_by": "Chris S.",
-   "seconded_by": "Mike L.",
-   "outcome": "passed 6-0",
-   "procedural": true,
-   "quote": "motion: chris s., second: mike l. to continue 386 sunset lane hearing to 4/17/24. roll call vote: bob p.-aye, jenny p.-aye, rich b.-aye, mike l.-aye, chris s.-aye, and mary w.-aye."
-  },
-  {
-   "motion": "continue 390 Howard Street hearing to 4/17/24",
-   "moved_by": "Rich B.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue 390 howard street hearing to 4/17/24. roll call vote: bob p.-aye, rich b.-aye, mike l.-aye, chris s.-aye, and mary w.-aye"
-  },
-  {
-   "motion": "continue 255 Sunny Hill Road hearing to 4/17/24",
-   "moved_by": "Chris S.",
-   "seconded_by": "Mike L.",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: chris s., second: mike l. to continue 255 sunny hill road hearing to 4/17/24. roll call vote: bob p.-aye, rich b.-aye, mike l.-aye, chris s.-aye, and mary w.-aye"
-  },
-  {
-   "motion": "allow removal of 8 trees at 34 Hemlock Terrace at her discretion, leaving stumps in place",
+   "motion": "Continue 386 Sunset Lane hearing to 4/17/24.",
    "moved_by": "Chris S.",
    "seconded_by": "Mike L.",
    "outcome": "passed 6-0",
    "procedural": false,
-   "quote": "motion: chris s., second: mike l. to allow removal of 8 trees at her discretion, leaving the stumps in place. when trees are removed, marylyn will contact the office to let the commission look to see if the canopy is intact, to ensure no trees needed to be added in place. roll call vote: chris s.-aye, mike l.-aye, rich b.-aye, jenny p.-aye, bob p.-aye, and mary w-aye."
+   "quote": "motion: chris s., second: mike l. to continue 386 sunset lane hearing to 4/17/24."
   },
   {
-   "motion": "give budget support up to $85 from Timber Right Fund if Parks cannot pay for Earth Day ad",
+   "motion": "Continue 390 Howard Street hearing to 4/17/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "motion: rich b., second: chris s. to continue 390 howard street hearing to 4/17/24."
+  },
+  {
+   "motion": "Continue 255 Sunny Hill Road hearing to 4/17/24.",
+   "moved_by": "Chris S.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "motion: chris s., second: mike l. to continue 255 sunny hill road hearing to 4/17/24."
+  },
+  {
+   "motion": "Allow removal of 8 trees at 34 Hemlock Terrace at MaryLyn's discretion, leaving the stumps in place.",
+   "moved_by": "Chris S.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed 6-0",
+   "procedural": false,
+   "quote": "motion: chris s., second: mike l. to allow removal of 8 trees at her discretion, leaving the stumps in place."
+  },
+  {
+   "motion": "Approve the Certificate of Compliance for DEP # 208-472.",
    "moved_by": "Bob P.",
    "seconded_by": "Mike L.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: bob p., second: mike l. to give budget support up to $85 from the timber right fund if parks cannot pay. roll call vote: jenny p.-aye, mike l.-aye, rich b.-aye, bob p.-aye, and mary w.-aye."
+   "quote": "motion: bob p., second: mike l. to approve the certificate of compliance for dep # 208-472."
   },
   {
-   "motion": "authorize expenditure of $1,070 from Timber Rights Fund to purchase additional trail markers",
+   "motion": "Continue DEP # 208-387.",
+   "moved_by": "Mike L.",
+   "seconded_by": "Bob P.",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "motion: mike l., second: bob p. to continue dep # 208-387."
+  },
+  {
+   "motion": "Authorize the expenditure of $1,070 from the Timber Rights Fund to purchase additional trail markers.",
    "moved_by": "Bob P.",
    "seconded_by": "Rich B.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: bob p., second: rich b. to authorize the expenditure of $1,070 from the timber rights fund to purchase additional trail markers. roll call vote: jenny p.-aye, mike l.-aye, rich b.-aye, bob p.-aye, and mary w.-aye."
+   "quote": "to authorize the expenditure of $1,070 from the timber rights fund to purchase additional trail"
   },
   {
-   "motion": "approve Certificate of Compliance for DEP #208-472 at 305 Arbor Street",
+   "motion": "Approve the Certificate of Compliance for Northfield Rd, Lot A.",
    "moved_by": "Bob P.",
    "seconded_by": "Mike L.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: bob p., second: mike l. to approve the certificate of compliance for dep # 208-472. roll call vote: bob p.-aye, jenny p.-aye, mike l.-aye, rich b.-aye, and mary w.-aye."
+   "quote": "motion: bob p., second: mike l. to approve the certificate of compliance for northfield rd, lot a."
   },
   {
-   "motion": "continue DEP #208-387 at 305 Arbor Street",
-   "moved_by": "Mike L.",
-   "seconded_by": "Bob P.",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: mike l., second: bob p. to continue dep # 208-387. roll call vote: rich b.-aye, mike l.-aye, jenny p.-aye, bob p.-aye, and mary w.-aye."
-  },
-  {
-   "motion": "approve Certificate of Compliance for Northfield Road Lot A",
+   "motion": "Give budget support up to $85 from the Timber Right Fund if Parks cannot pay for the Earth Day ad.",
    "moved_by": "Bob P.",
    "seconded_by": "Mike L.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: bob p., second: mike l. to approve the certificate of compliance for dep # 208-472. roll call vote: bob p.-aye, jenny p.-aye, mike l.-aye, rich b.-aye, and mary w.-aye. motion",
-   "quote_taken_from_text": true
+   "quote": "motion: bob p., second: mike l. to give budget support up to $85 from the timber right fund if parks cannot pay."
   },
   {
-   "motion": "adjourn meeting",
+   "motion": "Adjourn the meeting at 12:17am as printed.",
    "moved_by": "Bob P.",
    "seconded_by": "Mike L.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: bob p., second: mike l. to adjourn at 12:17am. roll call vote: rich b.-aye, bob p.-aye, jenny p.-aye, mike l.-aye, and mary w.-aye."
+   "quote": "motion: bob p., second: mike l. to adjourn at 12:17am."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded and extracted. No scanned/unreadable sections noted in the minutes.",
- "cost_usd": 0.1070251
+ "note": "Text extraction is clean, not a scan. Votes are taken from the printed roll-call lines; counts are as printed, with abstentions and 'not eligible' members shown as the minutes state them. Chris St. Germain (Member) and Chris Kullberg (abutter) are different people. Sophie Dorow is printed as 'Sophie' in the roll call and 'Sophia' in the header. The adjournment is printed as 12:17am against a 7:00PM start, recorded as printed. Several topics (Cowdrey probate, third-party review, the revolving fund) carry no dollar figure. The meeting ran past the printed 'Chris left the meeting' point, so Chris St. Germain is not counted in the Earth Day vote.",
+ "cost_usd": 0.025200470000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: bob p., jenny p., rich b., mike l., chris s., mary w., and sophie dorow (admin.)"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: bob p., jenny p., rich b., mike l., chris s., mary w., and sophie dorow (admin.)"
+  },
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: bob p., jenny p., rich b., mike l., chris s., mary w., and sophie dorow (admin.)"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: bob p., jenny p., rich b., mike l., chris s., mary w., and sophie dorow (admin.)"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: bob p., jenny p., rich b., mike l., chris s., mary w., and sophie dorow (admin.)"
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call: bob p., jenny p., rich b., mike l., chris s., mary w., and sophie dorow (admin.)"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: jeff v ."
+  },
+  {
+   "name": "Sophie Dorow",
+   "role": "Admin.; Conservation Administration",
+   "status": "present",
+   "quote": "roll call: bob p., jenny p., rich b., mike l., chris s., mary w., and sophie dorow (admin.)"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "McCarty Engineering, representing applicants",
+   "status": "present",
+   "quote": "brian marchetti stated he was ok with a continuation"
+  },
+  {
+   "name": "Dave Katralis",
+   "role": "Applicant, 189 Hemlock Drive",
+   "status": "present",
+   "quote": "dave katralis stated he has some dying trees that he would like to remove to stop"
+  },
+  {
+   "name": "Jan Willem",
+   "role": "Applicant, 141 Hemlock Drive",
+   "status": "not stated",
+   "quote": "by jan willem for laying of a naturalized stone steps and crushed stone path"
+  },
+  {
+   "name": "Jim van Ess",
+   "role": "Owner, 141 Hemlock Drive",
+   "status": "present",
+   "quote": "jim van ess (owner) stated they recently bought the house"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy, representing the owners",
+   "status": "present",
+   "quote": "greg roy (dillis & roy), representing the owners, john & annette gallagher"
+  },
+  {
+   "name": "John Gallagher",
+   "role": "Applicant, 376 Sunset Lane",
+   "status": "present",
+   "quote": "john replied he preferred the gutter system but would do the open seam if required"
+  },
+  {
+   "name": "Annette Gallagher",
+   "role": "Applicant, 376 Sunset Lane",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by john & annette gallagher"
+  },
+  {
+   "name": "Matt Mitrano",
+   "role": "Applicant, 386 Sunset Lane",
+   "status": "present",
+   "quote": "matt asked if the commission could approve the porch and stairs now"
+  },
+  {
+   "name": "Chris Kullberg",
+   "role": "Abutter, 380 Sunset Lane",
+   "status": "present",
+   "quote": "chris & alan kullberg (380 sunset lane) - chris stated that as an abutter, she has observed the 12\" maple slowly dying"
+  },
+  {
+   "name": "MaryAnn DiPinto",
+   "role": "Wetland scientist",
+   "status": "not stated",
+   "quote": "maryann dipinto (wetland scientist) revised the flagging with commissioners"
+  },
+  {
+   "name": "Stefan McSweeny",
+   "role": "Applicant, 255 Sunny Hill Road",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by stefan mcsweeny for the construction of a single family home"
+  },
+  {
+   "name": "Ken Paton",
+   "role": "Abutter, 290 Leominster Rd",
+   "status": "present",
+   "quote": "ken paton (290 leominster rd -abutter) - said he appreciated having the driveway moved away from"
+  },
+  {
+   "name": "Rick Perkins",
+   "role": "520 Howard Street",
+   "status": "present",
+   "quote": "rick perkins (520 howard street)- stated he is below the development and asked what could be done"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "Applicant, 390 Howard Street",
+   "status": "not stated",
+   "quote": "abbreviated notice of resource area delineation by kevin o'brien at 390 howard street"
+  },
+  {
+   "name": "MaryLyn Yonika",
+   "role": "Applicant, 34 Hemlock Terrace",
+   "status": "present",
+   "quote": "marylyn will contact the office to let the commission look to see if the canopy is intact"
+  },
+  {
+   "name": "Smit Patel",
+   "role": "10 Mass Ave, enforcement respondent",
+   "status": "present",
+   "quote": "smit patel stated that he saw leah in september 2023 and filed an e-dep wpa form"
+  },
+  {
+   "name": "Scott Buonopane",
+   "role": "41 Country Road, certificate of compliance applicant",
+   "status": "present",
+   "quote": "scott replied that the junk was not buried on his property"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Probate work on the Cowdrey property tabled until the cost is known; no motion adopted.",
+   "quote": "mary asked to table this until they know how much it will cost."
+  },
+  {
+   "decision": "Office to use SharePoint instead of Google Drive; no objection recorded (no vote).",
+   "quote": "sophie suggested using sharepoint instead of google drive and no one objected."
+  },
+  {
+   "decision": "Wetlands brochure in tax mailing deferred to next meeting.",
+   "quote": "wetlands brochure in tax mailing - will discuss at next meeting."
+  },
+  {
+   "decision": "Chair asked Sophie to contact several third-party firms for quotes on the 255 Sunny Hill Road wetland review.",
+   "quote": "mary asked sophie to contact a few for quotes."
+  },
+  {
+   "decision": "Site walk for 255 Sunny Hill Road to follow the third-party review.",
+   "quote": "mary stated they will do a site walk after the 3rd party review."
+  },
+  {
+   "decision": "Jim van Ess to schedule a site walk in May with Sophie for 141 Hemlock Drive.",
+   "quote": "jim will schedule a site walk in may with sophie."
+  },
+  {
+   "decision": "Rick Perkins directed to contact Sophie for a site visit on siltation from uphill (10 Mass Ave / 390 Howard area).",
+   "quote": "mary told rick to contact sophie to get permission for a site visit to look at siltation flowing from uphill."
+  },
+  {
+   "decision": "10 Mass Ave respondent directed to file with the town within 30 days.",
+   "quote": "mary told him to file with the town within 30 days."
+  },
+  {
+   "decision": "10 Mass Ave respondent acknowledged he cannot work until paperwork is filed and must maintain the silt fence.",
+   "quote": "he understands that he cannot work until the paperwork is filed and he is responsible for maintaining the silt fence."
+  },
+  {
+   "decision": "41 Country Road: revegetation required before closure, since the site is in the Riparian zone.",
+   "quote": "rich added that they will need to see it revegetated since it is in the riparian zone."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "April Earth Day ad fee (Ledger)",
+   "what_was_recorded": "The Commission will split an $85 advertising fee for the Ledger with the Parks Department.",
+   "figures_as_printed": [
+    "$85"
+   ],
+   "quote": "and will split the $85 ad fee for the ledger."
+  },
+  {
+   "topic": "Earth Day budget support from Timber Right Fund",
+   "what_was_recorded": "Motion to give up to $85 in budget support from the Timber Right Fund if Parks cannot pay; passed 5-0.",
+   "figures_as_printed": [
+    "$85"
+   ],
+   "quote": "to give budget support up to $85 from the timber right fund if parks cannot pay."
+  },
+  {
+   "topic": "Trail markers",
+   "what_was_recorded": "Motion to authorize $1,070 from the Timber Rights Fund for additional trail markers; passed 5-0.",
+   "figures_as_printed": [
+    "$1,070"
+   ],
+   "quote": "to authorize the expenditure of $1,070 from the timber rights fund to purchase additional trail"
+  },
+  {
+   "topic": "Cowdrey probate work",
+   "what_was_recorded": "Probate work on the second Cowdrey property was tabled until the cost is known; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "mary asked to table this until they know how much it will cost."
+  },
+  {
+   "topic": "Third-party review check",
+   "what_was_recorded": "A check was received for the third-party review; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "she said the check was received for the 3rd party review."
+  },
+  {
+   "topic": "Consultants for office technical support",
+   "what_was_recorded": "The Commission may use consultants to give the administrator technical support; no cost printed.",
+   "figures_as_printed": [],
+   "quote": "to give sophie extra technical support, they can start using consultants."
+  },
+  {
+   "topic": "Revolving fund for office support",
+   "what_was_recorded": "A warrant article was added to Town Meeting to set up a revolving fund; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "heather has added a warrant to the town meeting to set up a revolving fund for that."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Authorized expenditure from the Timber Rights Fund for additional trail markers.",
+   "amount_as_printed": "$1,070",
+   "outcome": "passed 5-0",
+   "quote": "to authorize the expenditure of $1,070 from the timber rights fund to purchase additional trail"
+  },
+  {
+   "description": "Conditional budget support from the Timber Right Fund for the Earth Day ad, if Parks cannot pay.",
+   "amount_as_printed": "$85",
+   "outcome": "passed 5-0",
+   "quote": "to give budget support up to $85 from the timber right fund if parks cannot pay."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Rick Perkins",
+   "stated_role": "520 Howard Street",
+   "topic": "Stormwater retention ponds and silt at 390 Howard Street hearing",
+   "quote": "rick perkins (520 howard street)- stated he is below the development and asked what could be done about the retention ponds that are not retaining water during heavy rains."
+  },
+  {
+   "speaker": "Ken Paton",
+   "stated_role": "abutter, 290 Leominster Rd",
+   "topic": "Ponding water and driveway at 255 Sunny Hill Road",
+   "quote": "ken paton (290 leominster rd -abutter) - said he appreciated having the driveway moved away from"
+  },
+  {
+   "speaker": "Chris Kullberg",
+   "stated_role": "abutter, 380 Sunset Lane",
+   "topic": "Dying 12-inch maple at 386 Sunset Lane",
+   "quote": "chris & alan kullberg (380 sunset lane) - chris stated that as an abutter, she has observed the 12\" maple slowly dying"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "approved 3/6/24 (6-0); 9/6/23 and 8/16/23 (5-0-1)",
+   "quote": "minutes of previous meetings - 8/16/23, 9/6/23 and 3/6/24",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Request for continuation: 171 Arbor Street",
+   "resolution": "continued to 4/17/24",
+   "quote": "requests for continuation - 171 arbor street to continue to 4/17/24.",
+   "tags": [
+    "wetlands",
+    "continuance",
+    "Blanding's Turtle"
+   ]
+  },
+  {
+   "topic": "RDA: 189 Hemlock Drive, dead tree removal and deck",
+   "resolution": "continued to 5/1/24",
+   "quote": "a public hearing on a request for determination of applicability by dave katralis for the removal of dead trees",
+   "tags": [
+    "RDA",
+    "buffer zone",
+    "trees"
+   ]
+  },
+  {
+   "topic": "RDA: 141 Hemlock Drive, stone steps and path; enforcement",
+   "resolution": "continued to 5/15/24",
+   "quote": "by jan willem for laying of a naturalized stone steps and crushed stone path",
+   "tags": [
+    "RDA",
+    "enforcement",
+    "buffer zone",
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "NOI: 376 Sunset Lane, deck reconstruction",
+   "resolution": "approved with special conditions, 4-2",
+   "quote": "a public hearing on a notice of intent by john & annette gallagher for the reconstruction of the existing deck",
+   "tags": [
+    "NOI",
+    "deck",
+    "Lake Shirley"
+   ]
+  },
+  {
+   "topic": "Amended Order of Conditions: 386 Sunset Lane",
+   "resolution": "continued to 4/17/24",
+   "quote": "request for an amendment to the order of conditions dep#208-1310 by matt mitrano",
+   "tags": [
+    "amended order",
+    "staircase",
+    "trees"
+   ]
+  },
+  {
+   "topic": "ANRAD: 390 Howard Street",
+   "resolution": "continued to 4/17/24",
+   "quote": "abbreviated notice of resource area delineation by kevin o'brien at 390 howard street",
+   "tags": [
+    "ANRAD",
+    "stormwater",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "NOI: 255 Sunny Hill Road, single family home",
+   "resolution": "continued to 4/17/24; third-party review requested",
+   "quote": "a public hearing on a notice of intent by stefan mcsweeny for the construction of a single family home",
+   "tags": [
+    "NOI",
+    "wetland fill",
+    "third-party review",
+    "replication"
+   ]
+  },
+  {
+   "topic": "RDA: 34 Hemlock Terrace, tree removal",
+   "resolution": "approved, 8 trees at owner's discretion (6-0); negative determination",
+   "quote": "a public hearing on a request for determination by marylyn yonika for removal of trees at 34 hemlock terrace.",
+   "tags": [
+    "RDA",
+    "trees",
+    "negative determination"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "no action",
+   "quote": "topics unknown 48 hours in advance of meeting none",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Update on title searches",
+   "resolution": "probate work tabled until cost known",
+   "quote": "update on title searches - bob noted he forwarded an update from adam costa",
+   "tags": [
+    "land",
+    "Cowdrey",
+    "Flat Hill Rd",
+    "probate"
+   ]
+  },
+  {
+   "topic": "Office operations",
+   "resolution": "discussed; no action",
+   "quote": "office operations - mary discussed staffing solutions with the select board.",
+   "tags": [
+    "staffing",
+    "open.gov",
+    "SharePoint",
+    "minutes clerk"
+   ]
+  },
+  {
+   "topic": "Town website changes",
+   "resolution": "Bob to meet with Kara",
+   "quote": "town website changes - bob will meet with kara.",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "April Earth Day events",
+   "resolution": "approved up to $85 budget support, 5-0",
+   "quote": "april earth day events - mary noted they are working with the parks department and will split the $85 ad fee for the ledger.",
+   "tags": [
+    "Earth Day",
+    "Parks",
+    "Timber Right Fund"
+   ]
+  },
+  {
+   "topic": "Wetlands brochure in tax mailing",
+   "resolution": "deferred to next meeting",
+   "quote": "wetlands brochure in tax mailing - will discuss at next meeting.",
+   "tags": [
+    "outreach",
+    "QR code"
+   ]
+  },
+  {
+   "topic": "Enforcement: 10 Mass Ave",
+   "resolution": "discussed; respondent directed to file within 30 days",
+   "quote": "10 mass ave - smit patel -sophie did a site visit and noted more work done",
+   "tags": [
+    "enforcement",
+    "sediment",
+    "silt fence",
+    "riverfront"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance: 305 Arbor Street",
+   "resolution": "DEP 208-472 approved 5-0; DEP 208-387 continued",
+   "quote": "305 arbor street - dep # 208-387 and # 208-472 - special conditions of no work past erosion control",
+   "tags": [
+    "certificate of compliance",
+    "septic",
+    "wetland crossing"
+   ]
+  },
+  {
+   "topic": "Certificate of Compliance: 41 Country Road",
+   "resolution": "no action; revegetation required",
+   "quote": "41 country road- scott buonopane - sophie did a site visit and had some concerns about areas",
+   "tags": [
+    "certificate of compliance",
+    "riparian zone",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Certificate of Compliance: Northfield Rd, Lot A",
+   "resolution": "approved, 5-0",
+   "quote": "northfield rd lot a - brian marchetti (mccarty engineering) stated they finished the work",
+   "tags": [
+    "certificate of compliance",
+    "drainage"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "public hearings",
+  "notice of intent",
+  "request for determination",
+  "certificates of compliance",
+  "enforcement",
+  "buffer zone",
+  "tree removal",
+  "Timber Rights Fund",
+  "Earth Day",
+  "office operations",
+  "Lunenburg",
+  "2024"
+ ],
+ "dropped_unquoted_by_field": {}
 }

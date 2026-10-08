@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-04-04",
  "docid": "6507",
@@ -12,39 +12,397 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Article 8",
+   "motion": "Recommend approval of Article 8 (previously deferred), with roll call vote",
    "moved_by": "Tom Gray",
    "seconded_by": "Chris Menard",
    "outcome": "passed 4-2",
    "procedural": false,
-   "quote": "there was a motion to recommend approval of article 8 by tom gray, seconded by chris menard. roll call vote. tiffaney tavares aye, jay simeone no, dave passios no, tom gray aye, chris menard aye, evan watters aye."
+   "quote": "there was a motion to recommend approval of article 8 by tom gray, seconded by chris menard. roll call vote."
   },
   {
-   "motion": "Reconsider and recommend approval of Article 11",
+   "motion": "Resend last week's vote and recommend approval of Article 11, with roll call vote",
    "moved_by": "Tom Gray",
    "seconded_by": "Dave Passios",
    "outcome": "passed 5-0-1",
    "procedural": false,
-   "quote": "there was a motion to resend the vote from last week and make a recommendation to recommend approval by tom gray, seconded by dave passios. roll call vote. tiffaney tavares aye, jay simeone abstain, dave passios aye, tom gray aye, chris menard aye, evan watters aye."
+   "quote": "there was a motion to resend the vote from last week and make a recommendation to recommend approval by tom gray, seconded by dave passios."
   },
   {
-   "motion": "Reconsider and recommend approval of Article 21",
+   "motion": "Resend the previously deferred recommendation and recommend approval of Article 21",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
    "outcome": "passed 6-0",
    "procedural": false,
-   "quote": "there was a motion to resend the previously deferred recommendation and recommend approval by chris menard, seconded by dave passios. roll call vote. tiffaney tavares aye, jay simeone aye, dave passios aye, tom gray aye, chris menard aye, evan watters aye."
+   "quote": "there was a motion to resend the previously deferred recommendation and recommend approval by chris menard, seconded by dave passios."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
    "outcome": "passed 6-0",
    "procedural": true,
-   "quote": "there was a motion to adjourn by chris menard, seconded by dave passios. roll call vote. simeone aye, dave passios aye, tom gray aye, chris menard aye, evan watters aye."
+   "quote": "there was a motion to adjourn by chris menard, seconded by dave passios."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in these minutes include explicit roll-call vote counts and outcomes. Jean Russell was absent and unable to attend the virtual meeting.",
- "cost_usd": 0.1191315
+ "note": "Text is clean extracted text, not a scan; no pages appear missing. Caveats: (1) The heading says Bilotta Meeting Room, but the announcements say the meeting was held remotely due to weather. (2) Jean Russell is listed as a present member but is announced as not attending; she is recorded as absent. (3) Tiffaney Tavares votes in the roll calls (spelled \"Tiffany\" in one roll call and in public comment) but is not in the printed member list; her role is not stated. (4) Article 8 roll call lists six voters with one member absent, consistent with Russell absent. (5) Articles 6 and 7 cite prior votes (6-1 and 5-1-1) and Articles 2, 3, 10 and 12-20 cite prior recommendations; these were not taken at this meeting and are not recorded as votes here. (6) The Article 11 motion follows the Article 11 discussion, so it is read as an Article 11 motion. (7) The minutes record no vote on Articles 4 and 5; they are recorded as remaining deferred. (8) Evan Watters' proposal for a workshop tonight and a vote next week is recorded as a proposal, not a decision. Tom Alonzo is mentioned only as having spoken at a past meeting and is not listed as an attendee.",
+ "cost_usd": 0.01005043,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "jean russell will not be able to attend tonight's virtual meeting."
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "not stated",
+   "status": "present",
+   "quote": "tiffaney tavares aye, jay simeone no, dave passios no, tom gray aye, chris menard aye, evan watters aye."
+  },
+  {
+   "name": "Tiffany Tavares",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "tiffany tavares asks if rhonda has brought this to the school committee."
+  },
+  {
+   "name": "Rhonda Liscio",
+   "role": "resident, 181 Reservoir Road (address as printed; no role printed)",
+   "status": "not stated",
+   "quote": "rhonda liscio, 181 reservoir road, wants to know how the school district justifies"
+  },
+  {
+   "name": "John Bowen",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john bowen doesn't support a budget that doesn't have any line items that can be removed."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "heather lemieux is concerned because tomorrow is the extended deadline beyond the original deadline."
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "not stated (appears under Finance Director Report heading)",
+   "status": "not stated",
+   "quote": "ezequiel ayala states he is working on the q2 report, and it will be available soon."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Articles 4 and 5 remain deferred; no expense figures have been provided for either.",
+   "quote": "the finance committee previously deferred and will remain deferred."
+  },
+  {
+   "decision": "Article 1 is found to have no direct financial impact and is unchanged.",
+   "quote": "the finance committee finds there is no direct financial impact, and the article has remained unchanged."
+  },
+  {
+   "decision": "Topics listed for inclusion in the FinCom Report for warrant workshopping (tax increase table, line-by-line reasoning, capital plan, omnibus budget, debt, Chapter 70, millionaires tax, grant writing, town needs, level service, task force budget, town-school consolidation).",
+   "quote": "below are the main topics to include in the report:"
+  },
+  {
+   "decision": "Warrant article workshopping to continue at a future meeting.",
+   "quote": "continuation of warrant article workshopping."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 8 network upgrades and 911 compliance phones",
+   "what_was_recorded": "Network upgrades and 911 compliance phones are described as over $20,000 and as one-time expenses, unlike yearly Chromebook costs.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "$20,000 and they are 1-time expense unlike chromebooks that are a yearly expense."
+  },
+  {
+   "topic": "Green Communities grant maximum",
+   "what_was_recorded": "The maximum award in the April grant round rose from $200,000 to $225,000, for pump upgrades and controllers.",
+   "figures_as_printed": [
+    "$225,000",
+    "$200,000"
+   ],
+   "quote": "being $225,000 as opposed to $200,000."
+  },
+  {
+   "topic": "Green Communities set-aside for police cruiser",
+   "what_was_recorded": "Green Communities Committee set aside $5,000 toward the next hybrid police cruiser.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "have set aside $5,000 to be put towards the next hybrid"
+  },
+  {
+   "topic": "Override and level service budget",
+   "what_was_recorded": "Chris Menard believes the override will bring the town to level service; mixed reviews of the potential override were recorded.",
+   "figures_as_printed": [],
+   "quote": "he believes the override will get the town to level service."
+  },
+  {
+   "topic": "Busing fees and school funding",
+   "what_was_recorded": "Public comment argued raising busing fees would be a reasonable way for the district to raise funds for its budget.",
+   "figures_as_printed": [],
+   "quote": "she believes raising fees would be a reasonable way for the district to raise funds for their budget."
+  },
+  {
+   "topic": "Tax increase table for override",
+   "what_was_recorded": "The FinCom report is to include a table or graph showing the tax increase due to the override.",
+   "figures_as_printed": [],
+   "quote": "a table or graph that shows tax increase due to the override."
+  },
+  {
+   "topic": "Topics to add to FinCom report",
+   "what_was_recorded": "Topics to be added to the report include capital plan, debt spending, Chapter 70, millionaires tax and grant writing services.",
+   "figures_as_printed": [],
+   "quote": "capital plan omnibus budget debt spending chapter 70 millionaires tax grant writing services"
+  },
+  {
+   "topic": "Expenses for Articles 4 and 5",
+   "what_was_recorded": "No expense numbers had been provided for Articles 4 and 5.",
+   "figures_as_printed": [],
+   "quote": "asks if any expenses have been provided and heather lemieux states no numbers have been provided."
+  },
+  {
+   "topic": "Temporary replacement cost for leave (Article 11)",
+   "what_was_recorded": "A past comment said a temporary replacement during leave would be a direct financial impact; Dave Passios said any impact would be minimal.",
+   "figures_as_printed": [],
+   "quote": "if someone is on leave and a temporary replacement is needed there would be a direct financial impact."
+  },
+  {
+   "topic": "Tax credits (Article 21)",
+   "what_was_recorded": "Few people would be able to use the tax credits given the criteria and requirements.",
+   "figures_as_printed": [],
+   "quote": "based on the criteria and requirements there are few people who would be able to take advantage of these credits."
+  },
+  {
+   "topic": "School budget share of town budget",
+   "what_was_recorded": "The school budget presentation was noted as consisting of half of the town’s budget.",
+   "figures_as_printed": [],
+   "quote": "and that consists of half of the town's budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Liscio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "school bus fee policy and override",
+   "quote": "rhonda liscio, 181 reservoir road, wants to know how the school district justifies"
+  },
+  {
+   "speaker": "Tiffany Tavares",
+   "stated_role": "not stated",
+   "topic": "whether Rhonda Liscio raised bus fees with School Committee",
+   "quote": "tiffany tavares asks if rhonda has brought this to the school committee."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "not stated",
+   "topic": "budget with no removable line items; taxpayer say in school operations",
+   "quote": "john bowen doesn't support a budget that doesn't have any line items that can be removed."
+  },
+  {
+   "speaker": "Chris Menard",
+   "stated_role": "Vice Chair",
+   "topic": "thanks to the Committee; hope for different next budget season",
+   "quote": "chris menard thanks the committee for everyone's work and hopes next year's"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order 7:01 PM",
+   "quote": "call to order 7:01 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "recited",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted meeting held remotely",
+   "quote": "this meeting is being held remotely due to the town offices being closed because of the weather.",
+   "tags": [
+    "procedure",
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "heard speakers on bus fees, override and budget line items",
+   "quote": "rhonda liscio, 181 reservoir road, wants to know how the school district justifies",
+   "tags": [
+    "public comment",
+    "busing",
+    "override"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no report",
+   "quote": "there were no additional reports from the town manager.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Finance Director report",
+   "resolution": "Q2 report in progress",
+   "quote": "ezequiel ayala states he is working on the q2 report, and it will be available soon.",
+   "tags": [
+    "finance director",
+    "Q2 report"
+   ]
+  },
+  {
+   "topic": "FinCom report for warrant workshopping",
+   "resolution": "topics listed for the report",
+   "quote": "below are the main topics to include in the report:",
+   "tags": [
+    "warrant articles",
+    "FinCom report"
+   ]
+  },
+  {
+   "topic": "FY25 budget discussion",
+   "resolution": "workshop held; vote proposed for next week; no vote on budget",
+   "quote": "evan watters wants to do a workshop for tonight's meeting and take a vote",
+   "tags": [
+    "FY25 budget",
+    "school budget"
+   ]
+  },
+  {
+   "topic": "FY25 override discussion",
+   "resolution": "discussed; no vote",
+   "quote": "there are mixed reviews about the potential override.",
+   "tags": [
+    "override"
+   ]
+  },
+  {
+   "topic": "Votes on recommendations for warrant articles",
+   "resolution": "Article 8, 11 and 21 voted; Articles 4 and 5 deferred; others previously decided or no impact",
+   "quote": "the warrant articles have been switched to numerical as opposed to prior",
+   "tags": [
+    "warrant articles",
+    "votes"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "no action",
+   "quote": "there are no new minutes to review.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received (Green Communities, Parks Commission)",
+   "quote": "chris menard states the parks commission met and voted on their recommendation for the owner's project manager for marshall park.",
+   "tags": [
+    "Green Communities",
+    "Parks Commission",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "continue warrant article workshopping",
+   "quote": "continuation of warrant article workshopping.",
+   "tags": [
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "listed",
+   "quote": "upcoming meetings: a. 4/11/2024 b. 4/25/2024",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Important dates",
+   "resolution": "listed",
+   "quote": "a. 5/18/2024 - annual town election",
+   "tags": [
+    "schedule",
+    "town election"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "heard one comment",
+   "quote": "chris menard thanks the committee for everyone's work and hopes next year's",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 8:40 PM, passed 6-0",
+   "quote": "there was a motion to adjourn by chris menard, seconded by dave passios.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "FY25 budget",
+  "warrant articles",
+  "override",
+  "school budget",
+  "busing fees",
+  "Green Communities",
+  "Parks Commission",
+  "public comment",
+  "remote meeting",
+  "Annual Town Meeting",
+  "town election"
+ ],
+ "dropped_unquoted_by_field": {}
 }

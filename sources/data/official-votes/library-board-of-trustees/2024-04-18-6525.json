@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2024-04-18",
  "docid": "6525",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of March 21, 2024 as amended",
+   "motion": "Accept the minutes of March 21, 2024, as amended.",
    "moved_by": "Donna",
    "seconded_by": "Maia",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "donna made a motion to accept the minutes of march 21, 2024 as amended, seconded by maia. the motion passed unanimously."
   },
   {
-   "motion": "Accept the teen room policy as amended",
+   "motion": "Accept the teen room policy as amended.",
    "moved_by": "Maia",
    "seconded_by": "Jana",
    "outcome": "passed unanimously",
@@ -28,15 +28,282 @@
    "quote": "maia made a motion to accept the teen room policy as amended, seconded by jana. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Donna",
    "seconded_by": "Laura",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by donna. seconded by laura. meeting was adjourned at 8:38 p.m"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0800115
+ "note": "Text extraction of the minutes plus three attached reports (Director's Report, Youth, Young Adult and Adult Services reports). Layout of the FY24 budget table is partly lost in extraction (e.g. the BLDG REPAIRS line has no figure, and column alignment is inferred), so only the printed totals are recorded as budget figures. Page 3 is blank. Three motions are recorded: two approvals reported as 'passed unanimously' and an adjournment with no result printed; no roll-call counts exist. Trustees Maia and Jana are printed by first name only in the motions; they are matched to Maia Wentrup and Jana-Lee Balish by inference from the attendance list. The attached reports were not recorded as separate topics. Staff and outside people named in the reports (e.g., Lydia, Melanie, Kaitee, Chris Ruth, Damon McQuaid, Tim from Add-A-Sign) are not recorded as attendees because the minutes do not show them taking part in the meeting.",
+ "cost_usd": 0.01764607,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "harry kubetz, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "harry kubetz, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "",
+   "status": "present",
+   "quote": "harry kubetz, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "present",
+   "quote": "harry kubetz, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Friends of LPL",
+   "status": "present",
+   "quote": "robin reminded us of the friend's plant sale coming up."
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "",
+   "status": "present",
+   "quote": "bob conroy"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "",
+   "status": "present",
+   "quote": "jana-lee balish, bob conroy"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: dick mailloux"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Muir is to speak with Michael-Ray and town counsel for advice on whether the room use policy should be updated to exclude HOA groups.",
+   "quote": "harry suggested muir speak with michael-ray and town counsel for advice."
+  },
+  {
+   "decision": "Chair, at Dick Mailloux's request, expressed concern about the renovation timeline and urged the Director to be aggressive about moving the plan forward.",
+   "quote": "harry expressed concern about the timeline for completing the renovations"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 budget report",
+   "what_was_recorded": "The Director reported the year is 83% elapsed and the budget 67% expended; the printed FY24 table totals $539,730 budgeted and $362,867 expended.",
+   "figures_as_printed": [
+    "83%",
+    "67%",
+    "539,730$",
+    "362,867$"
+   ],
+   "quote": "we are 83% through the year and the budget is 67% expended."
+  },
+  {
+   "topic": "Salary line under-expended",
+   "what_was_recorded": "The salary line is under-expended because of staff vacancies in the first half of the year, and the Director is looking at ways to use the surplus.",
+   "figures_as_printed": [],
+   "quote": "salary line is under-expended because of the staff vacancies the first half of the year."
+  },
+  {
+   "topic": "Library materials and subscriptions",
+   "what_was_recorded": "Annual subscription renewals will be drawn from the library materials budget.",
+   "figures_as_printed": [],
+   "quote": "annual renewals for various subscription services will be coming up to utilize some of the library materials budget."
+  },
+  {
+   "topic": "Library invested funds",
+   "what_was_recorded": "Library invested funds are reported at 95.6k, a slight increase over last month.",
+   "figures_as_printed": [
+    "95.6k"
+   ],
+   "quote": "the investments are up to 95.6k, a slight increase over last month."
+  },
+  {
+   "topic": "EV charging station estimates",
+   "what_was_recorded": "Vendor cost estimates for EV chargers were reported: stations start around $10,000 per unit and Level 3 DC fast chargers are in a stated range.",
+   "figures_as_printed": [
+    "$10,000",
+    "$60-70,000"
+   ],
+   "quote": "their stations start around $10,000 per unit. their level 3 (dc fast chargers) are in the range of $60-70,000."
+  },
+  {
+   "topic": "Concert series funding",
+   "what_was_recorded": "North End Subaru returned a signed agreement to continue funding the concert series for another year; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "north end subaru has given us a signed agreement to continue funding the concert series."
+  },
+  {
+   "topic": "Teen Room renovation estimate",
+   "what_was_recorded": "An estimate for the Teen Room renovation is to be prepared; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "damon will begin the next step and put together an estimate."
+  },
+  {
+   "topic": "Staff conference costs",
+   "what_was_recorded": "One staff member was awarded a scholarship to cover conference costs and the library will reimburse the other attendees; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "melanie was awarded a scholarship to cover her attendance costs. the library will reimburse the other attendees."
+  },
+  {
+   "topic": "Friends of LPL investment",
+   "what_was_recorded": "Lydia invested 20k in a CD, as reported under Friends of LPL Update.",
+   "figures_as_printed": [
+    "20k"
+   ],
+   "quote": "lydia invested 20k in a cd."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Robin",
+   "stated_role": "Friends of LPL",
+   "topic": "Friends plant sale",
+   "quote": "robin reminded us of the friend's plant sale coming up. 29 of 40 packages have been sold."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "tags": [
+    "friends of library",
+    "plant sale"
+   ],
+   "quote": "robin reminded us of the friend's plant sale coming up. 29 of 40 packages have been sold."
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "donna made a motion to accept the minutes of march 21, 2024 as amended, seconded by maia. the motion passed unanimously."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received, no action recorded",
+   "tags": [
+    "budget",
+    "programs",
+    "public records",
+    "grants",
+    "EV charging",
+    "website"
+   ],
+   "quote": "april is month 10 out of 12. we are 83% through the year and the budget is 67% expended."
+  },
+  {
+   "topic": "Green Communities Update",
+   "resolution": "no action",
+   "tags": [
+    "green communities"
+   ],
+   "quote": "no update this month."
+  },
+  {
+   "topic": "Library Invested Funds Update",
+   "resolution": "no action",
+   "tags": [
+    "investments"
+   ],
+   "quote": "the investments are up to 95.6k, a slight increase over last month."
+  },
+  {
+   "topic": "Library Sign Update",
+   "resolution": "no action",
+   "tags": [
+    "signage",
+    "facilities"
+   ],
+   "quote": "muir shared three sample letters in black, gold and grey."
+  },
+  {
+   "topic": "ARPA Update",
+   "resolution": "trustee direction given; no vote",
+   "tags": [
+    "ARPA",
+    "renovation",
+    "Teen Room",
+    "timeline"
+   ],
+   "quote": "the architect is incorporating feedback from the trustees into the plans for the teen room"
+  },
+  {
+   "topic": "Teen Room Usage Policy",
+   "resolution": "approved as amended",
+   "tags": [
+    "teen room",
+    "policy"
+   ],
+   "quote": "teen room is for patrons in grades 6-12."
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action",
+   "tags": [
+    "friends of library",
+    "book sale",
+    "investments"
+   ],
+   "quote": "lydia invested 20k in a cd."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "tags": [
+    "public participation"
+   ],
+   "quote": "harry told robin she is welcome at any of our meetings."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:38 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion to adjourn by donna. seconded by laura. meeting was adjourned at 8:38 p.m"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "FY24 budget",
+  "teen room",
+  "ARPA renovation",
+  "policy",
+  "public records",
+  "friends of library",
+  "EV charging",
+  "LSTA grant",
+  "website",
+  "concert series",
+  "vandalism",
+  "programs",
+  "investments"
+ ],
+ "dropped_unquoted_by_field": {}
 }

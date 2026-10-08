@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-04-24",
  "docid": "6544",
@@ -12,40 +12,256 @@
  },
  "votes": [
   {
-   "motion": "Allow Lunenburg Youth Baseball and Softball League to place storage container at Marshall Park",
+   "motion": "Allow the Lunenburg Youth Baseball and Softball League to place the storage container at the field.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "k. menard made a motion to allow the lunenburg youth baseball and softball league to place the storage container at the ﬁeld. c. shapiro seconded. all in favor, motion carried (5-0). ",
-   "quote_taken_from_text": true
+   "quote": "k. menard made a motion to allow the lunenburg youth baseball and softball league to place the storage container at the ﬁeld. c. shapiro seconded. all in favor, motion carried (5-0)."
   },
   {
-   "motion": "Appoint A. Scheipers as Chair",
+   "motion": "Appoint A. Scheipers as Chair.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K. Menard",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "c. sullivan made a motion to appoint a. scheipers as chair. k. menard seconded. all in favor, motion carried (5-0)."
   },
   {
-   "motion": "Appoint C. Shapiro as Vice-chair",
+   "motion": "Appoint C. Shapiro as Vice-chair.",
    "moved_by": "A. Lockwood",
    "seconded_by": "A. Scheipers",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "a. lockwood made a motion to appoint c. shapiro as vice-chair. a. scheipers seconded. all in favor, motion carried (5-0)."
   },
   {
-   "motion": "Appoint K. Menard as Clerk",
+   "motion": "Appoint K. Menard as Clerk.",
    "moved_by": "A. Scheipers",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "a. scheipers made a motion to appoint k. menard as clerk. c. shapiro seconded. all in favor, motion carried (5-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clear, readable minutes. Approval of prior minutes was tabled and not voted on.",
- "cost_usd": 0.0664664
+ "note": "Text extract of a 4-page minutes document with page counters that do not match (\\\"Page of 41\\\" to \\\"Page of 44\\\"). Public comment is not a printed heading, so public_comment is empty; TJ Loughlin spoke on agenda items as a presenter. No motion is recorded for approving prior minutes (tabled), for adjournment at 8:08 pm, or for the dog park item. Only one money statement appears (the league covering the container cost); no dollar figures are printed. Chris Ruth's role is inferred from the agenda item title, not stated as his title. Andrea Mastrototoro's attendance at the meeting is not stated.",
+ "cost_usd": 0.015288970000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, colleen shapiro, christopher sullivan, and anita scheipers"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, colleen shapiro, christopher sullivan, and anita scheipers"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, colleen shapiro, christopher sullivan, and anita scheipers"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, colleen shapiro, christopher sullivan, and anita scheipers"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, colleen shapiro, christopher sullivan, and anita scheipers"
+  },
+  {
+   "name": "Angela Clement",
+   "role": "Additional Attendee (gave the program updates)",
+   "status": "present",
+   "quote": "additional attendees: angela clement and chris ruth"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Additional Attendee (gave the Facilities Director & Recreation Director update)",
+   "status": "present",
+   "quote": "additional attendees: angela clement and chris ruth"
+  },
+  {
+   "name": "TJ Loughlin",
+   "role": "Vice-President of the Lunenburg Youth Baseball and Softball League",
+   "status": "present",
+   "quote": "tj loughlin , vice-president of the lunenburg youth baseball and softball league stated the area is fenced in"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ana Lockwood to put the T-ball field dog park proposal on a future agenda and discuss the insurance issue with the Town Manager.",
+   "quote": "a. lockwood stated she would put this on a future agenda and discuss the insurance issue with the town manager."
+  },
+  {
+   "decision": "Approval of minutes was tabled.",
+   "quote": "next item on the agenda, approval of minutes tabled"
+  },
+  {
+   "decision": "Chris Ruth to get the rest of the stock and install the plywood at the Town Beach House, using volunteers for the vinyl flooring.",
+   "quote": "c. ruth indicated he would use volunteers for the vinyl ﬂooring."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Storage container by Powell Field",
+   "what_was_recorded": "TJ Loughlin said the container's cost would be covered by the league; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "k. menard asks the size of the container. tj stated 8x20 and said the cost would be covered by the league."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities Director & Recreation Director Update",
+   "resolution": "no action (update received)",
+   "quote": "c. ruth gave the following updates:",
+   "tags": [
+    "facilities",
+    "fields",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Program updates",
+   "resolution": "no action (update received)",
+   "quote": "a. clement gave the following program updates:",
+   "tags": [
+    "recreation",
+    "summer camps"
+   ]
+  },
+  {
+   "topic": "Repurpose T-ball field as Dog Park",
+   "resolution": "continued to a future agenda",
+   "quote": "a. lockwood stated she would put this on a future agenda and discuss the insurance issue with the town manager.",
+   "tags": [
+    "dog park",
+    "fields",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Request to place storage container by Powell Field",
+   "resolution": "approved 5-0",
+   "quote": "k. menard made a motion to allow the lunenburg youth baseball and softball league to place the storage container at the ﬁeld.",
+   "tags": [
+    "storage container",
+    "youth baseball",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Town Beach House Work: Update",
+   "resolution": "no action (update received)",
+   "quote": "a. lockwood asked about the timeline. c. ruth stated he will be starting april 29th.",
+   "tags": [
+    "town beach",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Disposition of Park Equipment",
+   "resolution": "no action (update received)",
+   "quote": "the policy will offer the surplus to other departments ﬁrst, then munibid and ﬁnally recycle or dispose of.",
+   "tags": [
+    "surplus property",
+    "town manager policy"
+   ]
+  },
+  {
+   "topic": "Earth Day Celebrations: Update",
+   "resolution": "no action (update received)",
+   "quote": "c. shapiro stated all the events were well attended. there were 8-10 events.",
+   "tags": [
+    "earth day",
+    "volunteering"
+   ]
+  },
+  {
+   "topic": "NHS Project: Update",
+   "resolution": "no action (update received)",
+   "quote": "c. sullivan indicated he has 1 student for a project.",
+   "tags": [
+    "NHS",
+    "volunteering"
+   ]
+  },
+  {
+   "topic": "Lake Shirley Parcels & Agreement with Shady Point",
+   "resolution": "no action (no update)",
+   "quote": "a. lockwood indicated she has reached out but have no update.",
+   "tags": [
+    "lake shirley",
+    "land"
+   ]
+  },
+  {
+   "topic": "Commission Reorganization",
+   "resolution": "approved 5-0 (Chair, Vice-chair, Clerk)",
+   "quote": "a. lockwood recommended a. scheipers for the position of chair.",
+   "tags": [
+    "appointments",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Committee Updates (Open Space & Master Plan Steering)",
+   "resolution": "no action (update received)",
+   "quote": "k. menard indicated the master plan steering is reviewing the next survey in hopes of having it ready for town meeting.",
+   "tags": [
+    "master plan",
+    "open space",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Chair Updates",
+   "resolution": "no action (update received)",
+   "quote": "a. lockwood stated the revenue turnover policy is being reviewed.",
+   "tags": [
+    "revenue turnover policy"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "tabled",
+   "quote": "next item on the agenda, approval of minutes tabled",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "tags": [
+  "parks",
+  "park commission",
+  "fields",
+  "dog park",
+  "storage container",
+  "youth baseball",
+  "town beach",
+  "earth day",
+  "commission reorganization",
+  "surplus property",
+  "master plan"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-04-30",
  "docid": "6551",
@@ -12,15 +12,372 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 4/9/24",
-   "outcome": "passed 3-0",
+   "motion": "Accept the minutes of 2/27/24.",
+   "moved_by": "Dave M.",
+   "seconded_by": "Mike M.",
+   "outcome": "passed 4-0",
    "procedural": true,
+   "quote": "to accept the minutes of 2/27/24. roll call vote: dave-aye, mike n.-aye, mike m.- aye and brett-aye",
+   "quote_taken_from_text": true
+  },
+  {
+   "motion": "Accept the minutes of 4/9/24, with Dave abstaining.",
    "moved_by": "Mike M.",
    "seconded_by": "Mike N.",
-   "quote": "motion: mike m. second: mike n. to accept the minutes of 4 /9 /24. roll call vote: mike n.-aye, mike m.-aye and brett-aye. dave abstained."
+   "outcome": "passed 3-0-1",
+   "procedural": true,
+   "quote": "to accept the minutes of 4 /9 /24. roll call vote: mike n.-aye, mike m.-aye and brett-aye."
+  },
+  {
+   "motion": "To take care of the customer at hand with the interest, and any current account holder who comes forward within 7 days, the Commission will take care of the interest.",
+   "moved_by": "Mike N.",
+   "seconded_by": "Mike M.",
+   "outcome": "passed 3-1-1",
+   "procedural": false,
+   "quote": "to take care of the customer at hand with the interest and any body who has been current up to this last billing that comes forward in the next 7 days with interest"
+  },
+  {
+   "motion": "Adjourn the meeting at 8:27 pm.",
+   "moved_by": "Mike N.",
+   "seconded_by": "Mike M.",
+   "outcome": "passed 5-0",
+   "procedural": true,
+   "quote": "to adjourn at 8:27 pm ."
   }
  ],
- "dropped_unquoted": 3,
- "note": "All votes recorded with roll call results and verbatim quotes from the minutes. One abstention on the 4/9/24 minutes (Dave) and one abstention on the interest waiver (Dave); one dissenting vote on the interest waiver (John).",
- "cost_usd": 0.1455561
+ "dropped_unquoted": 0,
+ "note": "Text is OCR-like extraction with split words (e.g. 'sta ted', 'h igh'); quotes were copied with whitespace collapsed and avoid broken words. Attendance is the header list plus names speaking in the body; the minutes say the meeting was via Zoom but do not give a per-person mode, so all eight are marked present. John Reynolds joined partway ('John joined meeting and starting chairing') so the two minutes votes and the 2/27 and 4/9 roll calls do not include him. Roll-call tallies (passed 4-0, 3-0-1, 3-1-1, 5-0) are derived from the roll-call listing; the minutes print no count. Named but not participating: Julie (Asst. Town Manager), Wade at CTE, John DiNapoli, John at Unitil, Heather, Wright Pierce, RISE, the Inspector General's office. Commissioners' public-comment heading was used for member remarks as printed.",
+ "cost_usd": 0.02143557,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair- john reynolds , vice-chair- brett ramsden , clerk- mike nault"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair- brett ramsden , clerk- mike nault"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "vice-chair- brett ramsden , clerk- mike nault"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: dave macdonald and mike mackin"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: dave macdonald and mike mackin"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill bernard , business manager- paula bertram"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "bill bernard , business manager- paula bertram"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Agreed not to spend the $7,200 pump-efficiency quote and to apply for the grant if the data can be obtained in time.",
+   "quote": "the commission discussed and agreed to not spend the $7,200"
+  },
+  {
+   "decision": "Agreed up to 21 manholes could be covered by Chapter 90 money.",
+   "quote": "the commission discussed the list and agreed up to 21 manholes could be covered by chapter 90 money."
+  },
+  {
+   "decision": "Manhole inspection and bid question carried to the next meeting.",
+   "quote": "john said they will discuss this again at the next meeting."
+  },
+  {
+   "decision": "Paula assigned to reach out to John at Unitil.",
+   "quote": "paula will reach out to john at unitil."
+  },
+  {
+   "decision": "Agreed with the wording of the Q4 insert.",
+   "quote": "the commission agreed with the wording on the insert."
+  },
+  {
+   "decision": "Paula to hold off on Q4 billing until she returns.",
+   "quote": "she will hold off on q4 billing until she comes back"
+  },
+  {
+   "decision": "Agreed that if ReBoot does not pay in full, they recommend the Select Board revoke their liquor license.",
+   "quote": "the commission agreed that if reboot does not pay in full, they recommend the select board"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pump efficiency review quote (Wright Pierce task order)",
+   "what_was_recorded": "A quote for reviewing pump efficiency came in high and the Commission agreed not to spend it.",
+   "figures_as_printed": [
+    "$7 ,200"
+   ],
+   "quote": "the quote for looking at the efficiency of the pumps came in at $7 ,200"
+  },
+  {
+   "topic": "Annual cost of the three pump stations",
+   "what_was_recorded": "Paula said the Sewer Department spends a stated amount per year on the three stations.",
+   "figures_as_printed": [
+    "$25K/year"
+   ],
+   "quote": "they spend $25k/year for th ose 3 stations"
+  },
+  {
+   "topic": "Grant deadline and threshold for pump savings",
+   "what_was_recorded": "The grant deadline is noted; savings needed to win the grant were discussed without a dollar figure.",
+   "figures_as_printed": [],
+   "quote": "the d eadline for the grant is 5/10",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Manhole repair cost risk",
+   "what_was_recorded": "John raised concern that manhole repairs could cost more than a stated amount.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "could end up costing more than $100k."
+  },
+  {
+   "topic": "Threshold for separate bid on work",
+   "what_was_recorded": "Paula said the work is over a stated amount, so it would be two separate projects.",
+   "figures_as_printed": [
+    "$ 50K"
+   ],
+   "quote": "since it is over $ 50k."
+  },
+  {
+   "topic": "Sewer manhole covers and Chapter 90 money",
+   "what_was_recorded": "Discussion of whether Chapter 90 money could pay for sewer covers; no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "dave asked if ch . 90 money could be used for sewer covers"
+  },
+  {
+   "topic": "Interest waiver request, 3 accounts",
+   "what_was_recorded": "A waiver of interest was requested on three accounts totalling a stated amount.",
+   "figures_as_printed": [
+    "$74.75"
+   ],
+   "quote": "waiver of interest request for 3 accounts- (car wash es and office ) for total of $74.75."
+  },
+  {
+   "topic": "Waiver approval threshold",
+   "what_was_recorded": "Any charge over a stated amount requires the board to sign off.",
+   "figures_as_printed": [
+    "$15"
+   ],
+   "quote": "paula noted any charge over $15, the board will need to sign on it."
+  },
+  {
+   "topic": "Late demand fee not charged",
+   "what_was_recorded": "A stated fee would have been added if demands had gone out.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "if demands had gone out, a $10 fee would also have been added ."
+  },
+  {
+   "topic": "Revenue lost to billing system failure",
+   "what_was_recorded": "Paula said the inability to send demands in Q2 and Q3 caused a stated loss to the Enterprise Fund.",
+   "figures_as_printed": [
+    "$8K"
+   ],
+   "quote": "she was unable to send out demands in q2 and q3 - a loss of $8k."
+  },
+  {
+   "topic": "ReBoot payment received under agreement",
+   "what_was_recorded": "ReBoot came in with a stated payment and is still far behind its payment agreement.",
+   "figures_as_printed": [
+    "$2K"
+   ],
+   "quote": "t hey came in with $2k",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [
+  {
+   "description": "OBEP transfer, to appear on the Town Meeting consent calendar",
+   "amount_as_printed": "not printed",
+   "outcome": "Minutes say the OBEP transfer will be in the consent calendar while the budget is handled separately; no vote recorded.",
+   "quote": "the obep transfer will be in the consent calendar but the budget will be done separate ."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mike M.",
+   "topic": "town meeting on 5/4",
+   "quote": "mike m. reminded all that town meeting will be on 5/4 at 9am and will be a busy one ."
+  },
+  {
+   "speaker": "Dave",
+   "topic": "importance of town meeting",
+   "quote": "dave also reiterated that this town meeting is very important for the future of lunenburg ."
+  },
+  {
+   "speaker": "Brett",
+   "topic": "software billing problems (Munis)",
+   "quote": "brett stated that their software billing issues are in deplorable situation."
+  },
+  {
+   "speaker": "The Commissioners",
+   "topic": "well wishes to Paula Bertram",
+   "quote": "the commissioners wished paula well with her surgery."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "quote": "brett opened the meeting at 7 :02 pm. and did a roll call of attendees.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment: town meeting and billing software",
+   "resolution": "no action",
+   "quote": "brett stated that their software billing issues are in deplorable situation.",
+   "tags": [
+    "town meeting",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Minutes of 2/27/24",
+   "resolution": "approved 4-0 by roll call",
+   "quote": "to accept the minutes of 2/27/24. roll call vote: dave-aye, mike n.-aye, mike m.- aye and brett-aye",
+   "tags": [
+    "minutes"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Minutes of 4/9/24",
+   "resolution": "approved, Dave abstained",
+   "quote": "to accept the minutes of 4 /9 /24. roll call vote: mike n.-aye, mike m.-aye and brett-aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Engineering services: pump efficiency and grant",
+   "resolution": "agreed not to spend the quote; apply for grant if data arrives in time",
+   "quote": "the commission discussed and agreed to not spend the $7,200",
+   "tags": [
+    "pumps",
+    "grant",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Manhole repairs and Chapter 90 funding",
+   "resolution": "up to 21 manholes Chapter 90; inspection and bid question carried to next meeting",
+   "quote": "the commission discussed the list and agreed up to 21 manholes could be covered by chapter 90 money.",
+   "tags": [
+    "manholes",
+    "chapter 90",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Q4 bill insert",
+   "resolution": "wording agreed",
+   "quote": "the commission agreed with the wording on the insert.",
+   "tags": [
+    "billing"
+   ]
+  },
+  {
+   "topic": "Draft turnover procedure",
+   "resolution": "discussed; no action",
+   "quote": "john said it seemed cumbersome to have staff go to town hall to bring checks every day",
+   "tags": [
+    "procedure",
+    "cash handling"
+   ]
+  },
+  {
+   "topic": "Waiver of interest, 3 accounts",
+   "resolution": "passed 3-1-1",
+   "quote": "to take care of the customer at hand with the interest and any body who has been current up to this last billing that comes forward in the next 7 days with interest",
+   "tags": [
+    "interest waiver",
+    "billing",
+    "post office"
+   ]
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "no action; items reported",
+   "quote": "paula reported that there was another major clog at leominster rd",
+   "tags": [
+    "sewer system",
+    "budget",
+    "town meeting",
+    "munis"
+   ]
+  },
+  {
+   "topic": "ReBoot payment agreement and liquor license",
+   "resolution": "recommend revoking liquor license if not paid in full",
+   "quote": "the commission agreed that if reboot does not pay in full, they recommend the select board",
+   "tags": [
+    "liquor license",
+    "payment agreement"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "information only",
+   "quote": "may 4, 2024 @ 9am - town meeting",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:27 pm, passed 5-0",
+   "quote": "to adjourn at 8:27 pm .",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "munis billing",
+  "town meeting",
+  "manholes",
+  "chapter 90",
+  "pump grant",
+  "interest waiver",
+  "liquor license",
+  "enterprise fund",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

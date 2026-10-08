@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-03-26",
  "docid": "6490",
@@ -12,103 +12,609 @@
  },
  "votes": [
   {
-   "motion": "raise and appropriate $948,136 to supplement the Lunenburg public schools operating budget for fiscal year 2025 contingent upon passage of a proposition to a ballot question",
+   "motion": "Amend Article H to raise and appropriate $948,136 to supplement the Lunenburg public schools operating budget for FY2025, contingent on a ballot question passing.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Tom Alonzo",
-   "outcome": "passed unanimously (5-0-0)",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "chair jeffreys moved to submit and amend what is currently identified as article h to read as follows: to see if the town will vote to raise and appropriate $948,136 to supplement the lunenburg public schools operating budget for fiscal year 2025 contingent upon the passage of a proposition to a ballot question or take any other action thereto. second by member tom alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "quote": "chair jeffreys moved to submit and amend what is currently identified as article h to read as follows"
   },
   {
-   "motion": "place Articles A-Z on the town warrant",
+   "motion": "Place Articles A-Z on the town warrant.",
    "moved_by": "Vice Chair Lou Franco",
    "seconded_by": "Chair Jeffreys",
-   "outcome": "passed unanimously (5-0-0)",
-   "procedural": true,
-   "quote": "vice chair lou franco moved to place articles a-z on the town warrant. seconded by chair jeffreys. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "vice chair lou franco moved to place articles a-z on the town warrant."
   },
   {
-   "motion": "recommend approval of Article A",
+   "motion": "Recommend approval of Article A.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously (5-0-0)",
-   "procedural": true,
-   "quote": "chair jeffreys moved to recommend approval of article a. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "chair jeffreys moved to recommend approval of article a."
   },
   {
-   "motion": "recommend approval for Article B - Revolving Funds for departments, boards, committees, agencies, officers, etc.",
+   "motion": "Recommend approval of Article B, Revolving Funds for departments, boards, committees, agencies, officers, etc.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously (5-0-0)",
-   "procedural": true,
-   "quote": "chair jeffreys moved to recommend approval for article b -revolving funds for departments, boards, committees, agencies, officers, etc. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "chair jeffreys moved to recommend approval for article b -revolving funds for departments, boards, committees, agencies, officers, etc."
   },
   {
-   "motion": "recommend approval for Article C - Local Wetlands Protection bylaws fees at $50,000",
+   "motion": "Recommend approval of Article C, Local Wetlands Protection bylaws fees at $50,000.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously (5-0-0)",
-   "procedural": true,
-   "quote": "chair jeffreys moved to recommend approval for article c - local wetlands protection bylaws fees at $50,000. second by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "chair jeffreys moved to recommend approval for article c"
   },
   {
-   "motion": "recommend approval for Article L - Town to raise $100,000 for stabilization fund",
+   "motion": "Recommend approval of Article L, town to raise $100,000 for stabilization fund.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously (5-0-0)",
-   "procedural": true,
-   "quote": "chair jeffreys moved to recommend approval for article l - town to raise $100,000 for stabilization fund. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "chair jeffreys moved to recommend approval for article l"
   },
   {
-   "motion": "recommend approval for Article M - $250,000 from free cash for special purpose stabilization fund",
+   "motion": "Recommend approval of Article M, $250,000 from free cash for special purpose stabilization fund.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously (5-0-0)",
-   "procedural": true,
-   "quote": "chair jeffreys moved the town to recommend approval for article m - $250,000 from free cash for special purpose stabilization fund. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "chair jeffreys moved the town to recommend approval for article m"
   },
   {
-   "motion": "recommend approval for Article N - Other post employment benefits funds for $187,110",
+   "motion": "Recommend approval of Article N, other post employment benefits funds for $187,110.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously (5-0-0)",
-   "procedural": true,
-   "quote": "chair jeffreys moved to recommend approval for article n - other post employment benefits funds for $187,110. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "chair jeffreys moved to recommend approval for article n"
   },
   {
-   "motion": "recommend approval for Article P - Sewer Capital Reserve stabilization fund",
+   "motion": "Recommend approval of Article P, Sewer Capital Reserve stabilization fund.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously (5-0-0)",
-   "procedural": true,
-   "quote": "chair jeffreys moved to recommend approval for article p - sewer capital reserve stabilization fund. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "chair jeffreys moved to recommend approval for article p"
   },
   {
-   "motion": "recommend approval for Article T - $10,000 Cemetery lot",
+   "motion": "Recommend approval of Article T, $10,000 Cemetery lot.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously (5-0-0)",
-   "procedural": true,
-   "quote": "chair jeffreys moved to recommend approval for article t - $10,000 cemetery lot. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "chair jeffreys moved to recommend approval for article t"
   },
   {
-   "motion": "recommend approval for Article W - create a Declaration of Trust",
+   "motion": "Recommend approval of Article W, create a Declaration of Trust.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Vice Chair Lou Franco",
-   "outcome": "passed unanimously (5-0-0)",
-   "procedural": true,
-   "quote": "chair jeffreys moved the town to recommend approval for article w - create a declaration of trust. seconded by vice chair lou franco. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "chair jeffreys moved the town to recommend approval for article w"
   },
   {
-   "motion": "adjourn",
+   "motion": "Recommend approval of Article X, relating to Historical Commission.",
+   "moved_by": "Chair Jeffreys",
+   "seconded_by": "Member Alonzo",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "chair jeffreys moved to recommend approval for article x"
+  },
+  {
+   "motion": "Adjourn the meeting at 10:27 pm.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Vice Chair Franco",
-   "outcome": "passed unanimously (5-0-0)",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "chair jeffreys moved to adjourn at 10:27 pm. second by vice chair franco. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "quote": "moved to adjourn at 10:27 pm. second by vice chair franco."
+  },
+  {
+   "motion": "Approve the minutes of the March 26, 2024 meeting (recorded at the June 17, 2025 approval).",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Vice-Chair Moore",
+   "outcome": "passed 4-0-1",
+   "procedural": true,
+   "quote": "chair nuzzolo made the motion to approve the minutes from march 26, 2024. seconded by vice-chair moore."
   }
  ],
  "dropped_unquoted": 0,
- "note": "12 votes recorded. Article X was discussed but held for a future agenda without a vote. Articles D-K, O, R, S, U, V, Y, and Z were held without votes on this date.",
- "cost_usd": 0.13422409999999999
+ "note": "Text-extracted from a 10-page document, not a scan. The minutes' own vote counts are printed as 'Five-aye' with '(5-0-0)'; those are recorded as printed. Article X was moved and seconded with no vote call printed and is recorded as outcome 'not stated'. Clerk Nuzzolo appears in the roll as present but the minutes also say he participated remotely; recorded as 'remote'. Julie Belliveau is marked remote ('via ZOOM'). The Board-agreed decision on the data collector and meal site manager has no vote. The minutes end with an approval of these minutes on 17 June 2025 that names a different officer roster (Chair Nuzzolo, Vice-Chair Moore, McLeod); those names are recorded as printed. Spelling varies in the source (Sibyl/Sybil Kaufman, Mulé/Mole). No transfers of reserve or line-item funds are printed. Some quotes are cut short to fit the 200-character cap or skip double spaces and curly apostrophes present in the source.",
+ "cost_usd": 0.026214670000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair: michael-ray jeffreys, vice-chair: lou franco, clerk: caesar"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair: lou franco, clerk: caesar"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "clerk caesar nuzzolo thanked everyone for being patient with his remote participation"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "member: tom alonzo and member renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "member: tom alonzo and member renee emkey"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager: heather lemieux, town manager and town counsel:"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "town counsel adam costa joined the board for discussion."
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager",
+   "status": "remote",
+   "quote": "assistant town manager julie belliveau (via zoom) stated for fy24 they are dropping the first"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair of the School Committee",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair of the school committee stated he would refer to the superintendent"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member of the School Committee",
+   "status": "present",
+   "quote": "laura brzozoski, member of the school committee stated 8.51% without the arpa funding"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "Personnel Committee",
+   "status": "present",
+   "quote": "wendy bertrand of the personnel committee provided an overview of the articles"
+  },
+  {
+   "name": "Sue Andrews",
+   "role": "Personnel Committee",
+   "status": "present",
+   "quote": "sue andrews of the personnel committee stated in 2024 they asked for the grid to be changed"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair of the Planning Board",
+   "status": "present",
+   "quote": "matthew brenner chair of the planning board provided an overview and purpose of articles y"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Resident, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street stated he is here regarding the cemetery commission."
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Chair of the Council on Aging",
+   "status": "present",
+   "quote": "ms. lincoln stated, as the coa chairman, they have been short changed for the longest time."
+  },
+  {
+   "name": "Sibyl Kaufman",
+   "role": "Resident, 27 Oak Ave (Save Our Schools Lunenburg)",
+   "status": "present",
+   "quote": "sibyl kaufman, 27 oak ave stated she is here on behalf of the group known as save our schools"
+  },
+  {
+   "name": "Sybil Kaufman",
+   "role": "Resident, 27 Oak Ave (spelling as printed in Public Comment VI; likely the same person as Sibyl Kaufman)",
+   "status": "present",
+   "quote": "sybil kaufman, 27 oak ave stated that if the town wants people to run for the different boards"
+  },
+  {
+   "name": "Shoshana Mulé",
+   "role": "Resident, 139 Cove Road",
+   "status": "present",
+   "quote": "shoshana mulé, 139 cove road stated she got involved with the school budget process"
+  },
+  {
+   "name": "Amanda Gilman",
+   "role": "Resident, 186 Reservoir Road",
+   "status": "present",
+   "quote": "amanda gilman, 186 reservoir road stated should it not pass at town meeting but pass on the ballot"
+  },
+  {
+   "name": "TJ Loughlin",
+   "role": "Resident, 207 Rolling Acres Road",
+   "status": "present",
+   "quote": "tj loughlin, 207 rolling acres road referred to town manager lemieux"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Resident, 21 Francis Avenue (speaking as a resident, not a School Committee member)",
+   "status": "present",
+   "quote": "laura brzozoski, 21 francis avenue stated she is here as a resident, not a school committee"
+  },
+  {
+   "name": "Leanna Harris",
+   "role": "Minute Clerk",
+   "status": "not stated",
+   "quote": "leanna harris minute clerk"
+  },
+  {
+   "name": "Vice-Chair Moore",
+   "role": "Vice-Chair (named only in the 2025 approval of these minutes)",
+   "status": "not stated",
+   "quote": "seconded by vice-chair moore."
+  },
+  {
+   "name": "McLeod",
+   "role": "Member (abstained on the 2025 approval of these minutes)",
+   "status": "not stated",
+   "quote": "one-abstain (mcleod)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed to add back the accessory data collector position and the meal site manager position in the budget.",
+   "quote": "member alonzo stated he would be in favor of adding back the data collector in the accessory department to maintain revenue coming in and also the meal site manager. the board agreed."
+  },
+  {
+   "decision": "Article X was held to be placed on a future agenda.",
+   "quote": "members decided to hold this article to be placed on a future agenda."
+  },
+  {
+   "decision": "Articles D through K were held until the next meeting.",
+   "quote": "articles d- k were held until next meeting."
+  },
+  {
+   "decision": "Articles O, R, S, U, V, Y and Z were held until the next meeting.",
+   "quote": "article o - held until next meeting."
+  },
+  {
+   "decision": "Tax bills to go out the last day of March because of a MUNIS issue (announced by the Town Manager).",
+   "quote": "town manager lemieux stated due to an issue with munis, the tax bills will be going out the last day of march."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School budget supplement (Article H)",
+   "what_was_recorded": "The school committee sent a revised figure for the supplemental school appropriation, which the Board then put into the amended Article H.",
+   "quote": "they did receive a revised number from the school committee in the amount of $948,136.",
+   "figures_as_printed": [
+    "$948,136"
+   ]
+  },
+  {
+   "topic": "Proposition 2 1/2 override percentages",
+   "what_was_recorded": "Members and officials gave differing override percentages, with and without ARPA and ESSER funding.",
+   "quote": "what they appropriating is not a full 5.44% increase and their starting number next year will only reflect the 4.44% because the arpa funds will not be included.",
+   "figures_as_printed": [
+    "5.44%",
+    "4.44%",
+    "5.34%",
+    "8.51%"
+   ]
+  },
+  {
+   "topic": "Overlay account and abatements",
+   "what_was_recorded": "Last year's overlay transfer covered abatements without an override.",
+   "quote": "the town was able to pay out over $1m in abatements without an override.",
+   "figures_as_printed": [
+    "$1M"
+   ]
+  },
+  {
+   "topic": "Council on Aging hours request",
+   "what_was_recorded": "A $6,648.42 request to raise a 19.5 hour employee to 24 benefitted hours was reported removed from the budget.",
+   "quote": "request from the council on aging for $6,648.42 to make a 19.5 hour employee to a benefitted",
+   "figures_as_printed": [
+    "$6,648.42"
+   ]
+  },
+  {
+   "topic": "Remaining budget gap",
+   "what_was_recorded": "The Town Manager reported the final gap closed at approximately this amount.",
+   "quote": "the final gap was approximately $41,000.",
+   "figures_as_printed": [
+    "$41,000"
+   ]
+  },
+  {
+   "topic": "Deferred positions",
+   "what_was_recorded": "Positions deferred pending the contract impact were put at $195,000, or $150,000 with health insurance.",
+   "quote": "chair jeffreys asked for confirmation that those positions total $195,000 and town manager lemieux stated they would be $150,000 with health insurance.",
+   "figures_as_printed": [
+    "$195,000",
+    "$150,000"
+   ]
+  },
+  {
+   "topic": "Salary reserve line",
+   "what_was_recorded": "The salary reserve was raised from a stated level because of the SAP impact and expected DPW union negotiations.",
+   "quote": "the salary reserve line was at $100,000 but based on the sap impact the wage was at around $111,000.",
+   "figures_as_printed": [
+    "$100,000",
+    "$111,000",
+    "$155,000"
+   ]
+  },
+  {
+   "topic": "Meal site / cart contract price",
+   "what_was_recorded": "Recent conversations with the vendor indicated a price increase of up to the stated percentage, so the contract is going out to bid.",
+   "quote": "there is up to a 70% increase to extend the bid so they are going to put that contract out to bid",
+   "figures_as_printed": [
+    "70%"
+   ]
+  },
+  {
+   "topic": "Personnel grid and cost of living adjustment",
+   "what_was_recorded": "The grid change and COLA were described as percentage increases.",
+   "quote": "asked for the grid to be changed by 2.5% and this is asking them to do almost 3% this year.",
+   "figures_as_printed": [
+    "2.5%",
+    "3%",
+    "5.5%"
+   ]
+  },
+  {
+   "topic": "Starting wage for entry step",
+   "what_was_recorded": "The new FY24 starting point for the wage grid was stated in dollars.",
+   "quote": "begin with step 3 as the new starting point at $15.50.",
+   "figures_as_printed": [
+    "$15.50"
+   ]
+  },
+  {
+   "topic": "Article C wetlands fees",
+   "what_was_recorded": "Article C sets local wetlands bylaw fees at a stated dollar amount.",
+   "quote": "bylaws fees at $50,000.",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Article L stabilization appropriation",
+   "what_was_recorded": "Article L is a warrant article to raise a stated sum for the stabilization fund.",
+   "quote": "town to raise $100,000 for stabilization fund.",
+   "figures_as_printed": [
+    "$100,000"
+   ]
+  },
+  {
+   "topic": "Article M free cash transfer to stabilization",
+   "what_was_recorded": "Article M proposes a stated sum from free cash for a special purpose stabilization fund.",
+   "quote": "$250,000 from free cash for special purpose stabilization fund.",
+   "figures_as_printed": [
+    "$250,000"
+   ]
+  },
+  {
+   "topic": "Article N OPEB funding",
+   "what_was_recorded": "Article N proposes funding other post employment benefits at a stated amount.",
+   "quote": "other post employment benefits funds for $187,110.",
+   "figures_as_printed": [
+    "$187,110"
+   ]
+  },
+  {
+   "topic": "Article T cemetery lot",
+   "what_was_recorded": "Article T proposes a stated amount for a cemetery lot.",
+   "quote": "$10,000 cemetery lot.",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "Assessment exemption amount (Article V)",
+   "what_was_recorded": "Vice Chair Franco suggested raising the exemption amount, which was held.",
+   "quote": "consider raising the exemption from $750 to $1000.",
+   "figures_as_printed": [
+    "$750",
+    "$1000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Cemetery Commission Article 21 and Chapter 40 Sec 8D",
+   "quote": "dave passios, 56 whiting street stated he is here regarding the cemetery commission."
+  },
+  {
+   "speaker": "Debbie Lincoln",
+   "stated_role": "Chair of the Council on Aging",
+   "topic": "Council on Aging hours request removed from budget",
+   "quote": "ms. lincoln stated, as the coa chairman, they have been short changed for the longest time."
+  },
+  {
+   "speaker": "Sibyl Kaufman",
+   "stated_role": "27 Oak Ave, on behalf of Save Our Schools Lunenburg",
+   "topic": "Save Our Schools statement",
+   "quote": "sibyl kaufman, 27 oak ave stated she is here on behalf of the group known as save our schools"
+  },
+  {
+   "speaker": "Shoshana Mulé",
+   "stated_role": "139 Cove Road",
+   "topic": "Support for a finance task force",
+   "quote": "shoshana mulé, 139 cove road stated she got involved with the school budget process"
+  },
+  {
+   "speaker": "Amanda Gilman",
+   "stated_role": "186 Reservoir Road",
+   "topic": "Special Town Meeting if override fails at town meeting",
+   "quote": "amanda gilman, 186 reservoir road stated should it not pass at town meeting but pass on the ballot"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Sick leave and PTO",
+   "quote": "dave passios, 56 whiting street referred back to the discussion earlier with the personnel committee"
+  },
+  {
+   "speaker": "TJ Loughlin",
+   "stated_role": "207 Rolling Acres Road",
+   "topic": "Health insurance and transportation costs",
+   "quote": "tj loughlin, 207 rolling acres road referred to town manager lemieux"
+  },
+  {
+   "speaker": "Sybil Kaufman",
+   "stated_role": "27 Oak Ave",
+   "topic": "Board meeting times and running for office",
+   "quote": "sybil kaufman, 27 oak ave stated that if the town wants people to run for the different boards"
+  },
+  {
+   "speaker": "Laura Brzozoski",
+   "stated_role": "21 Francis Avenue, as a resident",
+   "topic": "Support for the override",
+   "quote": "laura brzozoski, 21 francis avenue stated she is here as a resident, not a school committee"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "chair michael-ray jeffreys informed attendees that the meeting was being recorded and broadcast live",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "I. Public comment (Board and public)",
+   "resolution": "statements only; Member Emkey's action item for a finance task force noted",
+   "quote": "member renee emkey stated she wanted to address some comments that have come up recently at various committee meetings.",
+   "tags": [
+    "budget",
+    "override",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "II. Announcements",
+   "resolution": "tax bills moved to the last day of March",
+   "quote": "town manager lemieux stated due to an issue with munis, the tax bills will be going out the last day of march.",
+   "tags": [
+    "tax bills",
+    "MUNIS"
+   ]
+  },
+  {
+   "topic": "III. Appointments: discussion with Town Counsel on warrant articles and override ballot question",
+   "resolution": "Article H amended and passed 5-0-0",
+   "quote": "7:05 pm discussion with town counsel on annual town meeting warrant articles and proposition 2 1/2 override ballot question",
+   "tags": [
+    "override",
+    "warrant",
+    "ballot question",
+    "Proposition 2 1/2"
+   ]
+  },
+  {
+   "topic": "III. Meeting with Personnel Committee on Articles I, J and K",
+   "resolution": "discussed; no vote recorded",
+   "quote": "7:45 pm meeting with personnel committee representative on personnel committee",
+   "tags": [
+    "personnel",
+    "wage grid",
+    "sick leave"
+   ]
+  },
+  {
+   "topic": "III. Meeting with Planning Board on Articles Y and Z",
+   "resolution": "discussed; Y and Z held to next meeting",
+   "quote": "8:00 pm meeting with planning board representative on planning board annual town",
+   "tags": [
+    "water supply protection",
+    "battery storage",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "IV.1 Old business: review warrant articles and vote on recommendations",
+   "resolution": "Articles A-Z placed on warrant; A, B, C, L, M, N, P, T, W recommended; X and others held",
+   "quote": "vice chair lou franco moved to place articles a-z on the town warrant.",
+   "tags": [
+    "warrant",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "IV.2 Old business: FY2024 and FY2025 budget, capital plan and warrant articles",
+   "resolution": "budget gap closed; accessory data collector and meal site manager kept",
+   "quote": "town manager lemieux stated that they have worked with the superintendent and the school committee and have closed the budget gap",
+   "tags": [
+    "FY2025 budget",
+    "FY2024 budget",
+    "capital plan",
+    "meal site"
+   ]
+  },
+  {
+   "topic": "V. Upcoming meetings and events",
+   "resolution": "Board to vote on opting out of mail voting for town election at a public meeting next Tuesday",
+   "quote": "the board has to vote to opt-out on voting by mail for the town election.",
+   "tags": [
+    "elections",
+    "voting by mail"
+   ]
+  },
+  {
+   "topic": "VI. Public comment",
+   "resolution": "statements only; no action",
+   "quote": "dave passios, 56 whiting street referred back to the discussion earlier with the personnel committee",
+   "tags": [
+    "public comment",
+    "sick leave",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "VII. Adjourn",
+   "resolution": "adjourned 10:27 pm, 5-0-0",
+   "quote": "moved to adjourn at 10:27 pm. second by vice chair franco.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "annual town meeting warrant",
+  "school budget override",
+  "Proposition 2 1/2",
+  "FY2025 budget",
+  "FY2024 budget",
+  "personnel wage grid",
+  "council on aging",
+  "cemetery commission",
+  "planning board zoning",
+  "water supply protection",
+  "battery storage",
+  "voting by mail",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

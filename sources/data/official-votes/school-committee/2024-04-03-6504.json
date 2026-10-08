@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-04-03",
  "docid": "6504",
@@ -12,55 +12,374 @@
  },
  "votes": [
   {
-   "motion": "Approve the regular session minutes from February 28, 2024",
-   "moved_by": "Sculimbrene",
-   "seconded_by": "Beardmore",
-   "outcome": "passed 4-0-1",
+   "motion": "Approve the minutes of the Regular Session of 2/28/24 (roll call: four approve, Ms. Brzozoski abstains).",
+   "moved_by": "Mr. Sculimbrene",
+   "seconded_by": "Mr. Beardmore",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. sculimbrene makes a motion to approve minutes, mr. beardmore seconded the motion. roll call vote approve - ms. archambault, mr. lehtinen, mr. sculimbrene, mr. beardmore. ms. brzozoski abstains"
+   "quote": "mr. sculimbrene makes a motion to approve minutes, mr. beardmore seconded the motion."
   },
   {
-   "motion": "Declare the 2008 dump truck as surplus",
-   "moved_by": "Beardmore",
-   "seconded_by": "Lehtinen",
-   "outcome": "passed 5-0",
+   "motion": "Declare the 2008 dump truck from Facilities & Grounds surplus, to be stored at DPW.",
+   "moved_by": "Mr. Beardmore",
+   "seconded_by": "Mr. Lehtinen",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. beardmore makes a motion to move 2008 dump truck into surplus, mr. lehtinen seconds the motion, all approve via roll call vote."
   },
   {
-   "motion": "Accept the resolutions for school staff appreciation weeks and days",
-   "moved_by": "Beardmore",
-   "seconded_by": "Brzozoski",
-   "outcome": "passed 5-0",
+   "motion": "Accept the resolutions honoring school staff appreciation.",
+   "moved_by": "Mr. Beardmore",
+   "seconded_by": "Ms. Brzozoski",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "mr. beardmore makes a motion to accept resolutions, ms. brzozoski seconds the motion all approve via roll call"
+   "quote": "mr. beardmore makes a motion to accept resolutions, ms. brzozoski seconds the motion all approve via roll call vote"
   },
   {
-   "motion": "Accept the donation of 100 pairs of eclipse glasses from Laura Barooshian",
-   "moved_by": "Lehtinen",
-   "seconded_by": "Brzozoski",
-   "outcome": "passed 5-0",
+   "motion": "Accept the donation of 100 pairs of eclipse glasses from Laura Barooshian to the 6th and 7th grade classes.",
+   "moved_by": "Mr. Lehtinen",
+   "seconded_by": "Ms. Brzozozski",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. lehtinen makes a motion to accept the donation, ms. brzozozski seconds the motion, all approve via roll call vote"
   },
   {
-   "motion": "Return AARPA funds to the town if override passes",
-   "moved_by": "Beardmore",
-   "seconded_by": "Lehtinen",
-   "outcome": "passed 5-0",
+   "motion": "Return AARPA funds to the town if the override passes.",
+   "moved_by": "Mr. Beardmore",
+   "seconded_by": "Mr. Lehtinen",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. beardmore makes a motion to return aarpa funds if override passes, mr. lehtinen seconds the motion, all approve via roll call."
   },
   {
-   "motion": "Adjourn the meeting at 8:35 p.m.",
-   "moved_by": "Lehtinen",
-   "seconded_by": "Beardmore",
-   "outcome": "passed 5-0",
+   "motion": "Adjourn the meeting at 8:35.",
+   "moved_by": "Mr. Lehtinen",
+   "seconded_by": "Mr. Beardmore",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. lehtinen makes a motion to adjourn at 8:35, mr. beardmore seconds the motion, all approve via roll call."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1141121
+ "note": "Clean text extraction of four pages, not a scan. Votes: only the minutes approval records a count (four approve, one abstention); other roll calls are recorded only as 'all approve', so outcome is 'passed' without a count. The 'Business Manager/ HR Director' line on page 1 is a title, not a named person; it is listed as an attendee with status 'not stated' and is included only for completeness, so it may be dropped. Item 11 is headed 'Public Comment' but its speakers are members of the committee; item 3 records 'None'. No transfers are recorded despite the agenda heading 'Review & Approve Warrants & Line Item Transfers'. Minor typos as printed ('Brzozozski', 'Brzozozski' in the donation motion) are kept verbatim.",
+ "cost_usd": 0.018165570000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair, School Committee",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair, School Committee",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary, School Committee",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member, School Committee",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member, School Committee",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr burnham shares the revenue from the verizon tower goes to the turf revolving account"
+  },
+  {
+   "name": "Business Manager/ HR Director",
+   "role": "Business Manager/ HR Director (position listed; not named; described as not currently filled in discussion)",
+   "status": "not stated",
+   "quote": "mr. beardmore states it would be the business manager which is currently not filled."
+  },
+  {
+   "name": "Eric Hevy",
+   "role": "Director of Facilities & Grounds",
+   "status": "present",
+   "quote": "guests: eric hevy - director of facilities & grounds"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "recording secretary courtney fuller"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee authorized Mr. Hevy to continue to pursue and research an AT&T cell tower arrangement, with safety, local bylaws and the Athletic Director included. No vote was recorded.",
+   "quote": "the committee authorizes mr. hevy to continue to pursue and research this endeavor."
+  },
+  {
+   "decision": "Chair proposed waiting for the I-ready numbers before the superintendent's evaluation, with presentation on June 19; the committee reviewed the evaluation template. Recorded as a proposal, with no vote.",
+   "quote": "ms. archambault proposes we wait for the i-ready numbers to come in and we have until june 30th to give to dese."
+  },
+  {
+   "decision": "The school committee should put together a communication of what the override is specifically planned for. Members agreed in discussion; Mr. Lehtinen proposed it as a future topic. No vote recorded.",
+   "quote": "the school committee should put together a communication of what the override is specifically planned for."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant approval",
+   "what_was_recorded": "The warrant total for 3/18/24-3/26/24 was reported, with no questions from the committee and the warrants signed by the Chair.",
+   "figures_as_printed": [
+    "$119,550.49"
+   ],
+   "quote": "warrant total 3/18/24-3/26/24 $119,550.49 no questions from the committee."
+  },
+  {
+   "topic": "AT&T cell tower revenue and Verizon tower revenue",
+   "what_was_recorded": "Verizon tower revenue is earmarked for the turf field and goes to the turf revolving account under town authority; the committee discussed whether an AT&T tower could produce similar revenue.",
+   "figures_as_printed": [],
+   "quote": "dr burnham shares the revenue from the verizon tower goes to the turf revolving account and is under the authority of the town."
+  },
+  {
+   "topic": "Override and AARPA funds",
+   "what_was_recorded": "Level service minus ESSER budget items were to be paid with AARPA funds; the committee agreed to return the funds to the town if the override passes. No dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the level service minus esser budget had items that were going to be paid with aarpa funds"
+  },
+  {
+   "topic": "State aid: Chapter 70 inflation index",
+   "what_was_recorded": "The Chair reported a proposed bill to add an inflation index to the Chapter 70 foundation budget, which MASC said would benefit Lunenburg substantially. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the bill being proposed to make a change to chapter 70 regarding an inflation index on the foundation budget would in fact benefit lunenburg substantially"
+  },
+  {
+   "topic": "Override, warrant article and ballot question",
+   "what_was_recorded": "Town boards discussed the override, warrant article and ballot question; the select board recommended approval. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussing the override, the warrant article, and the ballot question"
+  },
+  {
+   "topic": "FY25 approved budget posting",
+   "what_was_recorded": "The superintendent reported the FY25 approved budget had been posted on the district website. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "they fy25 approved budget has been posted on the district website."
+  },
+  {
+   "topic": "Finance Committee budget, Chapter 70 and transportation",
+   "what_was_recorded": "The Finance Committee reported considerable conversation about the budget, Chapter 70 funds and transportation. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "there has been a lot of conversation around the budget, chapter 70 funds, and transportation."
+  },
+  {
+   "topic": "Athletic fundraising applications",
+   "what_was_recorded": "A lacrosse boosters fundraising application was approved; the track and field program raised funds through the Snack Shack; a football fundraiser was proposed for new varsity jerseys. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "we have received a fundraising application we approved and will be communication that via letter to the superintendent for the lacrosse boosters."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "call to order by carol archambault at 6:30 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (item 3)",
+   "resolution": "none received",
+   "quote": "3. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "reported",
+   "quote": "thank you for adjusting to a zoom meeting.",
+   "tags": [
+    "override",
+    "Chapter 70",
+    "MASC",
+    "town boards"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved",
+   "quote": "mr. sculimbrene makes a motion to approve minutes, mr. beardmore seconded the motion.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and line item transfers",
+   "resolution": "warrants signed, no questions",
+   "quote": "warrant total 3/18/24-3/26/24 $119,550.49 no questions from the committee.",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "reported",
+   "quote": "transportation forms have been sent out and are due on may 1st at 5 p.m.",
+   "tags": [
+    "transportation",
+    "registration",
+    "FY25 budget",
+    "eclipse"
+   ]
+  },
+  {
+   "topic": "Student Representative Report",
+   "resolution": "none",
+   "quote": "8. student representative report - none",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Declare surplus vehicle",
+   "resolution": "approved; declared surplus",
+   "quote": "we would like to declare the 2008 dump truck as surplus and will be stored at dpw",
+   "tags": [
+    "surplus",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Resolutions for staff appreciation",
+   "resolution": "accepted",
+   "quote": "mr. beardmore makes a motion to accept resolutions, ms. brzozoski seconds the motion",
+   "tags": [
+    "staff appreciation"
+   ]
+  },
+  {
+   "topic": "Eclipse glasses donation",
+   "resolution": "accepted",
+   "quote": "laura barooshian donated 100 pairs of eclipse glasses to the 6 th and 7th grade classes.",
+   "tags": [
+    "donation",
+    "eclipse"
+   ]
+  },
+  {
+   "topic": "AT&T cell tower",
+   "resolution": "research authorized, no vote",
+   "quote": "the committee authorizes mr. hevy to continue to pursue and research this endeavor.",
+   "tags": [
+    "cell tower",
+    "revenue",
+    "turf field"
+   ]
+  },
+  {
+   "topic": "Superintendent's evaluation",
+   "resolution": "proposed to wait for I-ready numbers; template reviewed",
+   "quote": "ms. archambault proposes we wait for the i-ready numbers to come in",
+   "tags": [
+    "superintendent evaluation",
+    "DESE"
+   ]
+  },
+  {
+   "topic": "Override and AARPA funds",
+   "resolution": "approved: return AARPA funds if override passes",
+   "quote": "mr. beardmore makes a motion to return aarpa funds if override passes",
+   "tags": [
+    "override",
+    "AARPA funds",
+    "ESSER"
+   ]
+  },
+  {
+   "topic": "Keystone report",
+   "resolution": "received",
+   "quote": "the report has been provided to the committee, if you have any questions let dr. burnham know.",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Public Comment (item 11, member remarks)",
+   "resolution": "communication on override to be prepared; future topic",
+   "quote": "the school committee should put together a communication of what the override is specifically planned for.",
+   "tags": [
+    "override",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Reports from members and committees",
+   "resolution": "reported",
+   "quote": "mr. lehtinen reports the finance committee has met a bunch of times, including tomorrow.",
+   "tags": [
+    "Finance Committee",
+    "PTO",
+    "athletics",
+    "Turkey Hill",
+    "PACSAL",
+    "IEP"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed",
+   "quote": "13. topics for future discussion",
+   "tags": [
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:35",
+   "quote": "mr. lehtinen makes a motion to adjourn at 8:35, mr. beardmore seconds the motion",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "override",
+  "AARPA funds",
+  "ESSER",
+  "Chapter 70",
+  "state aid",
+  "warrants",
+  "AT&T cell tower",
+  "Verizon tower",
+  "turf field",
+  "surplus vehicle",
+  "superintendent evaluation",
+  "athletics fundraising",
+  "town meeting",
+  "eclipse",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

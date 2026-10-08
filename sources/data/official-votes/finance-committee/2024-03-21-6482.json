@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-03-21",
  "docid": "6482",
@@ -12,21 +12,454 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 2/20/24, 2/21/24, 2/29/24, and 3/7/24",
-   "outcome": "passed 7-0",
+   "motion": "Approve the minutes of 2/20/24, 2/21/24, 2/29/24 and 3/7/24 by roll call; mover and seconder not recorded because the audio cut out.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve the minutes from 2/20/24, 2/21/24, 2/29/24, 3/7/24 by , seconded by . roll call vote. jean russell aye, dave passios aye, tom gray aye, jay simeone aye, tiffaney tavares aye, chris menard aye, evan watters aye,"
+   "quote": "motion to approve the minutes from 2/20/24, 2/21/24, 2/29/24, 3/7/24 by"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Tiffaney Tavares",
-   "outcome": "passed 7-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn by chris menard, seconded by tiffaney tavares. jean russell aye, dave passios aye, tom gray aye, jay simeone aye, tiffaney tavares aye, chris menard aye, evan watters aye,"
+   "quote": "there was a motion to adjourn by chris menard, seconded by tiffaney tavares."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Audio loss during the first minutes vote (9:30–12:29) prevented capture of the mover and seconder, noted in the minutes. The roll call outcome is recorded and all members present voted aye on both votes.",
- "cost_usd": 0.1152801
+ "note": "Audio cut out from about 9:30 to about 12:29 per the minutes' own notes. The minutes-approval motion has blank mover and seconder fields; its outcome is recorded as passed because seven ayes are listed by roll call, but no count is printed. The 2/22 minutes were flagged as possibly not approved and are not part of the motion. The Town Manager is referred to only as 'she' and is not named. The Finance Director's report and the Town Manager's report are not recorded. The sidewalk reallocation was a Select Board vote reported here, not a Finance Committee vote. Override figures were discussed; no override vote is recorded. Items 8e-8h, 9a, 9b, 9i, 12 were not taken up. Some dollar figures are speakers' statements and were not verified. Peter Beardmore and Mary Foyle appear in both school-budget discussion and formal public comment; both are recorded.",
+ "cost_usd": 0.026557070000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member (Zoom)",
+   "status": "remote",
+   "quote": "board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Chair of the Public Access Cable Committee",
+   "status": "present",
+   "quote": "the chair of the public access cable committee, steve walker, presented"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "the preliminary budget was presented by superintendent dr. kate burnham, chairperson carol archambault from the school committee, and julianna hanscom director of special services"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Chairperson from the School Committee",
+   "status": "present",
+   "quote": "the preliminary budget was presented by superintendent dr. kate burnham, chairperson carol archambault from the school committee, and julianna hanscom director of special services"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services",
+   "status": "present",
+   "quote": "the preliminary budget was presented by superintendent dr. kate burnham, chairperson carol archambault from the school committee, and julianna hanscom director of special services"
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "present",
+   "quote": "heather lemieux states it would take another town meeting vote to make those adjustments."
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "President of the Lunenburg Education Association",
+   "status": "present",
+   "quote": "mary foyle, 985 flat hill road, spoke as the president of the lunenburg education association."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "status": "present",
+   "quote": "made a comment about whether the finance committee is going to vote on the override prior to it being on the warrant."
+  },
+  {
+   "name": "Peter Beardmore",
+   "status": "present",
+   "quote": "the numbers have changed on an almost daily basis for the past 2 weeks."
+  },
+  {
+   "name": "TJ Laughlin",
+   "status": "present",
+   "quote": "tj laughlin, 207 rolling acres road, states he is seeing a common trend."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes item (agenda item 10) was tabled to the next meeting.",
+   "quote": "this topic was tabled until the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public Access Committee anticipated FY25 income",
+   "what_was_recorded": "Anticipated FY25 income is listed as Comcast, regular interest and bond interest, totalling $238,763, or $207,803 after reserve funds.",
+   "figures_as_printed": [
+    "$194,304",
+    "$13,499",
+    "$30,960",
+    "$238,763",
+    "$207,803"
+   ],
+   "quote": "this totals $238,763 minus the reserve funds comes to $207,803."
+  },
+  {
+   "topic": "Public Access Committee staff wages",
+   "what_was_recorded": "Two employees are paid $33.97 an hour for 36 hours a week and $24.04 an hour for 20 hours a week.",
+   "figures_as_printed": [
+    "$33.97",
+    "$24.04"
+   ],
+   "quote": "1 employee works 36 hours a week at a rate of $33.97."
+  },
+  {
+   "topic": "Public Access Committee FY25 operating budget",
+   "what_was_recorded": "The FY25 budget summary lists salaries, indirect costs and operations, with a total operations budget.",
+   "figures_as_printed": [
+    "$126,643",
+    "$27,930",
+    "$24,200",
+    "$178,773"
+   ],
+   "quote": "the total budget for operations is $178,773."
+  },
+  {
+   "topic": "ARPA funding for studio and equipment",
+   "what_was_recorded": "$50,700 of ARPA funding was received across videographer kits, the studio and broadcast audio.",
+   "figures_as_printed": [
+    "$50,700",
+    "$12,000",
+    "$34,300",
+    "$4,400"
+   ],
+   "quote": "$50,700 arpa funding was received and includes 3 categories of improvements"
+  },
+  {
+   "topic": "Proposed state streaming media fee bill",
+   "what_was_recorded": "A proposed bill would impose a 5% fee on digital streaming providers, with State-collected monies split 20% to the state general fund and 40% each to municipalities and community media. Steve Walker said the town is still waiting for information on whether it applies to Lunenburg.",
+   "figures_as_printed": [
+    "5%",
+    "20%",
+    "40%"
+   ],
+   "quote": "this is a proposition of a 5% fee on digital streaming providers,"
+  },
+  {
+   "topic": "Public Access Committee studio rent",
+   "what_was_recorded": "A public commenter said the rent is still $6,000 and has not changed since 2012.",
+   "figures_as_printed": [
+    "$6,000"
+   ],
+   "quote": "the rent is still $6,000 and has been since 2012."
+  },
+  {
+   "topic": "PEG enterprise warrant article",
+   "what_was_recorded": "A proposed warrant article would raise and appropriate or transfer a sum of money to fund the FY 25 PEG Access Enterprise operating and capital budgets. No sum is printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "there is a request to see if the town will vote to raise and appropriate or transfer"
+  },
+  {
+   "topic": "Public Access Committee consultant services line",
+   "what_was_recorded": "The consultant services line pays a technician on an hourly basis for complex problems. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "steve walker states that the cost is for a technician to come in on an hourly basis to solve"
+  },
+  {
+   "topic": "Teacher eligibility threshold cited in public comment",
+   "what_was_recorded": "Mary Foyle said $4,300 is the amount separating a first-year teacher with a bachelors from eligibility for government assistance programs.",
+   "figures_as_printed": [
+    "$4,300"
+   ],
+   "quote": "mary foyle wanted to clarify that the $4,300 is the amount of money that separates a first-year teacher"
+  },
+  {
+   "topic": "School department FY24 base and 2.94% increase",
+   "what_was_recorded": "The FY24 total school department budget is the base for a 2.94% increase of $672,262.",
+   "figures_as_printed": [
+    "$22,878,443",
+    "$672,262"
+   ],
+   "quote": "total school department budget for fy 24 $22,878,443"
+  },
+  {
+   "topic": "Town Manager 2.94% school budget",
+   "what_was_recorded": "The Town Manager's 2.94% calculation totals $23,551,069.",
+   "figures_as_printed": [
+    "$23,551,069"
+   ],
+   "quote": "the town managers 2.94% increase totals $23,551,069"
+  },
+  {
+   "topic": "Town Manager revised 4.19% school budget",
+   "what_was_recorded": "The revised 4.19% budget adds new growth and pavement management plan monies and totals $23,837,094.",
+   "figures_as_printed": [
+    "$236,025",
+    "$50,000",
+    "$23,837,094"
+   ],
+   "quote": "the town managers budget with the 4.19% increase totals $23,837,094"
+  },
+  {
+   "topic": "FY25 school cost drivers",
+   "what_was_recorded": "Factors underlying the need for FY25 reductions were listed as health insurance, contractual increases and loss of COVID grant funding.",
+   "figures_as_printed": [
+    "$500,000",
+    "$400,000",
+    "$600,000"
+   ],
+   "quote": "health insurance increases $500,000"
+  },
+  {
+   "topic": "Override size discussed",
+   "what_was_recorded": "Members discussed a $700,000 override against a roughly million-dollar override, with the additional $200,000 and taxes of $221,000 questioned. No vote on an override is recorded.",
+   "figures_as_printed": [
+    "$700,000",
+    "$200,000",
+    "$221,000"
+   ],
+   "quote": "tom gray questions if we have a million dollar override this year what happens with the additional $200,000 requested."
+  },
+  {
+   "topic": "Override rationale",
+   "what_was_recorded": "Peter Beardmore said the roughly 1-million-dollar override is the gap between the budget base and the Town Manager's warrant figure, and is not money set aside from the override. No dollar figure is printed in that statement.",
+   "figures_as_printed": [],
+   "quote": "is the difference between the budget base and what the town manager has offered and put on the warrant."
+  },
+  {
+   "topic": "Sidewalk funds reallocated by Select Board",
+   "what_was_recorded": "The Select Board voted on March 19, 2024 to reallocate $101,640 previously allocated for sidewalks, as reported at this meeting.",
+   "figures_as_printed": [
+    "$101,640"
+   ],
+   "quote": "there was a vote to approve reallocating $101,640 that was previously allocated for sidewalks."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reallocation of funds previously allocated for sidewalks",
+   "amount_as_printed": "$101,640",
+   "outcome": "Select Board vote to approve, as reported in these minutes; not a Finance Committee action",
+   "quote": "there was a vote to approve reallocating $101,640 that was previously allocated for sidewalks."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Teacher eligibility threshold and data accuracy",
+   "speaker": "Mary Foyle",
+   "stated_role": "President of the Lunenburg Education Association",
+   "quote": "mary foyle wanted to clarify that the $4,300 is the amount of money that separates a first-year teacher"
+  },
+  {
+   "topic": "Whether the override is voted before the warrant",
+   "speaker": "Rhonda Lisio",
+   "quote": "made a comment about whether the finance committee is going to vote on the override prior to it being on the warrant."
+  },
+  {
+   "topic": "Public Access Committee revenue and operations spending",
+   "speaker": "Rhonda Lisio",
+   "quote": "rhonda lisio, 181 reservoir road, is concerned about the dropping revenue and how much is being spent on operations."
+  },
+  {
+   "topic": "Changing school budget numbers and the override rationale",
+   "speaker": "Peter Beardmore",
+   "quote": "the numbers have changed on an almost daily basis for the past 2 weeks."
+  },
+  {
+   "topic": "School budget not inclusive; need for facts",
+   "speaker": "TJ Laughlin",
+   "quote": "tj laughlin, 207 rolling acres road, states he is seeing a common trend."
+  },
+  {
+   "topic": "Salary administration plan and salary gap",
+   "speaker": "Peter Beardmore",
+   "quote": "asks if the committee has received or heard anything about the salary administration plan"
+  },
+  {
+   "topic": "School programming and use of ARPA funding",
+   "speaker": "Mary Foyle",
+   "quote": "has worked at lunenburg public school and states we have never had good programming."
+  },
+  {
+   "topic": "Working together through the budget process",
+   "speaker": "Tom Gray",
+   "quote": "tom gray states that since this started, i have seen people working really hard trying"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "received",
+   "quote": "mary foyle, 985 flat hill road, spoke as the president of the lunenburg education association.",
+   "tags": [
+    "public comment",
+    "teacher pay"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 2/20, 2/21, 2/29 and 3/7 by roll call; wording concern raised",
+   "quote": "dave passios is concerned about the wording related to mr. beardmores",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Finance Director report",
+   "resolution": "no content recorded (audio gap)",
+   "quote": "i didn't see heathers report or the finance directors report.",
+   "tags": [
+    "finance director"
+   ]
+  },
+  {
+   "topic": "Public Access Committee FY25 budget presentation",
+   "resolution": "presented and discussed; no vote",
+   "quote": "the chair of the public access cable committee, steve walker, presented",
+   "tags": [
+    "PEG access",
+    "public access television",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Public comment on Public Access Committee budget",
+   "resolution": "received",
+   "quote": "rhonda lisio, 181 reservoir road, is concerned about the dropping revenue and how much is being spent on operations.",
+   "tags": [
+    "PEG access",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "School Department FY25 budget presentation",
+   "resolution": "presented and discussed; no vote",
+   "quote": "the preliminary budget was presented by superintendent dr. kate burnham, chairperson carol archambault from the school committee, and julianna hanscom director of special services",
+   "tags": [
+    "school budget",
+    "special education",
+    "behavioral health",
+    "grants",
+    "override"
+   ]
+  },
+  {
+   "topic": "Public comment on school budget",
+   "resolution": "received",
+   "quote": "tj laughlin, 207 rolling acres road, states he is seeing a common trend.",
+   "tags": [
+    "school budget",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Other monied articles, warrant article discussion and FinCom report",
+   "resolution": "did not take place",
+   "quote": "this presentation did not take place.",
+   "tags": [
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "not discussed",
+   "quote": "this topic was not discussed.",
+   "tags": []
+  },
+  {
+   "topic": "Minutes (agenda item 10)",
+   "resolution": "tabled to next meeting",
+   "quote": "this topic was tabled until the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no committee reports",
+   "quote": "there were no committee reports.",
+   "tags": []
+  },
+  {
+   "topic": "Upcoming FY25 budget meetings and important dates",
+   "resolution": "listed; no action",
+   "quote": "13. upcoming fy25 budget meetings",
+   "tags": [
+    "schedule",
+    "Annual Town Meeting"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "Tom Gray spoke; no action",
+   "quote": "tom gray states that since this started, i have seen people working really hard trying",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed; meeting closed 11:29 PM",
+   "quote": "the meeting closed at 11:29 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "PEG access",
+  "school budget FY25",
+  "override",
+  "special education",
+  "behavioral health",
+  "COVID and ESSER grants",
+  "health insurance",
+  "streaming media fee",
+  "public comment",
+  "minutes approval",
+  "warrant article",
+  "Annual Town Meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

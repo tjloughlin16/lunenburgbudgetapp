@@ -1,0 +1,117 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2024-04-08",
+ "video_id": "9vGRGqbGkX8",
+ "video_url": "https://www.youtube.com/watch?v=9vGRGqbGkX8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2024-04-08-9vGRGqbGkX8.json",
+  "sha256": "853532f696fe5c3f573f485d80d0667d9362de88e02bf3e8dc690b522cfcd434",
+  "caption_lines": 8,
+  "segments": 58
+ },
+ "recording": {
+  "duration_s": 185,
+  "duration": "0:03",
+  "spoken_chars": 1902,
+  "words_approx": 317
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04082024-6508",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2024-04-08-agenda-6508.txt",
+   "path": "sources/meetings/planning-board/2024-04-08-agenda-6508.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04082024-6520",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2024-04-08-agenda-6520.txt",
+   "path": "sources/meetings/planning-board/2024-04-08-agenda-6520.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T08:48:01Z",
+  "cost_usd": 0.218501
+ },
+ "minutes": {
+  "headline": "Planning Board did not open its April 8 meeting because of Zoom posting errors; the agenda carries to April 22.",
+  "summary": "The acting chair announced that no meeting would be held because of repeated technical difficulties and an incorrect Zoom link in the posting. This was the fifth such problem in five months. All agenda items carry over to the April 22nd meeting, and no business was conducted.",
+  "attendees": [
+   {
+    "name_as_heard": "Matt Allison",
+    "role": "vice chair, acting chair in the absence of the chair",
+    "remote": false
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "planning-and-zoning",
+   "policy"
+  ],
+  "votes": [],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 38,
+    "decision": "The meeting was not opened or held; everything on the April 8 agenda carries over to the April 22nd meeting."
+   },
+   {
+    "t": 82,
+    "decision": "The April 22nd meeting will take up the current agenda plus whatever else is added."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 18,
+    "t_end": 163,
+    "topic": "Meeting not held due to Zoom link posting errors and technical difficulties; agenda carried to April 22",
+    "resolution": "no meeting held; agenda carried over to April 22",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Captions render the date as 'April 2 second' at 143s; it is read as April 22nd, as stated at 38s and 82s.",
+   "The reference to 'AC the zoom audio' at 103s is garbled; it appears to be a request to repeat the announcement for remote participants.",
+   "The nature of the 'various other incidents' mentioned at 123s is not stated."
+  ],
+  "confidence": "high"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board did not open its April 8 meeting; the acting chair said none would be held because of repeated technical difficulties and an incorrect Zoom link in the posting.",
+    "t": 38
+   },
+   {
+    "line": "Every item on the April 8 agenda carries over to the April 22 meeting, and no business was conducted.",
+    "t": 38
+   },
+   {
+    "line": "The April 22 meeting will take up the current agenda plus whatever else is added.",
+    "t": 82
+   }
+  ],
+  "why_it_matters": [
+   "Anything that was on the Planning Board's April 8 agenda waits two more weeks, and a resident who planned to attend or speak on an item should look for the April 22 notice.",
+   "The posting error was described in the recording as the fifth such problem in five months, so remote access to this board's meetings has been unreliable for those who join by Zoom."
+  ],
+  "watch_next": [
+   "The Planning Board meeting on April 22, which takes up the carried-over April 8 agenda plus any added items."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T08:48:10Z",
+   "cost_usd": 0.212729
+  }
+ }
+}

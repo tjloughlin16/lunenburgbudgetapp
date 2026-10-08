@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-04-02",
  "docid": "6501",
@@ -12,168 +12,611 @@
  },
  "votes": [
   {
-   "motion": "approve the tollbooth fundraiser request for May 18, 2024, organized by the Turkey Hill Family Lions Club",
-   "moved_by": "Member Alonzo",
-   "seconded_by": "Member Emkey",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Approve the tollbooth fundraiser request for May 18, 2024, organized by the Turkey Hill Family Lions Club.",
+   "moved_by": "Member Tom Alonzo",
+   "seconded_by": "Member Renee Emkey",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by member alonzo to approve the tollbooth fundraiser request for may 18, 2024, organized by the turkey hill family lions club. seconded by member emkey. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by member alonzo to approve the tollbooth fundraiser request for may 18, 2024, organized by the turkey hill family lions club."
   },
   {
-   "motion": "ratify the Town Manager's Appointment of Conservation Administrative Assistant, Stephanie Dondero",
-   "moved_by": "Clerk Nuzzolo",
-   "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously 5-0",
-   "procedural": true,
-   "quote": "motion by clerk nuzzolo to ratify the town manager's appointment of conservation administrative assistant, stephanie dondero. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
-  },
-  {
-   "motion": "opt-out of early voting by mail for local elections and early voting in-person for local elections as requested by the Board of Registrars",
-   "moved_by": "Member Alonzo",
-   "seconded_by": "Member Emkey",
-   "outcome": "passed 3-2",
+   "motion": "Ratify the Town Manager's appointment of Stephanie Dondero as Conservation Administrative Assistant.",
+   "moved_by": "Clerk Caesar Nuzzolo",
+   "seconded_by": "Member Tom Alonzo",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by member alonzo to opt-out of early voting by mail for local elections and early voting in-person for local elections as requested by the board of registrars. seconded by member emkey. call for the vote: vice-chair franco-nay; clerk nuzzolo-nay; member alonzo- aye; member emkey- aye; chair jeffreys- aye. the motion passed (3-2-0)",
-   "quote_taken_from_text": true
+   "quote": "motion by clerk nuzzolo to ratify the town manager's appointment of conservation administrative assistant, stephanie dondero."
   },
   {
-   "motion": "accept the Change of Manager request to Robert Scott Bilodeau for Alcohol License 00016-PK-0636, Victory Distributers, LLC. d/b/a Hannaford's Supermarket & Pharmacy #8388, 333 Massachusetts Avenue, contingent upon paying any outstanding water/sewer bills by the end of the week",
-   "moved_by": "Member Alonzo",
-   "seconded_by": "Member Emkey",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Opt out of early voting by mail for local elections and early voting in-person for local elections, as requested by the Board of Registrars.",
+   "moved_by": "Member Tom Alonzo",
+   "seconded_by": "Member Renee Emkey",
+   "outcome": "passed 3-2-0",
    "procedural": false,
-   "quote": "motion by member alonzo to accept the change of manager request to robert scott bilodeau for alcohol license 00016-pk-0636, victory distributers, llc. d/b/a hannaford's supermarket & pharmacy #8388, 333 massachusetts avenue, contingent upon paying any outstanding water/sewer bills by the end of the week. seconded by member emkey. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "quote": "member alonzo to opt-out of early voting by mail for local elections and early voting in-person for local elections as requested by the board of registrars. seconded by member emkey."
   },
   {
-   "motion": "defer Warrant Article D to Town Meeting",
-   "moved_by": "Chair Jeffreys",
-   "seconded_by": "Member Emkey",
-   "outcome": "passed unanimously 5-0",
-   "procedural": true,
-   "quote": "motion by chair jeffreys to defer the article to town meeting. seconded by member emkey. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
-  },
-  {
-   "motion": "defer Warrant Article E to Town Meeting",
-   "moved_by": "Vice-Chair Franco",
-   "seconded_by": "Member Emkey",
-   "outcome": "passed unanimously 5-0",
-   "procedural": true,
-   "quote": "motion by vice-chair franco to defer the article to town meeting. seconded by member emkey. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
-  },
-  {
-   "motion": "recommend approval of Warrant Article F, FY2025 Capital Plan, $1,317,119.98",
-   "moved_by": "Vice-Chair Franco",
-   "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Accept the Change of Manager request to Robert Scott Bilodeau for Alcohol License 00016-PK-0636, contingent upon paying any outstanding water/sewer bills by the end of the week.",
+   "moved_by": "Member Tom Alonzo",
+   "seconded_by": "Member Renee Emkey",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by vice-chair franco to recommend approval of the article as described. seconded by member alonzo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by member alonzo to accept the change of manager request to robert scott bilodeau for alcohol license 00016-pk-0636, victory distributers, llc."
   },
   {
-   "motion": "recommend approval of Warrant Article G, FY2025 General Budget, $44,024,349.19",
-   "moved_by": "Vice-Chair Franco",
-   "seconded_by": "Member Alonzo",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Defer Warrant Article D to Town Meeting.",
+   "moved_by": "Chair Michael-Ray Jeffreys",
+   "seconded_by": "Member Renee Emkey",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by vice-chair franco to recommend approval of the article as described. seconded by member alonzo. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by chair jeffreys to defer the article to town meeting. seconded by member emkey."
   },
   {
-   "motion": "recommend approval of Warrant Article H, School Override, $948,136.00",
-   "moved_by": "Vice-Chair Franco",
-   "seconded_by": "Member Alonzo",
-   "outcome": "passed 3-2",
+   "motion": "Defer Warrant Article E to Town Meeting.",
+   "moved_by": "Vice-Chair Lou Franco",
+   "seconded_by": "Member Renee Emkey",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by vice-chair franco to recommend approval of the article as described. seconded by member alonzo. call for the vote: vice-chair franco- aye; clerk nuzzolo- aye; member alonzo- aye; member emkey-no; chair jeffreys-no. the motion passed (3-2-0)."
+   "quote": "vice-chair franco to defer the article to town meeting. seconded by member emkey."
   },
   {
-   "motion": "recommend approval of Warrant Article J",
-   "moved_by": "Member Alonzo",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Recommend approval of Warrant Article F, the FY2025 Capital Plan, as described ($1,317,119.98).",
+   "moved_by": "Vice-Chair Lou Franco",
+   "seconded_by": "Member Tom Alonzo",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by member alonzo to recommend approval of the article as described. seconded by clerk nuzzolo. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
+   "quote": "town manager lemieux stated that the sum is $1,317,119.98. motion by vice-chair franco to recommend approval of the article as described. seconded by member alonzo."
   },
   {
-   "motion": "defer Warrant Article K, Modification of Sick Leave Policy, to Town Meeting",
-   "moved_by": "Chair Jeffreys",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed unanimously 5-0",
-   "procedural": true,
-   "quote": "motion by chair jeffreys to defer the article to town meeting. seconded by clerk nuzzolo. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
-  },
-  {
-   "motion": "recommend approval of Warrant Article O, Sewer Enterprise Fund for FY2025, $1,712,419.87",
-   "moved_by": "Member Alonzo",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Recommend approval of Warrant Article G, the FY2025 general operating budget ($44,024,349.19), as described.",
+   "moved_by": "Vice-Chair Lou Franco",
+   "seconded_by": "Member Tom Alonzo",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by member alonzo to recommend approval of the article as described. seconded by clerk nuzzolo. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
+   "quote": "town manager lemieux stated that the sum is $44,024,349.19. motion by vice-chair franco to recommend approval of the article as described. seconded by member alonzo."
   },
   {
-   "motion": "recommend approval of Warrant Article Q, Solid Waste Disposal Program Enterprise Fund for FY2025, $500,000",
-   "moved_by": "Chair Jeffreys",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Recommend approval of Warrant Article H, to raise and appropriate $948,136.00 to supplement the Lunenburg Public Schools budget for FY2025, contingent on a Proposition 2 ½ ballot question.",
+   "moved_by": "Vice-Chair Lou Franco",
+   "seconded_by": "Member Tom Alonzo",
+   "outcome": "passed 3-2-0",
    "procedural": false,
-   "quote": "motion by chair jeffreys to recommend approval of the article as described. seconded by clerk nuzzolo. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
+   "quote": "seconded by member alonzo. call for the vote: vice-chair franco- aye; clerk nuzzolo- aye; member alonzo- aye; member emkey-no; chair jeffreys-no. the motion passed (3-2-0)."
   },
   {
-   "motion": "recommend approval of Warrant Article R, Water Enterprise Fund for FY2025, $45,000",
-   "moved_by": "Vice-Chair Franco",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Recommend approval of Warrant Article J, as described (cost figures read into the record).",
+   "moved_by": "Member Tom Alonzo",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by vice-chair franco to recommend approval of the article as described. seconded by clerk nuzzolo. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by member alonzo to recommend approval of the article as described. seconded by clerk nuzzolo."
   },
   {
-   "motion": "recommend approval of Warrant Article S, Public Educational Government Access Enterprise for FY2025, $180,843.03",
-   "moved_by": "Vice-Chair Franco",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Defer Warrant Article K (sick leave policy modification) to Town Meeting.",
+   "moved_by": "Chair Michael-Ray Jeffreys",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by vice-chair franco to recommend approval of the article as described. seconded by clerk nuzzolo. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by chair jeffreys to defer the article to town meeting. seconded by clerk nuzzolo."
   },
   {
-   "motion": "remove Warrant Article U from the warrant",
-   "moved_by": "Vice-Chair Franco",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed unanimously 5-0",
-   "procedural": true,
-   "quote": "motion by vice-chair franco to remove article u from the warrant. seconded by clerk nuzzolo. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
-  },
-  {
-   "motion": "recommend approval of Warrant Article V, Senior Tax Exemption",
-   "moved_by": "Vice-Chair Franco",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Recommend approval of Warrant Article O, to operate the Sewer Enterprise Fund for FY2025 ($1,712,419.87).",
+   "moved_by": "Member Tom Alonzo",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by vice-chair franco to recommend approval of the article as described. seconded by clerk nuzzolo. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
+   "quote": "town manager lemieux stated that the amount is $1,712,419.87. motion by member alonzo to recommend approval of the article as described. seconded by clerk nuzzolo."
   },
   {
-   "motion": "recommend approval of Warrant Article X, Historical Commission Powers and Duties",
-   "moved_by": "Chair Jeffreys",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed 4-1",
+   "motion": "Recommend approval of Warrant Article Q, to operate the Solid Waste Disposal Program Enterprise fund for FY2025 ($500,000).",
+   "moved_by": "Chair Michael-Ray Jeffreys",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by chair jeffreys to recommend approval of the article x. seconded by clerk nuzzolo. call for the vote: vice-chair franco- aye; clerk nuzzolo- aye; member alonzo- aye; member emkey- aye; chair jeffreys-nay. the motion passed (4-1-0)."
+   "quote": "town manager lemieux stated that the amount is $500,000. motion by chair jeffreys to recommend approval of the article as described. seconded by clerk nuzzolo."
   },
   {
-   "motion": "add the Override Ballot Question to the May 18, 2024 Annual Town Election",
-   "moved_by": "Chair Jeffreys",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Recommend approval of Warrant Article R, to operate the Water Enterprise fund for FY2025 ($45,000).",
+   "moved_by": "Vice-Chair Lou Franco",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by chair jeffreys to add the override ballot question to the may 18, 2024, annual town election. seconded by clerk nuzzolo. call for the vote: vice-chair franco- aye; clerk nuzzolo- aye; member alonzo- aye; member emkey- aye; chair jeffreys- aye. the motion passed (5-0-0)."
+   "quote": "town manager lemieux stated that the amount is $45,000. motion by vice-chair franco to recommend approval of the article as described. seconded by clerk nuzzolo."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Chair Jeffreys",
-   "seconded_by": "Clerk Nuzzolo",
-   "outcome": "passed unanimously 5-0",
+   "motion": "Recommend approval of Warrant Article S, to fund the FY2025 Public Educational Government Access Enterprise Operating and Capital Budgets ($180,843.03).",
+   "moved_by": "Vice-Chair Lou Franco",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "town manager lemieux stated that the amount is $180,843.03. motion by vice-chair franco to recommend approval of the article as described. seconded by clerk nuzzolo."
+  },
+  {
+   "motion": "Remove Warrant Article U from the warrant, on the Town Manager's recommendation.",
+   "moved_by": "Vice-Chair Lou Franco",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "motion by vice-chair franco to remove article u from the warrant. seconded by clerk nuzzolo."
+  },
+  {
+   "motion": "Recommend approval of Warrant Article V, amending the age of the exemption under MGL c. 59 s. 5 41C from 70 to 65.",
+   "moved_by": "Vice-Chair Lou Franco",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "motion by vice-chair franco to recommend approval of the article as described. seconded by clerk nuzzolo."
+  },
+  {
+   "motion": "Recommend approval of Warrant Article X, Historical Commission Powers and Duties.",
+   "moved_by": "Chair Michael-Ray Jeffreys",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 4-1-0",
+   "procedural": false,
+   "quote": "member emkey- aye; chair jeffreys-nay. the motion passed (4-1-0)."
+  },
+  {
+   "motion": "Add the Override Ballot Question ($948,136.00 for the Lunenburg Public School Department, FY2025) to the May 18, 2024, Annual Town Election.",
+   "moved_by": "Chair Michael-Ray Jeffreys",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "motion by chair jeffreys to add the override ballot question to the may 18, 2024, annual town election. seconded by clerk nuzzolo."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Chair Michael-Ray Jeffreys",
+   "seconded_by": "Clerk Caesar Nuzzolo",
+   "outcome": "passed 5-0-0",
    "procedural": true,
    "quote": "chair jeffreys moved to adjourn. seconded by clerk nuzzolo. call for the vote: five- aye. the motion passed unanimously (5-0-0)."
+  },
+  {
+   "motion": "Approve the minutes of April 2, 2024 (recorded at the later June 17, 2025 approval).",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Vice-Chair Moore",
+   "outcome": "passed 4-0-1",
+   "procedural": true,
+   "quote": "chair nuzzolo made the motion to approve the minutes from april 2, 2024. seconded by vice-chair moore. call for the vote: four-aye. one-abstain (mcleod)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1747911
+ "note": "Text is a 10-page extraction of the minutes; no scan. The approval block at the end was written on June 17, 2025 and names Chair Nuzzolo, Vice-Chair Moore and McLeod, who are not on this meeting's roster ('Chair Nuzzolo' is the same surname as 'Clerk Caesar Nuzzolo' here; the minutes do not say whether they are the same person or whether the titles changed). Whether Moore and McLeod took part in this meeting is not stated. Warrant Article J's subject is not described in the minutes, only its cost figures. Warrant Article V's motion quote is generic text that recurs for other articles; the quote is verbatim but not unique in the document. Votes are recorded as printed; 'Five-Aye' votes are shown as 5-0-0 in outcome. The minutes record no executive session. The Warrant Article Q/R/O/S 'transfer from available funds' wording was not recorded as a transfer, only the Article E transfer was.",
+ "cost_usd": 0.030121669999999996,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, member renee emkey"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, member renee emkey"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, member renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, member renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, member renee emkey"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux town manager"
+  },
+  {
+   "name": "David Passios",
+   "role": "resident, 56 Whiting Street (public comment)",
+   "status": "present",
+   "quote": "david passios, 56 whiting street: commented that he hopes that the board supports the town counsel's amended language for historical commission alternate positions."
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "resident, 21 Francis Avenue (public comment)",
+   "status": "present",
+   "quote": "laura brzozoski, 21 francis avenue: stated that she is speaking as a resident, not as a member of the school committee."
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "appeared on tollbooth fundraiser request, 116 Island Road",
+   "status": "present",
+   "quote": "corinne scouten, 116 island road & dawn johnson, 357 lancaster avenue: stated that the turkey hill family lions club requests a temporary roadblock for a voluntary toll."
+  },
+  {
+   "name": "Dawn Johnson",
+   "role": "appeared on tollbooth fundraiser request, 357 Lancaster Avenue",
+   "status": "present",
+   "quote": "corinne scouten, 116 island road & dawn johnson, 357 lancaster avenue: stated that the turkey hill family lions club requests a temporary roadblock for a voluntary toll."
+  },
+  {
+   "name": "Sam Richard",
+   "role": "Attorney, representing the applicant Hannaford's Supermarket & Pharmacy",
+   "status": "present",
+   "quote": "attorney sam richard represents hannaford's supermarket & pharmacy in the public hearing."
+  },
+  {
+   "name": "Robert Scott Bilodeau",
+   "role": "proposed manager, Change of Manager hearing",
+   "status": "present",
+   "quote": "mr. bilodeau stated that he was not aware of the outstanding bill, and it had not been paid today or yesterday."
+  },
+  {
+   "name": "Anthony Senesi",
+   "role": "Minute Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, anthony senesi, minute clerk"
+  },
+  {
+   "name": "Vice-Chair Moore",
+   "role": "Vice-Chair (named in the later approval vote of these minutes, June 17, 2025)",
+   "status": "not stated",
+   "quote": "chair nuzzolo made the motion to approve the minutes from april 2, 2024. seconded by vice-chair moore."
+  },
+  {
+   "name": "McLeod",
+   "role": "abstained on the later approval vote of these minutes",
+   "status": "not stated",
+   "quote": "call for the vote: four-aye. one-abstain (mcleod)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board informally disagreed with removing the Historical Commission article to modify it for Fall Town Meeting; the article stayed on the warrant.",
+   "quote": "chair jeffreys asked the board if they would like to remove the article and modify it for fall town meeting. the board unofficially disagreed."
+  },
+  {
+   "decision": "The Discuss Environmental Policies & Select Board By-laws item was tabled.",
+   "quote": "discuss environmental policies & select board by-laws the item was tabled."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Proposed school override amount (public comment)",
+   "what_was_recorded": "A resident stated the proposed School override amount, and that it would level-fund the School district.",
+   "figures_as_printed": [
+    "$948,136.00"
+   ],
+   "quote": "she stated that the proposed school override is $948,136.00."
+  },
+  {
+   "topic": "Warrant Article H, school supplement",
+   "what_was_recorded": "The article to raise and appropriate money to supplement the school budget for FY2025, contingent on a Proposition 2 ½ question, was recommended 3-2.",
+   "figures_as_printed": [
+    "$948,136.00"
+   ],
+   "quote": "to raise and appropriate $948,136.00 to supplement the lunenburg public schools budget for fy2025"
+  },
+  {
+   "topic": "Override ballot question amount",
+   "what_was_recorded": "The ballot question language for the May 18, 2024 election asks voters to allow an additional amount in property taxes for the school department.",
+   "figures_as_printed": [
+    "$948,136.00"
+   ],
+   "quote": "allowed to assess an additional $948,136.00 in real estate and property taxes for the purpose of funding the lunenburg public school department"
+  },
+  {
+   "topic": "Average homeowner cost of override",
+   "what_was_recorded": "A member stated the average homeowner would increase by a given weekly amount if the override passes.",
+   "figures_as_printed": [
+    "$3.88"
+   ],
+   "quote": "he said that the average homeowner in lunenburg would increase by $3.88 a week if the override passes."
+  },
+  {
+   "topic": "Municipal aggregation electricity rate",
+   "what_was_recorded": "The Town Manager reported the aggregation electricity supply rate and that First Point's pricing was the lowest of the bids.",
+   "figures_as_printed": [
+    "$0.1239 per kilowatt hour"
+   ],
+   "quote": "the town manager stated that the rate for the aggregation electricity supply will be $0.1239 per kilowatt hour."
+  },
+  {
+   "topic": "Outstanding sewer bill, Hannaford's property",
+   "what_was_recorded": "The Chair reported an outstanding 3rd Quarter sewer bill with late fees; the license approval was made contingent on paying it.",
+   "figures_as_printed": [
+    "$3,000",
+    "$3,434.09"
+   ],
+   "quote": "he stated that with late fees, the total was $3,434.09."
+  },
+  {
+   "topic": "Warrant Articles D and E, no dollar amount",
+   "what_was_recorded": "The Town Manager stated no dollar amount was available for Articles D and E; both were deferred.",
+   "figures_as_printed": [],
+   "quote": "the town manager stated that there is no dollar amount available."
+  },
+  {
+   "topic": "Warrant Article F, FY2025 Capital Plan",
+   "what_was_recorded": "The Town Manager stated the capital plan sum for the article.",
+   "figures_as_printed": [
+    "$1,317,119.98"
+   ],
+   "quote": "town manager lemieux stated that the sum is $1,317,119.98."
+  },
+  {
+   "topic": "Warrant Article G, FY2025 operating budget",
+   "what_was_recorded": "The Town Manager stated the sum for the operating budget article.",
+   "figures_as_printed": [
+    "$44,024,349.19"
+   ],
+   "quote": "town manager lemieux stated that the sum is $44,024,349.19."
+  },
+  {
+   "topic": "Warrant Article J, costs of elected and employee items",
+   "what_was_recorded": "The Town Manager stated total and excluding-enterprise costs for FY2024 and FY2025. The minutes do not describe the article's subject.",
+   "figures_as_printed": [
+    "$101,458.69",
+    "$89,771.61",
+    "$125,764.36",
+    "$110,948.87"
+   ],
+   "quote": "town manager lemieux stated that the total cost, including enterprise employees for fy2025, is $125,764.36; excluding enterprise employees for fy2025 is $110,948.87."
+  },
+  {
+   "topic": "Warrant Article K, sick leave financial implications",
+   "what_was_recorded": "A member said he wants to learn more about the financial implications of the sick leave change; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "member alonzo stated that he would like to learn more about the financial implications of this change."
+  },
+  {
+   "topic": "Warrant Article O, Sewer Enterprise Fund",
+   "what_was_recorded": "The Town Manager stated the amount to operate the Sewer Enterprise Fund for FY2025.",
+   "figures_as_printed": [
+    "$1,712,419.87"
+   ],
+   "quote": "town manager lemieux stated that the amount is $1,712,419.87."
+  },
+  {
+   "topic": "Warrant Article Q, Solid Waste Enterprise",
+   "what_was_recorded": "The Town Manager stated the amount for the Solid Waste Disposal Program Enterprise fund.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "town manager lemieux stated that the amount is $500,000."
+  },
+  {
+   "topic": "Warrant Article R, Water Enterprise",
+   "what_was_recorded": "The Town Manager stated the amount for the Water Enterprise fund.",
+   "figures_as_printed": [
+    "$45,000"
+   ],
+   "quote": "town manager lemieux stated that the amount is $45,000."
+  },
+  {
+   "topic": "Warrant Article S, PEG Access Enterprise",
+   "what_was_recorded": "The Town Manager stated the amount for the Public Educational Government Access Enterprise budgets.",
+   "figures_as_printed": [
+    "$180,843.03"
+   ],
+   "quote": "town manager lemieux stated that the amount is $180,843.03."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Warrant Article E: transfer available funds to amend amounts voted for the FY2024 budget under the May 6, 2023 Annual Town Meeting and the November 14, 2023 Special Town Meeting.",
+   "amount_as_printed": "no dollar amount available",
+   "outcome": "deferred to Town Meeting, passed 5-0-0",
+   "quote": "warrant article e: to see if the town will vote to transfer available funds all sums of money necessary to amend the amounts voted for the town fy2024 budget"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Historical Commission alternate positions (opening)",
+   "speaker": "David Passios",
+   "stated_role": "56 Whiting Street",
+   "quote": "david passios, 56 whiting street: commented that he hopes that the board supports the town counsel's amended language for historical commission alternate positions."
+  },
+  {
+   "topic": "School override amount and ARPA funding",
+   "speaker": "Laura Brzozoski",
+   "stated_role": "resident, 21 Francis Avenue",
+   "quote": "laura brzozoski, 21 francis avenue: stated that she is speaking as a resident, not as a member of the school committee."
+  },
+  {
+   "topic": "Historical Commission alternate members (closing)",
+   "speaker": "David Passios",
+   "stated_role": "56 Whiting Street",
+   "quote": "david passios, 56 whiting street: stated that he is disappointed with the board for not including the language to add alternate members to this historical commission."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "called to order; no action",
+   "quote": "chair michael-ray jeffreys called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard",
+   "quote": "david passios, 56 whiting street: commented that he hopes that the board supports the town counsel's amended language",
+   "tags": [
+    "public comment",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "chair jeffreys stated that member tom alonzo is hosting an",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Town Manager update on tax bill mailing delay",
+   "resolution": "noted",
+   "quote": "due to technical errors while generating the 4th quarter real estate tax bills have caused a mailing delay.",
+   "tags": [
+    "tax bills"
+   ]
+  },
+  {
+   "topic": "Communications from other boards",
+   "resolution": "none",
+   "quote": "communications from other boards none.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Appointment: tollbooth fundraiser request",
+   "resolution": "approved 5-0-0",
+   "quote": "tollbooth fundraiser request for may 18th by the turkey hill family lions club",
+   "tags": [
+    "licenses and permits",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Ratification of conservation administrative assistant appointment",
+   "resolution": "ratified 5-0-0",
+   "quote": "ratification of the town manager's appointment of conservation administrative assistant, stephanie dondero",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "noted",
+   "quote": "the town manager stated that the annual town meeting is saturday, may 4, 2024, at 9:00 a.m.",
+   "tags": [
+    "town meeting",
+    "town election",
+    "vacancies",
+    "employment",
+    "bids",
+    "electricity aggregation",
+    "925 Massachusetts Avenue"
+   ]
+  },
+  {
+   "topic": "Public hearing: opt out of early voting by mail",
+   "resolution": "opted out 3-2-0",
+   "quote": "public hearing to vote to opt out of early voting by mail per m.g.l. c. 54, s. 25b",
+   "tags": [
+    "early voting",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Change of manager, Alcohol License 00016-PK-0636 (Hannaford's)",
+   "resolution": "approved 5-0-0, contingent on paying water/sewer bills",
+   "quote": "7:30 pm change of manager to robert scott bilodeau for alcohol license 00016-pk-0636,",
+   "tags": [
+    "liquor license",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "member alonzo stated that the finance committee held their public hearing regarding warrant articles last thursday.",
+   "tags": [
+    "finance committee",
+    "assessors",
+    "planning board",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "FY2024 and FY2025 budget, capital plan and warrant discussion",
+   "resolution": "discussed; warrant articles acted on individually",
+   "quote": "discussion on fiscal year 2024 budget, fiscal year 2025 budget, capital plan, and",
+   "tags": [
+    "fy2025 budget",
+    "school override",
+    "budget task force",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Final votes and signatures on warrant articles",
+   "resolution": "articles recommended, deferred, or removed by vote",
+   "quote": "at this time, the board went through all warrant articles in the draft booklet that have not yet been recommended by the board.",
+   "tags": [
+    "annual town meeting warrant"
+   ]
+  },
+  {
+   "topic": "Environmental policies and Select Board by-laws",
+   "resolution": "tabled",
+   "quote": "discuss environmental policies & select board by-laws the item was tabled.",
+   "tags": [
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Override ballot question for the Annual Town Election",
+   "resolution": "added to ballot 5-0-0",
+   "quote": "vote on override ballot question to be submitted to the town clerk for may 18th",
+   "tags": [
+    "school override",
+    "town election"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted",
+   "quote": "member emkey stated that she will not be able to attend on april 23rd.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard",
+   "quote": "david passios, 56 whiting street: stated that he is disappointed with the board for not including the language",
+   "tags": [
+    "public comment",
+    "historical commission",
+    "town charter"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0-0 at 8:55 PM",
+   "quote": "meeting adjourned at 8:55 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "annual town meeting warrant",
+  "school override",
+  "FY2025 budget",
+  "town election",
+  "early voting",
+  "liquor license",
+  "historical commission",
+  "enterprise funds",
+  "sewer",
+  "tax bills",
+  "electricity aggregation",
+  "sick leave policy",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

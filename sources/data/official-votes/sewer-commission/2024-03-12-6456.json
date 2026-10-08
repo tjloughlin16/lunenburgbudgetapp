@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-03-12",
  "docid": "6456",
@@ -12,23 +12,331 @@
  },
  "votes": [
   {
-   "motion": "Increase the amount from Retained Earnings to $400K",
+   "motion": "Increase the amount transferred from Retained Earnings to $400K.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: brett r. second: mike n. to increase the amount from retained earnings to $400k. roll call vote: mike n.-aye, brett-aye, dave-aye, and john-aye."
+   "quote": "to increase the amount from retained earnings to $400k. roll call vote: mike n.-aye, brett-aye, dave-aye, and john-aye."
   },
   {
-   "motion": "Adjourn at 6:52pm",
+   "motion": "Adjourn the meeting at 6:52pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r. second: mike n. to adjourn at 6:52pm. roll call vote: mike n.-aye, brett-aye, dave-aye and john-aye."
+   "quote": "to adjourn at 6:52pm. roll call vote: mike n.-aye, brett-aye, dave-aye and john-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0834525
+ "note": "Text is clean extracted text from a single page pair, with no scan. Two votes are recorded, both by roll call, 4-0. The minutes show attendance as a list without saying which members joined by Zoom, so attendees are marked present. The $400K motion states only a total from Retained Earnings; the split between Capital and Operating is discussed as a proposal ($35K and $381K) but is not part of the motion's wording, so the transfer is recorded as the total only. The 2/27/24 minutes were held, with no vote recorded on them here.",
+ "cost_usd": 0.01872757,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair - john reynolds, vice-chair - brett ramsden, clerk - mike nault, member - dave macdonald,"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair - john reynolds, vice-chair - brett ramsden, clerk - mike nault, member - dave macdonald,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair - john reynolds, vice-chair - brett ramsden, clerk - mike nault, member - dave macdonald,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair - john reynolds, vice-chair - brett ramsden, clerk - mike nault, member - dave macdonald,"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director - bill bernard, business manager - paula bertram, minutes clerk - jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "dpw director - bill bernard, business manager - paula bertram, minutes clerk - jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "dpw director - bill bernard, business manager - paula bertram, minutes clerk - jane ranley"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: mike mackin john opened the meeting at 6:00pm."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of 2/27/24 were held until the next meeting so the Chair can review one of the votes on the video.",
+   "quote": "john asked to hold them until the next meeting so he can review one of the votes on the video."
+  },
+  {
+   "decision": "The Commission will seek quotes, not bids, for the repair work; Paula will write a scope of work, have Wright Pierce review it, and send it to several companies.",
+   "quote": "paula stated that they are not looking at bids, which would take several months, but looking for quotes."
+  },
+  {
+   "decision": "Wright Pierce will quote a review of the 30 highest-priority manholes, to support an IFB.",
+   "quote": "wright pierce will be doing a quote for looking at the 30 highest priority manholes and indicating what needs to be done."
+  },
+  {
+   "decision": "Paula asked Bill to post on Facebook a list of what is and is not acceptable to put in the sewer.",
+   "quote": "paula has asked bill to put on facebook a list of what is ok and not ok to put in the sewer."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pump stations and capital needs spending",
+   "what_was_recorded": "Paula said the Commission would spend a figure on pump stations and capital needs, revised downward and to be covered by transfers from other line items.",
+   "figures_as_printed": [
+    "$106K",
+    "$95K"
+   ],
+   "quote": "paula stated they will be spending $106k on pump stations and capital needs. the revised figure was $95k"
+  },
+  {
+   "topic": "FY25 capital costs",
+   "what_was_recorded": "FY25 capital costs rose to a printed figure, driven by Dana St. repairs over $100K, leaving a small emergency buffer.",
+   "figures_as_printed": [
+    "$335K",
+    "$100K"
+   ],
+   "quote": "the capital costs for fy25 has gone up to $335k, due to the repairs at dana st. being over $100k."
+  },
+  {
+   "topic": "Retained Earnings balance",
+   "what_was_recorded": "Paula stated the Retained Earnings balance is about a printed figure.",
+   "figures_as_printed": [
+    "$1.7Mil"
+   ],
+   "quote": "she stated the retained earnings balance is now about $1.7mil."
+  },
+  {
+   "topic": "Proposed Retained Earnings split",
+   "what_was_recorded": "Paula proposed moving printed amounts from Retained Earnings to Capital and to the Operating budget, leaving a printed balance.",
+   "figures_as_printed": [
+    "$35K",
+    "$381K",
+    "$1.36 Mil."
+   ],
+   "quote": "she is proposing moving $35k to capital and $381k into the operating budget."
+  },
+  {
+   "topic": "FY25 Capital Expense line item",
+   "what_was_recorded": "The FY25 Capital Expense line item is stated to be a printed figure.",
+   "figures_as_printed": [
+    "$350K"
+   ],
+   "quote": "the fy25 capital expense line item will be $350k."
+  },
+  {
+   "topic": "Earlier Retained Earnings transfer",
+   "what_was_recorded": "John noted the Commission voted at the last meeting to move a printed amount, and discussed whether to move more.",
+   "figures_as_printed": [
+    "$250K"
+   ],
+   "quote": "john stated that they voted to move $250k at the last meeting and the commission discussed whether to move more."
+  },
+  {
+   "topic": "Rate increase explanation",
+   "what_was_recorded": "Dave suggested explaining a printed rate increase at the start of the budget presentation.",
+   "figures_as_printed": [
+    "$12.34"
+   ],
+   "quote": "dave suggested explaining the $12.34 rate increase up front."
+  },
+  {
+   "topic": "FY25 bid work funding",
+   "what_was_recorded": "The FY25 invitation for bids would be funded from a printed ARPA amount.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "this will be done with the $100k arpa funding."
+  },
+  {
+   "topic": "2024 Green Communities grant for pumps",
+   "what_was_recorded": "Money for pumps is said to be available under the Green Communities grant; the application was not yet out. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the application is not available yet but money is available for pumps so she is working with matt (wright pierce) to get the data together for the application."
+  },
+  {
+   "topic": "State revolving funds",
+   "what_was_recorded": "State revolving funds were considered for repairs but judged too slow (1 to 2 years) to use for current repairs. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "they discussed obtaining state revolving funds but found that it is 1 to 2 years to get them, if you qualify, so it is not an option for repairs they need to do now."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Increase the transfer from Retained Earnings (motion by Brett R., seconded by Mike N.) to the amount stated; the minutes state the total, not how it splits between Capital and Operating.",
+   "amount_as_printed": "$400K",
+   "outcome": "passed 4-0",
+   "quote": "to increase the amount from retained earnings to $400k. roll call vote: mike n.-aye, brett-aye, dave-aye, and john-aye."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "Member",
+   "topic": "announced leaving the Commission at end of term",
+   "quote": "public comment- dave announced that he will be leaving the commission at the end of his term."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "noted; Dave MacDonald leaving at end of term",
+   "quote": "public comment- dave announced that he will be leaving the commission at the end of his term.",
+   "tags": [
+    "commission membership",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "none",
+   "quote": "announcements - none appointments",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Appointments: Wright Pierce, upcoming IFBs and system improvements",
+   "resolution": "discussed; manhole quote to be obtained",
+   "quote": "wright pierce will be doing a quote for looking at the 30 highest priority manholes and indicating what needs to be done.",
+   "tags": [
+    "Wright Pierce",
+    "IFB",
+    "manholes",
+    "I/I",
+    "pumps"
+   ]
+  },
+  {
+   "topic": "Minutes of 2/27/24",
+   "resolution": "held to next meeting",
+   "quote": "john asked to hold them until the next meeting so he can review one of the votes on the video.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget and rate increase discussion",
+   "resolution": "motion passed 4-0 to increase Retained Earnings transfer to $400K",
+   "quote": "john requested to review the numbers for the transfer from retained earnings.",
+   "tags": [
+    "budget",
+    "retained earnings",
+    "capital",
+    "rate increase"
+   ]
+  },
+  {
+   "topic": "Budget presentation",
+   "resolution": "feedback given",
+   "quote": "john asked for feedback on the presentation and dave suggested explaining the $12.34 rate increase up front.",
+   "tags": [
+    "budget",
+    "rate increase"
+   ]
+  },
+  {
+   "topic": "Repairs at Mass 1 Pump Station",
+   "resolution": "reported; sewage disposal discussed",
+   "quote": "paula reported the repair took place on 2/27 and they pumped 15,000 gallons",
+   "tags": [
+    "pump station",
+    "repairs",
+    "sewage"
+   ]
+  },
+  {
+   "topic": "FY25 upcoming information for bids",
+   "resolution": "IFB targeted late May/early June",
+   "quote": "she hopes to get the ifb done for late may/early june, so they can start at the beginning of fy25.",
+   "tags": [
+    "IFB",
+    "ARPA",
+    "FY25"
+   ]
+  },
+  {
+   "topic": "State Revolving Loan Fund",
+   "resolution": "discussed; no action recorded",
+   "quote": "john stated they talked to wright pierce about looking at rolling the capital plan work into a project and maybe getting some funding.",
+   "tags": [
+    "state revolving fund",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Business Manager report: Spill Sens unit",
+   "resolution": "reported; installation planned 3/19",
+   "quote": "paula reported that the spill sens unit came in.",
+   "tags": [
+    "I/I",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "System maintenance and upgrades",
+   "resolution": "reported; quotes to be sought",
+   "quote": "paula stated the majority of the generator work is complete, except for a controller on the leominster rd. generator",
+   "tags": [
+    "generators",
+    "clogs",
+    "Green Communities grant"
+   ]
+  },
+  {
+   "topic": "Upcoming schedule",
+   "resolution": "noted; 3/26 public hearing on Appendix G",
+   "quote": "john noted that the next meeting on 3/26 will be a public hearing on the regulation changes to appendix g, sewer connection charge policy.",
+   "tags": [
+    "public hearing",
+    "regulations",
+    "sewer connection charge"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 6:52pm",
+   "quote": "to adjourn at 6:52pm. roll call vote: mike n.-aye, brett-aye, dave-aye and john-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "retained earnings",
+  "capital budget",
+  "rate increase",
+  "I/I",
+  "pump stations",
+  "Wright Pierce",
+  "grants",
+  "ARPA",
+  "commission membership",
+  "public hearing",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

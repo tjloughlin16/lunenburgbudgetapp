@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2024-04-25",
  "docid": "6536",
@@ -12,39 +12,237 @@
  },
  "votes": [
   {
-   "motion": "Approve refund of grave lots for two families relocating from town",
+   "motion": "Approve the refund of grave lots purchased by two relocating families, one with hardship.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "in a vote of 3-0 the cemetery commission approved the refund.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "in a vote of 3-0 the cemetery commission approved the refund."
   },
   {
-   "motion": "Elect commissioners for 2024-2025: Nancy Foss-Yasko as Chair, David Dorren as Vice-Chair, Michael Clark as Clerk",
+   "motion": "Elect the commissioners for 2024–2025: Nancy Foss-Yasko as Chair, David Dorren as Vice-Chair, Michael Clark as Clerk.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "in a 3-0 vote the cemetery commission voted the commissioners for the year 2024 - 2025 to be: nancy foss-yasko, chair; david dorren, vice-chair; michael clark, clerk.",
-   "moved_by": "",
-   "seconded_by": ""
+   "procedural": false,
+   "quote": "in a 3-0 vote the cemetery commission voted the commissioners for the year 2024 - 2025 to be:"
   },
   {
-   "motion": "Approve meeting minutes from March 14, 2024",
-   "outcome": "passed 2-0",
-   "procedural": true,
-   "quote": "meeting minutes: march 14, 2024 - motion passed 2 to 0.",
+   "motion": "Approve the minutes of March 14, 2024.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed 2 to 0",
+   "procedural": true,
+   "quote": "meeting minutes: march 14, 2024 - motion passed 2 to 0."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "motion was made to adjourn by chair, nancy foss-yasko, seconded by clerk, michael clark. with no further discussion, meeting was adjourned at 10:25 am - motion passed 3 to 0.",
+   "motion": "Adjourn the meeting at 10:25 AM.",
    "moved_by": "Nancy Foss-Yasko",
-   "seconded_by": "Michael Clark"
+   "seconded_by": "Michael Clark",
+   "outcome": "passed 3 to 0",
+   "procedural": true,
+   "quote": "motion was made to adjourn by chair, nancy foss-yasko, seconded by clerk, michael clark."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.100556
+ "note": "Text is extracted, not a scan; line breaks were collapsed to single spaces in quotes. No mover is printed for the refund, officer-election or March 14 minutes motions. The minutes motion passed 2 to 0 with three members present, and no reason is given. No dollar amount for the grave-lot refunds is printed. Attendance lists \"Dave Rogers\" and public comment lists \"Mr. David Rogers\"; the minutes do not confirm they are the same person. Richard McGarth is listed as a public attendee and as presenter.",
+ "cost_usd": 0.01805777,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "9:00 am - call to order - by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk; michael clark, member"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair & Clerk",
+   "status": "present",
+   "quote": "9:00 am - call to order - by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk; michael clark, member"
+  },
+  {
+   "name": "Michael Clark",
+   "role": "Member",
+   "status": "present",
+   "quote": "9:00 am - call to order - by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk; michael clark, member"
+  },
+  {
+   "name": "Ezequiel Ayala JR.",
+   "role": "Finance Director/Town Accountant",
+   "status": "present",
+   "quote": "ezequiel ayala jr., finance director/town accountant."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "not present were bill bernard, dpw director and todd holman, cemetery superintendent."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "absent",
+   "quote": "not present were bill bernard, dpw director and todd holman, cemetery superintendent."
+  },
+  {
+   "name": "John Bowen",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, dave rogers and richard mcgarth, chair of lunenburg historical commission."
+  },
+  {
+   "name": "Jeanmarie Price",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, dave rogers and richard mcgarth, chair of lunenburg historical commission."
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, dave rogers and richard mcgarth, chair of lunenburg historical commission."
+  },
+  {
+   "name": "Richard McGarth",
+   "role": "Chair of Lunenburg Historical Commission",
+   "status": "present",
+   "quote": "richard mcgarth, chair of the historical commission discussed the following:"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Refunds of sale-of-lot expenses must be approved and signed off by the Cemetery Commission before the Finance Director can pay them.",
+   "quote": "any expenses such as refund of the sale of lots, must be approved by and signed off by the cemetery commission before payment can be made by the finance director."
+  },
+  {
+   "decision": "DPW Director updates and discussions, the Ramaker discussions, and the American Flag illumination item were tabled to the May 16, 2024 meeting because the DPW Director was absent.",
+   "quote": "dpw director updates and discussions were tabled till may 16, 2024 meeting along with the ramaker discussions"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Refunds of sale of lots (grave lots)",
+   "what_was_recorded": "Commission sign-off is required before the Finance Director pays any refund of a sale of lots; the minutes print no refund amount.",
+   "figures_as_printed": [],
+   "quote": "any expenses such as refund of the sale of lots, must be approved by and signed off by the cemetery commission before payment can be made by the finance director."
+  },
+  {
+   "topic": "Cemetery Commission funds",
+   "what_was_recorded": "The Finance Director laid out the Cemetery Commission funds: Sale of Lots (Fund 8115), Capital Article (Fund 3006), Perpetual Care Trust principal (Fund 8001) and interest (Fund 8000), and Cemetery Gift (Fund 1548). No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "mr. ayala also went over the procedure regarding the cemetery commissions funds - discussing and laying out the purpose:"
+  },
+  {
+   "topic": "Grants for cemetery projects",
+   "what_was_recorded": "The Historical Commission suggested the Community Preservation Act and Veterans Administration grants for cemetery projects. No amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "if the cemetery commission is looking for grants to complete projects they should try the community preservation act and grants from the veteran administration."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "",
+   "topic": "Contractor selection and dissolving the Commission",
+   "quote": "mr. bowen also continued to state that the cemetery commission should be abolished/dissolved even though it is approved by the charter."
+  },
+  {
+   "speaker": "Mr. David Rogers",
+   "stated_role": "",
+   "topic": "Written notice of future discussion topics",
+   "quote": "mr. david rogers stated in public comment that he will give notice in writing to the chair on his topics he would like to discuss at a future cemetery commission meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and recording notice",
+   "resolution": "no action",
+   "quote": "in public comments, mr. bowen again stated on why the cemetery commission should not decide which contractors should be allowed",
+   "tags": [
+    "public comment",
+    "recording"
+   ]
+  },
+  {
+   "topic": "Revenue turnover policy and Cemetery Commission fund procedures",
+   "resolution": "presented; thanked; no vote",
+   "quote": "finance director/town accountant ezequiel ayala, jr., discussed the new town of lunenburg's turnover policy",
+   "tags": [
+    "town finance",
+    "turnover policy",
+    "cemetery funds"
+   ]
+  },
+  {
+   "topic": "Refund of grave lots for relocating families",
+   "resolution": "approved 3-0",
+   "quote": "in a vote of 3-0 the cemetery commission approved the refund.",
+   "tags": [
+    "grave lots",
+    "refunds"
+   ]
+  },
+  {
+   "topic": "Historical Commission update on cemeteries",
+   "resolution": "presented; no action",
+   "quote": "richard mcgarth, chair of the historical commission discussed the following:",
+   "tags": [
+    "historical commission",
+    "West Street Terrace",
+    "Fish Street cemetery",
+    "North and South Street cemeteries",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Election of Commission officers for 2024–2025",
+   "resolution": "approved 3-0",
+   "quote": "in a 3-0 vote the cemetery commission voted the commissioners for the year 2024 - 2025 to be:",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "DPW Director updates, Ramaker discussions, American Flag illumination",
+   "resolution": "tabled to May 16, 2024",
+   "quote": "dpw director updates and discussions were tabled till may 16, 2024 meeting along with the ramaker discussions",
+   "tags": [
+    "DPW",
+    "tabled items"
+   ]
+  },
+  {
+   "topic": "Minutes of March 14, 2024",
+   "resolution": "approved 2 to 0",
+   "quote": "meeting minutes: march 14, 2024 - motion passed 2 to 0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:25 AM, 3 to 0",
+   "quote": "motion was made to adjourn by chair, nancy foss-yasko, seconded by clerk, michael clark.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "grave lots",
+  "refunds",
+  "revenue turnover policy",
+  "cemetery trust funds",
+  "historical commission",
+  "officer elections",
+  "public comment",
+  "tabled items",
+  "open meeting law"
+ ],
+ "dropped_unquoted_by_field": {}
 }

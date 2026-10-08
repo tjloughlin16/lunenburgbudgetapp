@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2024-05-06",
  "docid": "6549",
@@ -12,15 +12,224 @@
  },
  "votes": [
   {
-   "motion": "Approve the pending meeting minutes",
+   "motion": "Approve the meeting minutes from the last meeting.",
+   "moved_by": "",
    "outcome": "passed 4-0",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "meeting minutes from last meeting approved unanimously ( 4-0 ) by roll-call vote."
+   "quote": "meeting minutes from last meeting approved unanimously ( 4-0 ) by roll-call vote.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "This committee discussed grant applications and community outreach initiatives. The only vote recorded is the approval of prior meeting minutes. No votes were taken on the discussed grant items, campus improvements, or training programs—all were recorded as agenda items under discussion rather than motions voted upon. The meeting adjournment is noted but not recorded as a voted motion.",
- "cost_usd": 0.0777215
+ "note": "Text is a clean digital extract with no scan issues. The only recorded vote is approval of the prior minutes (4-0 by roll call); the minutes name no mover or seconder for it. Adjournment at 7:23 pm is recorded without a motion or vote. The grant discussion contains no motions. Dollar figures are as printed, including grant ceilings and one cost estimate; none is a transfer or an appropriation.",
+ "cost_usd": 0.014130170000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy , matt snyder"
+  },
+  {
+   "name": "David Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy , matt snyder"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy , matt snyder"
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy , matt snyder"
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members not present: chris holden"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill bernard, dpw director. karen chapman, mrpc"
+  },
+  {
+   "name": "Karen Chapman",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "bill bernard, dpw director. karen chapman, mrpc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dave Blatt will reach out to Heather and the Police Chief about the police hybrid cruiser grant, which has not yet been submitted.",
+   "quote": "dave blatt will reach out to heather and police chief."
+  },
+  {
+   "decision": "Dave Blatt to look into energy certification training classes.",
+   "quote": "dave blatt to look into classes."
+  },
+  {
+   "decision": "The committee will meet the first Monday of each month; the next meeting is set for June 3, 2024 at 6:30pm, location TBD.",
+   "quote": "to meet first monday of each month. next: june 3, 2024 6:30pm, location tbd."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Spring 2024 grant round",
+   "what_was_recorded": "The Spring 2024 grant deadline is May 10, 2024, with $250k available per round; sewer pumps submission may be delayed to the Fall grant if sewer is not ready.",
+   "figures_as_printed": [
+    "$250k"
+   ],
+   "quote": "spring 2024 grant deadline may 10, 2024 ($250k per round)"
+  },
+  {
+   "topic": "Sewer Commission pumps project",
+   "what_was_recorded": "The Sewer Commission pumps project, which includes VFDs, has a total cost estimate of about $280,000; energy-savings calculation is a hurdle with significant cost.",
+   "figures_as_printed": [
+    "~$280,000"
+   ],
+   "quote": "total cost estimate ~$280,000"
+  },
+  {
+   "topic": "Police hybrid cruiser grant",
+   "what_was_recorded": "The police hybrid cruiser has a $5000 grant; larger EV vehicles are offered money; prior grants covered cruisers at 5k each.",
+   "figures_as_printed": [
+    "$5000",
+    "5k each",
+    "10k total",
+    "5k"
+   ],
+   "quote": "priority 2: police hybrid cruiser - $5000 grant"
+  },
+  {
+   "topic": "Prior police cruiser grants",
+   "what_was_recorded": "The 2020 grant funded two cruisers at 5k each, 10k total, and the 2022 grant one cruiser at 5k; the minutes say this is essentially break even but carbon offset.",
+   "figures_as_printed": [
+    "5k each",
+    "10k total",
+    "5k"
+   ],
+   "quote": "2020 grant - 2 cruisers (5k each, 10k total)"
+  },
+  {
+   "topic": "Energy certification training grant",
+   "what_was_recorded": "Energy Certification Program training courses carry a grant of $3000 per person.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "energy certification program training courses - $3000 grant per person"
+  },
+  {
+   "topic": "Utility incentive for sewer pumps",
+   "what_was_recorded": "DOER needs to know whether Unitil is providing an incentive; finalized incentives come after an application is received. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "doer needs to know if unitil is providing an incentive and if"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve pending meeting minutes",
+   "resolution": "approved 4-0 by roll call",
+   "quote": "meeting minutes from last meeting approved unanimously ( 4-0 ) by roll-call vote.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Committee comment",
+   "resolution": "no action",
+   "quote": "committee comment no committee comment",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; no public comment",
+   "quote": "public comment no public comment",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Upcoming possible grant items: sewer pumps, police cruiser, school lighting",
+   "resolution": "discussed; no action recorded",
+   "quote": "priority 1: sewer commission pumps - needs documents submitted",
+   "tags": [
+    "grants",
+    "sewer",
+    "police vehicles",
+    "school energy"
+   ]
+  },
+  {
+   "topic": "Energy certification training and other grant-related projects",
+   "resolution": "discussed; Dave Blatt to look into classes",
+   "quote": "energy certification program training courses - $3000 grant per person",
+   "tags": [
+    "training",
+    "energy",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Outreach program and community awareness",
+   "resolution": "discussed; Facebook posts ongoing",
+   "quote": "outreach program to increase community awareness",
+   "tags": [
+    "outreach",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Next topics: projects and transition from lighting grants to decarbonization",
+   "resolution": "discussed; no action recorded",
+   "quote": "looking for projects to help with, mini splits at school, envelope updates, weatherization.",
+   "tags": [
+    "decarbonization",
+    "school energy",
+    "town buildings"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "set first Monday monthly; next June 3, 2024",
+   "quote": "to meet first monday of each month. next: june 3, 2024 6:30pm, location tbd.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:23 pm; no vote recorded",
+   "quote": "meeting adjourned: 7:23 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "green communities",
+  "grants",
+  "energy",
+  "sewer pumps",
+  "police vehicles",
+  "school energy",
+  "town buildings",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2024-04-22",
  "docid": "6532",
@@ -12,29 +12,112 @@
  },
  "votes": [
   {
-   "motion": "to meet in executive session",
-   "moved_by": "Jennifer L. Sanderson",
-   "seconded_by": "Megan Lordan",
-   "outcome": "passed",
+   "motion": "Meet in executive session.",
+   "moved_by": "Ms. Sanderson",
+   "seconded_by": "Ms. Lordan",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "on motion regularly made by ms. sanderson and seconded by ms. lordan, the commission unanimously voted to meet in executive session."
   },
   {
-   "motion": "To approve the response to Mr. Menard as prepared by Town Counsel, with copies distributed as required by law",
-   "moved_by": "C. William Lakso",
-   "seconded_by": "Jennifer L. Sanderson",
-   "outcome": "passed",
+   "motion": "Approve the response to Mr. Menard as prepared by Town Counsel, with copies distributed as required by law.",
+   "moved_by": "Mr. Lakso",
+   "seconded_by": "Ms. Sanderson",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "on motion regularly made by mr. lakso and seconded by ms. sanderson , the commission unanimously voted: to approve the response to mr. menard as prepared by town counsel"
+   "quote": "to approve the response to mr. menard as prepared by town counsel, with copies distributed as required by law."
   },
   {
-   "motion": "to defer discussion of five items on the agenda under the category of Old Business",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "with respect to five items on the agenda under the category of old business, it was regularly moved, seconded, and unanimously voted to defer discussion"
+   "motion": "Defer discussion of five Old Business items to the May 2024 meeting, since all had been on the April 4 agenda.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "it was regularly moved, seconded, and unanimously voted to defer discussion, since all had been on the agenda for the april 4 meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1341371
+ "note": "Clean digital text, no scan issues. Minutes print no dollar figures, no transfers and no public comment section. The adjournment (\"the meeting was adjourned\") is recorded with no vote and is not listed as one. The Chris Menard and Karin Menard complaints are referred to but neither complainant is recorded as attending. Quotes collapse the source's double spaces and line breaks to single spaces. Vote counts are printed only as \"unanimously\", so outcomes read \"passed, unanimous\". The mover of the Old Business deferral is not named.",
+ "cost_usd": 0.01406657,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present were mr. mcgrath, c. william lakso, jennifer l. sanderson, and megan lordan."
+  },
+  {
+   "name": "C. William Lakso",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "present were mr. mcgrath, c. william lakso, jennifer l. sanderson, and megan lordan."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "Member",
+   "status": "present",
+   "quote": "present were mr. mcgrath, c. william lakso, jennifer l. sanderson, and megan lordan."
+  },
+  {
+   "name": "Megan Lordan",
+   "role": "Member",
+   "status": "present",
+   "quote": "present were mr. mcgrath, c. william lakso, jennifer l. sanderson, and megan lordan."
+  },
+  {
+   "name": "Kevin Boussom",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent was kevin boussom"
+  },
+  {
+   "name": "Steven Chaplin",
+   "role": "Attorney; represented Town Counsel",
+   "status": "present",
+   "quote": "steven chaplin represented town counsel."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission noted that a second complaint, filed by Karin Menard, was not received in time for this agenda and that a second meeting will be needed.",
+   "quote": "and that a second meeting will be needed."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Open Meeting Law complaint filed by Mr. Chris Menard (March 8, 2024)",
+   "resolution": "executive session; approved response as prepared by Town Counsel",
+   "quote": "the commission unanimously voted to meet in executive session."
+  },
+  {
+   "topic": "Second Open Meeting Law complaint, filed by Karin Menard",
+   "resolution": "noted; a second meeting will be needed",
+   "quote": "mention was made relative to a second complaint, filed by karin menard, but not received by the commission"
+  },
+  {
+   "topic": "Counsel's recommendations on Open Meeting Law training and agenda wording",
+   "resolution": "no action recorded",
+   "quote": "he further recommended the commission not use abbreviations in agendas, and expand on detail of listed items."
+  },
+  {
+   "topic": "Old Business: five agenda items",
+   "resolution": "deferred to the May 2024 meeting",
+   "quote": "it was regularly moved, seconded, and unanimously voted to defer discussion, since all had been on the agenda for the april 4 meeting"
+  }
+ ],
+ "tags": [
+  "Open Meeting Law",
+  "complaint",
+  "executive session",
+  "Town Counsel",
+  "special meeting",
+  "old business",
+  "deferral"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-04-11",
  "docid": "6522",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval for Article 4 (payment of prior years' expenses totaling $1,994. 55)",
+   "motion": "Recommend approval of Article 4 (payment of prior years' expenses, $1,994.55 total as reported).",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
    "outcome": "passed 6-0",
@@ -20,15 +20,255 @@
    "quote": "there was a m otion to recommend approval for a rticle 4 by chris menard, seconded by dave passios. unanimous approval 6-0 with 1 member absent."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Recommendation on Article 5 (transfer from reserve fund to amend FY 24 budget). Wording of any motion not recorded; minutes say Chris Menard voted no as a recommendation.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "for these reasons chris menard votes no as a recommendation."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "there was a motion to adjourn by chris menard , seconded by dave passios ."
+   "quote": "there was a motion to adjourn by chris menard , seconded by dave passios"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Article 5 was not voted on at this meeting; the Committee agreed to remain deferred on that article (Chris Menard expressed he would vote no as a recommendation, but no formal vote was taken).",
- "cost_usd": 0.1105281
+ "note": "Text extraction, not a scan; spacing inside words is broken in places (e.g. \"m otion\", \"A rticle\"), and quotes here are collapsed to single spaces as the rules allow. Vote 1 reads \"Unanimous approval 6-0 with 1 member absent\"; the absent member is not named, so attendance is incomplete for that vote. Vote 2 is an individual \"votes no\" on Article 5 with no motion wording and no result recorded, so it is kept with outcome \"not stated\". Vote 3 (adjournment) records a motion and the closing time but no count. Article 5 was deferred, not voted, so the transfer is recorded as proposed only. Evan Watters' Boys and Girls Club item is relayed by the Chair in the Public Comment section; it is not a resident speaking. Ezequiel Ayala and Heather Lemieux are reported as speaking or providing figures, but the minutes do not say whether they were present in person or remotely.",
+ "cost_usd": 0.01695117,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "evan watters a nd tiffaney tavares provided"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member (Zoom)",
+   "status": "remote",
+   "quote": "board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "Finance Director (report given; attendance not stated)",
+   "status": "not stated",
+   "quote": "ezequiel ayala states he is currently reviewing the primary quarterly reports."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "heather lemieux provided the total of $1,994. 55."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agrees to remain deferred on Article 5 (reserve fund transfer for FY 24 snow and ice costs).",
+   "quote": "the committee agrees to remain deferred on a rticle 5"
+  },
+  {
+   "decision": "Minutes not reviewed; added to the next meeting's agenda.",
+   "quote": "the committee has not reviewed the minutes so this will be added to the next meeting"
+  },
+  {
+   "decision": "Evan Watters to review the annual report numbers and email the document to each member individually.",
+   "quote": "evan watters will review the numbers and then email the document"
+  },
+  {
+   "decision": "Evan Watters to address the missing meeting minutes at a later date.",
+   "quote": "evan watters is planning to address this issue at a later date"
+  },
+  {
+   "decision": "Evan Watters and Tom Gray to attend the Are You Smarter Than Our 6th Graders event on April 26.",
+   "quote": "evan watters and tom gray plan on being in attendance on april 26"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 4 - payment of prior years' expenses",
+   "what_was_recorded": "Heather Lemieux reported a total of $1,994.55 for Article 4, which the Committee then voted to recommend.",
+   "figures_as_printed": [
+    "$1,994. 55"
+   ],
+   "quote": "heather lemieux provided the total of $1,994. 55."
+  },
+  {
+   "topic": "Article 5 - snow and ice costs, FY 24",
+   "what_was_recorded": "Snow and ice numbers from the last snowstorm totaled $226,000 as reported.",
+   "figures_as_printed": [
+    "$ 226,000"
+   ],
+   "quote": "the snow and ice numbers from the last snowstorm totaled $ 226,000"
+  },
+  {
+   "topic": "Article 5 - reserve fund balance",
+   "what_was_recorded": "The Town Manager recommends the money come from a reserve fund that currently has $275,000; a minimum amount for the salary reserve was also mentioned without a figure.",
+   "figures_as_printed": [
+    "$ 275, 0 00"
+   ],
+   "quote": "recommends that money come out of the reserve fund that currently has $ 275, 0 00"
+  },
+  {
+   "topic": "Water regulation (PFAS) financial impact",
+   "what_was_recorded": "The Board of Health's new regulations were described as having a financial impact on residents on public water; no dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "there will be a financial impact for residents who are on public water."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 5 - proposed transfer from available funds (reserve fund) to amend the amounts voted for the town's FY 24 budget.",
+   "outcome": "Remained deferred; no transfer voted.",
+   "amount_as_printed": "$ 226,000 (snow and ice, as reported); reserve fund $ 275, 0 00",
+   "quote": "transfer from available funds all sums of money necessary to amend"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Evan Watters",
+   "stated_role": "Chair",
+   "topic": "Boys and Girls Club team inquiry (relayed by the Chair)",
+   "quote": "evan watters states the boys and girls club is inquiring if the finance committee will be putting a team together"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "t he meeting opened at 7:00 pm",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "there were no announcements."
+  },
+  {
+   "topic": "Public Comment (Boys and Girls Club team inquiry)",
+   "resolution": "no action",
+   "quote": "evan watters states the boys and girls club is inquiring if the finance committee will be putting a team together"
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no action",
+   "quote": "there were no reports from the town manager."
+  },
+  {
+   "topic": "Finance Director Report",
+   "resolution": "no action; quarterly reports under review",
+   "quote": "ezequiel ayala states he is currently reviewing the primary quarterly reports."
+  },
+  {
+   "topic": "FinCom Report for Warrant Review; FY 25 Annual Report",
+   "resolution": "report updated; annual report reviewed and adjusted; Evan Watters to email numbers review",
+   "quote": "the committee reviewed and adjusted the document titled"
+  },
+  {
+   "topic": "FY25 Budget Discussion",
+   "resolution": "no discussion",
+   "quote": "there was no discussion about the fy 25 budget."
+  },
+  {
+   "topic": "FY25 Override Discussion",
+   "resolution": "no discussion",
+   "quote": "there was no discussion about the fy 25 override."
+  },
+  {
+   "topic": "Votes on Recommendations for Warrant Articles (Articles 4 and 5)",
+   "resolution": "Article 4 approved 6-0; Article 5 remained deferred",
+   "quote": "there are 2 articles (article 4 & article 5) that the committee is"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "the committee has not reviewed the minutes so this will be added to the next meeting"
+  },
+  {
+   "topic": "Committee Reports (Parks, Association of Town Finance Committees, Master Plan, Board of Health)",
+   "resolution": "reports only; no action",
+   "quote": "chris menard states the parks committee has met and is planning a clean-up day at the town beach and building."
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "list started",
+   "quote": "evan watters started a list of topics to be discussed."
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "no action",
+   "quote": "5/4/2024 - annual town meeting"
+  },
+  {
+   "topic": "Important Dates",
+   "resolution": "no action",
+   "quote": "5/18/2024 - annual town election"
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "no public comments",
+   "quote": "there were no public comments."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:28 PM",
+   "quote": "there was a motion to adjourn by chris menard , seconded by dave passios"
+  }
+ ],
+ "tags": [
+  "warrant articles",
+  "reserve fund transfer",
+  "snow and ice",
+  "FY24 budget",
+  "FY25 annual report",
+  "prior years expenses",
+  "public comment",
+  "committee reports",
+  "PFAS water regulation",
+  "master plan",
+  "minutes backlog",
+  "Town Meeting",
+  "Town Election"
+ ],
+ "dropped_unquoted_by_field": {}
 }

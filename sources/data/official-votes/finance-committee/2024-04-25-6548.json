@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-04-25",
  "docid": "6548",
@@ -12,16 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from March 20th and March 21st",
+   "motion": "Remove article 4 from the consent calendar.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Jean Russell",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "there was a m otion to remove article 4 from the consent calendar by dave passios, seconded by jean russell . a ll in favor."
+  },
+  {
+   "motion": "Recommend approval of the remaining consent calendar articles and remove article 4.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Evan Watters",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "chris menard, seconded by evan watters."
+  },
+  {
+   "motion": "Approve the annual report (FinCom report for warrant review) with the minor edits made during the meeting.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Jean Russell",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the meeting by chris menard"
+  },
+  {
+   "motion": "Approve the minutes of March 20 and March 21.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
    "outcome": "passed 5-1-1",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from march 20 th and march 21 st by chris menard, seconded by dave passios. the minutes were approved 5-1 with 1 member abstainin",
-   "quote_taken_from_text": true
+   "quote": "the minutes were approved 5-1 with 1 member abstaining."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Jay Simeone",
    "outcome": "passed",
@@ -29,7 +52,364 @@
    "quote": "there was a motion to adjourn by chris menard, seconded by jay simeone. all in favor."
   }
  ],
- "dropped_unquoted": 3,
- "note": "",
- "cost_usd": 0.0756691
+ "dropped_unquoted": 0,
+ "note": "Text extraction, not a scan, but with heavy spacing artifacts (e.g. 'A ll in favor', 'Eze quiel  Ayala', 'm otion'). Quotes reproduce the printed spacing where it matters and avoid the most damaged runs; the Ayala name is recorded as 'Ezequiel Ayala' with the spacing removed. Five motions were recorded, all with 'All in favor' or a printed count; no count was printed for the two consent-calendar motions or the annual report and their outcome is recorded as 'passed' on the words 'All in favor'. Items 8c and 8d record 'no discussion' with no motion. Public Comment appears twice (items 4 and 14); item 14's only speaker is Jay Simeone, a committee member, and is recorded as public comment only because the minutes place it there. Heather Lemieux's role is not printed anywhere. Dollar figures for the quarterly report are printed with irregular punctuation (e.g. '$ 5,139.824.85', '$ 31, 493,890.48') and are recorded as printed, not corrected.",
+ "cost_usd": 0.020624570000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member (Zoom)",
+   "status": "remote",
+   "quote": "board member dave passios, board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member dave passios, board member jean russell (zoom), board member jay simeone"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent member: clerk tiffaney tavares"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "heather lemieux confirms that is the case."
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "not stated in minutes (item 7a heading reads Finance Director)",
+   "status": "present",
+   "quote": "ayala will create a presentation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ezequiel Ayala will create a presentation on what special revenue items earn in interest and where the money goes, at Dave Passios's request.",
+   "quote": "ayala will create a presentation"
+  },
+  {
+   "decision": "Evan Watters will send the list of meetings without minutes dating back to 2023 to the minute writer.",
+   "quote": "evan watters will send the list to the minute writer."
+  },
+  {
+   "decision": "The committee added the Chapter 90 briefing that the Select Board received from DPW to the topics for a future meeting.",
+   "quote": "the committee wants to discuss the chapter 90 briefing"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Flat Hill Culvert Project funding and bid",
+   "what_was_recorded": "Additional DOT funding of $100,000 was reported; the project has $500,000 from a small bridge grant and $375,900 remaining, and the lowest responsible bidder totaled $830,000.",
+   "figures_as_printed": [
+    "$ 100,000",
+    "$ 500,000",
+    "$ 375,900",
+    "$ 830,000"
+   ],
+   "quote": "the lowest re sponsible bidder totaled $ 830,000."
+  },
+  {
+   "topic": "Rural roads funding allotment",
+   "what_was_recorded": "The town was notified of a rural roads allotment that will be added to Chapter 90.",
+   "figures_as_printed": [
+    "$ 21, 979"
+   ],
+   "quote": "the allotment was $ 21, 979."
+  },
+  {
+   "topic": "Quarterly report: estimated tax levy",
+   "what_was_recorded": "The Finance Director reported the estimated FY24 tax levy.",
+   "figures_as_printed": [
+    "$ 31, 493,890.48"
+   ],
+   "quote": "for fy 24 is $ 31, 493,890.48"
+  },
+  {
+   "topic": "Quarterly report: total revenue collected",
+   "what_was_recorded": "Total revenue collected through December 31, 2023 was reported with a comparison to the prior year period.",
+   "figures_as_printed": [
+    "$ 23,499,570.03",
+    "$ 25,025,707.45"
+   ],
+   "quote": "the t otal revenue collected through december 31, 2023,"
+  },
+  {
+   "topic": "Quarterly report: local receipts",
+   "what_was_recorded": "Local receipts collected were reported as a share of the annual estimate.",
+   "figures_as_printed": [
+    "44.04%",
+    "$ 1,417,065.66"
+   ],
+   "quote": "44.04% of the annual"
+  },
+  {
+   "topic": "Quarterly report: state aid",
+   "what_was_recorded": "State aid collected was reported as a share of the annual estimate.",
+   "figures_as_printed": [
+    "48.28%",
+    "$ 5,139.824.85"
+   ],
+   "quote": "48.28% of annual estimate"
+  },
+  {
+   "topic": "Quarterly report: expenditures and omnibus budget use",
+   "what_was_recorded": "Total expenditures through December 31, 2023 were reported as a share of the budget.",
+   "figures_as_printed": [
+    "$ 21,743,068.85",
+    "45.55%",
+    "40.99%"
+   ],
+   "quote": "or 45.55% of the budget"
+  },
+  {
+   "topic": "Quarterly report: debt",
+   "what_was_recorded": "Total debt was reported as 14% less than the prior year.",
+   "figures_as_printed": [
+    "14%"
+   ],
+   "quote": "is 14% less than last"
+  },
+  {
+   "topic": "Radio watch line (Nashoba Valley dispatch assessment)",
+   "what_was_recorded": "A radio watch line showed 83% spent; members asked whether the cost is paid upfront, and the Finance Director confirmed it is.",
+   "figures_as_printed": [
+    "83%"
+   ],
+   "quote": "chris menard questions if this cost is all paid upfront"
+  },
+  {
+   "topic": "Special revenue items and interest earnings",
+   "what_was_recorded": "Committee asked for a rundown of what special revenue items earn in interest and where that money goes.",
+   "figures_as_printed": [],
+   "quote": "dave passios requests a rundown of special revenue items"
+  },
+  {
+   "topic": "Revenue policy: where money from sales and fees goes",
+   "what_was_recorded": "Discussion of where money from athletic field sales and fees goes, and a request for a comprehensive list of town fees.",
+   "figures_as_printed": [],
+   "quote": "wants to know what happens to the money"
+  },
+  {
+   "topic": "FY25 budget: short-term borrowing capacity",
+   "what_was_recorded": "Discussion that the town needs a position to take on short-term debt it can actually pay.",
+   "figures_as_printed": [],
+   "quote": "take on short term debt that we can actually pay"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Water District presentation information",
+   "speaker": "Jay Simeone",
+   "stated_role": "not stated under public comment (listed as Board Member in attendance)",
+   "quote": "jay simeone refers residents to get their"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened 7pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the meeting opened at 7pm"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comments",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there were no comments."
+  },
+  {
+   "topic": "Town Manager report: Flat Hill Culvert, rural roads, bids, TC Passios leak",
+   "resolution": "reported; discussed TC Passios building future",
+   "tags": [
+    "Flat Hill culvert",
+    "Chapter 90",
+    "TC Passios building",
+    "bids"
+   ],
+   "quote": "there was another major leak at tc passios specifically above the cable access"
+  },
+  {
+   "topic": "Finance Director report",
+   "resolution": "no report",
+   "tags": [
+    "finance"
+   ],
+   "quote": "there was no finance director report."
+  },
+  {
+   "topic": "Quarterly financial report (FY24 Q2)",
+   "resolution": "received; presentation on special revenue requested",
+   "tags": [
+    "quarterly report",
+    "revenue",
+    "tax levy",
+    "state aid"
+   ],
+   "quote": "dave passios feels that the incoming revenue"
+  },
+  {
+   "topic": "Revenue turnover policy discussion",
+   "resolution": "discussed; no action",
+   "tags": [
+    "revenue policy",
+    "fees"
+   ],
+   "quote": "dave passios questions if it would be more appropriate to call this a"
+  },
+  {
+   "topic": "Consent calendar for town meeting",
+   "resolution": "article 4 removed; remaining articles recommended",
+   "tags": [
+    "consent calendar",
+    "warrant articles",
+    "town meeting"
+   ],
+   "quote": "there was a m otion to remove article 4 from the consent calendar by dave"
+  },
+  {
+   "topic": "Town meeting discussion",
+   "resolution": "discussed; no action",
+   "tags": [
+    "town meeting",
+    "parking",
+    "auditorium"
+   ],
+   "quote": "the t own m anager scheduled a pre-meeting for next wednesday.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "FinCom report for warrant review",
+   "resolution": "approved with minor edits",
+   "tags": [
+    "warrant review",
+    "annual report"
+   ],
+   "quote": "after review there were minor grammatical errors"
+  },
+  {
+   "topic": "FY25 budget discussion",
+   "resolution": "discussed; no action",
+   "tags": [
+    "FY25 budget",
+    "short-term debt"
+   ],
+   "quote": "take on short term debt that we can actually pay"
+  },
+  {
+   "topic": "FY25 override discussion",
+   "resolution": "no discussion",
+   "tags": [
+    "override"
+   ],
+   "quote": "there was no discussion."
+  },
+  {
+   "topic": "Votes on recommendations for warrant articles",
+   "resolution": "no discussion; no vote recorded",
+   "tags": [
+    "warrant articles"
+   ],
+   "quote": "votes on recommendations for warrant articles"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "March 20 and 21 minutes approved 5-1 with 1 abstention; missing-minutes list to be sent",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "evan watters will send the list to the minute writer."
+  },
+  {
+   "topic": "Committee reports: Parks Commission reorganization",
+   "resolution": "reported",
+   "tags": [
+    "Parks Commission"
+   ],
+   "quote": "chris menard shares that the parks commission reorganized."
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "Chapter 90 briefing added",
+   "tags": [
+    "Chapter 90"
+   ],
+   "quote": "the committee wants to discuss the chapter 90 briefing"
+  },
+  {
+   "topic": "Upcoming meetings and important dates",
+   "resolution": "noted",
+   "tags": [
+    "town meeting",
+    "town election"
+   ],
+   "quote": "5/4/2024 - annual town meeting"
+  },
+  {
+   "topic": "Public comment (second listing)",
+   "resolution": "noted",
+   "tags": [
+    "water district"
+   ],
+   "quote": "jay simeone refers residents to get their"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 8:58 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "there was a motion to adjourn by chris menard, seconded by jay simeone. all in favor."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "quarterly financial report",
+  "town meeting",
+  "warrant articles",
+  "consent calendar",
+  "revenue policy",
+  "Flat Hill culvert",
+  "Chapter 90",
+  "TC Passios building",
+  "minutes approval",
+  "FY25 budget",
+  "short-term debt"
+ ],
+ "dropped_unquoted_by_field": {}
 }

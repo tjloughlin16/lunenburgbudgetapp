@@ -1,0 +1,421 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "cemetery-commission",
+ "board": "Cemetery Commission",
+ "video_title": "Cemetery Commission",
+ "meeting_date": "2024-03-14",
+ "video_id": "0YPuiSWG9YY",
+ "video_url": "https://www.youtube.com/watch?v=0YPuiSWG9YY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/cemetery-commission/2024-03-14-0YPuiSWG9YY.json",
+  "sha256": "e0e8bc79e0d8595506d77a4b6722fe3a8319b69f85c5f12309c63ff2abe39801",
+  "caption_lines": 100,
+  "segments": 767
+ },
+ "recording": {
+  "duration_s": 2116,
+  "duration": "0:35",
+  "spoken_chars": 27047,
+  "words_approx": 4507
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03142024-6463",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2024-03-14-agenda-6463.txt",
+   "path": "sources/meetings/cemetery-commission/2024-03-14-agenda-6463.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03142024-6463",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2024-03-14-minutes-6463.txt",
+   "path": "sources/meetings/cemetery-commission/2024-03-14-minutes-6463.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T10:34:50Z",
+  "cost_usd": 0.265801
+ },
+ "minutes": {
+  "headline": "Cemetery Commission tabled the DPW's refund and Rainmaker password disputes; the chair says only commission votes can approve refunds.",
+  "summary": "The commission interviewed a volunteer candidate, approved prior minutes, and heard two residents in public comment. The chair read a DPW director update, objected that three burial-lot refunds were issued without commission votes, and tabled the refund and Rainmaker software issues to April. Nothing else was formally decided.",
+  "attendees": [
+   {
+    "name_as_heard": "Dave",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "the chair (unnamed in captions)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mike Clark",
+    "role": "presenter (commission candidate)"
+   },
+   {
+    "name_as_heard": "Dave Pasio",
+    "role": "member (speaks from the commission side, per his own point-of-order remark)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 709,
+    "speaker_as_heard": "John Bowen 162 Highland Street",
+    "stated_role": "resident",
+    "topic": "Opposed spending on Rainmaker data entry and headstone repair; argued burial-lot sales proceeds should reimburse the town under state law, called for a formal RFP before any cemetery work, and alleged bid violations at the North Cemetery parking lot."
+   },
+   {
+    "t": 935,
+    "speaker_as_heard": "Dave Rogers, 82 Highland Street",
+    "stated_role": "resident of over 50 years",
+    "topic": "Objected to how the DPW director was questioned at earlier meetings, called it a power play, and asked for an April agenda slot to speak longer than three minutes."
+   },
+   {
+    "t": 1427,
+    "topic": "A speaker commented on the Rainmaker password during commission deliberation; the chair reminded that public comment was already used and a member raised a point of order about visitor interruption."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "fees",
+   "personnel",
+   "policy",
+   "public-comment",
+   "roads-and-dpw",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 683,
+    "motion": "Approve the minutes of February 22, 2024.",
+    "moved_by": "unnamed member",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 2083,
+    "motion": "Adjourn the meeting.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 731,
+    "topic": "Rainmaker cemetery records software",
+    "what_was_said": "A resident said entering historical records is cost prohibitive and cited a higher-tier Rainmaker option. The chair later said the commission bought it in 2010, upgraded in 2019, and pays annual license and maintenance fees.",
+    "figures_as_heard": [
+     "$110,000"
+    ]
+   },
+   {
+    "t": 771,
+    "topic": "Headstone repair capital request",
+    "what_was_said": "A resident objected to a town manager-recommended capital plan request for headstone repair, arguing the town should only repair stones it controls.",
+    "figures_as_heard": [
+     "$338,000"
+    ]
+   },
+   {
+    "t": 791,
+    "topic": "Cemetery commission funds and reimbursement of town",
+    "what_was_said": "A resident said the commission holds funds and has not reimbursed the town for cemetery costs from lot sales.",
+    "figures_as_heard": [
+     "$200,000"
+    ]
+   },
+   {
+    "t": 1621,
+    "topic": "Burial lot refunds (three families)",
+    "what_was_said": "The DPW director's note described refunds of burial rights, with perpetual care refunded in one case and not in two others. The chair said these refunds required commission votes.",
+    "figures_as_heard": [
+     "$150",
+     "200",
+     "$350",
+     "$800",
+     "400",
+     "$1,200",
+     "$800 burial Rights",
+     "a th"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1062,
+    "decision": "The chair will schedule Dave Rogers to speak at a future meeting, probably April, and asked him to submit his topic."
+   },
+   {
+    "t": 1557,
+    "decision": "The Rainmaker password access issue was tabled; the commission may take it to the town manager and select board."
+   },
+   {
+    "t": 1828,
+    "decision": "The burial lot refund issue was tabled to the next meeting; the chair said a pending March refund request was stopped until the commission votes."
+   },
+   {
+    "t": 1997,
+    "decision": "A discussion with Richard McGrath was set for the April meeting, tentatively April 18."
+   },
+   {
+    "t": 2017,
+    "decision": "A request for a 4-foot bench in the North Cemetery will be reviewed with the DPW and the requesting resident."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 8,
+    "t_end": 215,
+    "topic": "Call to order, pledge, open meeting law and recording notices",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 215,
+    "t_end": 662,
+    "topic": "Interview of Mike Clark as commission candidate",
+    "resolution": "informational; candidate willing to run in the 2024 election",
+    "tags": [
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 662,
+    "t_end": 709,
+    "topic": "Approval of February 22 minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 709,
+    "t_end": 1152,
+    "topic": "Public comment (John Bowen, Dave Rogers)",
+    "resolution": "Rogers to be scheduled in April",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 1172,
+    "t_end": 1232,
+    "topic": "DPW director update: roads open, seasonal laborer hiring",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 1232,
+    "t_end": 1580,
+    "topic": "2024 maintenance plan and Rainmaker software access",
+    "resolution": "tabled",
+    "tags": [
+     "roads-and-dpw",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 1580,
+    "t_end": 1976,
+    "topic": "Cemetery refunds issued without commission vote",
+    "resolution": "tabled",
+    "tags": [
+     "fees",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1976,
+    "t_end": 2083,
+    "topic": "Cemetery updates: McGrath in April, bench request",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2083,
+    "t_end": 2105,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts for minutes approval and adjournment were not stated; only 'all in favor' and a response were captured.",
+   "Names of the chair and the member who moved the minutes are not given in the captions.",
+   "Several refund and software figures are unreliable as rendered by the captions.",
+   "The speaker at 1427 appears to be a commission member; the speaker identification is uncertain."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The commission tabled the burial-lot refund issue to April after the chair objected that three refunds were issued without commission votes.",
+    "t": 1828
+   },
+   {
+    "line": "The chair said a pending March refund request was stopped until the commission votes on it.",
+    "t": 1828
+   },
+   {
+    "line": "The Rainmaker cemetery-records software password access issue was tabled; the commission may take it to the town manager and select board.",
+    "t": 1557
+   },
+   {
+    "line": "The commission approved the February 22 minutes and interviewed a candidate willing to run in the 2024 election.",
+    "t": 662
+   },
+   {
+    "line": "Two residents spoke in public comment, one on Rainmaker data entry, headstone repair and lot-sale proceeds, the other asking for an April slot.",
+    "t": 709
+   }
+  ],
+  "why_it_matters": [
+   "Cemetery lot refunds and the records software are paid from cemetery funds and town money, so who has authority to approve a refund decides how those funds are handled.",
+   "Both issues were tabled with no vote, so nothing about the refunds or the software access is settled yet."
+  ],
+  "watch_next": [
+   "April commission meeting, tentatively April 18, with the tabled refund and Rainmaker issues and a discussion with Richard McGrath.",
+   "Whether the commission takes the Rainmaker access issue to the town manager and select board."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T10:34:59Z",
+   "cost_usd": 0.217329
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03142024-6463",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2024-03-14-minutes-6463.txt",
+   "path": "sources/meetings/cemetery-commission/2024-03-14-minutes-6463.pdf"
+  },
+  "official_sha256": "07fa811da695d6da2614a4fa56e473e70cf963b03aaaae340b91b30d11fb8262",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the Rogers agenda item and the tabled database access issue, but differ on a substantive vote and on how the lot-refund matter ended. The main thing to know is that the official minutes record a 2-0 vote appointing Michael Clark that ours omits, and that our tabled-refund account conflicts with the official 'oversight, will inform' account.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 1,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote appointing Michael Clark as Cemetery Commissioner",
+    "ours": "VOTES (non-procedural): none. Mike Clark listed only as 'presenter (commission candidate)'.",
+    "official": "both the chair, nancy foss-yasko and vice-chair, david dorren made a motion to vote to have michael clark as the newest cemetery commissioner. motion passed 2 to 0.",
+    "note": "Official minutes record a 2-0 appointment vote that our minutes do not; check the recording around Clark's presentation for the motion and vote.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Burial lot refunds: decision/outcome",
+    "ours": "The burial lot refund issue was tabled to the next meeting; the chair said a pending March refund request was stopped until the commission votes.",
+    "official": "this was an oversight by the dpw, director, and i will inform the cemetery commission going forward.",
+    "note": "Ours says the refund issue was tabled and a request held pending a vote; official says it was a DPW oversight and the chair will inform the commission going forward, with no tabling. Check the recording near t=1828.",
+    "t": 1828
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Lot refund dollar figures",
+    "ours": "Burial lot refunds (three families): $150, 200, $350, $800, 400, $1,200, $800 burial Rights, a th",
+    "official": "the chair, nancy foss-yasko was presented with information regarding money given back to resident parties that had previously purchased lots in the past.",
+    "note": "Our captions give garbled refund amounts while official prints no dollar figure; the amounts cannot be confirmed and should be checked against the recording or refund vouchers.",
+    "t": 1621
+   },
+   {
+    "kind": "agree",
+    "about": "Rainmaker/Ramaker password access tabled",
+    "ours": "The Rainmaker password access issue was tabled; the commission may take it to the town manager and select board.",
+    "official": "this will be tabled and brought to a higher level (heather) regarding this matter.",
+    "note": "Both record it tabled and escalated; the escalation target differs in wording (town manager/select board vs. 'Heather'), a minor detail worth a glance.",
+    "t": 1557
+   },
+   {
+    "kind": "agree",
+    "about": "Dave Rogers future agenda topic",
+    "ours": "The chair will schedule Dave Rogers to speak at a future meeting, probably April, and asked him to submit his topic.",
+    "official": "chair would like to have what exactly mr. rogers would like to discuss for the topic on the future agenda.",
+    "note": "Both say the chair wants Rogers' topic for a future agenda.",
+    "t": 1062
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Dave Pasio",
+    "ours": "Dave Pasio (member (speaks from the commission side, per his own point-of-order remark))",
+    "official": "public attendance were john bowen, jeanmarie price, john bowen, jr., dave rogers, dave passios and michael clark.",
+    "note": "Same person with a misheard surname; official lists him as a public attendee, not a member.",
+    "official_reading": "Dave Passios",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Role of Dave Passios / 'Dave (member)'",
+    "ours": "Dave (member)",
+    "official": "other members present were david dorren, vice-chair & clerk.",
+    "note": "Ours lists Dave as a member and Pasio as a member; official has only two commissioners (Foss-Yasko, Dorren) with Dave Rogers and Dave Passios as public. Check who spoke from the commission side; 'Dave (member)' is likely David Dorren.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Budget figures: Rainmaker software $110,000, headstone repair $338,000, commission funds $200,000",
+    "ours": "Rainmaker cemetery records software: $110,000; Headstone repair capital request: $338,000; Cemetery commission funds and reimbursement of town: $200,000",
+    "official": "",
+    "note": "Official minutes print no figures for these items; verify against the recording since captions may mishear amounts.",
+    "t": 731
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Richard McGrath discussion set for April 18",
+    "ours": "A discussion with Richard McGrath was set for the April meeting, tentatively April 18.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 1997
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "4-foot bench request at North Cemetery",
+    "ours": "A request for a 4-foot bench in the North Cemetery will be reviewed with the DPW and the requesting resident.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 2017
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: Foss-Yasko, Dorren, Clark present; Bernard and Holman absent",
+    "ours": "",
+    "official": "bill bernard, dpw director; todd holman, cemetery superintendent were not present.",
+    "note": "Official records Nancy Foss-Yasko and David Dorren present and the DPW director and superintendent absent; ours names the chair only as unnamed and Dorren not at all.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by Mr. Bowen",
+    "ours": "",
+    "official": "public comment - mr. bowen presented many allegations throughout his three minutes of public comments.",
+    "note": "Not in our minutes; John Bowen is also absent from our attendee list.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T10:36:04Z",
+   "cost_usd": 0.234939
+  }
+ }
+}

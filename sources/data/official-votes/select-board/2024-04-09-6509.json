@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-04-09",
  "docid": "6509",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve the Special Event License for Car Show Fundraiser on May 22nd from the Turkey Hill Family Lions Club from 4 to 8 pm",
+   "motion": "Approve the Special Event License for the Car Show Fundraiser on May 22nd by the Turkey Hill Family Lions Club, 4 to 8 pm.",
    "moved_by": "Member Tom Alonzo",
    "seconded_by": "Clerk Caesar Nuzzolo",
    "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by member tom alonzo to approve the special event license for car show fundraiser on may 22nd by the turkey hill family lions club from 4 to 8 pm. seconded by clerk caesar nuzzolo. call for the vote: five-aye. the motion passed unanimously (5-0- 0)",
-   "quote_taken_from_text": true
+   "quote": "motion by member tom alonzo to approve the special event license for car show fundraiser on may 22nd by the turkey hill family lions club from 4 to 8 pm."
   },
   {
-   "motion": "Waive the right of first refusal on the 4 lots at 100 Howard Street",
+   "motion": "Waive the right of first refusal on the 4 lots at 100 Howard St. as presented in the paperwork and by the applicant.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Vice Chair Franco",
    "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by member alonzo to waive the right of first refusal on the 4 lots at 100 howard st. as presented in our paperwork and by the applicant. seconded by vice chair franco. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by member alonzo to waive the right of first refusal on the 4 lots at 100 howard st. as presented in our paperwork and by the applicant."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Clerk Nuzzulo",
    "outcome": "passed 5-0-0",
@@ -37,16 +36,339 @@
    "quote": "chair jeffreys moved to adjourn. seconded by clerk nuzzulo. call for the vote: five-aye. the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "Approve the minutes from April 9, 2024",
+   "motion": "Approve the minutes of April 9, 2024 (recorded in the approval block dated June 17, 2025).",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Moore",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "chair nuzzolo made the motion to approve the minutes from april 9, 2024. seconded by vice-chair moore. call for the vote: four-aye. one-abstain (mcleod). motion passed (4-0- 1)",
-   "quote_taken_from_text": true
+   "quote": "chair nuzzolo made the motion to approve the minutes from april 9, 2024. seconded by vice-chair moore. call for the vote: four-aye. one-abstain (mcleod)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1104131
+ "note": "Text extraction, not a scan; all five pages read. Page furniture (page headers) sits inside some passages, so quotes were chosen to avoid spanning page breaks. The minutes are a 2024 record approved on June 17, 2025; the approval block names Chair Nuzzolo, Vice-Chair Moore and a abstainer McLeod, none of whom appear in the April 9, 2024 roster, and the motion in that block is recorded here as printed. The adjournment motion names the clerk as \"Nuzzulo\" while elsewhere he is \"Nuzzolo\". Votes recorded as \"Five-aye\"/\"Five-Aye\" are read as 5-0-0 as printed. Several attendees' in-person or remote status is not stated and was marked present where they appeared before the board. No dollar transfers appear. Sign-in/Zoom status for Matthew Allison and Mark Burch is not printed.",
+ "cost_usd": 0.019627369999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Heather Lemeiux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemeiux, town manager"
+  },
+  {
+   "name": "George Burden",
+   "role": "public commenter, 39 Cortland Circle",
+   "status": "present",
+   "quote": "mr. george burden, 39 cortland circle: mr. burden described some issues he has experienced"
+  },
+  {
+   "name": "John Bowen",
+   "role": "public commenter, 162 Highland St., via Zoom",
+   "status": "remote",
+   "quote": "mr. john bowen, 162 highland st., via zoom: mr. bowen discussed information he has"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "representing the Agricultural Commission",
+   "status": "present",
+   "quote": "mr. matthew allison, representing the agricultural commission, briefed the board."
+  },
+  {
+   "name": "Mark Burch",
+   "role": "Chair of the Water District Commission",
+   "status": "present",
+   "quote": "mr. mark burch, chair of the water district commission, gave an update."
+  },
+  {
+   "name": "John Cronin",
+   "role": "Senator",
+   "status": "present",
+   "quote": "senator john cronin, representative margaret scarsdale, and representative michael kushmerek presented chairman jeffreys with the 2024"
+  },
+  {
+   "name": "Margaret Scarsdale",
+   "role": "Representative",
+   "status": "present",
+   "quote": "senator john cronin, representative margaret scarsdale, and representative michael kushmerek presented chairman jeffreys with the 2024"
+  },
+  {
+   "name": "Michael Kushmerek",
+   "role": "Representative",
+   "status": "present",
+   "quote": "senator john cronin, representative margaret scarsdale, and representative michael kushmerek presented chairman jeffreys with the 2024"
+  },
+  {
+   "name": "Dawn Johnson",
+   "role": "representing the Turkey Hill Family Lions Club",
+   "status": "present",
+   "quote": "ms. dawn johnson, 357 lancaster ave. appeared representing the turkey hill family lions"
+  },
+  {
+   "name": "Carl Edmunds",
+   "role": "representing the Fitchburg/Leominster Shriner’s Club",
+   "status": "present",
+   "quote": "mr. carl edmunds appeared representing the fitchburg/leominster shriner's club."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "owner of the 64 acres at 100 Howard St.",
+   "status": "present",
+   "quote": "tanner cole, 100 howard st., stated he is the owner of the 64 acres there"
+  },
+  {
+   "name": "Jane Rabbit",
+   "role": "public commenter, 314 Townsend Harbor Rd.",
+   "status": "present",
+   "quote": "jane rabbit, 314 townsend harbor rd."
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "Minute Clerk",
+   "status": "not stated",
+   "quote": "sharon jordan minute clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ratification of three Town Manager appointments (alternate plumbing/gas inspector, facilities custodian, seasonal beach staff) tabled to the 23rd pending documentation.",
+   "quote": "the town manager informed the board that ratification of the three appointments is being tabled due to pending documentation, until the 23rd."
+  },
+  {
+   "decision": "Review of the draft Turnover Policy delayed to the 23rd.",
+   "quote": "review draft turnover policy delayed to the 23rd."
+  },
+  {
+   "decision": "Board signed the annual town meeting, town election, accounts payable and payroll warrants.",
+   "quote": "the board signed the annual town meeting, town election, accounts payable and payroll warrants."
+  },
+  {
+   "decision": "Signatures on minutes/warrants/action items delayed to the following week.",
+   "quote": "signatures were delayed to the following week."
+  },
+  {
+   "decision": "Chair offered to schedule an appointment with the Agricultural Commission at the next meeting; April 23 indicated as a possible date.",
+   "quote": "chair jeffreys offered to schedule an appointment with the commission at the next meeting."
+  },
+  {
+   "decision": "Shriners tollbooth special event form must be resubmitted for approval; the applicant will not need to appear in person again.",
+   "quote": "the form will need to be resubmitted for approval, but as the group has experience with the event, mr. edmunds will not need to appear in person again."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Right of first refusal, 100 Howard St. (4 lots)",
+   "what_was_recorded": "The four lots would cost the town a stated total if it chose to purchase them.",
+   "figures_as_printed": [
+    "$435,000"
+   ],
+   "quote": "the 4 lots in question would cost the town $435,000 in total in they wish to purchase"
+  },
+  {
+   "topic": "Shriners Hospital transportation fund tollbooth",
+   "what_was_recorded": "The applicant said transporting patients costs a range per patient due to specialized equipment.",
+   "figures_as_printed": [
+    "$40,000",
+    "$80,000"
+   ],
+   "quote": "funds are being raise for the transportation of patients from all over the world, which costs between $40,000 to $80,000 due to the specialized equipment."
+  },
+  {
+   "topic": "Shriners tollbooth prior-year receipts",
+   "what_was_recorded": "The tollbooth took in a stated amount the prior year.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "last year the tollbooth took in close to $2,000."
+  },
+  {
+   "topic": "PFAS remediation funding",
+   "what_was_recorded": "A May 16 Water District meeting is to vote to appropriate funding for PFAS remediation; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "on may 16 (6:30) there will be a meeting to vote to appropriate funding for the remediation of pfas."
+  },
+  {
+   "topic": "Farmers Market costs",
+   "what_was_recorded": "Agricultural Commission said local farmers' participation costs them more than running their own markets; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "farmers actually costs them more than running their own markets."
+  },
+  {
+   "topic": "Cemetery maintenance costs",
+   "what_was_recorded": "A resident discussed collected information on the cost of maintaining the cemeteries; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "discussed information he has collected about the cost of maintaining the cemeteries"
+  },
+  {
+   "topic": "School override and ARPA funds",
+   "what_was_recorded": "The School Committee voted that if the override passes it will return the ARPA funds; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the school committee voted that if the override passes they will return the arpa funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. George Burden",
+   "stated_role": "39 Cortland Circle",
+   "topic": "HOA legal matters and video clips",
+   "quote": "mr. george burden, 39 cortland circle: mr. burden described some issues he has experienced"
+  },
+  {
+   "speaker": "Mr. John Bowen",
+   "stated_role": "162 Highland St., via Zoom",
+   "topic": "cemetery maintenance costs and rules",
+   "quote": "mr. john bowen, 162 highland st., via zoom: mr. bowen discussed information he has"
+  },
+  {
+   "speaker": "Jane Rabbit",
+   "stated_role": "314 Townsend Harbor Rd.",
+   "topic": "free concerts and senior transportation",
+   "quote": "mrs. rabbit reported on free concerts at the groton hill music center, every 3 months on"
+  },
+  {
+   "speaker": "Mr. John Bowen",
+   "stated_role": "162 Highland St.",
+   "topic": "unions, prevailing wages, training and materials taxation",
+   "quote": "mr. bowen discussed unions, prevailing wages, training and materials taxation."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action; meeting recorded",
+   "quote": "chair michael-ray jeffreys called the meeting to order at 7:00 pm and led the pledge of allegiance."
+  },
+  {
+   "topic": "Public comment and board comment",
+   "resolution": "no action; eclipse glasses collection noted",
+   "quote": "vice chair lou franco announced that eclipse glasses are being collected at the library"
+  },
+  {
+   "topic": "Announcements: tax bills",
+   "resolution": "no action; tax bills to be mailed by May 16",
+   "quote": "town manager heather lemeiux announced that tax bill proofs have been sent for printing"
+  },
+  {
+   "topic": "Communications from other boards (Agricultural Commission, Water District)",
+   "resolution": "briefings received; Agricultural Commission appointment to be scheduled",
+   "quote": "mr. mark burch, chair of the water district commission, gave an update."
+  },
+  {
+   "topic": "Appointments: Black Excellence On The Hill citation",
+   "resolution": "citation presented to Chairman Jeffreys",
+   "quote": "senator john cronin, representative margaret scarsdale, and representative michael kushmerek presented chairman jeffreys with the 2024"
+  },
+  {
+   "topic": "Public hearing: car show fundraiser special event license",
+   "resolution": "approved 5-0-0",
+   "quote": "ms. dawn johnson, 357 lancaster ave. appeared representing the turkey hill family lions"
+  },
+  {
+   "topic": "Public hearing: tollbooth fundraiser special event request",
+   "resolution": "resubmission required; applicant need not appear again",
+   "quote": "mr. carl edmunds appeared representing the fitchburg/leominster shriner's club."
+  },
+  {
+   "topic": "Interviews, appointments, reappointments and resignations",
+   "resolution": "three ratifications tabled to the 23rd; resignations noted",
+   "quote": "the town manager informed the board that ratification of the three appointments is being tabled due to pending documentation, until the 23rd."
+  },
+  {
+   "topic": "Right of first refusal, 100 Howard St.",
+   "resolution": "right of first refusal waived 5-0-0",
+   "quote": "tanner cole, 100 howard st., stated he is the owner of the 64 acres there"
+  },
+  {
+   "topic": "Sign town meeting and town election warrants",
+   "resolution": "signed",
+   "quote": "the board signed the annual town meeting, town election, accounts payable and payroll warrants."
+  },
+  {
+   "topic": "Review draft Turnover Policy",
+   "resolution": "delayed to the 23rd",
+   "quote": "review draft turnover policy delayed to the 23rd."
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "signatures delayed to the following week",
+   "quote": "signatures were delayed to the following week."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; Agriculture Committee meeting to be scheduled",
+   "quote": "member emkey reported that the school committee voted that if the override passes they will return the arpa funds."
+  },
+  {
+   "topic": "Upcoming meetings and events schedule",
+   "resolution": "noted; Annual Town Meeting May 4 at 9 AM",
+   "quote": "april 23rd, april 30th, may 4th at 9 am (annual town meeting)"
+  },
+  {
+   "topic": "Public comment (second session)",
+   "resolution": "no action; Board does not advise employees on unionization",
+   "quote": "chair jeffreys stated that the select board and the town manager do not advise our employees on unionization."
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no action; tribute recorded",
+   "quote": "vice chair franco described the many conversations he and chair jeffreys have had on"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:30 PM, 5-0-0",
+   "quote": "meeting adjourned at 8:30 p.m."
+  }
+ ],
+ "tags": [
+  "select board",
+  "public hearing",
+  "special event license",
+  "right of first refusal",
+  "chapter 61",
+  "appointments",
+  "PFAS",
+  "water district",
+  "agricultural commission",
+  "farmers market",
+  "tax bills",
+  "turnover policy",
+  "ARPA",
+  "school override",
+  "cemeteries",
+  "Monty Tech",
+  "annual town meeting",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

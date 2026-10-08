@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-03-20",
  "docid": "6480",
@@ -12,6 +12,226 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes are clearly recorded in these minutes. The minutes describe discussions, updates, and decisions (such as the selection of OPM contractors to interview), but do not record any formal motions with movers, seconders, and outcomes. One item—\"Approval of minutes January 17, 2024\"—is listed as \"Tabled,\" which indicates a procedural action, but the minutes do not record it as a motion that was voted on (no mover, no seconder, no explicit vote result is stated). The minutes also do not record a motion or vote for adjournment at 8:35 pm.",
- "cost_usd": 0.0697694
+ "note": "Text extract of 4 pages; the running footers read 'page  of 14', 'of 24', 'of 34', 'of 44', which do not match the 4 pages present. No motions, votes or roll-call results are recorded anywhere in the minutes, so the votes list is empty; the 'No vote taken' and 'Tabled' lines are not votes. No public comment section appears; the only 'Comments' is a Board member's remark by C. Shapiro. Adjournment at 8:35 pm is recorded without a motion. Roles for Angela Clement and Chris Ruth are not printed. The minutes spell the member variously as 'Anita Scheipers' and 'A. Schiepers' and the contractor 'Altantic Construction' is printed as such; names are given as in the attendance line. Some quotes were taken with ligature characters normalised in the extract, so quotes avoid those words.",
+ "cost_usd": 0.01469607,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, colleen shapiro and anita scheipers"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, colleen shapiro and anita scheipers"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, colleen shapiro and anita scheipers"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, colleen shapiro and anita scheipers"
+  },
+  {
+   "name": "Anita Scheipers",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, colleen shapiro and anita scheipers"
+  },
+  {
+   "name": "Angela Clement",
+   "status": "present",
+   "quote": "additional attendees: angela clement and chris ruth"
+  },
+  {
+   "name": "Chris Ruth",
+   "status": "present",
+   "quote": "additional attendees: angela clement and chris ruth"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission tabled approval of the minutes of January 17, 2024.",
+   "quote": "next item on the agenda, approval of minutes january 17, 2024. tabled"
+  },
+  {
+   "decision": "The Commission chose three contractors to interview for the OPM: NV5, Altantic Construction and Skanska.",
+   "quote": "the contractors the commission chose to interview are:"
+  },
+  {
+   "decision": "K. Menard will reach out to the Senior Center about using it as a venue for the OPM presentations.",
+   "quote": "k. menard will reach out to the senior center for use as a venue for presentations."
+  },
+  {
+   "decision": "K. Menard will assemble a volunteer crew to remove carpeting and sub-floor at the Town Beach House on April 6, 2024.",
+   "quote": "k. menard stated she will be putting together a crew of volunteers"
+  },
+  {
+   "decision": "C. Sullivan will reach out again to the NHS project student, who has not yet responded.",
+   "quote": "c. sullivan stated he has not heard back from the student. he will reach out again."
+  },
+  {
+   "decision": "The Commission will not participate in the Boys and Girls Club Are You Smarter than a 5th Grader event this year.",
+   "quote": "the commission will be unable to participate this year."
+  },
+  {
+   "decision": "Scheduled the next meetings: March 27 at 7 pm, potentially April 3, and a regular meeting on April 17, 2024.",
+   "quote": "next meeting, march 27, at 7 pm, potentially april 3, and regular meeting on april 17, 2024."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Earth Day advertising cost share",
+   "what_was_recorded": "Ads for Earth Day will run in the Ledger, with the Conservation Commission splitting the cost with Parks; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "c. shapiro indicated ads would be run in the ledger for earth day, the conservation commission will split the cost with parks."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Facilities and Recreation Director update",
+   "resolution": "received update, no action",
+   "quote": "first item on the agenda, facilities director & recreation director update",
+   "tags": [
+    "facilities",
+    "recreation",
+    "Wallace Park",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Town Beach House work",
+   "resolution": "volunteer crew to be organised for April 6, 2024",
+   "quote": "next item on the agenda, town beach house work: update",
+   "tags": [
+    "beach house",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Earth Day celebrations",
+   "resolution": "clean-up groups assigned; dates set for April 13 and 20, 2024",
+   "quote": "earth day celebrations: update",
+   "tags": [
+    "Earth Day",
+    "clean-up",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "NHS project",
+   "resolution": "no action; C. Sullivan to follow up",
+   "quote": "next item on the agenda, nhs project: update",
+   "tags": [
+    "NHS project"
+   ]
+  },
+  {
+   "topic": "Closure of park properties on first Saturday of May",
+   "resolution": "discussed; no vote taken",
+   "quote": "the members gave their input. no vote taken.",
+   "tags": [
+    "Special Town Meeting",
+    "park rentals",
+    "closures"
+   ]
+  },
+  {
+   "topic": "OPM interview format",
+   "resolution": "discussed; Zoom versus in person left open; Senior Center to be asked as venue",
+   "quote": "opm interview format discussion: zoom vs. person, location, rating, and selection.",
+   "tags": [
+    "OPM",
+    "interviews",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Review and deliberate OPM proposals",
+   "resolution": "no recorded decision",
+   "quote": "next item on the agenda review & deliberate opm proposals",
+   "tags": [
+    "OPM",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Finalize OPM interviewee list",
+   "resolution": "three contractors chosen for interview",
+   "quote": "next item on the agenda, finalize opm interviewee list",
+   "tags": [
+    "OPM",
+    "procurement",
+    "interviews"
+   ]
+  },
+  {
+   "topic": "Lake Shirley parcels and Shady Point agreement",
+   "resolution": "no action; no feedback received",
+   "quote": "next item on the agenda, update on lake shirley parcels & agreement with shady point",
+   "tags": [
+    "Lake Shirley",
+    "Shady Point",
+    "land"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "received; Open Space Plan, Master Plan Steering, Boys and Girls Club items reported",
+   "quote": "next item on the agenda, committee updates",
+   "tags": [
+    "Open Space Committee",
+    "Master Plan",
+    "Boys and Girls Club"
+   ]
+  },
+  {
+   "topic": "Approval of minutes January 17, 2024",
+   "resolution": "tabled",
+   "quote": "next item on the agenda, approval of minutes january 17, 2024. tabled",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meeting dates and comments",
+   "resolution": "dates set; Earth Day ad cost shared with Conservation Commission",
+   "quote": "next meeting, march 27, at 7 pm, potentially april 3, and regular meeting on april 17, 2024.",
+   "tags": [
+    "scheduling",
+    "Earth Day",
+    "Conservation Commission"
+   ]
+  }
+ ],
+ "tags": [
+  "Park Commission",
+  "OPM selection",
+  "Earth Day",
+  "beach house",
+  "park programs",
+  "park rentals",
+  "Lake Shirley",
+  "volunteers",
+  "minutes tabled",
+  "no votes recorded"
+ ],
+ "dropped_unquoted_by_field": {}
 }

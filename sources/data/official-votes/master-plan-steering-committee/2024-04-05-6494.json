@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2024-04-05",
  "docid": "6494",
@@ -12,15 +12,280 @@
  },
  "votes": [
   {
-   "motion": "To adjourn",
+   "motion": "To adjourn the meeting at 9:25pm.",
    "moved_by": "Tim W.",
    "seconded_by": "Carol A.",
-   "outcome": "passed 6-0",
+   "outcome": "passed (all aye; six named voters)",
    "procedural": true,
    "quote": "motion: tim w. second: carol a. to adjourn at 9:25pm. roll call vote: carol, kim, tim, joeci, evan and lou- all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.078598
+ "note": "Text extract, not a scan. One recorded vote (adjournment), with a named roll call and no printed count, so outcome is recorded as 'all aye' rather than a numeric tally. No approval of prior minutes is recorded. Debbie L. in public comment is taken to be Debbie Lincoln, the Council on Aging member in the roll call, but the minutes do not say so. Michael Ray Jeffreys is listed with a Select Board context from his remarks, not a printed role. Eric's surname is not printed. Gerald Reid has no printed role. The minutes contain transcription oddities (e.g., 'town' for 'torn', 'illicit' for 'elicit', 'Passios' for a building name), which are quoted as printed. Money figures are quoted as printed and not totalled.",
+ "cost_usd": 0.016276170000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joeci Gilcrest",
+   "role": "Chair; Member-at-Large",
+   "status": "present",
+   "quote": "roll call of attendees- chair: joeci gilcrest (member-at-large.), vice-chair: tim willsmer (planning board)"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Vice-Chair; Planning Board",
+   "status": "present",
+   "quote": "vice-chair: tim willsmer (planning board), evan watters (finance com.)"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Finance Com.",
+   "status": "present",
+   "quote": "vice-chair: tim willsmer (planning board), evan watters (finance com.)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks",
+   "status": "present",
+   "quote": "karin menard (parks), debbie lincoln (council on aging), kim duffy (green communities),"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "karin menard (parks), debbie lincoln (council on aging), kim duffy (green communities),"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Green Communities",
+   "status": "present",
+   "quote": "karin menard (parks), debbie lincoln (council on aging), kim duffy (green communities),"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "lou franco (select board), gerald reid, carol archambault (school committee), pete lincoln (pacc), and rami el samahy (overunder)."
+  },
+  {
+   "name": "Gerald Reid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lou franco (select board), gerald reid, carol archambault (school committee), pete lincoln (pacc), and rami el samahy (overunder)."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "lou franco (select board), gerald reid, carol archambault (school committee), pete lincoln (pacc), and rami el samahy (overunder)."
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC",
+   "status": "present",
+   "quote": "lou franco (select board), gerald reid, carol archambault (school committee), pete lincoln (pacc), and rami el samahy (overunder)."
+  },
+  {
+   "name": "Rami el Samahy",
+   "role": "OverUnder",
+   "status": "present",
+   "quote": "lou franco (select board), gerald reid, carol archambault (school committee), pete lincoln (pacc), and rami el samahy (overunder)."
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "role": "Select Board (presenter; address 1170 Mass Ave.)",
+   "status": "present",
+   "quote": "michael ray jeffreys (1170 mass ave.)- reported that the select board updated their appointment policy"
+  },
+  {
+   "name": "Eric",
+   "role": "RKG",
+   "status": "present",
+   "quote": "eric (rkg) - priorities: housing - an aging population is looking for accessible, affordable and amenable options."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The public meeting on the Master Plan is set for Smokestack Coffee Roasters at 6pm, on the committee's agreement after Joeci's suggestion.",
+   "quote": "joeci suggested having it at smokestack coffee roasters at 6pm and all agreed."
+  },
+  {
+   "decision": "Rami will create the flyer for the May 30th public meeting; Joeci suggested adding a description of the meeting to it.",
+   "quote": "rami will create a flyer for the meeting and joeci suggested adding a description about the meeting."
+  },
+  {
+   "decision": "Rami will talk to the Library Director about a permanent location for the large Town Display; the committee will discuss it at future meetings.",
+   "quote": "rami said he would talk to the library director and the committee will discuss this in future meetings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost of a community gathering place at 30 School Street",
+   "what_was_recorded": "A proposal to redevelop the former primary school site as a community gathering place was costed at $5 Million and rejected at Town Meeting.",
+   "figures_as_printed": [
+    "$5 Million"
+   ],
+   "quote": "there was a proposal to redevelop the site as a community gathering place and would cost $5 million."
+  },
+  {
+   "topic": "Brooks House sale",
+   "what_was_recorded": "The only accepted proposal was to sell the Brooks House for $1, with the buyer moving the house; there were no takers.",
+   "figures_as_printed": [
+    "$1"
+   ],
+   "quote": "the only proposal that was accepted by the town was to sell the brooks house for $1, with the buyer moving the house but they had no takers."
+  },
+  {
+   "topic": "Rehab cost for consolidated community building (TC Passios)",
+   "what_was_recorded": "Rehabilitating the TC Passios building for consolidated town offices was reported at $28-30 Million, of which $14 Million is for code updates.",
+   "figures_as_printed": [
+    "$28-30 Million",
+    "$14 Million"
+   ],
+   "quote": "now it would cost $28-30 million to rehab the building, of which $14 million is just for code updates."
+  },
+  {
+   "topic": "Ritter Building annex for town offices",
+   "what_was_recorded": "The office building annex was estimated at $5 Million, with the goal of a debt exclusion vote the following year.",
+   "figures_as_printed": [
+    "$5 Million"
+   ],
+   "quote": "building the office building would be $5 million and the goal is to do a debt exclusion next year for this project."
+  },
+  {
+   "topic": "Funding for municipal buildings and property development",
+   "what_was_recorded": "Funding is described as the main barrier and would come from taxpayers through debt exclusion; no figure was stated for this general point.",
+   "figures_as_printed": [],
+   "quote": "in regard to municipal buildings, the number #1 barrier is money, which would be debt exclusion."
+  },
+  {
+   "topic": "Chapter 90 funds",
+   "what_was_recorded": "Evan reported $1.9 Million in Chapter 90 funds with no known plan for their use.",
+   "figures_as_printed": [
+    "$1.9 Million"
+   ],
+   "quote": "evan noted there is $1.9 million in chapter 90 funds but no one seems to know what the plan is for these."
+  },
+  {
+   "topic": "Schools capital and operating override",
+   "what_was_recorded": "Karin reported the schools are looking for a 2 ½ override to address staffing and the elementary school.",
+   "figures_as_printed": [
+    "2 ½"
+   ],
+   "quote": "they are looking for a 2 ½ override for the schools."
+  },
+  {
+   "topic": "Water Department PFAS costs",
+   "what_was_recorded": "The Water Department is looking for $32 Million to address PFAS.",
+   "figures_as_printed": [
+    "$32 Million"
+   ],
+   "quote": "the water department is looking for $32 million to address pfas."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Debbie L.",
+   "stated_role": "",
+   "topic": "committee membership, vacancies and swearing-in",
+   "quote": "debbie l. asked for clarification on the number of members on the committee and any vacancies."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Roll call and committee membership",
+   "resolution": "discussed; two member-at-large vacancies and a ZBA seat noted",
+   "tags": [
+    "membership",
+    "vacancies",
+    "training"
+   ],
+   "quote": "roll call of attendees- chair: joeci gilcrest (member-at-large.), vice-chair: tim willsmer (planning board)"
+  },
+  {
+   "topic": "Public gathering space and town-owned properties",
+   "resolution": "discussed; no action",
+   "tags": [
+    "town property",
+    "public space",
+    "municipal buildings"
+   ],
+   "quote": "discussion on public gathering space - joeci noted that she sent a request to michael ray jeffreys for a list of all town owned properties"
+  },
+  {
+   "topic": "300th Anniversary Committee event options",
+   "resolution": "discussed; staff to look at sites",
+   "tags": [
+    "300th anniversary",
+    "parks"
+   ],
+   "quote": "pete lincoln asked for options for the 300th anniversary committee events."
+  },
+  {
+   "topic": "OverUnder values and goals update",
+   "resolution": "presented as draft; to be turned into a community survey",
+   "tags": [
+    "values",
+    "goals",
+    "survey"
+   ],
+   "quote": "update from overunder - rami screen-shared the list of values and goals."
+  },
+  {
+   "topic": "RKG priorities: housing, economic development, transportation, capital spending",
+   "resolution": "discussed; no action",
+   "tags": [
+    "housing",
+    "economic development",
+    "transportation",
+    "capital spending",
+    "sidewalks"
+   ],
+   "quote": "eric (rkg) - priorities: housing - an aging population is looking for accessible, affordable and amenable options."
+  },
+  {
+   "topic": "2002 Master Plan (Envision 2007) review",
+   "resolution": "presented; committee discussed; suggested more frequent review",
+   "tags": [
+    "master plan",
+    "history"
+   ],
+   "quote": "kim duffy presented an overview of the last master plan done in 2002"
+  },
+  {
+   "topic": "May 30th public meeting and survey schedule",
+   "resolution": "location agreed; survey and public meeting dates set",
+   "tags": [
+    "public meeting",
+    "survey",
+    "engagement"
+   ],
+   "quote": "may 30th plan lunenburg public meeting - joeci suggested having it at smokestack coffee roasters at 6pm and all agreed."
+  },
+  {
+   "topic": "Committee comment and adjournment",
+   "resolution": "no comment; adjourned 9:25pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: tim w. second: carol a. to adjourn at 9:25pm."
+  }
+ ],
+ "tags": [
+  "master plan",
+  "town-owned property",
+  "municipal buildings",
+  "housing",
+  "economic development",
+  "transportation",
+  "sidewalks",
+  "capital spending",
+  "public survey",
+  "public meeting",
+  "Envision 2007",
+  "committee membership"
+ ],
+ "dropped_unquoted_by_field": {}
 }

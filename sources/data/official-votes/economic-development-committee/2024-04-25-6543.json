@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "economic-development-committee",
  "meeting_date": "2024-04-25",
  "docid": "6543",
@@ -12,23 +12,157 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes as amended for January 26, April 27, May 18, July 27, and August 24 of 2023",
+   "motion": "Approve the minutes as amended for January 26, April 27, May 18, July 27, and August 24, 2023.",
    "moved_by": "Jeanne Dupre",
    "seconded_by": "Ana Lockwood",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes as amended for january 26 , april 27, m ay 18, july 27 , and august 24 of 2023 by jeanne dupre , seconded by ana l ockwood . roll call vote. cathy clark aye , jeanne dupre aye , maryrae holman aye, ana lockwood aye."
+   "quote": "there was a motion to approve the minutes as amended for january 26 , april"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Jeanne Dupre",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "there was a m otion to adjourn b y ana l ockwood, seconded by jeanne dupre ."
+   "quote": "there was a m otion to adjourn b y ana l ockwood, seconded by jeanne"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document appears to be an OCR scan with minor spacing artifacts (e.g., \"M ay\", \"L ockwood\", \"m otion\", \"b y\"). All votes clearly recorded.",
- "cost_usd": 0.0879685
+ "note": "Digital text with irregular spacing inside words (e.g. 'b y', 'S elect'); quotes copy the printed spacing. No dollar figures appear, so budget_items and transfers are empty. Sections III and V are headed PUBLIC COMMENT but the speakers recorded are committee members and Lou Franco, so no public_comment entries were recorded. The minutes record the adjournment motion without a result, so its outcome is 'not stated'. Lou Franco's and Michael Ray's presence is inferred from their recorded remarks, and neither role is printed. The 'Open for Business' meeting in the Member Updates is shown as the member's own action, not a vote.",
+ "cost_usd": 0.014088670000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cathy Clark",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair cathy clark, member jeanne dupre, member maryrae"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair cathy clark, member jeanne dupre, member maryrae"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair cathy clark, member jeanne dupre, member maryrae"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: chair cathy clark, member jeanne dupre, member maryrae"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "lou franco states if any of the terms are up then someone from the planning board needs to be"
+  },
+  {
+   "name": "Michael Ray",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "michael ray suggests creating a speed bump where the convenience"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The approval of the 2022 minutes is deferred to the next meeting.",
+   "quote": "will be deferred to the next meeting."
+  },
+  {
+   "decision": "Cathy Clark will email the master charge form with the 1- and 3-year terms and the 2022 minutes to cover at the next meeting.",
+   "quote": "along with the 2022 minutes to cover at the next meeting."
+  },
+  {
+   "decision": "Cathy Clark will print out the sign bylaws and bring them to the next meeting.",
+   "quote": "she will print out the sign by laws and bring them to the next meeting."
+  },
+  {
+   "decision": "Maryrae Holman will meet with the cable access show producers about the 'Open for Business' program the following week.",
+   "quote": "maryrae holman will be meeting with them next week."
+  },
+  {
+   "decision": "The Committee agreed that signs for public parking and availability of parking in the rear would be helpful.",
+   "quote": "the committee agrees that signs for public parking and availability of"
+  },
+  {
+   "decision": "The next Economic Development Committee meeting is scheduled for May 23, 2024, at 6 PM.",
+   "quote": "the next economic development committee is scheduled for may 23, 2024,"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 6:15 pm"
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved 2023 minutes as amended; 2022 minutes deferred",
+   "quote": "there was a motion to approve the minutes as amended for january 26 , april"
+  },
+  {
+   "topic": "Reappointments and reorganization",
+   "resolution": "continued to May meeting",
+   "quote": "cathy clark suggests making reappointments and reorganization in may when all committee members will be present."
+  },
+  {
+   "topic": "Member updates: signage",
+   "resolution": "no action; Chair to bring sign bylaws",
+   "quote": "ana lockwood confirms signs can only be put up in commercial, industrial, or the village"
+  },
+  {
+   "topic": "Traffic and crosswalks in town center",
+   "resolution": "discussion only",
+   "quote": "michael ray suggests creating a speed bump where the convenience"
+  },
+  {
+   "topic": "Parking survey and public parking signs",
+   "resolution": "discussion; committee agreed signs would help",
+   "quote": "cathy clark suggests creating a qr"
+  },
+  {
+   "topic": "Cable access show 'Open for Business'",
+   "resolution": "noted; member to meet with producers",
+   "quote": "cable access is filming a show called"
+  },
+  {
+   "topic": "Land use director position",
+   "resolution": "no action; members had heard no news",
+   "quote": "the committee members deny hearing any news."
+  },
+  {
+   "topic": "Annual town meet and greet",
+   "resolution": "discussion; LBA to lead, committee to collaborate",
+   "quote": "believes the lba should be the lead while the economic development"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:55 PM; result not recorded",
+   "quote": "there was a m otion to adjourn b y ana l ockwood"
+  }
+ ],
+ "tags": [
+  "economic development",
+  "minutes approval",
+  "reappointments",
+  "signage",
+  "traffic and crosswalks",
+  "parking",
+  "cable access",
+  "land use director",
+  "town meet and greet",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

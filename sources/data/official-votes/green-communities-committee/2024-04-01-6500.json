@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2024-04-01",
  "docid": "6500",
@@ -12,23 +12,157 @@
  },
  "votes": [
   {
-   "motion": "Approve the previous meeting minutes",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "motion": "Approve the meeting minutes from the last meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 4-0",
+   "procedural": true,
    "quote": "meeting minutes from last meeting approved unanimously (4-0)."
   },
   {
-   "motion": "Appoint David Blatt as Chair, David Passios as Vice-Chair, and Kim Duffy as Clerk",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "motion": "Appoint David Blatt as Chair (printed as 'Chait'), David Passios as Vice-Chair, and Kim Duffy as Clerk.",
    "moved_by": "David Passios",
    "seconded_by": "Matt Snyder",
-   "quote": "david passios motioned to appoint david blatt as chait, david passios as vice-chair, and kim duffy as clerk. matt snyder seconded the motion. committee voted unanimously (4-0)"
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "david passios motioned to appoint david blatt as chait, david passios as vice-chair, and kim duffy as clerk. matt snyder seconded the motion."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1015077
+ "dropped_unquoted": 1,
+ "note": "Text is a plain extraction of the minutes with some typos printed as-is (e.g. 'Chait'); a motion to adjourn is not recorded, only 'Meeting Adjourned: 7:38 pm', so no adjournment vote is listed. 'Kelly' is named as confirming eligibility but is not shown as attending, so is not listed as an attendee. The grant-round sentence prints '-&gt;' as an HTML entity; the quote copies it as printed. Role for David Blatt ('Chair') comes from the page header, not the attendance line quoted. Figures are printed without dollar signs and are recorded as printed.",
+ "cost_usd": 0.012974870000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy, matt snyder"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy, matt snyder"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy, matt snyder"
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy, matt snyder"
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members not present: chris holden"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee will meet on the first Monday of each month at 6:30pm, with locations to be determined.",
+   "quote": "to meet first monday of each month. 6:30pm, locations tbd"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Communities grant program round size and cap",
+   "what_was_recorded": "The grant program increased to 250k per round, drops to 125k once the total exceeds 1 million, and the total so far is about 600k.",
+   "figures_as_printed": [
+    "250k",
+    "1 million",
+    "125k",
+    "~600k"
+   ],
+   "quote": "grant program update: increased to 250k per round. once total grant exceeds 1 million -&gt; reduced to 125k. total so far ~600k"
+  },
+  {
+   "topic": "Sewer Commission pumps grant plan (Spring 2024)",
+   "what_was_recorded": "Three pumps are planned for the grant at approximately 200k before credits, with approximately 55k remaining before any Unitil credits.",
+   "figures_as_printed": [
+    "200k",
+    "55k"
+   ],
+   "quote": "kelly confirmed eligible for funding. 3 pumps for grant. approx 200k before credits (approx. 55k remaining before any unitil credits)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve pending meeting minutes",
+   "resolution": "approved 4-0",
+   "quote": "meeting minutes from last meeting approved unanimously (4-0).",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Committee comment",
+   "resolution": "no action",
+   "quote": "no committee comment",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Upcoming possible grant-approved items",
+   "resolution": "discussed; Sewer Commission pumps, School mini-splits and Town Buildings listed; no action recorded",
+   "quote": "discussion of upcoming possible grant approved items",
+   "tags": [
+    "grants",
+    "energy",
+    "sewer",
+    "schools",
+    "town buildings"
+   ]
+  },
+  {
+   "topic": "Committee organization",
+   "resolution": "approved 4-0: Blatt Chair, Passios Vice-Chair, Duffy Clerk",
+   "quote": "david passios motioned to appoint david blatt as chait, david passios as vice-chair, and kim duffy as clerk. matt snyder seconded the motion.",
+   "tags": [
+    "committee organization"
+   ]
+  },
+  {
+   "topic": "Outreach program to increase community awareness",
+   "resolution": "discussed; Facebook posts ongoing, one-page flyer planned for town meeting, green community signs proposed; no action recorded",
+   "quote": "green community signs for along roads",
+   "tags": [
+    "outreach",
+    "community awareness"
+   ]
+  },
+  {
+   "topic": "Timeline for next meeting",
+   "resolution": "meeting schedule set: first Monday monthly, 6:30pm, location TBD",
+   "quote": "to meet first monday of each month. 6:30pm, locations tbd",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy grants",
+  "sewer commission pumps",
+  "school mini-splits",
+  "town buildings",
+  "committee organization",
+  "outreach",
+  "meeting schedule",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

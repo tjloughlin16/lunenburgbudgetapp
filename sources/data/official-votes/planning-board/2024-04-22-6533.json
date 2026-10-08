@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-04-22",
  "docid": "6533",
@@ -12,15 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Authorize interim land use director sign off on occupancy permit subject to conditions for Lot 5 at 512 Northfield Rd with $6,000 performance guarantee for 6 months",
+   "motion": "Approve the special permit for a shared driveway at 728 Goodrich St (the closing motion for that hearing is recorded separately).",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
+   "outcome": "passed (All, aye)",
+   "procedural": false,
+   "quote": "m. allison made motion to approve special permit shared driveway, a.reid seconded. all, aye"
+  },
+  {
+   "motion": "Close the public hearing for 728 Goodrich St.",
+   "moved_by": "M. Allison",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "m. allison made motion to close public hearing for 728 goodrich st."
+  },
+  {
+   "motion": "Authorize the interim land use director to sign off on the occupancy permit for 512 Northfield (Lot 5) subject to listed conditions, including a $6,000 performance guarantee for up to 6 months.",
    "moved_by": "T. Willsmer",
    "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "t. willsmer made motion to authorize the interim land use director sign off on occupancy permit subject to conditions, graves approved site, gei submits final inspection report and finds site is satisfactory completed and gei approved the proposed guarantee for $6,000 for up to 6 months for ensuring plant life is vegetive for lot 5 at 512 northfield rd"
+   "quote": "t. willsmer made motion to authorize the interim land use director sign off on occupancy permit subject to conditions"
   },
   {
-   "motion": "Approve De Minimis change in use at 5 Summer St",
+   "motion": "Agree that the change of use at 5 Summer St (Brazilian Restaurant to Indoor Golf & Sports Bar) is a De Minimis change and approve the change in use.",
    "moved_by": "T. Willsmer",
    "seconded_by": "",
    "outcome": "not stated",
@@ -28,71 +44,470 @@
    "quote": "t. willsmer made motion that the board agrees this is a de minimis change and approves change in use as brazilian restaurant"
   },
   {
-   "motion": "Authorize Certificate of Completion and Release of Performance Guarantee for 360 Flat Hill Road, 19 and 21 Watt Street",
+   "motion": "Authorize Certificate of Completion and Release of Performance Guarantee for the Stormwater Permits at 360 Flat Hill Road and 19 and 21 Watt Street.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed",
+   "outcome": "passed (All, aye)",
    "procedural": false,
    "quote": "t. willsmer made motion to authorize certificate of completion and release of performance guarantee. a.reid seconded. all, aye."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "T. Willsmer",
-   "seconded_by": "A. Reid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "t. willsmer made motion to adjourn. a. reid seconded, all aye."
-  },
-  {
-   "motion": "Close Public Hearing for 728 Goodrich St",
-   "moved_by": "M. Allison",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "m. allison made motion to close public hearing for 728 goodrich st. closed at 6:27pm"
-  },
-  {
-   "motion": "Approve Special Permit for Shared Driveway at 728 Goodrich St",
-   "moved_by": "M. Allison",
-   "seconded_by": "A. Reid",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "m. allison made motion to approve special permit shared driveway, a.reid seconded. all, aye"
-  },
-  {
-   "motion": "Continue Hearing to June 10th for 255 Sunnyhill",
-   "moved_by": "T. Willsmer",
-   "seconded_by": "A. Reid",
-   "outcome": "passed",
+   "motion": "Continue the public hearing for 255 Sunnyhill to June 10th.",
+   "moved_by": "T.Willsmer",
+   "seconded_by": "A.Reid",
+   "outcome": "passed (All, aye)",
    "procedural": true,
    "quote": "t.willsmer made motion to continue hearing to june 10th. a.reid seconded. all, aye"
   },
   {
-   "motion": "Withdraw article or recommend Town take no action on Warrant for Water Supply Protection District",
+   "motion": "Recommend no action be taken on the Water Supply Protection District warrant at Town Meeting (first motion; withdrawn before a vote).",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A.Reid",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "t. willsmer made motion to recommend no action be taken on this warrant at town meeting. seconded by a.reid."
+  },
+  {
+   "motion": "Withdraw the article, or recommend the Town take no action on the Warrant for the Water Supply Protection District.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "t. willsmer made motion to withdraw article or recommend town take no action on warrant for water supply protection district. seconded by m. allison, all aye."
   },
   {
-   "motion": "Close public hearing on Solar Energy – Battery Energy Storage Systems",
-   "moved_by": "T. Willsmer",
+   "motion": "Close the public hearing on the Solar Energy – Battery Energy Storage Systems warrant article.",
+   "moved_by": "T.Wilsmer",
    "seconded_by": "A. Reid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "t. wilsmer made motion to close public hearing. a. reid seconded."
+   "quote": "t. wilsmer made motion to close public hearing. a. reid seconded.",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Recommend at Town Meeting to adopt warrant article on Solar Energy including scriveners error discussed",
+   "motion": "Make recommendations at Town Meeting to adopt the Solar Energy – Battery Energy Storage Systems warrant, including the scrivener's error discussed.",
    "moved_by": "Amanda Reid",
    "seconded_by": "T. Willsmer",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "amanda reid made motion to make recommendations at town meeting to adopt warrant including scriveners error discussed today. t. willsmer seconded, all aye."
+  },
+  {
+   "motion": "Adjourn the meeting (recorded as adjourned at 10:00PM).",
+   "moved_by": "T. WIllsmer",
+   "seconded_by": "A. Reid",
+   "outcome": "passed (all aye)",
+   "procedural": true,
+   "quote": "t. willsmer made motion to adjourn. a. reid seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two motions recorded without explicit voting results (outcomes marked \"not stated\"): the motion to sign off on occupancy permit at 512 Northfield Rd and the motion to approve the De Minimis change at 5 Summer St. Minutes note indicates typo in De Minimis motion quote: says \"approves change in use as Brazilian Restaurant\" but context indicates change FROM Brazilian Restaurant TO Indoor Golf & Sports Bar.",
- "cost_usd": 0.1283301
+ "note": "Text is an OCR-style extraction with typos and inconsistent spellings (Willsmer/WIllsmer/Wilsmer; Rodgers/Rogers; M.Harris vs R. Harris; J.Pease vs Joan Pease). Names are reproduced as printed; no identity is asserted where the minutes disagree. Page 3 places the adjournment (10:00PM) before later hearings that the minutes describe, so the text is not chronological. Several motions carry no printed result (votes recorded as 'not stated'); the first WSPD motion was withdrawn before a vote. The 2.28.24 minutes item has no recorded vote. No roll-call counts are printed; 'All, aye' is recorded as passed. Quotes were copied from the extracted text with line breaks collapsed.",
+ "cost_usd": 0.01987307,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Planning Board member (attended beginning portion of meeting)",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, timothy willsmer, richard harris"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, timothy willsmer, richard harris"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, timothy willsmer, richard harris"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Planning Board member (printed as T. Willsmer / T. WIllsmer)",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, timothy willsmer, richard harris"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Planning Board member (printed as R. Harris)",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, timothy willsmer, richard harris"
+  },
+  {
+   "name": "Erik Torgensen",
+   "role": "Planning Board member",
+   "status": "absent",
+   "quote": "absent: erik torgensen, matthew brenner attended beginning portion of the meeting"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "resident, 82 Highland St (public comment)",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland st - request to poll the board to allow to say the pledge of allegiance prior to meetings."
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "resident, 82 Highland St (public comment; spelled Rogers in the minutes)",
+   "status": "present",
+   "quote": "dave rogers, 82 highland st - what happens if there is a disagreement between property owners in regard to plowing and maintenance?"
+  },
+  {
+   "name": "John Plifka",
+   "role": "representing Applicant",
+   "status": "present",
+   "quote": "john plifka represented applicant."
+  },
+  {
+   "name": "Phil Provost",
+   "role": "not printed (512 Northfield / 430 Mulpus discussion)",
+   "status": "present",
+   "quote": "phil provost, instructed not to construct the rain gardens until the very end."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "not printed (referred to by Phil Provost)",
+   "status": "not stated",
+   "quote": "adam burney requested that in order to get specialty soils for the season."
+  },
+  {
+   "name": "Phil Colmeta",
+   "role": "Applicant (728 Goodrich St)",
+   "status": "present",
+   "quote": "phil colmeta, applicant - special permit application for shared driveway between lot 1 & lot 2."
+  },
+  {
+   "name": "Chris Stoddard",
+   "role": "not printed (728 Goodrich St hearing)",
+   "status": "present",
+   "quote": "chris stoddard, easement is a 40ft wide easement"
+  },
+  {
+   "name": "Courtney Driver",
+   "role": "resident, 708 Goodrich St (public comment)",
+   "status": "present",
+   "quote": "courtney driver, 708 goodrich st - concerns about location."
+  },
+  {
+   "name": "Ed McSweeney",
+   "role": "Owners of property (255 Sunnyhill hearing)",
+   "status": "present",
+   "quote": "ed mcsweeney, owners of property."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Conservation Commission Member, 11 Wintergreen Ct",
+   "status": "present",
+   "quote": "bob pease, 11 wintergreen ct - conservation commission member; question if lots 4 & 5 did"
+  },
+  {
+   "name": "Joan Pease",
+   "role": "resident, 11 Wintergreen Ct (public comment)",
+   "status": "present",
+   "quote": "joan pease, 11 wintergreen ct - m.harris summarized the information j.pease emailed earlier"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "Hannigan Engineering",
+   "status": "present",
+   "quote": "bill hannigan, hannigan engineering - providing clarification contamination definition"
+  },
+  {
+   "name": "Paul Keating",
+   "role": "Leominster resident involved in land being discussed",
+   "status": "present",
+   "quote": "paul keating, leominster resident involved in land that is being discussed."
+  },
+  {
+   "name": "Margaret",
+   "role": "public comment (surname not printed)",
+   "status": "present",
+   "quote": "margaret - concerns are zone 1."
+  },
+  {
+   "name": "Debbie Richie",
+   "role": "resident, 98 Royal Fern Drive (public comment)",
+   "status": "present",
+   "quote": "debbie richie, 98 royal fern drive - proposed changes will be different than what they read"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicant at 512 Northfield told that sign-off on the certificate of occupancy requires the listed conditions (chair/board direction, no vote recorded).",
+   "quote": "r.harris told applicant in order to obtain sign off on certificate of occupancy will need to include the above conditions."
+  },
+  {
+   "decision": "T. Willsmer tasked to investigate whether the current stormwater bylaws need redesign, including enforcement (committee report; no vote recorded).",
+   "quote": "t. willsmer is tasked to investigate if we need redesign of current stormwater bylaws"
+  },
+  {
+   "decision": "Bill Hannigan to forward DEP-website definitions of contamination to R. Harris for the WSPD bylaw draft (no vote recorded).",
+   "quote": "b. hannigan will forward reference to definitions taken from dep website to r. harris."
+  },
+  {
+   "decision": "R. Harris stated that approval of Lots 1-3 at 255 Sunnyhill covers only those lots, and anything beyond requires a separate filing for Lots 4 & 5 (stated position, no vote recorded).",
+   "quote": "r.harris discussed the approval of lots 1-3 and anything beyond those limits will require"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "512 Northfield rain garden construction cost",
+   "what_was_recorded": "Phil Provost reported the rain garden construction was estimated at $3,000 with specialty soils.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "p.provost said estimated at $3,000 with specialty soils."
+  },
+  {
+   "topic": "512 Northfield performance guarantee estimate",
+   "what_was_recorded": "R. Harris estimated a guarantee of $5,000 to cover re-doing the rain garden.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "r. harris estimates $5,000 guarantee."
+  },
+  {
+   "topic": "512 Northfield performance guarantee approved in motion",
+   "what_was_recorded": "The motion recorded GEI approval of a proposed Guarantee of $6,000 for up to 6 months for plant life at Lot 5, 512 Northfield Rd.",
+   "figures_as_printed": [
+    "$6,000"
+   ],
+   "quote": "gei approved the proposed guarantee for $6,000 for up to 6 months for ensuring plant life is vegetive"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Request to say the Pledge of Allegiance before meetings",
+   "speaker": "Dave Rodgers, 82 Highland St",
+   "stated_role": "resident; Vietnam Veteran (as stated in minutes)",
+   "quote": "request to poll the board to allow to say the pledge of allegiance prior to meetings. mr. rodgers is a vietnam veteran"
+  },
+  {
+   "topic": "728 Goodrich St shared driveway: location and safety concerns",
+   "speaker": "Courtney Driver, 708 Goodrich St",
+   "stated_role": "resident",
+   "quote": "courtney driver, 708 goodrich st - concerns about location. currently corner is pretty dangerous with 2-way traffic"
+  },
+  {
+   "topic": "728 Goodrich St shared driveway: plowing and maintenance disagreements",
+   "speaker": "Dave Rogers, 82 Highland St",
+   "stated_role": "resident (spelled Rogers in minutes)",
+   "quote": "dave rogers, 82 highland st - what happens if there is a disagreement between property owners in regard to plowing and maintenance?"
+  },
+  {
+   "topic": "255 Sunnyhill: whether lots 4 & 5 would need a Subdivision Application",
+   "speaker": "Bob Pease, 11 Wintergreen Ct",
+   "stated_role": "Conservation Commission Member",
+   "quote": "bob pease, 11 wintergreen ct - conservation commission member; question if lots 4 & 5 did not get approval"
+  },
+  {
+   "topic": "255 Sunnyhill: whether lot fronting Leominster Rd is wet and should not be built",
+   "speaker": "Dave Rodgers, 82 Highland St",
+   "stated_role": "resident",
+   "quote": "dave rodgers, 82 highland st - is that the lot you would access from leominster rd?"
+  },
+  {
+   "topic": "WSPD bylaw: Zone 1 permitted uses and definitions",
+   "speaker": "Joan Pease, 11 Wintergreen Ct",
+   "stated_role": "resident (minutes also print M.Harris and J.Pease for the same person; not reconciled)",
+   "quote": "joan pease, 11 wintergreen ct - m.harris summarized the information j.pease emailed earlier"
+  },
+  {
+   "topic": "WSPD bylaw: contamination definitions and treatment facility in Zone 1",
+   "speaker": "Bill Hannigan",
+   "stated_role": "Hannigan Engineering",
+   "quote": "bill hannigan, hannigan engineering - providing clarification contamination definition"
+  },
+  {
+   "topic": "WSPD bylaw: Zone 1 and whether the Board has enough information",
+   "speaker": "Paul Keating",
+   "stated_role": "Leominster resident involved in land being discussed",
+   "quote": "paul keating, leominster resident involved in land that is being discussed."
+  },
+  {
+   "topic": "WSPD bylaw: preserving protections for passive recreation in Zone 1",
+   "speaker": "Margaret",
+   "stated_role": "not printed",
+   "quote": "margaret - concerns are zone 1."
+  },
+  {
+   "topic": "WSPD bylaw: timing of changes after warrant release",
+   "speaker": "Debbie Richie, 98 Royal Fern Drive",
+   "stated_role": "resident",
+   "quote": "debbie richie, 98 royal fern drive - proposed changes will be different than what they read"
+  },
+  {
+   "topic": "WSPD bylaw: permitted activities in Zone 1",
+   "speaker": "Not printed (39 Bellivue Rd)",
+   "stated_role": "resident, 39 Bellivue Rd (name not printed)",
+   "quote": "39 bellivue rd - appreciate board cleaning up this bylaw. agrees we are not there yet."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Pledge of Allegiance request",
+   "resolution": "no action; request heard",
+   "quote": "public comment dave rodgers, 82 highland st - request to poll the board to allow to say the pledge of",
+   "tags": [
+    "public comment",
+    "pledge"
+   ]
+  },
+  {
+   "topic": "Public hearing: WSPD and Solar Energy BESS zoning amendments (opening)",
+   "resolution": "hearing opened; WSPD recommendation withdrawn to no action; solar article recommended for Town Meeting",
+   "quote": "(proposed) zoning bylaw amendments: water supply protection district and solar energy -",
+   "tags": [
+    "zoning bylaw",
+    "water supply protection district",
+    "solar",
+    "battery energy storage",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Certificate of completion: 317 & 321 Sunnyhill Road",
+   "resolution": "no action; waiting on as-builts and Board not ready to decide",
+   "quote": "317 & 321 sunnyhill road - waiting on as-builts and board is not ready to make decision.",
+   "tags": [
+    "certificate of completion",
+    "as-builts",
+    "sunnyhill"
+   ]
+  },
+  {
+   "topic": "Certificate of occupancy and performance guarantee: 512 Northfield (permitted at 245 Holman)",
+   "resolution": "motion made to authorize sign-off subject to conditions; result not recorded",
+   "quote": "512 northfield (permitted at 245 holman) - performance guarantee would be between town",
+   "tags": [
+    "certificate of occupancy",
+    "performance guarantee",
+    "stormwater",
+    "rain gardens",
+    "graves engineering"
+   ]
+  },
+  {
+   "topic": "430 Mulpus: certificate of occupancy for Lot 5 and Lot 2",
+   "resolution": "discussed; no vote recorded; plan for checklist and guarantee terms discussed",
+   "quote": "430 mulpus - work is not completed on lot 5. m. allison does not want to approve certificate",
+   "tags": [
+    "certificate of occupancy",
+    "performance guarantee",
+    "mulpus"
+   ]
+  },
+  {
+   "topic": "Special permit: 728 Goodrich St shared driveway (public hearing)",
+   "resolution": "approved",
+   "quote": "m. allison made motion to approve special permit shared driveway, a.reid seconded. all, aye",
+   "tags": [
+    "special permit",
+    "shared driveway",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Site plan modification: 5 Summer St",
+   "resolution": "motion made to treat change in use as de minimis; result not recorded",
+   "quote": "modification to existing permit from brazilian restaurant to indoor golf & sports bar.",
+   "tags": [
+    "site plan",
+    "de minimis",
+    "change of use"
+   ]
+  },
+  {
+   "topic": "Certificate of completion and release of performance guarantee: 360 Flat Hill Road, 19 and 21 Watt Street",
+   "resolution": "approved",
+   "quote": "t. willsmer made motion to authorize certificate of completion and release of performance guarantee.",
+   "tags": [
+    "stormwater permits",
+    "performance guarantee release"
+   ]
+  },
+  {
+   "topic": "Public hearing: 255 Sunnyhill (continued), stormwater permit and Lots 1-3",
+   "resolution": "continued to June 10th",
+   "quote": "t.willsmer made motion to continue hearing to june 10th. a.reid seconded. all, aye",
+   "tags": [
+    "stormwater",
+    "subdivision",
+    "wetlands",
+    "conservation",
+    "continued hearing"
+   ]
+  },
+  {
+   "topic": "Public hearing: Water Supply Protection District (WSPD) zoning amendment",
+   "resolution": "recommend no action on warrant; withdrawn and re-moved as withdraw/no action",
+   "quote": "t. willsmer made motion to withdraw article or recommend town take no action on warrant for water supply protection district.",
+   "tags": [
+    "zoning bylaw",
+    "water supply protection district",
+    "groundwater",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Public hearing: Solar Energy – Battery Energy Storage Systems zoning amendment",
+   "resolution": "hearing closed; recommended adopting warrant at Town Meeting with scrivener's error",
+   "quote": "amanda reid made motion to make recommendations at town meeting to adopt warrant including scriveners error discussed today.",
+   "tags": [
+    "solar",
+    "battery energy storage",
+    "zoning bylaw",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Board discussions and minutes approval (2.28.24)",
+   "resolution": "minutes listed on agenda; no vote recorded",
+   "quote": "minutes approval: 2.28.24 meeting minutes",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; Storm Water Task Force bylaw review assigned",
+   "quote": "storm water task force - brainstorm to connect with other boards and start getting the word",
+   "tags": [
+    "committee reports",
+    "stormwater",
+    "master plan",
+    "agricultural commission"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and adjournment",
+   "resolution": "next meetings May 13 and June 10; adjourned",
+   "quote": "t. willsmer made motion to adjourn. a. reid seconded, all aye. meeting adjourned 10:00pm",
+   "tags": [
+    "adjournment",
+    "meeting schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning bylaw amendments",
+  "water supply protection district",
+  "solar energy battery storage",
+  "special permit",
+  "shared driveway",
+  "certificate of occupancy",
+  "certificate of completion",
+  "performance guarantee",
+  "stormwater",
+  "site plan",
+  "public hearing",
+  "town meeting warrant",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

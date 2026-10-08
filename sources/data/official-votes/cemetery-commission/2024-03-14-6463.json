@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2024-03-14",
  "docid": "6463",
@@ -12,31 +12,226 @@
  },
  "votes": [
   {
-   "motion": "to elect Michael Clark as the newest Cemetery Commissioner",
+   "motion": "Appoint Michael Clark as the newest Cemetery Commissioner.",
    "moved_by": "Nancy Foss-Yasko and David Dorren",
    "seconded_by": "",
-   "outcome": "passed 2 to 0",
+   "outcome": "passed 2-0",
    "procedural": false,
    "quote": "both the chair, nancy foss-yasko and vice-chair, david dorren made a motion to vote to have michael clark as the newest cemetery commissioner. motion passed 2 to 0."
   },
   {
-   "motion": "to approve the meeting minutes from February 22, 2024",
+   "motion": "Approve the minutes of February 22, 2024.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 2 to 0",
+   "outcome": "passed 2-0",
    "procedural": true,
    "quote": "meeting minutes: february 22, 2024 - motion passed 2 to 0."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Nancy Foss-Yasko",
    "seconded_by": "David Dorren",
-   "outcome": "passed 2 to 0",
+   "outcome": "passed 2-0",
    "procedural": true,
    "quote": "motion was made to adjourn by chair, nancy foss-yasko, seconded by vice-chair and clerk, david dorren. with no further discussion, meeting was adjourned at 9:35 am - motion passed 2 to 0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1167447
+ "note": "Text extract, not a scan; readable. Three votes are recorded with counts (2-0), but only the appointment motion names its movers and no vote names a seconder except adjournment. Two commissioners voted, and the minutes name no third member present. The minutes print no dollar figure for the lot-sale refunds, so the budget item has an empty figures list. The minutes spell the DPW director's name and the Dave Passios name inconsistently (\"Dave Passio\" appears once); the attendance line gives \"Dave Passios\". Mr. Bowen's allegations and the out-of-session outburst are described but not itemized. Commissioners Charles Deming, Bill Tyler and \"Heather\" are mentioned as past or referenced figures and not recorded as taking part.",
+ "cost_usd": 0.01581647,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "9:05 am - call to order - by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair & Clerk",
+   "status": "present",
+   "quote": "9:05 am - call to order - by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "bill bernard, dpw director; todd holman, cemetery superintendent were not present."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "absent",
+   "quote": "bill bernard, dpw director; todd holman, cemetery superintendent were not present."
+  },
+  {
+   "name": "Michael Clark",
+   "role": "potential Cemetery Commission Candidate",
+   "status": "present",
+   "quote": "the chair announced that we need to go out of order today, as michael clark, potential cemetery commission candidate; needs to leave early for another business meeting."
+  },
+  {
+   "name": "John Bowen",
+   "role": "public attendee",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, john bowen, jr., dave rogers, dave passios and michael clark."
+  },
+  {
+   "name": "Jeanmarie Price",
+   "role": "public attendee",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, john bowen, jr., dave rogers, dave passios and michael clark."
+  },
+  {
+   "name": "John Bowen, Jr.",
+   "role": "public attendee",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, john bowen, jr., dave rogers, dave passios and michael clark."
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "public attendee",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, john bowen, jr., dave rogers, dave passios and michael clark."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public attendee",
+   "status": "present",
+   "quote": "mr. john bowen and dave passios announced to the commission that they were videoing today's meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair will find out what Mr. Rogers wants to discuss so the topic can be put on a future agenda.",
+   "quote": "chair would like to have what exactly mr. rogers would like to discuss for the topic on the future agenda."
+  },
+  {
+   "decision": "The password and access question for the Ramaker database was tabled and referred to a higher level (Heather).",
+   "quote": "this will be tabled and brought to a higher level (heather) regarding this matter."
+  },
+  {
+   "decision": "The Chair will inform the Commission going forward about money returned from lot sales.",
+   "quote": "this was an oversight by the dpw, director, and i will inform the cemetery commission going forward."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Refunds of lot-sale money to residents",
+   "what_was_recorded": "Money given back to residents who had bought lots was discussed; DPW submitted refund vouchers to the Town without Commissioner signatures. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the chair, nancy foss-yasko was presented with information regarding money given back to resident parties that had previously purchased lots in the past."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Bowen",
+   "stated_role": "",
+   "topic": "allegations during public comment",
+   "quote": "public comment - mr. bowen presented many allegations throughout his three minutes of public comments."
+  },
+  {
+   "speaker": "Mr. Dave Rogers",
+   "stated_role": "",
+   "topic": "request for a time on the April agenda",
+   "quote": "mr. dave rogers would like to request and schedule a time that he may come and discuss matters regarding the cemetery commission and dpw director."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "no action",
+   "quote": "9:05 am - call to order - by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk.",
+   "tags": [
+    "procedure",
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Appointment of Michael Clark as Commissioner",
+   "resolution": "approved 2-0",
+   "quote": "both the chair, nancy foss-yasko and vice-chair, david dorren made a motion to vote to have michael clark as the newest cemetery commissioner. motion passed 2 to 0.",
+   "tags": [
+    "appointment",
+    "commission membership"
+   ]
+  },
+  {
+   "topic": "Minutes of February 22, 2024",
+   "resolution": "approved 2-0",
+   "quote": "meeting minutes: february 22, 2024 - motion passed 2 to 0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; Rogers request for April agenda",
+   "quote": "public comment - mr. bowen presented many allegations throughout his three minutes of public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "DPW Director updates",
+   "resolution": "letter read into record; no action",
+   "quote": "the dpw director, bill bernard, is unable to attend, and asked that the chair, nancy foss-yasko to read through his letter submitted to the cemetery commission.",
+   "tags": [
+    "DPW",
+    "cemetery maintenance",
+    "seasonal workers"
+   ]
+  },
+  {
+   "topic": "Ramaker database access and password",
+   "resolution": "tabled and referred to a higher level",
+   "quote": "this will be tabled and brought to a higher level (heather) regarding this matter.",
+   "tags": [
+    "Ramaker database",
+    "access",
+    "password"
+   ]
+  },
+  {
+   "topic": "Refunds from lot sales and DPW vouchers",
+   "resolution": "discussed; no action; Chair to inform Commission",
+   "quote": "the cemetery commission has always had the procedure in place to vote and approve any money that is given back from the sales of lots.",
+   "tags": [
+    "lot sales",
+    "refunds",
+    "vouchers",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "scheduled",
+   "quote": "a. thursday, april 07, 2024.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:35 AM, 2-0",
+   "quote": "motion was made to adjourn by chair, nancy foss-yasko, seconded by vice-chair and clerk, david dorren. with no further discussion, meeting was adjourned at 9:35 am - motion passed 2 to 0.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery commission",
+  "commissioner appointment",
+  "DPW",
+  "Ramaker database",
+  "password access",
+  "lot sales refunds",
+  "public comment",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

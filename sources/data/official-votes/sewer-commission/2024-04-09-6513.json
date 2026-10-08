@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-04-09",
  "docid": "6513",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes for 3/12/24",
+   "motion": "Approve the minutes of 3/12/24.",
    "moved_by": "Mike N.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "to approve the minutes for 3/12/24. roll call vote: mike n.-aye, brett-aye, mike m.-aye, and john-aye."
   },
   {
-   "motion": "Accept the 3rd quarter Commitment for $255,498.52",
+   "motion": "Accept the 3rd quarter Commitment for $255,498.52.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike M.",
    "outcome": "passed 4-0",
@@ -28,7 +28,7 @@
    "quote": "to accept the 3rd quarter commitment for $255,498.52. roll call vote: mike n.-aye, brett-aye, mike m.-aye, and john-aye."
   },
   {
-   "motion": "Increase the connection fee from $2,250 to $3,900 as written",
+   "motion": "Increase the minimum residential connection charge (Sewer Use Regulations, Article 7 Section 4 #1) from $2,250 to $3,900 as written.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
@@ -36,7 +36,7 @@
    "quote": "to increase the connection fee from $2,250 to $3,900 as written. roll call vote: mike n.-aye, brett-aye, mike m.-aye, and john-aye."
   },
   {
-   "motion": "Close the public hearing",
+   "motion": "Close the public hearing.",
    "moved_by": "Mike M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
@@ -44,7 +44,7 @@
    "quote": "to close the public hearing. roll call vote: mike n.-aye, brett-aye, mike m.-aye, and john-aye."
   },
   {
-   "motion": "Adjourn at 7pm",
+   "motion": "Adjourn at 7pm.",
    "moved_by": "Mike M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 3-0",
@@ -53,6 +53,331 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "John Reynolds lost his signal and was unable to rejoin before the final adjournment vote, so only three members voted on that motion.",
- "cost_usd": 0.0824491
+ "note": "Clean digital text, not a scan; every recorded vote is a roll call with the names printed. Chair John Reynolds lost signal mid-meeting and did not rejoin; Brett Ramsden chaired from that point, and the adjournment vote lists three members (Mike M., Mike N., Brett), not four. Lawrence Lagoy is named in the appointment heading but no statement from him is recorded, so his status is not stated. Heather (who asked to be told the outcome) and Robert (whose report was circulated) are referenced but not recorded as attending. The meeting was held via Zoom, but the minutes do not state each member's remote status individually. The Select Board's liquor license action is mentioned but is not a vote of this board and is not recorded as one.",
+ "cost_usd": 0.018817769999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member mike mackin,"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member mike mackin,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member mike mackin,"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member mike mackin,"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: dave macdonald"
+  },
+  {
+   "name": "Joshua Champlain",
+   "role": "appeared on the ReBoot payment agreement appointment",
+   "status": "present",
+   "quote": "joshua stated that they are in the midst of an active 93a case against the landlords"
+  },
+  {
+   "name": "Lawrence Lagoy",
+   "role": "named with Joshua Champlain on the ReBoot appointment",
+   "status": "not stated",
+   "quote": "appointments - the reboot - payment agreement non-compliance - joshua champlain and lawrence lagoy --"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioners agreed the connection fee increase needs to be implemented; Paula stated it takes effect 7/1/24. Agreed before the formal motion, which is recorded separately.",
+   "quote": "the commissioners agreed that this needs to be implemented and paula stated the increase will go into effect on 7/1/24."
+  },
+  {
+   "decision": "Commissioners agreed to a presentation at the Select Board on system clogs from flushed wipes.",
+   "quote": "he has discussed with paula about making a presentation at the select board and commissioners agreed."
+  },
+  {
+   "decision": "Paula to contact Tara to add the clog notice to the Website.",
+   "quote": "she will contact tara to add it to the website."
+  },
+  {
+   "decision": "The ReBoot payment matter is continued to the next meeting; Joshua to bring a $2,000 check to the office. The Commission agreed this was a good faith measure and will keep the item on the agenda for the next 2 meetings.",
+   "quote": "the commission agreed it was a good faith measure and will keep the discussion on the agenda for the next 2 meetings."
+  },
+  {
+   "decision": "Paula stated the ReBoot matter can continue to the next meeting, with Joshua bringing the $2,000 check to the office.",
+   "quote": "paula stated that they can continue to the next meeting and joshua will bring the $2,000 check to the office."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q3 sewer commitment",
+   "what_was_recorded": "The 3rd quarter Commitment was accepted at $255,498.52.",
+   "figures_as_printed": [
+    "$255,498.52"
+   ],
+   "quote": "to accept the 3rd quarter commitment for $255,498.52."
+  },
+  {
+   "topic": "Minimum residential connection charge",
+   "what_was_recorded": "The minimum residential connection charge rises from $2,250 to $3,900, following Leominster's increase in the new IMA.",
+   "figures_as_printed": [
+    "$2,250",
+    "$3,900"
+   ],
+   "quote": "to increase the connection fee from $2,250 to $3,900 as written."
+  },
+  {
+   "topic": "Budget status: receipts, expenditures, betterments",
+   "what_was_recorded": "Receipts, expenditures, forecast betterments and interest were reported, with a large amount of outstanding accounts.",
+   "figures_as_printed": [
+    "$963,750.32",
+    "$1,750,649.89",
+    "$367,782",
+    "$115,628"
+   ],
+   "quote": "paula reported that receipts are $963,750.32 and there is a substantial amount of outstanding"
+  },
+  {
+   "topic": "The ReBoot payment agreement balance",
+   "what_was_recorded": "The ReBoot owes a balance under a $600/week agreement after missed February payment; $6,000 paid since 12/19/23 and a $2,000 check was offered toward the May bill.",
+   "figures_as_printed": [
+    "$600/week",
+    "$14,541.23",
+    "$6,000",
+    "$2,000",
+    "$920.95"
+   ],
+   "quote": "the current balance due is $14,541.23. since 12/19/23, they have paid $6,000."
+  },
+  {
+   "topic": "Third-party debt of 50 Massachusetts Ave. LLC (Bootlegger)",
+   "what_was_recorded": "A constable sought 50 Massachusetts Ave. LLC, which owed the state for unemployment; the Commission discussed a lien.",
+   "figures_as_printed": [
+    "$250K"
+   ],
+   "quote": "who owed $250k to the state for unemployment."
+  },
+  {
+   "topic": "Replacement pumps and possible state grant",
+   "what_was_recorded": "New pumps cost $205K without freight; the maximum grant is $225K, contingent on showing energy savings.",
+   "figures_as_printed": [
+    "$205K",
+    "$225K"
+   ],
+   "quote": "the new pumps will be $205k without freight, which will be substantial."
+  },
+  {
+   "topic": "Lost demand billings",
+   "what_was_recorded": "Q2 and Q3 demands could not be sent, a loss of $4,500 and $3,790 respectively, due to Munis problems.",
+   "figures_as_printed": [
+    "$4,500",
+    "$3,790"
+   ],
+   "quote": "she was unable to send the q2 demands which was a loss of $4,500 or the q3 demands for a loss of $3,790."
+  },
+  {
+   "topic": "Engineering quotes from Wright Pierce",
+   "what_was_recorded": "Five quotes from Wright Pierce were described as expensive; staff asked for reduced scope to lower the cost.",
+   "figures_as_printed": [],
+   "quote": "john noted they had received 5 expensive quotes from wright pierce."
+  },
+  {
+   "topic": "Sewer costs from clogs",
+   "what_was_recorded": "Clogs from flushed wipes are costing the Sewer Department more money; no figure given.",
+   "figures_as_printed": [],
+   "quote": "which is costing the sewer department more money."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Delinquent sewer amounts transferred to tax bills (Demands/Transfer to Delinquent)",
+   "amount_as_printed": "$41,491.04",
+   "outcome": "Reported as transferred after Munis problems prevented running Demands.",
+   "quote": "they finally were able to get $41,491.04 transferred to tax bills."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mike N.",
+   "stated_role": "Clerk",
+   "topic": "Announced resignation from the Commission in May",
+   "quote": "mike n. announced he will be resigning from the commission in may and he thanked"
+  },
+  {
+   "speaker": "Mike Mackin",
+   "stated_role": "Member",
+   "topic": "Thanks to Mike Nault for his work on the Commission",
+   "quote": "mike mackin thanked mike nault for all his work on the commission."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "Mike Nault announced resignation in May; no action",
+   "quote": "mike n. announced he will be resigning from the commission in may",
+   "tags": [
+    "resignation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Minutes of 3/12/24",
+   "resolution": "approved 4-0",
+   "quote": "to approve the minutes for 3/12/24.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Q3 commitment",
+   "resolution": "accepted 4-0",
+   "quote": "to accept the 3rd quarter commitment for $255,498.52.",
+   "tags": [
+    "commitment",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Public hearing: connection charge increase",
+   "resolution": "increase approved 4-0; hearing closed 4-0",
+   "quote": "to increase the connection fee from $2,250 to $3,900 as written.",
+   "tags": [
+    "public hearing",
+    "connection fee",
+    "sewer use regulations",
+    "Leominster IMA"
+   ]
+  },
+  {
+   "topic": "Engineering services (Wright Pierce)",
+   "resolution": "discussed; no action",
+   "quote": "john noted they had received 5 expensive quotes from wright pierce.",
+   "tags": [
+    "engineering",
+    "pump replacement",
+    "Wright Pierce"
+   ]
+  },
+  {
+   "topic": "Public notification: system clogs",
+   "resolution": "presentation to Select Board agreed; notices planned",
+   "quote": "making a presentation at the select board and commissioners agreed.",
+   "tags": [
+    "clogs",
+    "wipes",
+    "public outreach"
+   ]
+  },
+  {
+   "topic": "Business Manager report: sewer system update (Spill Sense)",
+   "resolution": "reported; no action",
+   "quote": "they installed the spill sense unit a couple of weeks ago at the manhole near stone farm",
+   "tags": [
+    "spill sense",
+    "monitoring"
+   ]
+  },
+  {
+   "topic": "Budget status",
+   "resolution": "reported; no action",
+   "quote": "paula reported that receipts are $963,750.32 and there is a substantial amount of outstanding",
+   "tags": [
+    "budget",
+    "receipts",
+    "betterments"
+   ]
+  },
+  {
+   "topic": "Appointment: The ReBoot payment agreement non-compliance",
+   "resolution": "continued to next meeting; no vote taken",
+   "quote": "the commission did not take a vote.",
+   "tags": [
+    "ReBoot",
+    "payment agreement",
+    "delinquency",
+    "liens",
+    "93A"
+   ]
+  },
+  {
+   "topic": "Business Manager report (cont'd): grease traps, grant funding, demands",
+   "resolution": "reported; no action",
+   "quote": "the new pumps will be $205k without freight, which will be substantial.",
+   "tags": [
+    "grease traps",
+    "grant funding",
+    "Green Communities",
+    "Munis",
+    "delinquency"
+   ]
+  },
+  {
+   "topic": "Public comment: thanks to Mike Nault",
+   "resolution": "no action",
+   "quote": "mike mackin thanked mike nault for all his work on the commission.",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Upcoming activities and adjournment",
+   "resolution": "adjourned at 7pm, 3-0",
+   "quote": "to adjourn at 7pm. roll call vote: mike m.-aye, mike n.-aye, and brett-aye.",
+   "tags": [
+    "schedule",
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "connection fees",
+  "public hearing",
+  "sewer use regulations",
+  "ReBoot payment agreement",
+  "delinquent accounts",
+  "Munis software",
+  "tax bills",
+  "grease traps",
+  "grant funding",
+  "pump replacement",
+  "clogs and wipes",
+  "engineering",
+  "resignation",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

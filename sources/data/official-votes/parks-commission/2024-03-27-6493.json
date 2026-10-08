@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-03-27",
  "docid": "6493",
@@ -12,16 +12,229 @@
  },
  "votes": [
   {
-   "motion": "Select the OPM ranking list as Skanska first, NV5 second, and Atlantic Construction & Management third",
-   "moved_by": "Anita Scheipers",
-   "seconded_by": "Karin Menard",
+   "motion": "Select the OPM as Skanska first, NV5 second, and Atlantic third.",
+   "moved_by": "A. Scheipers",
+   "seconded_by": "K. Menard",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "a. scheipers made a motion to select the opm as skanska first, nv5 second, and atlantic third.k. menard seconded. all in favor, motion carried (5-0) ",
-   "quote_taken_from_text": true
+   "quote": "a. scheipers made a motion to select the opm as skanska first, nv5 second, and atlantic third.k. menard seconded. all in favor, motion carried (5-0)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. Adjourned at 9:46 pm but no adjourn vote was recorded in the minutes.",
- "cost_usd": 0.0668655
+ "note": "Text extract of a multi-page minutes PDF with OCR-like artefacts: the page headers read 'Page  of 31', 'of 32' and 'of 33' across three pages, so the page count is not reliable. Some names are printed incompletely: 'Tim', 'Jennifer', 'Frank', 'Kayla' and 'Catherine' carry no surname, and 'M. Herandez' is a misspelling of Maria Hernandez. The minutes do not say which firm Chris Ruth represents. The vote's motion names 'Atlantic' while the agenda names Atlantic Construction & Management, Inc. (ACMI); I treated these as the same firm. Adjournment at 9:46 pm is recorded with no motion, so no procedural vote is listed. The minutes record one vote, the OPM ranking, which had 5 members present and carried 5-0.",
+ "cost_usd": 0.015440370000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, colleen shapiro and anita scheipers"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, colleen shapiro and anita scheipers"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, colleen shapiro and anita scheipers"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, colleen shapiro and anita scheipers"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, karin menard, christopher sullivan, colleen shapiro and anita scheipers"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Additional Attendee (affiliation not printed)",
+   "status": "present",
+   "quote": "additional attendees: chris ruth"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  },
+  {
+   "name": "Dell Caldwell",
+   "role": "presenter at the Skanska appointment",
+   "status": "present",
+   "quote": "dell caldwell, tom deliddo, jerry albert, kayla, and catherine gave their presentation."
+  },
+  {
+   "name": "Tom DeLiddo",
+   "role": "presenter at the Skanska appointment",
+   "status": "present",
+   "quote": "dell caldwell, tom deliddo, jerry albert, kayla, and catherine gave their presentation."
+  },
+  {
+   "name": "Jerry Albert",
+   "role": "presenter at the Skanska appointment",
+   "status": "present",
+   "quote": "dell caldwell, tom deliddo, jerry albert, kayla, and catherine gave their presentation."
+  },
+  {
+   "name": "Kayla",
+   "role": "presenter at the Skanska appointment (surname not printed)",
+   "status": "present",
+   "quote": "dell caldwell, tom deliddo, jerry albert, kayla, and catherine gave their presentation."
+  },
+  {
+   "name": "Catherine",
+   "role": "presenter at the Skanska appointment (surname not printed)",
+   "status": "present",
+   "quote": "dell caldwell, tom deliddo, jerry albert, kayla, and catherine gave their presentation."
+  },
+  {
+   "name": "Steven Sarash",
+   "role": "on-site manager (ACMI)",
+   "status": "present",
+   "quote": "steven sarash, on-site manager and jennifer, project director"
+  },
+  {
+   "name": "Jennifer",
+   "role": "Project Director (ACMI; surname not printed)",
+   "status": "present",
+   "quote": "steven sarash, on-site manager and jennifer, project director"
+  },
+  {
+   "name": "Frank",
+   "role": "Principal in charge (NV5; surname not printed)",
+   "status": "present",
+   "quote": "frank, principal in charge; maria hernandez, assistant project manager;"
+  },
+  {
+   "name": "Maria Hernandez",
+   "role": "Assistant Project Manager (NV5)",
+   "status": "present",
+   "quote": "frank, principal in charge; maria hernandez, assistant project manager;"
+  },
+  {
+   "name": "Tim",
+   "role": "Program Director (NV5; surname not printed)",
+   "status": "present",
+   "quote": "tim program director, and ken grezelle, on-site project manager."
+  },
+  {
+   "name": "Ken Grezelle",
+   "role": "On-site Project Manager (NV5)",
+   "status": "present",
+   "quote": "tim program director, and ken grezelle, on-site project manager."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Owner's project manager (OPM) and construction budget",
+   "what_was_recorded": "The project cost was stated as $8.5 million based on the schematic design, and Town Meeting in the Fall was said to have approved the funding needed to move forward with grants.",
+   "quote": "a. lockwood noted the cost of the project is $8.5 million based on the schematic design. town meeting in the fall approved the funding needed to move forward with grants.",
+   "figures_as_printed": [
+    "$8.5 million"
+   ]
+  },
+  {
+   "topic": "Parks funds available to spend",
+   "what_was_recorded": "A. Lockwood stated that Parks has $1.5 million ready to spend.",
+   "quote": "a. lockwood noted parks has $1.5 million ready to spend.",
+   "figures_as_printed": [
+    "$1.5 million"
+   ]
+  },
+  {
+   "topic": "Skanska presentation: $8.5 million budget as a question",
+   "what_was_recorded": "The $8.5 million budget was listed among the questions the Skanska presenters addressed; the minutes do not record a further figure.",
+   "quote": "dell caldwell, tom deliddo, jerry albert, kayla, and catherine gave their presentation. they touched on questions regarding the following:",
+   "figures_as_printed": [
+    "$8.5 million"
+   ]
+  },
+  {
+   "topic": "Plaques to offset costs",
+   "what_was_recorded": "ACMI raised the possibility of plaques with contractors and sponsors to cut costs; no dollar figure was given.",
+   "quote": "possibility of having plaques with the contractors and sponsors to cut costs",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Dog park grant funding",
+   "what_was_recorded": "K. Menard noted a dog park is earmarked but its grant funding does not open until the end of the year; no amount was given.",
+   "quote": "k. menard noted a dog park is earmarked but the grant funding doesn't open until the end of the year.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment 7:00 pm: presentation and interview with Skanska",
+   "resolution": "interview held; no action recorded",
+   "quote": "first item on the agenda, appointment: 7:00 pm - presentation and interview with skanska",
+   "tags": [
+    "Skanska",
+    "owner's project manager",
+    "interview",
+    "park design"
+   ]
+  },
+  {
+   "topic": "Appointment 7:45 pm: presentation and interview with Atlantic Construction & Management, Inc. (ACMI)",
+   "resolution": "interview held; no action recorded",
+   "quote": "next item on the agenda, appointment: 7:45 pm - presentation and interview with atlantic construction & management, inc. (acmi).",
+   "tags": [
+    "ACMI",
+    "construction management",
+    "interview",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Appointment 8:30 pm: presentation and interview with NV5",
+   "resolution": "interview held; no action recorded",
+   "quote": "next item on the agenda, appointment: 8:30 pm - presentation and interview with nv5",
+   "tags": [
+    "NV5",
+    "owner's project manager",
+    "interview",
+    "phasing and funding"
+   ]
+  },
+  {
+   "topic": "Discussion and potential vote on OPM rating list",
+   "resolution": "ranking adopted: Skanska first, NV5 second, Atlantic third (5-0)",
+   "quote": "next item on the agenda, discussion and potential vote on opm rating list",
+   "tags": [
+    "OPM selection",
+    "ranking",
+    "vote",
+    "Skanska",
+    "NV5",
+    "Atlantic"
+   ]
+  }
+ ],
+ "tags": [
+  "park construction",
+  "owner's project manager",
+  "OPM selection",
+  "Skanska",
+  "NV5",
+  "Atlantic Construction & Management",
+  "project funding",
+  "grants",
+  "park design",
+  "interviews"
+ ],
+ "dropped_unquoted_by_field": {}
 }

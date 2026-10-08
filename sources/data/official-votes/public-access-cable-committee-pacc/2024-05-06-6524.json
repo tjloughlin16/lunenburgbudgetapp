@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2024-05-06",
  "docid": "6524",
@@ -12,16 +12,209 @@
  },
  "votes": [
   {
-   "motion": "Approve the April 1, 2024 meeting minutes with corrections",
+   "motion": "Approve the 4-1-2024 minutes, with corrections.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
    "procedural": true,
-   "quote": "4-1-2024 minutes approved with corrections • (motion - f.beall, 2nd p.lincoln), pass",
-   "quote_taken_from_text": true
+   "quote": "(motion - f.beall, 2nd p.lincoln), passed"
+  },
+  {
+   "motion": "Adjourn the meeting at 6:53 pm.",
+   "moved_by": "F.Beall",
+   "seconded_by": "P.Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "meeting adjourned at 6:53 pm o (motion - f.beall, 2nd p.lincoln - passed)."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.08775449999999999
+ "dropped_unquoted": 0,
+ "note": "Digital text extraction; no vote tallies printed, so both votes record outcome 'passed' with no count. Public comment reads 'None'. 'PS continued to record the minutes' is read as Paul Sarapas by initials, an inference from the text. E. Foster and Kathy Herrick are named but not as participants, so they are not listed as attendees. The minutes print 'FY23-24' and 'FY'25' dates and 'June 3th' as printed; not corrected.",
+ "cost_usd": 0.015024969999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, steve archambault, pete lincoln. faith beall, paul sarapas (arrived a few minutes late)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member (left at 6:30 pm)",
+   "status": "present",
+   "quote": "(sa needed to leave the meeting at 6:30 ps continued to record the minutes)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, steve archambault, pete lincoln. faith beall, paul sarapas (arrived a few minutes late)"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, steve archambault, pete lincoln. faith beall, paul sarapas (arrived a few minutes late)"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member (arrived a few minutes late; recorded the minutes)",
+   "status": "present",
+   "quote": "pacc members present: steve walker, steve archambault, pete lincoln. faith beall, paul sarapas (arrived a few minutes late)"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "3. manager: jo toale public comments:"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Setting of FY'25 meeting dates and times tabled for full committee input.",
+   "quote": "setting of fy '25 meeting dates and times tabled for full committee input"
+  },
+  {
+   "decision": "J.Toale to check with town hall and ask for clarification on the cemetery candidate air-time request.",
+   "quote": "j.toale will check with town hall and ask for clarification."
+  },
+  {
+   "decision": "S.Walker to answer the cemetery-candidate emails, advising the person he will consult Kathy Herrick, town clerk, and get back as soon as possible.",
+   "quote": "s.walker will answer the emails advising the person that he will be consulting with kathy herrick, town clerk"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Enterprise fund status",
+   "what_was_recorded": "The enterprise fund's interest as of March and its balance as of 3/31 were reported.",
+   "figures_as_printed": [
+    "$26,728.13",
+    "$746,728.13"
+   ],
+   "quote": "interest as of march: $26,728.13; balance as of 3/31: $746,728.13"
+  },
+  {
+   "topic": "PACC budget at Town Meeting",
+   "what_was_recorded": "The PACC budget was passed through the town meeting consent calendar; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "pacc budget was passed through consent calendar"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no public comment",
+   "quote": "public comments: - • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments: Town Meeting production and video down-time",
+   "resolution": "discussed; banner idea raised, no decision recorded",
+   "quote": "j.toale stated that pac is not allowed to change anything and can only post the unedited version.",
+   "tags": [
+    "town meeting",
+    "video",
+    "broadcast"
+   ]
+  },
+  {
+   "topic": "Communications: electronics test, Comcast Form 300, cemetery candidate request",
+   "resolution": "received; referred to town clerk and town hall",
+   "quote": "s.walker received several emails o the town manager wanted a test of the electronics being used for town meeting ahead of time.",
+   "tags": [
+    "communications",
+    "elections",
+    "cemetery",
+    "comcast"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved with corrections",
+   "quote": "4-1-2024 minutes approved with corrections",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "reported",
+   "quote": "hiring new videographer to start on 5/16/24",
+   "tags": [
+    "staffing",
+    "programs",
+    "water district"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering committee report",
+   "resolution": "reported",
+   "quote": "may 30th meeting at coffee roasters 6 pm to share survey results with the community.",
+   "tags": [
+    "master plan",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Town Meeting report",
+   "resolution": "reported",
+   "quote": "pacc budget was passed through consent calendar",
+   "tags": [
+    "town meeting",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Enterprise fund status",
+   "resolution": "reported",
+   "quote": "interest as of march: $26,728.13; balance as of 3/31: $746,728.13",
+   "tags": [
+    "enterprise fund",
+    "finance"
+   ]
+  },
+  {
+   "topic": "FY'25 meeting dates",
+   "resolution": "tabled for full committee input",
+   "quote": "setting of fy '25 meeting dates and times tabled for full committee input",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for June 3, 6:00 pm",
+   "quote": "next meeting: - june 3th, 6:00 pm.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:53 pm",
+   "quote": "meeting adjourned at 6:53 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "town meeting broadcast",
+  "PACC",
+  "cable",
+  "enterprise fund",
+  "meeting schedule",
+  "cemetery candidate air time",
+  "master plan",
+  "videographer",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

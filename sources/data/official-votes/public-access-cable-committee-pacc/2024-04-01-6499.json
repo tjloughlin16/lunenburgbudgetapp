@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2024-04-01",
  "docid": "6499",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To approve the minutes of March 11, 2024 with corrections",
+   "motion": "Approve the 3-11-2024 minutes with corrections.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
@@ -20,15 +20,221 @@
    "quote": "3-11-2024 minutes approved with corrections (motion - f.beall, 2nd p.lincoln), passed"
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "S.Archambault",
    "seconded_by": "F.Beall",
    "outcome": "passed",
    "procedural": true,
-   "quote": "meeting adjourned at 7:05 pm o (motion - s.archambault, 2nd f.beall - passed)"
+   "quote": "(motion - s.archambault, 2nd f.beall - passed)"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.092409
+ "dropped_unquoted": 3,
+ "note": "Text is readable, not a scan. Minutes end mid-sentence on page 2 (\"Meetings held in the Sudolnik Conference Room will begin at 6pm,\"), so any text after that is not shown. Two votes/motions have no recorded tally, only \"passed\"; the approval-of-minutes vote has no vote count. The name \"PAAC\" appears once in the FY25 Budget item where \"PACC\" is used elsewhere; quoted as printed. The chair is not named in the minutes. Attendance status for Jo Toale and Debbie Lincoln is inferred from roll call and public comment participation, not from an explicit \"present\" label.",
+ "cost_usd": 0.014374370000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, steve archambault, pete lincoln. faith beall, paul sarapas"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, steve archambault, pete lincoln. faith beall, paul sarapas"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, steve archambault, pete lincoln. faith beall, paul sarapas"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, steve archambault, pete lincoln. faith beall, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, steve archambault, pete lincoln. faith beall, paul sarapas"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "3. manager: jo toale"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Community",
+   "status": "present",
+   "quote": "4. community: debbie lincoln"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting set for May 6th, 6:00 pm, in the Sudolnik Conference Room at the Lunenburg Town Library.",
+   "quote": "next meeting: - may 6th, 6:00 pm."
+  },
+  {
+   "decision": "S.Walker to draft a letter that the Town Manager could sign and send to the appropriate people on H74 S34 (in progress, no vote recorded).",
+   "quote": "s.walker is currently working on a letter that the town manager could sign and send out to the appropriate people."
+  },
+  {
+   "decision": "Enterprise Fund first-quarter report deferred to the next meeting because it has not yet been posted.",
+   "quote": "first quarter report has not been posted yet and should be available for our next meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Payroll videographers line account",
+   "what_was_recorded": "The Payroll videographers line is almost depleted because of increased demand to video town meeting, prompting the $10,000 transfer.",
+   "quote": "due to the increased demand to video town meeting the payroll videographers line account is almost depleted.",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "PAC ending balance",
+   "what_was_recorded": "The PAC ending balance is reported as off by $150, which the Manager is rectifying.",
+   "quote": "pac ending balance ($997,314.96), is off by $150.",
+   "figures_as_printed": [
+    "$997,314.96",
+    "$150"
+   ]
+  },
+  {
+   "topic": "Dracut Public Access Studio telethon (public comment)",
+   "what_was_recorded": "A Dracut telethon with the local access TV raised money for schools and funded scholarships; reported by a community member, not a PACC item.",
+   "quote": "the dracut scholarship foundation in partnership with the local access tv raised $156,000 which funded 66 educational scholarships.",
+   "figures_as_printed": [
+    "$156,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "D.Lincoln",
+   "stated_role": "Community",
+   "topic": "Thanks to tech crew for TRICASTA issue",
+   "quote": "d.lincoln wanted to publicly thank the tech crew that dealt with the tricasta issue during the taping of \"story time\"."
+  },
+  {
+   "speaker": "D.Lincoln",
+   "stated_role": "Community",
+   "topic": "Dracut public access telethon",
+   "quote": "d.lincoln reported on an event held at the dracut public access studio."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comments",
+   "resolution": "no action",
+   "quote": "d.lincoln wanted to publicly thank the tech crew that dealt with the tricasta issue during the taping of \"story time\".",
+   "tags": [
+    "public comment",
+    "PAC tech crew"
+   ]
+  },
+  {
+   "topic": "Committee Comments",
+   "resolution": "no action",
+   "quote": "p.lincoln praised s.walker for his excellent fincom budget presentation",
+   "tags": [
+    "FinCom",
+    "budget presentation",
+    "Master Plan"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action",
+   "quote": "s.walker received an email from the town manager who, after going through the pac budget spreadsheet, gave it a positive thumbs up.",
+   "tags": [
+    "budget spreadsheet",
+    "Town Manager"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved with corrections",
+   "quote": "3-11-2024 minutes approved with corrections",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "no action",
+   "quote": "currently at 76% local programming - 108 shows.",
+   "tags": [
+    "local programming",
+    "videographers",
+    "new show",
+    "podcast",
+    "town meeting video"
+   ]
+  },
+  {
+   "topic": "FY25 Budget",
+   "resolution": "reported; cleared for town meeting",
+   "quote": "paac's town meeting presentation was presented to fincom and was ok'ed for town meeting",
+   "tags": [
+    "FY25 budget",
+    "FinCom",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "H74 S34",
+   "resolution": "in progress",
+   "quote": "s.walker is currently working on a letter that the town manager could sign and send out to the appropriate people.",
+   "tags": [
+    "H74 S34",
+    "legislation",
+    "state representative"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund Investment",
+   "resolution": "deferred to next meeting",
+   "quote": "first quarter report has not been posted yet and should be available for our next meeting",
+   "tags": [
+    "enterprise fund",
+    "investment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "meeting adjourned at 7:05 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "local programming",
+  "line item transfer",
+  "payroll videographers",
+  "H74 S34",
+  "FY25 budget",
+  "enterprise fund",
+  "town meeting video",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {
+  "votes": 1,
+  "transfers": 1,
+  "topics": 1
+ }
 }

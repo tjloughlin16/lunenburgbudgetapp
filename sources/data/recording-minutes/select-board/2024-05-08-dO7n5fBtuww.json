@@ -1,0 +1,653 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2024-05-08",
+ "video_id": "dO7n5fBtuww",
+ "video_url": "https://www.youtube.com/watch?v=dO7n5fBtuww",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-05-08-dO7n5fBtuww.json",
+  "sha256": "74ecb551fdbd3821914a6efed9ac652337695870e9aaf7795cf6c1ee5dd71369",
+  "caption_lines": 408,
+  "segments": 3375
+ },
+ "recording": {
+  "duration_s": 8575,
+  "duration": "2:22",
+  "spoken_chars": 119463,
+  "words_approx": 19910
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05082024-6562",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-05-08-agenda-6562.txt",
+   "path": "sources/meetings/select-board/2024-05-08-agenda-6562.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05082024-6562",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-05-08-minutes-6562.txt",
+   "path": "sources/meetings/select-board/2024-05-08-minutes-6562.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T07:20:07Z",
+  "cost_usd": 0.3909858
+ },
+ "minutes": {
+  "headline": "Select Board voted 2-1 with two abstentions to recommend against the water district's PFAS treatment plan on the May 16 ballot.",
+  "summary": "Most of the meeting was a water district presentation on PFAS treatment and redundancy, followed by a presentation from Lunenburg Citizens for Affordable Clean Water opposing the plan. The board first rejected a motion to take no position, then voted to recommend disapproval. It also approved a letter supporting the governor's senior tax exemption amendment, signed warrants, skipped remaining items and adjourned because the building lights shut off.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (unnamed)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr Alonzo",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Selectman M",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Miss Lemieux",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Mark bur",
+    "role": "presenter (chairman, board of water commissioners)"
+   },
+   {
+    "name_as_heard": "Matt Woodward",
+    "role": "presenter (water commissioner)"
+   },
+   {
+    "name_as_heard": "L sraco (Tighe & Bond)",
+    "role": "presenter (consultant)"
+   },
+   {
+    "name_as_heard": "Fran MCM",
+    "role": "presenter (water superintendent)"
+   },
+   {
+    "name_as_heard": "Sarah camer",
+    "role": "presenter (board of assessors)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 168,
+    "speaker_as_heard": "Perry juwel",
+    "stated_role": "Board of Health member",
+    "topic": "Board of Health lost a member and needs write-in candidates for the open ballot seat to keep a quorum."
+   },
+   {
+    "t": 466,
+    "speaker_as_heard": "John Bowen",
+    "stated_role": "resident",
+    "topic": "Criticised cemetery commission and proposed a cemetery corporation; asked to be on next week's agenda."
+   },
+   {
+    "t": 1064,
+    "topic": "Resident asked that the room's audio be improved so people can hear presenters and the board."
+   },
+   {
+    "t": 1169,
+    "topic": "Resident said the water commissioners could not be heard with their backs to the audience."
+   },
+   {
+    "t": 5530,
+    "speaker_as_heard": "Bill",
+    "stated_role": "resident",
+    "topic": "Asked whether the 32.2 million vote is what must be done for PFAS and whether SRF funding is approved."
+   },
+   {
+    "t": 5760,
+    "speaker_as_heard": "John Fortune",
+    "stated_role": "resident",
+    "topic": "Asked about an emergency plan if the Keating well failed and how much the project would cost the town's buildings."
+   },
+   {
+    "t": 6071,
+    "speaker_as_heard": "Andrew staras",
+    "stated_role": "resident, Lunenburg Citizens for Affordable Clean Water",
+    "topic": "Presented opposition to the water district plan; urged the board to support a no vote."
+   }
+  ],
+  "tags": [
+   "debt",
+   "economic-development",
+   "grants",
+   "legal",
+   "public-comment",
+   "seniors",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "motion": "Take no action: make no recommendation either way on the water district's PFAS plan",
+    "moved_by": "Mr Franco",
+    "outcome": "failed",
+    "procedural": false,
+    "t": 7726
+   },
+   {
+    "motion": "Recommend disapproval (a no vote) of the water district project on the May 16 ballot",
+    "outcome": "passed 2-1 with two abstentions",
+    "procedural": false,
+    "t": 8201
+   },
+   {
+    "motion": "Approve letter of support for the governor's amendment to the means-tested senior citizen property tax exemption bill",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 8472
+   },
+   {
+    "motion": "Adjourn the meeting",
+    "outcome": "passed",
+    "procedural": true,
+    "t": 8557
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3499,
+    "topic": "State revolving fund loan for PFAS treatment",
+    "what_was_said": "The district said it received a state letter finding the added Lancaster Ave scope eligible for SRF financing; board members questioned whether funding is actually approved.",
+    "figures_as_heard": [
+     "17.3 million",
+     "$15 million"
+    ]
+   },
+   {
+    "t": 3791,
+    "topic": "Per-customer cost of project",
+    "what_was_said": "The district gave a per-quarter cost per customer assuming principal forgiveness.",
+    "figures_as_heard": [
+     "$13.79",
+     "3.3% principal forgiveness",
+     "$103"
+    ]
+   },
+   {
+    "t": 3854,
+    "topic": "Projected water rate increase",
+    "what_was_said": "The district showed the minimum charge and usage rate rising sharply, compared against sewer rates.",
+    "figures_as_heard": [
+     "$75",
+     "$120",
+     "$720 per 100 cubic feet",
+     "$12 per 100 cubic feet",
+     "$126 for 840 cubic feet",
+     "$15.85 for 100 cubic feet"
+    ]
+   },
+   {
+    "t": 4637,
+    "topic": "Loan term and interest",
+    "what_was_said": "Board member questioned whether the loan is 20 or 30 years and how compounding affects interest; district said 30 years is available on request.",
+    "figures_as_heard": [
+     "14 9 million",
+     "20",
+     "30"
+    ]
+   },
+   {
+    "t": 4840,
+    "topic": "Article amount",
+    "what_was_said": "District said the warrant article appropriates the full amount so the loan process is not delayed.",
+    "figures_as_heard": [
+     "32.2"
+    ]
+   },
+   {
+    "t": 5464,
+    "topic": "Operation and maintenance",
+    "what_was_said": "The consultant estimated annual media replacement costs with heavy caveats; board members noted operating costs were not presented.",
+    "figures_as_heard": [
+     "100 to $300,000 a year"
+    ]
+   },
+   {
+    "t": 6213,
+    "topic": "Citizens group cost comparison",
+    "what_was_said": "The citizens group argued the full plan costs far more than treating only Keating and Lancaster.",
+    "figures_as_heard": [
+     "$45 million",
+     "half",
+     "$27 million",
+     "$32 million"
+    ]
+   },
+   {
+    "t": 790,
+    "topic": "Cemetery article and funds",
+    "what_was_said": "A resident cited cemetery fund balances and the cost of forming a cemetery corporation.",
+    "figures_as_heard": [
+     "87,4 4561",
+     "235,000",
+     "$887,000",
+     "$10,000",
+     "$3,200",
+     "$3,800"
+    ]
+   },
+   {
+    "t": 8494,
+    "topic": "Warrants",
+    "what_was_said": "The chair read accounts payable and payroll warrants.",
+    "figures_as_heard": [
+     "98635 and10",
+     "$61,69 40 cents",
+     "$1,448",
+     "$1,200,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 122,
+    "decision": "Chair said the investigation report may not be reached; he will send the draft to members and ask the town manager to post it for next week."
+   },
+   {
+    "t": 1190,
+    "decision": "Water commissioners were asked to face the audience and the table was rearranged so the room could hear."
+   },
+   {
+    "t": 8409,
+    "decision": "Board concluded it had voted not to endorse the water district's plan as presented."
+   },
+   {
+    "t": 8536,
+    "decision": "Remaining agenda items and board comments were skipped because the building lights shut off."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 41,
+    "t_end": 168,
+    "topic": "Opening, pledge, open meeting notice, housekeeping",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 168,
+    "t_end": 773,
+    "topic": "Public comment: Board of Health vacancy; cemetery commission criticism",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 773,
+    "t_end": 1000,
+    "topic": "Board of Assessors update on abatements and subcommittee",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1000,
+    "t_end": 1324,
+    "topic": "Room audio complaints and seating rearrangement",
+    "resolution": "decision to rearrange",
+    "tags": [
+     "public-comment",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 1324,
+    "t_end": 4281,
+    "topic": "Water district PFAS presentation: treatment, redundancy, costs, rates, SRF",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "debt",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4281,
+    "t_end": 5930,
+    "topic": "Board and public questions on PFAS plan, test data, redundancy, loan terms",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "debt",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 5930,
+    "t_end": 7140,
+    "topic": "Lunenburg Citizens for Affordable Clean Water presentation",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 7140,
+    "t_end": 8409,
+    "topic": "Board discussion and votes on endorsing the water district plan",
+    "resolution": "voted: no-action motion failed; disapproval recommended",
+    "tags": [
+     "water-sewer",
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 8409,
+    "t_end": 8494,
+    "topic": "Letter of support for senior tax exemption amendment",
+    "resolution": "voted",
+    "tags": [
+     "seniors",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 8494,
+    "t_end": 8557,
+    "topic": "Warrants and adjournment",
+    "resolution": "warrants read; adjourned",
+    "tags": [
+     "transfers"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The exact roll of members present was never called; names are inferred from how members were addressed.",
+   "Vote counts: the no-action motion was declared failed without a count; the disapproval vote tally was stated as two to one with two abstentions amid confusion.",
+   "Warrant amounts were garbled in the captions.",
+   "The mover of the disapproval motion was not identified.",
+   "Cemetery fund figures in one public comment were garbled."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 2-1, with two abstentions, to recommend against the water district's PFAS treatment plan on the May 16 ballot.",
+    "t": 8201
+   },
+   {
+    "line": "A motion to take no action and make no recommendation either way had failed first.",
+    "t": 7726
+   },
+   {
+    "line": "The board approved a letter supporting the governor's amendment to the means-tested senior citizen property tax exemption.",
+    "t": 8472
+   },
+   {
+    "line": "Most of the meeting was a water district presentation on the plan's cost, rates and loan, followed by a presentation from a citizens group opposing it.",
+    "t": 6071
+   },
+   {
+    "line": "The remaining agenda items and board comments were skipped when the building lights shut off.",
+    "t": 8536
+   }
+  ],
+  "why_it_matters": [
+   "Residents will be asked to vote on the water district's PFAS project on the May 16 ballot, and the Select Board's recommendation is a no.",
+   "Board members and residents questioned whether the state revolving fund financing is actually approved and noted that operating costs were not presented, so the full effect on water rates is not settled in the record."
+  ],
+  "watch_next": [
+   "The May 16 ballot vote on the water district's PFAS treatment project.",
+   "The chair's draft investigation report, which he said he would send to members and ask the town manager to post for next week."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T07:20:15Z",
+   "cost_usd": 0.218795
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05082024-6562",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-05-08-minutes-6562.txt",
+   "path": "sources/meetings/select-board/2024-05-08-minutes-6562.pdf"
+  },
+  "official_sha256": "5e5c55cca769dd7b977c0c7fbc084143d94e1e5ce30c975015d6700242ea473a",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the three non-procedural votes and on who was on the board. They differ on the vote tallies, one date on the ballot, the warrant figures (caption errors), and a long list of water-district and cemetery items that appear only in our minutes. The one thing to know: the official minutes give the PFAS \"no recommendation\" motion as failed 2-3-0, but ours records only that it failed; and our minutes show the meeting ending early when the lights shut off, which the official minutes do not mention.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 7,
+   "discrepancy": 2,
+   "only_in_ours": 7,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: no recommendation on water district PFAS plan",
+    "t": 7726,
+    "ours": "Take no action: make no recommendation either way on the water district's PFAS plan — failed",
+    "official": "motion by vice-chair franco that the board not make a recommendation in either direction. clerk nuzzolo seconded the motion.",
+    "note": "Both records show the motion failing; the official gives the tally 2-3-0, ours gives none."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: recommend disapproval of water district project",
+    "t": 8201,
+    "ours": "Recommend disapproval (a no vote) of the water district project on the May 16 ballot — passed 2-1 with two abstentions",
+    "official": "member alonzo moved that the board of selectmen recommend a disapproval, or a \"no\" vote, on this issue at the may 18 meeting on the project as presented. member emkey seconded.",
+    "note": "Same motion and outcome, and 2-1-2 matches 2-1 with two abstentions. The meeting date differs (see the next finding)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Date of the water district meeting/ballot",
+    "t": 8201,
+    "ours": "water district project on the May 16 ballot",
+    "official": "at the may 18 meeting on the project as presented",
+    "note": "Ours says May 16 ballot; the official says May 18 meeting. This may be a mishearing or a different event (ballot vs. meeting); check the recording and the warrant for the actual date."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: letter of support for Governor's amendment to senior tax exemption bill",
+    "t": 8472,
+    "ours": "Approve letter of support for the governor's amendment to the means-tested senior citizen property tax exemption bill — passed",
+    "official": "member alonzo moved to do so. vice-chair franco seconded the motion. call for the vote: five-aye. the motion passed unanimously. (5-0-0).",
+    "note": "Same motion, both passed; the official adds the unanimous 5-0-0 tally."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts Payable warrant 1",
+    "t": 8494,
+    "ours": "98635",
+    "official": "the board approved accounts payable warrants in the amount of $986,358.10; $61,139.40; $11,414.87 and payroll warrant in the amount of $1,200,113.12.",
+    "official_reading": "$986,358.10",
+    "note": "Captions garbled the digits of the first warrant; the amount is the same item."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts Payable warrant 2",
+    "t": 8494,
+    "ours": "$61,69 40 cents",
+    "official": "the board approved accounts payable warrants in the amount of $986,358.10; $61,139.40; $11,414.87 and payroll warrant in the amount of $1,200,113.12.",
+    "official_reading": "$61,139.40",
+    "note": "Misheard digits in the same warrant amount."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts Payable warrant 3",
+    "t": 8494,
+    "ours": "and10 / $1,448",
+    "official": "the board approved accounts payable warrants in the amount of $986,358.10; $61,139.40; $11,414.87 and payroll warrant in the amount of $1,200,113.12.",
+    "official_reading": "$11,414.87",
+    "note": "Our 'and10' and '$1,448' appear to be a broken rendering of $11,414.87; verify against the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Payroll warrant",
+    "t": 8494,
+    "ours": "$1,200,000",
+    "official": "the board approved accounts payable warrants in the amount of $986,358.10; $61,139.40; $11,414.87 and payroll warrant in the amount of $1,200,113.12.",
+    "official_reading": "$1,200,113.12",
+    "note": "Ours is rounded or truncated; the official gives the exact amount."
+   },
+   {
+    "kind": "agree",
+    "about": "Warrants approved",
+    "t": 8494,
+    "ours": "Warrants: 98635 and10, $61,69 40 cents, $1,448, $1,200,000",
+    "official": "the board approved accounts payable warrants in the amount of $986,358.10; $61,139.40; $11,414.87 and payroll warrant in the amount of $1,200,113.12.",
+    "note": "Both record the warrants being approved; only the figures differ, covered by the caption-error findings."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member Selectman M / Emkey",
+    "ours": "Selectman M (member)",
+    "official": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, member renee emkey",
+    "official_reading": "Renee Emkey / Caesar Nuzzolo",
+    "note": "Our unclear 'Selectman M' is probably one of the other two named members; the board had five members present, ours lists only four plus the chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr Alonzo",
+    "ours": "Mr Alonzo (member)",
+    "official": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, member renee emkey",
+    "official_reading": "Tom Alonzo",
+    "note": "Same person; ours gives the surname only."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Franco",
+    "ours": "Mr Franco (member)",
+    "official": "members present: chair michael-ray jeffreys, vice-chair lou franco, clerk caesar nuzzolo, member tom alonzo, member renee emkey",
+    "note": "Same person; the official gives the title Vice-Chair."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Town Manager",
+    "ours": "Miss Lemieux (town manager)",
+    "official": "also present: heather lemieux, town manager.",
+    "note": "Same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Sarah Cammer, Board of Assessors",
+    "ours": "Sarah camer (presenter (board of assessors))",
+    "official": "chair jeffries recognized sarah cammer from the board of assessors.",
+    "official_reading": "Sarah Cammer",
+    "note": "Spelling only."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Water district presenters (Mark bur, Matt Woodward, L sraco of Tighe & Bond, Fran MCM)",
+    "ours": "Mark bur (presenter (chairman, board of water commissioners)); Matt Woodward (presenter (water commissioner)); L sraco (Tighe & Bond) (presenter (consultant)); Fran MCM (presenter (water superintendent))",
+    "official": "",
+    "note": "The official attendee list does not name any water district presenters; the names in ours are partly misheard and should be checked against the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Residents and citizens group who spoke",
+    "ours": "",
+    "official": "(bill emkey, joan pease, andy starvaski, john fortune, barbara turkington), who gave a powerpoint presentation.",
+    "note": "The official records the Lunenburg Citizens for Affordable Clean Water presentation and its members, plus John Bowen, Bill Emkey, Joseph Bancroft and Perry Jewell; none of these are in our attendee list, though our figures at t=6213 cover the citizens group comparison."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "PFAS financing and rate figures",
+    "t": 3499,
+    "ours": "State revolving fund loan for PFAS treatment: 17.3 million, $15 million; per-customer cost $13.79, 3.3% principal forgiveness, $103; water rate increase and loan term figures; Article amount 32.2; O&M 100 to $300,000 a year",
+    "official": "",
+    "note": "The official minutes print no dollar figures for the PFAS project; they only note possible zero percent DEP funding. These figures rest on captions and cannot be checked against the official."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Citizens group cost comparison",
+    "t": 6213,
+    "ours": "$45 million, half, $27 million, $32 million",
+    "official": "",
+    "note": "The official records the citizens' PowerPoint but prints none of its figures."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "DEP zero percent funding question",
+    "ours": "",
+    "official": "zero percent funding may be available from the dep (department of environmental protection); member renee emkey asked about the funding",
+    "official_reading": "",
+    "note": "Our figures mention 3.3% principal forgiveness but not a zero percent DEP funding question; the two may describe the same discussion, so check."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Questions on ongoing maintenance and cost to the town",
+    "ours": "",
+    "official": "clerk caesar nuzzolo asked about ongoing maintenance and costs for maintenance.",
+    "note": "Our minutes record an O&M figure at t=5464 but not the clerk's question."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cemetery article and funds",
+    "t": 790,
+    "ours": "Cemetery article and funds: 87,4 4561, 235,000, $887,000, $10,000, $3,200, $3,800",
+    "official": "he discussed cemetery funding and needs, and he would like to make a presentation at an upcoming meeting.",
+    "note": "The official prints no cemetery figures; ours has several, unverified and partly garbled."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair says investigation report may not be reached",
+    "t": 122,
+    "ours": "Chair said the investigation report may not be reached; he will send the draft to members and ask the town manager to post it for next week.",
+    "official": "",
+    "note": "The official minutes do not mention the investigation report."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Room rearranged so audience could hear",
+    "t": 1190,
+    "ours": "Water commissioners were asked to face the audience and the table was rearranged so the room could hear.",
+    "official": "",
+    "note": "Procedural detail not in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Board conclusion on water district plan",
+    "t": 8409,
+    "ours": "Board concluded it had voted not to endorse the water district's plan as presented.",
+    "official": "member alonzo moved that the board of selectmen recommend a disapproval, or a \"no\" vote, on this issue at the may 18 meeting on the project as presented. member emkey seconded.",
+    "note": "The two records agree on the vote itself, but ours frames it as 'not endorse' where the official records a motion to recommend a 'no' vote; check the recording at this point for how the chair characterised it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meeting ended early when building lights shut off",
+    "t": 8536,
+    "ours": "Remaining agenda items and board comments were skipped because the building lights shut off.",
+    "official": "",
+    "note": "The official minutes give no reason for skipped items; confirm against the recording and the agenda."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T07:21:51Z",
+   "cost_usd": 0.259611
+  }
+ }
+}

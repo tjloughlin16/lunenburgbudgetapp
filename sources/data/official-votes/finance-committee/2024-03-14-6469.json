@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-03-14",
  "docid": "6469",
@@ -12,15 +12,404 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting.",
+   "motion": "Motion to adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Tom Gray",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn by chris menard, seconded by tom gray. all in favor."
+   "quote": "there was a motion to adjourn by chris menard, seconded by tom gray."
   }
  ],
- "dropped_unquoted": 0,
- "note": "This Finance Committee meeting consisted primarily of budget presentations (Fire Department, Lunenburg Public Schools) and discussion of warrant articles and budget topics, but no votes were recorded on these presentations or discussion items. The only motion brought to a vote was the motion to adjourn at the end of the meeting.",
- "cost_usd": 0.07653950000000001
+ "dropped_unquoted": 1,
+ "note": "Text is a clean extraction, not a scan. Only one recorded vote: the motion to adjourn, with the count not printed ('All in favor'), so outcome is recorded as 'passed' without a count. No roll-call votes. Votes by other bodies (the Board of Assessors on the overlay) are described but are not votes of this committee and are not recorded as votes here. Heather Lemieux's role is not printed in the minutes. The minutes spell the school presenter's name 'Dave Passion' once; the name is recorded as Dave Passios. Some quotes were shortened for length; the apostrophe in some source lines is a curly quote, copied as printed. The Ezequiel Ayala reference is not recorded as attendance, since he is mentioned but not shown taking part.",
+ "cost_usd": 0.01744967,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair evan watters, vice chair chris menard, clerk tiffaney tavares"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "chair evan watters, vice chair chris menard, clerk tiffaney tavares"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair evan watters, vice chair chris menard, clerk tiffaney tavares"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member (Zoom)",
+   "status": "remote",
+   "quote": "board member jean russell (zoom)"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member jay simeone"
+  },
+  {
+   "name": "Pat Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "the fire chief, pat sullivan, provided the presentation."
+  },
+  {
+   "name": "Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "presentation by superintendent dr. kate burnham, director of special services julianna hanscom, and facilities director eric hevy"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services",
+   "status": "present",
+   "quote": "director of special services julianna hanscom, and facilities director eric hevy"
+  },
+  {
+   "name": "Eric Hevy",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "julianna hanscom, and facilities director eric hevy"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather lemieux states there is 1.9 million in that account."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "not stated",
+   "status": "present",
+   "quote": "anna lockwood believes we need to explore creating redundancy in facilities in towns and create a succession plan."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of this meeting to be approved at the next meeting.",
+   "quote": "all minutes will be approved at the next meeting."
+  },
+  {
+   "decision": "Board requested a presentation after budget season on the health insurance plan.",
+   "quote": "the board requested a presentation after budget season relating to the health insurance plan."
+  },
+  {
+   "decision": "Full school budget presentation scheduled for March 21st, after the school has voted on its budget.",
+   "quote": "the full presentation will take place on march 21st after the school has voted on their budget."
+  },
+  {
+   "decision": "Finance Director to bring chapter 90 information to the Committee the following week.",
+   "quote": "ezequiel ayala received an email relating to the chapter 90 funds and plans to get those to the committee next week."
+  },
+  {
+   "decision": "Facilities Director to look into contracts for paper goods and dispensaries, and into BMS notification capacity.",
+   "quote": "eric hevy will look into this further."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire department FY25 level service budget",
+   "what_was_recorded": "The proposed FY25 level service budget is a 2.21% overall increase, including contractual increases and 100% paramedics coverage.",
+   "figures_as_printed": [
+    "2.21%"
+   ],
+   "quote": "the proposed level service budget for 2025 consists of an overall 2.21% increase from last year."
+  },
+  {
+   "topic": "Public safety radio replacement",
+   "what_was_recorded": "Replacement public safety radios cost between $3,000 and $5,000 per unit with a 10-25 year lifespan; radio maintenance rises by $10,000; a replacement grant was applied for and denied.",
+   "figures_as_printed": [
+    "$3,000 to $5,000",
+    "$10,000"
+   ],
+   "quote": "replacement of public safety grade radios that range from $3,000 to $5,000 per unit and have a lifespan of 10-25 years."
+  },
+  {
+   "topic": "Fire department radio maintenance",
+   "what_was_recorded": "Radio maintenance increases by a stated amount.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "there is a $10,000 increase in radio maintenance."
+  },
+  {
+   "topic": "State firefighting equipment grant (FY24)",
+   "what_was_recorded": "A state grant for firefighting equipment funded 3 portable radios and power saws.",
+   "figures_as_printed": [
+    "$18,853"
+   ],
+   "quote": "a state grant for firefighting equipment was received in fy 24 and $18,853 was used to cover 3 portable radios and the replacement of power saws."
+  },
+  {
+   "topic": "EMPG grant (FY24)",
+   "what_was_recorded": "The EMPG grant totaled an amount used for cold water rescue suits and an inflatable rescue sled.",
+   "figures_as_printed": [
+    "$3,750"
+   ],
+   "quote": "in fy 24, the empg grant was awarded and totaled $3,750."
+  },
+  {
+   "topic": "S.A.F.E. / Senior Safe grant",
+   "what_was_recorded": "A S.A.F.E. / Senior Safe grant totaled an amount used for smoke detectors, senior safety and fire safety education.",
+   "figures_as_printed": [
+    "$7,430"
+   ],
+   "quote": "a grant for s.a.f.e. / senior safe was received and totaled $7,430."
+  },
+  {
+   "topic": "Road maintenance bid",
+   "what_was_recorded": "Road maintenance bids came in under estimate and the contract was awarded to PJ Keating for a 1-year term.",
+   "figures_as_printed": [
+    "$127,000",
+    "$634,000"
+   ],
+   "quote": "the bid was $127,000 under the estimate. this bid was awarded to pj keating for a 1-year contract totaling $634,000."
+  },
+  {
+   "topic": "New growth and certification",
+   "what_was_recorded": "New growth and certification were approved at a stated figure.",
+   "figures_as_printed": [
+    "$630,220"
+   ],
+   "quote": "the new growth and certification were approved at $630,220."
+  },
+  {
+   "topic": "Overlay and additional new growth",
+   "what_was_recorded": "The $120,000 overlay will not change per a Board of Assessors vote; additional new growth goes to the school budget.",
+   "figures_as_printed": [
+    "$120,000",
+    "$236,025.50"
+   ],
+   "quote": "the additional new growth of $236,025.50 will be added to the school's budget."
+  },
+  {
+   "topic": "Chapter 90 account balance",
+   "what_was_recorded": "The Town Manager reported the Chapter 90 account holds a stated balance; funds were not used while old pavement plan roads were completed.",
+   "figures_as_printed": [
+    "1.9 million"
+   ],
+   "quote": "heather lemieux states there is 1.9 million in that account."
+  },
+  {
+   "topic": "Parks Commission grant",
+   "what_was_recorded": "Parks Commission was granted a $1 million grant, bringing secured grant money to a stated total.",
+   "figures_as_printed": [
+    "1-million-dollar",
+    "2.5 million"
+   ],
+   "quote": "chris menard states the parks commission was granted a 1-million-dollar grant bringing their secured grant money amount up to 2.5 million."
+  },
+  {
+   "topic": "High school department head stipend",
+   "what_was_recorded": "A new $25,000 budget line for high school department heads, previously covered by a revolving account, is now contractual.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "tom gray questions why there was a $25,000-budget line for high school department heads"
+  },
+  {
+   "topic": "Line 2110 (instructional services and curriculum director)",
+   "what_was_recorded": "Line 2110 rose from FY24 to FY25 due to a curriculum director position being funded more fully in the local budget; the school said this does not reflect raises.",
+   "figures_as_printed": [
+    "$234,000",
+    "$271,100"
+   ],
+   "quote": "in fy 24 it was $234,000 and in fy 25 it grew to $271,100."
+  },
+  {
+   "topic": "Keystone Education Collaborative rates",
+   "what_was_recorded": "Keystone rates were raised almost 11%; last year a 14% increase was reportedly absorbed through circuit breaker carryover.",
+   "figures_as_printed": [
+    "almost 11%",
+    "14%"
+   ],
+   "quote": "the rates being raised almost 11%."
+  },
+  {
+   "topic": "Circuit breaker reimbursement",
+   "what_was_recorded": "Circuit breaker reimbursement has been at 75% for the last 3 to 4 years.",
+   "figures_as_printed": [
+    "75%"
+   ],
+   "quote": "the last 3 to 4 years the reimbursement has been at 75%."
+  },
+  {
+   "topic": "Middle high school elevator repair",
+   "what_was_recorded": "An elevator repair was estimated and an inspection failed; repair cost was stated.",
+   "figures_as_printed": [
+    "$14,800"
+   ],
+   "quote": "someone came in and assessed the situation and it cost $14,800 to repair."
+  },
+  {
+   "topic": "Building assessment technician quote",
+   "what_was_recorded": "A quote for two technicians for an eight-hour day to begin going through buildings was received.",
+   "figures_as_printed": [
+    "$3,200"
+   ],
+   "quote": "eric hevy received a quote for having 2 technicians for an eight-hour day to start going through the building would cost roughly $3,200."
+  },
+  {
+   "topic": "Federal grant timing",
+   "what_was_recorded": "Federal grant allocations are not known until late July or early August; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "we don't find out our grant allocation for federal grants until late july or early august."
+  },
+  {
+   "topic": "ARPA funding for Letter E",
+   "what_was_recorded": "If an article does not pass, the decision falls back to the budget, potentially paid from ARPA funds; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "potentially paying out of arpa funds."
+  },
+  {
+   "topic": "SAP comp class impact",
+   "what_was_recorded": "The SAP comp class impact on this year and next year’s budget would come from the salary reserve account; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager confirms that is the case and that impact would come out of our salary reserve account."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "SAP comp class impact on FY25 and following-year budget to come from the salary reserve account.",
+   "amount_as_printed": "",
+   "outcome": "stated by Town Manager; no vote recorded; no amount printed",
+   "quote": "the town manager confirms that is the case and that impact would come out of our salary reserve account."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "not stated",
+   "topic": "Facilities redundancy, succession planning, and a spring 5-year plan",
+   "quote": "anna lockwood believes we need to explore creating redundancy in facilities in towns and create a succession plan."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Board Member",
+   "topic": "Reflection on budget season and expected override outcome",
+   "quote": "dave passios reflected on where we are now compared to when the budget season started and where we are going to end up."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:01 pm."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "there were no announcements."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "there were no public comments."
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no action",
+   "quote": "a proposal was received for marshall park."
+  },
+  {
+   "topic": "Finance Director Report",
+   "resolution": "no action; chapter 90 information to come next week",
+   "quote": "ezequiel ayala received an email relating to the chapter 90 funds and plans to get those to the committee next week."
+  },
+  {
+   "topic": "Fire Department FY25 budget presentation and capital/grant update",
+   "resolution": "presented; questions answered; no vote",
+   "quote": "the fire chief, pat sullivan, provided the presentation."
+  },
+  {
+   "topic": "Lunenburg Public Schools FY25 budget (partial, special services and facilities)",
+   "resolution": "questions only; full presentation March 21st",
+   "quote": "this was not the full school budget presentation and only consisted of questions by the committee for the above 2 departments."
+  },
+  {
+   "topic": "Warrant article discussion",
+   "resolution": "no action; article drafts reviewed",
+   "quote": "there was nothing to report out of the normal."
+  },
+  {
+   "topic": "Public Comment on FY25 Budget Presentation",
+   "resolution": "no action",
+   "quote": "anna lockwood believes we need to explore creating redundancy in facilities in towns and create a succession plan."
+  },
+  {
+   "topic": "FY21-FY23 Revenue and Expenditures Recap",
+   "resolution": "skipped",
+   "quote": "this topic was skipped."
+  },
+  {
+   "topic": "FY25 Budget Update and upcoming presentations",
+   "resolution": "no additional discussion; upcoming presentations listed",
+   "quote": "there are no additional discussions."
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "all minutes will be approved at the next meeting."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported; no action",
+   "quote": "chris menard states the parks commission was granted a 1-million-dollar grant"
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "requests noted; no vote",
+   "quote": "the board requested a presentation after budget season relating to the health insurance plan."
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no action",
+   "quote": "dave passios reflected on where we are now compared to when the budget season started and where we are going to end up."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:26 PM",
+   "quote": "the meeting closed at 10:26 pm."
+  }
+ ],
+ "tags": [
+  "FY25 budget",
+  "fire department",
+  "public schools",
+  "capital plan",
+  "circuit breaker",
+  "special education",
+  "facilities and maintenance",
+  "warrant articles",
+  "Chapter 90",
+  "Parks grant",
+  "grants",
+  "town meeting",
+  "health insurance",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

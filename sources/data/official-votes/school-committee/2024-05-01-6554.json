@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-05-01",
  "docid": "6554",
@@ -13,30 +13,390 @@
  "votes": [
   {
    "motion": "Accept the Extended Day and ELC handbooks",
-   "moved_by": "Mr. Sculimbrene",
-   "seconded_by": "Mr. Lehtinen",
+   "moved_by": "Anthony Sculimbrene",
+   "seconded_by": "Brian Lehtinen",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. sculimbrene makes a motion to accept these handbooks. mr. lehtinen seconds the motion. all approve"
   },
   {
-   "motion": "Suspend the food and drink policy at the LMHS auditorium for May 4th 2024 town meeting",
-   "moved_by": "Mr. Beardmore",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Suspend the food and drink policy at the LMHS auditorium for the May 4 2024 town meeting",
+   "moved_by": "Peter Beardmore",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. beardmore makes a motion to suspend the food and drink policy at the lmhs auditorium for may 4 th 2024 town meeting mr. sculimbrene seconds the motion, all approve."
   },
   {
-   "motion": "Enter executive session and adjourn",
-   "moved_by": "Mr. Sculimbrene",
-   "seconded_by": "Ms. Brzozoski",
+   "motion": "Enter executive session and adjourn immediately after, at 9:50",
+   "moved_by": "Anthony Sculimbrene",
+   "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. sculimbrene makes a motion to enter executive session and adjourn immediately after at 9:50 ms. brzozoski seconds the motion all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Readable text from clear minutes; all votes recorded with full motion language and outcomes stated as \"All approve\"",
- "cost_usd": 0.0878511
+ "note": "Text-only minutes, three pages, readable; no scan. Votes are recorded only as \"All approve\" with no count printed, so outcomes are recorded as \"passed\". The warrant approval has no motion recorded and is not counted as a vote. No transfers are printed. Minutes do not record a roll call. Mr. Bernard in the text is Bill Bernard, DPW Director, listed as a guest. Public comment speakers are inferred from the minutes text, which does not name a speaker for the Beardmore remarks beyond the sentence \"Mr. Beardmore mentions\" followed by first-person text; attribution is as printed. Some quotes collapse double spaces and reproduce a few printed spacing oddities (\"4 th\", \"r ental\") as single spaces. Mr. Hevy and Ms. Guillette take part but their attendance and roles are not printed. Dr. Ridley is mentioned for a June 26 update but is not recorded as taking part.",
+ "cost_usd": 0.01942897,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "dr. burnham shares that the parking passes, and pre-k tuition go into the general fund"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director (guest)",
+   "status": "present",
+   "quote": "guests: bill bernard, dpw director"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Mr. Hevy",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mr. hevy confirms we do pile snow there"
+  },
+  {
+   "name": "Ms. Guillette",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "ms. guillette shares there aren't any significant changes"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Payroll Modification item postponed (no vote recorded).",
+   "quote": "d. payroll modification postpone"
+  },
+  {
+   "decision": "Reports item postponed (no vote recorded).",
+   "quote": "11. reports - postpone"
+  },
+  {
+   "decision": "Committee agreed, without a vote, that a transportation fee is not an option.",
+   "quote": "the committee agrees transportation fee is not an option."
+  },
+  {
+   "decision": "Finance workshop attendance deferred until a new finance/business director is in place, by consensus of Mr. Beardmore and Ms. Brzozoski.",
+   "quote": "mr. sculimbrene asked if we could wait for a new finance/business director to take this workshop, mr. beardmore and ms. brzozoski agree"
+  },
+  {
+   "decision": "School choice pricing to be revisited at the next meeting (no vote recorded).",
+   "quote": "we will look at this for the next meeting"
+  },
+  {
+   "decision": "Chair suggested asking the principal, speaking with Mr. Hevy, and voting on the rain water retention project on May 22; no vote was recorded at this meeting.",
+   "quote": "ms. archambault suggests we ask the principal and speak with mr. hevy and vote on may 22"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant total for 4/10/24-4/29/24",
+   "what_was_recorded": "The warrant total for the period was reported and signed by the chair with no questions.",
+   "figures_as_printed": [
+    "$328,208.42"
+   ],
+   "quote": "warrant total 4/10/24-4/29/24 $328,208.42 warrants have been signed by ms. archambault, no questions."
+  },
+  {
+   "topic": "Town meeting lunch price",
+   "what_was_recorded": "Lunch at the town meeting was announced at a stated price, with child care also available.",
+   "figures_as_printed": [
+    "$7"
+   ],
+   "quote": "lunch will be available for $7 and child care will also be available."
+  },
+  {
+   "topic": "Rain water retention project funding",
+   "what_was_recorded": "The project would be paid from operational funds rather than a grant; no cost figure was recorded, and the committee asked whether the school would be expected to pay for maintenance.",
+   "figures_as_printed": [],
+   "quote": "no this would come from operational funds"
+  },
+  {
+   "topic": "FY24 budget update",
+   "what_was_recorded": "Budget and line item transfers were expected at the next meeting; contracted finance personnel were meeting weekly with the finance director; a finance workshop was discussed. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "we should have an updated budget and any line item transfers at our next meeting."
+  },
+  {
+   "topic": "Revenue sources and fees",
+   "what_was_recorded": "Possible new fees (athletics, activity, facility rental, cell tower, solar, parking passes) were listed for exploration; the committee discussed fee increases and ruled out a transportation fee. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "we are exploring fees and options."
+  },
+  {
+   "topic": "Parking passes and pre-K tuition",
+   "what_was_recorded": "The superintendent stated that parking pass and pre-K tuition revenue go into the general fund while the school pays the salaries. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "dr. burnham shares that the parking passes, and pre-k tuition go into the general fund, the school pays the"
+  },
+  {
+   "topic": "School choice cost per student",
+   "what_was_recorded": "The school receives a per-student amount, but the cost per student is stated to be higher.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "we receive $5000 per student, however the cost per student is more than that."
+  },
+  {
+   "topic": "Athletics funding presentation",
+   "what_was_recorded": "The superintendent presented a slide show on how middle and high school athletics are funded, with anticipated expenses. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "dr. burnham shares a slide show presentation explaining how we fund our middle and high school athletic programs"
+  },
+  {
+   "topic": "Override presentation",
+   "what_was_recorded": "A slide show on the override was to be shown at town hall; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "override mr. beardmore shares a slide show presentation that will be shown at town hall"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "topic": "hiring and retention; tribute to Don Adams",
+   "quote": "i would like to recognize an individual that was instrumental in my education."
+  },
+  {
+   "speaker": "Laura Brzozoski",
+   "topic": "town meeting reminder and child care",
+   "quote": "ms. brzozoski reminds everyone to come to town meeting this saturday. child care will be available."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (item 3)",
+   "resolution": "remarks made; no action",
+   "quote": "mr. beardmore mentions one issue we will discuss tonight is how to hire and retain staff.",
+   "tags": [
+    "public comment",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Chair's Report (item 4)",
+   "resolution": "reported; no action",
+   "quote": "chairs report don adams, was a colleague, mentor, and a delightful person.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Review & Approve Minutes (item 5)",
+   "resolution": "no minutes to approve (regular session none)",
+   "quote": "a. regular session - none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and line item transfers (item 6)",
+   "resolution": "warrant total reported and signed; no motion recorded",
+   "quote": "warrant total 4/10/24-4/29/24 $328,208.42 warrants have been signed by ms. archambault, no questions.",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's Report (item 7)",
+   "resolution": "reported; no action",
+   "quote": "we have received 1503 transportation forms, we still need 38 at the high school",
+   "tags": [
+    "transportation",
+    "registration",
+    "kindergarten"
+   ]
+  },
+  {
+   "topic": "Student Representative Report (item 8)",
+   "resolution": "reported; no action",
+   "quote": "primary school has a steam night tomorrow from 5:30-7, turkey hill will be hosting.",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Rain water retention project (9a)",
+   "resolution": "discussed; vote deferred to May 22",
+   "quote": "shares a presentation to the committee regarding a rain retention project",
+   "tags": [
+    "facilities",
+    "stormwater",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Extended Day / ELC handbooks (9b)",
+   "resolution": "approved by motion",
+   "quote": "mr. sculimbrene makes a motion to accept these handbooks. mr. lehtinen seconds the motion. all approve",
+   "tags": [
+    "handbooks",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting food in auditorium (9c)",
+   "resolution": "food and drink policy suspended by motion",
+   "quote": "dr. burnham shares there will be pre-made bagged lunches available for purchase during the town meeting.",
+   "tags": [
+    "town meeting",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Payroll modification (9d)",
+   "resolution": "postponed",
+   "quote": "d. payroll modification postpone",
+   "tags": [
+    "payroll"
+   ]
+  },
+  {
+   "topic": "FY24 budget (9e)",
+   "resolution": "discussed; updated budget due next meeting",
+   "quote": "our team including the contracted finance personnel are now meeting weekly with the finance director at town hall.",
+   "tags": [
+    "FY24 budget",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Revenue sources (9f)",
+   "resolution": "discussed; transportation fee ruled out by consensus",
+   "quote": "revenue sources during the budget cycle comments and questions were coming in from parents",
+   "tags": [
+    "fees",
+    "revenue",
+    "athletics"
+   ]
+  },
+  {
+   "topic": "School choice (10a)",
+   "resolution": "discussed; revisit at next meeting",
+   "quote": "we have voted to participate in the school choice program we elected to open 5 seats",
+   "tags": [
+    "school choice"
+   ]
+  },
+  {
+   "topic": "Athletic funding (10b)",
+   "resolution": "presentation; no action",
+   "quote": "athletic funding dr. burnham shares a slide show presentation explaining how we fund our middle and high school athletic programs",
+   "tags": [
+    "athletics",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Override (10c)",
+   "resolution": "presentation; no action",
+   "quote": "override mr. beardmore shares a slide show presentation that will be shown at town hall",
+   "tags": [
+    "override",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Reports (item 11)",
+   "resolution": "postponed",
+   "quote": "11. reports - postpone",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Public Comment (item 12)",
+   "resolution": "none",
+   "quote": "12. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion (item 13)",
+   "resolution": "Superintendent's Evaluation listed for future discussion",
+   "quote": "topics for future discussion superintendents evaluation",
+   "tags": [
+    "superintendent evaluation"
+   ]
+  },
+  {
+   "topic": "Executive session (item 14)",
+   "resolution": "entered by motion at adjournment",
+   "quote": "executive session - to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Adjournment (item 15)",
+   "resolution": "passed by motion at 9:50",
+   "quote": "mr. sculimbrene makes a motion to enter executive session and adjourn immediately after at 9:50",
+   "tags": [
+    "adjournment",
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "town meeting",
+  "FY24 budget",
+  "school fees",
+  "athletics funding",
+  "school choice",
+  "rain water retention",
+  "stormwater",
+  "override",
+  "handbooks",
+  "food policy",
+  "public comment",
+  "executive session",
+  "superintendent evaluation",
+  "staffing"
+ ],
+ "dropped_unquoted_by_field": {}
 }
