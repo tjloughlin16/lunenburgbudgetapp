@@ -1,0 +1,429 @@
+===PAGE 111===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 111 
+ 
+Results 
+The report indicates if a fund is in balance, and if not, what transactions have caused it to be out of 
+balance. When reading the Account Trial Balance Report, remember that both the beginning balances 
+and the ending balances should be zero, and debits should equal credits for the fund totals. 
+What’s Next? 
+If there are any discrepancies in the report, post the correcting journal entries to bring the fund back into 
+balance.  
+  
+===PAGE 112===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 112 
+ 
+Import Journals     
+Objective 
+This document provides instructions on how to import data from ASCII files using the Import Journals 
+program. This program is used for journal imports from systems or sources other than Munis.  
+Overview 
+When you import journal data into Munis, data must be in specific formats and you must understand the 
+various file layouts. The following import formats are available in the Import Journals program: 
+• Budget— This is a fixed length ASCII file layout for importing standard journal entries.   
+• Budget Long Account— The account type is in position 141 and the long account number is in 
+positions 142 to 176; the remaining format is the same as the Budget Import Format. 
+• Cayenta—This is a fixed length ASCII file layout for importing journal entries from a Cayenta 
+system into Munis.   
+• Faster— This is a fixed length ASCII file layout for importing journal entries from a FASTER fleet 
+maintenance system into Munis. (Note: FASTER is the name of the software.) 
+• ISIS Payroll ZF65 Report—This format imports data from Microsoft Excel. This import is specific 
+to the Louisiana Department of Education. 
+• Jonas— This format is tab-delimited. 
+• NC Vehicle Property Tax—This import format is specific to the state of North Carolina.  
+• Oklahoma Benefit— This format is intended for use by El Monte and Tulsa, Oklahoma. 
+• Oklahoma Payroll—This format is intended for use by El Monte and Tulsa, Oklahoma.  
+• PeopleSoft— This format imports Excel data from a PeopleSoft system into Munis. 
+• Pipe Delimited 1— This format is delimited using pipe characters (|). When you import using this 
+format, the program examines the org and object codes and determines whether the 
+combination represents an existing Munis account. If the account is valid, the program uses that 
+account. If the account is not valid, the program combines the org and object with a hyphen 
+between the two, and then applies that value to the cross-reference table in order to select a 
+cross reference string. 
+• Standard— This is a fixed length ASCII file layout for importing standard journal entries. 
+• Standard Excel— This is a standard format for importing a Microsoft Excel file. When this format 
+is selected, the program displays the Generate Excel Template button. Clicking the button 
+opens Excel with a blank form containing only column headers. This form can be used to create 
+the import file. 
+===PAGE 113===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 113 
+ 
+• Standard Long Account—This is a fixed length ASCII file layout for importing standard journal 
+entries using the Munis long account format. It is identical to the Standard Import Format, but it 
+includes the full general ledger account number in positions 142 to 196. If you click Pre-Edit 
+after selecting this format, the program displays the full account number. 
+• Standard Multi-Journal— This is a fixed length ASCII file layout for importing standard journal 
+entries into multiple journals in Munis. 
+• Template—Various custom template formats are available if you have defined them in the 
+Journal Import Templates program. 
+Prerequisites 
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+ 
+• The chart of accounts (COA) has been established and includes all general ledger accounts 
+being imported or referenced in the Account X-Reference program. 
+• The Account X-Reference table has been created, if applicable. 
+  
+===PAGE 114===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 114 
+ 
+Procedure  
+To complete the journal import process: 
+ Open the Import Journals program. 
+Financials > General Ledger Menu > Journal Entry/History > Import Journals 
+ 
+ 
+ Click Define. 
+ Complete the fields to define the import parameters, referring to the following table for details.  
+Field Description Notes 
+Import Options 
+Execute This 
+Import... 
+Determines when to generate the import 
+when Munis Scheduler is enabled: 
+• Now—Completes the import 
+immediately. This option does not 
+use Munis Scheduler; use the 
+Import option within the program to 
+complete the import. 
+• In Background (Now)—Opens 
+Munis Scheduler to complete the 
+import one time using the event log 
+and email notification features. 
+• At a Scheduled Time— Uses Munis 
+Scheduler to establish a specific 
+time to complete the import. 
+ 
+Import Format Specifies the format of the import. When 
+you select a format and then click the 
+Generate button, the program creates a 
+ 
+
+===PAGE 115===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 115 
+ 
+Field Description Notes 
+blank template based on the selected 
+format. 
+Skip Budget Check Directs the program to ignore budget 
+amounts, when selected. 
+ 
+Report Over 
+Budget Warnings 
+Instructs the program to display report 
+warnings if over-budget lines are detected 
+on the import, when selected. 
+ 
+Release After 
+Import 
+Directs the program to release all imported 
+journals after the import completes 
+successfully, when selected. 
+ 
+Import File Contains the path of the file to import. 
+Type the file path or use the Local File or 
+Server File options to select a file from the 
+appropriate location. 
+The program indicates the format of the 
+import file, such as Text (ASCII) File or 
+Excel File, after you select an option from 
+the Import Format list and advance to the 
+next field. 
+ 
+Skip First Line Directs the program to skip the first line or 
+row of the import file, when selected. 
+Select this check box if the import file 
+includes column labels or field names. 
+ 
+Remove Import File Instructs the program to remove the import 
+file from its location after it is successfully 
+imported into the Munis system, when 
+selected. This prevents the program from 
+performing duplicate imports. 
+ 
+Journal Information 
+Fiscal Year/Period Identifies the fiscal year and period the 
+program uses for imported journals. 
+If you select Within Year/Period, you must 
+enter a specific year and period. The 
+default values for the fiscal year and 
+period are completed from General Ledger 
+Settings, but you can change this if you 
+have the appropriate permissions. 
+Valid entries for the Fiscal Year box are 
+the current year or next year.  
+Valid entries for the Period box are 01 
+through 13, inclusive. Period 13 
+represents end-of-year (EOY) and is only 
+valid in the prior year. 
+ 
+Effective Date Defines the effective date the program 
+uses for imported journals. 
+ 
+===PAGE 116===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 116 
+ 
+Field Description Notes 
+Reference Assigns a user-defined journal 
+reference code that stays with each 
+transaction throughout its life. 
+This is a user-defined code; it may be a 
+control number, a date, or a note. 
+ 
+Journal Source Specifies the journal source code for 
+journals that are imported. The program 
+automatically selects the journal source 
+based on the value chosen from the 
+Import Format list. 
+ 
+Reference 3 Indicates the journal reference code that 
+appears in the Reference 3 field. 
+For some import formats, the program 
+automatically completes this field and you 
+cannot change it. 
+For period 12 journals that need to be 
+reported on the Oklahoma Grant Claims 
+Supplemental Report, 
+type SUPPLEMENTAL. 
+ 
+Budget 
+Amendment Type 
+Indicates the budget amendment type for 
+expense and revenue accounts: 
+• 1—Exp to Exp or Rev to Rev  
+• 2—Exp to Rev or Rev to Exp  
+• 3—Exp/Rev one- sided (not 
+balanced) 
+• 4—Exp to Exp or Rev to Rev 
+• 5—Exp to Rev or Rev to Exp  
+• 6—Exp/Rev one- sided (not 
+balanced) 
+• 7—Exp to Rev or Rev to Exp 
+interfund 
+• 8—Exp to Exp interfund  
+• 9—Statistic accounts  
+Use Type 1, 2, or 3 when the amount on 
+each line in the import file is the amount 
+that the account’s budget should be 
+increased or decreased. 
+Use Type 4, 5, or 6 when the amount on 
+each line in the import file is the new 
+budget amount. The amendment is made 
+for the difference between the amount 
+being imported and the amount currently 
+budgeted on the account. 
+This box is accessible when the value of 
+the Import Format list is Budget. 
+ 
+Short Description Provides a short description of the journal 
+contents. 
+ 
+===PAGE 117===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 117 
+ 
+Field Description Notes 
+The description can be up to 10 
+alphanumeric characters. 
+This field is required. 
+Import Summary 
+Year 
+Period 
+Journal 
+Source 
+Status 
+Short Description 
+Displays a table of the imported journals. 
+The Open Journal and Release All options 
+below the table allow you to select a 
+journal from the table and view it or 
+release all journals in the table into the 
+workflow, respectively. 
+ 
+ 
+ When you have completed the applicable fields, click Accept.  
+ Click Pre-Edit to find any errors in the file prior to importing the data. 
+ Select an output option on the toolbar to review the journals. 
+ Click Import to import the journal entries. 
+Results 
+The program imports journal entries or budget amendments in the proof stage. Each record is 
+processed, verifying that each account exists in Account Master and is not a revenue or expense 
+control account.  
+ 
+If the account is invalid or matches either of the control accounts, the program displays an error and 
+you are prompted either to continue checking other accounts or to abort the process. In either case, 
+records are not created for a new journal. 
+What’s Next? 
+To affect the general ledger, you must output/post the journals using the General Journal Entry/Proof or 
+Budget Transfers and Amendments program. To find the journals, click Browse on the toolbar when 
+you open either program.  
+  
+===PAGE 118===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 118 
+ 
+Year End Manager 
+Objective 
+This document provides instructions on creating a year-end checklist in the Year End Manager program 
+to manage and streamline year-end processing. 
+Overview 
+The Year End Manager program provides a centralized location to organize and track progress on all 
+the tasks that must be completed prior to running the year-end close process. It provides customizable 
+checklists and detailed information about each task and associated records. 
+Prerequisites  
+Before you can successfully use this feature, you must ensure that the necessary permissions and 
+settings are in place. If permissions or settings are not set up properly, or if the required programs are 
+not available on the Munis menu, contact the system administrator.  
+ 
+Confirm the following: 
+• You have access to the programs on the End of Period submenu. 
+• Month-end processing has been performed for all months in the year. 
+• There are no general ledger account access restrictions associated with your user ID. 
+ 
+  
+===PAGE 119===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 119 
+ 
+Procedures 
+Creating a Year-End Checklist 
+To create a year-end checklist: 
+1. Open the Year End Manager program. 
+Financials > General Ledger Menu > End of Period > Fiscal Year End Processing > Year End 
+Manager 
+ 
+ 
+2. Click Edit Checklist. 
+The program refreshes the screen to display the Available Tasks and Checklist panes. 
+ 
+ 
+
+===PAGE 120===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 120 
+ 
+3. Click New Checklist. 
+The program displays the Create Checklist dialog box. 
+ 
+ 
+4. Choose how to create the checklist: 
+• Use the Default Checklist—Adds all the default tasks in the System Generated tab to the 
+checklist. 
+• Start with a Blank Checklist—Creates a bl ank checklist with no tasks. The tasks in the 
+System Generated tab are available to be added manually. 
+• Copy Tasks from an Existing Checklist—Copies tasks from a previous year's checklist to 
+the new checklist. When selected, this option provides a list of existing checklists from 
+which to copy tasks. The Copy Comments check box, when selected, copies comments 
+from the selected checklist to the new checklist. 
+ 
+ 
+5. Click Create. 
+The program refreshes the screen based on the selected option. 
+6. Review the default tasks in either the Available Tasks or Checklist pane, depending on your 
+selection.  
+7. If tasks exist in the Available Tasks pane, select the check box for each task to add to the 
+Checklist pane. 
+The Add to Checklist link displays. 
+ 
+ 
+ 
+
+===PAGE 121===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 121 
+ 
+8. Click Add to Checklist. 
+The selected task is added to the bottom of the Checklist pane and removed from the Available 
+Tasks pane. 
+ 
+ 
+9. In the Checklist pane, drag a task to reorder it. 
+The program automatically renumbers the tasks accordingly. 
+10. To remove tasks from the Checklist pane, select the check box for each task to remove. 
+The Remove from Checklist link displays. 
+ 
+ 
+11. Click Remove from Checklist. 
+The selected tasks are removed from the Checklist pane and added to the Available Tasks 
+pane. The remaining tasks in the checklist are renumbered accordingly. 
+ 
+ 
+
+===PAGE 122===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 122 
+ 
+12. The User Defined tab holds any user-defined tasks that are specific to your organization. To add 
+a user-defined task, click New Task. 
+The program displays the Add Task dialog box. 
+ 
+ 
+13. Complete the fields to define the new task and then click Save. 
+The program adds the new task to the User Defined tab. 
+14. Select the check box for the user-defined task to add to the Checklist pane. 
+The program displays the Add to Checklist, Edit, and Delete options. 
+ 
+ 
+Note: If you select multiple tasks, the program displays the Add to Checklist option only. The 
+Edit and Delete options are only available for individual tasks. 
+15. Click Add to Checklist to add the selected user-defined task to the Checklist pane. 
+16. Drag the task to reorder it as needed.  
+17. Once you have added all the tasks to the checklist, click Return. 
+The program automatically saves the checklist. 
+ 
+ 
+
+===PAGE 123===
+ 
+ 
+Munis® General Ledger, Version 2020.2                        Page 123 
+ 
+Assigning Due Dates, Reminders, and Tasks 
+To enable email notifications, GLYE and GLYED alerts (for reminders and due dates, respectively) 
+must be established in the Alert Business Rules program, which is accessible from the System 
+Administration > Alert Administration submenu. Once these alerts are set up and valid emails are 
+established for the task assignees, emails will be sent to the assignees based on the reminder and due 
+dates. 
+ 
+1. From an existing checklist, click Dates. 
+The program displays the Checklist Dates dialog box.
+ 
+ 
+2. For each checklist item, enter the name of the user who is assigned the task, the due date, and 
+the date on which to send a reminder in the relevant fields. 
+When you start typing in the Assignee field, the program provides a list of available options. 
+Assignees must be established users in the Munis system.  
+For the Due and Reminder fields, use the calendar button to select dates as needed. 
+3. Click Save. 
+The program returns to the checklist. The Due, Assigned To, and Reminder fields for the 
+individual checklist tasks include the information you supplied. 
+ 
+Results 
+Once your organization has defined all the required steps in the year-end checklist, the checklist can be 
+used to manage and track progress in the year-end process. The checklist can be copied and edited 
+from one year to the next, accommodating any necessary customizations to the process. 
+GL Impact 
+The general ledger is not affected by creating year-end checklists. However, depending on the tasks 
+included in the checklist, and when the tasks are undertaken, the general ledger may be affected 
+accordingly. For example, reviewing and posting unposted transactions directly impacts the general 
+ledger. 

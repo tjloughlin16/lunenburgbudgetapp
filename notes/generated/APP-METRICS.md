@@ -4,7 +4,7 @@
 
 ## What the town and the state published — and we hold
 
-- **13,570 documents** — PDFs, spreadsheets, Word files and slide decks — 36,568 files and 7.34 GB in all, each with its address, its publisher’s filename and a checksum.
+- **13,570 documents** — PDFs, spreadsheets, Word files and slide decks — 36,598 files and 7.34 GB in all, each with its address, its publisher’s filename and a checksum.
 - **14 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, meetings, peer-districts, state-census, state-dese, state-dls, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,190 meeting documents** from **51 town boards**: 4,734 sets of minutes and 7,456 agendas, 2009-01-05 to 2026-10-07 — **18 years**.
 - **5,345 annual town report appropriation lines**, FY2011–FY2025, read page by page.
@@ -14,8 +14,8 @@
 
 ## What we made from it
 
-- **4,504 hours of meeting recordings transcribed** — 2,678 meetings, 187.7 days of audio end to end, 2012-05-02 to 2026-10-07. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
-- **895 meetings with our own minutes** written from those recordings — **2903 substantive votes** and **572 transfers** logged, each linked to the second of the video.
+- **4,508 hours of meeting recordings transcribed** — 2,680 meetings, 187.9 days of audio end to end, 2012-05-02 to 2026-10-07. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
+- **908 meetings with our own minutes** written from those recordings — **2942 substantive votes** and **577 transfers** logged, each linked to the second of the video.
 - **A database of 158,284 rows in 122 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
 - **38 analyses** and **206 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.

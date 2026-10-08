@@ -2112,6 +2112,31 @@ GROUPS = [
              'refuses to write unless the stabilization accounts tie; where another '
              'account disagrees that is recorded per row rather than suppressed. See '
              'scripts/extract_trust_balance_detail.py.'),
+            ('data/document-watch-events.csv',
+             'Documents that appeared on the district\'s and the town\'s pages, and when we first saw them', 3,
+             'One row per new document found by the daily re-walk of the listing pages the mirrors '
+             'came from -- the district\'s budget page and the town\'s budget hub, town meeting and '
+             'finance pages -- with the day it was first seen, its address and our copy. A first-seen '
+             'date is an upper bound on posting, no better than the gap since the last walk. See '
+             'scripts/watch_documents.py.'),
+            ('data/meeting-record-explanations.csv',
+             'Why a meeting record will never exist, when somebody has said so', 3,
+             'One row per board, date and record (video, minutes or transcript) with the '
+             'explanation and who gave it -- "met at the Town Beach; there is no recording". '
+             'The board records pages show such a record as NOT PROVIDED with the reason, never '
+             'as MISSING. See scripts/meeting_records.py.'),
+            ('data/meeting-notices-email.csv',
+             'Meetings announced only by email, never posted to the AgendaCenter', 3,
+             'A meeting the town noticed by email reaches the upcoming list, the feeds, the '
+             'board pages and the agenda previews from this file, so it is not invisible '
+             'because it never appeared where the crawler looks.'),
+            ('data/review-queue.csv',
+             'Structured reads of the town\'s minutes flagged for a person to check', 3,
+             'A schema-2 read that looks wrong -- an attendance list dropped by the quote '
+             'check although the minutes print one -- is pulled out of the normal processing '
+             'flow and listed here with why it was flagged and what became of it. Appended, '
+             'never rewritten. An OPEN row keeps that meeting out of every backlog run. See '
+             'scripts/review_queue.py.'),
             ('data/pages-read.csv',
              'Every figure somebody READ off a page, with the verdict its group earned', 3,
              'Recognition cannot read some of these pages at all -- the FY2024 special '
