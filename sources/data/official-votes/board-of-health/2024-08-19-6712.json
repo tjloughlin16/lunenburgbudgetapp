@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2024-08-19",
  "docid": "6712",
@@ -12,23 +12,115 @@
  },
  "votes": [
   {
-   "motion": "Continue this matter until September 16th at 7 pm with all interior living space repairs completed as outlined in the original housing order, with penalties accruing if repairs are not completed",
+   "motion": "Continue the 142 Whitting Street matter until September 16 at 7 pm, with the understanding that all interior living space repairs are completed as outlined in the housing order before then, or penalties accrue.",
    "moved_by": "Jewell",
    "seconded_by": "Proctor",
-   "outcome": "passed",
+   "outcome": "passed (all in favor; no tally printed)",
    "procedural": false,
-   "quote": "on motion by jewell and second by proctor this matter was continued until september 16th at 7 pm with the understanding that all interior living space repairs are completed as outlined on the original housing order prior to september 16 and penalties would accrue if repairs are not completed. all in favor."
+   "quote": "on motion by jewell and second by proctor this matter was continued until september 16th at 7 pm with the understanding that all interior living space repairs are completed"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:45 pm.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
-   "outcome": "passed",
+   "outcome": "passed (all in favor; no tally printed)",
    "procedural": true,
    "quote": "on motion by jewell and seconded by fortin, the meeting was adjourned at 7:45 pm, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes note that no prior minutes were approved. These are the two explicit votes recorded in the meeting.",
- "cost_usd": 0.0711974
+ "note": "Text is a clean, digital extraction; no scan problem. Contains an \"Edited content here!\" line under the title, which is not an agenda item and was not treated as content. Vote tallies are not printed for either motion; both say \"all in favor\", so outcomes are recorded as passed without a count. No public comment section appears; Seth Mayer's appearance is recorded as an agenda-item presenter, not public comment. Minutes give \"Mr. Mayer\" and \"Ms. Mayer\" for the same family without explanation; Ms. Mayer is not recorded as present. The minutes do not say how Frank McParlan appeared (in person or remote), so status is \"present\" on the rule that a presenter who advised the board is present. No dollar figures appear anywhere in the text.",
+ "cost_usd": 0.01260037,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, paul fortin and matt proctor"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, paul fortin and matt proctor"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, paul fortin and matt proctor"
+  },
+  {
+   "name": "Matt Proctor",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, paul fortin and matt proctor"
+  },
+  {
+   "name": "Seth Mayer",
+   "role": "not stated in minutes (142 Whitting Street matter)",
+   "status": "present",
+   "quote": "seth mayer met with the board."
+  },
+  {
+   "name": "Frank McParlan",
+   "role": "of Dillis and Roy",
+   "status": "present",
+   "quote": "frank mcparlan of dillis and roy advised that the well is completed."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members advised Mr. Mayer that he was allowed reasonable access to the property to complete repairs, and that they would be willing to advise Ms. Mayer to allow access (no vote recorded).",
+   "quote": "members of the board advised that mr. mayer was allowed reasonable access to complete repairs and would be willing to"
+  },
+  {
+   "decision": "Board set a repair priority order without a vote: interior living-area, bathroom and kitchen repairs first; exterior repairs such as sill replacement and porch work treated as secondary for now.",
+   "quote": "exterior repairs such as sill replacement and the tear down and/or rebuilding of the porch could be secondary at this time."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "no minutes approved",
+   "quote": "no minutes were approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "142 Whitting Street (housing order repairs)",
+   "resolution": "continued to September 16, 2024",
+   "quote": "this matter was continued from the july 15 th meeting.",
+   "tags": [
+    "housing order",
+    "repairs",
+    "code enforcement"
+   ]
+  },
+  {
+   "topic": "747 Chase Road (Zone 1 well)",
+   "resolution": "no action; update received that the well is completed",
+   "quote": "as an update on the status of the zone 1 well, frank mcparlan of dillis and roy advised that the well is completed.",
+   "tags": [
+    "well",
+    "water supply"
+   ]
+  }
+ ],
+ "tags": [
+  "board of health",
+  "housing code enforcement",
+  "housing order",
+  "property repairs",
+  "well water",
+  "continuance",
+  "public health"
+ ],
+ "dropped_unquoted_by_field": {}
 }

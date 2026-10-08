@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-08-14",
  "docid": "6705",
@@ -12,47 +12,322 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 4/30/24",
+   "motion": "Approve the minutes of 4/30/24.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike M.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: brett r. second: mike m. to approve the minutes of 4/30/24. roll call vote: brett-aye, mike m.-aye and john-aye."
+   "quote": "to approve the minutes of 4/30/24. roll call vote: brett-aye, mike m.-aye and john-aye."
   },
   {
-   "motion": "Approve the minutes of 6/25/24",
+   "motion": "Approve the minutes of 6/25/24.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike M.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: brett r. second: mike m. to approve the minutes of 6/25/24. roll call vote: brett-aye, mike m.-aye and john-aye."
+   "quote": "to approve the minutes of 6/25/24. roll call vote: brett-aye, mike m.-aye and john-aye."
   },
   {
-   "motion": "Approve the Q1FY25 Commitment for $298,135.94",
+   "motion": "Approve the Q1FY25 Commitment for $298,135.94.",
    "moved_by": "Mike M.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: mike m. second: brett r. to approve the q1fy25 commitment for $298,135.94. roll call vote: mike m.-aye, brett-aye, and john-aye."
+   "quote": "to approve the q1fy25 commitment for $298,135.94. roll call vote: mike m.-aye, brett-aye, and john-aye."
   },
   {
-   "motion": "Add Paula's resignation letter to the minutes",
+   "motion": "Add Paula's resignation letter to the minutes.",
+   "moved_by": "Mike M.",
+   "seconded_by": "Brett R.",
+   "outcome": "passed 3-0",
+   "procedural": false,
+   "quote": "to add paula's resignation letter to the minutes. roll call vote: mike m.-aye, brett-aye, and john-aye."
+  },
+  {
+   "motion": "Adjourn the meeting at 6:44pm.",
    "moved_by": "Mike M.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: mike m. second: brett r. to add paula's resignation letter to the minutes. roll call vote: mike m.-aye, brett-aye, and john-aye."
-  },
-  {
-   "motion": "Adjourn at 6:44pm",
-   "moved_by": "Mike M.",
-   "seconded_by": "Brett R.",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "motion: mike m. second: brett r. to adjourn at 6:44pm. roll call vote: brett-aye, mike m.-aye and john-aye."
+   "quote": "to adjourn at 6:44pm. roll call vote: brett-aye, mike m.-aye and john-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07272239999999999
+ "note": "Text extract, not a scan. Five roll-call votes are recorded and all show full 3-0 tallies. The attendance line does not state per-person status for a Zoom meeting, so members are marked present as listed. Scott Foreman's status is not stated. The resignation letter is an attached handout, and its contents are not recorded as board actions. Robert and Julie are named but not shown as attending. The Munis $60K figure is second-hand, as the minutes say.",
+ "cost_usd": 0.01656207,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike mackin, dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Foreman",
+   "role": "observer; may be interested in joining the Commission",
+   "status": "not stated",
+   "quote": "john noted that scott foreman is observing the meeting and may be interested in joining the commission."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Paula asked Robert (not present) to put together a list of spare parts and pricing for the Commission.",
+   "quote": "paula asked robert to put a list together of parts and pricing."
+  },
+  {
+   "decision": "DPW will get extra parts to keep on hand after the manhole overflow.",
+   "quote": "bill said they will get some extra parts to have on hand."
+  },
+  {
+   "decision": "Business Manager is to send out the grease trap permit renewals.",
+   "quote": "this is the time the grease trap permit renewals go out and she will send them."
+  },
+  {
+   "decision": "Business Manager will put together a list of work items (NFTS permit reports, Emergency Preparedness plan) and a billing manual for the transition.",
+   "quote": "she will put together a list of items to work on such as the nfts permit reports and an emergency preparedness plan."
+  },
+  {
+   "decision": "Chair will check into whether the Commissioners have input on hiring the new Business Manager.",
+   "quote": "mike asked if the commissioners have input and john said he will check into that."
+  },
+  {
+   "decision": "Manhole IFB must go out as soon as possible, since a contract is needed by November; it will go through Procurement (Julie) after Bill adds specifications.",
+   "quote": "it will need to go through julie (procurement)."
+  },
+  {
+   "decision": "DPW Director will contact Verizon about the phone line at Dana Street.",
+   "quote": "john asked about the phone line at dana street and bill said he will be contacting verizon about it."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q1FY25 quarterly sewer commitment",
+   "what_was_recorded": "The Commission approved the Q1FY25 quarterly billing commitment, printed at $298,135.94.",
+   "figures_as_printed": [
+    "$298,135.94"
+   ],
+   "quote": "to approve the q1fy25 commitment for $298,135.94. roll call vote: mike m.-aye, brett-aye, and john-aye."
+  },
+  {
+   "topic": "Manhole repair funding from the Select Board",
+   "what_was_recorded": "The chair noted the Select Board granted a sum for manhole repairs the previous year.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "john noted that the select board granted $100k for manhole repairs last year."
+  },
+  {
+   "topic": "Annual cost of Munis software",
+   "what_was_recorded": "A member asked the annual cost to the town of Munis; the chair reported hearing the Town Manager give a figure at a Select Board meeting (second-hand).",
+   "figures_as_printed": [
+    "$60K"
+   ],
+   "quote": "mike asked how much the town pays each year for munis and john said he heard the town manager reply $60k at a select board meeting."
+  },
+  {
+   "topic": "Munis billing consultant cost",
+   "what_was_recorded": "The cost of the consultant brought in to diagnose the billing problem was submitted to be covered by ARPA funds; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they submitted the cost of the consultant to be covered by arpa funds and the town is trying to address the issues."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mike M.",
+   "topic": "gratitude to Paula Bertram",
+   "quote": "mike m. expressed his gratitude for all that paula has done for the commission and acknowledged her long history of service to the town."
+  },
+  {
+   "speaker": "Brett",
+   "topic": "departure of Paula Bertram and John Reynolds",
+   "quote": "brett added that it will be difficult moving forward without paula and john."
+  },
+  {
+   "speaker": "John",
+   "topic": "farewell to Paula Bertram",
+   "quote": "john said he echoes what mike and brett have said"
+  },
+  {
+   "speaker": "Paula",
+   "topic": "response to farewell",
+   "quote": "paula replied she will miss everyone and thanked them for all their kind words."
+  },
+  {
+   "speaker": "Brett",
+   "topic": "thanks to Paula and John",
+   "quote": "brett thanked paula and john for their time and commitment."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening): farewell to Paula Bertram",
+   "resolution": "no action; remarks recorded",
+   "quote": "public comment- mike m. expressed his gratitude for all that paula has done for the commission and acknowledged her long history of service to the town.",
+   "tags": [
+    "farewell",
+    "staffing",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements: possible new Commission member",
+   "resolution": "noted; no action",
+   "quote": "john noted that scott foreman is observing the meeting and may be interested in joining the commission.",
+   "tags": [
+    "vacancies",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Minutes of 4/30/24 and 6/25/24",
+   "resolution": "approved 3-0 (each)",
+   "quote": "to approve the minutes of 6/25/24. roll call vote: brett-aye, mike m.-aye and john-aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Sewer manhole overflow, 8/11/24",
+   "resolution": "reported; no vote; DEP SSO notice sent; extra parts to be stocked",
+   "quote": "sewer manhole overflow 8/11/24- bill reported that a resident on sunset ave. called, saying he saw water coming down his gravel driveway and smelled sewer.",
+   "tags": [
+    "sewer",
+    "manhole",
+    "overflow",
+    "DEP",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "Sewer Commission vacancies",
+   "resolution": "discussed; no action",
+   "quote": "john noted there are 2 vacancies now and there will be 1 more at the end of month.",
+   "tags": [
+    "vacancies",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Manhole invitation for bid (IFB)",
+   "resolution": "discussed; draft in progress, to go to Procurement",
+   "quote": "paula sent out a draft and bill needs to add some specifications.",
+   "tags": [
+    "procurement",
+    "manhole",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Q1FY25 commitment (quarterly billing)",
+   "resolution": "approved 3-0",
+   "quote": "to approve the q1fy25 commitment for $298,135.94. roll call vote: mike m.-aye, brett-aye, and john-aye.",
+   "tags": [
+    "billing",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Business Manager report: resignation and transition",
+   "resolution": "resignation noted; letter added to minutes 3-0; replacement hiring to be checked",
+   "quote": "paula noted that her last day will be 8/29.",
+   "tags": [
+    "staffing",
+    "resignation",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Business Manager report: grease traps and Munis software",
+   "resolution": "reported; Munis billing errors continue; no vote",
+   "quote": "paula noted that they were able to send out the bills and they were actually correct.",
+   "tags": [
+    "Munis",
+    "billing",
+    "grease trap",
+    "software"
+   ]
+  },
+  {
+   "topic": "Old business: Dana Street phone line",
+   "resolution": "DPW to contact Verizon",
+   "quote": "john asked about the phone line at dana street and bill said he will be contacting verizon about it.",
+   "tags": [
+    "phone",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Public comment (closing): thanks to Paula and John",
+   "resolution": "no action",
+   "quote": "brett thanked paula and john for their time and commitment.",
+   "tags": [
+    "public comment",
+    "farewell"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled Commission activities",
+   "resolution": "noted; four regular meetings listed Aug 27 to Oct 8, 2024",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3-0 at 6:44pm",
+   "quote": "to adjourn at 6:44pm. roll call vote: brett-aye, mike m.-aye and john-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "billing",
+  "Munis software",
+  "staffing",
+  "business manager resignation",
+  "manhole overflow",
+  "procurement",
+  "grease trap",
+  "commission vacancies",
+  "ARPA",
+  "Select Board",
+  "farewell"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,475 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2024-08-13",
+ "video_id": "pvaQaklHi78",
+ "video_url": "https://www.youtube.com/watch?v=pvaQaklHi78",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-08-13-pvaQaklHi78.json",
+  "sha256": "d111a49af709eeff6e21ba55f5e25bf5ccf2cf7859d6fb76dd8b77c2a83b10c0",
+  "caption_lines": 353,
+  "segments": 2866
+ },
+ "recording": {
+  "duration_s": 7405,
+  "duration": "2:03",
+  "spoken_chars": 100807,
+  "words_approx": 16801
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08132024-6703",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-08-13-agenda-6703.txt",
+   "path": "sources/meetings/select-board/2024-08-13-agenda-6703.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-08-13-minutes-rr2026-09-18.txt",
+   "path": "sources/meetings/select-board/2024-08-13-minutes-rr2026-09-18.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T02:56:05Z",
+  "cost_usd": 0.45499819999999996
+ },
+ "minutes": {
+  "headline": "Select Board delayed allocating ARPA funds to next week, signed a resolution on Nashoba Valley Medical Center, and set the fall town meeting for Nov 12.",
+  "summary": "The board heard sharp public comment, including an announced recall effort against the chair, and responses urging civility. It appointed staff and election workers, reviewed ranked ARPA requests without voting on allocations, signed the Nashoba Valley closure resolution, and set fall special town meeting dates. Minutes corrections and a SharePoint question were also handled.",
+  "attendees": [
+   {
+    "name_as_heard": "Michael Ray Jeff",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Carter terenzini",
+    "role": "interim town manager"
+   },
+   {
+    "name_as_heard": "Julie",
+    "role": "assistant town manager"
+   },
+   {
+    "name_as_heard": "Mr Burton",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Selectman M key",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Lonzo",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Annie Aubrey",
+    "role": "staff (forwards select board email)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 124,
+    "speaker_as_heard": "Dave McDonald",
+    "stated_role": "resident, 155 Island Road",
+    "topic": "Announced a recall petition effort against the chair, listing grievances over the tax bill investigation, town manager evaluation and a policy change; cited staff departures."
+   },
+   {
+    "t": 729,
+    "topic": "A board member (Mr Burton) thanked Mr McDonald and said he would sign the petition."
+   },
+   {
+    "t": 6339,
+    "speaker_as_heard": "Dave Rogers",
+    "stated_role": "resident, 82 Highland Street",
+    "topic": "Called for a renewal of civility in town and predicted facts would surprise people when they come out."
+   },
+   {
+    "t": 6513,
+    "speaker_as_heard": "John rabbit",
+    "stated_role": "resident, 314 Townson Harbor Road",
+    "topic": "Opposed the recall as divisive; cited the DLS report on financial policies and town growth and urged focus on compliance."
+   },
+   {
+    "t": 6808,
+    "speaker_as_heard": "Dave paos",
+    "stated_role": "caller by Zoom",
+    "topic": "Agreed a recall divides the town and said the Munis problems are hurting employee morale."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "chapter-70",
+   "elections",
+   "free-cash",
+   "grants",
+   "hiring",
+   "personnel",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "technology",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 982,
+    "motion": "Appoint interim town manager Carter terenzini as general government records access officer",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1043,
+    "motion": "Ratify interim town manager's appointment of John Sharp as seasonal cemetery laborer",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1087,
+    "motion": "Ratify appointment of Denise McHugh as data collector",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1148,
+    "motion": "Appoint the election workers read by the chair, term Sept 1 2024 to Aug 31 2025",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5295,
+    "motion": "Sign the resolution regarding the closure of Nashoba Valley Medical Center",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5547,
+    "motion": "Hold special fall town meeting Tuesday Nov 12 2024, open warrant Aug 14, close warrant Sept 16",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 7371,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2028,
+    "topic": "ARPA allocation, ranked requests",
+    "what_was_said": "The chair read down the ranked list to reach the amount available to allocate, with requests far exceeding it.",
+    "figures_as_heard": [
+     "$313,000"
+    ]
+   },
+   {
+    "t": 2276,
+    "topic": "ARPA ranked items",
+    "what_was_said": "Items read off included a Munis consultant, infusion pumps, payroll implementation, furniture, a weekend food kit program, trails match, historical society and Council on Aging items, and DPW garage floor and roof.",
+    "figures_as_heard": [
+     "16,000",
+     "7500",
+     "106,000",
+     "20,000",
+     "$9,000",
+     "$99,000",
+     "$115,000"
+    ]
+   },
+   {
+    "t": 2515,
+    "topic": "Previously committed ARPA reporting money",
+    "what_was_said": "The interim manager asked to retitle and preserve the earlier reporting allocation for procurement and staffing help, noting it is separate from the list.",
+    "figures_as_heard": [
+     "60,000"
+    ]
+   },
+   {
+    "t": 3686,
+    "topic": "Village of Flat Hill detention basin",
+    "what_was_said": "Members discussed how much to give toward the basin, with the request, an earlier discussed amount, and a half-split all mentioned.",
+    "figures_as_heard": [
+     "15,000",
+     "35,000",
+     "25",
+     "$313,000"
+    ]
+   },
+   {
+    "t": 3540,
+    "topic": "ARPA spending deadline",
+    "what_was_said": "A member said no part of the federal money should go unspent; commitment is required by year end.",
+    "figures_as_heard": [
+     "3.x million"
+    ]
+   },
+   {
+    "t": 6236,
+    "topic": "Chapter 70 extra funding",
+    "what_was_said": "School committee reported extra Chapter 70 funds and a draft letter asking that it go directly to the schools.",
+    "figures_as_heard": [
+     "31,000"
+    ]
+   },
+   {
+    "t": 2999,
+    "topic": "Capital items in ARPA backup",
+    "what_was_said": "DPW garage floor and partial roof were discussed as already committed capital.",
+    "figures_as_heard": [
+     "125,000",
+     "250,000"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 2557,
+    "description": "Proposal to retitle or reprogram the earlier ARPA reporting allocation to procurement/staffing use",
+    "amount_as_heard": "60,000",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 4082,
+    "decision": "ARPA: follow up with Village of Flat Hill, let members re-rank, get a full update on committed/spent funds, and vote on allocations next week."
+   },
+   {
+    "t": 3918,
+    "decision": "The reprogramming/renaming of the earlier ARPA reporting money to be voted at the same time next week."
+   },
+   {
+    "t": 4609,
+    "decision": "Interim manager to communicate soon to staff about planned listening sessions, held around mid-October to November."
+   },
+   {
+    "t": 6007,
+    "decision": "Interim manager to raise the SharePoint-versus-Google question and its cost with IT at a Thursday meeting."
+   },
+   {
+    "t": 5795,
+    "decision": "Minutes of Aug 6 to be corrected and brought back next week."
+   },
+   {
+    "t": 6112,
+    "decision": "Next week the board will discuss setting a deadline for ARPA commitments, around September."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 22,
+    "t_end": 83,
+    "topic": "Call to order, pledge, open meeting notice",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 83,
+    "t_end": 124,
+    "topic": "Board comments on town band",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 124,
+    "t_end": 751,
+    "topic": "Public comment: recall of the chair announced",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 751,
+    "t_end": 920,
+    "topic": "Announcements: Nashoba hospital hearings, primary election dates, meet and greet",
+    "resolution": "informational",
+    "tags": [
+     "elections",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 920,
+    "t_end": 1317,
+    "topic": "Appointments, election workers, sewer business manager resignation",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 1317,
+    "t_end": 1988,
+    "topic": "Interim town manager report: hospital, vacancies, hiring, trash RFP, email",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "hiring",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1988,
+    "t_end": 4126,
+    "topic": "ARPA funding requests ranking and allocation",
+    "resolution": "no vote; deferred to next week",
+    "tags": [
+     "grants",
+     "capital",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4126,
+    "t_end": 4629,
+    "topic": "Select board staff appreciation and staff morale",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 4629,
+    "t_end": 4836,
+    "topic": "Old business: salary range, outdoor dining, financial policy manual, handbooks",
+    "resolution": "informational",
+    "tags": [
+     "policy",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4836,
+    "t_end": 5339,
+    "topic": "Nashoba Valley Medical Center closure resolution",
+    "resolution": "voted",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 5339,
+    "t_end": 5587,
+    "topic": "Fall special town meeting and warrant dates",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 5587,
+    "t_end": 5860,
+    "topic": "Minutes of Aug 6 and signing warrants",
+    "resolution": "minutes revisions to return next week",
+    "tags": [
+     "policy",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 5860,
+    "t_end": 6130,
+    "topic": "Action items: SharePoint, storm water task force, speed limit, ARPA deadline",
+    "resolution": "informational",
+    "tags": [
+     "technology"
+    ]
+   },
+   {
+    "t_start": 6130,
+    "t_end": 6339,
+    "topic": "Committee reports: school committee capital, TMS, Chapter 70, Council on Aging",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "chapter-70",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 6339,
+    "t_end": 6860,
+    "topic": "Public comment: civility, opposition to recall, Munis",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 6860,
+    "t_end": 7371,
+    "topic": "Board member comments including response to recall",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 7371,
+    "t_end": 7391,
+    "topic": "Adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact count of rankings among members and the median versus average comparison was not settled in captions.",
+   "The full ARPA item list partly garbled (payroll item overlapped on screen).",
+   "Some election worker names and addresses are likely mangled.",
+   "Absentee voting deadline read as August 3rd, likely an error."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board heard ranked ARPA requests far exceeding the money available but took no vote, deferring allocations to next week.",
+    "t": 4082
+   },
+   {
+    "line": "The board voted unanimously to sign the resolution on the closure of Nashoba Valley Medical Center.",
+    "t": 5295
+   },
+   {
+    "line": "The board voted unanimously to hold a special fall town meeting on Nov 12, 2024, with the warrant opening Aug 14 and closing Sept 16.",
+    "t": 5547
+   },
+   {
+    "line": "Public comment opened with the announcement of a recall petition effort against the chair; later speakers opposed the recall and urged civility.",
+    "t": 124
+   },
+   {
+    "line": "The board appointed a records access officer and election workers by unanimous votes, and will bring corrected Aug 6 minutes back next week.",
+    "t": 982
+   }
+  ],
+  "why_it_matters": [
+   "The federal ARPA money has a commitment deadline and requests exceed what is available, so which town and school projects get funded will be decided at next week's meeting.",
+   "The fall special town meeting is a vote residents will be asked to take, and the warrant closing date sets when articles must be submitted."
+  ],
+  "watch_next": [
+   "Next week's Select Board meeting: the ARPA allocation vote, the renamed reporting funds, and a possible deadline for ARPA commitments around September.",
+   "Special town meeting warrant: opens Aug 14, closes Sept 16, meeting Nov 12, 2024."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T02:56:14Z",
+   "cost_usd": 0.220671
+  }
+ }
+}

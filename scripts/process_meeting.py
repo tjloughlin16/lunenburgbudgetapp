@@ -513,11 +513,28 @@ def run_governed(plan, a, S, ceiling):
             now = time.time()
             if now - last_tick >= TICK:
                 last_tick = now
-                G.fetch()                                  # the server's figure, at most once a minute
+                G.fetch()                                  # the server's figure, paced by usage_governor
                 h = G.readings()
                 if h and now - h[-1]['t'] < G.STALE_S:
                     gp.measured(T.done, h[-1]['u5'])
                 d = G.decide(gp, h, now, in_flight=len(active))
+                # BLIND, NOT RECKLESS. With no fresh reading (the endpoint answered 429 for over
+                # an hour on 7 October) decide() drops to one worker but cannot see a cap. So the
+                # bar is ESTIMATED: the last good reading plus dollars spent since, at a cautious
+                # DOLLARS_PER_POINT -- low, so the estimate runs high and stops early, never late.
+                if 'STALE' in d['note'] and h:
+                    # From the LEDGER, so spending by any run since the last good reading counts.
+                    last = h[-1]
+                    if last['reset'] and now > last['reset']:           # that window is over
+                        u0, since, nxt_window = 0.0, last['reset'], 1
+                    else:
+                        u0, since, nxt_window = last['u5'], last['t'], 0
+                    est = u0 + spend_since(since) / DOLLARS_PER_POINT
+                    cap = gp.caps[min(gp.windows_seen + nxt_window, len(gp.caps) - 1)]
+                    d['note'] = 'STALE -- estimating %.0f%% from dollars (cap %g%%)' % (est, cap)
+                    if est >= cap:
+                        d.update(start=False, jobs=0, wait_reset=limit_means_wait(gp) or bool(gp.by and now < gp.by),
+                                 note='STALE -- estimated %.0f%% >= cap %g%%: stop starting' % (est, cap))
                 line = '5h %s (target %s) workers %d/%d  %s  [%.2f pt/meeting]' % (
                     ('%g%%' % h[-1]['u5']) if h else '?',
                     ('%.0f%%' % d['target']) if d['target'] is not None else '-',
@@ -561,6 +578,19 @@ def run_governed(plan, a, S, ceiling):
     return finish(T, n, stop, S)
 
 
+def spend_since(ts):
+    """Dollars in the spend ledger at or after epoch `ts`, every run's."""
+    import sweep_backlog as S
+    since = dt.datetime.fromtimestamp(ts, dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+    total = 0.0
+    with LEDGER:
+        for r in csv.DictReader(open(S.SPEND if hasattr(S, 'SPEND') else os.path.join(ROOT, 'sources', 'data', 'agentic-spend.csv'),
+                                     encoding='utf-8')):
+            if r.get('at', '') >= since:
+                total += float(r.get('cost_usd') or 0)
+    return total
+
+
 def wait_for_reset(gp, S, G):
     """Block until the server reports a NEW window (a different reset time) in a fresh
     reading, or the kill switch is thrown. Fetches every 30 s -- the first version of this
@@ -578,7 +608,9 @@ def wait_for_reset(gp, S, G):
         # (the first meeting opens the new window), or as soon as a different reset is named.
         passed = gp.window and time.time() > gp.window + 60
         named = h and h[-1]['reset'] and gp.window and abs(h[-1]['reset'] - gp.window) > 600
-        if (passed or named) and h and time.time() - h[-1]['t'] < G.STALE_S:
+        # The old reset passing is a CLOCK fact -- it needs no reading, so a refusing endpoint
+        # cannot hold the run here all night. A newly named reset still needs a fresh one.
+        if passed or (named and time.time() - h[-1]['t'] < G.STALE_S):
             say('[gov %s] new window: %g%% -- resuming' % (dt.datetime.now().strftime('%H:%M'), h[-1]['u5']))
             return
 
@@ -591,7 +623,8 @@ def limit_means_wait(gp):
     return bool(gp.by and h and h[-1]['reset'] and gp.by > h[-1]['reset'])
 
 
-TICK = 30            # seconds between governor decisions (the bars refresh every 60)
+TICK = 30            # seconds between governor decisions
+DOLLARS_PER_POINT = 0.45   # blind estimate; measured ~0.55 on 7 October -- kept low on purpose
 GUARD_EVERY = 60     # seconds between output-guard audits
 
 

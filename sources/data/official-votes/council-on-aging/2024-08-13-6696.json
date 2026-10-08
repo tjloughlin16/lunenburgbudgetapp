@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2024-08-13",
  "docid": "6696",
@@ -12,31 +12,344 @@
  },
  "votes": [
   {
-   "motion": "Approve the July 16, 2024 minutes",
+   "motion": "Approve the July 16, 2024 minutes.",
    "moved_by": "Mr. Lincoln",
-   "seconded_by": "Ms. Lockwood",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr. lincoln motioned to approve the july 16, 2024 minutes. ms. lockwood seconded the motion. all approved and the motion carried."
+   "quote": "mr. lincoln motioned to approve the july 16, 2024 minutes. ms. lockwood seconded the motion. all approved and the motion carried.",
+   "seconded_by": "Ms. Lockwood"
   },
   {
-   "motion": "Have PACC record the COA board meetings",
+   "motion": "Have PACC (printed as PACC) record the COA board meetings.",
    "moved_by": "Mr. Lincoln",
-   "seconded_by": "Ms. Lockwood",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. lincoln made a motion to have pacc record the coa meetings. ms. lockwood seconded the motion. all approved and the motion was carried."
+   "quote": "mr. lincoln made a motion to have pacc record the coa meetings. ms. lockwood seconded the motion. all approved and the motion was carried.",
+   "seconded_by": "Ms. Lockwood"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Lincoln",
-   "seconded_by": "Mr. Lincoln",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ms. lincoln motioned to adjourn the meeting. mr. lincoln seconded the motion. all approved and the motion was carried."
+   "quote": "ms. lincoln motioned to adjourn the meeting. mr. lincoln seconded the motion. all approved and the motion was carried.",
+   "seconded_by": "Mr. Lincoln"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and fully readable. Three votes recorded, all passed unanimously.",
- "cost_usd": 0.0652854
+ "note": "Text extracted from a document; page 3 is blank. Three motions were recorded as 'All approved' or 'the motion carried' with no vote count, so outcome is 'passed' without a tally. 'Mr. Lincoln' is not disambiguated between the two Lincolns on the board (Debbie and Pete); the minutes do not say which moved. The minutes print 'PACC' in the motion and 'PAAC' as the item heading; both kept as printed. No dollar figures appear anywhere in the text, so budget_items record money discussed without amounts. Public comment and announcements are both printed as 'None'. Michele Beauvais is the recorder and is not listed as taking part, so she is omitted from attendees. Names of non-attendees mentioned (Chris Ruth, Dave McDonald, Jamie Toale) are not recorded as attendees.",
+ "cost_usd": 0.01670897,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Debbie Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "debbie lincoln (chairperson), susan doherty (director), pete lincoln, jim mcguigan,"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "debbie lincoln (chairperson), susan doherty (director), pete lincoln, jim mcguigan,"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Board member",
+   "status": "present",
+   "quote": "debbie lincoln (chairperson), susan doherty (director), pete lincoln, jim mcguigan,"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "Board member",
+   "status": "present",
+   "quote": "debbie lincoln (chairperson), susan doherty (director), pete lincoln, jim mcguigan,"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "judy tarbell, helen balcom, diane nowd, elena christopher, cathy beale, & ana lockwood"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "Board member",
+   "status": "present",
+   "quote": "judy tarbell, helen balcom, diane nowd, elena christopher, cathy beale, & ana lockwood"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "Board member",
+   "status": "present",
+   "quote": "judy tarbell, helen balcom, diane nowd, elena christopher, cathy beale, & ana lockwood"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "Board member",
+   "status": "present",
+   "quote": "judy tarbell, helen balcom, diane nowd, elena christopher, cathy beale, & ana lockwood"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "Board member",
+   "status": "present",
+   "quote": "judy tarbell, helen balcom, diane nowd, elena christopher, cathy beale, & ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Board member",
+   "status": "present",
+   "quote": "judy tarbell, helen balcom, diane nowd, elena christopher, cathy beale, & ana lockwood"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Board member",
+   "status": "absent",
+   "quote": "jane rabbitt, susan o'sullivan"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "Board member",
+   "status": "absent",
+   "quote": "jane rabbitt, susan o'sullivan"
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "carter terenzini (interim town manager), caesar nuzzolo (select board member)"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "carter terenzini (interim town manager), caesar nuzzolo (select board member)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director will drop the request for a grade change for the Outreach Coordinator and add an increase of hours for the Meal Site Manager to the FY26 budget requests.",
+   "quote": "she will add increase of hours for meal site manger to fy26 budget requests."
+  },
+  {
+   "decision": "Director will speak with the Facilities Manager to get pricing for replacing flooring at LAAC.",
+   "quote": "she will speak with chris ruth (facilities manager), to discuss getting pricing."
+  },
+  {
+   "decision": "Director will contact the next potential Boston Post Cane recipient.",
+   "quote": "ms. doherty will contact the next potential recipient."
+  },
+  {
+   "decision": "Board members were asked to review the MCOA Resource Guide further and bring items to the next meeting for the new board member packet.",
+   "quote": "board members were asked to review further"
+  },
+  {
+   "decision": "Director will speak with the Facilities Manager about a completion date for the bocce court and outdoor electrical work.",
+   "quote": "ms. doherty will speak with mr. ruth about a completion date."
+  },
+  {
+   "decision": "Select Board member will review the ARPA requests at that evening's Select Board meeting.",
+   "quote": "mr. nuzzolo will review the requests this evening at the select board meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY25 COA budget requests for Special Fall Town Meeting",
+   "what_was_recorded": "The Director dropped a requested grade change for the Outreach Coordinator and will add a Meal Site Manager hours increase to FY26 requests; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty stated that she will no longer be seeking a grade change for the outreach coordinator."
+  },
+  {
+   "topic": "Capital Plan FY27 flooring at LAAC",
+   "what_was_recorded": "Flooring replacement at LAAC was raised and pricing is to be sought; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "she will speak with chris ruth (facilities manager), to discuss getting pricing."
+  },
+  {
+   "topic": "Director's report: roof repair",
+   "what_was_recorded": "Two contractors have placed bids on the roof repair; no bid amounts printed.",
+   "figures_as_printed": [],
+   "quote": "roof repair ~ two contractors have placed bids."
+  },
+  {
+   "topic": "Director's report: parking lot",
+   "what_was_recorded": "A Select Board member expressed a need for schematics to submit to the Capital Plan; no cost printed.",
+   "figures_as_printed": [],
+   "quote": "mr. nuzzolo expressed a need for schematics to submit to capital plan."
+  },
+  {
+   "topic": "ARPA submissions",
+   "what_was_recorded": "Requests for funding were listed: sail shades, two Adirondack chairs, a kiosk, architectural plans for kitchen expansion and a new parking lot; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lincoln has made a request for sail shades for the pavilion."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval, July 16, 2024",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "mr. lincoln motioned to approve the july 16, 2024 minutes."
+  },
+  {
+   "topic": "Introduction of Interim Town Manager Carter Terenzini",
+   "resolution": "introduced; no action",
+   "tags": [
+    "town manager"
+   ],
+   "quote": "ms. lincoln introduced mr. terenzini to the board."
+  },
+  {
+   "topic": "Nashoba Valley Hospital closing",
+   "resolution": "discussed; no action; members directed to state representatives and public hearings",
+   "tags": [
+    "Nashoba Valley Hospital",
+    "health care"
+   ],
+   "quote": "ms. lincoln expressed concerns about the upcoming closure of nashoba valley hospital."
+  },
+  {
+   "topic": "PAAC recording of COA board meetings",
+   "resolution": "approved",
+   "tags": [
+    "recording",
+    "meetings"
+   ],
+   "quote": "mr. lincoln made a motion to have pacc record the coa meetings."
+  },
+  {
+   "topic": "Personnel Board",
+   "resolution": "no action; reported that no Personnel Board exists",
+   "tags": [
+    "personnel"
+   ],
+   "quote": "mr. nuzzolo informed the board that there is no personnel board."
+  },
+  {
+   "topic": "Capital Plan FY27: LAAC flooring",
+   "resolution": "Director to seek pricing",
+   "tags": [
+    "capital plan",
+    "facilities"
+   ],
+   "quote": "ms. doherty discussed the need to replace some of the flooring at laac."
+  },
+  {
+   "topic": "FY25 COA budget requests for Special Fall Town Meeting",
+   "resolution": "Director updated requests; no vote",
+   "tags": [
+    "budget",
+    "town meeting"
+   ],
+   "quote": "ms. doherty stated that she will no longer be seeking a grade change for the outreach coordinator."
+  },
+  {
+   "topic": "Lunenburg 300th celebration",
+   "resolution": "continued; location not determined",
+   "tags": [
+    "celebration",
+    "Lunenburg 300th"
+   ],
+   "quote": "there is a town interest in having fireworks and a bonfire."
+  },
+  {
+   "topic": "Boston Post Cane",
+   "resolution": "no progress; Director to contact next recipient",
+   "tags": [
+    "Boston Post Cane"
+   ],
+   "quote": "ms. doherty will contact the next potential recipient."
+  },
+  {
+   "topic": "MCOA Resource Guide for board members",
+   "resolution": "reviewed; members to review further",
+   "tags": [
+    "training",
+    "board packet"
+   ],
+   "quote": "ms. lincoln reviewed the mcoa resource guide with board members."
+  },
+  {
+   "topic": "Volunteer recognition cookout, September 20",
+   "resolution": "planned; no vote",
+   "tags": [
+    "volunteers",
+    "events"
+   ],
+   "quote": "ms. doherty stated that gift baskets will be made and donated by members of the board."
+  },
+  {
+   "topic": "ARPA submissions",
+   "resolution": "requests listed; Select Board to review that evening",
+   "tags": [
+    "ARPA",
+    "funding requests"
+   ],
+   "quote": "ms. lincoln has made a request for sail shades for the pavilion."
+  },
+  {
+   "topic": "Director's report: capital plan and buildings and grounds",
+   "resolution": "status reported; no action",
+   "tags": [
+    "capital plan",
+    "facilities",
+    "generator",
+    "roof",
+    "parking lot",
+    "bocce court"
+   ],
+   "quote": "generator ~ has not arrived yet."
+  },
+  {
+   "topic": "Upcoming events",
+   "resolution": "reviewed for September",
+   "tags": [
+    "events"
+   ],
+   "quote": "ms. doherty reviewed the upcoming events for september."
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported; no action",
+   "tags": [
+    "Eagle House"
+   ],
+   "quote": "the supporters will hold their annual meeting on 9/13/24."
+  },
+  {
+   "topic": "Board comment on Boston Post Cane",
+   "resolution": "Director said she is working on a resolution",
+   "tags": [
+    "Boston Post Cane"
+   ],
+   "quote": "mr. lincoln suggested that something needs to be done about the boston post cane."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:19 AM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "the meeting adjourned at 11:19 am."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "seniors",
+  "minutes",
+  "capital plan",
+  "ARPA",
+  "Boston Post Cane",
+  "Nashoba Valley Hospital",
+  "budget requests",
+  "town manager",
+  "Lunenburg 300th",
+  "LAAC facilities"
+ ],
+ "dropped_unquoted_by_field": {}
 }

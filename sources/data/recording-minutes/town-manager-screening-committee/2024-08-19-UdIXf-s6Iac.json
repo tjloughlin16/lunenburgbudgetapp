@@ -226,5 +226,139 @@
    "at": "2026-10-08T02:44:05Z",
    "cost_usd": 0.21468299999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08192024-6692",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/town-manager-screening-committee/2024-08-19-minutes-6692.txt",
+   "path": "sources/meetings/town-manager-screening-committee/2024-08-19-minutes-6692.pdf"
+  },
+  "official_sha256": "bb3014538a886d657542602847b2998b038cf7209bd442ee81e5e8cfb43cd5ac",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the north central Massachusetts requirement and the move of the next meeting to September 11. They differ on the original meeting date, the number of project examples, a proposed motion and a reserve fund transfer that appear only in ours, and the attendee lists. The official minutes record no votes or transfers, so the proposed motion at t=4114 and the reserve fund transfer at t=4134 should be checked against the recording first.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 1,
+   "discrepancy": 4,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Proposed motion to authorize the chair to finalize the solicitation",
+    "ours": "Proposed motion to authorize the chair to finalize the solicitation with the procurement officer — not audible",
+    "official": "",
+    "note": "Our minutes record a proposed motion (outcome not audible); the official minutes record no votes at all. Check the recording near t=4114 for whether a motion was made and carried.",
+    "t": 4114
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Reserve fund transfer approved by the Finance Committee",
+    "ours": "Reserve fund transfer approved by the Finance Committee; purpose and amount not in captions —  (discussed only)",
+    "official": "",
+    "note": "Our minutes mention a reserve fund transfer; the official minutes list no transfers. Check the recording near t=4134 to see whether it was this committee's business or an unrelated remark, and whether the captions misheard it.",
+    "t": 4134
+   },
+   {
+    "kind": "agree",
+    "about": "Solicitation requires North Central Massachusetts experience",
+    "ours": "Solicitation to require at least three project examples, with at least one in north central Massachusetts.",
+    "official": "the committee added that a successful candidate have conducted at least one successful search in the north central region of massachusetts.",
+    "note": "Both record the north central Massachusetts requirement.",
+    "t": 3971
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Qualification requirement: number of examples",
+    "ours": "Solicitation to require at least three project examples, with at least one in north central Massachusetts.",
+    "official": "the committee added that a successful candidate have conducted at least one successful search in the north central region of massachusetts.",
+    "note": "Ours adds a requirement of at least three project examples that the official minutes do not mention. Check the recording near t=3971 to confirm whether 'three' was said.",
+    "t": 3971
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting moved to September 11",
+    "ours": "Next meeting moved from the 27th to September 11.",
+    "official": "it was then agreed to postpone the next sched mtg of sept 5, 2024 to sept. 11, to allow for the",
+    "note": "Both record the move to Sept 11, but the original date differs (27th vs Sept 5); see the separate finding.",
+    "t": 4330
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Original date of the postponed meeting",
+    "ours": "Next meeting moved from the 27th to September 11.",
+    "official": "it was then agreed to postpone the next sched mtg of sept 5, 2024 to sept. 11, to allow for the",
+    "note": "The original meeting date differs: the 27th in ours, Sept 5 in the official minutes. Check the recording near t=4330 for which date was spoken.",
+    "t": 4330
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Two-week response period for respondents",
+    "ours": "",
+    "official": "the proposal must allow two weeks for respondents to reply.",
+    "note": "The official minutes record this solicitation term; ours does not."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: the chair",
+    "ours": "the chair (chair)",
+    "official": "murphy read into the record emails from dr. burham from the school, sue doherty from the adult activity center, and bill",
+    "note": "Ours gives only the role; the official minutes name the chair as Tim Murphy."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Chief Gammel",
+    "ours": "Chief Gam (presenter)",
+    "official": "chiefs gammel and sullivan attended in person, to share their thoughts on qualities for our next",
+    "note": "Same person; the captions truncated the name.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chief Gammel's name",
+    "ours": "Chief Gam (presenter)",
+    "official": "chiefs gammel and sullivan attended in person, to share their thoughts on qualities for our next",
+    "note": "Captions shortened the name Gammel to 'Gam'.",
+    "official_reading": "Gammel"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: the fire chief (Sullivan)",
+    "ours": "the fire chief (presenter)",
+    "official": "chiefs gammel and sullivan attended in person, to share their thoughts on qualities for our next",
+    "note": "Probably Chief Sullivan, who attended in person alongside Chief Gammel. Our minutes give only the title."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Julie (Belliveau)",
+    "ours": "Julie (presenter)",
+    "official": "the solicitation proposal prepared by julie belliveau (asst. town",
+    "note": "Same person, given by first name only in ours; the official minutes say she prepared the solicitation proposal."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Members Tom and Chris",
+    "ours": "Tom (member)\nChris (member)",
+    "official": "",
+    "note": "The official minutes name no Tom or Chris. The members it lists are Beardmore and Matt Brenner, so check whether these are caption mishearings of other members."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Members and written-input contributors",
+    "ours": "",
+    "official": "beardmore school comm; matt brenner planning board",
+    "note": "The official minutes list Beardmore and Matt Brenner, plus written input from Kate Burnham, Sue Doherty and William Bernard. None of them appears in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T02:45:04Z",
+   "cost_usd": 0.23219299999999998
+  }
  }
 }

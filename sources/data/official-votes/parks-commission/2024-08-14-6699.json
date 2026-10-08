@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-08-14",
  "docid": "6699",
@@ -12,15 +12,204 @@
  },
  "votes": [
   {
-   "motion": "allow Dan Lincoln to plant a tree at McNally Field with the final location approved by C. Ruth",
+   "motion": "Allow resident Dan Lincoln to plant a tree at McNally Field, with the final location approved by C. Ruth.",
+   "moved_by": "K. Menard",
+   "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "k. menard made a motion to allow dan lincoln to plant a tree at mcnally field with the final location approved by c. ruth. c. sullivan seconded. (4-0).",
-   "moved_by": "K. Menard",
-   "seconded_by": "C. Sullivan"
+   "quote": "k. menard made a motion to allow dan lincoln to plant a tree at mcnally field with the final location approved by c. ruth. c. sullivan seconded. (4-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0752934
+ "note": "Text is extracted from a PDF with page headers reading 'of 21' on page 1 and 'of 22' on page 2; page count not verified. One vote recorded (tree planting, 4-0). No motion to approve prior minutes or to adjourn appears in the text; adjournment is recorded only as 'Adjourned: 7:46 pm'. Name inconsistencies in the text: 'Tom Lawless' in attendance but 'Tim Lawless' in the header; 'Christopher Sullivan' in attendance but 'Chris Sullivan' in the header and motion; the roll call lists 'T. Woodward', who is not named elsewhere as present. The Marshall Park ranking is printed as 'Fuss & O'Neill 90, Nesra 91, and RDLA 83', recorded as printed. Firms and vendors (Lakeview Landscaping, Dillis & Roy, Add-a-Sign, Turning Leaf Design, and the design firms) are not listed as attendees because they are organisations.",
+ "cost_usd": 0.015330570000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tom lawless, and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tom lawless, and christopher sullivan"
+  },
+  {
+   "name": "Tom Lawless",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tom lawless, and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tom lawless, and christopher sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: colleen shapiro"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Additional Attendee",
+   "status": "present",
+   "quote": "additional attendees: chris ruth"
+  },
+  {
+   "name": "Dan Lincoln",
+   "role": "resident",
+   "status": "not stated",
+   "quote": "a. scheipers stated a resident, dan lincoln asked that he be allowed to work with lakeview landscaping at his expense"
+  },
+  {
+   "name": "T. Woodward",
+   "role": "named in roll call vote",
+   "status": "not stated",
+   "quote": "roll call vote: a.scheipers - yes k.menard - yes c. sullivan - yes t. woodward - yes"
+  },
+  {
+   "name": "D. Passios",
+   "role": "public comment speaker (stated role not printed)",
+   "status": "present",
+   "quote": "d. passios suggested the commission submit contracted services grants to the town manager."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "K. Menard will reach out to Dillis & Roy to tell them the Parks Commission will accept their offer to pay for the new Beach House sign.",
+   "quote": "k. menard stated she will reach out to dillis & roy to inform them parks commission will be accepting their offer."
+  },
+  {
+   "decision": "K. Menard will go back to Add-a-Sign and have them redesign the Beach House sign.",
+   "quote": "k. menard will go back to add-a-sign and have them redesign the sign."
+  },
+  {
+   "decision": "The Commission agreed to interview all three Marshall Park design applicants (Nesra, Fuss & O'Neill, and RDLA).",
+   "quote": "the commission agreed to interview all three applicants."
+  },
+  {
+   "decision": "Interviews for the Marshall Park design firms set for 6:30 pm on August 21, 2024.",
+   "quote": "a. scheipers indicated the interviews will be 6:30 pm on august 21, 2024."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tree planted at resident's expense at McNally",
+   "what_was_recorded": "A resident proposed to have a tree planted at McNally at his own expense, through Lakeview Landscaping; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "asked that he be allowed to work with lakeview landscaping at his expense next to the sign at mcnally."
+  },
+  {
+   "topic": "Beach House sign funding",
+   "what_was_recorded": "Dillis & Roy offered to pay for the new Beach House sign; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "k. menard indicated dillis & roy offered to pay for the new sign."
+  },
+  {
+   "topic": "Contracted services grants",
+   "what_was_recorded": "In public comment, D. Passios suggested the Commission submit contracted services grants to the Town Manager; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "d. passios suggested the commission submit contracted services grants to the town manager."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "D. Passios",
+   "stated_role": "not printed",
+   "topic": "contracted services grants to the Town Manager",
+   "quote": "d. passios suggested the commission submit contracted services grants to the town manager."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Tree planting at McNally (resident Dan Lincoln)",
+   "resolution": "approved 4-0; final location to be approved by C. Ruth",
+   "quote": "first item on the agenda, discussion and vote on resident to have a tree planted at his expense at mcnally.",
+   "tags": [
+    "tree planting",
+    "McNally Field",
+    "resident request"
+   ]
+  },
+  {
+   "topic": "Beach House signage",
+   "resolution": "continued; no vote; sign to be redesigned, offered funding from Dillis & Roy",
+   "quote": "next item on the agenda, beach house signage discussion and approval",
+   "tags": [
+    "signage",
+    "Beach House",
+    "donation"
+   ]
+  },
+  {
+   "topic": "Scoring of Marshall Park design proposals",
+   "resolution": "scored and ranked; all three firms to be interviewed; no vote",
+   "quote": "next item on the agenda, scoring of the proposals from design firms for marshall park",
+   "tags": [
+    "Marshall Park",
+    "design proposals",
+    "interviews"
+   ]
+  },
+  {
+   "topic": "Chair Updates",
+   "resolution": "no action (none)",
+   "quote": "next item on the agenda, chair updates",
+   "tags": [
+    "chair"
+   ]
+  },
+  {
+   "topic": "Committee Updates",
+   "resolution": "no action; Master Planning not meeting until October",
+   "quote": "next item on the agenda, committee updates",
+   "tags": [
+    "committees",
+    "master planning",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Board comment and public comment",
+   "resolution": "board comment none; one public comment on contracted services grants",
+   "quote": "board comment: none public comment: d. passios suggested the commission submit contracted services grants to the town manager.",
+   "tags": [
+    "public comment",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:46 pm; no motion to adjourn recorded",
+   "quote": "d. passios suggested the commission submit contracted services grants to the town manager. adjourned: 7:46 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "McNally Field tree",
+  "Beach House signage",
+  "Marshall Park design",
+  "landscape design proposals",
+  "public comment",
+  "grants",
+  "donations"
+ ],
+ "dropped_unquoted_by_field": {}
 }
