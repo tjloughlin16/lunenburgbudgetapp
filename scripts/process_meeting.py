@@ -342,6 +342,7 @@ def main():
         print('  %s %-40s %s' % (date, board, ' -> '.join(st)), flush=True)
     if a.until_usage:
         import usage_governor as G
+        G.fetch(force=True)
         print('  ... (%d in all)\n[gov] %s' % (len(plan), G.describe(
             G.Plan(a.session_cap, a.week_cap, parse_by(a.by), a.max_jobs), G.readings(), time.time())), flush=True)
     if a.dry_run:
@@ -463,6 +464,7 @@ def run_governed(plan, a, S, ceiling):
     import usage_governor as G
     by = parse_by(a.by)
     gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs, ramp=a.ramp)
+    G.fetch(force=True)
     say('[gov %s] %s' % (dt.datetime.now().strftime('%H:%M'), G.describe(gp, G.readings(), time.time())))
     T, stop = Tally(), None
     pool = cf.ThreadPoolExecutor(max_workers=a.max_jobs)
@@ -491,6 +493,7 @@ def run_governed(plan, a, S, ceiling):
             now = time.time()
             if now - last_tick >= TICK:
                 last_tick = now
+                G.fetch()                                  # the server's figure, at most once a minute
                 h = G.readings()
                 if h and now - h[-1]['t'] < G.STALE_S:
                     gp.measured(T.done, h[-1]['u5'])

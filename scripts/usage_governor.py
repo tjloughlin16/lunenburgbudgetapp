@@ -11,9 +11,17 @@ either a session window or weekly window, and also rate limit it when the rates 
 faster or slower than desired. or even stop it if the window is filling faster than
 expected."*
 
-THE SIGNAL is ~/.claude/usage-log.csv, written by the status line (~/.claude/
-statusline-usage.sh) every time a reading changes while a Claude Code session is open:
-`at, five_hour, seven_day, five_hour_resets_at, session`. The bars are WHOLE PERCENTS, so
+THE SIGNAL is the endpoint /usage itself reads -- api.anthropic.com/api/oauth/usage, with
+the token Claude Code keeps in the macOS keychain -- polled at most once a minute by fetch()
+and appended to ~/.claude/usage-api-log.csv. It is the SERVER's figure, so it moves whether
+or not any interactive session is active.
+
+IT REPLACED THE STATUS LINE AFTER THE STATUS LINE FROZE. 7 October 2026: the status line's
+rate_limits change only when the interactive session itself calls the model; idle, they sat
+at "8%" for 48 minutes while a 6-worker run spent $51, and the session hit 100% at 17:50
+against a 65%-by-20:30 plan. The status line refreshed every minute, so the frozen number
+LOOKED fresh. A signal that can be stale while looking current is worse than none: the
+governor now trusts only a reading it fetched itself, and the status line is display only. The bars are WHOLE PERCENTS, so
 every threshold below is a few points wide on purpose -- a rule finer than the instrument
 is a rule that fires on rounding.
 
@@ -34,8 +42,9 @@ import datetime as dt
 import os
 import sys
 
-LOG = os.path.expanduser('~/.claude/usage-log.csv')
-LATEST = os.path.expanduser('~/.claude/usage-latest.json')   # rewritten on EVERY refresh
+LOG = os.path.expanduser('~/.claude/usage-api-log.csv')   # written by fetch(), and only by it
+URL = 'https://api.anthropic.com/api/oauth/usage'
+FETCH_EVERY_S = 55
 STALE_S = 300            # a reading older than this is unknown, never current
 BAND = 2.0               # points either side of the line that count as "on it"
 RAMP_S = 300             # at most one added worker per five minutes
@@ -47,31 +56,59 @@ MARGIN_MAX_S = 600       # stop aiming this long before the deadline...
 MARGIN_FRAC = 0.10       # ...or this fraction of a short horizon, whichever is smaller
 
 
+def _token():
+    """Claude Code's own OAuth access token, from the keychain. Never printed, never stored."""
+    import json
+    import subprocess
+    raw = subprocess.run(['security', 'find-generic-password', '-s', 'Claude Code-credentials', '-w'],
+                         capture_output=True, text=True, timeout=10).stdout.strip()
+    return json.loads(raw)['claudeAiOauth']['accessToken']
+
+
+def fetch(force=False):
+    """Ask the server for the bars and append a row to LOG. At most once per FETCH_EVERY_S
+    (the last row's age decides). Returns True on a fresh reading. Any failure -- an expired
+    token, no network -- returns False and writes nothing, so the reading goes STALE and the
+    governor drops to one worker: a reading it could not get is never guessed."""
+    import json
+    import urllib.request
+    hist = readings()
+    if not force and hist and dt.datetime.now().timestamp() - hist[-1]['t'] < FETCH_EVERY_S:
+        return True
+    try:
+        req = urllib.request.Request(URL, headers={
+            'Authorization': 'Bearer ' + _token(), 'anthropic-beta': 'oauth-2025-04-20',
+            'Content-Type': 'application/json', 'User-Agent': 'claude-cli'})
+        d = json.loads(urllib.request.urlopen(req, timeout=15).read())
+        f5, f7 = d['five_hour'], d['seven_day']
+        reset = dt.datetime.fromisoformat(f5['resets_at']).timestamp()
+        new = not os.path.exists(LOG)
+        with open(LOG, 'a', encoding='utf-8') as fh:
+            if new:
+                fh.write('at,five_hour,seven_day,five_hour_resets_at\n')
+            fh.write('%s,%s,%s,%d\n' % (dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                                         f5['utilization'], f7['utilization'], reset))
+        return True
+    except Exception:                                   # noqa: BLE001 -- any failure is "unknown"
+        return False
+
+
 def readings(path=LOG):
-    """Every complete reading, oldest first: dicts with t (epoch), u5, u7, reset (epoch)."""
+    """Every reading fetch() recorded, oldest first: dicts with t (epoch), u5, u7, reset (epoch).
+    The resets_at the server returns carries microseconds that drift between calls, so it is
+    rounded to the minute -- otherwise every reading would look like a new window."""
     out = []
     if not os.path.exists(path):
         return out
     for r in csv.DictReader(open(path, encoding='utf-8')):
         try:
+            rs = float(r.get('five_hour_resets_at') or 0)
             out.append(dict(t=dt.datetime.fromisoformat(r['at'].replace('Z', '+00:00')).timestamp(),
                             u5=float(r['five_hour']), u7=float(r['seven_day']),
-                            reset=float(r.get('five_hour_resets_at') or 0) or None))
+                            reset=(round(rs / 60) * 60) if rs else None))
         except (ValueError, KeyError, TypeError):
             continue
-    out = sorted(out, key=lambda x: x['t'])
-    # THE LAST READING IS AS FRESH AS THE LAST REFRESH, not the last change: the csv only
-    # gets a row when a figure moves. usage-latest.json is rewritten every refresh; if it
-    # agrees with the last row, that row is current as of the file's mtime.
-    if out and path == LOG and os.path.exists(LATEST):
-        try:
-            import json
-            j = json.load(open(LATEST, encoding='utf-8'))
-            if float(j['five_hour']) == out[-1]['u5'] and float(j['seven_day']) == out[-1]['u7']:
-                out.append(dict(out[-1], t=os.path.getmtime(LATEST)))
-        except (ValueError, KeyError, TypeError, OSError):
-            pass
-    return out
+    return sorted(out, key=lambda x: x['t'])
 
 
 class Plan:
@@ -249,4 +286,5 @@ def _test():
 if __name__ == '__main__':
     if '--test' in sys.argv:
         sys.exit(_test())
-    print(describe(Plan(), readings(), dt.datetime.now().timestamp()))
+    ok = fetch(force=True)
+    print(('' if ok else 'COULD NOT FETCH -- ') + describe(Plan(), readings(), dt.datetime.now().timestamp()))
