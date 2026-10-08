@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-03-07",
  "docid": "6452",
@@ -10,8 +10,408 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03072024-6452",
   "doc_url": "/docs/meetings/finance-committee/2024-03-07-minutes-6452.txt"
  },
- "votes": [],
+ "votes": [
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Jay Simeone",
+   "seconded_by": "Chris Menard",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "there was a m otion to adjourn by jay s imeone , seconded by chris menard. roll call vote . jean russell aye, dave passios aye, tom gray aye, jay simeone aye,"
+  }
+ ],
  "dropped_unquoted": 1,
- "note": "Only one vote recorded. The DPW and Facilities budget items are presentations, not motions voted on. Minutes are discussed but not voted on. This is procedural adjournment only.",
- "cost_usd": 0.1001891
+ "note": "Text is OCR-style extraction with broken spacing inside words (\"m otion\", \"b udget\", \"Chris topher\") and split tokens (\"$ 17\", \"18 .58\"). Quotes were copied with those artifacts kept; a few double-spaces are collapsed. Figures are reproduced as printed, including \"1.6 millio n\" and \"$ 195,000\"; the cemetery rate and some other figures should be checked against the scan before quoting. Page 2 prints the DPW director as \"Bill Berard\" once and \"Bill Bernard\" elsewhere; the name is recorded as \"Bill Bernard\". The minutes record exactly one vote, the adjournment, which is a roll call with six ayes named and printed as \"Unanimous vote\" with no numeric count. No other motions are printed, so no other votes are recorded. Heather Lemieux and Anna Lockwood have no role printed. The Finance Director report (item 6) is recorded as having no updates, and no Finance Director is named. Jean Russell is printed as participating by Zoom. Clerk Tiffaney Tavares is absent. Several items are discussions with no motion, such as the override and the Select Board warrant article, and are recorded as topics rather than votes.",
+ "cost_usd": 0.024332470000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "gray, board member dave passios, board member jean russell"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "gray, board member dave passios, board member jean russell"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member (participated by Zoom)",
+   "status": "remote",
+   "quote": "board member jean russell (zoom)"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "jean russell aye, dave passios aye, tom gray aye, jay simeone aye,"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent member: clerk tiffaney tavares"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill bernard, presented the budget."
+  },
+  {
+   "name": "Christopher Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "christopher ruth will send the numbers to chris menard."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "not stated",
+   "status": "present",
+   "quote": "anna lockwood states there was a new way of phasing,"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "public commenter, 282 Pleasant Street",
+   "status": "present",
+   "quote": "peter beardmore , 282 pleasant street , states there has been discussion"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Chair of the School Committee",
+   "status": "present",
+   "quote": "chair of the school committee, states the committee was looking at ways to cut funds out of budget."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather lemieux states that she can point out the specific line items"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Christopher Ruth will send the estimated cost for each building to Chris Menard.",
+   "quote": "christopher ruth will send the numbers to chris menard."
+  },
+  {
+   "decision": "Chris Menard will obtain the dates of the meetings on the website that lack minutes, to look into it further.",
+   "quote": "chris menard will get the dates of those meetings to look into this further."
+  },
+  {
+   "decision": "The School Committee presentation was recommended to move from March 14 to March 21 to reduce confusion.",
+   "quote": "ultimately, it was r ecommended to move the presentation from the 14 th to the 21 st"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW tree removal and arborist study",
+   "what_was_recorded": "The DPW requested double the tree removal budget; an arborist study was estimated at $30,000 to $50,000, a small tree removal at about $1,000, and a crane tree removal at $3,000 to $4,000 by contract.",
+   "figures_as_printed": [
+    "$30,000 to $50,000",
+    "$1,000",
+    "$3,000 and $4,000"
+   ],
+   "quote": "between $30,000 to $50,000. to remove a small tree the"
+  },
+  {
+   "topic": "DPW FY25 request versus FY24",
+   "what_was_recorded": "The DPW FY25 request was stated as 5.5% higher than the FY24 request.",
+   "figures_as_printed": [
+    "5.5%"
+   ],
+   "quote": "the fy 25 request is 5.5% higher than fy 24"
+  },
+  {
+   "topic": "Pavement management increase",
+   "what_was_recorded": "Pavement management shows a continuing yearly increase of roughly 50,000; Chapter 90 funds may also pay for paving.",
+   "figures_as_printed": [
+    "roughly 50,000"
+   ],
+   "quote": "continuing increase each year of roughly 50,000 for pavement management."
+  },
+  {
+   "topic": "Chapter 90 fund balance",
+   "what_was_recorded": "The Chapter 90 fund balance was confirmed at about 1.6 million; a public commenter said he was stunned by the balance.",
+   "figures_as_printed": [
+    "1.6 millio n"
+   ],
+   "quote": "the chapter 90 fund. bill bernard confirms there is 1.6 millio n"
+  },
+  {
+   "topic": "Snow removal overage",
+   "what_was_recorded": "The DPW reported the current year is $150,000 over the snow removal budget.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "currently this year, we are $150,000 over the snow removal budget."
+  },
+  {
+   "topic": "Cemetery seasonal labor rate and hours",
+   "what_was_recorded": "Step 1 is currently $17 an hour and the DPW requested $18.58; hours would rise from 19 per week for 17 weeks to 19 per week for 20 weeks.",
+   "figures_as_printed": [
+    "$ 17",
+    "$ 18 .58"
+   ],
+   "quote": "the job title of step 1 is currently $ 17 an hour and bill bernard"
+  },
+  {
+   "topic": "Bridge and culvert grant",
+   "what_was_recorded": "A grant of $25,000 was received to complete a bridge and culvert preventative and maintenance plan.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "a grant has been received of $25,000 to complete a bridge and culvert"
+  },
+  {
+   "topic": "Facilities landscaper contract",
+   "what_was_recorded": "The Facilities FY25 budget requests an additional $5,000 for a landscaper; the current 3-year contract is up this year.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "request for an additional $5,000 for a landscaper."
+  },
+  {
+   "topic": "Beach staff deficit",
+   "what_was_recorded": "Beach staff are running a deficit of $4,500 and need to use revolving funds.",
+   "figures_as_printed": [
+    "$ 4,500"
+   ],
+   "quote": "constantly running a $ 4,500 deficit and need to use revolving funds."
+  },
+  {
+   "topic": "TC Passios program revenue",
+   "what_was_recorded": "Parks Commission programs at TC Passios brought in revenue of $4,000 over 2 months.",
+   "figures_as_printed": [
+    "$4,000"
+   ],
+   "quote": "a total of $4,000 dollars were brought in of revenue from those programs."
+  },
+  {
+   "topic": "Facilities salary difference",
+   "what_was_recorded": "Facilities salaries differ by $4,500 from FY24 to FY25.",
+   "figures_as_printed": [
+    "$4,500"
+   ],
+   "quote": "only a $4,500 difference in the facilities salaries from fy 24 to fy 25."
+  },
+  {
+   "topic": "Electricity costs and solar credits",
+   "what_was_recorded": "Budgeted and actual electricity are said to be similar; solar credit adjustments are expected to lower electricity numbers. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "those adjustments should lower those numbers ."
+  },
+  {
+   "topic": "Green Communities sewer pump grant",
+   "what_was_recorded": "Green Communities is working with DPW on a grant to replace sewer pumps; the sewer project is to be fast-tracked into the April grant round, and the $ 195,000 is said to be nowhere near enough.",
+   "figures_as_printed": [
+    "$ 195,000"
+   ],
+   "quote": "the $ 195,000 is nowhere near enough to"
+  },
+  {
+   "topic": "Marshall Park cost",
+   "what_was_recorded": "A Board of Selectmen meeting reportedly said Marshall Park was coming in at around 5 million; staff said phases and variations explain differing estimates.",
+   "figures_as_printed": [
+    "5 million"
+   ],
+   "quote": "marshall park was coming in at a much higher cost around 5 million"
+  },
+  {
+   "topic": "Marshall Park boardwalk price range",
+   "what_was_recorded": "Three boardwalk price requests ranged from $ 600,000 to 1.5 million; the scope was said not to have changed.",
+   "figures_as_printed": [
+    "$ 600,000",
+    "1.5 million"
+   ],
+   "quote": "it varied from $ 600,000 to 1.5 million."
+  },
+  {
+   "topic": "Marshall Park grants",
+   "what_was_recorded": "A half million-dollar grant was received for Marshall Park and another million-dollar grant has been applied for.",
+   "figures_as_printed": [
+    "half million-dollar grant",
+    "million-dollar grant"
+   ],
+   "quote": "confirms that a half million-dollar grant was received"
+  },
+  {
+   "topic": "School override number",
+   "what_was_recorded": "The School Committee's override number was 715,000 dollars, reflecting a level service budget minus Esser positions; a hidden spreadsheet cell with Esser funds was later removed.",
+   "figures_as_printed": [
+    "715,000 dollars"
+   ],
+   "quote": "the number was 715,000 dollars"
+  },
+  {
+   "topic": "Retiring debt service spendable funds",
+   "what_was_recorded": "A public commenter asked how much of the $ 500,000 is actually spendable in the retiring debt service; no answer is recorded.",
+   "figures_as_printed": [
+    "$ 500,000"
+   ],
+   "quote": "actually spendable in the retiring debt service ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "282 Pleasant Street (address as printed)",
+   "topic": "proportional budget increases; savings from retired debt",
+   "quote": "peter beardmore , 282 pleasant street , states there has been discussion"
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "282 Pleasant Street (address as printed)",
+   "topic": "whether DPW presented its proposed budget",
+   "quote": "asked if the dpw direct or just present his proposed budget"
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "282 Pleasant Street (address as printed)",
+   "topic": "Chapter 90 balance and need for a fund policy",
+   "quote": "peter beardmore states he is stunned by the balance"
+  },
+  {
+   "speaker": "Carol Archambault",
+   "stated_role": "Chair of the School Committee",
+   "topic": "School Committee options to cut funds, including leaving TC Passios",
+   "quote": "chair of the school committee, states the committee was looking at ways to cut funds out of budget."
+  },
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "not stated (address 91 Main Street as printed)",
+   "topic": "consolidating facilities and parks budgets",
+   "quote": "double the size of our budget and they only have 1 facilities director"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "opened 7:05 PM; no action",
+   "quote": "meeting opened at 7:05 pm ."
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action recorded",
+   "quote": "2. pledge of allegiance"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no announcements",
+   "quote": "there were no announcements ."
+  },
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "one speaker; no action",
+   "quote": "peter beardmore , 282 pleasant street , states there has been discussion"
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no report",
+   "quote": "there was no report from the town manager."
+  },
+  {
+   "topic": "Finance Director Report",
+   "resolution": "no reports or updates",
+   "quote": "there were n o new reports or updates ."
+  },
+  {
+   "topic": "DPW FY25 Budget Presentation",
+   "resolution": "presented; questions and requests (tree removal, stormwater, snow, cemetery, Chapter 90); no vote",
+   "quote": "dpw fy25 budget presentation"
+  },
+  {
+   "topic": "Facilities FY25 Budget Presentation",
+   "resolution": "presented; estimates requested by Chris Menard; no vote",
+   "quote": "facilities fy25 budget presentation"
+  },
+  {
+   "topic": "Public Comment on FY25 Budget Presentations",
+   "resolution": "three speakers; no action",
+   "quote": "8. public comment on fy25 budget presentations"
+  },
+  {
+   "topic": "FY21-FY23 Revenue and Expenditures Recap",
+   "resolution": "skipped for this meeting",
+   "quote": "this topic was skipped for this meeting."
+  },
+  {
+   "topic": "Override Warrant Article update",
+   "resolution": "no vote; Select Board agreed to put the article on the ballot; Committee said it need not vote to stop it",
+   "quote": "the select board didn 't have a vote but agreed to put the article on the ball o t."
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "two sets not yet read; four website meetings lack minutes; Chris Menard to follow up",
+   "quote": "there are 2 sets of minutes that some members have not had a chance to"
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports given; no action",
+   "quote": "11. committee reports"
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "none added",
+   "quote": "there are no additional topics for future meetings."
+  },
+  {
+   "topic": "Upcoming FY25 Budget Meetings",
+   "resolution": "schedule noted; no action",
+   "quote": "13. upcoming fy25 budget meetings"
+  },
+  {
+   "topic": "Important Dates",
+   "resolution": "dates noted; no action",
+   "quote": "jan 9th-mar 18th - town meeting warrant open"
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no public comment",
+   "quote": "there was no public comment."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned by unanimous roll call vote; closed 11:16 PM",
+   "quote": "there was a m otion to adjourn by jay s imeone"
+  }
+ ],
+ "tags": [
+  "FY25 budget",
+  "DPW",
+  "facilities",
+  "parks and recreation",
+  "tree removal",
+  "snow removal",
+  "cemetery",
+  "Chapter 90",
+  "Marshall Park",
+  "school override",
+  "Green Communities",
+  "stormwater",
+  "public comment",
+  "minutes",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-03-06",
  "docid": "6449",
@@ -12,55 +12,500 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the 1/24/24 regular session",
+   "motion": "Approve the minutes of the Regular Session of 1/24/24.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Sculimbrene",
-   "outcome": "passed 4-0-1 (Mr. Beardmore abstaining)",
+   "outcome": "passed, Mr. Beardmore abstaining (roll call; all others approve)",
    "procedural": true,
-   "quote": "ms. brzozoski makes a motion to approve minutes, mr. sculimbrene seconded the motion, roll call vote all approve with mr. beardmore abstaining."
+   "quote": "ms. brzozoski makes a motion to approve minutes, mr. sculimbrene seconded the motion"
   },
   {
-   "motion": "approve line item transfers of $78,933",
+   "motion": "Approve the line item transfers totalling $78,933.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Brzozoski",
-   "outcome": "passed",
+   "outcome": "passed (all approve via roll call)",
    "procedural": false,
-   "quote": "mr. sculimbrene made a motion to approve line item transfers, ms. brzozoski seconds the motion, all approve via roll call"
+   "quote": "mr. sculimbrene made a motion to approve line item transfers, ms. brzozoski seconds the motion"
   },
   {
-   "motion": "approve the LHS Program of Studies for 24/25",
+   "motion": "Approve the Program of Studies for 24/25.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Mr. Sculimbrene",
-   "outcome": "passed",
+   "outcome": "passed (all approve via roll call)",
    "procedural": false,
-   "quote": "mr. beardmore makes a motion to approve the program of studies, mr. sculimbrene seconds the motion. all approve via roll call."
+   "quote": "mr. beardmore makes a motion to approve the program of studies, mr. sculimbrene seconds the motion."
   },
   {
-   "motion": "approve warrant article to raise and appropriate or transfer from free cash $82,119 for the Network Security Upgrade",
+   "motion": "Approve the warrant article as drafted, requesting $82,119 from free cash for the Network Security Upgrade.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Mr. Beardmore",
-   "outcome": "passed",
+   "outcome": "passed (all approve via roll call)",
    "procedural": false,
-   "quote": "mr. sculimbrene makes a motion to approve and warrant as drafted, mr. beardmore seconds the motion, all approve via roll call"
+   "quote": "mr. sculimbrene makes a motion to approve and warrant as drafted, mr. beardmore seconds the motion"
   },
   {
-   "motion": "set the school budget override amount at $715,000",
+   "motion": "Set the override amount at $715,000.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Mr. Lehtinen",
-   "outcome": "passed",
+   "outcome": "passed (all approve via roll call)",
    "procedural": false,
-   "quote": "ms. archambault makes the recommendation to set the override amount at $715,000 mr. sculimbrene makes a motion to set the override amount at $715,000, mr. lehtinen seconds the motion, all approve via roll call."
+   "quote": "mr. sculimbrene makes a motion to set the override amount at $715,000, mr. lehtinen seconds the motio",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:20.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Ms. Brzozoski",
-   "outcome": "passed",
+   "outcome": "passed (all approve)",
    "procedural": true,
    "quote": "mr. sculimbrene makes a motion to adjourn at 10:20, ms. brzozoski seconds the motion all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0882251
+ "note": "Text extraction, not a scan; all pages read. Votes are recorded as 'all approve via roll call' or 'all approve' with no tallies printed, so outcomes are recorded as passed without a count; only the minutes approval records an abstention (Mr. Beardmore). Hybrid meeting, but the minutes do not say which members attended remotely, so attendance status is 'present' only where the header says so. The Business Manager/HR Director is listed without a name and is not recorded as an attendee. Residents spoke during the Old Business budget Q&A (item 10a) as well as at formal Public Comment (item 12); the Q&A speakers are included under public_comment with that noted. Several names appear only as mentioned (Mr. Adams, Mr. Stevenson, Mr. Jeffrey, Mr. Lehtinen's Finance Committee report) and are not treated as attendees. The 'Ms. Hanscom' and 'Annica Scott' roles are not printed. The minutes contain a line 'Warrant Total... No questions, Ms. Archambault has signed', which is a signing, not a vote.",
+ "cost_usd": 0.020936870000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair- present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Eric Hevy",
+   "role": "Director of Facilities (guest)",
+   "status": "present",
+   "quote": "guests: eric hevy - director of facilities, tim santry - lmhs principal"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMHS Principal (guest)",
+   "status": "present",
+   "quote": "guests: eric hevy - director of facilities, tim santry - lmhs principal"
+  },
+  {
+   "name": "Annica Scott",
+   "role": "not stated",
+   "status": "present",
+   "quote": "annica scott provided a document to explain student opportunity act plan."
+  },
+  {
+   "name": "Ms. Hanscom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. hanscom reports that we will definitely receive circuit breaker money, but it is based on the previous year."
+  },
+  {
+   "name": "Evan Waters",
+   "role": "Chair of the Finance Committee",
+   "status": "present",
+   "quote": "evan waters, the chair of the finance committee, reports the budget that is to be submitted to them"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair Finance Committee",
+   "status": "present",
+   "quote": "chris menard, vice chair finance committee the comment was made regarding the democratic process"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "resident, 6 Irish Court",
+   "status": "present",
+   "quote": "renee emkey, 6 irish court with the esser cuts it changes the salary reserve line"
+  },
+  {
+   "name": "Shoshana Mulè",
+   "role": "resident, 139 Cove Road",
+   "status": "present",
+   "quote": "shoshana mulè 139 cove road dr. burnham why can't you take the 5th grade band off the cuts"
+  },
+  {
+   "name": "TJ Loughlin",
+   "role": "resident, 207 Rolling Acres Road",
+   "status": "present",
+   "quote": "tj loughlin 207 rolling acres road my question i guess is i'm trying to reconcile the 8% starting point"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "parent and high school employee, 985 Flat Hill Road",
+   "status": "present",
+   "quote": "mary foyle, 985 flat hill road i am speaking as a parent, with the knowledge of an employee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Student Opportunity Act Plan is to be posted for public feedback for a few weeks, with faculty and public feedback added before the committee's approval in two weeks.",
+   "quote": "prior to the committee's approval in two weeks that information will be added."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Possible additional funding from new growth (Chair's Report)",
+   "what_was_recorded": "The Chair reported a possible $40,000 from new growth, and a $230,000 addition the Town Manager had mentioned, which the Town Manager then told the district not to count on.",
+   "figures_as_printed": [
+    "$40,000",
+    "$230,000"
+   ],
+   "quote": "there was a chance of maybe $40,000 from additional new growth but nothing definite."
+  },
+  {
+   "topic": "Town addition to school budget, pending new growth",
+   "what_was_recorded": "A $230,000 addition to the school budget was reported as stated at the Select Board, pending new growth certification and a warrant article.",
+   "figures_as_printed": [
+    "$230,000"
+   ],
+   "quote": "there would be an addition $230,000 added to the school budget pending new growth certification"
+  },
+  {
+   "topic": "Warrant total",
+   "what_was_recorded": "The warrant dated 2/26/24 was reviewed with no questions and signed by the Chair.",
+   "figures_as_printed": [
+    "$102,872.20"
+   ],
+   "quote": "warrant total 2/26/24 $102,872.20 - no questions, ms. archambault has signed"
+  },
+  {
+   "topic": "Circuit Breaker reimbursement",
+   "what_was_recorded": "The district will definitely receive Circuit Breaker money, but the amount is based on the previous year; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. hanscom reports that we will definitely receive circuit breaker money, but it is based on the previous year."
+  },
+  {
+   "topic": "Network Security Upgrade warrant request",
+   "what_was_recorded": "The district requested $82,119 from free cash to pay for the Network Security Upgrade.",
+   "figures_as_printed": [
+    "$82,119"
+   ],
+   "quote": "we are requesting $82,119 from free cash to pay"
+  },
+  {
+   "topic": "Facilities repair and replacement costs",
+   "what_was_recorded": "The Director of Facilities went through each school's repairs and shared the cost to repair or replace each item; no figures printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "he goes into detail on each item and shares the cost to repair or replace."
+  },
+  {
+   "topic": "Finance Committee budget target",
+   "what_was_recorded": "The Finance Committee Chair said the budget submitted must be the 2.94% budget.",
+   "figures_as_printed": [
+    "2.94%"
+   ],
+   "quote": "has to be the 2.94% budget"
+  },
+  {
+   "topic": "Increase for computers",
+   "what_was_recorded": "An increase of $200,000 for computers, for Chromebook for 6th and 9th grades and staff replacement cycle, was described in answer to a question.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "there is an increase of $200,000"
+  },
+  {
+   "topic": "Tax impact basis (DLS)",
+   "what_was_recorded": "The DLS website shows tax amounts based on $200,000 and up, which is based on 2023 tax year before re-evaluation.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "shows the amounts based on $200,000 and up"
+  },
+  {
+   "topic": "Gap between 8% and 6% starting points",
+   "what_was_recorded": "A resident estimated the difference between the 8% and 6% starting points as over $400,000; the Superintendent explained the 8% was a salary value off the bottom line.",
+   "figures_as_printed": [
+    "$400,000"
+   ],
+   "quote": "which i think is a difference of over $400,000?"
+  },
+  {
+   "topic": "Level services minus ESSER versus town manager figure",
+   "what_was_recorded": "The difference between the 6.02% level services minus ESSER budget and the Town Manager's 2.97% was stated as $714,814, with a possible increase in funds of $230,000.",
+   "figures_as_printed": [
+    "$714,814",
+    "$230,000"
+   ],
+   "quote": "$714,814 with a possible increase in funds of $230,000."
+  },
+  {
+   "topic": "Override amount",
+   "what_was_recorded": "The Chair recommended an override of $715,000, which the committee approved by roll call.",
+   "figures_as_printed": [
+    "$715,000",
+    "$714,814"
+   ],
+   "quote": "ms. archambault makes the recommendation to set the override amount at $715,000"
+  },
+  {
+   "topic": "PTO special someone dance fundraising",
+   "what_was_recorded": "The PTO's special someone dance raised $1,572 in total.",
+   "figures_as_printed": [
+    "$1,572"
+   ],
+   "quote": "the special someone dance has now raised $1,572 in total, which is fantastic."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfers, with an explanation provided for each one.",
+   "amount_as_printed": "$78,933",
+   "outcome": "approved (all approve via roll call)",
+   "quote": "line item transfers $78,933 an explanation was provided for all line item transfers and reasons for each one."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mary Foyle",
+   "stated_role": "985 Flat Hill Road; speaking as a parent with the knowledge of an employee, high school employee",
+   "topic": "AP and specialized course offerings, regionalization, future planning",
+   "quote": "i am speaking as a parent, with the knowledge of an employee, as well as a high school employee particularly."
+  },
+  {
+   "speaker": "Renee Emkey",
+   "stated_role": "6 Irish Court",
+   "topic": "ESSER cuts, salary reserve line and health insurance (during budget Q&A, Old Business 10a)",
+   "quote": "with the esser cuts it changes the salary reserve line, does it also change the health insurance?"
+  },
+  {
+   "speaker": "Chris Menard",
+   "stated_role": "Vice Chair Finance Committee",
+   "topic": "democratic process and the role of the Finance Committee (during budget Q&A, Old Business 10a)",
+   "quote": "chris menard, vice chair finance committee the comment was made regarding the democratic process"
+  },
+  {
+   "speaker": "Shoshana Mulè",
+   "stated_role": "139 Cove Road",
+   "topic": "5th grade band position in level services minus ESSER budget (during budget Q&A, Old Business 10a)",
+   "quote": "why can't you take the 5th grade band off the cuts in the level service minus esser."
+  },
+  {
+   "speaker": "TJ Loughlin",
+   "stated_role": "207 Rolling Acres Road",
+   "topic": "reconciling the 8% and 6% starting points (during budget Q&A, Old Business 10a)",
+   "quote": "i'm trying to reconcile the 8% starting point to a 6% which i think is a difference of over $400,000?"
+  },
+  {
+   "speaker": "Evan Waters",
+   "stated_role": "Chair of the Finance Committee; 45 Sunny Hill Road",
+   "topic": "dollar amount for the 6% to 2.94% gap and health insurance placement (during budget Q&A, Old Business 10a)",
+   "quote": "do you have a dollar amount for the 6% - 2.94?"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Chair's Report (budget funding, town manager, earmarks, Turkey Hill)",
+   "resolution": "no action",
+   "quote": "at last thursday's finance committee meeting it was suggested that i meet with the town manager",
+   "tags": [
+    "budget",
+    "town manager",
+    "new growth",
+    "override"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes (1/24/24)",
+   "resolution": "approved",
+   "quote": "ms. brzozoski makes a motion to approve minutes, mr. sculimbrene seconded the motion",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and line item transfers",
+   "resolution": "approved",
+   "quote": "warrant total 2/26/24 $102,872.20 - no questions, ms. archambault has signed",
+   "tags": [
+    "warrants",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "no action",
+   "quote": "nothing new to report",
+   "tags": [
+    "superintendent"
+   ]
+  },
+  {
+   "topic": "Student Representative Report",
+   "resolution": "no action",
+   "quote": "nothing new to report from the primary school.",
+   "tags": [
+    "students",
+    "sports"
+   ]
+  },
+  {
+   "topic": "LHS Program of Studies 24/25",
+   "resolution": "approved",
+   "quote": "mr. beardmore makes a motion to approve the program of studies, mr. sculimbrene seconds the motion.",
+   "tags": [
+    "program of studies",
+    "high school",
+    "AP statistics"
+   ]
+  },
+  {
+   "topic": "Student Opportunity Act Plan",
+   "resolution": "continued, to public feedback and approval in two weeks",
+   "quote": "prior to the committee's approval in two weeks that information will be added.",
+   "tags": [
+    "DESE",
+    "student opportunity act",
+    "accountability"
+   ]
+  },
+  {
+   "topic": "FY24 Quarterly Budget Report",
+   "resolution": "discussed, no vote",
+   "quote": "our financial consultants and liaisons along with my team have been working on our budget lines",
+   "tags": [
+    "budget",
+    "FY24",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "Warrant article submission (network security, free cash)",
+   "resolution": "approved",
+   "quote": "we are requesting $82,119 from free cash to pay",
+   "tags": [
+    "warrant article",
+    "free cash",
+    "network security"
+   ]
+  },
+  {
+   "topic": "Assessment Report",
+   "resolution": "no action",
+   "quote": "a report was supplied to the committee and is posted online.",
+   "tags": [
+    "assessment"
+   ]
+  },
+  {
+   "topic": "Facilities update (turf field, E911, Turkey Hill)",
+   "resolution": "discussed, no vote",
+   "quote": "mr. hevy reports to the committee by going through each school building",
+   "tags": [
+    "facilities",
+    "turf field",
+    "E911"
+   ]
+  },
+  {
+   "topic": "FY25 budget update and Q&A",
+   "resolution": "discussed, no vote",
+   "quote": "dr. burnham shares a new updated presentation for the budget.",
+   "tags": [
+    "FY25 budget",
+    "ESSER",
+    "health insurance",
+    "Finance Committee"
+   ]
+  },
+  {
+   "topic": "Override discussion and vote",
+   "resolution": "approved, override amount set at $715,000",
+   "quote": "ms. archambault makes the recommendation to set the override amount at $715,000",
+   "tags": [
+    "override",
+    "budget",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Committee member reports (PTO, Finance Committee, Advisory, Council on Aging)",
+   "resolution": "no action",
+   "quote": "mrs. brzozoski reports the pto met on monday",
+   "tags": [
+    "PTO",
+    "finance committee",
+    "advisory committee"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard",
+   "quote": "i am speaking as a parent, with the knowledge of an employee, as well as a high school employee particularly.",
+   "tags": [
+    "public comment",
+    "high school"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed",
+   "quote": "13. topics for future discussion",
+   "tags": [
+    "budget",
+    "override"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved, adjourned at 10:20",
+   "quote": "mr. sculimbrene makes a motion to adjourn at 10:20, ms. brzozoski seconds the motion all approve",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "school budget",
+  "FY25 budget",
+  "override",
+  "ESSER",
+  "town meeting",
+  "warrant",
+  "free cash",
+  "network security",
+  "program of studies",
+  "AP statistics",
+  "student opportunity act",
+  "facilities",
+  "turf field",
+  "health insurance",
+  "Finance Committee",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2024-03-07",
  "docid": "6430",
@@ -12,15 +12,228 @@
  },
  "votes": [
   {
-   "motion": "To adjourn at 6:49 pm",
-   "moved_by": "Joeci Gilcrest",
-   "seconded_by": "Carol Archambault",
-   "outcome": "passed unanimously",
+   "motion": "To adjourn the meeting at 6:49pm.",
+   "moved_by": "Joeci G.",
+   "seconded_by": "Carol A.",
+   "outcome": "passed (roll call, unanimous)",
    "procedural": true,
    "quote": "motion: joeci g. second: carol a. to adjourn at 6:49pm. roll call vote was unanimous to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0742397
+ "note": "The minutes print no dollar figures, so budget_items and transfers are empty. One motion is recorded (adjournment), with the result given as 'unanimous' and no tally. Attendance comes from the roll-call list; the minutes do not mark absences or say who was remote. The clerk's roll call lists Gerald Reid with no role. The 'Public Comment' and 'Carol A.' names are printed as they appear in the text.",
+ "cost_usd": 0.014164570000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joeci Gilcrest",
+   "role": "Chair (Member-at-Large)",
+   "status": "present",
+   "quote": "roll call of attendees- chair: joeci gilcrest (member-at-large.), vice-chair: tim willsmer (planning board)"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Vice-Chair (Planning Board)",
+   "status": "present",
+   "quote": "vice-chair: tim willsmer (planning board), evan watters (finance com.)"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Finance Com.",
+   "status": "present",
+   "quote": "vice-chair: tim willsmer (planning board), evan watters (finance com.)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks",
+   "status": "present",
+   "quote": "evan watters (finance com.), karin menard (parks), debbie lincoln (council on aging)"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "karin menard (parks), debbie lincoln (council on aging), kim duffy (green communities)"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Green Communities",
+   "status": "present",
+   "quote": "debbie lincoln (council on aging), kim duffy (green communities), lou franco (select board)"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "kim duffy (green communities), lou franco (select board), gerald reid"
+  },
+  {
+   "name": "Gerald Reid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lou franco (select board), gerald reid, carol archambault (school committee)"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "lou franco (select board), gerald reid, carol archambault (school committee)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Library Trustees",
+   "status": "present",
+   "quote": "carol archambault (school committee), dick mailloux (library trustees), and rami el samahy (overunder)"
+  },
+  {
+   "name": "Rami el Samahy",
+   "role": "OverUnder (presenting the survey and public-meeting update)",
+   "status": "present",
+   "quote": "update from overunder- rami reported that they collated the feedback from the february public meetings"
+  },
+  {
+   "name": "Jen Duffy",
+   "role": "Public comment, 684 Flat Hill Rd",
+   "status": "present",
+   "quote": "public comment - jen duffy (684 flat hill rd) - suggested considering the goals of the meeting"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Chair of the 300th Town Anniversary Committee (46 Hemlock Dr.)",
+   "status": "present",
+   "quote": "pete lincoln (46 hemlock dr.)- stated he is the chair of the 300th town anniversary committee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Survey #3 will not collect responses at the Town Meeting; surveys will instead be made available at the meeting, since attendance is expected to be high.",
+   "quote": "agreed instead to have surveys available at the meeting since attendance is anticipated to be high"
+  },
+  {
+   "decision": "Rami el Samahy will present a draft of the next survey at the April meeting.",
+   "quote": "he will plan to present a draft for the april meeting."
+  },
+  {
+   "decision": "The Committee will research options and permitting for the outdoor family event location for the 5/30 public meeting.",
+   "quote": "the committee will research options and permitting needed."
+  },
+  {
+   "decision": "The Committee will discuss the display location and multiuse options at its next meeting.",
+   "quote": "the committee will discuss this at the next meeting."
+  },
+  {
+   "decision": "Committee agreed to have a table with QR codes at the May Town Meeting and to make a presentation at the Fall Town Meeting.",
+   "quote": "they also agreed to have a table with qr codes at the may town meeting and make a presentation at the fall town meeting."
+  },
+  {
+   "decision": "Committee agreed to review Kim Duffy's slides on the 2002 Master Plan during a separate virtual meeting.",
+   "quote": "the committee discussed reviewing the slides during a separate virtual meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jen Duffy",
+   "stated_role": "684 Flat Hill Rd",
+   "topic": "meeting goals and location for the 5/30 public meeting",
+   "quote": "suggested considering the goals of the meeting in order to determine the best location, to make the meeting concise and to have a defined purpose"
+  },
+  {
+   "speaker": "Pete Lincoln",
+   "stated_role": "Chair of the 300th Town Anniversary Committee (46 Hemlock Dr.)",
+   "topic": "large event spaces for 2,000+ people",
+   "quote": "pete lincoln (46 hemlock dr.)- stated he is the chair of the 300th town anniversary committee and they are looking for large spaces to hold events for 2,000+ people"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Update from OverUnder (survey and public-meeting feedback)",
+   "resolution": "received; Survey #3 to be released mid-late April; next public meeting 5/30",
+   "quote": "rami reported that they collated the feedback from the february public meetings and closed survey #2.",
+   "tags": [
+    "surveys",
+    "public outreach",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Upcoming plan phase shifts",
+   "resolution": "no action; Recommendations phase runs until the Fall",
+   "quote": "rami noted that phase 1 is complete and they are now in the recommendations phase, which will go until the fall.",
+   "tags": [
+    "master plan",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Update on February 1st event",
+   "resolution": "no action; ideas for the 5/30 public meeting discussed, research assigned",
+   "quote": "rami reported that the early session had 23 participants and there were 13 at the later session",
+   "tags": [
+    "public meetings",
+    "event planning"
+   ]
+  },
+  {
+   "topic": "Discussion on social media findings",
+   "resolution": "no action; inviting residents to future meetings suggested",
+   "quote": "joeci noted that she put a question on surrounding towns facebook pages asking if anyone moved from lunenburg",
+   "tags": [
+    "social media",
+    "housing",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Location of town display",
+   "resolution": "continued to next meeting",
+   "quote": "joeci talked to the library director who asked if the display could be multiuse",
+   "tags": [
+    "display",
+    "library"
+   ]
+  },
+  {
+   "topic": "Committee comment: 2002 Master Plan",
+   "resolution": "no action; slides to be reviewed at a separate virtual meeting",
+   "quote": "kim stated that she reviewed the 2002 master plan and created slides, which she could present at a future meeting.",
+   "tags": [
+    "master plan",
+    "2002 plan",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Public comment: 300th Anniversary event space",
+   "resolution": "no action; request for help finding large venue",
+   "quote": "he is the chair of the 300th town anniversary committee and they are looking for large spaces",
+   "tags": [
+    "300th anniversary",
+    "event space"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:49pm, unanimous",
+   "quote": "to adjourn at 6:49pm. roll call vote was unanimous to adjourn.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "master plan",
+  "public outreach",
+  "surveys",
+  "public meetings",
+  "town meeting",
+  "display",
+  "300th anniversary",
+  "social media",
+  "housing",
+  "no dollar figures"
+ ],
+ "dropped_unquoted_by_field": {}
 }

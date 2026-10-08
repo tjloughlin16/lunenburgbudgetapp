@@ -304,5 +304,180 @@
    "at": "2026-10-08T11:07:55Z",
    "cost_usd": 0.217167
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03112024-6458",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/personnel-committee/2024-03-11-minutes-6458.txt",
+   "path": "sources/meetings/personnel-committee/2024-03-11-minutes-6458.pdf"
+  },
+  "official_sha256": "b986c3ee53ac2fa14c67f02d9af70aaf6af8d59b78525daea1d14fe59b674b01",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the substance of the grid options, the recommended grade moves and the vacation deferral, and our figures mostly reduce to caption garbling of the official $49.7K, $78.6K and $22.2K. The main things to check are the police executive assistant vote (our outcome is \"not audible\", the official says it passed) and the sick-leave item (ours says warrant, the official says language to come back next meeting), plus our $449,000 and clerical-union figures that the official minutes lack.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 2,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Police executive assistant grade 10 vote",
+    "ours": "Set the police executive assistant position at grade 10. — not audible",
+    "official": "motion by d. fortune was made to place the police executive assistant in the sap at grade 10",
+    "note": "Both records have the grade 10 action, but ours records the outcome as not audible while the official minutes list it as passed; a person should check the recording near t=4238 and the official minutes for the vote result.",
+    "t": 4238
+   },
+   {
+    "kind": "caption_error",
+    "about": "Grid option 1 retroactive cost",
+    "ours": "Grid option: drop grade one step one, 3%: 43,95916, 49726, 1505",
+    "official": "resulted in approximately $49.7k retroactive cost to the fy2024 sap salary budget.",
+    "note": "Our '49726' matches the official $49.7K figure for dropping Step one with 3% alignment; the other captions are garbled.",
+    "official_reading": "$49.7K",
+    "t": 203
+   },
+   {
+    "kind": "caption_error",
+    "about": "Grid option 2 starting at $15.30",
+    "ours": "Grid option starting at 1530 in grade one step one: 1530, 78,000, 786",
+    "official": "the next option was to start the grid at $15.30 per hour and keep the 3% step alignment resulted in approximately $$78.6k retroactive cost to the fy2024 sap salary budget.",
+    "note": "1530 is $15.30 per hour and the 78,000/786 captions are the official $78.6K; the same option.",
+    "official_reading": "$15.30 per hour; $78.6K",
+    "t": 1528
+   },
+   {
+    "kind": "caption_error",
+    "about": "Option dropping grade one",
+    "ours": "Option dropping grade one and starting grade two at 1550: 22,25, 1550",
+    "official": "that option resulted in approximately $22.2k retroactive cost to the fy2024 sap salary budget.",
+    "note": "Our '22,25' reads as the official $22.2K for dropping Grade one; our text also attaches the 1550 start to this option, while the official treats $15.50 as Julie's separate new option.",
+    "official_reading": "$22.2K",
+    "t": 1874
+   },
+   {
+    "kind": "agree",
+    "about": "Julie's new $15.50 option continued for assessment",
+    "ours": "The first grid option and Julie's new option (grade one at 1550) are held as the two finalists, with both to be priced for Wednesday.",
+    "official": "the group agreed that she and nancy should continue their assessment of this option including the cost to fy2024.",
+    "note": "Both say the $15.50 option goes on for further pricing before the Wednesday meeting; our 'two finalists' framing is not in the official text.",
+    "t": 2576
+   },
+   {
+    "kind": "agree",
+    "about": "Recommended grade raises for library pages and COA roles",
+    "ours": "Agreed to recommend moving the library pages to grade two, the COA meal site manager from six to seven, and the COA outreach coordinator from seven to eight.",
+    "official": "the committee identified several roles that they would recommend be considered for a raise to their sap grade levels.",
+    "note": "Same three roles and grade moves in both records.",
+    "t": 2922
+   },
+   {
+    "kind": "agree",
+    "about": "Pack/PACC manager grade deferred",
+    "ours": "The pack manager grade is to be worked on further before Wednesday, with a move to about 12 to 14 under discussion.",
+    "official": "that role will be examined at the next meeting.",
+    "note": "Both defer the role to the next meeting; the 12 to 14 range appears only in ours (see separate finding).",
+    "t": 3415
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pack manager proposed grade range 12 to 14",
+    "ours": "a move to about 12 to 14 under discussion",
+    "official": "",
+    "note": "The official minutes give no grade range for the PACC manager; the figure is from our recording and may be misheard.",
+    "t": 3415
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Job description framework, no vote needed",
+    "ours": "No vote is needed on the job description framework. The committee will use the 12-characteristics format going forward.",
+    "official": "",
+    "note": "The official minutes do not record this decision; they only say the job description project took most of the committee's focus.",
+    "t": 3735
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FMLA/sick-leave language for the warrant",
+    "ours": "The FMLA sick-leave language will be written up for the warrant, with the number of days to be finalised Wednesday.",
+    "official": "the committee agreed there was not reason to have different applications of this process and supported that the sap policy be amended to include similar language.",
+    "note": "Both record support for sick-leave language, but ours says it goes in the warrant with the days finalised Wednesday, while the official says J. Belliveau will propose language for the next meeting review; check the recording and the official text on whether it is for the warrant and what is decided about days.",
+    "t": 6664
+   },
+   {
+    "kind": "agree",
+    "about": "Vacation policy deferred to the fall",
+    "ours": "The vacation policy will not be on this warrant and will be looked at for the fall town meeting.",
+    "official": "the committee acknowledged the job description project had taken the majority of its focus, but agreed to examine for a potential fall warrant.",
+    "note": "Both defer vacation time management to a potential fall warrant.",
+    "t": 6979
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FY25 impact of further market adjustment",
+    "ours": "FY25 impact of further market adjustment: $449,000, 80 to 85",
+    "official": "",
+    "note": "Our $449,000 figure and the 80 to 85 range are not in the official minutes; the official minutes carry only FY2024 retroactive costs, so check the recording at t=978 to confirm the figure and what it measures.",
+    "t": 978
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Clerical union retroactive grid adjustment",
+    "ours": "Clerical union retroactive grid adjustment: 59, 54, 17 people, $38,000",
+    "official": "",
+    "note": "Figures about a clerical union adjustment (17 people, $38,000) appear only in ours and may be misheard; check the recording at t=2150 and ask whether the official minutes left it out.",
+    "t": 2150
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Next meeting agenda, Wednesday March 13, 2024",
+    "ours": "",
+    "official": "next meeting, wednesday march 13, 2024 will include final assessment of options for new fy24 & fy25 sap salary grids",
+    "note": "Ours only says 'Wednesday' in passing and does not list the agenda items.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sick time and vacation use clarification by N. O'Rourke",
+    "ours": "",
+    "official": "n. o'rourke clarified how sick time and vacation was utilized and suggested personnel time be taken initially",
+    "note": "Official records this public comment; ours does not.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Core attendees: Donna, Julie, Nancy, Wendy, Sue",
+    "ours": "Donna (chair), Nancy, Julie, Wendy, Sue",
+    "official": "wendy bertrand, susan andrews, joanna bilotta, donna fortune",
+    "note": "First names match Wendy Bertrand, Susan Andrews, Donna Fortune, Julie Belliveau and Nancy O'Rourke; the official lists Joanna Bilotta, who opened the meeting, and she is not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Joanna Bilotta, who opened the meeting",
+    "ours": "",
+    "official": "j. bilotta opened the meeting at 5:03pm with members noted in attendance",
+    "note": "Official lists Joanna Bilotta as a committee member who opened the meeting; ours does not name her.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Remote and other attendees",
+    "ours": "",
+    "official": "via zoom: amanda moore, public safety coordinator, pauline roy, coa outreach coordinator",
+    "note": "Official lists Amanda Moore, Pauline Roy, Paula Bertram, Bill Bernard, Jay Simeone and Dave Passios as remote attendees; none are named in ours.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T11:09:05Z",
+   "cost_usd": 0.24773299999999998
+  }
  }
 }

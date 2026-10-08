@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2024-03-11",
  "docid": "6458",
@@ -12,31 +12,272 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the February 11, 21 and 26, 2024 meetings",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the minutes of the February 11, 21 and 26, 2024 meetings as submitted.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
-   "quote": "motion by s. andrews to approve the minutes of the february 11, 21 and 26, 2024 meetings as submitted second: d. fortune roll call vote: all in favor"
-  },
-  {
-   "motion": "Place the Police Executive Assistant in the SAP at Grade 10",
-   "outcome": "passed",
-   "procedural": false,
-   "moved_by": "D. Fortune",
-   "seconded_by": "W. Bertrand",
-   "quote": "motion by d. fortune was made to place the police executive assistant in the sap at grade 10 second: w. bertrand roll call vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting",
    "outcome": "passed",
    "procedural": true,
+   "quote": "motion by s. andrews to approve the minutes of the february 11, 21 and 26, 2024 meetings as submitted"
+  },
+  {
+   "motion": "Place the Police Executive Assistant in the SAP at Grade 10.",
+   "moved_by": "D. Fortune",
+   "seconded_by": "W. Bertrand",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion by d. fortune was made to place the police executive assistant in the sap at grade 10"
+  },
+  {
+   "motion": "Adjourn the meeting at 7:02pm.",
    "moved_by": "W. Bertrand",
    "seconded_by": "D. Fortune",
-   "quote": "w. bertrand made a motion to adjourn the meeting at 7:02pm second: d. fortune roll call vote: all in favor"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "w. bertrand made a motion to adjourn the meeting at 7:02pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08650370000000002
+ "note": "Text is clean and complete over three pages with no scan issues. Votes are recorded only as \"All in favor\" / \"All in Favor\" roll calls, so outcomes are \"passed\" with no printed count. The printed \"$$78.6K\" is kept as printed. Vote three lists \"All in Favor\" under a roll call. The \"Via Zoom:\" label is read as applying to every name that follows it, since the minutes list no separate attendance for them. Grid-option costs are estimates the minutes call \"approximately\". No transfers are recorded.",
+ "cost_usd": 0.01573807,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee Attendees",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee Attendees",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee Attendees (opened the meeting)",
+   "status": "present",
+   "quote": "j. bilotta opened the meeting at 5:03pm with members noted in attendance"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee Attendees",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, assistant town manager/hr director"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll and Benefits Coordinator/Risk Manager",
+   "status": "present",
+   "quote": "nancy o'rourke, payroll and benefits coordinator/risk"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Public Safety Coordinator",
+   "status": "remote",
+   "quote": "via zoom: amanda moore, public safety coordinator, pauline roy, coa outreach coordinator"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA Outreach Coordinator",
+   "status": "remote",
+   "quote": "via zoom: amanda moore, public safety coordinator, pauline roy, coa outreach coordinator"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Sewer Business Manager",
+   "status": "remote",
+   "quote": "paula bertram, sewer business manager, bill bernard dpw director"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "sewer business manager, bill bernard dpw director, jay simeone, finance committee"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee",
+   "status": "remote",
+   "quote": "bill bernard dpw director, jay simeone, finance committee, dave passios, finance committee"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee",
+   "status": "remote",
+   "quote": "jay simeone, finance committee, dave passios, finance committee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The group agreed that Julie Belliveau and Nancy O’Rourke should continue assessing the new option (start the grid at $15.50, keep 3% steps, adjust several grades), including its cost to FY2024.",
+   "quote": "the group agreed that she and nancy should continue their assessment of this option including the cost to fy2024."
+  },
+  {
+   "decision": "The committee identified several roles to recommend for a raise to their SAP grade levels: Library Page (Grade 1 to 2), COA Meal Site Manager (Grade 6 to 7), COA Outreach Coordinator (Grade 7 to 8).",
+   "quote": "the committee identified several roles that they would recommend be considered for a raise to their sap grade levels."
+  },
+  {
+   "decision": "PACC Manager role deferred; to be examined at the next meeting.",
+   "quote": "that role will be examined at the next meeting."
+  },
+  {
+   "decision": "The committee supported amending the SAP sick leave policy to include similar language to the School Union policy on childbirth/adoption use of sick time for the non-birthing parent. J. Belliveau will propose language.",
+   "quote": "the committee agreed there was not reason to have different applications of this process and supported that the sap policy be amended to include similar language."
+  },
+  {
+   "decision": "J. Belliveau to propose new sick leave policy language, to be reviewed at the next meeting.",
+   "quote": "j. belliveau will propose new language to this policy."
+  },
+  {
+   "decision": "The committee agreed to examine vacation time management for a potential fall warrant.",
+   "quote": "the committee acknowledged the job description project had taken the majority of its focus, but agreed to examine for a potential fall warrant."
+  },
+  {
+   "decision": "Next meeting set for Wednesday March 13, 2024, to include final grid options, final outliers, sick policy review, Town Meeting warrant articles, and delivery of proposal to Select Board.",
+   "quote": "next meeting, wednesday march 13, 2024 will include final assessment of options for new fy24 & fy25 sap salary grids"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grid option 1: drop Step one, keep 3% alignment",
+   "what_was_recorded": "Dropping Step one with the 3% alignment was estimated to cost about $49.7K retroactive to the FY2024 SAP salary budget.",
+   "figures_as_printed": [
+    "$49.7K"
+   ],
+   "quote": "resulted in approximately $49.7k retroactive cost to the fy2024 sap salary budget."
+  },
+  {
+   "topic": "Grid option 2: start grid at $15.30 per hour",
+   "what_was_recorded": "Starting the grid at $15.30 per hour with 3% steps was estimated at about $78.6K retroactive to the FY2024 SAP salary budget; the group felt it might not be enough.",
+   "figures_as_printed": [
+    "$15.30 per hour",
+    "$$78.6K"
+   ],
+   "quote": "the next option was to start the grid at $15.30 per hour and keep the 3% step alignment resulted in approximately $$78.6k retroactive cost to the fy2024 sap salary budget."
+  },
+  {
+   "topic": "Grid option 3: drop Grade one",
+   "what_was_recorded": "Dropping Grade one (upgrading its employees to Grade two) was estimated at about $22.2K retroactive to the FY2024 SAP salary budget; the group felt it did not move the grid forward.",
+   "figures_as_printed": [
+    "$22.2K"
+   ],
+   "quote": "that option resulted in approximately $22.2k retroactive cost to the fy2024 sap salary budget."
+  },
+  {
+   "topic": "New grid option: start at $15.50",
+   "what_was_recorded": "Julie Belliveau offered a new option starting the grid at $15.50 with 3% steps and adjusted upper grades; its FY2024 cost was to be assessed.",
+   "figures_as_printed": [
+    "$15.50"
+   ],
+   "quote": "julie belliveau offered a new option that would start the grid at $15.50, keeping the 3% step alignment"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "N. O’Rourke",
+   "stated_role": "Payroll and Benefits Coordinator/Risk Manager",
+   "topic": "how sick and vacation time are used",
+   "quote": "n. o'rourke clarified how sick time and vacation was utilized and suggested personnel time be taken initially"
+  },
+  {
+   "speaker": "Pauline Roy",
+   "stated_role": "COA Outreach Coordinator",
+   "topic": "update on vacation time management changes",
+   "quote": "pauline roy asked for an update on the progress of the group to assess changes in how vacation time was managed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action; no public comment on the agenda",
+   "quote": "there was neither committee comment nor public comment.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved (Feb 11, 21, 26, 2024 meetings)",
+   "quote": "the minutes of the last three meetings were reviewed and no adjustments noted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Examine grid options (ongoing business)",
+   "resolution": "continued; Belliveau and O’Rourke to assess new $15.50 option",
+   "quote": "the committee reviewed the cost structures of each of the three scenarios they had chosen to",
+   "tags": [
+    "SAP salary grid",
+    "retroactive pay",
+    "compensation"
+   ]
+  },
+  {
+   "topic": "Outliers and job market review",
+   "resolution": "roles identified for raise; PACC Manager deferred",
+   "quote": "the committee identified several roles that they would recommend be considered for a raise to their sap grade levels.",
+   "tags": [
+    "SAP salary grid",
+    "job descriptions",
+    "hiring and retention"
+   ]
+  },
+  {
+   "topic": "Police Executive Assistant placement in SAP",
+   "resolution": "approved at Grade 10",
+   "quote": "the group supported its placement at grade 10 in the sap.",
+   "tags": [
+    "SAP",
+    "police",
+    "clerical union"
+   ]
+  },
+  {
+   "topic": "Sick leave policy gap",
+   "resolution": "continued; policy amendment to be drafted for next meeting",
+   "quote": "supported that the sap policy be amended to include similar language.",
+   "tags": [
+    "sick leave",
+    "personnel policy",
+    "school union"
+   ]
+  },
+  {
+   "topic": "Public comment on vacation time and warrant",
+   "resolution": "examine vacation management for a potential fall warrant",
+   "quote": "the committee acknowledged the job description project had taken the majority of its focus, but agreed to examine for a potential fall warrant.",
+   "tags": [
+    "vacation",
+    "warrant articles"
+   ]
+  }
+ ],
+ "tags": [
+  "SAP salary grid",
+  "compensation",
+  "retroactive pay FY2024",
+  "outliers",
+  "job descriptions",
+  "Clerical Union",
+  "sick leave",
+  "vacation time",
+  "personnel policy",
+  "hiring and retention",
+  "warrant articles",
+  "Town Meeting",
+  "Police Executive Assistant",
+  "COA",
+  "Library Page"
+ ],
+ "dropped_unquoted_by_field": {}
 }

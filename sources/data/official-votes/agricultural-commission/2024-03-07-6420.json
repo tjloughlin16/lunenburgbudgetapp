@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2024-03-07",
  "docid": "6420",
@@ -12,15 +12,234 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from January 18, 2024",
+   "motion": "Approve the minutes of the January 18, 2024 meeting.",
    "moved_by": "Maryrae",
    "seconded_by": "Jackie",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "maryrae made a motion to approve the minutes from the following meetings: january 18, 2024 jackie seconded commission unanimously approved via roll call"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one vote was recorded in these minutes. While the agenda lists several items under \"New Business\" (such as approving the 2024 Vendor Application and market rules, and setting Commission goals), the minutes do not record any motions or votes on these items, only that they were discussed or are to be discussed. The meeting ended when it lost quorum.",
- "cost_usd": 0.0679297
+ "note": "Extracted text of one page of agenda and attendance plus a second page of agenda; no vote counts are printed (the approval is recorded only as 'unanimously approved via roll call'), so outcome is 'passed' without a count. Alternates Kira McClellan and Ashley York have no check mark, so status is 'not stated' rather than absent. Public attendees are listed in the attendance table only; no public speaker is named in public comment, so public_comment is empty and the two public comment items are recorded as topics. Adjournment followed loss of quorum and records no motion. Agenda items 7 and 8 list subjects with no recorded outcome. The 'Set Next Meeting Date' item prints no date.",
+ "cost_usd": 0.01451467,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair matthew allison ✔ vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair matthew allison ✔ vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jennifer duffy ✔"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "remote",
+   "quote": "member jorge marzuca (virtual) ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Member",
+   "status": "present",
+   "quote": "member jackie chabot ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan"
+  },
+  {
+   "name": "Ashley York",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate ashley york"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Public",
+   "status": "present",
+   "quote": "public kim duffy ✔ public kate ravenelle ✔"
+  },
+  {
+   "name": "Kate Ravenelle",
+   "role": "Public",
+   "status": "present",
+   "quote": "public kim duffy ✔ public kate ravenelle ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Public",
+   "status": "present",
+   "quote": "public kathy dugan ✔ public jen hurley ✔"
+  },
+  {
+   "name": "Jen Hurley",
+   "role": "Public",
+   "status": "present",
+   "quote": "public kathy dugan ✔ public jen hurley ✔"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The reorganization of the Agricultural Commission is to be added to the June agenda.",
+   "quote": "reorganization of the agricultural commission to be added to june agenda"
+  },
+  {
+   "decision": "The donation to the 4H Club requires a W-9 and tax ID number; this was reiterated as the remaining task.",
+   "quote": "last task to get donation of $96 to the 4h club- was reiterated that we needed a w-9 and tax id number."
+  },
+  {
+   "decision": "The meeting was considered adjourned after the Commission lost a quorum. No adjournment vote is recorded.",
+   "quote": "agricultural commission meeting lost a quorum and therefore the meeting was considered adjourned"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Farmers market donation to 4H Club",
+   "what_was_recorded": "A $96 donation to the 4H Club from the farmers market remained the last open task, pending a W-9 and tax ID number.",
+   "figures_as_printed": [
+    "$96"
+   ],
+   "quote": "last task to get donation of $96 to the 4h club- was reiterated that we needed a w-9 and tax id number."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:06 pm",
+   "quote": "call to order meeting commencement time: 7:06 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment/Open Discussion",
+   "resolution": "noted; no speaker named and no action recorded",
+   "quote": "feed store in mendon, ma had a flier for their agricultural commission describing the goals of the group",
+   "tags": [
+    "public comment",
+    "poultry seminar",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Farm complaints",
+   "resolution": "no complaints",
+   "quote": "farm complaints no complaints",
+   "tags": [
+    "farm complaints"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved (January 18, 2024 minutes), unanimously by roll call",
+   "quote": "maryrae made a motion to approve the minutes from the following meetings: january 18, 2024 jackie seconded commission unanimously approved via roll call",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Farmers market update",
+   "resolution": "discussed; 4H donation task reiterated; 2024 season discussed",
+   "quote": "discussion about 2024 farmers market and meeting managers",
+   "tags": [
+    "farmers market",
+    "4H",
+    "donation"
+   ]
+  },
+  {
+   "topic": "Action items from previous meeting",
+   "resolution": "listed; no outcome recorded",
+   "quote": "farm inspections. public outreach to identify livestock, like census asks about dogs",
+   "tags": [
+    "farm inspections",
+    "livestock"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "listed; no outcome recorded",
+   "quote": "set commission goals for 2024",
+   "tags": [
+    "farmers market",
+    "vendor application",
+    "commission goals"
+   ]
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "listed; no outcome recorded",
+   "quote": "agcom activity/ies for 300th anniversary",
+   "tags": [
+    "300th anniversary",
+    "grants",
+    "land",
+    "community gardens",
+    "marketing",
+    "mapping"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "listed; no reports recorded",
+   "quote": "committee reports: economic development comm., planning board, building reuse, open space",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Public Comment/Open Discussion (second)",
+   "resolution": "no content recorded",
+   "quote": "10 public comment/open discussion",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Set Next Meeting Date",
+   "resolution": "no date recorded",
+   "quote": "11 set next meeting date",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned after losing quorum; no adjournment vote recorded",
+   "quote": "agricultural commission meeting lost a quorum and therefore the meeting was considered adjourned",
+   "tags": [
+    "quorum",
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "farmers market",
+  "4H donation",
+  "minutes approval",
+  "quorum lost",
+  "reorganization",
+  "300th anniversary",
+  "farm inspections",
+  "committee goals"
+ ],
+ "dropped_unquoted_by_field": {}
 }

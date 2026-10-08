@@ -208,7 +208,11 @@ def decide(plan, hist, now, in_flight=0):
     # PAUSE's job; the brake is for a runaway -- a sustained slope AND well over the line.
     if len(recent) >= 2 and recent[-1]['t'] - recent[0]['t'] >= SLOPE_S * 0.8 and planned_slope > 0:
         slope = (recent[-1]['u5'] - recent[0]['u5']) / (recent[-1]['t'] - recent[0]['t'])
-        if slope > EMERGENCY_X * planned_slope and u5 > target + 3 * BAND:
+        # AND ONLY WHEN IT COULD BE US. 8 October 07:20: the governor had paused to 0 workers
+        # and the bar still climbed 80 -> 87 in three minutes -- the morning refresh writing
+        # new minutes in the same window. Stopping the plan for usage it is not causing is
+        # wrong; at one worker or none the pause is already the brake.
+        if slope > EMERGENCY_X * planned_slope and u5 > target + 3 * BAND and plan.jobs > 1:
             return dict(jobs=0, start=False, wait_reset=False, target=target,
                         stop='EMERGENCY: filling at %.1f%%/h, %.1fx the plan (%.1f%%/h), %g%% against a line at %.0f%%'
                         % (slope * 3600, slope / planned_slope, planned_slope * 3600, u5, target), note='')
@@ -279,6 +283,7 @@ def _test():
     case('6 -> 10 in five minutes at one worker: pause, NOT an emergency', not d['stop'])
     p3 = Plan(session_cap=90, max_jobs=3)
     decide(p3, [R(now - 10, 40)], now)
+    p3.jobs = 3
     spike = [R(now + 60, 40), R(now + 600, 48), R(now + 960, 60)]
     d = decide(p3, spike, now + 960)
     case('20 points in 15 minutes on a 3-hour plan: EMERGENCY stop', bool(d['stop']) and 'EMERGENCY' in d['stop'])
@@ -318,7 +323,12 @@ def _test():
     after = now + 3 * 3600 + 60                       # past the first window's reset
     d = decide(p11, [dict(t=after - 30, u5=100, u7=49, reset=reset)], after)
     case('after the reset, a reading still at the OLD 100%: start the new window at 0', d['start'] and not d['stop'])
-    print('%d of %d rules hold' % (15 - len(fails), 15))
+    p12 = Plan(session_cap=95, max_jobs=6)
+    decide(p12, [R(now - 10, 76)], now)
+    other = [R(now + 60, 76), R(now + 700, 80), R(now + 960, 87)]
+    d = decide(p12, other, now + 960)
+    case('bar climbs while WE are at one worker (someone else): pause, no emergency', not d['stop'] and not d['start'])
+    print('%d of %d rules hold' % (16 - len(fails), 16))
     return 1 if fails else 0
 
 
