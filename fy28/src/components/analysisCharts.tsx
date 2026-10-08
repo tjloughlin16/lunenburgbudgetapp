@@ -32,6 +32,9 @@ import {
 import {
   SpendingWhatComesInKinds, SpendingWhatComesInFunds, SpendingWhatComesInAthletics,
 } from './SpendingWhatComesInCharts'
+import {
+  SpentNoBudgetYears, SpentNoBudgetLines, SpentNoBudgetKindergarten,
+} from './SpentNoBudgetCharts'
 
 /* THE REGISTRY THAT LETS A CHART STOP BEING A PICTURE.
  *
@@ -120,6 +123,9 @@ export const ANALYSIS_CHARTS: Record<string, Entry> = {
   'spending-what-comes-in-kinds': { render: SpendingWhatComesInKinds, needs: has('kinds') },
   'spending-what-comes-in-funds': { render: SpendingWhatComesInFunds, needs: has('funds') },
   'spending-what-comes-in-athletics': { render: SpendingWhatComesInAthletics, needs: has('athletics') },
+  'spent-with-no-budget-years': { render: SpentNoBudgetYears, needs: has('by_year') },
+  'spent-with-no-budget-lines': { render: SpentNoBudgetLines, needs: has('lines') },
+  'spent-with-no-budget-kindergarten': { render: SpentNoBudgetKindergarten, needs: has('kindergarten') },
 }
 
 /** The chart registered for `charts/foo.svg` IF this payload can feed it, else undefined

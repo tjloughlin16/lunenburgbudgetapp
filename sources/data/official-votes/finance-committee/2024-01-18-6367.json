@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-01-18",
  "docid": "6367",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Nominate Tiffaney Tavares for clerk position",
+   "motion": "Nominate Tiffaney Tavares for the clerk position.",
    "moved_by": "Dave Passions",
    "seconded_by": "Chris Menard",
    "outcome": "not stated",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by dave passions to nominate tiffaney tavares for the clerk position, seconded by chris menard."
   },
   {
-   "motion": "Evan Watters remain as Chair",
+   "motion": "Evan Watters to remain as Chair.",
    "moved_by": "Dave Passios",
    "seconded_by": "Tiffaney Tavares",
    "outcome": "not stated",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by dave passios for evan watters to remain as chair, seconded by tiffaney tavares."
   },
   {
-   "motion": "Chris Menard remain as Vice Chair",
+   "motion": "Chris Menard to remain as Vice Chair.",
    "moved_by": "Dave Passios",
    "seconded_by": "Jay Simeone",
    "outcome": "not stated",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by dave passios for chris menard to remain as vice chair, seconded by jay simeone."
   },
   {
-   "motion": "Approve minutes with amendments",
+   "motion": "Approve the minutes with amendments.",
    "moved_by": "Dave Passios",
    "seconded_by": "Tiffaney Tavares",
    "outcome": "passed 6-1",
@@ -44,7 +44,7 @@
    "quote": "motion to approve minutes with amendments by dave passios, seconded by tiffaney tavares. vote of 6 to 1 for approval."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Jay Simeone",
    "outcome": "not stated",
@@ -53,6 +53,347 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Five votes recorded. Note: first vote lists \"Dave Passions\" as written in the minutes; this appears to be a transcription error for \"Dave Passios\" who is identified as a board member and who moved the other votes. Vote outcomes for the three committee reorganization motions (votes 1-3) are not explicitly stated in the minutes.",
- "cost_usd": 0.08246110000000001
+ "note": "Text-layer PDF extract, six pages; no scan issues noted. Votes: the three officer-nomination motions and the adjournment motion are recorded with no result printed, so outcome is \"not stated\". The only counted vote is minutes approval, 6-1. The first nomination motion prints the mover as \"Dave Passions\" (apparent misspelling of Dave Passios); it is kept as printed. Heather Lemieux's title is not printed; her role is left as not stated. Evan Watters's liaison entry appears twice in the list; this is as printed.",
+ "cost_usd": 0.01852152,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated (presented the Town Manager Report and the Capital Plan recommendations)",
+   "status": "present",
+   "quote": "heather lemieux discussed the 9c cut decision that included a detailed list of cuts."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "not stated (public comment, 91 Main Street)",
+   "status": "present",
+   "quote": "states that she appreciates the committees efforts and looks forward to the committee continuing their work."
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "from the School Committee",
+   "status": "present",
+   "quote": "brian lehtinen from the school committee stated the ada compliance was a big concern being triggered with renovations."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee agreed that there are no conflicts arising from spousal relationships relative to liaison positions.",
+   "quote": "the committee agrees that there are no conflicts."
+  },
+  {
+   "decision": "Heather Lemieux will inquire into what was previously spent to repair the Wallace Park courts.",
+   "quote": "heather lemieux will inquire into what was previously spent to repair the courts."
+  },
+  {
+   "decision": "Heather Lemieux will check for further information on the Turkey Hill ADA study cost breakdown.",
+   "quote": "heather lemieux will check for further information."
+  },
+  {
+   "decision": "Dave Passios will request additional information at the upcoming MMA meeting about the state budget cuts.",
+   "quote": "dave passios will request additional information at the upcoming mma meeting."
+  },
+  {
+   "decision": "Dave Passios requested a complete evaluation of the Turkey Hill building including ADA design (a request to the Committee, not recorded as a vote).",
+   "quote": "dave passios requests a complete evaluation of the building including ada design."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State budget cuts (Committee comment)",
+   "what_was_recorded": "Dave Passios described a pre-recorded interview about state budget cuts affecting human resource services; no figures were printed.",
+   "quote": "dave passios watched a pre-recorded interview related to the state budget cuts and human resource services being affected by the cuts.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "9C cut decision (Town Manager Report)",
+   "what_was_recorded": "The Town Manager described the 9C cut decision; most cuts were earmarks cut by 50%, and another portion went to MassHealth. No dollar figures printed.",
+   "quote": "most of the cuts were ear marks that were cut by 50%.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Generator project bid",
+   "what_was_recorded": "A bid for the generator project came in at the printed amount; delivery takes 16-18 weeks once ordered.",
+   "quote": "at the past select board meeting, a bid went out for the generator project.",
+   "figures_as_printed": [
+    "$99,940"
+   ]
+  },
+  {
+   "topic": "September storm flood costs and state funding",
+   "what_was_recorded": "The state supplemental budget appropriated 5 million dollars toward the September storms; the town's tracked expenses totaled over $100,000; FEMA allocation pending.",
+   "quote": "in the fall, part of a supplemental budget bill appropriated 5 million dollars to be put toward the september storms.",
+   "figures_as_printed": [
+    "5 million dollars",
+    "over $100,000 dollars"
+   ]
+  },
+  {
+   "topic": "FY25 capital requests total",
+   "what_was_recorded": "The Capital Planning Committee prioritized 35 department requests totaling over 3 million dollars.",
+   "quote": "those 35 requests totaled over 3 million dollars.",
+   "figures_as_printed": [
+    "over 3 million dollars"
+   ]
+  },
+  {
+   "topic": "Top 10 FY25 capital projects",
+   "what_was_recorded": "Top 10 FY25 capital projects were listed, totaling over a million dollars; the Town Manager recommends free cash and unexpected capital for this budget year.",
+   "quote": "below are the top 10 projects for fy 25 totaling over a million dollars:",
+   "figures_as_printed": [
+    "over a million dollars",
+    "$315,263",
+    "$185,000",
+    "$200,000",
+    "$275,000",
+    "$92, 211",
+    "$36,000",
+    "$73,627",
+    "$33,569",
+    "$36,450",
+    "$70,000"
+   ]
+  },
+  {
+   "topic": "Free cash and unexpected capital funding",
+   "what_was_recorded": "The Town Manager recommends using free cash and unexpected capital for this budget year; no figures printed.",
+   "quote": "for this budget year the town manager recommends using free cash and unexpected capital.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Turkey Hill ADA study cost",
+   "what_was_recorded": "A further breakdown of the ADA study cost for Turkey Hill Elementary was requested; the listed project cost is printed.",
+   "quote": "tiffaney tavares requested a further breakdown about the cost of the ada study of turkey hill elementary.",
+   "figures_as_printed": [
+    "$275,000"
+   ]
+  },
+  {
+   "topic": "Wallace Park basketball court repair",
+   "what_was_recorded": "A member had reservations about spending on a patch repair of the Wallace Park basketball court; the listed project cost is printed.",
+   "quote": "dave passios states he has reservations about repairing the basketball court at wallace park.",
+   "figures_as_printed": [
+    "$70,000"
+   ]
+  },
+  {
+   "topic": "Northfield culvert bridge grant and cost",
+   "what_was_recorded": "A member asked whether a grant exists for the bridge culvert project and its estimated costs; the listed project cost is printed.",
+   "quote": "chris menard asks if there is a grant for the bridge culvert project and the estimated costs.",
+   "figures_as_printed": [
+    "$200,000"
+   ]
+  },
+  {
+   "topic": "Grant writer cost",
+   "what_was_recorded": "The Committee asked for the potential time and cost of a grant writer and suggested opening a budget for one; a contracted service was raised. No figures printed.",
+   "quote": "evan watters requests the potential amount of time and cost for a grant writer as this is not a 40-hour position.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "91 Main Street (resident, as addressed in the minutes)",
+   "topic": "Appreciation for Committee work",
+   "quote": "anna lockwood- 91 main street - states that she appreciates the committees efforts and looks forward to the committee continuing their work."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: Plan Lunenburg Survey",
+   "resolution": "noted",
+   "quote": "plan lunenburg survey: available until january 21st",
+   "tags": [
+    "public input",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard",
+   "quote": "states that she appreciates the committees efforts and looks forward to the committee continuing their work.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comment on state budget cuts",
+   "resolution": "Dave Passios to request more information at MMA",
+   "quote": "dave passios will request additional information at the upcoming mma meeting.",
+   "tags": [
+    "state budget",
+    "human services"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "heard; staffing gaps and marketing questioned",
+   "quote": "heather lemieux discussed the 9c cut decision that included a detailed list of cuts.",
+   "tags": [
+    "town manager",
+    "staffing",
+    "storm costs",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "no action (none)",
+   "quote": "there is no old business to discuss.",
+   "tags": []
+  },
+  {
+   "topic": "TM Capital Plan Recommendations",
+   "resolution": "presentation received; follow-ups assigned",
+   "quote": "heather lemieux provided a presentation to the committee prior to the meeting relating to the capital plan recommendations.",
+   "tags": [
+    "capital plan",
+    "FY25",
+    "free cash",
+    "ADA",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Committee Reorganization",
+   "resolution": "nominations made; outcomes not stated in minutes",
+   "quote": "there are 3 positions available to be filled: chair, vice chair, and clerk.",
+   "tags": [
+    "governance",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Committee Liaisons",
+   "resolution": "liaison list shared",
+   "quote": "evan watters created and shared a document with a list of liaisons.",
+   "tags": [
+    "governance",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved with amendments, 6-1",
+   "quote": "motion to approve minutes with amendments by dave passios, seconded by tiffaney tavares. vote of 6 to 1 for approval.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "noted",
+   "quote": "dave passios shares there is an upcoming green communities meeting scheduled for january 29 at 6:30 pm.",
+   "tags": [
+    "green communities"
+   ]
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "grant writing and School Committee documents to follow up",
+   "quote": "evan watters requests the potential amount of time and cost for a grant writer",
+   "tags": [
+    "grants",
+    "school committee"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "calendar noted",
+   "quote": "mar 7th - dpw & facilities",
+   "tags": [
+    "schedule",
+    "budget season"
+   ]
+  },
+  {
+   "topic": "Important Dates",
+   "resolution": "noted",
+   "quote": "apr 2nd - fincom report for warrant",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Comment: spousal conflicts in liaison positions",
+   "resolution": "no conflicts (agreed without vote)",
+   "quote": "there was a brief discussion about spousal conflicts relative to liaison positions.",
+   "tags": [
+    "ethics",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:41 PM",
+   "quote": "the meeting closed at 9:41 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "capital plan",
+  "FY25 capital requests",
+  "free cash",
+  "storm costs",
+  "state budget cuts",
+  "staffing vacancies",
+  "grants",
+  "committee reorganization",
+  "liaisons",
+  "minutes approval",
+  "town budget",
+  "Turkey Hill school ADA",
+  "Wallace Park",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

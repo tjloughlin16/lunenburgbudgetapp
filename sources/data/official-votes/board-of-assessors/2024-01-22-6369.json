@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-01-22",
  "docid": "6369",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "ratify the appointment of Lynda McQuade as Principal Assessor at the recommendation of the Town Manager",
+   "motion": "Ratify the Town Manager's appointment of Lynda McQuade as Principal Assessor, at the Town Manager's recommendation.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion to ratify the appointment of lynda mcquade at the recommendation of the town manger by john rabbitt, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "accept the RFQ for Personal Property Maintenance and Utility Appraisal",
+   "motion": "Accept the Request For Quote (RFQ) for Personal Property Maintenance and Utility Appraisal (cyclical and reevaluation inspections).",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion to accept the rfq by sarah cammer, seconded by john rabbitt. all in favor. unanimous vote."
   },
   {
-   "motion": "enter into executive session and not to return to open session",
+   "motion": "Enter into executive session and not return to open session.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Jack Rabbitt",
    "outcome": "not stated",
@@ -37,6 +37,182 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Name in third motion appears as \"Jack Rabbitt\" (likely referring to \"John Rabbitt\" listed at start of minutes, but transcribed as printed). No explicit vote result recorded for the executive session motion—minutes only note the meeting closed at 7:17 PM.",
- "cost_usd": 0.0820225
+ "note": "Text extraction, not a scan; all 2 readable pages present. Two motions record 'All in favor' with no count printed (outcome recorded as 'passed' from that wording). The executive session motion has no result printed, so its outcome is 'not stated'. The seconder is printed as 'Jack Rabbitt' while the clerk is 'John Rabbitt'; kept as printed. 'Manger' appears as printed in the ratification motion. The meeting-schedule block lists two dates with no description; the 'Mike Tarello from Vision' attendance refers to a future meeting, so his status is 'not stated'. No dollar figures appear in the minutes. The closing 'Public Comment' heading contains a Town Manager remark, which is recorded as public comment because the minutes place it under that heading.",
+ "cost_usd": 0.0187377,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey and town manager heather lemieux."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey and town manager heather lemieux."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey and town manager heather lemieux."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey and town manager heather lemieux."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey and town manager heather lemieux."
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "candidate for the open position of the Principal Assessor",
+   "status": "present",
+   "quote": "lynda mcquade states she has over 20 years of real estate appraisal experience."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "public comment; address printed as 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck-50 sunset lane- states that all residents will be impacted from the problems in 2023."
+  },
+  {
+   "name": "Mike Tarello",
+   "role": "from Vision",
+   "status": "not stated",
+   "quote": "mike tarello from vision will be in attendance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of minutes will not take place at this meeting; it will be added to the agenda for the next meeting.",
+   "quote": "brian laffond states that won't be happening at this meeting and will be added to the agenda for the next meeting."
+  },
+  {
+   "decision": "The Board reviewed the RFQ document and found no errors or edits.",
+   "quote": "the board has reviewed the document and found no errors or edits."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2024 tax assessment and possible tax increase",
+   "what_was_recorded": "A public commenter said he fears a significant tax increase arising from the 2024 assessment progress; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "carl luck fears that there will be a significant tax increase."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "2023 problems and transparency of 2024 tax assessment",
+   "quote": "carl luck-50 sunset lane- states that all residents will be impacted from the problems in 2023. regarding 2024 tax assessment progress there are a few concerns"
+  },
+  {
+   "speaker": "Heather Lemieux",
+   "stated_role": "Town Manager",
+   "topic": "thanks to Rena Swezey; welcome to Lynda McQuade",
+   "quote": "heather lemieux thanks rena swezey for all her help and welcomes lynda mcquade."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening comments: approval of minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "brian laffond states that won't be happening at this meeting and will be added to the agenda for the next meeting.",
+   "tags": [
+    "minutes",
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment (opening): 2024 tax assessment concerns",
+   "resolution": "no action",
+   "quote": "carl luck-50 sunset lane- states that all residents will be impacted from the problems in 2023.",
+   "tags": [
+    "public comment",
+    "tax assessment",
+    "transparency"
+   ]
+  },
+  {
+   "topic": "Appointments: ratification of Principal Assessor Lynda McQuade",
+   "resolution": "ratified",
+   "quote": "motion to ratify the appointment of lynda mcquade at the recommendation of the town manger by john rabbitt, seconded by sarah cammer. all in favor.",
+   "tags": [
+    "appointment",
+    "principal assessor",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "New business: RFQ for Personal Property Maintenance and Utility Appraisal",
+   "resolution": "accepted",
+   "quote": "motion to accept the rfq by sarah cammer, seconded by john rabbitt. all in favor. unanimous vote.",
+   "tags": [
+    "RFQ",
+    "procurement",
+    "cyclical inspections",
+    "personal property"
+   ]
+  },
+  {
+   "topic": "Review for errors and omissions of RFQ document",
+   "resolution": "no errors found",
+   "quote": "the board has reviewed the document and found no errors or edits.",
+   "tags": [
+    "RFQ",
+    "review"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "january 29th at 6:30 pm at the bilotta room in the town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "no action",
+   "quote": "john rabbitt states that he has a list of questions for the upcoming meeting with mike tarello from vision.",
+   "tags": [
+    "board comment",
+    "vendor"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "motion to enter made; result not stated",
+   "quote": "motion to enter into executive session and not to return to open session by sarah cammer, seconded by jack rabbitt.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "principal assessor appointment",
+  "RFQ",
+  "cyclical inspections",
+  "personal property",
+  "utility appraisal",
+  "tax assessment",
+  "2024 assessment",
+  "public comment",
+  "executive session",
+  "minutes deferred",
+  "revaluation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

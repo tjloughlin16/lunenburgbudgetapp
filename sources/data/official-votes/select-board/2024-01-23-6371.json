@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-01-23",
  "docid": "6371",
@@ -12,33 +12,370 @@
  },
  "votes": [
   {
-   "motion": "authorize the Town Manager to sign the revised Nashoba Valley Regional Dispatch Agreement adding Boxborough",
+   "motion": "Authorize the Town Manager to sign the revised Nashoba Valley Regional Dispatch Agreement adding Boxborough in place of Townsend.",
    "moved_by": "Tom Alonzo",
    "seconded_by": "Lou Franco",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by tom alonzo that they authorize the town manager to sign the revised nashoba valley regional dispatch agreement by adding boxborough as discussed. seconded by lou franco. roll ca",
-   "quote_taken_from_text": true
+   "quote": "motion by tom alonzo that they authorize the town manager to sign the revised nashoba valley regional dispatch agreement by adding boxborough as discussed. seconded by lou franco."
   },
   {
-   "motion": "approve the minutes of September 14, 2023",
+   "motion": "Approve the regular session minutes of September 14, 2023 as written.",
    "moved_by": "Tom Alonzo",
    "seconded_by": "Lou Franco",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "motion by tom alonzo to approve the minutes of september 14, 2023 as written in the google drive. seconded by lou franco. roll ca",
-   "quote_taken_from_text": true
+   "quote": "motion by tom alonzo to approve the minutes of september 14, 2023 as written in the google drive. seconded by lou franco."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Member Alonzo",
-   "seconded_by": "Member Franco",
-   "outcome": "passed 4-0",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Lou Franco",
+   "outcome": "passed 4-0-0",
    "procedural": true,
    "quote": "member alonzo made a motion to adjourn. seconded by member franco. all, aye. motion passed unanimously (4-0-0)"
+  },
+  {
+   "motion": "Approve the minutes of January 23, 2024 (recorded in the document's closing approval line, dated as reviewed April 8, 2025).",
+   "moved_by": "Vice Chair Jeffreys",
+   "seconded_by": "Member Alonzo",
+   "outcome": "passed 5-0-0",
+   "procedural": true,
+   "quote": "vice chair jeffreys made motion to approve minutes from january 23, 2024. seconded by member alonzo. all, aye. passed unanimously (5-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12853710000000002
+ "note": "Text extract, not a scan; all votes are recorded with roll-call or voice counts. The Conservation Commission appointment was not voted on. Two anomalies in the closing lines: the approval of the January 23, 2024 minutes is dated April 8, 2025 and records \"Vice Chair Jeffreys\" moving with a 5-0-0 count, but Jeffreys is listed as absent at this meeting and Franco is Vice-Chair here; it is recorded as printed and not reconciled. Attendance is stated for this meeting only; Dave Passios's remote/in-person status is not stated. Lynda McQuaid, Mike Turello, Mary Wilson, Sam Welch and Rena Swezey are mentioned but did not take part, so they are excluded from attendees.",
+ "cost_usd": 0.01912887,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lou Franco",
+   "role": "Vice-Chair, Select Board",
+   "status": "present",
+   "quote": "members present: lou franco, tom alonzo, caesar nuzzolo (via zoom), renee emkey (via zoom)"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member, Select Board",
+   "status": "present",
+   "quote": "members present: lou franco, tom alonzo, caesar nuzzolo (via zoom), renee emkey (via zoom)"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Member, Select Board",
+   "status": "remote",
+   "quote": "members present: lou franco, tom alonzo, caesar nuzzolo (via zoom), renee emkey (via zoom)"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member, Select Board",
+   "status": "remote",
+   "quote": "members present: lou franco, tom alonzo, caesar nuzzolo (via zoom), renee emkey (via zoom)"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "role": "Select Board member",
+   "status": "absent",
+   "quote": "members absent: michael ray jeffreys"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "chief gammel commented that receiving this award was very humbling."
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "candidate, Conservation Commission vacancy",
+   "status": "present",
+   "quote": "mr. nicastro spoke of his love of lunenburg."
+  },
+  {
+   "name": "Jenny Pewtherer",
+   "role": "candidate, Conservation Commission vacancy",
+   "status": "present",
+   "quote": "ms. pewtherer replied she is very comfortable with the commitment as well as doing site walks and any classes."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Vice-Chair of Conservation Commission",
+   "status": "present",
+   "quote": "bob pease (vice-chair of conservation commission), who was present"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public commenter; address printed as 56 Whiting St.",
+   "status": "present",
+   "quote": "reported that he was 1 of 3 representing the town at the maa, which had record attendance this year."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Interview of the third Conservation Commission candidate, Sam Welch, deferred to the next meeting before any appointment decision (suggested by Member Alonzo; no vote recorded).",
+   "quote": "member alonzo suggested waiting until the next meeting to interview sam welch"
+  },
+  {
+   "decision": "Select Board meeting moved from February 6 to January 30; February 13 meeting set to discuss Flat Hill Road with the Trustees invited.",
+   "quote": "select board will meet on january 30"
+  },
+  {
+   "decision": "Town Manager to check the broken PDF links in the draft Board/Commission Handbook.",
+   "quote": "the town manager will check the links."
+  },
+  {
+   "decision": "Review of bylaws pertaining to the Select Board deferred until a full board is present.",
+   "quote": "will be discussed when there is a full board present."
+  },
+  {
+   "decision": "Town Manager to keep the Select Board informed of the Principal Assessor's office start date.",
+   "quote": "the town manager will keep the select board informed about her office start date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public Safety carpet project award",
+   "what_was_recorded": "The carpet project was awarded to Atkinson Carpet & Flooring for $43,790, funded in the FY22 capital plan at $50,000, with a surplus anticipated.",
+   "figures_as_printed": [
+    "$43,790",
+    "$50,000"
+   ],
+   "quote": "public safety carpet project was awarded to atkinson carpet & flooring for $43,790 and expected to be completed by march"
+  },
+  {
+   "topic": "FY25 health insurance (MIIA) rate increase",
+   "what_was_recorded": "MIIA announced FY25 rate increases of 2.2% to 9.95% (average 6.6%); the town's estimate was lowered from 10% to a maximum of 6.6%, and 10% would have been $450,000.",
+   "figures_as_printed": [
+    "$450,000",
+    "2.2%",
+    "9.95%",
+    "6.6%",
+    "10%"
+   ],
+   "quote": "member alonzo asked what the difference would be to the town and the town manager replied 10% would be $450,000."
+  },
+  {
+   "topic": "Aggregate electricity rate",
+   "what_was_recorded": "The current aggregate-account rate is .11868/kw and the contract expires in November 2024; the broker expects lower downside market costs.",
+   "figures_as_printed": [
+    ".11868/kw"
+   ],
+   "quote": "the current rate for aggregate accounts is .11868/kw and the contract will expire in november 2024."
+  },
+  {
+   "topic": "Unitil electric rate",
+   "what_was_recorded": "Member Alonzo said the current Unitil rate is about $0.30/kw, in the top 2% in the country; the Town Manager had no update on the DPU rate case.",
+   "figures_as_printed": [
+    "$0.30/kw"
+   ],
+   "quote": "the current rate is about $0.30/kw which is in the top 2% in the country"
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "An Accounts Payable warrant was signed by two Selectmen and needs one more signature.",
+   "figures_as_printed": [
+    "$765,190.07"
+   ],
+   "quote": "accounts payable warrant in the amount of $765,190.07 was signed by mr. franco and mr. alonzo."
+  },
+  {
+   "topic": "Council on Aging volunteer value",
+   "what_was_recorded": "Council on Aging reported that volunteers paid minimum wage would cost the town about $24,000.",
+   "figures_as_printed": [
+    "$24,000"
+   ],
+   "quote": "if they were paid minimum wage, the cost to the town would be about $24,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Zoom video feed",
+   "speaker": "Caesar Nuzzolo",
+   "stated_role": "Member",
+   "quote": "member nuzzolo noted that he was unable to see the video of the room on zoom and this was corrected."
+  },
+  {
+   "topic": "Thanks to assessor's office staff",
+   "speaker": "Heather Lemieux",
+   "stated_role": "Town Manager",
+   "quote": "town manager lemieux commented that she was very grateful for rena swezey for her service"
+  },
+  {
+   "topic": "Massachusetts Assessors conference and MIIA insurance meeting",
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting St.",
+   "quote": "reported that he was 1 of 3 representing the town at the maa, which had record attendance this year."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "vice-chair lou franco called the meeting to order at 7:00 pm and led the pledge of allegiance."
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "noted; no action",
+   "tags": [
+    "public comment",
+    "zoom"
+   ],
+   "quote": "member nuzzolo noted that he was unable to see the video of the room on zoom and this was corrected."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "town meeting warrant",
+    "master plan",
+    "finance committee",
+    "assessors"
+   ],
+   "quote": "town manager lemieux reported the town meeting warrant is now open until march 18"
+  },
+  {
+   "topic": "Recognition of Police Chief Gammel",
+   "resolution": "commendation presented",
+   "tags": [
+    "police",
+    "recognition"
+   ],
+   "quote": "vice-chair franco noted that the central ma chiefs of police association held their annual installation meeting"
+  },
+  {
+   "topic": "Conservation Commission vacancy interviews",
+   "resolution": "candidates heard; appointment deferred to next meeting",
+   "tags": [
+    "conservation commission",
+    "appointments"
+   ],
+   "quote": "vice-chair franco stated that they have 3 candidates for the vacancy on the conservation committee"
+  },
+  {
+   "topic": "Town Manager report: vacancies, hiring, Principal Assessor",
+   "resolution": "reported; no action",
+   "tags": [
+    "town manager",
+    "hiring",
+    "assessors",
+    "vacancies"
+   ],
+   "quote": "town manager lemieux noted the following board vacancies"
+  },
+  {
+   "topic": "Bids, FY25 budget updates, energy",
+   "resolution": "reported; no action",
+   "tags": [
+    "bids",
+    "health insurance",
+    "energy",
+    "fy25 budget"
+   ],
+   "quote": "public safety carpet project was awarded to atkinson carpet & flooring for $43,790"
+  },
+  {
+   "topic": "Old business: draft Board/Commission Handbook",
+   "resolution": "discussed; Town Manager to check links",
+   "tags": [
+    "handbook",
+    "zoom",
+    "bylaws"
+   ],
+   "quote": "discussion on draft board/commission handbook - member emkey suggested adding a section on how to set up zoom meetings."
+  },
+  {
+   "topic": "Old business: Select Board bylaws review",
+   "resolution": "deferred until full board present",
+   "tags": [
+    "bylaws"
+   ],
+   "quote": "will be discussed when there is a full board present."
+  },
+  {
+   "topic": "Nashoba Valley Regional Dispatch Agreement",
+   "resolution": "approved 4-0-0",
+   "tags": [
+    "dispatch",
+    "regional",
+    "agreement"
+   ],
+   "quote": "authorization for town manager to sign revised nashoba valley regional dispatch agreement adding boxborough in place of townsend."
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "minutes of September 14, 2023 approved 4-0-0; no action items",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "regular session minutes for september 14, 2023."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "tags": [
+    "stormwater",
+    "school committee",
+    "assessors",
+    "council on aging"
+   ],
+   "quote": "stormwater task force: member emkey reported: met last week and the dpw director invited"
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "meeting rescheduled",
+   "tags": [
+    "meeting schedule",
+    "flat hill road"
+   ],
+   "quote": "select board will meet on january 30"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "noted; no action",
+   "tags": [
+    "public comment",
+    "assessors",
+    "mass assessors conference",
+    "miia"
+   ],
+   "quote": "town manager lemieux commented that she was very grateful for rena swezey for her service"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0-0",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "member alonzo made a motion to adjourn. seconded by member franco. all, aye. motion passed unanimously (4-0-0)"
+  }
+ ],
+ "tags": [
+  "select board",
+  "dispatch agreement",
+  "health insurance",
+  "energy",
+  "conservation commission",
+  "appointments",
+  "police",
+  "assessors",
+  "fy25 budget",
+  "board handbook",
+  "bylaws",
+  "meeting schedule",
+  "public comment",
+  "zoom"
+ ],
+ "dropped_unquoted_by_field": {}
 }

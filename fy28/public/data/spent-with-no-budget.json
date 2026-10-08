@@ -1,0 +1,1886 @@
+{
+ "about": "Which school general fund lines spent money against a $0 budget, FY2023 to FY2026, by three separate definitions, and whether it recurs.",
+ "by_year": [
+  {
+   "a_n": 6,
+   "a_over": -17135.11,
+   "a_spent": 53153.89,
+   "b_n": 2,
+   "b_spent": 1795.0,
+   "c_also_a": 4,
+   "c_moved": 70289.0,
+   "c_n": 4,
+   "c_spent": 51358.89,
+   "dept_available": 106826.75,
+   "dept_spent": 22403863.44,
+   "enc_on_lines": 0.0,
+   "fy": 2023,
+   "share_pct": 0.24
+  },
+  {
+   "a_n": 4,
+   "a_over": 152022.5,
+   "a_spent": 152022.5,
+   "b_n": 4,
+   "b_spent": 152022.5,
+   "c_also_a": 0,
+   "c_moved": 0,
+   "c_n": 0,
+   "c_spent": 0,
+   "dept_available": 215776.28,
+   "dept_spent": 22743459.55,
+   "enc_on_lines": 0.0,
+   "fy": 2024,
+   "share_pct": 0.67
+  },
+  {
+   "a_n": 5,
+   "a_over": -1047.59,
+   "a_spent": 214496.76,
+   "b_n": 0,
+   "b_spent": 0,
+   "c_also_a": 5,
+   "c_moved": 215544.35,
+   "c_n": 5,
+   "c_spent": 214496.76,
+   "dept_available": 627116.86,
+   "dept_spent": 24554454.7,
+   "enc_on_lines": 0.0,
+   "fy": 2025,
+   "share_pct": 0.87
+  },
+  {
+   "a_n": 9,
+   "a_over": 96179.66,
+   "a_spent": 169662.03,
+   "b_n": 6,
+   "b_spent": 103673.51,
+   "c_also_a": 3,
+   "c_moved": 74086.43,
+   "c_n": 5,
+   "c_spent": 65988.52,
+   "dept_available": 482118.07,
+   "dept_spent": 25613679.23,
+   "enc_on_lines": 0.0,
+   "fy": 2026,
+   "share_pct": 0.66
+  }
+ ],
+ "conclusions": [
+  {
+   "basis": "`munis-school-ytd.csv`, report gf-school, period 13, FY2023-FY2026: every account with original_approp = 0 and ytd_expended > 0.",
+   "bearing": "sizes",
+   "claim": "$589,335 was spent on school budget lines voted at $0, FY2023 to FY2026.",
+   "detail": "By year: FY2023 $53,154 on 6 lines; FY2024 $152,022 on 4 lines; FY2025 $214,497 on 5 lines; FY2026 $169,662 on 9 lines. Spending against a zero line is not by itself improper: the department’s total stayed inside its budget in all four years, so the money was covered elsewhere in the total. What it shows is that the voted line-item budget did not describe what happened.",
+   "figure": "a_tot",
+   "figures": {
+    "a2023": {
+     "text": "$53,154",
+     "unit": "",
+     "value": 53153.89
+    },
+    "a2024": {
+     "text": "$152,022",
+     "unit": "",
+     "value": 152022.5
+    },
+    "a2025": {
+     "text": "$214,497",
+     "unit": "",
+     "value": 214496.76
+    },
+    "a2026": {
+     "text": "$169,662",
+     "unit": "",
+     "value": 169662.03
+    },
+    "a_tot": {
+     "text": "$589,335",
+     "unit": "spent on school lines voted at $0, four years",
+     "value": 589335.18
+    },
+    "an2023": {
+     "text": "6",
+     "unit": "budget lines",
+     "value": 6
+    },
+    "an2024": {
+     "text": "4",
+     "unit": "budget lines",
+     "value": 4
+    },
+    "an2025": {
+     "text": "5",
+     "unit": "budget lines",
+     "value": 5
+    },
+    "an2026": {
+     "text": "9",
+     "unit": "budget lines",
+     "value": 9
+    },
+    "share": {
+     "text": "0.9%",
+     "unit": "",
+     "value": 0.87
+    }
+   },
+   "id": "spent-on-lines-voted-at-zero",
+   "kind": "measured",
+   "literals": [
+    "FY2023 to FY2026",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026",
+    "January 2026",
+    "September 2025",
+    "$0"
+   ],
+   "not_shown": "What was paid from these lines, or why each was voted at zero. A line can be voted at zero because the budget for the work sat on another line, because a post was not expected to be filled, or by a coding change; the ledger cannot tell these apart.",
+   "see": [],
+   "so_what": "Never more than 0.9% of a year’s school spending, and every year closed under its total budget."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, gf-school, period 13: revised_budget = 0 and ytd_expended > 0.",
+   "bearing": "sizes",
+   "claim": "$257,491 went on lines that still had a $0 budget after every mid-year transfer.",
+   "detail": "By year: FY2023 $1,795 on 2 lines; FY2024 $152,022 on 4 lines; none in FY2025; FY2026 $103,674 on 6 lines. This is the stricter definition and a subset of the spending counted above, not an addition to it.",
+   "figure": "b_tot",
+   "figures": {
+    "b2023": {
+     "text": "$1,795",
+     "unit": "",
+     "value": 1795.0
+    },
+    "b2024": {
+     "text": "$152,022",
+     "unit": "",
+     "value": 152022.5
+    },
+    "b2026": {
+     "text": "$103,674",
+     "unit": "",
+     "value": 103673.51
+    },
+    "b_tot": {
+     "text": "$257,491",
+     "unit": "spent on lines still at $0 after transfers",
+     "value": 257491.01
+    },
+    "bn2023": {
+     "text": "2",
+     "unit": "budget lines",
+     "value": 2
+    },
+    "bn2024": {
+     "text": "4",
+     "unit": "budget lines",
+     "value": 4
+    },
+    "bn2026": {
+     "text": "6",
+     "unit": "budget lines",
+     "value": 6
+    }
+   },
+   "id": "still-zero-after-transfers",
+   "kind": "measured",
+   "literals": [
+    "FY2023 to FY2026",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026",
+    "January 2026",
+    "September 2025",
+    "$0"
+   ],
+   "not_shown": "Which lines the cover came from. The ledger shows each line’s own budget and spending, never a pairing between an overspent line and an underspent one.",
+   "see": [],
+   "so_what": "Those lines closed over budget by the full amount; money left on other lines covered it."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, gf-school, period 13: original_approp = 0 and revised_budget > 0. Transfers are the transfers_adjustments column, net per line.",
+   "bearing": "sizes",
+   "claim": "$359,920 was moved during the year onto lines that started the year at $0.",
+   "detail": "By year: FY2023 $70,289 onto 4 lines; none in FY2024; FY2025 $215,544 onto 5 lines; FY2026 $74,086 onto 5 lines. The School Committee approves line item transfers at its meetings; the ledger records each line’s net change, not the line it came from.",
+   "figure": "c_tot",
+   "figures": {
+    "c2023": {
+     "text": "$70,289",
+     "unit": "",
+     "value": 70289.0
+    },
+    "c2025": {
+     "text": "$215,544",
+     "unit": "",
+     "value": 215544.35
+    },
+    "c2026": {
+     "text": "$74,086",
+     "unit": "",
+     "value": 74086.43
+    },
+    "c_tot": {
+     "text": "$359,920",
+     "unit": "moved onto lines voted at $0, four years",
+     "value": 359919.77999999997
+    },
+    "cn2023": {
+     "text": "4",
+     "unit": "budget lines",
+     "value": 4
+    },
+    "cn2025": {
+     "text": "5",
+     "unit": "budget lines",
+     "value": 5
+    },
+    "cn2026": {
+     "text": "5",
+     "unit": "budget lines",
+     "value": 5
+    }
+   },
+   "id": "money-found-by-transfer",
+   "kind": "measured",
+   "literals": [
+    "FY2023 to FY2026",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026",
+    "January 2026",
+    "September 2025",
+    "$0"
+   ],
+   "not_shown": "Where each transfer came from, and whether every net change is a School Committee transfer rather than another adjustment. The ledger carries one net figure per line.",
+   "see": [],
+   "so_what": "Here the money was found mid-year; the budget as voted still did not show the spending."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, gf-school, period 13, each line followed across FY2023-FY2026.",
+   "bearing": "lever",
+   "claim": "14 of the 19 lines that spent against a $0 vote had a voted budget in another year.",
+   "detail": "Mostly a year missing from a line the district funds in other years, not a new kind of spending. Where the year before is in the data, 14 of 18 cases had spending on the same line the year before. 4 lines did it in more than one year: high school special education long-term substitutes (3 years); athletic coaches (2 years); high school after-school advisors (2 years); high school accreditation salaries (2 years).",
+   "figure": "n_other",
+   "figures": {
+    "n_a": {
+     "text": "19",
+     "unit": "budget lines",
+     "value": 19
+    },
+    "n_inst": {
+     "text": "18",
+     "unit": "line-years",
+     "value": 18
+    },
+    "n_other": {
+     "text": "14",
+     "unit": "budget lines",
+     "value": 14
+    },
+    "n_prior": {
+     "text": "14",
+     "unit": "line-years",
+     "value": 14
+    },
+    "n_rec": {
+     "text": "4",
+     "unit": "budget lines",
+     "value": 4
+    },
+    "r0": {
+     "text": "3",
+     "unit": "years",
+     "value": 3
+    },
+    "r1": {
+     "text": "2",
+     "unit": "years",
+     "value": 2
+    },
+    "r2": {
+     "text": "2",
+     "unit": "years",
+     "value": 2
+    },
+    "r3": {
+     "text": "2",
+     "unit": "years",
+     "value": 2
+    }
+   },
+   "id": "mostly-a-missing-year",
+   "kind": "measured",
+   "literals": [
+    "FY2023 to FY2026",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026",
+    "January 2026",
+    "September 2025",
+    "$0"
+   ],
+   "not_shown": "Whether the budget for those years was carried on a different line. Four years is a short window: a line voted at zero in each of the four is counted as never voted.",
+   "see": [],
+   "so_what": "A line that spent last year and is voted at $0 this year can be asked about before the vote."
+  },
+  {
+   "basis": "`munis-school-ytd.csv`, gf-school, accounts 0100-3-300-2330-03-2-12-1-511103 (org S2032121) and 0100-3-300-2330-03-2-13-1-511203 (org S2032131), FY2023-FY2026; fy26-school-surplus.json for the category.",
+   "bearing": "sizes",
+   "claim": "$99,064 was charged to the two kindergarten aide lines in FY2026; both were voted at $0.",
+   "detail": "Kindergarten aides $93,691, kindergarten paraprofessionals $5,373. The FY2026 surplus report counts both among the paraprofessional lines, which together ran $208,082 over budget. A January 2026 Finance Committee minute records the School Committee chair saying kindergarten classrooms had no aides; an account title is not a person in a classroom, and nothing published joins the two.",
+   "figure": "k26",
+   "figures": {
+    "k25v": {
+     "text": "$73,273",
+     "unit": "",
+     "value": 73273.0
+    },
+    "k26": {
+     "text": "$99,064",
+     "unit": "charged to the kindergarten aide lines, FY2026",
+     "value": 99064.15
+    },
+    "kaid": {
+     "text": "$93,691",
+     "unit": "",
+     "value": 93691.03
+    },
+    "kpar": {
+     "text": "$5,373",
+     "unit": "",
+     "value": 5373.12
+    },
+    "pover": {
+     "text": "$208,082",
+     "unit": "",
+     "value": 208081.73
+    }
+   },
+   "id": "kindergarten-aides-fy2026",
+   "kind": "measured",
+   "literals": [
+    "FY2023 to FY2026",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026",
+    "January 2026",
+    "September 2025",
+    "$0"
+   ],
+   "not_shown": "Whether anyone paid from these lines worked in a kindergarten classroom. Staff coded to the line while assigned elsewhere, a reclassification, or posts moved between lines would all produce the same ledger.",
+   "see": [
+    {
+     "label": "Where the FY26 school surplus was left",
+     "slug": "fy26-school-surplus"
+    }
+   ],
+   "so_what": "The same two lines were voted $73,273 the year before. Who was paid needs payroll detail."
+  }
+ ],
+ "definitions": {
+  "a": "original appropriation $0 and spent > 0: the voted line did not describe the spending",
+  "b": "revised budget $0 and spent > 0: still unbudgeted after every transfer",
+  "c": "original appropriation $0 and revised budget > 0: money moved onto the line mid-year"
+ },
+ "department": {
+  "2023": {
+   "available": 106826.75,
+   "encumbered": 0.0,
+   "revised": 22510690.19,
+   "spent": 22403863.44
+  },
+  "2024": {
+   "available": 215776.28,
+   "encumbered": 0.0,
+   "revised": 22959235.83,
+   "spent": 22743459.55
+  },
+  "2025": {
+   "available": 627116.86,
+   "encumbered": 0.0,
+   "revised": 25181571.56,
+   "spent": 24554454.7
+  },
+  "2026": {
+   "available": 482118.07,
+   "encumbered": 236766.94,
+   "revised": 26332564.24,
+   "spent": 25613679.23
+  }
+ },
+ "fy26_para_over": 208081.73,
+ "gaps": [
+  "What was paid from the school budget lines that spent against a $0 budget, FY2023–FY2026",
+  "Whether the FY2026 spending on the kindergarten aide lines paid for aides in kindergarten classrooms",
+  "Where did the $122,502.44 that moved out of the FY2025 school department mid-year go, and what posted to department 300 after the School Committee's 17 September 2025 surplus statement?",
+  "Whether a budgeted position was filled"
+ ],
+ "generated_by": "scripts/build_spent_no_budget.py",
+ "grain": "DOLLARS spent at the close (period 13) per school general fund budget line (MUNIS account, fund 0100, department 300) per fiscal year. A line is a place the books put money — not a person or a position.",
+ "kindergarten": {
+  "fy2025_voted": 73273.0,
+  "fy2026_spent": 99064.15,
+  "years": [
+   {
+    "fy": 2023,
+    "lines": [
+     {
+      "account": "0100-3-300-2330-03-2-12-1-511103",
+      "munis": "KINDERGARTEN AIDES/REGULAR",
+      "name": "Kindergarten aides",
+      "org": "S2032121",
+      "revised": 0.0,
+      "spent": 0.0,
+      "voted": 0.0
+     },
+     {
+      "account": "0100-3-300-2330-03-2-13-1-511203",
+      "munis": "KIND PARAPROFESSIONALS/REG",
+      "name": "Kindergarten paraprofessionals",
+      "org": "S2032131",
+      "revised": 89481.0,
+      "spent": 75501.66,
+      "voted": 145311.0
+     }
+    ],
+    "revised": 89481.0,
+    "spent": 75501.66,
+    "voted": 145311.0
+   },
+   {
+    "fy": 2024,
+    "lines": [
+     {
+      "account": "0100-3-300-2330-03-2-12-1-511103",
+      "munis": "KINDERGARTEN AIDES/REGULAR",
+      "name": "Kindergarten aides",
+      "org": "S2032121",
+      "revised": 0.0,
+      "spent": 0.0,
+      "voted": 0.0
+     },
+     {
+      "account": "0100-3-300-2330-03-2-13-1-511203",
+      "munis": "KIND PARAPROFESSIONALS/REG",
+      "name": "Kindergarten paraprofessionals",
+      "org": "S2032131",
+      "revised": 73273.0,
+      "spent": 77699.88,
+      "voted": 73273.0
+     }
+    ],
+    "revised": 73273.0,
+    "spent": 77699.88,
+    "voted": 73273.0
+   },
+   {
+    "fy": 2025,
+    "lines": [
+     {
+      "account": "0100-3-300-2330-03-2-12-1-511103",
+      "munis": "KINDERGARTEN AIDES/REGULAR",
+      "name": "Kindergarten aides",
+      "org": "S2032121",
+      "revised": 0.0,
+      "spent": 0.0,
+      "voted": 0.0
+     },
+     {
+      "account": "0100-3-300-2330-03-2-13-1-511203",
+      "munis": "KIND PARAPROFESSIONALS/REG",
+      "name": "Kindergarten paraprofessionals",
+      "org": "S2032131",
+      "revised": 93494.96,
+      "spent": 83765.97,
+      "voted": 73273.0
+     }
+    ],
+    "revised": 93494.96,
+    "spent": 83765.97,
+    "voted": 73273.0
+   },
+   {
+    "fy": 2026,
+    "lines": [
+     {
+      "account": "0100-3-300-2330-03-2-12-1-511103",
+      "munis": "KINDERGARTEN AIDES/REGULAR",
+      "name": "Kindergarten aides",
+      "org": "S2032121",
+      "revised": 0.0,
+      "spent": 93691.03,
+      "voted": 0.0
+     },
+     {
+      "account": "0100-3-300-2330-03-2-13-1-511203",
+      "munis": "KIND PARAPROFESSIONALS/REG",
+      "name": "Kindergarten paraprofessionals",
+      "org": "S2032131",
+      "revised": 0.0,
+      "spent": 5373.12,
+      "voted": 0.0
+     }
+    ],
+    "revised": 0.0,
+    "spent": 99064.15,
+    "voted": 0.0
+   }
+  ]
+ },
+ "lines": [
+  {
+   "a_total": 202347.0,
+   "a_years": [
+    2024,
+    2025
+   ],
+   "account": "0100-3-300-3510-06-6-67-1-519003",
+   "b_total": 46733.0,
+   "c_total": 156599.35,
+   "function": "3510",
+   "munis": "ATHLETIC COACHES",
+   "name": "Athletic coaches",
+   "org": "S3066671",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 98417.0,
+     "rev": 100351.0,
+     "spent": 100350.5,
+     "trans": 1934.0
+    },
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 46733.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 0.0,
+     "rev": 156599.35,
+     "spent": 155614.0,
+     "trans": 156599.35
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 159444.0,
+     "rev": 159444.0,
+     "spent": 145882.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 93691.03,
+   "a_years": [
+    2026
+   ],
+   "account": "0100-3-300-2330-03-2-12-1-511103",
+   "b_total": 93691.03,
+   "c_total": 0,
+   "function": "2330",
+   "munis": "KINDERGARTEN AIDES/REGULAR",
+   "name": "Kindergarten aides",
+   "org": "S2032121",
+   "voted_other_year": false,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 93691.03,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 89887.0,
+   "a_years": [
+    2024
+   ],
+   "account": "0100-3-300-2800-07-2-06-1-511023",
+   "b_total": 89887.0,
+   "c_total": 0,
+   "function": "2800",
+   "munis": "PSYCHOLOGISTS SALARIES",
+   "name": "School psychologists",
+   "org": "S2072061",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 89887.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 85026.0,
+     "rev": 92380.0,
+     "spent": 92380.0,
+     "trans": 7354.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 98784.0,
+     "rev": 98784.0,
+     "spent": 0.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 43980.44,
+   "a_years": [
+    2026
+   ],
+   "account": "0100-3-300-2710-06-6-65-1-511002",
+   "b_total": 0,
+   "c_total": 42966.92,
+   "function": "2710",
+   "munis": "H.S. GUIDANCE SECRETARY",
+   "name": "High school guidance secretary",
+   "org": "S2066651",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 41872.0,
+     "rev": 41872.0,
+     "spent": 38423.94,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 43897.0,
+     "rev": 43897.0,
+     "spent": 38864.72,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 38245.0,
+     "rev": 39828.0,
+     "spent": 39826.67,
+     "trans": 1583.0
+    },
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 42966.92,
+     "spent": 43980.44,
+     "trans": 42966.92
+    }
+   ]
+  },
+  {
+   "a_total": 30165.0,
+   "a_years": [
+    2023,
+    2025,
+    2026
+   ],
+   "account": "0100-3-300-2325-51-6-71-1-511003",
+   "b_total": 1500.0,
+   "c_total": 25906.0,
+   "function": "2325",
+   "munis": "H.S. SPED LONG TERM SUBS",
+   "name": "High school special education long-term substitutes",
+   "org": "S2516711",
+   "voted_other_year": false,
+   "years": [
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 0.0,
+     "rev": 9000.0,
+     "spent": 11760.0,
+     "trans": 9000.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 0.0,
+     "rev": 16906.0,
+     "spent": 16905.0,
+     "trans": 16906.0
+    },
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 1500.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 29334.0,
+   "a_years": [
+    2024,
+    2025
+   ],
+   "account": "0100-3-300-3520-06-6-70-1-519003",
+   "b_total": 15295.0,
+   "c_total": 14039.0,
+   "function": "3520",
+   "munis": "H.S. AFTER SCHOOL ADVISORS",
+   "name": "High school after-school advisors",
+   "org": "S3066701",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 12253.0,
+     "rev": 12253.0,
+     "spent": 15000.8,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 15295.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 0.0,
+     "rev": 14039.0,
+     "spent": 14039.0,
+     "trans": 14039.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 11334.0,
+     "rev": 11334.0,
+     "spent": 14729.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 29069.89,
+   "a_years": [
+    2023
+   ],
+   "account": "0100-3-300-2330-06-6-13-1-511203",
+   "b_total": 0,
+   "c_total": 55830.0,
+   "function": "2330",
+   "munis": "H.S. PARAPROFESSIONALS",
+   "name": "High school paraprofessionals",
+   "org": "S2066131",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 0.0,
+     "rev": 55830.0,
+     "spent": 29069.89,
+     "trans": 55830.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 53304.0,
+     "rev": 53304.0,
+     "spent": 18435.23,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 47960.0,
+     "rev": 34960.0,
+     "spent": 4785.74,
+     "trans": -13000.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 25295.76,
+   "a_years": [
+    2025
+   ],
+   "account": "0100-3-300-1230-99-0-99-1-519103",
+   "b_total": 0,
+   "c_total": 25357.0,
+   "function": "1230",
+   "munis": "SCHOOL STIPENDS",
+   "name": "School stipends (district-wide)",
+   "org": "S1990991",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 18000.0,
+     "rev": 18937.0,
+     "spent": 44656.4,
+     "trans": 937.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 18000.0,
+     "rev": 18000.0,
+     "spent": 46046.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 0.0,
+     "rev": 25357.0,
+     "spent": 25295.76,
+     "trans": 25357.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 30561.0,
+     "rev": 30561.0,
+     "spent": 32867.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 21481.0,
+   "a_years": [
+    2026
+   ],
+   "account": "0100-3-300-3510-06-6-67-2-535020",
+   "b_total": 0,
+   "c_total": 29965.45,
+   "function": "3510",
+   "munis": "DUES AND FEES",
+   "name": "Athletics dues and fees",
+   "org": "S3066672",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 20000.0,
+     "rev": 20000.0,
+     "spent": 22250.5,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 20000.0,
+     "rev": 20000.0,
+     "spent": 18486.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 20000.0,
+     "rev": 31994.5,
+     "spent": 31994.5,
+     "trans": 11994.5
+    },
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 29965.45,
+     "spent": 21481.0,
+     "trans": 29965.45
+    }
+   ]
+  },
+  {
+   "a_total": 5373.12,
+   "a_years": [
+    2026
+   ],
+   "account": "0100-3-300-2330-03-2-13-1-511203",
+   "b_total": 5373.12,
+   "c_total": 0,
+   "function": "2330",
+   "munis": "KIND PARAPROFESSIONALS/REG",
+   "name": "Kindergarten paraprofessionals",
+   "org": "S2032131",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 145311.0,
+     "rev": 89481.0,
+     "spent": 75501.66,
+     "trans": -55830.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 73273.0,
+     "rev": 73273.0,
+     "spent": 77699.88,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 73273.0,
+     "rev": 93494.96,
+     "spent": 83765.97,
+     "trans": 20221.96
+    },
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 5373.12,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 5325.0,
+   "a_years": [
+    2023
+   ],
+   "account": "0100-3-300-3200-99-1-56-2-531006",
+   "b_total": 0,
+   "c_total": 459.0,
+   "function": "3200",
+   "munis": "PURCHASE OF SERVICE",
+   "name": "Health services, purchased (district-wide)",
+   "org": "S3991562",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 0.0,
+     "rev": 459.0,
+     "spent": 5325.0,
+     "trans": 459.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 4315.0,
+     "rev": 4315.0,
+     "spent": 3525.9,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 4315.0,
+     "rev": 4315.0,
+     "spent": 2065.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 7115.0,
+     "rev": 7115.0,
+     "spent": 0.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 5204.0,
+   "a_years": [
+    2023
+   ],
+   "account": "0100-3-300-2305-05-5-54-1-517005",
+   "b_total": 0,
+   "c_total": 5000.0,
+   "function": "2305",
+   "munis": "MASTER TEACHER STIPENDS",
+   "name": "Middle school master-teacher stipends",
+   "org": "S2055541",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 0.0,
+     "rev": 5000.0,
+     "spent": 5204.0,
+     "trans": 5000.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 2500.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": -2500.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 3892.0,
+   "a_years": [
+    2025,
+    2026
+   ],
+   "account": "0100-3-300-2210-06-6-08-1-511019",
+   "b_total": 1249.0,
+   "c_total": 2643.0,
+   "function": "2210",
+   "munis": "SALARIES ACCREDITATION",
+   "name": "High school accreditation salaries",
+   "org": "S2066081",
+   "voted_other_year": false,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 0.0,
+     "rev": 2643.0,
+     "spent": 2643.0,
+     "trans": 2643.0
+    },
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 1249.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 1510.0,
+   "a_years": [
+    2023
+   ],
+   "account": "0100-3-300-3510-06-6-67-2-535021",
+   "b_total": 1510.0,
+   "c_total": 0,
+   "function": "3510",
+   "munis": "ATHLETIC OFFICIALS",
+   "name": "Athletic officials",
+   "org": "S3066672",
+   "voted_other_year": false,
+   "years": [
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 1510.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 1310.96,
+   "a_years": [
+    2026
+   ],
+   "account": "0100-3-300-2415-51-4-05-2-555055",
+   "b_total": 1310.96,
+   "c_total": 0,
+   "function": "2415",
+   "munis": "SPEC ED INSTRUCTIONAL MATERIAL",
+   "name": "Elementary special education teaching materials",
+   "org": "S2514052",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 3688.0,
+     "rev": 3688.0,
+     "spent": 2965.24,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 2783.0,
+     "rev": 2783.0,
+     "spent": 792.12,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 614.0,
+     "rev": 386.04,
+     "spent": 386.04,
+     "trans": -227.96
+    },
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 1310.96,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 549.4,
+   "a_years": [
+    2026
+   ],
+   "account": "0100-3-300-2210-01-4-08-1-511102",
+   "b_total": 549.4,
+   "c_total": 0,
+   "function": "2210",
+   "munis": "E.S. CLERK TYPIST",
+   "name": "Elementary clerk-typist",
+   "org": "S2014081",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 8565.0,
+     "rev": 9007.0,
+     "spent": 9661.84,
+     "trans": 442.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 8444.0,
+     "rev": 8444.0,
+     "spent": 9899.89,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 8646.0,
+     "rev": 9180.52,
+     "spent": 9180.52,
+     "trans": 534.52
+    },
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 549.4,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 527.08,
+   "a_years": [
+    2026
+   ],
+   "account": "0100-3-300-2420-04-4-62-2-555005",
+   "b_total": 0,
+   "c_total": 550.0,
+   "function": "2420",
+   "munis": "PHYSICAL ED SUPPLIES",
+   "name": "Elementary physical education supplies",
+   "org": "S2044622",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 1842.0,
+     "rev": 1331.0,
+     "spent": 964.08,
+     "trans": -511.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 1840.0,
+     "rev": 1840.0,
+     "spent": 1458.94,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 300.0,
+     "rev": 300.0,
+     "spent": 299.72,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "a",
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 550.0,
+     "spent": 527.08,
+     "trans": 550.0
+    }
+   ]
+  },
+  {
+   "a_total": 285.0,
+   "a_years": [
+    2023
+   ],
+   "account": "0100-3-300-2325-51-4-71-1-511003",
+   "b_total": 285.0,
+   "c_total": 600.0,
+   "function": "2325",
+   "munis": "E.S. LONG TERM SPED SUBS",
+   "name": "Elementary special education long-term substitutes",
+   "org": "S2514711",
+   "voted_other_year": false,
+   "years": [
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 285.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 600.0,
+     "spent": 0.0,
+     "trans": 600.0
+    }
+   ]
+  },
+  {
+   "a_total": 107.5,
+   "a_years": [
+    2024
+   ],
+   "account": "0100-3-300-2451-99-1-52-2-535006",
+   "b_total": 107.5,
+   "c_total": 0,
+   "function": "2451",
+   "munis": "CONTRACTED SERVICES SYSTEM",
+   "name": "District technology, contracted services",
+   "org": "S2991522",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 9531.0,
+     "rev": 9531.0,
+     "spent": 11592.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "a",
+      "b"
+     ],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 107.5,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 0.0,
+     "rev": 0.0,
+     "spent": 0.0,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 4276.0,
+     "rev": 4276.0,
+     "spent": 2457.0,
+     "trans": 0.0
+    }
+   ]
+  },
+  {
+   "a_total": 0,
+   "a_years": [],
+   "account": "0100-3-300-2420-06-6-63-2-555028",
+   "b_total": 0,
+   "c_total": 4.06,
+   "function": "2420",
+   "munis": "MUSIC MARCHING BAND",
+   "name": "High school marching band",
+   "org": "S2066632",
+   "voted_other_year": true,
+   "years": [
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2023,
+     "orig": 6785.0,
+     "rev": 6785.0,
+     "spent": 4735.26,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2024,
+     "orig": 5859.0,
+     "rev": 5859.0,
+     "spent": 4587.26,
+     "trans": 0.0
+    },
+    {
+     "defs": [],
+     "enc": 0.0,
+     "fy": 2025,
+     "orig": 2070.0,
+     "rev": 2070.0,
+     "spent": 2065.94,
+     "trans": 0.0
+    },
+    {
+     "defs": [
+      "c"
+     ],
+     "enc": 0.0,
+     "fy": 2026,
+     "orig": 0.0,
+     "rev": 4.06,
+     "spent": 0.0,
+     "trans": 4.06
+    }
+   ]
+  }
+ ],
+ "not_established": [
+  "What was paid from any of these lines — the ledger gives one spent figure per line per year (registered gap: a journal or payroll export).",
+  "Why any line was voted at $0. Budget carried on another line, a post not expected to be filled, a coding change: each fits the same numbers.",
+  "Where mid-year transfers came from; the ledger gives a net change per line (registered gap).",
+  "Whether anyone paid from the kindergarten lines worked in a kindergarten classroom (registered gap).",
+  "Anything about the special funds, which spend without appropriation by law and are excluded.",
+  "Years before FY2023: the period-13 ledgers delivered cover FY2023-FY2026 only."
+ ],
+ "persistence": {
+  "lines_a": 19,
+  "prior_year_cases": 18,
+  "prior_year_spent": 14,
+  "voted_other_year": 14
+ },
+ "quotes": [
+  {
+   "body": "Finance Committee",
+   "date": "12 January 2026",
+   "file": "finance-committee/2026-01-12-minutes-7597.txt",
+   "text": "the school department had already been significantly cut and could not sustain further reductions without affecting classroom performance, noting that kindergarten classrooms were operating with 25 students and no aides",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01122026-7597",
+   "who": "the minutes, recording the School Committee chair during the FY2027 budget discussion"
+  },
+  {
+   "body": "Finance Committee",
+   "date": "26 February 2026",
+   "file": "finance-committee/2026-02-26-minutes-7673.txt",
+   "text": "1 Kindergarten Paraprofessional: $22,205",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02262026-7673",
+   "who": "the minutes, listing the schools’ FY2027 staffing increase requests"
+  },
+  {
+   "body": "School Committee",
+   "date": "3 September 2025",
+   "file": "school-committee/2025-09-03-minutes-7385.txt",
+   "text": "$4900 out of business manager salary account to the stipends account",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09032025-7385",
+   "who": "the minutes, approving the FY2025 line item transfers"
+  },
+  {
+   "body": "School Committee",
+   "date": "3 September 2025",
+   "file": "school-committee/2025-09-03-minutes-7385.txt",
+   "text": "a discussion of transfer accounts regarding a double budget amount for paraprofessionals in the amount of $243,000",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09032025-7385",
+   "who": "the same minutes, same item"
+  }
+ ],
+ "recurring": [
+  "0100-3-300-2325-51-6-71-1-511003",
+  "0100-3-300-3510-06-6-67-1-519003",
+  "0100-3-300-3520-06-6-70-1-519003",
+  "0100-3-300-2210-06-6-08-1-511019"
+ ],
+ "sources": [
+  {
+   "bytes": 82796,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2023-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2023-p13-gf-school.xlsx",
+   "note": "School general fund, department 300, period 13, FY2023: voted, transferred, revised, spent and encumbered for every line.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2023-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "0e5571abf937a30a4374c96bcec731ed85958c2c345689223a96b258f4bf5825",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82215,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "note": "School general fund, department 300, period 13, FY2024: voted, transferred, revised, spent and encumbered for every line.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "35ddff540b044ab9b0744250e81d56488ebdded2132735d6ce8b7df57343e457",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82879,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "note": "School general fund, department 300, period 13, FY2025: voted, transferred, revised, spent and encumbered for every line.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "0df2dc74da99ddc8ea0514b1716112753322d11a140e270ce52a91d772e7b019",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 82789,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "filename": "glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "note": "School general fund, department 300, period 13, FY2026: voted, transferred, revised, spent and encumbered for every line.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "ec2f620cb36d0dfd0f129293740931067f736872c44bd20b2234993a48c644fb",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 88329,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2023-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2023-p13-special-school.xlsx",
+   "note": "School special funds, period 13, FY2023: used only to measure the excluded zero-budget lines.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2023-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "99a51e287874f44ed8df7082399e545ce88797a67599fae36776eec5d8a324a5",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 88941,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "note": "School special funds, period 13, FY2024: used only to measure the excluded zero-budget lines.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2024-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "7a7da97eaa4337a5d8f2db3a82f80e87fd9cb4f8941dbd94970e3e966550431c",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 88962,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2025-p13-special-school.xlsx",
+   "note": "School special funds, period 13, FY2025: used only to measure the excluded zero-budget lines.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "745e180a33fa0fe8a0b801186b9d5201790dead640bfbb4cc3445000f7977397",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 88024,
+   "docs_url": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "filename": "glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "note": "School special funds, period 13, FY2026: used only to measure the excluded zero-budget lines.",
+   "path": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "publisher": "Town of Lunenburg (MUNIS), by records request",
+   "sha256": "8c572c5f42ef6de3df3709ddb809434eeea74fa80422496fdc0792cc7e86bdad",
+   "table": "munis_school_ytd",
+   "url": ""
+  },
+  {
+   "bytes": 282104,
+   "docs_url": "/docs/meetings/finance-committee/2026-01-12-minutes-7597.pdf",
+   "filename": "2026-01-12-minutes-7597.pdf",
+   "note": "Minutes of 12 January 2026: \"the school department had already been significantly cut and could not sustain further reductions without affecting classroom performance, noting that kindergarten classrooms were operating with 25 students and no aides\"",
+   "path": "sources/meetings/finance-committee/2026-01-12-minutes-7597.pdf",
+   "publisher": "Lunenburg Finance Committee",
+   "sha256": "e46461e7f681ffc82c6fee22a241b03ae0bbec2d2a1897d63f5827e7d621ef7e",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01122026-7597"
+  },
+  {
+   "bytes": 123582,
+   "docs_url": "/docs/meetings/finance-committee/2026-02-26-minutes-7673.pdf",
+   "filename": "2026-02-26-minutes-7673.pdf",
+   "note": "Minutes of 26 February 2026: \"1 Kindergarten Paraprofessional: $22,205\"",
+   "path": "sources/meetings/finance-committee/2026-02-26-minutes-7673.pdf",
+   "publisher": "Lunenburg Finance Committee",
+   "sha256": "77fbd42407c2d4eedbffec53a8637d12071f7477d129b91dacec25646ce4de88",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02262026-7673"
+  },
+  {
+   "bytes": 92800,
+   "docs_url": "/docs/meetings/school-committee/2025-09-03-minutes-7385.pdf",
+   "filename": "2025-09-03-minutes-7385.pdf",
+   "note": "Minutes of 3 September 2025: \"$4900 out of business manager salary account to the stipends account\"",
+   "path": "sources/meetings/school-committee/2025-09-03-minutes-7385.pdf",
+   "publisher": "Lunenburg School Committee",
+   "sha256": "081354a6de45da9117f7299e0af29a23e5008dc24a65db6e4ecab48fb64f850e",
+   "table": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09032025-7385"
+  }
+ ],
+ "special_funds": [
+  {
+   "at_zero": 69,
+   "fy": 2023,
+   "lines_spending": 87,
+   "spent": 2962715.54,
+   "spent_at_zero": 1882724.37
+  },
+  {
+   "at_zero": 60,
+   "fy": 2024,
+   "lines_spending": 101,
+   "spent": 3920110.17,
+   "spent_at_zero": 2494546.49
+  },
+  {
+   "at_zero": 66,
+   "fy": 2025,
+   "lines_spending": 96,
+   "spent": 2900906.96,
+   "spent_at_zero": 2130074.4
+  },
+  {
+   "at_zero": 67,
+   "fy": 2026,
+   "lines_spending": 87,
+   "spent": 2789302.47,
+   "spent_at_zero": 2329023.67
+  }
+ ],
+ "special_share_pct": 70.28,
+ "stats": [
+  {
+   "label": "spent on school general fund lines voted at $0, FY2023–FY2026 (original budget $0)",
+   "tone": "var(--series-cost)",
+   "value": "$589,335"
+  },
+  {
+   "label": "of it on lines still at $0 after every mid-year transfer",
+   "value": "$257,491"
+  },
+  {
+   "label": "charged to the two kindergarten aide lines in FY2026, both voted at $0",
+   "value": "$99,064"
+  }
+ ],
+ "years": [
+  2023,
+  2024,
+  2025,
+  2026
+ ]
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-01-22",
  "docid": "6368",
@@ -12,30 +12,37 @@
  },
  "votes": [
   {
-   "motion": "Endorse the A&R for Leominster Road and Kilburn Street",
+   "motion": "Endorse the A&R plan for Leominster Road and Kilburn St. (roll call, one member remote)",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "i'd be looking for a motion motion to endorse the and r for leominster road and kilburn. second, moved and seconded. now i need to do a roll call vote because we have a member remote. and miss reed, i will generally be starting with you on these just so you can anticipate that miss reed? mr. wilzer? aye. aye, aye, and an eye for myself."
+   "quote": "i'd be looking for a motion motion to endorse the and r for leominster road and kilburn. second, moved and seconded."
   },
   {
-   "motion": "Approve the modification to the erosion control plan for 274 Prospect Street",
+   "motion": "Find the 274 Prospect St. erosion control silt-fence relocation a de minimis change and approve it",
    "moved_by": "Matthew Allison",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "my motion to add that we approve this change does that work? matthew brenner yeah, yeah, moved second. and seconded. all right, all in favor? miss reed mr. rosner. mr. allison. i and i for myself. ",
+   "quote": "yeah, yeah, moved second. and seconded. all right, all in favor? miss reed mr. rosner. mr. allison. i and i ",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Continue the 255 Sunny Hill Road stormwater permit public hearing to February 26th",
+   "motion": "Continue the 255 Sunny Hill Rd. stormwater permit public hearing to February 26th at 6:05 PM",
    "moved_by": "Matthew Allison",
    "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "on this i move that we continue the 255 sunny hill rd. stormwater permit public hearing to february 26th at six o 5. matthew brenner moved and seconded. all in favor, miss reed. hi, mr. rosner. hi, mr. allison. matthew allison aye, aye. matt",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "on this i move that we continue the 255 sunny hill rd. stormwater permit public hearing to february 26th at six o 5."
+  },
+  {
+   "motion": "Continue the 317 to 320 Sunny Hill Rd. stormwater public hearing to a date certain of February 26th at 6:05 PM",
+   "moved_by": "Matthew Allison",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "moved and seconded. all in favor, miss reed. aye, mr. addison. aye, and i for myself."
   },
   {
    "motion": "Adjourn the meeting",
@@ -43,11 +50,339 @@
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn the meeting. matthew brenner second, moved and seconded all in favor, miss reed. mr. willner? aye, mr. allison. all right. and and i from myself,",
-   "quote_taken_from_text": true
+   "quote": "motion to adjourn the meeting. matthew brenner second, moved and seconded all in favor, miss reed."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Transcript quality issues: OCR or transcription errors appear in board member names (e.g., \"Mr. wilzer\" for Willsmer, \"Mr. Rosner\", \"Mr. Addison\", \"Mr. Willner\"). Vote counts cannot be determined precisely due to transcript garbling, but all votes passed unanimously based on \"all in favor\" language.",
- "cost_usd": 0.19297809999999999
+ "dropped_unquoted": 0,
+ "note": "Text is an extracted, machine-transcribed minutes document with many transcription errors (for example 'Lune nburg', 'Mr. Rosen/Rosner/Wilzer/Willner/Addison', 'Tim Rick Realty Trust', 'Tilson Roy' vs 'Dawson Roy'). Quotes are verbatim from the extracted text including those errors, with line breaks and extra spaces collapsed. Roll-call and voice votes record ayes but never a printed count, so outcomes are 'passed' from the recorded ayes, not a tally. Mover and seconder are printed for only some motions; where not printed they are left blank. Adam Burney is listed present in the header but never speaks. Mr. Rosner is named in the roll call but is not on the attendance line, so he is not listed as an attendee. The hearing reading gives the original Sunny Hill hearing date as 'January 8th, 2023', which is likely a typo for 2024 and is not verified. The 317 Sunny Hill address is printed both as 317 to 320 and 317 to 321. Public comment was called at the opening and again during the continued hearing; both times the minutes say 'seeing none', so no public speakers are recorded. Budget figures are as printed; '4.8' and '14.8' carry no unit in the text and are recorded without one. The ANR and erosion control votes are recorded as passed from the ayes and the chair's remarks, not from a printed tally.",
+ "cost_usd": 0.14373685,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "miss reed is joining us remotely via zoom"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner, matthew allison, amanda reid, adam burney, timothy willsmer"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Interim Land Use Director",
+   "status": "present",
+   "quote": "richard harris - interim land use director"
+  },
+  {
+   "name": "Anne Aubrey",
+   "role": "not stated",
+   "status": "present",
+   "quote": "i did. i did put the. pdfs in the drive"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "my name is greg roy with tilson roy and i'm representing the applicant this evening"
+  },
+  {
+   "name": "Tim Battles",
+   "role": "representing CTB Holdings",
+   "status": "present",
+   "quote": "is here representing ctb holdings this evening"
+  },
+  {
+   "name": "Tony Daseas",
+   "role": "A&M Construction",
+   "status": "present",
+   "quote": "tony daseas. a&m construction? construction fairly simple."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed that the interim stormwater setup at 711 Mass Ave. should get a peer review (Graves), with the description sent to the reviewer and the item placed on the agenda.",
+   "quote": "yeah, if you want have preview of that then yes."
+  },
+  {
+   "decision": "The Interim Land Use Director instructed the engineer for 711 Mass Ave. to submit a letter detailing the alternative interim stormwater measures, to be sent to DPW for review and sign-off.",
+   "quote": "so i instructed the engineer to give us a letter detailing the alternative, the interim measurement to"
+  },
+  {
+   "decision": "The chair will draft wording for a public hearing continuance policy, get it to the board before the next meeting, and place it on the next agenda.",
+   "quote": "so what i will do is i will take the wording, mr. harris said."
+  },
+  {
+   "decision": "The board set the expectation that the 255 Sunny Hill Rd. applicant must say by the 20th whether it will request a continuance.",
+   "quote": "we have set the expectation with them that we need to know by the 20th if th ey will be."
+  },
+  {
+   "decision": "Staff and board to do homework on the expectations for how public hearing continuances are requested ahead of time, with concrete next steps to follow.",
+   "quote": "so it sounds like we have a little bit of homework looking into that."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ten-year capital requests",
+   "what_was_recorded": "Matthew Allison reported that the 10-year capital requests came to almost $40 million, with about 20 of them for TC Paseos and Turkey Hill; Richard Harris repeated the $20 million figure.",
+   "figures_as_printed": [
+    "$40 million",
+    "20",
+    "$20 million"
+   ],
+   "quote": "there were almost $40 million in capital requests for the next 10 years"
+  },
+  {
+   "topic": "Share of capital requests for TC Paseos and Turkey Hill",
+   "what_was_recorded": "Matthew Allison said 4.8 of the requests was for TC Paseos and 14.8 for Turkey Hill, and said the Turkey Hill figure was too high.",
+   "figures_as_printed": [
+    "4.8",
+    "14.8"
+   ],
+   "quote": "only 4.8 of that was for trip to tc paseos and 14.8 of that was for turkey hill."
+  },
+  {
+   "topic": "Town annual budget size",
+   "what_was_recorded": "Matthew Allison said the town's last annual budget was about $40 million, as a comparison to the capital requests.",
+   "figures_as_printed": [
+    "$40 million"
+   ],
+   "quote": "i think our las t year's total annual budget was $40 million for the town."
+  },
+  {
+   "topic": "Historical capital plan spending",
+   "what_was_recorded": "Matthew Allison said the capital plan had typically averaged one and a half million per year over the last 10 years.",
+   "figures_as_printed": [
+    "one and a half million"
+   ],
+   "quote": "typically averaged at one and a half million per year for the last 10 years."
+  },
+  {
+   "topic": "Highest-year capital plan funding in 10-year forecast",
+   "what_was_recorded": "Matthew Allison said one year of the 10-year forecast would fund the capital plan at $13 million.",
+   "figures_as_printed": [
+    "$13 million"
+   ],
+   "quote": "one year was funding the capital plan at $13 million."
+  },
+  {
+   "topic": "Inflation factor in capital plan forecast",
+   "what_was_recorded": "Richard Harris asked what inflation factor the capital plan included; the chair did not remember.",
+   "figures_as_printed": [],
+   "quote": "what type of inflation factor they including in?"
+  },
+  {
+   "topic": "School share of town budget",
+   "what_was_recorded": "Anne Aubrey said 63% of the last three years of spending went to schools over the whole budget.",
+   "figures_as_printed": [
+    "63%"
+   ],
+   "quote": "i also know that 63% of the. last three years goes towards schools over the whole budget."
+  },
+  {
+   "topic": "Cost of maintaining Turkey Hill",
+   "what_was_recorded": "The chair described the cost of keeping Turkey Hill school building against a possible demolition, with no figure printed.",
+   "figures_as_printed": [],
+   "quote": "there comes a moment you look at how many millions of dollars it takes to maintain to keep a building."
+  },
+  {
+   "topic": "Stormwater enterprise fund",
+   "what_was_recorded": "Timothy Willsmer described the stormwater task force's goal of a dedicated stormwater fund, modeled on Concord's enterprise fund, aimed at the spring 2025 town meeting; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "idea is to create its own. fund for stormwater work so that the dpw"
+  },
+  {
+   "topic": "Applicant cost of attending hearings",
+   "what_was_recorded": "Richard Harris said applicants typically pay engineers, architects and attorneys significant funds, which discourages last-minute continuance requests; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "typically applicant pays engineers and architects and attorneys some significant funds to show up at public meetings"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Scenic road decision, 360 Flat Hill Rd.",
+   "resolution": "no action; to be signed after the meeting",
+   "quote": "so we can just sign after the meetings over.",
+   "tags": [
+    "scenic roads",
+    "signing"
+   ]
+  },
+  {
+   "topic": "A&R plan, Leominster Road and Kilburn St.",
+   "resolution": "endorsed by roll call vote",
+   "quote": "my name is greg roy with tilson roy and i'm representing the applicant this evening",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Leominster Road",
+    "Kilburn St",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Erosion control plan modification, 274 Prospect St.",
+   "resolution": "approved as de minimis change",
+   "quote": "we're really just looking to change the location of the silt fence from the original plan.",
+   "tags": [
+    "erosion control",
+    "Prospect St",
+    "de minimis"
+   ]
+  },
+  {
+   "topic": "Public hearing continued, 255 Sunny Hill Rd. stormwater",
+   "resolution": "continued to February 26th",
+   "quote": "on this i move that we continue the 255 sunny hill rd. stormwater permit public hearing to february 26th at six o 5.",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "continuance",
+    "Sunny Hill Rd"
+   ]
+  },
+  {
+   "topic": "Public hearing continued, 317 to 320 Sunny Hill Rd. stormwater (CTB Holdings)",
+   "resolution": "continued to February 26th",
+   "quote": "so i'd be looking for a motion to continue the public hearing for 317 to 320 row one sunny hill rd.",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "continuance",
+    "Sunny Hill Rd",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "Public hearing continuance policy",
+   "resolution": "chair to draft wording for next agenda; no vote",
+   "quote": "so what i will do is i will take the wording, mr. harris said.",
+   "tags": [
+    "board policy",
+    "public hearings",
+    "continuances",
+    "applicant expectations"
+   ]
+  },
+  {
+   "topic": "Board of Health and septic issues on Goodrich St. A&R, and 711 Mass Ave. interim stormwater",
+   "resolution": "peer review agreed for 711 Mass Ave. interim stormwater; no vote",
+   "quote": "if i could, i'd just like update 4. please on 711 mass ave.",
+   "tags": [
+    "Board of Health",
+    "septic",
+    "A&R",
+    "stormwater",
+    "peer review",
+    "Mass Ave"
+   ]
+  },
+  {
+   "topic": "Capital planning and 10-year capital requests",
+   "resolution": "discussed; no action",
+   "quote": "there were almost $40 million in capital requests for the next 10 years",
+   "tags": [
+    "capital planning",
+    "budget",
+    "Turkey Hill",
+    "TC Paseos",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Master plan update",
+   "resolution": "no action",
+   "quote": "the existing conditions report is up.",
+   "tags": [
+    "master plan",
+    "existing conditions",
+    "public meeting"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "we haven't had anything major since last meeting.",
+   "tags": [
+    "master plan",
+    "open space",
+    "agricultural commission",
+    "economic development",
+    "stormwater task force",
+    "regional planning",
+    "scenic roads",
+    "solar bylaw"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "our next two upcoming meetings are on february 12th and february 26th",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed",
+   "quote": "motion to adjourn the meeting. matthew brenner second, moved and seconded all in favor, miss reed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR endorsement",
+  "subdivision",
+  "public hearings",
+  "continuances",
+  "stormwater",
+  "erosion control",
+  "Sunny Hill Rd",
+  "Leominster Road",
+  "board policy",
+  "Board of Health",
+  "septic",
+  "peer review",
+  "capital planning",
+  "budget",
+  "schools",
+  "Turkey Hill",
+  "master plan",
+  "scenic roads",
+  "remote participation",
+  "zoom",
+  "committee reports"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-01-24",
  "docid": "6375",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Extend public comment past 10 minutes",
+   "motion": "Extend public comment past 10 minutes.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "mr. beardmore makes a motion to extend public comment past 10 minutes, mr. sculimbrene seconds the motion all approve via roll call"
   },
   {
-   "motion": "Approve minutes from Regular Session 12/6/23",
+   "motion": "Approve the minutes of the Regular Session of 12/6/23.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Mr. Lehtinen",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. beardmore makes a motion to approve minutes, mr. lehtinen seconded the motion, all approve via roll call with mr. sculimbrene abstaining"
   },
   {
-   "motion": "Table FY25 School Choice discussion to the next meeting",
+   "motion": "Table the FY25 School Choice discussion to the next meeting.",
    "moved_by": "Mr. Lehtinen",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "mr. lehtinen makes a motion to table this discussion to the next meeting, ms. brzozoski seconds the motion, all approve via roll call"
   },
   {
-   "motion": "Accept the $82.70 donation from Box tops across America to be deposited in the Primary Schools Student Activities Account",
+   "motion": "Accept the $82.70 donation from Box Tops Across America for the Primary Schools Student Activities Account.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "mr. sculimbrene makes a motion at accept the donation, mr. beardmore seconds the motion all approve via roll call"
   },
   {
-   "motion": "Table reports until next meeting",
+   "motion": "Table reports until the next meeting.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "mr. sculimbrene makes a motion to table reports until next meeting, mr. beardmore seconded the motions, all approve via roll call"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:53.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -61,6 +61,648 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12090650000000001
+ "note": "Clean text extract of a Special Meeting, not a scan. Votes are recorded as 'all approve via roll call' with no tally, so outcomes are 'passed' without counts; the minutes-approval motion records Mr. Sculimbrene abstaining. Warrant signing and the Chair's statements are recorded without votes and appear as decisions. Dr. Kate Burnham is listed as Superintendent in the header; her presence is inferred from her presentations, which the minutes record. Julianna Hanscom's role is not printed (page 1 header lists an unnamed 'Business Manager/ HR Director'). Courtney Fuller is listed as Recording Secretary with no attendance status. A block 'Lunenburg Public Schools / Dr. Kate Burnham, Superintendent of Schools' follows Mandy Gilman's comment on page 1 and is not clearly a speaker, so it is not recorded as one. Dollar and percentage figures attributed to public commenters (e.g., $184,000, 15% raise, 10% health increase) are recorded as stated by speakers, not as verified by the minutes. Several passages were transcribed with broken words (e.g., 'eac h', '9 th'); quotes preserve them as printed.",
+ "cost_usd": 0.0367112,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair -present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "dr. burnham shares a presentation of alternate and additional proposals"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "not printed; reports on Special Education costs and Medicaid and Circuit Breaker reimbursement",
+   "status": "present",
+   "quote": "julianna hanscom reports on the costs of special education."
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "public commenter; lifelong Lunenburg resident",
+   "status": "present",
+   "quote": "mandy gilman, 186 reservoir road i am a lifelong lunenburg resident."
+  },
+  {
+   "name": "Louis Franco",
+   "role": "public commenter; Vice Chair of the Select Board (as he stated)",
+   "status": "present",
+   "quote": "louis franco, 250 arbor street i just want to note people are trying to get in to the meeting from the waiting room"
+  },
+  {
+   "name": "Michael Harunkiewicz",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "michael harunkiewicz 165 gilchrest street i have a daughter who is 15 and a three-year-old son"
+  },
+  {
+   "name": "Shoshana Mulè",
+   "role": "public commenter; President of the Music Booster program",
+   "status": "present",
+   "quote": "shoshana mulè 139 cove road my daughter is a senior in lunenburg and i have a son in middle school in fitchburg"
+  },
+  {
+   "name": "Sophia Mulè",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "sophia mulè 139 cove road these kids are passionate and they care and they are dedicated"
+  },
+  {
+   "name": "Kara Harunkiewicz",
+   "role": "public commenter; freshman",
+   "status": "present",
+   "quote": "i also direct a lot with the middle school students. in jazz band i help to run sectionals"
+  },
+  {
+   "name": "Kerri Speck",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "i feel like i need to speak on behalf of the special education department"
+  },
+  {
+   "name": "Mike Macklin",
+   "role": "public commenter; former Chair of the School Committee",
+   "status": "present",
+   "quote": "mike macklin, 26 cortland circle some of you may know me i was former chair of the school committee"
+  },
+  {
+   "name": "Laura Barooshian",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "i have had the privilege of seeing the kids compete this past year"
+  },
+  {
+   "name": "Amy King",
+   "role": "public commenter; parent of two high school students",
+   "status": "present",
+   "quote": "i have two students in the high school both of my students are student athletes"
+  },
+  {
+   "name": "Sondria Harp",
+   "role": "public commenter; parent of a special education student",
+   "status": "present",
+   "quote": "i have a daughter in the special education program in the primary school"
+  },
+  {
+   "name": "Noah Lind",
+   "role": "public commenter; freshman in high school",
+   "status": "present",
+   "quote": "i hear the very program that introduced me and many other kids to music might be cut breaks my heart"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "the athletics cuts were what really stood out the most."
+  },
+  {
+   "name": "Angel Wilgus",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "what amount has been spent on all of the diversity and equity trainings you have planned for this town"
+  },
+  {
+   "name": "Ashley Braun",
+   "role": "public commenter; parent of a second grader",
+   "status": "present",
+   "quote": "we are asking the school committee, the superintendent to go back to the drawing board"
+  },
+  {
+   "name": "Chris Gorman",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "i wonder what we can do to support you to get more funds how do we use our voice if we have one"
+  },
+  {
+   "name": "Joseph Jordan",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "i just want the school committee like everybody said to go back to the drawing board"
+  },
+  {
+   "name": "Anastasia Grady",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "admittedly i have not been involved in school committee or finance committee town meetings"
+  },
+  {
+   "name": "Alma Notaro",
+   "role": "public commenter; speaking from a teacher perspective",
+   "status": "present",
+   "quote": "i want to speak a little if i may from a teacher perspective"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "public commenter; president of the Lunenburg Education Association",
+   "status": "present",
+   "quote": "would love more details as to what is our plan for fy 26 and fy 27"
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "lunenburg has a long and well established history of spending little per pupil"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair signed the warrants for 1/10/24-1/22/24 after the committee had no questions; no vote recorded.",
+   "quote": "no questions from the committee, ms. archambault signed warrants"
+  },
+  {
+   "decision": "Public comments on the budget are to be addressed during the budget presentation; no vote recorded.",
+   "quote": "ms. archambault thanks everyone form their comments and they will be addressed during the budget presentation."
+  },
+  {
+   "decision": "Chair stated that the district will use a consulting service for Director of Finance, as nothing else can be done at this point; no vote recorded.",
+   "quote": "ms. archambault says at this point there is nothing we can do but use a consulting service for director of finance."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant total",
+   "what_was_recorded": "The warrant total for 1/10/24 to 1/22/24 was recorded; the committee had no questions and no line item transfers were listed.",
+   "figures_as_printed": [
+    "$243,517.32"
+   ],
+   "quote": "warrant total 1/10/24-1/22/24 $243,517.32 no questions from the committee"
+  },
+  {
+   "topic": "School choice reimbursement",
+   "what_was_recorded": "Dr. Burnham answered that the state reimbursement for school choice seats is $5000; seats cannot be reserved for employees.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "reimbursement is $5000 and no we cannot."
+  },
+  {
+   "topic": "Box Tops donation",
+   "what_was_recorded": "A donation check of $82.70 from Box Tops Across America was accepted for the Primary Schools Student Activities Account.",
+   "figures_as_printed": [
+    "$82.70"
+   ],
+   "quote": "a check for $82.70 from box tops across america will be deposited in to the primary schools student"
+  },
+  {
+   "topic": "Athletic fee revenue",
+   "what_was_recorded": "A public commenter estimated FY23 athletic fee revenue that should have been collected at $184,000, noting waivers mean this is not exact; the minutes do not verify it.",
+   "figures_as_printed": [
+    "$184,000"
+   ],
+   "quote": "that's $184,000 that can support our athletic budget"
+  },
+  {
+   "topic": "Medicaid reimbursement",
+   "what_was_recorded": "Mrs. Hanscom reported over $100,000 a year secured for Medicaid reimbursement in the last two years, paid to the town and not into the school budget.",
+   "figures_as_printed": [
+    "over $100,000"
+   ],
+   "quote": "over the last two years we have been able to secure over $100,000"
+  },
+  {
+   "topic": "Circuit Breaker transportation reimbursement",
+   "what_was_recorded": "Mrs. Hanscom reported last year's Circuit Breaker reimbursement for special education transportation was about $80,000.",
+   "figures_as_printed": [
+    "$80,000"
+   ],
+   "quote": "last year that was about $80,000"
+  },
+  {
+   "topic": "Health care increase",
+   "what_was_recorded": "A public commenter asked whether the 10% health care increase was anticipated, noting it is about half of the 2.5% allowed increase from the town.",
+   "figures_as_printed": [
+    "10%",
+    "2.5%"
+   ],
+   "quote": "has the health care increase of 10% is that something that came as a surprise"
+  },
+  {
+   "topic": "Town levy increase limit",
+   "what_was_recorded": "The Chair reported the Select Board Chair said the 2.5% is a hard number.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "the chair of the select board has told us the 2.5% is a hard number"
+  },
+  {
+   "topic": "Chapter 70 aid",
+   "what_was_recorded": "A public commenter said Chapter 70 increased by 11% two years ago and has been flat since; the minutes record this as stated.",
+   "figures_as_printed": [
+    "11%"
+   ],
+   "quote": "chapter 70 increased by 11% two years ago"
+  },
+  {
+   "topic": "Superintendent salary raise claim",
+   "what_was_recorded": "A public commenter said the superintendent had taken over a 15% raise over three years; this is a commenter's assertion and the minutes do not verify it.",
+   "figures_as_printed": [
+    "15%"
+   ],
+   "quote": "you kate have taken over a 15% raise over the past three years"
+  },
+  {
+   "topic": "Utility, personnel and insurance cost growth",
+   "what_was_recorded": "A public commenter said electricity, personnel and insurance costs have grown faster than 2% a year.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "electricity has not gone up 2% a year"
+  },
+  {
+   "topic": "Per-pupil spending ranking",
+   "what_was_recorded": "A public commenter cited a state report placing Lunenburg per-pupil expenditure at 361 of 401 districts.",
+   "figures_as_printed": [
+    "361 out of 401"
+   ],
+   "quote": "according to massachusetts state reports lunenburg per pupil expenditure is listed 361 out of 401 districts in massachusetts."
+  },
+  {
+   "topic": "Salaries and expenses",
+   "what_was_recorded": "A public commenter noted a decrease in salaries alongside a substantial increase in expenses, with the breakdown not clearly laid out.",
+   "figures_as_printed": [],
+   "quote": "we have a decrease in our salaries but a very substantial increase in our expenses"
+  },
+  {
+   "topic": "Dump truck funding",
+   "what_was_recorded": "Mr. Beardmore said the truck the district asked for has fallen below the line and probably will not be funded; the Finance Committee was to discuss it.",
+   "figures_as_printed": [],
+   "quote": "the truck we asked fro has fallen below the line"
+  },
+  {
+   "topic": "Special education costs",
+   "what_was_recorded": "Julianna Hanscom reported on the costs of Special Education during the FY25 proposed budget item; no figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "julianna hanscom reports on the costs of special education."
+  },
+  {
+   "topic": "ESSER funding",
+   "what_was_recorded": "A public commenter asked whether ESSER funding was counted in the budget total or kept as a separate line; the answer is not recorded.",
+   "figures_as_printed": [],
+   "quote": "i would like to get a better understanding of esser"
+  },
+  {
+   "topic": "Extraordinary Relief Fund threshold",
+   "what_was_recorded": "Mrs. Hanscom said the Extraordinary Relief Fund requires additional out-of-district special education expenses of 100-125% above budget, which Lunenburg does not qualify for.",
+   "figures_as_printed": [
+    "100 -125%"
+   ],
+   "quote": "you need to have 100 -125% additional expenses"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfers reported with the warrants",
+   "amount_as_printed": "none printed",
+   "outcome": "none recorded",
+   "quote": "no line item transfers"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mandy Gilman",
+   "stated_role": "lifelong Lunenburg resident",
+   "topic": "budget shortfall, multi-year planning, advocacy with state officials",
+   "quote": "mandy gilman, 186 reservoir road i am a lifelong lunenburg resident."
+  },
+  {
+   "speaker": "Louis Franco",
+   "stated_role": "",
+   "topic": "people trying to enter from the waiting room",
+   "quote": "louis franco, 250 arbor street i just want to note people are trying to get in to the meeting from the waiting room"
+  },
+  {
+   "speaker": "Michael Harunkiewicz",
+   "stated_role": "",
+   "topic": "school ranking, per-pupil spending, no cuts to essential personnel",
+   "quote": "michael harunkiewicz 165 gilchrest street i have a daughter who is 15 and a three-year-old son"
+  },
+  {
+   "speaker": "Shoshana Mulè",
+   "stated_role": "President of the Music Booster program",
+   "topic": "music program, fifth grade band and chorus",
+   "quote": "shoshana mulè 139 cove road my daughter is a senior in lunenburg and i have a son in middle school in fitchburg"
+  },
+  {
+   "speaker": "Sophia Mulè",
+   "stated_role": "",
+   "topic": "keep the fifth grade band and chorus",
+   "quote": "sophia mulè 139 cove road these kids are passionate and they care and they are dedicated"
+  },
+  {
+   "speaker": "Kara Harunkiewicz",
+   "stated_role": "freshman",
+   "topic": "music program, electives, scheduling sacrifices",
+   "quote": "i also direct a lot with the middle school students. in jazz band i help to run sectionals"
+  },
+  {
+   "speaker": "Kerri Speck",
+   "stated_role": "",
+   "topic": "paraprofessionals, foreign language, middle school sports",
+   "quote": "i feel like i need to speak on behalf of the special education department"
+  },
+  {
+   "speaker": "Mike Macklin",
+   "stated_role": "former Chair of the School Committee",
+   "topic": "past budget choices in 2012, structural funding problem",
+   "quote": "mike macklin, 26 cortland circle some of you may know me i was former chair of the school committee"
+  },
+  {
+   "speaker": "Laura Barooshian",
+   "stated_role": "",
+   "topic": "music program, other revenue sources",
+   "quote": "i have had the privilege of seeing the kids compete this past year"
+  },
+  {
+   "speaker": "Amy King",
+   "stated_role": "parent of two high school students",
+   "topic": "athletics cuts, budget transparency, athletic fees",
+   "quote": "i have two students in the high school both of my students are student athletes"
+  },
+  {
+   "speaker": "Sondria Harp",
+   "stated_role": "parent of a special education student",
+   "topic": "paraprofessionals, BCBA cut",
+   "quote": "i have a daughter in the special education program in the primary school"
+  },
+  {
+   "speaker": "Noah Lind",
+   "stated_role": "freshman in high school",
+   "topic": "fifth grade music program",
+   "quote": "i hear the very program that introduced me and many other kids to music might be cut breaks my heart"
+  },
+  {
+   "speaker": "Chris Sullivan",
+   "stated_role": "",
+   "topic": "athletics cuts and social-emotional benefits",
+   "quote": "the athletics cuts were what really stood out the most."
+  },
+  {
+   "speaker": "Angel Wilgus",
+   "stated_role": "",
+   "topic": "diversity and equity trainings, teacher cuts, superintendent raise claim",
+   "quote": "what amount has been spent on all of the diversity and equity trainings you have planned for this town"
+  },
+  {
+   "speaker": "Ashley Braun",
+   "stated_role": "parent of a second grader",
+   "topic": "asking for action steps and alternatives to cuts",
+   "quote": "we are asking the school committee, the superintendent to go back to the drawing board"
+  },
+  {
+   "speaker": "Chris Gorman",
+   "stated_role": "",
+   "topic": "how to support the district in getting more funds",
+   "quote": "i wonder what we can do to support you to get more funds how do we use our voice if we have one"
+  },
+  {
+   "speaker": "Joseph Jordan",
+   "stated_role": "",
+   "topic": "keeping music and other programs",
+   "quote": "i just want the school committee like everybody said to go back to the drawing board"
+  },
+  {
+   "speaker": "Anastasia Grady",
+   "stated_role": "",
+   "topic": "plans for rising costs, health care, ESSER, grants, solar panels",
+   "quote": "admittedly i have not been involved in school committee or finance committee town meetings"
+  },
+  {
+   "speaker": "Alma Notaro",
+   "stated_role": "from a teacher perspective",
+   "topic": "class sizes and teacher retention",
+   "quote": "i want to speak a little if i may from a teacher perspective"
+  },
+  {
+   "speaker": "Mary Foyle",
+   "stated_role": "president of the Lunenburg Education Association",
+   "topic": "plan for FY26 and FY27 budgets (second round, section 11)",
+   "quote": "would love more details as to what is our plan for fy 26 and fy 27"
+  },
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "",
+   "topic": "volunteering, grant-writing subcommittee, shared equipment with DPW (second round, section 11)",
+   "quote": "lunenburg has a long and well established history of spending little per pupil"
+  },
+  {
+   "speaker": "Mandy Gilman",
+   "stated_role": "lifelong Lunenburg resident",
+   "topic": "need for bolder advocacy for more money; state legislators; social workers and Mass Health (second round, section 11)",
+   "quote": "mandy gilman 186 reservoir road thank you for all your hard work on this"
+  },
+  {
+   "speaker": "Louis Franco",
+   "stated_role": "Vice Chair of the Select Board (as he stated)",
+   "topic": "Select Board position and support for public schools (second round, section 11)",
+   "quote": "i support the public schools it was better for him to do what he did"
+  },
+  {
+   "speaker": "Kara Harunkiewicz",
+   "stated_role": "freshman",
+   "topic": "maintenance cuts, extended day bussing, music electives (second round, section 11)",
+   "quote": "so i don't think cutting maintenance should be the right move"
+  },
+  {
+   "speaker": "Sophia Mulè",
+   "stated_role": "",
+   "topic": "electives, Music in Modern Media, Athletic Director and middle school sports (second round, section 11)",
+   "quote": "i have a few things to say but i want to say thank you for just calling this meeting"
+  },
+  {
+   "speaker": "Michael Harunkiewicz",
+   "stated_role": "",
+   "topic": "accreditation and facilities risk, fees, creative revenue (second round, section 11)",
+   "quote": "thank you everyone from the superintendence office, the school administration, and"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "1. Call to Order",
+   "resolution": "called to order at 6:30; no action",
+   "quote": "1. call to order by carol archambault at 6:30",
+   "tags": [
+    "meeting logistics"
+   ]
+  },
+  {
+   "topic": "2. Public Comment (first round)",
+   "resolution": "comment taken; extension past 10 minutes approved",
+   "quote": "mr. beardmore makes a motion to extend public comment past 10 minutes",
+   "tags": [
+    "public comment",
+    "budget cuts"
+   ]
+  },
+  {
+   "topic": "3. Chairs Report",
+   "resolution": "no action; Finance Committee and capital planning dates announced",
+   "quote": "3. chairs report there is a finance committee meeting at 7 p.m. tomorrow at town hall.",
+   "tags": [
+    "finance committee",
+    "capital planning",
+    "budget process"
+   ]
+  },
+  {
+   "topic": "4. Review and Approve Minutes",
+   "resolution": "approved, Sculimbrene abstaining",
+   "quote": "mr. beardmore makes a motion to approve minutes, mr. lehtinen seconded the",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "5. Review and Approve Warrants and Line Item Transfers",
+   "resolution": "warrants signed by the Chair; no line item transfers",
+   "quote": "warrant total 1/10/24-1/22/24 $243,517.32 no questions from the committee",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "6. Superintendent's Report",
+   "resolution": "no action; registration and calendar dates reported",
+   "quote": "kindergarten registration is open. kindergarten readiness meeting will be held on january 30 via",
+   "tags": [
+    "enrollment",
+    "registration"
+   ]
+  },
+  {
+   "topic": "7. Student Representative Report",
+   "resolution": "none",
+   "quote": "7. student representative report - none",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "8a. FY25 School Choice",
+   "resolution": "tabled to the next meeting",
+   "quote": "dr. burnham presents the option to open school choice for incoming 9 th graders for 5 spots.",
+   "tags": [
+    "school choice",
+    "enrollment"
+   ]
+  },
+  {
+   "topic": "8b. FY25 School Calendar",
+   "resolution": "draft presented; public comments invited by email",
+   "quote": "dr. burnham shares a draft of the calendar, the parent teacher conferences will be added at",
+   "tags": [
+    "calendar"
+   ]
+  },
+  {
+   "topic": "8c. Donation",
+   "resolution": "accepted",
+   "quote": "a check for $82.70 from box tops across america will be deposited in to the primary schools student",
+   "tags": [
+    "donations"
+   ]
+  },
+  {
+   "topic": "9. Old Business: FY25 Proposed Budget",
+   "resolution": "discussed; no vote; alternatives presented, cuts and contracted services debated",
+   "quote": "a. fy25 proposed budget dr. burnham shares a presentation of alternate and additional proposals",
+   "tags": [
+    "FY25 budget",
+    "special education",
+    "athletics",
+    "music program",
+    "paraprofessionals",
+    "maintenance",
+    "Director of Finance"
+   ]
+  },
+  {
+   "topic": "10. Reports",
+   "resolution": "tabled to the next meeting",
+   "quote": "10. reports mr. sculimbrene makes a motion to table reports until next meeting",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "11. Public Comment (second round)",
+   "resolution": "comment taken; no action",
+   "quote": "11. public comment mandy gilman 186 reservoir road thank you for all your hard work on this",
+   "tags": [
+    "public comment",
+    "override",
+    "budget cuts"
+   ]
+  },
+  {
+   "topic": "12. Topics for Future Discussion",
+   "resolution": "no topics recorded",
+   "quote": "12. topics for future discussion",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "13. Adjournment",
+   "resolution": "adjourned at 9:53",
+   "quote": "13. adjournment mr. beardmore makes a motion to adjourn at 9:53",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "FY25 budget",
+  "budget cuts",
+  "special education",
+  "paraprofessionals",
+  "music program",
+  "athletics",
+  "public comment",
+  "school choice",
+  "donations",
+  "override",
+  "Medicaid reimbursement",
+  "ESSER",
+  "special meeting",
+  "Director of Finance"
+ ],
+ "dropped_unquoted_by_field": {}
 }

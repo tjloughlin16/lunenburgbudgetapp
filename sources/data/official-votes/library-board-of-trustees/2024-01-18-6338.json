@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2024-01-18",
  "docid": "6338",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of November 16, 2023 as amended",
+   "motion": "Accept the minutes of November 16, 2023, as amended.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously by roll call",
    "procedural": true,
    "quote": "dick made a motion to accept the minutes of november 16, 2023 as amended, seconded by donna. the motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
    "outcome": "passed",
@@ -29,6 +29,274 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0756691
+ "note": "Text is typed, not a scan. Pages 1-2 carry the minutes; pages 3-10 are blank. Two procedural votes are recorded: the minutes approval has a roll-call result printed as unanimous with no tally, and the adjournment has no printed result beyond the meeting being adjourned (recorded as passed). The Public Comment item is a FOIA request the Chair reported, not a statement from a member of the public, so the speaker is recorded as not stated. Attendance is taken from the attending line; no absences are printed and no roles are printed for most members.",
+ "cost_usd": 0.0197657,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl"
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "remote",
+   "quote": "laura boussom - remote, maia wentrup, jana-lee balish."
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "laura boussom - remote, maia wentrup, jana-lee balish."
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "status": "present",
+   "quote": "laura boussom - remote, maia wentrup, jana-lee balish."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The library will provide the security camera footage requested under the Freedom of Information Act request; the Chair said so after forwarding the request to the Director and Town Manager.",
+   "quote": "harry said the library would provide the footage."
+  },
+  {
+   "decision": "The Director will elevate the broken community room door hardware issue to the Town Manager, at the Chair's suggestion.",
+   "quote": "harry suggested he elevate to the town manager."
+  },
+  {
+   "decision": "The Director will run the two-part staff evaluation template by the Town Manager before it is used.",
+   "quote": "muir will run this process by the town manager."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY budget requests",
+   "what_was_recorded": "The Director reported that budget requests submitted that morning total $613k, including $14k for technology and $2k for professional development.",
+   "quote": "the total requested is $613k. this includes $14k for technology and $2k for professional development, as we discussed in our previous meeting.",
+   "figures_as_printed": [
+    "$613k",
+    "$14k",
+    "$2k"
+   ]
+  },
+  {
+   "topic": "Budget spending to date",
+   "what_was_recorded": "The Director reported the year is 58% through and the budget is 46% expended.",
+   "quote": "we are 58% through the year and the budget is 46% expended.",
+   "figures_as_printed": [
+    "46%",
+    "58%"
+   ]
+  },
+  {
+   "topic": "Community room door hardware",
+   "what_was_recorded": "Replacement hardware for the broken community room door is expensive, at a printed cost of $2500.",
+   "quote": "the replacement hardware is expensive - $2500.",
+   "figures_as_printed": [
+    "$2500"
+   ]
+  },
+  {
+   "topic": "Security camera replacement in capital plan",
+   "what_was_recorded": "$31k is in the capital plan to replace the security cameras; the Director would like to do it sooner and cheaper.",
+   "quote": "$31k is currently in the capital plan to replace the security cameras.",
+   "figures_as_printed": [
+    "$31k"
+   ]
+  },
+  {
+   "topic": "Library invested funds",
+   "what_was_recorded": "The library invested funds are reported at $93k.",
+   "quote": "the funds are up to $93k.",
+   "figures_as_printed": [
+    "$93k"
+   ]
+  },
+  {
+   "topic": "State aid and materials costs",
+   "what_was_recorded": "The Director said State Aid will be up this year, which will help with materials costs; no dollar figure was printed.",
+   "quote": "state aid will be up this year and that will help with materials costs.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Electricity charges",
+   "what_was_recorded": "Electricity charges are running well, with credits on the last three statements; January is usually a big heating month. No dollar figure was printed.",
+   "quote": "we are doing well with electricity charges, have had credits the last three statements.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Freedom of Information Act request for security camera footage",
+   "speaker": "not stated",
+   "stated_role": "",
+   "quote": "harry received a freedom of information act request for security camera footage from the library."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "request forwarded; library to provide footage",
+   "quote": "harry received a freedom of information act request for security camera footage from the library.",
+   "tags": [
+    "FOIA",
+    "security cameras",
+    "public records"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended",
+   "quote": "dick made a motion to accept the minutes of november 16, 2023 as amended, seconded by donna.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received",
+   "quote": "january is month 7 out of 12. we are 58% through the year and the budget is 46% expended.",
+   "tags": [
+    "budget",
+    "staffing",
+    "facilities",
+    "IT",
+    "programs",
+    "ILS catalog"
+   ]
+  },
+  {
+   "topic": "Green Communities Update",
+   "resolution": "no action; awaiting reply",
+   "quote": "muir sent an email to dave passios and dave blatt about the upcoming library projects",
+   "tags": [
+    "green communities"
+   ]
+  },
+  {
+   "topic": "Library Invested Funds Update",
+   "resolution": "received",
+   "quote": "the funds are up to $93k.",
+   "tags": [
+    "investments",
+    "funds"
+   ]
+  },
+  {
+   "topic": "Library Sign Update",
+   "resolution": "presented; no action recorded",
+   "quote": "muir presented some updated images with 15 inch dark bronze cast aluminum letters.",
+   "tags": [
+    "sign",
+    "village district"
+   ]
+  },
+  {
+   "topic": "ARPA Update",
+   "resolution": "received",
+   "quote": "muir met with the architect for the teen room renovation and plans will be coming soon.",
+   "tags": [
+    "ARPA",
+    "teen room renovation"
+   ]
+  },
+  {
+   "topic": "Staff Evaluations",
+   "resolution": "template developed; to be run by Town Manager",
+   "quote": "muir developed a two-part template:",
+   "tags": [
+    "staff evaluations",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Town Caucus Update",
+   "resolution": "received",
+   "quote": "the town caucus will be held on march 25th at 7 pm.",
+   "tags": [
+    "caucus",
+    "elections",
+    "terms"
+   ]
+  },
+  {
+   "topic": "IT Proposal Update",
+   "resolution": "received",
+   "quote": "muir drafted a letter, sent it to harry and forwarded it to michael-ray.",
+   "tags": [
+    "IT"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation Update",
+   "resolution": "evaluation signed off by Chair",
+   "quote": "harry met with muir and signed off on the evaluation.",
+   "tags": [
+    "personnel",
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "received",
+   "quote": "the monthly meeting was a quick one. final arrangements were made for the plant sale.",
+   "tags": [
+    "Friends of LPL",
+    "plant sale",
+    "bake sale"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "dick asked if the board members who will be up for re-election would like to be nominated again.",
+   "tags": [
+    "elections"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:28 p.m.",
+   "quote": "meeting was adjourned at 8:28 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "FOIA",
+  "facilities",
+  "staff evaluations",
+  "IT",
+  "ARPA",
+  "elections",
+  "trustees"
+ ],
+ "dropped_unquoted_by_field": {}
 }

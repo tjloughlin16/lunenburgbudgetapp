@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2024-01-18",
  "docid": "6361",
@@ -12,31 +12,264 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the December 21, 2023 meeting",
+   "motion": "Approve the minutes of the December 21, 2023 meeting.",
    "moved_by": "Maryrae",
    "seconded_by": "Jackie",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "maryrae made a motion to approve the minutes from the following meetings: december 21, 2023 jackie seconded commission unanimously approved"
   },
   {
-   "motion": "Set the next meeting for February 15th at 7:00pm",
+   "motion": "Move the next meeting to February 15th, 7:00pm.",
    "moved_by": "Jackie",
    "seconded_by": "Jen",
-   "outcome": "unanimously approved",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "jackie made a motion to move the next meeting to february 15th 7:00pm jen seconded commission unanimously approved"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Maryrae",
    "seconded_by": "Jackie",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "maryrae motion to adjourn; jackie seconds. commission unanimously approved"
+   "quote": "maryrae motion to adjourn; jackie seconds. commission unanimously approved 8:16pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0968677
+ "note": "Text is clean extracted text, not a scan. Votes are recorded by outcome only (\"unanimously approved\") with no count, so outcome is \"passed\". The second-seconder \"Jen\" is printed as \"Jen\" and is not expanded to Jennifer Duffy. Absent status for Jorge Marzuca, Kira McClellan and Ashley York is inferred from the blank attendance marks, not stated in words. The minutes do not state whether they were approved at a later meeting. The \"Set Next Meeting Date\" motion is marked non-procedural as a scheduling motion; the minutes' own list of procedural items did not name it.",
+ "cost_usd": 0.01420792,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair matthew allison ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jennifer duffy ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Member",
+   "status": "present",
+   "quote": "member jackie chabot ✔"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "absent",
+   "quote": "member jorge marzuca"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "absent",
+   "quote": "alternate kira mcclellan"
+  },
+  {
+   "name": "Ashley York",
+   "role": "Alternate",
+   "status": "absent",
+   "quote": "alternate ashley york"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Farm inspections: the Commission noted they are done as an emergency plan and to ensure animals are being cared for properly, and set an action to determine whether poultry and livestock can be added to the mailing with the census.",
+   "quote": "farm inspections are done as an emergency plan and to ensure animals are being cared for properly. action to determine if poultry and livestock can be added to mailing with census"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Farmers market update: donation to 4H Club",
+   "what_was_recorded": "The last task on the seasonal farmers market update was to get a donation of $96 to the 4H Club.",
+   "figures_as_printed": [
+    "$96"
+   ],
+   "quote": "last task to get donation of $96 to the 4h club"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:08 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "call to order meeting commencement time: 7:08 pm"
+  },
+  {
+   "topic": "Public Comment/Open Discussion",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment/open discussion no public comment."
+  },
+  {
+   "topic": "Farm complaints",
+   "resolution": "no complaints",
+   "tags": [
+    "farms"
+   ],
+   "quote": "farm complaints no complaints"
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved minutes of December 21, 2023",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "maryrae made a motion to approve the minutes from the following meetings: december 21, 2023"
+  },
+  {
+   "topic": "Farmers market update (seasonal)",
+   "resolution": "noted; last task is a $96 donation to the 4H Club",
+   "tags": [
+    "farmers market",
+    "4H"
+   ],
+   "quote": "farmers market update -seasonal last task to get donation of $96 to the 4h club"
+  },
+  {
+   "topic": "Action items from previous meeting",
+   "resolution": "no notes printed",
+   "tags": [
+    "action items"
+   ],
+   "quote": "action items from previous meeting"
+  },
+  {
+   "topic": "AgCom activity for 300th anniversary",
+   "resolution": "discussed; potential agriculture event or fair",
+   "tags": [
+    "anniversary",
+    "event"
+   ],
+   "quote": "discuss agcom activity/ies for 300th anniversary potential to have an agriculture event/fair as part of the activity"
+  },
+  {
+   "topic": "Farmers Market Sustainability Grant program",
+   "resolution": "no new information",
+   "tags": [
+    "grants",
+    "farmers market"
+   ],
+   "quote": "discuss farmers market sustainability grant program no new information"
+  },
+  {
+   "topic": "MDAR Mass Farmland Action Plan, 2023-2050",
+   "resolution": "new information from this year on MDAR; no action printed",
+   "tags": [
+    "MDAR",
+    "farmland"
+   ],
+   "quote": "discuss mdar mass farmland action plan, 2023-2050 new information from this year on mdar"
+  },
+  {
+   "topic": "Unfinished business: AgCom holding land",
+   "resolution": "no new information",
+   "tags": [
+    "land"
+   ],
+   "quote": "agcom holding land no new information"
+  },
+  {
+   "topic": "Unfinished business: Community gardens",
+   "resolution": "no new information",
+   "tags": [
+    "community gardens"
+   ],
+   "quote": "community gardens no new information"
+  },
+  {
+   "topic": "Unfinished business: Farm inspections",
+   "resolution": "action to determine whether poultry and livestock can be added to census mailing",
+   "tags": [
+    "farm inspections",
+    "livestock",
+    "census"
+   ],
+   "quote": "farm inspections are done as an emergency plan and to ensure animals are being cared for properly."
+  },
+  {
+   "topic": "Unfinished business: Marketing for AgComm and Market",
+   "resolution": "no new information",
+   "tags": [
+    "marketing"
+   ],
+   "quote": "marketing for agcomm and market no new information"
+  },
+  {
+   "topic": "Unfinished business: Map of Lunenburg Farms",
+   "resolution": "no new information",
+   "tags": [
+    "maps",
+    "farms"
+   ],
+   "quote": "map of lunenburg farms no new information"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted new scenic road bylaw and solar bylaw update",
+   "tags": [
+    "bylaws",
+    "scenic roads",
+    "solar"
+   ],
+   "quote": "committee reports: economic development comm., planning board, building reuse new scenic road bylaw and solar bylaw update"
+  },
+  {
+   "topic": "Public Comment/Open Discussion (second)",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment/open discussion no public comment"
+  },
+  {
+   "topic": "Set next meeting date",
+   "resolution": "moved to February 15th, 7:00pm",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "jackie made a motion to move the next meeting to february 15th 7:00pm"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:16pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "maryrae motion to adjourn; jackie seconds. commission unanimously approved 8:16pm"
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmers market",
+  "farm inspections",
+  "livestock",
+  "MDAR",
+  "farmland",
+  "300th anniversary",
+  "grants",
+  "bylaws",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

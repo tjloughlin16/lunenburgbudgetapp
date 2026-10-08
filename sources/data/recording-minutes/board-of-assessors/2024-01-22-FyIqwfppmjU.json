@@ -1,0 +1,407 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-assessors",
+ "board": "Board of Assessors",
+ "video_title": "Board of Assessors",
+ "meeting_date": "2024-01-22",
+ "video_id": "FyIqwfppmjU",
+ "video_url": "https://www.youtube.com/watch?v=FyIqwfppmjU",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-assessors/2024-01-22-FyIqwfppmjU.json",
+  "sha256": "c1b231a9f98acc59a82412cf76dbdfd05289969590ebc73c35b37fc1d718fa4e",
+  "caption_lines": 134,
+  "segments": 1019
+ },
+ "recording": {
+  "duration_s": 2832,
+  "duration": "0:47",
+  "spoken_chars": 34736,
+  "words_approx": 5789
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01222024-6369",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2024-01-22-agenda-6369.txt",
+   "path": "sources/meetings/board-of-assessors/2024-01-22-agenda-6369.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01222024-6369",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2024-01-22-minutes-6369.txt",
+   "path": "sources/meetings/board-of-assessors/2024-01-22-minutes-6369.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T19:32:53Z",
+  "cost_usd": 0.39834480000000005
+ },
+ "minutes": {
+  "headline": "Assessors ratified the Town Manager's pick of Linda McQuade as principal assessor and accepted a vendor RFQ.",
+  "summary": "The Board of Assessors met in person, heard a resident ask for early transparency on the 2024 five-year revaluation, and interviewed the Town Manager's principal assessor candidate before ratifying her. They accepted an RFQ for personal property and utility appraisal services and scheduled an extra meeting to review revaluation data from the vendor. The meeting closed as the board moved toward executive session.",
+  "attendees": [
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Linda McQuade",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Julie",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Brian",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Sarah",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "speaker_as_heard": "Carl luck, 50 Sunset L",
+    "stated_role": "resident",
+    "t": 238,
+    "topic": "Asked the board to make 2024 assessment data, calculations and spreadsheets public well before information meetings, starting around early February, to avoid a repeat of the 2023 abatements."
+   },
+   {
+    "t": 2772,
+    "topic": "A person welcomed the new assessor and thanked a staff member for staying on to help the office."
+   }
+  ],
+  "tags": [
+   "contracts-and-unions",
+   "executive-session",
+   "hiring",
+   "personnel",
+   "public-comment",
+   "tax-rate",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 1997,
+    "motion": "Ratify the Town Manager's appointment of Linda McQuade as principal assessor.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2206,
+    "motion": "Accept the RFQ as written.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2121,
+    "topic": "RFQ for personal property and utility appraisal services",
+    "what_was_said": "The RFQ covers cyclical inspections work; the board had asked for earlier visibility into such contracts."
+   },
+   {
+    "t": 2247,
+    "topic": "Vendor software bridge to Vision",
+    "what_was_said": "Board expects the incumbent vendor may be the only fit because its software already bridges to Vision, which would be an added cost for another company."
+   },
+   {
+    "t": 929,
+    "topic": "Vision appraisal system upgrade",
+    "what_was_said": "The candidate noted a capital request for upgrading the system in her current town."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2356,
+    "decision": "Next regular meeting stays January 29 at 6:30; an additional meeting set for January 31 at 6:45 in the town hall to review Vision revaluation data."
+   },
+   {
+    "t": 2061,
+    "decision": "No materials to be sent to the candidate until she has a town email, given her 45-day notice period."
+   },
+   {
+    "t": 2629,
+    "decision": "Members to send questions on the revaluation files to the town manager to forward to the vendor before the 31st."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 4,
+    "t_end": 217,
+    "topic": "Call to order, remote participation notice, opening comments",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 218,
+    "t_end": 420,
+    "topic": "Public comment on transparency of the 2024 revaluation",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 421,
+    "t_end": 2040,
+    "topic": "Interview and ratification of principal assessor candidate",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2041,
+    "t_end": 2120,
+    "topic": "Candidate start timing and materials",
+    "resolution": "decided",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2121,
+    "t_end": 2312,
+    "topic": "RFQ for personal property and utility appraisal",
+    "resolution": "voted",
+    "tags": [
+     "contracts-and-unions",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2313,
+    "t_end": 2771,
+    "topic": "Next meetings, revaluation data from Vision, access to Excel",
+    "resolution": "decided",
+    "tags": [
+     "tax-rate",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 2772,
+    "t_end": 2830,
+    "topic": "Closing comments and move toward executive session",
+    "resolution": "informational",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Names of members and several speakers are mangled or not stated in the captions.",
+   "The ratification was taken by voice; no count is in the captions.",
+   "The motion to enter executive session is not captured before the captions end."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Assessors voted to ratify the Town Manager's appointment of Linda McQuade as principal assessor.",
+    "t": 1997
+   },
+   {
+    "line": "The board voted unanimously to accept a request for quotes (RFQ) for personal property and utility appraisal services as written.",
+    "t": 2206
+   },
+   {
+    "line": "No materials go to the new assessor until she has a town email, given her 45-day notice period.",
+    "t": 2061
+   },
+   {
+    "line": "An extra meeting was set for January 31 to review revaluation data from the Vision system; the regular meeting stays January 29.",
+    "t": 2356
+   },
+   {
+    "line": "A resident asked the board to publish 2024 assessment data and spreadsheets well before the information meetings.",
+    "t": 238
+   }
+  ],
+  "why_it_matters": [
+   "The principal assessor sets values that feed property tax bills, and the 2024 revaluation will determine how the levy is split among homes.",
+   "The board has yet to say whether it will publish revaluation data before the information meetings, so residents may have little time to check their values before abatement season."
+  ],
+  "watch_next": [
+   "January 31 additional meeting at 6:45 in the town hall to review Vision revaluation data; members' questions go to the town manager for the vendor before then.",
+   "Regular meeting January 29 at 6:30."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T19:33:03Z",
+   "cost_usd": 0.301594
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01222024-6369",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2024-01-22-minutes-6369.txt",
+   "path": "sources/meetings/board-of-assessors/2024-01-22-minutes-6369.pdf"
+  },
+  "official_sha256": "72cfc5b3a92273fa7de37421c4797fb8f9685ddcf73689cfa89c0f8c6bd483a2",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on both votes (the principal assessor ratification and the unanimous RFQ acceptance) and on there being no transfers or budget figures. They differ on the meeting's other decisions: ours records scheduling, a 45-day notice matter, and a plan to send questions to the vendor, none of which appear in the official minutes, while the official minutes add the deferral of minutes approval and public comment from Carl Luck. A reader should check how the recording and the official minutes describe McQuade's status (presenter or candidate) and whether the January 31 meeting was set.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Name of the principal assessor appointee",
+    "ours": "Ratify the Town Manager's appointment of Linda McQuade as principal assessor.",
+    "official": "motion to ratify the appointment of lynda mcquade at the recommendation of the town manger by john rabbitt, seconded by sarah cammer. all in favor.",
+    "official_reading": "Lynda McQuade",
+    "note": "Same vote and outcome (passed); captions misspelled the first name.",
+    "t": 1997
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to accept the RFQ",
+    "ours": "Accept the RFQ as written. — passed unanimously",
+    "official": "motion to accept the rfq by sarah cammer, seconded by john rabbitt. all in favor. unanimous vote.",
+    "note": "Both record the RFQ accepted unanimously.",
+    "t": 2206
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers",
+    "ours": "TRANSFERS: (none listed)",
+    "official": "",
+    "note": "Neither record has any transfers."
+   },
+   {
+    "kind": "agree",
+    "about": "Budget figures",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record has any dollar figures; the official's tax-increase item has no figure printed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who is the principal assessor vs. candidate",
+    "ours": "Linda McQuade (presenter)",
+    "official": "lynda mcquade states she has over 20 years of real estate appraisal experience.",
+    "note": "Ours treats McQuade as a presenter and the vote as ratifying an appointment; official calls her a candidate for the open position and lists Rena Swezey as interim principal assessor. Check the official minutes/video to confirm her status and whether she was present."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Whether materials may be sent to the candidate / 45-day notice",
+    "ours": "No materials to be sent to the candidate until she has a town email, given her 45-day notice period.",
+    "official": "",
+    "note": "Our decision does not appear in the official minutes; check the recording near t=2061 for what was decided."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Additional meeting on January 31 and next regular meeting",
+    "ours": "Next regular meeting stays January 29 at 6:30; an additional meeting set for January 31 at 6:45 in the town hall to review Vision revaluation data.",
+    "official": "brian laffond states that won't be happening at this meeting and will be added to the agenda for the next meeting.",
+    "note": "Official minutes record no scheduling decision for January 29 or 31; check the video around t=2356 and any posted notice for the additional meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Members to send revaluation questions to town manager for the vendor",
+    "ours": "Members to send questions on the revaluation files to the town manager to forward to the vendor before the 31st.",
+    "official": "",
+    "note": "Not in the official minutes, which only mention that Mike Tarello from Vision will attend.",
+    "t": 2629
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of minutes deferred",
+    "ours": "",
+    "official": "brian laffond states that won't be happening at this meeting and will be added to the agenda for the next meeting.",
+    "note": "Our minutes do not mention the deferral of minutes approval."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board reviewed RFQ with no edits",
+    "ours": "",
+    "official": "the board has reviewed the document and found no errors or edits.",
+    "note": "Ours says 'as written', which is consistent, but the review finding is stated only officially."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment from Carl Luck on 2024 tax increase",
+    "ours": "",
+    "official": "carl luck fears that there will be a significant tax increase.",
+    "note": "Our minutes do not record the public commenter or his concern."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town Manager attendee",
+    "ours": "Heather (town manager)",
+    "official": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey and town manager heather lemieux.",
+    "official_reading": "Heather Lemieux",
+    "note": "Same person; captions gave first name only."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member Brian",
+    "ours": "Brian (member)",
+    "official": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey and town manager heather lemieux.",
+    "official_reading": "Brian Laffond",
+    "note": "Same person, Chair; first name only in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member Sarah",
+    "ours": "Sarah (member)",
+    "official": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey and town manager heather lemieux.",
+    "official_reading": "Sarah Cammer",
+    "note": "Same person, Vice Chair; first name only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee John Rabbitt (Clerk)",
+    "ours": "",
+    "official": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey and town manager heather lemieux.",
+    "note": "Clerk moved and seconded the votes but is not among our attendees."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee Rena Swezey, interim principal assessor",
+    "ours": "",
+    "official": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey and town manager heather lemieux.",
+    "note": "Not in our attendee list."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee Julie (presenter)",
+    "ours": "Julie (presenter)",
+    "official": "",
+    "note": "No Julie in the official minutes; may be a mishearing (e.g. Rena or Lynda) or an unrecorded presenter. Check the video."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenter Carl Luck and Vision's Mike Tarello",
+    "ours": "",
+    "official": "mike tarello from vision will be in attendance.",
+    "note": "Neither appears in our attendees; Tarello's presence is stated as expected, not confirmed."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T19:33:56Z",
+   "cost_usd": 0.2389732
+  }
+ }
+}
