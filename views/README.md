@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**582 of 1809 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**604 of 1908 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **1227 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **1304 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -41,16 +41,16 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY17 | 18 |
 | FY18 | 20 |
 | FY19 | 30 |
-| FY20 | 48 |
+| FY20 | 53 |
 | FY21 | 17 |
 | FY22 | 22 |
 | FY23 | 45 |
 | FY24 | 89 |
-| FY25 | 114 |
-| FY26 | 149 |
-| FY27 | 205 |
+| FY25 | 117 |
+| FY26 | 153 |
+| FY27 | 216 |
 | FY28 | 6 |
-| FY29 | 2 |
+| FY29 | 3 |
 | FY32 | 1 |
 | FY33 | 7 |
 | FY34 | 11 |
@@ -68,6 +68,8 @@ Listed so this view cannot look more complete than it is.
 - `analyses/budget-vs-actual.md` — Budget versus actual
 - `analyses/charts/board-composition-fill.svg` — Are the chartered seats filled?
 - `analyses/charts/board-composition-where.svg` — Where the town’s seats are, by body
+- `analyses/charts/department-budgets-index.svg` — Chart: town and school starting budgets, indexed to FY2010
+- `analyses/charts/department-budgets-pull.svg` — Chart: each group’s pull on the gap
 - `analyses/charts/stabilization-all.svg` — The stabilization funds compared, on one scale
 - `analyses/charts/stabilization-each.svg` — The stabilization funds, each on its own scale
 - `analyses/charts/stabilization-flows.svg` — Money in and money out of the stabilization funds, by year
@@ -97,6 +99,7 @@ Listed so this view cannot look more complete than it is.
 - `analyses/charts/towns-like-us-positions.svg` — Where Lunenburg sits, measure by measure
 - `analyses/connecting-the-budget.md` — What connects the school budget to the Town’s books, and what does not
 - `analyses/connecting-the-budget.pdf` — The same analysis, rendered for reading on paper
+- `analyses/department-budgets.md` — The town departments and the schools, budget by budget, FY2010–FY2025
 - `analyses/free-cash.md` — Free cash: is Lunenburg hoarding, or rebuilding?
 - `analyses/hiring-here-or-placing-there.md` — Hiring here instead of placing there
 - `analyses/monty-tech.md` — The Monty Tech assessment — the school bill nobody in Lunenburg votes on
@@ -147,6 +150,7 @@ Listed so this view cannot look more complete than it is.
 - `contracts/pdf/dese-teacher-contract.pdf` — Lunenburg Education Association agreement
 - `contracts/pdf/nonaffiliated-benefits.pdf` — Non-affiliated benefits
 - `contracts/pdf/nonaffiliated-salary-schedule.pdf` — Non-affiliated salary schedule
+- `contracts/pdf/pec-agreement-2008.pdf` — Health insurance agreement (PEC), 16 June 2008
 - `correspondence/2026-03-30-ski-coop-invoice.md` — How the ski co-op invoice reached us, and what it does not show
 - `correspondence/2026-03-30-ski-coop-invoice.xlsx` — The ski co-op invoice, 2025-26 season
 - `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
@@ -162,6 +166,8 @@ Listed so this view cannot look more complete than it is.
 - `data/PROVENANCE-youtube-classification.md` — What the video classification is, and what it is not
 - `data/account-names.csv` — What the ledger’s account codes mean — our readings
 - `data/agentic-spend.csv` — What the scripted reading cost, job by job
+- `data/ambulance-receipts-vs-gl-history.csv` — Ambulance receipts, compared with the general fund history
+- `data/ambulance-receipts.csv` — Ambulance receipts, FY2014-FY2025
 - `data/annual-report-catalogue.csv` — Every table in every annual report, catalogued
 - `data/annual-report-contents.csv` — What each report contains, section by section
 - `data/annual-report-pages.csv` — Every financial page of every annual report, and what has read it
@@ -172,6 +178,7 @@ Listed so this view cannot look more complete than it is.
 - `data/athletic-fee-schedule.csv` — Athletic fees, by fiscal year, with their sources
 - `data/athletics-by-sport-reconciliation.csv` — Where the district’s workbook does not add up
 - `data/athletics-by-sport.csv` — Athletics by sport, long form
+- `data/athletics-fincom.csv` — Athletics costs, participation and peer staffing from the Finance Committee’s files
 - `data/balance-sheet-printed-totals.csv` — The TOTAL rows each balance sheet prints
 - `data/balance-sheet-refused.csv` — Combined balance sheets that would not publish, and what each failed
 - `data/balance-sheet.csv` — The combined balance sheet, read from the page
@@ -189,6 +196,7 @@ Listed so this view cannot look more complete than it is.
 - `data/capital-plans-refused.csv` — The capital-plan pages that would not read, and why each refused
 - `data/capital-plans.csv` — What the Capital Planning Committee asked for, ranked, FY2015-FY2023
 - `data/capital-program-options.csv` — The two capital plans the town meeting was asked to choose between
+- `data/capital-requests.csv` — Capital requests and ranked plans, FY2025–FY2034 and FY2027
 - `data/caption-corrections.csv` — Proper nouns the captions mishear, spelled as the town spells them
 - `data/census-acs.csv` — The Census figures, one row per estimate
 - `data/column-glossary.csv` — What each column name means, across every table
@@ -197,6 +205,7 @@ Listed so this view cannot look more complete than it is.
 - `data/debt-repayment-detail-refused.csv` — Debt pages that would not read — 24 of them, all one cause
 - `data/debt-repayment-detail.csv` — Every debt issue’s repayment schedule, year by year to maturity
 - `data/debt-repayment.csv` — What falls due in each future year, out to FY2047
+- `data/debt-service-projections.csv` — Excluded debt service projected to FY2050, Town Hall and Marshall Park included
 - `data/department-rosters.csv` — The Police and Fire rosters, by name, as the town prints them
 - `data/department-staffing.csv` — What each town department says about its own staffing, verbatim
 - `data/departments.csv` — The Town Manager’s departments, and the assessments from outside
@@ -234,20 +243,32 @@ Listed so this view cannot look more complete than it is.
 - `data/document-defects.csv` — Where a document the town published is itself incomplete
 - `data/enterprise-balance-sheet-printed-totals.csv` — The TOTAL rows and the PROOF row each enterprise sheet prints
 - `data/enterprise-balance-sheet.csv` — The enterprise-funds balance sheet, read from the page
+- `data/eoyr-nss.csv` — Net school spending as the End of Year Report computes it, FY2023 and FY2024
+- `data/eoyr-schedule1.csv` — The district’s End of Year Financial Report, Schedule 1, FY2023 and FY2024
+- `data/eoyr-schedule3.csv` — The End of Year Financial Report, Schedule 3, by function and fund
 - `data/extraction-blocked.csv` — Extractions that ran, refused to publish, and why
 - `data/extraction-plan.csv` — Which pages each dataset was read from
 - `data/feed-sources.csv` — The town and community feeds the refresh watches
 - `data/feed-watch-events.csv` — What appeared in those feeds
 - `data/field-rental-receipts-lysa.csv` — Field rental receipts from Lunenburg Youth Soccer, FY2024–FY2026
 - `data/finance-committee-delivery.csv` — Every file in the Finance Committee’s delivery, and what became of it
+- `data/finance-committee-task-docs.csv` — Which reading task each delivered file belongs to
+- `data/finance-committee-tasks.csv` — The Finance Committee’s files, as reading tasks
+- `data/fincom-ledgers.csv` — The MUNIS ledgers in the Finance Committee’s files, one table
+- `data/fincom-presentation-survey.csv` — Every Finance Committee presentation, surveyed for tables
+- `data/fincom-presentation-tables.csv` — Tables read from Finance Committee presentations
+- `data/free-cash-history-fincom.csv` — Free cash history, as the FY2027 fact sheet prints it
 - `data/free-cash-proof.csv` — Free cash, nine towns, five years, line by line
 - `data/fund-1301-cash-journal.csv` — The athletics revolving fund’s cashbook, three years
+- `data/fund-balances-fincom.csv` — Special revenue, Chapter 90 and trust fund balances from the Finance Committee’s files
 - `data/fund-owners.csv` — The account registry: every accounting measure the town prints, and who owns it
+- `data/gl-history.csv` — Every general fund account, budget and actual, FY2010–FY2025
 - `data/gross-wages-refused.csv` — Payroll pages that would not read, and why each refused
 - `data/gross-wages.csv` — The town’s wage list, name by name — AN INCOMPLETE READ
 - `data/health-insurance-law.csv` — What Massachusetts law lets a town do about health insurance, and what it forbids
 - `data/ingest-pending.csv` — Documents in flight: fetched, not yet in the bucket
 - `data/ingest-plan.csv` — The plan for the annual-report backlog, in batches
+- `data/j1-unreadable.csv` — Trust fund pages that could not be read reliably
 - `data/line-history-coverage.csv` — What the line reader could and could not read, document by document
 - `data/line-history-disagreements.csv` — Where two documents state the same budget line differently
 - `data/line-history.csv` — Every budget line, budget and actual, year by year
@@ -265,12 +286,18 @@ Listed so this view cannot look more complete than it is.
 - `data/money-classification.csv` — What every revenue account, fund and department IS
 - `data/money-edges.csv` — Which source of money pays which use, and whether that can be shown
 - `data/money-gaps.csv` — What the town’s records cannot answer
+- `data/monty-tech-assessment.csv` — Lunenburg’s Monty Tech assessment by component, FY2023–FY2026
 - `data/monty-tech-expenses.csv` — Monty Tech’s spending by category, three years, off a chart
 - `data/munis-ledger.csv` — Every MUNIS budget report we hold, one table
+- `data/munis-school-ytd.csv` — The school department at year-end, FY2023 to FY2026, every account
+- `data/munis-trial-balance-journal.csv` — Lost books and technology fund, FY2026, every journal line
+- `data/munis-trial-balance.csv` — Lost books and technology fund, FY2026 trial balance by account
 - `data/myths.csv` — Claims heard in town, and what the data says
 - `data/ocr-minutes.csv` — Scanned minutes read by OCR: which, when, and from which bytes
+- `data/omnibus-history.csv` — The town’s omnibus budget by line, FY1997–FY2026
 - `data/one-big-report-story.csv` — The editor’s spec for /one-big-report
 - `data/ood-tuition-history.csv` — Out-of-district tuition, eleven budgets
+- `data/opeb-valuations.csv` — Retiree health benefit (OPEB) liability, FY2017 and FY2018 valuations
 - `data/org-chart.csv` — Who held which role, in every department, board and school
 - `data/outstanding-debt.csv` — What the town owed on 30 June, by purpose, FY2007–FY2025
 - `data/page-blocked.csv` — Pages that CANNOT be read, and what would change that
@@ -283,6 +310,11 @@ Listed so this view cannot look more complete than it is.
 - `data/peg-access.csv` — PEG Access expenses, line by line, read from the page
 - `data/pipeline-state.csv` — Where every fiscal year stands in the ingestion pipeline
 - `data/placement-counts.csv` — Out-of-district placements, by year, FY2011–FY2025
+- `data/police-expended-vs-gl-history.csv` — Police as expended, compared with the general fund history
+- `data/police-expended.csv` — Police spending as expended, FY2015-FY2023
+- `data/prior-year-bills-fincom.csv` — Prior-year bills on the FY2027 warrant
+- `data/public-safety-staffing-plans-vs-roster.csv` — Planned positions against the published roster
+- `data/public-safety-staffing-plans.csv` — Police and fire staffing plans: positions PLANNED, not hired
 - `data/rate-register.csv` — Every rate, with the year it applies to and who set it
 - `data/receivables-reconciliation.csv` — Every year of that table, published or refused, with the reason
 - `data/receivables-refused.csv` — The receivables pages an extractor read and refused, and why
@@ -312,8 +344,13 @@ Listed so this view cannot look more complete than it is.
 - `data/roster-completeness.csv` — How many of a body’s people the org chart holds, against the town’s own count
 - `data/salary-schedule-refused.csv` — Wage-grid rates that nothing confirms, and the rows that came up short
 - `data/salary-schedule.csv` — The town’s wage grid — grade by step, as the annual reports print it
+- `data/school-enrollment-lps-staff.csv` — Enrollment, FY2016–FY2025, as the staffing workbook prints it
 - `data/school-field-maintenance.csv` — What the schools say maintaining the fields and grounds costs, FY2024
+- `data/school-insurance-tiers.csv` — School health insurance subscribers by plan and tier, as totals
+- `data/school-job-posting-changes.csv` — Every change we saw to a district job posting, one row per event
+- `data/school-job-postings.csv` — The district’s job postings, as a history: what was listed, and when it left
 - `data/school-staff-directory.csv` — Who works for the DISTRICT today, off the six sheets the schools publish
+- `data/school-staff-fte.csv` — District staff FTE by DESE job code, FY2016–FY2025
 - `data/school-staff-shared.csv` — The people more than one Lunenburg school lists as its own
 - `data/search-affinity.csv` — Which words pin which page or document at the top of a search
 - `data/search-vocabulary.csv` — The site’s own vocabulary, for the search box’s suggestions
@@ -345,16 +382,25 @@ Listed so this view cannot look more complete than it is.
 - `data/threads.csv` — The matters this project tracks across boards
 - `data/total-expenses-history.csv` — District total expenses, budget and actual by year
 - `data/total-salaries-history.csv` — District total salaries, budget and actual by year
+- `data/town-budget-versions.csv` — Town Manager line-item budgets FY2024-FY2025, every version
 - `data/town-meeting-votes.csv` — Every Town Meeting article and how it was voted
 - `data/town-personnel.csv` — Every town post and who held it, FY2022 to FY2025
 - `data/treasurers-cash.csv` — What the town held in cash, by bank and by fund, every year
 - `data/trust-agency-balances.csv` — Every trust and stabilization fund, as the accounting system prints it
 - `data/trust-fund-balances.csv` — Every trust fund and its balance, from the annual report’s own listing
 - `data/trust-fund-matrix.csv` — Every trust fund and every measure, off the wide matrix the report prints
+- `data/trust-fund-purposes.csv` — What each trust fund is for, from its deed and summary
+- `data/trust-ledger-entries.csv` — Trust funds by category, from the ledger’s summary page
 - `data/turnover.csv` — How many names stop appearing, by body and year
+- `data/vacation-buyout-total.csv` — Town vacation buyout liability, as totals
 - `data/valuation-by-class.csv` — What the town is worth, by class, and the levy on it
 - `data/valuation-refused.csv` — Valuation pages that would not read — currently none
 - `data/variance-by-group.csv` — Budget against actual, every group and year
+- `data/warrant-article-amount-diff.csv` — How warrant article amounts changed between the FY2027 drafts
+- `data/warrant-article-tracking-diff.csv` — How the tracking sheets changed between snapshots
+- `data/warrant-article-tracking-fincom.csv` — The Finance Committee’s warrant article tracking sheets
+- `data/warrant-articles-fincom.csv` — Town Meeting warrant articles and amounts, FY2024–FY2027 drafts
+- `data/warrant-vs-votes-fincom.csv` — Draft warrant amounts against recorded Town Meeting votes
 - `data/youtube-boards.csv` — The bodies we named, and why we say two names are one board
 - `data/youtube-classification-overrides.csv` — Human corrections to the video classification
 - `data/youtube-no-captions.csv` — Recordings whose captions are switched off
@@ -379,6 +425,22 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/frequently-asked-questions-november-town-meeting.pdf` — FREQUENTLY ASKED QUESTIONS-NOVEMBER TOWN MEETING
 - `district-budget/docs/lhs-athletics-faq.pdf` — High school athletics fee schedule
 - `district-budget/docs/lunenburg-school-committee-override-statement.pdf` — LUNENBURG SCHOOL COMMITTEE OVERRIDE STATEMENT
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5822484.json` — Job postings: SchoolSpring posting 5822484, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5822489.json` — Job postings: SchoolSpring posting 5822489, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5822498.json` — Job postings: SchoolSpring posting 5822498, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5822506.json` — Job postings: SchoolSpring posting 5822506, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5880726.json` — Job postings: SchoolSpring posting 5880726, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5882191.json` — Job postings: SchoolSpring posting 5882191, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5899812.json` — Job postings: SchoolSpring posting 5899812, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5914236.json` — Job postings: SchoolSpring posting 5914236, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5915634.json` — Job postings: SchoolSpring posting 5915634, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5917125.json` — Job postings: SchoolSpring posting 5917125, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5926148.json` — Job postings: SchoolSpring posting 5926148, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5928041.json` — Job postings: SchoolSpring posting 5928041, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5931978.json` — Job postings: SchoolSpring posting 5931978, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5937399.json` — Job postings: SchoolSpring posting 5937399, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/job-5947400.json` — Job postings: SchoolSpring posting 5947400, detail, fetched 2026-10-05
+- `district-budget/docs/personnel/job-postings/2026-10-05/listing.json` — Job postings: the open postings SchoolSpring lists for Lunenburg Public Schools, fetched 2026-10-05
 - `district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.csv` — Directory of Staff - All Lunenburg Public Schools Staff (school staff directory, rows), fetched 2026-09-25
 - `district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.html` — Directory of Staff - All Lunenburg Public Schools Staff (school staff directory), fetched 2026-09-25
 - `district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff.html` — Directory of Staff (the district's own index of the listings), fetched 2026-09-25
@@ -398,65 +460,3 @@ Listed so this view cannot look more complete than it is.
 - `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-c-o-1.pdf` — 2021-2022 Action Plan C & O.1
 - `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-1.pdf` — 2021-2022 Action Plan CC & C 1
 - `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-1.pdf` — 2021-2022 Action Plan CC & C.1
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-2.pdf` — 2021-2022 Action Plan CC & C 2
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-2.pdf` — 2021-2022 Action Plan CC & C.2
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-cc-c-3.pdf` — 2021-2022 Action Plan CC & C.3
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-eaao-1.pdf` — 2021-2022 Action Plan EAAO.1
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-eaao-1.pdf` — 2021-2022 Action Plan EAAO.1
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-eaao-2.pdf` — 2021-2022 Action Plan EAAO.2
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-eaao-2.pdf` — 2021-2022 Action Plan EAAO.2
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-1.pdf` — 2021-2022 Action Plan TT & L.1
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-1.pdf` — 2021-2022 Action Plan TT & L.1
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-2.pdf` — 2021-2022 Action Plan TT & L.2
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-2.pdf` — 2021-2022 Action Plan TT & L.2
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-3.pdf` — 2021-2022 Action Plan TT & L.3
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-action-plan-tt-l-3.pdf` — 2021-2022 Action Plan TT & L.3
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-cc-c-3.pdf` — 2021-2022 CC & C 3
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-draft-school-calendar.pdf` — 2021/2022 DRAFT School Calendar
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-lhs-school-improvement-plan-progress.pdf` — 2021-2022 LHS School Improvement Plan Progress
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-lms-school-improvement-plan-progress.pdf` — 2021-2022 LMS School Improvement Plan Progress
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-new-action-plan-cc-c-4.pdf` — 2021-2022 NEW Action Plan CC & C 4
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-new-action-plan-cc-c-4.pdf` — 2021-2022 NEW Action Plan CC & C.4
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-primary-school-improvement-plan-progress.pdf` — 2021-2022 Primary School Improvement Plan Progress
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-revised-school-calendar-update-juneteenth.pdf` — 2021-2022 REVISED School Calendar Update-Juneteenth
-- `district-budget/docs/sc-meetings/2023-09-06-2021-2022-thes-school-improvement-plan-progress.pdf` — 2021-2022 THES School Improvement Plan Progress
-- `district-budget/docs/sc-meetings/2023-09-06-2021-summer-program.pdf` — 2021 Summer Program
-- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-proposed-lhs-handbook.pdf` — 2022-2023 DRAFT Proposed LHS Handbook
-- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-proposed-lms-handbook.pdf` — 2022-2023 DRAFT Proposed LMS Handbook
-- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-proposed-lms-student-handbook.pdf` — 2022-2023 DRAFT Proposed LMS Student Handbook
-- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-proposed-primary-school-handbook.pdf` — 2022-2023 DRAFT Proposed Primary School Handbook
-- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-proposed-thes-handbook.pdf` — 2022-2023 DRAFT Proposed THES Handbook
-- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-draft-school-calendar.pdf` — 2022-2023 DRAFT School Calendar
-- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-revised-school-calendar.pdf` — 2022-2023 Revised School Calendar
-- `district-budget/docs/sc-meetings/2023-09-06-2022-2023-school-lunch-price-increase.pdf` — 2022-2023 School Lunch Price Increase
-- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-lhs-school-handbook.pdf` — 2023-2024 DRAFT LHS School Handbook
-- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-lms-handboo.pdf` — 2023-2024 DRAFT LMS Handboo
-- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-lms-student-handbook.pdf` — 2023-2024 DRAFT LMS STUDENT HANDBOOK
-- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-primary-school-handbook.pdf` — 2023-2024 DRAFT Primary School Handbook
-- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-school-calendar.pdf` — 2023-2024 DRAFT School Calendar
-- `district-budget/docs/sc-meetings/2023-09-06-2023-2024-draft-thes-school-handbook.pdf` — 2023-2024 DRAFT THES School Handbook
-- `district-budget/docs/sc-meetings/2023-09-06-3101-budget-planning-schedule.pdf` — 3101 Budget Planning Schedule
-- `district-budget/docs/sc-meetings/2023-09-06-3101-budget-planning-schedule.pdf` — 3101 Budget Planning/Schedule
-- `district-budget/docs/sc-meetings/2023-09-06-3103-budget-adoption-procedures.pdf` — 3103 Budget Adoption Procedures
-- `district-budget/docs/sc-meetings/2023-09-06-3103-budget-adoption-procedures.pdf` — 3103 Budget Adoption Procedures
-- `district-budget/docs/sc-meetings/2023-09-06-3104-fiscal-year-budget-deadlines-schedules.pdf` — 3104 Fiscal Year Budget Deadlines & Schedules
-- `district-budget/docs/sc-meetings/2023-09-06-3104-fiscal-year-budget-deadlines-schedules.pdf` — 3104 Fiscal Year Budget Deadlines & Schedules
-- `district-budget/docs/sc-meetings/2023-09-06-3105-budget-transfer-authority.pdf` — 3105 Budget Transfer Authority
-- `district-budget/docs/sc-meetings/2023-09-06-3201-student-activities-accounts.pdf` — 3201 Student Activities Accounts
-- `district-budget/docs/sc-meetings/2023-09-06-3203-01-federal-funds-supplement-not-supplant.pdf` — 3203.01 Federal Funds Supplement Not Supplant
-- `district-budget/docs/sc-meetings/2023-09-06-3203-funding-proposal-and-applications.pdf` — 3203 Funding Proposal and Applications
-- `district-budget/docs/sc-meetings/2023-09-06-3204-acceptance-of-gifts-grants-and-bequests.pdf` — 3204 Acceptance of Gifts, Grants and Bequests
-- `district-budget/docs/sc-meetings/2023-09-06-3301-fiscal-accounting-and-reporting.pdf` — 3301 Fiscal Accounting and Reporting
-- `district-budget/docs/sc-meetings/2023-09-06-3302-audits.pdf` — 3302 Audits
-- `district-budget/docs/sc-meetings/2023-09-06-3307-bonded-employees-and-officers.pdf` — 3307 Bonded Employees and Officers
-- `district-budget/docs/sc-meetings/2023-09-06-3401-purchasing-and-purchasing-authority.pdf` — 3401 Purchasing and Purchasing Authority
-- `district-budget/docs/sc-meetings/2023-09-06-3601-transportation-policy.pdf` — 3601 Transportation Policy
-- `district-budget/docs/sc-meetings/2023-09-06-3701-03-concession-stand.pdf` — 3701.03 Concession Stand
-- `district-budget/docs/sc-meetings/2023-09-06-5225-health-education-second-read.pdf` — 5225 Health Education Second Read
-- `district-budget/docs/sc-meetings/2023-09-06-5706-communicable-diseases-second-read.pdf` — 5706 Communicable Diseases Second Read
-- `district-budget/docs/sc-meetings/2023-09-06-5th-grade-consent-to-release-bus-students.pdf` — 5th Grade Consent to Release Bus Students
-- `district-budget/docs/sc-meetings/2023-09-06-8th-grade-washington-d-c-proposal.pdf` — 8th Grade Washington D.C. Proposal
-- `district-budget/docs/sc-meetings/2023-09-06-action-plan-c-o-feb-update.pdf` — Action Plan C & O Feb Update
-- `district-budget/docs/sc-meetings/2023-09-06-action-plan-cc-c-2-feb-update.pdf` — Action Plan CC & C 2 Feb Update
-- `district-budget/docs/sc-meetings/2023-09-06-action-plan-cc-c-3-feb-update.pdf` — Action Plan CC & C 3 Feb Update
-- `district-budget/docs/sc-meetings/2023-09-06-action-plan-cc-c-feb-update.pdf` — Action Plan CC & C Feb Update
