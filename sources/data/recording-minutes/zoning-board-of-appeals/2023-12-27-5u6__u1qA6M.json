@@ -1,0 +1,221 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "zoning-board-of-appeals",
+ "board": "Zoning Board of Appeals",
+ "video_title": "Zoning Board of Appeals",
+ "meeting_date": "2023-12-27",
+ "video_id": "5u6__u1qA6M",
+ "video_url": "https://www.youtube.com/watch?v=5u6__u1qA6M",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/zoning-board-of-appeals/2023-12-27-5u6__u1qA6M.json",
+  "sha256": "9c46604affa7033dc0758af257aeffd5a0f2f93bebe1e816f76584c55dcc8c18",
+  "caption_lines": 81,
+  "segments": 688
+ },
+ "recording": {
+  "duration_s": 1702,
+  "duration": "0:28",
+  "spoken_chars": 24455,
+  "words_approx": 4075
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12272023-6140",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2023-12-27-agenda-6140.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2023-12-27-agenda-6140.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T21:12:44Z",
+  "cost_usd": 0.298944
+ },
+ "minutes": {
+  "headline": "ZBA granted a special permit to raze and rebuild a single-family house at 37 Pearl Street on Lake Shirley.",
+  "summary": "Continued hearing from December 13th on a special permit to remove a non-conforming house at 37 Pearl Street and build a new single-story house, keeping the existing side-yard distance. The applicant's engineer showed a pole marking the ridge height, and an abutter at 32 Pearl Street objected that the new roof would block her lake view. After owner comments, the board moved, seconded and voted, and the chair announced the permit granted with standard conditions.",
+  "attendees": [
+   {
+    "name_as_heard": "Alfred grel",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Lisa nadan",
+    "role": "board secretary"
+   },
+   {
+    "name_as_heard": "James bosi",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Hans winr",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Patrick Callahan",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tony necastro",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Don gurny",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Steve Duba",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Ryan Proctor",
+    "role": "presenter (Dillis and Roy civil Design Group, for the applicants)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 750,
+    "speaker_as_heard": "Nicole Kwak",
+    "stated_role": "resident, abutter at 32 Pearl Street",
+    "topic": "Says the new roof height would remove her Lake Shirley view and questions whether the design considered neighbors' views and property values."
+   },
+   {
+    "t": 1413,
+    "speaker_as_heard": "GRE cler",
+    "stated_role": "owner of 37 Pearl Street (applicant)",
+    "topic": "Describes plans to downsize to a modest retirement home, the site constraints, and four months and costs already invested."
+   }
+  ],
+  "tags": [
+   "legal",
+   "planning-and-zoning",
+   "public-comment"
+  ],
+  "votes": [
+   {
+    "t": 1556,
+    "motion": "Approve the special permit to raze the existing structure and construct a new dwelling, finding it not substantially more detrimental than the existing non-conforming use.",
+    "moved_by": "board member (name not clear)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1662,
+    "motion": "Adjourn the meeting.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1598,
+    "decision": "Special permit declared granted, contingent on compliance with all applicable licenses and regulations, subject to periodic review, to be recorded at the registry of deeds, and lapsing within 2 years unless construction starts."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 21,
+    "t_end": 127,
+    "topic": "Opening, recording notice, board introductions and hearing procedure",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 127,
+    "t_end": 520,
+    "topic": "Applicant presentation: ridge height pole, neighboring ridge heights, septic and conservation approvals, board questions",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 520,
+    "t_end": 750,
+    "topic": "Board questions on walk-out basement, building height limit, and old septic system",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 750,
+    "t_end": 1247,
+    "topic": "Public comment from abutter on loss of lake view, and board discussion",
+    "resolution": "no resolution",
+    "tags": [
+     "public-comment",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1247,
+    "t_end": 1535,
+    "topic": "Applicant response on design alternatives, and owner statement",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1535,
+    "t_end": 1662,
+    "topic": "Motion, vote and grant of special permit with post-decision conditions",
+    "resolution": "voted; permit granted",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1662,
+    "t_end": 1683,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Individual vote responses are garbled; only a partial roll call (James, Patrick, and one other) is in the captions, so the full count is not stated.",
+   "The member who made the permit motion and the second are not named.",
+   "Some elevations (such as 350, 340, 352) and heights are as the captions render them and may be wrong."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Zoning Board of Appeals voted to approve a special permit to raze a non-conforming house at 37 Pearl Street on Lake Shirley and build a new one.",
+    "t": 1556
+   },
+   {
+    "line": "The permit was declared granted with conditions: compliance with licenses and regulations, periodic review, recording at the registry of deeds, and a 2-year lapse unless construction starts.",
+    "t": 1598
+   },
+   {
+    "line": "An abutter at 32 Pearl Street said the new roof would block her lake view and asked whether neighbors' views and property values were considered.",
+    "t": 750
+   },
+   {
+    "line": "The applicant's engineer showed a pole marking the new ridge height, and the owner described plans to downsize to a modest retirement home.",
+    "t": 1413
+   }
+  ],
+  "why_it_matters": [
+   "Rebuilds of non-conforming lakeside houses go through a special permit, and this hearing shows a neighbor's lost view was raised but did not decide the vote, which bears on any abutter weighing a similar project on Lake Shirley."
+  ],
+  "watch_next": [
+   "Recording of the permit at the registry of deeds, and whether construction starts within the 2-year lapse period."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T21:12:58Z",
+   "cost_usd": 0.2155554
+  }
+ }
+}

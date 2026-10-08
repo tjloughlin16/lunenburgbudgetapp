@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2024-01-04",
  "docid": "6155",
@@ -12,6 +12,144 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document discussions, reports, and a reiterated commitment from the Commission, but contain no motions with outcomes, no language indicating votes were taken (such as \"motion by,\" \"seconded by,\" \"voted,\" \"passed,\" \"failed,\" \"unanimously approved,\" or \"so voted\"), and no record of a vote on adjournment.",
- "cost_usd": 0.07046350000000001
+ "note": "Text-only extraction of a two-page minutes document; no scan. No motions, votes, or roll-call results are recorded, so votes is empty. The minutes do not record a vote to approve prior minutes (the secretary was absent and the Dec 7, 2023 minutes were unavailable) or a motion to adjourn at 7:24 pm. Public comment is not recorded. No dollar figure appears anywhere in the minutes. The minutes print \"Chari McGrath\" in the Cemetery Commission line; this is kept as printed and is presumably Richard McGrath.",
+ "cost_usd": 0.01313699,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mcgrath, lakso, sanderson, and lordan in attendance"
+  },
+  {
+   "name": "Bill Lakso",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "richard mcgrath, chair bill lakso, vice chair"
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "member",
+   "status": "present",
+   "quote": "jennifer sanderson, member megan lordan, member"
+  },
+  {
+   "name": "Megan Lordan",
+   "role": "member",
+   "status": "present",
+   "quote": "jennifer sanderson, member megan lordan, member"
+  },
+  {
+   "name": "Kevin Boussom",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "secretary not in attendance so minutes from dec 7, 2023 unavailable"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission reiterated its commitment to use its budget to initiate the Home Town Heroes Banner project and for the Historical Markers outside the APDC (no vote recorded).",
+   "quote": "the commission reiterated its commitment for the use of its budget to initiate the home town heroes banner project, as well as for the historical markers outside the apdc."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Preservation Act funding for cemetery and town preservation",
+   "what_was_recorded": "The chair discussed how the Community Preservation Act could fund preservation and upkeep at the cemeteries and other town projects; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "how the community preservation act could help fund necessary preservation work and upkeep at the cemeteries"
+  },
+  {
+   "topic": "Commission budget for Home Town Heroes Banner and Historical Markers",
+   "what_was_recorded": "The Commission reiterated its commitment to use its budget for the banner project and historical markers; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the commission reiterated its commitment for the use of its budget to initiate the home town heroes banner project"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Cemetery Commission request for chair attendance",
+   "resolution": "noted; chair to attend Feb 15, 2024 Cemetery Commission meeting as requested",
+   "quote": "cemetery commission requests chari mcgrath be in attendance at their february 15, 2024 meeting",
+   "tags": [
+    "cemeteries",
+    "Cemetery Commission"
+   ]
+  },
+  {
+   "topic": "Community Preservation Act",
+   "resolution": "discussed; no action recorded",
+   "quote": "the cpa could be used, not only by the cemetery commission, but also by the historical commission",
+   "tags": [
+    "Community Preservation Act",
+    "funding",
+    "preservation"
+   ]
+  },
+  {
+   "topic": "Townwide survey grant application",
+   "resolution": "reported; application progressing toward submittal",
+   "quote": "lakso reported that the application to the massachusetts historical commission for a grant for the townwide survey",
+   "tags": [
+    "grants",
+    "survey",
+    "Cyrus Kilburn Map"
+   ]
+  },
+  {
+   "topic": "Home Town Heroes Banner program",
+   "resolution": "reported; details being finalized, meetings upcoming",
+   "quote": "sanderson reported she was working on getting all the details for the home town heroes banner",
+   "tags": [
+    "Home Town Heroes Banner",
+    "Unitil",
+    "Town manager"
+   ]
+  },
+  {
+   "topic": "Arnold/Lynch Memorial",
+   "resolution": "reported; to be dismantled, protected, and reerected at the burial plot",
+   "quote": "mcgrath reported that the partially built arnold/lynch memorial on west st terrace would be",
+   "tags": [
+    "memorials",
+    "cemeteries",
+    "West St Terrace"
+   ]
+  },
+  {
+   "topic": "Historical Markers",
+   "resolution": "discussed; no action recorded",
+   "quote": "mcgrath discussed the use of the historical markers as an important educational tool",
+   "tags": [
+    "historical markers",
+    "public recognition"
+   ]
+  },
+  {
+   "topic": "APDC update",
+   "resolution": "reported; Home Town Heroes presented and CPA advocated to the APDC",
+   "quote": "sanderson presented the home town heroes banner program to the apdc.",
+   "tags": [
+    "APDC",
+    "Home Town Heroes Banner",
+    "Community Preservation Act"
+   ]
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "cemeteries",
+  "Community Preservation Act",
+  "Home Town Heroes Banner",
+  "historical markers",
+  "grants",
+  "APDC",
+  "preservation",
+  "no votes recorded"
+ ],
+ "dropped_unquoted_by_field": {}
 }

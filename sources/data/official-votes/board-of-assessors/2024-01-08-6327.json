@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-01-08",
  "docid": "6327",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve amended minutes from December 18, 2023",
+   "motion": "Approve the amended minutes of December 18, 2023, with the edits submitted by the Board.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "there was a motion to approve the amended minutes by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "Accept the proposed recommendations for BOA Position for FY 2025 Budget regarding staffing, education, and other matters",
+   "motion": "Accept the proposed recommendations for the BOA position for the FY 2025 budget (staffing, education, other).",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "there was a motion to accept the proposed recommendations by sarah cammer, seconded by john rabbitt. brian laffond will discuss further with the town manager."
+   "quote": "there was a motion to accept the proposed recommendations by sarah cammer, seconded by john rabbitt."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -37,6 +37,246 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0733153
+ "note": "Text is clean digital text across four pages, no scan. Public comment was \"No public comment.\" so no speakers are recorded. Only one motion (approving the December 18, 2023 minutes) and the adjournment record a result (\"All in favor\"); the vote count is not printed. The FY2025 position motion records no result. The minutes print \"Jack Rabbitt\" under two outreach headings, where \"John Rabbitt\" is the name used elsewhere; recorded here as printed and not corrected. Nate Cramer and other named people (Sheila Craigen, Kathy Herrick, Becky Boucher, Julie Belliveau) are referred to but did not take part, so they are not listed as attendees. Mike Tarello is listed only from a sentence about a meeting with the Interim Principal Assessor and Brian Laffond; the minutes do not say whether he attended this meeting.",
+ "cost_usd": 0.01728429,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "present members: vice chair sarah cammer, chair brian laffond, clerk john rabbitt, interim principal assessor rena swezey."
+  },
+  {
+   "name": "Mike Tarello",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "since the last meeting rena swezey and brian laffond met with cai and mike tarello."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board confirmed that the ATB statement John Rabbitt raised is to be discussed only in executive session.",
+   "quote": "the board confirms this is only to be discussed in executive session."
+  },
+  {
+   "decision": "Rena Swezey will inquire with Sheila Craigen whether she has been receiving the monthly Banker and Trades report emails.",
+   "quote": "will inquire with sheila craigen if she has been receiving them."
+  },
+  {
+   "decision": "Brian Laffond will speak with Kathy Herrick about getting the December 4 and December 11 minutes posted on the website.",
+   "quote": "brian laffond with speak to kathy herrick about getting those minutes posted."
+  },
+  {
+   "decision": "The review and approval of exemptions (Chapter Land, Senior, Veterans) was postponed to the executive session meeting on January 29, 2024.",
+   "quote": "this agenda item is postponed to the executive session meeting on january 29, 2024."
+  },
+  {
+   "decision": "Sarah Cammer will email Rena Swezey with her questions about condo codes and site index codes.",
+   "quote": "sarah cammer will send an email to rena swezey with her questions."
+  },
+  {
+   "decision": "Sarah Cammer will email Rena Swezey about the 5 different sets of codes used for land curves.",
+   "quote": "sarah cammer will send an email to rena swezey relating to the 5 different sets of codes used for land curves."
+  },
+  {
+   "decision": "The Board will confirm with Mike Tarello whether neighborhoods are already built into the site values.",
+   "quote": "the site values but the board will confirm with mike tarello."
+  },
+  {
+   "decision": "The Board agreed that when hiring takes place there should be a request for continuing education/certification and funds made available to attend conferences; Brian Laffond will discuss further with the Town Manager.",
+   "quote": "the board agrees that when hiring takes place there should be a request for continuing education/certification and funds be made available to attend conferences."
+  },
+  {
+   "decision": "The discussion of the 41C versus 41C ½ exemption options will continue at the next meeting.",
+   "quote": "this discussion will continue at the next meeting."
+  },
+  {
+   "decision": "Brian Laffond will check with the Planning Board and Open Space Committee about ad-hoc citizen committee support; Sarah Cammer will look into other Boards and Committees.",
+   "quote": "brian laffond will check with the planning board and open space committee."
+  },
+  {
+   "decision": "The Board anticipates having Nate Cramer attend a public Zoom meeting in early February to answer residents' questions.",
+   "quote": "the board anticipates having nate cramer attend a meeting in early"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Average sale price and coefficient of dispersion from 2022-2023 sales review",
+   "what_was_recorded": "Mike Tarello reviewed 127 sales and the results put the average sale price in town at a stated dollar figure, with a CoD of 7.82%.",
+   "figures_as_printed": [
+    "$460,000",
+    "7.82%"
+   ],
+   "quote": "the results show the average sale price in town is $460,000 coming in with a coefficient of dispersion (cod) of 7.82%."
+  },
+  {
+   "topic": "Invoices for approval",
+   "what_was_recorded": "Three invoices from MFS were to be approved and signed; no dollar amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "there were 3 invoices from mfs to be approved and signed."
+  },
+  {
+   "topic": "BOA position for FY 2025 budget (staffing, education, conference funds)",
+   "what_was_recorded": "The Board agreed that funds should be made available for staff to attend conferences when hiring occurs; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the board agrees that when hiring takes place there should be a request for continuing education/certification and funds be made available to attend conferences."
+  },
+  {
+   "topic": "Exemption increases proposed for FY 2025 (41C vs 41C ½)",
+   "what_was_recorded": "Discussion of which exemption option to propose, including whether the 41C ½ option has an asset limit; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "rena swezey states a 41c ½ has a no asset limit clause."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening comments: board comment",
+   "resolution": "no action",
+   "quote": "sarah cammer states that her term on the board ends in may and intends to finish serving.",
+   "tags": [
+    "board membership",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Status report from Interim Principal Assessor",
+   "resolution": "discussed; no action",
+   "quote": "currently, rena swezey is the only employee working in the office.",
+   "tags": [
+    "staffing",
+    "sales data",
+    "neighborhood maps",
+    "CAI",
+    "Vision"
+   ]
+  },
+  {
+   "topic": "Approval of minutes: December 18, 2023",
+   "resolution": "approved as amended",
+   "quote": "there was a motion to approve the amended minutes by sarah cammer, seconded by john rabbitt. all in favor.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Review and approve invoices, expense vouchers, payroll, billing errors",
+   "resolution": "three MFS invoices to be approved and signed; no vote recorded",
+   "quote": "there were 3 invoices from mfs to be approved and signed.",
+   "tags": [
+    "invoices",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Review and approve exemptions (Chapter Land, Senior, Veterans)",
+   "resolution": "postponed to January 29, 2024 executive session",
+   "quote": "this agenda item is postponed to the executive session meeting on january 29, 2024.",
+   "tags": [
+    "exemptions",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Status of community outreach (Senior Center, website, Vision card, FAQs)",
+   "resolution": "no action; ongoing",
+   "quote": "the meeting at the senior center is tentatively scheduled for early march.",
+   "tags": [
+    "outreach",
+    "website",
+    "senior center",
+    "FAQ",
+    "citizen committee"
+   ]
+  },
+  {
+   "topic": "New business a. BOA position for FY 2025 budget",
+   "resolution": "motion to accept recommendations; result not recorded",
+   "quote": "there was a motion to accept the proposed recommendations by sarah cammer, seconded by john rabbitt.",
+   "tags": [
+    "FY2025 budget",
+    "staffing",
+    "education"
+   ]
+  },
+  {
+   "topic": "New business b. Implications of exemption increases for FY 2025",
+   "resolution": "continued to next meeting",
+   "quote": "this discussion will continue at the next meeting.",
+   "tags": [
+    "exemptions",
+    "Department of Revenue",
+    "FY2025 budget"
+   ]
+  },
+  {
+   "topic": "New business c. Ad-hoc citizen committees to aid Board members",
+   "resolution": "discussed; members to follow up with other boards",
+   "quote": "brian laffond will check with the planning board and open space committee.",
+   "tags": [
+    "citizen committee",
+    "FAQ"
+   ]
+  },
+  {
+   "topic": "New business d. Other goals for calendar year 2024",
+   "resolution": "goal noted: create a calendar of dates and deadlines",
+   "quote": "an important goal for 2024 is to create a calendar that includes important dates and deadlines.",
+   "tags": [
+    "goals",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Future topics: public Q&A with Nate Cramer",
+   "resolution": "scheduling anticipated for early February",
+   "quote": "the board anticipates having nate cramer attend a meeting in early",
+   "tags": [
+    "public Q&A",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "no action",
+   "quote": "no public or board comments.",
+   "tags": []
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "board of assessors",
+  "interim principal assessor",
+  "staffing",
+  "exemptions",
+  "sales data",
+  "minutes approval",
+  "website",
+  "public outreach",
+  "executive session",
+  "FY2025 budget",
+  "citizen committee"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2024-01-04",
  "docid": "6150",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To adjourn at 6:44pm",
+   "motion": "To adjourn the meeting at 6:44pm.",
    "moved_by": "Joeci G.",
    "seconded_by": "Gerald R.",
    "outcome": "passed",
@@ -21,6 +21,173 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0989005
+ "note": "Plain extracted text, not a scan; no dollar figures appear anywhere in the minutes, so the one budget item is a grant mention with no amounts. The only recorded vote is the adjournment, roll call all aye, with no printed count, so outcome is recorded as passed. Carol appears only in the roll-call vote line and her surname is not printed. Rami's surname is not printed. Richard Bursch is also cited as \"Rich B.\" Matt Brenner is named as someone the consultants meet but is not stated to be present. The clerk, Jane L. Ranley, is omitted from attendees because she is not stated as taking part. Several items are requests or agreements with no vote recorded and are listed as decisions only where the minutes state an agreement or assignment.",
+ "cost_usd": 0.01580817,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joeci Gilcrest",
+   "role": "Chair (Economic Dev.)",
+   "status": "present",
+   "quote": "roll call of attendees- chair: joeci gilcrest (economic dev.), vice-chair: tim willsmer (planning board), evan watters (finance com.), karin menard (parks)"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Vice-Chair (Planning Board)",
+   "status": "present",
+   "quote": "roll call of attendees- chair: joeci gilcrest (economic dev.), vice-chair: tim willsmer (planning board), evan watters (finance com.), karin menard (parks)"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Finance Com.",
+   "status": "present",
+   "quote": "roll call of attendees- chair: joeci gilcrest (economic dev.), vice-chair: tim willsmer (planning board), evan watters (finance com.), karin menard (parks)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks",
+   "status": "present",
+   "quote": "roll call of attendees- chair: joeci gilcrest (economic dev.), vice-chair: tim willsmer (planning board), evan watters (finance com.), karin menard (parks)"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "debbie lincoln (council on aging), richard bursch, lou franco (select board), gerald reid"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln (council on aging), richard bursch, lou franco (select board), gerald reid"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "debbie lincoln (council on aging), richard bursch, lou franco (select board), gerald reid"
+  },
+  {
+   "name": "Gerald Reid",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln (council on aging), richard bursch, lou franco (select board), gerald reid"
+  },
+  {
+   "name": "Carol",
+   "role": "",
+   "status": "present",
+   "quote": "roll call vote: joeci, gerald, debbie, tim, carol, karin, richard, and evan -all aye."
+  },
+  {
+   "name": "Rami",
+   "role": "presenter, Over/Under (surname not printed)",
+   "status": "present",
+   "quote": "rami reported there will be 2 sessions on february 1st, and over/under will attend"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "public (1479 Mass Ave.)",
+   "status": "present",
+   "quote": "public comment - kim duffy (1479 mass ave.) stated she attended the last meeting and asked if the previous master plan from 20 years ago was available to view online."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The two duplicate 2/1 sessions will be held at the Lunenburg Adult Activity Center in the Big Room: 4-6pm and 6:30-8:30pm, with the Model present at both.",
+   "quote": "the first session will be 4-6pm and the second session will be held 6:30 - 8:30pm."
+  },
+  {
+   "decision": "Rami's team will add a PDF link for printing the survey to the PlanLunenburg.org site (Rami agreed when asked).",
+   "quote": "joeci noted that rami will have his team add a pdf link for printing the survey from the planlunenburg.org site."
+  },
+  {
+   "decision": "Matt Brenner will look into the possibility of displaying the model at the Library.",
+   "quote": "matt will be looking into the possibility of displaying the model at the library."
+  },
+  {
+   "decision": "Lou Franco will make inquiries about putting the previous (about 20-year-old) Master Plan online; he noted it should be online.",
+   "quote": "he noted that you can get a hold of one and will make inquiries as to how it can be put online."
+  },
+  {
+   "decision": "Rami asked that all paper surveys be turned in by 1/25 so results can be collated before the 2/1 meeting (a request, not a recorded board decision).",
+   "quote": "rami asked to have all the surveys turned in by 1/25 so they can collate the results before the 2/1 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State grants for energy goals (Green Community)",
+   "what_was_recorded": "Public commenter said grants are available for energy goals if the town remains in good standing as a Green Community; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "there are a lot of grants available to help fulfill those goals as long as the community is in good standing as a green community."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Kim Duffy",
+   "stated_role": "",
+   "topic": "Previous 20-year-old Master Plan; survey response goal",
+   "quote": "public comment - kim duffy (1479 mass ave.) stated she attended the last meeting and asked if the previous master plan from 20 years ago was available to view online."
+  },
+  {
+   "speaker": "Kim Duffy",
+   "stated_role": "",
+   "topic": "Massachusetts energy plan and Green Community goals",
+   "quote": "she asked if this energy plan would be part of the master plan, indicating how we try to meet those goals with solar and energy reduction."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Update from Over/Under on survey and engagement",
+   "resolution": "received update; survey response count and next steps reported",
+   "quote": "rami reported there will be 2 sessions on february 1st, and over/under will attend",
+   "tags": [
+    "master plan",
+    "survey",
+    "community engagement",
+    "renters"
+   ]
+  },
+  {
+   "topic": "Update on event for February 1st",
+   "resolution": "two sessions set at the Lunenburg Adult Activity Center",
+   "quote": "joeci reported that they will have 2 duplicate sessions on 2/1 to allow attendees an option that will work for their schedule.",
+   "tags": [
+    "February 1 sessions",
+    "Adult Activity Center",
+    "flyers"
+   ]
+  },
+  {
+   "topic": "Committee comment",
+   "resolution": "no comment",
+   "quote": "committee comment - none",
+   "tags": []
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; Lou Franco to inquire about putting the prior Master Plan online",
+   "quote": "public comment - kim duffy (1479 mass ave.) stated she attended the last meeting",
+   "tags": [
+    "prior Master Plan",
+    "energy plan",
+    "Green Community"
+   ]
+  }
+ ],
+ "tags": [
+  "master plan",
+  "public survey",
+  "community engagement",
+  "February 1 sessions",
+  "renters",
+  "open space and events",
+  "300th anniversary",
+  "energy and climate",
+  "Green Community",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

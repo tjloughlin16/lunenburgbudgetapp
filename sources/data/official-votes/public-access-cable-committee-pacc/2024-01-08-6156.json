@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2024-01-08",
  "docid": "6156",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Allow S.Walker to bring HR3557 video and information to the Select Board and Town Manager",
+   "motion": "Allow S. Walker to bring the video and information concerning HR3557 to the Select Board and Town Manager.",
    "moved_by": "S.Archambault",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "a motion, s.archambault, 2nd p.lincoln, was made: allowing s.walker to bring the video and information concerning hr3557 to the select board & town manager. the motion passed."
   },
   {
-   "motion": "Approve meeting minutes from December 4, 2023, with corrections",
+   "motion": "Approve the 12.4.2023 minutes with corrections.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Sarapas",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "12.4.2023 minutes approved with corrections (motion - f.beall, 2nd p.sarapas), passed"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:59 pm.",
    "moved_by": "S.Archambault",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
@@ -37,6 +37,171 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0817193
+ "note": "Plain text extract, not a scan. Votes are recorded as \"passed\" with no tallies, so outcomes carry no counts. The adjournment line contains a stray \"o\" in the source text, kept as printed in the quote. Public comment is recorded as \"None\". No decisions were recorded without a vote. The minutes name Kayla, Dan and the 300th Committee, but they did not take part in the meeting, so they are not listed as attendees.",
+ "cost_usd": 0.01405759,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, steve archambault, pete lincoln. faith beall via zoom, paul sarapas via zoom."
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, steve archambault, pete lincoln. faith beall via zoom, paul sarapas via zoom."
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, steve archambault, pete lincoln. faith beall via zoom, paul sarapas via zoom."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "remote",
+   "quote": "faith beall via zoom, paul sarapas via zoom."
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "remote",
+   "quote": "faith beall via zoom, paul sarapas via zoom."
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "not stated",
+   "quote": "3. manager: jo toale public comments: - none"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "ARPA spending for videographer's kit",
+   "what_was_recorded": "The Manager reported ARPA spending for a videographer's kit at a set dollar figure.",
+   "figures_as_printed": [
+    "$5,211.82"
+   ],
+   "quote": "arpa spending for videographer's kit - $5,211.82"
+  },
+  {
+   "topic": "Enterprise Fund balance and possible COMCAST fee",
+   "what_was_recorded": "The Manager reported the Enterprise Fund balance and that a potential COMCAST fee would put it over $1M.",
+   "figures_as_printed": [
+    "$988,203",
+    "$1M"
+   ],
+   "quote": "balance $988,203 plus potentially comcast fee will put enterprise fund balance over $1m"
+  },
+  {
+   "topic": "Hudl expense",
+   "what_was_recorded": "The Manager reported that Hudl currently carries a fee and that a download option is being researched; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "hudl expense - researching download option. currently there is a fee."
+  },
+  {
+   "topic": "November Franchise Fee",
+   "what_was_recorded": "The November franchise fee had not yet been posted; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "november franchise fee not posted yet."
+  },
+  {
+   "topic": "Enterprise Fund investment",
+   "what_was_recorded": "Investment status was recorded as unknown at this time; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "by virtue of timing status is unknown at this time."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications: federal bill HR3557 and PACC funding",
+   "resolution": "motion passed allowing S.Walker to bring information to Select Board and Town Manager",
+   "quote": "steve walker has been following mass access. there is a potential new law (hr3557 - american broadband deployment act), that could threaten pacc funding.",
+   "tags": [
+    "federal policy",
+    "PACC funding",
+    "HR3557"
+   ]
+  },
+  {
+   "topic": "Committee comments",
+   "resolution": "no action",
+   "quote": "p.lincoln wanted to thank kayla for her \"century club member's\" video.",
+   "tags": [
+    "committee",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, 12.4.2023",
+   "resolution": "approved with corrections",
+   "quote": "12.4.2023 minutes approved with corrections (motion - f.beall, 2nd p.sarapas), passed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "no action; reported",
+   "quote": "castus issue - dec. 11th, hdd partition failed. rebuilt and resolved 12.12",
+   "tags": [
+    "Castus",
+    "ARPA",
+    "studio equipment",
+    "Enterprise Fund",
+    "COMCAST",
+    "Hudl",
+    "annual report",
+    "local programming"
+   ]
+  },
+  {
+   "topic": "Enterprise Fund investment",
+   "resolution": "no action; status unknown",
+   "quote": "by virtue of timing status is unknown at this time.",
+   "tags": [
+    "Enterprise Fund",
+    "investment"
+   ]
+  },
+  {
+   "topic": "Member question on Town Hall control room and 300th Committee",
+   "resolution": "discussed; no action",
+   "quote": "p.lincoln announced that the 300th committee is planning on using town hall for many activities and was wondering if the town hall control room/studio would still be available?",
+   "tags": [
+    "Town Hall",
+    "studio space",
+    "300th Committee"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "adjourned at 6:59 pm; next meeting February 5th",
+   "quote": "next meeting: - february 5th, 6:00 pm.",
+   "tags": [
+    "meeting schedule",
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "Enterprise Fund",
+  "ARPA",
+  "federal policy",
+  "HR3557",
+  "studio equipment",
+  "Town Hall studio",
+  "local programming",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

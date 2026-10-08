@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2023-12-28",
  "docid": "6131",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Nominate Timothy Willsmer as Chair",
+   "motion": "Nominate Timothy Willsmer as Chair of the Stormwater Task Force.",
    "moved_by": "Renee Emkey",
    "seconded_by": "John Beale",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion to nominate timothy willsmer as chair by renee emkey, seconded by john beale. all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Renee Emkey",
    "seconded_by": "John Beale",
    "outcome": "passed",
@@ -29,6 +29,191 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The vote for Vice Chair was postponed (not held); no motion was recorded for it.",
- "cost_usd": 0.0737945
+ "note": "Text extraction is clean, not a scan. Two motions were recorded, both with \"All in favor\" and no tally, so outcomes are recorded as \"passed\" rather than a count. The Vice Chair vote was postponed because a member was absent, but the absent member is not named. No vote approving prior minutes is recorded. Both public comment sections read \"No public comment,\" so no speakers are listed. Figures are as printed in the minutes and were not checked against any source.",
+ "cost_usd": 0.01376569,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Beale",
+   "role": "Member",
+   "status": "present",
+   "quote": "present members: member john beale, dpw director bill bernard, selectboard representative renee emkey, chair timothy willsmer"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "present members: member john beale, dpw director bill bernard, selectboard representative renee emkey, chair timothy willsmer"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Selectboard Representative",
+   "status": "present",
+   "quote": "present members: member john beale, dpw director bill bernard, selectboard representative renee emkey, chair timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: member john beale, dpw director bill bernard, selectboard representative renee emkey, chair timothy willsmer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The vote for Vice Chair was postponed because a board member was not present.",
+   "quote": "the vote for vice chair was postponed as a member of the board is not present."
+  },
+  {
+   "decision": "Items for the next meeting: reach out to other towns about their stormwater process and whether they use enterprise funding; the Board discussed inviting CEI to an upcoming meeting.",
+   "quote": "items for the next meeting include reaching out to other towns to find their process regarding stormwater and if they use enterprise funding."
+  },
+  {
+   "decision": "Next meeting set for January 18th at 7PM at the Department of Public Works building.",
+   "quote": "january 18th at 7pm at the department of public works building."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stormwater-related spending, first year of tracking",
+   "what_was_recorded": "Bill Bernard reported that the first year of tracking recorded a total stormwater-related cost of $67,000.",
+   "figures_as_printed": [
+    "$67,000"
+   ],
+   "quote": "in the first year of tracking, there was a total cost of $67,000 spent on stormwater related tasks."
+  },
+  {
+   "topic": "Stormwater-related spending, FY 23 and past six months",
+   "what_was_recorded": "FY 23 stormwater-related spending was reported as $72,000, and $104,000 was spent in the past six months with no snowfall yet.",
+   "figures_as_printed": [
+    "$72,000",
+    "$104,000"
+   ],
+   "quote": "in fy 23, a total of $72,000 was spent on stormwater related tasks. in the past 6 months, a total of $104,000 was spent and there hasn't been snowfall yet."
+  },
+  {
+   "topic": "September 11th storm clean-up cost",
+   "what_was_recorded": "The last damaging storm, on September 11th, led to $75,000 spent on clean-up; NEMA, FEMA and DOT requested information about the damage.",
+   "figures_as_printed": [
+    "$75,000"
+   ],
+   "quote": "the last damaging storm on september 11th a total of $75,000 was spent for clean-up."
+  },
+  {
+   "topic": "Grant funding for stormwater",
+   "what_was_recorded": "The Board noted additional research is needed on stormwater funding and grants; a member asked about grants for maintenance, repair or replacement, and the DPW Director believes replacement grants may exist. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "there needs to be additional research regarding funding and grants related to stormwater."
+  },
+  {
+   "topic": "Asset Management Grant (completed)",
+   "what_was_recorded": "The completed grant paid CEI to collect the data on the stormwater system; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the grant paid to collect the data completed by cei."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "opened at 7 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the meeting opened at 7 pm."
+  },
+  {
+   "topic": "Election of Chair and Vice Chair",
+   "resolution": "Timothy Willsmer elected Chair; Vice Chair vote postponed",
+   "tags": [
+    "officers",
+    "election"
+   ],
+   "quote": "motion to nominate timothy willsmer as chair by renee emkey, seconded by john beale. all in favor."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "3. public comment no public comment."
+  },
+  {
+   "topic": "Explanation and goals of the SWTF",
+   "resolution": "presentation, no action",
+   "tags": [
+    "mission",
+    "presentation"
+   ],
+   "quote": "bill bernard put together a powerpoint that was shared during the meeting and is also available on the drive."
+  },
+  {
+   "topic": "DPW Director update on data collection",
+   "resolution": "no action; cost figures reported",
+   "tags": [
+    "costs",
+    "data collection",
+    "storm damage"
+   ],
+   "quote": "last year bill bernard started to track stormwater related costs to report back to the board."
+  },
+  {
+   "topic": "Asset Management Grant and Demonstration Structural BMP Project",
+   "resolution": "no action; grant complete, rain garden planned",
+   "tags": [
+    "grants",
+    "GIS",
+    "BMP",
+    "rain garden"
+   ],
+   "quote": "the grant is complete, and the information collected was put into the gis system."
+  },
+  {
+   "topic": "Items for Next Meeting",
+   "resolution": "no action; outreach to other towns planned",
+   "tags": [
+    "enterprise funding",
+    "CEI"
+   ],
+   "quote": "items for the next meeting include reaching out to other towns to find their process regarding stormwater and if they use enterprise funding."
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for January 18th at 7PM",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "january 18th at 7pm at the department of public works building."
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "9. public comment no public comment."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:05 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion to adjourn by renee emkey, seconded by john beale. all in favor."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "task force",
+  "public works",
+  "officer election",
+  "storm damage costs",
+  "grants",
+  "data collection",
+  "rain garden",
+  "public comment none"
+ ],
+ "dropped_unquoted_by_field": {}
 }

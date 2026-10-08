@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2024-01-03",
  "docid": "6151",
@@ -12,55 +12,336 @@
  },
  "votes": [
   {
-   "motion": "Continue the hearing on 255 Sunny Hill Road to 1/17/24",
+   "motion": "Approve 37 Pearl St. (Notice of Intent by Raymond & Gloria Clouthier) with the Standard Order of Conditions.",
+   "moved_by": "Jeff V.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: jeff v ., second: mike l. to approve 37 pearl st. with the standard order of conditions. roll call vote was unanimous to approve."
+  },
+  {
+   "motion": "Continue the 255 Sunny Hill Road Notice of Intent hearing to 1/17/24.",
    "moved_by": "Chris S.",
    "seconded_by": "Jeff V.",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: chris s., second: jeff v . to continue 255 sunny hill road hearing to 1/17/24. roll call vote was unanimous to approve."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 255 sunny hill road hearing to 1/17/24. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue the hearing on 171 Arbor Street to 1/17/24",
+   "motion": "Continue the 171 Arbor Street Notice of Intent hearing to 1/17/24.",
    "moved_by": "Chris S.",
    "seconded_by": "Mike L.",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: chris s., second: mike l. to continue 171 arbor street to 1/17/24. roll call vote was unanimous to approve."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 171 arbor street to 1/17/24. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue the hearing on 20 Kilburn Street Lot 1 to 1/17/24",
+   "motion": "Continue the 20 Kilburn St-Lot 1 Request for Determination to 1/17/24.",
    "moved_by": "Chris S.",
-   "seconded_by": "Mike L",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: chris s., second: mike l to continue 20 kilburn st-lot 1 to 1/17/24. roll call vote was unanimous to approve."
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 20 kilburn st-lot 1 to 1/17/24. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue the hearing on 20 Kilburn Street Lot 2 to 1/17/24",
+   "motion": "Continue the 20 Kilburn St-Lot 2 Notice of Intent hearing to 1/17/24.",
    "moved_by": "Chris S.",
-   "seconded_by": "Mike L",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: chris s., second: mike l to continue 20 kilburn st-lot 2 to 1/17/24. roll call vote was unanimous to approve."
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 20 kilburn st-lot 2 to 1/17/24. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Continue the hearing on 20 Kilburn Street Lot 3 to 1/3/24",
+   "motion": "Continue the 20 Kilburn St-Lot 3 Notice of Intent hearing to 1/3/24.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue 20 kilburn st-lot 3 to 1/3/24. roll call vote was unanimous to approve."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 20 kilburn st-lot 3 to 1/3/24. roll call vote was unanimous to approve."
   },
   {
-   "motion": "Adjourn at 8:21pm",
+   "motion": "Adjourn the meeting at 8:21pm.",
    "moved_by": "Chris S.",
    "seconded_by": "Mike L.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: chris s., second: mike l. to adjourn at 8:21pm. roll call vote was unanimous to approve."
+   "quote": "to adjourn at 8:21pm. roll call vote was unanimous to approve."
   }
  ],
- "dropped_unquoted": 1,
- "note": "All seven votes passed unanimously. Note: Vote 6 contains a date anomaly — it votes to continue to 1/3/24 (the meeting date itself) while the hearing header shows it was previously continued to 1/17/24; this appears to be a typographical error in the original minutes, but the quote is verbatim as printed.",
- "cost_usd": 0.1007671
+ "dropped_unquoted": 0,
+ "note": "Text is a clean digital extraction, not a scan. Every vote is recorded as roll call unanimous with no per-member tally, so outcomes are recorded as passed rather than as a count. Lot 3 of 20 Kilburn St was continued 'to 1/3/24', the same date as this meeting; that is printed as-is and may be a typo for 1/17/24. The motion for Lot 3 is attributed to 'Rich B.', who is listed as absent. 390 Howard Street is listed under continued hearings with no motion or result. Several DEP numbers print as 'DEP 208-XXXX' placeholders. Ray Clouthier is named but his role is not printed. No dollar figures appear anywhere in the minutes. Public comment was recorded as none at both points.",
+ "cost_usd": 0.035640279999999996,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: jeff v ., mike l., chris s., mary w. and sophie darow, administrator"
+  },
+  {
+   "name": "Jeff V.",
+   "status": "present",
+   "quote": "roll call: jeff v ., mike l., chris s., mary w. and sophie darow, administrator"
+  },
+  {
+   "name": "Mike L.",
+   "status": "present",
+   "quote": "roll call: jeff v ., mike l., chris s., mary w. and sophie darow, administrator"
+  },
+  {
+   "name": "Chris S.",
+   "status": "present",
+   "quote": "roll call: jeff v ., mike l., chris s., mary w. and sophie darow, administrator"
+  },
+  {
+   "name": "Sophie Darow",
+   "role": "Administrator",
+   "status": "present",
+   "quote": "roll call: jeff v ., mike l., chris s., mary w. and sophie darow, administrator"
+  },
+  {
+   "name": "Bob P.",
+   "status": "absent",
+   "quote": "absent: bob p. and rich b."
+  },
+  {
+   "name": "Rich B.",
+   "status": "absent",
+   "quote": "absent: bob p. and rich b."
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "Dillis & Roy, representing the owners",
+   "status": "present",
+   "quote": "ryan proctor (dillis & roy), representing the owners, screen-shared the locus map to indicate the"
+  },
+  {
+   "name": "Ray Clouthier",
+   "status": "present",
+   "quote": "ray clouthier stated the property has been in the family for 13 years and they inherited it 3.5 years ago"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy, representing the applicant",
+   "status": "present",
+   "quote": "greg roy (dillis & roy), representing the applicant, stated that they probably could have gone"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sophie to contact the residents at 81 Maple Pkway to tell them they must seed the failed silt-fence area and fix the silt fence until the soil is seeded.",
+   "quote": "mary asked sophie to contact the residents to tell them they have to seed that area and fix the silt fence until the soil is seeded."
+  },
+  {
+   "decision": "No Certificate of Compliance tonight for 81 Maple Pkway; the unplanned pipe must be explained and its long-term use addressed first.",
+   "quote": "mike said it should be explained why the pipe is there and that they can't give the certificate tonight."
+  },
+  {
+   "decision": "Sophie to ask the owner of 780 Northfield Road to attend a meeting to discuss the culvert.",
+   "quote": "the owner was asked to put in a larger culvert, which he agreed to and sophie will need to ask him to attend a meeting to discuss the culvert."
+  },
+  {
+   "decision": "Staff to keep 315 Lancaster Ave. on the low-priority list for summer.",
+   "quote": "315 lancaster ave.- mary told sophie to keep this on her low-priority list for summer."
+  },
+  {
+   "decision": "Staff Access to Munis Accounts item removed from the agenda.",
+   "quote": "staff access to munis accounts- sophie stated they are ok because ashleigh now has permissions to access and mary will take it off the agenda."
+  },
+  {
+   "decision": "Commission gave informal feedback to the 73 Horizon Island Road applicant that the lot is too small for an addition in the 50-foot no-structure zone; no formal action taken.",
+   "quote": "mary said she does not think they can allow it because the property already comes encumbered with a lot of incursions in the 30' no-touch, which were grandfathered."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant-funded ATV purchase (LSR Sponsored grant, award year 2022)",
+   "what_was_recorded": "The grant will be used to purchase an ATV for winter grooming, along with trail improvement in the off-season. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the grant will be used to purchase an atv for winter grooming, along with trail improvement in the off-season."
+  },
+  {
+   "topic": "Hollis Road Residence permanent roof repair",
+   "what_was_recorded": "Members wanted cost figures for a permanent roof repair to be brought back next year. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "if the temporary fix works, mike suggested putting it on the agenda next year to get some numbers on a permanent repair."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "deferred to next meeting (none reviewed; 12/20 minutes to next meeting)",
+   "quote": "minutes of previous meetings - none reviewed and minutes of 12/20 to be reviewed next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New public hearing: 37 Pearl Street Notice of Intent",
+   "resolution": "approved with Standard Order of Conditions",
+   "quote": "to approve 37 pearl st. with the standard order of conditions.",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "Lake Shirley",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Continued public hearing: 390 Howard Street Abbreviated Notice of Resource Area Delineation",
+   "resolution": "listed as continued from 12/20/23 to 1/17/24; no action recorded",
+   "quote": "a public hearing on an abbreviated notice of resource area delineation by kevin o'brien at 390 howard street.",
+   "tags": [
+    "wetlands",
+    "delineation"
+   ]
+  },
+  {
+   "topic": "Continued public hearing: 255 Sunny Hill Road Notice of Intent",
+   "resolution": "continued to 1/17/24",
+   "quote": "to continue 255 sunny hill road hearing to 1/17/24.",
+   "tags": [
+    "wetlands",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Continued public hearing: 171 Arbor Street Notice of Intent",
+   "resolution": "continued to 1/17/24",
+   "quote": "to continue 171 arbor street to 1/17/24.",
+   "tags": [
+    "wetlands",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Continued public hearings: 20 Kilburn St Lots 1, 2 and 3 (Timric Realty Trust)",
+   "resolution": "Lots 1 and 2 continued to 1/17/24; Lot 3 continued to 1/3/24 as printed",
+   "quote": "to continue 20 kilburn st-lot 3 to 1/3/24.",
+   "tags": [
+    "wetlands",
+    "request for determination",
+    "notice of intent",
+    "septic"
+   ]
+  },
+  {
+   "topic": "New business: 73 Horizon Island Road informal discussion",
+   "resolution": "no action; informal feedback given to applicant",
+   "quote": "greg suggested to the property owners that it would be prudent to informally discuss the proposed project with the conservation commission before proceeding.",
+   "tags": [
+    "wetlands",
+    "addition",
+    "no-structure zone",
+    "Hickory Hills Lake"
+   ]
+  },
+  {
+   "topic": "Old business: Timber Rights Fund, title searches, MACC memberships, Munis access",
+   "resolution": "no update; Munis item removed from agenda",
+   "quote": "staff access to munis accounts- sophie stated they are ok because ashleigh now has permissions to access and mary will take it off the agenda.",
+   "tags": [
+    "timber rights",
+    "title search",
+    "MACC",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "Old business: encroachment at 950 Chase Road and 315 Lancaster Ave",
+   "resolution": "no action; Bob working with Town Counsel on 950 Chase Road; 315 Lancaster Ave kept low priority",
+   "quote": "950 chase road- shed removal - mary reported bob is working with town counsel on this.",
+   "tags": [
+    "encroachment",
+    "enforcement",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Certificate of Compliance: 81 Maple Pkway",
+   "resolution": "not issued; re-site visit and seeding/silt fence fix required",
+   "quote": "mike said it should be explained why the pipe is there and that they can't give the certificate tonight.",
+   "tags": [
+    "certificate of compliance",
+    "silt fence",
+    "erosion",
+    "pipe"
+   ]
+  },
+  {
+   "topic": "Enforcement: 780 Northfield Road culvert",
+   "resolution": "owner to be asked to attend a meeting about culvert",
+   "quote": "780 northfield road- mary noted this is the tree farm.",
+   "tags": [
+    "enforcement",
+    "culvert",
+    "tree farm",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "Grants update (LCC sponsored, award year 2023; LSR sponsored, award year 2022)",
+   "resolution": "reported; no action",
+   "quote": "mary reported she has sent the required grant initiation paperwork and heather has sent the signed contract to the state.",
+   "tags": [
+    "grants",
+    "trails",
+    "snowmobile"
+   ]
+  },
+  {
+   "topic": "Hollis Road Residence property maintenance",
+   "resolution": "temporary patch to be tried; permanent repair to be considered next year",
+   "quote": "they suggested putting a temporary patch on the cricket to see if it solves the issue of water coming in.",
+   "tags": [
+    "property maintenance",
+    "roof",
+    "leak",
+    "Hollis Road"
+   ]
+  },
+  {
+   "topic": "Committee reports: open Commission position",
+   "resolution": "reported; Select Board to interview two candidates",
+   "quote": "mary noted that the select board will be interviewing the 2 candidates for the open commission position.",
+   "tags": [
+    "appointments",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "none",
+   "quote": "communications/public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:21pm",
+   "quote": "to adjourn at 8:21pm. roll call vote was unanimous to approve.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "public hearings",
+  "continuances",
+  "certificate of compliance",
+  "enforcement",
+  "grants",
+  "Zoom",
+  "Lake Shirley",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

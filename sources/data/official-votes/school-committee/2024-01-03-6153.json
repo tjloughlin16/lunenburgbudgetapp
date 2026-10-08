@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-01-03",
  "docid": "6153",
@@ -12,47 +12,289 @@
  },
  "votes": [
   {
-   "motion": "move the first executive session to begin after the first public comment and student representative report",
-   "moved_by": "Mr. Beardmore",
-   "seconded_by": "Mr. Lehtinen",
+   "motion": "Move the first executive session to begin after the first public comment and student representative report.",
+   "moved_by": "Peter Beardmore",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr. beardmore makes a motion to move the first executive session to begin after the first public comment and student representative report, mr. lehtinen seconds the motion, all approve"
+   "quote": "mr. beardmore makes a motion to move the first executive session to begin after the first public comment and student representative report"
   },
   {
-   "motion": "enter executive session to discuss the deployment of security personnel or devices or strategies",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Mr. Lehtinen",
+   "motion": "Enter executive session to discuss the deployment of security personnel or devices or strategies.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Brian Lehtinen",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to enter executive session, mr. lehtinen seconds the motion all approve"
   },
   {
-   "motion": "approve minutes from Regular Session 11/01/23",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Approve the minutes of the Regular Session of 11/01/23.",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. lehtinen makes a motion to approve minutes, mr. sculimbrene seconded the motion, all approve"
   },
   {
-   "motion": "accept a donation from box tops for education in the amount of $32.20 to be put into the gift account for Turkey Hill",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Accept the donation from box tops for education in the amount of $32.20 into the gift account for Turkey Hill.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to accept this donation, mr. sculimbrene seconds the motion. all approve"
   },
   {
-   "motion": "enter executive session to discuss strategy with respect to collective bargaining or litigation and adjourn immediately following",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Ms. Brzozoski",
+   "motion": "Enter executive session to discuss strategy with respect to collective bargaining or litigation at 7:45 and adjourn immediately following.",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. lehtinen makes a motion to enter executive session at 7:45 and adjourn immediately following, ms. brzozoski seconded the motion, all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0765231
+ "note": "Text extract of a hybrid meeting; no roll-call tallies are printed, so every vote is recorded as 'all approve' and outcome is given as 'passed' with no count. The minutes print no motion for warrant approval or adjournment as separate items, so those are not recorded as votes. No transfers were made ('No line item transfers'). The FY 25 cuts are described without dollar amounts. Dr. Burnham's attendance status is inferred from her speaking and the header listing; no explicit status is printed for her. The Business Manager/HR Director is listed without a name and is not recorded as an attendee.",
+ "cost_usd": 0.015515790000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member- present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Tatum Furman",
+   "role": "Student Representation Report",
+   "status": "present",
+   "quote": "student representation report tatum furman reports, across the district is high morale"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Warrant total",
+   "what_was_recorded": "The warrant for 12/19/23-1/2/24 was reviewed with no questions from the committee, and the Chair signed it.",
+   "figures_as_printed": [
+    "$28,591.11"
+   ],
+   "quote": "warrant total 12/19/23-1/2/24 $28,591.11 no questions from the committee."
+  },
+  {
+   "topic": "Box tops donation to Turkey Hill gift account",
+   "what_was_recorded": "A donation from box tops for education was accepted into the gift account for Turkey Hill.",
+   "figures_as_printed": [
+    "$32.20"
+   ],
+   "quote": "a donation from box tops for education in the amount of $32.20 will be put into the gift account for"
+  },
+  {
+   "topic": "FY 25 budget development assumptions",
+   "what_was_recorded": "The FY 25 position cuts by department were presented on the assumption of 2.5% state funding and a 10% increase in health insurance costs; no dollar amounts of cuts were printed in the minutes.",
+   "figures_as_printed": [
+    "2.5%",
+    "10%"
+   ],
+   "quote": "based on the assumption we receive 2.5% state funding and will have a 10% increase in health insurance costs."
+  },
+  {
+   "topic": "Winter break closure heating costs",
+   "what_was_recorded": "The committee discussed whether a financial budget would be needed to keep the school closed for two weeks based on heating costs; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "would there be a financial budget to leave the school closed for the two full weeks, based on heating."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Beardmore",
+   "stated_role": "Member",
+   "topic": "ethics board advice and LEA negotiations",
+   "quote": "he will not make any comments publicly or privately."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening",
+   "resolution": "opened at 6:30 p.m.; executive session timing moved by motion",
+   "quote": "1. call to order by carol archambault at 6:30 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment on ethics advice and LEA negotiations",
+   "resolution": "statement made; no action recorded",
+   "quote": "mr. beardmore makes a statement based on his past discussion with the state ethics board",
+   "tags": [
+    "ethics",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Student representation report",
+   "resolution": "received",
+   "quote": "student representation report tatum furman reports, across the district is high morale",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Executive session on security",
+   "resolution": "executive session entered by motion",
+   "quote": "executive session to discuss the deployment of security personnel or devices or strategies",
+   "tags": [
+    "security",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "received; MSBA letter amended and to be sent",
+   "quote": "ms. archambault wishes everyone a happy and healthy 2024.",
+   "tags": [
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved",
+   "quote": "regular session 11/01/23 - mr. lehtinen makes a motion to approve minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and line item transfers",
+   "resolution": "warrant signed; no line item transfers",
+   "quote": "warrant total 12/19/23-1/2/24 $28,591.11 no questions from the committee.",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "received; kindergarten registration and calendar dates reported",
+   "quote": "kindergarten registration is now open",
+   "tags": [
+    "registration",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Donation from box tops",
+   "resolution": "accepted",
+   "quote": "ms. brzozoski makes a motion to accept this donation, mr. sculimbrene seconds the motion. all approve",
+   "tags": [
+    "donation",
+    "gifts"
+   ]
+  },
+  {
+   "topic": "2024-2025 school calendar",
+   "resolution": "discussed; no action recorded",
+   "quote": "we are piloting a different model for parent teacher conferences.",
+   "tags": [
+    "calendar",
+    "winter break",
+    "MCAS"
+   ]
+  },
+  {
+   "topic": "FY 25 budget development",
+   "resolution": "discussed; no action recorded",
+   "quote": "dr. burnham shares a slide that shows the details of the breakdown of positions with",
+   "tags": [
+    "budget",
+    "staffing",
+    "cuts"
+   ]
+  },
+  {
+   "topic": "Capital Planning Committee report",
+   "resolution": "received; capital plan rankings reported",
+   "quote": "mr. beardmore reports the capital planning committee met on december 21",
+   "tags": [
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "13. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "FY 25 Budget listed for future discussion",
+   "quote": "topics for future discussion fy 25 budget",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Executive session on collective bargaining and litigation, and adjournment",
+   "resolution": "executive session entered and adjourned by motion",
+   "quote": "mr. lehtinen makes a motion to enter executive session at 7:45 and adjourn immediately following",
+   "tags": [
+    "collective bargaining",
+    "litigation",
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "FY25 budget",
+  "staffing cuts",
+  "executive session",
+  "collective bargaining",
+  "ethics",
+  "warrants",
+  "donations",
+  "school calendar",
+  "capital planning",
+  "security"
+ ],
+ "dropped_unquoted_by_field": {}
 }

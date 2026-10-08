@@ -18,8 +18,9 @@
  *      `#root` and renders from scratch. So the prerendered markup carries NO hydration
  *      contract — it cannot desynchronise from the app, and a stale snapshot degrades to
  *      "a reader without JS sees slightly old prose", never to a broken page.
- *   2. Chrome is driven through its own `--dump-dom`, so there is no Puppeteer, no bundled
- *      Chromium download, and nothing added to package.json.
+ *   2. Chrome is driven directly -- over its own DevTools pipe by default, or through its
+ *      own `--dump-dom` with PRERENDER_ENGINE=launch -- so there is no Puppeteer, no
+ *      bundled Chromium download, and nothing added to package.json.
  *   3. Routes come from `src/routes.ts`, the table the app itself routes on, so a page
  *      added there cannot be silently missed here.
  *
@@ -34,10 +35,11 @@
  * a rendered page lost its module script (which would mean shipping a dead page).
  */
 import { createServer } from 'node:http'
-import { execFile } from 'node:child_process'
-import { readFile, writeFile, mkdir, readdir, stat, rm, rename } from 'node:fs/promises'
+import { execFile, spawn } from 'node:child_process'
+import { readFile, writeFile, mkdir, readdir, stat, rm, rename, mkdtemp } from 'node:fs/promises'
+import { tmpdir } from 'node:os'
 import { createHash } from 'node:crypto'
-import { existsSync } from 'node:fs'
+import { existsSync, rmSync } from 'node:fs'
 import { promisify } from 'node:util'
 import { join, extname, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -316,6 +318,17 @@ const CACHE = join(APP, '.prerender-cache')
 const CACHE_HTML = join(CACHE, 'html')
 const CACHE_DEPS = join(CACHE, 'deps.json')
 const JOBS = Math.max(1, Number(process.env.PRERENDER_JOBS) || 4)
+// `cdp` (default): ONE Chrome for the whole run, driven over the DevTools pipe -- see
+// CdpBrowser below. `launch`: the old way, a fresh Chrome per route with --dump-dom. Kept
+// for comparison and as the fallback if the pipe engine ever misbehaves.
+const ENGINE = process.env.PRERENDER_ENGINE || 'cdp'
+if (!['cdp', 'launch'].includes(ENGINE)) throw new Error(`PRERENDER_ENGINE=${ENGINE}: expected cdp or launch`)
+// A HANG MUST FAIL, NOT WAIT. With no timeout a wedged Chrome is awaited for ever: one sat
+// rendering a single route for two and a half days, holding its profile open, while the
+// build that started it was long gone. Five minutes is deliberately loose -- this is here
+// to catch a WEDGE, not to police a slow page, and 90s was tight enough to fail every
+// transcript page on the site.
+const ROUTE_TIMEOUT = 300_000
 const sha256 = buf => createHash('sha256').update(buf).digest('hex')
 const cachedFile = route => join(CACHE_HTML, `${encodeURIComponent(route)}.html`)
 const today = () => new Date().toLocaleDateString('en-CA')
@@ -430,7 +443,7 @@ async function main() {
     else render.push(route)
   }
   console.log(`${render.length} to render, ${reuse.length} reused (every input unchanged)` +
-    (process.env.FULL ? ' — FULL=1' : '') + `, ${JOBS} at a time`)
+    (process.env.FULL ? ' — FULL=1' : '') + `, ${JOBS} at a time, engine ${ENGINE}`)
 
   const servers = Array.from({ length: Math.min(JOBS, Math.max(render.length, 1)) }, () => serve(shell))
   for (const s of servers) await new Promise(r => s.listen(0, r))
@@ -444,6 +457,9 @@ async function main() {
   await sweepLeakedProfiles()
 
   console.log(`prerendering ${render.length} routes with ${chrome}\n`)
+  // ONE BROWSER, not one per route. Started lazily, so a build that reuses every page
+  // never launches Chrome at all.
+  const browser = ENGINE === 'cdp' ? new CdpBrowser(chrome) : null
 
   // WHAT CHROME LEAVES BEHIND, AND WHY WE NO LONGER TOUCH HOW IT MAKES IT.
   //
@@ -526,27 +542,25 @@ async function main() {
     for (let attempt = 0; attempt < 2 && html === undefined; attempt++) {
       server.seen.clear()
       try {
-        const { stdout } = await execFileAsync(chrome, [
-          '--headless', '--disable-gpu', '--no-sandbox', '--hide-scrollbars',
-          // React and recharts settle on timers; virtual time lets Chrome run them to
-          // completion immediately rather than us guessing at a sleep.
-          '--virtual-time-budget=10000',
-          '--run-all-compositor-stages-before-draw',
-          '--dump-dom', url,
-        ], {
-          maxBuffer: 64 * 1024 * 1024,
-          // A HANG MUST FAIL, NOT WAIT. With no timeout a wedged Chrome is awaited for
-          // ever: one sat rendering a single route for two and a half days, holding its
-          // profile open, while the build that started it was long gone. Five minutes is
-          // deliberately loose -- this is here to catch a WEDGE, not to police a slow page,
-          // and 90s was tight enough to fail every transcript page on the site.
-          timeout: 300_000,
-          killSignal: 'SIGKILL',
-        })
+        const stdout = browser
+          ? await browser.dumpDom(url, ROUTE_TIMEOUT, server)
+          : (await execFileAsync(chrome, [
+            '--headless', '--disable-gpu', '--no-sandbox', '--hide-scrollbars',
+            // React and recharts settle on timers; virtual time lets Chrome run them to
+            // completion immediately rather than us guessing at a sleep.
+            '--virtual-time-budget=10000',
+            '--run-all-compositor-stages-before-draw',
+            '--dump-dom', url,
+          ], {
+            maxBuffer: 64 * 1024 * 1024,
+            timeout: ROUTE_TIMEOUT,   // see ROUTE_TIMEOUT: a hang must fail, not wait
+            killSignal: 'SIGKILL',
+          })).stdout
         html = preamble + stdout.slice(stdout.indexOf('<html'))
       } catch (e) {
         lastErr = e
-        if (attempt === 0) console.log(`  retrying ${route} — chrome failed once`)
+        if (attempt === 0) console.log(`  retrying ${route} — chrome failed once` +
+          (e.cdp ? ` (${e.message})` : ''))
       }
     }
     delete deps[route]
@@ -562,7 +576,7 @@ async function main() {
       // This block is the refresh triage agent's, adopted from the fix it wrote in the
       // refresh worktree and could not commit. It is better than the version that was
       // here and it is kept in its own words.
-      const detail = [
+      const detail = lastErr.cdp ? lastErr.message : [
         lastErr.signal ? `signal ${lastErr.signal}` : null,
         Number.isInteger(lastErr.code) ? `exit ${lastErr.code}` : null,
         (lastErr.stderr || '').trim().split('\n').filter(Boolean).slice(0, 2).join(' / '),
@@ -624,6 +638,7 @@ async function main() {
   } finally {
     // WHETHER OR NOT THE RUN SUCCEEDED -- a build that dies half way is exactly the one
     // that used to leave 300 profiles behind.
+    if (browser) await browser.close()
     await sweepOurProfiles(startedAt)
     for (const s of servers) s.close()
     // Only routes this build still has; tmp + rename, so a killed run cannot leave half a
@@ -733,4 +748,296 @@ async function sweepOurProfiles(since) {
     } catch { /* vanished under us is the outcome we wanted */ }
   }
   if (gone) console.log(`cleaned up ${gone} Chrome profile(s) this run created`)
+}
+
+/** ONE HEADLESS CHROME FOR THE WHOLE RUN, driven over its DevTools pipe.
+ *
+ *  TJ, 8 October 2026: "CPU is being crushed." The launch engine started a fresh Chrome for
+ *  every route -- 1,223 launches in a full build -- and every launch on macOS wakes the
+ *  keychain and privacy daemons (secd, ctkd, tccd at 30-60% CPU each) and fseventsd for
+ *  the new profile. Load average reached 155. The render itself was never the cost; the
+ *  launch was.
+ *
+ *  So: launch once, render every route in it. What a route sees is kept identical to what
+ *  `--dump-dom --virtual-time-budget=10000` gave it, by doing what that flag does, step for
+ *  step -- read off Chromium's own components/headless/command_handler/headless_command.js:
+ *
+ *    createTarget(about:blank) -> attach (flatten) -> Page.enable,
+ *    setLifecycleEventsEnabled -> Page.navigate -> wait for the main frame's `load` ->
+ *    setVirtualTimePolicy {pauseIfNetworkFetchesPending, budget 10000,
+ *    maxVirtualTimeTaskStarvationCount 9999} -> wait for virtualTimeBudgetExpired ->
+ *    evaluate doctype + '\n' + outerHTML -> closeTarget
+ *
+ *  and `--dump-dom` then prints it with std::endl, hence the trailing newline added below.
+ *
+ *  A NEW TAB PER ROUTE, IN ONE BROWSER CONTEXT PER WORKER, AND NOTHING CARRIED BETWEEN
+ *  THEM. A launch gave every route an empty profile: no localStorage, no cookies, no cache.
+ *  That has to stay true, for two reasons. The app reads localStorage (WhatChanged,
+ *  track.ts), so state carried from one route to the next could change what renders. And a
+ *  warm cache answers the bundle and the data files without asking our server, so the
+ *  route's recorded deps would silently go missing and the reuse cache would trust a page
+ *  whose inputs it never saw. So: every route gets a NEW TAB (fresh document, fresh virtual
+ *  clock, fresh sessionStorage), with the cache disabled for it (which bypasses Blink's
+ *  in-process memory cache as well as the HTTP cache), and the origin's storage is cleared
+ *  when it closes.
+ *
+ *  WHY NOT A FRESH BROWSER CONTEXT PER ROUTE, which would be simpler: it was tried, and it
+ *  spawns a new renderer process per route, and on macOS EVERY PROCESS SPAWN is what wakes
+ *  secd and ctkd. Measured 8 October 2026 on 150 trivial pages: a context per page held
+ *  secd/ctkd at 20-48% CPU; a tab per page in one context with --process-per-site (so the
+ *  tab joins the context's existing renderer) held them at 0-9%, the same as reusing one tab
+ *  outright. The full build with a context per route ran secd at ~35% for its whole 12 min.
+ *  And why not reuse ONE tab: virtual time, once spent, carries into the next route and
+ *  skews the clock the 65 date-reading pages print, and sessionStorage survives.
+ *
+ *  THE PIPE, NOT A PORT. `--remote-debugging-pipe` talks over fds 3 and 4: nothing listens
+ *  on the network, there is no port to collide with a concurrent build, and if this process
+ *  dies the pipe closes and Chrome exits with it rather than leaking.
+ *
+ *  --user-data-dir IS SAFE HERE, and was a disaster in the launch engine. There it meant a
+ *  full first-run profile initialisation on EVERY launch (every route hit the 300s
+ *  timeout). Here it is paid once per run, into a fresh temp dir that close() deletes. The
+ *  mock keychain stops the profile reaching for the login keychain at all.
+ *
+ *  If Chrome dies, every in-flight route fails (and is retried once, as before), and the
+ *  next route starts a new browser. */
+class CdpBrowser {
+  constructor(chrome) {
+    this.chrome = chrome
+    this.starting = null
+    this.proc = null
+    this.dirs = []
+    this.launches = 0
+    // A run killed by a signal never reaches the finally that calls close(). Chrome exits
+    // by itself when the pipe closes, but its temp profile would stay; remove it here.
+    process.once('exit', () => {
+      this._kill()
+      for (const d of this.dirs) { try { rmSync(d, { recursive: true, force: true }) } catch { /* gone */ } }
+    })
+    for (const sig of ['SIGINT', 'SIGTERM', 'SIGHUP']) process.once(sig, () => process.exit(130))
+  }
+
+  start() {
+    if (this.proc && !this.dead) return Promise.resolve()
+    if (!this.starting) {
+      this.starting = this._start().finally(() => { this.starting = null })
+    }
+    return this.starting
+  }
+
+  async _start() {
+    const dir = await mkdtemp(join(tmpdir(), 'prerender-chrome-'))
+    this.dirs.push(dir)
+    const proc = spawn(this.chrome, [
+      // The launch engine's flags, unchanged...
+      '--headless', '--disable-gpu', '--no-sandbox', '--hide-scrollbars',
+      '--run-all-compositor-stages-before-draw',
+      // ...and what a long-lived browser needs instead of --dump-dom.
+      '--remote-debugging-pipe', `--user-data-dir=${dir}`,
+      // A new tab joins its context's existing renderer rather than spawning one -- see above.
+      '--process-per-site',
+      '--use-mock-keychain', '--password-store=basic',
+      '--no-first-run', '--no-default-browser-check',
+      '--disable-background-networking', '--disable-component-update',
+      'about:blank',
+    ], { stdio: ['ignore', 'ignore', 'pipe', 'pipe', 'pipe'] })
+    this.launches++
+    this.proc = proc
+    this.dead = false
+    this.nextId = 0
+    this.pending = new Map()
+    this.listeners = new Set()
+    this.contexts = new Map()   // worker -> its browser context in THIS browser
+    this.stderr = []
+    proc.stdio[2].setEncoding('utf8')
+    proc.stdio[2].on('data', d => {
+      this.stderr.push(...d.split('\n').filter(Boolean))
+      if (this.stderr.length > 20) this.stderr.splice(0, this.stderr.length - 20)
+    })
+    let buf = ''
+    proc.stdio[4].setEncoding('utf8')
+    proc.stdio[4].on('data', d => {
+      buf += d
+      let i
+      while ((i = buf.indexOf('\0')) >= 0) {
+        const msg = JSON.parse(buf.slice(0, i))
+        buf = buf.slice(i + 1)
+        this._dispatch(msg)
+      }
+    })
+    proc.stdio[3].on('error', () => {})
+    proc.on('exit', (code, signal) => {
+      if (this.proc !== proc) return
+      this.dead = true
+      const why = `chrome exited (${signal ? `signal ${signal}` : `exit ${code}`})` +
+        (this.stderr.length ? ` — ${this.stderr.slice(-2).join(' / ')}` : '')
+      for (const { reject } of this.pending.values()) reject(cdpError(why))
+      this.pending.clear()
+      for (const l of this.listeners) l.fail(cdpError(why))
+    })
+    // The browser is ready when it answers.
+    await this.send('Browser.getVersion', {}, undefined, 60_000)
+  }
+
+  _dispatch(msg) {
+    if (msg.id !== undefined) {
+      const p = this.pending.get(msg.id)
+      if (!p) return
+      this.pending.delete(msg.id)
+      if (msg.error) p.reject(cdpError(`${p.method}: ${msg.error.message}`))
+      else p.resolve(msg.result)
+      return
+    }
+    for (const l of [...this.listeners]) l.event(msg)
+  }
+
+  send(method, params = {}, sessionId, timeout = ROUTE_TIMEOUT) {
+    if (this.dead) return Promise.reject(cdpError('chrome is not running'))
+    const id = ++this.nextId
+    const msg = { id, method, params }
+    if (sessionId) msg.sessionId = sessionId
+    return new Promise((resolve, reject) => {
+      const timer = setTimeout(() => {
+        this.pending.delete(id)
+        reject(cdpError(`${method}: no answer in ${timeout / 1000}s`))
+      }, timeout)
+      this.pending.set(id, {
+        method,
+        resolve: v => { clearTimeout(timer); resolve(v) },
+        reject: e => { clearTimeout(timer); reject(e) },
+      })
+      this.proc.stdio[3].write(JSON.stringify(msg) + '\0')
+    })
+  }
+
+  /** Every event for one session, kept from the moment of attaching, so an event that
+   *  arrives before anybody waits for it is not lost. */
+  _session(sessionId) {
+    const log = []
+    let waiters = []
+    let failure = null
+    const listener = {
+      event: msg => {
+        if (msg.method === 'Target.detachedFromTarget' && msg.params.sessionId === sessionId) {
+          listener.fail(cdpError('the page was detached (renderer gone)'))
+          return
+        }
+        if (msg.sessionId !== sessionId) return
+        if (msg.method === 'Inspector.targetCrashed') {
+          listener.fail(cdpError('renderer crashed (Inspector.targetCrashed)'))
+          return
+        }
+        log.push(msg)
+        waiters = waiters.filter(w => !w.test(msg))
+      },
+      fail: e => { failure = e; for (const w of waiters) w.reject(e); waiters = [] },
+    }
+    this.listeners.add(listener)
+    return {
+      waitFor: (pred) => new Promise((resolve, reject) => {
+        if (failure) return reject(failure)
+        const hit = log.find(pred)
+        if (hit) return resolve(hit)
+        waiters.push({ test: m => (pred(m) ? (resolve(m), true) : false), reject })
+      }),
+      dispose: () => this.listeners.delete(listener),
+    }
+  }
+
+  /** What `chrome --headless --virtual-time-budget=10000 --dump-dom <url>` prints.
+   *  `worker` is anything identifying the caller; its routes share a browser context. */
+  async dumpDom(url, timeout, worker) {
+    await this.start()
+    const browser = this.proc
+    if (!this.contexts.has(worker)) {
+      this.contexts.set(worker, this.send('Target.createBrowserContext', {}).then(r => r.browserContextId))
+    }
+    let browserContextId
+    try { browserContextId = await this.contexts.get(worker) } catch (e) { this.contexts.delete(worker); throw e }
+    let targetId, sessionId, session, timer, ok = false
+    try {
+      ({ targetId } = await this.send('Target.createTarget', { url: 'about:blank', browserContextId }))
+      ;({ sessionId } = await this.send('Target.attachToTarget', { targetId, flatten: true }))
+      session = this._session(sessionId)
+      const s = (m, p) => this.send(m, p, sessionId)
+      const work = (async () => {
+        await s('Inspector.enable')
+        // Every request reaches our server, as it did from an empty profile.
+        await s('Network.enable')
+        await s('Network.setCacheDisabled', { cacheDisabled: true })
+        await s('Page.enable')
+        await s('Page.setLifecycleEventsEnabled', { enabled: true })
+        const nav = await s('Page.navigate', { url })
+        if (nav.errorText || nav.isDownload) throw cdpError(`page load failed: ${nav.errorText || 'download'}`)
+        await session.waitFor(m => m.method === 'Page.lifecycleEvent' &&
+          m.params.name === 'load' && m.params.frameId === nav.frameId)
+        const expired = session.waitFor(m => m.method === 'Emulation.virtualTimeBudgetExpired')
+        await s('Emulation.setVirtualTimePolicy', {
+          budget: 10000, maxVirtualTimeTaskStarvationCount: 9999, policy: 'pauseIfNetworkFetchesPending',
+        })
+        await expired
+        const r = await s('Runtime.evaluate', {
+          expression: "(document.doctype ? new XMLSerializer().serializeToString(document.doctype) + '\\n' : '')" +
+            ' + document.documentElement.outerHTML',
+          returnByValue: true,
+        })
+        if (r.exceptionDetails || typeof r.result?.value !== 'string') throw cdpError('could not read the DOM')
+        return r.result.value + '\n'
+      })()
+      const out = await Promise.race([work, new Promise((_, reject) => {
+        timer = setTimeout(() => reject(cdpError(`no DOM in ${timeout / 1000}s — wedged`)), timeout)
+      })])
+      ok = true
+      return out
+    } finally {
+      clearTimeout(timer)
+      session?.dispose()
+      // Closing the page must work; if Chrome will not even do that, it is wedged as a
+      // whole, and the next route gets a new one.
+      try {
+        if (ok) {
+          // Nothing this route stored may reach the next one in this context.
+          await this.send('Storage.clearDataForOrigin',
+            { origin: new URL(url).origin, storageTypes: 'all' }, sessionId, 15_000)
+        }
+        if (targetId) await this.send('Target.closeTarget', { targetId }, undefined, 15_000)
+        if (!ok) {
+          // A failed route may have left anything behind: its context goes with it.
+          this.contexts.delete(worker)
+          await this.send('Target.disposeBrowserContext', { browserContextId }, undefined, 15_000)
+        }
+      } catch (e) {
+        if (this.proc === browser && !this.dead) {
+          console.log(`  chrome did not close a page (${e.message}) — restarting it`)
+          this._kill()
+        }
+      }
+    }
+  }
+
+  _kill() {
+    if (this.proc && !this.dead) {
+      this.dead = true
+      try { this.proc.kill('SIGKILL') } catch { /* already gone */ }
+    }
+  }
+
+  /** Always: the browser stopped and every profile this run made deleted. */
+  async close() {
+    const proc = this.proc
+    if (proc && !this.dead) {
+      const exited = new Promise(r => proc.once('exit', r))
+      this.send('Browser.close', {}, undefined, 5_000).catch(() => {})
+      await Promise.race([exited, new Promise(r => setTimeout(r, 5_000))])
+      if (proc.exitCode === null && proc.signalCode === null) this._kill()
+    }
+    for (const d of this.dirs) await rm(d, { recursive: true, force: true }).catch(() => {})
+    if (this.launches) console.log(`chrome launched ${this.launches} time(s) for this run; its profile removed`)
+  }
+}
+
+function cdpError(message) {
+  const e = new Error(message)
+  e.cdp = true
+  return e
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-01-09",
  "docid": "6335",
@@ -12,47 +12,298 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Don Gagne as Facilities Superintendent",
+   "motion": "Ratify the Town Manager's appointment of Don Gagne as Facilities Superintendent.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Selectman Alonzo",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "chair jeffreys moved to ratify the town manager's appointment of don gagne as facilities superintendent. selectman alonzo seconded the motion. roll call vote: member alonzo, aye; member emkey, aye; vice chair franco, aye; chair jeffreys, aye. the motion passed unanimously (4-0-0)."
+   "quote": "chair jeffreys moved to ratify the town manager's appointment of don gagne as facilities superintendent. selectman alonzo seconded the motion."
   },
   {
-   "motion": "Approve the Class II Auto Dealer License renewal for Baker Enterprises d/b/a The Auto Barn at 53 Chase Road",
+   "motion": "Approve the Class II Auto Dealer License renewal for Baker Enterprises d/b/a The Auto Barn at 53 Chase Road.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Lou Franco",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "member alonzo moved to approve the class ii auto dealer license renewal for baker enterprises d/b/a the auto barn at 53 chase road. lou franco seconded the motion. roll call vote: member alonzo, aye; member emkey, aye; vice chair franco, aye; chair jeffreys, aye. the motion passed unanimously (4-0-0)."
+   "quote": "member alonzo moved to approve the class ii auto dealer license renewal for baker enterprises d/b/a the auto barn at 53 chase road."
   },
   {
-   "motion": "Open the Annual Town Meeting warrant on January 9, 2024, and close the warrant on March 18, 2024, at 4:00 PM",
+   "motion": "Open the Annual Town Meeting warrant on January 9, 2024, and close it on March 18, 2024, at 4:00 PM.",
    "moved_by": "Chair Jeffreys",
    "seconded_by": "Vice Chair Franco",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "chair jeffreys moved to open the annual town meeting warrant on january 9, 2024, and close the warrant on march 18, 2024, at 4:00 pm. vice chair franco seconded the motion. roll call vote: member alonzo, aye; member emkey, aye; vice chair franco, aye; chair jeffreys, aye. the motion passed unanimously (4-0-0)."
+   "outcome": "passed 4-0-0",
+   "procedural": false,
+   "quote": "chair jeffreys moved to open the annual town meeting warrant on january 9, 2024, and close the warrant on march 18, 2024, at 4:00 pm."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Member Emkey",
    "seconded_by": "Vice Chair Franco",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "member emkey moved to adjourn the meeting. vice chair franco seconded the motion. roll call vote: member alonzo, aye; member emkey, aye; vice chair franco, aye; chair jeffreys, aye. the motion passed unanimously (4-0-0)."
+   "quote": "member emkey moved to adjourn the meeting. vice chair franco seconded the motion."
   },
   {
-   "motion": "Approve minutes from January 9, 2024",
+   "motion": "Approve the minutes of January 9, 2024.",
    "moved_by": "Member Tom Alonzo",
    "seconded_by": "Member Renee Emkey",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": true,
    "quote": "member tom alonzo made motion to approve minutes from january 9, 2024. seconded by member renee emkey. all, aye. passed unanimously (5-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The last vote (approving the January 9 minutes) occurred at a subsequent Select Board meeting on January 21, 2025, but is documented in this minutes record. Four votes occurred during the January 9, 2024 meeting itself.",
- "cost_usd": 0.0810671
+ "note": "Clean digital text, not a scan; every page read. Five votes recorded with motions, all with printed counts. The 2024 meeting had four members present, yet the approval of these minutes (Jan 21, 2025) is printed as 5-0-0; recorded as printed, unreconciled. The accounts payable warrant of $1,850,331.23 was presented for approval but the minutes record no vote on it. The police-audit denial is recorded as 'unanimously agreed' with no motion, mover or count, so it is listed as a decision, not a vote. Dave Passios is treated as present because he spoke in public comment; the minutes do not say how he attended. Annie Aubrey (minutes author) and absent or non-appearing persons named in the text (George Burden, Don Gagne, Bill Bernard, Tim Wilsmer) are not listed as attendees.",
+ "cost_usd": 0.0197195,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, lou franco, tom alonzo (remote via zoom), renee emkey"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, lou franco, tom alonzo (remote via zoom), renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member (Selectman)",
+   "status": "remote",
+   "quote": "tom alonzo (remote via zoom)"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, lou franco, tom alonzo (remote via zoom), renee emkey"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "remote",
+   "quote": "also present: heather lemieux, town manager (remote via zoom)"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Selectman",
+   "status": "absent",
+   "quote": "absent: caesar nuzzolo"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Public",
+   "status": "present",
+   "quote": "dave passios inquired about the status of the health care stabilization fund created to buffer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board unanimously agreed to deny the request for a financial audit of the police department, with no motion or vote count recorded.",
+   "quote": "the board unanimously agreed to deny this request, noting chair jeffreys"
+  },
+  {
+   "decision": "Board members suggested limiting the time staff spent responding to Burden's correspondence and referring the resident back to the board for matters needing in-depth discussion.",
+   "quote": "board members suggested limiting the time staff spent responding to"
+  },
+  {
+   "decision": "The Status Update on Town Manager Goals was postponed to the following week's meeting.",
+   "quote": "this item was postponed to the following week"
+  },
+  {
+   "decision": "Town Manager Lemieux was guided to continue providing clear, succinct responses regarding the resident's communications.",
+   "quote": "guidance to continue providing clear, succinct responses"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "An accounts payable warrant was presented for approval; the minutes record no vote on it.",
+   "figures_as_printed": [
+    "$1,850,331.23"
+   ],
+   "quote": "an accounts payable warrant in the amount of $1,850,331.23 was presented for approval."
+  },
+  {
+   "topic": "Health insurance costs and FY2025 school budget",
+   "what_was_recorded": "The School Committee's report described health insurance costs expected to rise by 8 to 10%, alongside lost ESSER funds and a potential reduction of 28 positions.",
+   "figures_as_printed": [
+    "8 to 10%"
+   ],
+   "quote": "highlighting the significant impact of health insurance costs expected to rise by 8 to 10%."
+  },
+  {
+   "topic": "Health care stabilization fund",
+   "what_was_recorded": "In response to a public question, the Town Manager reported a portion of the fund had been used for the current year's budget, with the remainder in the account.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "with approximately $500,000 remaining in the account"
+  },
+  {
+   "topic": "Utility costs and municipal electricity aggregation",
+   "what_was_recorded": "A School Committee request for guidance on utility costs for the next fiscal year was discussed, given the expiring municipal electricity aggregation in November; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "chair jeffreys discussed a request from the school committee regarding guidance on utility"
+  },
+  {
+   "topic": "Drainage and stormwater expenditure",
+   "what_was_recorded": "The DPW Director presented to the Stormwater Task Force on current efforts and expenditure on drainage; no figure was printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "current efforts and expenditure pertaining to drainage and stormwater issues"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Town Manager Lemieux",
+   "stated_role": "Town Manager",
+   "topic": "thanks to DPW and National Law Enforcement Day",
+   "quote": "town manager lemieux thanked the dpw for their efforts during the recent storms"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Public",
+   "topic": "status of the health care stabilization fund",
+   "quote": "dave passios inquired about the status of the health care stabilization fund created to buffer"
+  },
+  {
+   "speaker": "Chair Jeffreys",
+   "stated_role": "Board",
+   "topic": "thanks to DPW for snow removal",
+   "quote": "chair jeffreys echoed the thanks to the dpw for their excellent snow removal work"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Board comments",
+   "resolution": "no action",
+   "quote": "member emkey thanked the dpw for their work during the recent double storm",
+   "tags": [
+    "dpw",
+    "storm",
+    "board comments"
+   ]
+  },
+  {
+   "topic": "Communications from other boards: School Committee utility cost guidance",
+   "resolution": "no action",
+   "quote": "chair jeffreys discussed a request from the school committee regarding guidance on utility",
+   "tags": [
+    "utilities",
+    "school committee",
+    "electricity"
+   ]
+  },
+  {
+   "topic": "Appointments: ratify Facilities Superintendent Don Gagne",
+   "resolution": "approved",
+   "quote": "town manager lemieux requested the board ratify the appointment of don gagne as facilities superintendent.",
+   "tags": [
+    "appointments",
+    "facilities",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Response to resident George Burden and request for police financial audit",
+   "resolution": "audit request denied (unanimous, no motion recorded); staff responses limited",
+   "quote": "response to resident george burden regarding complaints and request for financial audit",
+   "tags": [
+    "public records",
+    "police",
+    "complaints",
+    "audit"
+   ]
+  },
+  {
+   "topic": "Class II Auto Dealer License renewal, The Auto Barn",
+   "resolution": "approved",
+   "quote": "class ii auto dealer license renewal for the auto barn, 53 chase road",
+   "tags": [
+    "licensing",
+    "business",
+    "auto dealer"
+   ]
+  },
+  {
+   "topic": "Status update on Town Manager goals",
+   "resolution": "postponed to the following week",
+   "quote": "this item was postponed to the following week",
+   "tags": [
+    "town manager",
+    "goals"
+   ]
+  },
+  {
+   "topic": "Open Annual Town Meeting warrant",
+   "resolution": "approved",
+   "quote": "vote to open the annual town meeting warrant on january 9, 2024 and close the warrant",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Warrants: accounts payable",
+   "resolution": "presented for approval; no vote recorded",
+   "quote": "an accounts payable warrant in the amount of $1,850,331.23 was presented for approval.",
+   "tags": [
+    "warrant",
+    "accounts payable",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Committee reports: School Committee, Stormwater Task Force, Master Plan Steering Committee",
+   "resolution": "no action",
+   "quote": "school committee: member emkey reported on the recent school committee meeting",
+   "tags": [
+    "school budget",
+    "stormwater",
+    "master plan",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "dave passios inquired about the status of the health care stabilization fund created to buffer",
+   "tags": [
+    "public comment",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:05 PM",
+   "quote": "member emkey moved to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "town manager",
+  "appointments",
+  "town meeting warrant",
+  "warrants",
+  "accounts payable",
+  "auto dealer license",
+  "police audit request",
+  "public records",
+  "health insurance",
+  "school budget",
+  "utilities",
+  "stormwater",
+  "master plan",
+  "public comment",
+  "remote participation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

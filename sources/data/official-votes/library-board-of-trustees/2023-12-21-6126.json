@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2023-12-21",
  "docid": "6126",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session",
+   "motion": "Enter executive session at 6:52.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
    "outcome": "not stated",
@@ -20,23 +20,23 @@
    "quote": "dick made a motion to enter executive session at 6:52, seconded by donna."
   },
   {
-   "motion": "Accept the minutes of the October 16th executive session as amended",
+   "motion": "Accept the minutes of the October 16th executive session as amended.",
    "moved_by": "Dick",
    "seconded_by": "Laura",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "dick made a motion to accept the minutes of the october 16th executive session as amended, seconded by laura."
+   "quote": "dick made a motion to accept the minutes of the october 16th executive session as amended, seconded by"
   },
   {
-   "motion": "Adjourn the executive session",
+   "motion": "Adjourn the executive session.",
    "moved_by": "Maia",
    "seconded_by": "Dick",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "maia made a motion to adjourn the executive session, seconded by dick. executive session was adjourned at 6:53."
+   "quote": "maia made a motion to adjourn the executive session, seconded by dick."
   },
   {
-   "motion": "Accept the minutes of November 16, 2023 as amended",
+   "motion": "Accept the minutes of November 16, 2023 as amended.",
    "moved_by": "Dick",
    "seconded_by": "Laura",
    "outcome": "passed unanimously",
@@ -44,7 +44,7 @@
    "quote": "dick made a motion to accept the minutes of november 16, 2023 as amended, seconded by laura. the motion passed unanimously."
   },
   {
-   "motion": "Extend support for H. 3239 regarding access to E-books and E-audio books",
+   "motion": "Extend the board's support to H. 3239 (access to E-books and E-audio books), to be requested of the Selectboard.",
    "moved_by": "Laura",
    "seconded_by": "Dick",
    "outcome": "passed unanimously",
@@ -52,23 +52,273 @@
    "quote": "laura made a motion to extend our support, seconded by dick. the motion passed unanimously."
   },
   {
-   "motion": "Accept the Director's evaluation as amended",
+   "motion": "Accept the Director's evaluation as amended.",
    "moved_by": "Dick",
    "seconded_by": "Laura",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "dick made a motion to accept the director's evaluation as amended, seconded by laura. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Maia",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by dick. seconded by maia. meeting was adjourned at 9:12 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0820021
+ "dropped_unquoted": 1,
+ "note": "Text extract of a 2-page minutes document; pages 3-8 are blank. Five of the seven recorded motions carry no printed outcome (executive session entry and exit, approval of October executive session minutes, and the closing adjournment), so they are recorded as 'not stated'. No roll-call counts are printed; 'passed unanimously' is recorded as printed. Public comment: none. No reserve fund or line-item transfers appear. Quote for the October 16 executive session motion is split across a line break in the source; the quote here is the first part of that line, verbatim.",
+ "cost_usd": 0.01472549,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:51 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: jana-lee balish"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harry suggested the board stay on top of ARPA projects and communicate with the Town Manager; no vote was taken.",
+   "quote": "harry suggested we stay on top of this and communicate with the town manager."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget expended to date (Director's Report)",
+   "what_was_recorded": "The Director reported the library budget was 41% expended at the December report, with month 6 of 12 elapsed.",
+   "figures_as_printed": [
+    "41%"
+   ],
+   "quote": "december is month 6 out of 12. the budget is 41% expended."
+  },
+  {
+   "topic": "Utility charges (Director's Report)",
+   "what_was_recorded": "Electricity usage was a bit down with credits received, and heating charges were down a bit.",
+   "figures_as_printed": [],
+   "quote": "electricity usage is a bit down, have had credits. heating charges are down a bit."
+  },
+  {
+   "topic": "Office supplies spending",
+   "what_was_recorded": "Office supplies spending was reported as behind schedule by about $500.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "office supplies is behind schedule by about $500."
+  },
+  {
+   "topic": "Library materials costs from new databases",
+   "what_was_recorded": "Newly added databases will increase library materials costs by about $8-9k.",
+   "figures_as_printed": [
+    "$8-9k"
+   ],
+   "quote": "some databases have been added which will increase materials costs by about $8-9k."
+  },
+  {
+   "topic": "Camera installation estimate",
+   "what_was_recorded": "The Director verified with Verdaka that the estimate to install 12 cameras was within the average range; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "muir verified with verdaka that the estimate to install 12 cameras was within the average range"
+  },
+  {
+   "topic": "HVAC work funding",
+   "what_was_recorded": "The HVAC work will be a project under the town capital budget, per discussion with the ARPA contact.",
+   "figures_as_printed": [],
+   "quote": "the hvac work will be a project under the town capital budget."
+  },
+  {
+   "topic": "Library budget needs with Town Manager",
+   "what_was_recorded": "The Director met with the Town Manager to discuss library budget needs; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "muir also met with the town manager to discuss library budget needs."
+  },
+  {
+   "topic": "LSTA grant application and FY25 action plan",
+   "what_was_recorded": "The Director submitted a letter of intent for the next round of LSTA grants and an updated FY25 action plan; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "muir submitted a letter of intent for the next round of lsta grants and an updated action plan for fy25"
+  },
+  {
+   "topic": "ARPA funds",
+   "what_was_recorded": "No ARPA update this month; the board discussed making sure ARPA funds are spent within the required time. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "harry said we want to make sure the funds are spent within the required time."
+  },
+  {
+   "topic": "Library invested funds",
+   "what_was_recorded": "The invested funds were reported as up a bit; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the funds are up a bit."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive Session",
+   "resolution": "entered at 6:52 and adjourned at 6:53; October 16 executive session minutes accepted as amended (motion, no result recorded)",
+   "quote": "dick made a motion to enter executive session at 6:52, seconded by donna.",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "November 16, 2023 minutes approved as amended",
+   "quote": "dick made a motion to accept the minutes of november 16, 2023 as amended, seconded by laura. the motion passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "noted; staffing interviews, programs, IT, cameras, UPS, and the Chris Ruth and Town Manager meetings reported",
+   "quote": "december is month 6 out of 12. the budget is 41% expended.",
+   "tags": [
+    "director's report",
+    "budget",
+    "staffing",
+    "programs",
+    "IT",
+    "security cameras"
+   ]
+  },
+  {
+   "topic": "Vote to Request Selectboard Communicate Support for H. 3239",
+   "resolution": "support extended, passed unanimously",
+   "quote": "laura made a motion to extend our support, seconded by dick. the motion passed unanimously.",
+   "tags": [
+    "legislation",
+    "e-books",
+    "state bill"
+   ]
+  },
+  {
+   "topic": "Library Invested Funds Update",
+   "resolution": "noted",
+   "quote": "the funds are up a bit.",
+   "tags": [
+    "investments",
+    "town reporting"
+   ]
+  },
+  {
+   "topic": "Library Sign Update",
+   "resolution": "discussed; no action recorded",
+   "quote": "laura brought in some pictures of signs on existing town buildings for comparison.",
+   "tags": [
+    "signage",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "ARPA Update",
+   "resolution": "no update; board asked to stay on top of it",
+   "quote": "harry suggested we stay on top of this and communicate with the town manager.",
+   "tags": [
+    "ARPA",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation Update/Vote",
+   "resolution": "accepted as amended, passed unanimously",
+   "quote": "dick made a motion to accept the director's evaluation as amended, seconded by laura. the motion passed unanimously.",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "noted",
+   "quote": "they discussed the spring plant sale.",
+   "tags": [
+    "friends group",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "noted; December 2024 meeting date request raised",
+   "quote": "donna asked if we could do the december 2024 meeting a week early.",
+   "tags": [
+    "scheduling",
+    "town elections"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:12 p.m.",
+   "quote": "motion to adjourn by dick. seconded by maia. meeting was adjourned at 9:12 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "director's report",
+  "budget",
+  "ARPA",
+  "grants",
+  "LSTA",
+  "signage",
+  "director evaluation",
+  "executive session",
+  "H. 3239",
+  "security cameras",
+  "HVAC",
+  "personnel"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

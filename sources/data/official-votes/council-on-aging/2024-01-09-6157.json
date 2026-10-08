@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2024-01-09",
  "docid": "6157",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the December 12, 2023 minutes",
+   "motion": "Approve the December 12, 2023 minutes.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Mr. Lincoln",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "ms. digiacomo motioned to approve the december 12, 2023 minutes. mr. lincoln seconded the motion. all approved and motion carried."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed",
@@ -29,6 +29,301 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted from scanned document via macOS Vision.",
- "cost_usd": 0.0693963
+ "note": "Text is macOS Vision OCR, not a clean original; some quotes are collapsed across OCR line breaks, and OCR artefacts remain (e.g. '300*h' in the 300th celebration item, and item 5 of Current Business is misplaced). Two votes recorded with no count, only 'All approved and motion carried' and 'All approved and the motion was carried', so outcome is 'passed'. The printed 'Mr. Lincoln' is not given a first name in the minutes; Pete Lincoln is the only male Lincoln listed, so the link is inferred from context, not printed. No dollar figures appear anywhere in the text, so budget_items record money discussed without figures. The 'Next Meeting' line prints 'Tuesday, February 13, 2023', which conflicts with the 2024 meeting date (Feb 13 2024 is a Tuesday; Feb 13 2023 was a Monday); not resolved here. Guest Lou Franco is printed as 'Mr. Franco' in the body.",
+ "cost_usd": 0.01658849,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "Cathy Beale",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "James McGuigan",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "Helen Balcom",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "Michele Beauvais",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, cathy beale, jane rabbitt, james mcguigan, susan o'sullivan, helen balcom, betty digiacomo, judy tarbell & michele beauvais."
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "absent",
+   "quote": "excused diane nowd guests selectboard member lou franco, marilyn poor & matthew allison"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Selectboard member",
+   "status": "present",
+   "quote": "excused diane nowd guests selectboard member lou franco, marilyn poor & matthew allison"
+  },
+  {
+   "name": "Marilyn Poor",
+   "status": "present",
+   "quote": "excused diane nowd guests selectboard member lou franco, marilyn poor & matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "excused diane nowd guests selectboard member lou franco, marilyn poor & matthew allison"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director Susan Doherty will make a request in the FY25 COA budget that the Meal Site Manager position be made a full-time, benefited position.",
+   "quote": "ms. doherty will make a request that the meal site manager position be made into a full-time, benefited position."
+  },
+  {
+   "decision": "Director Susan Doherty will reach out to Dan Nadareski about board members' town email difficulties.",
+   "quote": "ms. doherty will reach out to dan nadareski."
+  },
+  {
+   "decision": "Chris Ruth, Outdoor Electrical Facilities Manager, will obtain estimates on the outdoor electrical project.",
+   "quote": "outdoor electrical facilities manager chris ruth will be obtaining estimates on the electrical project."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY25 COA budget request: Meal Site Manager position",
+   "what_was_recorded": "The director will request that the Meal Site Manager position become a full-time, benefited position in the FY25 budget request. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty will make a request that the meal site manager position be made into a full-time, benefited position."
+  },
+  {
+   "topic": "Handicap door installation funded by state grant",
+   "what_was_recorded": "Director obtained a state incentive grant to pay for an automated handicap door in the main room. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty obtained a state incentive grant. this money will be used to install an automated handicap door in the main room."
+  },
+  {
+   "topic": "Outdoor electrical project estimates",
+   "what_was_recorded": "Estimates are being obtained for the outdoor electrical project. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "outdoor electrical facilities manager chris ruth will be obtaining estimates on the electrical project."
+  },
+  {
+   "topic": "Bocce court funding",
+   "what_was_recorded": "Lumbar for the bocce court project will be purchased through Eagle House Supporters. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "lumbar will be purchased through eagle house supporters for the project."
+  },
+  {
+   "topic": "Senior tax relief legislation",
+   "what_was_recorded": "Board was told the senior tax relief measure is moving slowly through the legislature. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "mr. franco stated that it is moving slowly through legislature, but moving in the right direction."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Tarbell",
+   "topic": "death of former board member Rene Shattuck",
+   "quote": "ms. tarbell commented that former board member rene shattuck passed away recently."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: Plan Lunenburg Survey",
+   "resolution": "noted; surveys available at the LAAC, due 1/25/24",
+   "quote": "ms. lincoln is encouraging everyone to take a plan lunenburg survey.",
+   "tags": [
+    "survey",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Public comment: moment of silence for Rene Shattuck",
+   "resolution": "moment of silence observed",
+   "quote": "ms. tarbell commented that former board member rene shattuck passed away recently.",
+   "tags": [
+    "memorial"
+   ]
+  },
+  {
+   "topic": "Minutes approval, December 12, 2023",
+   "resolution": "approved",
+   "quote": "ms. digiacomo motioned to approve the december 12, 2023 minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: Century Club YouTube",
+   "resolution": "noted",
+   "quote": "the birthday celebrations of our recent centenarians are available to watch on you tube.",
+   "tags": [
+    "century club",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "New business: FY25 COA budget request",
+   "resolution": "director to request full-time, benefited Meal Site Manager position",
+   "quote": "ms. doherty will make a request that the meal site manager position be made into a full-time, benefited position.",
+   "tags": [
+    "budget",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Current business: Lunenburg Master Plan",
+   "resolution": "noted; two presentations set for 2/1/24",
+   "quote": "there will be two presentations to discuss the master plan.",
+   "tags": [
+    "master plan",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Current business: Senior tax relief",
+   "resolution": "noted; moving through legislature",
+   "quote": "mr. franco stated that it is moving slowly through legislature, but moving in the right direction.",
+   "tags": [
+    "tax relief",
+    "state legislation"
+   ]
+  },
+  {
+   "topic": "Current business: COA board members' town email",
+   "resolution": "director to follow up",
+   "quote": "some board members are still having difficulty with their emails.",
+   "tags": [
+    "email",
+    "board administration"
+   ]
+  },
+  {
+   "topic": "Current business: Lunenburg 300th celebration",
+   "resolution": "discussed; ideas raised, volunteers sought",
+   "quote": "mr. lincoln has suggested having a first night with fireworks.",
+   "tags": [
+    "300th anniversary",
+    "events",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Current business: potential LAAC recreation area programs",
+   "resolution": "noted; sound and lighting discussion planned for spring",
+   "quote": "steve archambault will come to the laac to discuss sound & lighting in the spring.",
+   "tags": [
+    "programs",
+    "events"
+   ]
+  },
+  {
+   "topic": "Current business: COA board member opening",
+   "resolution": "noted; position not filled",
+   "quote": "council on aging board member opening position has not been filled at this time.",
+   "tags": [
+    "board vacancy"
+   ]
+  },
+  {
+   "topic": "Building & Grounds report",
+   "resolution": "noted; patio, fence, bocce court, electrical, handicap door updates",
+   "quote": "recent snow has delayed the installation of the fence..",
+   "tags": [
+    "facilities",
+    "grounds",
+    "accessibility"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "noted; group not meeting until March",
+   "quote": "the eagle house supporters will not be meeting until march.",
+   "tags": [
+    "eagle house supporters"
+   ]
+  },
+  {
+   "topic": "Upcoming events",
+   "resolution": "noted",
+   "quote": "zumba at tcp gym - fridays, 1/5 through 2/9 @ 1pm",
+   "tags": [
+    "events",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Notices, communications and board comment",
+   "resolution": "no action; both recorded as None",
+   "quote": "notices & communications none. board comment none.",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:55 am",
+   "quote": "the meeting concluded at 10:55 am.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "minutes approval",
+  "budget",
+  "staffing",
+  "facilities",
+  "grounds",
+  "accessibility",
+  "master plan",
+  "events",
+  "programs",
+  "tax relief",
+  "state legislation",
+  "board vacancy",
+  "memorial",
+  "volunteers",
+  "email"
+ ],
+ "dropped_unquoted_by_field": {}
 }

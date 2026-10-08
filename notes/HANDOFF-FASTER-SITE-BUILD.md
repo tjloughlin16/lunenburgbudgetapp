@@ -100,3 +100,20 @@ the prerender fails any page containing a `localhost:<port>` address.
 Still open: 4 workers made a full render only ~1.8x faster than serial -- the next gain
 there is not launching a fresh Chrome per page (one browser, many tabs via CDP), which is
 a bigger change than this one and not needed while most builds are reuse builds.
+
+## Done, 8 October 2026 -- one Chrome, not one per page
+
+TJ: *"CPU is being crushed."* Each per-route launch woke secd/ctkd/tccd and fseventsd. The
+default engine (`PRERENDER_ENGINE=cdp`) now launches ONE headless Chrome per run and drives
+it over `--remote-debugging-pipe`, reproducing `--dump-dom --virtual-time-budget=10000`
+step for step from Chromium's own `headless_command.js`. `PRERENDER_ENGINE=launch` is the
+old path, kept for comparison. Read the `CdpBrowser` comment before changing it: a fresh
+browser CONTEXT per route was tried first and kept secd at ~24% for the whole build,
+because every renderer spawn wakes it; a new TAB per route in one context per worker, with
+`--process-per-site`, cache disabled and storage cleared, does not.
+
+- 40 routes, old engine vs new, from one pristine dist: **40 of 40 HTML byte-identical.**
+  Recorded deps identical except `/api/event`: under CDP `navigator.webdriver` is true, so
+  `track.ts` skips the page-view beacon, as its own comment always intended.
+- Full build, 1,223 routes: **14.3 min** (old engine, 4 jobs, about 20+ min; serial
+  36.5), one Chrome launch. secd mean 0.6% CPU (max 23), ctkd 0.5%.
