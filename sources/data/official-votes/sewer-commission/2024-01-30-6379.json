@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-01-30",
  "docid": "6379",
@@ -12,39 +12,348 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 1/9/24",
+   "motion": "Accept the minutes of 1/9/24.",
    "moved_by": "Dave M.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: dave m. second: brett r. to accept the minutes for 1/9/24. roll call vote - mike n.-aye, brett-aye, dave-aye, and john-aye."
+   "quote": "to accept the minutes for 1/9/24. roll call vote - mike n.-aye, brett-aye, dave-aye, and john-aye."
   },
   {
-   "motion": "Accept the minutes of 7/18/23",
+   "motion": "Accept the minutes of 7/18/23.",
    "moved_by": "Mike N.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike n. second: brett r. to accept the minutes for 7/18/23. roll call vote - mike n.-aye, brett-aye, dave-aye, and john-aye."
+   "quote": "to accept the minutes for 7/18/23. roll call vote - mike n.-aye, brett-aye, dave-aye, and john-aye."
   },
   {
-   "motion": "Accept engineer's recommendation to replace the existing grease trap with a new plastic grease trap, with every 6 months cameraing required and video sent to the Commission for review; property owner and engineer to meet with the Commission in 6 months to provide a status update; in one year the Commission will evaluate the property to confirm that no blockages or excessive grease have occurred",
+   "motion": "Accept the engineer's recommendation: replace the existing grease trap with a new plastic grease trap, require camera inspection every 6 months with a copy of the video sent to the Commission, property owner and engineer to meet the Commission in 6 months, and the Commission to evaluate the property in one year.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to accept engineer's recommendation of replacing the existing grease trap with a new plastic grease trap, every 6 months cameraing is required and a copy of the video must be sent to the commission for review; property owner and engineer to meet with the commission in 6 months to provide a status update. in one year, the commission will evaluate the property to confirm that no blockages or excessive grease have occurred. roll call vote- mike n.-aye, brett-aye, dave-aye, and john-aye."
+   "quote": "to accept engineer's recommendation of replacing the existing grease trap with a new plastic grease trap,"
   },
   {
-   "motion": "Adjourn at 7:53 PM",
+   "motion": "Adjourn the meeting at 7:53pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: brett r. second: mike n. to adjourn at 7:53pm. roll call vote- mike n.-aye, brett-aye, dave-aye, and john-aye."
+   "quote": "to adjourn at 7:53pm. roll call vote- mike n.-aye, brett-aye, dave-aye, and john-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded as roll call votes with four commission members present. Minutes are clear and complete.",
- "cost_usd": 0.09977810000000001
+ "note": "Text extraction, not a scan. The minutes record roll-call lists of four ayes but no printed tally, so outcomes are recorded as 'passed' rather than a count. The header says the meeting was held via Zoom; the minutes do not state attendance mode per person, so attendees are marked present as listed under Attendees. Named people who are referred to but not recorded as taking part (for example Tom Alanzo, Robert L. of CTE, Roger Brooks, Rob Oliva, unnamed Leominster representatives) are not listed as attendees. Public comment is recorded as none on both occasions. Transfers: none recorded as made; a Stabilization Fund article was proposed without an amount.",
+ "cost_usd": 0.01846947,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member-dave macdonald,"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member-dave macdonald,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member-dave macdonald,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member-dave macdonald,"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: member-mike mackin"
+  },
+  {
+   "name": "Philip Arcidiacono",
+   "role": "Landlord",
+   "status": "present",
+   "quote": "appointments - philip arcidiacono (landlord), chris garcia (ggd consulting engineers) and al wernick"
+  },
+  {
+   "name": "Chris Garcia",
+   "role": "GGD Consulting Engineers",
+   "status": "present",
+   "quote": "appointments - philip arcidiacono (landlord), chris garcia (ggd consulting engineers) and al wernick"
+  },
+  {
+   "name": "Al Wernick",
+   "role": "Tenant",
+   "status": "present",
+   "quote": "appointments - philip arcidiacono (landlord), chris garcia (ggd consulting engineers) and al wernick"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Budget workshop set for 2/13 at the DPW at 6pm, in place of the regular meeting.",
+   "quote": "the commission discussed and will have a budget workshop on 2/13 at the dpw at 6pm, in place of the regular meeting."
+  },
+  {
+   "decision": "Commission agreed the public announcement on billing should not include wording about property tax impact.",
+   "quote": "the commission discussed the wording and agreed the announcement should not include verbiage in regard to the property tax impact."
+  },
+  {
+   "decision": "Paula and Bill to talk to the Town Manager about issuing the billing statement with property tax information.",
+   "quote": "paula and bill will talk to the town manager."
+  },
+  {
+   "decision": "Paula and Jane to work on the annual report.",
+   "quote": "paula and jane will work on it."
+  },
+  {
+   "decision": "Chair asked the property owner and engineer to keep Paula informed on installation.",
+   "quote": "john asked al and philip to keep paula informed."
+  },
+  {
+   "decision": "Commissioners asked to review the capital planning worksheets and hold a workshop.",
+   "quote": "john asked the commissioners to review the worksheets and have a workshop to discuss it."
+  },
+  {
+   "decision": "Engineer to send business information and his report to the Commission.",
+   "quote": "chris will send business information and his report."
+  },
+  {
+   "decision": "Camera videos to be forwarded to the Sewer Department.",
+   "quote": "paula asked for the camera videos to be forwarded to the sewer department."
+  },
+  {
+   "decision": "Business Manager to send Commissioners the Leominster debt service wording once received.",
+   "quote": "when she gets the wording from leominster, she will send it to the commissioners"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital planning, pump and generator work",
+   "what_was_recorded": "Capital planning worksheet estimated annual capital work of about $95K-100K, mostly pump and generator upgrades.",
+   "figures_as_printed": [
+    "$95K-100K"
+   ],
+   "quote": "they are looking at about $95k-100k each year."
+  },
+  {
+   "topic": "Pump replacement estimate and grant",
+   "what_was_recorded": "Estimate of about $40K each for replacing pumps at Dana Street, Leominster Rd and Mass 1, with grant money mentioned as available.",
+   "figures_as_printed": [
+    "$40K"
+   ],
+   "quote": "robert estimated the pumps for dana street, leominster rd and mass 1 could be $40k each."
+  },
+  {
+   "topic": "Capital maintenance line item",
+   "what_was_recorded": "Proposed Capital maintenance line item for pump replacement at $95K.",
+   "figures_as_printed": [
+    "$95K"
+   ],
+   "quote": "if a pump needs to be replaced, it comes from the capital maintenance line item, which she is proposing at $95k."
+  },
+  {
+   "topic": "Infrastructure maintenance line",
+   "what_was_recorded": "Infrastructure Maintenance line of $47,600 for replacing parts.",
+   "figures_as_printed": [
+    "$47,600"
+   ],
+   "quote": "infrastructure maintenance for $47,600 would be for replacing parts."
+  },
+  {
+   "topic": "Current rate and rate-increase worksheet",
+   "what_was_recorded": "Worksheet modelled potential rate increases from the current rate of $13.66 and their effect on transfers from Retained Earnings.",
+   "figures_as_printed": [
+    "$13.66"
+   ],
+   "quote": "potential rate increases from the current rate of $13.66 and how it would affect transfers from retained earnings."
+  },
+  {
+   "topic": "Leominster intermunicipal agreement rate",
+   "what_was_recorded": "Leominster rate came down from a projected figure; current rate stated with scheduled increases for FY25 and FY26, then penny-for-penny increases after FY26.",
+   "figures_as_printed": [
+    "$6.46",
+    "$5.32",
+    "$6.18",
+    "$6.37"
+   ],
+   "quote": "she noted that the rate did come down from the projected $6.46. currently the rate is $5.32 and will go up to $6.18 for fy25 and $6.37 for fy26."
+  },
+  {
+   "topic": "Maintenance Plan funding",
+   "what_was_recorded": "Prior consultant was given $100K to work on the Maintenance Plan but did not spend all of it.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "they gave him $100k to work on the maintenance plan, but he did not spend it all."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 1/9/24 and 7/18/23",
+   "resolution": "approved",
+   "quote": "to accept the minutes for 1/9/24. roll call vote - mike n.-aye, brett-aye, dave-aye, and john-aye.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action",
+   "quote": "public comment & announcements - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Warrant articles",
+   "resolution": "no action",
+   "quote": "paula noted that the warrant is open until early march and she will be submitting the usual ones",
+   "tags": [
+    "warrant",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Annual report",
+   "resolution": "assigned to Paula and Jane",
+   "quote": "annual report- paula stated that she will mimic reports from past years and asked if there were any highlights",
+   "tags": [
+    "annual report"
+   ]
+  },
+  {
+   "topic": "1 Main Street grease trap appointment",
+   "resolution": "engineer recommendation accepted with conditions",
+   "quote": "appointments - philip arcidiacono (landlord), chris garcia (ggd consulting engineers) and al wernick",
+   "tags": [
+    "grease",
+    "1 Main Street",
+    "FOG",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "Leominster intermunicipal agreement",
+   "resolution": "negotiation update; no vote",
+   "quote": "leominster intermunicipal agreement negotiation - paula reported that the team met with the representatives",
+   "tags": [
+    "Leominster",
+    "intermunicipal agreement",
+    "I/I",
+    "rates"
+   ]
+  },
+  {
+   "topic": "Capital planning",
+   "resolution": "budget workshop scheduled for 2/13",
+   "quote": "capital planning - paula suggested having a workshop to discuss the budget.",
+   "tags": [
+    "capital planning",
+    "budget",
+    "pumps",
+    "stabilization fund"
+   ]
+  },
+  {
+   "topic": "Business manager report: system maintenance and upgrades",
+   "resolution": "no action",
+   "quote": "--update on system maintenance & upgrades- paula reported they are still waiting for prices on the pumps",
+   "tags": [
+    "pumps",
+    "system maintenance"
+   ]
+  },
+  {
+   "topic": "Business manager report: billing and software issues",
+   "resolution": "public announcement wording agreed; no vote",
+   "quote": "--billing/software issues- paula stated the saga still continues!",
+   "tags": [
+    "billing",
+    "software",
+    "Munis",
+    "public notice"
+   ]
+  },
+  {
+   "topic": "Sewer business manager job description",
+   "resolution": "noted; Personnel Committee to bring item to May Town Meeting",
+   "quote": "--sewer business manager job description- paula, john and bill attended the last personnel committee meeting.",
+   "tags": [
+    "personnel",
+    "job description"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:53pm",
+   "quote": "to adjourn at 7:53pm. roll call vote- mike n.-aye, brett-aye, dave-aye, and john-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "grease trap",
+  "inflow and infiltration",
+  "Leominster intermunicipal agreement",
+  "capital planning",
+  "budget workshop",
+  "pumps",
+  "billing software",
+  "Munis",
+  "warrant articles",
+  "annual report",
+  "personnel",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

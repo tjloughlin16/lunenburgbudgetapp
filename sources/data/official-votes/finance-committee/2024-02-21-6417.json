@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-02-21",
  "docid": "6417",
@@ -10,8 +10,578 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02212024-6417",
   "doc_url": "/docs/meetings/finance-committee/2024-02-21-minutes-6417.txt"
  },
- "votes": [],
- "dropped_unquoted": 2,
- "note": "The adjournment vote outcome is not explicitly stated in the minutes, though the subsequent line (\"The meeting closed at 9:34 PM\") implies passage.",
- "cost_usd": 0.1119621
+ "votes": [
+  {
+   "motion": "Approve the minutes from February 8th, as amended",
+   "moved_by": "",
+   "seconded_by": "Dave Passios",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "as amended by tiffaney tavares"
+  },
+  {
+   "motion": "Adjourn the meeting",
+   "moved_by": "Tiffaney Tavares",
+   "seconded_by": "Dave Passios",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "to adjourn by tiffaney tavares"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is OCR-extracted with spacing artifacts (e.g. 'Febr u ary', 'Br zozoski', 'm otion', '$48, 967,795'); quotes collapse whitespace and keep printed spacing where it is part of the figure. Names are given as read, with OCR gaps closed (Laura Brzozoski, Sable Kaufman, Peter Beardmore, Carol Archambault, Ezequiel Ayala). The minutes approval motion prints 'as amended by Tiffaney Tavares, seconded by Dave Passios' and does not clearly name a mover, so moved_by is left blank. The vote on that motion is recorded by name only (passed with Dave Passios, Tom Gray, Jay Simeone, Tiffaney Tavares; Evan Watters, Chris Menard, Jean Russell abstained); no tally is printed. The adjournment is a roll call with no result printed, so its outcome is not stated. Heather Lemieux's role is not printed. Several budget figures are department-level overall changes as printed, not totals the minutes sum. The meeting is recorded as adjourned at 9:34 PM.",
+ "cost_usd": 0.02515757,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather lemieux states the responsibility is on the town accountant and then the dor reviews and certifies."
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "Finance Director (as printed: 'A Finance Director was hired')",
+   "status": "not stated",
+   "quote": "a finance director was hired, ezequiel ayala"
+  },
+  {
+   "name": "Sable Kaufman",
+   "role": "public comment speaker",
+   "status": "present",
+   "quote": "it seems incongruous for the members of the committee to describe the feasibility to budget increases"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "public comment speaker",
+   "status": "present",
+   "quote": "other departments are being given a significantly larger budget than the schools."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "public comment speaker",
+   "status": "present",
+   "quote": "after receiving the 2.94% increase"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "public comment speaker",
+   "status": "present",
+   "quote": "there must be another way, and something else that needs to be done."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The FY25 Budget Update/Discussion agenda item was skipped, since the preliminary budget is presented later in the meeting.",
+   "quote": "this topic will be skipped since the preliminary budget will be"
+  },
+  {
+   "decision": "The Town Manager's 5 Year Financial Report agenda item was skipped because the financial director had just started.",
+   "quote": "this agenda topic was skipped due to the financial director"
+  },
+  {
+   "decision": "The Land Use presentation scheduled for February 22nd was canceled.",
+   "quote": "presentation was canceled"
+  },
+  {
+   "decision": "Tiffaney Tavares and Dave Passios plan to present the grant writer letter at the following night's meeting.",
+   "quote": "they plan on presenting it at tomorrow night"
+  },
+  {
+   "decision": "Discussion of the grant writing letter will continue at a future meeting.",
+   "quote": "discussion will continue relative to the"
+  },
+  {
+   "decision": "Evan Watters will request that committee members submit questions for the department heads in advance.",
+   "quote": "submit questions for the department heads in advance to prepare"
+  },
+  {
+   "decision": "Evan Watters will speak with the Clerk about the possibility of Monday meetings.",
+   "quote": "evan watters will speak with the clerk about the possibility of monday meetings"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Overlay account balance",
+   "what_was_recorded": "The overlay account is roughly $562,000, and the Board of Assessors' overlay balance is within the DOR-suggested amount.",
+   "figures_as_printed": [
+    "$ 562,000"
+   ],
+   "quote": "the overlay account has roughly"
+  },
+  {
+   "topic": "Property tax revenue assumptions",
+   "what_was_recorded": "The preliminary budget adds 2.5% to the prior year's levy and estimates $400,000 for new growth and debt exclusion.",
+   "figures_as_printed": [
+    "2.5%",
+    "$ 400,000"
+   ],
+   "quote": "property tax includes adding 2.5% to the prior"
+  },
+  {
+   "topic": "Local receipts increase",
+   "what_was_recorded": "Motor vehicle excise tax is estimated to increase by $50,000 over the previous year's estimate; other local receipts are level funded.",
+   "figures_as_printed": [
+    "$ 50,000"
+   ],
+   "quote": "a $ 50,000 increase over previous"
+  },
+  {
+   "topic": "Projected FY2025 revenues total",
+   "what_was_recorded": "Projected revenues are printed by source and totaled.",
+   "figures_as_printed": [
+    "$32,587,335",
+    "$10,682,086",
+    "$3,266,491",
+    "$2,431,884",
+    "$48, 967,795"
+   ],
+   "quote": "totaling $48, 967,795"
+  },
+  {
+   "topic": "General Government budget",
+   "what_was_recorded": "General Government increases by $197K, including $50K for grant writing contracted services.",
+   "figures_as_printed": [
+    "$197K",
+    "$50K"
+   ],
+   "quote": "includes $50k for grant writing contracted services"
+  },
+  {
+   "topic": "Police budget",
+   "what_was_recorded": "Police budget increases by $129K.",
+   "figures_as_printed": [
+    "$129K"
+   ],
+   "quote": "overall increase of $129k"
+  },
+  {
+   "topic": "Fire budget",
+   "what_was_recorded": "Fire budget increases by $36K.",
+   "figures_as_printed": [
+    "$36K"
+   ],
+   "quote": "overall increase of $36k"
+  },
+  {
+   "topic": "Radio Watch budget",
+   "what_was_recorded": "Radio Watch decreases by $55K; the Nashoba Dispatch assessment decreased by $12K.",
+   "figures_as_printed": [
+    "$12K",
+    "$55K"
+   ],
+   "quote": "the assessment for nashoba dispatch decreased by"
+  },
+  {
+   "topic": "Other Protection budget",
+   "what_was_recorded": "Other Protection decreases by $10K.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "overall decrease of $10k"
+  },
+  {
+   "topic": "Facilities budget",
+   "what_was_recorded": "Facilities increases by $50K, including a new $30,000 line for TCP Building repairs and maintenance.",
+   "figures_as_printed": [
+    "$30,000",
+    "$50K"
+   ],
+   "quote": "in the amount of $30,000. overall increase of $50k"
+  },
+  {
+   "topic": "DPW budget",
+   "what_was_recorded": "DPW increases by $99K, including an additional $50K for Pavement Management.",
+   "figures_as_printed": [
+    "$50K",
+    "$99K"
+   ],
+   "quote": "additional $50k for pavement management"
+  },
+  {
+   "topic": "COA budget",
+   "what_was_recorded": "COA increases by $35K.",
+   "figures_as_printed": [
+    "$35K"
+   ],
+   "quote": "overall increase of $35k"
+  },
+  {
+   "topic": "Library budget",
+   "what_was_recorded": "Library increases by $33K, including a $4K increase in the programming line.",
+   "figures_as_printed": [
+    "$4K",
+    "$33K"
+   ],
+   "quote": "overall increase of $33k in library"
+  },
+  {
+   "topic": "Worcester Regional Retirement assessment",
+   "what_was_recorded": "Retirement assessment increases 10.94%, or $209K more than the previous FY.",
+   "figures_as_printed": [
+    "10.94%",
+    "$209K"
+   ],
+   "quote": "10.94% increase or $209k more than the"
+  },
+  {
+   "topic": "Unclassified budget and debt",
+   "what_was_recorded": "Unclassified increases by $71K, with reserve and salary reserve accounts funded at $100K; overall debt decreases by $576K.",
+   "figures_as_printed": [
+    "5.7%",
+    "6%",
+    "5%",
+    "$71K",
+    "$100K",
+    "$576K"
+   ],
+   "quote": "to expiring debt, our overall debt is decreasing by $576k"
+  },
+  {
+   "topic": "Lunenburg Public Schools recommendation",
+   "what_was_recorded": "The recommendation increases the LPS budget by $673K (2.94%), which does not meet any of the Superintendent's scenarios.",
+   "figures_as_printed": [
+    "$673K",
+    "2.94%"
+   ],
+   "quote": "recommendation includes increasing lps budget by $673k (2.94%)."
+  },
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "Recommendation includes a 3.75% increase, or $44K.",
+   "figures_as_printed": [
+    "3.75%",
+    "$44K"
+   ],
+   "quote": "recommendation includes a 3.75% increase of $44k."
+  },
+  {
+   "topic": "Solid Waste/Recycling",
+   "what_was_recorded": "Estimate includes a $17K increase.",
+   "figures_as_printed": [
+    "$17K"
+   ],
+   "quote": "includes estimate of $17k increase."
+  },
+  {
+   "topic": "Certified free cash",
+   "what_was_recorded": "Certified free cash is listed as available funding.",
+   "figures_as_printed": [
+    "$ 1,870,612"
+   ],
+   "quote": "free cash- $ 1,870,612"
+  },
+  {
+   "topic": "Stabilization fund balance",
+   "what_was_recorded": "Current stabilization fund balance is listed as available funding.",
+   "figures_as_printed": [
+    "$ 2,862,006"
+   ],
+   "quote": "current stabilization fund balance $ 2,862,006"
+  },
+  {
+   "topic": "Chapter 70 and state funding",
+   "what_was_recorded": "Chapter 70 funding is described as having increased 5% per year over 15 years, as a running average.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "funding increased by 5% per year over those"
+  },
+  {
+   "topic": "Health insurance stabilization account",
+   "what_was_recorded": "The health insurance stabilization account is said to be depleted with the FY 25 preliminary budget; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "stabilization account will be depleted with"
+  },
+  {
+   "topic": "Esser funding loss",
+   "what_was_recorded": "Esser funds that supplemented the school budget ended, which the preliminary budget does not replace.",
+   "figures_as_printed": [],
+   "quote": "the esser funds have supplemented"
+  },
+  {
+   "topic": "Pension funding",
+   "what_was_recorded": "The town's funded ratio for pension obligations is recorded as rising, with full funding scheduled for 2036.",
+   "figures_as_printed": [
+    "43.4%",
+    "45.3%"
+   ],
+   "quote": "from 43.4% in 2014 to 45.3% in 2018"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sable Kaufman",
+   "stated_role": "27 Oak Avenue",
+   "topic": "percentage vs dollar budget increases",
+   "quote": "it seems incongruous for the members of the committee to describe the feasibility to budget increases"
+  },
+  {
+   "speaker": "Laura Brzozoski",
+   "stated_role": "21 Francis Avenue",
+   "topic": "school vs town budget share, IT and grant writer",
+   "quote": "other departments are being given a significantly larger budget than the schools."
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "282 Pleasant Street",
+   "topic": "17 school positions and budget leadership",
+   "quote": "after receiving the 2.94% increase"
+  },
+  {
+   "speaker": "Carol Archambault",
+   "stated_role": "662 Page Street",
+   "topic": "school cuts after Esser funding",
+   "quote": "there must be another way, and something else that needs to be done."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "pledge of al legiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "there were no committee announcements",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Comments: committee and public",
+   "resolution": "discussed, no action",
+   "quote": "dave passios had a brief conversation about the prior night",
+   "tags": [
+    "state delegates",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Public comment (first session)",
+   "resolution": "heard",
+   "quote": "it seems incongruous for the members of the committee to describe the feasibility to budget increases",
+   "tags": [
+    "public comment",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no report",
+   "quote": "there was no report from the town manager.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Finance Director Report",
+   "resolution": "no report yet",
+   "quote": "a finance director was hired, ezequiel ayala",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Grant Writer Letter",
+   "resolution": "continued",
+   "quote": "tiffaney tavares and dave passios are working on a letter for a grant writer",
+   "tags": [
+    "grant writer",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Old Business: FY25 Budget Update",
+   "resolution": "skipped",
+   "quote": "this topic will be skipped since the preliminary budget will be",
+   "tags": [
+    "FY25 budget"
+   ]
+  },
+  {
+   "topic": "Old Business: Overlay account balance",
+   "resolution": "discussed, no action",
+   "quote": "the overlay account has roughly",
+   "tags": [
+    "overlay",
+    "assessors"
+   ]
+  },
+  {
+   "topic": "New Business: Town Manager's Preliminary Budget",
+   "resolution": "presented, no vote",
+   "quote": "tonight is the start of the weekly budget presentations.",
+   "tags": [
+    "FY25 budget",
+    "preliminary budget",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Questions from the Committee on preliminary budget",
+   "resolution": "discussed, no action",
+   "quote": "questions from the committee",
+   "tags": [
+    "Monty Tech",
+    "free cash",
+    "Chapter 70",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "New Business: Town Manager's 5 Year Financial Report",
+   "resolution": "skipped",
+   "quote": "this agenda topic was skipped due to the financial director",
+   "tags": [
+    "financial plan"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as amended (passed)",
+   "quote": "the motion passed with votes from dave passios, tom gray, jay simeone",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports: joint meeting on lake access",
+   "resolution": "no action",
+   "quote": "there was no action taken during this meeting.",
+   "tags": [
+    "lake access",
+    "open space",
+    "parks",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "continued",
+   "quote": "discussion will continue relative to the",
+   "tags": [
+    "grant writer"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "listed; Feb 22 land use presentation canceled",
+   "quote": "presentation was canceled",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Important dates",
+   "resolution": "listed",
+   "quote": "town meeting warrant open",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second session)",
+   "resolution": "heard",
+   "quote": "there must be another way, and something else that needs to be done.",
+   "tags": [
+    "public comment",
+    "school budget"
+   ]
+  },
+  {
+   "topic": "Committee comment: agendas, meeting dates, department questions",
+   "resolution": "actions assigned to chair",
+   "quote": "evan watters will speak with the clerk about the possibility of monday meetings",
+   "tags": [
+    "agenda posting",
+    "meeting schedule",
+    "state delegates"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 9:34 PM",
+   "quote": "the meeting closed at 9:34",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY25 budget",
+  "preliminary budget",
+  "town meeting",
+  "schools budget",
+  "Esser funds",
+  "grant writer",
+  "free cash",
+  "overlay account",
+  "health insurance",
+  "state aid and Chapter 70",
+  "Monty Tech",
+  "Worcester Regional Retirement",
+  "public comment",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

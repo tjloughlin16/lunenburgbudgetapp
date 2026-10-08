@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2024-02-07",
  "docid": "6398",
@@ -12,121 +12,657 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 12/20/23",
+   "motion": "Approve the minutes of 12/20/23.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
-   "quote": "motion: rich b., second: mike l. to approve the minutes of 12/20/23. roll call vote was unanimous to approve."
+   "quote": "motion: rich b., second: mike l. to approve the minutes of 12/20/23."
   },
   {
-   "motion": "Approve the minutes of 1/3/24",
+   "motion": "Approve the minutes of 1/3/24.",
    "moved_by": "Rich B.",
    "seconded_by": "Bob P.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
-   "quote": "motion: rich b., second: bob p. to approve the minutes of 1/3/24. roll call vote was unanimous to approve."
+   "quote": "motion: rich b., second: bob p. to approve the minutes of 1/3/24."
   },
   {
-   "motion": "Approve the minutes of 1/17/24",
+   "motion": "Approve the minutes of 1/17/24.",
    "moved_by": "Bob P.",
    "seconded_by": "Mike L.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
-   "quote": "motion: bob p., second: mike l. to approve the minutes of 1/17/24. roll call vote was unanimous to approve."
+   "quote": "motion: bob p., second: mike l. to approve the minutes of 1/17/24."
   },
   {
-   "motion": "Approve the Certificate of Compliance for 120 West Street",
+   "motion": "Approve the Certificate of Compliance for 120 West Street.",
    "moved_by": "Chris S.",
-   "seconded_by": "Jeff V.",
-   "outcome": "passed unanimously",
+   "seconded_by": "Jeff V .",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "motion: chris s., second: jeff v . to approve the certificate of compliance for 120 west street. roll call vote was unanimous to approve."
+   "quote": "motion: chris s., second: jeff v . to approve the certificate of compliance for 120 west street."
   },
   {
-   "motion": "Continue the hearing on 390 Howard Street (ANRAD) to 2/21/24",
+   "motion": "Continue the ANRAD hearing for 390 Howard Street to 2/21/24.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue the hearing to 2/21/24. roll call vote was unanimous to approve."
+   "outcome": "passed, unanimous (roll call)",
+   "procedural": false,
+   "quote": "motion: rich b., second: chris s. to continue the hearing to 2/21/24."
   },
   {
-   "motion": "Continue 171 Arbor Street (NOI) to 2/21/24 and ask administrator to contact engineer",
+   "motion": "Approve a negative determination for the Request for Determination of Applicability for 20 Kilburn St, Lot 1.",
+   "moved_by": "Bob P.",
+   "seconded_by": "Rich B.",
+   "outcome": "passed, unanimous (roll call)",
+   "procedural": false,
+   "quote": "motion: bob p., second: rich b. to approve a negative determination for this request for determination of applicability."
+  },
+  {
+   "motion": "Continue the Notice of Intent hearing for 20 Kilburn St, Lot 2 to 2/21/24.",
+   "moved_by": "Chris S.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed, unanimous (roll call)",
+   "procedural": false,
+   "quote": "motion: chris s., second: mike l. to continue this hearing to 2/21/24."
+  },
+  {
+   "motion": "Approve the Notice of Intent for 20 Kilburn St, Lot 3, conditioned on a revised plan showing boulders at 25’ and specifying the erosion protection as the limit of work.",
+   "moved_by": "Bob P.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed, unanimous (roll call)",
+   "procedural": false,
+   "quote": "motion: bob p., second: mike l. to approve this notice of intent, with the condition that the applicant submit a revised plan,"
+  },
+  {
+   "motion": "Continue the Notice of Intent hearing for 171 Arbor Street to 2/21/24 and ask the Administrator to contact McCarty Engineering.",
    "moved_by": "Mike",
    "seconded_by": "Rich B.",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: mike, second: rich b. to continue 171 arbor street to 2/21/24 and ask the administrator to reach out to mccarty engineering to ask what's up. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Approve a negative determination for Request for Determination of Applicability at 20 Kilburn St, Lot 1",
-   "moved_by": "Bob P.",
-   "seconded_by": "Rich B.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "motion: bob p., second: rich b. to approve a negative determination for this request for determination of applicability. discussion: mike l. suggested hearing th",
-   "quote_taken_from_text": true
+   "quote": "motion: mike, second: rich b. to continue 171 arbor street to 2/21/24 and ask the administrator to reach out to mccarty"
   },
   {
-   "motion": "Continue the hearing on 20 Kilburn St, Lot 2 (NOI) to 2/21/24",
-   "moved_by": "Chris S.",
-   "seconded_by": "Mike L.",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: chris s., second: mike l. to continue this hearing to 2/21/24. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Approve Notice of Intent for 20 Kilburn St, Lot 3 with conditions regarding boulder spacing at 25 feet and erosion protection limits",
+   "motion": "Authorize the Conservation Administrator to issue an enforcement order to Jim Lattanzi to resize and lower his culvert and to hire a wetlands scientist to delineate any wetlands impact.",
    "moved_by": "Bob P.",
-   "seconded_by": "Mike L.",
-   "outcome": "passed unanimously",
+   "seconded_by": "Chris S.",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "motion: bob p., second: mike l. to approve the minutes of 1/17/24. roll call vote was unanimous to approve. certificates of compliance for 120 west st. - bob hannigan (hannigan engineering) - sophie reported that she did a site visit 3 weeks ago and she pre",
-   "quote_taken_from_text": true
+   "quote": "motion: bob p., second: chris s. to authorize our conservation administrator to issue an enforcement order to jim lattanzi to resize and lower his culvert and to hire a wetlands scientist"
   },
   {
-   "motion": "Apply the $117 spent on gas to the Hawes Account for budget support at Pollinator Habitat",
+   "motion": "Apply the $117 spent on gas to the Hawes Account for the purposes of providing budget support.",
    "moved_by": "Mary W.",
    "seconded_by": "Mike L.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "motion: mary w., second: mike l. to apply the $117 spent on gas to the hawes account for the purposes of providing budget support. roll call vote was unanimous to approve."
+   "quote": "motion: mary w., second: mike l. to apply the $117 spent on gas to the hawes account for the purposes of providing budget support."
   },
   {
-   "motion": "Authorize Conservation Administrator to issue enforcement order to Jim Lattanzi to resize and lower his culvert and hire a wetlands scientist for delineation at 780 Northfield Road",
-   "moved_by": "Bob P.",
-   "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "motion: bob p., second: chris s. to authorize our conservation administrator to issue an enforcement order to jim lattanzi to resize and lower his culvert and to hire a wetlands scientist to delineate any wetlands impact there. roll call vote was unanimous to approve."
-  },
-  {
-   "motion": "Approve a $3,200 purchase of replacement hot water heater for 123 Hollis Road from Cam's Heating",
+   "motion": "Approve a $3,200 purchase of a replacement hot water heater for 123 Hollis Road from Cam’s Heating.",
    "moved_by": "Mike L.",
    "seconded_by": "Rich B.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": false,
-   "quote": "motion: mike l., second: rich b. to approve a $3,200 purchase of a replacement hot water heater for the 123 hollis road property from cam's heating. roll call vote was unanimous to approve."
+   "quote": "motion: mike l., second: rich b. to approve a $3,200 purchase of a replacement hot water heater for the 123 hollis road property from cam's heating."
   },
   {
-   "motion": "Nominate Jenny Pewtherer as the representative to the Stormwater Committee",
+   "motion": "Nominate Jenny Pewtherer as the representative to the Stormwater Committee.",
    "moved_by": "Bob P.",
    "seconded_by": "Mary W.",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: bob p., second: mary w. to nominate jenny pewtherer as the representative to the stormwater committee. roll call vote was unanimous to approve."
+   "outcome": "passed, unanimous (roll call)",
+   "procedural": false,
+   "quote": "motion: bob p., second: mary w. to nominate jenny pewtherer as the representative to the stormwater committee."
   },
   {
-   "motion": "Adjourn at 11:15 pm",
+   "motion": "Adjourn the meeting at 11:15pm.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous (roll call)",
    "procedural": true,
-   "quote": "motion: rich b., second: chris s. to adjourn at 11:15pm. roll call vote was unanimous to approve."
+   "quote": "motion: rich b., second: chris s. to adjourn at 11:15pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1015201
+ "note": "Text was extracted from a PDF; quotes were copied from the extracted text and checked by hand, not by script. Votes are recorded only as \"unanimous\" with no per-member tally, so the count is not stated. Jeffrey Viviano logged off at 10:54pm, yet the 11:15pm adjournment is recorded as unanimous; the minutes do not say who voted. The Hannigan applicant is printed as \"Bob Hannigan\" in the heading and \"Bill Hannigan\" in the body. The Hollis Road invoice is $3,100 while the approved purchase is $3,200; the minutes do not reconcile them. A motion on 255 Sunny Hill Road was made but \"unmoved due to the date issue\", so it is not recorded as a vote. Ken Paton asked to comment on 255 Sunny Hill but the hearing was not opened, so no comment was taken. Agenda headings with no printed content (Administrative Determination, Order of Conditions, Certificates of Compliance, Emergency Certification, Open Space, Grants Update, Conservation Land Improvement, and others) are recorded as no content. Members' attendance status is \"present\" from the roll call; the minutes do not say whether any member joined remotely.",
+ "cost_usd": 0.02850987,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., jeff v ., mike l., chris s., mary w., jenny pewtherer"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., jeff v ., mike l., chris s., mary w., jenny pewtherer"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Commission member (as listed in letterhead)",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., jeff v ., mike l., chris s., mary w., jenny pewtherer"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Commission member (as listed in letterhead); logged off at 10:54pm",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., jeff v ., mike l., chris s., mary w., jenny pewtherer"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Commission member (as listed in letterhead)",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., jeff v ., mike l., chris s., mary w., jenny pewtherer"
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "Commission member (as listed in letterhead)",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., jeff v ., mike l., chris s., mary w., jenny pewtherer"
+  },
+  {
+   "name": "Jenny Pewtherer",
+   "role": "new Commissioner",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., jeff v ., mike l., chris s., mary w., jenny pewtherer"
+  },
+  {
+   "name": "Sophie Dorow",
+   "role": "Administrator",
+   "status": "present",
+   "quote": "and sophie dorow - administrator"
+  },
+  {
+   "name": "Ashleigh Denio",
+   "role": "Conservation Assistant",
+   "status": "not stated",
+   "quote": "macc classes- mary stated that anyone who wants to take classes should send the list to ashleigh, with"
+  },
+  {
+   "name": "Bob Hannigan",
+   "role": "Hannigan Engineering, representing the applicant (120 West St.); also printed as Bill Hannigan",
+   "status": "present",
+   "quote": "certificates of compliance for 120 west st. - bob hannigan (hannigan engineering) - sophie reported"
+  },
+  {
+   "name": "Richard Parsons",
+   "role": "public comment, 70 Horizon Island Rd",
+   "status": "present",
+   "quote": "public comment- richard parsons (70 horizon island rd) - asking for permission to cut 3 trees, one"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "applicant, ANRAD at 390 Howard Street",
+   "status": "present",
+   "quote": "kevin o'brien and matt marro present."
+  },
+  {
+   "name": "Matt Marro",
+   "role": "applicant representative, ANRAD at 390 Howard Street",
+   "status": "present",
+   "quote": "kevin o'brien and matt marro present."
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "presenter, Lake Shirley Improvement Corp. annual report",
+   "status": "present",
+   "quote": "joanna bilotta, dominic meringolo (solitude) and wendy gendron (aquatic restoration consultants)"
+  },
+  {
+   "name": "Dominic Meringolo",
+   "role": "Solitude, presenter, Lake Shirley annual report",
+   "status": "present",
+   "quote": "joanna bilotta, dominic meringolo (solitude) and wendy gendron (aquatic restoration consultants)"
+  },
+  {
+   "name": "Wendy Gendron",
+   "role": "Aquatic Restoration Consultants, presenter, Lake Shirley annual report",
+   "status": "present",
+   "quote": "joanna bilotta, dominic meringolo (solitude) and wendy gendron (aquatic restoration consultants)"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy, representing the applicant (Timric Realty Trust, 20 Kilburn St)",
+   "status": "present",
+   "quote": "greg roy (dillis & roy), representing the applicant, apologized for the continuances over the"
+  },
+  {
+   "name": "John Carroll",
+   "role": "abutter, 803 Leominster Road",
+   "status": "present",
+   "quote": "john carroll (803 leominster road) spoke as an abutter and noted that he has brought to the town's"
+  },
+  {
+   "name": "Joan Hoyt",
+   "role": "39 Kilburn St., public comment",
+   "status": "present",
+   "quote": "joan & phil hoyt (39 kilburn st.) - joan commented that she is very concerned about the commission"
+  },
+  {
+   "name": "Phil Hoyt",
+   "role": "39 Kilburn St., public comment",
+   "status": "present",
+   "quote": "joan & phil hoyt (39 kilburn st.) - joan commented that she is very concerned about the commission"
+  },
+  {
+   "name": "Susan Rowe",
+   "role": "710 Leominster Rd, public comment",
+   "status": "present",
+   "quote": "susan rowe (710 leominster rd) lives across from lot 2 and wanted to add to what the hoyts said"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Richard Parsons was directed to contact the Administrator directly to continue the tree-cutting request process, and to email her with questions.",
+   "quote": "mary replied that richard should contact sophie directly to continue the process and sophie advised him to email her with questions."
+  },
+  {
+   "decision": "The Administrator is to contact the applicant (Bill/Bob Hannigan) about the Certificate of Compliance once the Commissioners have Docu-signed it.",
+   "quote": "bill h. asked when the certificate would be available and mary asked sophie to contact him after the commissioners have docu-signed it."
+  },
+  {
+   "decision": "Lake Shirley's request for extension of the Order of Conditions will be placed on a future agenda as a hearing.",
+   "quote": "the request for extension will be on a future agenda."
+  },
+  {
+   "decision": "Commission review of the Lake Shirley treatment plan is required before any treatment proceeds (stated by Bob P. and Rich B.; no vote).",
+   "quote": "the plan should be reviewed by the commission before they do a treatment."
+  },
+  {
+   "decision": "The Administrator is to contact DEP about the 'riverfront' typo in its comments on 20 Kilburn St, Lot 2.",
+   "quote": "suggested having sophie contact dep regarding the typo of riverfront in their comments."
+  },
+  {
+   "decision": "The Administrator is to contact the engineer for 171 Arbor Street about the revised plan.",
+   "quote": "sophie stated that she found the revised plan in the google drive and she would contact the engineer."
+  },
+  {
+   "decision": "32 Cortland Circle (detention pond) is struck from the agenda until the Homeowners Association comes back.",
+   "quote": "mary asked to strike it off the agenda until the homeowners association comes back."
+  },
+  {
+   "decision": "Bob P. will meet with Town Counsel to discuss the title searches.",
+   "quote": "bob reported that he will be meeting with town counsel to discuss the title searches."
+  },
+  {
+   "decision": "Bob P. will talk to Town Counsel about the 950 Chase Road shed; until the Raino cut, the shed should probably be boarded up.",
+   "quote": "950 chase road- shed removal- bob will talk to town counsel about this."
+  },
+  {
+   "decision": "Town Counsel is asked to send a second letter to the owners at 315 Lancaster Ave.",
+   "quote": "he has asked town counsel to send another letter."
+  },
+  {
+   "decision": "For the Hollis Road property, the tenant should contact the Facilities Director for heat or water problems, and bills go to the Facilities Director.",
+   "quote": "bob said that now there is a facilities director, the tenant should ===page 10=== contact him if she has no heat or water and the bills go to facilities ",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Jenny Pewtherer accepted the Stormwater Committee nomination; Mary W. will notify Renee.",
+   "quote": "jenny accepted and mary will notify renee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Gas for pollinator habitat mowing",
+   "what_was_recorded": "The Commission approved applying $117 spent on gas to the Hawes Account for budget support.",
+   "figures_as_printed": [
+    "$117"
+   ],
+   "quote": "motion: mary w., second: mike l. to apply the $117 spent on gas to the hawes account for the purposes of providing budget support."
+  },
+  {
+   "topic": "123 Hollis Road hot water tank replacement, invoice",
+   "what_was_recorded": "Cam's Heating said it will send an invoice for replacing the tank; the figure printed is $3,100.",
+   "figures_as_printed": [
+    "$3,100"
+   ],
+   "quote": "cam's heating will send an invoice for $3,100 for replacing the tank."
+  },
+  {
+   "topic": "123 Hollis Road hot water heater purchase",
+   "what_was_recorded": "The Commission approved a $3,200 purchase of a replacement hot water heater from Cam's Heating. The minutes print a $3,100 invoice for the same tank, so the two figures differ.",
+   "figures_as_printed": [
+    "$3,200"
+   ],
+   "quote": "to approve a $3,200 purchase of a replacement hot water heater for the 123 hollis road property from cam's heating."
+  },
+  {
+   "topic": "950 Chase Road shed removal funding",
+   "what_was_recorded": "Bob suggested paying for the shed removal after the Raino cut, citing another $20K in the Timber Rights account.",
+   "figures_as_printed": [
+    "$20K"
+   ],
+   "quote": "after they do the raino cut and they have another $20k in the timber rights account, they should pay for the removal of this shed."
+  },
+  {
+   "topic": "Peer review of ANRAD, applicant payment",
+   "what_was_recorded": "The applicant would need to pay the office for a third-party peer review, which the office contracts out; Oxbow Associates gave a quote, and no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "bob added that the applicant would need to give money to the office for the review and the office contracts with the 3rd party reviewer."
+  },
+  {
+   "topic": "Alternative leach field installation cost",
+   "what_was_recorded": "Greg Roy said drilling under the ground as an alternative to trenching would cost significantly more; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "one suggested alternative to the trench would be drilling under the ground but the cost would be"
+  },
+  {
+   "topic": "Fire Department water removal charge at Hollis Road",
+   "what_was_recorded": "Mike was unsure whether the town would charge for the Fire Department removing the water; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "mike stated that the fire department came in to remove the 6\" of water and he was not sure if they will get charged for that or not."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Charge $117 spent on gas (mowing at the pollinator habitat) to the Hawes Account for budget support.",
+   "amount_as_printed": "$117",
+   "outcome": "approved, unanimous (roll call)",
+   "quote": "motion: mary w., second: mike l. to apply the $117 spent on gas to the hawes account for the purposes of providing budget support."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Richard Parsons",
+   "stated_role": "70 Horizon Island Rd",
+   "topic": "permission to cut 3 trees, one dying",
+   "quote": "public comment- richard parsons (70 horizon island rd) - asking for permission to cut 3 trees, one"
+  },
+  {
+   "speaker": "John Carroll",
+   "stated_role": "abutter, 803 Leominster Road",
+   "topic": "flooding at bottom of driveway, catch basin, Lot 1 RDA",
+   "quote": "john carroll (803 leominster road) spoke as an abutter and noted that he has brought to the town's"
+  },
+  {
+   "speaker": "Joan Hoyt and Phil Hoyt",
+   "stated_role": "39 Kilburn St.",
+   "topic": "voting Lot 1 before other lots, Kilburn St. flooding",
+   "quote": "joan & phil hoyt (39 kilburn st.) - joan commented that she is very concerned about the commission"
+  },
+  {
+   "speaker": "Susan Rowe",
+   "stated_role": "710 Leominster Rd",
+   "topic": "water on road across from Lot 2",
+   "quote": "susan rowe (710 leominster rd) lives across from lot 2 and wanted to add to what the hoyts said"
+  },
+  {
+   "speaker": "John Carroll",
+   "stated_role": "abutter, 803 Leominster Road",
+   "topic": "video of water streaming down the road; catch basin",
+   "quote": "john carroll stated he has videos of water streaming down the road, flooding his driveway."
+  },
+  {
+   "speaker": "John Carroll",
+   "stated_role": "abutter, 803 Leominster Road",
+   "topic": "storm drain discharging into wetlands, permits",
+   "quote": "john carroll- stated that the storm drain is discharging into the wetlands and he questioned if the proper"
+  },
+  {
+   "speaker": "Phil Hoyt",
+   "stated_role": "39 Kilburn St.",
+   "topic": "whether water on Lot 3 site runs back into wetland",
+   "quote": "phil hoyt (39 kilburn st.) - asked greg if the water on the site is running back into the wetland and"
+  },
+  {
+   "speaker": "Susan Rowe",
+   "stated_role": "710 Leominster Rd",
+   "topic": "standing groundwater and building on Lot 2",
+   "quote": "susan rowe (710 leominster rd) asked about the standing groundwater in regard to building there."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: new Commissioner",
+   "resolution": "noted",
+   "quote": "mary welcomed jenny pewtherer as a new commissioner.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Public comment: Richard Parsons tree request",
+   "resolution": "directed to contact the Administrator; no vote",
+   "quote": "mary replied that richard should contact sophie directly to continue the process",
+   "tags": [
+    "tree removal",
+    "RDA",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes of 12/20/23, 1/3/24, 1/17/24",
+   "resolution": "approved",
+   "quote": "minutes of previous meetings - 12/20/23, 1/3/24 and 1/17/24",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Certificate of Compliance, 120 West St.",
+   "resolution": "approved",
+   "quote": "certificates of compliance for 120 west st. - bob hannigan (hannigan engineering) - sophie reported",
+   "tags": [
+    "certificate of compliance",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "New public hearings",
+   "resolution": "none scheduled",
+   "quote": "new public hearings - mary noted none were scheduled due to issues of posting notices",
+   "tags": [
+    "hearings",
+    "notice"
+   ]
+  },
+  {
+   "topic": "ANRAD, 390 Howard Street (continued)",
+   "resolution": "continued to 2/21/24",
+   "quote": "kevin o'brien and matt marro present.",
+   "tags": [
+    "ANRAD",
+    "wetlands delineation",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "Lake Shirley Improvement Corp. annual report",
+   "resolution": "presented; OOC extension request to a future agenda",
+   "quote": "lake shirley improvement corp. annual report- joanna bilotta, dominic meringolo",
+   "tags": [
+    "Lake Shirley",
+    "aquatic herbicide",
+    "water quality",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "NOI, 255 Sunny Hill Road (continued)",
+   "resolution": "not opened; no representative; no vote",
+   "quote": "no representative was present and bob p. stated they have a running disagreement with the dep",
+   "tags": [
+    "NOI",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "NOI, 171 Arbor Street (continued)",
+   "resolution": "continued to 2/21/24",
+   "quote": "motion: mike, second: rich b. to continue 171 arbor street to 2/21/24",
+   "tags": [
+    "NOI",
+    "turtle habitat"
+   ]
+  },
+  {
+   "topic": "RDA, 20 Kilburn St Lot 1 (Timric Realty Trust)",
+   "resolution": "negative determination approved",
+   "quote": "motion: bob p., second: rich b. to approve a negative determination for this request for determination of applicability.",
+   "tags": [
+    "RDA",
+    "stormwater",
+    "Kilburn St"
+   ]
+  },
+  {
+   "topic": "NOI, 20 Kilburn St Lot 2 (continued)",
+   "resolution": "continued to 2/21/24",
+   "quote": "motion: chris s., second: mike l. to continue this hearing to 2/21/24.",
+   "tags": [
+    "NOI",
+    "septic",
+    "wetlands crossing"
+   ]
+  },
+  {
+   "topic": "NOI, 20 Kilburn St Lot 3",
+   "resolution": "approved with conditions",
+   "quote": "motion: bob p., second: mike l. to approve this notice of intent, with the condition that the applicant submit a revised plan,",
+   "tags": [
+    "NOI",
+    "boulder wall",
+    "erosion control"
+   ]
+  },
+  {
+   "topic": "New business: unknown topics",
+   "resolution": "none",
+   "quote": "topics unknown 48 hours in advance of meeting - none",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Gas for pollinator habitat",
+   "resolution": "approved, $117 to Hawes Account",
+   "quote": "motion: mary w., second: mike l. to apply the $117 spent on gas to the hawes account",
+   "tags": [
+    "pollinator habitat",
+    "budget support",
+    "Hawes account"
+   ]
+  },
+  {
+   "topic": "Title searches",
+   "resolution": "no vote; Bob to meet Town Counsel",
+   "quote": "update on title searches- bob reported that he will be meeting with town counsel to discuss the title searches.",
+   "tags": [
+    "title search",
+    "tax title",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "32 Cortland Circle detention pond",
+   "resolution": "struck from agenda",
+   "quote": "mary asked to strike it off the agenda until the homeowners association comes back.",
+   "tags": [
+    "detention pond",
+    "HOA"
+   ]
+  },
+  {
+   "topic": "780 Northfield Rd culvert",
+   "resolution": "enforcement order authorized",
+   "quote": "motion: bob p., second: chris s. to authorize our conservation administrator to issue an enforcement order to jim lattanzi",
+   "tags": [
+    "enforcement",
+    "culvert",
+    "wetlands scientist"
+   ]
+  },
+  {
+   "topic": "MS SharePoint / OneDrive login",
+   "resolution": "no vote; IT training suggested",
+   "quote": "ms sharepoint/one drive login validation- mary reported that everyone can login",
+   "tags": [
+    "software",
+    "training"
+   ]
+  },
+  {
+   "topic": "MACC classes and conference",
+   "resolution": "no vote; send class list to Ashleigh, cc Sophie",
+   "quote": "macc classes- mary stated that anyone who wants to take classes should send the list to ashleigh, with",
+   "tags": [
+    "training",
+    "MACC"
+   ]
+  },
+  {
+   "topic": "950 Chase Road shed removal",
+   "resolution": "Bob to talk to Town Counsel",
+   "quote": "950 chase road- shed removal- bob will talk to town counsel about this.",
+   "tags": [
+    "encroachment",
+    "shed",
+    "Timber Rights"
+   ]
+  },
+  {
+   "topic": "315 Lancaster Ave owner contact",
+   "resolution": "second letter requested from Town Counsel",
+   "quote": "315 lancaster ave. - contact owners- bob reported a letter was sent in january",
+   "tags": [
+    "encroachment",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "123 Hollis Road property maintenance",
+   "resolution": "approved $3,200 water heater purchase",
+   "quote": "property maintenance - mike reported that he received a text from the tenant",
+   "tags": [
+    "Hollis Road",
+    "property maintenance",
+    "heating",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Stormwater Committee representative",
+   "resolution": "approved; Jenny Pewtherer nominated",
+   "quote": "motion: bob p., second: mary w. to nominate jenny pewtherer as the representative to the stormwater committee.",
+   "tags": [
+    "stormwater",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 11:15pm",
+   "quote": "motion: rich b., second: chris s. to adjourn at 11:15pm.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "Conservation Commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "ANRAD",
+  "certificate of compliance",
+  "enforcement",
+  "Lake Shirley",
+  "aquatic herbicide",
+  "stormwater",
+  "Kilburn Street",
+  "Hollis Road property",
+  "peer review",
+  "pollinator habitat",
+  "Hawes account",
+  "budget",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

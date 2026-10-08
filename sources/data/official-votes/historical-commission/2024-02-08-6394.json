@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2024-02-08",
  "docid": "6394",
@@ -11,7 +11,161 @@
   "doc_url": "/docs/meetings/historical-commission/2024-02-08-minutes-6394.txt"
  },
  "votes": [],
- "dropped_unquoted": 3,
- "note": "Three procedural votes recorded. The minutes describe various commission decisions regarding the funeral home demolition, Pearl Street structure, and Marshall Park cave, but these are stated as decisions made during discussion without formal motion language (no \"moved by/seconded by\" recorded), so they are not counted as votes per the rules.",
- "cost_usd": 0.0829883
+ "dropped_unquoted": 0,
+ "note": "Plain-text extraction with word spacing collapsed, so quotes are copied in that collapsed form exactly as printed. No motions, votes or vote counts are recorded: the January and December minutes are described as \"reviewed and accepted\" with no motion or tally, so votes is empty. Decisions are taken from the minutes' own statements that the commission \"decided\" or was \"deemed\" (recorded without a vote). Members are not named (\"All members were in attendance\"). Richard McGrath is named only as having attended Medford's anniversary, not this meeting, so he is excluded from attendees. Dave Passios is printed as \"DavePassios\" in the text; the name is given here with the space restored. Public comment is recorded as a claim within the cave discussion, not as a separate public-comment section.",
+ "cost_usd": 0.01452057,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Historical Commission members (not named in the minutes)",
+   "role": "Members of the Historical Commission",
+   "status": "present",
+   "quote": "all memberswereinattendanceandthemeetingbeganat 7:00pm."
+  },
+  {
+   "name": "Members of the Lunenburg Parks Commission (not named)",
+   "role": "Lunenburg Parks Commission members",
+   "status": "present",
+   "quote": "membersfromthelunenburgparkscommissionwereinattendance, andhadquestionsincludingwhat madethecavehistoricallysignificant"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Resident; former member of the Parks Commission",
+   "status": "present",
+   "quote": "resident davepassios, whohasbeenorganizingmuchof themovement tosavethecave,claimed, asaformer member of theparkscommission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission stance on the Funeral home: send it into demolition delay, as the structure is deemed historically significant to the town.",
+   "quote": "thecommission'sstanceonthisissuewouldbetosendit intodemodelayasthestructureisdeemedhistoricallysignificant"
+  },
+  {
+   "decision": "37 Pearl Street: the structure, built as a camp in 1943, was decided not significant enough to warrant saving.",
+   "quote": "thedemolitionpermit for 37pearl street wasreviewed, andit wasdecidedthat thestructure,whichwasbuilt asacampin1943, wasnot significant enoughtowarrant saving."
+  },
+  {
+   "decision": "Marshall Park cave: decided to be significant enough to have a demolition delay applied.",
+   "quote": "inolder business, themarshall parkcavehasbeenreviewedanddecidedthat it isindeedastructurethat issignificant enoughtohaveademodelayappliedto."
+  },
+  {
+   "decision": "Plan to add the entire Marshall Park to the town survey as a site of importance if the survey grant is received.",
+   "quote": "toaddtheentireparktothetownsurveyasasiteof importanceif wereceivethegrant for thesurvey"
+  },
+  {
+   "decision": "If the Parks Commission proceeds with demolishing the cave, it must submit a demolition application.",
+   "quote": "if theparkscommissionplanstogoforwardwithdemolishingthecave, theywill havetosubmitademoapplication."
+  },
+  {
+   "decision": "Stones stored at the Arnold Litch site were temporarily removed to be stored over winter.",
+   "quote": "thestonesbeingstoredat thearnoldlitchsitehavebeentemporarilyremovedtobestoredover winter."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Medford CPA projects, reported by Richard McGrath",
+   "what_was_recorded": "Medford completed 90 projects costing about ten million dollars, all funded by the CPA, as reported from an anniversary event; no Lunenburg figure was set.",
+   "figures_as_printed": [
+    "about 10 milliondollars"
+   ],
+   "quote": "overall, theyhadcompleted90projectstotallingabout 10milliondollars, all fundedbythecpa."
+  },
+  {
+   "topic": "Marshall Park cave grant risk",
+   "what_was_recorded": "Concern that the cave could interfere with the Parks Commission construction plan and that the project could lose the grant funding it.",
+   "figures_as_printed": [],
+   "quote": "thereisconcernthat if thecaveinterfereswiththeconstructionplan, thentheymaylosethegrant thatwouldbefundingtheproject."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Resident; former member of the Parks Commission",
+   "topic": "Marshall Park cave, timing of restoration",
+   "quote": "inhisopinion, restorationwouldn't beginimmediately, andheforeseesnointerferencewiththeparkscommission'sproject."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of January",
+   "resolution": "reviewed and accepted (no recorded vote)",
+   "quote": "theminutesfor themonthof januarywerereviewedandaccepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Funeral home correspondence and possible demolition",
+   "resolution": "stance: send into demolition delay",
+   "quote": "newcorrespondencewasreceivedinregardstothefuneral homewhichiscurrentlyfor sale.",
+   "tags": [
+    "funeral home",
+    "demolition delay",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Demolition permit, 37 Pearl Street",
+   "resolution": "decided not significant enough to save",
+   "quote": "thedemolitionpermit for 37pearl street wasreviewed, andit wasdecidedthat thestructure,whichwasbuilt asacampin1943, wasnot significant enoughtowarrant saving.",
+   "tags": [
+    "demolition permit",
+    "Pearl Street"
+   ]
+  },
+  {
+   "topic": "Marshall Park cave, old business",
+   "resolution": "decided significant; demolition delay to apply; Parks Commission questions and survey plan noted",
+   "quote": "inolder business, themarshall parkcavehasbeenreviewedanddecidedthat it isindeedastructurethat issignificant enoughtohaveademodelayappliedto.",
+   "tags": [
+    "Marshall Park",
+    "cave",
+    "demolition delay",
+    "Parks Commission",
+    "grant",
+    "survey",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Stones stored at Arnold Litch site",
+   "resolution": "temporarily removed for winter storage (noted)",
+   "quote": "thestonesbeingstoredat thearnoldlitchsitehavebeentemporarilyremovedtobestoredover winter.",
+   "tags": [
+    "stones",
+    "storage"
+   ]
+  },
+  {
+   "topic": "December minutes",
+   "resolution": "deferred one month, then reviewed and accepted",
+   "quote": "theminutesfromthedecember meetinghadbeendeferredonemonthandwerereviewedandacceptedat thismeeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Medford CPA anniversary report",
+   "resolution": "reported (no action)",
+   "quote": "richardmcgrathattendedmedford'sanniversaryof their adoptionof thecpa.",
+   "tags": [
+    "Community Preservation Act",
+    "Medford"
+   ]
+  }
+ ],
+ "tags": [
+  "historical preservation",
+  "demolition delay",
+  "Marshall Park",
+  "cave",
+  "Funeral home",
+  "37 Pearl Street",
+  "Parks Commission",
+  "Community Preservation Act",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

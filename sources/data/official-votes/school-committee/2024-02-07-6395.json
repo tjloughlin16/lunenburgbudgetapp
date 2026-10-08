@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-02-07",
  "docid": "6395",
@@ -12,95 +12,720 @@
  },
  "votes": [
   {
-   "motion": "enter executive session to discuss the reputation, character, physical condition, or mental health of an individual, or to discuss discipline or dismissal of or complaints against a public officer, employee, staff member, or individual",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Ms. Brzozoski",
+   "motion": "Enter executive session (purpose read from the agenda).",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. lehtinen makes a motion to enter executive session, ms. brzozoski seconds the motion, all in favor"
   },
   {
-   "motion": "waive the 10 minute limit for Public Comment",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Waive the 10-minute limit for Public Comment.",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr. lehtinen makes a motion to waive the 10 minute limit for public comment, mr. sculimbrene seconds the motion, all in favor"
+   "quote": "mr. lehtinen makes a motion to waive the 10 minute limit for public comment, mr. sculimbrene seconds the motion"
   },
   {
-   "motion": "move Student Representative Report to be discussed at this time",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Move the Student Representative Report up to this point in the meeting.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ms. brzozoski makes a motion to move student representative report to now, mr. sculimbrene seconds the motion, all approve"
+   "quote": "ms. brzozoski makes a motion to move student representative report to now, mr. sculimbrene seconds the motion"
   },
   {
-   "motion": "approve minutes from 1/3/24 and 1/17/24",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Approve the minutes of 1/3/24 and 1/17/24.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ms. brzozoski makes a motion to approve minutes 1/3/24 & 1/17/24, mr. sculimbrene seconds the motion all approve."
+   "quote": "ms. brzozoski makes a motion to approve minutes 1/3/24 & 1/17/24"
   },
   {
-   "motion": "approve minutes from 12/20/23",
-   "moved_by": "Ms. Brzozoski",
-   "seconded_by": "Mr. Lehtinen",
-   "outcome": "passed",
+   "motion": "Approve the minutes of 12/20/23.",
+   "moved_by": "Laura Brzozoski",
+   "seconded_by": "Brian Lehtinen",
+   "outcome": "passed, Mr. Sculimbrene abstaining",
    "procedural": true,
-   "quote": "ms. brzozoski makes a motion to approve minutes 12/20/23, mr. lehtinen seconded the motion, all approve with mr. sculimbrene abstaining."
+   "quote": "mr. lehtinen seconded the motion, all approve with mr. sculimbrene abstaining"
   },
   {
-   "motion": "approve 5 School Choice seats for FY24/25 freshmen, keep 1 seat for current freshmen, and allow current 10th, 11th, and 12th grade students to stay until graduation",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Ms. Brzozoski",
+   "motion": "Approve 5 seats open for school choice for 24/25 freshmen, keep the one available seat with the current freshman class, and allow current 10th, 11th and 12th graders who move to stay until graduation.",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. lehtinen makes a motion to approve the 5 seats, keep the one seat, and allow current 10, 11 and 12th graders to stay until graduation, ms. brzozoski seconds the motion, all approve"
   },
   {
-   "motion": "approve the FY25 school calendar",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Approve the FY25 School Calendar.",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. lehtinen makes a motion to approve the calendar, mr. sculimbrene seconds the motion, all approve."
+   "quote": "mr. lehtinen makes a motion to approve the calendar, mr. sculimbrene seconds the motion, all approve"
   },
   {
-   "motion": "approve the FY25 preschool tuition increase, with the 2-day program increasing from $1,824.14 to $1,897.11 and the 4-day program from $3,412.10 to $3,548.58",
-   "moved_by": "Mr. Sculimbrene",
-   "seconded_by": "Mr. Lehtinen",
+   "motion": "Approve the FY25 preschool tuition increase (2-day program to $1,897.11; 4-day program to $3,548.58).",
+   "moved_by": "Anthony Sculimbrene",
+   "seconded_by": "Brian Lehtinen",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr sculimbrene makes a motion to approve, mr. lehtinen seconds the motion, all approve"
   },
   {
-   "motion": "accept the PTO donation of $2,633.34 from the Fall Book Fair to be deposited into the Primary School Student Activity Account",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Accept the $2,633.34 donation from the PTO to the Primary School Student Activity Account.",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. lehtinen makes a motion to accept the donation, mr. sculimbrene seconds the motion, all approve"
   },
   {
-   "motion": "approve the cafeteria workers' donation of 219½ days to a coworker in need",
-   "moved_by": "Mr. Lehtinen",
-   "seconded_by": "Mr. Sculimbrene",
+   "motion": "Approve the donation of 219 ½ days from cafeteria workers to a coworker in need.",
+   "moved_by": "Brian Lehtinen",
+   "seconded_by": "Anthony Sculimbrene",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. lehtinen makes a motion to approve donation of days, mr. sculimbrene seconds the motion, all approve"
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Mr. Sculimbrene",
-   "seconded_by": "Ms. Brzozoski",
+   "motion": "Adjourn the meeting at 9:17 p.m.",
+   "moved_by": "Anthony Sculimbrene",
+   "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. sculimbrene made a motion to adjourn at 9:17 p.m. ms. brzozoski seconds the motion, all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and readable. Public comments on music and athletics programs were extensive but no motions were voted on from those comments. Items 11.f and 11.g involved designations and committee assignments but no formal votes were recorded.",
- "cost_usd": 0.10886549999999999
+ "note": "Text extraction from a scanned-or-OCR'd PDF with broken words (\"whic h\", \"Asdvisory\", \"Luneburg\") and some line breaks inside sentences; quotes were copied as extracted, with line breaks collapsed. Vote counts are not printed; votes are recorded as \"all approve\" / \"All in favor\", so outcomes are stated as passed without a count. The minutes record entering executive session but do not record a return to open session or any vote in it. Mr. Passios (item 4) and Dave Passio (item 14) share the address 56 Whiting Street and are listed separately as printed; the minutes do not say whether they are the same person, and they were not merged. Michael Cassidy and Courtney Fuller have no stated attendance status. Mr. Sculimbrene, Ms. Brzozoski and Mr. Lehtinen also spoke during public comment as board members; they are not listed as public speakers. Dollar figures are as printed, including inconsistent formats (e.g. $3412.10 vs $3,548.58).",
+ "cost_usd": 0.09355092000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair- present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "absent",
+   "quote": "peter beardmore, member - absent"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. burnham replies, that would be each season we have about 40% participation"
+  },
+  {
+   "name": "Michael Cassidy",
+   "role": "Business Manager/ HR Director",
+   "status": "not stated",
+   "quote": "business manager/ hr director"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services (guest)",
+   "status": "present",
+   "quote": "guests: julianna hanscom - director of special services"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "president of the Lunenburg Education Association",
+   "status": "present",
+   "quote": "i'm president of the lunenburg education association and speak on behalf of employees"
+  },
+  {
+   "name": "Sophia Mulè",
+   "role": "public comment, 139 Cove Road",
+   "status": "present",
+   "quote": "we held a meeting after school with a large group of students involved in the music department"
+  },
+  {
+   "name": "Kara Harunkiewicz",
+   "role": "public comment, 165 Gilchrest St.",
+   "status": "present",
+   "quote": "i'm just wondering what's the plan moving forward for future years"
+  },
+  {
+   "name": "Noah Lind",
+   "role": "public comment, 95 Gilchrest Road",
+   "status": "present",
+   "quote": "i am a band student who was part of the lunenburg music department"
+  },
+  {
+   "name": "Mr. Passios",
+   "role": "public comment, 56 Whiting Street",
+   "status": "present",
+   "quote": "speaking to you as a lifelong resident of lunenburg."
+  },
+  {
+   "name": "Dave Passio",
+   "role": "public comment, 56 Whiting Street; says he is on the finance committee",
+   "status": "present",
+   "quote": "i am on the finance committee and i will be here tomorrow night probably half the night."
+  },
+  {
+   "name": "Tatum Furman",
+   "role": "public comment, 1024 Massachusetts Avenue",
+   "status": "present",
+   "quote": "i am a student in 10th grade at lunenburg high school"
+  },
+  {
+   "name": "Caylen St. George",
+   "role": "public comment, 38 Francis Ave.",
+   "status": "present",
+   "quote": "music is something i'm truly passionate about and have found a community in"
+  },
+  {
+   "name": "Joseph James",
+   "role": "public comment, 756 Northfield Road",
+   "status": "present",
+   "quote": "i have been a member of lunenburg bands all the way since i've been in fifth grade"
+  },
+  {
+   "name": "Brandon Harris",
+   "role": "public comment, 8 West Street",
+   "status": "present",
+   "quote": "i have been a member of the luneburg music department ever since i moved here"
+  },
+  {
+   "name": "Lily Jordan",
+   "role": "public comment, 120 Robb Hill Road",
+   "status": "present",
+   "quote": "i have grown up playing sports through lunenburg programs all the way since i was a little kid"
+  },
+  {
+   "name": "Deena Qasim",
+   "role": "not currently living in Lunenburg but attending the High School",
+   "status": "present",
+   "quote": "i think that cutting middle school sports would be a big mistake"
+  },
+  {
+   "name": "Cecelia Stanek",
+   "role": "public comment, 43 Hollis Road and 483 Hollis Road",
+   "status": "present",
+   "quote": "i just want to know where all of the money is going"
+  },
+  {
+   "name": "Emma Barooshian",
+   "role": "public comment, 389 Mulpus Road",
+   "status": "present",
+   "quote": "expressing yourself with music can make you feel limitless"
+  },
+  {
+   "name": "Laura Barooshian",
+   "role": "public comment, 389 Mulpus Road",
+   "status": "present",
+   "quote": "i had a very nice conversation with mr. sheldon in the music department"
+  },
+  {
+   "name": "Shoshana Mulè",
+   "role": "public comment, 139 Cove Road",
+   "status": "present",
+   "quote": "i have a question about the process so"
+  },
+  {
+   "name": "TJ Laughlin",
+   "role": "public comment, 207 Rolling Acres",
+   "status": "present",
+   "quote": "the magic word is spreadsheet"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Julianna Hanscom is designated to reach out to the schools and collect all data and information on Chapter 766 school approval; the committee will then send a drafted policy to the subcommittee for review.",
+   "quote": "the school committee designates ms. hanscom to reach out to the schools and collect all data and information."
+  },
+  {
+   "decision": "Laura Brzozoski is the committee representative for paraprofessional negotiations, with Peter Beardmore helping if available and Carol Archambault as second member if not. No vote is recorded.",
+   "quote": "ms. brzozoski to be the committee rep with the help of mr. beardmore if available, and if not ms. archambault will be 2nd member"
+  },
+  {
+   "decision": "The committee stated it would like the music program saved in a recommended budget. No vote is recorded.",
+   "quote": "the committee would like to see the music program to be saved in a recommended budget."
+  },
+  {
+   "decision": "The question-and-answer section will be repeated at the first meeting in March.",
+   "quote": "we will do the same question and answer section at the first meeting in march."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant total for review",
+   "what_was_recorded": "The warrant total for 1/23/24 to 1/29/24 was reported, with no questions from the committee.",
+   "quote": "warrant total 1/23/24 to 1/29/24 $87,144.85 no questions from the committee",
+   "figures_as_printed": [
+    "$87,144.85"
+   ]
+  },
+  {
+   "topic": "FY25 preschool tuition increase",
+   "what_was_recorded": "The 2-day and 4-day preschool tuition rates were recommended to rise, following a suggested 4% annual increase since 2019, as printed in the minutes.",
+   "quote": "the 2 day program will go from $1,824.14 to $1,897.11 and the 4 day program will go from $3412.10 to $3,548.58.",
+   "figures_as_printed": [
+    "$1,824.14",
+    "$1,897.11",
+    "$3412.10",
+    "$3,548.58",
+    "4%"
+   ]
+  },
+  {
+   "topic": "PTO donation from Fall Book Fair",
+   "what_was_recorded": "The PTO donated money from the Fall Book Fair to the Primary School Student Activity Account, accepted by vote.",
+   "quote": "pto has supplied a donation of $2,633.34 as a result of the fall book fair",
+   "figures_as_printed": [
+    "$2,633.34"
+   ]
+  },
+  {
+   "topic": "PTO Special Someone Dance funds",
+   "what_was_recorded": "Mr. Sculimbrene reported the PTO raised more than $10,000 this year from the Special Someone Dance, aided by sponsors.",
+   "quote": "they raised more than $10,000 this year",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "Storm damage expenses (town side)",
+   "what_was_recorded": "Mr. Lehtinen reported the Town's expenses from the September storm were a little over $100,000, pending FEMA allocation.",
+   "quote": "the expenses for lunenburg were a little over $100,000",
+   "figures_as_printed": [
+    "$100,000"
+   ]
+  },
+  {
+   "topic": "Chapter 70 and levy limit",
+   "what_was_recorded": "Public comment said Chapter 70 funding fell 1% in FY24 and that the tax levy is limited to 2 1/2% a year, with costs rising faster.",
+   "quote": "funding in fiscal year 24 actually fell by 1% so we got less money in fy 24 than we did in fy 23",
+   "figures_as_printed": [
+    "1%",
+    "2 1/2%"
+   ]
+  },
+  {
+   "topic": "Possible FY25 budget increase above the levy limit",
+   "what_was_recorded": "Public comment (TJ Laughlin) said reinstating music, janitors and maintenance was said to raise the increase to about 6%, against a 2 1/2% base; the committee did not confirm these figures.",
+   "quote": "i think that was said to go up to potentially 6% again if we were to read those from 2 1/2%",
+   "figures_as_printed": [
+    "6%",
+    "2 1/2%",
+    "3 1/2%"
+   ]
+  },
+  {
+   "topic": "FY25 budget update",
+   "what_was_recorded": "Dr. Burnham shared updated budget information and options for the Town manager; no dollar figures are printed in the minutes for this item.",
+   "quote": "dr. burnham shares new and updated information and options in relation to the budget",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "School budget share of town budget",
+   "what_was_recorded": "In answer to a question, the school budget was described as slightly more than half of the town's budget; no dollar figures printed.",
+   "quote": "the school budget takes up slightly more than half of the town's budget",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ACE program cost to students",
+   "what_was_recorded": "The ACE program was said to cost students nothing because the university grant covers participation; a paraprofessional job coach would be needed.",
+   "quote": "this will not cost anything for our students to participate in",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfers, reported with the warrant review",
+   "amount_as_printed": "none",
+   "outcome": "none recorded",
+   "quote": "no line item transfers"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Staff cuts, pay, and per-pupil spending",
+   "speaker": "Mary Foyle",
+   "stated_role": "president of the Lunenburg Education Association",
+   "quote": "i'm president of the lunenburg education association and speak on behalf of employees who work"
+  },
+  {
+   "topic": "Fifth grade band and music program",
+   "speaker": "Sophia Mulè",
+   "quote": "we held a meeting after school with a large group of students involved in the music department"
+  },
+  {
+   "topic": "Future-year cuts and the plan",
+   "speaker": "Kara Harunkiewicz",
+   "quote": "i'm just wondering what's the plan moving forward for future years"
+  },
+  {
+   "topic": "Fifth grade band and marching band",
+   "speaker": "Noah Lind",
+   "quote": "i am a band student who was part of the lunenburg music department for all of my middle and high"
+  },
+  {
+   "topic": "Extra-curricular activities",
+   "speaker": "Mr. Passios",
+   "quote": "speaking to you as a lifelong resident of lunenburg."
+  },
+  {
+   "topic": "Extra-curricular activities",
+   "speaker": "Tatum Furman",
+   "quote": "i am a student in 10th grade at lunenburg high school"
+  },
+  {
+   "topic": "Music program",
+   "speaker": "Caylen St. George",
+   "quote": "music is something i'm truly passionate about and have found a community in"
+  },
+  {
+   "topic": "Fifth grade band",
+   "speaker": "Joseph James",
+   "quote": "i have been a member of lunenburg bands all the way since i've been in fifth grade"
+  },
+  {
+   "topic": "Music and choir",
+   "speaker": "Brandon Harris",
+   "quote": "i have been a member of the luneburg music department ever since i moved here"
+  },
+  {
+   "topic": "Middle school sports",
+   "speaker": "Lily Jordan",
+   "quote": "i have grown up playing sports through lunenburg programs all the way since i was a little kid"
+  },
+  {
+   "topic": "Middle school sports",
+   "speaker": "Deena Qasim",
+   "stated_role": "not currently living in Lunenburg but attending the High School",
+   "quote": "i think that cutting middle school sports would be a big mistake"
+  },
+  {
+   "topic": "Where the money goes",
+   "speaker": "Cecelia Stanek",
+   "quote": "i just want to know where all of the money is going"
+  },
+  {
+   "topic": "Proposition 2 1/2 and the budget process",
+   "speaker": "Shoshana Mulè",
+   "quote": "i have a question about the process so"
+  },
+  {
+   "topic": "Grant funding",
+   "speaker": "Laura Barooshian",
+   "quote": "i had a very nice conversation with mr. sheldon in the music department"
+  },
+  {
+   "topic": "Grant funding (follow-up)",
+   "speaker": "Sophia Mulè",
+   "quote": "i had another question regarding grants"
+  },
+  {
+   "topic": "Whether other town departments face the same deficits",
+   "speaker": "Joseph James",
+   "quote": "i'm not sure if this is a question you would be able to answer but"
+  },
+  {
+   "topic": "Budget process, line items",
+   "speaker": "Mary Foyle",
+   "quote": "i might be too early on this one but in reading questions online"
+  },
+  {
+   "topic": "Spreadsheet of the budget impacts",
+   "speaker": "TJ Laughlin",
+   "quote": "the magic word is spreadsheet"
+  },
+  {
+   "topic": "Music program and fifth grade band",
+   "speaker": "Emma Barooshian",
+   "quote": "expressing yourself with music can make you feel limitless"
+  },
+  {
+   "topic": "Music is part of everyday life",
+   "speaker": "Cecelia Stanek",
+   "stated_role": "483 Hollis Road (second comment)",
+   "quote": "music is everywhere in our lives and not just with people in band or chorus"
+  },
+  {
+   "topic": "Thanks to students; spreadsheets",
+   "speaker": "Shoshana Mulè",
+   "quote": "i appreciate the number of hours you've spent staring at spreadsheets"
+  },
+  {
+   "topic": "Equity of music access",
+   "speaker": "Sophia Mulè",
+   "quote": "what we're concerned about that means more than you could possibly think."
+  },
+  {
+   "topic": "Fifth grade band on behalf of music department",
+   "speaker": "Joseph James",
+   "quote": "i am talking on behalf of the music department"
+  },
+  {
+   "topic": "Civics, town meeting and staff cuts",
+   "speaker": "Mary Foyle",
+   "quote": "i've taught civics for the past few years"
+  },
+  {
+   "topic": "Thanks to students; cuts to music and the high school",
+   "speaker": "Kara Harunkiewicz",
+   "quote": "i would like to thank mr. sculimbrene for bringing up literally over half of the points"
+  },
+  {
+   "topic": "Finance committee; participation counts; grant position",
+   "speaker": "Dave Passio",
+   "stated_role": "says he is on the finance committee",
+   "quote": "i am on the finance committee and i will be here tomorrow night probably half the night."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "called to order at 6:31; pledge",
+   "quote": "1. call to order by carol archambault at 6:31",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "motion to enter passed; minutes do not record a return to open session",
+   "quote": "mr. lehtinen makes a motion to enter executive session, ms. brzozoski seconds the motion, all in favor",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Public comment time limit",
+   "resolution": "10-minute limit waived",
+   "quote": "mr. lehtinen makes a motion to waive the 10 minute limit for public comment, mr. sculimbrene seconds the motion",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Public comment (item 4)",
+   "resolution": "heard; no action",
+   "quote": "i'm president of the lunenburg education association and speak on behalf of employees",
+   "tags": [
+    "public comment",
+    "staff cuts",
+    "music program",
+    "extra-curriculars"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action; legislators asked for the committee's specific concerns",
+   "quote": "thank you to the finance committee for the presentation last thursday.",
+   "tags": [
+    "state aid",
+    "legislators"
+   ]
+  },
+  {
+   "topic": "FY 25 budget Q and A",
+   "resolution": "questions answered; Q and A to repeat at the first March meeting",
+   "quote": "we will do the same question and answer section at the first meeting in march.",
+   "tags": [
+    "FY25 budget",
+    "Proposition 2 1/2",
+    "Chapter 70"
+   ]
+  },
+  {
+   "topic": "Student representative report",
+   "resolution": "moved up in the agenda; reported",
+   "quote": "the primary school students enjoyed their special someone dance last weekend.",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved 1/3/24 and 1/17/24; approved 12/20/23 with one abstention",
+   "quote": "ms. brzozoski makes a motion to approve minutes 1/3/24 & 1/17/24",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and line item transfers",
+   "resolution": "warrants signed; no line item transfers",
+   "quote": "warrants have been signed by carol archambault",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "information only",
+   "quote": "kindergarten registration is currently open",
+   "tags": [
+    "registration",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "School choice for 24/25",
+   "resolution": "approved",
+   "quote": "dr. burnham recommends having 5 seats open for school choice for 24/25 freshmen",
+   "tags": [
+    "school choice"
+   ]
+  },
+  {
+   "topic": "FY25 school calendar",
+   "resolution": "approved",
+   "quote": "have not received any comments or questions on the calendar draft.",
+   "tags": [
+    "calendar"
+   ]
+  },
+  {
+   "topic": "FY25 preschool tuition increase",
+   "resolution": "approved",
+   "quote": "annually we come forward and recommend an increase",
+   "tags": [
+    "preschool tuition"
+   ]
+  },
+  {
+   "topic": "PTO donation",
+   "resolution": "accepted",
+   "quote": "pto has supplied a donation of $2,633.34",
+   "tags": [
+    "donations"
+   ]
+  },
+  {
+   "topic": "Donation of days",
+   "resolution": "approved",
+   "quote": "cafeteria workers want to make a donation of 219 ½ days",
+   "tags": [
+    "donations",
+    "cafeteria"
+   ]
+  },
+  {
+   "topic": "Paraprofessional negotiation representative",
+   "resolution": "assigned; no vote recorded",
+   "quote": "ms. brzozoski to be the committee rep with the help of mr. beardmore if available",
+   "tags": [
+    "paraprofessional",
+    "negotiation"
+   ]
+  },
+  {
+   "topic": "Chapter 766 school approval",
+   "resolution": "Julianna Hanscom designated to collect data; policy to subcommittee",
+   "quote": "ms. archambault reports we need to make sure our schools meet the standards and criteria.",
+   "tags": [
+    "Chapter 766"
+   ]
+  },
+  {
+   "topic": "ACE program and MAICIE",
+   "resolution": "presentation; paraprofessional job coach needed",
+   "quote": "a presentation about the program and how it works with kids ages 18-22 with intellectual disabilities.",
+   "tags": [
+    "special education"
+   ]
+  },
+  {
+   "topic": "FY25 budget update",
+   "resolution": "discussion; no action; positions to be restored in a recommended budget",
+   "quote": "dr. burnham shares new and updated information and options in relation to the budget",
+   "tags": [
+    "FY25 budget",
+    "music program",
+    "custodial staff",
+    "guidance"
+   ]
+  },
+  {
+   "topic": "Subcommittee and board reports",
+   "resolution": "reported; no action",
+   "quote": "mr. sculimbrene reports the pto met on monday",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Public comment (item 14)",
+   "resolution": "heard; no action",
+   "quote": "i would like to thank mr. sculimbrene for bringing up literally over half of the points",
+   "tags": [
+    "public comment",
+    "music program",
+    "middle school sports"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "no topics listed",
+   "quote": "15. topics for future discussion",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:17 p.m.",
+   "quote": "mr. sculimbrene made a motion to adjourn at 9:17 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "school budget",
+  "FY25 budget",
+  "music program",
+  "fifth grade band",
+  "middle school sports",
+  "extra-curriculars",
+  "school choice",
+  "preschool tuition",
+  "donations",
+  "public comment",
+  "executive session",
+  "Proposition 2 1/2",
+  "Chapter 70",
+  "Chapter 766",
+  "paraprofessional",
+  "staffing cuts",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

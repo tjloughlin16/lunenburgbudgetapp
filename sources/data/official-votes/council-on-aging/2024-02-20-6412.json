@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2024-02-20",
  "docid": "6412",
@@ -12,28 +12,304 @@
  },
  "votes": [
   {
-   "motion": "to accept the minutes of the December 12, 2023 Council on Aging meeting",
+   "motion": "Accept the minutes of the December 12,2023 COA meeting.",
    "moved_by": "Jim McGuigan",
-   "seconded_by": "Susan O'Sullivan",
+   "seconded_by": "Susan O’Sullivan",
    "outcome": "passed",
    "procedural": true,
-   "quote": "jim mcguigan moved to accept the minutes of the december 12,2023 coa meeting. susan o'sullivan seconded the motion. all approved motion, carried."
+   "quote": "jim mcguigan moved to accept the minutes of the december 12,2023 coa meeting. susan o'sullivan seconded the motion."
   },
   {
-   "motion": "to adopt the chickadee design for the Council on Aging logo",
+   "motion": "Select the chickadee design over the eagle for the new COA logo.",
    "outcome": "passed 5-3",
    "procedural": false,
-   "quote": "the chickadee won the vote of the board 5-3 ===page 2=== and members liked a darker blue font on des",
-   "quote_taken_from_text": true
+   "quote": "the chickadee won the vote of the board 5-3"
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried."
+   "quote": "a motion was made and seconded to adjourn the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1170323
+ "note": "Text extraction of a two-page typed minutes document, marked approved at the 3/12/2024 COA meeting. Three motions are recorded, with outcomes stated; the logo result is recorded as a vote count (5-3) with no named mover or seconder. The minutes print no dollar figures at all, so figures_as_printed is empty throughout. Public comment is recorded as \"None\", so no speakers. The attendance quotes are the Present/Excused/Guests lines. The minutes spell the same member two ways, \"Betty DiGiacamo\" in the attendance and \"Betty DiGiacomo\" in item 5; both are recorded as printed. Item 4 says \"Mr. Lincoln\" without a first name, so it is not attributed to Pete Lincoln.",
+ "cost_usd": 0.01710099,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson deb lincoln called the meeting to order at 9:35am"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, diane nowd, helen balcom,"
+  },
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, diane nowd, helen balcom,"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, diane nowd, helen balcom,"
+  },
+  {
+   "name": "Helen Balcom",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), susan doherty (director), pete lincoln, diane nowd, helen balcom,"
+  },
+  {
+   "name": "Jim McGuigan",
+   "status": "present",
+   "quote": "helen balcom, jim mcguigan, cathy beale, jane rabbitt, susan o'sullivan."
+  },
+  {
+   "name": "Cathy Beale",
+   "status": "present",
+   "quote": "helen balcom, jim mcguigan, cathy beale, jane rabbitt, susan o'sullivan."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "status": "present",
+   "quote": "helen balcom, jim mcguigan, cathy beale, jane rabbitt, susan o'sullivan."
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "present",
+   "quote": "helen balcom, jim mcguigan, cathy beale, jane rabbitt, susan o'sullivan."
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Lunenburg Selectperson",
+   "status": "present",
+   "quote": "guests lunenburg selectperson, lou franco"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "absent",
+   "quote": "excused judy tarbell and betty digiacamo"
+  },
+  {
+   "name": "Betty DiGiacamo",
+   "status": "absent",
+   "quote": "excused judy tarbell and betty digiacamo"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Doherty will contact SUZOR IT and ask for a representative to attend the next meeting about board members who cannot access their town emails.",
+   "quote": "ms. doherty will contact suzor it and request that a representative come to the"
+  },
+  {
+   "decision": "Ms. Lincoln will pass the logo change requests to Ms. Barnack and bring the revised designs back for review at the next meeting.",
+   "quote": "ms. lincoln will communicate the requests to ms. barnack"
+  },
+  {
+   "decision": "A copy of the Massachusetts General Law (Part I, Title VII, Chapter 40, Section 8) handout will be added to the board member orientation packet.",
+   "quote": "a copy of this document will be added to the board member orientation packet."
+  },
+  {
+   "decision": "Board members were encouraged to think of changes they would like to see in the Town Charter regarding the Council on Aging.",
+   "quote": "board members were encouraged to think of changes that they would like to see in the town charter regarding the council on aging"
+  },
+  {
+   "decision": "Board members were asked to think of events that could be held at the LAAC to commemorate the 300th celebration.",
+   "quote": "he would like the coa members to think of events that could be held at the laac to commemorate the upcoming celebration."
+  },
+  {
+   "decision": "Ms. Lincoln will attend the Fin/Com budget meeting with the COA on February 22.",
+   "quote": "ms. lincoln will also attend the meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY25 COA budget",
+   "what_was_recorded": "The Fin/Com budget meeting with the COA was scheduled for February 22 at 7:30PM; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty informed the board that the fin/com budget meeting with the coa will be on thursday february 22nd at 7:30pm."
+  },
+  {
+   "topic": "Kids Kingdom playground relocation and parking area",
+   "what_was_recorded": "The cost of the project will go to the Capital Plan committee once the required information is gathered; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the cost of the entire project will be submitted to the capital plan committee"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted, no action",
+   "quote": "ms. lincoln announced that marilyn poor, potential council on aging (coa) board member, will no longer be able to join the board due to personal reasons.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Minutes approval (December 12, 2023 meeting)",
+   "resolution": "approved",
+   "quote": "jim mcguigan moved to accept the minutes of the december 12,2023 coa meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Business 1: Director retirement announcement",
+   "resolution": "announced",
+   "quote": "ms. doherty announced that after 30 years of service to the",
+   "tags": [
+    "staffing",
+    "director"
+   ]
+  },
+  {
+   "topic": "New Business 2: COA award plaque placement",
+   "resolution": "requested that members view the plaques",
+   "quote": "ms. lincoln requested that board members visit the large function room to view the newly placed coa award plaques",
+   "tags": [
+    "awards",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Master Plan (Plan Lunenburg)",
+   "resolution": "discussed; third survey in development",
+   "quote": "a third survey is in the process of being developed gearing more questions towards people age 60+.",
+   "tags": [
+    "master plan",
+    "survey",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Senior tax relief",
+   "resolution": "no discussion",
+   "quote": "discussion lunenburg senior tax relief: none",
+   "tags": [
+    "tax relief"
+   ]
+  },
+  {
+   "topic": "Board member town email access",
+   "resolution": "Director to contact SUZOR IT for a representative at the next meeting",
+   "quote": "there are still members of the coa board who cannot access their town emails.",
+   "tags": [
+    "IT",
+    "board"
+   ]
+  },
+  {
+   "topic": "Lunenburg 300th celebration",
+   "resolution": "members asked to suggest LAAC events",
+   "quote": "he would like the coa members to think of events that could be held at the laac to commemorate the upcoming celebration.",
+   "tags": [
+    "300th",
+    "events"
+   ]
+  },
+  {
+   "topic": "Board member opening",
+   "resolution": "noted, opening when term ends June 2024",
+   "quote": "betty digiacomo will not be returning to the board when her term ends in june 2024.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "LAAC recreation area programs (summer concerts, volunteer cookout)",
+   "resolution": "discussed; poster to follow",
+   "quote": "opening the season will be the sunshine boys on friday may 29th at 1:30pm.",
+   "tags": [
+    "programs",
+    "events",
+    "concerts"
+   ]
+  },
+  {
+   "topic": "COA logo choices",
+   "resolution": "chickadee design chosen 5-3; darker blue font requested on design 6; revisions to return",
+   "quote": "the chickadee won the vote of the board 5-3",
+   "tags": [
+    "logo",
+    "vote"
+   ]
+  },
+  {
+   "topic": "Mass General Law regarding Councils on Aging",
+   "resolution": "distributed; to be added to orientation packet",
+   "quote": "ms. lincoln distributed copies of the",
+   "tags": [
+    "law",
+    "orientation"
+   ]
+  },
+  {
+   "topic": "FY25 COA budget",
+   "resolution": "noted; Fin/Com meeting February 22",
+   "quote": "ms. doherty informed the board that the fin/com budget meeting with the coa",
+   "tags": [
+    "budget",
+    "Fin/Com"
+   ]
+  },
+  {
+   "topic": "Director's report: programming, bingo and capital plan",
+   "resolution": "reported",
+   "quote": "the last day for wednesday bingo will be on march 13th.",
+   "tags": [
+    "programs",
+    "bingo",
+    "capital plan",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Director's report: building and grounds",
+   "resolution": "reported",
+   "quote": "ms. doherty reported that the target date for total completion of the ada",
+   "tags": [
+    "facilities",
+    "ADA",
+    "Kids Kingdom"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported",
+   "quote": "ms. doherty relayed that the next meeting for the eagle house supporters",
+   "tags": [
+    "Eagle House",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:01AM",
+   "quote": "a motion was made and seconded to adjourn the meeting.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "seniors",
+  "LAAC",
+  "logo",
+  "budget",
+  "master plan",
+  "director retirement",
+  "facilities",
+  "membership",
+  "programs"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,66 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2024-02-22",
+ "source": {
+  "sha256": "38660c1d9b7ff762394131eaaff5bfbba1a3603d2e0d9c1359abe45271d9ac4a",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2024-02-22-8k8wImvZjEs.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2025,
+    "kind": "override",
+    "scope": "both",
+    "statement": "The chair proposed a Prop 2.5 override warrant article for needs-based service across town and school.",
+    "status": "voted",
+    "t": 13549,
+    "who": "the chair"
+   },
+   {
+    "amount_as_heard": "2.94%",
+    "fiscal_year": 2025,
+    "kind": "budget_total",
+    "scope": "school",
+    "statement": "School department is working toward a 2.94% increase target.",
+    "status": "announced",
+    "t": 11502,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "$589,000",
+    "fiscal_year": 2025,
+    "kind": "budget_total",
+    "scope": "town",
+    "statement": "Town manager preliminary budget for the library.",
+    "status": "announced",
+    "t": 5278,
+    "who": "the library director"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "override",
+    "condition": "if the committee does nothing",
+    "fiscal_year": 2025,
+    "prediction": "An override may land on the warrant by citizen petition if the committee does nothing.",
+    "scope": "both",
+    "t": 10976,
+    "who": "a member"
+   }
+  ]
+ },
+ "video_id": "8k8wImvZjEs",
+ "video_url": "https://www.youtube.com/watch?v=8k8wImvZjEs",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-08T14:28:42Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

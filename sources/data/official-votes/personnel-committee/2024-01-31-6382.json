@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2024-01-31",
  "docid": "6382",
@@ -12,23 +12,211 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the January 17, 2024 Personnel Committee meeting",
+   "motion": "Accept the minutes of the January 17, 2024 Personnel Committee meeting as presented.",
    "moved_by": "S. Andrews",
    "seconded_by": "J. Bilotta",
-   "outcome": "passed",
+   "outcome": "passed (all in favor; D. Fortune abstained)",
    "procedural": true,
-   "quote": "motion by s. andrews to accept the minutes as presented for the january 17, 2024 personnel committee meeting second: j. bilotta roll call vote: all in favor (d. fortune abstained as she had not attended the meeting)"
+   "quote": "motion by s. andrews to accept the minutes as presented for the january 17, 2024 personnel committee meeting"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:07pm.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "s. andrews made a motion to adjourn the meeting at 7:07pm second: d. fortune roll call vote: all in favor"
+   "quote": "s. andrews made a motion to adjourn the meeting at 7:07pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record discussions of job descriptions and salary surveys but no formal votes on those items—only evaluations and reviews. Two procedural votes recorded.",
- "cost_usd": 0.0734923
+ "note": "Text is clean and complete (pages 1 and 2, no scan). Two procedural votes recorded, both roll-call results printed only as 'All in Favor' with no count; the minutes-approval vote notes D. Fortune abstained. The minutes print no dollar figures; the 610, 555, 720 and 950 figures are job-evaluation point totals, not money. The minutes do not name a chair, so the role for J. Bilotta is inferred from her opening the meeting. Public comment: the minutes say there were no public comments; the item headed 'Public Comment' at the top is a committee update by J. Bilotta, recorded as a topic, not as public comment.",
+ "cost_usd": 0.01556617,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "susan andrews, joanna bilotta, donna fortune, wendy bertrand (5:55pm)"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee member (opened the meeting)",
+   "status": "present",
+   "quote": "susan andrews, joanna bilotta, donna fortune, wendy bertrand (5:55pm)"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "susan andrews, joanna bilotta, donna fortune, wendy bertrand (5:55pm)"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "susan andrews, joanna bilotta, donna fortune, wendy bertrand (5:55pm)"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, assistant town manager/hr director, heather lemieux, town manager, thomas gammel, police"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager, thomas gammel, police"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "chief gammel outlined the role and the various elements that were included in this role."
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Public Safety Coordinator",
+   "status": "present",
+   "quote": "amanda moore, public safety coordinator, pauline roy, coa outreach coordinator"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA Outreach Coordinator",
+   "status": "present",
+   "quote": "pauline roy, coa outreach coordinator, bill bernard, dpw"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill bernard, dpw director, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "not stated",
+   "status": "present",
+   "quote": "bill bernard, dpw director, jay simeone"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J. Bilotta to organize the Committee's February presentation to the Select Board and arrange the meeting.",
+   "quote": "she will organize the presentation and arrange for the meeting."
+  },
+  {
+   "decision": "Committee set its February meeting schedule, with targets of Wednesday February 7 to Monday February 12, to prepare the Select Board presentation and submission before Annual Town Meeting.",
+   "quote": "the committee set the february meeting schedule in order to prepare for the presentation to the select board"
+  },
+  {
+   "decision": "W. Bertrand to take minutes at the next meeting, as S. Andrews cannot attend.",
+   "quote": "as s. andrews will be unable to attend the next meeting, w. bertrand will take minutes."
+  },
+  {
+   "decision": "Police Executive Assistant job description to require approval at Annual Town Meeting, as it was not previously part of the SAP.",
+   "quote": "this job description will need to be approved ultimately at annual town meeting as it has not been part of the sap previously."
+  },
+  {
+   "decision": "Committee to review the Salary Survey material and the updated job grid spreadsheet to assess any anomalies.",
+   "quote": "the committee will review the salary survey material as well as the updated job grid spreadsheet to assess"
+  },
+  {
+   "decision": "Committee sought the help of a former member with compensation-planning experience to assist in creating the new grid.",
+   "quote": "we have also sought the assistance of a former member of this committee, with broad experience in compensation planning, to assist in creating the new grid."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Salary survey and new pay grid",
+   "what_was_recorded": "The Committee reviewed a salary survey from eight comparable towns to inform a new grid; the minutes print no dollar figures.",
+   "figures_as_printed": [],
+   "quote": "she has received data from 8 comparable towns."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Select Board update request",
+   "resolution": "J. Bilotta to organize a February presentation to the Select Board",
+   "quote": "j. bilotta shared that she had been asked that someone from the committee come to an upcoming select board",
+   "tags": [
+    "Select Board",
+    "project update"
+   ]
+  },
+  {
+   "topic": "Approval of January 17, 2024 minutes",
+   "resolution": "approved (D. Fortune abstained)",
+   "quote": "motion by s. andrews to accept the minutes as presented for the january 17, 2024 personnel committee meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Police Executive Assistant job description",
+   "resolution": "graded 610 points, Grade 9; needs Annual Town Meeting approval",
+   "quote": "the committee reviewed a new job description created for police executive assistant.",
+   "tags": [
+    "job descriptions",
+    "job grading",
+    "Police Department",
+    "AFSCME"
+   ]
+  },
+  {
+   "topic": "Re-scoring of outstanding roles",
+   "resolution": "re-scored: Payroll & Benefits Coordinator/Risk Manager 555/Grade 8; Assistant Town Manager/HR Director 720/Grade 11; DPW Director 950/Grade 14",
+   "quote": "the committee then began a review of several of the roles that remained outstanding, some for first time",
+   "tags": [
+    "job grading",
+    "job descriptions",
+    "DPW",
+    "HR"
+   ]
+  },
+  {
+   "topic": "Salary survey",
+   "resolution": "data received from 8 towns; analysis continues",
+   "quote": "she has received data from 8 comparable towns.",
+   "tags": [
+    "salary survey",
+    "compensation"
+   ]
+  },
+  {
+   "topic": "New pay grid development",
+   "resolution": "former member engaged; review of anomalies planned",
+   "quote": "the committee reviewed what remaining items in the project were and how we would move to the development of a new grid.",
+   "tags": [
+    "pay grid",
+    "compensation"
+   ]
+  },
+  {
+   "topic": "February schedule and minutes assignment",
+   "resolution": "schedule set for February 7 to 12; W. Bertrand takes next minutes",
+   "quote": "the committee set the february meeting schedule in order to prepare for the presentation to the select board",
+   "tags": [
+    "scheduling",
+    "Annual Town Meeting"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "job descriptions",
+  "job grading",
+  "compensation",
+  "salary survey",
+  "pay grid",
+  "Police Department",
+  "DPW",
+  "Select Board",
+  "Annual Town Meeting",
+  "HR"
+ ],
+ "dropped_unquoted_by_field": {}
 }

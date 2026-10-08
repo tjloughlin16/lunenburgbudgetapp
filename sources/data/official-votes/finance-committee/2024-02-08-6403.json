@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-02-08",
  "docid": "6403",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from January 18th and January 25th",
+   "motion": "Approve the minutes of January 18, 2024 and January 25, 2024.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
    "outcome": "passed 5-1",
@@ -20,7 +20,7 @@
    "quote": "motion to approve minutes from january 18th and january 25th by chris menard, seconded by dave passios. 5 to 1 vote."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
    "outcome": "passed",
@@ -29,6 +29,325 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0756135
+ "note": "Text is clean extracted minutes (6 pages), no scan. Two votes recorded: the minutes approval is printed as \"5 to 1 vote\" (outcome recorded as passed 5-1 on that printed count); adjournment is \"All in favor\" with no count. No other motions. Heather Lemieux is named in discussion (email, consolidation) but is not listed as attending, so she is omitted from attendees. Kate Burnham (Superintendent) is named but not listed as attending. The Town Manager is referred to by title only. The overlay recommendation was made by the Board of Assessors as reported by a member; it was not a motion of this Committee. Dollar figures are as printed; no transfers recorded. The Dave Passios grant-letter suggestion is recorded as a decision because the minutes record agreement, not a vote.",
+ "cost_usd": 0.01762187,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "absent members: board member tom gray"
+  },
+  {
+   "name": "Laura Veran",
+   "role": "resident, 389 Mulpus Road",
+   "status": "present",
+   "quote": "laura veran- 389 mulpus road- states there are 3,000 professional grant writers in the new england chapter."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "resident, 91 Main Street",
+   "status": "present",
+   "quote": "anna lockwood- 91 main street- suggests creating a grant writing committee within the town."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The levy override topic will be added to the upcoming meeting agendas for further discussion.",
+   "quote": "for further discussion, this topic will be added to the upcoming meeting agendas."
+  },
+  {
+   "decision": "The budget presentation spreadsheet will be published to the website; members agreed.",
+   "quote": "tiffaney tavares and chris menard all agree that they should be published."
+  },
+  {
+   "decision": "The Committee requests a meeting with the Superintendent and the Town Manager on whether facilities can be consolidated.",
+   "quote": "the committee is requesting a meeting with the superintendent and the town manger to discuss why we can or can't consolidate facilities."
+  },
+  {
+   "decision": "Clerk Tiffaney Tavares will draft a letter on behalf of the Committee to the Select Board and Town Manager on the grant writer position (suggested by Dave Passios; no vote recorded).",
+   "quote": "tiffaney tavares is happy to send that email and will work on a draft."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant writer position",
+   "what_was_recorded": "Committee discussed a part-time, non-benefited 19-hour grant writer position; the Town Manager said it depends on funding availability, and members advocated adding it to the FY 25 budget.",
+   "figures_as_printed": [],
+   "quote": "when the committee inquired about this possibility the town manager stated it depends on funding availability."
+  },
+  {
+   "topic": "FY25 budget requests",
+   "what_was_recorded": "The Town Manager asked departments for a needs-based budget within the constraint of the allowed year-over-year increase.",
+   "figures_as_printed": [],
+   "quote": "the town manager requests a needs-based budget and a budget within the constraints of what's being allocated for an increase year over year."
+  },
+  {
+   "topic": "Health insurance",
+   "what_was_recorded": "The percentage of health insurance received relative to the state average was reported.",
+   "figures_as_printed": [
+    "5.7%",
+    "6.6%"
+   ],
+   "quote": "the percentage received relative to health insurance was 5.7% and the state average is 6.6%."
+  },
+  {
+   "topic": "Levy override",
+   "what_was_recorded": "The Chair contacted the town attorney about the language and process for a levy override; no reply yet. A member said the town has a millionaire’s tax that drove away revenue meant for schools and infrastructure.",
+   "figures_as_printed": [],
+   "quote": "evan watters reached out to the town's attorney about the language and the necessary process for a levy override."
+  },
+  {
+   "topic": "School level service budget",
+   "what_was_recorded": "The Town Manager requested a 2.5% school increase; the school department's level increase differential was reported.",
+   "figures_as_printed": [
+    "2.5%",
+    "$575,961",
+    "10.59%",
+    "2.4 million dollars"
+   ],
+   "quote": "the town manager has requested a 2.5% increase which totals $575,961."
+  },
+  {
+   "topic": "Electricity costs",
+   "what_was_recorded": "A member questioned a 66.2% rise in school electricity; the Town Manager was in discussion on the 2024 renewal, with rates expected to fall.",
+   "figures_as_printed": [
+    "66.2%"
+   ],
+   "quote": "chris menard questions why the electricity was up 66.2%."
+  },
+  {
+   "topic": "School building maintenance",
+   "what_was_recorded": "Building maintenance in the school budget was reported up by a stated amount.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "chris menard asked why the building maintenance was up $100,000."
+  },
+  {
+   "topic": "Collaborative tuition",
+   "what_was_recorded": "Collaborative tuition was reported up, and members asked whether this factors into circuit breaker estimates.",
+   "figures_as_printed": [
+    "$180,000"
+   ],
+   "quote": "additionally, collaborative tuition was up $180,000 and there is question if that factors in any estimates on the circuit breaking."
+  },
+  {
+   "topic": "High school student counselor line",
+   "what_was_recorded": "Members asked why the high school student counselor line item was raised significantly; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "tiffaney tavares asks why the line item for high school student counselor was raised so significantly."
+  },
+  {
+   "topic": "Overlay account",
+   "what_was_recorded": "The Board of Assessors recommended adding money to the overlay account; a member was unclear why, since the account already has a large balance.",
+   "figures_as_printed": [
+    "$122,000"
+   ],
+   "quote": "there was a recommendation to vote to add $122,000 to the overlay account."
+  },
+  {
+   "topic": "Board of Health budget",
+   "what_was_recorded": "The Board of Health budget was reported up by a percentage to a stated total.",
+   "figures_as_printed": [
+    "10%",
+    "$60,000"
+   ],
+   "quote": "evan watters states there was a board of health meeting, and the budget was up 10% to $60,000."
+  },
+  {
+   "topic": "Green Community grants",
+   "what_was_recorded": "A per-round grant cap for Green Community grants was reported.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "there is a grant cap of $200,000 per grant round."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Laura Veran",
+   "stated_role": "389 Mulpus Road",
+   "topic": "grant writers and funding",
+   "quote": "laura veran- 389 mulpus road- states there are 3,000 professional grant writers in the new england chapter."
+  },
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "91 Main Street",
+   "topic": "grant writing committee",
+   "quote": "anna lockwood- 91 main street- suggests creating a grant writing committee within the town."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Board Member",
+   "topic": "public involvement in budget season",
+   "quote": "dave passios states that he enjoyed the younger generation being involved in the town process, especially during budget season."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no public or Committee comment",
+   "quote": "no public or committee comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old Business: Town grant writer letter",
+   "resolution": "discussed; Clerk to draft letter to Select Board and Town Manager",
+   "quote": "dave passios is drafting a letter to submit to the select board and the town manager advocating for the position of grant writer.",
+   "tags": [
+    "grants",
+    "staffing",
+    "letter"
+   ]
+  },
+  {
+   "topic": "FY25 budget: budget options",
+   "resolution": "discussed; spreadsheet to be published",
+   "quote": "evan watters confirms there are roughly 12 departments submitting budgets.",
+   "tags": [
+    "FY25 budget",
+    "budget process"
+   ]
+  },
+  {
+   "topic": "FY25 budget: health insurance numbers",
+   "resolution": "reported, no action",
+   "quote": "the percentage received relative to health insurance was 5.7% and the state average is 6.6%.",
+   "tags": [
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "FY25 budget: department consolidation and sharing",
+   "resolution": "discussed; meeting requested with Superintendent and Town Manager",
+   "quote": "evan watters spoke to the town manager about combining departments and facilities.",
+   "tags": [
+    "consolidation",
+    "shared services"
+   ]
+  },
+  {
+   "topic": "FY25 budget: levy override",
+   "resolution": "continued to upcoming agendas",
+   "quote": "for further discussion, this topic will be added to the upcoming meeting agendas.",
+   "tags": [
+    "levy override"
+   ]
+  },
+  {
+   "topic": "FY25 budget: school budget and point person update",
+   "resolution": "discussed; Superintendent to answer questions by email; circuit breaker presentation to School Committee Feb 28",
+   "quote": "evan watters received an email from the superintendent with a level service budget.",
+   "tags": [
+    "school budget",
+    "electricity",
+    "collaborative tuition",
+    "circuit breaker"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "no action",
+   "quote": "no new business to discuss.",
+   "tags": []
+  },
+  {
+   "topic": "Minutes of 1/18/2024 and 1/25/2024",
+   "resolution": "approved 5-1",
+   "quote": "motion to approve minutes from january 18th and january 25th by chris menard, seconded by dave passios. 5 to 1 vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "quote": "dave passios shares that the green community committee had a meeting where he learned about grant rounds",
+   "tags": [
+    "Green Community",
+    "Board of Assessors",
+    "Board of Health",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "no action",
+   "quote": "there was no discussion about topics for future meetings.",
+   "tags": []
+  },
+  {
+   "topic": "Upcoming meetings and important dates",
+   "resolution": "reported, no action",
+   "quote": "feb 15th - tm's preliminary budget presentation & 5 yr financial forecast",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 9:11PM",
+   "quote": "the meeting closed at 9:11pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "FY25 budget",
+  "school budget",
+  "grant writer",
+  "levy override",
+  "health insurance",
+  "electricity",
+  "collaborative tuition",
+  "overlay account",
+  "department consolidation",
+  "minutes approval",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

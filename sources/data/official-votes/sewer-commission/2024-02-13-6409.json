@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-02-13",
  "docid": "6409",
@@ -12,23 +12,245 @@
  },
  "votes": [
   {
-   "motion": "increase the sewer rate by 16% in FY25, change the connection fee to $3,900, and accept the FY25 budget",
+   "motion": "Increase the sewer rate by 16% in FY25, change the connection fee to $3,900, and accept the FY25 budget.",
    "moved_by": "Mike Nault",
    "seconded_by": "Mike Mackin",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mike nault made a moɵon to increase the sewer rate by 16% in fy25, to change the connecɵon fee to $3,900 and to accept the fy25 budget. mike mackin seconded the moɵon."
+   "quote": "mike nault made a moɵon to increase the sewer rate by 16% in fy25, to change the connecɵon fee to $3,900 and to accept the fy25 budget."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Brett Ramsden",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "BreƩ Ramsden",
    "seconded_by": "Dave MacDonald",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "breʃ ramsden made a moɵon to adjourn, seconded by dave macdonald, passed unanimously."
+   "quote": "at 8:00 pm breʃ ramsden made a moɵon to adjourn, seconded by dave macdonald, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minor OCR artifacts present in source text (e.g., \"moƟon\" for \"motion\", \"BreƩ\" for \"Brett\"); quotes preserved verbatim as they appear. Note: Mike Mackin, who seconded the first motion, does not appear in the attendees list.",
- "cost_usd": 0.0978831
+ "note": "Minutes are a single-page text extraction with broken glyphs: 'Ʃ' stands in for 'tt' (BreƩ), 'Ɵ' for 'tt' (moƟon, connecƟon), and ligatures like ﬁ/ﬂ; names and quotes are kept as the extraction prints them. Two votes are recorded without a tally, only 'passed unanimously'; no vote count is printed. Mike Mackin is named only as seconder and is not in the attendance list, so status is 'not stated'. The minutes say 'no public discussion' at opening, so no public comment is recorded. The 16% and $3,900 items were consensus, then adopted by the motion; the consensus items are listed as decisions and the motion as a vote.",
+ "cost_usd": 0.01603769,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- breʃ ramsden, clerk- mike nault"
+  },
+  {
+   "name": "BreƩ Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- breʃ ramsden, clerk- mike nault"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair- john reynolds, vice-chair- breʃ ramsden, clerk- mike nault"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "member-dave macdonald, dpw director- bill bernard, business manager-paula bertram."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "member-dave macdonald, dpw director- bill bernard, business manager-paula bertram."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "member-dave macdonald, dpw director- bill bernard, business manager-paula bertram."
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mike mackin seconded the moɵon."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consensus of the Board that a sewer rate increase of 16% in FY25 is required to fund the budget and meet obligations to Fitchburg and Leominster; annual increases estimated at 3% thereafter.",
+   "quote": "it was the consensus of the board that a rate increase of 16% in fy25 is required."
+  },
+  {
+   "decision": "Consensus that the connection fee should increase from $2,250 to $3,900 in FY25.",
+   "quote": "it was the consensus that the connecɵon fee should increase from $2,250 to $3,900 in fy25."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY25 budget and five-year forecast spreadsheets",
+   "what_was_recorded": "Business Manager reviewed spreadsheets for the FY25 budget and five-year forecast, including Fitchburg and Leominster wholesale rate increases.",
+   "figures_as_printed": [
+    "7%",
+    "16.17%",
+    "3%"
+   ],
+   "quote": "fitchburg's rate has increased 7% each year over the next ﬁve years and leominster will increase 16.17% in fy25"
+  },
+  {
+   "topic": "Pump station and capital expenditures",
+   "what_was_recorded": "Capital expenditures for pump station upgrades are anticipated at about $100,000 per year over the next several years.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "capital expenditures over the next several years are anɵcipated to be approximately $100,000 per year."
+  },
+  {
+   "topic": "Revenue account balances at close of 2023",
+   "what_was_recorded": "Balances of retained earnings, sewer capital reserve stabilization, inflow/infiltration and sewer reserve capacity were reviewed.",
+   "figures_as_printed": [
+    "$2,232,978",
+    "$145,964.73",
+    "$9,986.63",
+    "$7301.40"
+   ],
+   "quote": "retained earnings $2,232,978, sewer capital reserve stabilizaɵon $145,964.73"
+  },
+  {
+   "topic": "Use of retained earnings",
+   "what_was_recorded": "Based on current projections, retained earnings will need to be drawn on to supplement the budget through FY28.",
+   "figures_as_printed": [],
+   "quote": "it will be necessary to draw on retained earnings to supplement the budget through fy28."
+  },
+  {
+   "topic": "Average customer bills",
+   "what_was_recorded": "The average residential and commercial customers pay stated amounts per quarter; the Business Manager noted some customers pay less or substantially more.",
+   "figures_as_printed": [
+    "$233",
+    "$2,194"
+   ],
+   "quote": "the average residenɵal customer pays $233 per quarter"
+  },
+  {
+   "topic": "Sewer rate increase impact on residential customer",
+   "what_was_recorded": "The 16% increase equates to approximately $10.00 per quarter for the average residential customer.",
+   "figures_as_printed": [
+    "16%",
+    "$10.00"
+   ],
+   "quote": "approximately $10.00 per quarter for the average residenɵal customer."
+  },
+  {
+   "topic": "Minimum sewer rate",
+   "what_was_recorded": "The minimum rate should increase from $115 to $126 for 800 cf.",
+   "figures_as_printed": [
+    "$115",
+    "$126",
+    "800 cf"
+   ],
+   "quote": "the minimum rate should increase from $115 to $126 (800 cf)."
+  },
+  {
+   "topic": "Leominster connection fee increase",
+   "what_was_recorded": "Leominster is increasing Lunenburg's connection fee from $750 to $3,500 in FY25.",
+   "figures_as_printed": [
+    "$750",
+    "$3,500"
+   ],
+   "quote": "leominster is increasing lunenburg's connecɵon fee from $750 to $3,500 in fy25."
+  },
+  {
+   "topic": "Lunenburg connection fee",
+   "what_was_recorded": "By consensus the connection fee was set to rise from $2,250 to $3,900 in FY25, and the motion adopted the $3,900 figure.",
+   "figures_as_printed": [
+    "$2,250",
+    "$3,900"
+   ],
+   "quote": "the connecɵon fee should increase from $2,250 to $3,900 in fy25."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY25 budget and five-year forecast review",
+   "resolution": "reviewed, no action",
+   "quote": "paula reviewed the various spreadsheets she compiled for the fy25 budget and ﬁve-year forecast",
+   "tags": [
+    "FY25 budget",
+    "five-year forecast",
+    "Fitchburg",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Capital, engineering and I/I cost outlook",
+   "resolution": "discussed, no action",
+   "quote": "capital expenditures over the next several years are anɵcipated to be approximately $100,000 per year.",
+   "tags": [
+    "capital",
+    "inflow and infiltration",
+    "NPDES"
+   ]
+  },
+  {
+   "topic": "Revenue account balances at close of 2023",
+   "resolution": "reviewed, no action",
+   "quote": "the commission reviewed the balances of revenue accounts at the close of 2023.",
+   "tags": [
+    "reserves",
+    "retained earnings"
+   ]
+  },
+  {
+   "topic": "Rate increase scenarios",
+   "resolution": "consensus on 16% rate increase for FY25",
+   "quote": "it was the consensus of the board that a rate increase of 16% in fy25 is required.",
+   "tags": [
+    "sewer rates",
+    "ratepayers"
+   ]
+  },
+  {
+   "topic": "Connection fee",
+   "resolution": "consensus to set fee at $3,900 for FY25",
+   "quote": "it was the consensus that the connecɵon fee should increase from $2,250 to $3,900 in fy25.",
+   "tags": [
+    "connection fee",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Sewer rate, connection fee and FY25 budget motion",
+   "resolution": "passed unanimously",
+   "quote": "mike nault made a moɵon to increase the sewer rate by 16% in fy25, to change the connecɵon fee to $3,900 and to accept the fy25 budget.",
+   "tags": [
+    "sewer rates",
+    "FY25 budget",
+    "connection fee"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:00 pm, passed unanimously",
+   "quote": "at 8:00 pm breʃ ramsden made a moɵon to adjourn, seconded by dave macdonald, passed unanimously.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer rates",
+  "FY25 budget",
+  "five-year forecast",
+  "connection fee",
+  "reserves and retained earnings",
+  "Fitchburg wholesale rate",
+  "Leominster wholesale rate",
+  "inflow and infiltration",
+  "capital expenditures",
+  "workshop"
+ ],
+ "dropped_unquoted_by_field": {}
 }

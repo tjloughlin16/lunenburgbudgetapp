@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-01-25",
  "docid": "6378",
@@ -12,22 +12,397 @@
  },
  "votes": [
   {
-   "motion": "Recommend that the Town Manager and the Select Board consider hiring or looking into a grant writer",
-   "outcome": "unanimous",
+   "motion": "Recommend that the Town Manager and the Select Board consider hiring or looking into a grant writer.",
+   "moved_by": "",
+   "seconded_by": "Dave Passios",
+   "outcome": "passed (unanimous; minutes print 'Unanimous vote' with no count)",
    "procedural": false,
-   "quote": "motion to recommend that the town manager and the select board consider hiring or looking into a grant writer, seconded by dave passios. all in favor. unanimous vote.",
-   "seconded_by": "Dave Passios"
+   "quote": "motion to recommend that the town manager and the select board consider hiring or looking into a grant writer, seconded by dave passios. all in favor. unanimous vote."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "Chris Menard",
-   "outcome": "passed",
+   "outcome": "passed (all in favor; no count printed)",
    "procedural": true,
-   "quote": "motion to adjourn by dave passios, seconded by chris menard. all in favor."
+   "quote": "motion to adjourn by dave passios, seconded by chris menard. all in favor. the meeting closed at 9:27 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The point person selection (Jean Russell volunteering to serve as liaison with the public) was decided by discussion and agreement rather than a formal motion and vote, so it is not included above.",
- "cost_usd": 0.09464909999999999
+ "note": "Text extraction is complete and legible (not a scan). Two motions appear: one substantive (grant writer, unanimous, no mover printed) and one procedural (adjournment, 'All in favor', no count printed); outcomes are recorded as printed, not as counts. Jay Simeone is listed as present but never speaks or is recorded in a vote. Heather Lemieux's role is not printed. Renee Emkey and Kelly Brown are mentioned but are not recorded as attending. Dollar figures are limited to percentages (2.5%); no dollar amounts are printed. The fiscal year tag is inferred from the 2024 meeting date and the school budget discussion, not printed in the minutes, so treat it as an inference.",
+ "cost_usd": 0.01785927,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares,"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares,"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard, clerk tiffaney tavares,"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "dave passios- 56 whiting street -shares that this has been a challenging year"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather lemieux states the charter outlines that the town manager is"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chris sullivan- 108 highland street- attended the school committee meeting"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rhonda lisio -181 reservoir road - attended the school committee meeting"
+  },
+  {
+   "name": "Mandy Gilman",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mandy gilman - had questions and is seeking clarity about the prop 2 ½ process."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "not stated",
+   "status": "present",
+   "quote": "peter beardmore- 282 pleasant street- states that in the past there was a"
+  },
+  {
+   "name": "Mandy Levine",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mandy levine - 163 island road- feels there is a contradiction between what"
+  },
+  {
+   "name": "Joe Mule",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joe mule-139 cove road- asks when the last time the town had an override."
+  },
+  {
+   "name": "Lou Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lou franco - 250 arbor street - believes supporting prop 2.5 would be a last"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "karin menard- 672 page street- supports having a grant writer for the town."
+  },
+  {
+   "name": "Susannah Marcucci",
+   "role": "not stated",
+   "status": "present",
+   "quote": "susannah marcucci-245 sunnyhill road"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed that a point person between the Committee and the public would be beneficial.",
+   "quote": "ultimately, the board agrees that a point person would be beneficial."
+  },
+  {
+   "decision": "Jean Russell volunteered to be the point person between the Committee and the public.",
+   "quote": "jean russell volunteers to be the point person between the committee and"
+  },
+  {
+   "decision": "Evan Watters will check with town council to confirm the override and warrant-petition process.",
+   "quote": "check with town council to confirm."
+  },
+  {
+   "decision": "Evan Watters will provide answers to the questions he noted during the meeting.",
+   "quote": "evan watters will provide answers to the questions that he noted during the meeting."
+  },
+  {
+   "decision": "Heather Lemieux will share more information on the 40S funding change when it is known.",
+   "quote": "heather lemieux will share more information when it is known."
+  },
+  {
+   "decision": "Future-topics item was tabled for this meeting.",
+   "quote": "this topic was tabled for this meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School budget increase",
+   "what_was_recorded": "A public commenter said a 2.5% school budget increase is not enough.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "a 2.5% budget increase is not going to cut it."
+  },
+  {
+   "topic": "State levy limit",
+   "what_was_recorded": "The Chair said the state sets the 2.5% figure, which the Town Manager distributes to department heads.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "evan watters responds that the state sets the 2.5% which then goes to the town manager to distribute to all the departments heads."
+  },
+  {
+   "topic": "Chapter 40S local aid",
+   "what_was_recorded": "The town has lost 40S smart-growth local aid it previously received; no dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "previously we received 40s funding as local aid from the state."
+  },
+  {
+   "topic": "Grant writer revenue",
+   "what_was_recorded": "A member said a grant writer pays for themselves through the dollars brought in; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "dave passios believes that a grant writer essentially pays for themselves by the number of dollars that they bring into whatever entity"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "challenging year, unknowns in school and town finances",
+   "quote": "dave passios- 56 whiting street -shares that this has been a challenging year"
+  },
+  {
+   "speaker": "Chris Sullivan",
+   "stated_role": "",
+   "topic": "school financial cuts; funding the schools",
+   "quote": "chris sullivan- 108 highland street- attended the school committee meeting"
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "",
+   "topic": "athletics student numbers versus academic programs",
+   "quote": "rhonda lisio -181 reservoir road - attended the school committee meeting"
+  },
+  {
+   "speaker": "Mandy Gilman",
+   "stated_role": "",
+   "topic": "Proposition 2 1/2 override process",
+   "quote": "mandy gilman - had questions and is seeking clarity about the prop 2 ½ process."
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "topic": "override warrant article and expiration",
+   "quote": "peter beardmore- 282 pleasant street- states that in the past there was a"
+  },
+  {
+   "speaker": "Mandy Levine",
+   "stated_role": "",
+   "topic": "who sets budgets and the tax rate",
+   "quote": "mandy levine - 163 island road- feels there is a contradiction between what"
+  },
+  {
+   "speaker": "Joe Mule",
+   "stated_role": "",
+   "topic": "history of town overrides",
+   "quote": "joe mule-139 cove road- asks when the last time the town had an override."
+  },
+  {
+   "speaker": "Lou Franco",
+   "stated_role": "",
+   "topic": "Proposition 2 1/2 as a last resort",
+   "quote": "lou franco - 250 arbor street - believes supporting prop 2.5 would be a last"
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "",
+   "topic": "opposes an override; senior citizens and taxes",
+   "quote": "states that she appreciates the comments of dave passios about the emotions"
+  },
+  {
+   "speaker": "Chris Sullivan",
+   "stated_role": "",
+   "topic": "loss of grants; what residents can do",
+   "quote": "chris sullivan questions if there is a reason why we are losing out on grants"
+  },
+  {
+   "speaker": "Karin Menard",
+   "stated_role": "",
+   "topic": "supports a town grant writer",
+   "quote": "karin menard- 672 page street- supports having a grant writer for the town."
+  },
+  {
+   "speaker": "Susannah Marcucci",
+   "stated_role": "",
+   "topic": "school funding; not a time for austerity",
+   "quote": "susannah marcucci-245 sunnyhill road"
+  },
+  {
+   "speaker": "Chris Sullivan",
+   "stated_role": "",
+   "topic": "thanks committee for Q and A",
+   "quote": "chris sullivan- 108 highland street- thanks the committee for the question"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: Plan Lunenburg public meeting",
+   "resolution": "announced",
+   "tags": [
+    "plan lunenburg",
+    "public meeting"
+   ],
+   "quote": "plan lunenburg public meeting 2/1/24 @ adult activity center"
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard",
+   "tags": [
+    "public comment",
+    "school funding"
+   ],
+   "quote": "dave passios- 56 whiting street -shares that this has been a challenging year"
+  },
+  {
+   "topic": "Old business: Board of Assessors liaison",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "assessors",
+    "liaison"
+   ],
+   "quote": "evan watters received an email from renee emkey about the possibility of"
+  },
+  {
+   "topic": "School Committee budget: FinCom point person",
+   "resolution": "point person agreed; Jean Russell volunteered",
+   "tags": [
+    "school budget",
+    "point of contact"
+   ],
+   "quote": "jean russell volunteers to be the point person between the committee and"
+  },
+  {
+   "topic": "School Committee budget: public Q and A and Prop 2 1/2 presentation",
+   "resolution": "Q and A held; Watters to confirm process with town council",
+   "tags": [
+    "proposition 2 1/2",
+    "override",
+    "town revenue"
+   ],
+   "quote": "evan watters starts the q and a by sharing the town revenue and"
+  },
+  {
+   "topic": "Town grant writer",
+   "resolution": "motion to recommend looking into a grant writer passed unanimously",
+   "tags": [
+    "grant writer",
+    "grants",
+    "town manager"
+   ],
+   "quote": "motion to recommend that the town manager and the select board consider"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "no action; none to approve",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "there are no minutes to approve."
+  },
+  {
+   "topic": "Committee reports: Green Communities",
+   "resolution": "reported",
+   "tags": [
+    "green communities"
+   ],
+   "quote": "dave passios shares that green communities has an upcoming meeting at"
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "tabled",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "this topic was tabled for this meeting."
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "listed",
+   "tags": [
+    "budget calendar"
+   ],
+   "quote": "feb 8th - 5 yr financial forecast"
+  },
+  {
+   "topic": "Important dates",
+   "resolution": "listed",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "budget calendar"
+   ],
+   "quote": "jan 19th-20th (mma annual meeting)"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard",
+   "tags": [
+    "public comment",
+    "austerity",
+    "school funding"
+   ],
+   "quote": "susannah marcucci-245 sunnyhill road"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:27 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn by dave passios, seconded by chris menard. all in favor."
+  }
+ ],
+ "tags": [
+  "school budget",
+  "proposition 2 1/2",
+  "override",
+  "town meeting warrant",
+  "grant writer",
+  "state aid 40S",
+  "point of contact",
+  "public comment",
+  "budget calendar",
+  "FY2025 budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

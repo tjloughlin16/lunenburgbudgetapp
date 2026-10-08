@@ -1,0 +1,712 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2024-02-21",
+ "video_id": "eOuIqEoq9-A",
+ "video_url": "https://www.youtube.com/watch?v=eOuIqEoq9-A",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2024-02-21-eOuIqEoq9-A.json",
+  "sha256": "e15a728a6ffd3061ca6b82fc7f53dada172130da39c1ca7439f6445cbfb0b287",
+  "caption_lines": 690,
+  "segments": 5111
+ },
+ "recording": {
+  "duration_s": 14630,
+  "duration": "4:03",
+  "spoken_chars": 172103,
+  "words_approx": 28683
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02212024-6419",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2024-02-21-agenda-6419.txt",
+   "path": "sources/meetings/conservation-commission/2024-02-21-agenda-6419.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02212024-6419",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2024-02-21-minutes-6419.txt",
+   "path": "sources/meetings/conservation-commission/2024-02-21-minutes-6419.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T14:43:56Z",
+  "cost_usd": 0.5561314
+ },
+ "minutes": {
+  "headline": "Commission voted a positive determination requiring a notice of intent for a Lake Shirley dam access path; kept remote meetings.",
+  "summary": "The Commission heard the Hickory Hills Lake annual report, then took wetlands hearings: approvals, negative and positive determinations, continuances, and a contingent third-party reviewer for 390 Howard Street. Other business covered the town website, a consensus to stay remote, title searches on landlocked parcels, and an order extension.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (name not clearly captioned; addressed as Mary/Madam chair)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Bob Peas",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jenny puer",
+    "role": "member (new; not eligible to vote on some hearings)"
+   },
+   {
+    "name_as_heard": "Rich bur",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike larouche",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Chris St Germain",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Sophie",
+    "role": "staff administrator, Zoom co-host"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 8657,
+    "speaker_as_heard": "Ken Patton",
+    "topic": "Asked to comment on 255 Sunny Hill Road; told he could not because the applicant was absent; voiced frustration over repeated no-shows and continuances."
+   },
+   {
+    "t": 9638,
+    "stated_role": "applicant's engineer (Greg Roy, as addressed)",
+    "topic": "Suggested announcing continued hearings at the start of the meeting, as Worcester does, so the public can leave early."
+   }
+  ],
+  "tags": [
+   "facilities",
+   "grants",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 355,
+    "motion": "Approve minutes of the prior meeting",
+    "moved_by": "Bob",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": true
+   },
+   {
+    "t": 4370,
+    "motion": "Approve notice of intent for septic work at 21 Birch Island Way as presented",
+    "moved_by": "Bob",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5101,
+    "motion": "Approve notice of intent for driveway repavement and wall repair at 255 Prospect Street with standard order of conditions",
+    "moved_by": "Bob",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 6649,
+    "motion": "Positive determination for Lake Shirley Dam maintenance path request, recommending a notice of intent",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 7362,
+    "motion": "Negative determination for sewer connection at 636 Mass Ave",
+    "moved_by": "Bob",
+    "outcome": "passed (roll call; Jenny's vote not audible)",
+    "procedural": false
+   },
+   {
+    "t": 8468,
+    "motion": "Approve use of Ecotech as third-party reviewer for 390 Howard Street, contingent on staff confirming Ecotech knows of site disturbance",
+    "moved_by": "Bob",
+    "outcome": "passed unanimously (Jenny not eligible)",
+    "procedural": false
+   },
+   {
+    "t": 8614,
+    "motion": "Continue 255 Sunny Hill Road hearing to March 6",
+    "outcome": "passed (Jenny not eligible)",
+    "procedural": false
+   },
+   {
+    "t": 8982,
+    "motion": "Continue 171 Arbor Street hearing to March 6",
+    "outcome": "passed (Jenny not eligible)",
+    "procedural": false
+   },
+   {
+    "t": 9533,
+    "motion": "Approve 20 Kilburn Street Lot 2 with standard order of conditions",
+    "moved_by": "Chris St Germain",
+    "outcome": "passed (Jenny not eligible)",
+    "procedural": false
+   },
+   {
+    "t": 10691,
+    "motion": "Make Bob the commission's representative to the town on website changes",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 12827,
+    "motion": "Authorize Bob and Chris to meet with the town manager/attorney about title-searched parcels",
+    "outcome": "passed (roll call; Jenny's vote not audible)",
+    "procedural": false
+   },
+   {
+    "t": 13221,
+    "motion": "Extend Lake Shirley order of conditions three years",
+    "moved_by": "Bob",
+    "outcome": "passed (Jenny's vote not audible)",
+    "procedural": false
+   },
+   {
+    "t": 14597,
+    "motion": "Adjourn",
+    "moved_by": "Mike/Chris",
+    "outcome": "passed (all ayes heard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2839,
+    "topic": "Hickory Hills sonar treatment",
+    "what_was_said": "Another whole-lake treatment would be costly, so the group wants to delay it by controlling fanwort.",
+    "figures_as_heard": [
+     "$225,000"
+    ]
+   },
+   {
+    "t": 8405,
+    "topic": "Third-party review funding (53G)",
+    "what_was_said": "The town would start 53G funding and hire and pay the reviewer, with the applicant funding the account.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 13817,
+    "topic": "Hollis Road residence kitchen rehab",
+    "what_was_said": "A budget number for non-cabinet work would be sought, with cabinets sourced separately; no vote was needed.",
+    "figures_as_heard": [
+     "$10,000 cap"
+    ]
+   },
+   {
+    "t": 14280,
+    "topic": "Landlocked parcel for sale",
+    "what_was_said": "A landlocked parcel near the Fairbanks gift area was noted as listed for sale.",
+    "figures_as_heard": [
+     "$49,900"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 6715,
+    "decision": "Applicant to check whether the town holds easement rights over Fire Road 19 to the dam."
+   },
+   {
+    "t": 10734,
+    "decision": "Commission consensus to ask for the chair's earlier proposal; chair to tell the select board the commission prefers to stay fully remote."
+   },
+   {
+    "t": 13919,
+    "decision": "Hollis Road kitchen: no vote needed; contractor may work up a non-cabinet cost number."
+   },
+   {
+    "t": 12913,
+    "decision": "960 Mass Ave extension request dropped from agendas as an error."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 355,
+    "topic": "Opening, roll call, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 355,
+    "t_end": 420,
+    "topic": "Approval of prior minutes",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 420,
+    "t_end": 3948,
+    "topic": "Hickory Hills Lake annual report",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 3948,
+    "t_end": 4435,
+    "topic": "21 Birch Island Way septic NOI",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4435,
+    "t_end": 5167,
+    "topic": "255 Prospect Street NOI",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 5167,
+    "t_end": 6737,
+    "topic": "Lake Shirley Dam maintenance path RDA",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 6737,
+    "t_end": 7428,
+    "topic": "636 Mass Ave sewer connection RDA",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 7428,
+    "t_end": 8592,
+    "topic": "390 Howard Street ANRAD third-party reviewer",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 8592,
+    "t_end": 9046,
+    "topic": "Continuances and public frustration",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 9046,
+    "t_end": 9638,
+    "topic": "20 Kilburn Street Lot 2 NOI",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 9638,
+    "t_end": 10076,
+    "topic": "Agenda practice for continued hearings",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 10076,
+    "t_end": 10755,
+    "topic": "Earth Day and town website",
+    "resolution": "voted",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 10755,
+    "t_end": 12240,
+    "topic": "In-person vs remote meetings",
+    "resolution": "no resolution; consensus to stay remote",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 12240,
+    "t_end": 13330,
+    "topic": "Title searches, encroachment, extensions",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 13330,
+    "t_end": 14134,
+    "topic": "Enforcement, grants, land and Hollis Road updates",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 14134,
+    "t_end": 14618,
+    "topic": "Committee reports, staff resignation, adjournment",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Jenny's vote on several roll calls not audible or muted",
+   "Chair's name not clearly captioned",
+   "Exact prior-minutes meeting date garbled"
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Commission voted a positive determination on the Lake Shirley Dam maintenance path request, which means the project must file a notice of intent.",
+    "t": 6649
+   },
+   {
+    "line": "The applicant was asked to check whether the town holds easement rights over Fire Road 19 to the dam.",
+    "t": 6715
+   },
+   {
+    "line": "The Commission approved a third-party reviewer, Ecotech, for 390 Howard Street, contingent on staff confirming Ecotech knows of the site disturbance.",
+    "t": 8468
+   },
+   {
+    "line": "The Commission approved notices of intent for septic work, a driveway and wall, and a lot on Kilburn Street, and continued two hearings to March 6.",
+    "t": 4370
+   },
+   {
+    "line": "The Commission reached a consensus to stay fully remote, and extended the Lake Shirley order of conditions by three years.",
+    "t": 10734
+   }
+  ],
+  "why_it_matters": [
+   "The Lake Shirley dam path now needs a full notice of intent, which means a fuller wetlands review and a public hearing before work on the dam can proceed.",
+   "The third-party reviewer at 390 Howard Street would be paid through a town 53G account that the applicant funds, so the review is meant to be paid for by the applicant.",
+   "Staying remote affects how residents attend and comment on Conservation Commission hearings, and the commission has said it will tell the select board it prefers that."
+  ],
+  "watch_next": [
+   "The continued hearings for 255 Sunny Hill Road and 171 Arbor Street, set for March 6.",
+   "The notice of intent filing for the Lake Shirley dam path, and whether the town holds easement rights over Fire Road 19."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T14:44:20Z",
+   "cost_usd": 0.220577
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02212024-6419",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2024-02-21-minutes-6419.txt",
+   "path": "sources/meetings/conservation-commission/2024-02-21-minutes-6419.pdf"
+  },
+  "official_sha256": "de0778447843f684f964c1eca375f88513a0e31eb645815f844ee0c0ce14111a",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all eleven votes: same motions, same outcomes, and the 3-year Lake Shirley extension matches. They differ on who is recorded as ineligible to vote and on a few items that appear in only one record. Most of the name and attendee differences are caption errors.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 3,
+   "discrepancy": 6,
+   "only_in_ours": 3,
+   "only_in_official": 7
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: 21 Birch Island Way NOI",
+    "ours": "Approve notice of intent for septic work at 21 Birch Island Way as presented — passed unanimously",
+    "official": "motion: bob p., second: rich b. to approve this as presented.",
+    "note": "Same motion and outcome; official records a unanimous roll call.",
+    "t": 4370
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: 255 Prospect St NOI",
+    "ours": "Approve notice of intent for driveway repavement and wall repair at 255 Prospect Street with standard order of conditions — passed (roll call, all ayes heard)",
+    "official": "to approve the notice of intent with a standard order of conditions.",
+    "note": "Same motion and outcome.",
+    "t": 5101
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: positive determination, Fire Road 19 / Lake Shirley Dam path",
+    "ours": "Positive determination for Lake Shirley Dam maintenance path request, recommending a notice of intent — passed unanimously",
+    "official": "motion: rich b., second: bob p. for a positive determination on this application and recommend a notice of intent filing.",
+    "note": "Same motion and outcome.",
+    "t": 6649
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: negative determination, 636 Mass Ave",
+    "ours": "Negative determination for sewer connection at 636 Mass Ave — passed (roll call; Jenny's vote not audible)",
+    "official": "for a negative determination.",
+    "note": "Same outcome; official says unanimous, ours could not hear Jenny.",
+    "t": 7362
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: EcoTec third-party reviewer, 390 Howard St",
+    "ours": "Approve use of Ecotech as third-party reviewer for 390 Howard Street, contingent on staff confirming Ecotech knows of site disturbance — passed unanimously (Jenny not eligible)",
+    "official": "to approve the use of ecotec, contingent upon staff confirming that ecotec is aware of the disturbance that has taken place on the property when they formed the quote.",
+    "note": "Same motion, condition and Jenny's ineligibility.",
+    "t": 8468
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Jenny's eligibility on 255 Sunny Hill Road continuation",
+    "ours": "Continue 255 Sunny Hill Road hearing to March 6 — passed (Jenny not eligible)",
+    "official": "motion: bob p., second: mike l. to continue the hearing to 3/6/24.",
+    "note": "Official records a unanimous roll call and notes Jenny's ineligibility only for 390 Howard; check the roll call to see whether Jenny voted.",
+    "t": 8614
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Jenny's eligibility on 171 Arbor Street continuation",
+    "ours": "Continue 171 Arbor Street hearing to March 6 — passed (Jenny not eligible)",
+    "official": "motion: mike l., second: chris s. to continue the hearing to 3/6/24.",
+    "note": "Official records a unanimous roll call with no ineligibility noted; check whether Jenny voted.",
+    "t": 8982
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Jenny's eligibility on 20 Kilburn St Lot 2 approval",
+    "ours": "Approve 20 Kilburn Street Lot 2 with standard order of conditions — passed (Jenny not eligible)",
+    "official": "to approve as proposed with a standard order of conditions.",
+    "note": "Same motion and outcome, but official shows a unanimous roll call and no ineligibility; check the vote tally.",
+    "t": 9533
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Bob as website representative",
+    "ours": "Make Bob the commission's representative to the town on website changes — passed unanimously",
+    "official": "that bob pease be our representative on behalf of the commission, in talking to the town and the resources managing this webpage",
+    "note": "Same motion and outcome.",
+    "t": 10691
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Bob and Chris to talk to Town Manager/Attorney",
+    "ours": "Authorize Bob and Chris to meet with the town manager/attorney about title-searched parcels — passed (roll call; Jenny's vote not audible)",
+    "official": "to authorize bob and chris to talk to the town manager and/or town attorney on the commission's behalf.",
+    "note": "Same motion and outcome.",
+    "t": 12827
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: extend Lake Shirley Order of Conditions",
+    "ours": "Extend Lake Shirley order of conditions three years — passed (Jenny's vote not audible)",
+    "official": "to extend the order of conditions for 3 years.",
+    "note": "Same motion, same 3-year term.",
+    "t": 13221
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hickory Hills sonar treatment $225,000",
+    "ours": "Hickory Hills sonar treatment: $225,000",
+    "official": "",
+    "note": "The official budget items do not include this figure, though the official attendees list the Hickory Hills presentation; check the recording at this timestamp.",
+    "t": 2839
+   },
+   {
+    "kind": "agree",
+    "about": "Hollis Road $10,000 limit",
+    "ours": "Hollis Road residence kitchen rehab: $10,000 cap",
+    "official": "that way he could have an amount to add to the cabinets and will keep it under the $10k limit.",
+    "note": "Same $10K cap.",
+    "t": 13817
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Page St parcel asking price",
+    "ours": "Landlocked parcel for sale: $49,900",
+    "official": "said it is listed for sale on redfin for $49k.",
+    "note": "Official prints $49k, ours $49,900; check the Redfin listing for the actual asking price.",
+    "t": 14280
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who checks easement rights over Fire Road 19",
+    "ours": "Applicant to check whether the town holds easement rights over Fire Road 19 to the dam.",
+    "official": "the town may have deeded rights to access their property off fire rd 19, which he will look into.",
+    "note": "Ours assigns the follow-up to the applicant; official assigns it to Bob; check the recording for who took it.",
+    "t": 6715
+   },
+   {
+    "kind": "agree",
+    "about": "Hollis Road kitchen",
+    "ours": "Hollis Road kitchen: no vote needed; contractor may work up a non-cabinet cost number.",
+    "official": "that way he could have an amount to add to the cabinets and will keep it under the $10k limit.",
+    "note": "Both describe Chris preparing a cost number with no vote; the scope (non-cabinet vs. cabinets/counters/plumbing) is worded differently.",
+    "t": 13919
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Remote meeting preference and chair's proposal",
+    "ours": "Commission consensus to ask for the chair's earlier proposal; chair to tell the select board the commission prefers to stay fully remote.",
+    "official": "",
+    "note": "Official does not record this consensus; it is a decision, so check the recording.",
+    "t": 10734
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "960 Mass Ave extension request dropped",
+    "ours": "960 Mass Ave extension request dropped from agendas as an error.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 12913
+   },
+   {
+    "kind": "only_in_official",
+    "about": "780 Northfield Road culvert enforcement form",
+    "ours": "",
+    "official": "she will send it out to the commissioners for comment.",
+    "note": "Sophie to circulate the enforcement form; not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Title-search parcel follow-ups",
+    "ours": "",
+    "official": "at a future meeting, bob will ask for authorization to have the assessor aggregate the parcels",
+    "note": "Future authorization and Town Attorney probate research are not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "RFQs for parking area planning drawings",
+    "ours": "",
+    "official": "bob said he will work on it after the website.",
+    "note": "Not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "390 Howard St 53G funding",
+    "ours": "",
+    "official": "initiate the paperwork for the 53g funding and fund the account",
+    "note": "Staff to start 53G paperwork; not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Conservation Assistant resignation",
+    "ours": "",
+    "official": "mary noted that ashleigh has put in her 2 week notice and her last day will be 2/29/24.",
+    "note": "Staffing announcement; not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on absent applicants",
+    "ours": "",
+    "official": "ken did state his frustration at attending multiple meetings that the applicant/agent did not show.",
+    "note": "Ken Paton's comment is not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Lake Shirley Dam repair funding",
+    "ours": "",
+    "official": "state money to repair the dam and the town may have deeded rights to access their property",
+    "note": "Official records discussion of applying for state money; ours records the easement check but no funding discussion. Check the recording.",
+    "t": 6715
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Jeff Viviano",
+    "ours": "",
+    "official": "absent: jeff v . call to order at 7pm",
+    "note": "Absence not noted in ours.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Chair",
+    "ours": "Chair (name not clearly captioned; addressed as Mary/Madam chair) (chair)",
+    "official": "roll call: mary w., bob p., jennifer p., rich b., mike l., chris s., and sophie d.",
+    "note": "Official identifies the chair as Mary W. (Mary Wilson); consistent with ours.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Bob Pease",
+    "ours": "Bob Peas (member)",
+    "official": "roll call: mary w., bob p., jennifer p., rich b., mike l., chris s., and sophie d.",
+    "note": "Misspelled; official letterhead gives Bob Pease. Official lists him as Vice Chair.",
+    "official_reading": "Bob Pease",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jennifer Pewtherer",
+    "ours": "Jenny puer (member (new; not eligible to vote on some hearings))",
+    "official": "roll call: mary w., bob p., jennifer p., rich b., mike l., chris s., and sophie d.",
+    "note": "Official gives Jennifer P. (Jennifer Pewtherer), called Jenny in the minutes.",
+    "official_reading": "Jennifer Pewtherer",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Rich Bursch",
+    "ours": "Rich bur (member)",
+    "official": "roll call: mary w., bob p., jennifer p., rich b., mike l., chris s., and sophie d.",
+    "note": "Surname truncated; official letterhead gives Richard Bursch.",
+    "official_reading": "Richard Bursch",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Mike Larouche, Chris St Germain, Sophie",
+    "ours": "Mike larouche (member); Chris St Germain (member); Sophie (staff administrator, Zoom co-host)",
+    "official": "roll call: mary w., bob p., jennifer p., rich b., mike l., chris s., and sophie d.",
+    "note": "All present in both; Sophie's surname is Dorow per the official letterhead.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T14:46:51Z",
+   "cost_usd": 0.275667
+  }
+ }
+}

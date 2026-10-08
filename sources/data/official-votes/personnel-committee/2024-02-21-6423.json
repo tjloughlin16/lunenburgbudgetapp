@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2024-02-21",
  "docid": "6423",
@@ -12,15 +12,245 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Motion to adjourn the meeting at 6:52pm.",
    "moved_by": "W. Bertrand",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "w. bertrand made a motion to adjourn the meeting at 6:52pm second: s. andrews roll call vote: all in favor"
+   "quote": "w. bertrand made a motion to adjourn the meeting at 6:52pm"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0803343
+ "dropped_unquoted": 1,
+ "note": "Clean digital text, not a scan. One recorded vote: the adjournment motion, carried by a roll call marked only 'All in Favor' with no individual names or count. No other motions were recorded. The next-meeting date reads 'Monday February 26, 2023', but 26 February 2024 is the Monday, so the printed year is probably a typo; this is recorded as printed. Member absences are not stated, and the chair is not named. Nancy O'Rourke is named as doing work but is not listed as attending. Line breaks in quotes are collapsed to single spaces.",
+ "cost_usd": 0.01805481,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee Attendee",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee Attendee",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee Attendee; opened the meeting",
+   "status": "present",
+   "quote": "j. bilotta opened the meeting at 5:00pm with members noted in attendance"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee Attendee",
+   "status": "present",
+   "quote": "wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "HR Director",
+   "status": "present",
+   "quote": "julie belliveau, hr director, thomas gammel, police chief, amanda moore, administrative support police"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "chief gammel also spoke of his displeasure in the adjustments the committee made to one of his job descriptions"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Administrative support Police Department",
+   "status": "present",
+   "quote": "a. moore expressed displeasure that an item she felt should be on the agenda was to be addressed in public comment"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA",
+   "status": "present",
+   "quote": "pauline roy, coa, paula bertram, sewer dept"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Sewer Dept",
+   "status": "present",
+   "quote": "p. bertram felt that the committee could not know all the detail work requirements within the police role"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "julie, donna and nancy o'rourke determined they would work out the costs that any of these options might cost"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed to meet again on Monday, February 26 (printed as 2023), to continue the work, given the approaching Town Meeting.",
+   "quote": "given the quickly approaching town meeting the group decided to meet again monday february 26, 2023"
+  },
+  {
+   "decision": "Julie Belliveau, Donna Fortune and Nancy O’Rourke to work out the costs of the grade-reduction options if applied to the 2024 SAP salary grid.",
+   "quote": "julie, donna and nancy o'rourke determined they would work out the costs that any of these options might cost if applied to the 2024 sap salary grid."
+  },
+  {
+   "decision": "Discussions about 2025 to happen separately from the initial discussions about 2024.",
+   "quote": "j. bilotta expressed that these initial discussions were about 2024 and discussions regarding 2025 would happen separately"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SAP grid adjustments (COLA history)",
+   "what_was_recorded": "The SAP salary grid was adjusted annually by 2-3% over the last 6-7 years.",
+   "quote": "the sap grid had actually been adjusted over the last 6-7 years by an annual adjustment between 2-3%.",
+   "figures_as_printed": [
+    "2-3%",
+    "6-7 years"
+   ]
+  },
+  {
+   "topic": "Step increases and effective raises",
+   "what_was_recorded": "The current grid allows a 3% step increase for most employees, so employees not at step 8 would receive about 5+% with the grid adjustment; step 8 employees receive only the grid adjustment.",
+   "quote": "so by adjusting the grid each year and the step increase, any employee not at step 8 would be receiving approximately 5+%.",
+   "figures_as_printed": [
+    "3%",
+    "5+%",
+    "2-3%"
+   ]
+  },
+  {
+   "topic": "Grade reduction options (20 to 16 grades)",
+   "what_was_recorded": "Several options to move from 20 grades back to 16 were noted; their costs were to be worked out against the 2024 SAP salary grid. No dollar figures printed.",
+   "quote": "julie, donna and nancy o'rourke determined they would work out the costs that any of these options might cost if applied to the 2024 sap salary grid.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Retroactive pay for 2024",
+   "what_was_recorded": "If retro amounts for 2024 were recommended, seasonal employees who are no longer active would be affected. No dollar figures printed.",
+   "quote": "if there were recommendations to pay retro amounts for 2024, we recognized that there were groups of seasonal employees that would not be active employees currently.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Salary survey impact on SAP grid",
+   "what_was_recorded": "The salary survey results were to be reviewed for their impact on jobs and on the SAP salary grid. No dollar figures printed.",
+   "quote": "j. belliveau also noted the results of the salary survey she had performed should be reviewed to see impact on various jobs outlined",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "D. Fortune",
+   "topic": "process and feedback on the project",
+   "quote": "d. fortune read a prepared comment regarding the process the group has undertaken"
+  },
+  {
+   "speaker": "Chief Gammel",
+   "stated_role": "Chief",
+   "topic": "changes to a police job description",
+   "quote": "chief gammel also spoke of his displeasure in the adjustments the committee made to one of his job descriptions"
+  },
+  {
+   "speaker": "A. Moore",
+   "topic": "agenda placement and job description changes",
+   "quote": "a. moore expressed displeasure that an item she felt should be on the agenda was to be addressed in public comment"
+  },
+  {
+   "speaker": "P. Bertram",
+   "topic": "accuracy of police job ratings",
+   "quote": "p. bertram felt that the committee could not know all the detail work requirements within the police role"
+  },
+  {
+   "speaker": "A. Moore",
+   "topic": "transparency and public records",
+   "quote": "a. moore expressed displeasure with the committee's actions regarding transparency"
+  },
+  {
+   "speaker": "N.O’Rourke",
+   "topic": "support for pricing out options",
+   "quote": "n.o'rourke expressed her support to assistance to price out various options."
+  },
+  {
+   "speaker": "J. Bilotta",
+   "topic": "2024 versus 2025 discussions",
+   "quote": "j. bilotta expressed that these initial discussions were about 2024 and discussions regarding 2025 would happen separately"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "received; no action",
+   "quote": "d. fortune read a prepared comment regarding the process the group has undertaken",
+   "tags": [
+    "public comment",
+    "process"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "no action; no minutes available",
+   "quote": "no minutes were available for review.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Ongoing business: next steps and grade structure",
+   "resolution": "continued; more review needed",
+   "quote": "the committee explored next steps.",
+   "tags": [
+    "SAP grid",
+    "grade structure",
+    "Winchendon",
+    "job analysis"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "meet again February 26",
+   "quote": "given the quickly approaching town meeting the group decided to meet again monday february 26, 2023",
+   "tags": [
+    "scheduling",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "received; no action",
+   "quote": "a. moore expressed displeasure with the committee's actions regarding transparency",
+   "tags": [
+    "public comment",
+    "transparency"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:52pm",
+   "quote": "w. bertrand made a motion to adjourn the meeting at 6:52pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "SAP salary grid",
+  "job classification",
+  "grade structure",
+  "cost of living adjustment",
+  "step increases",
+  "police department",
+  "job descriptions",
+  "salary survey",
+  "retroactive pay",
+  "public comment",
+  "transparency",
+  "Town Meeting"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

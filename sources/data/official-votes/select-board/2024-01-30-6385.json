@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-01-30",
  "docid": "6385",
@@ -13,38 +13,509 @@
  "votes": [
   {
    "motion": "Appoint Jenny Pewtherer to the Conservation Commission for a term to expire June 30, 2024.",
-   "moved_by": "Michael Ray Jeffreys",
-   "seconded_by": "Lou Franco",
+   "moved_by": "Chair Jeffreys",
+   "seconded_by": "Clerk Franco",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "chair jeffreys moved to appoint jenny pewtherer to the conservation commission for a term to expire june 30, 2024. seconded by clerk franco. roll call vote: mr. nuzzolo-aye, ms. emkey-aye, mr. alonzo-aye, mr. franco-aye, and mr. jeffreys-aye. the motion passed unanimously (5-0-0)."
+   "procedural": false,
+   "quote": "chair jeffreys moved to appoint jenny pewtherer to the conservation commission for a term to expire june 30, 2024."
   },
   {
    "motion": "Approve the minutes of September 12, 2023.",
-   "moved_by": "Lou Franco",
-   "seconded_by": "Tom Alonzo",
+   "moved_by": "Vice Chair Franco",
+   "seconded_by": "Member Alonzo",
    "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "motion by vice chair franco to approve the minutes of september 12, 2023. seconded by member alonzo. roll call vote: mr. nuzzolo-aye, ms. emkey-aye, mr. alonzo-aye, mr. franco-aye, and mr. jeffreys-aye. the motion passed unanimously (5-0-0)."
+   "quote": "motion by vice chair franco to approve the minutes of september 12, 2023. seconded by member alonzo."
   },
   {
    "motion": "Approve the minutes of September 19, 2023.",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Renee Emkey",
+   "moved_by": "Member Alonzo",
+   "seconded_by": "Member Emkey",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "motion by member alonzo to approve the minutes of september 19, 2023. seconded by member emkey. roll call vote: mr. nuzzolo-aye, ms. emkey-aye, mr. alonzo-aye, and mr. jeffreys-aye. mr. franco abstained. the motion passed (4-0-1)."
+   "quote": "motion by member alonzo to approve the minutes of september 19, 2023. seconded by member emkey."
   },
   {
    "motion": "Adjourn the meeting.",
-   "moved_by": "Lou Franco",
-   "seconded_by": "Tom Alonzo",
+   "moved_by": "Vice Chair Franco",
+   "seconded_by": "Member Alonzo",
    "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "vice chair franco moved to adjourn. seconded by member alonzo. roll call vote: mr. nuzzolo-aye, ms. emkey-aye, mr. alonzo-aye, mr. franco-aye and mr. jeffreys-aye. the motion passed unanimously (5-0-0)."
+   "quote": "vice chair franco moved to adjourn. seconded by member alonzo."
+  },
+  {
+   "motion": "Approve minutes from January 23, 2024 (as printed in the April 15, 2025 approval block).",
+   "moved_by": "Member Alonzo",
+   "seconded_by": "Vice Chair Jeffreys",
+   "outcome": "passed 5-0-0",
+   "procedural": true,
+   "quote": "member alonzo made motion to approve minutes from january 23, 2024. seconded by vice chair jeffreys. all, aye. passed unanimously (5-0-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1183071
+ "note": "Digital text extraction, not a scan: all seven pages were read. No votes were missing a result. Caveats on the text: (1) The approval block at the end is dated April 15, 2025 and records a motion to approve 'minutes from January 23, 2024', which is not this meeting's date. It names 'Vice Chair Jeffreys' as seconder although Jeffreys is Chair. It is recorded as a procedural vote with that printed wording. (2) The signature block names Jennifer Warren-Dyment as Town Manager, while the meeting names Heather Lemieux; Warren-Dyment is not listed as an attendee. (3) Ordinal dates lost superscripts in extraction (e.g. '9th', '13th'), so quotes avoid them. (4) Board-member remarks under the PUBLIC COMMENT heading (Emkey, Franco, Jeffreys) are kept in the topic list but not treated as public speakers. (5) The Chapter 74 and Chapter 5 items were tabled with no recorded motion, so they are decisions, not votes. Dollar figures are as printed; no transfers were recorded.",
+ "cost_usd": 0.02256457,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Ray Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: michael ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo (via zoom)"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice Chair (printed as Vice Chair Franco)",
+   "status": "present",
+   "quote": "members present: michael ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo (via zoom)"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michael ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo (via zoom)"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michael ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo (via zoom)"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Member",
+   "status": "remote",
+   "quote": "members present: michael ray jeffreys, lou franco, tom alonzo, renee emkey, caesar nuzzolo (via zoom)"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "George Burden",
+   "role": "public comment; 39 Cortland Circle",
+   "status": "present",
+   "quote": "george burden, 39 cortland circle - stated he was discussed at the january"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "public comment; 304 Lancaster Avenue",
+   "status": "present",
+   "quote": "sarah cammer, 304 lancaster avenue"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "public comment; 181 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road - commented that she attended the finance committee"
+  },
+  {
+   "name": "John Bowen",
+   "role": "public comment; 162 Highland Street",
+   "status": "present",
+   "quote": "john bowen, 162 highland street - stated that the cemetery commission is a redundant board"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "member of the Finance Committee; 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street and member of the finance committee - stated they had a"
+  },
+  {
+   "name": "Jenny Pewtherer",
+   "role": "candidate appointed to Conservation Commission; 10 Sunset Ave.",
+   "status": "not stated",
+   "quote": "jenny pewtherer - 10 sunset ave."
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "candidate for Conservation Commission; 88 Whalom Road",
+   "status": "not stated",
+   "quote": "anthony nicastro - 88 whalom road"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chapter 305 (Board of Selectmen Policies) to be discussed at the next meeting, to be brought in line with the Handbook.",
+   "quote": "the board will discuss this at the next meeting."
+  },
+  {
+   "decision": "Chapter 184 (Pawnbrokers and Dealers in Metal): all agreed there are no changes, and it was taken off the agenda.",
+   "quote": "all agreed there are no changes and to take it off the agenda."
+  },
+  {
+   "decision": "Discussion of repealing Chapter 74 tabled, the Board being divided.",
+   "quote": "the board was divided as to repealing and tabled this discussion."
+  },
+  {
+   "decision": "Chapter 5 (Administration of Government) tabled.",
+   "quote": "chapter 5 administration of government was tabled."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA interest earnings",
+   "what_was_recorded": "The banked ARPA money earned interest, and the Board needs clarification on whether it follows ARPA rules or regular appropriation.",
+   "quote": "the banked money earned $101,889 in interest.",
+   "figures_as_printed": [
+    "$101,889"
+   ]
+  },
+  {
+   "topic": "ARPA sub-recipient grant agreement amounts",
+   "what_was_recorded": "Committed ARPA sub-recipient amounts were listed for the Water District, Boys & Girls Club and Food Pantry/Lions Club.",
+   "quote": "recipients are water district ($285,000), boys & girls club ($175,000) and food pantry/lions club ($20,000).",
+   "figures_as_printed": [
+    "$285,000",
+    "$175,000",
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "Westford ARPA well testing (comparison)",
+   "what_was_recorded": "Member Emkey reported Westford is using ARPA funds for PFAS well testing.",
+   "quote": "westford is using $20,000 of arpa funds to test 50 private wells across town for pfas.",
+   "figures_as_printed": [
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "Proposed consultant for old town dump solar",
+   "what_was_recorded": "Chair Jeffreys suggested spending ARPA funds to hire a consultant on putting solar on the old town dump.",
+   "quote": "chair jeffreys suggested using $25,000 to hire a consultant",
+   "figures_as_printed": [
+    "$25,000"
+   ]
+  },
+  {
+   "topic": "40S local aid shortage for Tri-Town students",
+   "what_was_recorded": "The state notified the town of a shortage in 40S aid; the line total and the prior-year Chapter 70 increase were reported.",
+   "quote": "the total for the line item is $342,000",
+   "figures_as_printed": [
+    "$342,000",
+    "$900,000"
+   ]
+  },
+  {
+   "topic": "Additional Chapter 70 and Smart Growth reimbursement calculation",
+   "what_was_recorded": "The Town Manager reported additional Chapter 70 figures that she said do not make sense; the figures were questioned.",
+   "quote": "the additional chapter 70 was $728,577 and last year was $1,290",
+   "figures_as_printed": [
+    "$728,577",
+    "$1,290"
+   ]
+  },
+  {
+   "topic": "Local revenue on the Cherry Sheet",
+   "what_was_recorded": "Local revenue of $20,000 is being considered for removal from the Cherry Sheet by the state.",
+   "quote": "local revenue is $20,000 and mr. cronin is looking at removing this from the cherry sheet.",
+   "figures_as_printed": [
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "Cemetery Commission capital request",
+   "what_was_recorded": "Public comment reported the Cemetery Board requested a Capital Plan amount that the speaker said the town cannot afford.",
+   "quote": "the present cemetery board is requesting $738,000 through the capital plan which they cannot afford.",
+   "figures_as_printed": [
+    "$738,000"
+   ]
+  },
+  {
+   "topic": "Perpetual Fund cemetery maintenance",
+   "what_was_recorded": "Public comment stated a yearly budgeted amount for cemetery maintenance by the DPW.",
+   "quote": "$20,000 is budgeted each year for maintenance by the dpw.",
+   "figures_as_printed": [
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "Accounts payable and payroll warrants",
+   "what_was_recorded": "The Board noted the accounts payable and payroll warrants; no vote is recorded on them.",
+   "quote": "accounts payable warrant in the amount of $ 56,563.63.",
+   "figures_as_printed": [
+    "$ 56,563.63",
+    "$973,643.41"
+   ]
+  },
+  {
+   "topic": "Potential 2 ½ override",
+   "what_was_recorded": "Member Alonzo called for a potential 2 ½ override; no amount was set.",
+   "quote": "calling for a potential 2 ½ override.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Levy growth bump proposal",
+   "what_was_recorded": "Chair Jeffreys suggested building in the ability to increase the levy by a percentage every 8 or so years.",
+   "quote": "suggested building in the ability to bump it 3% every 8 or so years.",
+   "figures_as_printed": [
+    "3%"
+   ]
+  },
+  {
+   "topic": "Library technology budget separation",
+   "what_was_recorded": "The Library Trustees asked for technology funds to be separated from the general IT budget; no amount was printed.",
+   "quote": "chair jeffreys received a request from the library trustees to separate funds for technology from the general it budget",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grant writer position in the budget",
+   "what_was_recorded": "A Finance Committee vote to recommend a grant writer hire was reported; the speaker said he will advocate adding it to next year's budget. No amount was printed.",
+   "quote": "mr. passios will advocate to add it to the budget next year.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Budget season and School Budget attention (Member remarks under the heading)",
+   "speaker": "Member Emkey",
+   "stated_role": "Member",
+   "quote": "member emkey mentioned they are in budget season now and the school budget is getting a lot"
+  },
+  {
+   "topic": "Board vs. Finance Committee, public participation (Vice Chair remarks under the heading)",
+   "speaker": "Vice Chair Franco",
+   "stated_role": "Vice Chair",
+   "quote": "vice chair franco, building on member emkey's remarks, urged the public to show up to the"
+  },
+  {
+   "topic": "Complaint about Town Manager meeting and Chief of Police; assault on private street",
+   "speaker": "George Burden",
+   "quote": "george burden, 39 cortland circle - stated he was discussed at the january"
+  },
+  {
+   "topic": "DPW salt truck; Lake Shirley land and Parks Commission access; budget and 2 ½ limits",
+   "speaker": "Sarah Cammer",
+   "quote": "sarah cammer, 304 lancaster avenue"
+  },
+  {
+   "topic": "Finance Committee criticism of 2 ½ budget; over-ride and middle-class residents",
+   "speaker": "Rhonda Lisio",
+   "stated_role": "",
+   "quote": "rhonda lisio, 181 reservoir road - commented that she attended the finance committee"
+  },
+  {
+   "topic": "Cemetery Commission redundancy and Capital Plan request",
+   "speaker": "John Bowen",
+   "quote": "john bowen, 162 highland street - stated that the cemetery commission is a redundant board"
+  },
+  {
+   "topic": "Grant writer hire recommended by Finance Committee vote",
+   "speaker": "Dave Passios",
+   "stated_role": "member of the Finance Committee",
+   "quote": "dave passios, 56 whiting street and member of the finance committee - stated they had a"
+  },
+  {
+   "topic": "Response on Burden meetings and complaint process",
+   "speaker": "Manager Lemieux",
+   "stated_role": "TOWN MANAGER",
+   "quote": "town manager: manager lemieux stated that earlier in the meeting, mr. burden indicated"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "chair michael ray jeffreys called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (first session)",
+   "resolution": "heard; no action",
+   "quote": "member emkey mentioned they are in budget season now and the school budget is getting a lot",
+   "tags": [
+    "public comment",
+    "school budget",
+    "2 1/2"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "annual town meeting warrant is open now until march 18th at 4pm.",
+   "tags": [
+    "town meeting",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Communications from other boards",
+   "resolution": "noted",
+   "quote": "chair jeffreys received a request from the library trustees to separate funds for technology from the general it budget",
+   "tags": [
+    "library",
+    "IT budget"
+   ]
+  },
+  {
+   "topic": "Conservation Commission appointment",
+   "resolution": "approved (Jenny Pewtherer appointed)",
+   "quote": "chair jeffreys moved to appoint jenny pewtherer to the conservation commission for a term to expire june 30, 2024.",
+   "tags": [
+    "appointments",
+    "conservation commission"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "the town manager reported she had received a spreadsheet from sean cronin (deputy commissioner for local services)",
+   "tags": [
+    "vacancies",
+    "state aid",
+    "40S",
+    "Chapter 70"
+   ]
+  },
+  {
+   "topic": "Old Business 1: ARPA funds and sub-recipient agreement",
+   "resolution": "no action; Habitat for Humanity presentation to be sought by chair",
+   "quote": "chair jeffreys reported there is still significant american rescue plan act (arpa) funds to disperse",
+   "tags": [
+    "ARPA",
+    "housing",
+    "solar",
+    "grant agreement"
+   ]
+  },
+  {
+   "topic": "Old Business 2: Draft Board/Commission Handbook",
+   "resolution": "discussed; no action",
+   "quote": "member alonzo requested focusing on the remote participation policy and thanked the town manager for all her work on the handbook.",
+   "tags": [
+    "handbook",
+    "remote participation"
+   ]
+  },
+  {
+   "topic": "Old Business 3: Draft Environmental Policies",
+   "resolution": "continued; substantive discussion expected March",
+   "quote": "he anticipates this will be on the agenda for a while and expects a substantive discussion in march.",
+   "tags": [
+    "environmental policy"
+   ]
+  },
+  {
+   "topic": "Old Business 4: Bylaws pertaining to the Select Board",
+   "resolution": "Chapter 184 cleared; Chapter 305 next meeting; Chapter 74 and Chapter 5 tabled",
+   "quote": "the board was divided as to repealing and tabled this discussion.",
+   "tags": [
+    "bylaws",
+    "Chapter 74",
+    "Chapter 305",
+    "Chapter 184"
+   ]
+  },
+  {
+   "topic": "Common Victuallers License compliance",
+   "resolution": "no action; applicant scheduled to appear",
+   "quote": "chair jeffreys reported conrads has not come forward to submit a permit request but has continued to operate.",
+   "tags": [
+    "licensing",
+    "common victuallers"
+   ]
+  },
+  {
+   "topic": "FY2024 and FY2025 budget, Capital Plan, Annual Town Meeting articles",
+   "resolution": "discussed; no action",
+   "quote": "member alonzo commented on discussions at the last few finance committee and school committee meetings, calling for a potential 2 ½ override.",
+   "tags": [
+    "FY25 budget",
+    "override",
+    "capital plan",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "FY25 budget status",
+   "resolution": "no action; awaiting final figures",
+   "quote": "the town manager reported that they are still waiting for final numbers on health insurance",
+   "tags": [
+    "FY25 budget",
+    "health insurance",
+    "Monty-Tech",
+    "retirement assessment"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "approved Sept 12, 2023 minutes (5-0-0); approved Sept 19, 2023 minutes (4-0-1); warrants listed",
+   "quote": "motion by vice chair franco to approve the minutes of september 12, 2023. seconded by member alonzo.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "school committee: member emkey reported that the superintendent presented a modified budget",
+   "tags": [
+    "school committee",
+    "finance committee",
+    "planning board",
+    "assessors"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "noted; site walk being coordinated",
+   "quote": "he is trying to coordinate a site walk with open space and parks commission.",
+   "tags": [
+    "schedule",
+    "open space",
+    "parks commission"
+   ]
+  },
+  {
+   "topic": "Public comment (second session) and Town Manager response",
+   "resolution": "heard; no action",
+   "quote": "dave passios, 56 whiting street and member of the finance committee - stated they had a",
+   "tags": [
+    "public comment",
+    "grant writer"
+   ]
+  },
+  {
+   "topic": "Board comments on public complaint",
+   "resolution": "no action",
+   "quote": "member alonzo: commented that the town manager informed this citizen on how to file a complaint",
+   "tags": [
+    "complaint",
+    "open meeting law",
+    "private road",
+    "statute of limitations"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:17 PM",
+   "quote": "meeting adjourned at 9:17 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "FY25 budget",
+  "ARPA",
+  "state aid 40S",
+  "Chapter 70",
+  "2 1/2 override",
+  "public comment",
+  "bylaws review",
+  "conservation commission appointment",
+  "cemetery",
+  "grant writer",
+  "minutes approval",
+  "open meeting law"
+ ],
+ "dropped_unquoted_by_field": {}
 }

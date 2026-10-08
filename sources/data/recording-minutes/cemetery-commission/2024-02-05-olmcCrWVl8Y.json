@@ -1,0 +1,533 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "cemetery-commission",
+ "board": "Cemetery Commission",
+ "video_title": "Cemetery Commission (Audio starts at 5:14)",
+ "meeting_date": "2024-02-05",
+ "video_id": "olmcCrWVl8Y",
+ "video_url": "https://www.youtube.com/watch?v=olmcCrWVl8Y",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/cemetery-commission/2024-02-05-olmcCrWVl8Y.json",
+  "sha256": "c6c895b628d2b99817c923b5bcc58e3a21a7fa5f2be29afa36b798325e6c4f48",
+  "caption_lines": 168,
+  "segments": 1413
+ },
+ "recording": {
+  "duration_s": 3831,
+  "duration": "1:03",
+  "spoken_chars": 49755,
+  "words_approx": 8292
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02052024-6390",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2024-02-05-agenda-6390.txt",
+   "path": "sources/meetings/cemetery-commission/2024-02-05-agenda-6390.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02052024-6390",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2024-02-05-minutes-6390.txt",
+   "path": "sources/meetings/cemetery-commission/2024-02-05-minutes-6390.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T15:52:37Z",
+  "cost_usd": 0.299261
+ },
+ "minutes": {
+  "headline": "Commission voted to accept the attorney's response calling a resident's open meeting law complaint untimely, amid a DPW dispute.",
+  "summary": "The Cemetery Commission heard a resident's three-minute complaint, then spent most of the meeting in a dispute with the DPW director over the new cemetery rules, hedge pruning, leaf-raking hours, Ray Maker (Rainmaker) software access and bench sizes. Most items were tabled or left to better communication, and the DPW director agreed to provide a maintenance plan. The commission approved the November minutes, the town report submission, and the attorney's open meeting law response.",
+  "attendees": [
+   {
+    "name_as_heard": "the chair (cemetery commission chair)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Dave",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Bill Berard",
+    "role": "DPW director"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager (as addressed)"
+   },
+   {
+    "name_as_heard": "Attorney Costa",
+    "role": "town counsel"
+   },
+   {
+    "name_as_heard": "Todd",
+    "role": "cemetery superintendent (referred to, apparently not present)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 314,
+    "topic": "A resident read a prepared statement accusing the chair of harassing residents and the DPW, overstepping the charter's day-to-day authority, and of improperly reconvening the November 30 meeting; he called the commission unnecessary red tape.",
+    "stated_role": "resident"
+   },
+   {
+    "t": 524,
+    "topic": "Brief exchange about whether public comment was allowed on the minutes motion; none was taken.",
+    "stated_role": "resident"
+   },
+   {
+    "t": 3504,
+    "topic": "Asked for a copy of the cemetery superintendent's job description to compare against the new rules and regulations; chair agreed to provide it.",
+    "stated_role": "resident"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "legal",
+   "policy",
+   "public-comment",
+   "roads-and-dpw",
+   "technology",
+   "town-departments",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 524,
+    "motion": "Approve the minutes of the November 30, 2023 meeting.",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 2804,
+    "motion": "Approve the commission's report for the March town report.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3461,
+    "motion": "Accept the attorney's proposed response to the open meeting law complaint as written and submit it.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3819,
+    "motion": "Adjourn.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 377,
+    "topic": "Perpetual care money",
+    "what_was_said": "The resident alleged the chair used perpetual care funds for studies on shrubs and grass cutting.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1617,
+    "topic": "Capital planning requests for cemetery/DPW",
+    "what_was_said": "The DPW director presented a capital request to the capital planning committee; final ranking would be seen on the spring warrant. The chair stressed the requests are joint DPW and cemetery items.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1766,
+    "topic": "North Cemetery road resurfacing estimate",
+    "what_was_said": "The estimate to resurface the roads was discussed as covering north and south cemeteries; the chair noted the director's final figures would be the correct ones.",
+    "figures_as_heard": [
+     "100,000",
+     "225,000",
+     "250,000"
+    ]
+   },
+   {
+    "t": 1306,
+    "topic": "Memorial wall donation",
+    "what_was_said": "A couple wishes to donate toward a memorial wall for the Barney family, but the full money is not yet in hand.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1493,
+    "topic": "Prison crew leaf raking costs",
+    "what_was_said": "Prisoner labor is not charged to the town; the DPW pays for food. The director keeps no hours for leaf raking and blowing.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1917,
+    "topic": "Ray Maker software",
+    "what_was_said": "The commission says it pays annually for the software and maintenance and upgrades.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 3653,
+    "topic": "Annual commission warrant article amount",
+    "what_was_said": "The chair said the commission usually puts in an amount each year; the deadline is mid-March.",
+    "figures_as_heard": [
+     "10,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1596,
+    "decision": "The DPW director agreed to provide an annual maintenance plan, due by March, under the new rules."
+   },
+   {
+    "t": 2165,
+    "decision": "Ray Maker access dispute tabled; the chair will meet with the town manager, and the DPW director will not change access until a discussion."
+   },
+   {
+    "t": 3610,
+    "decision": "The chair agreed to provide the superintendent's job description to the requester."
+   },
+   {
+    "t": 2728,
+    "decision": "The commission will write the town report again, with burial numbers added, and send it to the DPW director for light edits."
+   },
+   {
+    "t": 3673,
+    "decision": "The commission will schedule a meeting before the mid-March deadline for a possible warrant article; the chair will circulate dates and consider the water district room or Zoom recording."
+   },
+   {
+    "t": 1285,
+    "decision": "Hedge pruning and rules dispute left unresolved with a commitment to better communication; escalation to the town manager was noted as the next step if needed."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 314,
+    "t_end": 501,
+    "topic": "Public comment: resident complaint about the chair and commission",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 501,
+    "t_end": 546,
+    "topic": "Approval of November 30, 2023 minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 546,
+    "t_end": 611,
+    "topic": "DPW director update on burials and closed roadways",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 611,
+    "t_end": 1450,
+    "topic": "Hedge pruning at North Cemetery and rule on 30 days' notice for tree/shrub work",
+    "resolution": "tabled, communication promised",
+    "tags": [
+     "policy",
+     "town-departments",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 1451,
+    "t_end": 1596,
+    "topic": "Leaf raking and blowing hours, prison crew",
+    "resolution": "no resolution",
+    "tags": [
+     "roads-and-dpw",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1596,
+    "t_end": 1617,
+    "topic": "2024 season maintenance plan",
+    "resolution": "director to provide plan",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1617,
+    "t_end": 1852,
+    "topic": "Capital planning requests and road resurfacing estimates",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 1852,
+    "t_end": 2205,
+    "topic": "Ray Maker cemetery database access",
+    "resolution": "tabled",
+    "tags": [
+     "technology",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2251,
+    "t_end": 2705,
+    "topic": "Bench size rule (3 vs 4 foot) and working together",
+    "resolution": "no resolution",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2707,
+    "t_end": 2824,
+    "topic": "Annual town report submission",
+    "resolution": "voted",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2824,
+    "t_end": 3504,
+    "topic": "Open meeting law complaint response by town counsel",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 3504,
+    "t_end": 3631,
+    "topic": "Request for superintendent job description",
+    "resolution": "chair to provide",
+    "tags": [
+     "public-comment",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3631,
+    "t_end": 3819,
+    "topic": "Next meeting scheduling, warrant article deadline, meeting location and recording",
+    "resolution": "chair to send date",
+    "tags": [
+     "warrant-article",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 3819,
+    "t_end": 3830,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts and outcomes on all motions: the captions show a motion and second and 'all in favor' but no counts or results.",
+   "Whether the resident's final comments were captioned accurately.",
+   "The captions do not name the chair or the second member by name.",
+   "Capital planning dollar figures are mixed (100,000, 225,000, 250,000) and the final cemetery figure is unclear.",
+   "The statement about whether the superintendent attended the meeting is unclear.",
+   "The recording starts at 314 seconds, so earlier proceedings (call to order, roll call) are not captured."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The commission voted to accept the town attorney's proposed response to a resident's open meeting law complaint and submit it as written.",
+    "t": 3461
+   },
+   {
+    "line": "A resident's prepared statement accused the chair of overstepping and called the commission unnecessary red tape, opening a long dispute with the DPW director.",
+    "t": 314
+   },
+   {
+    "line": "The DPW director agreed to provide an annual maintenance plan under the new cemetery rules, due by March.",
+    "t": 1596
+   },
+   {
+    "line": "Hedge pruning, leaf-raking hours and bench-size rules were left unresolved; access to the Ray Maker records software was tabled until the chair meets the town manager.",
+    "t": 2165
+   },
+   {
+    "line": "The commission voted on its town report submission, to be rewritten with burial numbers and sent to the DPW director for light edits.",
+    "t": 2728
+   }
+  ],
+  "why_it_matters": [
+   "The cemetery rules, the maintenance plan and who controls cemetery records are still unsettled between the commission and the DPW, and these set how cemetery grounds are kept.",
+   "The commission usually puts an annual amount in a warrant article, so residents may be asked to vote on cemetery money at town meeting."
+  ],
+  "watch_next": [
+   "The mid-March deadline for a possible commission warrant article, with a meeting to be scheduled before it.",
+   "The DPW director's maintenance plan, due by March, and the chair's meeting with the town manager on Ray Maker access."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T15:52:46Z",
+   "cost_usd": 0.219639
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02052024-6390",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/cemetery-commission/2024-02-05-minutes-6390.txt",
+   "path": "sources/meetings/cemetery-commission/2024-02-05-minutes-6390.pdf"
+  },
+  "official_sha256": "8bb31db93b95bd7a92e85eb696e7368043e7adca46fc648898c44d1d23c03a62",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the broad topics: the Open Meeting Law complaint, the annual report, the Ramaker access dispute, and Heather Lemieux, Attorney Costa and the DPW director attending. They differ on the votes. Ours has two votes with no audible outcome. The official minutes record four votes, each passed 2-0, including a second Open Meeting Law vote and a minutes vote that ours lacks. They also differ on whether the superintendent was present, and on whether the town report was approved or sent back for a rewrite.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 2,
+   "discrepancy": 6,
+   "only_in_ours": 4,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Annual/town report vote",
+    "ours": "Approve the commission's report for the March town report. — not audible",
+    "official": "cemetery commission document for the annual report 2023 - motion passed 2 to 0.",
+    "note": "Probably the same item, but our decision at t=2728 says the commission will write the report again and send it to the DPW director for edits, while the official minutes record it approved 2-0; check the recording around t=2804 and whether the vote was on a final draft.",
+    "t": 2804
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Open Meeting Law response vote(s)",
+    "ours": "Accept the attorney's proposed response to the open meeting law complaint as written and submit it. — not audible",
+    "official": "open meeting law complaint letter - john bowen - motion passed 2 to 0.",
+    "note": "The official minutes record two separate 2-0 votes, one on the letter to Mr. Bowen and one on the letter to the Attorney General; ours has a single vote with no audible outcome. Check how many motions were made and their results.",
+    "t": 3461
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Open Meeting Law letter to Attorney General vote",
+    "ours": "",
+    "official": "open meeting law complaint letter - office of the attorney general - motion passed 2 to 0.",
+    "note": "This vote is in the official minutes and not in ours; check the recording for a second motion near t=3461."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Approval of 11/30 meeting minutes",
+    "ours": "",
+    "official": "11/30 meeting minutes - motion passed 2 to 0.",
+    "note": "The official minutes record this vote and ours does not; it may have been inaudible or taken outside the part we captured, so check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Open Meeting Law complaint handled through counsel",
+    "ours": "Accept the attorney's proposed response to the open meeting law complaint as written and submit it.",
+    "official": "attorney costa on behalf of the cemetery commission has declined to substantively respond to it.",
+    "note": "Both describe a response drafted by Attorney Costa and sent on the commission's behalf; the official minutes add that the response declines to engage on the substance as untimely."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Road resurfacing estimates",
+    "ours": "North Cemetery road resurfacing estimate: 100,000, 225,000, 250,000",
+    "official": "",
+    "note": "The official minutes print no amounts for any budget item."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant article amount",
+    "ours": "Annual commission warrant article amount: 10,000",
+    "official": "",
+    "note": "The official minutes mention the spring town meeting warrant article but print no amount."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DPW annual maintenance plan",
+    "ours": "The DPW director agreed to provide an annual maintenance plan, due by March, under the new rules.",
+    "official": "",
+    "note": "The official minutes do not record this commitment."
+   },
+   {
+    "kind": "agree",
+    "about": "Ramaker access/password dispute tabled",
+    "ours": "Ray Maker access dispute tabled; the chair will meet with the town manager, and the DPW director will not change access until a discussion.",
+    "official": "this will be tabled until the next meeting.",
+    "note": "Both table it. Ours says the chair will meet with the town manager, while the official minutes say the Vice-Chair requested the meeting; check who asked. The DPW director's no-change commitment is only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Hedge/arborvitae pruning dispute",
+    "ours": "Hedge pruning and rules dispute left unresolved with a commitment to better communication; escalation to the town manager was noted as the next step if needed.",
+    "official": "table this discussion at the next cemetery commission meeting.",
+    "note": "Both leave it unresolved and deferred; the official minutes tables items 3a, 3c, 3e and 3f to the next meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Superintendent job description",
+    "ours": "The chair agreed to provide the superintendent's job description to the requester.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Next meeting / warrant article scheduling",
+    "ours": "The commission will schedule a meeting before the mid-March deadline for a possible warrant article; the chair will circulate dates and consider the water district room or Zoom recording.",
+    "official": "third thursday of each month - march 21, 2024",
+    "note": "The official minutes set a regular schedule with the next meeting on March 21, which may fall after a mid-March deadline; check whether a separate pre-deadline meeting was agreed."
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW director's name",
+    "ours": "Bill Berard (DPW director)",
+    "official": "bill bernard, dpw director",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Bill Bernard"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice-chair/member name",
+    "ours": "Dave (member)",
+    "official": "david dorren, vice-chair & clerk",
+    "note": "Same person with a first name only; the official minutes give his full name and office.",
+    "official_reading": "David Dorren"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cemetery superintendent attendance",
+    "ours": "Todd (cemetery superintendent (referred to, apparently not present))",
+    "official": "by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk; bill bernard, dpw director; todd holman, cemetery superintendent;",
+    "note": "We heard Todd referred to as not present, but the official minutes list him as present; check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Chair, town manager and town counsel attending",
+    "ours": "Heather (town manager (as addressed)); Attorney Costa (town counsel)",
+    "official": "attorney adam costa, lunenburg town counsel; and heather lemieux, town manager.",
+    "note": "Same people. The chair is unnamed in ours and is Nancy Foss-Yasko in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public attendees and public comment",
+    "ours": "",
+    "official": "public attendance were john bowen, jeanmarie price and john bowen, jr.",
+    "note": "Ours does not list the public attendees or Mr. Bowen's public comment."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T15:54:09Z",
+   "cost_usd": 0.249935
+  }
+ }
+}

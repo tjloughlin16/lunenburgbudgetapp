@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2024-02-22",
  "docid": "6428",
@@ -12,47 +12,341 @@
  },
  "votes": [
   {
-   "motion": "Accept and send the Open Meeting Law complaint response letter for Jeanmarie Price",
-   "moved_by": "Attorney Adam Costa",
-   "seconded_by": "",
-   "outcome": "passed 2-0",
-   "procedural": true,
-   "quote": "open meeting law complaint letter - jeanmarie price - motion passed 2 to 0."
-  },
-  {
-   "motion": "Send the Open Meeting Law complaint response letter to the Office of the Attorney General",
-   "moved_by": "Attorney Adam Costa",
-   "seconded_by": "",
-   "outcome": "passed 2-0",
-   "procedural": true,
-   "quote": "open meeting law complaint letter - office of the attorney general - motion passed 2 to 0."
-  },
-  {
-   "motion": "Approve the minutes of the February 05, 2024 meeting",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed 2-0",
-   "procedural": true,
-   "quote": "february 05, 2024 - meeting minutes - motion passed 2 to 0."
-  },
-  {
-   "motion": "Approve the Cemetery Commission warrant article for FY25 Annual Town Meeting for $10,000",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed 2-0",
+   "motion": "Accept the response letter to the Open Meeting Law complaint from Jeanmarie Price and send signed copies to the Commissioners and Jeanmarie Price.",
+   "outcome": "passed 2 to 0",
    "procedural": false,
-   "quote": "cemetery commission warrant article for fy25 annual town meeting article ($10k) - motion passed 2 to 0."
+   "quote": "g. open meeting law complaint letter - jeanmarie price - motion passed 2 to 0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Accept the response letter to the Office of the Attorney General regarding the Open Meeting Law complaint.",
+   "outcome": "passed 2 to 0",
+   "procedural": false,
+   "quote": "h. open meeting law complaint letter - office of the attorney general - motion passed 2 to 0."
+  },
+  {
+   "motion": "Approve the minutes of the February 05, 2024 Cemetery Commission meeting.",
+   "outcome": "passed 2 to 0",
+   "procedural": true,
+   "quote": "a. february 05, 2024 - meeting minutes - motion passed 2 to 0."
+  },
+  {
+   "motion": "Approve the Cemetery Commission warrant article for the FY25 Annual Town Meeting ($10K).",
+   "outcome": "passed 2 to 0",
+   "procedural": false,
+   "quote": "b. cemetery commission warrant article for fy25 annual town meeting article ($10k) - motion passed 2 to 0."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Nancy Foss-Yasko",
    "seconded_by": "David Dorren",
-   "outcome": "passed 2-0",
+   "outcome": "passed 2 to 0",
    "procedural": true,
-   "quote": "motion was made to adjourn by chair, nancy foss-yasko, seconded by vice-chair and clerk, david dorren. with no further discussion, meeting was adjourned at 12:56 pm - motion passed 2 to 0."
+   "quote": "motion was made to adjourn by chair, nancy foss-yasko, seconded by vice-chair and clerk, david dorren."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Five votes recorded. Votes 1 and 2 appear to derive from a single motion described in the narrative (\"Motion was made to accept these letters to go forward\"), but are formalized separately in the Review & Approved Motions section. All votes passed unanimously (2-0) with only two voting members present (Chair Nancy Foss-Yasko and Vice-Chair/Clerk David Dorren).",
- "cost_usd": 0.1344823
+ "note": "Text-only extraction of the official minutes; no scan. Whitespace and line breaks in quotes are collapsed to single spaces; en dashes and curly apostrophes are kept as printed. Votes are recorded only as 'Motion Passed 2 to 0' with no mover or seconder for items g, h, a and b, so moved_by and seconded_by are blank for those. The minutes name four board members (Foss-Yasko, Dorren, Bernard, Holman) but do not say which of them vote; two are staff (DPW Director, Cemetery Superintendent), so the 2-0 counts cannot be tied to named members. Richard McGrath is included as absent because the minutes say he was unable to attend; he did not take part. Public-comment statements (for example the bench and perpetual care allegations and the Charter reading) are the speakers' claims as recorded, not findings of the Commission. Several names in the comments (Michael Jeffrey(s), Selectman Jeffrey's, Charles Deming, Bill Tyler, Heather) appear only as referenced third parties and are not listed as attendees.",
+ "cost_usd": 0.02103757,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "12:06 pm - call to order - by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk;"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair & Clerk",
+   "status": "present",
+   "quote": "12:06 pm - call to order - by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk;"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill bernard, dpw director; todd holman, cemetery superintendent;"
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "present",
+   "quote": "bill bernard, dpw director; todd holman, cemetery superintendent;"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Lunenburg Town Counsel",
+   "status": "remote",
+   "quote": "attorney adam costa, lunenburg town counsel (zoom conference)."
+  },
+  {
+   "name": "John Bowen",
+   "role": "public attendance",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, john bowen, jr., and dave passios."
+  },
+  {
+   "name": "Jeanmarie Price",
+   "role": "public attendance",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, john bowen, jr., and dave passios."
+  },
+  {
+   "name": "John Bowen, Jr.",
+   "role": "public attendance",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, john bowen, jr., and dave passios."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public commenter; member of the Finance Committee",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price, john bowen, jr., and dave passios."
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "absent",
+   "quote": "mr. richard mcgrath - unable to be at this meeting today."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The DPW Director will provide a report on the up-to-date status of Ramaker data entry back to 2010 for the next meeting.",
+   "quote": "dpw director, will provide this report/response for our next meeting."
+  },
+  {
+   "decision": "The Ramaker software payment question is tabled to the next meeting.",
+   "quote": "no way ahead on this ramaker; therefore, it will be tabled to the next meeting."
+  },
+  {
+   "decision": "The Richard McGrath item is rescheduled to the next meeting.",
+   "quote": "this will be rescheduled for the next meeting."
+  },
+  {
+   "decision": "The cemeteries remain closed to vehicular traffic because of the weather.",
+   "quote": "the cemeteries in lunenburg will remain closed to vehicular traffic because of the weather"
+  },
+  {
+   "decision": "The Commission needs an end-to-end plan before proceeding on the hedges; the DPW Director agrees the hedges may be cut down.",
+   "quote": "the cemetery commission needs the end to end plan for this solution before proceeding further"
+  },
+  {
+   "decision": "Chair directs that going forward the Commission works from true data, not estimates.",
+   "quote": "going forward, we all need to be careful on true data, not estimates."
+  },
+  {
+   "decision": "The next Cemetery Commission meeting is scheduled for Thursday, March 07, 2024.",
+   "quote": "thursday, march 07, 2024."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY25 warrant article",
+   "what_was_recorded": "A Cemetery Commission warrant article for the FY25 Annual Town Meeting, stated as $10K, was approved 2 to 0.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "b. cemetery commission warrant article for fy25 annual town meeting article ($10k) - motion passed 2 to 0."
+  },
+  {
+   "topic": "North Cemetery back field and lot estimate",
+   "what_was_recorded": "Chair and Vice-Chair say the Commission decided on a lot estimate of about 40 that proved not to be true, and that opening the back field this year would have cost the Town; deferring it would save $50,000.00 this year.",
+   "figures_as_printed": [
+    "$50,000.00"
+   ],
+   "quote": "saving that $50,000.00 for this year, may certainly help the town in their budget going forward."
+  },
+  {
+   "topic": "Possible gift for a wall project",
+   "what_was_recorded": "The Commission is grateful for a possible gift of $175K for a wall; the minutes say it is in the research stage.",
+   "figures_as_printed": [
+    "$175K"
+   ],
+   "quote": "the possibility of a generous gift of $175k."
+  },
+  {
+   "topic": "Perpetual care funds",
+   "what_was_recorded": "The Chair states the Commission controls the Perpetual Care Account funds and may spend only the interest; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "we are not allowed to spend the principle, only the interest generated."
+  },
+  {
+   "topic": "Perpetual care funds used for bench",
+   "what_was_recorded": "A public commenter alleges perpetual care money paid for engraving a bench and its foundation; no amount is printed and the minutes record it as an allegation.",
+   "figures_as_printed": [],
+   "quote": "your commission used money from the perpetual care funds for engraving a bench and provide a foundation for the bench;"
+  },
+  {
+   "topic": "Ramaker software payment",
+   "what_was_recorded": "The DPW Director says DPW has been paying for Ramaker and will continue to; the Chair says the Commission has paid since 2010. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the dpw has been paying for ramaker by his records a few years, and going forward he is going to be paying for it."
+  },
+  {
+   "topic": "Burial plot fee refund",
+   "what_was_recorded": "A refund on a grave and burial plot fee was issued, reportedly on 7 and 21 November 2023, without notice to the Commission; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "a refund was given on a grave and burial plot fee?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "",
+   "topic": "wall plan, bids, arborist, perpetual care, Charter and Commission conduct",
+   "quote": "mr. bowen presented many allegations throughout his three minutes plus of public comments."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "member of the Finance Committee",
+   "topic": "Charter powers of the Cemetery Commission and day-to-day maintenance",
+   "quote": "i am presently seated as a member of the finance committee here in the town of lunenburg"
+  },
+  {
+   "speaker": "Jeanmarie Price",
+   "stated_role": "",
+   "topic": "yielded her three minutes to Mr. Bowen",
+   "quote": "public comment - jeanmarie price - yielded her public comment of three minutes to mr. bowen."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open Meeting Law recording notice",
+   "resolution": "no action; counsel found the recording requirements met",
+   "quote": "attorney costa is satisfied that mr. bowen has met the requirements of the open meeting law.",
+   "tags": [
+    "open meeting law",
+    "recording"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action",
+   "quote": "1. public comment - john bowen presented his public comments below.",
+   "tags": [
+    "public comment",
+    "charter",
+    "wall",
+    "perpetual care"
+   ]
+  },
+  {
+   "topic": "Open Meeting Law complaint responses",
+   "resolution": "both response letters approved 2 to 0",
+   "quote": "motion was made to accept these letters to go forward by attorney costa, and send copies",
+   "tags": [
+    "open meeting law",
+    "complaint",
+    "legal counsel"
+   ]
+  },
+  {
+   "topic": "Minutes and FY25 warrant article",
+   "resolution": "approved 2 to 0 (minutes and $10K warrant article)",
+   "quote": "2. review & approve minutes and annual report fy23 document",
+   "tags": [
+    "minutes",
+    "warrant article",
+    "budget"
+   ]
+  },
+  {
+   "topic": "DPW update: cemetery vehicle closure",
+   "resolution": "no action; cemeteries remain closed to vehicles",
+   "quote": "the cemeteries in lunenburg will remain closed to vehicular traffic because of the weather",
+   "tags": [
+    "DPW",
+    "weather",
+    "cemetery access"
+   ]
+  },
+  {
+   "topic": "Ramaker records and data entry",
+   "resolution": "report requested for next meeting",
+   "quote": "action request: i would like a report for the next meeting detailing the up to-date status of data entry in ramaker",
+   "tags": [
+    "records",
+    "Ramaker",
+    "software",
+    "data entry"
+   ]
+  },
+  {
+   "topic": "Burial plot fee refund not reported",
+   "resolution": "discussed; no action recorded",
+   "quote": "can you tell me why that the cemetery commission was not informed or notified of this?",
+   "tags": [
+    "refunds",
+    "burial plots",
+    "notification",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "North Cemetery lots and capital plan",
+   "resolution": "discussed; no action recorded",
+   "quote": "going forward, we all need to be careful on true data, not estimates.",
+   "tags": [
+    "capital plan",
+    "North Cemetery",
+    "lots",
+    "estimates"
+   ]
+  },
+  {
+   "topic": "Ramaker payment",
+   "resolution": "tabled to next meeting",
+   "quote": "no way ahead on this ramaker; therefore, it will be tabled to the next meeting.",
+   "tags": [
+    "Ramaker",
+    "payment",
+    "tabled"
+   ]
+  },
+  {
+   "topic": "Wall gift, hedges and McGrath item",
+   "resolution": "rescheduled to next meeting; no action",
+   "quote": "mr. richard mcgrath - unable to be at this meeting today.",
+   "tags": [
+    "wall",
+    "gift",
+    "hedges",
+    "Richard McGrath"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "next meeting set for March 7, 2024",
+   "quote": "thursday, march 07, 2024.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 12:56 PM, 2 to 0",
+   "quote": "meeting was adjourned at 12:56 pm - motion passed 2 to 0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery commission",
+  "open meeting law",
+  "public comment",
+  "perpetual care",
+  "Ramaker software",
+  "burial plot refund",
+  "capital planning",
+  "North Cemetery",
+  "wall project",
+  "hedges",
+  "DPW",
+  "minutes",
+  "warrant article"
+ ],
+ "dropped_unquoted_by_field": {}
 }

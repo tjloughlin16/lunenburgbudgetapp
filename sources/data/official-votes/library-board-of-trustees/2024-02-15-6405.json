@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2024-02-15",
  "docid": "6405",
@@ -12,23 +12,276 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of January 18, 2024 as amended",
+   "motion": "Accept the minutes of January 18, 2024 as amended.",
    "moved_by": "Donna",
    "seconded_by": "Jana",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "donna made a motion to accept the minutes of january 18, 2024 as amended, seconded by jana. the motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Donna",
    "seconded_by": "Bob",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by donna. seconded by bob. meeting was adjourned at 8:44 p.m"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded: approval of prior minutes and adjournment, both procedural. Various discussion items (director's report, security cameras, ARPA renovation, etc.) are mentioned but no formal motions or votes were taken on them.",
- "cost_usd": 0.0694741
+ "note": "Minutes text covers pages 1-2 only; pages 3-7 are blank. Two votes are recorded, both procedural; the approval vote has no numeric count (only \"unanimously by roll call\"), and the adjournment motion records no result word, so its outcome is \"not stated\". Surnames for Jana and Bob are not printed beyond \"Jana\" and \"Bob\" in the motions. Attendance status is taken from the attending line: Dick Mailloux and Maia Wentrup are marked remote, and the other named members are listed without a status mark. The Public Comment section contains only the chair's question, with no member of the public recorded speaking. Sources cited inside the minutes (Director's Report, Friends CD, FY25 budget) are summaries as printed, not the attached documents.",
+ "cost_usd": 0.015433490000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:46 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "bob conroy - arrived 7:08"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "dick mailloux - remote - left 8:10"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "harry kubetz, dick mailloux - remote - left 8:10, donna saiia"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "donna saiia, muir haman - director lpl"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "laura boussom, maia wentrup - remote, jana-lee balish."
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "maia wentrup - remote"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "not stated",
+   "status": "present",
+   "quote": "laura boussom, maia wentrup - remote, jana-lee balish."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Donna agreed to attend the Town Caucus to nominate candidates for the open positions, since Dick cannot go this year.",
+   "quote": "harry asked if anyone could attend the town caucus to nominate candidates for open positions since dick can't go this year. donna said she will go."
+  },
+  {
+   "decision": "Muir will keep the conversation open with the Master Plan Steering Committee about a permanent 3D topographical map and try to find a solution.",
+   "quote": "muir will keep the conversation open and is trying to think of a solution for this request."
+  },
+  {
+   "decision": "Maya suggested Muir compare the long-term costs of the Verkada and Millennium Alarm security systems; Harry asked Muir to draft a letter to Michael-Ray Jeffries for his opinion.",
+   "quote": "harry asked muir to draft a letter to michael-ray jeffries and ask him for his opinion."
+  },
+  {
+   "decision": "Muir will contact Michael-Ray Jeffreys to get advice on how to proceed on HVAC funding from the Green Communities Committee.",
+   "quote": "muir will contact michael-ray jeffreys to get advice on how to proceed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's report: budget expended against the year",
+   "what_was_recorded": "The director reported the library is 67% through the year and the budget is 54% expended.",
+   "figures_as_printed": [
+    "67%",
+    "54%"
+   ],
+   "quote": "february is month 8 out of 12. we are 67% through the year and the budget is 54% expended."
+  },
+  {
+   "topic": "FY25 library budget request and preliminary budget",
+   "what_was_recorded": "Muir requested a FY25 budget of $613,099.77; Heather's preliminary budget is $589,099.77, described as a 6% increase from last year.",
+   "figures_as_printed": [
+    "$613,099.77",
+    "$589,099.77",
+    "6%"
+   ],
+   "quote": "muir requested $613,099.77, and heather's preliminary budget is $589,099.77."
+  },
+  {
+   "topic": "Technology funded through the IT department",
+   "what_was_recorded": "Muir requested 14k for technology that Heather is funding through the IT department.",
+   "figures_as_printed": [
+    "14k"
+   ],
+   "quote": "muir requested 14k for technology that heather is funding through the it department."
+  },
+  {
+   "topic": "School budget shortfall and effect on other departments",
+   "what_was_recorded": "Muir is uncertain how the school budget shortfall will affect other departments.",
+   "figures_as_printed": [
+    "$1.5 million"
+   ],
+   "quote": "muir is uncertain how the school's budget shortfall of $1.5 million will affect other departments"
+  },
+  {
+   "topic": "Security camera replacement options",
+   "what_was_recorded": "Verkada would cost 36k, available 7/1/24 if approved through the Capital Plan at Town Meeting; a Millennium Alarm system would be quicker and cheaper at under 10k without waiting for Capital Plan approval.",
+   "figures_as_printed": [
+    "36k",
+    "under 10k"
+   ],
+   "quote": "verkada will cost 36k, and if approved through the capital plan at town meeting, the money would be available 7/1/24."
+  },
+  {
+   "topic": "Library invested funds",
+   "what_was_recorded": "The invested funds remain at 93k.",
+   "figures_as_printed": [
+    "93k"
+   ],
+   "quote": "the funds remain at 93k."
+  },
+  {
+   "topic": "Friends of LPL short-term CD",
+   "what_was_recorded": "The Friends will open a short-term CD with 20k at 5.2%, money they will not need in the short term.",
+   "figures_as_printed": [
+    "20k",
+    "5.2%"
+   ],
+   "quote": "the friends will be opening a short-term cd with 20k at 5.2%."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "Donna volunteered to attend the Town Caucus to nominate candidates",
+   "tags": [
+    "town caucus",
+    "nominations"
+   ],
+   "quote": "harry asked if anyone could attend the town caucus to nominate candidates for open positions since dick can't go this year."
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended, unanimously by roll call",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "donna made a motion to accept the minutes of january 18, 2024 as amended, seconded by jana. the motion passed unanimously by roll call vote."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; security camera options and FY25 budget request discussed; Muir to compare costs and draft letter",
+   "tags": [
+    "director",
+    "budget",
+    "security cameras",
+    "staffing",
+    "IT",
+    "interlibrary loan",
+    "programs"
+   ],
+   "quote": "february is month 8 out of 12. we are 67% through the year and the budget is 54% expended."
+  },
+  {
+   "topic": "Green Communities Update",
+   "resolution": "no decision; Muir to seek advice on HVAC funding",
+   "tags": [
+    "HVAC",
+    "Green Communities"
+   ],
+   "quote": "muir has not heard from dave blatt of the green communities committee about funding for a new hvac system."
+  },
+  {
+   "topic": "Library Invested Funds Update",
+   "resolution": "no action; funds remain at 93k",
+   "tags": [
+    "invested funds"
+   ],
+   "quote": "the funds remain at 93k."
+  },
+  {
+   "topic": "Library Sign Update",
+   "resolution": "no action; no update",
+   "tags": [
+    "sign"
+   ],
+   "quote": "library sign update o no update."
+  },
+  {
+   "topic": "ARPA Update",
+   "resolution": "feedback given on Teen Room drawings; discussion of design, no decision recorded",
+   "tags": [
+    "ARPA",
+    "Teen Room renovation",
+    "noise"
+   ],
+   "quote": "muir shared the initial drawings for the teen room renovation with us and asked for feedback."
+  },
+  {
+   "topic": "Town Caucus Update",
+   "resolution": "no action; caucus date noted and terms listed",
+   "tags": [
+    "town caucus",
+    "elections"
+   ],
+   "quote": "the town caucus will be held on march 25th at 7 pm."
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action; short-term CD and native plant sale noted",
+   "tags": [
+    "Friends of LPL",
+    "CD",
+    "plant sale"
+   ],
+   "quote": "the friends will be opening a short-term cd with 20k at 5.2%."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no comments",
+   "tags": [
+    "board"
+   ],
+   "quote": "board comments o no comments"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:44 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn by donna. seconded by bob. meeting was adjourned at 8:44 p.m"
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "FY25 budget",
+  "security cameras",
+  "ARPA",
+  "Teen Room renovation",
+  "HVAC",
+  "Town Caucus",
+  "Friends of LPL",
+  "IT",
+  "staffing",
+  "invested funds"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2024-02-12",
  "docid": "6408",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the February 7 minutes",
+   "motion": "Approve the February 7 minutes.",
    "moved_by": "D. Fortune",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "february 7 minutes approved, motion by d. fortune, second by w. bertrand."
   },
   {
-   "motion": "Approve step 2 of the newly appointed employee into the SAP as the Executive Assistant to Town Manager and Select Board",
+   "motion": "Approve step 2 of the newly appointed employee into the SAP as Executive Assistant to Town Manager and Select Board.",
    "moved_by": "W. Bertrand",
    "seconded_by": "",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion to approve: w. bertrand roll call vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:40.",
    "moved_by": "W. Bertrand",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
@@ -37,6 +37,142 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0858183
+ "note": "Text is extracted from a two-page PDF with no scan indicated; all votes read clearly. Limits on the reading: (1) Roll call votes are recorded as \"All in Favor\" with no count, so outcomes are recorded as passed without a tally. (2) The seconder of the step-2 motion is not printed. (3) The outlier entries record degree changes and overall point totals only; they carry no dollar figures, and no vote on them is recorded, so none is entered as a vote or decision. Some entries are garbled in the text (Recreation Director: \"Personal Contact recommended change from degree Confidential Information\"; Police Executive Assistant: \"Work Environment recommended change from degree,\"). (4) Timing conflicts: the minutes say the meeting opened at 5:12pm and adjourned at 7:40, and the closing \"Upcoming\" lines say \"Next meeting Monday, February 12. 5:00pm In Person Ritter Building\", which is this meeting's own date, while the earlier line gives the next meeting as February 21 with location to be determined. (5) \"Public Comment\" appears twice, both times with no speakers. (6) The adjournment motion's first line omits the mover's name before \"by W. Bertrand\".",
+ "cost_usd": 0.014778590000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Donna Fortune",
+   "status": "present",
+   "quote": "in person attendees: donna fortune, wendy bertrand, joanna bilotta-simeone"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "status": "present",
+   "quote": "in person attendees: donna fortune, wendy bertrand, joanna bilotta-simeone"
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "status": "present",
+   "quote": "in person attendees: donna fortune, wendy bertrand, joanna bilotta-simeone"
+  },
+  {
+   "name": "Sue Andrews",
+   "status": "remote",
+   "quote": "via teams: sue andrews"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "also present: julie belliveau, assistant town manager/hr director, pauline roy coa outreach coordinator; nancy o'rourke, payroll and benefits/risk manager"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA Outreach Coordinator",
+   "status": "present",
+   "quote": "pauline roy coa outreach coordinator; nancy o'rourke, payroll and benefits/risk manager"
+  },
+  {
+   "name": "Nancy O’Rourke",
+   "role": "Payroll and Benefits/Risk Manager",
+   "status": "present",
+   "quote": "nancy o'rourke, payroll and benefits/risk manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee restated that step one is to develop the FY24 grid, based on current data.",
+   "quote": "d. fortune reiterated that step one is develop the fy24 grid will be based on current data."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SAP pay relative to comparable averages",
+   "what_was_recorded": "Committee noted SAP positions sit between 5% and 25% below comparable averages, to be kept in mind to retain current staff and attract new staff. No dollar figure printed.",
+   "figures_as_printed": [
+    "5%-25%"
+   ],
+   "quote": "all of the sap positions are between 5%-25% below the comp averages"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved February 7 minutes",
+   "quote": "february 7 minutes approved, motion by d. fortune, second by w. bertrand.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment and committee comment (opening)",
+   "resolution": "no comment",
+   "quote": "public comment: none committee comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Continuation of outliers (job evaluation degree review)",
+   "resolution": "reviewed; no vote recorded",
+   "quote": "continuation of outliers: the committee reviewed the following outliers that were identified by the hr director.",
+   "tags": [
+    "job evaluation",
+    "outliers",
+    "classification",
+    "HR"
+   ]
+  },
+  {
+   "topic": "New Business: step placement of newly appointed Executive Assistant to Town Manager and Select Board",
+   "resolution": "approved step 2 by roll call",
+   "quote": "the committee approved step 2 of the newly appointed employee into the sap as the executive assistant to town manager and select board.",
+   "tags": [
+    "step placement",
+    "SAP",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "noted",
+   "quote": "select board meeting on february 20, 2024. next personnel committee meeting february 21, 2024 at 5:00.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Committee comment: SAP pay versus comparable averages",
+   "resolution": "discussed; no action",
+   "quote": "w. bertrand discussed that all of the sap positions are between 5%-25% below the comp averages",
+   "tags": [
+    "compensation",
+    "SAP",
+    "retention"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:40",
+   "quote": "motion by to adjourn meeting at 7:40 by w. bertrand",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "compensation",
+  "job classification",
+  "outliers",
+  "SAP pay grid",
+  "step placement",
+  "hybrid meeting",
+  "HR"
+ ],
+ "dropped_unquoted_by_field": {}
 }

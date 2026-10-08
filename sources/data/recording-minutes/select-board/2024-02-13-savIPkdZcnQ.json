@@ -1,0 +1,833 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2024-02-13",
+ "video_id": "savIPkdZcnQ",
+ "video_url": "https://www.youtube.com/watch?v=savIPkdZcnQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-02-13-savIPkdZcnQ.json",
+  "sha256": "beb89601681f8afec88d126e3247a2c2c135a4994f14d1672c21a930d00a7ce6",
+  "caption_lines": 465,
+  "segments": 3966
+ },
+ "recording": {
+  "duration_s": 9763,
+  "duration": "2:42",
+  "spoken_chars": 141415,
+  "words_approx": 23569
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02132024-6411",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-02-13-agenda-6411.txt",
+   "path": "sources/meetings/select-board/2024-02-13-agenda-6411.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02132024-6411",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-02-13-minutes-6411.txt",
+   "path": "sources/meetings/select-board/2024-02-13-minutes-6411.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T15:03:22Z",
+  "cost_usd": 0.9277984
+ },
+ "minutes": {
+  "headline": "Select Board conditionally approved a limousine license, took Flat Hill easements by eminent domain, and ratified a new executive assistant.",
+  "summary": "The board heard a long public comment period, a regional website funding ask, and a limousine license application for a non-emergency medical transport business, which it approved conditionally on proof of insurance. It voted an order of taking for two easements for the Flat Hill Road bridge project, ratified the executive assistant appointment, approved an ARPA subrecipient grant agreement, and met with the Village at Flat Hill trustees about detention basin maintenance and drainage. The Conrad's hearing was opened and continued to next week, and the town manager reported on budget inputs and the 40S and Chapter 70 explanation.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Jeff (Ray Jeff)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Selectman Nisolo/Nuo",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Selectman Imy/Mki",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Selectman Alonzo",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "DPW director"
+   },
+   {
+    "name_as_heard": "Adam",
+    "role": "town counsel"
+   },
+   {
+    "name_as_heard": "Brian (Mr. Machetti)",
+    "role": "town's engineer"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 85,
+    "speaker_as_heard": "George Burton, 39 Courtland Circle",
+    "stated_role": "resident",
+    "topic": "Complained about how the board discussed him on January 9th, texts and emails, private roads at Village at Flat Hill, snow and emergency access, and nepotism concerns."
+   },
+   {
+    "t": 358,
+    "speaker_as_heard": "John Bowen, 162 Highland Street",
+    "stated_role": "resident",
+    "topic": "Alleged a selectman acted in a dual capacity in cemetery commission matters, cited emails and a FOIA request, and argued the cemetery commission lacks authority."
+   },
+   {
+    "t": 5546,
+    "speaker_as_heard": "Matt Allison, 188 and 305 Flat Hill",
+    "stated_role": "resident",
+    "topic": "Disputed that the association has been asked to fix the basin for years, questioned the earlier engineering study and capital funds, and called for professional direction."
+   },
+   {
+    "t": 5736,
+    "speaker_as_heard": "Susan Whan, 377 Flat Hill Road",
+    "stated_role": "resident",
+    "topic": "Asked for a study of where water from a neighboring yard and an empty lot is coming from."
+   },
+   {
+    "t": 5902,
+    "speaker_as_heard": "Karen Menard, 672 Page",
+    "stated_role": "resident",
+    "topic": "Thanked the trustees for engaging and described ten years of flooding."
+   },
+   {
+    "t": 5983,
+    "speaker_as_heard": "David Melvin, 655 Page Street",
+    "stated_role": "resident",
+    "topic": "Asked for a camera inspection of storm drains at the Flat Hill and Page turn and for pipe sizing and extra drainage."
+   },
+   {
+    "t": 9378,
+    "speaker_as_heard": "Dave Pasos, 56 Whiting Street",
+    "stated_role": "Green Communities Committee member",
+    "topic": "Asked the board to elevate associate member Kim Duffy to full member of the Green Communities Committee."
+   },
+   {
+    "t": 9551,
+    "speaker_as_heard": "Kim Duffy, 1479 Mass Ave",
+    "stated_role": "associate member, Green Communities Committee",
+    "topic": "Requested appointment as a full member of the Green Communities Committee."
+   }
+  ],
+  "tags": [
+   "budget-fy26",
+   "chapter-70",
+   "economic-development",
+   "grants",
+   "health-insurance",
+   "hiring",
+   "legal",
+   "personnel",
+   "public-comment",
+   "public-safety",
+   "roads-and-dpw",
+   "state-aid",
+   "town-departments",
+   "town-meeting",
+   "transportation",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 2990,
+    "motion": "Approve the limousine license for George Carilla d/b/a Metago Transportation LLC at 313 Reservoir Road, conditional on proof of insurance and liability.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3407,
+    "motion": "Ratify the town manager's appointment of Annie Aubry as executive assistant to the town manager and select board.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3867,
+    "motion": "Order of taking by eminent domain of temporary and permanent easements at 890 and 914 Flat Hill Road for the bridge project, with damages awarded.",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 7570,
+    "motion": "Open the Conrad's hearing and continue it to February 20 at 6:45 p.m.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8253,
+    "motion": "Accept and approve the ARPA subrecipient grant agreement as printed.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8805,
+    "motion": "Approve minutes of October 3, 2023.",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 9741,
+    "motion": "Adjourn.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 752,
+    "topic": "First Middlesex regional website contribution",
+    "what_was_said": "Request for the town's share of a regional website, revised down from the agenda amount. Board open but wants a written proposal and estimates.",
+    "figures_as_heard": [
+     "$2500",
+     "1,200"
+    ]
+   },
+   {
+    "t": 1369,
+    "topic": "ARPA funds available",
+    "what_was_said": "A member asked how much ARPA remains; the chair gave a rough number.",
+    "figures_as_heard": [
+     "$58,000"
+    ]
+   },
+   {
+    "t": 3805,
+    "topic": "Eminent domain damages for easements",
+    "what_was_said": "Awards based on appraisals for the two easement properties.",
+    "figures_as_heard": [
+     "$3,000",
+     "$2,100",
+     "$5,100"
+    ]
+   },
+   {
+    "t": 5609,
+    "topic": "Capital plan earmark for Flat Hill basin project",
+    "what_was_said": "A resident said money remains earmarked in the capital plan for the project and referred to an earlier engineering study bid.",
+    "figures_as_heard": [
+     "$40,000",
+     "$440,000",
+     "$5,000"
+    ]
+   },
+   {
+    "t": 5161,
+    "topic": "Association cost per household for basin work",
+    "what_was_said": "A town official noted the per-household cost and total of the work for the association.",
+    "figures_as_heard": [
+     "$200",
+     "10 grand"
+    ]
+   },
+   {
+    "t": 7798,
+    "topic": "Personal property and utility appraisal services bid",
+    "what_was_said": "One proposal from RRC received for three fiscal years and the bid was awarded.",
+    "figures_as_heard": [
+     "21,100",
+     "22,600",
+     "23,200"
+    ]
+   },
+   {
+    "t": 7862,
+    "topic": "FEMA September storm reimbursement",
+    "what_was_said": "FEMA denied the state's request; the state plans to appeal and appropriated funds that may reimburse towns.",
+    "figures_as_heard": [
+     "$5 million",
+     "75,000"
+    ]
+   },
+   {
+    "t": 7907,
+    "topic": "COVID-19 reimbursement for fire department",
+    "what_was_said": "Reimbursement for old expenses will be taken as a local receipt toward the closeout balance.",
+    "figures_as_heard": [
+     "667889612"
+    ]
+   },
+   {
+    "t": 7927,
+    "topic": "Health insurance rate increase",
+    "what_was_said": "Final increase for active plans is lower than the earlier estimate and the revised range.",
+    "figures_as_heard": [
+     "5.7%",
+     "10%",
+     "6.6%"
+    ]
+   },
+   {
+    "t": 7952,
+    "topic": "Monty Tech budget preliminary number",
+    "what_was_said": "Monty Tech school committee reviewed a budget increase and will vote March 6th.",
+    "figures_as_heard": [
+     "3.75%",
+     "$ 44,45"
+    ]
+   },
+   {
+    "t": 7972,
+    "topic": "Electricity supply contract",
+    "what_was_said": "Contract with BP for 48 months at a rate slightly below the current rate.",
+    "figures_as_heard": [
+     "11.77 cents per kilowatt hour",
+     "11.86"
+    ]
+   },
+   {
+    "t": 8014,
+    "topic": "Fire department grants",
+    "what_was_said": "Emergency management and firefighter safety grants for rescue suits, saws and radios.",
+    "figures_as_heard": [
+     "$3,500",
+     "18,800"
+    ]
+   },
+   {
+    "t": 8420,
+    "topic": "40S funding and Chapter 70 foundation aid change",
+    "what_was_said": "The town lost 40S eligibility because the jump in Chapter 70 attributed a high per-pupil amount to out-of-town children; local receipts also factor in.",
+    "figures_as_heard": [
+     "$730,000",
+     "47 children",
+     "almost a million dollars"
+    ]
+   },
+   {
+    "t": 8661,
+    "topic": "Chapter 70 for smart growth zone children",
+    "what_was_said": "A member remarked on a very large jump in the figure.",
+    "figures_as_heard": [
+     "1,290",
+     "72857"
+    ]
+   },
+   {
+    "t": 8828,
+    "topic": "Warrants",
+    "what_was_said": "Accounts payable, payroll adjustment and payroll warrants were read.",
+    "figures_as_heard": [
+     "$668,500",
+     "$744 45",
+     "$987,000 12"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1410,
+    "decision": "Board signalled openness to the regional website funding request and asked for a formal written proposal with estimates."
+   },
+   {
+    "t": 7490,
+    "decision": "Conrad's hearing to be opened and continued to February 20 at 6:45 p.m."
+   },
+   {
+    "t": 5354,
+    "decision": "Village at Flat Hill to seek conservation permission and dredge the basin; town engineer to review scope, do an as-built survey and inspect afterwards; board to send a letter of support."
+   },
+   {
+    "t": 7221,
+    "decision": "Engineer committed to look into the camera inspection and a plan for the Flat Hill and Page Street drains."
+   },
+   {
+    "t": 9530,
+    "decision": "Kim Duffy's elevation to full Green Communities Committee member goes on next week's agenda without her needing to attend."
+   },
+   {
+    "t": 9254,
+    "decision": "February 20 meeting begins at 7:00 with the state delegation and the regular meeting at 8:30; site walk set for Saturday at 10:00."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 85,
+    "topic": "Pledge, open meeting notice, opening",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 85,
+    "t_end": 720,
+    "topic": "Public comment (Burton, Bowen)",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 720,
+    "t_end": 1430,
+    "topic": "Announcements and regional economic development website request",
+    "resolution": "informational; formal proposal requested",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 1470,
+    "t_end": 3090,
+    "topic": "Limousine license, Metago Transportation",
+    "resolution": "voted, conditional on insurance; count not audible",
+    "tags": [
+     "public-safety",
+     "transportation"
+    ]
+   },
+   {
+    "t_start": 3090,
+    "t_end": 3490,
+    "topic": "Ratification of executive assistant appointment",
+    "resolution": "voted; count not audible",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3490,
+    "t_end": 4079,
+    "topic": "Flat Hill Road bridge order of takings",
+    "resolution": "voted 4-0",
+    "tags": [
+     "roads-and-dpw",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4079,
+    "t_end": 7243,
+    "topic": "Village at Flat Hill drainage maintenance plan and Page Street drainage",
+    "resolution": "informational with agreed next steps",
+    "tags": [
+     "roads-and-dpw",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 7243,
+    "t_end": 7610,
+    "topic": "Conrad's license hearing",
+    "resolution": "opened and continued to Feb 20",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 7610,
+    "t_end": 8086,
+    "topic": "Town manager report: vacancies, bids, FEMA, health insurance, electricity, grants",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "health-insurance",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 8086,
+    "t_end": 8297,
+    "topic": "ARPA subrecipient grant agreement",
+    "resolution": "voted; count not audible",
+    "tags": [
+     "grants"
+    ]
+   },
+   {
+    "t_start": 8297,
+    "t_end": 8800,
+    "topic": "Budget discussion and 40S funding",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "chapter-70",
+     "state-aid"
+    ]
+   },
+   {
+    "t_start": 8805,
+    "t_end": 8880,
+    "topic": "Minutes and warrants",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 8880,
+    "t_end": 9378,
+    "topic": "Committee reports and board comments",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 9378,
+    "t_end": 9640,
+    "topic": "Public comment: Green Communities Committee appointment",
+    "resolution": "set for next week",
+    "tags": [
+     "public-comment",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 9640,
+    "t_end": 9760,
+    "topic": "Closing remarks and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Roll call counts were not stated for most votes, only individual ayes, so those outcomes are recorded as not audible.",
+   "Dollar figures in the warrants and the COVID reimbursement are garbled in the captions.",
+   "The Monty Tech budget dollar amount is garbled."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 4-0 to take temporary and permanent easements at two Flat Hill Road properties by eminent domain for the bridge project, with damages awarded.",
+    "t": 3867
+   },
+   {
+    "line": "The board approved a limousine license for a non-emergency medical transport business, conditional on proof of insurance and liability; the count was not audible.",
+    "t": 2990
+   },
+   {
+    "line": "The board opened the Conrad's hearing and continued it to February 20 at 6:45 p.m.",
+    "t": 7570
+   },
+   {
+    "line": "The board ratified the town manager's executive assistant appointment and approved an ARPA subrecipient grant agreement; the counts were not audible.",
+    "t": 8253
+   },
+   {
+    "line": "Village at Flat Hill trustees will seek conservation permission to dredge a detention basin, and the town engineer will review the scope and look into a drain camera inspection.",
+    "t": 5354
+   }
+  ],
+  "why_it_matters": [
+   "The easement takings are the land step for the Flat Hill Road bridge project, and the damages awarded are a cost the town carries, set from appraisals of the two properties.",
+   "The basin and drainage work shows who is responsible for maintaining a private development's stormwater system and when the town's engineer is asked to step in, a question that can come back as a capital or maintenance request.",
+   "The town manager's budget inputs (health insurance, electricity, Monty Tech, FEMA storm reimbursement) feed the coming budget and the Proposition 2½ levy picture residents will vote on."
+  ],
+  "watch_next": [
+   "February 20: the Conrad's hearing resumes at 6:45 p.m., and the Green Communities Committee appointment for Kim Duffy is on the agenda.",
+   "Monty Tech's school committee votes on its budget on March 6, and the regional website funding ask awaits a formal written proposal with estimates."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T15:03:39Z",
+   "cost_usd": 0.22205339999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02132024-6411",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-02-13-minutes-6411.txt",
+   "path": "sources/meetings/select-board/2024-02-13-minutes-6411.pdf"
+  },
+  "official_sha256": "79c88f617d29a0ade0fe9ea3b8e4e321506c4aaf782839dbe8b8d5ed12cfecc4",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on every vote that both carry (five votes, all passed 4-0 where our recording gives an outcome) and on most figures. Most differences are caption misrenderings of names and digits. The one thing a reader should know is that our minutes record no outcome for four of the five votes (\"not audible\"), so the passed 4-0-0 results for those rest on the official minutes alone.",
+  "counts": {
+   "agree": 17,
+   "caption_error": 9,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Limousine license applicant and company name",
+    "t": 2990,
+    "ours": "Approve the limousine license for George Carilla d/b/a Metago Transportation LLC at 313 Reservoir Road, conditional on proof of insurance and liability. — not audible",
+    "official": "motion by member alonzo to approve the limousine license application for george kharialla d/b/a medigo transportation llc, 313 reservoir road, conditional on",
+    "official_reading": "George Kharialla d/b/a MediGo Transportation LLC",
+    "note": "Same item and conditions; the captions misheard the applicant and company names, and the official minutes add that it passed 4-0-0, which our record could not hear."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Executive assistant appointment, name",
+    "t": 3407,
+    "ours": "Ratify the town manager's appointment of Annie Aubry as executive assistant to the town manager and select board. — not audible",
+    "official": "motion by chair jeffreys to ratify the town manager's appointment of executive assistant to the town manager/select board of annie aubrey.",
+    "official_reading": "Annie Aubrey",
+    "note": "Same ratification; the surname is spelled differently, and the outcome (passed 4-0-0) appears only in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Eminent domain order of taking, 890 and 914 Flat Hill Road",
+    "t": 3867,
+    "ours": "Order of taking by eminent domain of temporary and permanent easements at 890 and 914 Flat Hill Road for the bridge project, with damages awarded. — passed 4-0",
+    "official": "motion made by chair jeffreys that the select board acquire by eminent domain for the necessary health and welfare of the inhabitants of lunenburg for municipal",
+    "note": "Both record the vote passing 4-0 (official 4-0-0) with $5,100 total damages."
+   },
+   {
+    "kind": "agree",
+    "about": "Conrad's hearing continued to February 20 at 6:45 pm",
+    "t": 7570,
+    "ours": "Open the Conrad's hearing and continue it to February 20 at 6:45 p.m. — not audible",
+    "official": "motion by chair jeffreys to continue the hearing until february 20, 2024 at 6:45 pm.",
+    "note": "Same motion and date; the official minutes give the outcome (passed 4-0-0) which ours could not hear."
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA subrecipient grant agreement",
+    "t": 8253,
+    "ours": "Accept and approve the ARPA subrecipient grant agreement as printed. — not audible",
+    "official": "motion by member alonzo to approve and accept the arpa grant agreement as printed to us, dated 2/01/24.",
+    "note": "Same motion; outcome (passed 4-0-0) only in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Regional website contribution",
+    "t": 752,
+    "ours": "First Middlesex regional website contribution: $2500, 1,200",
+    "official": "stated they are being asked to contribute $1,200 for development of the collaborative website.",
+    "note": "Both give the $2,500 estimate revised to $1,200."
+   },
+   {
+    "kind": "agree",
+    "about": "Available ARPA funds",
+    "t": 1369,
+    "ours": "ARPA funds available: $58,000",
+    "official": "chair jeffreys replied that there is $58 k plus the $101k in interest.",
+    "note": "The $58,000 matches; the $101K interest figure appears only in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Easement damages",
+    "t": 3805,
+    "ours": "Eminent domain damages for easements: $3,000, $2,100, $5,100",
+    "official": "noted the rates for compensation to property owners based on appraisals - 890 flat hill rd.- $3,000 and 914 flat hill rd- $2,100 for easement awards.",
+    "note": "All three figures match."
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan money for Flat Hill project",
+    "t": 5609,
+    "ours": "Capital plan earmark for Flat Hill basin project: $40,000, $440,000, $5,000",
+    "official": "he also confirmed there is still $40k in the capital plan for this project.",
+    "note": "The $40,000 matches; $440,000 and $5,000 appear only in ours and the official minutes do not confirm them."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Association cost per household for basin work",
+    "t": 5161,
+    "ours": "Association cost per household for basin work: $200, 10 grand",
+    "official": "",
+    "note": "Per-household cost figures are not in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Appraisal services bid",
+    "t": 7798,
+    "ours": "Personal property and utility appraisal services bid: 21,100, 22,600, 23,200",
+    "official": "they received 1 proposal from rfc for $21,100 for fy25, $22,600 for fy26 and $23,200 for fy27.",
+    "note": "All three figures match."
+   },
+   {
+    "kind": "agree",
+    "about": "FEMA September storm",
+    "t": 7862,
+    "ours": "FEMA September storm reimbursement: $5 million, 75,000",
+    "official": "the state did appropriate $5 million in the fall for the september storm",
+    "note": "$5 million and $75,000 match the official figures."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Fire department COVID-19 FEMA reimbursement",
+    "t": 7907,
+    "ours": "COVID-19 reimbursement for fire department: 667889612",
+    "official": "the fire department submitted paperwork 3 years ago for $66,780.",
+    "official_reading": "$66,780",
+    "note": "Digits run together by the captions; the official minutes print $66,780."
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance increase",
+    "t": 7927,
+    "ours": "Health insurance rate increase: 5.7%, 10%, 6.6%",
+    "official": "the insurance increase will be 5.7% for active town and school employees.",
+    "note": "All three percentages match."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Monty Tech assessment",
+    "t": 7952,
+    "ours": "Monty Tech budget preliminary number: 3.75%, $ 44,45",
+    "official": "monty tech - town manager was notified that there will be a 3.75% increase for $44,256.",
+    "official_reading": "$44,256",
+    "note": "Percentage matches; the dollar figure is truncated in the captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Electricity supply contract rates",
+    "t": 7972,
+    "ours": "Electricity supply contract: 11.77 cents per kilowatt hour, 11.86",
+    "official": "they will be securing a new contract with bp for $.1177/kwh. the current rate is $.11868/kwh for 48 months.",
+    "official_reading": "$.11868/kwh",
+    "note": "New rate matches; current rate is clipped in the captions."
+   },
+   {
+    "kind": "agree",
+    "about": "Fire department grants",
+    "t": 8014,
+    "ours": "Fire department grants: $3,500, 18,800",
+    "official": "also $18,800 for the fire fighter safety grant to update 3 power saws and 3 radios.",
+    "note": "Both grant amounts match ($3,500 and $18,800)."
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 70 bump of $730,000",
+    "t": 8420,
+    "ours": "40S funding and Chapter 70 foundation aid change: $730,000, 47 children, almost a million dollars",
+    "official": "when they received a large bump of $730,000 in chapter 70 money as a foundation community.",
+    "note": "$730,000 matches; the 47 children and almost-a-million figures are not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 70 for smart growth zone children",
+    "t": 8661,
+    "ours": "Chapter 70 for smart growth zone children: 1,290, 72857",
+    "official": "",
+    "note": "Figures not in the official minutes; check the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrant amounts",
+    "t": 8828,
+    "ours": "Warrants: $668,500, $744 45, $987,000 12",
+    "official": "accounts payable warrant in the amount of $ 668,531.70. payroll adjustment of $744.45.",
+    "official_reading": "$668,531.70, $744.45, $987,987.12",
+    "note": "Same warrants; captions garbled the digits and cents ($987,987.12 is in the official structured figures)."
+   },
+   {
+    "kind": "agree",
+    "about": "Regional website request signalled as welcome, written proposal requested",
+    "t": 1410,
+    "ours": "Board signalled openness to the regional website funding request and asked for a formal written proposal with estimates.",
+    "official": "member alonzo asked for a written proposal when it is available.",
+    "note": "Same decision, no vote."
+   },
+   {
+    "kind": "agree",
+    "about": "Flat Hill drainage, engineering support and camera inspection",
+    "t": 5354,
+    "ours": "Village at Flat Hill to seek conservation permission and dredge the basin; town engineer to review scope, do an as-built survey and inspect afterwards; board to send a letter of support.",
+    "official": "chair jeffreys summarized they will work collaboratively with the village of flat hill, provide some engineering to evaluate their scopes",
+    "note": "Same direction; the letter of support is only in ours, and the camera inspection is covered by the next item."
+   },
+   {
+    "kind": "agree",
+    "about": "Engineer to look at camera inspection of drains",
+    "t": 7221,
+    "ours": "Engineer committed to look into the camera inspection and a plan for the Flat Hill and Page Street drains.",
+    "official": "chair jeffreys summarized they will work collaboratively with the village of flat hill, provide some engineering to evaluate their scopes",
+    "note": "The official minutes say the engineer will ask for a camera inspection of the drains."
+   },
+   {
+    "kind": "agree",
+    "about": "Kim Duffy full Green Communities seat on next agenda",
+    "t": 9530,
+    "ours": "Kim Duffy's elevation to full Green Communities Committee member goes on next week's agenda without her needing to attend.",
+    "official": "chairjeffreys replied that they will put this on the next meeting agenda and ms. duffy does not need to be present.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "February 20 meeting schedule and site walk",
+    "t": 9254,
+    "ours": "February 20 meeting begins at 7:00 with the state delegation and the regular meeting at 8:30; site walk set for Saturday at 10:00.",
+    "official": "",
+    "note": "Not recorded in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Remote meeting policy discussion in March",
+    "ours": "",
+    "official": "chair jeffreys replied they will discuss it in march.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Limousine license signed and held pending insurance proof",
+    "ours": "",
+    "official": "the board will sign and hold until insurance proof is provided.",
+    "note": "Our minutes record only the conditional approval, not that the license is held."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Clerk Caesar Nuzzolo",
+    "ours": "Selectman Nisolo/Nuo (member)",
+    "official": "members present: chair michael ray jeffreys, clerk caesar nuzzolo (via zoom), member tom alonzo, member renee emkey,",
+    "official_reading": "Caesar Nuzzolo",
+    "note": "Misheard name; the official minutes list him as Clerk, attending by Zoom."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Member Renee Emkey",
+    "ours": "Selectman Imy/Mki (member)",
+    "official": "members present: chair michael ray jeffreys, clerk caesar nuzzolo (via zoom), member tom alonzo, member renee emkey,",
+    "official_reading": "Renee Emkey",
+    "note": "Misheard name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Chair",
+    "ours": "Mr. Jeff (Ray Jeff) (chair)",
+    "official": "members present: chair michael ray jeffreys, clerk caesar nuzzolo (via zoom), member tom alonzo, member renee emkey,",
+    "official_reading": "Michael Ray Jeffreys",
+    "note": "Truncated name."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Alonzo, Lemieux, Costa, Bernard, Marchetti",
+    "ours": "Selectman Alonzo (member); Heather (town manager); Adam (town counsel); Bill Bernard (DPW director); Brian (Mr. Machetti) (town's engineer)",
+    "official": "also present: heather lemieux, town manager and adam costa, town counsel",
+    "note": "The same officials appear in both; Machetti is Marchetti in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vice-Chair Lou Franco absent",
+    "ours": "",
+    "official": "member absent: vice-chair lou franco",
+    "note": "Our attendee list does not note the absence."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T15:05:50Z",
+   "cost_usd": 0.28904739999999995
+  }
+ }
+}

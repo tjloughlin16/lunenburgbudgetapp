@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-02-22",
  "docid": "6418",
@@ -12,24 +12,438 @@
  },
  "votes": [
   {
-   "motion": "The finance committee put together a warrant article to put forward an override to Proposition 2½ for town meeting to be discussed on March 7th and March 14th at a public hearing to create a needs-based service for the town",
-   "outcome": "passed 4-2",
-   "procedural": false,
+   "motion": "Evan Watters moved that the finance committee put together a warrant article to put forward an override to Prop 2 1/2 for town meeting, to be discussed March 7th and March 14th at a public hearing, to create a needs-based service for the town.",
    "moved_by": "Evan Watters",
    "seconded_by": "Tiffaney Tavares",
-   "quote": "there was a motion by evan watters that the finance committee put together a warrant article to put forward an override to prop 2 ½ for town meeting to be discussed on march 7th and march 14th at a public hearing to create a needs- based service for the town, seconded by tiffaney tavares. roll call vote. chris menard nay, jean russell aye, tom gray aye, jay simeone nay, tiffaney tavares aye, evan watters aye",
-   "quote_taken_from_text": true
+   "outcome": "passed 4-2",
+   "procedural": false,
+   "quote": "there was a motion by evan watters that the finance committee put together a warrant article to put forward an override to prop 2 ½ for town meeting"
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed 6-0",
-   "procedural": true,
+   "motion": "Tom Gray moved to adjourn the meeting.",
    "moved_by": "Tom Gray",
    "seconded_by": "Tiffaney Tavares",
-   "quote": "there was a motion by tom gray to adjourn, seconded by tiffaney tavares. chris menard aye, jean russell aye, tom gray aye, jay simeone aye, tiffaney tavares aye, evan watters aye."
+   "outcome": "passed 6-0",
+   "procedural": true,
+   "quote": "there was a motion by tom gray to adjourn, seconded by tiffaney tavares."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Clean minutes with votes clearly recorded. No approval of prior minutes was voted on (minutes section notes none were new). All budget presentations were followed by Q&A and discussion but no formal motions on the individual budgets.",
- "cost_usd": 0.0961751
+ "dropped_unquoted": 1,
+ "note": "Text extraction of a typed minutes document, not a scan; all votes are readable. The override motion and the adjournment motion each print a roll call of individual votes with no printed total; the outcomes passed 4-2 and passed 6-0 are counted from those printed votes, and the minutes do not themselves say 'carried'. Roles for Heather Lemieux and Renee Emkey are not printed. Deb Lincoln spoke within the Council on Aging item, not in public comment, so she is listed as an attendee only. Minutes contain typos and name variants (e.g. 'Chirs Menard', 'Town mangers'), recorded here as printed.",
+ "cost_usd": 0.018805270000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair evan watters, vice chair chris menard (zoom), clerk tiffaney"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair (attended by Zoom)",
+   "status": "remote",
+   "quote": "members present: chair evan watters, vice chair chris menard (zoom), clerk tiffaney"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "clerk tiffaney tavares, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Public comment; 282 Pleasant Street",
+   "status": "present",
+   "quote": "peter beardmore, 282 pleasant street, provided a few comments to the committee for consideration."
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Director of the Lunenburg Council on Aging",
+   "status": "present",
+   "quote": "the director of the lunenburg council on aging, sue doherty, presented the budget."
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson for the council on aging",
+   "status": "present",
+   "quote": "deb lincoln, who is the chairperson for the council on aging and volunteers in the"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "the budget request was presented by the library director, muir haman."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather lemieux states this is a rough estimate based on contracting services for a year"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "not stated",
+   "status": "present",
+   "quote": "renee emkey questions if we can have a special election for an override and"
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "Public comment",
+   "status": "present",
+   "quote": "anna lockwood states there is a cost benefit that we need to understand"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Town Manager's 5 Year Financial Report was pushed to the next meeting.",
+   "quote": "this topic was pushed until the next meeting."
+  },
+  {
+   "decision": "The FY 23 expenditure recap, sent to the committee for review, will be reviewed at the next meeting.",
+   "quote": "the fy 23 expenditure recap has been sent to the committee to review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public comment on debt in the budget pie chart",
+   "what_was_recorded": "A speaker said debt service was excluded from the pie chart, that $163,000 of a $500,000 amount is excludable debt, and that the school share would be 55.4% without debt.",
+   "figures_as_printed": [
+    "$163,000",
+    "$500,000",
+    "$335,000",
+    "55.4%"
+   ],
+   "quote": "that accounts for $163,000 of that $500,000 that comes right off the top of the taxes and is excludable debt."
+  },
+  {
+   "topic": "Upfront cost of grant writing position",
+   "what_was_recorded": "A speaker said the grant writing position would pay for itself but needs an upfront investment that must be taken from somewhere.",
+   "figures_as_printed": [],
+   "quote": "there is agreement that the position will pay for itself but there is an upfront investment associated."
+  },
+  {
+   "topic": "Council on Aging meal site manager hours and salary",
+   "what_was_recorded": "The budget request raises the meal site manager's hours and increases the salary by the stated amount to a stated annual salary.",
+   "figures_as_printed": [
+    "$6,648",
+    "$25,858",
+    "19.5",
+    "24"
+   ],
+   "quote": "this would increase the salary by $6,648 bringing the annual salary up to $25,858."
+  },
+  {
+   "topic": "Council on Aging share of town budget",
+   "what_was_recorded": "The council on aging is described as less than 1% of the town budget.",
+   "figures_as_printed": [
+    "1%"
+   ],
+   "quote": "the council on aging is still less than 1% of the town budget."
+  },
+  {
+   "topic": "Council on Aging meal prices",
+   "what_was_recorded": "The center charges for lunch and breakfast at the stated prices.",
+   "figures_as_printed": [
+    "$5",
+    "$3"
+   ],
+   "quote": "currently, the center offers lunch 2 days out of the week costing $5 and breakfast once a week at $3."
+  },
+  {
+   "topic": "Library FY 25 request and preliminary budget",
+   "what_was_recorded": "The library's FY 25 request is compared with the Town Manager's preliminary budget.",
+   "figures_as_printed": [
+    "$613,100",
+    "$589,100"
+   ],
+   "quote": "the library request for fy 25 totals $613,100 and the town mangers preliminary budget is $589,100."
+  },
+  {
+   "topic": "Library hearing loop",
+   "what_was_recorded": "Funds are requested to install a hearing loop in the programming room; the director said it would not work without audio system upgrades.",
+   "figures_as_printed": [
+    "$14,000"
+   ],
+   "quote": "additional funds are needed to install a hearing loop in the programming room. this totals $14,000."
+  },
+  {
+   "topic": "Library IT request",
+   "what_was_recorded": "A committee member asked what impact the IT request would have; it covers workstations, computers, hardware and the hearing enhancement nook.",
+   "figures_as_printed": [
+    "14,000 dollars"
+   ],
+   "quote": "tiffaney tavares questions if the it request is a part of the town and what impact would that 14,000 dollars have."
+  },
+  {
+   "topic": "Library children's programming, programming and professional development",
+   "what_was_recorded": "The library budget includes funding for children's programming supplies, programming, and professional development.",
+   "figures_as_printed": [
+    "$4,000",
+    "$24,000",
+    "$4,000"
+   ],
+   "quote": "additional funding for children's programming supplies totaling $4,000."
+  },
+  {
+   "topic": "Library LSTA grant",
+   "what_was_recorded": "The library previously received an LSTA grant of nearly the stated amount for STEM learning.",
+   "figures_as_printed": [
+    "$13,000"
+   ],
+   "quote": "previously the library received the lsta grant and received nearly $13,000 to help expand"
+  },
+  {
+   "topic": "State required appropriation increase",
+   "what_was_recorded": "A committee member noted a 1.25% increase for the state required appropriation and asked whether it applies to the municipal line.",
+   "figures_as_printed": [
+    "1.25%"
+   ],
+   "quote": "evan watters reiterates there is a 1.25% increase for the state required appropriation."
+  },
+  {
+   "topic": "Grant writer position cost",
+   "what_was_recorded": "A line item for a grant writer was questioned; it is a rough estimate based on contracting services for a year's salary, non-benefited.",
+   "figures_as_printed": [
+    "50,000"
+   ],
+   "quote": "evan watters questioned where the 50,000-line item came from and if it's a benefit position."
+  },
+  {
+   "topic": "Statewide override figures from DLS",
+   "what_was_recorded": "The chair reported statewide override results FY15 to FY24, with dollars that passed and dollars that did not.",
+   "figures_as_printed": [
+    "111 million dollars",
+    "45 million"
+   ],
+   "quote": "in the state there has been 111 million dollars in overrides that won and 45 million that did not win."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "282 Pleasant Street",
+   "topic": "pie chart debt, override, grant writing",
+   "quote": "peter beardmore, 282 pleasant street, provided a few comments to the committee for consideration."
+  },
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "not stated",
+   "topic": "retiree benefits; public comment after each presentation",
+   "quote": "anna lockwood states there is a cost benefit that we need to understand that if we make lunenburg very unattractive to retires"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened 7:00 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the meeting opened at 7:00 pm."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "revised agenda; land use presentation not shared",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "evan watters states this is a revised agenda as the land use department will"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "debt",
+    "override"
+   ],
+   "quote": "peter beardmore, 282 pleasant street, provided a few comments to the committee for consideration."
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "tags": [
+    "town manager"
+   ],
+   "quote": "there are no updates to report since the last meeting 24 hours prior."
+  },
+  {
+   "topic": "Finance Director report",
+   "resolution": "FY23 recap to next meeting",
+   "tags": [
+    "finance",
+    "FY23"
+   ],
+   "quote": "the fy 23 expenditure recap has been sent to the committee to review."
+  },
+  {
+   "topic": "Land Use FY 25 budget presentation",
+   "resolution": "canceled",
+   "tags": [
+    "land use",
+    "FY25 budget"
+   ],
+   "quote": "this presentation was canceled prior to the meeting."
+  },
+  {
+   "topic": "Council on Aging FY 25 budget presentation",
+   "resolution": "presented; questions taken; no vote",
+   "tags": [
+    "council on aging",
+    "FY25 budget",
+    "salary",
+    "meals"
+   ],
+   "quote": "the director of the lunenburg council on aging, sue doherty, presented the budget."
+  },
+  {
+   "topic": "Library FY 25 budget presentation",
+   "resolution": "presented; questions taken; no vote",
+   "tags": [
+    "library",
+    "FY25 budget",
+    "technology"
+   ],
+   "quote": "the budget request was presented by the library director, muir haman."
+  },
+  {
+   "topic": "Town Manager 5 Year Financial Report",
+   "resolution": "pushed to next meeting",
+   "tags": [
+    "town manager",
+    "five-year plan"
+   ],
+   "quote": "this topic was pushed until the next meeting."
+  },
+  {
+   "topic": "Town grant writer letter",
+   "resolution": "presented; grant writing committee suggested; no vote",
+   "tags": [
+    "grant writing",
+    "staffing"
+   ],
+   "quote": "tiffaney tavares presented the letter she and dave passios worked on"
+  },
+  {
+   "topic": "FY 25 budget update and override warrant",
+   "resolution": "motion passed 4-2 to draft override warrant article",
+   "tags": [
+    "override",
+    "Prop 2 1/2",
+    "warrant",
+    "school budget"
+   ],
+   "quote": "evan watters raised the idea of proposing a town warrant."
+  },
+  {
+   "topic": "Town Manager preliminary FY 25 budget follow-up",
+   "resolution": "no action",
+   "tags": [
+    "FY25 budget"
+   ],
+   "quote": "there is no additional discussion."
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "no minutes to approve",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "there are no new minutes to approve."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no updates",
+   "tags": [
+    "committees"
+   ],
+   "quote": "there were no new updates."
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "no additional topics",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "there are no additional topics aside from continuing discussion from tonight."
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "schedule read; no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "a. feb 29th - information technology & police"
+  },
+  {
+   "topic": "Important dates",
+   "resolution": "no action",
+   "tags": [
+    "warrant",
+    "town meeting",
+    "schedule"
+   ],
+   "quote": "b. mar 28th - fincom public hearing"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "retirees",
+    "public comment timing"
+   ],
+   "quote": "anna lockwood states there is a cost benefit that we need to understand"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 11:07 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the meeting closed at 11:07 pm."
+  }
+ ],
+ "tags": [
+  "FY25 budget",
+  "override",
+  "Proposition 2 1/2",
+  "warrant article",
+  "council on aging",
+  "library",
+  "grant writing",
+  "debt service",
+  "public comment",
+  "town meeting"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

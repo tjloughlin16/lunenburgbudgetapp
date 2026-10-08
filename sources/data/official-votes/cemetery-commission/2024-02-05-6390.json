@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2024-02-05",
  "docid": "6390",
@@ -12,39 +12,295 @@
  },
  "votes": [
   {
-   "motion": "Accept Open Meeting Law response letters regarding John Bowen complaint to go forward and send copies to Cemetery Commissioners and complainant",
-   "outcome": "passed 2-0",
+   "motion": "Accept the Open Meeting Law response letter to John Bowen, to go forward, and send signed copies to the commissioners and Mr. Bowen.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 2-0",
    "procedural": false,
-   "quote": "motion was made to accept these letters to go forward by attorney costa, and send copies of these signed letters to the cemetery commissioner's and mr. bowen."
+   "quote": "open meeting law complaint letter - john bowen - motion passed 2 to 0."
   },
   {
-   "motion": "Approve 11/30/2023 meeting minutes",
-   "outcome": "passed 2-0",
+   "motion": "Accept the Open Meeting Law complaint letter to the Office of the Attorney General, to go forward.",
    "moved_by": "",
    "seconded_by": "",
-   "procedural": true,
+   "outcome": "passed 2-0",
+   "procedural": false,
+   "quote": "open meeting law complaint letter - office of the attorney general - motion passed 2 to 0."
+  },
+  {
+   "motion": "Approve the 11/30 Meeting Minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 2-0",
+   "procedural": false,
    "quote": "11/30 meeting minutes - motion passed 2 to 0."
   },
   {
-   "motion": "Approve Cemetery Commission document for the Annual Report 2023",
-   "outcome": "passed 2-0",
+   "motion": "Approve the Cemetery Commission document for the Annual Report 2023.",
    "moved_by": "",
    "seconded_by": "",
-   "procedural": true,
+   "outcome": "passed 2-0",
+   "procedural": false,
    "quote": "cemetery commission document for the annual report 2023 - motion passed 2 to 0."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed 2-0",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Nancy Foss-Yasko",
    "seconded_by": "David Dorren",
+   "outcome": "passed 2-0",
    "procedural": true,
    "quote": "motion was made to adjourn by chair, nancy foss-yasko, seconded by vice-chair and clerk, david dorren. with no further discussion, meeting was adjourned at 10:10 am - motion passed 2 to 0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1146343
+ "note": "Text extraction, not a scan; all quotes checked against the minutes text. Five votes are recorded, all as 'Motion Passed 2 to 0' with no vote count by name, and only the adjournment names a mover and seconder. The 4a and 4b letters rest on a motion to accept letters that names no mover, so those votes are recorded from the item results. The header lists a 9:00 AM start and the minutes record the call to order at 9:06 AM. No dollar figures are printed anywhere; budget items are discussion of funds only. The 5 min 14 sec audio gap is noted in the minutes. Michael-Ray Jeffreys is mentioned only as Chair of the Select Board and is not recorded as an attendee.",
+ "cost_usd": 0.01896097,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk; bill bernard, dpw director; todd holman, cemetery superintendent;"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair & Clerk",
+   "status": "present",
+   "quote": "by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk; bill bernard, dpw director; todd holman, cemetery superintendent;"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill bernard, dpw director presented the hard-copy document at the meeting."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "present",
+   "quote": "by chair, nancy foss-yasko, other members present were david dorren, vice-chair & clerk; bill bernard, dpw director; todd holman, cemetery superintendent;"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Lunenburg Town Counsel",
+   "status": "present",
+   "quote": "attorney adam costa, lunenburg town counsel; and heather lemieux, town manager."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "attorney adam costa, lunenburg town counsel; and heather lemieux, town manager."
+  },
+  {
+   "name": "John Bowen",
+   "role": "Public attendance",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price and john bowen, jr."
+  },
+  {
+   "name": "Jeanmarie Price",
+   "role": "Public attendance",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price and john bowen, jr."
+  },
+  {
+   "name": "John Bowen, Jr.",
+   "role": "Public attendance",
+   "status": "present",
+   "quote": "public attendance were john bowen, jeanmarie price and john bowen, jr."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Ramaker (CIMS) password item is tabled to the next meeting, and the Vice-Chair requested a meeting with the Town Manager on the matter.",
+   "quote": "this will be tabled until the next meeting."
+  },
+  {
+   "decision": "Open items 3a, 3c, 3e and 3f (arborvitae pruning, leaf/raking hours, capital planning budget, Ramaker) are tabled to the next meeting.",
+   "quote": "table this discussion at the next cemetery commission meeting."
+  },
+  {
+   "decision": "The Cemetery Commission, through its counsel, declined to substantively respond to the Open Meeting Law complaint as untimely.",
+   "quote": "attorney costa on behalf of the cemetery commission has declined to substantively respond to it."
+  },
+  {
+   "decision": "Future meetings set for the third Thursday of each month, with the next on March 21, 2024.",
+   "quote": "third thursday of each month - march 21, 2024"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Use of Cemetery Commission general funds for DPW leaf/raking work",
+   "what_was_recorded": "The Chair wanted to understand how the Commission's general funds were used; no figures are printed.",
+   "quote": "nancy foss-yasko, chair wanted to understand the use of cemetery commission's general funds and did not accuse mismanagement of funds to the dpw director directly.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Ramaker cemetery software purchase, maintenance and upgrades",
+   "what_was_recorded": "The Commission says it has paid for the Ramaker software, its maintenance and upgrades since purchase; no amounts are printed.",
+   "quote": "the cemetery commission since the software was purchased, has paid for this software, maintenance and upgrades.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY25 Capital Planning requests for DPW and Cemetery",
+   "what_was_recorded": "The DPW and Cemetery capital requests were presented to the Capital Planning Committee; the funded projects will go on a Spring Town Meeting warrant article. No amounts are printed.",
+   "quote": "the projects to be funded will be on a warrant article for the spring town meeting.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "Public attendance",
+   "topic": "Allegations against the Commission, DPW and Superintendent",
+   "quote": "mr. bowen presented many allegations throughout his three minutes of public comments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, recording notice and Open Meeting Law explanation",
+   "resolution": "explained by counsel; 5 min 14 sec audio gap noted",
+   "quote": "attorney costa explained that this is not correct and read the open meeting law - public participation section",
+   "tags": [
+    "open meeting law",
+    "recording"
+   ]
+  },
+  {
+   "topic": "Public comment (John Bowen)",
+   "resolution": "heard; no action recorded",
+   "quote": "1. public comment - john bowen presented his public comments below.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "DPW Director updates: burials and snow closure",
+   "resolution": "received; no Commission comment",
+   "quote": "burials continued through week ending 01/05/2024.",
+   "tags": [
+    "burials",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Arborvitae hedge pruning at North Cemetery",
+   "resolution": "disputed; tabled to next meeting",
+   "quote": "recent pruning of the arborvitae hedges at north cemetery - no communication or plan provided to date.",
+   "tags": [
+    "hedges",
+    "rules 310-4",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Leaf/raking labor hours, North and South Cemeteries",
+   "resolution": "discussed; no hours recorded; tabled",
+   "quote": "leaf/raking blowing labor hours - north and south cemeteries.",
+   "tags": [
+    "labor hours",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "2024 season annual maintenance plan",
+   "resolution": "noted; plan expected March 2024",
+   "quote": "the dpw will provide a general maintenance plan in accordance with the rule.",
+   "tags": [
+    "maintenance plan",
+    "rules 310-4"
+   ]
+  },
+  {
+   "topic": "FY25 Capital Planning budget requests",
+   "resolution": "discussed; tabled to next meeting",
+   "quote": "the projects to be funded will be on a warrant article for the spring town meeting.",
+   "tags": [
+    "capital planning",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Ramaker cemetery records software access",
+   "resolution": "tabled; Town Manager meeting requested",
+   "quote": "this will be tabled until the next meeting.",
+   "tags": [
+    "Ramaker",
+    "records",
+    "software"
+   ]
+  },
+  {
+   "topic": "Town Report FY23 cemetery summary",
+   "resolution": "received",
+   "quote": "town report fy23 - the cemetery commission and dpw director, william bernard met throughout the year to discuss cemetery business.",
+   "tags": [
+    "annual report",
+    "North Cemetery"
+   ]
+  },
+  {
+   "topic": "Open items: validation letter on gifts and donations rule",
+   "resolution": "discussed; no decision recorded",
+   "quote": "review and discussion of validation letter sent to the cemetery commission by bill bernard, dpw director.",
+   "tags": [
+    "gifts and donations",
+    "bench size",
+    "rules 310-13"
+   ]
+  },
+  {
+   "topic": "Response to Open Meeting Law complaint from John Bowen",
+   "resolution": "both letters accepted, passed 2-0; substantive response declined as untimely",
+   "quote": "response to open meeting law complaint from john bowen",
+   "tags": [
+    "open meeting law",
+    "complaint"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes and Annual Report FY23 document",
+   "resolution": "approved 2-0",
+   "quote": "review & approve minutes and annual report fy23 document",
+   "tags": [
+    "minutes",
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "third Thursday monthly; next March 21, 2024",
+   "quote": "third thursday of each month - march 21, 2024",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:10 AM, passed 2-0",
+   "quote": "meeting was adjourned at 10:10 am - motion passed 2 to 0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery commission",
+  "DPW",
+  "open meeting law",
+  "public comment",
+  "cemetery rules",
+  "Ramaker records",
+  "capital planning",
+  "annual report",
+  "minutes approval",
+  "tabled items",
+  "gifts and donations",
+  "arborvitae hedges"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-02-05",
  "docid": "6392",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Accept $120,000 for the 2025 overlay",
+   "motion": "Set the overlay figure at $120,000 for the 2025 budget.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
    "procedural": false,
-   "quote": "sarah cammer makes a motion to accept $120,000 for the next fiscal year, seconded by brian laffond to open for discussion. john rabbitt is in opposition. john rabbitt makes an amended motion to accept $200,000 for the next fiscal year. this vote was not seconded. sarah cammer suggests if it's going to be increased this needs to be done before the budget comes out for the next fiscal year. with the re-eval coming out sarah cammer believes this is too late and is concerned about long term impacts on the budget. sarah cammer won't take any action until this is discussed at the town meeting. sarah cammer doesn't want to increase the taxes for anyone beyond what we're seeing in assessments because there is so much going on in the town. after discussion, brian laffond calls a vote on the motion to set the overlay figure at $120,000 for the 2025 budget. all in favor."
+   "quote": "brian laffond calls a vote on the motion to set the overlay figure at $120,000 for the 2025 budget. all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -28,7 +28,243 @@
    "quote": "motion to adjourn by sarah cammer, seconded by john rabbitt. all in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Two votes recorded. John Rabbitt's amended motion to accept $200,000 for overlay was not seconded and therefore not voted on; only the original $120,000 motion proceeded to a vote.",
- "cost_usd": 0.1058321
+ "dropped_unquoted": 2,
+ "note": "Readable text, not a scan. One substantive motion (overlay at $120,000) and the adjournment were recorded; the overlay vote is recorded only as \"All in favor\", with no count printed, so its outcome is recorded as \"passed\" without a tally. Sarah Cammer's motion to accept $120,000 was seconded by Brian Laffond only \"to open for discussion\", and John Rabbitt's amended motion for $200,000 was not seconded, so neither is recorded as a separate vote. The three Select Board members are not named. Public speakers' roles are printed as addresses only. Upcoming meeting dates (February 12th and February 15th) are printed without a year. The re-evaluation was presented and discussed; no vote approving it is recorded, and the minutes say the Board will have to approve the work later.",
+ "cost_usd": 0.01535657,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey, town manager heather lemieux"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey, town manager heather lemieux"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair brian laffond, vice chair sarah cammer, clerk john rabbitt, interim principal assessor rena swezey, town manager heather lemieux"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Interim Principal Assessor",
+   "status": "present",
+   "quote": "rena swezey gives an update about her upcoming work schedule."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "rena swezey and heather lemieux confirm the office will be open during the week from 8 am- 4 pm."
+  },
+  {
+   "name": "Select Board Members (3, unnamed)",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "and 3 select board members."
+  },
+  {
+   "name": "Mike Tarello",
+   "role": "of Vision, presenting the 5 Year Re-evaluation",
+   "status": "present",
+   "quote": "mike tarello states that over the last year there have been changes in values from new to old that are going to be inconsistent."
+  },
+  {
+   "name": "Becky",
+   "role": "DOR representative",
+   "status": "not stated",
+   "quote": "the dor representative becky had a meeting"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "public speaker, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck questions where will lake front properties assessment to sales ratio come from?"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "public speaker, 50 Sunset Lane",
+   "status": "present",
+   "quote": "phyllis luck asks when the residents will have access to the 2024 assessment data?"
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "public speaker, 155 Island Rd.",
+   "status": "present",
+   "quote": "dave mcdonald - 155 island rd. - states that he is proud of everyone on the board"
+  },
+  {
+   "name": "Michael Ray",
+   "role": "public speaker, 1170 Mass Ave.",
+   "status": "present",
+   "quote": "michael ray - 1170 mass ave. - thanks the board for their work."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The office will be open during the week from 8 AM to 4 PM, as confirmed by the Interim Principal Assessor and the Town Manager.",
+   "quote": "rena swezey and heather lemieux confirm the office will be open during the week from 8 am- 4 pm."
+  },
+  {
+   "decision": "Mike Tarello asked the Board to create a list of questions and send them to him before the next meeting.",
+   "quote": "mike tarello asks the board to create a list of questions and send them to him prior to the next meeting."
+  },
+  {
+   "decision": "Sarah Cammer will take no action on any overlay increase until it is discussed at town meeting.",
+   "quote": "sarah cammer won't take any action until this is discussed at the town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Overlay account appropriation history",
+   "what_was_recorded": "Overlay appropriations for fiscal 22 and fiscal 21 were recorded, with a five-year average and an excluded amount.",
+   "figures_as_printed": [
+    "$132,000",
+    "$139,000",
+    "around $125,000",
+    "$1,451,502"
+   ],
+   "quote": "the amount for fiscal 22 was $132,000 and the ===page 5=== amount for fiscal 21 ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Overlay amount options",
+   "what_was_recorded": "John Rabbitt proposed raising the overlay from $120,000 to $200,000; Brian Laffond suggested a range of $130,000 to $140,000; the $120,000 figure was the one recommended.",
+   "figures_as_printed": [
+    "$120,000",
+    "$200,000",
+    "$130,000.00",
+    "$140,000.00"
+   ],
+   "quote": "this would change the overlay amount of $120,000 to $200,000."
+  },
+  {
+   "topic": "Cumulative overlay account balance",
+   "what_was_recorded": "The Town Manager stated the cumulative balance in the overlay account, which she said would affect the overall budget if there is an excess.",
+   "figures_as_printed": [
+    "$562,500"
+   ],
+   "quote": "heather lemieux states that the cumulative number in the overlay account is $562,500."
+  },
+  {
+   "topic": "Building cost adjustment in the re-evaluation",
+   "what_was_recorded": "Building costs per unit were raised after adjustment and sales testing, from the prior-year range to the lower $150s.",
+   "figures_as_printed": [
+    "130 to 140 dollars",
+    "$150s"
+   ],
+   "quote": "on average the building costs from last year were around 130 to 140 dollars with no adjustment for unusual characteristics or grade."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "lake front assessment sales ratio and 2023 values",
+   "quote": "carl luck states the 2023 assessments are fatally flawed and inaccurate."
+  },
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "access to 2024 assessment data and public review meeting",
+   "quote": "when will a public meeting be held to review the results of the process and recommendations with the ability to ask questions?"
+  },
+  {
+   "speaker": "Dave McDonald",
+   "stated_role": "155 Island Rd.",
+   "topic": "praise for the Board's progress",
+   "quote": "states that he is proud of everyone on the board and is seeing the progress that's being made."
+  },
+  {
+   "speaker": "Michael Ray",
+   "stated_role": "1170 Mass Ave.",
+   "topic": "how homes are assessed",
+   "quote": "he has a question about how the homes are assessed and how they arrived at those numbers."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening comments",
+   "resolution": "Interim assessor work schedule and office hours noted",
+   "quote": "rena swezey gives an update about her upcoming work schedule.",
+   "tags": [
+    "staffing",
+    "office hours"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "Four residents spoke; questions on the revaluation recorded",
+   "quote": "carl luck - 50 sunset lane",
+   "tags": [
+    "public comment",
+    "revaluation"
+   ]
+  },
+  {
+   "topic": "5 Year Re-evaluation with Vision",
+   "resolution": "Presented and discussed; preliminary; no vote on the re-evaluation recorded",
+   "quote": "discuss status of / review 5 year re-evaluation - with mike tarello of vision",
+   "tags": [
+    "revaluation",
+    "Vision",
+    "DOR",
+    "land values",
+    "building costs"
+   ]
+  },
+  {
+   "topic": "Approve recommendation for 2025 overlay",
+   "resolution": "Overlay set at $120,000 for the 2025 budget",
+   "quote": "approve recommendation for 2025 overlay",
+   "tags": [
+    "overlay",
+    "abatements",
+    "exemptions",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Public disclosure and impact notice for second home owners",
+   "resolution": "Discussed; process and timeline reviewed; no action recorded",
+   "quote": "discussion on public disclosure notice and impact notice for second home owners",
+   "tags": [
+    "public disclosure",
+    "second homes",
+    "classification hearing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Adjourned at 9:15 PM",
+   "quote": "motion to adjourn by sarah cammer, seconded by john rabbitt. all in favor.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "5 year revaluation",
+  "Vision",
+  "overlay",
+  "abatements and exemptions",
+  "Department of Revenue",
+  "public disclosure",
+  "second homes",
+  "joint meeting with Select Board",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1,
+  "topics": 1
+ }
 }

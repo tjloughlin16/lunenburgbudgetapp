@@ -1,0 +1,678 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2024-01-30",
+ "video_id": "eJgZfyiYdKE",
+ "video_url": "https://www.youtube.com/watch?v=eJgZfyiYdKE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2024-01-30-eJgZfyiYdKE.json",
+  "sha256": "c9e7b9f8969fe679c1b485743be84aefada6fcc397b28aefe6c65c9d0dd13894",
+  "caption_lines": 322,
+  "segments": 2517
+ },
+ "recording": {
+  "duration_s": 6769,
+  "duration": "1:52",
+  "spoken_chars": 84768,
+  "words_approx": 14128
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01302024-6379",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-01-30-agenda-6379.txt",
+   "path": "sources/meetings/sewer-commission/2024-01-30-agenda-6379.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01302024-6379",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-01-30-minutes-6379.txt",
+   "path": "sources/meetings/sewer-commission/2024-01-30-minutes-6379.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T16:16:10Z",
+  "cost_usd": 0.4309104
+ },
+ "minutes": {
+  "headline": "Sewer Commission backed an engineer's plan for a new grease trap at One Main Street, with camera checks and a review in six months.",
+  "summary": "The commission heard a hired engineer say the existing interior grease trap is adequately sized but rusting and should be replaced, then voted to accept that recommendation with camera inspections and follow-up reviews. The business manager reported on the Leominster IMA negotiation, the FY25 budget, capital planning and rate increase, and the commission agreed to cancel the next regular meeting for an in-person budget workshop. Other items were the sewer billing software problem and public statement, and the business manager job description score.",
+  "attendees": [
+   {
+    "name_as_heard": "John Reynolds",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Brett Ramsten",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Dave McDonald",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike NZ",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike Mackin",
+    "role": "member (said to be unable to attend; unclear)"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "DPW director / staff"
+   },
+   {
+    "name_as_heard": "Paula Bertram",
+    "role": "business manager"
+   },
+   {
+    "name_as_heard": "Jane rley",
+    "role": "staff, minute taker"
+   },
+   {
+    "name_as_heard": "Chris Garcia",
+    "role": "presenter, engineer with ggd Consulting Engineers"
+   },
+   {
+    "name_as_heard": "Philip Warick",
+    "role": "presenter, landlord of One Main Street"
+   },
+   {
+    "name_as_heard": "Allan",
+    "role": "presenter, restaurant operator at One Main Street"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 200,
+    "topic": "Chair asked for public comment at the start; none."
+   },
+   {
+    "t": 6640,
+    "topic": "Chair asked for public comment near the end; none."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "facilities",
+   "grants",
+   "personnel",
+   "public-comment",
+   "technology",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 296,
+    "motion": "Accept the minutes of the January 9th meeting.",
+    "moved_by": "Dave McDonald",
+    "outcome": "passed (roll call; Mike, Brett, Dave and the chair all aye)",
+    "procedural": true
+   },
+   {
+    "t": 355,
+    "motion": "Accept the minutes of the July 18th 2023 meeting.",
+    "outcome": "passed (roll call; Mike, Brett, Dave and the chair all aye)",
+    "procedural": true
+   },
+   {
+    "t": 2613,
+    "motion": "Accept the engineer's recommendation to install a new grease trap at One Main Street, with camera inspection after six months, evaluation after one year, and a status meeting in six months.",
+    "moved_by": "Dave McDonald",
+    "outcome": "passed (roll call; Mike, Brett, Dave and the chair all aye)",
+    "procedural": false
+   },
+   {
+    "t": 6683,
+    "motion": "Adjourn the meeting.",
+    "moved_by": "Dave McDonald",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3098,
+    "topic": "Leominster IMA flow increase and rate",
+    "what_was_said": "Leominster would not agree to raise the permitted flow because Lunenburg uses well under its current allowance. Leominster proposed lower rates for FY25 and FY26 than its initial increase, then penny-for-penny increases.",
+    "figures_as_heard": [
+     "500,000 to 800,000",
+     "214,000 gallons per day",
+     "$532 to $646",
+     "$618 for fiscal 25",
+     "$637 cents for fiscal 26"
+    ]
+   },
+   {
+    "t": 3701,
+    "topic": "Capital planning",
+    "what_was_said": "The business manager and the DPW's Robert reviewed capital needs, mostly pump and generator replacement, over five years.",
+    "figures_as_heard": [
+     "95 to 100,000 a year"
+    ]
+   },
+   {
+    "t": 3744,
+    "topic": "Rate increase worksheet",
+    "what_was_said": "Worksheet assumes Leominster's FY25 rate then a further increase, with a placeholder local rate increase; the average residential quarterly bill would rise.",
+    "figures_as_heard": [
+     "16.17",
+     "3%",
+     "$13.66",
+     "12%",
+     "233 a qu to 261 a quarter"
+    ]
+   },
+   {
+    "t": 3829,
+    "topic": "Retained earnings draw",
+    "what_was_said": "The forecast draws on retained earnings in the near years and starts adding to it by fiscal 29. A lower rate increase would mean a larger draw.",
+    "figures_as_heard": [
+     "49,7 18",
+     "134,000",
+     "97"
+    ]
+   },
+   {
+    "t": 3870,
+    "topic": "Sewer pump costs and Green Communities grant",
+    "what_was_said": "Pump replacements cost more than expected; a state energy representative indicated the grant program would fund pumps and drives, with an application planned in April.",
+    "figures_as_heard": [
+     "$40,000 a piece"
+    ]
+   },
+   {
+    "t": 4057,
+    "topic": "Fund balances",
+    "what_was_said": "Retained earnings certified at end of FY23 were reported alongside capital reserve stabilization, inflow/infiltration and capacity fund balances, the latter two being very low.",
+    "figures_as_heard": [
+     "2.2 million",
+     "145,146",
+     "$9,985 63",
+     "$731 40",
+     "2.4 million"
+    ]
+   },
+   {
+    "t": 4264,
+    "topic": "Inflow and infiltration line",
+    "what_was_said": "The five-year forecast carries an annual I&I line that may need to rise.",
+    "figures_as_heard": [
+     "$110,000"
+    ]
+   },
+   {
+    "t": 4556,
+    "topic": "Capital maintenance/reserve funding history",
+    "what_was_said": "Members recalled a prior plan to give the DPW director funds for maintenance and keep a reserve, and discussed contributing annually to capital reserve.",
+    "figures_as_heard": [
+     "100 $120,000",
+     "50,000 a year",
+     "$145,900"
+    ]
+   },
+   {
+    "t": 4928,
+    "topic": "Capital maintenance line FY25",
+    "what_was_said": "Proposed capital maintenance line would cover emergency pump failures; drawing on the stabilization fund requires a town meeting vote.",
+    "figures_as_heard": [
+     "$60,000",
+     "95,000",
+     "$50,000",
+     "476"
+    ]
+   },
+   {
+    "t": 5842,
+    "topic": "Pump prices",
+    "what_was_said": "Prices for pumps at Dana Street, Leominster Road and Mass One are still awaited and expected to be higher than thought.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6239,
+    "topic": "Sewer billing errors",
+    "what_was_said": "A small share of second-quarter bills were overbilled and will be credited; many staff hours went into the issue.",
+    "figures_as_heard": [
+     "6%",
+     "500 hours"
+    ]
+   },
+   {
+    "t": 6596,
+    "topic": "Business manager job description score",
+    "what_was_said": "The Personnel Committee raised the job description score after revisions.",
+    "figures_as_heard": [
+     "495",
+     "655"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5717,
+    "decision": "Next regular meeting cancelled; February 13 at 6 PM becomes an in-person budget workshop at the DPW, not recorded."
+   },
+   {
+    "t": 3511,
+    "decision": "IMA revisions (debt service wording in section 19.2) to be circulated and a vote placed on the next meeting agenda."
+   },
+   {
+    "t": 3388,
+    "decision": "Commission wants the former sewer advisor invited to a future meeting on inflow and infiltration."
+   },
+   {
+    "t": 6509,
+    "decision": "Business manager and DPW director to ask the town manager to post the billing-delay notice in her own name; the commission will not state tax bill impact."
+   },
+   {
+    "t": 2788,
+    "decision": "Business manager will schedule the six-month review after receiving the plumbing inspector's sign-off on the new trap."
+   },
+   {
+    "t": 5115,
+    "decision": "A warrant article to allow stabilization fund draws for emergency expenses was floated; the business manager will talk to the town manager and accountant."
+   },
+   {
+    "t": 6663,
+    "decision": "Upcoming meetings: Feb 13 workshop, then regular meetings Feb 27, Mar 12, Mar 26."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 6,
+    "t_end": 200,
+    "topic": "Call to order, pledge, remote access notice, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 200,
+    "t_end": 264,
+    "topic": "Public comment and announcements",
+    "resolution": "no public comment",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 264,
+    "t_end": 395,
+    "topic": "Approval of January 9 and July 18, 2023 minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 441,
+    "t_end": 785,
+    "topic": "Warrant articles, finance committee presentation, annual report",
+    "resolution": "informational; help with annual report agreed",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 891,
+    "t_end": 2994,
+    "topic": "Grease trap at One Main Street: engineer report and recommendations",
+    "resolution": "voted to accept new trap with camera checks",
+    "tags": [
+     "water-sewer",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 2994,
+    "t_end": 3553,
+    "topic": "Leominster IMA update",
+    "resolution": "informational; vote at next meeting",
+    "tags": [
+     "contracts-and-unions",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3553,
+    "t_end": 5840,
+    "topic": "Capital planning, FY25 budget, rate increase, reserves and workshop scheduling",
+    "resolution": "budget workshop set for Feb 13",
+    "tags": [
+     "budget",
+     "capital",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 5840,
+    "t_end": 6560,
+    "topic": "Business manager report: pump maintenance, billing software, public statement",
+    "resolution": "referred to talk with town manager",
+    "tags": [
+     "technology",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 6575,
+    "t_end": 6660,
+    "topic": "Business manager job description score",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 6660,
+    "t_end": 6748,
+    "topic": "Public comment, upcoming meetings, adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Whether Mike Mackin attended; captions show both 'Mike NZ' and 'Mike Mackin' and say Mackin could not attend",
+   "Adjournment roll call count and the chair's vote",
+   "Exact figures throughout (fund balances, rates, pump costs) are caption-rendered and unreliable",
+   "Warrant close date (March 11 or 14 unclear)",
+   "Names of the landlord and restaurant operator are mangled"
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Sewer Commission voted by roll call to accept its engineer's recommendation to install a new grease trap at One Main Street.",
+    "t": 2613
+   },
+   {
+    "line": "The vote attaches a camera inspection after six months, an evaluation after one year and a status meeting in six months.",
+    "t": 2613
+   },
+   {
+    "line": "The business manager reported that Leominster would not raise Lunenburg's permitted flow, and offered lower FY25 and FY26 rates before later increases.",
+    "t": 3098
+   },
+   {
+    "line": "The commission cancelled its next regular meeting and set a February 13 in-person budget workshop at the DPW, which will not be recorded.",
+    "t": 5717
+   },
+   {
+    "line": "A small share of second-quarter sewer bills were overbilled and will be credited; the commission will not state any tax bill impact of the delay notice.",
+    "t": 6239
+   }
+  ],
+  "why_it_matters": [
+   "Sewer rates are set partly by what Leominster charges Lunenburg, and the forecast assumes a rate increase and draws on retained earnings, so quarterly sewer bills are likely to rise.",
+   "Pump replacements cost more than expected and the reserve funds for inflow and infiltration are very low, so emergency repairs may need a town meeting vote on stabilization fund draws.",
+   "The February 13 budget workshop will not be recorded, so residents who want to follow the FY25 sewer budget would need to attend in person."
+  ],
+  "watch_next": [
+   "February 13 at 6 PM: in-person budget workshop at the DPW, not recorded.",
+   "A vote on the revised Leominster IMA, including the debt service wording in section 19.2, is to be placed on a coming agenda; regular meetings follow Feb 27, Mar 12 and Mar 26."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T16:16:22Z",
+   "cost_usd": 0.221465
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01302024-6379",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-01-30-minutes-6379.txt",
+   "path": "sources/meetings/sewer-commission/2024-01-30-minutes-6379.pdf"
+  },
+  "official_sha256": "c3d274e73ea3df21490dd82ea19ff5776dff7b12e1c73cd3830ab16a72a7e973",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the main grease trap vote, the Feb 13 workshop, the $13.66 rate, the Leominster rates and the $95K–100K capital range. Most other differences are caption-mangled names and decimals. The one to check is the camera inspection: ours says once after six months, while the official minutes say every 6 months.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 7,
+   "discrepancy": 5,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Grease trap vote at One Main Street",
+    "ours": "Accept the engineer's recommendation to install a new grease trap at One Main Street, with camera inspection after six months, evaluation after one year, and a status meeting in six months. — passed (roll call; Mike, Brett, Dave and the chair all aye)",
+    "official": "to accept engineer's recommendation of replacing the existing grease trap with a new plastic grease trap,",
+    "note": "Same motion and outcome (passed); the official record gives no roll call, which ours adds."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Roll call tally on grease trap vote",
+    "ours": "passed (roll call; Mike, Brett, Dave and the chair all aye)",
+    "official": "",
+    "note": "Official minutes record the motion as passed but do not give a roll-call breakdown."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Leominster IMA current rate",
+    "ours": "$532 to $646, $618 for fiscal 25, $637 cents for fiscal 26",
+    "official": "currently the rate is $5.32 and will go up to $6.18 for fy25 and $6.37 for fy26.",
+    "official_reading": "$5.32, $6.18 (FY25), $6.37 (FY26); projected $6.46",
+    "note": "Same figures with decimal points dropped by the captions.",
+    "t": 3098
+   },
+   {
+    "kind": "agree",
+    "about": "Capital planning annual amount",
+    "ours": "Capital planning: 95 to 100,000 a year",
+    "official": "they are looking at about $95k-100k each year.",
+    "note": "Same range.",
+    "t": 3701
+   },
+   {
+    "kind": "agree",
+    "about": "Current sewer rate",
+    "ours": "Rate increase worksheet: 16.17, 3%, $13.66, 12%, 233 a qu to 261 a quarter",
+    "official": "potential rate increases from the current rate of $13.66 and how it would affect transfers from retained earnings.",
+    "note": "$13.66 current rate matches; other worksheet figures are not in the official summary.",
+    "t": 3744
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Pump estimate source/wording",
+    "ours": "Sewer pump costs and Green Communities grant: $40,000 a piece",
+    "official": "robert estimated the pumps for dana street, leominster rd and mass 1 could be $40k each.",
+    "note": "Figure matches; check whether the recording ties the grant specifically to Green Communities, which the official minutes do not name."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Capital maintenance line FY25",
+    "ours": "Capital maintenance line FY25: $60,000, 95,000, $50,000, 476",
+    "official": "if a pump needs to be replaced, it comes from the capital maintenance line item, which she is proposing at $95k.",
+    "note": "Both include $95K, but ours also lists $60,000 and $50,000; check which figure is the proposed line at t=4928."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Infrastructure maintenance line",
+    "ours": "",
+    "official": "infrastructure maintenance for $47,600 would be for replacing parts.",
+    "note": "Our minutes have no $47,600 figure; a person should check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Prior consultant maintenance plan funding",
+    "ours": "Capital maintenance/reserve funding history: 100 $120,000, 50,000 a year, $145,900",
+    "official": "they gave him $100k to work on the maintenance plan, but he did not spend it all.",
+    "note": "Ours lists $120,000 and $145,900 and a 100 that may be $100K; check the history figures at t=4556."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Retained earnings draw, fund balances, I&I line, billing errors, job score figures",
+    "ours": "Retained earnings draw: 49,7 18, 134,000, 97; Fund balances: 2.2 million, 145,146, $9,985 63, $731 40, 2.4 million; Inflow and infiltration line: $110,000; Sewer billing errors: 6%, 500 hours; Business manager job description score: 495, 655",
+    "official": "",
+    "note": "These figures are not in the official minutes' summary."
+   },
+   {
+    "kind": "agree",
+    "about": "Budget workshop on Feb 13",
+    "ours": "Next regular meeting cancelled; February 13 at 6 PM becomes an in-person budget workshop at the DPW, not recorded.",
+    "official": "the commission discussed and will have a budget workshop on 2/13 at the dpw at 6pm, in place of the regular meeting.",
+    "note": "Same date, time, place."
+   },
+   {
+    "kind": "agree",
+    "about": "No property tax impact wording in billing notice",
+    "ours": "Business manager and DPW director to ask the town manager to post the billing-delay notice in her own name; the commission will not state tax bill impact.",
+    "official": "the commission discussed the wording and agreed the announcement should not include verbiage in regard to the property tax impact.",
+    "note": "Both record no tax impact wording and Paula and Bill talking to the town manager."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Billing notice and town manager",
+    "ours": "Business manager and DPW director to ask the town manager to post the billing-delay notice in her own name",
+    "official": "paula and bill will talk to the town manager.",
+    "note": "Official summary also lists the topic as issuing the billing statement with property tax information; check what was asked of the town manager."
+   },
+   {
+    "kind": "agree",
+    "about": "Leominster IMA debt service wording circulated",
+    "ours": "IMA revisions (debt service wording in section 19.2) to be circulated and a vote placed on the next meeting agenda.",
+    "official": "when she gets the wording from leominster, she will send it to the commissioners",
+    "note": "Both record wording being sent to commissioners; the planned vote on the agenda is only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Former sewer advisor invitation",
+    "ours": "Commission wants the former sewer advisor invited to a future meeting on inflow and infiltration.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stabilization fund warrant article",
+    "ours": "A warrant article to allow stabilization fund draws for emergency expenses was floated; the business manager will talk to the town manager and accountant.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Upcoming meeting schedule",
+    "ours": "Upcoming meetings: Feb 13 workshop, then regular meetings Feb 27, Mar 12, Mar 26.",
+    "official": "",
+    "note": "Only the Feb 13 workshop appears in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Annual report work",
+    "ours": "",
+    "official": "paula and jane will work on it.",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Keep Paula informed on installation; engineer sends report; camera videos forwarded",
+    "ours": "",
+    "official": "john asked al and philip to keep paula informed.",
+    "note": "Follow-ups on installation and camera videos are in the official minutes only; ours has the six-month review scheduling after plumbing inspector sign-off instead."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Commissioners to review capital planning worksheets",
+    "ours": "",
+    "official": "john asked the commissioners to review the worksheets and have a workshop to discuss it.",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Brett Ramsden",
+    "ours": "Brett Ramsten (member)",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member-dave macdonald,",
+    "official_reading": "Brett Ramsden",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mike Nault",
+    "ours": "Mike NZ (member)",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member-dave macdonald,",
+    "official_reading": "Mike Nault",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Dave MacDonald",
+    "ours": "Dave McDonald (member)",
+    "official": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk- mike nault, member-dave macdonald,",
+    "official_reading": "Dave MacDonald",
+    "note": "Spelling variant.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Minute taker Jane Ranley",
+    "ours": "Jane rley (staff, minute taker)",
+    "official": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley",
+    "official_reading": "Jane Ranley",
+    "note": "Garbled surname.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Staff attendees Bill Bernard and Paula Bertram",
+    "ours": "Bill Bernard (DPW director / staff); Paula Bertram (business manager)",
+    "official": "dpw director- bill bernard, business manager-paula bertram, minutes clerk- jane ranley",
+    "note": "Same names and roles."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Mike Mackin attendance",
+    "ours": "Mike Mackin (member (said to be unable to attend; unclear))",
+    "official": "absent: member-mike mackin",
+    "note": "Ours is unsure; official records him absent, which is consistent but ours lists him as an attendee."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Landlord Philip",
+    "ours": "Philip Warick (presenter, landlord of One Main Street)",
+    "official": "appointments - philip arcidiacono (landlord), chris garcia (ggd consulting engineers) and al wernick",
+    "official_reading": "Philip Arcidiacono",
+    "note": "Surname misheard.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Restaurant operator Al Wernick",
+    "ours": "Allan (presenter, restaurant operator at One Main Street)",
+    "official": "appointments - philip arcidiacono (landlord), chris garcia (ggd consulting engineers) and al wernick",
+    "official_reading": "Al Wernick",
+    "note": "First name given as Allan and no surname in ours.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Engineer Chris Garcia",
+    "ours": "Chris Garcia (presenter, engineer with ggd Consulting Engineers)",
+    "official": "appointments - philip arcidiacono (landlord), chris garcia (ggd consulting engineers) and al wernick",
+    "note": "Same."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T16:17:41Z",
+   "cost_usd": 0.260009
+  }
+ }
+}
