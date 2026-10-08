@@ -63,6 +63,9 @@ procedure - remedies. Every rule unit and every digested allegation carries one 
 A ruling is how the AG read the law in ANOTHER case. The point's status still reflects only
 what THIS meeting's record shows; "violation" is still never said.
 
-## Not decided
+## Decided, 8 October 2026
 
-- Whether to run the haiku digest over all ~4,000 letters or start with the last ten years.
+TJ, told the digest is ~$80 API-equivalent (~16% of a week): *"Let's just ingest them. Don't
+process them for now. We have meeting minutes that are more important."* So: the letters are
+DOWNLOADED and SEARCHABLE (full text, `--corpus law`); sections 1, 3, 4 (rule units, taxonomy,
+indexes, citation graph -- all model-free) may be built; section 2's model digest WAITS.
