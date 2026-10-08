@@ -2,7 +2,7 @@ import { abs } from '../lib/abs'
 import MANIFEST from '../data/agent-manifest.json'
 import { MODEL } from '../model/engine'
 import { pathFor } from '../routes'
-import sources from '../data/sources.json'
+import cited from '../data/cited-doc-urls.json'
 
 /** Numbered citations, tied to the figures they belong to.
  *
@@ -30,9 +30,11 @@ const BY_ID = Object.fromEntries(C.items.map(i => [i.id, i])) as Record<string, 
  *  assumed. One file — the teachers' agreement, a 53MB scan — is hosted off-site because
  *  it exceeds the host's per-file limit, and a citation that guessed /docs/ for it would
  *  link to a 404. Reading the index means the two cannot drift apart. */
-const DOC_URL: Record<string, string> = Object.fromEntries(
-  (sources as { groups: { items: { path: string; url: string }[] }[] }).groups
-    .flatMap(g => g.items).map(i => [i.path, i.url]))
+//
+// ONLY THE CITED DOCUMENTS: `cited-doc-urls.json`, written by build_source_index.py from the
+// citations themselves. The whole 2 MB catalogue used to be compiled in here, and since every
+// page loads this bundle, each refresh's new documents re-rendered every page (8 October 2026).
+const DOC_URL: Record<string, string> = cited as Record<string, string>
 
 /* Absolute. A citation exists so somebody can go and check the document, and for a
  * program "somebody" means a fetcher that will not follow a bare path. */

@@ -2,7 +2,7 @@ import { abs } from '../lib/abs'
 import MANIFEST from '../data/agent-manifest.json'
 import { useMemo, useState } from 'react'
 import Papa from 'papaparse'
-import raw from '../data/sources.json'
+import { useReport } from './report'
 
 /** Every document this analysis is built on, listed.
  *
@@ -41,7 +41,11 @@ type Section = { title: string; blurb: string }
 type Origin = { id: string; name: string; url: string | null }
 type Board = { name: string; documents: number }
 
-const S = raw as unknown as {
+/** THE CATALOGUE IS FETCHED, NOT COMPILED IN. It was `import raw from '../data/sources.json'`
+ *  -- 2 MB that changes with nearly every refresh, inside the bundle every page loads, so each
+ *  new document re-rendered all 1,171 prerendered pages (8 October 2026). Fetched from
+ *  /data/sources.json, it is a dependency of this page alone. */
+type Sources = {
   generated: string; origins: Origin[]; groups: Group[]
   sections: Record<string, Section>
   corpusIndexUrl: string
@@ -164,6 +168,12 @@ function Row({ it }: { it: Item }) {
 }
 
 export function SourceIndex() {
+  const { d, err } = useReport<Sources>('sources.json')
+  if (!d) return <p className="text-sm mt-4" style={{ color: 'var(--text-secondary)' }}>{err ? `Could not load the catalogue: ${err}` : 'Loading the catalogue…'}</p>
+  return <SourceIndexBody S={d} />
+}
+
+function SourceIndexBody({ S }: { S: Sources }) {
   const [q, setQ] = useState('')
   const [open, setOpen] = useState<string | null>(S.groups[0]?.id ?? null)
 
@@ -262,7 +272,7 @@ export function SourceIndex() {
           return (
             <div key={`s-${g.id}`} className="contents">
             {/* Closes the town's half, before the line saying what follows is ours. */}
-            {sec && g.section === 'ours' && !needle && <MeetingArchive />}
+            {sec && g.section === 'ours' && !needle && <MeetingArchive S={S} />}
             {sec && (
               <div className={gi === 0 ? 'mb-1' : 'mt-8 mb-1 pt-7 border-t-2'}
                 style={gi === 0 ? undefined : { borderColor: ours ? 'var(--status-warning)' : 'var(--axis)' }}>
@@ -342,7 +352,7 @@ export function SourceIndex() {
 type Row = { board: string; date: string; kind: string; file_id: string
              path: string; url: string }
 
-function MeetingArchive() {
+function MeetingArchive({ S }: { S: Sources }) {
   const [board, setBoard] = useState<string | null>(null)
   const [rows, setRows] = useState<Row[] | null>(null)
   const [failed, setFailed] = useState(false)

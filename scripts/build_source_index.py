@@ -35,6 +35,8 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'sources')
 OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'sources.json')
+PUBLIC_OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'sources.json')
+CITED_OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'cited-doc-urls.json')
 DOCS = os.path.join(ROOT, 'fy28', 'public', 'docs')
 
 # THE BINARIES ARE NOT IN THE BUILD. They are in R2, and `functions/docs/_bucket.js`
@@ -4556,6 +4558,18 @@ def main():
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, 'w') as fh:
         json.dump(doc, fh, indent=1, ensure_ascii=False)
+        fh.write('\n')
+    # THE SAME BYTES, PUBLISHED: /data/sources.json is what the sources page fetches and what
+    # the agent manifest calls "the full archive catalogue". Nothing wrote it from 23 September
+    # to 8 October 2026, so agents read a catalogue two weeks old.
+    shutil.copyfile(OUT, PUBLIC_OUT)
+    # AND THE FEW THE CITATIONS NEED, small and stable, which is all Citations.tsx compiles in.
+    # The whole catalogue inside the bundle made every new document re-render every page.
+    by_path = {i['path']: i['url'] for g in doc['groups'] for i in g['items']}
+    model = json.load(open(os.path.join(ROOT, 'fy28', 'src', 'data', 'model.json'), encoding='utf-8'))
+    cited = {c['doc']: by_path[c['doc']] for c in model['citations']['items'] if c['doc'] in by_path}
+    with open(CITED_OUT, 'w') as fh:
+        json.dump(dict(sorted(cited.items())), fh, indent=1, ensure_ascii=False)
         fh.write('\n')
     mb = doc['totals']['bytes'] / 1e6
     print(f"{OUT}: {doc['totals']['documents']} documents in {len(groups)} groups, {mb:.0f}MB")
