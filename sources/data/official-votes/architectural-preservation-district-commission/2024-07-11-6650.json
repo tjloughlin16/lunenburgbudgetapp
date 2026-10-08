@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2024-07-11",
  "docid": "6650",
@@ -12,15 +12,153 @@
  },
  "votes": [
   {
-   "motion": "Approve the CTA (Certificate of Appropriateness) for 1010 Mass Ave upon receipt of missing information.",
-   "moved_by": "Anthony Sculimbrene",
-   "seconded_by": "Richard McGrath",
+   "motion": "Approve the CTA conditionally, upon receipt of the missing material information (the minutes' item heading is 920 Mass Ave; the motion text says 1010 Mass Ave).",
+   "moved_by": "Chair Sculimbrene",
+   "seconded_by": "Member McGrath",
    "outcome": "passed",
    "procedural": false,
    "quote": "chair sculimbrene moved to approve the cta for 1010 mass ave upon receipt of the missing information with a second from member mcgrath. all voted to approve the cta conditionally."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. Note: the section heading refers to \"920 Mass Ave\" but the motion states \"1010 Mass Ave\"; the quote preserves the motion text as written in the minutes.",
- "cost_usd": 0.0639431
+ "note": "Text extract, not a scan. One motion is recorded (CTA, approved conditionally) with the outcome given as \"All voted to approve\" and no count printed, so outcome is recorded as passed. The motion names 1010 Mass Ave while the item heading names 920 Mass Ave; the minutes do not say which is correct. No procedural votes are recorded: the call to order, the adjournment at 8:40 PM and the next-meeting date carry no motion. The minutes print no dollar figures, so budget_items and transfers are empty. Public comment reads \"None\", so no speaker is listed. William Lloyd (Clerk) is listed in the header but not in the Present line, so his status is not stated.",
+ "cost_usd": 0.01389017,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, mcgrath, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, mcgrath, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, mcgrath, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "richard mcgrath, member william lloyd, clerk"
+  },
+  {
+   "name": "Courtney Zivojinovic",
+   "role": "applicant (920 Mass Ave CTA)",
+   "status": "absent",
+   "quote": "it was anticipated the applicant, courtney zivojinovic, was to be in attendance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes for 13 June will be approved at the August meeting after revisions; minutes for 9 May were not available.",
+   "quote": "so those will be approved at the meeting in august."
+  },
+  {
+   "decision": "Chair Sculimbrene will lead setting up a meeting to give background on the APDC to the new Select Board chair, Ceasar Nuzzolo.",
+   "quote": "chair sculimbrene will take the lead in setting up that meeting."
+  },
+  {
+   "decision": "The letter to APD property owners will not be sent at this time.",
+   "quote": "it was agreed the letter would not be sent at this time."
+  },
+  {
+   "decision": "Member Lockwood will prepare a draft change to the APD bylaw for the August meeting.",
+   "quote": "member lockwood indicated he would prepare a draft change to the apd bylaw for the meeting in august."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "deferred to August meeting",
+   "quote": "so those will be approved at the meeting in august.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondences: Select Board appearance",
+   "resolution": "reported; chair to set up background meeting for new Select Board chair",
+   "quote": "chair sculimbrene reported on his appearance at the select board.",
+   "tags": [
+    "Select Board",
+    "APDC"
+   ]
+  },
+  {
+   "topic": "CTA for 920 Mass Ave",
+   "resolution": "approved conditionally, subject to receipt of missing material information",
+   "quote": "all voted to approve the cta conditionally.",
+   "tags": [
+    "certificate of appropriateness",
+    "Mass Ave"
+   ]
+  },
+  {
+   "topic": "Brooks House Preservation",
+   "resolution": "no action; no additional information on a plan",
+   "quote": "brooks house preservation-no additional information on developing a plan.",
+   "tags": [
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Work on Town Hall and Ritter Building",
+   "resolution": "no action; no status update",
+   "quote": "work on the town hall and ritter building-no status update on the work.",
+   "tags": [
+    "Town Hall",
+    "Ritter Building"
+   ]
+  },
+  {
+   "topic": "763 Mass Ave demolition delay",
+   "resolution": "no action; owner has not filed the report the demolition delay letter requires",
+   "quote": "763 mass ave-there's been no report provided by the current owner as required by the demolition delay letter.",
+   "tags": [
+    "demolition delay",
+    "763 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Letter to APD property owners",
+   "resolution": "not sent at this time; bylaw change drafted for August",
+   "quote": "it was agreed the letter would not be sent at this time.",
+   "tags": [
+    "APD bylaw",
+    "property owners"
+   ]
+  },
+  {
+   "topic": "50 Main Street steeple",
+   "resolution": "no action; no change in condition reported",
+   "quote": "50 main street-no change in condition of the steeple.",
+   "tags": [
+    "50 Main Street",
+    "steeple"
+   ]
+  }
+ ],
+ "tags": [
+  "architectural preservation district",
+  "certificate of appropriateness",
+  "demolition delay",
+  "Ritter Building",
+  "Town Hall",
+  "APD bylaw",
+  "Select Board",
+  "historic preservation"
+ ],
+ "dropped_unquoted_by_field": {}
 }

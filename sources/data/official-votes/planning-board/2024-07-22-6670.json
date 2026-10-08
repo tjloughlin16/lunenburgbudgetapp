@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-07-22",
  "docid": "6670",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Approve the Site Plan for 240 Summer St subject to waivers as discussed and a written decision to be acted upon at the next meeting",
+   "motion": "Approve the Site Plan for 240 Summer St subject to the waivers conditioned as discussed, with a written decision to be acted upon at the next meeting.",
    "moved_by": "A. Reid",
    "seconded_by": "G. McLeod",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a. reid moved to approve the site plan for 240 summer st subject to the waivers conditioned as discussed and a written decision to be acted upon at the next meeting. g. mcleod seconded. voice vote, passed unanimously."
+   "quote": "a. reid moved to approve the site plan for 240 summer st subject to the waivers conditioned as discussed and a written decision to be acted upon at the next meeting."
   },
   {
-   "motion": "Approve the Stormwater Management Permit for 240 Summer St subject to standard and special conditions including items mentioned in the 2024-07-18 Graves Engineering Review letter and a decision to be presented at the next meeting",
+   "motion": "Approve the Stormwater Management Permit for 240 Summer St subject to the standard and special conditions, with a decision to be presented at the next meeting.",
    "moved_by": "A. Reid",
    "seconded_by": "G. McLeod",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a. reid moved to approve the stormwater management permit for 240 summer st subject to the standard and special conditions, including items mentioned in the 2024-07-18 graves engineering review letter, and a decision to be presented at the next meeting. g. mcleod seconded. voice vote, passed unanimously."
+   "quote": "a. reid moved to approve the stormwater management permit for 240 summer st subject to the standard and special conditions"
   },
   {
-   "motion": "Recommend to the Select Board that the Planning Board did not find sufficient reason to exercise the Town's right to acquire property at 20 Kilburn St, but is aware the Open Space Committee may have interest",
+   "motion": "Recommend to the Select Board that the Planning Board did not find sufficient reason from a planning perspective to exercise the Town’s right to acquire 20 Kilburn St, while noting the Open Space Committee may have some interest.",
    "moved_by": "A. Reid",
    "seconded_by": "G. McLeod",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a. reid moved to recommend to the select board that the planning board did not find sufficient reason from a planning perspective to exercise the town's right to acquire this property, but it is aware that the open space committee may have some interest. g. mcleod seconded. voice vote, passed unanimously."
+   "quote": "a. reid moved to recommend to the select board that the planning board did not find sufficient reason from a planning perspective to exercise the town's right to acquire this property"
   },
   {
-   "motion": "Approve the Minutes for 2024-06-24",
+   "motion": "Approve the Minutes for 2024-06-24.",
    "moved_by": "A. Reid",
    "seconded_by": "G. McLeod",
    "outcome": "passed unanimously",
@@ -44,7 +44,7 @@
    "quote": "a. reid moved to approve the minutes for 2024-06-24. g. mcleod seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Reid",
    "seconded_by": "G. McLeod",
    "outcome": "passed unanimously",
@@ -53,6 +53,191 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Votes for minutes from 2024-05-13 and 2024-06-12 were not taken (quorum issues) and are not included. All other votes were recorded by voice vote with unanimous passage.",
- "cost_usd": 0.1231504
+ "note": "Text extraction is clean typed minutes, not a scan. Three of five members were present (Allison and Brenner absent), so the board had a quorum for votes. Voice votes are recorded as 'passed unanimously' with no roll-call counts. The 240 Summer St approvals were conditional, with written decisions deferred to the next meeting. Richard Harris and Logan O’Connell are listed in the header without an explicit attendance line; their status is marked present from their participation in the discussion. No dollar figures appear in the minutes. Public comment was recorded as 'None' at both points, so no speakers are listed.",
+ "cost_usd": 0.01628927,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member (presided; called the meeting to order)",
+   "status": "present",
+   "quote": "t. willsmer called the meeting to order."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "matthew allison, matthew brenner"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "matthew allison, matthew brenner"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Interim Land Use Director",
+   "status": "present",
+   "quote": "r. harris expected to be difficult due to"
+  },
+  {
+   "name": "Logan O’Connell",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "l. o'connell explained that the select board's choice to right of first refusal (rofr) was pending"
+  },
+  {
+   "name": "Tom Gibbons",
+   "role": "attorney for Rick Hillman, Trustee of RIMRIC Realty Trust",
+   "status": "present",
+   "quote": "t. willsmer invited tom gibbons (attorney for rick hillman, trustee of rimric realty trust) to speak."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "255 Sunny Hill Rd stormwater management permit hearing continued from 2024-06-10 to 2024-08-12.",
+   "quote": "255 sunny hill rd - stormwater management permit (cont'd from 2024-06-10, to 2024-08-12)"
+  },
+  {
+   "decision": "The Board agreed to compile the ARPA project ideas in an email to the Town Manager’s office; no active project was identified.",
+   "quote": "the board agreed to compile these ideas in an email to the town manager's office."
+  },
+  {
+   "decision": "The Board will wait until it has full attendance before discussing the next Agricultural Commission appointment.",
+   "quote": "the board prefers to wait until it has full attendance to discuss the next appointment."
+  },
+  {
+   "decision": "Approval of the 2024-05-13 minutes postponed to 2024-08-12 because a member was not on the board at that meeting, leaving no simple majority.",
+   "quote": "g. mcleod was unable to vote on this as he wasn't part of the board during this meeting"
+  },
+  {
+   "decision": "Approval of the 2024-06-12 minutes postponed to 2024-08-12 because two members were absent, leaving no simple majority.",
+   "quote": "a. reid and t. willsmer were absent during this meeting, not leaving enough members to reach a simple majority."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA funding requests",
+   "what_was_recorded": "The board had no active project to which ARPA funding could be applied and sought ideas; suggestions were a sound system upgrade for the Bilotta Meeting Room and another Zoom link, which the Interim Land Use Director expected to be difficult because of Zoom licensing and ARPA contracting deadlines. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "t. willsmer confirmed that the board doesn't currently have any active projects which arpa funding could be put towards"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: 255 Sunny Hill Rd stormwater permit",
+   "resolution": "continued to 2024-08-12",
+   "quote": "255 sunny hill rd - stormwater management permit (cont'd from 2024-06-10, to 2024-08-12)",
+   "tags": [
+    "stormwater",
+    "hearing",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Public hearing: 240 Summer St site plan",
+   "resolution": "approved subject to waivers; written decision at next meeting",
+   "quote": "a. reid moved to approve the site plan for 240 summer st subject to the waivers conditioned as discussed and a written decision to be acted upon at the next meeting.",
+   "tags": [
+    "site plan",
+    "approval",
+    "conditions"
+   ]
+  },
+  {
+   "topic": "Public hearing: 240 Summer St stormwater permit",
+   "resolution": "approved subject to conditions; decision at next meeting",
+   "quote": "a. reid moved to approve the stormwater management permit for 240 summer st subject to the standard and special conditions",
+   "tags": [
+    "stormwater",
+    "approval",
+    "engineering review"
+   ]
+  },
+  {
+   "topic": "Right of First Refusal, 20 Kilburn St",
+   "resolution": "recommended to Select Board that the Town not exercise its right to acquire",
+   "quote": "l. o'connell explained that the select board's choice to right of first refusal (rofr) was pending",
+   "tags": [
+    "right of first refusal",
+    "Chapter 61B",
+    "open space",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "ARPA funding requests",
+   "resolution": "no action; ideas to be emailed to Town Manager’s office",
+   "quote": "the board agreed to compile these ideas in an email to the town manager's office.",
+   "tags": [
+    "ARPA",
+    "funding",
+    "Zoom"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted, no action",
+   "quote": "per g. mcleod, recently discussed the open space plan update due in 2027.",
+   "tags": [
+    "committees",
+    "open space",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "2024-06-24 approved; 2024-05-13 and 2024-06-12 postponed",
+   "quote": "after review, a. reid moved to approve the minutes for 2024-06-24.",
+   "tags": [
+    "minutes",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted, no action",
+   "quote": "all meetings are 6:00 p.m. at town hall on the 2nd and 4th monday of each month, unless otherwise noted.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "a. reid moved to adjourn. g. mcleod seconded. voice vote, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan",
+  "stormwater",
+  "right of first refusal",
+  "Chapter 61B",
+  "open space",
+  "ARPA",
+  "minutes approval",
+  "committee reports",
+  "quorum"
+ ],
+ "dropped_unquoted_by_field": {}
 }

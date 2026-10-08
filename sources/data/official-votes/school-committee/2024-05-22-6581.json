@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-05-22",
  "docid": "6581",
@@ -12,39 +12,377 @@
  },
  "votes": [
   {
-   "motion": "to not support the rainwater retention program",
+   "motion": "Not to support the rainwater retention program.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Sculimbrene",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
    "quote": "ms. brzozoski makes a motion to not support the rainwater retention program, mr. sculimbrene seconds the motion all agree."
   },
   {
-   "motion": "to not increase any school choice spots for 1st through 8th grade",
+   "motion": "Not to increase any school choice spots for 1st through 8th grade.",
    "moved_by": "Mr. Sculimbrene",
    "seconded_by": "Mr. Lehtinen",
    "outcome": "passed 3-0-1",
    "procedural": false,
-   "quote": "mr. sculimbrene makes a motion to not increase any school choice spots for 1 st thru 8th grade, mr. lehtinen seconds the motion, roll call vote approved by mr. lehtinen, mr. sculimbrene, ms. archambault and abstained by ms. brzozoski"
+   "quote": "mr. lehtinen seconds the motion, roll call vote approved by mr. lehtinen, mr. sculimbrene, ms. archambault and abstained by ms. brzozoski"
   },
   {
-   "motion": "to accept donations of $24.90 from Box tops for Primary School gift account and $21.00 from Box tops for Turkey Hill gift account",
+   "motion": "To accept the $24.90 and $21.00 Box Tops donations to the Primary School and Turkey Hill gift accounts.",
    "moved_by": "Mr. Lehtinen",
    "seconded_by": "Ms. Brzozoski",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. lehtinen makes a motion to accept the donation, ms. brzozoski seconds the motion, all approve"
   },
   {
-   "motion": "to enter executive session and adjourn immediately following",
+   "motion": "To enter executive session and adjourn immediately following at 8:48 pm.",
    "moved_by": "Mr Lehtinen",
    "seconded_by": "Ms. Brzozoski",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr lehtinen makes a motion to enter executive session and adjourn immediately following at 8:48 pm, ms. brzozoski seconds the motion all approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.046194400000000004
+ "note": "Clean digital text, not a scan; all five pages read. Peter Beardmore is recorded absent. The minutes print no vote on approving prior minutes (\"Regular Session None\") and no vote on the warrant, so neither is recorded as a vote. No line-item transfers appear. Board members Brzozoski, Lehtinen and Sculimbrene speak in the unlabelled passages after the public comment on page 2; they are recorded as members, not as public comment. The adjournment motion sets an executive session at 8:48 pm, but the minutes do not print the purpose beyond the agenda heading or record any executive session vote beyond the adjournment motion. The school choice tally is printed as an approval by three and an abstention by one.",
+ "cost_usd": 0.02089107,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair -present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "anthony sculimbrene, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "absent",
+   "quote": "peter beardmore, member - absent"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Eric Hevy",
+   "role": "Director of Grounds",
+   "status": "present",
+   "quote": "mr. hevy gives an update on current projects happening within the district"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services",
+   "status": "not stated",
+   "quote": "julianna hanscom - director of special services"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW director",
+   "status": "present",
+   "quote": "mr. bernard reports he has received many questions via email, and has responded"
+  },
+  {
+   "name": "Meredith Weiss",
+   "role": "ELL Coordinator",
+   "status": "present",
+   "quote": "ms. weiss reports their hopeful intentions are to align the three stakeholders"
+  },
+  {
+   "name": "Michael Smith",
+   "role": "Teacher",
+   "status": "not stated",
+   "quote": "weiss - ell coordinator, michael smith - teacher"
+  },
+  {
+   "name": "Sybil Kaufman",
+   "role": "public comment, 27 Oak Ave",
+   "status": "present",
+   "quote": "sybil kaufman, 27 oak ave thank you to everyone and kate for putting all the extra work."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair asked each committee member to come up with topics for the delegates and send them to her before the next meeting.",
+   "quote": "if each committee member could come up with topics and send them to me prior to the next meeting."
+  },
+  {
+   "decision": "The Superintendent is preparing an informational slide deck on student activity fees, to be shared at a June meeting.",
+   "quote": "i am working with mr. santry to prepare an informational slide deck that will be shared at a june meeting."
+  },
+  {
+   "decision": "Completed superintendent evaluations are due to the Chair by June 5, for the June 12 meeting.",
+   "quote": "so i need the completed evaluations by june5th"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Rainwater retention project cost",
+   "what_was_recorded": "The rainwater project was outsourced, and Mr. Bernard put its cost at around $5-10,000; members asked whether the school was consulted before the money was spent.",
+   "quote": "ms. brzozoski asks if we outsourced this, he replies yes we did and it was around $5-10,000.",
+   "figures_as_printed": [
+    "$5-10,000"
+   ]
+  },
+  {
+   "topic": "Warrant approval",
+   "what_was_recorded": "The warrant for 4/30/24 to 5/15/24 was reported with its total; the Chair signed it and there were no questions.",
+   "quote": "warrant total 4/30/24-5/15/24 $226,250.36 ms. archambault has signed, no questions.",
+   "figures_as_printed": [
+    "$226,250.36"
+   ]
+  },
+  {
+   "topic": "Box Tops donations",
+   "what_was_recorded": "Two Box Tops donations were reported, to be deposited into the Primary School and Turkey Hill gift accounts, and accepted.",
+   "quote": "donation $24.90 from box tops will be deposited into gift account at primary school and $21.00 from box tops",
+   "figures_as_printed": [
+    "$24.90",
+    "$21.00"
+   ]
+  },
+  {
+   "topic": "State aid bill for Lunenburg",
+   "what_was_recorded": "The Chair reported a bill, which MASC said would bring around $500,000 to Lunenburg because it is not a hold harmless community.",
+   "quote": "this bill will bring around $500,000 to lunenburg as we are not a hold harmless community",
+   "figures_as_printed": [
+    "$500,000"
+   ]
+  },
+  {
+   "topic": "Override and ESSER funding ending",
+   "what_was_recorded": "A member said the override was modest, set to level fund schools less the ending ESSER funding, and that some positions would be cut; no dollar figure was printed.",
+   "quote": "i personally did not feel it appropriate to transfer the burden of that money from the federal government grants on to the backs of lunenburg taxpayers.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "School choice and class sizes",
+   "what_was_recorded": "The Superintendent had explored every option to bring money into the district through school choice; the committee declined to add spots for grades 1-8.",
+   "quote": "wanted to make sure we explored every option available to bring money into the district.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Field trip bussing costs",
+   "what_was_recorded": "Bussing for field trips was described as very expensive; no dollar figure was printed.",
+   "quote": "bussing for field trips are very expensive, which made field trips trickier to plan this year.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sybil Kaufman",
+   "stated_role": "27 Oak Ave",
+   "topic": "debrief on override; asks the board to ask for what children need and to change meeting structure",
+   "quote": "thank you to everyone and kate for putting all the extra work."
+  },
+  {
+   "speaker": "Dr. Kate Burnham",
+   "stated_role": "Superintendent of Schools",
+   "topic": "Primary School celebration boxes for the food pantry; superintendent evaluation timeline",
+   "quote": "dr. burnham shares this afternoon she was invited the primary school."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval (Regular Session)",
+   "resolution": "no action; no minutes listed",
+   "quote": "a. regular session none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Chair's report on override and state aid",
+   "resolution": "reported; attorney checking; bill tracked",
+   "quote": "thank you to everyone who helped get the override passed, whether you were part of sos lunenburg or",
+   "tags": [
+    "override",
+    "state aid",
+    "chapter 70"
+   ]
+  },
+  {
+   "topic": "Warrants and line item transfers",
+   "resolution": "chair signed; no questions; no vote",
+   "quote": "warrant total 4/30/24-5/15/24 $226,250.36 ms. archambault has signed, no questions.",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "reported; deck on student activity fees to follow",
+   "quote": "we need 34 transportation forms at the high school, and 28 at the middle school",
+   "tags": [
+    "transportation",
+    "enrollment",
+    "activity fees"
+   ]
+  },
+  {
+   "topic": "Rainwater retention project",
+   "resolution": "motion not to support passed",
+   "quote": "ms. brzozoski makes a motion to not support the rainwater retention program",
+   "tags": [
+    "facilities",
+    "rainwater",
+    "cost"
+   ]
+  },
+  {
+   "topic": "School choice spots grades 1-8",
+   "resolution": "no increase; passed 3-0-1",
+   "quote": "mr. sculimbrene makes a motion to not increase any school choice spots for 1 st thru 8th grade",
+   "tags": [
+    "school choice",
+    "class size",
+    "enrollment"
+   ]
+  },
+  {
+   "topic": "Family-School Partnership Compact",
+   "resolution": "discussed; shorter public version and QR feedback raised",
+   "quote": "the committee discusses the documents, mostly that it is a great document",
+   "tags": [
+    "family engagement",
+    "culture and climate"
+   ]
+  },
+  {
+   "topic": "Facilities update",
+   "resolution": "update; no action",
+   "quote": "mr. hevy gives an update on current projects happening within the district",
+   "tags": [
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Topics for delegation",
+   "resolution": "members to send topics to the Chair",
+   "quote": "ms. archambault shares that originally we wanted to meet with the delegates.",
+   "tags": [
+    "delegation",
+    "state funding",
+    "chapter 70"
+   ]
+  },
+  {
+   "topic": "Donation acceptance",
+   "resolution": "accepted, passed",
+   "quote": "mr. lehtinen makes a motion to accept the donation, ms. brzozoski seconds the motion, all approve",
+   "tags": [
+    "donations"
+   ]
+  },
+  {
+   "topic": "New IEP form",
+   "resolution": "presented; no action",
+   "quote": "the team shares a powerpoint slide deck explaining the new iep form and the differences that we",
+   "tags": [
+    "special education",
+    "IEP"
+   ]
+  },
+  {
+   "topic": "2024-2025 school committee calendar",
+   "resolution": "presented; questions to Superintendent",
+   "quote": "the school committee calendar is presented for the 24/25 school year",
+   "tags": [
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Public comment (Superintendent)",
+   "resolution": "shared; evaluation timeline set for June 12",
+   "quote": "dr. burnham shares this afternoon she was invited the primary school.",
+   "tags": [
+    "public comment",
+    "superintendent evaluation"
+   ]
+  },
+  {
+   "topic": "Committee and subcommittee reports",
+   "resolution": "reported; no action",
+   "quote": "ms. brzozoski reports the pacsal met and talked about the new iep form and bylaws at turkey hill.",
+   "tags": [
+    "PTO",
+    "PACSAL",
+    "field trips"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed for future meetings",
+   "quote": "topics for future discussion delegation list aarpa funds",
+   "tags": [
+    "AARPA",
+    "delegation"
+   ]
+  },
+  {
+   "topic": "Executive session listed on agenda",
+   "resolution": "listed; entered at adjournment",
+   "quote": "executive session -to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "entered executive session and adjourned at 8:48 pm",
+   "quote": "mr lehtinen makes a motion to enter executive session and adjourn immediately following at 8:48 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "budget override",
+  "ESSER funding",
+  "school choice",
+  "class size",
+  "rainwater project",
+  "facilities",
+  "IEP",
+  "family-school partnership",
+  "donations",
+  "warrants",
+  "superintendent evaluation",
+  "executive session",
+  "state aid",
+  "chapter 70"
+ ],
+ "dropped_unquoted_by_field": {}
 }

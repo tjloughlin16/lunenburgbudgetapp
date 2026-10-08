@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2024-06-04",
  "docid": "6587",
@@ -10,8 +10,210 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06042024-6587",
   "doc_url": "/docs/meetings/historical-commission/2024-06-04-minutes-6587.txt"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "One vote recorded. Text ends abruptly after \"With no further business, the meeting adjourned at 7:29\" with no explicit motion to adjourn stated.",
- "cost_usd": 0.0654341
+ "votes": [
+  {
+   "motion": "Accept the minutes for April 4th, April 22nd, April 25th, and May 2nd, all of 2024.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "amotionwasmadeandpassedtoaccept theminutesfor april 4th, april 22nd, april 25th, andmay2nd, all of 2024."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Single-page text with word spacing lost in extraction; quotes are copied as they appear in the extracted text. The minutes record one motion (approving four sets of minutes) as passed, but print no mover, seconder or vote count, so outcome is 'passed' with no count. Adjournment at 7:29 is stated without a motion, so it is not recorded as a vote. Names of the members appear by surname only, and no first names or roles beyond 'Members' are printed. No dollar figures appear in the minutes.",
+ "cost_usd": 0.01329697,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "McGrath",
+   "role": "Members",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, sandersonandboussomwerepresent."
+  },
+  {
+   "name": "Lakso",
+   "role": "Members",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, sandersonandboussomwerepresent."
+  },
+  {
+   "name": "Sanderson",
+   "role": "Members",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, sandersonandboussomwerepresent."
+  },
+  {
+   "name": "Boussom",
+   "role": "Members",
+   "status": "present",
+   "quote": "membersmcgrath, lakso, sandersonandboussomwerepresent."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "resident",
+   "status": "present",
+   "quote": "for publiccomment, resident analockwoodrequestedthat weconsider beginningtorecordeachmeeting."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "additional publiccomment fromdavepassiosclaimsthat thecaveisnot inthedirect vicinityofconstructionfor phasei of theparkproject"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Resident request that the commission consider recording each meeting is deferred to the next meeting.",
+   "quote": "thisistobediscussedat thenext meeting."
+  },
+  {
+   "decision": "The commission's remaining budget will be used toward historical markers, because it must be spent by July 9th.",
+   "quote": "thecommission'sbudget needstobeusedbyjuly9th, sotheplanistousethefundstowardshistorical markers."
+  },
+  {
+   "decision": "The plan is to add the entire Marshall Park to the town survey as a site.",
+   "quote": "returningtomarshall park, theplanisstill toaddtheentireparktothesurveyasasite."
+  },
+  {
+   "decision": "Next step on Hometown Heroes is to contact the town manager about the project.",
+   "quote": "therearenofurther updatesonthehometownheroesproject; next stepistocontact thetownmanager about theproject."
+  },
+  {
+   "decision": "For 763 Mass Ave, the building inspector suggested dividing the current lot so that land remains for development while the historical structure is preserved.",
+   "quote": "it wassuggestedbythebuildinginspector that thecurrent lot bedivided, tostill providelandfordevelopment, whilealsopreservingthehistorical structure."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Commission budget and historical markers",
+   "what_was_recorded": "The commission's budget must be used by July 9th, and the plan is to spend the funds on historical markers. No dollar figure is printed.",
+   "quote": "thecommission'sbudget needstobeusedbyjuly9th, sotheplanistousethefundstowardshistorical markers.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Historic marker repair at end of Fish street",
+   "what_was_recorded": "The historic marker at the end of Fish street needs trimming and an epoxy repair to the stone. No cost is printed.",
+   "quote": "thehistoricmarker at theendof fishstreet requirestrimmingandanepoxyrepair tothestone.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Recording each meeting",
+   "speaker": "Ana Lockwood",
+   "stated_role": "resident",
+   "quote": "for publiccomment, resident analockwoodrequestedthat weconsider beginningtorecordeachmeeting."
+  },
+  {
+   "topic": "Marshall Park cave and park construction",
+   "speaker": "Dave Passios",
+   "stated_role": "not stated",
+   "quote": "additional publiccomment fromdavepassiosclaimsthat thecaveisnot inthedirect vicinityofconstructionfor phasei of theparkproject, soit shouldhopefullybesafefromdamageduringrenovation."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "amotionwasmadeandpassedtoaccept theminutesfor april 4th, april 22nd, april 25th, andmay2nd, all of 2024.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Public comment: recording meetings",
+   "resolution": "deferred to next meeting",
+   "quote": "thisistobediscussedat thenext meeting.",
+   "tags": [
+    "public comment",
+    "recording"
+   ]
+  },
+  {
+   "topic": "Town survey update",
+   "resolution": "no action; consultant seeking target list of K-houses and sites",
+   "quote": "anupdateonthetownsurvey: thereareapproximately85sites, andtheconsultant isaskingfor atarget list of thek-housesaswell asadditional sites.",
+   "tags": [
+    "survey",
+    "historic inventory",
+    "K-houses"
+   ]
+  },
+  {
+   "topic": "Marshall Park",
+   "resolution": "plan to add entire park to survey; cave comment received",
+   "quote": "returningtomarshall park, theplanisstill toaddtheentireparktothesurveyasasite.",
+   "tags": [
+    "Marshall Park",
+    "survey",
+    "cave"
+   ]
+  },
+  {
+   "topic": "Hometown Heroes project",
+   "resolution": "no update; next step is contacting town manager",
+   "quote": "therearenofurther updatesonthehometownheroesproject; next stepistocontact thetownmanager about theproject.",
+   "tags": [
+    "Hometown Heroes"
+   ]
+  },
+  {
+   "topic": "Commission budget",
+   "resolution": "funds to be used for historical markers before July 9th",
+   "quote": "thecommission'sbudget needstobeusedbyjuly9th, sotheplanistousethefundstowardshistorical markers.",
+   "tags": [
+    "budget",
+    "historical markers"
+   ]
+  },
+  {
+   "topic": "763 Mass Ave demolition delay",
+   "resolution": "no action recorded; first report past due; lot division suggested",
+   "quote": "thefirst report for thedemodelayof 763massavehasgonepast dueasof june1st.",
+   "tags": [
+    "demolition delay",
+    "763 Mass Ave",
+    "building inspector"
+   ]
+  },
+  {
+   "topic": "Arnold Litch cemetery",
+   "resolution": "no action; legal problem unresolved",
+   "quote": "thearnoldlitchcemeteryisstill tiedupinlegal troubles, it isunsurehowor whentheproblemwill beresolvedat themoment.",
+   "tags": [
+    "cemetery",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Historic marker at end of Fish street",
+   "resolution": "no action; trimming and epoxy repair needed",
+   "quote": "thehistoricmarker at theendof fishstreet requirestrimmingandanepoxyrepair tothestone.",
+   "tags": [
+    "historic marker",
+    "repair"
+   ]
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "minutes approval",
+  "town survey",
+  "Marshall Park",
+  "cave",
+  "Hometown Heroes",
+  "commission budget",
+  "historical markers",
+  "763 Mass Ave",
+  "demolition delay",
+  "Arnold Litch cemetery",
+  "Fish street marker",
+  "recording meetings",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2024-06-11",
  "docid": "6596",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the May 14, 2024 minutes",
+   "motion": "Approve the May 14, 2024 minutes.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "mr. lincoln motioned to approve the may 14, 2024 minutes. ms. digiacomo seconded the motion. all approved and the motion carried."
   },
   {
-   "motion": "Accept Ms. Lincoln as chairperson and Ms. Rabbitt as vice-chairperson for FY25",
+   "motion": "Accept Ms. Lincoln as COA chair and Ms. Rabbitt as vice-chair for FY25.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "a motion was made to accept ms. lincoln as chair and ms. rabbitt as vice-chair. the motion was seconded, all approved and the motion was carried."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mrs. Lincoln",
    "seconded_by": "Mr. Lincoln & Ms. Sullivan",
    "outcome": "passed",
@@ -36,7 +36,263 @@
    "quote": "mrs. lincoln motioned to adjourn the meeting. mr. lincoln & ms. sullivan seconded the motion. all approved and the motion was carried."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR'd from scan via macOS Vision. All three votes passed unanimously with \"All approved\" stated in the minutes.",
- "cost_usd": 0.0735691
+ "dropped_unquoted": 2,
+ "note": "Text is OCR of a 2-page scan (macOS Vision), so spelling and punctuation may be off and quotes are checked against this OCR text. Page 1 starts mid-attendance-list, so the header naming who was present or absent is missing; those list names are recorded with status \"not stated\". No roll-call or vote counts are printed; each motion records only \"all approved\" / \"carried\", so outcomes are \"passed\" without a tally. Other points: the announcements say \"The Pepperell Council on Aging is now closed,\" which looks like a typo for Lunenburg, but the minutes say Pepperell as printed; \"Ana Lockwood\" and \"Anna Lockwood\" are both printed for the same applicant; \"Ms. Lincoln\" (chair nominee) and \"Mrs./Mr. Lincoln\" are not reconciled; the meeting-date change has no vote recorded. Budget items name no dollar figures.",
+ "cost_usd": 0.01683767,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "McGuigan, Jane",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mcguigan, jane rabbitt, susan o'sullivan, judy tarbell, helen balcom, diane nowd & elena christopher."
+  },
+  {
+   "name": "Rabbitt, Susan",
+   "role": "Vice-chair nominee (per New Business)",
+   "status": "not stated",
+   "quote": "mcguigan, jane rabbitt, susan o'sullivan, judy tarbell, helen balcom, diane nowd & elena christopher."
+  },
+  {
+   "name": "O'Sullivan, Judy",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mcguigan, jane rabbitt, susan o'sullivan, judy tarbell, helen balcom, diane nowd & elena christopher."
+  },
+  {
+   "name": "Tarbell, Helen",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mcguigan, jane rabbitt, susan o'sullivan, judy tarbell, helen balcom, diane nowd & elena christopher."
+  },
+  {
+   "name": "Balcom, Diane",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mcguigan, jane rabbitt, susan o'sullivan, judy tarbell, helen balcom, diane nowd & elena christopher."
+  },
+  {
+   "name": "Nowd",
+   "role": "not stated (surname only in minutes, first name not printed)",
+   "status": "not stated",
+   "quote": "balcom, diane nowd & elena christopher."
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. christopher informed the board that main st. bank will be closing it's doors permanently."
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "guests caesar nuzzolo, select board member & ana lockwood parks & recreation."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Parks & Recreation",
+   "status": "present",
+   "quote": "guests caesar nuzzolo, select board member & ana lockwood parks & recreation."
+  },
+  {
+   "name": "Mr. Lincoln",
+   "role": "not stated (board member; made motions)",
+   "status": "present",
+   "quote": "mr. lincoln motioned to approve the may 14, 2024 minutes. ms. digiacomo seconded the motion. all approved and the motion carried."
+  },
+  {
+   "name": "Mrs. Lincoln",
+   "role": "not stated (board member; made motion to adjourn)",
+   "status": "present",
+   "quote": "mrs. lincoln motioned to adjourn the meeting. mr. lincoln & ms. sullivan seconded the motion. all approved and the motion was carried."
+  },
+  {
+   "name": "Ms. DiGiacomo",
+   "role": "Board member (retiring, per Current Business)",
+   "status": "present",
+   "quote": "mr. lincoln motioned to approve the may 14, 2024 minutes. ms. digiacomo seconded the motion. all approved and the motion carried."
+  },
+  {
+   "name": "Ms. Sullivan",
+   "role": "not stated (seconded adjournment)",
+   "status": "present",
+   "quote": "mrs. lincoln motioned to adjourn the meeting. mr. lincoln & ms. sullivan seconded the motion. all approved and the motion was carried."
+  },
+  {
+   "name": "Ms. Doherty",
+   "role": "not stated (Director's Report presenter)",
+   "status": "present",
+   "quote": "mcoa resource guide for council on aging board members ~ ms. doherty distributed the mcoa resource guide for review."
+  },
+  {
+   "name": "Michele Beauvais",
+   "role": "Minutes author (Respectfully Submitted by)",
+   "status": "not stated",
+   "quote": "respectfully submitted by, michele beauvais"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The COA meeting date was changed to July 16, 2024; the minutes list the next meeting as Tuesday, July 16, 2024 at 9:30 AM. No vote is recorded for the change.",
+   "quote": "coa meeting date change - july 16, 2024. (a new photo of the coa will be taken on 8/16/24.)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY25 COA budget request and Special Fall Town Meeting budget requests",
+   "what_was_recorded": "Current business on the FY25 COA budget request and the budget requests for Special Fall Town Meeting was listed with no update; no figures were printed.",
+   "quote": "update fy 25 coa budget request & budget requests for special fall town meeting ~ no update.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Lunenburg Senior Tax Relief",
+   "what_was_recorded": "Listed under current business with no report; no figures were printed.",
+   "quote": "lunenburg senior tax relief ~ no report.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "COA revolving fund for the meal site",
+   "what_was_recorded": "Ms. Doherty spoke with the Town Accountant; an account is to be set up at Hannaford, billed monthly through a revolving fund. No dollar figures were printed.",
+   "quote": "an account will be set up at hannaford. we will be billed monthly with a revolving fund.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements (Town Manager resignation, COA closure, Capital Plan parking lot)",
+   "resolution": "noted",
+   "tags": [
+    "town manager",
+    "capital plan",
+    "parking lot",
+    "COA closure"
+   ],
+   "quote": "our town manager heather lemieux has resigned. her last day will be sunday, august 4, 2024."
+  },
+  {
+   "topic": "Minutes approval, May 14, 2024",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "mr. lincoln motioned to approve the may 14, 2024 minutes. ms. digiacomo seconded the motion. all approved and the motion carried."
+  },
+  {
+   "topic": "New business: COA meeting date change",
+   "resolution": "date changed to July 16, 2024",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "coa meeting date change - july 16, 2024. (a new photo of the coa will be taken on 8/16/24.)"
+  },
+  {
+   "topic": "New business: FY25 chair and vice-chair nominations",
+   "resolution": "approved",
+   "tags": [
+    "board officers",
+    "elections"
+   ],
+   "quote": "a motion was made to accept ms. lincoln as chair and ms. rabbitt as vice-chair. the motion was seconded, all approved and the motion was carried."
+  },
+  {
+   "topic": "New business: Boston Post Cane",
+   "resolution": "noted; next in line declined",
+   "tags": [
+    "Boston Post Cane",
+    "honors"
+   ],
+   "quote": "our current holder no longer lives in lunenburg. kay previte who would be next in line for the boston post cane has declined the honor."
+  },
+  {
+   "topic": "Current business: FY25 COA budget and Fall Town Meeting requests",
+   "resolution": "no update",
+   "tags": [
+    "budget",
+    "town meeting"
+   ],
+   "quote": "update fy 25 coa budget request & budget requests for special fall town meeting ~ no update."
+  },
+  {
+   "topic": "Current business: Lunenburg Senior Tax Relief",
+   "resolution": "no report",
+   "tags": [
+    "tax relief",
+    "seniors"
+   ],
+   "quote": "lunenburg senior tax relief ~ no report."
+  },
+  {
+   "topic": "Current business: Lunenburg 300th Celebration",
+   "resolution": "continued; venue search ongoing",
+   "tags": [
+    "celebration",
+    "venue"
+   ],
+   "quote": "still trying to find a location that can accommodate 2,000 people."
+  },
+  {
+   "topic": "Current business: COA board member opening",
+   "resolution": "noted; vacancy and applicant",
+   "tags": [
+    "board membership",
+    "vacancy"
+   ],
+   "quote": "4. council on aging board member opening ~ ms. digiacomo is retiring as a member of the board."
+  },
+  {
+   "topic": "Director's report: resource guide, revolving fund, Capital Plan, generator, roof, parking lot, grounds, patio",
+   "resolution": "noted; generator not in yet; patio completion summer 2024",
+   "tags": [
+    "director's report",
+    "capital plan",
+    "parking lot",
+    "revolving fund",
+    "grounds",
+    "patio",
+    "generator",
+    "roof"
+   ],
+   "quote": "mcoa resource guide for council on aging board members ~ ms. doherty distributed the mcoa resource guide for review."
+  },
+  {
+   "topic": "Notices and communications: Main St. Bank closing",
+   "resolution": "noted",
+   "tags": [
+    "bank closure",
+    "notices"
+   ],
+   "quote": "ms. christopher informed the board that main st. bank will be closing it's doors permanently."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:50 am",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "mrs. lincoln motioned to adjourn the meeting. mr. lincoln & ms. sullivan seconded the motion. all approved and the motion was carried."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior services",
+  "town manager resignation",
+  "capital plan",
+  "parking lot",
+  "budget requests",
+  "revolving fund",
+  "meal site",
+  "board officers",
+  "board vacancy",
+  "Boston Post Cane",
+  "Lunenburg 300th celebration",
+  "Main St. Bank closing",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

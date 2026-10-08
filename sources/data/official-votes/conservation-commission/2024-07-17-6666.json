@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2024-07-17",
  "docid": "6666",
@@ -12,176 +12,615 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 6/21/23",
+   "motion": "Approve the minutes of 6/21/23.",
    "moved_by": "Mike L.",
-   "seconded_by": "Jenny P.",
-   "outcome": "passed 5-0",
+   "seconded_by": "Jenny P",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike l., second: jenny p to approve the minutes of 6/21/23. roll call vote: mike-aye, jeff-aye, rich-aye, jenny-aye and mary-aye."
+   "quote": "motion: mike l., second: jenny p to approve the minutes of 6/21/23."
   },
   {
-   "motion": "Approve the minutes of 8/2/23",
+   "motion": "Approve the minutes of 8/2/23.",
    "moved_by": "Rich B.",
-   "seconded_by": "Jenny P.",
-   "outcome": "passed 5-0",
+   "seconded_by": "Jenny P",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: rich b., second: jenny p to approve the minutes of 8/2/23. roll call vote: mike-aye, jeff-aye, rich-aye, jenny-aye and mary-aye."
+   "quote": "motion: rich b., second: jenny p to approve the minutes of 8/2/23."
   },
   {
-   "motion": "Elect Jenny as Vice-Chair",
+   "motion": "Elect Jenny as Vice-Chair.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: mike l. to elect jenny as vice-chair. roll call vote: mike-aye, jeff-aye, rich-aye, chris -aye and mary-aye. (jenny abstained)"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: rich b., second: mike l. to elect jenny as vice-chair."
   },
   {
-   "motion": "Elect Mike L. as Clerk",
+   "motion": "Elect Mike L. as Clerk.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s . to elect mike l. as clerk . roll call vote: jeff-aye, rich-aye, jenny-aye, chris-aye and mary-aye. ( mike abstained )"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "roll call vote: jeff-aye, rich-aye, jenny-aye, chris-aye and mary-aye."
   },
   {
-   "motion": "Continue 60 Cross Rd. Lot 12A to 8/7/24",
+   "motion": "Continue 60 Cross Rd. Lot 12A to 8/7/24.",
    "moved_by": "Jenny P.",
    "seconded_by": "Rich B.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: jenny p ., second: rich b . to conti nue 60 cross rd . lot 12a to 8 /7 /24. roll call vote- mike-aye, jeff-aye , rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to conti nue 60 cross rd . lot 12a to 8 /7 /24."
   },
   {
-   "motion": "Continue 60 Cross Rd. Lot 12B to 8/7/24",
+   "motion": "Continue 60 Cross Rd. Lot 12B to 8/7/24.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: rich b ., second: chris s . to conti nue 60 cross rd. lot 12 b to 8 /7 /24. roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to conti nue 60 cross rd. lot 12 b to 8 /7 /24."
   },
   {
-   "motion": "Continue Parcel # 84-001 to 8/7/24 and provide O&M plan",
+   "motion": "Continue Parcel 84-001 to 8/7/24 and require the O&M plan, a letter on the sludge removal, no wetlands crossed and an updated plan.",
    "moved_by": "Rich B.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: rich b. , second: jenny p. to continue parcel # 84-001 to 8/7/24 and provide the o&m plan, a letter updated that the sludge will be removed off-site , no wetlands crossed and the updated plan proposal with limit of work. roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to continue parcel # 84-001 to 8/7/24 and provide the o&m plan,"
   },
   {
-   "motion": "Continue Lot 2 Cross Road to 8/7/24",
+   "motion": "Continue Lot 2 Cross Road to 8/7/24.",
    "moved_by": "Chris S.",
+   "seconded_by": "Jenny P",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue lot 2 cross road to 8/ 7 /24."
+  },
+  {
+   "motion": "Approve the NOI as submitted with a Standard Order of Conditions for 791 Mass Ave.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Jeff V.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the noi as submitted with a standard order of conditions for 791 mass ave."
+  },
+  {
+   "motion": "Continue 495 Leominster-Shirley Road to 8/7/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Jeff V.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 495 leominster-shirley road to 8/ 7 /24."
+  },
+  {
+   "motion": "Continue 390 Howard Street to 8/7/24.",
+   "moved_by": "Rich B.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: chris s ., second: jenny p . to continue lot 2 cross road to 8/ 7 /24. roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to continue 390 howard street to 8/ 7 /24."
   },
   {
-   "motion": "Approve the NOI as submitted with Standard Order of Conditions for 791 Mass Ave",
+   "motion": "Approve the NOI for 255 Sunny Hill Road with the special condition that the 6 inch drain pipe location is updated on the drawing and submitted before installation.",
    "moved_by": "Rich B.",
    "seconded_by": "Jeff V.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: rich b. , second: jeff v . to approve the noi as submitted with a standard order of conditions for 791 mass ave. roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to approve the noi with the special condition that the 6 \" drain pipe location"
   },
   {
-   "motion": "Continue 495 Leominster-Shirley Road to 8/7/24",
-   "moved_by": "Rich B.",
-   "seconded_by": "Jeff V.",
-   "outcome": "passed 6-0",
-   "procedural": false,
-   "quote": "motion: rich b. , second: jeff v. to continue 495 leominster-shirley road to 8/ 7 /24. roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
-  },
-  {
-   "motion": "Continue 390 Howard Street to 8/7/24",
-   "moved_by": "Rich B.",
-   "seconded_by": "Jenny P.",
-   "outcome": "passed 6-0",
-   "procedural": false,
-   "quote": "motion: rich b. , second: jenny p . to continue 390 howard street to 8/ 7 /24. roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
-  },
-  {
-   "motion": "Approve the NOI for 255 Sunny Hill Road with special condition regarding drain pipe location",
-   "moved_by": "Rich B.",
-   "seconded_by": "Jeff V.",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: rich b. , second: jeff v. to approve the noi with the special condition that the 6 \" drain pipe location is updated on the drawing and submitted to the administrator prior to the drain pipe being installed . discussion: jeff asked who was responsible for maintaining the drain and brian replied that a ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Continue 171 Arbor Street to 8/21/24",
+   "motion": "Continue 171 Arbor Street to 8/21/24.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: rich b. , second: mike l. to continue to 8/21/24. roll call vote- chris-aye, rich-aye, jeff-aye, mike-aye, and mary -aye. (jenny could not vote)"
+   "quote": "motion: rich b. , second: mike l. to continue to 8/21/24."
   },
   {
-   "motion": "Approve removal of trees and replace with Arborvitae at 67 Peninsula Drive",
+   "motion": "Approve removal of the trees at 67 Peninsula Drive and replacement with arborvitae (administrative determination).",
    "moved_by": "Chris S.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: chris s., second: jenny p. to approve the removal of the trees and replace with arborvitae. roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to approve the removal of the trees and replace with arborvitae."
   },
   {
-   "motion": "Approve the Certificate of Compliance for 4 Sunset Lane",
+   "motion": "Approve the Certificate of Compliance for 4 Sunset Lane.",
    "moved_by": "Rich B.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: rich b ., second: jenny p. to approve the certificate of compliance for 4 sunset lane . roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to approve the certificate of compliance for 4 sunset lane ."
   },
   {
-   "motion": "Approve the Certificate of Compliance for 245 Holman St. Lot 3",
+   "motion": "Approve the Certificate of Compliance for 245 Holman St. Lot 3.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: rich b ., second: chris s. to approve the certificate of compliance for 2 4 5 holman st. lot 3 . roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to approve the certificate of compliance for 2 4 5 holman st. lot 3 ."
+  },
+  {
+   "motion": "Approve the Certificate of Compliance for 251 Holman St. Lot 4.",
+   "moved_by": "Jenny P.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the certificate of compliance for 251 holman st. lot 4 ."
   },
   {
    "motion": "Approve the Certificate of Compliance for 512 Northfield Rd.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: rich b ., second: chris s. to approve the certificate of compliance for 512 northfield rd . roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to approve the certificate of compliance for 512 northfield rd ."
   },
   {
    "motion": "Approve the Certificate of Compliance for 41 Country Rd.",
    "moved_by": "Mike L.",
    "seconded_by": "Rich B.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike l. , second: rich b . to approve the certificate of compliance for 4 1 country rd . roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to approve the certificate of compliance for 4 1 country rd ."
   },
   {
-   "motion": "Approve the Certificate of Compliance for 23 Cove Rd",
+   "motion": "Approve the Certificate of Compliance for 23 Cove Rd.",
    "moved_by": "Rich B.",
    "seconded_by": "Mike L.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m otion: rich b ., second: mike l. to approve the certificate of compliance for 23 cove rd . roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to approve the certificate of compliance for 23 cove rd ."
   },
   {
-   "motion": "Purchase a new riding lawn mower, not to exceed $2,300",
+   "motion": "Purchase a new riding lawn mower, not to exceed $2,300.",
    "moved_by": "Rich B.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m otion: rich b ., second: jenny p . to purchase a new riding lawn mower , not to exceed $2,300. roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to purchase a new riding lawn mower , not to exceed $2,300."
   },
   {
-   "motion": "Adjourn at 9:37 pm",
+   "motion": "Adjourn the meeting at 9:37 pm.",
    "moved_by": "Chris S.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "m otion: chris s. ., second: jenny p . to adjourn at 9:37 pm. roll call vote- mike-aye, jeff-aye, rich-aye, jenny -aye, chris-aye, and mary -aye."
+   "quote": "to adjourn at 9:37 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Text is readable OCR/scan with some typographical artifacts (irregular spacing, two periods in \"Chris S. .\", \"M otion\" with space). All 22 votes recorded in minutes with outcomes and vote counts clearly stated.",
- "cost_usd": 0.1353964
+ "dropped_unquoted": 0,
+ "note": "Text extraction, not a scan: readable, but spacing is broken throughout (split words such as 'conti nue', 'Jonat han', 'Wayne Gariep y'; stray spaces before punctuation). Quotes were copied with runs of spaces collapsed to one, and the printed spacing kept elsewhere. Votes are recorded by roll call names only, with no printed tally, so outcomes are 'passed' read from the listed ayes; 'Jenny could not vote' on 255 Sunny Hill and 171 Arbor, and Jenny abstained on Vice-Chair. Jeff Viviano is not in the start-of-meeting roll call but voted on several motions, so he is marked present on the strength of those votes. Chris joined mid-meeting. The letterhead spells the administrator 'Sophia Dorow' and the roll call 'Sophie Dorow'; the name is given as printed in the roll call. The Wayne Gariepy name is reconstructed from a split 'Gariep y'. Bob Pease's resignation and the 2023 Chapter 61B vote are reported, not recorded here. Several other people were mentioned but did not appear (Bob Pease, Matt Marro, Chuck Caron, Kevin O'Brien, Steve Powell, Anna Petrie, John Esposito, Jane Ranley as minutes clerk) and are not listed as attendees. Jack Mourad, an applicant's attorney, is listed as an attendee but not as a public commenter.",
+ "cost_usd": 0.02993677,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Interim Chair",
+   "status": "present",
+   "quote": "call to order at 7pm by mary w."
+  },
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "jenny volunteered to be clerk or vice-chair."
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "mike replied that they could chain the mower in the shed"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "",
+   "status": "present",
+   "quote": "rich nominated mike l. as clerk."
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "",
+   "status": "present",
+   "quote": "(chris joined the meeting.)"
+  },
+  {
+   "name": "Jeff Viviano",
+   "role": "",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, jeff-aye, rich-aye, jenny-aye and mary-aye."
+  },
+  {
+   "name": "Sophie Dorow",
+   "role": "Admin.",
+   "status": "present",
+   "quote": "mary w. and sophie dorow (admin.)"
+  },
+  {
+   "name": "Wayne Gariepy",
+   "role": "32 Courtland Circle & Trustee @ The Village",
+   "status": "present",
+   "quote": "wayne added that the sludge will be removed from the site by the contractor."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "McCarty Engineering",
+   "status": "present",
+   "quote": "brian marchetti (mccarty engineering) and mary ann dipinto (3 oaks environmental)."
+  },
+  {
+   "name": "Mary Ann DiPinto",
+   "role": "3 Oaks Environmental",
+   "status": "present",
+   "quote": "brian marchetti (mccarty engineering) and mary ann dipinto (3 oaks environmental)."
+  },
+  {
+   "name": "Jonathan Collette",
+   "role": "Haley & Ward",
+   "status": "present",
+   "quote": "jonat han collette ( haley & ward)- screen-shared the site plan for the old"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy",
+   "status": "present",
+   "quote": "greg roy (dillis & roy) screen- shared the site plan filed with the rda"
+  },
+  {
+   "name": "Ken Dow",
+   "role": "Environmental Compliance Manager for PJ Keating",
+   "status": "present",
+   "quote": "ken dow (environmental compliance manager for pj keating) noted that the letter was sent to a. aubrey on 6/25/24 in error."
+  },
+  {
+   "name": "Ken Paton",
+   "role": "290 Leominster Road",
+   "status": "present",
+   "quote": "ken paton ( 290 leominster road)"
+  },
+  {
+   "name": "Jack Mourad",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "attorney jack mourad stated that this was part of 50 sandy cove rd"
+  },
+  {
+   "name": "Robert Galloni",
+   "role": "50 Sandy Cove Rd.",
+   "status": "present",
+   "quote": "robert galloni (50 sandy cove rd.) noted that they resolved an enforcement order in july 2023"
+  },
+  {
+   "name": "Thomas Gibbons",
+   "role": "",
+   "status": "present",
+   "quote": "thomas gibbons stated he was not aware of that."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "New hearings for 899 Flat Hill Rd and 1147 Mass Ave were not heard because they did not meet the advertising time-frame standards.",
+   "quote": "were not heard as they have not met the advertising time-frame standards."
+  },
+  {
+   "decision": "The Chair position was tabled for now, and Mary Wilson hosts meetings in the interim.",
+   "quote": "chair-- will be tabled for now. mary will host meeting for time being."
+  },
+  {
+   "decision": "Mary Wilson agreed to run the meetings for the time being.",
+   "quote": "mary agreed to run the meetings for the time being."
+  },
+  {
+   "decision": "The Commission asked that the location of the 6 inch drain be verified and updated on the plan (255 Sunny Hill Road).",
+   "quote": "the commission asked to have the location of the drain verified and updated on the plan."
+  },
+  {
+   "decision": "Mary asked Greg Roy to update the drawing to show where materials will be staged (495 Leominster-Shirley Road).",
+   "quote": "she asked greg to update the drawing to show where materials will"
+  },
+  {
+   "decision": "Mary said to proceed with a violation notice (10 Mass Ave).",
+   "quote": "mary said to proceed with a violation notice."
+  },
+  {
+   "decision": "Mary asked Sophie to check on the erosion control at 10 Mass Ave, which was failing.",
+   "quote": "mary asked sophie to check on the erosion control which was failing."
+  },
+  {
+   "decision": "Mary said the owners at 40 Fire Road must meet the OOC and apply for a COC; Sophie will contact them.",
+   "quote": "mary said they need to meet the ooc and apply for a coc."
+  },
+  {
+   "decision": "Chris and Jeff will attend the DEP site meeting on 7/24 at 205 Sunset.",
+   "quote": "chris and jeff will attend also."
+  },
+  {
+   "decision": "Sophie will reach out to Matt Marro, who was expected to attend the 390 Howard Street hearing.",
+   "quote": "she thought matt marro would be attending tonight and will reach out to him."
+  },
+  {
+   "decision": "Mike Larouche will purchase the mower through the Facilities Department, which is tax free.",
+   "quote": "he will purchase through facilities department, which will be tax free."
+  },
+  {
+   "decision": "Reported that the Commission previously voted not to pursue the Chapter 61B abatement at 20 Kilburn St and Bob notified the Select Board. This was a prior vote, not recorded at this meeting.",
+   "quote": "mary noted that the commission voted to not pursue and bob notified the select board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hollis Road residence riding mower",
+   "what_was_recorded": "A $1,000 riding mower approval did not include a mower deck; an additional $1,300 from the Hawes Fund was proposed, bringing the 42-inch Cub Cadet purchase to a total of $2,300.",
+   "figures_as_printed": [
+    "$1,000",
+    "$1,300",
+    "$2,300"
+   ],
+   "quote": "approved $1,000 for a new riding mower but that did not include a mower deck."
+  },
+  {
+   "topic": "Hawes Fund contribution to mower",
+   "what_was_recorded": "Mike Larouche proposed an additional $1,300 from the Hawes Fund toward the mower; the subsequent motion authorized purchase not to exceed $2,300.",
+   "figures_as_printed": [
+    "$1,300",
+    "$2,300"
+   ],
+   "quote": "he proposes an additional $1,300 from the hawes fund to purchase a"
+  },
+  {
+   "topic": "LCC grant 2023 matching funds",
+   "what_was_recorded": "The Commission had authorized Bob to ask the Select Board to propose using ARPA funds to cover the matching funds for the grant. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "to propose using arpa funds for covering the matching funds"
+  },
+  {
+   "topic": "LSR grant 2022 equipment",
+   "what_was_recorded": "The LSR-sponsored grant work is complete; remaining steps are the final submittal and purchase of requested equipment. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "they just need to do the final submittal and purchase of equipment requested."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Proposed use of Hawes Fund money toward the Hollis Road residence riding mower.",
+   "amount_as_printed": "$1,300",
+   "outcome": "Proposed. The motion approved purchase of a riding lawn mower not to exceed $2,300 and did not name the funding source.",
+   "quote": "he proposes an additional $1,300 from the hawes fund to purchase a"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Rich",
+   "topic": "tribute to Bob Pease after resignation",
+   "quote": "rich said that bob was a ball of energy and a great asset to the town."
+  },
+  {
+   "speaker": "Ken Paton",
+   "topic": "drain pipe location, 255 Sunny Hill Road hearing",
+   "quote": "ken paton ( 290 leominster road) - pointed out that the drawing shows the 6 '' drain in the wrong location"
+  },
+  {
+   "speaker": "Robert Galloni",
+   "topic": "enforcement history, 23 Cove Rd certificate of compliance",
+   "quote": "robert galloni (50 sandy cove rd.) noted that they resolved an enforcement order in july 2023"
+  },
+  {
+   "speaker": "Thomas Gibbons",
+   "topic": "Chapter 61B abatement, 20 Kilburn St",
+   "quote": "thomas gibbons stated he was not aware of that."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: resignation of Bob Pease",
+   "resolution": "noted, no action",
+   "tags": [
+    "personnel",
+    "resignation"
+   ],
+   "quote": "bob pease resigned from the commission and it is a sad day."
+  },
+  {
+   "topic": "Public comment: tribute to Bob Pease",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "rich said that bob was a ball of energy and a great asset to the town."
+  },
+  {
+   "topic": "Minutes of 6/21/23 and 8/2/23",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion: mike l., second: jenny p to approve the minutes of 6/21/23."
+  },
+  {
+   "topic": "Reorganization: Vice-Chair and Clerk",
+   "resolution": "Jenny elected Vice-Chair; Mike L. elected Clerk; Chair tabled",
+   "tags": [
+    "appointments",
+    "reorganization"
+   ],
+   "quote": "motion: rich b., second: mike l. to elect jenny as vice-chair."
+  },
+  {
+   "topic": "New hearings: 899 Flat Hill Rd and 1147 Mass Ave",
+   "resolution": "not heard, advertising time-frame not met",
+   "tags": [
+    "hearings",
+    "notice"
+   ],
+   "quote": "were not heard as they have not met the advertising time-frame standards."
+  },
+  {
+   "topic": "Requests for continuance: 60 Cross Road Lots 12A and 12B",
+   "resolution": "continued to 8/7/24",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "continuance"
+   ],
+   "quote": "to conti nue 60 cross rd . lot 12a to 8 /7 /24."
+  },
+  {
+   "topic": "Village at Flat Hills detention pond maintenance (Parcel 84-001)",
+   "resolution": "continued to 8/7/24",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "continuance"
+   ],
+   "quote": "to continue parcel # 84-001 to 8/7/24 and provide the o&m plan,"
+  },
+  {
+   "topic": "Lot 2 Cross Road notice of intent",
+   "resolution": "continued to 8/7/24; no one present",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "continuance"
+   ],
+   "quote": "no one was present, so continued to 8/7/24."
+  },
+  {
+   "topic": "791 Mass Ave notice of intent (Kevin Hill Landings)",
+   "resolution": "approved with Standard Order of Conditions",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "stormwater"
+   ],
+   "quote": "to approve the noi as submitted with a standard order of conditions for 791 mass ave."
+  },
+  {
+   "topic": "495 Leominster-Shirley Road request for determination (P.J. Keating)",
+   "resolution": "continued to 8/7/24",
+   "tags": [
+    "wetlands",
+    "NHESP",
+    "continuance"
+   ],
+   "quote": "to continue 495 leominster-shirley road to 8/ 7 /24."
+  },
+  {
+   "topic": "390 Howard Street abbreviated delineation",
+   "resolution": "continued to 8/7/24",
+   "tags": [
+    "wetlands",
+    "delineation",
+    "continuance"
+   ],
+   "quote": "to continue 390 howard street to 8/ 7 /24."
+  },
+  {
+   "topic": "255 Sunny Hill Road notice of intent (Stefan McSweeny)",
+   "resolution": "approved with special condition on drain pipe location",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "drainage"
+   ],
+   "quote": "to approve the noi with the special condition that the 6 \" drain pipe location"
+  },
+  {
+   "topic": "171 Arbor Street notice of intent (Steve Powell)",
+   "resolution": "continued to 8/21/24",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "Blanding's Turtle",
+    "continuance"
+   ],
+   "quote": "motion: rich b. , second: mike l. to continue to 8/21/24."
+  },
+  {
+   "topic": "Administrative determination: 67 Peninsula Drive",
+   "resolution": "approved tree removal and replacement with arborvitae",
+   "tags": [
+    "administrative determination",
+    "trees"
+   ],
+   "quote": "to approve the removal of the trees and replace with arborvitae."
+  },
+  {
+   "topic": "Certificates of compliance (six properties)",
+   "resolution": "approved: 4 Sunset Lane, 245 Holman St Lot 3, 251 Holman St Lot 4, 512 Northfield Rd, 41 Country Rd, 23 Cove Rd",
+   "tags": [
+    "certificates of compliance",
+    "septic",
+    "enforcement history"
+   ],
+   "quote": "to approve the certificate of compliance for 23 cove rd ."
+  },
+  {
+   "topic": "Enforcement: 10 Mass Ave, 40 Fire Road 12, 1168 Mass Ave Rear, 205 Sunset",
+   "resolution": "violation notice directed for 10 Mass Ave; other items no action or update only",
+   "tags": [
+    "enforcement",
+    "violations",
+    "erosion control"
+   ],
+   "quote": "mary said to proceed with a violation notice."
+  },
+  {
+   "topic": "New business: meeting schedule, Beaver Deceiver, Chapter 61B abatement",
+   "resolution": "schedule circulated for feedback; Beaver Deceiver no update; 61B reported as previously not pursued",
+   "tags": [
+    "meeting schedule",
+    "beaver",
+    "Chapter 61B",
+    "open space"
+   ],
+   "quote": "mary noted that the commission voted to not pursue and bob notified the select board."
+  },
+  {
+   "topic": "Old business: title searches, encroachments, grants, Hollis Road mower",
+   "resolution": "no updates on title searches or encroachments; mower purchase approved not to exceed $2,300",
+   "tags": [
+    "grants",
+    "ARPA",
+    "mower",
+    "Hollis Road",
+    "open space"
+   ],
+   "quote": "to purchase a new riding lawn mower , not to exceed $2,300."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no updates",
+   "tags": [
+    "committee reports"
+   ],
+   "quote": "c ommittee reports - no updates."
+  },
+  {
+   "topic": "Adjournment at 9:37 pm",
+   "resolution": "adjourned",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn at 9:37 pm."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands protection",
+  "notice of intent",
+  "request for determination",
+  "enforcement",
+  "certificates of compliance",
+  "administrative determination",
+  "appointments",
+  "reorganization",
+  "grants",
+  "ARPA",
+  "mower purchase",
+  "Hawes Fund",
+  "continuances",
+  "minutes approval",
+  "2024"
+ ],
+ "dropped_unquoted_by_field": {}
 }

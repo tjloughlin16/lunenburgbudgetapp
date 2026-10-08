@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-06-13",
  "docid": "6617",
@@ -12,33 +12,335 @@
  },
  "votes": [
   {
-   "motion": "Nominate Chris Menard to be the Finance Committee representative on the permanent Town Manager Search Committee",
+   "motion": "Nominate Chris Menard to be on the search committee for the permanent Town Manager.",
    "moved_by": "Evan Watters",
    "seconded_by": "Dave Passios",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "evan watters nominated chris menard to be on the committee for the permanent t own m anager , seconded by dave passios . all in fa",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "evan watters nominated chris menard to be on the committee for the"
   },
   {
-   "motion": "Approve the minutes from the May 23, 2024 meeting",
+   "motion": "Nominate Evan Watters to be the Finance Committee representative on the budget task force.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Tiffaney Tavares",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "nominated evan w atters to be the f inance c ommittee"
+  },
+  {
+   "motion": "Approve the minutes of the May 23, 2024 meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Tiffaney Tavares",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from the may 23, 2024, meeting by chris menard, seconded by tiffaney tavares. all in favor."
+   "quote": "there was a motion to approve the minutes from the may 23, 2024, meeting by"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "there was a motion to adjourn by chris menard , seconded by dave passios",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to adjourn by"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0690651
+ "dropped_unquoted": 0,
+ "note": "Text is machine-extracted from the PDF with stray spaces inside words and names (e.g. \"Ch ris M enard\", \"Eze quiel Ayala\", \"W atters\"). Quotes are copied as printed where they are contiguous; names in the attendee and vote fields are normalised to their ordinary spelling (Chris Menard, Ezequiel Ayala, Evan Watters), which is a judgement call on my part. Two motions are recorded only as \"All in favor\" with no tally, so the outcome is given as \"passed\" without a count. The adjournment motion has no printed result; the minutes only say the meeting closed at 8:01 PM, so its outcome is \"not stated\". The budget items cover only two dollar figures: $30,000 and \"a million dollars\". The rest discuss money without printing an amount. Public comment is recorded as \"no comments\" in both places; no speaker is named. Attendance is inferred from the \"Present Members\" line and from who spoke, since no absences are listed.",
+ "cost_usd": 0.01862917,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard,"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard,"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk tiffaney tavares,"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios, board member jean"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios, board member jean"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member tom gray, board member dave passios, board member jean"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "russell, board member jay simeone"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "no new information or reports"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "states a process needs to be put in place"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tiffaney Tavares agreed to work together with Heather Lemieux on the grant writing process.",
+   "quote": "agrees to work together with heather lemieux"
+  },
+  {
+   "decision": "Heather Lemieux will reach out to her association for additional input on grant writing services.",
+   "quote": "will reach out to her association"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State storm-aid set-aside",
+   "what_was_recorded": "The state issued that a million dollars be set aside from the fall supplemental budget for affected cities and towns.",
+   "figures_as_printed": [
+    "a million dollars"
+   ],
+   "quote": "the state issued that a million dollars be set aside from"
+  },
+  {
+   "topic": "Lunenburg storm-aid share",
+   "what_was_recorded": "Lunenburg received $30,000 from the state set-aside, based on storm expenses, municipality size and infrastructure costs.",
+   "figures_as_printed": [
+    "$ 30,000"
+   ],
+   "quote": "lunenburg received $ 30,000"
+  },
+  {
+   "topic": "FEMA public assistance denial",
+   "what_was_recorded": "The Town was notified that FEMA denied public assistance for the September 2023 severe weather and flooding.",
+   "figures_as_printed": [],
+   "quote": "denial of public assistance"
+  },
+  {
+   "topic": "Marshall Park owner's project manager contract",
+   "what_was_recorded": "The Owner's Project Manager Services contract for Marshall Park was awarded through a park grant.",
+   "figures_as_printed": [],
+   "quote": "contract for marshall park was awarded"
+  },
+  {
+   "topic": "Fiscal 25 tax bills and override",
+   "what_was_recorded": "Fiscal 25 tax bills will include the override amount, which is only an estimate until the tax rate is set in the fall.",
+   "figures_as_printed": [],
+   "quote": "fiscal 25 tax bills will include the override amount"
+  },
+  {
+   "topic": "MILO training simulation earmark",
+   "what_was_recorded": "A representative received an earmark for MILO training simulation systems for the police department, which had not made the capital plan.",
+   "figures_as_printed": [],
+   "quote": "the earmark for the milo training simulation"
+  },
+  {
+   "topic": "School budget issues with state representative and DESE",
+   "what_was_recorded": "The proposed meeting topics include school budgets, minimum required contributions, Chapter 70, and the 4 1/2% cap under the student opportunity act.",
+   "figures_as_printed": [],
+   "quote": "the 4 1/2% cap on the student opportunity"
+  },
+  {
+   "topic": "Green Communities sewer project grant round",
+   "what_was_recorded": "The committee withdrew from the spring grant round for the sewer project to wait for the larger fall grant round.",
+   "figures_as_printed": [],
+   "quote": "wait until the fall grant round to"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened at 7:00PM",
+   "quote": "the meeting opened at 7:00pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: Town Manager departure and search",
+   "resolution": "no action; search committee to be formed",
+   "quote": "evan watters states that the town manager s last day will be",
+   "tags": [
+    "town manager",
+    "search committee"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comments",
+   "quote": "there were no public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported",
+   "quote": "the town received notification from fema for denial of public assistance",
+   "tags": [
+    "FEMA",
+    "state aid",
+    "tax override",
+    "capital plan",
+    "grants",
+    "public safety building"
+   ]
+  },
+  {
+   "topic": "Finance Director report",
+   "resolution": "no new information; Q3 finances submitted",
+   "quote": "no new information or reports",
+   "tags": [
+    "finance reports"
+   ]
+  },
+  {
+   "topic": "Town Manager search committee representative",
+   "resolution": "Chris Menard nominated to permanent Town Manager search committee",
+   "quote": "evan watters nominated chris menard to be on the committee for the",
+   "tags": [
+    "town manager",
+    "search committee",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Budget task force",
+   "resolution": "discussed; Evan Watters nominated as Finance Committee representative",
+   "quote": "there has been no official vote to start a budget task force",
+   "tags": [
+    "budget task force",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Meeting with Rep Scarsdale, 1st Middlesex District, and DESE on school budgets",
+   "resolution": "discussed; proposed dates July 12 and July 19; statement to be drafted",
+   "quote": "the proposed dates for the 2-hour long meeting include july 12 & july 19.",
+   "tags": [
+    "school budget",
+    "chapter 70",
+    "state representative",
+    "DESE",
+    "joint statement"
+   ]
+  },
+  {
+   "topic": "Missing Finance Committee minutes",
+   "resolution": "discussed; no action",
+   "quote": "spoke to pac and was told to search specifically for",
+   "tags": [
+    "minutes compliance",
+    "records"
+   ]
+  },
+  {
+   "topic": "Old business",
+   "resolution": "none",
+   "quote": "there was no old business to discuss.",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "Approval of May 23, 2024 minutes",
+   "resolution": "approved",
+   "quote": "there was a motion to approve the minutes from the may 23, 2024, meeting by",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "the parks committee met and ana lockwood resigned from",
+   "tags": [
+    "committee reports",
+    "parks",
+    "capital planning",
+    "green communities",
+    "master plan",
+    "personnel committee"
+   ]
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "list created",
+   "quote": "a list of future topics was created throughout the meeting.",
+   "tags": [
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "listed 6/27/2024 and 7/11/24",
+   "quote": "upcoming meetings: a. 6/27/2024 b. 7/11/24",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no comments",
+   "quote": "there were no public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "closed at 8:01 PM",
+   "quote": "the meeting closed at 8:01 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town manager search",
+  "budget task force",
+  "school budget",
+  "state aid",
+  "FEMA",
+  "grants",
+  "committee appointments",
+  "minutes compliance",
+  "capital plan",
+  "tax override",
+  "personnel committee vacancy"
+ ],
+ "dropped_unquoted_by_field": {}
 }

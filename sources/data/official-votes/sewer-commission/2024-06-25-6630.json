@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-06-25",
  "docid": "6630",
@@ -12,56 +12,381 @@
  },
  "votes": [
   {
-   "motion": "Elect John R. as Chair",
+   "motion": "Elect John Reynolds as Chair (nominated by Brett).",
    "moved_by": "Brett",
    "seconded_by": "Mike M.",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "brett nominated john r.; mike m. seconded. roll call vote: mike m.-aye, brett-aye and john -aye."
   },
   {
-   "motion": "Elect Brett as Vice Chair",
+   "motion": "Elect Brett Ramsden as Vice Chair (nominated by Mike M.).",
    "moved_by": "Mike M.",
    "seconded_by": "John",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "mike m. nominated brett; john seconded. roll call vote: mike m.-aye, brett-aye and john -aye."
   },
   {
-   "motion": "Elect Mike M. as Clerk",
+   "motion": "Elect Mike M. as Clerk (nominated by Brett).",
    "moved_by": "Brett",
    "seconded_by": "John",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "brett nominated mike m.; john seconded. roll call vote: brett-aye, mike m.-aye, and john -aye."
   },
   {
-   "motion": "Deny the waiver of interest on School Accounts Q3 bill",
+   "motion": "Deny the waiver of interest of $194.04 on the school accounts' Q3 bill.",
    "moved_by": "Mike M.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike m. second: brett r. to deny the waiver. discussion: brett stated that they need to hold people",
-   "quote_taken_from_text": true
+   "quote": "motion: mike m. second: brett r. to deny the waiver. discussion: brett stated that they need to hold people accountable."
   },
   {
-   "motion": "Approve the Q4FY25 Commitment of $249,988.42",
+   "motion": "Approve the Q4FY25 Commitment of $249,988.42.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike M.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: brett r. second: mike m. to approve the q4fy25 commitment of $249,988.42. roll call vote: mike-aye, brett-aye, and john-aye."
+   "quote": "to approve the q4fy25 commitment of $249,988.42. roll call vote: mike-aye, brett-aye, and john-aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:42 pm.",
    "moved_by": "Mike M.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike m. second: brett r. to adjourn at 6:42 pm. roll call vote: mike m.-aye, brett-aye, and john-aye"
+   "quote": "to adjourn at 6:42 pm. roll call vote: mike m.-aye, brett-aye, and john-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0906651
+ "note": "Text extract, not a scan. Votes are recorded as roll calls with every member marked aye, so outcomes are recorded as \"passed\" without a printed count. Attendance is listed under \"Attendees\" for a Zoom meeting; the minutes do not mark anyone individually as remote. The waiver denial is recorded as a motion with a roll call; the minutes print no separate numeric result.",
+ "cost_usd": 0.017040470000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk-mike mackin, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk-mike mackin, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk-mike mackin, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk-mike mackin, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, vice-chair- brett ramsden, clerk-mike mackin, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Business Manager",
+   "status": "absent",
+   "quote": "absent: business manager-paula bertram"
+  },
+  {
+   "name": "R. Proctor",
+   "role": "appointment – Extension Request 12 Kimball Street",
+   "status": "absent",
+   "quote": "appointments - r. proctor - extension request 12 kimball street- not present but bill will contact greg."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bill Bernard will contact Greg about the R. Proctor extension request for 12 Kimball Street, since the applicant was not present.",
+   "quote": "not present but bill will contact greg."
+  },
+  {
+   "decision": "John Reynolds will notify Myleen of the Commission's denial of the interest waiver.",
+   "quote": "john will notify myleen."
+  },
+  {
+   "decision": "Next step on manhole repairs: Bill Bernard and Paula Bertram to work on specifications and quantities before going out to bid (IFB).",
+   "quote": "bill stated the next step is to work with paula on specifications and quantities in order to go out to bid (ifb)."
+  },
+  {
+   "decision": "John Reynolds will give a presentation to the Select Board on 7/9 as an awareness campaign on pump station clogs.",
+   "quote": "john said he will be giving a presentation on 7/9 to select board as an awareness campaign."
+  },
+  {
+   "decision": "Commissioners asked to sign the Q4 commitment DocuSign that Paula Bertram sent out.",
+   "quote": "john noted that paula sent out the docusign and asked the commissioners to sign it."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Waiver of interest – school accounts",
+   "what_was_recorded": "The school accounts did not pay $194.04 in interest on their Q3 bill; the Commission voted to deny a waiver of it.",
+   "figures_as_printed": [
+    "$194.04"
+   ],
+   "quote": "they did not pay the interest of $194.04 on their q3 bill."
+  },
+  {
+   "topic": "Q4FY25 commitment",
+   "what_was_recorded": "The Commission approved a Q4FY25 commitment of $249,988.42.",
+   "figures_as_printed": [
+    "$249,988.42"
+   ],
+   "quote": "to approve the q4fy25 commitment of $249,988.42. roll call vote: mike-aye, brett-aye, and john-aye."
+  },
+  {
+   "topic": "Manhole inspections",
+   "what_was_recorded": "CTE's manhole inspections were described as much cheaper than Wright Pierce's work; the information was described as valuable.",
+   "figures_as_printed": [],
+   "quote": "bill added that cte was much cheaper than wright pierce and the information is valuable."
+  },
+  {
+   "topic": "Manhole repairs funding",
+   "what_was_recorded": "Manhole repairs were described as using ARPA money, with a cost of $94K that the Commission confirmed as within budget.",
+   "figures_as_printed": [
+    "$94K"
+   ],
+   "quote": "mike asked to clarify that the repairs will come to $94k - within budget and john agreed."
+  },
+  {
+   "topic": "Manhole repairs funding source",
+   "what_was_recorded": "The manhole inspection was in preparation for bidding repairs paid with ARPA money.",
+   "figures_as_printed": [],
+   "quote": "john noted that the inspection was in preparation for going out to bid for manhole repairs, using the arpa money."
+  },
+  {
+   "topic": "Pump station clogs – grinder option",
+   "what_was_recorded": "Adding a grinder at a pump station was described as costing tens of thousands of dollars.",
+   "figures_as_printed": [
+    "tens of thousands of dollars"
+   ],
+   "quote": "he noted that they could add a grinder but it would cost tens of thousands of dollars."
+  },
+  {
+   "topic": "Pump station clogs – wet well pumping",
+   "what_was_recorded": "Pumping the wet wells out more often was described as costing $4K to do at all stations.",
+   "figures_as_printed": [
+    "$4K"
+   ],
+   "quote": "they could also pump the wet wells out more frequently but that costs $4k to do all stations."
+  },
+  {
+   "topic": "Pump station clogs – public education ad",
+   "what_was_recorded": "A full-page newspaper ad to educate users was priced at $400.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "with a full page ad for $400."
+  },
+  {
+   "topic": "Budget status deficit",
+   "what_was_recorded": "The Sewer budget was showing a $52K deficit, with delinquencies still outstanding from Q1 and Q2.",
+   "figures_as_printed": [
+    "$52K"
+   ],
+   "quote": "john stated they are showing a $52k deficit but the bills just went out"
+  },
+  {
+   "topic": "Betterments collection",
+   "what_was_recorded": "Betterment collections were described as slower; the Commission noted this may be an accounting issue.",
+   "figures_as_printed": [],
+   "quote": "betterments are slower coming in, but that may be an accounting issue."
+  },
+  {
+   "topic": "Enterprise fund cash flow",
+   "what_was_recorded": "The Sewer Department is an enterprise fund and is having cash-flow issues, as reported to the Select Board.",
+   "figures_as_printed": [],
+   "quote": "john noted at a select board meeting that the sewer department is an enterprise fund and they are having some cash-flow issues right now."
+  },
+  {
+   "topic": "Green Communities grant",
+   "what_was_recorded": "New pumps would offer little savings, so the Sewer Department will not be able to get money from the Green Communities grant.",
+   "figures_as_printed": [],
+   "quote": "john noted that the new pumps would offer little savings so they will not be able to get money from the grant."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mike",
+   "stated_role": "",
+   "topic": "committee openings",
+   "quote": "mike reminded the public that they have openings on this committee."
+  },
+  {
+   "speaker": "John",
+   "stated_role": "",
+   "topic": "joining a town board",
+   "quote": "john said it was brought up at select board meetings and it is a good way to start on a town board."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action",
+   "quote": "public comment and announcements - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointment – R. Proctor extension request, 12 Kimball Street",
+   "resolution": "applicant not present; DPW Director to contact Greg",
+   "quote": "appointments - r. proctor - extension request 12 kimball street- not present but bill will contact greg.",
+   "tags": [
+    "appointments",
+    "extension request"
+   ]
+  },
+  {
+   "topic": "Organization of the Board – election of officers",
+   "resolution": "approved: John Reynolds Chair, Brett Ramsden Vice Chair, Mike Mackin Clerk",
+   "quote": "brett nominated john r.; mike m. seconded. roll call vote: mike m.-aye, brett-aye and john -aye.",
+   "tags": [
+    "elections",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Waiver of interest – school accounts",
+   "resolution": "waiver denied",
+   "quote": "john stated that they did not pay the interest of $194.04 on their q3 bill.",
+   "tags": [
+    "interest waiver",
+    "school accounts",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Q4FY25 commitment",
+   "resolution": "approved",
+   "quote": "q4fy25 commitment of $249,988.42 - john asked for a vote.",
+   "tags": [
+    "commitment",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Manhole inspections",
+   "resolution": "reported; bid preparation next",
+   "quote": "john reported that they hired cte to look at a specific number of manholes that wright pierce had noted",
+   "tags": [
+    "manholes",
+    "inflow and infiltration",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Pump station clogs",
+   "resolution": "discussed; public awareness campaign planned",
+   "quote": "there have been 30 clogs since september.",
+   "tags": [
+    "pump stations",
+    "clogs",
+    "public education"
+   ]
+  },
+  {
+   "topic": "Business Manager report – billing software update",
+   "resolution": "reported; no action",
+   "quote": "john reported that the q4 bills went out with brute force and a lot of help from town hall staff.",
+   "tags": [
+    "billing software",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "Budget status",
+   "resolution": "reported; no action",
+   "quote": "john stated they are showing a $52k deficit but the bills just went out",
+   "tags": [
+    "budget",
+    "deficit",
+    "betterments"
+   ]
+  },
+  {
+   "topic": "Green Communities grant",
+   "resolution": "no action; not pursued",
+   "quote": "john noted that the new pumps would offer little savings so they will not be able to get money from the grant.",
+   "tags": [
+    "grants",
+    "pumps"
+   ]
+  },
+  {
+   "topic": "50 Mass Avenue – ReBoot",
+   "resolution": "reported; no action",
+   "quote": "the select board did not renew their license and the water was shut off.",
+   "tags": [
+    "license",
+    "water shutoff"
+   ]
+  },
+  {
+   "topic": "Bad Larry's grease trap",
+   "resolution": "reported; no action",
+   "quote": "paula received word that their new grease trap has been installed.",
+   "tags": [
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Public comment – committee openings",
+   "resolution": "no action",
+   "quote": "mike reminded the public that they have openings on this committee.",
+   "tags": [
+    "public comment",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "july 9, 2024 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed 3-0 by roll call; adjourned 6:42 pm",
+   "quote": "to adjourn at 6:42 pm. roll call vote: mike m.-aye, brett-aye, and john-aye",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "wastewater",
+  "officer elections",
+  "interest waiver",
+  "school accounts",
+  "billing software",
+  "manholes",
+  "inflow and infiltration",
+  "pump stations",
+  "clogs",
+  "ARPA",
+  "grants",
+  "budget deficit",
+  "enterprise fund",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

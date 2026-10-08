@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2024-06-20",
  "docid": "6616",
@@ -12,28 +12,269 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of May 16, 2024",
+   "motion": "Approve the minutes of May 16, 2024.",
    "moved_by": "David Dorren",
-   "outcome": "approved 3-0",
-   "procedural": true,
-   "quote": "vice-chair dorren made a motion to approved the minutes of may 16, 2024. motion approved 3-0."
-  },
-  {
-   "motion": "Approve one oversize headstone for four plots in South Cemetery, measuring 4×1 feet",
-   "outcome": "approved 3-0",
-   "procedural": false,
-   "quote": "after discussion by the cemetery commission, the commission approved 3-0 the family to have one headstone for the four plots."
-  },
-  {
-   "motion": "Adjourn",
-   "moved_by": "David Dorren",
-   "seconded_by": "Michael Clark",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "vice-chair david dorren made the motion to adjourn at 10:56am: clerk mile clark seconded the motion. motion passed 3-0."
+   "quote": "vice-chair dorren made a motion to approved the minutes of may 16, 2024. motion approved 3-0.",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Allow the family that owns four adjacent plots in the South Cemetery to have one oversize headstone for the four plots, 4×1 feet.",
+   "moved_by": "",
+   "outcome": "passed 3-0",
+   "procedural": false,
+   "quote": "the commission approved 3-0 the family to have one headstone for the four plots.",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Adjourn the meeting at 10:56AM.",
+   "moved_by": "David Dorren",
+   "outcome": "passed 3-0",
+   "procedural": true,
+   "quote": "vice-chair david dorren made the motion to adjourn at 10:56am: clerk mile clark seconded the motion. motion passed 3-0.",
+   "seconded_by": "Mile Clark"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All three votes clearly recorded with vote counts. The minutes do not explicitly state who seconded the first motion (approve minutes).",
- "cost_usd": 0.1007961
+ "note": "Text-only minutes, no scan. Three motions recorded, all with printed results (3-0); no motion recorded for the Ramaker, lighting, gravestone, grass or compost items. Printed names kept as printed: 'DWP Director' (DPW elsewhere) and 'Clerk Mile Clark' (Mike Clark elsewhere). The adjournment motion has no printed mover name beyond 'Vice-Chair David Dorren'; the headstone motion has no printed mover or seconder. Several quotes collapse double spaces and a line break into one space. The 9:03 AM call to order and 10:56AM adjournment are as printed; no attendance roll beyond the listed names.",
+ "cost_usd": 0.01503017,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the chair, nancy foss-yasko discussed the barthol c. allen trust fund."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair dorren made a motion to approved the minutes of may 16, 2024. motion approved 3-0."
+  },
+  {
+   "name": "Michael Clark",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk mike clark - presented his robot mower survey."
+  },
+  {
+   "name": "Heather R. Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present arriving later at the meeting, was town manager heather r. lemieux."
+  },
+  {
+   "name": "David Rogers",
+   "role": "Public attendance",
+   "status": "present",
+   "quote": "david rogers mentioned that he was frustrated with the mowing of the cemeteries."
+  },
+  {
+   "name": "David Passios",
+   "role": "Public comment",
+   "status": "present",
+   "quote": "mr. david passios echoed mr. rogers comments stating that the charter and by laws are a total mess."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DWP Director (as printed; DPW Director)",
+   "status": "absent",
+   "quote": "dwp director bill bernard was absent from this meeting, and therefore; could not answer mr. rogers' comments."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Further research of the Barthol C. Allen Trust Fund accounts will be requested.",
+   "quote": "further research of the accounts will be requested."
+  },
+  {
+   "decision": "DPW director directed to quote running electricity into North & South Cemetery, and solar lights are being reviewed.",
+   "quote": "dpw director to quote running electricity into north & south cemetery."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Oldest section gravestone washing and repair",
+   "what_was_recorded": "The estimate for washing and repairing gravestones in the oldest section of the cemetery was revised upward.",
+   "figures_as_printed": [
+    "$22,000",
+    "$38,500"
+   ],
+   "quote": "oldest section of cemetery gravestones washing and repair. should be $22,000 revised to $38,500."
+  },
+  {
+   "topic": "Cemetery mowing funding",
+   "what_was_recorded": "The Town Manager said funding needs to be put in the budget to mow the cemeteries to expectations; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "need to put funding in the budget to mow cemeteries to expectations."
+  },
+  {
+   "topic": "Grass and grub damage repair",
+   "what_was_recorded": "A local lawn maintenance contractor provided a quote for grass and grub damage; the quote amount is not printed.",
+   "figures_as_printed": [],
+   "quote": "a local lawn maintenance contractor provided a quote."
+  },
+  {
+   "topic": "Barthol C. Allen Trust Fund",
+   "what_was_recorded": "A trust fund for cleaning a particular family's gravestones was discussed; no balance or amount was stated.",
+   "figures_as_printed": [],
+   "quote": "the chair, nancy foss-yasko discussed the barthol c. allen trust fund."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rogers",
+   "stated_role": "Public attendance",
+   "topic": "Mowing of the cemeteries",
+   "quote": "david rogers mentioned that he was frustrated with the mowing of the cemeteries. wanted to know what was being done"
+  },
+  {
+   "speaker": "David Passios",
+   "stated_role": "",
+   "topic": "Charter and By Laws on Parks and Cemeteries",
+   "quote": "mr. david passios echoed mr. rogers comments stating that the charter and by laws are a total mess."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law notice",
+   "resolution": "no action",
+   "quote": "the cemetery commission meeting was called to order at 9:03 am.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of May 16, 2024",
+   "resolution": "approved 3-0",
+   "quote": "vice-chair dorren made a motion to approved the minutes of may 16, 2024. motion approved 3-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director report: burials, cremations, seasonal mowing",
+   "resolution": "reviewed",
+   "quote": "the commission reviewed dpw directors report",
+   "tags": [
+    "DPW",
+    "mowing",
+    "burials"
+   ]
+  },
+  {
+   "topic": "Public comment on mowing and the Charter and By Laws",
+   "resolution": "discussed; DPW to answer, absent",
+   "quote": "dwp director bill bernard was absent from this meeting, and therefore; could not answer mr. rogers' comments.",
+   "tags": [
+    "mowing",
+    "public comment",
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Barthol C. Allen Trust Fund",
+   "resolution": "further research of accounts requested",
+   "quote": "further research of the accounts will be requested.",
+   "tags": [
+    "trust fund"
+   ]
+  },
+  {
+   "topic": "Oversize headstone for four adjacent South Cemetery plots",
+   "resolution": "approved 3-0",
+   "quote": "the commission approved 3-0 the family to have one headstone for the four plots.",
+   "tags": [
+    "headstones",
+    "South Cemetery"
+   ]
+  },
+  {
+   "topic": "Robot mower survey",
+   "resolution": "presented",
+   "quote": "clerk mike clark - presented his robot mower survey.",
+   "tags": [
+    "mowing",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Ramaker project paperwork",
+   "resolution": "continued to winter months",
+   "quote": "chair nancy foss-yasko - discussed ramaker, paperwork and completion - not until winter months.",
+   "tags": [
+    "Ramaker"
+   ]
+  },
+  {
+   "topic": "Lighting in North Cemetery",
+   "resolution": "DPW to quote electricity; solar lights under review",
+   "quote": "dpw director to quote running electricity into north & south cemetery.",
+   "tags": [
+    "lighting",
+    "electricity"
+   ]
+  },
+  {
+   "topic": "Gravestone washing and repair, oldest section",
+   "resolution": "no action; estimate revised",
+   "quote": "oldest section of cemetery gravestones washing and repair. should be $22,000 revised to $38,500.",
+   "tags": [
+    "gravestones",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Grass and grub damage",
+   "resolution": "contractor quote received",
+   "quote": "a local lawn maintenance contractor provided a quote.",
+   "tags": [
+    "turf",
+    "contractor"
+   ]
+  },
+  {
+   "topic": "Compost for grass repair",
+   "resolution": "recommendation noted",
+   "quote": "clerk mike clark - recommended to use compost from youngs road.",
+   "tags": [
+    "compost"
+   ]
+  },
+  {
+   "topic": "Mowing funding in the budget",
+   "resolution": "Town Manager raised; no action",
+   "quote": "need to put funding in the budget to mow cemeteries to expectations.",
+   "tags": [
+    "budget",
+    "mowing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:56AM, 3-0",
+   "quote": "vice-chair david dorren made the motion to adjourn at 10:56am: clerk mile clark seconded the motion. motion passed 3-0.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "mowing",
+  "DPW",
+  "headstones",
+  "gravestones",
+  "trust fund",
+  "budget",
+  "public comment",
+  "lighting",
+  "by-laws",
+  "robot mower"
+ ],
+ "dropped_unquoted_by_field": {}
 }

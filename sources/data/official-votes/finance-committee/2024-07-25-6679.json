@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-07-25",
  "docid": "6679",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve the increase in hours for the Recreation Director from 19 hours to 28 hours for the remainder of the fiscal year, with funding from the parks revolving account",
+   "motion": "Approve the increase in Recreation Director hours from 19 to 28 for the remainder of the fiscal year, funded from the parks revolving account.",
    "moved_by": "Chris Menard",
    "seconded_by": "Jay Simeone",
    "outcome": "failed 3-3",
    "procedural": false,
-   "quote": "there was a motion to approve the increase in hours for the recreation director from 19 hours to 28 hours for the remainder of the fiscal year and funding will come from the parks revolving account by chris menard, seconded by jay simeone. the vote failed 3-3."
+   "quote": "there was a motion to approve the increase in hours for the recreation director from 19 hours to 28 hours for the remainder of the fiscal year"
   },
   {
-   "motion": "Approve the request for $15,000 from the reserve account for the purpose of hiring a consultant for the Town Manager Search Committee",
+   "motion": "Approve $15,000 from the reserve account to hire a consultant for the Town Manager Search Committee.",
    "moved_by": "Dave Passios",
    "seconded_by": "Tom Gray",
    "outcome": "passed 4-2",
    "procedural": false,
-   "quote": "there was a motion to approve the request for $15,000 from the reserve account for the purpose of hiring a consultant for the town manager search committee by dave passios, seconded by tom gray. the vote was approved 4-2."
+   "quote": "there was a motion to approve the request for $15,000 from the reserve account for the purpose of hiring a consultant"
   },
   {
-   "motion": "Accept the minutes from July 11",
+   "motion": "Accept the minutes of July 11, 2024.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
    "outcome": "passed 4-0-1",
@@ -36,7 +36,7 @@
    "quote": "there was a motion to accept the minute from july 11 by chris menard, seconded by dave passios. the vote was 4-0-1."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Jay Simeone",
    "outcome": "not stated",
@@ -45,6 +45,395 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. The adjournment vote has no explicit outcome stated in the minutes; the text records the motion but only notes the meeting closed at 9:30 PM without stating a vote result.",
- "cost_usd": 0.0740634
+ "note": "Plain-text extraction of the minutes, not a scan; all quotes were taken from it. Four motions are recorded. The adjournment motion records no result, so its outcome is 'not stated'. The Recreation Director motion failed 3-3 as printed. No public speakers are recorded; the two public-comment items say there were none. Karin Menard's role is not printed. Ezequiel Ayala is marked present because he gave the Finance Director report. The Town Manager search Committee's own vote, and the interim Town Manager and consultant named in discussion, are not counted as attendees or votes of this board. The Chapter 70 and grant items are discussion with no decision, and are recorded as budget items only.",
+ "cost_usd": 0.01951407,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent member: clerk tiffaney tavares"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "ezequiel ayala provided the report under 6e."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "karin menard wants to have this increase paid out of the revolving account."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair to contact the Town Manager about anything the Finance Committee should focus on in the financial policy review.",
+   "quote": "evan watters will reach out to the town manager to see if there is anything specific the finance committee should key in on."
+  },
+  {
+   "decision": "Financial policy review placed on the agenda for the August 5 meeting to continue the discussion.",
+   "quote": "evan watters will add this to the agenda for the next meeting on august 5th to continue the discussion."
+  },
+  {
+   "decision": "Grant Writing Services update postponed.",
+   "quote": "d. grant writing services - update - postponed"
+  },
+  {
+   "decision": "Cost Analysis Comparison (Town v. School) postponed.",
+   "quote": "i. cost analysis comparison: town v. school- postponed"
+  },
+  {
+   "decision": "Review Budget Process/Suggestions for Improvement postponed.",
+   "quote": "f. review budget process/suggestions for improvement- postponed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Parks Recreation Director hours increase cost",
+   "what_was_recorded": "The budgeted cost of raising the Recreation Director from 19 to 28 hours was reported as a salary figure plus benefits, totalling the sum shown.",
+   "figures_as_printed": [
+    "$13,338",
+    "$24,424.30",
+    "$37,759.30"
+   ],
+   "quote": "the budgeted cost for the increased salary is $13,338, benefits cost is $24,424.30, totaling $37,759.30."
+  },
+  {
+   "topic": "Revolving fund for parks hours increase",
+   "what_was_recorded": "Members discussed moving revolving money from Chapter 53D to 53E½ because the current account holds too much money under state law.",
+   "figures_as_printed": [],
+   "quote": "currently, there is too much money in that account under mass general law."
+  },
+  {
+   "topic": "Reserve fund balance and Town Manager search consultant cost",
+   "what_was_recorded": "The reserve account balance and the estimated consultant and advertising costs were reported ahead of the $15,000 request.",
+   "figures_as_printed": [
+    "$200,000",
+    "12 to 14 thousand",
+    "1 thousand"
+   ],
+   "quote": "the estimated cost for a consultant is between 12 to 14 thousand and an additional 1 thousand for advertising."
+  },
+  {
+   "topic": "FY24 Q3 total revenue",
+   "what_was_recorded": "Total revenue collected through March 31 was reported.",
+   "figures_as_printed": [
+    "$43,055,868.80"
+   ],
+   "quote": "total revenue collected through march 31st was $43,055,868.80."
+  },
+  {
+   "topic": "FY24 estimated tax levy",
+   "what_was_recorded": "The estimated tax levy net of overlay was reported as consistent with prior years and on track with projections.",
+   "figures_as_printed": [
+    "$31,493,890.49"
+   ],
+   "quote": "the total estimated tax levy for fy 24, net of the overlay, is $31,493,890.49."
+  },
+  {
+   "topic": "Local receipts",
+   "what_was_recorded": "Local receipts were reported as exceeding the annual estimate.",
+   "figures_as_printed": [
+    "$6,660,338.42"
+   ],
+   "quote": "the performance of local receipts has exceeded the annual estimate at $6,660,338.42."
+  },
+  {
+   "topic": "State aid collected",
+   "what_was_recorded": "Total state aid collected was reported.",
+   "figures_as_printed": [
+    "$8,421,899.78"
+   ],
+   "quote": "the total state aid collected is $8,421,899.78."
+  },
+  {
+   "topic": "FY24 expenditures through March 31",
+   "what_was_recorded": "Total expenditures through March 31 were reported.",
+   "figures_as_printed": [
+    "$32,241,213.71"
+   ],
+   "quote": "total expenditures through march 31st are $32,241,213.71."
+  },
+  {
+   "topic": "ARPA funding balance",
+   "what_was_recorded": "A member questioned the ARPA funding line showing a balance; staff said funds were allocated to departments and must be obligated by end of December with spending allowed until 2026.",
+   "figures_as_printed": [
+    "3.3 million"
+   ],
+   "quote": "evan watters questions why the arpa funding line is listed as having 3.3 million as a balance."
+  },
+  {
+   "topic": "Grant funding reliability",
+   "what_was_recorded": "Staff noted that grants are not guaranteed every year, in response to a question about funding factors.",
+   "figures_as_printed": [],
+   "quote": "ezequiel ayala stated there are factors such as grants that are not guaranteed every year."
+  },
+  {
+   "topic": "Chapter 70 history",
+   "what_was_recorded": "The DESE presentation on the history of Chapter 70 was discussed in the meeting on school budget issues.",
+   "figures_as_printed": [],
+   "quote": "the dese presentation explained the history of chapter 70."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Use of reserve funds for the Town Manager search consultant.",
+   "amount_as_printed": "$15,000",
+   "outcome": "passed 4-2",
+   "quote": "there was a motion to approve the request for $15,000 from the reserve account for the purpose of hiring a consultant"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "there were no announcements.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "there were no public or committee comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Finance Director Report",
+   "resolution": "presented under 6e",
+   "quote": "ezequiel ayala provided the report under 6e.",
+   "tags": [
+    "finance report"
+   ]
+  },
+  {
+   "topic": "Parks Recreation Director hours increase",
+   "resolution": "failed 3-3",
+   "quote": "there was a motion to approve the increase in hours for the recreation director from 19 hours to 28 hours for the remainder of the fiscal year",
+   "tags": [
+    "parks",
+    "recreation director",
+    "revolving fund"
+   ]
+  },
+  {
+   "topic": "Reserve funds for Town Manager search consultant",
+   "resolution": "approved 4-2",
+   "quote": "there was a motion to approve the request for $15,000 from the reserve account for the purpose of hiring a consultant",
+   "tags": [
+    "reserve fund",
+    "town manager search"
+   ]
+  },
+  {
+   "topic": "Select Board public communications policy",
+   "resolution": "Committee to seek clarification",
+   "quote": "tom gray requests the committee ask for clarification.",
+   "tags": [
+    "select board",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Financial policy review",
+   "resolution": "continued to August 5",
+   "quote": "evan watters will add this to the agenda for the next meeting on august 5th to continue the discussion.",
+   "tags": [
+    "financial policy"
+   ]
+  },
+  {
+   "topic": "FY24 Q3 quarterly financial report",
+   "resolution": "received",
+   "quote": "chris menard requests the reports be augmented in the future.",
+   "tags": [
+    "quarterly report",
+    "revenue",
+    "expenditures"
+   ]
+  },
+  {
+   "topic": "FY24 Q3 special revenue funds trial balance",
+   "resolution": "received",
+   "quote": "evan watters questions why the arpa funding line is listed as having 3.3 million as a balance.",
+   "tags": [
+    "special revenue",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Town Manager Search Committee update",
+   "resolution": "received",
+   "quote": "chris menard states that the town manager search committee held a vote to recommend hiring a consultant.",
+   "tags": [
+    "town manager search"
+   ]
+  },
+  {
+   "topic": "Budget Task Force update",
+   "resolution": "received",
+   "quote": "the budget task force committee met and identified many towns to be used as comparisons.",
+   "tags": [
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Meeting with Rep Scarsdale and DESE on school budget",
+   "resolution": "received",
+   "quote": "there was a consensus that the towns need to be more proactive.",
+   "tags": [
+    "chapter 70",
+    "school budget",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Grant Writing Services",
+   "resolution": "postponed",
+   "quote": "d. grant writing services - update - postponed",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Consolidation of services and departments",
+   "resolution": "postponed",
+   "quote": "i. cost analysis comparison: town v. school- postponed",
+   "tags": [
+    "consolidation"
+   ]
+  },
+  {
+   "topic": "Review budget process",
+   "resolution": "postponed",
+   "quote": "f. review budget process/suggestions for improvement- postponed",
+   "tags": [
+    "budget process"
+   ]
+  },
+  {
+   "topic": "Minutes of July 11, 2024",
+   "resolution": "approved 4-0-1",
+   "quote": "there was a motion to accept the minute from july 11 by chris menard, seconded by dave passios. the vote was 4-0-1.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "chris menard states at the last capital planning meeting there was a new member added, rob bowen.",
+   "tags": [
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "no action",
+   "quote": "there are no additional topics to add to upcoming agendas.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Important dates",
+   "resolution": "no action",
+   "quote": "there are no upcoming important dates.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "no action",
+   "quote": "a. 8/8/24 - meeting with cemcom",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no action",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "motion recorded, result not stated",
+   "quote": "there was a motion to adjourn by chris menard, seconded by jay simeone.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "parks",
+  "recreation director",
+  "revolving fund",
+  "reserve fund",
+  "town manager search",
+  "financial policy",
+  "FY24 quarterly report",
+  "special revenue funds",
+  "ARPA",
+  "chapter 70",
+  "state aid",
+  "budget task force",
+  "consolidation",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

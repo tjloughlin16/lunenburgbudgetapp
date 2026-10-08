@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "economic-development-committee",
  "meeting_date": "2024-06-27",
  "docid": "6634",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the June 6th meeting",
+   "motion": "Approve the minutes of the June 6th meeting.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "Maryrae Holman",
-   "outcome": "passed 4-0",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "there was a motion by ana lockwood to approve the minutes for the june 6th meeting, seconded by maryrae holman. roll call vote. joeci gilchrest aye, maryrae holman aye, ana lockwood aye, cathy clark aye."
+   "quote": "there was a motion by ana lockwood to approve the minutes for the june 6th meeting, seconded by maryrae holman. roll call vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Maryrae Holman",
    "seconded_by": "Jeanne Dupre",
    "outcome": "passed",
@@ -29,6 +29,163 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0695761
+ "note": "Typed minutes, not a scan; the text is readable. Only two motions are recorded. The minutes approval lists four aye votes by roll call (Gilchrest, Holman, Lockwood, Clark) but prints no result, and three present members (Dupre, McLeod, Moore) are not named in that roll call, so its outcome is recorded as not stated. The adjournment has \"All in favor\" with no count. No dollar figure is printed for the Meet and Greet beyond Ana Lockwood's $100. Several businesses are mentioned (Ruby's Donuts, Il Forno, \"Mikes Random Stuff\") but none appeared before the committee.",
+ "cost_usd": 0.013942970000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cathy Clark",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair cathy clark, member jeanne dupre, master plan steering committee representative joeci gilchrest, agriculture commission representative maryrae holman"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair cathy clark, member jeanne dupre, master plan steering committee representative joeci gilchrest, agriculture commission representative maryrae holman"
+  },
+  {
+   "name": "Joeci Gilchrest",
+   "role": "Master Plan Steering Committee Representative",
+   "status": "present",
+   "quote": "chair cathy clark, member jeanne dupre, master plan steering committee representative joeci gilchrest, agriculture commission representative maryrae holman"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Agriculture Commission Representative",
+   "status": "present",
+   "quote": "chair cathy clark, member jeanne dupre, master plan steering committee representative joeci gilchrest, agriculture commission representative maryrae holman"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Open Space Representative",
+   "status": "present",
+   "quote": "open space representative ana lockwood, planning board representative glenn mcleod, select board representative amanda moore"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Planning Board Representative",
+   "status": "present",
+   "quote": "open space representative ana lockwood, planning board representative glenn mcleod, select board representative amanda moore"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Select Board Representative",
+   "status": "present",
+   "quote": "open space representative ana lockwood, planning board representative glenn mcleod, select board representative amanda moore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Meet and Greet scheduled for September 26, 5:30 PM to 8:30 PM, on a weeknight.",
+   "quote": "after discussion, the meet and greet was scheduled for september 26th from 5:30 pm to 8:30 pm."
+  },
+  {
+   "decision": "Meet and Greet to be funded solely through donations, as in the prior year; members to seek business donations.",
+   "quote": "the committee agrees to fund the meet and greet solely through donations just like the prior year."
+  },
+  {
+   "decision": "Joeci Gilchrest to create a flyer with a sponsorship section; promotion to start as soon as possible.",
+   "quote": "joeci gilchrest will create a flyer with general information on the front with a section regarding sponsorships"
+  },
+  {
+   "decision": "A flier to be sent to the Chairs of every Committee asking that a member attend the Meet and Greet.",
+   "quote": "the committee agrees to send a flier to the chairs of every committee to request that a member attend."
+  },
+  {
+   "decision": "Amanda Moore to make an announcement at the next Board of Selectmen meeting.",
+   "quote": "amanda moore will make an announcement at the next board of selectmen"
+  },
+  {
+   "decision": "Ana Lockwood agreed to sponsor the Meet and Greet with a $100 contribution.",
+   "quote": "ana lockwood agreed to sponsor and will contribute $100."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Meet and Greet sponsorship by Ana Lockwood",
+   "what_was_recorded": "Ana Lockwood agreed to sponsor the Meet and Greet with a $100 contribution.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "ana lockwood agreed to sponsor and will contribute $100."
+  },
+  {
+   "topic": "Meet and Greet funding source",
+   "what_was_recorded": "The Committee agreed to fund the Meet and Greet through donations only, with members seeking business donations to offset out-of-pocket cost; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the committee agrees to fund the meet and greet solely through donations just like the prior year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of minutes",
+   "resolution": "Minutes of June 6 approved by roll call; result not stated",
+   "quote": "there was a motion by ana lockwood to approve the minutes for the june 6th meeting, seconded by maryrae holman.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "New business update",
+   "resolution": "Reported; no action recorded",
+   "quote": "mike from il forno purchased the land next door to their restaurant.",
+   "tags": [
+    "local businesses",
+    "business development"
+   ]
+  },
+  {
+   "topic": "Meet and Greet discussion",
+   "resolution": "Scheduled for September 26; donation funding, flyer, and outreach assigned",
+   "quote": "maryrae holman confirms that she will again host and has open availability.",
+   "tags": [
+    "meet and greet",
+    "event planning",
+    "sponsorship",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "No public comments",
+   "quote": "there were no public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Member updates and comments",
+   "resolution": "Reorganization planning and charge review noted; Planning Board meeting July 8",
+   "quote": "cathy clark questions if the members need to be re-appointed prior to re-organization.",
+   "tags": [
+    "committee reorganization",
+    "charge review",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Adjourned at 7:00 PM",
+   "quote": "the meeting closed at 7:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "economic development",
+  "meet and greet",
+  "donations and sponsorships",
+  "local businesses",
+  "committee reorganization",
+  "planning board",
+  "master plan"
+ ],
+ "dropped_unquoted_by_field": {}
 }

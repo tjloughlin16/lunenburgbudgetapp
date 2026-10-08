@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-05-15",
  "docid": "6564",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Submit the ADA Grant in the amount of $136,820",
+   "motion": "Submit the ADA Grant in the amount of $136,820.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 3-0",
@@ -20,7 +20,7 @@
    "quote": "k. menard made a motion to submit the ada grant in the amount of $136,820. c. shapiro seconded. all in favor, motion carried (3-0)."
   },
   {
-   "motion": "Approve January 17 and March 20, 2024 minutes pending corrections",
+   "motion": "Approve the minutes of January 17 and March 20, 2024, pending the corrections.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 3-0",
@@ -29,6 +29,299 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.062432400000000006
+ "note": "Text is a usable extract of the minutes, with ligature and OCR-style artifacts (e.g. \"ﬁeld\", \"quill\", \"Dog Pard\"). Two votes recorded, both 3-0; the adjournment at 7:55 pm is recorded with no motion. One figure conflict to note: the ADA Grant motion is for $136,820, while the chair's statement in the same item says \"$136,800\". The minutes do not state a role for Chris Ruth beyond \"Additional Attendees\" and the agenda heading. The Dog Park item's public comment is recorded inside the item rather than under the Public comment heading, so it is listed in public_comment with its topic.",
+ "cost_usd": 0.01580757,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: karin menard, colleen shapiro, and anita scheipers"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: karin menard, colleen shapiro, and anita scheipers"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: karin menard, colleen shapiro, and anita scheipers"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: ana lockwood and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: ana lockwood and christopher sullivan"
+  },
+  {
+   "name": "Angela Clement",
+   "role": "Additional Attendee",
+   "status": "present",
+   "quote": "additional attendees: angela clement and chris ruth"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Additional Attendee (referred to as C. Ruth; no role printed)",
+   "status": "present",
+   "quote": "additional attendees: angela clement and chris ruth"
+  },
+  {
+   "name": "D. Passios",
+   "role": "of 56 Whiting St.; member of the public",
+   "status": "present",
+   "quote": "d. passios of 56 whiting st. stated after speaking with c. ruth it was determined that unless construction is expanded at marshall park, the cave will not be disrupted."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "C. Ruth to obtain samples of a sand-colored floor for the beach house, following K. Menard's suggestion.",
+   "quote": "c. ruth will get some samples."
+  },
+  {
+   "decision": "A. Scheipers to check with the Town Manager about insurance for the proposed dog park.",
+   "quote": "a. scheipers stated she will check with the town manager about the insurance."
+  },
+  {
+   "decision": "C. Ruth to serve as Clerk of the Works under the OPM agreement with Skanska.",
+   "quote": "c. ruth will be the clerk of the works."
+  },
+  {
+   "decision": "K. Menard to forward the open space and master plan survey to A. Clement for distribution and post it.",
+   "quote": "once complete she will forward to a. clement for distribution and she quill post it as well."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Playground surfacing and equipment quotes (Marshall Park, ADA Grant basis)",
+   "what_was_recorded": "The original playground quote was $106,000 (mulch); the January 2024 quote was $243,000 (poured rubber surface); the surfacing difference is $128,000; equipment prices also rose; the difference between original and most recent is $136,820.",
+   "figures_as_printed": [
+    "$106,000",
+    "$243,000",
+    "$128,000",
+    "$136,820"
+   ],
+   "quote": "k. menard notes the playground was originally $106,000 and believes the original quote was for mulch ground cover."
+  },
+  {
+   "topic": "ADA Grant request",
+   "what_was_recorded": "Board voted to submit the ADA Grant for $136,820; the chair's discussion referred to asking for $136,800, a difference from the motion amount.",
+   "figures_as_printed": [
+    "$136,820",
+    "$136,800"
+   ],
+   "quote": "a. scheipers stated if they could get 2 sets of equipment and the surface then ask for $136,800."
+  },
+  {
+   "topic": "Park Grant",
+   "what_was_recorded": "Park Grant awarded at $500,000, beginning July 1, 2024.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "park grant was awarded $500,000 and begins july 1, 2024."
+  },
+  {
+   "topic": "Land & Water Conservation Fund Grant",
+   "what_was_recorded": "A $1,000,000 grant that requires a wetlands permit from the Army Corps of Engineers before it is awarded.",
+   "figures_as_printed": [
+    "$1,000,000"
+   ],
+   "quote": "land & water conservation fund grant, $1,000,000 needs approval for a wetlands permit from the army corps"
+  },
+  {
+   "topic": "Dredging Grant",
+   "what_was_recorded": "Grant for dredging at Marsh Park and the beach; no word received since submission.",
+   "figures_as_printed": [
+    "$96,000"
+   ],
+   "quote": "the grant will be for dredging at marsh park and the beach in the amount of $96,000"
+  },
+  {
+   "topic": "OPM agreement with Skanska",
+   "what_was_recorded": "Agreement with Skanska not to exceed $260,000 in the first year; start date to be determined.",
+   "figures_as_printed": [
+    "$260,000"
+   ],
+   "quote": "there is an agreement with skanska not to exceed $260,000"
+  },
+  {
+   "topic": "Town beach house sub-floor material",
+   "what_was_recorded": "Sub-floor material is ready to ship and its price is less than expected; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the material for the sub-ﬂoor is ready to ship and the price is less than expected."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "D. Passios",
+   "stated_role": "of 56 Whiting St.",
+   "topic": "Marshall Park cave and construction",
+   "quote": "d. passios of 56 whiting st. stated after speaking with c. ruth it was determined that unless construction is expanded at marshall park, the cave will not be disrupted."
+  },
+  {
+   "speaker": "D. Passios",
+   "stated_role": "of 56 Whiting St.",
+   "topic": "Dog park jurisdiction (under the dog park item)",
+   "quote": "d. passios of 56 whiting st. stated he asked the board of health who had jurisdiction over the dog pard and they indicated it was animal control."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Facilities Director & Recreation Director Update",
+   "resolution": "update; no action recorded",
+   "quote": "first item on the agenda, facilities director & recreation director update",
+   "tags": [
+    "facilities",
+    "recreation",
+    "Veteran's Park",
+    "Powell Field"
+   ]
+  },
+  {
+   "topic": "Town Beach House Work: Update",
+   "resolution": "update; C. Ruth to get floor samples",
+   "quote": "next item on the agenda, town beach house work: update",
+   "tags": [
+    "town beach",
+    "beach house",
+    "flooring"
+   ]
+  },
+  {
+   "topic": "Program updates",
+   "resolution": "update; no action recorded",
+   "quote": "a. clement gave the following program updates:",
+   "tags": [
+    "programs",
+    "beach",
+    "swim lessons",
+    "registration"
+   ]
+  },
+  {
+   "topic": "Repurpose T-ball field as Dog Park",
+   "resolution": "ongoing; insurance check by chair",
+   "quote": "a. scheipers stated she will check with the town manager about the insurance.",
+   "tags": [
+    "dog park",
+    "T-ball field",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Status of Skate Park",
+   "resolution": "update; agreement reached with insurance, expected in place by end of month",
+   "quote": "a. scheipers indicated an agreement was reached with the insurance.",
+   "tags": [
+    "skate park",
+    "insurance",
+    "Town Council license agreement"
+   ]
+  },
+  {
+   "topic": "Grant Updates",
+   "resolution": "ADA Grant submission approved 3-0; other grants reported",
+   "quote": "k. menard discussed upcoming and previous applied for grants.",
+   "tags": [
+    "grants",
+    "ADA",
+    "Park Grant",
+    "Land & Water Conservation Fund",
+    "Trails Grant",
+    "Marshall Park playground"
+   ]
+  },
+  {
+   "topic": "Dredging Grant",
+   "resolution": "update; no award yet",
+   "quote": "the grant will be for dredging at marsh park and the beach in the amount of $96,000",
+   "tags": [
+    "dredging",
+    "Marsh Park",
+    "beach",
+    "grants"
+   ]
+  },
+  {
+   "topic": "OPM Updates",
+   "resolution": "update; Skanska agreement, start date TBD",
+   "quote": "there is an agreement with skanska not to exceed $260,000",
+   "tags": [
+    "OPM",
+    "Skanska",
+    "construction management"
+   ]
+  },
+  {
+   "topic": "Update on Lake Shirley Parcels & Agreement with Shady Point",
+   "resolution": "update; Select Board reviewing document",
+   "quote": "the chair of the select board stated they were in the process of reviewing the document",
+   "tags": [
+    "Lake Shirley",
+    "Shady Point",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Committee Updates (Open Space & Master Plan Steering)",
+   "resolution": "update; survey being fine-tuned",
+   "quote": "once complete she will forward to a. clement for distribution",
+   "tags": [
+    "open space",
+    "master plan",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Chair Updates",
+   "resolution": "none",
+   "quote": "next item on the agenda, chair updates - none",
+   "tags": [
+    "chair"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved 3-0 pending corrections (January 17 and March 20, 2024)",
+   "quote": "k. menard made a motion to approve january 17 and march 20, 2024 pending the corrections.",
+   "tags": [
+    "minutes approval"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "grants",
+  "ADA grant",
+  "playground",
+  "Marshall Park",
+  "town beach",
+  "beach house",
+  "dog park",
+  "skate park",
+  "dredging",
+  "OPM Skanska",
+  "Lake Shirley",
+  "Select Board",
+  "minutes approval",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

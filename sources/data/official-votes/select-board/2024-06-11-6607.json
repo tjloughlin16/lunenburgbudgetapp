@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-06-11",
  "docid": "6607",
@@ -12,87 +12,497 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Building Commissioner/Land Use Manager Brian Gingras",
-   "moved_by": "Jeffreys",
-   "seconded_by": "Moore",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Ratify the Town Manager's appointment of Building Commissioner/Land Use Manager Brian Gingras.",
+   "moved_by": "Clerk Jeffreys",
+   "seconded_by": "Clerk Moore",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
    "quote": "motion by clerk jeffreys to ratify the town manager's appointment of building commissioner/land use manager brian gingras. seconded by clerk moore. vote: five - aye."
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Seasonal Lifeguard Brionna Bowser",
-   "moved_by": "Alonzo",
-   "seconded_by": "Moore",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion by member alonzo to ratify the town manager's appointment of seasonal lifeguard brionna bowser. seconded by clerk moore. vote: five - aye."
+   "motion": "Ratify the Town Manager's appointment of Seasonal Lifeguard Brionna Bowser.",
+   "moved_by": "Member Alonzo",
+   "seconded_by": "Clerk Moore",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "motion by member alonzo to ratify the town manager's appointment of seasonal lifeguard brionna bowser. seconded by clerk moore."
   },
   {
-   "motion": "Ratify the Town Manager's Annual Appointments",
-   "moved_by": "Jeffreys",
-   "seconded_by": "Moore",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Ratify the Town Manager's Annual Appointments as read by Chair Nuzzolo.",
+   "moved_by": "Clerk Jeffreys",
+   "seconded_by": "Clerk Moore",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
    "quote": "motion by clerk jeffreys to ratify the town manager's annual appointments as read by chair nuzzolo. seconded by clerk moore. vote: five - aye."
   },
   {
-   "motion": "Appoint Mary Rae Holman to the Agricultural Commission for a term ending June 30, 2027",
-   "moved_by": "Alonzo",
-   "seconded_by": "Moore",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion by member alonzo to appoint mary rae holman to the agricultural commission for a term ending june 30, 2027. seconded by clerk moore. vote: five - aye."
-  },
-  {
-   "motion": "Appoint Richard McGrath to the APDC for a term ending June 30, 2027",
-   "moved_by": "Alonzo",
-   "seconded_by": "Moore",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion by member alonzo to appoint richard mcgrath to the apdc for a term ending june 30, 2027. seconded by clerk moore. vote: five - aye."
-  },
-  {
-   "motion": "Appoint Richard McGrath to the Historical Commission for a term ending June 30, 2027",
-   "moved_by": "Alonzo",
-   "seconded_by": "Moore",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion by member alonzo to appoint richard mcgrath, to the historical commission for a term ending june 30, 2027. seconded by clerk moore. vote: five - aye."
-  },
-  {
-   "motion": "Post the interim Town Manager job posting as amended",
-   "moved_by": "Jeffreys",
-   "seconded_by": "Moore",
-   "outcome": "passed 5-0",
+   "motion": "Appoint Mary Rae Holman to the Agricultural Commission for a term ending June 30, 2027.",
+   "moved_by": "Member Alonzo",
+   "seconded_by": "Clerk Moore",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "motion by vice chair jeffreys to post the interim town manager job posting as amended. seconded by clerk moore. vote: five-aye."
+   "quote": "to appoint mary rae holman to the agricultural commission for a term ending june 30, 2027. seconded by clerk moore."
   },
   {
-   "motion": "Appoint Selectman Alonzo as the Select Board's representative on the Town Manager Screening Committee",
-   "moved_by": "Jeffreys",
-   "seconded_by": "Moore",
-   "outcome": "passed 5-0",
+   "motion": "Appoint Richard McGrath to the APDC for a term ending June 30, 2027.",
+   "moved_by": "Member Alonzo",
+   "seconded_by": "Clerk Moore",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "to appoint richard mcgrath to the apdc for a term ending june 30, 2027. seconded by clerk moore."
+  },
+  {
+   "motion": "Appoint Richard McGrath to the Historical Commission for a term ending June 30, 2027.",
+   "moved_by": "Member Alonzo",
+   "seconded_by": "Clerk Moore",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "to appoint richard mcgrath, to the historical commission for a term ending june 30, 2027. seconded by clerk moore."
+  },
+  {
+   "motion": "Post the interim Town Manager job posting as amended.",
+   "moved_by": "Vice Chair Jeffreys",
+   "seconded_by": "Clerk Moore",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "motion by vice chair jeffreys to post the interim town manager job posting as amended. seconded by clerk moore."
+  },
+  {
+   "motion": "Appoint Selectman Alonzo as the Board's representative on the Town Manager Screening Committee.",
+   "moved_by": "Vice Chair Jeffreys",
+   "seconded_by": "Clerk Moore",
+   "outcome": "passed 5-0-0",
+   "procedural": false,
+   "quote": "to appoint selectman alonzo as its representative on the town manager screening committee."
+  },
+  {
+   "motion": "Adjourn the meeting at 10:20 pm.",
+   "moved_by": "Clerk Moore",
+   "seconded_by": "Vice Chair Jeffreys",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "motion by vice chair jeffreys to appoint selectman alonzo as its representative on the town manager screening committee. seconded by clerk moore. vote: five - aye."
+   "quote": "motion by clerk moore to adjourn the meeting at 10: 20 pm."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Moore",
-   "seconded_by": "Jeffreys",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion by clerk moore to adjourn the meeting at 10: 20 pm. seconded by vice chair jeffreys call for the vote: five-aye."
-  },
-  {
-   "motion": "Approve the minutes from June 11, 2024",
-   "moved_by": "Nuzzolo",
-   "seconded_by": "Moore",
+   "motion": "Approve the minutes of June 11, 2024.",
+   "moved_by": "Chair Nuzzolo",
+   "seconded_by": "Vice-Chair Moore",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "chair nuzzolo made the motion to approve the minutes from june 11, 2024. seconded by vice-chair moore. call for the vote: four-aye. one-abstain (mcleod)."
+   "quote": "chair nuzzolo made the motion to approve the minutes from june 11, 2024. seconded by vice-chair moore."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Nine votes from the June 11, 2024 meeting; one vote from the meeting's approval on June 17, 2025. No scan quality issues.",
- "cost_usd": 0.1391511
+ "note": "Text extracted from a 6-page document, all pages readable; no scan. The minutes are of the 11 June 2024 meeting; the approval vote for those minutes is printed at the foot of the document as taken at the 17 June 2025 meeting, and is recorded here as a procedural vote. Printed inconsistencies, reproduced as printed and not corrected: motions are attributed to \"Clerk Jeffreys\" though Jeffreys is listed as Vice-Chair; the minutes-approval seconder is \"Vice-Chair Moore\" though Moore is listed as Clerk; the Chair is spelled \"Nuzollo\" once; the abstention names \"McLeod\", who is not among the listed members. Several votes are printed as \"Five - Aye\" without a roll call, so outcomes are as printed. Board-member remarks under the PUBLIC COMMENT heading (Emkey, Alonzo, Jeffreys, Moore, Nuzzolo) were not recorded as public comment. Two motions/decisions reference attached documents not in the text (annual appointments, FY2025 appointments). No transfers are recorded. The Interim Town Manager, Julie Belliveau and Sergeant Zrate/Officer Broc were named but not recorded as attending.",
+ "cost_usd": 0.02387637,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair caesar nuzzolo, vice-chair michael-ray jeffreys, clerk amanda moore, member tom alonzo, and member renee emkey"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Jeff Beck",
+   "role": "from BSC Group (presenter)",
+   "status": "present",
+   "quote": "jeff beck from bsc group provided an overview of the property"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "dave passios, 56, whiting street, was present."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street was present."
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "public commenter, for the Council on Aging",
+   "status": "present",
+   "quote": "debbie lincoln, 46 hemlock drive, was present for the council on aging."
+  },
+  {
+   "name": "John Bowen",
+   "role": "public commenter, 162 Highland Street",
+   "status": "remote",
+   "quote": "john bowen 162 highland street joined over zoom."
+  },
+  {
+   "name": "Rebecca Johnson",
+   "role": "Minute Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, rebecca johnson, minute clerk"
+  },
+  {
+   "name": "McLeod",
+   "role": "named as abstaining on the approval of the June 11, 2024 minutes (surname only; not in the listed membership)",
+   "status": "not stated",
+   "quote": "call for the vote: four-aye. one-abstain (mcleod)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Interim Town Manager applications are to be sent to the Assistant Town Manager, Julie, for initial screening.",
+   "quote": "it was decided that they should be sent to the assistant town manager, julie, for initial screening."
+  },
+  {
+   "decision": "Board members assigned liaison roles to the committees.",
+   "quote": "board members reviewed the list of committees and assigned liaison roles accordingly."
+  },
+  {
+   "decision": "Agreement that the town should adopt a clear policy on email access after employees leave town employment.",
+   "quote": "there was agreement that the town should adopt a clear policy to avoid confusion and ensure consistency in handling email access."
+  },
+  {
+   "decision": "Agreement to continue gathering public input on the outdoor dining policy before any decisions.",
+   "quote": "there was an agreement to continue gathering public input before moving forward with any decisions."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bills Payable and Accounts Payable/Payroll warrants",
+   "what_was_recorded": "The Chair reported the Board's receipt of two Bills Payable warrants and one Accounts Payable and Payroll warrant; no vote was recorded.",
+   "figures_as_printed": [
+    "$54,268.28",
+    "$35,476.57",
+    "$1,302,605.45"
+   ],
+   "quote": "the board is in receipt of bills payable warrant: $54,268.28, bills payable warrant: $35,476.57 and accounts payable and payroll warrant: $1,302,605.45."
+  },
+  {
+   "topic": "Debbie Lincoln, Council on Aging parking lot plan",
+   "what_was_recorded": "A resident reported that an architect-engineer said a 2010 parking lot plan was still useful for a stated additional cost, to be updated and possibly funded from ARPA.",
+   "figures_as_printed": [
+    "ten to twelve thousand dollars"
+   ],
+   "quote": "stated the plans were still useful for ten to twelve thousand dollars more."
+  },
+  {
+   "topic": "925 Massachusetts Ave grant",
+   "what_was_recorded": "The town had received a grant through Mass Development's real estate technical assistance program to fund conceptual plans and a draft RFP.",
+   "figures_as_printed": [],
+   "quote": "the town had received a grant through mass development's real estate technical assistance program"
+  },
+  {
+   "topic": "925 Massachusetts Ave sale price and remediation funding",
+   "what_was_recorded": "Planning efforts could influence the property's sale price; if no proposals are received, more funding may be sought for remediation. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "how planning efforts would influence the property's sale price"
+  },
+  {
+   "topic": "ARPA funding review",
+   "what_was_recorded": "The Town Manager presented an updated ARPA spreadsheet showing some funds committed and others uncommitted. No figures printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "town manager lemieux presented the updated spreadsheet of arpa funding."
+  },
+  {
+   "topic": "ARPA reallocation",
+   "what_was_recorded": "The Board discussed reallocating unspent ARPA funds and committing and spending them before year end; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the board discussed reallocating unspent funds and the importance of committing and spending these funds before the end of the year."
+  },
+  {
+   "topic": "ARPA funds unappropriated (public comment)",
+   "what_was_recorded": "A resident raised concern that ARPA money was unappropriated and suggested projects; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "he has concerns regarding arpa money being unappropriated"
+  },
+  {
+   "topic": "Chapter 70 funding (School Committee report)",
+   "what_was_recorded": "The School Committee planned a meeting with the state delegation on Chapter 70 funding and the bus bidding process; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "planning a meeting with the state delegation to address issues like chapter 70 funding and the bus bidding process."
+  },
+  {
+   "topic": "Fourth-quarter tax bill error",
+   "what_was_recorded": "An error in taxable value on the fourth-quarter tax bills, caused by Munis software, was corrected in billing; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the fourth-quarter tax bills had an error in taxable value due to munis software, but the correct amounts were billed."
+  },
+  {
+   "topic": "Interim Town Manager compensation (public comment)",
+   "what_was_recorded": "A resident asked what compensation an interim Town Manager might receive; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "raised questions about what compensation an interim town manager might receive"
+  },
+  {
+   "topic": "Cemetery consulting and ARPA (public comment)",
+   "what_was_recorded": "A resident suggested ARPA funds for cemetery needs, including a consulting firm for a site evaluation; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "hiring a consulting firm for a site evaluation and potentially forming a cemetery corporation."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56, Whiting Street (as printed)",
+   "topic": "ARPA money unappropriated",
+   "quote": "dave passios, 56, whiting street, was present. he stated that he has concerns regarding arpa money being unappropriated"
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "91 Main Street (as printed)",
+   "topic": "Historical Commission appointments and recording meetings",
+   "quote": "ana lockwood, 91 main street was present. she stated that the board will have the opportunity"
+  },
+  {
+   "speaker": "Debbie Lincoln",
+   "stated_role": "for the Council on Aging",
+   "topic": "Council on Aging parking lot plan",
+   "quote": "debbie lincoln, 46 hemlock drive, was present for the council on aging. she showed the select board a plan for a parking lot starting in 2010."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street (as printed)",
+   "topic": "communication with committee appointees",
+   "quote": "he raised concerns regarding communication with committee appointees, including the need for more effective outreach beyond email."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street, via Zoom",
+   "topic": "appointment accountability, interim Town Manager pay, cemetery ARPA use",
+   "quote": "john bowen 162 highland street joined over zoom. he expressed concern that some individuals"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "chair nuzzolo informed attendees that the meeting was being recorded and broadcast live",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (board and public)",
+   "resolution": "no action; public comment taken",
+   "quote": "ana lockwood, 91 main street was present. she stated that the board will have the opportunity",
+   "tags": [
+    "public comment",
+    "historical commission",
+    "ARPA",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Presentation: 925 Massachusetts Ave redevelopment plans",
+   "resolution": "presented; no vote",
+   "quote": "chair nuzzolo introduced a presentation by bsc group on the conceptual redevelopment plans",
+   "tags": [
+    "925 Massachusetts Ave",
+    "BSC Group",
+    "redevelopment",
+    "zoning",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Interviews, appointments and ratifications",
+   "resolution": "ratified appointments and approved annual appointments; appointed members to three commissions",
+   "quote": "motion by clerk jeffreys to ratify the town manager's appointment of building commissioner/land use manager brian gingras.",
+   "tags": [
+    "appointments",
+    "ratifications",
+    "Agricultural Commission",
+    "APDC",
+    "Historical Commission"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "town manager lemieux provided updates on staffing, vacancies, and the upcoming beach season.",
+   "tags": [
+    "staffing",
+    "vacancies",
+    "Munis",
+    "tax billing",
+    "Personnel Committee"
+   ]
+  },
+  {
+   "topic": "Old business: Tax Investigation Report",
+   "resolution": "discussed; full report not yet available",
+   "quote": "the tax investigation report was discussed, with the mention that a summary had been received",
+   "tags": [
+    "tax investigation"
+   ]
+  },
+  {
+   "topic": "Old business: Use of Information Technology Resources Policy",
+   "resolution": "agreed the town should adopt a clear policy",
+   "quote": "there was agreement that the town should adopt a clear policy to avoid confusion and ensure consistency in handling email access.",
+   "tags": [
+    "IT policy",
+    "email access"
+   ]
+  },
+  {
+   "topic": "Old business: Outdoor Dining Policy",
+   "resolution": "continued; gathering public input",
+   "quote": "there was an agreement to continue gathering public input before moving forward with any decisions.",
+   "tags": [
+    "outdoor dining",
+    "alcohol",
+    "state legislation"
+   ]
+  },
+  {
+   "topic": "Current business: Interim Town Manager job posting",
+   "resolution": "posted as amended (passed 5-0-0)",
+   "quote": "motion by vice chair jeffreys to post the interim town manager job posting as amended.",
+   "tags": [
+    "interim Town Manager",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Designate Town Manager Screening Committee representative",
+   "resolution": "Alonzo designated (passed 5-0-0)",
+   "quote": "to appoint selectman alonzo as its representative on the town manager screening committee.",
+   "tags": [
+    "Town Manager Screening Committee"
+   ]
+  },
+  {
+   "topic": "Current business: remaining ARPA funding and committed funds",
+   "resolution": "discussed; no action",
+   "quote": "town manager lemieux presented the updated spreadsheet of arpa funding.",
+   "tags": [
+    "ARPA",
+    "committed funds"
+   ]
+  },
+  {
+   "topic": "Current business: Budget Task Force",
+   "resolution": "discussed; timeline and composition open",
+   "quote": "member emkey presented examples of budget task forces from other massachusetts towns.",
+   "tags": [
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Liaison and committee assignments",
+   "resolution": "liaisons assigned",
+   "quote": "board members reviewed the list of committees and assigned liaison roles accordingly.",
+   "tags": [
+    "committees",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and committee reports",
+   "resolution": "warrants received; committee reports given",
+   "quote": "the board is in receipt of bills payable warrant: $54,268.28, bills payable warrant: $35,476.57 and accounts payable and payroll warrant: $1,302,605.45.",
+   "tags": [
+    "warrants",
+    "committee reports",
+    "School Committee",
+    "Capital Planning Committee",
+    "Council on Aging"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "listed; no action",
+   "quote": "june 17 (executive session only) june 18, and july 9, 16 and 23",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second round) and Town Manager comment",
+   "resolution": "no action; public comment taken",
+   "quote": "he raised concerns regarding communication with committee appointees, including the need for more effective outreach beyond email.",
+   "tags": [
+    "public comment",
+    "appointments",
+    "interim Town Manager compensation",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "quote": "vice chair jeffreys thanked the outgoing town manager for her years of service.",
+   "tags": [
+    "board comment",
+    "USERRA"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:20 PM (passed 5-0-0)",
+   "quote": "motion by clerk moore to adjourn the meeting at 10: 20 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Approval of June 11, 2024 minutes (recorded at foot of document)",
+   "resolution": "approved (passed 4-0-1)",
+   "quote": "chair nuzzolo made the motion to approve the minutes from june 11, 2024. seconded by vice-chair moore.",
+   "tags": [
+    "minutes approval"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments and ratifications",
+  "ARPA funds",
+  "interim Town Manager",
+  "Town Manager screening",
+  "outdoor dining",
+  "email access policy",
+  "tax investigation",
+  "925 Massachusetts Ave",
+  "BSC Group",
+  "budget task force",
+  "warrants",
+  "cemetery",
+  "Council on Aging parking lot",
+  "public comment",
+  "Historical Commission recording",
+  "Munis tax billing"
+ ],
+ "dropped_unquoted_by_field": {}
 }

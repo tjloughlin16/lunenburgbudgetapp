@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-07-31",
  "docid": "6675",
@@ -12,7 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Draft the Warrant Articles for the 3 items (change revolving account type from 53d to 53e ½, increase hours for the Recreation Director, and additional funding for completion of Marshall Park).",
+   "motion": "Approve the minutes of June 25, 2024.",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "C. Shapiro",
+   "outcome": "passed 5-0",
+   "procedural": true,
+   "quote": "c. sullivan made a motion to approve june 25, 2024. c. shapiro seconded. all in favor, motion carried (5-0)."
+  },
+  {
+   "motion": "Draft the Special Town Meeting Warrant Articles for the three items (change the revolving account from a 53d to a 53e ½; increase the Recreation Director hours; additional funding for Marshall Park).",
    "moved_by": "K. Menard",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 5-0",
@@ -20,23 +28,292 @@
    "quote": "k. menard made a motion to draft the warrant articles for the 3 items. c. shapiro seconded. all in favor, motion carried (5-0)."
   },
   {
-   "motion": "Appoint T. Lawless as the representative to the Open Space Committee.",
+   "motion": "Appoint T. Lawless as the Parks Commission representative to the Open Space Committee.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "k. menard made a motion to appoint t. lawless as the representative to the open space committee. c. shapiro seconded. all in favor, motion carried (5-0)."
-  },
-  {
-   "motion": "Approve the minutes of June 25, 2024.",
-   "moved_by": "C. Sullivan",
-   "seconded_by": "C. Shapiro",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "c. sullivan made a motion to approve june 25, 2024. c. shapiro seconded. all in favor, motion carried (5-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0662224
+ "note": "Text extraction of a 5-page minutes document; readable, no scan noted. The adjournment at 9:12 pm is recorded with no motion, so it is not treated as a vote. The minutes print no dollar figures for the Recreation Director hours change or the Marshall Park additional funding (amount to be determined). The T-Mobile grant figure is a program ceiling reported at the meeting, not a Commission decision. The clerk signature line (Andrea Mastrototoro, Board Clerk) is not recorded as taking part, so she is omitted from attendees.",
+ "cost_usd": 0.01472907,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, tom lawless, and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, tom lawless, and christopher sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, tom lawless, and christopher sullivan"
+  },
+  {
+   "name": "Tom Lawless",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, tom lawless, and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, tom lawless, and christopher sullivan"
+  },
+  {
+   "name": "Angela Clement",
+   "role": "Additional Attendee (gave the Recreation Director update)",
+   "status": "present",
+   "quote": "additional attendees: angela clement, katie white, and dave passios"
+  },
+  {
+   "name": "Katie White",
+   "role": "Additional Attendee (Polar Plunge presenter)",
+   "status": "present",
+   "quote": "additional attendees: angela clement, katie white, and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Additional Attendee (public comment)",
+   "status": "present",
+   "quote": "additional attendees: angela clement, katie white, and dave passios"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair will draft letters to the baseball and softball groups explaining the Commission's concerns and that the fields will have no formal use during phase 1.",
+   "quote": "a. scheipers will draft letters to the groups and let them know the commission's concerns and why the fields will have no formal use."
+  },
+  {
+   "decision": "Members were asked to keep the week of the 14th open to review the landscape designer proposals.",
+   "quote": "asked the members to keep the week of the 14th open to review the proposals."
+  },
+  {
+   "decision": "Recreation Director to obtain the Little League registration numbers and fees collected.",
+   "quote": "a. clement will get the registration numbers and fees collected."
+  },
+  {
+   "decision": "K. White to look into whether lifeguards are needed for the Polar Plunge and to contact the school about the Student Council.",
+   "quote": "k. white will reach out to the school."
+  },
+  {
+   "decision": "K. White to follow up with the Commission in September on the Polar Plunge.",
+   "quote": "c. sullivan asked k. white to follow up with the commission in september."
+  },
+  {
+   "decision": "Chair suggested C. Ruth move forward with the existing list and have further discussion.",
+   "quote": "a. scheipers suggested having c.ruth move forward with the existing list and have further discussion."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "McNally Park and Whalom Lake / Marshall Pond capital requests",
+   "what_was_recorded": "Existing capital planning requests were listed: McNally Park for up to a schematic design, and Whalom Lake and Marshall Pond treatment; a prior grant for the treatment was not approved.",
+   "figures_as_printed": [
+    "$50,000",
+    "$30,000"
+   ],
+   "quote": "k. menard stated mcnally park, $50,000 for up to a schematic design. whalom lake and marshall pond treatment, $30,000."
+  },
+  {
+   "topic": "T-Mobile Hometown Grant",
+   "what_was_recorded": "Christopher Sullivan reported a T-Mobile grant that awards up to a stated amount to build, rebuild and refresh community spaces.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "they award up to $50,000 to build, rebuild, and refresh community spaces."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "D. Passios",
+   "stated_role": "public comment (listed as Dave Passios among Additional Attendees)",
+   "topic": "Parkland grants, baseball and skate park closures, Marshall Park parking, McNally property",
+   "quote": "d. passios asked when parkland grants can be applied for again."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Recreation Director Update",
+   "resolution": "no action; updates received",
+   "tags": [
+    "recreation",
+    "programs",
+    "beach"
+   ],
+   "quote": "a. clement gave the following updates:"
+  },
+  {
+   "topic": "Boys and Girls Club Polar Plunge, Nov 2024",
+   "resolution": "follow-up requested for September",
+   "tags": [
+    "polar plunge",
+    "fundraiser",
+    "town beach",
+    "waiver"
+   ],
+   "quote": "c. sullivan asked k. white to follow up with the commission in september."
+  },
+  {
+   "topic": "Consider Capital Planning requests",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "capital planning",
+    "McNally Park",
+    "Whalom Lake",
+    "Marshall Pond",
+    "Fitzgerald fields"
+   ],
+   "quote": "next item on the agenda, consider capital planning requests"
+  },
+  {
+   "topic": "Increase hours for Recreation Director",
+   "resolution": "no action; status reported",
+   "tags": [
+    "recreation director",
+    "hours",
+    "Finance Committee",
+    "Select Board"
+   ],
+   "quote": "the select board approved the request at their last meeting but was not approved by the finance committee."
+  },
+  {
+   "topic": "Status of the Skate Park",
+   "resolution": "no action; license agreement in place",
+   "tags": [
+    "skate park",
+    "license agreement"
+   ],
+   "quote": "the license agreement is in place between the parks commission and the skate park group which allows then entry to the property for construction."
+  },
+  {
+   "topic": "Marshall Park project updates and designer selection",
+   "resolution": "no action; RFQ out, proposals due August 8, 2024",
+   "tags": [
+    "Marshall Park",
+    "RFQ",
+    "designer selection",
+    "OPM"
+   ],
+   "quote": "a. scheipers stated the rfq is out and proposals are due august 8, 2024."
+  },
+  {
+   "topic": "Baseball and softball use of Marshall Park in 2025",
+   "resolution": "Chair to draft letters; no formal use of fields during phase 1",
+   "tags": [
+    "Marshall Park",
+    "baseball",
+    "softball",
+    "phase 1"
+   ],
+   "quote": "a. scheipers indicated during phase 1 of construction the fields will be unable to be used."
+  },
+  {
+   "topic": "Grant updates",
+   "resolution": "no action; updates received",
+   "tags": [
+    "grants",
+    "Land and Water",
+    "Army Corps permit",
+    "accessibility grant",
+    "T-Mobile grant"
+   ],
+   "quote": "the land and water grant requires an army corps of engineers permit for the wetlands part of the work before funding is provided."
+  },
+  {
+   "topic": "Special Town Meeting warrant articles",
+   "resolution": "voted to draft warrant articles (5-0)",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "revolving account",
+    "53e ½"
+   ],
+   "quote": "k. menard made a motion to draft the warrant articles for the 3 items. c. shapiro seconded. all in favor, motion carried (5-0)."
+  },
+  {
+   "topic": "Chair updates",
+   "resolution": "no action; updates received",
+   "tags": [
+    "cave",
+    "Marshall Park"
+   ],
+   "quote": "a. scheipers indicated her updates were the cave being secured and marshall park."
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "no action; updates received",
+   "tags": [
+    "master planning"
+   ],
+   "quote": "k. menard stated master planning has not met recently."
+  },
+  {
+   "topic": "Open Space Committee representative",
+   "resolution": "T. Lawless appointed (5-0)",
+   "tags": [
+    "open space committee",
+    "appointment"
+   ],
+   "quote": "k. menard made a motion to appoint t. lawless as the representative to the open space committee."
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "June 25, 2024 minutes approved (5-0)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "c. sullivan made a motion to approve june 25, 2024. c. shapiro seconded. all in favor, motion carried (5-0)."
+  },
+  {
+   "topic": "Upcoming meeting dates and board comment",
+   "resolution": "no action; next meetings August 14 and 21, 2024",
+   "tags": [
+    "meeting dates",
+    "cardboard boat race"
+   ],
+   "quote": "august 14 and 21, 2024."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "questions and concerns raised; no action recorded",
+   "tags": [
+    "public comment",
+    "parkland grants",
+    "skate park",
+    "parking",
+    "McNally property"
+   ],
+   "quote": "d. passios expressed concerns with the parking in the mass. ave side of marshall park."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Marshall Park",
+  "skate park",
+  "capital planning",
+  "special town meeting",
+  "warrant articles",
+  "grants",
+  "recreation",
+  "polar plunge",
+  "beach",
+  "baseball fields",
+  "open space committee",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

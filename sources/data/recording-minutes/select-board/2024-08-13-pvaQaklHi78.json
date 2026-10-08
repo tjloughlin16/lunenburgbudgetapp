@@ -471,5 +471,252 @@
    "at": "2026-10-08T02:56:14Z",
    "cost_usd": 0.220671
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-08-13-minutes-rr2026-09-18.txt",
+   "path": "sources/meetings/select-board/2024-08-13-minutes-rr2026-09-18.pdf"
+  },
+  "official_sha256": "d7ebb2245ceefa9024ff787631ceb7fa3a220634aa59dc1bcfd7db77f3fe2425",
+  "against": "text",
+  "coverage": "full",
+  "summary": "The two records agree on all six non-procedural votes (each 5-0-0) and on the main ARPA decisions. They differ on the ARPA item list, the attendee roles, and a few figures and people that appear in only one record. Check the chair/vice-chair labelling in our minutes and the $99,000 and $115,000 items against the recording.",
+  "counts": {
+   "agree": 15,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: appoint Carter Terenzini as General Government Records Access Officer",
+    "ours": "Appoint interim town manager Carter terenzini as general government records access officer — passed unanimously",
+    "official": "Motion by Member Alonzo to appoint Interim Town Manager Carter Terenzini as the General Government Records Access Officer. Seconded by Clerk Moore. Call for the vote: Five-aye. Motion passed unanimously (5-0-0).",
+    "note": "Same appointment, same unanimous outcome.",
+    "t": 982
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: ratify John Sharp as Seasonal Cemetery Laborer",
+    "ours": "Ratify interim town manager's appointment of John Sharp as seasonal cemetery laborer — passed unanimously",
+    "official": "Motion by Member Alonzo to ratify the appointment of John Sharp as Seasonal Cemetery Laborer.",
+    "note": "Same ratification and outcome (5-0-0).",
+    "t": 1043
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: ratify Denise McHugh as Data Collector",
+    "ours": "Ratify appointment of Denise McHugh as data collector — passed unanimously",
+    "official": "Motion by Member Alonzo to ratify the appointment of Denise McHugh as Data Collector.",
+    "note": "Same ratification and outcome (5-0-0).",
+    "t": 1087
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: appoint election workers, Sept 1 2024 to Aug 31 2025",
+    "ours": "Appoint the election workers read by the chair, term Sept 1 2024 to Aug 31 2025 — passed unanimously",
+    "official": "Motion by Member Alonzo to appoint the following election workers for terms beginning September 1, 2024 through August 31, 2025:",
+    "note": "Same term and outcome; the official minutes also list the eight names, which ours does not.",
+    "t": 1148
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Nashoba Valley Medical Center closure resolution",
+    "ours": "Sign the resolution regarding the closure of Nashoba Valley Medical Center — passed unanimously",
+    "official": "Motion by Member Alonzo to approve the resolution requesting emergency action regarding the closure of Nashoba Valley Medical Center.",
+    "note": "Same resolution and unanimous outcome (5-0-0).",
+    "t": 5295
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Fall Special Town Meeting Nov 12 2024, warrant Aug 14 to Sept 16",
+    "ours": "Hold special fall town meeting Tuesday Nov 12 2024, open warrant Aug 14, close warrant Sept 16 — passed unanimously",
+    "official": "to schedule the Fall Special Town Meeting for November 12, 2024, to open the Warrant on August 14, 2024, and to close the Warrant on September 16, 2024.",
+    "note": "Dates and outcome match.",
+    "t": 5547
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer: reprogram the $60,000 ARPA reporting line",
+    "ours": "Proposal to retitle or reprogram the earlier ARPA reporting allocation to procurement/staffing use — 60,000 (discussed only)",
+    "official": "Interim Town Manager Terenzini also recommended that the Board reprogram a previously committed $60,000 line item originally designated for ARPA reporting.",
+    "note": "Both say it was proposed and discussed, with the vote deferred to the next meeting.",
+    "t": 2557
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA remaining funds total",
+    "ours": "ARPA allocation, ranked requests: $313,000",
+    "official": "approximately $313,000 in remaining ARPA funds",
+    "note": "Same figure; the draft list is also said to total exactly $313,000.",
+    "t": 2028
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ARPA ranked item amounts",
+    "ours": "ARPA ranked items: 16,000, 7500, 106,000, 20,000, $9,000, $99,000, $115,000",
+    "official": "1. Munis Consultant – $16,000 2. Two Intravenous Infusion Pumps for Fire/EMS – $7,500 3. Payroll Services and Implementation – Approximately $106,000 4. New Furniture for the Public Safety Building Day Room – $20,000 5. Weekend Food Kit Program (1 year) – $9,000 6. Conservation Commission Local Match for MassTrails Grant – Approximately $15,000",
+    "note": "The first five amounts match, but ours has $99,000 and $115,000 where the official list has only an approximately $15,000 item; check the recording near t=2276 to see whether those two are real figures or misheard.",
+    "t": 2276
+   },
+   {
+    "kind": "caption_error",
+    "about": "Village at Flat Hill drainage basin amounts",
+    "ours": "Village of Flat Hill detention basin: 15,000, 35,000, 25, $313,000",
+    "official": "The current request was for $35,000, though the Board discussed potentially allocating $15,000 to $25,000 to match a homeowner's contribution.",
+    "note": "The bare \"25\" is the $25,000 end of the $15,000 to $25,000 range; the place name is also rendered \"Village of\" instead of \"Village at\".",
+    "official_reading": "$25,000",
+    "t": 3686
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA spending deadline figure",
+    "ours": "ARPA spending deadline: 3.x million",
+    "official": "",
+    "note": "The official minutes give the deadline as a date, December 31, 2024, with no dollar figure; \"3.x million\" may be a misheard reference to the $313,000.",
+    "t": 3540
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 70 additional funding",
+    "ours": "Chapter 70 extra funding: 31,000",
+    "official": "the School Committee received approximately $31,000 in additional Chapter 70 funding",
+    "note": "Same figure.",
+    "t": 6236
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital items in ARPA backup",
+    "ours": "Capital items in ARPA backup: 125,000, 250,000",
+    "official": "",
+    "note": "The official minutes name eight capital projects and the DPW garage floor and roof items but give no amounts for them; the two figures cannot be matched to a project.",
+    "t": 2999
+   },
+   {
+    "kind": "only_in_official",
+    "about": "ARPA federal obligation deadline date",
+    "ours": "",
+    "official": "to ensure all projects can meet the December 31, 2024 federal deadline for obligating funds.",
+    "note": "Our minutes record no December 31, 2024 deadline, only the internal September idea and a \"3.x million\" figure.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: ARPA follow-ups and vote next week",
+    "ours": "ARPA: follow up with Village of Flat Hill, let members re-rank, get a full update on committed/spent funds, and vote on allocations next week.",
+    "official": "The Board intends to finalize and vote on the ARPA allocations at its next meeting on August 20, 2024",
+    "note": "The official action items also cover re-ranking, the updated allocation breakdown, and the Flat Hill follow-up.",
+    "t": 4082
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: rename/repurpose the $60,000 ARPA reporting line, vote next week",
+    "ours": "The reprogramming/renaming of the earlier ARPA reporting money to be voted at the same time next week.",
+    "official": "The Board expressed general support for this proposal and agreed to vote on renaming the funding category at the next meeting.",
+    "note": "Same decision.",
+    "t": 3918
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: staff listening sessions",
+    "ours": "Interim manager to communicate soon to staff about planned listening sessions, held around mid-October to November.",
+    "official": "Interim Town Manager Terenzini agreed to begin outreach but cautioned that actual sessions might need to be scheduled for later in the fall due to workload demands.",
+    "note": "Consistent; the mid-October to November window is more specific in ours than in the official text.",
+    "t": 4609
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: SharePoint versus Google question to IT",
+    "ours": "Interim manager to raise the SharePoint-versus-Google question and its cost with IT at a Thursday meeting.",
+    "official": "Interim Town Manager Terenzini confirmed he would raise the issue with IT during an upcoming meeting with Suzor and Communication/IT Manager.",
+    "note": "Same commitment; the official text does not say Thursday or mention cost.",
+    "t": 6007
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: Aug 6 minutes corrected and brought back",
+    "ours": "Minutes of Aug 6 to be corrected and brought back next week.",
+    "official": "The Board agreed that these revisions would be made and that the amended minutes would be brought back for approval at the next meeting.",
+    "note": "Same decision; the official minutes also say no formal vote was taken.",
+    "t": 5795
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: internal deadline for ARPA commitments",
+    "ours": "Next week the board will discuss setting a deadline for ARPA commitments, around September.",
+    "official": "The Board tentatively proposed mid-September as a practical internal deadline and agreed to finalize that date at the next meeting.",
+    "note": "Same.",
+    "t": 6112
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who chaired the meeting",
+    "ours": "Michael Ray Jeff (chair)",
+    "official": "Members Present: Chair Caesar Nuzzolo, Vice-Chair Michael-Ray Jeffreys, Clerk Amanda Moore, Member Tom Alonzo, and Member Renee Emkey",
+    "note": "Ours labels Jeffreys as chair, but the official minutes name Caesar Nuzzolo chair and Jeffreys vice-chair; check the recording to see who ran the meeting. Our minutes never name Nuzzolo.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Alonzo's name",
+    "ours": "Mr Lonzo (member)",
+    "official": "Member Tom Alonzo",
+    "note": "Misheard surname.",
+    "official_reading": "Tom Alonzo",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Emkey's name",
+    "ours": "Selectman M key (member)",
+    "official": "Member Renee Emkey",
+    "note": "Misheard surname and wrong title.",
+    "official_reading": "Renee Emkey",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Clerk Amanda Moore",
+    "ours": "",
+    "official": "Clerk Amanda Moore",
+    "note": "The official minutes list Moore as present and seconding motions; our attendee list has no equivalent, and \"Mr Burton\" is not in the official roster (it may be a mishearing of Moore or of public speaker Burden).",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Julie (assistant town manager) and Annie Aubrey",
+    "ours": "Julie (assistant town manager); Annie Aubrey (staff (forwards select board email))",
+    "official": "",
+    "note": "The official \"Also Present\" lists only Carter Terenzini, though the minutes mention an Assistant Town Manager role elsewhere; check whether these two spoke on the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Recall effort announced against Vice-Chair Jeffreys",
+    "ours": "",
+    "official": "announced his intention to initiate a recall effort against Vice-Chair Jeffreys.",
+    "note": "The public comment, including this recall announcement, does not appear in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sewer Business Manager resignation",
+    "ours": "",
+    "official": "The Board acknowledged the resignation of Paula Bertram as Sewer Business Manager.",
+    "note": "Acknowledged without a vote and absent from our minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T02:59:02Z",
+   "cost_usd": 0.294287
+  }
  }
 }

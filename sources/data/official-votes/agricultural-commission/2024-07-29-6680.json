@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2024-07-29",
  "docid": "6680",
@@ -12,23 +12,161 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from July 8, 2024",
+   "motion": "Approve the minutes of the July 8, 2024 meeting.",
    "moved_by": "Maryrae",
    "seconded_by": "Jackie",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "maryrae made a motion to approve the minutes from the following meetings: july 8, 2024. jackie seconded. commission unanimously approved"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jackie",
    "seconded_by": "Kira",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "jackie made a motion to adjourn; kira seconds. commission unanimously approved. 8:18 pm"
+   "quote": "jackie made a motion to adjourn; kira seconds. commission unanimously approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09802840000000002
+ "dropped_unquoted": 3,
+ "note": "Text extracted from the minutes (not a scan); both recorded votes are unanimous as printed, with no numeric count. No dollar figures appear. The two public comment items record \"None\", so no speaker is named. The agenda's \"Letters are ready to be delivered\" and \"Announcements\" entries are status notes, not decisions, so the decisions list is empty. Vacant seats are not named people and are not listed as attendees.",
+ "cost_usd": 0.012870369999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔ clerk jackie chabot ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate kira mcclellan ✔ alternate vacant"
+  },
+  {
+   "name": "Kimberly Duffy",
+   "role": "Public",
+   "status": "present",
+   "quote": "public kimberly duffy ✔ public jen mitton ✔"
+  },
+  {
+   "name": "Jen Mitton",
+   "role": "Public",
+   "status": "present",
+   "quote": "public kimberly duffy ✔ public jen mitton ✔"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Public comment (agenda item 10)",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "10 public comment none"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:36pm",
+   "quote": "call to order meeting commencement time: 6:36pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announced; no action recorded",
+   "quote": "2nd annual town official meet and greet- lpr",
+   "tags": [
+    "announcements",
+    "town officials"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved (July 8, 2024 minutes)",
+   "quote": "maryrae made a motion to approve the minutes from the following meetings: july 8, 2024.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: 2024 Lunenburg Agricultural Fair",
+   "resolution": "discussed; no action recorded",
+   "quote": "agcomm 2024 event discussion of a one day event lunenburg agricultural fair",
+   "tags": [
+    "agricultural fair",
+    "events"
+   ]
+  },
+  {
+   "topic": "Current business",
+   "resolution": "no update on farmers market; letters ready for delivery; membership positions open",
+   "quote": "lunenburg farmers' market no update",
+   "tags": [
+    "farmers market",
+    "membership",
+    "facebook",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no updates",
+   "quote": "committee reports no updates",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Farming issues",
+   "resolution": "none",
+   "quote": "8 farming issues none",
+   "tags": [
+    "farming"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "scheduled August 12 and August 26, 2024 meetings",
+   "quote": "6:30 pm august 12, 2024 6:30 pm august 26, 2024",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:18 pm",
+   "quote": "adjourn meeting adjournment time: jackie made a motion",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "agricultural commission",
+  "farmers market",
+  "agricultural fair",
+  "outreach",
+  "membership vacancies",
+  "meeting minutes"
+ ],
+ "dropped_unquoted_by_field": {
+  "attendees": 1,
+  "public_comment": 1,
+  "topics": 1
+ }
 }

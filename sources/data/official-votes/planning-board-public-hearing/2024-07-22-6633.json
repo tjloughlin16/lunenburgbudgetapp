@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board-public-hearing",
  "meeting_date": "2024-07-22",
  "docid": "6633",
@@ -12,23 +12,168 @@
  },
  "votes": [
   {
-   "motion": "Approve waivers for Planning Board Rules & Regulations section 4.1(f)(2) (plan scale) and 4.1(f)(22) (photometric plan)",
+   "motion": "Approve the waivers from Planning Board Rules & Regulations section 4.1(f)(2) (plan scale) and 4.1(f)(22) (photometric plan).",
    "moved_by": "A. Reid",
    "seconded_by": "G. McLeod",
-   "outcome": "approved unanimously",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a. reid moved to approve the waivers for planning board rules & regulations section 4.1(f)(2) (plan scale) and 4.1(f)(22) (photometric plan). g. mcleod seconded. voice vote, waivers approved unanimously."
+   "quote": "a. reid moved to approve the waivers for planning board rules & regulations section 4.1(f)(2) (plan scale) and 4.1(f)(22) (photometric plan)."
   },
   {
-   "motion": "Close the Public Hearing for 240 Summer St",
+   "motion": "Close the public hearing for 240 Summer St.",
    "moved_by": "A. Reid",
    "seconded_by": "G. McLeod",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "a. reid moved to close the public hearing for 240 summer st. g. mcleod seconded. voice vote, passed unanimously."
+   "quote": "a. reid moved to close the public hearing for 240 summer st."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Page 2 header incorrectly dated 2024-06-24; meeting occurred 2024-07-22. This does not affect vote transcription.",
- "cost_usd": 0.08831040000000001
+ "note": "Two pages of minutes, read as extracted text. Page 2's running header is dated 2024-06-24, not the 2024-07-22 meeting date. The hearing notice covers 236, 240 & 244 Summer St, but the close motion names only 240 Summer St, and the minutes say the hearing was recessed, not closed. No vote on the site plan or stormwater permit is recorded. The minutes print no dollar figures. Stan and Lydia Miller are named only as owners and are not recorded as attending.",
+ "cost_usd": 0.013745070000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: matthew allison, matthew brenner"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: matthew allison, matthew brenner"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Interim Land Use Director",
+   "status": "present",
+   "quote": "richard harris - interim land use director"
+  },
+  {
+   "name": "Logan O’Connell",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "logan o'connell - administrative assistant"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "representing the applicant (Hannigan Engineering)",
+   "status": "present",
+   "quote": "bill hannigan of hannigan engineering represented the applicant."
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "public commenter (82 Highland St)",
+   "status": "present",
+   "quote": "dave rogers (82 highland st) vouched for the principles of the company"
+  },
+  {
+   "name": "Elizabeth Frey",
+   "role": "public commenter (217 Summer St)",
+   "status": "present",
+   "quote": "elizabeth frey (217 summer st) endorsed the millers' character and their plans."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The hearing was recessed at 7:14 P.M. No motion to recess is recorded.",
+   "quote": "hearing recessed 7:14 p.m."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland St",
+   "topic": "vouched for the applicant's principals",
+   "quote": "dave rogers (82 highland st) vouched for the principles of the company"
+  },
+  {
+   "speaker": "Elizabeth Frey",
+   "stated_role": "217 Summer St",
+   "topic": "endorsed the applicant's owners",
+   "quote": "elizabeth frey (217 summer st) endorsed the millers' character and their plans."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Site Plan Approval and Stormwater Management Permit, 236, 240 & 244 Summer St",
+   "resolution": "presented by applicant's engineer; no decision on the permit recorded",
+   "quote": "the hearing was to review an application for site plan approval and a stormwater management permit for",
+   "tags": [
+    "site plan",
+    "stormwater",
+    "Summer Street"
+   ]
+  },
+  {
+   "topic": "Waivers from Planning Board Rules & Regulations 4.1(f)(2) and 4.1(f)(22)",
+   "resolution": "approved unanimously",
+   "quote": "voice vote, waivers approved unanimously.",
+   "tags": [
+    "waivers",
+    "plan scale",
+    "photometric plan",
+    "lighting"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard from two residents",
+   "quote": "t. willsmer invited public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Close of public hearing for 240 Summer St",
+   "resolution": "closed unanimously",
+   "quote": "a. reid moved to close the public hearing for 240 summer st.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Recess of hearing",
+   "resolution": "recessed at 7:14 P.M.",
+   "quote": "hearing recessed 7:14 p.m.",
+   "tags": [
+    "public hearing"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "site plan approval",
+  "stormwater permit",
+  "waivers",
+  "Summer Street",
+  "land use",
+  "lighting",
+  "building permit condition"
+ ],
+ "dropped_unquoted_by_field": {}
 }

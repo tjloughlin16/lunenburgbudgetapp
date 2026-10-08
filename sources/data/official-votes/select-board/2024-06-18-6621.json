@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-06-18",
  "docid": "6621",
@@ -12,115 +12,559 @@
  },
  "votes": [
   {
-   "motion": "Continue the public hearing to July 9th at 7:15.",
+   "motion": "Continue the public hearing on the Pals Golf Lounge LLC d/b/a Blue Sky Golf license application to 7:15 on July 9th.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "Tom Alonzo",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "i move to continue the public hearing to the 7:15 on july 9th.\" motion by m. jeffreys, seconded by tom alonzo. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "outcome": "passed, Aye unanimous",
+   "procedural": true,
+   "quote": "i move to continue the public hearing to the 7:15 on july 9th.\" motion by m. jeffreys, seconded by tom alonzo. vote: aye unanimous"
   },
   {
-   "motion": "Approve the request of the Lunenburg Democratic Party Town Committee to raise the pride flag on June 23rd and take it down on June 29th.",
+   "motion": "Approve the Lunenburg Democratic Party Town Committee request to raise the pride flag on June 23rd and bring it down at the end of the day on June 29th.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed, Aye unanimous",
    "procedural": false,
-   "quote": "i move that we approve the request of the lunenburg democratic party town committee to raise the pride flag on june 23rd and to come down at the end of the day on june 29th.\" motion by m. jeffreys, seconded by t. alonzo. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "quote": "i move that we approve the request of the lunenburg democratic party town committee to raise the pride flag on june 23rd and to come down at the end of the day on june 29th."
   },
   {
    "motion": "Ratify the appointment of Mason Kiefer as seasonal lifeguard.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "i move to ratify the appointment of mason kiefer as seasonal lifeguard.\" motion by m. jeffreys, seconded by t. alonzo. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "outcome": "passed, Aye unanimous",
+   "procedural": false,
+   "quote": "i move to ratify the appointment of mason kiefer as seasonal lifeguard.\" motion by m. jeffreys, seconded by t. alonzo. vote: aye unanimous"
   },
   {
-   "motion": "Ratify the town manager's annual appointments of special police officers from Shirley and Lancaster.",
+   "motion": "Ratify the town manager's annual appointments of special police officers from Shirley and Lancaster as read.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "R. Emkey",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "i move we ratify the town manager's annual appointments of special police officers from shirley and lancaster as read.\" motion by m. jeffreys, seconded by r. emkey. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "outcome": "passed, Aye unanimous",
+   "procedural": false,
+   "quote": "i move we ratify the town manager's annual appointments of special police officers from shirley and lancaster as read.\" motion by m. jeffreys, seconded by r. emkey. vote: aye unanimous"
   },
   {
    "motion": "Appoint William Heslett as the alternate building commissioner.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Emkey",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "i move that we appoint william heslett as the alternate building commissioner.\" motion by t. alonzo, seconded by r. emkey. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "outcome": "passed, Aye unanimous",
+   "procedural": false,
+   "quote": "i move that we appoint william heslett as the alternate building commissioner.\" motion by t. alonzo, seconded by r. emkey. vote: aye unanimous"
   },
   {
    "motion": "Appoint Richard McGrath to the Architectural Preservation District Commission with a term to expire in June 2027.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Emkey",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "i move that we appoint richard mcgrath to the architectural preservation district commission with a term to expire in june 2027.\" motion by t. alonzo, seconded by r. emkey. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "outcome": "passed, Aye unanimous",
+   "procedural": false,
+   "quote": "i move that we appoint richard mcgrath to the architectural preservation district commission with a term to expire in june 2027."
   },
   {
-   "motion": "Appoint Ana Lockwood to the Council on Aging with a term to expire in June 2027.",
+   "motion": "Appoint Ana (Anna) Lockwood to the Council on Aging with a term to expire in June 2027.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "i move that we appoint ana lockwood to the council on aging with a term to expire in june 2027.\" motion by m. jeffreys, seconded by t. alonzo. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "outcome": "passed, Aye unanimous",
+   "procedural": false,
+   "quote": "i move that we appoint ana lockwood to the council on aging with a term to expire in june 2027."
   },
   {
    "motion": "Temporarily extend existing outdoor dining policies until a new permanent policy is adopted.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "R. Emkey",
-   "outcome": "passed",
+   "outcome": "passed, Aye unanimous",
    "procedural": false,
-   "quote": "i move we temporarily extend existing outdoor dining policies until a new permanent policy is adopted.\" motion by m. jeffreys, seconded by r. emkey. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "quote": "i move we temporarily extend existing outdoor dining policies until a new permanent policy is adopted."
   },
   {
    "motion": "Create the Budget Task Force with the changes discussed.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed, Aye unanimous",
    "procedural": false,
-   "quote": "i move we create the budget task force with the changes discussed.\" motion by m. jeffreys, seconded by t. alonzo. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "quote": "i move we create the budget task force with the changes discussed."
   },
   {
    "motion": "Approve the town manager's request to pay out two remaining vacation days for FY24.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed, Aye unanimous",
    "procedural": false,
-   "quote": "i move to approve the town manager's request to pay out two remaining vacation days for fy24.\" motion by m. jeffreys, seconded by t. alonzo. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "quote": "i move to approve the town manager's request to pay out two remaining vacation days for fy24."
   },
   {
    "motion": "Approve the minutes of October 17, 2023.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "R. Emkey",
-   "outcome": "passed 3-0-2",
+   "outcome": "passed, 3 Aye, 2 Abstained",
    "procedural": true,
-   "quote": "i move to approve the minutes of october 17, 2023.\" motion by m. jeffreys, seconded by r. emkey. vote: 3 aye, 2 abstaine",
-   "quote_taken_from_text": true
+   "quote": "i move to approve the minutes of october 17, 2023.\" motion by m. jeffreys, seconded by r. emkey. vote: 3 aye, 2 abstained"
   },
   {
-   "motion": "Extend the 2021 to 2024 employment agreement between the town of Lunenburg and town manager Heather Lemieux until August 4, 2024.",
+   "motion": "Extend the 2021 to 2024 employment agreement between the town of Lunenburg and the town manager, Heather Lemieux, until August 4, 2024.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed, Aye unanimous",
    "procedural": false,
-   "quote": "i move to extend the 2021 to 2024 employment agreement between the town of lunenburg and the town manager, heather lemieux, until august 4, 2024.\" motion by m. jeffreys, seconded by t. alonzo. vote: aye unanimou",
-   "quote_taken_from_text": true
+   "quote": "i move to extend the 2021 to 2024 employment agreement between the town of lunenburg and the town manager, heather lemieux, until august 4, 2024."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed, Aye unanimous",
+   "procedural": true,
+   "quote": "i move to adjourn.\" motion by m. jeffreys, seconded by t. alonzo. vote: aye unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "All 13 votes extracted. Readable PDF text, no missing pages or unvoted motions.",
- "cost_usd": 0.0848831
+ "dropped_unquoted": 0,
+ "note": "Text is OCR-style extraction from a multi-page PDF; column labels (Board / Public) are split from their paragraphs, and quotes were collapsed across line breaks. Name discrepancies in the source: the seasonal lifeguard appears as \"Mason Keefer\" in the heading and \"Mason Kiefer\" in the motion; the Council on Aging nominee appears as \"Anna Lockwood\" in the narrative and \"Ana Lockwood\" in the motion. The motion to enter executive session is not recorded; the minutes say only that the board entered executive session and returned to vote. The minutes print \"Vote: 3 Aye, 2 Abstained\" on the minutes approval, with six members listed present. Attendance is taken from the Present line; no roll call is recorded for individual votes beyond the printed counts.",
+ "cost_usd": 0.021330670000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey, heather lemieux"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey, heather lemieux"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey, heather lemieux"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey, heather lemieux"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey, heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "i move to extend the 2021 to 2024 employment agreement between the town of lunenburg and the town manager, heather lemieux, until august 4, 2024."
+  },
+  {
+   "name": "Justin McDonald",
+   "role": "applicant, representing Pals Golf Lounge LLC d/b/a Blue Sky Golf",
+   "status": "present",
+   "quote": "the applicants, justin mcdonald and darren storms, described their business plans."
+  },
+  {
+   "name": "Darren Storms",
+   "role": "applicant, representing Pals Golf Lounge LLC d/b/a Blue Sky Golf",
+   "status": "present",
+   "quote": "the applicants, justin mcdonald and darren storms, described their business plans."
+  },
+  {
+   "name": "Scott Barney",
+   "role": "representing the Lunenburg Democratic Party Town Committee",
+   "status": "present",
+   "quote": "scott barney, representing the lunenburg democratic party town committee, requested to raise the pride flag."
+  },
+  {
+   "name": "Christine Foltz",
+   "role": "on behalf of the Lunenburg Cultural Council (public comment)",
+   "status": "present",
+   "quote": "christine foltz commented on behalf of the lunenburg cultural council, inviting everyone to support the tre bien auction."
+  },
+  {
+   "name": "Tim Hillman",
+   "role": "public comment",
+   "status": "present",
+   "quote": "tim hillman requested a hearing to move forward with land transactions under 61b."
+  },
+  {
+   "name": "Tony Scullinbrini",
+   "role": "public comment",
+   "status": "present",
+   "quote": "tony scullinbrini spoke on the impact of richard mcgrath on various town commissions and provided an update on the ritter and town hall building projects, urging quick action."
+  },
+  {
+   "name": "John Bowen",
+   "role": "public comment",
+   "status": "present",
+   "quote": "john bowen commented on various topics including cemetery expenses, liaison roles, and previous public comments on solar spending."
+  },
+  {
+   "name": "Mason Keefer",
+   "role": "seasonal lifeguard (appointment ratified)",
+   "status": "not stated",
+   "quote": "the town manager introduced mason keefer for a seasonal lifeguard position."
+  },
+  {
+   "name": "William Heslett",
+   "role": "Alternate Building Commissioner (appointment)",
+   "status": "not stated",
+   "quote": "the town manager introduced william heslett as the alternate building commissioner and additional special police officers from shirley and lancaster."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "nominee, Architectural Preservation District Commission",
+   "status": "not stated",
+   "quote": "the board reviewed appointments for richard mcgrath to the architectural preservation district commission and anna lockwood to the council on aging."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "nominee, Council on Aging (named Ana Lockwood in the motion)",
+   "status": "not stated",
+   "quote": "the board reviewed appointments for richard mcgrath to the architectural preservation district commission and anna lockwood to the council on aging."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Tax Investigation Report discussion was rescheduled to the July 9th meeting because the report was not yet complete.",
+   "quote": "the report was not yet complete and the discussion was rescheduled for the july 9th meeting."
+  },
+  {
+   "decision": "The board decided to invite representatives from Shady Point to discuss the boat launch license terms at the next meeting, after attorney feedback.",
+   "quote": "feedback from attorneys was discussed, and it was decided to invite representatives from shady point to discuss the terms further at the next meeting."
+  },
+  {
+   "decision": "The board decided to seek input from other boards and committees on the board/committee handbook.",
+   "quote": "it was decided to seek input from other boards and committees."
+  },
+  {
+   "decision": "The board decided to discuss the Select Board goals for FY25 in a workshop scheduled for late July.",
+   "quote": "it was decided to discuss the select board goals for fy25 in a workshop scheduled for late july."
+  },
+  {
+   "decision": "No action was taken on the draft financial policies; the board decided to seek feedback from other stakeholders.",
+   "quote": "no action was taken, and it was decided to seek feedback from other stakeholders."
+  },
+  {
+   "decision": "The board reviewed and signed the warrants.",
+   "quote": "the board reviewed and signed the warrants."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA funds allocations",
+   "what_was_recorded": "The town manager updated the board on ARPA funds, and possible uses discussed included a contractor for Munis software issues and the solar panels at the town dump; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "discussions included potential allocations such as funding for a contractor to assist with munis software issues and projects like the solar panels at the town dump."
+  },
+  {
+   "topic": "Town manager vacation payout",
+   "what_was_recorded": "The town manager requested a payout for two unused vacation days, which was approved; no dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager requested a payout for two unused vacation days."
+  },
+  {
+   "topic": "Financial policies from a state grant",
+   "what_was_recorded": "Draft financial policies were provided by the Division of Local Services through a Community Compact Grant; no action taken.",
+   "figures_as_printed": [],
+   "quote": "the town manager introduced a draft of new financial policies provided by the division of local services through a community compact grant."
+  },
+  {
+   "topic": "Grants and bids in the town manager report",
+   "what_was_recorded": "The town manager's report mentioned a mental health co-response clinician grant and an invitation for bids for landscaping services; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "mental health co-response clinician grant, invitation for bids for landscaping services"
+  },
+  {
+   "topic": "Cemetery and solar spending (public comment)",
+   "what_was_recorded": "A resident raised cemetery expenses and previous public comments on solar spending; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "john bowen commented on various topics including cemetery expenses, liaison roles, and previous public comments on solar spending."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Christine Foltz",
+   "stated_role": "on behalf of the Lunenburg Cultural Council",
+   "topic": "Tre Bien auction",
+   "quote": "christine foltz commented on behalf of the lunenburg cultural council, inviting everyone to support the tre bien auction."
+  },
+  {
+   "speaker": "Tim Hillman",
+   "stated_role": "public",
+   "topic": "hearing on land transactions under 61B",
+   "quote": "tim hillman requested a hearing to move forward with land transactions under 61b."
+  },
+  {
+   "speaker": "Tony Scullinbrini",
+   "stated_role": "public",
+   "topic": "Richard McGrath on town commissions; Ritter and Town Hall projects",
+   "quote": "tony scullinbrini spoke on the impact of richard mcgrath on various town commissions and provided an update on the ritter and town hall building projects, urging quick action."
+  },
+  {
+   "speaker": "A board member",
+   "stated_role": "Board",
+   "topic": "public procurement processes",
+   "quote": "a board member provided clarification on public procurement processes."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "public",
+   "topic": "cemetery expenses, liaison roles, solar spending",
+   "quote": "john bowen commented on various topics including cemetery expenses, liaison roles, and previous public comments on solar spending."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (first round)",
+   "resolution": "heard",
+   "quote": "christine foltz commented on behalf of the lunenburg cultural council, inviting everyone to support the tre bien auction.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements and communications from other boards",
+   "resolution": "no action",
+   "quote": "the chair asked for any communications from other boards. there were none.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public hearing: Pals Golf Lounge all-alcohol and AAD license",
+   "resolution": "continued to 7:15 on July 9th",
+   "quote": "a public hearing was held regarding the application.",
+   "tags": [
+    "licensing",
+    "public hearing",
+    "alcohol"
+   ]
+  },
+  {
+   "topic": "Pride flag raising request",
+   "resolution": "approved",
+   "quote": "scott barney, representing the lunenburg democratic party town committee, requested to raise the pride flag.",
+   "tags": [
+    "events",
+    "flag"
+   ]
+  },
+  {
+   "topic": "Meeting with Sewer Commission chair on pump station clogs",
+   "resolution": "canceled",
+   "quote": "this item was canceled as the chair was unable to attend.",
+   "tags": [
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Ratify seasonal lifeguard appointment",
+   "resolution": "ratified",
+   "quote": "the town manager introduced mason keefer for a seasonal lifeguard position.",
+   "tags": [
+    "appointments",
+    "lifeguard"
+   ]
+  },
+  {
+   "topic": "Ratify annual special police and alternate building commissioner appointments",
+   "resolution": "ratified; William Heslett appointed alternate building commissioner",
+   "quote": "the town manager introduced william heslett as the alternate building commissioner and additional special police officers from shirley and lancaster.",
+   "tags": [
+    "appointments",
+    "police",
+    "building"
+   ]
+  },
+  {
+   "topic": "Select Board annual appointments (continued)",
+   "resolution": "Richard McGrath and Ana Lockwood appointed",
+   "quote": "the board reviewed appointments for richard mcgrath to the architectural preservation district commission and anna lockwood to the council on aging.",
+   "tags": [
+    "appointments",
+    "commissions"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; thanked",
+   "quote": "the town manager reported on a range of topics, including office hours for juneteenth",
+   "tags": [
+    "town manager",
+    "updates"
+   ]
+  },
+  {
+   "topic": "Tax investigation report",
+   "resolution": "rescheduled to July 9th",
+   "quote": "the report was not yet complete and the discussion was rescheduled for the july 9th meeting.",
+   "tags": [
+    "tax investigation"
+   ]
+  },
+  {
+   "topic": "Use of information technology resources policy",
+   "resolution": "discussed, no vote",
+   "quote": "the board discussed updates to the it policy, focusing on the termination of access to electronic communication devices upon leaving a board/committee.",
+   "tags": [
+    "policy",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Outdoor dining policy",
+   "resolution": "existing policies temporarily extended",
+   "quote": "i move we temporarily extend existing outdoor dining policies until a new permanent policy is adopted.",
+   "tags": [
+    "outdoor dining",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Review remaining ARPA funding",
+   "resolution": "update, no action",
+   "quote": "the town manager provided an update on the current status of arpa funds.",
+   "tags": [
+    "ARPA",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Budget Task Force",
+   "resolution": "created with changes discussed",
+   "quote": "i move we create the budget task force with the changes discussed.",
+   "tags": [
+    "budget",
+    "task force"
+   ]
+  },
+  {
+   "topic": "Shady Point boat launch license agreement",
+   "resolution": "continued to next meeting; Shady Point invited",
+   "quote": "feedback from attorneys was discussed, and it was decided to invite representatives from shady point",
+   "tags": [
+    "boat launch",
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Board/committee handbook draft",
+   "resolution": "input sought from other boards",
+   "quote": "updates made to the board/committee handbook were reviewed including proper conduct and scheduling of meetings and town facility use.",
+   "tags": [
+    "handbook",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Select Board goals for FY25",
+   "resolution": "workshop set for late July",
+   "quote": "it was decided to discuss the select board goals for fy25 in a workshop scheduled for late july.",
+   "tags": [
+    "goals"
+   ]
+  },
+  {
+   "topic": "Draft financial policies",
+   "resolution": "no action; feedback sought",
+   "quote": "no action was taken, and it was decided to seek feedback from other stakeholders.",
+   "tags": [
+    "financial policies",
+    "DLS grant"
+   ]
+  },
+  {
+   "topic": "Town manager FY24 vacation payout",
+   "resolution": "approved",
+   "quote": "the town manager requested a payout for two unused vacation days.",
+   "tags": [
+    "personnel",
+    "vacation"
+   ]
+  },
+  {
+   "topic": "Minutes of October 17, 2023",
+   "resolution": "approved, 3 Aye, 2 Abstained",
+   "quote": "minutes for the october 17, 2023 meeting were reviewed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "reviewed and signed",
+   "quote": "the board reviewed and signed the warrants.",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "none",
+   "quote": "no new action items were discussed.",
+   "tags": []
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no significant updates",
+   "quote": "various committee reports were provided, but there were no significant updates noted.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "July 9th, July 16th and July 23rd scheduled",
+   "quote": "the next meeting was scheduled for july 9th, followed by meetings on july 16th and july 23rd.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second round)",
+   "resolution": "heard",
+   "quote": "john bowen commented on various topics including cemetery expenses, liaison roles, and previous public comments on solar spending.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session: town manager contract extension",
+   "resolution": "extension approved in open session",
+   "quote": "the board entered into executive session to negotiate the extension of the town manager's contract",
+   "tags": [
+    "executive session",
+    "town manager contract",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:54 PM",
+   "quote": "the meeting adjourned at 9:54 pm.",
+   "tags": [
+    "adjourn"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "public hearing",
+  "liquor license",
+  "appointments",
+  "outdoor dining",
+  "ARPA",
+  "budget task force",
+  "town manager contract",
+  "executive session",
+  "personnel",
+  "financial policies",
+  "minutes approval",
+  "boat launch",
+  "handbook"
+ ],
+ "dropped_unquoted_by_field": {}
 }

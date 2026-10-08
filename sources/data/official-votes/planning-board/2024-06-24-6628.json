@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-06-24",
  "docid": "6628",
@@ -12,55 +12,388 @@
  },
  "votes": [
   {
-   "motion": "Elect Matthew Brenner as Chair",
-   "moved_by": "M. Allison",
-   "seconded_by": "T. Willsmer",
+   "motion": "Nominate Matthew Brenner for Chair.",
+   "moved_by": "Matthew Allison",
+   "seconded_by": "Timothy Willsmer",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "m. allison nominated m. brenner for chair. t. willsmer seconded. passed unanimously."
   },
   {
-   "motion": "Approve all nominees to their respective positions",
-   "moved_by": "T. Willsmer",
-   "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Approve all nominees to their respective positions (Vice Chair, Clerk, MRPC, MJTC, Open Space, Storm Water Task Force, Municipal Building Design Committee, EDC, MPSC, Town Manager Screening Committee).",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "t. willsmer moved to approve all nominees to their respective positions. a. reid seconded. voice vote, all aye."
   },
   {
-   "motion": "Appoint Ana Lockwood to the Open Space Committee as citizen-elect",
-   "moved_by": "M. Allison",
-   "seconded_by": "T. Willsmer",
-   "outcome": "passed unanimously",
+   "motion": "Appoint Ana Lockwood to the Open Space Committee as citizen-elect.",
+   "moved_by": "Matthew Allison",
+   "seconded_by": "Timothy Willsmer",
+   "outcome": "passed",
    "procedural": false,
    "quote": "m. allison moved to appoint a. lockwood to the osc as citizen-elect. t. willsmer seconded. voice vote, all aye."
   },
   {
-   "motion": "Endorse the ANR for 932 Flat Hill Rd",
-   "moved_by": "T. Willsmer",
-   "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "motion": "Endorse the ANR plan for 932 Flat Hill Rd.",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
+   "outcome": "passed",
    "procedural": false,
    "quote": "t. willsmer moved to endorse the anr for 932 flat hill rd. a. reid seconded. voice vote, all aye."
   },
   {
    "motion": "Continue the Special Permit hearing for signage at 3 Lancaster Ave to 2024-07-08 at 6:05 P.M.",
-   "moved_by": "T. Willsmer",
-   "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
+   "outcome": "passed",
    "procedural": true,
    "quote": "t. willsmer moved to continue the hearing to 2024-07-08 at 6:05 p.m. a. reid seconded. voice vote, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "T. Willsmer",
-   "seconded_by": "A. Reid",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Timothy Willsmer",
+   "seconded_by": "Amanda Reid",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "t. willsmer moved to adjourn. a. reid seconded. passed unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11954110000000001
+ "dropped_unquoted": 1,
+ "note": "Digital text extraction, not a scan; all pages readable. Votes: the Chair nomination (unanimous) and the full-slate approval are the only recorded results for the board reorganization. The individual nominations (Vice Chair, Clerk, MRPC, MJTC, Open Space, Storm Water, EDC, MPSC, TMSC and others) were each seconded but have no separate result; they were approved together by one voice vote, 'all aye', with no count. A request for a board vote on the Pledge was made but no vote was taken. Certificate of Completion and Certificate of Occupancy items involved no vote. No dollar figures are printed; the two budget items are discussion of cost only. Public comment closed with 'No members of the public had comment', so no speaker is recorded for that segment. Logan O'Connell's attendance is not stated in the minutes; he is listed in the header and named as agreeing with the Land Use Director.",
+ "cost_usd": 0.02004187,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Interim Land Use Director",
+   "status": "present",
+   "quote": "r. harris explained that this anr had been continued from a previous meeting"
+  },
+  {
+   "name": "Logan O’Connell",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "logan o'connell - administrative assistant"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Island Rd",
+   "status": "present",
+   "quote": "dave macdonald (island rd) asked why the pledge of allegiance is done before meetings instead of during them"
+  },
+  {
+   "name": "Daniel Proctor",
+   "role": "excavating contractor for 321 Sunny Hill Rd, of 1529 Massachusetts Avenue",
+   "status": "present",
+   "quote": "daniel proctor (1529 massachusetts avenue), the excavating contractor for this address, was present to speak"
+  },
+  {
+   "name": "Tim Battle",
+   "role": "owner of 317 Sunny Hill Rd, former owner of 321",
+   "status": "present",
+   "quote": "tim battle (owner of 317 sunny hill rd, former owner of 321) asked if receiving a positive response from gei"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Water Commissioner",
+   "status": "present",
+   "quote": "mark bursch (water commissioner) said that the water district hadn't seen any of the proposed changes"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "applicant for the at-large position on the Open Space Committee",
+   "status": "present",
+   "quote": "when a. lockwood returned she explained that she's served on the open space committee (osc)"
+  },
+  {
+   "name": "Karen Chapman",
+   "role": "presenter, MBTA Zoning Presentation",
+   "status": "absent",
+   "quote": "r. harris explained that karen chapman's scheduled presentation would be tentatively rescheduled for 2024-07-08, as she was unable to attend this meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair declined to put the Pledge of Allegiance question to a board vote at this meeting, because it was not an explicit agenda item, and said he values a board vote on it.",
+   "quote": "m. brenner declined to vote on the issue at this specific meeting as it wasn't an explicit item on the agenda"
+  },
+  {
+   "decision": "The MBTA Zoning presentation was tentatively rescheduled to 2024-07-08 because the presenter could not attend.",
+   "quote": "r. harris explained that karen chapman's scheduled presentation would be tentatively rescheduled for 2024-07-08"
+  },
+  {
+   "decision": "The board opted to sign the 932 Flat Hill Rd plan at the end of the meeting.",
+   "quote": "in the interest of time, the board opted to sign the plan at the end of the meeting."
+  },
+  {
+   "decision": "The Chair opted to sign the 430 Mulpus Rd Performance Guarantee after the meeting.",
+   "quote": "m. brenner opted to sign the performance guarantee after the meeting."
+  },
+  {
+   "decision": "The Chair will gather board members' approval of the compiled Outdoor Dining feedback and send it to the Select Board before its next meeting.",
+   "quote": "m. brenner indicated he would get the board members' approval on the compiled feedback and then get it to the select board before their next meeting."
+  },
+  {
+   "decision": "The Chair asked members to review the Water Supply Protection District material in depth before the July 8th meeting.",
+   "quote": "m. brenner asked the board to review the material in-depth prior to the july 8th meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Certificate of Completion, 321 Sunny Hill Rd: cost of the engineering review",
+   "what_was_recorded": "A contractor questioned whether the engineering review by GEI was cost-effective; the Chair defended the use of review engineers.",
+   "figures_as_printed": [],
+   "quote": "d. proctor questioned cost-effectiveness of this. m. brenner explained the necessity of review engineers like gei"
+  },
+  {
+   "topic": "Water Supply Protection District amendments: financial impact on the Water District",
+   "what_was_recorded": "The Water Commissioner said further treatment restrictions would have significant financial impact on the Water District and its water takers; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "reiterated that further restrictions would have significant financial impact to the water district and its water takers"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Island Rd",
+   "topic": "Pledge of Allegiance before meetings; board-wide decision",
+   "quote": "d. macdonald opined that the inclusion of the pledge should be a board-wide consideration, rather than an individual decision of the chair."
+  },
+  {
+   "speaker": "Daniel Proctor",
+   "stated_role": "the excavating contractor for this address",
+   "topic": "Rain garden and Certificate of Completion, 321 Sunny Hill Rd",
+   "quote": "daniel proctor (1529 massachusetts avenue), the excavating contractor for this address, was present to speak"
+  },
+  {
+   "speaker": "Tim Battle",
+   "stated_role": "owner of 317 Sunny Hill Rd, former owner of 321",
+   "topic": "Certificate of Occupancy and deed language, Sunny Hill Rd",
+   "quote": "tim battle (owner of 317 sunny hill rd, former owner of 321) asked if receiving a positive response from gei"
+  },
+  {
+   "speaker": "Mark Bursch",
+   "stated_role": "Water Commissioner",
+   "topic": "Water Supply Protection District amendments",
+   "quote": "mark bursch (water commissioner) said that the water district hadn't seen any of the proposed changes"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action; Zoom confirmed functional",
+   "quote": "m. brenner called the meeting to order, and confirmed that zoom was functional for this meeting.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment: Pledge of Allegiance placement",
+   "resolution": "no action; Chair declined a vote at this meeting",
+   "quote": "dave macdonald (island rd) asked why the pledge of allegiance is done before meetings instead of during them",
+   "tags": [
+    "governance",
+    "pledge"
+   ]
+  },
+  {
+   "topic": "Board re-organization",
+   "resolution": "Chair elected unanimously; full slate of officers and committee seats approved by voice vote",
+   "quote": "m. brenner explained the context for the board re-organization's continuation from 2024-06-12 due to technical difficulties.",
+   "tags": [
+    "board reorganization",
+    "appointments",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Appointments: Open Space Committee, Ana Lockwood",
+   "resolution": "appointed as citizen-elect",
+   "quote": "m. brenner explained the context behind ana lockwood's application to the at-large position on the",
+   "tags": [
+    "appointments",
+    "open space"
+   ]
+  },
+  {
+   "topic": "MBTA Zoning Presentation",
+   "resolution": "continued to 2024-07-08",
+   "quote": "r. harris explained that karen chapman's scheduled presentation would be tentatively rescheduled for 2024-07-08",
+   "tags": [
+    "MBTA zoning"
+   ]
+  },
+  {
+   "topic": "ANR: 932 Flat Hill Rd",
+   "resolution": "endorsed",
+   "quote": "r. harris explained that this anr had been continued from a previous meeting",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Public hearing: Special Permit, signage at 3 Lancaster Ave",
+   "resolution": "continued to 2024-07-08",
+   "quote": "no applicant or representative was present in-person or online for this hearing.",
+   "tags": [
+    "special permit",
+    "signage",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Certificates of Completion: 321 Sunny Hill Rd",
+   "resolution": "no action; awaiting GEI determination",
+   "quote": "r. harris replied that gei hasn't been back out to the site to observe these changes",
+   "tags": [
+    "certificate of completion",
+    "storm water",
+    "rain garden"
+   ]
+  },
+  {
+   "topic": "Certificate of Occupancy and deed language, 317 and 321 Sunny Hill Rd",
+   "resolution": "discussed; no action",
+   "quote": "r. harris explained that the storm water bylaw requires the certificate of completion",
+   "tags": [
+    "storm water",
+    "deeds"
+   ]
+  },
+  {
+   "topic": "Performance Guarantees: 430 Mulpus Rd",
+   "resolution": "Chair signed after the meeting",
+   "quote": "m. brenner opted to sign the performance guarantee after the meeting.",
+   "tags": [
+    "performance guarantee"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee transition to Implementation Committee",
+   "resolution": "discussed; no action",
+   "quote": "m. brenner invited preliminary discussion about the first steps for transitioning mpsc to an",
+   "tags": [
+    "master plan",
+    "implementation committee"
+   ]
+  },
+  {
+   "topic": "Scenic Roads Bylaw",
+   "resolution": "discussed; no action",
+   "quote": "m. allison replied that he still had the data for it, and m. brenner said it would be great to bring a fairly complete and rounded-out item",
+   "tags": [
+    "scenic roads",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Outdoor Dining Policy",
+   "resolution": "Board feedback to be compiled and sent to Select Board",
+   "quote": "the board took several minutes to review the context and content of their documents.",
+   "tags": [
+    "outdoor dining",
+    "alcohol licensing",
+    "site plan review"
+   ]
+  },
+  {
+   "topic": "Water Supply Protection District amendments",
+   "resolution": "discussed; Board to review material before July 8; public hearing in September if comfortable",
+   "quote": "m. brenner noted that the draft document of the proposed wspd amendments included recent changes.",
+   "tags": [
+    "water supply protection district",
+    "zoning bylaw",
+    "water district"
+   ]
+  },
+  {
+   "topic": "Development update: Lunenburg Central",
+   "resolution": "no action",
+   "quote": "m. brenner, citing his recent meeting with jack brennan, explained that the developers of lunenburg",
+   "tags": [
+    "development"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no members of the public had comment",
+   "quote": "no members of the public had comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment: Economic Development Committee meeting",
+   "resolution": "no action; EDC to meet with Planning Board",
+   "quote": "m. brenner invited any relevant committee updates, noting that the edc wants to meet with the planning board",
+   "tags": [
+    "economic development",
+    "business retention"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:09 P.M.",
+   "quote": "meeting adjourned 8:09 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "board reorganization",
+  "appointments",
+  "ANR",
+  "public hearing",
+  "special permit",
+  "certificate of completion",
+  "performance guarantee",
+  "storm water",
+  "master plan",
+  "outdoor dining",
+  "water supply protection district",
+  "MBTA zoning",
+  "open space",
+  "scenic roads",
+  "land use"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

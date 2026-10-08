@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2024-06-05",
  "docid": "6591",
@@ -12,146 +12,618 @@
  },
  "votes": [
   {
-   "motion": "continue Lot 2 Cross Road to 7/3/24",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue lot 2 cross road to 7/3/24. roll call v ote- jenny-aye, chris-aye, rich b-aye, and mary-aye."
-  },
-  {
-   "motion": "continue 255 Sunny Hill Road to 7/3/24",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue 255 sunny hill road to 7/3/24. roll call v ote- jenny-aye, chris -aye, rich-aye, and mary-aye."
-  },
-  {
-   "motion": "continue 171 Arbor Street to 7/3/24",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue 171 arbor street to 7/3/24. roll call v ote- jenny-aye, chris-aye, rich b-aye, and mary-aye."
-  },
-  {
-   "motion": "approve 41 Country Rd with a negative determination",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jennifer Pewtherer",
-   "outcome": "passed 4-0",
+   "motion": "Continue the Lot 2 Cross Road hearing (Gendron) to 7/3/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: rich b., second: jenny p. to approve 41 country rd. with a negative determination . roll call v ote: chris-aye, jenny -aye, rich-aye and mary -aye."
+   "quote": "to continue lot 2 cross road to 7/3/24. roll call v ote- jenny-aye, chris-aye, rich b-aye, and mary-aye."
   },
   {
-   "motion": "continue Parcel # 84-001 to later in the meeting",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed 5-0",
+   "motion": "Continue the 255 Sunny Hill Road hearing to 7/3/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "roll call v ote- jenny-aye, chris -aye, rich-aye, and mary-aye."
+  },
+  {
+   "motion": "Continue the 171 Arbor Street hearing to 7/3/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 171 arbor street to 7/3/24. roll call v ote- jenny-aye, chris-aye, rich b-aye, and mary-aye."
+  },
+  {
+   "motion": "Approve the request for determination for 41 Country Rd with a negative determination.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Jenny P.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve 41 country rd."
+  },
+  {
+   "motion": "Continue Parcel 84-001 (Village at Flat Hills) to later in the meeting.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue parcel # 84 -001 to later in the meeting."
+  },
+  {
+   "motion": "Continue the 791 Mass Ave hearing to 7/3/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 791 mass ave. to 7/3/24."
+  },
+  {
+   "motion": "Continue the 495 Leominster-Shirley Road hearing to 7/3/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 495 leominster-shirley road to 7/3/24."
+  },
+  {
+   "motion": "Continue the 390 Howard Street hearing to 7/3/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 390 howard street"
+  },
+  {
+   "motion": "Continue 0 Courtland Circle (Parcel 84-001) to 7/3/24.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 0 courtland circle, parcel 84 -001 to 7/3/24."
+  },
+  {
+   "motion": "Approve the Certificate of Compliance for 667 Reservoir Rd.",
+   "moved_by": "Mike L.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the certificate of compliance for 667 reservoir rd"
+  },
+  {
+   "motion": "Approve the Certificate of Compliance for 290 New West Townsend Rd.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the certificate of compliance for 290 new west townsend rd."
+  },
+  {
+   "motion": "Issue the Certificate of Compliance for 255 Prospect St.",
+   "moved_by": "Chris S.",
+   "seconded_by": "Rich B.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to issue the certificate of compliance for 255 prospect st."
+  },
+  {
+   "motion": "Accept the 30 Johnson St. deck change as a field change to the current Order of Conditions.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to accept the change as a field change to the current order of conditions"
+  },
+  {
+   "motion": "Authorize $250 from the Timber Rights Fund to Beaver Solutions.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Jenny P.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to authorize $250 from the timber rights fund to beaver solutions."
+  },
+  {
+   "motion": "Authorize $1,000 to Maki for building supplies from the Timber Rights Fund to replace an extended FY23 Purchase Order.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Mike L.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to replace the currently extended fy23 purchase order"
+  },
+  {
+   "motion": "Authorize $500 from the Timber Rights Fund to ExpressMyself.com (Smart Sign) for the Y ou are here signs, replacing an unexpended FY23 Purchase Order.",
+   "moved_by": "Chris S.",
+   "seconded_by": "Rich B.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "for $500 from the timber rights fund to expressmyself.com (smart sign)"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:38pm.",
+   "moved_by": "Rich B.",
+   "seconded_by": "Chris S.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue parcel # 84 -001 to later in the meeting. roll call v ote- rich b-aye, chris-aye, jenny-aye, mike-aye, and mary-aye."
-  },
-  {
-   "motion": "continue 791 Mass Ave to 7/3/24",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue 791 mass ave. to 7/3/24. roll call v ote- jenny-aye, rich b-aye, mike-aye, chris-aye, and mary-aye."
-  },
-  {
-   "motion": "continue 495 Leominster-Shirley Road to 7/3/24",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue 495 leominster-shirley road to 7/3/24. roll call v ote- mike-aye, jenny-aye, chris -aye, rich-aye, and mary-aye."
-  },
-  {
-   "motion": "continue 390 Howard Street to 7/3/24",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: mike l. to continue 390 howard street to 7/3/24. roll call v ote- mike-aye, jenny -aye, chris -aye, rich-aye, and mary-aye."
-  },
-  {
-   "motion": "continue 0 Courtland Circle, Parcel 84-001 to 7/3/24",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: mike l. to continue 0 courtland circle, parcel 84 -001 to 7/3/24. roll call v ote- mike-aye, jenny -aye, chris -aye, rich-aye, and mary-aye."
-  },
-  {
-   "motion": "approve the Certificate of Compliance for 667 Reservoir Rd",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: mike l., second: chris s. to approve the certificate of compliance for 667 reservoir rd . roll call v ote: rich-aye, chris -aye, jenny -aye, mike-aye and mary -aye."
-  },
-  {
-   "motion": "approve the Certificate of Compliance for 290 New West Townsend Rd",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: rich b., second: mike l. to approve the certificate of compliance for 290 new west townsend rd. roll call v ote: chris-aye, jenny -aye, mike-aye, rich-aye, and mary-aye. ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "issue the Certificate of Compliance for 255 Prospect St",
-   "moved_by": "Chris St. Germain",
-   "seconded_by": "Richard Bursch",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: chris s., second: rich b. to issue the certificate of compliance for 255 prospect st. roll call v ote- mike-aye, jenny-aye, chris-aye, rich-aye, and mary-aye. ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "accept the change as a field change to the current Order of Conditions for 30 Johnson St",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: rich b., second: chris s. to accept the change as a field change to the current order of conditions for 30 johnson st. roll call v ote: jenny-aye, rich -aye, chris-aye, mike-aye, and mary-aye. ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "authorize $250 from the Timber Rights Fund to Beaver Solutions",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jennifer Pewtherer",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: rich b., second: jenny p. to authorize $250 from the timber rights fund to beaver solutions. roll call v ote: mike-aye, chris -aye, jenny-aye, rich -aye, and mary -aye."
-  },
-  {
-   "motion": "authorize $1,000 to Maki for building supplies to replace the currently extended FY23 Purchase Order from the Timber Rights Fund for improvements on Conservation Land",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: rich b., second: mike l. to maki for $1,000 for building supplies to replace the currently extended fy23 purchase order from the timber rights fund for improvements on conservation land. roll call v ote: chris-aye, jenny -aye, mike-aye, rich -aye, and mary -aye."
-  },
-  {
-   "motion": "authorize $500 from the Timber Rights Fund to ExpressMyself.com (Smart Sign) for continued work on the \"You are here\" signs",
-   "moved_by": "Chris St. Germain",
-   "seconded_by": "Richard Bursch",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: chris s., second: rich b. for $500 from the timber rights fund to expressmyself.com (smart sign) for continued work on the \"y ou are here\" signs to replace the currently unexpended purchase order created in fy23. roll call v ote: mike-aye, jenny -aye, chris-aye, rich -aye, and mary -aye."
-  },
-  {
-   "motion": "adjourn at 9:38pm",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Chris St. Germain",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to adjourn at 9:38pm. roll call v ote- mike-aye, jenny -aye, chris-aye, rich-aye, and mary-aye."
+   "quote": "to adjourn at 9:38pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0998901
+ "note": "Text is extracted from a scan-like PDF with spacing artifacts (\"V ote\", \"Paula V alente\", \"Chris -aye\"); quotes copy the printed spacing. Minutes print no vote totals; outcomes are recorded as \"passed\" from roll-call lists of ayes, and no nays or abstentions appear. The opening roll call lists Mike L. as present, but a later line says \"Mike L. joined the meeting,\" so his attendance time is inconsistent in the text. The applicant is \"Ken & Tracy Stiles\" in the item heading and \"Ken & Stacy\" in the text. Timber Rights Fund authorizations are recorded as budget items, not as transfers, because the minutes do not describe them as transfers. The minutes print no per-item dollar figures beyond the ones listed. Several applicants (Gendron, McSweeny, Powell) are named only as item applicants with no presence recorded.",
+ "cost_usd": 0.028541969999999996,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: jenny p., rich b., chris s., mike l., mary w."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: jeff v. and bob p."
+  },
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "Commission member (minutes print her as Jenny P.)",
+   "status": "present",
+   "quote": "roll call: jenny p., rich b., chris s., mike l., mary w."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Commission member (minutes print him as Rich B.)",
+   "status": "present",
+   "quote": "roll call: jenny p., rich b., chris s., mike l., mary w."
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "Commission member (minutes print him as Chris S.)",
+   "status": "present",
+   "quote": "roll call: jenny p., rich b., chris s., mike l., mary w."
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Commission member (minutes print him as Mike L.)",
+   "status": "present",
+   "quote": "(mike l. joined the meeting.)"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Commission member (minutes print him as Jeff V.)",
+   "status": "absent",
+   "quote": "absent: jeff v. and bob p."
+  },
+  {
+   "name": "Sophie Dorow",
+   "role": "Conservation Administration (minutes: Admin.)",
+   "status": "present",
+   "quote": "and sophie dorow (admin.)"
+  },
+  {
+   "name": "Stephanie Dondero",
+   "role": "Conservation Assistant (letterhead)",
+   "status": "not stated",
+   "quote": "have stephanie work on updating the log"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted,"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy; representing the potential buyer at 1083 Northfield Rd",
+   "status": "present",
+   "quote": "greg roy, representing the potential buyer, screen-shared the site plan"
+  },
+  {
+   "name": "Jonathan Collette",
+   "role": "Haley & Ward; presenter for 791 Mass Ave",
+   "status": "present",
+   "quote": "jonathan collette (haley & ward)- screen-shared the site plan"
+  },
+  {
+   "name": "Ken & Tracy Stiles",
+   "role": "applicants, 41 Country Rd (text prints Ken & Stacy)",
+   "status": "present",
+   "quote": "applicants ken & stacy present."
+  },
+  {
+   "name": "Paula Valente",
+   "role": "applicant, 30 Johnson St.",
+   "status": "present",
+   "quote": "paula v alente (30 johnson st.) stated the original proposal"
+  },
+  {
+   "name": "William Beaushene",
+   "role": "public comment; 48 Riley Rd",
+   "status": "present",
+   "quote": "william beaushene (48 riley rd), john romano and debbie cameron, representing stone farm estates"
+  },
+  {
+   "name": "John Romano",
+   "role": "public comment; representing Stone Farm Estates",
+   "status": "present",
+   "quote": "william beaushene (48 riley rd), john romano and debbie cameron, representing stone farm estates"
+  },
+  {
+   "name": "Debbie Cameron",
+   "role": "public comment; representing Stone Farm Estates",
+   "status": "present",
+   "quote": "william beaushene (48 riley rd), john romano and debbie cameron, representing stone farm estates"
+  },
+  {
+   "name": "Kevin O'Brien",
+   "role": "applicant, 390 Howard Street (no one present for the item)",
+   "status": "absent",
+   "quote": "(cont . from may 15 th to june 5 th) - no one present."
+  },
+  {
+   "name": "Timothy K. Gendron",
+   "role": "applicant, Lot 2 Cross Road (continued)",
+   "status": "not stated",
+   "quote": "on a notice of intent for timothy k. gendron the revocable trust"
+  },
+  {
+   "name": "Stefan McSweeny",
+   "role": "applicant, 255 Sunny Hill Road (continued)",
+   "status": "not stated",
+   "quote": "notice of intent by stefan mcsweeny for the construction of a single family home"
+  },
+  {
+   "name": "Steve Powell",
+   "role": "applicant, 171 Arbor Street (continued)",
+   "status": "not stated",
+   "quote": "notice of intent by steve powell for the construction of a single family"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mary will write a formal letter to the Select Board recommending re-appointments of Mike and Jenny for FY25.",
+   "quote": "mary will write a formal letter to the select board to recommend their re -appointments."
+  },
+  {
+   "decision": "Mary asked Sophie to send a list of the 23 items in the decision backlog and to have Stephanie update the log.",
+   "quote": "mary asked sophie to send a list of the 23 in backlog and to have stephanie work on updating the log."
+  },
+  {
+   "decision": "Chris will talk to the Village at Flat Hills group's president, since no one was reachable for the hearing.",
+   "quote": "chris will talk to the group"
+  },
+  {
+   "decision": "Commission will wait for NHESP approval before voting on 495 Leominster-Shirley Road.",
+   "quote": "mary stated that they have to wait for nhesp approval prior to voting."
+  },
+  {
+   "decision": "Commission opted to wait for better mower donations for Hollis Road rather than buy a used mower now.",
+   "quote": "the commission discussed options and opted to wait for better donations."
+  },
+  {
+   "decision": "Vote on raising the Hollis Road rent deferred to July.",
+   "quote": "they can wait until july to vote on this."
+  },
+  {
+   "decision": "Mary will chair the July 3 meeting; she will resign as Chair at the end of June.",
+   "quote": "mary added that she will chair the next meeting which is july 3 rd."
+  },
+  {
+   "decision": "Commission noted the Table Rock/Harold Harley grant does not need to go out for competitive bid.",
+   "quote": "mary noted that they do not need to send it out for competitive bid."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Beaver Deceiver at Cowdrey",
+   "what_was_recorded": "Bob obtained a grant from the MSPCA and needs $250 authorized from the Timber Rights Fund for Beaver Management, after the quote is modified.",
+   "figures_as_printed": [
+    "$2,100",
+    "$250"
+   ],
+   "quote": "bob obtained a grant from the mspca for $2,100 and would need authorization of $250 for beaver management."
+  },
+  {
+   "topic": "Beaver authorization vote",
+   "what_was_recorded": "The Commission voted to authorize $250 from the Timber Rights Fund to Beaver Solutions.",
+   "figures_as_printed": [
+    "$250"
+   ],
+   "quote": "to authorize $250 from the timber rights fund to beaver solutions."
+  },
+  {
+   "topic": "Maki purchase order, Conservation Land",
+   "what_was_recorded": "A new $1,000 purchase order from the Timber Rights Fund for building supplies to replace an extended FY23 order was approved.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "from the timber rights fund for improvements on conservation land."
+  },
+  {
+   "topic": "ExpressMyself.com (Smart Sign) purchase order",
+   "what_was_recorded": "A $500 purchase order from the Timber Rights Fund for the You are here signs was approved to replace an unexpended FY23 order.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "for $500 from the timber rights fund to expressmyself.com (smart sign)"
+  },
+  {
+   "topic": "Hollis Road mower",
+   "what_was_recorded": "The mower needs repair and is not worth fixing; a donated mower does not work. The Commission opted to wait, and may need to fund a used mower. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they may need to look to fund a used mower"
+  },
+  {
+   "topic": "Hollis Road rent",
+   "what_was_recorded": "Raising the Hollis Road rent to market rate was discussed as a way to pay someone to mow; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "mary noted that bob has been looking at raising the rent to market rate"
+  },
+  {
+   "topic": "LCC sponsored grant for 2023",
+   "what_was_recorded": "An LCC sponsored grant for 2023 was discussed; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they do not need to send it out for competitive bid."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "William Beaushene, John Romano and Debbie Cameron",
+   "stated_role": "William Beaushene (48 Riley Rd); John Romano and Debbie Cameron, representing Stone Farm Estates",
+   "topic": "Lot 3 lot line and Riley Road (791 Mass Ave)",
+   "quote": "william beaushene (48 riley rd), john romano and debbie cameron, representing stone farm estates"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements, public comment, prior minutes",
+   "resolution": "no action (none)",
+   "quote": "announcements and public comment- none",
+   "tags": [
+    "announcements",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Requests for continuance (Lot 2 Cross Road, 255 Sunny Hill Road, 171 Arbor Street)",
+   "resolution": "continued to 7/3/24",
+   "quote": "requests for continuance: sophie noted 3 requests.",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "41 Country Rd request for determination (chain link fence)",
+   "resolution": "approved with a negative determination",
+   "quote": "on behalf of ken & tracy stiles, request for determination of",
+   "tags": [
+    "wetlands",
+    "riverfront area",
+    "determination"
+   ]
+  },
+  {
+   "topic": "Village at Flat Hills detention pond (Parcel 84-001)",
+   "resolution": "continued to later in meeting, then to 7/3/24",
+   "quote": "sophie noted that she was unable to get a hold of",
+   "tags": [
+    "wetlands",
+    "detention pond",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "791 Mass Ave residential subdivision (Stone Farm)",
+   "resolution": "continued to 7/3/24",
+   "quote": "screen-shared the site plan for the old stone farm store site",
+   "tags": [
+    "wetlands",
+    "subdivision",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "495 Leominster-Shirley Road pump house (P.J. Keating)",
+   "resolution": "continued to 7/3/24 pending NHESP",
+   "quote": "shared a google earth image of the site with the existing",
+   "tags": [
+    "wetlands",
+    "NHESP",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "390 Howard Street resource area delineation",
+   "resolution": "continued to 7/3/24",
+   "quote": "abbreviated notice of resource area delineation by kevin",
+   "tags": [
+    "wetlands",
+    "delineation",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "0 Courtland Circle (Parcel 84-001)",
+   "resolution": "continued to 7/3/24",
+   "quote": "no representative present still.",
+   "tags": [
+    "wetlands",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Administrative determination, 91 Lancaster Ave",
+   "resolution": "reported; staff agrees with removal of two trees",
+   "quote": "sophie reported there are 2 unhealthy trees on",
+   "tags": [
+    "stream bank",
+    "trees",
+    "administrative"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance (667 Reservoir Rd, 290 New West Townsend Rd, 255 Prospect St)",
+   "resolution": "all three approved or issued",
+   "quote": "they issue the coc because the work is complete.",
+   "tags": [
+    "certificate of compliance",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Notice of project change, 30 Johnson St deck",
+   "resolution": "accepted as field change",
+   "quote": "sophie noted that the deck is larger than the one approved.",
+   "tags": [
+    "project change",
+    "deck",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Enforcement, 40 Fire Road 12 and 205 Sunset",
+   "resolution": "reported; no vote",
+   "quote": "sophie stated the town attorney sent a reminder letter",
+   "tags": [
+    "enforcement",
+    "violation",
+    "town attorney"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Association request and topics",
+   "resolution": "reported; request retracted",
+   "quote": "hickory hills association has retracted their request",
+   "tags": [
+    "hickory hills",
+    "new business"
+   ]
+  },
+  {
+   "topic": "Commission decision backlog",
+   "resolution": "staff to send list and update log",
+   "quote": "mary asked sophie to send a list of the 23 in backlog",
+   "tags": [
+    "backlog",
+    "records",
+    "sharepoint"
+   ]
+  },
+  {
+   "topic": "Commissioner re-appointments FY25",
+   "resolution": "Chair to write letter to Select Board",
+   "quote": "mike and jenny said they are willing to do re -appointments.",
+   "tags": [
+    "appointments",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Officer nominations FY25",
+   "resolution": "discussed; no vote",
+   "quote": "mary announced that she will resign as chair at the end of june",
+   "tags": [
+    "officers",
+    "chair",
+    "vice chair"
+   ]
+  },
+  {
+   "topic": "1083 Northfield Rd subdivision (Dillis & Roy)",
+   "resolution": "discussed; no action",
+   "quote": "the proposed 5 lots on 30 acres.",
+   "tags": [
+    "wetlands",
+    "crossing",
+    "subdivision",
+    "replication"
+   ]
+  },
+  {
+   "topic": "Beaver Deceiver at Cowdrey",
+   "resolution": "$250 authorized",
+   "quote": "mary stated that bob is working with beaver management associates",
+   "tags": [
+    "beaver",
+    "timber rights fund",
+    "grant"
+   ]
+  },
+  {
+   "topic": "FY23 purchase orders",
+   "resolution": "two authorized: $1,000 Maki, $500 ExpressMyself",
+   "quote": "mary noted that bob asked for votes for new purchase orders as follows:",
+   "tags": [
+    "purchase orders",
+    "timber rights fund",
+    "signs"
+   ]
+  },
+  {
+   "topic": "Encroachment issues",
+   "resolution": "no update",
+   "quote": "encroachment issues: no updates",
+   "tags": [
+    "encroachment"
+   ]
+  },
+  {
+   "topic": "Open space and land use: LCC grant and Table Rock",
+   "resolution": "discussed; no vote",
+   "quote": "they do not need to send it out for competitive bid.",
+   "tags": [
+    "grant",
+    "table rock",
+    "harold harley",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence (mower, mowing, rent)",
+   "resolution": "deferred; vote on rent in July",
+   "quote": "mike reported that the mower has a bent shaft and a crack so it is not",
+   "tags": [
+    "hollis road",
+    "mower",
+    "rent",
+    "tenant"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no update",
+   "quote": "committee reports - no updates.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:38pm",
+   "quote": "to adjourn at 9:38pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "requests for determination",
+  "certificates of compliance",
+  "enforcement",
+  "timber rights fund",
+  "purchase orders",
+  "conservation land",
+  "hollis road",
+  "continuances",
+  "zoom remote"
+ ],
+ "dropped_unquoted_by_field": {}
 }

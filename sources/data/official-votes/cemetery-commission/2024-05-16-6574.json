@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2024-05-16",
  "docid": "6574",
@@ -12,39 +12,287 @@
  },
  "votes": [
   {
-   "motion": "to accept the April 26th meeting minutes",
-   "moved_by": "David Dorren",
-   "seconded_by": "Michael Clark",
+   "motion": "Accept the April 26th meeting minutes.",
+   "moved_by": "Dorren",
+   "seconded_by": "Commissioner Michael Clark",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "the vice-chair, dorren made a motion to accept the april 26th meeting minutes, commissioner michael clark, seconded the motioned: motion passed 3-0."
   },
   {
-   "motion": "to allow a second headstone on the family grave-site in South Cemetery",
+   "motion": "Allow a second headstone on the family grave-site in South Cemetery.",
    "moved_by": "David Dorren",
-   "seconded_by": "Michael Clark",
+   "seconded_by": "Commissioner Clark",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "vice-chair, david dorren made a motion to allow the second headstone on the family grave-site. commissioner clark, seconded the motion. motion was passed 3-0."
   },
   {
-   "motion": "to have Lakeview provide the planting of flowers at North and South Cemetery entrances, up to $500.00",
-   "moved_by": "David Dorren",
-   "seconded_by": "Michael Clark",
+   "motion": "Have Lakeview provide the planting of flowers at the North and South Cemetery entrances, up to $500.00.",
+   "moved_by": "Dorren",
+   "seconded_by": "Commissioner Michael Clark",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "vice-chair, dorren made a motion to have lakeview provide the planting of flowers, up to $500.00; commissioner michael clark, seconded the motion. motion passed 3-0."
   },
   {
-   "motion": "to adjourn",
-   "moved_by": "Nancy Foss-Yasko",
-   "seconded_by": "Michael Clark",
-   "outcome": "passed 3-0",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Chair, Foss-Yasko",
+   "seconded_by": "Clerk, Michael Clark",
+   "outcome": "passed 3 to 0",
    "procedural": true,
-   "quote": "motion was made to adjourn by chair, foss-yasko, seconded by clerk, michael clark. with no further discussion, meeting was adjourned at 10:35 am - motion passed 3 to 0."
+   "quote": "motion was made to adjourn by chair, foss-yasko, seconded by clerk, michael clark."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0742925
+ "note": "Text extract, not a scan; all votes are recorded with results. The minutes print \"Bill Benard\" once and \"Bill Bernard\" elsewhere; the name is given as Bill Bernard here. The Lakeview shrub quote, the solar-light item and the seasonal-worker approval request were discussed or deferred without a motion, so no vote is recorded for them. The Town Manager is mentioned but not named, so is not listed. Quotes with curly apostrophes are reproduced as printed.",
+ "cost_usd": 0.01676617,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Chair",
+   "status": "present",
+   "quote": "called to order at 9:02 am by chair, nancy foss-yasko, other members present were david dorren, vice-chair and michael clark, clerk."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "other members present were david dorren, vice-chair and michael clark, clerk."
+  },
+  {
+   "name": "Michael Clark",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "other members present were david dorren, vice-chair and michael clark, clerk."
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present in attendance was bill bernard, dpw director."
+  },
+  {
+   "name": "David Rogers",
+   "role": "Resident / public attendance",
+   "status": "present",
+   "quote": "david rogers and david passios."
+  },
+  {
+   "name": "David Passios",
+   "role": "Public attendance",
+   "status": "present",
+   "quote": "david rogers and david passios."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Shrub trimming quote from Lakeview ($2,625.00) tabled; Chair to follow up with Lakeview and bring a motion to approve at the June meeting.",
+   "quote": "chair, foss-yasko will follow-up with lakeview."
+  },
+  {
+   "decision": "Chair to meet with DPW Director Bernard to review the maintenance plan.",
+   "quote": "the chair, foss-yasko stated that she will meet with the dpw director, bernard to review the maintenance plan."
+  },
+  {
+   "decision": "DPW Director Bernard to ask Lakeview whether it can plant flowers at both cemetery entrances; DPW to provide water for the season.",
+   "quote": "dpw director, bernard stated the dpw will be providing water for the season."
+  },
+  {
+   "decision": "Solar lights for the flags at North and South Cemeteries: DPW Director to contact an electrician; deferred to next meeting.",
+   "quote": "dpw director, bernard will reach out to their electrician."
+  },
+  {
+   "decision": "Commission concluded there is no issue with cemetery rules for a memorial inscription for a member not interred on a gravestone.",
+   "quote": "concluded that there is no issue with the cemetery rules to add the inscription."
+  },
+  {
+   "decision": "Chair to contact the family about the second headstone.",
+   "quote": "the chair will contact the family."
+  },
+  {
+   "decision": "Fish Street gate and wall: labor to be donated; Commission to buy supplies, work to start and finish in Fall 2024. Listed among items tabled to next meeting.",
+   "quote": "the labor will be donated: cemetery commission will buy supplies for gate and wall to be started and completed in fall/2024."
+  },
+  {
+   "decision": "DPW Director to look into the School Department's field maintenance plan, schedule and licenses.",
+   "quote": "dpw director, bernard will look into this."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lakeview quote to trim shrubs at South Cemetery",
+   "what_was_recorded": "Lakeview quoted $2,625.00 to trim shrubs; the Town Manager asked for a more detailed description and the item was carried to June.",
+   "quote": "lakeview's quote to trim shrubs at south cemetery - $2,625.00.",
+   "figures_as_printed": [
+    "$2,625.00"
+   ]
+  },
+  {
+   "topic": "Flowers for North and South Cemetery entrances",
+   "what_was_recorded": "Commission agreed to pay for flower planting at both cemetery entrances up to a cap; the motion approved up to $500.00.",
+   "quote": "pay for the flowers for north and south cemeteries for no more than $500.00.",
+   "figures_as_printed": [
+    "$500.00"
+   ]
+  },
+  {
+   "topic": "Pesticide and herbicide licensing and maintenance plan cost",
+   "what_was_recorded": "A consultant the year before recommended a price of $50K for the pesticide and herbicide work, which needs a license the Town does not hold.",
+   "quote": "a consultant last year recommended price of $50k.",
+   "figures_as_printed": [
+    "$50K"
+   ]
+  },
+  {
+   "topic": "Landscape contractor pricing",
+   "what_was_recorded": "DPW obtained pricing from six landscape companies; Lakeview gave the best price, and DPW moved to an hourly rate rather than a fixed price. No figure printed.",
+   "quote": "bill reached out to six landscape companies to get pricing.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Fish Street gate and wall",
+   "what_was_recorded": "Labor donated; Commission to buy supplies for the gate and wall. No dollar figure printed.",
+   "quote": "the labor will be donated: cemetery commission will buy supplies for gate and wall to be started and completed in fall/2024.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rogers",
+   "stated_role": "Resident",
+   "topic": "Town Charter, cemetery lawns, North Cemetery flags",
+   "quote": "mr. david rogers mentioned that the town charter was convoluted."
+  },
+  {
+   "speaker": "David Passios",
+   "stated_role": "Public attendance",
+   "topic": "Charter and by-laws; parks and cemetery policy",
+   "quote": "mr. david passios echoed mr. rogers comments stating that the charter and by laws are a total mess."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the cemetery commission meeting was called to order at 9:02 am by chair, nancy foss-yasko"
+  },
+  {
+   "topic": "Public comment on cemetery conditions before Memorial Day",
+   "resolution": "no action; Chair to address concerns with DPW",
+   "tags": [
+    "public comment",
+    "memorial day",
+    "cemetery conditions"
+   ],
+   "quote": "the chair, foss-yasko asked the public for their comments on the cemetery conditions going into memorial day weekend."
+  },
+  {
+   "topic": "DPW spring cleanup briefing",
+   "resolution": "no action; briefing received",
+   "tags": [
+    "DPW",
+    "spring cleanup",
+    "mowing",
+    "burials"
+   ],
+   "quote": "the dpw director bernard briefed the commission on spring cleanup work and daily work since april 8, 2024."
+  },
+  {
+   "topic": "Approval of April 26 minutes",
+   "resolution": "approved 3-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the vice-chair, dorren made a motion to accept the april 26th meeting minutes"
+  },
+  {
+   "topic": "Lakeview shrub trimming quote, South Cemetery",
+   "resolution": "tabled to June meeting",
+   "tags": [
+    "contract",
+    "landscaping",
+    "shrubs",
+    "Lakeview"
+   ],
+   "quote": "chair, foss-yasko will make a motion to approve at the june's meeting."
+  },
+  {
+   "topic": "Second headstone on family grave-site, South Cemetery",
+   "resolution": "approved 3-0",
+   "tags": [
+    "headstones",
+    "grave-site"
+   ],
+   "quote": "vice-chair, david dorren made a motion to allow the second headstone on the family grave-site."
+  },
+  {
+   "topic": "Memorial inscription for a member not interred",
+   "resolution": "no objection under cemetery rules; consensus",
+   "tags": [
+    "headstones",
+    "cemetery rules"
+   ],
+   "quote": "concluded that there is no issue with the cemetery rules to add the inscription."
+  },
+  {
+   "topic": "Flowers at North and South Cemetery entrances",
+   "resolution": "approved up to $500.00, 3-0",
+   "tags": [
+    "flowers",
+    "Lakeview",
+    "budget"
+   ],
+   "quote": "vice-chair, dorren made a motion to have lakeview provide the planting of flowers, up to $500.00;"
+  },
+  {
+   "topic": "Solar lights for flags at both cemeteries",
+   "resolution": "deferred to next meeting; DPW to contact electrician",
+   "tags": [
+    "solar lights",
+    "flags",
+    "electrician"
+   ],
+   "quote": "we will discuss more about this at our next meeting."
+  },
+  {
+   "topic": "Stone repair, Fish Street gate and wall, maintenance plan, school field maintenance",
+   "resolution": "tabled until next meeting",
+   "tags": [
+    "stones",
+    "Fish Street",
+    "maintenance plan",
+    "pesticides",
+    "school fields"
+   ],
+   "quote": "other topics briefly discussed and tabled until the next meeting included:"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:35 AM, passed 3 to 0",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion was made to adjourn by chair, foss-yasko, seconded by clerk, michael clark."
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "Memorial Day",
+  "DPW",
+  "headstones",
+  "flowers",
+  "landscaping contract",
+  "pesticide license",
+  "public comment",
+  "seasonal staffing",
+  "maintenance plan"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-06-14",
  "docid": "7148",
@@ -12,6 +12,135 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document a Neighborhood and Site Index Subcommittee meeting with opening comments, introductions, discussions of charge and current neighborhood mapping, and action items for the next meeting. The minutes end with \"Adjourn: approx. 1:30 PM\" but do not record a formal motion, second, or vote to adjourn.",
- "cost_usd": 0.0635441
+ "note": "Text extraction garbles some letters (e.g. 'Ɵ' for 'ti', 'Ʃ' for 'tt', 'ﬁ'); quotes copy the printed characters as they appear. No motions, votes or roll-call votes are recorded; the adjournment is stated with no motion. No dollar figures, transfers or public comment appear. Page 2 has no header. Becky from DOR is mentioned as having provided material but is not recorded as taking part, so is not listed as an attendee.",
+ "cost_usd": 0.01293037,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sarah Cammer",
+   "role": "BOA Lead",
+   "status": "present",
+   "quote": "sarah cammer boa lead ana lockwood, resident at large carl luck, resident at large"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Resident at Large",
+   "status": "present",
+   "quote": "sarah cammer boa lead ana lockwood, resident at large carl luck, resident at large"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Resident at Large; minutes prepared by",
+   "status": "present",
+   "quote": "sarah cammer boa lead ana lockwood, resident at large carl luck, resident at large"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Outside Assessor/Contractor",
+   "status": "present",
+   "quote": "rena swezey, outside assessor/contractor not present: jackie favreau, resident/realtor member"
+  },
+  {
+   "name": "Jackie Favreau",
+   "role": "Resident/Realtor member",
+   "status": "absent",
+   "quote": "rena swezey, outside assessor/contractor not present: jackie favreau, resident/realtor member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sarah will make sure all members get the DOR information and the site maps and indices (action for the next meeting).",
+   "quote": "sarah will make sure all members get the informaɵon that becky from dor has provided as well as site maps and indices."
+  },
+  {
+   "decision": "Members to read the IAO reading, the Standard on Mass Appraisal, the Certification Standards and the NB definitions before the next meeting.",
+   "quote": "reading for next meeɵng, with the goal for developing understanding how site factors and neighborhoods are reviewed"
+  },
+  {
+   "decision": "Long-term to-do and potential BOA recommendation: see if the overlay and GIS cards can be combined.",
+   "quote": "long term to do, potenɵal boa recommendaɵon: see if we can get overlay and gis cards combined."
+  },
+  {
+   "decision": "Rena will speak to Vision to see whether neighborhood data/report listing can be obtained.",
+   "quote": "rena is going to speak to vision to see if there is a way to get neighborhood data/report lisɵng."
+  },
+  {
+   "decision": "Next meeting set for July 8th at noon, via Zoom only.",
+   "quote": "next meeɵng will be on july 8th at noon via zoom only."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Introductions",
+   "resolution": "no action; members introduced themselves",
+   "quote": "each member introduced themselves and shared a liʃle about their history in town and experience",
+   "tags": [
+    "introductions",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Sub-committee charge and needs",
+   "resolution": "discussed; DOR asked for review of all neighborhoods",
+   "quote": "sarah shared the charge from dor.",
+   "tags": [
+    "DOR charge",
+    "neighborhoods",
+    "waterfront"
+   ]
+  },
+  {
+   "topic": "Examination of current neighborhood site map",
+   "resolution": "discussed; long-term item for possible BOA recommendation",
+   "quote": "it was asked if the neighborhood map could be incorporated into an overlay on the town's gis map.",
+   "tags": [
+    "neighborhood map",
+    "GIS",
+    "overlay",
+    "CAI"
+   ]
+  },
+  {
+   "topic": "Vision card and land column headings",
+   "resolution": "brief discussion; no action recorded",
+   "quote": "there was a brief discussion on the vision card and perhaps the need to change some land column headings",
+   "tags": [
+    "Vision",
+    "assessment data",
+    "land"
+   ]
+  },
+  {
+   "topic": "Actions and reading for next meeting",
+   "resolution": "assignments made",
+   "quote": "reading for next meeɵng, with the goal for developing understanding how site factors and neighborhoods are reviewed",
+   "tags": [
+    "reading",
+    "site factors",
+    "certification"
+   ]
+  },
+  {
+   "topic": "Schedule next meeting",
+   "resolution": "scheduled for July 8th, noon, Zoom only",
+   "quote": "next meeɵng will be on july 8th at noon via zoom only.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "neighborhood site index",
+  "DOR",
+  "GIS overlay",
+  "Vision database",
+  "subcommittee",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

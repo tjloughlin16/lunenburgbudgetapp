@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-06-10",
  "docid": "6609",
@@ -12,63 +12,290 @@
  },
  "votes": [
   {
-   "motion": "Continue Chair Membership until the next meeting",
+   "motion": "Continue Chair Membership until the next meeting (reorganization postponed).",
    "moved_by": "M. Allison",
    "seconded_by": "M. Brenner",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "m. allison moved to continue chair membership until the next meeting, m. brenner seconded, passed unanimously."
   },
   {
-   "motion": "Appoint Sondria Harp to the Master Plan Steering Committee",
+   "motion": "Appoint Sondria Harp (S. Harp) to the Master Plan Steering Committee.",
    "moved_by": "M. Allison",
    "seconded_by": "Glenn McLeod",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "m. allison moved to appoint s. harp to the master plan steering committee, glenn mcleod seconded. passed unanimously"
   },
   {
-   "motion": "Appoint Emily Young to the Master Plan Steering Committee",
+   "motion": "Appoint Emily Young (E. Young) to the Master Plan Steering Committee.",
    "moved_by": "M. Allison",
    "seconded_by": "G. McLeod",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "m. allison moved to appoint e. young to the master plan steering committee, g. mcleod seconded. passed unanimously."
   },
   {
-   "motion": "Continue the public hearing for 255 Sunny Hill Rd to 2024-07-08 at 6:05 P.M.",
+   "motion": "Continue the public hearing on 255 Sunny Hill Rd to 2024-07-08 at 6:05 P.M.",
    "moved_by": "M. Allison",
    "seconded_by": "G. McLeod",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "m. allison moved to continue the public hearing to 2024-07-08 at 6:05 p.m. g. mcleod seconded. passed unanimously."
   },
   {
-   "motion": "Approve the Certificate of Completion for 680 Reservoir Rd",
+   "motion": "Approve the Certificate of Completion for 680 Reservoir Rd.",
    "moved_by": "M. Allison",
    "seconded_by": "G. McLeod",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "m. allison moved to approve the certificate of completion, g. mcleod seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "Appoint Matthew Brenner to the Town Manager Screening Committee",
+   "motion": "Appoint M. Brenner as the Planning Board's representative to the Town Manager Screening Committee.",
    "moved_by": "M. Allison",
    "seconded_by": "G. McLeod",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "m. allison moved to appoint m. brenner to the town manager screening committee, g. mcleod seconded. passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "G. McLeod",
    "seconded_by": "M. Allison",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "g. mcleod moved to adjourn, m. allison seconded. passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded and clearly marked in the minutes. Board member Timothy Willsmer and Amanda Reid were absent.",
- "cost_usd": 0.1005501
+ "note": "Typed minutes, not a scan; all votes are recorded with their printed results. The minutes use initials (M. Allison, M. Brenner, G. McLeod, S. Harp, E. Young, B. Marchetti); full names were taken from the header and the Present/Absent lines. Richard Harris and Logan O'Connell appear in the header and in the discussion but not in the Present line. The chair-membership motion says 'continue Chair Membership' and records no outcome beyond 'passed unanimously'. The 321 Sunny Hill Rd and 430 Mulpus Rd entries are continuance headings with no motion, so they are recorded as decisions, not votes. No dollar figures appear in the minutes.",
+ "cost_usd": 0.01711677,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Interim Land Use Director",
+   "status": "present",
+   "quote": "r. harris recommended voting on the chair position and postponing the full re-organization until all members could be present."
+  },
+  {
+   "name": "Logan O’Connell",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "m. brenner welcomed the newest board member, g. mcleod, and the new administrative assistant, logan o'connell."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "representing the applicant (McCarty Engineering)",
+   "status": "present",
+   "quote": "the applicant was represented by brian marchetti of mccarty engineering."
+  },
+  {
+   "name": "Sondria Harp",
+   "role": "candidate",
+   "status": "present",
+   "quote": "two candidates (sondria harp, 20 pratt st and emily young, 36 florence st) were present."
+  },
+  {
+   "name": "Emily Young",
+   "role": "candidate",
+   "status": "present",
+   "quote": "two candidates (sondria harp, 20 pratt st and emily young, 36 florence st) were present."
+  },
+  {
+   "name": "David & Leigh Sarnoski",
+   "role": "applicants, represented by B. Marchetti of McCarty Engineering",
+   "status": "not stated",
+   "quote": "david & leigh sarnoski were represented by b. marchetti of mccarty engineering."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board declined to require a Performance Guarantee for 680 Reservoir Rd, citing the homeowners' personal incentive for maintenance (no vote recorded).",
+   "quote": "g. mcleod and m. allison declined to require a performance guarantee, citing the homeowners' personal incentive for maintenance."
+  },
+  {
+   "decision": "Full re-organization postponed until all members can be present; only the Chair position was addressed.",
+   "quote": "r. harris recommended voting on the chair position and postponing the full re-organization until all members could be present."
+  },
+  {
+   "decision": "430 Mulpus Rd (Harbor Classic) performance guarantee continued to 2024-06-24.",
+   "quote": "430 mulpus rd - harbor classic (cont. to 2024-06-24)"
+  },
+  {
+   "decision": "321 Sunny Hill Rd continued to 2024-06-24; no Certificate of Completion issued at this meeting.",
+   "quote": "321 sunny hill rd (cont. from 2024-05-13, to 2024-06-24)"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Next steps for joining the Master Plan Steering Committee",
+   "speaker": "S. Harp and E. Young",
+   "quote": "s. harp and e. young asked about the next steps in joining the master plan steering committee."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Zoom technical difficulties",
+   "resolution": "meeting began late, without Zoom",
+   "quote": "began the meeting at approximately 6:18 p.m without it.",
+   "tags": [
+    "zoom",
+    "technical difficulties",
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Reorganization",
+   "resolution": "Chair membership continued; full reorganization postponed",
+   "quote": "r. harris recommended voting on the chair position and postponing the full re-organization until all members could be present.",
+   "tags": [
+    "reorganization",
+    "chair"
+   ]
+  },
+  {
+   "topic": "Appointment: MBTA Zoning",
+   "resolution": "presentation rescheduled to 2024-06-24",
+   "quote": "karen chapman rescheduled her presentation to 2024-06-24 to have zoom available.",
+   "tags": [
+    "MBTA zoning"
+   ]
+  },
+  {
+   "topic": "Appointments: Master Plan Steering Committee",
+   "resolution": "approved (Harp and Young appointed)",
+   "quote": "m. allison moved to appoint s. harp to the master plan steering committee, glenn mcleod seconded. passed unanimously",
+   "tags": [
+    "master plan",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public hearing: 255 Sunny Hill Rd (stormwater permit)",
+   "resolution": "continued to 2024-07-08",
+   "quote": "255 sunny hill rd (cont. from 2024-04-22, to 2024-07-08)",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Performance guarantee: 430 Mulpus Rd",
+   "resolution": "continued to 2024-06-24; applicant not present",
+   "quote": "430 mulpus rd - harbor classic (cont. to 2024-06-24)",
+   "tags": [
+    "performance guarantee"
+   ]
+  },
+  {
+   "topic": "Certificate of Completion: 680 Reservoir Rd",
+   "resolution": "approved",
+   "quote": "m. allison moved to approve the certificate of completion, g. mcleod seconded.",
+   "tags": [
+    "certificate of completion",
+    "stormwater",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Certificate of Completion: 321 Sunny Hill Rd",
+   "resolution": "continued to 2024-06-24",
+   "quote": "321 sunny hill rd (cont. from 2024-05-13, to 2024-06-24)",
+   "tags": [
+    "certificate of completion",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Town Manager Screening Committee",
+   "resolution": "Brenner appointed as Planning Board representative",
+   "quote": "m. allison moved to appoint m. brenner to the town manager screening committee, g. mcleod seconded. passed unanimously.",
+   "tags": [
+    "town manager",
+    "screening committee"
+   ]
+  },
+  {
+   "topic": "Outdoor Dining Policy",
+   "resolution": "continued",
+   "quote": "outdoor dining policy (continued)",
+   "tags": [
+    "outdoor dining"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; staff and board advised on process",
+   "quote": "s. harp and e. young asked about the next steps in joining the master plan steering committee.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment: Zoom and public participation",
+   "resolution": "no action",
+   "quote": "m. brenner was deeply frustrated with the town's management of zoom, noting that it stifled public",
+   "tags": [
+    "zoom",
+    "public participation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:11 P.M.",
+   "quote": "g. mcleod moved to adjourn, m. allison seconded. passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "master plan steering committee",
+  "town manager screening committee",
+  "public hearings",
+  "certificates of completion",
+  "stormwater",
+  "zoom technical difficulties",
+  "appointments",
+  "outdoor dining",
+  "performance guarantee"
+ ],
+ "dropped_unquoted_by_field": {}
 }

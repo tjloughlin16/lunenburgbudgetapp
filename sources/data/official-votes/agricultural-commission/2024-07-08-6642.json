@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2024-07-08",
  "docid": "6642",
@@ -12,23 +12,191 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from June 17, 2024",
-   "moved_by": "Jackie",
-   "seconded_by": "Maryrae",
-   "outcome": "unanimously approved",
+   "motion": "Approve the minutes of the June 17, 2024 meeting.",
+   "moved_by": "Jackie Chabot",
+   "seconded_by": "Maryrae Holman",
+   "outcome": "passed",
    "procedural": true,
    "quote": "jackie made a motion to approve the minutes from the following meetings: june 17, 2024. maryrae seconded. commission unanimously approved"
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Maryrae",
-   "seconded_by": "Jackie",
-   "outcome": "unanimously approved",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Maryrae Holman",
+   "seconded_by": "Jackie Chabot",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "maryrae motion to adjourn; jackie seconds. commission unanimously approved"
+   "quote": "maryrae motion to adjourn; jackie seconds. commission unanimously approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08341209999999999
+ "dropped_unquoted": 1,
+ "note": "Clean extracted text, no scan issues. Votes are recorded only as 'unanimously approved' with no vote counts printed. No dollar figures appear anywhere in the minutes, so budget_items and transfers are empty. Public comment entries read 'None' and nobody is recorded as speaking. Kira McClellan has no attendance mark, so status is 'not stated'. The notice says 6:30PM but the call to order is recorded at 6:40pm; both are recorded as printed.",
+ "cost_usd": 0.01320717,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔ vice-chair maryrae holman ✔ clerk jackie chabot ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Post the letter about the farming bylaw on the Commission's Facebook page and share it to local pages.",
+   "quote": "post letter and about farming bylaw. share to local pages"
+  },
+  {
+   "decision": "Distribute the signed printed letter to Lunenburg farms by dropping it off in person.",
+   "quote": "signed printed letter. plan to distribute to local farms by dropping off."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:40pm",
+   "quote": "call to order meeting commencement time: 6:40pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no comment recorded (None)",
+   "quote": "2 public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no announcements (None)",
+   "quote": "3 announcements none",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved unanimously",
+   "quote": "jackie made a motion to approve the minutes from the following meetings: june 17, 2024.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Updates from town council meeting",
+   "resolution": "no action; questions and answers reviewed",
+   "quote": "reviewed questions and answers for clarifications on open meeting and right to farm bylaw",
+   "tags": [
+    "town council",
+    "open meeting law",
+    "right to farm bylaw"
+   ]
+  },
+  {
+   "topic": "Lunenburg Farmers' Market",
+   "resolution": "noted; consider old Primary School grounds for community garden",
+   "quote": "old primary school grounds probably not large enough for the farmers' market in the long term.",
+   "tags": [
+    "farmers market",
+    "community garden"
+   ]
+  },
+  {
+   "topic": "Membership",
+   "resolution": "noted; town page updated, three vacancies",
+   "quote": "town page updated, vacancies for 3 positions",
+   "tags": [
+    "membership",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Agricultural Commission Facebook page",
+   "resolution": "action: post letter on farming bylaw",
+   "quote": "post letter and about farming bylaw. share to local pages",
+   "tags": [
+    "outreach",
+    "farming bylaw"
+   ]
+  },
+  {
+   "topic": "Letter for Lunenburg farming community outreach",
+   "resolution": "letter signed; to be dropped off at local farms",
+   "quote": "signed printed letter. plan to distribute to local farms by dropping off.",
+   "tags": [
+    "outreach",
+    "farms"
+   ]
+  },
+  {
+   "topic": "Committee reports (EDC)",
+   "resolution": "noted; possible meet and greet in 2024",
+   "quote": "edc (maryrae) - potential meet and greet planned for 2024 details to come",
+   "tags": [
+    "committee reports",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Farming Issues",
+   "resolution": "no action (None)",
+   "quote": "8 farming issues none",
+   "tags": [
+    "farming"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings/Events",
+   "resolution": "schedule noted: July 29 and August 12, 2024",
+   "quote": "6:30 pm july 29, 2024 6:30 pm august 12, 2024",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:46 pm",
+   "quote": "maryrae motion to adjourn; jackie seconds. commission unanimously approved. 7:46 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmers market",
+  "community garden",
+  "right to farm bylaw",
+  "open meeting law",
+  "outreach",
+  "membership vacancies",
+  "town website",
+  "economic development"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2024-07-15",
  "docid": "6657",
@@ -12,15 +12,123 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from June 3, 2024",
-   "outcome": "unanimously approved",
-   "procedural": true,
+   "motion": "Approve the minutes of the June 3, 2024 meeting.",
    "moved_by": "",
-   "seconded_by": "",
+   "outcome": "passed unanimously (no count printed)",
+   "procedural": true,
    "quote": "meeting minutes from june 3, 2024 approved unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "One vote recorded: approval of prior minutes. No other motions or votes are stated in these minutes. Adjournment is noted by time only, with no recorded motion or vote.",
- "cost_usd": 0.090142
+ "dropped_unquoted": 1,
+ "note": "Clean text extract, not a scan. Only one motion is recorded: approval of the June 3, 2024 minutes, given as \"approved unanimously\" with no mover, seconder or count. The adjournment at 7:16 pm has no recorded motion, so it is not listed as a vote. The minutes print no dollar figures; the fall grant item is included as a budget item only because it concerns a grant, with figures_as_printed left empty. Attendance lists three members present (quorum-level attendance of a five-member board per the header); Matt Snyder and Chris Holden appear only in the letterhead, so their status is not stated rather than absent. Paul Sarapas is mentioned but did not take part, so he is not listed as an attendee.",
+ "cost_usd": 0.01276517,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy"
+  },
+  {
+   "name": "David Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy"
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matt snyder, member"
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "chris holden, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee will meet on the first Monday of each month; the next meeting is Aug 5, 2024 at 6:30pm at the Ritter Building.",
+   "quote": "to meet first monday of each month. next: aug 5, 2024 6:30pm - ritter building"
+  },
+  {
+   "decision": "Paul Sarapas, who reached out about writing an article in the Lunenburg Ledger about the committee, is invited to the next meeting.",
+   "quote": "invited to next meeting."
+  },
+  {
+   "decision": "The committee plans to attend a Select Board meeting to notify departments and ask for help contacting them about the fall grant project list.",
+   "quote": "will attend select board to notify/ask for help contacting departments)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fall Grant Process",
+   "what_was_recorded": "The fall grant process timeline is laid out (notify departments, finalize projects, finalize application, submit in October), but the minutes print no dollar figure or grant amount.",
+   "figures_as_printed": [],
+   "quote": "timeline / plan: -july: send out notifications to departments (completed, have not heard back. will attend select board to notify/ask for help contacting departments)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and Approve Pending Meeting Minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "meeting minutes from june 3, 2024 approved unanimously."
+  },
+  {
+   "topic": "Fall Grant Process",
+   "resolution": "discussed; timeline and possible project options reviewed; no vote recorded",
+   "tags": [
+    "grants",
+    "energy",
+    "town buildings"
+   ],
+   "quote": "possible options based on energy assessments of town buildings:"
+  },
+  {
+   "topic": "Outreach program to increase community awareness",
+   "resolution": "discussed; Facebook posts ongoing; newspaper article invitation",
+   "tags": [
+    "outreach",
+    "social media",
+    "newspaper"
+   ],
+   "quote": "green communities committee facebook page informational posts on-going."
+  },
+  {
+   "topic": "Timeline for next meeting",
+   "resolution": "set schedule",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "to meet first monday of each month. next: aug 5, 2024 6:30pm - ritter building"
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy assessments",
+  "fall grant process",
+  "outreach",
+  "social media",
+  "town buildings",
+  "minutes approval",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

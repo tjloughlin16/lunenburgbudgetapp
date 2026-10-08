@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2024-08-08",
  "docid": "6695",
@@ -12,39 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Approve June 13, 2024 minutes",
+   "motion": "Approve the June 13, 2024 minutes.",
    "moved_by": "Member McGrath",
    "seconded_by": "Lloyd",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve by member mcgrath, seconded by lloyd, approved by all"
+   "quote": "june 13, 2024 - motion to approve by member mcgrath, seconded by lloyd, approved by all"
   },
   {
-   "motion": "Approve July 11, 2024 minutes",
+   "motion": "Approve the July 11, 2024 minutes.",
    "moved_by": "Member McGrath",
    "seconded_by": "Lloyd",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve by member mcgrath, seconded by lloyd, approved by all."
+   "quote": "july 11, 2024 - motion to approve by member mcgrath, seconded by lloyd, approved by all."
   },
   {
-   "motion": "Approve determination of applicability for 985 Mass Ave",
-   "moved_by": "member McGrath",
+   "motion": "Approve the DOA for 985 Mass Ave.",
+   "moved_by": "Member McGrath",
    "seconded_by": "Lockwood",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion to approve the doa by member mcgrath, seconded by lockwood: approved by all"
   },
   {
-   "motion": "Send out notification letter",
-   "moved_by": "member McGrath",
+   "motion": "Send out the notification letter (mailer).",
+   "moved_by": "Member McGrath",
    "seconded_by": "Lloyd",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed; Lockwood abstained",
    "procedural": false,
    "quote": "motion to send out letter by member mcgrath, seconded by lloyd, approved by mcgrath/lloyd/sculimbrene, lockwood abstained - motion passes"
   },
   {
-   "motion": "Engage with Town Council to find best way to proceed regarding Brooks House preservation",
+   "motion": "Engage with Town Council to find the best way to proceed on the Brooks House.",
    "moved_by": "Member Lockwood",
    "seconded_by": "McGrath",
    "outcome": "passed",
@@ -53,6 +53,174 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0706994
+ "note": "Text extract of the official minutes, not a scan. Votes are printed as 'Approved by all' or by name, with no numeric count, so outcomes are recorded as printed. The notification-letter vote is printed as 'Approved by McGrath/Lloyd/Sculimbrene, Lockwood abstained – Motion Passes'. Public comment is printed as 'None'. Adjournment at 8:05 PM has no printed motion, so none is recorded. Brian Gingras is named but not as a participant, so he is not listed. The 'Vacancy' line is not a person.",
+ "cost_usd": 0.01439897,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Member Sculimbrene to inquire about the town mailing list and the process for acquiring postage, and to clean up the letter and attachments before mailing.",
+   "quote": "member sculimbrene will inquire about mailing list from town and process for acquiring postage."
+  },
+  {
+   "decision": "Member Sculimbrene to meet with the new select board chair and express the commission's concerns about Town Hall and Ritter maintenance.",
+   "quote": "member sculimbrene will meet with the new select board chair and express out concerns."
+  },
+  {
+   "decision": "Member Lockwood to call one of the companies the APDC recommended regarding 50 Main Street.",
+   "quote": "but will call one of the companies that the apdc recommended"
+  },
+  {
+   "decision": "Lockwood's Brooks House parking proposal to be brought up at the next Lunenburg Municipal design committee meeting.",
+   "quote": "will bring up our proposal at the next design meeting."
+  },
+  {
+   "decision": "Commission requires a revised estimate before the Town Hall / Ritter work proceeds.",
+   "quote": "would need to see a revised estimate for work to be completed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Hall / Ritter renovations: bid projects and estimate",
+   "what_was_recorded": "The town recently put out for bid some projects, and the commission said it would need a revised estimate for the work; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "would need to see a revised estimate for work to be completed"
+  },
+  {
+   "topic": "Notification mailer: postage and mailing list",
+   "what_was_recorded": "A member will ask the town for its mailing list and the process for acquiring postage for the notification letter; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "member sculimbrene will inquire about mailing list from town and process for acquiring postage."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (June 13 and July 11, 2024)",
+   "resolution": "approved",
+   "quote": "2) july 11, 2024 - motion to approve by member mcgrath, seconded by lloyd, approved by all.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence: MPS building code guidance",
+   "resolution": "no action; document to be circulated to committee",
+   "quote": "received new detailed mps guidance document for building codes and historic preservation.",
+   "tags": [
+    "building codes",
+    "historic preservation"
+   ]
+  },
+  {
+   "topic": "985 Mass Ave determination of applicability",
+   "resolution": "approved",
+   "quote": "front porch columns have given way and had to remove material and prop up roof until",
+   "tags": [
+    "985 Mass Ave",
+    "determination of applicability",
+    "repair"
+   ]
+  },
+  {
+   "topic": "Notification letter and mailer",
+   "resolution": "approved to send; Lockwood abstained",
+   "quote": "was waiting on revised by-law and see if that was the time to send out the mailer.",
+   "tags": [
+    "notification letter",
+    "mailer",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Brooks House preservation",
+   "resolution": "motion passed to engage Town Council",
+   "quote": "member lockwood would like to propose a warrant to have select board to create parking for the",
+   "tags": [
+    "Brooks House",
+    "warrant",
+    "parking",
+    "Town Council"
+   ]
+  },
+  {
+   "topic": "763 Mass Ave",
+   "resolution": "no action; remains in demolition-delay status",
+   "quote": "member mcgrath has spoken with brian gingras, developer has a few on-going projects in town",
+   "tags": [
+    "763 Mass Ave",
+    "demolition delay",
+    "developer"
+   ]
+  },
+  {
+   "topic": "Town Hall / Ritter renovations",
+   "resolution": "no action; member to raise concerns with select board chair",
+   "quote": "town recently put out for bid for some projects, detailed plan for marshal park and new roof for",
+   "tags": [
+    "Town Hall",
+    "Ritter Building",
+    "bids",
+    "estimate"
+   ]
+  },
+  {
+   "topic": "50 Main Street",
+   "resolution": "no action; member to contact a recommended company",
+   "quote": "member lockwood spoke with one of the owners, they were gone for the summer, but will call",
+   "tags": [
+    "50 Main Street"
+   ]
+  },
+  {
+   "topic": "Town Council meeting: Brooks House and APDC/Historical Commission merger",
+   "resolution": "discussed; September meeting date sought",
+   "quote": "would like to discuss the brooks house and the merger of the apdc and historical commission.",
+   "tags": [
+    "Town Council",
+    "merger",
+    "Historical Commission"
+   ]
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "demolition delay",
+  "Brooks House",
+  "Ritter Building",
+  "Town Hall",
+  "bylaw",
+  "notification letter",
+  "minutes approval",
+  "Town Council"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-06-25",
  "docid": "6625",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Rename the Beach House in memory of Genevieve Nass to the Genevieve Nass Memorial Beach House",
+   "motion": "Rename the Beach House in memory of Genevieve Nass to the Genevieve Nass Memorial Beach House.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "k. menard made a motion to rename the beach house in memory of genevieve nass to the genevieve nass memorial beach house. c. sullivan seconded. all in favor, motion carried (4-0)."
   },
   {
-   "motion": "Authorize A. Scheipers to sign the Right of Entry License Agreement on the Commission's behalf",
+   "motion": "That A. Scheipers sign the Right of Entry License Agreement on the Commission’s behalf.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K. Menard",
    "outcome": "passed",
@@ -28,15 +28,15 @@
    "quote": "c. sullivan made a motion that a. scheipers to sign the right of entry license agreement on the commission's behalf. k. menard seconded. all in favor"
   },
   {
-   "motion": "Rescind the motion made on May 24, 2023 with a construction end date of June 30, 2024 and leave it open to revisit in the fall to determine a new date",
+   "motion": "Rescind the motion C. Sullivan made on May 24, 2023 (construction end date of June 30, 2024) and leave it open to revisit in the fall to determine a new date.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "k. menard made a motion to rescind the motion c. sullivan made on may 24, 2023, with a construction end date of june30, 2024 and leave it open to revisit in the fall to determine a new date. c. sullivan seconded. all in favor, motion carried (4-0)."
+   "quote": "k. menard made a motion to rescind the motion c. sullivan made on may 24, 2023, with a construction end date of june30, 2024 and leave it open to revisit in the fall"
   },
   {
-   "motion": "Approve the minutes from April 24 and May 15, 2024",
+   "motion": "Approve the minutes of April 24 and May 15, 2024.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 4-0",
@@ -45,6 +45,245 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0911084
+ "note": "Text extraction, not a scan; all pages read. Outcome for the Right of Entry motion is recorded as 'passed' from 'All in favor' with no printed count, so it is an inference from the approval language, not a tally. The adjournment at 8:07 pm has no recorded motion, so no vote was entered for it. Tim Lawless appears in the letterhead as a member but is not named as present or absent in the minutes, so he is not listed as an attendee. The minutes name Christopher Sullivan in the attendance line and C. Sullivan elsewhere; both are recorded as printed. Page headers read 'Page of 31' through 'of 34', which is an extraction artifact and was not used.",
+ "cost_usd": 0.015621069999999999,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "C. Ruth",
+   "role": "Facilities Director & Recreation Director",
+   "status": "present",
+   "quote": "c. ruth gave the following updates:"
+  },
+  {
+   "name": "A. Caiozzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "a. caiozzo stated they have received an updated legal agreement for the right of entry from town council."
+  },
+  {
+   "name": "D. Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "d. passios expressed concerns with the amount of time it has taken to get the skate park access to marshall park and his disappointment with the select board."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Scheipers will reach out to A. Lockwood regarding the Open Space & Master Plan Steering committee representative.",
+   "quote": "k. menard noted the commission's rep. was a. lockwood. a. scheipers will reach out to a. lockwood."
+  },
+  {
+   "decision": "Residential rates for the Town Beach for Town Employees will be placed on the next agenda, and a meeting posted for July 1, 2024 at 2:30 pm to discuss and vote on it.",
+   "quote": "a. scheipers stated this issue will be put on the next agenda. the commission will post a meeting for july 1, 2024, at 2:30 pm to discuss and vote on this issue."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grants updates: ADA grant",
+   "what_was_recorded": "The ADA grant was submitted for an amount stated as $138,000.",
+   "figures_as_printed": [
+    "$138,000"
+   ],
+   "quote": "the ada grant was submitted, the amount was $138,000."
+  },
+  {
+   "topic": "Grants updates: funding outcomes",
+   "what_was_recorded": "The Commission did not receive the Trails Grant, the PARC grant was approved and needs to be executed, the Land and Water Grant is not yet signed off, and the Dredging Grant was not received but can be reapplied for. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "k. menard stated the commission did not get the trails grant."
+  },
+  {
+   "topic": "Town Beach residential rates",
+   "what_was_recorded": "A board member suggested offering Town Employees residential rates for the Town Beach; no figures printed and the issue was deferred to a later meeting.",
+   "figures_as_printed": [],
+   "quote": "k. menard suggested possibly offering town employees residential rates for the town beach."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "D. Passios",
+   "stated_role": "not stated",
+   "topic": "Skate Park access to Marshall Park; Select Board",
+   "quote": "d. passios expressed concerns with the amount of time it has taken to get the skate park access to marshall park and his disappointment with the select board."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Facilities Director & Recreation Director Update",
+   "resolution": "no action (updates received)",
+   "quote": "first item on the agenda, facilities director & recreation director update",
+   "tags": [
+    "beach house",
+    "parks maintenance",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Naming of the Beach House",
+   "resolution": "approved (renamed Genevieve Nass Memorial Beach House, 4-0)",
+   "quote": "k. menard made a motion to rename the beach house in memory of genevieve nass to the genevieve nass memorial beach house. c. sullivan seconded. all in favor, motion carried (4-0).",
+   "tags": [
+    "beach house",
+    "naming"
+   ]
+  },
+  {
+   "topic": "Repurpose T-ball field as Dog Park",
+   "resolution": "no action (chair to check insurance implications with Town Manager)",
+   "quote": "a. scheipers stated she has reached out to the town manager to look into what would be required for any changes to the town's insurance.",
+   "tags": [
+    "dog park",
+    "insurance",
+    "T-ball field"
+   ]
+  },
+  {
+   "topic": "Status of Skate Park",
+   "resolution": "approved chair to sign Right of Entry; prior construction-date motion rescinded (4-0)",
+   "quote": "c. sullivan made a motion that a. scheipers to sign the right of entry license agreement on the commission's behalf. k. menard seconded. all in favor",
+   "tags": [
+    "skate park",
+    "right of entry",
+    "legal agreement"
+   ]
+  },
+  {
+   "topic": "Grants Updates",
+   "resolution": "no action (status reported)",
+   "quote": "k. menard stated the commission did not get the trails grant.",
+   "tags": [
+    "grants",
+    "ADA",
+    "PARC",
+    "land and water",
+    "dredging"
+   ]
+  },
+  {
+   "topic": "NHS Update",
+   "resolution": "no action",
+   "quote": "c. sullivan stated he has reached.",
+   "tags": [
+    "National Honor Society",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Marshall Park",
+   "resolution": "no action",
+   "quote": "a. scheipers noted the opm wanted to know if the commission would consider having part of the work done by the local",
+   "tags": [
+    "Marshall Park",
+    "OPM",
+    "in-kind services"
+   ]
+  },
+  {
+   "topic": "Lake Shirley Parcels & Agreement with Shady Point",
+   "resolution": "no action (Selectmen still working on it)",
+   "quote": "a. scheipers stated the selectmen are still working on this.",
+   "tags": [
+    "Lake Shirley",
+    "Shady Point",
+    "Selectmen"
+   ]
+  },
+  {
+   "topic": "Upcoming Meeting Dates",
+   "resolution": "noted (July 13 and 31, 2024)",
+   "quote": "next item on the agenda, upcoming meeting dates: july 13 and 31, 2024",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Committee Updates (Open Space & Master Plan Steering)",
+   "resolution": "no action (master plan survey not yet out; representative to be contacted)",
+   "quote": "k. menard stated master planning survey has not gone out.",
+   "tags": [
+    "master plan",
+    "open space",
+    "committee"
+   ]
+  },
+  {
+   "topic": "Chair Updates",
+   "resolution": "no action (none)",
+   "quote": "next item on the agenda, chair updates - none",
+   "tags": []
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved April 24 and May 15, 2024 (4-0)",
+   "quote": "k. menard made a motion to approve april 24 and may 15, 2024. c. shapiro seconded. all in favor, motion carried (4-0).",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "residential Town Beach rates to next agenda; special meeting posted for July 1, 2024",
+   "quote": "a. scheipers stated this issue will be put on the next agenda. the commission will post a meeting for july 1, 2024, at 2:30 pm to discuss and vote on this issue.",
+   "tags": [
+    "town beach",
+    "residential rates",
+    "public comment placement"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action (one speaker)",
+   "quote": "d. passios expressed concerns with the amount of time it has taken to get the skate park access to marshall park and his disappointment with the select board.",
+   "tags": [
+    "skate park",
+    "Select Board"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "beach house",
+  "skate park",
+  "grants",
+  "dog park",
+  "Marshall Park",
+  "Lake Shirley",
+  "town beach",
+  "minutes approval",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

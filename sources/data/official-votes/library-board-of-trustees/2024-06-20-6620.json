@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2024-06-20",
  "docid": "6620",
@@ -10,8 +10,296 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06202024-6620",
   "doc_url": "/docs/meetings/library-board-of-trustees/2024-06-20-minutes-6620.txt"
  },
- "votes": [],
- "dropped_unquoted": 2,
- "note": "",
- "cost_usd": 0.10869410000000002
+ "votes": [
+  {
+   "motion": "Approve the minutes of May 16, 2024, as amended.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "amotionwasmadetoaccept theminutesof may16, 2024asamended. themotionpassedunanimouslybyroll call vote."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dick",
+   "seconded_by": "Jana",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "amotiontoadjournwasmadeby dickandsecondedbyjana. meetingwasadjournedat 8:48."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text extraction of pages 1-2 (the minutes proper) has lost word spaces, so quotes from those pages reproduce the run-together wording as printed. Pages 3-10 are attached reports (Director's Report, Youth Services Trustee Report, Adult Services Trustee Report) and are not minutes; figures and programmes from them are cited only where the minutes' own pages reference them. Only two votes appear in the minutes: approval of the May 16 minutes (passed unanimously by roll call, mover and seconder not printed, count not printed) and adjournment (mover Dick, seconder Jana, no result printed). The board reorganization is recorded with no vote. Public comment: the minutes say 'No public comment' so no speakers are listed. Attendance: the attendance line does not say who was present in person versus remote except for Maia Wentrup. Roles for Jana-Lee Balish and Bob Conroy are not printed. Staff named in the attached reports (e.g. Lydia Gravell, Debbie Laffond, Joslyn Davis, Kaitee, Melanie, Casey) are not listed as attendees because the minutes do not show them taking part in the meeting.",
+ "cost_usd": 0.01933087,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "thelplbtmeetingwascalledtoorder at 6:45p.m. bychairpersonharrykubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, donnasaiia, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish, bobconroy"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "chair (harry), vicechair (dick), andtreasurer (donna) will staythesame. thesecretarypositionwill nowbeheldbylaura."
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, donnasaiia, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish, bobconroy"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "Secretary (per the board reorganization)",
+   "status": "present",
+   "quote": "thesecretarypositionwill nowbeheldbylaura."
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "attending: harrykubetz, dickmailloux, donnasaiia, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish, bobconroy"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, donnasaiia, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish, bobconroy"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, donnasaiia, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish, bobconroy"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reorganization: Chair (Harry Kubetz), Vice Chair (Dick Mailloux) and Treasurer (Donna Saiia) remain in their posts, and Laura Boussom now holds the Secretary position. No vote is recorded.",
+   "quote": "chair (harry), vicechair (dick), andtreasurer (donna) will staythesame. thesecretarypositionwill nowbeheldbylaura."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 budget year-end position",
+   "what_was_recorded": "The Director reported the budget is 83% expended with the fiscal year ending, and that the budget will be fully spent by end of June.",
+   "figures_as_printed": [
+    "83%"
+   ],
+   "quote": "weareapproachingtheendof thefiscal year andthebudget is83%expended."
+  },
+  {
+   "topic": "FY24 budget totals by line",
+   "what_was_recorded": "The Director's report prints the FY24 budget table; totals show budget, amount expended and percent expended.",
+   "figures_as_printed": [
+    "539,730$",
+    "446,918$",
+    "83%"
+   ],
+   "quote": "totals 539,730$ 446,918$ 83%"
+  },
+  {
+   "topic": "Library staff salaries line",
+   "what_was_recorded": "The FY24 library staff salaries line is printed with its budget, expended amount and percent expended; salaries are the source of the planned transfer.",
+   "figures_as_printed": [
+    "218,674$",
+    "187,147$",
+    "86%"
+   ],
+   "quote": "library staff salaries 218,674$ 187,147$ 86%"
+  },
+  {
+   "topic": "Library materials line",
+   "what_was_recorded": "The FY24 library materials line is printed as the destination of the planned transfer, with budget, expended and percent.",
+   "figures_as_printed": [
+    "85,500$",
+    "57,880$",
+    "68%"
+   ],
+   "quote": "library material 85,500$ 57,880$ 68%"
+  },
+  {
+   "topic": "Year-end transfer to library materials",
+   "what_was_recorded": "The Director will move $20K from salaries to library materials; other excess amounts will go to supplies and materials.",
+   "figures_as_printed": [
+    "20K"
+   ],
+   "quote": "muir haspayroll andbillstoapprove, andwill betransferring20kfromsalariestolibrarymaterials."
+  },
+  {
+   "topic": "Unspent amounts to supplies and materials",
+   "what_was_recorded": "The Director said other excess amounts will also go to supplies and materials; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "otherexcessamountswill alsogotosuppliesandmaterials."
+  },
+  {
+   "topic": "Adult public-access Chromebooks",
+   "what_was_recorded": "The Director hopes to replace the adult public-access Chromebooks with year-end money; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "muir ishopingtoreplacetheadult publicaccesschromebookswithyear-endmoney."
+  },
+  {
+   "topic": "Scholarships and staff development grants",
+   "what_was_recorded": "The Massachusetts Library Aid Association scholarship is the last one offered; grants for MLIS coursework or staff development continue.",
+   "figures_as_printed": [
+    "~$10,000",
+    "$500-1,000"
+   ],
+   "quote": "this year will the be last opportunity for the ~$10,000 scholarship, though the grants for $500-1,000 for mlis coursework"
+  },
+  {
+   "topic": "Town revenue turnover policy",
+   "what_was_recorded": "Library must now turn over revenues weekly and issue receipts for each transaction; the library's revenue amounts are described as small.",
+   "figures_as_printed": [],
+   "quote": "we are required now, though, to turnover revenues each week, and create receipts for each transaction performed."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Move funds from library salaries to library materials to spend the FY24 budget by end of June (Director's report; the Director says Muir will be transferring the amount).",
+   "amount_as_printed": "20K",
+   "outcome": "Stated by the Director as an action to be taken; no board vote recorded.",
+   "quote": "muir haspayroll andbillstoapprove, andwill betransferring20kfromsalariestolibrarymaterials."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting called to order 6:45 p.m. by Chairperson Harry Kubetz",
+   "quote": "thelplbtmeetingwascalledtoorder at 6:45p.m. bychairpersonharrykubetz.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Board reorganization",
+   "resolution": "Chair, Vice Chair and Treasurer unchanged; Laura Boussom takes Secretary; no vote recorded",
+   "quote": "chair (harry), vicechair (dick), andtreasurer (donna) will staythesame. thesecretarypositionwill nowbeheldbylaura.",
+   "tags": [
+    "governance",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of May 16, 2024",
+   "resolution": "approved as amended, passed unanimously by roll call",
+   "quote": "amotionwasmadetoaccept theminutesof may16, 2024asamended. themotionpassedunanimouslybyroll call vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received; no vote; covers FY24 budget, staffing, programs, building and technology",
+   "quote": "juneismonth12out of 12. weareapproachingtheendof thefiscal year andthebudget is83%expended.",
+   "tags": [
+    "budget",
+    "staffing",
+    "programs",
+    "facilities",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Green Communities update",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "● greencommunitiesupdate ● arpaupdate",
+   "tags": [
+    "energy"
+   ]
+  },
+  {
+   "topic": "ARPA update",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "● arpaupdate ● teenroomusagepolicy",
+   "tags": [
+    "ARPA funds"
+   ]
+  },
+  {
+   "topic": "Teen room usage policy",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "● teenroomusagepolicy ● libraryinvestedfundsupdate",
+   "tags": [
+    "teen services",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Library invested funds update",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "● libraryinvestedfundsupdate ● librarysignupdate",
+   "tags": [
+    "investments"
+   ]
+  },
+  {
+   "topic": "Library sign update",
+   "resolution": "noted; installation scheduled for this summer",
+   "quote": "thesignisscheduledtobeinstalledthissummer.",
+   "tags": [
+    "building",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Outreach plan update",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "● outreachplanupdate ● friendsof lplupdate",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "● outreachplanupdate ● friendsof lplupdate",
+   "tags": [
+    "Friends group"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no comments",
+   "quote": "boardcommentso nocomments",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:48 p.m.; motion by Dick, seconded by Jana",
+   "quote": "amotiontoadjournwasmadeby dickandsecondedbyjana. meetingwasadjournedat 8:48.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "board reorganization",
+  "FY24 budget",
+  "year-end transfer",
+  "salaries and materials",
+  "Summer Reading Program",
+  "programs",
+  "facilities and maintenance",
+  "technology",
+  "scholarships and grants",
+  "town revenue turnover policy",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

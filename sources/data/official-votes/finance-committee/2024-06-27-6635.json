@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-06-27",
  "docid": "6635",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of June 13th",
+   "motion": "Approve the minutes of June 13, 2024 as presented.",
    "moved_by": "Dave Passios",
    "seconded_by": "Jean Russell",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to approve the minutes of june 13th as presented by dave passios, seconded by jean russell. all in favor. unanimous vote (5-0)"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Dave Passios",
    "outcome": "passed",
@@ -29,6 +29,302 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0730281
+ "note": "Plain-text extraction of a single-page-set minutes document, not a scan; all text readable. Only two motions were recorded by this committee (approval of June 13, 2024 minutes, and adjournment), both with stated results. The Select Board's vote creating the Budget Task Force and the legislators' votes on the MBTA Communities Act bills are reported second-hand and are not votes of this board, so they are not recorded as votes. Several names (Renee Emkey, Anthony Sculimbrene, Laura Brzozoski, Tim Murphy, Mr. Leighton, Mr. Nazolo, Representative Scarsdale, Senator Cronin, Mandy Gilman, Bill Bernard) appear only as referenced by others, not as attendees, so they are not listed. Two items recorded as 'no action' or 'reported' have no motion. The Important Dates and Upcoming Meetings items are listed without any decision.",
+ "cost_usd": 0.017157770000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent members: vice chair chris menard, clerk tiffaney tavares"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent members: vice chair chris menard, clerk tiffaney tavares"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members will reach out to other towns to review their budget schedules.",
+   "quote": "members will reach out to other towns to review their schedule."
+  },
+  {
+   "decision": "Agreed that the consolidation of services/departments should be part of the budgeting task force, along with software and hiring issues.",
+   "quote": "there is agreement that this should be part of the budgeting task force along with getting software and hiring issues."
+  },
+  {
+   "decision": "Evan Watters will push for a consolidation study (member commitment, no vote recorded).",
+   "quote": "evan watters will be pushing for a consolidation study."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Federal RAISE grant (public comment)",
+   "what_was_recorded": "Jay Simeone reported a federal RAISE grant of $25 million and that Gardner is receiving $1.25 million of it.",
+   "figures_as_printed": [
+    "25-million-dollar",
+    "1.25 million"
+   ],
+   "quote": "jay simeone states there is a 25-million-dollar federal grant funding, titled the raise program, to rebuild american infrastructure"
+  },
+  {
+   "topic": "FY 25 budget schedule and budget process",
+   "what_was_recorded": "The committee reviewed the FY 25 budget calendar and discussed that the budget process has been rushed; Dave Passios proposed an earlier Town Manager budget submission. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "below is the current budget schedule for fy 25"
+  },
+  {
+   "topic": "Consolidation of services and departments",
+   "what_was_recorded": "Dave Passios said consolidation is not going to save money and will probably cost money, but that the town has held back on growth.",
+   "figures_as_printed": [],
+   "quote": "dave passios believes consolidation is not going to save money and it will probably cost us money"
+  },
+  {
+   "topic": "Budget task force charge",
+   "what_was_recorded": "The task force charge covers a 3-to-5-year fiscal plan, revenue and expenditure trends, Proposition 2½ overrides and exclusions, and whether to assess tax and fee increases. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "capital project funding needs and impacts, assess any increase taxes and fees,"
+  },
+  {
+   "topic": "Local income tax proposal (Senator Cronin)",
+   "what_was_recorded": "Dave Passios reported Senator Cronin's proposal to implement a local income tax by reducing the Prop 2½ levy increase, with no change to Prop 2½; described as a 2-3 year process.",
+   "figures_as_printed": [],
+   "quote": "senator cronin wants to implement a local income tax by reducing the percentage that we increase our budget by under prop 2 ½"
+  },
+  {
+   "topic": "Outstanding ARPA funding",
+   "what_was_recorded": "Dave Passios noted discussion at a prior Select Board meeting about outstanding unappropriated ARPA funding and small capital projects that could move infrastructure forward. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "dave passios states at a prior select board meeting there was discussion about outstanding unappropriated arpa funding."
+  },
+  {
+   "topic": "State aid and Chapter 70 inflation rider",
+   "what_was_recorded": "The School Committee's list of concerns includes state funding, specifically an inflation rider to Chapter 70; the PTO suggested focusing on the cherry sheet, where legislators can influence the budget. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "state funding specifically an inflation rider to chapter 70"
+  },
+  {
+   "topic": "Chapter 90 road funding",
+   "what_was_recorded": "Evan Watters contacted the DPW Director to discuss Chapter 90 funding. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "evan watters reached out to dpw director, bill bernard, to discuss chapter 90 funding"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jay Simeone",
+   "stated_role": "Board Member",
+   "topic": "MBTA Communities Act bills; RAISE federal grant",
+   "quote": "jay simeone read in the sentinel and enterprise that there were 2 bills related to the mbta communities act to be voted on."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Board Member",
+   "topic": "Senator Cronin's office; local income tax",
+   "quote": "dave passios reached out to senator cronin's office about whether the senator may be on board to sponsor or add to an existing bill"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Board Member",
+   "topic": "ARPA funds and 10-year capital list",
+   "quote": "dave passios pulled the 10-year capital list from capital planning and requested the board to review several of the small projects."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (first)",
+   "resolution": "no action; reported news and state proposals",
+   "quote": "jay simeone states there is a 25-million-dollar federal grant funding, titled the raise program",
+   "tags": [
+    "public comment",
+    "federal grant",
+    "MBTA Communities Act"
+   ]
+  },
+  {
+   "topic": "Finance Director report",
+   "resolution": "no report",
+   "quote": "there were no reports from the finance director.",
+   "tags": [
+    "finance director"
+   ]
+  },
+  {
+   "topic": "Review budget process and suggestions for improvement",
+   "resolution": "discussed; members to contact other towns on schedules",
+   "quote": "dave passios states that he is unsure if we have been able to get priorities right because this process has always been rushed.",
+   "tags": [
+    "budget process",
+    "FY25 budget calendar",
+    "software"
+   ]
+  },
+  {
+   "topic": "Consolidation of services and departments",
+   "resolution": "discussed; consolidation study to be pursued by Evan Watters; to budget task force",
+   "quote": "evan watters will be pushing for a consolidation study.",
+   "tags": [
+    "consolidation",
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Town Manager Search Committee representative",
+   "resolution": "reported",
+   "quote": "dave passios states he had a good discussion with tim murphy and was provided packets of information from his past rounds as a moderator.",
+   "tags": [
+    "town manager search",
+    "public meetings"
+   ]
+  },
+  {
+   "topic": "Budget Task Force discussion",
+   "resolution": "reported; Select Board created the task force and named its members",
+   "quote": "the select board voted to create a budget task force. renee emkey will be the select board representative",
+   "tags": [
+    "budget task force",
+    "select board",
+    "school committee"
+   ]
+  },
+  {
+   "topic": "Meeting with Rep Scarsdale, 1st Middlesex District, and DESE on school budget issues",
+   "resolution": "discussed; preliminary letter to Rep Scarsdale in preparation",
+   "quote": "evan watters will be unavailable to attend but he did reached out to mr. leighton and mr. nazolo about sending a preliminary letter to representative scarsdale",
+   "tags": [
+    "state legislature",
+    "school budget",
+    "rural coalition",
+    "DESE",
+    "Chapter 70"
+   ]
+  },
+  {
+   "topic": "School Committee list of concerns and advocacy focus",
+   "resolution": "discussed; focus topics considered",
+   "quote": "mandy gilman suggests focusing on the cherry sheet as those are areas that a legislator can influence the budget.",
+   "tags": [
+    "cherry sheet",
+    "state aid",
+    "bus transportation",
+    "Student Opportunity Act"
+   ]
+  },
+  {
+   "topic": "Minutes of June 13, 2024",
+   "resolution": "approved 5-0",
+   "quote": "there was a motion to approve the minutes of june 13th as presented by dave passios, seconded by jean russell. all in favor. unanimous vote (5-0)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; Green Communities application expected in fall; DPW Director invited re Chapter 90",
+   "quote": "dave passios states that green communities hasn't met but they anticipate putting in an application in the fall for that grant round",
+   "tags": [
+    "green communities",
+    "chapter 90",
+    "cemetery commission"
+   ]
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "requests noted; no vote",
+   "quote": "jay simeone requests the facility director provide reports on a regular basis to the committee.",
+   "tags": [
+    "facilities",
+    "invested accounts"
+   ]
+  },
+  {
+   "topic": "Important dates",
+   "resolution": "noted",
+   "quote": "7/19/24 9:00am - meeting with rep scarsdale, 1st middlesex district, and dese to discuss school budget issues (groton town hall)",
+   "tags": [
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "listed",
+   "quote": "a. 7/11/24 b. 7/25/24",
+   "tags": [
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action; ARPA and capital list raised",
+   "quote": "dave passios pulled the 10-year capital list from capital planning and requested the board to review several of the small projects.",
+   "tags": [
+    "ARPA",
+    "capital planning",
+    "local income tax"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:23 PM",
+   "quote": "the meeting closed at 9:23 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town budget",
+  "school budget",
+  "budget process",
+  "budget task force",
+  "state aid",
+  "Chapter 70",
+  "cherry sheet",
+  "Prop 2½",
+  "local income tax",
+  "ARPA",
+  "Chapter 90",
+  "consolidation",
+  "town manager search",
+  "state legislature",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

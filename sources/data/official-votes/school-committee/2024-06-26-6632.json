@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-06-26",
  "docid": "6632",
@@ -12,55 +12,447 @@
  },
  "votes": [
   {
-   "motion": "Approve line item transfers of $411,675 from general budget salaries to general budget lines",
-   "moved_by": "Archambault",
-   "seconded_by": "Beardmore",
+   "motion": "Approve line item transfers (reclassification of $411,675 from general budget salaries to general budget lines).",
+   "moved_by": "Ms. Archambault",
+   "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. archambault makes a motion to approve line item transfers, mr. beardmore seconds the motion, all approve via roll call"
   },
   {
-   "motion": "Approve the open PO list for FY24 Budget Carryover",
-   "moved_by": "Beardmore",
-   "seconded_by": "Brzozoski",
-   "outcome": "passed unanimously",
+   "motion": "Approve the list of open POs recommended to carry over into FY25.",
+   "moved_by": "Mr. Beardmore",
+   "seconded_by": "Ms. Brzozoski",
+   "outcome": "passed unanimously (no tally printed)",
    "procedural": false,
    "quote": "mr. beardmore makes a motion to approve the open po list, ms. brzozoski seconds the motion, approved unanimously via roll call."
   },
   {
-   "motion": "Approve Community Eligibility Provision program at Turkey Hill",
-   "moved_by": "Brzozoski",
-   "seconded_by": "Archambault",
-   "outcome": "passed unanimously",
+   "motion": "Approve the CEP program at Turkey Hill.",
+   "moved_by": "Ms. Brzozoski",
+   "seconded_by": "Ms. Archambault",
+   "outcome": "passed unanimously (no tally printed)",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to approve cep program at turkey hill, ms. archambault seconds the motion, approved unanimously via roll call vote."
+   "quote": "ms. brzozoski makes a motion to approve cep program at turkey hill, ms. archambault seconds the motion, approved unanimously via roll call vote"
   },
   {
-   "motion": "Appoint Mr. Sculimbrene to the Budget Task Force with Ms. Brzozoski as backup",
-   "moved_by": "Beardmore",
-   "seconded_by": "Archambault",
-   "outcome": "passed unanimously",
+   "motion": "Appoint Mr. Sculimbrene and Ms. Brzozoski to the Budget Task Force as a backup.",
+   "moved_by": "Mr. Beardmore",
+   "seconded_by": "Ms. Archambault",
+   "outcome": "passed unanimously (no tally printed)",
    "procedural": false,
    "quote": "mr. beardmore makes a motion to appoint mr. sculimbrene and ms. brzozoski as a backup, ms. archambault seconds the motion, approved unanimously via roll call vote."
   },
   {
-   "motion": "Table the Class Accounts – Close out topic",
-   "moved_by": "Brzozoski",
-   "seconded_by": "Archambault",
-   "outcome": "passed unanimously",
+   "motion": "Table the Class Accounts close-out topic.",
+   "moved_by": "Ms. Brzozoski",
+   "seconded_by": "Ms. Archambault",
+   "outcome": "passed unanimously (no tally printed)",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to table this topic, ms. archambault seconds the motion, unanimously approved via roll call vote."
   },
   {
-   "motion": "Enter executive session and adjourn",
-   "moved_by": "Brzozoski",
-   "seconded_by": "Archambault",
-   "outcome": "passed unanimously",
+   "motion": "Enter executive session and adjourn immediately after at 9:28 pm.",
+   "moved_by": "Ms. Brzozoski",
+   "seconded_by": "Ms. Archambault",
+   "outcome": "passed unanimously (no tally printed)",
    "procedural": true,
    "quote": "ms. brzozoski makes a motion to enter executive session and adjourn immediately after at 9:28 pm, ms. archambault seconds the motion, approved unanimously via roll call vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear, readable text. Item 5 (warrants) states they were \"approved and signed\" but contains no motion language, so it is not recorded as a vote per the rules.",
- "cost_usd": 0.07790810000000001
+ "note": "Remote meeting. Roll-call votes are recorded as \"approved unanimously\" or \"all approve\" with no tally printed, so outcomes carry no count. The warrant approval (item 5) and the report tabling have no recorded motion, so they are listed as decisions, not votes. The Chair was absent and the Vice Chair presided. Guest status is not printed, so guests are marked present only where the minutes say they joined a discussion or presented. Dr. Ridley appears without a first name. Dave Rogers is the only public commenter. Dr. Livingston is named as both Mr. and Dr. in the text and is shown once as a contract consultant. Dr. Gilson is discussed but does not appear as an attendee.",
+ "cost_usd": 0.01840527,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "brian lehtinen, chair - absent"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene, vice chair - present"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "carol archambault, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Kevin Bigelow",
+   "role": "Athletic Director",
+   "status": "present",
+   "quote": "guests: kevin bigelow-athletic director, dave abraham-athletic trainer, dr. ridley, nadine lorenzen-food service director"
+  },
+  {
+   "name": "Dave Abraham",
+   "role": "Athletic Trainer",
+   "status": "present",
+   "quote": "guests: kevin bigelow-athletic director, dave abraham-athletic trainer, dr. ridley, nadine lorenzen-food service director"
+  },
+  {
+   "name": "Dr. Ridley",
+   "role": "Sports Medicine and Exercise provider, UMASS",
+   "status": "present",
+   "quote": "dr. ridley from umass is a sports medicine and exercise provider, joins mr. bigelow and mr. abraham in a discussion"
+  },
+  {
+   "name": "Nadine Lorenzen",
+   "role": "Food Service Director",
+   "status": "present",
+   "quote": "ms. lorenzen shares her presentation on cep vs universal meal program."
+  },
+  {
+   "name": "Paul Livingston",
+   "role": "contract consultant",
+   "status": "present",
+   "quote": "mr. paul livingston our contract consultant shares a list of reclassification of"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "resident, 82 Highland Street",
+   "status": "not stated",
+   "quote": "dave rogers, 82 highland street who is the finance director and what are they paid?"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Warrants approved and signed, total $159,241.02. The minutes record no motion for this action.",
+   "quote": "review & approve warrants - warrants approved and signed in total of $159,241.02"
+  },
+  {
+   "decision": "Finance workshop and use of cell phones in school listed as topics for future discussion.",
+   "quote": "discussion for finance workshop"
+  },
+  {
+   "decision": "Item 11, Reports, tabled.",
+   "quote": "11. reports - tabled"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrants approved and signed in a stated total.",
+   "quote": "warrants approved and signed in total of $159,241.02",
+   "figures_as_printed": [
+    "$159,241.02"
+   ]
+  },
+  {
+   "topic": "Line item transfers",
+   "what_was_recorded": "A consultant's list reclassifies a sum from general budget salaries to other general budget lines to meet expected expenses.",
+   "quote": "shares a list of reclassification of $411,675 transfer from general budget salaries to general budget lines",
+   "figures_as_printed": [
+    "$411,675"
+   ]
+  },
+  {
+   "topic": "FY24 carryover of open POs",
+   "what_was_recorded": "The consultant presented open purchase orders recommended to carry over into FY25; the minutes give no dollar figure.",
+   "quote": "dr. livingston explains why differences have occurred this fiscal year and presents the committee with a list of po's",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "CEP versus Universal Meals",
+   "what_was_recorded": "The food service director said CEP brings in somewhat more money than the Universal Meals Program; no dollar figure given.",
+   "quote": "the cep program does bring in a little more money than the universal meals program.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY24 quarterly budget",
+   "what_was_recorded": "Committee asked how much money is left; the answer was expected by 7/15 and no surplus was indicated as of that date.",
+   "quote": "when we might know how much money is left? we are hoping by 7/15 we should have that number.",
+   "figures_as_printed": [
+    "7/15"
+   ]
+  },
+  {
+   "topic": "Personnel separations and salary",
+   "what_was_recorded": "Salary was noted as the reason for many staff separations; no dollar figure given.",
+   "quote": "it is noted that salary has been the reason for many of the separations.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Finance Director pay",
+   "what_was_recorded": "The Finance Director will be paid a stated salary on a 3-year contract.",
+   "quote": "dr. gilson is our finance director, she will be paid $150,000 and has a 3 year contract.",
+   "figures_as_printed": [
+    "$150,000"
+   ]
+  },
+  {
+   "topic": "Contract consultant cost",
+   "what_was_recorded": "Consultant services to date are reported as approximately a stated amount.",
+   "quote": "thus far the services have been approximately $31,000 and we are hoping for a 2 to 3 month transition period.",
+   "figures_as_printed": [
+    "$31,000"
+   ]
+  },
+  {
+   "topic": "Superintendent salary",
+   "what_was_recorded": "Superintendent salary stays the same and no raise this year.",
+   "quote": "dr. burnhams' salary will remain the same and she will not take a raise for this year.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "IXL subscription",
+   "what_was_recorded": "IXL is still budgeted; its status is under review.",
+   "quote": "it is still budgeted but we are looking into it.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Outsourced landscaping cost",
+   "what_was_recorded": "Outsourcing of playing field work is described as a reasonable cost; no dollar figure given.",
+   "quote": "we do receive this at a reasonable cost",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfer: reclassification from general budget salaries to general budget lines to meet expected expenses, presented by the contract consultant.",
+   "outcome": "passed (all approve via roll call; no tally printed)",
+   "amount_as_printed": "$411,675",
+   "quote": "shares a list of reclassification of $411,675 transfer from general budget salaries to general budget lines to meet the expected"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland Street",
+   "topic": "Finance Director pay, conflict of interest, consultant tenure, staffing and facilities questions",
+   "quote": "dave rogers, 82 highland street who is the finance director and what are they paid? with the reorganization of the school committee mr. lehtinen is in the teachers union"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "1. call to order by mr. sculimbrene at 6:35",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "2. public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action",
+   "quote": "3. chair's report -none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "no action",
+   "quote": "4. review & approve minutes - none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review and approve warrants",
+   "resolution": "approved and signed",
+   "quote": "5. review & approve warrants - warrants approved and signed in total of $159,241.02",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Line item transfers",
+   "resolution": "approved",
+   "quote": "mr. paul livingston our contract consultant shares a list of reclassification of",
+   "tags": [
+    "transfers",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "informational",
+   "quote": "school and district administrators will be participating as a team in the",
+   "tags": [
+    "superintendent",
+    "MSBA",
+    "leadership"
+   ]
+  },
+  {
+   "topic": "Head injury presentation",
+   "resolution": "discussion, no action",
+   "quote": "head injury presentation dr. ridley from umass is a sports medicine and exercise",
+   "tags": [
+    "athletics",
+    "health"
+   ]
+  },
+  {
+   "topic": "Program evaluation",
+   "resolution": "slide deck provided for review",
+   "quote": "ms. hanscom has provided a slide deck to the school committee for",
+   "tags": [
+    "program evaluation"
+   ]
+  },
+  {
+   "topic": "FY24 budget carryover, open POs",
+   "resolution": "approved",
+   "quote": "dr. livingston explains why differences have occurred this fiscal year",
+   "tags": [
+    "budget",
+    "purchase orders"
+   ]
+  },
+  {
+   "topic": "Community Eligibility Provision (CEP) at Turkey Hill",
+   "resolution": "approved",
+   "quote": "ms. lorenzen shares her presentation on cep vs universal meal program.",
+   "tags": [
+    "food service",
+    "CEP"
+   ]
+  },
+  {
+   "topic": "Budget task force appointment",
+   "resolution": "approved",
+   "quote": "the committee discusses the ups and downs of the task force",
+   "tags": [
+    "budget",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "FY24 quarterly budget",
+   "resolution": "update, no action",
+   "quote": "mr. livingston gives a quarterly budget update, committee asks",
+   "tags": [
+    "budget",
+    "FY24"
+   ]
+  },
+  {
+   "topic": "Keystone report",
+   "resolution": "update, no action",
+   "quote": "dr. burnham has provided an update in the school committee folder",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Personnel report",
+   "resolution": "update, no action",
+   "quote": "dr. burnham shares that we 11 new hires",
+   "tags": [
+    "personnel",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Class accounts close-out",
+   "resolution": "tabled",
+   "quote": "class accounts -close out",
+   "tags": [
+    "class accounts"
+   ]
+  },
+  {
+   "topic": "Public comment (main)",
+   "resolution": "questions answered, no action",
+   "quote": "dave rogers, 82 highland street who is the finance director and what are they paid?",
+   "tags": [
+    "public comment",
+    "finance director",
+    "staffing",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Reports",
+   "resolution": "tabled",
+   "quote": "11. reports - tabled",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed for future meetings",
+   "quote": "discussion for finance workshop",
+   "tags": [
+    "finance workshop",
+    "cell phones"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered",
+   "quote": "executive session : to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:28 pm after entering executive session",
+   "quote": "ms. brzozoski makes a motion to enter executive session and adjourn",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "budget",
+  "line item transfers",
+  "warrants",
+  "finance director",
+  "personnel",
+  "staffing",
+  "food service",
+  "CEP",
+  "athletics",
+  "concussion",
+  "MSBA facilities",
+  "public comment",
+  "executive session",
+  "remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

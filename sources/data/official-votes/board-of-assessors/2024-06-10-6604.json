@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-06-10",
  "docid": "6604",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the modified minutes from June 3, 2024",
+   "motion": "Accept the modified minutes of June 3, 2024.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to accept the modified minutes from june 3, 2024, by sarah cammer, seconded by john rabbitt. all in favor."
   },
   {
-   "motion": "Approve the executive session minutes from May 20, 2024 and June 3, 2024",
+   "motion": "Approve the executive session minutes of May 20, 2024 and June 3, 2024.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "there was a motion to approve the executive session minutes from may 20, 2024 & june 3, 2024, by john rabbitt, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "Suspend open meeting and enter into executive session, not to return to open session after executive session",
+   "motion": "Suspend the open meeting and enter executive session under Purpose 7, not to return to open session afterward.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "not stated",
@@ -37,6 +37,193 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and readable. The third vote states \"Roll call vote\" but the specific count or result is not recorded in the minutes text.",
- "cost_usd": 0.0701951
+ "note": "Text extract, not a scan; all pages read. No dollar figures appear anywhere in the minutes, so budget_items is empty. Public comment: the minutes say \"There were no comments from the public\" at both public comment sections, with no named speakers, so public_comment is empty. The executive session motion's roll call result is not printed, so its outcome is \"not stated\". Jim Crowley and Heather Lemieux are mentioned but did not take part in the meeting, so they are not listed as attendees. Page 4 repeats the executive session motion with its stated purpose (Purpose 7), recorded once as a vote. The recusal rule is recorded as a decision because the Chair states it as the process going forward; it is not a recorded vote.",
+ "cost_usd": 0.01511887,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Assessing Consultant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair stated that when a member recuses themselves during executive session, that member must be excused from the room, and this will be the process going forward. A member may still deliberate and abstain.",
+   "quote": "brian laffond states that during executive session if a member recuses themselves, they should be excused from the room. this will be the process going forward."
+  },
+  {
+   "decision": "Chair requested that John Rabbitt provide a discussed document with the pointer, regarding the website rollout.",
+   "quote": "brian laffond requests that john rabbitt provide a discussed document with the pointer."
+  },
+  {
+   "decision": "Postponed topics carried to a later meeting: the Assessing Calendar, the exemptions investigation, and BOA Policies.",
+   "quote": "postponed topics - discuss details and development of assessing calendar."
+  },
+  {
+   "decision": "The approved and processed real estate abatements and motor vehicle excise abatements were signed.",
+   "quote": "the approved and processed real estate abatements and motor vehicle excise abatements were signed."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening comments: executive session recusal process and a citizen's message",
+   "resolution": "discussed; process stated by Chair",
+   "quote": "the board received a message from a citizen that was reviewed last week in executive session.",
+   "tags": [
+    "executive session",
+    "recusal",
+    "citizen concern"
+   ]
+  },
+  {
+   "topic": "Status of abatement and exemption applications",
+   "resolution": "reported",
+   "quote": "lynda mcquade states there are 3 abatements left.",
+   "tags": [
+    "abatements",
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "New construction, Vision data entry and inspections",
+   "resolution": "reported; work ongoing",
+   "quote": "lynda mcquade and rena swezey are working on completing the new construction, adding the information to vision, and completing inspections.",
+   "tags": [
+    "new construction",
+    "inspections",
+    "Vision"
+   ]
+  },
+  {
+   "topic": "LA-19 Equalized Valuation Report",
+   "resolution": "reported",
+   "quote": "lynda mcquade provided la-19 equalized valuation report to the board per request of heather lemieux.",
+   "tags": [
+    "equalized valuation",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "State conference with attorney on exemptions",
+   "resolution": "reported",
+   "quote": "rena swezey and lynda mcquade met with an attorney for the state, jim crowley, at a conference.",
+   "tags": [
+    "exemptions",
+    "state guidance"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes of June 3, 2024 and executive session minutes",
+   "resolution": "approved",
+   "quote": "there was a motion to accept the modified minutes from june 3, 2024, by sarah cammer, seconded by john rabbitt. all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review and approve invoices, expense vouchers, payroll, billing errors",
+   "resolution": "abatements signed",
+   "quote": "the approved and processed real estate abatements and motor vehicle excise abatements were signed.",
+   "tags": [
+    "abatements",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Neighborhood Review Team proposal",
+   "resolution": "status reported; meeting scheduled",
+   "quote": "there is a meeting scheduled for friday via zoom.",
+   "tags": [
+    "neighborhood review team",
+    "realtor"
+   ]
+  },
+  {
+   "topic": "Website rollout status and test plan",
+   "resolution": "status reported; work ongoing",
+   "quote": "there were a few changes made to the website and work is still ongoing.",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "Postponed topics: Assessing Calendar, exemptions investigation, BOA Policies",
+   "resolution": "postponed",
+   "quote": "postponed topics - discuss details and development of assessing calendar.",
+   "tags": [
+    "assessing calendar",
+    "exemptions",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "listed",
+   "quote": "upcoming meeting/events schedule - july 22,2024 - august 19, 2024",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments: exemption 18 suggestion and Leominster elder committee",
+   "resolution": "suggested; noted",
+   "quote": "sarah cammer suggests adding exemption 18 to the list of exemptions to investigate.",
+   "tags": [
+    "exemptions",
+    "Council on Aging"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session, not returning to open session",
+   "quote": "there was a motion to suspend open meeting and enter into executive session not to return to open session after executive session by sarah cammer, seconded by john rabbitt. roll call vote.",
+   "tags": [
+    "executive session",
+    "Purpose 7"
+   ]
+  }
+ ],
+ "tags": [
+  "assessing",
+  "abatements",
+  "exemptions",
+  "executive session",
+  "equalized valuation",
+  "state aid",
+  "website",
+  "neighborhood review",
+  "minutes approval",
+  "public comment none"
+ ],
+ "dropped_unquoted_by_field": {}
 }

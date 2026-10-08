@@ -257,5 +257,148 @@
    "at": "2026-10-08T02:57:42Z",
    "cost_usd": 0.216901
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08122024-6704",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2024-08-12-minutes-6704.txt",
+   "path": "sources/meetings/planning-board/2024-08-12-minutes-6704.pdf"
+  },
+  "official_sha256": "4664386575c2fdc1c8f1a48c70128515f9f3b9792a595fbc4c31459ef39812bc",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on a few attendees, once the captions are corrected, and on the Agricultural Commission item, but differ on the main points. The 1295 Mass Ave certificate vote, who was present and who chaired differ, and the Aug 26 continuance votes appear only in ours.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 3,
+   "discrepancy": 9,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Certificate of completion, 1295 Mass Ave stormwater",
+    "t": 708,
+    "ours": "Issue a certificate of completion for storm water improvements for the 1295 Mass Ave portion of the project — not audible",
+    "official": "m. allison moved to issue a certificate of completion for 1295 mass ave's stormwater improvements for that portion of the project. g. mcleod seconded.",
+    "note": "Same motion, but ours records no outcome while the official minutes say it passed unanimously; check the recording around t=708 for the outcome and the mover."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Matthew Allison attendance",
+    "t": 0,
+    "ours": "Mr Allison (member (absent; referenced))",
+    "official": "present: matthew allison, glenn mcleod, amanda reid",
+    "note": "Ours has Allison absent; the official minutes list him present and as the mover of the certificate motion. Check the recording and the roll call."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Continue hearings for 255 Sunny Hill and 3 Lancaster Avenue to Aug 26",
+    "t": 129,
+    "ours": "Continue the public hearings for 255 Sunny Hill and 3 Lancaster Avenue to August 26 — passed (voice vote; chair stated hearings moved to Aug 26; count not stated)",
+    "official": "",
+    "note": "Vote in ours, but the official minutes record no such vote or continuance; check whether the official minutes omitted it."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Move 240 Summer Street site plan and storm water decisions to Aug 26",
+    "t": 193,
+    "ours": "Move the site plan approval and storm water permit decisions for 240 Summer Street to August 26 — passed (voice vote; chair stated continued; count not stated)",
+    "official": "",
+    "note": "Vote in ours, but not in the official minutes; check the recording and the official record for this continuance."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Agricultural Commission representative",
+    "t": 1943,
+    "ours": "Agricultural Commission representative to be discussed at the September meeting.",
+    "official": "this will be discussed at the next meeting where all members are present.",
+    "note": "Both defer the topic, but ours names the September meeting and the official says the next meeting with all members present; check whether those are the same meeting."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Abutting community notices as standing agenda item",
+    "t": 1880,
+    "ours": "Abutting community notices to be listed as a standing item on future agendas.",
+    "official": "",
+    "note": "A decision in ours that the official minutes do not record; check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair to email members re Aug 26 attendance",
+    "t": 2917,
+    "ours": "Chair to email all five members to confirm attendance on August 26 before the agenda is finalized; the water supply protection district discussion may move to September 9.",
+    "official": "",
+    "note": "A decision in ours not in the official minutes; check whether it was a decision or just discussion."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Open Space Committee notified of Notices of Intent",
+    "ours": "",
+    "official": "he agreed that the osc should be immediately notified when the planning department receives an noi.",
+    "note": "A decision in the official minutes that ours does not record; check the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Absent member Brenner",
+    "ours": "Mr Brener (member (absent; referenced))",
+    "official": "absent: matthew brenner, timothy willsmer",
+    "official_reading": "Matthew Brenner",
+    "note": "Misheard surname; the official minutes list him absent and as Chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Absent member Willsmer",
+    "ours": "Mr Wilmer (member (absent; referenced))",
+    "official": "absent: matthew brenner, timothy willsmer",
+    "official_reading": "Timothy Willsmer",
+    "note": "Misheard surname; both records have him absent."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Glen McLeod",
+    "ours": "Glen (member)",
+    "official": "present: matthew allison, glenn mcleod, amanda reid",
+    "official_reading": "Glenn McLeod",
+    "note": "First name only in the captions; same person, present in both."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair and presiding officer",
+    "ours": "Logan (chair (running her first meeting))",
+    "official": "absent: matthew brenner, timothy willsmer",
+    "note": "Ours has a chair named Logan; the official minutes list Brenner as Chair (absent) and no Logan. Check who presided and whether Logan is Amanda Reid or someone else."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Richard, advisor/interim planning staff support",
+    "ours": "Richard (advisor/interim planning staff support)",
+    "official": "",
+    "note": "Not named in the official minutes; may be a different name or role for a listed staff person."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Amanda Reid (Clerk) present",
+    "ours": "",
+    "official": "present: matthew allison, glenn mcleod, amanda reid",
+    "note": "Listed present in the official minutes; ours has no matching attendee unless she is Logan."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other participants: R. Harris, L. O'Connell, Greg Roy, Dan Proctor",
+    "ours": "",
+    "official": "greg roy (dillis & roy) offered to answer any questions from the board about the as-built plan.",
+    "note": "Staff and applicants named in the official minutes are not in our attendee list."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T02:59:38Z",
+   "cost_usd": 0.293292
+  }
  }
 }

@@ -167,7 +167,10 @@ def decide(plan, hist, now, in_flight=0):
                     note='STALE reading -- one worker, caps unseen')
     u5, u7, reset = last['u5'], last['u7'], last['reset']
     if plan.window and now > plan.window and (reset is None or reset == plan.window):
-        reset = None                             # the old window is over; the next opens on first use
+        # THE OLD WINDOW IS OVER and the next opens on first use. The latest reading still
+        # carries the OLD window's figure until something calls the model -- 8 October 03:11 it
+        # said 100% and the run stopped "at the 80% cap" of a window that was really at 0.
+        reset, u5 = None, 0.0
 
     if u7 >= plan.week_cap:
         return dict(jobs=0, start=False, stop='weekly cap %g%% reached (%g%%)' % (plan.week_cap, u7),
@@ -182,7 +185,7 @@ def decide(plan, hist, now, in_flight=0):
 
     dl = plan.deadline(reset)
     if u5 + in_flight * plan.per_meeting >= plan.session_cap:
-        past_by = plan.by and (not reset or plan.by <= reset)
+        past_by = plan.by and reset and plan.by <= reset
         return dict(jobs=0, start=False, stop=('session cap %g%% reached by the --by time' % plan.session_cap)
                     if past_by else None, wait_reset=not past_by, target=plan.session_cap,
                     note='session cap %g%% reached (%g%% + %d in flight)' % (plan.session_cap, u5, in_flight))
@@ -310,7 +313,12 @@ def _test():
     first = p10.session_cap
     decide(p10, [dict(t=now + 5 * 3600, u5=0, u7=50, reset=reset + 5 * 3600)], now + 5 * 3600 + 5)
     case('caps 100,80: the second window aims at 80', first == 100 and p10.session_cap == 80)
-    print('%d of %d rules hold' % (14 - len(fails), 14))
+    p11 = Plan(caps=[100, 80], by=now + 8 * 3600)
+    decide(p11, [R(now - 10, 99)], now)
+    after = now + 3 * 3600 + 60                       # past the first window's reset
+    d = decide(p11, [dict(t=after - 30, u5=100, u7=49, reset=reset)], after)
+    case('after the reset, a reading still at the OLD 100%: start the new window at 0', d['start'] and not d['stop'])
+    print('%d of %d rules hold' % (15 - len(fails), 15))
     return 1 if fails else 0
 
 

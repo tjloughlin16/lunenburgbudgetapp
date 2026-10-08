@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2024-08-05",
  "docid": "6684",
@@ -12,31 +12,216 @@
  },
  "votes": [
   {
-   "motion": "Approve the 7-1-2024 meeting minutes",
-   "moved_by": "P. Lincoln",
-   "seconded_by": "F. Beall",
+   "motion": "Approve the 7-1-2024 minutes.",
+   "moved_by": "P.Lincoln",
    "outcome": "passed",
    "procedural": true,
-   "quote": "7-1-2024 minutes approved • (motion - p.lincoln, 2nd f.beall), passed"
+   "quote": "(motion - p.lincoln, 2nd f.beall), passed",
+   "seconded_by": "F.Beall"
   },
   {
-   "motion": "Instruct Jo to explain to the Athletic Director that PAC's policy is to not pay for equipment or services related to program content",
-   "moved_by": "F. Beall",
-   "seconded_by": "P. Lincoln",
+   "motion": "For Jo to explain to the LHS Athletic Director that it is PAC's policy not to pay for equipment or services related to program content.",
+   "moved_by": "F.Beall",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion (f.beall, 2nd p.lincoln), for jo to explain to the ad that it is pac's policy to not pay for equipment or services related to program content."
+   "quote": "motion (f.beall, 2nd p.lincoln), for jo to explain to the ad that it is pac's policy to not pay for equipment or services related to program content.",
+   "seconded_by": "P.Lincoln"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "F. Beall",
-   "seconded_by": "P. Lincoln",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "F.Beall",
    "outcome": "passed",
    "procedural": true,
-   "quote": "meeting adjourned at 6:58 pm • (f.beall, 2nd p.lincoln - passed)"
+   "quote": "(f.beall, 2nd p.lincoln - passed)",
+   "seconded_by": "P.Lincoln"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07043640000000001
+ "note": "Text extraction of two pages; no scan. The roll call lists 'Faith Beall,' with a stray comma and no status word, so she is recorded as present on the roll-call line. The only motion with no printed result is the Hudi cost motion (F.Beall, 2nd P.Lincoln). Public comment is recorded as 'None'. Manager Jo Toale appears in the roll call; the staff named in the update (Eric, Ezequiel, the interim town manager) are mentioned but did not take part, so they are not listed as attendees. The FY25 dates table is recorded as a decision, not separate topics. Dollar figures: only $2,830.19 is printed.",
+ "cost_usd": 0.014645670000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln. faith beall,"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln. faith beall,"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln. faith beall,"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "excused absence: steve archambault, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "excused absence: steve archambault, paul sarapas"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "4. manager: jo toale public comments:"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "P.Lincoln will attend the next Master Plan Steering Committee (MPSC) meeting.",
+   "quote": "p.lincoln will attend the next mpsc meeting."
+  },
+  {
+   "decision": "Jo will meet with the town's treasury on the enterprise fund status.",
+   "quote": "jo will be meeting with the town's treasury."
+  },
+  {
+   "decision": "FY25 PACC meetings will continue on the 1st Monday at 6 pm when possible; the 2024-2025 meeting dates were listed.",
+   "quote": "fy25 pacc meetings will continue to held on the 1st monday, at 6 pm, when possible."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CASTUS bill for service, maintenance and static stream keys",
+   "what_was_recorded": "A bill from CASTUS for service, maintenance and static stream keys was received.",
+   "quote": "received a bill for $2,830.19 from castus for service, maintenance and static stream keys.",
+   "figures_as_printed": [
+    "$2,830.19"
+   ]
+  },
+  {
+   "topic": "Cost of Hudi services requested by LHS Athletic Director",
+   "what_was_recorded": "The LHS Athletic Director asked PAC to share the cost of Hudi services; the board then moved that PAC's policy is not to pay for equipment or services related to program content.",
+   "quote": "jo received two emails from the lhs athletic director asking pac to share cost of hudi services.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Bilotta project quotes",
+   "what_was_recorded": "The third quote for the Bilotta project is still outstanding and the first two quotes need updated pricing; no amounts are printed.",
+   "quote": "still waiting for the 3rd quote for the bilotta project and we now need to ask for updates to the 1st two quotes.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Interest and Comcast payments; FY24 and FY25 fund balances",
+   "what_was_recorded": "Interest and Comcast payments for April through June were received, and the FY24 final balance and FY25 beginning balance are still needed from Ezequiel; no amounts are printed.",
+   "quote": "jo received the april/may/june interest and may comcast payments.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order at 6:03 pm; members present and absent recorded",
+   "quote": "meeting was called to order at 6:03 pm.",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no public comment",
+   "quote": "public comments: - • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments",
+   "resolution": "no action; concern raised about PACC term limits accuracy",
+   "quote": "p.lincoln expressed concern about the accuracy of pacc term limits.",
+   "tags": [
+    "term limits",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no communications",
+   "quote": "communications: • none",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "7-1-2024 minutes approved",
+   "quote": "7-1-2024 minutes approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "informational; motion on the Hudi cost request",
+   "quote": "eric has been working on the new studio set-up, which is 90% complete.",
+   "tags": [
+    "studio set-up",
+    "CASTUS",
+    "football coverage",
+    "Hudi",
+    "Bilotta project",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee report",
+   "resolution": "P.Lincoln to attend the next MPSC meeting",
+   "quote": "p.lincoln will attend the next mpsc meeting.",
+   "tags": [
+    "MPSC",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Enterprise fund status",
+   "resolution": "Jo to meet with the town's treasury",
+   "quote": "jo will be meeting with the town's treasury.",
+   "tags": [
+    "enterprise fund",
+    "treasury"
+   ]
+  },
+  {
+   "topic": "FY25 meeting dates",
+   "resolution": "meetings continue on the 1st Monday at 6 pm when possible; 2024-2025 dates listed",
+   "quote": "fy25 pacc meetings will continue to held on the 1st monday, at 6 pm, when possible.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:58 pm",
+   "quote": "meeting adjourned at 6:58 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "PACC",
+  "CASTUS",
+  "studio set-up",
+  "budget",
+  "enterprise fund",
+  "meeting schedule",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

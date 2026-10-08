@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-08-08",
  "docid": "6698",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 7/25/2024",
+   "motion": "Approve the minutes of 7/25/2024.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jay Simeone",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to approve the minutes by tom gray, seconded by jay simeone. all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "Tom Gray",
    "outcome": "passed",
@@ -29,6 +29,351 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0673754
+ "note": "Text extraction of typed minutes; no roll-call tallies, only 'All in favor' for two procedural motions. Ezequiel Ayala's role is not printed beside his name (the agenda heading is 'Finance Director Report'), so role is left blank. The minutes list Dave Passios's Sewer Department remark under item 13 'Public Comment' though he is a member; it is recorded as public comment with his stated role. Figures in the cemetery discussion are percentages and fund numbers, not dollars, except the $500 consultation. Names such as Renee Emkey, Heather Lemieux, Casey Bick, Carter Terenzini and Myleen Mallari are mentioned but did not appear as attendees, so they are not listed as attendees.",
+ "cost_usd": 0.01791757,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent members: vice chair chris menard, clerk tiffaney tavares"
+  },
+  {
+   "name": "Tiffaney Tavares",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent members: vice chair chris menard, clerk tiffaney tavares"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "",
+   "status": "present",
+   "quote": "ezequiel ayala provided a report during the cemetery commission presentation."
+  },
+  {
+   "name": "Nancy Foss Yasko",
+   "role": "Chair of the Cemetery Commission",
+   "status": "present",
+   "quote": "the chair of the cemetery commission, nancy foss yasko, was present and"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair of the School Committee",
+   "status": "present",
+   "quote": "the chair of the school committee, brian lehtinen, was present and"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street, quoted the united states constitution and the"
+  },
+  {
+   "name": "John Bowen",
+   "role": "",
+   "status": "present",
+   "quote": "john bowen, 162 highland street, thanked ana lockwood for her reminder during"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Evan Watters will put out a request to the finance company Bartholomew & Company to obtain additional information on investments.",
+   "quote": "evan watters will put out a request to the finance company bartholomew & company to obtain additional information."
+  },
+  {
+   "decision": "Evan Watters will request that Carter Terenzini explain his ideas for the budget process.",
+   "quote": "evan watters will request carter terenzini give an explanation of his ideas for the budget process."
+  },
+  {
+   "decision": "Evan Watters will also reach out to Carter Terenzini to get his position.",
+   "quote": "evan watters will also reach out to carter terenzini to get his position."
+  },
+  {
+   "decision": "Evan Watters will follow up with Bailey Boyd Associates on grant writing services.",
+   "quote": "he will follow up and give them another call."
+  },
+  {
+   "decision": "A presentation put together by Renee Emkey and Ezequiel Ayala will be emailed to the Committee by Evan Watters.",
+   "quote": "renee emkey and ezequiel ayala put together a presentation that evan watters will email to the committee."
+  },
+  {
+   "decision": "A synopsis of the meeting between the Chair, Vice Chair and the DPW Director will be provided to the Committee.",
+   "quote": "but he does confirm a synopsis will be provided to the committee."
+  },
+  {
+   "decision": "Treasurer Myleen Mallari is to be invited to the September 12th meeting to discuss investments.",
+   "quote": "invite the treasurer, myleen mallari, to the september 12th meeting to discuss investments."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cemetery Perpetual Care / interest earnings",
+   "what_was_recorded": "The interest on the current cemetery fund is around 2.2%, which the minutes describe as not ideal, and a suggestion was made to look for a feasible way to raise it.",
+   "figures_as_printed": [
+    "around 2.2%"
+   ],
+   "quote": "currently, the interest for the current fund is around 2.2% and that is not ideal."
+  },
+  {
+   "topic": "Investment of town funds",
+   "what_was_recorded": "Roughly 27 million dollars was reported as accruing at 1% or lower as of June 30, 2023, and the Budget Task Force wants to seek suggestions from investment companies.",
+   "figures_as_printed": [
+    "roughly 27 million dollars",
+    "1% or lower"
+   ],
+   "quote": "there was roughly 27 million dollars that was only accruing at a rate of 1% or lower."
+  },
+  {
+   "topic": "Chapter 70 school funds",
+   "what_was_recorded": "A drafted School Committee letter states that between $30,000 and $38,000 in Chapter 70 funds were received, more than anticipated, and requests those funds go to the schools.",
+   "figures_as_printed": [
+    "$30,000 to $38,000"
+   ],
+   "quote": "the letter states that $30,000 to $38,000 chapter 70 funds were received."
+  },
+  {
+   "topic": "Consultation cost (Cemetery Association of Massachusetts)",
+   "what_was_recorded": "A public commenter requested a consultation with the Cemetery Association of Massachusetts, which the minutes say would cost $500.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "the consultation would cost $500."
+  },
+  {
+   "topic": "Revolving account used for salaries",
+   "what_was_recorded": "A public commenter said the revolving account was used to fund salaries and benefits for town beach employees, and that the funds for recreation director hours were pulled and put toward the trash contract.",
+   "figures_as_printed": [],
+   "quote": "6 months ago, that account was used to fund salaries and benefits for the town beach employees."
+  },
+  {
+   "topic": "High deductible health plan",
+   "what_was_recorded": "The proposed additional health plan option includes a lower premium and an HSA; no premium amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "the key feature in the proposed plan includes a lower premium and the option of an hsa."
+  },
+  {
+   "topic": "Chapter 90 roads funding",
+   "what_was_recorded": "A public commenter confirmed that Chapter 90 funding includes the roads for the cemetery; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "lastly, john bowen confirms that chapter 90 funding includes the roads for the cemetery."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "",
+   "topic": "Revolving account, recreation director hours, town beach salaries",
+   "quote": "at the last meeting, there was discussion that the revolving account shouldn't be used for that purpose."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "",
+   "topic": "Forensic accounting firm, cemetery consultation cost, Chapter 90",
+   "quote": "john bowen, 162 highland street, thanked ana lockwood for her reminder during"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Board Member",
+   "topic": "Sewer Department resignations (listed under Public Comment)",
+   "quote": "dave passios states there has been 2 resignations in the past week from the sewer department."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (Ana Lockwood)",
+   "resolution": "no action",
+   "quote": "ana lockwood discussed the vote from the prior meeting that did not pass",
+   "tags": [
+    "public comment",
+    "revolving account",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Finance Director Report",
+   "resolution": "no action; given during the Cemetery Commission presentation",
+   "quote": "ezequiel ayala provided a report during the cemetery commission presentation.",
+   "tags": [
+    "finance director"
+   ]
+  },
+  {
+   "topic": "New Business a. Discussion with CemCom Chair",
+   "resolution": "discussed; follow-up on interest rate, grants, Chapter 90 and lot counts",
+   "quote": "the chair of the cemetery commission, nancy foss yasko, was present and",
+   "tags": [
+    "cemetery",
+    "perpetual care",
+    "interest rate",
+    "grants",
+    "chapter 90"
+   ]
+  },
+  {
+   "topic": "New Business b. High Deductible Insurance Plan Proposal",
+   "resolution": "discussed; next step is to contact the interim Town Manager",
+   "quote": "the chair of the school committee, brian lehtinen, was present and",
+   "tags": [
+    "health insurance",
+    "HSA",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "New Business c. Investment Strategy Discussion",
+   "resolution": "discussed; request for information to be sent to Bartholomew & Company",
+   "quote": "there was a review of the last 6 months in fy 23.",
+   "tags": [
+    "investments",
+    "treasurer",
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "New Business d. DLS Financial Policy Manual Draft",
+   "resolution": "awaiting DLS response",
+   "quote": "evan watters has reached out to casey bick from dls and is awaiting a",
+   "tags": [
+    "DLS",
+    "financial policy"
+   ]
+  },
+  {
+   "topic": "Old Business a. Town Manager Search Committee update",
+   "resolution": "no action; liaison absent",
+   "quote": "chris menard is not present for tonight's meeting, and he is the liaison with",
+   "tags": [
+    "town manager search"
+   ]
+  },
+  {
+   "topic": "Old Business b. Budget Task Force update",
+   "resolution": "presentation to be emailed to Committee",
+   "quote": "renee emkey and ezequiel ayala put together a presentation that evan",
+   "tags": [
+    "budget task force",
+    "comparable towns"
+   ]
+  },
+  {
+   "topic": "Old Business c. Grant Writing Services update",
+   "resolution": "follow-up pending",
+   "quote": "evan watters reached out to bailey boyd associates in scituate and hasn't",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Old Business d. Consolidation of Services/Departments",
+   "resolution": "postponed",
+   "quote": "consolidation of services/departments -postponed",
+   "tags": [
+    "consolidation"
+   ]
+  },
+  {
+   "topic": "Old Business e. Review Budget Process",
+   "resolution": "discussed; presentation format and time limit suggested",
+   "quote": "the special town meeting warrant is going to open on august 14.",
+   "tags": [
+    "budget process",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes 7/25/2024",
+   "resolution": "approved",
+   "quote": "there was a motion to approve the minutes by tom gray, seconded by jay simeone.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports given; Fire Department liaison asked to follow up",
+   "quote": "dave passios states that green communities committee hasn't met but he did",
+   "tags": [
+    "committee reports",
+    "fire department",
+    "school committee"
+   ]
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "listed for later agendas",
+   "quote": "interim town manager process for budget season",
+   "tags": [
+    "future agenda",
+    "chapter 90",
+    "investments"
+   ]
+  },
+  {
+   "topic": "Public Comment (John Bowen; Dave Passios)",
+   "resolution": "no action",
+   "quote": "john bowen, 162 highland street, thanked ana lockwood for her reminder during",
+   "tags": [
+    "public comment",
+    "sewer department",
+    "forensic accounting"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "approved; closed 9:52 PM",
+   "quote": "there was a motion to adjourn by dave passios, seconded by tom gray. all in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "cemetery",
+  "cemetery perpetual care",
+  "health insurance",
+  "investments",
+  "budget process",
+  "town manager search",
+  "grant funding",
+  "chapter 70",
+  "chapter 90",
+  "sewer department",
+  "public comment",
+  "revolving account"
+ ],
+ "dropped_unquoted_by_field": {}
 }

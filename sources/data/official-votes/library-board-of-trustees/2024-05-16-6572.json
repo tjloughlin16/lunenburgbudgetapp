@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2024-05-16",
  "docid": "6572",
@@ -10,8 +10,311 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05162024-6572",
   "doc_url": "/docs/meetings/library-board-of-trustees/2024-05-16-minutes-6572.txt"
  },
- "votes": [],
- "dropped_unquoted": 2,
- "note": "Minutes are readable. Two procedural votes recorded: approval of prior minutes and adjournment.",
- "cost_usd": 0.1137831
+ "votes": [
+  {
+   "motion": "Approve the minutes of April 18, 2024, as amended.",
+   "moved_by": "Laura",
+   "seconded_by": "Bob",
+   "outcome": "passed unanimously by roll call, one abstention",
+   "procedural": true,
+   "quote": "lauramadeamotiontoaccept theminutesof april 18, 2024asamended, secondedbybob. themotionpassedunanimouslybyroll call votewithoneabstention."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Laura",
+   "seconded_by": "Dick",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motiontoadjournbylaura. secondedbydick. meetingwasadjournedat 8:26p.m."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text extraction runs words together with no spaces, so names and quotes are reproduced as extracted (for example \"HarryKubetz\"); attendee names are written with spaces and the quotes carry the joined form. Motions name people by first name only (\"Laura\", \"Bob\", \"Dick\"), recorded as printed. The adjournment motion records no vote count, only that the meeting was adjourned at 8:26 p.m., so its outcome is \"not stated\". The Teen Room Usage Policy appears on the agenda but has no separate minute; its discussion sits under the Director's Report. The attached director's report labels its budget table \"April is 10/12 = 83%\" while the minutes place the report in May (month 11 of 12); the 76% total is printed in both. The attached agenda and reports are part of the text; attendee-free staff named only as report authors (Debbie Laffond, Joslyn Davis, Lydia Gravell) were not recorded as attendees.",
+ "cost_usd": 0.01760447,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish(remote), bobconroyabsent: donnasaiia"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish(remote), bobconroyabsent: donnasaiia"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish(remote), bobconroyabsent: donnasaiia"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish(remote), bobconroyabsent: donnasaiia"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "attending: harrykubetz, dickmailloux, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish(remote), bobconroyabsent: donnasaiia"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "attending: harrykubetz, dickmailloux, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish(remote), bobconroyabsent: donnasaiia"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish(remote), bobconroyabsent: donnasaiia"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "attending: harrykubetz, dickmailloux, muir haman-director lpl, lauraboussom, maiawentrup(remote), jana-leebalish(remote), bobconroyabsent: donnasaiia"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The library will call patrons before billing them for lost or overdue items; the director is reconsidering the billing process.",
+   "quote": "muir isreconsideringtheoverall processfor billingpatronsfor lost/overdueitems. thelibrarywill call patronsbeforebillingthem."
+  },
+  {
+   "decision": "Director Muir Haman will follow up with the parent who objected to the teen room usage policy.",
+   "quote": "muir spokewithoneparentandkaiteespoketoanother. muir will followup."
+  },
+  {
+   "decision": "Director has backed up the footage in question until the public records request is resolved.",
+   "quote": "muir hasbackedupthefootageinquestionuntil therecordsrequest isresolved."
+  },
+  {
+   "decision": "Muir and Donna will notify Myleen of any changes to investments.",
+   "quote": "muir anddonnawill notifymyleenof anychangestoinvestments."
+  },
+  {
+   "decision": "Chair directed that proposals for 3D printing as a service account for timeframes and the cost of materials.",
+   "quote": "anyproposalsshouldaccount for timeframesandalsothecost of materials."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY25 library budget",
+   "what_was_recorded": "The town approved the FY25 library budget at $583,889.77.",
+   "quote": "thetownapprovedthebudget for fy25at $583,889.77.",
+   "figures_as_printed": [
+    "$583,889.77"
+   ]
+  },
+  {
+   "topic": "FY24 budget expended",
+   "what_was_recorded": "The director reported 91% of the year elapsed and the budget 76% expended.",
+   "quote": "mayismonth11out of 12. weare91%throughtheyear andthebudget is76%expended.",
+   "figures_as_printed": [
+    "76%",
+    "91%"
+   ]
+  },
+  {
+   "topic": "Retroactive staff payments",
+   "what_was_recorded": "Some retroactive staff payments were not included in the report, about $11k.",
+   "quote": "thereweresomeretroactivestaff paymentsnot includedinthisreport. about $11k.",
+   "figures_as_printed": [
+    "$11k"
+   ]
+  },
+  {
+   "topic": "Staff salary line surplus",
+   "what_was_recorded": "A surplus is expected from the staff salary line, and the director has ideas for using it. No amount printed.",
+   "quote": "therewill still beasurplusfromthestaffsalarylineandmuir hassomeideasfor usingthat.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Heating charges surplus",
+   "what_was_recorded": "A surplus is expected from heating charges. No amount printed.",
+   "quote": "therewill besomesurplusfromheatingcharges.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library materials spending",
+   "what_was_recorded": "Library materials were 67% expended, and some databases need renewal.",
+   "quote": "librarymaterialsare67%expended.",
+   "figures_as_printed": [
+    "67%"
+   ]
+  },
+  {
+   "topic": "Director's report budget table totals",
+   "what_was_recorded": "The attached director's report totals the FY24 budget line items as expended to date.",
+   "quote": "totals 539,730$ 408,802$ 76%",
+   "figures_as_printed": [
+    "539,730$",
+    "408,802$",
+    "76%"
+   ]
+  },
+  {
+   "topic": "Invested funds interest",
+   "what_was_recorded": "About $1800 in interest has accrued on the invested funds; CD rates are good so CDs will roll over.",
+   "quote": "thereisabout $1800ininterest accrued.",
+   "figures_as_printed": [
+    "$1800"
+   ]
+  },
+  {
+   "topic": "Friends plant sale",
+   "what_was_recorded": "The Friends plant sale fundraiser made over $1100.",
+   "quote": "theplant salefundraiser madeover $1100.",
+   "figures_as_printed": [
+    "$1100"
+   ]
+  },
+  {
+   "topic": "Teen room estimate",
+   "what_was_recorded": "The teen room estimate has been delayed; no amount printed.",
+   "quote": "theteenroomestimatehasbeendelayed.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library sign electrical estimate",
+   "what_was_recorded": "The director awaits an electrical estimate for sign lighting before installation; no amount printed.",
+   "quote": "muir iswaitingfor anelectrical estimatefor thelightingandhastimreadytodotheinstallation.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "3D printing cost of materials",
+   "what_was_recorded": "Proposals for 3D printing as a service should account for materials cost; no amount printed.",
+   "quote": "anyproposalsshouldaccount for timeframesandalsothecost of materials.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "publiccomment● nopubliccomment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (April 18, 2024)",
+   "resolution": "approved as amended, passed unanimously, one abstention",
+   "quote": "lauramadeamotiontoaccept theminutesof april 18, 2024asamended, secondedbybob.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "reported; no action recorded",
+   "quote": "mayismonth11out of 12. weare91%throughtheyear andthebudget is76%expended.",
+   "tags": [
+    "budget",
+    "staffing",
+    "programs",
+    "building",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Green Communities update",
+   "resolution": "information only; no action recorded",
+   "quote": "theproposedevchargingstationistheonlyproject goingonright now.",
+   "tags": [
+    "EV charging",
+    "green communities"
+   ]
+  },
+  {
+   "topic": "Library invested funds update (annual review)",
+   "resolution": "information only; no action recorded",
+   "quote": "thecdratesarestill goodsothecd'swill berolledover.",
+   "tags": [
+    "investments"
+   ]
+  },
+  {
+   "topic": "Library sign update",
+   "resolution": "information only; no action recorded",
+   "quote": "thebuildinginspector confirmedthat theplannedsignfitsthetownby-law.",
+   "tags": [
+    "signage",
+    "building"
+   ]
+  },
+  {
+   "topic": "ARPA update",
+   "resolution": "information only; no action recorded",
+   "quote": "theteenroomestimatehasbeendelayed.",
+   "tags": [
+    "ARPA",
+    "building"
+   ]
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "information only; no action recorded",
+   "quote": "theplant salefundraiser madeover $1100.",
+   "tags": [
+    "Friends of the Library",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Teen room usage policy",
+   "resolution": "discussed under the director's report; no separate action recorded",
+   "quote": "muir fieldedaphonecall fromaparent/patronwhoobjectedtotheupdatedteenroomusagepolicy.",
+   "tags": [
+    "teen room policy"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "information only; staffing plan praised, master plan committee update",
+   "quote": "dickcomplimentedmuir onthestaffingplan.",
+   "tags": [
+    "staffing",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:26 p.m.",
+   "quote": "motiontoadjournbylaura. secondedbydick. meetingwasadjournedat 8:26p.m.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "FY24 budget",
+  "FY25 budget",
+  "investments",
+  "ARPA",
+  "library sign",
+  "teen room policy",
+  "public records request",
+  "staffing",
+  "programs",
+  "3D printing",
+  "EV charging",
+  "Friends of the Library",
+  "master plan",
+  "website"
+ ],
+ "dropped_unquoted_by_field": {}
 }

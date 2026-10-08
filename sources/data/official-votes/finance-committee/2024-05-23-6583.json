@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-05-23",
  "docid": "6583",
@@ -12,16 +12,484 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes as submitted from January 11, February 20, February 21, February 22, February 29, March 7, March 14, March 28, April 4, April 11, April 25 all from 2024",
+   "motion": "Approve the minutes as submitted for January 11, February 20, February 21, February 22, February 29, March 7, March 14, March 28, April 4, April 11 and April 25, 2024.",
    "moved_by": "Dave Passios",
    "seconded_by": "Chris Menard",
-   "outcome": "passed 5-0-1",
+   "outcome": "passed (all in favor with 1 abstention)",
    "procedural": true,
-   "quote": "motion to approve the minutes as submitted from january 11, february 20, february 21, february 22, february 29, m arch 7, m arch 14, m arch 28, april 4, april 11, april 25 all from 2024 by dave passios, seconded by chris menard. all in favor with 1 abstenti",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to approve the minutes as submitted from january 11,"
+  },
+  {
+   "motion": "Set the first meeting in August of each year as the reorganization meeting.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Chris Menard",
+   "outcome": "passed (all in favor)",
+   "procedural": false,
+   "quote": "there was a m otion to set the first meeting in a ugust of each year as the reorganization meeting by dave passios , seconded by chris menard . all in favor."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Dave Passios",
+   "outcome": "passed (all in favor)",
+   "procedural": true,
+   "quote": "there was a motion to adjourn by chris menard , seconded by dave passios . all in favor."
   }
  ],
- "dropped_unquoted": 2,
- "note": "",
- "cost_usd": 0.1146021
+ "dropped_unquoted": 0,
+ "note": "Text is machine-extracted, not a scan, and reads cleanly apart from odd spacing inside words and figures (for example \"$ 2, 874,556\"); quotes and figures reproduce that spacing as printed. Attendance comes from the \"Present Members\" and \"Absent Member\" lines; Heather Lemieux and Ezequel Ayala are shown taking part without a stated attendance status, and Dave Rogers is a public commenter with no stated attendance status. Three motions are recorded; the minutes give outcomes as \"All in favor\" (with one abstention on the minutes) rather than tallies. The approval-of-minutes quote is the start of a long sentence and is truncated in the quote field. The first public comment item records no speakers. Budget items are recorded where money is discussed; the minutes print no transfers.",
+ "cost_usd": 0.02536687,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, board member tom gray, board member dave passios, board member jean russell, board member jay simeone"
+  },
+  {
+   "name": "Tiffaney Tavarez",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent member: clerk tiffaney tavarez"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "role not printed; reports under the Town Manager Report heading",
+   "status": "not stated",
+   "quote": "heather lemieux states she has applied"
+  },
+  {
+   "name": "Ezequel Ayala",
+   "role": "Finance Director",
+   "status": "not stated",
+   "quote": "finance director, ezequel ayala"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "public comment speaker; no role printed",
+   "status": "not stated",
+   "quote": "lastly, dave rogers thanks the committee for all they are doing."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee agreed to request that the Municipal Building Design Committee come and talk about the debt exclusion projects.",
+   "quote": "the committee agrees to request the municipal building design"
+  },
+  {
+   "decision": "Evan Watters will revisit the MIAA health insurance item and request that someone from MIAA come to give a presentation.",
+   "quote": "evan watters will revisit and request someone from miaa to come"
+  },
+  {
+   "decision": "Heather Lemieux will look into the reappointment years that Chris Menard said were incorrect.",
+   "quote": "heather lemieux will be looking into that."
+  },
+  {
+   "decision": "Evan Watters will look into meeting minutes from 2023 and 2022.",
+   "quote": "evan watters will be looking into meeting minutes from 2023 and 2022."
+  },
+  {
+   "decision": "The Committee agreed there should be a committee member on the Board of Assessors and on the Cemetery Commission.",
+   "quote": "should be a committee member on the board of assessors and the cemetery commission."
+  },
+  {
+   "decision": "Dave Passios will recommend the review of the borrowing policy to the budget task force.",
+   "quote": "recommend this to the budget task force."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stabilization fund balances",
+   "what_was_recorded": "The Finance Director sent the balances of five stabilization and trust funds requested at the last meeting; the balances match those presented before town meeting.",
+   "figures_as_printed": [
+    "$ 2, 874,556",
+    "$ 2,216,  955",
+    "$ 1, 324, 308",
+    "$ 114,621",
+    "$ 183,2 90"
+   ],
+   "quote": "the s pecial purpose stabilization fund has a balance of $ 2, 874,556 ."
+  },
+  {
+   "topic": "Interest earned on stabilization accounts",
+   "what_was_recorded": "Dave Passios asked what interest comes into the accounts quarterly and suggested investigating the revenue these accounts earn, possibly via a town meeting appropriation of the interest. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "questions what is coming in to those accounts for interest on a"
+  },
+  {
+   "topic": "Town meeting funding infusion",
+   "what_was_recorded": "Chris Menard said the infusion of almost a million dollars into the overall budget will help holistically. No exact figure was printed.",
+   "figures_as_printed": [
+    "almost a million dollars"
+   ],
+   "quote": "the infusion of almost a million dollars into the overarching"
+  },
+  {
+   "topic": "ARPA funding return if override failed",
+   "what_was_recorded": "Evan Watters said a pre-town-meeting vote provided that ARPA funding would be returned if the override passed, and that no special town meeting is needed to appropriate the funds. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the override passed then the arpa funding would be returned."
+  },
+  {
+   "topic": "Cherry sheet estimate difference",
+   "what_was_recorded": "Evan Watters reported a difference between the Governor's and the Senate's cherry sheet estimates for FY 25.",
+   "figures_as_printed": [
+    "$ 29,000"
+   ],
+   "quote": "there is a $ 29,000 difference between what the"
+  },
+  {
+   "topic": "School budget run on spreadsheets",
+   "what_was_recorded": "Chris Menard said running a 30-million-dollar school budget off an Excel spreadsheet is not ideal and suggested shared budgeting software.",
+   "figures_as_printed": [
+    "30-million-dollar"
+   ],
+   "quote": "theoretically r unning a 30-million-dollar"
+  },
+  {
+   "topic": "Inflation policy",
+   "what_was_recorded": "Chris Menard noted inflation over the last 15 years has generally been under the stated rate and suggested an inflation policy. The figure is a percentage, not a dollar amount.",
+   "figures_as_printed": [
+    "2 ½%"
+   ],
+   "quote": "inflation in the last 15 years has generally been under 2 ½% on aggregate."
+  },
+  {
+   "topic": "School department reserve account",
+   "what_was_recorded": "Dave Passios asked whether a mechanism exists to create a reserve account for the school department, citing unanticipated breakdowns and repairs. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "a reserve account specifically for the school department."
+  },
+  {
+   "topic": "Earmarked and unexpected state or federal funds",
+   "what_was_recorded": "Evan Watters said earmarked or unexpected state or federal funds for a specific use should not go into the general town fund. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "it shouldn 't go into a general fund."
+  },
+  {
+   "topic": "Health insurance savings",
+   "what_was_recorded": "Evan Watters said he is unsure what can be changed to save money on health insurance; Dave Passios said most of the cost is tied up in collective bargaining. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "evan watters is unsure about what can be changed to save money."
+  },
+  {
+   "topic": "Tax incentives for low and fixed income seniors",
+   "what_was_recorded": "Evan Watters said he wants to pursue tax incentive programs or other ways to save money for low- and fixed-income seniors. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "go after tax incentive programs or other ways to save money"
+  },
+  {
+   "topic": "Sewer project Green Communities savings",
+   "what_was_recorded": "Dave Passios said savings numbers for the Green Communities sewer application were provided days before the deadline and did not show enough savings to proceed. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the savings numbers were provided a couple of"
+  },
+  {
+   "topic": "Chapter 90 short-term borrowing",
+   "what_was_recorded": "Heather Lemieux said certain accounts can be deficit spent to cover Chapter 90 reimbursable projects before reimbursement. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "we can deficit spend on certain accounts."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "",
+   "topic": "combining departments; superintendent contracts; override spreadsheet",
+   "quote": "lastly, dave rogers thanks the committee for all they are doing."
+  },
+  {
+   "speaker": "Evan Watters",
+   "stated_role": "Chair",
+   "topic": "override passed; low and fixed income residents",
+   "quote": "lastly, he thanks the committee for their hard work throughout the budget season."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7 pm .",
+   "tags": [
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "there were no announcements.",
+   "tags": [
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Public Comment (first)",
+   "resolution": "no action",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "informational",
+   "quote": "heather lemieux states she has applied",
+   "tags": [
+    "grants",
+    "financial policies",
+    "DLS",
+    "long-term forecast",
+    "culvert"
+   ]
+  },
+  {
+   "topic": "Finance Director Report",
+   "resolution": "informational",
+   "quote": "ezequel ayala sent over the stabilization fund balances that were requested at",
+   "tags": [
+    "stabilization funds",
+    "interest",
+    "quarterly postings"
+   ]
+  },
+  {
+   "topic": "New Business: Town Meeting Review",
+   "resolution": "discussed; no action",
+   "quote": "dave passios states there were no real surprises during the meeting,",
+   "tags": [
+    "town meeting",
+    "voting security"
+   ]
+  },
+  {
+   "topic": "New Business: Town Ballot Review",
+   "resolution": "discussed; no action",
+   "quote": "a lot of unopposed people were voted in.",
+   "tags": [
+    "election",
+    "ballot results"
+   ]
+  },
+  {
+   "topic": "New Business: Override Update",
+   "resolution": "discussed; no action",
+   "quote": "evan watters states there was an error in the presentation",
+   "tags": [
+    "override",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Summer Planning: Review Policies & Procedures",
+   "resolution": "discussed; borrowing policy to budget task force",
+   "quote": "and it is overdue for a review.",
+   "tags": [
+    "policies",
+    "borrowing policy",
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Summer Planning: Consolidation of Services/Departments",
+   "resolution": "discussed; high priority; Evan Watters to convene facilities and DPW",
+   "quote": "this is a high priority among the lists .",
+   "tags": [
+    "consolidation",
+    "pavement management",
+    "sewer",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Summer Planning: MIAA Health Insurance presentation",
+   "resolution": "MIAA presentation to be requested",
+   "quote": "evan watters is unsure about what can be changed to save money.",
+   "tags": [
+    "health insurance",
+    "MIAA"
+   ]
+  },
+  {
+   "topic": "Summer Planning: Debt Exclusion Projects",
+   "resolution": "Municipal Building Design Committee to be asked to attend; low priority",
+   "quote": "this is low on the priority list.",
+   "tags": [
+    "debt exclusion",
+    "Municipal Building Design Committee",
+    "historical society"
+   ]
+  },
+  {
+   "topic": "Summer Planning: Chapter 90 Briefing from DPW",
+   "resolution": "copy of briefing requested",
+   "quote": "and the committee is inquiring about getting a copy.",
+   "tags": [
+    "Chapter 90",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Summer Planning: CemCom Discussion on Sales of Cemetery Lots",
+   "resolution": "discussed",
+   "quote": "would like to understand what the",
+   "tags": [
+    "cemetery",
+    "capital items"
+   ]
+  },
+  {
+   "topic": "Summer Planning: Review Budget Process",
+   "resolution": "discussed; high priority",
+   "quote": "we are never ready for the town meeting.",
+   "tags": [
+    "budget process",
+    "timeline",
+    "budgeting software",
+    "inflation",
+    "school reserve"
+   ]
+  },
+  {
+   "topic": "Summer Planning: Earmarked/Cherry Sheet Money Distribution",
+   "resolution": "discussed; medium priority",
+   "quote": "it shouldn 't go into a general fund.",
+   "tags": [
+    "cherry sheet",
+    "earmarks",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Summer Planning: Re-organization for first meeting each August",
+   "resolution": "motion passed",
+   "quote": "there was a m otion to set the first meeting in a ugust of each year",
+   "tags": [
+    "reorganization",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "no action",
+   "quote": "there was no discussion relating to old business.",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved 11 sets of 2024 minutes",
+   "quote": "there are 11 sets of minutes in the sharepoint review folder to approve.",
+   "tags": [
+    "minutes approval",
+    "website posting",
+    "records"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "informational",
+   "quote": "the application for the sewer project at the last minute.",
+   "tags": [
+    "Green Communities",
+    "Capital Planning",
+    "Master Plan",
+    "Council on Aging"
+   ]
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "listed",
+   "quote": "grant writing services priorities .",
+   "tags": [
+    "grants",
+    "population",
+    "local income tax"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "listed",
+   "quote": "12. upcoming meetings: a. 6/13/2024",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Important Dates",
+   "resolution": "no action",
+   "quote": "there were no additional important dates.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "no action",
+   "quote": "lastly, dave rogers thanks the committee for all they are doing.",
+   "tags": [
+    "public comment",
+    "personnel",
+    "superintendent contract"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned",
+   "quote": "the meeting closed at 9:35pm.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "stabilization funds",
+  "town meeting",
+  "override",
+  "ARPA",
+  "cherry sheet",
+  "budget process",
+  "minutes approval",
+  "consolidation",
+  "health insurance",
+  "debt exclusion",
+  "Chapter 90",
+  "cemetery",
+  "reorganization",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

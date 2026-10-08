@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2024-07-19",
  "docid": "6655",
@@ -10,8 +10,174 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07192024-6655",
   "doc_url": "/docs/meetings/library-board-of-trustees/2024-07-19-minutes-6655.txt"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0660674
+ "votes": [
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dick Mailloux",
+   "seconded_by": "Donna Saiia",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "adjourndickmadeamotiontoadjourn, secondedbydonna. meetingadjournedat 6:27pm."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text was extracted with spacing collapsed between words, so names and some quotes appear run together (e.g. 'HarryKubetz'); names are given in their normal spelling and quotes are copied as they appear in the extracted text. The only motion in the minutes is to adjourn, and the minutes record no vote count, so its outcome is 'not stated' even though the minutes say the meeting was adjourned at 6:27pm. No other votes are recorded; the Robin Venezia outcome is recorded as agreement without a vote. The minutes give no dollar figure for the Teen Room, the donation or the lunch program. Chris Ruthis, Michael-Ray Jeffreys, Ellen Dorian, Bob Conroy and Robin Venezia are mentioned but did not take part, so they are not listed as attendees.",
+ "cost_usd": 0.01458247,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Trustee",
+   "status": "remote",
+   "quote": "attending: harrykubetz, dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: harrykubetz, dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Trustees agreed that Muir Haman should submit the list of items discussed to the Select Board to see whether any ARPA funds could be allocated, then submit any remaining items to MSB.",
+   "quote": "thetrusteesagreedthat muir shouldsubmit thelist ofitemsdiscussedthiseveningtotheselect boardtoseeif anyarpafundscouldbeallocated, andthensubmit anyremainingitemstomsb."
+  },
+  {
+   "decision": "Chair Harry Kubetz asked Muir Haman to make a list of requests to present to MSB, including suggestions on how the library would acknowledge their contribution.",
+   "quote": "harryaskedmuir tomakealist of requeststopresent tomsb, andtoincludesuggestionsastohowwewouldacknowledgetheir contribution."
+  },
+  {
+   "decision": "Muir Haman is to present MSB with different tiers of donation for it to consider, since the amount MSB will give is not known.",
+   "quote": "sincewedon't knowhowmuchmsbiswillingtodonate, muir shouldhavedifferenttiersof donationsfor themtoconsider."
+  },
+  {
+   "decision": "Donna Saiia volunteered to research how large a donation a bank in the area generally makes.",
+   "quote": "donnavolunteeredtoresearchhowlargeadonationabankinour areagenerallymakes."
+  },
+  {
+   "decision": "Harry Kubetz said he will talk again to Michael-Ray Jeffreys about the lack of a renovation cost estimate, hoping Michael-Ray will contact the architect.",
+   "quote": "harrysaidhewill talktomichael-rayjeffreysagainabout thelackof anestimate, hopingthat michael-raywill contact thearchitect."
+  },
+  {
+   "decision": "Everyone agreed that Harry Kubetz should speak to Robin Venezia about joining the LPL Board of Trustees.",
+   "quote": "harryofferedtospeaktorobinveneziaabout joiningthelplboardof trustees. everyoneagreedthat heshoulddothat."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA funds available to town departments and boards",
+   "what_was_recorded": "The Select Board notified town departments and boards of about $313k in ARPA funds still to be allocated, with requests due 7/31/24.",
+   "figures_as_printed": [
+    "$313k",
+    "7/31/24"
+   ],
+   "quote": "theselect boardnotifiedtowndepartmentsandboardsthat theyhave$313kinarpafundsthat theystill needtoallocate."
+  },
+  {
+   "topic": "Teen Room renovation cost estimate",
+   "what_was_recorded": "The renovation still has no cost estimate, and the Trustees expressed concern about the planning stage's progress.",
+   "figures_as_printed": [],
+   "quote": "westill donot haveanestimateof what therenovationwill cost."
+  },
+  {
+   "topic": "MSB donation to the Teen Room renovation",
+   "what_was_recorded": "Ellen Dorian of Main Street Bank agreed to support the Teen Room renovation with a donation; no amount was recorded.",
+   "figures_as_printed": [],
+   "quote": "ellenalsoagreedtosupport theteenroomrenovationwithadonationandaskedfor ideasabout howtheycouldhelp."
+  },
+  {
+   "topic": "Free summer lunch program paid for by MSB",
+   "what_was_recorded": "MSB would pay for meals supplied by Employment Options for a free summer lunch program; no amount was recorded.",
+   "figures_as_printed": [],
+   "quote": "shehadconnectionswithemployment options, avocational rehabilitationnon-profit, whowouldsupplythemealsthat msbwouldpayfor."
+  },
+  {
+   "topic": "Possible uses for a bank donation",
+   "what_was_recorded": "Trustees and staff listed possible uses for a donation, including the general construction fund, furniture, technology and a backup generator; no amounts were recorded.",
+   "figures_as_printed": [],
+   "quote": "thetrusteesandlibrarystaff suggestedadonationcouldhelppayfor thefollowing:"
+  },
+  {
+   "topic": "Size of a bank donation",
+   "what_was_recorded": "Donna Saiia volunteered to research how large a donation a bank in the area generally makes; no figure was recorded.",
+   "figures_as_printed": [],
+   "quote": "donnavolunteeredtoresearchhowlargeadonationabankinour areagenerallymakes."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Harry Kubetz",
+   "stated_role": "Chair",
+   "topic": "Tribute to Bob Conroy",
+   "quote": "harryspokeabout bobconroy, hiscontributionstothelibrary, andhowhewill bemissed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Main Street Bank opportunities and the Teen Room project",
+   "resolution": "discussed; list of requests to go to Select Board for ARPA funds, remainder to MSB",
+   "quote": "discussionof mainstreet bankopportunitiesassociatedwiththeteenroomprojectmuir updatedusonhisinteractionswithrepresentativesfrommainstreet bank.",
+   "tags": [
+    "main street bank",
+    "teen room",
+    "donations",
+    "ARPA",
+    "renovation"
+   ]
+  },
+  {
+   "topic": "Board comment: prospective trustee Robin Venezia",
+   "resolution": "agreed Harry Kubetz will speak to Robin Venezia about joining the board",
+   "quote": "harryofferedtospeaktorobinveneziaabout joiningthelplboardof trustees. everyoneagreedthat heshoulddothat.",
+   "tags": [
+    "board appointments",
+    "trustees"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "teen room renovation",
+  "main street bank donation",
+  "ARPA funds",
+  "renovation cost estimate",
+  "donations",
+  "board membership",
+  "public comment tribute",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

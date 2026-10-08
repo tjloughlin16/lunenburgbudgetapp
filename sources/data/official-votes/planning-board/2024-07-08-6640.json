@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-07-08",
  "docid": "6640",
@@ -12,37 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Support pursuing funding for technical assistance to evaluate MBTA zoning compliance requirements",
-   "moved_by": "M. Allison",
-   "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "m. allison moved to state for the record that the planning board supports pursuing funding for technical assistance to further evaluate the mbta zoning compliance requirements. a. reid seconded. voice vote, passed unanimously."
-  },
-  {
-   "motion": "Cancel the public hearing for 3 Lancaster Ave due to incomplete application and improper notice",
+   "motion": "Cancel the 3 Lancaster Ave special permit public hearing for a freestanding sign, given the applicant's added material and the notice miscommunication.",
    "moved_by": "G. McLeod",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 4-0-1",
-   "procedural": true,
-   "quote": "g. mcleod moved to cancel the hearing based upon the applicant's indication of additional material to be submitted and miscommunication between the town and applicant about application requirements, causing improper notice. t. willsmer seconded. voice vote, passed 4-0-1. (m. allison abstained)."
+   "procedural": false,
+   "quote": "g. mcleod moved to cancel the hearing based upon the applicant's indication of additional material to be submitted"
   },
   {
-   "motion": "Grant a certificate of completion for the Stormwater Management Permit for 321 Sunny Hill Rd only",
+   "motion": "Grant a certificate of completion for the Stormwater Management Permit regarding 321 Sunny Hill Rd only.",
    "moved_by": "T. Willsmer",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "t. willsmer moved to grant a certificate of completion for the stormwater management permit regarding 321 sunny hill rd only. a. reid seconded. voice vote, passed unanimously."
+   "quote": "t. willsmer moved to grant a certificate of completion for the stormwater management permit regarding 321 sunny hill rd only."
   },
   {
-   "motion": "Include the Pledge of Allegiance in board meetings",
-   "outcome": "passed 3-2",
-   "procedural": true,
+   "motion": "State for the record that the Planning Board supports pursuing funding for technical assistance to further evaluate the MBTA zoning compliance requirements.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "m. allison moved to state for the record that the planning board supports pursuing funding for technical assistance to further evaluate the mbta zoning compliance requirements."
+  },
+  {
+   "motion": "Whether to include the Pledge of Allegiance within the meeting (voice vote: Aye 3 — M. Allison, G. McLeod, A. Reid; Nay 2 — M. Brenner, T. Willsmer). No result stated.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
    "quote": "m. brenner asked for a voice vote from all in favor and against. aye - m. allison, g. mcleod, a. reid nay - m. brenner, t. willsmer"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Allison",
    "seconded_by": "T. Willsmer",
    "outcome": "passed unanimously",
@@ -51,6 +53,353 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11396909999999999
+ "note": "Text extraction of a 10-page digital document, not a scan; no OCR gaps noted. Six votes are recorded as motions or voice votes; the Pledge of Allegiance voice vote prints tallies (Aye 3, Nay 2) but no result, so it is recorded as 'not stated' rather than passed or failed. A public commenter (Dave McDonald) thanks the Board 'for voting for the Pledge', which the minutes do not otherwise confirm. The 255 Sunny Hill Rd hearing is 'See separate minutes' and those minutes are not in this text. Minutes of 2024-05-13 and 2024-06-12 were not approved. Mover and seconder are printed only where the minutes name them.",
+ "cost_usd": 0.02158637,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, glenn mcleod, amanda reid, timothy willsmer"
+  },
+  {
+   "name": "Richard Harris",
+   "role": "Interim Land Use Director",
+   "status": "present",
+   "quote": "richard harris - interim land use director"
+  },
+  {
+   "name": "Logan O’Connell",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "logan o'connell - administrative assistant"
+  },
+  {
+   "name": "Karen Chapman",
+   "role": "representing the Montachusett Regional Planning Commission (MRPC)",
+   "status": "present",
+   "quote": "karen chapman of the mrpc presented about the requirements of the mbta communities act"
+  },
+  {
+   "name": "Sanford Leavenworth",
+   "role": "representing the applicant",
+   "status": "remote",
+   "quote": "sanford leavenworth represented the applicant via zoom."
+  },
+  {
+   "name": "Steven Borodawka",
+   "role": "applicant, 3 Lancaster Ave special permit",
+   "status": "not stated",
+   "quote": "applicant is steven borodawka, 2 shaker rd d-103, shirley, ma 01464."
+  },
+  {
+   "name": "Art Calvillo",
+   "role": "property owner, 3 Lancaster Ave",
+   "status": "not stated",
+   "quote": "property owner is art calvillo, 3 lancaster ave, lunenburg, ma 01462."
+  },
+  {
+   "name": "Tim Battles",
+   "role": "CTB Holdings, requested Certificate of Completion",
+   "status": "not stated",
+   "quote": "tim battles (ctb holdings) requested a certificate of completion for 321 sunny hill only."
+  },
+  {
+   "name": "Fran McNamara",
+   "role": "Superintendent of the Lunenburg Water District",
+   "status": "present",
+   "quote": "fran mcnamara (superintendent of the lunenburg water district) called the meeting of the"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Lunenburg Water District Commissioner",
+   "status": "present",
+   "quote": "he was joined by lunenburg water district commissioners mark bursch and matthew woodward."
+  },
+  {
+   "name": "Matthew Woodward",
+   "role": "Lunenburg Water District Commissioner",
+   "status": "present",
+   "quote": "he was joined by lunenburg water district commissioners mark bursch and matthew woodward."
+  },
+  {
+   "name": "Joan Pease",
+   "role": "",
+   "status": "present",
+   "quote": "joan pease (11 wintergreen court) said that there were no objections to removing (e)."
+  },
+  {
+   "name": "Iris Sinkel",
+   "role": "",
+   "status": "present",
+   "quote": "iris sinkel (13 wintergreen ct) asked whether a body representing the public's interest existed in this process."
+  },
+  {
+   "name": "Andy Starvaski",
+   "role": "",
+   "status": "present",
+   "quote": "andy starvaski (8 wintergreen ct) noted that only the water district voters had input in steps 1 and 3"
+  },
+  {
+   "name": "Barbara Turkington",
+   "role": "",
+   "status": "present",
+   "quote": "barbara turkington (110 royal fern dr) opined that voters were seeking the most stringent bylaw"
+  },
+  {
+   "name": "Erin M.",
+   "role": "",
+   "status": "remote",
+   "quote": "erin m. (attending via zoom) asked board members in support of including the pledge what its importance to"
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "",
+   "status": "present",
+   "quote": "dave mcdonald (155 island rd) thanked the board members for voting for the pledge."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board did not approve the minutes of 2024-05-13 and 2024-06-12, pending the revisions R. Harris recommended.",
+   "quote": "the board did not approve these minutes, awaiting the above revisions."
+  },
+  {
+   "decision": "R. Harris will pursue MHP funding: he will fill out the application form and have it forwarded to the Town Manager for signature.",
+   "quote": "r. harris recommended pursuing mhp funding, and explained that he would fill out the application form and have it forwarded to the town manager for their signature."
+  },
+  {
+   "decision": "No decision on the Water District bylaw draft tonight; next Board Discussion set for 2024-08-26, with a Public Hearing recommended for 2024-09-23.",
+   "quote": "m. brenner explained that the board wouldn't be making any decisions tonight, and its next discussion on this would be on 2024-08-26."
+  },
+  {
+   "decision": "R. Harris will add the Zone 1 protection suggestion from F. McNamara to the list of possible revisions.",
+   "quote": "r. harris said he would include this suggestion in the list of possible revisions from this meeting's discussion."
+  },
+  {
+   "decision": "The Economic Development Committee was tentatively rescheduled to 2024-07-22.",
+   "quote": "the edc was unable to attend, and tentatively rescheduled for 2024-07-22."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MHP / technical assistance grant amounts",
+   "what_was_recorded": "R. Harris said typical grant amounts generally range from $10,000 to $50,000.",
+   "figures_as_printed": [
+    "$10,000",
+    "$50,000"
+   ],
+   "quote": "g. mcleod asked about typical grant amounts, with r. harris stating they generally range from $10,000 to $50,000."
+  },
+  {
+   "topic": "Cost of planning and constructing a new Water District treatment plant: construction plan",
+   "what_was_recorded": "The Commissioners described a Water District constituent vote to appropriate money for a construction plan, with an estimated cost.",
+   "figures_as_printed": [
+    "~$700-800k"
+   ],
+   "quote": "a water district constituent vote to appropriate money for creating a construction plan (~$700- 800k",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Cost of planning and constructing a new Water District treatment plant: implementation",
+   "what_was_recorded": "The Commissioners described a public meeting and vote to appropriate money for implementing the plan, with an estimated cost.",
+   "figures_as_printed": [
+    "~$20m"
+   ],
+   "quote": "a public meeting to present the plan & vote on appropriating money for its implementation (~$20m)"
+  },
+  {
+   "topic": "Cost of new treatment works in Zones 2 and 3",
+   "what_was_recorded": "F. McNamara said building new treatment plants outside those Zones would impose large expenses; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "building new treatment plants outside those zones would impose large expenses, such as new land purchases and miles of pipe construction."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Joan Pease",
+   "stated_role": "",
+   "topic": "Zone 1 permitted uses (e)",
+   "quote": "joan pease (11 wintergreen court) said that there were no objections to removing (e)."
+  },
+  {
+   "speaker": "Joan Pease",
+   "stated_role": "",
+   "topic": "Zone 2/3 treatment works and Special Permit",
+   "quote": "j. pease opined that the only way the bylaw revision would pass at the next special town meeting"
+  },
+  {
+   "speaker": "Iris Sinkel",
+   "stated_role": "",
+   "topic": "Water District process and public interest",
+   "quote": "iris sinkel (13 wintergreen ct) asked whether a body representing the public's interest existed in this process."
+  },
+  {
+   "speaker": "Andy Starvaski",
+   "stated_role": "",
+   "topic": "Special Permit versus Site Plan Approval",
+   "quote": "andy starvaski (8 wintergreen ct) noted that only the water district voters had input in steps 1 and 3"
+  },
+  {
+   "speaker": "Barbara Turkington",
+   "stated_role": "",
+   "topic": "Stringent bylaw, Special Permit preference",
+   "quote": "barbara turkington (110 royal fern dr) opined that voters were seeking the most stringent bylaw"
+  },
+  {
+   "speaker": "Erin M.",
+   "stated_role": "attending via Zoom",
+   "topic": "Pledge of Allegiance",
+   "quote": "erin m. (attending via zoom) asked board members in support of including the pledge what its importance to"
+  },
+  {
+   "speaker": "Dave McDonald",
+   "stated_role": "",
+   "topic": "Pledge vote; Planning Board business",
+   "quote": "dave mcdonald (155 island rd) thanked the board members for voting for the pledge."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointment: MBTA Communities Act zoning (MRPC presentation)",
+   "resolution": "presented; Board voted to support pursuing technical assistance funding",
+   "quote": "karen chapman of the mrpc presented about the requirements of the mbta communities act",
+   "tags": [
+    "MBTA Communities Act",
+    "zoning",
+    "housing",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Public hearing: 255 Sunny Hill Rd",
+   "resolution": "continued to 2024-07-22",
+   "quote": "255 sunny hill rd - (cont. from 2024-06-10, to 2024-07-22)",
+   "tags": [
+    "public hearing",
+    "Sunny Hill Rd"
+   ]
+  },
+  {
+   "topic": "Public hearing: 3 Lancaster Ave freestanding sign special permit",
+   "resolution": "hearing cancelled by vote, passed 4-0-1, pending resubmission",
+   "quote": "3 lancaster ave - (cancelled, pending resubmission)",
+   "tags": [
+    "special permit",
+    "sign",
+    "public hearing",
+    "completeness"
+   ]
+  },
+  {
+   "topic": "Certificates of completion: 317-321 Sunny Hill Rd",
+   "resolution": "certificate granted for 321 only; 317 stays open until construction completes",
+   "quote": "t. willsmer moved to grant a certificate of completion for the stormwater management permit regarding 321 sunny hill rd only.",
+   "tags": [
+    "stormwater",
+    "certificate of completion"
+   ]
+  },
+  {
+   "topic": "Water Supply Protection District: proposed zoning bylaw amendments (joint meeting with Lunenburg Water District)",
+   "resolution": "discussed; no decision; next Board Discussion 2024-08-26",
+   "quote": "water supply protection district - proposed zoning bylaw amendments",
+   "tags": [
+    "water supply protection",
+    "zoning bylaw",
+    "Lunenburg Water District",
+    "special permit",
+    "site plan approval"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance inclusion in meeting",
+   "resolution": "voice vote taken; result not stated in minutes",
+   "quote": "m. brenner asked for a voice vote from all in favor and against.",
+   "tags": [
+    "Pledge of Allegiance",
+    "voice vote"
+   ]
+  },
+  {
+   "topic": "Minutes approval: 2024-05-13 and 2024-06-12",
+   "resolution": "not approved, pending revisions",
+   "quote": "r. harris found that the minutes from 2024-05-13 showed a motion made and seconded but didn't include the corresponding vote",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports only, no action",
+   "quote": "per m. brenner, meeting on wednesday.",
+   "tags": [
+    "committees",
+    "Capital Planning Committee",
+    "Economic Development Committee"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "upcoming meetings on 2024-07-22 and 2024-08-12.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned by voice vote",
+   "quote": "m. allison moved to adjourn. t. willsmer seconded. voice vote, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "Planning Board",
+  "zoning",
+  "MBTA Communities Act",
+  "housing",
+  "Lunenburg Water District",
+  "water supply protection",
+  "Zone 1",
+  "special permit",
+  "site plan approval",
+  "public hearing",
+  "stormwater",
+  "certificate of completion",
+  "minutes approval",
+  "Pledge of Allegiance",
+  "grants",
+  "technical assistance"
+ ],
+ "dropped_unquoted_by_field": {}
 }

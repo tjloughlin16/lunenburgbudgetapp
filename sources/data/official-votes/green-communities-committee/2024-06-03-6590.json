@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2024-06-03",
  "docid": "6590",
@@ -12,15 +12,147 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from May 6, 2024",
-   "outcome": "approved unanimously",
+   "motion": "Approve the minutes of May 6, 2024.",
+   "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "meeting minutes from may 6, 2024 approved unanimously of all members present at call to order (david blatt, david passios, kim duffy, matt snyder)"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0645271
+ "dropped_unquoted": 1,
+ "note": "Text extraction is clean. The minutes record one motion (approval of the May 6, 2024 minutes) and state it was approved unanimously, but give no mover, seconder or numeric count. The adjournment at 7:20 pm is recorded without a motion, so it is not listed as a vote. The Fall Grant timeline and the Outreach section have no recorded motion and are treated as discussion. The Facebook post content and the 'Next post' vehicle figures are planned social-media content, not approved budget actions. The Chris Holden entry is the same attendance line as the other members, and the late arrival is noted in the quote.",
+ "cost_usd": 0.012828970000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy, matt snyder, chris holden (joined ~6:55 pm)"
+  },
+  {
+   "name": "David Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy, matt snyder, chris holden (joined ~6:55 pm)"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy, matt snyder, chris holden (joined ~6:55 pm)"
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy, matt snyder, chris holden (joined ~6:55 pm)"
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "present",
+   "quote": "chris holden (joined ~6:55 pm)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All projects from the spring grant round will be submitted in the Fall Grant process.",
+   "quote": "all projects will be submitted in fall grant process."
+  },
+  {
+   "decision": "The committee will meet on the first Monday of each month; the next meeting is July 1, 2024 at 6:30pm by Zoom.",
+   "quote": "to meet first monday of each month. next: july 1, 2024 6:30pm - zoom meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Spring grant process projects",
+   "what_was_recorded": "The projects from the spring grant process would have come to only about $50k in total.",
+   "figures_as_printed": [
+    "~$50k"
+   ],
+   "quote": "projects would have come out to only ~$50k."
+  },
+  {
+   "topic": "Lunenburg PD hybrid vehicles (social media post)",
+   "what_was_recorded": "Prior grant-funded hybrid police cruisers were described with their dollar amounts for a planned informational post; the minutes say the exchange is essentially break even but carbon offset.",
+   "figures_as_printed": [
+    "5k each",
+    "10k total",
+    "5k"
+   ],
+   "quote": "2020 grant - 2 cruisers (5k each, 10k total). 2022 grant - 1 cruiser (5k)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and Approve Pending Meeting Minutes",
+   "resolution": "approved (minutes of May 6, 2024)",
+   "quote": "meeting minutes from may 6, 2024 approved unanimously of all members present at call to order",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Recap of Spring Grant Process",
+   "resolution": "no action; projects deferred to Fall Grant process",
+   "quote": "pump option selected not approved by unitil for incentive.",
+   "tags": [
+    "grants",
+    "energy efficiency",
+    "Unitil incentive"
+   ]
+  },
+  {
+   "topic": "Fall Grant Process",
+   "resolution": "discussed; timeline set (notify departments July, finalize list August, select and apply September, submit October)",
+   "quote": "possible options based on energy assessments of town buildings:",
+   "tags": [
+    "grants",
+    "energy assessments",
+    "municipal buildings",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Outreach program to increase community awareness",
+   "resolution": "discussed; no action recorded",
+   "quote": "green community signs for along roads",
+   "tags": [
+    "outreach",
+    "social media",
+    "MassSave",
+    "LED streetlights",
+    "energy meter"
+   ]
+  },
+  {
+   "topic": "Timeline for next meeting",
+   "resolution": "approved schedule (first Monday monthly; next July 1, 2024 by Zoom)",
+   "quote": "to meet first monday of each month. next: july 1, 2024 6:30pm - zoom meeting.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "Green Communities",
+  "energy efficiency",
+  "municipal buildings",
+  "state grants",
+  "Fall grant round",
+  "MassSave",
+  "LED streetlights",
+  "public outreach",
+  "Lunenburg PD",
+  "hybrid vehicles",
+  "Unitil"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

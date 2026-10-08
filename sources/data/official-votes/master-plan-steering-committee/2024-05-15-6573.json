@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2024-05-15",
  "docid": "6573",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To adjourn at 8:07pm",
+   "motion": "To adjourn the meeting at 8:07pm.",
    "moved_by": "Pete L.",
    "seconded_by": "Jerry R.",
    "outcome": "not stated",
@@ -21,6 +21,177 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0878475
+ "note": "Clean digital text, two pages, no scan. No vote count is printed for the adjournment motion; the roll-call names are listed but no tally, so outcome is 'not stated'. Roll-call names do not match the attendance list: 'Jeffry' appears in the vote and nowhere in attendance, and Gerald Reid appears in attendance but not in the vote; the seconder 'Jerry R.' is presumed to be Gerald Reid but the minutes do not say so. Debbie and Karin's remarks sit under the Public Comment heading but are members of the committee. Jane L. Ranley appears only in the signature block, so her attendance status is not stated. Four goal-by-goal edits (links, opt-in) were requests without a recorded vote and are not listed as decisions.",
+ "cost_usd": 0.014259670000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joeci Gilcrest",
+   "role": "Chair (Member-at-Large)",
+   "status": "present",
+   "quote": "roll call of attendees- chair: joeci gilcrest (member-at-large.), vice-chair: tim willsmer (planning board), evan watters (finance com.)"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Vice-Chair (Planning Board)",
+   "status": "present",
+   "quote": "roll call of attendees- chair: joeci gilcrest (member-at-large.), vice-chair: tim willsmer (planning board), evan watters (finance com.)"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Finance Com.",
+   "status": "present",
+   "quote": "vice-chair: tim willsmer (planning board), evan watters (finance com.), karin menard (parks)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks",
+   "status": "present",
+   "quote": "evan watters (finance com.), karin menard (parks), debbie lincoln (council on aging), kim duffy (green communities)"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "karin menard (parks), debbie lincoln (council on aging), kim duffy (green communities)"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Green Communities",
+   "status": "present",
+   "quote": "debbie lincoln (council on aging), kim duffy (green communities), pete lincoln (member-at-large)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Member-at-Large",
+   "status": "present",
+   "quote": "kim duffy (green communities), pete lincoln (member-at-large), gerald reid, carol archambault (school committee)"
+  },
+  {
+   "name": "Gerald Reid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "pete lincoln (member-at-large), gerald reid, carol archambault (school committee), dick mailloux (library trustees)"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "gerald reid, carol archambault (school committee), dick mailloux (library trustees)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Library Trustees",
+   "status": "present",
+   "quote": "carol archambault (school committee), dick mailloux (library trustees), and foteini bouliari (overunder)."
+  },
+  {
+   "name": "Foteini Bouliari",
+   "role": "OverUnder",
+   "status": "present",
+   "quote": "dick mailloux (library trustees), and foteini bouliari (overunder)."
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee agreed to launch the new Plan Lunenburg survey, including an opt-in for respondents to give an email address.",
+   "quote": "the committee agreed to launch the new survey, which will include an opt-in to give an email address also."
+  },
+  {
+   "decision": "The Committee will vote for a Clerk at its next meeting.",
+   "quote": "they will need to vote for one at the next meeting."
+  },
+  {
+   "decision": "The Committee will vote on past meeting minutes at its next meeting.",
+   "quote": "they will vote on minutes at the next meeting also."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School funding and possible cuts",
+   "what_was_recorded": "Carol Archambault said school funding is a major issue that may mean cuts and layoffs; no dollar figure was printed.",
+   "quote": "school funding is a major issue and may mean some cuts and layoffs.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Debbie",
+   "stated_role": "",
+   "topic": "Committee charge requires a Clerk; unapproved past minutes posted online",
+   "quote": "debbie noted that the committee charge states they should have a clerk."
+  },
+  {
+   "speaker": "Karin",
+   "stated_role": "",
+   "topic": "Email list membership and missing representatives from Conservation, ZBA, Agricultural Commission",
+   "quote": "karin noted that pete and kim are not on the email list."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (Clerk, unapproved minutes, email list, representatives)",
+   "resolution": "no action; clerk and minutes votes deferred to next meeting",
+   "quote": "debbie noted that the committee charge states they should have a clerk. they will need to vote for one at the next meeting.",
+   "tags": [
+    "clerk",
+    "minutes",
+    "committee membership"
+   ]
+  },
+  {
+   "topic": "Plan Lunenburg Survey #3 review of goals",
+   "resolution": "discussed goals 1-8; survey edits requested; launch agreed",
+   "quote": "foteini went through the questions on survey #3 and said the purpose of this survey is to gather as many ideas as possible.",
+   "tags": [
+    "survey",
+    "housing",
+    "farmland",
+    "open space",
+    "municipal buildings",
+    "schools",
+    "infrastructure"
+   ]
+  },
+  {
+   "topic": "Update from OverUnder: May 30 public meeting",
+   "resolution": "no action; meeting details reported",
+   "quote": "foteini noted overunder has provided materials to advertise the 5/30 meeting.",
+   "tags": [
+    "public meeting",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Committee Comments and next meeting agenda",
+   "resolution": "no action; next-meeting agenda set",
+   "quote": "it was noted that some members still need to be sworn in.",
+   "tags": [
+    "membership",
+    "clerk",
+    "volunteers"
+   ]
+  }
+ ],
+ "tags": [
+  "Master Plan",
+  "Plan Lunenburg",
+  "survey",
+  "public meeting",
+  "committee clerk",
+  "minutes approval",
+  "membership",
+  "schools",
+  "housing",
+  "open space"
+ ],
+ "dropped_unquoted_by_field": {}
 }

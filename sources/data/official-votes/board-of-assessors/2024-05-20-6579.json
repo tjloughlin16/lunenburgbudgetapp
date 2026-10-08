@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-05-20",
  "docid": "6579",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the April 22, 2024 minutes",
+   "motion": "Approve the minutes of April 22, 2024.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to approve the april 22nd minutes by john rabbitt, seconded by brian laffond. all in favor. brian laffond aye, john rabbitt aye."
   },
   {
-   "motion": "Approve the May 6, 2024 minutes",
+   "motion": "Approve the minutes of May 6, 2024.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
@@ -28,15 +28,192 @@
    "quote": "there was a motion to approve the may 6th minutes by john rabbitt, seconded by brian laffond. all in favor. brian laffond aye, john rabbitt aye."
   },
   {
-   "motion": "Suspend open meeting and enter into executive session, not to return to open session",
+   "motion": "Suspend the open meeting and enter executive session, not to return to open session, under Purpose 7.",
    "moved_by": "Brian Laffond",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to suspend open meeting and enter into executive session not to return to open session after executive session by brian laffond, seconded by john rabbitt. roll call vote. brian laffond aye, john rabbitt aye."
+   "quote": "there was a motion to suspend open meeting and enter into executive session not to return to open session after executive session by brian laffond"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08792810000000001
+ "dropped_unquoted": 2,
+ "note": "Text extraction has broken words (e.g. 'ar e', 'set tlement', 'curre ntly'); quotes were copied with the printed spacing where needed, and the 'set tlement' quote keeps that break as printed. Sarah Cammer is listed as a present member but the minutes say she could not vote until sworn in, so the recorded votes are two-member. The executive-session motion's result is recorded as a roll call with both members aye; the minutes do not record a separate closing vote or the time of return. The minutes do not print a result count such as 2-0, so outcomes are given as 'passed'. The 'Kara McCarthy' and volunteers Carl Luck and Ana Lockwood are named in the minutes but are not recorded as attending, so they are not listed as attendees.",
+ "cost_usd": 0.01579387,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "sarah cammer states she will be participating in the meeting but is unable to vote because she must be sworn in by the town clerk first."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Assessing Consultant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board signed a bill from MLS for the settlement of abatements totaling $450.",
+   "quote": "totaling $450 that was signed by the board."
+  },
+  {
+   "decision": "Question on whether the Circuit Breaker Credit House bill actually passed deferred as a future conversation item.",
+   "quote": "this will be deferred as a future conversation item."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MLS bill for abatement settlement",
+   "what_was_recorded": "A bill from MLS for settling an abatement was signed by the Board.",
+   "figures_as_printed": [
+    "$450"
+   ],
+   "quote": "there was a bill from mls for the set tlement of an abatements totaling $450 that was signed by the board."
+  },
+  {
+   "topic": "Motor vehicle veterans' exemption state reimbursement (MD1)",
+   "what_was_recorded": "The state reimbursement for MD1 was submitted; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the state reimbursement for the motor vehicle veteran's exemptions also known as md1 was submitted."
+  },
+  {
+   "topic": "Abatement settlements, FY2023",
+   "what_was_recorded": "Settlements were processed for four outstanding ATB cases from FY2023; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "rena swezey and lynda mcquade processed settlements for the 4 outstanding atb cases from fy 2023."
+  },
+  {
+   "topic": "Omitted tax bill",
+   "what_was_recorded": "Another omitted bill will be mailed out May 28; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "lynda mcquade came across another omitted bill that is going to be mailed out on may 28th."
+  },
+  {
+   "topic": "Circuit Breaker Credit state bill",
+   "what_was_recorded": "A House bill for the Circuit Breaker Credit was reported as passed, and the Board questioned whether it had; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "john rabbitt states the house bill for the circuit breaker credit has passed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and opening comments",
+   "resolution": "no action",
+   "quote": "the meeting opened at 6:30 pm.",
+   "tags": [
+    "opening"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "no action",
+   "quote": "status report from principal assessor.",
+   "tags": [
+    "abatements",
+    "exemptions",
+    "building permits"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes of April 22 and May 6, 2024",
+   "resolution": "approved",
+   "quote": "review and approve minutes of april 22, 2024, may 6, 2024",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Invoices, expense vouchers and billing errors",
+   "resolution": "approved (MLS bill signed by the Board)",
+   "quote": "review and approve invoices, expense vouchers, payroll, billing errors, etc.",
+   "tags": [
+    "invoices",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Neighborhood Review Team proposal update",
+   "resolution": "no action",
+   "quote": "update on neighborhood review team proposal (schedule, membership, charge)",
+   "tags": [
+    "neighborhood review team",
+    "lake property",
+    "GIS"
+   ]
+  },
+  {
+   "topic": "Website roll-out status",
+   "resolution": "no action",
+   "quote": "brief status of roll out of website",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "no action",
+   "quote": "upcoming meeting/events schedule",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments: 41A exemption, Circuit Breaker bill, letter",
+   "resolution": "no action; House bill deferred",
+   "quote": "brian laffond drafted a letter to be sent to the people who received bills that had exemptions where the property value was misstated.",
+   "tags": [
+    "41A exemption",
+    "circuit breaker",
+    "letters"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session under Purpose 7, not returning to open session",
+   "quote": "motion to enter executive session under purpose 7:",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "assessing",
+  "abatements",
+  "exemptions",
+  "neighborhood review team",
+  "website",
+  "minutes approval",
+  "executive session",
+  "circuit breaker",
+  "property tax",
+  "billing errors"
+ ],
+ "dropped_unquoted_by_field": {
+  "decisions": 1,
+  "topics": 1
+ }
 }

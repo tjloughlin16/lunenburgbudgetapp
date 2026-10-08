@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-05-21",
  "docid": "6580",
@@ -12,52 +12,359 @@
  },
  "votes": [
   {
-   "motion": "Approve Common Victualler License for BKK Group, LLC d/b/a White Thai Cuisine located at 177 Massachusetts Ave",
+   "motion": "Approve the Common Victualler License for BKK Group, LLC d/b/a White Thai Cuisine at 177 Massachusetts Ave.",
    "moved_by": "Clerk Nuzzolo",
    "seconded_by": "Member Emkey",
-   "outcome": "passed unanimously (4-0-0)",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by clerk nuzzolo to approve the common victualler license from bkk group, llc d/b/a white thai cuisine located at 177 massachusetts ave. seconded by member emkey . call for the vote: four-aye. the motion passed unanimously (4-0-0)",
-   "quote_taken_from_text": true
+   "quote": "motion by clerk nuzzolo to approve the common victualler license from bkk group, llc d/b/a white thai cuisine located at 177 massachusetts ave."
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Seasonal Lifeguard Jarrod Bowser, Seasonal Cemetery Laborer Peter Schmidt, and Seasonal Cemetery Laborer Charles Poole",
+   "motion": "Ratify the Town Manager's appointment of Seasonal Lifeguard Jarrod Bowser, Seasonal Cemetery Laborer Peter Schmidt and Seasonal Cemetery Laborer Charles Poole.",
    "moved_by": "Clerk Nuzzolo",
    "seconded_by": "Member Emkey",
-   "outcome": "passed unanimously (4-0-0)",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by clerk nuzzolo to approve to ratify the town manager's appointment of seasonal lifeguard jarrod bowser, seasonal cemetery laborer peter schmidt and seasonal cemetery laborer charles poole. seconded by member emkey. call for the vote: four - bertram. the",
-   "quote_taken_from_text": true
+   "quote": "motion by clerk nuzzolo to approve to ratify the town manager's appointment of seasonal lifeguard jarrod bowser, seasonal cemetery laborer peter schmidt"
   },
   {
-   "motion": "Approve the Disposal of Surplus Property Policy",
+   "motion": "Approve the Disposal of Surplus Property Policy.",
    "moved_by": "Clerk Nuzzolo",
    "seconded_by": "Member Emkey",
-   "outcome": "passed unanimously (4-0-0)",
+   "outcome": "passed 4-0-0",
    "procedural": false,
-   "quote": "motion by clerk nuzzolo to approve the disposal of surplus property policy . seconded by member emkey. call for the vote: four- aye. the motion passed unanimously (4-0-0",
-   "quote_taken_from_text": true
+   "quote": "motion by clerk nuzzolo to approve the disposal of surplus property policy"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:12 pm.",
    "moved_by": "Clerk Nuzzolo",
    "seconded_by": "Member Emkey",
-   "outcome": "passed unanimously (4-0-0)",
+   "outcome": "passed 4-0-0",
    "procedural": true,
-   "quote": "motion by clerk nuzzolo to adjourn the meeting at 8:12 pm. seconded by member emkey. call for the vote: four- aye. the motion passed unanimously (4-0-0)",
-   "quote_taken_from_text": true
+   "quote": "motion by clerk nuzzolo to adjourn the meeting at 8:12 pm."
   },
   {
-   "motion": "Approve the minutes from May 21, 2024",
+   "motion": "Approve the minutes of May 21, 2024 (recorded in the later approval entry dated June 17, 2025).",
    "moved_by": "Chair Nuzzolo",
    "seconded_by": "Vice-Chair Moore",
-   "outcome": "passed (4-0-1)",
+   "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "chair nuzzolo made the motion to approve the minutes from may 21, 2024. seconded by vice-chair moore. call for the vote: four-aye. one-abstain (mcleod). motion passed (4-0- 1)",
-   "quote_taken_from_text": true
+   "quote": "chair nuzzolo made the motion to approve the minutes from may 21, 2024. seconded by vice-chair moore."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The vote on the seasonal appointments (vote 2) has unclear text in the extracted minutes where \"Four -\" appears followed by \"Bertram\"—this appears to be an OCR or extraction artifact, as \"Bertram\" refers to Paula Bertram mentioned in the public comment section earlier. The vote outcome is stated clearly as passed unanimously (4-0-0). The final vote (vote 5) was taken on June 17, 2025 when the Board approved these minutes retrospectively.",
- "cost_usd": 0.152115
+ "note": "Text is machine-extracted and garbled at two votes: the appointment-ratification tally reads \"Call for the vote: Four - / Bertram\" and the adjournment reads \"Four- / Aye\"; the printed \"(4-0-0)\" results were used. The minutes-approval vote (4-0-1, abstention McLeod) sits in a later entry dated June 17, 2025, and names \"Chair Nuzzolo\" and \"Vice-Chair Moore\", which do not match this meeting's roster; recorded as printed. Amanda Moore speaks in board comment but is not in the Present list; status left not stated. Minutes print \"Chair Jefferys\" once (spelled Jeffreys elsewhere). No transfers recorded. The Town Manager report section is empty and not listed as a topic.",
+ "cost_usd": 0.01839437,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice chair-lou franco, clerk caesar nuzzolo, and member renee emkey"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice chair-lou franco, clerk caesar nuzzolo, and member renee emkey"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice chair-lou franco, clerk caesar nuzzolo, and member renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chair michael-ray jeffreys, vice chair-lou franco, clerk caesar nuzzolo, and member renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: member tom alonzo"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Board Member",
+   "status": "not stated",
+   "quote": "board member amanda moore asked whether the specific issues have been identified"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "ms. paula bertram sewer business manager"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Chair of the Sewer Commission",
+   "status": "present",
+   "quote": "mr. john reynolds chair of the sewer commission was also present and stated that he had asked"
+  },
+  {
+   "name": "Nisha",
+   "role": "Applicant (Common Victualler License, White Thai Cuisine)",
+   "status": "present",
+   "quote": "applicant nisha was present, she stated that they are going to change the name of the restaurant"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Public commenter, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street was present."
+  },
+  {
+   "name": "John Bowen",
+   "role": "Public commenter, 162 Highland Street",
+   "status": "remote",
+   "quote": "john bowen 162 highland street (via zoom), he commented on a statement that mr. rogers"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair Jeffreys wants an update on the MUNIS software issue in an Executive Session meeting, inviting the Sewer Commission and the Sewer Business Manager.",
+   "quote": "would like to invite the sewer commission as well as the sewer business manager."
+  },
+  {
+   "decision": "Chair Jeffreys asked Member Emkey to draft a scope of what the Budget Task Force would look like.",
+   "quote": "chair jeffreys asked if member emkey could draft a scope of what the budget task force would look like."
+  },
+  {
+   "decision": "Members will review the draft Tax Investigation Report and respond with feedback; the executive summary will be added to the annual report; further discussion at a future meeting.",
+   "quote": "he stated that the executive summary will be added to the annual report."
+  },
+  {
+   "decision": "The Board agreed to produce a brief summary or bullet points of what it came to as a Board for cruise night.",
+   "quote": "the board agreed to do something along the lines of a brief summary or bullet points of"
+  },
+  {
+   "decision": "Chair Jeffreys and Member Nuzzolo will meet with a student about a civic project / election on Thursday afternoon.",
+   "quote": "he and member nuzzolo will be meeting with him on thursday afternoon"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants received",
+   "what_was_recorded": "The Chair reported receipt of an Accounts Payable warrant, a Payroll warrant and a second Accounts Payable warrant, each with a dollar amount.",
+   "figures_as_printed": [
+    "$214,941.72",
+    "$ 1,077,545.40",
+    "$545,761.57"
+   ],
+   "quote": "accounts payable warrant in the amount of $214,941.72, payroll warrant in the amount of"
+  },
+  {
+   "topic": "MUNIS software purchased by the Town",
+   "what_was_recorded": "A public commenter said the Town should be compensated for MUNIS software that does not function as expected; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "she believes there has been a breach of contract, as the software does not function as expected, and stated that the town should be compensated."
+  },
+  {
+   "topic": "Budget Task Force and ARPA funding",
+   "what_was_recorded": "A member asked to discuss ARPA funding and whether funds would come back from the school after the override; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "member emkey stated that she would like to discuss the budget task force and arpa"
+  },
+  {
+   "topic": "School funds after override",
+   "what_was_recorded": "A member asked whether funds would be returned from the school now that the override has passed; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "with the override passing, will they be getting funds back from the school"
+  },
+  {
+   "topic": "Delinquent tax bill",
+   "what_was_recorded": "A resident said a mailed tax check had not been cashed and the Town shows the account as delinquent; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "because he mails the check in, it has not been cashed, ===page 4=== page 4 of 4 select board mee",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Sewer Business Manager",
+   "topic": "MUNIS software concerns and possible breach of contract",
+   "quote": "expressed concerns regarding the munis software purchased by the town."
+  },
+  {
+   "speaker": "John Reynolds",
+   "stated_role": "Chair of the Sewer Commission",
+   "topic": "Escalating the MUNIS issue",
+   "quote": "he expressed his desire to escalate the issue with munis."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Delinquent tax bill and Tax Investigation",
+   "quote": "he also has concern regarding tax investigation, and desperation hiring."
+  },
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street (via Zoom)",
+   "topic": "Cemetery corporation and Cemetery Board control",
+   "quote": "he stated that the cemetery is a 501c3 and that there is actual value in having a cemetery corporation."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "informed attendees that the meeting was being recorded and broadcast live and would be uploaded to youtube after the meeting.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment: MUNIS software",
+   "resolution": "Chair to seek an update in Executive Session with the Sewer Commission and Sewer Business Manager",
+   "quote": "expressed concerns regarding the munis software purchased by the town.",
+   "tags": [
+    "MUNIS software",
+    "sewer",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Common Victualler License, White Thai Cuisine",
+   "resolution": "approved 4-0-0",
+   "quote": "chair jeffreys stated that the board is in receipt of an application for common victualler license",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Ratify seasonal appointments",
+   "resolution": "ratified 4-0-0",
+   "quote": "town manager lemieux asked the board to ratify the appointment of a seasonal lifeguard and,",
+   "tags": [
+    "appointments",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Disposal of Surplus Property Policy",
+   "resolution": "approved 4-0-0",
+   "quote": "chair jefferys stated that the board has been given the disposal of surplus property policy to review.",
+   "tags": [
+    "policy",
+    "surplus property"
+   ]
+  },
+  {
+   "topic": "Draft Tax Investigation Report",
+   "resolution": "reviewed; members to give feedback; further discussion at a future meeting",
+   "quote": "once the compilation is received tomorrow, the members will take the time to review and respond",
+   "tags": [
+    "tax investigation",
+    "annual report"
+   ]
+  },
+  {
+   "topic": "In-person interviews for appointments",
+   "resolution": "discussed; no decision recorded",
+   "quote": "chair jeffreys stated that each year the board goes through upcoming",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "warrants received; no vote recorded",
+   "quote": "accounts payable warrant in the amount of $214,941.72, payroll warrant in the amount of",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Committee reports: Budget Task Force and ARPA",
+   "resolution": "Member to draft a scope for the Budget Task Force",
+   "quote": "member emkey stated that she would like to discuss the budget task force and arpa",
+   "tags": [
+    "budget task force",
+    "ARPA",
+    "override"
+   ]
+  },
+  {
+   "topic": "Select Board policy review",
+   "resolution": "reminder only; no action",
+   "quote": "chair jeffreys discussed the select board policy review.",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Announcements: student civic project",
+   "resolution": "meeting with student scheduled",
+   "quote": "chair jeffreys stated that a student reached out regarding a civic project / election",
+   "tags": [
+    "civic",
+    "election"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "noted; June meetings scheduled",
+   "quote": "chair jeffreys stated that they will be meeting on june 4, 2024, and the board will reorganize.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Town Manager comment: cruise night",
+   "resolution": "Board agreed to a brief summary of its actions",
+   "quote": "town manager lemieux asked about cruise night.",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Public comment: tax bill, Tax Investigation, cemetery",
+   "resolution": "no action",
+   "quote": "dave passios, 56 whiting street was present.",
+   "tags": [
+    "tax bill",
+    "tax investigation",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:12 PM, 4-0-0",
+   "quote": "motion by clerk nuzzolo to adjourn the meeting at 8:12 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "MUNIS software",
+  "sewer",
+  "common victualler license",
+  "appointments",
+  "surplus property",
+  "tax investigation",
+  "warrants",
+  "budget task force",
+  "ARPA",
+  "override",
+  "cemetery",
+  "cruise night",
+  "tax bill"
+ ],
+ "dropped_unquoted_by_field": {}
 }

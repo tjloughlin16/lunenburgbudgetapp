@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2024-07-01",
  "docid": "6624",
@@ -10,8 +10,227 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07012024-6624",
   "doc_url": "/docs/meetings/public-access-cable-committee-pacc/2024-07-01-minutes-6624.txt"
  },
- "votes": [],
- "dropped_unquoted": 2,
- "note": "Two votes recorded. Note: FY'25 PACC Officers approval is stated as \"Accepted and approved\" with no explicit motion/second/vote mechanism given, so not included. FY'25 meeting dates were tabled but no voting detail provided.",
- "cost_usd": 0.0822431
+ "votes": [
+  {
+   "motion": "Approve the minutes of 6-3-2024.",
+   "moved_by": "F.Beall",
+   "seconded_by": "P.Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "(motion-f.beall,2ndp.lincoln),passed"
+  },
+  {
+   "motion": "Adjourn the meeting at 6:45pm.",
+   "moved_by": "F. Beal",
+   "seconded_by": "P. Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "( f. beal,2ndp.lincoln-passed)"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Single-page-pair text extract with spaces largely collapsed, so quotes are copied as they print. Not a scan. Two motions recorded, both procedural (minutes approval, adjournment). The officer approval, tabling and direction items have no recorded motion and are listed as decisions. No public comment and no executive session. Names vary in the text: Arhambault/Archambault, Beal/Beall, F.Beall/F. Beal. Jo Toale's presence is not stated outright; she appears only in the roll-call line. The Manager's update mentions George Martin, who is not recorded as taking part, so he is not listed as an attendee.",
+ "cost_usd": 0.015576970000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "Chair (FY25 officer)",
+   "status": "present",
+   "quote": "paccmemberspresent:stevewalker, petelincoln,faithbeall,paulsarapas(minutes)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member; gave Master Plan Steering Committee report",
+   "status": "present",
+   "quote": "paccmemberspresent:stevewalker, petelincoln,faithbeall,paulsarapas(minutes)"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member; ViceChair (FY25 officer)",
+   "status": "present",
+   "quote": "paccmemberspresent:stevewalker, petelincoln,faithbeall,paulsarapas(minutes)"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member (minutes)",
+   "status": "present",
+   "quote": "paccmemberspresent:stevewalker, petelincoln,faithbeall,paulsarapas(minutes)"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "not stated",
+   "quote": "2.paccmemberspresent:stevewalker, petelincoln,faithbeall,paulsarapas(minutes)3.manager:jotoale"
+  },
+  {
+   "name": "Steve Arhambault",
+   "role": "Clerk (agreed to accept the position; printed as Archambault in the officers item)",
+   "status": "not stated",
+   "quote": "stevearhambaulthasagreedtoacceptthepositionofclerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "FY'25 officers accepted and approved: Steve Walker as Chair, Faith Beal as Vice Chair, Steve Archambault as Clerk. No motion is recorded.",
+   "quote": "stevearchambault,clerk.acceptedandapproved."
+  },
+  {
+   "decision": "Setting of FY'25 meeting dates and times tabled for full committee input; suggested the committee work it out via email.",
+   "quote": "tabledforfullcommitteeinput(itwassuggestedthatcommitteetrytoworkthisoutviaemail)"
+  },
+  {
+   "decision": "Members asked to complete the 20-year survey forms and bring them to the August meeting.",
+   "quote": "membersaskedtocompleteandbringtoaugustmeeting"
+  },
+  {
+   "decision": "Jo will provide the final FY'24 accounting at the August meeting.",
+   "quote": "finalfy'24accountingwillbeprovidedbyjoataugustmeeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financials at 6/30/24",
+   "what_was_recorded": "The committee was given a financial balance at 6/30/24, with further FY'24 revenue still to post and be accounted for.",
+   "figures_as_printed": [
+    "969,365.41"
+   ],
+   "quote": "financials:969,365.41at6/30/24(notethattherearestillrevenuescominginwhichwillbeaccountedintothefy'24budget"
+  },
+  {
+   "topic": "Audio improvement quotes, Bilotta meeting room",
+   "what_was_recorded": "Quotes from vendors for audio improvement in the Bilotta meeting room in Town Hall were awaited; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "awaitingquotesfromvendorsforimprovementofaudioinbilottameetingroomintownhall."
+  },
+  {
+   "topic": "Comcast May allotment",
+   "what_was_recorded": "The PAC has not received its May allotment from Comcast Cable; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "pachasnotreceivedmayallotmentfromcomcastcable"
+  },
+  {
+   "topic": "Enterprise fund status",
+   "what_was_recorded": "No enterprise fund report was available; reports are due two weeks after each quarter ends and will be available in August.",
+   "figures_as_printed": [],
+   "quote": "enterprisefundstatus:•noreport(reports2weeksafterendofeachquarter"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order at 6:00pm",
+   "quote": "meetingwascalledtoorderat6:00pm.",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public and committee comments",
+   "resolution": "no comments",
+   "quote": "publiccomments:-•nonecommitteecomments:-none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Communications: Clerk acceptance",
+   "resolution": "noted",
+   "quote": "stevearhambaulthasagreedtoacceptthepositionofclerk",
+   "tags": [
+    "officers"
+   ]
+  },
+  {
+   "topic": "FY'25 PAC officers",
+   "resolution": "accepted and approved",
+   "quote": "approvaloffy'25paccofficers:stevewalker, chair;faithbeal,vicechair;stevearchambault,clerk.acceptedandapproved.",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Approval of 6-3-2024 minutes",
+   "resolution": "approved",
+   "quote": "(motion-f.beall,2ndp.lincoln),passed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "noted",
+   "quote": "manager'supdate:•studiomovetonewroomatpassiosstarted2.5weeksago.",
+   "tags": [
+    "studio",
+    "manager update",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Comcast letter: PAC12 no longer offered",
+   "resolution": "discussed",
+   "quote": "a6/14/24letterfromcomcastwasdiscussed,pac12(collegefootball)willnolongerbeoffered",
+   "tags": [
+    "Comcast",
+    "channels"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee report",
+   "resolution": "reported; survey forms distributed",
+   "quote": "masterplansteeringcommitteereport:p. lincoln",
+   "tags": [
+    "master plan",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Enterprise fund status",
+   "resolution": "no report yet",
+   "quote": "enterprisefundstatus:•noreport(reports2weeksafterendofeachquarter",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "FY'25 meeting dates",
+   "resolution": "tabled",
+   "quote": "tabledforfullcommitteeinput(itwassuggestedthatcommitteetrytoworkthisoutviaemail)",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for August 5, 2024",
+   "quote": "nextmeeting:- mondayaugust5,2024,6:00pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:45pm",
+   "quote": "meetingadjournedat6:45pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "cable",
+  "Comcast",
+  "studio operations",
+  "budget and finance",
+  "master plan",
+  "officers",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

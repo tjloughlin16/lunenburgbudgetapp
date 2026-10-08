@@ -1,0 +1,321 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "stormwater-task-force",
+ "board": "Stormwater Task Force",
+ "video_title": "Stormwater Task Force",
+ "meeting_date": "2024-05-16",
+ "video_id": "6NpiFgpgYRA",
+ "video_url": "https://www.youtube.com/watch?v=6NpiFgpgYRA",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/stormwater-task-force/2024-05-16-6NpiFgpgYRA.json",
+  "sha256": "9c2f0783f0441a3a49aa2d9df802d71500b2e5480f3d600bab253c5476e15887",
+  "caption_lines": 38,
+  "segments": 283
+ },
+ "recording": {
+  "duration_s": 840,
+  "duration": "0:14",
+  "spoken_chars": 9004,
+  "words_approx": 1500
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05162024-6575",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/stormwater-task-force/2024-05-16-agenda-6575.txt",
+   "path": "sources/meetings/stormwater-task-force/2024-05-16-agenda-6575.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05162024-6575",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/stormwater-task-force/2024-05-16-minutes-6575.txt",
+   "path": "sources/meetings/stormwater-task-force/2024-05-16-minutes-6575.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T06:26:48Z",
+  "cost_usd": 0.234323
+ },
+ "minutes": {
+  "headline": "Stormwater Task Force approved prior minutes and agreed to wait until after elections to brief the select board.",
+  "summary": "The task force reviewed its outreach presentation, agreed to defer a high-level utility briefing to the select board until after town elections, and approved the previous minutes. Most of the meeting reviewed the school committee's questions about the proposed stormwater BMP demonstration project at the middle/high school, including plant choices and permit fines.",
+  "attendees": [
+   {
+    "name_as_heard": "John",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jenny",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Daniel",
+    "role": "member (took minutes, as addressed)"
+   },
+   {
+    "name_as_heard": "Nick at CI",
+    "role": "consultant (referenced, not present)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 44,
+    "topic": "Chair noted someone had planned public comment, likely a personal resolution, but left no statement; no public comment was heard."
+   }
+  ],
+  "tags": [
+   "high-school",
+   "middle-school",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 298,
+    "motion": "Approve the minutes of the previous meeting.",
+    "outcome": "passed (voice vote, all in favor as heard)",
+    "procedural": true
+   },
+   {
+    "t": 815,
+    "motion": "Adjourn the meeting.",
+    "outcome": "passed (voice vote, all in favor as heard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 193,
+    "topic": "Stormwater utility presentation to select board",
+    "what_was_said": "A high-level presentation on what the stormwater utility is and does was discussed, possibly touching on cost.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 740,
+    "topic": "Potential permit fines",
+    "what_was_said": "Members noted school committee members seemed unaware that fines could result under the permit if no demonstration project is built; the presenter said he mentioned it.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 258,
+    "decision": "Presentation to the select board on the stormwater utility will wait until after the elections, or after the select board has met once post-election."
+   },
+   {
+    "t": 87,
+    "decision": "Outreach presentation changes were made and an appendix will be emailed to the team; no review in the meeting."
+   },
+   {
+    "t": 616,
+    "decision": "The Q&A on the school committee's 17 questions will be emailed to Jenny before it is sent to the school."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 87,
+    "topic": "Call to order, open meeting law notice, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 44,
+    "t_end": 87,
+    "topic": "Public comment (none given)",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 87,
+    "t_end": 193,
+    "topic": "Outreach presentation update",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 193,
+    "t_end": 278,
+    "topic": "Select board briefing on stormwater utility",
+    "resolution": "deferred until after elections",
+    "tags": [
+     "water-sewer",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 278,
+    "t_end": 319,
+    "topic": "Approval of prior minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 319,
+    "t_end": 803,
+    "topic": "Stormwater BMP demonstration at the school: Q&A from school committee",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "high-school",
+     "middle-school"
+    ]
+   },
+   {
+    "t_start": 803,
+    "t_end": 835,
+    "topic": "Adjournment and next meeting",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts were not given; only voice 'I' responses.",
+   "Which school the BMP would be at is unclear (middle/high school) as heard.",
+   "Dollar costs of the stormwater utility were not stated."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Stormwater Task Force agreed to hold its briefing to the select board on the stormwater utility until after the town elections, or until the select board has met once afterward.",
+    "t": 258
+   },
+   {
+    "line": "Most of the meeting went to the school committee's 17 questions about the proposed stormwater demonstration project at the middle/high school; answers will be emailed to Jenny before going to the school.",
+    "t": 616
+   },
+   {
+    "line": "Members noted that school committee members seemed unaware that permit fines could follow if no demonstration project is built; the presenter said he had mentioned it.",
+    "t": 740
+   },
+   {
+    "line": "The task force approved its prior minutes, and changes to the outreach presentation were made, with an appendix to be emailed to the team.",
+    "t": 278
+   },
+   {
+    "line": "No public comment was heard; someone had planned to speak but left no statement.",
+    "t": 44
+   }
+  ],
+  "why_it_matters": [
+   "A stormwater utility, which would be a new charge that could reach tax or fee bills, will not be put before the select board until after the elections, so voters will not see the task force's case before they vote.",
+   "The school's demonstration project is tied to permit requirements, and the minutes record that fines are possible if none is built, so the school committee's decision on it may carry a cost to the town either way."
+  ],
+  "watch_next": [
+   "The select board briefing on the stormwater utility, set for after the town elections or the select board's first meeting after them.",
+   "The emailed Q&A on the school committee's 17 questions, to go to Jenny and then to the school."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T06:26:56Z",
+   "cost_usd": 0.215759
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05162024-6575",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/stormwater-task-force/2024-05-16-minutes-6575.txt",
+   "path": "sources/meetings/stormwater-task-force/2024-05-16-minutes-6575.pdf"
+  },
+  "official_sha256": "2e90ef971d86be9cd526f395a0146999981872bfd5d88f2d433db776a1172fac",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Neither record has a vote, transfer or budget figure, and both agree the Select Board meeting waits until after the elections. The records differ on attendees: ours has an unidentified 'Daniel' and omits the chair, DPW director and the absent Select Board member, so check the recording to see who was actually there.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 0,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Select Board presentation timing",
+    "ours": "Presentation to the select board on the stormwater utility will wait until after the elections, or after the select board has met once post-election.",
+    "official": "but will be scheduled after the town meeting and elections.",
+    "note": "Both say the Select Board meeting waits until after the elections; ours adds a 'met once post-election' alternative and the official adds Town Meeting and CEI, a minor difference in detail.",
+    "t": 258
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Outreach presentation changes and appendix",
+    "ours": "Outreach presentation changes were made and an appendix will be emailed to the team; no review in the meeting.",
+    "official": "",
+    "note": "The official minutes do not mention the outreach presentation changes or the emailed appendix; it is a minor action item, not a vote.",
+    "t": 87
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Q&A on school committee's 17 questions",
+    "ours": "The Q&A on the school committee's 17 questions will be emailed to Jenny before it is sent to the school.",
+    "official": "",
+    "note": "The official minutes record nothing about the school committee's 17 questions or the Q&A routing.",
+    "t": 616
+   },
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote, and neither has transfers or budget figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee John Beale",
+    "ours": "John (member)",
+    "official": "members present: chair tim willsmer, member john beale, dpw director bill bernard, conservation commission representative jenny pewtherer",
+    "note": "John is Member John Beale in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Jenny Pewtherer",
+    "ours": "Jenny (member)",
+    "official": "members present: chair tim willsmer, member john beale, dpw director bill bernard, conservation commission representative jenny pewtherer",
+    "note": "Jenny is Conservation Commission Representative Jenny Pewtherer."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees Tim Willsmer (Chair) and Bill Bernard (DPW Director)",
+    "ours": "",
+    "official": "members present: chair tim willsmer, member john beale, dpw director bill bernard, conservation commission representative jenny pewtherer",
+    "note": "Our minutes list neither the chair nor the DPW director as attendees; a person should check whether they spoke on the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Renee Emkey",
+    "ours": "",
+    "official": "absent members: select board representative renee emkey",
+    "note": "Our minutes record no absences."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Daniel and Nick at CI",
+    "ours": "Daniel (member (took minutes, as addressed)); Nick at CI (consultant (referenced, not present))",
+    "official": "",
+    "note": "Daniel appears as present in ours but not in the official attendee list; he may be a misheard name (e.g. Tim or Bill) or the minute-taker, so a person should check the recording. Nick at CI is a reference, not an attendee, and may correspond to CEI."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-08T06:27:29Z",
+   "cost_usd": 0.22292900000000002
+  }
+ }
+}
