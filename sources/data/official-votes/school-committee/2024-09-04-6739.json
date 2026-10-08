@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-09-04",
  "docid": "6739",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the regular session held on June 26, 2024",
+   "motion": "Approve the minutes of 6/26/24.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "mr. beardmore made a motion to approve minutes on 6/26/24, ms. brzozoski seconds the motion, all approve with mr. lehtinen abstaining."
   },
   {
-   "motion": "Approve the minutes from the regular session held on July 25, 2024",
+   "motion": "Approve the minutes of 7/25/24.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "mr. beardmore made a motion to approve minutes on 7/25/24, ms. brzozoski seconds the motion, all approve with mr. sculimbrene abstaining."
   },
   {
-   "motion": "Accept the Facilities & Grounds report as presented",
+   "motion": "Accept the Facilities & Grounds Report as presented.",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "ms. archambault makes a motion to accept the report as presented, ms. brzozoski seconds the motion all approve"
   },
   {
-   "motion": "Waive the first read of the Student Travel Policy, Chapter 766 Policy, and Facilities Policies",
+   "motion": "Waive the first read of the Student Travel, Chapter 766 and Facilities policies.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "mr. beardmore makes a motion to waive the 1st read of the policies, ms. brzozoski seconds the motion all approve"
   },
   {
-   "motion": "Accept the priority ranking for the FY26 Draft Capital Plan",
+   "motion": "Accept the priority ranking of the FY26 draft capital plan.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Sculimbrene",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "ms. brzozoski makes a motion to accept the priority ranking, mr. sculimbrene seconds the motion all approve"
   },
   {
-   "motion": "Accept the paraprofessional contract with a 4% raise",
+   "motion": "Accept the paraprofessional contract as proposed (1-year agreement, 4% raise).",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "ms. brzozoski makes a motion to accept as proposed, mr. beardmore seconds the motion, roll call vote to include mr. terenzini, all approve."
   },
   {
-   "motion": "Enter executive session and adjourn",
+   "motion": "Enter executive session for negotiation strategy with nonunion personnel, and adjourn immediately following.",
    "moved_by": "Mrs. Brzozski",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed",
@@ -69,6 +69,421 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11376440000000002
+ "note": "Scanned-looking but machine-readable text, with many typos and split words; quotes were copied from the text as extracted. Votes: most motions are recorded as \"all approve\" with no tally, so outcomes are recorded as \"passed\" without a count. The 8:42 motion to enter executive session was rescinded before any vote, so only the 8:46 motion is recorded as a vote; the minutes' wording on the rescission (\"Mr. Sculimbrene seconds the motion all approve\") is ambiguous. The minutes name \"Mrs. Brzozski\" and \"Ms. Arhambault\" in places where other lines say Brzozoski and Archambault. The LEAF presenter is spelled both \"Sibyl\" and \"Sybil\" Kaufman. Several items refer to dates in 2025 (e.g., February 20, 2025 budget presentation) within a September 2024 meeting; these are printed as such. Dr. Burnham, Courtney Fuller and the principals are named but attendance is not stated; Mr. Terenzini appears only in a roll call and his status is unclear. No recorded vote on the policy first read beyond the waiver of the first read, and no vote on the budget or Chair's Report items.",
+ "cost_usd": 0.02251117,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brian lehtinen, chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene, vice chair - present"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "carol archambault, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "not stated",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMHS Principal",
+   "status": "not stated",
+   "quote": "tim santry - lmhs principal"
+  },
+  {
+   "name": "Norman Yvon",
+   "role": "THES Principal",
+   "status": "not stated",
+   "quote": "norman yvon - thes principal"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Primary School Principal",
+   "status": "not stated",
+   "quote": "carla squier, primary school principal"
+  },
+  {
+   "name": "Nadine Lorenzen",
+   "role": "Food Service Director",
+   "status": "not stated",
+   "quote": "nadine lorenzen - food service director"
+  },
+  {
+   "name": "Sibyl Kaufman",
+   "role": "LEAF",
+   "status": "present",
+   "quote": "food service director, sibyl kaufman -leaf"
+  },
+  {
+   "name": "Tom Littlepage",
+   "role": "LEAF presenter",
+   "status": "present",
+   "quote": "tom littlepage and sybil kaufman shared their idea to create leaf"
+  },
+  {
+   "name": "Dr. Gilson",
+   "role": "school district",
+   "status": "present",
+   "quote": "dr. gilson provided the committee with an outline and timeline"
+  },
+  {
+   "name": "Mr. Bernard",
+   "status": "present",
+   "quote": "mr. bernard was there to explain chapter 90 funding"
+  },
+  {
+   "name": "Anna Lockwood",
+   "status": "present",
+   "quote": "anna lockwood 91 main street i started listening when you were finishing up the conversation on capital planning."
+  },
+  {
+   "name": "Mr. Terenzini",
+   "status": "not stated",
+   "quote": "roll call vote to include mr. terenzini, all approve"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members asked to draft any ideas for a plan of record on Turkey Hill and the athletic complex and send them to Mr. Lehtinen.",
+   "quote": "any ideas you have draft them up and send to mr. lehtinen"
+  },
+  {
+   "decision": "Superintendent to send the MSBA logo competition to students who would like to participate.",
+   "quote": "she's going to send it out to the students who'd like to participate"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed for 8/5 to 8/22",
+   "what_was_recorded": "Warrants for the period 8/5 to 8/22 were reported as signed, with no line item transfers.",
+   "figures_as_printed": [
+    "$463,413.80"
+   ],
+   "quote": "8/5 to 8/22 $463,413.80 no line item transfers, warrants have been signed."
+  },
+  {
+   "topic": "FY26 draft capital plan priorities",
+   "what_was_recorded": "Recommended capital items with dollar amounts were listed in priority order and the ranking was accepted; the list includes driveway, playground, hot water tank, generator and safety film items.",
+   "figures_as_printed": [
+    "$30,000",
+    "$30,000",
+    "$20,000",
+    "$70,000",
+    "$38,120"
+   ],
+   "quote": "generator at primary school $70,000"
+  },
+  {
+   "topic": "Paraprofessional contract",
+   "what_was_recorded": "A 1-year paraprofessional agreement, reviewed by the town manager, includes a 4% raise.",
+   "figures_as_printed": [
+    "4%"
+   ],
+   "quote": "the contract includes a 4% raise"
+  },
+  {
+   "topic": "Chapter 90 funding",
+   "what_was_recorded": "Chapter 90 funds were described as $2.4 million, with $1.6 million left after current work is paid off; the sidewalk project will be funded from it.",
+   "figures_as_printed": [
+    "$2.4 million",
+    "$1.6 million"
+   ],
+   "quote": "mr. bernard was there to explain chapter 90 funding, currently they have $2.4 million dollars"
+  },
+  {
+   "topic": "Reserve account for recruiting firm",
+   "what_was_recorded": "The Town Manager selection committee was given $15,000 from the reserve account to fund a recruiting firm.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "we were given $15,000 from the reserve account to fund a recruiting firm"
+  },
+  {
+   "topic": "Funding formula and state aid cap",
+   "what_was_recorded": "Chair discussed funding formula concerns and a 4.5% cap under the student opportunity act that affects towns.",
+   "figures_as_printed": [
+    "4.5%"
+   ],
+   "quote": "the 4.5% cap on the student opportunity act"
+  },
+  {
+   "topic": "Excess Chapter 70 funds letter",
+   "what_was_recorded": "A letter on excess Lunenburg Chapter 70 funds was sent to the select board, finance committee and interim Town Manager on August 14; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "our letter concerning excess lunenburg chapter 70 funds was sent to the select board"
+  },
+  {
+   "topic": "Smart growth reimbursement",
+   "what_was_recorded": "A new state IGR on smart growth reimbursement was noted, with a September 15 submittal deadline; the district had learned it was no longer eligible.",
+   "figures_as_printed": [],
+   "quote": "the state issued a new igr this spring on smart growth reimbursement"
+  },
+  {
+   "topic": "FY26 budget schedule",
+   "what_was_recorded": "The FY 2026 budget public hearing and vote was scheduled for March 27; a preliminary budget presentation schedule was also read out.",
+   "figures_as_printed": [],
+   "quote": "march 27 will be the fy 2026 budget public hearing and vote."
+  },
+  {
+   "topic": "Investments and health insurance",
+   "what_was_recorded": "The finance committee discussed moving investments to high yield and possible changes to a high deductible health plan; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "financial investment advisor was present and a discussion was had on different investments that can be moved to high yield"
+  },
+  {
+   "topic": "LEAF fundraising",
+   "what_was_recorded": "LEAF's goal is to raise money for schools where the budget may not stretch far enough; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the goal will be to raise money to help our schools where the budget may not stretch far enough for"
+  },
+  {
+   "topic": "Town budget task force",
+   "what_was_recorded": "The town budget task force examined town costs and revenue-generating options; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "budget task force looked at costs and expenses of the town and things that can generate revenue"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Anna Lockwood",
+   "topic": "Hand-me-down vehicles and capital planning",
+   "quote": "anna lockwood 91 main street i started listening when you were finishing up the conversation on capital planning."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:30 p.m.",
+   "quote": "call to order by mr. lehtinen at 6:30 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (board response)",
+   "resolution": "no action; board response to past comments",
+   "quote": "mr. sculimbrene responds to some of the past comments regarding more informal setting",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "reported; no action",
+   "quote": "i was able to attend a zoom meeting this summer to meet the new primary school principal.",
+   "tags": [
+    "funding formula",
+    "state aid",
+    "budget schedule",
+    "LEAF"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "approved 6/26/24 and 7/25/24 minutes",
+   "quote": "mr. beardmore made a motion to approve minutes on 6/26/24, ms. brzozoski seconds the motion",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Line Item Transfers & Warrants",
+   "resolution": "no transfers; warrants signed",
+   "quote": "no line item transfers, warrants have been signed.",
+   "tags": [
+    "warrants",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "reported; no action",
+   "quote": "as of now there are no students awaiting bussing and no outstanding issues.",
+   "tags": [
+    "school start",
+    "athletics",
+    "MCAS"
+   ]
+  },
+  {
+   "topic": "Presentation – LEAF",
+   "resolution": "presented; posted online; no vote",
+   "quote": "tom littlepage and sybil kaufman shared their idea to create leaf",
+   "tags": [
+    "LEAF",
+    "foundation",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Back to School Updates",
+   "resolution": "principals reported; posted online",
+   "quote": "principals gave details of back to school happenings, new hires, class sizes etc.",
+   "tags": [
+    "staffing",
+    "class sizes"
+   ]
+  },
+  {
+   "topic": "FY26 Budget Timeline & Priorities",
+   "resolution": "presented; no vote",
+   "quote": "dr. gilson provided the committee with an outline and timeline",
+   "tags": [
+    "budget",
+    "FY26"
+   ]
+  },
+  {
+   "topic": "2024-2025 School Committee Goals",
+   "resolution": "reviewed",
+   "quote": "the committee reviewed the goals from last year.",
+   "tags": [
+    "goals",
+    "budget",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Town Financial Policies",
+   "resolution": "received; still cross-referencing",
+   "quote": "the committee received documents of all town policies",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Facilities & Grounds Report",
+   "resolution": "accepted as presented",
+   "quote": "ms. archambault makes a motion to accept the report as presented",
+   "tags": [
+    "facilities",
+    "staffing",
+    "custodians"
+   ]
+  },
+  {
+   "topic": "First Read Policies",
+   "resolution": "first read waived; approved",
+   "quote": "mr. beardmore makes a motion to waive the 1st read of the policies",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "FY26 Draft Capital Plan",
+   "resolution": "priority ranking accepted",
+   "quote": "ms. brzozoski makes a motion to accept the priority ranking, mr. sculimbrene seconds the motion all approve",
+   "tags": [
+    "capital plan",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Paraprofessional Contract Ratification",
+   "resolution": "accepted as proposed",
+   "quote": "ms. brzozoski makes a motion to accept as proposed, mr. beardmore seconds the motion",
+   "tags": [
+    "contract",
+    "paraprofessionals"
+   ]
+  },
+  {
+   "topic": "CEP Update",
+   "resolution": "reported; Turkey Hill not eligible",
+   "quote": "unfortunately turkey hill was not eligible.",
+   "tags": [
+    "CEP",
+    "Turkey Hill"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported; no action",
+   "quote": "the athletic advisory met and approved fundraisers",
+   "tags": [
+    "athletics",
+    "capital planning",
+    "finance committee",
+    "health insurance",
+    "chapter 90",
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Public Comment (Anna Lockwood)",
+   "resolution": "heard; no action",
+   "quote": "anna lockwood 91 main street i started listening when you were finishing up the conversation on capital planning.",
+   "tags": [
+    "public comment",
+    "vehicles"
+   ]
+  },
+  {
+   "topic": "Topics for Future Discussion",
+   "resolution": "cell phone policy listed for future",
+   "quote": "13. topics for future discussion",
+   "tags": [
+    "cell phone policy"
+   ]
+  },
+  {
+   "topic": "Executive Session and Adjournment",
+   "resolution": "entered executive session and adjourned",
+   "quote": "mrs. brzozski makes a motion at 8:46 to enter executive session and adjourn following",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "FY26 budget",
+  "capital plan",
+  "paraprofessional contract",
+  "LEAF foundation",
+  "chapter 70",
+  "chapter 90",
+  "state aid",
+  "funding formula",
+  "facilities",
+  "policies",
+  "health insurance",
+  "public comment",
+  "executive session"
+ ],
+ "dropped_unquoted_by_field": {}
 }

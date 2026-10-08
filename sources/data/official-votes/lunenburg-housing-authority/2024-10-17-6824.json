@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2024-10-17",
  "docid": "6824",
@@ -12,47 +12,226 @@
  },
  "votes": [
   {
-   "motion": "Approve the Regular minutes of September 19, 2024",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the Regular minutes of September 19, 2024.",
    "moved_by": "Vice Chair",
    "seconded_by": "Deborah A.H. Christen",
-   "quote": "vice chair made a motion to approve the minutes; board member deborah a.h. christen seconded, with all in favor."
-  },
-  {
-   "motion": "Approve the Special Annual Plan minutes of September 19, 2024",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "Vice Chair",
-   "seconded_by": "Deborah A.H. Christen",
-   "quote": "vice chair made a motion to approve the minutes; board member deborah a.h. christen seconded, with all in favor."
+   "quote": "with no discussion, vice chair made a motion to approve the minutes; board member deborah a.h. christen seconded, with all in favor."
   },
   {
-   "motion": "Approve September 2024 financials as presented",
+   "motion": "Approve the Special Annual Plan minutes of September 19, 2024.",
+   "moved_by": "Vice Chair",
+   "seconded_by": "Deborah A.H. Christen",
    "outcome": "passed",
-   "procedural": false,
+   "procedural": true,
+   "quote": "with no discussion, vice chair made a motion to approve the minutes; board member deborah a.h. christen seconded, with all in favor."
+  },
+  {
+   "motion": "Approve September 2024 financials as presented.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Vice Chair",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "board member deborah a.h. christen made a motion to approve september 202 4 , financials as presented; vice chair seconded, with all in favor."
   },
   {
-   "motion": "Approve Resolution 2024-11 Affirmative Action Plan",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Approve Resolution 2024-11, the Affirmative Action Plan.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Vice Chair",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "motion made by board member deborah a.h. christen to approve the affirmative action plan ; vice chair seconded the motion, with all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Adjourn the meeting at 2:36 p.m.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Vice Chair",
-   "quote": "board member deborah a.h. christen made a motion to adjourn the meeting at 2:36 p.m. vice chair seconded and with all in favor the meeting was adjourned."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "board member deborah a.h. christen made a motion to adjourn the meeting at 2:36 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes clearly recorded with outcomes stated as \"with all in favor\" (passed). Vice Chair refers to Linda McDonald per the meeting header.",
- "cost_usd": 0.09343040000000001
+ "note": "Text is extracted with OCR-style spacing (for example \"202 4\", \"p .m .\"); quotes are collapsed to single spaces and otherwise verbatim. No scan problem; all text readable. Votes are recorded as \"all in favor\" with no count printed, so outcome is \"passed\". The mover of the two minutes approvals is printed only as \"Vice Chair\" and is not named. The minutes say the prior regular and special annual plan minutes are of September 19, 2024, but the running page header reads \"September 17, 2024\"; this is recorded as printed and not resolved. No public comment section is recorded.",
+ "cost_usd": 0.01648907,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dale Proulx",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair dale proulx asked for a roll call of members present"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "dale proulx-present, linda mcdonald-present , and deborah a.h. christen-present ."
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "dale proulx-present, linda mcdonald-present , and deborah a.h. christen-present ."
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "absent",
+   "quote": "wayne caron, tenant board member"
+  },
+  {
+   "name": "Nicole Waters",
+   "role": "Treasurer",
+   "status": "absent",
+   "quote": "nicole waters, treasurer"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Jade Tavares",
+   "role": "Administrative Assistance/Special Projects",
+   "status": "present",
+   "quote": "jade tavares, administrative assistance/special projects"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Site improvements, 667-1 (FISH#162048)",
+   "what_was_recorded": "A site improvements project for various improvements that may be needed, stated in a dollar amount.",
+   "figures_as_printed": [
+    "$9,881"
+   ],
+   "quote": "this is a project for various improvements that may be needed in the amount of $9,881."
+  },
+  {
+   "topic": "Mail/package delivery receptacles, 667-1 (FISH#162046)",
+   "what_was_recorded": "The USPS Lunenburg Postmaster is providing new mailboxes at no cost to the project.",
+   "figures_as_printed": [],
+   "quote": "the usps lunenburg postmaster is providing new mailboxes at no cost"
+  },
+  {
+   "topic": "Generator project, 667-1 (FISH#162040)",
+   "what_was_recorded": "The project was reopened after the Authority was refunded; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "we were recently refunded and can now move forward again with this project."
+  },
+  {
+   "topic": "September 2024 financial report",
+   "what_was_recorded": "The September 2024 financials were reviewed before the board voted to approve them; no dollar figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "the financials of september 2024 were reviewed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, roll call and quorum",
+   "resolution": "quorum declared; meeting opened 2:01 p.m.",
+   "quote": "the chair declared a quorum present and opened",
+   "tags": [
+    "quorum",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes (Regular and Special Annual Plan, September 19, 2024)",
+   "resolution": "approved",
+   "quote": "with no discussion, vice chair made a motion to approve the minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report: Warren Housing Authority management agreement and maintenance coverage",
+   "resolution": "reported, no action recorded",
+   "quote": "executive director explained the management agreement with warren housing authority",
+   "tags": [
+    "management agreement",
+    "Warren Housing Authority",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Financial report, September 2024",
+   "resolution": "approved",
+   "quote": "the financials of september 2024 were reviewed.",
+   "tags": [
+    "financials",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Administration: modernization and work order report; state-aided housing report",
+   "resolution": "reported, no action recorded",
+   "quote": "the project was reopened. we were recently refunded and can now move forward again",
+   "tags": [
+    "modernization",
+    "work orders",
+    "occupancy",
+    "waiting list"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "unfinished business - none",
+   "tags": [
+    "unfinished business"
+   ]
+  },
+  {
+   "topic": "Resolution 2024-11, Affirmative Action Plan",
+   "resolution": "approved",
+   "quote": "motion made by board member deborah a.h. christen to approve the affirmative action plan",
+   "tags": [
+    "affirmative action",
+    "resolution"
+   ]
+  },
+  {
+   "topic": "Other correspondence (EOHLC PHN 2024-16 and PHN 2024-17)",
+   "resolution": "listed, no action recorded",
+   "quote": "eohlc phn 2024-17 state units federalization notice of funding availability",
+   "tags": [
+    "EOHLC",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:36 p.m.",
+   "quote": "there being no further business, board member deborah a.h. christen made a motion to adjourn",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "Lunenburg Housing Authority",
+  "minutes approval",
+  "financial report",
+  "modernization",
+  "work orders",
+  "affirmative action plan",
+  "waiting list and occupancy",
+  "Warren Housing Authority",
+  "EOHLC",
+  "Massachusetts public housing"
+ ],
+ "dropped_unquoted_by_field": {}
 }

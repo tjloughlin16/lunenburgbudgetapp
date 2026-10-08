@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-09-09",
  "docid": "6753",
@@ -12,47 +12,322 @@
  },
  "votes": [
   {
-   "motion": "Ratify the appointment of Christopher Reilly as Land Use Director",
+   "motion": "Ratify the appointment of Christopher Reilly as Land Use Director, as presented by the Town Manager.",
    "moved_by": "A. Reid",
    "seconded_by": "M. Allison",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "a. reid moved to ratify the appointment of christopher reilly as land use director, as -presented by the town manager. m. allison seconded. voice vote, passed unanimously."
-  },
-  {
-   "motion": "Submit the Warrant Article on Accessory Dwelling Units to the Select Board for inclusion in the Town Warrant",
-   "moved_by": "M. Allison",
-   "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "m. allison moved to submit the warrant article as -presented to the select board for inclusion in the town warrant. a. reid seconded. voice vote, passed unanimously."
-  },
-  {
-   "motion": "Grant a 1-year extension to the Site Plan Approval and Stormwater Management Permit of the 260 Falulah Rd project",
-   "moved_by": "M. Allison",
-   "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. allison moved to grant a 1 -year extension to the site plan approval and stormwater management permit of the 260 falulah rd project. a. reid seconded. voice vote, passed unanimously."
+   "quote": "a. reid moved to ratify the appointment of christopher reilly as land use director, as -presented by the town manager. m. allison seconded."
   },
   {
-   "motion": "Approve the minutes from 2024-07-22, 2024-08-12, and 2024-08-26 meetings",
+   "motion": "Submit the ADU Warrant Article as presented to the Select Board for inclusion in the Town Warrant.",
    "moved_by": "M. Allison",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "m. allison moved to approve the minutes for the 2024 -07-22 public hearing (240 summer st), 2024-08-12 meeting, and 2024 -08-26 meeting. a. reid seconded. voice vote, passed unanimously."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "m. allison moved to submit the warrant article as -presented to the select board for inclusion in the town warrant. a. reid seconded."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Grant a 1-year extension to the Site Plan Approval and Stormwater Management Permit of the 260 Falulah Rd project.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "m. allison moved to grant a 1 -year extension to the site plan approval and stormwater management permit of the 260 falulah rd project. a. reid seconded."
+  },
+  {
+   "motion": "Approve the minutes of the 2024-07-22 Public Hearing (240 Summer St), the 2024-08-12 Meeting, and the 2024-08-26 Meeting.",
+   "moved_by": "M. Allison",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "m. allison moved to approve the minutes for the 2024 -07-22 public hearing (240 summer st), 2024-08-12 meeting, and 2024 -08-26 meeting. a. reid seconded."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Reid",
    "seconded_by": "M. Allison",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a. reid moved to adjourn. m. allison seconded. voice vote, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes are recorded as voice votes passing unanimously. The minutes are clearly legible with no scan issues.",
- "cost_usd": 0.0755264
+ "note": "Text extraction from a digital PDF; no scan. Votes are recorded as voice votes \"passed unanimously\" with no individual tallies, so outcomes are recorded as \"passed\". Superscript footnote markers (i-v) are inline in the text and were excluded from quotes. The 3 Lancaster Ave endorsement is described as planned (\"opting to endorse at the end of the meeting\") with no motion or result recorded. Some public comment has no stated address or role. Christopher Reilly's attendance is not stated; he is named only as the subject of the ratification.",
+ "cost_usd": 0.01679517,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "absent: timothy willsmer (vice-chair)"
+  },
+  {
+   "name": "Bernie Cahill",
+   "role": "from the MRPC, present to provide staffing assistance",
+   "status": "present",
+   "quote": "bernie cahill from the mrpc, who was present to provide staffing assistance before"
+  },
+  {
+   "name": "Christopher Reilly",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "christopher reilly- land use director"
+  },
+  {
+   "name": "Logan O’Connell",
+   "role": "Administrative Asst (minutes taker)",
+   "status": "present",
+   "quote": "l. o'connell explained: interim land use director richard harris"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "Chair of the Economic Development Committee",
+   "status": "present",
+   "quote": "cathy clark (chair of the economic development committee) - new business being stifled by the length of time"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "public comment",
+   "status": "present",
+   "quote": "ana lockwood - example of a new business being required to submit extensive plans and permits"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "role": "public comment",
+   "status": "present",
+   "quote": "this is a common issue with existing space that was approved for a similar purpose in the past."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed the 3 Lancaster Ave special permit for a sign, found no issues, and opted to endorse it at the end of the meeting. No endorsement motion is recorded.",
+   "quote": "found no issues, opting to endorse at the end of the meeting."
+  },
+  {
+   "decision": "Board opted not to reach out to Fitchburg for more context on 260 Falulah Rd and instead granted a 1-year extension.",
+   "quote": "the board briefly discussed reaching out to fitchburg to get more context on the project but opted to grant"
+  },
+  {
+   "decision": "M. Brenner will reach out to confirm whether AgCom is expecting a Planning Board liaison.",
+   "quote": "m. brenner will reach out to confirm whether agcom is expecting a liaison."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal Building Design Committee ARPA funds",
+   "what_was_recorded": "A member noted the approval of ARPA funds for the Municipal Building Design Committee despite the group not having met.",
+   "figures_as_printed": [
+    "$225,000"
+   ],
+   "quote": "noted the approval of $225,000 in arpa funds for the group despite not having met"
+  },
+  {
+   "topic": "Town spending on studies over 12 years",
+   "what_was_recorded": "A member opined that the Town's spending on studies in the last 12 years was wasteful, citing an approximate total.",
+   "figures_as_printed": [
+    "$1,000,000"
+   ],
+   "quote": "town's spending on studies in the last 12 years (approximately $1,000,000) was wasteful."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Permitting delays and parking requirements",
+   "speaker": "Cathy Clark",
+   "stated_role": "Chair of the Economic Development Committee",
+   "quote": "new business being stifled by the length of time associated with the current permitting processes, noted issues with parking space requirements"
+  },
+  {
+   "topic": "Duplicate plans for a new business in an existing facility",
+   "speaker": "Ana Lockwood",
+   "stated_role": "",
+   "quote": "example of a new business being required to submit extensive plans and permits, despite using an existing facility with no change in floor plans"
+  },
+  {
+   "topic": "Repeat approvals for existing space",
+   "speaker": "Jeanne Dupre",
+   "stated_role": "",
+   "quote": "this is a common issue with existing space that was approved for a similar purpose in the past."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "the meeting was called to order at 6:01 p.m. matthew allison led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment: Economic Development Committee",
+   "resolution": "no action",
+   "quote": "cathy clark (chair of the economic development committee) - new business being stifled by the length of time",
+   "tags": [
+    "permitting",
+    "economic development",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "3 Lancaster Ave special permit for sign",
+   "resolution": "reviewed; to be endorsed at end of meeting, no motion recorded",
+   "quote": "found no issues, opting to endorse at the end of the meeting.",
+   "tags": [
+    "special permit",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Ratify new Land Use Director",
+   "resolution": "ratified",
+   "quote": "a. reid moved to ratify the appointment of christopher reilly as land use director",
+   "tags": [
+    "land use director",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Articles of Warrant: ADU language clarification",
+   "resolution": "submitted to Select Board for Town Warrant",
+   "quote": "articles of warrant - adu language clarification (250 -4.1g, use table)",
+   "tags": [
+    "accessory dwelling units",
+    "warrant articles",
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "260 Falulah Rd extension request",
+   "resolution": "1-year extension granted",
+   "quote": "260 falulah rd - 2 year extension (site plan approval, stormwater management permit)",
+   "tags": [
+    "site plan",
+    "stormwater",
+    "extension"
+   ]
+  },
+  {
+   "topic": "MBTA Communities Act",
+   "resolution": "no action; discussed timeframes and district options",
+   "quote": "m. brenner briefly discussed timeframes and upcoming dates related to the act.",
+   "tags": [
+    "MBTA Communities Act",
+    "zoning",
+    "multifamily"
+   ]
+  },
+  {
+   "topic": "Water Supply Protection District",
+   "resolution": "no action",
+   "quote": "the board did not have any new developments to discuss.",
+   "tags": [
+    "water supply"
+   ]
+  },
+  {
+   "topic": "Chair and Land Use Director report",
+   "resolution": "no action",
+   "quote": "no new developments from the chair, land use director's first day still pending.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Abutting community notices",
+   "resolution": "no action",
+   "quote": "no concerns from the board.",
+   "tags": [
+    "abutting communities"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; AgCom liaison question to be confirmed",
+   "quote": "m. brenner will reach out to confirm whether agcom is expecting a liaison.",
+   "tags": [
+    "committees",
+    "master plan",
+    "open space",
+    "municipal building",
+    "ARPA",
+    "town manager search"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved three sets of minutes",
+   "quote": "m. allison moved to approve the minutes for the 2024 -07-22 public hearing (240 summer st), 2024-08-12 meeting, and 2024 -08-26 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "upcoming meetings are 09-23 and 10-28 at 6:00 p.m.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment and board comment (closing)",
+   "resolution": "no action",
+   "quote": "public comment none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:34 P.M.",
+   "quote": "meeting adjourned 7:34 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "zoning",
+  "accessory dwelling units",
+  "MBTA Communities Act",
+  "site plan extension",
+  "stormwater",
+  "land use director",
+  "warrant articles",
+  "minutes approval",
+  "public comment",
+  "economic development",
+  "ARPA funds",
+  "permitting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

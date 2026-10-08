@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2024-10-08",
  "docid": "6801",
@@ -10,8 +10,186 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10082024-6801",
   "doc_url": "/docs/meetings/historical-commission/2024-10-08-minutes-6801.txt"
  },
- "votes": [],
- "dropped_unquoted": 5,
- "note": "Text is a readable transcription with some OCR spacing artifacts. Five votes recorded: four with outcomes explicitly stated (three passed, one passed unanimously), and one motion made with no recorded outcome before adjournment.",
- "cost_usd": 0.09329840000000002
+ "votes": [
+  {
+   "motion": "Approve the minutes of the June meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "theminutesfor thejunemeetingwerereviewedandunanimouslypassed."
+  },
+  {
+   "motion": "Combine the Historical Commission and the APDC into one commission (minutes note both commissions must vote in favor for it to be approved).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "withnopubliccomment, a motionwasthenmadeinfavor of combiningboth, andall membersof thehistorical commisionvotedinfavor."
+  },
+  {
+   "motion": "Re-elect Richard McGrath to continue as Chair.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "richardmcgrathwasnominatedtocontinuehisroleaschair after hismanyyearsof exemplaryperformanceleadingthecommission. thismotionwaspassedunanimously."
+  },
+  {
+   "motion": "Accept Brian Knight's proposal for the town survey.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "soamotionwasmadeandpassedtoaccept brianknight'sproposal."
+  },
+  {
+   "motion": "Bypass the demolition delay for 827 Lancaster Ave so the applicant can continue (barn/garage addition).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "amotionwasmadetobypassthisdemodelayandallowthemtocontinue."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "The minutes text is run together with almost no spaces between words, so every quote reproduces it as printed. No motion names a mover or seconder, and no vote tally is printed beyond \"unanimously\" or \"all members voted in favor\". The 827 Lancaster Ave motion records no result. No motion to adjourn is recorded, so the 8:03PM adjournment is not counted as a vote. Sanderson and Boussom appear by surname only. The APDC chair and the Town Council contact are not named. No dollar figures appear in the text.",
+ "cost_usd": 0.014822670000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "member; nominated to continue as Chair",
+   "status": "present",
+   "quote": "theentirecommissionwaspresent, whichincludedmembersmcgrath, sandersonandboussom."
+  },
+  {
+   "name": "Sanderson",
+   "role": "member (first name not printed)",
+   "status": "present",
+   "quote": "theentirecommissionwaspresent, whichincludedmembersmcgrath, sandersonandboussom."
+  },
+  {
+   "name": "Boussom",
+   "role": "member (first name not printed)",
+   "status": "present",
+   "quote": "theentirecommissionwaspresent, whichincludedmembersmcgrath, sandersonandboussom."
+  },
+  {
+   "name": "Brian Knight",
+   "role": "bidder for the town survey (research firm out of Manchester, Vermont)",
+   "status": "not stated",
+   "quote": "abidwasreceivedfor thetownsurveyfrombrianknight researchout of manchester, vermont."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The demolition delay violation for 12 Sunset Lane is dismissed, as it is past due for the commission to take further action (no quorum the previous month).",
+   "quote": "it'stobenotedthat thedemodelayviolationfor 12sunset lanehasbeendismissedasit ispast duefor ustotakeanyfurther action."
+  },
+  {
+   "decision": "The commission will inform the town manager of its decision on the town survey proposal.",
+   "quote": "next will betoinformthetownmanager of our decision."
+  },
+  {
+   "decision": "The commission will contact the DPW about digging a trench for setting the stone wall at the Goodrich Cemetery project, which is projected to begin in November.",
+   "quote": "thegoodrichcemeteryproject isprojectedtobegininnovember, wewill just needtocontactthedpwinregardstodiggingatrenchfor settingthestonewall."
+  },
+  {
+   "decision": "If possible, the commission will contact the historical society to see whether it could write a small paragraph on the history of the graveyard for a historical narrative plaque.",
+   "quote": "andif possible, wewill contact thehistorical societyandseeif theycouldwriteupasmallparagraphabout thehistoryof thegraveyard."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town survey proposal (Brian Knight)",
+   "what_was_recorded": "A detailed proposal outlining the project's phases and budget was reviewed; the minutes print no dollar figure.",
+   "quote": "adetailedproposal outliningtheproject'sphasesandbudget, aswell assupplementarymaterial showcasingother similar projectswasreviewedbythecommission.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of June minutes",
+   "resolution": "approved",
+   "quote": "theminutesfor thejunemeetingwerereviewedandunanimouslypassed.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "APDC correspondence on combining commissions",
+   "resolution": "voted in favor of combining; Town Council says the APDC must also vote in favor",
+   "quote": "newcorrespondencefromthechair of theapdcwasreceivedtodiscussthepossibilityofcombiningthehistorical commissionandtheapdcintoonecommission.",
+   "tags": [
+    "APDC",
+    "governance",
+    "merger"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "Richard McGrath re-nominated and passed unanimously as Chair",
+   "quote": "richardmcgrathwasnominatedtocontinuehisroleaschair after hismanyyearsof exemplaryperformanceleadingthecommission.",
+   "tags": [
+    "election",
+    "chair"
+   ]
+  },
+  {
+   "topic": "Town survey bid",
+   "resolution": "approved: Brian Knight proposal accepted",
+   "quote": "abidwasreceivedfor thetownsurveyfrombrianknight researchout of manchester, vermont.",
+   "tags": [
+    "town survey",
+    "contract",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Goodrich Cemetery project",
+   "resolution": "no vote; DPW contact and historical plaque idea noted",
+   "quote": "thegoodrichcemeteryproject isprojectedtobegininnovember, wewill just needtocontactthedpwinregardstodiggingatrenchfor settingthestonewall.",
+   "tags": [
+    "cemetery",
+    "DPW",
+    "historical plaque"
+   ]
+  },
+  {
+   "topic": "12 Sunset Lane demolition delay violation",
+   "resolution": "dismissed",
+   "quote": "it'stobenotedthat thedemodelayviolationfor 12sunset lanehasbeendismissedasit ispast duefor ustotakeanyfurther action.",
+   "tags": [
+    "demolition delay",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "827 Lancaster Ave demolition request",
+   "resolution": "motion to bypass demolition delay made; no result recorded",
+   "quote": "anewdemolitionrequest wasreceivedfor 827lancaster ave, however thisisjust for thebarn/garageaddition",
+   "tags": [
+    "demolition delay",
+    "827 Lancaster Ave",
+    "barn",
+    "garage"
+   ]
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "APDC merger",
+  "officer election",
+  "town survey",
+  "Goodrich Cemetery",
+  "demolition delay",
+  "827 Lancaster Ave",
+  "12 Sunset Lane"
+ ],
+ "dropped_unquoted_by_field": {}
 }

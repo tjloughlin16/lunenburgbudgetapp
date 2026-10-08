@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "town-manager-screening-committee",
  "meeting_date": "2024-09-11",
  "docid": "6746",
@@ -12,23 +12,103 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the August 19, 2024 meeting",
+   "motion": "Approve the minutes of the August 19, 2024 meeting without changes.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "the minutes from the august 19, 2024 meeting were reviewed and approved without changes."
-  },
-  {
-   "motion": "Schedule a meeting on October 7 to review the position statement and schedule three executive session meetings thereafter (one to review applicants and create tiers, and two to conduct interviews)",
-   "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the committee agreed on october 7 to meet and review the position statement. three meetings will be scheduled thereafter. one to review all applicants and create tiers, and two meetings to conduct interviews. these three meetings will be in executive session."
+   "quote": "the minutes from the august 19, 2024 meeting were reviewed and approved without changes.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR-extracted; no mover/seconder names recorded for either vote. Adjournment stated but not recorded as a vote.",
- "cost_usd": 0.0778234
+ "note": "Single-page OCR (macOS Vision) of the minutes; quotes are taken from the OCR text and may carry recognition errors. No roll call, no member list beyond Murphy, and no mover, seconder or tally for the minutes approval, so its outcome is recorded only as the minutes state it. The adjournment at 7:24pm is printed without a motion or vote and is not recorded as a vote. No dollar figures appear in the text. No public comment is recorded.",
+ "cost_usd": 0.012279970000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Petrin",
+   "role": "Guest, representing Community Paradigm Assoc. LLC",
+   "status": "present",
+   "quote": "guest: john petrin, community paradigm assoc. llc"
+  },
+  {
+   "name": "Murphy",
+   "role": "not stated (called the meeting to order; no first name or title printed)",
+   "status": "present",
+   "quote": "murphy called the meeting to order"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to meet on October 7 to review the position statement.",
+   "quote": "the committee agreed on october 7 to meet and review the position statement."
+  },
+  {
+   "decision": "Three further meetings will be held in executive session: one to review all applicants and create tiers, and two to conduct interviews.",
+   "quote": "these three meetings will be in executive session."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Community Paradigm contract and town manager candidate search",
+   "resolution": "informational; Murphy confirmed the award, no action recorded",
+   "quote": "murphy confirmed that community paradigm was awarded the contract to work with this committee to develop a list of candidates for our next town manager.",
+   "tags": [
+    "town manager search",
+    "Community Paradigm",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Community Paradigm search process outline",
+   "resolution": "presented by Petrin; no action recorded",
+   "quote": "paradigm will meet with the select board, department heads and have open meeting times for others to give input to develop a position statement for advertising",
+   "tags": [
+    "town manager search",
+    "position statement",
+    "public input"
+   ]
+  },
+  {
+   "topic": "Approval of August 19, 2024 minutes",
+   "resolution": "approved without changes",
+   "quote": "the minutes from the august 19, 2024 meeting were reviewed and approved without changes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Position statement, advertising and application timeline",
+   "resolution": "scheduled; no vote recorded",
+   "quote": "once the position statement is approved the ad will be placed to run for 4 weeks, with a deadline for applications in early november",
+   "tags": [
+    "position statement",
+    "advertising",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "October review meeting and executive session schedule",
+   "resolution": "agreed to meet October 7; three executive session meetings to follow",
+   "quote": "the committee agreed on october 7 to meet and review the position statement.",
+   "tags": [
+    "executive session",
+    "interviews",
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "town manager search",
+  "Community Paradigm",
+  "position statement",
+  "executive session",
+  "interviews",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2024-09-19",
  "docid": "6755",
@@ -12,39 +12,240 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of August 15, 2024",
-   "moved_by": "Deborah A.H. Christen",
-   "seconded_by": "",
+   "motion": "Approve the minutes of August 15, 2024, with all in favor (no count printed).",
+   "moved_by": "Deborah A.H, Christen",
+   "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": true,
-   "quote": "with no discussion, board member deborah a.h, christen made a motion to approve the minutes; tenant board member seconded , with all in favor."
+   "quote": "board member deborah a.h, christen made a motion to approve the minutes; tenant board member seconded , with all in favor",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "approve the August 2024 financials as presented",
-   "moved_by": "",
-   "seconded_by": "Deborah A.H. Christen",
+   "motion": "Approve the August 2024 financials as presented, with all in favor (no count printed).",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Deborah A.H, Christen",
    "outcome": "passed",
    "procedural": false,
    "quote": "tenant board member made a motion to approve the august, 202 4 financi als as presented; board member deborah a.h, christen seconded, with all in favor."
   },
   {
-   "motion": "approve the Signing Certificate of Substantial Completion Federal Pacific Panel and Intercom Replacement Project 162041",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve Resolution 2024-10 authorizing signing the Certificate of Substantial Completion for the Federal Pacific Panel and Intercom Replacement Project 162041, with all in favor (no count printed).",
+   "moved_by": "Treasurer",
+   "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by treasurer to approve the signing certificate of substantial completion federal pacific panel and intercom replacement project 162041 ; tenant board member seconded the motion"
+   "quote": "motion made by treasurer to approve the signing certificate of substantial completion federal pacific panel and intercom replacement project 162041"
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Deborah A.H. Christen",
-   "seconded_by": "",
+   "motion": "Adjourn the meeting at 2:22 p.m., with all in favor (no count printed).",
+   "moved_by": "Deborah A.H, Christen",
+   "seconded_by": "Vice Chair",
    "outcome": "passed",
    "procedural": true,
-   "quote": "board member deborah a.h, christe n made a motion to adjourn the meeting 2:22 p.m. vice chair seconded and with all in favor the meeting was adjourned."
+   "quote": "vice chair seconded and with all in favor the meeting was adjourned."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR: names sometimes appear with comma after middle initial (\"A.H,\") in motion text vs. period in member roster; one instance has OCR spacing error (\"Christe n\"). Titles used in some motions (Tenant Board Member, Treasurer, Vice Chair) without specific names printed in those sentences.",
- "cost_usd": 0.12182439999999999
+ "note": "Text is an extraction with irregular spacing; quotes are collapsed to single spaces and otherwise verbatim. Votes are recorded as \"all in favor\" with no count printed, so outcome is \"passed\" rather than a count. Movers and seconders are printed as \"Tenant Board Member\", \"Treasurer\" and \"Vice Chair\" where no name appears on the line; the minutes print \"Christe n\" in one place, recorded here as \"Christen\". The Chair was absent and the Vice Chair presided. No public comment section appears in the text. The minutes name no dollar amounts beyond the three project costs and say no transfers were made.",
+ "cost_usd": 0.01609967,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair (presided)",
+   "status": "present",
+   "quote": "vice chair linda mcdonald asked for a roll call of members present"
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "wayne caron-present, nicole waters-present"
+  },
+  {
+   "name": "Nicole Waters",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "wayne caron-present, nicole waters-present"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "nicole waters-present , and deborah a.h. christen-present"
+  },
+  {
+   "name": "Dale Proulx",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "members absent: linda mcdonald, vice chair dale proulx, chair"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie , administrative assistance/special projects jade tavares , and assistant housing manager satellite locations jessica davies"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie , administrative assistance/special projects jade tavares"
+  },
+  {
+   "name": "Jade Tavares",
+   "role": "Administrative Assistance/Special Projects",
+   "status": "present",
+   "quote": "administrative assistance/special projects jade tavares , and assistant housing manager satellite locations jessica davies"
+  },
+  {
+   "name": "Jessica Davies",
+   "role": "Assistant Housing Manager Satellite Locations",
+   "status": "present",
+   "quote": "assistant housing manager satellite locations jessica davies"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Mail/Package Delivery Receptacles (FISH#162046)",
+   "what_was_recorded": "A new project to replace tenant mailboxes and add package receptacles, costed at $66,140; the mailbox type is being selected with USPS approval.",
+   "figures_as_printed": [
+    "$66,140"
+   ],
+   "quote": "this is a new project to replace tenant mailboxes and add package receptacles in the amount of $66,140."
+  },
+  {
+   "topic": "Site Improvements (FISH#162048)",
+   "what_was_recorded": "A new project for various site improvements that may be needed, in the amount of $9,881.",
+   "figures_as_printed": [
+    "$9,881"
+   ],
+   "quote": "this is a new project for various improvements that may be needed in the amount of $9,881."
+  },
+  {
+   "topic": "Window Replacement Phase 1 (FISH#162049)",
+   "what_was_recorded": "A new project to replace hallway and apartment windows, to be done in multiple phases due to funding constraints; phase one is costed at $62,006 and HLC must assign a designer.",
+   "figures_as_printed": [
+    "$62,006"
+   ],
+   "quote": "the first phase is in the amount of $62,006."
+  },
+  {
+   "topic": "Generator (FISH#162040)",
+   "what_was_recorded": "The project was reopened and needs a new CFA to fund it; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the project was reopened. we need the new cfa to fund it."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "quorum declared; meeting opened 2:02 p.m.",
+   "quote": "the vice chair declared a quorum present and opened the meeting",
+   "tags": [
+    "quorum",
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Approval of August 15, 2024 minutes",
+   "resolution": "approved, all in favor",
+   "quote": "board member deborah a.h, christen made a motion to approve the minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action",
+   "quote": "executive director discussed the massnahro conference at the sea crest.",
+   "tags": [
+    "conference",
+    "maintenance",
+    "winter preparation"
+   ]
+  },
+  {
+   "topic": "Financial report for August 2024",
+   "resolution": "approved, all in favor",
+   "quote": "the financials of august, 2024 were reviewed.",
+   "tags": [
+    "financials"
+   ]
+  },
+  {
+   "topic": "Modernization and work order report",
+   "resolution": "no action; project status and new capital projects reported",
+   "quote": "the project was reopened. we need the new cfa to fund it.",
+   "tags": [
+    "modernization",
+    "capital projects",
+    "work orders",
+    "generator",
+    "intercom",
+    "mailboxes",
+    "site improvements",
+    "windows"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "no action; applications, waiting list and occupancy reported",
+   "quote": "we received 12 standard applications",
+   "tags": [
+    "occupancy",
+    "waiting list",
+    "applications"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "5. unfinished business - none",
+   "tags": []
+  },
+  {
+   "topic": "New business: Resolution 2024-10",
+   "resolution": "approved, all in favor",
+   "quote": "authorizing signing certificate of substantial completion federal pacific panel and intercom replacement project 162041",
+   "tags": [
+    "resolution",
+    "substantial completion",
+    "federal pacific panel"
+   ]
+  },
+  {
+   "topic": "Other correspondence",
+   "resolution": "received; no action recorded",
+   "quote": "eohlc phn 2024-15 689/167 contract transition to docusign",
+   "tags": [
+    "EOHLC",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:22 p.m., all in favor",
+   "quote": "there being no further business",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public housing",
+  "housing authority",
+  "capital projects",
+  "modernization",
+  "work orders",
+  "occupancy",
+  "minutes approval",
+  "financial report",
+  "EOHLC correspondence"
+ ],
+ "dropped_unquoted_by_field": {}
 }

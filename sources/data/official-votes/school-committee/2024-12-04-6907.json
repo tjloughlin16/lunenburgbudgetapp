@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-12-04",
  "docid": "6907",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 10/16/24 and 11/6/24",
+   "motion": "Approve the regular session minutes of 10/16/24 and 11/6/24.",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "ms. archambault makes a motion to approve minutes for 10/16/24 and 11/6/24, ms. brzozoski seconds the motion all approve"
   },
   {
-   "motion": "Accept donation of $401.04 from Hannaford Helps to be deposited into the gift account at Turkey Hill",
+   "motion": "Accept a $401.04 donation from Hannaford Helps to the gift account at Turkey Hill.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed",
@@ -28,39 +28,39 @@
    "quote": "ms. brzozoski makes a motion to accept the donation, ms. archambault seconds the motion, all approve"
   },
   {
-   "motion": "Approve line item transfers of $24.50 from High School Office Supplies to High School Math Dues and Fees, $243 from High School Dues and Fees to High School Music Supplies, $1822.80 from Turkey Hill Elementary Workbook line to Contracted Services, and $210 from Primary School workbook line to contracted services",
+   "motion": "Approve the line item transfers listed under item 7c.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. brzozoski makes a motion to approve the line item transfers, ms. archambault seconds the motion, all approve."
+   "quote": "ms. brzozoski makes a motion to approve the line item transfers, ms. archambault seconds the motion, all approve"
   },
   {
-   "motion": "Accept the FY25 quarterly budget, personnel report, facility and grounds report, and the Keystone update",
+   "motion": "Accept the FY25 quarterly budget, personnel report, facility and grounds report, and the Keystone update.",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. archambault makes a motion to accept the fy25 quarterly budget, personnel report, facility and grounds report, and the keystone update, mr. beardmore seconds the motion, all approve."
+   "quote": "ms. archambault makes a motion to accept the fy25 quarterly budget, personnel report, facility and grounds report, and the keystone update, mr. beardmore seconds the motion, all approve"
   },
   {
-   "motion": "Dissolve Middle School student activity accounts (photography with $1506 and cross country track club with $3272.89), use the excess in the Science Olympiad account and GSA account to offset the stipends and resolve the deficit, and split the remaining $682.03 between New, jazz, and Washington DC",
+   "motion": "Dissolve the student activity accounts listed to clear deficits and split the leftover $682.03 between New, Jazz and Washington DC.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. beardmore makes a motion to dissolve the accounts listed and use to clear up deficits and use leftover funds to split between new, jazz, and washington dc. ms. archambault seconds the motion all approve."
+   "quote": "mr. beardmore makes a motion to dissolve the accounts listed and use to clear up deficits and use leftover funds to split between new, jazz, and washington dc"
   },
   {
-   "motion": "Close class accounts 2001, 2014, 2016, 2017, 2018, and 2022 and transfer $5,154 to scholarship",
+   "motion": "Close the class accounts of 2001, 2014, 2016, 2017, 2018, and 2022 and transfer $5,154 to scholarship.",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. archambault makes a motion to close 2001, 2014, 2016, 2017, 2018, and 2022 and to transfer $5,154 to scholarship, ms. brzozoski seconds the motion all approve."
+   "quote": "ms. archambault makes a motion to close 2001, 2014, 2016, 2017, 2018, and 2022 and to transfer $5,154 to scholarship"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:19.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed",
@@ -69,6 +69,389 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Seven votes recorded. All passed unanimously (\"all approve\"). Two are procedural (approving prior minutes and adjournment). Minutes text is clear throughout.",
- "cost_usd": 0.1118384
+ "note": "Plain-text extraction of the minutes, not a scan. Votes are recorded only as \"all approve\" with no tally, so every outcome is recorded as \"passed\" without a count. Vice Chair Sculimbrene is marked absent. The item 3 public comment was made by Mr. Beardmore, a board member, and is recorded here as public comment because the minutes place it under that heading. The minutes state no speakers under item 13. The legislative delegation (Representative Scarsdale, Kushmerek, Senator Cronin, Mandy Gilman) met the board in a separate meeting and is not recorded as present at this one, so they are not listed as attendees. The Recording Secretary's attendance status is not stated. Item 9 (Presentation) reads \"None\" and is not listed as a topic.",
+ "cost_usd": 0.01892007,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brian lehtinen, chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "anthony sculimbrene, vice chair - absent"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "carol archambault, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Dr. Susan Gilson",
+   "role": "Director of Administration & Finance",
+   "status": "present",
+   "quote": "guests: dr. susan gilson - director of administration & finance, mr. kevin bigelow - athletics director,"
+  },
+  {
+   "name": "Mr. Kevin Bigelow",
+   "role": "Athletics Director",
+   "status": "present",
+   "quote": "mr. kevin bigelow - athletics director,"
+  },
+  {
+   "name": "Mr. Tim Santry",
+   "role": "LMHS Principal",
+   "status": "present",
+   "quote": "mr. tim santry - lmhs principal"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Health insurance and cuts (public comment)",
+   "what_was_recorded": "Mr. Beardmore predicted serious cuts in roughly two months, largely from a predicted health insurance rate increase.",
+   "quote": "largely as a result of predicted health insurance rates which is a roughly 12 - 15% increase",
+   "figures_as_printed": [
+    "roughly 12 – 15% increase"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Warrants for 11/19/24 to 11/26 were signed.",
+   "quote": "warrants 11/19/24 to 11/26 $130,437.25 - warrants have been signed",
+   "figures_as_printed": [
+    "$130,437.25"
+   ]
+  },
+  {
+   "topic": "Donation from Hannaford Helps",
+   "what_was_recorded": "A check donation to the Turkey Hill gift account was accepted.",
+   "quote": "a check for $401.04 from hannaford helps to be deposited into the gift account at turkey hill",
+   "figures_as_printed": [
+    "$401.04"
+   ]
+  },
+  {
+   "topic": "Line item transfers",
+   "what_was_recorded": "Several line item transfers were requested and approved, including a Turkey Hill request for a curriculum increase.",
+   "quote": "a request from turkey hill to transfer $1822.80 from elementary workbook line to contracted services",
+   "figures_as_printed": [
+    "$24.50",
+    "$243",
+    "$1822.80",
+    "$210"
+   ]
+  },
+  {
+   "topic": "Supporting Arts and Cultural Vitality grant",
+   "what_was_recorded": "The district was awarded continuation grant money for the arts.",
+   "quote": "we were awarded $7,225",
+   "figures_as_printed": [
+    "$7,225"
+   ]
+  },
+  {
+   "topic": "Winter sports report and fees",
+   "what_was_recorded": "Money coming in and expenses for winter sports were discussed; official numbers were not yet available.",
+   "quote": "kevin bigelow and susan gilson discus money coming and the expenses that are all incorporated in our sports programs.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY25 quarterly budget report",
+   "what_was_recorded": "Dr. Gilson presented the FY25 quarterly budget report, explaining how it tracks expenses and remedies variances.",
+   "quote": "dr. gilson presented a report and explained the process of how it is created and how it tracks expenses",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Student activity account close-out",
+   "what_was_recorded": "Photography and cross country track club accounts were proposed to close to clear deficits and leftover funds were split among clubs.",
+   "quote": "proposing to close out the photography account with $1506, and the cross country track club with $3272.89",
+   "figures_as_printed": [
+    "$1506",
+    "$3272.89",
+    "$682.03"
+   ]
+  },
+  {
+   "topic": "Class accounts closed and transferred to scholarship",
+   "what_was_recorded": "Class accounts were closed and balances transferred to a scholarship account totaling $5,154.",
+   "quote": "the class of 2003 ($19) and 2010 (5,135) do not want the funds and we would like to transfer them to a scholarship account totaling $5154.",
+   "figures_as_printed": [
+    "$19",
+    "5,135",
+    "$5154",
+    "$5,154"
+   ]
+  },
+  {
+   "topic": "Legislative delegation meeting and state funding",
+   "what_was_recorded": "Inflationary costs, health care costs and reimbursements were discussed with the legislative delegation.",
+   "quote": "we started talking about inflationary costs for the district, health care costs was number 1.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital plan projection",
+   "what_was_recorded": "The interim Town Manager projected capital plan funding for the coming period, well below past years.",
+   "quote": "the projection is just above $1.1 million for capital plan, which is much lower than past years.",
+   "figures_as_printed": [
+    "$1.1 million"
+   ]
+  },
+  {
+   "topic": "PTO funding for schools",
+   "what_was_recorded": "PTO has $20,000 and will give $5000 to each school.",
+   "quote": "they have $20,000 and will be giving $5000 to each school",
+   "figures_as_printed": [
+    "$20,000",
+    "$5000"
+   ]
+  },
+  {
+   "topic": "Classroom touch boards",
+   "what_was_recorded": "Upgrading classroom boards to touch boards was discussed, at a cost per board.",
+   "quote": "there was discussion of upgrading the boards in the classrooms to touch boards and those run about $2500 each",
+   "figures_as_printed": [
+    "$2500"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from High School Office Supplies to High School Math Dues and Fees (Bridgewater State AP class cost more than expected).",
+   "amount_as_printed": "$24.50",
+   "outcome": "approved (motion by Ms. Brzozoski, seconded by Ms. Archambault, all approve)",
+   "quote": "line item transfers $24.50 from high school office supplies to high school math dues and fees because of the bridgewater state ap class cost more than expected."
+  },
+  {
+   "description": "Transfer from High School Dues and Fees to High School Music Supplies for a Flugelhorn trumpet.",
+   "amount_as_printed": "$243",
+   "outcome": "approved (motion by Ms. Brzozoski, seconded by Ms. Archambault, all approve)",
+   "quote": "also, $243 from high school dues and fees to high school music supplies for a flugelhorn trumpet"
+  },
+  {
+   "description": "Turkey Hill request to transfer from Elementary Workbook line to Contracted Services for K-8 English and Math curriculum.",
+   "amount_as_printed": "$1822.80",
+   "outcome": "approved (motion by Ms. Brzozoski, seconded by Ms. Archambault, all approve)",
+   "quote": "a request from turkey hill to transfer $1822.80 from elementary workbook line to contracted services"
+  },
+  {
+   "description": "Primary School request to transfer from the workbook line to Contracted Services for K-8 English and Math curriculum.",
+   "amount_as_printed": "$210",
+   "outcome": "approved (motion by Ms. Brzozoski, seconded by Ms. Archambault, all approve)",
+   "quote": "a request from primary school to transfer $210 from the workbook line to contracted services"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mr. Beardmore",
+   "topic": "Chapter 70 and legislative delegation; public narrative on school funding",
+   "quote": "mr. beardmore states at our last meeting we had a discussion about our invitation to our legislative"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "1. call to order by brian lehtinen at 6:30p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (Chapter 70 and state funding)",
+   "resolution": "no action",
+   "quote": "mr. beardmore states at our last meeting we had a discussion about our invitation to our legislative",
+   "tags": [
+    "state aid",
+    "Chapter 70",
+    "health insurance",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "no action",
+   "quote": "congratulations to all fall sports teams on a successful season.",
+   "tags": [
+    "athletics"
+   ]
+  },
+  {
+   "topic": "Student Representative's Report",
+   "resolution": "no action",
+   "quote": "overall for the district thanksgiving break is over, we are now in the weeks leading up to",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved",
+   "quote": "ms. archambault makes a motion to approve minutes for 10/16/24 and 11/6/24",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants, donations and line item transfers",
+   "resolution": "approved",
+   "quote": "warrants 11/19/24 to 11/26 $130,437.25 - warrants have been signed",
+   "tags": [
+    "warrants",
+    "donations",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "no action",
+   "quote": "the superintendent updates on the position of director of facilities and grounds",
+   "tags": [
+    "staffing",
+    "grants",
+    "safety",
+    "food services"
+   ]
+  },
+  {
+   "topic": "New Business: Winter Sports Report and Fees",
+   "resolution": "discussed; no action",
+   "quote": "kevin bigelow and susan gilson discus money coming and the expenses that are all incorporated in our sports programs.",
+   "tags": [
+    "athletics",
+    "fees",
+    "budget"
+   ]
+  },
+  {
+   "topic": "New Business: Sizer and Parker annual reports",
+   "resolution": "no action",
+   "quote": "sizer & parker annual reports haven't received the updated data",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "New Business: LHS master schedule development",
+   "resolution": "presented; no action",
+   "quote": "lhs master schedule development mr. santry gives a detailed summary of the scheduling process",
+   "tags": [
+    "high school",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Old Business: FY25 quarterly budget report and reports accepted",
+   "resolution": "accepted",
+   "quote": "ms. archambault makes a motion to accept the fy25 quarterly budget, personnel report, facility and grounds report, and the keystone update",
+   "tags": [
+    "budget",
+    "personnel",
+    "facilities",
+    "Keystone"
+   ]
+  },
+  {
+   "topic": "Old Business: LMHS student activity close-out and class accounts",
+   "resolution": "approved",
+   "quote": "lmhs student activity close out & class accounts student activities accounts for the middle school is",
+   "tags": [
+    "student activities",
+    "class accounts",
+    "scholarship"
+   ]
+  },
+  {
+   "topic": "Old Business: legislative delegation meeting",
+   "resolution": "discussed; no action",
+   "quote": "legislative delegation mr. lehtinen shared that representative scarsdale, kushmerek and senator cronin have",
+   "tags": [
+    "state aid",
+    "health insurance",
+    "legislature"
+   ]
+  },
+  {
+   "topic": "Reports from committee and advisory liaisons",
+   "resolution": "no action",
+   "quote": "ms. brzozoski reports the pacsal met in november they had a great turn out at first meeting",
+   "tags": [
+    "PTO",
+    "capital planning",
+    "school calendar",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Public Comment (second item, none)",
+   "resolution": "no public comment",
+   "quote": "13. public comment- none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "no items recorded",
+   "quote": "14. topics for future discussion",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:19",
+   "quote": "mr. beardmore makes a motion to adjourn at 9:19 ms. archambault seconds the motion all approve",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "FY25 budget",
+  "health insurance",
+  "Chapter 70",
+  "state aid",
+  "legislative delegation",
+  "line item transfers",
+  "donations",
+  "student activity accounts",
+  "class accounts",
+  "capital planning",
+  "staffing",
+  "athletics",
+  "hybrid meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

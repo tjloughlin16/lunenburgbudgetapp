@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2024-12-09",
  "docid": "6911",
@@ -12,15 +12,163 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "not stated",
-   "procedural": true,
+   "motion": "Adjourn the meeting at 8:33pm.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": true,
    "quote": "meeting adjourned: 8:33pm by roll call vote."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Only one vote recorded. No vote count provided for the adjournment; minutes state it was done by roll call vote but give no outcome tally. No moved_by or seconded_by names are printed.",
- "cost_usd": 0.0575484
+ "dropped_unquoted": 1,
+ "note": "Text extraction is readable. The minutes record one roll-call adjournment with no mover, seconder or tally, so its outcome is 'not stated'. No other motions or votes appear. Chris Holden is listed in the header but not in the attendance line, so status is 'not stated'. Dr. Sue Gilson and Matt Keefe are named only as credited sources, not as participants, and are omitted from attendees. Public comment was 'None'. Dollar figures are as printed (including '~' and 'k'); the minutes do not say whether they are budget, actual, or grant-share amounts.",
+ "cost_usd": 0.01273687,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "david blatt, chair"
+  },
+  {
+   "name": "David Passios",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "members present: david blatt, david passios (remote), matt snyder, kim duffy"
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: david blatt, david passios (remote), matt snyder, kim duffy"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: david blatt, david passios (remote), matt snyder, kim duffy"
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "chris holden, member"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Fall grant submitted",
+   "what_was_recorded": "The committee reported $223,941 submitted for the Fall grant program, with approval to be announced in Feb/March 2025.",
+   "figures_as_printed": [
+    "$223,941"
+   ],
+   "quote": "hit deadline for fall grant. school rep (dr. sue gilson) instrumental in helping with progress. $223,941 submitted for fall grant program."
+  },
+  {
+   "topic": "Refrigeration controls",
+   "what_was_recorded": "About 10k is listed for refrigeration controls at the elementary school, Turkey Hill and the high school.",
+   "figures_as_printed": [
+    "~10k"
+   ],
+   "quote": "~10k refrigeration controls at elementary, turkey hill, high school"
+  },
+  {
+   "topic": "Mini splits",
+   "what_was_recorded": "About 200k is listed towards mini splits.",
+   "figures_as_printed": [
+    "~200k"
+   ],
+   "quote": "~200k towards mini splits"
+  },
+  {
+   "topic": "Utility incentives",
+   "what_was_recorded": "Utility incentives of 113k are listed, attributed to Unitil and Matt Keefe.",
+   "figures_as_printed": [
+    "113k"
+   ],
+   "quote": "utility incentives 113k (unitil, matt keefe)"
+  },
+  {
+   "topic": "Town spending on the grant project",
+   "what_was_recorded": "A parenthetical note says town spending was only 400k.",
+   "figures_as_printed": [
+    "400k"
+   ],
+   "quote": "(town spending only spent 400k)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve pending minutes",
+   "resolution": "no action; none pending",
+   "quote": "review and approve any pending meeting minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Fall grant submittal review",
+   "resolution": "reported; approval expected Feb/March 2025",
+   "quote": "hit deadline for fall grant. school rep (dr. sue gilson) instrumental in helping with progress.",
+   "tags": [
+    "grants",
+    "energy",
+    "schools"
+   ]
+  },
+  {
+   "topic": "New programs available in 2025",
+   "resolution": "informational; no action recorded",
+   "quote": "oct 22, 2024 first green communities summit at devens, ma.",
+   "tags": [
+    "grants",
+    "federal funding",
+    "state programs"
+   ]
+  },
+  {
+   "topic": "Spring grant: Cemetery Commission equipment",
+   "resolution": "informational; committee looking into other projects for a 5-year plan",
+   "quote": "spring grant: cemetery commission interested in battery powered lawn mowers/equipment.",
+   "tags": [
+    "grants",
+    "cemetery",
+    "electrification"
+   ]
+  },
+  {
+   "topic": "Committee make-up",
+   "resolution": "no action; looking for more members",
+   "quote": "looking for more members.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Timeline for next meeting",
+   "resolution": "tentatively set for January 6, 2025",
+   "quote": "tentative - monday january 6, 2025 7pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy",
+  "grants",
+  "schools",
+  "utilities",
+  "municipal energy",
+  "committee membership",
+  "zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,0 +1,625 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2024-11-13",
+ "video_id": "3jKJuWsiLQA",
+ "video_url": "https://www.youtube.com/watch?v=3jKJuWsiLQA",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-11-13-3jKJuWsiLQA.json",
+  "sha256": "744b98e8bee46cc7c37cdf56d5b923bffcecd807c36fb2e95d56258cc6aa7dc8",
+  "caption_lines": 240,
+  "segments": 1921
+ },
+ "recording": {
+  "duration_s": 5032,
+  "duration": "1:23",
+  "spoken_chars": 65688,
+  "words_approx": 10948
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11132024-6871",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-11-13-agenda-6871.txt",
+   "path": "sources/meetings/select-board/2024-11-13-agenda-6871.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11132024-6871",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-11-13-minutes-6871.txt",
+   "path": "sources/meetings/select-board/2024-11-13-minutes-6871.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-07T21:27:16Z",
+  "cost_usd": 0.39404300000000003
+ },
+ "minutes": {
+  "headline": "Select Board voted unanimously to reallocate ARPA surpluses to cover two roof overruns and committed funds to equipment purchases.",
+  "summary": "The board spent the meeting reviewing every outstanding ARPA allocation ahead of the 12/31 deadline: what came in under, what is returning, and where the money could go. It voted to move surplus funds to cover the Town Hall and Senior Center roof overruns, and to commit a set of emergency-list equipment purchases. The proposal to put ARPA money into DPW tree removal waits on Town Counsel's opinion, and the interest question and the larger request list were sent back for Tuesday.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (unnamed)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Carter",
+    "role": "interim town manager"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Michael Ray",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Amanda",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Izzy",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "Nancy",
+    "role": "staff"
+   },
+   {
+    "name_as_heard": "Chris",
+    "role": "facilities / project manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 25,
+    "speaker_as_heard": "Glen McLoud, 436 Reservoir Road",
+    "stated_role": "resident",
+    "topic": "Urged bringing pay and vacation time for new employees to the next town meeting for recruitment, and asked for a report on why the Personnel Board resigned en masse."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "facilities",
+   "grants",
+   "personnel",
+   "public-comment",
+   "public-safety",
+   "technology",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "turkey-hill"
+  ],
+  "votes": [
+   {
+    "t": 3362,
+    "motion": "Reallocate ARPA surpluses to cover capital overruns (Town Hall and Senior Center roofs) as presented.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4455,
+    "motion": "Commit ARPA funds for a list of equipment purchases (body cameras, power stretcher and loader, radios, stair chair, cement mixer, mini excavator and trailer, school pickup truck with plow, window safety film, Council on Aging generator fence).",
+    "moved_by": "Member (unnamed)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5000,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 130,
+    "topic": "ARPA: Municipal Building Design Committee",
+    "what_was_said": "Money requested is expected to be returned since the vendor is qualified and a contract is planned by end of November.",
+    "figures_as_heard": [
+     "$40,000",
+     "40,000"
+    ]
+   },
+   {
+    "t": 213,
+    "topic": "ARPA: Public Library exterior envelope",
+    "what_was_said": "Completed under budget, leaving money to reallocate.",
+    "figures_as_heard": [
+     "33,000",
+     "27,000"
+    ]
+   },
+   {
+    "t": 233,
+    "topic": "ARPA: Teen room",
+    "what_was_said": "Estimate received; contractor qualified, no ARPA money set toward contingency.",
+    "figures_as_heard": [
+     "100,000",
+     "107,000",
+     "$107,000"
+    ]
+   },
+   {
+    "t": 295,
+    "topic": "ARPA: Parks Commission",
+    "what_was_said": "Parks is returning most of its allocation; two contracts remain, with bills charged against the town meeting article.",
+    "figures_as_heard": [
+     "$1 million",
+     "800,000",
+     "$799,950",
+     "2,250"
+    ]
+   },
+   {
+    "t": 599,
+    "topic": "Marshall Park design town meeting article",
+    "what_was_said": "Remaining balance of the town meeting appropriation will pay outstanding OPM and design firm bills, with some left for contingency.",
+    "figures_as_heard": [
+     "184",
+     "106",
+     "36",
+     "$10,000"
+    ]
+   },
+   {
+    "t": 682,
+    "topic": "ARPA: Munis cloud deployment",
+    "what_was_said": "Quote for a two-year term has not arrived. Figures differed between members on year-one cost, credit for current payments, and setup fee.",
+    "figures_as_heard": [
+     "16",
+     "92",
+     "108",
+     "1,500 bucks a day",
+     "126,000",
+     "62,000",
+     "5K a month",
+     "186",
+     "226",
+     "240",
+     "66,000",
+     "12298"
+    ]
+   },
+   {
+    "t": 1003,
+    "topic": "ARPA: smaller projects status",
+    "what_was_said": "IV pumps, public safety furniture, Historical Society tree removal, DPW garage floor, roof and tree removal, and Council on Aging items reported with balances or contract amounts.",
+    "figures_as_heard": [
+     "$7,500",
+     "20,000",
+     "$592",
+     "60,000",
+     "59,000",
+     "55,000",
+     "25,000",
+     "$90,000"
+    ]
+   },
+   {
+    "t": 1183,
+    "topic": "Surplus reallocation to roof overruns",
+    "what_was_said": "Surpluses from several ARPA projects would cover the Town Hall and Senior Center roof overruns.",
+    "figures_as_heard": [
+     "$55,200",
+     "$62,000",
+     "$95,000",
+     "$35,000",
+     "$40,000",
+     "55,500",
+     "54,500"
+    ]
+   },
+   {
+    "t": 1313,
+    "topic": "DPW tree removal contingency",
+    "what_was_said": "Library envelope and teen center leftovers would go to DPW tree removal so operating money could serve as post-12/31 contingency.",
+    "figures_as_heard": [
+     "12,000",
+     "13,000",
+     "50,000",
+     "25,000"
+    ]
+   },
+   {
+    "t": 2199,
+    "topic": "Park money reallocation and interest",
+    "what_was_said": "About 800,000 needs reallocating; members disputed whether roughly 350,000 of interest was already allocated, and staff will rebuild the numbers.",
+    "figures_as_heard": [
+     "$799 and $750",
+     "800,000",
+     "350,000",
+     "118",
+     "120"
+    ]
+   },
+   {
+    "t": 2509,
+    "topic": "Emergency list of one-time purchases",
+    "what_was_said": "Chair plugged items into the list to get near the available amount; COVID payments were padded above the expected amount.",
+    "figures_as_heard": [
+     "250,000",
+     "$200,000",
+     "50 Grand",
+     "384,000",
+     "470,000"
+    ]
+   },
+   {
+    "t": 4284,
+    "topic": "Equipment list totals",
+    "what_was_said": "Items read out with prices and totalled before the motion.",
+    "figures_as_heard": [
+     "45,000",
+     "74,000",
+     "$472",
+     "$72,500",
+     "14,700",
+     "$26,800",
+     "387 565",
+     "$387,500",
+     "112,000"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 1183,
+    "description": "Reallocate ARPA surpluses (municipal buildings, library envelope, IV pumps, tree removal, kiosk and chairs, Proctor Garden) to cover Town Hall and Senior Center roof overruns",
+    "amount_as_heard": "$55,200",
+    "outcome": "voted"
+   },
+   {
+    "t": 1313,
+    "description": "Move library envelope and teen center leftovers into ARPA-funded DPW tree removal to free operating money as contingency",
+    "amount_as_heard": "12,000 and 13,000",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 3382,
+    "decision": "The DPW tree removal reallocation will be revisited Tuesday after Town Counsel reviews whether it is allowed under ARPA rules."
+   },
+   {
+    "t": 4517,
+    "decision": "For Tuesday, staff will make a best effort to bring updated numbers on the August requests, a full ARPA accounting, clarification of the interest, and the Town Counsel opinion."
+   },
+   {
+    "t": 2469,
+    "decision": "Staff will rebuild the original ARPA allocation from scratch to determine whether interest was already allocated."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 5,
+    "t_end": 25,
+    "topic": "Call to order and open meeting law notice",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 25,
+    "t_end": 130,
+    "topic": "Public comment on employee pay, vacation, and Personnel Board resignations",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 130,
+    "t_end": 1160,
+    "topic": "ARPA project-by-project status review",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "capital",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 1163,
+    "t_end": 2199,
+    "topic": "Reallocating ARPA surpluses to roof overruns and DPW tree removal",
+    "resolution": "voted for roof overruns; tree removal deferred to Tuesday",
+    "tags": [
+     "grants",
+     "transfers",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 2199,
+    "t_end": 2509,
+    "topic": "Interest on ARPA funds and the amount left to reallocate",
+    "resolution": "staff to rebuild numbers",
+    "tags": [
+     "grants"
+    ]
+   },
+   {
+    "t_start": 2509,
+    "t_end": 4517,
+    "topic": "Emergency list of one-time purchases and ARPA equipment commitment",
+    "resolution": "voted",
+    "tags": [
+     "grants",
+     "public-safety",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4517,
+    "t_end": 4891,
+    "topic": "Action items for Tuesday and public records request burden",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4891,
+    "t_end": 5021,
+    "topic": "Warrants, license, appreciation, and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Several warrant amounts and the license vote (American Graffiti one-day entertainment license) are unclear or no vote is captured.",
+   "Vote on warrants not captured.",
+   "Several dollar figures on the Munis deployment are inconsistent between speakers.",
+   "Some equipment prices in the motion are garbled.",
+   "Speaker identities are mostly unlabeled."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted unanimously to move surplus ARPA funds to cover overruns on the Town Hall and Senior Center roofs.",
+    "t": 3362
+   },
+   {
+    "line": "The board voted unanimously to commit ARPA funds to a list of equipment purchases, including body cameras, a power stretcher and radios.",
+    "t": 4455
+   },
+   {
+    "line": "Using ARPA money for DPW tree removal was put off until Tuesday, pending Town Counsel's opinion on whether ARPA rules allow it.",
+    "t": 3382
+   },
+   {
+    "line": "Members disagreed on whether interest earned on the ARPA funds was already allocated, so staff will rebuild the original allocation from scratch.",
+    "t": 2469
+   },
+   {
+    "line": "Staff will try to bring updated numbers, a full ARPA accounting, the interest answer and the Town Counsel opinion on Tuesday.",
+    "t": 4517
+   }
+  ],
+  "why_it_matters": [
+   "ARPA money has a 12/31 deadline, so these reallocations decide which one-time town projects and purchases get paid for without a new appropriation or a draw on local funds.",
+   "The unresolved interest question and the tree removal opinion mean the amount still available to reallocate is not yet settled, and the board's Tuesday choices will rest on those answers."
+  ],
+  "watch_next": [
+   "The Tuesday Select Board meeting: Town Counsel's opinion on ARPA tree removal and the rebuilt ARPA accounting, including the interest.",
+   "The Munis cloud deployment quote, which had not arrived, and the larger ARPA request list sent back for Tuesday."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-07T21:27:25Z",
+   "cost_usd": 0.219651
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11132024-6871",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-11-13-minutes-6871.txt",
+   "path": "sources/meetings/select-board/2024-11-13-minutes-6871.pdf"
+  },
+  "official_sha256": "da6dd6224d25433e390dd4a76bba5df684fade049e351962841ab74b35a98c2c",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on both non-procedural votes (reallocate surpluses to cover roof overruns, and commit $387,565 of ARPA funds for equipment) and on the main ARPA balances. The official minutes leave out most of the discussion, including the $55,200 reallocation amount, the tree-removal idea, the Munis figures and the Town Counsel review, and they print a 5-0-0 vote beside only four named members present.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 7,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: reallocate surpluses to cover capital overruns",
+    "t": 3362,
+    "ours": "Reallocate ARPA surpluses to cover capital overruns (Town Hall and Senior Center roofs) as presented. — passed unanimously",
+    "official": "member jeffreys moved to reallocate surpluses to cover capital overruns as presented. tom alonzo seconded the motion. the motion passed unanimously. (5-0-0)",
+    "note": "Same motion and the same unanimous outcome in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: commit ARPA funds for equipment purchases",
+    "t": 4455,
+    "ours": "Commit ARPA funds for a list of equipment purchases (body cameras, power stretcher and loader, radios, stair chair, cement mixer, mini excavator and trailer, school pickup truck with plow, window safety film, Council on Aging generator fence). — passed unanimously",
+    "official": "member jeffreys moved for the select board to commit $387,565 of arpa funds for the purpose of purchasing body camera upgrades for the police department ($45,000), power",
+    "note": "Same motion, same item list and the same unanimous outcome (5-0-0 in the official minutes)."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Total of the ARPA equipment commitment",
+    "t": 4284,
+    "ours": "387 565, $387,500",
+    "official": "commit $387,565 of arpa funds",
+    "official_reading": "$387,565",
+    "note": "Our captions rendered the total once as '387 565' and once as '$387,500'; the official total is $387,565."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Equipment line amounts (stair chair, radios and others)",
+    "t": 4284,
+    "ours": "45,000, 74,000, $472, $72,500, 14,700, $26,800",
+    "official": "body camera upgrades for the police department ($45,000), power",
+    "official_reading": "$4,720 and $26,865 (per the official structured item list)",
+    "note": "Our '$472' and '$26,800' look like misheard '$4,720' and '$26,865'; $45,000, $74,000, $72,500 and $14,700 match. Check the individual amounts against the full official motion text."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "$55,200 amount of the surplus reallocation",
+    "t": 1183,
+    "ours": "Reallocate ARPA surpluses (municipal buildings, library envelope, IV pumps, tree removal, kiosk and chairs, Proctor Garden) to cover Town Hall and Senior Center roof overruns — $55,200 (voted)",
+    "official": "",
+    "note": "The official minutes print no amount for the reallocation, so $55,200 and the source list of surpluses cannot be checked against them. Check the written motion or the ARPA tracking sheet."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tree-removal contingency transfer (12,000 and 13,000)",
+    "t": 1313,
+    "ours": "Move library envelope and teen center leftovers into ARPA-funded DPW tree removal to free operating money as contingency — 12,000 and 13,000 (discussed only)",
+    "official": "",
+    "note": "The official minutes do not mention the DPW tree-removal idea or its amounts. It was discussed only, not voted."
+   },
+   {
+    "kind": "agree",
+    "about": "Municipal Building Design Committee ARPA balance",
+    "t": 130,
+    "ours": "ARPA: Municipal Building Design Committee: $40,000, 40,000",
+    "official": "starting with the municipal building design committee, which came in under $40,000.",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Library exterior envelope ARPA remaining",
+    "t": 213,
+    "ours": "ARPA: Public Library exterior envelope: 33,000, 27,000",
+    "official": "public exterior envelope had $27,000 remaining.",
+    "note": "$27,000 appears in both. Our extra 33,000 is context the official minutes do not print."
+   },
+   {
+    "kind": "agree",
+    "about": "Teen room ARPA estimate",
+    "t": 233,
+    "ours": "ARPA: Teen room: 100,000, 107,000, $107,000",
+    "official": "teen room came in at $107,000 according to estimate.",
+    "note": "Same $107,000."
+   },
+   {
+    "kind": "agree",
+    "about": "Parks Commission ARPA return",
+    "t": 295,
+    "ours": "ARPA: Parks Commission: $1 million, 800,000, $799,950, 2,250",
+    "official": "parks commission was returning approximately $800,000 out of the $1,000,000 allocated.",
+    "note": "The $1 million allocation and about $800,000 returned match."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Procter Memorial Garden name",
+    "t": 1183,
+    "ours": "Proctor Garden",
+    "official": "procter memorial garden was all set with $1 remaining.",
+    "official_reading": "Procter Memorial Garden",
+    "note": "Spelling differs; it is the same project. Our minutes give no $1 balance."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Munis cloud deployment figures",
+    "t": 682,
+    "ours": "ARPA: Munis cloud deployment: 16, 92, 108, 1,500 bucks a day, 126,000, 62,000, 5K a month, 186, 226, 240, 66,000, 12298",
+    "official": "the board then discussed the munis web deployment, for which they were waiting on a quote for a two-year contract.",
+    "note": "The official minutes record the topic and the pending two-year quote but no amounts, so none of ours can be checked."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Marshall Park design article, emergency one-time purchases, interest and other detail",
+    "t": 599,
+    "ours": "Marshall Park design town meeting article: 184, 106, 36, $10,000",
+    "official": "",
+    "note": "The official minutes are a summary and do not record these discussions or figures (also the park money and interest at t=2199 and the emergency list at t=2509)."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: revisit remaining requests next Tuesday",
+    "t": 4517,
+    "ours": "For Tuesday, staff will make a best effort to bring updated numbers on the August requests, a full ARPA accounting, clarification of the interest, and the Town Counsel opinion.",
+    "official": "the board agreed to revisit the remaining requests and get updated information for their next meeting on tuesday.",
+    "note": "Both record a revisit with updated information on Tuesday; ours lists more detail."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town Counsel review of DPW tree removal under ARPA rules",
+    "t": 3382,
+    "ours": "The DPW tree removal reallocation will be revisited Tuesday after Town Counsel reviews whether it is allowed under ARPA rules.",
+    "official": "",
+    "note": "The Town Counsel check does not appear in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Staff to rebuild original ARPA allocation",
+    "t": 2469,
+    "ours": "Staff will rebuild the original ARPA allocation from scratch to determine whether interest was already allocated.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: Renee and the vote count",
+    "ours": "Renee (member)",
+    "official": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo",
+    "note": "The official minutes list four members present yet record votes of 5-0-0, and our record has a fifth member, Renee. Check the sign-in or roll call to see whether a fifth member attended and was omitted from the list."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair identity",
+    "ours": "Chair (unnamed) (chair)",
+    "official": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo",
+    "official_reading": "Caesar Nuzzolo (Chair)",
+    "note": "Our captions did not name the chair; the official minutes name Caesar Nuzzolo."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Carter, Tom, Michael-Ray and Amanda",
+    "ours": "Carter (interim town manager); Tom (member); Michael Ray (member); Amanda (member)",
+    "official": "also present: carter terenzini, interim town manager",
+    "note": "Same people: Carter Terenzini, Tom Alonzo, Michael-Ray Jeffreys and Amanda Moore, with first names only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Staff attendees Izzy, Nancy and Chris",
+    "ours": "Izzy (staff); Nancy (staff); Chris (facilities / project manager)",
+    "official": "",
+    "note": "The official minutes do not list these staff members."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by Glenn McLeod",
+    "ours": "",
+    "official": "glenn mcleod, 436 reservoir road:, a resident, addressed the board regarding the previous",
+    "note": "Our minutes record no public comment; the official minutes record Glenn McLeod on pay, vacation time and Personnel Committee resignations."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T21:28:32Z",
+   "cost_usd": 0.263987
+  }
+ }
+}

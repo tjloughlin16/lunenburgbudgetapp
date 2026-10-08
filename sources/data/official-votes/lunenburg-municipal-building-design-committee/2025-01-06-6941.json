@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2025-01-06",
  "docid": "6941",
@@ -12,23 +12,154 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from December 2nd and 16th, 2024",
-   "outcome": "unanimously approved",
+   "motion": "Approve the minutes of December 2 and 16, 2024.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to approve the minutes from december 2nd and 16th , 2024 made and seconded, the minutes are approved unanimously."
   },
   {
-   "motion": "Adjourn",
-   "outcome": "unanimously passed",
+   "motion": "Adjourn the meeting at 8:28pm.",
    "moved_by": "Greg Roy",
    "seconded_by": "Brian Lehtinen",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to adjourn by greg roy, seconded by brian lehtinen at 8:28pm, unanimously passed."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06090040000000001
+ "dropped_unquoted": 1,
+ "note": "Text extraction of the official minutes; no scan. Two motions are recorded with results, both procedural (minutes approval, adjournment). The design update records no motion or vote. No dollar figures appear in the minutes, so budget_items is empty; the PACC building is mentioned as a separate future vote with no figure. Public comment: the minutes say none was made, so no speakers are listed. The minutes do not say whether the community guests spoke. The minutes approval motion does not name a mover or seconder. The Ritter building window and crosswalk concerns are recorded as committee and team concerns, not decided items.",
+ "cost_usd": 0.01335037,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis"
+  },
+  {
+   "name": "David Blatt",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis"
+  },
+  {
+   "name": "Tony Sculumbrine",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: tony sculumbrine , laura brzozoski, ana lockwood, amanda moore, caesar nuzzolo"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: tony sculumbrine , laura brzozoski, ana lockwood, amanda moore, caesar nuzzolo"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: tony sculumbrine , laura brzozoski, ana lockwood, amanda moore, caesar nuzzolo"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: tony sculumbrine , laura brzozoski, ana lockwood, amanda moore, caesar nuzzolo"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: tony sculumbrine , laura brzozoski, ana lockwood, amanda moore, caesar nuzzolo"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A revised plan incorporating feedback, including updated bathroom and elevator locations in the Ritter building, is to be presented at the next meeting.",
+   "quote": "revised plan: a revised plan incorporating feedback will be presented at the next meeting, including the updated bathroom and elevator locations in the ritter building."
+  },
+  {
+   "decision": "The presentation is to be distributed to department heads for feedback, with meetings scheduled with department heads and the historical commission.",
+   "quote": "presentation will be distributed to department heads for feedback. meetings scheduled with department heads and historical commission."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Municipal buildings design and planning update",
+   "resolution": "presented; no action recorded",
+   "quote": "the project team presented an update on the design and planning for the municipal buildings in lunenburg.",
+   "tags": [
+    "Town Hall design",
+    "Ritter building",
+    "historic preservation",
+    "accessibility"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved unanimously",
+   "quote": "motion to approve the minutes from december 2nd and 16th , 2024 made and seconded, the minutes are approved unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:28pm",
+   "quote": "motion to adjourn by greg roy, seconded by brian lehtinen at 8:28pm, unanimously passed.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "municipal buildings",
+  "Town Hall design",
+  "Ritter building",
+  "historic preservation",
+  "accessibility",
+  "ACE program",
+  "crosswalk and traffic",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

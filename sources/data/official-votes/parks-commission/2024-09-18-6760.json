@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-09-18",
  "docid": "6760",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve invoices and appoint A. Scheipers and K. Menard as representatives to approve and sign invoices on an as-needed basis",
+   "motion": "Approve the invoices and appoint Anita Scheipers and Karin Menard as the representatives to approve and sign invoices.",
    "moved_by": "C. Sullivan",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "c. sullivan made a motion to approve the invoices and appoint a. scheipers and k. menard as the representatives to approve and sign invoices. c. shapiro seconded. all in favor, motion carried (5-0)."
+   "procedural": false,
+   "quote": "c. sullivan made a motion to approve the invoices and appoint a. scheipers and k. menard as the representatives to approve and sign invoices. c. shapiro seconded."
   },
   {
-   "motion": "Approve invoice from August 2, 2024, invoice number ending in 15484-1 from Skanska in the amount of $13,955.00",
+   "motion": "Approve the Skanska invoice dated August 2, 2024, invoice number ending in 15484-1, in the amount of $13,955.00.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 5-0",
@@ -28,7 +28,7 @@
    "quote": "k. menard made a motion to approve. c. sullivan seconded. all in favor, motion carried (5-0)."
   },
   {
-   "motion": "Approve invoice from September 6, 2024, invoice number ending in 15517-2 from Skanska in the amount of $11,660.00",
+   "motion": "Approve the Skanska invoice dated September 6, 2024, invoice number ending in 15517-2, in the amount of $11,660.00.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K. Menard",
    "outcome": "passed 5-0",
@@ -36,15 +36,238 @@
    "quote": "c. sullivan made a motion to approve. k. menard seconded. all in favor, motion carried (5-0)."
   },
   {
-   "motion": "Accept the minutes of February 29, March 27, July 16 & 31, and August 14, 2024 as presented",
+   "motion": "Accept the minutes of February 29, March 27, July 16 & 31, and August 14, 2024 as presented.",
    "moved_by": "C. Sullivan",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "c. sullivan made a motion to accept the minutes of february 29, march 27, july 16 & 31, and august 14, 2024 as presented. c. shapiro seconded. all in favor, motion carried (5-0)."
+   "quote": "c. sullivan made a motion to accept the minutes of february 29, march 27, july 16 & 31, and august 14, 2024 as presented. c. shapiro seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0663724
+ "note": "Text is a digital extraction, not a scan; all votes are recorded with counts. Two name discrepancies inside the minutes: the attendance line says 'Tom Lawless' while the header says 'Tim Lawless', and 'Christopher Sullivan' versus 'Chris Sullivan'; names are given as printed in the attendance line. Roles for Angela Clement, Katie White and David Passios are not printed on this page. C. Ruth is referred to in discussion but not recorded as attending, so was left out. No motion to adjourn is recorded; the minutes give 'Adjourned: 8:25 pm' only. The minutes record 'Public comment: none'. The Art/recreation and TCP items carry no dollar figures.",
+ "cost_usd": 0.016401370000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tom lawless, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tom lawless, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Tom Lawless",
+   "role": "Member (the page header prints 'Tim Lawless, Member')",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tom lawless, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tom lawless, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member (the page header prints 'Chris Sullivan, Member')",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tom lawless, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Angela Clement",
+   "role": "Recreational Director Updates presenter (role not printed on the page)",
+   "status": "present",
+   "quote": "additional attendees: angela clement, katie white, and david passios"
+  },
+  {
+   "name": "Katie White",
+   "role": "Boys and Girls Club Polar Plunge presenter (role not printed on the page)",
+   "status": "present",
+   "quote": "additional attendees: angela clement, katie white, and david passios"
+  },
+  {
+   "name": "David Passios",
+   "role": "Additional attendee (role not printed)",
+   "status": "present",
+   "quote": "additional attendees: angela clement, katie white, and david passios"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary (signed the minutes)",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Scheipers asked A. Clement to obtain W-9 forms from RDLA and Skanska so they can be entered in the system as approved vendors.",
+   "quote": "a. scheipers asked a. clement to get the w-9 from rdla and skanska to get them into the system as approved vendors."
+  },
+  {
+   "decision": "Skanska and RDLA are to email their invoices to A. Clement, copying the Chair and C. Ruth.",
+   "quote": "a. scheipers stated she will ask skanska and rdla to email invoices to a. clement and copy the chair and c. ruth."
+  },
+  {
+   "decision": "Design team meetings will be held every other Thursday with RDLA, Skanska and C. Ruth; A. Scheipers and K. Menard will attend when able.",
+   "quote": "a. scheipers indicated they will have design team meetings every other thursday with rdla, skanska, and c. ruth, a. scheipers and k. menard will attend when able."
+  },
+  {
+   "decision": "K. Menard will send K. White the Town's standard waiver; the waiver is only needed if the plunge is held at the Town beach.",
+   "quote": "k. white asked if she could use the standard waiver from the town. k. menard stated she would get that over to her."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park invoice from Skanska, August 2, 2024",
+   "what_was_recorded": "An invoice from Skanska for Marshall Park was presented and approved for payment.",
+   "figures_as_printed": [
+    "$13,955.00"
+   ],
+   "quote": "a. scheipers presented the invoice from august 2, 2024, invoice number ending in 15484-1 from skanska in the amount of $13,955.00."
+  },
+  {
+   "topic": "Marshall Park invoice from Skanska, September 6, 2024",
+   "what_was_recorded": "A second Skanska invoice for Marshall Park was presented and approved for payment.",
+   "figures_as_printed": [
+    "$11,660.00"
+   ],
+   "quote": "a. scheipers presented the invoice from september 6, 2024, invoice number ending in 15517-2 from skanska in the amount of $11,660.00."
+  },
+  {
+   "topic": "Land and Water Grant",
+   "what_was_recorded": "Tentative approval received for a Land and Water Grant; conditional until the contract is signed after Town Meeting commits the funds.",
+   "figures_as_printed": [
+    "one million dollars"
+   ],
+   "quote": "a. scheipers indicated they have received tentative approval for the land and water grant for one million dollars."
+  },
+  {
+   "topic": "Revolving Fund dollar limit, Special Town Meeting Article 9",
+   "what_was_recorded": "Article 9 would change the Revolving Fund from 53d to 53e and a half and raise the FY25 dollar limit.",
+   "figures_as_printed": [
+    "$77,000"
+   ],
+   "quote": "a. scheipers discussed and reviewed article 9, revolving fund change from 53d to 53e and a half, and increasing the dollar limit for fy25 to $77,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Capital Projects Discussion",
+   "resolution": "no discussion recorded",
+   "quote": "first item on the agenda, capital projects discussion",
+   "tags": [
+    "capital projects"
+   ]
+  },
+  {
+   "topic": "Recreational Director Updates",
+   "resolution": "informational; signage and QR code suggestions noted",
+   "quote": "a. clement gave the following updates:",
+   "tags": [
+    "recreation",
+    "signage",
+    "pickleball",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Marshall Park Invoice Approvals",
+   "resolution": "approved two Skanska invoices; appointed signatories",
+   "quote": "next item on the agenda, marshall park invoice approvals",
+   "tags": [
+    "Marshall Park",
+    "invoices",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Boys and Girls Club Polar Plunge",
+   "resolution": "informational; event still slated for November 30, 2024",
+   "quote": "next item on the agenda, boys and girls club polar plunge - katie white",
+   "tags": [
+    "polar plunge",
+    "beach",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Grant Updates",
+   "resolution": "informational; ADA grant still outstanding",
+   "quote": "next item on the agenda, grant updates",
+   "tags": [
+    "grants",
+    "Land and Water"
+   ]
+  },
+  {
+   "topic": "Marshall Park Designer Contract",
+   "resolution": "informational; RDLA on board and design meetings scheduled",
+   "quote": "next item on the agenda, marshall park designer contract",
+   "tags": [
+    "Marshall Park",
+    "design contract"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting Articles",
+   "resolution": "discussed and reviewed Articles 5 and 9",
+   "quote": "next item on the agenda, special town meeting articles",
+   "tags": [
+    "Town Meeting",
+    "revolving fund"
+   ]
+  },
+  {
+   "topic": "Chair Updates",
+   "resolution": "none",
+   "quote": "next item on the agenda, chair updates",
+   "tags": []
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "informational",
+   "quote": "c. sullivan indicated he attended a 300th anniversary meeting, just a preliminary brainstorming meeting",
+   "tags": [
+    "300th anniversary"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved (5-0)",
+   "quote": "next item on the agenda, approval of minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for October 23, 2024",
+   "quote": "next item on the agenda, next meeting october 23, 2024.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "Parks Commission",
+  "Marshall Park",
+  "invoices",
+  "vendors",
+  "grants",
+  "recreation programs",
+  "Polar Plunge",
+  "Special Town Meeting",
+  "Revolving Fund",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

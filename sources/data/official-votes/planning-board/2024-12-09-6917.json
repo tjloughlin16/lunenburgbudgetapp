@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-12-09",
  "docid": "6917",
@@ -16,21 +16,19 @@
    "moved_by": "A. Reid",
    "seconded_by": "M. Allison",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "a. reid moved to continue the public hearing for 494 electric ave to 2025 -01-13 at 6:05 p.m. m. allison seconded. voice vote, passed unanimously",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "a. reid moved to continue the public hearing for 494 electric ave to 2025 -01-13 at 6:05 p.m. m. allison seconded. voice vote, passed unanimously."
   },
   {
    "motion": "Continue the public hearings for 791, 795 and 70 Kilburn St to 2025-01-13 at 6:05 P.M.",
    "moved_by": "A. Reid",
    "seconded_by": "M. Allison",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "a. reid moved to continue the public hearing for 494 electric ave to 2025 -01-13 at 6:05 p.m. m. allison seconded. voice vote, passed unanimously. 791 leomi",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "a. reid moved to continue the public hearings for 791, 795 and 70 kilburn st to 2025 -01-13 at 6:05 p.m. m. allison seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "Authorize Graves Engineering Inc as the peer reviewer for the application at 558 & 560 Goodrich St in the amount of $3,000.",
+   "motion": "Authorize Graves Engineering Inc as peer reviewer for 558 & 560 Goodrich St in the amount of $3,000.",
    "moved_by": "A. Reid",
    "seconded_by": "M. Allison",
    "outcome": "passed unanimously",
@@ -42,27 +40,24 @@
    "moved_by": "A. Reid",
    "seconded_by": "M. Allison",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "a. reid moved to continue the public hearing for 494 electric ave to 2025 -01-13 at 6:05 p.m. m. allison seconded. voice vote, passed unanimously. 791",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "a. reid moved to continue the public hearing for 558 & 560 goodrich st to 2025 -01-13 at 6:05 p.m. m. allison seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "Authorize Graves Engineering Inc as the peer reviewer for the Stormwater and Common Driveway applications at 171 Arbor St in the amount of $3,000.",
+   "motion": "Authorize Graves Engineering Inc as peer reviewer for the Stormwater and Common Driveway applications at 171 Arbor St in the amount of $3,000.",
    "moved_by": "M. Allison",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. allison moved to authorize graves engineering inc as the peer reviewer for the stormwater and common driveway applications at 171 arbor st in the amount of $3,000 . a. reid seconded. voice vote, passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "m. allison moved to authorize graves engineering inc as the peer reviewer for the stormwater and common driveway applications at 171 arbor st"
   },
   {
    "motion": "Continue the public hearing for 171 Arbor St to 2025-01-13 at 6:05 P.M.",
    "moved_by": "A. Reid",
    "seconded_by": "M. Allison",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "a. reid moved to continue the public hearing for 494 electric ave to 2025 -01-13 at 6:05 p.m. m. allison seconded. voice vote, passed unanimo",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "a. reid moved to continue the public hearing for 171 arbor st to 2025 -01-13 at 6:05 p.m. m. allison seconded. voice vote, passed unanimously."
   },
   {
    "motion": "Release the performance guarantee for the Stormwater Management Permit for 512 Northfield Rd in the sum of $6,000.",
@@ -73,16 +68,329 @@
    "quote": "a. reid moved to release the performance guarantee for the stormwater management permit for 512 northfield rd in the sum of $6,000. m. allison seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "Adjourn.",
+   "motion": "Adjourn the meeting (adjourned 7:57 P.M.).",
    "moved_by": "A. Reid",
    "seconded_by": "M. Allison",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "a. reid moved to adjourn. m. allison seconded. voice vote , passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "a. reid moved to adjourn. m. allison seconded. voice vote , passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0815024
+ "note": "Text extraction of a 7-page minutes PDF, not a scan; all page text was readable. Every vote was a voice vote recorded as 'passed unanimously' with no roll count. No motion is recorded for the 1260 Reservoir Rd endorsement or the 512 Northfield discussion beyond the release vote. No transfers were printed. Attendance for Christopher Reilly and Logan O'Connell is inferred from their roles in the minutes and from speaking or taking minutes; the minutes do not state their attendance directly. Minutes approval of prior meeting was not recorded in this document.",
+ "cost_usd": 0.01978817,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: timothy willsmer (vice -chair)"
+  },
+  {
+   "name": "Christopher Reilly",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "c. reilly explained - the smp here included a 6-month requirement for survival for the required vegetation."
+  },
+  {
+   "name": "Logan O'Connell",
+   "role": "Admin Asst.",
+   "status": "not stated",
+   "quote": "minutes by logan o'connell, admin asst."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "of Hannigan Engineering, representing the applicant",
+   "status": "present",
+   "quote": "presented, on behalf of applicant easterbrook nominee trust"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "of McCarty Engineering, representing the applicant",
+   "status": "present",
+   "quote": "presented on behalf of applicant psg realty"
+  },
+  {
+   "name": "Michael Lovewell",
+   "role": "resident, 795 Reservoir Rd",
+   "status": "present",
+   "quote": "michael lovewell (795 reservoir rd) - applicant installed drainage system to new building"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "resident, 11 Wintergreen Ct",
+   "status": "present",
+   "quote": "bob pease (11 wintergreen ct) - understanding is that planning board approved applicant putting tent on parking lot during covid"
+  },
+  {
+   "name": "Eric Sullender",
+   "role": "resident, 558 Goodrich St",
+   "status": "present",
+   "quote": "eric sullender (558 goodrich st) explained this was part of preserving a house lot for his children."
+  },
+  {
+   "name": "Kyle Edmonds",
+   "role": "resident, 201 Arbor St",
+   "status": "present",
+   "quote": "kyle edmonds (201 arbor st)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board endorsed the decision on 1260 Reservoir Rd (SPA, PJ Keatings) after review found no issues; no motion is recorded.",
+   "quote": "the board reviewed, found no issues, and endorsed the decision."
+  },
+  {
+   "decision": "C. Reilly will examine the DCR model bylaw for tailoring to Lunenburg, and Town Counsel's ADU bylaw recommendation, with zoning updates aimed for Annual Town Meeting.",
+   "quote": "c. reilly will examine model bylaw from dcr for tailoring to lunenburg"
+  },
+  {
+   "decision": "A standing agenda item, Zoning Workshops, will be added in January.",
+   "quote": "will be added in january to address upcoming zoning challenges"
+  },
+  {
+   "decision": "M. Brenner will research whether the Planning Board can facilitate re-organization of the Master Plan Steering Committee by a member.",
+   "quote": "m. brenner he was asked if the planning board can facilitate the re-organization of the mpsc by a member and will research this."
+  },
+  {
+   "decision": "C. Reilly will follow up with the Building Inspector or DPW on puddling on Route 2A.",
+   "quote": "c. reilly will follow up."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Peer review by Graves Engineering Inc, 558 & 560 Goodrich St",
+   "what_was_recorded": "The Board authorized Graves Engineering Inc as peer reviewer for the 558 & 560 Goodrich St application at $3,000, after a member questioned the peer review burden on the applicant.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "a. reid moved to authorize graves engineering inc as the peer reviewer for this application in the amount of $3,000."
+  },
+  {
+   "topic": "Peer review by Graves Engineering Inc, 171 Arbor St",
+   "what_was_recorded": "The Board authorized Graves Engineering Inc as peer reviewer for the Stormwater and Common Driveway applications at 171 Arbor St at $3,000.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "in the amount of $3,000 . a. reid seconded."
+  },
+  {
+   "topic": "Performance guarantee release, 512 Northfield Rd Stormwater Management Permit",
+   "what_was_recorded": "The staff recommended and the Board voted to release the full performance guarantee of $6,000 after a site visit confirmed the required vegetation survived.",
+   "figures_as_printed": [
+    "$6,000"
+   ],
+   "quote": "recommended release of the full $6,000 performance guarantee."
+  },
+  {
+   "topic": "MBTA Communities Act compliance consultancy via Montachusett Regional Planning Commission",
+   "what_was_recorded": "C. Reilly reported the Town has requested a sum for the Montachusett Regional Planning Commission consultancy on options for MBTA Communities Act compliance; no decision was recorded.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "c. reilly noted the town has requested $20,000 for the montachusett regional planning commission"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Michael Lovewell",
+   "stated_role": "",
+   "topic": "494 Electric Ave drainage and flooding",
+   "quote": "michael lovewell (795 reservoir rd) - applicant installed drainage system to new building"
+  },
+  {
+   "speaker": "Bob Pease",
+   "stated_role": "",
+   "topic": "494 Electric Ave tent approval and parking lot conversion",
+   "quote": "bob pease (11 wintergreen ct) - understanding is that planning board approved applicant putting tent on parking lot during covid"
+  },
+  {
+   "speaker": "Eric Sullender",
+   "stated_role": "",
+   "topic": "558 & 560 Goodrich St common driveway",
+   "quote": "eric sullender (558 goodrich st) explained this was part of preserving a house lot for his children."
+  },
+  {
+   "speaker": "Kyle Edmonds",
+   "stated_role": "",
+   "topic": "171 Arbor St runoff and history as a gravel pit",
+   "quote": "kyle edmonds (201 arbor st)"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "matthew brenner called the meeting to order at 6:02 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Chair and Director's report: Master Plan and zoning workshops",
+   "resolution": "no action",
+   "quote": "aiming to close the master plan process out by february.",
+   "tags": [
+    "master plan",
+    "zoning",
+    "MBTA Communities Act",
+    "ADU"
+   ]
+  },
+  {
+   "topic": "494 Electric Ave SPA and SMP hearing",
+   "resolution": "continued to 2025-01-13",
+   "quote": "a. reid moved to continue the public hearing for 494 electric ave to 2025 -01-13 at 6:05 p.m.",
+   "tags": [
+    "site plan",
+    "stormwater",
+    "drainage",
+    "continued hearing"
+   ]
+  },
+  {
+   "topic": "791 Leominster Rd, 795 Leominster Rd and 70 Kilburn St SMP hearings",
+   "resolution": "continued to 2025-01-13",
+   "quote": "a. reid moved to continue the public hearings for 791, 795 and 70 kilburn st to 2025 -01-13 at 6:05 p.m.",
+   "tags": [
+    "stormwater",
+    "continued hearing"
+   ]
+  },
+  {
+   "topic": "558 & 560 Goodrich St SMP and SP for common driveway",
+   "resolution": "peer reviewer authorized; continued to 2025-01-13",
+   "quote": "a. reid moved to continue the public hearing for 558 & 560 goodrich st to 2025 -01-13 at 6:05 p.m.",
+   "tags": [
+    "common driveway",
+    "waivers",
+    "peer review",
+    "continued hearing"
+   ]
+  },
+  {
+   "topic": "171 Arbor St SMP and SP hearing",
+   "resolution": "peer reviewer authorized; continued to 2025-01-13",
+   "quote": "a. reid moved to continue the public hearing for 171 arbor st to 2025 -01-13 at 6:05 p.m.",
+   "tags": [
+    "common driveway",
+    "stormwater",
+    "turtle habitat",
+    "peer review",
+    "continued hearing"
+   ]
+  },
+  {
+   "topic": "1260 Reservoir Rd SPA decision",
+   "resolution": "endorsed without recorded motion",
+   "quote": "the board reviewed, found no issues, and endorsed the decision.",
+   "tags": [
+    "site plan",
+    "decision"
+   ]
+  },
+  {
+   "topic": "512 Northfield Rd stormwater performance guarantee release",
+   "resolution": "approved",
+   "quote": "a. reid moved to release the performance guarantee for the stormwater management permit for 512 northfield rd in the sum of $6,000.",
+   "tags": [
+    "stormwater",
+    "performance guarantee"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee composition and quorum",
+   "resolution": "no action; M. Brenner to research",
+   "quote": "per m. brenner, mpsc is having continued difficulties reaching quorum.",
+   "tags": [
+    "master plan",
+    "committee quorum"
+   ]
+  },
+  {
+   "topic": "Abutting community notices",
+   "resolution": "no action",
+   "quote": "townsend planning board granted a stormwater management permit to starbucks location.",
+   "tags": [
+    "abutting towns"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "per m. allison - met last monday but unable to attend.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "upcoming meetings are 2025-01-13 and 2025-01-27 at 6:00 p.m.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns: Route 2A puddling, flood maps",
+   "resolution": "no action; C. Reilly to follow up",
+   "quote": "m. allison noted substantial puddling in the road on route 2a",
+   "tags": [
+    "flooding",
+    "state road",
+    "FEMA flood maps"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:57 P.M.",
+   "quote": "a. reid moved to adjourn. m. allison seconded. voice vote , passed unanimously.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearings",
+  "site plan review",
+  "stormwater",
+  "common driveway",
+  "peer review",
+  "performance guarantee",
+  "master plan",
+  "zoning",
+  "MBTA Communities Act",
+  "accessory dwelling units",
+  "flooding",
+  "continued hearings"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2024-10-16",
  "docid": "6830",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from September 18, 2024",
+   "motion": "Approve the minutes of 9/18/24.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "ms. brzozoski makes a motion to approve the minutes for 9/18/24, mr. beardmore seconds the motion, all via roll approve with mr. lehtinen abstaining."
   },
   {
-   "motion": "Approve line item transfer of $1,100 from High School Office Supply to Phys Ed for software subscription",
+   "motion": "Approve a $1,100 line item transfer from High School Office Supply to Phys Ed to renew a software subscription.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Mr. Beardmore",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "ms. brzozoski makes a motion to approve line item transfer, mr. beardmore seconds the motion all approve via roll call vote."
   },
   {
-   "motion": "Approve donations from Szocik foundation ($1200) and T-Mobile ($5,000)",
+   "motion": "Approve both donations: the $1200 Szocik foundation donation and the $5,000 T-Mobile contest check.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "mr. beardmore makes a motion to approve both donations, ms. archambault seconds the motion all approve via roll call."
   },
   {
-   "motion": "Accept the FY25 School Improvement Plan",
+   "motion": "Accept the FY25 School Improvement Plan.",
    "moved_by": "Ms. Archambault",
    "seconded_by": "Ms. Brzozoski",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "ms. archambault makes a motion to accept the fy25 school improvement plan, ms. brzozoski seconds the motion all approve via roll call"
   },
   {
-   "motion": "Enter executive session and adjourn the meeting",
+   "motion": "Enter executive session and adjourn immediately following, at 9:38.",
    "moved_by": "Ms. Brzozoski",
    "seconded_by": "Ms. Archambault",
    "outcome": "passed",
@@ -53,6 +53,447 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1095304
+ "note": "Text is a machine extraction of the minutes, not a scan; all readable. Votes are recorded as 'all approve via roll call' or 'roll approve' with no counts printed, so outcomes are 'passed' as printed; the minutes-approval vote records one abstention (Mr. Lehtinen) and no count. The 'Public Comment' headings (items 3 and 13) contain only remarks by committee members; no outside speaker is recorded. The minutes spell Amy Resnick as 'Ms. Resnik' and Ms. Archambault as 'Archambualt' once; names are recorded as printed. Attendance is listed as 'Present' for all five members; the guests list does not state attendance mode beyond 'Hybrid' in the header. No dollar figure is printed for the Chapter 70 discussion; percentages (41%, 46%) are recorded as printed. Two guests (Palumbo, Gilson) appear only in the guest list with no stated role in the proceedings.",
+ "cost_usd": 0.021781170000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "brian lehtinen, chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "anthony sculimbrene, vice chair - present"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "carol archambault, secretary - present"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member - present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMHS Principal (presented FY25 School Improvement Plan)",
+   "status": "present",
+   "quote": "mr. santry principal of the middle high school, ms. squier principal of the primary school"
+  },
+  {
+   "name": "Norman Yvon",
+   "role": "THES Principal (presented FY25 School Improvement Plan)",
+   "status": "present",
+   "quote": "and mr. yvon principal of turkey hill elementary"
+  },
+  {
+   "name": "Carla Squier",
+   "role": "Primary School Principal (presented FY25 School Improvement Plan)",
+   "status": "present",
+   "quote": "ms. squier principal of the primary school"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services",
+   "status": "present",
+   "quote": "julianna hanscom reports for the most part the new implementation is going well"
+  },
+  {
+   "name": "Dr. Deborah Bookis",
+   "role": "Director of Teaching & Learning (presented Assessment Report)",
+   "status": "present",
+   "quote": "dr. bookis our director of teaching and learning, ms. resnik our math specialist"
+  },
+  {
+   "name": "Amy Resnick",
+   "role": "MTSS Math Specialist/Coach (presented Assessment Report as Ms. Resnik)",
+   "status": "present",
+   "quote": "ms. resnik our math specialist"
+  },
+  {
+   "name": "Lisa Cantin",
+   "role": "MTSS Literacy Specialist/Coach (presented Assessment Report)",
+   "status": "present",
+   "quote": "and ms. cantin our literacy specialist instructional coach."
+  },
+  {
+   "name": "John Palumbo",
+   "role": "School Psychologist",
+   "status": "not stated",
+   "quote": "john palumbo-school psychologist"
+  },
+  {
+   "name": "Dr. Susan Gilson",
+   "role": "Director of Administration & Finance",
+   "status": "not stated",
+   "quote": "dr. susan gilson-director of administration &"
+  },
+  {
+   "name": "Mr. Bigelow",
+   "role": "not stated (presented a donation)",
+   "status": "present",
+   "quote": "mr. bigelow presents a donation from the szocik foundation in the amount of $1200"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair will forward the Chapter 70 presentation slides and the Senate Bill 303 information to the superintendent so they can be shared with members.",
+   "quote": "i will forward the presentation slides to the superintendent, who can share with the members."
+  },
+  {
+   "decision": "The Chair gave permission to the North Middlesex superintendent to talk with the Lunenburg superintendent about sharing resources.",
+   "quote": "i gave him permission to talk to the superintendent"
+  },
+  {
+   "decision": "Ms. Archambault will cover the PTO liaison meetings until Mr. Sculimbrene is done with the Budget Task Force (as printed, the minutes spell her name 'Archambualt').",
+   "quote": "will cover the meetings until mr. sculimbrene is done with the budget task force."
+  },
+  {
+   "decision": "Members interested in reviewing the Turkey Hill ADA study bids and helping select a vendor were asked to email the superintendent.",
+   "quote": "helping to make the selection please send me an email and we will coordinate times."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Warrants dated 10/1 to 10/9/24 were reported as totalling a stated amount and signed.",
+   "quote": "warrants 10/1 to 10/9/24 $361,064.94 warrants have been signed",
+   "figures_as_printed": [
+    "$361,064.94"
+   ]
+  },
+  {
+   "topic": "Line item transfer for software subscription",
+   "what_was_recorded": "A $1,100 transfer from High School Office Supply to Phys Ed to renew a software subscription was approved.",
+   "quote": "i. $1,100 from high school office supply to phys ed to renew software subscription",
+   "figures_as_printed": [
+    "$1,100"
+   ]
+  },
+  {
+   "topic": "Szocik foundation donation",
+   "what_was_recorded": "A $1200 donation from the Szocik foundation, earmarked for a turf field brush, was presented and approved.",
+   "quote": "a donation from the szocik foundation in the amount of $1200 to be earmarked",
+   "figures_as_printed": [
+    "$1200"
+   ]
+  },
+  {
+   "topic": "T-Mobile contest check",
+   "what_was_recorded": "The district was selected for a $5,000 check, to be presented at the homecoming rally; the donation was approved.",
+   "quote": "we were selected for a $5,000 check, to be presented at the homecoming rally",
+   "figures_as_printed": [
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "Chapter 70 and state contribution bill",
+   "what_was_recorded": "The Chair reported on Chapter 70 funding and a potential Senate Bill 303 that would change the state contribution rate from 41% to 46%; no dollar figure was printed.",
+   "quote": "the specifics bill is senate bill 303, this would potentially help a lot of the districts",
+   "figures_as_printed": [
+    "41%",
+    "46%"
+   ]
+  },
+  {
+   "topic": "Use of additional Chapter 70 money",
+   "what_was_recorded": "The committee discussed putting Chapter 70 money into salary reserve, with a portion going toward the Director of Facilities salary; no amount was printed.",
+   "quote": "the committee discusses the chapter 70 money going into salary reserve, with a portion of it going toward the director of facilities salary.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Washington DC trip cost",
+   "what_was_recorded": "Middle School Advisory anticipated the 6th grade Washington DC trip cost to be $1400 and discussed fundraising.",
+   "quote": "they are anticipating the cost to be $1400, an idea was brought up to start fundraising",
+   "figures_as_printed": [
+    "$1400"
+   ]
+  },
+  {
+   "topic": "Marshall Park borrowing warrant article",
+   "what_was_recorded": "The Parks warrant article to borrow $5 million for Marshall Park was reported, with the Finance Committee asking how the additional Chapter 70 money would be used.",
+   "quote": "to borrow $5 million dollars for marshall park, their public hearing will be on the 24th",
+   "figures_as_printed": [
+    "$5 million"
+   ]
+  },
+  {
+   "topic": "SEL grant",
+   "what_was_recorded": "After research the district does not qualify for the SEL grant; no amount was printed.",
+   "quote": "sel grant reporting an update, after more research, we do not qualify for this",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Prudent Investor Rule warrant article",
+   "what_was_recorded": "A town warrant article on the Prudent Investor Rule was described as potentially making a huge difference in the school budget; no amount was printed.",
+   "quote": "article 4 is the prudent investor rule which could make a huge difference in our school",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "High deductible health insurance and cost saving",
+   "what_was_recorded": "The Budget Task Force discussed a high deductible health insurance proposal and cost-saving options; no amount was printed.",
+   "quote": "we talked about the option for a proposal for the high deductible health insurance plan and suggested",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfer from High School Office Supply to Phys Ed, to renew a software subscription",
+   "amount_as_printed": "$1,100",
+   "outcome": "passed",
+   "quote": "i. $1,100 from high school office supply to phys ed to renew software subscription"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Thanks to Evan Watters for Finance Committee service",
+   "speaker": "Ms. Archambault",
+   "stated_role": "not stated",
+   "quote": "ms. archambault takes a minute to thank evan watters for his time on the finance committee"
+  },
+  {
+   "topic": "Thanks to retiring police chief Gammell",
+   "speaker": "Ms. Brzozoski",
+   "stated_role": "not stated",
+   "quote": "ms. brzozoski takes a minute to thank our retiring police chief, chief gammell, his last day is friday in lunenburg"
+  },
+  {
+   "topic": "Thanks to Turkey Hill fifth grade staff for Nature Classroom trip",
+   "speaker": "Ms. Brzozoski",
+   "stated_role": "not stated",
+   "quote": "ms. brzozoski thanks the fifth grade teachers and staff at turkey hill for nature"
+  },
+  {
+   "topic": "Thanks to Chief Gammell",
+   "speaker": "Mr. Beardmore",
+   "stated_role": "not stated",
+   "quote": "mr. beardmore echoes the thanks to chief gammell, he has always been a pleasure to work with"
+  },
+  {
+   "topic": "Thanks to Evan Watters",
+   "speaker": "Mr. Lehtinen",
+   "stated_role": "not stated",
+   "quote": "mr. lehtinen i talked about the chief already, but wanted to say that evan watters was a great supporter"
+  },
+  {
+   "topic": "Homecoming float",
+   "speaker": "Mr. Sculimbrene",
+   "stated_role": "not stated",
+   "quote": "mr. sculimbrene my son is in the 9th grade and for the first time he is participating on the homecoming float"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:30",
+   "quote": "1. call to order by mr. lehtinen at 6:30",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (item 3)",
+   "resolution": "remarks of thanks; no action",
+   "quote": "3. public comment ms. archambault takes a minute to thank evan watters for his time on the finance committee",
+   "tags": [
+    "thanks",
+    "finance committee",
+    "police"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "reported; no action; members to receive slides and SB 303 information",
+   "quote": "mr. lehtinen reports he had a follow up with representative scarsdale on the chapter 70 funding.",
+   "tags": [
+    "chapter 70",
+    "state aid",
+    "finance committee",
+    "resource sharing"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes of 9/18/24",
+   "resolution": "approved; Mr. Lehtinen abstaining",
+   "quote": "ms. brzozoski makes a motion to approve the minutes for 9/18/24, mr. beardmore seconds the motion",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants, line item transfer and donations",
+   "resolution": "warrants signed; transfer and donations approved",
+   "quote": "warrants 10/1 to 10/9/24 $361,064.94 warrants have been signed",
+   "tags": [
+    "warrants",
+    "transfers",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "update; no action; safety protocols discussed",
+   "quote": "dr. burnham shares an update regarding a medical emergency that occurred on the sidelines at a football game",
+   "tags": [
+    "athletics safety",
+    "facilities director",
+    "ADA study",
+    "collaboration"
+   ]
+  },
+  {
+   "topic": "FY25 School Improvement Plans",
+   "resolution": "accepted",
+   "quote": "ms. archambault makes a motion to accept the fy25 school improvement plan, ms. brzozoski seconds the motion",
+   "tags": [
+    "school improvement plan",
+    "curriculum"
+   ]
+  },
+  {
+   "topic": "Assessment report (Fall assessments and MCAS)",
+   "resolution": "presented; no action",
+   "quote": "dr. bookis our director of teaching and learning, ms. resnik our math specialist",
+   "tags": [
+    "assessment",
+    "MCAS"
+   ]
+  },
+  {
+   "topic": "SEL grant",
+   "resolution": "update; district does not qualify",
+   "quote": "sel grant reporting an update, after more research, we do not qualify for this",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "PTO liaison",
+   "resolution": "discussed; coverage by Ms. Archambault",
+   "quote": "pto liaison currently mr. sculimbrene is the pto liaison",
+   "tags": [
+    "PTO"
+   ]
+  },
+  {
+   "topic": "Superintendent goals",
+   "resolution": "discussion; no action recorded",
+   "quote": "dr. burnham has brought forward the goals for discussion by the committee",
+   "tags": [
+    "goals"
+   ]
+  },
+  {
+   "topic": "PowerSchool and new IEP implementation (old business)",
+   "resolution": "reported; no action",
+   "quote": "julianna hanscom reports for the most part the new implementation is going well",
+   "tags": [
+    "special education",
+    "IEP",
+    "PowerSchool"
+   ]
+  },
+  {
+   "topic": "Strategy for continuous improvement (old business)",
+   "resolution": "reviewed; no action",
+   "quote": "dr. burnham reviewed the status of the strategy and action plans that were in place a year ago",
+   "tags": [
+    "core values",
+    "strategy"
+   ]
+  },
+  {
+   "topic": "School Committee goals (old business)",
+   "resolution": "discussion; no action",
+   "quote": "school committee goals currently in the committee member folder the school committee goals",
+   "tags": [
+    "goals"
+   ]
+  },
+  {
+   "topic": "Committee and board reports",
+   "resolution": "reported; no action",
+   "quote": "mr. beardmore reports the capital planning committee met to hear a presentation from acting chief thibodeau",
+   "tags": [
+    "capital planning",
+    "finance committee",
+    "budget task force",
+    "town meeting",
+    "warrant articles",
+    "PACSAL"
+   ]
+  },
+  {
+   "topic": "Public comment (item 13)",
+   "resolution": "remarks of thanks; no action",
+   "quote": "13. public comment ms. brzozoski thanks the fifth grade teachers and staff at turkey hill",
+   "tags": [
+    "thanks"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "no items recorded",
+   "quote": "14. topics for future discussion",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "entered executive session and adjourned, 9:38",
+   "quote": "ms. brzozoski makes a motion at 9:38 to enter executive session and adjourn immediately following, ms. archambault seconds the motion all approve via roll call",
+   "tags": [
+    "procedure",
+    "executive session"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "chapter 70",
+  "state aid",
+  "budget",
+  "warrants",
+  "donations",
+  "line item transfer",
+  "school improvement plan",
+  "assessment and MCAS",
+  "special education IEP",
+  "athletics safety",
+  "facilities director",
+  "town warrant articles",
+  "finance committee",
+  "budget task force",
+  "health insurance",
+  "resource sharing with North Middlesex",
+  "executive session"
+ ],
+ "dropped_unquoted_by_field": {}
 }

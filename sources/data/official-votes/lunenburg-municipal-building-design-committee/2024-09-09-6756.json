@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2024-09-09",
  "docid": "6756",
@@ -12,6 +12,183 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document a planning and discussion meeting where the Municipal Building Design Committee reviewed an RFP for architectural services. The meeting adjourned due to loss of quorum, but no motions or votes are recorded in the text.",
- "cost_usd": 0.0572994
+ "note": "Text extracted from pages 1-3; no votes are recorded and the meeting ended at 6:15pm for loss of quorum, with no motion to adjourn printed. The minutes do not label a public comment section; Anthony Sculimbrene is listed as a community guest who spoke, so his remarks are recorded as public comment. The minutes spell the member both 'Michael-Ray Jeffreys' and 'Mr. Jeffries'; the roster spelling is used. 'Julie' is named as agreeing to scan the paper copy but is not identified or listed as attending. The text also does not state a dollar figure for soil borings or the other costs discussed.",
+ "cost_usd": 0.01371379,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, matthew allison"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member (also printed as Mr. Jeffries)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, matthew allison"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, matthew allison"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, matthew allison"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: kristina masaitis, tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: kristina masaitis, tom gray"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Community Guests",
+   "status": "present",
+   "quote": "anthony sculimbrene thinks that being more specific about what the deliverables will be will"
+  },
+  {
+   "name": "Julie",
+   "role": "not stated in the minutes",
+   "status": "not stated",
+   "quote": "julie agreed to scan the paper copy."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Julie agreed to scan the paper copy, following discussion of adding a requirement for a digital copy.",
+   "quote": "discussion took place on adding that they should provide a digital copy, and julie agreed to scan the paper copy."
+  },
+  {
+   "decision": "Because the Town Manager wants costs kept as low as possible, the committee will adjust the goal year and then cover the key points it wants to discuss.",
+   "quote": "the town manager was clear that they wanted to keep the cost as low as possible, so we are going to adjust the goal year and then hit the key points where we want to talk about."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA allocation to the committee",
+   "what_was_recorded": "The committee has $225,000 allocated from ARPA and must have everything under contract by October.",
+   "quote": "we have $225,000 allocated to us from arpa, but we need to have everything under contract by october.",
+   "figures_as_printed": [
+    "$225,000"
+   ]
+  },
+  {
+   "topic": "Cost of the project and the architectural RFP",
+   "what_was_recorded": "Discussion took place on the $225,000 cost; the minutes note the committee will select on price as well as qualifications.",
+   "quote": "discussion took place on the $225,000 cost.",
+   "figures_as_printed": [
+    "$225,000"
+   ]
+  },
+  {
+   "topic": "Price as a selection criterion",
+   "what_was_recorded": "The committee intends to select vendors on price as well as qualifications; no figure was printed.",
+   "quote": "we intend to select not only on qualifications but also on price.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital funds for the municipal building and Turkey Hill projects",
+   "what_was_recorded": "The Town Manager wants to allocate capital funds to both projects and the select board agrees; no figure was printed.",
+   "quote": "the town manager wants to allocate capital funds to both projects and the select board fully agrees with that strategy.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Keeping project cost as low as possible",
+   "what_was_recorded": "The Town Manager asked that cost be kept as low as possible; no figure was printed.",
+   "quote": "the town manager was clear that they wanted to keep the cost as low as possible",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Soil borings and geophysical work costs",
+   "what_was_recorded": "Soil borings and geophysical work could use up a large part of the money, though the area is small; no figure was printed.",
+   "quote": "soil borings and geophysical work could use up a big chunk of the money, but it's a pretty",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Deliverables and architect pricing in the RFP",
+   "speaker": "Anthony Sculimbrene",
+   "stated_role": "Community Guests",
+   "quote": "anthony sculimbrene thinks that being more specific about what the deliverables will be will help keep the architect engineering firms on the same page in terms of pricing"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and recap of prior work",
+   "resolution": "no action; recap given",
+   "quote": "meeting called to order at 5:30pm.",
+   "tags": [
+    "recap",
+    "space needs",
+    "hybrid plan"
+   ]
+  },
+  {
+   "topic": "Review of the RFP sent to the committee",
+   "resolution": "discussed; fine-tuning to follow, release projected October",
+   "quote": "the purpose of our meeting tonight is to go over the rfp that was sent out to the committee.",
+   "tags": [
+    "RFP",
+    "architect selection",
+    "October release"
+   ]
+  },
+  {
+   "topic": "Designer scope and deliverables",
+   "resolution": "discussed; deliverables to be specified more clearly",
+   "quote": "the designer will be required to prepare detailed room data sheets and diagrams",
+   "tags": [
+    "deliverables",
+    "zoning",
+    "room data sheets",
+    "pricing"
+   ]
+  },
+  {
+   "topic": "Site work for schematic designs",
+   "resolution": "discussed; no action",
+   "quote": "for schematic level drawings, you probably don't need to have field evaluations",
+   "tags": [
+    "soil borings",
+    "survey",
+    "site plan",
+    "schematic design"
+   ]
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "design committee",
+  "RFP",
+  "ARPA funds",
+  "capital funds",
+  "architect selection",
+  "Ritter building",
+  "Town Hall",
+  "Turkey Hill",
+  "site work",
+  "quorum lost"
+ ],
+ "dropped_unquoted_by_field": {}
 }

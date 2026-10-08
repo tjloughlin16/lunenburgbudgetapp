@@ -455,5 +455,210 @@
    "at": "2026-10-06T18:21:40Z",
    "cost_usd": 0.212483
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12192024-6928",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2024-12-19-minutes-6928.txt",
+   "path": "sources/meetings/finance-committee/2024-12-19-minutes-6928.pdf"
+  },
+  "official_sha256": "c339a25df0c70548ae3104cdb9dfec5de4915b435d847f69018ade0c1066c3c6",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree that there were no non-procedural votes or transfers, and most shared figures match once caption garbling is allowed for. The main difference is attendance: ours names five members, the official minutes four present and one absent. The two records also name different task force presenters, and each has figures and items the other lacks.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 4,
+   "discrepancy": 2,
+   "only_in_ours": 7,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Brooks House lease estimate",
+    "ours": "Brooks House lease: 30 to 50,000, half a million",
+    "official": "the lease is estimated to be between $30,000 to $50,000",
+    "note": "The captions garbled the $30,000 to $50,000 range. The 'half a million' does not appear in the official minutes; it may be the speaker's comparison or a mishearing.",
+    "official_reading": "$30,000 to $50,000",
+    "t": 1884
+   },
+   {
+    "kind": "agree",
+    "about": "Trash and recycling cost",
+    "ours": "Trash and recycling: $250,000 a year",
+    "official": "currently it is costing $250,000 a year and rising.",
+    "note": "Same figure in both."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chapter 90 town roads",
+    "ours": "Chapter 90 town roads: 10 to an additional 10 to 20,000 a year",
+    "official": "depending on the number of roads this is estimated to cost $10,000 to $20,000 per year.",
+    "note": "The captions garbled the range, which is the same item as the official $10,000 to $20,000.",
+    "official_reading": "$10,000 to $20,000",
+    "t": 2112
+   },
+   {
+    "kind": "agree",
+    "about": "Warrant delivery saving",
+    "ours": "Warrant delivery: 7500",
+    "official": "this could be a yearly cost saving of $7,500.",
+    "note": "Same figure in both.",
+    "t": 2841
+   },
+   {
+    "kind": "caption_error",
+    "about": "Free cash and tax rate",
+    "ours": "Free cash and tax rate: 2.7, 2.25, $14. 36",
+    "official": "was approved at 2.25 and the tax rate was set at 14.36.",
+    "note": "The tax rate was split by the captions. The extra '2.7' in ours is not in the official minutes; check the recording if it matters.",
+    "official_reading": "2.25 and 14.36",
+    "t": 5133
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prudent investment rule figures",
+    "ours": "Prudent investment rule: 15,000 to 250,000",
+    "official": "",
+    "note": "The official minutes carry no prudent investment rule figures.",
+    "t": 711
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Procurement thresholds",
+    "ours": "Procurement thresholds: 10,000, 10 to 50,000, 50,000",
+    "official": "",
+    "note": "The official minutes carry no procurement thresholds.",
+    "t": 649
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 70 minimum aid",
+    "ours": "Chapter 70 minimum aid: $70, a 100, 2 and a half%",
+    "official": "",
+    "note": "The official minutes carry no Chapter 70 minimum aid figures.",
+    "t": 5262
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 70 vs expenses growth",
+    "ours": "Chapter 70 vs expenses: 40%, 05% a year, 4 to 5% a year",
+    "official": "",
+    "note": "The official minutes carry no Chapter 70 versus expense growth figures.",
+    "t": 6709
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "CPA figures beyond the 3% maximum",
+    "ours": "Community Preservation Act: 3%, 100,000, 18%, 100% match, 133%",
+    "official": "",
+    "note": "The official minutes give only the surcharge range, so the 100,000, 18%, 100% match and 133% figures are not in them; the 3% maximum agrees.",
+    "t": 776
+   },
+   {
+    "kind": "only_in_official",
+    "about": "CPA minimum surcharge",
+    "ours": "",
+    "official": "the minimum surcharge is .5% and the maximum is 3%.",
+    "note": "Ours has the 3% maximum but not the .5% minimum."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Diagnostic audit, health insurance buyout, solar fields",
+    "ours": "",
+    "official": "this will be a deeper dive than the annual audit and a 1-time cost to the town.",
+    "note": "The official minutes also discuss the health insurance buyout and solar fields as revenue or savings, with no dollar figures. Ours lists none of these."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Question on FY26 town finances",
+    "ours": "",
+    "official": "tom gray questions if the town is going to have enough money to run the town in fy 26.",
+    "note": "The official minutes record this question; ours does not."
+   },
+   {
+    "kind": "agree",
+    "about": "Preliminary budget inquiry",
+    "ours": "Chair will put the budget season schedule on the January 9th agenda and check with the town manager on timing of the preliminary budget.",
+    "official": "chris menard will make an inquiry with carter terenzini.",
+    "note": "Same action: the chair checks with the town manager about a January preliminary budget. The January 9th agenda item is only in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Task force tracking and four-meeting calendar",
+    "ours": "Members agreed in discussion that the task force recommendations should be tracked with actions through to conclusion. / Chair asked for four meetings after the public hearing to be built into the budget calendar, working back from a 25-day warrant deadline",
+    "official": "",
+    "note": "Neither is a recorded vote. The official minutes mention the 25 days only as Peter Beardmore's question, not as a decision about four meetings.",
+    "t": 4330
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Committee members present",
+    "ours": "Chris (chair), TJ (member), Tom (member), Mandy (member), Lisa (member)",
+    "official": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member jay simeone",
+    "note": "Ours lists five members and the official minutes four present plus Jean Russell absent. Check the roll and whether TJ, Mandy and Lisa are caption mishearings of Tanya Dall and Jay Simeone, or whether Lisa and Jean Russell were present.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Chair and clerk Tom",
+    "ours": "Chris (chair); Tom (member)",
+    "official": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member jay simeone",
+    "note": "Chris Menard and Tom Gray match."
+   },
+   {
+    "kind": "agree",
+    "about": "Presenter Renee",
+    "ours": "Renee (presenter (Budget Task Force, select board member))",
+    "official": "renee emkey and ezequiel ayala provided the following recommendations.",
+    "note": "Renee Emkey presented in both."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Second Budget Task Force presenter",
+    "ours": "Dr Burnham (presenter (school official, Budget Task Force))",
+    "official": "renee emkey and ezequiel ayala provided the following recommendations.",
+    "note": "Ours names Dr Burnham as co-presenter; the official minutes name Ezequiel Ayala. Check the recording to see who presented."
+   },
+   {
+    "kind": "caption_error",
+    "about": "School committee secretary",
+    "ours": "Carol Shambo (school committee secretary)",
+    "official": "carol archambault, school committee secretary,",
+    "note": "Same role, misheard surname.",
+    "official_reading": "Carol Archambault",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Peter as participant",
+    "ours": "Peter (presenter)",
+    "official": "peter beardmore questions when the 25 days start.",
+    "note": "Same person, Peter Beardmore. The official minutes call him a participant, not a presenter."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assessor and finance director",
+    "ours": "Linda (official (assessor department)); the finance director",
+    "official": "",
+    "note": "The official attendee list omits both."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Dave Passios public comment",
+    "ours": "",
+    "official": "he states the department of local services has several services that are available to all cities and towns in massachusetts",
+    "note": "The official minutes list Dave Passios of the Green Communities Committee and record his comment on Department of Local Services services; ours has neither."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:48:18Z",
+   "cost_usd": 0.256637
+  }
  }
 }

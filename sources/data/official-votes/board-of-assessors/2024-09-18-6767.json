@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-09-18",
  "docid": "6767",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "To adjourn the meeting.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
@@ -21,6 +21,227 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes state that minutes from August 19, September 4, and executive session minutes from July 29 and August 19 were postponed (not voted on). Invoices and abatements are stated as having been \"signed\" but no formal motion or vote is recorded for these items.",
- "cost_usd": 0.0639854
+ "note": "Text is a clean extraction with no scan issues. Only one motion is recorded: adjournment, carried by 'All in favor' with no count printed, so the outcome is recorded as passed without a tally. Approvals of minutes were postponed, not voted. Invoices and abatements were signed; no vote is recorded for them, so they appear as decisions. Public comment: the minutes say there were no comments from the public at either opening or closing, so no speakers are listed. Carter Terenzini and Denise are named but did not take part in the meeting, so they are omitted from attendees. The 'Hero Act' and 'split tax rate' items discuss money without a printed dollar figure.",
+ "cost_usd": 0.015595870000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer (zoom), clerk john rabbitt"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "vice chair sarah cammer (zoom)"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer (zoom), clerk john rabbitt"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "principal assessor lynda mcquade"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Assessing Consultant",
+   "status": "absent",
+   "quote": "absent members: assessing consultant rena swezey"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board requests that 17e be added to the drafted 41A exemption/deferral warrant article document for Fall Town Meeting.",
+   "quote": "the board requests that 17e be added to the drafted document."
+  },
+  {
+   "decision": "Approval of the minutes of August 19 and September 4, 2024, and the executive session minutes of July 29 and August 19, 2024, was postponed.",
+   "quote": "the approval of minutes from august 19th and september 4th were postponed."
+  },
+  {
+   "decision": "Brian Laffond will prepare a document on the 2006 values for the Board, for use in the 41C warrant article.",
+   "quote": "brian laffond will work on a document and provide it to the board."
+  },
+  {
+   "decision": "Sarah Cammer will review the September 4 minutes, since Brian Laffond was unable to attend that meeting.",
+   "quote": "sarah cammer is going to review the september 4"
+  },
+  {
+   "decision": "Assigning numbers to blank properties is a priority for the Neighborhood Review Team, anticipated to be complete by November 7.",
+   "quote": "assigning numbers to those properties is a priority and anticipate having those"
+  },
+  {
+   "decision": "The Committee agreed to meet and discuss the split tax rate further with the Board.",
+   "quote": "the committee agree to meet and discuss"
+  },
+  {
+   "decision": "The invoice from Vision for $2,000 for interim adjustments was signed.",
+   "quote": "there was an invoice from vision totaling $2,000 for the interim adjustments was signed."
+  },
+  {
+   "decision": "The invoice for $35 for business cards was signed.",
+   "quote": "an invoice totaling $35 for denise's business cards was signed."
+  },
+  {
+   "decision": "Motor vehicle abatements were signed.",
+   "quote": "motor vehicle abatements were signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Vision invoice for interim adjustments",
+   "what_was_recorded": "An invoice from Vision for interim adjustments was signed.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "there was an invoice from vision totaling $2,000 for the interim adjustments was signed."
+  },
+  {
+   "topic": "Business cards invoice",
+   "what_was_recorded": "An invoice for business cards was signed.",
+   "figures_as_printed": [
+    "$35"
+   ],
+   "quote": "an invoice totaling $35 for denise's business cards was signed."
+  },
+  {
+   "topic": "Split tax rate and total tax levy",
+   "what_was_recorded": "Discussion that a split tax rate would not change the total tax levy but would change how the burden is distributed. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "it was discussed that a split tax rate would not change the total tax levy, but"
+  },
+  {
+   "topic": "Hero Act motor vehicle abatement for veterans",
+   "what_was_recorded": "Report on proposed legislation giving veterans a full motor vehicle abatement for one year; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the entire year for 1 year. this would apply to the 22e exemptions."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening comments: split tax rate",
+   "resolution": "Committee to meet with Board",
+   "quote": "it was discussed that a split tax rate would not change the total tax levy, but",
+   "tags": [
+    "tax rate",
+    "budget committee"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "informational; no action",
+   "quote": "lynda mcquade provided the below updates:",
+   "tags": [
+    "exemptions",
+    "abatements",
+    "staffing",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "postponed",
+   "quote": "the approval of minutes from august 19th and september 4th were postponed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review and approve invoices, vouchers and abatements",
+   "resolution": "approved and signed",
+   "quote": "motor vehicle abatements were signed.",
+   "tags": [
+    "invoices",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Neighborhood Review Team update",
+   "resolution": "no action; numbering deadline set for November 7",
+   "quote": "assigning numbers to those properties is a priority and anticipate having those",
+   "tags": [
+    "neighborhood review",
+    "property numbering"
+   ]
+  },
+  {
+   "topic": "Finalization of 41A exemption/deferral warrant articles",
+   "resolution": "17e to be added to draft",
+   "quote": "the board requests that 17e be added to the drafted document.",
+   "tags": [
+    "warrant articles",
+    "Fall Town Meeting",
+    "41A",
+    "41C"
+   ]
+  },
+  {
+   "topic": "Suggested modification of website",
+   "resolution": "no update",
+   "quote": "john rabbitt had no update.",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "Assessing calendar (postponed)",
+   "resolution": "discussed; no action",
+   "quote": "discuss details and development of assessing calendar.",
+   "tags": [
+    "calendar",
+    "classification hearing",
+    "interim"
+   ]
+  },
+  {
+   "topic": "BOA policies (postponed)",
+   "resolution": "discussed; no action",
+   "quote": "john rabbitt questions if the dls file has been updated by the town clerk.",
+   "tags": [
+    "policies",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "noted",
+   "quote": "october 2, 2024, at 6:30 pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments: minutes review",
+   "resolution": "Sarah Cammer to review September 4 minutes",
+   "quote": "brian laffond states he wants to review minutes from prior meetings to get them",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "tags": [
+  "Board of Assessors",
+  "property tax",
+  "tax rate",
+  "exemptions",
+  "abatements",
+  "warrant articles",
+  "Fall Town Meeting",
+  "classification hearing",
+  "staffing",
+  "zoning",
+  "minutes",
+  "invoices"
+ ],
+ "dropped_unquoted_by_field": {}
 }

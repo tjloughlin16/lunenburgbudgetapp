@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2024-09-12",
  "docid": "6764",
@@ -12,6 +12,146 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe discussions and decisions but contain no explicit motion or voting language (e.g., \"motion by,\" \"seconded by,\" \"voted,\" \"so voted,\" \"carried,\" \"unanimously approved\").",
- "cost_usd": 0.0573754
+ "note": "Text is a two-page extract with no recorded motions, votes or roll-call results; the minutes list agenda headings with notes but no motions, so no votes are recorded. Matt Snyder and Chris Holden appear only in the header member list and not in the attendance section, so their attendance is recorded as not stated. \"Dave Blatt, School IT Manager\" is named as a participant in a scheduled Sep 20 meeting, not as attending this meeting, so was not listed as an attendee; the minutes do not say whether he is the same person as Chair David Blatt. Dakin Company and Unitil are named as organisations in that scheduled meeting and are not listed as attendees. Public comment: the minutes state \"No public comment.\" so no speakers are recorded.",
+ "cost_usd": 0.01298707,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair (as printed in header)",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy"
+  },
+  {
+   "name": "David Passios",
+   "role": "Vice Chair (as printed in header)",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Clerk (as printed in header)",
+   "status": "present",
+   "quote": "members present: david blatt, david passios, kim duffy"
+  },
+  {
+   "name": "Kate Burnham",
+   "role": "Superintendent of Lunenburg Schools",
+   "status": "present",
+   "quote": "non-members present: kate burnham (superintendent of lunenburg schools)"
+  },
+  {
+   "name": "Matt Snyder",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matt snyder, member chris holden, member"
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matt snyder, member chris holden, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Meeting minutes from August 19 were deferred to the next meeting for review (no vote recorded).",
+   "quote": "meeting minutes from august 19 to be reviewed at next meeting."
+  },
+  {
+   "decision": "The committee will meet the first Monday of each month; next meeting set for Monday Sep 30th.",
+   "quote": "to meet first monday of each month. next: monday sep 30th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Refrigerator controls option for schools mini-split project",
+   "what_was_recorded": "An optional add-on of refrigerator controls was noted, contingent on remaining funding being available.",
+   "figures_as_printed": [
+    "~11k"
+   ],
+   "quote": "option to add refrigerator controls (~11k) if remaining funding is available."
+  },
+  {
+   "topic": "Utility incentives for schools mini-split project",
+   "what_was_recorded": "Utility incentives were noted as an expected amount for the schools mini-split project.",
+   "figures_as_printed": [
+    "~25k"
+   ],
+   "quote": "utility incentives ~25k."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Fall Grant Process",
+   "resolution": "noted; no action recorded",
+   "quote": "fall grant process two hybrid police cruisers",
+   "tags": [
+    "grants",
+    "police cruisers",
+    "fleet"
+   ]
+  },
+  {
+   "topic": "Schools Mini-Split Heating/Cooling Project",
+   "resolution": "noted; meetings scheduled, no action recorded",
+   "quote": "schools mini-split heating/cooling project:",
+   "tags": [
+    "school heating",
+    "mini-splits",
+    "utility incentives"
+   ]
+  },
+  {
+   "topic": "Spring 2025 Grant Preliminary Plan",
+   "resolution": "noted; no action recorded",
+   "quote": "spring 2025 grant preliminary plan:",
+   "tags": [
+    "grants",
+    "classrooms",
+    "school buildings"
+   ]
+  },
+  {
+   "topic": "Possible options from energy assessments of town buildings (Old Business)",
+   "resolution": "noted; no action recorded",
+   "quote": "possible options based on energy assessments of town buildings:",
+   "tags": [
+    "energy assessments",
+    "municipal buildings",
+    "weatherization"
+   ]
+  },
+  {
+   "topic": "Outreach program / Facebook posts",
+   "resolution": "noted; ongoing, no action recorded",
+   "quote": "green communities committee facebook page informational posts on-going.",
+   "tags": [
+    "public outreach",
+    "Facebook",
+    "MassSave"
+   ]
+  },
+  {
+   "topic": "Timeline for next meeting",
+   "resolution": "meeting schedule set",
+   "quote": "timeline for next meeting to meet first monday of each month. next: monday sep 30th.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy efficiency",
+  "school heating",
+  "grants",
+  "municipal buildings",
+  "public outreach",
+  "police cruisers"
+ ],
+ "dropped_unquoted_by_field": {}
 }

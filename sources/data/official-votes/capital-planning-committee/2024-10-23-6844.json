@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2024-10-23",
  "docid": "6844",
@@ -12,24 +12,271 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from July 10, 2024, July 31, 2024, and October 9, 2024",
-   "moved_by": "M att B renner",
-   "seconded_by": "T om Alonzo",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion to approve the minutes from july 10, 2024, july 31, 2024, and october 9, 2024, by m att b renner, seconded by t om alonzo. all in favor. the vote was unanimous ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Adjourn",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Matt Brenner",
+   "motion": "Approve the minutes of July 10, 2024, July 31, 2024, and October 9, 2024.",
+   "moved_by": "Matt Brenner",
+   "seconded_by": "Tom Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to ad journ by tom alonzo, seconded by matt brenner."
+   "quote": "july 10, 2024, july 31, 2024, and october 9, 2024, by m att b renner, seconded by t om alonzo."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Matt Brenner",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "there was a motion to ad journ by tom alonzo, seconded by matt brenner."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10802940000000001
+ "note": "Machine-extracted text with broken word spacing (e.g. 'Chris R uth', 'M att B renner'); quotes were copied as printed with spacing collapsed. The header reads 'October 2 3 , 2024'; the date 2024-10-23 is taken from the task. Two votes are recorded, both procedural (approval of minutes, adjournment). The adjournment motion has no printed result, so its outcome is 'not stated'. The minutes say the minutes approval was 'unanimous' but print no count. Kate Burnham and Kara McCarthy appear only as email senders, not as participants, so they are not listed as attendees. Dollar figures are as printed, with the broken spacing preserved in figures_as_printed. The 'decisions' are staff follow-ups the minutes record without a vote; the 'Peter Beardmore suggests' items are suggestions, not decisions, and are not listed. Several projects have no printed cost.",
+ "cost_usd": 0.01663297,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair peter beardmore, vice chair tom alonzo, clerk matt brenner,"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair peter beardmore, vice chair tom alonzo, clerk matt brenner,"
+  },
+  {
+   "name": "Matt Brenner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair peter beardmore, vice chair tom alonzo, clerk matt brenner,"
+  },
+  {
+   "name": "Rob Bowen",
+   "role": "Member-at-large",
+   "status": "present",
+   "quote": "member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee Representative",
+   "status": "present",
+   "quote": "member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "the facilities director, chris r uth , provided his presentation."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Facilities Director Chris Ruth will send a spreadsheet with updated numbers for the design projects, following a follow-up meeting.",
+   "quote": "chris ruth will send a spreadsheet with the updated numbers"
+  },
+  {
+   "decision": "Facilities Director Chris Ruth will look further into the vacant former Main Street Bank location as a possible studio site.",
+   "quote": "will look further into this."
+  },
+  {
+   "decision": "Facilities Director Chris Ruth will work out the funding gaps for the projects (the minutes say he 'will put something together').",
+   "quote": "will put something together."
+  },
+  {
+   "decision": "Facilities Director Chris Ruth will contact the APDC about the Town Hall window replacement.",
+   "quote": "but he will contact them"
+  },
+  {
+   "decision": "All capital presentations are to take place before Christmas; the DPW and Fire presentations are scheduled for November 4.",
+   "quote": "all presentations need to take place prior to christmas."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library HVAC engineering and design",
+   "what_was_recorded": "The chair questioned why the Library HVAC project needs engineering and design work costing $32,000 (printed with a space: $ 32,000).",
+   "figures_as_printed": [
+    "$ 32,000"
+   ],
+   "quote": "and design work costing $ 32,000"
+  },
+  {
+   "topic": "Library HVAC rooftop design estimate",
+   "what_was_recorded": "The initial rooftop design estimate, which includes structural evaluations, was stated as $13,000 (printed as $ 13,00 0).",
+   "figures_as_printed": [
+    "$ 13,00 0"
+   ],
+   "quote": "rooftop design estimate was $ 13,00 0 which includes structural"
+  },
+  {
+   "topic": "Grants for capital projects",
+   "what_was_recorded": "The Facilities Director believes one more grant round of up to $200,000 remains, and that grants are capped at $100,000 a year.",
+   "figures_as_printed": [
+    "$ 200 ,000",
+    "$ 100 ,000"
+   ],
+   "quote": "there is 1 more round of up to $ 200 ,000 and then it is capped at $ 100 ,000 a year"
+  },
+  {
+   "topic": "Senior Center parking lot design",
+   "what_was_recorded": "The parking lot design request for the Senior Center is $32,000 and covers a survey, conceptual plans and civil engineering.",
+   "figures_as_printed": [
+    "$32,000"
+   ],
+   "quote": "the $32,000 request includes a survey, conceptual plans, and everything on the civil"
+  },
+  {
+   "topic": "Boys and Girls Club flooring replacement",
+   "what_was_recorded": "Replacing the Boys and Girls Club carpet with vinyl planks on the first and second floors is estimated to cost $25,000.",
+   "figures_as_printed": [
+    "$ 25,000"
+   ],
+   "quote": "this is estimated to cost $ 25,000"
+  },
+  {
+   "topic": "Marshall Pond weed treatment",
+   "what_was_recorded": "Weed treatment at Marshall Pond, starting with clearing the pond centre and some limited chemical treatment, is estimated to cost $50,000.",
+   "figures_as_printed": [
+    "$ 50,000"
+   ],
+   "quote": "this is estimated to cost $ 50,000"
+  },
+  {
+   "topic": "DPW garage floor and roof",
+   "what_was_recorded": "Bids for the DPW garage floor and roof are open, and ARPA funds are anticipated to be used. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "bids are currently open, and arpa funds are anticipated to be used."
+  },
+  {
+   "topic": "Green Communities grants for Town Hall and Town Hall windows",
+   "what_was_recorded": "Green Communities grants may be available for the Town Hall HVAC and window replacement. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "believes there may be some green communities grants available."
+  },
+  {
+   "topic": "Funding gaps across capital projects",
+   "what_was_recorded": "The chair asked where the funding gaps are across capital projects, and the Facilities Director will put something together. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "wants to know where the funding gaps are."
+  },
+  {
+   "topic": "Former gas station at 925 Mass Ave and possible grants",
+   "what_was_recorded": "A member asked whether the building could be knocked down and replaced with a food pantry, and whether grants are available. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "put the food pantry there and see if there are any grants available."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened at 6:30 PM",
+   "quote": "the meeting opened at 6 :30 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (committee and public, opening)",
+   "resolution": "no comments",
+   "quote": "there were no comments from the committee or the public.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action; chair to request IT presentation date",
+   "quote": "peter beardmore received an email from dr. kate burnham with the",
+   "tags": [
+    "IT",
+    "presentations"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved minutes of July 10, July 31 and October 9, 2024",
+   "quote": "july 10, 2024, july 31, 2024, and october 9, 2024, by m att b renner, seconded by t om alonzo.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Capital request presentations: Facilities",
+   "resolution": "presented; capital requests discussed; no action recorded",
+   "quote": "the facilities director, chris r uth , provided his presentation.",
+   "tags": [
+    "facilities",
+    "capital requests",
+    "FY26",
+    "HVAC",
+    "parking",
+    "parks",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Ongoing capital projects",
+   "resolution": "discussed; staff to follow up on numbers and funding gaps",
+   "quote": "peter beardmore suggests having a follow-up meeting to discuss",
+   "tags": [
+    "DPW",
+    "Senior Center",
+    "library",
+    "Town Hall",
+    "funding gaps"
+   ]
+  },
+  {
+   "topic": "Draft town fiscal policy manual",
+   "resolution": "no discussion",
+   "quote": "there has been no further discussion related to the fiscal policy manual.",
+   "tags": [
+    "fiscal policy"
+   ]
+  },
+  {
+   "topic": "Review schedule and topics for future meetings",
+   "resolution": "presentation schedule set; IT presentation still missing",
+   "quote": "the only presentation that is missing is the it department",
+   "tags": [
+    "schedule",
+    "presentations"
+   ]
+  },
+  {
+   "topic": "Public comment (public and committee, closing)",
+   "resolution": "no comments",
+   "quote": "there were no comments from the public or the committee.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned; meeting closed at 8:07 PM",
+   "quote": "there was a motion to ad journ by tom alonzo, seconded by matt brenner.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "facilities",
+  "town buildings",
+  "HVAC",
+  "parking",
+  "parks",
+  "grants",
+  "ARPA",
+  "funding gaps",
+  "schedule",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

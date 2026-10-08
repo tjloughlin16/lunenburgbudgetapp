@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-10-16",
  "docid": "6826",
@@ -12,31 +12,325 @@
  },
  "votes": [
   {
-   "motion": "Add a table of contents to the lower part of the assessors webpage",
+   "motion": "Add a table of contents to the lower part of the webpage.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
-   "outcome": "passed 2-0-1",
+   "outcome": "passed 2 yes, 1 abstention",
    "procedural": false,
-   "quote": "there was a motion to add a table of contents to the lower part of the webpage by sarah cammer, seconded by brian laffond. sarah cammer aye, brian laffond aye, john rabbitt abstained."
+   "quote": "there was a motion to add a table of contents to the lower part of the webpage by sarah cammer, seconded by brian laffond."
   },
   {
-   "motion": "Add a policy requiring written request and explanation for Town Department actions requiring Assessor action or vote",
+   "motion": "Add the suggested policy that any action initiated by another Town Department requiring Assessors to act or vote must be accompanied by a written request and explanation.",
    "moved_by": "Brian Laffond",
    "seconded_by": "Sarah Cammer",
-   "outcome": "passed",
+   "outcome": "passed (all in favor, no count printed)",
    "procedural": false,
    "quote": "there was a motion to add this suggested policy by brian laffond, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
-   "outcome": "passed",
+   "outcome": "passed (all in favor, no count printed)",
    "procedural": true,
    "quote": "there was a motion to adjourn by sarah cammer, seconded by brian laffond. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0990614
+ "note": "Text is a clean extraction, not a scan. Three motions are recorded in the minutes: one table-of-contents motion with a printed count (2 yes, 1 abstention), one policy motion marked only 'All in favor' with no count, and the adjournment, also 'All in favor' with no count. Minutes approval was postponed, not voted. The minutes say John Rabbitt 'made a motion to put in a table of contents', but the recorded motion is Sarah Cammer's, seconded by Brian Laffond; Rabbitt abstained. Rabbitt's resignation was submitted to the Chair; no board action is recorded. Dollar figures are as printed; the $42,393,589,780 figure is described in the minutes as a preliminary total valuation, though the minutes say 'property tax was valued at'. Public comment: 'no comments' is recorded twice (opening and closing), with no speakers named. Kara McCarthy and Mike Tarello are mentioned but not recorded as attending.",
+ "cost_usd": 0.01752377,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Assessing Consultant",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt, principal assessor lynda mcquade, assessing consultant rena swezey"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the minutes of September 4, 2024 and October 2, 2024 was postponed.",
+   "quote": "the approval of minutes from september 4,2024,4 and october 2, 2024 were postponed."
+  },
+  {
+   "decision": "The Board signed a void administrative abatement, reversing an administrative abatement made on a fire-damaged property that turned out not to be needed.",
+   "quote": "the board signed a void administrative abatement and reversed the abatement."
+  },
+  {
+   "decision": "Lynda McQuade notified the building inspector about a building that was not picked up and not inspected for some time.",
+   "quote": "lynda mcquade has notified the building inspector."
+  },
+  {
+   "decision": "Goals set for the rest of October and November: complete the classification hearing, submit LA3 and LA4 (LA15 and LA13) in Gateway, and interview and hire an administrative assessing assistant.",
+   "quote": "goals for rest of month and november include:"
+  },
+  {
+   "decision": "John Rabbitt added the three previously suggested tabs to the website (motor vehicle excise abatement application, property abatement application, GIS map).",
+   "quote": "john rabbitt added the 3 previously suggested tabs"
+  },
+  {
+   "decision": "Chair suggested that the website changes go from Lynda McQuade to Kara McCarthy for the update; forms from 2023 to be removed or updated.",
+   "quote": "brian laffond suggests that lynda mcquade bring the changes to kara mccarthy to update the website."
+  },
+  {
+   "decision": "Sarah Cammer will provide a list and map of the properties under site index 0.",
+   "quote": "sarah cammer will provide a list and map of these properties."
+  },
+  {
+   "decision": "Lynda McQuade will ask Mike Tarello whether there should be a site index 0.",
+   "quote": "lynda mcquade will inquire with mike tarello tomorrow"
+  },
+  {
+   "decision": "Rena Swezey will prepare a 1-page summary of the warrant article; a separate handout will be made later.",
+   "quote": "rena swezey will work on a 1-page summary for the article"
+  },
+  {
+   "decision": "Tentative meeting dates set for November 6, 2024 and November 20, 2024, and a tentative classification hearing on November 5 or November 19, 2024.",
+   "quote": "tentative november 6, 2024, and november 20, 2024."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Real estate abatements, FY 23",
+   "what_was_recorded": "Three FY 23 real estate abatements were settled and processed.",
+   "figures_as_printed": [
+    "$4,970.36"
+   ],
+   "quote": "3 real estate abatements for fy 23 were settled and processed totaling $4,970.36."
+  },
+  {
+   "topic": "Vision invoice",
+   "what_was_recorded": "The Board reviewed an invoice signed from Vision.",
+   "figures_as_printed": [
+    "$800"
+   ],
+   "quote": "there was an invoice signed from vision totaling $800."
+  },
+  {
+   "topic": "Motor vehicle commitment number 5",
+   "what_was_recorded": "Commitment number 5 for 504 motor vehicle bills was reviewed.",
+   "figures_as_printed": [
+    "$71,201.89"
+   ],
+   "quote": "the motor vehicle commitment number 5 for 504 motor vehicle bills totaled $71,201.89."
+  },
+  {
+   "topic": "Preliminary total property valuation, class 1 (LA4 review)",
+   "what_was_recorded": "The LA4 review recorded a preliminary total for class 1 property.",
+   "figures_as_printed": [
+    "$42,393,589,780"
+   ],
+   "quote": "the preliminary total property tax was valued at $42,393,589,780 for class 1."
+  },
+  {
+   "topic": "Median sale and appraised prices, single-family, 2-family and 3-family",
+   "what_was_recorded": "LA4 review recorded median sale prices and median appraised values by property type.",
+   "figures_as_printed": [
+    "$540,000",
+    "$502,800",
+    "$457,500",
+    "$468,000",
+    "$574,000",
+    "$542,002"
+   ],
+   "quote": "the median single-family sale price is $540,000 and the median appraised was $502,800."
+  },
+  {
+   "topic": "Uncollected back payment on an uninspected building",
+   "what_was_recorded": "The Board asked whether back payment could be received or billed for a building not picked up and not inspected for some time; no amount was recorded.",
+   "figures_as_printed": [],
+   "quote": "there is question if any type of back payment can be received or billed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting opened 6:32 PM",
+   "quote": "the meeting opened at 6:32 pm.",
+   "tags": [
+    "meeting"
+   ]
+  },
+  {
+   "topic": "Opening comments from the Board",
+   "resolution": "discussed; no action recorded",
+   "quote": "john rabbitt questions if the q3 tax bill will be delivered on time.",
+   "tags": [
+    "tax bills",
+    "HERO program",
+    "Gateway"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comments",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "noted",
+   "quote": "the fy 25 growth is complete. vision will be coming tomorrow to finalize.",
+   "tags": [
+    "growth",
+    "abatements",
+    "motor vehicle",
+    "building permits"
+   ]
+  },
+  {
+   "topic": "Goals for rest of month and November",
+   "resolution": "set; no vote",
+   "quote": "goals for rest of month and november include:",
+   "tags": [
+    "classification hearing",
+    "LA3",
+    "LA4",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes (Sept 4 and Oct 2, 2024)",
+   "resolution": "postponed",
+   "quote": "the approval of minutes from september 4,2024,4 and october 2, 2024 were postponed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Invoices, expense vouchers, payroll, billing errors; LA4 review",
+   "resolution": "LA4 highlights reviewed; invoice and commitment noted; void abatement signed",
+   "quote": "below are highlights from the la4 document review.",
+   "tags": [
+    "LA4",
+    "valuation",
+    "motor vehicle",
+    "abatements",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Website modification follow-up",
+   "resolution": "table-of-contents motion passed 2 yes, 1 abstention; tabs added; actions assigned",
+   "quote": "complaints received on difficulty finding information on property record card.",
+   "tags": [
+    "website",
+    "forms",
+    "property record card"
+   ]
+  },
+  {
+   "topic": "Neighborhood Review Team update",
+   "resolution": "update given; site index 0 list to follow; next meeting Tuesday 6:30 PM",
+   "quote": "570 properties that fall under site index 0",
+   "tags": [
+    "site index",
+    "neighborhood review",
+    "properties"
+   ]
+  },
+  {
+   "topic": "Exemption warrant articles for Fall Town Meeting",
+   "resolution": "discussed; 1-page summary to be drafted; no vote",
+   "quote": "rena swezey will work on a 1-page summary for the article",
+   "tags": [
+    "warrant article",
+    "COLA",
+    "Town Meeting",
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Postponed: Assessing Calendar",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "discuss details and development of assessing calendar",
+   "tags": [
+    "assessing calendar"
+   ]
+  },
+  {
+   "topic": "Postponed: BOA policies",
+   "resolution": "policy added, all in favor",
+   "quote": "there was a motion to add this suggested policy by brian laffond, seconded by sarah cammer. all in favor.",
+   "tags": [
+    "policy",
+    "inter-department requests"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "tentative dates set",
+   "quote": "tentative november 6, 2024, and november 20, 2024.",
+   "tags": [
+    "schedule",
+    "classification hearing"
+   ]
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "no public comment; Board thanks",
+   "quote": "john rabbitt thanks the board for their work.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned; closed 8:35 PM",
+   "quote": "the meeting closed at 8:35 pm.",
+   "tags": [
+    "meeting"
+   ]
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "tax bills",
+  "abatements",
+  "motor vehicle excise",
+  "HERO Act",
+  "website",
+  "exemptions",
+  "COLA",
+  "warrant article",
+  "Fall Town Meeting",
+  "site index",
+  "classification hearing",
+  "LA4",
+  "board policy",
+  "staffing",
+  "Gateway",
+  "Vision"
+ ],
+ "dropped_unquoted_by_field": {}
 }

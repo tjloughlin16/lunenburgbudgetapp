@@ -417,5 +417,243 @@
    "at": "2026-10-06T18:21:57Z",
    "cost_usd": 0.247834
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12182024-6931",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2024-12-18-minutes-6931.txt",
+   "path": "sources/meetings/conservation-commission/2024-12-18-minutes-6931.pdf"
+  },
+  "official_sha256": "097b448e461416463ad8ccf61151010169e3b7f24c73f108813039fd60b6ba75",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all nine votes, including the 4-0 tallies and the $5,500 Timber Rights Fund authorization. Where they differ, it is mostly captioned names (Sophia/S. Dorow, Hanigan/Hannigan) and items only one record carries. Check the Fire Road item (address and action both differ), the signatory scope, and the official minutes crediting the 390 Howard St motion to R. Bursch, who is listed as absent.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 0,
+   "discrepancy": 4,
+   "only_in_ours": 6,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "390 Howard St continuance: who moved it",
+    "t": 471,
+    "ours": "Continue 390 Howard Street to January 8 — passed 4-0 by roll call (Jenny, Mike, Chris, chair all aye)",
+    "official": "r. bursch, to continue to 2025-01-08 at 7:00 p.m..",
+    "note": "Outcome and tally agree, but the official minutes attribute the motion to R. Bursch, who the same minutes list as absent; check the minutes' motion attribution and the video."
+   },
+   {
+    "kind": "agree",
+    "about": "48 Arbor St NOI approved with special conditions, 4-0",
+    "t": 1354,
+    "ours": "Approve the notice of intent for 48 Arbor Street septic upgrade with special conditions: silt fence added to straw wattle, and buffer placards along the 30-foot line — passed 4-0 by roll call",
+    "official": "c. st germain, to approve with the special conditions that a silt fence be added to the straw wattle",
+    "note": "Same vote, outcome and tally; the official minutes add the 20-25 ft placard spacing."
+   },
+   {
+    "kind": "agree",
+    "about": "50 Pine Grove Rd continued to Jan 8, 4-0",
+    "t": 2882,
+    "ours": "Continue 50 Pine Grove Road hearing to January 8 — passed 4-0 by roll call",
+    "official": "c. st germain, to continue to 2025-01-08 at 7:00 p.m.",
+    "note": "Same vote, date and tally."
+   },
+   {
+    "kind": "agree",
+    "about": "Send original determination/DOA to DEP (400 Leominster-Shirley Rd)",
+    "t": 3542,
+    "ours": "Have Sophia send the original March 2023 determination to DEP and clarify the September copy was a misunderstanding — passed 4-0 by roll call",
+    "official": "c. st germain, for s. dorow to send original doa and timeline clarification to dep.",
+    "note": "Same action and 4-0 tally; our minutes give more detail (March 2023, September copy) and name the staffer 'Sophia'."
+   },
+   {
+    "kind": "agree",
+    "about": "400 Leominster-Shirley Rd continued to Jan 8, 4-0",
+    "t": 3604,
+    "ours": "Continue 400 Leominster-Shirley Road matter to January 8 — passed 4-0 by roll call",
+    "official": "j. pewtherer, to continue to 2025-01-08 at 7:00 p.m.",
+    "note": "Same vote, date and tally."
+   },
+   {
+    "kind": "agree",
+    "about": "Electric Ave / Pierce Ave NOI continued to Jan 8, 4-0",
+    "t": 3923,
+    "ours": "Continue the stormwater management notice of intent (Electric Ave and Pierce) to January 8 — passed 4-0 by roll call",
+    "official": "m. larouche, to continue to 2025-01-08 at 7:00 p.m.",
+    "note": "Same vote, date and tally; official gives 494 Electric Ave / Pierce Ave."
+   },
+   {
+    "kind": "agree",
+    "about": "12 Horizon Island Rd amendment approved with conditions, 4-0",
+    "t": 4378,
+    "ours": "Approve amendment of order of conditions at 12 Horizon Island Road, with conditions: work during lake drawdown and sand pulled back onto shore — passed 4-0 by roll call",
+    "official": "m. larouche, to approve amendment on the condition that (1) work is completed during lake draw-down",
+    "note": "Same vote, conditions and tally."
+   },
+   {
+    "kind": "agree",
+    "about": "57 Round Rd Certificate of Compliance rejected/denied, 4-0",
+    "t": 4730,
+    "ours": "Reject the certificate of compliance for 57 Round Road, citing need for a change notice — passed 4-0 by roll call",
+    "official": "m. larouche, to deny certificate of compliance.",
+    "note": "Same outcome (reject = deny) and tally; the 'change notice' reason is only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Additional $5,500 from Timber Rights Fund for RTP 2023 grant, 4-0",
+    "t": 7343,
+    "ours": "Approve additional amount for wetland delineation and lot line staking under the RTP 2023 grant, from the Timber rights fund — passed 4-0 by roll call",
+    "official": "m. larouche, to authorize an additional $5,500 from the timber rights fund to be used",
+    "note": "Same vote, source fund and tally."
+   },
+   {
+    "kind": "agree",
+    "about": "$5,500 Timber Rights Fund amount (listed as a transfer in ours)",
+    "t": 7367,
+    "ours": "Additional wetland delineation and lot line staking cost for the RTP grant proposed to come out of the Timber rights fund — 5500 (voted)",
+    "official": "m. larouche, to authorize an additional $5,500 from the timber rights fund to be used",
+    "note": "Figure matches; the official minutes record it as an authorization from a fund, not a listed transfer."
+   },
+   {
+    "kind": "agree",
+    "about": "RTP 2023 grant change order figure",
+    "t": 7158,
+    "ours": "RTP 2023 grant change order: 5500",
+    "official": "m. larouche, to authorize an additional $5,500 from the timber rights fund to be used",
+    "note": "Same $5,500 amount."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Table Rock parking lot gravel spaces",
+    "t": 6802,
+    "ours": "Table Rock parking lot design and bids: 10 gravel spaces",
+    "official": "",
+    "note": "The official minutes print no parking space count for Table Rock."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Paint stewardship fee amount",
+    "t": 155,
+    "ours": "Paint stewardship program fee: a dollar",
+    "official": "this program is funded by a small point-of-sale fee to consumers.",
+    "note": "The official minutes give no dollar figure for the fee; 'a dollar' is a caption-level reading to check against the video."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "50 Pine Grove Rd requests to applicant",
+    "t": 2737,
+    "ours": "Applicant at 50 Pine Grove Road asked to consider moving the shed outside the 50 feet, show the fifth tree and any stairs, and give deck material details before the January 8 hearing.",
+    "official": "",
+    "note": "The official minutes record only the continuance, not these requests."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair as signatory: which program",
+    "t": 7701,
+    "ours": "Members verbally endorsed the chair acting as signatory for the Farmland of Local Importance program, pending no objection from the select board, open space committee and agricultural commission; a formal vote would follow.",
+    "official": "m. wilson will provide signatures on behalf of commission.",
+    "note": "Official minutes tie M. Wilson's signatures to the Table Rock grant work and list the farmland item separately as a follow-up; check the video for which program the signatory endorsement covered."
+   },
+   {
+    "kind": "agree",
+    "about": "Farmland of Local Importance: formal vote to follow",
+    "t": 7701,
+    "ours": "Members verbally endorsed the chair acting as signatory for the Farmland of Local Importance program, pending no objection from the select board, open space committee and agricultural commission; a formal vote would follow.",
+    "official": "m. wilson will follow up & then have formal vote.",
+    "note": "Both say a formal vote is still to come; no vote was taken at this meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Paint stewardship recommendation deferred",
+    "t": 7869,
+    "ours": "Paint stewardship recommendation deferred to a future meeting so members can read the materials.",
+    "official": "",
+    "note": "The official minutes describe the PaintCare program but record no deferral."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Fire Road 12 violation follow-up",
+    "t": 6050,
+    "ours": "Sophia to arrange a call with the town contact about the 4 Fire Road 12 violation and open conditions on town land.",
+    "official": "s. dorow will seek clarification.",
+    "note": "Address differs (4 vs 40 Fire Rd 12) and so does the action (arrange a call on violation/open conditions vs seek clarification on whether a state permit extension applies); check the video."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "1168 Mass Ave violation bumped",
+    "t": 6246,
+    "ours": "The 1168 Mass Ave violation was bumped to the next meeting because no owner attended.",
+    "official": "",
+    "note": "The official minutes do not mention 1168 Mass Ave."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "950 Chase Road shed on tracking list",
+    "t": 6290,
+    "ours": "The 950 Chase Road shed matter stays on the tracking list pending the select board.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "January meeting schedule",
+    "t": 8073,
+    "ours": "January schedule is January 8, 22 and 29, with the lake reports on the 29th.",
+    "official": "per m. wilson - special meeting schedule in january: 01-08, 01-22, 01-29.",
+    "note": "Same three dates; lake reports on the 29th only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "315 Lancaster Ave encroachment deferred",
+    "ours": "",
+    "official": "deferred to future meeting.",
+    "note": "Our minutes do not record this deferral."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Monthly conservation budget report upload",
+    "ours": "",
+    "official": "m. wilson has asked office to upload budget report monthly for commission's access by the 15th.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fine notice at 10 Mass Ave",
+    "ours": "",
+    "official": "s. dorow sent out fine notice, got return receipt.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendance vs. mover of 390 Howard motion",
+    "ours": "Jenny (member); Mike (member); Chris (member); Mary (chair)",
+    "official": "absent: r. bursch, j. viviano",
+    "note": "Both records show four members present, but the official minutes attribute a motion to R. Bursch, listed as absent; the official record is internally inconsistent."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Dan Proctor and applicants",
+    "ours": "",
+    "official": "dan proctor (w.r. proctor inc) and greg roy (dillis & roy) presented for applicant chris mackenzie.",
+    "note": "Our minutes list neither Dan Proctor nor the named applicants."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Staff on printed roster",
+    "ours": "",
+    "official": "herlin jaime - interim consv. admin",
+    "note": "Not in our minutes, which name only staffer Sophia."
+   }
+  ],
+  "quotes_not_in_official_dropped": 4,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:54:02Z",
+   "cost_usd": 0.281165
+  }
  }
 }

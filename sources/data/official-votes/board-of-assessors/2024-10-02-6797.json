@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-10-02",
  "docid": "6797",
@@ -12,71 +12,361 @@
  },
  "votes": [
   {
-   "motion": "Approve the Hero Act motor vehicle abatements (26 abatements totaling $3,600)",
+   "motion": "Approve the Hero Act motor vehicle abatements.",
    "moved_by": "Brian Laffond",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "there was a motion to approve the abatements by brian laffond, seconded by sarah cammer. all in favor."
+   "quote": "there was a motion to approve the abatements by brian laffond, seconded by sarah"
   },
   {
-   "motion": "Approve the minutes from August 19, 2024 with amendments",
+   "motion": "Approve the minutes from August 19th with amendments.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from august 19th with amendments by john rabbitt, seconded by brian laffond. all in favor aside from sarah cammer who was not present for the meeting"
+   "quote": "there was a motion to approve the minutes from august 19th with amendments by john"
   },
   {
-   "motion": "Approve the minutes from September 18, 2024 with modifications",
+   "motion": "Approve the minutes from September 18 with modifications.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from september 18 with modifications by sarah cammer, seconded by john rabbitt. all in favor."
+   "quote": "there was a motion to approve the minutes from september 18 with modifications by"
   },
   {
-   "motion": "Approve the executive session minutes from June 10, July 29, and August 19, 2024",
+   "motion": "Approve the executive session minutes from June 10th, July 29th and August 19th of 2024.",
    "moved_by": "Brian Laffond",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to approve the executive session minutes from june 10th of 2024, july 29th of 2024, and august 19th of 2024 by brian laffond, seconded by sarah cammer. all in favor."
+   "quote": "there was a motion to approve the executive session minutes from june 10th of 2024,"
   },
   {
-   "motion": "Transfer $25,000 from the overlay account for abatements",
+   "motion": "Transfer $25,000 from the overlay account for the 24 and 25 abatements.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "there was a motion to transfer $25,000 by john rabbitt, seconded by sarah cammer. all in favor."
+   "quote": "transfer $25,000 by john rabbitt, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "Increase the current charge from 4% to 6% on exemption 41A",
+   "motion": "Increase the charge on exemption 41A from 4% to 6%. Died for lack of a second.",
    "moved_by": "John Rabbitt",
    "seconded_by": "",
-   "outcome": "failed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "there was a motion to increase the current charge from 4% to 6% on 41a by john rabbitt but it was not seconded."
   },
   {
-   "motion": "Add a fourth tab under the agenda section for exemption",
+   "motion": "Add a 4th tab under the agenda section for exemptions on the website.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "passed",
    "procedural": false,
-   "quote": "there was a motion to add a 4th tab under the agenda section that is just for exemption by sarah cammer, seconded by brian laffond. all in favor."
+   "quote": "there was a motion to add a 4th tab under the agenda section that is just for exemption by"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "there was a motion to adjourn by john rabbitt, seconded by sarah cammer. the meeting closed at 9:15pm."
+   "quote": "there was a motion to adjourn by john rabbitt, seconded by sarah cammer."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes clearly recorded with outcomes stated explicitly or implied by meeting closure.",
- "cost_usd": 0.0722714
+ "note": "Plain-text extraction, not a scan. Meeting opened 6:39 PM and closed 9:15 PM as printed. Votes are recorded as 'All in favor' with no vote counts, so outcomes are given as 'passed'. The 'Sarah Cammer who was not present' remark refers to the August 19 meeting, not this one. The 41A motion was not seconded, so it is recorded as not stated. The clerk is printed as 'John Rabbitt' everywhere except once as 'Jack Rabbitt' on page 3. The interim official is printed as both Interim Town Administrator and Interim Town Manager. Tom Alonzo's presence is not stated. Exemption numbers are inconsistent in the text (41D, 14E, 14F in one sentence and 14D, 17E, 17F in the next). Quoted attendance and vote lines were chosen from single printed lines to avoid line-break mismatches.",
+ "cost_usd": 0.02029017,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk (printed once as Jack Rabbitt)",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "lynda mcquade has entered in all the abatements for the hero act."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Assessing Consultant",
+   "status": "present",
+   "quote": "rena swezey states that in her past 30 years working with vision her job has been to get"
+  },
+  {
+   "name": "Ron Cohan",
+   "role": "Public; past president of Massachusetts Assessors Association and Middlesex and Essex County Assessors Association",
+   "status": "present",
+   "quote": "ron cohan, 232 vine street everett, ma, was present."
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Administrator (also printed as Interim Town Manager)",
+   "status": "present",
+   "quote": "carter terenzini the interim town administrator, ezequiel ayala from the finance"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "Finance Department",
+   "status": "present",
+   "quote": "carter terenzini the interim town administrator, ezequiel ayala from the finance"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel (via Zoom)",
+   "status": "remote",
+   "quote": "adam costa, town counsel (via zoom) were present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board member, 284 Lancaster Ave",
+   "status": "not stated",
+   "quote": "tom alonzo, 284 lancaster ave, is on the select board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The September 4 minutes were not approved and will be added to the next agenda.",
+   "quote": "the minutes from september 4th were not approved and will be added to the next agenda."
+  },
+  {
+   "decision": "Discussion of replacing the finance software deferred until there is a Town Manager.",
+   "quote": "brian laffond stated it makes the most sense to make a discussion once there is a town manager. sarah concurred."
+  },
+  {
+   "decision": "Exemption 41A found not needed because it is already in the statute.",
+   "quote": "it was determined that 41a was not needed because it was already in"
+  },
+  {
+   "decision": "John Rabbitt will correct the website links for the motor vehicle and tax abatement forms.",
+   "quote": "john rabbitt will make those corrections."
+  },
+  {
+   "decision": "Brian Laffond will research exemptions 17E and 17F for website content.",
+   "quote": "brian laffond is going to look in exemptions 17e and 17f for information that can be"
+  },
+  {
+   "decision": "Assessing Calendar and BOA Policies postponed.",
+   "quote": "discuss details and development of assessing calendar."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hero Act motor vehicle abatements",
+   "what_was_recorded": "26 abatements were processed, totaling $3,600, and the board then approved them.",
+   "figures_as_printed": [
+    "26",
+    "$3,600"
+   ],
+   "quote": "there were 26 abatements processed that totaled $3,600."
+  },
+  {
+   "topic": "New growth",
+   "what_was_recorded": "The Principal Assessor completed new growth totaling $516,074.",
+   "figures_as_printed": [
+    "$516,074"
+   ],
+   "quote": "lynda mcquade completed the new growth totaling $516,074."
+  },
+  {
+   "topic": "Overlay account release",
+   "what_was_recorded": "A request to release $25,000 from the overlay account, which had a printed balance of $309,716, for the 24 and 25 abatements.",
+   "figures_as_printed": [
+    "$25,000",
+    "$309,716"
+   ],
+   "quote": "there was a request to release $25,000 from the overlay account."
+  },
+  {
+   "topic": "Chapter lien and roll back tax",
+   "what_was_recorded": "A release of a chapter lien and roll back tax totaling $16,561.81 was signed.",
+   "figures_as_printed": [
+    "$16,561.81"
+   ],
+   "quote": "a release of a chapter lien and roll back tax totaling $16,561.81 was signed."
+  },
+  {
+   "topic": "Exemption 41A charge",
+   "what_was_recorded": "A motion to raise the charge on exemption 41A from 4% to 6% was made but not seconded.",
+   "figures_as_printed": [
+    "4%",
+    "6%"
+   ],
+   "quote": "there was a motion to increase the current charge from 4% to 6% on 41a by john rabbitt but it was not seconded."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Release of $25,000 from the overlay account for the 24 and 25 abatements",
+   "amount_as_printed": "$25,000",
+   "outcome": "passed (All in favor)",
+   "quote": "transfer $25,000 by john rabbitt, seconded by sarah cammer. all in favor."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ron Cohan",
+   "stated_role": "past president of Massachusetts Assessors Association and Middlesex and Essex County Assessors Association, and a current member of the Legislative Committee of the Massachusetts Assessors Association",
+   "topic": "present to observe; opening comments",
+   "quote": "he is present to observe and provide comments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening comments",
+   "resolution": "no board comments; public observer noted",
+   "quote": "there were no comments from the board.",
+   "tags": [
+    "opening"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "Hero Act abatements approved; new growth reported; administrative abatement follow-up requested",
+   "quote": "lynda mcquade has entered in all the abatements for the hero act.",
+   "tags": [
+    "abatements",
+    "new growth",
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Roles of Assessors and Tax Collector in Munis items",
+   "resolution": "discussed with Interim Town Manager; no conclusion recorded",
+   "quote": "discuss the potential change in roles and responsibilities of the assessor",
+   "tags": [
+    "tax bills",
+    "Munis",
+    "roles",
+    "assessors",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Possible replacement of finance software",
+   "resolution": "discussed; deferred until a Town Manager is in place",
+   "quote": "lunenburg is considering replacing the finance software.",
+   "tags": [
+    "finance software",
+    "staffing",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "Aug 19 approved with amendments; Sept 18 approved with modifications; executive session minutes approved; Sept 4 not approved",
+   "quote": "review and approve minutes of september 4, september 18 and august 19, 2024, executive",
+   "tags": [
+    "minutes",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Invoices, expense vouchers, payroll, billing errors",
+   "resolution": "overlay transfer of $25,000 approved; lien release and MLS bill signed; motor vehicle abatements and ATB settlements signed",
+   "quote": "a release of a chapter lien and roll back tax totaling $16,561.81 was signed.",
+   "tags": [
+    "overlay account",
+    "abatements",
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Neighborhood Review Team proposal update",
+   "resolution": "update only; recommendations expected later",
+   "quote": "sarah cammer sent the board access to a tool that highlights all residential areas.",
+   "tags": [
+    "neighborhood review",
+    "residential"
+   ]
+  },
+  {
+   "topic": "Exemption warrant articles for Fall Town Meeting",
+   "resolution": "41A dropped as already in statute; motion to raise its charge died for lack of a second",
+   "quote": "carter terenzini confirmed that 14d, 17e and 17f",
+   "tags": [
+    "town meeting",
+    "exemptions",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Suggested modification of website",
+   "resolution": "exemption tab added; link corrections assigned",
+   "quote": "sarah cammer questioned if the previously discussed tabs were added under",
+   "tags": [
+    "website",
+    "abatements",
+    "forms"
+   ]
+  },
+  {
+   "topic": "Postponed topics",
+   "resolution": "Assessing Calendar and BOA Policies postponed",
+   "quote": "discuss details and development of assessing calendar.",
+   "tags": [
+    "assessing calendar",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "no action",
+   "quote": "tentative november 6, 2024, and november 20, 2024",
+   "tags": [
+    "schedule",
+    "classification hearing"
+   ]
+  },
+  {
+   "topic": "Closing comments",
+   "resolution": "no public comments; Rabbitt to request a Finance meeting summary",
+   "quote": "john rabbitt reiterates that he is going to request a meeting summary related to finance",
+   "tags": [
+    "finance",
+    "records"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:15 PM; motion recorded without a stated result",
+   "quote": "there was a motion to adjourn by john rabbitt, seconded by sarah cammer.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "assessors",
+  "tax bills",
+  "Munis",
+  "finance software",
+  "abatements",
+  "overlay account",
+  "exemptions",
+  "town meeting warrant",
+  "website",
+  "property assessment",
+  "interim town manager"
+ ],
+ "dropped_unquoted_by_field": {}
 }

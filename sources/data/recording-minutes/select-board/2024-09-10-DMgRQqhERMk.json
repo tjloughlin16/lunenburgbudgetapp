@@ -1,0 +1,627 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2024-09-10",
+ "video_id": "DMgRQqhERMk",
+ "video_url": "https://www.youtube.com/watch?v=DMgRQqhERMk",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-09-10-DMgRQqhERMk.json",
+  "sha256": "f401c374bdf956e1f76d9e76654559cf4f7705fa784586dcd67ca83dfb2f1f78",
+  "caption_lines": 193,
+  "segments": 1674
+ },
+ "recording": {
+  "duration_s": 4039,
+  "duration": "1:07",
+  "spoken_chars": 59363,
+  "words_approx": 9893
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09102024-6754",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-09-10-agenda-6754.txt",
+   "path": "sources/meetings/select-board/2024-09-10-agenda-6754.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09102024-6754",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-09-10-minutes-6754.txt",
+   "path": "sources/meetings/select-board/2024-09-10-minutes-6754.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-07T21:46:08Z",
+  "cost_usd": 0.39314839999999995
+ },
+ "minutes": {
+  "headline": "Select Board approved a cyclist pass-through; discussed ARPA deadlines, FY25 goals, MUNIS replacement and a roof overage.",
+  "summary": "The board heard public comment about unfilled records requests, then approved a charity bicycle pass-through. The interim town manager reported on hiring, a roof bid over budget, a Tri-Pasos building account deficit, thin capital funds and ARPA commitment deadlines. Members previewed FY25 goals, discussed workshops, budget guidance, warrants and the MUNIS software problem. No budget figures were set.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Lincoln",
+    "role": "member (named in public comment)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Alonzo / selectman Alonzo",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "selectman Moore / more",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "selectman memy",
+    "role": "member (not prepared with goals)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Jeffers",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Carter",
+    "role": "interim town manager",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Annie",
+    "role": "staff (minutes/clerk)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "the chair",
+    "role": "chair",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 104,
+    "topic": "Resident says public records requests to the interim town manager are unfulfilled and under appeal, concerning a shed on common land, and alleges retaliation and a tax change connected to a board member.",
+    "stated_role": "resident"
+   },
+   {
+    "t": 3729,
+    "topic": "Green Communities vice chair reports work with the school department toward the October grant round for phase two of the mini splits, and raises concern that the draft financial policy manual has no redline against existing policies.",
+    "stated_role": "vice chair, Green Communities committee"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "facilities",
+   "grants",
+   "hiring",
+   "personnel",
+   "policy",
+   "primary-school",
+   "public-comment",
+   "technology",
+   "town-departments",
+   "town-meeting",
+   "turkey-hill",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 559,
+    "motion": "Approve the Bicycles Battling Cancer request to pass through Lunenburg on September 22, 2024",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4005,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 830,
+    "topic": "Adult Activity Center roof replacement",
+    "what_was_said": "Budget was lower than the bid received; the overage must come from the facilities operating budget and the finance committee may need to backfill at town meeting.",
+    "figures_as_heard": [
+     "35,000",
+     "34,000",
+     "39K"
+    ]
+   },
+   {
+    "t": 992,
+    "topic": "Weights and measures transfer",
+    "what_was_said": "A transfer has been requested to cover state inspection services now that there is no local inspector; to be raised with the finance committee.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1014,
+    "topic": "Transportation program",
+    "what_was_said": "Program expires end of September; a stop-gap is needed for October and November until fall town meeting.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1056,
+    "topic": "Paraprofessional collective bargaining agreement",
+    "what_was_said": "School committee voted a one-year agreement with an increase, as reported by the interim town manager.",
+    "figures_as_heard": [
+     "4%"
+    ]
+   },
+   {
+    "t": 1116,
+    "topic": "Capital accounts for building envelopes",
+    "what_was_said": "Funds on hand appear woefully short for proposed projects including Ritter windows; money appropriated years ago has lost purchasing power.",
+    "figures_as_heard": [
+     "fy22"
+    ]
+   },
+   {
+    "t": 1183,
+    "topic": "Tri-Pasos building operating account",
+    "what_was_said": "The account that operates the building has a deficit because rents go in and bills are paid with no budget, which reduces free cash.",
+    "figures_as_heard": [
+     "$90,000",
+     "$300,000"
+    ]
+   },
+   {
+    "t": 1473,
+    "topic": "ARPA library teen room funds",
+    "what_was_said": "Library concerned committed funds may be recommitted before contract; funds across projects and the teen room specifically.",
+    "figures_as_heard": [
+     "$150,000",
+     "120"
+    ]
+   },
+   {
+    "t": 1658,
+    "topic": "Ritter windows",
+    "what_was_said": "Cost of windows on one side of the building raised as example.",
+    "figures_as_heard": [
+     "$20,000"
+    ]
+   },
+   {
+    "t": 2465,
+    "topic": "Budget guidance",
+    "what_was_said": "Interim town manager said he will ask the board for budget guidance (flat, level service, expansion, reduction) before budget season.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2905,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "Warrant read into the record.",
+    "figures_as_heard": [
+     "$33,860"
+    ]
+   },
+   {
+    "t": 3389,
+    "topic": "MUNIS replacement cost",
+    "what_was_said": "Cloud pricing is an uptick; first three years covered by ARPA payroll allocation.",
+    "figures_as_heard": [
+     "10,000"
+    ]
+   },
+   {
+    "t": 3795,
+    "topic": "Green Communities grant for phase two mini splits",
+    "what_was_said": "Hope to get at least the amount from the October round.",
+    "figures_as_heard": [
+     "100 $125,000"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 992,
+    "description": "Transfer requested to cover weights and measures state inspection, to go to the finance committee",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1762,
+    "decision": "Board members to send comments on the draft financial policy manual within three weeks; board and committee handbook item removed from agenda until ready."
+   },
+   {
+    "t": 2257,
+    "decision": "Next Tuesday's meeting will be a workshop on select board goals; workshops to be placed at end of agenda."
+   },
+   {
+    "t": 4005,
+    "decision": "Member asked that the board recognize the retiring police chief before departure; chair agreed informally."
+   },
+   {
+    "t": 2739,
+    "decision": "Warrants to be available at meetings with documentation rather than DocuSign only; raised as action item."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 19,
+    "t_end": 83,
+    "topic": "Call to order, pledge, open meeting law notice",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 83,
+    "t_end": 431,
+    "topic": "Public comment: records requests and alleged retaliation",
+    "resolution": "chair said board would follow up on requests",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 431,
+    "t_end": 494,
+    "topic": "Announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 494,
+    "t_end": 599,
+    "topic": "Bicycles Battling Cancer pass-through request",
+    "resolution": "voted, approved unanimously",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 599,
+    "t_end": 1291,
+    "topic": "Interim town manager report: vacancies, hiring, roof bid, capital, Tri-Pasos deficit, school paraprofessional contract",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "capital",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 1291,
+    "t_end": 1699,
+    "topic": "ARPA funding requests and committed funds",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 1699,
+    "t_end": 1803,
+    "topic": "Draft financial policy manual",
+    "resolution": "comments due in three weeks",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1803,
+    "t_end": 2675,
+    "topic": "FY25 select board goals and budget guidance",
+    "resolution": "workshop set for next week",
+    "tags": [
+     "budget",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2675,
+    "t_end": 2739,
+    "topic": "Flat Hill Road speed limit",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 2739,
+    "t_end": 3010,
+    "topic": "Minutes and warrant",
+    "resolution": "discussed; no formal vote audible",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3010,
+    "t_end": 3431,
+    "topic": "MUNIS replacement and IT",
+    "resolution": "informational",
+    "tags": [
+     "technology"
+    ]
+   },
+   {
+    "t_start": 3431,
+    "t_end": 3707,
+    "topic": "Committee reports including school capital projects",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "turkey-hill",
+     "primary-school"
+    ]
+   },
+   {
+    "t_start": 3707,
+    "t_end": 3920,
+    "topic": "Public comment: Green Communities and fiscal policy manual",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 3920,
+    "t_end": 4026,
+    "topic": "Board comments and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Captions garbled on whether minutes for a specific date were approved; no vote clearly captured.",
+   "Accounts payable warrant total and any vote on it not clearly captured.",
+   "Figures are caption-rendered and unreliable (roof bid, ARPA amounts, Tri-Pasos deficit)."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted unanimously to approve a charity bicycle ride's request to pass through Lunenburg on September 22, 2024.",
+    "t": 559
+   },
+   {
+    "line": "The interim town manager said the Adult Activity Center roof bid came in over budget; the overage would fall on the facilities operating budget, with a possible backfill at town meeting.",
+    "t": 830
+   },
+   {
+    "line": "The interim town manager also reported thin building-envelope capital accounts and an operating-account deficit at the Tri-Pasos building, plus a requested transfer for state weights-and-measures inspection.",
+    "t": 1116
+   },
+   {
+    "line": "Members discussed ARPA commitment deadlines, including the library teen room funds, and said the replacement for the MUNIS accounting software is covered by ARPA payroll money for its first three years.",
+    "t": 3389
+   },
+   {
+    "line": "The board set a goals workshop for the next Tuesday, and members have three weeks to comment on the draft financial policy manual.",
+    "t": 2257
+   }
+  ],
+  "why_it_matters": [
+   "The roof overage, the deficit in the Tri-Pasos building account and the transfer for inspection services are costs the town will have to cover from operating budgets or free cash, so they may reach residents as town meeting requests.",
+   "The board's FY25 goals and the draft financial policy manual set the budget rules and the guidance (flat, level service, expansion or reduction) that the coming budget season will follow."
+  ],
+  "watch_next": [
+   "The Select Board's workshop on FY25 goals at the next Tuesday meeting, and its budget guidance from the interim town manager.",
+   "Board comments on the draft financial policy manual, due within three weeks of this meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-07T21:46:19Z",
+   "cost_usd": 0.2184614
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09102024-6754",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-09-10-minutes-6754.txt",
+   "path": "sources/meetings/select-board/2024-09-10-minutes-6754.pdf"
+  },
+  "official_sha256": "6610a8c91324214669479a9a7c984c9360dc2430a5e808f77b3b28a3e448dc95",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "The one vote (Bicycles Battling Cancer) and the Financial Policy Manual deadline agree, and the Green Communities range matches once the captions are read as $100,000. The official minutes are a summary that prints almost none of our figures and records no transfer, the workshop, warrant or police chief items, so the weights and measures transfer and the unverified dollar figures need checking against the video.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 7,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Bicycles Battling Cancer pass-through vote (Sept 22, 2024)",
+    "ours": "Approve the Bicycles Battling Cancer request to pass through Lunenburg on September 22, 2024 — passed unanimously",
+    "official": "member alonzo made motion to approve the bicycles battling cancer request to pass through lunenburg on",
+    "note": "Same motion and outcome; official records 5-0-0, consistent with unanimous.",
+    "t": 559
+   },
+   {
+    "kind": "agree",
+    "about": "Draft Financial Policy Manual comments within three weeks",
+    "ours": "Board members to send comments on the draft financial policy manual within three weeks",
+    "official": "encouraging members to review and provide commentary within three weeks",
+    "note": "Same decision and same three-week period.",
+    "t": 1762
+   },
+   {
+    "kind": "agree",
+    "about": "Green Communities grant for phase two mini splits",
+    "ours": "Green Communities grant for phase two mini splits: 100 $125,000",
+    "official": "their efforts aim to secure funding between $100,000 and $125,000 from green communities to support their initiatives.",
+    "note": "Our '100' is a garbled '$100,000'; the range $100,000-$125,000 matches the official.",
+    "t": 3795
+   },
+   {
+    "kind": "caption_error",
+    "about": "Green Communities lower bound",
+    "ours": "100 $125,000",
+    "official": "$100,000 and $125,000",
+    "note": "Captions dropped the '$' and thousands grouping on the lower bound.",
+    "official_reading": "$100,000",
+    "t": 3795
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair/member name Jeffers",
+    "ours": "Mr. Jeffers (member)",
+    "official": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey",
+    "note": "Misheard surname of Michael-Ray Jeffreys.",
+    "official_reading": "Michael-Ray Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Moore",
+    "ours": "selectman Moore / more (member)",
+    "official": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey",
+    "note": "Same person, Amanda Moore.",
+    "official_reading": "Amanda Moore",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name 'memy'",
+    "ours": "selectman memy (member (not prepared with goals))",
+    "official": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey",
+    "note": "'memy' is most likely a mishearing of Renee Emkey, the only unmatched member; a person should confirm from the video.",
+    "official_reading": "Renee Emkey",
+    "t": 2257
+   },
+   {
+    "kind": "agree",
+    "about": "Interim town manager attendee",
+    "ours": "Carter (interim town manager)",
+    "official": "others: mr. carter terenzini",
+    "note": "Same person, Carter Terenzini.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Member Tom Alonzo present",
+    "ours": "Mr. Alonzo / selectman Alonzo (member)",
+    "official": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey",
+    "note": "Matches.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair identified only as 'the chair'",
+    "ours": "the chair (chair)",
+    "official": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey",
+    "note": "Official names the chair as Caesar Nuzzolo; ours never names the chair.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Mr. Lincoln named in public comment",
+    "ours": "Mr. Lincoln (member (named in public comment))",
+    "official": "",
+    "note": "No Lincoln appears in the official attendees; may be a misheard public-comment speaker (official lists George Burden), so check the video.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenters George Burden and Dave Passios",
+    "ours": "",
+    "official": "george burden, 39 cortland circle, raised issues regarding unfulfilled public document",
+    "note": "Our minutes list neither as attendees; Dave Passios appears only implicitly via the Green Communities figure.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Annie as staff clerk",
+    "ours": "Annie (staff (minutes/clerk))",
+    "official": "",
+    "note": "Official attendee list does not include a clerk.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair assurance of follow-up on public document requests",
+    "ours": "",
+    "official": "chair nuzzolo assured that there would be follow-up on these document requests.",
+    "note": "This is a decision-type item in the official minutes that our minutes do not record.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Weights and measures transfer",
+    "ours": "Transfer requested to cover weights and measures state inspection, to go to the finance committee — not stated (discussed only)",
+    "official": "",
+    "note": "Official lists no transfers; check the video at t=992 and the official minutes for whether a transfer was requested or referred.",
+    "t": 992
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next Tuesday workshop on select board goals",
+    "ours": "Next Tuesday's meeting will be a workshop on select board goals; workshops to be placed at end of agenda.",
+    "official": "",
+    "note": "Official minutes as given record no such decision.",
+    "t": 2257
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrants available at meetings with documentation",
+    "ours": "Warrants to be available at meetings with documentation rather than DocuSign only; raised as action item.",
+    "official": "",
+    "note": "Not in official decisions.",
+    "t": 2739
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Recognize retiring police chief",
+    "ours": "Member asked that the board recognize the retiring police chief before departure; chair agreed informally.",
+    "official": "",
+    "note": "Not in official decisions.",
+    "t": 4005
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Adult Activity Center roof replacement figures",
+    "ours": "Adult Activity Center roof replacement: 35,000, 34,000, 39K",
+    "official": "financial concerns were raised regarding projected shortfalls for planned renovations due to escalating costs over time.",
+    "note": "Official prints no dollar figures for renovations; our figures are ambiguous and unverified, so check the video at t=830.",
+    "t": 830
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ARPA library teen room funds",
+    "ours": "ARPA library teen room funds: $150,000, 120",
+    "official": "review arpa funding requests and committed funds: mr. terenzini discussed concerns regarding committed funding deadlines related to arpa.",
+    "note": "Official prints no ARPA dollar figures and doesn't mention the teen room; check the video at t=1473.",
+    "t": 1473
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Other budget figures heard (paraprofessional 4%, building envelope fy22, Tri-Pasos $90,000/$300,000, Ritter windows $20,000, warrant $33,860, MUNIS $10,000)",
+    "ours": "Paraprofessional collective bargaining agreement: 4%; Tri-Pasos building operating account: $90,000, $300,000; Ritter windows: $20,000; Accounts payable warrant: $33,860; MUNIS replacement cost: 10,000",
+    "official": "",
+    "note": "The official minutes print none of these figures; they are unverified against the official record.",
+    "t": 1056
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T21:47:23Z",
+   "cost_usd": 0.243035
+  }
+ }
+}

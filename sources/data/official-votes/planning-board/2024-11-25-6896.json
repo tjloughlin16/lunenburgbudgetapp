@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-11-25",
  "docid": "6896",
@@ -12,55 +12,385 @@
  },
  "votes": [
   {
-   "motion": "to endorse the ANR plan for 100 Townsend Harbor Rd",
+   "motion": "Endorse the ANR plan for 100 Townsend Harbor Rd (one property into five lots).",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A Reid",
    "outcome": "passed unanimously",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
    "procedural": false,
    "quote": "t. willsmer moved to endorse the anr. a reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "to endorse the ANR plan for Goodrich St & Reservoir Rd Lots 1-6",
+   "motion": "Endorse the ANR plan for Goodrich St & Reservoir Rd Lots 1-6 (John Keating applicant, six lots).",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
    "procedural": false,
    "quote": "t. willsmer moved to endorse. a. reid seconded. voice vote, passed unanimously."
   },
   {
-   "motion": "to endorse the ANR plan for 32 Spring St",
+   "motion": "Endorse the ANR plan for 32 Spring St (parcel A creation, Caroline Elizabeth Griffis Living Trust).",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
    "procedural": false,
-   "quote": "t. willsmer moved to endorse. a. reid seconded. voice vote, passed unanimously."
+   "quote": "t. willsmer moved to endorse. a. reid seconded . voice vote, passed unanimously."
   },
   {
-   "motion": "to continue the public hearing for 494 Electric Ave to 2024-12-09 at 6:05 P.M.",
+   "motion": "Continue the public hearing for 494 Electric Ave to 12-09 at 6:05 P.M.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
    "procedural": true,
-   "quote": "t. willsmer moved to continue the public hearing for 494 electric ave to 12 -09 at 6:05 p.m. a. reid seconded. voice vote, passed unanimously."
+   "quote": "t. willsmer moved to continue the public hearing for 494 electric ave to 12 -09 at 6:05 p.m. a. reid seconded."
   },
   {
-   "motion": "to approve the minutes for 2024-09-09 and 2024-09-23",
+   "motion": "Approve the minutes for 2024-09-09 and 2024-09-23.",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
    "procedural": true,
-   "quote": "t. willsmer moved to approve the minutes for 2024 -09-09 and 2024-09-23. a. reid seconded. voice vote, passed unanimously."
+   "quote": "t. willsmer moved to approve the minutes for 2024 -09-09 and 2024-09-23. a. reid seconded."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting (adjourned 7:36 P.M.).",
+   "moved_by": "T. Willsmer",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
-   "moved_by": "Timothy Willsmer",
-   "seconded_by": "Amanda Reid",
    "procedural": true,
-   "quote": "t. willsmer moved to adjourn. a. reid seconded. voice vote , passed unanimously."
+   "quote": "t. willsmer moved to adjourn. a. reid seconded. voice vote , passed unanimously. adjourned 7:36 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes passed. Two ANR (Approval Not Required Plans) endorsements, three continuances of public hearings continued to 2024-12-09, one minutes approval, and one adjournment.",
- "cost_usd": 0.07518140000000001
+ "note": "Read from the full extracted text (7 pages). Every vote is a voice vote recorded only as \"passed unanimously\"; no tallies are printed, so outcomes are not given as counts. The 791 Leominster, 795 Leominster and 70 Kilburn continuances have no recorded motion and are listed as decisions. No dollar figure appears anywhere in the text, so figures_as_printed is empty throughout. Applicants named but not stated as present (e.g., Steven R. Stafford, Peter M. Stafford, John Keating, Caroline Elizabeth Griffis, D&A Lunenburg, LLC) are not listed as attendees. Page 7 lists referenced documents by title only; their contents were not in the text.",
+ "cost_usd": 0.02207647,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew brenner (chair), timothy willsmer (vice chair), amanda reid (clerk), matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Christopher Reilly",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "c. reilly confirmed the plan met statutory requirements for endorsement."
+  },
+  {
+   "name": "Logan O'Connell",
+   "role": "Admin Asst.",
+   "status": "not stated",
+   "quote": "minutes by logan o'connell, admin asst."
+  },
+  {
+   "name": "Mark Wheeler",
+   "role": "of Tauper Land Survey, presenting on behalf of applicants Steven R. Stafford & Peter M. Stafford",
+   "status": "present",
+   "quote": "mark wheeler of tauper land survey presented on behalf of applicants steven r. stafford & peter m. stafford."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "Hannigan Engineering; presented for applicant John Keating, and for applicant D&A Lunenburg, LLC at 494 Electric Ave",
+   "status": "present",
+   "quote": "chris anderson of hannigan engineering presented on behalf of applicant john keating."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Dillis & Roy, representing applicant Caroline Elizabeth Griffis Living Trust",
+   "status": "present",
+   "quote": "greg roy of dillis & roy presented on behalf of applicant caroline elizabeth griffis living trust."
+  },
+  {
+   "name": "Jeff Avini",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jeff avini presented updates on ownership dispute of pierce ave"
+  },
+  {
+   "name": "R. Silver",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "r. silver asked if combining the parking would create a dead end."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "public comment; 155 Island Rd",
+   "status": "present",
+   "quote": "dave macdonald (155 island rd) emphasized the adverse impact of procedural delays on small businesses in town."
+  },
+  {
+   "name": "Michael Lovewell",
+   "role": "public comment; 579 Reservoir Rd",
+   "status": "present",
+   "quote": "michael lovewell (579 reservoir rd) agreed with d. macdonald."
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "public comment; Pierce Ave",
+   "status": "present",
+   "quote": "ryan stober (pierce ave) asked about ownership dispute of pierce ave: what is the intention of the applicants"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board wanted to track down its standard conditions and verify that the 1260 Reservoir Rd decision includes them, especially the construction-hour limits. No vote recorded.",
+   "quote": "the board wanted to track down their standard conditions and verify that the decision included the standard conditions"
+  },
+  {
+   "decision": "Applicant at 1260 Reservoir Rd may proceed at its own risk while the decision is unavailable, to avoid delays. No vote recorded.",
+   "quote": "c. reilly clarified that to avoid delays, the applicant would be able to proceed at their own risk despite the decision not being available."
+  },
+  {
+   "decision": "Hearings for 791 Leominster Rd, 795 Leominster Rd and 70 Kilburn St (SMP) continued to 12-09 per applicant request. No motion recorded.",
+   "quote": "continued to 12-09 per applicant request."
+  },
+  {
+   "decision": "The Board wants MBTA Communities Act materials ready before implementation of the Master Plan. Stated as confirmed by the Chair, no vote recorded.",
+   "quote": "m. brenner confirmed that the board wants to have mbta communities act materials ready before implementation of the master plan."
+  },
+  {
+   "decision": "Next meeting set for 2024-12-09 at 6:00 P.M.; no meeting on 12-23 due to holidays.",
+   "quote": "upcoming meeting is 2024-12-09 at 6:00 p.m. not meeting on 12-23 due to holidays."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal Building Design Committee: ARPA money",
+   "what_was_recorded": "The committee hoped to get ARPA money under contract; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "has a meeting scheduled in hopes to get arpa money under contract."
+  },
+  {
+   "topic": "Municipal Building Design Committee: price against goal",
+   "what_was_recorded": "The price from the chosen applicant was slightly over the initial goal; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "price slightly over initial goal but members were resoundingly pleased with interview."
+  },
+  {
+   "topic": "MBTA Communities Act: grant eligibility",
+   "what_was_recorded": "Failing to pass compliant zoning would make the Town ineligible for a list of grants that is evolving over time; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "consequences would include ineligibility for a list of grants which is evolving over time."
+  },
+  {
+   "topic": "Storm Water Task Force: costs and charges",
+   "what_was_recorded": "The task force is gathering information about costs and charges to businesses from an engineering firm; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "working with cei (engineering firm) to get information about costs, charges to businesses, etc."
+  },
+  {
+   "topic": "Capital Planning Committee: capital requests",
+   "what_was_recorded": "The committee has received capital requests and 10-year plans from all entities; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "has heard from all entities submitting capital requests and seen their 10 year plans."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Has background as a small business owner & served on Boards in Town",
+   "topic": "procedural delays and small businesses (494 Electric Ave hearing)",
+   "quote": "dave macdonald (155 island rd) emphasized the adverse impact of procedural delays on small businesses in town."
+  },
+  {
+   "speaker": "Michael Lovewell",
+   "stated_role": "Has been business owner in Town for 40 years",
+   "topic": "commercial development and procedural delays",
+   "quote": "michael lovewell (579 reservoir rd) agreed with d. macdonald."
+  },
+  {
+   "speaker": "Ryan Stober",
+   "stated_role": "",
+   "topic": "Pierce Ave ownership dispute and applicant intent",
+   "quote": "ryan stober (pierce ave) asked about ownership dispute of pierce ave: what is the intention of the applicants"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "matthew brenner called the meeting to order at 6:02 p.m.",
+   "tags": [
+    "meeting admin"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "public comment none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair and director's report",
+   "resolution": "noted, no action",
+   "quote": "c. reilly congratulated the board on their successful warrant article to update the water supply protection district (§ 250-4.9).",
+   "tags": [
+    "warrant article",
+    "water supply protection",
+    "Marshall Park",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "ANR: 100 Townsend Harbor Rd",
+   "resolution": "endorsed, passed unanimously",
+   "quote": "t. willsmer moved to endorse the anr. a reid seconded. voice vote, passed unanimously.",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "ANR: Goodrich St & Reservoir Rd Lots 1-6",
+   "resolution": "endorsed, passed unanimously",
+   "quote": "chris anderson of hannigan engineering presented on behalf of applicant john keating.",
+   "tags": [
+    "ANR",
+    "lot frontage"
+   ]
+  },
+  {
+   "topic": "ANR: 32 Spring St",
+   "resolution": "endorsed, passed unanimously",
+   "quote": "greg roy of dillis & roy presented on behalf of applicant caroline elizabeth griffis living trust.",
+   "tags": [
+    "ANR",
+    "septic",
+    "lake communities"
+   ]
+  },
+  {
+   "topic": "Public hearing: 494 Electric Ave (SPA, SMP)",
+   "resolution": "continued to 12-09 at 6:05 P.M.",
+   "quote": "c. reilly updated status of peer review, comments from gei are close to completion.",
+   "tags": [
+    "site plan",
+    "peer review",
+    "Pierce Ave parking"
+   ]
+  },
+  {
+   "topic": "Hearings: 791 and 795 Leominster Rd, 70 Kilburn St (SMP)",
+   "resolution": "continued to 12-09 per applicant request",
+   "quote": "continued to 12-09 per applicant request.",
+   "tags": [
+    "site plan",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Decisions: 1260 Reservoir Rd",
+   "resolution": "no vote; verify standard conditions; applicant may proceed at own risk",
+   "quote": "the board wanted to track down their standard conditions and verify that the decision included the standard conditions",
+   "tags": [
+    "decision",
+    "construction hours",
+    "standard conditions"
+   ]
+  },
+  {
+   "topic": "Abutting community notices",
+   "resolution": "no local impact",
+   "quote": "notices included a multi-family conversion & a planned unit development in fitchburg, and a ups store in townsend.",
+   "tags": [
+    "abutting towns"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted, no action",
+   "quote": "per t. willsmer, continuing issues reaching a quorum.",
+   "tags": [
+    "master plan",
+    "capital planning",
+    "ARPA",
+    "stormwater",
+    "Town Manager search"
+   ]
+  },
+  {
+   "topic": "Minutes approval (2024-09-09 and 2024-09-23)",
+   "resolution": "approved, passed unanimously",
+   "quote": "t. willsmer moved to approve the minutes for 2024 -09-09 and 2024-09-23. a. reid seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "upcoming meeting is 2024-12-09 at 6:00 p.m. not meeting on 12-23 due to holidays.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment: MBTA Communities Act",
+   "resolution": "discussed; materials to be ready before Master Plan implementation",
+   "quote": "the board discussed the scenario of failing to pass compliant zoning through special town meeting .",
+   "tags": [
+    "MBTA Communities Act",
+    "zoning",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:36 P.M., passed unanimously",
+   "quote": "t. willsmer moved to adjourn. a. reid seconded. voice vote , passed unanimously. adjourned 7:36 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "approval not required plans",
+  "ANR",
+  "site plan review",
+  "public hearing",
+  "continuance",
+  "zoning",
+  "parking bylaw",
+  "Pierce Ave",
+  "1260 Reservoir Rd decision",
+  "MBTA Communities Act",
+  "master plan",
+  "capital planning",
+  "stormwater",
+  "Town Manager search",
+  "ARPA",
+  "public comment",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

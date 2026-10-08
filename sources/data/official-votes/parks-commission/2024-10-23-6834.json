@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-10-23",
  "docid": "6834",
@@ -12,39 +12,349 @@
  },
  "votes": [
   {
-   "motion": "Pass over the Article related to Marshall Park",
-   "moved_by": "Christopher Sullivan",
-   "seconded_by": "Karin Menard",
+   "motion": "Pass over the Article related to Marshall Park.",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "K. Menard",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "c. sullivan made a motion to pass over the article related to marshall park. k. menard seconded. all in favor, motion carried (5-0)."
   },
   {
-   "motion": "Let them know the fields will be available in the spring",
-   "moved_by": "Christopher Sullivan",
-   "seconded_by": "Colleen Shapiro",
+   "motion": "Let the baseball, softball and Little League groups know the fields will be available in the spring.",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "C. Shapiro",
    "outcome": "passed 4-1",
    "procedural": false,
    "quote": "c. sullivan made a motion to let them know the ﬁelds will be available in the spring. c. shapiro seconded. motion carried (4-1)."
   },
   {
-   "motion": "Approve the Skanska invoice ending in #55453 for $10,790",
-   "moved_by": "Karin Menard",
-   "seconded_by": "Christopher Sullivan",
+   "motion": "Approve the Skanska invoice ending in #55453 for $10,790.",
+   "moved_by": "K. Menard",
+   "seconded_by": "C. Sullivan",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "k. menard made a motion to approve the skanska invoice ending in #55453 for $10,790. c. sullivan seconded. all in favor, motion carried (5-0)."
   },
   {
-   "motion": "Approve the RDLA invoice #2455-01 for $5,721",
-   "moved_by": "Karin Menard",
-   "seconded_by": "Colleen Shapiro",
+   "motion": "Approve the RDLA invoice #2455-01 for $5,721.",
+   "moved_by": "K. Menard",
+   "seconded_by": "C. Shapiro",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "k. menard made a motion to approve the rdla invoice #2455-01 for $5,721. c. shapiro seconded. all in favor, motion carried (5-0)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0690064
+ "note": "Text extraction, not a scan; quotes checked against the extracted text, with line breaks collapsed to spaces and the ligatures (ﬁ, ﬂ) kept as printed. Four motions are recorded with a result; no motion is recorded for adjournment, approval of minutes or entering any session, so no procedural votes are listed. The Marshall Park discussion sits inside the Public Comment section and the minutes do not say who opposed the 4-1 vote. The name Rodgers/Rogers appears both ways for one commenter (likely the same person, not confirmed), and Christopher Sullivan is also printed as Chris Sullivan. Katie White is named only once, with no stated title. The minutes refer to attached letters and documents (K. Menard's letter) that are not in this text. Attendance is taken from the members-present line and the additional-attendees line; no absences are recorded. Andrea Mastrototoro appears only in the signature block, so her attendance is not stated.",
+ "cost_usd": 0.01740737,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Tim Lawless",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, tim lawless, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Angela Clement",
+   "role": "Recreation Director",
+   "status": "present",
+   "quote": "additional attendees: angela clement, recreation director and chris ruth, facilities director"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "additional attendees: angela clement, recreation director and chris ruth, facilities director"
+  },
+  {
+   "name": "Katie White",
+   "role": "presenter, Boys and Girls Club Polar Plunge item (affiliation as printed: Boys and Girls Club)",
+   "status": "present",
+   "quote": "next item on the agenda, boys and girls club polar plunge - katie white"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "public commenter, 82 Highland St.",
+   "status": "present",
+   "quote": "david rodgers, 82 highland st. - mr. rogers suggested obtaining an american flag and a 100% disabled veteran ﬂag"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "dave rogers stated he has lived in lunenburg for 50 years and raised a lot of money but is far from what the commission is speaking about."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission has no interest in the tax-taking properties discussed (14 Sunset Ave, 82 Valley Road, 104 Leominster Shirley Road, and two landlocked, swampy parcels on Massapoag Pond).",
+   "quote": "the commission has no interest in these properties."
+  },
+  {
+   "decision": "K. White will go back and speak to the Fire Chief about emergency service capacity for the Polar Plunge.",
+   "quote": "k. white will go back and speak to the fire chief."
+  },
+  {
+   "decision": "K. Menard will work on getting the town waiver to K. White for the Polar Plunge.",
+   "quote": "k. menard will work on getting the town waiver to k. white."
+  },
+  {
+   "decision": "K. Menard will be present to open and close the building for the Polar Plunge.",
+   "quote": "k. menard stated she would be there to open and close."
+  },
+  {
+   "decision": "A. Scheipers will contact the OPM and the designer for feedback and a figure for the cost of the rest of the Marshall Park work and their fees.",
+   "quote": "a. scheipers will contact the opm and the designer for feedback and to get a ﬁgure for the cost of the rest of the work and their fees."
+  },
+  {
+   "decision": "A. Scheipers will meet with the Finance Committee to explain the motions taken on Article 15 (debt authorization for Marshall Park) and the revolving fund, Article 10.",
+   "quote": "a. scheipers will meet with the finance committee to explain the motions taken and discussion regarding article 15, debt authorization for marshall park."
+  },
+  {
+   "decision": "The next meeting will be held November 6, 2024.",
+   "quote": "the next meeting will be held november 6, 2024."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park phase one cost and funding",
+   "what_was_recorded": "Lawless asked whether phase one was $5.2 million; Scheipers said $1.6 million was for design and construction.",
+   "figures_as_printed": [
+    "$5.2 million",
+    "$1.6 million"
+   ],
+   "quote": "t. lawless asked if phase one was $5.2 million. a. scheipers stated the $1.6 million was for design and construction."
+  },
+  {
+   "topic": "Marshall Park balance after invoices",
+   "what_was_recorded": "Scheipers stated that after all invoices were paid, $1.22 million remained.",
+   "figures_as_printed": [
+    "$1.22 million"
+   ],
+   "quote": "a. scheipers indicated after all invoices were paid there was $1.22 million remaining."
+  },
+  {
+   "topic": "Marshall Park cost growth",
+   "what_was_recorded": "Lawless asked how the project grew from 5 to 10 to 14 million; Menard said drainage work found after test pits raised costs significantly.",
+   "figures_as_printed": [
+    "5 to 10 to 14 million"
+   ],
+   "quote": "t. lawless asked how the project went from 5 to 10 to 14 million."
+  },
+  {
+   "topic": "Marshall Park design-phase appropriations and remaining funds",
+   "what_was_recorded": "Menard stated the amounts raised and appropriated at Town Meeting for design; Scheipers stated the remaining funds are $142,000.",
+   "figures_as_printed": [
+    "$182,000",
+    "$50,000",
+    "$25,000",
+    "$142,000"
+   ],
+   "quote": "k. menard stated $182,000 and another for $50,000 and $25,000. a. scheipers stated the remaining funds are $142,000."
+  },
+  {
+   "topic": "Marshall Park consultant spending commitments",
+   "what_was_recorded": "Scheipers stated the Commission was committed to no more than $250,000 for the OPM firm and no more than $143,000 for the design firm; Menard noted those funds have not all been expended.",
+   "figures_as_printed": [
+    "$ 250,000",
+    "$143,000"
+   ],
+   "quote": "the commission was committed to no more than $ 250,000 for the opm ﬁrm and no more than $143,000 for the design ﬁrm."
+  },
+  {
+   "topic": "Marshall Park APRA funding",
+   "what_was_recorded": "Menard indicated the Commission had $1 million of APRA money for the project.",
+   "figures_as_printed": [
+    "$1 million"
+   ],
+   "quote": "k. menard indicated $1 million of apra money."
+  },
+  {
+   "topic": "Marshall Park financing gap",
+   "what_was_recorded": "Public commenter Rodgers said it would be difficult to get traction for $14 million.",
+   "figures_as_printed": [
+    "$14 million"
+   ],
+   "quote": "d. rogers feels it will be difﬁcult to get traction for $14 million."
+  },
+  {
+   "topic": "Skanska invoice",
+   "what_was_recorded": "Commission approved the Skanska invoice ending in #55453.",
+   "figures_as_printed": [
+    "$10,790"
+   ],
+   "quote": "k. menard made a motion to approve the skanska invoice ending in #55453 for $10,790."
+  },
+  {
+   "topic": "RDLA invoice",
+   "what_was_recorded": "Commission approved the RDLA invoice #2455-01.",
+   "figures_as_printed": [
+    "$5,721"
+   ],
+   "quote": "k. menard made a motion to approve the rdla invoice #2455-01 for $5,721."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "82 Highland St.",
+   "topic": "American flags and Pledge before meetings",
+   "quote": "david rodgers, 82 highland st. - mr. rogers suggested obtaining an american flag and a 100% disabled veteran ﬂag and reciting the pledge of allegiance before all meetings."
+  },
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "not stated",
+   "topic": "Marshall Park funding and cost",
+   "quote": "dave rogers stated he has lived in lunenburg for 50 years and raised a lot of money but is far from what the commission is speaking about."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Budget Reports",
+   "resolution": "discussed reporting frequency; no action",
+   "quote": "a. scheipers would like to get an update on the budget and asked how frequently they should be received.",
+   "tags": [
+    "budget",
+    "reporting"
+   ]
+  },
+  {
+   "topic": "Recreation Director Updates",
+   "resolution": "no action; updates given",
+   "quote": "a. clement indicated she would close the building on monday and wednesday and would need help on tuesdays and thursdays.",
+   "tags": [
+    "recreation",
+    "programs",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Boys and Girls Club Polar Plunge",
+   "resolution": "continued; waiver and Fire Department follow-up",
+   "quote": "k. white stated the event was approved for saturday, november 30, 2024, between noon and 2 pm.",
+   "tags": [
+    "events",
+    "polar plunge",
+    "fire safety",
+    "waiver",
+    "beach house"
+   ]
+  },
+  {
+   "topic": "Public Comment and Marshall Park project",
+   "resolution": "Article passed over 5-0; funding discussed",
+   "quote": "k. menard noted that the commission has invested many hours in the marshall park project and feels the project should be paused at some point.",
+   "tags": [
+    "marshall park",
+    "capital project",
+    "public comment",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Marshall Park spring ball fields",
+   "resolution": "motion carried 4-1 to inform ball leagues fields will be available",
+   "quote": "a. scheipers stated they will have to immediately inform the baseball, softball, and little league that the construction will not be moving forward in the spring",
+   "tags": [
+    "ball fields",
+    "marshall park",
+    "youth sports"
+   ]
+  },
+  {
+   "topic": "Invoices for approval",
+   "resolution": "approved (Skanska, RDLA)",
+   "quote": "a. clement presented invoices for approval.",
+   "tags": [
+    "invoices",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Properties on Tax Taking list",
+   "resolution": "no interest in any listed property",
+   "quote": "the commission has no interest in these properties.",
+   "tags": [
+    "tax taking",
+    "property"
+   ]
+  },
+  {
+   "topic": "Chair Updates",
+   "resolution": "chair to meet Finance Committee on Article 15 and Article 10",
+   "quote": "a. scheipers will meet with the finance committee to explain the motions taken and discussion regarding article 15, debt authorization for marshall park.",
+   "tags": [
+    "warrant article",
+    "debt authorization",
+    "revolving fund",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "no action; none on agenda",
+   "quote": "next item on the agenda, approval of minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next Meeting",
+   "resolution": "scheduled for November 6, 2024",
+   "quote": "next item on the agenda, next meeting november 6, 2024.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "marshall park",
+  "capital project",
+  "debt authorization",
+  "APRA funds",
+  "budget",
+  "invoices",
+  "tax taking",
+  "public comment",
+  "boys and girls club",
+  "polar plunge",
+  "recreation programs",
+  "ball fields",
+  "fire safety"
+ ],
+ "dropped_unquoted_by_field": {}
 }

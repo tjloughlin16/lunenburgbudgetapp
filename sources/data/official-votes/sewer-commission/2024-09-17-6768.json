@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-09-17",
  "docid": "6768",
@@ -12,16 +12,140 @@
  },
  "votes": [
   {
-   "motion": "Appoint Joseph Hurley, Scott Dall and Eli Torres to the Sewer Commission for a term to expire at the annual election of 2025",
+   "motion": "Appoint Joseph Hurley, Scott Dall and Eli Torres to the Sewer Commission for a term to expire at the annual election of 2025.",
    "moved_by": "Michael-Ray Jeffreys",
    "seconded_by": "Tom Alonzo",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "to appoint joseph hurley, scott dall and eli torres to the sewer commission for a term to expire at the annual election of 2025. discussion: michael-ray stated that he liked tom in",
-   "quote_taken_from_text": true
+   "quote": "to appoint joseph hurley, scott dall and eli torres to the sewer commission for a term to expire at the annual election of 2025."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07444039999999999
+ "note": "Plain text extraction, no scan problem. One vote recorded, stated as \"unanimous\" with no roll call or tally. The minutes have no public comment section and no dollar figures. Internal discrepancy: the printed motion gives all three appointees a single term expiring at the 2025 annual election, while the discussion says the three appointments would need mixed terms (2 for 3 years, 1 for 1 year) on the spring ballot. The motion text is what was voted on, so it is recorded as printed. The motion names \"Joseph Hurley\" while the attendance and discussion say \"Joe Hurley\". Absences: none named; the minutes say the Sewer Commission has only 2 members, so it could not open or close the meeting. The minutes clerk, Jane L. Ranley, is a signatory and is not listed as a participant.",
+ "cost_usd": 0.013396770000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair, Sewer Commission",
+   "status": "present",
+   "quote": "sewer commission: brett ramsden (vice-chair) and mike mackin (clerk)"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Clerk, Sewer Commission",
+   "status": "present",
+   "quote": "sewer commission: brett ramsden (vice-chair) and mike mackin (clerk)"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen: caesar nuzzolo (chair), michael-ray jeffreys (vice-chair), amanda moore (clerk), tom alonzo, and renee emkey."
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice-Chair, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen: caesar nuzzolo (chair), michael-ray jeffreys (vice-chair), amanda moore (clerk), tom alonzo, and renee emkey."
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Clerk, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen: caesar nuzzolo (chair), michael-ray jeffreys (vice-chair), amanda moore (clerk), tom alonzo, and renee emkey."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen: caesar nuzzolo (chair), michael-ray jeffreys (vice-chair), amanda moore (clerk), tom alonzo, and renee emkey."
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen: caesar nuzzolo (chair), michael-ray jeffreys (vice-chair), amanda moore (clerk), tom alonzo, and renee emkey."
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "also carter terenzini (interim town manager)"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Guest; applicant for Sewer Commission vacancy",
+   "status": "present",
+   "quote": "guests: joe hurley, scott dall, eli torres and tom indge"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Guest; applicant for Sewer Commission vacancy",
+   "status": "present",
+   "quote": "guests: joe hurley, scott dall, eli torres and tom indge"
+  },
+  {
+   "name": "Eli Torres",
+   "role": "Guest; applicant for Sewer Commission vacancy",
+   "status": "present",
+   "quote": "guests: joe hurley, scott dall, eli torres and tom indge"
+  },
+  {
+   "name": "Tom Indge",
+   "role": "Guest; applicant for Sewer Commission vacancy",
+   "status": "present",
+   "quote": "guests: joe hurley, scott dall, eli torres and tom indge"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Interim Town Manager Carter Terenzini will reach out to Tom Indge about considering the opening on the Finance Committee.",
+   "quote": "carter (interim town manager) said he will reach out to tom indge about considering the opening on the finance committee."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Sewer Commission vacancies: applicant introductions and questions",
+   "resolution": "candidates introduced and questioned; no action",
+   "quote": "caesar stated that they have 4 applicants for the 3 vacancies on the sewer commission",
+   "tags": [
+    "sewer-commission",
+    "vacancies",
+    "applicants"
+   ]
+  },
+  {
+   "topic": "Appointment of three members to Sewer Commission",
+   "resolution": "appointed Joseph Hurley, Scott Dall and Eli Torres (unanimous)",
+   "quote": "to appoint joseph hurley, scott dall and eli torres to the sewer commission for a term to expire at the annual election of 2025.",
+   "tags": [
+    "appointments",
+    "sewer-commission"
+   ]
+  },
+  {
+   "topic": "Finance Committee opening referred to candidate Tom Indge",
+   "resolution": "no vote; Interim Town Manager to contact candidate",
+   "quote": "carter (interim town manager) said he will reach out to tom indge about considering the opening on the finance committee.",
+   "tags": [
+    "finance-committee",
+    "vacancies"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer-commission",
+  "appointments",
+  "vacancies",
+  "joint-meeting",
+  "board-of-selectmen",
+  "finance-committee",
+  "town-election"
+ ],
+ "dropped_unquoted_by_field": {}
 }

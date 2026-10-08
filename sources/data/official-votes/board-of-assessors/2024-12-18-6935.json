@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2024-12-18",
  "docid": "6935",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Put information into the Ledger about abatements",
+   "motion": "Move to have information put into the Ledger about abatements (roll call).",
    "moved_by": "John Rabbitt",
    "seconded_by": "Brian Laffond",
-   "outcome": "failed 1-2",
+   "outcome": "failed",
    "procedural": false,
-   "quote": "there was a motion to have information put into the ledger about abatements by john rabbitt, seconded by brian laffond. roll call vote. john rabbitt aye, brian laffond no, sarah cammer no. the motion failed."
+   "quote": "there was a motion to have information put into the ledger about abatements by john rabbitt, seconded by brian laffond. roll call vote. john rabbitt aye, brian laffond no, sarah cammer no."
   },
   {
-   "motion": "Approve the executive sessions minutes from December 10, 2024",
+   "motion": "Approve the executive session minutes of December 10, 2024.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Brian Laffond",
    "outcome": "not stated",
@@ -28,32 +28,335 @@
    "quote": "there was a motion to approve the executive sessions minutes from december 10, 2024, by sarah cammer, seconded by brian laffond."
   },
   {
-   "motion": "Invite the 3 assessor's office employees to the meeting",
+   "motion": "Invite the 3 assessor's office employees to the meeting (roll call).",
    "moved_by": "John Rabbitt",
    "seconded_by": "Brian Laffond",
-   "outcome": "failed 1-2",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "there was a motion to invite the 3 assessor's office employees to the meeting by john rabbitt, seconded by brian laffond. roll call vote. john rabbit aye, sarah cammer no, brian laffond no."
+   "quote": "there was a motion to invite the 3 assessor's office employees to the meeting by john rabbitt, seconded by brian laffond."
   },
   {
-   "motion": "Approve the tax rate and tax recap",
+   "motion": "Approve the tax rate and tax recap.",
    "moved_by": "John Rabbitt",
    "seconded_by": "Sarah Cammer",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "there was a motion to approve the tax rate and tax recap by john rabbitt, seconded by sarah cammer. all in favor. brian laffond aye, sarah cammer aye, john rabbitt aye."
+   "quote": "there was a motion to approve the tax rate and tax recap by john rabbitt, seconded by sarah cammer. all in favor."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting (roll call).",
    "moved_by": "Sarah Cammer",
    "seconded_by": "John Rabbitt",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "there was a motion to adjourn by sarah ca mmer, seconded by john rabbitt. roll call vote. john rabbitt aye, sarah cammer aye, brian laffond aye",
-   "quote_taken_from_text": true
+   "quote": "there was a motion to adjourn by sarah ca mmer, seconded by john rabbitt. roll call vote. john rabbitt aye, sarah cammer aye, brian laffond aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes legible and recorded. Note: one roll call at the motion to invite office employees records \"John Rabbit\" (likely a transcription typo for John Rabbitt); quote preserved as printed.",
- "cost_usd": 0.0730774
+ "note": "Text is OCR-like with spacing artifacts (e.g. \"Sarah Ca mmer\", \"John Rabbit\", \"unabl e\", \"a ny\"); quotes copy the printed form, and where a printed word was broken across lines the line break was collapsed to a space. Two motions have no printed result: the motion to approve the December 10, 2024 executive session minutes, and the motion to invite the three assessor's office employees (its roll call reads 1 aye, 2 no, but the minutes never say \"failed\"), so both are recorded as \"not stated\". The Ledger motion's \"failed\" is printed. The tax rate figure \"1436 per thousand\" is a rate, not a dollar amount, and is recorded with that label. Paul Grzybowski is named in public comment but did not speak, so he is not listed as an attendee. Named people who appear only in reported work or future events are listed with status \"not stated\". The minutes do not state a vote on the Board's proposed January and February meeting dates, so no vote is recorded for that item.",
+ "cost_usd": 0.01921157,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt (zoom), principal assessor lynda mcquade"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt (zoom), principal assessor lynda mcquade"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt (zoom), principal assessor lynda mcquade"
+  },
+  {
+   "name": "Lynda McQuade",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present members: chair brian laffond, vice chair sarah cammer, clerk john rabbitt (zoom), principal assessor lynda mcquade"
+  },
+  {
+   "name": "Stephanie Grzybowski",
+   "role": "public commenter, 42 Oak Ave.",
+   "status": "present",
+   "quote": "stephanie grzybowski states their home assessment went up 86%."
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "carter terenzini approved the 2026 interim for the vision contract totaling $4,800."
+  },
+  {
+   "name": "Randy Mercier",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "lynda mcquade worked with randy mercier on the fy 2025 actual bills."
+  },
+  {
+   "name": "Chris Riley",
+   "role": "new planning director",
+   "status": "not stated",
+   "quote": "lynda mcquade met with the new planning director, chris riley."
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Select Board (update at future Assessor Conference)",
+   "status": "not stated",
+   "quote": "michael-ray jeffreys will provide an update from the select board regarding lunenburg senior housing."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The open-session minutes (November 20, November 6, October 16 and October 2, 2024) were postponed until all members are present and in person.",
+   "quote": "the minutes from open sessions were postponed until all members are present and are in person."
+  },
+  {
+   "decision": "Brian Laffond requested that the presentations and packets for the February conference be provided for approval before the meeting.",
+   "quote": "brian laffond requested a copy of the presentations and packets to be provided for approval prior to the meeting."
+  },
+  {
+   "decision": "Brian Laffond will draft an article about the adjustments for exemptions.",
+   "quote": "brian laffond will draft an article about the adjustments for exemptions."
+  },
+  {
+   "decision": "Sarah Cammer will draft a proposal for the neighborhood/site evaluation consultant outline.",
+   "quote": "sarah cammer will draft a proposal."
+  },
+  {
+   "decision": "Lynda McQuade will provide the abatement for the Grzybowski property and confirmed a Vision error in how condo complex costs were calculated.",
+   "quote": "lynda mcquade will provide the abatement and confirms there was an error in the way that condo complex costs were calculated in vision."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Motor vehicle excise commitment number 6",
+   "what_was_recorded": "Commitment of 396 bills sent at the end of November, approved by the BOA on November 20th.",
+   "figures_as_printed": [
+    "$49,562.24"
+   ],
+   "quote": "there were 396 bills totaling $49,562.24."
+  },
+  {
+   "topic": "Invoice for stamps",
+   "what_was_recorded": "Principal Assessor provided an invoice for stamps.",
+   "figures_as_printed": [
+    "$43.50"
+   ],
+   "quote": "lynda mcquade provided an invoice for stamps totaling $43.50."
+  },
+  {
+   "topic": "Vision contract 2026 interim",
+   "what_was_recorded": "Interim approval for the Vision contract for 2026.",
+   "figures_as_printed": [
+    "$4,800"
+   ],
+   "quote": "carter terenzini approved the 2026 interim for the vision contract totaling $4,800."
+  },
+  {
+   "topic": "Motor vehicle abatement bills signed",
+   "what_was_recorded": "Two motor vehicle abatement bills were signed, totaling the two amounts printed.",
+   "figures_as_printed": [
+    "$242.20",
+    "$3,460.39"
+   ],
+   "quote": "the 1st bill totaled $242.20, and the 2nd bill totaled $3,460.39."
+  },
+  {
+   "topic": "FY 2025 tax rate",
+   "what_was_recorded": "The new FY 2025 tax rate, approved by the Department of Revenue, is printed.",
+   "figures_as_printed": [
+    "1436 per thousand"
+   ],
+   "quote": "the new fy 2025 tax rate is 1436 per thousand."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Stephanie Grzybowski",
+   "stated_role": "42 Oak Ave.",
+   "topic": "86% increase in home assessment, limited income",
+   "quote": "stephanie grzybowski states their home assessment went up 86%."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting opened at 6:30 PM",
+   "quote": "the meeting opened at 6:30 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Opening comments",
+   "resolution": "no comments from the Board or public",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Status report from Principal Assessor",
+   "resolution": "reported; no action",
+   "quote": "lynda mcquade worked with randy mercier on the fy 2025 actual bills.",
+   "tags": [
+    "abatements",
+    "FY25 bills",
+    "motor vehicle excise",
+    "Vision",
+    "MUNIS"
+   ]
+  },
+  {
+   "topic": "Motion on abatement information in the Ledger",
+   "resolution": "failed",
+   "quote": "there was a motion to have information put into the ledger about abatements by john rabbitt, seconded by brian laffond. roll call vote. john rabbitt aye, brian laffond no, sarah cammer no.",
+   "tags": [
+    "abatements",
+    "ledger"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "open-session minutes postponed; executive session minutes motion made, result not recorded",
+   "quote": "the minutes from open sessions were postponed until all members are present and are in person.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review and approve invoices, expense vouchers, billing errors",
+   "resolution": "reported; no vote recorded",
+   "quote": "lynda mcquade provided an invoice for stamps totaling $43.50.",
+   "tags": [
+    "invoices",
+    "vouchers",
+    "abatements",
+    "Vision contract"
+   ]
+  },
+  {
+   "topic": "Assessor Conference at the Senior Center",
+   "resolution": "scheduled; motion to invite staff failed to a recorded tally with no stated result",
+   "quote": "the assessor's conference is scheduled for february 3rd at 1pm.",
+   "tags": [
+    "senior center",
+    "conference",
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Update on recap and tax rate",
+   "resolution": "approved 3-0",
+   "quote": "the tax recap and tax rate were approved by the department of revenue on december 9th.",
+   "tags": [
+    "tax rate",
+    "tax recap"
+   ]
+  },
+  {
+   "topic": "Exemption flyer",
+   "resolution": "reported; to be included in Senior Center packet and posted on website",
+   "quote": "lynda mcquade created an exemption flyer that is easier to read and broken down into categories.",
+   "tags": [
+    "exemptions",
+    "flyer"
+   ]
+  },
+  {
+   "topic": "Clause 41 and 17 assets/income level adjustments for exemptions",
+   "resolution": "assigned: Laffond to draft article",
+   "quote": "brian laffond will draft an article about the adjustments for exemptions.",
+   "tags": [
+    "exemptions",
+    "warrant article",
+    "COLA"
+   ]
+  },
+  {
+   "topic": "Outline for neighborhood/site evaluation consultant",
+   "resolution": "assigned: Cammer to draft proposal",
+   "quote": "the neighborhood working group found that the site indexes were doubling as neighborhoods.",
+   "tags": [
+    "neighborhoods",
+    "site indexes",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Assessor website",
+   "resolution": "no action; web developer concerned about photographs",
+   "quote": "the web developer was concerned with adding pictures as that is not typically done due to cybersecurity concerns.",
+   "tags": [
+    "website",
+    "cybersecurity"
+   ]
+  },
+  {
+   "topic": "Postponed topics: assessing calendar and BOA policies",
+   "resolution": "postponed",
+   "quote": "discuss details and development of assessing calendar",
+   "tags": [
+    "calendar",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting dates",
+   "resolution": "proposed; no vote recorded",
+   "quote": "brian laffond suggests starting in february switching to the first and third wednesday of the month for meetings.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Closing comments: public (Grzybowski assessment)",
+   "resolution": "abatement to be provided by Principal Assessor",
+   "quote": "stephanie grzybowski states their home assessment went up 86%.",
+   "tags": [
+    "abatements",
+    "condos",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Closing comments: Board",
+   "resolution": "no action",
+   "quote": "brian laffond states he is currently unaware of any additional issues.",
+   "tags": [
+    "condos"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned, roll call 3-0",
+   "quote": "the meeting closed at 8:20 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "assessor",
+  "abatements",
+  "motor vehicle excise",
+  "tax rate",
+  "tax recap",
+  "exemptions",
+  "Vision contract",
+  "senior center conference",
+  "public comment",
+  "condo assessment",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2024-10-09",
  "docid": "6819",
@@ -10,8 +10,296 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10092024-6819",
   "doc_url": "/docs/meetings/capital-planning-committee/2024-10-09-minutes-6819.txt"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "The minutes record one motion (to adjourn) with identified movers and seconders. The review of prior minutes was tabled/postponed rather than voted on. No other motions or votes appear in the text.",
- "cost_usd": 0.0639174
+ "votes": [
+  {
+   "motion": "Motion to adjourn the meeting.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Matt Brenner",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "there was a m otion to adjourn by t om alonzo , seconded by m att"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is extracted with OCR-style spacing artifacts (e.g., 'm otion', 'T om', 'B renner', 'T he', '$1 65,500', '$ 82,565'); quotes preserve printed spacing where it falls inside a quote and names are given in normal spelling. The only motion is the adjournment motion, and the minutes print no vote count or outcome for it. The minutes list five members as present with no separate absences recorded; the minutes are unsigned and the prior minutes were tabled, so none is approved here. Public comment sections state no public or committee speakers. Carter Terenzini and Chris Ruth are named but the minutes do not say they attended, so they are marked 'not stated'. Library Director and IT presenter are referenced without names or present status and are not listed as attendees.",
+ "cost_usd": 0.01938907,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: vice chair tom alonzo, chair peter beardmore, clerk matt brenner, member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: vice chair tom alonzo, chair peter beardmore, clerk matt brenner, member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Matt Brenner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: vice chair tom alonzo, chair peter beardmore, clerk matt brenner, member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Rob Bowen",
+   "role": "Member-at-large",
+   "status": "present",
+   "quote": "present members: vice chair tom alonzo, chair peter beardmore, clerk matt brenner, member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee Representative",
+   "status": "present",
+   "quote": "present members: vice chair tom alonzo, chair peter beardmore, clerk matt brenner, member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Jeffrey Thibodeau",
+   "role": "Interim Police Chief (presented as Lieutenant)",
+   "status": "present",
+   "quote": "lieutenant thibodeau confirms that cruisers 205, 206, and 209 will be auctioned."
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "met with carter terenzini"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Director",
+   "status": "not stated",
+   "quote": "working with the facilities director, chris ruth, to utilize the vacant second floor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review and approval of minutes from prior meetings tabled to the next meeting.",
+   "quote": "from prior meetings was ta bled to the next meeting."
+  },
+  {
+   "decision": "Peter Beardmore will look further into a shared document platform (SharePoint or Google Drive).",
+   "quote": "peter beardmore will look further into this."
+  },
+  {
+   "decision": "Peter Beardmore will circulate an email asking about members' availability for November.",
+   "quote": "peter beardmore will circulate an email"
+  },
+  {
+   "decision": "Peter Beardmore will add the financial manual discussion to the upcoming agenda.",
+   "quote": "the financial manual to the upcoming agenda."
+  },
+  {
+   "decision": "Presentation schedule set: Schools October 21, Facilities October 23, DPW and Fire November 4.",
+   "quote": "october 21 st : schools october 23 rd : facilities november 4 th : dpw and fire"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Police portable radios (FY 27)",
+   "what_was_recorded": "Estimated cost per radio is $1,478; 30 radios would total $44,340, with a roughly 7-year lifespan.",
+   "quote": "lieutenant thibodeau checked the estimated cost per radio to be $1,478.",
+   "figures_as_printed": [
+    "$1,478",
+    "$44,340"
+   ]
+  },
+  {
+   "topic": "Police Interceptor Hybrid purchase (FY 27)",
+   "what_was_recorded": "Purchase of a new Ford Police Interceptor Hybrid vehicle, totaling roughly $75,500.",
+   "quote": "totaling roughly $75,500.",
+   "figures_as_printed": [
+    "$75,500"
+   ]
+  },
+  {
+   "topic": "Cruiser replacement (FY 28)",
+   "what_was_recorded": "Two Ford Interceptor Hybrid vehicles at $77,825 per vehicle; total for the 2 vehicles is $155,650.",
+   "quote": "hybrid vehicles costing $77,825 per vehicle.",
+   "figures_as_printed": [
+    "$77,825",
+    "$155,650"
+   ]
+  },
+  {
+   "topic": "Cruiser replacement (FY 29)",
+   "what_was_recorded": "Two Ford Interceptor Hybrid Explorers at $80,160 per vehicle; total for the 2 vehicles is $160,320.",
+   "quote": "total for the 2 vehicles is $160,320.",
+   "figures_as_printed": [
+    "$80,160",
+    "$160,320"
+   ]
+  },
+  {
+   "topic": "Firearm replacement (FY 29)",
+   "what_was_recorded": "Current cost unknown due to fluctuation; 30 firearms will be needed.",
+   "quote": "the current cost is unknown due to fluctuation,",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cruiser replacement (FY 30)",
+   "what_was_recorded": "Two Ford Interceptor Hybrid vehicles at $ 82,565 per vehicle; total for the 2 vehicles is $1 65,500 as printed.",
+   "quote": "hybrid vehicles costing $ 82,565",
+   "figures_as_printed": [
+    "$ 82,565",
+    "$1 65,500"
+   ]
+  },
+  {
+   "topic": "Cruiser replacement (FY 31)",
+   "what_was_recorded": "Two Ford Interceptor Hybrid vehicles at $85,042 per vehicle; total for the 2 vehicles is $170,085.",
+   "quote": "hybrid vehicles costing $85,042 per vehicle.",
+   "figures_as_printed": [
+    "$85,042",
+    "$170,085"
+   ]
+  },
+  {
+   "topic": "Cruiser replacement (FY 32)",
+   "what_was_recorded": "Two Ford Interceptor Hybrid vehicles at $87,593 per vehicle; total for the 2 vehicles is $175,186.",
+   "quote": "hybrid vehicles costing $87,593 per vehicle.",
+   "figures_as_printed": [
+    "$87,593",
+    "$175,186"
+   ]
+  },
+  {
+   "topic": "Green Communities grant opportunities",
+   "what_was_recorded": "Hybrid vehicles have grant opportunities through the Green Communities; no dollar figure printed.",
+   "quote": "has grant opportunities through the green communities.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cemetery expansion funds",
+   "what_was_recorded": "A sum of money is available to the Cemetery Commission for cemetery expansion; no figure printed.",
+   "quote": "there is a sum of money that is available to the cemetery commission that can be used towards expansion.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "DPW budget concerns",
+   "what_was_recorded": "Chair met with a member to discuss concerns about the DPW budget; no figure printed.",
+   "quote": "discussed concerns about the dpw budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital and the budget",
+   "what_was_recorded": "Capital and its effects on the budget were discussed at the Budget Task Force; no figure printed.",
+   "quote": "its effects on the budget were discussed.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital project backlog",
+   "what_was_recorded": "Committee noted capital projects are backlogged and questioned effect on prioritization of this year's projects; no figure printed.",
+   "quote": "chris menard brought forward the fact that capital projects are backlogged.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (committee and public)",
+   "resolution": "no comment",
+   "quote": "there was no comment from the committee or the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action",
+   "quote": "peter beardmore had previously distributed the financial policies manual.",
+   "tags": [
+    "chair report",
+    "financial policies",
+    "budget task force",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "tabled to next meeting",
+   "quote": "from prior meetings was ta bled to the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Shared document platform",
+   "resolution": "no action; chair to look into it",
+   "quote": "that there is no single domain that the committee can use to share",
+   "tags": [
+    "document sharing",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Capital request presentation: Police",
+   "resolution": "presented; no action recorded",
+   "quote": "the majority of the 10-year capital plan includes replacing cruisers.",
+   "tags": [
+    "police",
+    "vehicles",
+    "radios",
+    "cruisers",
+    "body cameras",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Capital request presentation: IT",
+   "resolution": "rescheduled; date not determined",
+   "quote": "the it department needed to reschedule their presentation",
+   "tags": [
+    "IT",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Review schedule and future meeting topics",
+   "resolution": "schedule set; chair to circulate availability email",
+   "quote": "peter beardmore will circulate an email",
+   "tags": [
+    "scheduling",
+    "capital backlog"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no comment",
+   "quote": "there were no comments from the public",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "motion to adjourn made and seconded; result not recorded",
+   "quote": "there was a m otion to adjourn by t om alonzo , seconded by m att",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "police department",
+  "cruisers",
+  "vehicles",
+  "radios",
+  "firearms",
+  "body worn cameras",
+  "capital backlog",
+  "budget task force",
+  "cemetery expansion",
+  "DPW budget",
+  "document sharing",
+  "scheduling",
+  "financial policies",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

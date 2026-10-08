@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2024-12-12",
  "docid": "6914",
@@ -12,6 +12,139 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes contain only informational reports and updates from library staff and departments; no motions or voting language present.",
- "cost_usd": 0.0653054
+ "note": "These are the report packets in the minutes, not a record of the meeting itself. The text has no call to order, agenda, attendance roll, motions or votes, and no public comment section, so the record of votes and decisions is empty, not verified absent from a complete document. Pages 1, 2, 8, 9, 11 and 12 are blank. Page 7 (children's area expenses) and page 10 (YA budget) print a heading with no figures. The Director's name is not printed. Attendee status is 'not stated' because the text names report authors, not who attended. The budget table's individual figures were carried in figures_as_printed, but its quote is the table header because table rows did not extract cleanly as verbatim strings.",
+ "cost_usd": 0.014673970000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lydia Paolilli",
+   "role": "Author of Adult Services trustee report (\"Trustee Report Adult Services Department\")",
+   "status": "not stated",
+   "quote": "respectfully submitted, lydia paolilli"
+  },
+  {
+   "name": "Debbie Laffond",
+   "role": "Children's Services Librarian",
+   "status": "not stated",
+   "quote": "debbie laffond, children's services librarian"
+  },
+  {
+   "name": "Joslyn Davis",
+   "role": "Library Assistant, Children's Area",
+   "status": "not stated",
+   "quote": "joslyn davis, library assistant, children's area"
+  },
+  {
+   "name": "Kaitlyn Himmelberger",
+   "role": "Young Adult Services",
+   "status": "not stated",
+   "quote": "kaitlyn himmelberger young adult services december 2024 summary"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY25 budget table, Director's Report",
+   "what_was_recorded": "The Director's Report prints a FY25 budget table with budget, expended, percent expended and calendar completion by line, with totals of 592,063 budgeted and 220,563 expended (37%).",
+   "quote": "fy25 budget budget expended % expended calendar completion",
+   "figures_as_printed": [
+    "592,063$",
+    "220,563$",
+    "37%",
+    "90,726$",
+    "94,000$",
+    "22,630$"
+   ]
+  },
+  {
+   "topic": "ARPA-funded furniture",
+   "what_was_recorded": "About $12,000 of furniture was approved for purchase with ARPA funds by the Select Board, with orders to be in before December 17th.",
+   "quote": "about $12,000 of furniture has been approved for purchase with arpa funds by the select board.",
+   "figures_as_printed": [
+    "$12,000"
+   ]
+  },
+  {
+   "topic": "Collection purchasing pause before renovation",
+   "what_was_recorded": "The Young Adult Services report says the 10% collection weed was finished and nothing new is being ordered until the renovation is done, with no dollar figure printed.",
+   "quote": "i am not ordering anything new until the renovation is done.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Director's Report: staff, programs, outreach, building, technology",
+   "resolution": "no action recorded",
+   "quote": "we submitted our letter of intent for lsta grants this year.",
+   "tags": [
+    "director",
+    "grants",
+    "staff",
+    "programs",
+    "outreach",
+    "renovation",
+    "technology"
+   ]
+  },
+  {
+   "topic": "FY25 budget update (Director's Report table)",
+   "resolution": "no action recorded",
+   "quote": "fy25 budget budget expended % expended calendar completion",
+   "tags": [
+    "FY25 budget",
+    "spending"
+   ]
+  },
+  {
+   "topic": "Children's Services trustee report, December 2024",
+   "resolution": "no action recorded",
+   "quote": "both of these events were well attended and much appreciated by kids and families of our local homeschooling groups.",
+   "tags": [
+    "children's services",
+    "programs",
+    "homeschoolers"
+   ]
+  },
+  {
+   "topic": "Young Adult Services report, December 2024",
+   "resolution": "no action recorded",
+   "quote": "finished the 10% collection weed ahead of the renovation.",
+   "tags": [
+    "young adult",
+    "teen advisory board",
+    "collection development"
+   ]
+  },
+  {
+   "topic": "Adult Services trustee report, December 2024",
+   "resolution": "no action recorded",
+   "quote": "a few outstanding programs we hosted this november include:",
+   "tags": [
+    "adult services",
+    "programs",
+    "music",
+    "sewing"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "director's report",
+  "trustee reports",
+  "FY25 budget",
+  "ARPA",
+  "renovation",
+  "children's services",
+  "young adult services",
+  "adult services",
+  "programs",
+  "outreach",
+  "staff development",
+  "technology",
+  "no votes recorded"
+ ],
+ "dropped_unquoted_by_field": {}
 }

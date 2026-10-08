@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2024-09-09",
  "docid": "6730",
@@ -10,8 +10,225 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092024-6730",
   "doc_url": "/docs/meetings/public-access-cable-committee-pacc/2024-09-09-minutes-6730.txt"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "Approval of prior minutes (8-5-2024) was tabled due to lack of quorum; no vote on approval is recorded. Only the adjournment vote is stated with a clear motion, mover, seconder, and outcome.",
- "cost_usd": 0.0632974
+ "votes": [
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "P.Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "meeting adjourned at 6:34 pm • (s.archambault, 2nd p.lincoln - passed)"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is extracted, with tabs collapsed and some line breaks lost; no scan. Only one recorded vote (adjournment, a parenthetical with no vote count). The approval of the 8-5-2024 minutes was tabled for lack of quorum, not voted on. Jo Toale appears only in the roll-call listing, so attendance is not stated. Attendance by Faith Beall is a stated absence. The $$36, 044.36 figure is printed with a doubled dollar sign and a space, reproduced as printed.",
+ "cost_usd": 0.01393017,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, paul sarapas"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, paul sarapas"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: steve walker, pete lincoln, steve archambault, paul sarapas"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "excused absence: faith beall"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "not stated",
+   "quote": "manager: jo toale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The approval of the 8-5-2024 minutes was tabled for lack of an eligible quorum.",
+   "quote": "8-5-2024 tabled (lack of eligible quorum)"
+  },
+  {
+   "decision": "The next meeting is set for October 7, 2024 at 6:00 pm in the Lunenburg Senior Activity Center.",
+   "quote": "next meeting: - october 7, 6:00 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "August ending balance",
+   "what_was_recorded": "The August ending balance is stated, with a note that current budget numbers may change once July and August Enterprise Fund interest and the August Comcast payment are added.",
+   "quote": "presently the august ending balance is $1,011,842.12.",
+   "figures_as_printed": [
+    "$1,011,842.12"
+   ]
+  },
+  {
+   "topic": "ARPA funds used for the Bilotta audio upgrade and other ARPA spending",
+   "what_was_recorded": "Over $34k of ARPA funds has been used, and PAC needs to finalize the final amounts. The Bilotta audio upgrade received three quotes and Ockers was selected; no dollar figure for that contract is printed.",
+   "quote": "$34k plus of arpa funds have been used.",
+   "figures_as_printed": [
+    "$34k"
+   ]
+  },
+  {
+   "topic": "Bilotta audio upgrade quotes",
+   "what_was_recorded": "The Bilotta audio upgrade, funded with ARPA funds, received three quotes and Ockers was selected; no dollar figure is printed.",
+   "quote": "the bilotta audio upgrade, using arpa funds, received 3 quotes.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Enterprise Fund investment and interest",
+   "what_was_recorded": "To date PAC has invested $720,000 and received interest that is printed as $$36, 044.36, all of which is being re-invested; PAC uses 6-month bonds with a 2-month ladder.",
+   "quote": "reported that to-date we have invested $720,000 and have received $$36, 044.36 in interest.",
+   "figures_as_printed": [
+    "$720,000",
+    "$$36, 044.36"
+   ]
+  },
+  {
+   "topic": "FY24 budget close with Town Hall",
+   "what_was_recorded": "PAC is working with Town Hall on closing the FY24 budget; no figure is printed.",
+   "quote": "pac is working with town hall on closing the fy24 budget.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call and call to order",
+   "resolution": "called to order at 6:01 pm; Faith Beall excused",
+   "quote": "meeting was called to order at 6:01 pm.",
+   "tags": [
+    "procedure",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no public comment",
+   "quote": "public comments: - • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments: Storytime viewings",
+   "resolution": "discussed, no action",
+   "quote": "p.lincoln expressed that there is a spike in storytime viewings.",
+   "tags": [
+    "programming",
+    "viewership"
+   ]
+  },
+  {
+   "topic": "Committee comments: resignation of Paul Sarapas",
+   "resolution": "announced",
+   "quote": "s.walker announced that p.sarapas will be officially resigning from the board.",
+   "tags": [
+    "membership",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "none",
+   "quote": "communications: • none",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "tabled for lack of eligible quorum",
+   "quote": "8-5-2024 tabled (lack of eligible quorum)",
+   "tags": [
+    "minutes",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "received; no action recorded",
+   "quote": "started recording football games using the new atem.",
+   "tags": [
+    "operations",
+    "equipment",
+    "ARPA",
+    "staffing training"
+   ]
+  },
+  {
+   "topic": "Master Plan Steering Committee report",
+   "resolution": "received",
+   "quote": "p.lincoln reported that the committee has not met since april",
+   "tags": [
+    "master plan",
+    "300th committee"
+   ]
+  },
+  {
+   "topic": "Enterprise fund status",
+   "resolution": "received; report on meeting with Town representatives",
+   "quote": "s.walker met with jo, eziquiel and the bartholomew rep.",
+   "tags": [
+    "enterprise fund",
+    "investments",
+    "interest"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting report",
+   "resolution": "no warrant needed",
+   "quote": "presently there is no need for pac to submit a warrant.",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:34 pm",
+   "quote": "meeting adjourned at 6:34 pm • (s.archambault, 2nd p.lincoln - passed)",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "PACC",
+  "cable access",
+  "ARPA funds",
+  "enterprise fund",
+  "budget",
+  "equipment",
+  "membership resignation",
+  "quorum",
+  "Storytime",
+  "football recording",
+  "Passios studio",
+  "FY24 close"
+ ],
+ "dropped_unquoted_by_field": {}
 }

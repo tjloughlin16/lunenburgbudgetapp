@@ -1,0 +1,706 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "capital-planning-committee",
+ "board": "Capital Planning Committee",
+ "video_title": "Capital Planning Committee",
+ "meeting_date": "2024-11-04",
+ "video_id": "OnCYxrN5S9s",
+ "video_url": "https://www.youtube.com/watch?v=OnCYxrN5S9s",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/capital-planning-committee/2024-11-04-OnCYxrN5S9s.json",
+  "sha256": "0f067ff67a3faf4cc57aa7247c69c6c96a005b531975be72ae718e791be56eec",
+  "caption_lines": 454,
+  "segments": 3575
+ },
+ "recording": {
+  "duration_s": 9541,
+  "duration": "2:39",
+  "spoken_chars": 120893,
+  "words_approx": 20148
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11042024-6857",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/capital-planning-committee/2024-11-04-agenda-6857.txt",
+   "path": "sources/meetings/capital-planning-committee/2024-11-04-agenda-6857.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11042024-6857",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/capital-planning-committee/2024-11-04-minutes-6857.txt",
+   "path": "sources/meetings/capital-planning-committee/2024-11-04-minutes-6857.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-07T21:29:02Z",
+  "cost_usd": 0.403397
+ },
+ "minutes": {
+  "headline": "Capital Planning heard IT, Fire and DPW requests, took no votes, and set a ranking process and Zoom meeting for Nov 13.",
+  "summary": "The committee heard FY26 and out-year capital presentations from IT, the Fire Chief and the DPW director, with extensive questions on vehicles, grants and the stabilization fund. No substantive votes were taken. The chair outlined a process: a spreadsheet roll-up, individual ranking, then a final ranked list sent to the interim town manager by about the end of the calendar year, with meetings set for Nov 13 (hybrid/Zoom) and Dec 2.",
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Casey",
+    "role": "presenter (IT)"
+   },
+   {
+    "name_as_heard": "Chief Sullivan",
+    "role": "presenter (Fire Chief)"
+   },
+   {
+    "name_as_heard": "Bill (DPW director)",
+    "role": "presenter (DPW)"
+   },
+   {
+    "name_as_heard": "Carter",
+    "role": "interim town manager"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Bill Bernard",
+    "role": "member (on the phone)"
+   },
+   {
+    "name_as_heard": "Chris",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Rob",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Bowen",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 84,
+    "topic": "Chair asked for public comment from the committee and the public at the start; none offered."
+   },
+   {
+    "t": 9510,
+    "topic": "Closing public comment: none; no one on Zoom."
+   }
+  ],
+  "tags": [
+   "budget-fy26",
+   "budget-fy27",
+   "budget-fy28",
+   "capital",
+   "grants",
+   "primary-school",
+   "public-comment",
+   "public-safety",
+   "roads-and-dpw",
+   "technology",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 9510,
+    "motion": "Motion to adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 285,
+    "topic": "IT: Eagle House network equipment (Priority One, FY27)",
+    "what_was_said": "Eagle House network gear is end of life and unmanaged; request listed as a firewall, switches and access points package.",
+    "figures_as_heard": [
+     "$16,000"
+    ]
+   },
+   {
+    "t": 410,
+    "topic": "IT: network equipment replacement for other town buildings",
+    "what_was_said": "Minimum request meets the capital threshold; access points on a 5-year cycle, firewalls and switches closer to 7.",
+    "figures_as_heard": [
+     "20,000",
+     "16,000",
+     "the 77"
+    ]
+   },
+   {
+    "t": 452,
+    "topic": "Community Compact grant for IT",
+    "what_was_said": "2022 equipment was funded by the grant, which can be applied for every 2 years; quotes are higher now than the original ask.",
+    "figures_as_heard": [
+     "$8,000 less"
+    ]
+   },
+   {
+    "t": 1087,
+    "topic": "Community Compact grant mechanics",
+    "what_was_said": "Town may offer a local share or ask for full funding; funds must be used within 12 months; the application is due in December.",
+    "figures_as_heard": [
+     "20%",
+     "80%",
+     "100%"
+    ]
+   },
+   {
+    "t": 1359,
+    "topic": "Library server needs",
+    "what_was_said": "Possible library server purchase, below the capital threshold.",
+    "figures_as_heard": [
+     "$5,000"
+    ]
+   },
+   {
+    "t": 1482,
+    "topic": "Fire: FY26 Car 2 duty officer vehicle",
+    "what_was_said": "Replacement 4x4 pickup estimate, based on a nearby city's purchase.",
+    "figures_as_heard": [
+     "$75,000"
+    ]
+   },
+   {
+    "t": 1711,
+    "topic": "Fire: eventual replacement of old car",
+    "what_was_said": "A member noted the old vehicle may need replacing within years at a similar cost.",
+    "figures_as_heard": [
+     "$65 $70,000"
+    ]
+   },
+   {
+    "t": 2332,
+    "topic": "Fire: FY27 Car 1 chief's car",
+    "what_was_said": "Estimate escalated 5% a year; chief may push it to FY28.",
+    "figures_as_heard": [
+     "$25,500"
+    ]
+   },
+   {
+    "t": 2876,
+    "topic": "Fire: squad/rescue pumper replacement and AFG grant",
+    "what_was_said": "A federal grant needs an 80/20 match and fleet-age eligibility the town doesn't meet; chief suggests actual cost nearer a million.",
+    "figures_as_heard": [
+     "262,000",
+     "80% of $1.4 million",
+     "closer to a million"
+    ]
+   },
+   {
+    "t": 2937,
+    "topic": "Stabilization fund for fire apparatus",
+    "what_was_said": "The stabilization fund has been funded but never drawn for a large purchase; its intent was apparatus.",
+    "figures_as_heard": [
+     "250"
+    ]
+   },
+   {
+    "t": 3787,
+    "topic": "Fire: cardiac monitors placeholders FY30-31",
+    "what_was_said": "Bought for about 35,000 each and marked up for the placeholder.",
+    "figures_as_heard": [
+     "$35,000",
+     "40"
+    ]
+   },
+   {
+    "t": 4189,
+    "topic": "Fire: vehicle costs over coming years",
+    "what_was_said": "A member noted roughly three million in vehicles in four years, with an ambulance costing over half a million.",
+    "figures_as_heard": [
+     "$3 million",
+     "500 plus th000"
+    ]
+   },
+   {
+    "t": 4253,
+    "topic": "Fire: turnout gear line",
+    "what_was_said": "Line increased; buying five sets a year.",
+    "figures_as_heard": [
+     "20,000"
+    ]
+   },
+   {
+    "t": 4314,
+    "topic": "Fire: radios via ARPA",
+    "what_was_said": "Nine portable radios coming with the ambulance via ARPA; more requested.",
+    "figures_as_heard": [
+     "nine",
+     "15 more portable radios"
+    ]
+   },
+   {
+    "t": 4846,
+    "topic": "DPW: Chapter 90 use",
+    "what_was_said": "Chapter 90 funds used for paving and drainage; over seven hundred thousand spent this year.",
+    "figures_as_heard": [
+     "$700,000"
+    ]
+   },
+   {
+    "t": 4963,
+    "topic": "Chapter 90 annual allotment",
+    "what_was_said": "Allotment is described as small and stagnant for about 12 years, with Fair Share money added.",
+    "figures_as_heard": [
+     "600 something",
+     "two and a quarter"
+    ]
+   },
+   {
+    "t": 5204,
+    "topic": "Pavement management funding",
+    "what_was_said": "Pavement management funded flat this year; the slide's higher figure was an estimated cost.",
+    "figures_as_heard": [
+     "619",
+     "550"
+    ]
+   },
+   {
+    "t": 5709,
+    "topic": "DPW: six-wheel dump truck",
+    "what_was_said": "Price rose sharply from the quote two years ago; four sander trucks already on order.",
+    "figures_as_heard": [
+     "310",
+     "$90,000"
+    ]
+   },
+   {
+    "t": 6240,
+    "topic": "DPW: catch basin truck",
+    "what_was_said": "MS4 permit calls for cleaning all catch basins yearly; staffing is the constraint.",
+    "figures_as_heard": [
+     "1471"
+    ]
+   },
+   {
+    "t": 6724,
+    "topic": "DPW: North Cemetery expansion design",
+    "what_was_said": "Estimate is rough; cemetery sale of lots fund could pay but needs town meeting appropriation.",
+    "figures_as_heard": [
+     "$50,000",
+     "200,000"
+    ]
+   },
+   {
+    "t": 7249,
+    "topic": "Grant services for cemetery work",
+    "what_was_said": "Members asked the town to look for cemetery grants using existing grant funds.",
+    "figures_as_heard": [
+     "$50,000"
+    ]
+   },
+   {
+    "t": 7312,
+    "topic": "DPW: loader replacement FY27",
+    "what_was_said": "Rented a loader this year; recent repairs were made on the existing one.",
+    "figures_as_heard": [
+     "$55,000 a month",
+     "$20,000",
+     "20 25k"
+    ]
+   },
+   {
+    "t": 7612,
+    "topic": "Tree removal and tree survey",
+    "what_was_said": "Operating funds used for a tree removal contract; townwide survey requested.",
+    "figures_as_heard": [
+     "$48,000"
+    ]
+   },
+   {
+    "t": 7971,
+    "topic": "DPW: salt shed construction and anti-icing",
+    "what_was_said": "Estimated construction cost, without a design.",
+    "figures_as_heard": [
+     "$600,000"
+    ]
+   },
+   {
+    "t": 8276,
+    "topic": "Sweeper repair",
+    "what_was_said": "Rebuild avoided a much higher replacement cost.",
+    "figures_as_heard": [
+     "$115,000",
+     "$7,000"
+    ]
+   },
+   {
+    "t": 8523,
+    "topic": "DPW 10-year plan average",
+    "what_was_said": "Average annual request is more than half of current annual capital spending.",
+    "figures_as_heard": [
+     "$830,000 a year"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 8607,
+    "decision": "Committee to prioritize this year's requests and submit the order to the town manager by about the end of the calendar year."
+   },
+   {
+    "t": 8880,
+    "decision": "The chair will roll the requests into a spreadsheet and share presentations in a Google share. Members will rank every project individually before the next meeting."
+   },
+   {
+    "t": 9385,
+    "decision": "Next meeting set for Wednesday Nov 13 at about 7 pm by hybrid/Zoom; a December 2 in-person meeting is targeted, and Dec 16 is held as a backup."
+   },
+   {
+    "t": 9154,
+    "decision": "Every member must rank every project, and the chair will try to get the list of uncompleted projects from the interim town manager."
+   },
+   {
+    "t": 9006,
+    "decision": "Mean versus median for scoring is deferred to the next meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 109,
+    "topic": "Call to order, remote access notice, public comment",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 109,
+    "t_end": 213,
+    "topic": "Chair's report, including the revised school priority and generator change",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "primary-school"
+    ]
+   },
+   {
+    "t_start": 213,
+    "t_end": 1390,
+    "topic": "IT presentation: Eagle House and town building network equipment, Community Compact grant, licenses",
+    "resolution": "informational",
+    "tags": [
+     "technology",
+     "capital",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 1400,
+    "t_end": 4376,
+    "topic": "Fire Department presentation: vehicle and equipment replacement plan, stabilization fund, AFG grant",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "capital",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 4376,
+    "t_end": 4560,
+    "topic": "State heavy-vehicle emissions rule and purchasing",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 4564,
+    "t_end": 8590,
+    "topic": "DPW presentation: trucks and equipment, Chapter 90, cemetery expansion, drainage and bridges, salt shed",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "capital",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 8607,
+    "t_end": 9510,
+    "topic": "Future meetings and ranking process",
+    "resolution": "decided: Nov 13 hybrid, Dec 2, ranking by members",
+    "tags": [
+     "capital"
+    ]
+   },
+   {
+    "t_start": 9510,
+    "t_end": 9540,
+    "topic": "Closing public comment and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Captions garble several figures, including Priority One IT totals, the Chapter 90 yearly numbers and the pavement management figures.",
+   "Speaker identities are not given; first names such as Tom, Chris, Rob, Carter and Bill are inferred from how they are addressed.",
+   "The adjournment vote count is not stated; the chair says 'we are adjourned' after 'all those in favor'.",
+   "Meeting ID digits are garbled."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Capital Planning Committee took no votes; it heard FY26 and out-year capital requests from IT, the Fire Chief and the DPW director.",
+    "t": 8607
+   },
+   {
+    "line": "The committee agreed to rank this year's requests and send the order to the town manager by about the end of the calendar year.",
+    "t": 8607
+   },
+   {
+    "line": "The chair will roll the requests into a spreadsheet, and every member will rank every project individually before the next meeting.",
+    "t": 9154
+   },
+   {
+    "line": "The next meeting is set for Wednesday Nov 13 by hybrid/Zoom, with a Dec 2 in-person meeting targeted and Dec 16 held as a backup.",
+    "t": 9385
+   },
+   {
+    "line": "Whether to score projects by mean or median was deferred to the next meeting.",
+    "t": 9006
+   }
+  ],
+  "why_it_matters": [
+   "The ranked list sent to the town manager shapes which vehicles, equipment and building projects reach a future town meeting warrant, so residents may later be asked to vote on the items ranked highest.",
+   "Fire apparatus costs and the unused stabilization fund, which the committee noted was meant for apparatus, bear on whether big purchases are paid from savings or from borrowing and the tax levy."
+  ],
+  "watch_next": [
+   "Nov 13 hybrid/Zoom meeting, where members' individual rankings and the mean-versus-median scoring question come up.",
+   "The final ranked list to the interim town manager, expected by about the end of the calendar year, after a Dec 2 meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-07T21:29:24Z",
+   "cost_usd": 0.219125
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11042024-6857",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/capital-planning-committee/2024-11-04-minutes-6857.txt",
+   "path": "sources/meetings/capital-planning-committee/2024-11-04-minutes-6857.pdf"
+  },
+  "official_sha256": "193d994f0877ac8c1a5ae82d6d104ae5e27a192b912a770ea1977d747975a04e",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Neither record has a non-procedural vote or transfer. The decisions and the IT, Fire car and Squad figures largely agree. Our minutes carry much more detail, including all of DPW's Chapter 90, truck, salt shed and sweeper items, while the official minutes are a summary that omits many figures. The thing to check is the DPW dump truck, where our $310,000 and the official $401,000 differ, and the IT network equipment total ($32,000 official; ours garbled).",
+  "counts": {
+   "agree": 9,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "IT Eagle House firewall/network equipment",
+    "ours": "IT: Eagle House network equipment (Priority One, FY27): $16,000",
+    "official": "the cost for f irewall and the access points for the infrastructure is estimated to cost $ 16,000 .",
+    "note": "Same item and same $16,000 figure.",
+    "t": 285
+   },
+   {
+    "kind": "discrepancy",
+    "about": "IT Priority 2 network equipment replacement for other town buildings",
+    "ours": "IT: network equipment replacement for other town buildings: 20,000, 16,000, the 77",
+    "official": "town hall is estimated to costs $ 32,000 .",
+    "note": "Our captions are garbled (20,000 / 16,000 / '77') and do not clearly yield $32,000; listen to the recording near t=410 to confirm the total.",
+    "t": 410
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Community Compact grant amount",
+    "ours": "Community Compact grant for IT: $8,000 less",
+    "official": "c asey chisholm has previously used the community compact grant for firewalls .",
+    "note": "Official mentions the grant but prints no amount; our $8,000 figure is unconfirmed.",
+    "t": 452
+   },
+   {
+    "kind": "agree",
+    "about": "Fire FY26 Car 2 replacement",
+    "ours": "Fire: FY26 Car 2 duty officer vehicle: $75,000",
+    "official": "replace car 2 ( duty officer/fire prevention vehicle) - $75,000",
+    "note": "Same vehicle and amount.",
+    "t": 1482
+   },
+   {
+    "kind": "agree",
+    "about": "Fire squad replacement (Squad 3)",
+    "ours": "Fire: squad/rescue pumper replacement and AFG grant: 262,000, 80% of $1.4 million, closer to a million",
+    "official": "replace squad 3 estimated to cost - $ 1 ,433,000",
+    "note": "Our '$1.4 million' is consistent with $1,433,000; grant discussion and 262,000 are only in ours.",
+    "t": 2876
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fire chief's car FY27 and old car replacement",
+    "ours": "Fire: FY27 Car 1 chief's car: $25,500",
+    "official": "",
+    "note": "The official minutes do not record the chief's car, the $70,000 old-car replacement or the stabilization fund for apparatus.",
+    "t": 2332
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fire FY36 ambulance replacement",
+    "ours": "",
+    "official": "replace 2025 ambulance - $ 1, 139,957",
+    "note": "Our minutes have no ambulance item; the 12-year EMS vehicle life proposal is also only in the official.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "ARPA-eligible portable radios",
+    "ours": "Fire: radios via ARPA: nine, 15 more portable radios",
+    "official": "can be fulfilled with arpa funds. this includes 12 more portable radios and air",
+    "official_reading": "12 more portable radios",
+    "note": "Same item; our count was misheard.",
+    "t": 4314
+   },
+   {
+    "kind": "discrepancy",
+    "about": "DPW six-wheel dump truck cost",
+    "ours": "DPW: six-wheel dump truck: 310, $90,000",
+    "official": "bill bernard received an estimated this week of $401,000.",
+    "note": "Our $310,000/$90,000 does not match $401,000; check the recording at t=5709 to see whether $401,000 is a new estimate versus the earlier budget figure.",
+    "t": 5709
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Cemetery sale of lots fund balance",
+    "ours": "DPW: North Cemetery expansion design: $50,000, 200,000",
+    "official": "bernard states $200,000.",
+    "note": "Official gives $200,000 as the sale of lots fund balance; ours lists 200,000 inside the expansion design item without that label, so check what the 200,000 is.",
+    "t": 6724
+   },
+   {
+    "kind": "caption_error",
+    "about": "Front-end loader rental rate",
+    "ours": "DPW: loader replacement FY27: $55,000 a month, $20,000, 20 25k",
+    "official": "rented a loader for $5,000 a month for a total of 4 months.",
+    "official_reading": "$5,000 a month",
+    "note": "Our $55,000 a month is a misheard $5,000 a month; the $20,000 is the four-month total.",
+    "t": 7312
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DPW Chapter 90, pavement, catch basin truck, salt shed, sweeper, tree and 10-year plan figures",
+    "ours": "DPW: Chapter 90 use: $700,000",
+    "official": "",
+    "note": "The official minutes omit these DPW figures (Chapter 90, pavement, catch basin truck, salt shed, sweeper, tree work, $830,000 plan average), as well as the Library server $5,000, cardiac monitors, turnout gear and vehicle cost totals.",
+    "t": 4846
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Storm water utility question",
+    "ours": "",
+    "official": "tom alonzo questions if projects such a s bridges and culverts will be included in the storm water utility program .",
+    "note": "Our minutes record no storm water utility discussion.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Ranked list to Town Manager by year end",
+    "ours": "Committee to prioritize this year's requests and submit the order to the town manager by about the end of the calendar year.",
+    "official": "that list will then be sent to the town manager before the end of the calendar year.",
+    "note": "Same decision.",
+    "t": 8607
+   },
+   {
+    "kind": "agree",
+    "about": "Chair builds spreadsheet and shared drive",
+    "ours": "The chair will roll the requests into a spreadsheet and share presentations in a Google share.",
+    "official": "peter beardmore will create an excel spreadsheet and a google share drive with all the presentations.",
+    "note": "Same.",
+    "t": 8880
+   },
+   {
+    "kind": "agree",
+    "about": "Members rank projects",
+    "ours": "Members will rank every project individually before the next meeting.",
+    "official": "peter beardmore requests that each member rank the projects in their priority order.",
+    "note": "Same request.",
+    "t": 8880
+   },
+   {
+    "kind": "agree",
+    "about": "List of uncompleted projects",
+    "ours": "the chair will try to get the list of uncompleted projects from the interim town manager.",
+    "official": "rob bowen is requesting a list of all the capital projects that have not been completed.",
+    "note": "Same list; ours credits the chair and the interim manager, official credits Rob Bowen as requester.",
+    "t": 9154
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting Nov 13",
+    "ours": "Next meeting set for Wednesday Nov 13 at about 7 pm by hybrid/Zoom",
+    "official": "the n ext meeting is scheduled for november 13 th via zoom at 7 pm.",
+    "note": "Same date, time and Zoom; Dec 2 and Dec 16 dates are only in ours.",
+    "t": 9385
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Mean vs median scoring deferred",
+    "ours": "Mean versus median for scoring is deferred to the next meeting.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 9006
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee Matt Brenner (Clerk)",
+    "ours": "",
+    "official": "present members: chair peter beardmore, vice chair tom alonzo, clerk matt brenner, member-at-large rob bowen, finance committee representative chris menard",
+    "note": "Our attendee list has no Matt Brenner.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Bill Bernard role",
+    "ours": "Bill Bernard (member (on the phone))",
+    "official": "the presentation was provided by dpw director, bill bernard.",
+    "note": "We list Bill Bernard as a phone member and also a separate 'Bill (DPW director)'; the official says he is the DPW Director. Check whether these are one person.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Carter, interim town manager",
+    "ours": "Carter (interim town manager)",
+    "official": "",
+    "note": "Official attendee list does not include an interim town manager.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Presenters Casey and Chief Sullivan",
+    "ours": "Casey (presenter (IT))",
+    "official": "casey chisholm, i.t. director, provided the capital request presentation.",
+    "note": "Same presenters; Fire Chief Sullivan also matches Patrick Sullivan.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T21:31:24Z",
+   "cost_usd": 0.263023
+  }
+ }
+}

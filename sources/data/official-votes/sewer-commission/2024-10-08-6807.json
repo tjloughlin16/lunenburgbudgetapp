@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-10-08",
  "docid": "6807",
@@ -12,32 +12,273 @@
  },
  "votes": [
   {
-   "motion": "Extend the current Oil Water Separator permits to 3/31/26",
+   "motion": "Extend the current Oil Water Separator permits to 3/31/26.",
    "moved_by": "Brett R.",
    "seconded_by": "Joe",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "to extend the current oil water separator permits to 3/31/26. discussion: joe asked to clarify what the permit was for an",
-   "quote_taken_from_text": true
+   "quote": "to extend the current oil water separator permits to 3/31/26."
   },
   {
-   "motion": "Vote on meeting in-person the 1st meeting of the month at 7pm and meet via Zoom at 6pm for the 2nd meeting of the month",
+   "motion": "Hold in-person meetings the 1st meeting of the month at 7pm and Zoom meetings the 2nd meeting of the month at 6pm.",
    "moved_by": "Scott D.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "to vote on meeting in-person the 1st meeting of the month at 7pm and meet via zoom at 6pm for the 2nd meeting of the month. roll call vote: brett-aye, joe-aye, scott-aye and mike-aye."
+   "quote": "to vote on meeting in-person the 1st meeting of the month at 7pm and meet via zoom at 6pm for the 2nd meeting of the month."
   },
   {
-   "motion": "Adjourn at 6:55pm",
+   "motion": "Adjourn the meeting at 6:55pm.",
    "moved_by": "Scott D.",
    "seconded_by": "Joe H.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "to adjourn at 6:55pm. roll call vote: joe-aye, brett-aye, scott-aye and mike-aye."
+   "quote": "to adjourn at 6:55pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09471039999999999
+ "note": "Text extract, not a scan. Three roll-call votes are recorded with counts, and all three are quoted verbatim. The header says the meeting was held via Zoom, but the minutes do not give each attendee's remote or in-person status, so every attendee is marked \"present\" from the Attendees line. The two public-comment sections include speeches by board members (Mike, Brett), not by residents. The business manager item says \"holding this over to the next meeting\" was suggested, and the minutes then record the references check and the held ratification without a motion. Eli Torres's absence quote has its line break collapsed to a single space, per the instructions.",
+ "cost_usd": 0.01588967,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Mackin",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member - joe hurley, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member - joe hurley, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member - joe hurley, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member - joe hurley, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member - joe hurley, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member - joe hurley, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Eli Torres",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: eli torres mike opened the meeting at 6:09pm."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Business Manager candidate: references to be checked before proceeding, and the ratification of her hire held off; the minutes also say holding this over to the next meeting was suggested.",
+   "quote": "they still need to check her references before moving forward and will hold off on ratifying her."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Oil Water Separator permit renewal fee",
+   "what_was_recorded": "The DPW Director stated the permit renewal fee is $150.",
+   "figures_as_printed": [
+    "$150"
+   ],
+   "quote": "bill stated the renewal fee is $150."
+  },
+  {
+   "topic": "Oil Water Separator permit extension and budget",
+   "what_was_recorded": "The DPW Director confirmed the extension of the permits to 3/31/26 would not impact the fiscal budget. No dollar figure was printed for this item.",
+   "figures_as_printed": [],
+   "quote": "he confirmed that this would not impact the fiscal budget."
+  },
+  {
+   "topic": "Oil Water Separator permit proration",
+   "what_was_recorded": "A member asked whether a pro-rated bill should be issued; the Commission discussed it. No outcome or figure was recorded.",
+   "figures_as_printed": [],
+   "quote": "scott questioned if they should do a pro-rated bill and commission discussed."
+  },
+  {
+   "topic": "FY24 books and Special Town Meeting swap",
+   "what_was_recorded": "The DPW Director said the swap would be made at the Spring Meeting if the FY24 books close after Special Town Meeting, and that it would not impact the budget. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "if so, they will make the swap at the spring meeting, but it will not have an impact on the budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Welcome to new members",
+   "speaker": "Mike",
+   "quote": "mike said he was happy to welcome the new members and he is looking forward to working together going forward."
+  },
+  {
+   "topic": "Thanks to members and chair",
+   "speaker": "Mike",
+   "quote": "mike thanked joe and scott for stepping up to the plate."
+  },
+  {
+   "topic": "Thanks to chair",
+   "speaker": "Brett",
+   "quote": "brett thanked mike for being chairman and that he handled the meeting well."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and roll call",
+   "resolution": "no action",
+   "tags": [
+    "roll call"
+   ],
+   "quote": "mike opened the meeting at 6:09pm. and did a roll call of attendees."
+  },
+  {
+   "topic": "Public comment (welcome to new members)",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "mike said he was happy to welcome the new members and he is looking forward to working together going forward."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "none",
+   "tags": [
+    "announcements"
+   ],
+   "quote": "announcements - none"
+  },
+  {
+   "topic": "Business Manager position new hire",
+   "resolution": "held over; not ratified",
+   "tags": [
+    "hiring",
+    "business manager",
+    "personnel"
+   ],
+   "quote": "bill reported they interviewed 1 candidate who did well."
+  },
+  {
+   "topic": "Assistant to the Business Manager position",
+   "resolution": "no action; wait for Business Manager hire",
+   "tags": [
+    "hiring",
+    "personnel"
+   ],
+   "quote": "bill reported that they have a couple candidates but he suggested waiting until they hire the sewer business manager."
+  },
+  {
+   "topic": "Special Town Meeting articles",
+   "resolution": "update; no action",
+   "tags": [
+    "Special Town Meeting",
+    "FY24 budget",
+    "budget"
+   ],
+   "quote": "bill stated that the fy24 books are not closed yet and may not close until after the special town meeting."
+  },
+  {
+   "topic": "Mass 1 line repairs",
+   "resolution": "update; no action",
+   "tags": [
+    "sewer lines",
+    "water main",
+    "contractor"
+   ],
+   "quote": "bill reported that cte is trying to get set up within the next couple of weeks."
+  },
+  {
+   "topic": "Manhole repair invitation for bid",
+   "resolution": "update; no action",
+   "tags": [
+    "manholes",
+    "bids",
+    "procurement"
+   ],
+   "quote": "manhole repair ifb went out 9/25 and the bids are due 10/23."
+  },
+  {
+   "topic": "Grease trap and oil water separator permit renewal date",
+   "resolution": "permits extended to 3/31/26, passed 4-0",
+   "tags": [
+    "permits",
+    "oil water separators",
+    "fees"
+   ],
+   "quote": "bill noted that in february 2023, the commission voted to require permits for the oil water separators."
+  },
+  {
+   "topic": "In-person and hybrid meetings",
+   "resolution": "passed 4-0: 1st meeting in-person at 7pm, 2nd via Zoom at 6pm",
+   "tags": [
+    "meeting format",
+    "Zoom",
+    "governance"
+   ],
+   "quote": "mike proposed holding the 1st meeting in-person/hybrid and 2nd meeting via zoom."
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "discussed; no action",
+   "tags": [
+    "agenda",
+    "elections"
+   ],
+   "quote": "bill suggested keeping the current agenda items on future agendas for updates."
+  },
+  {
+   "topic": "Public comment (thanks to chair and members)",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "brett thanked mike for being chairman and that he handled the meeting well."
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "upcoming scheduled sewer commission activities:"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:55pm, passed 4-0",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn at 6:55pm."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "DPW",
+  "staffing",
+  "business manager hiring",
+  "oil water separators",
+  "permits",
+  "fees",
+  "meeting format",
+  "Zoom",
+  "Special Town Meeting",
+  "manhole repair",
+  "sewer lines",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

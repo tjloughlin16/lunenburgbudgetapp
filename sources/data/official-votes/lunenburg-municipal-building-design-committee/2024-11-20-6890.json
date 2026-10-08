@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2024-11-20",
  "docid": "6890",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To adjourn",
+   "motion": "To adjourn the meeting.",
    "moved_by": "Matthew Allison",
    "seconded_by": "Tom Gray",
    "outcome": "passed unanimously",
@@ -21,6 +21,134 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: adjournment motion. The minutes document an interview and discussion with the Taylor & Burns architectural team but no substantive motions or votes on committee business.",
- "cost_usd": 0.0572364
+ "note": "Text is a complete, readable minutes extract (two pages), not a scan. Only one vote is recorded: adjournment, procedural. No vote on selecting or hiring Taylor & Burns appears, so none is recorded here. The agenda lists public comments but no speaker is recorded. The minutes print no dollar figures, so budget_items and transfers are empty. The reconvening day is printed only as \"Monday\" with no date. Anthony Sculimbrene is listed as a community guest with no stated role in the meeting, so status is not stated.",
+ "cost_usd": 0.01297947,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, matthew allison, tom gray, greg roy"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, matthew allison, tom gray, greg roy"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, matthew allison, tom gray, greg roy"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, matthew allison, tom gray, greg roy"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, matthew allison, tom gray, greg roy"
+  },
+  {
+   "name": "David Blatt",
+   "role": "member",
+   "status": "absent",
+   "quote": "members absent: david blatt, kristina masaitis"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "member",
+   "status": "absent",
+   "quote": "members absent: david blatt, kristina masaitis"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Community Guests",
+   "status": "not stated",
+   "quote": "community guests: community guests: anthony sculimbrene"
+  },
+  {
+   "name": "Robert Taylor",
+   "role": "architect; project designer and bid manager, Taylor & Burns team",
+   "status": "present",
+   "quote": "the committee welcomed the taylor & burns team, led by robert taylor, an experienced architect who would serve as project designer and bid manager."
+  },
+  {
+   "name": "Marley Lynch",
+   "role": "specialist, HVAC, Taylor & Burns team",
+   "status": "present",
+   "quote": "accompanying him were marley lynch, ken beck, and bruce gorman"
+  },
+  {
+   "name": "Ken Beck",
+   "role": "specialist, plumbing, Taylor & Burns team",
+   "status": "present",
+   "quote": "accompanying him were marley lynch, ken beck, and bruce gorman"
+  },
+  {
+   "name": "Bruce Gorman",
+   "role": "specialist, fire protection and electrical, Taylor & Burns team",
+   "status": "present",
+   "quote": "accompanying him were marley lynch, ken beck, and bruce gorman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee planned to reconvene on Monday to review updated space needs assessments and finalize next steps. No date is printed for Monday.",
+   "quote": "the committee planned to reconvene on monday to review updated space needs assessments and finalize next steps."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "listed on agenda; no comments recorded",
+   "quote": "the agenda for the evening included public comments, introductions, an interview with the taylor & burns team, and a post-interview discussion to assess the firm's qualifications.",
+   "tags": [
+    "public comment",
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Interview with Taylor & Burns team",
+   "resolution": "interviewed; no action recorded",
+   "quote": "the committee welcomed the taylor & burns team, led by robert taylor, an experienced architect who would serve as project designer and bid manager.",
+   "tags": [
+    "architect selection",
+    "Taylor & Burns",
+    "historic preservation",
+    "interview"
+   ]
+  },
+  {
+   "topic": "Post-interview discussion of firm's qualifications",
+   "resolution": "discussed; committee to reconvene Monday; no vote recorded",
+   "quote": "the committee members were impressed with the taylor & burns team, noting their expertise and articulate presentation.",
+   "tags": [
+    "qualifications",
+    "structural engineer",
+    "next steps"
+   ]
+  }
+ ],
+ "tags": [
+  "Town Hall",
+  "Ritter building",
+  "municipal building design",
+  "architect selection",
+  "Taylor & Burns",
+  "historic preservation",
+  "interview",
+  "budget and schedule (discussed, no figures)"
+ ],
+ "dropped_unquoted_by_field": {}
 }

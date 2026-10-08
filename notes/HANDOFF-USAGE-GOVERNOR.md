@@ -9,6 +9,27 @@ than desired. or even stop it if the window is filling faster than expected (mea
 same as our guards, but now directly against usage limits)"* -- and, on every guard:
 *"checking that we're not burning tokens ONLY and we're producing expected output."*
 
+## FAILED 7 October 2026, 17:02-17:50 -- THE READING FROZE. Read this before anything below
+
+The governed evening run aimed at 65% of the session by 20:30 and hit **100% at 17:50**.
+`usage-log.csv`: `17:02 8%` ... nothing for 48 minutes ... `17:50 100%`. The run spent $51
+in ~50 minutes at 6 workers, because every reading said "8%, far behind the line".
+
+**Cause (observed in the log, mechanism inferred):** the status line's `rate_limits` change
+only when THIS interactive session makes a model call -- they arrive with its own responses.
+The status line refreshed every 60 s, so the file looked fresh, but the numbers were as old
+as the session's last call. Once the session went idle, the governor steered on a frozen 8%.
+The afternoon's "10-minute lag" was the same artefact, and so was the "$2 a point" derived
+from it. The evening's spend says **~$0.55 a point, a window of ~$55** for this haiku/sonnet mix.
+
+**What held:** the limit-text stop ended the run on the first 429 and let 5 in-flight
+meetings finish; 249/249 paid calls matched to output.
+
+**Until fixed: ONE worker, dollar-paced; never ramp on an unconfirmed reading.** The fix is
+one of: (a) a reading counts as fresh only within ~2 min of this session's own last call,
+otherwise steer by dollars at the measured $/point; (b) read the endpoint /usage itself
+reads (`api/oauth/usage`, seen in the CLI binary) -- verify it before trusting it.
+
 ## The interface -- ONE command, the way minutes are already started
 
 TJ, 7 October 2026: *"my assumption was this tool is kicked off the same way i kick off

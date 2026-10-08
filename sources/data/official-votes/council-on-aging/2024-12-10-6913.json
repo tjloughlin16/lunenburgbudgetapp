@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2024-12-10",
  "docid": "6913",
@@ -12,23 +12,270 @@
  },
  "votes": [
   {
-   "motion": "Approve the November 12, 2024 minutes",
+   "motion": "Approve the November 12, 2024 minutes.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to approve the november 12, 2024 minutes. all approved, motion carried."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Lincoln",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. lincoln motioned to adjourn the meeting. the motion was seconded, all approved and the motion was carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction from macOS Vision. Two votes recorded: approval of prior minutes and adjournment.",
- "cost_usd": 0.0586794
+ "note": "Text is macOS Vision OCR of the minutes, not the scan; every quote was copied from the OCR text and some OCR noise remains in unrelated lines (e.g. 'r Window Shades'). Both pages are present. Two votes are recorded only as collective approvals ('All approved, motion carried'), with no roll call, no vote count and no seconder named, so outcome is 'passed' with no count. The minutes name 'Ms. Lincoln' as moving the adjournment and 'Mr. Lincoln' for a board comment; the Chair is printed as Deb/Debbie Lincoln and Peter Lincoln is also present, so which Lincoln is meant is not settled by the text. The next-meeting line reads 'Tuesday, January 14, 2024', which is probably 2025 given the 'Minutes Approved at the 1/14/2025 Meeting' header; this is not corrected here. No dollar figures appear in the minutes; the budget items record money discussed without amounts.",
+ "cost_usd": 0.015945670000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Debbie Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood."
+  },
+  {
+   "name": "Peter Lincoln",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood."
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood."
+  },
+  {
+   "name": "Elena Christopher",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood."
+  },
+  {
+   "name": "Cathy Beale",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood."
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood."
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood."
+  },
+  {
+   "name": "Ana Lockwood",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood."
+  },
+  {
+   "name": "Helen Balcom",
+   "status": "absent",
+   "quote": "excused helen balcom, jim mcguigan"
+  },
+  {
+   "name": "Jim McGuigan",
+   "status": "absent",
+   "quote": "excused helen balcom, jim mcguigan"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Lunenburg Select Board Chair",
+   "status": "present",
+   "quote": "lunenburg select board chair caesar nuzzolo, incoming coa director, debra goodsell"
+  },
+  {
+   "name": "Debra Goodsell",
+   "role": "Incoming COA Director",
+   "status": "present",
+   "quote": "lunenburg select board chair caesar nuzzolo, incoming coa director, debra goodsell"
+  },
+  {
+   "name": "Michele Beauvais",
+   "role": "minutes author (Respectfully submitted by)",
+   "status": "not stated",
+   "quote": "respectfully submitted by michele beauvais"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "COA FY26 Budget",
+   "what_was_recorded": "The minutes record that there will be no new hires or extended hours in the upcoming fiscal year, per the Interim Town Manager; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there will not be any new hires or extended hours in the upcoming fiscal year per the interim town manager."
+  },
+  {
+   "topic": "COA FY24 Formula Grant",
+   "what_was_recorded": "The Director has not yet received the state Formula Grant information and will reach out again; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty still hasn't received the formula grant information from the state. she will reach out again soon."
+  },
+  {
+   "topic": "Generator and fencing",
+   "what_was_recorded": "The generator was installed and fencing put up around it using ARPA funds; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the generator has been installed and fencing has been put up around it utilizing arpa funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board comment: 300th Celebration ideas",
+   "resolution": "no action",
+   "quote": "mr. lincoln commented that he would like to see ideas for the 300th celebration from each committee and organization in town.",
+   "tags": [
+    "300th celebration"
+   ]
+  },
+  {
+   "topic": "Minutes approval (Nov 12, 2024)",
+   "resolution": "approved",
+   "quote": "a motion was made and seconded to approve the november 12, 2024 minutes. all approved, motion carried.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Introduction of incoming COA Director Debra Goodsell",
+   "resolution": "introduced",
+   "quote": "ms. lincoln introduced incoming coa director debra goodsell to the board.",
+   "tags": [
+    "leadership transition"
+   ]
+  },
+  {
+   "topic": "Update on Lunenburg Master Plan meeting",
+   "resolution": "no update",
+   "quote": "update on lunenburg master plan meeting ~ no update.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Nashoba Valley Medical Center",
+   "resolution": "discussed",
+   "quote": "ms. lincoln commented that several doctors from nashoba are trying to get a new facility started.",
+   "tags": [
+    "healthcare"
+   ]
+  },
+  {
+   "topic": "COA FY26 budget",
+   "resolution": "reported: no new hires or extended hours",
+   "quote": "there will not be any new hires or extended hours in the upcoming fiscal year per the interim town manager.",
+   "tags": [
+    "budget",
+    "FY26"
+   ]
+  },
+  {
+   "topic": "COA FY24 Formula Grant",
+   "resolution": "pending; Director to follow up with state",
+   "quote": "ms. doherty still hasn't received the formula grant information from the state. she will reach out again soon.",
+   "tags": [
+    "state grant"
+   ]
+  },
+  {
+   "topic": "MART Connect / Worcester",
+   "resolution": "informational",
+   "quote": "mart connects does not go to worcester. currently, you would have to get a ride to the intermodal in fitchburg.",
+   "tags": [
+    "transportation"
+   ]
+  },
+  {
+   "topic": "Parking lot update",
+   "resolution": "no update",
+   "quote": "parking lot update ~ none",
+   "tags": [
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Director's report: capital plan and building",
+   "resolution": "reported",
+   "quote": "generator/fencing ~ the generator has been installed and fencing has been put up around it utilizing arpa funds.",
+   "tags": [
+    "capital plan",
+    "building",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Upcoming events",
+   "resolution": "reviewed",
+   "quote": "ms. doherty reviewed the upcoming events for the remainder of december.",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported; new board in transition",
+   "quote": "a new board will be taking over for the supporters. they are currently in transition and will finalize the process soon.",
+   "tags": [
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "quote": "ms. lincoln commended ms. nowd for writing uplifting cards to those in need.",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Board comment: thanks to outgoing Director Doherty",
+   "resolution": "plaque presented",
+   "quote": "the coa board thanked ms. doherty for her service as director. they presented her with a plaque in her honor.",
+   "tags": [
+    "leadership transition"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:10 am",
+   "quote": "the meeting adjourned at 10:10 am.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior services",
+  "FY26 budget",
+  "state grant",
+  "ARPA funds",
+  "capital plan",
+  "building repairs",
+  "transportation",
+  "leadership transition",
+  "300th celebration",
+  "minutes approval",
+  "Eagle House",
+  "Nashoba Valley Medical Center"
+ ],
+ "dropped_unquoted_by_field": {}
 }

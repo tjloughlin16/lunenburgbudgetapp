@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-11-19",
  "docid": "6884",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 10/08/24",
+   "motion": "Accept the minutes of 10/08/24.",
    "moved_by": "Brett R.",
    "seconded_by": "Joe H.",
    "outcome": "passed 3-0",
@@ -20,7 +20,7 @@
    "quote": "to accept the minutes of 10/08/24. roll call vote: brett-aye, joe-aye and mike-aye."
   },
   {
-   "motion": "Accept the minutes of 10/22/24",
+   "motion": "Accept the minutes of 10/22/24.",
    "moved_by": "Joe H.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
@@ -28,7 +28,7 @@
    "quote": "to accept the minutes of 10/22/24. roll call vote: brett-aye, joe-aye and mike-aye."
   },
   {
-   "motion": "Accept the minutes of 11/05/24",
+   "motion": "Accept the minutes of 11/05/24.",
    "moved_by": "Brett R.",
    "seconded_by": "Joe H.",
    "outcome": "passed 3-0",
@@ -36,15 +36,15 @@
    "quote": "to accept the minutes of 11/05/24. roll call vote: brett-aye, joe-aye and mike-aye."
   },
   {
-   "motion": "Waive the final invoice interest for 18 Kirby Avenue left unpaid by the previous owners for the amount of $143.31",
+   "motion": "Waive the final invoice interest of $143.31 for 18 Kirby Avenue, left unpaid by the previous owners.",
    "moved_by": "Brett R.",
    "seconded_by": "Joe H.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "to waive the final invoice interest for 18 kirby avenue left unpaid by the previous owners for the amount of $143.31. roll call vote: brett-aye, joe-aye and mike-aye."
+   "quote": "to waive the final invoice interest for 18 kirby avenue left unpaid by the previous owners for the amount of $143.31."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:32pm.",
    "moved_by": "Joe H.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
@@ -53,6 +53,163 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes passed unanimously 3-0 (Brett, Joe, and Mike).",
- "cost_usd": 0.0656664
+ "note": "Text is a single extracted block with whitespace collapsed; all five votes are roll calls with three printed ayes, so outcomes are recorded as 3-0. The attendance roll call was taken after the meeting opened (per the minutes' own note), and Paula is mentioned but not recorded as present. The heading 'PUBLIC COMMENT' is used a second time for the roll-call note, which is not public comment, so public_comment is empty. The text contains the literal string '&amp;' in the public comment heading, quoted as printed.",
+ "cost_usd": 0.01463207,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Mackin",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair- mike mackin, vice-chair- brett ramsden, member: joe hurley, dpw director- bill bernard and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair- mike mackin, vice-chair- brett ramsden, member: joe hurley, dpw director- bill bernard and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair- mike mackin, vice-chair- brett ramsden, member: joe hurley, dpw director- bill bernard and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "chair- mike mackin, vice-chair- brett ramsden, member: joe hurley, dpw director- bill bernard and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "chair- mike mackin, vice-chair- brett ramsden, member: joe hurley, dpw director- bill bernard and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: clerk- scott dall and eli torres"
+  },
+  {
+   "name": "Eli Torres",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: clerk- scott dall and eli torres"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "DPW Director to look into whether the town by-laws require a minimum attendance for members.",
+   "quote": "bill replied he will look into it."
+  },
+  {
+   "decision": "Discussion of the absent member and options to get a new member placed on future agenda.",
+   "quote": "future agenda items - discussion of absent member and options to get a new member."
+  },
+  {
+   "decision": "DPW Director to reach out to the manhole repair contractor to arrange a pre-construction meeting.",
+   "quote": "he will reach out to them for a pre-construction meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "18 Kirby Avenue final invoice interest",
+   "what_was_recorded": "The Commission waived $143.31 in final-invoice interest on 18 Kirby Avenue, left unpaid by the previous owners.",
+   "figures_as_printed": [
+    "$143.31"
+   ],
+   "quote": "to waive the final invoice interest for 18 kirby avenue left unpaid by the previous owners for the amount of $143.31."
+  },
+  {
+   "topic": "Manhole repair contract funding",
+   "what_was_recorded": "The ARPA funds for the manhole repair work were committed by contract, which was the condition for the work to proceed.",
+   "figures_as_printed": [],
+   "quote": "the arpa funds for the work just needed to be committed in a contract which they are."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes of 10/08, 10/22 and 11/05",
+   "resolution": "approved 3-0",
+   "quote": "to accept the minutes of 10/08/24. roll call vote: brett-aye, joe-aye and mike-aye.",
+   "tags": [
+    "minutes",
+    "approvals"
+   ]
+  },
+  {
+   "topic": "18 Kirby Avenue final invoice interest",
+   "resolution": "interest waived 3-0",
+   "quote": "to waive the final invoice interest for 18 kirby avenue left unpaid by the previous owners for the amount of $143.31.",
+   "tags": [
+    "billing",
+    "interest waiver",
+    "18 Kirby Avenue"
+   ]
+  },
+  {
+   "topic": "DPW Director updates",
+   "resolution": "noted, no action",
+   "quote": "bill reported that the contract has been awarded and they begin work in the spring.",
+   "tags": [
+    "billing",
+    "staffing",
+    "manhole repair",
+    "ARPA",
+    "Mass 1 line repairs"
+   ]
+  },
+  {
+   "topic": "Absent member Eli Torres",
+   "resolution": "discussed; carried to future agenda",
+   "quote": "mike suggested sending a letter to ask him to vacate the position so they can appoint someone who can regularly attend.",
+   "tags": [
+    "board membership",
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action; none recorded",
+   "quote": "public comment &amp; announcements - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming Sewer Commission meetings",
+   "resolution": "noted",
+   "quote": "december 10, 2024 @ 7pm - hybrid meeting",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3-0 at 7:32pm",
+   "quote": "to adjourn at 7:32pm roll call vote: brett-aye, joe-aye and mike-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "DPW",
+  "minutes approval",
+  "interest waiver",
+  "billing",
+  "staffing vacancies",
+  "board membership",
+  "manhole repair",
+  "ARPA",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

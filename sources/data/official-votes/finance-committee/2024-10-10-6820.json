@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-10-10",
  "docid": "6820",
@@ -12,23 +12,353 @@
  },
  "votes": [
   {
-   "motion": "To nominate Chris Menard as Chair, Jean Russell as Vice Chair, and Tom Gray as Clerk",
+   "motion": "Nominate Chris Menard as Chair, Jean Russell as Vice Chair, and Tom Gray as Clerk (reorganization).",
    "moved_by": "Jay Simeone",
-   "seconded_by": "Tom Gray",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "there was a motion by jay simeone to nominate chris menard as chair, jean russell as vice chair, and tom gray for the clerk position, seconded by tom gray. roll call vote. jean russell aye, tom gray aye, jay simeone aye, chris menard aye."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "there was a motion by jay simeone to nominate chris menard as chair, jean russell as vice chair, and tom gray for the clerk position, seconded by tom gray.",
+   "seconded_by": "Tom Gray"
   },
   {
-   "motion": "To adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
-   "seconded_by": "Tom Gray",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn by jay simeone, seconded by tom gray. roll call vote. jean russell aye, tom gray aye, jay simeone aye, chris menard aye."
+   "quote": "there was a motion to adjourn by jay simeone, seconded by tom gray. roll call vote.",
+   "seconded_by": "Tom Gray"
   }
  ],
- "dropped_unquoted": 0,
- "note": "The warrant articles discussed in section 6.b were not voted on at this meeting; they were being prepared for a future Special Town Meeting on November 12, 2024.",
- "cost_usd": 0.0699504
+ "dropped_unquoted": 1,
+ "note": "Text extraction, not a scan; ligatures (ﬁ, ﬂ) and curly apostrophes are preserved in quotes. Two roll-call votes are recorded (officer election and adjournment); the minutes print no outcome count, so outcome is 'passed'. No vote is recorded on any of the 14 warrant articles, so their discussion is recorded as decisions or budget items only, not votes. The minutes name Evan Watters only as the departed Chair, so he is not listed as an attendee. The Interim Town Manager is mentioned but not present. Dave Passios's roles are not printed, so none is given.",
+ "cost_usd": 0.01968837,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell (zoom), clerk tom gray,"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "vice chair jean russell (zoom)"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk tom gray, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "clerk tom gray, committee member jay simeone"
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "carter terenzini conﬁrms that new growth is being reviewed and a ﬁnal assessment"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios, formally 56 whiting street, suggests that the committee take a close"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chris Menard agrees to stand in as Chair for the time being.",
+   "quote": "chris menard agrees to stand in as the chair for the time being."
+  },
+  {
+   "decision": "Approval of the August 22 minutes deferred to the next meeting.",
+   "quote": "approval of minutes will occur at the next meeting."
+  },
+  {
+   "decision": "Parks Commission presentation on its warrant article to be added to the October 24 agenda.",
+   "quote": "will be added to the agenda on october 24th."
+  },
+  {
+   "decision": "Finance Director to get the invoice behind the 1st warrant article to the Committee.",
+   "quote": "carter terenzini will get the invoice to the committee."
+  },
+  {
+   "decision": "Chair asked the School Committee to attend the public hearing on the 2nd warrant article.",
+   "quote": "chris menard is requesting the school committee attend the public hearing"
+  },
+  {
+   "decision": "Finance Director to inquire with Sue Doherty about the Council on Aging full-year cost.",
+   "quote": "carter terenzini will inquire with sue doherty."
+  },
+  {
+   "decision": "Parks Department to provide a FY25 spending limit for the 53D-to-53E½ conversion by Town Meeting.",
+   "quote": "the parks department will provide a number for the fy25 spending limit by town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 late bill (1st warrant article)",
+   "what_was_recorded": "A warrant article would appropriate $4,180 to pay a late FY24 bill, met by a transfer from the overlay surplus account; the Committee asked what the bill was for.",
+   "figures_as_printed": [
+    "$4,180"
+   ],
+   "quote": "appropriate a sum of $4,180 to pay bill, and meet appropriation by a transfer from the overlay surplus account."
+  },
+  {
+   "topic": "Excess overlay reserved for appropriation",
+   "what_was_recorded": "The Board of Assessors certified excess overlay reserved for appropriation the week before the meeting.",
+   "figures_as_printed": [
+    "$225,000"
+   ],
+   "quote": "last week the board of assessors certiﬁed $225,000 as excess overlay reserved for appropriation."
+  },
+  {
+   "topic": "Chapter 70 account balance (2nd warrant article)",
+   "what_was_recorded": "After the state budget settled, a balance in the chapter 70 account was requested to be appropriated to the School Committee; the uses were not specified.",
+   "figures_as_printed": [
+    "$31,882"
+   ],
+   "quote": "there was a sum of $31,882 in the chapter 70 account."
+  },
+  {
+   "topic": "Parks Department 53D revolving fund",
+   "what_was_recorded": "Under statute 53D a balance above a threshold goes to the general fund at year end; the general fund was described as holding more than the threshold, and the 53D fund is to be converted to 53E½.",
+   "figures_as_printed": [
+    "$10,000",
+    "$75,000"
+   ],
+   "quote": "a balance above $10,000 it's supposed to go to the general fund."
+  },
+  {
+   "topic": "Marshall Park borrowing (13th article)",
+   "what_was_recorded": "A warrant article asks the Town to vote to borrow a sum of money for the Marshall Park improvement project; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the town vote to borrow a sum of money to"
+  },
+  {
+   "topic": "Marshall Park citizen petition (14th article)",
+   "what_was_recorded": "A citizen's petition asks the Town to borrow a sum of money within debt limits to fund remaining Marshall Park design and construction; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "money within the town's debt limits for the purpose of funding the"
+  },
+  {
+   "topic": "MART transportation funding (3rd article)",
+   "what_was_recorded": "A request would appropriate a sum of money to fund the rest of the fiscal year for the MART organization; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the request is to appropriate a sum of money"
+  },
+  {
+   "topic": "Free cash certification timing",
+   "what_was_recorded": "The Board of Assessors expected to submit for free cash certification within two weeks; the process was described as behind schedule.",
+   "figures_as_printed": [],
+   "quote": "they are behind schedule but are in decent shape."
+  },
+  {
+   "topic": "Chapter 70 formula (Project 211 report)",
+   "what_was_recorded": "A committee member reported on a regional group's session on how Chapter 70 aid is calculated; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "participants learned how chapter 70 is"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Proposed transfer from the overlay surplus account to pay the FY24 late bill (1st warrant article).",
+   "amount_as_printed": "$4,180",
+   "outcome": "proposed in a warrant article; no vote recorded",
+   "quote": "appropriate a sum of $4,180 to pay bill, and meet appropriation by a transfer from the overlay surplus account."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Council on Aging revolving account and draft warrant label",
+   "quote": "dave passios, formally 56 whiting street, suggests that the committee take a close"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Closing comment: new benefits, DPW liaison",
+   "quote": "dave passios is excited to hear about the new beneﬁts coming at the town meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "opened 7:00 PM",
+   "quote": "the meeting opened at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: resignation of Chair; vacancies; Town Manager hire",
+   "resolution": "noted; members thanked",
+   "quote": "evan watters resigned from his position as the chair over the weekend and the",
+   "tags": [
+    "vacancies",
+    "town manager",
+    "committee membership"
+   ]
+  },
+  {
+   "topic": "Public Comment (Council on Aging revolving account; draft warrant label)",
+   "resolution": "noted; no action recorded",
+   "quote": "dave passios, formally 56 whiting street, suggests that the committee take a close",
+   "tags": [
+    "public comment",
+    "revolving fund",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Finance Director Report: new growth and free cash",
+   "resolution": "noted",
+   "quote": "carter terenzini conﬁrms that new growth is being reviewed and a ﬁnal assessment",
+   "tags": [
+    "new growth",
+    "free cash",
+    "assessors"
+   ]
+  },
+  {
+   "topic": "New Business a. Reorganize (officer elections)",
+   "resolution": "Chair, Vice Chair and Clerk elected by roll call",
+   "quote": "tom gray suggests chris menard be the chair.",
+   "tags": [
+    "officers",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "New Business b. Special Town Meeting Warrant Summary (14 articles)",
+   "resolution": "discussed article by article; no votes recorded on articles",
+   "quote": "carter terenzini states he can write the finance committees",
+   "tags": [
+    "special town meeting",
+    "warrant",
+    "chapter 70",
+    "revolving fund",
+    "marshall park",
+    "council on aging",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Old Business a–c (budget template, MART taxi grant, split tax rate)",
+   "resolution": "no discussion",
+   "quote": "budget presentation template - there was no discussion about this topic at the",
+   "tags": [
+    "budget",
+    "mart",
+    "tax rate"
+   ]
+  },
+  {
+   "topic": "Old Business d. Town Manager Search Committee",
+   "resolution": "update noted; executive session until list narrowed",
+   "quote": "any discussion going forward will be done in executive session until the list is narrowed down.",
+   "tags": [
+    "town manager",
+    "search"
+   ]
+  },
+  {
+   "topic": "Old Business e–g (budget task force, grant writing, consolidation of services)",
+   "resolution": "updates noted; charter question raised",
+   "quote": "g. consolidation of services/departments",
+   "tags": [
+    "consolidation",
+    "facilities",
+    "charter"
+   ]
+  },
+  {
+   "topic": "Minutes (August 22)",
+   "resolution": "deferred to next meeting",
+   "quote": "approval of minutes will occur at the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "noted",
+   "quote": "tom gray attended the zoom meeting about project 211 by the regional school",
+   "tags": [
+    "chapter 70",
+    "sewer",
+    "police capital plan"
+   ]
+  },
+  {
+   "topic": "Topics for Future Meetings",
+   "resolution": "noted: focus on Special Town Meeting",
+   "quote": "the focus of the committee over the next coming weeks will be the special town",
+   "tags": [
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Important Dates",
+   "resolution": "noted",
+   "quote": "11/2/24 - mma atfc annual meeting, 9a-2:15p @ sharon community center",
+   "tags": [
+    "dates"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "10/24/24 and 11/7/24 listed",
+   "quote": "12. upcoming meetings:",
+   "tags": [
+    "dates"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "noted; committee vacancies restated",
+   "quote": "dave passios is excited to hear about the new beneﬁts coming at the town meeting.",
+   "tags": [
+    "public comment",
+    "vacancies",
+    "dpw"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned by roll call at 9:10 PM",
+   "quote": "there was a motion to adjourn by jay simeone, seconded by tom gray. roll call vote.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "special town meeting warrant",
+  "officer elections",
+  "revolving funds",
+  "chapter 70",
+  "overlay surplus",
+  "town manager search",
+  "committee vacancies",
+  "public comment"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

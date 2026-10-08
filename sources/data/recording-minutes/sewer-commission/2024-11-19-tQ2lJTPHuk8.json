@@ -1,0 +1,467 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2024-11-19",
+ "video_id": "tQ2lJTPHuk8",
+ "video_url": "https://www.youtube.com/watch?v=tQ2lJTPHuk8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2024-11-19-tQ2lJTPHuk8.json",
+  "sha256": "8187be504fb7c177761ea899b411d9b575d8436579ea3719d2538aae9c77fb82",
+  "caption_lines": 56,
+  "segments": 395
+ },
+ "recording": {
+  "duration_s": 1186,
+  "duration": "0:19",
+  "spoken_chars": 11158,
+  "words_approx": 1859
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11192024-6884",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-11-19-agenda-6884.txt",
+   "path": "sources/meetings/sewer-commission/2024-11-19-agenda-6884.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11192024-6884",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-11-19-minutes-6884.txt",
+   "path": "sources/meetings/sewer-commission/2024-11-19-minutes-6884.docx"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-07T21:22:55Z",
+  "cost_usd": 0.24532700000000002
+ },
+ "minutes": {
+  "headline": "Sewer Commission waived a $143.31 unpaid interest/invoice difference at 18 Kirby Avenue; business manager search is back to square one.",
+  "summary": "The commission approved three sets of minutes, then took up a final sewer invoice at 18 Kirby Avenue where the property had sold twice and the prior owner's last bill went unpaid; the difference was waived. The DPW director reported on second quarter billing, a failed business manager search after a candidate withdrew, the awarded manhole repair bid, line repairs, and a member who never attended. A roll call was taken late and the meeting adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Brett",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Joe",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Jeff",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Bill",
+    "role": "DPW director",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Jane",
+    "role": "staff",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Paula",
+    "role": "staff (billing software, working in the office)",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 28,
+    "topic": "Chair noted no members of the public were present; none later either."
+   },
+   {
+    "t": 1075,
+    "topic": "Public comment again: chair stated there was none."
+   }
+  ],
+  "tags": [
+   "facilities",
+   "fees",
+   "grants",
+   "hiring",
+   "personnel",
+   "public-comment",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 176,
+    "motion": "Approve minutes of the October 8, 2024 meeting",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 201,
+    "motion": "Accept minutes of the October 22, 2024 meeting",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 225,
+    "motion": "Approve minutes of the November 5, 2024 meeting",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 461,
+    "motion": "Waive the final invoice interest/difference for 18 Kirby Avenue left unpaid by the previous owners",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1156,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 269,
+    "topic": "18 Kirby Avenue final sewer invoice and interest",
+    "what_was_said": "The property sold twice and the earlier owner's last bill was missed because it was looked up by customer name. The treasurer's figure differed from the director's, and the difference was to be waived rather than pursued.",
+    "figures_as_heard": [
+     "$880 eight",
+     "$736 77 cents",
+     "$143 31"
+    ]
+   },
+   {
+    "t": 521,
+    "topic": "Second quarter sewer billing",
+    "what_was_said": "Billing data is being prepared with a target of printing second quarter bills on Friday afternoon.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 675,
+    "topic": "Business manager candidate pay gap",
+    "what_was_said": "The withdrawn candidate's requested pay was about an hourly amount above the offer being considered, before an offer was made.",
+    "figures_as_heard": [
+     "around4",
+     "$4 per hour"
+    ]
+   },
+   {
+    "t": 799,
+    "topic": "Manhole repair bid and OPA money",
+    "what_was_said": "The bid was awarded and the contract commits the OPA money, so it is safe; work is likely in spring.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 375,
+    "decision": "Consensus to waive the difference rather than pursue the previous owner; vote sent to the treasurer's office to adjust billing."
+   },
+   {
+    "t": 904,
+    "decision": "Bill to contact the member who never attended about vacating the seat, and to check whether bylaws require attendance."
+   },
+   {
+    "t": 1031,
+    "decision": "The absent-member matter will go on a future agenda."
+   },
+   {
+    "t": 1115,
+    "decision": "Upcoming meetings set: Dec 10 hybrid, no Dec 24 meeting, Jan 14 hybrid, Jan 28 Zoom."
+   },
+   {
+    "t": 718,
+    "decision": "Bill will ask the HR Director whether he may contact the withdrawn candidate to learn why."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 5,
+    "t_end": 48,
+    "topic": "Pledge, no public, announcements",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 48,
+    "t_end": 134,
+    "topic": "Open meeting law and remote participation statement",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 134,
+    "t_end": 248,
+    "topic": "Approval of minutes: Oct 8, Oct 22, Nov 5",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 248,
+    "t_end": 502,
+    "topic": "18 Kirby Avenue final invoice and waiver",
+    "resolution": "voted to waive",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 502,
+    "t_end": 543,
+    "topic": "DPW director update: second quarter billing",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 543,
+    "t_end": 799,
+    "topic": "Business manager and assistant business manager search",
+    "resolution": "no resolution",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 799,
+    "t_end": 882,
+    "topic": "Manhole repair bid and line repairs",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 882,
+    "t_end": 1075,
+    "topic": "Absent appointed member and future agenda items",
+    "resolution": "referred to future agenda",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1075,
+    "t_end": 1177,
+    "topic": "Public comment, roll call, upcoming meetings, adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Roll call and voice-vote counts are rendered only as 'I'; individual votes not clearly attributable.",
+   "Exact interest and invoice figures are unreliable in captions ($880 eight, $736 77 cents, $143 31).",
+   "Speaker identities are not given; Mike, Brett, Joe, Jeff names inferred from captions only.",
+   "The chair's name is not stated."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Sewer Commission voted to waive the unpaid interest and difference on a final sewer invoice at 18 Kirby Avenue, left unpaid by previous owners.",
+    "t": 461
+   },
+   {
+    "line": "The commission chose to waive the difference rather than pursue the prior owner, and sent the vote to the treasurer's office to adjust billing.",
+    "t": 375
+   },
+   {
+    "line": "The business manager search has no resolution after a candidate withdrew; the requested pay was above the offer being considered.",
+    "t": 675
+   },
+   {
+    "line": "The DPW director reported second quarter billing is being prepared, and the manhole repair bid was awarded with the work likely in spring.",
+    "t": 799
+   },
+   {
+    "line": "The matter of a member who never attended goes to a future agenda, and the next meeting was set as a hybrid session on December 10.",
+    "t": 1031
+   }
+  ],
+  "why_it_matters": [
+   "Sewer bills are tied to the property and the customer record, so a bill missed at a sale can leave a gap that the commission then chooses whether to collect or write off.",
+   "The business manager post is still unfilled, which leaves sewer billing and administration without that position while the search restarts.",
+   "The manhole repair is committed to its funding and scheduled for spring, so it does not depend on a new vote."
+  ],
+  "watch_next": [
+   "December 10 hybrid meeting, the next one set, where the absent-member matter is expected on a future agenda.",
+   "The HR Director's answer on whether the withdrawn business manager candidate may be contacted."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-07T21:23:04Z",
+   "cost_usd": 0.217159
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11192024-6884",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2024-11-19-minutes-6884.txt",
+   "path": "sources/meetings/sewer-commission/2024-11-19-minutes-6884.docx"
+  },
+  "official_sha256": "4f981c8c55d72682663b461400551955cd1778bc3193fb42129abb88711cfa30",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the one vote (waiving the 18 Kirby Avenue interest, $143.31, passed) and on the absent-member follow-up. They differ on who was present: ours hears a fourth member, \"Jeff\", and a staff member, \"Paula\", and the official minutes name neither.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 7,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to waive 18 Kirby Avenue final invoice interest",
+    "ours": "Waive the final invoice interest/difference for 18 Kirby Avenue left unpaid by the previous owners — passed",
+    "official": "to waive the final invoice interest for 18 kirby avenue left unpaid by the previous owners for the amount of $143.31.",
+    "note": "Same motion and outcome (passed); the official minutes add a 3-0 tally that ours does not record.",
+    "t": 461
+   },
+   {
+    "kind": "agree",
+    "about": "Interest amount waived, $143.31",
+    "ours": "$143 31",
+    "official": "to waive the final invoice interest for 18 kirby avenue left unpaid by the previous owners for the amount of $143.31.",
+    "note": "Same figure, only formatted differently in the captions.",
+    "t": 269
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Kirby Avenue invoice total and base amount",
+    "ours": "$880 eight, $736 77 cents",
+    "official": "",
+    "note": "The official minutes give only the $143.31 interest; the other two figures (likely $880.08 and $736.77) appear only in ours.",
+    "t": 269
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Business manager candidate pay gap",
+    "ours": "around4, $4 per hour",
+    "official": "",
+    "note": "The official minutes do not mention the business manager candidate or the pay gap.",
+    "t": 675
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bill to ask HR Director about contacting the withdrawn candidate",
+    "ours": "Bill will ask the HR Director whether he may contact the withdrawn candidate to learn why.",
+    "official": "",
+    "note": "The official minutes record nothing about the candidate or the HR Director.",
+    "t": 718
+   },
+   {
+    "kind": "agree",
+    "about": "Check whether by-laws require member attendance",
+    "ours": "Bill to contact the member who never attended about vacating the seat, and to check whether bylaws require attendance.",
+    "official": "bill replied he will look into it.",
+    "note": "Both record Bill looking into attendance requirements; contacting the member is only in ours.",
+    "t": 904
+   },
+   {
+    "kind": "agree",
+    "about": "Absent member on a future agenda",
+    "ours": "The absent-member matter will go on a future agenda.",
+    "official": "future agenda items - discussion of absent member and options to get a new member.",
+    "note": "Same item in both.",
+    "t": 1031
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Contact the non-attending member about vacating the seat",
+    "ours": "Bill to contact the member who never attended about vacating the seat",
+    "official": "",
+    "note": "The official minutes record only a by-law check and a future agenda item, not outreach to the member.",
+    "t": 904
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Upcoming meeting schedule",
+    "ours": "Upcoming meetings set: Dec 10 hybrid, no Dec 24 meeting, Jan 14 hybrid, Jan 28 Zoom.",
+    "official": "",
+    "note": "The official minutes list no meeting dates.",
+    "t": 1115
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Consensus to waive difference and send to treasurer's office",
+    "ours": "Consensus to waive the difference rather than pursue the previous owner; vote sent to the treasurer's office to adjust billing.",
+    "official": "",
+    "note": "The official minutes do not mention the treasurer's office or the billing adjustment.",
+    "t": 375
+   },
+   {
+    "kind": "only_in_official",
+    "about": "ARPA funds committed for manhole repair",
+    "ours": "",
+    "official": "the arpa funds for the work just needed to be committed in a contract which they are.",
+    "note": "Our minutes have no mention of the ARPA funding or the manhole repair contract."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pre-construction meeting with manhole contractor",
+    "ours": "",
+    "official": "he will reach out to them for a pre-construction meeting.",
+    "note": "Our minutes do not record this action for the DPW Director."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee 'Jeff (member)'",
+    "ours": "Jeff (member)",
+    "official": "chair- mike mackin, vice-chair- brett ramsden, member: joe hurley, dpw director- bill bernard and minutes clerk- jane ranley",
+    "note": "The official present list has three members (Mike, Brett, Joe) and no Jeff, which fits the 3-0 vote; check the recording to see whether a fourth member spoke or the name was misheard.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee Paula (staff, billing software)",
+    "ours": "Paula (staff (billing software, working in the office))",
+    "official": "",
+    "note": "The official minutes name no billing staff member; she may have been present only for part of the meeting.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees present: Mike, Brett, Joe, Bill, Jane",
+    "ours": "Brett (member), Joe (member), Mike (member), Bill (DPW director), Jane (staff)",
+    "official": "chair- mike mackin, vice-chair- brett ramsden, member: joe hurley, dpw director- bill bernard and minutes clerk- jane ranley",
+    "note": "Same five people; the official minutes give full names and roles.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members Scott Dall and Eli Torres",
+    "ours": "",
+    "official": "absent: clerk- scott dall and eli torres",
+    "note": "Ours does not list absentees; the member who 'never attended' is probably Eli Torres, but the recording would need to confirm that."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T21:26:21Z",
+   "cost_usd": 0.240265
+  }
+ }
+}

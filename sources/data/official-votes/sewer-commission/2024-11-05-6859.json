@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-11-05",
  "docid": "6859",
@@ -15,36 +15,238 @@
    "motion": "Accept the minutes of 7/30/24, 8/21/24, 8/27/24, and 9/17/24.",
    "moved_by": "Brett R.",
    "seconded_by": "Scott D.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion: brett r. second: scott d. to accept the minutes of 7/30/24, 8/21/24, 8/27/24, and 9/17/24. vote was unanimous to approve."
+   "quote": "to accept the minutes of 7/30/24, 8/21/24, 8/27/24, and 9/17/24. vote was unanimous to approve."
   },
   {
-   "motion": "Allow the Change in Use for 1335 Massachusetts Avenue.",
+   "motion": "Allow the change in use for 1335 Massachusetts Avenue (puppet theater to gift shop).",
    "moved_by": "Joe H.",
    "seconded_by": "Brett R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: joe h. second: brett r. to allow the change in use for 1335 massachusetts avenue. vote was unanimous to approve."
+   "quote": "to allow the change in use for 1335 massachusetts avenue. vote was unanimous to approve."
   },
   {
-   "motion": "Waive the $41.80 in interest for the 165 Mass. Ave. Final Bill.",
+   "motion": "Waive the $41.80 in interest for the 165 Mass. Ave. final bill.",
    "moved_by": "Brett R.",
    "seconded_by": "Scott D.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: brett r. second: scott d. to waive the $41.80 in interest for the 165 mass. ave. final bill. vote was unanimous to approve."
+   "quote": "to waive the $41.80 in interest for the 165 mass. ave. final bill. vote was unanimous to approve."
   },
   {
-   "motion": "Adjourn at 7:28pm.",
+   "motion": "Adjourn the meeting at 7:28pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Joe H.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r. second: joe h. to adjourn at 7:28pm roll call vote: joe-aye, scott-aye, brett-aye and mike -aye."
+   "quote": "to adjourn at 7:28pm roll call vote: joe-aye, scott-aye, brett-aye and mike -aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0649224
+ "note": "Plain-text extraction, not a scan; all four votes are read directly from the text. Votes on the minutes, the change of use and the interest waiver record only 'unanimous' with no tally, so outcome is given as unanimous. Jane Ranley is listed as absent in the attendance line yet signs the minutes as Minutes Clerk. Paula Bertram and the Interim Town Manager are named but are not recorded as taking part. Public comment is headed twice; both headings record no speaker, so the list is empty. No transfers recorded.",
+ "cost_usd": 0.015397570000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Mackin",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin, vice-chair- brett ramsden, clerk- scott dall, member: joe hurley, dpw director- bill bernard"
+  },
+  {
+   "name": "Eli Torres",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: eli torres and minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "absent",
+   "quote": "absent: eli torres and minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Hiring difficulties and the process and pay for the Business Manager placed on the future agenda.",
+   "quote": "future agenda items- discussion of the difficulties in hiring, the process and pay for business manager."
+  },
+  {
+   "decision": "Chair to reach out to Eli Torres about his attendance.",
+   "quote": "brett asked if there was any update on eli torres' attendance and mike said he would reach out to talk to him."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "1335 Massachusetts Ave change of use: water usage",
+   "what_was_recorded": "Usage under the state environmental code falls from the theater's seat-based figure to a square-footage figure for the retail shop, a stated drop of 94 gals/day.",
+   "figures_as_printed": [
+    "144 gals/day",
+    "50 gals/day",
+    "94 gals/day"
+   ],
+   "quote": "the state's environmental code calculates the theater usage at 144 gals/day, based on the number of seats."
+  },
+  {
+   "topic": "165 Mass Ave final invoice interest",
+   "what_was_recorded": "Final closing bill omitted $41.80 of interest from past overdue bills; the Commission waived it.",
+   "figures_as_printed": [
+    "$41.80"
+   ],
+   "quote": "he calculated the bill but had overlooked the interest amount of $41.80 from past overdue bills."
+  },
+  {
+   "topic": "Manhole repair invitation for bids",
+   "what_was_recorded": "Two bids received against a staff estimate, with ARPA and Capital Funds named as sources for the difference; the minutes say a planned capital improvement may be deferred.",
+   "figures_as_printed": [
+    "$143K",
+    "$169K",
+    "$114K",
+    "$100K"
+   ],
+   "quote": "--manhole repair ifb- bill noted that they received 2 bids - 1 at $143k and 1 at $169k."
+  },
+  {
+   "topic": "Business Manager pay",
+   "what_was_recorded": "Pay for the Business Manager position was discussed; changes to pay would fall to a Personnel Committee that has no members.",
+   "figures_as_printed": [],
+   "quote": "brett asked who would make changes in the pay and bill said the personnel committee, but it has no members right now."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 7/30/24, 8/21/24, 8/27/24, 9/17/24",
+   "resolution": "approved, unanimous",
+   "quote": "to accept the minutes of 7/30/24, 8/21/24, 8/27/24, and 9/17/24. vote was unanimous to approve.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "1335 Massachusetts Ave change of use",
+   "resolution": "approved, unanimous",
+   "quote": "to allow the change in use for 1335 massachusetts avenue. vote was unanimous to approve.",
+   "tags": [
+    "change of use",
+    "water usage",
+    "gift shop"
+   ]
+  },
+  {
+   "topic": "165 Massachusetts Ave final invoice interest waiver",
+   "resolution": "waived, unanimous",
+   "quote": "to waive the $41.80 in interest for the 165 mass. ave. final bill. vote was unanimous to approve.",
+   "tags": [
+    "billing",
+    "interest waiver",
+    "property sale"
+   ]
+  },
+  {
+   "topic": "DPW Director updates: quarterly billing",
+   "resolution": "reported, no action",
+   "quote": "--2nd quarterly billing- bill reported that paula bertram was working on the billing while they were meeting and will come in again on friday.",
+   "tags": [
+    "billing",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "DPW Director updates: hiring for Business Manager and Assistant to the Business Manager",
+   "resolution": "reported; discussed; future agenda",
+   "quote": "--business manager position- bill said that they reached out to candidates but they did not respond back.",
+   "tags": [
+    "hiring",
+    "personnel",
+    "pay"
+   ]
+  },
+  {
+   "topic": "DPW Director updates: manhole repair bids",
+   "resolution": "reported, no action",
+   "quote": "--manhole repair ifb- bill noted that they received 2 bids - 1 at $143k and 1 at $169k.",
+   "tags": [
+    "bids",
+    "manhole repair",
+    "ARPA",
+    "capital funds"
+   ]
+  },
+  {
+   "topic": "DPW Director updates: line repairs on Mass. Ave.",
+   "resolution": "reported, no action",
+   "quote": "--line repairs- bill stated that some set-up prep work has been done and the work will be on mass. ave. across from townsend harbor road.",
+   "tags": [
+    "line repairs",
+    "water main",
+    "construction"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "placed on future agenda",
+   "quote": "future agenda items- discussion of the difficulties in hiring, the process and pay for business manager.",
+   "tags": [
+    "hiring",
+    "future agenda",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "november 19, 2024 @ 6pm - zoom meeting december 10, 2024 @ 7pm - hybrid meeting",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "DPW",
+  "hiring",
+  "personnel",
+  "business manager",
+  "change of use",
+  "water usage",
+  "interest waiver",
+  "manhole repair",
+  "bids",
+  "ARPA",
+  "capital funds",
+  "line repairs",
+  "future agenda",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

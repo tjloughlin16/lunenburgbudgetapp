@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2024-09-18",
  "docid": "6772",
@@ -12,64 +12,369 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 9/4/24",
+   "motion": "Approve the minutes of 9/4/24.",
    "moved_by": "Mike L.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike l., second: jenny p. to approve the minutes of 9/4/24. roll call vote: mike-aye, chris-aye, jeff-aye, jenny-aye, and mary-aye."
+   "quote": "motion: mike l., second: jenny p. to approve the minutes of 9/4/24."
   },
   {
-   "motion": "Approve the removal of three dead trees at 70 Horizon Island Rd",
+   "motion": "Approve the removal of the three dead trees at 70 Horizon Island Rd (RDA-24-3).",
    "moved_by": "Mike L.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike l., second: jenny p. to approve the removal of the three dead trees. roll call vote: mike-aye, chris-aye, jeff-aye, jenny-aye, and mary-aye."
+   "quote": "to approve the removal of the three dead trees."
   },
   {
-   "motion": "Continue 171 Arbor Street to a future date to be arranged with the applicant",
+   "motion": "Continue the 372 Townsend Harbor Rd hearing to October 2nd.",
+   "moved_by": "Chris S.",
+   "seconded_by": "Jeff V.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to continue 372 townsend harbor rd to october 2nd."
+  },
+  {
+   "motion": "Continue 171 Arbor Street to a future date to be arranged with the applicant by Sophie.",
    "moved_by": "Mike L.",
    "seconded_by": "Chris S.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike l., second: chris s. to continue 171 arbor street to a future date to be arranged with the applicant by sophie. roll call vote: mike-aye, jeff-aye, chris-aye, jenny-aye, and mary-aye."
+   "quote": "to continue 171 arbor street to a future date to be arranged with the applicant by sophie."
   },
   {
-   "motion": "Approve the applicant's updated plan at 160 Sunset Lane",
+   "motion": "Approve the applicant’s updated plan at 160 Sunset Lane (administrative determination).",
    "moved_by": "Jenny P.",
    "seconded_by": "Jeff V.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: jenny p., second: jeff v. to approve the applicant's updated plan. roll call vote: mike-aye, jeff-aye, chris-aye, jenny-aye, and mary-aye."
+   "quote": "to approve the applicant's updated plan."
   },
   {
-   "motion": "Approve Certificate of Compliance at 318 Page Street contingent upon removal of silt fence",
+   "motion": "Approve the Certificate of Compliance for 318 Page Street, contingent upon removal of the silt fence.",
    "moved_by": "Mike L.",
    "seconded_by": "Chris S.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike l., second: chris s. to approve certificate of compliance contingent upon the removal of the silt fence. ===page 3=== roll call vote: mike-aye, jeff-aye, chris-aye, jenny-aye, ",
-   "quote_taken_from_text": true
+   "quote": "to approve certificate of compliance contingent upon the removal of the silt fence."
   },
   {
-   "motion": "Issue enforcement order at 40 Fire Rd 12 directing property owners to complete corrective actions within two weeks or face fines of $300.00 per day",
+   "motion": "Issue an enforcement order at 40 Fire Rd 12 directing the property owners to complete all corrective orders within two weeks or face day-to-day fines of $300.00.",
    "moved_by": "Mike L.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike l., second: jenny p. to issue an enforcement order directing the property owners to complete all above orders within two weeks or face day-to-day fines of $300.00."
+   "quote": "to issue an enforcement order directing the property owners to complete all above orders within two weeks or face day-to-day fines of $300.00."
   },
   {
-   "motion": "Adjourn at 9:52pm",
+   "motion": "Adjourn the meeting at 9:52pm.",
    "moved_by": "Mike L.",
    "seconded_by": "Jenny P.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike l., second: jenny p. to adjourn at 9:52pm. roll call vote: mike-aye, jeff-aye, chris-aye, jenny-aye, and mary-aye."
+   "quote": "motion: mike l., second: jenny p. to adjourn at 9:52pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "All votes were roll-call votes with all five voting members present (Mike L., Chris S., Jeff V., Jenny P., and Mary W.) voting unanimously in favor. The meeting was held remotely via Zoom.",
- "cost_usd": 0.0741494
+ "dropped_unquoted": 0,
+ "note": "Digital text, not a scan; every quote was taken from the extracted text with line breaks and runs of spaces collapsed to single spaces. Roll calls on all recorded motions show five ayes (Mike, Chris, Jeff, Jenny, Mary); the outcome is recorded as \"passed\" because the minutes print no tally. Richard Bursch appears in the header block but not in the roll call or any vote, so his attendance is not stated. Public comment section names no public speakers (Chris Reilly is mentioned, not heard); hearing participants are recorded as attendees, not public comment. The 390 Howard Street $300.00-per-day violation and the 40 Fire Rd 12 escalation refer to votes taken on September 4 and are recorded as budget items or context, not as votes at this meeting. Matt at 160 Sunset Lane and Matt Marro at 390 Howard Street may be the same person; the minutes print no surname for the first. Speaker roles for Kevin O'Brien and Matt Marro are not printed.",
+ "cost_usd": 0.02040827,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: jenny p., chris s., mike l., jeff v ., mary w., and sophie d. (admin)"
+  },
+  {
+   "name": "Jennifer Pewtherer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: jenny p., chris s., mike l., jeff v ., mary w., and sophie d. (admin)"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "member",
+   "status": "present",
+   "quote": "roll call: jenny p., chris s., mike l., jeff v ., mary w., and sophie d. (admin)"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "member",
+   "status": "present",
+   "quote": "roll call: jenny p., chris s., mike l., jeff v ., mary w., and sophie d. (admin)"
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "member",
+   "status": "present",
+   "quote": "roll call: jenny p., chris s., mike l., jeff v ., mary w., and sophie d. (admin)"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "member",
+   "status": "not stated",
+   "quote": "richard bursch jeffrey viviano michael larouche"
+  },
+  {
+   "name": "Sophie Dorow",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "roll call: jenny p., chris s., mike l., jeff v ., mary w., and sophie d. (admin)"
+  },
+  {
+   "name": "Maddison Berthet",
+   "role": "Conservation Assistant",
+   "status": "not stated",
+   "quote": "respectfully submitted, maddison berthet conservation assistant"
+  },
+  {
+   "name": "Richard Parsons",
+   "role": "applicant, Request for Determination of Applicability, 70 Horizon Island Rd",
+   "status": "present",
+   "quote": "richard states that the three trees proposed for removal are dead and pose a danger to the house"
+  },
+  {
+   "name": "Robin Jacobs",
+   "role": "applicant, Request for Determination of Applicability, 372 Townsend Harbor Rd",
+   "status": "present",
+   "quote": "robin, the applicant, explains that the 10 existing arborvitaes previously planted"
+  },
+  {
+   "name": "Pauline",
+   "role": "abutter",
+   "status": "present",
+   "quote": "pauline, the abutter for this property, states that they will not allow removal of the four arborvitaes"
+  },
+  {
+   "name": "Steve Powell",
+   "role": "applicant, Notice of Intent, 171 Arbor Street",
+   "status": "absent",
+   "quote": "no representatives present."
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kevin o'brien states that he installed the erosion controls on the property"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "matt marro would also like to be present to see the sediment that sophie had reported"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission requested that the 372 Townsend Harbor Rd applicant bring an updated site plan to the October 2nd meeting, covering the fencing, the 30-foot no-touch zone, fencing choice and a planting schedule.",
+   "quote": "the commission requests that the applicant brings an updated site plan to the october 2nd meeting that:"
+  },
+  {
+   "decision": "36 Peninsula Drive tree removal is to be handled as a Request for Determination of Applicability rather than an Administrative Determination; the applicant is encouraged to include replication information.",
+   "quote": "sophie states that these trees should fall under an rda, not an administrative determination"
+  },
+  {
+   "decision": "0 Courtland Cir. is to be discussed at the October 2nd meeting.",
+   "quote": "will be discussed at the october 2nd meeting at 7:00pm due to the informal nature of the update."
+  },
+  {
+   "decision": "390 Howard Street: Sophie, Kevin and Matt to conduct a site walk within the following two Wednesdays; erosion controls to be implemented two weeks after that meeting date; applicant to update the Commission on October 2nd.",
+   "quote": "within the following two wednesdays sophie, kevin, and matt will perform a site walk"
+  },
+  {
+   "decision": "Commission reiterated that comments at its meetings must be limited to its jurisdictional areas (state wetlands law, local bylaws and wetland regulation).",
+   "quote": "comments must be limited to the jurisdictional areas of the conservation commission"
+  },
+  {
+   "decision": "When abutter complaints are received, the complainant's name is expected to be kept private when addressing reported issues with property owners.",
+   "quote": "when complaints by abutters are received by the conservation commission, the complainant's name is expected to be kept private"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Snowrider / MassTrails grant: ATV purchase and reimbursement",
+   "what_was_recorded": "The Commission has permission from the MassTrails Grant Administrator to buy an ATV for trail maintenance, and will be reimbursed after purchase; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the conservation commission has received permission from the masstrails grant administrator to purchase an atv to help maintain trails on lunenburg conservation land."
+  },
+  {
+   "topic": "Land Use grant contracts",
+   "what_was_recorded": "Grant contracts have been awarded but purchase orders are not yet issued; target completion stated as 9/19/24. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "contracts have been awarded; po's still need to be issued."
+  },
+  {
+   "topic": "40 Fire Rd 12 enforcement fines",
+   "what_was_recorded": "The enforcement order sets day-to-day fines if the corrective actions are not completed within two weeks.",
+   "figures_as_printed": [
+    "$300.00"
+   ],
+   "quote": "within two weeks or face day-to-day fines of $300.00."
+  },
+  {
+   "topic": "390 Howard Street violation notice (recap of prior vote)",
+   "what_was_recorded": "Recap of the September 4 decision to issue a violation notice; referred to, not voted on at this meeting.",
+   "figures_as_printed": [
+    "$300.00 per day"
+   ],
+   "quote": "issue a violation notice of $300.00 per day until erosion controls were implemented"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements and public comment",
+   "resolution": "noted; new Planning Director introduced",
+   "quote": "chris reilly is the new planning director for the town of lunenburg",
+   "tags": [
+    "announcements",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Minutes of 9/4/24",
+   "resolution": "approved",
+   "quote": "to approve the minutes of 9/4/24.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "RDA: removal of three dead trees, 70 Horizon Island Rd (Richard Parsons)",
+   "resolution": "approved",
+   "quote": "to approve the removal of the three dead trees.",
+   "tags": [
+    "tree removal",
+    "wetlands",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "RDA: arborvitae relocation and vinyl fence, 372 Townsend Harbor Rd (Robin Jacobs)",
+   "resolution": "continued to October 2nd",
+   "quote": "robin, the applicant, explains that the 10 existing arborvitaes previously planted",
+   "tags": [
+    "fence",
+    "no-touch zone",
+    "RDA",
+    "wildlife"
+   ]
+  },
+  {
+   "topic": "Continued NOI: single-family construction, 171 Arbor Street (Steve Powell)",
+   "resolution": "continued to a future date to be arranged",
+   "quote": "notice of intent by steve powell for the construction of a single family and associated site work at 171 arbor street",
+   "tags": [
+    "NOI",
+    "continued hearing"
+   ]
+  },
+  {
+   "topic": "Administrative determinations: 160 Sunset Lane, 36 Peninsula Drive",
+   "resolution": "160 Sunset Lane approved; 36 Peninsula Drive referred to an RDA",
+   "quote": "trees 3 and 4, marked on the screen-shared diagram, are requested for removal",
+   "tags": [
+    "tree removal",
+    "erosion",
+    "administrative determination"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance: 318 Page Street, 0 Courtland Cir.",
+   "resolution": "318 Page Street approved contingent on silt fence removal; 0 Courtland Cir. deferred to October 2nd",
+   "quote": "sophie states that the culvert work was completed in a satisfactory manner and the vegetation was stabilized.",
+   "tags": [
+    "certificate of compliance",
+    "culvert"
+   ]
+  },
+  {
+   "topic": "Enforcement: 390 Howard Street erosion controls",
+   "resolution": "site walk to be arranged; applicant to update October 2nd",
+   "quote": "sophie refreshes the commission on the property: erosion controls were put in place on the eastern side",
+   "tags": [
+    "enforcement",
+    "erosion control",
+    "sediment",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Enforcement: 40 Fire Rd 12 encroachment on town property",
+   "resolution": "enforcement order issued with two-week deadline",
+   "quote": "there was encroachment on town property (paving and storage of personal items)",
+   "tags": [
+    "enforcement",
+    "encroachment",
+    "town property"
+   ]
+  },
+  {
+   "topic": "Enforcement: 205 Sunset Lane",
+   "resolution": "no action; awaiting DEP response",
+   "quote": "sophie is still waiting for a response from the dep on this issue.",
+   "tags": [
+    "enforcement",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "New business: Lake Shirley drawdown and OpenGov portal",
+   "resolution": "noted; portal walkthrough given",
+   "quote": "dpw reached out to sophie and stated that they will start drawing down lake shirley on october 15th.",
+   "tags": [
+    "Lake Shirley",
+    "DPW",
+    "OpenGov"
+   ]
+  },
+  {
+   "topic": "Old business: title searches, encroachments, grants, Hollis Road",
+   "resolution": "no updates; grant contracts awarded; ATV purchase permitted",
+   "quote": "contracts have been awarded; po's still need to be issued.",
+   "tags": [
+    "grants",
+    "MassTrails",
+    "encroachment",
+    "pollinator habitat"
+   ]
+  },
+  {
+   "topic": "Committee reports: OpenSpace and Stormwater",
+   "resolution": "OpenSpace asked for Chapter 61 disclosure in OpenGov NOI applications; Stormwater no updates",
+   "quote": "the openspace committee members asked if sophie and brian can implement a new requirement for noi applicants in opengov",
+   "tags": [
+    "OpenSpace",
+    "Chapter 61",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:52pm",
+   "quote": "motion: mike l., second: jenny p. to adjourn at 9:52pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "public hearing",
+  "request for determination of applicability",
+  "notice of intent",
+  "tree removal",
+  "erosion control",
+  "enforcement",
+  "certificate of compliance",
+  "grants",
+  "OpenGov",
+  "Lake Shirley",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

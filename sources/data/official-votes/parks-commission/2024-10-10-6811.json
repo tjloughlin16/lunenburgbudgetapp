@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-10-10",
  "docid": "6811",
@@ -12,15 +12,184 @@
  },
  "votes": [
   {
-   "motion": "move forward with $5.2 million in the warrant article for Marshall Park",
+   "motion": "Move forward with $5.2 million in the warrant article for Marshall Park.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "k. menard made a motion to move forward with $5.2 million in the warrant article for marshall park. c. shapiro seconded. roll call vote: k. menard, yes c. shapiro, yes c. sullivan, yes a. scheipers, yes motion carried (4-0)."
+   "quote": "k. menard made a motion to move forward with $5.2 million in the warrant article for marshall park. c. shapiro seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0724974
+ "note": "Text extraction, not a scan; the minutes record one roll-call motion with its result. Adjournment (7:36 pm) is recorded with no motion, so no procedural vote is listed. Page headers read 'page of 21' and 'page of 22' with no page numbers, so the page sequence is unverified. The Interim Town Manager is referred to but not named. The minutes print 'Parc grant' and 'Parc Grant Administrators' in different capitalisation, kept as printed. The Chris Sullivan header and roll-call names are both recorded as Christopher Sullivan / C. Sullivan.",
+ "cost_usd": 0.01336897,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan absent: tim lawless"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan absent: tim lawless"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan absent: tim lawless"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan absent: tim lawless"
+  },
+  {
+   "name": "Tim Lawless",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan absent: tim lawless"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "additional attendees: chris ruth, facilities director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The chair will contact the Parc Grant Administrators (the chair's own follow-up action on the Land and Water Grant concern).",
+   "quote": "a. scheipers will reach out to the parc grant administrators."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park capital plan funds already appropriated",
+   "what_was_recorded": "Prior town votes for the capital plan conceptual design, capital plan survey and schematics engineering totaled $259,000, of which $116,680 was spent, leaving $142,320.",
+   "figures_as_printed": [
+    "$50,000",
+    "$25,000",
+    "$184,000",
+    "$259,000",
+    "$116,680",
+    "$142,320"
+   ],
+   "quote": "there were $50,000 for the capital plan conceptual design, $25,000 for capital plan survey, and another town vote for $184,000 for schematics engineering, totaling $259,000."
+  },
+  {
+   "topic": "Marshall Park ARPA allocation",
+   "what_was_recorded": "The Select Board had allocated ARPA funds to the project.",
+   "figures_as_printed": [
+    "$1 million"
+   ],
+   "quote": "a. scheipers noted the select board had allocated $1 million in arpa funds."
+  },
+  {
+   "topic": "Marshall Park Parc grant",
+   "what_was_recorded": "A Parc grant of $500,000 is available to the project.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "a. scheipers indicated there is $500,000 in parc grant."
+  },
+  {
+   "topic": "Marshall Park available funds",
+   "what_was_recorded": "Available funds were stated as $1,642,320 less $5000.",
+   "figures_as_printed": [
+    "$1,642,320",
+    "$5000"
+   ],
+   "quote": "a. scheipers stated available found to be $1,642,320 less $5000."
+  },
+  {
+   "topic": "Marshall Park OPM and design firm obligations",
+   "what_was_recorded": "The Commission has obligations for owner's project management of not more than $250,000 and for the design firm RDLA of not more than $143,000 for phase 1.",
+   "figures_as_printed": [
+    "$250,000",
+    "$143,000"
+   ],
+   "quote": "the commission has obligations for the opm (owner's project management) for not more than $250,000 and for the design firm rdla for not more than $143,000 for phase 1."
+  },
+  {
+   "topic": "Marshall Park phase 1 construction funds remaining",
+   "what_was_recorded": "The remaining funds for construction of phase 1 were stated as $1,244,320.",
+   "figures_as_printed": [
+    "$1,244,320"
+   ],
+   "quote": "a. scheipers stated the remaining funds for the construction of phase 1 is $1,244,320."
+  },
+  {
+   "topic": "Marshall Park cost estimate",
+   "what_was_recorded": "The most recent cost estimate was stated as $1,600,000, which exceeded the funds available; the prior estimate was from January 2024.",
+   "figures_as_printed": [
+    "$1,600,000"
+   ],
+   "quote": "a. scheipers stated the cost estimate received was $1,600,000."
+  },
+  {
+   "topic": "Marshall Park funding ceiling",
+   "what_was_recorded": "The Interim Town Manager said the Commission cannot ask for more than the previously asked for $5.2 million.",
+   "figures_as_printed": [
+    "$5.2 million"
+   ],
+   "quote": "he stated the commission cannot ask for more than the previously asked for $5.2 million."
+  },
+  {
+   "topic": "Land and Water Grant for Phase 2",
+   "what_was_recorded": "The Land and Water Grant is $1 million for Phase 2 work; a member expressed concern about items removed from that grant.",
+   "figures_as_printed": [
+    "$1 million"
+   ],
+   "quote": "k. menard stated the land and water grant is $1 million for phase 2 work."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Marshall Park Project: cost estimate and warrant article amount",
+   "resolution": "approved: $5.2 million warrant article request, passed 4-0",
+   "quote": "k. menard made a motion to move forward with $5.2 million in the warrant article for marshall park.",
+   "tags": [
+    "Marshall Park",
+    "warrant article",
+    "special town meeting",
+    "capital projects"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "noted: next meeting October 23, 2024",
+   "quote": "next item on the agenda, next meeting october 23, 2024.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; none offered",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "tags": [
+  "Marshall Park",
+  "capital projects",
+  "special town meeting",
+  "warrant article",
+  "grants",
+  "ARPA funds",
+  "Land and Water Grant",
+  "cost estimate"
+ ],
+ "dropped_unquoted_by_field": {}
 }

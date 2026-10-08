@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2024-10-08",
  "docid": "6802",
@@ -12,19 +12,329 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the September 10, 2024, Council on Aging meeting",
+   "motion": "Accept the minutes of the September 10, 2024, COA meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "it was moved and seconded to accept the minutes of the september 10, 2024, coa meeting. all approved motion, carried."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0787764
+ "note": "Text is a clean extraction of a two-page-plus minutes file marked 'Minutes Approved at 11/12/2024 COA Meeting'; no scan. Only two motions are recorded, both by 'All approved, motion carried' with no mover, seconder or tally, so outcome is 'passed' without a count. The call-to-order line reads 'Chairperson Deb Lincoln called Executive Session meeting', which is ambiguous; no executive session vote or entry is recorded. The minutes use 'Mr. Lincoln' and 'Ms. Lincoln' without distinguishing Pete and Deb Lincoln, so attributions to a specific Lincoln are inferred from the attendance list and are not stated. The Public Comment heading has no entries. Attendance is taken from the 'Present' list; no roll call is printed.",
+ "cost_usd": 0.01737857,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice chairperson",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Helen Balcom",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Jim McGuigan",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Cathy Beale",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Elena Christopher",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Ana Lockwood",
+   "status": "present",
+   "quote": "present deb lincoln (chairperson), jane rabbitt (vice chairperson) susan doherty (director), pete lincoln, diane nowd, helen balcom, jim mcguigan, cathy beale, elena christopher, susan o'sullivan, judy tarbell, ana lockwood."
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Lunenburg Selectboard Chair",
+   "status": "present",
+   "quote": "guests caesar nuzzolo, lunenburg selectboard chair"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members are to keep reviewing the MCOA Resource Guide for discussion at the November meeting.",
+   "quote": "ms. lincoln requested that board members keep reviewing the guide for discussion at the november meeting."
+  },
+  {
+   "decision": "Facilities Manager to put the parking lot plans back into the Capital Plan at $30,000 for FY26 (reported by the Director).",
+   "quote": "the facilities manager will put the parking lot plans back into capital plan and lower the amount to $30,000 for fy26"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MART CONNECT transportation article",
+   "what_was_recorded": "A Special Town Meeting article would ask the Town to appropriate $20,000.00 to support the Lunenburg MART CONNECT program, which began with a MART grant in July 2023 that ran through June 2024.",
+   "figures_as_printed": [
+    "$20,000.00"
+   ],
+   "quote": "will appropriate $20,000.00 to support the operation of the lunenburg mart connect transportation program."
+  },
+  {
+   "topic": "Meal Site revolving fund article",
+   "what_was_recorded": "A Special Town Meeting article on November 12, 2024 would develop a revolving fund for purchasing food for the LAAC meal site.",
+   "figures_as_printed": [
+    "$16,000"
+   ],
+   "quote": "to develop a revolving fund of $16,000 for the purpose of purchasing food for the laac meal site."
+  },
+  {
+   "topic": "Eagle House Supporters dissolution and lost program funding",
+   "what_was_recorded": "The LAAC will lose annual program and event funding from the Eagle House Supporters, which is dissolving; the Director described the loss as between these figures per year.",
+   "figures_as_printed": [
+    "$10,000 - $15,000"
+   ],
+   "quote": "the laac will be losing between $10,000 - $15,000 annually for programs and events."
+  },
+  {
+   "topic": "Eagle House funds to COA Gift Fund",
+   "what_was_recorded": "Eagle House's remaining funds will go to the Lunenburg COA Gift Fund at the end of dissolution; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "at the end of the dissolvement process all their funds will be given to the lunenburg coa gift fund."
+  },
+  {
+   "topic": "FY26 COA program line request",
+   "what_was_recorded": "If town department budgets are released before the Director's retirement, she will request a $10,000 increase to the COA program line and more Meal Site Manager hours.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "she will be requesting an increase of $10,000 to the coa program line and an increase in hours"
+  },
+  {
+   "topic": "ARPA parking lot plans in Capital Plan",
+   "what_was_recorded": "Parking lot plans would return to the Capital Plan with the amount lowered for FY26.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "will put the parking lot plans back into capital plan and lower the amount to $30,000 for fy26"
+  },
+  {
+   "topic": "Blinds quote for function room",
+   "what_was_recorded": "The Director will seek a quote from a vendor to install blinds in the upper windows of the large function room; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "she will be contacting \"new hampshire blinds\" for a quote on installing blinds in the upper windows of the"
+  },
+  {
+   "topic": "Facilities budget structure",
+   "what_was_recorded": "The facilities department has one large budget shared across all Town buildings rather than a budget per building; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the facilities department does not have a budget for each town building but rather one large budget to be"
+  },
+  {
+   "topic": "Van fare waiver funded by MART grant",
+   "what_was_recorded": "COA van fares are waived for residents 60+ until the end of June 2025 because of grant funding MART received; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the council on aging van fares have been waived for those 60+ until the end of june 2025 due to grant funding mart had received."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: van fare waiver",
+   "resolution": "informational; no action",
+   "tags": [
+    "transportation",
+    "grants"
+   ],
+   "quote": "ms. doherty announced that the council on aging van fares have been waived for those 60+ until the end of june 2025 due to grant funding mart had received."
+  },
+  {
+   "topic": "Board comment: Boston Post Cane, fair, men's programming, Sunshine Fund",
+   "resolution": "no action; Sunshine Fund to be considered",
+   "tags": [
+    "programs",
+    "volunteers"
+   ],
+   "quote": "ms. lincoln would like the board to consider beginning a coa \"sunshine fund\" to send greeting cards to lunenburg residents for special occasions."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "it was moved and seconded to accept the minutes of the september 10, 2024, coa meeting."
+  },
+  {
+   "topic": "MART CONNECT Special Town Meeting article",
+   "resolution": "informational; $20,000 article to appear at special town meeting",
+   "tags": [
+    "transportation",
+    "special town meeting",
+    "budget"
+   ],
+   "quote": "ms. doherty informed the board that there will be an article at special town meeting to see if the town will appropriate $20,000.00"
+  },
+  {
+   "topic": "Meal Site revolving fund Special Town Meeting article",
+   "resolution": "informational; members encouraged to attend the November 12 STM",
+   "tags": [
+    "special town meeting",
+    "meal site",
+    "budget"
+   ],
+   "quote": "to develop a revolving fund of $16,000 for the purpose of purchasing food for the laac meal site."
+  },
+  {
+   "topic": "Process for Director interviews",
+   "resolution": "discussed; no decision recorded",
+   "tags": [
+    "personnel",
+    "director search"
+   ],
+   "quote": "there will be a vetting committee compiled of town officials who will then present the best candidates to the assistant town manager"
+  },
+  {
+   "topic": "Eagle House Supporters dissolution and COA Gift Fund",
+   "resolution": "discussed; Director to attend a future Selectboard meeting",
+   "tags": [
+    "gift fund",
+    "donations",
+    "legal"
+   ],
+   "quote": "eagle house supporters inc., which have been in existence for 40+ years, have begun the process of dissolving"
+  },
+  {
+   "topic": "MCOA Resource Guide",
+   "resolution": "continued to November meeting",
+   "tags": [
+    "training",
+    "board"
+   ],
+   "quote": "ms. lincoln requested that board members keep reviewing the guide for discussion at the november meeting."
+  },
+  {
+   "topic": "Volunteer recognition cookout",
+   "resolution": "no action; thanks recorded; smaller volunteer event discussed",
+   "tags": [
+    "volunteers",
+    "events"
+   ],
+   "quote": "ms. lincoln thanked the coa board members for \"stepping up\" with set up and take down of tables and chairs"
+  },
+  {
+   "topic": "ARPA submissions: parking lot plans",
+   "resolution": "reported; returned to Capital Plan at $30,000 for FY26",
+   "tags": [
+    "capital plan",
+    "ARPA",
+    "facilities",
+    "budget"
+   ],
+   "quote": "ms. doherty reported that the facilities manager will put the parking lot plans back into capital plan"
+  },
+  {
+   "topic": "Director's report: capital plan and buildings",
+   "resolution": "reported; flooring and sail shades moved to FY27 Capital Plan",
+   "tags": [
+    "capital plan",
+    "facilities",
+    "building"
+   ],
+   "quote": "generator - still waiting for the arrival of the fuel tank."
+  },
+  {
+   "topic": "Upcoming events",
+   "resolution": "announced",
+   "tags": [
+    "events"
+   ],
+   "quote": "ms. doherty announced all upcoming events at the laac for the month of october through the first week of november."
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "tags": [
+    "communications"
+   ],
+   "quote": "notices & communications: none"
+  },
+  {
+   "topic": "Second board comment and reminders",
+   "resolution": "reminders given; revised board member requested for next meeting",
+   "tags": [
+    "board",
+    "special town meeting",
+    "medicare"
+   ],
+   "quote": "members were reminded that special town meeting will be held on november 12, 2024, 7pm at lunenburg"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:47AM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting adjourned at 10:47am"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "transportation (MART)",
+  "special town meeting",
+  "revolving fund",
+  "budget requests",
+  "gift fund",
+  "Eagle House Supporters",
+  "director search",
+  "capital plan",
+  "facilities",
+  "volunteers",
+  "medicare"
+ ],
+ "dropped_unquoted_by_field": {}
 }

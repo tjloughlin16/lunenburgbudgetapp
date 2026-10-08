@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2024-09-12",
  "docid": "6763",
@@ -12,23 +12,209 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from May 9, 2024",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the minutes of May 9, 2024.",
    "moved_by": "Lloyd",
    "seconded_by": "Lockwood",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "motion to approve by member lloyd, seconded by lockwood, approved by all"
   },
   {
-   "motion": "Submit the Brooks House for sale on November warrant",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "APDC to submit the Brooks House for sale on the November warrant, with no deed requirement at time of submission.",
    "moved_by": "Lockwood",
    "seconded_by": "McGrath",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "motion by lockwood, seconded by mcgrath, approved by all - motion passes!"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are complete and legible. Two votes recorded: one procedural (minutes approval) and one substantive (Brooks House warrant). Meeting adjourned at 8:35 PM but no motion to adjourn is stated in the minutes.",
- "cost_usd": 0.0587814
+ "note": "Plain text extraction of a meeting minutes document; no scan. Two motions are recorded: the minutes approval (vote count not printed, only 'Approved by all') and the Brooks House motion (also 'Approved by All', no count). Four members are present, and the fifth seat is listed as a vacancy. Public comment is recorded as 'None'. The Carter Teranzini entry is a correspondence item and the minutes do not state his attendance. Micheal Ray Jefferies is mentioned but did not take part, so he is not listed as an attendee. The Brooks House motion's sub-recommendation ('no deed requirement') is recorded within the motion, not as a separate vote.",
+ "cost_usd": 0.01436487,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, mcgrath, lockwood"
+  },
+  {
+   "name": "Carter Teranzini",
+   "role": "correspondent; conversation about Town Hall and Ritter Building improvements",
+   "status": "not stated",
+   "quote": "carter teranzini - conversation about town hall and ritter building improvements."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "APDC will prioritize work needs and focus on limiting cost to fit within this year's funding constraints (Town Hall and Ritter Building work).",
+   "quote": "apdc will prioritize work needs and focus on limiting cost to fit into this years funding constraints."
+  },
+  {
+   "decision": "Go back to Carter Teranzini by Monday with a priority list of work needs.",
+   "quote": "goal to go back to carter by monday with priority list."
+  },
+  {
+   "decision": "Coordinate the Brooks House warrant item with the Planning Board, Select Board and Historical Commission.",
+   "quote": "will coordinate with planning board/select board/historical commission"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "HARPA funds for the municipal building (Town Hall and Ritter Building)",
+   "what_was_recorded": "Discussed whether HARPA funds can be used for buildings whose designs are already in place; the Commission's goal is not to lose the HARPA funds.",
+   "figures_as_printed": [],
+   "quote": "talks of use of harpa funds to the municipal building."
+  },
+  {
+   "topic": "Cost estimates for Town Hall and Ritter Building work",
+   "what_was_recorded": "Cost estimates have not been redone, though designs are complete.",
+   "figures_as_printed": [],
+   "quote": "cost estimates have not been redone but designs are complete."
+  },
+  {
+   "topic": "Capital project funding constraints",
+   "what_was_recorded": "Capital projects are described as all in jeopardy with limited funding.",
+   "figures_as_printed": [],
+   "quote": "capital projec ts are all in jeopardy with limited funding."
+  },
+  {
+   "topic": "Municipal building design plan estimate",
+   "what_was_recorded": "A rough three-project plan by MRJ could be estimated at up to $15M.",
+   "figures_as_printed": [
+    "$15M"
+   ],
+   "quote": "rough plan by mrj for a 3 project plan, which could be estimated up to $15m."
+  },
+  {
+   "topic": "Funding for the municipal building work",
+   "what_was_recorded": "Funds are not available at this time for all the work to be done.",
+   "figures_as_printed": [],
+   "quote": "at this time funds are not available for all the work to be done."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Correspondence: Carter Teranzini on Town Hall and Ritter Building improvements and HARPA funds",
+   "resolution": "discussed; priority list to be sent back by Monday",
+   "quote": "carter teranzini - conversation about town hall and ritter building improvements.",
+   "tags": [
+    "HARPA funds",
+    "Town Hall",
+    "Ritter Building",
+    "capital projects"
+   ]
+  },
+  {
+   "topic": "Minutes approval (May 9, 2024)",
+   "resolution": "approved",
+   "quote": "motion to approve by member lloyd, seconded by lockwood, approved by all",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Business: Lunenburg Municipal Building design committee",
+   "resolution": "discussed; no action recorded",
+   "quote": "lunenburg municipal building design committee",
+   "tags": [
+    "municipal building",
+    "design",
+    "Turkey Hill Elementary"
+   ]
+  },
+  {
+   "topic": "Old Business: mailers",
+   "resolution": "no action; no movement reported",
+   "quote": "mailers have not made any movement",
+   "tags": [
+    "mailers"
+   ]
+  },
+  {
+   "topic": "Old Business: APDC / HC merger",
+   "resolution": "noted; meeting scheduled 25 Sept",
+   "quote": "meeting on 25 sept at 1pm at the library to discuss the merger of the two organizations",
+   "tags": [
+    "merger",
+    "APDC",
+    "Historical Commission"
+   ]
+  },
+  {
+   "topic": "Old Business: Preservation of the Brooks House",
+   "resolution": "approved: submit for sale on November warrant",
+   "quote": "motion by lockwood, seconded by mcgrath, approved by all - motion passes!",
+   "tags": [
+    "Brooks House",
+    "warrant",
+    "sale",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Old Business: 763 Mass Ave",
+   "resolution": "discussed; no action recorded",
+   "quote": "location is in the limited business area",
+   "tags": [
+    "763 Mass Ave",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Old Business: 50 Main Street",
+   "resolution": "contractor to be asked to view project",
+   "quote": "asking a contractor to come take a look at the project to get a better idea of the scope of the project",
+   "tags": [
+    "50 Main Street"
+   ]
+  },
+  {
+   "topic": "Other Business: Historical Commission report",
+   "resolution": "noted; no action recorded",
+   "quote": "resident pulled permit for addition but instead demolished 1945 house without approval",
+   "tags": [
+    "demolition",
+    "Historical Commission",
+    "enforcement"
+   ]
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "historic district",
+  "Town Hall",
+  "Ritter Building",
+  "HARPA funds",
+  "capital projects",
+  "Brooks House",
+  "November warrant",
+  "APDC",
+  "Historical Commission merger",
+  "demolition",
+  "municipal building design"
+ ],
+ "dropped_unquoted_by_field": {}
 }

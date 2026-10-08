@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-12-19",
  "docid": "6928",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from October 10th and October 24th",
+   "motion": "Approve the minutes from October 10th and October 24th.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jay Simeone",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "there was a motion to approve the minutes from october 10th and october 24th by tom gray, seconded by jay simeone. all in favor."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tom Gray",
    "outcome": "passed",
@@ -29,6 +29,343 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0635264
+ "note": "Text extraction of the December 19, 2024 Finance Committee minutes; the layout is clean and the sections are all present, so nothing appears to be missing. Votes are recorded only as \"All in favor\" with no count, so outcome is \"passed\" without a tally. No roll-call votes or recorded votes on the Budget Task Force recommendations were printed. Attendance for guests (Renee Emkey, Ezequiel Ayala, Carol Archambault, Peter Beardmore) is inferred from their speaking; the minutes do not state their status explicitly. Several quotes contain ligatures (ﬁ, ﬂ) and an odd \"Ư\" in \"JeƯerson\"; these are reproduced as printed. Dollar figures for the trash program and Chapter 90 are estimates or stated amounts as printed.",
+ "cost_usd": 0.01752027,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member jay simeone"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair chris menard, clerk tom gray, committee member tanya dall, committee member jay simeone"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent member: vice chair jean russell"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "presenter, Budget Task Force recommendations",
+   "status": "present",
+   "quote": "renee emkey and ezequiel ayala provided the following recommendations."
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "presenter, Budget Task Force recommendations; FY24 year-end financials",
+   "status": "present",
+   "quote": "renee emkey and ezequiel ayala provided the following recommendations."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Secretary",
+   "status": "present",
+   "quote": "carol archambault, school committee secretary,"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "participant (role not stated)",
+   "status": "present",
+   "quote": "peter beardmore questions when the 25 days start."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "member of Green Communities Committee and resident of JeƯerson",
+   "status": "present",
+   "quote": "dave passios, member of green communities committee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chris Menard will make an inquiry with Carter Terenzini about whether a preliminary budget will be presented in January.",
+   "quote": "chris menard will make an inquiry with carter terenzini."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Brooks House lease",
+   "what_was_recorded": "The lease is estimated at a range based on the building's use, using other towns' building leases as the basis.",
+   "quote": "the lease is estimated to be between $30,000 to $50,000",
+   "figures_as_printed": [
+    "$30,000",
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Town trash and recycling program",
+   "what_was_recorded": "The recycling program was free when first established and now costs the Town a sum that is rising each year.",
+   "quote": "currently it is costing $250,000 a year and rising.",
+   "figures_as_printed": [
+    "$250,000"
+   ]
+  },
+  {
+   "topic": "Chapter 90 funds for Town roads",
+   "what_was_recorded": "Estimated annual cost of Chapter 90 road work, depending on the number of roads.",
+   "quote": "depending on the number of roads this is estimated to cost $10,000 to $20,000 per year.",
+   "figures_as_printed": [
+    "$10,000",
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "Warrant article delivery",
+   "what_was_recorded": "Posting warrant articles electronically is estimated to save a yearly cost.",
+   "quote": "this could be a yearly cost saving of $7,500.",
+   "figures_as_printed": [
+    "$7,500"
+   ]
+  },
+  {
+   "topic": "FY24 year-end financials",
+   "what_was_recorded": "Final free cash and tax rate reported from the FY24 year-end financials.",
+   "quote": "was approved at 2.25 and the tax rate was set at 14.36.",
+   "figures_as_printed": [
+    "2.25",
+    "14.36"
+   ]
+  },
+  {
+   "topic": "Community Preservation Act surcharge",
+   "what_was_recorded": "The CPA surcharge range was described; no dollar amount was printed.",
+   "quote": "the minimum surcharge is .5% and the maximum is 3%.",
+   "figures_as_printed": [
+    ".5%",
+    "3%"
+   ]
+  },
+  {
+   "topic": "Targeted diagnostic audit",
+   "what_was_recorded": "The diagnostic audit was described as a one-time cost to the Town; no dollar figure was printed.",
+   "quote": "this will be a deeper dive than the annual audit and a 1-time cost to the town.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Health insurance buyout option",
+   "what_was_recorded": "The buyout option was described as a cost savings; no dollar figure was printed.",
+   "quote": "this could be used as an incentive and will be a cost savings.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Solar fields as revenue sources",
+   "what_was_recorded": "Solar fields at the old town dump site and on school lots were described as possible revenue sources; no dollar figure was printed.",
+   "quote": "this could be a revenue source if the land is leased, and solar panels are added.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town finances in FY26",
+   "what_was_recorded": "A committee member questioned whether the Town would have enough money to run the Town in FY 26; no figure was printed.",
+   "quote": "tom gray questions if the town is going to have enough money to run the town in fy 26.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "member of Green Communities Committee and resident of JeƯerson",
+   "topic": "Dept. of Local Services services, town audit, consolidating accounts, local income tax",
+   "quote": "he states the department of local services has several services that are available to all cities and towns in massachusetts"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "Meeting opened at 7:00 PM",
+   "quote": "the meeting opened at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no announcements",
+   "quote": "there were no announcements.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "no comments from the public",
+   "quote": "there were no comments from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Budget Task Force update (possible joint meeting)",
+   "resolution": "recommendations presented and discussed; no vote recorded",
+   "quote": "renee emkey and ezequiel ayala provided the following recommendations.",
+   "tags": [
+    "budget task force",
+    "town finances",
+    "cpa",
+    "solar",
+    "health insurance",
+    "warrant articles",
+    "trash and recycling"
+   ]
+  },
+  {
+   "topic": "Town Manager & Finance Director Reports",
+   "resolution": "FY24 year-end financials presented and forwarded to Committee",
+   "quote": "ezequiel ayala presented the fy24 year-end",
+   "tags": [
+    "free cash",
+    "tax rate",
+    "fy24"
+   ]
+  },
+  {
+   "topic": "Town Manager Search Committee update",
+   "resolution": "no action; three finalists to be made public",
+   "quote": "the town manager search committee has almost completed their job.",
+   "tags": [
+    "town manager search"
+   ]
+  },
+  {
+   "topic": "Capital Planning update",
+   "resolution": "no action; monthly meetings anticipated",
+   "quote": "they anticipate meeting monthly to look at the planning aspects of capital planning and creating a 5- and 10-year plan.",
+   "tags": [
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Review Budget Season Schedule",
+   "resolution": "discussed; warrant lead time and FY26 budget feedback deadline noted; no vote",
+   "quote": "he needs 25 days to put out a warrant.",
+   "tags": [
+    "budget season",
+    "warrant",
+    "fy26"
+   ]
+  },
+  {
+   "topic": "Project 211 (School Funding Formula)",
+   "resolution": "no update from the Committee",
+   "quote": "there were no updates from the committee.",
+   "tags": [
+    "school funding"
+   ]
+  },
+  {
+   "topic": "Grant Writing Services",
+   "resolution": "no action; policy anticipated",
+   "quote": "the committee anticipates creating a policy related to grant writing.",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Consolidation of Services/Departments",
+   "resolution": "no updates",
+   "quote": "there were no updates.",
+   "tags": [
+    "consolidation"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "there was a motion to approve the minutes from october 10th and october 24th by tom gray, seconded by jay simeone. all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported; no action",
+   "quote": "tom gray states that the municipal building design committee has met.",
+   "tags": [
+    "town hall renovation",
+    "sewer commission"
+   ]
+  },
+  {
+   "topic": "Actions and Topics for Future Meetings",
+   "resolution": "inquiry to be made; Chair will not seek re-election",
+   "quote": "jay simeone questions if carter terenzini is going to be presenting a preliminary budget in january.",
+   "tags": [
+    "chair",
+    "preliminary budget"
+   ]
+  },
+  {
+   "topic": "Important Dates",
+   "resolution": "no additional dates",
+   "quote": "there are no additional important dates.",
+   "tags": [
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "listed; Budget Season begins 2/13/2025",
+   "quote": "2/13/2025 budget season begins",
+   "tags": [
+    "calendar",
+    "budget season"
+   ]
+  },
+  {
+   "topic": "Public Comment (Dave Passios)",
+   "resolution": "comments received; no action",
+   "quote": "he states the department of local services has several services",
+   "tags": [
+    "public comment",
+    "local income tax",
+    "audit"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:55 PM",
+   "quote": "the meeting closed at 8:55 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "budget task force",
+  "fy26 budget",
+  "free cash",
+  "tax rate",
+  "community preservation act",
+  "solar",
+  "health insurance",
+  "town manager search",
+  "capital planning",
+  "warrant articles",
+  "grants",
+  "school funding",
+  "public comment",
+  "trash and recycling",
+  "chapter 90"
+ ],
+ "dropped_unquoted_by_field": {}
 }

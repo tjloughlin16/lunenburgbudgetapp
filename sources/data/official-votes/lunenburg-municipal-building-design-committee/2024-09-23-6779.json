@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2024-09-23",
  "docid": "6779",
@@ -12,24 +12,173 @@
  },
  "votes": [
   {
-   "motion": "Approve the RFP and authorize the chair to make minor modifications in consultation with the town procurement officer",
+   "motion": "Approve the RFP and give the chair permission to make minor modifications in consultation with the town procurement officer, including non-substantive changes required by law.",
    "moved_by": "Greg Roy",
    "seconded_by": "Brian Lehtinen",
-   "outcome": "unanimously passed",
+   "outcome": "passed unanimously (no count printed)",
    "procedural": false,
-   "quote": "greg roy made a motion to approved the rfp and gave the chair permission to make minor modifications with the consultation of the town procurement officer can make non- ===page 2=== substantive changes to the document as required by law. the motion was seconded by brian lehtinen, unani",
-   "quote_taken_from_text": true
+   "quote": "greg roy made a motion to approved the rfp and gave the chair permission to make minor modifications with the consultation of the town procurement officer can make non-"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 6:50pm.",
    "moved_by": "Brian Lehtinen",
    "seconded_by": "Greg Roy",
-   "outcome": "unanimously passed",
+   "outcome": "passed unanimously (no count printed)",
    "procedural": true,
    "quote": "motion to adjourn by brian lehtinen at 6:50pm, seconded by greg roy, unanimously passed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10122740000000001
+ "note": "Text is a clean transcription with no scan issues. The RFP approval motion runs across the page break (page 1 ends \"non-\", page 2 begins \"substantive\"); the quote is taken from page 1 and the vote result from page 2. The minutes name no chair, so the chair permission is recorded as printed. Michael-Ray Jeffreys is spelled two ways in the minutes. Julie is named in an action item but not as an attendee. No public comment section, no approval of prior minutes, and no roll-call counts are recorded. The minutes print no dollar figures; budget_items are included only because price proposals and maintenance and energy costs are discussed.",
+ "cost_usd": 0.01372217,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member (listed under Members Present; also written 'Michael Ray Jeffreys' in the action item)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member (listed under Members absent)",
+   "status": "absent",
+   "quote": "members absent: tom gray"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: anthony sculimbrene"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed to set a baseline requirement of familiarity and experience with historic preservation for the firms considered.",
+   "quote": "the committee agreed that setting a baseline requirement of familiarity and experience with historic preservation would ensure that the firms considered had the relevant expertise."
+  },
+  {
+   "decision": "Selection process: non-price proposals are reviewed first, then price proposals are opened; the highest-ranking firm is awarded the contract based on qualifications and price.",
+   "quote": "the selection process will involve reviewing the non-price proposals first, followed by opening the price proposals."
+  },
+  {
+   "decision": "Committee suggested adding RFP language on long-term operation and maintenance costs and energy efficiency analysis to the design requirements.",
+   "quote": "the committee suggested adding language regarding long-term operation and maintenance costs, as well as energy efficiency analysis, as part of the design requirements."
+  },
+  {
+   "decision": "Michael Ray Jeffreys to review the matter with Julie and report back to the committee.",
+   "quote": "michael ray jeffreys will review with julie and get back to the committee."
+  },
+  {
+   "decision": "Recommended that the committee meet with other boards during the process to keep everyone informed.",
+   "quote": "it was recommended that we meet with other boards during the process to keep everyone informed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "RFP selection process and price proposals",
+   "what_was_recorded": "The minutes say the highest-ranking firm will be awarded the contract on qualifications and price, with price proposals opened after non-price review. No dollar figure is printed.",
+   "quote": "the highest-ranking firm will be awarded the contract based on qualifications and price.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Long-term operation and maintenance costs and energy efficiency in design requirements",
+   "what_was_recorded": "The committee suggested adding language on long-term operation and maintenance costs and energy efficiency analysis. No dollar figure is printed.",
+   "quote": "the committee suggested adding language regarding long-term operation and maintenance costs, as well as energy efficiency analysis, as part of the design requirements.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "RFP review, Sections 3 and 4 (minimum quality requirements for architecture and engineering services)",
+   "resolution": "reviewed; historic preservation baseline agreed; selection process and evaluation criteria refined",
+   "quote": "the meeting resumed with a review of the rfp, starting with section 3 and continuing into section 4, which covers the minimum quality requirements for architecture and engineering services.",
+   "tags": [
+    "RFP",
+    "evaluation criteria",
+    "architecture and engineering services"
+   ]
+  },
+  {
+   "topic": "Historic preservation experience requirement",
+   "resolution": "committee agreed on a baseline familiarity and experience requirement",
+   "quote": "the committee agreed that setting a baseline requirement of familiarity and experience with historic preservation would ensure that the firms considered had the relevant expertise.",
+   "tags": [
+    "historic preservation",
+    "qualifications"
+   ]
+  },
+  {
+   "topic": "Project leader involvement, operation costs and energy efficiency",
+   "resolution": "suggested language added to design requirements; no vote",
+   "quote": "the committee suggested adding language regarding long-term operation and maintenance costs, as well as energy efficiency analysis, as part of the design requirements.",
+   "tags": [
+    "design requirements",
+    "energy efficiency",
+    "maintenance costs"
+   ]
+  },
+  {
+   "topic": "RFP approval with chair authority for minor changes",
+   "resolution": "passed unanimously",
+   "quote": "greg roy made a motion to approved the rfp and gave the chair permission to make minor modifications with the consultation of the town procurement officer can make non-",
+   "tags": [
+    "RFP approval",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Coordination with other boards",
+   "resolution": "recommended",
+   "quote": "it was recommended that we meet with other boards during the process to keep everyone informed.",
+   "tags": [
+    "coordination",
+    "other boards"
+   ]
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "design committee",
+  "RFP",
+  "architecture and engineering services",
+  "historic preservation",
+  "procurement",
+  "selection process",
+  "energy efficiency"
+ ],
+ "dropped_unquoted_by_field": {}
 }

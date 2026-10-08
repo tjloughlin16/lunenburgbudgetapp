@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-12-10",
  "docid": "6919",
@@ -10,8 +10,214 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12102024-6919",
   "doc_url": "/docs/meetings/sewer-commission/2024-12-10-minutes-6919.txt"
  },
- "votes": [],
- "dropped_unquoted": 3,
- "note": "",
- "cost_usd": 0.0910644
+ "votes": [
+  {
+   "motion": "Hire Andrew Valliere as the new Business Manager for the Lunenburg Sewer Commission.",
+   "moved_by": "Brett R.",
+   "seconded_by": "Scott D.",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "to hire andrew valliere as our new business manager for lunenburg sewer commission . roll call vote: joe-aye, scott-aye, brett-aye and mike-aye."
+  },
+  {
+   "motion": "Approve the 2nd Quarter commitment for $325,576.84.",
+   "moved_by": "Scott D.",
+   "seconded_by": "Joe H.",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "to a pprove the 2 nd quarter commitment for $325,576.84 . roll call vote: scott-aye, joe-aye, brett-aye and mike-aye."
+  },
+  {
+   "motion": "Adjourn the meeting at 7:28pm.",
+   "moved_by": "Joe H.",
+   "seconded_by": "Scott D.",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "to adjourn at 7:28pm roll call vote : j oe -aye , scott -aye , brett -aye &"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Typed minutes, not a scan; extraction left odd spacing (e.g. \"Sc ott\", \"V alliere\", \"pr ice\"), so quotes are copied as they appear and the seconder \"Sc ott  D.\" is recorded as \"Scott D.\". The meeting was held via Zoom, and the minutes do not mark individual attendance as remote. Andrew Valliere, Paula and Carter (Interim Town Manager) are named in the minutes but did not take part, so they are not listed as attendees. No executive session was held. Public comment was \"none\" both times, so no speakers are recorded.",
+ "cost_usd": 0.015720869999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Mackin",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin , vice-chair- brett ramsden , clerk- scott dall , member -joe"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin , vice-chair- brett ramsden , clerk- scott dall , member -joe"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin , vice-chair- brett ramsden , clerk- scott dall , member -joe"
+  },
+  {
+   "name": "Joe Hurley",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- mike mackin , vice-chair- brett ramsden , clerk- scott dall , member -joe"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "hurley , dpw directo r- bill bernard , minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "hurley , dpw directo r- bill bernard , minutes clerk- jane ranley"
+  },
+  {
+   "name": "Eli Torres",
+   "role": "Member",
+   "status": "absent",
+   "quote": "eli has not responde d to email s ."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bill Bernard will obtain a price for the same line-repair work at Dana St. Station.",
+   "quote": "he will get a price for the same work at dana st . station"
+  },
+  {
+   "decision": "The chair suggested amending the by-laws regarding attendance; no amendment was voted.",
+   "quote": "mike suggested amending the by-laws regarding attendance."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Second quarter billing commitment",
+   "what_was_recorded": "The Commission voted to approve the 2nd Quarter commitment at the printed figure, after a consultant was brought in during the billing process.",
+   "figures_as_printed": [
+    "$325,576.84"
+   ],
+   "quote": "to a pprove the 2 nd quarter commitment for $325,576.84 ."
+  },
+  {
+   "topic": "Manhole work contract",
+   "what_was_recorded": "The manhole work went out to bid, a low bidder was identified, and a contract is in place; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "it went out to bid and they had a low bidder"
+  },
+  {
+   "topic": "Cost of an in-town treatment system",
+   "what_was_recorded": "Bill said the town had explored its own treatment system, which would be huge money; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "they have but it would be huge money"
+  },
+  {
+   "topic": "Fitchburg and Leominster rate increases",
+   "what_was_recorded": "Joe asked about transparency in the rate increases from Fitchburg and Leominster; the 25-year agreement lets both towns still raise rates. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "but they are still able to raise their rates"
+  },
+  {
+   "topic": "Dana St. Station line repair price",
+   "what_was_recorded": "Bill will get a price for the same line-repair work at Dana St. Station; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "he will get a price for the same work at dana st . station"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Business Manager new hire",
+   "resolution": "approved (hire voted 4-0)",
+   "quote": "they o ffered him the job and if ratified by the commission will start january 6th",
+   "tags": [
+    "personnel",
+    "hiring",
+    "business manager"
+   ]
+  },
+  {
+   "topic": "Absent member and by-laws",
+   "resolution": "no action; suggestion to amend by-laws on attendance",
+   "quote": "mike suggested amending the by-laws regarding attendance.",
+   "tags": [
+    "by-laws",
+    "attendance",
+    "governance"
+   ]
+  },
+  {
+   "topic": "2nd Quarter billing commitment",
+   "resolution": "approved 4-0",
+   "quote": "to a pprove the 2 nd quarter commitment for $325,576.84 .",
+   "tags": [
+    "billing",
+    "commitment",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Assistant to Business Manager",
+   "resolution": "no action; prior candidates to be contacted",
+   "quote": "they will need to reach out to prior candidates",
+   "tags": [
+    "personnel",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Manhole work",
+   "resolution": "no action; contract in place, work expected in spring",
+   "quote": "it went out to bid and they had a low bidder",
+   "tags": [
+    "manholes",
+    "inflow and infiltration",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Line repairs Mass 1",
+   "resolution": "no action; price to be obtained for Dana St. Station",
+   "quote": "he will get a price for the same work at dana st . station",
+   "tags": [
+    "line repairs",
+    "pump stations",
+    "treatment"
+   ]
+  },
+  {
+   "topic": "Announcements and meeting schedule",
+   "resolution": "noted; this is the only December meeting",
+   "quote": "mike noted that this will be the only meeting for december .",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "upcoming scheduled sewer commission activities :",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "business manager hire",
+  "quarterly billing",
+  "manholes and inflow and infiltration",
+  "line repairs",
+  "treatment system",
+  "Fitchburg and Leominster rates",
+  "by-laws attendance",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

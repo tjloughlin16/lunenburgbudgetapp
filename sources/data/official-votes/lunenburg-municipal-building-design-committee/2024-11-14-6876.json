@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2024-11-14",
  "docid": "6876",
@@ -12,23 +12,217 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from October 21, 2024 and November 4, 2024 meetings",
-   "outcome": "approved",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "minutes from the october 21, 2024 and november 4, 2024 meetings were reviewed and approved."
-  },
-  {
-   "motion": "To adjourn the meeting",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matthew Allison",
    "seconded_by": "Tom Gray",
-   "quote": "the meeting adjourned at 6:01 pm following a motion by matthew allison, seconded by tom gray, and passed unanimously."
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "following a motion by matthew allison, seconded by tom gray, and passed unanimously"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0634084
+ "note": "Text extraction of a single PDF meeting record; no scan or missing pages noted, though page 2 begins mid-sentence. One recorded vote: the adjournment. The approval of the October 21 and November 4, 2024 minutes has no printed motion, mover or tally, so it is recorded as a decision, not a vote. The minutes say \"There were no public comments from the board, APDC, or the public\" and then record a public question from Ronda Lisso; both are reported as printed. Page 2 names the member \"Michael Ray\", which I read as Michael-Ray Jeffreys. No dollar figures are printed anywhere in the minutes.",
+ "cost_usd": 0.01428747,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, matthew allison, tom gray"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, matthew allison, tom gray"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, matthew allison, tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, matthew allison, tom gray"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: greg roy, david blatt, kristina masaitis"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: greg roy, david blatt, kristina masaitis"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: greg roy, david blatt, kristina masaitis"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: community guests: anthony sculimbrene"
+  },
+  {
+   "name": "Ronda Lisso",
+   "role": "Member of the public",
+   "status": "present",
+   "quote": "ronda lisso raised a question regarding recent presentations at the finance committee meeting and special town meeting."
+  },
+  {
+   "name": "Robert Taylor",
+   "role": "Led the Taylor & Burns team",
+   "status": "present",
+   "quote": "the committee welcomed the taylor & burns team, led by robert taylor."
+  },
+  {
+   "name": "Marley Lynch",
+   "role": "Taylor & Burns team member",
+   "status": "present",
+   "quote": "including marley lynch, ken beck, and bruce gorman, demonstrated expertise in hvac"
+  },
+  {
+   "name": "Ken Beck",
+   "role": "Taylor & Burns team member",
+   "status": "present",
+   "quote": "including marley lynch, ken beck, and bruce gorman, demonstrated expertise in hvac"
+  },
+  {
+   "name": "Bruce Gorman",
+   "role": "Taylor & Burns team member",
+   "status": "present",
+   "quote": "including marley lynch, ken beck, and bruce gorman, demonstrated expertise in hvac"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of the October 21, 2024 and November 4, 2024 meetings were approved. No motion, mover or tally is printed, so this is recorded as an approval without a vote.",
+   "quote": "minutes from the october 21, 2024 and november 4, 2024 meetings were reviewed and approved."
+  },
+  {
+   "decision": "Agreed to follow up with Taylor & Burns to provide additional details and clarify questions raised in the interview.",
+   "quote": "it was agreed to follow up with the firm to provide additional details and clarify questions raised during the interview."
+  },
+  {
+   "decision": "Plan to meet Taylor & Burns next Wednesday at 5:30 PM for follow-up.",
+   "quote": "plans to meet taylor & burns next wednesday at 5:30 pm for follow-up."
+  },
+  {
+   "decision": "Feedback on the Comcast/PAC broadcast question to be incorporated into ongoing planning.",
+   "quote": "feedback will be incorporated into ongoing planning."
+  },
+  {
+   "decision": "Committee planned to review updated space needs assessments on Monday, prepare for a potential project kickoff meeting on December 2nd, and schedule additional interviews and meetings as necessary.",
+   "quote": "review updated space needs assessments on monday."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Comcast quote to move PAC broadcast feed to TCP",
+   "what_was_recorded": "A public commenter asked about Comcast's quote for moving the PAC broadcast feed to TCP; the board discussed cost implications, but no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "she asked about comcast's quote for moving the pac broadcast feed to tcp."
+  },
+  {
+   "topic": "Grant incentives for sustainability work",
+   "what_was_recorded": "The Taylor & Burns firm described leveraging incentives such as Inflation Reduction Act grants for sustainability efforts; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "leveraging incentives such as inflation reduction act grants"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Comcast quote for PAC broadcast feed",
+   "speaker": "Ronda Lisso",
+   "stated_role": "",
+   "quote": "ronda lisso raised a question regarding recent presentations at the finance committee meeting and special town meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "discussed; feedback to be incorporated into planning",
+   "tags": [
+    "public comment",
+    "PAC",
+    "broadcast",
+    "Comcast"
+   ],
+   "quote": "ronda lisso raised a question regarding recent presentations at the finance committee meeting and special town meeting."
+  },
+  {
+   "topic": "Interview with Taylor & Burns team",
+   "resolution": "follow-up agreed",
+   "tags": [
+    "architecture",
+    "historic buildings",
+    "consultant interview"
+   ],
+   "quote": "the committee welcomed the taylor & burns team, led by robert taylor."
+  },
+  {
+   "topic": "Space needs and design revisions",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "space needs",
+    "high school",
+    "Town Hall",
+    "library"
+   ],
+   "quote": "there was a discussion about prioritizing space needs and revisions to existing designs"
+  },
+  {
+   "topic": "Upcoming scheduling",
+   "resolution": "follow-up meeting planned with Taylor & Burns",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "plans to meet taylor & burns next wednesday at 5:30 pm for follow-up."
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved without a recorded vote",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes from the october 21, 2024 and november 4, 2024 meetings were reviewed and approved."
+  },
+  {
+   "topic": "Committee next steps",
+   "resolution": "planned",
+   "tags": [
+    "schedule",
+    "kickoff",
+    "space needs"
+   ],
+   "quote": "prepare for a potential project kickoff meeting on december 2nd."
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "design committee",
+  "Town Hall",
+  "PAC",
+  "Comcast broadcast",
+  "Taylor & Burns",
+  "historic preservation",
+  "space needs",
+  "HVAC",
+  "architect interview",
+  "minutes approval",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

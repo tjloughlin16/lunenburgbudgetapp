@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2024-12-02",
  "docid": "6901",
@@ -11,7 +11,163 @@
   "doc_url": "/docs/meetings/historical-commission/2024-12-02-minutes-6901.txt"
  },
  "votes": [],
- "dropped_unquoted": 2,
- "note": "",
- "cost_usd": 0.0752844
+ "dropped_unquoted": 0,
+ "note": "Single-page text with words run together and no spaces between most words; quotes are copied as they appear. No motions, seconds or vote counts appear anywhere, so the votes list is empty; the October minutes being 'reviewed and accepted' is recorded without a vote and is listed as a decision. The minutes print no dollar figures, so budget items carry no figures. No attendance roll is given beyond a quorum being present, and no public comment is recorded. Whether Chairman McGrath attended this meeting is not stated; he is named only as attending a Cemetery Commission meeting.",
+ "cost_usd": 0.01343097,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "McGrath",
+   "role": "Chairman (as printed: 'Chairman McGrath')",
+   "status": "not stated",
+   "quote": "chairmanmcgrathattendedthecemeterycommission'spoll meetingtodiscusstheprojectsatgoodrichandarnoldlitchcemeteries."
+  },
+  {
+   "name": "Jen Sanderson",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jensandersonistotalkwiththetownmanager regardingthehometownheroesproject."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The October minutes were reviewed and accepted. No motion, second or vote count is recorded.",
+   "quote": "theminutesfor themonthof october werereviewedandaccepted."
+  },
+  {
+   "decision": "The APDC and Historical Commission chairs are to meet with the select boards soon to discuss the merger of the two commissions.",
+   "quote": "theapdcandhistorical commissionchairsaretomeet withtheselect boardsoontodiscussthemerger of thetwocommissions."
+  },
+  {
+   "decision": "Jen Sanderson is to talk with the town manager regarding the Hometown Heroes project.",
+   "quote": "jensandersonistotalkwiththetownmanager regardingthehometownheroesproject."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Remaining commission budget",
+   "what_was_recorded": "The commission still needs to decide how to allocate its remaining budget; no amount is printed.",
+   "quote": "thecommissionalsoneedstodecideonwheretoallocateitsremainingbudget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Historical signage",
+   "what_was_recorded": "An idea was raised to consult the APDC on historical signage, which could be funded from the budget; no amount is printed.",
+   "quote": "thereistheideathat wecouldalsoconsult theapdctodiscusshistorical signage, whichcouldbefundedwiththebudget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Goodrich and Arnold Litch cemetery materials",
+   "what_was_recorded": "The Cemetery Commission wanted to know the costs of the materials for the Goodrich restoration; no amount is printed.",
+   "quote": "thecemeterycommissionwantedtoknowthecostsforthematerialsinvolved.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "meeting began at 7:12PM with a quorum",
+   "quote": "withaquorum, themeetingbeganat 7:12pm.",
+   "tags": [
+    "quorum",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes of October",
+   "resolution": "reviewed and accepted (no vote recorded)",
+   "quote": "theminutesfor themonthof october werereviewedandaccepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Attorney General open meeting law correspondence",
+   "resolution": "no action; agenda posting guidance received",
+   "quote": "thecommissionreceivedcorrespondencefromtheattorneygeneral'sofficeregardingtherecent openmeetinglawviolationcomplaint.",
+   "tags": [
+    "open meeting law",
+    "agendas"
+   ]
+  },
+  {
+   "topic": "Merger of APDC and Historical Commission",
+   "resolution": "chairs to meet with select boards",
+   "quote": "theapdcandhistorical commissionchairsaretomeet withtheselect boardsoontodiscussthemerger of thetwocommissions.",
+   "tags": [
+    "APDC",
+    "merger"
+   ]
+  },
+  {
+   "topic": "Town Survey",
+   "resolution": "awaiting signatures of town manager and town accountant",
+   "quote": "thetownsurveyisall set andjust requiresthesignaturesof thetownmanager andtownaccountant tomoveforward.",
+   "tags": [
+    "town survey"
+   ]
+  },
+  {
+   "topic": "Hometown Heroes project",
+   "resolution": "Jen Sanderson to talk with town manager",
+   "quote": "jensandersonistotalkwiththetownmanager regardingthehometownheroesproject.",
+   "tags": [
+    "Hometown Heroes"
+   ]
+  },
+  {
+   "topic": "Remaining budget and historical signage",
+   "resolution": "allocation still to be decided",
+   "quote": "thecommissionalsoneedstodecideonwheretoallocateitsremainingbudget.",
+   "tags": [
+    "budget",
+    "signage"
+   ]
+  },
+  {
+   "topic": "763 Mass Ave",
+   "resolution": "no correspondence received; no action",
+   "quote": "thereisstill nocorrespondencefromanyoneinvolvedwith763massave.",
+   "tags": [
+    "763 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Goodrich and Arnold Litch cemeteries",
+   "resolution": "Chairman reported on Cemetery Commission poll meeting; no commission action recorded",
+   "quote": "anoutlineencompassingtherestorationof goodrichcemeterywasprovided. muchof theworkisplannedtobedonebyvolunteers.",
+   "tags": [
+    "cemetery restoration",
+    "Goodrich cemetery",
+    "Arnold Litch cemetery",
+    "eminent domain"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:28, no vote recorded",
+   "quote": "withnofurther business, themeetingwasadjournedat 7:28.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "open meeting law",
+  "commission merger",
+  "town survey",
+  "Hometown Heroes",
+  "budget",
+  "signage",
+  "cemetery restoration",
+  "Goodrich cemetery",
+  "Arnold Litch cemetery",
+  "763 Mass Ave",
+  "eminent domain"
+ ],
+ "dropped_unquoted_by_field": {}
 }

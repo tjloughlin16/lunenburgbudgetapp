@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-09-12",
  "docid": "6762",
@@ -12,23 +12,413 @@
  },
  "votes": [
   {
-   "motion": "authorize the transfer of $5,000 from the reserve fund to the Council on Aging to cover the October and November MART transportation",
+   "motion": "Authorize the transfer of $5,000 from the reserve fund to the Council on Aging to cover October and November MART transportation.",
    "moved_by": "Dave Passios",
    "seconded_by": "Jean Russell",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "there was a motion to authorize the transfer of $5,000 from the reserve fund to the council on aging to cover the october and november mart transportation by dave passios, seconded by jean russell. roll call vote. chris menard aye, dave passios aye, jean russell aye, jay simeone aye, evan watters aye."
+   "quote": "there was a motion to authorize the transfer of $5,000 from the reserve fund to the council on aging to cover the october and november mart transportation"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to adjourn by dave passios, seconded by jay simeone. roll call vote. chris menard aye, dave passios aye, jean russell aye, jay simeone aye, evan watters aye."
+   "quote": "there was a motion to adjourn by dave passios, seconded by jay simeone."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. Section 9 notes that \"approval of minutes were postponed\" but no motion was made or voted on, so that is not counted.",
- "cost_usd": 0.0640004
+ "note": "Text extraction, not a scan; all readable. Two votes recorded: the $5,000 reserve fund transfer (roll call, five ayes listed, so outcome is \"passed\" with no printed tally) and adjournment (roll call, five ayes). Numbering in the minutes is irregular: New Business has lettered items a-d plus \"i\" and \"g\", and item numbers 8 and 9 each appear twice. Interim Town Manager's first-name-and-role lines are as printed; Ezequiel Ayala is recorded as speaking but his attendance is not separately stated, so he is marked present on the basis of speaking. Public comment: no speakers recorded. The Board Comment by Dave Passios is board comment, not public comment.",
+ "cost_usd": 0.01781237,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, committee member dave passios"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, committee member dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "present members: chair evan watters, vice chair chris menard, committee member dave passios"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member jean russell, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member jean russell, committee member jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Committee Member",
+   "status": "absent",
+   "quote": "absent members: committee member tom gray"
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "carter terenzini states there were 4 applications received for the sewer"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Director at the Lunenburg Counsel on Aging",
+   "status": "present",
+   "quote": "sue doherty states that this program is for everybody in the town"
+  },
+  {
+   "name": "Ezequiel Ayala",
+   "role": "Town Finance Director",
+   "status": "present",
+   "quote": "ezequiel ayala confirms he is planning on putting this article forward."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Inspector of Weights and Measures discussion deferred two weeks, and added to the agenda for the next scheduled meeting.",
+   "quote": "evan watters will add this to the agenda for the next scheduled"
+  },
+  {
+   "decision": "Interim Town Manager to review the Charter and history and trend lines, then work with counterparts on a 5-year financial forecast.",
+   "quote": "he will then discuss with his counterparts to produce a 5-year financial forecast."
+  },
+  {
+   "decision": "Interim Town Manager to contact MART about the Emerson Hospital travel question.",
+   "quote": "carter terenzini will reach out to mart and discuss with them since for most residents emerson"
+  },
+  {
+   "decision": "Budget presentation template circulated; a decision on it is to be provided to the Interim Town Manager by October 1st for department heads.",
+   "quote": "a decision needs to be provided to carter terenzini by october 1st to be given to department heads."
+  },
+  {
+   "decision": "Chair to present the split tax rate comparison with Maynard to the Budget Task Force within the next week.",
+   "quote": "evan watters is planning to provide the budget task force with the presentation within the next week."
+  },
+  {
+   "decision": "Approval of minutes postponed.",
+   "quote": "the approval of minutes were postponed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Inspector of Weights and Measures: salary and state inspection option",
+   "what_was_recorded": "The former inspector's salary was $3,000, and hiring the state to perform inspections was estimated at about $10,000, depending on the number of services.",
+   "figures_as_printed": [
+    "$3,000",
+    "$10,000"
+   ],
+   "quote": "the salary of the inspector of weights and measures was $3,000 and they have resigned."
+  },
+  {
+   "topic": "Inspector of Weights and Measures: state inspection cost",
+   "what_was_recorded": "Hiring the State of Massachusetts to complete the inspections was estimated to cost $10,000 plus or minus.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "this will cost $10,000 plus or minus depending on the number of services to be inspected."
+  },
+  {
+   "topic": "MART taxi and livery grant: request at fall Town Meeting",
+   "what_was_recorded": "The Interim Town Manager will request $20,000 at the fall Town Meeting to continue the MART program, which the current grant funds through end of September.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "carter terenzini will be requesting $20,000 at the fall town meeting to continue the program."
+  },
+  {
+   "topic": "MART grant gap, September 30 to November 30",
+   "what_was_recorded": "A funding gap between September 30 and November 30 was estimated to cost $5,000.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "there will be a gap between september 30th and november 30th that is estimated to cost $5,000."
+  },
+  {
+   "topic": "Reserve fund transfer to Council on Aging for MART",
+   "what_was_recorded": "The Committee voted on a $5,000 transfer from the reserve fund to cover October and November MART transportation.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "there was a motion to authorize the transfer of $5,000 from the reserve fund to the council on aging to cover the october and november mart transportation"
+  },
+  {
+   "topic": "Free cash to be spent",
+   "what_was_recorded": "The Interim Town Manager reported $100,000 of free cash from this year's budget that needs to be spent.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "there is $100,000 of free cash from this year's budget that needs to be spent."
+  },
+  {
+   "topic": "Chapter 70 state funding warrant article",
+   "what_was_recorded": "The state sent $31,882 in Chapter 70 funding, which the schools requested and which is proposed as a warrant article and supplemental appropriation.",
+   "figures_as_printed": [
+    "$31,882"
+   ],
+   "quote": "the state has sent $31,882 in chapter 70 funding."
+  },
+  {
+   "topic": "Marshall Park borrowing article",
+   "what_was_recorded": "The Parks Commission requested a warrant article to borrow an unstated sum for all remaining design and construction costs of Marshall Park. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the parks commission requested an article to borrow a sum of money for the purposes of funding all remaining costs of design and construction of marshall park."
+  },
+  {
+   "topic": "Trash contract",
+   "what_was_recorded": "The trash contract was reported resolved and within the budget; the contract is under final review and unsigned. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "trash contract- this has been resolved and within the budget."
+  },
+  {
+   "topic": "New growth versus budget projections",
+   "what_was_recorded": "New growth was anticipated to exceed the figure in the budgetary projections. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the new growth is anticipated to exceed the number in the budgetary"
+  },
+  {
+   "topic": "Capital project funding adequacy",
+   "what_was_recorded": "The Interim Town Manager believes it is likely that every capital account is underfunded; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "carter terenzini believes it's likely that every account is underfunded."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from the reserve fund to the Council on Aging to cover October and November MART transportation",
+   "amount_as_printed": "$5,000",
+   "outcome": "passed (roll call; five ayes recorded)",
+   "quote": "there was a motion to authorize the transfer of $5,000 from the reserve fund to the council on aging to cover the october and november mart transportation"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements (Tom Gray reappointment, vacancy, clerk opening)",
+   "resolution": "no action",
+   "quote": "there is a vacancy on the committee and an opening for a clerk.",
+   "tags": [
+    "appointments",
+    "vacancy"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no comments",
+   "quote": "there were no comments from the public or the committee.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Interim Town Manager Report (sewer applications, trash contract, new growth, free cash)",
+   "resolution": "no action; report received",
+   "quote": "carter terenzini states there were 4 applications received for the sewer",
+   "tags": [
+    "town manager",
+    "trash contract",
+    "free cash",
+    "new growth",
+    "sewer commission"
+   ]
+  },
+  {
+   "topic": "Finance Director Report",
+   "resolution": "no report",
+   "quote": "there was no report from the finance director.",
+   "tags": [
+    "finance director"
+   ]
+  },
+  {
+   "topic": "Weights and Measures inspector deficit",
+   "resolution": "deferred two weeks",
+   "quote": "carter terenzini would like to defer this discussion for 2 weeks to get a better understanding on the",
+   "tags": [
+    "weights and measures",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "MART taxi and livery grant deficit",
+   "resolution": "reserve fund transfer of $5,000 approved",
+   "quote": "the current mart grant expires at the end of september.",
+   "tags": [
+    "MART",
+    "council on aging",
+    "transportation",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Future capital projects with or without borrowing",
+   "resolution": "no action; forecast to be produced",
+   "quote": "carter terenzini will review the charter in the next couple of weeks",
+   "tags": [
+    "capital planning",
+    "forecast",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Review of budget process and suggestions",
+   "resolution": "no action; warrant articles listed",
+   "quote": "carter terenzini needs a minimum of 23 days to have a final warrant",
+   "tags": [
+    "budget process",
+    "warrant articles",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Budget presentation template",
+   "resolution": "template circulated; decision due October 1",
+   "quote": "evan watters sent a template to the committee for the budget",
+   "tags": [
+    "budget presentation",
+    "department heads"
+   ]
+  },
+  {
+   "topic": "Prudent investment warrant article",
+   "resolution": "no action; article to be put forward",
+   "quote": "ezequiel ayala confirms he is planning on putting this article forward.",
+   "tags": [
+    "prudent investment",
+    "trust funds"
+   ]
+  },
+  {
+   "topic": "Split tax rate presentation",
+   "resolution": "no action; to Budget Task Force",
+   "quote": "evan watters provided a presentation and comparison study with the town of",
+   "tags": [
+    "split tax rate",
+    "Maynard",
+    "tax levy"
+   ]
+  },
+  {
+   "topic": "DLS Financial Policy Manual draft",
+   "resolution": "no action; review planned",
+   "quote": "evan watters plans to review and compare our current manual and see if",
+   "tags": [
+    "DLS",
+    "financial policy"
+   ]
+  },
+  {
+   "topic": "Town Manager Search Committee update",
+   "resolution": "no action; update received",
+   "quote": "chris menard states that there is a group that the committee interviewed",
+   "tags": [
+    "town manager search"
+   ]
+  },
+  {
+   "topic": "Budget Task Force update",
+   "resolution": "no update",
+   "quote": "there were no updates provided.",
+   "tags": [
+    "budget task force"
+   ]
+  },
+  {
+   "topic": "Grant Writing Services update",
+   "resolution": "no update",
+   "quote": "c. grant writing services - update",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Consolidation of services and departments",
+   "resolution": "no discussion",
+   "quote": "there were no discussions related to this topic.",
+   "tags": [
+    "consolidation"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "postponed",
+   "quote": "the approval of minutes were postponed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "skipped",
+   "quote": "this topic was skipped for this meeting",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Topics for future meetings",
+   "resolution": "no additions",
+   "quote": "there are no additional topics to add to future agendas.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Important dates and upcoming meetings",
+   "resolution": "no action",
+   "quote": "13. upcoming meetings: a. 9/26/24 b. 10/10/24",
+   "tags": [
+    "calendar",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Board comment: Green Communities",
+   "resolution": "no action; grant to be submitted in October round",
+   "quote": "dave passios states that green communities met, and they are actively pursuing the mini split phase 2.",
+   "tags": [
+    "green communities",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:31 PM",
+   "quote": "there was a motion to adjourn by dave passios, seconded by jay simeone.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "reserve fund transfer",
+  "MART transportation",
+  "council on aging",
+  "weights and measures",
+  "free cash",
+  "capital planning",
+  "budget process",
+  "warrant articles",
+  "town manager search",
+  "split tax rate",
+  "chapter 70",
+  "special town meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

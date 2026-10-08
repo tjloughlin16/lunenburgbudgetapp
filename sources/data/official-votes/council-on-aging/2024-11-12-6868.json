@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2024-11-12",
  "docid": "6868",
@@ -12,31 +12,382 @@
  },
  "votes": [
   {
-   "motion": "Approve the October 8, 2024 minutes",
-   "outcome": "passed",
+   "motion": "Approve the minutes of October 8, 2024.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to approve the october 8, 2024 minutes. all approved, motion carried."
   },
   {
-   "motion": "Approve the development of the COA Sunshine Fund",
-   "outcome": "passed",
+   "motion": "Approve the development of the COA Sunshine Fund.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made and seconded to approve the development of the coa sunshine fund. all approved, motion carried."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd by macOS Vision; text is readable. Mover and seconder names not printed in the minutes for any motion.",
- "cost_usd": 0.0619134
+ "note": "Scanned minutes read by macOS Vision OCR, so quotes are copied from OCR text and may carry recognition errors. Votes are recorded only as 'All approved, motion carried' with no mover, seconder or count, so moved_by and seconded_by are empty and outcomes read 'passed'. The Board Comment sentence about Emerson or Clinton Hospital is cut off mid-sentence in the text. The chair appears as 'Deb Lincoln' in the opening line and 'Debbie Lincoln' in the roster; both are recorded as printed. The figure $2,983.00 is the only dollar amount in the text.",
+ "cost_usd": 0.01600567,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Debbie Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present. debbie lincoln (chairperson), susan doherty (director), jane rabbitt (vice chair), peter lincoln, jim"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "susan doherty (director), jane rabbitt (vice chair), peter lincoln, jim mcguigan"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "jane rabbitt (vice chair), peter lincoln, jim mcguigan, judy tarbell"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "jane rabbitt (vice chair), peter lincoln, jim mcguigan, judy tarbell"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood"
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, elena christopher, cathy beale, diane nowd, susan o'sullivan, & ana lockwood"
+  },
+  {
+   "name": "Helen Balcom",
+   "role": "",
+   "status": "absent",
+   "quote": "excused helen balcom"
+  },
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Lunenburg Select Board Chair",
+   "status": "present",
+   "quote": "guests lunenburg select board chair caesar nuzzolo"
+  },
+  {
+   "name": "Scott Rich",
+   "role": "Mart Connect Program (handles the Mart Connect Program, as printed)",
+   "status": "not stated",
+   "quote": "mr. rich agreed to attend."
+  },
+  {
+   "name": "Michele Beauvais",
+   "role": "Respectfully submitted by",
+   "status": "not stated",
+   "quote": "respectfully submitted by, michele beauvais"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Scott Rich of Mart Connect will investigate whether the mileage area can be extended and get back to the Director.",
+   "quote": "mr. rich will investigate if the mileage area can be extended"
+  },
+  {
+   "decision": "Scott Rich agreed to attend the Special Town Meeting that evening to answer public questions on the Mart Connect article.",
+   "quote": "mr. rich agreed to attend."
+  },
+  {
+   "decision": "Ms. Nowd volunteered to head up the COA Sunshine Fund.",
+   "quote": "ms. nowd volunteered to head up the fund."
+  },
+  {
+   "decision": "Recommended that all new members of the Council receive a copy of the MCOA Resource Guide.",
+   "quote": "it was recommended that all new members of the council receive a copy."
+  },
+  {
+   "decision": "The COA Holiday party will be held at the next meeting, on December 10.",
+   "quote": "the coa holiday party will be held at the next meeting on december 10"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tea Party fundraising",
+   "what_was_recorded": "The Tea Party raised money that benefits the Eagle House.",
+   "quote": "$2,983.00 was raised to benefit the eagle",
+   "figures_as_printed": [
+    "$2,983.00"
+   ]
+  },
+  {
+   "topic": "FY26 COA budget requests",
+   "what_was_recorded": "The Director gave an update on FY24 statistics ahead of FY26 budget requests and proposed presenting the numbers to the Selectboard; no dollar figures were printed.",
+   "quote": "update fy26 coa budget requests: ms. doherty gave an update on the fy24 statistics",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Meal Site Revolving Fund article",
+   "what_was_recorded": "A Special Town Meeting article to establish a Council on Aging Meal Site Revolving Fund was to be presented that evening; no amount was printed.",
+   "quote": "establishment of lunenburg council on aging meal site revolving fund: this article will be presented at special town meeting this evening.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital Plan - generator",
+   "what_was_recorded": "The generator has been installed and is awaiting startup; a stockade fence will be installed around it. No cost was printed.",
+   "quote": "generator - has been installed & waiting for the company to start it up.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Parking lot plans request to Capital Plan",
+   "what_was_recorded": "The request for parking lot plans was presented to Capital Plan, with no update since.",
+   "quote": "mr. ruth presented the request for the parking lot plans to",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ARPA submissions",
+   "what_was_recorded": "The kiosk and the rocking chairs, ARPA submissions, have been received. No amount was printed.",
+   "quote": "the kiosk and the rocking chairs have been received.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "a concerned citizen (by email, relayed by Mr. Nuzzolo)",
+   "stated_role": "concerned citizen",
+   "topic": "Mart Warrant Article mileage limit extension to UMass",
+   "quote": "mr. nuzzolo received an email from a concerned citizen regarding the mart warrant article."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action; Chair noted her husband's medical issues may affect interviewing prospective directors",
+   "quote": "ms. lincoln announced that her husband, peter, is having medical issues.",
+   "tags": [
+    "announcements",
+    "director search"
+   ]
+  },
+  {
+   "topic": "Public comment: Mart Warrant mileage question",
+   "resolution": "referred to Scott Rich, who will investigate",
+   "quote": "mr. rich will investigate if the mileage area can be extended",
+   "tags": [
+    "transportation",
+    "Mart Connect",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment: ambulance transport",
+   "resolution": "information shared; no action recorded",
+   "quote": "ms. christopher was questioning where the ambulance would take you if you called 911.",
+   "tags": [
+    "ambulance",
+    "emergency services"
+   ]
+  },
+  {
+   "topic": "Minutes approval, October 8, 2024",
+   "resolution": "approved",
+   "quote": "a motion was made and seconded to approve the october 8, 2024 minutes. all approved, motion carried.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Mart Connect article at Special Town Meeting",
+   "resolution": "Scott Rich agreed to attend the Special Town Meeting",
+   "quote": "mr. rich agreed to attend.",
+   "tags": [
+    "Mart Connect",
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "Meal Site Revolving Fund article",
+   "resolution": "to be presented at Special Town Meeting",
+   "quote": "this article will be presented at special town meeting this evening.",
+   "tags": [
+    "revolving fund",
+    "meals",
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "Process for Director replacement",
+   "resolution": "no interviews scheduled",
+   "quote": "there are no interviews scheduled as of yet.",
+   "tags": [
+    "staffing",
+    "director search"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters Inc.",
+   "resolution": "continued; recruits to decide at their next meeting",
+   "quote": "they will decide at their next meeting whether or not they will be able to take over.",
+   "tags": [
+    "Eagle House",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "COA Sunshine Fund",
+   "resolution": "approved development of the fund; Ms. Nowd to head it",
+   "quote": "a motion was made and seconded to approve the development of the coa sunshine fund.",
+   "tags": [
+    "Sunshine Fund",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Tea Party recap",
+   "resolution": "no action; $2,983.00 raised for Eagle House",
+   "quote": "this year's tea party was highly successful.",
+   "tags": [
+    "fundraising",
+    "Eagle House",
+    "Tea Party"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting, November 12, 2024",
+   "resolution": "members encouraged to attend; Salary Administration Plan updates reviewed",
+   "quote": "mr. nuzzolo reviewed the salary administration plan updates.",
+   "tags": [
+    "Special Town Meeting",
+    "salary administration"
+   ]
+  },
+  {
+   "topic": "FY26 COA budget requests",
+   "resolution": "update given; Director to seek Selectboard appointment",
+   "quote": "update fy26 coa budget requests: ms. doherty gave an update on the fy24 statistics",
+   "tags": [
+    "budget",
+    "FY26",
+    "statistics"
+   ]
+  },
+  {
+   "topic": "MCOA Resource Guide",
+   "resolution": "recommended that new members receive a copy",
+   "quote": "it was recommended that all new members of the council receive a copy.",
+   "tags": [
+    "resource guide",
+    "training"
+   ]
+  },
+  {
+   "topic": "Parking lot update",
+   "resolution": "no update from Capital Plan",
+   "quote": "however, there has been no update.",
+   "tags": [
+    "parking lot",
+    "Capital Plan"
+   ]
+  },
+  {
+   "topic": "ARPA submissions",
+   "resolution": "received; no action recorded",
+   "quote": "the kiosk and the rocking chairs have been received.",
+   "tags": [
+    "ARPA",
+    "kiosk"
+   ]
+  },
+  {
+   "topic": "Director's report: capital plan and events",
+   "resolution": "status reported; Holiday party set for December 10; no vote",
+   "quote": "window washing-ms. doherty stated that the windows have been completed and look great.",
+   "tags": [
+    "capital plan",
+    "generator",
+    "roof",
+    "kitchen",
+    "bocce court",
+    "outdoor electrical",
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "previously discussed; no new report",
+   "quote": "eagle house supporters report - previously discussed.",
+   "tags": [
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:40 am",
+   "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "Special Town Meeting",
+  "Mart Connect",
+  "transportation",
+  "capital plan",
+  "Eagle House",
+  "Sunshine Fund",
+  "volunteers",
+  "director search",
+  "fundraising",
+  "ARPA",
+  "minutes approval",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

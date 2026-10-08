@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2024-11-06",
  "docid": "6858",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve planning of Spring Vendor Fair for May 10, 2025",
+   "motion": "Have A. Clement proceed with the planning of the All Vendor Fair on May 10, 2025.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
@@ -20,15 +20,15 @@
    "quote": "k. menard made a motion to have a. clement proceed with the planning of the all vendor fair may 10, 2025. c. sullivan seconded. the chair took a vote. all in favor, motion carried (4-0)."
   },
   {
-   "motion": "Move forward with updated Marshall Park plan with new request at Town Meeting in May 2025",
+   "motion": "Move forward with the updated Marshall Park plan, with a new request at the Town Meeting in May 2025.",
    "moved_by": "C. Sullivan",
-   "seconded_by": "K. Menared",
+   "seconded_by": "K. Menared (as printed)",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "c. sullivan made a motion to move forward with the updated plan with a new request at the town meeting in may 2025. k. menared seconded. the chair took a vote. all in favor, motion carried (4-0)."
   },
   {
-   "motion": "Approve RDLA October 31, 2024, invoice #2455-02 for $24,200",
+   "motion": "Approve the RDLA October 31, 2024, invoice #2455-02 for $24,200.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Shapiro",
    "outcome": "passed 4-0",
@@ -36,24 +36,315 @@
    "quote": "k. menard made a motion to approve the rdla october 31, 2024, invoice #2455-02 for $24,200. c. shapiro seconded. the chair took a vote. all in favor, motion carried (4-0)."
   },
   {
-   "motion": "Allow skate park to move ahead with construction, with no interruption to use of all fields except T-ball through October 1, 2025",
+   "motion": "Allow the skate park group to proceed with construction, with no interruption to the use of all fields except T-ball through October 1, 2025.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "k. menard made a motion to allow the skate park to move ahead with construction, with no interruption to the use of all ﬁelds except for t-ball through october 1, 2025. c. sullivan seconded. the chair took a vote. all in favor, motion carried (4-0). ",
-   "quote_taken_from_text": true
+   "quote": "k. menard made a motion to allow the skate park to move ahead with construction, with no interruption to the use of all"
   },
   {
-   "motion": "Approve minutes of July 1, August 21, September 18, and October 10, 2024, with edits",
+   "motion": "Approve the minutes of July 1, August 21, September 18, and October 10, 2024, with edits.",
    "moved_by": "C. Sullivan",
    "seconded_by": "K. Menard",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "c. sullivan made a motion to approve the minutes of july 1, august 21, september 18, and october 10, 2024, with edits. k. menard seconded, the chair took a vote. all in favor (4-0)."
+   "quote": "c. sullivan made a motion to approve the minutes of july 1, august 21, september 18, and october 10, 2024, with edits."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0721874
+ "note": "Text is a 4-page extraction; the 'Page of 41-44' headers are PDF pagination, not minutes pages. Five motions recorded with a result (4-0); no motion to adjourn is recorded, only 'Adjourned: 8:33 pm', so no adjournment vote is listed. The minutes spell the seconder as 'K. Menared' and print the motion as made by 'K. Menard' (typo kept as printed). Carter Terenzini's role is not stated; C. Ruth (Facilities Director) is named only via the chair's report and is not listed as an attendee. The Special Town Meeting vote at the prior meeting is only reported, not recorded here, so it is not listed as a decision. Several quotes in attendee/public-comment entries are partial sentences from the same line, verbatim.",
+ "cost_usd": 0.01621547,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anita Scheipers",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: anita scheipers, karin menard, colleen shapiro, and christopher sullivan"
+  },
+  {
+   "name": "Tim Lawless",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: tim lawless"
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Additional Attendee (role not stated)",
+   "status": "present",
+   "quote": "additional attendees: carter terenzini"
+  },
+  {
+   "name": "Greg LaFreniere",
+   "role": "Public comment, 15 Park Street Terrace",
+   "status": "present",
+   "quote": "greg lafreniere, 15 park street terrace asked about the maintenance plan."
+  },
+  {
+   "name": "TJ Laughlin",
+   "role": "Public comment, 207 Rolling Acres Road",
+   "status": "present",
+   "quote": "tj laughlin, 207 rolling acres road expressed concern about the cost to maintain the"
+  },
+  {
+   "name": "Marianne Braithwaite",
+   "role": "Public comment, 204 Northfield Rd",
+   "status": "present",
+   "quote": "asked if the middle and high school paid to use the baseball or softball"
+  },
+  {
+   "name": "Brian DeFelice",
+   "role": "Public comment, 43 Brown Ave",
+   "status": "present",
+   "quote": "brian defelice, 43 brown ave expressed concerns with money being turned back to the town"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Marshall Park user fees topic deferred; the Commission will revisit it at the next meeting.",
+   "quote": "the commission will revisit this topic at the next meeting."
+  },
+  {
+   "decision": "C. Terenzini assigned Chris Ruth as the in-house project manager for Marshall Park (stated by Terenzini; no vote recorded).",
+   "quote": "has assigned chris ruth as the in-house project manager."
+  },
+  {
+   "decision": "Chair reported the Town Manager sent a letter to the state withdrawing the PARCs and Land and Water Conservation Funds grant applications; applicants were encouraged to reapply (reported, not voted).",
+   "quote": "the town manager sent a letter to the state to melissa cryon of the grants program"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park cost estimate increase",
+   "what_was_recorded": "The chair reported the cost estimates were 4 million over what was originally anticipated.",
+   "figures_as_printed": [
+    "4 million"
+   ],
+   "quote": "the increase in the cost estimates provided, which is 4 million over what was originally anticipated."
+  },
+  {
+   "topic": "Marshall Park 60% permitting design cost and ARPA return",
+   "what_was_recorded": "The chair said reaching 60% permitting design with updated estimates for phases 1A, 1B, 2A and 2B would cost $250,000-$300,000, with the remaining ARPA funds returned to the Town.",
+   "figures_as_printed": [
+    "$250,000-$300,000",
+    "$700,000-$750,000"
+   ],
+   "quote": "would be $250,000-$300,000. the remaining $700,000-$750,000 in arpa funds would be returned to the town."
+  },
+  {
+   "topic": "Invoice RDLA #2455-02 approved",
+   "what_was_recorded": "The Commission approved the RDLA October 31, 2024 invoice #2455-02 for $24,200.",
+   "figures_as_printed": [
+    "$24,200"
+   ],
+   "quote": "k. menard made a motion to approve the rdla october 31, 2024, invoice #2455-02 for $24,200."
+  },
+  {
+   "topic": "Marshall Park user fees for baseball and softball",
+   "what_was_recorded": "Baseball/softball program fees were stated; youth baseball payments and out-of-town players were reported.",
+   "figures_as_printed": [
+    "$20/head",
+    "$30/head",
+    "$25/head",
+    "$35",
+    "$3,360",
+    "$700"
+   ],
+   "quote": "the baseball/softball program is $20/head for residents and $30/head for non-residents."
+  },
+  {
+   "topic": "Youth baseball payments",
+   "what_was_recorded": "Youth baseball paid $3,360 for 168 players and the Phillies paid $700 for 20 out-of-town players.",
+   "figures_as_printed": [
+    "$3,360",
+    "$700"
+   ],
+   "quote": "youth baseball paid $3,360 for 168 players. the phillies paid $700 with 20 out-of-town players."
+  },
+  {
+   "topic": "Money returned to the Town from Marshall Park ARPA funds",
+   "what_was_recorded": "A resident expressed concern about money being turned back to the Town; the chair noted the Commission could not reallocate it.",
+   "figures_as_printed": [],
+   "quote": "brian defelice, 43 brown ave expressed concerns with money being turned back to the town"
+  },
+  {
+   "topic": "Future field maintenance cost",
+   "what_was_recorded": "A resident raised concern about the future cost of maintaining the fields; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "tj laughlin, 207 rolling acres road expressed concern about the cost to maintain the"
+  },
+  {
+   "topic": "Marshall Park septic system money",
+   "what_was_recorded": "The Board of Health asked for an update on the money available for the septic system at Marshall Park; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the board of health asked for an update regarding the money they have available for the septic system at marshall park."
+  },
+  {
+   "topic": "Skate park funding",
+   "what_was_recorded": "The skate park group confirmed its funding was in place; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "a. scheipers asked if their funding was in place and they stated yes."
+  },
+  {
+   "topic": "Marshall Park test pit and public meeting costs",
+   "what_was_recorded": "A concern that the quotes list a test pit but no cost for its observation, and no public meetings in the quotes; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "there is mention of a test pit but not cost for the observation of those and"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Greg LaFreniere",
+   "stated_role": "15 Park Street Terrace",
+   "topic": "Marshall Park maintenance plan",
+   "quote": "greg lafreniere, 15 park street terrace asked about the maintenance plan."
+  },
+  {
+   "speaker": "TJ Laughlin",
+   "stated_role": "207 Rolling Acres Road",
+   "topic": "Future cost to maintain fields",
+   "quote": "tj laughlin, 207 rolling acres road expressed concern about the cost to maintain the"
+  },
+  {
+   "speaker": "Marianne Braithwaite",
+   "stated_role": "204 Northfield Rd",
+   "topic": "Whether schools pay to use baseball/softball fields",
+   "quote": "asked if the middle and high school paid to use the baseball or softball"
+  },
+  {
+   "speaker": "Brian DeFelice",
+   "stated_role": "43 Brown Ave",
+   "topic": "Money returned to the Town",
+   "quote": "brian defelice, 43 brown ave expressed concerns with money being turned back to the town"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Facilities Director Updates",
+   "resolution": "no action; update received",
+   "quote": "a. scheipers had an updated provided by c. ruth: he is working on the bulk of the parks fall clean-ups",
+   "tags": [
+    "facilities",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Recreation Director Updates",
+   "resolution": "approved: proceed with All Vendor Fair planning May 10, 2025 (4-0)",
+   "quote": "k. menard made a motion to have a. clement proceed with the planning of the all vendor fair may 10, 2025.",
+   "tags": [
+    "recreation",
+    "vendor fair"
+   ]
+  },
+  {
+   "topic": "Marshall Park Updates",
+   "resolution": "approved: move forward with updated plan and new Town Meeting request May 2025 (4-0)",
+   "quote": "c. sullivan made a motion to move forward with the updated plan with a new request at the town meeting in may 2025.",
+   "tags": [
+    "marshall park",
+    "arpa",
+    "town meeting",
+    "design"
+   ]
+  },
+  {
+   "topic": "Approval of Invoices for Payment",
+   "resolution": "approved: RDLA invoice #2455-02 for $24,200 (4-0)",
+   "quote": "k. menard made a motion to approve the rdla october 31, 2024, invoice #2455-02 for $24,200.",
+   "tags": [
+    "invoices",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Boys and Girls Club Polar Plunge",
+   "resolution": "no action; liability release approved by C. Terenzini, event Nov 30, 2024",
+   "quote": "k. menard stated she reviewed the liability release with c. terenzini and he approved it",
+   "tags": [
+    "events",
+    "liability"
+   ]
+  },
+  {
+   "topic": "Marshall Park User Fees",
+   "resolution": "continued to next meeting",
+   "quote": "the commission will revisit this topic at the next meeting.",
+   "tags": [
+    "fees",
+    "baseball",
+    "softball"
+   ]
+  },
+  {
+   "topic": "Skate Park Update and Timing of Access",
+   "resolution": "approved: skate park may proceed with construction (4-0)",
+   "quote": "k. menard made a motion to allow the skate park to move ahead with construction, with no interruption to the use of all",
+   "tags": [
+    "skate park",
+    "construction"
+   ]
+  },
+  {
+   "topic": "Chair Updates",
+   "resolution": "no action; grant withdrawal reported",
+   "quote": "the town manager sent a letter to the state to melissa cryon of the grants program",
+   "tags": [
+    "grants",
+    "state"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved with edits (4-0)",
+   "quote": "c. sullivan made a motion to approve the minutes of july 1, august 21, september 18, and october 10, 2024, with edits.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next Meeting",
+   "resolution": "scheduled for December 18, 2024",
+   "quote": "next item on the agenda, next meeting on december 18, 2024.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "tags": [
+  "parks",
+  "marshall park",
+  "ARPA",
+  "Town Meeting",
+  "budget",
+  "invoices",
+  "skate park",
+  "vendor fair",
+  "field maintenance",
+  "grants",
+  "public comment",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

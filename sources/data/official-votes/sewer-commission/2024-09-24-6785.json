@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2024-09-24",
  "docid": "6785",
@@ -12,37 +12,36 @@
  },
  "votes": [
   {
-   "motion": "Elect Mike Mackin as Chair of the Commission.",
+   "motion": "Elect Mike M. as Chair of the Commission (reorganization).",
    "moved_by": "Scott D.",
    "seconded_by": "Eli T.",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "motion: scott d., second: eli t. to vote for mike m. as new chair for the commission. roll call vote: scott-aye, eli-aye and brett-aye. mike m. abstained"
+   "outcome": "not stated (roll call: Scott-aye, Eli-aye, Brett-aye; Mike M. abstained)",
+   "procedural": false,
+   "quote": "to vote for mike m. as new chair for the commission. roll call vote: scott-aye, eli-aye and brett-aye. mike m. abstained"
   },
   {
-   "motion": "Elect Scott Dall as Clerk of the Commission.",
-   "moved_by": "Brett",
-   "seconded_by": "Mike",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "motion": "Elect Scott Dall as Clerk of the Commission (reorganization).",
+   "moved_by": "Brett Ramsden",
+   "seconded_by": "Mike Mackin",
+   "outcome": "not stated (roll call: Eli-aye, Mike-aye, Brett-aye; Scott abstained)",
+   "procedural": false,
    "quote": "brett nominated scott dall as clerk and mike seconded. roll call vote: eli-aye, mike-aye and brett-aye. scott abstained"
   },
   {
-   "motion": "Elect Brett Ramsden as Vice-Chair of the Commission.",
-   "moved_by": "Mike",
-   "seconded_by": "Scott",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "motion": "Elect Brett Ramsden as Vice-Chair of the Commission (reorganization).",
+   "moved_by": "Mike Mackin",
+   "seconded_by": "Scott Dall",
+   "outcome": "not stated (roll call: Scott-aye, Eli-aye, Mike-aye; Brett abstained)",
+   "procedural": false,
    "quote": "mike nominated brett as vice-chair and scott seconded. roll call vote: scott-aye, eli-aye and mike-aye. brett abstained."
   },
   {
-   "motion": "Approve the estimate dated 9/4/24 from CTE at the cost of $66,770 with additional cost for pumping for the Mass 1 line repair.",
+   "motion": "Approve the CTE estimate dated 9/4/24 for the Mass 1 line repair at $66,770, with additional cost for pumping.",
    "moved_by": "Mike M.",
    "seconded_by": "Scott D.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: mike m. second: scott d. to approve the estimate dated 9/4/24 from cte at the cost of $66,770 with additional cost for pumping. discussion: scott asked how long the original pipe was in pl",
-   "quote_taken_from_text": true
+   "quote": "to approve the estimate dated 9/4/24 from cte at the cost of $66,770 with additional cost for pumping."
   },
   {
    "motion": "Move forward with the $64,625 repair of the inlet pipes connected to the pumps at Mass 1.",
@@ -50,18 +49,289 @@
    "seconded_by": "Scott D.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: eli t. second: scott d. to move forward with the $64,625 repair of the inlet pipes connected to the pumps at mass 1. roll call vote: scott-aye, eli-aye, mike-aye, and brett-aye."
+   "quote": "to move forward with the $64,625 repair of the inlet pipes connected to the pumps at mass 1. roll call vote: scott-aye, eli-aye, mike-aye, and brett-aye."
   },
   {
-   "motion": "Adjourn the meeting.",
+   "motion": "Adjourn the meeting at 7:12pm.",
    "moved_by": "Mike M.",
    "seconded_by": "Eli T.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: mike m. second: eli t. to adjourn at 7:12pm. roll call vote: scott-aye, eli-aye, mike-aye, and brett-aye."
+   "quote": "to adjourn at 7:12pm. roll call vote: scott-aye, eli-aye, mike-aye, and brett-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0697754
+ "note": "Text extract, not a scan. The header says the meeting was held via Zoom, so attendees are marked 'remote'. Joe Hurley is recorded as absent. The three reorganization votes print roll-call tallies and an abstention but no stated result, so their outcome is 'not stated'. The minutes list October 29, 2024 twice in the upcoming schedule, and the second entry is probably a typo, not a confirmed date. The minutes do not record approval of prior minutes. The FY24 transfer's amount is printed as 'about $46K'. The Special Town Meeting article refers to a prior vote that is not in this text.",
+ "cost_usd": 0.01860597,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Mackin",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "attendees: chair-mike mackin, vice-chair- brett ramsden, clerk-scott dall, member eli torres, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "attendees: chair-mike mackin, vice-chair- brett ramsden, clerk-scott dall, member eli torres, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Scott Dall",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "attendees: chair-mike mackin, vice-chair- brett ramsden, clerk-scott dall, member eli torres, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Eli Torres",
+   "role": "Member",
+   "status": "remote",
+   "quote": "attendees: chair-mike mackin, vice-chair- brett ramsden, clerk-scott dall, member eli torres, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "attendees: chair-mike mackin, vice-chair- brett ramsden, clerk-scott dall, member eli torres, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "remote",
+   "quote": "attendees: chair-mike mackin, vice-chair- brett ramsden, clerk-scott dall, member eli torres, dpw director- bill bernard, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Joe Hurley",
+   "status": "absent",
+   "quote": "absent: joe hurley brett opened the meeting at 6:04pm."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed the Mass 1 pipe repair should be done as soon as possible, before cold weather.",
+   "quote": "commission discussed and agreed it should be done as soon as possible."
+  },
+  {
+   "decision": "No new Commission vote is needed on the Special Town Meeting article; the earlier vote covers it.",
+   "quote": "bill added that a new vote is not needed."
+  },
+  {
+   "decision": "Once the Commission approved the Mass 1 work, the DPW Director was to contact CTE to proceed.",
+   "quote": "once the commission approves, bill will contact cte to get things going."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Manhole repair IFB, ARPA funding",
+   "what_was_recorded": "The Commission received ARPA federal money to repair manholes showing inflow and infiltration.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "bill stated that the town was given arpa federal money and the commission received $100k."
+  },
+  {
+   "topic": "Mass 1 pipe line repair estimate",
+   "what_was_recorded": "CTE's estimate for the rotted pipe repair at Mass 1, plus pumping trucks, totals around $70K; an emergency repair would cost about triple.",
+   "figures_as_printed": [
+    "$66,770",
+    "$2-3K",
+    "$70K"
+   ],
+   "quote": "the cost estimate is $66,770 plus $2-3k for the pumping trucks for a total around $70k."
+  },
+  {
+   "topic": "Cost of emergency repair at Mass 1",
+   "what_was_recorded": "Brett said an emergency burst of the high-pressure line would be quite expensive, probably triple the planned cost; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "dealing with it if it burst as an emergency would be quite expensive--probably triple the cost."
+  },
+  {
+   "topic": "Mass 1 suction line repair (second job)",
+   "what_was_recorded": "CTE's second job to repair the inlet pipes at the Mass 1 pumps costs $64,625.",
+   "figures_as_printed": [
+    "$64,625"
+   ],
+   "quote": "the cost will be $64,625 and cte has also hired pride environmental to do the repair."
+  },
+  {
+   "topic": "FY24 year-end surplus",
+   "what_was_recorded": "FY24 ended with revenues exceeding expenses by about $46K.",
+   "figures_as_printed": [
+    "$46K"
+   ],
+   "quote": "paula found out that fy24 ended with revenues exceeding expenses by about $46k."
+  },
+  {
+   "topic": "FY24 budget result and connection fees",
+   "what_was_recorded": "Higher betterments and connection fees produced the FY24 surplus; connection fees rose in July after rate increases in Fitchburg and Leominster. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the rates in fitchburg and leominster went up, causing lunenburg to significantly increase connection fees in july."
+  },
+  {
+   "topic": "FY25 budget outlook",
+   "what_was_recorded": "The FY25 budget is described as looking ok, with the Mass 1 repairs planned for in the budget. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "bill added that the fy25 budget is looking ok right now and the repairs at mass 1 were planned for in the budget."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of the FY24 revenue surplus into the Sewer Capital Reserve Stabilization Fund, to be proposed as a Special Town Meeting article.",
+   "amount_as_printed": "about $46K",
+   "outcome": "Proposed as a Special Town Meeting article; the minutes state no new Commission vote is needed.",
+   "quote": "the article for the special town meeting will be for transferring that money into the sewer capital reserve stabilization fund."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Brett",
+   "stated_role": "Vice-Chair",
+   "topic": "thanks to new commissioners",
+   "quote": "brett thanked scott and eli for being here as newly appointed sewer commissioners."
+  },
+  {
+   "speaker": "Mike",
+   "stated_role": "Chair",
+   "topic": "thanks to new commissioners",
+   "quote": "mike thanked eli and scott for stepping up and volunteering."
+  },
+  {
+   "speaker": "Brett",
+   "stated_role": "Vice-Chair",
+   "topic": "welcome to new commissioners",
+   "quote": "brett said he hopes they find it interesting- there is a lot to know and he thanked them for volunteering."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Reorganization of the Commission (Chair, Clerk, Vice-Chair)",
+   "resolution": "votes recorded; results not stated",
+   "quote": "chair: brett nominated mike mackin and scott seconded.",
+   "tags": [
+    "reorganization",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Business Manager position",
+   "resolution": "discussed; no action; active search for a new manager",
+   "quote": "bill noted that they had a long time manager named barb",
+   "tags": [
+    "staffing",
+    "business manager"
+   ]
+  },
+  {
+   "topic": "Assistant Business Manager position",
+   "resolution": "no action; hiring deferred until a Business Manager is hired",
+   "quote": "bill reported that they have a bunch of candidates but they want to wait until they hire a business manager.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Manhole repair IFB (I&I)",
+   "resolution": "informational; no action recorded",
+   "quote": "bill stated that the town was given arpa federal money and the commission received $100k.",
+   "tags": [
+    "manholes",
+    "inflow and infiltration",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting articles",
+   "resolution": "noted; no new vote needed",
+   "quote": "bill noted that the commission voted at the previous meeting to put in articles.",
+   "tags": [
+    "special town meeting",
+    "reserve fund"
+   ]
+  },
+  {
+   "topic": "Line repairs at Mass 1 (pipe repair estimate)",
+   "resolution": "approved 4-0",
+   "quote": "to approve the estimate dated 9/4/24 from cte at the cost of $66,770 with additional cost for pumping.",
+   "tags": [
+    "mass 1",
+    "pump station",
+    "repairs",
+    "contractor"
+   ]
+  },
+  {
+   "topic": "Suction lines at Mass 1 (second job)",
+   "resolution": "approved 4-0",
+   "quote": "to move forward with the $64,625 repair of the inlet pipes connected to the pumps at mass 1.",
+   "tags": [
+    "mass 1",
+    "pump station",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "FY24 budget update",
+   "resolution": "reported; no action",
+   "quote": "bill reported that fy24 ended up with more revenues than expenses, due to betterments and connection fees being higher.",
+   "tags": [
+    "budget",
+    "FY24",
+    "connection fees"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "suggestions listed; no action",
+   "quote": "brett suggested an update on mass 1 repairs, grease traps and delinquencies.",
+   "tags": [
+    "agenda",
+    "grease traps"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "brett said he hopes they find it interesting- there is a lot to know and he thanked them for volunteering.",
+   "tags": [
+    "welcome"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted; no action",
+   "quote": "upcoming scheduled sewer commission activities: october 9, 2024 @ 6pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:12pm, 4-0",
+   "quote": "to adjourn at 7:12pm. roll call vote: scott-aye, eli-aye, mike-aye, and brett-aye.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "reorganization",
+  "commission officers",
+  "business manager",
+  "staffing",
+  "Mass 1 pump station",
+  "pipe repair",
+  "contractor estimate",
+  "inflow and infiltration",
+  "ARPA funding",
+  "FY24 budget",
+  "FY24 surplus",
+  "special town meeting",
+  "connection fees",
+  "grease traps",
+  "remote meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

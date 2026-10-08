@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2024-09-26",
  "docid": "6788",
@@ -10,8 +10,359 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09262024-6788",
   "doc_url": "/docs/meetings/library-board-of-trustees/2024-09-26-minutes-6788.txt"
  },
- "votes": [],
- "dropped_unquoted": 3,
- "note": "Three procedural votes recorded: two to approve prior minutes and one to adjourn. No substantive motions appear to have been voted on during this meeting; items discussed (such as the Bob Conroy Memorial Tree Garden, facility upgrades, and various library projects) were presented and discussed but no formal votes were recorded for them.",
- "cost_usd": 0.0897134
+ "votes": [
+  {
+   "motion": "Approve the minutes of June 20, 2024, as amended.",
+   "moved_by": "Harry",
+   "seconded_by": "Donna",
+   "outcome": "passed unanimously (roll call)",
+   "procedural": true,
+   "quote": "harrymadeamotiontoaccept theminutesof june20, 2024asamended, secondedbydonna. themotionpassedunanimouslybyroll call vote."
+  },
+  {
+   "motion": "Approve the minutes of July 19, 2024, as amended.",
+   "moved_by": "Harry",
+   "seconded_by": "Jana",
+   "outcome": "passed unanimously (roll call)",
+   "procedural": true,
+   "quote": "harrymadeamotiontoaccept theminutesof july19, 2024asamended, secondedbyjana. themotionpassedunanimouslybyroll call vote."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Donna",
+   "seconded_by": "Jana",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "donnamadeamotiontoadjourn, secondedbyjana. meetingadjournedat 8:44pm."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is machine-extracted with spaces collapsed, so some words are joined in the source (for example, names like \"Harry Kubetz\" appear as \"HarryKubetz\"); quotes are copied as they appear in the extracted text, and names are given with the space restored. Pages 4 to 11 are attachments (the Director's Report budget tables and the Youth Services and Adult Services trustee reports), not minutes prose; the table totals come from them. Roll-call votes on the minutes record a unanimous result with no tally printed. The adjournment motion records no vote result, only that the meeting adjourned at 8:44pm. Lydia Gravell, Debbie Laffond and Joslyn Davis wrote or signed attached reports but are not recorded as attending, so they are not listed as attendees. Carter Terenzini, Anne Aubrey and Ellen Griffin are mentioned but did not take part. Attendance is from the printed Attending line; no roll-call of arrivals or departures is recorded.",
+ "cost_usd": 0.02157137,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "remote",
+   "quote": "attending: harrykubetz(remote), dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "thelplbtmeetingwascalledtoorder at 6:49pmbyvicechair dickmailloux."
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "",
+   "status": "present",
+   "quote": "attending: harrykubetz(remote), dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "",
+   "status": "present",
+   "quote": "attending: harrykubetz(remote), dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: harrykubetz(remote), dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "remote",
+   "quote": "attending: harrykubetz(remote), dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: harrykubetz(remote), dickmailloux, jana-leebalish, lauraboussom, donnasaiia, maiawentrup(remote), muir haman- director lpl"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "presented the Bob Conroy Memorial Tree Garden plan",
+   "status": "present",
+   "quote": "tributetobobconroydiscussionrobinveneziapresentedaplanfor abobconroymemorial treegarden."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dick will ask Anne Aubrey and Ellen Griffin to publicize the open board position.",
+   "quote": "dickwill askanneaubreyandellengriffintopublicizetheopenboardposition."
+  },
+  {
+   "decision": "The School Program (5th Grade/Other Grade(s)) item is moved to next month's agenda.",
+   "quote": "school program(5thgrade/othergrade(s)) discussionmovetonext month'sagenda"
+  },
+  {
+   "decision": "The Director's review is to be placed on next month's agenda, as directed by Dick.",
+   "quote": "dicksaidnext monththedirector'sreviewshouldbeontheagenda.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2024 budget totals (Director's Report attachment)",
+   "what_was_recorded": "The FY24 budget table prints a total budget and total expended with a percent expended.",
+   "figures_as_printed": [
+    "561,300$",
+    "536,762$",
+    "96%"
+   ],
+   "quote": "totals 561,300$ 536,762$ 96%"
+  },
+  {
+   "topic": "FY2025 budget totals (Director's Report attachment)",
+   "what_was_recorded": "The FY25 budget table prints a total budget, total expended to date and percent expended.",
+   "figures_as_printed": [
+    "592,063$",
+    "114,755$",
+    "19%"
+   ],
+   "quote": "totals 592,063$ 114,755$ 19%"
+  },
+  {
+   "topic": "FY2024 line items and encumbrances",
+   "what_was_recorded": "Office Supplies and Library Material are higher in the 2024 budget than in 2025 due to transfers from other accounts; amounts left in Electricity, Heating and Library Materials will be spent, with items encumbered.",
+   "figures_as_printed": [],
+   "quote": "muir hasitemsfor theselinesthat havebeenencumbered."
+  },
+  {
+   "topic": "FY2025 electricity and heating",
+   "what_was_recorded": "Electricity and heating are low because of solar credits and an HVAC repair; the HVAC was no longer running when it should not.",
+   "figures_as_printed": [],
+   "quote": "fy2025budget updateelectricityandheatingislowduetosolar creditsandarepair tothehvac, whichisnolonger runningwhenitshouldn't."
+  },
+  {
+   "topic": "FY24 Revolving Fund revenue",
+   "what_was_recorded": "FY24 Revolving Fund revenue was an increase over previous years, likely related to copy and print fees.",
+   "figures_as_printed": [
+    "$3224"
+   ],
+   "quote": "fy24 revolving fund revenue was $3224, an increase over previous years."
+  },
+  {
+   "topic": "Main Street Bank lunch program",
+   "what_was_recorded": "Main Street Bank's Ellen has promised money for a lunch program next summer.",
+   "figures_as_printed": [],
+   "quote": "ellen, frommainstreet bank, haspromisedmoneyfor alunchprogramnext summer."
+  },
+  {
+   "topic": "Main Street Bank grant funding for library projects",
+   "what_was_recorded": "Ellen said several proposed projects would meet the bank's requirements for funding; Muir will apply through the online grant page.",
+   "figures_as_printed": [],
+   "quote": "ellensaidmanyof theprojects, includingfurniturefor theteenroom, abookmobile, anevchargingstation, andasolar shadeforthepatiowouldmeet their requirementsfor funding."
+  },
+  {
+   "topic": "LSTA civic hub proposal",
+   "what_was_recorded": "The LSTA proposal was not approved for funding; it was too large a request and will be cut and reapplied for next year.",
+   "figures_as_printed": [],
+   "quote": "thelstaproposal for acivichubproject wasnot approvedfor funding."
+  },
+  {
+   "topic": "ARPA bids and excess budget",
+   "what_was_recorded": "Bids on the exterior painting project came in lower than expected; the excess could fund the patio solar shade or a water pump in the Proctor Memorial Garden.",
+   "figures_as_printed": [],
+   "quote": "wehavereceivedbidsontheexterior paintingproject, andtheyhavecomeinlower thanexpected."
+  },
+  {
+   "topic": "Library invested funds",
+   "what_was_recorded": "Invested funds are over $100K.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "libraryinvestedfundsupdateinvestedfundsareover $100k."
+  },
+  {
+   "topic": "Friends of LPL shades and excess sign funds",
+   "what_was_recorded": "No bids were received for the main hall shades; the sign came in under budget and the excess can be reallocated to the Teen Room renovation if needed.",
+   "figures_as_printed": [],
+   "quote": "thesignwasunder budget andtheexcessfundscanbereallocatedtotheteenroomrenovationif needed."
+  },
+  {
+   "topic": "HVAC maintenance cost",
+   "what_was_recorded": "The HVAC continues to need regular and costly maintenance; Facilities is trying a new contractor.",
+   "figures_as_printed": [],
+   "quote": "thehvaccontinuestoneedregular andcostlymaintenance."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line-item transfers from other accounts, which the Director said make Office Supplies and Library Material higher in the FY2024 budget than in FY2025.",
+   "amount_as_printed": "",
+   "outcome": "described only; no amount or vote printed",
+   "quote": "arehigher inthe2024budget thanthe2025budget duetotransfersfromother accounts."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Moment of silence for Bob Conroy",
+   "resolution": "held",
+   "quote": "theboardheldamoment of silenceinmemoryof bobconroy.",
+   "tags": [
+    "tribute"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "publiccomment● nopubliccomment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (June 20 and July 19, 2024)",
+   "resolution": "approved",
+   "quote": "approval of minutesof june20&july19",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report: FY2024 and FY2025 budget updates, staff, programs",
+   "resolution": "reported; no action",
+   "quote": "director'sreportfy2024budget updatelineitemssuchasofficesuppliesandlibrarymaterial",
+   "tags": [
+    "budget",
+    "staff",
+    "programs",
+    "summer reading"
+   ]
+  },
+  {
+   "topic": "Technology update",
+   "resolution": "reported; no action",
+   "quote": "technologyupdatemuir hasresumedregular weeklymeetingswiththeitdepartment",
+   "tags": [
+    "technology",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Building and maintenance update",
+   "resolution": "reported; no action",
+   "quote": "building&maintenanceupdatelakeviewhastakenover groundsmaintenance",
+   "tags": [
+    "facilities",
+    "HVAC"
+   ]
+  },
+  {
+   "topic": "Open board position",
+   "resolution": "discussed; Dick to ask for publicity",
+   "quote": "openboardpositiondiscussion/suggestionsdickwill askanneaubreyandellengriffintopublicizetheopenboardposition.",
+   "tags": [
+    "board vacancy"
+   ]
+  },
+  {
+   "topic": "Tribute to Bob Conroy: memorial tree garden",
+   "resolution": "discussed; plan presented",
+   "quote": "tributetobobconroydiscussionrobinveneziapresentedaplanfor abobconroymemorial treegarden.",
+   "tags": [
+    "tribute",
+    "garden"
+   ]
+  },
+  {
+   "topic": "School program (5th Grade/Other Grade(s))",
+   "resolution": "moved to next month's agenda",
+   "quote": "school program(5thgrade/othergrade(s)) discussionmovetonext month'sagenda",
+   "tags": [
+    "school programs"
+   ]
+  },
+  {
+   "topic": "ARPA update",
+   "resolution": "reported; no action",
+   "quote": "arpaupdateadditional arparequestswerenot approvedbytheselect board.",
+   "tags": [
+    "ARPA",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Teen Room usage policy",
+   "resolution": "no update",
+   "quote": "teenroomusagepolicynoupdate.",
+   "tags": [
+    "teen room"
+   ]
+  },
+  {
+   "topic": "Library invested funds",
+   "resolution": "reported; no action",
+   "quote": "libraryinvestedfundsupdateinvestedfundsareover $100k.",
+   "tags": [
+    "investments"
+   ]
+  },
+  {
+   "topic": "Library sign",
+   "resolution": "reported; one light to fix",
+   "quote": "librarysignupdatetheinstallationof thesignandlightinghasbeencompleted.",
+   "tags": [
+    "sign"
+   ]
+  },
+  {
+   "topic": "Outreach plan",
+   "resolution": "reported; no action",
+   "quote": "outreachplanupdatethelackof thefarmer'smarket thisyear hasbeenalossfor outreach.",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Friends update",
+   "resolution": "reported; no action",
+   "quote": "friendsupdatetherewerenobidsfor theshadesfor themainhall.",
+   "tags": [
+    "Friends of LPL"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "Director's review to be on next month's agenda",
+   "quote": "boardcommentdicksaidnext monththedirector'sreviewshouldbeontheagenda.",
+   "tags": [
+    "director review",
+    "commendation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:44pm",
+   "quote": "adjourndonnamadeamotiontoadjourn, secondedbyjana. meetingadjournedat 8:44pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library budget",
+  "FY2024 budget",
+  "FY2025 budget",
+  "summer reading program",
+  "facilities and HVAC",
+  "ARPA",
+  "grants and funding",
+  "Main Street Bank",
+  "board vacancy",
+  "Bob Conroy memorial garden",
+  "programs and outreach",
+  "staffing",
+  "technology",
+  "Friends of LPL",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

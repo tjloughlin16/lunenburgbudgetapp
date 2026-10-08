@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-10-08",
  "docid": "6808",
@@ -12,24 +12,343 @@
  },
  "votes": [
   {
-   "motion": "Approve the Minutes of November 28, 2023 and December 5, 2023",
+   "motion": "Approve the minutes of November 28, 2023 and December 5, 2023.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Member Emkey",
    "outcome": "passed 3-0-0",
    "procedural": true,
-   "quote": "motion by member alonzo to approve the minutes of november 28, 2023 and december 5, 2023. seconded by member emkey. call for the vote: three-aye. the motion passed unanimously (3-0-0)."
+   "quote": "motion by member alonzo to approve the minutes of november 28, 2023 and december 5, 2023."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Member Emkey",
    "outcome": "passed 3-0-0",
    "procedural": true,
-   "quote": "member alonzo moved to adjourn. seconded by member emkey. call for the vote: three- aye. the motion passed unanimously (3-0-0)",
-   "quote_taken_from_text": true
+   "quote": "member alonzo moved to adjourn. seconded by member emkey."
+  },
+  {
+   "motion": "Approve the minutes of October 8, 2024 (recorded in the approval block dated January 6, 2026, not at this meeting).",
+   "moved_by": "Chair Caesar Nuzzolo",
+   "seconded_by": "Clerk Renee Emkey",
+   "outcome": "passed 4-0-1",
+   "procedural": true,
+   "quote": "chair caesar nuzzolo made the motion to approve the minutes of october 8, 2024. seconded by clerk renee emkey. call for the vote: four-aye. one abstention (member mcleod)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes only. The notation at the end of the document (approval on January 6, 2026) records the later approval of these minutes, not a vote from the October 8, 2024 meeting itself, and is therefore not included.",
- "cost_usd": 0.07178140000000001
+ "note": "Text extraction, not a scan. Votes are the three motions the minutes print with a result: approval of Nov 28 and Dec 5, 2023 minutes (3-0-0), adjournment (3-0-0), and the approval of the Oct 8, 2024 minutes, which appears only in the approval block dated January 6, 2026 and is not a vote taken at this meeting. The Accounts Payable warrant ($115,843.64) and the Tax Title policy have no recorded vote. The 2026 approval block conflicts with the attendance header: it names Renee Emkey as Clerk (header: Member), names Member McLeod, who does not appear in the meeting's attendance, and does not mention Member Alonzo. Minute Clerk Anthony Senesi is named only as the minutes' author. No transfers with amounts are recorded. Budget figures are few and most budget discussion carries no dollar figure.",
+ "cost_usd": 0.018079770000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "c hair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "member tom alonzo stated that there was a time error on a fall special town meeting website post."
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Member",
+   "status": "present",
+   "quote": "member renee emkey asked if the treasurer has a draft form for boards and committees to fill"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "members absent: vice-chair michael-ray jeffreys and clerk amanda moore"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "members absent: vice-chair michael-ray jeffreys and clerk amanda moore"
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "interim town manager carter terenzini provided his town manager report to the board."
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Chair of the Town Manager Screening Committee",
+   "status": "present",
+   "quote": "tim murphy, 97 island road, chair of the town manager screening committee, described the status of determining a new town manager."
+  },
+  {
+   "name": "George Burden",
+   "role": "public commenter, 39 Cortland Circle",
+   "status": "remote",
+   "quote": "george burden, 39 cortland circle (via zoom): commented that he filed multiple public records"
+  },
+  {
+   "name": "Anthony Senesi",
+   "role": "Minute Clerk",
+   "status": "not stated",
+   "quote": "anthony senesi, minute clerk"
+  },
+  {
+   "name": "McLeod",
+   "role": "Member (named only in the 2026 approval block)",
+   "status": "not stated",
+   "quote": "one abstention (member mcleod)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Interim Town Manager will obtain the Treasurer's draft form for boards and committees to express interest in tax-title properties, for the Board to review.",
+   "quote": "he will get the form from the treasurer for the board to review."
+  },
+  {
+   "decision": "The Interim Town Manager will provide a red-lined copy of the Tax Title Policy (s. 3.08) for the Board's official vote at the next meeting.",
+   "quote": "he will provide the board with a red-lined copy of the policy for the board's official vote at the next meeting."
+  },
+  {
+   "decision": "The Interim Town Manager asked the Treasurer for a list of properties past the one-year redemption period and the current process for them.",
+   "quote": "the interim town manager asked the treasurer to provide a list and the current process for properties in this situation."
+  },
+  {
+   "decision": "Ratification of the Town Manager's appointment of Lieutenant Jeffrey Thibodeau as Interim Chief of Police was deferred to the next week's Select Board meeting.",
+   "quote": "chair nuzzolo stated that ratification will occur at next week's select board meeting."
+  },
+  {
+   "decision": "Member Emkey requested that the Interim Town Manager determine next steps for the high-deductible health insurance plan for employees.",
+   "quote": "member emkey requested that the interim town manager determine next steps for the high- deductible health insurance plan for employees",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "The Board provided the Interim Town Manager with ministerial changes to the amended Tax Title policy.",
+   "quote": "the board provided the interim town manager with some ministerial changes for the amended policy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "The minutes record an Accounts Payable warrant in a stated amount; no vote on the warrant is recorded.",
+   "quote": "accounts payable warrant in the amount of $115,843.64.",
+   "figures_as_printed": [
+    "$115,843.64"
+   ]
+  },
+  {
+   "topic": "Council on Aging meal site and program budget",
+   "what_was_recorded": "The Council on Aging may request more hours for the Meal Site Manager and an increase to the program line item; warrant articles are expected for MART Connect and the meals site revolving fund. No dollar figure is printed.",
+   "quote": "the council on aging may request additional hours for the meal site manager position from 19.5 hours to 26 hours and an increase for the program line item",
+   "figures_as_printed": [
+    "19.5 hours",
+    "26 hours"
+   ]
+  },
+  {
+   "topic": "ARPA distribution",
+   "what_was_recorded": "ARPA distribution is described as status quo; bids are due in two weeks and may require distribution adjustments for the MILO system and the Adult Activity Center roof. The Ritter Memorial Building bids will be considered based on available ARPA funding. No dollar figure is printed.",
+   "quote": "there may have to be distribution adjustments in regard to the milo system and the adult activity center roof.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Forensic accounting study for the Town",
+   "what_was_recorded": "The Budget Task Force discussed a forensic accounting study for the Town; the Chair of the Task Force will investigate it. No dollar figure is printed.",
+   "quote": "the budget task force met last night and talked about the idea of a forensic accounting study done for the town.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Eagle House Supporters dissolution",
+   "what_was_recorded": "The Eagle House Supporters non-profit is being dissolved into the Council on Aging Gift Fund. No dollar figure is printed.",
+   "quote": "the eagle house supporters non-profit is being dissolved into the council on aging gift fund.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Public Access fund transfers (public comment)",
+   "what_was_recorded": "A resident raised concerns about funds being transferred to the Public Access fund. No dollar figure is printed.",
+   "quote": "he has concerns with funds being transferred to the public access fund.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "George Burden",
+   "stated_role": "39 Cortland Circle (via Zoom)",
+   "topic": "public records requests, Zoning Board of Appeals, septic system",
+   "quote": "george burden, 39 cortland circle (via zoom): commented that he filed multiple public records"
+  },
+  {
+   "speaker": "George Burden",
+   "stated_role": "39 Cortland Circle (via Zoom)",
+   "topic": "audit of his family, Public Access fund, forensic accounting",
+   "quote": "commented that on january 9, 2024, the board persecuted his family regarding an audit."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "called to order; no action",
+   "quote": "c hair caesar nuzzolo called the meeting to order at 7:00 pm and led the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard; no action",
+   "quote": "george burden, 39 cortland circle (via zoom): commented that he filed multiple public records",
+   "tags": [
+    "public comment",
+    "records requests",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announced; no action",
+   "quote": "c hair nuzzolo stated that yard waste disposal dates are october 26th through december 14th, and excluding thanksgiving weekend.",
+   "tags": [
+    "announcements",
+    "trash",
+    "Halloween",
+    "town meeting"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Communications from other boards: Town Manager Screening Committee",
+   "resolution": "status reported; no action",
+   "quote": "tim murphy, 97 island road, chair of the town manager screening committee, described the status of determining a new town manager.",
+   "tags": [
+    "town manager search",
+    "recruiting firm"
+   ]
+  },
+  {
+   "topic": "Appointments, ratifications and resignations",
+   "resolution": "ratification deferred to next meeting",
+   "quote": "chair nuzzolo stated that ratification will occur at next week's select board meeting.",
+   "tags": [
+    "police",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Interim Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "interim town manager carter terenzini provided his town manager report to the board.",
+   "tags": [
+    "staffing",
+    "procurement",
+    "ARPA",
+    "payroll",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Old business: ARPA status",
+   "resolution": "status update; no action",
+   "quote": "the interim town manager stated that it is the status quo regarding arpa distribution.",
+   "tags": [
+    "ARPA",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Current business: Tax Title Policy s. 3.08",
+   "resolution": "continued to next meeting for official vote",
+   "quote": "he will provide the board with a red-lined copy of the policy for the board's official vote at the next meeting.",
+   "tags": [
+    "tax title",
+    "policy",
+    "property"
+   ]
+  },
+  {
+   "topic": "Minutes approval (November 28 and December 5, 2023)",
+   "resolution": "approved 3-0-0",
+   "quote": "motion by member alonzo to approve the minutes of november 28, 2023 and december 5, 2023.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "accounts payable warrant listed; no vote recorded",
+   "quote": "accounts payable warrant in the amount of $115,843.64.",
+   "tags": [
+    "warrants",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Action items: high-deductible health insurance plan",
+   "resolution": "directed to Interim Town Manager",
+   "quote": "member emkey requested that the interim town manager determine next steps for the high- deductible health insurance plan for employees",
+   "tags": [
+    "health insurance",
+    "employees"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "member emkey stated that the school department's director of facilities and grounds, eric hevy has resigned from his position",
+   "tags": [
+    "school committee",
+    "budget task force",
+    "council on aging",
+    "IT consolidation"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "announced; no action",
+   "quote": "chair nuzzolo announced that the select board will be meeting on october 15, 2024, and october 22, 2024.",
+   "tags": [
+    "schedule",
+    "goals"
+   ]
+  },
+  {
+   "topic": "Public comment (closing) and Board comment",
+   "resolution": "heard; no action",
+   "quote": "commented that on january 9, 2024, the board persecuted his family regarding an audit.",
+   "tags": [
+    "public comment",
+    "audit",
+    "forensic accounting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:48 PM, passed 3-0-0",
+   "quote": "member alonzo moved to adjourn. seconded by member emkey.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "town manager search",
+  "ARPA",
+  "tax title policy",
+  "council on aging",
+  "school committee",
+  "public comment",
+  "minutes approval",
+  "warrants",
+  "health insurance",
+  "forensic accounting",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

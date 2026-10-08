@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-11-13",
  "docid": "6871",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Reallocate surpluses to cover capital overruns as presented",
+   "motion": "Reallocate surpluses to cover capital overruns, as presented.",
    "moved_by": "Member Jeffreys",
    "seconded_by": "Tom Alonzo",
    "outcome": "passed 5-0-0",
@@ -20,15 +20,15 @@
    "quote": "member jeffreys moved to reallocate surpluses to cover capital overruns as presented. tom alonzo seconded the motion. the motion passed unanimously. (5-0-0)"
   },
   {
-   "motion": "Commit $387,565 of ARPA funds for the purpose of purchasing body camera upgrades for the police department ($45,000), power stretcher and loader ($74,000), replacement of 15 portable radios ($50,000), a stair chair ($23,000), gas powered cement mixer ($4,720), mini excavator ($72,500), trailer for the mini excavator ($14,700), a pickup truck with plow for the school department ($64,780.05), Middle High School window safety film ($26,865), and a fence for the council on aging generator ($12,000)",
+   "motion": "Commit $387,565 of ARPA funds for body camera upgrades, a pickup truck with plow, and other listed police, fire, school and council on aging items.",
    "moved_by": "Member Jeffreys",
    "seconded_by": "Member Moore",
    "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "member jeffreys moved for the select board to commit $387,565 of arpa funds for the purpose of purchasing body camera upgrades for the police department ($45,000), power stretcher and loader ($74,000), replacement of 15 portable radios ($50,000), a stair chair ($23,000), gas powered cement mixer ($4,720), mini excavator ($72,500), trailer for the mini excavator ($14,700), a pickup truck with plow for the school department ($64,780.05), middle high school window safety film ($26,865), and a fence for the council on aging generator ($12,000). member moore seconded. the motion passed unanimously (5-0-0)."
+   "quote": "member jeffreys moved for the select board to commit $387,565 of arpa funds for the purpose of purchasing body camera upgrades for the police department ($45,000), power"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Member Alonzo",
    "seconded_by": "Member Jeffreys",
    "outcome": "passed 5-0-0",
@@ -36,7 +36,7 @@
    "quote": "member alonzo moved to adjourn the meeting. member jeffreys seconded the motion passed unanimously (5-0-0)."
   },
   {
-   "motion": "Approve the minutes from November 13, 2024",
+   "motion": "Approve the minutes of November 13, 2024.",
    "moved_by": "Member Tom Alonzo",
    "seconded_by": "Member Amanda Moore",
    "outcome": "passed 5-0-0",
@@ -45,6 +45,194 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The fourth vote (approval of minutes) is recorded in these minutes as having occurred on February 4, 2025, at a subsequent Select Board meeting. It is included here because it is recorded in this document. The first three votes occurred during the November 13, 2024 meeting itself.",
- "cost_usd": 0.1048424
+ "note": "Text extract of a two-page minutes document, not a scan; all votes are recorded with counts. The minutes list the Munis, Parks and ARPA items without a single vote on the Parks phases. The 'Upcoming Meeting' schedule gives November 19 and December 3 with no weekday attached in that line. The itemized ARPA amounts sum to $387,565.05 against the stated $387,565 total; the $0.05 gap sits in the printed $64,780.05 pickup-truck line. This is an observation from recomputing the printed figures, not a correction in the minutes. The surplus reallocation is recorded as a transfer with no amount printed, since the minutes give none.",
+ "cost_usd": 0.015122070000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo"
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "also present: carter terenzini, interim town manager"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "a resident, 436 Reservoir Road (public comment)",
+   "status": "present",
+   "quote": "glenn mcleod, 436 reservoir road:, a resident, addressed the board regarding the previous"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to revisit the remaining ARPA requests and get updated information for its next meeting on Tuesday.",
+   "quote": "the board agreed to revisit the remaining requests and get updated information for their next meeting on tuesday."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal building design committee ARPA balance",
+   "what_was_recorded": "The municipal building design committee project came in under an ARPA allocation of $40,000.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "starting with the municipal building design committee, which came in under $40,000."
+  },
+  {
+   "topic": "Public exterior envelope ARPA balance",
+   "what_was_recorded": "The public exterior envelope project had $27,000 remaining.",
+   "figures_as_printed": [
+    "$27,000"
+   ],
+   "quote": "public exterior envelope had $27,000 remaining."
+  },
+  {
+   "topic": "Procter Memorial Garden ARPA balance",
+   "what_was_recorded": "The Procter Memorial Garden project was all set with $1 remaining.",
+   "figures_as_printed": [
+    "$1"
+   ],
+   "quote": "procter memorial garden was all set with $1 remaining."
+  },
+  {
+   "topic": "Teen room ARPA estimate",
+   "what_was_recorded": "The teen room project came in at $107,000 according to estimate.",
+   "figures_as_printed": [
+    "$107,000"
+   ],
+   "quote": "teen room came in at $107,000 according to estimate."
+  },
+  {
+   "topic": "Parks Commission ARPA return",
+   "what_was_recorded": "The Parks Commission was returning approximately $800,000 of the $1,000,000 allocated to it.",
+   "figures_as_printed": [
+    "$800,000",
+    "$1,000,000"
+   ],
+   "quote": "parks commission was returning approximately $800,000 out of the $1,000,000 allocated."
+  },
+  {
+   "topic": "Reallocating surpluses to capital overruns",
+   "what_was_recorded": "The board discussed reallocating surpluses to cover capital overruns, particularly the town hall and senior center roofs, and the need for contingencies; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "how to reallocate surpluses to cover capital overruns, particularly for the town hall and senior center roofs."
+  },
+  {
+   "topic": "Munis web deployment",
+   "what_was_recorded": "The board discussed the Munis web deployment, for which it was waiting on a quote for a two-year contract; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the board then discussed the munis web deployment, for which they were waiting on a quote for a two-year contract."
+  },
+  {
+   "topic": "ARPA commitment for equipment and vehicles",
+   "what_was_recorded": "The board voted to commit $387,565 of remaining ARPA funds to ten listed items: body cameras, power stretcher and loader, 15 portable radios, a stair chair, a gas powered cement mixer, a mini excavator, its trailer, a pickup truck with plow for the school department, Middle High School window safety film, and a fence for the council on aging generator. The printed item amounts sum to $387,565.05, against the stated total of $387,565.",
+   "figures_as_printed": [
+    "$387,565",
+    "$45,000",
+    "$74,000",
+    "$50,000",
+    "$23,000",
+    "$4,720",
+    "$72,500",
+    "$14,700",
+    "$64,780.05",
+    "$26,865",
+    "$12,000"
+   ],
+   "quote": "member jeffreys moved for the select board to commit $387,565 of arpa funds for the purpose of purchasing body camera upgrades for the police department ($45,000), power"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reallocation of surpluses to cover capital overruns, particularly the town hall and senior center roofs, as presented.",
+   "amount_as_printed": "none printed",
+   "outcome": "passed 5-0-0",
+   "quote": "member jeffreys moved to reallocate surpluses to cover capital overruns as presented. tom alonzo seconded the motion. the motion passed unanimously. (5-0-0)"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Glenn McLeod",
+   "stated_role": "a resident, 436 Reservoir Road",
+   "topic": "previous town meeting; pay, vacation and Personnel Committee resignations",
+   "quote": "he encouraged the board to bring up two issues at the next town meeting: pay and vacation time for new employees."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "town meeting",
+    "personnel"
+   ],
+   "quote": "glenn mcleod, 436 reservoir road:, a resident, addressed the board regarding the previous"
+  },
+  {
+   "topic": "ARPA reprogramming",
+   "resolution": "approved reallocation of surpluses and $387,565 ARPA commitment; remaining requests continued",
+   "tags": [
+    "ARPA",
+    "capital projects",
+    "budget",
+    "town hall roof",
+    "senior center roof",
+    "parks"
+   ],
+   "quote": "action re: arpa reprogramming chair nuzzolo began by discussing the reallocation of arpa funds."
+  },
+  {
+   "topic": "Upcoming meeting/events schedule",
+   "resolution": "no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming meeting/events schedule november 19 th and december 3rd"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:29 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "member alonzo moved to adjourn the meeting. member jeffreys seconded the motion passed unanimously (5-0-0)."
+  }
+ ],
+ "tags": [
+  "select board",
+  "ARPA funds",
+  "capital projects",
+  "budget reallocation",
+  "public comment",
+  "police equipment",
+  "roofs",
+  "parks commission",
+  "meeting minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

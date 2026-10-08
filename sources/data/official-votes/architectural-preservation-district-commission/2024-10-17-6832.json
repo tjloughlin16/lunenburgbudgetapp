@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2024-10-17",
  "docid": "6832",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve Declaration of Appropriateness for 990 Mass Ave",
+   "motion": "Approve the DoA for 990 Mass Ave (Tanner Cole's exterior-matching and chimney-removal plans).",
    "moved_by": "Member Sculimbrene",
    "seconded_by": "Lloyd",
    "outcome": "passed",
@@ -20,23 +20,23 @@
    "quote": "motion to approve doa by member sculimbrene, seconded by lloyd, approved by all - doa passes!"
   },
   {
-   "motion": "Approve minutes from August 8, 2024",
+   "motion": "Approve the August 8, 2024 minutes.",
    "moved_by": "Member Sculimbrene",
    "seconded_by": "Lloyd",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve by member sculimbrene, seconded by lloyd, approved by all"
+   "quote": "august 8, 2024 - motion to approve by member sculimbrene, seconded by lloyd, approved by all"
   },
   {
-   "motion": "Approve minutes from September 12, 2024",
+   "motion": "Approve the September 12, 2024 minutes.",
    "moved_by": "Member Sculimbrene",
    "seconded_by": "Lloyd",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve by member sculimbrene, seconded by lloyd, approved by all"
+   "quote": "september 12, 2024 - motion to approve by member sculimbrene, seconded by lloyd, approved by all"
   },
   {
-   "motion": "Consider a merger with the Historical Commission keeping all APDC regulations in place, dependent on legal review and eventual town warrant",
+   "motion": "Consider a merger with the Historical Commission, keeping all APDC regulations in place, dependent on legal review and eventual town warrant.",
    "moved_by": "Member Sculimbrene",
    "seconded_by": "Lloyd",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion by member sculimbrene, seconded by lloyd, approved by all - motion passes!"
   },
   {
-   "motion": "Approve Carter Teranzini's modifications to article X submitted by the APDC",
+   "motion": "Approve Carter Teranzini's modifications to article X submitted by the APDC.",
    "moved_by": "Member Lockwood",
    "seconded_by": "Lloyd",
    "outcome": "passed",
@@ -53,6 +53,167 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0676344
+ "note": "Text is complete for a single-page-of-minutes meeting (two pages extracted, no scan, no missing pages noted). Votes are recorded with \"approved by all\" and no numeric count, so outcomes are \"passed\" rather than a tally. Member Richard McGrath is listed in the header but is not in the \"Present:\" line and is not recorded as absent, so status is \"not stated\". The minutes spell the commission both \"APDC\" and \"ADPC\" in one place; quotes preserve the printed text.",
+ "cost_usd": 0.015533500000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, lockwood"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman sculimbrene, lloyd, lockwood"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "richard mcgrath, member"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "",
+   "status": "present",
+   "quote": "tanner cole - discussion about doa 990 mass ave"
+  },
+  {
+   "name": "Carter Teranzini",
+   "role": "",
+   "status": "not stated",
+   "quote": "carter teranzini - ritter will be going back out to bid"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town will look at exploring options for the Brooks House and will be on the May town meeting; staff to coordinate with Carter on whether it made the warrant.",
+   "quote": "town will look at exploring options for the brooks house, and will be on the town meeting in may."
+  },
+  {
+   "decision": "Chair will discuss APDC mailers and the Brooks House with the new land use director and invite them to a future meeting.",
+   "quote": "will discuss with new land use director about apdc mailers and the brooks house"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tanner Cole",
+   "stated_role": "",
+   "topic": "DoA for 990 Mass Ave remodel",
+   "quote": "tanner cole - discussion about doa 990 mass ave"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Tanner Cole, 990 Mass Ave DoA",
+   "resolution": "approved",
+   "quote": "motion to approve doa by member sculimbrene, seconded by lloyd, approved by all - doa passes!",
+   "tags": [
+    "design approval",
+    "990 Mass Ave",
+    "chimney removal"
+   ]
+  },
+  {
+   "topic": "Minutes approval: August 8 and September 12, 2024",
+   "resolution": "approved",
+   "quote": "august 8, 2024 - motion to approve by member sculimbrene, seconded by lloyd, approved by all",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence: Ritter building re-bid and phasing",
+   "resolution": "no action",
+   "quote": "ritter will be going back out to bid, will phase the ritter building to roof/exterior repairs, then windows, and handicap ramp will be tabled to a later date.",
+   "tags": [
+    "Ritter building",
+    "bid",
+    "handicap ramp"
+   ]
+  },
+  {
+   "topic": "Old business: merger of APDC and Historical Commission",
+   "resolution": "merger motion passed; Article X modifications approved",
+   "quote": "merger of the apdc and historical commission",
+   "tags": [
+    "bylaws",
+    "merger",
+    "town warrant",
+    "article X"
+   ]
+  },
+  {
+   "topic": "Old business: Preservation of the Brooks House",
+   "resolution": "no action; to town meeting in May",
+   "quote": "town will look at exploring options for the brooks house, and will be on the town meeting in may.",
+   "tags": [
+    "Brooks House",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Old business: Lunenburg Municipal Building design committee",
+   "resolution": "no action; RFP out for bid",
+   "quote": "request for proposal has been put out for bid for the 10% design",
+   "tags": [
+    "municipal building",
+    "design committee",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Old business: 763 Mass Ave",
+   "resolution": "no action",
+   "quote": "no update at this meeting",
+   "tags": [
+    "763 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Old business: 50 Main Street",
+   "resolution": "no action",
+   "quote": "no update at the meeting",
+   "tags": [
+    "50 Main Street"
+   ]
+  },
+  {
+   "topic": "Other business: APDC mailers with land use director",
+   "resolution": "no action; to be discussed",
+   "quote": "will discuss with new land use director about apdc mailers and the brooks house",
+   "tags": [
+    "mailers",
+    "land use"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "no action",
+   "quote": "new business: 1) none",
+   "tags": []
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "design approval",
+  "bylaw merger with Historical Commission",
+  "Ritter building",
+  "Brooks House",
+  "minutes approval",
+  "town warrant"
+ ],
+ "dropped_unquoted_by_field": {}
 }

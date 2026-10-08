@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2024-09-16",
  "docid": "6761",
@@ -12,39 +12,237 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from September 3 and 9, 2024",
+   "motion": "Approve the minutes of the September 3, 2024 and September 9, 2024 meetings.",
    "moved_by": "Jackie Chabot",
    "seconded_by": "Maryrae Holman",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "jackie made a motion to approve the minutes from the following meetings: september 3, 2024 and september 9, 2024. maryrae seconded. commission unanimously approved"
+   "quote": "jackie made a motion to approve the minutes from the following meetings: september 3, 2024 and september 9, 2024. maryrae seconded."
   },
   {
-   "motion": "Approve revised purchase of 1 banner and 6 yard signs for Lunenburg Agricultural Fair for up to $250",
+   "motion": "Approve a revised purchase of 1 banner and 6 yard signs for the Lunenburg Agricultural Fair for up to $250.",
    "moved_by": "Maryrae Holman",
    "seconded_by": "Jackie Chabot",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "maryrae made a motion to approve revised purchase of 1 banner and 6 yard signs for the lunenburg agricultural fair for up to $250. jackie seconded. commission unanimously approved."
+   "quote": "maryrae made a motion to approve revised purchase of 1 banner and 6 yard signs for the lunenburg agricultural fair for up to $250."
   },
   {
-   "motion": "Recommend Kathy Dugan for full member position on Agricultural Commission",
+   "motion": "Recommend Kathy Dugan for a full member position on the Agricultural Commission.",
    "moved_by": "Jackie Chabot",
    "seconded_by": "Maryrae Holman",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "jackie made a motion to recommend kathy dugan for a full member position on the agricultural commission. maryrae seconded. commission unanimously approved."
+   "quote": "jackie made a motion to recommend kathy dugan for a full member position on the agricultural commission."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jackie Chabot",
    "seconded_by": "Maryrae Holman",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "jackie made a motion to adjourn; maryrae seconds. commission unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0608164
+ "note": "Clean digital text, not a scan. Four motions are recorded, all with unanimous approval, but no roll-call counts are printed, so outcomes read 'passed (unanimous)'. Vacant seats are listed as Vacant and are not counted as attendees. The Agenda item 6 (Event, Facebook, Letter) and the upcoming-meeting schedule contain discussion only and no decisions. The minutes do not say whether the Facebook post or the outreach letter was approved.",
+ "cost_usd": 0.014509770000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jackie chabot ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate kira mcclellan ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Public",
+   "status": "present",
+   "quote": "public kathy dugan ✔"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Lunenburg Agricultural Fair signage purchase",
+   "what_was_recorded": "Revised purchase of 1 banner and 6 yard signs for the Agricultural Fair, approved up to a cap of $250.",
+   "figures_as_printed": [
+    "$250"
+   ],
+   "quote": "maryrae made a motion to approve revised purchase of 1 banner and 6 yard signs for the lunenburg agricultural fair for up to $250."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:33pm",
+   "quote": "call to order meeting commencement time: 6:33pm",
+   "tags": [
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "2 public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "none",
+   "quote": "3 announcements none 4 review/approve minutes",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved unanimously",
+   "quote": "jackie made a motion to approve the minutes from the following meetings: september 3, 2024 and september 9, 2024.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "none",
+   "quote": "5 new business: none none",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "AgComm 2024 event",
+   "resolution": "reviewed vendors, layout and logistics; no action recorded",
+   "quote": "agcomm 2024 event reviewed vendors, layout, logistics",
+   "tags": [
+    "agricultural fair",
+    "event"
+   ]
+  },
+  {
+   "topic": "Fair signage purchase",
+   "resolution": "approved, up to $250",
+   "quote": "maryrae made a motion to approve revised purchase of 1 banner and 6 yard signs for the lunenburg agricultural fair for up to $250.",
+   "tags": [
+    "signage",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Community garden",
+   "resolution": "none",
+   "quote": "community garden none",
+   "tags": [
+    "community garden"
+   ]
+  },
+  {
+   "topic": "Lunenburg Farmers' Market",
+   "resolution": "none",
+   "quote": "lunenburg farmers' market none",
+   "tags": [
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "Membership application",
+   "resolution": "recommended Kathy Dugan for full member",
+   "quote": "jackie made a motion to recommend kathy dugan for a full member position on the agricultural commission.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Commission Facebook page",
+   "resolution": "post about schedule of events noted",
+   "quote": "agricultural commission facebook page post about schedule of events",
+   "tags": [
+    "outreach",
+    "social media"
+   ]
+  },
+  {
+   "topic": "Letter for farming community outreach",
+   "resolution": "in progress",
+   "quote": "letter for lunenburg farming community outreach in progress",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "none",
+   "quote": "7 committee reports none",
+   "tags": [
+    "committee"
+   ]
+  },
+  {
+   "topic": "Farming issues",
+   "resolution": "none",
+   "quote": "8 farming issues none",
+   "tags": [
+    "farming"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "schedule listed: September 23, September 30 and October 21, 2024",
+   "quote": "9 upcoming meetings/events schedule",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no comment",
+   "quote": "10 public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:30pm",
+   "quote": "jackie made a motion to adjourn; maryrae seconds.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "lunenburg agricultural fair",
+  "signage",
+  "membership",
+  "minutes approval",
+  "farming outreach",
+  "public comment none"
+ ],
+ "dropped_unquoted_by_field": {}
 }

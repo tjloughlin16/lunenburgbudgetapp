@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2024-10-24",
  "docid": "6838",
@@ -12,138 +12,653 @@
  },
  "votes": [
   {
-   "motion": "Enter into public hearing",
+   "motion": "Enter into public hearing on the Special Town Meeting warrant articles.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to enter into public hearing by jay simeone, seconded by tom gray. all in favor."
+   "quote": "there was a motion to enter into public hearing by jay simeone"
   },
   {
-   "motion": "Close the public hearing",
+   "motion": "Close the public hearing.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "there was a motion to close the public hearing by jay simeone, seconded by tom gray. all in favor."
+   "quote": "there was a motion to close the public hearing by jay simeone, seconded by tom gray."
   },
   {
-   "motion": "Defer recommendations on Article 1 to town meeting until final numbers are available",
+   "motion": "Recommend deferring recommendations on Article 1 to town meeting until final numbers are available.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "there was a motion to defer recommendations to town meeting until ﬁnal numbers are available by tom gray, seconded by jay simeone. all in favor. deferral was recommended 5-0. ",
-   "quote_taken_from_text": true
+   "quote": "article 1: there was a motion to defer recommendations to town meeting"
   },
   {
-   "motion": "Recommend approval of Article 2 (Chapter 70 funds for School Committee)",
+   "motion": "Recommend approval of Article 2.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jean Russell",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "there was a motion to recommend approval by tom gray, seconded by jean russell. all in favor. approval was recommended 5-0."
+   "quote": "article 2: there was a motion to recommend approval by tom gray, seconded"
   },
   {
-   "motion": "Recommend approval of Article 3 (payment of late bill from Canon for copiers)",
+   "motion": "Recommend approval of Article 3.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "there was a motion to recommend approval by tom gray, seconded by jay simeone. all in favor. approval was recommended 5-0."
+   "quote": "article 3: there was a motion to recommend approval by tom gray, seconded"
   },
   {
-   "motion": "Recommend approval of Article 4 (MART program $20,000 appropriation)",
+   "motion": "Recommend approval of Article 4.",
    "moved_by": "Jean Russell",
    "seconded_by": "Tom Gray",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "there was a motion to recommend approval by jean russell, seconded by tom gray. all in favor. approval was recommended 5-0."
+   "quote": "article 4: there was a motion to recommend approval by jean russell,"
   },
   {
-   "motion": "Recommend approval of Article 5 (investments and trust funds)",
+   "motion": "Recommend approval of Article 5.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jean Russell",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "there was a motion to recommend approval by tom gray, seconded by jean russell. the vote was 4-0-1 for approval."
+   "quote": "article 5: there was a motion to recommend approval by tom gray, seconded"
   },
   {
-   "motion": "Recommend approval of Article 6 (COLA and tax exemption clauses)",
+   "motion": "Recommend approval of Article 6 despite there being no direct financial impact.",
    "moved_by": "Chris Menard",
    "seconded_by": "Tom Gray",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "there was a motion to recommend approval by tom gray, seconded by jean russell. all in favor. approval was recommended 5-0. article 3: there was a motion to rec",
-   "quote_taken_from_text": true
+   "quote": "article 6: there was a motion to recommend approval despite there being no"
   },
   {
-   "motion": "Recommend approval of Article 8 (revolving fund for Council on Aging)",
+   "motion": "Find no financial impact on Article 7.",
+   "moved_by": "Tom Gray",
+   "seconded_by": "Jean Russell",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "article 7: there was a motion to ﬁnd no ﬁnancial impact by tom gray,"
+  },
+  {
+   "motion": "Recommend approval of Article 8 despite there being no direct financial impact.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Jean Russell",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "there was a motion to recommend approval by tom gray, seconded by jean russell. all in favor. approval was recommended 5-0. article 3: there was a motion to re",
-   "quote_taken_from_text": true
+   "quote": "article 8: there was a motion to recommend approval despite there being no"
   },
   {
-   "motion": "Recommend approval of Article 9 (revolving fund for Parks Department)",
+   "motion": "Recommend approval of Article 9.",
    "moved_by": "Jean Russell",
    "seconded_by": "Tanya Dall",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "there was a motion to recommend approval by jean russell, seconded by tanya dall. the vote was 4 -0-1 for approval."
+   "quote": "article 9: there was a motion to recommend approval by jean russell,"
   },
   {
-   "motion": "Recommend approval of Article 11 (sick leave bank, incentive program, holiday time for part-time employees)",
+   "motion": "Find no financial impact on Article 10.",
+   "moved_by": "Tom Gray",
+   "seconded_by": "Jay Simeone",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "article 10: there was a motion to ﬁnd no ﬁnancial impact by tom gray,"
+  },
+  {
+   "motion": "Recommend approval of Article 11.",
    "moved_by": "Tom Gray",
    "seconded_by": "Chris Menard",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "there was a motion to recommend approval by tom gray, seconded by chris menard. the committee recommended approval 4-1."
+   "quote": "article 11: there was a motion to recommend approval by tom gray,"
   },
   {
-   "motion": "Recommend approval of Article 12 (salary administration plan amendments)",
+   "motion": "Recommend approval of Article 12.",
    "moved_by": "Chris Menard",
    "seconded_by": "Tom Gray",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "there was a motion to recommend approval by chris menard, seconded by tom gray. the committee recommended approval 4-1."
+   "quote": "article 12: there was a motion to recommend approval by chris menard,"
   },
   {
-   "motion": "Defer Article 14 (citizen petition for Marshall Park)",
+   "motion": "Find no financial impact on Article 13.",
    "moved_by": "Chris Menard",
    "seconded_by": "Tom Gray",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "there was a motion to defer by chris menard, seconded by tom gray. all in favor."
+   "quote": "article 13: there was a motion to ﬁnd no ﬁnancial impact by chris menard,"
   },
   {
-   "motion": "Defer Article 15 (citizen petition for Marshall Park)",
+   "motion": "Defer Article 14.",
    "moved_by": "Chris Menard",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "there was a motion to defer by chris menard, seconded by tom gray. all in favor."
+   "quote": "article 14: there was a motion to defer by chris menard, seconded by tom"
   },
   {
-   "motion": "Approve minutes from August 22, September 12 and September 26 of 2024",
+   "motion": "Defer Article 15.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Tom Gray",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "article 15: there was a motion to defer by chris menard, seconded by tom"
+  },
+  {
+   "motion": "Approve the minutes of August 22, September 12 and September 26, 2024.",
    "moved_by": "Tom Gray",
    "seconded_by": "Jean Russell",
    "outcome": "passed 3-2",
    "procedural": true,
-   "quote": "there was a motion to approve the minutes from august 22, september 12 and september 26th of 2024 by tom gray, seconded by jean russell. the vote was 3-2."
+   "quote": "there was a motion to approve the minutes from august 22, september 12 and"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Tom Gray",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "there was a motion to adjourn by jay simeone, seconded by tom gray. all in favor."
   }
  ],
- "dropped_unquoted": 3,
- "note": "",
- "cost_usd": 0.0896354
+ "dropped_unquoted": 0,
+ "note": "Text extract of the minutes, not a scan; no roll-call is recorded, so most motions say only \"All in favor\" and carry no count. The minutes' vote counts are quoted as printed (e.g. \"4 -0-1\" is recorded as 4-0-1). The minutes approval vote (3-2) is printed with five members present and no explanation of the split. Text has ligature and garbled characters (e.g. \"ﬁ\", \"Jeƫerson\") carried through verbatim in quotes where needed. Chris Menard is listed as present but the minutes also say Jean Russell would fill in for him on the night of the special town meeting, which is a future date and not this meeting. Evan Watters and Senator Cronin are named but do not appear as taking part, so are not listed as attendees. Article 14 and 15 citizen petitioner Ana Lockwood's intent to have them passed over is recorded but not voted.",
+ "cost_usd": 0.02434427,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell, clerk tom gray,"
+  },
+  {
+   "name": "Jean Russell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell, clerk tom gray,"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair chris menard, vice chair jean russell, clerk tom gray,"
+  },
+  {
+   "name": "Tanya Dall",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall, committee member jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee member tanya dall, committee member jay simeone"
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "carter terenzini states that all values including new growth have been submitted"
+  },
+  {
+   "name": "Anita Scheipers",
+   "role": "Chairman of the Parks Commission",
+   "status": "present",
+   "quote": "anita scheipers the chairman of the parks commission shared the"
+  },
+  {
+   "name": "John Bowen",
+   "role": "public speaker, 162 Highland Street",
+   "status": "present",
+   "quote": "john bowen, 162 highland street, thanks evan watters and chris menard for their"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "public speaker, 91 Main Street; citizen petitioner on Articles 14 and 15",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street, questions what that appropriation will be"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public speaker; registered voter in the Town of Lunenburg",
+   "status": "present",
+   "quote": "dave passios, formally 56 whiting street and registered voter in the town of"
+  },
+  {
+   "name": "Rhonda Liscio",
+   "role": "public speaker, 181 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda liscio,181 reservoir road, asked if this program started through a"
+  },
+  {
+   "name": "Glenn Mcleod",
+   "role": "public speaker, 436 Reservoir Road",
+   "status": "present",
+   "quote": "glenn mcleod, 436 reservoir road, believes selling the property would be a"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "public speaker, 282 Pleasant Street; member of the School Committee and the Capital Planning Committee, speaking for himself",
+   "status": "present",
+   "quote": "peter beardmore, 282 pleasant street, is a member of the school committee"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "anthony sculimbrene believes if the brooks house is kept then money will"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Parks Commission decided not to move ahead with the Marshall Park borrowing article at the Special Town Meeting; the article may return at the Spring Town Meeting.",
+   "quote": "the parks commission made the discussion not to move ahead with the"
+  },
+  {
+   "decision": "The School Committee's request that the Town's $31,882 in Chapter 70 money be allotted to the School Committee was agreed to by the Select Board.",
+   "quote": "the school committee asked that be allotted to the school committee and the select board agrees."
+  },
+  {
+   "decision": "Jean Russell moved from second to primary on the budget task force and agreed to be the school liaison; Tom Gray agreed to be second on the budget task force if she is unavailable.",
+   "quote": "russell was the second on the budget task force and will now be the primary."
+  },
+  {
+   "decision": "Tom Gray will send the minutes to the town clerk and move them to the approved folder.",
+   "quote": "tom gray is going to send the minutes to the town clerk"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Hall / TC Passios building repurposing (MBDC)",
+   "what_was_recorded": "The first quote to repurpose the TC Passios building was 23 million, and the price rose to 30 million when the Committee was ready to vote.",
+   "figures_as_printed": [
+    "23 million dollars",
+    "30 million"
+   ],
+   "quote": "the ﬁrst quote to repurpose the building was 23 million dollars. when the"
+  },
+  {
+   "topic": "Marshall Park early cost estimate",
+   "what_was_recorded": "The park was estimated at about 5.2 million to construct in 2020.",
+   "figures_as_printed": [
+    "5.2 million"
+   ],
+   "quote": "it was estimated that the park would cost approximately 5.2 million to"
+  },
+  {
+   "topic": "Marshall Park ARPA allocation",
+   "what_was_recorded": "The Select Board voted to allocate 1 million in ARPA funds to the park project.",
+   "figures_as_printed": [
+    "1 million"
+   ],
+   "quote": "voted to allocate 1 million arpa funds to the park project."
+  },
+  {
+   "topic": "Marshall Park revised cost estimate",
+   "what_was_recorded": "The estimated cost rose to 14 million in October 2024, and there is not enough money to complete phase 1.",
+   "figures_as_printed": [
+    "14 million"
+   ],
+   "quote": "rose to 14 million in october of 2024."
+  },
+  {
+   "topic": "Marshall Park grant contract commitments",
+   "what_was_recorded": "Under a signed grant contract the project must be completed or grant reimbursement for spent and committed funds is lost.",
+   "figures_as_printed": [],
+   "quote": "they would not get reimbursement from the grant program for what was already spent and committed to."
+  },
+  {
+   "topic": "Chapter 70 school aid",
+   "what_was_recorded": "The Town received $31,882 in Chapter 70 money, allotted to the School Committee for salary reserve and staffing.",
+   "figures_as_printed": [
+    "$31,882"
+   ],
+   "quote": "the town has received $31,882 in chapter 70 money."
+  },
+  {
+   "topic": "Article 1 FY25 budget appropriation of new growth",
+   "what_was_recorded": "The new growth delta to be appropriated to the FY25 budget is approximately $115,000.",
+   "figures_as_printed": [
+    "$115,000"
+   ],
+   "quote": "carter terenzini states its approximately $115,000."
+  },
+  {
+   "topic": "Retiree health insurance rates",
+   "what_was_recorded": "Retiree health insurance rates were received and rose 19.3%; a formal proposal for the appropriation was expected at the November 5 Select Board meeting.",
+   "figures_as_printed": [
+    "19.3%"
+   ],
+   "quote": "today the retiree health insurance rates were received, and they went up 19.3%."
+  },
+  {
+   "topic": "Free cash growth",
+   "what_was_recorded": "A resident asked where growth in free cash came from; the answer cited delayed projects due to supply chain and Covid. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "ana lockwood states that free cash has grown tremendously and inquires"
+  },
+  {
+   "topic": "Article 3 late bill payment",
+   "what_was_recorded": "Article 3 authorizes payment of one late bill for school copiers, funded by a transfer from the overlay reserve.",
+   "figures_as_printed": [
+    "$4,180"
+   ],
+   "quote": "is to authorize a payment of 1 late bill totaling $4,180 with a"
+  },
+  {
+   "topic": "Article 4 MART program funding",
+   "what_was_recorded": "MART rides for seniors and others are funded with $20,000 from the overlay surplus reserve.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "$20,000 will come from the overlay surplus reserve for appropriation."
+  },
+  {
+   "topic": "Article 8 Council on Aging revolving fund limit",
+   "what_was_recorded": "The proposed set annual limit for the Council on Aging revolving fund is $16,000.",
+   "figures_as_printed": [
+    "$16,000"
+   ],
+   "quote": "the proposed set limit for the year is $16,000."
+  },
+  {
+   "topic": "Article 9 Parks revolving fund surplus threshold",
+   "what_was_recorded": "Under the statute provision, an excess above $10,000 at fiscal year end goes to the general fund.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "there is an excess of $10,000 at the end of the"
+  },
+  {
+   "topic": "Grant writing services",
+   "what_was_recorded": "The Finance Committee had approved a $50,000 general government line for grant writing; a resident asked that it be used this fiscal year.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "approved a line item in general government for $50,000 for grant writing services."
+  },
+  {
+   "topic": "Marshall Park grant applications",
+   "what_was_recorded": "Six grants were applied for on Marshall Park.",
+   "figures_as_printed": [],
+   "quote": "that there were 6 grants applied for."
+  },
+  {
+   "topic": "Brooks House rehabilitation funding",
+   "what_was_recorded": "The Committee discussed whether the Town has money to rehabilitate the Brooks House.",
+   "figures_as_printed": [],
+   "quote": "that money isn't available to spend to rehabilitate that building."
+  },
+  {
+   "topic": "Brooks House spending if kept",
+   "what_was_recorded": "A speaker said keeping the Brooks House would require spending but would become an asset.",
+   "figures_as_printed": [],
+   "quote": "if the brooks house is kept then money will"
+  },
+  {
+   "topic": "Cemetery Commission spending",
+   "what_was_recorded": "A resident raised concern over wasteful spending and misuse of sale-of-lot funds by the Cemetery Commission, and whether bills under Article 5 can be paid back.",
+   "figures_as_printed": [],
+   "quote": "wasteful spending and misuse of the sale of lot funds by the cemetery"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Payment of one late bill for school department copiers (Canon), funded by a transfer from the overlay reserve (Article 3).",
+   "amount_as_printed": "$4,180",
+   "outcome": "Recommended for approval 5-0 by the Committee; to be voted at the Special Town Meeting.",
+   "quote": "is to authorize a payment of 1 late bill totaling $4,180 with a"
+  },
+  {
+   "description": "Appropriation for the MART rides program from the overlay surplus reserve (Article 4).",
+   "amount_as_printed": "$20,000",
+   "outcome": "Recommended for approval 5-0 by the Committee; to be voted at the Special Town Meeting.",
+   "quote": "$20,000 will come from the overlay surplus reserve for appropriation."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "John Bowen",
+   "stated_role": "162 Highland Street",
+   "topic": "Cemetery Commission spending and cemetery corporation",
+   "quote": "john bowen has previously pushed for a cemetery corporation because of the"
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "91 Main Street",
+   "topic": "Article 1 appropriation and free cash",
+   "quote": "ana lockwood, 91 main street, questions what that appropriation will be"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "registered voter in the Town of Lunenburg",
+   "topic": "Review of capital project funding practices",
+   "quote": "proposed there needs to be a review of the practices that are used to fund capital projects."
+  },
+  {
+   "speaker": "Rhonda Liscio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "Whether the MART program began through a state grant",
+   "quote": "rhonda liscio,181 reservoir road, asked if this program started through a"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "registered voter in the Town of Lunenburg",
+   "topic": "MART grant sunset provision",
+   "quote": "dave passios believes this grant has a sunset grant built into it but was miss"
+  },
+  {
+   "speaker": "Glenn Mcleod",
+   "stated_role": "436 Reservoir Road",
+   "topic": "Brooks House sale would be a mistake",
+   "quote": "glenn mcleod, 436 reservoir road, believes selling the property would be a"
+  },
+  {
+   "speaker": "Anthony Sculimbrene",
+   "stated_role": "not stated",
+   "topic": "Brooks House as an asset rather than liability",
+   "quote": "anthony sculimbrene believes if the brooks house is kept then money will"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "registered voter in the Town of Lunenburg",
+   "topic": "Perpetual parking easements on town property",
+   "quote": "dave passios states there is a problem with perpetual parking easements on"
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "282 Pleasant Street; member of the School Committee and the Capital Planning Committee, speaking for himself",
+   "topic": "Who controls the Brooks House property",
+   "quote": "peter beardmore, 282 pleasant street, is a member of the school committee"
+  },
+  {
+   "speaker": "Glenn McLeod",
+   "stated_role": "not stated",
+   "topic": "Article 11 vacation time and pay rate determination",
+   "quote": "glenn mcleod believes that the vacation time should be maxed if the"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "registered voter in the Town of Lunenburg",
+   "topic": "Grant status for Marshall Park and grant writing funds",
+   "quote": "dave passios questions where they were in the process of getting grants"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "registered voter in the Town of Lunenburg",
+   "topic": "Smart growth application and DLS audit offer",
+   "quote": "dave passios asks if the edits he provided from the last meeting were added"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action; new member Tanya Dall noted, two vacancies",
+   "quote": "the meeting opened at 7:00 pm.",
+   "tags": [
+    "announcements",
+    "committee membership"
+   ]
+  },
+  {
+   "topic": "Public comment (John Bowen)",
+   "resolution": "heard; no action",
+   "quote": "john bowen has previously pushed for a cemetery corporation because of the",
+   "tags": [
+    "cemetery",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director reports",
+   "resolution": "information only",
+   "quote": "carter terenzini states that all values including new growth have been submitted",
+   "tags": [
+    "new growth",
+    "tax rate",
+    "classification hearing"
+   ]
+  },
+  {
+   "topic": "Municipal Building Design Committee update",
+   "resolution": "information only; updated article to Special Town Meeting",
+   "quote": "there will be an updated article at the special town meeting in november",
+   "tags": [
+    "TC Passios building",
+    "municipal building"
+   ]
+  },
+  {
+   "topic": "Parks Commission presentation on Marshall Park borrowing",
+   "resolution": "borrowing article not moved forward to Special Town Meeting",
+   "quote": "the parks commission made the discussion not to move ahead with the",
+   "tags": [
+    "Marshall Park",
+    "borrowing",
+    "ARPA",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Public hearing on Special Town Meeting warrant articles",
+   "resolution": "hearing opened and closed",
+   "quote": "there was a motion to enter into public hearing by jay simeone",
+   "tags": [
+    "warrant articles",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Recommendations on Special Town Meeting warrant articles 1-15",
+   "resolution": "recommended approval, deferral, or no financial impact as listed",
+   "quote": "article 2: there was a motion to recommend approval by tom gray, seconded",
+   "tags": [
+    "warrant articles",
+    "recommendations",
+    "revolving funds",
+    "overlay reserve",
+    "MART",
+    "COLA",
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Liaison re-assignments",
+   "resolution": "reassigned, no vote recorded",
+   "quote": "russell was the second on the budget task force and will now be the primary.",
+   "tags": [
+    "budget task force",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Old business (budget template, town manager search, budget task force, Project 211, grant writing, consolidation)",
+   "resolution": "no discussion on any item; Town Manager search had no recent meeting",
+   "quote": "there were no discussions about this topic.",
+   "tags": [
+    "old business",
+    "town manager search",
+    "grant writing"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 3-2",
+   "quote": "there was a motion to approve the minutes from august 22, september 12 and",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Sewer Commission, Capital Planning Committee)",
+   "resolution": "reported; no action",
+   "quote": "jay simeone states that the sewer commission met.",
+   "tags": [
+    "sewer",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Actions and topics for future meetings",
+   "resolution": "none suggested",
+   "quote": "there were no suggested actions or topics for future meetings.",
+   "tags": [
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Important dates and upcoming meetings",
+   "resolution": "noted",
+   "quote": "special town meeting 7pm lunenburg middle high school",
+   "tags": [
+    "special town meeting",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Public comment (Dave Passios) on minutes edits and DLS audit",
+   "resolution": "heard; no action",
+   "quote": "dave passios asks if the edits he provided from the last meeting were added",
+   "tags": [
+    "public comment",
+    "smart growth",
+    "DLS audit"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:55 PM",
+   "quote": "there was a motion to adjourn by jay simeone, seconded by tom gray. all in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "Marshall Park",
+  "ARPA",
+  "Parks Commission",
+  "Brooks House",
+  "Cemetery Commission",
+  "revolving funds",
+  "overlay reserve",
+  "free cash",
+  "retiree health insurance",
+  "Chapter 70",
+  "MART",
+  "COLA",
+  "TC Passios building",
+  "grant writing",
+  "minutes approval",
+  "budget task force"
+ ],
+ "dropped_unquoted_by_field": {}
 }

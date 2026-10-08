@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2024-10-21",
  "docid": "6846",
@@ -12,15 +12,315 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Rob Bowen",
    "seconded_by": "Chris Menard",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn by r ob b owen, seconded by c hris m enard . a ll in favor."
+   "quote": "there was a motion to adjourn by r ob b owen, seconded by c hris m enard . a ll in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0789844
+ "note": "Text is a plain extraction with broken word spacing (e.g. \"R ob B owen\"); quotes were copied as printed, and some contain doubled spaces that are reproduced. One motion is recorded (adjournment, \"All in favor\", no count printed; outcome recorded as passed). The minutes are not otherwise voted on: the approval of prior minutes is deferred, not voted. No attendance status is given for the Interim Town Manager, who is mentioned but not shown as taking part. Dollar figures are as the presenters stated them; several are described as estimates or quotes, not appropriations.",
+ "cost_usd": 0.01755827,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members : chair peter beardmore , vice chair tom alonzo, clerk matt brenner,"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members : chair peter beardmore , vice chair tom alonzo, clerk matt brenner,"
+  },
+  {
+   "name": "Matt Brenner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members : chair peter beardmore , vice chair tom alonzo, clerk matt brenner,"
+  },
+  {
+   "name": "Rob Bowen",
+   "role": "Member-at-large",
+   "status": "present",
+   "quote": "member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee Representative",
+   "status": "present",
+   "quote": "member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent (presenter)",
+   "status": "present",
+   "quote": "superintendent dr. kate burnham provided the presentation."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The previously submitted minutes are to be approved at the next meeting (anticipated, not voted).",
+   "quote": "they are anticipated to be approved at the next meeting."
+  },
+  {
+   "decision": "Peter Beardmore to tell the Interim Town Manager what the Committee discussed on the fiscal policy manual; Tom Alonzo to bring the general conversation to the Select Board.",
+   "quote": "and tom alonzo will bring the general conversation to"
+  },
+  {
+   "decision": "Future agenda set: Facilities Director presentation on October 23; DPW and Fire presentations on November 4.",
+   "quote": "october 23- facilities director presentation"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Primary School entry and driveway feasibility study (FY26 request 1)",
+   "what_was_recorded": "Requested feasibility study estimated at $30,000.",
+   "quote": "this is estimated to cost $30,000.",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Playground designer services, Primary School (FY26 request 2)",
+   "what_was_recorded": "Requested designer services estimated at $30,000.",
+   "quote": "$ 30,000. the funds would allow",
+   "figures_as_printed": [
+    "$ 30,000"
+   ]
+  },
+  {
+   "topic": "Hot water tank replacement, Turkey Hill Elementary (FY26 request 3)",
+   "what_was_recorded": "Replacement estimated at $20,000; state funding asked about, and the Superintendent said the project is not on the accelerated repair list deemed eligible.",
+   "quote": "estimated at $20,000.",
+   "figures_as_printed": [
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "Generator and generator deck, Primary School (FY26 request 4)",
+   "what_was_recorded": "Quoted price for a generator and deck; the school currently has no generator.",
+   "quote": "quoted price of $141 ,896.",
+   "figures_as_printed": [
+    "$141 ,896"
+   ]
+  },
+  {
+   "topic": "Window safety film, Primary School (FY26 request 5)",
+   "what_was_recorded": "Window safety film estimated to cost $26,865.",
+   "quote": "was estimated to cost $26,865.",
+   "figures_as_printed": [
+    "$26,865"
+   ]
+  },
+  {
+   "topic": "Security camera replacement (FY26 request 6)",
+   "what_was_recorded": "Replacement security camera estimated to cost $40,000; the Committee asked whether it would match the town's system, and the Superintendent was unsure.",
+   "quote": "to cost $ 40,000. this will replace the current box",
+   "figures_as_printed": [
+    "$ 40,000"
+   ]
+  },
+  {
+   "topic": "Window safety film, Middle High School (FY26 request 7)",
+   "what_was_recorded": "Window safety film quoted at $33,215.",
+   "quote": "middle high school window safety film quoted at $33,215.",
+   "figures_as_printed": [
+    "$33,215"
+   ]
+  },
+  {
+   "topic": "Utility pickup truck with plow (FY26 request 8)",
+   "what_was_recorded": "Ford F 350 with plow quoted at $64,780, to replace a 2005 Ford dump truck received from the DPW in 2022.",
+   "quote": "quoted price of $ 64,7 80.",
+   "figures_as_printed": [
+    "$ 64,7 80"
+   ]
+  },
+  {
+   "topic": "Gas condensing boilers, Primary School (FY27 request 3)",
+   "what_was_recorded": "Estimated cost of plans and gas condensing boilers at the Primary School.",
+   "quote": "the estimated cost is $ 30,000 .",
+   "figures_as_printed": [
+    "$ 30,000"
+   ]
+  },
+  {
+   "topic": "Middle High School turf field and complex (FY27 request 6)",
+   "what_was_recorded": "Turf field and complex estimated at $920,000, plus an additional $500,000 to replace the turf and track.",
+   "quote": "it will cost an additional $ 500,000 to replace the turf and track.",
+   "figures_as_printed": [
+    "$ 920,000",
+    "$ 500,000"
+   ]
+  },
+  {
+   "topic": "Middle High School auditorium booth audio upgrades (FY27 request 7)",
+   "what_was_recorded": "Estimated cost of audio upgrades around $44,000.",
+   "quote": "the estimated cost is aro und $ 44,000 .",
+   "figures_as_printed": [
+    "$ 44,000"
+   ]
+  },
+  {
+   "topic": "Lawnmower replacement (FY33 request)",
+   "what_was_recorded": "Replacement lawnmower estimated to cost $55,000.",
+   "quote": "lawnmower replacement is estimated to cost $ 55,000 .",
+   "figures_as_printed": [
+    "$ 55,000"
+   ]
+  },
+  {
+   "topic": "Network firewall replacement (FY30 request 3)",
+   "what_was_recorded": "Network firewall replacement estimated to cost $80,000.",
+   "quote": "network firewall replacement is estimated to cost $ 80,000 .",
+   "figures_as_printed": [
+    "$ 80,000"
+   ]
+  },
+  {
+   "topic": "Turkey Hill exterior door replacement (status update)",
+   "what_was_recorded": "Architects' estimate for the door replacement including labor is over $150,000; Tom Alonzo suggested ARPA funding as a possibility.",
+   "quote": "including labor to cost over $ 150,000.",
+   "figures_as_printed": [
+    "$ 150,000"
+   ]
+  },
+  {
+   "topic": "Feasibility study of turf field funded by ARPA",
+   "what_was_recorded": "The turf field feasibility study has been completed using ARPA funds; no amount printed.",
+   "quote": "completed using arpa funds.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Primary School phase 2 mini splits, grants and rebate",
+   "what_was_recorded": "Grants were submitted through Green Communities and a rebate was received from Unitil; no amounts printed.",
+   "quote": "grants were submitted through g reen c ommunities",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Turkey Hill classroom mini splits and electricity cost",
+   "what_was_recorded": "Committee member raised concern about the efficiency and cost of electricity; the Superintendent anticipates applying for Green Communities funding. No amounts printed.",
+   "quote": "tom alonzo is concerned about the efficiency and cost of electricity.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "State funding for a hot water tank project",
+   "what_was_recorded": "Superintendent said the hot water tank project is not on the accelerated repair projects deemed eligible for state funding.",
+   "quote": "currently not on their accelerated repair projects that were",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "State vehicle efficiency and EV rule for heavy equipment",
+   "what_was_recorded": "Heavy equipment is already scarce and, when available, much more expensive than today's equivalent; the state rule was postponed to January 2026. No amounts printed.",
+   "quote": "they are much more expensive than today",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened at 6:30 PM",
+   "quote": "the meeting opened at 6:30 pm .",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (committee, public)",
+   "resolution": "no comments",
+   "quote": "there were no comments from the committee or the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "noted; no action recorded",
+   "quote": "it has not scheduled a date or time for their capital planning presentation.",
+   "tags": [
+    "IT",
+    "state vehicle rules",
+    "MassDOT"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "deferred to next meeting (no vote)",
+   "quote": "they are anticipated to be approved at the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Capital request presentations (Schools)",
+   "resolution": "presented; no action recorded",
+   "quote": "superintendent dr. kate burnham provided the presentation.",
+   "tags": [
+    "capital planning",
+    "schools",
+    "Primary School",
+    "Turkey Hill",
+    "Middle High School"
+   ]
+  },
+  {
+   "topic": "Draft town fiscal policy manual",
+   "resolution": "discussed; to be communicated to Interim Town Manager and Select Board (no vote)",
+   "quote": "and tom alonzo will bring the general conversation to",
+   "tags": [
+    "fiscal policy",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Review schedule, topics for future meetings",
+   "resolution": "future presentations set",
+   "quote": "october 23- facilities director presentation",
+   "tags": [
+    "scheduling",
+    "facilities",
+    "DPW",
+    "Fire"
+   ]
+  },
+  {
+   "topic": "Public comment (public, committee)",
+   "resolution": "no comments",
+   "quote": "there were no comments from the public or the committee.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:08 PM",
+   "quote": "the meeting closed at 8:08 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "school capital requests",
+  "Primary School",
+  "Turkey Hill",
+  "Middle High School",
+  "facilities",
+  "fiscal policy",
+  "grants",
+  "ARPA",
+  "Green Communities",
+  "IT",
+  "state vehicle rules"
+ ],
+ "dropped_unquoted_by_field": {}
 }

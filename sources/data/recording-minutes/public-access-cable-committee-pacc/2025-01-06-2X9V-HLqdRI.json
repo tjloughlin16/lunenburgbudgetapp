@@ -322,5 +322,136 @@
    "at": "2026-10-06T18:21:21Z",
    "cost_usd": 0.210239
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01062025-6937",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2025-01-06-minutes-6937.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2025-01-06-minutes-6937.pdf"
+  },
+  "official_sha256": "d563615f4020f63a7c7976f94efc87d51cf0d6067148cdd5e1b8f0faa2e2bbca",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the one vote, the special meeting on January 20, and the Select Board visit. The one thing a reader should know: our captions garbled the fund balance, and our transcript-derived minutes carry several budget figures and a few decisions (next meeting date, Select Board attendees) that the official minutes do not record.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 1,
+   "discrepancy": 0,
+   "only_in_ours": 6,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to let Steve and Joe create a detailed budget",
+    "t": 1016,
+    "ours": "Allow Steve and Joe to create a detailed budget for approval by the PACC committee — passed unanimously",
+    "official": "motion (s.archambault, 2nd p.lincoln), \"to allow s.walker & j.toale to create a detailed budget proposal\" - passed",
+    "note": "Same motion and outcome; official names S.Walker and J.Toale and does not say 'unanimously', which is not a conflict."
+   },
+   {
+    "kind": "caption_error",
+    "about": "PAC fund balance",
+    "t": 410,
+    "ours": "Financial overview / balance: 1, 38818 58, 1, 38,000 yes 818",
+    "official": "current balance $1,038,818.58",
+    "note": "Captions scrambled the digits of the same balance; the official figure reads $1,038,818.58.",
+    "official_reading": "$1,038,818.58"
+   },
+   {
+    "kind": "agree",
+    "about": "Special meeting on budget January 20",
+    "t": 1038,
+    "ours": "Special meeting on the budget, single agenda item, to be held Monday January 20 at the same time; Steve to try to reserve the room.",
+    "official": "s.walker requested a special pacc meeting for jan. 20th to go over full budget",
+    "note": "Same special meeting date; room reservation detail appears only in ours."
+   },
+   {
+    "kind": "agree",
+    "about": "Studio policy follow-up with Town Hall",
+    "t": 1166,
+    "ours": "Chair to follow up with town hall on the studio policy review awaiting the town attorney.",
+    "official": "j.toale submitted a policy statement. still no word from town hall. she will follow up.",
+    "note": "Same follow-up with Town Hall, but ours assigns it to the chair and mentions the town attorney while the official says J.Toale (the manager) will follow up; check who the recording says owns the follow-up."
+   },
+   {
+    "kind": "agree",
+    "about": "Select Board meeting on studio space",
+    "t": 1229,
+    "ours": "Steve and Joe to attend the Select Board meeting the next night about studio space; another member may join.",
+    "official": "s.archambault will attend with information on past \"stand alone\" cost reports",
+    "note": "Same Select Board appearance (1/7/25 is the night after 1/6); the official names S.Archambault attending, ours names Steve and Joe, so who attends is worth checking against the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Local programming share",
+    "t": 483,
+    "ours": "Local programming share: 48 programs, 67%",
+    "official": "",
+    "note": "The official minutes print no local programming figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Comcast contest fees",
+    "t": 720,
+    "ours": "Comcast contest fees: 4%, less than 1%",
+    "official": "",
+    "note": "Not in the official minutes; the heard wording is also unclear."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY26 Comcast fee estimate",
+    "t": 782,
+    "ours": "FY26 Comcast fee estimate: $46,000",
+    "official": "",
+    "note": "Official says only 'comcast payment continues to decline' with no dollar figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital expenses and reserves",
+    "t": 824,
+    "ours": "Capital expenses and reserves: 30,000",
+    "official": "",
+    "note": "No such figure appears in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Castus replacement cost",
+    "t": 890,
+    "ours": "Castus replacement: $20,000",
+    "official": "",
+    "note": "Not recorded in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next regular meeting February 3",
+    "t": 2068,
+    "ours": "Next regular meeting set for February 3.",
+    "official": "",
+    "note": "The official minutes record no next-meeting date."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY26 budget due to Town Hall January 21",
+    "ours": "",
+    "official": "s.walker received a message from town hall that the pacc budget is due jan. 21st.",
+    "note": "Budget deadline is not in our minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Peter, Steve, Faith (absent), Joe",
+    "ours": "Peter (member); Steve (member); Faith (member (absent, may join by Zoom)); Joe (manager)",
+    "official": "pacc members present: steve walker, pete lincoln, steve archambault,",
+    "note": "Same people; official shows three members present, Faith Beall excused, and manager Jo Toale. Ours lists only one Steve, so Steve Archambault is missing from ours, and Faith joining by Zoom is not in the official."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:45:36Z",
+   "cost_usd": 0.23025099999999998
+  }
  }
 }

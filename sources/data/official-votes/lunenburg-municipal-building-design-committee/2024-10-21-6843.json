@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2024-10-21",
  "docid": "6843",
@@ -12,15 +12,208 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at 6:42pm.",
    "moved_by": "Thomas Gray",
    "seconded_by": "Matthew Allison",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to adjourn by thomas gray at 6:42pm, seconded by matthew allison, unanimously passed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One recorded vote only. Discussions about site visits and cost ranges are noted as committee agreements but no formal motion or vote is recorded for either.",
- "cost_usd": 0.06544539999999999
+ "note": "Text is a two-page extracted transcription with no scan noted. Only one motion is recorded: adjournment, with the movers named as Thomas Gray and Matthew Allison. No vote on approving prior minutes or on any project item appears. David Blatt is listed both as present and as absent, so his status is recorded as not stated. Name spellings vary within the text: Michael-Ray Jeffreys/Jeffries, Tom/Thomas Gray, Sculimbrene/Sculimbrine. Names are kept as the attendance lists print them, with the variant noted in the role field. The $300,000 roof figure is a question from the public, and the minutes do not say whether it was an estimate by the town.",
+ "cost_usd": 0.013977270000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member (also printed as Thomas Gray in the adjournment motion)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: david blatt, greg roy"
+  },
+  {
+   "name": "Chris Ruth",
+   "role": "facilities manager (Town Employee)",
+   "status": "present",
+   "quote": "chris ruth, the facilities manager gave an update on the status of the tc passios building."
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: anthony sculimbrene"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee said it should allow for site visits by firms responding to the RFP.",
+   "quote": "the committee said we should allow for site visits."
+  },
+  {
+   "decision": "The committee agreed to keep the ranges of project costs the same.",
+   "quote": "the committee agreed to keep it the same."
+  },
+  {
+   "decision": "The town put the roof repair money (approximately $300,000) on hold because the schools are looking to leave the building.",
+   "quote": "due to the schools looking to leave the building, the town decided to put the money on hold."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Roof repairs at the TC Passios building",
+   "what_was_recorded": "A public question about roughly $300,000 for roof repairs; the town put that money on hold because the schools are looking to leave the building.",
+   "quote": "anthony sculimbrine asked about the approximately $300,000 for roof repairs.",
+   "figures_as_printed": [
+    "$300,000"
+   ]
+  },
+  {
+   "topic": "Operating loss at the TC Passios building",
+   "what_was_recorded": "The building is at an operating loss with a potential rent increase for the schools, and would be vacant at a total loss on operating costs if the schools leave.",
+   "quote": "tcp is also at an operating loss and potentially a rent increase for the schools.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cost to renovate TC Passios versus other projects",
+   "what_was_recorded": "Concern that the cost to renovate TCP would limit the ability to renovate Ritter, Town Hall, add to Ritter and build a new Turkey Hill School; no figures printed.",
+   "quote": "there were concerns that the cost to renovate tcp will limit the possibility",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Ranges of project costs",
+   "what_was_recorded": "The ranges of costs of projects were discussed and the committee agreed to keep them the same; no figures printed.",
+   "quote": "the ranges of costs of projects were discussed. the committee agreed to keep it the same.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Anthony Sculimbrine",
+   "stated_role": "Community Guest",
+   "topic": "roof repair cost at the TC Passios building",
+   "quote": "anthony sculimbrine asked about the approximately $300,000 for roof repairs."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "RFP process questions",
+   "resolution": "discussed; committee will comply with the process",
+   "quote": "the rfp is framed that everything happens under the supervision of the town manager",
+   "tags": [
+    "RFP",
+    "procurement",
+    "process"
+   ]
+  },
+  {
+   "topic": "TC Passios building status and office space",
+   "resolution": "update received; office options discussed",
+   "quote": "chris ruth, the facilities manager gave an update on the status of the tc passios building.",
+   "tags": [
+    "TC Passios",
+    "office space",
+    "Ritter building",
+    "Town Hall"
+   ]
+  },
+  {
+   "topic": "Roof repair funds",
+   "resolution": "money put on hold by the town",
+   "quote": "due to the schools looking to leave the building, the town decided to put the money on hold.",
+   "tags": [
+    "roof repair",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Firm questions and site visits",
+   "resolution": "site visits to be allowed",
+   "quote": "13 companies have requested documents.",
+   "tags": [
+    "RFP",
+    "site visits",
+    "consultants"
+   ]
+  },
+  {
+   "topic": "Project cost ranges",
+   "resolution": "kept the same",
+   "quote": "the ranges of costs of projects were discussed.",
+   "tags": [
+    "project costs"
+   ]
+  },
+  {
+   "topic": "APDC article on the Brooks house",
+   "resolution": "discussed; no action recorded",
+   "quote": "apdc article on action on the brooks house was discussed.",
+   "tags": [
+    "Brooks house",
+    "APDC"
+   ]
+  },
+  {
+   "topic": "Fall special town meeting and Finance Committee update",
+   "resolution": "brief update planned; Finance Committee contact on 24 October",
+   "quote": "there will be a brief update at fall special town meeting.",
+   "tags": [
+    "town meeting",
+    "Finance Committee"
+   ]
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "TC Passios building",
+  "roof repair",
+  "office space",
+  "Ritter building",
+  "Town Hall",
+  "Turkey Hill School",
+  "RFP",
+  "procurement",
+  "site visits",
+  "Brooks house",
+  "fall town meeting",
+  "Finance Committee"
+ ],
+ "dropped_unquoted_by_field": {}
 }

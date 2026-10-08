@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2024-09-10",
  "docid": "6754",
@@ -12,23 +12,282 @@
  },
  "votes": [
   {
-   "motion": "Approve the Bicycles Battling Cancer request to pass through Lunenburg on September 22, 2024",
+   "motion": "Approve the Bicycles Battling Cancer request to pass through Lunenburg on September 22, 2024, given the data and map provided by the applicant.",
    "moved_by": "Tom Alonzo",
    "seconded_by": "Renee Emkey",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "member alonzo made motion to approve the bicycles battling cancer request to pass through lunenburg on september 22, 2024, give the data and the map provided by the applicant. seconded by member emkey. all, aye. passed unanimously (5-0-0)."
+   "quote": "member alonzo made motion to approve the bicycles battling cancer request to pass through lunenburg on"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Tom Alonzo",
    "seconded_by": "Amanda Moore",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "member alonzo made motion to adjourn. seconded by member moore. all, aye. passed (5-0-0)"
+   "quote": "member alonzo made motion to adjourn. seconded by member moore. all, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0754214
+ "note": "Machine-extracted text with line breaks collapsed; quotes were copied from the extracted text. Two motions are recorded with votes (Bicycles Battling Cancer approval, 5-0-0; adjournment, 5-0-0). Board Goals, the financial policy manual, the Flat Hill Road item and the police chief recognition proposal are recorded with no motion. The Chair's follow-up assurance on document requests is recorded as a decision without a vote. Chris Ruth and Kelly Brown are named only as people discussed and are not listed as attendees. The Public comments section is listed twice in the minutes (before Announcements and after Committee Reports), so both appearances are recorded. The Bicycles Battling Cancer motion's quote is copied from the text before a line break. Minutes spell the Nashoba Board of Health as \"neshoba.org\" in the URL; this is printed as-is and not corrected. Roles for George Burden and Dave Passios are not printed beyond their street addresses, so stated_role is blank.",
+ "cost_usd": 0.01650117,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caesar Nuzzolo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey"
+  },
+  {
+   "name": "Renee Emkey",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey"
+  },
+  {
+   "name": "Carter Terenzini",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "others: mr. carter terenzini"
+  },
+  {
+   "name": "George Burden",
+   "role": "",
+   "status": "present",
+   "quote": "george burden, 39 cortland circle, raised issues regarding unfulfilled public document"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "dave passios, whiting street, shared updates concerning the green communities initiative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members were asked to review the draft Financial Policy Manual and provide commentary within three weeks.",
+   "quote": "encouraging members to review and provide commentary within three weeks"
+  },
+  {
+   "decision": "Chair assured that there would be follow-up on the unfulfilled public document requests raised in public comment.",
+   "quote": "chair nuzzolo assured that there would be follow-up on these document requests."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Communities funding for school mini-split phase 2",
+   "what_was_recorded": "Dave Passios said the committee aims to secure between $100,000 and $125,000 from Green Communities for its initiatives, with an October timeline.",
+   "figures_as_printed": [
+    "$100,000",
+    "$125,000"
+   ],
+   "quote": "their efforts aim to secure funding between $100,000 and $125,000 from green communities to support their initiatives."
+  },
+  {
+   "topic": "ARPA committed funds and project deadlines",
+   "what_was_recorded": "Discussion of ARPA committed-funds deadlines and project timelines; the senior center was preparing to order equipment; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "review arpa funding requests and committed funds: mr. terenzini discussed concerns regarding committed funding deadlines related to arpa."
+  },
+  {
+   "topic": "Municipal building renovation shortfalls and maintenance budget",
+   "what_was_recorded": "Concern raised about projected shortfalls for planned renovations from escalating costs; the interim manager said the facilities maintenance budget may need augmenting at town meetings. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "financial concerns were raised regarding projected shortfalls for planned renovations due to escalating costs over time."
+  },
+  {
+   "topic": "School capital project cost increases",
+   "what_was_recorded": "School Committee reported one classroom of the AC mini-split project was rolled to the next phase due to cost increases; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "completion of primary school ac mini split project for 12 classrooms, with 1 classroom rolling into the next phase due to cost increases."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "George Burden",
+   "stated_role": "",
+   "topic": "unfulfilled public document requests and a shed dispute",
+   "quote": "george burden, 39 cortland circle, raised issues regarding unfulfilled public document"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Green Communities initiative and school mini-split funding",
+   "quote": "dave passios, whiting street, shared updates concerning the green communities initiative"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "Chair assured follow-up on document requests; no vote",
+   "quote": "chair nuzzolo assured that there would be follow-up on these document requests.",
+   "tags": [
+    "public comment",
+    "public records"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "chair nuzzolo shared announcements including a flu vaccine clinic hosted by the nashoba",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Appointments: Bicycles Battling Cancer road event",
+   "resolution": "approved 5-0-0",
+   "quote": "bicycles battling cancer request to pass through lunenburg on september 22, 2024.",
+   "tags": [
+    "permits",
+    "events",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Interim Town Manager report",
+   "resolution": "no action",
+   "quote": "mr. terenzini provided a comprehensive update on staffing vacancies, reporting progress in the",
+   "tags": [
+    "staffing",
+    "town manager",
+    "volunteer boards"
+   ]
+  },
+  {
+   "topic": "Old business: ARPA funding requests and committed funds",
+   "resolution": "discussed; no action",
+   "quote": "review arpa funding requests and committed funds: mr. terenzini discussed concerns regarding committed funding deadlines related to arpa.",
+   "tags": [
+    "ARPA",
+    "funding deadlines",
+    "library",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "Draft Financial Policy Manual",
+   "resolution": "members asked to comment within three weeks",
+   "quote": "draft financial policy manual: mr. terenzini introduced a draft of the financial policy",
+   "tags": [
+    "financial policy"
+   ]
+  },
+  {
+   "topic": "Board/Committee Handbook",
+   "resolution": "no current updates",
+   "quote": "board/committee handbook: no current updates were provided.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "FY25 Select Board goals",
+   "resolution": "discussed; workshops considered",
+   "quote": "interim town manager highlighted the importance of involving",
+   "tags": [
+    "board goals",
+    "staffing",
+    "municipal buildings",
+    "transparency"
+   ]
+  },
+  {
+   "topic": "Flat Hill Road speed limit",
+   "resolution": "no action",
+   "quote": "mr. terenzini informed attendees of ongoing discussions with key",
+   "tags": [
+    "traffic",
+    "roads"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "discussed; no action",
+   "quote": "continuous use of ai-generated minutes was criticized for its quality, with instances",
+   "tags": [
+    "minutes",
+    "warrants",
+    "transparency"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "member emkey reported updates on capital projects including:",
+   "tags": [
+    "school capital",
+    "committees",
+    "master plan",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Public comments (Green Communities)",
+   "resolution": "no action",
+   "quote": "dave passios, whiting street, shared updates concerning the green communities initiative",
+   "tags": [
+    "green communities",
+    "school district",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "Police chief recognition proposed; no vote recorded",
+   "quote": "proposed formally recognizing the police chief",
+   "tags": [
+    "police",
+    "recognition",
+    "community"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:06 PM, 5-0-0",
+   "quote": "member alonzo made motion to adjourn. seconded by member moore. all, aye.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "ARPA",
+  "town staffing",
+  "municipal buildings",
+  "facilities",
+  "financial policy",
+  "board goals",
+  "public comment",
+  "public records",
+  "minutes",
+  "school capital",
+  "Green Communities",
+  "committees",
+  "police",
+  "event permits"
+ ],
+ "dropped_unquoted_by_field": {}
 }

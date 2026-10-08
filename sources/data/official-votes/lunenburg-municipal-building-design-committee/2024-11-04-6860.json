@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2024-11-04",
  "docid": "6860",
@@ -12,23 +12,130 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from September 9, 2024, September 23, 2024, October 16, 2023, and November 8, 2023",
+   "motion": "Approve the minutes of September 9, 2024, September 23, 2024, October 16, 2023, and November 8, 2023.",
    "moved_by": "Michael-Ray Jeffreys",
    "seconded_by": "Brian Lehtinen",
-   "outcome": "unanimously passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "michael-ray jeffreys made a motion to approve minutes from september 9, 2024, september 23, 2024, october 16, 2023, and november 8, 2023 was seconded by brian lehtinen, unanimously passed."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 7:20pm.",
    "moved_by": "Thomas Gray",
    "seconded_by": "Matthew Allison",
-   "outcome": "unanimously passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to adjourn by thomas gray at 7:20pm, seconded by matthew allison, unanimously passed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes list David Blatt as both present and absent (appears to be a clerical error). The member roster refers to \"Tom Gray\" but the motion to adjourn names \"Thomas Gray\" (likely the same person).",
- "cost_usd": 0.0860754
+ "note": "Two limits on the reading. (1) Only two motions are recorded, both procedural, both passed unanimously; no vote tally is printed. The per-criterion rankings (Advantageous, Acceptable, Highly Advantageous) are individual member scores, not motions, so they are not recorded as votes. (2) David Blatt is printed under both 'Members Present' and 'Members absent', so his status is 'not stated'. The text also spells the same people inconsistently (Thomas/Tom Gray; Sculimbrene/Sculimbrine/Sculumbrine; Jeffreys/Jeffries). No dollar figures and no public comment section appear in the minutes. The firm Taylor and Burns is named but did not attend, so it is not listed as an attendee.",
+ "cost_usd": 0.013529470000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member (Members Present)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member (Members Present)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member (Members Present)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member (listed as both present and absent)",
+   "status": "not stated",
+   "quote": "members absent: david blatt"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member (Members Present)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member (Members Present)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member (Members Present; also printed as Thomas Gray)",
+   "status": "present",
+   "quote": "members present: brian lehtinen, michael-ray jeffreys, greg roy, david blatt, kristina masaitis, matthew allison, tom gray"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Community Guest (also printed as Sculumbrine and Sculimbrine)",
+   "status": "present",
+   "quote": "community guests: anthony sculimbrene"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee treated the one late-submitted firm's proposal as not acceptable, since it arrived after the deadline.",
+   "quote": "one firm submitted after the deadline and it was discussed it cannot be accepted."
+  },
+  {
+   "decision": "Michael-Ray Jeffreys and Anthony Sculimbrene were directed to contact the references for the committee.",
+   "quote": "michael-ray jeffreys and anthony sculimbrine will reach out to the references for the committee."
+  },
+  {
+   "decision": "Interview questions are to be prepared by the 14th; members may send questions to Michael-Ray Jeffreys ahead of time.",
+   "quote": "interview questions should be prepared by the 14th. members can send michael-ray jeffries questions ahead of time."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "RFP review and scoring of the single proposal",
+   "resolution": "reviewed; committee ranked the firm on each criterion; references and interview questions assigned",
+   "quote": "the meeting resumed with a review of the rfp, starting with a review of the tours provided to potential firms.",
+   "tags": [
+    "RFP",
+    "design firm selection",
+    "proposal scoring"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved unanimously (four sets of minutes)",
+   "quote": "michael-ray jeffreys made a motion to approve minutes from september 9, 2024, september 23, 2024, october 16, 2023, and november 8, 2023 was seconded by brian lehtinen, unanimously passed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:20pm, unanimously",
+   "quote": "motion to adjourn by thomas gray at 7:20pm, seconded by matthew allison, unanimously passed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "RFP",
+  "design firm selection",
+  "proposal scoring",
+  "references",
+  "interview questions",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

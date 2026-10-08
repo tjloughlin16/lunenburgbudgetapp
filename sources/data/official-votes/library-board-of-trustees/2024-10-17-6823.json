@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2024-10-17",
  "docid": "6823",
@@ -12,24 +12,288 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of September 26, 2024 as amended",
+   "motion": "Accept the minutes of September 26, 2024 as amended.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "dick made a motion to accept the minutes of september 26, 2024 as amended, seconded by donna. the motionpassed unanimously.●",
-   "quote_taken_from_text": true
+   "quote": "dick made a motion to accept the minutes of september 26, 2024 as amended, seconded by donna."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "a motion to adjourn was made by dick and seconded by donna. meeting was adjourned at 8:21 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0744924
+ "note": "Text extraction of a multi-page minutes document with attached director's report pages (pp. 3-10). Attendance is printed as a single line; no roll call. Minutes record two motions, both procedural: approval of minutes passed unanimously; the adjournment motion records no tally. Several quotes have whitespace collapsed to single spaces, as the extraction printed double or run-together spacing. The table figures are as printed in the attached report, not the minutes body. No roles are printed for most trustees, so role is left blank rather than inferred.",
+ "cost_usd": 0.01705187,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup,jana-lee balish, muir haman - director lpl"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup,jana-lee balish, muir haman - director lpl"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup,jana-lee balish, muir haman - director lpl"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup,jana-lee balish, muir haman - director lpl"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup,jana-lee balish, muir haman - director lpl"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup,jana-lee balish, muir haman - director lpl"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup,jana-lee balish, muir haman - director lpl"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trustee director reviews are due to the Chair (Harry) by the November Trustee meeting.",
+   "quote": "reviews are due to harry by november's trustee meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2025 budget status",
+   "what_was_recorded": "The director reported the fiscal year calendar and the budget's expended share, with no dollar total stated in the minutes.",
+   "figures_as_printed": [
+    "29%",
+    "26%"
+   ],
+   "quote": "the fiscal year calendar is 29% complete and the budget is 26% expended."
+  },
+  {
+   "topic": "Water charges",
+   "what_was_recorded": "Water charges rose this year, attributed to a higher water usage rate and a surcharge for the Mass Ave work; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "water charges have increased this year. dick said this is due to an increase in the water usage rate"
+  },
+  {
+   "topic": "FY25 budget table totals (attached director's report)",
+   "what_was_recorded": "The attached FY25 budget table prints a total budget and total expended to date for the library.",
+   "figures_as_printed": [
+    "592,063$",
+    "151,244$",
+    "26%"
+   ],
+   "quote": "totals 592,063$ 151,244$ 26%"
+  },
+  {
+   "topic": "Security camera replacement",
+   "what_was_recorded": "Revised quote for 12 security cameras and cabling, funded by the Capital Plan.",
+   "figures_as_printed": [
+    "$30K"
+   ],
+   "quote": "for a total of $30k, and is funded by the capital plan."
+  },
+  {
+   "topic": "Invested funds",
+   "what_was_recorded": "The library's invested funds balance was reported.",
+   "figures_as_printed": [
+    "$101,063"
+   ],
+   "quote": "invested funds are at $101,063."
+  },
+  {
+   "topic": "ARPA leftover funds",
+   "what_was_recorded": "Money expected to be left over from the ARPA exterior project will go toward the Teen Room renovation and the Proctor Memorial Garden rehab; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "there will be money left over fromthis project and the extra will be put towards the renovation of the teen room and the rehab of the proctor memorialgarden.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Friends investment return",
+   "what_was_recorded": "The Friends of the Library reported a return on their investments for the past year after reviewing their portfolio.",
+   "figures_as_printed": [
+    "9.52%"
+   ],
+   "quote": "the friends earned a 9.52% return on their investments this past year."
+  },
+  {
+   "topic": "Small Works Exhibit price limit",
+   "what_was_recorded": "Exhibit items must be priced under a stated limit.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "items should be no larger than 11\"x11\",and priced under $100."
+  },
+  {
+   "topic": "Grant application",
+   "what_was_recorded": "Director is working on a grant application with Main Street Bank, which issues grants quarterly; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "muir started working on a grant application with main street bank. they issue grants quarterly."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no public comment",
+   "quote": "public comment●no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved as amended (Sept 26, 2024)",
+   "quote": "dick made a motion to accept the minutes of september 26, 2024 as amended, seconded by donna.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report: FY2025 budget update",
+   "resolution": "noted, no action",
+   "quote": "the fiscal year calendar is 29% complete and the budget is 26% expended.",
+   "tags": [
+    "budget",
+    "FY2025"
+   ]
+  },
+  {
+   "topic": "Director's report: staff update",
+   "resolution": "noted, no action",
+   "quote": "katie has been superb at managing teen behavior and setting boundaries.",
+   "tags": [
+    "staffing",
+    "teens"
+   ]
+  },
+  {
+   "topic": "Director's report: programs update",
+   "resolution": "noted, no action",
+   "quote": "craft and chill was successful again this month, bringing in 13 attendees",
+   "tags": [
+    "programs",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Technology update",
+   "resolution": "noted; security camera order pending",
+   "quote": "the security camera quote has been revised and the order should be placed soon.",
+   "tags": [
+    "technology",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Building and maintenance update",
+   "resolution": "noted; keep utility closet clear",
+   "quote": "the town's inspection of the building occurred this week, with no major issues.",
+   "tags": [
+    "building",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Open board position update",
+   "resolution": "noted; notification sent to town",
+   "quote": "notification of the open position has been submitted to the town.",
+   "tags": [
+    "trustees",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "ARPA update",
+   "resolution": "noted, no action",
+   "quote": "power washing of the exterior of the building has started, in preparation for painting.",
+   "tags": [
+    "ARPA",
+    "renovation",
+    "garden"
+   ]
+  },
+  {
+   "topic": "Library invested funds update",
+   "resolution": "noted, no action",
+   "quote": "invested funds are at $101,063.",
+   "tags": [
+    "finance",
+    "investments"
+   ]
+  },
+  {
+   "topic": "Director's review discussion",
+   "resolution": "deadline set: reviews due by November meeting",
+   "quote": "reviews are due to harry by november's trustee meeting.",
+   "tags": [
+    "personnel",
+    "director review"
+   ]
+  },
+  {
+   "topic": "Friends of the Library update",
+   "resolution": "noted, no action",
+   "quote": "the book & bake sale will be held friday, november 1 and saturday, november 2.",
+   "tags": [
+    "Friends of the Library",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no comments",
+   "quote": "●board comments○none●adjourn",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:21 p.m.",
+   "quote": "a motion to adjourn was made by dick and seconded by donna. meeting was adjourned at 8:21 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "ARPA",
+  "capital plan",
+  "technology",
+  "building maintenance",
+  "staffing",
+  "programs",
+  "Friends of the Library",
+  "investments",
+  "trustees"
+ ],
+ "dropped_unquoted_by_field": {}
 }

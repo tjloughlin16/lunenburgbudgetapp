@@ -1,0 +1,426 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-assessors",
+ "board": "Board of Assessors",
+ "video_title": "Board of Assessors",
+ "meeting_date": "2024-09-04",
+ "video_id": "uSa2d14BtmI",
+ "video_url": "https://www.youtube.com/watch?v=uSa2d14BtmI",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-assessors/2024-09-04-uSa2d14BtmI.json",
+  "sha256": "0415d59b5e982a642eec08abe5cc58a43c0b139a9b7eae846b41f3c95522662d",
+  "caption_lines": 416,
+  "segments": 3142
+ },
+ "recording": {
+  "duration_s": 8794,
+  "duration": "2:26",
+  "spoken_chars": 107573,
+  "words_approx": 17928
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09042024-6733",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2024-09-04-agenda-6733.txt",
+   "path": "sources/meetings/board-of-assessors/2024-09-04-agenda-6733.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09042024-6733",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-assessors/2024-09-04-minutes-6733.txt",
+   "path": "sources/meetings/board-of-assessors/2024-09-04-minutes-6733.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-07T21:48:09Z",
+  "cost_usd": 0.4531306
+ },
+ "minutes": {
+  "headline": "Assessors voted to accept the senior tax deferral rate change and the 41D cost-of-living exemption for Town Meeting; 17D/E/F unresolved.",
+  "summary": "The Board of Assessors met in person at the Eagle House because Zoom failed. They heard the principal assessor's status report, signed invoices and motor vehicle excise commitments, and reviewed the overlay surplus. Most of the meeting went to drafting warrant articles for Town Meeting on senior exemptions (Clause 41D, the 41A deferral, and the unresolved Clause 17 series). They also discussed a proposed simplification of the assessors' web page.",
+  "attendees": [
+   {
+    "name_as_heard": "Sarah camera",
+    "role": "vice chair (stepping in for the absent chair)"
+   },
+   {
+    "name_as_heard": "John rabit",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Linda mcade",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "the principal assessor",
+    "role": "principal assessor"
+   },
+   {
+    "name_as_heard": "Denise McHugh",
+    "role": "data collector (mentioned, new staff)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 341,
+    "topic": "Chair asked for public comment after the board's opening comments; none audible in the captions."
+   },
+   {
+    "t": 8756,
+    "topic": "Closing public comment was offered; no response audible."
+   }
+  ],
+  "tags": [
+   "budget",
+   "personnel",
+   "seniors",
+   "staffing",
+   "tax-rate",
+   "technology",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1069,
+    "motion": "Skip/approve the minutes from August 19 (member asked to skip over them; seconded)",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 5803,
+    "motion": "Accept the adjusted income and asset limits for Clause 41D warrant article as amended today",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6012,
+    "motion": "Accept the 41A property tax deferral modification warrant article (interest rate accrual of 6% on deferred funds)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 8769,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1236,
+    "topic": "Real Estate Research Consultants invoice (personal property listing/discovery)",
+    "what_was_said": "Board signed an invoice from RRC; growth figures still awaited.",
+    "figures_as_heard": [
+     "10,100"
+    ]
+   },
+   {
+    "t": 1431,
+    "topic": "NearMap annual license invoice",
+    "what_was_said": "Annual unlimited-seat license for imagery, shared townwide but billed to assessing.",
+    "figures_as_heard": [
+     "$8,100"
+    ]
+   },
+   {
+    "t": 1576,
+    "topic": "Motor vehicle excise commitment",
+    "what_was_said": "A new commitment was signed and uploaded for excise bills.",
+    "figures_as_heard": [
+     "525 invoices",
+     "5,745 $122",
+     "$87,400"
+    ]
+   },
+   {
+    "t": 1666,
+    "topic": "Motor vehicle excise abatements for prior commitments",
+    "what_was_said": "Abatements from canceled plates were signed.",
+    "figures_as_heard": [
+     "$4,690 2 cents"
+    ]
+   },
+   {
+    "t": 2266,
+    "topic": "Overlay surplus review, five-year abatement average",
+    "what_was_said": "Average of abatements excluding 2023 was computed for the interim town manager.",
+    "figures_as_heard": [
+     "$38,988",
+     "127"
+    ]
+   },
+   {
+    "t": 2329,
+    "topic": "FY2024 abatements and exemptions granted, pending appeals",
+    "what_was_said": "Abatements granted exceed history; four appeal cases estimated.",
+    "figures_as_heard": [
+     "$181,000 726",
+     "20,000",
+     "$2,726"
+    ]
+   },
+   {
+    "t": 2478,
+    "topic": "Overlay surplus estimate",
+    "what_was_said": "FY2025 estimate would leave an available overlay surplus; senior work-off not included.",
+    "figures_as_heard": [
+     "379,000",
+     "221,000",
+     "158,000"
+    ]
+   },
+   {
+    "t": 2751,
+    "topic": "Senior tax work-off program cap",
+    "what_was_said": "Cap may have risen with state minimum wage; to be verified.",
+    "figures_as_heard": [
+     "1500",
+     "2000"
+    ]
+   },
+   {
+    "t": 2895,
+    "topic": "Tax deferral interest rate",
+    "what_was_said": "Deferral interest at 6% proposed; other towns' rates mentioned; deferral reduces cash collected in the year.",
+    "figures_as_heard": [
+     "6%",
+     "8%"
+    ]
+   },
+   {
+    "t": 5173,
+    "topic": "State reimbursement for 41C exemptions",
+    "what_was_said": "Town currently reimbursed only a small amount; added exemptions come out of the overlay.",
+    "figures_as_heard": [
+     "$52",
+     "$250",
+     "500"
+    ]
+   },
+   {
+    "t": 3732,
+    "topic": "41C income and asset limits",
+    "what_was_said": "Limits on the wall and in DLS data differ from the 2006 article; seven of 21 applicants might not qualify under the 2006 numbers.",
+    "figures_as_heard": [
+     "24,000",
+     "30",
+     "40,000",
+     "55,000",
+     "750",
+     "$1,000"
+    ]
+   },
+   {
+    "t": 6117,
+    "topic": "Clause 17D exemption and asset limit",
+    "what_was_said": "Existing 17D has an asset limit and an exemption amount raised in 1998.",
+    "figures_as_heard": [
+     "66,000",
+     "332",
+     "$180",
+     "$185"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 292,
+    "decision": "The excise check/billing-file responsibility issue was moved from public comment to the principal assessor's report for discussion."
+   },
+   {
+    "t": 886,
+    "decision": "Board will consider putting a draft letter to the town manager on the conflict of interest in assessing handling the motor vehicle billing file on a later agenda, after the member reviews what the Department of Revenue contact said."
+   },
+   {
+    "t": 1091,
+    "decision": "Rules for tax files and the Clause 17 article to be placed on the September 18 agenda; the member will email the town manager."
+   },
+   {
+    "t": 3355,
+    "decision": "Overlay surplus review is informational only; the senior work-off liability is to be reported once applications close, with the item repeated later in the fall."
+   },
+   {
+    "t": 7210,
+    "decision": "Board will ask town counsel, via the town manager, whether it can set an asset level for Clause 17D and then add cost-of-living adjustment under 17E/17F."
+   },
+   {
+    "t": 8706,
+    "decision": "The member responsible will revise the assessors' web landing page to put quick links (motor vehicle, abatement, maps) up front."
+   },
+   {
+    "t": 8747,
+    "decision": "Next meeting set for September 18."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 109,
+    "topic": "Call to order and open meeting law notice (Zoom failed; recorded via public access)",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 109,
+    "t_end": 341,
+    "topic": "Opening comments: delayed abatement check and billing-file responsibilities",
+    "resolution": "deferred to principal assessor report",
+    "tags": [
+     "town-departments",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 341,
+    "t_end": 1069,
+    "topic": "Principal assessor's status report: excise, exemptions, new data collector, permits, cyclical inspections, staffing, motor vehicle billing file dispute",
+    "resolution": "informational",
+    "tags": [
+     "staffing",
+     "hiring",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1069,
+    "t_end": 1134,
+    "topic": "Minutes and agenda planning for Sept 18",
+    "resolution": "minutes skipped; agenda items noted",
+    "tags": []
+   },
+   {
+    "t_start": 1134,
+    "t_end": 1881,
+    "topic": "Invoices, expense vouchers and motor vehicle excise commitments and abatements signed",
+    "resolution": "signed",
+    "tags": [
+     "contracts-and-unions",
+     "technology",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1881,
+    "t_end": 2196,
+    "topic": "Inconsistent neighborhood/site index assignments on Crescent area parcels",
+    "resolution": "to be investigated",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2196,
+    "t_end": 3355,
+    "topic": "Overlay surplus review and senior work-off and deferral funding questions",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "tax-rate",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 3355,
+    "t_end": 5843,
+    "topic": "Warrant articles: Clause 41C/41D senior exemption limits and cost-of-living adjustment",
+    "resolution": "41D article voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 5843,
+    "t_end": 6074,
+    "topic": "Clause 41A tax deferral interest rate article",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 6074,
+    "t_end": 7949,
+    "topic": "Clause 17D/17E/17F senior and surviving spouse exemptions",
+    "resolution": "no resolution; ask town counsel and revisit Sept 18",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 7949,
+    "t_end": 8747,
+    "topic": "Assessors' department website redesign",
+    "resolution": "member to revise landing page",
+    "tags": [
+     "technology"
+    ]
+   },
+   {
+    "t_start": 8747,
+    "t_end": 8789,
+    "topic": "Closing comments and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Whether the vote to skip/approve August 19 minutes carried and who moved it; only a second was heard.",
+   "The adjournment vote result; a motion and second were heard but not a count.",
+   "Vote counts on 41D and 41A; only 'in favor' calls were heard, no count.",
+   "Many dollar figures (abatements, overlay surplus, exemption limits) are unreliable in the captions.",
+   "Sections around 1154-1180, 1619-1760 and 4290-4400 are garbled by music/applause tags."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Assessors voted to accept the adjusted income and asset limits for the Clause 41D senior exemption warrant article, as amended at the meeting.",
+    "t": 5803
+   },
+   {
+    "line": "The board voted to accept a warrant article changing the Clause 41A property tax deferral, with interest accruing at a stated rate on deferred funds.",
+    "t": 6012
+   },
+   {
+    "line": "The Clause 17D/17E/17F senior and surviving spouse exemptions were left unresolved; the board will ask town counsel, through the town manager, about setting an asset level.",
+    "t": 7210
+   },
+   {
+    "line": "The board reviewed the overlay surplus as information only; the senior work-off liability is to be reported once applications close.",
+    "t": 3355
+   },
+   {
+    "line": "The meeting was held in person because Zoom failed, and the next meeting was set for September 18.",
+    "t": 8747
+   }
+  ],
+  "why_it_matters": [
+   "Two of the votes are articles meant for Town Meeting, so residents who are seniors, or who care for one, may be asked to vote on exemption limits and the deferral interest rate.",
+   "Exemptions granted under these clauses are covered from the overlay, the reserve held against abatements, and the state reimburses the town only a small amount, so wider eligibility shifts cost onto the tax levy or the reserve."
+  ],
+  "watch_next": [
+   "September 18 Board of Assessors meeting: the Clause 17 article and rules for tax files are to be placed on the agenda.",
+   "Town counsel's answer, via the town manager, on setting an asset level for Clause 17D."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-07T21:48:30Z",
+   "cost_usd": 0.22052300000000002
+  }
+ }
+}

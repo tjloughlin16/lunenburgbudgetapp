@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2025-01-16",
  "docid": "6955",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of December 12, 2024 as presented",
+   "motion": "Accept the minutes of December 12, 2024 as presented.",
    "moved_by": "Jana",
    "seconded_by": "Laura",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "jana made a motion to accept the minutes of december 12, 2024 as presented, seconded by laura. the motion passed by roll call vote, with donna and david abstaining."
   },
   {
-   "motion": "Accept the minutes of January 7, 2025 as presented",
+   "motion": "Accept the minutes of January 7, 2025 as presented.",
    "moved_by": "Donna",
    "seconded_by": "Jana",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "donna made a motion to accept the minutes of january 7, 2025 as presented, seconded by jana. the motion passed by roll call vote, with laura abstaining."
   },
   {
-   "motion": "Request $13K from the Friends' Endowment for the purchase of furniture for the Teen Room",
+   "motion": "Request $13K from the Friends’ Endowment for the purchase of furniture for the Teen Room.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
    "outcome": "passed unanimously",
@@ -36,15 +36,312 @@
    "quote": "dick made a motion, seconded by donna, to request $13k from the friends' endowment for the purchase of furniture for the teen room. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Donna",
    "seconded_by": "David",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "a motion to adjourn was made by donna and seconded by david. meeting was adjourned at 8:47 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08541739999999999
+ "note": "Text extraction scrambled line breaks, so every quote is copied with line breaks collapsed to single spaces. Four votes are recorded: two roll-call approvals of minutes (no tally printed, abstentions named), the $13K Friends' Endowment request (passed unanimously), and the motion to adjourn, for which the minutes print no result, so its outcome is recorded as not stated. The minutes include attached reports (Children's Services, Young Adult, Adult Services) that were read only for figures; the Children's expenses page (p.11) has a heading and no printed figures. The decisions list is empty because the staff actions described (moving funds, newsletters, training) are not recorded as board decisions. Harry appears as a remote attendee and as a public commenter, with no stated role for the speaker line.",
+ "cost_usd": 0.02115027,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Trustee (as listed in attendance)",
+   "status": "remote",
+   "quote": "attending: harry kubetz (remote), dick mailloux, donna saiia, laura boussom, maia wentrup (remote, joined at 6:50 p.m.), jana-lee balish, david niose, muir haman - director lpl"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Acting Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by acting chairperson dick mailloux."
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: harry kubetz (remote), dick mailloux, donna saiia, laura boussom, maia wentrup (remote, joined at 6:50 p.m.), jana-lee balish, david niose, muir haman - director lpl"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: harry kubetz (remote), dick mailloux, donna saiia, laura boussom, maia wentrup (remote, joined at 6:50 p.m.), jana-lee balish, david niose, muir haman - director lpl"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "maia wentrup (remote, joined at 6:50 p.m.)"
+  },
+  {
+   "name": "Jana-Lee Balish",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: harry kubetz (remote), dick mailloux, donna saiia, laura boussom, maia wentrup (remote, joined at 6:50 p.m.), jana-lee balish, david niose, muir haman - director lpl"
+  },
+  {
+   "name": "David Niose",
+   "role": "Trustee (first meeting)",
+   "status": "present",
+   "quote": "david niose was welcomed to his first meeting as a trustee of the lunenburg public library."
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: harry kubetz (remote), dick mailloux, donna saiia, laura boussom, maia wentrup (remote, joined at 6:50 p.m.), jana-lee balish, david niose, muir haman - director lpl"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY2025 budget status",
+   "what_was_recorded": "The fiscal year calendar was 54% complete and the budget 46% expended, with sewerage and water on track to be over expended.",
+   "figures_as_printed": [
+    "54%",
+    "46%"
+   ],
+   "quote": "the fiscal year calendar is 54% complete and the budget is 46% expended."
+  },
+  {
+   "topic": "FY2025 overage in sewerage and water",
+   "what_was_recorded": "Sewerage and water were projected to exceed their budgets.",
+   "figures_as_printed": [],
+   "quote": "sewerage and water are on track to be over expended."
+  },
+  {
+   "topic": "FY2025 line-item table totals",
+   "what_was_recorded": "The director's report printed the FY25 budget table totals and percent expended.",
+   "figures_as_printed": [
+    "592,063$",
+    "270,117$",
+    "46%"
+   ],
+   "quote": "totals 592,063$ 270,117$ 46%"
+  },
+  {
+   "topic": "Salary lines in FY25 budget table",
+   "what_was_recorded": "The director's report printed the director, assistant director and staff salary lines with budget, expended and percent figures.",
+   "figures_as_printed": [
+    "90,726$",
+    "46,927$",
+    "52%",
+    "64,023$",
+    "242,984$",
+    "127,694$",
+    "53%"
+   ],
+   "quote": "library director salary 90,726$ 46,927$ 52% 54%"
+  },
+  {
+   "topic": "Library materials, office supplies and postage spending",
+   "what_was_recorded": "Library materials were 20% expended, office supplies 38%, and postage 7%, with most postage from lost-book notices.",
+   "figures_as_printed": [
+    "20%",
+    "38%",
+    "7%"
+   ],
+   "quote": "library materials is only 20% expended and office supplies is at 38%"
+  },
+  {
+   "topic": "Teen Room furniture funding gap",
+   "what_was_recorded": "Furniture for the Teen Room was ordered but about $13K more was needed; the board later approved a request to the Friends’ Endowment.",
+   "figures_as_printed": [
+    "$13K",
+    "$13,000"
+   ],
+   "quote": "furniture has been ordered, but we will need an additional $13k in funding."
+  },
+  {
+   "topic": "ARPA furniture funding and State Aid",
+   "what_was_recorded": "About $13,000 more was needed for ARPA furniture; State Aid, the Friends Endowment and Main Street Bank were named as potential sources, with FY25 State Aid award approximately $34,000.",
+   "figures_as_printed": [
+    "$13,000",
+    "$34,000"
+   ],
+   "quote": "we will need to fund about $13,000 more for these items. state aid will be available including our fy25 award amount of approx. $34,000."
+  },
+  {
+   "topic": "Contingency funds",
+   "what_was_recorded": "Unofficially, the contingency funds were expected not to be fully used. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "unofficially, chris ruth advised we likely will not use all the contingency funds."
+  },
+  {
+   "topic": "Overdue invoices and security cameras",
+   "what_was_recorded": "An overdue invoice for Microsoft Office licenses and other overdue invoices delayed the order for security cameras. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "due an overdue invoice for these licenses (and other overdue invoices) our order for security cameras has been delayed."
+  },
+  {
+   "topic": "Library invested funds",
+   "what_was_recorded": "The board did not have the current statement for invested funds. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "we do not have the current statement."
+  },
+  {
+   "topic": "Adult programming financial report",
+   "what_was_recorded": "The adult programs budget was printed with a grand total and per-line percentages spent.",
+   "figures_as_printed": [
+    "$14,600",
+    "49%",
+    "$4,500",
+    "$3,000",
+    "$500",
+    "$6,600"
+   ],
+   "quote": "grand total $14,600 49% 27% 24%"
+  },
+  {
+   "topic": "FY26 budget requests",
+   "what_was_recorded": "The director discussed FY26 budget requests, due to the Town Manager by January 21. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "muir discussed his fy26 budget requests."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Director to move funds from other accounts to cover the sewerage and water overage, potentially from the electricity account.",
+   "outcome": "Stated as planned; no amount printed and no vote recorded.",
+   "quote": "muir will move funds from other accounts to cover the overage, potentially from the electricity account"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Harry",
+   "stated_role": "not stated",
+   "topic": "salary survey and director's salary",
+   "quote": "harry let us know that he spoke with michael-ray jeffreys before our meeting and that there is no update on the salary survey."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action",
+   "quote": "harry let us know that he spoke with michael-ray jeffreys before our meeting and that there is no update on the salary survey.",
+   "tags": [
+    "public comment",
+    "salary survey"
+   ]
+  },
+  {
+   "topic": "Welcoming David Niose",
+   "resolution": "welcomed to first meeting",
+   "quote": "david niose was welcomed to his first meeting as a trustee of the lunenburg public library.",
+   "tags": [
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, December 12, 2024 and January 7, 2025",
+   "resolution": "approved by roll call",
+   "quote": "jana made a motion to accept the minutes of december 12, 2024 as presented, seconded by laura. the motion passed by roll call vote, with donna and david abstaining.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report and FY25 budget update",
+   "resolution": "no action",
+   "quote": "the fiscal year calendar is 54% complete and the budget is 46% expended.",
+   "tags": [
+    "budget",
+    "FY25",
+    "director's report"
+   ]
+  },
+  {
+   "topic": "ARPA renovation and Teen Room project",
+   "resolution": "no action",
+   "quote": "the renovation project should start january 24 with the two new offices and then progress to the demolition and remodeling of the teen room.",
+   "tags": [
+    "ARPA",
+    "renovation",
+    "Teen Room"
+   ]
+  },
+  {
+   "topic": "Funding for Teen Room furniture",
+   "resolution": "approved $13K request to the Friends’ Endowment",
+   "quote": "dick made a motion, seconded by donna, to request $13k from the friends' endowment for the purchase of furniture for the teen room. the motion passed unanimously.",
+   "tags": [
+    "Friends",
+    "furniture",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Library invested funds",
+   "resolution": "no update; statement not available",
+   "quote": "we do not have the current statement.",
+   "tags": [
+    "invested funds"
+   ]
+  },
+  {
+   "topic": "Director's contract",
+   "resolution": "referred to public comment; no action",
+   "quote": "see harry's public comment above.",
+   "tags": [
+    "director contract",
+    "salary"
+   ]
+  },
+  {
+   "topic": "Brook’s House",
+   "resolution": "no update",
+   "quote": "brook's house update/discussion ○ no update.",
+   "tags": [
+    "Brook’s House"
+   ]
+  },
+  {
+   "topic": "Friends update",
+   "resolution": "no action",
+   "quote": "preliminary plans for a native plant sale this spring were presented.",
+   "tags": [
+    "Friends",
+    "plant sale"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no action",
+   "quote": "dick gave kudos to debbie, joslyn, and lydia for keeping up with social media posts and all the programs they have worked on.",
+   "tags": [
+    "social media",
+    "staff"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:47 p.m.",
+   "quote": "meeting was adjourned at 8:47 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "FY25 budget",
+  "ARPA",
+  "Teen Room renovation",
+  "Friends endowment",
+  "salary survey",
+  "director's report",
+  "programs",
+  "technology",
+  "postage",
+  "trustees"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -401,5 +401,139 @@
    "at": "2026-10-06T18:20:53Z",
    "cost_usd": 0.212643
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01062025-6941",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/lunenburg-municipal-building-design-committee/2025-01-06-minutes-6941.txt",
+   "path": "sources/meetings/lunenburg-municipal-building-design-committee/2025-01-06-minutes-6941.pdf"
+  },
+  "official_sha256": "7e93d954d6c94561947f27e638722a9f901b9f579e0aaa69bded776c3055875c",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "Neither record has a vote or a transfer, and the attendee lists mostly match once the caption-garbled names are corrected. The official minutes are a brief summary: they omit our design decisions and all of our figures, and they add four community guests and a department-head and historical commission review that ours does not record.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: member Dave/David Blatt vs. chair Michael Ray",
+    "ours": "Michael Ray (chair)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis",
+    "note": "Official lists Michael-Ray Jeffreys as a member with no chair designation; names are likely the same person (caption error), but chair role is not in the official list; check the roster.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Brian Leon",
+    "ours": "Brian Leon (member)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis",
+    "note": "Misheard surname of the same member.",
+    "official_reading": "Brian Lehtinen"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Michael Ray",
+    "ours": "Michael Ray (chair)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis",
+    "note": "Captions split first name and misheard surname.",
+    "official_reading": "Michael-Ray Jeffreys"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Dave (Mr blat)",
+    "ours": "Dave (Mr blat) (member)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis",
+    "note": "Same member, surname misheard.",
+    "official_reading": "David Blatt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Christina (Mrs midis)",
+    "ours": "Christina (Mrs midis) (member)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis",
+    "note": "Same member, name misheard.",
+    "official_reading": "Kristina Masaitis"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Matt Allison",
+    "ours": "Matt Allison (member)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis",
+    "note": "Same person; short form of first name.",
+    "official_reading": "Matthew Allison"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Tony scull BR",
+    "ours": "Tony scull BR (Mr scullin brini) (member)",
+    "official": "community guests: tony sculumbrine , laura brzozoski, ana lockwood, amanda moore, caesar nuzzolo",
+    "note": "Misheard surname; also ours calls him a member while official lists him as a community guest, so check his role.",
+    "official_reading": "Tony Sculumbrine"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Greg Roy and Tom Gray",
+    "ours": "Greg Roy (member); Tom Gray (member)",
+    "official": "members present: brian lehtinen, michael-ray jeffreys, greg roy, matthew allison, tom gray, david blatt, kristina masaitis",
+    "note": "Both records list them as members present.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Architects presenting (Taylor and Burns)",
+    "ours": "Robert, Stephen, Marley (presenters, architects, Taylor and Burns)",
+    "official": "",
+    "note": "The official minutes list no architect presenters among attendees."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Community guests Laura Brzozoski, Ana Lockwood, Amanda Moore, Caesar Nuzzolo",
+    "ours": "",
+    "official": "community guests: tony sculumbrine , laura brzozoski, ana lockwood, amanda moore, caesar nuzzolo",
+    "note": "Four guests appear in the official minutes only; our minutes did not identify them."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Revised plan at next meeting",
+    "ours": "The next meeting is Wednesday, January 22, at 5:30 pm. Renderings are due February 3 and go to the select board on February 4.",
+    "official": "revised plan: a revised plan incorporating feedback will be presented at the next meeting, including the updated bathroom and elevator locations in the ritter building.",
+    "note": "Both point to a next meeting, but the official records a revised plan with bathroom and elevator locations; ours records only the date and the rendering schedule, so the two are only partly aligned."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Distribution to department heads and historical commission meetings",
+    "ours": "",
+    "official": "presentation will be distributed to department heads for feedback. meetings scheduled with department heads and historical commission.",
+    "note": "Our minutes mention staff input only on the superintendent window; they do not record distribution to department heads or a historical commission meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Design decisions: Ritter stair/front treatment, Mass Ave facade, superintendent window, crosswalk, lift vs elevator",
+    "ours": "The majority wants a prominent facade facing Mass Ave, preferring the arch design without the wraparound porch.",
+    "official": "",
+    "note": "Our minutes record several design direction decisions (straw poll on no Ritter entrance, options for the former stair, facade preference, superintendent window, lift vs elevator cost analysis, crosswalk location) that the official summary does not mention."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figures heard (footprint, $30 million renovation estimate, elevator shaft cost, $15 million overall project)",
+    "ours": "Overall project cost: $15 million",
+    "official": "",
+    "note": "The official minutes print no budget figures, so none of ours can be confirmed; the elevator shaft figures are garbled in the captions."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T20:46:27Z",
+   "cost_usd": 0.236683
+  }
  }
 }

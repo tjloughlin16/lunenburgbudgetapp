@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2024-12-16",
  "docid": "6923",
@@ -12,23 +12,201 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from November 18, 2024",
-   "moved_by": "Jackie",
-   "seconded_by": "Kathy",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the November 18, 2024 meeting.",
+   "moved_by": "Jackie Chabot",
+   "seconded_by": "Kathy Dugan",
+   "outcome": "passed, unanimously (no count printed)",
    "procedural": true,
    "quote": "jackie made a motion to approve the minutes from the following meetings: november 18, 2024. kathy seconded. commission unanimously approved"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Jackie",
-   "seconded_by": "Kathy",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Jackie Chabot",
+   "seconded_by": "Kathy Dugan",
+   "outcome": "passed, unanimously (no count printed)",
    "procedural": true,
-   "quote": "jackie made a motion to adjourn; kathy seconds. commission unanimously approved."
+   "quote": "jackie made a motion to adjourn; kathy seconds. commission unanimously approved. meeting adjourned at 8:32 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06823240000000001
+ "note": "Text is a clean text extract, not a scan. Two recorded motions, both procedural, both with a unanimous result and no printed count. No dollar figures appear, so budget_items and transfers are empty. The public comment entry comes from agenda item 2, which is labelled Public Comment, but no speaker is named. The notice says 7:00PM and the schedule says 6:30 pm, both as printed. The Alternate seat is listed as Vacant and is not recorded as a person. Bernard Cahill and Ellen Leicher are listed as Public in attendance and as the MRPC presenters on the agenda.",
+ "cost_usd": 0.013870570000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair maryrae holman ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jackie chabot ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Member",
+   "status": "present",
+   "quote": "member kathy dugan ✔"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Member",
+   "status": "present",
+   "quote": "member ryan stober ✔"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate kira mcclellan ✔"
+  },
+  {
+   "name": "Bernard Cahill",
+   "role": "Public; presenter on the MVP Action Grant item per the agenda",
+   "status": "present",
+   "quote": "bernard and ellen from the montachusett regional planning commission"
+  },
+  {
+   "name": "Ellen Leicher",
+   "role": "Public; presenter on the MVP Action Grant item per the agenda",
+   "status": "present",
+   "quote": "public ellen leicher ✔"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission's representation to attend a 300th celebration meeting in April 2025 was noted as planned (agenda note; no vote recorded).",
+   "quote": "meeting to come in april 2025, agcomm representation to attend"
+  },
+  {
+   "decision": "Hudson Community Garden is to join the January meeting (agenda note; no vote recorded).",
+   "quote": "hudson community garden to join january meeting"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "300th celebration event in 2028",
+   "quote": "300th celebration event to take place in 2028 meeting to come in april 2025, agcomm representation to attend"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:04 pm",
+   "quote": "1 call to order meeting commencement time: 7:04 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (300th celebration)",
+   "resolution": "noted; AgComm representation planned for an April 2025 meeting",
+   "quote": "300th celebration event to take place in 2028 meeting to come in april 2025, agcomm representation to attend",
+   "tags": [
+    "300th celebration",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action (none)",
+   "quote": "3 announcements none.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved (Nov 18, 2024 minutes)",
+   "quote": "jackie made a motion to approve the minutes from the following meetings: november 18, 2024.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Business: MVP Action Grant",
+   "resolution": "presented by Montachusett Regional Planning Commission representatives; no action recorded",
+   "quote": "mvp action grant bernard and ellen from the montachusett regional planning commission",
+   "tags": [
+    "MVP",
+    "climate resilience",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Current Business",
+   "resolution": "reviewed items; no vote recorded",
+   "quote": "lunenburg farmers' market reviewed 2025 farmers' market application",
+   "tags": [
+    "farmers market",
+    "community garden",
+    "facebook",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action (none)",
+   "quote": "7 committee reports none",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Farming Issues",
+   "resolution": "no action (none)",
+   "quote": "8 farming issues none",
+   "tags": [
+    "farming"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings/Events Schedule",
+   "resolution": "schedule listed for January, February and March 2025",
+   "quote": "6:30 pm january 27, 2025 lunenburg public library, sudolnik conference room",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none recorded",
+   "quote": "10 public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:32 pm (motion approved unanimously)",
+   "quote": "jackie made a motion to adjourn; kathy seconds. commission unanimously approved.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "MVP action grant",
+  "climate resilience",
+  "300th celebration",
+  "farmers market",
+  "community garden",
+  "minutes approval",
+  "adjournment",
+  "facebook outreach"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2024-10-21",
  "docid": "6837",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from September 30, 2024",
+   "motion": "Approve the minutes of the September 30, 2024 meeting.",
    "moved_by": "Jackie Chabot",
    "seconded_by": "Kathy Dugan",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "jackie made a motion to approve the minutes from the following meetings: september 30, 2024. kathy seconded. commission unanimously approved"
   },
   {
-   "motion": "Recommend Ryan Stober for a full member position on the Agricultural Commission",
+   "motion": "Recommend Ryan Stober for a full member position on the Agricultural Commission.",
    "moved_by": "Jackie Chabot",
    "seconded_by": "Kathy Dugan",
    "outcome": "passed",
    "procedural": false,
-   "quote": "jackie made a motion to recommend ryan stober for a full member position on the agricultural commission. kathy seconded. commission unanimously approved."
+   "quote": "jackie made a motion to recommend ryan stober for a full member position on the agricultural commission. kathy seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jackie Chabot",
    "seconded_by": "Kathy Dugan",
    "outcome": "passed",
@@ -37,6 +37,195 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.061970399999999995
+ "note": "Text extraction of a typed minutes document, not a scan. Votes are recorded only as \"unanimously approved\", with no tally printed. Maryrae Holman and Kira McClellan are listed in the roster without a check mark and the minutes do not say absent, so status is \"not stated\". Two agenda items are labelled \"Public Comment\" and both read \"None\". The Facebook follow-up and the concessions-vendor remark are recorded as notes, not as board decisions, so decisions is empty. No dollar figures appear. The Notice header misspells the board name as \"AGRICULTRUAL\", which is left as printed.",
+ "cost_usd": 0.013750870000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Duffy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair jennifer duffy ✔"
+  },
+  {
+   "name": "Jackie Chabot",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk jackie chabot ✔"
+  },
+  {
+   "name": "Kathy Dugan",
+   "role": "Member",
+   "status": "present",
+   "quote": "member kathy dugan ✔"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Public",
+   "status": "present",
+   "quote": "public ryan stober ✔"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "vice-chair maryrae holman"
+  },
+  {
+   "name": "Kira McClellan",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "alternate kira mcclellan"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "meeting called to order at 7:03 pm",
+   "quote": "call to order meeting commencement time: 7:03 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "no comment",
+   "quote": "2 public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no announcements",
+   "quote": "3 announcements none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved minutes of September 30, 2024",
+   "quote": "jackie made a motion to approve the minutes from the following meetings: september 30, 2024.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Spring Event Ideas",
+   "resolution": "discussed; no action recorded",
+   "quote": "spring event ideas for spring event like open farm day, plant sale, etc",
+   "tags": [
+    "events",
+    "spring"
+   ]
+  },
+  {
+   "topic": "AgComm 2024 Event Debrief",
+   "resolution": "discussed; feedback noted",
+   "quote": "agcomm 2024 event debrief event was well received by public, article in paper, mention at select board meeting",
+   "tags": [
+    "events",
+    "debrief"
+   ]
+  },
+  {
+   "topic": "Community Garden",
+   "resolution": "no action",
+   "quote": "community garden none",
+   "tags": [
+    "community garden"
+   ]
+  },
+  {
+   "topic": "Lunenburg Farmers' Market",
+   "resolution": "discussed plans for 2025 market",
+   "quote": "discussion for plans for 2025 farmers' market",
+   "tags": [
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "Membership: Ryan Stober",
+   "resolution": "recommended Ryan Stober for full member position",
+   "quote": "ryan submitted a talent bank form with interest to join the agricultural commission.",
+   "tags": [
+    "membership",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Agricultural Commission Facebook Page",
+   "resolution": "follow-up post noted for AgFair",
+   "quote": "facebook post to follow up on agfair",
+   "tags": [
+    "outreach",
+    "facebook"
+   ]
+  },
+  {
+   "topic": "Letter for Lunenburg Farming Community Outreach",
+   "resolution": "marked complete",
+   "quote": "letter for lunenburg farming community outreach complete",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no reports",
+   "quote": "committee reports none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Farming Issues",
+   "resolution": "no issues raised",
+   "quote": "8 farming issues none",
+   "tags": [
+    "farming"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings/Events Schedule",
+   "resolution": "schedule listed through February 2025",
+   "quote": "6:30 pm november 18, 2024 lunenburg public library, sudolnik conference room + zoom",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no comment",
+   "quote": "10 public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:43pm",
+   "quote": "meeting adjourned at 8:43pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farmers market",
+  "community events",
+  "membership",
+  "minutes approval",
+  "outreach",
+  "spring event",
+  "meeting schedule"
+ ],
+ "dropped_unquoted_by_field": {}
 }

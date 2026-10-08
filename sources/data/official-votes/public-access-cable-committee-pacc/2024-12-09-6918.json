@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2024-12-09",
  "docid": "6918",
@@ -10,8 +10,139 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12092024-6918",
   "doc_url": "/docs/meetings/public-access-cable-committee-pacc/2024-12-09-minutes-6918.txt"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "One vote recorded: adjournment. The minutes do not record approval of prior minutes or any other motions voted on.",
- "cost_usd": 0.07120240000000001
+ "votes": [
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "P.Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "meeting adjourned at 6:28 pm • (s.archambault, 2nd p.lincoln - passed)"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is extracted from a PDF with tabs collapsed; quotes are copied with single spaces. The only recorded motion is adjournment, and the minutes print no vote count for it. No other votes are recorded: the Future Space discussion and the presentation were not put to a motion. The $30 million figure is a historical price tag for an earlier design, not a current cost. The current plan to keep PAC at Passios is described in the minutes but was not recorded as a decision, so it is not listed.",
+ "cost_usd": 0.012997370000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member; with J.Toale presented the PAC Space powerpoint",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, pete lincoln, steve archambault,"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, pete lincoln, steve archambault,"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: steve walker, pete lincoln, steve archambault,"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "3. excused: faith beall"
+  },
+  {
+   "name": "Jo Toale",
+   "role": "Manager",
+   "status": "present",
+   "quote": "4. manager: jo toale 5. public: michael-ray jeffereys (select board)"
+  },
+  {
+   "name": "Michael-Ray Jeffereys",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "4. manager: jo toale 5. public: michael-ray jeffereys (select board)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "M.Jeffereys is to take PAC requirements and possible solutions to the architect, to test whether PAC can be included in the future Town Hall structure while still meeting infrastructure needs.",
+   "quote": "m.jeffereys will bring pac requirements and possible solutions to architect to see if there is a creative way to include pac in the future town hall structure"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Passios structure repairs",
+   "what_was_recorded": "The committee discussed the Passios structure: the roof is leaking, the boiler may not last the winter, and money may need to be found for emergency repairs. No figure was printed.",
+   "quote": "money may need to be found for emergency repairs."
+  },
+  {
+   "topic": "Earlier Town Hall / TCP design footprint cost",
+   "what_was_recorded": "The earlier TCP Design Committee's footprint realignment, which people wanted larger, led to a price tag of $30 million.",
+   "figures_as_printed": [
+    "$30 million"
+   ],
+   "quote": "which led to a $30 million price tag."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call",
+   "resolution": "no action; meeting called to order at 5:31 pm",
+   "quote": "1. meeting was called to order at 5:31 pm.",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no action; none offered",
+   "quote": "public comments: - • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments",
+   "resolution": "no action; none offered",
+   "quote": "committee comments: - • none",
+   "tags": [
+    "committee"
+   ]
+  },
+  {
+   "topic": "Future Space",
+   "resolution": "discussed; architect action assigned to M.Jeffereys; no vote",
+   "quote": "discussion concerning status of passios structure,",
+   "tags": [
+    "future space",
+    "town hall",
+    "passios",
+    "facilities",
+    "PAC"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:28 pm, passed",
+   "quote": "meeting adjourned at 6:28 pm • (s.archambault, 2nd p.lincoln - passed)",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access cable",
+  "PACC",
+  "future space",
+  "town hall",
+  "Passios",
+  "Turkey Hill Elementary",
+  "Ritter Memorial",
+  "facilities",
+  "emergency repairs",
+  "special meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

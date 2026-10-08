@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2024-11-04",
  "docid": "6857",
@@ -10,8 +10,287 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11042024-6857",
   "doc_url": "/docs/meetings/capital-planning-committee/2024-11-04-minutes-6857.txt"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.07208940000000001
+ "votes": [
+  {
+   "motion": "Motion to adjourn the meeting.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Matt Brenner",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "there was a m otion to adjourn by tom alonzo, seconded by m att b renner. the meeting closed at 9:11 pm.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is a PDF extraction with broken letter spacing (e.g. \"m otion\", \"C hief\") and curly apostrophes; quotes are copied with whitespace collapsed to single spaces and letter splits kept as printed. Only one motion appears in the minutes, the adjournment, and the minutes record no result for it, so its outcome is \"not stated\". No votes were recorded on the capital requests or priorities. budget_items is selective, not exhaustive: the FY26-FY36 capital schedule for Fire and DPW prints many more dollar figures than are itemized here. Carter Terenzini is named as confirming licenses and receiving a list, but is not recorded as taking part, so is not listed as an attendee. Public comment was \"no comments\" in both sections, so no speakers are recorded.",
+ "cost_usd": 0.01705937,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present members: chair peter beardmore, vice chair tom alonzo, clerk matt brenner, member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present members: chair peter beardmore, vice chair tom alonzo, clerk matt brenner, member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Matt Brenner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present members: chair peter beardmore, vice chair tom alonzo, clerk matt brenner, member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Rob Bowen",
+   "role": "Member-at-large",
+   "status": "present",
+   "quote": "member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee Representative",
+   "status": "present",
+   "quote": "member-at-large rob bowen, finance committee representative chris menard"
+  },
+  {
+   "name": "Casey Chisholm",
+   "role": "I.T. Director",
+   "status": "present",
+   "quote": "casey chisholm, i.t. director, provided the capital request presentation."
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "provided the capital request presentation for the fire department"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "the presentation was provided by dpw director, bill bernard."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The ranked capital request list is to be sent to the Town Manager before the end of the calendar year, after the requests are put in priority order.",
+   "quote": "that list will then be sent to the town manager before the end of the calendar year."
+  },
+  {
+   "decision": "Chair Peter Beardmore will create an Excel spreadsheet and a Google shared drive holding all the presentations.",
+   "quote": "peter beardmore will create an excel spreadsheet and a google share drive with all the presentations."
+  },
+  {
+   "decision": "Chair asked each member to rank the projects in their priority order.",
+   "quote": "peter beardmore requests that each member rank the projects in their priority order."
+  },
+  {
+   "decision": "Member Rob Bowen requested a list of all capital projects that have not been completed.",
+   "quote": "rob bowen is requesting a list of all the capital projects that have not been completed."
+  },
+  {
+   "decision": "Next meeting scheduled for November 13 via Zoom at 7 PM.",
+   "quote": "the n ext meeting is scheduled for november 13 th via zoom at 7 pm.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "IT: Priority 1 firewall and access points (Eagle House)",
+   "what_was_recorded": "Estimated cost of firewall and access points for the infrastructure, presented as FY27 Priority 1.",
+   "quote": "the cost for f irewall and the access points for the infrastructure is estimated to cost $ 16,000 .",
+   "figures_as_printed": [
+    "$ 16,000"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "IT: Priority 2 network equipment replacement",
+   "what_was_recorded": "Estimated cost to replace network equipment and access points for Ritter Building, DPW, Public Safety and Town Hall.",
+   "quote": "town hall is estimated to costs $ 32,000 .",
+   "figures_as_printed": [
+    "$ 32,000"
+   ]
+  },
+  {
+   "topic": "Community Compact grant for IT equipment",
+   "what_was_recorded": "The community compact grant was previously used for firewalls and is available every two years; no grant amount was printed.",
+   "quote": "c asey chisholm has previously used the community compact grant for firewalls .",
+   "figures_as_printed": [],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Fire: FY26 replacement of Car 2",
+   "what_was_recorded": "Requested FY26 replacement of the duty officer and fire prevention vehicle.",
+   "quote": "replace car 2 ( duty officer/fire prevention vehicle) - $75,000",
+   "figures_as_printed": [
+    "$75,000"
+   ]
+  },
+  {
+   "topic": "Fire: FY27 replacement of Squad 3",
+   "what_was_recorded": "Requested FY27 replacement of Squad 3, with an estimated cost.",
+   "quote": "replace squad 3 estimated to cost - $ 1 ,433,000",
+   "figures_as_printed": [
+    "$ 1 ,433,000"
+   ]
+  },
+  {
+   "topic": "Fire: FY36 replacement of 2025 ambulance",
+   "what_was_recorded": "Requested FY36 replacement of the 2025 ambulance; the Fire Chief proposed keeping EMS vehicles 12 years rather than 10.",
+   "quote": "replace 2025 ambulance - $ 1, 139,957",
+   "figures_as_printed": [
+    "$ 1, 139,957"
+   ]
+  },
+  {
+   "topic": "Fire: ARPA-eligible radios and air packs",
+   "what_was_recorded": "A list of possible requests fulfillable with ARPA funds was given to the Town; no dollar figure was printed.",
+   "quote": "can be fulfilled with arpa funds. this includes 12 more portable radios and air",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "DPW: 6-wheel dump truck with salt spreader and plow",
+   "what_was_recorded": "DPW Director received an estimate for the FY26 six-wheel dump truck.",
+   "quote": "bill bernard received an estimated this week of $401,000.",
+   "figures_as_printed": [
+    "$401,000"
+   ]
+  },
+  {
+   "topic": "DPW: cemetery sale of lots fund balance",
+   "what_was_recorded": "Balance of the cemetery sale of lots fund, asked by Chris Menard.",
+   "quote": "bernard states $200,000.",
+   "figures_as_printed": [
+    "$200,000"
+   ]
+  },
+  {
+   "topic": "DPW: front-end loader rental cost",
+   "what_was_recorded": "A loader was rented for four months at a monthly rate, in connection with the FY27 front-end loader replacement.",
+   "quote": "rented a loader for $5,000 a month for a total of 4 months.",
+   "figures_as_printed": [
+    "$5,000 a month"
+   ]
+  },
+  {
+   "topic": "Storm water utility and large projects",
+   "what_was_recorded": "Asked whether bridges and culverts would be in the storm water utility program; the DPW Director said the biggest projects would not be handled in the utility bill. No dollar figure printed.",
+   "quote": "tom alonzo questions if projects such a s bridges and culverts will be included in the storm water utility program .",
+   "figures_as_printed": [],
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "the meeting opened at 6:31 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action",
+   "quote": "peter beardmore forwarded the presentations for tonight",
+   "tags": [
+    "procedure",
+    "presentations"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "no action",
+   "quote": "there were no minutes to review",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "IT capital request presentation",
+   "resolution": "presented; no vote",
+   "quote": "casey chisholm, i.t. director, provided the capital request presentation.",
+   "tags": [
+    "IT",
+    "capital requests",
+    "network equipment",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Fire Department capital request presentation",
+   "resolution": "presented; no vote",
+   "quote": "provided the capital request presentation for the fire department",
+   "tags": [
+    "fire",
+    "ambulance",
+    "vehicles",
+    "ARPA",
+    "capital requests"
+   ]
+  },
+  {
+   "topic": "DPW capital request presentation",
+   "resolution": "presented; no vote",
+   "quote": "the presentation was provided by dpw director, bill bernard.",
+   "tags": [
+    "DPW",
+    "cemetery",
+    "trucks",
+    "drainage",
+    "capital requests",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Review schedule and future meeting topics",
+   "resolution": "ranking task assigned; next meeting set",
+   "quote": "all capital presentations have been completed.",
+   "tags": [
+    "priorities",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Public comment (second instance)",
+   "resolution": "no action",
+   "quote": "there were no comments from the committee or the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "motion to adjourn; outcome not recorded",
+   "quote": "there was a m otion to adjourn by tom alonzo, seconded by m att b renner.",
+   "tags": [
+    "procedure"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "capital requests FY26-FY36",
+  "IT",
+  "fire department",
+  "ambulance",
+  "DPW",
+  "cemetery",
+  "drainage",
+  "storm water",
+  "ARPA",
+  "state grants",
+  "capital priorities",
+  "Zoom"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-300th-anniversary-committee",
  "meeting_date": "2024-09-09",
  "docid": "6924",
@@ -12,16 +12,253 @@
  },
  "votes": [
   {
-   "motion": "Approve the prior meeting minutes",
+   "motion": "Pass (approve) the minutes.",
    "moved_by": "Dawn",
    "seconded_by": "Bill",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a motion for passing the minutes was made by dawn and seconded by bill and passed unanimously.",
-   "quote_taken_from_text": true
+   "quote": "a motion for passing the minutes was made by dawn and seconded by bill and passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one vote recorded. The rest of the document describes committee discussions of long-range projects for the town's 300th anniversary but records no formal motions or votes on those items.",
- "cost_usd": 0.055970400000000003
+ "note": "Text is a single page of extracted minutes (PAGE 2 is empty). Only one motion is recorded (approval of minutes, procedural); the adjournment at 8:14 has no motion or vote text, so it is not recorded as a vote. No public comment section is recorded. Interim Town Manager Carter Terenzini and Facilities Manager Chris Ruth are named only as people met with outside this meeting, so they are not listed as attendees. The minutes also carry a later approval line ('Minutes approved unanimously 12/9/24') that is not part of this meeting's vote. Two quotes contain the 'ﬁ' ligature as printed, so quotes were chosen to avoid it or were rendered with the plain 'fi' (the Fireworks and Northfield quotes use plain text as printed in the source where no ligature appears). Budget figures: only one dollar figure ($500/minute) appears; the other two budget items discuss money without printed figures.",
+ "cost_usd": 0.01406547,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, dawn johnson, debbie lincoln, pete lincoln, chris sullivan, bill tyler"
+  },
+  {
+   "name": "Dawn Johnson",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, dawn johnson, debbie lincoln, pete lincoln, chris sullivan, bill tyler"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Member; submitted the minutes",
+   "status": "present",
+   "quote": "members present: laura brzozoski, dawn johnson, debbie lincoln, pete lincoln, chris sullivan, bill tyler"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:04 by chairman pete lincoln."
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, dawn johnson, debbie lincoln, pete lincoln, chris sullivan, bill tyler"
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: laura brzozoski, dawn johnson, debbie lincoln, pete lincoln, chris sullivan, bill tyler"
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, cathy clark, kathy comeau, lois filiau, tony sculibrene"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, cathy clark, kathy comeau, lois filiau, tony sculibrene"
+  },
+  {
+   "name": "Kathy Comeau",
+   "role": "Member; resigning from the Committee",
+   "status": "absent",
+   "quote": "kathy comeau is resigning from the committee as she is unable to make the time commitments at present"
+  },
+  {
+   "name": "Lois Filiau",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, cathy clark, kathy comeau, lois filiau, tony sculibrene"
+  },
+  {
+   "name": "Tony Sculibrene",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: michelle belleza, cathy clark, kathy comeau, lois filiau, tony sculibrene"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The chair said the committee should concentrate on long-range projects until 2026, as the only thing to do at present.",
+   "quote": "the only thing to do at present was to concentrate on long-range projects until 2026."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fireworks display cost",
+   "what_was_recorded": "Facilities Manager Chris Ruth's fireworks suggestion was costed at a per-minute rate for a good display.",
+   "figures_as_printed": [
+    "$500/minute"
+   ],
+   "quote": "a good display would cost $500/minute."
+  },
+  {
+   "topic": "School versus 300th budget for event expenses",
+   "what_was_recorded": "Interim Town Manager Carter Terenzini said school-charged expenses such as police details and janitorial fees would have to be split between the school budget and the 300th budget; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "but expenses like police details and janitorial fees would have to be decided between the school budget and the 300th budget."
+  },
+  {
+   "topic": "Spencer 250th funding model",
+   "what_was_recorded": "Spencer's 250th raised money through a Town Meeting appropriation, corporate donations, state funding and memorabilia sales, and returned the appropriation to the town; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "they made enough money to give the town back what they they had appropriated them."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and chair's remarks",
+   "resolution": "noted; focus on long-range projects until 2026",
+   "quote": "the meeting was called to order at 7:04 by chairman pete lincoln.",
+   "tags": [
+    "chair",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Membership: resignation of Kathy Comeau",
+   "resolution": "noted; she remains available to help",
+   "quote": "kathy comeau is resigning from the committee as she is unable to make the time commitments at present",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "a motion for passing the minutes was made by dawn and seconded by bill and passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Lunenburg signs in the style of the 1930 Tercentenary signs",
+   "resolution": "continued; locations, wording and cost still to be decided",
+   "quote": "we will need to decide on locations and verbiage for the signs and determine cost.",
+   "tags": [
+    "signs",
+    "DPW",
+    "police"
+   ]
+  },
+  {
+   "topic": "Above-ground time capsule on the Lower Common",
+   "resolution": "proposed; no action recorded",
+   "quote": "suggested that we do a similar structure on the lower common.",
+   "tags": [
+    "time capsule",
+    "Lower Common"
+   ]
+  },
+  {
+   "topic": "Rocks for the time capsule structure",
+   "resolution": "suggested; no action recorded",
+   "quote": "debbie suggested we could try to get rocks from lunenburg, vermont, nova scotia, germany.",
+   "tags": [
+    "time capsule",
+    "rocks"
+   ]
+  },
+  {
+   "topic": "Potato-shaped rock for Luther Burbank memorial",
+   "resolution": "request to local contractors; no action recorded",
+   "quote": "local contractors can be on the lookout for a potato-shaped rock for the luther burbank memorial for the laac backyard.",
+   "tags": [
+    "memorial",
+    "LAAC"
+   ]
+  },
+  {
+   "topic": "Northfield Road property",
+   "resolution": "noted; Interim Town Manager interested in furthering it",
+   "quote": "debbie met with interim town manager carter terenzini, who expressed interest in furthering the property on northﬁeld road. ",
+   "tags": [
+    "property",
+    "town manager",
+    "funding"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Funding models from the Spencer 250th",
+   "resolution": "reported; no action recorded",
+   "quote": "their biggest sources of funding were town meeting appropriation, corporate donations, state funding through representatives and senators, but mostly through sales of memorabilia.",
+   "tags": [
+    "funding",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Fireworks location and cost",
+   "resolution": "reported; no decision recorded",
+   "quote": "he suggested a location behind passios where ﬁreworks could be set oﬀ and seen at both the high school football ﬁeld and the area where the band concerts are now held. a ",
+   "tags": [
+    "fireworks",
+    "facilities",
+    "cost"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Bonfire location",
+   "resolution": "open; location not determined",
+   "quote": "a location has still not been determined.",
+   "tags": [
+    "bonfire",
+    "location"
+   ]
+  },
+  {
+   "topic": "Birthday Celebration 7/28-7/30/2028",
+   "resolution": "proposed activities listed; no decision recorded",
+   "quote": "the premiere event of the year would be the birthday celebration 7/28-7/30/2028.",
+   "tags": [
+    "birthday celebration",
+    "events"
+   ]
+  },
+  {
+   "topic": "Other event ideas",
+   "resolution": "listed; no decision recorded",
+   "quote": "other ideas were main street feasts, contests for branding, artisan weekend, ﬂoats. ",
+   "tags": [
+    "events",
+    "ideas"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "300th anniversary",
+  "Lunenburg 300th",
+  "signs",
+  "time capsule",
+  "fireworks",
+  "bonfire",
+  "Birthday Celebration 2028",
+  "events planning",
+  "funding",
+  "membership",
+  "minutes",
+  "school budget cost sharing"
+ ],
+ "dropped_unquoted_by_field": {}
 }

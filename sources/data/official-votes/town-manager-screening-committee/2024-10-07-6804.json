@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "town-manager-screening-committee",
  "meeting_date": "2024-10-07",
  "docid": "6804",
@@ -12,23 +12,109 @@
  },
  "votes": [
   {
-   "motion": "to approve the position statement",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "the position statement was approved unanimously.",
+   "motion": "Approve the draft Position Statement for the Town Manager search.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the position statement was approved unanimously."
   },
   {
-   "motion": "to adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "after a motion, the meeting was adjourned at 7:17pm.",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "after a motion, the meeting was adjourned at 7:17pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text from OCR (macOS Vision) extraction. Names of movers and seconders not stated in the minutes for either vote.",
- "cost_usd": 0.0768954
+ "note": "Text is macOS Vision OCR of a scanned page, so names and dates may carry OCR errors (e.g. 'November 18*', 'Dec, 11\\\" and 12\\\"'). The attendance header line lists Beardmore and Matt Brenner without saying who was present; Brenner's status is recorded as not stated. The position-statement approval is recorded as 'unanimously' with no mover, seconder or count printed. The adjournment motion has no mover or seconder and no result printed beyond 'After a Motion, the meeting was adjourned at 7:17pm.' No dollar figures appear in the minutes.",
+ "cost_usd": 0.01195769,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Murphy",
+   "role": "not stated; called the meeting to order and signed the minutes as Tim murphy",
+   "status": "present",
+   "quote": "murphy called the meeting to order"
+  },
+  {
+   "name": "Beardmore",
+   "role": "School Comm (as printed in the attendance header)",
+   "status": "present",
+   "quote": "beardmore questioned the order of the list."
+  },
+  {
+   "name": "Matt Brenner",
+   "role": "Planning Board (as printed in the attendance header)",
+   "status": "not stated",
+   "quote": "beardmore school comm; matt brenner planning board"
+  },
+  {
+   "name": "Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "alonzo asked that the language about attracting and retaining employees clarify that it is not unique"
+  },
+  {
+   "name": "John Petrin",
+   "role": "Community Paradigm Assoc. LLC (guest, presented the profile and draft Position Statement)",
+   "status": "present",
+   "quote": "guest: john petrin, community paradigm assoc. llc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Agreed the schedule for the search: review of all applications and sorting into three tiers on November 18 at 7pm, and interviews on December 11 and 12 at 6pm, preferably up to six candidates (three each night).",
+   "quote": "dates and agendas moving forward were agreed as follows:"
+  },
+  {
+   "decision": "Community Paradigm will conduct the initial interview, with committee members engaging in follow-up.",
+   "quote": "community paradigm will conduct the initial interview, with committee members"
+  },
+  {
+   "decision": "It was agreed that all would like to see the candidates' presentation skills, with candidates asked to present a written project and make a presentation, something they have done before, limited to a few minutes.",
+   "quote": "it was agreed all would like to see the candidate's presentation skills."
+  },
+  {
+   "decision": "Community Paradigm would place the Position Statement with MMA the next day and mail it to its list of town managers, administrators and department heads in other towns.",
+   "quote": "petrin stated it would be placed with mma"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Overview of candidate interviews and draft Position Statement (Community Paradigm)",
+   "resolution": "Position Statement approved unanimously",
+   "quote": "presented to the committee the draft position statement (emailed last week)."
+  },
+  {
+   "topic": "Ideal Candidates section of the Position Statement",
+   "resolution": "Discussed; language changes requested (soft skills, attracting and retaining employees not unique to Lunenburg)",
+   "quote": "a discussion ensued about the ideal candidates section."
+  },
+  {
+   "topic": "Candidate written project and presentation requirement",
+   "resolution": "Agreed that candidates present their presentation skills; limited to a few minutes",
+   "quote": "it was agreed all would like to see the candidate's presentation skills."
+  },
+  {
+   "topic": "Search schedule: application review and interviews",
+   "resolution": "Dates agreed (Nov 18 review; Dec 11 and 12 interviews)",
+   "quote": "dates and agendas moving forward were agreed as follows:"
+  }
+ ],
+ "tags": [
+  "town manager search",
+  "Community Paradigm",
+  "position statement",
+  "candidate interviews",
+  "recruitment schedule",
+  "screening committee"
+ ],
+ "dropped_unquoted_by_field": {}
 }

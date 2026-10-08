@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2024-10-28",
  "docid": "6849",
@@ -12,108 +12,593 @@
  },
  "votes": [
   {
-   "motion": "Authorize peer review by Graves Engineering Inc. as peer reviewer for Site Plan Approval at 494 Electric Ave for $5,000",
+   "motion": "Authorize Graves Engineering Inc. as peer reviewer for the 494 Electric Ave application in the amount of $5,000.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "t. willsmer moved to authorize graves engineering inc. as the peer reviewer for this application in the amount of $5,000. m. allison seconded. roll call vote: g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye passed 5-0-0."
+   "procedural": false,
+   "quote": "t. willsmer moved to authorize graves engineering inc. as the peer reviewer for this application in the amount of $5,000. m. allison seconded."
   },
   {
-   "motion": "Continue the public hearing for 494 Electric Ave to 2024-11-25 at 6:05 P.M.",
+   "motion": "Continue the 494 Electric Ave public hearing to 2024-11-25 at 6:05 P.M.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "t. willsmer moved to continue the public hearing to 2024 -11-25 at 6:05 p.m. m. allison seconded. roll call vote: g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye passed 5-0-0",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "t. willsmer moved to continue the public hearing to 2024 -11-25 at 6:05 p.m. m. allison seconded."
   },
   {
-   "motion": "Authorize peer review by Graves Engineering Inc. for Stormwater Management Permit at 791 Leominster Rd for $3,000",
+   "motion": "Authorize Graves Engineering Inc. peer review for the Stormwater Management Permit at 791 Leominster Rd in the amount of $3,000.",
    "moved_by": "M. Allison",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "m. allison moved to authorize peer review by graves engineering inc for the stormwater management permit at 791 leominster rd in the amount of $3,000. t. willsmer seconded. roll call vote: g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye; passed 5-0-0."
+   "procedural": false,
+   "quote": "m. allison moved to authorize peer review by graves engineering inc for the stormwater management permit at 791 leominster rd in the amount of $3,000. t. willsmer seconded."
   },
   {
-   "motion": "Continue the public hearing for 791 Leominster Rd to 2024-11-25 at 6:05 P.M.",
+   "motion": "Continue the 791 Leominster Rd public hearing to 2024-11-25 at 6:05 P.M.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "t. willsmer moved to continue the public hearing to 2024 -11-25 at 6:05 p.m. m. allison seconded. roll call vote: g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye passed 5-0-0. ===page 5=== 5 of 10 ",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "t. willsmer moved to continue the public hearing for 791 leominster rd to 2024 -11-25 at 6:05 p.m. m. allison seconded."
   },
   {
-   "motion": "Authorize peer review by Graves Engineering Inc. for Stormwater Management Permit at 795 Leominster Rd for $3,000",
+   "motion": "Authorize Graves Engineering Inc. peer review for the Stormwater Management Permit at 795 Leominster Rd in the amount of $3,000.",
    "moved_by": "M. Allison",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "m. allison moved to authorize peer review by graves engineering inc for the stormwater management permit at 795 leominster rd in the amount of $3,000. t. willsmer seconded. roll call vote: g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye; passed 5-0-0."
+   "procedural": false,
+   "quote": "m. allison moved to authorize peer review by graves engineering inc for the stormwater management permit at 795 leominster rd in the amount of $3,000."
   },
   {
-   "motion": "Continue the public hearing for 795 Leominster Rd to 2024-11-25 at 6:05 P.M.",
+   "motion": "Continue the 795 Leominster Rd public hearing to 2024-11-25 at 6:05 P.M.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "t. willsmer moved to continue the public hearing to 2024 -11-25 at 6:05 p.m. m. allison seconded. roll call vote: g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye passed 5-0-0. ===page 5=== 5 of 10 ",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "t. willsmer moved to continue the public hearing for 795 leominster rd to 2024 -11-25 at 6:05 p.m. m. allison seconded."
   },
   {
-   "motion": "Authorize peer review by Graves Engineering Inc. for Stormwater Management Permit at 70 Kilburn St for $3,000",
+   "motion": "Authorize Graves Engineering Inc. peer review for the Stormwater Management Permit at 70 Kilburn St in the amount of $3,000.",
    "moved_by": "M. Allison",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "m. allison moved to authorize peer review by graves engineering inc for the stormwater management permit at 70 kilburn st in the amount of $3,000 . t. willsmer seconded. g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye; passed 5-0-0."
+   "procedural": false,
+   "quote": "m. allison moved to authorize peer review by graves engineering inc for the stormwater management permit at 70 kilburn st in the amount of $3,000"
   },
   {
-   "motion": "Continue the public hearing for 70 Kilburn St to 2024-11-25 at 6:05 P.M.",
+   "motion": "Continue the 70 Kilburn St public hearing to 2024-11-25 at 6:05 P.M.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "t. willsmer moved to continue the public hearing to 2024 -11-25 at 6:05 p.m. m. allison seconded. roll call vote: g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye passed 5-0-0. ===page 5=== 5 of",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "t. willsmer moved to continue the public hearing for 70 kilburn st to 2024 -11-25 at 6:05 p.m. m. allison seconded."
   },
   {
-   "motion": "Close the public hearing for 1260 Reservoir Rd",
+   "motion": "Close the public hearing for 1260 Reservoir Rd.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0-0",
-   "procedural": true,
-   "quote": "t. willsmer moved to close the public hearing for 1260 reservoir rd. m. allison seconded. roll call vote: ===page 8=== 8 of 10 - planning board minutes, 2024-10-28 g. mcleod - aye; m. allison - aye; t. will",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "t. willsmer moved to close the public hearing for 1260 reservoir rd. m. allison seconded."
   },
   {
-   "motion": "Approve the site plan for 1260 Reservoir Rd with all standard conditions",
+   "motion": "Approve the site plan for 1260 Reservoir Rd with all standard conditions.",
    "moved_by": "G. McLeod",
    "seconded_by": "T. Willsmer",
    "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "g. mcleod moved to approve the site plan for 1260 reservoir rd with all standard conditions. t. willsmer seconded. roll call vote: g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye; passed 5-0-0."
+   "quote": "g. mcleod moved to approve the site plan for 1260 reservoir rd with all standard conditions. t. willsmer seconded."
   },
   {
-   "motion": "Approve the Certificate of Completion for 319 Highland St",
+   "motion": "Approve the Certificate of Completion for 319 Highland St.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0-0",
    "procedural": false,
-   "quote": "t. willsmer moved to approve the certificate of completion for 319 highland st. m. allison seconded. roll call vote: g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye; passed 5-0-0."
+   "quote": "t. willsmer moved to approve the certificate of completion for 319 highland st. m. allison seconded."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Willsmer",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0-0",
    "procedural": true,
-   "quote": "t. willsmer moved to adjourn. m. allison seconded. roll call vote: g. mcleod - aye; m. allison - aye; t. willsmer - aye; a. reid - aye; m. brenner - aye; passed 5-0-0."
+   "quote": "t. willsmer moved to adjourn. m. allison seconded."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are clean scans with readable votes. A separate vote on 255 Sunny Hill Rd rendered on a prior date (referenced in DECISIONS section) is not included, as it was not voted on during this 2024-10-28 meeting.",
- "cost_usd": 0.11643140000000002
+ "dropped_unquoted": 1,
+ "note": "Full 10-page text present and readable; no scan or missing pages. Vote lines are printed as 'Roll call vote' blocks with 'Passed 5-0-0', and each motion is quoted as printed. Items to check: (1) The 255 Sunny Hill Rd 2-2 SMP denial is recorded in prose with no motion text and a date of 2025-08-26, which is later than this 2024-10-28 meeting; I did not record it as a vote of this meeting. (2) The minutes name 'L. O'Connell (711 Page St)' in public comment; I did not assume that is the staff member Logan O'Connell. (3) 'Chris Reilly' and 'Christopher Reilly' appear as the same Land Use Director. (4) Public hearings for 494 Electric Ave, 791, 795 and 70 Kilburn St were continued, not closed. (5) Dollar figures are the peer review amounts only; no budget totals were printed.",
+ "cost_usd": 0.023139569999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Brenner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew brenner (chair), timothy willsmer (vice -chair),"
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew brenner (chair), timothy willsmer (vice -chair),"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "amanda reid attended remotely via zoom."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "- remote, matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Member",
+   "status": "present",
+   "quote": "- remote, matthew allison, glenn mcleod"
+  },
+  {
+   "name": "Chris Reilly",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "per chris reilly (land use director)"
+  },
+  {
+   "name": "Logan O'Connell",
+   "role": "Administrative Asst (minutes by)",
+   "status": "not stated",
+   "quote": "minutes by logan o'connell, admin asst."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "Hannigan Engineering, representing applicant D&A Lunenburg LLC",
+   "status": "present",
+   "quote": "hannigan engineering, representing applicant d&a lunenburg llc"
+  },
+  {
+   "name": "Jeff Avini",
+   "role": "Attorney, representing the applicant",
+   "status": "present",
+   "quote": "attorney jeff avini (representing the applicant) explained"
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "Dillis & Roy",
+   "status": "present",
+   "quote": "of dillis & roy presented."
+  },
+  {
+   "name": "Justin LeClair",
+   "role": "McCarty Engineering",
+   "status": "present",
+   "quote": "justin leclair of mccarty engineering gave context"
+  },
+  {
+   "name": "Michael Lovewell",
+   "role": "public comment, 579 Reservoir Rd",
+   "status": "present",
+   "quote": "owns 480 electric ave and 15 kirby ave, has had year-long issues with the applicant about noise and drainage concerns."
+  },
+  {
+   "name": "George Oliver",
+   "role": "public comment, 33 Wallace Park",
+   "status": "present",
+   "quote": "was concerned about light pollution from the parking lot, noted the neighborhood had widely used that lot"
+  },
+  {
+   "name": "Jeanine Cooper",
+   "role": "public comment, 43 The Clearing",
+   "status": "present",
+   "quote": "has lived in area since 1992, noted the roads only began flooding after the parking at 494 electric ave was developed."
+  },
+  {
+   "name": "Steven Coor",
+   "role": "public comment, 15 Kirby Ave",
+   "status": "present",
+   "quote": "was concerned about snow-plowing pierce ave if it was found not to be a public way."
+  },
+  {
+   "name": "Linda Hallisey",
+   "role": "public comment, 20 Pierce Ave",
+   "status": "present",
+   "quote": "was concerned about the materials used for the wall across from the parking lot"
+  },
+  {
+   "name": "Michael Cooper",
+   "role": "public comment, 43 The Clearing St",
+   "status": "present",
+   "quote": "culverts fill up within the first hour or two, recommended fixing current issues before adding new drainage."
+  },
+  {
+   "name": "Kathy Oliver",
+   "role": "public comment, 33 Wallace Park",
+   "status": "present",
+   "quote": "re-emphasized traffic concerns."
+  },
+  {
+   "name": "Terri Green",
+   "role": "public comment, 28 The Clearing",
+   "status": "present",
+   "quote": "noted many patrons of il forno cut across pierce ave to go onto route 13"
+  },
+  {
+   "name": "Dave Simonich",
+   "role": "public comment, 39 Wallace Park",
+   "status": "present",
+   "quote": "asked where the catch basins were on the plans and where the flow of water from the larger parking lot was being graded."
+  },
+  {
+   "name": "Sue Rowe",
+   "role": "public comment, 710 Leominster Rd",
+   "status": "present",
+   "quote": "noted leominster rd is low / surrounded by hills"
+  },
+  {
+   "name": "Joan Hoyt",
+   "role": "public comment, 39 Kilburn St",
+   "status": "present",
+   "quote": "lives across from site. will submit pictures & videos of existing drainage issues."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board endorsed the corrected decision for 1335 Massachusetts Ave, with the corrections printed for signature at the meeting.",
+   "quote": "the board endorsed the corrected decision."
+  },
+  {
+   "decision": "The Board reviewed and endorsed the written decision on the 255 Sunny Hill Rd SMP denial, which the minutes record as a 2-2 vote; G. McLeod was ineligible to vote. The minutes date the vote 2025-08-26, which is not a date of this meeting.",
+   "quote": "m. brenner, t. willsmer and a. reid endorsed the decision."
+  },
+  {
+   "decision": "The Board agreed that the Land Use Director should keep a tentative meeting-date document, with a disclaimer that dates are subject to change, in response to a public request.",
+   "quote": "the board was comfortable with a document outlining the tentative dates for the year"
+  },
+  {
+   "decision": "Land Use Director to create a living document tracking the Board's priorities for the calendar year.",
+   "quote": "c. reilly will create a living document to track the board"
+  },
+  {
+   "decision": "Land Use Director asked the applicant's attorney for the complete title search report for Town Counsel review (494 Electric Ave / Pierce Ave).",
+   "quote": "c. reilly asked j. avini for the complete title search report from atty. pellegrini, for town counsel to review."
+  },
+  {
+   "decision": "Applicant's engineer to review whether the Planning Board can waive the dimensional setback requirement, which the Land Use Director said is usually a ZBA control.",
+   "quote": "c. anderson would review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Peer review of 494 Electric Ave by Graves Engineering",
+   "what_was_recorded": "The Land Use Director suggested a motion and vote to authorize peer review by Graves Engineering Inc for $5,000, which was then approved.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "c. reilly suggested a motion and vote to authorize peer review by graves engineering inc for $5,000."
+  },
+  {
+   "topic": "Standard cost of a stormwater peer review",
+   "what_was_recorded": "The Land Use Director said the standard cost of a peer review for an individual Stormwater Management System was around $3,000, and acknowledged the financial burden it can impose.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "the standard cost of a review for an individual stormwater management system was around $3,000."
+  },
+  {
+   "topic": "Peer review of 791, 795 Leominster Rd and 70 Kilburn St",
+   "what_was_recorded": "Three peer reviews by Graves Engineering, one for each Stormwater Management Permit application, were authorized at $3,000 each.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "for the stormwater management permit at 791 leominster rd in the amount of $3,000."
+  },
+  {
+   "topic": "Unspent peer review funds",
+   "what_was_recorded": "The Land Use Director noted that unspent peer review funds are returned to the applicant later.",
+   "figures_as_printed": [],
+   "quote": "c. reilly noted that unspent peer review funds are later returned to the applicant."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Public comment opening, before hearings",
+   "speaker": "Not named",
+   "stated_role": "",
+   "quote": "none at this time. many attendees waited to comment on their respective public hearings."
+  },
+  {
+   "topic": "494 Electric Ave: noise, drainage, parking, lighting, flooding",
+   "speaker": "Michael Lovewell",
+   "stated_role": "579 Reservoir Rd",
+   "quote": "owns 480 electric ave and 15 kirby ave, has had year-long issues with the applicant about noise and drainage concerns."
+  },
+  {
+   "topic": "494 Electric Ave: light pollution from parking lot",
+   "speaker": "George Oliver",
+   "stated_role": "33 Wallace Park",
+   "quote": "was concerned about light pollution from the parking lot, noted the neighborhood had widely used that lot"
+  },
+  {
+   "topic": "494 Electric Ave: flooding since parking was developed",
+   "speaker": "Jeanine Cooper",
+   "stated_role": "43 The Clearing",
+   "quote": "has lived in area since 1992, noted the roads only began flooding after the parking at 494 electric ave was developed."
+  },
+  {
+   "topic": "494 Electric Ave: snow-plowing Pierce Ave, drainage contractors",
+   "speaker": "Steven Coor",
+   "stated_role": "15 Kirby Ave",
+   "quote": "was concerned about snow-plowing pierce ave if it was found not to be a public way."
+  },
+  {
+   "topic": "494 Electric Ave: wall materials, drainage, lights, water shutoff",
+   "speaker": "Linda Hallisey",
+   "stated_role": "20 Pierce Ave",
+   "quote": "was concerned about the materials used for the wall across from the parking lot"
+  },
+  {
+   "topic": "494 Electric Ave: drainage capacity and traffic",
+   "speaker": "Michael Cooper",
+   "stated_role": "43 The Clearing St",
+   "quote": "culverts fill up within the first hour or two, recommended fixing current issues before adding new drainage."
+  },
+  {
+   "topic": "494 Electric Ave: traffic",
+   "speaker": "Kathy Oliver",
+   "stated_role": "33 Wallace Park",
+   "quote": "re-emphasized traffic concerns."
+  },
+  {
+   "topic": "494 Electric Ave: cut-through traffic on Pierce Ave",
+   "speaker": "Terri Green",
+   "stated_role": "28 The Clearing",
+   "quote": "noted many patrons of il forno cut across pierce ave to go onto route 13"
+  },
+  {
+   "topic": "494 Electric Ave: catch basins and grading",
+   "speaker": "Dave Simonich",
+   "stated_role": "39 Wallace Park",
+   "quote": "asked where the catch basins were on the plans and where the flow of water from the larger parking lot was being graded."
+  },
+  {
+   "topic": "791/795 Leominster Rd and 70 Kilburn St: low-lying area, water pooling",
+   "speaker": "Sue Rowe",
+   "stated_role": "710 Leominster Rd",
+   "quote": "noted leominster rd is low / surrounded by hills"
+  },
+  {
+   "topic": "70 Kilburn St: flooding, driveway across from hers",
+   "speaker": "Joan Hoyt",
+   "stated_role": "39 Kilburn St",
+   "quote": "lives across from site. will submit pictures & videos of existing drainage issues."
+  },
+  {
+   "topic": "Posting Planning Board meeting dates ahead of time",
+   "speaker": "L. O’Connell",
+   "stated_role": "711 Page St",
+   "quote": "wanted to post planning board meeting dates ahead of time on the town"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and pledge",
+   "resolution": "no action",
+   "quote": "matthew brenner called the meeting to order at 6:00 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "none at this time. many attendees waited to comment on their respective public hearings.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair and Director's report: Master Plan update",
+   "resolution": "no action",
+   "quote": "a new survey is available at planlunenburg.org",
+   "tags": [
+    "master plan",
+    "public engagement"
+   ]
+  },
+  {
+   "topic": "Fees review status",
+   "resolution": "no action; draft fee schedule due at 11-25 meeting",
+   "quote": "planning office is working on clarifying existing fee schedule",
+   "tags": [
+    "fees",
+    "permits"
+   ]
+  },
+  {
+   "topic": "MBTA Zoning Review with MRPC",
+   "resolution": "no action",
+   "quote": "planning board needs to act by december 2025.",
+   "tags": [
+    "MBTA Communities Act",
+    "zoning",
+    "housing"
+   ]
+  },
+  {
+   "topic": "2025 Workplan",
+   "resolution": "no action; Land Use Director to draft a living workplan",
+   "quote": "c. reilly will create a living document to track the board",
+   "tags": [
+    "workplan",
+    "ADU zoning"
+   ]
+  },
+  {
+   "topic": "494 Electric Ave: site plan approval and stormwater permit hearing",
+   "resolution": "peer review authorized at $5,000; hearing continued to 2024-11-25",
+   "quote": "a. reid read the public hearing notice at 6:13 p.m.",
+   "tags": [
+    "public hearing",
+    "site plan",
+    "stormwater",
+    "peer review",
+    "Pierce Ave",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "791 Leominster Rd: stormwater management permit (Lot 2) hearing",
+   "resolution": "peer review authorized at $3,000; hearing continued to 2024-11-25",
+   "quote": "a. reid read the public hearing notice at 7:44 p.m.",
+   "tags": [
+    "public hearing",
+    "stormwater",
+    "peer review",
+    "septic",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "795 Leominster Rd: stormwater management permit (Lot 1) hearing",
+   "resolution": "peer review authorized at $3,000; hearing continued to 2024-11-25",
+   "quote": "a. reid read the public hearing notice at 8:12 p.m.",
+   "tags": [
+    "public hearing",
+    "stormwater",
+    "peer review",
+    "septic"
+   ]
+  },
+  {
+   "topic": "70 Kilburn St: stormwater management permit (Lot 3) hearing",
+   "resolution": "peer review authorized at $3,000; hearing continued to 2024-11-25",
+   "quote": "a. reid read the public hearing notice at 8:22 p.m.",
+   "tags": [
+    "public hearing",
+    "stormwater",
+    "peer review",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "1260 Reservoir Rd: site plan approval hearing",
+   "resolution": "approved with all standard conditions",
+   "quote": "a. reid read the public hearing notice at 8:38 p.m.",
+   "tags": [
+    "public hearing",
+    "site plan",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Decisions: 255 Sunny Hill Rd and 1335 Massachusetts Ave",
+   "resolution": "decisions endorsed",
+   "quote": "the board endorsed the corrected decision.",
+   "tags": [
+    "decisions",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Certificate of Completion: 319 Highland St",
+   "resolution": "approved",
+   "quote": "justin leclair of mccarty engineering gave context",
+   "tags": [
+    "certificate of completion",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Abutting community notices",
+   "resolution": "no action; discussed Starbucks drive-thru reuse question",
+   "quote": "notices of hearings on 2024-11-06 included:",
+   "tags": [
+    "abutting towns",
+    "zoning",
+    "Village Center"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "meetings now 1st and 3rd monday, no more overlap impacting planning board meetings.",
+   "tags": [
+    "committees",
+    "master plan",
+    "municipal building",
+    "stormwater utility",
+    "Town Manager search"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "no action",
+   "quote": "none at this time. meeting schedule",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "2024-11-25, 2024-12-09. (no 11-11 due to holiday.)",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "Board comfortable with tentative dates document",
+   "quote": "the board was comfortable with a document outlining the tentative dates for the year",
+   "tags": [
+    "public comment",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "quote": "g. mcleod and m. brenner thanked the land use director for his work so far.",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:43 P.M., passed 5-0-0",
+   "quote": "meeting adjourned 8:43 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "site plan approval",
+  "stormwater management permit",
+  "peer review",
+  "Graves Engineering",
+  "drainage",
+  "Pierce Ave",
+  "Il Forno",
+  "494 Electric Ave",
+  "Leominster Rd",
+  "Kilburn St",
+  "Reservoir Rd",
+  "Certificate of Completion",
+  "MBTA Communities Act",
+  "master plan",
+  "fee schedule",
+  "zoning",
+  "Town Manager search"
+ ],
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

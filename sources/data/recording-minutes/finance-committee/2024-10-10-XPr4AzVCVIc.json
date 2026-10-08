@@ -1,0 +1,518 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2024-10-10",
+ "video_id": "XPr4AzVCVIc",
+ "video_url": "https://www.youtube.com/watch?v=XPr4AzVCVIc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2024-10-10-XPr4AzVCVIc.json",
+  "sha256": "b6da89c8df8dcd0737ecaf83810190ecd18a825d3e35d382f69242f1084a0637",
+  "caption_lines": 364,
+  "segments": 2644
+ },
+ "recording": {
+  "duration_s": 7822,
+  "duration": "2:10",
+  "spoken_chars": 86102,
+  "words_approx": 14350
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10102024-6820",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2024-10-10-agenda-6820.txt",
+   "path": "sources/meetings/finance-committee/2024-10-10-agenda-6820.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10102024-6820",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2024-10-10-minutes-6820.txt",
+   "path": "sources/meetings/finance-committee/2024-10-10-minutes-6820.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-07T21:35:02Z",
+  "cost_usd": 0.392666
+ },
+ "minutes": {
+  "headline": "Committee reorganized with four members; reviewed the special town meeting warrant, with public hearing set for the 24th.",
+  "summary": "The Finance Committee, down to four members after two resignations, reorganized by roll call vote, with the former vice chair becoming chair. It then walked through the draft special town meeting warrant article by article with the interim town manager, including late bills, Chapter 70 money, revolving funds, a building study and large salary plan changes. Questions were deferred to the October 24 hearing; no recommendations were voted.",
+  "attendees": [
+   {
+    "name_as_heard": "Chris",
+    "role": "chair (new, formerly vice chair)"
+   },
+   {
+    "name_as_heard": "Jean Russell",
+    "role": "member (remote, new vice chair)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "member (new clerk)"
+   },
+   {
+    "name_as_heard": "Jay",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Carter",
+    "role": "interim town manager"
+   },
+   {
+    "name_as_heard": "Dave pasio",
+    "role": "former member, speaking as public"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 365,
+    "topic": "Former member said the warrant should be headed special town meeting rather than fall town meeting under the charter, and urged scrutiny of the Council on Aging revolving account's breadth.",
+    "speaker_as_heard": "Dave pasio"
+   },
+   {
+    "t": 7648,
+    "topic": "Same speaker welcomed the personnel and PTO changes and urged the committee to have someone communicate with the DPW director heading into winter.",
+    "speaker_as_heard": "Dave"
+   }
+  ],
+  "tags": [
+   "chapter-70",
+   "contracts-and-unions",
+   "facilities",
+   "free-cash",
+   "hiring",
+   "personnel",
+   "public-comment",
+   "recreation",
+   "seniors",
+   "state-aid",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1044,
+    "motion": "Slate: chair (Chris), vice chair (Jean), clerk (Tom)",
+    "moved_by": "Jay",
+    "outcome": "passed by roll call (all four members voting aye)",
+    "procedural": false
+   },
+   {
+    "t": 7800,
+    "motion": "Adjourn",
+    "outcome": "passed by roll call, all four aye",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1256,
+    "topic": "Article 1 late bill",
+    "what_was_said": "Appropriation for a late bill to be met by transfer from overlay surplus; excess overlay certified by assessors and nearly all would be used by this and one other article.",
+    "figures_as_heard": [
+     "$4,180",
+     "$225,000"
+    ]
+   },
+   {
+    "t": 1379,
+    "topic": "Article 2 Chapter 70 appropriation to schools",
+    "what_was_said": "Additional Chapter 70 funding from the settled state budget would be appropriated to the school committee; needs a two-thirds vote.",
+    "figures_as_heard": [
+     "31,800 $82"
+    ]
+   },
+   {
+    "t": 1491,
+    "topic": "Article 3 Lunenburg Mart Connect transportation",
+    "what_was_said": "Funding would carry the program through the fiscal year after earlier bridge funding; rides extended to Emerson.",
+    "figures_as_heard": [
+     "$5,000"
+    ]
+   },
+   {
+    "t": 1895,
+    "topic": "Article 6 Council on Aging meals revolving fund",
+    "what_was_said": "Spending limit estimated for the balance of the fiscal year; the manager will confirm the full-year figure.",
+    "figures_as_heard": [
+     "$116,000",
+     "16,000"
+    ]
+   },
+   {
+    "t": 2385,
+    "topic": "Article 7 Parks 53E 1/2 revolving fund",
+    "what_was_said": "Spending limit proposed for FY25; existing 53D balance above the cap would be transferred.",
+    "figures_as_heard": [
+     "$777,000",
+     "$10,000",
+     "$75,000",
+     "77,000"
+    ]
+   },
+   {
+    "t": 3822,
+    "topic": "Merit award program",
+    "what_was_said": "Nominal award per winner in each of three categories.",
+    "figures_as_heard": [
+     "$250"
+    ]
+   },
+   {
+    "t": 6226,
+    "topic": "Article 13 Marshall Park improvements",
+    "what_was_said": "Borrowing requested, reviewed by bond counsel.",
+    "figures_as_heard": [
+     "$5 Milli",
+     "5 million"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 1256,
+    "description": "Transfer from overlay surplus to fund late bill (Article 1)",
+    "amount_as_heard": "$4,180",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 2447,
+    "description": "Transfer of 53D parks revolving balance to new 53E 1/2 fund; amount not specified",
+    "amount_as_heard": "not specified",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1148,
+    "decision": "Next meeting October 24 to serve as presentation and public hearing on the warrant; recommendations to be deferred in the booklet with an insert sheet."
+   },
+   {
+    "t": 4019,
+    "decision": "Town manager to raise committee's suggestion on granting full-year leave to new hires with the select board."
+   },
+   {
+    "t": 6097,
+    "decision": "Assessor to be invited to the public hearing to explain Article 11; the school committee and land use director also may be asked."
+   },
+   {
+    "t": 6545,
+    "decision": "Town manager to draft definitions of financial terms for the warrant booklet by Tuesday."
+   },
+   {
+    "t": 7628,
+    "decision": "Next meeting stays on October 24 rather than meeting next week."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 158,
+    "t_end": 616,
+    "topic": "Opening, vacancies, public comment, thanks to departed members",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 616,
+    "t_end": 684,
+    "topic": "Finance director report: free cash certification timing",
+    "resolution": "informational",
+    "tags": [
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 684,
+    "t_end": 1085,
+    "topic": "Reorganization of committee",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 1105,
+    "t_end": 6650,
+    "topic": "Special town meeting warrant review, Articles 1-14",
+    "resolution": "informational; hearing set",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 6650,
+    "t_end": 7100,
+    "topic": "Old business: town manager search, task force, consolidation of facilities",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 7100,
+    "t_end": 7587,
+    "topic": "Committee reports: Project 211 Chapter 70, capital planning, sewer commission",
+    "resolution": "informational",
+    "tags": [
+     "chapter-70",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 7587,
+    "t_end": 7800,
+    "topic": "Future meetings, public comment, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Bill amount purpose for Article 1 unknown; speaker said they would obtain it.",
+   "Cost of the personnel changes not quantified.",
+   "Some stretches around 1440-1491 appear dropped."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee, down to four members after two resignations, reorganized by roll call vote with all four voting aye.",
+    "t": 1044
+   },
+   {
+    "line": "The committee walked through the draft special town meeting warrant article by article with the interim town manager, including a late bill, Chapter 70 money and revolving funds.",
+    "t": 1105
+   },
+   {
+    "line": "No recommendations were voted; the October 24 meeting will serve as the presentation and public hearing, with recommendations deferred in the booklet by an insert sheet.",
+    "t": 1148
+   },
+   {
+    "line": "The assessor is to be invited to the hearing to explain Article 11, and the town manager is to draft definitions of financial terms for the warrant booklet.",
+    "t": 6097
+   },
+   {
+    "line": "The committee decided to keep its next meeting on October 24 rather than meet next week.",
+    "t": 7628
+   }
+  ],
+  "why_it_matters": [
+   "The warrant articles covered a transfer from overlay surplus, additional state school aid, revolving fund spending limits and a borrowing for Marshall Park, so they bear on what residents will be asked to vote on at special town meeting.",
+   "The Finance Committee has not yet taken a position on any article, so the October 24 hearing is the first point where residents can hear its questions answered before recommendations are printed."
+  ],
+  "watch_next": [
+   "October 24 presentation and public hearing on the special town meeting warrant, with the assessor expected to explain Article 11.",
+   "The warrant booklet, with financial term definitions due from the town manager by Tuesday and recommendations deferred to an insert sheet."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-07T21:35:11Z",
+   "cost_usd": 0.217961
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10102024-6820",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2024-10-10-minutes-6820.txt",
+   "path": "sources/meetings/finance-committee/2024-10-10-minutes-6820.pdf"
+  },
+  "official_sha256": "b7910797b829b5b70a7bcebd9711cf651b6f8d382e12548fcb4395d864f33247",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the officer slate, the $4,180 overlay transfer, the $225,000 overlay figure, the four members and the Chapter 70 balance (once the captions are corrected). Where they differ, our recording has several spoken figures and follow-ups that the official minutes leave out, and the official minutes have housekeeping items we missed. The one to check first is who was to do what on the Council on Aging full-year leave or cost, and Carter's title (interim town manager versus Finance Director).",
+  "counts": {
+   "agree": 5,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 7,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Slate of officers vote (Chair, Vice Chair, Clerk)",
+    "ours": "Slate: chair (Chris), vice chair (Jean), clerk (Tom) — passed by roll call (all four members voting aye)",
+    "official": "there was a motion by jay simeone to nominate chris menard as chair, jean russell as vice chair, and tom gray for the clerk position, seconded by tom gray.",
+    "note": "Same slate and outcome (passed); the official text does not mention a roll call, which is a detail only we record.",
+    "t": 1044
+   },
+   {
+    "kind": "agree",
+    "about": "Overlay surplus transfer for late bill, $4,180",
+    "ours": "Transfer from overlay surplus to fund late bill (Article 1) — $4,180 (discussed only)",
+    "official": "appropriate a sum of $4,180 to pay bill, and meet appropriation by a transfer from the overlay surplus account.",
+    "note": "Same amount and source; both treat it as a warrant article with no vote.",
+    "t": 1256
+   },
+   {
+    "kind": "agree",
+    "about": "Excess overlay $225,000",
+    "ours": "Article 1 late bill: $4,180, $225,000",
+    "official": "last week the board of assessors certiﬁed $225,000 as excess overlay reserved for appropriation.",
+    "note": "Same figure.",
+    "t": 1256
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chapter 70 balance to schools (Article 2)",
+    "ours": "Article 2 Chapter 70 appropriation to schools: 31,800 $82",
+    "official": "there was a sum of $31,882 in the chapter 70 account.",
+    "official_reading": "$31,882",
+    "note": "Captions split the figure; the same item reads $31,882 in the official minutes.",
+    "t": 1379
+   },
+   {
+    "kind": "agree",
+    "about": "Parks 53D revolving fund converting to 53E½",
+    "ours": "Transfer of 53D parks revolving balance to new 53E 1/2 fund; amount not specified — not specified (discussed only)",
+    "official": "a balance above $10,000 it's supposed to go to the general fund.",
+    "note": "Both describe the 53D to 53E½ conversion with no vote; the $10,000 and $75,000 figures appear in both.",
+    "t": 2447
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Parks 53E½ figures $777,000 / $77,000",
+    "ours": "Article 7 Parks 53E 1/2 revolving fund: $777,000, $10,000, $75,000, 77,000",
+    "official": "",
+    "note": "The official minutes carry only $10,000 and $75,000; the $777,000 and $77,000 may be misheard or unrecorded, so check the recording.",
+    "t": 2385
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MART transportation $5,000 (Article 3)",
+    "ours": "Article 3 Lunenburg Mart Connect transportation: $5,000",
+    "official": "the request is to appropriate a sum of money",
+    "note": "Official minutes print no amount for this article; check the recording and the warrant for $5,000.",
+    "t": 1491
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Council on Aging meals revolving fund (Article 6) $116,000",
+    "ours": "Article 6 Council on Aging meals revolving fund: $116,000, 16,000",
+    "official": "",
+    "note": "The official minutes record no COA revolving fund figure, only a follow-up on full-year cost; $116,000 vs $16,000 is itself unclear in the captions.",
+    "t": 1895
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Merit award program $250",
+    "ours": "Merit award program: $250",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3822
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Marshall Park (Article 13) $5 million",
+    "ours": "Article 13 Marshall Park improvements: $5 Milli, 5 million",
+    "official": "the town vote to borrow a sum of money to",
+    "note": "Official minutes say no amount was printed; $5 million is spoken only in the recording.",
+    "t": 6226
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who raises/inquires on Council on Aging full-year leave/cost",
+    "ours": "Town manager to raise committee's suggestion on granting full-year leave to new hires with the select board.",
+    "official": "carter terenzini will inquire with sue doherty.",
+    "note": "The subject (new hires' leave vs. COA full-year cost), the actor's title and the counterpart differ; check the recording near t=4019.",
+    "t": 4019
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Next meeting October 24 / agenda",
+    "ours": "Next meeting October 24 to serve as presentation and public hearing on the warrant; recommendations to be deferred in the booklet with an insert sheet.",
+    "official": "will be added to the agenda on october 24th.",
+    "note": "Both place the Parks presentation or hearing on Oct 24; the official minutes do not record the insert-sheet decision. Check the recording.",
+    "t": 1148
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Invitees to the public hearing",
+    "ours": "Assessor to be invited to the public hearing to explain Article 11; the school committee and land use director also may be asked.",
+    "official": "chris menard is requesting the school committee attend the public hearing",
+    "note": "Official ties the School Committee request to the 2nd article, ours has the assessor for Article 11 and the School Committee only 'may be asked'; check which.",
+    "t": 6097
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager drafts financial term definitions",
+    "ours": "Town manager to draft definitions of financial terms for the warrant booklet by Tuesday.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 6545
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting stays Oct 24 rather than next week",
+    "ours": "Next meeting stays on October 24 rather than meeting next week.",
+    "official": "",
+    "note": "Not recorded in the official minutes.",
+    "t": 7628
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chris Menard to stand in as Chair",
+    "ours": "",
+    "official": "chris menard agrees to stand in as the chair for the time being.",
+    "note": "Our minutes do not record it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "August 22 minutes approval deferred",
+    "ours": "",
+    "official": "approval of minutes will occur at the next meeting.",
+    "note": "Our minutes omit this."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Invoice for late bill; Parks FY25 spending limit",
+    "ours": "",
+    "official": "the parks department will provide a number for the fy25 spending limit by town meeting.",
+    "note": "Our minutes omit this follow-up (and the Finance Director's invoice commitment)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Carter's role",
+    "ours": "Carter (interim town manager)",
+    "official": "carter terenzini conﬁrms that new growth is being reviewed and a ﬁnal assessment",
+    "note": "Official minutes list Carter Terenzini as Finance Director; check whether he was acting as interim town manager."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Public speaker's name",
+    "ours": "Dave pasio (former member, speaking as public)",
+    "official": "dave passios, formally 56 whiting street, suggests that the committee take a close",
+    "official_reading": "Dave Passios",
+    "note": "Misheard spelling of the same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Committee members present",
+    "ours": "Chris (chair), Jean Russell (remote), Tom (clerk), Jay (member)",
+    "official": "chair chris menard, vice chair jean russell (zoom), clerk tom gray,",
+    "note": "Same four members; Jean remote in both; ours gives first names only."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T21:36:51Z",
+   "cost_usd": 0.253897
+  }
+ }
+}

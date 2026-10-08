@@ -1,0 +1,690 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2024-12-17",
+ "video_id": "jrG1b_tADyo",
+ "video_url": "https://www.youtube.com/watch?v=jrG1b_tADyo",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2024-12-17-jrG1b_tADyo.json",
+  "sha256": "a94b5724056b7856d48625d23b995eddea9971059ec21dcdb7fd1b006659b6c0",
+  "caption_lines": 620,
+  "segments": 5305
+ },
+ "recording": {
+  "duration_s": 12955,
+  "duration": "3:35",
+  "spoken_chars": 190429,
+  "words_approx": 31738
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12172024-6929",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-12-17-agenda-6929.txt",
+   "path": "sources/meetings/select-board/2024-12-17-agenda-6929.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12172024-6929",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-12-17-minutes-6929.txt",
+   "path": "sources/meetings/select-board/2024-12-17-minutes-6929.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-07T21:00:34Z",
+  "cost_usd": 0.7130504
+ },
+ "minutes": {
+  "headline": "Board heard the Budget Task Force's 20 recommendations; foreclosure of 531 Reservoir Road and ARPA delegation approved.",
+  "summary": "The board welcomed a new Council on Aging director, honored the outgoing one, and got a town manager search update with interviews planned for January 14 and 15. It heard the unaudited FY24 year-end financials and a long joint presentation from the Budget Task Force on revenue and savings ideas, including CPA and overrides. It voted on ambulance write-offs, license renewals, foreclosure of one tax-title parcel, and delegating remaining ARPA funds to the interim town manager.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (not named)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Amanda",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Michael Ray",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Carter",
+    "role": "interim town manager"
+   },
+   {
+    "name_as_heard": "Ezekiel",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Tim Murphy",
+    "role": "chair, town manager screening committee"
+   },
+   {
+    "name_as_heard": "John petran",
+    "role": "presenter, Community Paradigm"
+   },
+   {
+    "name_as_heard": "Deb Goodsell",
+    "role": "new Council on Aging director"
+   },
+   {
+    "name_as_heard": "Sue",
+    "role": "outgoing Council on Aging director"
+   },
+   {
+    "name_as_heard": "Tony",
+    "role": "Budget Task Force chair, presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 12507,
+    "speaker_as_heard": "Mr Bowen",
+    "topic": "Thanked the finance director, disagreed that Weston-style overrides are unaffordable, argued for larger annual tax increases, and said the superintendent should move students from IEPs to 504 plans; cut off after about five minutes."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "economic-development",
+   "facilities",
+   "fees",
+   "free-cash",
+   "grants",
+   "health-insurance",
+   "hiring",
+   "legal",
+   "override",
+   "personnel",
+   "primary-school",
+   "public-comment",
+   "public-safety",
+   "special-education",
+   "superintendent-report",
+   "town-departments",
+   "town-meeting",
+   "turkey-hill"
+  ],
+  "votes": [
+   {
+    "t": 8744,
+    "motion": "Write off quarter 1 FY25 ambulance uncollectible bills as presented",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 9323,
+    "motion": "Renew all common victualler licenses",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 9452,
+    "motion": "Renew all miscellaneous licenses as read by the chair",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 10176,
+    "motion": "Entrust the remaining ARPA funds to the interim town manager, pending school bid opening, to commit as discussed, with a report back",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 10474,
+    "motion": "Authorize tax title foreclosure of 531 Reservoir Road and eventual sale",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 12908,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2158,
+    "topic": "FY24 revenue",
+    "what_was_said": "Total revenue collected exceeded the budget projection, with investment income a standout.",
+    "figures_as_heard": [
+     "48.3 n million",
+     "10 1.4%",
+     "414,000"
+    ]
+   },
+   {
+    "t": 3668,
+    "topic": "Free cash",
+    "what_was_said": "Free cash came in higher than the earlier estimate because the finance director missed a line in the projection.",
+    "figures_as_heard": [
+     "2.27 million",
+     "1.5 million",
+     "2.3 million"
+    ]
+   },
+   {
+    "t": 8573,
+    "topic": "Ambulance write-offs",
+    "what_was_said": "Quarter 1 uncollectible ambulance bills written off the books but still sent to collections.",
+    "figures_as_heard": [
+     "$ 26,38 68"
+    ]
+   },
+   {
+    "t": 9557,
+    "topic": "Payroll and ARPA transfers",
+    "what_was_said": "Interim manager asked to boost the staff payroll line because there is no network administrator; ARPA and capital items reviewed.",
+    "figures_as_heard": [
+     "12,000",
+     "32,500",
+     "83,000"
+    ]
+   },
+   {
+    "t": 8907,
+    "topic": "Turkey Hill fire alarm bids",
+    "what_was_said": "Bids came in well above the budget left for the project.",
+    "figures_as_heard": [
+     "260",
+     "322"
+    ]
+   },
+   {
+    "t": 4032,
+    "topic": "Proposition 2.5 and inflation",
+    "what_was_said": "Task force chair said inflation outpaced the levy limit, so real funding is falling.",
+    "figures_as_heard": [
+     "2 and a half%"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 9557,
+    "description": "Increase staff payroll line to cover contracted IT in place of vacant network administrator",
+    "amount_as_heard": "12,000",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1517,
+    "decision": "Town manager finalist interviews set for January 14 at 5:30, with January 15 as backup; each candidate gives a short presentation and the consultant leads questions."
+   },
+   {
+    "t": 1723,
+    "decision": "Public may submit questions for candidates to the chair."
+   },
+   {
+    "t": 11384,
+    "decision": "Comparison communities list to return with an added wealth/affordability factor, then a formal vote."
+   },
+   {
+    "t": 12298,
+    "decision": "PACK to be invited to present its space needs; 925 Mass Ave to be explored."
+   },
+   {
+    "t": 11571,
+    "decision": "Staff to track time spent on public records requests and share it."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 23,
+    "t_end": 170,
+    "topic": "Opening and announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 170,
+    "t_end": 608,
+    "topic": "Council on Aging director introduction and proclamation",
+    "resolution": "informational",
+    "tags": [
+     "seniors",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 608,
+    "t_end": 2012,
+    "topic": "Town manager screening committee status",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2012,
+    "t_end": 3773,
+    "topic": "FY24 year-end financials",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "free-cash",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 3773,
+    "t_end": 8507,
+    "topic": "Budget Task Force recommendations",
+    "resolution": "informational",
+    "tags": [
+     "override",
+     "budget-fy27",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 8507,
+    "t_end": 8764,
+    "topic": "Ambulance write-offs",
+    "resolution": "voted",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 8764,
+    "t_end": 9261,
+    "topic": "Interim town manager report",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 9261,
+    "t_end": 9535,
+    "topic": "License renewals",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 9535,
+    "t_end": 10218,
+    "topic": "ARPA allocations",
+    "resolution": "voted",
+    "tags": [
+     "grants",
+     "capital",
+     "turkey-hill"
+    ]
+   },
+   {
+    "t_start": 10218,
+    "t_end": 10602,
+    "topic": "Tax title foreclosures",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 10602,
+    "t_end": 11446,
+    "topic": "Comparison communities for wage studies",
+    "resolution": "referred",
+    "tags": [
+     "personnel",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 11551,
+    "t_end": 12485,
+    "topic": "Action items and committee reports",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 12507,
+    "t_end": 12908,
+    "topic": "Public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 12908,
+    "t_end": 12948,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Chair and several member names not stated in captions",
+   "Exact FY24 revenue figures are garbled",
+   "Some ARPA dollar amounts are unclear",
+   "The ambulance write-off total is garbled"
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted unanimously to authorize tax title foreclosure of 531 Reservoir Road and its eventual sale.",
+    "t": 10474
+   },
+   {
+    "line": "The board voted unanimously to entrust the remaining ARPA funds to the interim town manager, pending the school bid opening, with a report back.",
+    "t": 10176
+   },
+   {
+    "line": "The Budget Task Force gave a long joint presentation of recommendations on revenue and savings, including CPA and overrides; it was informational and no vote was taken.",
+    "t": 3773
+   },
+   {
+    "line": "The board heard the unaudited FY24 year-end financials, in which revenue came in above projection and free cash above the earlier estimate.",
+    "t": 2012
+   },
+   {
+    "line": "Town manager finalist interviews were set for January 14, with January 15 as backup, and the public may send candidate questions to the chair.",
+    "t": 1517
+   }
+  ],
+  "why_it_matters": [
+   "The ARPA delegation means the last of the federal relief money can be committed by the interim town manager without a further board vote, with only a report back required.",
+   "The Budget Task Force's ideas on CPA and overrides are the kind of revenue options that would eventually reach residents as tax-bill changes or ballot questions, but nothing was decided at this meeting.",
+   "Foreclosure on the tax-title parcel moves it toward sale, and the choice of a permanent town manager will shape the next budget cycle."
+  ],
+  "watch_next": [
+   "Town manager finalist interviews on January 14, with January 15 as backup.",
+   "The comparison communities list returning with an added wealth/affordability factor, followed by a formal vote."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-07T21:00:43Z",
+   "cost_usd": 0.218497
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12172024-6929",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2024-12-17-minutes-6929.txt",
+   "path": "sources/meetings/select-board/2024-12-17-minutes-6929.pdf"
+  },
+  "official_sha256": "ba2a047953ce9369c98e17bda9fefc7084cf215a166c48bfa5879352edddc81f",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all five votes (unanimous, 5-0-0 officially) and on the main transfers and decisions. The one thing to know is that several of our figures are caption garbles of the official ones (the $26,318.68 write-off, $48,390,000 and 101.4%), and a few items appear in only one record (the January 15 backup date and the 925 Mass Ave idea in ours, the $23,000 DPW and 56 Carr Avenue items in the town's).",
+  "counts": {
+   "agree": 13,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: write off Q1 FY25 ambulance bills",
+    "ours": "Write off quarter 1 FY25 ambulance uncollectible bills as presented — passed unanimously",
+    "official": "vice chair jeffreys moved to write off the q1 fy'25 ambulance uncollectible bills as presented in the amount of $26,318.68.",
+    "note": "Same motion and outcome; official records 5-0-0.",
+    "t": 8744
+   },
+   {
+    "kind": "caption_error",
+    "about": "Ambulance write-off amount",
+    "ours": "$ 26,38 68",
+    "official": "vice chair jeffreys moved to write off the q1 fy'25 ambulance uncollectible bills as presented in the amount of $26,318.68.",
+    "official_reading": "$26,318.68",
+    "note": "Digit grouping lost in captions; same item.",
+    "t": 8573
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: renew common victualler licenses",
+    "ours": "Renew all common victualler licenses — passed unanimously",
+    "official": "member alonzo made motion to renew all the common victualler licenses as read. seconded by member moore. all, aye. passed unanimously (5-0-0).",
+    "note": "Same vote and outcome.",
+    "t": 9323
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: renew miscellaneous licenses",
+    "ours": "Renew all miscellaneous licenses as read by the chair — passed unanimously",
+    "official": "member alonzo made motion to renew all the miscellaneous licenses as read by the chair. seconded by vice chair jeffreys. all, aye. passed unanimously (5-0-0).",
+    "note": "Same vote and outcome.",
+    "t": 9452
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: entrust remaining ARPA funds to interim town manager",
+    "ours": "Entrust the remaining ARPA funds to the interim town manager, pending school bid opening, to commit as discussed, with a report back — passed unanimously",
+    "official": "member alonzo moved to entrust the last $83,000 plus dollars that remain in arpa to be committed to the interim town manager pending opening",
+    "note": "Same motion; official states the $83,000 figure, ours says only 'remaining'.",
+    "t": 10176
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: tax title foreclosure of 531 Reservoir Road",
+    "ours": "Authorize tax title foreclosure of 531 Reservoir Road and eventual sale — passed unanimously",
+    "official": "vice chair jeffreys moved for the select board to authorize the tax title foreclosure of 531 reservoir road and the eventual sale of said property.",
+    "note": "Same motion and outcome.",
+    "t": 10474
+   },
+   {
+    "kind": "agree",
+    "about": "IT/payroll augmentation, $12,000",
+    "ours": "Increase staff payroll line to cover contracted IT in place of vacant network administrator — 12,000 (discussed only)",
+    "official": "augmenting funds devoted to addressing staff payroll and it challenges by approximately $12,000",
+    "note": "Same figure; both treat it as a recommendation, not a vote.",
+    "t": 9557
+   },
+   {
+    "kind": "agree",
+    "about": "Town hall overruns allocation, $32,500",
+    "ours": "Payroll and ARPA transfers: 12,000, 32,500, 83,000",
+    "official": "an allocation of $32,500 to cover anticipated town hall capital cost overruns was confirmed, sustaining a $10,000 budgetary contingency for pressing needs.",
+    "note": "$32,500 appears in both; official says confirmed with no vote recorded.",
+    "t": 9557
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY24 total revenue and percent of budget",
+    "ours": "FY24 revenue: 48.3 n million, 10 1.4%",
+    "official": "total revenue collections stood at $48,390,000, surpassing budget projections by achieving 101.4%.",
+    "official_reading": "$48,390,000, 101.4%",
+    "note": "Garbled captions of the same figures.",
+    "t": 2158
+   },
+   {
+    "kind": "agree",
+    "about": "Investment income $414,000",
+    "ours": "414,000",
+    "official": "investment income notably exceeded expectations, realizing $414,000, equivalent to 484% of the projection.",
+    "note": "Same figure.",
+    "t": 2158
+   },
+   {
+    "kind": "agree",
+    "about": "Certified free cash",
+    "ours": "Free cash: 2.27 million",
+    "official": "certified free cash was established at $2,270,000.",
+    "note": "Same figure. Our other values (1.5 million, 2.3 million) have no counterpart in the official text.",
+    "t": 3668
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turkey Hill fire alarm bids 260 and 322",
+    "ours": "Turkey Hill fire alarm bids: 260, 322",
+    "official": "",
+    "note": "Official gives only the overrun of about $62,000, which equals 322 minus 260; the bid amounts themselves are not printed.",
+    "t": 8907
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Turkey Hill overrun amount",
+    "ours": "",
+    "official": "bids exceeding expectations by approximately $62,000",
+    "note": "Consistent with our bid figures, not stated by us as a difference.",
+    "t": 8907
+   },
+   {
+    "kind": "agree",
+    "about": "Interview date and time",
+    "ours": "Town manager finalist interviews set for January 14 at 5:30, with January 15 as backup",
+    "official": "all interviews will take place on january 14th, commencing at 5:30 pm.",
+    "note": "Date and time match; the January 15 backup date appears only in ours, so check the recording at that point.",
+    "t": 1517
+   },
+   {
+    "kind": "agree",
+    "about": "Consultant leads interview questions",
+    "ours": "each candidate gives a short presentation and the consultant leads questions",
+    "official": "a consensus emerged to permit petrin to lead the primary questioning, with board members integrating follow-up questions where needed.",
+    "note": "Same arrangement; the candidate presentation detail is only in ours.",
+    "t": 1517
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Public may submit questions for candidates",
+    "ours": "Public may submit questions for candidates to the chair.",
+    "official": "",
+    "note": "Not mentioned in the official minutes.",
+    "t": 1723
+   },
+   {
+    "kind": "agree",
+    "about": "Comparison communities list to return",
+    "ours": "Comparison communities list to return with an added wealth/affordability factor, then a formal vote.",
+    "official": "they agreed to have mr. terenzini refine the analysis and bring it back for further review.",
+    "note": "Same direction; the formal vote is only in ours, and official says 'economic factors' for the added factor.",
+    "t": 11384
+   },
+   {
+    "kind": "caption_error",
+    "about": "PAC invited; name of the organization",
+    "ours": "PACK to be invited to present its space needs; 925 Mass Ave to be explored.",
+    "official": "the board agreed it would be prudent to invite pac representatives to attend an upcoming meeting to discuss potential solutions.",
+    "official_reading": "PAC (Public Access Cable)",
+    "note": "Same item; 'PACK' is a caption rendering. The 925 Mass Ave exploration appears only in ours.",
+    "t": 12298
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Public records request tracking",
+    "ours": "Staff to track time spent on public records requests and share it.",
+    "official": "member moore requested that the interim town manager track and report on the volume of public records requests being received.",
+    "note": "Ours tracks time spent, official tracks volume of requests; check the recording to see which was requested.",
+    "t": 11571
+   },
+   {
+    "kind": "only_in_official",
+    "about": "DPW fund increase $23,000",
+    "ours": "",
+    "official": "he recommended increasing the department of public works (dpw) fund allocation by $23,000",
+    "note": "A $23,000 ARPA recommendation not in our figures or transfers.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "56 Carr Avenue",
+    "ours": "",
+    "official": "the board agreed that further information is vital before proceeding with any decisions on 56 carr avenue",
+    "note": "Decision to gather more information is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ongoing review of Budget Task Force recommendations",
+    "ours": "",
+    "official": "committed to an ongoing review of the recommendations to ascertain feasible implementation strategies.",
+    "note": "Not in our decisions.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenter John Bowen",
+    "ours": "",
+    "official": "john bowen (via zoom), 162 highland street, thanked finance director ezequiel ayala for his exceptional work.",
+    "note": "Public commenter not in our attendee list.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Deb Lincoln, Council on Aging chair",
+    "ours": "",
+    "official": "deb goodsell introduced herself to the board alongside outgoing director sue doherty and council on aging chair deb lincoln.",
+    "note": "Not in our attendees.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance director name",
+    "ours": "Ezekiel (finance director)",
+    "official": "finance director ezequiel ayala delivered the fy2024 unaudited year-end financial report",
+    "official_reading": "Ezequiel Ayala",
+    "note": "Misheard spelling of the same person.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Consultant name",
+    "ours": "John petran (presenter, Community Paradigm)",
+    "official": "tim murphy, chair of the town manager screening committee and john petrin from community paradigm provided a formal update",
+    "official_reading": "John Petrin",
+    "note": "Misspelled surname, same person.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Board members present",
+    "ours": "Tom, Renee, Amanda, Michael Ray, Chair (not named)",
+    "official": "members present: caesar nuzzolo, michael-ray jeffreys, amanda moore, tom alonzo, renee emkey",
+    "note": "All five members match; official names the chair as Caesar Nuzzolo.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Budget Task Force chair",
+    "ours": "Tony (Budget Task Force chair, presenter)",
+    "official": "anthony sculimbrene, chair of the budget task force, issued a formal presentation",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "First name only, shortened form.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-07T21:02:24Z",
+   "cost_usd": 0.275485
+  }
+ }
+}
