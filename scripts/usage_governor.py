@@ -114,7 +114,12 @@ def readings(path=LOG):
 class Plan:
     """What the run is aiming at, and what it has decided so far."""
 
-    def __init__(self, session_cap=95.0, week_cap=90.0, by=None, max_jobs=3, ramp=RAMP_S):
+    def __init__(self, session_cap=95.0, week_cap=90.0, by=None, max_jobs=3, ramp=RAMP_S, caps=None):
+        # ONE CAP PER WINDOW. TJ, 7 October 2026: "Run the session to 100% for the first
+        # session, then up to 80% for the second." `caps` is that list; the last one repeats.
+        self.caps = list(caps) if caps else [session_cap]
+        self.windows_seen = 0
+        session_cap = self.caps[0]
         self.session_cap, self.week_cap, self.by, self.max_jobs = session_cap, week_cap, by, max_jobs
         self.ramp = ramp                         # seconds between added workers
         self.t0 = self.u0 = self.window = None   # the line's start, re-anchored each window
@@ -154,13 +159,18 @@ def decide(plan, hist, now, in_flight=0):
         return dict(jobs=1, start=True, stop=None, wait_reset=False, target=None,
                     note='STALE reading -- one worker, caps unseen')
     u5, u7, reset = last['u5'], last['u7'], last['reset']
+    if plan.window and now > plan.window and (reset is None or reset == plan.window):
+        reset = None                             # the old window is over; the next opens on first use
 
     if u7 >= plan.week_cap:
         return dict(jobs=0, start=False, stop='weekly cap %g%% reached (%g%%)' % (plan.week_cap, u7),
                     wait_reset=False, target=None, note='')
 
     # A NEW WINDOW re-anchors the line where it starts.
-    if plan.window != reset:
+    if plan.window != reset and not (reset is None and plan.window and now <= plan.window):
+        if plan.window is not None:
+            plan.windows_seen += 1
+            plan.session_cap = plan.caps[min(plan.windows_seen, len(plan.caps) - 1)]
         plan.window, plan.t0, plan.u0 = reset, now, u5
 
     dl = plan.deadline(reset)
@@ -279,7 +289,12 @@ def _test():
     new = dict(t=now + 4 * 3600, u5=2, u7=35, reset=reset + 5 * 3600)
     d = decide(p9, [new], now + 4 * 3600 + 5)
     case('a new window re-anchors the line at its own start', p9.u0 == 2 and d['start'])
-    print('%d of %d rules hold' % (12 - len(fails), 12))
+    p10 = Plan(caps=[100, 80])
+    decide(p10, [R(now - 10, 3)], now)
+    first = p10.session_cap
+    decide(p10, [dict(t=now + 5 * 3600, u5=0, u7=50, reset=reset + 5 * 3600)], now + 5 * 3600 + 5)
+    case('caps 100,80: the second window aims at 80', first == 100 and p10.session_cap == 80)
+    print('%d of %d rules hold' % (13 - len(fails), 13))
     return 1 if fails else 0
 
 

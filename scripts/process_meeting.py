@@ -290,6 +290,7 @@ def main():
     ap.add_argument('--status', action='store_true')
     ap.add_argument('--until-usage', action='store_true', help='run the backlog until a usage cap, paced by the live bars (the governor)')
     ap.add_argument('--session-cap', type=float, default=95.0, help='governor: stop starting meetings at this %% of the 5-hour window')
+    ap.add_argument('--session-caps', help='governor: one cap per window, e.g. 100,80 (the last repeats)')
     ap.add_argument('--week-cap', type=float, default=90.0, help='governor: stop at this %% of the week')
     ap.add_argument('--by', help='governor: reach the session cap by +1h, +30m, 16:30 or "thu 23:00" (default: the reset)')
     ap.add_argument('--ramp', type=float, default=300, help='governor: seconds between adding workers (the brake on a fast fill)')
@@ -463,7 +464,8 @@ def run_governed(plan, a, S, ceiling):
     import backlog_pace as BP
     import usage_governor as G
     by = parse_by(a.by)
-    gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs, ramp=a.ramp)
+    caps = [float(c) for c in a.session_caps.split(',')] if a.session_caps else None
+    gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs, ramp=a.ramp, caps=caps)
     G.fetch(force=True)
     say('[gov %s] %s' % (dt.datetime.now().strftime('%H:%M'), G.describe(gp, G.readings(), time.time())))
     T, stop = Tally(), None
@@ -471,6 +473,7 @@ def run_governed(plan, a, S, ceiling):
     active = {}
     nxt, n = 0, len(plan)
     d, last_tick, last_line, last_guard = None, 0.0, None, 0.0
+    window_full = False
     try:
         while True:
             for f in [f for f in active if f.done()]:
@@ -481,9 +484,26 @@ def run_governed(plan, a, S, ceiling):
                     import traceback
                     say(traceback.format_exc())
                     outcome, cost, why = 'stopped', 0.0, 'worker crashed on %s %s: %r' % (date, board, e)
+                if why and why.startswith('a limit') and limit_means_wait(gp):
+                    # A 100% CAP IS REACHED BY BEING REFUSED. In a plan that runs past this
+                    # window's reset, a refusal means "this window is full", not "stop": let
+                    # what is in flight finish, then wait for the reset like any other cap.
+                    say('[gov %s] the model refused (window full) -- finishing in flight, then waiting for the reset'
+                        % dt.datetime.now().strftime('%H:%M'))
+                    T.add('done' if outcome == 'stopped' else outcome, cost)
+                    window_full = True
+                    continue
                 stop = stop or why or T.add(outcome, cost)
             if stop:
                 break
+            if window_full:
+                if active:
+                    time.sleep(2)
+                    continue
+                window_full = False
+                wait_for_reset(gp, S, G)
+                d, last_tick = None, 0
+                continue
             if S.kill_switch():
                 stop = S.kill_switch()
                 break
@@ -515,13 +535,8 @@ def run_governed(plan, a, S, ceiling):
                     stop = 'the output guard: ' + '; '.join(problems)
                     break
             if d and d['wait_reset'] and not active:
-                say('[gov %s] session cap reached -- waiting for the window to reset' % dt.datetime.now().strftime('%H:%M'))
-                while not S.kill_switch():
-                    time.sleep(30)
-                    h = G.readings()
-                    if h and h[-1]['reset'] != gp.window and time.time() - h[-1]['t'] < G.STALE_S:
-                        break
-                last_tick = 0
+                wait_for_reset(gp, S, G)
+                d, last_tick = None, 0
                 continue
             if nxt >= n and not active:
                 break
@@ -544,6 +559,36 @@ def run_governed(plan, a, S, ceiling):
             T.add(outcome, cost)
         pool.shutdown(wait=True)
     return finish(T, n, stop, S)
+
+
+def wait_for_reset(gp, S, G):
+    """Block until the server reports a NEW window (a different reset time) in a fresh
+    reading, or the kill switch is thrown. Fetches every 30 s -- the first version of this
+    loop only re-read the log and would have waited for ever."""
+    h = G.readings()
+    when = dt.datetime.fromtimestamp(h[-1]['reset']).strftime('%H:%M') if h and h[-1]['reset'] else '?'
+    say('[gov %s] window done at %s%% -- waiting for the %s reset' % (
+        dt.datetime.now().strftime('%H:%M'), ('%g' % h[-1]['u5']) if h else '?', when))
+    while not S.kill_switch():
+        time.sleep(30)
+        G.fetch(force=True)
+        h = G.readings()
+        # A NEW WINDOW BEGINS WITH ITS FIRST USE, so after the old reset the server may name no
+        # reset at all until something calls the model. Resume once the old reset has passed
+        # (the first meeting opens the new window), or as soon as a different reset is named.
+        passed = gp.window and time.time() > gp.window + 60
+        named = h and h[-1]['reset'] and gp.window and abs(h[-1]['reset'] - gp.window) > 600
+        if (passed or named) and h and time.time() - h[-1]['t'] < G.STALE_S:
+            say('[gov %s] new window: %g%% -- resuming' % (dt.datetime.now().strftime('%H:%M'), h[-1]['u5']))
+            return
+
+
+def limit_means_wait(gp):
+    """True when the plan runs past the current window's reset, so a refusal is the end of
+    this window rather than the end of the run."""
+    import usage_governor as G
+    h = G.readings()
+    return bool(gp.by and h and h[-1]['reset'] and gp.by > h[-1]['reset'])
 
 
 TICK = 30            # seconds between governor decisions (the bars refresh every 60)
