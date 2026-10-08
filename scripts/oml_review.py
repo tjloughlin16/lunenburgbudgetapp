@@ -299,7 +299,11 @@ def build_prompt(ctx):
     parts = ['MEETING: %s, %s.' % (ctx['board'], ctx['date'])]
     parts.append('SCRIPT FACTS (computed, not read):\n' + json.dumps(ctx['notice'], indent=1))
     parts.append('=== AGENDA (as posted; extracted text) ===\n' + (ctx['agenda_text'] or '(no agenda text held)'))
-    parts.append('=== TOWN MINUTES (extracted text; the record) ===\n' + (ctx['minutes_text'] or '(no minutes held)'))
+    parts.append('=== TOWN MINUTES (extracted text; the record) ===\n' + (ctx['minutes_text'] or
+                 '(NOT YET POSTED. The board has not approved and published minutes for this meeting. '
+                 'Any point that only the official minutes could establish -- what they record, '
+                 'whether they meet the content requirements -- is "cannot tell from what is '
+                 'published". Do not treat their absence as a finding.)'))
     if ctx.get('structured'):
         parts.append('=== STRUCTURED READ of the town minutes (DERIVED; an index, do not quote) ===\n'
                      + json.dumps(ctx['structured'], ensure_ascii=False)[:20000])
@@ -315,11 +319,20 @@ def build_prompt(ctx):
     return '\n\n'.join(parts)
 
 
+WITHOUT_MINUTES = False
+
+
 def gather(board, date):
     r = register_row(board, date)
     vid = (r['video_ids'] or '').split()[0] if r['video_ids'] else ''
-    if not (r['minutes_path'] and r['transcript_paths'] and vid):
-        raise SystemExit('%s %s lacks town minutes or a recording transcript; nothing to compare' % (board, date))
+    # THE TOWN'S MINUTES ARE OPTIONAL WHEN ASKED: TJ, 8 October 2026, for the previous night's
+    # School Committee: "Yes do yesterdays" -- minutes are not posted until the board approves
+    # them, weeks later. Without them, anything only the minutes would show is CANNOT TELL, and
+    # the page says the official minutes were not yet available.
+    if not (r['transcript_paths'] and vid) or not (r['minutes_path'] or WITHOUT_MINUTES):
+        raise SystemExit('%s %s lacks town minutes or a recording transcript; nothing to compare'
+                         ' (pass --without-minutes to review from the agenda and the recording alone)'
+                         % (board, date))
     ap, at = text_for(r['agenda_path'])
     mp, mt = text_for(r['minutes_path'])
     tp = os.path.join(ROOT, r['transcript_paths'].split()[0])
@@ -345,7 +358,8 @@ def gather(board, date):
         'video_url': 'https://www.youtube.com/watch?v=' + vid,
         'agenda_url': r['agenda_url'], 'minutes_url': r['minutes_url'],
         'agenda_text_url': SITE + '/docs/minutes/text/' + os.path.splitext(r['agenda_path'])[0] + '.txt' if r['agenda_path'] else '',
-        'minutes_text_url': SITE + '/docs/minutes/text/' + os.path.splitext(r['minutes_path'])[0] + '.txt',
+        'minutes_text_url': (SITE + '/docs/minutes/text/' + os.path.splitext(r['minutes_path'])[0] + '.txt')
+                            if r['minutes_path'] else '',
         'agenda_text': at, 'minutes_text': mt, 'segs': segs, 'lines': lines,
         'structured': structured, 'ours': ours, 'inputs': inputs, 'law_inputs': law,
         'notice': notice_facts(board, date, at),
@@ -524,7 +538,9 @@ def review(board, date, dry=False):
         'counts': counts,
         'findings': kept,
         'dropped': dropped,
-        'cannot_see': CANNOT_SEE,
+        'cannot_see': CANNOT_SEE + ([] if ctx['minutes_text'] else
+                       ['The official minutes of this meeting were not yet posted when this was '
+                        'written, so nothing here is checked against them.']),
         'statuses': {
             'clear from the record': 'the published record by itself settles this point',
             'possible — needs checking': 'the record suggests a question that something unpublished could answer',
@@ -595,7 +611,11 @@ def main():
     ap.add_argument('date', nargs='?')
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--without-minutes', action='store_true',
+                    help='review from the agenda and the recording when the town has not posted minutes yet')
     a = ap.parse_args()
+    global WITHOUT_MINUTES
+    WITHOUT_MINUTES = a.without_minutes
     if a.check:
         return check()
     if not (a.board and a.date):
