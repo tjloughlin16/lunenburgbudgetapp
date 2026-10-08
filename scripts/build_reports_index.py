@@ -929,10 +929,14 @@ def main():
         has_verifier = os.path.exists(os.path.join(ROOT, verifier))
         pdf = os.path.join(PDF, n + '.pdf')
 
+        # A chart belonging to an UNLISTED report is not this report's, even though it shares
+        # the fy26- prefix: fy26-school-surplus-waterfall.svg turned up on the listed
+        # fy26-closeout entry on 8 October 2026 -- a door to an unlisted page.
         charts = sorted(
             f for f in os.listdir(os.path.join(SRC, 'charts'))
             if f.startswith('fy26-') and n.endswith(
-                'town' if '-town' in f else 'closeout')) \
+                'town' if '-town' in f else 'closeout')
+            and not any(f.startswith(h + '-') or f.startswith(h + '.') for h in hidden)) \
             if os.path.isdir(os.path.join(SRC, 'charts')) and n.startswith('fy26') else []
 
         reports.append(dict(
