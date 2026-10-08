@@ -69,3 +69,9 @@ TJ, told the digest is ~$80 API-equivalent (~16% of a week): *"Let's just ingest
 process them for now. We have meeting minutes that are more important."* So: the letters are
 DOWNLOADED and SEARCHABLE (full text, `--corpus law`); sections 1, 3, 4 (rule units, taxonomy,
 indexes, citation graph -- all model-free) may be built; section 2's model digest WAITS.
+
+TJ, the same evening: *"We'll build a process identical to meeting minutes processing to do
+the determinations. But later."* So when it is built, the digest runs exactly as the minutes
+backlog does -- `process_meeting.py`'s shape: newest first, resumable, one step per letter
+saved as it succeeds, the usage governor (`--until-usage`, session and weekly caps, the
+output guard matching every paid call to its file). Not a separate one-off batch.
