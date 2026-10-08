@@ -1,0 +1,492 @@
+{
+ "title": "Open Meeting Law: points to check",
+ "warning": "EXPERIMENTAL AND UNLISTED. Read by a language model from the published record; every quotation is checked verbatim against its source, and a point whose quotes are not is dropped. Only the Attorney General’s Division of Open Government determines whether the Open Meeting Law was broken, on a complaint filed first with the public body. These are points a reader could check, read by a language model from the published record; none is a finding of fact about what a board did.",
+ "disclaimer": "Only the Attorney General’s Division of Open Government determines whether the Open Meeting Law was broken, on a complaint filed first with the public body. These are points a reader could check, read by a language model from the published record; none is a finding of fact about what a board did.",
+ "board": "Parks Commission",
+ "board_slug": "parks-commission",
+ "date": "2026-06-24",
+ "video_id": "sYBbdYKeNe4",
+ "video_url": "https://www.youtube.com/watch?v=sYBbdYKeNe4",
+ "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06242026-7864",
+ "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7864",
+ "agenda_text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-agenda-7864.txt",
+ "minutes_text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-minutes-7864.txt",
+ "our_minutes_page": "/meeting-minutes/parks-commission/2026-06-24-sYBbdYKeNe4",
+ "overall": "The record shows a notice with the required content and the recording announcement made, and no executive session. The open points are that the posting time is not shown, one vote record is incomplete, and the minutes list no documents and omit the $500 cap.",
+ "counts": {
+  "clear from the record": 3,
+  "possible — needs checking": 6,
+  "cannot tell from what is published": 1
+ },
+ "findings": [
+  {
+   "criterion": "notice",
+   "by": "script",
+   "title": "Agenda file made 105 counted hours before the meeting",
+   "status": "cannot tell from what is published",
+   "bearing": "meets it, as recorded",
+   "summary": "This agenda file was made 104.6 counted hours before the meeting, so 48-hour posting was possible; when it was actually posted is not in anything published here.",
+   "rule": {
+    "doc": "c30a-20",
+    "section": "G.L. c.30A, §20(b)",
+    "quote": "a public body shall post notice of every meeting at least 48 hours prior to the meeting, excluding Saturdays, Sundays and legal holidays",
+    "label": "G.L. c.30A §20 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section20",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section20.html"
+   },
+   "evidence": [
+    {
+     "source": "agenda",
+     "quote": "960 Massachusetts Ave., Lunenburg 7:00pm",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-agenda-7864.txt"
+    },
+    {
+     "source": "file metadata",
+     "quote": "CreationDate 2026-06-17T10:22:46-04:00",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06242026-7864",
+     "note": "the PDF’s own creation time, read by scripts/extract_document_timestamps.py; the earliest this file could have been posted"
+    }
+   ],
+   "settle": "The clerk’s posting record for this notice (the time it went up on the board and the website), and any earlier version.",
+   "arithmetic": {
+    "agenda_file_created": "2026-06-17T10:22:46-04:00",
+    "agenda_file_modified": "2026-06-17T10:22:46-04:00",
+    "agenda_file_producer": "Microsoft® Word for Microsoft 365",
+    "meeting_start_as_printed": "7:00pm",
+    "meeting_start": "2026-06-24T19:00:00",
+    "excluded_days": [
+     "2026-06-19",
+     "2026-06-20",
+     "2026-06-21"
+    ],
+    "counted_hours_file_to_meeting": 104.6,
+    "timezone_assumed": false,
+    "revised_notice": false,
+    "holidays_source": "G.L. c.4 §7 cl.18; the list of dates is typed by this project",
+    "clock_hours_file_to_meeting": 176.6
+   }
+  },
+  {
+   "criterion": "notice",
+   "title": "Notice carries date, time, place, Zoom access and topics",
+   "status": "clear from the record",
+   "bearing": "meets it, as recorded",
+   "summary": "The agenda gives the date, 7:00pm, the Lower Ritter room, Zoom and phone access, and a numbered topic list. Items 4 and 5 say a vote may be taken.",
+   "rule": {
+    "doc": "c30a-20",
+    "section": "G.L. c.30A, §20(b)",
+    "quote": "Notice shall be printed in a legible, easily understandable format and shall contain the date, time and place of the meeting and a listing of topics that the chair reasonably anticipates will be discussed at the meeting.",
+    "label": "G.L. c.30A §20 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section20",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section20.html"
+   },
+   "evidence": [
+    {
+     "source": "agenda",
+     "quote": "https://us02web.zoom.us/j/9091740347?omn=86225908642, or from a telephone, dial the toll-free number",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-agenda-7864.txt"
+    },
+    {
+     "source": "agenda",
+     "quote": "In accordance with the requirements of the Open Meeting Law, please be advised that this meeting is being",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-agenda-7864.txt"
+    }
+   ],
+   "settle": "Nothing further on content; the posting time is covered in the first finding.",
+   "by": "model"
+  },
+  {
+   "criterion": "votes",
+   "title": "Mission statement vote: one member's vote blank, and the minutes show a roll call the captions do not",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "The minutes list M. Mascari with no vote word but report 4-0-0 and name her as the mover. The captions have the chair saying \"I move\", then a spoken \"I, I\" with no names called.",
+   "rule": {
+    "doc": "c30a-22",
+    "section": "G.L. c.30A, §22(a)",
+    "quote": "the decisions made and the actions taken at each meeting, including the record of all votes.",
+    "label": "G.L. c.30A §22 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section22",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section22.html"
+   },
+   "evidence": [
+    {
+     "source": "minutes",
+     "quote": "Call for the vote: C. Sullivan-aye, D. Burns-aye, T. Dall-aye, M. Mascari.",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-minutes-7864.txt"
+    },
+    {
+     "source": "captions",
+     "quote": "there a second? >> Second. >> All in favor? >> I >> I Good deal.",
+     "t": 748,
+     "url": "https://www.youtube.com/watch?v=sYBbdYKeNe4&t=748s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "captions",
+     "quote": "I'll take I move to endorse the mission statement",
+     "t": 739,
+     "url": "https://www.youtube.com/watch?v=sYBbdYKeNe4&t=739s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    }
+   ],
+   "settle": "The meeting video at about 12:20 (and the signed minutes once approved), to see who moved and how each member voted.",
+   "by": "model"
+  },
+  {
+   "criterion": "remote participation",
+   "title": "Minutes say \"Hybrid via Zoom\" but name no remote member",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "The captions suggest all five members were in the room and only staff and presenters joined remotely. If so, the remote-member announcement did not apply; the minutes do not say either way.",
+   "rule": {
+    "doc": "940-cmr-29",
+    "section": "940 CMR 29.10(7)(b)",
+    "quote": "At the start of the meeting, the chair shall announce the name of any member who",
+    "label": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
+    "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf"
+   },
+   "evidence": [
+    {
+     "source": "minutes",
+     "quote": "Members Present: Chair Chris Sullivan, Vice-Chair Dan Burns, Member Tanya Dall, Member Marianne",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-minutes-7864.txt"
+    },
+    {
+     "source": "captions",
+     "quote": "Who else is in the room there with you? Hi, my name is Dan.",
+     "t": 892,
+     "url": "https://www.youtube.com/watch?v=sYBbdYKeNe4&t=892s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    }
+   ],
+   "settle": "A statement in the minutes that no member participated remotely, or the Zoom attendee log.",
+   "by": "model"
+  },
+  {
+   "criterion": "public access",
+   "title": "Chair said \"we're not live\" while describing the Zoom link",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "The agenda offers Zoom and says the meeting is broadcast. The chair's remark that \"we're not live\" could mean the public could not follow in real time, or could just mean no outside viewers were present.",
+   "rule": {
+    "doc": "remote-participation-guidance",
+    "section": "AG guidance, April 8, 2025",
+    "quote": "A public body must provide the public with real-time access for the duration of the meeting, excluding lawful executive sessions.",
+    "label": "Updated guidance on holding meetings under the act extending certain COVID-19 measures (Attorney General)",
+    "upstream": "https://www.mass.gov/info-details/updated-guidance-on-holding-meetings-pursuant-to-the-act-extending-certain-covid-19-measures",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/updated-guidance-on-holding-meetings-pursuant-to-the-act-extending-certain-covid-19-measures.html"
+   },
+   "evidence": [
+    {
+     "source": "captions",
+     "quote": "we're not live so I won't read the Zoom link, but um,",
+     "t": 34,
+     "url": "https://www.youtube.com/watch?v=sYBbdYKeNe4&t=34s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "agenda",
+     "quote": "This meeting will be held via Zoom.",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-agenda-7864.txt"
+    }
+   ],
+   "settle": "The Zoom webinar or Lunenburg Access broadcast log for 24 June 2026, showing whether it ran live.",
+   "by": "model"
+  },
+  {
+   "criterion": "other",
+   "title": "Chair announced the recording at the start",
+   "status": "clear from the record",
+   "bearing": "meets it, as recorded",
+   "summary": "Both the captions and the minutes show the chair telling attendees the meeting was being recorded.",
+   "rule": {
+    "doc": "c30a-20",
+    "section": "G.L. c.30A, §20(f)",
+    "quote": "At the beginning of the meeting, the chair shall inform other attendees of any recordings.",
+    "label": "G.L. c.30A §20 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section20",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section20.html"
+   },
+   "evidence": [
+    {
+     "source": "captions",
+     "quote": "in accordance with the requirements of the open meeting law, uh, please be advised this meeting is being recorded",
+     "t": 20,
+     "url": "https://www.youtube.com/watch?v=sYBbdYKeNe4&t=20s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "minutes",
+     "quote": "Chair C. Sullivan informed attendees that the meeting was",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-minutes-7864.txt"
+    }
+   ],
+   "settle": "Nothing further needed.",
+   "by": "model"
+  },
+  {
+   "criterion": "agenda topics",
+   "title": "Open Space Committee representative was not an agenda topic",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "The vacant Open Space seat came up under \"matters not known at the time of posting\". The record does not show why it was not anticipated; the chair asked about subcommittee updates unprompted and the seat appears to have been empty already.",
+   "rule": {
+    "doc": "c30a-20",
+    "section": "G.L. c.30A, §20(b)",
+    "quote": "a listing of topics that the chair reasonably anticipates will be discussed at the meeting.",
+    "label": "G.L. c.30A §20 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section20",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section20.html"
+   },
+   "evidence": [
+    {
+     "source": "captions",
+     "quote": "Do we have a rep to open space right now?",
+     "t": 4356,
+     "url": "https://www.youtube.com/watch?v=sYBbdYKeNe4&t=4356s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "minutes",
+     "quote": "K. Menard stated that at the next Park Commission meeting, the Commission should decide who will be the appointed",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-minutes-7864.txt"
+    }
+   ],
+   "settle": "The chair's account of when the vacancy was first known, or the next agenda showing it as a listed item.",
+   "by": "model"
+  },
+  {
+   "criterion": "minutes",
+   "title": "Minutes list no documents or exhibits used",
+   "status": "clear from the record",
+   "bearing": "raises a question",
+   "summary": "The minutes mention a redrafted mission statement and a letter from G. Roy about the right-of-entry agreement. They contain no list of documents used at the meeting.",
+   "rule": {
+    "doc": "c30a-22",
+    "section": "G.L. c.30A, §22(a)",
+    "quote": "a summary of the discussions on each subject, a list of documents and other exhibits used at the meeting",
+    "label": "G.L. c.30A §22 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section22",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section22.html"
+   },
+   "evidence": [
+    {
+     "source": "minutes",
+     "quote": "G. Roy stated that he submitted a letter to the Park Commission that describes the specifics of the right of",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-minutes-7864.txt"
+    },
+    {
+     "source": "captions",
+     "quote": "The letter that Greg wrote is that attachment D that's referenced in the",
+     "t": 1962,
+     "url": "https://www.youtube.com/watch?v=sYBbdYKeNe4&t=1962s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    }
+   ],
+   "settle": "The Commission's meeting packet or SharePoint folder for 24 June 2026.",
+   "by": "model"
+  },
+  {
+   "criterion": "minutes",
+   "title": "Minutes omit the agreed cap on the dedication budget",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "The captions show the members agreeing to cap the ceremony spend at about $500. The minutes give only a possible $1,500 figure and record no cap.",
+   "rule": {
+    "doc": "c30a-22",
+    "section": "G.L. c.30A, §22(a)",
+    "quote": "the decisions made and the actions taken at each meeting, including the record of all votes.",
+    "label": "G.L. c.30A §22 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section22",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section22.html"
+   },
+   "evidence": [
+    {
+     "source": "captions",
+     "quote": "if we cap it at 500 is that a >> okay >> I think I think that's a reasonable",
+     "t": 3964,
+     "url": "https://www.youtube.com/watch?v=sYBbdYKeNe4&t=3964s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "minutes",
+     "quote": "stated that the budget for this is potentially around $1,500.",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-minutes-7864.txt"
+    }
+   ],
+   "settle": "The meeting video at about 1:06:00, to see whether the cap was a decision or only a remark.",
+   "by": "model"
+  },
+  {
+   "criterion": "minutes",
+   "title": "May 27 minutes tabled, with a reason given",
+   "status": "possible — needs checking",
+   "bearing": "meets it, as recorded",
+   "summary": "Approval was tabled to July 22 because a member could not open the SharePoint folder. That is 56 days after May 27, but still within the next three meetings.",
+   "rule": {
+    "doc": "c30a-22",
+    "section": "G.L. c.30A, §22(c)",
+    "quote": "Minutes of all open sessions shall be created and approved in a timely manner.",
+    "label": "G.L. c.30A §22 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section22",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section22.html"
+   },
+   "evidence": [
+    {
+     "source": "minutes",
+     "quote": "C. Sullivan stated that the approval of the minutes of May 27, 2026, has been tabled until the next meeting.",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06242026-7864",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2026-06-24-minutes-7864.txt"
+    },
+    {
+     "source": "captions",
+     "quote": "it's within um three meetings or three months.",
+     "t": 4228,
+     "url": "https://www.youtube.com/watch?v=sYBbdYKeNe4&t=4228s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    }
+   ],
+   "settle": "The July 22 or August 26 agenda and minutes showing when the May 27 minutes were approved.",
+   "by": "model"
+  }
+ ],
+ "dropped": [],
+ "cannot_see": [
+  "Deliberation outside a meeting — emails, texts or conversations among a quorum of members — leaves no trace in an agenda, minutes or a recording.",
+  "When the notice was actually posted, and where. We hold the agenda file and the moment that file was made; the clerk’s posting time is not in anything published here.",
+  "Anything in documents used at the meeting but not posted (handouts, slides, the executive session minutes themselves).",
+  "Whether executive session minutes exist, and whether they were reviewed for release as the law requires.",
+  "Anything said off-microphone, or before the recording started and after it stopped."
+ ],
+ "statuses": {
+  "clear from the record": "the published record by itself settles this point",
+  "possible — needs checking": "the record suggests a question that something unpublished could answer",
+  "cannot tell from what is published": "the record is silent on something the law requires"
+ },
+ "notice_arithmetic": {
+  "agenda_file_created": "2026-06-17T10:22:46-04:00",
+  "agenda_file_modified": "2026-06-17T10:22:46-04:00",
+  "agenda_file_producer": "Microsoft® Word for Microsoft 365",
+  "meeting_start_as_printed": "7:00pm",
+  "meeting_start": "2026-06-24T19:00:00",
+  "excluded_days": [
+   "2026-06-19",
+   "2026-06-20",
+   "2026-06-21"
+  ],
+  "counted_hours_file_to_meeting": 104.6,
+  "timezone_assumed": false,
+  "revised_notice": false,
+  "holidays_source": "G.L. c.4 §7 cl.18; the list of dates is typed by this project",
+  "clock_hours_file_to_meeting": 176.6
+ },
+ "minutes_file_created": "2026-08-18T20:16:40-04:00",
+ "inputs": {
+  "agenda_text": {
+   "path": "sources/meetings/text/parks-commission/2026-06-24-agenda-7864.txt",
+   "sha256": "50c635f6c5352796e942934437361568135155754a34812d8fd57c4762e832cc"
+  },
+  "minutes_text": {
+   "path": "sources/meetings/text/parks-commission/2026-06-24-minutes-7864.txt",
+   "sha256": "d811a442bfb0b68bbe738837754feab178b806fa548c296b3fd4df48cdbd5ccd"
+  },
+  "transcript": {
+   "path": "sources/data/youtube-transcripts/parks-commission/2026-06-24-sYBbdYKeNe4.json",
+   "sha256": "693fa27a82b05825a71c62015c8e9bf8d5fabe7112ed2bbafa7a1cf183bd3b5d"
+  },
+  "structured_read": {
+   "path": "sources/data/official-votes/parks-commission/2026-06-24-7864.json",
+   "sha256": "1a180b9c37e5050e7e0953903f8a728e256358a8e2b2d0f765949b876bcd122a"
+  },
+  "our_minutes": {
+   "path": "sources/data/recording-minutes/parks-commission/2026-06-24-sYBbdYKeNe4.json",
+   "sha256": "fac21a550a3e32ac7e752435ac717bf05c6d16c3ca8c491673dc30c89fbdd44c"
+  }
+ },
+ "law_inputs": {
+  "940-cmr-29": {
+   "path": "sources/state-law/text/940-cmr-29.txt",
+   "sha256": "24c6e3d5ac3366bced67d4bdae561c69153cee2f0b3e075ba6fde99328971a96",
+   "source_sha256": "f0ab155936b4c293a4c35bd85d99d99433cc526ed1bf4a42bdfeef6e03da3951",
+   "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download"
+  },
+  "oml-notice-checklist": {
+   "path": "sources/state-law/text/oml-notice-checklist.txt",
+   "sha256": "c1f5021ec26c143afa454f637802f89bb18b20b9b75a17bafca57f355c1ac5ae",
+   "source_sha256": "13794953b223350aeb8bbc9e2ce57c1454cbf832c5b2c5221607ae8c8e9b7f9b",
+   "upstream": "https://www.mass.gov/doc/11062024-oml-notice-checklist/download"
+  },
+  "oml-minutes-checklist": {
+   "path": "sources/state-law/text/oml-minutes-checklist.txt",
+   "sha256": "2e7c0b81f19ce79dc610f9333746d57d870d6a2f76d8b545ab64671c7d77af76",
+   "source_sha256": "0589ba1b824de0bae5e0c288c4816405b4b80d72129e21497810781983116d43",
+   "upstream": "https://www.mass.gov/doc/110624-oml-minutes-checklist/download"
+  },
+  "oml-executive-session-checklist": {
+   "path": "sources/state-law/text/oml-executive-session-checklist.txt",
+   "sha256": "bfb52f1ba61440307353a5dad31dc0ae6e03a6cbfa7e745bfc022cc4a93a1efa",
+   "source_sha256": "e1ff4ec2e90cb4028fc73822bcf43318f53ab4553f5bce9f97cf0eb76cfc9fdf",
+   "upstream": "https://www.mass.gov/doc/11062024-oml-executive-session-checklist/download"
+  },
+  "oml-chair-checklist": {
+   "path": "sources/state-law/text/oml-chair-checklist.txt",
+   "sha256": "25758e4a3d4ba3167ff9bd40efbb1bfd190b22d81d9eaeb67005fa28ca49cae5",
+   "source_sha256": "7ac8567a34929244b3f2d6c79bb04ddd86778fad9aed862ab1eff8413c37aef5",
+   "upstream": "https://www.mass.gov/doc/11062024-oml-responsibilities-of-the-chair-checklist/download"
+  },
+  "remote-participation-guidance": {
+   "path": "sources/state-law/text/remote-participation-guidance.txt",
+   "sha256": "a11ac7d3ada247c203ec53855850dc917b3101f24d1e88cddb4a4e5eb491b207",
+   "source_sha256": "328f58eb7eb3200a439e9b9a00e3a0e900b2a50cbbb8c16c29f028b397cf4669",
+   "upstream": "https://www.mass.gov/info-details/updated-guidance-on-holding-meetings-pursuant-to-the-act-extending-certain-covid-19-measures"
+  },
+  "c30a-18": {
+   "path": "sources/state-law/text/c30a-18.txt",
+   "sha256": "4a27ddad1ee2e6add322afd593d7f2350e035dc24859d7f27e69a36583ebe94b",
+   "source_sha256": "fbd57f8c481ff04900e1c12426d8dd6de2eabb99bbb9660449c726553e7fddcf",
+   "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section18"
+  },
+  "c30a-20": {
+   "path": "sources/state-law/text/c30a-20.txt",
+   "sha256": "ec885160a241fef00e6dbfec36ba0901132523fb9d7455192414ad154fc6da77",
+   "source_sha256": "20b517b11cbb5c6b40496e15f3493d057b9fba04ef9211d0e4217958e36a4a7a",
+   "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section20"
+  },
+  "c30a-21": {
+   "path": "sources/state-law/text/c30a-21.txt",
+   "sha256": "9ff500ec2bbdad78504613af46b91f6c9b36d669e2fe5dc897ed31424b15c4f6",
+   "source_sha256": "d1ab8295b396904e4f406007ffc474615ac8010b21b2c8dcf78fc80c1277f59c",
+   "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section21"
+  },
+  "c30a-22": {
+   "path": "sources/state-law/text/c30a-22.txt",
+   "sha256": "6d3e294eb730e9b0f0332972538680ceba7811aeb705ddeb5e77becc6b69597f",
+   "source_sha256": "de1b8179ca140349fd6807cf9994d9aeed828874ee0c4831e7c99407ceff3130",
+   "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section22"
+  },
+  "c30a-23": {
+   "path": "sources/state-law/text/c30a-23.txt",
+   "sha256": "0fce6067f2a92fdabe614cd987d9ec56badcc7cf8903dbf6f107db0fc26625eb",
+   "source_sha256": "2366ff926d1812af2677b2c103688747cca68e43b41cebe5ac8f3181c10312b8",
+   "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section23"
+  }
+ },
+ "written": {
+  "by": "scripts/oml_review.py",
+  "model": "sonnet",
+  "at": "2026-10-08T22:03:30Z",
+  "cost_usd": 0.5666348
+ }
+}

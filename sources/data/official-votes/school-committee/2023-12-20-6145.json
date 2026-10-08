@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-committee",
  "meeting_date": "2023-12-20",
  "docid": "6145",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Declare the items outlined in the memo as surplus with intent to make available to the Lunenburg Historical Society",
+   "motion": "Make the TCP items outlined in the memo surplus, intended for the Lunenburg Historical Society, with unclaimed items to be taken up later.",
    "moved_by": "Brian Lehtinen",
-   "seconded_by": "Brian Lehtinen",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. lehtinen makes a motion to make the items outlined in the memo as surplus with the intent of making them available to the lunenburg historical society, and any items not claimed by the historical society to be taken up at a later date. mr. lehtinen seconds the motion all approve."
+   "quote": "mr. lehtinen makes a motion to make the items outlined in the memo as surplus with the intent of making them available to the lunenburg historical society, and any items"
   },
   {
-   "motion": "Accept the Keystone Education Annual Report",
+   "motion": "Accept the Keystone Education Annual report.",
    "moved_by": "Brian Lehtinen",
    "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. lehtinen makes a motion to accept the keystone education annual report, ms. brzozoski seconds the motion all approv",
-   "quote_taken_from_text": true
+   "quote": "mr. lehtinen makes a motion to accept the keystone education annual report, ms. brzozoski seconds the motion all approve"
   },
   {
-   "motion": "Approve the MSBA letter with adjustments, with the letter coming from Ms. Archambault",
+   "motion": "Approve the MSBA letter with the few adjustments discussed, to come from Ms. Archambault.",
    "moved_by": "Laura Brzozoski",
    "seconded_by": "Brian Lehtinen",
    "outcome": "passed",
@@ -37,16 +36,310 @@
    "quote": "ms. brzozski makes a motion to approve the letter to include the few adjustments and have the letter come from ms. archambault. mr. lehtinen seconded the motion all approve."
   },
   {
-   "motion": "Enter into executive session and adjourn immediately after",
+   "motion": "Enter into executive session under the collective bargaining/litigation purpose and adjourn immediately after.",
    "moved_by": "Brian Lehtinen",
    "seconded_by": "Laura Brzozoski",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr. lehtinen made a motion at 7:55 p.m. to enter into executive session and adjourn immediately afte r. ms. brzozski seconded the motion. all approv",
-   "quote_taken_from_text": true
+   "quote": "mr. lehtinen made a motion at 7:55 p.m. to enter into executive session and adjourn immediately"
   }
  ],
- "dropped_unquoted": 0,
- "note": "All four votes recorded with clear motions, seconds, and unanimous approval (\"all approve\").",
- "cost_usd": 0.1147201
+ "dropped_unquoted": 2,
+ "note": "Text extraction is clean. Caveats: (1) The motion to surplus the TCP items records Mr. Lehtinen as mover, and the same paragraph says 'Mr. Lehtinen seconds the motion', so the seconder is not reliably identified; seconded_by is left blank. No count is printed; 'all approve' is the only result. (2) The Business Manager/HR Director is listed with no name, so it is not included as an attendee. (3) Mr. Beardmore and Ms. Brzozoski are members who also speak under the public comment heading; they are recorded there. (4) Warrants were signed, not voted on. (5) Adjournment has no separate motion beyond the executive session motion, which says to 'adjourn immediately after'. (6) Eric Hevy and other staff are mentioned but did not take part, so they are excluded.",
+ "cost_usd": 0.01688857,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carol Archambault",
+   "role": "Chair",
+   "status": "present",
+   "quote": "carol archambault, chair - present"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "brian lehtinen, vice chair - present"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "anthony sculimbrene, secretary - absent"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "peter beardmore, member - present"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Member",
+   "status": "present",
+   "quote": "laura brzozoski, member- present"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. kate burnham, superintendent of schools"
+  },
+  {
+   "name": "Courtney Fuller",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "recording secretary courtney fuller"
+  },
+  {
+   "name": "Mr. Passios",
+   "role": "resident, 56 Whiting Street, speaking in public comment",
+   "status": "present",
+   "quote": "mr. passios, 56 whiting street. i come to you as a lifelong resident of lunenburg"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Warrants for the period",
+   "what_was_recorded": "The warrant total for 12/5/23 to 12/18/23 was reported; the member said she had not been able to review the warrants.",
+   "quote": "warrant total - 12/5/23-12/18/23 $591,780.80 ms. brzozski mentions she does not have access to the folder",
+   "figures_as_printed": [
+    "$591,780.80"
+   ]
+  },
+  {
+   "topic": "Class fund balances not yet connected",
+   "what_was_recorded": "Two class funds, 2007 and 2010, have not yet been reached by the district.",
+   "quote": "the two classes are 2007 with $740.66 and 2010 with $513.00, we are pretty confident",
+   "figures_as_printed": [
+    "$740.66",
+    "$513.00"
+   ]
+  },
+  {
+   "topic": "FY25 budget: size of cuts",
+   "what_was_recorded": "The superintendent said the district did not think it would face about $1.5 million in cuts.",
+   "quote": "we did not think we would be looking at $1.5 million dollar worth of cuts",
+   "figures_as_printed": [
+    "$1.5 million"
+   ]
+  },
+  {
+   "topic": "ESSER and grant-funded positions in the local budget",
+   "what_was_recorded": "Positions added over recent years into the local budget are being separated into ESSER or other grant-funded positions; no dollar figure printed.",
+   "quote": "we separate the positions that were esser or other grant funded positions",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Health insurance stabilization account",
+   "what_was_recorded": "A resident asked whether the health insurance stabilization account has been depleted; no answer or figure recorded.",
+   "quote": "insurance stabilization account has been depleted.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "MSBA recovery penalty",
+   "what_was_recorded": "The town manager reported the town lawyer described the MSBA recovery as recovering payments and stopping future payments; no dollar figure printed.",
+   "quote": "they recover any payments and stop any future payments",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Beardmore",
+   "stated_role": "Member",
+   "topic": "road closures and bus delays from storms",
+   "quote": "mr.beardmore takes a moment to recognize that we have had some big rain storms and this past monday"
+  },
+  {
+   "speaker": "Mr. Passios",
+   "stated_role": "lifelong resident, 56 Whiting Street",
+   "topic": "archived TCP items and a scrapbook for public display",
+   "quote": "mr. passios, 56 whiting street. i come to you as a lifelong resident of lunenburg"
+  },
+  {
+   "speaker": "Mr. Passios",
+   "stated_role": "tax payer, 56 Whiting Street",
+   "topic": "ESSER-funded positions and the coming budget round",
+   "quote": "these are my own personal comments, as a tax payer, i would not want to be in your seats"
+  },
+  {
+   "speaker": "Dr. Burnham",
+   "stated_role": "Superintendent",
+   "topic": "response to ESSER cuts and health insurance costs",
+   "quote": "dr. burnham responds, we knew we were looking at a loss of"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order; pledge of allegiance",
+   "resolution": "no action",
+   "quote": "1. call to order by carol archambault at 6:32 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action",
+   "quote": "mr.beardmore takes a moment to recognize that we have had some big rain storms and this past monday",
+   "tags": [
+    "public comment",
+    "road closures",
+    "bus"
+   ]
+  },
+  {
+   "topic": "Chair's report",
+   "resolution": "no action",
+   "quote": "ms. archambault reports that at the last meeting a liaison to green communities was brought up",
+   "tags": [
+    "green communities",
+    "gift card drive"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "none on agenda",
+   "quote": "5. review & approve minutes - none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and line item transfers",
+   "resolution": "warrants signed; no transfers",
+   "quote": "ms. archambault has signed items. no line item transfers",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Superintendent's report",
+   "resolution": "no action",
+   "quote": "dr. burnham reports our timeline for kindergarten and pre-k registration will look different this year.",
+   "tags": [
+    "registration",
+    "MSBA",
+    "state initiatives"
+   ]
+  },
+  {
+   "topic": "Student representative report",
+   "resolution": "none",
+   "quote": "8. student representative report - none",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Declaring surplus TCP artifacts",
+   "resolution": "approved as surplus for Historical Society",
+   "quote": "dr. burnham shares a list of items that have been located in the safe at tcp",
+   "tags": [
+    "TCP",
+    "historical society",
+    "surplus"
+   ]
+  },
+  {
+   "topic": "Keystone annual report",
+   "resolution": "accepted",
+   "quote": "a copy of the report has been entered into the committees' folder for review.",
+   "tags": [
+    "keystone",
+    "annual report"
+   ]
+  },
+  {
+   "topic": "MSBA letter",
+   "resolution": "approved with adjustments",
+   "quote": "there is a letter in the draft folder, mr. beardmore reads it out loud",
+   "tags": [
+    "MSBA",
+    "capital"
+   ]
+  },
+  {
+   "topic": "FY25 budget development",
+   "resolution": "discussed; no vote",
+   "quote": "dr. burnham is sharing additional data that the team is looking at as they make",
+   "tags": [
+    "FY25 budget",
+    "class sizes",
+    "ESSER",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Class funds update",
+   "resolution": "no action; continuing outreach",
+   "quote": "we are making progress, at this point we have heard from or are actively working with all but",
+   "tags": [
+    "class funds"
+   ]
+  },
+  {
+   "topic": "Committee and board reports",
+   "resolution": "no action",
+   "quote": "mr. lehtinen reports the primary school met on monday, we talked about the school calendar",
+   "tags": [
+    "finance committee",
+    "capital planning",
+    "master planning",
+    "turkey hill"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "heard; no action",
+   "quote": "mr. passios, 56 whiting street , these are my own personal comments, as a tax payer",
+   "tags": [
+    "ESSER",
+    "health insurance",
+    "budget cuts"
+   ]
+  },
+  {
+   "topic": "Topics for future discussion",
+   "resolution": "listed",
+   "quote": "13. topics for future discussion",
+   "tags": [
+    "FY25 budget",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session at 7:55 p.m. and adjourned",
+   "quote": "14. executive session to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "tags": [
+  "school committee",
+  "FY25 budget",
+  "ESSER",
+  "staffing cuts",
+  "health insurance",
+  "MSBA",
+  "capital planning",
+  "TCP surplus",
+  "historical society",
+  "warrants",
+  "public comment",
+  "executive session",
+  "class funds",
+  "road closures"
+ ],
+ "dropped_unquoted_by_field": {
+  "budget_items": 1,
+  "public_comment": 1
+ }
 }

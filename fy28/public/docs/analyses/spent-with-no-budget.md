@@ -12,7 +12,7 @@
 
 **This is not by itself improper.** In all four years the school department’s total came in under its budget, so the spending was covered elsewhere in the total. It is never more than 0.9% of a year’s school spending. What it shows is that **the voted line-item budget did not describe what happened** — and that is what a Finance Committee reading the line items is reading.
 
-**It is mostly a missing year, not new spending.** 14 of the 19 lines that spent against a $0 vote had a voted budget in another of the four years. The largest is **athletic coaches: $202,347 against a $0 vote** over FY2024 and FY2025. **The worked case: $99,064 charged to the two kindergarten aide lines in FY2026**, both voted at $0, after the same lines were voted $73,273 in FY2025.
+**It is mostly a missing year, not new spending.** 14 of the 19 lines that spent against a $0 vote had a voted budget in another of the four years. The largest is **athletic coaches: $202,347 against a $0 vote** over FY2024 and FY2025. **The worked case: $99,064 charged to the two kindergarten aide lines in FY2026**, both voted at $0, after the same lines were voted $73,273 in FY2025. In January 2026 a Finance Committee minute records the School Committee chair saying kindergarten classrooms had no aides; nothing published reconciles the two.
 
 ---
 

@@ -76,6 +76,8 @@ ORIGINS = [
     # the Department of Revenue's, and the distinction is not cosmetic. DESE sets Chapter
     # 70; DOR certifies free cash. A reader tracing a figure needs to be sent to the right
     # agency, and the report is one form submission away rather than one link.
+    {'id': 'state-law', 'name': 'Commonwealth of Massachusetts: the General Court and the Attorney General',
+     'url': 'https://www.mass.gov/the-open-meeting-law'},
     {'id': 'state-massgis', 'name': 'MassGIS, Commonwealth of Massachusetts',
      'url': 'https://www.mass.gov/info-details/massgis-data-property-tax-parcels'},
     {'id': 'state-dls', 'name': 'Massachusetts DOR, Division of Local Services',
@@ -3774,6 +3776,8 @@ def in_family(rel):
 
 SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              'town-budget', 'town-supplementary', 'town-annual-reports', 'state-dese',
+             # Described from its own catalogue, `state-law/index.csv`, by mirror_group().
+             'state-law',
              # Described from its own catalogue, `budget-workbooks/index.csv`, by
              # `finance_committee_group()` below.
              'budget-workbooks/finance-committee',
@@ -3806,6 +3810,11 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # The budget state of a recording -- deficits, cuts, warnings as heard -- the same
              # kind of thing as our minutes: written by a model, never a source.
              'data/budget-state',
+             # EXPERIMENTAL AND UNLISTED: Open Meeting Law points to check, one JSON per
+             # meeting, written by a model (scripts/oml_review.py). Not a document, never a
+             # source, and deliberately not published at /docs -- the hidden page reads its
+             # own copy under fy28/public/data/oml/.
+             'data/oml-reviews',
              # The votes read out of the TOWN'S minutes by extract_official_votes.py, one
              # JSON per set of minutes, each vote with its verbatim quote. A reading of a
              # document the archive already catalogues, not a document; the minutes are.
@@ -4572,6 +4581,16 @@ def main():
                      'quantity the budget cannot supply: special education spending is '
                      'staff numbers times contract rates, and a budget only shows the '
                      'product.', 'state-dese', catalogued_hashes),
+        # THE OPEN MEETING LAW, as the State publishes it: the statute section by section
+        # from the Legislature, 940 CMR 29.00 and the Attorney General's guide, FAQ and
+        # checklists. Fetched by scripts/fetch_open_meeting_law.py, each in a dated folder
+        # because the State's HTML pages differ byte for byte on every request.
+        mirror_group('state-law', 'state-law', 'The Open Meeting Law, as the State publishes it',
+                     'The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00) and '
+                     'the Attorney General’s guide, FAQ and checklists — {n} documents, each '
+                     'the publisher’s own file. Held so that a quotation of the law can be '
+                     'checked against the law.', 'state-law', catalogued_hashes,
+                     what='Mirrored from the publisher. The law itself; not a figure on this site.'),
     ]:
         if g and g['items']:
             groups.append(g)

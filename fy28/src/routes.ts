@@ -997,6 +997,20 @@ export function recordedSlugFromPath(pathname: string): string | null {
   return m ? m[1] : null
 }
 
+/** The meeting an `/meeting-minutes/<board>/<date>-<video>/oml` address names, or null.
+ *
+ *  EXPERIMENTAL AND UNLISTED: Open Meeting Law points to check (scripts/oml_review.py).
+ *  Nothing links here, it is not in the sitemap, it is not prerendered, and it is served
+ *  noindex twice over -- a robots meta from the page and an X-Robots-Tag from _headers.
+ *  It rides the `recorded` tab rather than having one of its own, because a Tab gets a
+ *  SLUG, and a SLUG is a door: the sitemap and the prerender both enumerate them.
+ *  The full slug only (video id included): no date-only alias, since an alias is a
+ *  second guessable address. Case is kept, because a YouTube id is case-sensitive. */
+export function omlSlugFromPath(pathname: string): string | null {
+  const m = /^\/meeting-minutes\/([a-z0-9-]+\/[0-9]{4}-[0-9]{2}-[0-9]{2}-[A-Za-z0-9_-]+)\/oml\/?$/.exec(pathname)
+  return m ? m[1] : null
+}
+
 export function blogSlugFromPath(pathname: string): string | null {
   const m = /^\/blog\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
   return m ? m[1] : null

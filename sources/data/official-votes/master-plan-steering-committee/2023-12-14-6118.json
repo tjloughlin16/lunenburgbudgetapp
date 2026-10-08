@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "master-plan-steering-committee",
  "meeting_date": "2023-12-14",
  "docid": "6118",
@@ -12,15 +12,202 @@
  },
  "votes": [
   {
-   "motion": "To adjourn at 6:47pm",
+   "motion": "To adjourn the meeting at 6:47pm.",
    "moved_by": "Karin M.",
    "seconded_by": "Jerry R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: karin m., second: jerry r. to adjourn at 6:47pm. roll call vote: karin, tim, lou, debbie, carol, joeci and jerry - all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. The minutes document various discussions and proposals regarding the February 1st event, survey distribution, and outreach strategies, but only the adjournment motion received a formal vote.",
- "cost_usd": 0.0827965
+ "note": "Text is complete for the meeting body but thin on votes: the only recorded motion is the adjournment, and the minutes print no numeric count, only \"all aye\" against a seven-name roll call, so outcome is recorded as \"passed\" without a count. A blank motion/second/adjourn template follows the public comment heading with no names or result, and is not treated as a vote. No dollar figures appear, so budget_items and transfers are empty. Matt and Evan are mentioned but not as participants, so they are not listed as attendees. Rami el Samahy's presence is inferred from his presentation rather than a roll call line, and Jane L. Ranley's role in the meeting is only her signature as minutes clerk. Handouts line is blank.",
+ "cost_usd": 0.01503577,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joeci Gilchrest",
+   "role": "Chair (Economic Dev.)",
+   "status": "present",
+   "quote": "chair: joeci gilchrest (economic dev.), vice-chair: tim willsmer (planning board), karin menard (parks), carol archambault (school committee)"
+  },
+  {
+   "name": "Tim Willsmer",
+   "role": "Vice-Chair (Planning Board)",
+   "status": "present",
+   "quote": "vice-chair: tim willsmer (planning board), karin menard (parks), carol archambault (school committee)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks",
+   "status": "present",
+   "quote": "chair: joeci gilchrest (economic dev.), vice-chair: tim willsmer (planning board), karin menard (parks), carol archambault (school committee)"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "karin menard (parks), carol archambault (school committee), debbie lincoln (council on aging)"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "debbie lincoln (council on aging), lou franco (select board), jerry reid, rami el samahy (overunder)"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "debbie lincoln (council on aging), lou franco (select board), jerry reid, rami el samahy (overunder)"
+  },
+  {
+   "name": "Jerry Reid",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln (council on aging), lou franco (select board), jerry reid, rami el samahy (overunder)"
+  },
+  {
+   "name": "Rami el Samahy",
+   "role": "representing OverUnder (presenter)",
+   "status": "present",
+   "quote": "update from over/under- rami noted they had a successful event in november, as well as at homecoming events, and the boys & girls club event."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public comment, 56 Whiting St.",
+   "status": "present",
+   "quote": "public comments- dave passios, 56 whiting st. - commented that at the smokestack event, there was a slide on the various municipal buildings"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "public comment, 1479 Mass Ave; Green Communities Committee member",
+   "status": "present",
+   "quote": "kim duffy- 1479 mass ave- noted she is a member of the green communities committee and she wanted to raise awareness about the activities that committee can do"
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Evening outreach session tentatively set for 6:30pm to 8:30pm at potentially Turkey Hill, with the location to be determined at the Senior Center.",
+   "quote": "the evening session will be 6:30pm- 8:30pm at potentially turkey hill and to be determined at the senior center."
+  },
+  {
+   "decision": "Debbie Lincoln to check availability at the Senior Center for a morning session there (Karin's suggestion of the big room or the Library).",
+   "quote": "karin suggested doing the morning session at the senior center's big room or use the library and debbie will check availability at the senior center."
+  },
+  {
+   "decision": "Carol Archambault to check into Turkey Hill as a venue.",
+   "quote": "carol said she could check into turkey hill."
+  },
+  {
+   "decision": "Debbie Lincoln to bring paper copies of the survey to the Senior Center for residents who cannot complete it online.",
+   "quote": "debbie will bring paper copies to the senior center for those who can't do them online."
+  },
+  {
+   "decision": "Karin Menard to check on setting up a survey table at High School basketball games.",
+   "quote": "karin suggested setting up at high school basketball games and she will check on that."
+  },
+  {
+   "decision": "Joeci Gilchrest to check the game schedule; members to tell her their availability.",
+   "quote": "joeci will check on the game schedule and members can let her know if they are available."
+  },
+  {
+   "decision": "Joeci Gilchrest to post on the Facebook page that responses are needed from all demographics.",
+   "quote": "joeci said evan had a contact at the arrive community and she can add to the facebook page that they need responses from all demographics."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting St.",
+   "topic": "municipal buildings narrative in the master plan",
+   "quote": "he does not want the narrative to go into the master plan as history and existing conditions, saying that we have done a good job of keeping up our infrastructure because we have not."
+  },
+  {
+   "speaker": "Kim Duffy",
+   "stated_role": "1479 Mass Ave",
+   "topic": "Green Communities Committee activities and sustainability in the master plan",
+   "quote": "noted she is a member of the green communities committee and she wanted to raise awareness about the activities that committee can do, such as grants for the town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Update from Over/Under (survey and outreach)",
+   "resolution": "discussed; survey open to end of January; February public event proposed",
+   "quote": "update from over/under- rami noted they had a successful event in november, as well as at homecoming events, and the boys & girls club event.",
+   "tags": [
+    "community survey",
+    "public outreach",
+    "renters"
+   ]
+  },
+  {
+   "topic": "February 1 public event",
+   "resolution": "venues to be confirmed; flyer to follow",
+   "quote": "joeci said once they confirm the venues, they will create a flyer and distribute the information.",
+   "tags": [
+    "public meeting",
+    "venue",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Additional outreach opportunities",
+   "resolution": "members to check venues and game schedules; no vote",
+   "quote": "joeci noted they talked about setting up tables in front of storefronts and having qr codes for surveys to reach a different demographic.",
+   "tags": [
+    "outreach",
+    "survey",
+    "demographics"
+   ]
+  },
+  {
+   "topic": "Committee comments",
+   "resolution": "noted; no action",
+   "quote": "kim duffy suggested blasting any events on facebook.",
+   "tags": [
+    "social media"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "two speakers heard; no action",
+   "quote": "public comments- dave passios, 56 whiting st. - commented that at the smokestack event, there was a slide on the various municipal buildings",
+   "tags": [
+    "municipal buildings",
+    "sustainability",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:47pm",
+   "quote": "motion: karin m., second: jerry r. to adjourn at 6:47pm. roll call vote: karin, tim, lou, debbie, carol, joeci and jerry - all aye.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "tags": [
+  "master plan",
+  "community survey",
+  "public outreach",
+  "February 1 public event",
+  "venues",
+  "renters",
+  "municipal buildings",
+  "Green Communities",
+  "sustainability",
+  "Facebook outreach"
+ ],
+ "dropped_unquoted_by_field": {}
 }

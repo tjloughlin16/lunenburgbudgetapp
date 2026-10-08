@@ -5,6 +5,7 @@
     python3 scripts/search_minutes.py "para" --board school-committee --since 2025-07-01
     python3 scripts/search_minutes.py '"class size"'      # a phrase
     python3 scripts/search_minutes.py 'NEAR(budget cut)'  # words near each other
+    python3 scripts/search_minutes.py "executive session" --corpus law   # the Open Meeting Law
 
 WHY THIS EXISTS RATHER THAN A GREP
 
@@ -443,6 +444,42 @@ def grep_rows(rows, pat, context, limit):
     return out
 
 
+def search_law(a):
+    """The Open Meeting Law corpus: statute, regulations, the AG's guide, FAQ and checklists.
+
+    Same discipline as the meetings: the denominator is printed on every run, and every hit
+    carries the publisher's URL, our copy and WHERE in the law it sits -- section, 940 CMR
+    heading or guide page -- because a rule quoted without its section is not a citation."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import oml_law as L
+    docs = L.documents()
+    if not docs:
+        print('the law corpus is not held: run scripts/fetch_open_meeting_law.py')
+        return 1
+    readable = [d for d in docs if d['body'].strip()]
+    print('LAW CORPUS: %d of %d documents searchable (sources/state-law/index.csv). '
+          'Our extraction of the State\'s files; the file at its publisher URL is the source.'
+          % (len(readable), len(docs)))
+    ps, hits = L.search(fts_query(a.term), limit=25)
+    words = query_words(a.term)
+    if not hits:
+        print('no passage matches %r in the %d documents searched.' % (a.term, len(readable)))
+        return 0
+    print('%d passage(s), best first:\n' % len(hits))
+    for p, marked in hits:
+        d = p['doc']
+        forms = [f for _, f in marks(marked)]
+        off = marks(marked)[0][0] if forms else 0
+        body = unmark(marked)
+        where = p['where'] or ('page %d' % p['page'] if p['page'] else '')
+        print('* %s%s' % (d['label'], ' -- ' + where if where else ''))
+        print('    %s' % label_forms(forms, words))
+        print('    ...%s...' % context_at(body, off, a.context, len(forms[0]) if forms else 0))
+        print('    publisher: %s' % d['upstream'])
+        print('    our copy:  %s' % d['our_copy'])
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('term', help='a word, a "quoted phrase", NEAR(a b); a regex forces '
@@ -465,7 +502,15 @@ def main():
                     help='force the grep route even if the index is available')
     ap.add_argument('--order', choices=('rank', 'date'), default='rank',
                     help='BM25 relevance (default) or chronological')
+    # A THIRD CORPUS, AND IT IS NOT THE TOWN'S: the Open Meeting Law as the State publishes
+    # it (scripts/fetch_open_meeting_law.py). Searched on its own, never mixed with the
+    # meetings, because a hit there is a rule and a hit here is what a board did.
+    ap.add_argument('--corpus', choices=('meetings', 'law'), default='meetings',
+                    help='meetings (the default) or law: the Open Meeting Law -- statute, '
+                         '940 CMR 29.00, the AG guide and checklists')
     a = ap.parse_args()
+    if a.corpus == 'law':
+        return search_law(a)
 
     rows = index()
 

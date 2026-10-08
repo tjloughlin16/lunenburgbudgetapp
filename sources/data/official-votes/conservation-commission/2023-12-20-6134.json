@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2023-12-20",
  "docid": "6134",
@@ -12,95 +12,602 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 11/15/23",
+   "motion": "Approve the minutes of 11/15/23.",
    "moved_by": "Bob P.",
    "seconded_by": "Mike L.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: bob p., second: mike l. to approve the minutes from 11/15/23. roll call vote was unanimous to approve."
+   "quote": "to approve the minutes from 11/15/23."
   },
   {
-   "motion": "Approve the minutes from 12/6/23",
+   "motion": "Approve the minutes of 12/6/23.",
    "moved_by": "Bob P.",
    "seconded_by": "Chris S.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: bob p., second: chris s. to approve the minutes from 12/6/23. roll call vote was unanimous to approve."
+   "quote": "to approve the minutes from 12/6/23."
   },
   {
-   "motion": "Approve the Notice of Intent for a garage addition at 22 Fairview Rd (DEP 208-1314) with Standard Order of Conditions",
+   "motion": "Approve the Notice of Intent by John Potter for 22 Fairview Rd, with Standard Order of Conditions.",
    "moved_by": "Bob P.",
    "seconded_by": "Rich B.",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: bob p., second: rich b. to approve the notice of intent, with standard order of conditions. roll call vote was unanimous to approve."
+   "quote": "to approve the notice of intent, with standard order of conditions."
   },
   {
-   "motion": "Continue 390 Howard Street to 1/17/24",
+   "motion": "Continue the 390 Howard Street hearing to 1/17/24.",
    "moved_by": "Bob P.",
    "seconded_by": "Mike L.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: bob p., second: mike l. to continue 390 howard street to 1/17/24. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "to continue 390 howard street to 1/17/24."
   },
   {
-   "motion": "Continue 255 Sunny Hill Road to 1/3/24",
+   "motion": "Continue the 255 Sunny Hill Road hearing to 1/3/24.",
    "moved_by": "Bob P.",
    "seconded_by": "Chris S.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: bob p., second: chris s. to continue 255 sunny hill road to 1/3/24. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "to continue 255 sunny hill road to 1/3/24."
   },
   {
-   "motion": "Continue 171 Arbor Street to 1/3/24",
+   "motion": "Continue the 171 Arbor Street hearing to 1/3/24.",
    "moved_by": "Mike L.",
    "seconded_by": "Rich B.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: mike l., second: rich b. to continue 171 arbor street to 1/3/24. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "to continue 171 arbor street to 1/3/24."
   },
   {
-   "motion": "Continue 20 Kilburn St-Lot 1 to 1/3/24",
+   "motion": "Continue the 20 Kilburn St-Lot 1 hearing to 1/3/24.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue 20 kilburn st-lot 1 to 1/3/24. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "to continue 20 kilburn st-lot 1 to 1/3/24."
   },
   {
-   "motion": "Continue 20 Kilburn St-Lot 2 to 1/3/24",
+   "motion": "Continue the 20 Kilburn St-Lot 2 hearing to 1/3/24.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue 20 kilburn st-lot 2 to 1/3/24. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "to continue 20 kilburn st-lot 2 to 1/3/24."
   },
   {
-   "motion": "Continue 20 Kilburn St-Lot 3 to 1/3/24",
+   "motion": "Continue the 20 Kilburn St-Lot 3 hearing to 1/3/24.",
    "moved_by": "Rich B.",
    "seconded_by": "Chris S.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: rich b., second: chris s. to continue 20 kilburn st-lot 3 to 1/3/24. roll call vote was unanimous to approve."
+   "procedural": false,
+   "quote": "to continue 20 kilburn st-lot 3 to 1/3/24."
   },
   {
-   "motion": "Lift the cease and desist at 711 Mass Ave and allow installation of the proposed stormceptor",
+   "motion": "Lift the cease and desist at 711 Mass Ave and allow the applicant to install the proposed stormceptor.",
    "moved_by": "Chris S.",
    "seconded_by": "Bob P.",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: chris s., second: bob p. to lift the cease and desist at 711 mass ave and let him install the proposed stormceptor. roll call vote was unanimous to approve."
+   "quote": "to lift the cease and desist at 711 mass ave and let him install the proposed stormceptor."
   },
   {
-   "motion": "Adjourn at 9:35 pm",
+   "motion": "Adjourn the meeting at 9:35pm.",
    "moved_by": "Chris S.",
    "seconded_by": "Mike L.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: chris s., second: mike l. to adjourn at 9:35pm. roll call vote was unanimous to approve."
+   "quote": "to adjourn at 9:35pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0920565
+ "note": "Text is a digital extract, not a scan; all pages 1-7 are present. The minutes state the meeting was held on ZOOM REMOTE, but the roll call does not say who attended remotely, so statuses reflect the roll call as printed. Every recorded motion is followed by \"Roll Call Vote was unanimous to approve,\" with no tally printed, so outcomes are recorded as \"passed\" without a count. The sentence \"Rich B.\" is read as Richard Bursch from the header, which is an inference; \"Rich Tremblay\" is named as leaving the Commission and is not identified in the roll call. Richard Tremblay is listed as Clerk in the header, and his attendance is not stated. Ana Lockwood's remarks were under Appointments/Hearings, not public comment; public comment is recorded as none. The Hollis Road rent figure is printed as \"$ 850/month\" with a space. The 950 Chase Road figure is printed both as \"$9,000\" and \"$9K\" in separate sentences.",
+ "cost_usd": 0.022347270000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Wilson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., mike l., chris s., mary w., and sophie d. (administrator)"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., mike l., chris s., mary w., and sophie d. (administrator)"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Commission member (\"Rich B.\" in roll call)",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., mike l., chris s., mary w., and sophie d. (administrator)"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Commission member (\"Mike L.\" in roll call)",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., mike l., chris s., mary w., and sophie d. (administrator)"
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "Commission member (\"Chris S.\" in roll call)",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., mike l., chris s., mary w., and sophie d. (administrator)"
+  },
+  {
+   "name": "Sophie D.",
+   "role": "Administrator",
+   "status": "present",
+   "quote": "roll call: bob p., rich b., mike l., chris s., mary w., and sophie d. (administrator)"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Commission member",
+   "status": "absent",
+   "quote": "absent: jeff v . call to order at 7pm"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "with rich tremblay leaving the commission"
+  },
+  {
+   "name": "Ashleigh Denio",
+   "role": "Conservation Assistant",
+   "status": "not stated",
+   "quote": "mary said she will follow up with ashleigh."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Parks (appeared under Appointments/Hearings)",
+   "status": "present",
+   "quote": "ana lockwood praised the commission on all their good work done during some very long meetings"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "representing Mr. Potter and Mr. O'Brien",
+   "status": "present",
+   "quote": "matt marro, representing mr. potter, screen-shared the site plan"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "applicant",
+   "status": "present",
+   "quote": "kevin o'brien (applicant) and matt marro present."
+  },
+  {
+   "name": "Stefan McSweeney",
+   "role": "applicant (255 Sunny Hill Road)",
+   "status": "present",
+   "quote": "stefan mcsweeney reported that they still do not have a dep number"
+  },
+  {
+   "name": "Matt Nowlan",
+   "role": "representing the applicant at 711 Mass Ave",
+   "status": "present",
+   "quote": "matt nowlan said they have hired a wetlands scientist to design a plan."
+  },
+  {
+   "name": "Brian Gingras",
+   "role": "Building Inspector",
+   "status": "not stated",
+   "quote": "brian gingras (building inspector) stated he went on the site walk because it is a potential future project"
+  },
+  {
+   "name": "Corinne Jones",
+   "role": "caretaker, Hollis Road residence",
+   "status": "present",
+   "quote": "corinne confirmed the service was done and asked if there was a schedule for other work"
+  },
+  {
+   "name": "Bill B.",
+   "role": "DPW",
+   "status": "not stated",
+   "quote": "bill said maybe, but bob is gathering information so they can call the grant people"
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair asked the Administrator to call the Lunenburg Ledger to propose a payment process like Gardner's and request a statement of missed payments.",
+   "quote": "mary asked sophie to call the ledger to propose a process similar to what she used in gardner"
+  },
+  {
+   "decision": "The MRPC trails vision grant commitment letter item was noted as an FYI item on the agenda.",
+   "quote": "bob asked to note the agenda item as a fyi item."
+  },
+  {
+   "decision": "Filling the Stormwater Task Force seat was deferred to a later point in the meeting.",
+   "quote": "bob suggested waiting until later."
+  },
+  {
+   "decision": "Commission to pick a later date for the 390 Howard Street site walk; applicant's representative to confirm flags with Haley Ward before the visit.",
+   "quote": "the commission discussed timing for the site walk but will pick a time later."
+  },
+  {
+   "decision": "The Chair suggested that if the applicant cannot attend the site walk, he walk the property with Matt Marro to confirm flag locations.",
+   "quote": "mary suggested that if kevin cannot attend the site walk, he walks the property with matt to confirm where the flags are."
+  },
+  {
+   "decision": "Bob suggested 390 Howard be tracked under the complainants' addresses.",
+   "quote": "bob suggested that 390 howard should be tracked under the complainants' addresses."
+  },
+  {
+   "decision": "The Commission will aim for end of March for the educational brochure.",
+   "quote": "the commission will aim for end of march for the brochure."
+  },
+  {
+   "decision": "Mary will follow up with Ashleigh on staff access to Munis accounts.",
+   "quote": "mary said she will follow up with ashleigh."
+  },
+  {
+   "decision": "Sophie will post the bylaw brochure in town offices after clearing the backlog of critical items.",
+   "quote": "sophie will work on this after she clears the backlog of critical items."
+  },
+  {
+   "decision": "Bob will return to Town Counsel and the Town Manager on next steps at 950 Chase Road after getting a removal price.",
+   "quote": "and he will go back to town counsel and town manager to see"
+  },
+  {
+   "decision": "Bob will send a copy of the Hollis Road lease to the caretaker; the Chair suggested a Google sheet for tracking work time.",
+   "quote": "mary asked bob to send a copy of the lease to corinne"
+  },
+  {
+   "decision": "Mary suggested creating a Google sheet for tracking the caretaker's work time.",
+   "quote": "mary suggested creating a google sheet for tracking work time."
+  },
+  {
+   "decision": "Mike will tell Chris Ruth (Facilities) about water coming in near the chimney.",
+   "quote": "mike will let chris ruth know."
+  },
+  {
+   "decision": "Mary will send Bob the updates for the Table Rock trail map.",
+   "quote": "mary will send bob the updates."
+  },
+  {
+   "decision": "Bob will research whether the Hawes Fund can be spent at other Conservation properties.",
+   "quote": "bob is researching into the fund, to see if it could also be spent at other conservation properties."
+  },
+  {
+   "decision": "Bob will ask the volunteer for a map of proposed stream-crossing bridges so the Commission can authorise materials from its account.",
+   "quote": "bob will ask him to provide a map showing where those bridges are proposed"
+  },
+  {
+   "decision": "Bob suggested the Commission discuss other uses of the Hollis Road reserve; Mary suggested an agreed reserve for ongoing or high-value repairs.",
+   "quote": "mary suggested having an agreed upon reserve for on-going or high value repairs."
+  },
+  {
+   "decision": "Mary suggested socialising the Earth Day request so members of the public can form a 2024 work group.",
+   "quote": "mary suggested socializing the request for members of the public to form a work group for 2024."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Legal ad payment process",
+   "what_was_recorded": "Legal ad costs were previously paid from the Land Use budget; applicants now pay the Lunenburg Ledger by check, and the Commission discussed the payment process without a figure.",
+   "quote": "the ad cost came out of the land use budget."
+  },
+  {
+   "topic": "950 Chase Road shed removal (encroachment on Conservation land)",
+   "what_was_recorded": "Bob reported the price for demolishing and removing the shed was in the neighborhood of $9,000; Chris S. asked how that figure was reached.",
+   "figures_as_printed": [
+    "$9,000",
+    "$9K"
+   ],
+   "quote": "cost is in the neighborhood of $9,000 and he will go back to town counsel"
+  },
+  {
+   "topic": "Hollis Road caretaker lease rent",
+   "what_was_recorded": "The lease sets monthly rent of $850 due on the 5th, plus 30 hours of uncompensated work per month; the caretaker's rent was described as far below market.",
+   "figures_as_printed": [
+    "$ 850/month"
+   ],
+   "quote": "stating the monthly rent of $ 850/month, due on the 5th"
+  },
+  {
+   "topic": "Hollis Road rent increase and Hawes Fund",
+   "what_was_recorded": "Bob suggested doubling the rent, with the money going into the Hawes Fund, which can be spent only on the Hollis Road property.",
+   "figures_as_printed": [],
+   "quote": "consider doubling the rent. the money would go into the hawes fund"
+  },
+  {
+   "topic": "MRPC trails vision grant commitment",
+   "what_was_recorded": "Authorization to write a commitment letter for up to $1000 or 8 hours of GIS time, which the Planning Board's time covers.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "authorization to write commitment letter for mrpc trails vision grant with up to $1000 or 8 hours"
+  },
+  {
+   "topic": "Culvert replacement grants",
+   "what_was_recorded": "Bob found grants for replacing culverts and was checking whether culverts on Conservation cart paths are eligible; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "bob stated he found grants for replacing culverts"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements & Public Comment",
+   "resolution": "no action; none offered",
+   "quote": "announcements & public comment - there were none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings (11/15/23 and 12/6/23)",
+   "resolution": "approved",
+   "quote": "minutes of previous meetings - 11/15/23 and 12/6/23",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Appointments/Hearings: Town Beach update by Parks",
+   "resolution": "received; no action",
+   "quote": "appointments/hearings- update on town beach by lunenburg parks-",
+   "tags": [
+    "town beach",
+    "parks",
+    "sand"
+   ]
+  },
+  {
+   "topic": "Notice of Intent: 22 Fairview Rd garage addition (John Potter)",
+   "resolution": "approved with Standard Order of Conditions",
+   "quote": "notice of intent by john potter for a garage addition at 22",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "garage"
+   ]
+  },
+  {
+   "topic": "Continued hearing: 390 Howard Street (resource area delineation)",
+   "resolution": "continued to 1/17/24",
+   "quote": "to continue 390 howard street to 1/17/24.",
+   "tags": [
+    "wetlands",
+    "delineation",
+    "enforcement",
+    "erosion"
+   ]
+  },
+  {
+   "topic": "Continued hearing: 255 Sunny Hill Road",
+   "resolution": "continued to 1/3/24",
+   "quote": "to continue 255 sunny hill road to 1/3/24.",
+   "tags": [
+    "notice of intent",
+    "DEP number"
+   ]
+  },
+  {
+   "topic": "Continued hearing: 171 Arbor Street",
+   "resolution": "continued to 1/3/24",
+   "quote": "to continue 171 arbor street to 1/3/24.",
+   "tags": [
+    "notice of intent",
+    "NHESP"
+   ]
+  },
+  {
+   "topic": "Continued hearings: 20 Kilburn St lots 1-3 (Timric Realty Trust)",
+   "resolution": "continued to 1/3/24",
+   "quote": "to continue 20 kilburn st-lot 1 to 1/3/24.",
+   "tags": [
+    "request for determination",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "New business: Stormwater Task Force vacancy",
+   "resolution": "deferred",
+   "quote": "they have also lost their stormwater task force representative.",
+   "tags": [
+    "stormwater",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Legal ad process",
+   "resolution": "Administrator to contact the Ledger; no vote",
+   "quote": "legal ad process - mary asked who pays for the legal ads.",
+   "tags": [
+    "legal ads",
+    "payment",
+    "Ledger"
+   ]
+  },
+  {
+   "topic": "MRPC trails vision grant commitment",
+   "resolution": "noted as FYI item; no vote",
+   "quote": "authorization to write commitment letter for mrpc trails vision grant with up to $1000 or 8",
+   "tags": [
+    "grant",
+    "trails",
+    "GIS"
+   ]
+  },
+  {
+   "topic": "April Earth Day events planning",
+   "resolution": "no action; suggested public work group",
+   "quote": "mary suggested socializing the request for members of the public to form a work group for 2024.",
+   "tags": [
+    "earth day",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "318 and 390 Howard St siltation complaints",
+   "resolution": "site walk to be arranged; no vote",
+   "quote": "318 and 390 howard st.- bob stated there were complaints from neighbors about silt",
+   "tags": [
+    "siltation",
+    "complaints",
+    "storm drains"
+   ]
+  },
+  {
+   "topic": "Update on title searches",
+   "resolution": "no update",
+   "quote": "update on title searches - no update",
+   "tags": [
+    "title searches"
+   ]
+  },
+  {
+   "topic": "MACC and MSMCP memberships",
+   "resolution": "no action; handbook status discussed",
+   "quote": "macc and msmcp memberships - mary noted she and chris have access to the handbook.",
+   "tags": [
+    "membership",
+    "training"
+   ]
+  },
+  {
+   "topic": "Staff access to Munis accounts",
+   "resolution": "Chair to follow up; no vote",
+   "quote": "staff access to munis accounts - bob said that it was possible",
+   "tags": [
+    "munis",
+    "requisitions",
+    "staff access"
+   ]
+  },
+  {
+   "topic": "Educational ads for residents",
+   "resolution": "target end of March for brochure",
+   "quote": "the commission will aim for end of march for the brochure.",
+   "tags": [
+    "education",
+    "brochure"
+   ]
+  },
+  {
+   "topic": "Posting of bylaw brochure in town offices",
+   "resolution": "deferred to Administrator after backlog",
+   "quote": "posting of bylaw brochure in town offices- sophie will work on this after she clears the backlog",
+   "tags": [
+    "bylaw",
+    "brochure"
+   ]
+  },
+  {
+   "topic": "Enforcement: 711 Mass Ave",
+   "resolution": "cease and desist lifted; enforcement open until reseeding",
+   "quote": "711 mass ave - matt nowlan said they have hired a wetlands scientist to design a plan.",
+   "tags": [
+    "enforcement",
+    "cease and desist",
+    "erosion",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Enforcement: other open addresses",
+   "resolution": "no update",
+   "quote": "780 northfield road - pierce's tree farm - no update yet",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Encroachment: 950 Chase Road",
+   "resolution": "next steps: removal price and counsel review; no vote",
+   "quote": "950 chase road - bob reported he met with town counsel and the town manager.",
+   "tags": [
+    "encroachment",
+    "shed",
+    "conservation land",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "Orders of conditions and certificates of compliance",
+   "resolution": "tracking; no action",
+   "quote": "order of conditions: 932 flat hill rd.- still tracking this-goes back to hearings in old minutes.",
+   "tags": [
+    "order of conditions",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Open space grants update (LCC and LSR)",
+   "resolution": "LCC contracts signed; no vote",
+   "quote": "grants update (lcc sponsored, award year 2023) - mary reported all the contracts were signed",
+   "tags": [
+    "grants",
+    "Mass Trails",
+    "LSR"
+   ]
+  },
+  {
+   "topic": "Conservation land improvements (trails, maps, culverts)",
+   "resolution": "noted; no vote",
+   "quote": "conservation land improvements- mary reported there were more trails worked on and marked in the",
+   "tags": [
+    "trails",
+    "maps",
+    "culverts",
+    "Table Rock",
+    "Lane Property"
+   ]
+  },
+  {
+   "topic": "NCLT site walk and conservation restriction review",
+   "resolution": "noted; no vote",
+   "quote": "nclt site walk & cr review - mike l. reported they received a letter in regard to enlarging the blueprint on the shed.",
+   "tags": [
+    "conservation restriction",
+    "NCLT",
+    "shed"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence caretaker lease",
+   "resolution": "no vote; lease copy and work-time tracking to follow",
+   "quote": "update - maintenance work - bob stated they have an existing caretaker agreement signed in 2013",
+   "tags": [
+    "caretaker",
+    "lease",
+    "Hollis Road",
+    "rent",
+    "Hawes Fund"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:35pm",
+   "quote": "to adjourn at 9:35pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "enforcement",
+  "conservation land",
+  "grants",
+  "caretaker lease",
+  "Hollis Road",
+  "legal ads",
+  "remote meeting (Zoom)",
+  "minutes approval",
+  "budget"
+ ],
+ "dropped_unquoted_by_field": {}
 }

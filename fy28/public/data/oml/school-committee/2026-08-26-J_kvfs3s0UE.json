@@ -1,0 +1,475 @@
+{
+ "title": "Open Meeting Law: points to check",
+ "warning": "EXPERIMENTAL AND UNLISTED. Read by a language model from the published record; every quotation is checked verbatim against its source, and a point whose quotes are not is dropped. Only the Attorney General’s Division of Open Government determines whether the Open Meeting Law was broken, on a complaint filed first with the public body. These are points a reader could check, read by a language model from the published record; none is a finding of fact about what a board did.",
+ "disclaimer": "Only the Attorney General’s Division of Open Government determines whether the Open Meeting Law was broken, on a complaint filed first with the public body. These are points a reader could check, read by a language model from the published record; none is a finding of fact about what a board did.",
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "date": "2026-08-26",
+ "video_id": "J_kvfs3s0UE",
+ "video_url": "https://www.youtube.com/watch?v=J_kvfs3s0UE",
+ "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08262026-7980",
+ "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+ "agenda_text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-agenda-7980.txt",
+ "minutes_text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt",
+ "our_minutes_page": "/meeting-minutes/school-committee/2026-08-26-J_kvfs3s0UE",
+ "overall": "The meeting looks mostly regular, with a clear agenda, a Zoom link and a recorded chair announcement; there was no executive session. The open questions are the agenda file being created under 48 counted hours ahead, a possible remote member with voice votes, the broad item 5a, and gaps in the minutes.",
+ "counts": {
+  "clear from the record": 2,
+  "possible — needs checking": 6,
+  "cannot tell from what is published": 2
+ },
+ "findings": [
+  {
+   "criterion": "notice",
+   "by": "script",
+   "title": "Agenda file made 47 counted hours before the meeting",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "This agenda file was made 46.9 counted hours before the meeting, so this version could not have been posted 48 hours ahead. The file’s clock carries no timezone; Eastern time is assumed. Read as UTC it would be four hours earlier.",
+   "rule": {
+    "doc": "c30a-20",
+    "section": "G.L. c.30A, §20(b)",
+    "quote": "a public body shall post notice of every meeting at least 48 hours prior to the meeting, excluding Saturdays, Sundays and legal holidays",
+    "label": "G.L. c.30A §20 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section20",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section20.html"
+   },
+   "evidence": [
+    {
+     "source": "agenda",
+     "quote": "Time: Regular Meeting (7:00pm)",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-agenda-7980.txt"
+    },
+    {
+     "source": "file metadata",
+     "quote": "CreationDate 2026-08-24T20:07:00",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08262026-7980",
+     "note": "the PDF’s own creation time, read by scripts/extract_document_timestamps.py; the earliest this file could have been posted"
+    }
+   ],
+   "settle": "The clerk’s posting record for this notice (the time it went up on the board and the website), and any earlier version.",
+   "arithmetic": {
+    "agenda_file_created": "2026-08-24T20:07:00",
+    "agenda_file_modified": "",
+    "agenda_file_producer": "Brooks House",
+    "meeting_start_as_printed": "7:00pm",
+    "meeting_start": "2026-08-26T19:00:00",
+    "excluded_days": [],
+    "counted_hours_file_to_meeting": 46.9,
+    "timezone_assumed": true,
+    "revised_notice": false,
+    "holidays_source": "G.L. c.4 §7 cl.18; the list of dates is typed by this project",
+    "clock_hours_file_to_meeting": 46.9
+   }
+  },
+  {
+   "criterion": "notice",
+   "title": "The posted agenda shows no posting date or time",
+   "status": "cannot tell from what is published",
+   "bearing": "raises a question",
+   "summary": "The agenda text carries the meeting date, time, place and a Zoom link. It does not show when it was posted, and does not say whether it was revised.",
+   "rule": {
+    "doc": "940-cmr-29",
+    "section": "940 CMR 29.03(1)(d)",
+    "quote": "The date and time that a meeting notice is posted shall be conspicuously recorded thereon or therewith.",
+    "label": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
+    "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf"
+   },
+   "evidence": [
+    {
+     "source": "agenda",
+     "quote": "Broadcast Status: HYBRID MEETING (in person and on Zoom)",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-agenda-7980.txt"
+    }
+   ],
+   "settle": "The notice as it appeared on the official posting site, or the clerk's date-and-time stamp.",
+   "by": "model"
+  },
+  {
+   "criterion": "remote participation",
+   "title": "A voice vote was taken, and a remote participant may have been a member",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "The captions have the chair welcoming someone on Zoom ('Cara') at the start, and the vote on Scenario 2 was a voice vote ('all in favor?'). The minutes give the count 3-0-1 without names and name no member as remote. The record does not show whether a member was remote, which would have required a roll call.",
+   "rule": {
+    "doc": "940-cmr-29",
+    "section": "940 CMR 29.10(7)(c)",
+    "quote": "All votes taken during any meeting in which a member participates remotely shall be by roll call vote.",
+    "label": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
+    "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf"
+   },
+   "evidence": [
+    {
+     "source": "captions",
+     "t": 2,
+     "quote": "ready on Zoom. Cara, welcome. Welcome, Cara again. That's awesome.",
+     "url": "https://www.youtube.com/watch?v=J_kvfs3s0UE&t=2s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "captions",
+     "t": 5070,
+     "quote": "All in favor? >> I I and nay and abstension from Emily.",
+     "url": "https://www.youtube.com/watch?v=J_kvfs3s0UE&t=5070s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "minutes",
+     "quote": "The motion passed, 3-0-1, with Ms. Young abstaining.",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt"
+    }
+   ],
+   "settle": "The Zoom attendee log or the chair's account of who, if anyone among the five members, was remote. If no member was remote, the roll-call rule does not apply.",
+   "by": "model"
+  },
+  {
+   "criterion": "remote participation",
+   "title": "No remote member is named in the minutes",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "The minutes name a remote public commenter (Ms. Lockwood) but no remote committee member. The captions suggest someone joined by Zoom at the start.",
+   "rule": {
+    "doc": "940-cmr-29",
+    "section": "940 CMR 29.10(7)(b)",
+    "quote": "At the start of the meeting, the chair shall announce the name of any member who will be participating remotely. This information shall also be recorded in the meeting minutes.",
+    "label": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
+    "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf"
+   },
+   "evidence": [
+    {
+     "source": "captions",
+     "t": 2,
+     "quote": "ready on Zoom. Cara, welcome. Welcome, Cara again. That's awesome.",
+     "url": "https://www.youtube.com/watch?v=J_kvfs3s0UE&t=2s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "minutes",
+     "quote": "Ms. Lockwood, participating remotely, commented on the overall level of funding provided to the schools",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt"
+    }
+   ],
+   "settle": "Zoom participant log, and a check of whether the person welcomed at the start was a member.",
+   "by": "model"
+  },
+  {
+   "criterion": "agenda topics",
+   "title": "Agenda item 5a is broad for what was discussed and voted",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "The agenda lists one action item, 'Additional Funding for Education'. The committee voted on a three-scenario spending plan and on a motion backing citizen-petition Article 3 at Special Town Meeting. The agenda names neither the scenarios nor the warrant articles, though the committee may have thought these were covered.",
+   "rule": {
+    "doc": "940-cmr-29",
+    "section": "940 CMR 29.03(1)(b)",
+    "quote": "The list of topics shall have sufficient specificity to reasonably advise the public of the issues to be discussed at the meeting.",
+    "label": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
+    "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf"
+   },
+   "evidence": [
+    {
+     "source": "agenda",
+     "quote": "Additional Funding for Education",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-agenda-7980.txt"
+    },
+    {
+     "source": "minutes",
+     "quote": "The Committee then reviewed Article 3, a citizen petition seeking $151,338.38 from certified free cash",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt"
+    }
+   ],
+   "settle": "Any supporting materials posted with the agenda (the slides or packet) and whether the notice linked them.",
+   "by": "model"
+  },
+  {
+   "criterion": "agenda topics",
+   "title": "Refund of a transportation donation was not an agenda item",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "The committee discussed, and the captions have the chair stating, that a transportation donation already accepted would be refunded to the boosters. No agenda item names gifts or donations. The record does not show why it came up.",
+   "rule": {
+    "doc": "c30a-20",
+    "section": "G.L. c.30A, §20(b)",
+    "quote": "a listing of topics that the chair reasonably anticipates will be discussed at the meeting.",
+    "label": "G.L. c.30A §20 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section20",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section20.html"
+   },
+   "evidence": [
+    {
+     "source": "captions",
+     "t": 6049,
+     "quote": "We are going to refund the donation that we accepted for transportation",
+     "url": "https://www.youtube.com/watch?v=J_kvfs3s0UE&t=6049s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "minutes",
+     "quote": "The Committee also discussed returning a transportation donation previously accepted for the football team to the boosters",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt"
+    }
+   ],
+   "settle": "The earlier minutes accepting the donation, and whether the chair anticipated the topic 48 hours ahead.",
+   "by": "model"
+  },
+  {
+   "criterion": "votes",
+   "title": "Votes are recorded with outcomes, but without who voted how",
+   "status": "clear from the record",
+   "bearing": "meets it, as recorded",
+   "summary": "The minutes record the Scenario 2 motion (mover, seconder, 3-0-1), the Article 3 support motion and the adjournment, all in open session. The Article 3 and adjournment motions have no named mover or seconder.",
+   "rule": {
+    "doc": "c30a-22",
+    "section": "G.L. c.30A, §22(a)",
+    "quote": "the decisions made and the actions taken at each meeting, including the record of all votes.",
+    "label": "G.L. c.30A §22 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section22",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section22.html"
+   },
+   "evidence": [
+    {
+     "source": "minutes",
+     "quote": "The motion passed, 3-0-1, with Ms. Young abstaining.",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt"
+    },
+    {
+     "source": "minutes",
+     "quote": "The motion passed unanimously.",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt"
+    }
+   ],
+   "settle": "The approved minutes, or a roll-call record, if one exists.",
+   "by": "model"
+  },
+  {
+   "criterion": "minutes",
+   "title": "Approval of the minutes is not shown",
+   "status": "cannot tell from what is published",
+   "bearing": "raises a question",
+   "summary": "The published minutes carry no draft or approved marking and no adjournment time. Whether they were approved in time is not in the record we were given.",
+   "rule": {
+    "doc": "940-cmr-29",
+    "section": "940 CMR 29.11(2)",
+    "quote": "Minutes of all open and executive sessions shall be created and approved in a timely manner.",
+    "label": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
+    "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf"
+   },
+   "evidence": [
+    {
+     "source": "minutes",
+     "quote": "Respectfully submitted,",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-minutes-7980.txt"
+    }
+   ],
+   "settle": "The agenda or minutes of the next School Committee meetings, showing an approval vote.",
+   "by": "model"
+  },
+  {
+   "criterion": "public access",
+   "title": "Building door was reported locked during the meeting",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "In the captions someone says the building door was locked and a person was trying to get in. The Zoom link in the agenda offered another way to follow live. The record does not show how long the door was locked or whether anyone was kept out.",
+   "rule": {
+    "doc": "c30a-20",
+    "section": "G.L. c.30A, §20(a)",
+    "quote": "Except as provided in section 21, all meetings of a public body shall be open to the public.",
+    "label": "G.L. c.30A §20 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section20",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section20.html"
+   },
+   "evidence": [
+    {
+     "source": "captions",
+     "t": 4826,
+     "quote": "Did um the doors locked in the building?",
+     "url": "https://www.youtube.com/watch?v=J_kvfs3s0UE&t=4826s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "captions",
+     "t": 4837,
+     "quote": "Can you unlock the door to the building?",
+     "url": "https://www.youtube.com/watch?v=J_kvfs3s0UE&t=4837s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    }
+   ],
+   "settle": "Custodian or chair's account of the door and the time it was unlocked.",
+   "by": "model"
+  },
+  {
+   "criterion": "public access",
+   "title": "Hybrid meeting with a Zoom link and recording announcement at the start",
+   "status": "clear from the record",
+   "bearing": "meets it, as recorded",
+   "summary": "The agenda gave the place and a Zoom link. At the start the chair stated that the meeting was recorded and broadcast. The agenda wording says broadcast 'at a later date', but the Zoom link gave live access.",
+   "rule": {
+    "doc": "c30a-20",
+    "section": "G.L. c.30A, §20(f)",
+    "quote": "At the beginning of the meeting, the chair shall inform other attendees of any recordings.",
+    "label": "G.L. c.30A §20 (malegislature.gov)",
+    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section20",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section20.html"
+   },
+   "evidence": [
+    {
+     "source": "agenda",
+     "quote": "Broadcast Status: HYBRID MEETING (in person and on Zoom)",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08262026-7980",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-08-26-agenda-7980.txt"
+    },
+    {
+     "source": "captions",
+     "t": 25,
+     "quote": "Zoom. You can see the agenda online to find the Zoom link.",
+     "url": "https://www.youtube.com/watch?v=J_kvfs3s0UE&t=25s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    }
+   ],
+   "settle": "The Zoom or Facebook Live log, if a reader wants to confirm the live stream ran throughout.",
+   "by": "model"
+  }
+ ],
+ "dropped": [
+  {
+   "title": "Minutes do not list documents used, and one member's attendance is unstated",
+   "why": "minutes quote not verbatim in the minutes text"
+  }
+ ],
+ "cannot_see": [
+  "Deliberation outside a meeting — emails, texts or conversations among a quorum of members — leaves no trace in an agenda, minutes or a recording.",
+  "When the notice was actually posted, and where. We hold the agenda file and the moment that file was made; the clerk’s posting time is not in anything published here.",
+  "Anything in documents used at the meeting but not posted (handouts, slides, the executive session minutes themselves).",
+  "Whether executive session minutes exist, and whether they were reviewed for release as the law requires.",
+  "Anything said off-microphone, or before the recording started and after it stopped."
+ ],
+ "statuses": {
+  "clear from the record": "the published record by itself settles this point",
+  "possible — needs checking": "the record suggests a question that something unpublished could answer",
+  "cannot tell from what is published": "the record is silent on something the law requires"
+ },
+ "notice_arithmetic": {
+  "agenda_file_created": "2026-08-24T20:07:00",
+  "agenda_file_modified": "",
+  "agenda_file_producer": "Brooks House",
+  "meeting_start_as_printed": "7:00pm",
+  "meeting_start": "2026-08-26T19:00:00",
+  "excluded_days": [],
+  "counted_hours_file_to_meeting": 46.9,
+  "timezone_assumed": true,
+  "revised_notice": false,
+  "holidays_source": "G.L. c.4 §7 cl.18; the list of dates is typed by this project",
+  "clock_hours_file_to_meeting": 46.9
+ },
+ "minutes_file_created": "2026-10-05T17:27:10-04:00",
+ "inputs": {
+  "agenda_text": {
+   "path": "sources/meetings/text/school-committee/2026-08-26-agenda-7980.txt",
+   "sha256": "7f7eb28f37c69b68cdaf2e632ca1e671f6418a93429a1e3a1d03d1ea1cedd8a5"
+  },
+  "minutes_text": {
+   "path": "sources/meetings/text/school-committee/2026-08-26-minutes-7980.txt",
+   "sha256": "207185a14b306af81bccda3af9f233d366b4e8142b754d07eae4c44caf247569"
+  },
+  "transcript": {
+   "path": "sources/data/youtube-transcripts/school-committee/2026-08-26-J_kvfs3s0UE.json",
+   "sha256": "091123495c91d10124cb32fb229a256c14d3c11fffaf5bd30179f8c2b06e1229"
+  },
+  "structured_read": {
+   "path": "sources/data/official-votes/school-committee/2026-08-26-7980.json",
+   "sha256": "c977181da242c0a5de1e4bf092be135fdab9f2ddb83fd45f053906b4cdf41001"
+  },
+  "our_minutes": {
+   "path": "sources/data/recording-minutes/school-committee/2026-08-26-J_kvfs3s0UE.json",
+   "sha256": "31ca4b3f51ee67677620712f1b2d40dc7574ceefc3e7cc8be2851b1515b780e0"
+  }
+ },
+ "law_inputs": {
+  "940-cmr-29": {
+   "path": "sources/state-law/text/940-cmr-29.txt",
+   "sha256": "24c6e3d5ac3366bced67d4bdae561c69153cee2f0b3e075ba6fde99328971a96",
+   "source_sha256": "f0ab155936b4c293a4c35bd85d99d99433cc526ed1bf4a42bdfeef6e03da3951",
+   "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download"
+  },
+  "oml-notice-checklist": {
+   "path": "sources/state-law/text/oml-notice-checklist.txt",
+   "sha256": "c1f5021ec26c143afa454f637802f89bb18b20b9b75a17bafca57f355c1ac5ae",
+   "source_sha256": "13794953b223350aeb8bbc9e2ce57c1454cbf832c5b2c5221607ae8c8e9b7f9b",
+   "upstream": "https://www.mass.gov/doc/11062024-oml-notice-checklist/download"
+  },
+  "oml-minutes-checklist": {
+   "path": "sources/state-law/text/oml-minutes-checklist.txt",
+   "sha256": "2e7c0b81f19ce79dc610f9333746d57d870d6a2f76d8b545ab64671c7d77af76",
+   "source_sha256": "0589ba1b824de0bae5e0c288c4816405b4b80d72129e21497810781983116d43",
+   "upstream": "https://www.mass.gov/doc/110624-oml-minutes-checklist/download"
+  },
+  "oml-executive-session-checklist": {
+   "path": "sources/state-law/text/oml-executive-session-checklist.txt",
+   "sha256": "bfb52f1ba61440307353a5dad31dc0ae6e03a6cbfa7e745bfc022cc4a93a1efa",
+   "source_sha256": "e1ff4ec2e90cb4028fc73822bcf43318f53ab4553f5bce9f97cf0eb76cfc9fdf",
+   "upstream": "https://www.mass.gov/doc/11062024-oml-executive-session-checklist/download"
+  },
+  "oml-chair-checklist": {
+   "path": "sources/state-law/text/oml-chair-checklist.txt",
+   "sha256": "25758e4a3d4ba3167ff9bd40efbb1bfd190b22d81d9eaeb67005fa28ca49cae5",
+   "source_sha256": "7ac8567a34929244b3f2d6c79bb04ddd86778fad9aed862ab1eff8413c37aef5",
+   "upstream": "https://www.mass.gov/doc/11062024-oml-responsibilities-of-the-chair-checklist/download"
+  },
+  "remote-participation-guidance": {
+   "path": "sources/state-law/text/remote-participation-guidance.txt",
+   "sha256": "a11ac7d3ada247c203ec53855850dc917b3101f24d1e88cddb4a4e5eb491b207",
+   "source_sha256": "328f58eb7eb3200a439e9b9a00e3a0e900b2a50cbbb8c16c29f028b397cf4669",
+   "upstream": "https://www.mass.gov/info-details/updated-guidance-on-holding-meetings-pursuant-to-the-act-extending-certain-covid-19-measures"
+  },
+  "c30a-18": {
+   "path": "sources/state-law/text/c30a-18.txt",
+   "sha256": "4a27ddad1ee2e6add322afd593d7f2350e035dc24859d7f27e69a36583ebe94b",
+   "source_sha256": "fbd57f8c481ff04900e1c12426d8dd6de2eabb99bbb9660449c726553e7fddcf",
+   "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section18"
+  },
+  "c30a-20": {
+   "path": "sources/state-law/text/c30a-20.txt",
+   "sha256": "ec885160a241fef00e6dbfec36ba0901132523fb9d7455192414ad154fc6da77",
+   "source_sha256": "20b517b11cbb5c6b40496e15f3493d057b9fba04ef9211d0e4217958e36a4a7a",
+   "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section20"
+  },
+  "c30a-21": {
+   "path": "sources/state-law/text/c30a-21.txt",
+   "sha256": "9ff500ec2bbdad78504613af46b91f6c9b36d669e2fe5dc897ed31424b15c4f6",
+   "source_sha256": "d1ab8295b396904e4f406007ffc474615ac8010b21b2c8dcf78fc80c1277f59c",
+   "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section21"
+  },
+  "c30a-22": {
+   "path": "sources/state-law/text/c30a-22.txt",
+   "sha256": "6d3e294eb730e9b0f0332972538680ceba7811aeb705ddeb5e77becc6b69597f",
+   "source_sha256": "de1b8179ca140349fd6807cf9994d9aeed828874ee0c4831e7c99407ceff3130",
+   "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section22"
+  },
+  "c30a-23": {
+   "path": "sources/state-law/text/c30a-23.txt",
+   "sha256": "0fce6067f2a92fdabe614cd987d9ec56badcc7cf8903dbf6f107db0fc26625eb",
+   "source_sha256": "2366ff926d1812af2677b2c103688747cca68e43b41cebe5ac8f3181c10312b8",
+   "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section23"
+  }
+ },
+ "written": {
+  "by": "scripts/oml_review.py",
+  "model": "sonnet",
+  "at": "2026-10-08T22:02:04Z",
+  "cost_usd": 0.5602948
+ }
+}

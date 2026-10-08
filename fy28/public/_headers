@@ -28,3 +28,14 @@
 
 /docs/*
   X-Robots-Tag: noindex
+
+# EXPERIMENTAL AND UNLISTED: Open Meeting Law points to check, one per meeting
+# (scripts/oml_review.py, src/pages/OmlReview.tsx). Linked from nowhere, not in the
+# sitemap, not prerendered -- and noindex here as well as by a robots meta on the page,
+# because the page is client-rendered and a crawler that does not run JavaScript would
+# never see the meta. The payload the page reads is covered by the same rule.
+/meeting-minutes/:board/:meeting/oml
+  X-Robots-Tag: noindex, nofollow
+
+/data/oml/*
+  X-Robots-Tag: noindex, nofollow

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2023-12-18",
  "docid": "6129",
@@ -12,6 +12,171 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes are explicitly recorded in these minutes. While prior minutes and meeting adjournment occurred, neither is documented with voting language (moved by, seconded by, unanimously approved, so voted, or vote counts).",
- "cost_usd": 0.07541450000000001
+ "note": "Text extraction of the minutes, one page-break inside the project list; no scan issues noted. No motion, second, or vote count is recorded for any item, including the approval of the October 17, 2023 minutes, so no votes are listed. Dollar figures are limited to one printed threshold (\"250k\"); the project list has fiscal-year tags only. Several names appear as printed only (Dave B, Kim D, Kelly with no surname), so they are not matched to the member list beyond what the minutes state. The Climate Leaders checklist entries include question marks in the source; these are reproduced as printed and not resolved.",
+ "cost_usd": 0.013345370000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave Blatt",
+   "role": "Member",
+   "status": "present",
+   "quote": "member attendees: dave blatt, dave passios, kim duffy, chris holden"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "member attendees: dave blatt, dave passios, kim duffy, chris holden"
+  },
+  {
+   "name": "Kim Duffy",
+   "role": "Member",
+   "status": "present",
+   "quote": "member attendees: dave blatt, dave passios, kim duffy, chris holden"
+  },
+  {
+   "name": "Chris Holden",
+   "role": "Member",
+   "status": "present",
+   "quote": "member attendees: dave blatt, dave passios, kim duffy, chris holden"
+  },
+  {
+   "name": "Ben Howard",
+   "role": "Non-Member attendee",
+   "status": "present",
+   "quote": "non-member attendees: ben howard, eric hevy (school facility)"
+  },
+  {
+   "name": "Eric Hevy",
+   "role": "Non-Member attendee (School Facility)",
+   "status": "present",
+   "quote": "non-member attendees: ben howard, eric hevy (school facility)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the October 17, 2023 meeting approved (approval stated; no motion, second or vote recorded).",
+   "quote": "approved meeting minutes from oct 17, 2023"
+  },
+  {
+   "decision": "Dave B to look into what information was provided to the state regarding the facilities grant inquiry.",
+   "quote": "dave b to look into what information was provided to state."
+  },
+  {
+   "decision": "Dave B to request from Kelly (area lead for MA Green Communities) an overview of how the program is shifting.",
+   "quote": "dave b to request from kelly (area lead for ma green communities) to provide an overview"
+  },
+  {
+   "decision": "Kim D to create a Facebook page for the committee, content to be determined.",
+   "quote": "kim d to create a page, content tbd."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant application size threshold",
+   "what_was_recorded": "Community outreach notes that an online grant application form could make applying easier, and that the form would cover mostly projects under a stated dollar threshold.",
+   "figures_as_printed": [
+    "250k"
+   ],
+   "quote": "mostly anything under 250k"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "procedure"
+   ],
+   "quote": "approved meeting minutes from oct 17, 2023"
+  },
+  {
+   "topic": "Updates: facilities grant inquiry, Unitil, Climate Leaders",
+   "resolution": "no action",
+   "tags": [
+    "MA Green Communities",
+    "grants",
+    "Unitil",
+    "climate leaders"
+   ],
+   "quote": "ben howard reached out to unitil, unitil has been responsive."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment -none"
+  },
+  {
+   "topic": "LED streetlight conversion project update",
+   "resolution": "no action",
+   "tags": [
+    "LED streetlights",
+    "solar",
+    "net metering"
+   ],
+   "quote": "update on led streetlight conversion project"
+  },
+  {
+   "topic": "Potential projects for next grant round",
+   "resolution": "discussed; list of candidate projects recorded",
+   "tags": [
+    "grant round",
+    "HVAC",
+    "mini splits",
+    "windows",
+    "police vehicles",
+    "school",
+    "energy"
+   ],
+   "quote": "potential projects for next grant round (best potential options in italics):"
+  },
+  {
+   "topic": "Community outreach",
+   "resolution": "discussed; Facebook page assigned to Kim D",
+   "tags": [
+    "outreach",
+    "membership",
+    "website",
+    "Facebook",
+    "grant applications"
+   ],
+   "quote": "finding more members from other committees (school committee, dpw, etc)"
+  },
+  {
+   "topic": "Timeline for next meeting",
+   "resolution": "tentative date noted",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "potential january 2024"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:54 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting adjourned: 7:54 pm"
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy",
+  "MA Green Communities grants",
+  "climate leaders certification",
+  "LED streetlights",
+  "solar",
+  "HVAC and building upgrades",
+  "grant round project list",
+  "community outreach",
+  "Unitil"
+ ],
+ "dropped_unquoted_by_field": {}
 }

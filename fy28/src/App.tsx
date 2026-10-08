@@ -46,6 +46,7 @@ import { Threads } from './pages/Threads'
 import { About } from './pages/About'
 import Search from './pages/Search'
 import { WhatWasSaid } from './pages/WhatWasSaid'
+import { OmlReview } from './pages/OmlReview'
 import { Boards } from './pages/Boards'
 import { BoardRecords } from './pages/BoardRecords'
 import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Finance'
@@ -89,7 +90,7 @@ import { AthleticsMoney } from './pages/AthleticsMoney'
 import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
-import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
+import { BOARDS, LABEL, PARENT, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, omlSlugFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { pageTitle, setShareMeta, shareFromPage } from './lib/title'
 import { track } from './lib/track'
@@ -520,7 +521,7 @@ export default function App() {
       {tab === 'threads' && <Threads />}
       {tab === 'about' && <About />}
       {tab === 'search' && <Search />}
-      {tab === 'recorded' && <WhatWasSaid />}
+      {tab === 'recorded' && (omlSlugFromPath(window.location.pathname) ? <OmlReview /> : <WhatWasSaid />)}
       {tab === 'boards' && (boardRecordsSlugFromPath(window.location.pathname) ? <BoardRecords />
         : boardFinanceSlugFromPath(window.location.pathname) ? <BoardFinance /> : <Boards />)}
       {tab === 'schoolfinance' && <SchoolFinance />}

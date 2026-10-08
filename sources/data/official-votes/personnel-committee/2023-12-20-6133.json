@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2023-12-20",
  "docid": "6133",
@@ -12,23 +12,197 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the November 28, 2023 Personnel Committee meeting",
-   "moved_by": "Donna Fortune",
-   "seconded_by": "Susan Andrews",
+   "motion": "Accept the minutes of the November 28, 2023 Personnel Committee meeting as presented.",
+   "moved_by": "D. Fortune",
+   "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by d. fortune to accept the minutes as presented for the november 28, 2023 personnel committee meeting second: s. andrews roll call vote: all in favor"
+   "quote": "motion by d. fortune to accept the minutes as presented for the november 28, 2023 personnel committee meeting"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Wendy Bertrand",
-   "seconded_by": "Susan Andrews",
+   "motion": "Adjourn the meeting at 6:51pm.",
+   "moved_by": "W. Bertrand",
+   "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "w. bertrand made a motion to adjourn the meeting at 6:51pm second: s. andrews roll call vote: all in favor"
+   "quote": "w. bertrand made a motion to adjourn the meeting at 6:51pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes discuss changes to various job descriptions and degree rankings during \"New Business\" but these were determinations made during discussion, not formal motions voted upon.",
- "cost_usd": 0.0753505
+ "note": "Text extraction is clean and complete for a single page. The minutes print no dollar figures, so budget_items and transfers are empty. Both votes are roll call with \"All in Favor\" and no tally count, so outcome is recorded as \"passed\". The degree-ranking changes are recorded as the committee's determinations with no motion or vote in the text, so they are logged as decisions, not votes. The committee members are listed under \"Committee Attendees\" with no explicit present/absent marking; they are recorded as present because they opened, voted and moved in the meeting. Joanna Bilotta is not labelled Chair in the text.",
+ "cost_usd": 0.013752470000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee Attendee",
+   "status": "present",
+   "quote": "committee attendees: wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee Attendee",
+   "status": "present",
+   "quote": "committee attendees: wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee Attendee (opened the meeting)",
+   "status": "present",
+   "quote": "j. bilotta opened the meeting at 5:06pm with members noted in attendance"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee Attendee",
+   "status": "present",
+   "quote": "committee attendees: wendy bertrand, susan andrews, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, assistant town manager/hr director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Sewer Business Manager job description was not available for review and was deferred to the next meeting.",
+   "quote": "the sewer business manager job description was not available for review, will be done at next meeting."
+  },
+  {
+   "decision": "Exec Asst to TM and SB: Personnel Contact changed from Degree 6 to Degree 4 (Confidential confirmed correct).",
+   "quote": "exec asst to tm and sb, personnel contact was changed from degree 6 to degree 4, and confidential was correctly represented."
+  },
+  {
+   "decision": "PACC Manager: Experience changed from Degree 3 to Degree 4.",
+   "quote": "pacc manager, experience was changed from degree 3 to degree 4."
+  },
+  {
+   "decision": "Seasonal Cemetery Laborer regraded: Experience Degree 4 to 3, Accountability Degree 3 to 2, Judgment Degree 3 to 2, Physical Demand Degree 4 to 3.",
+   "quote": "seasonal cemetery laborer was changed in a number of areas; experience was changed from degree 4 to degree 3"
+  },
+  {
+   "decision": "PACC Production Tech confirmed as correctly represented (both items in question).",
+   "quote": "pacc production tech both items in question, education and occupational hazards were determined to be correctly represented."
+  },
+  {
+   "decision": "Payroll and Benefits Coordinator/Risk Manager job description to be rewritten as incomplete.",
+   "quote": "payroll and benefits coordinator/risk manager, the committee felt that the job description was incomplete and needed to be rewritten."
+  },
+  {
+   "decision": "Tax Collector/Treasurer grading left unchanged.",
+   "quote": "tax collector/treasurer, the committee found no reason to change current grading."
+  },
+  {
+   "decision": "Intermittent Heavy Equipment Operator: Supervision noted as Degree 1.",
+   "quote": "intermittent heavy equipment operator, supervision should be noted as degree 1."
+  },
+  {
+   "decision": "Asst. TM/HR Director: Accountability changed from Degree 5 to Degree 6.",
+   "quote": "asst. tm/hr director, accountability was changed from degree 5 to degree 6."
+  },
+  {
+   "decision": "Network Administrator job description confirmed as correctly graded.",
+   "quote": "network administrator, this job description was found to have been correctly graded."
+  },
+  {
+   "decision": "Principal Assessor: Supervision Received Degree 5 to 6, Complexity Degree 5 to 4, Personnel Contact Degree 4 to 5.",
+   "quote": "principal assessor, supervision received was changed from degree 5 to degree 6, complexity was changed from degree 5 to degree 4"
+  },
+  {
+   "decision": "Beach Director title to be changed to Supervisor/Coordinator to better reflect responsibility.",
+   "quote": "the committee felt the title needed to be changed to supervisor/coordinator to better reflect the level of responsibility."
+  },
+  {
+   "decision": "Fire department roles reviewed and all left unchanged.",
+   "quote": "the final roles were from the fire department and all were left unchanged."
+  },
+  {
+   "decision": "Next meeting scheduled for January 17, 2024 at 5:00pm, with a possible following meeting on January 31, 2024.",
+   "quote": "our next meeting will be january 17, 2024, at 5:00pm, location to be determined"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comments",
+   "quote": "there were no public or committee comments",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (November 28, 2023)",
+   "resolution": "approved, roll call all in favor",
+   "quote": "minutes from the november 28, 2023 meeting of the personnel committee were reviewed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "no action (none listed)",
+   "quote": "ongoing business: none",
+   "tags": [
+    "ongoing business"
+   ]
+  },
+  {
+   "topic": "Sewer Business Manager job description",
+   "resolution": "deferred to next meeting",
+   "quote": "the sewer business manager job description was not available for review, will be done at next meeting.",
+   "tags": [
+    "job description",
+    "sewer",
+    "deferred"
+   ]
+  },
+  {
+   "topic": "Position degree-ranking review (job grading)",
+   "resolution": "grades changed for several positions, others confirmed unchanged; Payroll and Benefits Coordinator/Risk Manager description to be rewritten; Beach Director title change",
+   "quote": "the committee began to examine several positions that previously were noted as having some question regarding degree rankings.",
+   "tags": [
+    "job grading",
+    "degree rankings",
+    "classification",
+    "job descriptions",
+    "beach",
+    "fire department"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no comments",
+   "quote": "there were no comments from the public or the committee",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for January 17, 2024; adjourned 6:51pm",
+   "quote": "w. bertrand made a motion to adjourn the meeting at 6:51pm",
+   "tags": [
+    "scheduling",
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "personnel",
+  "job grading",
+  "degree rankings",
+  "job descriptions",
+  "classification",
+  "HR",
+  "Town Hall",
+  "sewer",
+  "beach director",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }
