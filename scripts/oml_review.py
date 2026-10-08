@@ -77,7 +77,12 @@ CRITERIA = ['notice', 'agenda topics', 'votes', 'executive session', 'minutes',
 # (136 KB) is left out for size; its checklists carry its operative lines.
 LAW_IN_PROMPT = ['c30a-18', 'c30a-20', 'c30a-21', 'c30a-22', 'c30a-23', '940-cmr-29',
                  'oml-notice-checklist', 'oml-minutes-checklist', 'oml-executive-session-checklist',
-                 'oml-chair-checklist', 'remote-participation-guidance']
+                 'oml-chair-checklist', 'remote-participation-guidance',
+                 # AG DETERMINATIONS on how specific a topic must be, and on acronyms (8 Oct 2026,
+                 # TJ: "Are the acronyms used a violation?" -- "Or you can find the AG
+                 # determinations"). See sources/state-law/notes/acronyms-in-agendas.md.
+                 'oml-det-2026-99', 'oml-det-2018-56', 'oml-det-2024-218', 'oml-det-2015-148',
+                 'oml-det-2015-127', 'oml-det-2014-125']
 
 # WHAT NO RECORD CAN SHOW. Stated on every review, whatever the model returns.
 CANNOT_SEE = [
@@ -243,6 +248,9 @@ SYSTEM = '''You check ONE public meeting of a Massachusetts town board against t
 Look at, in this order:
 1. notice — was the notice posted 48 hours before the meeting excluding Saturdays, Sundays and legal holidays; does it carry date, time, place and topics; if it was revised, does it show when. The SCRIPT FACTS give the file arithmetic: the agenda FILE's creation time is the EARLIEST this version could have been posted, not the posting time. Under 48 counted hours, this version could not have been posted 48 hours ahead — an earlier version may have been; say so.
 2. agenda topics — anything discussed or voted that is not on the posted agenda. The law requires topics the chair reasonably anticipates 48 hours ahead; a topic not anticipated may be discussed. Say whether the record shows why it came up.
+   ALSO, both of which the first version of this review missed (8 Oct 2026):
+   (a) ACRONYMS AND JARGON in a listed topic: the AG holds a topic insufficiently specific when it rests on an acronym or abbreviation not widely understood by the public, and a body's own familiarity does not count (determinations OML 2026-99, 2018-56, 2024-218 -- the last is Lunenburg's own Historical Commission; contrast 2015-148, AFSCME widely understood). Flag each listed topic that depends on one; quote the topic and the determination.
+   (b) DISCUSSION THAT STRAYS BEYOND A LISTED TOPIC: substantial discussion of a subject the notice does not reasonably cover (e.g. the budget or staffing generally during a data presentation), as distinct from context that serves the listed topic. This is a judgement -- at most "possible -- needs checking"; quote the topic as listed and the discussion with its timestamp, and say plainly which reading favours each side. Agenda time estimates ("(3 min)") are not a legal requirement; never flag a topic for running long.
 3. votes — motion and outcome recorded; roll call where any member participates remotely (940 CMR 29.10); votes taken in open session.
 4. executive session — a vote in open session to enter, by roll call; the purpose stated as one of the enumerated purposes of c.30A §21(a), with enough specificity; a statement whether the body will return to open session; no action taken that belongs in open session. For purpose 1 (an individual's reputation, character or health, or discipline, dismissal, or complaints or charges brought AGAINST them), the 48-hour written notice is owed to 'the individual to be discussed' -- the subject of the discussion, NOT the person who filed a complaint -- and it may be waived by written agreement; that individual may also ask for open session and has rights to attend with counsel. Name the notice's recipient that way.
 5. minutes — date, time, place, members present or absent, summary of discussions on each subject, list of documents used, decisions and actions including the record of all votes (c.30A §22(a)); timely creation and approval.

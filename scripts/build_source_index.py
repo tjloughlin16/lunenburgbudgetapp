@@ -4586,8 +4586,9 @@ def main():
         # checklists. Fetched by scripts/fetch_open_meeting_law.py, each in a dated folder
         # because the State's HTML pages differ byte for byte on every request.
         mirror_group('state-law', 'state-law', 'The Open Meeting Law, as the State publishes it',
-                     'The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00) and '
-                     'the Attorney General’s guide, FAQ and checklists — {n} documents, each '
+                     'The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00), '
+                     'the Attorney General’s guide, FAQ and checklists, and a chosen set of '
+                     'the AG’s determination letters — {n} documents, each '
                      'the publisher’s own file. Held so that a quotation of the law can be '
                      'checked against the law.', 'state-law', catalogued_hashes,
                      what='Mirrored from the publisher. The law itself; not a figure on this site.'),

@@ -12,9 +12,9 @@
  "agenda_text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-agenda-8058.txt",
  "minutes_text_url": "",
  "our_minutes_page": "/meeting-minutes/school-committee/2026-10-07-kPZcnFd5COw",
- "overall": "The meeting looks mostly regular in procedure: votes were by roll call and the executive session entry was voted and announced. The main open points are that this revised agenda file was made under 48 counted hours before the meeting, and that the second executive session purpose and the remote member's announcement are not clearly shown.",
+ "overall": "Roll-call procedure for the votes and for entering executive session appears regular as heard in the recording. The questions are the 25.6-hour age of the revised agenda, the COTA acronym, the budget talk inside the data presentation, and the unspecified executive session purposes and notice.",
  "counts": {
-  "clear from the record": 1,
+  "clear from the record": 2,
   "possible — needs checking": 5,
   "cannot tell from what is published": 2
  },
@@ -70,15 +70,40 @@
    }
   },
   {
-   "criterion": "notice",
-   "title": "Agenda shows no posting or amendment date and time",
-   "status": "cannot tell from what is published",
+   "criterion": "agenda topics",
+   "title": "Listed topic \"COTA Position Change to .5 OT\" rests on an acronym",
+   "status": "possible — needs checking",
    "bearing": "raises a question",
-   "summary": "The agenda text carries no date or time of posting, and none for the revision. The record does not show when either version went up.",
+   "summary": "The topic uses \"COTA\" and \"OT\" with no spelling out. The AG has said an acronym the public does not widely understand can make a topic insufficiently specific, whatever the body's own familiarity.",
+   "rule": {
+    "doc": "oml-det-2024-218",
+    "section": "OML 2024-218, footnote 5 (Lunenburg Historical Commission, \"CPA\")",
+    "quote": "it is not an acronym widely understood by members of the public and should",
+    "label": "AG determination OML 2024-218, 11/14/2024, Lunenburg Historical Commission (portal Violation field: YES)",
+    "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWf7KDP%C3%81Z2oZiV0UUl3IXfg9ZPzQtjGguVOqyZkuajsGZ%C3%8944aL%C3%89LKzq2QGCw%C3%81q9H5Dn1cyJ6bJqGcpi9US5FJq4%3D/?ViewerMode=PDF&ForceDownload=true",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/determinations/determination-11-14-2024-oml-2024-218-lunenburg-historical-commission.pdf"
+   },
+   "evidence": [
+    {
+     "source": "agenda",
+     "quote": "COTA Position Change to .5 OT (3 min)",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-agenda-8058.txt"
+    }
+   ],
+   "settle": "The AG's view on whether \"COTA\" is widely understood, or the posted meeting packet if it spelled the title out.",
+   "by": "model"
+  },
+  {
+   "criterion": "agenda topics",
+   "title": "Data presentation moved into budget and staffing cuts",
+   "status": "possible — needs checking",
+   "bearing": "raises a question",
+   "summary": "Under \"Beginning of Year Data Presentation\" members spent time on curriculum-department cuts and town school funding. One reading is that this explains the scores; another is that it is a separate budget subject the notice does not cover.",
    "rule": {
     "doc": "940-cmr-29",
-    "section": "940 CMR 29.03(1)(d)",
-    "quote": "The date and time that a meeting notice is posted shall be conspicuously recorded thereon or therewith.",
+    "section": "940 CMR 29.03(1)(b)",
+    "quote": "shall have sufficient specificity to reasonably advise the public of the issues to be discussed at the meeting.",
     "label": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
     "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
     "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf"
@@ -86,24 +111,71 @@
    "evidence": [
     {
      "source": "agenda",
-     "quote": "REVISED SCHOOL COMMITTEE MEETING",
+     "quote": "Beginning of Year Data Presentation (3 min)",
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-agenda-8058.txt"
+    },
+    {
+     "source": "captions",
+     "t": 3988,
+     "quote": "three years ago, we had a curriculum department with three people in it.",
+     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=3988s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "captions",
+     "t": 4098,
+     "quote": "but we're not funding our schools and this is one of the results.",
+     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=4098s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
     }
    ],
-   "settle": "The posted notice as it appeared on the town website, with any posting stamp, or the clerk's filing record.",
+   "settle": "The published minutes and the posted packet, to see whether staffing and funding were treated as part of the data report.",
+   "by": "model"
+  },
+  {
+   "criterion": "remote participation",
+   "title": "Remote member Tony; every vote after he joined was by roll call",
+   "status": "clear from the record",
+   "bearing": "meets it, as recorded",
+   "summary": "The chair noted for the record that Mr. Schooly was on Zoom and said votes would be by roll call. Later votes were called by name, though the opening did not name remote members and his own answers are not clear in the captions.",
+   "rule": {
+    "doc": "940-cmr-29",
+    "section": "940 CMR 29.10(7)(c)",
+    "quote": "All votes taken during any meeting in which a member participates remotely shall be by roll call vote.",
+    "label": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
+    "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
+    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf"
+   },
+   "evidence": [
+    {
+     "source": "captions",
+     "t": 782,
+     "quote": "just to note for the record that Mr. Schooly has joined us via Zoom so votes are going to be done.",
+     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=782s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "captions",
+     "t": 837,
+     "quote": "We're have to do a roll call vote.",
+     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=837s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    }
+   ],
+   "settle": "The official minutes: do they name the remote member and record each vote by roll call, and the reason remote participation was needed?",
    "by": "model"
   },
   {
    "criterion": "executive session",
-   "title": "Entry vote by roll call, purpose read, and no return to open session announced",
+   "title": "Executive session entered by roll call; no return to open session announced",
    "status": "clear from the record",
    "bearing": "meets it, as recorded",
-   "summary": "The chair moved to enter executive session, took a roll call, stated the first purpose as c.30A §21(a)(1), and said the body would adjourn without returning. The agenda also listed both purposes.",
+   "summary": "A motion to enter was made in open session and taken by roll call, and the chair said the body would not come back. Tony's reply is not clear in the captions.",
    "rule": {
     "doc": "c30a-21",
-    "section": "G.L. c.30A, §21(b)(2), (4)",
-    "quote": "a majority of members of the body have voted to go into executive session and the vote of each member is recorded by roll call and entered into the minutes",
+    "section": "G.L. c.30A, §21(b)(2)",
+    "quote": "a majority of members of the body have voted to go into executive session and the vote of each member is recorded by roll call and entered into the minutes;",
     "label": "G.L. c.30A §21 (malegislature.gov)",
     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section21",
     "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section21.html"
@@ -111,67 +183,60 @@
    "evidence": [
     {
      "source": "captions",
-     "t": 7787,
-     "quote": "Um so after executive sess session, we're just going to adjourn. So we're not going to come back.",
-     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=7787s",
+     "t": 7791,
+     "quote": "we're just going to adjourn. So we're not going to come back.",
+     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=7791s",
      "note": "machine captions — a finding aid; watch the moment to check it"
     },
     {
      "source": "captions",
      "t": 7853,
-     "quote": "Okay, roll call vote. Jean, >> yes. >> Emily, >> yes. >> Mandy, yes. Tony, >> Laura, yes.",
+     "quote": "Okay, roll call vote. Jean, >> yes. >> Emily, >> yes. >> Mandy, yes.",
      "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=7853s",
      "note": "machine captions — a finding aid; watch the moment to check it"
     }
    ],
-   "settle": "The approved minutes' roll call for the executive session entry, including Tony's recorded vote.",
+   "settle": "The official minutes' roll-call record of the entry vote, including Mr. Schooly's answer.",
    "by": "model"
   },
   {
    "criterion": "executive session",
-   "title": "Second executive session purpose was not clearly stated aloud",
+   "title": "Second purpose (nonunion negotiations) names no one and was not read aloud",
    "status": "possible — needs checking",
    "bearing": "raises a question",
-   "summary": "The chair had the second purpose read by staff, and the captions pick up only the word 'negotiations'. The record does not show the statute clause given or whether the nonunion negotiation subject was stated.",
+   "summary": "The notice lists a nonunion-negotiation session without saying whom it concerns. The chair did not state the purpose in open session; she asked Liz to read it and the captions show only the word \"negotiations\".",
    "rule": {
     "doc": "c30a-21",
     "section": "G.L. c.30A, §21(b)(3)",
-    "quote": "before the executive session, the chair shall state the purpose for the executive session, stating all subjects that may be revealed without compromising the purpose for which the executive session was called",
+    "quote": "before the executive session, the chair shall state the purpose for the executive session, stating all subjects that may be revealed without compromising the purpose for which the executive session was called;",
     "label": "G.L. c.30A §21 (malegislature.gov)",
     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section21",
     "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/Section21.html"
    },
    "evidence": [
     {
-     "source": "captions",
-     "t": 7798,
-     "quote": "Oh, and the second reason. Can you read",
-     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=7798s",
-     "note": "machine captions — a finding aid; watch the moment to check it"
-    },
-    {
-     "source": "captions",
-     "t": 7804,
-     "quote": "Sorry, I printed it before the second one. Jump the gun.",
-     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=7804s",
-     "note": "machine captions — a finding aid; watch the moment to check it"
-    },
-    {
      "source": "agenda",
      "quote": "Executive Session-to conduct strategy sessions in",
      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-agenda-8058.txt"
+    },
+    {
+     "source": "captions",
+     "t": 7804,
+     "quote": "Sorry, I printed it before the second one.",
+     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=7804s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
     }
    ],
-   "settle": "The meeting video audio at about 7800 seconds, or the executive session minutes.",
+   "settle": "The recording at about 7801-7830 s, and the executive session minutes naming the personnel concerned.",
    "by": "model"
   },
   {
    "criterion": "executive session",
-   "title": "Written 48-hour notice to the person discussed in the complaint session",
+   "title": "Complaint session: who got the 48-hour written notice, and who is the individual?",
    "status": "cannot tell from what is published",
    "bearing": "raises a question",
-   "summary": "The first purpose names a complaint against a person, which carries a written-notice requirement. The published record does not show whether that notice or a waiver exists.",
+   "summary": "The purpose given was complaints brought against an officer, employee or individual, naming an OML complaint from T. Loughlin. Written notice is owed to the individual being discussed, not the complainant; the record does not show who that is or whether notice or a waiver exists.",
    "rule": {
     "doc": "c30a-21",
     "section": "G.L. c.30A, §21(a)(1)",
@@ -182,60 +247,58 @@
    },
    "evidence": [
     {
-     "source": "agenda",
-     "quote": "complaint-T. Loughlin",
-     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
-     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-agenda-8058.txt"
+     "source": "captions",
+     "t": 7782,
+     "quote": "to discuss complaints brought against a public officer, employee, staff member or individual open meeting law complaint from Timothy Laughlin.",
+     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=7782s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
     }
    ],
-   "settle": "The written notice to the individual, or a written waiver, held by the committee.",
-   "by": "model",
-   "title_as_written": "Written 48-hour notice to the person named in the complaint session",
-   "title_note": "Corrected by hand 8 Oct 2026: c.30A s.21(a)(1) owes the notice to 'the individual to be discussed', not to whoever filed a complaint."
+   "settle": "The written notice (or written waiver) to the individual discussed, with its date, held by the chair or district office.",
+   "by": "model"
   },
   {
-   "criterion": "remote participation",
-   "title": "Remote member announced mid-meeting; every later vote taken by roll call",
-   "status": "possible — needs checking",
+   "criterion": "minutes",
+   "title": "Prior minutes (9/16/26) skipped; minutes of this meeting not yet posted",
+   "status": "cannot tell from what is published",
    "bearing": "raises a question",
-   "summary": "The chair noted that Mr. Schooly had joined by Zoom about 13 minutes in, not at the start. After that, the votes in the captions were by roll call.",
+   "summary": "The chair moved past the minutes item without a vote on 9/16/26. Minutes for this meeting are not yet published, so their content cannot be checked.",
    "rule": {
     "doc": "940-cmr-29",
-    "section": "940 CMR 29.10(7)(b)",
-    "quote": "At the start of the meeting, the chair shall announce the name of any member who will be participating remotely.",
+    "section": "940 CMR 29.11(2)",
+    "quote": "Minutes of all open and executive sessions shall be created and approved in a timely manner.",
     "label": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
     "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
     "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf"
    },
    "evidence": [
     {
-     "source": "captions",
-     "t": 782,
-     "quote": "just to note for the record that Mr. Schooly has joined us via Zoom so votes are going to be done. Roll call.",
-     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=782s",
-     "note": "machine captions — a finding aid; watch the moment to check it"
+     "source": "agenda",
+     "quote": "a. Regular Session Minutes 9/16/26",
+     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
+     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-agenda-8058.txt"
     },
     {
      "source": "captions",
-     "t": 6558,
-     "quote": "Uh we're going to do a roll call vote. Jean, >> yes. >> Emily, >> yes.",
-     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=6558s",
+     "t": 610,
+     "quote": "Okay. So, we're gonna skip over that.",
+     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=610s",
      "note": "machine captions — a finding aid; watch the moment to check it"
     }
    ],
-   "settle": "The approved minutes' list of remote participants, and whether he was connected before 782 seconds.",
+   "settle": "The 9/16/26 minutes' approval date at a later meeting, and the posted Oct 7 minutes.",
    "by": "model"
   },
   {
    "criterion": "public access",
-   "title": "Audio problems with the broadcast and a remote participant; agenda says broadcast later",
+   "title": "Live Zoom offered, but audio problems were reported",
    "status": "possible — needs checking",
    "bearing": "raises a question",
-   "summary": "The chair said sound quality on the broadcast was a known problem, and a remote participant's audio had to be sorted out. The agenda text says broadcast at a later date, while the chair said it was live on Zoom and Facebook.",
+   "summary": "The notice carries a Zoom link and the chair said the meeting was live on Zoom. The chair also said sound quality on the public-access broadcast was a known problem, and the captions are fragmentary in places.",
    "rule": {
     "doc": "remote-participation-guidance",
-    "section": "AG guidance, April 2025",
-    "quote": "A public body must provide the public with real-time access for the duration of the meeting, excluding lawful executive sessions.",
+    "section": "AG guidance, Apr 8 2025, other requirements",
+    "quote": "Members of the public body must be clearly audible to each other and to members of the public at all times.",
     "label": "Updated guidance on holding meetings under the act extending certain COVID-19 measures (Attorney General)",
     "upstream": "https://www.mass.gov/info-details/updated-guidance-on-holding-meetings-pursuant-to-the-act-extending-certain-covid-19-measures",
     "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/updated-guidance-on-holding-meetings-pursuant-to-the-act-extending-certain-covid-19-measures.html"
@@ -243,61 +306,24 @@
    "evidence": [
     {
      "source": "captions",
+     "t": 17,
+     "quote": "We are also live on Zoom. The address is available on the agenda which typically can be",
+     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=17s",
+     "note": "machine captions — a finding aid; watch the moment to check it"
+    },
+    {
+     "source": "captions",
      "t": 204,
      "quote": "we are aware that we're having issues with the sound quality on PAC and the PAC reportings.",
      "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=204s",
      "note": "machine captions — a finding aid; watch the moment to check it"
-    },
-    {
-     "source": "captions",
-     "t": 274,
-     "quote": "It's coming out of one little speaker over there.",
-     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=274s",
-     "note": "machine captions — a finding aid; watch the moment to check it"
-    },
-    {
-     "source": "agenda",
-     "quote": "please be advised that this meeting is being broadcast at a later date over",
-     "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
-     "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-agenda-8058.txt"
     }
    ],
-   "settle": "The live Zoom or Facebook stream and the recording, checked for gaps in audibility.",
-   "by": "model"
-  },
-  {
-   "criterion": "agenda topics",
-   "title": "Custodian contract signatures raised; not listed on the agenda",
-   "status": "possible — needs checking",
-   "bearing": "raises a question",
-   "summary": "The chair handed over a previously voted custodian contract for signature, and no agenda item names it. The record shows no vote on it that night, so it may be only a signing.",
-   "rule": {
-    "doc": "940-cmr-29",
-    "section": "940 CMR 29.03(1)(b)",
-    "quote": "a listing of topics that the chair reasonably anticipates will be discussed at the meeting.",
-    "label": "940 CMR 29.00, Open Meeting Law regulations (Attorney General, clean version)",
-    "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
-    "our_copy": "https://lunenburgbudgetproject.org/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf"
-   },
-   "evidence": [
-    {
-     "source": "captions",
-     "t": 7436,
-     "quote": "I'm also gonna hand down something we already voted on, which was the custodian contract.",
-     "url": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=7436s",
-     "note": "machine captions — a finding aid; watch the moment to check it"
-    }
-   ],
-   "settle": "The approved minutes, to see whether the custodian contract is recorded as discussion or action.",
+   "settle": "The Zoom and Access recordings: whether speech is audible throughout, e.g. the gaps near 334-535 s.",
    "by": "model"
   }
  ],
- "dropped": [
-  {
-   "title": "Minutes for this meeting are not yet posted; 9/16 minutes were skipped",
-   "why": "caption quote not verbatim in the captions"
-  }
- ],
+ "dropped": [],
  "cannot_see": [
   "Deliberation outside a meeting — emails, texts or conversations among a quorum of members — leaves no trace in an agenda, minutes or a recording.",
   "When the notice was actually posted, and where. We hold the agenda file and the moment that file was made; the clerk’s posting time is not in anything published here.",
@@ -405,12 +431,48 @@
    "sha256": "0fce6067f2a92fdabe614cd987d9ec56badcc7cf8903dbf6f107db0fc26625eb",
    "source_sha256": "2366ff926d1812af2677b2c103688747cca68e43b41cebe5ac8f3181c10312b8",
    "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIII/Chapter30A/Section23"
+  },
+  "oml-det-2024-218": {
+   "path": "sources/state-law/text/oml-det-2024-218.txt",
+   "sha256": "daa8b402af8253140bbcd70c18e26f940b5fd698b013ebbc2a66ed1e0d1bcc06",
+   "source_sha256": "eccec24e4cbdf4986a06b4475768496bbf2e0e29a992a95ff14745ba6aa957e2",
+   "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWf7KDP%C3%81Z2oZiV0UUl3IXfg9ZPzQtjGguVOqyZkuajsGZ%C3%8944aL%C3%89LKzq2QGCw%C3%81q9H5Dn1cyJ6bJqGcpi9US5FJq4%3D/?ViewerMode=PDF&ForceDownload=true"
+  },
+  "oml-det-2015-148": {
+   "path": "sources/state-law/text/oml-det-2015-148.txt",
+   "sha256": "22e41f21c3026bb883be762fa1a5c483815413539eda56e1de91b3623b7457a0",
+   "source_sha256": "6bb1122e11ac71412e737e1ac302d34f68a54a5081b99c2b3d60805b72c4a991",
+   "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AR%C3%892o3pATogCyYfMXkhAD8kdqCi%C3%899uXBZPtdmTuR1u5ijzFrS0q0hzXgZXuAHsb5OAAAs2DNDkbTbL0BPzQ6iEY%3D/?ViewerMode=PDF&ForceDownload=true"
+  },
+  "oml-det-2026-99": {
+   "path": "sources/state-law/text/oml-det-2026-99.txt",
+   "sha256": "590058692072a719f915fd3ea63146f95f49e64382ede64e83019425b2740e8b",
+   "source_sha256": "c9705a078f7b26ea9d29a3b4328f73c5bc3c1cd2449322e58204a5ae43d6f77c",
+   "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AczYQltGY860aysqHSLqhVDrlzT84Tmpj1TjXwkhyuularvENLorJO13mnaAMIn%C3%81YnTljauMSMPklB6%C3%89ECMpQl0%3D/?ViewerMode=PDF&ForceDownload=true"
+  },
+  "oml-det-2018-56": {
+   "path": "sources/state-law/text/oml-det-2018-56.txt",
+   "sha256": "78b7657f258b62e36fb6299e7b9db2cff2fc28f46de753655457e43ad370adf1",
+   "source_sha256": "4c1a9f91f91d6fae9d68b167d8fbea25e3e05e26033d090764e98b6ce7e89a6f",
+   "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATkxSrvqsdWU0oLJCv%C3%81q5jNAhAg4BNYx2zV48Apeu%C3%81VqOSiI%C3%81x6O2p0R2J8DP9vl9nID1O88HTJqYDfRKrccdm8%3D/"
+  },
+  "oml-det-2015-127": {
+   "path": "sources/state-law/text/oml-det-2015-127.txt",
+   "sha256": "da6071a679ff968e912409e13ea294586bfb837fef1dee1244d6bab9c8a22c93",
+   "source_sha256": "b0fc5476c751300f3cfea067061912f5250180b67de8f9809b58571f7232e427",
+   "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUq5%C3%81hVgm%C3%81756eLUB7r5jsxZBzMCz9auEkfq%C3%81JeeQTfYUhj8RMA4tz5Sf2xWgrDmgTGyRfj2FM%C3%819ZtDDJLWNpt4%3D/"
+  },
+  "oml-det-2014-125": {
+   "path": "sources/state-law/text/oml-det-2014-125.txt",
+   "sha256": "fe9403f1e8b0273bcd4216f6c6f6a3a0fc04e499bd6ba0efa93729dd3440d5e8",
+   "source_sha256": "36da1166295e19d02e310b0800fe0342ff1518017add0a8d3ed1040950c2dacf",
+   "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ad68m1mHdXh1lVPeI7TcekSh6NVaN557tYV7iYzeeecw9rAbIEsNVGtrWHg1GqDnyivUm1dCmiJMqNwTp%C3%89jV6uY%3D/"
   }
  },
  "written": {
   "by": "scripts/oml_review.py",
   "model": "sonnet",
-  "at": "2026-10-08T22:26:00Z",
-  "cost_usd": 0.617584
+  "at": "2026-10-08T23:24:53Z",
+  "cost_usd": 0.733556
  }
 }

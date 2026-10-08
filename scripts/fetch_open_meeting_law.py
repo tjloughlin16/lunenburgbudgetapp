@@ -17,7 +17,8 @@ What it holds, and from whom -- the publisher's own copies only:
 
 NOT the AG's determinations. They live in a search portal
 (massago.hylandcloud.com/231publicaccess2/OML.html), thousands of letters; bulk-fetching
-them is a separate decision, recorded here as the next step rather than taken.
+them is a separate decision, not taken. A CHOSEN few, each with the reason it was chosen,
+are fetched by `fetch_oml_determinations.py` into the same index and text folder.
 
 HOW IT FETCHES, AND WHY THAT IS PART OF THE PROVENANCE. mass.gov answers every
 non-browser client -- curl, urllib, any header set tried -- with `403 Not allowed`, and
