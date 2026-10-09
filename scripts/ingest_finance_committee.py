@@ -330,7 +330,13 @@ def run(zpath, dry):
                     'text': os.path.relpath(txt, ROOT) if os.path.exists(txt) else '',
                     'bytes': os.path.getsize(path), 'sha256': A.hash_file(path)[0],
                     'read': how, 'delivered_as': r['delivered_as']})
-    write_csv(CATALOGUE, HEADER, cat)
+    # THE CATALOGUE IS SHARED. Since 9 October 2026 it also lists a second delivery,
+    # `budget-workbooks/forwarded-anonymously-2026-10-09/`, so a re-run rewrites only this
+    # delivery's rows and keeps every row outside PREFIX exactly as it found them.
+    others = [r for r in csv.DictReader(open(CATALOGUE, newline=''))
+              if not r['local'].startswith(os.path.join('sources', PREFIX))] \
+        if os.path.exists(CATALOGUE) else []
+    write_csv(CATALOGUE, HEADER, cat + others)
     write_csv(REGISTER, REG_HEADER, reg)
     n = {}
     for r in reg:

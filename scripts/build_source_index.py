@@ -3788,6 +3788,9 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # Described from its own catalogue, `budget-workbooks/index.csv`, by
              # `finance_committee_group()` below.
              'budget-workbooks/finance-committee',
+             # ...and so is the delivery forwarded anonymously on 9 October 2026, by
+             # `forwarded_group()`. One catalogue, two deliveries, split by path.
+             'budget-workbooks/forwarded-anonymously-2026-10-09',
              # Working files, one per page, that the catalogue and the datasets summarise.
              # `data/inventory/` is what an agent read off each report page before anything
              # was extracted, and `data/rosters/` the parsed roster blocks. They are kept
@@ -3841,6 +3844,7 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
 SKIP_FILES = {'supplemental.csv',
               # Catalogued, but by `finance_committee_group()`, which runs after this walk.
               'budget-workbooks/PROVENANCE-finance-committee.md',
+              'budget-workbooks/PROVENANCE-forwarded-anonymously-2026-10-09.md',
               # A BUILD CONTROL FILE, not a source document. It names which analyses are
               # published and linked from nowhere, so cataloguing it published it at
               # /docs/analyses/UNLISTED -- an unlinked report's slug, at a guessable
@@ -4287,7 +4291,8 @@ def upstream_by_hash():
 
 
 def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes,
-                 what='Mirrored from the publisher. Not used in any figure on this site.'):
+                 what='Mirrored from the publisher. Not used in any figure on this site.',
+                 prefix=None):
     """A crawled mirror, described from its own manifest rather than by hand.
 
     Curating a blurb for every one of these would go stale faster than it could be
@@ -4302,6 +4307,10 @@ def mirror_group(sub, gid, title, blurb, origin, catalogued_hashes,
     with open(idx, newline='') as fh:
         for r in csv.DictReader(fh):
             if not r['local']:
+                continue
+            # One catalogue can hold more than one delivery (budget-workbooks/ does), and
+            # each is its own group: `prefix` keeps a group to the rows under its folder.
+            if prefix and not r['local'].startswith(prefix):
                 continue
             rel = os.path.relpath(os.path.join(ROOT, r['local']), SRC)
             size = int(r['bytes'])
@@ -4347,7 +4356,8 @@ def finance_committee_group(catalogued_hashes):
         'one is what somebody stated, not what the books printed.',
         'town', catalogued_hashes,
         what='Finance Committee working file, by records request. Not yet used in any '
-             'figure on this site.')
+             'figure on this site.',
+        prefix='sources/budget-workbooks/finance-committee/')
     if not g:
         return None
     rel = 'budget-workbooks/PROVENANCE-finance-committee.md'
@@ -4357,6 +4367,38 @@ def finance_committee_group(catalogued_hashes):
         'what': 'Written by us. The request, the delivery’s sha256, what became of each '
                 'of its 299 files, and the two withheld because they are about identifiable '
                 'people.',
+        'kind': KIND['.md'], 'bytes': os.path.getsize(os.path.join(SRC, rel)),
+        'url': '/docs/' + rel, 'upstream': ''})
+    return g
+
+
+def forwarded_group(catalogued_hashes):
+    """Nine documents forwarded anonymously on 9 October 2026 as a third party's records-
+    request response. Described from `budget-workbooks/index.csv`, under the name each file
+    was delivered as. The provenance note leads, because the route is the only address there
+    is, and most of it is unknown.
+    """
+    g = mirror_group(
+        'budget-workbooks', 'forwarded-anonymously-2026-10-09',
+        'Documents forwarded anonymously, 9 October 2026',
+        '{n} of nine documents sent to us anonymously -- one is withheld -- described by the '
+        'sender as the response to a '
+        'public records request somebody else made: memos, a pay scale and budget transfer '
+        'forms that appear to be School Committee materials. Who asked, of whom, and when '
+        'is not known.',
+        'request', catalogued_hashes,
+        what='Forwarded anonymously; no publisher address. Not yet used in any figure on '
+             'this site.',
+        prefix='sources/budget-workbooks/forwarded-anonymously-2026-10-09/')
+    if not g:
+        return None
+    rel = 'budget-workbooks/PROVENANCE-forwarded-anonymously-2026-10-09.md'
+    publish(rel)
+    g['items'].insert(0, {
+        'path': rel, 'title': 'How these documents reached us, and what is not known',
+        'stars': 2,
+        'what': 'Written by us. The route as far as it is known, the delivery’s sha256, and '
+                'the decision on each file, including the one withheld.',
         'kind': KIND['.md'], 'bytes': os.path.getsize(os.path.join(SRC, rel)),
         'url': '/docs/' + rel, 'upstream': ''})
     return g
@@ -4555,6 +4597,7 @@ def main():
     for g in [
         district_page_group(catalogued_hashes),
         finance_committee_group(catalogued_hashes),
+        forwarded_group(catalogued_hashes),
         mirror_group('town-budget', 'town-budget',
                      'The town’s budget and finance documents, mirrored',
                      'Every budget-relevant document linked from the town’s finance pages '
